@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání atributu nadřazené položky (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9d2572fd-27d4-426c-b079-16854cb9ec7d
-ms.openlocfilehash: ded20c173063492d260aee5ba55f3c4c585bd961
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce8fbb828a5ea8df79f449d50f1d61702a4e3df2
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021645"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249918"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atributu ho.  
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání atributu nadřazené položky (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak přejít na nadřazený prvek a najít atribut.  
   
  Výraz XPath je:  
   
  `../@id`  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu nejprve vyhledá `Author` elementu. Následně vyhledá `id` atributu nadřazeného elementu.  
+ Tento příklad nejprve vyhledá prvek `Author`. Pak nalezne atribut `id` nadřazeného elementu.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```vb  
 Dim books As XDocument = XDocument.Load("Books.xml")  
@@ -42,11 +42,11 @@ Console.WriteLine(att1)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 Results are identical  
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
-- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

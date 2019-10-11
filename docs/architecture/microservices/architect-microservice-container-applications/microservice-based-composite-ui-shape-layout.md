@@ -2,16 +2,16 @@
 title: Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách
 description: Architektura mikroslužeb není jenom pro back-end. Získejte náhled při jeho použití v front-endu.
 ms.date: 09/20/2018
-ms.openlocfilehash: 60e0e6d59738f3f1fec31226cb842ceb1af303e4
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1861d3bb6e5d4a0226aa8f3f72a2e0d3e83be56f
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834378"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275738"
 ---
 # <a name="creating-composite-ui-based-on-microservices"></a>Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách
 
-Architektura mikroslužeb často začíná daty a logikou zpracování na straně serveru. Pokročilejší přístup je však navrhnout vlastní uživatelské rozhraní aplikace založené na mikroslužbách. To znamená, že mají složené uživatelské rozhraní vytvořené mikroslužbami, místo abyste měli mikroslužby na serveru a jenom klientská aplikace monolitické využívající mikroslužby. S tímto přístupem můžete mikroslužby, které sestavíte, dokončit jak pomocí logiky, tak i vizuální reprezentace.
+Architektura mikroslužeb často začíná zpracováním dat a logiky na straně serveru, ale v mnoha případech se uživatelské rozhraní pořád zpracovává jako monolitu. Pokročilejší přístup označovaný jako [mikro-endy](https://martinfowler.com/articles/micro-frontends.html)je však navrhovat uživatelské rozhraní aplikace založené i na mikroslužbách. To znamená, že mají složené uživatelské rozhraní vytvořené mikroslužbami, místo abyste měli mikroslužby na serveru a jenom klientská aplikace monolitické využívající mikroslužby. S tímto přístupem můžete mikroslužby, které sestavíte, dokončit jak pomocí logiky, tak i vizuální reprezentace.
 
 Obrázek 4-20 ukazuje jednodušší přístup pouze k náročným mikroslužbám z klientské aplikace monolitické. Samozřejmě můžete mít ASP.NET službu MVC mezi vytvářením kódu HTML a JavaScriptu. Obrázek je zjednodušený, který zdůrazňuje, že máte jedno (monolitické) klientské uživatelské rozhraní náročné na mikroslužby, které se zaměřují jenom na logiku a data, a ne na tvar uživatelského rozhraní (HTML a JavaScript).
 
@@ -37,22 +37,29 @@ Ukázková aplikace [eShopOnContainers](https://aka.ms/MicroservicesArchitecture
 
 Doporučujeme vám ale použít následující odkazy na Další informace o složeném uživatelském rozhraní založeném na mikroslužbách.
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další zdroje
 
-- **Složené uživatelské rozhraní využívající ASP.NET (konkrétně pro workshop)**  \
+- **Mikroslužby na front-endy (blog Novák Fowlera)**  
+  <https://martinfowler.com/articles/micro-frontends.html>
+  
+- **Micro front-endu (Michael Geers Web)**  
+  <https://micro-frontends.org/>
+  
+- **Složené uživatelské rozhraní využívající ASP.NET (konkrétně Workshop)**  
   <https://github.com/Particular/Workshop/tree/master/demos/asp-net-core>
 
-- **Ruben Oostinga. Monolitické front-endové architektury mikroslužeb** \
+- **Ruben Oostinga. Monolitické front-endové architektury mikroslužeb**  
   <https://xebia.com/blog/the-monolithic-frontend-in-the-microservices-architecture/>
 
-- **Mauro Servienti. Tajný kód lepšího složení uživatelského rozhraní** \
+- **Mauro Servienti. Tajný kód lepšího složení uživatelského rozhraní**  
   <https://particular.net/blog/secret-of-better-ui-composition>
 
-- **Viktor Farcic. Zahrnutí front-endové webových součástí do mikroslužeb** \
+- **Viktor Farcic. Zahrnutí front-endové webových součástí do mikroslužeb**  
   <https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/>
 
-- **Správa front-endu v architektuře mikroslužeb** \
+- **Správa front-endu v architektuře mikroslužeb**  
   <https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html>
 
 >[!div class="step-by-step"]
->[Předchozí](microservices-addressability-service-registry.md)@no__t – 1 –[Další](resilient-high-availability-microservices.md)
+>[Předchozí](microservices-addressability-service-registry.md)
+>[Další](resilient-high-availability-microservices.md)

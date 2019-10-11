@@ -4,18 +4,18 @@ description: Glosář důležitých termínů strojového učení, které jsou u
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: 4d4bb80c6582facbcb11664309fde230bcfa4e7b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cb5681f1f72776ec9a8cbcfe45519befe02b8caf
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929271"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180176"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glosář strojového učení s důležitými podmínkami
 
 Následující seznam je kompilace důležitých podmínek strojového učení, které jsou užitečné při sestavování vlastních modelů v ML.NET.
 
-## <a name="accuracy"></a>údajů
+## <a name="accuracy"></a>Údajů
 
 V [klasifikaci](#classification)je přesnost počet správně klasifikovaných položek dělený celkovým počtem položek v sadě testů. Rozsahy od 0 (nejméně přesný) po 1 (nejpřesnější). Přesnost je jednou ze zkušebních metrik výkonu modelu. Zvažte, jestli je ve spojení s [přesností](#precision), [odvoláním](#recall)a [F-skore](#f-score).
 
@@ -29,7 +29,7 @@ Případ [klasifikace](#classification) , kde [popisek](#label) je pouze jeden z
 
 ## <a name="calibration"></a>Kalibrac
 
-Kalibrace je proces mapování nezpracovaného skóre na členství ve třídě pro binární a více třídové klasifikace. Některé ml.NET školitele mají `NonCalibrated` příponu. Tyto algoritmy vytvoří nezpracované skóre, které pak musí být namapovány na pravděpodobnost třídy. 
+Kalibrace je proces mapování nezpracovaného skóre na členství ve třídě pro binární a více třídové klasifikace. Některé ML.NET školitele mají příponu `NonCalibrated`. Tyto algoritmy vytvoří nezpracované skóre, které pak musí být namapovány na pravděpodobnost třídy. 
 
 ## <a name="catalog"></a>Katalog 
 
@@ -37,7 +37,7 @@ Katalog je v ML.NET kolekce funkcí rozšíření, které se seskupují podle sp
 
 Každý úkol strojového učení (binární klasifikace, regrese, řazení atd.) má například katalog dostupných algoritmů strojového učení (školitele). Katalog školitele binární klasifikace je: <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>Klasifikace
+## <a name="classification"></a>Classification
 
 Když se data použijí pro předpověď kategorie, je [pod dohledem úlohy strojového učení](#supervised-machine-learning) označována jako klasifikace. [Binární klasifikace](#binary-classification) odkazuje na předpověď pouze dvou kategorií (například klasifikaci obrázku jako obrázku "Cat" nebo "pes"). [Klasifikace s více třídami](#multiclass-classification) odkazuje na předpověď více kategorií (například při klasifikaci obrázku jako obrázku konkrétního druhu pes).
 
@@ -47,7 +47,7 @@ V [regresi](#regression)je vyhodnocena metrika, která indikuje, jak dobře data
 
 ## <a name="data"></a>Data
 
-Data jsou centrálně k libovolné aplikaci strojového učení. V ml.NET data jsou reprezentována <xref:Microsoft.ML.IDataView> objekty. Objekty zobrazení dat:
+Data jsou centrálně k libovolné aplikaci strojového učení. V ML.NET data jsou představovány objekty <xref:Microsoft.ML.IDataView>. Objekty zobrazení dat:
 
 - jsou tvořeny sloupci a řádky
 - jsou vyhodnoceny jako laxně vytvářená, které načítají data pouze při volání operace.
@@ -55,13 +55,13 @@ Data jsou centrálně k libovolné aplikaci strojového učení. V ml.NET data j
 
 ## <a name="estimator"></a>Estimator
 
-Třída v ml.NET, která implementuje <xref:Microsoft.ML.IEstimator%601> rozhraní.
+Třída v ML.NET, která implementuje rozhraní <xref:Microsoft.ML.IEstimator%601>.
 
-Estimator je specifikace transformace (transformace přípravy dat i převod výuky modelů strojového učení). Odhady se dají zřetězit dohromady do kanálu transformací. Parametry Estimator nebo kanálu odhady se označují při <xref:Microsoft.ML.IEstimator`1.Fit*> volání metody. Výsledkem <xref:Microsoft.ML.IEstimator`1.Fit*> je [transformátor](#transformer).
+Estimator je specifikace transformace (transformace přípravy dat i převod výuky modelů strojového učení). Odhady se dají zřetězit dohromady do kanálu transformací. Parametry Estimator nebo odhady kanálu se označují při volání <xref:Microsoft.ML.IEstimator`1.Fit*>. Výsledkem <xref:Microsoft.ML.IEstimator`1.Fit*> je [transformátor](#transformer).
 
 ## <a name="extension-method"></a>Metoda rozšíření
 
-Metoda .NET, která je součástí třídy, ale je definována mimo třídu. První parametr metody rozšíření je statický `this` odkaz na třídu, do které patří rozšiřující metoda.
+Metoda .NET, která je součástí třídy, ale je definována mimo třídu. První parametr rozšiřující metody je statický odkaz `this` na třídu, do které patří rozšiřující metoda.
 
 Metody rozšíření jsou v ML.NET používány rozsáhle k vytváření instancí [odhady](#estimator).
 
@@ -81,7 +81,7 @@ V [klasifikaci](#classification)je metrika vyhodnocení, která vyvažuje [přes
 
 Parametr algoritmu strojového učení. Příklady zahrnují počet stromů, které se naučí v doménové struktuře rozhodnutí nebo velikost kroku v algoritmu prostupného přechodu. Hodnoty *parametrů* jsou nastaveny před školením modelu a řízení procesu hledání parametrů funkce předpovědi, například porovnávacích bodů v rozhodovacím stromu nebo závaží v modelu lineární regrese. Další informace najdete [v článku na](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) Wikipedii.
 
-## <a name="label"></a>Popisek
+## <a name="label"></a>Štítek
 
 Prvek, který má být předpovězen modelu Machine Learning. Například druh psa nebo budoucí cena za zásobu.
 
@@ -117,17 +117,17 @@ Normalizace je proces škálování dat s plovoucí desetinnou čárkou na hodno
 
 ## <a name="numerical-feature-vector"></a>Vektor číselné funkce
 
-Vektor [funkce](#feature) skládající se pouze z číselných hodnot. To je podobné `double[]`.
+Vektor [funkce](#feature) skládající se pouze z číselných hodnot. To se podobá `double[]`.
 
 ## <a name="pipeline"></a>Kanál
 
 Všechny operace potřebné k přizpůsobení modelu datové sadě. Kanál se skládá z kroků importu, transformace, featurization a učení dat. Jakmile je kanál vyškolen, změní se na model.
 
-## <a name="precision"></a>Přesnost
+## <a name="precision"></a>Číslic
 
 V [klasifikaci](#classification), přesnost pro třídu je počet položek, které byly správně předpovězeny, jako patřící do této třídy dělené celkovým počtem položek, které byly předpovězeny jako patřící do třídy.
 
-## <a name="recall"></a>Svolat
+## <a name="recall"></a>Hled
 
 V [klasifikaci](#classification)je odvolání pro třídu počet položek, které byly správně předpovězeny, jako patřící do této třídy, dělený celkovým počtem položek, které skutečně patří do třídy.
 
@@ -136,9 +136,9 @@ V [klasifikaci](#classification)je odvolání pro třídu počet položek, kter�
  Pravidelný postih je lineárním modelem, který je příliš složitý. Existují dva typy pravidelnosti:
 
 - $L _1 $ regularing pro nevýznamné funkce vynulová váhy. Velikost uloženého modelu může být po tomto typu depravidelnosti menší.
-- Pravidelná na$L _2 $ minimalizuje rozsah váhy pro nevýznamné funkce, jedná se o obecnější proces a méně citlivá na odlehlé hodnoty.
+- Pravidelná na$L _2 $ minimalizuje rozsah váhy pro nevýznamné funkce. Toto je obecnější proces a méně citlivý na odlehlé hodnoty.
 
-## <a name="regression"></a>Regrese
+## <a name="regression"></a>Nevýhody
 
 Úkol [strojového učení pod dohledem](#supervised-machine-learning) , kde výstup je skutečná hodnota, například Double. Mezi příklady patří předpověď cen akcií. Další informace najdete v části [regrese](tasks.md#regression) v tématu [úlohy strojového učení](tasks.md) .
 
@@ -168,9 +168,9 @@ Proces identifikace [modelu](#model) pro danou sadu dat školení. Pro lineárn�
 
 ## <a name="transformer"></a>Transformer
 
-Třída ml.NET, která implementuje <xref:Microsoft.ML.ITransformer> rozhraní.
+Třída ML.NET, která implementuje rozhraní <xref:Microsoft.ML.ITransformer>.
 
-Transformátor transformuje jeden <xref:Microsoft.ML.IDataView> do jiného. Transformátor se vytvoří prostřednictvím školení [Estimator](#estimator)nebo kanálu Estimator. 
+Transformátor transformuje jednu <xref:Microsoft.ML.IDataView> do druhé. Transformátor se vytvoří prostřednictvím školení [Estimator](#estimator)nebo kanálu Estimator. 
 
 ## <a name="unsupervised-machine-learning"></a>Strojové učení bez dohledu
 

@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: Serializace a deserializace dat protokolu JSON'
+title: 'Postupy: Použití DataContractJsonSerializer'
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: 0bebdbb3d74d58db093c4ec1e0e88138c7080335
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5e521621dd3ec8e82a860590e66c1c4da95fd3b8
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947900"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180224"
 ---
-# <a name="how-to-serialize-and-deserialize-json-data"></a>Postupy: Serializace a deserializace dat JSON
+# <a name="how-to-use-datacontractjsonserializer"></a>Postupy: Použití DataContractJsonSerializer
 JSON (JavaScript Object Notation) je efektivní formát kódování dat, který umožňuje rychlé výměny malých objemů dat mezi klientskými prohlížeči a webovými službami s podporou AJAX.  
   
- Tento článek ukazuje, jak serializovat objekty typu .NET do dat zakódovaných ve formátu JSON a potom deserializovat data ve formátu JSON zpátky do instancí typů .NET. V tomto příkladu se používá kontrakt dat k předvedení serializace a deserializace uživatelsky `Person` definovaného typu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>a použití.  
+ Tento článek ukazuje, jak serializovat objekty typu .NET do dat zakódovaných ve formátu JSON a potom deserializovat data ve formátu JSON zpátky do instancí typů .NET. V tomto příkladu se používá kontrakt dat k předvedení serializace a deserializace uživatelsky definovaného typu `Person` a používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
- V normálním případě je serializace a deserializace JSON zpracovávána automaticky Windows Communication Foundation (WCF) při použití typů kontraktů dat v operacích služby, které jsou zpřístupněny přes koncové body s povoleným AJAX. V některých případech ale možná budete potřebovat přímo pracovat s daty JSON.   
-  
+ V normálním případě je serializace a deserializace JSON zpracovávána automaticky Windows Communication Foundation (WCF) při použití typů kontraktů dat v operacích služby, které jsou zpřístupněny přes koncové body s povoleným AJAX. V některých případech ale možná budete potřebovat přímo pracovat s daty JSON.
+
 > [!NOTE]
-> Pokud dojde k chybě během serializace odchozí odpovědi na serveru nebo z jiného důvodu, nemusí se klientovi vrátit jako chyba.  
+> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme použít nástroje v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md). 
   
- Tento článek je založen na ukázce [serializace JSON](../samples/json-serialization.md) .  
+ Tento článek je založený na [ukázce DataContractJsonSerializer](../samples/json-serialization.md).  
   
 ## <a name="to-define-the-data-contract-for-a-person-type"></a>Definování kontraktu dat pro typ osoby 
   
-1. Definujte kontrakt dat pro `Person` tím, že připojíte <xref:System.Runtime.Serialization.DataContractAttribute> třídu a <xref:System.Runtime.Serialization.DataMemberAttribute> k atributu členům, které chcete serializovat. Další informace o kontraktech dat najdete v tématu [Navrhování kontraktů služeb](../designing-service-contracts.md).  
+1. Definujte kontrakt dat pro `Person` tím, že <xref:System.Runtime.Serialization.DataContractAttribute> připojíte k třídě a atributu <xref:System.Runtime.Serialization.DataMemberAttribute> členům, které chcete serializovat. Další informace o kontraktech dat najdete v tématu [Navrhování kontraktů služeb](../designing-service-contracts.md).  
   
     ```csharp  
     [DataContract]  
@@ -39,7 +39,10 @@ JSON (JavaScript Object Notation) je efektivní formát kódování dat, který 
   
 ## <a name="to-serialize-an-instance-of-type-person-to-json"></a>Serializace instance typu Person do formátu JSON  
   
-1. Vytvořte instanci `Person` typu.  
+> [!NOTE]
+> Pokud dojde k chybě během serializace odchozí odpovědi na serveru nebo z jiného důvodu, nemusí se klientovi vrátit jako chyba.  
+
+1. Vytvoří instanci typu `Person`.  
   
     ```csharp  
     var p = new Person();  
@@ -47,14 +50,14 @@ JSON (JavaScript Object Notation) je efektivní formát kódování dat, který 
     p.age = 42;  
     ```  
   
-2. Serializace <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>objektu do paměťového proudu pomocí. `Person`  
+2. Serializace objektu `Person` do paměťového proudu pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
     ```csharp  
     var stream1 = new MemoryStream();  
     var ser = new DataContractJsonSerializer(typeof(Person));  
     ```  
   
-3. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> Použijte metodu pro zápis dat JSON do datového proudu.  
+3. K zápisu dat JSON do datového proudu použijte metodu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>.  
   
     ```csharp  
     ser.WriteObject(stream1, p);  
@@ -71,7 +74,7 @@ JSON (JavaScript Object Notation) je efektivní formát kódování dat, který 
   
 ## <a name="to-deserialize-an-instance-of-type-person-from-json"></a>Deserializace instance typu person z formátu JSON  
   
-1. Deserializace dat zakódovaných ve formátu JSON do nové `Person` instance <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> pomocí metody <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+1. Deserializace dat zakódovaných ve formátu JSON do nové instance `Person` pomocí metody <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
     ```csharp  
     stream1.Position = 0;  
@@ -137,5 +140,5 @@ public class TestDuplicateDataDerived : TestDuplicateDataBase
   
 ## <a name="see-also"></a>Viz také:
 
-- [Samostatná serializace JSON](stand-alone-json-serialization.md)
-- [Podpora JSON a dalších formátů přenosu dat](support-for-json-and-other-data-transfer-formats.md)
+- [Serializace JSON v .NET](../../../standard/serialization/system-text-json-overview.md)
+

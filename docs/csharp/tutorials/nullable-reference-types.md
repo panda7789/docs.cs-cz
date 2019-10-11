@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 914a1eeee2d3d1843bf597f94761e39d16331b5c
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: beecab2be57367dc0a200ff4f6067549cf1e7c51
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956651"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179782"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Seznámení s typem s možnou hodnotou null a odkazy, které neumožňují hodnotu null, je jasné.
 
@@ -25,7 +25,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici v rámci sady [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici v rámci sady [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
 
@@ -37,7 +37,7 @@ Kód, který zapíšete pro tuto ukázku, tento záměr vyjádří a kompilátor
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Vytvoření aplikace a povolení typů odkazů s možnou hodnotou null
 
-Vytvořte novou konzolovou aplikaci buď v aplikaci Visual Studio, nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace budete muset určit, že se celý projekt zkompiluje v **kontextu anotace s hodnotou null**`enabled`. Otevřete soubor `csproj` a přidejte prvek `Nullable` do prvku `PropertyGroup`. Nastavte jeho hodnotu na `enabled`. Je nutné, abyste se přihlásili k funkci **typů odkazů s možnou hodnotou null** i v C# 8 projektech. To je proto, že když je funkce zapnutá, existující deklarace referenčních proměnných se stanou odkazy, které neumožňují **hodnotu null**. I když toto rozhodnutí pomůže najít problémy, kdy existující kód nemusí mít správné kontroly hodnoty null, nemusí přesně odrážet původní záměr návrhu:
+Vytvořte novou konzolovou aplikaci buď v aplikaci Visual Studio, nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace budete muset určit, že se celý projekt zkompiluje v povoleném **kontextu anotace s možnou hodnotou null**. Otevřete soubor *. csproj* a přidejte `Nullable` prvku do prvku `PropertyGroup`. Nastavte jeho hodnotu na `enable`. Je nutné, abyste se přihlásili k funkci **typů odkazů s možnou hodnotou null** , i v C# projektech 8,0. To je proto, že když je funkce zapnutá, existující deklarace referenčních proměnných se stanou odkazy, které neumožňují **hodnotu null**. I když toto rozhodnutí pomůže najít problémy, kdy existující kód nemusí mít správné kontroly hodnoty null, nemusí přesně odrážet původní záměr návrhu:
 
 ```xml
 <Nullable>enable</Nullable>
@@ -84,7 +84,7 @@ namespace NullableIntroduction
 }
 ```
 
-Kompilátor interpretuje každou deklaraci proměnné typu odkazu jako typ odkazu, **který nepovoluje hodnotu null** , pro kód v povoleném kontextu s povolenou hodnotou null. Můžete se podívat na vaše první upozornění přidáním vlastností textu otázky a typu otázky, jak je znázorněno v následujícím kódu:
+Kompilátor interpretuje každou deklaraci proměnné typu odkazu jako typ odkazu, **který nepovoluje hodnotu null** , pro kód v aktivovaném kontextu anotace s možnou hodnotou null. Můžete se podívat na vaše první upozornění přidáním vlastností textu otázky a typu otázky, jak je znázorněno v následujícím kódu:
 
 ```csharp
 namespace NullableIntroduction
@@ -134,7 +134,7 @@ V editoru přepněte na *program.cs* a nahraďte obsah `Main` následujícími �
 
 [!code-csharp[AddQuestions](~/samples/csharp/NullableIntroduction/NullableIntroduction/Program.cs#AddQuestions)]
 
-Vzhledem k tomu, že celý projekt je v povoleném kontextu s povolenou hodnotou null, zobrazí se upozornění při předání `null` do jakékoli metody, která očekává typ odkazu, který neumožňuje hodnotu null. Zkuste to přidáním následujícího řádku do `Main`:
+Vzhledem k tomu, že celý projekt je v povoleném kontextu anotace s možnou hodnotou null, zobrazí se upozornění při předání `null` do jakékoli metody, která očekává typ odkazu, který neumožňuje hodnotu null. Zkuste to přidáním následujícího řádku do `Main`:
 
 ```csharp
 surveyRun.AddQuestion(QuestionType.Text, default);

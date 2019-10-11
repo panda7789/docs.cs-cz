@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: ace8c644fd5aa13e29961b7eb44e923556571c75
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 18c8d566c3b79c131a3d031e5bdf3b37996d9115
+ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834263"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72031848"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -213,7 +213,7 @@ Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System
 
 - Statická metoda <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> vyplní hodnotu <xref:System.Span%601> s náhodnými hodnotami.
 
-- @No__t-0 se teď podporuje v systémech Linux a maxOS.
+- @No__t-0 se teď podporuje v systémech Linux a macOS.
 
 - Eliptická Vlnová hodnota Diffie-Hellman (ECDH) je teď dostupná v rodině tříd <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType>. Oblast Surface je stejná jako v .NET Framework.
 

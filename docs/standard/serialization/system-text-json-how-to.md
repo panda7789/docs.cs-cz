@@ -1,5 +1,5 @@
 ---
-title: Postup serializace JSON-.NET
+title: Postup serializace a deserializace JSON C# pomocí-.NET
 author: tdykstra
 ms.author: tdykstra
 ms.date: 09/16/2019
@@ -8,34 +8,34 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 8ccd7afe4abb928e7723aa740507774012fc85d1
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 3c988a0151f57b67db19f41aeb88c6fb9b808cb3
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083100"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179204"
 ---
-# <a name="how-to-serialize-json-in-net"></a>Postup serializace JSON v .NET
+# <a name="how-to-serialize-and-deserialize-json-in-net"></a>Postup serializace a deserializace JSON v rozhraní .NET
 
 > [!IMPORTANT]
 > Dokumentace serializace JSON je vytvářena. Tento článek se nezabývá všemi scénáři. Další informace najdete v části [System. text. JSON – problémy](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) v úložišti dotnet/Corefx na GitHubu, zejména ty, které jsou označené jako [JSON-funkce-doc](https://github.com/dotnet/corefx/labels/json-functionality-doc).
 
-Tento článek ukazuje, jak použít <xref:System.Text.Json> obor názvů k serializaci a deserializaci do a z JavaScript Object Notation (JSON). Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím rozhraní, jako je například [ASP.NET Core](/aspnet/core/).
+Tento článek ukazuje, jak použít obor názvů <xref:System.Text.Json> k serializaci a deserializaci do a z JavaScript Object Notation (JSON). Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím rozhraní, jako je například [ASP.NET Core](/aspnet/core/).
 
 ## <a name="namespaces"></a>Jmenné prostory
 
-<xref:System.Text.Json> Obor názvů obsahuje všechny vstupní body a hlavní typy. <xref:System.Text.Json.Serialization> Obor názvů obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Proto příklady kódu, které jsou uvedeny v tomto článku, vyžadují jednu nebo obě následující `using` direktivy:
+Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy. Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Proto příklady kódu, které jsou uvedeny v tomto článku, vyžadují jednu nebo obě následující direktivy `using`:
 
 ```csharp
 using System.Text.Json;
 using System.Text.Json.Serialization;
 ```
 
-Atributy z oboru <xref:System.Runtime.Serialization> názvů se v `System.Text.Json`současné době nepodporují.
+Atributy z oboru názvů <xref:System.Runtime.Serialization> nejsou v současné době podporovány v `System.Text.Json`.
 
 ## <a name="how-to-write-net-objects-to-json-serialize"></a>Zápis objektů .NET do formátu JSON (serializace)
 
-Chcete-li zapsat JSON do řetězce, zavolejte <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> metodu. Následující příklad používá přetížení s parametrem obecného typu:
+Chcete-li zapsat JSON do řetězce, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType>. Následující příklad používá přetížení s parametrem obecného typu:
 
 ```csharp
 WeatherForecast weatherForecast;
@@ -119,17 +119,17 @@ Následující příklad ukazuje stejný formát JSON (to znamená, že je pomě
 }
 ```
 
-Přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> umožňují serializovat <xref:System.IO.Stream>na. Jsou k dispozici `Stream` asynchronní verze přetížení.
+Přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> vám umožní serializovat na <xref:System.IO.Stream>. Jsou k dispozici asynchronní verze `Stream` přetížení.
 
 ### <a name="serialize-to-utf-8"></a>Serializovat do UTF-8
 
-Pro serializaci do UTF-8 volejte <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType> metodu:
+Pro serializaci do UTF-8 volejte metodu <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType>:
 
 ```csharp
 byte[] utf8Json = JsonSerializer.SerializeToUtf8Bytes<WeatherForecast>(weatherForecast);
 ```
 
-Alternativně <xref:System.Text.Json.JsonSerializer.Serialize%2A> <xref:System.Text.Json.Utf8JsonWriter> je k dispozici přetížení, které přijímá.
+Alternativně je k dispozici přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které přijímá <xref:System.Text.Json.Utf8JsonWriter>.
 
 Serializace do UTF-8 je přibližně 5-10% rychlejší než použití metod založených na řetězci. Rozdíl je z důvodu, že bajty (jako UTF-8) není nutné převést na řetězce (UTF-16).
 
@@ -147,7 +147,7 @@ Mezi podporované typy patří:
 * Primitivní prvky .NET, které se mapují na primitivní prvky JavaScriptu, jako jsou číselné typy, řetězce a logická hodnota.
 * Uživatelsky definované [prosté staré objekty CLR (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).
 * Jednorozměrné a vícenásobná pole (`ArrayName[][]`).
-* `Dictionary<string,TValue>`Where `TValue` je `object` ,`JsonElement`nebo POCO.
+* `Dictionary<string,TValue>`, kde `TValue` je `object`, `JsonElement` nebo POCO.
 * Kolekce z následujících oborů názvů. Další informace najdete v tématu věnovaném [problému s podporou shromažďování](https://github.com/dotnet/corefx/issues/36643) v úložišti dotnet/Corefx na GitHubu.
   * <xref:System.Collections>
   * <xref:System.Collections.Generic>
@@ -155,7 +155,7 @@ Mezi podporované typy patří:
 
 ## <a name="how-to-read-json-into-net-objects-deserialize"></a>Postup čtení formátu JSON do objektů .NET (deserializace)
 
-Chcete-li provést deserializaci z řetězce <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> , zavolejte metodu, jak je znázorněno v následujícím příkladu:
+Chcete-li provést deserializaci z řetězce, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 string json = ... ;
@@ -165,11 +165,11 @@ var weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(json);
 
 Příklad naleznete v části [serializovat](#how-to-write-net-objects-to-json-serialize) . Objekt JSON a objekt .NET jsou stejné, ale směr je obrácený.
 
-Přetížení <xref:System.Text.Json.JsonSerializer.Deserialize*> umožňují deserializovat `Stream`z.  Jsou k dispozici `Stream` asynchronní verze přetížení.
+Přetížení <xref:System.Text.Json.JsonSerializer.Deserialize*> umožňuje deserializaci z `Stream`.  Jsou k dispozici asynchronní verze `Stream` přetížení.
 
 ### <a name="deserialize-from-utf-8"></a>Deserializace ze znakové sady UTF-8
 
-Chcete-li deserializovat ze znakové sady UTF- <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> 8, zavolejte přetížení `Utf8JsonReader` , které `ReadOnlySpan<byte>`přijímá nebo, jak je znázorněno v následujících příkladech:
+Chcete-li provést deserializaci ze znakové sady UTF-8, zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>, které přebírá `Utf8JsonReader` nebo `ReadOnlySpan<byte>`, jak je znázorněno v následujících příkladech:
 
 ```csharp
 byte[] utf8Json;
@@ -198,7 +198,7 @@ weatherForecast = JsonSerializer.Deserialize<WeatherForecastMin>(ref utf8Reader)
 
 ## <a name="serialize-to-formatted-json"></a>Serializovat do formátovaného formátu JSON
 
-Pro poměrně vytisknutí výstupu JSON nastavte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> na: `true`
+Chcete-li, aby výstup JSON byl poměrně vytištěn, nastavte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> na `true`:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -229,7 +229,7 @@ class WeatherForecast
 
 ## <a name="allow-comments-and-trailing-commas"></a>Povolí komentáře a koncové čárky.
 
-Výchozí komentáře a koncové čárky nejsou ve formátu JSON povoleny. Chcete-li ve formátu JSON dovolit komentáře, <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> nastavte vlastnost `JsonCommentHandling.Skip`na hodnotu. A chcete-li použít koncové čárky, nastavte <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> vlastnost na `true`hodnotu. Následující příklad ukazuje, jak je možné:
+Výchozí komentáře a koncové čárky nejsou ve formátu JSON povoleny. Chcete-li ve formátu JSON dovolit komentáře, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> na hodnotu `JsonCommentHandling.Skip`. A pokud chcete koncovým čárkám povolený, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> na hodnotu `true`. Následující příklad ukazuje, jak je možné:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -329,11 +329,11 @@ class WeatherForecast
 Zásada pro pojmenování vlastností případu ve stylu CamelCase:
 
 * Platí pro serializaci a deserializaci.
-* Je potlačen `[JsonPropertyName]` atributy.
+* Je přepsán pomocí atributů `[JsonPropertyName]`.
 
 ### <a name="use-a-custom-json-property-naming-policy"></a>Použít vlastní zásady pojmenování vlastností JSON
 
-Chcete-li použít vlastní zásadu pojmenovávání vlastností JSON, vytvořte třídu, která <xref:System.Text.Json.JsonNamingPolicy> je odvozena <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A> z třídy, a přepište metodu, jak je znázorněno v následujícím příkladu:
+Chcete-li použít vlastní zásadu pojmenovávání vlastností JSON, vytvořte třídu, která je odvozena z <xref:System.Text.Json.JsonNamingPolicy> a přepište metodu <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A>, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 class UpperCaseNamingPolicy : JsonNamingPolicy
@@ -345,7 +345,7 @@ class UpperCaseNamingPolicy : JsonNamingPolicy
 }
 ```
 
-Pak nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> vlastnost na instanci třídy zásad pojmenování:
+Pak nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na instanci třídy zásad pojmenování:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -380,11 +380,11 @@ class WeatherForecast
 Zásady pojmenování vlastností JSON:
 
 * Platí pro serializaci a deserializaci.
-* Je potlačen `[JsonPropertyName]` atributy.
+* Je přepsán pomocí atributů `[JsonPropertyName]`.
 
 ### <a name="camel-case-dictionary-keys"></a>Klíče slovníku případů ve stylu CamelCase
 
-Pokud je vlastnost objektu `Dictionary<string,TValue>` `string` , který má být serializován, typu, lze klíče převést na ve stylu CamelCase případ. To provedete tak <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> , `JsonNamingPolicy.CamelCase`že nastavíte na, jak je znázorněno v následujícím příkladu:
+Pokud je vlastnost objektu, která má být serializována, typu `Dictionary<string,TValue>`, klíče `string` lze převést na ve stylu CamelCase případ. To provedete tak, že nastavíte <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> na `JsonNamingPolicy.CamelCase`, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -396,10 +396,10 @@ json = JsonSerializer.Serialize(weatherForecast, options);
 
 Zde je příklad objektu pro serializaci a výstup JSON:
 
-|Vlastnost |Value  |
+|Vlastnost |Hodnota  |
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
-| TemperatureC| 25 |
+| TemperatureC| 0,25 |
 | Souhrn| Provozu|
 | TemperatureRanges | Studená, 20<br>Horká, 40|
 
@@ -452,7 +452,7 @@ class WeatherForecast
 
 ### <a name="exclude-all-read-only-properties"></a>Vyloučit všechny vlastnosti jen pro čtení
 
-Chcete-li vyloučit všechny vlastnosti jen pro čtení, <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> nastavte `true`na, jak je znázorněno v následujícím příkladu:
+Chcete-li vyloučit všechny vlastnosti jen pro čtení, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> na `true`, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -486,7 +486,7 @@ Tato možnost se vztahuje pouze na serializaci. Během deserializace jsou vlastn
 
 ### <a name="exclude-all-null-value-properties"></a>Vyloučit všechny vlastnosti hodnoty null
 
-Chcete-li vyloučit všechny vlastnosti hodnoty null, <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> nastavte vlastnost `true`na hodnotu, jak je znázorněno v následujícím příkladu:
+Chcete-li vyloučit všechny vlastnosti hodnoty null, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> na hodnotu `true`, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -498,10 +498,10 @@ json = JsonSerializer.Serialize(weatherForecast, options);
 
 Zde je příklad objektu pro serializaci a výstup JSON:
 
-|Vlastnost |Value  |
+|Vlastnost |Hodnota  |
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
-| TemperatureC| 25 |
+| TemperatureC| 0,25 |
 | Souhrn| null|
 
 ```json
@@ -515,7 +515,7 @@ Toto nastavení platí pro serializaci a deserializaci. Během deserializace jso
 
 ## <a name="case-insensitive-property-matching"></a>Porovnávání vlastností bez rozlišení velkých a malých písmen
 
-Ve výchozím nastavení deserializace hledá název vlastnosti rozlišující velká a malá písmena mezi vlastnostmi JSON a cílovým objektem. Chcete-li toto chování změnit, <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> nastavte `true`na:
+Ve výchozím nastavení deserializace hledá název vlastnosti rozlišující velká a malá písmena mezi vlastnostmi JSON a cílovým objektem. Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> na `true`:
 
 ```csharp
 var options = new JsonSerializerOptions
@@ -546,7 +546,7 @@ class WeatherForecast
 
 ## <a name="include-properties-of-derived-classes"></a>Zahrnout vlastnosti odvozených tříd
 
-Polymorfní serializace není podporována, pokud zadáte v době kompilace typ, který se má serializovat. Předpokládejme například, že máte `WeatherForecast` třídu a odvozenou třídu: `WeatherForecastWithWind`
+Polymorfní serializace není podporována, pokud zadáte v době kompilace typ, který se má serializovat. Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastWithWind`:
 
 ```csharp
 class WeatherForecast
@@ -561,7 +561,7 @@ class WeatherForecastWithWind : WeatherForecast
 }
 ```
 
-A Předpokládejme, že typ předaný do nebo odvozený `Serialize` je metoda v `WeatherForecast`době kompilace:
+A Předpokládejme, že typ předaný do nebo odvozený je metoda `Serialize` v době kompilace `WeatherForecast`:
 
 ```csharp
 string json = JsonSerializer.Serialize<WeatherForecast>(weatherForecast);
@@ -573,7 +573,7 @@ WeatherForecast weatherForecast;
 json = JsonSerializer.Serialize(weatherForecast);
 ```
 
-V tomto scénáři není `WindSpeed` Vlastnost serializována i v `weatherForecast` případě, že objekt je ve skutečnosti `WeatherForecastWithWind` objekt. Serializovat se budou jenom vlastnosti základní třídy:
+V tomto scénáři není vlastnost `WindSpeed` serializována, i když je objekt `weatherForecast` ve skutečnosti objekt `WeatherForecastWithWind`. Serializovat se budou jenom vlastnosti základní třídy:
 
 ```json
 {
@@ -587,19 +587,19 @@ Toto chování je určeno k tomu, aby se zabránilo náhodnému úniku dat v odv
 
 Chcete-li serializovat vlastnosti odvozeného typu, použijte jeden z následujících přístupů:
 
-* Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> , které umožňuje určit typ za běhu:
+* Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které umožňuje určit typ za běhu:
 
   ```csharp
   json = JsonSerializer.Serialize(weatherForecast, weatherForecast.GetType());
   ```
 
-* Deklarujte objekt, který se má `object`serializovat jako.
+* Deklarujte objekt, který se má serializovat jako `object`.
 
   ```csharp
   json = JsonSerializer.Serialize<object>(weatherForecast);
   ```
 
-V předchozím ukázkovém scénáři oba přístupy způsobí, že `WindSpeed` vlastnost bude obsažena ve výstupu JSON:
+V předchozím ukázkovém scénáři oba přístupy způsobí, že se vlastnost `WindSpeed` zahrne do výstupu JSON:
 
 ```json
 {
@@ -642,7 +642,7 @@ A JSON, který se má deserializovat, je:
 }
 ```
 
-Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable` vlastnosti `SummaryWords` a se nikde k přechodu a jsou ztraceny. Chcete-li zachytit další data, jako jsou tyto vlastnosti, použijte atribut [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) na vlastnost typu `Dictionary<string,object>` nebo `Dictionary<string,JsonElement>`:
+Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, vlastnosti `DatesAvailable` a `SummaryWords` mají nikde k přechodu a jsou ztraceny. Chcete-li zachytit další data, jako jsou tyto vlastnosti, použijte atribut [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) na vlastnost typu `Dictionary<string,object>` nebo `Dictionary<string,JsonElement>`:
 
 ```csharp
 class WeatherForecast
@@ -655,12 +655,12 @@ class WeatherForecast
 }
 ```
 
-Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry `ExtensionData` klíč-hodnota vlastnosti:
+Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota vlastnosti `ExtensionData`:
 
-|Vlastnost |Value  |Poznámky  |
+|Vlastnost |Hodnota  |Poznámky  |
 |---------|---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00||
-| TemperatureC| 0 | Neshoda malých a velkých`temperatureC` písmen (ve formátu JSON), takže vlastnost není nastavena. |
+| TemperatureC| 0,8 | Neshoda malých a velkých písmen (`temperatureC` ve formátu JSON), takže vlastnost není nastavená. |
 | Souhrn | Provozu ||
 | ExtensionData – | temperatureC: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
 || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
@@ -686,11 +686,11 @@ Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření
 }
 ```
 
-Všimněte si, `ExtensionData` že název vlastnosti se ve formátu JSON nezobrazuje. Díky tomuto chování může JSON vytvořit zpáteční cestu, aniž by došlo ke ztrátě dalších dat, která by jinak nebyla deserializována.
+Všimněte si, že název vlastnosti `ExtensionData` se ve formátu JSON nezobrazuje. Díky tomuto chování může JSON vytvořit zpáteční cestu, aniž by došlo ke ztrátě dalších dat, která by jinak nebyla deserializována.
 
 ## <a name="use-utf8jsonwriter-directly"></a>Použití Utf8JsonWriter přímo
 
-Následující příklad ukazuje, jak použít <xref:System.Text.Json.Utf8JsonWriter> třídu přímo.
+Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonWriter> přímo.
 
 ```csharp
 var options = new JsonWriterOptions
@@ -715,7 +715,7 @@ using (var stream = new MemoryStream())
 
 ## <a name="use-utf8jsonreader-directly"></a>Použití Utf8JsonReader přímo
 
-Následující příklad ukazuje, jak použít <xref:System.Text.Json.Utf8JsonReader> třídu přímo. Kód předpokládá, že `jsonUtf8` proměnná je bajtové pole, které obsahuje platný kód JSON kódovaný jako UTF-8.
+Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonReader> přímo. Kód předpokládá, že proměnná `jsonUtf8` je pole bajtů, které obsahuje platný kód JSON kódovaný jako UTF-8.
 
 ```csharp
 var options = new JsonReaderOptions

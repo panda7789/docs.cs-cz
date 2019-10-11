@@ -4,12 +4,12 @@ description: Naučte se vytvářet stránky v Blazor, pracovat s směrováním n
 author: danroth27
 ms.author: daroth
 ms.date: 09/19/2019
-ms.openlocfilehash: 3e0b9bc277c9b554083eec35646480fd08759080
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: c31544156250a9e97ff8c0b17338f418817b21d2
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183810"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275828"
 ---
 # <a name="pages-routing-and-layouts"></a>Stránky, směrování a rozložení
 
@@ -17,7 +17,7 @@ ms.locfileid: "71183810"
 
 Aplikace webových formulářů ASP.NET se skládají ze stránek definovaných v souborech *. aspx* . Adresa každé stránky je založena na své fyzické cestě k souboru v projektu. Když prohlížeč odešle požadavek na stránku, obsah stránky se dynamicky vykresluje na serveru. Účty vykreslování pro značky HTML stránky a její serverové ovládací prvky.
 
-V Blazor každá stránka aplikace je komponentou, která je obvykle definovaná v souboru *. Razor* s jednou nebo více zadanými trasami. Směrování většinou probíhá na straně klienta bez nutnosti zahrnutí konkrétního požadavku serveru. Prohlížeč nejprve vytvoří požadavek na kořenovou adresu aplikace. Kořenová `Router` komponenta v aplikaci Blazor pak zpracovává zachycení požadavků na navigaci a jejich správné součásti.
+V Blazor každá stránka aplikace je komponentou, která je obvykle definovaná v souboru *. Razor* s jednou nebo více zadanými trasami. Směrování většinou probíhá na straně klienta bez nutnosti zahrnutí konkrétního požadavku serveru. Prohlížeč nejprve vytvoří požadavek na kořenovou adresu aplikace. Kořenová komponenta `Router` v aplikaci Blazor zpracovává zachycené požadavky navigace a jejich správné součásti.
 
 Blazor také podporuje *přímý odkazování*. K přímému propojení dojde, když prohlížeč odešle požadavek na konkrétní trasu jinou než na kořen aplikace. Požadavky na přímé odkazy odeslané na server jsou směrovány do aplikace Blazor, která pak směruje požadavek na správnou součást klienta.
 
@@ -66,9 +66,9 @@ Ekvivalentní stránka v aplikaci Blazor by vypadala takto:
     <button @onclick="OnClick">Submit</button>
 </div>
 <div>
-    if (name != null)
+    @if (name != null)
     {
-        Hello @name
+        @:Hello @name
     }
 </div>
 
@@ -84,7 +84,7 @@ Ekvivalentní stránka v aplikaci Blazor by vypadala takto:
 
 ## <a name="create-pages"></a>Vytvořit stránky
 
-Chcete-li vytvořit stránku v Blazor, vytvořte komponentu a přidejte `@page` do ní cestu pro komponentu. `@page` Direktiva přijímá jeden parametr, který je šablonou směrování, která se má přidat do této součásti.
+Chcete-li vytvořit stránku v Blazor, vytvořte komponentu a přidejte direktivu `@page` Razor k určení trasy pro komponentu. Direktiva `@page` přijímá jeden parametr, který je šablonou směrování, která se má přidat do této součásti.
 
 ```razor
 @page "/counter"
@@ -105,7 +105,7 @@ Syntaxe šablony směrování je stejná základní syntaxe, která se použív�
 }
 ```
 
-Můžete také zadat omezení hodnoty parametru Route. Chcete-li například omezit ID produktu na `int`:
+Můžete také zadat omezení hodnoty parametru Route. Pokud například chcete omezit ID produktu na `int`:
 
 ```razor
 @page "/product/{id:int}"
@@ -122,7 +122,7 @@ Můžete také zadat omezení hodnoty parametru Route. Chcete-li například ome
 
 ## <a name="router-component"></a>Součást směrovače
 
-Směrování v Blazor je zpracováváno `Router` komponentou. Komponenta se obvykle používá v kořenové komponentě aplikace (*App. Razor*). `Router`
+Směrování v Blazor se zpracovává komponentou `Router`. Komponenta `Router` se obvykle používá v kořenové komponentě aplikace (*App. Razor*).
 
 ```razor
 <Router AppAssembly="@typeof(Program).Assembly">
@@ -137,11 +137,11 @@ Směrování v Blazor je zpracováváno `Router` komponentou. Komponenta se obvy
 </Router>
 ```
 
-Komponenta vyhledá směrovatelný komponenty v určeném `AppAssembly` a volitelně zadaném `AdditionalAssemblies`. `Router` Když prohlížeč `Router` přejde, zachytí navigaci a vykreslí obsah svého `Found` parametru s extrakcí `RouteData` , pokud trasa `NotFound` odpovídá adrese, jinak `Router` vykresluje ukazatele.
+Komponenta `Router` zjišťuje směrovatelné komponenty v zadaném `AppAssembly` a volitelně zadaném `AdditionalAssemblies`. Když prohlížeč přejde, `Router` zachycuje navigaci a vykreslí obsah svého parametru `Found` s extrahovanou `RouteData`, pokud trasa odpovídá adrese, @no__t jinak parametr-3 vykreslí svůj parametr `NotFound`.
 
-Komponenta zpracovává vykreslování odpovídající komponenty určené `RouteData` pomocí jejího rozložení, pokud má jednu z nich. `RouteView` Pokud odpovídající součást nemá rozložení, je použita volitelně zadaná `DefaultLayout` .
+Komponenta `RouteView` zpracovává vykreslování odpovídající komponenty určené `RouteData` s jeho rozložením, pokud má jednu z nich. Pokud odpovídající součást nemá rozložení, použije se volitelně zadaný `DefaultLayout`.
 
-`LayoutView` Komponenta vykreslí svůj podřízený obsah v rámci zadaného rozložení. Podrobněji se podíváme na rozložení podrobněji v této kapitole.
+Komponenta `LayoutView` vykreslí svůj podřízený obsah v rámci zadaného rozložení. Podrobněji se podíváme na rozložení podrobněji v této kapitole.
 
 ## <a name="navigation"></a>Navigace
 
@@ -156,14 +156,14 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 
 Vrácení odpovědi přesměrování není obvykle možné v Blazor. Blazor nepoužívá model požadavek-odpověď. Pomocí JavaScriptu můžete ale aktivovat navigace v prohlížeči přímo.
 
-Blazor poskytuje `NavigationManager` službu, která se dá použít k těmto akcím:
+Blazor poskytuje službu `NavigationManager`, kterou lze použít k těmto akcím:
 
 * Získat aktuální adresu prohlížeče
 * Získat základní adresu
 * Aktivovat navigační panel
 * Dostávat oznámení, když se změní adresa
 
-Chcete-li přejít na jinou adresu, použijte `NavigateTo` metodu:
+Chcete-li přejít na jinou adresu, použijte metodu `NavigateTo`:
 
 ```razor
 @page "/"
@@ -178,11 +178,11 @@ Chcete-li přejít na jinou adresu, použijte `NavigateTo` metodu:
 }
 ```
 
-Popis všech `NavigationManager` členů naleznete v tématu věnovaném [identifikátorům URI a nápovědě pro stav navigace](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers).
+Popis všech členů `NavigationManager` naleznete v tématu věnovaném [identifikátorům URI a pomocníkům pro stav navigace](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers).
 
 ## <a name="base-urls"></a>Základní adresy URL
 
-Pokud je vaše aplikace Blazor nasazená v základní cestě, je nutné zadat základní adresu URL v metadatech stránky pomocí `<base>` značky vlastnosti směrování na práci. Pokud je stránka hostitele aplikace vykreslena serverem pomocí syntaxe Razor, můžete použít `~/` syntaxi k určení základní adresy aplikace. Pokud je stránka hostitele statická HTML, je nutné explicitně zadat základní adresu URL.
+Pokud je vaše aplikace Blazor nasazená v základní cestě, musíte v metadatech stránky zadat základní adresu URL s použitím značky `<base>` pro směrování do pracovní vlastnosti. Pokud je stránka hostitele aplikace vykreslena serverem pomocí Razor, můžete pomocí syntaxe `~/` zadat základní adresu aplikace. Pokud je stránka hostitele statická HTML, je nutné explicitně zadat základní adresu URL.
 
 ```html
 <base href="~/" />
@@ -190,7 +190,7 @@ Pokud je vaše aplikace Blazor nasazená v základní cestě, je nutné zadat z�
 
 ## <a name="page-layout"></a>Rozložení stránky
 
-Rozložení stránky ve webových formulářích ASP.NET je zpracováváno pomocí stránek předlohy. Stránky předlohy definují šablonu s jedním nebo více zástupnými symboly obsahu, které lze poté zadat na jednotlivé stránky. Stránky předlohy jsou definovány v souborech *. Master* a začínají `<%@ Master %>` direktivou. Obsah souborů *. Master* je kódován jako stránka *. aspx* , ale s přidáním `<asp:ContentPlaceHolder>` ovládacích prvků k označení místa, kde mohou stránky dodávají obsah.
+Rozložení stránky ve webových formulářích ASP.NET je zpracováváno pomocí stránek předlohy. Stránky předlohy definují šablonu s jedním nebo více zástupnými symboly obsahu, které lze poté zadat na jednotlivé stránky. Stránky předlohy jsou definovány v souborech *. Master* a začínají direktivou `<%@ Master %>`. Obsah souborů *. Master* je kódován jako stránka *. aspx* , ale s přidáním ovládacích prvků `<asp:ContentPlaceHolder>` k označení místa, kde mohou stránky dodávají obsah.
 
 *Lokalita. Master*
 
@@ -220,7 +220,7 @@ Rozložení stránky ve webových formulářích ASP.NET je zpracováváno pomoc
 </html>
 ```
 
-V Blazor můžete zpracovávat rozložení stránky pomocí komponent rozložení. Komponenty rozložení dědí z `LayoutComponentBase`, který definuje jednu `Body` vlastnost typu `RenderFragment`, která se dá použít k vykreslení obsahu stránky.
+V Blazor můžete zpracovávat rozložení stránky pomocí komponent rozložení. Komponenty rozložení dědí z `LayoutComponentBase`, což definuje jednu vlastnost `Body` typu `RenderFragment`, kterou lze použít k vykreslení obsahu stránky.
 
 *MainLayout. Razor*
 
@@ -232,9 +232,9 @@ V Blazor můžete zpracovávat rozložení stránky pomocí komponent rozložen�
 </div>
 ```
 
-Při vykreslení stránky s rozložením se stránka vykreslí v rámci obsahu zadaného rozložení v umístění, kde rozložení vykreslí svou `Body` vlastnost.
+Při vykreslení stránky s rozložením se stránka vykreslí v rámci obsahu zadaného rozložení v umístění, kde rozložení vykresluje jeho vlastnost `Body`.
 
-Chcete-li použít rozložení na stránku, použijte `@layout` direktivu:
+Chcete-li použít rozložení na stránku, použijte direktivu `@layout`:
 
 ```razor
 @layout MainLayout
@@ -242,7 +242,7 @@ Chcete-li použít rozložení na stránku, použijte `@layout` direktivu:
 
 Můžete určit rozložení pro všechny součásti ve složce a podsložkách pomocí souboru *_Imports. Razor* . Můžete také zadat výchozí rozložení pro všechny stránky pomocí [součásti směrovače](#router-component).
 
-Stránky předlohy mohou definovat více zástupných symbolů obsahu, ale rozložení v Blazor mají pouze `Body` jednu vlastnost. Toto omezení součástí rozložení Blazor bude snad být řešeno v budoucí verzi.
+Stránky předlohy mohou definovat více zástupných symbolů obsahu, ale rozložení v Blazor mají pouze jednu vlastnost `Body`. Toto omezení součástí rozložení Blazor bude snad být řešeno v budoucí verzi.
 
 Stránky předlohy ve webových formulářích ASP.NET můžou být vnořené. To znamená, že stránka předlohy může také používat hlavní stránku. Komponenty rozložení v Blazor můžou být vnořené také. Komponentu rozložení můžete použít pro komponentu rozložení. Obsah vnitřního rozložení se vygeneruje v rámci vnějšího rozložení.
 
@@ -276,9 +276,9 @@ Vykreslený výstup pro stránku by pak byl:
 </div>
 ```
 
-Rozložení v Blazor obvykle nedefinují kořenové prvky HTML stránky (`<html>` `<head>`, `<body>`, a tak dále). Kořenové prvky HTML jsou místo toho definovány na stránce hostitele aplikace v Blazor, která se používá k vykreslení počátečního obsahu HTML pro aplikaci (viz [bootstrap Blazor](project-structure.md#bootstrap-blazor)). Stránka hostitel může vykreslit několik kořenových součástí pro aplikaci s okolním kódem.
+Rozložení v Blazor obvykle nedefinují kořenové prvky HTML stránky (`<html>`, `<body>`, `<head>` atd.). Kořenové prvky HTML jsou místo toho definovány na stránce hostitele aplikace v Blazor, která se používá k vykreslení počátečního obsahu HTML pro aplikaci (viz [bootstrap Blazor](project-structure.md#bootstrap-blazor)). Stránka hostitel může vykreslit několik kořenových součástí pro aplikaci s okolním kódem.
 
-Komponenty v Blazor, včetně stránek, nemůžou `<script>` vykreslovat značky. Toto omezení vykreslování existuje, `<script>` protože značky se načítají jednou a pak se nedají změnit. Pokud se pokusíte vykreslit značky dynamicky pomocí syntaxe Razor, může dojít k neočekávanému chování. Místo toho by `<script>` měly být všechny značky přidány na stránku hostitele aplikace.
+Komponenty v Blazor, včetně stránek, nemůžou vykreslovat značky `<script>`. Toto omezení vykreslování existuje, protože značky `<script>` se načítají jednou a pak se nedají změnit. Pokud se pokusíte vykreslit značky dynamicky pomocí syntaxe Razor, může dojít k neočekávanému chování. Místo toho by se měly na stránku hostitele aplikace přidat všechny značky `<script>`.
 
 >[!div class="step-by-step"]
 >[Předchozí](components.md)

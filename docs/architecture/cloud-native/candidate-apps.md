@@ -3,12 +3,12 @@ title: Kandidátské aplikace pro cloudové nativní
 description: Seznamte se s typy aplikací, které využívají nativní přístup z cloudu.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: a06ecdd9bfb3bd50757c484115eb123862a1bb9e
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 6da531397e6103e5c59accf321bc5ae82153dded
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214014"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275817"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Kandidátské aplikace pro cloudové nativní
 
@@ -36,8 +36,7 @@ Pak jsou starší verze systémů. I když bychom chtěli vytvářet nové aplik
 
 Bezplatná elektronická kniha Microsoftu [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) poskytuje pokyny pro migraci místních úloh do cloudu. Obrázek 1-8 ukazuje, že pro modernizaci starší verze aplikací není k dispozici jedna strategie pro všechny velikosti.
 
-![Strategie pro migraci zastaralých úloh](./media/strategies-for-migrating-legacy-workloads.png)
-na**obrázku 1-8**. Strategie migrace starších verzí úloh
+@no__t – 0Strategies pro migraci starších zatížení úlohy @ no__t-1**obrázek 1-8**. Strategie migrace starších verzí úloh
 
 Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu. 
 
@@ -65,7 +64,7 @@ Správná strategie migrace závisí na prioritách organizace a na systémech, 
 
 ## <a name="summary"></a>Souhrn
 
-V této kapitole jsme představili výpočetní prostředí pro Cloud. Poskytli jsme definici společně s klíčovými možnostmi, které zajišťují cloudovou nativní aplikaci. Prohlédli jsme typy aplikací, které by mohly tuto investici a úsilí zdůvodnit.
+V této kapitole jsme představili výpočetní prostředí pro Cloud. Poskytli jsme definici společně s klíčovými možnostmi, které zajišťují cloudovou nativní aplikaci. Prohlédli jsme se na typech aplikací, které by mohly tuto investici a úsilí zdůvodnit.
 
 V úvodu na pozadí jsme teď podrobněi mnohem podrobnější pohled na Cloud Native.
 
@@ -73,7 +72,7 @@ V úvodu na pozadí jsme teď podrobněi mnohem podrobnější pohled na Cloud N
 
 - [Cloud Native Computing Foundation](https://www.cncf.io/)
 
-- [Mikroslužby .NET: Architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
+- [Mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
 - [Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
 
@@ -83,7 +82,7 @@ V úvodu na pozadí jsme teď podrobněi mnohem podrobnější pohled na Cloud N
 
 - [Co je infrastruktura jako kód](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)
 
-- [Uber Engineering – nasazení Micro: Každodenní nasazení s jistotou](https://eng.uber.com/micro-deploy/)
+- [Micro Deploys v Uber Engineering: každodenní nasazení s jistotou](https://eng.uber.com/micro-deploy/)
 
 - [Jak Netflix nasazuje kód](https://www.infoq.com/news/2013/06/netflix/)
 

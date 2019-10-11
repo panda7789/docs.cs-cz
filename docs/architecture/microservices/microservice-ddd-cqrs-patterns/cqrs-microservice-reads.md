@@ -2,12 +2,12 @@
 title: Implementace čtení nebo dotazů v mikroslužbě CQRS
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení implementace dotazů, které jsou součástí CQRS, na základě řazení mikroslužby v eShopOnContainers pomocí Dapperem.
 ms.date: 10/08/2018
-ms.openlocfilehash: f791546e2fc00e276ab55302802a5534465ace58
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c39a42b7f5200208a0f812665a2d1c87b4433ba9
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295989"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275784"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementace čtení/dotazů v mikroslužbě CQRS
 
@@ -45,17 +45,17 @@ Dapperem je open source projekt (originál vytvořený pomocí Sam Saffron) a je
 
 Je také nutné přidat příkaz using, aby váš kód měl přístup k metodám rozšíření Dapperem.
 
-Při použití dapperem v kódu přímo použijete <xref:System.Data.SqlClient.SqlConnection> třídu dostupnou <xref:System.Data.SqlClient> v oboru názvů. Prostřednictvím metody QueryAsync a dalších rozšiřujících metod, které tuto <xref:System.Data.SqlClient.SqlConnection> třídu rozšířily, lze jednoduše spustit dotazy jednoduchým a vykonávajícím způsobem.
+Při použití Dapperem v kódu přímo použijete třídu <xref:System.Data.SqlClient.SqlConnection>, která je k dispozici v oboru názvů <xref:System.Data.SqlClient>. Pomocí metody QueryAsync a dalších metod rozšíření, které rozšiřuje třídu <xref:System.Data.SqlClient.SqlConnection>, lze jednoduše spustit dotazy jednoduchým a vykonávajícím způsobem.
 
 ## <a name="dynamic-versus-static-viewmodels"></a>Dynamické versus statické ViewModels
 
 Při vracení ViewModels ze strany klientských aplikací na straně serveru můžete uvažovat o těchto ViewModels jako DTO (Přenos dat objekty), které se můžou lišit od interních doménových entit modelu entity, protože ViewModels drží data způsobem, jakým klientská aplikace funguje. zbývá. Proto můžete v mnoha případech agregovat data přicházející z více doménových entit a ViewModels vytvořit přesně podle toho, jak klientská aplikace potřebuje tato data.
 
-Tyto ViewModels nebo DTO lze definovat explicitně (jako třídy pro držitele dat), `OrderSummary` jako je třída zobrazená v pozdějším fragmentu kódu, nebo můžete jednoduše vrátit dynamické ViewModels nebo dynamické dtoy na základě atributů vrácených dotazy jako dynamické. textový.
+Tyto ViewModels nebo DTO lze definovat explicitně (jako třídy pro držitele dat), jako je třída `OrderSummary` zobrazená v pozdějším fragmentu kódu, nebo můžete jednoduše vrátit dynamické ViewModels nebo dynamické DTO na základě atributů vrácených dotazy jako dynamický typ.
 
 ### <a name="viewmodel-as-dynamic-type"></a>ViewModel jako dynamický typ
 
-Jak je znázorněno v následujícím kódu, `ViewModel` může být přímo vrácen pomocí dotazů pouhým vrácením *dynamického* typu, který interně vychází z atributů vrácených dotazem. To znamená, že podmnožina atributů, které mají být vráceny, je založena na samotném dotazu. Proto pokud přidáte do dotazu nebo JOIN nový sloupec, budou tato data dynamicky přidána do vráceného `ViewModel`.
+Jak je znázorněno v následujícím kódu, `ViewModel` mohou přímo vracet dotazy pouhým vrácením *dynamického* typu, který interně vychází z atributů vrácených dotazem. To znamená, že podmnožina atributů, které mají být vráceny, je založena na samotném dotazu. Proto pokud přidáte do dotazu nebo JOIN nový sloupec, tato data se dynamicky přidají do vrácených `ViewModel`.
 
 ```csharp
 using Dapper;
@@ -87,19 +87,19 @@ public class OrderQueries : IOrderQueries
 
 Důležité je, že při použití dynamického typu je vrácená kolekce dat dynamicky sestavena jako ViewModel.
 
-**IT** Tento přístup omezuje nutnost upravovat statické třídy ViewModel vždy, když aktualizujete větu SQL dotazu. Tento přístup k návrhu je poměrně agilní při kódování, snadném a rychlém vývoje v souvislosti s budoucími změnami.
+**Profesionály:** Tento přístup omezuje nutnost upravovat statické třídy ViewModel vždy, když aktualizujete větu SQL dotazu. Tento přístup k návrhu je poměrně agilní při kódování, snadném a rychlém vývoje v souvislosti s budoucími změnami.
 
-**Cons** V dlouhodobém období můžou dynamické typy negativně ovlivnit přehlednost a kompatibilitu služby s klientskými aplikacemi. Kromě toho middlewarský software, jako je swashbuckle, nemůže poskytnout stejnou úroveň dokumentace k vráceným typům, pokud používáte dynamické typy.
+**Nevýhody:** V dlouhodobém období můžou dynamické typy negativně ovlivnit přehlednost a kompatibilitu služby s klientskými aplikacemi. Kromě toho middlewarský software, jako je swashbuckle, nemůže poskytnout stejnou úroveň dokumentace k vráceným typům, pokud používáte dynamické typy.
 
 ### <a name="viewmodel-as-predefined-dto-classes"></a>ViewModel jako předdefinované třídy DTO
 
-**Profesionály**: Statické předdefinované třídy ViewModel, jako je například kontrakty založené na explicitních třídách DTO, jsou jednoznačně lepší pro veřejná rozhraní API, ale také pro dlouhodobé mikroslužby, i když jsou používány pouze stejnou aplikací.
+**Odborníci**: statické předdefinované třídy ViewModel, jako je například kontrakty založené na explicitních třídách DTO, jsou jednoznačně lepší pro veřejná rozhraní API, ale také pro dlouhodobé mikroslužby, i když jsou používány pouze stejnou aplikací.
 
 Pokud chcete určit typy odezvy pro Swagger, musíte jako návratový typ použít explicitní třídy DTO. Předdefinované třídy DTO proto umožňují nabízet bohatší informace z Swagger. Což vylepšuje dokumentaci rozhraní API a kompatibilitu při využívání rozhraní API.
 
-**Nevýhody**: Jak bylo zmíněno dříve, při aktualizaci kódu je potřeba provést několik dalších kroků, které aktualizují třídy DTO.
+**Nevýhody**: jak bylo zmíněno dříve, při aktualizaci kódu je potřeba provést několik dalších kroků, které aktualizují třídy DTO.
 
-*Tip na základě našeho prostředí*: V dotazech implementovaných při seřazení mikroslužeb v eShopOnContainers jsme začali vyvíjet pomocí dynamických ViewModels, protože byly velmi jasné a agilní v fázích předčasného vývoje. Ale jakmile byl vývoj stabilizovaný, rozhodli jsme se refaktorovat rozhraní API a použít pro ViewModels statické nebo předem definované DTO, protože je jasný pro spotřebitele mikroslužeb, aby znali explicitní typy DTO, které se používají jako "kontrakty".
+*Tip na základě našeho prostředí*: v dotazech implementovaných při řazení mikroslužeb v eShopOnContainers jsme začali vyvíjet pomocí dynamického ViewModels, protože bylo velmi jasné a agilní na fázích předčasného vývoje. Ale jakmile byl vývoj stabilizovaný, rozhodli jsme se refaktorovat rozhraní API a použít pro ViewModels statické nebo předem definované DTO, protože je jasný pro spotřebitele mikroslužeb, aby znali explicitní typy DTO, které se používají jako "kontrakty".
 
 V následujícím příkladu můžete vidět, jak dotaz vrací data pomocí explicitní třídy ViewModel DTO: třídy OrderSummary.
 
@@ -118,7 +118,7 @@ public class OrderQueries : IOrderQueries
         using (var connection = new SqlConnection(_connectionString))
         {
             connection.Open();
-            var result = await connection.QueryAsync<OrderSummary>(
+            return await connection.QueryAsync<OrderSummary>(
                   @"SELECT o.[Id] as ordernumber, 
                   o.[OrderDate] as [date],os.[Name] as [status], 
                   SUM(oi.units*oi.unitprice) as total
@@ -161,7 +161,7 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.API.Controllers
 }
 ```
 
-Atribut však nemůže použít Dynamic jako typ, ale vyžaduje použití explicitních typů, jako je `OrderSummary` ViewModel DTO, jak je znázorněno v následujícím příkladu: `ProducesResponseType`
+Atribut `ProducesResponseType` však nemůže použít Dynamic jako typ, ale vyžaduje použití explicitních typů, jako je například `OrderSummary` ViewModel DTO, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public class OrderSummary
@@ -173,7 +173,7 @@ public class OrderSummary
 }
 ```
 
-To je další důvod, proč jsou explicitní vrácené typy lepší než dynamické typy v dlouhodobém horizontu. Při použití `ProducesResponseType` atributu můžete také určit, jaký je očekávaný výsledek v souvislosti s možnými chybami protokolu HTTP/kódy, například 200, 400 atd.
+To je další důvod, proč jsou explicitní vrácené typy lepší než dynamické typy v dlouhodobém horizontu. Při použití atributu `ProducesResponseType` můžete také určit, jaký je očekávaný výsledek v souvislosti s možnými chybami protokolu HTTP/kódy, například 200, 400 atd.
 
 Na následujícím obrázku vidíte, jak uživatelské rozhraní Swagger zobrazuje ResponseType informace.
 
@@ -185,15 +185,15 @@ Na obrázku nad některými ukázkovými hodnotami vidíte na základě typů Vi
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Dapper** \
+- **Dapperem**  
  <https://github.com/StackExchange/dapper-dot-net>
 
-- **Julie Lerman. Datové body – Dapperem, Entity Framework a hybridní aplikace (MSDN mag. article)**  \
-  <https://msdn.microsoft.com/magazine/mt703432.aspx>
+- **Julie Lerman. Datové body – Dapperem, Entity Framework a hybridní aplikace (článek na webu MSDN Magazine)**  
+  <https://msdn.microsoft.com/magazine/mt703432>
 
-- **Stránky pomoci ASP.NET Core Web API pomocí Swagger** \
+- **Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>
 
 >[!div class="step-by-step"]
->[Předchozí](eshoponcontainers-cqrs-ddd-microservice.md)Další
->[](ddd-oriented-microservice.md)
+>[Předchozí](eshoponcontainers-cqrs-ddd-microservice.md)
+>[Další](ddd-oriented-microservice.md)

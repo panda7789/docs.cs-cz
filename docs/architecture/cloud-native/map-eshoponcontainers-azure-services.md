@@ -1,15 +1,15 @@
 ---
-title: Mapování eShopOnContainers na služby Azure
+title: Mapování aplikace eShopOnContainers ke službám Azure
 description: Mapování eShopOnContainers na služby Azure, jako je služba Azure Kubernetes, brána API a Azure Service Bus.
 ms.date: 06/30/2019
-ms.openlocfilehash: feb6d8f5ca05ab55ce4695d1200766a18b8f744a
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67430da18c0a12c694426214de33e85c2113e454
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182816"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275814"
 ---
-# <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapování eShopOnContainers na služby Azure
+# <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapování aplikace eShopOnContainers ke službám Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -17,8 +17,7 @@ I když to není nutné, Azure je vhodný pro podporu eShopOnContainers, protož
 
 Architektura aplikace se zobrazuje na obrázku 2-5. Na levé straně jsou klientské aplikace rozdělené na mobilní, tradiční web a charakter SPA (Web Single Page Application). Na pravé straně jsou serverové komponenty, které tvoří systém, z nichž každý je možné hostovat v kontejnerech Docker a clusterech Kubernetes. Tradiční webová aplikace se používá v aplikaci ASP.NET Core MVC zobrazené žlutě. Tato aplikace a mobilní a webové aplikace SPA komunikují s jednotlivými mikroslužbami přes jednu nebo více bran rozhraní API. Brány rozhraní API se řídí vzorem "back-endy pro front-endy" (BFF), což znamená, že každá brána je navržená tak, aby podporovala daného klienta front-endu. Jednotlivé mikroslužby jsou uvedeny napravo od bran rozhraní API a zahrnují obchodní logiku i určitý druh trvalého úložiště. Různé služby využívají SQL Server databáze, instance mezipaměti Redis a úložiště MongoDB/CosmosDB. Úplně vpravo je systémová sběrnice událostí, která se používá ke komunikaci mezi mikroslužbami.
 
-![Obrázek architektury](./media/eshoponcontainers-architecture.png)
-eShopOnContainers**2-5**. Architektura eShopOnContainers
+![eShopOnContainers architektura @ no__t-1**obrázek 2-5**. Architektura eShopOnContainers
 
 Komponenty na straně serveru této architektury jsou snadno namapovány na služby Azure.
 
@@ -26,7 +25,7 @@ Komponenty na straně serveru této architektury jsou snadno namapovány na slu�
 
 Služba Azure Kubernetes Service (AKS) může hostovat a spravovat služby hostované v kontejnerech, od ASP.NET Core aplikací MVC až po jednotlivé katalogy a objednávání mikroslužeb. Aplikace může běžet místně v Docker a Kubernetes a stejné kontejnery pak můžete nasadit do pracovních a produkčních prostředí hostovaných v AKS. Tento proces může být automatizovaný, protože se zobrazí v další části.
 
-AKS poskytuje služby správy pro jednotlivé clustery kontejnerů. Aplikace bude nasazovat samostatné clustery AKS pro jednotlivé mikroslužby zobrazené v diagramu architektury výše. Tento přístup umožňuje každé jednotlivé službě samostatně podle svých požadavků na prostředky. Jednotlivé mikroslužby je také možné nasadit nezávisle a v ideálním případě taková nasazení by měla způsobit nulové výpadky systému.
+AKS poskytuje služby správy pro jednotlivé clustery kontejnerů. Aplikace bude nasazovat samostatné clustery AKS pro jednotlivé mikroslužby zobrazené v diagramu architektury výše. Díky tomuto přístupu se jednotlivé služby můžou nezávisle škálovat podle svých požadavků na prostředky. Jednotlivé mikroslužby je také možné nasadit nezávisle a v ideálním případě taková nasazení by měla způsobit nulové výpadky systému.
 
 ## <a name="api-gateway"></a>Brána API
 

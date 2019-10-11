@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: e16f0c8ede5e1a24d4fc4606c3c25225ea72e750
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: f5b0064f9f01923c6353fd8e2b274bd7407ccbd8
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117122"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237330"
 ---
 ### <a name="jsonfactoryconvertercreateconverter-signature-changed"></a>Změnil se podpis JsonFactoryConverter. CreateConverter.
 
-Aby bylo možné zjednodušit <xref:System.Text.Json.Serialization.JsonConverterFactory> složení tříd, <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> byla metoda zveřejněna a měla by mít druhý argument typu <xref:System.Text.Json.JsonSerializerOptions>.
+Aby se usnadnilo složení <xref:System.Text.Json.Serialization.JsonConverterFactory>, metoda <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> byla veřejná a měla by mít druhý argument typu <xref:System.Text.Json.JsonSerializerOptions>.
 
-#### <a name="details"></a>Podrobnosti
+#### <a name="change-description"></a>Změnit popis
 
-Signatura `CreateConverter` metody v .NET Core starší než verze 3,0 Preview 8 byla: 
+Signatura metody `CreateConverter` v .NET Core před verzí 3,0 Preview 8 byla: 
 
 ```csharp
 namespace System.Text.Json.Serialization
@@ -36,7 +36,7 @@ namespace System.Text.Json.Serialization
 }
 ```
 
-Před touto změnou bylo obtížné vytvořit zapečetěné převaděče objektu pro vytváření, protože <xref:System.Text.Json.Serialization.JsonConverter%601> z ní neexistoval snadný způsob, jak z něho získat. Zajištění veřejné metody výroby a také předání současného <xref:System.Text.Json.JsonSerializerOptions> povolení pro mnohem flexibilnější složení.
+Před touto změnou bylo obtížné vytvořit zapečetěné převaděče pro vytváření, protože neexistoval žádný snadný způsob, jak z něho získat @no__t 0. Zpřístupnění metody pro vytváření veřejnosti a také předání aktuální <xref:System.Text.Json.JsonSerializerOptions> umožňuje mnohem flexibilnější kompozici.
 
 #### <a name="version-introduced"></a>Představená verze
 

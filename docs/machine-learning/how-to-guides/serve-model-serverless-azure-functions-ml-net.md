@@ -5,19 +5,19 @@ ms.date: 09/12/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: ef028fee6cafcf4a775e061d9a5f91f0cf9a7e36
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 2abd8588aa314b630c995e0c78b5869ec00a89df
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332712"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179365"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
 Naučte se, jak nasadit předem vyškolený model ML.NET Machine Learning pro předpovědi přes protokol HTTP prostřednictvím prostředí bez serveru Azure Functions.
 
 > [!NOTE]
-> `PredictionEnginePool`rozšíření služby je momentálně ve verzi Preview.
+> rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -29,11 +29,11 @@ Naučte se, jak nasadit předem vyškolený model ML.NET Machine Learning pro p�
 
 ## <a name="create-azure-functions-project"></a>Vytvořit Azure Functions projekt
 
-1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **cloudu** . Pak vyberte šablonu projektu **Azure Functions** . Do textového pole **název** zadejte "SentimentAnalysisFunctionsApp" a pak vyberte tlačítko **OK** .
+1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** **projekt**  > . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **cloudu** . Pak vyberte šablonu projektu **Azure Functions** . Do textového pole **název** zadejte "SentimentAnalysisFunctionsApp" a pak vyberte tlačítko **OK** .
 1. V dialogovém okně **Nový projekt** otevřete rozevírací seznam nad možnostmi projektu a vyberte **Azure Functions v2 (.NET Core)** . Pak vyberte projekt **triggeru http** a pak klikněte na tlačítko **OK** .
 1. Vytvořte v projektu adresář s názvem *MLModels* a uložte svůj model:
 
-    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Přidat** > **novou složku**. Zadejte "MLModels" a stiskněte klávesu ENTER.
+    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **přidat** **novou složku** > . Zadejte "MLModels" a stiskněte klávesu ENTER.
 
 1. Nainstalujte **balíček NuGet Microsoft.ml**:
 
@@ -60,7 +60,7 @@ Naučte se, jak nasadit předem vyškolený model ML.NET Machine Learning pro p�
 
 Vytvořte třídu pro předpověď mínění. Přidejte do projektu novou třídu:
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 
 1. V dialogovém okně **Přidat novou položku** vyberte možnost **Azure Functions** a změňte pole **název** na *AnalyzeSentiment.cs*. Pak vyberte tlačítko **Přidat** .
 
@@ -83,7 +83,7 @@ Vytvořte třídu pro předpověď mínění. Přidejte do projektu novou tříd
 
 Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
-1. Vytvořte v projektu adresář s názvem *Datamodels* pro uložení datových modelů: V Průzkumník řešení klikněte pravým tlačítkem myši na projekt a vyberte **přidat > nová složka**. Zadejte "datamodels" a stiskněte ENTER.
+1. Vytvořte v projektu adresář s názvem *Datamodels* pro uložení datových modelů: v Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová složka**. Zadejte "datamodels" a stiskněte ENTER.
 2. V Průzkumník řešení klikněte pravým tlačítkem na adresář *Datamodels* a pak vyberte **Přidat > Nová položka**.
 3. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** . 
 
@@ -108,11 +108,11 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
 
 ## <a name="register-predictionenginepool-service"></a>Zaregistrovat službu PredictionEnginePool
 
-Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a zabezpečení vlákna použijte kombinaci injektáže a `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
+Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a zabezpečení vlákna použijte kombinaci injektáže a `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
 
 Následující odkaz poskytuje další informace, pokud se chcete dozvědět víc o [vkládání závislostí](https://en.wikipedia.org/wiki/Dependency_injection).
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *Startup.cs*. Pak vyberte tlačítko **Přidat** . 
 
     V editoru kódu se otevře soubor *Startup.cs* . Do horní části *Startup.cs*přidejte následující příkaz using:
@@ -149,7 +149,16 @@ Nastavte parametr `watchForChanges` na `true` a `PredictionEnginePool` spustí [
 
 Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci. 
 
-Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace.
+> [!TIP]
+> Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace. V níže uvedeném příkladu kódu `PredictionEnginePool` cyklické dotazování modelu uloženého v zadaném identifikátoru URI každou minutu.
+>    
+>```csharp
+>builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
+>   .FromUri(
+>       modelName: "SentimentAnalysisModel", 
+>       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip", 
+>       period: TimeSpan.FromMinutes(1));
+>```
 
 ## <a name="load-the-model-into-the-function"></a>Načtení modelu do funkce
 

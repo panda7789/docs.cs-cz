@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vyhledání všech uzlů v Namespace (Visual Basic)'
+title: 'Postupy: vyhledání všech uzlů v oboru názvů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: c04447df1d4a3e29558a3bad172715d2bdee340b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ccc996aa986c97fdffb3deeea36346da726a588
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855670"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249937"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Postupy: Vyhledání všech uzlů v Namespace (Visual Basic)
-Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  
+# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Postupy: vyhledání všech uzlů v oboru názvů (Visual Basic)
+Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří stromu XML pomocí dva obory názvů. Pak Iteruje přes stromu a Vypíše názvy všech elementů a atributů v jednom z těchto oborů názvů.  
+ Následující příklad vytvoří strom XML se dvěma obory názvů. Pak projde stromovou strukturou a vytiskne názvy všech prvků a atributů v jednom z těchto oborů názvů.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -43,18 +43,18 @@ Module Module1
 End Module  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
-```  
+```console  
 Nodes in the http://www.adventure-works.com namespace  
 {http://www.adventure-works.com}Child3  
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
 ## <a name="example"></a>Příklad  
- Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů. Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.  
+ Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -73,7 +73,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Root>  
@@ -109,6 +109,6 @@ End Module
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

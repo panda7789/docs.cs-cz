@@ -1,21 +1,21 @@
 ---
-title: 'Kurz: Předpověď cen pomocí regrese pomocí Tvůrce modelů'
+title: 'Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů'
 description: V tomto kurzu se naučíte, jak vytvořit regresní model pomocí Tvůrce modelů ML.NET pro předpověď cen, konkrétně v New Yorku City taxislužby tarifs.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 09/26/2019
+ms.date: 10/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c7075e64738279cd712f5db837074a44e96db954
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: a851bf3c405d15243bc1457b8c3dff815d072ebe
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332585"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180288"
 ---
-# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: Předpověď cen pomocí regrese pomocí Tvůrce modelů
+# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů
 
-Naučte se používat Tvůrce modelů ML.NET k vytvoření regresního modelu () pro předpověď cen.  Aplikace konzoly .NET, kterou vyvíjíte v tomto kurzu, předpovídá taxislužby tarify na základě historických dat o taxislužby tarifech z historických Praha.
+Naučte se používat Tvůrce modelů ML.NET k vytvoření regresního modelu pro předpověď cen.  Aplikace konzoly .NET, kterou vyvíjíte v tomto kurzu, předpovídá taxislužby tarify na základě historických dat o taxislužby tarifech z historických Praha.
 
 Šablona předpovědi ceny tvůrce modelů se dá použít pro libovolný scénář, který vyžaduje hodnotu číselné předpovědi. Mezi příklady scénářů patří: předpověď ceny na pracovišti, Předpověď poptávky a prognózování prodeje.
 
@@ -25,14 +25,14 @@ V tomto kurzu se naučíte:
 > - Příprava a pochopení dat
 > - Zvolit scénář
 > - Načtení dat
-> - Trénování modelu
+> - Výuka modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
 > [!NOTE]
 > Tvůrce modelů je aktuálně ve verzi Preview.
 
-## <a name="pre-requisites"></a>Požadavky
+## <a name="pre-requisites"></a>Předpoklady
 
 Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu modelů](../how-to-guides/install-model-builder.md).
 
@@ -54,7 +54,7 @@ Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu m
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *taxi-Fare-Train. csv* a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-Každý řádek v `taxi-fare-train.csv` datové sadě obsahuje podrobnosti o cestách provedených taxislužby.
+Každý řádek v datové sadě `taxi-fare-train.csv` obsahuje podrobnosti o cestách provedených taxislužby.
 
 1. Otevřete sadu dat **taxi-Fare-Train. csv.**
 
@@ -68,13 +68,13 @@ Každý řádek v `taxi-fare-train.csv` datové sadě obsahuje podrobnosti o ces
     - **payment_type:** Způsob platby (hotovost nebo platební karta) je funkce.
     - **fare_amount:** Celková částka taxislužby jízdné je štítek.
 
-`label` Je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu poskytnete pro `label`předpověď. V tomto případě se zbývající sloupce s výjimkou **trip_time_in_secs** používají jako funkce nebo vstupy pro předpověď množství tarifů.
+@No__t-0 je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu udělíte pro předpověď `label`. V tomto případě se zbývající sloupce s výjimkou **trip_time_in_secs** používají jako funkce nebo vstupy pro předpověď množství tarifů.
 
 ## <a name="choose-a-scenario"></a>Zvolit scénář
 
-Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V tomto případě je `Price Prediction`to scénář.
+Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V takovém případě je scénář `Price Prediction`.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *TaxiFarePrediction* a vyberte **Přidat** > **Machine Learning**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt *TaxiFarePrediction* a vyberte **Přidat** > **Machine Learning**.
 1. V kroku scénář nástroje Tvůrce modelů vyberte možnost scénář *předpovědi cen* .
 
 ## <a name="load-the-data"></a>Načtení dat
@@ -86,7 +86,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte *fare_amount* a přejděte ke kroku výuka nástroje Tvůrce modelů.
 1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu sloupce *trip_time_in_secs* , aby se vyloučil jako funkce během školení.
 
-## <a name="train-the-model"></a>Trénování modelu
+## <a name="train-the-model"></a>Výuka modelu
 
 Úkol strojového učení, který se používá k výuce modelu předpovědi cen v tomto kurzu, je regrese. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých regresních algoritmů a nastavení, které pro datovou sadu vyhledají nejlepší model provádění.
 
@@ -95,7 +95,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. Ponechte výchozí hodnotu tak, aby byla pro *čas do výuky (sekundy)* , pokud nechcete, aby se vlak vydával po delší dobu.
 2. Vyberte *Spustit školení*.
 
-V průběhu procesu školení se data o průběhu zobrazují v `Progress` části kroku výuka.
+V průběhu procesu školení se data o průběhu zobrazují v části `Progress` kroku výukového programu.
 
 - Stav zobrazuje stav dokončení procesu školení.
 - Nejlepší přesnost zobrazuje přesnost nejlepšího modelu, kterou najde tvůrce modelů, zatím. Vyšší přesnost znamená, že model se v testovacích datech podrobnějším způsobem vypovídat.
@@ -114,8 +114,8 @@ Pokud nejste spokojeni s metrikami přesnosti, můžou vám některé jednoduch�
 
 V důsledku školicího procesu se vytvoří dva projekty.
 
-- TaxiFarePredictionML.ConsoleApp: Konzolová aplikace .NET Core, která obsahuje kód pro školení modelů a ukázku kódu.
-- TaxiFarePredictionML.Model: .NET Standard knihovny tříd obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou verzi modelu nejlepšího provádění během školení a pomocnou třídu nazvanou `ConsumeModel` pro předpovědi.
+- TaxiFarePredictionML. ConsoleApp: Konzolová aplikace .NET Core, která obsahuje kód pro školení modelů a ukázku kódu.
+- TaxiFarePredictionML. model: .NET Standard knihovny tříd obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou verzi modelu nejlepšího provádění během školení a pomocnou třídu s názvem `ConsumeModel` pro vytvoření předpovědi.
 
 1. V kroku kód nástroje Tvůrce modelů vyberte **Přidat projekty** a přidejte do řešení automaticky generované projekty.
 1. Otevřete soubor *program.cs* v projektu *TaxiFarePrediction* .
@@ -159,17 +159,17 @@ V důsledku školicího procesu se vytvoří dva projekty.
     Predicted Fare: 14.96086
     ```
 
-Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešení, můžete je vyhledat v `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` adresáři.
+Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešení, můžete je najít v adresáři `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste se naučili:
+V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > - Příprava a pochopení dat
 > - Zvolit scénář
 > - Načtení dat
-> - Trénování modelu
+> - Výuka modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 

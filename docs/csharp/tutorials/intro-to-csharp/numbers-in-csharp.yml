@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Větve a smyčky vC#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: af06d938f86841620784909b16e72d000452fc2a
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: 5ea939172b35e4380ed3f32d7d06b5749d2005a0
+  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850682"
+  ms.lasthandoff: 10/09/2019
+  ms.locfileid: "72179866"
 items:
 - durationInMinutes: 1
   content: >
@@ -40,14 +40,17 @@ items:
     ```
 
 
-    Právě jste viděli jednu ze základních matematických operací s celými čísly. Typ představuje celé číslo, kladné nebo záporné celé číslo. **** `int` `+` Symbol se používá pro sčítání. Mezi další běžné matematické operace pro celá čísla patří:
+    Pokud ve svém prostředí používáte, měli byste místo toho postupovat podle pokynů pro [místní verzi](numbers-in-csharp-local.md) .
 
 
-    - `-`pro odčítání
+    Právě jste viděli jednu ze základních matematických operací s celými čísly. Typ `int` představuje **celé číslo**, kladné nebo záporné celé číslo. K přidání použijte symbol `+`. Mezi další běžné matematické operace pro celá čísla patří:
 
-    - `*`pro násobení
 
-    - `/`pro dělení
+    - `-` pro odčítání
+
+    - `*` pro násobení
+
+    - `/` pro dělení
 
 
     > [!TIP]
@@ -189,7 +192,7 @@ items:
   content: >
     Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.
 
-    **Zbytek** můžete získat pomocí `%` operátoru **modulo** , znaku:
+    **Zbytek** můžete získat pomocí operátoru **modulo** , znaku `%`:
 
 
     ```csharp
@@ -211,7 +214,7 @@ items:
     ```
 
 
-    C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: `int` typ má minimální a maximální limity. Spusťte tento kód v interaktivním okně, abyste viděli tato omezení:
+    C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: typ `int` má minimální a maximální limity. Spusťte tento kód v interaktivním okně, abyste viděli tato omezení:
 
 
     ```csharp
@@ -244,7 +247,7 @@ items:
     Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.
 
 
-    Existují i jiné číselné typy s různými limity a přesností, které byste použili, `int` když typ nevyhovuje vašim potřebám. Pojďme se podívat na další.
+    Existují i jiné číselné typy s různými limity a přesností, které byste použili, když @no__t typ 0 nevyhovuje vašim potřebám. Pojďme se podívat na další.
 
 
     > [!NOTE]
@@ -253,7 +256,7 @@ items:
 - title: Práce s typem Double
   durationInMinutes: 5
   content: >
-    `double` Číselný typ představuje číslo s dvojitou přesností a plovoucí desetinnou čárkou. Tyto výrazy můžou být pro vás nové. Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá. **Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**. Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.
+    Číselný typ `double` představuje číslo s dvojitou přesností s plovoucí desetinnou čárkou. Tyto výrazy můžou být pro vás nové. Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá. **Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**. Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.
 
     Pojďme prozkoumat. V interaktivním okně vyzkoušejte následující kód a podívejte se na výsledek:
 
@@ -320,13 +323,13 @@ items:
     ```
 
 
-    Víte, že `0.3` opakování není přesně stejné jako. `1/3`
+    Víte, že `0.3` opakování není přesně stejné jako `1/3`.
 
 
     ***Výzev***
 
 
-    Zkuste další výpočty s velkými čísly, malými čísly, násobení a `double` dělení pomocí typu.  Vyzkoušejte složitější výpočty.
+    Zkuste další výpočty s velkými čísly, malými čísly, násobení a dělení pomocí typu `double`.  Vyzkoušejte složitější výpočty.
 
 
     > [!NOTE]
@@ -335,7 +338,7 @@ items:
 - title: Práce s pevnými typy bodů
   durationInMinutes: 8
   content: >
-    Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.  Existuje jeden další typ, který se naučí: `decimal` typ. Typ má menší rozsah, ale větší přesnost než `double`. `decimal` **Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá. Podívejme se na to:
+    Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.  Existuje jeden další typ, se kterým se naučíte: typ `decimal`. Typ `decimal` má menší rozsah, ale větší přesnost než `double`. **Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá. Pojďme se podívat:
 
 
     ```csharp
@@ -349,7 +352,7 @@ items:
     ```
 
 
-    Všimněte si, že rozsah je menší než `double` typ. Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:
+    Všimněte si, že rozsah je menší než typ `double`. Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:
 
 
     ```csharp
@@ -370,7 +373,7 @@ items:
     ```
 
 
-    Přípona čísel představuje způsob, jakým by měl být `decimal` typ konstanty použit. `M`
+    Přípona `M` v číslech představuje způsob, jakým by měla konstanta používat typ `decimal`.
 
 
     Všimněte si, že matematický použití typu Decimal má na pravé straně desetinné čárky více číslic.
@@ -379,7 +382,7 @@ items:
     ***Výzev***
 
 
-    Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů. Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí. Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType> kterou můžete použít pro tuto hodnotu.
+    Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů. Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí. Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType>, kterou můžete použít pro tuto hodnotu.
 
 
     > [!NOTE]

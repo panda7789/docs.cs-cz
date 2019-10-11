@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 6dfbbbb6ef64b3dbb83d15ba66860acb7c5b3585
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: fb08cef284a016dd65c99a1efb0a661624a731f1
+  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850738"
+  ms.lasthandoff: 10/09/2019
+  ms.locfileid: "72179011"
 items:
 - durationInMinutes: 1
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Vytváření seznamů
   durationInMinutes: 2
   content: >
-    Spusťte následující kód v interaktivním okně. Uděláte to tak, že do interaktivního okna zadáte následující blok kódu ( `<name>` nahraďte ho názvem) a kliknete na tlačítko **Spustit** :
+    Spusťte následující kód v interaktivním okně. Uděláte to tak, že do interaktivního okna zadáte následující blok kódu (nahraďte `<name>` názvem) a kliknete na tlačítko **Spustit** :
 
 
     ```csharp
@@ -38,10 +38,13 @@ items:
     ```
 
 
+    Pokud ve svém prostředí používáte, měli byste místo toho postupovat podle pokynů pro [místní verzi](arrays-and-collections.md) .
+
+
     Vytvořili jste seznam řetězců, Přidali jste do tohoto seznamu tři názvy a vytiskli jste názvy všech velkých písmen. Pomocí konceptů, které jste se naučili v předchozích kurzech, Projděte seznam.
 
 
-    Kód pro zobrazení názvů využívá funkci [interpolace řetězce](../../language-reference/tokens/interpolated.md) . Pokud předcházíte `string` `$` znak, můžete vložit C# kód do deklarace řetězce. Skutečný řetězec nahradí tento C# kód hodnotou, kterou generuje. V tomto příkladu nahrazuje `{name.ToUpper()}` název s každým názvem převedenými na velká písmena, protože jste <xref:System.String.ToUpper%2A?displayProperty=nameWithType> volali metodu.
+    Kód pro zobrazení názvů využívá funkci [interpolace řetězce](../../language-reference/tokens/interpolated.md) . Pokud předcházíte `string` s znakem `$`, můžete vložit C# kód do deklarace řetězce. Skutečný řetězec nahradí tento C# kód hodnotou, kterou generuje. V tomto příkladu nahrazuje `{name.ToUpper()}` s každým názvem převedenými na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A?displayProperty=nameWithType>.
 
 
     Pojďme si to prozkoumat.
@@ -53,10 +56,10 @@ items:
 - title: Upravit obsah seznamu
   durationInMinutes: 3
   content: >
-    Kolekce, kterou jste vytvořili, <xref:System.Collections.Generic.List%601> používá typ. Tento typ ukládá sekvence prvků. Zadejte typ prvků mezi lomenými závorkami.
+    Kolekce, kterou jste vytvořili, používá typ <xref:System.Collections.Generic.List%601>. Tento typ ukládá sekvence prvků. Zadejte typ prvků mezi lomenými závorkami.
 
 
-    Jedním z důležitých aspektů <xref:System.Collections.Generic.List%601> tohoto typu je, že může být zvětšen nebo zmenšen, což umožňuje přidat nebo odebrat prvky. Výsledky můžete zobrazit úpravou obsahu po zobrazení jeho obsahu. Pod kód, který jste už napsali, přidejte následující kód (pod smyčkou, která obsah vytiskne):
+    Jedním z důležitých aspektů tohoto typu <xref:System.Collections.Generic.List%601> je to, že se může zvětšovat nebo zmenšovat, což umožňuje přidat nebo odebrat prvky. Výsledky můžete zobrazit úpravou obsahu po zobrazení jeho obsahu. Pod kód, který jste už napsali, přidejte následující kód (pod smyčkou, která obsah vytiskne):
 
 
     ```csharp
@@ -81,7 +84,7 @@ items:
     Přidali jste dva další názvy na konec seznamu. Také jste odebrali i jednu z nich. Výstup z tohoto bloku kódu ukazuje počáteční obsah a pak vytiskne prázdný řádek a nový obsah.
 
 
-    Umožňuje také odkazovat na jednotlivé položky podle **indexu.** <xref:System.Collections.Generic.List%601> Přistupujete k položkám `]` pomocí `[` tokenů a. Níže vložte následující kód, který jste už napsali, a zkuste to:
+    @No__t-0 umožňuje odkazovat také na jednotlivé položky podle **indexu** . K položkám přistupujete pomocí `[` a tokenů `]`. Níže vložte následující kód, který jste už napsali, a zkuste to:
 
 
     ```csharp
@@ -93,7 +96,7 @@ items:
     ```
 
 
-    Nemáte oprávnění k přístupu za konec seznamu. Můžete zjistit, jak dlouho seznam používá <xref:System.Collections.Generic.List%601.Count%2A> vlastnost. Přidejte následující kód, který si ho můžete vyzkoušet:
+    Nemáte oprávnění k přístupu za konec seznamu. Můžete zjistit, jak dlouho seznam používá vlastnost <xref:System.Collections.Generic.List%601.Count%2A>. Přidejte následující kód, který si ho můžete vyzkoušet:
 
 
     ```csharp
@@ -112,7 +115,7 @@ items:
 - title: Hledání a řazení seznamů
   durationInMinutes: 5
   content: >
-    Naše ukázky používají relativně malé seznamy, ale vaše aplikace často můžou vytvářet seznamy s mnoha více prvky, někdy se číslování v tisících. Chcete-li najít prvky v těchto větších kolekcích, je nutné hledat v seznamu různé položky. <xref:System.Collections.Generic.List%601.IndexOf%2A> Metoda vyhledá položku a vrátí index položky. Zkuste zjistit, jak to funguje.  Pod to, co jste napsali, přidejte následující kód:
+    Naše ukázky používají relativně malé seznamy, ale vaše aplikace často můžou vytvářet seznamy s mnoha více prvky, někdy se číslování v tisících. Chcete-li najít prvky v těchto větších kolekcích, je nutné hledat v seznamu různé položky. Metoda <xref:System.Collections.Generic.List%601.IndexOf%2A> hledá položku a vrátí index položky. Zkuste zjistit, jak to funguje.  Pod to, co jste napsali, přidejte následující kód:
 
 
     ```csharp
@@ -127,10 +130,10 @@ items:
     ```
 
 
-    Nesmíte zjistit, jestli je položka v seznamu, takže byste měli vždycky kontrolovat index vrácený funkcí <xref:System.Collections.Generic.List%601.IndexOf%2A>. Pokud je-1, položka nebyla nalezena.
+    Nesmíte zjistit, jestli je položka v seznamu, takže byste měli vždycky kontrolovat index vrácený <xref:System.Collections.Generic.List%601.IndexOf%2A>. Pokud je-1, položka nebyla nalezena.
 
 
-    Položky v seznamu lze seřadit také. <xref:System.Collections.Generic.List%601.Sort%2A> Metoda seřadí všechny položky v seznamu v normálním pořadí (abecedně v případě řetězců). Přidejte tento kód a spusťte ho znovu:
+    Položky v seznamu lze seřadit také. Metoda <xref:System.Collections.Generic.List%601.Sort%2A> seřadí všechny položky v seznamu v normálním pořadí (abecedně v případě řetězců). Přidejte tento kód a spusťte ho znovu:
 
 
     ```csharp
@@ -152,7 +155,7 @@ items:
 - title: Seznamy dalších typů
   durationInMinutes: 5
   content: >
-    V seznamu zatím jste používali `string` typ v seznamech. <xref:System.Collections.Generic.List%601> Pojďme použít jiný typ. Pojďme sestavit sadu čísel. Odstraňte kód, který jste dosud napsali, a nahraďte ho následujícím kódem:
+    V seznamu zatím jste používali typ `string`. Pojďme udělat <xref:System.Collections.Generic.List%601> s použitím jiného typu. Pojďme sestavit sadu čísel. Odstraňte kód, který jste dosud napsali, a nahraďte ho následujícím kódem:
 
 
     ```csharp

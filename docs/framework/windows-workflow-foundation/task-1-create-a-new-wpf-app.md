@@ -1,48 +1,45 @@
 ---
-title: 'Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation'
+title: 'Úloha 1: vytvoření nové aplikace Windows Presentation Foundation'
 ms.date: 03/30/2017
 ms.assetid: 270eaeba-9492-4532-af9f-403ce5c9935b
-ms.openlocfilehash: 44152f0af73b134218cd975d93e186166b1e57ae
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3205840da575041b449eb841fc8084e89937fca7
+ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665310"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72031892"
 ---
-# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation
-Při plnění tohoto úkolu Vytvoření prázdné aplikace Windows Presentation Foundation (WPF) pomocí šablony WPF aplikace Visual Studio a přidejte odkazy na příslušné [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sestavení pracovních postupů.  
+# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Úloha 1: vytvoření nové aplikace Windows Presentation Foundation
+
+V této úloze vytvoříte prázdnou aplikaci Windows Presentation Foundation (WPF) pomocí šablony Visual Studio aplikace WPF a přidáte odkazy na příslušná sestavení pracovního postupu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)].  
   
-### <a name="to-create-the-wpf-application-project"></a>Vytvoření projektu aplikace WPF  
-  
-1. Otevřete sadu Visual Studio a na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
-  
-2. V **nový projekt** dialogové okno Vyberte buď **Visual C#**  nebo **jazyka Visual Basic** z **nainstalované šablony** podokna na levé straně na straně pole. Pokud jazyk podle vašeho výběru se nezobrazí, podívejte se do části **jiné jazyky**.  
-  
-3. Vyberte **Windows** v **nainstalované šablony** podokně.  
-  
-4. V horním podokně, ujistěte se, že (výchozí hodnota) **rozhraní .NET Framework 4** vybrané v rozevíracím seznamu a pak vyberte **aplikace WPF**.  
-  
-5. Nastavte název projekt tak, aby **HostingApplication** v dolní části okna.  
-  
-6. Nastavte název řešení **RehostingTheDesigner**.  
-  
-7. Klikněte na tlačítko **OK** vytvoření projektu aplikace. Visual Studio vytvoří základní rozhraní WPF pro vaši aplikaci a obsahuje odpovídající XAML a soubory kódu na pozadí.  
-  
-8. Přidání odkazů na **WorkflowModel** sestavení. Chcete-li to provést, v **Průzkumníka řešení**, klikněte pravým tlačítkem myši **HostingApplication** projektu a vyberte **přidat odkaz**.  
-  
-9. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET** kartu, podržte stisknutou klávesu CTRL, vyberte následující sestavení a pak klikněte na tlačítko **OK**:  
-  
-    - System.Activities  
-  
-    - System.Activities.Presentation  
-  
-    - System.Activities.Core.Presentation  
-  
-10. Klikněte na **OK**.  
-  
-11. Zobrazit [úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md) informace o hostování pracovního postupu návrháře návrhové plátno.  
-  
+## <a name="to-create-the-wpf-application-project"></a>Vytvoření projektu aplikace WPF
+
+1. Otevřete Visual Studio a v nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**.
+
+2. V dialogovém okně **Nový projekt** vyberte v podokně **Nainstalované šablony** na levé straně pole buď  **C# vizuál** , nebo **Visual Basic** . Pokud se zvolený jazyk nezobrazí, podívejte se do části **jiné jazyky**.
+
+3. V podokně **Nainstalované šablony** vyberte **Windows** .
+
+4. V horním podokně potvrďte, že je v rozevíracím seznamu vybrána možnost (výchozí hodnota) **.NET Framework 4** , a pak vyberte **aplikace WPF**.
+
+5. V dolní části okna nastavte název projektu na **HostingApplication** .
+
+6. Nastavte název řešení na **RehostingTheDesigner**.
+
+7. Kliknutím na tlačítko **OK** vytvořte projekt aplikace. Visual Studio vytvoří základní uživatelské rozhraní WPF pro vaši aplikaci a zahrne příslušné soubory XAML a kódu na pozadí.
+
+8. Přidejte odkazy na **WorkflowModel** sestavení. To provedete tak, že v **Průzkumník řešení**kliknete pravým tlačítkem na projekt **HostingApplication** a vyberete **Přidat odkaz**.
+
+9. V dialogovém okně **Přidat odkaz** klikněte na kartu **.NET** , podržte stisknutou klávesu CTRL, vyberte následující sestavení a klikněte na tlačítko **OK**:
+
+    - System. Activities
+    - System. Activities. Presentation
+    - System. Activities. Core. Presentation
+
+10. Další informace o tom, jak hostovat plátno návrhu návrháře pracovních postupů, najdete v tématu [Úloha 2: hostování Návrhář postupu provádění](task-2-host-the-workflow-designer.md) .
+
 ## <a name="see-also"></a>Viz také:
 
 - [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
-- [Úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md)
+- [Úkol 2: Hostování Návrháře postupu provádění](task-2-host-the-workflow-designer.md)

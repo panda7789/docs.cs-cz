@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání potomků podřízeného elementu (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a958af40-f754-4409-85f9-7746978d4cb3
-ms.openlocfilehash: 178729640898556244657e6e2917373825a4e51e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 865615d014a33f8f29186627000913ac865a6050
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780509"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250364"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak získat následnickým elementům podřízeného elementu s konkrétním názvem.  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání potomků podřízeného elementu (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat odvozené prvky podřízeného elementu s konkrétním názvem.  
   
  Výraz XPath je:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad napodobuje problémy s extrahují text z reprezentace XML textovém dokumentu. První vybere všechny `Paragraph` elementy a pak ji vybere všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. To nevybere následníka `Text` prvky `Comment` elementu.  
+ Tento příklad simuluje problémy extrakce textu z reprezentace XML dokumentu zpracování slova. Nejprve vybere všechny prvky `Paragraph` a potom vybere všechny `Text` odvozené prvky každého prvku `Paragraph`. Tato možnost nevybere následníky `Text` elementu `Comment`.  
   
 ```vb  
 Dim root As XElement = _  
@@ -64,11 +64,11 @@ Console.WriteLine(str2)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 Results are identical  
 This is the start of a sentence.  This is a second sentence.  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
-- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

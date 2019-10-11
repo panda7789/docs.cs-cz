@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 4bb38d2c-bc7c-4196-8909-aaf41fb86b28
-ms.openlocfilehash: 17c5e9abf607df7311ff2552b7e9c54cbf30fd59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39d635eb3d80a4a72647397313c77dac09777206
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780481"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250098"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (Visual Basic)
-Někdy budete chtít najít všechny elementy, které mají určitý atribut. Nejste obavy o obsah atributu. Místo toho chcete vybrat na základě existence atributu.  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání elementů s konkrétním atributem (XPath-LINQ to XML) (Visual Basic)
+Někdy chcete najít všechny prvky, které mají konkrétní atribut. Nemáte obavy o obsah atributu. Místo toho je třeba vybrat na základě existence atributu.  
   
  Výraz XPath je:  
   
  `./*[@Select]`  
   
 ## <a name="example"></a>Příklad  
- Následující kód vybere pouze prvky, které mají `Select` atribut.  
+ Následující kód vybere pouze prvky, které mají atribut `Select`.  
   
 ```vb  
 Dim doc As XElement = _   
@@ -53,12 +53,12 @@ Next
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console
 Results are identical  
 <Child2 Select="true">2</Child2>  
 <Child4 Select="true">4</Child4>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
-- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

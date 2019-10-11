@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: hledání elementů v oboru názvů (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c7cb3b77-3424-4b54-9efa-4dc715948e41
-ms.openlocfilehash: f48ae0a03d625a3510b2280aa6361e2a731e5afe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98afdd7fc67895eaad5703cfb32c2b4000deb87f
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780468"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250116"
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (Visual Basic)
-Výrazy XPath najdete konkrétní obor názvů uzly. Výrazy XPath používání předpon oboru názvů pro zadání oborů názvů. Parsovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt do metody XPath, které implementuje <xref:System.Xml.IXmlNamespaceResolver>. Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.  
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>Postupy: hledání elementů v oboru názvů (XPath-LINQ to XML) (Visual Basic)
+Výrazy XPath můžou najít uzly v konkrétním oboru názvů. Výrazy XPath používají předpony oboru názvů pro zadání oborů názvů. Chcete-li analyzovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt metodám XPath implementující <xref:System.Xml.IXmlNamespaceResolver>. V tomto příkladu se používá <xref:System.Xml.XmlNamespaceManager>.  
   
  Výraz XPath je:  
   
  `./aw:*`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad načte stromu XML, který obsahuje dva obory názvů. Používá <xref:System.Xml.XmlReader> pro čtení dokumentu XML. Potom získá <xref:System.Xml.XmlNameTable> z <xref:System.Xml.XmlReader>a <xref:System.Xml.XmlNamespaceManager> z <xref:System.Xml.XmlNameTable>. Používá <xref:System.Xml.XmlNamespaceManager> při výběru elementů.  
+ Následující příklad přečte strom XML, který obsahuje dva obory názvů. Pro čtení dokumentu XML používá <xref:System.Xml.XmlReader>. Pak získá <xref:System.Xml.XmlNameTable> z <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlNamespaceManager> z <xref:System.Xml.XmlNameTable>. Při výběru elementů používá <xref:System.Xml.XmlNamespaceManager>.  
   
 ```vb  
 Dim reader As XmlReader = _  
@@ -47,7 +47,7 @@ Next
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console
 Results are identical  
 <aw:PurchaseOrder PONumber="11223" Date="2000-01-15" xmlns:aw="http://www.adventure-works.com">  
     <aw:ShippingAddress>  
@@ -80,6 +80,6 @@ Results are identical
   </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
-- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

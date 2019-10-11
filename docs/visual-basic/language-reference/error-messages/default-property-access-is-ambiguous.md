@@ -1,5 +1,5 @@
 ---
-title: Zděděné členy '<defaultpropertyname>' rozhraní '<interfacename1>' a členy '<defaultpropertyname>' rozhraní '<interfacename2>' mají nejednoznačný přístup k výchozím vlastnostem.
+title: Zděděné členy rozhraní <defaultpropertyname> rozhraní <interfacename1> a <defaultpropertyname> rozhraní <interfacename2> mají nejednoznačný přístup k výchozím vlastnostem.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30686
@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-ms.openlocfilehash: a36cfe8e5496bbfd1941afa8a46086491ae96a2a
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: f76163d58f3f11d3ca946525a1604abc3ebba68d
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512753"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250373"
 ---
-# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>Zděděné členy\<defaultpropertyname >\<rozhraní\<interfacename1 > a defaultpropertyname > of interface\< mají nejednoznačný přístup k výchozím vlastnostem. interfacename2 > '
+# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>Zděděné členy rozhraní \<defaultpropertyname > rozhraní \<interfacename1 > a \<defaultpropertyname > rozhraní \<interfacename2 > je nejednoznačný přístup k výchozím vlastnostem.
 
-Rozhraní dědí ze dvou rozhraní, z nichž každý deklaruje výchozí vlastnost se stejným názvem. Kompilátor nemůže přeložit přístup k této výchozí vlastnosti bez kvalifikace. Toto dokládá následující příklad.
+Rozhraní dědí ze dvou rozhraní, z nichž každý deklaruje výchozí vlastnost se stejným názvem. Kompilátor nemůže přeložit přístup k této výchozí vlastnosti bez kvalifikace. Následující příklad znázorňuje toto.
 
 ```vb
 Public Interface Iface1
@@ -36,21 +36,21 @@ Public Class testClass
 End Class
 ```
 
-Když zadáte `testObj(1)`, kompilátor se pokusí ho přeložit na výchozí vlastnost. Existují však dvě možné výchozí vlastnosti z důvodu zděděných rozhraní, takže kompilátor tuto chybu signalizuje.
+Pokud zadáte `testObj(1)`, kompilátor se pokusí ho přeložit na výchozí vlastnost. Existují však dvě možné výchozí vlastnosti z důvodu zděděných rozhraní, takže kompilátor tuto chybu signalizuje.
 
 **ID chyby:** BC30686
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-- Vyhněte se dědění všech členů se stejným názvem. V předchozím příkladu, pokud `testObj` nepotřebuje žádné z členů, řekněme, `Iface2`a pak ho deklarovat takto:
+- Vyhněte se dědění všech členů se stejným názvem. V předchozím příkladu, pokud `testObj` nepotřebuje žádné z členů, řekněme, `Iface2` a pak jej deklarujete následujícím způsobem:
 
   ```vb
   Dim testObj As Iface1
   ```
 
-  \-ani
+  @no__t – 0or –
 
-- Implementujte rozhraní dědění ve třídě. Pak můžete implementovat všechny děděné vlastnosti s různými názvy. Nicméně pouze jeden z nich může být výchozí vlastností implementující třídy. Toto dokládá následující příklad.
+- Implementujte rozhraní dědění ve třídě. Pak můžete implementovat všechny děděné vlastnosti s různými názvy. Nicméně pouze jeden z nich může být výchozí vlastností implementující třídy. Následující příklad znázorňuje toto.
 
   ```vb
   Public Class useIface3
@@ -64,6 +64,6 @@ Když zadáte `testObj(1)`, kompilátor se pokusí ho přeložit na výchozí vl
   End Class
   ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Související témata
 
-- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [Interfaces](../../programming-guide/language-features/interfaces/index.md)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f7c13688236f3d66f3225ecf5d93b4c3284e2e71
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: e476039ff9c8d33f54a2f7e4371dc09a3be557c7
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002877"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237323"
 ---
 ### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft. VisualBasic. konstanty. vbNewLine je zastaralá.
 
@@ -14,7 +14,7 @@ Konstanta <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullNa
 
 3,0 Preview 8
 
-#### <a name="details"></a>Podrobnosti
+#### <a name="change-description"></a>Změnit popis
 
 Počínaje verzí .NET Core 3,0 Preview 8 byl [zastaralý](xref:System.ObsoleteAttribute) atribut použit na konstantu <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName>. Použití konstanty generuje upozornění kompilátoru. V předchozích verzích rozhraní .NET Core a .NET Framework nebyla označena jako zastaralá.
 
@@ -26,7 +26,7 @@ Tato změna byla provedena za účelem podpory Visual Basic jako jazyka pro výv
 
 > Pro návrat na začátek řádku a pro posun řádku použijte [vbCrLf](xref:Microsoft.VisualBasic.Constants.vbCrLf). V případě nového řádku aktuální platformy použijte <xref:System.Environment.NewLine?displayProperty=nameWithType>.
 
-#### <a name="category"></a>Kategorie
+#### <a name="category"></a>Category
 
 Visual Basic
 
@@ -40,5 +40,4 @@ Visual Basic
 
 - `F:Microsoft.VisualBasic.Constants.vbNewLine`
 
--- >
-
+-->
