@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledání seznamu podřízených elementů (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: vyhledání seznamu podřízených elementů (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 2868abfd-9f7b-412a-9cb5-f643f0fed146
-ms.openlocfilehash: 7ed31f17157176a6c100a8d02e065843a62b9587
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aab185cd4c157c7ee671418368668d46b4bb2a4a
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021658"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249978"
 ---
-# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="ab4a1-102">Postupy: Vyhledání seznamu podřízených elementů (XPath – LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ab4a1-102">How to: Find a List of Child Elements (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="ab4a1-103">Toto téma srovnává ose XPath podřízené prvky do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> osy.</span><span class="sxs-lookup"><span data-stu-id="ab4a1-103">This topic compares the XPath child elements axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> axis.</span></span>  
+# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="7b807-102">Postupy: vyhledání seznamu podřízených elementů (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7b807-102">How to: Find a List of Child Elements (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="7b807-103">Toto téma porovnává osu podřízených elementů XPath s osou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A>.</span><span class="sxs-lookup"><span data-stu-id="7b807-103">This topic compares the XPath child elements axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> axis.</span></span>  
   
- <span data-ttu-id="ab4a1-104">Výraz XPath je: `./*`</span><span class="sxs-lookup"><span data-stu-id="ab4a1-104">The XPath expression is: `./*`</span></span>  
+ <span data-ttu-id="7b807-104">Výraz XPath je: `./*`</span><span class="sxs-lookup"><span data-stu-id="7b807-104">The XPath expression is: `./*`</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ab4a1-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="ab4a1-105">Example</span></span>  
- <span data-ttu-id="ab4a1-106">Tento příklad vyhledá všechny podřízené prvky `Address` elementu.</span><span class="sxs-lookup"><span data-stu-id="ab4a1-106">This example finds all of the child elements of the `Address` element.</span></span>  
+## <a name="example"></a><span data-ttu-id="7b807-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="7b807-105">Example</span></span>  
+ <span data-ttu-id="7b807-106">Tento příklad vyhledá všechny podřízené prvky elementu `Address`.</span><span class="sxs-lookup"><span data-stu-id="7b807-106">This example finds all of the child elements of the `Address` element.</span></span>  
   
- <span data-ttu-id="ab4a1-107">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="ab4a1-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="7b807-107">Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7b807-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim cpo As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -40,9 +40,9 @@ For Each el As XElement In list1
 Next  
 ```  
   
- <span data-ttu-id="ab4a1-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ab4a1-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="7b807-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7b807-108">This example produces the following output:</span></span>  
   
-```  
+```console
 Results are identical  
 <Name>Ellen Adams</Name>  
 <Street>123 Maple Street</Street>  
@@ -52,6 +52,6 @@ Results are identical
 <Country>USA</Country>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ab4a1-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ab4a1-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7b807-109">Související témata</span><span class="sxs-lookup"><span data-stu-id="7b807-109">See also</span></span>
 
-- [<span data-ttu-id="ab4a1-110">LINQ to XML pro uživatele jazyka XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ab4a1-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="7b807-110">LINQ to XML pro uživatele XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7b807-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
