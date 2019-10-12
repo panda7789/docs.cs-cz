@@ -62,5 +62,7 @@
           href: how-to-use-anonymous-pipes-for-local-interprocess-communication.md
         - name: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
           href: how-to-use-named-pipes-for-network-interprocess-communication.md
+    - name: Kanály
+      href: pipelines.md
     - name: Soubory mapované paměti
       href: memory-mapped-files.md
