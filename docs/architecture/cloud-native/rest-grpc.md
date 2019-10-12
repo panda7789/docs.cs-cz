@@ -3,12 +3,12 @@ title: REST a gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od protokolu HTTP REST.
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: d888069168aee1fcfb13354f4b6f9ae2c8d1f233
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: fed8e7d86a8ddc268f1264728d9631a561c1b310
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214544"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291322"
 ---
 # <a name="rest-and-grpc"></a>REST a gRPC
 
@@ -28,7 +28,7 @@ gRPC je moderní architektura RPC, která je odlehčená a vysoce výkonná. Pro
 - Streamování je integrované do HTTP/2, což znamená, že požadavky i odpovědi můžou asynchronně streamovat velké datové sady.
 - V kombinaci gRPC a HTTP/2 se výrazně zvyšuje výkon. V [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) agilním výkon gPRC a překračuje rychlost a efektivitu [vazeb NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8). Ale na rozdíl od NetTCP se gRPC neomezuje na jazyky Microsoftu, jako je C# nebo VB.NET.
 
-gRPC se podporuje na nejoblíbenějších platformách, včetně Java C#,, golang a NodeJS. 
+gRPC se podporuje na nejoblíbenějších platformách, včetně jazyků C#Java,, golang a NodeJS. 
 
 ## <a name="protocol-buffers"></a>Vyrovnávací paměti protokolů
 
@@ -61,7 +61,7 @@ gRPC je vhodný pro následující scénáře:
 - Polyglot prostředí – Nástroj pro gRPC podporuje většinu oblíbených vývojových jazyků, takže pro prostředí s více jazyky je vhodná volba.
 - Omezená prostředí sítě – zprávy gRPC jsou serializovány pomocí Protobuf, což je odlehčený formát zprávy. Zpráva gRPC je vždy menší než ekvivalentní zpráva JSON.
 
-Při psaní této knihy mají většina prohlížečů omezené podpory pro gRPC. gRPC intenzivně používá funkce HTTP/2 a bez prohlížeče poskytuje úroveň řízení požadovaná pro webové požadavky na podporu klienta gRPC. gRPC se obvykle používá pro interní mikroslužby pro komunikaci mikroslužeb. Obrázek 4-22 ukazuje jednoduchý, ale běžný vzor použití.
+V době psaní této knihy mají většina prohlížečů omezené podpory pro gRPC. gRPC intenzivně používá funkce HTTP/2 a bez prohlížeče poskytuje úroveň řízení požadovaná pro webové požadavky na podporu klienta gRPC. gRPC se obvykle používá pro interní mikroslužby pro komunikaci mikroslužeb. Obrázek 4-22 ukazuje jednoduchý, ale běžný vzor použití.
 
 ![Vzorce používání gRPC](./media/grpc-usage.png)
 

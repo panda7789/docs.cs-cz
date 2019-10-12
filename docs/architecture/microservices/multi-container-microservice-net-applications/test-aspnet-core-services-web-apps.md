@@ -2,12 +2,12 @@
 title: Testování služeb a webových aplikací ASP.NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET Core služeb a webových aplikací v kontejnerech.
 ms.date: 10/02/2018
-ms.openlocfilehash: 0a741fca84f456d635e1790d6be1c72e70345a24
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 042f7a6171a88025d3d4a8e37c4deceb416e5711
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296540"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291281"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 
@@ -31,7 +31,7 @@ Při testování akcí kontroleru se ujistěte, že se zaměříte jenom na jeji
 
 Testy jednotek jsou implementovány na základě testovacích rozhraní, jako jsou xUnit.net, MSTest, MOQ nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme xUnit.
 
-Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v jazyce C\#, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
+Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v C @ no__t-0, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
 
 ```csharp
 [Fact]
@@ -104,13 +104,13 @@ public class PrimeWebDefaultRequestShould
 - **Steve Smith. Testovací kontroléry** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
 
-- **Steve Smith. Testování** integrace (ASP.NET Core) \
+- **Steve Smith. Testování integrace** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/test/integration-tests](/aspnet/core/test/integration-tests)
 
-- **Testování částí v .NET Core pomocí testu dotnet** \
+- **Testování částí v .NET Core pomocí příkazu dotnet test** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
-- **xUnit.net**. Oficiální lokalita. \
+- **xUnit.NET**. Oficiální lokalita. \
     <https://xunit.github.io/>
 
 - **Základy testování částí.** \
@@ -144,13 +144,13 @@ Testy referenční aplikace (eShopOnContainers) se nedávno změnily a teď exis
 
 Test jednotek a integračních testů na mikroslužbu je obsažen v testovací složce v každé mikroslužbě a aplikaci. testy zatížení jsou obsaženy ve složce test ve složce řešení, jak je znázorněno na obrázku 6-25.
 
-![Struktura testů v eShopOnContainers: Každá služba má "testovací" složku, která obsahuje jednotky a funkční testy. Ve složce řešení "test" jsou funkční testy pro nejrůznější aplikace a zátěžový test.](./media/image42.png)
+![Struktura testů v eShopOnContainers: Každá služba má složku "test", která obsahuje jednotky a funkční testy. Ve složce řešení "test" jsou funkční testy pro nejrůznější aplikace a zátěžový test.](./media/image42.png)
 
 **Obrázek 6-25**. Struktura testovacích složek v eShopOnContainers
 
 Testy funkcí a integrace mikroslužeb a aplikací jsou spouštěny ze sady Visual Studio pomocí rutiny regulárních testů, ale nejdřív je potřeba spustit požadované služby infrastruktury, a to pomocí sady souborů Docker pro sestavení, které jsou obsaženy ve složce test řešení. :
 
-**docker-compose-test.yml**
+**Docker-Compose-test. yml**
 
 ```yml
 version: '3.4'
@@ -166,7 +166,7 @@ services:
     image: mongo
 ```
 
-**docker-compose-test.override.yml**
+**Docker-Compose-test. override. yml**
 
 ```yml
 version: '3.4'
@@ -192,7 +192,7 @@ services:
 
 Takže pokud chcete spustit testy funkčnosti nebo integrace, musíte nejdřív spustit tento příkaz ze složky test řešení:
 
-``` console
+```console
 docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 ```
 
@@ -207,5 +207,5 @@ Jak vidíte, tyto soubory Docker-skládání začínají pouze mikroslužby Redi
     <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/test/ServicesTests/LoadTest/>
 
 > [!div class="step-by-step"]
-> [Předchozí](subscribe-events.md)Další
-> [](background-tasks-with-ihostedservice.md)
+> [Předchozí](subscribe-events.md)
+> [Další](background-tasks-with-ihostedservice.md)

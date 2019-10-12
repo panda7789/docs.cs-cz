@@ -1,14 +1,14 @@
 ---
-title: Definování nativního cloudu
+title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 6a4a63f003c8ff0c7381d29f4e569838e45bd669
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 4236f0d6aca9d4348d4ead33f552f9a8a2c8c461
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183467"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291208"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -32,7 +32,7 @@ Nativní Cloud je mnohem o *rychlosti* a *flexibilitě*. Firemní systémy se vy
 
 Zde jsou některé společnosti, které implementovaly tyto techniky. Vezměte v úvahu rychlost, flexibilitu a škálovatelnost, které dosáhly.
 
-| Společnosti | Využij | 
+| Podnikový | Využij | 
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | Má 600 + služby v produkčním prostředí. Nasadí stovky časů za den. |
 | [Uber](https://eng.uber.com/micro-deploy/) | Má 1000 000 služeb uložených v produkčním prostředí. Každý týden nasadí několik tisíc sestavení. | 
@@ -40,11 +40,11 @@ Zde jsou některé společnosti, které implementovaly tyto techniky. Vezměte v
 
 Jak vidíte, Netflix, Uber a WeChat zpřístupňují systémy, které se skládají ze stovek nezávislých mikroslužeb. Tento styl architektury umožňuje rychle reagovat na podmínky na trhu. Můžou okamžitě aktualizovat malé oblasti živé, složité aplikace a individuálně škálovat tyto oblasti podle potřeby.
 
-Rychlost a flexibilita cloudového nativního řešení pocházejí z řady faktorů. Nejpřednější je cloudová infrastruktura. Pět dalších základních sloupků, které jsou znázorněné na obrázku 1-1, také poskytuje Bedrock pro nativní cloudové systémy.
+Rychlost a flexibilita cloudového nativního řešení pocházejí z řady faktorů. Nejpřednější je cloudová infrastruktura. Pět dalších základních sloupků, které jsou znázorněné na obrázku 1-3, také poskytuje Bedrock pro nativní cloudové systémy.
 
 ![Základní pilíře pro Cloud – nativní](./media/cloud-native-foundational-pillars.png)
 
-**Obrázek 1-1**. Základní pilíře pro Cloud – nativní
+**Obrázek 1-3**. Základní pilíře pro Cloud – nativní
 
 Pojďme chvíli trvat, abychom lépe pochopili význam každého pilíře.
 
@@ -54,7 +54,7 @@ Cloudové nativní systémy plně využívají model cloudové služby.
 
 Tyto systémy, které jsou navržené tak, aby i v dynamickém virtualizovaném cloudovém prostředí, využívají výpočetní infrastrukturu [Platform as a Service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/) a spravované služby. *Považují základní infrastrukturu za dobu* v řádu minut a změnila velikost, zmenšování, přesunutí nebo zničení na vyžádání – prostřednictvím automatizace.
 
-Vezměte v úvahu široce přijatý koncept DevOpsů v [zájmovém chovu vs. Skot](https://medium.com/@Joachim8675309/devops-concepts-pets-vs-cattle-2380b5aab313). V tradičním datovém centru se servery považují za *domácí*: fyzický počítač, s ohledem na smysluplný název a staráte pro. Škálujte přidáním dalších prostředků do stejného počítače (škálování nahoru). Pokud se server bude nemocenný, nebudete ho moct vrátit do stavu. Má-li server být nedostupný, každý vyhlášení.
+Vezměte v úvahu široce přijatý koncept DevOps [domácího a skotu](https://medium.com/@Joachim8675309/devops-concepts-pets-vs-cattle-2380b5aab313). V tradičním datovém centru se servery považují za *domácí*: fyzický počítač, s ohledem na smysluplný název a staráte pro. Škálujte přidáním dalších prostředků do stejného počítače (škálování nahoru). Pokud se server bude nemocenný, nebudete ho moct vrátit do stavu. Má-li server být nedostupný, každý vyhlášení.
 
 Model služby pro *skot* se liší. Každou instanci zřizujete jako virtuální počítač nebo kontejner. Jsou identické a mají přiřazený systémový identifikátor, třeba Service-01, Service-02 a tak dále. Můžete škálovat tak, že vytvoříte více z nich (horizontální škálování). Když některý z nich nebude k dispozici, nikdo z vás nevšiml.
 
@@ -76,27 +76,27 @@ I když se to týká jakékoli webové aplikace, mnoho specialistů je považuje
 
 V následující tabulce je zdůrazněna dvanáct-Factor metodologie:
 
-|    |  faktor | Vysvětlení  |
+|    |  Jednotek | Vysvětlení  |
 | :-------- | :-------- | :-------- |
-| 1 | Základ kódu | Jediný základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí (QA, fázování, produkce). |
-| 2 | Závislosti | Každá mikroslužba izoluje a zabalí vlastní závislosti, přechodu změny bez dopadu na celý systém. |
+| první | Základ kódu | Jediný základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí (QA, fázování, produkce). |
+| odst | Závislosti | Každá mikroslužba izoluje a zabalí vlastní závislosti, přechodu změny bez dopadu na celý systém. |
 | 3 | Konfigurace  | Informace o konfiguraci se přesunou z mikroslužby a externě prostřednictvím nástroje pro správu konfigurace mimo kód. Stejné nasazení se může šířit v různých prostředích se správnou nainstalovanou konfigurací.  |
 | 4 | Záložní služby | Pomocné prostředky (úložiště dat, mezipaměti, zprostředkovatelé zpráv) by měly být vystavené prostřednictvím adres URL. Tím se oddělí prostředek od aplikace a tím se umožní jejich zaměnitelné.  |
 | 5 | Sestavení, vydání, spuštění | Každá verze musí vyhovět striktnímu oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každý by měl být označený jedinečným ID a podporovat možnost vracet se zpátky. Moderní systémy CI/CD můžou splnit tento princip. |
 | 6 | Procesy | Každá mikroslužba by se měla spustit ve vlastním procesu izolovaném od ostatních spuštěných služeb. Externalize požadovaný stav na zálohovací službu, jako je například distribuovaná mezipaměť nebo úložiště dat. |
-| 7 | Vazba portu | Každá mikroslužba by měla být sama o sobě obsažená s rozhraními a funkcemi zveřejněnými na vlastním portu. V takovém případě poskytuje izolaci od ostatních mikroslužeb. |
+| čl | Vazba portu | Každá mikroslužba by měla být sama o sobě obsažená s rozhraními a funkcemi zveřejněnými na vlastním portu. V takovém případě poskytuje izolaci od ostatních mikroslužeb. |
 | 8 | Souběžnost | Služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od škálování jedné velké instance na nejvýkonnějším počítači, který je k dispozici. |
 | 9 | Disposability | Instance služby by měly být jednorázově, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a aby bylo možné bezproblémové vypnutí systému zůstat ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. |
-| 10 | Parita pro vývoj/prod | Snažte se v životním cyklu aplikace považovat za co možná podobná, a vyhnout se nákladným zkratkám. V tomto případě může přijetí kontejnerů významně přispět tím, že povýší stejné spouštěcí prostředí. |
-| 11 | protokolování | Protokoly generované mikroslužbami se považují za streamy událostí. Zpracujte je pomocí Agregátoru událostí a rozšiřujte data na nástroje pro správu dolování dat a protokolů, jako je Azure Monitor nebo Splunk, a nakonec dlouhodobou archivaci. |
-| 12 | Procesy správy | Spouštět úlohy správy a správy jako jednorázové procesy. Úkoly můžou zahrnovat data pro vyčištění a navýšení analýzy pro sestavu. Nástroje spouštějící tyto úlohy by se měly vyvolávat z produkčního prostředí, ale odděleně od aplikace. |
+| 10pruhový | Parita pro vývoj/prod | Snažte se v životním cyklu aplikace považovat za co možná podobná, a vyhnout se nákladným zkratkám. V tomto případě může přijetí kontejnerů významně přispět tím, že povýší stejné spouštěcí prostředí. |
+| odst | protokolování | Protokoly generované mikroslužbami se považují za streamy událostí. Zpracujte je pomocí Agregátoru událostí a rozšiřujte data na nástroje pro správu dolování dat a protokolů, jako je Azure Monitor nebo Splunk, a nakonec dlouhodobou archivaci. |
+| 12,5 | Procesy správy | Spouštět úlohy správy a správy jako jednorázové procesy. Úkoly můžou zahrnovat data pro vyčištění a navýšení analýzy pro sestavu. Nástroje spouštějící tyto úlohy by se měly vyvolávat z produkčního prostředí, ale odděleně od aplikace. |
 
 V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), si autor Kevin Hoffman podrobnosti o všech původních 12 faktorech (napsaných v 2011). Navíc kniha nabízí tři další faktory, které odráží dnešní moderní návrh cloudové aplikace.
 
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
-| 13 | Nejdřív rozhraní API | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end. brána nebo jiná služba. |
-| 14 | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
+| 13,5 | Nejdřív rozhraní API | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end. brána nebo jiná služba. |
+| čtrnáct | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
 | 15 | Ověřování/autorizace  | Implementujte identitu od začátku. Vezměte v úvahu funkce [RBAC (řízení přístupu na základě role)](https://docs.microsoft.com/azure/role-based-access-control/overview) , které jsou dostupné ve veřejných cloudech.  |
 
 V této kapitole a v celé knize budeme odkazovat na spoustu 12 dalších faktorů.
@@ -131,7 +131,7 @@ Jak vaše služba identifikuje, kdo k němu přistupuje a jaká oprávnění maj
 
 Identita je uvedena v podrobnostech kapitoly 8, *identity*.
 
-## <a name="microservices"></a>Mikroslužby
+## <a name="microservices"></a>Mikroslužeb
 Nativní systémy pro Cloud mají mikroslužby, což je oblíbený styl architektury pro vytváření moderních aplikací.
 
 Mikroslužby vytvořené jako distribuovaná sada malých nezávislých služeb, které komunikují prostřednictvím sdílených prostředků infrastruktury, sdílí následující vlastnosti:
@@ -146,15 +146,15 @@ Mikroslužby vytvořené jako distribuovaná sada malých nezávislých služeb,
 
 - Vytvářejí dohromady, aby bylo možné vytvořit aplikaci.
 
-Obrázek 1-2 kontrastuje přístup k aplikaci monolitické s přístupem k mikroslužbám. Všimněte si, jak se monolitu skládá z vrstvené architektury, která se spouští v jednom procesu. Obvykle spotřebovává relační databázi. Přístup k mikroslužbám ale odděluje funkce na nezávislé služby, které obsahují logiku a data. Každá mikroslužba hostuje své vlastní úložiště dat.
+Obrázek 1-4 kontrastuje přístup k aplikaci monolitické s přístupem k mikroslužbám. Všimněte si, jak se monolitu skládá z vrstvené architektury, která se spouští v jednom procesu. Obvykle spotřebovává relační databázi. Přístup k mikroslužbám ale odděluje funkce na nezávislé služby, které obsahují logiku a data. Každá mikroslužba hostuje své vlastní úložiště dat.
 
 ![Monolitické nasazení versus mikroslužby](./media/monolithic-vs-microservices.png)
 
-**Obrázek 1-2.** Monolitické nasazení versus mikroslužby
+**Obrázek 1-4.** Monolitické nasazení versus mikroslužby
 
 Všimněte si, jak mikroslužby povýší "jeden základ kódu, jedna aplikace" z [aplikace na základě dvanácti faktorů](https://12factor.net/)popsaných výše v části.
 
-> *Faktor \#1 určuje jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí.*
+> *Faktor \#1 určuje "jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí.*
 
 ### <a name="why-microservices"></a>Proč mikroslužby?
 
@@ -166,7 +166,7 @@ Dříve v této kapitole jsme porovnali elektronického obchodování aplikaci s
 
 - Jednotlivé mikroslužby se můžou škálovat nezávisle. Místo škálování celé aplikace jako jedné jednotky můžete škálovat pouze ty služby, které vyžadují větší kapacitu napájení nebo šířku pásma sítě. Tento jemně odstupňovaný přístup k škálování poskytuje lepší kontrolu nad vaším systémem a pomáhá snižovat celkové náklady při škálování částí systému, ne všeho.
 
-Vynikající referenční příručka pro porozumění mikroslužbám je [mikroslužby .NET: Architektura pro kontejnerové aplikace](https://docs.microsoft.com/dotnet/standard/microservices-architecture/).NET. Kniha hluboko komentáře na návrh a architekturu mikroslužeb. Je to Pomocník pro [kompletní referenční architekturu mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers) , který je k dispozici zdarma ke stažení od Microsoftu.
+Vynikající referenční příručka pro porozumění mikroslužbám je [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/standard/microservices-architecture/). Kniha hluboko komentáře na návrh a architekturu mikroslužeb. Je to Pomocník pro [kompletní referenční architekturu mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers) , který je k dispozici zdarma ke stažení od Microsoftu.
 
 ### <a name="developing-microservices"></a>Vývoj mikroslužeb
 
@@ -186,11 +186,11 @@ Uzavření mikroslužby je jednoduchá a jednoduchá. Kód, jeho závislosti a m
 
 V případě potřeby Transformujte obrázek na spuštěnou instanci kontejneru. Instance se spouští na jakémkoli počítači, který má nainstalovaný modul pro modul [runtime kontejneru](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) . V případě potřeby můžete mít tolik instancí služby kontejneru.
 
-Obrázek 1-3 ukazuje tři různé mikroslužby, každé ve vlastním kontejneru spuštěném na jednom hostiteli.
+Obrázek 1-5 ukazuje tři různé mikroslužby, každé ve vlastním kontejneru spuštěném na jednom hostiteli.
 
 ![Více kontejnerů spuštěných v hostiteli kontejneru](./media/hosting-mulitple-containers.png)  
 
-**Obrázek 1-3**. Více kontejnerů spuštěných v hostiteli kontejneru
+**Obrázek 1-5**. Více kontejnerů spuštěných v hostiteli kontejneru
 
 Všimněte si, jak každý kontejner udržuje svou vlastní sadu závislostí a modulu runtime, který se může lišit. Tady vidíte různé verze mikroslužby produktu běžící na stejném hostiteli. Každý kontejner sdílí řez základního hostitelského operačního systému, paměti a procesoru, ale je od sebe izolovaný. 
 
@@ -214,11 +214,11 @@ Díky sdílení základního operačního systému a prostředků hostitele maj�
 
 I když nástroje, jako je Docker, vytvářejí image a spouštějí kontejnery, potřebujete nástroje pro jejich správu. Správa kontejnerů se provádí pomocí speciálního softwarového programu nazvaného produkt Orchestrator pro kontejner. Při současném škálování je orchestrace kontejnerů zásadní. 
 
-Obrázek 1-4 ukazuje úlohy správy, které poskytují orchestrace kontejnerů.
+Obrázek 1-6 ukazuje úlohy správy, které poskytují orchestrace kontejnerů.
 
 ![Co dělají orchestrace kontejnerů](./media/what-container-orchestrators-do.png)
 
-**Obrázek 1-4**. Co dělají orchestrace kontejnerů
+**Obrázek 1-6**. Co dělají orchestrace kontejnerů
 
 V následující tabulce jsou popsány běžné úlohy orchestrace.
 
@@ -228,16 +228,16 @@ V následující tabulce jsou popsány běžné úlohy orchestrace.
 | Spřažení/proti spřažení | Zřizování kontejnerů blízko sebe nebo daleko od sebe navzájem, což pomáhá zajistit dostupnost a výkon. |
 | Monitorování stavu | Automatické zjišťování a opravy chyb.|
 | Převzetí služeb | Automaticky znovu zřídit neúspěšnou instanci pro počítače v pořádku.|
-| Škálování | Automaticky přidat nebo odebrat instanci kontejneru, aby splňovala požadavky.|
+| Změně | Automaticky přidat nebo odebrat instanci kontejneru, aby splňovala požadavky.|
 | Síťové služby | Spravujte překrytí sítě pro komunikaci s kontejnerem.|
 | Zjišťování služby | Umožněte, aby kontejnery navzájem vyhledaly.|
 | Postupné upgrady | Koordinuje přírůstkové upgrady při nasazení s nulovými výpadky. Automaticky vrátí problematické změny.|
 
 Všimněte si, jak orchestrace vychází ze zásad disposability a souběžnosti z [aplikace z dvanácti faktorů](https://12factor.net/)popsaných výše v části.
 
-> *Faktor \#9 určuje, že "instance služby by měly být jednorázově, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a aby bylo možné bezproblémové vypnutí systému zůstat ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. "*
+> *Faktor \#9 určuje, že "instance služby by měly být na jedno použití, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a řádné vypnutí systému, aby systém zůstal ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. "*
 
-> *Faktor \#8 udává, že "služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od vertikálního škálování jedné velké instance na nejvýkonnějším počítači, který je k dispozici."*
+> *Faktor \#8 určuje, že "služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od škálování jedné velké instance na nejvýkonnějším dostupném počítači."*
 
 I když existuje několik orchestrací kontejnerů, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) se stal de facto standardem pro cloudově Native World. Je to přenosná, rozšiřitelná a open source platforma pro správu kontejnerových úloh. 
 
@@ -249,15 +249,15 @@ Služba Azure Kubernetes Services je podrobně popsána v kapitole 2, *škálov�
 
 Nativní systémy cloudu závisí na mnoha různých pomocných zdrojích, jako jsou úložiště dat, zprostředkovatelé zpráv, monitorování a služby identit. Tyto služby se označují jako [záložní služby](https://12factor.net/backing-services).
 
- Obrázek 1-5 ukazuje mnoho běžných zálohovacích služeb, které využívají cloudové nativní systémy.
+ Obrázek 1-7 ukazuje mnoho běžných zálohovacích služeb, které využívají cloudové nativní systémy.
 
 ![Běžné služby zálohování](./media/common-backing-services.png)
 
-**Obrázek 1-5**. Běžné služby zálohování
+**Obrázek 1-7**. Běžné služby zálohování
 
 Služba back-Factor Services povýší zásadu "Statelessness" z [aplikace na dvanácti](https://12factor.net/), která je popsána výše v kapitole.
 
->*Faktor\#6* určuje, že "každá mikroslužba by se měla spustit ve vlastním procesu, izolovaná od ostatních spuštěných služeb. Externalize požadovaný stav na zálohovací službu, jako je například distribuovaná mezipaměť nebo úložiště dat. "
+>*Faktor \#6* určuje, že "každá mikroslužba by se měla spustit ve vlastním procesu, izolovaná od ostatních spuštěných služeb. Externalize požadovaný stav na zálohovací službu, jako je například distribuovaná mezipaměť nebo úložiště dat. "
 
 Mohli byste hostovat své vlastní služby zálohování, ale pak budete odpovědni za licencování, zřizování a správu těchto prostředků.
 
@@ -267,9 +267,9 @@ Cloudové nativní systémy mají na starosti spravované záložní služby od 
 
 Osvědčeným postupem je považovat záložní službu za *připojeného prostředku*, která je dynamicky vázaná na mikroslužby s informacemi (adresa URL a přihlašovací údaje) uložené v externí konfiguraci. Tyto pokyny se napíší v aplikaci v [dvanácti faktorech](https://12factor.net/), které jsou popsány dříve v této kapitole.
 
->*Faktor\#4* určuje, že záložní služby by měly být zpřístupněny prostřednictvím adres URL. Tím se oddělí prostředek od aplikace a umožní se jeho změna. "
+>*Faktor \#4* určuje, že záložní služby by měly být zveřejněny prostřednictvím adresované adresy URL. Tím se oddělí prostředek od aplikace a umožní se jeho změna. "
 
->*Faktor\#3* určuje, že se "informace o konfiguraci přesouvají z mikroslužby a externě prostřednictvím nástroje pro správu konfigurace mimo kód."
+>*Faktor \#3* určuje, že "informace o konfiguraci se z mikroslužeb přesunou a externě prostřednictvím nástroje pro správu konfigurace mimo kód."
 
 V tomto modelu je možné připojit a odpojit zálohovací službu beze změny kódu. Mikroslužbu můžete povýšit z QA do přípravného prostředí. Aktualizujete konfiguraci mikroslužeb tak, aby odkazovala na služby, které jsou v pracovním prostředí, a do svého kontejneru se vloží nastavení pomocí proměnné prostředí.
 
@@ -297,15 +297,15 @@ V článku [co je infrastruktura jako kód](https://docs.microsoft.com/azure/dev
 
 [32bitová aplikace](https://12factor.net/), která je popsána dříve, volá samostatné kroky při transformaci dokončeného kódu do běžící aplikace.
 
-> *Faktor\#5* určuje, že každá verze musí vymáhat striktní oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každá by měla být označena jedinečným IDENTIFIKÁTORem a podporuje možnost vracet se zpět. "
+> *Faktor \#5* určuje, že každá verze musí vymáhat striktní oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každá by měla být označena jedinečným IDENTIFIKÁTORem a podporuje možnost vracet se zpět. "
 
 Moderní systémy CI/CD můžou splnit tento princip. Poskytují samostatné kroky nasazení a umožňují zajistit konzistentní a kvalitní kód, který je uživatelům snadno dostupný. 
 
-Obrázek 1,6 ukazuje oddělení v rámci procesu nasazení.
+Obrázek 1-8 ukazuje oddělení v rámci procesu nasazení.
 
 ![Kroky nasazení v kanálu CI/CD](./media/build-release-run-pipeline.png)
 
-**Obrázek 1-6**. Postup nasazení v kanálu CI/CD
+**Obrázek 1-8**. Postup nasazení v kanálu CI/CD
 
 Na předchozím obrázku věnujte zvláštní pozornost oddělení úloh. 
 
@@ -321,11 +321,11 @@ Při použití těchto postupů se organizacím při dodávání softwaru odvíj
 
 ### <a name="azure-pipelines"></a>Azure Pipelines
 
-Cloud Azure obsahuje novou službu CI/CD s oprávněním [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/), která je součástí nabídky [Azure DevOps](https://azure.microsoft.com/services/devops/) , která je znázorněna na obrázku 1-7.
+Cloud Azure obsahuje novou službu CI/CD s oprávněním [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/), která je součástí nabídky [Azure DevOps](https://azure.microsoft.com/services/devops/) , která je znázorněna na obrázku 1-9.
 
 ![Azure Pipelines v DevOps](./media/devops-components.png)
 
-**Obrázek 1-7**. Nabídky Azure DevOps
+**Obrázek 1-9**. Nabídky Azure DevOps
 
 Azure Pipelines je cloudová služba, která kombinuje průběžnou integraci (CI) a průběžné doručování (CD). Můžete automaticky testovat, sestavovat a dodávat kód do libovolného cíle.
 

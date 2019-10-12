@@ -2,22 +2,22 @@
 title: Použití databázového serveru, který se používá jako kontejner
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Používáte databázový server, který běží jako kontejner? jenom pro vývoj. Vysvětlení, proč.
 ms.date: 10/02/2018
-ms.openlocfilehash: 3e655e26be2d6132577b0494db39d9c2e8b9aacd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a508ba734525b24e2f3f00408e2c59c8c00f1898
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039844"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291303"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru, který se používá jako kontejner
 
-Vaše databáze (SQL Server, PostgreSQL, MySQL atd.) můžete mít na běžných samostatných serverech, v místních clusterech nebo v PaaS službách v cloudu, jako je Azure SQL DB. Nicméně pro vývojová a testovací prostředí je vhodné, aby vaše databáze spuštěné jako kontejnery byly pohodlné, protože nemáte žádnou externí závislost a stačí spustit `docker-compose up` příkaz, který spustí celou aplikaci. Aby byly tyto databáze stejně vhodné pro integrační testy, protože databáze je spuštěna v kontejneru a je vždy naplněna stejnými ukázkovými daty, testy mohou být předvídatelné.
+Vaše databáze (SQL Server, PostgreSQL, MySQL atd.) můžete mít na běžných samostatných serverech, v místních clusterech nebo v PaaS službách v cloudu, jako je Azure SQL DB. Nicméně pro vývojová a testovací prostředí je vhodné, aby vaše databáze spuštěné jako kontejnery byly pohodlné, protože nemáte žádnou externí závislost a stačí spustit příkaz `docker-compose up`, spustí celou aplikaci. Aby byly tyto databáze stejně vhodné pro integrační testy, protože databáze je spuštěna v kontejneru a je vždy naplněna stejnými ukázkovými daty, testy mohou být předvídatelné.
 
 ### <a name="sql-server-running-as-a-container-with-a-microservice-related-database"></a>SQL Server spuštěn jako kontejner s databází související s mikroslužbami
 
 V eShopOnContainers je k dispozici kontejner s názvem SQL. data definovaná v souboru [Docker-Compose. yml](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/docker-compose.yml) , který spouští SQL Server pro Linux se všemi SQL Server databázemi, které jsou pro mikroslužby potřeba. (Můžete mít také jeden kontejner SQL Server pro každou databázi, ale to by vyžadovalo více paměti, která je přiřazena k Docker.) Důležitým bodem v mikroslužbách je, že každá mikroslužba vlastní související data, proto v tomto případě související databáze SQL. Ale databáze můžou být kdekoli.
 
-Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím YAML kódem v souboru Docker-Compose. yml, který je spuštěn při spuštění `docker-compose up`. Všimněte si, že kód YAML má konsolidované informace o konfiguraci z obecného souboru Docker-Compose. yml a souboru Docker-Compose. override. yml. (Obvykle byste odvolali nastavení prostředí ze základních nebo statických informací, které se vztahují k SQL Server imagi.)
+Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím YAML kódem v souboru Docker-Compose. yml, který se spustí při spuštění `docker-compose up`. Všimněte si, že kód YAML má konsolidované informace o konfiguraci z obecného souboru Docker-Compose. yml a souboru Docker-Compose. override. yml. (Obvykle byste odvolali nastavení prostředí ze základních nebo statických informací, které se vztahují k SQL Server imagi.)
 
 ```yml
   sql.data:
@@ -29,15 +29,15 @@ Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím 
       - "5434:1433"
 ```
 
-Podobným způsobem, namísto použití `docker-compose`, může tento kontejner spustit následující `docker run` příkaz:
+Podobným způsobem namísto použití `docker-compose` může tento kontejner spustit následující příkaz `docker run`:
 
 ```console
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
 ```
 
-Pokud však nasazujete aplikaci s více kontejnery, jako je eShopOnContainers, je vhodnější použít `docker-compose up` příkaz, aby nástroj nasadil všechny požadované kontejnery pro aplikaci.
+Pokud však nasazujete aplikaci s více kontejnery, jako je eShopOnContainers, je vhodnější použít příkaz `docker-compose up`, aby nástroj nasadil všechny požadované kontejnery pro aplikaci.
 
-Při prvním spuštění tohoto kontejneru SQL Server kontejner inicializuje SQL Server s heslem, které zadáte. Jakmile SQL Server spustíte jako kontejner, můžete databázi aktualizovat připojením k libovolnému běžnému připojení SQL, jako je například z SQL Server Management Studio, Visual Studio nebo C\# Code.
+Při prvním spuštění tohoto kontejneru SQL Server kontejner inicializuje SQL Server s heslem, které zadáte. Jakmile SQL Server spustíte jako kontejner, můžete aktualizovat databázi připojením přes jakékoli běžné připojení SQL, jako je například z SQL Server Management Studio, Visual Studio nebo C @ no__t-0 Code.
 
 Aplikace eShopOnContainers inicializuje každou databázi mikroslužeb pomocí ukázkových dat tím, že je dokončí daty při spuštění, jak je vysvětleno v následující části.
 
@@ -167,7 +167,7 @@ Redis poskytuje image Docker s Redis. Tato bitová kopie je k dispozici z Docker
 Kontejner Docker Redis můžete přímo spustit spuštěním následujícího příkazu Docker CLI na příkazovém řádku:
 
 ```console
-  docker run --name some-redis -d redis
+docker run --name some-redis -d redis
 ```
 
 Image Redis zahrnuje vystavení: 6379 (port, který používá Redis), takže standardní propojení kontejnerů bude automaticky dostupné pro propojené kontejnery.
@@ -198,5 +198,5 @@ Nakonec můžete v souboru Docker-Compose. override. yml, který je součástí 
 Jak už bylo zmíněno dříve, název košíku mikroslužeb. data je vyřešen interní sítí DNS Docker.
 
 >[!div class="step-by-step"]
->[Předchozí](multi-container-applications-docker-compose.md)Další
->[](integration-event-based-microservice-communications.md)
+>[Předchozí](multi-container-applications-docker-compose.md)
+>[Další](integration-event-based-microservice-communications.md)

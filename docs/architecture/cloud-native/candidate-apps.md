@@ -3,12 +3,12 @@ title: Kandidátské aplikace pro cloudové nativní
 description: Seznamte se s typy aplikací, které využívají nativní přístup z cloudu.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 6da531397e6103e5c59accf321bc5ae82153dded
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: e8d520e0a1ad5ab8854d0628daa56a390de523cd
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275817"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291222"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Kandidátské aplikace pro cloudové nativní
 
@@ -34,9 +34,11 @@ Pak jsou starší verze systémů. I když bychom chtěli vytvářet nové aplik
 
 ### <a name="modernizing-legacy-apps"></a>Modernizaci starší verze aplikací
 
-Bezplatná elektronická kniha Microsoftu [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) poskytuje pokyny pro migraci místních úloh do cloudu. Obrázek 1-8 ukazuje, že pro modernizaci starší verze aplikací není k dispozici jedna strategie pro všechny velikosti.
+Bezplatná elektronická kniha Microsoftu [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) poskytuje pokyny pro migraci místních úloh do cloudu. Obrázek 1-10 ukazuje, že pro modernizaci starší verze aplikací není k dispozici jedna strategie pro všechny velikosti.
 
-@no__t – 0Strategies pro migraci starších zatížení úlohy @ no__t-1**obrázek 1-8**. Strategie migrace starších verzí úloh
+![Strategie migrace starších verzí úloh](./media/strategies-for-migrating-legacy-workloads.png)
+
+**Obrázek 1-10**. Strategie migrace starších verzí úloh
 
 Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu. 
 
