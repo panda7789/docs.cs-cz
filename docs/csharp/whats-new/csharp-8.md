@@ -2,19 +2,19 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: d948db0523684c998425bc22ab6fd245d65a8045
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 6b5602db6ee61b1d9db4c906d6a14ea2f918ad0a
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736704"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275779"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
 C#8,0 přidává následující funkce a vylepšení C# jazyka:
 
 - [Členové jen pro čtení](#readonly-members)
-- [Výchozí členové rozhraní](#default-interface-members)
+- [Výchozí metody rozhraní](#default-interface-methods)
 - [Vylepšení porovnávání vzorů](#more-patterns-in-more-places):
   - [Výrazy Switch](#switch-expressions)
   - [Vzory vlastností](#property-patterns)
@@ -85,11 +85,11 @@ public readonly void Translate(int xOffset, int yOffset)
 
 Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit a na základě tohoto záměru provádět optimalizace.
 
-## <a name="default-interface-members"></a>Výchozí členové rozhraní
+## <a name="default-interface-methods"></a>Výchozí metody rozhraní
 
-Nyní můžete přidat členy do rozhraní a poskytnout implementaci pro tyto členy. Tato funkce jazyka umožňuje autorům rozhraní API přidávat metody do rozhraní v pozdějších verzích bez narušení zdrojové nebo binární kompatibility se stávajícími implementacemi tohoto rozhraní. Stávající implementace *dědí* výchozí implementaci. Tato funkce také umožňuje C# vzájemnou spolupráci s rozhraními API, která cílí na Android nebo SWIFT, což podporuje podobné funkce. Výchozí členové rozhraní také umožňují scénáře podobně jako funkce jazyka "vlastnosti".
+Nyní můžete přidat členy do rozhraní a poskytnout implementaci pro tyto členy. Tato funkce jazyka umožňuje autorům rozhraní API přidávat metody do rozhraní v pozdějších verzích bez narušení zdrojové nebo binární kompatibility se stávajícími implementacemi tohoto rozhraní. Stávající implementace *dědí* výchozí implementaci. Tato funkce také umožňuje C# vzájemnou spolupráci s rozhraními API, která cílí na Android nebo SWIFT, což podporuje podobné funkce. Výchozí metody rozhraní také umožňují scénáře podobně jako funkce jazyka "vlastnosti".
 
-Výchozí členové rozhraní mají vliv na mnoho scénářů a prvků jazyka. Náš první kurz popisuje [aktualizaci rozhraní s výchozími implementacemi](../tutorials/default-interface-members-versions.md). Další kurzy a referenční aktualizace jsou k disčase pro obecné vydání.
+Výchozí metody rozhraní ovlivňují mnoho scénářů a prvků jazyka. Náš první kurz popisuje [aktualizaci rozhraní s výchozími implementacemi](../tutorials/default-interface-methods-versions.md). Další kurzy a referenční aktualizace jsou k disčase pro obecné vydání.
 
 ## <a name="more-patterns-in-more-places"></a>Další vzory na více místech
 

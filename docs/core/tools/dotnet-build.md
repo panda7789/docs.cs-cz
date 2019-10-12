@@ -1,15 +1,15 @@
 ---
 title: dotnet – příkaz sestavení
 description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
-ms.date: 08/08/2019
-ms.openlocfilehash: 6194d70a8a14e63adbcad39c7dabbbd220ca329d
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
-ms.translationtype: HT
+ms.date: 10/07/2019
+ms.openlocfilehash: db353feebab920dc8f63b9854d14f050adeb0b79
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179967"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250194"
 ---
-# <a name="dotnet-build"></a>dotnet build
+# <a name="dotnet-build"></a>sestavení dotnet
 
 **Tento článek se týká: ✓** .NET Core 1. x SDK a novějších verzí
 
@@ -17,7 +17,7 @@ ms.locfileid: "72179967"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Jméno
 
 `dotnet build` – sestavení projektu a všech jeho závislostí.
 
@@ -30,7 +30,7 @@ dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--for
 dotnet build [-h|--help]
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 Příkaz `dotnet build` sestaví projekt a jeho závislosti do sady binárních souborů. Binární soubory obsahují kód projektu v souborech IL (Intermediate Language) s příponou *. dll* a soubory symbolů používané pro ladění s příponou *. pdb* . Vytvoří se soubor JSON závislosti ( *. DEPS. JSON*), který obsahuje seznam závislostí aplikace. Je vytvořen soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime a jeho verzi aplikace.
 
@@ -50,7 +50,7 @@ Zda je projekt spustitelný nebo není určen vlastností `<OutputType>` v soubo
 
 Chcete-li vytvořit knihovnu, vynechejte vlastnost `<OutputType>`. Hlavním rozdílem v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nemůže být provedena.
 
-### <a name="msbuild"></a>MSBuild
+### <a name="msbuild"></a>Nástroji
 
 `dotnet build` používá nástroj MSBuild k sestavení projektu, takže podporuje paralelní i přírůstkové sestavení. Další informace naleznete v tématu [přírůstkové sestavení](/visualstudio/msbuild/incremental-builds).
 
@@ -58,7 +58,7 @@ Kromě možností příkaz `dotnet build` přijímá možnosti nástroje MSBuild
 
 Spuštění `dotnet build` je ekvivalentem `dotnet msbuild -restore -target:Build`.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT | SOLUTION`
 
@@ -66,9 +66,9 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 ## <a name="options"></a>Možnosti
 
-* **`-c|--configuration {Debug|Release}`**
+* **`-c|--configuration {CONFIGURATION}`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
+  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu.
 
 * **`-f|--framework <FRAMEWORK>`**
 
