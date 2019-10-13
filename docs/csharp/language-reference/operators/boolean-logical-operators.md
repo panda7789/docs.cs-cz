@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: cc25d4bfd444dc0acb30fc1c6e6c3c9918af537c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: f711bd04aeadb584eac1ecb0b644a36e2e496d08
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698685"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72290940"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logické logické operátory (C# referenční)
 
@@ -51,11 +51,11 @@ Pro operandy [integrálních](../builtin-types/integral-numeric-types.md) typů 
 
 ## <a name="logical-negation-operator-"></a>Logický operátor negace!
 
-Operátor `!` vypočítá logickou negaci svého operandu. To znamená, že vytváří `true`, pokud je operand vyhodnocen jako `false` a `false`, pokud je operand vyhodnocen jako `true`:
+Unární předpona `!` vypočítá logickou negaci svého operandu. To znamená, že vytváří `true`, pokud je operand vyhodnocen jako `false` a `false`, pokud je operand vyhodnocen jako `true`:
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
 
-Počínaje C# 8,0, unární přípona @no__t operátor-1 je operátor null-striktní. V povoleném kontextu anotace s možnou hodnotou null je použit k deklaraci, že výraz `x` typu odkazu s možnou hodnotou null není null: `x!`. Další informace naleznete v tématu [typy odkazů s možnou hodnotou null](../../nullable-references.md).
+Počínaje C# 8,0, unární přípona @no__t operátor-1 je [operátor null-striktní](null-forgiving.md).
 
 ## <a name="logical-and-operator-"></a>Logický operátor AND &amp;
 
@@ -117,17 +117,17 @@ V následujícím příkladu je pravý operand operátoru `||` volání metody, 
 
 U operandů `bool?` podporují operátory `&` a `|` logiku se třemi hodnotami. Sémantika těchto operátorů je definována v následující tabulce:  
   
-|x|y|x & y|×&#124;y|  
+|x|Požadované|x & y|×&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  
 |true|false|false|true|  
-|true|null|null|true|  
+|true|platnost|platnost|true|  
 |false|true|false|true|  
 |false|false|false|false|  
-|false|null|false|null|  
-|null|true|null|true|  
-|null|false|false|null|  
-|null|null|null|null|  
+|false|platnost|false|platnost|  
+|platnost|true|platnost|true|  
+|platnost|false|false|platnost|  
+|platnost|platnost|platnost|platnost|  
 
 Chování těchto operátorů se liší od typického chování operátoru s typy s možnou hodnotou null. Obvykle operátor, který je definován pro operandy typu hodnoty, lze také použít s operandy odpovídajícího typu hodnoty s možnou hodnotou null. Takový operátor vytvoří `null`, pokud je kterýkoli z jeho operandů `null`. Operátory `&` a `|` však mohou vydávat hodnotu, která není null, i když je jeden z operandů `null`. Další informace o chování operátora s typy hodnot s možnou hodnotou null naleznete v části [operátory](../../programming-guide/nullable-types/using-nullable-types.md#operators) v článku [použití hodnot s možnou hodnotou null](../../programming-guide/nullable-types/using-nullable-types.md) .
 
@@ -182,7 +182,7 @@ Uživatelsky definovaný typ může [přetížit](operator-overloading.md) oper�
 
 Uživatelsky definovaný typ nemůže přetížit Podmíněné logické operátory `&&` a `||`. Pokud však uživatelsky definovaný typ přetěžuje [operátory true a false](true-false-operators.md) a `&` nebo `|` nějakým způsobem, může být pro operandy daného typu vyhodnocena operace `&&` nebo `||`. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="c-language-specification"></a>specifikace jazyka C#
+## <a name="c-language-specification"></a>C#specifikace jazyka
 
 Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
 
@@ -191,8 +191,8 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators)
 - [Složené přiřazení](~/_csharplang/spec/expressions.md#compound-assignment)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Další informace najdete v tématech
 
 - [C#odkaz](../index.md)
-- [Operátory jazyka C#](index.md)
+- [C#logické](index.md)
 - [Bitové operátory a posunutí](bitwise-and-shift-operators.md)
