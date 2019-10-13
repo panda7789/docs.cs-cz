@@ -1,24 +1,24 @@
 ---
-title: Korelace trvanlivého duplexního přenosu
+title: Trvalá duplexní korelace
 ms.date: 03/30/2017
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-ms.openlocfilehash: f2f5fe557f1f8754758d0dd9b4042cacc62cc61f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: efc647b8a39f419f2165fe355529ba145663b753
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856596"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291576"
 ---
-# <a name="durable-duplex-correlation"></a>Korelace trvanlivého duplexního přenosu
-Korelace trvanlivého duplexního přenosu, označované také jako zpětné volání korelace, je užitečné, když služba pracovního postupu má požadavek na odeslání zpětné volání počáteční volajícímu. Na rozdíl od WCF duplexní zpětného volání v každém okamžiku v budoucnu se může stát a není vázaný na jeden kanál nebo kanál životnost; Jediným požadavkem je, že volající mít aktivní koncový bod naslouchání pro zpětné volání zprávy. To umožňuje dvě služby pracovního postupu pro komunikaci v rámci dlouhotrvající konverzace. Toto téma obsahuje přehled korelace trvanlivého duplexního přenosu.  
+# <a name="durable-duplex-correlation"></a>Trvalá duplexní korelace
+Trvalá korelace, označovaná také jako korelace zpětného volání, je užitečná v případě, že služba pracovního postupu má požadavek na odeslání zpětného volání počátečnímu volajícímu. Na rozdíl od služby WCF Duplex může zpětné volání probíhat kdykoli v budoucnu a není vázáno na stejný kanál nebo na životnost kanálu; Jediným požadavkem je, že volající má aktivní koncový bod pro zprávu zpětného volání. To umožňuje, aby dvě služby pracovních postupů komunikovaly s dlouhou běžící konverzací. Toto téma poskytuje přehled odolné duplexní korelace.  
   
-## <a name="using-durable-duplex-correlation"></a>Pomocí korelace trvanlivého duplexního přenosu  
- Korelace trvanlivého duplexního přenosu, tyto dvě služby vyžaduje použití vazbu povolen kontext, která podporuje obousměrné operace, jako například <xref:System.ServiceModel.NetTcpContextBinding> nebo <xref:System.ServiceModel.WSHttpContextBinding>. Volání služby registrů <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> požadované vazby v klientovi <xref:System.ServiceModel.Endpoint>. Přijímající služba obdrží tato data v počáteční volání a pak pomocí něj sama o sobě <xref:System.ServiceModel.Endpoint> v <xref:System.ServiceModel.Activities.Send> aktivitu, která provádí volání zpět do volání služby. V tomto příkladu dvě služby vzájemně komunikují. První služba volá metodu na druhý služby a poté počká na odpověď. Druhá služba ví název metody zpětného volání, ale koncový bod služby, která implementuje tuto metodu není znám v době návrhu.  
+## <a name="using-durable-duplex-correlation"></a>Použití odolné duplexní korelace  
+ Chcete-li použít odolnou duplexní korelaci, musí tyto dvě služby používat kontextově povolenou vazbu, která podporuje dvoucestné operace, například <xref:System.ServiceModel.NetTcpContextBinding> nebo <xref:System.ServiceModel.WSHttpContextBinding>. Volající služba zaregistruje <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> s požadovanou vazbou ve svých klientech <xref:System.ServiceModel.Endpoint>. Přijímající služba obdrží tato data při počátečním volání a pak ji použije na vlastní <xref:System.ServiceModel.Endpoint> v aktivitě <xref:System.ServiceModel.Activities.Send>, která volá zpět do volající služby. V tomto příkladu vzájemně komunikují dvě služby. První služba vyvolá metodu u druhé služby a potom počká na odpověď. Druhá služba zná název metody zpětného volání, ale koncový bod služby, který implementuje tuto metodu, není v době návrhu znám.  
   
 > [!NOTE]
-> Trvanlivý duplexní přenos může obsahovat jenom nepoužívá, pokud <xref:System.ServiceModel.Channels.AddressingVersion> koncového bodu má nakonfigurovanou <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud ne, pak <xref:System.InvalidOperationException> je vyvolána výjimka s následující zprávou: "Zpráva obsahuje hlavičku kontextu zpětného volání s odkazem na koncový bod pro [verze AddressingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing). Kontext zpětného volání lze přenášet pouze, pokud verze AddressingVersion konfigurována s "Třídy WSAddressing10".
+> Trvalý duplexní přenos se dá použít, jenom když je @no__t 0 koncového bodu nakonfigurovaný s <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud není, je vyvolána výjimka <xref:System.InvalidOperationException> s následující zprávou: "zpráva obsahuje hlavičku kontextu zpětného volání s referencí koncového bodu pro [verze AddressingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing). Kontext zpětného volání lze přenést pouze v případě, že je verze AddressingVersion nakonfigurován pomocí ' třídy WSAddressing10 '.
   
- V následujícím příkladu je hostované služby pracovního postupu, který vytvoří zpětné volání <xref:System.ServiceModel.Endpoint> pomocí <xref:System.ServiceModel.WSHttpContextBinding>.  
+ V následujícím příkladu je hostovaná služba pracovního postupu, která vytvoří zpětné volání <xref:System.ServiceModel.Endpoint> pomocí <xref:System.ServiceModel.WSHttpContextBinding>.  
   
 ```csharp  
 // Host WF Service 1.  
@@ -37,7 +37,7 @@ host1.Open();
 Console.WriteLine("Service1 waiting at: {0}", baseAddress1);  
 ```  
   
- Pracovní postup, který implementuje tato služba pracovního postupu inicializuje korelaci zpětného volání s jeho <xref:System.ServiceModel.Activities.Send> aktivitu a odkazuje na tento koncový bod zpětného volání z <xref:System.ServiceModel.Activities.Receive> aktivitu, která koreluje s <xref:System.ServiceModel.Activities.Send>. Následující příklad představuje pracovní postup, který je vrácen z `GetWF1` metody.  
+ Pracovní postup, který implementuje tuto službu pracovního postupu, inicializuje korelaci zpětného volání s aktivitou <xref:System.ServiceModel.Activities.Send> a odkazuje na tento koncový bod zpětného volání z aktivity <xref:System.ServiceModel.Activities.Receive>, která se koreluje s <xref:System.ServiceModel.Activities.Send>. Následující příklad představuje pracovní postup, který je vrácen z metody `GetWF1`.  
   
 ```csharp  
 Variable<CorrelationHandle> CallbackHandle = new Variable<CorrelationHandle>();  
@@ -104,7 +104,7 @@ Activity wf = new Sequence
 };  
 ```  
   
- Druhá služba pracovního postupu je hostované pomocí poskytnuté systémem, na základě kontextu vazby.  
+ Druhá služba pracovního postupu je hostovaná pomocí kontextové vazby založené na systému.  
   
 ```csharp  
 // Host WF Service 2.  
@@ -120,7 +120,7 @@ host2.Open();
 Console.WriteLine("Service2 waiting at: {0}", baseAddress2);  
 ```  
   
- Pracovní postup, který implementuje tato služba pracovního postupu začíná <xref:System.ServiceModel.Activities.Receive> aktivity. To přijímat aktivity inicializuje korelaci zpětného volání pro tuto službu prodlevy pro určité době simulovat dlouhotrvající práci a poté zavolá zpět do první service pomocí kontextu zpětného volání, který byl předán při prvním volání do služby. Následující příklad představuje pracovní postup, který je vrácen z volání `GetWF2`. Všimněte si, že <xref:System.ServiceModel.Activities.Send> adresu zástupný symbol má aktivita `http://www.contoso.com`; skutečná adresa používá za běhu je adresa zadaná zpětného volání.  
+ Pracovní postup, který implementuje tuto službu pracovního postupu, začíná aktivitou <xref:System.ServiceModel.Activities.Receive>. Tato aktivita Receive inicializuje korelaci zpětného volání pro tuto službu, zpoždění po určitou dobu pro simulaci dlouhotrvající práce a pak zavolá zpět do první služby pomocí kontextu zpětného volání, který byl předán do služby v prvním volání. Následující příklad představuje pracovní postup, který je vrácen voláním `GetWF2`. Všimněte si, že aktivita <xref:System.ServiceModel.Activities.Send> má zástupnou adresu `http://www.contoso.com`; Skutečná adresa používaná za běhu je dodaná adresa zpětného volání.  
   
 ```csharp  
 Variable<CorrelationHandle> ItemsCallbackHandle = new Variable<CorrelationHandle>();  
@@ -184,9 +184,9 @@ Activity wf = new Sequence
 };  
 ```  
   
- Když `StartOrder` metoda se vyvolá u prvního pracovního postupu, se zobrazí následující výstup, který znázorňuje tok spuštění prostřednictvím dvou pracovních postupů.  
+ Při vyvolání metody `StartOrder` u prvního pracovního postupu se zobrazí následující výstup, který ukazuje tok provádění prostřednictvím těchto dvou pracovních postupů.  
   
-```Output  
+```output  
 Service1 waiting at: http://localhost:8080/Service1  
 Service2 waiting at: http://localhost:8081/Service2  
 Press enter to exit.   
@@ -198,4 +198,4 @@ WF2 - Items sent
 WF1 - Items Received  
 ```  
   
- V tomto příkladu obou pracovních postupů explicitně spravovat pomocí korelace <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Protože pouze jeden korelace v pracovních postupech tyto ukázky, výchozí <xref:System.ServiceModel.Activities.CorrelationHandle> správy by byl dostatečná.
+ V tomto příkladu oba pracovní postupy explicitně spravují korelační pomocí <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Vzhledem k tomu, že v těchto ukázkových pracovních postupech existovala pouze jedna korelace, je výchozí Správa <xref:System.ServiceModel.Activities.CorrelationHandle> dostačující.

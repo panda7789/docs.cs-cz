@@ -5,16 +5,16 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: 0253c57f080705b648d9f416368d0fe974ac83ab
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 2fe473da3eeabef3852e3003e61b3b9604332855
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834672"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291267"
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
 
-Toto téma obsahuje pokyny pro vývojáře, jak psát aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] s možností lokalizace [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. V minulosti byla lokalizace uživatelského rozhraní časově náročná. Každý jazyk, pro který bylo uživatelské rozhraní upraveno, aby vyžadovalo úpravu pixelu podle pixelu. V dnešní době se správnou návrhovou a pravou normou kódování lze [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] sestavit tak, aby měly lokalizovat méně změn velikosti a přemístění. Přístup k psaní aplikací, jejichž velikost se dá snadněji měnit a kde se přemístí, se nazývá automatické rozložení a dá se dosáhnout pomocí @no__tho návrhu aplikací-0.
+Toto téma obsahuje pokyny pro vývojáře, jak psát aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pomocí lokalizovatelných uživatelských rozhraní (uživatelská rozhraní). V minulosti byla lokalizace uživatelského rozhraní časově náročná. Každý jazyk, pro který bylo uživatelské rozhraní upraveno, aby vyžadovalo úpravu pixelu podle pixelu. V dnešní době se správnou návrhovou a pravou normou pro kódování lze uživatelská rozhraní vytvořit tak, aby mohly lokalizovat méně měnit velikost a umístění. Přístup k psaní aplikací, jejichž velikost se dá snadněji měnit a kde se přemístí, se nazývá automatické rozložení a dá se dosáhnout pomocí @no__tho návrhu aplikací-0.
 
 <a name="advantages_of_autolayout"></a>
 

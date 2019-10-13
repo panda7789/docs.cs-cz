@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 1ab372f69792a00160edb2542762298114d3f8b4
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 32caf87435e23008f9f300d231c2705e7894280f
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003437"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291459"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli znát při psaní aplikací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v oboru názvů <xref:System.Globalization>.
@@ -36,7 +36,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ```
 
 <a name="encoding"></a>
-### <a name="encoding"></a>Kódování
+### <a name="encoding"></a>Encoding
  Kódování podporované [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou ASCII, [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] UTF-16 a UTF-8. Příkaz Encoding se nachází na začátku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dokumentu. Pokud neexistuje žádný atribut kódování a neexistuje žádné pořadí bajtů, analyzátor se nastaví jako výchozí kódování UTF-8. Pro kódování jsou upřednostňovány znakové sady UTF-8 a UTF-16. Kódování UTF-7 není podporováno. Následující příklad ukazuje, jak zadat kódování UTF-8 v souboru [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 ```xaml
@@ -56,7 +56,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ```
 
 <a name="unicode"></a>
-### <a name="unicode"></a>Kódování Unicode
+### <a name="unicode"></a>Sady
  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny funkce [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] včetně náhrad. Pokud znaková sada může být namapována na [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], je podporována. Například GB18030 zavádí některé znaky namapované na rozšíření čínština, japonština a korejština (CFK) a a B a náhradní páry, proto je plně podporovaná. Aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může použít <xref:System.Globalization.StringInfo> k manipulaci s řetězci bez porozumění, zda mají náhradní páry nebo kombinování znaků.
 
 <a name="design_intl_ui_with_xaml"></a>
@@ -69,7 +69,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
  V současné době jsou podporovány následující skripty:
 
-- Arabština
+- arabština
 
 - Bengálština
 
@@ -119,7 +119,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Korejština – staré hangul
 
-- Le
+- Myanmar
 
 - Sinhálské
 
@@ -143,7 +143,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 <a name="mui"></a>
 ### <a name="multilingual-user-interface"></a>Vícejazyčné uživatelské rozhraní
- Vícejazyčná uživatelská rozhraní (MUI) je podpora Microsoftu pro přepínání [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] z jednoho jazyka na jiný. Aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá model sestavení pro podporu rozhraní MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  zavaděč prostředků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] využívá správce prostředků [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] k podpoře vyhledávání prostředků a záložního použití. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.
+ Vícejazyčná uživatelská rozhraní (MUI) je podpora Microsoftu pro přepínání uživatelská rozhraní z jednoho jazyka na jiný. Aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá model sestavení pro podporu rozhraní MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  zavaděč prostředků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] využívá správce prostředků [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] k podpoře vyhledávání prostředků a záložního použití. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.
 
 <a name="localizable_ui"></a>
 ### <a name="localizable-user-interface"></a>Lokalizovatelné uživatelské rozhraní
@@ -163,7 +163,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 <EmbeddedResource Include="data\stringtable.en-US.restext"/>
 ```
 
- Chcete-li použít prostředek ve vaší aplikaci, vytvořte instanci <xref:System.Resources.ResourceManager> a načtěte prostředek, který chcete použít. Následující příklad demonstruje, jak to udělat.
+ Chcete-li použít prostředek ve vaší aplikaci, vytvořte instanci <xref:System.Resources.ResourceManager> a načtěte prostředek, který chcete použít. Následující příklad ukazuje, jak to provést.
 
  [!code-csharp[LocalizationResources#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationResources/CSharp/page1.xaml.cs#2)]
 
@@ -178,6 +178,6 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Další informace najdete v tématech
 
 - [Přehled globalizace a lokalizace WPF](wpf-globalization-and-localization-overview.md)

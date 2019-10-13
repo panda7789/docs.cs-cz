@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 3c988a0151f57b67db19f41aeb88c6fb9b808cb3
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 22c2fd5fc5eaf7a5dc9b71a7335b0b844fa92b51
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179204"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291601"
 ---
 # <a name="how-to-serialize-and-deserialize-json-in-net"></a>Postup serializace a deserializace JSON v rozhraní .NET
 
@@ -22,7 +22,7 @@ ms.locfileid: "72179204"
 
 Tento článek ukazuje, jak použít obor názvů <xref:System.Text.Json> k serializaci a deserializaci do a z JavaScript Object Notation (JSON). Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím rozhraní, jako je například [ASP.NET Core](/aspnet/core/).
 
-## <a name="namespaces"></a>Jmenné prostory
+## <a name="namespaces"></a>Obory názvů
 
 Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy. Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Proto příklady kódu, které jsou uvedeny v tomto článku, vyžadují jednu nebo obě následující direktivy `using`:
 
@@ -237,7 +237,7 @@ var options = new JsonSerializerOptions
     ReadCommentHandling = JsonCommentHandling.Skip,
     AllowTrailingCommas = true
 };
-var weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(json);
+var weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(json, options);
 ```
 
 Tady je příklad JSON s komentáři a koncovou čárkou:
@@ -399,8 +399,8 @@ Zde je příklad objektu pro serializaci a výstup JSON:
 |Vlastnost |Hodnota  |
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
-| TemperatureC| 0,25 |
-| Souhrn| Provozu|
+| TemperatureC| 25 |
+| Souhrn| Hot|
 | TemperatureRanges | Studená, 20<br>Horká, 40|
 
 ```json
@@ -501,8 +501,8 @@ Zde je příklad objektu pro serializaci a výstup JSON:
 |Vlastnost |Hodnota  |
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
-| TemperatureC| 0,25 |
-| Souhrn| null|
+| TemperatureC| 25 |
+| Souhrn| platnost|
 
 ```json
 {
@@ -660,11 +660,11 @@ Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typ
 |Vlastnost |Hodnota  |Poznámky  |
 |---------|---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00||
-| TemperatureC| 0,8 | Neshoda malých a velkých písmen (`temperatureC` ve formátu JSON), takže vlastnost není nastavená. |
-| Souhrn | Provozu ||
+| TemperatureC| 0 | Neshoda malých a velkých písmen (`temperatureC` ve formátu JSON), takže vlastnost není nastavená. |
+| Souhrn | Hot ||
 | ExtensionData – | temperatureC: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
 || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
-| |SummaryWords:<br>Dobré<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
+| |SummaryWords:<br>Cool<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
 
 Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:
 
@@ -755,7 +755,7 @@ while (reader.Read())
 }
 ```
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
 * [Přehled System. text. JSON](system-text-json-overview.md)
 * [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)

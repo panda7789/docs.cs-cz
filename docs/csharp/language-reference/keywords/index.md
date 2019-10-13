@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: f325d8ba09e3c3d1c1b3436f758e8fc1696c7f49
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 2bdaa2f4cdb19d01948effd599177f68859cb82c
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167855"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291070"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 
-Klíčová slova jsou předdefinovaná, rezervované identifikátory, které mají zvláštní význam pro kompilátor. Nelze je použít jako identifikátory v programu, pokud nejsou zahrnuty `@` jako předpony. Například `@if` je platný identifikátor, ale `if` není to, protože `if` je klíčové slovo.  
+Klíčová slova jsou předdefinovaná, rezervované identifikátory, které mají zvláštní význam pro kompilátor. Nelze je použít jako identifikátory v programu, pokud neobsahují `@` jako předponu. Například `@if` je platný identifikátor, ale `if` není, protože `if` je klíčové slovo.  
   
  První tabulka v tomto tématu uvádí klíčová slova, která jsou rezervované identifikátory v jakékoli části C# programu. Druhá tabulka v tomto tématu uvádí kontextová klíčová slova C#v. Kontextová klíčová slova mají zvláštní význam pouze v omezeném kontextu programu a lze je použít jako identifikátory mimo tento kontext. Obecně platí, že když se do C# jazyka přidají nová klíčová slova, přidají se jako kontextová klíčová slova, aby se předešlo přerušení programů napsaných v dřívějších verzích.  
   
@@ -28,10 +28,10 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[break](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[case](switch.md)|[catch](try-catch.md)|  
 |[char](char.md)|[checked](checked.md)|[class](class.md)|[const](const.md)|  
 |[continue](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[default](default.md)|[delegate](delegate.md)|  
-|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[enum](enum.md)|  
+|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[ostatních](if-else.md)|[enum](enum.md)|  
 |[event](event.md)|[explicit](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](false-literal.md)|  
 |[finally](try-finally.md)|[určí](fixed-statement.md)|[float](../builtin-types/floating-point-numeric-types.md)|[for](for.md)|  
-|[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
+|[foreach](foreach-in.md)|[goto](goto.md)|[Přestože](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
 |[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
 |[is](is.md)|[lock](lock-statement.md)|[long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
 |[new](../operators/new-operator.md)|[null](null.md)|[object](object.md)|[operator](../operators/operator-overloading.md)|
@@ -47,20 +47,21 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 
 ## <a name="contextual-keywords"></a>Kontextová klíčová slova
 
- Kontextové klíčové slovo se používá k poskytnutí konkrétního významu v kódu, ale není to rezervované slovo v C#. Některá kontextová klíčová slova `partial` , `where`například a, mají zvláštní význam ve dvou nebo více kontextech.  
+ Kontextové klíčové slovo se používá k poskytnutí konkrétního významu v kódu, ale není to rezervované slovo v C#. Některá kontextová klíčová slova, například `partial` a `where`, mají zvláštní význam ve dvou nebo více kontextech.  
   
 ||||  
 |---|---|---|  
 |[add](add.md)|[zástupný](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](../operators/await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](dynamic.md)|[equals](equals.md)|
-|[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
-|[skupiny](group-clause.md)|[into](into.md)|[join](join-clause.md)|
+|[Výsledkem](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
+|[skupiny](group-clause.md)|[into](into.md)|[zúčastnit](join-clause.md)|
 |[aplikaci](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
 |[OrderBy](orderby-clause.md)|[částečný (typ)](partial-type.md)|[Partial (metoda)](partial-method.md)|
 |[remove](remove.md)|[vybrali](select-clause.md)|[set](set.md)|
-|[value](value.md)|[var](var.md)|[when (podmínka filtru)](when.md)|
-|[where (omezení obecného typu)](where-generic-type-constraint.md)|[WHERE (klauzule dotazu)](where-clause.md)|[yield](yield.md)|
+|[nespravované (omezení obecného typu)](where-generic-type-constraint.md)|[value](value.md)|[var](var.md)|
+|[when (podmínka filtru)](when.md)|[where (omezení obecného typu)](where-generic-type-constraint.md)|[WHERE (klauzule dotazu)](where-clause.md)|
+|[yield](yield.md)| | |
   
 ## <a name="see-also"></a>Viz také:
 

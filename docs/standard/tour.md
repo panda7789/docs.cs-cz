@@ -1,146 +1,146 @@
 ---
-title: Prohlídka technologie .NET
-description: Průvodce prostřednictvím některé viditelného funkce .NET.
+title: Prohlídka .NET
+description: Průvodce se všemi výraznými funkcemi .NET.
 author: cartermp
 ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: acd8e14e1d000f55f03017a4fee43347f50df3a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a83253e37d3afde9ed8266ec1195c9726f6462cc
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936302"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291589"
 ---
-# <a name="tour-of-net"></a>Prohlídka technologie .NET
+# <a name="tour-of-net"></a>Prohlídka .NET
 
-.NET je platforma pro vývoj pro obecné účely. Má několik klíčových funkcí, jako třeba podporu pro více programovacích jazyků, asynchronní a souběžné programovacích modelů a nativní interoperabilita umožňující širokou škálu scénářů napříč různými platformami.
+.NET je vývojová platforma pro obecné účely. Má několik klíčových funkcí, jako je podpora pro více programovacích jazyků, asynchronní a souběžné programovací modely a nativní interoperabilitu, která umožňuje široké spektrum scénářů napříč různými platformami.
 
-Tento článek nabízí prohlídku s průvodcem prostřednictvím některé z klíčových funkcí rozhraní .NET. Zobrazit [Architekturálních komponentách .NET](components.md) tématu, dozvíte se o architektuře části .NET a co slouží pro.
+Tento článek obsahuje průvodce s některými klíčovými funkcemi rozhraní .NET. V tématu [komponenty architektury rozhraní .NET](components.md) se dozvíte o architektonických částech .NET a o tom, k čemu se používají.
 
-## <a name="how-to-run-the-code-samples"></a>Spuštění ukázky kódu
+## <a name="how-to-run-the-code-samples"></a>Jak spustit ukázky kódu
 
-Zjistěte, jak nastavit vývojové prostředí ke spuštění ukázky kódu, najdete v článku [Začínáme](get-started.md) tématu. Zkopírujte a vložte do vašeho prostředí ke spuštění je ukázky kódu z této stránky. 
+Informace o tom, jak nastavit vývojové prostředí pro spuštění ukázek kódu, naleznete v tématu [Začínáme](get-started.md) . Zkopírování a vložení ukázek kódu z této stránky do vašeho prostředí, aby je bylo možné spustit. 
 
 ## <a name="programming-languages"></a>Programovací jazyky
 
-.NET podporuje více programovacích jazyků. Implementace .NET implementovat [společné jazykové infrastruktury (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), které mimo jiné určuje nezávislým na jazyku modulu runtime a jazyk interoperability. To znamená, že zvolíte kterémkoli jazyce platformy .NET k vytváření aplikací a služeb na rozhraní .NET.
+Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .NET implementují rozhraní [Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), které kromě jiného určuje interoperabilitu modulu runtime a jazyka nezávislého na jazyce. To znamená, že zvolíte libovolný jazyk .NET pro sestavování aplikací a služeb v rozhraní .NET.
 
-Microsoft aktivně vyvíjí a podporuje tři různé jazyky .NET: C#, F#and Visual Basic (VB). 
+Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic (VB). 
 
-* C# je jednoduchý, výkonný, typově bezpečný a objektově orientované, při zachování expresivity a elegance jazyků stylu. Každý, kdo zná podobné jazyky C a zjistí, několik problémů s přizpůsobením jazyka C#. Podívejte se [průvodce v C#](../csharp/index.md) Další informace o jazyce C#.
+* C#je jednoduchý, výkonný, typově bezpečný a objektově orientovaný a přitom zachovává expresivity a elegance jazyků ve stylu jazyka C. Kdokoli, kdo zná jazyk C a podobné jazyky, najde v přizpůsobení několik C#problémů. Další informace o nástroji C#najdete v [ C# příručce](../csharp/index.md) .
 
-* F#je platformově univerzální, funkcionální programovací jazyk, který podporuje také tradičního objektově orientované a imperativní programování. Podívejte se [ F# průvodce](../fsharp/index.md) Další informace o F#.
+* F#je programovací jazyk, který je pro více platforem, který podporuje také tradiční objekty orientované a imperativní programování. Další informace o nástroji F#najdete v [ F# příručce](../fsharp/index.md) .
 
-* Visual Basic je snadné jazykové informace, které umožňují vytvářet různé aplikace, které běží na rozhraní .NET. Mezi jazyky .NET syntaxe jazyka Visual Basic se nejvíc blíží běžné lidské jazyka, často usnadnění pro osoby, nový přístup k vývoji softwaru.
+* Visual Basic je jednoduchý jazyk, pomocí kterého se naučíte vytvářet nejrůznější aplikace, které běží na .NET. V rámci jazyků .NET je syntaxe jazyka VB nejblíže běžnému lidskému jazyku, často usnadňuje práci s vývojem softwaru pro lidi.
 
 ## <a name="automatic-memory-management"></a>Automatická správa paměti
 
-Používá .NET [uvolňování paměti (GC)](garbagecollection/index.md) poskytnout Automatická správa paměti pro programy. Uvolňování paměti pracuje opožděné přístup ke správě paměti přednost propustnost aplikace okamžitě kolekce paměti. Další informace o uvolňování paměti .NET, přečtěte si [základy kolekce paměti (GC)](garbagecollection/fundamentals.md).
+Rozhraní .NET používá [uvolňování paměti (GC)](garbagecollection/index.md) k zajištění automatické správy paměti pro programy. GC funguje při opožděném přístupu ke správě paměti a předchází propustnosti aplikace okamžitému shromažďování paměti. Další informace o uvolňování paměti .NET najdete v tématu [základní informace o uvolňování paměti (GC)](garbagecollection/fundamentals.md).
 
-Následující dva řádky obou přidělení paměti:
+Paměť přidělují následující dva řádky:
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L1-L2)]
 
-Neexistuje žádné obdobná – klíčové slovo pro zrušení přidělení částí paměti, jak vyhovělo dojde automaticky při uvolňování paměti prostřednictvím jeho plánovaného spuštění.
+Neexistuje žádné podobné klíčové slovo, které by bylo možné zrušit přidělení paměti, protože dealokace probíhá automaticky, když uvolňování paměti uvolní paměť prostřednictvím naplánovaného spuštění.
 
-Uvolňování paměti je jedna ze služeb, které pomáhají zajistit *bezpečnost paměti*. Program je bezpečné, pokud přistupuje k paměti pouze přidělené paměti. Pro instanci modul runtime zaručuje, že aplikace nebude připojit volné paměti za hranice pole.
+Systém uvolňování paměti je jednou ze služeb, které pomůžou zajistit *bezpečnost paměti*. Program je bezpečný pro paměť, pokud přistupuje pouze k přidělené paměti. Modul runtime například zajišťuje, že aplikace nemá přístup k nepřidělené paměti mimo hranice pole.
 
-V následujícím příkladu, modul runtime vyvolá `InvalidIndexException` výjimky k vynucení bezpečnost paměti:
+V následujícím příkladu modul runtime vyvolá výjimku `InvalidIndexException` pro vymáhání zabezpečení paměti:
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 ## <a name="working-with-unmanaged-resources"></a>Práce s nespravovanými prostředky
 
-Některé objekty odkaz *nespravovaných prostředků*. Nespravované prostředky jsou prostředky, které nejsou spravovány automaticky modul .NET runtime. Například popisovač souboru je nespravovaný prostředek. A <xref:System.IO.FileStream> spravovaných objektů, ale odkazuje na popisovač souboru, který nespravované. Až budete mít pomocí <xref:System.IO.FileStream>, budete muset uvolnění popisovače souboru.
+Některé objekty odkazují na *nespravované prostředky*. Nespravované prostředky jsou prostředky, které nejsou automaticky spravovány modulem runtime .NET. Například popisovač souboru je nespravovaný prostředek. Objekt <xref:System.IO.FileStream> je spravovaný objekt, ale odkazuje na popisovač souboru, který je nespravovaný. Až budete hotovi s používáním <xref:System.IO.FileStream>, musíte vydávat popisovač souboru.
 
-V rozhraní .NET, objekty, které odkazují na nespravované prostředky implementovat <xref:System.IDisposable> rozhraní. Po dokončení používání objektu, volání objektu <xref:System.IDisposable.Dispose> metodu, která je zodpovědná za uvolnění všech nespravovaných prostředků. Jazyky .NET poskytují pohodlnou `using` syntaxe pro objekty, jak je znázorněno v následujícím příkladu:
+V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte metodu @no__t 0 objektu, která zodpovídá za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz `using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-Jednou `using` blok dokončení, modulu runtime .NET automaticky volá `stream` objektu <xref:System.IDisposable.Dispose> metodu, která uvolní popisovač souboru. Modul runtime také to dělá proto pokud výjimky způsobí, že ovládací prvek opustit blok.
+Po dokončení bloku `using` aplikace .NET runtime automaticky zavolá metodu <xref:System.IDisposable.Dispose> objektu `stream`, která uvolní popisovač souboru. Modul runtime také provádí tuto chybu, pokud výjimka způsobí, že ovládací prvek opustí blok.
 
-Další podrobnosti naleznete v následujících tématech:
+Další podrobnosti najdete v následujících tématech:
 
-* Pro jazyk C#, najdete v článku [using – příkaz (referenční dokumentace jazyka C#)](../csharp/language-reference/keywords/using-statement.md) tématu.
-* Pro F#, naleznete v tématu [Správa prostředků: Klíčové slovo use](../fsharp/language-reference/resource-management-the-use-keyword.md).
-* VB, najdete v článku [pomocí – příkaz (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) tématu.
+* Další C#informace naleznete v tématu [using –C# příkaz (Referenční dokumentace)](../csharp/language-reference/keywords/using-statement.md) .
+* F#Informace najdete v tématu [Správa prostředků: klíčové slovo use](../fsharp/language-reference/resource-management-the-use-keyword.md).
+* Pro jazyk VB si přečtěte téma [using – příkaz (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) .
 
 ## <a name="type-safety"></a>Bezpečnost typů
 
-Objekt je instance určitého typu. Jsou povoleny pro daný objekt pouze operace jeho typu. A `Dog` typ může mít `Jump` a `WagTail` metody, ale ne `SumTotal` metody. Program jen volá metody, které patří do daného typu. Všechna ostatní volání za následek chybu kompilace nebo výjimce za běhu (v případě použití dynamické funkce nebo `object`).
+Objekt je instance konkrétního typu. Jediné operace, které jsou povoleny pro daný objekt, jsou typu. Typ `Dog` může mít metody `Jump` a `WagTail`, ale ne metodu `SumTotal`. Program volá pouze metody patřící k danému typu. Všechna ostatní volání mají za následek chybu při kompilaci nebo výjimku za běhu (v případě použití dynamických funkcí nebo `object`).
 
-Jazyky rozhraní .NET jsou objektově orientované s hierarchiemi základní a odvozené třídy. Modul runtime rozhraní .NET umožňuje pouze objekt přetypování a volání, které odpovídají hierarchii objektů. Mějte na paměti, že každý typ definovaný v kterémkoli jazyce platformy .NET je odvozena od základní třídy <xref:System.Object> typu.
+Jazyky .NET jsou objektově orientované s hierarchiemi základních a odvozených tříd. Modul runtime .NET povoluje pouze přetypování a volání objektů, které odpovídají hierarchii objektů. Pamatujte, že každý typ definovaný v jakémkoli jazyce .NET je odvozen ze základního typu @no__t 0.
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L19-L23)]
 
-Bezpečnost typů slouží také k podpoře vynucení zapouzdření zaručením věrnost klíčová slova přistupujícího objektu. Přístupový objekt klíčová slova jsou artefakty, které řídí přístup k členům daného typu jiným kódem. Ty se obvykle používají pro různé druhy dat v rámci typu, které se používají ke správě své chování.
+Bezpečnost typů se také používá k vymáhání zapouzdření tím, že zaručuje přesnost přístupových klíčových slov. Přístupová klíčová slova jsou artefakty, které řídí přístup ke členům daného typu jiným kódem. Ty se obvykle používají pro různé druhy dat v rámci typu, který se používá ke správě jeho chování.
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, VB, a F# místní podporu *odvození typu*. Odvození typu znamená, že kompilátor odvodí typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že je bezpečnost typů narušený, případně jim vyhnout. Výsledný typ nemá silný typ se vším, který zahrnuje. Z předchozího příkladu `dog` je přepsán zavést odvození typu proměnné a zbytek v příkladu je beze změny:
+C#, VB a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. V předchozím příkladu je přepsána `dog`, aby se zavedlo odvození typu a zbytek příkladu se nezměnil:
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F#má i další možnosti odvození typu než odvození typu metoda místní součástí C# a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
+F#má ještě další možnosti odvození typu, než odvození typu místní metody, které najdete C# v a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
 
-## <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
+## <a name="delegates-and-lambdas"></a>Delegáti a výrazy lambda
 
-Delegát je reprezentován podpis metody. Jakoukoli metodou s podpis delegátu lze přiřadit a je spuštěn, když je vyvolán delegát.
+Delegát je reprezentován signaturou metody. Jakékoli metody s tímto podpisem mohou být přiřazeny delegátovi a provedeny při vyvolání delegáta.
 
-Delegáti jsou ukazatelům funkcí jazyka C++ s tím rozdílem, že jsou to typově bezpečné. Jsou to druh odpojené metody v rámci systému typů CLR. Běžné metody jsou připojeny k třídy a jsou pouze přímo volat statickou nebo volání metody instance konvence.
+Delegáti jsou C++ jako ukazatelé na funkce s tím rozdílem, že jsou typově bezpečné. Jedná se o druh odpojené metody v rámci systému typů CLR. Pravidelné metody jsou připojeny ke třídě a jsou přímo volány prostřednictvím statických konvencí nebo konvencí volání instance.
 
-V rozhraní .NET se delegáti běžně používají v obslužných rutinách událostí, při definování asynchronních operací a v lambda výrazech, které jsou základním kamenem LINQ. Další informace najdete v [delegáty a výrazy lambda](delegates-lambdas.md) tématu.
+V rozhraní .NET se delegáti běžně používají v obslužných rutinách událostí, při definování asynchronních operací a ve výrazech lambda, které jsou základem LINQ. Další informace najdete v tématu [Delegáti a výrazy lambda](delegates-lambdas.md) .
 
 ## <a name="generics"></a>Obecné typy
 
-Obecné typy umožňují programátorovi, aby zavést *parametr typu* při navrhování jejich třídy, které umožňuje určit přesný typ, který má použít místo parametru typu kódu klienta (uživatelé typu).
+Obecné typy umožňují programátorům zavést *parametr typu* při navrhování tříd, které umožňují kódu klienta (uživatelům typu) zadat přesný typ pro použití namísto parametru typu.
 
-Obecné typy byly přidány umožňující programátorům implementovat obecných datových struktur. Před jejich přijetí v pořadí pro typ, jako `List` typ je obecný, by musel pracovat s prvky, které byly typu `object`. To mělo různých výkonu a sémantické problémy, spolu s možné drobným běhové chyby. Většina notorious ten je datová struktura obsahuje například celá čísla a řetězce a `InvalidCastException` je vyvolána na práci s členy v seznamu.
+Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem pro typ, jako je například typ `List`, který má být obecný, by musel pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými drobnými chybami za běhu. Nejustrm z nich je, když datová struktura obsahuje, například celá čísla i řetězce a `InvalidCastException` je vyvolána při práci se členy seznamu.
 
-Následující příklad ukazuje základní program spuštěný pomocí instance <xref:System.Collections.Generic.List%601> typy:
+Následující příklad ukazuje základní program spuštěný s použitím instance <xref:System.Collections.Generic.List%601> typů:
 
 [!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
 
-Další informace najdete v tématu [obecné typy (Obecné) přehled](generics.md) tématu.
+Další informace naleznete v tématu [Obecné typy (obecné typy) – přehled](generics.md) .
 
 ## <a name="async-programming"></a>Asynchronní programování
 
-Asynchronní programování je prvotřídní koncept v .NET s asynchronní podpory v modulu runtime, knihoven rozhraní framework, a vytvoří jazyk .NET. Interně jsou založené na objekty (například `Task`), který využít operačního systému jako efektivně provádět vstupně-výstupní úlohy.
+Asynchronní programování je první třídou konceptu v rámci .NET s asynchronní podporou v konstrukcích modulu runtime, architektury a jazyka .NET. Interně jsou založeny na objektech (například `Task`), které využívají operační systém k co nejúčinnějšímu provádění úloh vázaných na vstupně-výstupní operace.
 
-Další informace o asynchronním programování v rozhraní .NET, začínat [asynchronní přehled](async.md) tématu.
+Chcete-li získat další informace o asynchronním programování v rozhraní .NET, začněte s asynchronním tématem s [přehledem](async.md) .
 
-## <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
+## <a name="language-integrated-query-linq"></a>Jazykově integrovaný dotaz (LINQ)
 
-LINQ je výkonnou sadu funkcí pro C# a VB, které umožňují napsat jednoduchý a deklarativní kód pro provozování na datech. Data mohou být v mnoha formách (například objektů v paměti, databázi SQL nebo dokument XML), ale kód LINQ, který napíšete obvykle není ve zdroji dat lišit.
+LINQ je výkonná sada funkcí pro C# a VB, která umožňuje psaní jednoduchého deklarativního kódu pro práci na datech. Data mohou být v mnoha formách (například objekty v paměti, databáze SQL nebo dokumentu XML), ale kód jazyka LINQ, který zapisujete, se obvykle neliší od zdroje dat.
 
-Další informace a některé ukázky, najdete v článku [LINQ (Language Integrated Query)](using-linq.md) tématu.
+Další informace a příklady naleznete v tématu [LINQ (Language Integrated Query)](using-linq.md) .
 
 ## <a name="native-interoperability"></a>Nativní interoperabilita
 
-Každý operační systém zahrnuje aplikaci programovací rozhraní (API), která poskytuje služby systému. .NET poskytuje několik způsobů, jak volat tato rozhraní API.
+Každý operační systém obsahuje aplikační programovací rozhraní (API), které poskytuje systémové služby. Rozhraní .NET poskytuje několik způsobů, jak tato rozhraní API volat.
 
-Hlavní způsob, jak provést nativní Interoperabilita je prostřednictvím "vyvolání platformy" nebo P/Invoke zkráceně, který není podporovaný napříč platformami operačních systémů Linux a Windows. Jen pro Windows způsob, jak to nativní interoperabilita se označuje jako "COM interop", který se používá pro práci s [komponenty modelu COM](/cpp/atl/introduction-to-com) ve spravovaném kódu. Je nástavbou P/Invoke infrastruktury, ale funguje to trochu různými způsoby.
+Hlavním způsobem, jak provést nativní interoperabilitu, je prostřednictvím "vyvolání platformy" nebo volání nespravovaného kódu pro krátké, které je podporováno pro platformy Linux a Windows. Způsob, jakým se jenom systém Windows provádí v nativní interoperabilitě, se označuje jako zprostředkovatel komunikace s objekty COM, který se používá pro práci s [komponentami com](/cpp/atl/introduction-to-com) ve spravovaném kódu. Je postavená na infrastruktuře volání nespravovaného systému, ale funguje v nestejném počtu různých způsobů.
 
-Podobně stojí většina vzájemná funkční spolupráce podpora pro Mono (a tedy Xamarinu pro) pro Javu a Objective-C, to znamená, že použít stejné zásady.
+Většina podpory interoperability (a tudíž Xamarin) pro jazyk Java a cíl-C je postavená podobně, to znamená, že používají stejné zásady.
 
-Další informace o nativní interoperabilita, najdete v článku [nativní interoperabilita](native-interop/index.md) článku.
+Další informace o nativní interoperabilitě najdete v článku věnovaném [nativní interoperabilitě](native-interop/index.md) .
 
-## <a name="unsafe-code"></a>Nebezpečný kód
+## <a name="unsafe-code"></a>Nezabezpečený kód
 
-V závislosti na podpoře jazyka CLR vám umožní přístup k nativním paměti a provedení aritmetické operace ukazatele přes `unsafe` kódu. Tyto operace jsou potřeba určité algoritmy a vzájemná funkční spolupráce systému. I když výkonné, použití nezabezpečeného kódu se nedoporučuje, pokud je potřeba komunikace pomocí rozhraní API systému nebo implementovat nejúčinnější algoritmus. Nezabezpečený kód nelze spustit stejným způsobem jako v různých prostředích a také dojde ke ztrátě výhod systému uvolňování paměti a bezpečnost typů. Doporučujeme omezit a centralizovat co nejvíc nezabezpečený kód a důkladně otestujte, že kód.
+V závislosti na jazykové podpoře vám modul CLR umožní přístup k nativní paměti a provádění aritmetického ukazatele prostřednictvím kódu `unsafe`. Tyto operace jsou potřeba pro určité algoritmy a interoperabilitu systému. I když je efektivní použití nebezpečného kódu doporučeno, pokud není nutné pro interoperabilitu se systémovými rozhraními API nebo implementaci nejúčinnějšího algoritmu. Nezabezpečený kód nesmí provádět stejný způsob v různých prostředích a také ztratí výhody uvolňování paměti a bezpečnosti typů. Doporučuje se co nejvíc a centralizace nezabezpečeného kódu a testování kódu.
 
-V následujícím příkladu je upravená verze `ToString()` metodu z `StringBuilder` třídy. Ukazuje, jak pomocí `unsafe` kódu můžete efektivně implementovat algoritmus tak bloky paměti přímo:
+Následující příklad je upravená verze metody `ToString()` z třídy `StringBuilder`. Ukazuje, jak lze pomocí `unsafe` efektivně implementovat algoritmus přesunutím kolem bloků paměti přímo:
 
 [!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud vás zajímá prohlídku funkcí jazyka C#, přečtěte si [Tour z jazyka C#](../csharp/tour-of-csharp/index.md).
+Pokud vás zajímá prohlídka C# funkcí, Projděte si [část C#prohlídky ](../csharp/tour-of-csharp/index.md).
 
-Pokud vás zajímá prohlídku F# funkce, najdete v článku [prohlídka F# ](../fsharp/tour.md).
+Pokud vás zajímá prohlídka F# funkcí, přečtěte si téma [prohlídky F# ](../fsharp/tour.md).
 
-Pokud chcete začít s psaním kódu vlastní, navštivte [Začínáme](get-started.md).
+Pokud chcete začít psát vlastní kód, navštivte [Začínáme](get-started.md).
 
-Další informace o důležité součásti aplikace .NET, přečtěte si [Architekturálních komponentách .NET](components.md).
+Pokud se chcete dozvědět o důležitých součástech rozhraní .NET, podívejte se na [komponenty architektury .NET](components.md).

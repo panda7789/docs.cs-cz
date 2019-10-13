@@ -1,23 +1,23 @@
 ---
-title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
+title: Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 1fa0548e2d63562ddcb85fc6392bf5c99d67d6c7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 926332ac1873db89ce9332075380effdfdc1fc37
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916809"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291502"
 ---
-# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
+# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction
 Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction se používá ke konfiguraci části Nastavení WS-AtomicTransaction na místních i vzdálených počítačích.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]Pokud používátenebo, modul snap-in konzoly MMC můžete najít tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete vlastnosti. [!INCLUDE[wxp](../../../includes/wxp-md.md)] Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
+ Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], modul snap-in konzoly MMC můžete najít tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
   
- Pokud používáte [!INCLUDE[lserver](../../../includes/lserver-md.md)]systém Windows Vista nebo, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
+ Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
   
- Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup v případě, [!INCLUDE[wxp](../../../includes/wxp-md.md)] že používáte nebo. [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], postupujte podle předchozích kroků pro Vista a [!INCLUDE[lserver](../../../includes/lserver-md.md)], ale použijte uzel DTC (Distributed **Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.  
+ Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], postupujte podle předchozích kroků pro Vista a [!INCLUDE[lserver](../../../includes/lserver-md.md)], ale použijte uzel **DTC (Distributed Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.  
   
  Chcete-li použít uživatelské rozhraní poskytované nástrojem, je nutné zaregistrovat soubor WsatUI. dll, který je umístěn v následující cestě.  
   
@@ -25,7 +25,7 @@ Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction se používá ke 
   
  Registraci lze provést pomocí následujícího příkazu.  
   
-```Output  
+```console
 regasm.exe /codebase WsatUI.dll  
 ```  
   
@@ -63,7 +63,7 @@ regasm.exe /codebase WsatUI.dll
   
  **Autorizované účty**  
   
- Kliknutím na tlačítko **Vybrat** vyvoláte editor seznamu Access Control Windows, kde můžete zadat uživatele nebo skupinu, které se můžou účastnit transakcí WS-Atomic zaškrtnutím políčka **Povolit** nebo **Odepřít** ve účasti. Skupina oprávnění  
+ Kliknutím na tlačítko **Vybrat** vyvoláte editor seznamu Access Control Windows, kde můžete zadat uživatele nebo skupinu, které se můžou účastnit transakcí WS-Atomic zaškrtnutím políčka **Povolit** nebo **Odepřít** ve **účasti** . Skupina oprávnění  
   
  **Autorizované certifikáty**  
   
@@ -77,17 +77,17 @@ regasm.exe /codebase WsatUI.dll
   
  Kliknutím na tlačítko **Možnosti** aktivujete stránku, kde můžete zadat další nastavení.  
   
- Pole se kombinací **úrovně trasování** umožňuje vybrat libovolnou platnou hodnotu <xref:System.Diagnostics.TraceLevel> výčtu. Pomocí zaškrtávacích políček můžete také určit, jestli chcete provádět trasování aktivit, šíření aktivit nebo shromažďovat osobní údaje.  
+ Pole s kombinací **úrovně trasování** umožňuje vybrat libovolnou platnou hodnotu výčtu <xref:System.Diagnostics.TraceLevel>. Pomocí zaškrtávacích políček můžete také určit, jestli chcete provádět trasování aktivit, šíření aktivit nebo shromažďovat osobní údaje.  
   
  Můžete také zadat relace protokolování do pole Skupina **relace protokolování** .  
   
 > [!NOTE]
-> Když jiný příjemce trasování používá poskytovatele trasování WS-AT, nemůžete vytvořit novou relaci protokolování pro události trasování. Při každém pokusu o konfiguraci protokolování během této doby se zobrazí chybová zpráva s oznámením o povolení poskytovatele. Kód chyby: 1.  
+> Když jiný příjemce trasování používá poskytovatele trasování WS-AT, nemůžete vytvořit novou relaci protokolování pro události trasování. Při každém pokusu o konfiguraci protokolování během této doby se zobrazí chybová zpráva s oznámením o povolení poskytovatele. Kód chyby: 1 ".  
   
  Další informace o trasování a protokolování najdete v tématu [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Další informace najdete v tématech
 
-- [Konfigurace podpory protokolu WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
-- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Konfigurace podpory transakcí WS-Atomic](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+- [Konfigurační nástroj WS-AtomicTransaction (wsatConfig. exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
 - [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
