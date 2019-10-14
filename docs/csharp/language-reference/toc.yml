@@ -200,7 +200,7 @@
       items:
         - name: nové omezení
           href: keywords/new-constraint.md
-        - name: where
+        - name: kde
           href: keywords/where-generic-type-constraint.md
     - name: Klíčová slova přístupu
       items:
@@ -315,6 +315,9 @@
     - name: '?: – operátor'
       href: operators/conditional-operator.md
       displayName: 'conditional, ternary, ref'
+    - name: '! – operátor (tolerující hodnotu null)'
+      href: operators/null-forgiving.md
+      displayName: 'nullable reference, null-forgiveness'
     - name: '?? a ??= – operátory'
       href: operators/null-coalescing-operator.md
       displayName: 'null-coalescing, assignment'
@@ -621,7 +624,7 @@
       href: ../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
     - name: Rekurzivní porovnávání vzorů
       href: ../../../_csharplang/proposals/csharp-8.0/patterns.md
-    - name: Výchozí členové rozhraní
+    - name: Výchozí metody rozhraní
       href: ../../../_csharplang/proposals/csharp-8.0/default-interface-methods.md
     - name: Asynchronní streamy
       href: ../../../_csharplang/proposals/csharp-8.0/async-streams.md

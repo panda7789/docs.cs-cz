@@ -580,8 +580,8 @@
           href: csharp/tutorials/exploration/interpolated-strings-local.md
         - name: Pokročilé scénáře interpolace řetězců
           href: csharp/tutorials/string-interpolation.md
-        - name: Rozhraní pro bezpečnou aktualizaci s výchozími členy rozhraní
-          href: csharp/tutorials/default-interface-members-versions.md
+        - name: Rozhraní pro bezpečnou aktualizaci s výchozími metodami rozhraní
+          href: csharp/tutorials/default-interface-methods-versions.md
         - name: Prozkoumání indexů a rozsahů
           href: csharp/tutorials/ranges-indexes.md
         - name: Práce s odkazovými typy s možnou hodnotou null
