@@ -6,12 +6,12 @@ title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 09/30/2019
-ms.openlocfilehash: a30744ca8831375f9a54f054b226274e273a67a5
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 1446d870a4cae2c5bf385a0089bbc830f932ea08
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736762"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321477"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -88,7 +88,7 @@ ms.locfileid: "71736762"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="/dotnet/images/hub/dotnet.svg" alt="" />
+                                                    <img src="/dotnet/images/hub/dotnet-logo-image.svg" alt="Screenshot of the purple .NET logo." />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -248,7 +248,7 @@ ms.locfileid: "71736762"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="/dotnet/images/hub/netspark.svg" alt="" />
+                                                    <img src="/dotnet/images/hub/netspark-logo-image.svg" alt="Screenshot of the purple .NET for Apache Spark Guide logo." />
                                                 </div>
                                             </div>
                                             <div class="cardText">
