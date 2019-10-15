@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Generování textových souborů z XML (Visual Basic)'
+title: 'Postupy: generování textových souborů z formátu XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 3b33f191-4abe-4419-b81b-3cb81d9a317f
-ms.openlocfilehash: 6273152995b458da110a2bda56ebdc35d49b6769
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b383a0f3656558286bfe449ed72c633426b9410
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780325"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320534"
 ---
-# <a name="how-to-generate-text-files-from-xml-visual-basic"></a><span data-ttu-id="d37f6-102">Postupy: Generování textových souborů z XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d37f6-102">How to: Generate Text Files from XML (Visual Basic)</span></span>
-<span data-ttu-id="d37f6-103">Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="d37f6-103">This example shows how to generate a comma-separated values (CSV) file from an XML file.</span></span>  
+# <a name="how-to-generate-text-files-from-xml-visual-basic"></a><span data-ttu-id="66cea-102">Postupy: generování textových souborů z formátu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="66cea-102">How to: Generate Text Files from XML (Visual Basic)</span></span>
+<span data-ttu-id="66cea-103">Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="66cea-103">This example shows how to generate a comma-separated values (CSV) file from an XML file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d37f6-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="d37f6-104">Example</span></span>  
- <span data-ttu-id="d37f6-105">Verze jazyka Visual Basic používá kódu procedury k agregaci kolekce řetězce do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="d37f6-105">The Visual Basic version uses procedural code to aggregate the collection of strings into a single string.</span></span>  
+## <a name="example"></a><span data-ttu-id="66cea-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="66cea-104">Example</span></span>  
+ <span data-ttu-id="66cea-105">Verze Visual Basic používá procedurální kód pro agregaci kolekce řetězců do jediného řetězce.</span><span class="sxs-lookup"><span data-stu-id="66cea-105">The Visual Basic version uses procedural code to aggregate the collection of strings into a single string.</span></span>  
   
- <span data-ttu-id="d37f6-106">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="d37f6-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="66cea-106">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="66cea-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -42,15 +42,15 @@ Next
 Console.WriteLine(sb.ToString())  
 ```  
   
- <span data-ttu-id="d37f6-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="d37f6-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="66cea-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="66cea-107">This code produces the following output:</span></span>  
   
-```  
+```console  
 GREAL,Great Lakes Food Market,Howard Snyder,Marketing Manager,(503) 555-7555,2732 Baker Blvd.,Eugene,OR,97403,USA  
 HUNGC,Hungry Coyote Import Store,Yoshi Latimer,Sales Representative,(503) 555-6874,City Center Plaza 516 Main St.,Elgin,OR,97827,USA  
 LAZYK,Lazy K Kountry Store,John Steel,Marketing Manager,(509) 555-7969,12 Orchestra Terrace,Walla Walla,WA,99362,USA  
 LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,San Francisco,CA,94117,USA  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d37f6-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d37f6-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="66cea-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="66cea-108">See also</span></span>
 
-- [<span data-ttu-id="d37f6-109">Projekce a transformace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d37f6-109">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [<span data-ttu-id="66cea-109">Projekce a transformace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="66cea-109">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
