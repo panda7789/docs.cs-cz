@@ -2,12 +2,12 @@
 title: Co jsou nativní cloudové aplikace?
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Co jsou aplikace Cloud Native?
 ms.date: 04/28/2018
-ms.openlocfilehash: 86153b04790eb21276e58b3fe33c0a680d9ea1c4
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: cf4c3b24a4eeb62ed84a5fccb294b675d38fcc36
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373921"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318443"
 ---
 # <a name="what-about-cloud-native-applications"></a>Co jsou nativní cloudové aplikace?
 
@@ -15,7 +15,7 @@ I když nativní aplikace v [cloudu](https://azure.microsoft.com/overview/cloudn
 
 Obrázek 4-3 pozice cloudových nativních aplikací v úrovni vyspělosti aplikací:
 
-![Umísťování cloudových nativních aplikací](./media/image3.png)
+![Diagram znázorňující, jak umístit aplikace nativní pro Cloud](./media/what-about-cloud-native-applications/positioning-cloud-native-applications.png)
 
 **Obrázek 4-3.** Umísťování cloudových nativních aplikací
 
@@ -25,7 +25,7 @@ Hlavní pilíře nativních aplikací pro Cloud jsou založené na přístupech 
 
 Obrázek 4-4 ukazuje hlavní charakteristiky modelu nativního cloudu.
 
-![Nativní charakteristiky cloudu jsou mikroslužby, kontejnery, odolné proti cloudu, Orchestrace a bez serveru.](./media/image4.png)
+![Diagram se seznamem základních vlastností nativního cloudu.](./media/what-about-cloud-native-applications/cloud-native-characteristics.png)
 
 **Obrázek 4-4.** Nativní charakteristiky cloudu
 
@@ -41,7 +41,7 @@ Cloud – nativní je pokročilejší nebo vyspělý stav pro rozsáhlé a klí�
 
 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) je primárním zvýšením principů nativních pro Cloud. Microsoft je [členem služby CNCF](https://azure.microsoft.com/blog/announcing-cncf/).
 
-Ukázku definice a další informace o vlastnostech cloudových nativních aplikací najdete v článku Gartner, [jak architektovat a navrhovat aplikace Cloud Native](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications). Konkrétní pokyny od Microsoftu o implementaci nativní cloudové aplikace najdete v tématu [mikroslužby .NET: Architektura pro kontejnerové aplikace](https://aka.ms/microservicesebook).NET.
+Ukázku definice a další informace o vlastnostech cloudových nativních aplikací najdete v článku Gartner, [jak architektovat a navrhovat aplikace Cloud Native](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications). Konkrétní pokyny od Microsoftu o implementaci nativní cloudové aplikace najdete v tématu [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook).
 
 Nejdůležitější faktor, který je třeba vzít v úvahu při migraci úplné aplikace do nativního modelu cloudu, je, že je nutné přearchitektit architekturu založenou na mikroslužbách. To jasně vyžaduje významné investice do vývoje, protože se jedná o velký proces refaktoringu. Tato možnost se obvykle volí pro klíčové aplikace, které vyžadují nové úrovně škálovatelnosti a dlouhodobé flexibility. Můžete ale začít přecházet ke cloudovým nativním přidáním mikroslužeb pro pár nových scénářů a nakonec Refaktorovat aplikaci úplně jako mikroslužby. Toto je postupný přístup, který je nejlepší volbou pro některé scénáře.
 
@@ -55,7 +55,7 @@ Nicméně mikroslužby nejsou povinné pro žádnou novou nebo moderní aplikaci
 
 Architektura mikroslužeb se stává upřednostňovaným přístupem k distribuovaným a rozsáhlým nebo složitým podnikovým aplikacím, které jsou založeny na několika nezávislých subsystémech ve formě autonomních služeb. V architektuře založené na mikroslužbách je aplikace sestavená jako kolekce služeb, které se dají nezávisle vyvíjet, testovat, nasazovat a škálovat. To může zahrnovat všechny související, autonomní databáze na mikroslužby.
 
-Podrobný pohled na architekturu mikroslužeb, kterou můžete implementovat pomocí .NET Core, najdete v tématu ke stažení mikroslužeb .NET v knize [PDF ke stažení: Architektura pro kontejnerové aplikace](https://aka.ms/microservicesebook).NET. Tato příručka je také k dispozici [online](../../microservices/index.md).
+Podrobný pohled na architekturu mikroslužeb, kterou můžete implementovat pomocí .NET Core, najdete v tématu věnovaném použití mikroslužeb rozhraní .NET, ke stažení ve formátu PDF v elektronické knize [: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook). Tato příručka je také k dispozici [online](../../microservices/index.md).
 
 Ale dokonce i ve scénářích, kdy mikroslužby nabízejí výkonné možnosti nezávislé na možnostech nasazení, silné hranice subsystému a technologické rozmanitosti – také vyvolává mnoho nových výzev. Tyto výzvy souvisejí s vývojem distribuovaných aplikací, jako jsou fragmentované a nezávislé datové modely; dosažení odolné komunikace mezi mikroslužbami; nutnost případné konzistence; a provozní složitost. Mikroslužby představují vyšší úroveň složitosti v porovnání s tradičními monolitické aplikacemi.
 
@@ -66,5 +66,5 @@ Jako poslední Poznámka, a to i v případě, že se o tomto konceptu chystáte
 V každém případě se zbytek těchto současných pokynů zaměřuje na většinu všech aplikací založených na mikroslužbách, protože tyto doprovodné materiály jsou primárně zaměřené na modernizaci stávajících aplikací, které obvykle mají monolitické nebo N-vrstvé architektury.
 
 > [!div class="step-by-step"]
-> [Předchozí](microsoft-technologies-in-cloud-optimized-applications.md)Další
-> [](deploy-existing-net-apps-as-windows-containers.md)
+> [Předchozí](microsoft-technologies-in-cloud-optimized-applications.md)
+> [Další](deploy-existing-net-apps-as-windows-containers.md)

@@ -1,23 +1,23 @@
 ---
-title: Protokolování pomocí elastického zásobníku
+title: Protokolování pomocí řešení Elastic Stack
 description: Protokolování pomocí elastického zásobníku, Logstash a Kibana
 ms.date: 09/23/2019
-ms.openlocfilehash: b3fd3ea30f46914e6513be79f7d949499142b381
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 62115edc3f64d87d2c3e84a7b5319ce42cbe729b
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182830"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315799"
 ---
-# <a name="logging-with-elastic-stack"></a>Protokolování pomocí elastického zásobníku 
+# <a name="logging-with-elastic-stack"></a>Protokolování pomocí řešení Elastic Stack 
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Existuje mnoho dobře centralizovaných nástrojů protokolování, které se liší od bezplatného, open-source nástrojů až po dražší možnosti. V mnoha případech jsou bezplatné nástroje jako dobrá nebo lepší než placené nabídky. Jedním z těchto nástrojů je kombinace tří open-source komponent: Elastické vyhledávání, Logstash a Kibana. Souhrn těchto nástrojů je známý jako elastický zásobník nebo zásobník ELK.
+Existuje mnoho dobře centralizovaných nástrojů protokolování, které se liší od bezplatného, open-source nástrojů až po dražší možnosti. V mnoha případech jsou bezplatné nástroje jako dobrá nebo lepší než placené nabídky. Jedním z těchto nástrojů je kombinace tří open-source komponent: elastické vyhledávání, Logstash a Kibana. Souhrn těchto nástrojů je známý jako elastický zásobník nebo zásobník ELK.
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Jaké jsou výhody elastického zásobníku?
 
-Elastický zásobník poskytuje centralizované protokolování s nízkými náklady, škálovatelným a uživatelsky přívětivým způsobem. Jeho uživatelské rozhraní zjednodušuje analýzu dat, takže můžete strávit vaše data získat z vašich dat místo boje proti clunky rozhraní. Podporuje širokou škálu vstupů, takže vaše distribuovaná aplikace zahrnuje více a různé druhy služeb, můžete očekávat, že budete moci zamezit data protokolů a metrik do systému. Elastický zásobník také podporuje rychlé vyhledávání i napříč velkými datovými sadami, což umožňuje, aby i velké aplikace mohly protokolovat podrobná data a pořád je mohli mít v takovém důsledku lepší viditelnost.
+Elastický zásobník poskytuje centralizované protokolování s nízkými náklady, škálovatelným a uživatelsky přívětivým způsobem. Jeho uživatelské rozhraní zjednodušuje analýzu dat, takže můžete strávit vaše data získat z vašich dat místo boje proti clunky rozhraní. Podporuje širokou škálu vstupů, takže vaše distribuovaná aplikace zahrnuje více a různé druhy služeb, můžete očekávat, že budete moci zamezit data protokolů a metrik do systému. Elastický zásobník podporuje také rychlé vyhledávání i napříč velkými datovými sadami, což umožňuje, aby velké aplikace protokoloval podrobné údaje a pořád je bylo možné vyhlížet způsobem.
 
 ## <a name="logstash"></a>Logstash
 
@@ -63,7 +63,7 @@ Elastické vyhledávání je výkonný vyhledávací modul, který umožňuje in
 
 Protokolované zprávy, které byly vytvořené tak, aby obsahovaly parametry nebo byly rozděleny pomocí parametrů prostřednictvím zpracování Logstash, se dají dotazovat přímo jako Elasticsearch, které tyto informace zachová.
 
-Dotaz, který vyhledává prvních 10 navštívených `jill@example.com`stránek, se zobrazí na obrázku 7-4.
+Dotaz, který vyhledává prvních 10 stránek navštívených `jill@example.com`, se zobrazí na obrázku 7-4.
 
 ```
 "query": {

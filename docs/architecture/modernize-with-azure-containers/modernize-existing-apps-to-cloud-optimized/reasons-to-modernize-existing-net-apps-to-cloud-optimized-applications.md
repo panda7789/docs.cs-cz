@@ -2,12 +2,12 @@
 title: Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 ms.date: 04/28/2018
-ms.openlocfilehash: aabce73efaae520a3b59c70d53519b847f2c6a94
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: c86b9ec4d4a92b8daa0fceef0531ed955b9bb2bf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373935"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318540"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 
@@ -21,7 +21,7 @@ Dolním řádkem je, že když organizace sestavuje a spravuje aplikace, které 
 
 ## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy a principy optimalizované pro cloudové aplikace 
 
-Vylepšení cloudu se většinou zaměřuje na splnění dvou cílů: Zvýšení flexibility sníží náklady a zlepšíte růst podnikání. Tyto cíle se dosahují zjednodušením procesů a snížením třením při vydávání a dodávání aplikací.
+Vylepšení v cloudu se většinou zaměřují na splnění dvou cílů: Snižte náklady a zvyšte růst podnikání díky vylepšení flexibility. Tyto cíle se dosahují zjednodušením procesů a snížením třením při vydávání a dodávání aplikací.
 
 Vaše aplikace je optimalizovaná pro Cloud, pokud můžete agilní způsob – vyvíjet aplikaci samostatně z jiných místních aplikací a potom vydávat, nasazovat, automaticky škálovat, monitorovat a řešit potíže s aplikací v cloudu.
 
@@ -41,7 +41,7 @@ Následující seznam popisuje hlavní principy nebo postupy pro cloudově optim
 
 Obrázek 4-2 ukazuje hlavní volitelné pilíře aplikace optimalizované pro Cloud. U více sloupků, které implementujete, bude mít připravenost vaší aplikace po splnění očekávání vašich zákazníků úspěch.
 
-![Hlavní pilíře aplikace optimalizované pro Cloud](./media/image2.png)
+![Diagram pojmenovává hlavní pilíře aplikace optimalizované pro Cloud.](./media/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications/main-pillars-cloud-optimized-application.png)
 
 **Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro Cloud
 
@@ -66,5 +66,5 @@ Všechny tyto výhody nakonec poskytují klíčové snížení nákladů pro cel
 V následujících částech jsou tyto výhody vysvětleny podrobněji a jsou propojeny s konkrétními technologiemi.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](microsoft-technologies-in-cloud-optimized-applications.md)
+>[Předchozí](index.md)
+>[Další](microsoft-technologies-in-cloud-optimized-applications.md)

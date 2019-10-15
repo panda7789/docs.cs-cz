@@ -1,15 +1,15 @@
 ---
-title: Využití kontejnerů a orchestrací
+title: Využití kontejnerů a orchestrátorů
 description: Využití kontejnerů Docker a orchestrace Kubernetes v Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 4008a14e4db28e07d5fda0a1f175aada9ffe6734
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 62aaa68b2ada0725f33df62e97f1ca3216b91ccf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182879"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315883"
 ---
-# <a name="leveraging-containers-and-orchestrators"></a>Využití kontejnerů a orchestrací
+# <a name="leveraging-containers-and-orchestrators"></a>Využití kontejnerů a orchestrátorů
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -53,8 +53,8 @@ A co více kontejnerů jsou definovány jednoduchými soubory, které lze zkontr
 
 Kontejnery jsou neměnné. Jakmile budete mít definici kontejneru, můžete tento kontejner znovu vytvořit a spustí se přesně stejným způsobem. Tato neměnnosti se zapůjčuje do návrhu založeného na komponentách. Pokud se některé části aplikace nemění tak často jako jiné, proč je možné znovu nasadit celou aplikaci, když můžete jenom nasadit části, které se mění nejčastěji? Různé funkce a průřezové aspekty aplikace je možné rozdělit na samostatné jednotky. Obrázek 3-2 ukazuje, jak může aplikace monolitické využít výhod kontejnerů a mikroslužeb pomocí delegování určitých funkcí nebo funkcí. Zbývající funkce samotné aplikace také byly kontejnery.
 
-![Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu. **Obrázek 3-2**. ](./media/breaking-up-monolith-with-backend-microservices.png)
- Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu.
+@no__t 0Breaking aplikaci monolitické, aby používala mikroslužby v back-endu. ](./media/breaking-up-monolith-with-backend-microservices.png)
+**obrázek 3-2**. Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu.
 
 Cloudové nativní aplikace sestavené pomocí samostatných kontejnerů využívají výhod nasazení aplikace v případě potřeby co nejvíc nebo i trochu. Jednotlivé služby můžou být hostované na uzlech s prostředky, které jsou vhodné pro každou službu. Prostředí, ve kterém je každá služba spuštěná, je neměnné, dá se sdílet mezi vývojem, testováním a výrobou a dá se snadno používat ve verzi. Propojení mezi různými oblastmi aplikace probíhá explicitně jako volání nebo zprávy mezi službami, nikoli závislosti na kompilaci v rámci monolitu. A libovolná část celkové aplikace může zvolit technologii, která dává smysl pro tuto funkci nebo schopnost, a to bez nutnosti provádět změny ve zbývající části aplikace.
 
@@ -62,14 +62,14 @@ Cloudové nativní aplikace sestavené pomocí samostatných kontejnerů využí
 
 Služby postavené na kontejnerech můžou využívat výhody škálování poskytované nástroji pro orchestraci, jako je Kubernetes. Kontejnery návrhu se týkají pouze samotných. Jakmile začnete mít více kontejnerů, které potřebují společně spolupracovat, může být vhodné je uspořádat na vyšší úrovni. Uspořádání velkého počtu kontejnerů a jejich sdílených závislostí, jako je například konfigurace sítě, je místo, kde nástroje pro orchestraci docházejí, aby ušetřily den. Kubernetes je platforma pro orchestraci kontejnerů navržená pro automatizaci nasazení, škálování a správy kontejnerových aplikací. Vytvoří vrstvu abstrakce nad skupinami kontejnerů a uspořádá je do *lusků*. Lusky se spouštějí na pracovních počítačích, které jsou označovány jako *uzly*. Celá uspořádaná skupina se označuje jako *cluster*. Obrázek 3-3 ukazuje různé komponenty clusteru Kubernetes.
 
-![Součásti clusteru Kubernetes. **Obrázek 3-3**. ](./media/kubernetes-cluster-components.png)
- Součásti clusteru Kubernetes.
+@no__t – součásti clusteru 0Kubernetes. ](./media/kubernetes-cluster-components.png)
+**obrázek 3-3**. Součásti clusteru Kubernetes.
 
 Kubernetes má integrovanou podporu pro škálování clusterů tak, aby splňovala požadavky. V kombinaci s dodanými mikroslužbami poskytuje cloudové nativní aplikace s možností rychle a efektivně reagovat na špičky v poptávce s dalšími prostředky, když jsou a tam, kde jsou potřeba.
 
 ### <a name="declarative-versus-imperative"></a>Deklarativní versus imperativní
 
-Kubernetes podporuje deklarativní i imperativní konfiguraci objektů. Nepodmíněný přístup zahrnuje spuštění různých příkazů, které oznamují Kubernetes, co dělat v každém kroku jak. *Spusťte* tuto bitovou kopii. *Odstraňte* tento pod. *Zveřejněte* tento port. V případě deklarativního přístupu použijete konfigurační soubor, který popisuje, *co chcete* , místo *abyste mohli dělat* a Kubernetes vyhodnotit, co se má udělat, abyste dosáhli požadovaného koncového stavu. Pokud jste cluster již nakonfigurovali pomocí imperativních příkazů, můžete exportovat deklarativní manifest pomocí `kubectl get svc SERVICENAME -o yaml > service.yaml`. Tím se vytvoří soubor manifestu, jako je tento:
+Kubernetes podporuje deklarativní i imperativní konfiguraci objektů. Nepodmíněný přístup zahrnuje spuštění různých příkazů, které oznamují Kubernetes, co dělat v každém kroku jak. *Spusťte* tuto bitovou kopii. *Odstraňte* tento pod. *Zveřejněte* tento port. V případě deklarativního přístupu použijete konfigurační soubor, který popisuje, *co chcete* , místo *abyste mohli dělat* a Kubernetes vyhodnotit, co se má udělat, abyste dosáhli požadovaného koncového stavu. Pokud jste cluster již nakonfigurovali pomocí imperativních příkazů, můžete vyexportovat deklarativní manifest pomocí `kubectl get svc SERVICENAME -o yaml > service.yaml`. Tím se vytvoří soubor manifestu, jako je tento:
 
 ```yaml
 apiVersion: v1
@@ -97,7 +97,7 @@ status:
   loadBalancer: {}
 ```
 
-Při použití deklarativní konfigurace můžete zobrazit náhled změn, které budou provedeny před jejich potvrzením, pomocí `kubectl diff -f FOLDERNAME` složky ve složce, ve které jsou umístěny konfigurační soubory. Až si opravdu chcete změny použít, spusťte příkaz `kubectl apply -f FOLDERNAME`. Přidejte `-R` k rekurzivnímu zpracování hierarchie složek.
+Při použití deklarativní konfigurace můžete zobrazit náhled změn, které budou provedeny před jejich potvrzením, pomocí `kubectl diff -f FOLDERNAME` proti složce, ve které jsou umístěny konfigurační soubory. Jakmile budete mít jistotu, že chcete změny použít, spusťte `kubectl apply -f FOLDERNAME`. Přidejte `-R` pro rekurzivní zpracování hierarchie složek.
 
 Kromě služeb můžete použít deklarativní konfiguraci pro jiné funkce Kubernetes, jako jsou například *nasazení*. Deklarativní nasazení používají řadiče nasazení k aktualizaci prostředků clusteru. Nasazení se používají k zavedení nových změn, horizontálnímu navýšení kapacity pro podporu většího zatížení nebo návrat k předchozí revizi. Pokud je cluster nestabilní, deklarativní nasazení poskytuje mechanismus pro automatické převedení clusteru zpátky do požadovaného stavu.
 
@@ -121,7 +121,7 @@ Pokud nebudete nebo nebudete moct sestavovat aplikaci po dvanácti zásadách ap
 
 ## <a name="development-resources"></a>Prostředky pro vývoj
 
-V této části se zobrazuje krátký seznam vývojářských prostředků, které vám můžou pomoci začít s používáním kontejnerů a orchestrací pro vaši další aplikaci. Pokud hledáte pokyny k návrhu aplikace architektury mikroslužeb nativního pro Cloud, přečtěte si tento doprovodný materiál pro .NET, [mikroslužby .NET: Architektura pro kontejnerové aplikace](https://aka.ms/microservicesebook).NET.
+V této části se zobrazuje krátký seznam vývojářských prostředků, které vám můžou pomoci začít s používáním kontejnerů a orchestrací pro vaši další aplikaci. Pokud hledáte pokyny k návrhu aplikace architektury mikroslužeb nativního pro Cloud, přečtěte si tohoto doprovodného pomocníka [.NET mikroslužby: architektura pro kontejnery aplikací .NET](https://aka.ms/microservicesebook).
 
 ### <a name="local-kubernetes-development"></a>Vývoj místních Kubernetes
 
@@ -131,15 +131,15 @@ Kubernetes nasazení poskytují skvělou hodnotu v produkčním prostředí, ale
 
 Co je Minikube? Projekt Minikube říká "Minikube implementuje místní Kubernetes cluster na macOS, Linux a Windows." Jeho primárními cíli je "nejlepší nástroj pro vývoj místních aplikací Kubernetes a podpora všech Kubernetes funkcí, které odpovídají." Instalace Minikube je oddělená od Docker, ale Minikube podporuje jiné hypervisory než Docker Desktop podporuje. Minikube aktuálně podporuje následující funkce Kubernetes:
 
-- DNS
+- NÁZV
 - NodePorts
 - ConfigMaps a tajné klíče
 - Řídicí panely
-- Moduly runtime kontejneru: Docker, RKT, CRI-O a kontejner
+- Moduly runtime kontejnerů: Docker, RKT, CRI-O a kontejnery
 - Povolení síťového rozhraní kontejneru (CNI)
-- Příchozí přenos dat
+- Příchozího přenosu dat
 
-Po instalaci Minikube je můžete rychle začít používat spuštěním `minikube start` příkazu, který stáhne image a spustí místní cluster Kubernetes. Po spuštění clusteru s ním budete pracovat pomocí standardních příkazů Kubernetes `kubectl` .
+Po instalaci Minikube je můžete rychle začít používat spuštěním příkazu `minikube start`, který stáhne image a spustí místní cluster Kubernetes. Po spuštění clusteru s ním budete pracovat pomocí standardních příkazů Kubernetes `kubectl`.
 
 ### <a name="docker-desktop"></a>Docker Desktop
 
@@ -159,7 +159,7 @@ Visual Studio podporuje vývoj Docker pro webové aplikace. Když vytvoříte no
 
 **Obrázek 3-5**. Povolit podporu Docker pro Visual Studio
 
-Když je vybraná tato možnost, projekt se vytvoří s a `Dockerfile` v jeho kořenovém adresáři, který se dá použít k sestavení a hostování aplikace v kontejneru Docker. Na obrázku 3-6 se zobrazuje příklad souboru Dockerfile.
+Když je vybraná tato možnost, projekt se vytvoří s `Dockerfile` ve svém kořenu, který se dá použít k sestavení a hostování aplikace v kontejneru Docker. Na obrázku 3-6 se zobrazuje příklad souboru Dockerfile.
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-stretch-slim AS base
@@ -192,15 +192,15 @@ Výchozí chování při spuštění aplikace je nakonfigurováno pro použití 
 
 **Obrázek 3-7**. Možnosti spuštění aplikace Visual Studio Docker
 
-Kromě místního vývoje [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) poskytuje vývojářům pohodlný způsob, jak v rámci Azure pracovat s vlastními konfiguracemi Kubernetes. Jak vidíte na obrázku 3-10, můžete také spustit aplikaci v Azure Dev Spaces.
+Kromě místního vývoje [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) poskytuje vývojářům pohodlný způsob, jak v rámci Azure pracovat s vlastními konfiguracemi Kubernetes. Jak vidíte na obrázku 3-7, můžete také spustit aplikaci v Azure Dev Spaces.
 
-Pokud nepřidáte do vaší aplikace ASP.NET Core podporu Docker při jejím vytváření, můžete ji kdykoli přidat později. V Průzkumník řešení sady Visual Studio klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **podporu Docker**, jak je znázorněno na obrázku 3-8.
+Pokud nepřidáte do vaší aplikace ASP.NET Core podporu Docker při jejím vytváření, můžete ji kdykoli přidat později. V Průzkumník řešení sady Visual Studio klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** **podporu Docker** > , jak je znázorněno na obrázku 3-8.
 
 ![Přidat podporu Docker pro Visual Studio](./media/visual-studio-add-docker-support.png)
 
 **Obrázek 3-8**. Přidat podporu Docker pro Visual Studio
 
-Kromě podpory Docker můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-11. Ve výchozím nastavení nástroj Orchestrator používá Kubernetes a Helm. Po zvolení nástroje Orchestrator `azds.yaml` se do kořenového adresáře projektu přidá soubor `charts` a přidá se složka obsahující Helm grafy používané ke konfiguraci a nasazení aplikace do Kubernetes. Obrázek 3-9 ukazuje výsledné soubory v novém projektu.
+Kromě podpory Docker můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-8. Ve výchozím nastavení nástroj Orchestrator používá Kubernetes a Helm. Po zvolení nástroje Orchestrator se do kořenového adresáře projektu přidá soubor `azds.yaml` a přidá se složka `charts` obsahující grafy Helm, které slouží ke konfiguraci a nasazení aplikace do Kubernetes. Obrázek 3-9 ukazuje výsledné soubory v novém projektu.
 
 ![Přidání podpory nástroje Orchestrator pro Visual Studio](./media/visual-studio-add-orchestrator-support.png)
 

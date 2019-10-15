@@ -2,18 +2,18 @@
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
 ms.date: 01/07/2019
-ms.openlocfilehash: d5e0b6c830422990aaf1a5e3b6ae257eb3dae99c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 82b3b0d37815e2f16ed3be1b1e7de37019b08ee8
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696906"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318414"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
 
 Doporučený postup pro opakování s exponenciálním omezení rychlosti je využít výhod pokročilejších knihoven .NET, jako je open source [Knihovna Polly](https://github.com/App-vNext/Polly).
 
-Polly je knihovna .NET, která poskytuje funkce odolnosti a přechodných chyb. Tyto možnosti můžete implementovat pomocí zásad Polly, jako je opakování, přerušení okruhů, izolace přepážky, časový limit a Fallback. Polly cílí na rozhraní .NET 4. x a knihovnu .NET Standard 1,0 (která podporuje .NET Core).
+Polly je knihovna .NET, která poskytuje funkce odolnosti a přechodných chyb. Tyto možnosti můžete implementovat pomocí zásad Polly, jako je opakování, přerušení okruhů, izolace přepážky, časový limit a Fallback. Polly cíle .NET Framework 4. x a .NET Standard 1,0, 1,1 a 2,0 (což podporuje .NET Core).
 
 Nicméně psaní vlastního kódu pro použití knihovny Polly s HttpClient může být výrazně složité. V původní verzi eShopOnContainers byly [ResilientHttpClient stavební bloky](https://github.com/dotnet-architecture/eShopOnContainers/commit/0c317d56f3c8937f6823cf1b45f5683397274815#diff-e6532e623eb606a0f8568663403e3a10) založené na Polly. Ale u vydání [HttpClientFactory](use-httpclientfactory-to-implement-resilient-http-requests.md)se implementace odolné komunikace http s Polly stala mnohem jednodušší, takže sestavení-Block bylo od eShopOnContainersu zastaralá. 
 

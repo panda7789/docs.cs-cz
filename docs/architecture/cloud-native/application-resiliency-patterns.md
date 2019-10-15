@@ -2,12 +2,12 @@
 title: Vzory odolnosti aplikací
 description: Architekt cloudových nativních aplikací .NET pro Azure | Vzory odolnosti aplikací
 ms.date: 06/30/2019
-ms.openlocfilehash: 8455584fe1d5b02f6d9543c3bad32cca7369c158
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67ae20f14a67f3a96d6c74cad727afe680ff3178
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183719"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315951"
 ---
 # <a name="application-resiliency-patterns"></a>Vzory odolnosti aplikací
 
@@ -27,7 +27,7 @@ Všimněte si, jak je uvedeno výše v předchozím obrázku zásady odolnosti p
 
 **Obrázek 6-3**. Stavové kódy HTTP pro opakování
 
-Daná Chtěli byste opakovat kód stavu HTTP 403 – zakázáno? Ne. V tomto případě systém pracuje správně, ale informuje volajícího, že nemá oprávnění k provedení požadované operace. Je nutné vzít v potaz pouze operace způsobené chybami.
+Otázka: budete opakovat kód stavu HTTP 403 – zakázáno? Ne. V tomto případě systém pracuje správně, ale informuje volajícího, že nemá oprávnění k provedení požadované operace. Je nutné vzít v potaz pouze operace způsobené chybami.
 
 Jak je popsáno v kapitole 1, vývojáři Microsoftu vytvářející cloudové nativní aplikace by měli cílit na .NET Core. Verze 2,1 zavedla knihovnu [HTTPClientFactory](https://www.stevejgordon.co.uk/introduction-to-httpclientfactory-aspnetcore) pro vytváření instancí klienta http pro interakci s prostředky založenými na adrese URL. Nahrazení původní třídy HTTPClient, třída Factory podporuje mnoho rozšířených funkcí, jedna z nich je [těsná integrace](../microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md) s knihovnou odolnosti Polly. Díky tomu můžete snadno definovat zásady odolnosti ve třídě spuštění aplikace, aby se mohla zpracovávat částečná selhání a problémy s připojením.
 
@@ -45,7 +45,7 @@ V distribuovaném cloudovém nativním prostředí můžou volání služeb a cl
 
 Na předchozím obrázku byl pro operaci požadavku implementován vzor opakování. Je nakonfigurovaná tak, aby umožňovala až čtyři opakované pokusy, před selháním s intervalem omezení rychlosti (čekací doba) od 2 sekund, který exponenciálně zdvojnásobuje při každém dalším pokusu.
 
-- První vyvolání se nezdařilo a vrátí stavový kód HTTP 500. Aplikace počká po dobu dvou sekund a znovu naspojuje volání.
+- První vyvolání se nezdařilo a vrátí stavový kód HTTP 500. Aplikace počká po dobu dvou sekund a zopakuje volání.
 - Druhé vyvolání také nefunguje a vrátí stavový kód HTTP 500. Aplikace nyní zdvojnásobí omezení rychlosti interval na čtyři sekundy a zopakuje volání.
 - Nakonec se třetí volání zdaří.
 - V tomto scénáři by se pokus o operaci opakování při zdvojnásobení omezení rychlosti doby před selháním tohoto volání pokusil o čtyři opakované pokusy.

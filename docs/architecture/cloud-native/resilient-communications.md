@@ -2,12 +2,12 @@
 title: Odolná komunikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Odolná komunikace
 ms.date: 06/30/2019
-ms.openlocfilehash: d7fd4552059f527ad5166dcb6be04248bfad8e4a
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 324f5426af1c892db73aa6fc2336a19b7a8e499e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214500"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315801"
 ---
 # <a name="resilient-communications"></a>Odolná komunikace
 
@@ -20,7 +20,7 @@ V rámci této knihy jsme evangelizedi, že se přesouvají mimo tradiční náv
 - *Odolnost.* Jak se spravují krátkodobé nenáročné chyby a systém udržuje stabilní?
 - *Vyrovnávání zatížení.* Jak se příchozí provoz rozděluje mezi více instancí služby?
 - *Bezpečnost.* Jak se týká zabezpečení, jako je šifrování na úrovni přenosu a Správa certifikátů?
-- \* Distribuované monitorování. – Jak korelujete a zachytíte sledovatelnost a monitorování pro jednotlivé požadavky v rámci více využívání služeb?
+- *Distribuované monitorování.* – Jak korelujete a zachytíte sledovatelnost a monitorování pro jednotlivé požadavky v rámci více využívání služeb?
 
 I když tyto otázky lze řešit pomocí různých knihoven a architektur, jejich implementace v rámci základu kódu mohou být nákladné, komplexní a časově náročné. Kromě toho se ukončí řešení, ve kterém souvisí infrastruktura infrastruktury s obchodní logikou.
 
@@ -34,7 +34,7 @@ Lepším řešením je uvažovat o nové a rychle se rozvíjející se technolog
 
 Na předchozím obrázku si všimněte, jak proxy zachytí a spravuje komunikaci mezi mikroslužbami a clusterem.
 
-Síť je logicky rozdělená na dvě různorodé komponenty: [Rovina dat](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc) a [rovina ovládacího prvku](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc). Obrázek 6-10 ukazuje tyto komponenty a jejich zodpovědnosti.
+Síť je logicky rozdělená na dvě různorodé komponenty: [rovina dat](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc) a [rovina ovládacího prvku](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc). Obrázek 6-10 ukazuje tyto komponenty a jejich zodpovědnosti.
 
 ![Ovládací prvek sítě a rovina dat](./media/istio-control-and-data-plane.png)
 

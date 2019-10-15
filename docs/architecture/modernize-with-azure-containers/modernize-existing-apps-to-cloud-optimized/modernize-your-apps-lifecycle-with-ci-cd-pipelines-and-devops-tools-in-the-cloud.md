@@ -2,12 +2,12 @@
 title: Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Modernizovat životní cyklus vaší aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: 4e4436ac4a622a82cc990b977b03eeae95ca9368
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 75ac3fa06f442570a0a5043a88409b3fdebb5810
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181902"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318575"
 ---
 # <a name="modernize-your-apps-lifecycle-with-cicd-pipelines-and-devops-tools-in-the-cloud"></a>Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 
@@ -27,7 +27,7 @@ Aby bylo možné i nadále usnadnit flexibilitu nasazení, poskytují tyto nást
 
 Obrázek 4-12 ukazuje kanál průběžného nasazování, který se v Azure Container Service nasadí do clusteru Kubernetes.
 
-![Azure DevOps Services kanál průběžného nasazování, nasazení do clusteru Kubernetes](./media/image12.png)
+![Snímek obrazovky Azure DevOps Services nasazení do clusteru Kubernetes](./media/modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud/deploy-mvc-app-container-kubernetes.png)
 
 **Obrázek 4-12.** Azure DevOps Services kanál průběžného nasazování, nasazení do clusteru Kubernetes
 

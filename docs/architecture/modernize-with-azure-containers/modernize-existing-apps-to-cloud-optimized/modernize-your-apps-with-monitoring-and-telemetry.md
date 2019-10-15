@@ -2,12 +2,12 @@
 title: Modernizace aplikací pomocí monitorování a telemetrie
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Modernizovat své aplikace s využitím monitorování a telemetrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 65c464e27e326f6a60b4879ec787253dea019d92
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: cdd7738606b086e980c4a50348166a7e23e15fa5
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373956"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318494"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -19,19 +19,19 @@ Application Insights je rozšiřitelná služba správy výkonu aplikací (APM) 
 
 Obrázek 4-10 ukazuje příklad toho, jak Application Insights monitoruje aplikaci a jak se tyto přehledy dovádí na řídicí panel.
 
-![Řídicí panel monitorování Application Insights](./media/image10.png)
+![Snímek obrazovky řídicího panelu monitorování Application Insights](./media/modernize-your-apps-with-monitoring-and-telemetry/application-insights-monitoring-dashboard.png)
 
 **Obrázek 4-10.** Řídicí panel monitorování Application Insights
 
 ## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>Monitorujte infrastrukturu Docker pomocí Log Analytics a jejího řešení pro monitorování kontejnerů.
 
-[Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) je součástí [Microsoft Azure celkového řešení monitorování](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview). Je to také služba v [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview). Log Analytics monitoruje cloudová a místní prostředí (OMS pro místní prostředí), aby se zajistila údržba a výkon. Shromažďuje data generovaná prostředky ve vašem cloudovém a místním prostředí a také data z dalších nástrojů pro monitorování a poskytuje analýzy napříč zdroji.
+[Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) je součástí [Microsoft Azure celkového řešení monitorování](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview). Je to také služba v [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview). Log Analytics monitoruje cloudová a místní prostředí (OMS pro místní prostředí), aby se zajistila údržba a výkon. Shromažďuje data vygenerovaná prostředky ve vašem cloudovém a místním prostředí a z jiných monitorovacích nástrojů pro zajištění analýzy napříč různými zdroji.
 
 Ve vztahu k protokolům infrastruktury Azure Log Analytics jako služba Azure ingestuje data protokolů a metrik z jiných služeb Azure (prostřednictvím [Azure monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)), virtuálních počítačů Azure, kontejnerů Docker a místních nebo jiných cloudových infrastruktur. Log Analytics nabízí flexibilní prohledávání protokolů a předem připravené analýzy dat nad těmito daty. Poskytuje bohatých nástrojů, které můžete použít k analýze dat napříč zdroji, umožňuje komplexní dotazy ve všech protokolech a může proaktivní výstrahy na základě zadaných podmínek. Můžete dokonce shromažďovat vlastní data v úložišti centrálního Log Analytics, kde se můžete dotazovat a vizualizovat. Můžete také využít výhod Log Analytics integrovaných řešení a okamžitě získat přehled o zabezpečení a funkcích vaší infrastruktury.
 
 K Log Analytics můžete přistupovat prostřednictvím portálu OMS nebo Azure Portal, který se spouští v jakémkoli prohlížeči, a poskytuje přístup k nastavení konfigurace a několika nástrojům pro analýzy shromážděných dat a práci s nimi.
 
-[Řešení pro monitorování kontejnerů](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers) v Log Analytics vám pomůže zobrazit a spravovat hostitele kontejnerů pro Docker a Windows v jednom umístění. Toto řešení ukazuje, které kontejnery jsou spuštěny, jaká image kontejneru je spuštěná a kde jsou spuštěné kontejnery. Můžete zobrazit podrobné informace o auditu, včetně příkazů, které se používají s kontejnery. Problémy s kontejnery můžete také řešit zobrazením a prohledáváním centralizovaných protokolů, aniž byste museli vzdáleně zobrazovat hostitele Docker nebo Windows. Můžete najít kontejnery, které by mohly být v hostiteli na vysokou úroveň a spotřebovávat nadbytečné prostředky. Kromě toho můžete zobrazit centralizovaný procesor, paměť, úložiště a využití sítě a informace o výkonu pro kontejnery. V počítačích se systémem Windows, můžete centralizovat a porovnat protokoly ze systému Windows Server Hyper-V a kontejnery Dockeru. Řešení podporuje následující orchestrátorů kontejnerů:
+[Řešení pro monitorování kontejnerů](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers) v Log Analytics vám pomůže zobrazit a spravovat hostitele kontejnerů pro Docker a Windows v jednom umístění. Toto řešení ukazuje, které kontejnery jsou spuštěny, jaká image kontejneru je spuštěná a kde jsou spuštěné kontejnery. Můžete zobrazit podrobné informace o auditu, včetně příkazů, které se používají s kontejnery. Problémy s kontejnery můžete také řešit zobrazením a prohledáváním centralizovaných protokolů, aniž byste museli vzdáleně zobrazovat hostitele Docker nebo Windows. Můžete najít kontejnery, které by mohly být v hostiteli na vysokou úroveň a spotřebovávat nadbytečné prostředky. Kromě toho můžete zobrazit centralizovaný procesor, paměť, úložiště a využití sítě a informace o výkonu pro kontejnery. V počítačích se systémem Windows můžete centralizovat a porovnat protokoly z Windows serveru, Hyper-V a kontejnerů Docker. Řešení podporuje následující orchestrace kontejnerů:
 
 - Docker Swarm
 
@@ -43,7 +43,7 @@ K Log Analytics můžete přistupovat prostřednictvím portálu OMS nebo Azure 
 
 Obrázek 4-11 ukazuje vztahy mezi různými hostiteli a agenty kontejnerů a OMS.
 
-![Log Analytics řešení pro monitorování kontejnerů](./media/image11.png)
+![Snímek obrazovky s Log Analytics řešení pro monitorování kontejnerů](./media/modernize-your-apps-with-monitoring-and-telemetry/log-analytics-container-monitoring-solution.png)
 
 **Obrázek 4-11.** Log Analytics řešení pro monitorování kontejnerů
 
@@ -88,5 +88,5 @@ Obrázek 4-11 ukazuje vztahy mezi různými hostiteli a agenty kontejnerů a OMS
 <https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview>
 
 >[!div class="step-by-step"]
->[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)Další
->[](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
+>[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
+>[Další](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)

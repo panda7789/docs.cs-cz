@@ -2,12 +2,12 @@
 title: Scénáře migrace do hybridního cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Scénáře migrace do hybridního cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: 313608c41427b3833bbc873398595ceb37bd7c7d
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 5f0819495080bc29ed1239b4a7ab8af31141881b
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373949"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318473"
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Scénáře migrace do hybridního cloudu
 
@@ -25,21 +25,21 @@ Azure Stack je hybridní cloudová platforma, která vám umožní poskytovat sl
 
 Obrázek 4-13 ukazuje přehled skutečné hybridní cloudové platformy, kterou Microsoft nabízí.
 
-![Hybridní cloudová platforma Microsoft s Azure Stack a Azure](./media/image13.jpg)
+![Diagram hybridní cloudové platformy Microsoft pomocí Azure Stack a Azure](./media/migrate-to-hybrid-cloud-scenarios/microsoft-hybrid-cloud-platform.png)
 
 **Obrázek 4-13.** Hybridní cloudová platforma Microsoft s Azure Stack a Azure
 
 Azure Stack se nabízí ve dvou možnostech nasazení, které odpovídají vašim potřebám:
 
-- Integrované systémy pro službu Azure Stack
+- Azure Stack integrovaných systémů
 
-- Vývojová sada pro Azure Stack
+- Azure Stack Development Kit
 
-### <a name="azure-stack-integrated-systems"></a>Integrované systémy pro službu Azure Stack
+### <a name="azure-stack-integrated-systems"></a>Azure Stack integrovaných systémů
 
 Azure Stack integrované systémy jsou nabízeny prostřednictvím partnerství s Microsoftem a hardwarovými partnery. Partnerství vytvoří řešení, které nabízí inovace s využitím cloudu, které jsou v rámci správy vyvážené s jednoduchostí. Vzhledem k tomu, že Azure Stack se nabízí jako integrovaný systém hardwaru a softwaru, získáte správnou míru flexibility a kontroly a zároveň stále přijímáte inovace z cloudu. Azure Stack integrovaných systémů v rozsahu od 4 do 12 uzlů a jsou společně podporované hardwarovým partnerem a společností Microsoft. Pomocí Azure Stack integrovaných systémů můžete implementovat nové scénáře pro produkční úlohy.
 
-### <a name="azure-stack-development-kit"></a>Vývojová sada pro Azure Stack
+### <a name="azure-stack-development-kit"></a>Azure Stack Development Kit
 
 Microsoft Azure Stack Development Kit je nasazení Azure Stack s jedním uzlem, které můžete použít k vyhodnocení a získání informací o Azure Stack. Azure Stack Development Kit můžete použít také jako vývojářské prostředí, kde můžete vyvíjet pomocí rozhraní API a nástrojů, které jsou konzistentní s Azure. Azure Stack Development Kit není určeno pro použití v produkčním prostředí.
 
@@ -66,5 +66,5 @@ Microsoft Azure Stack Development Kit je nasazení Azure Stack s jedním uzlem, 
     <https://azure.microsoft.com/pricing/hybrid-benefit/>
 
 >[!div class="step-by-step"]
->[Předchozí](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)Další
->[](../walkthroughs-technical-get-started-overview.md)
+>[Předchozí](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
+>[Další](../walkthroughs-technical-get-started-overview.md)

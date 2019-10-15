@@ -2,12 +2,12 @@
 title: Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Výběr platforem Azure COMPUTE pro aplikace založené na kontejnerech
 ms.date: 05/04/2018
-ms.openlocfilehash: 54c5945326fb8a50a39c50552a413580926da2c7
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 2262d2cf4e69e19e8b78c07c239602dd5dccc3cd
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331966"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318669"
 ---
 # <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
 
@@ -17,7 +17,7 @@ V rámci *výchozího* doporučení jsou tady uvedená hlavní kritéria, která
 
 - **Jedna aplikace monolitické:** Zvolit Azure App Service
 - **N-vrstvá aplikace:** Vyberte orchestrace, jako je Azure Kubernetes Service (AKS), nebo App Service, pokud máte jednu nebo několik back-endové služeb.
-- **Mikroslužeb** Výběr AKS nebo Azure Web Apps pro kontejnery
+- **Mikroslužby:** Výběr AKS nebo Azure Web Apps pro kontejnery
 - **Funkce bez serveru & obslužné rutiny událostí:** Zvolit Azure Functions
 - **Velká škála dávek:** Zvolit Azure Batch
 

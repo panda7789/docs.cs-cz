@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Nasazení stávajících aplikací .NET jako kontejnerů Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: d48acbb2e1c4858bf3146318f70dd7b8a7b62918
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 997b32e51272be2126bd824de1f8f026d77ca203
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926485"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318659"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -51,7 +51,7 @@ Významná vylepšení flexibility, přenositelnosti a kontroly nakonec vedou k 
 
 [Docker](https://www.docker.com/) je [Open source projekt](https://github.com/docker/docker) , který automatizuje nasazení aplikací jako přenosných a vlastních kontejnerů, které mohou běžet v cloudu nebo místně. Docker je také [Společnost](https://www.docker.com/) , která propaguje a vyvíjí tuto technologii. Společnost funguje ve spolupráci s dodavateli pro Cloud, Linux a Windows, včetně Microsoftu.
 
-![Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.](./media/image6.png)
+![Diagram znázorňující, jak Docker nasazuje kontejnery v hybridním cloudu.](./media/deploy-existing-net-apps-as-windows-containers/docker-deploys-containers-all-layers.png)
 
 **Obrázek 4-6.** Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.
 
@@ -83,7 +83,7 @@ Pro Linux je k dispozici několik distribuce a podporují se v oficiálních bit
 
 Obrázek 4-7 ukazuje verze operačních systémů, které lze cílit, v závislosti na verzi .NET Framework aplikace.
 
-![Operační systémy cílí na základě verze .NET Framework](./media/image7.png)
+![Diagram znázorňující, jaký operační systém má cílit na základě verze .NET Framework.](./media/deploy-existing-net-apps-as-windows-containers/dotnet-framework-operating-systems.png)
 
 **Obrázek 4-7.** Operační systémy cílí na základě verze .NET Framework
 
@@ -93,15 +93,15 @@ Když přidáte název Image do souboru souboru Dockerfile, můžete vybrat oper
 
 > | **Inteligentní** | **Systém a verze** |
 > |---|---|
-> | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET Framework 4. x v jádru Windows serveru |
-> | **microsoft/aspnet:4.x-windowsservercore** | .NET Framework 4. x s dalšími přizpůsobeními ASP.NET v jádru Windows serveru |
+> | **Microsoft/DotNET-Framework: 4. x – windowsservercore** | .NET Framework 4. x v jádru Windows serveru |
+> | **Microsoft/ASPNET: 4. x – windowsservercore** | .NET Framework 4. x s dalšími přizpůsobeními ASP.NET v jádru Windows serveru |
 
 Pro .NET Core (pro různé platformy pro Linux a Windows) by značky vypadaly takto:
 
 > | **Inteligentní** | **Systém a verze**
 > |---|---|
-> | **microsoft/dotnet:2.0.0-runtime** | .NET Core 2,0 Runtime – pouze v systému Linux |
-> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET Core 2,0 Runtime – jenom na Windows nano serveru |
+> | **Microsoft/dotNET: 2.0.0-Runtime** | .NET Core 2,0 Runtime – pouze v systému Linux |
+> | **Microsoft/dotNET: 2.0.0-Runtime – nanoserver** | .NET Core 2,0 Runtime – jenom na Windows nano serveru |
 
 ### <a name="multi-arch-images"></a>Obrázky s více archy
 
@@ -113,9 +113,9 @@ U .NET Framework imagí, protože tradiční .NET Framework podporuje jenom Wind
 
 Například kontejnery systému Linux jsou kontejnery Windows serveru spravovány pomocí modulu Docker. Na rozdíl od kontejnerů Linux zahrnují kontejnery Windows dva různé typy kontejnerů, nebo dobu běhu – kontejnery Windows serveru a izolaci technologie Hyper-V.
 
-**Kontejnery Windows serveru**: Poskytuje izolaci aplikací prostřednictvím technologie izolace procesů a oboru názvů. Kontejner Windows serveru sdílí jádro s hostitelem kontejneru a všemi kontejnery, které jsou spuštěné na hostiteli. Tyto kontejnery neposkytují nepřátelský bezpečnostní hranici a neměly by se používat k izolaci nedůvěryhodného kódu. Z důvodu sdíleného prostoru jádra vyžaduje tyto kontejnery stejnou verzi jádra a konfiguraci.
+**Kontejnery Windows serveru**: poskytuje izolaci aplikací prostřednictvím technologie izolace procesů a oboru názvů. Kontejner Windows serveru sdílí jádro s hostitelem kontejneru a všemi kontejnery, které jsou spuštěné na hostiteli. Tyto kontejnery neposkytují nepřátelský bezpečnostní hranici a neměly by se používat k izolaci nedůvěryhodného kódu. Z důvodu sdíleného prostoru jádra vyžaduje tyto kontejnery stejnou verzi jádra a konfiguraci.
 
-**Izolace technologie Hyper-V**: Rozbalí se na izolaci poskytovanou kontejnery Windows serveru spuštěním každého kontejneru na vysoce optimalizovaném virtuálním počítači. V této konfiguraci není jádro hostitele kontejneru sdíleno s jinými kontejnery na stejném hostiteli. Tyto kontejnery jsou navržené pro nepřátelské hostování víceklientské architektury se stejnými bezpečnostními zárukami virtuálního počítače. Vzhledem k tomu, že tyto kontejnery nesdílejí jádro s hostitelem nebo jinými kontejnery na hostiteli, mohou spouštět jádra s různými verzemi a konfiguracemi (s podporovanými verzemi). Všechny kontejnery Windows ve Windows 10 například využívají izolaci technologie Hyper-V k využití konfigurace a verze jádra Windows serveru.
+**Izolace Hyper-V**: rozbalí na izolaci poskytovanou kontejnery Windows serveru spuštěním každého kontejneru na vysoce OPTIMALIZOVANém virtuálním počítači. V této konfiguraci není jádro hostitele kontejneru sdíleno s jinými kontejnery na stejném hostiteli. Tyto kontejnery jsou navržené pro nepřátelské hostování víceklientské architektury se stejnými bezpečnostními zárukami virtuálního počítače. Vzhledem k tomu, že tyto kontejnery nesdílejí jádro s hostitelem nebo jinými kontejnery na hostiteli, mohou spouštět jádra s různými verzemi a konfiguracemi (s podporovanými verzemi). Všechny kontejnery Windows ve Windows 10 například využívají izolaci technologie Hyper-V k využití konfigurace a verze jádra Windows serveru.
 
 Spuštění kontejneru ve Windows s nebo bez izolace Hyper-V je rozhodnutí za běhu. Je možné, že se nejdříve vytvoří kontejner s izolací technologie Hyper-V a v době běhu se místo toho dá spustit jako kontejner Windows serveru.
 
@@ -129,7 +129,7 @@ Spuštění kontejneru ve Windows s nebo bez izolace Hyper-V je rozhodnutí za b
 
     <https://docs.microsoft.com/virtualization/windowscontainers/about/>
 
-- **Infografika Microsoft a kontejnery**
+- **Infografika: Microsoft a Containers**
 
     <https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf>
 
@@ -138,15 +138,15 @@ Spuštění kontejneru ve Windows s nebo bez izolace Hyper-V je rozhodnutí za b
 V předchozích částech bylo vysvětleno, jaké jsou výhody kontejnerů Docker a také podrobnosti o konkrétních imagích kontejnerů pro aplikace .NET. Všechny obecné informace jsou zásadním účelem pro vývoj nebo kontejnerizaceí aplikace.
 Při zvažování prostředí produkčního nasazení nebo dokonce řešení pro řešení QA a vývoj a testování ale Microsoft Azure poskytuje otevřenou a širokou škálu voleb, úplný ekosystém kontejnerů v cloudu (viz diagram níže). V závislosti na potřebách konkrétní aplikace byste měli zvolit jeden nebo jiný produkt Azure.
 
-![Ekosystém kontejnerů v Azure](./media/image7.5.png)
+![Diagram ekosystému kontejnerů v Azure](./media/deploy-existing-net-apps-as-windows-containers/azure-container-ecosystem.png)
 
 **Obrázek 4 – 7.5** Ekosystém kontejnerů v Azure
 
 Z ekosystému kontejnerů v Azure tyto produkty podporují kontejnery považované za infrastrukturu:
 
 - **Azure Container Instances (ACI)**
-- **Virtual Machines Azure** (S podporou kontejneru)
-- **Virtual Machine Scale Sets Azure** (S podporou kontejneru)
+- **Azure Virtual Machines** (s podporou kontejneru)
+- **Azure Virtual Machine Scale Sets** (s podporou kontejneru)
 
 Od těchto tří ACI přináší skvělé výhody, což je fakt, že nepotřebujete spravovat základní operační systém, nemusíte upgradovat/opravovat atd., ale ACI pořád je umístěný na úrovni infrastruktury, jak je to vhodnější v nadcházejících částech této knihy.
 
@@ -163,5 +163,5 @@ Z vašich kontejnerů navíc můžete využívat jiné spravované služby v Azu
 V dalších částech můžete prozkoumat doporučení Microsoftu, kdy používat jednotlivé produkty a řešení Azure konkrétně při cílení na kontejnery Windows.
 
 >[!div class="step-by-step"]
->[Předchozí](what-about-cloud-native-applications.md)Další
->[](when-not-to-deploy-to-windows-containers.md)
+>[Předchozí](what-about-cloud-native-applications.md)
+>[Další](when-not-to-deploy-to-windows-containers.md)

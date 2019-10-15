@@ -3,12 +3,12 @@ title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 4236f0d6aca9d4348d4ead33f552f9a8a2c8c461
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: c99a99ec2cd7a8c4263ae3321d5a836bc40da087
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291208"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315942"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -154,7 +154,7 @@ Obrázek 1-4 kontrastuje přístup k aplikaci monolitické s přístupem k mikro
 
 Všimněte si, jak mikroslužby povýší "jeden základ kódu, jedna aplikace" z [aplikace na základě dvanácti faktorů](https://12factor.net/)popsaných výše v části.
 
-> *Faktor \#1 určuje "jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí.*
+> *Faktor \#1 určuje "jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí. "*
 
 ### <a name="why-microservices"></a>Proč mikroslužby?
 
@@ -174,13 +174,13 @@ Mikroslužby se dají vytvořit s libovolnou moderní vývojovou platformou.
 
 Platforma Microsoft .NET Core je vynikající volbou. Bezplatný a Open Source má mnoho vestavěných funkcí, které zjednodušují vývoj mikroslužeb. .NET Core je platforma pro různé platformy. Aplikace se dají vytvářet a spouštět na Windows, macOS a nejvíc charakterech systému Linux.
 
-.NET Core je vysoce výkonné a má ve srovnání s Node. js a dalšími doplňováním platforem dobře skóre. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core skóre v horních 10 – dobře nad Node. js a dalšími konkurenčními platformami. 
+.NET Core je vysoce výkonné a má ve srovnání s Node. js a dalšími konkurenčními platformami velmi kvalitní skóre. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core skóre v horních 10 – dobře nad Node. js a dalšími konkurenčními platformami. 
 
 .NET Core spravuje Microsoft a komunita .NET na GitHubu. 
 
 ## <a name="containers"></a>Kontejnery
 
-Současné době, je přirozeným způsobem slyšet pojem *kontejner* uvedený v jakékoli konverzaci týkající se *cloudového nativního*řešení. V této knize se v [cloudových nativních vzorcích](https://www.manning.com/books/cloud-native-patterns)vytvoří Cornelia Davis s tím, že "kontejnery představují skvělý aktivátor cloudového nativního softwaru." Cloudová služba Native Computing Foundation umisťuje kontejner mikroslužeb jako první krok v rámci svých [cloudových nativních map](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) – doprovodné materiály pro podniky, které začínají svoji nativní cloudovou cestu.
+Současné době, je přirozené, že uslyšíte pojem *kontejner* uvedený v jakékoli konverzaci týkající se *cloudového nativního*řešení. V této knize se v [cloudových nativních vzorcích](https://www.manning.com/books/cloud-native-patterns)vytvoří Cornelia Davis s tím, že "kontejnery představují skvělý aktivátor cloudového nativního softwaru." Cloudová služba Native Computing Foundation umisťuje kontejner mikroslužeb jako první krok v rámci svých [cloudových nativních map](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) – doprovodné materiály pro podniky, které začínají svoji nativní cloudovou cestu.
 
 Uzavření mikroslužby je jednoduchá a jednoduchá. Kód, jeho závislosti a modul runtime jsou zabaleny do binárního souboru s názvem [Image kontejneru](https://docs.docker.com/glossary/?term=image). Image jsou uložené v [registru kontejneru](https://caylent.com/container-registries/), který funguje jako úložiště nebo knihovna pro image. Registr se může nacházet ve vývojovém počítači, ve vašem datovém centru nebo ve veřejném cloudu. Docker udržuje veřejný registr přes [Docker Hub](https://hub.docker.com/). Cloud Azure nabízí [registr kontejnerů](https://azure.microsoft.com/services/container-registry/) pro ukládání imagí kontejneru blízko do cloudových aplikací, které je budou spouštět.
 
@@ -287,7 +287,7 @@ Pomocí IaC automatizujete zřizování platforem a nasazení aplikací. V podst
 
 ### <a name="automating-infrastructure"></a>Automatizace infrastruktury
 
-Nástroje jako [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), [Terraformu a [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)umožňují deklarativní skriptování cloudové infrastruktury, kterou požadujete. Názvy prostředků, umístění, kapacity a tajné klíče jsou parametrizované a dynamické. Skript se zaznamená ve verzi a do správy zdrojového kódu se zaregistruje jako artefakt vašeho projektu. Vyvoláte skript, který zřídí jednotnou a možnou infrastrukturu v rámci systémových prostředí, jako je třeba QA, fázování a produkce. 
+Nástroje jako [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraformu a [Azure CLI](https://docs.microsoft.com/cli/azure/)umožňují deklarativní skriptování cloudové infrastruktury, kterou požadujete. Názvy prostředků, umístění, kapacity a tajné klíče jsou parametrizované a dynamické. Skript se zaznamená ve verzi a do správy zdrojového kódu se zaregistruje jako artefakt vašeho projektu. Vyvoláte skript, který zřídí jednotnou a možnou infrastrukturu v rámci systémových prostředí, jako je třeba QA, fázování a produkce. 
 
 V digestoři je IaC idempotentní, což znamená, že můžete spustit stejný skript i bez vedlejších účinků. Pokud tým potřebuje provést změnu, upraví a znovu spustí skript. Ovlivněny jsou pouze aktualizované prostředky.
 
