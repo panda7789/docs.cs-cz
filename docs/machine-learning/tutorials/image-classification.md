@@ -67,7 +67,9 @@ Klasifikace obrázku je běžný Machine Learning úkol, který nám umožňuje 
 
  Nebo jak na následujících obrázcích zjistit, jestli je image a (n) jídla, hračka nebo zařízení:
 
-![pizza obrázek @ no__t-1 @ no__t-2teddy Bear image @ no__t-3 @ no__t-4toaster image @ no__t-5
+![pizza image](./media/image-classification/220px-Pepperoni_pizza.jpg)
+![teddy bear image](./media/image-classification/119px-Nalle_-_a_small_brown_teddy_bear.jpg)
+![toaster image](./media/image-classification/193px-Broodrooster.jpg)
 
 >[!Note]
 > Předchozí image patří do Wikimedia a jsou jim tyto atributy:
