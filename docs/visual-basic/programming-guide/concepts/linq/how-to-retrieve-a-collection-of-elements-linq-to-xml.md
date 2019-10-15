@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Načtení kolekce elementů (LINQ to XML) (Visual Basic)'
+title: 'Postupy: načtení kolekce elementů (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 2269f9de-8fb9-4666-b8a1-a4e754fa6a81
-ms.openlocfilehash: 53572ac3c80e012b95527d32da28c8685cd8cfd3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a5afea4fddda17ad78f45421821dcc13ad0e276
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021372"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315925"
 ---
-# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-visual-basic"></a>Postupy: Načtení kolekce elementů (LINQ to XML) (Visual Basic)
-Toto téma ukazuje, <xref:System.Xml.Linq.XContainer.Elements%2A> metody. Tato metoda načte kolekci podřízených elementů elementu.  
+# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-visual-basic"></a>Postupy: načtení kolekce elementů (LINQ to XML) (Visual Basic)
+Toto téma ukazuje metodu <xref:System.Xml.Linq.XContainer.Elements%2A>. Tato metoda načte kolekci podřízených elementů elementu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad provede iteraci podřízených elementů `purchaseOrder` elementu.  
+ Tento příklad prochází podřízené prvky elementu `purchaseOrder`.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Dim po As XElement = XElement.Load("PurchaseOrder.xml")  
@@ -30,7 +30,7 @@ Next
   
  Tento příklad vytvoří následující výstup.  
   
-```  
+```console  
 Name: Address  
 Name: Address  
 Name: DeliveryNotes  
@@ -39,4 +39,4 @@ Name: Items
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

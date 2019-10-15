@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: ae589e1c418b1cf13fe9f5b34648bdf7a2210eed
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 462d9a3923009f0124c2b90b6fa86dfa9869a3c5
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855670"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72316543"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
 
@@ -26,10 +26,10 @@ Po vytvoření služby je dalším krokem vytvoření proxy klienta WCF. Klients
 
 3. Vytvořte instanci proxy serveru služby WCF.
 
-Proxy klient služby WCF se dá vytvořit ručně pomocí nástroje Service model metadat (SvcUtil. exe), kde najdete další informace v tématu [Nástroj pro nástroj pro metadata typu ServiceModel (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Proxy klient služby WCF lze také vygenerovat v rámci sady Visual Studio pomocí funkce **Přidat odkaz na službu** . Pro vygenerování proxy serveru služby WCF pomocí obou metod, které musí služba běžet. Pokud je služba v místním prostředí hostována, musíte spustit hostitele. Pokud je služba hostovaná ve službě IIS/nemusíte dělat něco jiného.
+Proxy klient služby WCF se dá vytvořit ručně pomocí nástroje Service model metadat (SvcUtil. exe), kde najdete další informace v tématu [Nástroj pro nástroj pro metadata typu ServiceModel (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Proxy klient služby WCF lze také vygenerovat v rámci sady Visual Studio pomocí funkce **Přidat odkaz na službu** . Pro vygenerování proxy serveru služby WCF pomocí obou metod, které musí služba běžet. Pokud je služba v místním prostředí hostována, musíte spustit hostitele. Pokud je služba hostovaná ve službě IIS/nemusíte dělat něco jiného.
 
 ## <a name="servicemodel-metadata-utility-tool"></a>Nástroj pro metadata ServiceModel
- Nástroj pro vytváření [metadat (Svcutil. exe) třídy ServiceModel](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) je nástroj příkazového řádku pro generování kódu z metadat. Následující použití je příkladem základního příkazu Svcutil. exe.
+ Nástroj pro vytváření [metadat (Svcutil. exe) třídy ServiceModel](servicemodel-metadata-utility-tool-svcutil-exe.md) je nástroj příkazového řádku pro generování kódu z metadat. Následující použití je příkladem základního příkazu Svcutil. exe.
 
 ```console
 Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -49,14 +49,14 @@ Svcutil.exe <list of WSDL and XSD files on file system>
 Svcutil.exe <file1 [,file2]>
 ```
 
- Je-li zadán pouze jeden název souboru, jedná se o název výstupního souboru. Pokud jsou zadány dva názvy souborů, pak je prvním souborem vstupní konfigurační soubor, jehož obsah je sloučen s vygenerovanou konfigurací a napsaný do druhého souboru. Další informace o konfiguraci najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md).
+ Je-li zadán pouze jeden název souboru, jedná se o název výstupního souboru. Pokud jsou zadány dva názvy souborů, pak je prvním souborem vstupní konfigurační soubor, jehož obsah je sloučen s vygenerovanou konfigurací a napsaný do druhého souboru. Další informace o konfiguraci najdete v tématu [Konfigurace vazeb pro služby](configuring-bindings-for-wcf-services.md).
 
 > [!IMPORTANT]
-> Nezabezpečené žádosti o metadata představují určitá rizika stejným způsobem jako jakákoli nezabezpečená síťová žádost: Pokud si nejste jisti, že koncový bod, se kterým komunikujete, je v tom, kdo je vyjadřuje, informace, které načtete, mohou být metadata ze škodlivé služby.
+> Nezabezpečené žádosti o metadata představují určitá rizika stejným způsobem jako jakákoli nezabezpečená síťová žádost: Pokud si nejste jisti, že koncový bod, se kterým komunikujete, je ten, kdo je vyjadřuje, informace, které načítajíte, mohou být metadata ze škodlivé služby.
 
 ## <a name="add-service-reference-in-visual-studio"></a>Přidat odkaz na službu v aplikaci Visual Studio
 
- U spuštěné služby klikněte pravým tlačítkem myši na projekt, který bude obsahovat proxy klienta WCF a vyberte **Přidat** > **odkaz na službu**. V **dialogovém okně Přidat odkaz na službu**zadejte adresu URL služby, kterou chcete zavolat, a klikněte na tlačítko **Přejít** . V dialogovém okně se zobrazí seznam služeb dostupných na adrese, kterou zadáte. Dvojím kliknutím na službu zobrazte dostupné kontrakty a operace, zadejte obor názvů pro vygenerovaný kód a klikněte na tlačítko **OK** .
+ Po spuštění služby klikněte pravým tlačítkem myši na projekt, který bude obsahovat proxy klienta WCF, a vyberte **Přidat** **odkaz na službu** > . V **dialogovém okně Přidat odkaz na službu**zadejte adresu URL služby, kterou chcete zavolat, a klikněte na tlačítko **Přejít** . V dialogovém okně se zobrazí seznam služeb dostupných na adrese, kterou zadáte. Dvojím kliknutím na službu zobrazte dostupné kontrakty a operace, zadejte obor názvů pro vygenerovaný kód a klikněte na tlačítko **OK** .
 
 ## <a name="example"></a>Příklad
  Následující příklad kódu ukazuje kontrakt služby vytvořenou pro službu.
@@ -82,7 +82,7 @@ Public Interface ICalculator
 End Interface
 ```
 
- Nástroj pro dodávání metadat ServiceModel a **Přidat odkaz na službu** v aplikaci Visual Studio generuje následující třídu klienta WCF. Třída dědí z obecné <xref:System.ServiceModel.ClientBase%601> třídy a `ICalculator` implementuje rozhraní. Nástroj také vygeneruje `ICalculator` rozhraní (zde není zobrazen).
+ Nástroj pro dodávání metadat ServiceModel a **Přidat odkaz na službu** v aplikaci Visual Studio generuje následující třídu klienta WCF. Třída dědí z obecné třídy <xref:System.ServiceModel.ClientBase%601> a implementuje rozhraní `ICalculator`. Nástroj také vygeneruje rozhraní `ICalculator` (zde není zobrazeno).
 
 ```csharp
 public partial class CalculatorClient : System.ServiceModel.ClientBase<ICalculator>, ICalculator
@@ -178,22 +178,22 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 Mnoho výjimek vyvolaných klientem WCF je způsobeno výjimkou ve službě. Mezi příklady patří:
 
-- <xref:System.Net.Sockets.SocketException>: Existující připojení bylo vynuceně ukončeno vzdáleným hostitelem.
+- <xref:System.Net.Sockets.SocketException>: vzdálený hostitel nuceně zavřel existující připojení.
 
-- <xref:System.ServiceModel.CommunicationException>: Základní připojení bylo neočekávaně ukončeno.
+- <xref:System.ServiceModel.CommunicationException>: základní připojení bylo neočekávaně ukončeno.
 
-- <xref:System.ServiceModel.CommunicationObjectAbortedException>: Připojení soketu bylo přerušeno. To může být způsobeno chybou při zpracování vaší zprávy, překročením časového limitu příjmu vzdáleným hostitelem nebo problémem se síťovými prostředky.
+- <xref:System.ServiceModel.CommunicationObjectAbortedException>: připojení soketu bylo přerušeno. To může být způsobeno chybou při zpracování vaší zprávy, překročením časového limitu příjmu vzdáleným hostitelem nebo problémem se síťovými prostředky.
 
-Pokud dojde k těmto typům výjimek, nejlepším způsobem, jak problém vyřešit, je zapnout trasování na straně služby a určit, k jaké výjimce došlo. Další informace o trasování naleznete v tématu [trasování](../../../docs/framework/wcf/diagnostics/tracing/index.md) a [používání trasování pro řešení potíží s aplikací](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
+Pokud dojde k těmto typům výjimek, nejlepším způsobem, jak problém vyřešit, je zapnout trasování na straně služby a určit, k jaké výjimce došlo. Další informace o trasování naleznete v tématu [trasování](./diagnostics/tracing/index.md) a [používání trasování pro řešení potíží s aplikací](./diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
-- [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [Postupy: Asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [Postupy: Přístup ke službě WSE 3,0](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
-- [Principy generovaného klientského kódu](../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)
-- [Postupy: Zlepšení doby spuštění klientských aplikací WCF pomocí XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
-- [Nastavení chování klienta za běhu](../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
-- [Konfigurace chování klienta](../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Postupy: Vytvoření klienta](how-to-create-a-wcf-client.md)
+- [Postupy: Přístup ke službám pomocí duplexního kontraktu](./feature-details/how-to-access-services-with-a-duplex-contract.md)
+- [Postupy: Asynchronní volání operací služby](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
+- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů žádost-odpověď](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Postupy: Přístup ke službě WSE 3.0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Principy generovaného klientského kódu](./feature-details/understanding-generated-client-code.md)
+- [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Nastavení chování klienta za běhu](specifying-client-run-time-behavior.md)
+- [Konfigurace chování klienta](configuring-client-behaviors.md)

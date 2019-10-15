@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-ms.openlocfilehash: 8123a504e83164f2ae842755da8ff4d8850141d2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3d482e2b03346c9443066c480575a1394324b9bf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046022"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320709"
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Nástroj Configuration Editor (SvcConfigEditor.exe)
 
@@ -26,7 +26,7 @@ Editor konfigurace služby se dodává s průvodcem, který vás provede všemi 
 
 Pokud už máte nějaké konfigurační soubory, které vyhovují standardnímu schématu System. Configuration, můžete spravovat konkrétní nastavení pro vazby, chování, služby a diagnostiku s uživatelským rozhraním. Editor konfigurace služby umožňuje spravovat nastavení pro existující konfigurační soubory WCF i spustitelné soubory, služby modelu COM+ a služby hostované na webu. Při otevírání služby hostované na webu pomocí editoru konfigurace služby se zobrazí jak vlastní konfigurace služby, tak zděděné konfigurace uzlů nejvyšší úrovně.
 
-Vzhledem k tomu, že nastavení konfigurace WCF `<system.serviceModel>` jsou umístěna v části konfiguračního souboru, Editor pracuje výhradně s obsahem tohoto prvku a nepřistupuje k ostatním prvkům ve stejném souboru. Můžete přímo přejít na existující konfigurační soubory nebo můžete vybrat sestavení, které obsahuje službu, virtuální adresář nebo službu COM+. Editor načte konfigurační soubor pro danou službu a umožní uživateli buď přidat nové prvky, nebo upravit existující prvky vnořené v `<system.serviceModel>` části konfiguračního souboru.
+Vzhledem k tomu, že nastavení konfigurace WCF jsou umístěna v části `<system.serviceModel>` konfiguračního souboru, Editor pracuje výhradně s obsahem tohoto prvku a nepřistupuje k ostatním prvkům ve stejném souboru. Můžete přímo přejít na existující konfigurační soubory nebo můžete vybrat sestavení, které obsahuje službu, virtuální adresář nebo službu COM+. Editor načte konfigurační soubor pro danou službu a umožní uživateli buď přidat nové prvky nebo upravit existující prvky vnořené v části `<system.serviceModel>` konfiguračního souboru.
 
 Editor podporuje technologii IntelliSense a vynutil dodržování předpisů schématu. Výsledný výstup je zaručený v dodržení schématu konfiguračního souboru a má syntakticky správné hodnoty dat. Editor však nezaručuje, že konfigurační soubor je sémanticky platný. Jinými slovy Editor nezaručuje, že konfigurační soubor může spolupracovat se službou, kterou konfiguruje.
 
@@ -35,13 +35,13 @@ Editor podporuje technologii IntelliSense a vynutil dodržování předpisů sch
 >
 > `<endpoint binding="basicHttpBinding" name="somename" />`
 >
-> Pokud se pokusíte odebrat název nastavením na prázdný řetězec a uložit soubor, konfigurační soubor stále obsahuje `name` atribut, jak je znázorněno v následujícím příkladu.
+> Pokud se pokusíte odebrat název nastavením na prázdný řetězec a uložit soubor, konfigurační soubor stále obsahuje atribut `name`, jak je znázorněno v následujícím příkladu.
 >
 > `<endpoint binding="basicHttpBinding" name="" />`
 >
 > Chcete-li tento atribut vyprázdnit, je nutné ručně upravit element pomocí jiného textového editoru.
 >
-> Pokud použijete `issueToken` prvek `clientCredential` chování koncového bodu, měli byste být obzvláště opatrní u tohoto problému. Konkrétně atribut jeho `localIssuer` dílčího elementu nesmí být prázdným řetězcem. `address` Pokud jste změnili `address` atribut pomocí editoru konfigurace a chcete ho úplně odebrat, měli byste použít jiný nástroj než Editor. V opačném případě atribut obsahuje prázdný řetězec a vaše aplikace vyvolá výjimku.
+> Při použití prvku `issueToken` chování koncového bodu `clientCredential` byste měli být obzvláště opatrní u tohoto problému. Konkrétně atribut `address` jeho dílčího prvku `localIssuer` nesmí být prázdným řetězcem. Pokud jste změnili atribut `address` pomocí editoru konfigurace a chcete ho úplně odebrat, měli byste použít jiný nástroj než Editor. V opačném případě atribut obsahuje prázdný řetězec a vaše aplikace vyvolá výjimku.
 
 ## <a name="using-the-configuration-editor"></a>Použití editoru konfigurace
 
@@ -74,7 +74,7 @@ Prohlížeč automaticky sleduje cestu sloučení konfigurace a vytvoří zobraz
 
 ### <a name="services"></a>Služby
 
-Uzel **služby** zobrazí všechny služby, které jsou aktuálně přiřazeny k konfiguračnímu souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu elementu <`services`> elementu v konfiguračním souboru.
+Uzel **služby** zobrazí všechny služby, které jsou aktuálně přiřazeny k konfiguračnímu souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu elementu < elementu `services` > v konfiguračním souboru.
 
 Když kliknete na uzel **služby** , můžete zobrazit nebo provádět úlohy na stránce Souhrn služby v podokně **podrobností** .
 
@@ -82,9 +82,9 @@ Když kliknete na uzel **služby** , můžete zobrazit nebo provádět úlohy na
 
 Novou konfiguraci služby můžete vytvořit následujícími způsoby:
 
-- Pomocí Průvodce: Klikněte na odkaz **vytvořit novou službu...** na stránce podokno úloh nebo souhrn spusťte průvodce. Můžete to provést také v nabídce **soubor** – > **Přidat novou položku**.
+- Pomocí Průvodce: klikněte na odkaz **vytvořit novou službu...** na stránce podokno úloh nebo souhrn spusťte průvodce. Můžete to provést také v nabídce **soubor** – > **Přidat novou položku**.
 
-- Vytvořit ručně: Můžete kliknout pravým tlačítkem myši na uzel **služby** a zvolit možnost **Nová služba**.
+- Ruční vytvoření: můžete kliknout pravým tlačítkem myši na uzel **služby** a vybrat možnost **Nová služba**.
 
 #### <a name="creating-a-new-service-endpoint-configuration"></a>Vytváří se nová konfigurace koncového bodu služby.
 
@@ -92,7 +92,7 @@ Novou konfiguraci koncového bodu služby můžete vytvořit následujícími zp
 
 - Vytvořit pomocí Průvodce: klikněte na odkaz **vytvořit nový koncový bod služby...** na stránce podokno úloh nebo souhrn spusťte průvodce. Můžete to provést také v nabídce **soubor** – > **Přidat novou položku**.
 
-- Vytvořit ručně: Po vytvoření služby můžete kliknout pravým tlačítkem na uzel **koncové body** a zvolit**Nový koncový bod služby**.
+- Vytvořit ručně: po vytvoření služby můžete kliknout pravým tlačítkem myši na uzel **koncové body** a zvolit**Nový koncový bod služby**.
 
 #### <a name="editing-a-service-configuration"></a>Úprava konfigurace služby
 
@@ -114,14 +114,14 @@ Novou konfiguraci koncového bodu služby můžete vytvořit následujícími zp
 
 3. Do dialogového okna zadejte identifikátor URI základní adresy.
 
-4. Klikněte na **OK**.
+4. Klikněte na tlačítko **OK**.
 
 > [!NOTE]
-> V tomto nástroji nemůžete upravit hodnotu [ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) . Chcete-li přidat nebo upravit tento prvek, měli byste použít textový editor nebo Visual Studio.
+> V tomto nástroji nelze upravit hodnotu [\<baseAddressPrefixFilters >](../configure-apps/file-schema/wcf/baseaddressprefixfilters.md) . Chcete-li přidat nebo upravit tento prvek, měli byste použít textový editor nebo Visual Studio.
 
 ### <a name="client"></a>Klient
 
-Uzel **klienta** zobrazí všechny koncové body klienta v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu elementu <`client`> elementu v konfiguračním souboru.
+Uzel **klienta** zobrazí všechny koncové body klienta v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu elementu < elementu `client` > v konfiguračním souboru.
 
 Po kliknutí na uzel **klienta** můžete zobrazit nebo provádět úlohy na **stránce Souhrn** klienta v **podokně podrobností**.
 
@@ -129,9 +129,9 @@ Po kliknutí na uzel **klienta** můžete zobrazit nebo provádět úlohy na **s
 
 Novou konfiguraci koncového bodu klienta můžete vytvořit následujícími způsoby:
 
-- Průvodce vytvořením: Klikněte na odkaz **vytvořit nového klienta...** v **podokně úloh** v levém dolním rohu okna nebo souhrnu spusťte průvodce . Můžete to provést také v nabídce **soubor** – > **Přidat novou položku**. Průvodce vás vyzve, abyste odkazovali na umístění konfigurace služby, ze které se vygenerovala konfigurace klienta. Pak můžete zvolit koncový bod služby, ke které se chcete připojit.
+- Průvodce vytvořením: kliknutím na odkaz **vytvořit nového klienta...** v **podokně úloh** v levém dolním rohu okna nebo **souhrnu** spusťte průvodce. Můžete to provést také v nabídce **soubor** – > **Přidat novou položku**. Průvodce vás vyzve, abyste odkazovali na umístění konfigurace služby, ze které se vygenerovala konfigurace klienta. Pak můžete zvolit koncový bod služby, ke které se chcete připojit.
 
-- Vytvořit ručně: Klikněte pravým tlačítkem na uzel **koncové body** v části **klient**a vyberte **Nový koncový bod klienta**.
+- Ruční vytvoření: klikněte pravým tlačítkem na uzel **koncové body** v části **klient**a vyberte **Nový koncový bod klienta**.
 
 #### <a name="editing-a-client-endpoint-configuration"></a>Úprava konfigurace koncového bodu klienta
 
@@ -143,7 +143,7 @@ Novou konfiguraci koncového bodu klienta můžete vytvořit následujícími zp
 
 Standardní koncové body jsou specializované koncové body, které mají jednu nebo více aspektů adresy, kontraktu a vazby nastavené na výchozí hodnoty.
 
-Taková nastavení konfigurace se ukládají do uzlu **standardního koncového bodu** . Uzel **standardního koncového bodu** zobrazí všechna nastavení standardního koncového bodu v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu prvku `<standardEndpoints>` v elementu v konfiguračním souboru.
+Taková nastavení konfigurace se ukládají do uzlu **standardního koncového bodu** . Uzel **standardního koncového bodu** zobrazí všechna nastavení standardního koncového bodu v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu prvku v elementu `<standardEndpoints>` v konfiguračním souboru.
 
 Když kliknete na uzel **standardního koncového bodu** , můžete zobrazit nebo provádět úlohy na **stránce Souhrn** standardního koncového bodu v **podokně podrobností**.
 
@@ -175,13 +175,13 @@ Konfiguraci standardních koncových bodů můžete odstranit následujícími z
 
 - Klikněte na uzel **standardní koncový bod** . V podokně **úloh** klikněte na **Odstranit standardní konfiguraci koncového bodu**.
 
-Pokud se používá standardní koncový bod, při pokusu o odstranění se zobrazí zpráva s upozorněním: **Standardní koncový bod se používá. Pokud ho odstraníte nyní, nezapomeňte odstranit všechny jeho odkazy v jiných částech konfigurace (například v koncovém bodu služby nebo koncovém bodu klienta). V opačném případě bude konfigurace neplatná a nedá se otevřít příště. Opravdu chcete odstranit standardní koncový bod? "**
+Pokud se používá standardní koncový bod, při pokusu o odstranění se zobrazí varovná zpráva: **standardní koncový bod se používá. Pokud ho odstraníte nyní, nezapomeňte odstranit všechny jeho odkazy v jiných částech konfigurace (například v koncovém bodu služby nebo koncovém bodu klienta). V opačném případě bude konfigurace neplatná a nedá se otevřít příště. Opravdu chcete odstranit standardní koncový bod? "**
 
 ### <a name="binding"></a>Vazba
 
 Konfigurace vazeb se používají ke konfiguraci vazeb u koncových bodů. Taková nastavení konfigurace jsou uložena v uzlu **vazby** . Konfigurace odkazu na koncové body podle názvu a více koncových bodů může odkazovat na konfiguraci jedné vazby.
 
-Uzel **vazby** zobrazí všechna nastavení vazby v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu prvku v prvku <`bindings`> v konfiguračním souboru.
+Uzel **vazby** zobrazí všechna nastavení vazby v konfiguračním souboru. Každý dílčí uzel ve stromové struktuře odpovídá dílčímu prvku v < elementu `bindings` > v konfiguračním souboru.
 
 Po kliknutí na uzel **vazby** můžete zobrazit nebo provádět úlohy na **stránce Souhrn** vazby v **podokně podrobností**.
 
@@ -199,11 +199,11 @@ Novou konfiguraci vazby můžete vytvořit následujícími způsoby.
 
 1. Vyberte vazbu, do které chcete přidat prvek rozšíření.
 
-2. Klikněte na **Přidat**.
+2. Klikněte na tlačítko **Přidat**.
 
 3. V seznamu dostupných rozšíření vyberte rozšíření prvku vazby, které chcete přidat. Chcete-li vybrat více položek, stiskněte současně klávesu CTRL.
 
-4. Klikněte na **Přidat**.
+4. Klikněte na tlačítko **Přidat**.
 
 #### <a name="adjusting-the-extension-position-in-a-custom-binding"></a>Úprava pozice rozšíření ve vlastní vazbě
 
@@ -225,7 +225,7 @@ Vlastní vazba je kolekce elementů vazby, které tvoří zásobník. Každý pr
 
 ### <a name="diagnostics"></a>Diagnostika
 
-V uzlu **Diagnostika** se zobrazí všechna nastavení diagnostiky v konfiguračním souboru. Umožňuje zapnout nebo vypnout čítače výkonu, povolit nebo zakázat rozhraní WMI (Windows Management Instrumentation) (WMI), nakonfigurovat trasování WCF a nakonfigurovat protokolování zpráv WCF. Nastavení v uzlu **Diagnostika** odpovídá oddílu <`system.diagnostics`> a `<diagnostics>` v konfiguračním souboru v `<system.serviceModel>` části.
+V uzlu **Diagnostika** se zobrazí všechna nastavení diagnostiky v konfiguračním souboru. Umožňuje zapnout nebo vypnout čítače výkonu, povolit nebo zakázat rozhraní WMI (Windows Management Instrumentation) (WMI), nakonfigurovat trasování WCF a nakonfigurovat protokolování zpráv WCF. Nastavení v uzlu **Diagnostika** odpovídá oddílu < `system.diagnostics` > a části `<diagnostics>` v souboru @no__t 3 v konfiguračním souboru.
 
 Po kliknutí na uzel **Diagnostika** můžete zobrazit nebo provádět úlohy na **stránce Souhrn** diagnostiky v **podokně podrobností**.
 
@@ -233,7 +233,7 @@ Po kliknutí na uzel **Diagnostika** můžete zobrazit nebo provádět úlohy na
 
 1. Klikněte na uzel **Diagnostika** .
 
-2. Klikněte na **Přepnout čítače výkonu**. Čítač výkonu má tři stavy: Off (default), ServiceOnly a All. Kliknutím na odkaz přepnete nastavení mezi těmito třemi stavy.
+2. Klikněte na **Přepnout čítače výkonu**. Čítač výkonu má tři stavy: vypnuto (výchozí), ServiceOnly a All. Kliknutím na odkaz přepnete nastavení mezi těmito třemi stavy.
 
 #### <a name="configuring-wmi-provider"></a>Konfigurace zprostředkovatele rozhraní WMI
 
@@ -249,7 +249,7 @@ Můžete vytvořit trasovací soubor WCF se standardními vlastnostmi nebo nasta
 
 2. Klikněte na **Povolit trasování**.
 
-3. Kliknutím na odkaz **úroveň trasování** upravíte úroveň trasování. Existuje šest úrovní trasování: Vypnuto, kritická, chyba, upozornění, informace a podrobné. Možnost **trasování aktivity** a **šíření** aktivity umožňuje použít funkci trasování aktivity WCF.
+3. Kliknutím na odkaz **úroveň trasování** upravíte úroveň trasování. Existuje šest úrovní trasování: vypnuto, kritická, chyba, upozornění, informace a podrobné. Možnost **trasování aktivity** a **šíření** aktivity umožňuje použít funkci trasování aktivity WCF.
 
 4. Klikněte na název naslouchacího procesu trasování a určete trasovací soubor a možnosti.
 
@@ -261,14 +261,14 @@ Můžete vytvořit trasovací soubor WCF se standardními vlastnostmi nebo nasta
 
 2. Klikněte na **Povolit protokolování zpráv**.
 
-3. Kliknutím na odkaz **úroveň protokolu** upravíte úroveň protokolu. Existují tři úrovně protokolu: Chybně formátovaná, služba a přenos.
+3. Kliknutím na odkaz **úroveň protokolu** upravíte úroveň protokolu. Existují tři úrovně protokolu: chybné, služba a přenos.
 
 4. Klikněte na název naslouchacího procesu a určete soubor protokolu a možnosti.
 
 > [!NOTE]
-> Pokud chcete, aby se protokoly trasování a zpráv vyprázdny automaticky, když je vaše aplikace zavřená, povolte možnost **automatického** vyprázdnit.
+> Pokud chcete, aby se protokoly trasování a zpráv vyprázdny automaticky, když je vaše aplikace zavřená, povolte možnost **automatického vyprázdnit** .
 
-**Stránka Souhrn** diagnostiky umožňuje provádět nejběžnější úlohy v konfiguraci diagnostiky. Pokud však chcete ručně upravit nastavení naslouchacího procesu a zdrojů, je nutné rozbalit uzel **Diagnostika** a upravit nastavení v uzlu **protokolování zpráv**, **naslouchací procesy** a **zdroje** .
+**Stránka Souhrn** **diagnostiky** umožňuje provádět nejběžnější úlohy v konfiguraci diagnostiky. Pokud však chcete ručně upravit nastavení naslouchacího procesu a zdrojů, je nutné rozbalit uzel **Diagnostika** a upravit nastavení v uzlu **protokolování zpráv**, **naslouchací procesy** a **zdroje** .
 
 #### <a name="enabling-wcf-custom-tracing-or-message-logging"></a>Povolení vlastního trasování WCF nebo protokolování zpráv
 
@@ -308,11 +308,11 @@ Novou konfiguraci chování můžete vytvořit dvěma způsoby.
 
 2. Vyberte chování, které chcete upravit.
 
-3. Klikněte na **Přidat**.
+3. Klikněte na tlačítko **Přidat**.
 
 4. V seznamu dostupných rozšíření vyberte rozšíření prvku chování, které chcete přidat.
 
-5. Klikněte na **Přidat**.
+5. Klikněte na tlačítko **Přidat**.
 
 ##### <a name="adjusting-the-extension-position-in-a-behavior"></a>Úprava pozice rozšíření v chování
 
@@ -338,7 +338,7 @@ Chování jsou kolekce prvků, které tvoří zásobník. Každý prvek v zásob
 
 V této části můžete nastavit výchozí typy vazeb pro různé protokoly, jako jsou http, TCP, MSMQ nebo NET. pipe, prostřednictvím definovaného mapování mezi schématy adres protokolů a možnými vazbami. Můžete také přidat nová mapování na jiné protokoly.
 
-#### <a name="extensions"></a>Rozšíření
+#### <a name="extensions"></a>SND
 
 Nová rozšíření vazby, rozšíření elementů vazby, standardní rozšíření koncových bodů a rozšíření chování lze zaregistrovat pro použití v konfiguraci služby WCF. Rozšíření jsou páry název/typ. Název definuje název rozšíření v konfiguraci, zatímco typ implementuje rozšíření. Existují čtyři typy rozšíření:
 
@@ -356,11 +356,11 @@ Nová rozšíření vazby, rozšíření elementů vazby, standardní rozšíře
 
 Vyberte jeden z uzlů rozšíření v pokročilých uzlech:
 
-1. Klikněte na možnost **Nové**.
+1. Klikněte na **Nový**.
 
 2. Zadejte název a typ.
 
-3. Klikněte na **OK**.
+3. Klikněte na tlačítko **OK**.
 
 4. Rozšíření se nyní zobrazí na příslušném místě v editoru. Například pokud přidáte rozšíření prvku chování, zobrazí se v seznamu dostupných rozšíření.
 
@@ -376,7 +376,7 @@ Jedním ze způsobů, jak vytvořit nový konfigurační soubor, je použít Pr�
 
 1. Spusťte editor konfigurace služby pomocí příkazového řádku a přejděte do umístění instalace WCF a pak zadejte `SvcConfigEditor.exe`.
 
-2. V nabídce **soubor** vyberte **otevřít** a klikněte na **spustitelný**soubor, **službu com+** nebo službu webhosted **Service**v závislosti na typu konfiguračního souboru, který chcete vytvořit.
+2. V nabídce **soubor** vyberte **otevřít** a klikněte na **spustitelný**soubor, **službu com+** nebo **službu webhosted Service**v závislosti na typu konfiguračního souboru, který chcete vytvořit.
 
 3. V dialogovém okně **otevřít** přejděte do konkrétního souboru, pro který chcete vytvořit konfigurační soubor, a dvakrát na něj klikněte.
 
@@ -385,17 +385,17 @@ Jedním ze způsobů, jak vytvořit nový konfigurační soubor, je použít Pr�
 5. Pomocí kroků v průvodci vytvořte novou službu.
 
 > [!NOTE]
-> Chcete-li použít NetPeerTcpBinding z konfiguračního souboru vygenerovaného průvodcem, je nutné ručně přidat prvek konfigurace vazby a upravit `mode` atribut jeho `security` elementu na hodnotu None.
+> Chcete-li použít NetPeerTcpBinding z konfiguračního souboru vygenerovaného průvodcem, je nutné ručně přidat prvek konfigurace vazby a změnit atribut `mode` jeho elementu `security` na hodnotu None.
 
 ## <a name="configuring-com"></a>Konfigurace modelu COM+
 
-Editor konfigurace služby umožňuje vytvořit nový konfigurační soubor pro existující aplikaci modelu COM+ nebo upravit existující konfiguraci modelu COM+. Uzel **kontraktu com** je zobrazen pouze v případě,`comContract`že oddíl < > existuje v konfiguračním souboru.
+Editor konfigurace služby umožňuje vytvořit nový konfigurační soubor pro existující aplikaci modelu COM+ nebo upravit existující konfiguraci modelu COM+. Uzel **kontraktu com** je zobrazen pouze v případě, že v konfiguračním souboru existuje < oddíl `comContract` >.
 
 ### <a name="creating-a-new-com-configuration"></a>Vytváří se nová konfigurace COM+.
 
 Před vytvořením nové konfigurace COM+ se ujistěte, že je vaše aplikace COM+ nainstalovaná v rámci služby komponent a zaregistrovaná v globální mezipaměti sestavení (GAC).
 
-1. Výběr nabídky **soubor** – > **integraci** -> **aplikace modelu COM+.** Tato operace zavře aktuální otevřený soubor. Pokud se v aktuálním souboru nacházejí neuložená data, zobrazí se dialogové okno Uložit. Pak se spustí **Průvodce integrací com+** .
+1. Nabídka **soubor** vybrat – > **integraci**aplikace  -> **com+.** Tato operace zavře aktuální otevřený soubor. Pokud se v aktuálním souboru nacházejí neuložená data, zobrazí se dialogové okno Uložit. Pak se spustí **Průvodce integrací com+** .
 
 2. Na první stránce vyberte aplikaci COM+ ze stromu. Pokud ve stromové struktuře nemůžete najít aplikaci modelu COM+, ověřte, zda je nainstalována do služby komponent a registrována v globální mezipaměti sestavení (GAC).
 
@@ -409,7 +409,7 @@ Před vytvořením nové konfigurace COM+ se ujistěte, že je vaše aplikace CO
 
 ### <a name="editing-an-existing-com-configuration"></a>Úprava existující konfigurace modelu COM+
 
-1. Vybrat nabídku **souborů** – > **otevřít** -> **službu com+** ...
+1. Vyberte nabídku **soubor** -> **otevřít** -> **com+** ...
 
 2. V seznamu vyberte službu COM+, kterou chcete upravit.
 
@@ -420,6 +420,6 @@ Před vytvořením nové konfigurace COM+ se ujistěte, že je vaše aplikace CO
 
 ## <a name="security"></a>Zabezpečení
 
-Není zaručeno zabezpečení konfiguračního souboru služby vygenerovaného editorem konfigurace. Informace o tom, jak zabezpečit služby WCF, najdete v dokumentaci k [zabezpečení](../../../docs/framework/wcf/feature-details/security.md) .
+Není zaručeno zabezpečení konfiguračního souboru služby vygenerovaného editorem konfigurace. Informace o tom, jak zabezpečit služby WCF, najdete v dokumentaci k [zabezpečení](./feature-details/security.md) .
 
 Kromě toho lze editor konfigurace použít pouze ke čtení a zápisu platných konfiguračních elementů WCF. Nástroj ignoruje uživatelsky definované prvky, které odpovídají schématu. Nepokouší se také odebrat tyto prvky z konfiguračního souboru nebo určit jejich účinky na známé elementy WCF. Je zodpovědností uživatele určit, zda tyto prvky představují hrozbu pro aplikaci nebo systém.

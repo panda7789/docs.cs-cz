@@ -2,18 +2,18 @@
 title: Prostorové funkce
 ms.date: 03/30/2017
 ms.assetid: 90cb177d-88a0-45be-97e8-3b306283c6e0
-ms.openlocfilehash: 09402633c5e7f591a534992fc92655e6a2d1d88d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eba384e77389f82006479f165178e80fcac244b1
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797693"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319305"
 ---
 # <a name="spatial-functions"></a>Prostorové funkce
-Neexistuje žádný literál formát pro prostorové typy. Můžete však použít kanonické funkce Entity Framework volání pomocí řetězce ve formátu Well-Known Text. Například následující volání funkce vytvoří geometrie bodu:  
+Pro prostorové typy neexistuje žádný řetězcový formát. Můžete však použít kanonické Entity Framework funkce, které zavoláte pomocí řetězců ve známém formátu textu. Například následující volání funkce vytvoří bod geometrie:  
   
-```  
+```sql  
 GeometryFromText('POINT (43 -73)')  
 ```  
   
- <xref:System.Data.Common.CommandTrees.ExpressionBuilder.Spatial.SpatialEdmFunctions> Metody mají prostorových canonical metody rozhraní Entity Framework. Klikněte na metodu vás zajímá, zobrazíte, jaké parametry by měly být předány funkci.
+ Metody <xref:System.Data.Common.CommandTrees.ExpressionBuilder.Spatial.SpatialEdmFunctions> mají všechny prostorové kanonické Entity Framework metody. Pokud chcete zjistit, jaké parametry by měly být předány funkci, klikněte na metodu, která vás zajímá.

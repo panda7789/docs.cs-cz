@@ -1,15 +1,15 @@
 ---
-title: Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction
+title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 926332ac1873db89ce9332075380effdfdc1fc37
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 04380a2a30aba85efb98ee8f9e24d0a6223a18a3
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291502"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320328"
 ---
-# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction
+# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction se používá ke konfiguraci části Nastavení WS-AtomicTransaction na místních i vzdálených počítačích.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -31,9 +31,9 @@ regasm.exe /codebase WsatUI.dll
   
  Pomocí tohoto nástroje můžete změnit základní nastavení WS-AtomicTransaction. Můžete například povolit a zakázat podporu protokolu WS-AtomicTransaction, nakonfigurovat porty HTTP pro protokol WS-AT, vytvořit propojení certifikátu SSL s portem HTTP, nakonfigurovat certifikáty zadáním názvů subjektů certifikátů, vybrat režim trasování a nastavit výchozí a maximální časové limity.  
   
- Pokud je nutné nakonfigurovat podporu WS-AtomicTransaction pouze v místním počítači, můžete použít verzi tohoto nástroje příkazového řádku. Další informace o nástroji příkazového řádku najdete v tématu věnovaném [nástroji pro konfiguraci WS-AtomicTransaction (WsatConfig. exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) .  
+ Pokud je nutné nakonfigurovat podporu WS-AtomicTransaction pouze v místním počítači, můžete použít verzi tohoto nástroje příkazového řádku. Další informace o nástroji příkazového řádku najdete v tématu věnovaném [nástroji pro konfiguraci WS-AtomicTransaction (WsatConfig. exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md) .  
   
- Měli byste si uvědomit, že modul snap-in konzoly MMC i nástroj příkazového řádku nepodporují konfiguraci všech nastavení WS-AT. Tato nastavení lze upravovat pouze úpravou registru přímo. Další informace o těchto nastaveních registru najdete v tématu [Konfigurace podpory transakcí WS-Atomic](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
+ Měli byste si uvědomit, že modul snap-in konzoly MMC i nástroj příkazového řádku nepodporují konfiguraci všech nastavení WS-AT. Tato nastavení lze upravovat pouze úpravou registru přímo. Další informace o těchto nastaveních registru najdete v tématu [Konfigurace podpory transakcí WS-Atomic](./feature-details/configuring-ws-atomic-transaction-support.md).  
   
 ### <a name="user-interface-description"></a>Popis uživatelského rozhraní  
  **Povolit podporu sítě WS-Atomic Transaction Network**:  
@@ -84,10 +84,10 @@ regasm.exe /codebase WsatUI.dll
 > [!NOTE]
 > Když jiný příjemce trasování používá poskytovatele trasování WS-AT, nemůžete vytvořit novou relaci protokolování pro události trasování. Při každém pokusu o konfiguraci protokolování během této doby se zobrazí chybová zpráva s oznámením o povolení poskytovatele. Kód chyby: 1 ".  
   
- Další informace o trasování a protokolování najdete v tématu [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
+ Další informace o trasování a protokolování najdete v tématu [Správa a diagnostika](./diagnostics/index.md).  
   
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
-- [Konfigurace podpory transakcí WS-Atomic](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
-- [Konfigurační nástroj WS-AtomicTransaction (wsatConfig. exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
-- [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
+- [Konfigurace podpory protokolu WS-AtomicTransaction](./feature-details/configuring-ws-atomic-transaction-support.md)
+- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Správa a diagnostika](./diagnostics/index.md)

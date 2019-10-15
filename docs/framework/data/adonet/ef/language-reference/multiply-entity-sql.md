@@ -2,19 +2,19 @@
 title: '* Hodnotou (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 508ce246-4e86-47dd-a605-4af4bebb9891
-ms.openlocfilehash: 19fb73d327f91303de938a5f49866339413b9698
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 7006f5143e8cc18156f748ae7664f3787c9ff5c9
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250050"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319616"
 ---
-# <a name="-multiply-entity-sql"></a>* (Multiply) (Entity SQL)
+# <a name="-multiply-entity-sql"></a>* (Násobení) (Entity SQL)
 Vynásobí dva výrazy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 expression * expression  
 ```  
   
@@ -28,11 +28,11 @@ expression * expression
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá aritmetický operátor * k vynásobení dvou čísel. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
- [!code-csharp[DP EntityServices Concepts 2#MULTIPLY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#multiply)]  
+ [!code-sql[DP EntityServices Concepts#MULTIPLY](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#multiply)]  
   
 ## <a name="see-also"></a>Viz také:
 

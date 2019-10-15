@@ -1,51 +1,51 @@
 ---
-title: 'Postupy: Implementace asynchronní operace služby'
+title: 'Postupy: Implementace operace asynchronní služby'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
-ms.openlocfilehash: 2e88b3333be262d5f665a649f9899ba66d7f253a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b706ec49db123f33b3fc1ab0f420ed9a47e32f67
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587040"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320950"
 ---
-# <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace asynchronní operace služby
-V aplikacích Windows Communication Foundation (WCF) operace služby lze provést synchronní nebo asynchronní bez diktování klientovi jejich volání. Například operace asynchronní služby je možné volat synchronně, a operace synchronní služby může být volána asynchronně. Příklad, který ukazuje, jak volat operace asynchronně v klientské aplikaci, najdete v části [jak: Asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o synchronní a asynchronní operace, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní struktura operace asynchronní služby, není kompletní kód. Úplný příklad stranách klienta i služby, najdete v části [asynchronní](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms751505(v=vs.100)).  
+# <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace operace asynchronní služby
+V aplikacích Windows Communication Foundation (WCF) může být operace služby implementována asynchronně nebo synchronně bez diktování klienta, jak ho volat. Například asynchronní operace služby mohou být volány synchronně a synchronní operace služby mohou být volány asynchronně. Příklad, který ukazuje asynchronní volání operace v klientské aplikaci, naleznete v tématu [How to: Asynchronous volání Operations Service](./feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o synchronních a asynchronních operacích najdete v tématu [Navrhování kontraktů služeb](designing-service-contracts.md) a [synchronních a asynchronních operací](synchronous-and-asynchronous-operations.md). Toto téma popisuje základní strukturu operace asynchronní služby, kód není úplný. Úplný příklad na stranách služby a klienta najdete v tématu [asynchronní](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms751505(v=vs.100)).  
   
-### <a name="implement-a-service-operation-asynchronously"></a>Implementace operace služby asynchronně  
+### <a name="implement-a-service-operation-asynchronously"></a>Asynchronní implementace operace služby  
   
-1. V servisní smlouvě deklaraci páru asynchronní metoda podle pokynů návrhu asynchronních rozhraní .NET. `Begin` Metoda přijímá parametr, objekt zpětného volání a stavu objektu a vrátí <xref:System.IAsyncResult?displayProperty=nameWithType> a odpovídající `End` metodu, která přebírá <xref:System.IAsyncResult?displayProperty=nameWithType> a vrátí návratovou hodnotu. Další informace o asynchronní volání najdete v tématu [Asynchronous Programming Patterns návrhu](https://go.microsoft.com/fwlink/?LinkId=248221).  
+1. V kontraktu služby deklarujte dvojici asynchronních metod podle pokynů pro asynchronní návrh .NET. Metoda `Begin` přebírá parametr, objekt zpětného volání a objekt stavu a vrací <xref:System.IAsyncResult?displayProperty=nameWithType> a odpovídající metodu `End`, která přebírá <xref:System.IAsyncResult?displayProperty=nameWithType> a vrací vrácenou hodnotu. Další informace o asynchronních voláních naleznete v tématu [asynchronní programování vzory návrhu](https://go.microsoft.com/fwlink/?LinkId=248221).  
   
-2. Mark `Begin` metody, které odpovídá páru asynchronní metody s <xref:System.ServiceModel.OperationContractAttribute?displayProperty=nameWithType> atribut a nastavit <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A?displayProperty=nameWithType> vlastnost `true`. Například následující kód provede kroky 1 a 2.  
+2. Označte metodu `Begin` páru asynchronních metod s atributem <xref:System.ServiceModel.OperationContractAttribute?displayProperty=nameWithType> a nastavte vlastnost <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A?displayProperty=nameWithType> na `true`. Například následující kód provádí kroky 1 a 2.  
   
      [!code-csharp[C_SyncAsyncClient#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#6)]
      [!code-vb[C_SyncAsyncClient#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#6)]  
   
-3. Implementace `Begin/End` dvojice metody ve třídě služby podle pokynů asynchronní návrh. Například následující příklad kódu ukazuje implementaci, ve kterém je napsán řetězec do konzoly v obou `Begin` a `End` části operace asynchronní služby a návratová hodnota `End` operace vrácen do klienta. Příklad úplného kódu naleznete v části příklad.  
+3. Implementujte dvojici metod `Begin/End` ve třídě služby podle pokynů pro asynchronní návrh. Například následující příklad kódu ukazuje implementaci, ve které je řetězec zapsán do konzoly v částech `Begin` a `End` v rámci asynchronní operace služby a návratovou hodnotou operace `End` je vrácena klientovi. Úplný příklad kódu naleznete v části příklad.  
   
      [!code-csharp[C_SyncAsyncClient#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#3)]
      [!code-vb[C_SyncAsyncClient#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklady ukazují kód:  
+ Následující příklady kódu ukazují:  
   
-1. Rozhraní kontraktu služby se:  
+1. Rozhraní kontraktu služby s:  
   
-    1. Synchronního `SampleMethod` operace.  
+    1. Synchronní operace @no__t 0.  
   
-    2. Asynchronní `BeginSampleMethod` operace.  
+    2. Asynchronní operace `BeginSampleMethod`.  
   
-    3. Asynchronní `BeginServiceAsyncMethod` / `EndServiceAsyncMethod` pár operace.  
+    3. Asynchronní dvojice operací `BeginServiceAsyncMethod` @ no__t-1 @ no__t-2.  
   
-2. Implementace služby pomocí <xref:System.IAsyncResult?displayProperty=nameWithType> objektu.  
+2. Implementace služby pomocí objektu <xref:System.IAsyncResult?displayProperty=nameWithType>.  
   
  [!code-csharp[C_SyncAsyncClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#1)]
  [!code-vb[C_SyncAsyncClient#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)
-- [Synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
+- [Navrhování kontraktů služby](designing-service-contracts.md)
+- [Synchronní a asynchronní operace](synchronous-and-asynchronous-operations.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: c43ba119b92d4dc1a50b03d6359555ad25f37d08
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: e6d680097a63f3a7acc919c8503b9d18a09fcff0
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971560"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319739"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 
@@ -65,11 +65,11 @@ Pokud jiný projekt ve vaší aplikaci odkazuje na verzi 1.0.0.0 stejného sesta
 
 `<bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />`
 
-Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit automatické přesměrování vazby. Toto výchozí chování můžete přepsat poskytnutím informací o přesměrování vazby v souboru App. config pro jakékoli sestavení nebo vypnutím funkce přesměrování vazby. Informace o tom, jak tuto funkci zapnout nebo vypnout, najdete v [tématu How to: Povolí nebo zakáže automatické přesměrování](how-to-enable-and-disable-automatic-binding-redirection.md)vazby.
+Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit automatické přesměrování vazby. Toto výchozí chování můžete přepsat poskytnutím informací o přesměrování vazby v souboru App. config pro jakékoli sestavení nebo vypnutím funkce přesměrování vazby. Informace o tom, jak tuto funkci zapnout nebo vypnout, najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md).
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Obejití zásad vydavatele
- V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Pokud chcete obejít zásadu vydavatele, přidejte [ \<element publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) do [ \<prvku dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) v konfiguračním souboru aplikace a nastavte atribut **Apply** na **No**, který přepíše všechna předchozí nastavení **Ano** .
+ V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Chcete-li obejít zásadu vydavatele, přidejte prvek [\<publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) do prvku [> \<dependentAssembly](./file-schema/runtime/dependentassembly-element.md) v konfiguračním souboru aplikace a nastavte atribut **Apply** na hodnotu **No**, který přepíše libovolný předchozí nastavení **Ano** .
 
  `<publisherPolicy apply="no" />`
 
@@ -81,11 +81,11 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 
 <a name="BKMK_Specifyingassemblybindinginconfigurationfiles"></a>
 ## <a name="specifying-assembly-binding-in-configuration-files"></a>Určení vazby sestavení v konfiguračních souborech
- Použijete stejný formát XML k určení přesměrování vazby, pokud je v konfiguračním souboru aplikace, konfiguračním souboru počítače nebo souboru zásad vydavatele. Pro přesměrování jedné verze sestavení na jiný použijte [ \<prvek > bindingRedirect](./file-schema/runtime/bindingredirect-element.md) . Atribut **OldVersion** může určit jednu verzi sestavení nebo rozsah verzí. `newVersion` Atribut by měl určovat jednu verzi.  Například `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` určuje, že modul runtime má použít verzi 2.0.0.0 namísto verzí sestavení mezi 1.1.0.0 a 1.2.0.0.
+ Použijete stejný formát XML k určení přesměrování vazby, pokud je v konfiguračním souboru aplikace, konfiguračním souboru počítače nebo souboru zásad vydavatele. Pro přesměrování jedné verze sestavení na jiný použijte prvek [\<bindingRedirect >](./file-schema/runtime/bindingredirect-element.md) . Atribut **OldVersion** může určit jednu verzi sestavení nebo rozsah verzí. Atribut `newVersion` by měl určovat jednu verzi.  Například `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` určuje, že modul runtime by měl používat 2.0.0.0 verze namísto verzí sestavení mezi 1.1.0.0 a 1.2.0.0.
 
- Následující příklad kódu ukazuje řadu scénářů přesměrování vazby. Příklad určuje přesměrování pro rozsah verzí pro `myAssembly`a jediné přesměrování vazby pro. `mySecondAssembly` V tomto příkladu se také určuje, že soubor zásad vydavatele nepřepisuje přesměrování vazby pro `myThirdAssembly`.
+ Následující příklad kódu ukazuje řadu scénářů přesměrování vazby. Příklad určuje přesměrování pro rozsah verzí `myAssembly` a jedno přesměrování vazby pro `mySecondAssembly`. V příkladu se také určuje, že soubor zásad vydavatele nepřepisuje přesměrování vazby pro `myThirdAssembly`.
 
- Chcete-li vytvořit vazby sestavení, je nutné zadat řetězec "urn: schemas-microsoft-com: asm. v1" s atributem **xmlns** ve [ \<značce assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
+ Chcete-li vytvořit vazby sestavení, je nutné zadat řetězec "urn: schemas-microsoft-com: asm. v1" s atributem **xmlns** ve značce [\<assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
 
 ```xml
 <configuration>
@@ -99,7 +99,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
           publisher policy, or machine configuration files. -->
         <bindingRedirect oldVersion="1.0.0.0-2.0.0.0" newVersion="3.0.0.0" />
       </dependentAssembly>
-  <dependentAssembly>
+      <dependentAssembly>
         <assemblyIdentity name="mySecondAssembly"
           publicKeyToken="32ab4ba45e0a69a1"
           culture="en-us" />
@@ -119,7 +119,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 ```
 
 ### <a name="limiting-assembly--bindings-to-a-specific-version"></a>Omezení vazeb sestavení na konkrétní verzi
- V konfiguračním souboru aplikace můžete použít atribut [ \<AppliesTo v assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) elementu pro přesměrování odkazů na vazby sestavení na konkrétní verzi .NET Framework. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud ne **appliesTo** atribut zadán, [\<assemblyBinding>](./file-schema/runtime/assemblybinding-element-for-runtime.md) element platí pro všechny verze rozhraní .NET Framework.
+ Pro přesměrování odkazů na vazby sestavení na konkrétní verzi .NET Framework můžete použít atribut **AppliesTo** v [\<assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) elementu v konfiguračním souboru aplikace. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud není zadán žádný atribut **AppliesTo** , [> prvek \<assemblyBinding](./file-schema/runtime/assemblybinding-element-for-runtime.md) se vztahuje na všechny verze .NET Framework.
 
  Například pro přesměrování vazby sestavení pro sestavení .NET Framework 3,5 byste měli do konfiguračního souboru aplikace zahrnout následující kód XML.
 
@@ -155,7 +155,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md)
-- [\<bindingRedirect> Element](./file-schema/runtime/bindingredirect-element.md)
+- [@no__t – element > 1bindingRedirect](./file-schema/runtime/bindingredirect-element.md)
 - [Bezpečnostní oprávnění k přesměrování vazby sestavení](assembly-binding-redirection-security-permission.md)
 - [Sestavení v .NET](../../standard/assembly/index.md)
 - [Programování se sestaveními](../../standard/assembly/program.md)
@@ -163,4 +163,4 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 - [Konfigurace aplikací](index.md)
 - [Schéma nastavení běhového prostředí](./file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](./file-schema/index.md)
-- [Postupy: Vytvoření zásady vydavatele](how-to-create-a-publisher-policy.md)
+- [Postupy: Vytváření zásad vydavatele](how-to-create-a-publisher-policy.md)

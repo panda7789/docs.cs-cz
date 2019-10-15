@@ -2,12 +2,12 @@
 title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: 8f7eb9ef5175c41a3378201f2f25f1fd914aef55
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 507599549bd75fb454483378e044b6b7581cf4a6
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916781"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320477"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio pro Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít v aplikaci Visual Studio k rychlému vytváření služeb WCF a okolních aplikací.  
@@ -27,7 +27,7 @@ ms.locfileid: "69916781"
 - Konfigurační soubor aplikace (App. config). Konfigurační soubor poskytuje základní prvky modelu služby WCF s zabezpečenou vazbou HTTP. Zahrnuje taky koncový bod pro službu a umožňuje výměnu metadat.  
   
 > [!NOTE]
-> Visual Studio je nakonfigurované tak, aby rozpoznal soubor App. config jako konfigurační soubor pro projekt, když je spuštěný pomocí [hostitele služby WCF (WcfSvcHost. exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md), který je výchozí konfigurací. Pokud hostete knihovnu služby ve spustitelném souboru, je nutné přesunout konfigurační kód do konfiguračního souboru spustitelného souboru, protože konfigurační soubory pro knihovny DLL nejsou platné.  
+> Visual Studio je nakonfigurované tak, aby rozpoznal soubor App. config jako konfigurační soubor pro projekt, když je spuštěný pomocí [hostitele služby WCF (WcfSvcHost. exe)](wcf-service-host-wcfsvchost-exe.md), který je výchozí konfigurací. Pokud hostete knihovnu služby ve spustitelném souboru, je nutné přesunout konfigurační kód do konfiguračního souboru spustitelného souboru, protože konfigurační soubory pro knihovny DLL nejsou platné.  
   
 ### <a name="wcf-service-application-template"></a>Šablona aplikace služby WCF  
  Šablona aplikace služby WCF je k dispozici v dialogovém okně Nový projekt v **části C#Visual \WCF** a **Visual Basic\WCF**.  
@@ -59,12 +59,12 @@ ms.locfileid: "69916781"
  Soubor hostitele služby (Service1. svc) se vytvoří také v případě, že existující projekt je webový projekt.  
   
 ### <a name="wcf-wf-service-project-and-item-template"></a>Projekt a Šablona položky služby WCF WF.  
- Tyto šablony vytvářejí služby WCF, které hostují službu pracovního postupu, což je pracovní postup, který je možné použít jako webovou službu. Pro XAML nebo imperativní programovací modely existují samostatné šablony. Pomocí šablon můžete vytvořit pracovní postup sekvenčního nebo stavového stroje. Další informace o těchto typech pracovního postupu najdete v tématu [postup: Vytvořte pracovní postup](../windows-workflow-foundation/how-to-create-a-workflow.md). Další informace o vytváření projektů pracovních postupů najdete v tématu [vytváření starších projektů pracovních postupů](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
+ Tyto šablony vytvářejí služby WCF, které hostují službu pracovního postupu, což je pracovní postup, který je možné použít jako webovou službu. Pro XAML nebo imperativní programovací modely existují samostatné šablony. Pomocí šablon můžete vytvořit pracovní postup sekvenčního nebo stavového stroje. Další informace o těchto typech pracovního postupu najdete v tématu [Postupy: vytvoření pracovního postupu](../windows-workflow-foundation/how-to-create-a-workflow.md). Další informace o vytváření projektů pracovních postupů najdete v tématu [vytváření starších projektů pracovních postupů](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
   
  Návrhář sady Visual Studio je při použití pracovních postupů typu XOML místo na základě kódu rychlejší reagovat. Pracovní postup XOML je výchozí typ pracovního postupu, který se má vytvořit.  
   
 ### <a name="wcf-syndication-service-library-template"></a>Šablona knihovny syndikací služby WCF  
- Tato šablona vám umožní zveřejnit váš informační kanál ve formátu RSS nebo ATOM jako služba WCF. Další informace najdete v tématu [Syndikace WCF](../../../docs/framework/wcf/feature-details/wcf-syndication.md).  
+ Tato šablona vám umožní zveřejnit váš informační kanál ve formátu RSS nebo ATOM jako služba WCF. Další informace najdete v tématu [Syndikace WCF](./feature-details/wcf-syndication.md).  
   
 #### <a name="changing-the-address-of-the-feed"></a>Změna adresy informačního kanálu  
  Šablona syndikace používá během provádění Internet Explorer. Když kliknete pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**, poté vyberte kartu **ladění** a můžete zobrazit výchozí adresu šablony. Aplikace Internet Explorer se pokusí otevřít informační kanál na této adrese.  
@@ -80,9 +80,9 @@ ms.locfileid: "69916781"
  Chcete-li získat přístup k této šabloně, klikněte pravým tlačítkem myši na projekt webu nebo webové aplikace v **Průzkumník řešení**, klikněte na možnost **Přidat novou položku**a klikněte na možnost **Služba WCF s podporou technologie Silverlight**.  
   
 > [!NOTE]
-> Služba WCF s podporou technologie Silverlight zpřístupňuje `basicHttpBinding` koncový bod bez povolení nastavení zabezpečení. Proto mohou být informace o službě získány všemi klienty, kteří se k této službě připojují. Zprávy vyměňované mezi službou a klientem nejsou také podepsány nebo zašifrovány. Pro správné zabezpečení koncového bodu byste měli použít ověřování ASP.NET, HTTPS nebo jiné mechanismy.  
+> Služba WCF s podporou technologie Silverlight zpřístupňuje koncový bod `basicHttpBinding` bez povolení nastavení zabezpečení. Proto mohou být informace o službě získány všemi klienty, kteří se k této službě připojují. Zprávy vyměňované mezi službou a klientem nejsou také podepsány nebo zašifrovány. Pro správné zabezpečení koncového bodu byste měli použít ověřování ASP.NET, HTTPS nebo jiné mechanismy.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
-- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+- [Hostitel služby WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)
+- [Testovací klient WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

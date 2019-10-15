@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: f711bd04aeadb584eac1ecb0b644a36e2e496d08
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: e355a89e27ea5bd6e4335b39c4e669610c4b0553
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72290940"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319109"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logické logické operátory (C# referenční)
 
@@ -117,17 +117,17 @@ V následujícím příkladu je pravý operand operátoru `||` volání metody, 
 
 U operandů `bool?` podporují operátory `&` a `|` logiku se třemi hodnotami. Sémantika těchto operátorů je definována v následující tabulce:  
   
-|x|Požadované|x & y|×&#124;y|  
+|x|y|x & y|×&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  
 |true|false|false|true|  
-|true|platnost|platnost|true|  
+|true|null|null|true|  
 |false|true|false|true|  
 |false|false|false|false|  
-|false|platnost|false|platnost|  
-|platnost|true|platnost|true|  
-|platnost|false|false|platnost|  
-|platnost|platnost|platnost|platnost|  
+|false|null|false|null|  
+|null|true|null|true|  
+|null|false|false|null|  
+|null|null|null|null|  
 
 Chování těchto operátorů se liší od typického chování operátoru s typy s možnou hodnotou null. Obvykle operátor, který je definován pro operandy typu hodnoty, lze také použít s operandy odpovídajícího typu hodnoty s možnou hodnotou null. Takový operátor vytvoří `null`, pokud je kterýkoli z jeho operandů `null`. Operátory `&` a `|` však mohou vydávat hodnotu, která není null, i když je jeden z operandů `null`. Další informace o chování operátora s typy hodnot s možnou hodnotou null naleznete v části [operátory](../../programming-guide/nullable-types/using-nullable-types.md#operators) v článku [použití hodnot s možnou hodnotou null](../../programming-guide/nullable-types/using-nullable-types.md) .
 
@@ -182,7 +182,7 @@ Uživatelsky definovaný typ může [přetížit](operator-overloading.md) oper�
 
 Uživatelsky definovaný typ nemůže přetížit Podmíněné logické operátory `&&` a `||`. Pokud však uživatelsky definovaný typ přetěžuje [operátory true a false](true-false-operators.md) a `&` nebo `|` nějakým způsobem, může být pro operandy daného typu vyhodnocena operace `&&` nebo `||`. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="c-language-specification"></a>C#specifikace jazyka
+## <a name="c-language-specification"></a>specifikace jazyka C#
 
 Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
 
@@ -191,8 +191,8 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators)
 - [Složené přiřazení](~/_csharplang/spec/expressions.md#compound-assignment)
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [C#logické](index.md)
+- [Operátory jazyka C#](index.md)
 - [Bitové operátory a posunutí](bitwise-and-shift-operators.md)

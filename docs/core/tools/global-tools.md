@@ -4,12 +4,12 @@ description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké js
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 40a0aabcf523e8dac9a3ad226064bbb3c1b3ce5b
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 116739f80d5157632a8e44a19cbef6ba7971d339
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332011"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318300"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
 
@@ -31,13 +31,12 @@ Pokud chcete použít globální nástroj .NET Core:
 
 ## <a name="find-a-net-core-global-tool"></a>Najít globální nástroj .NET Core
 
-V současné době není v rozhraní příkazového řádku (CLI) .NET Core k dispozici funkce pro vyhledávání globálních nástrojů.
+V současné době není v rozhraní příkazového řádku (CLI) .NET Core k dispozici funkce pro vyhledávání globálních nástrojů. Níže jsou uvedená doporučení pro hledání nástrojů:
 
-Globální nástroje .NET Core najdete na [NuGet](https://www.nuget.org). NuGet ale ještě neumožňuje vyhledávat konkrétně globální nástroje .NET Core.
-
-Doporučení k nástrojům můžete najít také v blogu blogové příspěvky nebo v úložišti GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
-
-Zdrojový kód globálních nástrojů, které vytvořil tým ASP.NET, můžete zobrazit také v úložišti GitHub [/DotNetTools](https://github.com/aspnet/DotNetTools/) .
+* Globální nástroje .NET Core najdete na [NuGet](https://www.nuget.org). NuGet ale ještě neumožňuje vyhledávat konkrétně globální nástroje .NET Core.
+* Doporučení k nástrojům můžete najít v blogovém příspěvku nebo v úložišti GitHubu [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
+* Zdrojový kód pro globální nástroje vytvořené týmem ASP.NET můžete zobrazit v úložišti GitHub [/DotNetTools](https://github.com/aspnet/DotNetTools/) .
+* Informace o diagnostických nástrojích najdete v [části .NET Core dotnet – globální nástroje diagnostiky](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Kontrolovat autora a statistiky
 
@@ -70,7 +69,7 @@ Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 
 Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-| OS          | `Path`                          |
+| JINÉHO          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -86,13 +85,13 @@ V takovém případě .NET Core CLI nepřidá toto umístění automaticky do pr
 
 Po instalaci nástroje jej můžete zavolat pomocí jeho příkazu. Všimněte si, že tento příkaz nemůže být stejný jako název balíčku.
 
-Pokud je `dotnetsay`příkaz, zavolejte ho s:
+Pokud je příkaz `dotnetsay`, zavolejte ho pomocí:
 
 ```console
 dotnetsay
 ```
 
-Pokud autor nástroje chtěl, aby se nástroj objevil v kontextu `dotnet` výzvy, mohl by ho napsat způsobem, který ho zavolá, jako `dotnet <command>`například:
+Pokud autor nástroje chtěl, aby se zobrazil v kontextu výzvy `dotnet`, mohl by je napsat způsobem, který ho zavolá jako `dotnet <command>`, například:
 
 ```dotnetcli
 dotnet doc
@@ -109,10 +108,10 @@ dotnet <command> --help
 
 ## <a name="other-cli-commands"></a>Další příkazy rozhraní příkazového řádku
 
-.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte libovolný z `dotnet tool` těchto příkazů s jednou z následujících možností:
+.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte libovolný příkaz `dotnet tool` s jednou z následujících možností:
 
-* `--global`nebo `-g` určuje, že se příkaz vztahuje na globální nástroje pro všechny uživatele.
-* `--tool-path`Určuje vlastní umístění pro globální nástroje.
+* `--global` nebo `-g` určuje, že se příkaz vztahuje na globální nástroje pro všechny uživatele.
+* `--tool-path` určuje vlastní umístění pro globální nástroje.
 
 Zjistit, které příkazy jsou k dispozici pro globální nástroje:
 

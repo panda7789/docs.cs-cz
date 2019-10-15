@@ -3,12 +3,12 @@ title: Řešení potíží s používáním nástrojů .NET Core
 description: Seznamte se s běžnými problémy při používání nástrojů .NET Core a možných řešení.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: eb769550493e5a25d4380cd543a3bbec880b38e9
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: fc6c520ab57235c78148a6b77717cbd80a989451
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332975"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318291"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Řešení potíží s používáním nástrojů .NET Core
 
@@ -19,7 +19,7 @@ Při pokusu o instalaci nebo spuštění nástroje .NET Core, který může být
 Když se nepovede spustit nástroj .NET Core, pravděpodobně došlo k jednomu z následujících problémů:
 
 * Spustitelný soubor pro nástroj se nenašel.
-* Nenašla se správná verze modulu runtime .NET Core. 
+* Nenašla se správná verze modulu runtime .NET Core.
 
 ### <a name="executable-file-not-found"></a>Spustitelný soubor se nenašel.
 
@@ -44,7 +44,7 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
 
     Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-    | OS          | `Path`                          |
+    | JINÉHO          | Cesta                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -58,18 +58,18 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
   * Pokud používáte macOS 10,14 "Mojave" nebo starší verze a nainstalovali jste .NET Core SDK pomocí souborů *. tar. gz* , a ne *. pkg*.
   * Pokud jste nainstalovali sadu .NET Core 3,0 SDK a nastavili jste proměnnou prostředí `DOTNET_ADD_GLOBAL_TOOLS_TO_PATH` na `false`.
   * Pokud jste nainstalovali sadu .NET Core 2,2 SDK nebo starší verze a nastavili jste proměnnou prostředí `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` na `true`.
-  
+
   Další informace o globálních nástrojích najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
 
 * Místní nástroje
 
   Pokud se pokoušíte spustit místní nástroj, ověřte, zda je v aktuálním adresáři nebo v některém z jeho nadřazených adresářů soubor manifestu s názvem *dotnet-Tools. JSON* . Tento soubor může být také živý v rámci složky s názvem *. config* kdekoli v hierarchii složek projektu místo kořenové složky. Pokud *dotnet-Tools. JSON* existuje, otevřete ho a vyhledejte nástroj, který se pokoušíte spustit. Pokud soubor neobsahuje položku pro `"isRoot": true`, pak dále zkontrolujte hierarchii souborů pro další soubory manifestu nástroje.
 
-    Pokud se pokoušíte spustit nástroj .NET Core, který byl nainstalován se zadanou cestou, je nutné při používání nástroje použít tuto cestu. Příklad použití nástroje, který je nainstalovaný nástrojem Path, je:
+  Pokud se pokoušíte spustit nástroj .NET Core, který byl nainstalován se zadanou cestou, je nutné při používání nástroje použít tuto cestu. Příklad použití nástroje, který je nainstalovaný nástrojem Path, je:
 
-   ```console
-   ..\<toolDirectory>\dotnet-<toolName>
-    ```
+  ```console
+  ..\<toolDirectory>\dotnet-<toolName>
+  ```
 
 ### <a name="runtime-not-found"></a>Modul runtime se nenašel.
 
@@ -146,7 +146,7 @@ dotnet tool install -g --version 1.1.0-pre <toolName>
 
 Pokud se pokusíte nainstalovat balíček NuGet, který je regulárním balíčkem NuGet, a ne nástrojem .NET Core, zobrazí se chybová zpráva podobná následující:
 
-`NU1212: Invalid project-package combination for `<ToolName>`. DotnetToolReference project style can only contain references of the DotnetTool type.`
+> NU1212: Neplatná kombinace projektu a balíčku pro `<ToolName>`. Styl projektu DotnetToolReference může obsahovat pouze odkazy na typ DotnetTool.
 
 ### <a name="nuget-feed-cant-be-accessed"></a>K informačnímu kanálu NuGet nelze přicházet.
 
@@ -161,4 +161,5 @@ Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který o
 Běžným důvodem selhání je, že název nástroje není správný. K tomu může dojít z důvodu neúspěšného zadání, nebo proto, že se nástroj přesunul nebo byl zastaralý. V případě nástrojů na NuGet.org je třeba, abyste si ověřili, že je správný název, hledání nástroje na NuGet.org a zkopírování instalačního příkazu.
 
 ## <a name="see-also"></a>Viz také:
+
 * [Přehled globálních nástrojů .NET Core](global-tools.md)

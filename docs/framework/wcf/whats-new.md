@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: a50db521e986972e864ac60c8b84a63d3d1de69b
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 0a065676d81b36f32729bb08c23025825e94d3bc
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834881"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320461"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co je nového ve WCF 4.5
 
@@ -18,11 +18,11 @@ Toto téma popisuje nové funkce Windows Communication Foundation (WCF) verze 4,
 
 ## <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 
-Pro snazší vývoj a údržbu aplikací WCF 4,5 bylo provedeno mnoho práce. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](../../../docs/framework/wcf/wcf-simplification-features.md).
+Pro snazší vývoj a údržbu aplikací WCF 4,5 bylo provedeno mnoho práce. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](wcf-simplification-features.md).
 
 ### <a name="task-based-async-support"></a>Asynchronní podpora založená na úlohách
 
-Ve výchozím nastavení Přidat odkaz na službu generuje metody asynchronních operací služby, které vrací úlohy. Tato operace se provádí pro synchronní i asynchronní metody. To umožňuje asynchronní volání operací služby pomocí nového asynchronního programovacího modelu založeného na úlohách. Při volání vygenerované metody proxy vytvoří WCF objekt Task, který reprezentuje asynchronní operaci a vrátí tento úkol. Úkol se dokončí, až se operace dokončí. Při implementaci asynchronní operace ji můžete implementovat jako asynchronní operaci založenou na úlohách. Další informace naleznete v tématu [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).
+Ve výchozím nastavení Přidat odkaz na službu generuje metody asynchronních operací služby, které vrací úlohy. Tato operace se provádí pro synchronní i asynchronní metody. To umožňuje asynchronní volání operací služby pomocí nového asynchronního programovacího modelu založeného na úlohách. Při volání vygenerované metody proxy vytvoří WCF objekt Task, který reprezentuje asynchronní operaci a vrátí tento úkol. Úkol se dokončí, až se operace dokončí. Při implementaci asynchronní operace ji můžete implementovat jako asynchronní operaci založenou na úlohách. Další informace naleznete v tématu [synchronní a asynchronní operace](synchronous-and-asynchronous-operations.md).
 
 ### <a name="simplified-generated-configuration-files"></a>Zjednodušené generované konfigurační soubory
 
@@ -36,19 +36,19 @@ WCF teď podporuje vývoj pro první smlouvu. Svcutil. exe má přepínač/servi
 
 ### <a name="add-service-reference-from-a-portable-subset-project"></a>Přidat odkaz na službu z přenositelné podmnožiny projektu
 
-Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více platforem .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET Framework, které lze použít na libovolné platformě .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](../../../docs/framework/wcf/add-service-reference-in-a-portable-subset-project.md).
+Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více platforem .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET Framework, které lze použít na libovolné platformě .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>Režim kompatibility ASP.NET se ve výchozím nastavení změnil
 
-Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu vývojářům úplný přístup k funkcím v kanálu HTTP ASP.NET při psaní služeb WCF. Chcete-li použít tento režim, je nutné nastavit atribut `aspNetCompatibilityEnabled` na hodnotu true v části [\<serviceHostingEnvironment >](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) souboru Web. config. Kromě toho musí mít všechny služby v této doméně appDomain vlastnost `RequirementsMode` ve své <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavené na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavená na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>. Další informace najdete v tématu [co je nového v Windows Communication Foundation](../../../docs/framework/wcf/whats-new.md) a [službách WCF a ASP.NET](../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).
+Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu vývojářům úplný přístup k funkcím v kanálu HTTP ASP.NET při psaní služeb WCF. Chcete-li použít tento režim, je nutné nastavit atribut `aspNetCompatibilityEnabled` na hodnotu true v části [\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md) souboru Web. config. Kromě toho musí mít všechny služby v této doméně appDomain vlastnost `RequirementsMode` ve své <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavené na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavená na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>. Další informace najdete v tématu [služby WCF a ASP.NET](./feature-details/wcf-services-and-aspnet.md).
 
 ### <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
 
-Aby se zjednodušila konfigurace, změnila se počet výchozích hodnot vlastností přenosu. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](../../../docs/framework/wcf/wcf-simplification-features.md).
+Aby se zjednodušila konfigurace, změnila se počet výchozích hodnot vlastností přenosu. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](wcf-simplification-features.md).
 
 ### <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas> obsahuje konfigurovatelné hodnoty kvóty pro čtečky slovníku XML, které omezují velikost paměti využívané kodérem při vytváření zprávy. I když jsou tyto kvóty konfigurovatelné, výchozí hodnoty se změní tak, aby se minimalizovala možnost, že ji vývojář musí explicitně nastavit. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](../../../docs/framework/wcf/wcf-simplification-features.md).
+<xref:System.Xml.XmlDictionaryReaderQuotas> obsahuje konfigurovatelné hodnoty kvóty pro čtečky slovníku XML, které omezují velikost paměti využívané kodérem při vytváření zprávy. I když jsou tyto kvóty konfigurovatelné, výchozí hodnoty se změní tak, aby se minimalizovala možnost, že ji vývojář musí explicitně nastavit. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](wcf-simplification-features.md).
 
 ### <a name="wcf-configuration-validation"></a>Ověřování konfigurace WCF
 
@@ -60,7 +60,7 @@ Editor XML sady Visual Studio nyní poskytuje popisy pro každý prvek konfigura
 
 ## <a name="streaming-improvements"></a>Vylepšení streamování
 
-Byla přidána podpora pro skutečný asynchronní streamování, kde odesílající strana teď neblokuje vlákna, pokud se na straně příjmu nečte nebo pomalu čte a zvyšuje škálovatelnost. Odstranila se omezení ukládání zpráv do vyrovnávací paměti, když klient odešle streamovaná zpráva službě WCF hostované službou IIS. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](../../../docs/framework/wcf/wcf-simplification-features.md).
+Byla přidána podpora pro skutečný asynchronní streamování, kde odesílající strana teď neblokuje vlákna, pokud se na straně příjmu nečte nebo pomalu čte a zvyšuje škálovatelnost. Odstranila se omezení ukládání zpráv do vyrovnávací paměti, když klient odešle streamovaná zpráva službě WCF hostované službou IIS. Další informace najdete v tématu [funkce pro zjednodušení služby WCF](wcf-simplification-features.md).
 
 ## <a name="simplifying-exposing-an-endpoint-over-https-with-iis"></a>Zjednodušení vystavení koncového bodu přes HTTPS se službou IIS
 
@@ -72,7 +72,7 @@ Některé zásobníky zpracování WSDL třetích stran nemohou zpracovávat dok
 
 ## <a name="websocket-support"></a>Podpora protokolu WebSocket
 
-WebSockets je technologie, která poskytuje skutečnou obousměrnou komunikaci přes porty 80 a 443 s charakteristikami výkonu podobnými TCP. Přidali jsme dvě nové vazby, které podporují komunikaci prostřednictvím přenosu protokolu WebSocket. <xref:System.ServiceModel.NetHttpBinding> a <xref:System.ServiceModel.NetHttpsBinding>. Další informace najdete v tématu: [systémem poskytované vazby](../../../docs/framework/wcf/system-provided-bindings.md).
+WebSockets je technologie, která poskytuje skutečnou obousměrnou komunikaci přes porty 80 a 443 s charakteristikami výkonu podobnými TCP. Přidali jsme dvě nové vazby, které podporují komunikaci prostřednictvím přenosu protokolu WebSocket. <xref:System.ServiceModel.NetHttpBinding> a <xref:System.ServiceModel.NetHttpsBinding>. Další informace najdete v tématu: [systémem poskytované vazby](system-provided-bindings.md).
 
 ## <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
 
@@ -80,11 +80,11 @@ Následující tabulka popisuje nastavení, která se změnila a kde najít dal�
 
 |Vlastnost|On|Nové výchozí|Další informace najdete v tématu.|
 |--------------|--------|-----------------|------------------------------|
-|ChannelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
+|channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * počet procesorů|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|MaxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost. exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počet procesorů pro SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Konfigurace služby sdílení portů Net. TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)|
-|MaxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
-|receiveTimeout|SMSvcHost. exe|30 sekund|[Konfigurace služby sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost. exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počet procesorů pro SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Konfigurace služby sdílení portů Net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
+|receiveTimeout|SMSvcHost. exe|30 sekund|[Konfigurace služby sdílení portů Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
 ## <a name="xml-editor-tooltips"></a>Popisy editoru XML
 
@@ -92,7 +92,7 @@ Editor XML sady Visual Studio nyní poskytuje popisy pro každý prvek konfigura
 
 ## <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 
-Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu. Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi snadná, třída <xref:System.ServiceModel.ServiceHost> umožňuje nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přístup ke třídě <xref:System.ServiceModel.ServiceHost>. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory`, která vytvořila <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedla jakoukoli potřebnou konfiguraci. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu. Další informace najdete v tématu [Konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md).
+Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu. Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi snadná, třída <xref:System.ServiceModel.ServiceHost> umožňuje nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přístup ke třídě <xref:System.ServiceModel.ServiceHost>. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory`, která vytvořila <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedla jakoukoli potřebnou konfiguraci. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu. Další informace najdete v tématu [Konfigurace služeb WCF v kódu](configuring-wcf-services-in-code.md).
 
 ## <a name="channelfactory-caching"></a>Třída ChannelFactory pro ukládání do mezipaměti
 
@@ -106,7 +106,7 @@ Klientské aplikace WCF používají ke tvorbě komunikačního kanálu se služ
 
 4. Odstraňování prostředků
 
-Pro lepší minimalizaci této režie může WCF při použití proxy serveru WCF ukládat do mezipaměti objekty kanálu. Další informace najdete v tématu [vytváření kanálů a ukládání do mezipaměti](../../../docs/framework/wcf/feature-details/channel-factory-and-caching.md).
+Pro lepší minimalizaci této režie může WCF při použití proxy serveru WCF ukládat do mezipaměti objekty kanálu. Další informace najdete v tématu [vytváření kanálů a ukládání do mezipaměti](./feature-details/channel-factory-and-caching.md).
 
 ## <a name="compression-and-the-binary-encoder"></a>Komprese a binární kodér
 
@@ -122,7 +122,7 @@ Přidala se podpora pro podporu více režimů ověřování, jak je podporovan�
 
 ## <a name="idn-support"></a>Podpora IDN
 
-Přidala se podpora, aby služba WCF mohla používat mezinárodní názvy domén. Další informace najdete v tématu [WCF a mezinárodní názvy domén](../../../docs/framework/wcf/feature-details/wcf-and-internationalized-domain-names.md).
+Přidala se podpora, aby služba WCF mohla používat mezinárodní názvy domén. Další informace najdete v tématu [WCF a mezinárodní názvy domén](./feature-details/wcf-and-internationalized-domain-names.md).
 
 ## <a name="httpclient"></a>HttpClient
 
@@ -138,7 +138,7 @@ Prvky a atributy služby WCF mají nyní popisy tlačítek v editoru XML pro sna
 
 ## <a name="paste-data-as-classes"></a>Vložit data jako třídy
 
-V projektu WCF mohou být datové typy definované v jazyce XML (například zpřístupněny ve službě) vloženy přímo do znakové stránky. Typ XML bude vložen jako typ CLR. Další podrobnosti najdete v tématu [generování tříd datových typů z XML](../../../docs/framework/wcf/generating-data-type-classes-from-xml.md) .
+V projektu WCF mohou být datové typy definované v jazyce XML (například zpřístupněny ve službě) vloženy přímo do znakové stránky. Typ XML bude vložen jako typ CLR. Další podrobnosti najdete v tématu [generování tříd datových typů z XML](generating-data-type-classes-from-xml.md) .
 
 ## <a name="webservicehost-and-default-endpoints"></a>WebServiceHost a výchozí koncové body
 

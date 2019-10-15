@@ -1,47 +1,47 @@
 ---
 title: Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
-description: Informace o instalaci rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8.
+description: Přečtěte si, jak nainstalovat .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8.
 author: rlander
 ms.author: mairaw
 ms.date: 07/16/2018
-ms.openlocfilehash: 7b3b7ca5709008260ea284602a3ed8d2b288c410
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 949f73febe2eb2ad7155bddd2b7b7514eddfe6c9
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644183"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319135"
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
 
-Možná bude nutné rozhraní .NET Framework 3.5 ke spuštění aplikace na Windows 10, Windows 8.1 a Windows 8. Můžete také použít tyto pokyny pro starší verze Windows.
+Pro spuštění aplikace ve Windows 10, Windows 8.1 a Windows 8 možná budete potřebovat .NET Framework 3,5. Tyto pokyny můžete použít také pro dřívější verze systému Windows.
 
-## <a name="install-the-net-framework-35-on-demand"></a>Instalace rozhraní .NET Framework 3.5 na vyžádání
+## <a name="install-the-net-framework-35-on-demand"></a>Instalace .NET Framework 3,5 na vyžádání
 
-Pokud se pokusíte spustit aplikaci, která vyžaduje rozhraní .NET Framework 3.5, může se zobrazit následující dialogové okno konfigurace. Zvolte **nainstalujte tuto funkci** povolit rozhraní .NET Framework 3.5. Tato možnost vyžaduje připojení k Internetu.
+Pokud se pokusíte spustit aplikaci, která vyžaduje .NET Framework 3,5, může se zobrazit následující konfigurační dialog. Výběrem možnosti **nainstalovat tuto funkci** povolíte .NET Framework 3,5. Tato možnost vyžaduje připojení k Internetu.
 
-![Dialogové okno instalace rozhraní .NET framework](./media/dotnet-framework-installation-dialog.jpg)
+![Snímek obrazovky s dialogovým oknem instalace .NET Framework](./media/dotnet-35-windows-10/dotnet-framework-installation-dialog.png)
 
-### <a name="why-am-i-getting-this-pop-up"></a>Proč se zobrazuje toto automaticky otevírané?
+### <a name="why-am-i-getting-this-pop-up"></a>Proč se tento překryv zobrazuje?
 
-Rozhraní .NET Framework je vytvořené microsoftem a poskytuje prostředí pro spouštění aplikací. K dispozici jsou různé verze. Mnoho společností vývoj aplikací pro spuštění pomocí rozhraní .NET Framework a tyto aplikace cílí na konkrétní verzi. Pokud se zobrazí toto automaticky otevírané okno, se snažíte spustit aplikaci, která vyžaduje rozhraní .NET Framework verze 3.5, ale není ve vašem systému nainstalována verze.
+.NET Framework vytvoří společnost Microsoft a poskytuje prostředí pro spouštění aplikací. K dispozici jsou různé verze. Řada společností vyvíjí své aplikace pro spouštění pomocí .NET Framework a tyto aplikace cílí na konkrétní verzi. Pokud se zobrazí toto automaticky otevírané okno, pokoušíte se spustit aplikaci, která vyžaduje verzi .NET Framework 3,5, ale tato verze není v systému nainstalovaná.
 
-## <a name="enable-the-net-framework-35-in-control-panel"></a>Povolení rozhraní .NET Framework 3.5 v Ovládacích panelech
+## <a name="enable-the-net-framework-35-in-control-panel"></a>Povolení .NET Framework 3,5 v Ovládacích panelech
 
-Můžete povolit rozhraní .NET Framework 3.5 prostřednictvím Ovládacích panelech Windows. Tato možnost vyžaduje připojení k Internetu.
+.NET Framework 3,5 můžete povolit prostřednictvím ovládacího panelu systému Windows. Tato možnost vyžaduje připojení k Internetu.
 
-1. Stiskněte klávesu Windows Windows ![Windows logo](https://i-msdn.sec.s-msft.com/dynimg/IC721376.jpeg) na klávesnici, zadejte "Windows funkce" a stiskněte klávesu Enter. **Windows zapnout nebo vypnout funkce** zobrazí se dialogové okno.
+1. Stiskněte klávesu Windows ![Screenshot loga Windows Key. ](./media/dotnet-35-windows-10/windows-keyboard-logo.png) na klávesnici zadejte "funkce systému Windows" a stiskněte klávesu ENTER. Zobrazí se dialogové okno **zapnout nebo vypnout funkce systému Windows** .
 
-2. Vyberte **rozhraní .NET Framework 3.5 (zahrnuje .NET 2.0 a 3.0)** zaškrtněte políčko **OK**a pokud se zobrazí výzva, restartujte počítač.
+2. Zaškrtněte políčko **.NET Framework 3,5 (zahrnuje rozhraní .net 2,0 a 3,0)** , vyberte **OK**a po zobrazení výzvy restartujte počítač.
 
-   ![Instalace .NET pomocí ovládacího panelu](./media/dotnet-control-panel.png)
+   ![Snímek obrazovky s instalací rozhraní .NET pomocí ovládacích panelů](./media/dotnet-35-windows-10/dotnet-control-panel.png)
 
-   Nemusíte vybrat podřízené položky pro **aktivace Windows Communication Foundation (WCF) protokolem HTTP** a **Aktivace jiným protokolem než HTTP Windows Communication Foundation (WCF)** Pokud jste vývojář, nebo Správce serveru, který vyžaduje tuto funkci.
+   Nemusíte vybírat podřízené položky pro aktivaci pomocí **protokolu HTTP služby Windows Communication Foundation (WCF)** a **Windows Communication Foundation (WCF) bez protokolu HTTP** , pokud nejste vývojář nebo správce serveru, který to vyžaduje. možnost.
 
-## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Řešení potíží s instalací rozhraní .NET Framework 3.5
+## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Řešení potíží s instalací .NET Framework 3,5
 
-Během instalace, můžete narazit chyby 0x800f0906, 0x800f0907, 0x800f081f nebo 0x800F0922, v takovém případě si [Chyba instalace rozhraní .NET Framework 3.5: 0x800f0906, 0x800f0907 nebo 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) informace o tom, jak tyto problémy vyřešit.
+Během instalace můžete narazit na chybu chyby 0x800F0906, 0x800f0907, 0x800F081F nebo 0x800F0922. v takovém případě se v takovém případě zobrazí [Chyba instalace .NET Framework 3,5: chyby 0x800F0906, 0x800f0907 nebo 0x800F081F](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) , kde zjistíte, jak tyto problémy vyřešit.
 
-Pokud stále nelze vyřešit váš problém s instalací nebo nemáte připojení k Internetu, můžete zkusit instalaci pomocí instalačního média Windows. Další informace najdete v tématu [nasazení rozhraní .NET Framework 3.5 pomocí Deployment Image Servicing and Management (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism). Pokud nemáte k dispozici instalačním médiu, přečtěte si téma [vytvořit instalační médium pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).
+Pokud stále nemůžete problém s instalací vyřešit nebo nemáte připojení k Internetu, můžete ho zkusit nainstalovat pomocí instalačního média Windows. Další informace najdete v tématu [nasazení .NET Framework 3,5 pomocí nástroje pro údržbu a správu bitových kopií (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism). Pokud nemáte instalační médium, přečtěte si téma [Vytvoření instalačního média pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).
 
 > [!WARNING]
-> Pokud nejsou spoléhat na webu Windows Update jako zdroj pro instalaci rozhraní .NET Framework 3.5, je nutné zajistit výhradně pomocí zdroje ze stejné odpovídající verzi operačního systému Windows. Pomocí cestu ke zdroji, který neodpovídá na stejnou verzi Windows nebudou zabránit instalaci neodpovídající verzi rozhraní .NET Framework 3.5. To však způsobí systém, aby byl ve stavu nepodporované a činnosti.
+> Pokud nespoléháte na web Windows Update jako zdroj pro instalaci .NET Framework 3,5, je nutné zajistit výhradně použití zdrojů ze stejné odpovídající verze operačního systému Windows. Použití zdrojové cesty, která neodpovídá stejné verzi Windows, nezabrání v instalaci neshodné verze .NET Framework 3,5. Dojde ale k tomu, že systém bude v nepodporovaném a neprovozního stavu.

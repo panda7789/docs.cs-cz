@@ -5,38 +5,38 @@ helpviewer_keywords:
 - WCF [WCF], concepts
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 503fae4b-014c-44df-a9c7-c76ec4ed4229
-ms.openlocfilehash: 7a885bd4ff0d3c35e26fd0f37e82a41abf713b6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f396f5f9ccc683b3e7715e64301587c08c719f75
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608656"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320711"
 ---
 # <a name="conceptual-overview"></a>Koncepční přehled
-Toto téma shrnuje informace o Windows Communication Foundation (WCF) zasílání zpráv systému a tříd, které podporují jeho použití.  
+Toto téma shrnuje informace o systému zasílání zpráv Windows Communication Foundation (WCF) a třídách, které podporují jeho použití.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  
+ [Co je Windows Communication Foundation](whats-wcf.md)  
  Stručný přehled služby WCF.  
   
- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)  
- Přehled hlavních konceptech programovacího modelu WCF.  
+ [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)  
+ Osnova hlavních konceptů programovacího modelu WCF.  
   
- [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)  
+ [Architektura Windows Communication Foundation](architecture.md)  
  Grafická reprezentace architektury WCF.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Základní programování WCF](basic-wcf-programming.md)  
   
- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [Pokyny a osvědčené postupy](guidelines-and-best-practices.md)  
   
- [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)  
+ [Ukázky Windows Communication Foundation](./samples/index.md)  
   
- [Nástroje](../../../docs/framework/wcf/diagnostics/exceptions-reference/tools.md)  
+ [Nástroje](./diagnostics/exceptions-reference/tools.md)  
   
- [Požadavky na systém](../../../docs/framework/wcf/wcf-system-requirements.md)  
+ [Požadavky na systém](wcf-system-requirements.md)  
   
- [Obecné referenční informace](../../../docs/framework/wcf/general-reference.md)
+ [Obecné referenční informace](general-reference.md)

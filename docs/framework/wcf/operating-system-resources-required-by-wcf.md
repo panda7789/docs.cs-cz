@@ -2,22 +2,22 @@
 title: Prostředky operačního systému požadované službou WCF
 ms.date: 03/30/2017
 ms.assetid: cdd9a331-53fe-4e0d-bdfe-782264aec5c9
-ms.openlocfilehash: 828d656370efd7638fa4cf367b84ee7b316b89bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac9bd5ed7c2092720c6521d0f78185c3fbf9f94b
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61955217"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318945"
 ---
 # <a name="operating-system-resources-required-by-wcf"></a>Prostředky operačního systému požadované službou WCF
-Windows Communication Foundation (WCF) závisí na několika prostředcích, které jsou k dispozici v operačním systému na funkci. V následující tabulce jsou uvedeny tyto prostředky.  
+Windows Communication Foundation (WCF) závisí na několika prostředcích, které poskytuje operační systém k fungování. Následující tabulka uvádí tyto prostředky.  
   
-|Prostředek|Popis|  
+|Partner|Popis|  
 |--------------|-----------------|  
-|Microsoft distribuované transakce koordinátor (MSDTC)|Vyžadovaný jako podpora OleTx transakce.|  
-|Internet Information Services (IIS)|Povinné, pokud chcete použít k hostování vaší aplikace služby IIS.|  
-|Aktivační služba procesů Windows (WAS)|Povinné, pokud chcete používat WAS k hostování vaší aplikace.|  
+|Microsoft DTC (Distributed Transaction Coordinator) (MSDTC)|Vyžaduje se pro podporu transakcí OleTx.|  
+|Internet Information Services (IIS)|Povinné, pokud chcete použít službu IIS k hostování aplikace.|  
+|Aktivační služba procesů systému Windows (WAS)|Vyžadováno, pokud chcete použít k hostování aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Požadavky na systém](../../../docs/framework/wcf/wcf-system-requirements.md)
+- [Požadavky na systém](wcf-system-requirements.md)

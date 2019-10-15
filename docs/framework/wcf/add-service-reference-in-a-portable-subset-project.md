@@ -2,48 +2,48 @@
 title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: 92ee180da531259b005b5782c180a139fd66847b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 764ce487d8f2673eb2c75f8cd05da4ccbae3c935
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782418"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320841"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
-Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat stromu jednoho zdrojového kódu a sestavovací systém. současně podporuje více implementací rozhraní .NET (desktop, Silverlight, Windows Phone a XBOX). Projekty v přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít v jakékoli implementaci rozhraní .NET.  
+Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více implementací .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavením rozhraní .NET Framework, které lze použít v jakékoli implementaci rozhraní .NET.  
   
-## <a name="add-service-reference-details"></a>Přidat odkaz na podrobnosti služby  
- Při přidání odkazu na službu v přenosném dílčím projektu následující omezení se vynucují:  
+## <a name="add-service-reference-details"></a>Podrobnosti Přidat odkaz na službu  
+ Při přidávání odkazu na službu v přenositelné podmnožině projektu se vynutila následující omezení:  
   
-1. Pro <xref:System.Xml.Serialization.XmlSerializer>, jsou povoleny pouze literál kódování. Kódování SOAP k chybě při importu.  
+1. U <xref:System.Xml.Serialization.XmlSerializer> jsou povoleny pouze literální kódování. Kódování SOAP generují chybu během importu.  
   
-2. Pro služby, které používají <xref:System.Runtime.Serialization.DataContractSerializer> scénáře, dat je k dispozici náhradní smlouvy k zajištění, že znovu používané typy pocházejí pouze z přenosném dílčím.  
+2. Pro služby, které používají scénáře <xref:System.Runtime.Serialization.DataContractSerializer>, je k dispozici náhrada kontraktu dat, která zajistí, že se znovu používané typy předávají jenom z přenosné podmnožiny.  
   
-3. Koncové body, které jsou závislé na vazby není v přenosných knihovnách podporovány (všechny vazby s výjimkou <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> bez tok transakcí, spolehlivé relace nebo kódování MTOM a ekvivalentní vlastních vazeb) jsou ignorovány.  
+3. Koncové body, které spoléhají na vazby, nejsou v přenosných knihovnách podporovány (všechny vazby kromě <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> bez toku transakcí, spolehlivých relací nebo kódování MTOM a ekvivalentní vlastní vazby) se ignorují.  
   
-4. Záhlaví zprávy budou odstraněny z všechny popisy zpráv ve všech operacích před importem.  
+4. Před importem se odstraní záhlaví zpráv ze všech popisů zpráv ve všech operacích.  
   
-5. Atributy non-portable <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute>, a <xref:System.ServiceModel.TransactionFlowAttribute> se odeberou z kódu generovaného klienta proxy serveru.  
+5. Nepřenosné atributy <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute> a <xref:System.ServiceModel.TransactionFlowAttribute> jsou odebrány z generovaného klientského proxy kódu.  
   
-6. Vlastnosti non přenosná třída ProtectionLevel, SessionMode, IsInitiating a IsTerminating se odeberou z <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, a <xref:System.ServiceModel.FaultContractAttribute>.  
+6. Nepřenosné vlastnosti ProtectionLevel, SessionMode, IsInitiating a IsTerminating se odeberou z <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute> a <xref:System.ServiceModel.FaultContractAttribute>.  
   
-7. Všechny operace služby jsou generovány jako asynchronních operací v klientovi proxy.  
+7. Všechny operace služby jsou generovány jako asynchronní operace na klientském proxy serveru.  
   
-8. Konstruktory generovaného klienta, které používají typy nepřenosné se odeberou.  
+8. Vygenerované klientské konstruktory, které používají nepřenosné typy, se odeberou.  
   
-9. A <xref:System.Net.CookieContainer> instance je vystaven na generovaného klienta.  
+9. Na vygenerovaného klientovi je vystavená instance <xref:System.Net.CookieContainer>.  
   
-10. V horní části souboru identifikaci sestavení a verze generátor kódu je vložen komentář:`// This code was auto-generated by Microsoft.VisualStudio.Portable.AddServiceReference, version 1.0.0.0`  
+10. Komentář je vložen na začátek souboru, který identifikuje sestavení a verzi generátoru kódu: `// This code was auto-generated by Microsoft.VisualStudio.Portable.AddServiceReference, version 1.0.0.0`  
   
-11. <xref:System.Runtime.Serialization.ISerializable> Rozhraní není podporováno.  
+11. Rozhraní <xref:System.Runtime.Serialization.ISerializable> se nepodporuje.  
   
-12. Net.Tcp a PollingDuplex vazby nejsou podporovány.  
+12. Vazby NET. TCP a PollingDuplex se nepodporují.  
   
-13. <xref:System.Runtime.Serialization.DataContractSerializer> Se vždy použije pro chyby.  
+13. @No__t-0 bude vždy použito pro chyby.  
   
-14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> v přenosném dílčím projektů nepodporuje.  
+14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> není v přenosných podmnožinách projektů podporováno.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
+- [Přístup ke službám pomocí klienta WCF](accessing-services-using-a-wcf-client.md)
 - [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)

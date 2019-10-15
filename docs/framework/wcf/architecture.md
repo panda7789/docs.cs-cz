@@ -6,46 +6,46 @@ helpviewer_keywords:
 - WCF [WCF], architecture
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
-ms.openlocfilehash: b0e4f9af0ff84a8d560b332d227b1ba9ae18bd4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f34a05a436dd021f0d1fcc05f3a12a058123acdc
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782455"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320837"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
 Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communication Foundation (WCF).  
   
 ## <a name="wcf-architecture"></a>Architektura WCF  
- ![Architektura WCF](../../../docs/framework/wcf/media/wcf-architecture.gif "WCF_Architecture")  
+ (./media/wcf-architecture.gif "WCF_Architecture") ![architektury WCF]  
   
-### <a name="contracts-and-descriptions"></a>Popisy a kontrakty  
- Kontrakty definovat různé aspekty systému zprávy. Kontrakt dat popisuje každý parametr, který tvoří všechny zprávy, které můžete vytvořit nebo využívání služby. Zpráva parametry jsou definované ve schématu XML definice jazyk (XSD) dokumenty, povolení všechny systémy, které rozumí ke zpracování dokumentů XML. Kontrakt zprávy definuje části konkrétní zprávu přes protokoly protokolu SOAP a umožňuje citlivější kontrolu nad částí zprávy, když vzájemná funkční spolupráce se požadavky na takové přesnosti. Kontrakt služby určuje skutečné signatury služby a je distribuován jako rozhraní v jednom z podporovaných programovacích jazycích, jako je například Visual Basic nebo Visual C#.  
+### <a name="contracts-and-descriptions"></a>Smlouvy a popisy  
+ Smlouvy definují různé aspekty systému zpráv. Kontrakt dat popisuje všechny parametry, které tvoří každou zprávu, kterou může služba vytvořit nebo spotřebovat. Parametry zprávy jsou definovány dokumenty XSD (XML Schema Definition Language) a umožňují jakýmkoli systémům, které porozuměl XML ke zpracování dokumentů. Kontrakt zprávy definuje konkrétní části zprávy pomocí protokolů SOAP a umožňuje lepší kontrolu nad částmi zprávy, pokud interoperabilita takovou přesnost vyžaduje. Kontrakt služby určuje vlastní signatury metody služby a distribuuje se jako rozhraní v jednom z podporovaných programovacích jazyků, jako je Visual Basic nebo vizuál C#.  
   
- Zásady a vazby stanoví podmínky potřebné ke komunikaci se službou.  Například vazby (minimálně) zadejte přenosu použít (například HTTP nebo TCP) a kódování. Zásady zahrnovat požadavky na zabezpečení a jiných podmínek, které musí být splněny pro komunikaci se službou.  
+ Zásady a vazby stanoví podmínky, které jsou nutné ke komunikaci se službou.  Vazba například musí (minimálně) určovat použitý přenos (například HTTP nebo TCP) a kódování. Zásady zahrnují požadavky na zabezpečení a další podmínky, které musí být splněny ke komunikaci se službou.  
   
-### <a name="service-runtime"></a>Běh služby  
- Vrstva služby modulu runtime obsahuje chování, ke kterým dochází pouze během aktuální operace služby, to znamená, chování za běhu služby. Omezení ovládacích prvků zpracování počet zpráv, které lze měnit pokud požadavky na službu zvětšuje, aby přednastavený limit. K chybě chování Určuje, co se stane při interní dojde k chybě ve službě, například kontrolou, jaké informace se předává se do klienta. (Příliš mnoho informací můžete udělit uživateli se zlými úmysly výhodu v připojení k útoku.) Řídí chování metadat jak a jestli je k dispozici zvnějšku metadat. Instance chování Určuje, kolik instancí služby, můžete spustit (například jednotlivý prvek určuje jenom jednu instanci zpracovávat všechny zprávy). Chování při transakci umožňuje vrátit zpět změny provedené operace, pokud dojde k chybě. Chování odesílání je prvek zpracování zprávy infrastruktura WCF.  
+### <a name="service-runtime"></a>Modul runtime služby  
+ Vrstva runtime služby obsahuje chování, ke kterým dochází pouze během skutečné operace služby, tedy chování za běhu služby. Omezování řídí počet zpracovaných zpráv, což může být proměnlivé, pokud se poptávka po službě zvětší na přednastavený limit. Chování při chybě určuje, co se stane, když dojde k vnitřní chybě služby, například tím, že určíte, které informace se mají sdělit klientovi. (Příliš mnoho informací může uživateli se zlými úmysly poskytnout výhodu při připojení útoku.) Chování metadat určuje, jak a zda jsou metadata k dispozici vnějšímu světě. Chování instance Určuje, kolik instancí služby lze spustit (například typ singleton určuje pouze jednu instanci pro zpracování všech zpráv). Chování transakce umožňuje vrácení operací s podporou transakcí, pokud dojde k selhání. Chování při odeslání je ovládací prvek toho, jak je zpráva zpracována infrastrukturou WCF.  
   
- Rozšiřitelnost umožňuje přizpůsobit procesy modulu runtime. Například zpráva kontroly je zařízení ke kontrole části zpráv a parametr filtrování umožňuje předvolby akcí podle filtry na záhlaví zpráv.  
+ Rozšiřitelnost umožňuje přizpůsobení procesů modulu runtime. Například kontrola zprávy je zařízení pro kontrolu částí zprávy a filtrování parametrů umožňuje, aby probíhají přednastavené akce založené na filtrech pracujících v záhlavích zpráv.  
   
-### <a name="messaging"></a>Zasílání zpráv  
- Vrstva zasílání zpráv se skládá z *kanály*. Kanál je komponenta, která zpracovává zprávu nějakým způsobem, například pomocí ověřování zprávy. Sada kanály se taky říká *kanál zásobníku*. Kanály pracovat zprávy a záhlaví zpráv. Tím se liší od vrstva služby modulu runtime, která se týká hlavně o zpracování obsahu těla zprávy.  
+### <a name="messaging"></a>Messaging  
+ Vrstva zasílání zpráv se skládá z *kanálů*. Kanál je komponenta, která zpracovává zprávu nějakým způsobem, například ověřením zprávy. Sada kanálů je také známá jako *zásobník kanálů*. Kanály pracují se zprávami a záhlavími zpráv. To se liší od vrstvy runtime služby, která se primárně zabývá zpracováním obsahu těla zprávy.  
   
- Existují dva typy kanálů: přenosu kanálů a kanály protokolů.  
+ Existují dva typy kanálů: přenosové kanály a kanály protokolu.  
   
- Přenosové kanály čtení a zápis zpráv v síti (nebo některých jiných bod komunikace s vnějším světem). Některé přenosy pomocí kodéru pro převod zprávy (které jsou reprezentovány ve formě XML Infosets) a z reprezentace datového proudu bajtů používanou v síti. Přenosy jsou HTTP, pojmenované kanály, TCP a služby MSMQ. Příklady kódování jsou XML a optimalizovaného binárního souboru.  
+ Přenosové kanály čtou a zapisují zprávy ze sítě (nebo jiného komunikačního bodu s vnějším světem). Některé přenosy používají kodér k převodu zpráv (které jsou reprezentovány jako XML Infosets) do a z reprezentace bajtového datového proudu používaného sítí. Mezi kanály přenosů patří HTTP, Named Pipes, TCP a MSMQ. Příklady kódování jsou XML a optimalizované binární soubory.  
   
- Kanály protokolů implementovat protokoly zpracování zpráv, často čtením nebo zápisem další záhlaví ke zprávě. Příklady těchto protokolů: specifikace WS-Security a WS-spolehlivost.  
+ Kanály protokolu implementují protokoly zpracování zpráv, často čtou nebo zapisují další záhlaví do zprávy. Mezi příklady takových protokolů patří WS-Security a WS-spolehlivost.  
   
- Vrstvě zasílání zpráv znázorňuje možných formátů a vzory data systému exchange. WS-Security je implementace povolení zabezpečení ve vrstvě zpráva specifikace WS-Security. Zasílání zpráv WS-Reliable channel povolí záruky doručení zpráv. U kodérů nabízejí širokou škálu kódování, který můžete použít tak, aby vyhovoval potřebám zprávy. Kanál protokolu HTTP Určuje, že hypertextový přenosový protokol se používá pro doručení zpráv. Kanál TCP podobně Určuje protokol TCP. Kanál tok transakce se řídí počet zrušených zpracovaných zpráv vzory. Kanál s názvem umožňuje komunikaci mezi procesy. MSMQ – channel povolí interoperabilitu s aplikací služby MSMQ.  
+ Vrstva zasílání zpráv znázorňuje možné formáty a způsoby výměny dat. WS-Security je implementace specifikace WS-Security, která umožňuje zabezpečení ve vrstvě zpráv. Kanál pro zasílání zpráv WS-Reliable umožňuje záruku doručování zpráv. Kodéry prezentují různá kódování, která se dají použít k potřebě zprávy. Kanál HTTP určuje, že se HyperTextový přenosový protokol používá pro doručování zpráv. Kanál TCP podobně určuje protokol TCP. Kanál toku transakce určuje vzory transakčních zpráv. Kanál pojmenovaného kanálu umožňuje komunikaci mezi procesy. Kanál služby MSMQ umožňuje práci s aplikacemi služby MSMQ.  
   
 ### <a name="hosting-and-activation"></a>Hostování a aktivace  
- V posledním podobě služba je program. Podobně jako ostatní aplikace služba musí být spuštěna ve spustitelném souboru. Jedná se *samoobslužně* služby.  
+ V konečné podobě je služba programem. Podobně jako jiné programy musí být služba spuštěná ve spustitelném souboru. Tato služba se označuje jako *samoobslužná* služba.  
   
- Služby mohou také být *hostované*, nebo spustit v externí agenta, například IIS nebo aktivace služby Windows (WAS) spravuje spustitelný soubor. BYLA, byla aplikací WCF umožňuje automaticky aktivovat, když jsou nasazená v počítači se systémem. Služby můžete také ručně spustit jako spustitelné soubory (soubory .exe). Služby můžete také spustit automaticky jako služba Windows. Komponenty modelu COM + je rovněž možné hostovat jako služba WCF.  
+ Služby je také možné *hostovat*nebo spouštět ve spustitelném souboru spravovaném externím agentem, jako je služba IIS nebo aktivační služba systému Windows (WAS). BYLO povoleno automatické aktivace aplikací WCF při nasazení v počítači se systémem. Služby je také možné spustit ručně jako spustitelné soubory (soubory. exe). Službu lze také spustit automaticky jako službu systému Windows. Komponenty modelu COM+ je také možné hostovat jako služby WCF.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
+- [Co je Windows Communication Foundation](whats-wcf.md)
+- [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)

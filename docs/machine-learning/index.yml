@@ -10,12 +10,12 @@ metadata:
   author: natke
   ms.author: nakersha
   ms.date: 10/02/2019
-  ms.openlocfilehash: d31cdb8046444b88a132c63867f590d72e624382
-  ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+  ms.openlocfilehash: 4d9e3f78b02e7e95567dc9f025a1123966038770
+  ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/04/2019
-  ms.locfileid: "71957225"
+  ms.lasthandoff: 10/15/2019
+  ms.locfileid: "72320526"
 landingContent:
 - title: Základy ML.NET
   linkLists:
@@ -55,7 +55,7 @@ landingContent:
       url: tutorials/github-issue-classification.md
     - text: Klasifikace imagí pomocí TensorFlow (API)
       url: tutorials/image-classification.md
-    - text: Detekovat objekty v rozhraní API imagí)
+    - text: Detekovat objekty v obrázcích (rozhraní API)
       url: tutorials/object-detection-onnx.md
     - text: Detekovat anomálie v prodeji produktů (API)
       url: tutorials/sales-anomaly-detection.md

@@ -1,13 +1,13 @@
 ---
 title: Odkazové typy s možnou hodnotou null
-description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
+description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8,0. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: 213f0e3d9ad84628dab02a1dc483513783b2ad6e
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: a108c73064b40171a58df0796d4a0b75eddebbff
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699949"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319056"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -35,13 +35,11 @@ string? name;
 
 Jakákoli proměnná, kde `?` není připojená k názvu typu, je **odkazový typ, který nepovoluje hodnotu null**. Který zahrnuje všechny proměnné referenčního typu v existujícím kódu, když jste povolili tuto funkci.
 
-Kompilátor používá statickou analýzu k určení, zda odkaz s možnou hodnotou null je znám jako jiný než null. Kompilátor vás upozorní, pokud zrušíte odkaz na odkaz s možnou hodnotou null, pokud může mít hodnotu null. Toto chování můžete přepsat pomocí **operátoru null-striktní** `!` za názvem proměnné. Pokud například víte, že proměnná `name` není null, ale kompilátor vydá upozornění, můžete napsat následující kód pro přepsání analýzy kompilátoru:
+Kompilátor používá statickou analýzu k určení, zda odkaz s možnou hodnotou null je znám jako jiný než null. Kompilátor vás upozorní, pokud zrušíte odkaz na odkaz s možnou hodnotou null, pokud může mít hodnotu null. Toto chování můžete přepsat pomocí [operátoru null-striktní](language-reference/operators/null-forgiving.md) `!` za názvem proměnné. Pokud například víte, že proměnná `name` není null, ale kompilátor vydá upozornění, můžete napsat následující kód pro přepsání analýzy kompilátoru:
 
 ```csharp
 name!.Length;
 ```
-
-Podrobnosti o tomto operátoru si můžete přečíst v článku návrh specifikace [typů odkazů s možnou hodnotou null](../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md#the-null-forgiving-operator) na GitHubu.
 
 ## <a name="nullability-of-types"></a>Hodnota null typů
 
@@ -49,14 +47,14 @@ Jakýkoli typ odkazu může mít jednu ze čtyř *nullabilities*, která popisuj
 
 - Nelze zadat *hodnotu null*: proměnné tohoto typu nemohou být přiřazeny hodnoty null. Proměnné tohoto typu nemusejí být před zrušením odkazu zkontrolovány hodnotou null.
 - *Nullable*: proměnné tohoto typu mohou být přiřazeny hodnoty null. Přesměrování proměnných tohoto typu bez prvotní kontroly `null` způsobí upozornění.
-- *Oblivious*: Toto je starší nežC# 8 stavů. Proměnné tohoto typu se dají odkázat nebo se jim přiřazují bez upozornění.
+- *Oblivious*: Jedná se o stavC# 8,0. Proměnné tohoto typu se dají odkázat nebo se jim přiřazují bez upozornění.
 - *Neznámé*: to je všeobecně u parametrů typu, kde omezení neříká kompilátoru, že typ musí mít *hodnotu null nebo nemůže* být *null*.
 
 Hodnota null typu v deklaraci proměnné je řízena *kontextem s možnou hodnotou null* , ve kterém je proměnná deklarována.
 
 ## <a name="nullable-contexts"></a>Kontexty s možnou hodnotou null
 
-Kontexty s možnou hodnotou null umožňují detailní kontrolu způsobu, jakým kompilátor interpretuje proměnné referenčního typu. **Kontext poznámky s možnou hodnotou null** pro daný řádek zdroje je `enabled` nebo `disabled`. PředC# 8 kompilátorem si můžete představit jako zkompilování veškerého kódu v kontextu s možnou hodnotou null `disabled`: jakýkoli odkazový typ může mít hodnotu null. **Kontext upozornění s možnou hodnotou null** může být nastaven na `enabled` nebo `disabled`. Kontext upozornění s možnou hodnotou null určuje upozornění vygenerovaná kompilátorem pomocí analýzy toku.
+Kontexty s možnou hodnotou null umožňují detailní kontrolu způsobu, jakým kompilátor interpretuje proměnné referenčního typu. **Kontext poznámky s možnou hodnotou null** pro daný řádek zdroje je buď povolen, nebo zakázán. Můžete si představit kompilátor předC# 8,0, protože kompilujete veškerý kód v zakázaném kontextu s možnou hodnotou null: jakýkoli odkazový typ může mít hodnotu null. **Kontext upozornění s možnou hodnotou null** může být taky povolený nebo zakázaný. Kontext upozornění s možnou hodnotou null určuje upozornění vygenerovaná kompilátorem pomocí analýzy toku.
 
 Kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null lze nastavit pro projekt pomocí elementu `Nullable` v souboru *. csproj* . Tento prvek konfiguruje způsob, jakým kompilátor interpretuje hodnotu null typů a jaká upozornění jsou vygenerována. Platná nastavení jsou:
 
@@ -81,7 +79,7 @@ Můžete také použít direktivy pro nastavení stejných kontextů kdekoli v p
 - `#nullable enable annotations`: nastavte kontext anotace s možnou hodnotou null na **Enabled**.
 - `#nullable restore annotations`: obnoví kontext upozornění poznámky na nastavení projektu.
 
-Výchozí anotace s možnou hodnotou null a kontexty upozornění jsou `disabled`. Toto rozhodnutí znamená, že váš stávající kód se zkompiluje beze změn a bez generování nových upozornění.
+Ve výchozím nastavení jsou poznámky s možnou hodnotou null a kontexty upozornění **zakázané**. To znamená, že váš stávající kód se zkompiluje beze změn a bez generování nových upozornění.
 
 ## <a name="nullable-annotation-context"></a>Kontext anotace s možnou hodnotou null
 
@@ -110,10 +108,10 @@ Výstražný kontext s možnou hodnotou null je odlišný od kontextu anotace s 
 1. Proměnná byla jednoznačně přiřazena k hodnotě, která není null.
 1. Proměnná nebo výraz byly zkontrolovány proti hodnotě null před odkazem na ni.
 
-Kompilátor generuje upozornění pokaždé, když zrušíte odkaz na proměnnou nebo výraz v možném stavu s možnou hodnotou **null** , pokud je kontext upozornění Nullable `enabled`. Kromě toho jsou generována upozornění, když je **pravděpodobně null** proměnná nebo výraz přiřazen k neprázdnému typu odkazu, když je kontext anotace s možnou hodnotou null `enabled`.
+Kompilátor generuje upozornění pokaždé, když zrušíte odkaz na proměnnou nebo výraz v možném stavu s možnou hodnotou **null** , pokud je povolený kontext upozornění na hodnotu null. Kromě toho se generují upozornění, když je **pravděpodobně null** proměnná nebo výraz přiřazen k neprázdnému typu odkazu v povoleném kontextu s možnou hodnotou null.
 
-## <a name="learn-more"></a>Víc se uč
+## <a name="see-also"></a>Viz také:
 
-- [Koncept referenční specifikace s možnou hodnotou null](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Koncept specifikace typů odkazů s možnou hodnotou null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
 - [Kurz úvodu k odkazům s možnou hodnotou null](tutorials/nullable-reference-types.md)
 - [Migrace existujícího základu kódu na odkazy s možnou hodnotou null](tutorials/upgrade-to-nullable-references.md)

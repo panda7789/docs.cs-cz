@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: d3b24ef892e1fe3dd28fee4ce8fa44f7373c7c01
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 572537826074dd51b56f1cae9edb767708bc1c3d
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645482"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321023"
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
-Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je podle jejich nasazení do farmy s vyrovnáváním zatížení serveru. Aplikace WCF mohou být vyrovnávání zatížení pomocí standardní zátěže postupů, včetně nástroje pro vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows, stejně jako hardwarové zařízení Vyrovnávání zatížení.  
+Jedním ze způsobů, jak zvýšit kapacitu aplikací Windows Communication Foundation (WCF), je jejich horizontální navýšení kapacity jejich nasazením do serverové farmy s vyrovnáváním zatížení. Aplikace WCF je možné vyrovnávat zatížení pomocí standardních technik vyrovnávání zatížení, včetně softwarových nástrojů pro vyrovnávání zatížení, jako je například vyrovnávání zatížení sítě systému Windows a zařízení pro vyrovnávání zátěže na  
   
- Následující části popisují důležité informace týkající se aplikací služby WCF vytvořené pomocí různých vazeb poskytovaných systémem pro vyrovnávání zatížení.  
+ Následující části popisují požadavky na Vyrovnávání zatížení aplikací WCF sestavených pomocí různých vazeb poskytovaných systémem.  
   
-## <a name="load-balancing-with-the-basic-http-binding"></a>Vyrovnávání zatížení pomocí vazby Basic HTTP  
- Z pohledu Vyrovnávání zatížení, aplikací služby WCF, které komunikují pomocí <xref:System.ServiceModel.BasicHttpBinding> nejsou jiné než jiné běžné typy HTTP síťový provoz (statický obsah ve formátu HTML, stránky technologie ASP.NET nebo webovými službami ASMX). Kanály WCF, které tuto vazbu používají jsou ze své podstaty bezstavové a ukončit jejich připojení po zavření kanálu. V důsledku toho <xref:System.ServiceModel.BasicHttpBinding> dobře funguje s existujícím služby techniky Vyrovnávání zatížení protokolu HTTP.  
+## <a name="load-balancing-with-the-basic-http-binding"></a>Vyrovnávání zatížení pomocí základní vazby HTTP  
+ Z perspektivy vyrovnávání zatížení nejsou aplikace WCF, které komunikují pomocí <xref:System.ServiceModel.BasicHttpBinding>, jiné než jiné běžné typy síťového provozu HTTP (statický obsah HTML, stránky ASP.NET nebo webové služby ASMX). Kanály WCF, které používají tuto vazbu, jsou v podstatě bezstavové a ukončí jejich připojení při zavření kanálu. V takovém případě <xref:System.ServiceModel.BasicHttpBinding> dobře funguje s existujícími technikami vyrovnávání zatížení HTTP.  
   
- Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> pošle hlavičku připojení HTTP ve zprávách s `Keep-Alive` hodnotu, která umožňuje klientům navázat trvalé připojení ke službám, které je podporují. Tato konfigurace nabízí vyšší propustnost, protože dříve vytvořeno, že připojení lze znovu odeslat další zprávy na stejný server. Opakované použití připojení však může způsobit klientům stát asociován k určitému serveru ve farmě s vyrovnáváním zatížení, což snižuje efektivitu Vyrovnávání zatížení s kruhovým. Pokud toto chování nežádoucí, HTTP `Keep-Alive` na serveru pomocí se dají zakázat <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> vlastnost s <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelem definovaný <xref:System.ServiceModel.Channels.Binding>. Následující příklad ukazuje, jak to udělat pomocí konfigurace.  
+ Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> pošle hlavičku HTTP připojení ve zprávách s hodnotou `Keep-Alive`, která klientům umožňuje navázat trvalá připojení ke službám, které je podporují. Tato konfigurace nabízí rozšířenou propustnost, protože dříve vytvořená připojení je možné znovu použít k odeslání dalších zpráv na stejný server. Opakované použití připojení může ale způsobit, že se klienti budou silně přidružit k určitému serveru v rámci farmy s vyrovnáváním zatížení, což snižuje efektivitu vyrovnávání zatížení pomocí kruhového dotazování. Pokud je toto chování nežádoucí, HTTP `Keep-Alive` můžete na serveru zakázat pomocí vlastnosti <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> s <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelsky definovaným <xref:System.ServiceModel.Channels.Binding>. Následující příklad ukazuje, jak to provést pomocí konfigurace.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -56,7 +56,7 @@ Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundat
 </configuration>  
 ```  
   
- Pomocí zjednodušené konfigurace zavedený [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], stejné chování, můžete to provést pomocí následujících zjednodušená konfigurace.  
+ Pomocí zjednodušené konfigurace zavedené v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] je možné dosáhnout stejného chování pomocí následující zjednodušené konfigurace.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -77,20 +77,20 @@ Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundat
 </configuration>  
 ```  
   
- Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="load-balancing-with-the-wshttp-binding-and-the-wsdualhttp-binding"></a>Vyrovnávání zatížení pomocí vazby WSHttp a WSDualHttp vazby  
- Jak <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> může být s vyrovnáváním zatížení pomocí metod Vyrovnávání zatížení HTTP, pokud několik změn do výchozí vazby konfigurace.  
+## <a name="load-balancing-with-the-wshttp-binding-and-the-wsdualhttp-binding"></a>Vyrovnávání zatížení s vazbou WSHttp a vazbou WSDualHttp  
+ @No__t-0 i <xref:System.ServiceModel.WSDualHttpBinding> lze vyrovnávat zatížení pomocí technik vyrovnávání zatížení HTTP, který poskytuje několik úprav pro výchozí konfiguraci vazby.  
   
-- Vypněte zařízení kontext zabezpečení: To lze provést nastavením <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost <xref:System.ServiceModel.WSHttpBinding> k `false`. Případně, pokud relace zabezpečení vyžaduje, je možné použít stavová bezpečnostních relací, jak je popsáno v [zabezpečení relací](../../../docs/framework/wcf/feature-details/secure-sessions.md) tématu. Stavové bezpečnostních relací Povolit službě a zůstat bezstavové veškerý stav relace zabezpečení se přenášejí spolu s každou žádostí, jako součást tokenu zabezpečení ochrany. Všimněte si, že pokud chcete povolit relaci stavové zabezpečení, je nutné použít <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelem definovaný <xref:System.ServiceModel.Channels.Binding> jako nezbytné konfigurace nastavení nejsou přístupná na <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> , které jsou k dispozici v systému.  
+- Vypnutí vytváření kontextu zabezpečení: můžete to provést nastavením vlastnosti <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> v <xref:System.ServiceModel.WSHttpBinding> na `false`. Případně, pokud jsou vyžadovány relace zabezpečení, je možné použít stavové relace zabezpečení, jak je popsáno v tématu [zabezpečené relace](./feature-details/secure-sessions.md) . Stavové relace zabezpečení umožňují, aby služba zůstala Bezstavová, protože všechny stavy relace zabezpečení jsou přenášeny s každou žádostí jako součást tokenu zabezpečení ochrany. Počítejte s tím, že pokud chcete povolit stavovou relaci zabezpečení, je nutné použít <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelsky definované <xref:System.ServiceModel.Channels.Binding>, protože pro <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> poskytované systémem nejsou k dispozici potřebná nastavení konfigurace.  
   
-- Nepoužívejte spolehlivé relace. Tato funkce je ve výchozím nastavení vypnuta.  
+- Nepoužívejte spolehlivé relace. Tato funkce je ve výchozím nastavení vypnutá.  
   
-## <a name="load-balancing-the-nettcp-binding"></a>Vazba Net.TCP Vyrovnávání zatížení  
- <xref:System.ServiceModel.NetTcpBinding> Může být s vyrovnáváním zatížení pomocí techniky pro vyrovnávání zatížení vrstvy IP. Ale <xref:System.ServiceModel.NetTcpBinding> fondů připojení TCP ve výchozím nastavení ke snížení latence připojení. Toto je optimalizace, která dochází ke kolizím s základní mechanismus služby Vyrovnávání zatížení. Primární konfigurační hodnoty pro optimalizaci <xref:System.ServiceModel.NetTcpBinding> je časový limit zapůjčení, která je součástí nastavení fondu připojení. Sdružování připojení způsobí, že připojení klientů k přidružený k konkrétní servery ve farmě. Jako dobu života těchto připojení zvýšit (faktor, který řídí nastavení časového limitu zapůjčení), nevyvážené distribuci zatížení napříč různými servery ve farmě. Díky tomu průměr volání času zvyšuje. Ano, při použití <xref:System.ServiceModel.NetTcpBinding> ve scénářích s vyrovnáváním zatížení, zvažte snížení výchozí časový limit zapůjčení používá vazba. Časový limit 30 sekundách zapůjčení je rozumné výchozí bod pro scénáře s vyrovnáváním zatížení, přestože optimální hodnota závisí na aplikaci. Další informace o vypršení časového limitu zapůjčení kanálu a ostatní přenosové kvóty najdete v tématu [přenosové kvóty](../../../docs/framework/wcf/feature-details/transport-quotas.md).  
+## <a name="load-balancing-the-nettcp-binding"></a>Vyrovnávání zatížení vazby NET. TCP  
+ @No__t-0 se dá vyrovnávat zatížení pomocí technik vyrovnávání zatížení vrstvy IP. Ve výchozím nastavení však fondy <xref:System.ServiceModel.NetTcpBinding> odpojovat připojení TCP, aby se snížila latence připojení. Toto je optimalizace, která brání základnímu mechanismu vyrovnávání zatížení. Primární hodnota konfigurace pro optimalizaci <xref:System.ServiceModel.NetTcpBinding> je časový limit zapůjčení, který je součástí nastavení fondu připojení. Sdružování připojení způsobí, že se připojení klienta stanou přidružená ke konkrétním serverům v rámci farmy. Jak se prodlouží doba trvání těchto připojení (faktor řízený nastavením časový limit zapůjčení), bude distribuce zatížení napříč různými servery ve farmě nevyvážená. V důsledku toho se zvýší průměrná doba volání. Takže pokud používáte <xref:System.ServiceModel.NetTcpBinding> ve scénářích s vyrovnáváním zatížení, zvažte snížení výchozího časového limitu zapůjčení používaného vazbou. Časový limit zapůjčení je 30 sekund přiměřeným výchozím bodem pro scénáře s vyrovnáváním zatížení, i když optimální hodnota je závislá na aplikaci. Další informace o vypršení časového limitu zapůjčení kanálu a dalších přenosových kvót najdete v tématu [přenosové kvóty](./feature-details/transport-quotas.md).  
   
- Pro nejlepší výkon ve scénářích s vyrovnáváním zatížení, zvažte použití <xref:System.ServiceModel.NetTcpSecurity> (buď <xref:System.ServiceModel.SecurityMode.Transport> nebo <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>).  
+ Pro dosažení nejlepšího výkonu ve scénářích s vyrovnáváním zatížení zvažte použití <xref:System.ServiceModel.NetTcpSecurity> (buď <xref:System.ServiceModel.SecurityMode.Transport> nebo <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osvědčené postupy hostování Internetové informační služby](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+- [Osvědčené postupy hostování Internetové informační služby](./feature-details/internet-information-services-hosting-best-practices.md)

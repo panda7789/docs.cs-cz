@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 21a01c5d59d30ac89f6baa19dbcdcf718a1b7d88
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 01470bd7f317acca068b3c1be1c751e3050ee7e8
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834853"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320215"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí WCF můžete odesílat data jako asynchronní zprávy z jednoho koncového bodu služby do jiného. Koncový bod služby může být součástí nepřetržitě dostupné služby hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncovým bodem může být klient služby, která žádá o data z koncového bodu služby. Zprávy mohou být jednoduché jako jeden znak nebo Word odeslaný jako XML nebo jako datový proud binárních dat. Mezi několik ukázkových scénářů patří:
@@ -32,7 +32,7 @@ Při vytváření takových aplikací bylo možné ještě před existencí slu�
 
 ## <a name="features-of-wcf"></a>Funkce služby WCF
 
-WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [Podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).
+WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [Podrobnosti o funkcích WCF](./feature-details/index.md).
 
 - **Orientace služby**
 
@@ -40,15 +40,15 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
 - **Interoperabilita**
 
-     WCF implementuje moderní oborové standardy pro interoperabilitu webové služby. Další informace o podporovaných standardech najdete v tématu [interoperabilita and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).
+     WCF implementuje moderní oborové standardy pro interoperabilitu webové služby. Další informace o podporovaných standardech najdete v tématu [interoperabilita and Integration](./feature-details/interoperability-and-integration.md).
 
 - **Více vzorů zpráv**
 
-     Zprávy se vyměňují v jednom z několika vzorů. Nejběžnějším vzorem je vzor požadavků a odpovědí, kdy jeden koncový bod požaduje data z druhého koncového bodu. Druhý koncový bod odpoví. Existují i jiné způsoby, například jednosměrná zpráva, kdy jeden koncový bod odesílá zprávu bez nutnosti očekávat odpověď. Složitější vzor je duplexní vzorek, ve kterém dva koncové body navážou připojení a odesílají data zpátky a zpátky, podobně jako program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat různé vzory výměny zpráv pomocí WCF, najdete v tématu [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).
+     Zprávy se vyměňují v jednom z několika vzorů. Nejběžnějším vzorem je vzor požadavků a odpovědí, kdy jeden koncový bod požaduje data z druhého koncového bodu. Druhý koncový bod odpoví. Existují i jiné způsoby, například jednosměrná zpráva, kdy jeden koncový bod odesílá zprávu bez nutnosti očekávat odpověď. Složitější vzor je duplexní vzorek, ve kterém dva koncové body navážou připojení a odesílají data zpátky a zpátky, podobně jako program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat různé vzory výměny zpráv pomocí WCF, najdete v tématu [kontrakty](./feature-details/contracts.md).
 
 - **Metadata služby**
 
-     WCF podporuje publikování metadat služby pomocí formátů určených v oborových standardech, jako je WSDL, schéma XML a WS-Polica. Tato metadata lze použít k automatickému generování a konfiguraci klientů pro přístup ke službám WCF. Metadata se dají publikovat přes HTTP a HTTPS nebo pomocí standardu Exchange pro metadata webové služby. Další informace najdete v tématu [metadata](../../../docs/framework/wcf/feature-details/metadata.md).
+     WCF podporuje publikování metadat služby pomocí formátů určených v oborových standardech, jako je WSDL, schéma XML a WS-Polica. Tato metadata lze použít k automatickému generování a konfiguraci klientů pro přístup ke službám WCF. Metadata se dají publikovat přes HTTP a HTTPS nebo pomocí standardu Exchange pro metadata webové služby. Další informace najdete v tématu [metadata](./feature-details/metadata.md).
 
 - **Kontrakty dat**
 
@@ -56,23 +56,23 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
 - **Zabezpečení**
 
-     Zprávy mohou být zašifrovány pro ochranu osobních údajů a před povolením přijímání zpráv můžete vyžadovat, aby si uživatelé ověřili sami. Zabezpečení je možné implementovat pomocí dobře známých standardů, jako je SSL nebo WS-SecureConversation. Další informace najdete v tématu [zabezpečení](../../../docs/framework/wcf/feature-details/security.md).
+     Zprávy mohou být zašifrovány pro ochranu osobních údajů a před povolením přijímání zpráv můžete vyžadovat, aby si uživatelé ověřili sami. Zabezpečení je možné implementovat pomocí dobře známých standardů, jako je SSL nebo WS-SecureConversation. Další informace najdete v tématu [zabezpečení](./feature-details/security.md).
 
 - **Více přenosů a kódování**
 
-     Zprávy lze odesílat z několika integrovaných přenosových protokolů a kódování. Nejběžnější protokol a kódování je odesílat kódované zprávy protokolu SOAP pomocí protokolu HTTP (HyperText Transfer Protocol) pro použití na webu. Služba WCF také umožňuje odesílat zprávy přes protokol TCP, pojmenované kanály nebo službu MSMQ. Tyto zprávy lze kódovat jako text nebo pomocí optimalizovaného binárního formátu.  Binární data se dají efektivně odesílat pomocí standardu MTOM. Pokud žádný z poskytovaných přenosů nebo kódování nevyhovuje vašim potřebám, můžete vytvořit vlastní přenos nebo kódování. Další informace o přenosech a kódováních, které podporuje WCF, najdete v tématu [přenosy](../../../docs/framework/wcf/feature-details/transports.md).
+     Zprávy lze odesílat z několika integrovaných přenosových protokolů a kódování. Nejběžnější protokol a kódování je odesílat kódované zprávy protokolu SOAP pomocí protokolu HTTP (HyperText Transfer Protocol) pro použití na webu. Služba WCF také umožňuje odesílat zprávy přes protokol TCP, pojmenované kanály nebo službu MSMQ. Tyto zprávy lze kódovat jako text nebo pomocí optimalizovaného binárního formátu.  Binární data se dají efektivně odesílat pomocí standardu MTOM. Pokud žádný z poskytovaných přenosů nebo kódování nevyhovuje vašim potřebám, můžete vytvořit vlastní přenos nebo kódování. Další informace o přenosech a kódováních, které podporuje WCF, najdete v tématu [přenosy](./feature-details/transports.md).
 
 - **Spolehlivé zprávy a zprávy zařazené do fronty**
 
-     Služba WCF podporuje spolehlivé výměny zpráv pomocí spolehlivých relací implementovaných prostřednictvím zasílání zpráv WS-Reliable a pomocí služby MSMQ. Další informace o spolehlivé podpoře zasílání zpráv ve frontě v WCF najdete v tématu [fronty a spolehlivé relace](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).
+     Služba WCF podporuje spolehlivé výměny zpráv pomocí spolehlivých relací implementovaných prostřednictvím zasílání zpráv WS-Reliable a pomocí služby MSMQ. Další informace o spolehlivé podpoře zasílání zpráv ve frontě v WCF najdete v tématu [fronty a spolehlivé relace](./feature-details/queues-and-reliable-sessions.md).
 
 - **Trvalé zprávy**
 
-     Trvalá zpráva je ta, která se nikdy neztratila z důvodu přerušení komunikace. Zprávy ve vzoru odolné zprávy jsou vždy uloženy do databáze. Pokud dojde k přerušení, databáze vám umožní pokračovat v výměně zpráv při obnovení připojení. Můžete také vytvořit trvalé zprávy pomocí programovací model Windows Workflow Foundation (WF). Další informace najdete v tématu [služby pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).
+     Trvalá zpráva je ta, která se nikdy neztratila z důvodu přerušení komunikace. Zprávy ve vzoru odolné zprávy jsou vždy uloženy do databáze. Pokud dojde k přerušení, databáze vám umožní pokračovat v výměně zpráv při obnovení připojení. Můžete také vytvořit trvalé zprávy pomocí programovací model Windows Workflow Foundation (WF). Další informace najdete v tématu [služby pracovních postupů](./feature-details/workflow-services.md).
 
 - **Transakce**
 
-     WCF podporuje také transakce pomocí jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v oboru názvů <xref:System.Transactions> a Microsoft DTC (Distributed Transaction Coordinator). Další informace o podpoře transakcí v WCF najdete v tématu [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
+     WCF podporuje také transakce pomocí jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v oboru názvů <xref:System.Transactions> a Microsoft DTC (Distributed Transaction Coordinator). Další informace o podpoře transakcí v WCF najdete v tématu [transakce](./feature-details/transactions-in-wcf.md).
 
 - **Podpora AJAX a REST**
 
@@ -80,7 +80,7 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
 - **Rozšíření**
 
-     Architektura WCF má několik bodů rozšiřitelnosti. Pokud se vyžaduje další funkce, je k dispozici několik vstupních bodů, které vám umožní přizpůsobit chování služby. Další informace o dostupných bodech rozšiřitelnosti najdete v tématu [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).
+     Architektura WCF má několik bodů rozšiřitelnosti. Pokud se vyžaduje další funkce, je k dispozici několik vstupních bodů, které vám umožní přizpůsobit chování služby. Další informace o dostupných bodech rozšiřitelnosti najdete v tématu [rozšíření WCF](./extending/index.md).
 
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>Integrace WCF s dalšími technologiemi Microsoftu
 
@@ -97,10 +97,10 @@ Funkce hostování aplikačního serveru Windows serveru AppFabric jsou určené
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel>
-- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
-- [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)
-- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)
-- [Kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md)
-- [Průvodce dokumentací](../../../docs/framework/wcf/guide-to-the-documentation.md)
-- [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)
+- [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)
+- [Architektura Windows Communication Foundation](architecture.md)
+- [Pokyny a osvědčené postupy](guidelines-and-best-practices.md)
+- [Kurz Začínáme](getting-started-tutorial.md)
+- [Průvodce dokumentací](guide-to-the-documentation.md)
+- [Základní programování WCF](basic-wcf-programming.md)
 - [Ukázky Windows Communication Foundation](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)

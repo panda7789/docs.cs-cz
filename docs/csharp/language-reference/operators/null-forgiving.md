@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: cf941e5e3fa3fc6313ef8b2ff5c176aec68c1e6b
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 865e55a28e2f3db85d50a81f6ab29c354ee3c62a
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291723"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319098"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null – striktní) – operátorC# (Referenční dokumentace)
 
-K dispozici v C# 8,0 a novějším, unární přípona @no__t operátor-1 je operátor null-striktní. V povoleném [kontextu anotace s možnou hodnotou](../../nullable-references.md#nullable-annotation-context)null použijte operátor null-striktní k deklaraci, že výraz `x` typu odkazu není null: `x!`. Unární předpona `!` operátor je [logický operátor negace](boolean-logical-operators.md#logical-negation-operator-).
+K dispozici v C# 8,0 a novějším, unární přípona @no__t operátor-1 je operátor null-striktní. V povoleném [kontextu anotace s možnou hodnotou](../../nullable-references.md#nullable-annotation-context)null použijte operátor null-striktní k deklaraci, že výraz `x` typu odkazu není null: `x!`. Unární předpona `!` je operátor [logické negace](boolean-logical-operators.md#logical-negation-operator-).
 
 Operátor null-striktní nemá žádný vliv na dobu běhu. Ovlivňuje pouze analýzu statického toku kompilátoru změnou stavu null výrazu. V době běhu je výraz `x!` vyhodnocen jako výsledek podkladového výrazu `x`.
 
@@ -37,7 +37,7 @@ Operátor null-striktní můžete použít také v případě, že jednoznačně
 
 [!code-csharp[Use null-forgiving operator](~/samples/csharp/language-reference/operators/NullForgivingOperator.cs#UseNullForgiving)]
 
-Bez operátoru null-striktní kompilátor vygeneruje následující upozornění pro kód `p.Name`: `Warning CS8602: Dereference of a possibly null reference.`.
+Bez operátoru null-striktní kompilátor vygeneruje následující upozornění pro kód `p.Name`: `Warning CS8602: Dereference of a possibly null reference`.
 
 Pokud můžete upravit metodu `IsValid`, můžete použít atribut [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute) , aby kompilátor věděl, že argument metody `IsValid` nemůže být `null`, pokud metoda vrátí `true`:
 
@@ -45,8 +45,12 @@ Pokud můžete upravit metodu `IsValid`, můžete použít atribut [NotNullWhen]
 
 V předchozím příkladu nemusíte používat operátor null-striktní, protože kompilátor má dostatek informací, aby zjistil, že `p` nelze v příkazu `if` `null`. Další informace o atributech, které umožňují zadat další informace o stavu null proměnné, naleznete v tématu [upgrade rozhraní API s atributy pro definování očekávání null](../../nullable-attributes.md).
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace naleznete v části [operátor null-striktní](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md#the-null-forgiving-operator) v [konceptu specifikace typů odkazů s možnou hodnotou null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md).
+
+## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [C#logické](index.md)
+- [Operátory jazyka C#](index.md)
 - [Kurz: návrh s použitím typů odkazů s možnou hodnotou null](../../tutorials/nullable-reference-types.md)

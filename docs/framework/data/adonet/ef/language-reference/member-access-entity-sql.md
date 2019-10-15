@@ -2,19 +2,19 @@
 title: . (Přístup ke členu) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4733e3b2-3efa-4b96-b591-ac31350e96ad
-ms.openlocfilehash: 1db6be632da90eaa7a761bb213e395182ae42347
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8e63caba9e9efb91d5c4629b9da0b1feca905ace
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250298"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319652"
 ---
 # <a name="-member-access-entity-sql"></a>. (Přístup ke členu) (Entity SQL)
-Operátor tečka (.) je [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátor přístupu členů. Operátor přístupu členů slouží k získání hodnoty vlastnosti nebo pole instance strukturálního koncepčního modelu.  
+Operátor tečka (.) je operátor přístupu člena [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Operátor přístupu členů slouží k získání hodnoty vlastnosti nebo pole instance strukturálního koncepčního modelu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 expression.identifier  
 ```  
   

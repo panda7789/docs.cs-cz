@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Výpis všech uzlů ve stromu (Visual Basic)'
+title: 'Postupy: vypsání seznamu všech uzlů ve stromu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
-ms.openlocfilehash: 6576beaaed00905ce7a09f338251934ea375cb7e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c736f7e3a92e8aa92ac91ef4c32141128eff5db
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021619"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320554"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Postupy: Výpis všech uzlů ve stromu (Visual Basic)
-Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  
+# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Postupy: vypsání seznamu všech uzlů ve stromu (Visual Basic)
+Někdy je užitečné zobrazit seznam všech uzlů ve stromu. To může být užitečné při učení přesně o tom, jak metoda nebo vlastnost ovlivňuje strom. Jedním z přístupů k výpisu všech uzlů v textovém formuláři je vygenerování výrazu XPath, který přesně a konkrétně identifikuje libovolný uzel ve stromové struktuře.  
   
- Není velmi užitečné ke spuštění výrazů XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath jsou horší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou výrazně výkonnější. Nicméně jako způsob, jak identifikovat uzlů ve stromu XML, XPath funguje dobře.  
+ Není obzvláště užitečné spouštět výrazy XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath mají slabý výkon než dotazy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a dotazy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] jsou mnohem výkonnější. Nicméně jako způsob identifikace uzlů ve stromu XML funguje výraz XPath dobře.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje funkci s názvem `GetXPath` , který generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje odpovídající výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpony oboru názvů.  
+ Tento příklad ukazuje funkci nazvanou `GetXPath`, která generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje vhodné výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpon oboru názvů.  
   
- Příklad poté vytvoří malý stromu XML, který obsahuje příklad z několika typů uzlů. Pak Iteruje přes podřízených uzlů a vytiskne výraz XPath pro každý uzel.  
+ Příklad následně vytvoří malý strom XML, který obsahuje příklad několika typů uzlů. Poté provede iteraci podřízenými uzly a vytiskne výraz XPath pro každý uzel.  
   
- Můžete si všimnout, že deklarace XML není ve stromu na uzel.  
+ Všimněte si, že deklarace XML není uzel ve stromové struktuře.  
   
- Toto je soubor XML, který obsahuje několik typů uzlů:  
+ Níže je soubor XML, který obsahuje několik typů uzlů:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -37,9 +37,9 @@ Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užiteč
 </Root>  
 ```  
   
- Následuje seznam uzlů ve výše uvedené stromu XML, vyjádřené jako výrazy XPath:  
+ Následuje seznam uzlů ve výše uvedeném stromu XML, vyjádřené jako výrazy XPath:  
   
-```  
+```console
 /processing-instruction()  
 /Root  
 /Root/@AttName  
@@ -265,4 +265,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

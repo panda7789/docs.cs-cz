@@ -4,59 +4,59 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: 8449fe048cc9149e8e8cf02f27f131c0d90d6984
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 8c1e44609a0a20ffcec55af43e49ee62b0842378
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348197"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320762"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
-Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
+Vazby jsou objekty, které slouží k zadání podrobností o komunikaci, které jsou požadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod ve službě WCF vyžaduje, aby vazba byla dobře zadala. Toto téma popisuje typy informací o komunikaci, které definují vazby, prvky vazby, které vazby jsou součástí WCF a jak lze zadat vazbu pro koncový bod.  
   
-## <a name="what-a-binding-defines"></a>Co definuje vazbu  
- Informace v vazbu může být velmi základní nebo velmi složité. Základní vazby určuje pouze přenosový protokol (například HTTP), který se použije pro připojení ke koncovému bodu. Obecně platí informace, které obsahuje vazbu o tom, jak připojit ke koncovému bodu spadá do jedné z následujících kategorií:  
+## <a name="what-a-binding-defines"></a>Definice vazby  
+ Informace ve vazbě mohou být velmi základní nebo velmi složité. Většina základních vazeb určuje pouze transportní protokol (například HTTP), který se musí použít pro připojení ke koncovému bodu. Obecně platí, že informace a vazba obsahuje informace o tom, jak připojit ke koncovému bodu spadá do jedné z následujících kategorií:  
   
- **Protokoly**  
- Určuje mechanismus zabezpečení, který se používá: funkce spolehlivé zasílání zpráv nebo nastavení toku kontextu transakce.  
+ **Protokolů**  
+ Určuje mechanismus zabezpečení, který se používá: buď spolehlivé možnosti zasílání zpráv, nebo nastavení toku kontextu transakce.  
   
  **Kódování**  
- Určuje kódování zpráv (například text nebo binární).  
+ Určuje kódování zprávy (například text nebo binární).  
   
- **Přenos**  
- Určuje základní přenos protokol, který použít (například protokol TCP nebo HTTP).  
+ **Přepravu**  
+ Určuje podkladový transportní protokol, který se má použít (například TCP nebo HTTP).  
   
 ## <a name="the-elements-of-a-binding"></a>Prvky vazby  
- Vazbu v podstatě se skládá ze seřazené zásobníku vazby prvky, z nichž každý určuje součástí komunikační informace požadované pro připojení ke koncovému bodu služby. Dvě nejnižší vrstvy v zásobníku jsou povinné. Přímo nad tím je prvek, který obsahuje zprávu kódování specifikace základní zásobníku je element vazby přenosu. Volitelné vazby prvky, které určují komunikační protokoly jsou rozloženy do vrstev nad tyto dva požadované prvky. Další informace o těchto elementů vazby a správné řazení, naleznete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Vazba v podstatě sestává z uspořádaného zásobníku prvků vazby, z nichž každý určuje část informací o komunikaci požadovaných pro připojení ke koncovému bodu služby. Obě nejnižší vrstvy v zásobníku jsou nutné. V základu zásobníku je prvek vazby přenosu a těsně nad tímto prvkem, který obsahuje specifikace kódování zprávy. Volitelné prvky vazby, které určují jiné komunikační protokoly, jsou vrstveny nad těmito dvěma požadovanými prvky. Další informace o těchto prvcích vazby a jejich správném řazení naleznete v tématu [Custom Bindings](./extending/custom-bindings.md).  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
- Informace v vazbu může být složité a některá nastavení nemusí být kompatibilní s ostatními. Z tohoto důvodu WCF obsahuje sadu vazeb poskytovaných systémem. Tyto vazby jsou navržené tak, aby pokryl většinu požadavků aplikace. Následující třídy představují některé příklady vazeb poskytovaných systémem:  
+ Informace ve vazbě mohou být složité a některá nastavení nemusí být kompatibilní s ostatními. Z tohoto důvodu WCF zahrnuje sadu vazeb poskytovaných systémem. Tyto vazby jsou navržené tak, aby pokryly většinu požadavků na aplikace. Následující třídy znázorňují některé příklady vazeb poskytovaných systémem:  
   
-- <xref:System.ServiceModel.BasicHttpBinding>: Protokol HTTP vazby vhodné pro připojení k webovým službám, který odpovídá WS-I Basic Profile specification (například webové služby technologie ASP.NET na základě služby).  
+- <xref:System.ServiceModel.BasicHttpBinding>: vazba protokolu HTTP vhodná pro připojení k webovým službám, které odpovídají specifikaci profilu WS-I Basic (například služby založené na webových službách ASP.NET).  
   
-- <xref:System.ServiceModel.WSHttpBinding>: Interoperabilní vazbu vhodný pro připojení ke koncovým bodům, které odpovídají WS-* protokoly.  
+- <xref:System.ServiceModel.WSHttpBinding>: interoperabilní vazba vhodná pro připojení ke koncovým bodům, které odpovídají protokolům WS-*.  
   
-- <xref:System.ServiceModel.NetNamedPipeBinding>: Rozhraní .NET Framework používá pro připojení k jiné koncových bodů WCF na stejném počítači.  
+- <xref:System.ServiceModel.NetNamedPipeBinding>: používá .NET Framework k připojení k ostatním koncovým bodům WCF ve stejném počítači.  
   
-- <xref:System.ServiceModel.NetMsmqBinding>: Použití rozhraní .NET Framework pro vytváření zařazují do fronty zprávy připojení pomocí dalších koncových bodů WCF.  
+- <xref:System.ServiceModel.NetMsmqBinding>: používá .NET Framework k vytvoření připojení zpráv ve frontě s ostatními koncovými body WCF.  
 
-- <xref:System.ServiceModel.NetTcpBinding>: Tato vazba nabízí vyšší výkon než vazby protokolu HTTP a je ideální pro použití v místní síti.
+- <xref:System.ServiceModel.NetTcpBinding>: Tato vazba nabízí vyšší výkon než vazby HTTP a je ideální pro použití v místní síti.
   
- Úplný seznam najdete popisy všech WCF vazeb poskytovaných systémem, naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
+ Úplný seznam s popisy všech vazeb poskytovaných službou WCF najdete v tématu [vazby poskytované systémem](system-provided-bindings.md).  
   
-## <a name="using-your-own-bindings"></a>Použití vlastní vazby  
- Pokud žádný z vazeb poskytovaných systémem zahrnuté nemá správné kombinace funkce, které vyžaduje služby aplikace, můžete vytvořit vlastní vazby. Existují dva způsoby, jak to provést. Můžete vytvořit novou vazbu v dříve existujícím elementů vazby pomocí <xref:System.ServiceModel.Channels.CustomBinding> objektu nebo můžete vytvořit zcela uživatelem definované vazby odvozením z <xref:System.ServiceModel.Channels.Binding> vazby. Další informace o vytvoření vlastní vazby pomocí těchto dvou přístupů najdete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md) a [Creating User-Defined vazby](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
+## <a name="using-your-own-bindings"></a>Používání vlastních vazeb  
+ Pokud žádná z obsažených vazeb poskytnutých systémem nemá správnou kombinaci funkcí, které vyžaduje aplikace služby, můžete vytvořit vlastní vazbu. To můžete provést dvěma způsoby. Můžete buď vytvořit novou vazbu z již existujících elementů vazby pomocí objektu @no__t 0, nebo můžete vytvořit zcela definovanou vazbu odvozenou od vazby <xref:System.ServiceModel.Channels.Binding>. Další informace o vytváření vlastních vazeb pomocí těchto dvou přístupů najdete v tématech [vlastní vazby](./extending/custom-bindings.md) a [vytváření uživatelsky definovaných vazeb](./extending/creating-user-defined-bindings.md).  
   
-## <a name="using-bindings"></a>Používání vazeb  
- Používání vazeb zahrnuje dva základní kroky:  
+## <a name="using-bindings"></a>Použití vazeb  
+ Použití vazeb zahrnuje dva základní kroky:  
   
-1. Vyberte nebo definujících vazbu. Nejjednodušší způsob je zvolte jednu z vazeb poskytovaných systémem, který je součástí WCF a jeho použití s výchozím nastavením. Můžete také zvolit vazeb poskytovaných systémem a obnovit jeho hodnotám vlastností tak, aby vyhovoval vašim požadavkům. Alternativně můžete vytvořit vlastní vazby nebo vazbu definované uživatelem mají vyšší stupeň řízení a přizpůsobení.  
+1. Vyberte nebo definujte vazbu. Nejjednodušším způsobem je zvolit jednu ze systémových vazeb, které jsou součástí WCF, a použít je s jeho výchozím nastavením. Můžete také zvolit systémovou vazbu a obnovit její hodnoty vlastností tak, aby vyhovovaly vašim požadavkům. Alternativně můžete vytvořit vlastní vazbu nebo uživatelsky definovanou vazbu, která bude mít vyšší úroveň řízení a přizpůsobení.  
   
-2. Vytvoření koncového bodu, který používá vazbu vybrané nebo definované.  
+2. Vytvořte koncový bod, který používá vybranou nebo definovanou vazbu.  
   
-## <a name="code-and-configuration"></a>Kódu a konfigurace  
- Můžete definovat vazby dvěma způsoby: prostřednictvím kódu nebo konfigurace. Tyto dva přístupy nebyly závislé na tom, jestli používáte vazeb poskytovaných systémem nebo vlastní vazby. Obecně platí pomocí kódu vám plnou kontrolu nad definice vazby v době návrhu. Použití konfigurace, umožňuje na druhé straně může správce systému nebo uživatele služby WCF nebo klienta můžete změnit parametry vazby bez nutnosti znovu kompilovat aplikace služby. Díky této flexibilitě je často žádoucí, protože neexistuje žádný způsob, jak předvídat požadavky na konkrétní počítač, na kterých aplikace WCF je k nasazení. Vazba (a adresování) informace z kódu umožňuje změnit bez nutnosti rekompilace nebo opětovného nasazení aplikace. Všimněte si, že se po vazby zadaný v konfiguraci, umožňuje kódu definované vazby pro přepsání jakékoli konfigurace definované vazby vytvoří vazeb definovaných v kódu.  
+## <a name="code-and-configuration"></a>Kód a konfigurace  
+ Vazby můžete definovat dvěma způsoby: prostřednictvím kódu nebo prostřednictvím konfigurace. Tyto dva přístupy nezávisí na tom, zda používáte vazbu zadanou systémem nebo vlastní vazbou. Obecně platí, že použití kódu vám poskytne plnou kontrolu nad definicí vazby v době návrhu. Pomocí konfigurace na druhé straně umožňuje správce systému nebo uživateli služby nebo klienta WCF měnit parametry vazby bez nutnosti znovu kompilovat aplikaci služby. Tato flexibilita je často žádoucí, protože neexistuje žádný způsob, jak předpovědět konkrétní požadavky na počítač, na které se má nasadit aplikace WCF. Zachování informací o vazbě (a adresování) z kódu umožňuje jejich změnu bez nutnosti opětovné kompilace nebo opětovného nasazení aplikace. Všimněte si, že vazby definované v kódu jsou vytvořeny po vazbách určených v konfiguraci, což umožňuje, aby vazby definované kódem přepsaly jakékoli vazby definované konfigurací.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](using-bindings-to-configure-services-and-clients.md)

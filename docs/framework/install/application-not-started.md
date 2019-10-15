@@ -4,12 +4,12 @@ description: Přečtěte si, co dělat, když se zobrazí dialogové okno "Tato 
 author: rpetrusha
 ms.author: ronpet
 ms.date: 09/05/2019
-ms.openlocfilehash: 2534979e8dea886c2d7298c57e12b66d7a962c69
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 8fa8381f1b05445f259b4e4af5cc17fa487b2ce0
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401702"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319171"
 ---
 # <a name="troubleshooting-a-this-application-could-not-be-started-error-message"></a>Řešení potíží s chybovou zprávou "tuto aplikaci nebylo možné spustit"
 
@@ -50,10 +50,10 @@ Chcete-li tento problém vyřešit, abyste mohli spustit aplikaci, postupujte n�
    |Windows 8.1|[Modul runtime .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
    |Windows 8|[.NET Framework 4.6.1](https://www.microsoft.com/download/details.aspx?id=49981)|
    |Windows 7 SP1|[Modul runtime .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
-   |Windows Vista SP2|[.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130)|
+   |Windows Vista SP2|[.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=48130)|
 
    > [!NOTE]
-   >  .NET Framework 4,8 je předinstalována ve Windows 10 – 2019 aktualizace.
+   > .NET Framework 4,8 je předinstalována ve Windows 10 – 2019 aktualizace.
 
 1. Pokus o spuštění aplikace.
 

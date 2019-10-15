@@ -2,12 +2,12 @@
 title: Upgradovat rozhraní API s atributy pro definování očekávání null
 description: Tento článek vysvětluje podněty a techniky pro přidání popisných atributů k popisu nulového stavu argumentů a vrácených hodnot z rozhraní API.
 ms.date: 07/31/2019
-ms.openlocfilehash: fedd701fb7a3bcdff96fc1abc5451cc59c01f34f
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: c51ec81f77bb1d31168848d8d51e68a08965d42c
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291319"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319071"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
@@ -86,9 +86,9 @@ Pravidla pro vaše rozhraní API jsou pravděpodobně složitější, jak jste v
 - [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
 - [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
 - [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): argument `out` nebo `ref`, který nemůže mít hodnotu null, může mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): hodnota null `out` nebo `ref` nesmí mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud argument pro zadaný parametr není null.
 
 Předchozí popisy představují rychlý odkaz na to, co každý atribut dělá. Každá z následujících částí popisuje chování a lepší význam.
 
@@ -216,7 +216,7 @@ Nepodmíněné následné podmínky se zadává pomocí následujících atribut
 - [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
 - [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
 
-## <a name="specify-conditional-post-conditions-notnullwhen-and-maybenullwhen"></a>Zadejte podmíněné podmínky odeslání: `NotNullWhen` a `MaybeNullWhen`.
+## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Zadejte podmíněné podmínky odeslání: `NotNullWhen`, `MaybeNullWhen` a `NotNullIfNotNull`.
 
 Pravděpodobně jste obeznámeni s metodou `string` <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>. Tato metoda vrací `true`, pokud má argument hodnotu null nebo prázdný řetězec. Jedná se o podobu hodnoty null-check: volající nemusí mít hodnotu null. Pokud metoda vrátí hodnotu `false`, zaškrtnete argument. Chcete-li vytvořit metodu, jako je tato vlastnost s možnou hodnotou null, nastavte argument na typ s možnou hodnotou null a přidejte atribut `NotNullWhen`:
 
@@ -276,8 +276,8 @@ Pro návratovou hodnotu a argument byly oba poznámy s `?`, což značí, že by
 
 Podmíněný následné podmínky můžete zadat pomocí těchto atributů:
 
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): argument `out` nebo `ref`, který nemůže mít hodnotu null, může mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): hodnota null `out` nebo `ref` nesmí mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
 - [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.
 
 ## <a name="generic-definitions-and-nullability"></a>Obecné definice a možnost použití hodnoty null
@@ -300,6 +300,6 @@ Když aktualizujete knihovny pro kontext s možnou hodnotou null, přidejte tyto
 - [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
 - [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
 - [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): argument `out` nebo `ref`, který nemůže mít hodnotu null, může mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): hodnota null `out` nebo `ref` nesmí mít hodnotu null, Pokud vrácená hodnota splňuje podmínku.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou hodnotu `bool`.
 - [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.

@@ -2,19 +2,19 @@
 title: Konstruktor pojmenovaného typu (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
-ms.openlocfilehash: c7027614e5667acedb02d871a09df1ac9d799405
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f40adce1a9e031ed0b7cd5d03d9c63db255aa610
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250008"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319577"
 ---
 # <a name="named-type-constructor-entity-sql"></a>Konstruktor pojmenovaného typu (Entity SQL)
 Slouží k vytváření instancí nominálních typů konceptuálního modelu, jako je například entita nebo komplexní typy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 [{identifier. }] identifier( [expression [{, expression }]] )  
 ```  
   
@@ -31,7 +31,7 @@ Slouží k vytváření instancí nominálních typů konceptuálního modelu, j
 ## <a name="remarks"></a>Poznámky  
  Následující příklady znázorňují způsob konstrukce nominálních a komplexních typů:  
   
- Výraz níže vytvoří instanci `Person` typu:  
+ Výraz níže vytvoří instanci typu `Person`:  
   
  `Person("abc", 12)`  
   
@@ -47,16 +47,16 @@ Slouží k vytváření instancí nominálních typů konceptuálního modelu, j
   
  `MyModel.Person("Bill", MyModel.AddressInfo('My street address', 'Seattle', 'WA', MyModel.ZipCode('98118', '4567')))`  
   
- Následující příklad ukazuje, jak inicializovat vlastnost komplexního typu na hodnotu null:`MyModel.ZipCode(‘98118’, null)`  
+ Následující příklad ukazuje, jak inicializovat vlastnost komplexního typu na hodnotu null: `MyModel.ZipCode(‘98118’, null)`  
   
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá konstruktor pojmenovaného typu k vytvoření instance typu koncepčního modelu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
- [!code-csharp[DP EntityServices Concepts 2#NAMED_TYPE_CONSTRUCTOR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#named_type_constructor)]  
+ [!code-sql[DP EntityServices Concepts#NAMED_TYPE_CONSTRUCTOR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#named_type_constructor)]  
   
 ## <a name="see-also"></a>Viz také:
 

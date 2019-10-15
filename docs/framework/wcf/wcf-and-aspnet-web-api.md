@@ -2,31 +2,31 @@
 title: WCF a ASP.NET Web API
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
-ms.openlocfilehash: d805c09bef45932ba006a213343429ae7c9303df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 302415a67a953d157b0aee8aa126786d2d0c4e62
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791257"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320253"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
-WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Umožňuje vývojářům vytvářet zabezpečená, spolehlivá a počet řešení, které se integrují napříč platformami vzájemnou spolupráci se službami stávajících investic. [Rozhraní ASP.NET Web API](https://www.asp.net/web-api) je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
+WCF je jednotný programovací model Microsoftu pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet zabezpečená a spolehlivá řešení s podporou transakcí, která integrují napříč platformami a vzájemně spolupracují se stávajícími investicemi. [Webové rozhraní API ASP.NET](https://www.asp.net/web-api) je rozhraní, které usnadňuje sestavování služeb HTTP, které dosáhnou široké škály klientů, včetně prohlížečů a mobilních zařízení. Webové rozhraní API ASP.NET je ideální platformou pro sestavování aplikací RESTful na .NET Framework. V tomto tématu najdete pokyny, které vám pomůžou určit, která technologie bude nejlépe vyhovovat vašim potřebám.  
   
-## <a name="choosing-which-technology-to-use"></a>Výběr technologii, která má použít  
- Následující tabulka popisuje hlavní funkce každou technologii.  
+## <a name="choosing-which-technology-to-use"></a>Volba technologie, která se má použít  
+ Následující tabulka popisuje hlavní funkce jednotlivých technologií.  
   
 |WCF|Rozhraní API pro ASP.NET Web|  
 |---------|---------------------|  
-|Umožňuje vytváření služeb, které podporují víc protokolů přenosu (HTTP, TCP, UDP a vlastní přenosy) a umožňuje přepínání mezi nimi.|Jenom HTTP. Prvotřídní programovací model pro protokol HTTP. Vhodnější pro přístup z různých prohlížečů, mobilní zařízení, povolení etc široký dosah.|  
-|Umožňuje vytvářet služby, které podporují více kódování (Text, MTOM a binární) stejná zpráva typu a umožňuje přepínání mezi nimi.|Umožňuje vytvářet webová rozhraní API, které podporují celou řadu typů médií, včetně XML, JSON atd.|  
-|Podporuje vytváření služeb WS-* standardy, jako je spolehlivé zasílání zpráv, transakce, zabezpečení zpráv.|Používá základní protokol a formáty, jako jsou HTTP, protokoly Websocket, protokol SSL, JSON a XML. Není dostupná podpora pro protokoly vyšší úrovně, jako je například spolehlivé zasílání zpráv nebo transakce.|  
-|Podporuje požadavek-odpověď, jeden způsob, jak a duplexní způsoby zprávy exchange.|HTTP je požadavek/odpověď, ale další vzory mohou být podporovány prostřednictvím [SignalR](https://github.com/SignalR/SignalR) a integrace objekty Websocket.|  
-|Služby WCF SOAP lze popsat v jazyce WSDL umožňuje automatizované nástroje pro generování proxy klienta i pro služby s komplexní schémata.|Není k dispozici různé způsoby popisu webového rozhraní API od automaticky generované nápovědy stránku HTML s popisem fragmentů kódu s cílem strukturovaných metadat pro OData integrovaná rozhraní API.|  
-|Se dodává s rozhraním .NET framework.|Dodává se sadou .NET framework, ale je open source a je také k dispozici out-of-band jako nezávislé soubor ke stažení.|  
+|Umožňuje vytvářet služby, které podporují víc přenosových protokolů (HTTP, TCP, UDP a vlastní přenosy), a umožňuje mezi nimi přepínat.|Pouze HTTP. Model programování první třídy pro HTTP. Vhodnější pro přístup z různých prohlížečů, mobilních zařízení a umožnění širšího dosahu.|  
+|Umožňuje vytvářet služby, které podporují více kódování (text, MTOM a binární) stejného typu zprávy a umožňují přepínání mezi nimi.|Umožňuje sestavovat webová rozhraní API, která podporují širokou škálu typů médií, včetně XML, JSON atd.|  
+|Podporuje vytváření služeb s normami WS-*, jako jsou spolehlivé zasílání zpráv, transakcí a zabezpečení zpráv.|Používá základní protokoly a formáty jako HTTP, WebSockets, SSL, JSON a XML. Neexistují žádné podpory pro protokoly vyšší úrovně, jako jsou například spolehlivé zasílání zpráv nebo transakcí.|  
+|Podporuje vzorce požadavků a odpovědí, jednosměrné a duplexní výměnu zpráv.|HTTP je požadavek nebo odpověď, ale další vzory je možné podporovat prostřednictvím integrace [signálů](https://github.com/SignalR/SignalR) a WebSockets.|  
+|Služby WCF SOAP je možné popsány v tématu WSDL, což umožňuje automatizované nástroje pro generování proxy serverů klientů, a to i pro služby se složitými schématy.|Existuje mnoho způsobů, jak popsat webové rozhraní API v rozsahu od automaticky vygenerované stránky s nápovědu HTML popisující fragmenty do strukturovaných metadat pro integrovaná rozhraní API OData.|  
+|Dodává se s rozhraním .NET Framework.|Dodává se s rozhraním .NET Framework, ale je open source a je k dispozici mimo IP síť jako nezávislé stažení.|  
   
- Použijte k vytvoření spolehlivé a zabezpečené webové služby, které jsou přístupné přes celou řadu přenosy WCF. Použijte k vytvoření založené na protokolu HTTP služby, které jsou k dispozici v celé řadě klientských rozhraní ASP.NET Web API. Webové rozhraní API technologie ASP.NET použijte, pokud jsou vytvoření a návrh nové služby ve stylu REST. I když WCF poskytuje podporu pro psaní stylu REST služby, podpora pro REST v rozhraní ASP.NET Web API je kompletní a všechna budoucí vylepšení funkce REST budou k dispozici v rozhraní ASP.NET Web API. Pokud máte existující službu WCF a chcete zobrazit další koncové body REST, použijte WCF a <xref:System.ServiceModel.WebHttpBinding>.  
+ Využijte WCF k vytváření spolehlivých zabezpečených webových služeb, které jsou přístupné přes celou řadu přenosů. Pomocí webového rozhraní API ASP.NET můžete vytvářet služby založené na protokolu HTTP, které jsou přístupné z široké škály klientů. Pokud vytváříte a navrhujete nové služby ve stylu REST, použijte webové rozhraní API ASP.NET. I když služba WCF poskytuje podporu pro psaní služeb ve stylu REST, podpora REST ve webovém rozhraní API ASP.NET je dokončena a všechna budoucí vylepšení funkcí REST budou provedena ve webovém rozhraní API ASP.NET. Pokud máte existující službu WCF a chcete zpřístupnit další koncové body REST, použijte WCF a <xref:System.ServiceModel.WebHttpBinding>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
+- [Co je Windows Communication Foundation](whats-wcf.md)
+- [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)

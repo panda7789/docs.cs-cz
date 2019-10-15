@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23501575fb34f0291b3a6b795c197f45a86fd512
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 624814e40c361c30e251a9388f1444734a276c0a
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955973"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315868"
 ---
 # <a name="contributing"></a>Zvaní
 
@@ -42,7 +42,7 @@ Můžete si také vybrat z existujících problémů, pro které jsou příspěv
 
 - **Údržba**. Tato kategorie zahrnuje poměrně jednoduché příspěvky, jako je třeba oprava poškozených nebo nesprávných odkazů, přidávání chybějících příkladů kódu nebo adresování omezených problémů s obsahem. V některých případech mohou tyto problémy pobývat se velkým počtem souborů. V takovém případě byste měli sdělit, na co byste chtěli pracovat, než začnete.
 
-- **Aktualizace obsahu**. Vzhledem k enormity sady dokumentů se obsah snadno zastará a vyžaduje revizi. Kromě toho z různých důvodů byl nějaký obsah duplikován nebo dokonce triplicated. Aktualizace obsahu zahrnuje kontrolu aktuálnosti jednotlivých témat nebo revizi obsahu v oblasti funkcí, aby eliminace duplicit a zajistila zachování veškerého jedinečného obsahu v menší sadě dokumentace.
+- **Aktualizace obsahu**. Vzhledem k enormity sady dokumentů se obsah snadno zastará a vyžaduje revizi. Kromě toho z nejrůznějších důvodů byl nějaký obsah duplikován nebo dokonce triplicated. Aktualizace obsahu zahrnuje kontrolu aktuálnosti jednotlivých témat nebo revizi obsahu v oblasti funkcí, aby eliminace duplicit a zajistila zachování veškerého jedinečného obsahu v menší sadě dokumentace.
 
 - **Nový obsah**, který se vytváří. Pokud vás zajímá vytváření vlastního tématu, tato témata obsahují seznam problémů, které bychom chtěli přidat do naší sady dokumentů. Dejte nám prosím jistotu, než začnete pracovat na tématu, i když. Pokud vás zajímá psaní tématu, které tady není uvedené, otevřete problém.
 

@@ -2,12 +2,12 @@
 title: HORNÍ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4a4a0954-82e2-4eae-bcaf-7c4552f3532d
-ms.openlocfilehash: 8b55519b7f95deb6463af4c0a6a2a53975e5b5a2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 16be25336bac386c993eae7527c9377be1073d1e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248975"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319278"
 ---
 # <a name="top-entity-sql"></a>HORNÍ (Entity SQL)
 
@@ -15,17 +15,17 @@ Klauzule SELECT může mít volitelnou klauzuli TOP sub podle volitelného modif
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```sql
 [ TOP (n) ]
 ```
 
 ## <a name="arguments"></a>Arguments
 
-`n`Číselný výraz, který určuje počet vrácených řádků. `n`může být jeden numerický literál nebo jeden parametr.
+`n` číselný výraz, který určuje počet vrácených řádků. `n` může být jeden numerický literál nebo jeden parametr.
 
 ## <a name="remarks"></a>Poznámky
 
-Výraz TOP musí být buď jeden numerický literál, nebo jeden parametr. Je-li použit konstantní literál, musí být literální typ implicitně propagačním objektem EDM. Int64 (Byte, Int16, Int32 nebo Int64 nebo libovolný typ poskytovatele, který je namapován na typ, který je možné použít na EDM. Int64) a jeho hodnota musí být větší než nebo rovna nule. Jinak bude vyvolána výjimka. Pokud je parametr použit jako výraz, musí být typ parametru také implicitně propagačním objektem EDM. Int64, ale během kompilace nebude nijak ověřována skutečná hodnota parametru, protože hodnoty parametrů jsou zpožděny.
+Výraz TOP musí být buď jeden numerický literál, nebo jeden parametr. Je-li použit konstantní literál, musí být literální typ implicitně propagačním objektem EDM. Int64 (Byte, Int16, Int32 nebo Int64 nebo libovolný typ poskytovatele, který je namapován na typ, který je možné použít na EDM. Int64) a jeho hodnota musí být větší než nebo rovna nule. V opačném případě bude vyvolána výjimka. Pokud je parametr použit jako výraz, musí být typ parametru také implicitně propagačním objektem EDM. Int64, ale během kompilace nebude nijak ověřována skutečná hodnota parametru, protože hodnoty parametrů jsou zpožděny.
 
 Následuje příklad konstantního výrazu TOP:
 
@@ -43,13 +43,13 @@ Klauzule TOP není deterministické, pokud dotaz není seřazen. Pokud vyžaduje
 
 ## <a name="example"></a>Příklad
 
-Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz použije začátek k určení horního řádku, který se má vrátit z výsledku dotazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:
+Následující dotaz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá začátek k určení horního řádku, který se má vrátit z výsledku dotazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:
 
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).
 
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:
 
-    [!code-csharp[DP EntityServices Concepts 2#TOP](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#top)]
+    [!code-sql[DP EntityServices Concepts#TOP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#top)]
 
 ## <a name="see-also"></a>Viz také:
 

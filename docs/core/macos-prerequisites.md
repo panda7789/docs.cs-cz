@@ -4,13 +4,13 @@ description: Podporované verze macOS a závislosti rozhraní .NET Core pro výv
 author: thraka
 ms.author: adegeo
 ms.custom: updateeachvsrelease
-ms.date: 09/27/2019
-ms.openlocfilehash: 13eea0043be9cf5d5574d6b38f144853c22e8d07
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.date: 10/11/2019
+ms.openlocfilehash: 2d4fc0b37be08988440325db8b507124c36bf053
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591687"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318314"
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Předpoklady pro .NET Core v macOS
 
@@ -28,7 +28,7 @@ Stáhněte a nainstalujte .NET Core SDK na stránce [soubory ke stažení pro .N
 
 Seznam známých problémů najdete v tématu [známé problémy .NET Core](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-known-issues.md).
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22tabnetcore22"></a>[.NET Core 2,2](#tab/netcore22)
 
 .NET Core 2,2 se podporuje na **MacOS Sierra (verze 10,12)** a novějších verzích. Je vyžadována architektura procesoru **x64** .
 
@@ -46,6 +46,17 @@ Seznam známých problémů najdete v tématu [známé problémy .NET Core](http
 
 ---
 
-## <a name="visual-studio-for-mac"></a>Visual Studio pro Mac
+## <a name="libgdiplus"></a>libgdiplus
+
+Aplikace .NET Core, které používají *System. Drawing. Common* Assembly, vyžadují, aby bylo možné nainstalovat libgdiplus.
+
+Snadný způsob, jak získat libgdiplus, je použít Správce balíčků [homebrew ("Brew")](https://brew.sh/) pro MacOS. Po instalaci *Brew*nainstalujte libgdiplus spuštěním následujících příkazů na příkazovém řádku terminálu (Command):
+
+```console
+brew update
+brew install libgdiplus
+```
+
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 K vývoji aplikací .NET Core pomocí .NET Core SDK můžete použít libovolný editor. Pokud ale chcete vyvíjet aplikace .NET Core na Macu v integrovaném vývojovém prostředí, můžete použít [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link).
