@@ -3,6 +3,8 @@
 - name: Přehled
   expanded: true
   items:
+    - name: Co je Apache Spark?
+      href: what-is-spark.md
     - name: Co je .NET for Apache Spark?
       href: what-is-apache-spark-dotnet.md
 - name: Kurzy

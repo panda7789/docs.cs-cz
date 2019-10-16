@@ -1,0 +1,1419 @@
+- name: Průvodce Visual Basicem
+  href: index.md
+- name: Co je nového v jazyce Visual Basic
+  href: getting-started/whats-new.md
+- name: Začínáme
+  href: getting-started/index.md
+  items:
+    - name: Zásadní změny v jazyce Visual Basic v sadě Visual Studio
+      href: getting-started/breaking-changes-in-visual-studio.md
+    - name: 'Další zdroje informací pro programátory, kteří používají Visual Basic'
+      href: getting-started/additional-resources.md
+- name: Vývoj aplikací
+  href: developing-apps/index.md
+  items:
+    - name: "Programování v\_jazyce Visual Basic"
+      href: developing-apps/programming/index.md
+      items:
+        - name: "Přístup k\_prostředkům počítače"
+          href: developing-apps/programming/computer-resources/index.md
+        - name: "Protokolování informací z\_aplikace"
+          href: developing-apps/programming/log-info/index.md
+        - name: Přístup k uživatelským datům
+          href: developing-apps/programming/accessing-user-data.md
+        - name: "Přístup k\_formulářům aplikace"
+          href: developing-apps/programming/accessing-application-forms.md
+        - name: "Přístup k\_aplikačním webovým službám"
+          href: developing-apps/programming/accessing-application-web-services.md
+          items:
+            - name: 'Postupy: Asynchronní volání webové služby'
+              href: developing-apps/programming/how-to-call-a-web-service-asynchronously.md
+        - name: "Přístup k\_nastavení aplikace"
+          href: developing-apps/programming/app-settings/index.md
+        - name: 'Zpracování jednotek, adresářů a souborů'
+          href: developing-apps/programming/drives-directories-files/processing.md
+    - name: "Vývoj s\_použitím oboru názvů My"
+      href: developing-apps/development-with-my/index.md
+      items:
+        - name: "Provádění úloh s\_objekty My.Application, My.Computer a My.User"
+          href: developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md
+        - name: Výchozí instance objektů poskytované třídami My.Forms a My.WebServices
+          href: developing-apps/development-with-my/default-object-instances-provided-by-my-forms-and-my-webservices.md
+        - name: "Rychlý vývoj aplikací s\_použitím objektů My.Resources a My.Settings"
+          href: developing-apps/development-with-my/rapid-application-development-with-my-resources-and-my-settings.md
+        - name: Přehled aplikačního modelu jazyka Visual Basic
+          href: developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md
+        - name: Závislost oboru názvů My na typu projektu
+          href: developing-apps/development-with-my/how-my-depends-on-project-type.md
+    - name: "Přístup k\_datům"
+      href: developing-apps/accessing-data.md
+    - name: "Vytváření a\_používání komponent"
+      href: developing-apps/creating-and-using-components.md
+    - name: Základy formulářové aplikace Windows
+      href: developing-apps/windows-forms/index.md
+    - name: "Přizpůsobení projektů a rozšíření oboru názvů My v\_jazyce Visual Basic"
+      href: developing-apps/customizing-extending-my/index.md
+      items:
+        - name: Rozšíření oboru názvů My
+          href: developing-apps/customizing-extending-my/extending-the-my-namespace.md
+        - name: Balení a nasazení vlastních rozšíření oboru názvů My
+          href: developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md
+        - name: Rozšíření aplikačního modelu jazyka Visual Basic
+          href: developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md
+        - name: "Přizpůsobení výběru objektů dostupných v\_oboru názvů My"
+          href: developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md
+- name: Koncepty programování
+  href: programming-guide/concepts/index.md
+  items:
+    - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
+      href: programming-guide/concepts/async/index.md
+    - name: Atributy
+      href: programming-guide/concepts/attributes/index.md
+    - name: Informace o volajícím
+      href: programming-guide/concepts/caller-information.md
+    - name: Kolekce
+      href: programming-guide/concepts/collections.md
+    - name: Kovariance a kontravariance
+      href: programming-guide/concepts/covariance-contravariance/index.md
+    - name: Stromy výrazů
+      href: programming-guide/concepts/expression-trees/index.md
+    - name: Iterátory
+      href: programming-guide/concepts/iterators.md
+    - name: LINQ (Language-Integrated Query)
+      href: programming-guide/concepts/linq/index.md
+    - name: Objektově orientované programování
+      href: programming-guide/concepts/object-oriented-programming.md
+    - name: Reflexe
+      href: programming-guide/concepts/reflection.md
+    - name: Serializace
+      href: programming-guide/concepts/serialization/index.md
+- name: Struktura programu a pravidla týkající se kódu
+  href: programming-guide/program-structure/program-structure-and-code-conventions.md
+  items:
+    - name: Struktura programu
+      href: programming-guide/program-structure/structure-of-a-visual-basic-program.md
+    - name: Procedura Main
+      href: programming-guide/program-structure/main-procedure.md
+    - name: Odkazy a příkaz Imports
+      href: programming-guide/program-structure/references-and-the-imports-statement.md
+    - name: Jmenné prostory
+      href: programming-guide/program-structure/namespaces.md
+    - name: Konvence vytváření názvů
+      href: programming-guide/program-structure/naming-conventions.md
+    - name: Konvence kódování
+      href: programming-guide/program-structure/coding-conventions.md
+    - name: Podmíněná kompilace
+      href: programming-guide/program-structure/conditional-compilation.md
+    - name: 'Postupy: Přerušení a kombinování příkazů v kódu'
+      href: programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md
+    - name: 'Postupy: Sbalení a skrytí sekcí kódu'
+      href: programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md
+    - name: 'Postupy: Vytváření popisků příkazů'
+      href: programming-guide/program-structure/how-to-label-statements.md
+    - name: Speciální znaky v kódu
+      href: programming-guide/program-structure/special-characters-in-code.md
+    - name: Komentáře v kódu
+      href: programming-guide/program-structure/comments-in-code.md
+    - name: Klíčová slova jako názvy elementů v kódu
+      href: programming-guide/program-structure/keywords-as-element-names-in-code.md
+    - name: 'Me, My, MyBase a MyClass'
+      href: programming-guide/program-structure/me-my-mybase-and-myclass.md
+    - name: Omezení
+      href: programming-guide/program-structure/limitations.md
+- name: 'kompatibility značek (mc:)'
+  href: programming-guide/language-features/index.md
+  items:
+    - name: Pole
+      href: programming-guide/language-features/arrays/index.md
+    - name: Inicializátory kolekcí
+      href: programming-guide/language-features/collection-initializers/index.md
+    - name: Konstanty a výčty
+      href: programming-guide/language-features/constants-enums/index.md
+    - name: Tok řízení
+      href: programming-guide/language-features/control-flow/index.md
+    - name: Datové typy
+      href: programming-guide/language-features/data-types/index.md
+      items:
+        - name: Znaky typu
+          href: programming-guide/language-features/data-types/type-characters.md
+        - name: Základní datové typy
+          href: programming-guide/language-features/data-types/elementary-data-types.md
+          items:
+            - name: Číselné datové typy
+              href: programming-guide/language-features/data-types/numeric-data-types.md
+            - name: Znakové datové typy
+              href: programming-guide/language-features/data-types/character-data-types.md
+            - name: Různé datové typy
+              href: programming-guide/language-features/data-types/miscellaneous-data-types.md
+        - name: Složené datové typy
+          href: programming-guide/language-features/data-types/composite-data-types.md
+          items:
+            - name: 'Postupy: Uchování více než jedné hodnoty v proměnné'
+              href: programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md
+        - name: Obecné typy
+          href: programming-guide/language-features/data-types/generic-types.md
+          items:
+            - name: 'Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy'
+              href: programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md
+            - name: 'Postupy: Použití obecné třídy'
+              href: programming-guide/language-features/data-types/how-to-use-a-generic-class.md
+        - name: Obecné procedury
+          href: programming-guide/language-features/data-types/generic-procedures.md
+        - name: Typy hodnot s povolenou hodnotou Null
+          href: programming-guide/language-features/data-types/nullable-value-types.md
+        - name: Typy hodnot a typy odkazu
+          href: programming-guide/language-features/data-types/value-types-and-reference-types.md
+        - name: Převody typu
+          href: programming-guide/language-features/data-types/type-conversions.md
+          items:
+            - name: Rozšíření a zúžení převodů
+              href: programming-guide/language-features/data-types/widening-and-narrowing-conversions.md
+            - name: Implicitní a explicitní převody
+              href: programming-guide/language-features/data-types/implicit-and-explicit-conversions.md
+            - name: Převody mezi řetězci a ostatními typy
+              href: programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md
+            - name: 'Postupy: Převedení objektu na jiný typ'
+              href: programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md
+            - name: Převody polí
+              href: programming-guide/language-features/data-types/array-conversions.md
+        - name: Struktury
+          href: programming-guide/language-features/data-types/structures.md
+          items:
+            - name: 'Postupy: Deklarace struktury'
+              href: programming-guide/language-features/data-types/how-to-declare-a-structure.md
+            - name: Proměnné struktury
+              href: programming-guide/language-features/data-types/structure-variables.md
+            - name: Struktury a ostatní programovací elementy
+              href: programming-guide/language-features/data-types/structures-and-other-programming-elements.md
+            - name: Struktury a třídy
+              href: programming-guide/language-features/data-types/structures-and-classes.md
+        - name: N-tice
+          href: programming-guide/language-features/data-types/tuples.md
+        - name: Účinné používání datových typů
+          href: programming-guide/language-features/data-types/efficient-use-of-data-types.md
+        - name: Řešení potíží s datovými typy
+          href: programming-guide/language-features/data-types/troubleshooting-data-types.md
+    - name: Deklarované elementy
+      href: programming-guide/language-features/declared-elements/index.md
+    - name: Delegáty
+      href: programming-guide/language-features/delegates/index.md
+    - name: Statické a pozdní vazby
+      href: programming-guide/language-features/early-late-binding/index.md
+    - name: Typy chyb
+      href: programming-guide/language-features/error-types.md
+    - name: Události
+      href: programming-guide/language-features/events/index.md
+    - name: Rozhraní
+      href: programming-guide/language-features/interfaces/index.md
+      items:
+        - name: 'Návod: Vytvoření a implementace rozhraní'
+          href: programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md
+    - name: LINQ
+      href: programming-guide/language-features/linq/index.md
+    - name: Objekty a třídy
+      href: programming-guide/language-features/objects-and-classes/index.md
+    - name: Operátory a výrazy
+      href: programming-guide/language-features/operators-and-expressions/index.md
+    - name: Procedury
+      href: programming-guide/language-features/procedures/index.md
+    - name: Příkazy
+      href: programming-guide/language-features/statements.md
+    - name: Řetězce
+      href: programming-guide/language-features/strings/index.md
+    - name: Proměnné
+      href: programming-guide/language-features/variables/index.md
+    - name: XML
+      href: programming-guide/language-features/xml/index.md
+- name: Zprostředkovatel komunikace s objekty COM
+  href: programming-guide/com-interop/index.md
+  items:
+    - name: Představení zprostředkovatele komunikace s objekty COM
+      href: programming-guide/com-interop/introduction-to-com-interop.md
+    - name: 'Postupy: Odkaz na objekty COM'
+      href: programming-guide/com-interop/how-to-reference-com-objects.md
+    - name: 'Postupy: Práce s ovládacími prvky ActiveX'
+      href: programming-guide/com-interop/how-to-work-with-activex-controls.md
+    - name: 'Návod: Volání rozhraní API systému Windows'
+      href: programming-guide/com-interop/walkthrough-calling-windows-apis.md
+    - name: 'Postupy: Volání rozhraní API systému Windows'
+      href: programming-guide/com-interop/how-to-call-windows-apis.md
+    - name: 'Postupy: Volání funkce Windows, která přebírá typy bez znaménka'
+      href: programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md
+    - name: 'Návod: Vytváření objektů COM'
+      href: programming-guide/com-interop/walkthrough-creating-com-objects.md
+    - name: Řešení potíží s interoperabilitou
+      href: programming-guide/com-interop/troubleshooting-interoperability.md
+    - name: Interoperabilita modelů COM v aplikacích .NET Framework
+      href: programming-guide/com-interop/com-interoperability-in-net-framework-applications.md
+    - name: 'Návod: Implementace dědičnosti pomocí objektů COM'
+      href: programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md
+- name: Referenční dokumentace jazyka
+  href: language-reference/index.md
+  items:
+    - name: Konfigurace verze jazyka
+      href: language-reference/configure-language-version.md
+    - name: Typografická pravidla a pravidla vytváření kódu
+      href: language-reference/typographic-and-code-conventions.md
+    - name: Členové knihovny prostředí Runtime jazyka Visual Basic
+      href: language-reference/runtime-library-members.md
+    - name: Klíčová slova
+      href: language-reference/keywords/index.md
+      items:
+        - name: Souhrn polí
+          href: language-reference/keywords/arrays-summary.md
+        - name: Souhrn objektů kolekce
+          href: language-reference/keywords/collection-object-summary.md
+        - name: Souhrn toku řízení
+          href: language-reference/keywords/control-flow-summary.md
+        - name: Souhrn převodu
+          href: language-reference/keywords/conversion-summary.md
+        - name: Souhrn datových typů
+          href: language-reference/keywords/data-types-summary.md
+        - name: Souhrn dat a časů
+          href: language-reference/keywords/dates-and-times-summary.md
+        - name: Souhrn deklarací a konstant
+          href: language-reference/keywords/declarations-and-constants-summary.md
+        - name: Souhrn adresářů a souborů
+          href: language-reference/keywords/directories-and-files-summary.md
+        - name: Souhrn chyb
+          href: language-reference/keywords/errors-summary.md
+        - name: Finanční souhrn
+          href: language-reference/keywords/financial-summary.md
+        - name: Souhrn informací a interakce
+          href: language-reference/keywords/information-and-interaction-summary.md
+        - name: Souhrn vstupu a výstup
+          href: language-reference/keywords/input-and-output-summary.md
+        - name: Matematický souhrn
+          href: language-reference/keywords/math-summary.md
+          items:
+            - name: Derivované matematické funkce
+              href: language-reference/keywords/derived-math-functions.md
+        - name: Referenční informace k funkci My
+          href: language-reference/keywords/my-reference.md
+        - name: Souhrn operátorů
+          href: language-reference/keywords/operators-summary.md
+        - name: Souhrn registru
+          href: language-reference/keywords/registry-summary.md
+        - name: Souhrn manipulace s řetězci
+          href: language-reference/keywords/string-manipulation-summary.md
+    - name: Atributy
+      href: language-reference/attributes.md
+    - name: Konstanty a výčty
+      href: language-reference/constants-and-enumerations.md
+    - name: Souhrn datových typů
+      href: language-reference/data-types/index.md
+      items:
+        - name: Boolean – datový typ
+          href: language-reference/data-types/boolean-data-type.md
+        - name: Byte – datový typ
+          href: language-reference/data-types/byte-data-type.md
+        - name: Char – datový typ
+          href: language-reference/data-types/char-data-type.md
+        - name: Date – datový typ
+          href: language-reference/data-types/date-data-type.md
+        - name: Decimal – datový typ
+          href: language-reference/data-types/decimal-data-type.md
+        - name: Double – datový typ
+          href: language-reference/data-types/double-data-type.md
+        - name: Integer – datový typ
+          href: language-reference/data-types/integer-data-type.md
+        - name: Long – datový typ
+          href: language-reference/data-types/long-data-type.md
+        - name: Datový typ objektu
+          href: language-reference/data-types/object-data-type.md
+        - name: SByte – datový typ
+          href: language-reference/data-types/sbyte-data-type.md
+        - name: Short – datový typ
+          href: language-reference/data-types/short-data-type.md
+        - name: Single – datový typ
+          href: language-reference/data-types/single-data-type.md
+        - name: Datový typ String
+          href: language-reference/data-types/string-data-type.md
+        - name: UInteger – datový typ
+          href: language-reference/data-types/uinteger-data-type.md
+        - name: ULong – datový typ
+          href: language-reference/data-types/ulong-data-type.md
+        - name: Uživatelský datový typ
+          href: language-reference/data-types/user-defined-data-type.md
+        - name: UShort – datový typ
+          href: language-reference/data-types/ushort-data-type.md
+    - name: Direktivy
+      href: language-reference/directives/index.md
+      items:
+        - name: '#Const – direktiva'
+          href: language-reference/directives/const-directive.md
+        - name: '#ExternalSource – direktiva'
+          href: language-reference/directives/externalsource-directive.md
+        - name: '#If...Then...#Else – direktivy'
+          href: language-reference/directives/if-then-else-directives.md
+        - name: '#Region – direktiva'
+          href: language-reference/directives/region-directive.md
+    - name: Funkce
+      href: language-reference/functions/index.md
+      items:
+        - name: Převodní funkce
+          href: language-reference/functions/conversion-functions.md
+        - name: Matematické funkce
+          href: language-reference/functions/math-functions.md
+        - name: Funkce řetězce
+          href: language-reference/functions/string-functions.md
+        - name: Funkce pro převod typů
+          href: language-reference/functions/type-conversion-functions.md
+          items:
+            - name: Návratové hodnoty pro funkci CStr
+              href: language-reference/functions/return-values-for-the-cstr-function.md
+        - name: CType – funkce
+          href: language-reference/functions/ctype-function.md
+    - name: Modifikátory
+      href: language-reference/modifiers/index.md
+      items:
+        - name: Ansi
+          href: language-reference/modifiers/ansi.md
+        - name: Assembly
+          href: language-reference/modifiers/assembly.md
+        - name: Async
+          href: language-reference/modifiers/async.md
+        - name: Auto
+          href: language-reference/modifiers/auto.md
+        - name: ByRef
+          href: language-reference/modifiers/byref.md
+        - name: ByVal
+          href: language-reference/modifiers/byval.md
+        - name: Výchozí
+          href: language-reference/modifiers/default.md
+        - name: Friend
+          href: language-reference/modifiers/friend.md
+        - name: In (generický modifikátor)
+          href: language-reference/modifiers/in-generic-modifier.md
+        - name: Iterátor
+          href: language-reference/modifiers/iterator.md
+        - name: Key
+          href: language-reference/modifiers/key.md
+        - name: Modul
+          href: language-reference/modifiers/module-keyword.md
+        - name: MustInherit
+          href: language-reference/modifiers/mustinherit.md
+        - name: MustOverride
+          href: language-reference/modifiers/mustoverride.md
+        - name: Narrowing
+          href: language-reference/modifiers/narrowing.md
+        - name: NotInheritable
+          href: language-reference/modifiers/notinheritable.md
+        - name: NotOverridable
+          href: language-reference/modifiers/notoverridable.md
+        - name: Nepovinné
+          href: language-reference/modifiers/optional.md
+        - name: Out (generický modifikátor)
+          href: language-reference/modifiers/out-generic-modifier.md
+        - name: Přetížení
+          href: language-reference/modifiers/overloads.md
+        - name: Overridable
+          href: language-reference/modifiers/overridable.md
+        - name: Overrides
+          href: language-reference/modifiers/overrides.md
+        - name: ParamArray
+          href: language-reference/modifiers/paramarray.md
+        - name: Částečné
+          href: language-reference/modifiers/partial.md
+        - name: Soukromé
+          href: language-reference/modifiers/private.md
+        - name: Private Protected
+          href: language-reference/modifiers/private-protected.md
+        - name: Chráněno
+          href: language-reference/modifiers/protected.md
+        - name: Protected Friend
+          href: language-reference/modifiers/protected-friend.md
+        - name: Public
+          href: language-reference/modifiers/public.md
+        - name: ReadOnly
+          href: language-reference/modifiers/readonly.md
+        - name: Shadows
+          href: language-reference/modifiers/shadows.md
+        - name: Shared
+          href: language-reference/modifiers/shared.md
+        - name: Static
+          href: language-reference/modifiers/static.md
+        - name: Kódování Unicode
+          href: language-reference/modifiers/unicode.md
+        - name: Rozšíření
+          href: language-reference/modifiers/widening.md
+        - name: WithEvents
+          href: language-reference/modifiers/withevents.md
+        - name: WriteOnly
+          href: language-reference/modifiers/writeonly.md
+    - name: Moduly
+      href: language-reference/modules.md
+    - name: Nothing
+      href: language-reference/nothing.md
+    - name: Objekty
+      href: language-reference/objects/index.md
+      items:
+        - name: My.Application – objekt
+          href: language-reference/objects/my-application-object.md
+          items:
+            - name: My.Application.Info – objekt
+              href: language-reference/objects/my-application-info-object.md
+            - name: My.Application.Log – objekt
+              href: language-reference/objects/my-application-log-object.md
+        - name: My.Computer – objekt
+          href: language-reference/objects/my-computer-object.md
+          items:
+            - name: My.Computer.Audio – objekt
+              href: language-reference/objects/my-computer-audio-object.md
+            - name: My.Computer.Clipboard – objekt
+              href: language-reference/objects/my-computer-clipboard-object.md
+            - name: My.Computer.Clock – objekt
+              href: language-reference/objects/my-computer-clock-object.md
+            - name: My.Computer.FileSystem – objekt
+              href: language-reference/objects/my-computer-filesystem-object.md
+              items:
+                - name: My.Computer.FileSystem.SpecialDirectories – objekt
+                  href: language-reference/objects/my-computer-filesystem-specialdirectories-object.md
+            - name: My.Computer.Info – objekt
+              href: language-reference/objects/my-computer-info-object.md
+            - name: My.Computer.Keyboard – objekt
+              href: language-reference/objects/my-computer-keyboard-object.md
+            - name: My.Computer.Mouse – objekt
+              href: language-reference/objects/my-computer-mouse-object.md
+            - name: My.Computer.Network – objekt
+              href: language-reference/objects/my-computer-network-object.md
+            - name: My.Computer.Ports – objekt
+              href: language-reference/objects/my-computer-ports-object.md
+            - name: My.Computer.Registry – objekt
+              href: language-reference/objects/my-computer-registry-object.md
+        - name: My.Forms – objekt
+          href: language-reference/objects/my-forms-object.md
+        - name: My.Log – objekt
+          href: language-reference/objects/my-log-object.md
+        - name: My.Request – objekt
+          href: language-reference/objects/my-request-object.md
+        - name: My.Response – objekt
+          href: language-reference/objects/my-response-object.md
+        - name: My.Resources – objekt
+          href: language-reference/objects/my-resources-object.md
+        - name: My.Settings – objekt
+          href: language-reference/objects/my-settings-object.md
+        - name: My.User – objekt
+          href: language-reference/objects/my-user-object.md
+        - name: My.WebServices – objekt
+          href: language-reference/objects/my-webservices-object.md
+        - name: TextFieldParser – objekt
+          href: language-reference/objects/textfieldparser-object.md
+    - name: Operátory
+      href: language-reference/operators/index.md
+      items:
+        - name: Priorita operátorů
+          href: language-reference/operators/operator-precedence.md
+        - name: Datové typy výsledků operátoru
+          href: language-reference/operators/data-types-of-operator-results.md
+        - name: Operátory uvedené podle funkce
+          href: language-reference/operators/operators-listed-by-functionality.md
+          items:
+            - name: Aritmetické operátory
+              href: language-reference/operators/arithmetic-operators.md
+            - name: Operátory přiřazení
+              href: language-reference/operators/assignment-operators.md
+            - name: Operátory bitového posunu
+              href: language-reference/operators/bit-shift-operators.md
+            - name: Operátory porovnání
+              href: language-reference/operators/comparison-operators.md
+            - name: Operátory řetězení
+              href: language-reference/operators/concatenation-operators.md
+            - name: Logické bitové operátory
+              href: language-reference/operators/logical-bitwise-operators.md
+            - name: Různé operátory
+              href: language-reference/operators/miscellaneous-operators.md
+        - name: Seznam operátorů jazyka Visual Basic
+          items:
+            - name: '& – operátor'
+              href: language-reference/operators/concatenation-operator.md
+            - name: '&= – operátor'
+              href: language-reference/operators/and-assignment-operator.md
+            - name: '* Operátor'
+              href: language-reference/operators/multiplication-operator.md
+            - name: '*= – operátor'
+              href: language-reference/operators/multiplication-assignment-operator.md
+            - name: + Operátor
+              href: language-reference/operators/addition-operator.md
+            - name: += – operátor
+              href: language-reference/operators/addition-assignment-operator.md
+            - name: = – operátor
+              href: language-reference/operators/assignment-operator.md
+            - name: '- Operátor'
+              href: language-reference/operators/subtraction-operator.md
+            - name: '-= – operátor'
+              href: language-reference/operators/subtraction-assignment-operator.md
+            - name: < – operátor
+              href: language-reference/operators/comparison-operators.md
+            - name: <= – operátor
+              href: language-reference/operators/comparison-operators.md
+            - name: '> Operátor'
+              href: language-reference/operators/comparison-operators.md
+            - name: '>= – operátor'
+              href: language-reference/operators/comparison-operators.md
+            - name: << – operátor
+              href: language-reference/operators/left-shift-operator.md
+            - name: <<= – operátor
+              href: language-reference/operators/left-shift-assignment-operator.md
+            - name: '>> Operátor'
+              href: language-reference/operators/right-shift-operator.md
+            - name: '>>= – operátor'
+              href: language-reference/operators/right-shift-assignment-operator.md
+            - name: / – operátor
+              href: language-reference/operators/floating-point-division-operator.md
+            - name: /= – operátor
+              href: language-reference/operators/floating-point-division-assignment-operator.md
+            - name: \ – operátor
+              href: language-reference/operators/integer-division-operator.md
+            - name: \= – operátor
+              href: language-reference/operators/integer-division-assignment-operator.md
+            - name: ^ – operátor
+              href: language-reference/operators/exponentiation-operator.md
+            - name: ^= – operátor
+              href: language-reference/operators/exponentiation-assignment-operator.md
+            - name: '?() – operátor'
+              href: language-reference/operators/null-conditional-operators.md
+            - name: '?. Operátor'
+              href: language-reference/operators/null-conditional-operators.md
+            - name: AddressOf – operátor
+              href: language-reference/operators/addressof-operator.md
+            - name: And – operátor
+              href: language-reference/operators/and-operator.md
+            - name: AndAlso – operátor
+              href: language-reference/operators/andalso-operator.md
+            - name: Await – operátor
+              href: language-reference/operators/await-operator.md
+            - name: DirectCast – operátor
+              href: language-reference/operators/directcast-operator.md
+            - name: Function – výraz
+              href: language-reference/operators/function-expression.md
+            - name: GetType – operátor
+              href: language-reference/operators/gettype-operator.md
+            - name: GetXmlNamespace – operátor
+              href: language-reference/operators/getxmlnamespace-operator.md
+            - name: If – operátor
+              href: language-reference/operators/if-operator.md
+            - name: Is – operátor
+              href: language-reference/operators/is-operator.md
+            - name: IsFalse – operátor
+              href: language-reference/operators/isfalse-operator.md
+            - name: IsNot – operátor
+              href: language-reference/operators/isnot-operator.md
+            - name: IsTrue – operátor
+              href: language-reference/operators/istrue-operator.md
+            - name: Like – operátor
+              href: language-reference/operators/like-operator.md
+            - name: Mod – operátor
+              href: language-reference/operators/mod-operator.md
+            - name: Operátor new
+              href: language-reference/operators/new-operator.md
+            - name: Not – operátor
+              href: language-reference/operators/not-operator.md
+            - name: Or – operátor
+              href: language-reference/operators/or-operator.md
+            - name: OrElse – operátor
+              href: language-reference/operators/orelse-operator.md
+            - name: Sub – výraz
+              href: language-reference/operators/sub-expression.md
+            - name: TryCast – operátor
+              href: language-reference/operators/trycast-operator.md
+            - name: TypeOf – operátor
+              href: language-reference/operators/typeof-operator.md
+            - name: Xor – operátor
+              href: language-reference/operators/xor-operator.md
+    - name: Vlastnosti
+      href: language-reference/properties.md
+    - name: Dotazy
+      href: language-reference/queries/index.md
+      items:
+        - name: Aggregate – klauzule
+          href: language-reference/queries/aggregate-clause.md
+        - name: Distinct – klauzule
+          href: language-reference/queries/distinct-clause.md
+        - name: Equals – klauzule
+          href: language-reference/queries/equals-clause.md
+        - name: From – klauzule
+          href: language-reference/queries/from-clause.md
+        - name: Group By – klauzule
+          href: language-reference/queries/group-by-clause.md
+        - name: Group Join – klauzule
+          href: language-reference/queries/group-join-clause.md
+        - name: Join – klauzule
+          href: language-reference/queries/join-clause.md
+        - name: Let – klauzule
+          href: language-reference/queries/let-clause.md
+        - name: Order By – klauzule
+          href: language-reference/queries/order-by-clause.md
+        - name: Select – klauzule
+          href: language-reference/queries/select-clause.md
+        - name: Skip – klauzule
+          href: language-reference/queries/skip-clause.md
+        - name: Skip While – klauzule
+          href: language-reference/queries/skip-while-clause.md
+        - name: Take – klauzule
+          href: language-reference/queries/take-clause.md
+        - name: Take While – klauzule
+          href: language-reference/queries/take-while-clause.md
+        - name: Where – klauzule
+          href: language-reference/queries/where-clause.md
+    - name: Příkazy
+      href: language-reference/statements/index.md
+      items:
+        - name: A-E – příkazy
+          href: language-reference/statements/a-e-statements.md
+          items:
+            - name: AddHandler – příkaz
+              href: language-reference/statements/addhandler-statement.md
+            - name: Call – příkaz
+              href: language-reference/statements/call-statement.md
+            - name: Class – příkaz
+              href: language-reference/statements/class-statement.md
+            - name: Const – příkaz
+              href: language-reference/statements/const-statement.md
+            - name: Continue – příkaz
+              href: language-reference/statements/continue-statement.md
+            - name: Declare – příkaz
+              href: language-reference/statements/declare-statement.md
+            - name: Delegate – příkaz
+              href: language-reference/statements/delegate-statement.md
+            - name: Dim – příkaz
+              href: language-reference/statements/dim-statement.md
+            - name: Do...Loop – příkaz
+              href: language-reference/statements/do-loop-statement.md
+            - name: Else – příkaz
+              href: language-reference/statements/else-statement.md
+            - name: End – příkaz
+              href: language-reference/statements/end-statement.md
+            - name: End <keyword> – příkaz
+              href: language-reference/statements/end-keyword-statement.md
+            - name: Enum – příkaz
+              href: language-reference/statements/enum-statement.md
+            - name: Erase – příkaz
+              href: language-reference/statements/erase-statement.md
+            - name: Error – příkaz
+              href: language-reference/statements/error-statement.md
+            - name: Event – příkaz
+              href: language-reference/statements/event-statement.md
+            - name: Exit – příkaz
+              href: language-reference/statements/exit-statement.md
+        - name: F-P – příkazy
+          href: language-reference/statements/f-p-statements.md
+          items:
+            - name: For Each...Next – příkaz
+              href: language-reference/statements/for-each-next-statement.md
+            - name: For...Next – příkaz
+              href: language-reference/statements/for-next-statement.md
+            - name: Function – příkaz
+              href: language-reference/statements/function-statement.md
+            - name: Get – příkaz
+              href: language-reference/statements/get-statement.md
+            - name: GoTo – příkaz
+              href: language-reference/statements/goto-statement.md
+            - name: If...Then...Else – příkaz
+              href: language-reference/statements/if-then-else-statement.md
+            - name: Implements – Příkaz
+              href: language-reference/statements/implements-statement.md
+            - name: Imports – příkaz (obor názvů a typ rozhraní .NET)
+              href: language-reference/statements/imports-statement-net-namespace-and-type.md
+            - name: Imports – Příkaz (obor názvů XML)
+              href: language-reference/statements/imports-statement-xml-namespace.md
+            - name: Inherits – příkaz
+              href: language-reference/statements/inherits-statement.md
+            - name: Interface – příkaz
+              href: language-reference/statements/interface-statement.md
+            - name: Mid – příkaz
+              href: language-reference/statements/mid-statement.md
+            - name: Module – příkaz
+              href: language-reference/statements/module-statement.md
+            - name: Namespace – příkaz
+              href: language-reference/statements/namespace-statement.md
+            - name: On Error – příkaz
+              href: language-reference/statements/on-error-statement.md
+            - name: Operator – příkaz
+              href: language-reference/statements/operator-statement.md
+            - name: Option <keyword> – příkaz
+              href: language-reference/statements/option-keyword-statement.md
+            - name: Option Compare – příkaz
+              href: language-reference/statements/option-compare-statement.md
+            - name: Option Explicit – příkaz
+              href: language-reference/statements/option-explicit-statement.md
+            - name: Option Infer – příkaz
+              href: language-reference/statements/option-infer-statement.md
+            - name: Option Strict – příkaz
+              href: language-reference/statements/option-strict-statement.md
+            - name: Property – příkaz
+              href: language-reference/statements/property-statement.md
+        - name: Q-Z – příkazy
+          href: language-reference/statements/q-z-statements.md
+          items:
+            - name: RaiseEvent – příkaz
+              href: language-reference/statements/raiseevent-statement.md
+            - name: ReDim – příkaz
+              href: language-reference/statements/redim-statement.md
+            - name: REM – příkaz
+              href: language-reference/statements/rem-statement.md
+            - name: RemoveHandler – příkaz
+              href: language-reference/statements/removehandler-statement.md
+            - name: Resume – příkaz
+              href: language-reference/statements/resume-statement.md
+            - name: Return – příkaz
+              href: language-reference/statements/return-statement.md
+            - name: Select...Case – příkaz
+              href: language-reference/statements/select-case-statement.md
+            - name: Set – příkaz
+              href: language-reference/statements/set-statement.md
+            - name: Stop – příkaz
+              href: language-reference/statements/stop-statement.md
+            - name: Structure – příkaz
+              href: language-reference/statements/structure-statement.md
+            - name: Sub – příkaz
+              href: language-reference/statements/sub-statement.md
+            - name: SyncLock – příkaz
+              href: language-reference/statements/synclock-statement.md
+            - name: Then – příkaz
+              href: language-reference/statements/then-statement.md
+            - name: Throw – příkaz
+              href: language-reference/statements/throw-statement.md
+            - name: Try...Catch....Finally – příkaz
+              href: language-reference/statements/try-catch-finally-statement.md
+            - name: Using – příkaz
+              href: language-reference/statements/using-statement.md
+            - name: While...End While – příkaz
+              href: language-reference/statements/while-end-while-statement.md
+            - name: With...End With – příkaz
+              href: language-reference/statements/with-end-with-statement.md
+            - name: Yield – příkaz
+              href: language-reference/statements/yield-statement.md
+        - name: Klauzule
+          href: language-reference/statements/clauses.md
+          items:
+            - name: Alias – klauzule
+              href: language-reference/statements/alias-clause.md
+            - name: As – klauzule
+              href: language-reference/statements/as-clause.md
+            - name: Handles – klauzule
+              href: language-reference/statements/handles-clause.md
+            - name: Implements – klauzule
+              href: language-reference/statements/implements-clause.md
+            - name: In – klauzule
+              href: language-reference/statements/in-clause.md
+            - name: Into – klauzule
+              href: language-reference/statements/into-clause.md
+            - name: Of – klauzule
+              href: language-reference/statements/of-clause.md
+        - name: Kontexty deklarace a výchozí úrovně přístupu
+          href: language-reference/statements/declaration-contexts-and-default-access-levels.md
+        - name: Seznam atributů
+          href: language-reference/statements/attribute-list.md
+        - name: Seznam parametrů
+          href: language-reference/statements/parameter-list.md
+        - name: Seznam typů
+          href: language-reference/statements/type-list.md
+    - name: Značky pro komentáře XML
+      href: language-reference/xmldoc/index.md
+      items:
+        - name: <c>
+          href: language-reference/xmldoc/c.md
+        - name: <code>
+          href: language-reference/xmldoc/code.md
+        - name: <example>
+          href: language-reference/xmldoc/example.md
+        - name: <exception>
+          href: language-reference/xmldoc/exception.md
+        - name: <include>
+          href: language-reference/xmldoc/include.md
+        - name: <list>
+          href: language-reference/xmldoc/list.md
+        - name: <para>
+          href: language-reference/xmldoc/para.md
+        - name: <param>
+          href: language-reference/xmldoc/param.md
+        - name: <paramref>
+          href: language-reference/xmldoc/paramref.md
+        - name: <permission>
+          href: language-reference/xmldoc/permission.md
+        - name: <remarks>
+          href: language-reference/xmldoc/remarks.md
+        - name: <returns>
+          href: language-reference/xmldoc/returns.md
+        - name: <see>
+          href: language-reference/xmldoc/see.md
+        - name: <seealso>
+          href: language-reference/xmldoc/seealso.md
+        - name: <summary>
+          href: language-reference/xmldoc/summary.md
+        - name: <typeparam>
+          href: language-reference/xmldoc/typeparam.md
+        - name: <value>
+          href: language-reference/xmldoc/value.md
+    - name: Vlastnosti osy XML
+      href: language-reference/xml-axis/index.md
+      items:
+        - name: Vlastnost osy atributu XML
+          href: language-reference/xml-axis/xml-attribute-axis-property.md
+        - name: Vlastnost osy podřízeného XML
+          href: language-reference/xml-axis/xml-child-axis-property.md
+        - name: Vlastnost osy nástupce XML
+          href: language-reference/xml-axis/xml-descendant-axis-property.md
+        - name: Vlastnost indexeru rozšíření
+          href: language-reference/xml-axis/extension-indexer-property.md
+        - name: Vlastnost hodnoty XML
+          href: language-reference/xml-axis/xml-value-property.md
+    - name: Literály XML
+      href: language-reference/xml-literals/index.md
+      items:
+        - name: Literál XML elementu
+          href: language-reference/xml-literals/xml-element-literal.md
+        - name: Literál dokumentu XML
+          href: language-reference/xml-literals/xml-document-literal.md
+        - name: Literál XML CDATA
+          href: language-reference/xml-literals/xml-cdata-literal.md
+        - name: Literál komentáře XML
+          href: language-reference/xml-literals/xml-comment-literal.md
+        - name: Literál instrukcí pro zpracování XML
+          href: language-reference/xml-literals/xml-processing-instruction-literal.md
+    - name: Chybové zprávy
+      href: language-reference/error-messages/index.md
+      items:
+        - name: 'Výrazu ''#If'' nebo ''#ElseIf'' musí předcházet odpovídající výraz ''#ElseIf''.'
+          href: language-reference/error-messages/elseif-must-be-preceded-by-a-matching-if-or-elseif.md
+        - name: 'Příkazy ''#Region'' a ''#End Region'' nejsou platné uvnitř těla metody nebo víceřádkových výrazů lambda.'
+          href: language-reference/error-messages/region-and-end-region-are-not-valid-within-method-bodies-multiline-lambdas.md
+        - name: 'Atribut ''<attribute>'' nelze použít, protože formát čísla GUID ''<number>'' není správný.'
+          href: language-reference/error-messages/attribute-cannot-be-applied-because-the-format-of-the-guid-is-not-correct.md
+        - name: 'Název třídy ''<classname> není kompatibilní se specifikací CLS, protože rozhraní ''<interfacename>'', které implementuje, není kompatibilní se specifikací CLS.'
+          href: language-reference/error-messages/classname-is-not-cls-compliant-because-the-interface-is-not-cls-compliant.md
+        - name: Element '<elementname>' je zastaralý (upozornění jazyka Visual Basic).
+          href: language-reference/error-messages/elementname-is-obsolete-visual-basic-warning.md
+        - name: '''<eventname>'' je událost, a proto ji nelze vyvolat přímo.'
+          href: language-reference/error-messages/eventname-is-an-event-and-cannot-be-called-directly.md
+        - name: Výrazu '<expression>' nelze použít jako omezení typu.
+          href: language-reference/error-messages/expression-cannot-be-used-as-a-type-constraint.md
+        - name: Funkce '<functionname>' není deklarována (chyba kompilátoru jazyka Visual Basic inteligentního zařízení).
+          href: language-reference/error-messages/functionname-is-not-declared-smart-device-visual-basic-compiler-error.md
+        - name: '''<interfacename>.<membername>'' je už implementované základní třídou ''<baseclassname>''. Předpokládá se opětovná implementace <type>.'
+          href: language-reference/error-messages/interfacename-membername-is-already-implemented-by-the-base-class.md
+        - name: Klíčové slovo '<keyword>' je platné pouze v rámci metody instance.
+          href: language-reference/error-messages/keyword-is-valid-only-within-an-instance-method.md
+        - name: '''<membername>'' nemůže vystavovat typ ''<typename>'' mimo projekt prostřednictvím <containertype> ''<containertypename>''.'
+          href: language-reference/error-messages/membername-cannot-expose-type-typename-outside-the-project.md
+        - name: Název '<membername>' je dvojznačný ve zděděných rozhraních '<interfacename1>' a '<interfacename2>'.
+          href: language-reference/error-messages/membername-is-ambiguous-across-the-inherited-interfaces.md
+        - name: <message> Tato chyba mohla být také způsobena kombinováním odkazu na soubor s odkazem na projekt pro sestavení '<assemblyname>'.
+          href: language-reference/error-messages/message-this-error-could-also-be-due-to-mixing-a-file-reference.md
+        - name: Metoda '<methodname>' má několik definic s identickými podpisy.
+          href: language-reference/error-messages/methodname-has-multiple-definitions-with-identical-signatures.md
+        - name: Název '<name>' je v oboru názvů '<namespacename>' nejednoznačný.
+          href: language-reference/error-messages/name-is-ambiguous-in-the-namespace-namespacename.md
+        - name: Název '<name1>' je nejednoznačný a je importován z oboru názvů nebo typů '<name2>'.
+          href: language-reference/error-messages/name1-is-ambiguous-imported-from-the-namespaces-or-types-name2.md
+        - name: '<proceduresignature1> není kompatibilní se specifikací CLS, protože přetěžuje <proceduresignature2>. Navzájem se liší pouze polem typů parametrů polí nebo rozměrem typů parametru pole.'
+          href: language-reference/error-messages/proceduresignature1-not-cls-compliant-because-it-overloads-proceduresignature2.md
+        - name: <type1>'<typename>' musí implementovat '<membername>' pro rozhraní '<interfacename>'
+          href: language-reference/error-messages/type1-must-implement-membername-for-interface.md
+        - name: <type1>'<typename>' musí implementovat '<methodname>' pro rozhraní '<interfacename>'
+          href: language-reference/error-messages/type1-typename-must-implement-methodname-for-interface-interfacename.md
+        - name: '''<typename>'' nemůže dědit ze třídy <type> ''<basetypename>'', protože rozšiřuje přístup třídy Base <type> mimo sestavení.'
+          href: language-reference/error-messages/typename-cannot-inherit-from-type-basetypename.md
+        - name: '''<typename>'' je typ delegátu.'
+          href: language-reference/error-messages/typename-is-a-delegate-type.md
+        - name: '''<typename> je typ a nelze jej použít jako výraz.'
+          href: language-reference/error-messages/typename-is-a-type-and-cannot-be-used-as-an-expression.md
+        - name: 'Dvojité uvozovky nepředstavují platný token komentáře pro pole oddělené oddělovačem, kde parametr EscapeQuote je nastaven na hodnotu True.'
+          href: language-reference/error-messages/a-double-quote-is-not-a-valid-comment-token-for-delimited-fields.md
+        - name: 'Volání vlastnosti nebo metody nemůže obsahovat odkaz na soukromý objekt, a to ani jako argument, ani jako typ návratové hodnoty.'
+          href: language-reference/error-messages/a-property-or-method-call-cannot-include-a-reference-to-a-private-object.md
+        - name: Byl vytvořen odkaz na vložené definiční sestavení '<assembly1>' z důvodu nepřímého odkazu na toto sestavení ze sestavení '<assembly2>'.
+          href: language-reference/error-messages/bc40059.md
+        - name: Nebyl zadán formulář spuštění.
+          href: language-reference/error-messages/a-startup-form-has-not-been-specified.md
+        - name: Přístup sdíleného člena prostřednictvím instance; kvalifikující výraz nebyl vyhodnocen.
+          href: language-reference/error-messages/bc42025.md
+        - name: Operandem 'AddressOf' musí být název metody (bez závorek).
+          href: language-reference/error-messages/bc30577.md
+        - name: 'Došlo k neočekávané chybě, protože nelze získat prostředek operačního systému požadovaný ke spuštění jedné instance.'
+          href: language-reference/error-messages/an-unexpected-error-has-occurred.md
+        - name: Název člena anonymního typu lze odvodit pouze z jednoduchého nebo kvalifikovaného názvu bez argumentů.
+          href: language-reference/error-messages/bc36556.md
+        - name: Argument není nepovinný.
+          href: language-reference/error-messages/argument-not-optional.md
+        - name: Indexy pole nemohou být použity ve specifikátorech typu.
+          href: language-reference/error-messages/bc30638.md
+        - name: Pole deklarované jako řídicí proměnná cyklu typu for nelze deklarovat s počáteční velikostí.
+          href: language-reference/error-messages/bc32039.md
+        - name: Výraz dolního indexu pole chybí.
+          href: language-reference/error-messages/bc30306.md
+        - name: U polí deklarovaných jako členové struktury nelze deklarovat počáteční velikost.
+          href: language-reference/error-messages/bc31043.md
+        - name: Výraz 'As Any' již není podporován v příkazech 'Declare'.
+          href: language-reference/error-messages/bc30828.md
+        - name: Atribut '<attributename>' nelze použít několikrát.
+          href: language-reference/error-messages/attribute-attributename-cannot-be-applied-multiple-times.md
+        - name: Chyba automatizace
+          href: language-reference/error-messages/automation-error.md
+        - name: Nesprávná hodnota kontrolního součtu. Číslice nejsou v šestnáctkové soustavě nebo je zadán lichý počet číslic v šestnáctkové soustavě.
+          href: language-reference/error-messages/bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits.md
+        - name: Chybná konvence volání knihovny DLL
+          href: language-reference/error-messages/bad-dll-calling-convention.md
+        - name: Chybný režim souboru
+          href: language-reference/error-messages/bad-file-mode.md
+        - name: Chybný název souboru nebo číslo
+          href: language-reference/error-messages/bad-file-name-or-number.md
+        - name: Chybná délka záznamu
+          href: language-reference/error-messages/bad-record-length.md
+        - name: 'Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.'
+          href: language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md
+        - name: 'Anonymní typ nelze převést na strom výrazu, protože obsahuje pole, které se používá při inicializaci jiného pole.'
+          href: language-reference/error-messages/cannot-convert-anonymous-type-to-expression-tree.md
+        - name: Součást prvku ActiveX nelze vytvořit.
+          href: language-reference/error-messages/cannot-create-activex-component.md
+        - name: 'Na člena ''<name>'' nelze odkazovat, protože se jedná o člen pole typu hodnota ''<name>'' třídy ''<classname>'', jehož třídou Base je ''System.MarshalByRefObject''.'
+          href: language-reference/error-messages/cannot-refer-to-name-because-it-is-member-of-value-typed-field-name-of-class.md
+        - name: 'V rámci sdílené metody nebo inicializační procedury sdíleného člena nelze odkazovat na instanci členu, aniž by byla k dispozici explicitní instance třídy.'
+          href: language-reference/error-messages/cannot-refer-to-an-instance-member-of-a-class.md
+        - name: Nezbytný dočasný soubor nelze vytvořit.
+          href: language-reference/error-messages/can-t-create-necessary-temporary-file.md
+        - name: Soubor '<filename>' nelze otevřít pro zápis.
+          href: language-reference/error-messages/can-t-open-filename-for-writing.md
+        - name: Třídu '<classname>' nelze nalézt.
+          href: language-reference/error-messages/class-classname-cannot-be-found.md
+        - name: Třída nepodporuje automatizaci nebo nepodporuje očekávané rozhraní.
+          href: language-reference/error-messages/class-does-not-support-automation-or-does-not-support-expected-interface.md
+        - name: Příkaz 'Class' musí být ukončen odpovídajícím příkazem 'End Class'.
+          href: language-reference/error-messages/class-statement-must-end-with-a-matching-end-class.md
+        - name: Formát schránky není platný.
+          href: language-reference/error-messages/clipboard-format-is-not-valid.md
+        - name: Konstantní výraz nelze reprezentovat typem '<typename>'.
+          href: language-reference/error-messages/constant-expression-not-representable-in-type-typename.md
+        - name: 'Konstanty musí být vnitřního nebo výčtového typu, nikoli třída, struktura, parametr typu nebo typ pole.'
+          href: language-reference/error-messages/constants-must-be-of-an-intrinsic-or-enumerated-type.md
+        - name: Konstruktor '<name>' nemůže volat sám sebe.
+          href: language-reference/error-messages/constructor-name-cannot-call-itself.md
+        - name: Kopírování hodnoty parametru '<parametername> 'ByRef' zpět na odpovídající argument způsobí zúžení z typu '<typename1>' na typ '<typename2>'.
+          href: language-reference/error-messages/copying-the-value-of-byref-parameter-back-to-the-matching-argument-narrows.md
+        - name: Modifikátor 'Custom' není platný pro události deklarované bez explicitních typů delegátů.
+          href: language-reference/error-messages/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types.md
+        - name: Z těchto argumentů nelze odvodit datové typy parametrů typu.
+          href: language-reference/error-messages/data-type-s-of-the-type-parameter-s-cannot-be-inferred-from-these-arguments.md
+        - name: Byla očekávána deklarace.
+          href: language-reference/error-messages/declaration-expected.md
+        - name: Výchozí vlastnost '<propertyname1>' je v konfliktu s výchozí vlastností '<propertyname2>' ve třídě '<classname>' a je ji třeba deklarovat jako 'Shadows'.
+          href: language-reference/error-messages/default-property-propertyname1-conflicts-with-default-property-propertyname2.md
+        - name: Zděděné členy '<defaultpropertyname>' rozhraní '<interfacename1>' a členy '<defaultpropertyname>' rozhraní '<interfacename2>' mají nejednoznačný přístup k výchozím vlastnostem.
+          href: language-reference/error-messages/default-property-access-is-ambiguous.md
+        - name: 'Třída delegáta ''<classname>'' neobsahuje metodu Invoke, a proto výraz tohoto typu nemůže být cílem volání metody.'
+          href: language-reference/error-messages/delegate-class-classname-has-no-invoke-method.md
+        - name: Odvozené třídy nemohou vyvolat události třídy Base.
+          href: language-reference/error-messages/derived-classes-cannot-raise-base-class-events.md
+        - name: Vstupně-výstupní chyba zařízení
+          href: language-reference/error-messages/device-i-o-error.md
+        - name: Funkce 'Dir' musí být nejdříve volána s argumentem 'PathName'.
+          href: language-reference/error-messages/dir-function-must-first-be-called-with-a-pathname-argument.md
+        - name: Byl očekáván konec příkazu.
+          href: language-reference/error-messages/end-of-statement-expected.md
+        - name: 'Při vytváření manifestu sestavení došlo k chybě: <error message>'
+          href: language-reference/error-messages/error-creating-assembly-manifest-error-message.md
+        - name: 'Při vytváření prostředků Win32 došlo k chybě: <error message>'
+          href: language-reference/error-messages/error-creating-win32-resources-error-message.md
+        - name: Chyba při načítání knihovny DLL
+          href: language-reference/error-messages/error-in-loading-dll.md
+        - name: 'Při ukládání dočasného zdrojového souboru ''<filename>'' Win32 došlo k chybě: <error message>'
+          href: language-reference/error-messages/error-saving-temporary-win32-resource-file-filename-error-message.md
+        - name: Při kompilování schémat XML v projektu došlo k chybám.
+          href: language-reference/error-messages/errors-occurred-while-compiling-the-xml-schemas-in-the-project.md
+        - name: Časový limit vyhodnocení výrazu nebo příkazu vypršel.
+          href: language-reference/error-messages/evaluation-of-expression-or-statement-timed-out.md
+        - name: 'Událost ''<eventname1>'' nemůže implementovat událost ''<eventname2>'' v rozhraní ''<interface>'' , protože se neshodují jejich typy delegátů ''<delegate1>'' a ''<delegate2>''.'
+          href: language-reference/error-messages/event-eventname1-cannot-implement-event-eventname2-on-interface.md
+        - name: 'Události nelze deklarovat s typem delegáta, který má návratový typ.'
+          href: language-reference/error-messages/events-cannot-be-declared-with-a-delegate-type-that-has-a-return-type.md
+        - name: Události sdílené proměnné WithEvents nelze zpracovat nesdílenými metodami.
+          href: language-reference/error-messages/events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods.md
+        - name: Výsledkem výrazu není hodnota.
+          href: language-reference/error-messages/expression-does-not-produce-a-value.md
+        - name: 'Výraz má typ ''<typename>'', což je omezený typ a nelze jej používat pro přístup ke členům zděděným z typu ''Object'' nebo ''ValueType''.'
+          href: language-reference/error-messages/expression-has-the-type-typename-which-is-a-restricted-type.md
+        - name: 'Výraz je hodnota, a proto nemůže být cílem přiřazení.'
+          href: language-reference/error-messages/expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment.md
+        - name: Na výrazy typu <type> nelze zadávat dotazy.
+          href: language-reference/error-messages/expression-of-type-type-is-not-queryable.md
+        - name: Výraz rekurzivně volá nadřazenou vlastnost '<propertyname>'.
+          href: language-reference/error-messages/expression-recursively-calls-the-containing-property-propertyname.md
+        - name: Výraz je příliš složitý.
+          href: language-reference/error-messages/expression-too-complex.md
+        - name: 'Atribut ''Extension'' lze použít pouze v deklaracích ''Module'', ''Sub'' nebo ''Function''.'
+          href: language-reference/error-messages/extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations.md
+        - name: Soubor již je otevřen.
+          href: language-reference/error-messages/file-already-open.md
+        - name: Soubor je pro načtení do bajtového pole příliš velký.
+          href: language-reference/error-messages/file-is-too-large-to-read-into-a-byte-array.md
+        - name: Název souboru nebo třídy se v průběhu operace Automation nenašel.
+          href: language-reference/error-messages/file-name-or-class-name-not-found-during-automation-operation.md
+        - name: Soubor nebyl nalezen (chyba za běhu jazyka Visual Basic).
+          href: language-reference/error-messages/file-not-found-visual-basic-run-time-error.md
+        - name: 'První operand v binárním výrazu ''If'' musí být typu, který povoluje hodnotu Null, nebo typu odkazu.'
+          href: language-reference/error-messages/first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type.md
+        - name: První příkaz tohoto výrazu 'Sub New' musí být volání 'MyBase.New' nebo 'MyClass.New' (žádný dostupný konstruktor bez parametrů).
+          href: language-reference/error-messages/first-statement-of-this-sub-new-must-be-a-call-to-mybase-new-or-myclass-new.md
+        - name: 'Prvním příkazem této procedury ''Sub New'' musí být explicitní volání ''MyBase.New'' nebo ''MyClass.New'', protože konstruktor ''<constructorname>'' v třídě Base ''<baseclassname>'' pro ''<derivedclassname>'' je označen jako zastaralý: <errormessage>'
+          href: language-reference/error-messages/first-statement-of-sub-new-must-be-explicit-call-to-mybase-new-or-myclass-new.md
+        - name: 'Příkaz ''For Each'' u typu ''<typename>'' je nejednoznačný, protože typ implementuje více instancí ''System.Collections.Generic.IEnumerable(Of T)''.'
+          href: language-reference/error-messages/for-each-on-type-typename-is-ambiguous.md
+        - name: Odkaz na sestavení typu <reference> Friend není platný.
+          href: language-reference/error-messages/friend-assembly-reference-reference-is-invalid.md
+        - name: 'Ve funkci ''<procedurename>'' existují cesty kódu, které nevrací žádnou hodnotu.'
+          href: language-reference/error-messages/function-procedurename-doesn-t-return-a-value-on-all-code-paths.md
+        - name: 'Vyhodnocení funkce je zakázáno, protože při vyhodnocování předchozí verze vypršel časový limit.'
+          href: language-reference/error-messages/function-evaluation-is-disabled.md
+        - name: Obecné parametry použité jako typy volitelného parametru musí mít omezení třídy.
+          href: language-reference/error-messages/generic-parameters-used-as-optional-parameter-types-must-be-class-constrained.md
+        - name: Přístupový objekt 'Get' vlastnosti '<propertyname>' není dostupný.
+          href: language-reference/error-messages/get-accessor-of-property-propertyname-is-not-accessible.md
+        - name: Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.
+          href: language-reference/error-messages/handles-clause-requires-a-withevents-variable-defined.md
+        - name: Byl očekáván identifikátor.
+          href: language-reference/error-messages/identifier-expected.md
+        - name: Identifikátor je příliš dlouhý.
+          href: language-reference/error-messages/identifier-is-too-long.md
+        - name: Byl očekáván inicializátor.
+          href: language-reference/error-messages/initializer-expected.md
+        - name: Vstup za koncem souboru
+          href: language-reference/error-messages/input-past-end-of-file.md
+        - name: V umístění <location> došlo k interní chybě.
+          href: language-reference/error-messages/internal-error-happened-at-location.md
+        - name: Implicitní převod z '<typename1>' na '<typename2>' při kopírování hodnoty 'ByRef' parametru '<parametername> zpět na odpovídající argument
+          href: language-reference/error-messages/implicit-conversion-from-typename1-to-typename2-in-copying.md
+        - name: 'Klíčové slovo ''Is'' vyžaduje operandy typu odkaz, ale tento operand má typ hodnoty ''<typename>''.'
+          href: language-reference/error-messages/is-requires-operands-that-have-reference-types.md
+        - name: 'Operand ''IsNot'' typu ''typename'' lze porovnat pouze s hodnotou ''Nothing'', protože ''typename'' je typ s povolenou hodnotou Null.'
+          href: language-reference/error-messages/isnot-operand-of-type-can-only-be-compared-to-nothing.md
+        - name: 'Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka.'
+          href: language-reference/error-messages/labels-that-are-numbers-must-be-followed-by-colons.md
+        - name: Výraz lambda nebude z této obslužné rutiny události odebrán.
+          href: language-reference/error-messages/lambda-expression-will-not-be-removed-from-this-event-handler.md
+        - name: Použití výrazů lambda v prvním výrazu příkazu 'Select Case' je neplatné.
+          href: language-reference/error-messages/lambda-expressions-are-not-valid-in-the-first-expression-of-select-case.md
+        - name: Rozpoznání s pozdní vazbou; mohlo by dojít k chybám za běhu.
+          href: language-reference/error-messages/late-bound-resolution;-runtime-errors-could-occur.md
+        - name: 'Rozpoznání přetížené procedury s pozdní vazbou nelze použít pro ''<procedurename>'', protože přistupující instance je typu rozhraní.'
+          href: language-reference/error-messages/latebound-overload-resolution-cannot-be-applied.md
+        - name: Úvodní operátor '.' nebo '!' může být použit pouze uvnitř příkazu 'With'.
+          href: language-reference/error-messages/leading-period-or-exclamation-point-can-only-appear-inside-a-with-statement.md
+        - name: Řádek je příliš dlouhý.
+          href: language-reference/error-messages/line-is-too-long.md
+        - name: Příkazy 'Line' již nejsou podporovány (chyba kompilátoru jazyka Visual Basic).
+          href: language-reference/error-messages/line-statements-are-no-longer-supported-visual-basic-compiler-error.md
+        - name: Podpis metody není kompatibilní s delegátem.
+          href: language-reference/error-messages/method-does-not-have-a-signature-compatible-with-the-delegate.md
+        - name: Metody System.Nullable(Of T) nelze používat jako operandy operátoru 'AddressOf'.
+          href: language-reference/error-messages/methods-of-system-nullable-of-t-cannot-be-used-as-operands-of-the-addressof.md
+        - name: Příkazy 'Module' lze používat pouze na úrovni souboru nebo oboru názvů.
+          href: language-reference/error-messages/module-statements-can-occur-only-at-file-or-namespace-level.md
+        - name: Název <membername> není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/name-membername-is-not-cls-compliant.md
+        - name: Název '<name>' není deklarován.
+          href: language-reference/error-messages/name-name-is-not-declared.md
+        - name: Název <namespacename> v kořenovém oboru názvů <fullnamespacename> není kompatibilní se specifikací.
+          href: language-reference/error-messages/name-namespacename-in-the-root-namespace-fullnamespacename-is-not-cls-compliant.md
+        - name: Obor názvů nebo typ zadaný v příkazu Imports '<qualifiedelementname>' neobsahuje žádný veřejný člen nebo nebyl nalezen.
+          href: language-reference/error-messages/namespace-or-type-specified-in-the-imports-qualifiedelementname.md
+        - name: Obor názvů nebo typ zadaný v příkazu Imports '<qualifiedelementname>' na úrovni projektu neobsahuje žádného veřejného člena nebo nebyl nalezen.
+          href: language-reference/error-messages/namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname.md
+        - name: Je vyžadován index pole vlastností.
+          href: language-reference/error-messages/need-property-array-index.md
+        - name: Vnořená funkce nemá stejný podpis kompatibilní s delegátem '<delegatename>'.
+          href: language-reference/error-messages/nested-function-does-not-have-a-signature-that-is-compatible-with-delegate.md
+        - name: V aplikaci '<name>' nebyla nalezena žádná dostupná metoda 'Main' s odpovídajícím podpisem.
+          href: language-reference/error-messages/no-accessible-main-method-with-an-appropriate-signature-was-found-in-name.md
+        - name: Člen <membername> nekompatibilní se specifikací CLS není povolen v rozhraní kompatibilním se specifikací CLS.
+          href: language-reference/error-messages/non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface.md
+        - name: V tomto kontextu není podporováno odvození typu s povolenou hodnotu Null.
+          href: language-reference/error-messages/nullable-type-inference-is-not-supported-in-this-context.md
+        - name: Počet indexů překračuje počet rozměrů indexovaného pole.
+          href: language-reference/error-messages/number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array.md
+        - name: Objekt nebo třída nepodporuje sadu událostí.
+          href: language-reference/error-messages/object-or-class-does-not-support-the-set-of-events.md
+        - name: Vyžadován objekt
+          href: language-reference/error-messages/object-required.md
+        - name: Objektová proměnná nebo proměnná bloku With nebyla nastavena.
+          href: language-reference/error-messages/object-variable-or-with-block-variable-not-set.md
+        - name: 'Operátor musí být deklarovaný jako  +,-,*,-,-,^, &, Like, Mod, And, Or, Xor, Not, <<, >>, =, <>, <, <=, >, >=, CType, IsTrue nebo IsFalse.'
+          href: language-reference/error-messages/operator-declaration-must-be-one-of.md
+        - name: Bylo očekáváno klíčové slovo 'Optional'.
+          href: language-reference/error-messages/optional-expected.md
+        - name: Volitelné parametry musí určovat výchozí hodnotu.
+          href: language-reference/error-messages/optional-parameters-must-specify-a-default-value.md
+        - name: Ordinální číslo není platné.
+          href: language-reference/error-messages/ordinal-is-not-valid.md
+        - name: Nedostatek paměti (chyba kompilátoru jazyka Visual Basic)
+          href: language-reference/error-messages/out-of-memory-visual-basic-compiler-error.md
+        - name: Nedostatek místa v zásobníku
+          href: language-reference/error-messages/out-of-stack-space.md
+        - name: Nedostatek místa pro řetězec
+          href: language-reference/error-messages/out-of-string-space.md
+        - name: Přetečení (chyba jazyka Visual Basic)
+          href: language-reference/error-messages/overflow-visual-basic-error.md
+        - name: Přetečení (chyba za běhu jazyka Visual Basic)
+          href: language-reference/error-messages/overflow-visual-basic-run-time-error.md
+        - name: Cesta nebyla nalezena.
+          href: language-reference/error-messages/path-not-found.md
+        - name: Chyba přístupu k cestě nebo k souboru
+          href: language-reference/error-messages/path-file-access-error.md
+        - name: Oprávnění byla odepřena.
+          href: language-reference/error-messages/permission-denied.md
+        - name: Volání procedury nebo argument nejsou platné.
+          href: language-reference/error-messages/procedure-call-or-argument-is-not-valid.md
+        - name: 'Ve vlastnosti ''<propertyname>'' existují cesty kódu, které nevrací žádnou hodnotu.'
+          href: language-reference/error-messages/property-propertyname-doesn-t-return-a-value-on-all-code-paths.md
+        - name: Index pole vlastností není platný.
+          href: language-reference/error-messages/property-array-index-is-not-valid.md
+        - name: Procedura Property Let není definována a procedura Property Get nevrátila objekt.
+          href: language-reference/error-messages/property-let-procedure-not-defined-and-property-get-procedure-did-not-return.md
+        - name: Vlastnost nebyla nalezena.
+          href: language-reference/error-messages/property-not-found.md
+        - name: Vlastnost nebo metoda nebyla nalezena.
+          href: language-reference/error-messages/property-or-method-not-found.md
+        - name: 'Proměnná rozsahu <variable> skrývá proměnnou v nadřazeném bloku, dříve definovanou proměnnou rozsahu nebo implicitně deklarovanou proměnnou ve výrazu dotazu.'
+          href: language-reference/error-messages/range-variable-variable-hides-a-variable-in-an-enclosing-block.md
+        - name: Název proměnné rozsahu lze odvodit jen z jednoduchého nebo kvalifikovaného názvu bez argumentů.
+          href: language-reference/error-messages/range-variable-name-can-be-inferred.md
+        - name: Odkaz vyžadoval sestavení '<assemblyidentity>' obsahující typ '<typename>'. Nebylo však možné najít vhodný odkaz z důvodu nejednoznačnosti mezi projekty '<projectname1>' a '<projectname2>'.
+          href: language-reference/error-messages/reference-required-to-assembly-containing-type-but-suitable-reference-not-found.md
+        - name: Je vyžadován odkaz na sestavení '<assemblyname>' obsahující třídu Base '<classname>'.
+          href: language-reference/error-messages/reference-required-to-assembly-assemblyname-containing-the-base-class-classname.md
+        - name: Požadovaná operace není k dispozici (BC35000)
+          href: language-reference/error-messages/bc35000.md
+        - name: Obnovení práce bez chyby
+          href: language-reference/error-messages/resume-without-error.md
+        - name: Návratový typ funkce '<procedurename>' není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/return-type-of-function-procedurename-is-not-cls-compliant.md
+        - name: Přístupový objekt 'Set' vlastnosti '<propertyname>' není dostupný.
+          href: language-reference/error-messages/set-accessor-of-property-propertyname-is-not-accessible.md
+        - name: Některé dílčí klíče nelze odstranit.
+          href: language-reference/error-messages/some-subkeys-cannot-be-deleted.md
+        - name: Příkaz nemůže ukončit blok mimo řádek s příkazem 'If'.
+          href: language-reference/error-messages/statement-cannot-end-a-block-outside-of-a-line-if-statement.md
+        - name: Příkaz není platný v oboru názvů.
+          href: language-reference/error-messages/statement-is-not-valid-in-a-namespace.md
+        - name: Příkaz není platný uvnitř metody nebo víceřádkového výrazu lambda.
+          href: language-reference/error-messages/statement-is-not-valid-inside-a-method-multiline-lambda.md
+        - name: Řetězcové konstanty musí končit dvojitými uvozovkami.
+          href: language-reference/error-messages/string-constants-must-end-with-a-double-quote.md
+        - name: 'Struktura ''<structurename>'' musí obsahovat alespoň jednu členskou proměnnou instance nebo alespoň jednu deklaraci události instance, která není označena jako ''Custom''.'
+          href: language-reference/error-messages/structure-structurename-must-contain.md
+        - name: Procedura 'Sub Main' nebyla v '<name>' nalezena.
+          href: language-reference/error-messages/sub-main-was-not-found-in-name.md
+        - name: Příkaz Sub nebo funkce nejsou definované.
+          href: language-reference/error-messages/sub-or-function-not-defined.md
+        - name: Dolní index je mimo rozsah.
+          href: language-reference/error-messages/subscript-out-of-range.md
+        - name: 'TextFieldParser nemůže dokončit operaci čtení, protože byla překročena maximální velikost vyrovnávací paměti.'
+          href: language-reference/error-messages/textfieldparser-is-unable-to-complete-read-operation.md
+        - name: 'Typ pro proměnnou ''<variablename>'' nebude odvozen, protože je připojen k poli v ohraničujícím oboru.'
+          href: language-reference/error-messages/the-type-for-variable-variablename-will-not-be-inferred.md
+        - name: Toto pole nelze upravovat nebo je dočasně uzamčeno.
+          href: language-reference/error-messages/this-array-is-fixed-or-temporarily-locked.md
+        - name: Tento klíč již je přidružen k elementu této kolekce.
+          href: language-reference/error-messages/this-key-is-already-associated-with-an-element-of-this-collection.md
+        - name: Příliš mnoho souborů
+          href: language-reference/error-messages/too-many-files.md
+        - name: Typ '<typename>' nemá žádné konstruktory.
+          href: language-reference/error-messages/type-typename-has-no-constructors.md
+        - name: Typ <typename> není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/type-typename-is-not-cls-compliant.md
+        - name: Typ '<typename>' není definován.
+          href: language-reference/error-messages/type-typename-is-not-defined.md
+        - name: Argumenty typu nelze odvodit z delegáta.
+          href: language-reference/error-messages/type-arguments-could-not-be-inferred-from-the-delegate.md
+        - name: Neshoda typu
+          href: language-reference/error-messages/type-mismatch.md
+        - name: 'Typ ''<variablename>'' nelze odvodit, protože omezení cyklu a proměnnou kroku nelze rozšířit na stejný typ.'
+          href: language-reference/error-messages/type-of-variablename-cannot-be-inferred.md
+        - name: Typ člena '<membername>' není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/type-of-member-membername-is-not-cls-compliant.md
+        - name: Typ nepovinné hodnoty pro volitelný parametr <parametername> není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/type-of-optional-value-for-optional-parameter-is-not-cls-compliant.md
+        - name: Typ parametru '<parametername>' není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/type-of-parameter-parametername-is-not-cls-compliant.md
+        - name: Parametry typů nelze použít jako kvalifikátory.
+          href: language-reference/error-messages/type-parameters-cannot-be-used-as-qualifiers.md
+        - name: 'Nepodařilo se vytvořit sestavení se silným názvem z klíčového souboru ''<filename>'': <error>'
+          href: language-reference/error-messages/unable-to-create-strong-named-assembly-from-key-file-filename-error.md
+        - name: 'Vložení zdrojového souboru ''<filename>'' se nezdařilo: <error message>'
+          href: language-reference/error-messages/unable-to-embed-resource-file-filename-error-message.md
+        - name: 'Sestavení nelze vygenerovat: <error message>'
+          href: language-reference/error-messages/unable-to-emit-assembly-error-message.md
+        - name: Požadovaný soubor '<filename>' nebyl nalezen.
+          href: language-reference/error-messages/unable-to-find-required-file-filename.md
+        - name: Z důvodu interní chyby systému nelze získat názvy sériových portů.
+          href: language-reference/error-messages/unable-to-get-serial-port-names-because-of-an-internal-system-error.md
+        - name: 'Propojení se zdrojovým souborem ''<filename>'' se nezdařilo: <error message>'
+          href: language-reference/error-messages/unable-to-link-to-resource-file-filename-error-message.md
+        - name: Nepodařilo se načíst informace pro třídu '<classname>'.
+          href: language-reference/error-messages/unable-to-load-information-for-class-classname.md
+        - name: Nelze zapisovat výstup do paměti.
+          href: language-reference/error-messages/unable-to-write-output-to-memory.md
+        - name: 'Do dočasného souboru nelze zapisovat, protože dočasná cesta není k dispozici.'
+          href: language-reference/error-messages/unable-to-write-temporary-file-because-temporary-path-is-not-available.md
+        - name: 'Nelze zapisovat do výstupního souboru ''<filename>'': <error>'
+          href: language-reference/error-messages/unable-to-write-to-output-file-filename-error.md
+        - name: Základní typ <typename> Enum není kompatibilní se specifikací CLS.
+          href: language-reference/error-messages/underlying-type-typename-of-enum-is-not-cls-compliant.md
+        - name: Použití proměnné iterace ve výrazu lambda může mít neočekávané důsledky.
+          href: language-reference/error-messages/using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results.md
+        - name: Hodnotu typu '<typename1>' nelze převést na typ '<typename2>'.
+          href: language-reference/error-messages/value-of-type-typename1-cannot-be-converted-to-typename2.md
+        - name: Hodnotu typu '<typename1>' nelze převést na '<typename2>' (odkazy na více souborů).
+          href: language-reference/error-messages/value-of-type-typename1-cannot-be-converted-to-typename2-multiple.md
+        - name: Hodnotu typu 'type1' nelze převést na 'type2'.
+          href: language-reference/error-messages/value-of-type-type1-cannot-be-converted-to-type2.md
+        - name: Proměnná '<variablename>' skrývá proměnnou z vnějšího bloku.
+          href: language-reference/error-messages/variable-variablename-hides-a-variable-in-an-enclosing-block.md
+        - name: 'Proměnná ''<variablename>'' je použita před tím, než jí byla přiřazena hodnota.'
+          href: language-reference/error-messages/variable-variablename-is-used-before-it-has-been-assigned-a-value.md
+        - name: 'Proměnná používá typ automatizace, který není v jazyce Visual Basic podporován.'
+          href: language-reference/error-messages/variable-uses-an-automation-type-not-supported.md
+        - name: Vlastnosti osy XML nepodporují pozdní vazbu.
+          href: language-reference/error-messages/xml-axis-properties-do-not-support-late-binding.md
+        - name: Výjimka komentáře XML musí mít atribut 'cref'.
+          href: language-reference/error-messages/xml-comment-exception-must-have-a-cref-attribute.md
+        - name: Odkazy na entity XML nejsou podporovány.
+          href: language-reference/error-messages/xml-entity-references-are-not-supported.md
+        - name: Ve vloženém kódu v prostředí ASP.NET nejsou podporovány literály XML a vlastnosti XML.
+          href: language-reference/error-messages/xml-literals-and-xml-properties-are-not-supported-in-embedded-code-in-aspnet.md
+        - name: Identifikátor URI názvového prostoru XML '<uri>' je možné svázat jenom s xmlns.
+          href: language-reference/error-messages/xml-namespace-uri-uri-can-be-bound-only-to-xmlns.md
+- name: Odkaz
+  href: reference/index.md
+  items:
+    - name: Kompilátor příkazového řádku
+      href: reference/command-line-compiler/index.md
+      items:
+        - name: Sestavení z příkazového řádku
+          href: reference/command-line-compiler/building-from-the-command-line.md
+          items:
+            - name: 'Postupy: Volání kompilátoru příkazového řádku'
+              href: reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md
+            - name: Příkazové řádky ukázkové kompilace
+              href: reference/command-line-compiler/sample-compilation-command-lines.md
+        - name: Možnosti kompilátoru (abecední pořadí)
+          href: reference/command-line-compiler/compiler-options-listed-alphabetically.md
+          items:
+            - name: '@ (určení souboru odezvy)'
+              href: reference/command-line-compiler/specify-response-file.md
+            - name: '-addmodule'
+              href: reference/command-line-compiler/addmodule.md
+            - name: '-baseaddress'
+              href: reference/command-line-compiler/baseaddress.md
+            - name: '-bugreport'
+              href: reference/command-line-compiler/bugreport.md
+            - name: '-codepage'
+              href: reference/command-line-compiler/codepage.md
+            - name: '-debug'
+              href: reference/command-line-compiler/debug.md
+            - name: '-define'
+              href: reference/command-line-compiler/define.md
+            - name: '-delaysign'
+              href: reference/command-line-compiler/delaysign.md
+            - name: '-deterministic'
+              href: reference/command-line-compiler/deterministic.md
+            - name: '-doc'
+              href: reference/command-line-compiler/doc.md
+            - name: '-errorreport'
+              href: reference/command-line-compiler/errorreport.md
+            - name: '-filealign'
+              href: reference/command-line-compiler/filealign.md
+            - name: '-help, /?'
+              href: reference/command-line-compiler/help.md
+            - name: '-highentropyva'
+              href: reference/command-line-compiler/highentropyva.md
+            - name: '-imports'
+              href: reference/command-line-compiler/imports.md
+            - name: '-keycontainer'
+              href: reference/command-line-compiler/keycontainer.md
+            - name: '-keyfile'
+              href: reference/command-line-compiler/keyfile.md
+            - name: '-langversion'
+              href: reference/command-line-compiler/langversion.md
+            - name: '-libpath'
+              href: reference/command-line-compiler/libpath.md
+            - name: '-link'
+              href: reference/command-line-compiler/link.md
+            - name: '-linkresource'
+              href: reference/command-line-compiler/linkresource.md
+            - name: '-main'
+              href: reference/command-line-compiler/main.md
+            - name: '-moduleassemblyname'
+              href: reference/command-line-compiler/moduleassemblyname.md
+            - name: '-netcf'
+              href: reference/command-line-compiler/netcf.md
+            - name: '-noconfig'
+              href: reference/command-line-compiler/noconfig.md
+            - name: '-nologo'
+              href: reference/command-line-compiler/nologo.md
+            - name: '-nostdlib'
+              href: reference/command-line-compiler/nostdlib.md
+            - name: '-nowarn'
+              href: reference/command-line-compiler/nowarn.md
+            - name: '-nowin32manifest'
+              href: reference/command-line-compiler/nowin32manifest.md
+            - name: '-optimize'
+              href: reference/command-line-compiler/optimize.md
+            - name: '-optioncompare'
+              href: reference/command-line-compiler/optioncompare.md
+            - name: '-optionexplicit'
+              href: reference/command-line-compiler/optionexplicit.md
+            - name: '-optioninfer'
+              href: reference/command-line-compiler/optioninfer.md
+            - name: '-optionstrict'
+              href: reference/command-line-compiler/optionstrict.md
+            - name: '-out'
+              href: reference/command-line-compiler/out.md
+            - name: '-platform'
+              href: reference/command-line-compiler/platform.md
+            - name: '-quiet'
+              href: reference/command-line-compiler/quiet.md
+            - name: '-recurse'
+              href: reference/command-line-compiler/recurse.md
+            - name: '-reference'
+              href: reference/command-line-compiler/reference.md
+            - name: '-refonly'
+              href: reference/command-line-compiler/refonly-compiler-option.md
+            - name: '-refout'
+              href: reference/command-line-compiler/refout-compiler-option.md
+            - name: '-removeintchecks'
+              href: reference/command-line-compiler/removeintchecks.md
+            - name: '-resource'
+              href: reference/command-line-compiler/resource.md
+            - name: '-rootnamespace'
+              href: reference/command-line-compiler/rootnamespace.md
+            - name: '-sdkpath'
+              href: reference/command-line-compiler/sdkpath.md
+            - name: '-target'
+              href: reference/command-line-compiler/target.md
+            - name: '-subsystemversion'
+              href: reference/command-line-compiler/subsystemversion.md
+            - name: '-utf8output'
+              href: reference/command-line-compiler/utf8output.md
+            - name: '-vbruntime'
+              href: reference/command-line-compiler/vbruntime.md
+            - name: '-verbose'
+              href: reference/command-line-compiler/verbose.md
+            - name: '-warnaserror'
+              href: reference/command-line-compiler/warnaserror.md
+            - name: '-win32icon'
+              href: reference/command-line-compiler/win32icon.md
+            - name: '-win32manifest'
+              href: reference/command-line-compiler/win32manifest.md
+            - name: '-win32resource'
+              href: reference/command-line-compiler/win32resource.md
+        - name: Možnosti kompilátoru uvedené podle kategorie
+          href: reference/command-line-compiler/compiler-options-listed-by-category.md
+    - name: Referenční informace k rozhraní .NET Framework
+      href: reference/net-framework-reference-information.md
+    - name: Specifikace jazyka
+      href: reference/language-specification/
+- name: Ukázkové aplikace
+  href: sample-applications.md
+- name: Postupy
+  href: walkthroughs.md
