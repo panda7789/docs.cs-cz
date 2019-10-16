@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 description: Seznamte se s pracovním postupem "vnitřní smyčka" pro vývoj aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 565852511f3a837066d5da5cf0e3ab0a902dd7da
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 5f534b23f5e0042e68343deb0c1e9e0ee2e64600
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956477"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394780"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -266,7 +266,7 @@ Visual Studio Code podporuje ladění Docker, pokud používáte Node. js a jin�
 Při použití sady Visual Studio pro Windows nebo Mac můžete v Docker ladit také kontejnery .NET Core nebo .NET Framework, jak je popsáno v následující části.
 
 > [!TIP]
->@no__t – 0To Další informace o ladění kontejnerů Docker Node. js najdete v tématu <https://blog.docker.com/2016/07/live-debugging-docker/> a <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
+> Další informace o ladění kontejnerů Docker Node. js najdete v tématu <https://blog.docker.com/2016/07/live-debugging-docker/> a <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-apps-development-environment.md)

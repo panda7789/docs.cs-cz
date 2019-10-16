@@ -2,12 +2,12 @@
 title: Asynchronní komunikace založená na zprávách
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Asynchronní komunikace založená na zprávách je zásadní pojem architektury mikroslužeb, protože je to nejlepší způsob, jak uchovávat mikroslužby nezávisle na sobě a zároveň je synchronizovat.
 ms.date: 09/20/2018
-ms.openlocfilehash: 109737a04eac8cfc30c746d283ca71c697f5b29d
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 58fe387c6bc9e1dcca519a200d3f8988f327a39c
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834476"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394578"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -81,10 +81,10 @@ Při implementaci architektury založené na událostech napříč více mikrosl
 
 Další témata, která je potřeba vzít v úvahu při použití asynchronní komunikace, jsou idempotence zprávy a odstranění duplicitních zpráv. Tato témata jsou popsaná v části [implementace komunikace založené na událostech mezi mikroslužby (události integrace)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) dále v této příručce.
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další zdroje
 
 - **Zasílání zpráv řízených událostmi** \
-  <http://soapatterns.org/design_patterns/event_driven_messaging>
+  <https://soapatterns.org/design_patterns/event_driven_messaging>
 
 - @No__t **kanálu pro publikování a odběr**– 1
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
@@ -105,4 +105,5 @@ Další témata, která je potřeba vzít v úvahu při použití asynchronní k
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]
-> [Předchozí](communication-in-microservice-architecture.md)@no__t – 1 –[Další](maintain-microservice-apis.md)
+> [Předchozí](communication-in-microservice-architecture.md)
+> [Další](maintain-microservice-apis.md)

@@ -2,12 +2,12 @@
 title: Stav a data v aplikacích Dockeru
 description: Seznamte se s možností dostupnosti pro uložení stavu v kontejnerových aplikacích.
 ms.date: 02/15/2019
-ms.openlocfilehash: bc171a419632f2ac61c7c9bf6b201b84e0691c3a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b2368efb0eff2bdce48b77b2addcc4de89822c74
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295691"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394645"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
@@ -43,11 +43,11 @@ Svazky mohou být pojmenované nebo anonymní (výchozí). Pojmenované svazky p
 
 **Připojení k vazbě** byla k dispozici po dlouhou dobu a umožňují mapování kterékoli složky na přípojný bod v kontejneru. Připojení vazby mají větší omezení než svazky a některé důležité problémy se zabezpečením, takže svazky jsou doporučenými možnostmi.
 
-připojení jsou virtuální složky, které jsou živě pouze v paměti hostitele a nejsou nikdy zapsány do systému souborů. **`tmpfs`** Jsou rychlé a bezpečné, ale používají paměť a jsou určeny pouze pro netrvalá data.
+**připojení `tmpfs`** jsou virtuální složky, které jsou živě pouze v paměti hostitele a nejsou nikdy zapsány do systému souborů. Jsou rychlé a bezpečné, ale používají paměť a jsou určeny pouze pro netrvalá data.
 
 Jak je znázorněno na obrázku 4-5, běžné svazky Docker lze ukládat mimo samotné kontejnery, ale v rámci fyzických hranic hostitelského serveru nebo virtuálního počítače. Kontejnery Docker ale nemají přístup ke svazku z jednoho hostitelského serveru nebo virtuálního počítače do jiného. Jinými slovy, u těchto svazků není možné spravovat data sdílená mezi kontejnery, které běží na různých hostitelích Docker, i když se dá dosáhnout pomocí ovladače svazku, který podporuje vzdálené hostitele.
 
-![Svazky lze sdílet mezi kontejnery, ale pouze ve stejném hostiteli, pokud nepoužíváte vzdálený ovladač, který podporuje vzdálené hostitele. ](./media/image5.png)
+![Diagram znázorňující svazky Docker uložené mimo kontejnery.](./media/state-and-data-in-docker-applications/container-based-application-external-data-sources.png)
 
 **Obrázek 4-5**. Svazky a externí zdroje dat pro aplikace založené na kontejnerech
 
@@ -66,5 +66,5 @@ Kromě toho, když jsou kontejnery Docker spravovány nástrojem Orchestrator, k
 **Relační databáze a databáze NoSQL.** K dispozici je celá řada možností pro externí databáze, od relačních databází, jako jsou SQL Server, PostgreSQL, Oracle nebo databáze NoSQL, jako jsou Azure Cosmos DB, MongoDB atd. Tyto databáze nebudou v rámci tohoto průvodce vysvětleny, protože se jedná o jiné téma úplně.
 
 >[!div class="step-by-step"]
->[Předchozí](monolithic-applications.md)Další
->[](soa-applications.md)
+>[Předchozí](monolithic-applications.md)
+>[Další](soa-applications.md)

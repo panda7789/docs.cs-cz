@@ -2,24 +2,24 @@
 title: Kontejnery jako základ pro spolupráci DevOps
 description: Pochopte klíčovou roli kontejnerů, abyste zjednodušili DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: 37faf00f270414df363f36894317f31f81a2937e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 16cccef0545f0da14128e31dc8f7ad78369cf23a
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295424"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394816"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Kontejnery jako základ pro spolupráci DevOps
 
 Díky velmi povaze kontejnerů a technologii Docker mohou vývojáři sdílet svůj software a závislosti snadno pomocí provozu IT a produkčních prostředí a zároveň odstranit typické možnosti "funguje na mém počítači" výmluvou. Kontejnery řeší konflikty aplikací mezi různými prostředími. Nepřímo, kontejnery a Docker přinášejí vývojářům a IT operace společně, což usnadňuje spolupráci. Přijetí pracovního postupu kontejneru poskytuje mnoho zákazníků s DevOps kontinuitou, kterou si vyžádal, ale dříve museli implementovat složitější konfiguraci pro kanály vydaných verzí a sestavení. Kontejnery zjednodušují kanály pro sestavování, testování a nasazování v DevOps.
 
-![Docker pomáhá vytvářet mosty mezi vývojáři a architekty na úlohách pro vývoj a navrhování a na operacích spustit/monitorovat/spravovat.](./media/image1.png)
+![Diagram znázorňující vlastnictví životního cyklu aplikace Docker.](./media/containers-foundation-for-devops-collaboration/persona-workloads-docker-container-lifecycle.png)
 
 **Obrázek 2-1.** Hlavní úlohy na "osoby" v životním cyklu pro kontejnerované aplikace Docker
 
-Pomocí kontejnerů Docker můžou vývojáři dělat, co je v rámci kontejneru (aplikace a služby, závislosti na architekturách a komponent) a jak se budou kontejnery a služby chovat společně jako aplikace, která se skládá z kolekce služeb. Vzájemné závislosti v rámci více kontejnerů jsou definovány v `docker-compose.yml` souboru nebo jako *manifest nasazení*. Provozní týmy IT (IT specialisté a správa) se tak můžou zaměřit na správu produkčních prostředí. infrastrukturu škálovatelnost sledovaný a nakonec zajišťuje správné doručování aplikací koncovým uživatelům, aniž byste museli znát obsah různých kontejnerů. Proto název "kontejner", "znovu volá analogii na skutečné přepravní kontejnery. Proto si vlastníci obsahu kontejneru nemusí zabývat tím, jak se kontejner dokončí, a společnost pro expedici přesměruje kontejner z místa původu do svého umístění, aniž by k tomu věděl nebo caring obsah. Podobným způsobem můžou vývojáři vytvořit a vlastnit obsah v kontejneru Docker, aniž by se museli zabývat mechanismem přenosu.
+Pomocí kontejnerů Docker můžou vývojáři dělat, co je v rámci kontejneru (aplikace a služby, závislosti na architekturách a komponent) a jak se budou kontejnery a služby chovat společně jako aplikace, která se skládá z kolekce služeb. Vzájemné závislosti více kontejnerů jsou definovány v souboru `docker-compose.yml` nebo jako *manifest nasazení*. Provozní týmy IT (IT specialisté a správa) se tak můžou zaměřit na správu produkčních prostředí. infrastrukturu škálovatelnost sledovaný a nakonec zajišťuje správné doručování aplikací koncovým uživatelům, aniž byste museli znát obsah různých kontejnerů. Proto název "kontejner", "znovu volá analogii na skutečné přepravní kontejnery. Proto si vlastníci obsahu kontejneru nemusí zabývat tím, jak se kontejner dokončí, a společnost pro expedici přesměruje kontejner z místa původu do svého umístění, aniž by k tomu věděl nebo caring obsah. Podobným způsobem můžou vývojáři vytvořit a vlastnit obsah v kontejneru Docker, aniž by se museli zabývat mechanismem přenosu.
 
-V pilíři na levé straně obrázku 2-1 vývojáři zapisují a spouštějí kód místně v kontejnerech Docker pomocí Docker for Windows nebo Mac. Definují operační prostředí pro kód pomocí souboru Dockerfile, který určuje základní operační systém, který se má spustit, a kroky sestavení pro sestavení kódu do image Docker. Vývojáři definují, jak bude jeden nebo více imagí spolupracovat pomocí výše uvedeného `docker-compose.yml` manifestu nasazení souboru. Jak dokončí svůj místní vývoj, načtou svůj aplikační kód a konfigurační soubory Docker do úložiště kódu podle svého výběru (tzn. úložiště Git).
+V pilíři na levé straně obrázku 2-1 vývojáři zapisují a spouštějí kód místně v kontejnerech Docker pomocí Docker for Windows nebo Mac. Definují operační prostředí pro kód pomocí souboru Dockerfile, který určuje základní operační systém, který se má spustit, a kroky sestavení pro sestavení kódu do image Docker. Vývojáři definují, jak bude jedna nebo více imagí spolupracovat s použitím uvedeného manifestu nasazení souboru `docker-compose.yml`. Jak dokončí svůj místní vývoj, načtou svůj aplikační kód a konfigurační soubory Docker do úložiště kódu podle svého výběru (tzn. úložiště Git).
 
 Pilíř DevOps definuje kanály sestavení – kontinuální integrace (CI) s využitím souboru Dockerfile, které jsou k dispozici v úložišti kódu. Systém CI načte základní image kontejneru z vybraného registru Docker a vytvoří vlastní image Docker pro aplikaci. Bitové kopie pak budou ověřeny a vloženy do registru Docker, který se používá pro nasazení do více prostředí.
 
@@ -57,7 +57,7 @@ Pokud můžete odpovědět na všechny tyto otázky, budete lépe připraveni p�
 
 Obrázek 2-2 představuje podrobnější pracovní postup pro životní cyklus aplikací Docker a zaměřuje se na tuto instanci na konkrétní DevOps aktivity a prostředky.
 
-![Tento diagram znázorňuje vnější smyčku DevOps. Když je kód vložen do úložiště, je spuštěn kanál CI a pak zahájí kanál CD, kde se aplikace nasadí. Metriky shromážděné z nasazených aplikací se dostanou zpět do vývojové úlohy, kde se vyskytuje "vnitřní smyčka", takže vývojové týmy mají skutečná data, která odpovídají potřebám uživatelů a obchodních potřeb.](./media/image2.png)
+![Diagram znázorňující obecný životní cyklus kompletního životního cyklu aplikace Docker.](./media/containers-foundation-for-devops-collaboration/generic-end-to-enddpcker-app-life-cycle.png)
 
 **Obrázek 2-2.** Pracovní postup na vysoké úrovni pro životní cyklus aplikací Docker v kontejneru
 
@@ -92,5 +92,5 @@ Tady jsou některé z nejdůležitějších výhod poskytovaných plným pracovn
 - Zapojte se do technologie Plug and Play a spoustu vašich stávajících investic do DevOps, včetně investic do Open Source.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](../Microsoft-platform-tools-containerized-apps/index.md)
+>[Předchozí](index.md)
+>[Další](../Microsoft-platform-tools-containerized-apps/index.md)

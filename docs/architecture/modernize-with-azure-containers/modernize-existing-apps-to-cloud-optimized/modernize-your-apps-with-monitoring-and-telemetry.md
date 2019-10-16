@@ -2,12 +2,12 @@
 title: Modernizace aplikací pomocí monitorování a telemetrie
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Modernizovat své aplikace s využitím monitorování a telemetrie
 ms.date: 04/30/2018
-ms.openlocfilehash: cdd7738606b086e980c4a50348166a7e23e15fa5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3d629e89a73c870d4b6396c6b1d0ecbe95b79ead
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318494"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72393852"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -89,4 +89,4 @@ Obrázek 4-11 ukazuje vztahy mezi různými hostiteli a agenty kontejnerů a OMS
 
 >[!div class="step-by-step"]
 >[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
->[Další](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
+>[Další](life-cycle-ci-cd-pipelines-devops-tools.md)

@@ -2,12 +2,12 @@
 title: Cloud Native DevOps
 description: Architekt cloudových nativních aplikací .NET pro Azure | Cloud Native DevOps
 ms.date: 06/30/2019
-ms.openlocfilehash: a056da833d7c6da11ab956337b77deab5e9bd159
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 84d37d14af8a68a51088568ded05ceef2e5e11fb
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183187"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72393728"
 ---
 # <a name="cloud-native-devops"></a>Cloud Native DevOps
 
@@ -15,7 +15,7 @@ ms.locfileid: "71183187"
 
 Oblíbeným hesloem software konzultantů je odpovědět na všechny otázky, které jsou závislé na. Není to proto, že software konzultanti fond, že neprovádí žádnou pozici. Je to z toho důvodu, že neexistuje žádná skutečná odpověď na jakékoli dotazy v softwaru. Není k dispozici absolutní právo a nesprávné místo, ale rozdíl mezi opačnými hodnotami.
 
-Vezměte v úvahu například dvě hlavní školy vývoje webových aplikací: Jednostránkové aplikace (jednostránkové) oproti aplikacím na straně serveru. Na jedné straně je činnost koncového uživatele lepší díky jednostránkové a velikost provozu na webovém serveru může být minimalizována, takže je možné je hostovat na něco jako statické hostování. Na druhé straně je jednostránkové obvykle pomalejší pro vývoj a obtížnější testování. Kterou jednu si máte správnou volbu? To je dobré, záleží na vaší situaci.
+Vezměte v úvahu například dvě hlavní školy vývoje webových aplikací: jednostránkové aplikace (jednostránkové) oproti aplikacím na straně serveru. Na jedné straně je činnost koncového uživatele lepší díky jednostránkové a velikost provozu na webovém serveru může být minimalizována, takže je možné je hostovat na něco jako statické hostování. Na druhé straně je jednostránkové obvykle pomalejší pro vývoj a obtížnější testování. Kterou jednu si máte správnou volbu? To je dobré, záleží na vaší situaci.
 
 Nativní aplikace v cloudu nejsou odolné vůči stejné dichotomy. Mají jasné výhody z pohledu rychlosti vývoje, stability a škálovatelnosti, ale jejich správa může být poměrně náročná.
 
@@ -35,7 +35,7 @@ Při vstupu do DevOps se nevyskytuje žádný zlatý kladiv. Nikdo nemůže prod
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-Azure DevOps má dlouhého původu. Může trasovat své kořeny zpět do, když Team Foundation Server nejprve přesunuli do režimu online a prostřednictvím různých změn názvů: Visual Studio Online a Visual Studio Team Services. V průběhu let se ale stane mnohem více než jeho předchůdci.
+Azure DevOps má dlouhého původu. Může trasovat své kořeny zpět do, když Team Foundation Server nejprve přesunuli do online režimu a prostřednictvím různých změn názvů: Visual Studio Online a Visual Studio Team Services. V průběhu let se ale stane mnohem více než jeho předchůdci.
 
 Azure DevOps je rozdělené na pět hlavních součástí:
 
@@ -55,7 +55,7 @@ Organizační jednotka nejvyšší úrovně ve službě Azure DevOps se označuj
 
 Každá z těchto komponent poskytuje některé výhody pro cloudové nativní aplikace, ale tři nejužitečnější jsou Správa zdrojového kódu, desky a kanály.  
 
-## <a name="source-control"></a>Správy zdrojového kódu
+## <a name="source-control"></a>Správa zdrojového kódu
 
 Uspořádání kódu pro nativní cloudové aplikace může být náročné. Pro cloudové aplikace, které se navzájem vzájemně komunikují, se místo jedné aplikace obří může jednat o web s menšími aplikacemi. Stejně jako u všech věcí v computingu si nejlepší uspořádání kódu zůstane otevřené otázky. K dispozici jsou příklady úspěšných aplikací s různými druhy rozložení, ale dvě varianty vypadají nejvíc oblíbenosti.
 
@@ -78,9 +78,9 @@ Na první pohled se zdá, že se jedná o největší logický přístup k rozd�
 
 Jednou z klíčových nápadů za mikroslužby je, že služby by měly být silo a oddělené od sebe. Když použijete návrh založený na doméně, můžete se rozhodnout na hranicích služeb, které služby působí jako transakční hranice. Aktualizace databáze by neměly zahrnovat více služeb. Tato kolekce souvisejících dat je označována jako ohraničený kontext.  Tato nápad se projeví v izolaci dat mikroslužeb k databázi oddělené a autonomní od ostatních služeb. Přináší skvělou představu o tom, jak tento nápad přenést až do zdrojového kódu.
 
-Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný `node_modules` adresář. Nová instalace něco podobného jako `create-react-app` je, že se s nimi bude přenášet tisíce balíčků. Otázka, jak tyto závislosti spravovat, je obtížné. 
+Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný adresář `node_modules`. Nová instalace nějakého, jako je `create-react-app`, se může dostat do tisíců balíčků. Otázka, jak tyto závislosti spravovat, je obtížné. 
 
-Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede ke vývojářské práci, takže invariably `node_modules` adresář skončí s několika verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu jiného tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
+Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede ke vývojářské práci, takže invariably adresář `node_modules` skončil s více verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu odlišný tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
 
 Existují knihovny, které jsou závislé na nejrůznějších projektech. Tím, že mikroslužby vydělíte pomocí jednoho z nich, interní závislosti se můžou nejlépe vyřešit pomocí interního úložiště, Azure Artifacts. Sestavení pro knihovny budou nabízet své nejnovější verze do Azure Artifacts pro interní spotřebu. Aby bylo možné převzít závislosti na nově aktualizovaných balíčcích, musí se projekt pro příjem dat ještě ručně aktualizovat.
 
@@ -128,7 +128,7 @@ Správa úloh v jakémkoli projektu může být obtížná. Předem je dlouhé o
 
 Nativní aplikace v cloudu mají za následek menší než tradiční softwarové produkty nebo alespoň ty, které jsou rozdělené na menší služby. Sledování problémů nebo úloh souvisejících s těmito službami zůstává důležité jako u jakéhokoli jiného softwarového projektu. Nikdo nechce ztratit záznam určité pracovní položky nebo vysvětlit zákazníkovi, že jejich potíže nebyly správně zaznamenány. Panely jsou konfigurovány na úrovni projektu, ale v rámci každého projektu lze definovat oblasti. Ty umožňují rozlomení problémů mezi několika komponentami. Výhodou zachování všech práce pro celou aplikaci na jednom místě je, že je snadné přesunout pracovní položky z jednoho týmu na jiný, protože jsou lépe pochopitelné.
 
-Azure DevOps obsahuje předem nakonfigurované množství oblíbených šablon. Ve většině základních konfiguracích je potřeba, abyste věděli, co je ve nevyřízených položkách, na kterých lidé pracují, a co se děje. Je důležité mít přehled o procesu sestavování softwaru, aby bylo možné v práci určit prioritu a dokončené úkoly hlášené zákazníkovi. Samozřejmě velmi málo softwarových projektů přivede k procesu jednoduchému jako `to do`, `doing`a `done`. Netrvá tak dlouho, aby mohli uživatelé začít přidávat kroky `QA` jako `Detailed Specification` nebo do procesu.
+Azure DevOps obsahuje předem nakonfigurované množství oblíbených šablon. Ve většině základních konfiguracích je potřeba, abyste věděli, co je ve nevyřízených položkách, na kterých lidé pracují, a co se děje. Je důležité mít přehled o procesu sestavování softwaru, aby bylo možné v práci určit prioritu a dokončené úkoly hlášené zákazníkovi. Samozřejmě se velmi malým počtem softwarových projektů přilepit proces jednoduchý jako `to do`, `doing` a `done`. Netrvá tak dlouho, aby mohli uživatelé začít přidávat kroky, jako je `QA` nebo `Detailed Specification` do procesu.
 
 Jednou z důležitějších částí agilních metod je introspekce v pravidelných intervalech. Tyto recenze jsou určeny k tomu, aby poskytovaly přehled o tom, jaké problémy tým čelí a jak se dají zlepšit. Často to znamená změnu toku potíží a funkcí prostřednictvím procesu vývoje. Proto je naprosto dobrý stav, že rozbalíte rozložení desek s dalšími fázemi.
 
@@ -166,7 +166,7 @@ Důležitost automatizace procesu sestavení a doručování je vykládána pomo
 
 Azure DevOps poskytuje sadu nástrojů pro zajištění nepřetržité integrace a nasazení snadněji než kdy dřív. Tyto nástroje jsou umístěné v části Azure Pipelines. První z nich je sestavení Azure, což je nástroj pro spouštění definic sestavení založených na YAML ve velkém měřítku. Uživatelé můžou buď přenést své vlastní počítače sestavení (Skvělé pro případ, že sestavení vyžaduje prostředí pečlivě), nebo použít počítač z nepřetržitě aktualizovaného fondu virtuálních počítačů Azure hostovaných pro Azure. Tyto hostované agenti sestavení přináší předinstalované prostředí široké škály vývojářských nástrojů, nejen vývoj pro .NET, ale pro vše od jazyka Java až po vývoj pro iPhone.
 
-DevOps zahrnuje široké spektrum neplatných definic sestavení, které lze přizpůsobit pro jakékoli sestavení. Definice sestavení jsou definovány v souboru s názvem `azure-pipelines.yml` a zkontrolovány do úložiště, aby mohly být ve verzi společně se zdrojovým kódem. To usnadňuje změny kanálu sestavení ve větvi, protože změny lze vrátit pouze do této větve. Příklad `azure-pipelines.yml` pro sestavení webové aplikace v ASP.NET v plném rozhraní je znázorněn na obrázku 11-8.
+DevOps zahrnuje široké spektrum neplatných definic sestavení, které lze přizpůsobit pro jakékoli sestavení. Definice sestavení jsou definovány v souboru s názvem `azure-pipelines.yml` a vráceny do úložiště, aby mohly být ve verzi společně se zdrojovým kódem. To usnadňuje změny kanálu sestavení ve větvi, protože změny lze vrátit pouze do této větve. Příklad `azure-pipelines.yml` pro sestavení webové aplikace v ASP.NET na plném rozhraní je znázorněn na obrázku 11-8.
 
 ```yml
 name: $(rev:r)
@@ -200,7 +200,7 @@ steps:
   displayName: 'Build solution'
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+    msbuildArgs: '-p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:PackageLocation="$(build.artifactstagingdirectory)\\"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -250,7 +250,7 @@ Pro konfiguraci mnoha kanálů sestavení se neúčtují žádné náklady, tak�
 
 ### <a name="versioning-releases"></a>Verze verzí
 
-Jednou z nevýhod používání funkce releases je, že se nedá definovat v `azure-pipelines.yml` souboru vráceného se změnami. Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
+Jednou z nevýhod používání funkce releases je, že není možné ji definovat v souboru @no__t 0 vráceného se změnami. Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
 
 >[!div class="step-by-step"]
 >[Předchozí](azure-security.md)
