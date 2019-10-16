@@ -33,7 +33,7 @@
         - name: Modernizace aplikací pomocí monitorování a telemetrie
           href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-with-monitoring-and-telemetry.md
         - name: Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
-          href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md
+          href: ./modernize-existing-apps-to-cloud-optimized/life-cycle-ci-cd-pipelines-devops-tools.md
         - name: Scénáře migrace do hybridního cloudu
           href: ./modernize-existing-apps-to-cloud-optimized/migrate-to-hybrid-cloud-scenarios.md
     - name: Návody a přehled technických začátků
