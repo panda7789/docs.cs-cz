@@ -9,18 +9,18 @@ helpviewer_keywords:
 - shapes [Windows Forms], filling with patterns
 - brushes [Windows Forms], using hatch brushes
 ms.assetid: 9c8300ff-187b-404f-af1f-ebd499f5b16f
-ms.openlocfilehash: b9ecefb82aaaf896c4ed39733f1e8d7bd65c16d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b80708f0ce722b1809fe49190639231e7e4c8329
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645459"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320057"
 ---
 # <a name="how-to-fill-a-shape-with-a-hatch-pattern"></a>Postupy: Vyplnění obrazce pomocí nesouvislého vzoru
-Nesouvislého vzoru se provádí stínováním dvěma barvami: jeden pro na pozadí a jeden pro řádky, které tvoří vzor přes na pozadí. Chcete-li vyplnění uzavřené obrazce pomocí nesouvislého vzoru, použijte <xref:System.Drawing.Drawing2D.HatchBrush> objektu. Následující příklad ukazuje, jak vyplnit elipsu pomocí nesouvislého vzoru:  
+Vzor šrafování se skládá ze dvou barev: jednoho pro pozadí a jeden pro čáry, které tvoří vzorek na pozadí. Chcete-li vyplnit uzavřený tvar pomocí vzoru šrafování, použijte objekt <xref:System.Drawing.Drawing2D.HatchBrush>. Následující příklad ukazuje, jak vyplnit elipsu vzorem šrafování:  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> Konstruktor má tři argumenty: Styl šrafování, barva šrafování čáry a barvu pozadí. Styl šrafování argument může být libovolná hodnota od <xref:System.Drawing.Drawing2D.HatchStyle> výčtu. Existuje více než 50 elementů v <xref:System.Drawing.Drawing2D.HatchStyle> výčet; některé z těchto elementů jsou uvedeny v následujícím seznamu:  
+ Konstruktor <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> přijímá tři argumenty: styl šrafování, barva šrafované čáry a barvu pozadí. Argument stylu šrafování může být libovolná hodnota z výčtu <xref:System.Drawing.Drawing2D.HatchStyle>. Výčet <xref:System.Drawing.Drawing2D.HatchStyle> obsahuje více než 50 prvků; v následujícím seznamu jsou uvedeny některé z těchto prvků:  
   
 - <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>  
   
@@ -34,15 +34,15 @@ Nesouvislého vzoru se provádí stínováním dvěma barvami: jeden pro na poza
   
 - <xref:System.Drawing.Drawing2D.HatchStyle.DiagonalCross>  
   
- Následující obrázek znázorňuje vyplněnou elipsu.  
+ Následující ilustrace znázorňuje Vyplněnou elipsu.  
   
- ![Šrafovaných vzor](./media/hatch1.png "hatch1")  
+  ![Snímek obrazovky toho, jak elipsa vyplněná vzorem šrafování vypadá jako.](./media/how-to-fill-a-shape-with-a-hatch-pattern/ellipse-filled-hatch.png "hatch1")
   
  [!code-csharp[System.Drawing.UsingABrush#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.UsingABrush#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ Předchozí příklad je určený pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> @ no__t-1, což je parametr obslužné rutiny události <xref:System.Windows.Forms.Control.Paint>.  
   
 ## <a name="see-also"></a>Viz také:
 

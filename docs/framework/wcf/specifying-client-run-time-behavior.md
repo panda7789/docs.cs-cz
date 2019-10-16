@@ -7,42 +7,42 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: 738aadf93b726569eb59fc281cca2e482bace0bc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 075f62526ace1ac49d12e1bdec39d8df4b0a3ff1
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645186"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321412"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
-Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF), lze nastavit k úpravě chování za běhu tak, aby odpovídala klientské aplikace. Tři atributy jsou k dispozici pro určení chování klienta za běhu. Můžete použít objekty zpětného volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributů, které mají změna jejich chování za běhu. Ostatní atributy <xref:System.ServiceModel.Description.ClientViaBehavior>, můžete použít k oddělení logické cíl z cílového okamžitou síť. Kromě toho můžete použít typy zpětného volání klienta duplexní některá chování straně služby. Další informace najdete v tématu [určení chování za běhu služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
+Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF), je možné nakonfigurovat tak, aby upravili chování za běhu tak, aby vyhovovaly klientské aplikaci. Pro určení chování při běhu klienta jsou k dispozici tři atributy. Objekty duplexního zpětného volání klienta mohou použít atributy <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> pro úpravu chování při běhu. Druhý atribut <xref:System.ServiceModel.Description.ClientViaBehavior> lze použít k oddělení logického cíle z bezprostředního síťového cíle. Kromě toho můžou některé z chování na straně služby používat i duplexní typy zpětného volání klienta. Další informace najdete v tématu [Určení chování služby za běhu](specifying-service-run-time-behavior.md).  
   
-## <a name="using-the-callbackbehaviorattribute"></a>Použití třídu CallbackBehaviorAttribute  
- Můžete nakonfigurovat nebo rozšíření pomocí chování při spuštění provádění zpětného volání kontraktu v klientské aplikaci <xref:System.ServiceModel.CallbackBehaviorAttribute> třídy. Tento atribut má podobnou funkci zpětného volání třídy jako <xref:System.ServiceModel.ServiceBehaviorAttribute> třídy, s výjimkou vytváření instancí nastavení chování a transakce.  
+## <a name="using-the-callbackbehaviorattribute"></a>Použití CallbackBehaviorAttribute  
+ Chování provádění implementace kontraktu zpětného volání v klientské aplikaci můžete nakonfigurovat nebo roztáhnout pomocí třídy <xref:System.ServiceModel.CallbackBehaviorAttribute>. Tento atribut provádí podobnou funkci pro třídu zpětného volání jako třídu <xref:System.ServiceModel.ServiceBehaviorAttribute> s výjimkou chování vytváření instancí a nastavení transakcí.  
   
- <xref:System.ServiceModel.CallbackBehaviorAttribute> Třídy je nutné použít na třídu, která implementuje tento kontrakt zpětného volání. Pokud se použije pro implementaci podavače kontraktu <xref:System.InvalidOperationException> je vyvolána výjimka za běhu. Následující příklad kódu ukazuje <xref:System.ServiceModel.CallbackBehaviorAttribute> třídy pro objekt zpětného volání, která používá <xref:System.Threading.SynchronizationContext> objektem pro určení vlákno zařazení, <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> vlastnost k vynucení ověřování zpráv a <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> vlastnost vrátit výjimky jako <xref:System.ServiceModel.FaultException> objektů ve službě pro účely ladění.  
+ Třídu <xref:System.ServiceModel.CallbackBehaviorAttribute> je nutné použít pro třídu, která implementuje kontrakt zpětného volání. Při použití na neduplexní implementaci kontraktu je vyvolána výjimka <xref:System.InvalidOperationException> v době běhu. Následující příklad kódu ukazuje třídu <xref:System.ServiceModel.CallbackBehaviorAttribute> na objektu zpětného volání, který používá objekt <xref:System.Threading.SynchronizationContext> k určení vlákna k zařazení do, vlastnosti <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> pro vykonání ověření zprávy a vlastnost <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> pro vrácení výjimek jako objektů <xref:System.ServiceModel.FaultException> do Služba pro účely ladění.  
   
  [!code-csharp[CallbackBehaviorAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
  [!code-vb[CallbackBehaviorAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
   
-## <a name="using-callbackdebugbehavior-to-enable-the-flow-of-managed-exception-information"></a>Povolení toku informací o řízené výjimce pomocí CallbackDebugBehavior  
- Může být povolen tok informací o řízené výjimce do objektu zpětného volání klienta zpět do služby pro účely ladění tím, že nastavíte <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost `true` souboru prostřednictvím kódu programu nebo z konfigurace aplikace.  
+## <a name="using-callbackdebugbehavior-to-enable-the-flow-of-managed-exception-information"></a>Povolení toku informací o spravovaných výjimkách pomocí CallbackDebugBehavior  
+ Můžete povolit tok informací o spravovaných výjimkách v objektu zpětného volání klienta zpátky do služby pro účely ladění nastavením vlastnosti <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> na `true` buď programově, nebo z konfiguračního souboru aplikace.  
   
- Vrací informace o spravované výjimce ke službám může představovat bezpečnostní riziko, protože podrobnosti o výjimce zobrazení informací o informace o klientovi interní implementace, která není autorizovaný. služby použít. Kromě toho Přestože <xref:System.ServiceModel.Description.CallbackDebugBehavior> vlastnosti můžete nastavit také prostřednictvím kódu programu, může být snadné zapomenout zakázat <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> při nasazování.  
+ Vrácení spravovaných informací o výjimkách do služeb může představovat bezpečnostní riziko, protože podrobnosti o výjimce zpřístupňují informace o implementaci interního klienta, které by mohly používat neautorizované služby. Kromě toho, i když lze vlastnosti <xref:System.ServiceModel.Description.CallbackDebugBehavior> nastavit také programově, lze při nasazování snadno zapomenout <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> zakázat.  
   
- Z důvodu zabezpečení problematiku důrazně doporučujeme:  
+ Vzhledem k problémům se zabezpečením se důrazně doporučuje:  
   
-- Konfigurační soubor aplikace můžete nastavit hodnotu <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost `true`.  
+- Pomocí konfiguračního souboru aplikace nastavíte hodnotu vlastnosti <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> na `true`.  
   
-- Provedete pouze v řízené ladění scénářů.  
+- Provedete to jenom v řízených scénářích ladění.  
   
- Následující příklad kódu ukazuje klienta konfigurační soubor, který dává pokyn k vrácení informací o spravované výjimce z klienta objekt zpětného volání v zprávy protokolu SOAP WCF.  
+ Následující příklad kódu ukazuje konfigurační soubor klienta, který instruuje technologii WCF, aby vrátila informace o spravované výjimce z objektu zpětného volání klienta ve zprávách SOAP.  
   
  [!code-xml[SCA.CallbackContract#4](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]  
  
-## <a name="using-the-clientviabehavior-behavior"></a>Použití ClientViaBehavior chování  
- Můžete použít <xref:System.ServiceModel.Description.ClientViaBehavior> chování k určení Uniform Resource Identifier, pro který by měl být vytvořen přenosový kanál. Použijte toto chování, pokud cíl okamžitou síť není zamýšlený procesoru zprávy. To umožňuje vícenásobným směrováním konverzace, pokud volající aplikace neví nutně ultimate cíl nebo pokud cíl `Via` záhlaví není adresa.  
+## <a name="using-the-clientviabehavior-behavior"></a>Použití chování ClientViaBehavior  
+ Pomocí chování <xref:System.ServiceModel.Description.ClientViaBehavior> můžete určit identifikátor URI, pro který má být vytvořen přenosový kanál. Toto chování použijte v případě, že okamžité síťové umístění není zamýšleným procesorem zprávy. Tím se povolí konverzace s více segmenty, když volající aplikace nutně neví o konečném cíli nebo když cílová hlavička `Via` není adresou.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Určování chování služby za běhu](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
+- [Určování chování služby za běhu](specifying-service-run-time-behavior.md)

@@ -6,52 +6,52 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], extensibility
 - extensibility [WCF]
 ms.assetid: ef56c251-d63c-4b3f-944f-b0c67bfb0f68
-ms.openlocfilehash: 8ac605b562531329333b5f05e081d89de55d8cd2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ae820e88a790aeaad7c57cde2db84b8168f273a9
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645424"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321056"
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
-Model aplikace Windows Communication Foundation (WCF) je navržená k řešení větší část požadavky na komunikaci všechny distribuované aplikace. Ale vždy existují scénáře, které výchozí aplikační model a implementace poskytované systémem nepodporují. Model rozšiřitelnosti WCF je určený pro podporu vlastní scénáře tím, že abyste upravili chování systému na všech úrovních, dokonce i do bodu nahrazení modelu celé aplikace. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
+Model aplikace Windows Communication Foundation (WCF) je navržený tak, aby vyřešil větší část požadavků na komunikaci jakékoli distribuované aplikace. Existují však vždy scénáře, že výchozí model aplikace a implementace systému nejsou podporovány. Model rozšiřitelnosti WCF je určený k podpoře vlastních scénářů tím, že vám umožní změnit chování systému na všech úrovních, a to i v případě, že se nahradí celý model aplikace. Toto téma popisuje různé oblasti rozšíření a odkazuje na Další informace o každé z nich.  
   
-## <a name="areas-to-extend"></a>Rozšíření oblastí  
- Můžete rozšířit:  
+## <a name="areas-to-extend"></a>Oblasti, které se mají zvětšit  
+ Můžete roztáhnout:  
   
-- Doba spuštění aplikace. Tato zásada rozšiřuje, odesílání a zpracování zpráv pro aplikaci. Tato oblast také obsahuje rozšíření systému zabezpečení, systému metadat, systém serializace a vazby a prvky, které k základní kanál systému připojit aplikace vazbu.  
+- Modul runtime aplikace Tím se rozšíří odesílání a zpracování zpráv pro aplikaci. Tato oblast také obsahuje rozšíření systému zabezpečení, systému metadat, systému serializace a vazeb a elementů vazby, které připojují aplikaci k základnímu systému kanálů.  
   
-- Kanál a modulu runtime kanálu. Tato zásada rozšiřuje na systém, který funguje na úrovni zprávy, nabízí protokol, přenosu a podpory kódování.  
+- Modul runtime kanálu a kanálu. Tím se rozšíří systém, který funguje na úrovni zprávy, poskytuje podporu protokolů, přenosů a kódování.  
   
-- Modul runtime hostitele. Tato zásada rozšiřuje vztah hostování aplikační domény na modul runtime kanálu a aplikace.  
+- Modul runtime hostitele. Tím se rozšiřuje vztah domény hostující aplikace na modul runtime kanálu a aplikace.  
   
-### <a name="extending-the-application-runtime"></a>Rozšíření modulu Runtime aplikace  
- Aplikace WCF je rozdíl mezi zprávy, které jsou určeny pro odpovídající kanál a zprávy, které jsou určeny pro vlastní aplikace. Zprávy kanálu podporovat některé funkce související s kanál, třeba navázání zabezpečené konverzace nebo vytvoření stabilní relace. Tyto zprávy nejsou k dispozici pro spuštění aplikace; jsou zpracovávány předtím, než je zahrnuta aplikační vrstvu.  
+### <a name="extending-the-application-runtime"></a>Rozšíření modulu runtime aplikace  
+ V aplikacích WCF existuje rozdíl mezi zprávami, které jsou určeny pro odpovídající kanál a zprávy určené pro samotnou aplikaci. Zprávy kanálu podporují některé funkce související s kanálem, jako je třeba vytvoření zabezpečené konverzace nebo vytvoření spolehlivé relace. Tyto zprávy nejsou k dispozici pro modul runtime aplikace. jsou zpracovávány před tím, než je zahrnuta aplikační vrstva.  
   
- Aplikace zprávy obsahují data, která je určena pro klienta nebo operace služby, které vy nebo váš zákazník vytvořil. Tyto zprávy jsou k dispozici systému rozšíření na úrovni aplikace ve zprávě nebo Objektové formě, v závislosti na vašich potřeb.  
+ Zprávy aplikací obsahují data určená pro operaci klienta nebo služby, kterou jste vy nebo váš zákazník vytvořili. Tyto zprávy jsou k dispozici pro systém rozšíření na úrovni aplikace ve formě zprávy nebo objektu v závislosti na vašich potřebách.  
   
- Všechny zprávy předat prostřednictvím kanálu systému; pouze zprávy aplikace se předávají ze systému kanál do aplikace. Pokud chcete vytvořit nové funkce na úrovni kanálu, musíte rozšířit kanál systému. Pokud chcete vytvořit nové funkce na úrovni aplikace, je třeba rozšířit modul runtime služby ani klienta (dispečerů a objekty pro vytváření kanálů, v uvedeném pořadí). Další informace o rozšíření modulu runtime aplikace najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ Všechny zprávy procházejí systémem kanálu; ze systému kanálu do aplikace jsou předávány pouze zprávy aplikace. Chcete-li vytvořit nové funkce na úrovni kanálu, je nutné, abyste rozšířili systém kanálu. Chcete-li vytvořit nové funkce na úrovni aplikace, je nutné, abyste rozšířili službu nebo modul runtime klienta (odeslané moduly a továrny kanálů). Další informace o rozšíření modulu runtime aplikace naleznete v tématu [Rozšíření ServiceHost a vrstva modelu služby](./extending/extending-servicehost-and-the-service-model-layer.md).  
   
 #### <a name="extending-security"></a>Rozšíření zabezpečení  
- Pokud chcete vytvořit vlastní bezpečnostní mechanismy, jako je tokeny a přihlašovací údaje, je třeba rozšířit systém zabezpečení. Další informace najdete v tématu [rozšíření zabezpečení](../../../docs/framework/wcf/extending/extending-security.md).  
+ Chcete-li vytvořit vlastní mechanismy zabezpečení, jako jsou tokeny a přihlašovací údaje, je nutné, abyste rozšířili systém zabezpečení. Další informace najdete v tématu [rozšíření zabezpečení](./extending/extending-security.md).  
   
 #### <a name="extending-metadata"></a>Rozšíření metadat  
- Pokud chcete zpřístupnit vaše metadata v jinak než výchozí, musí rozšíření systému metadat. Další informace najdete v tématu [rozšíření systému metadat](../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
+ Chcete-li svá metadata vystavit jinak než ve výchozím nastavení, je nutné systém metadat zvětšit. Další informace najdete v tématu [rozšíření systému metadat](./extending/extending-the-metadata-system.md).  
   
 #### <a name="extending-serialization"></a>Rozšíření serializace  
- Vytvářet vlastní kodéry, zadejte náhrady dat nebo jiné pracovní zahrnující přizpůsobení přenášená data, je třeba rozšířit systém serializace. Další informace najdete v tématu [rozšiřování kodérů a Serializátorů](../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md).  
+ Chcete-li vytvořit vlastní kodéry, poskytnout náhradní data nebo jinou práci zahrnující přizpůsobení přenesených dat, je nutné systém serializace zvětšit. Další informace najdete v tématu [rozšíření kodérů a serializátorů](./extending/extending-encoders-and-serializers.md).  
   
 #### <a name="extending-bindings"></a>Rozšiřování vazeb  
- Pokud chcete přidružit k přenosu nebo protokol kanály aplikační vrstvu, je třeba rozšířit systém vazby. Další informace najdete v tématu [rozšíření vazby](../../../docs/framework/wcf/extending/extending-bindings.md).  
+ Chcete-li přidružit kanály přenosu nebo protokolu k aplikační vrstvě, je nutné zvětšit systém vazby. Další informace najdete v tématu [rozšíření vazeb](./extending/extending-bindings.md).  
   
 ### <a name="extending-the-channel-system"></a>Rozšíření systému kanálu  
- Vytvoření kanálů, které podporují vlastní přenosy nebo protokol funkce najdete v tématu [rozšíření vrstvy kanálu](../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  
+ Pokud chcete vytvořit kanály, které podporují vlastní přenosy nebo funkce protokolu, přečtěte si téma [rozšíření vrstvy kanálu](./extending/extending-the-channel-layer.md).  
   
-### <a name="extending-the-service-hosting-system"></a>Rozšíření hostování systému  
- Chcete-li změnit model služby aplikace, je třeba rozšířit <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> třídy. Další informace najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+### <a name="extending-the-service-hosting-system"></a>Rozšíření hostitelského systému služby  
+ Chcete-li upravit aplikační model pro všechny služby, je nutné, abyste rozšířili třídu <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>. Další informace najdete v tématu [Rozšíření ServiceHost a vrstva modelu služby](./extending/extending-servicehost-and-the-service-model-layer.md).  
   
- Pokud chcete upravit vztah hostování domény aplikace a hostitel služby, je třeba rozšířit <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType> třídy. Další informace najdete v tématu [rozšíření hostování pomocí ServiceHostFactory](../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md).  
+ Chcete-li upravit vztah mezi doménou hostující aplikace a hostitelem služby, je nutné zvětšit třídu <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType>. Další informace najdete v tématu [rozšíření hostování pomocí ServiceHostFactory](./extending/extending-hosting-using-servicehostfactory.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšíření WCF](../../../docs/framework/wcf/extending/index.md)
+- [Rozšíření WCF](./extending/index.md)

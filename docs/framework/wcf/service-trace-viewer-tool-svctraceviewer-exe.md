@@ -2,22 +2,22 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: 02d2dd74031f280808027df1c0b7b78a90e6cd52
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 543b0e714343cdb8078861ceb31e4f8035e20afd
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664116"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321215"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 
-Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.
+Nástroj pro prohlížeč trasování služby Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které jsou generovány službou WCF. Prohlížeč trasování služby poskytuje způsob, jak snadno sloučit, zobrazit a filtrovat zprávy trasování v protokolu, abyste mohli diagnostikovat, opravovat a ověřovat problémy se službou WCF.
 
 ## <a name="configuring-tracing"></a>Konfigurace trasování
 
-Diagnostická trasování poskytují informace o tom, co se děje v průběhu operace vaší aplikace. Jak již název napovídá, můžete sledovat operace z jejich zdroje do cíle a také zprostředkující body.
+Trasování diagnostiky poskytují informace, které ukazují, co se děje v rámci operace vaší aplikace. Jak název napovídá, můžete sledovat operace z jejich zdroje do cíle a také do mezilehlých bodů.
 
-Můžete nakonfigurovat trasování pomocí konfiguračního souboru aplikace – buď soubor Web.config pro hostované webové aplikace nebo *Appname*.config pro aplikace v místním prostředí. Následuje příklad:
+Trasování můžete nakonfigurovat pomocí konfiguračního souboru aplikace – buď Web. config pro aplikace hostované na webu, nebo *AppName*. config pro aplikace hostované v místním prostředí. Následuje příklad:
 
 ```xml
 <system.diagnostics>
@@ -36,92 +36,92 @@ Můžete nakonfigurovat trasování pomocí konfiguračního souboru aplikace �
 </system.diagnostics>
 ```
 
-V tomto příkladu je zadaný název a typ naslouchací služby stopy. Naslouchací proces se nazývá `sdt` a standardní naslouchací služby stopy rozhraní .NET Framework (System.Diagnostics.XmlWriterTraceListener) se přidá jako typ. `initializeData` Atribut se používá k nastavení názvu souboru protokolu pro tuto naslouchací proces bude `SdrConfigExample.e2e`. Pro soubor protokolu můžete nahradit úplná cesta k souboru jednoduchý název.
+V tomto příkladu je zadán název a typ naslouchacího procesu trasování. Naslouchací proces má název `sdt` a jako typ se přidá standardní naslouchací proces trasování .NET Framework (System. Diagnostics. XmlWriterTraceListener). Atribut `initializeData` slouží k nastavení názvu souboru protokolu tohoto naslouchacího procesu tak, aby byl `SdrConfigExample.e2e`. Pro soubor protokolu můžete použít plně kvalifikovanou cestu k jednoduchému názvu souboru.
 
-Tento příklad vytvoří soubor v kořenovém adresáři volá SdrConfigExample.e2e. Při použití prohlížeče trasování pro otevření souboru, jak je popsáno v části "Levou a zobrazení WCF trasovací soubory", zobrazí se všechny zprávy, které byly odeslány.
+Příklad vytvoří soubor v kořenovém adresáři s názvem SdrConfigExample. e2e. Když použijete Prohlížeč trasování k otevření souboru, jak je popsáno v části otevření a zobrazení trasovacích souborů WCF, uvidíte všechny zprávy, které byly odeslány.
 
-Úroveň trasování řídí `switchValue` nastavení. K dispozici trasování úrovně jsou popsány v následující tabulce.
+Úroveň trasování je řízena nastavením `switchValue`. Dostupné úrovně trasování jsou popsány v následující tabulce.
 
 |Úroveň trasování|Popis|
 |-----------------|-----------------|
-|Kritická|-Protokoly položky typu Fail-Fast a protokol událostí a informace pro korelaci trasování. Následující jsou některé příklady, kdy můžete použít kritická úroveň:<br />-AppDomain bylo ukončeno z důvodu neošetřené výjimky.<br />– Aplikace se nespustí.<br />– Zpráva, která způsobila selhání procesu MyApp.exe pochází.|
-|Chyba|– Protokoluje všechny výjimky. Můžete použít úroveň chyb v těchto situacích:<br />-Kódu došlo k chybě z důvodu výjimky neplatné přetypování.<br />– S výjimkou "nepovedlo se vytvořit koncový bod" je příčinou selhání při spuštění aplikace.|
-|Upozornění|-Existuje podmínku, která může následně vést chybě nebo kritické chyby. Můžete použít tuto úroveň v následujících situacích:<br />-Aplikace přijímá více požadavků než povoluje jeho nastavení omezení šířky pásma.<br />-Přijímající fronta je v 98 procent společností z žebříčku jeho konfigurovanou kapacitu.|
-|Informace o|-Zprávy užitečné pro monitorování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Můžete využít tyto informace pro správu výkon a plánování kapacity. Můžete použít tuto úroveň v následujících situacích:<br />-Selháním po zprávy bylo dosaženo domény aplikace a byla deserializovat.<br />-K selhání došlo k chybě při vytváření vazby HTTP.|
-|Podrobnosti|Ladění úroveň trasování pro obě uživatelský kód a údržba. Nastavíte úroveň při:<br />-Si nejste jisti, jakou metodu v kódu byla volána, když došlo k chybě.<br />-Máte nesprávné koncový bod nakonfigurovaný a službě se nepovedlo spustit, protože položka v úložišti rezervace je uzamčen.|
-|ActivityTracing|Tok událostí mezi zpracování aktivit a komponent.<br /><br /> Tato úroveň umožňuje vývojářům a správcům ke korelaci aplikací ve stejné doméně aplikace.<br /><br /> – Trasování pro aktivitu hranice: start/stop.<br />-Trasování pro přenosy.|
+|Kritická|– Protokoluje položky protokolu selhání-rychlá a protokol událostí a sleduje informace korelace. Níže jsou uvedeny některé příklady použití kritické úrovně:<br />-Vaše doména AppDomain byla vypnuta z důvodu neošetřené výjimky.<br />– Aplikaci nelze spustit.<br />– Zpráva, která způsobila selhání, pochází z procesu MyApp. exe.|
+|Chyba|– Protokoluje všechny výjimky. Úroveň chyby můžete použít v následujících situacích:<br />– Došlo k chybě kódu z důvodu neplatné výjimky přetypování.<br />– Výjimka vytvoření koncového bodu, která selhala při spuštění, způsobuje selhání aplikace.|
+|Upozornění|-Existuje stav, který může následně způsobit chybu nebo kritickou chybu. Tuto úroveň můžete použít v následujících situacích:<br />-Aplikace přijímá více požadavků, než umožňuje nastavení omezení.<br />-Fronta příjmu je 98% své nakonfigurované kapacity.|
+|Informace o|– Zprávy užitečné pro monitorování a diagnostiku stavu systému, měření výkonu nebo profilování se generují. Tyto informace můžete využít k plánování kapacity a správě výkonu. Tuto úroveň můžete použít v následujících situacích:<br />– Došlo k chybě poté, co zpráva dosáhla aplikace AppDomain a byla deserializována.<br />– Při vytváření vazby HTTP došlo k chybě.|
+|Podrobné|– Trasování na úrovni ladění pro uživatelský kód i obsluhu. Nastavte tuto úroveň v těchto případech:<br />Nejste si jistí, která metoda ve vašem kódu byla volána, když došlo k chybě.<br />– Máte nakonfigurovaný nesprávný koncový bod a službu se nepovedlo spustit, protože položka v úložišti rezervací je zamčená.|
+|ActivityTracing|Flow události mezi aktivitami zpracování a komponentami.<br /><br /> Tato úroveň umožňuje správcům a vývojářům korelovat aplikace ve stejné doméně aplikace.<br /><br /> -Trasování pro hranice aktivity: Spustit/zastavit.<br />– Trasování pro přenosy.|
 
- Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci příklad je naslouchací proces s názvem `sdt` a standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) se přidá jako typ. Použití `initializeData` nastavit název souboru protokolu pro tuto naslouchací proces. Kromě toho můžete nahradit úplná cesta k souboru jednoduchý název.
+ Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V ukázkové konfiguraci má naslouchací proces název `sdt` a jako typ se přidal standardní naslouchací proces .NET Framework trasování (`System.Diagnostics.XmlWriterTraceListener`). K nastavení názvu souboru protokolu pro daný naslouchací proces použijte `initializeData`. Kromě toho můžete použít plně kvalifikovanou cestu k jednoduchému názvu souboru.
 
-Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se seznamem v některých vysokokontrastních motivech správnou barvou. Tato změna můžete zakázat tak, že odeberete toto nastavení z *svcTraceViewer.exe.config* souboru:
+Počínaje .NET Framework 4,8 se v některých motivech s vysokým kontrastem zobrazují ovládací prvky ComboBox ve správné barvě. Tuto změnu můžete zakázat odebráním následujícího nastavení ze souboru *svcTraceViewer. exe. config* :
 
 ```xml
 <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false" />
 ```
 
-## <a name="using-the-service-trace-viewer-tool"></a>Pomocí nástroje prohlížeče trasování služeb
+## <a name="using-the-service-trace-viewer-tool"></a>Použití nástroje pro prohlížeč trasování služby
 
-### <a name="opening-and-viewing-wcf-trace-files"></a>Otevřít a zobrazit soubory trasování WCF
+### <a name="opening-and-viewing-wcf-trace-files"></a>Otevírání a zobrazování sledovacích souborů WCF
 
-Prohlížeče trasování služeb podporuje tři typy souborů:
+Prohlížeč trasování služby podporuje tři typy souborů:
 
-- Soubor (.svcLog) trasování WCF
+- Trasovací soubor WCF (. svcLog)
 
-- Události trasování souboru (.etl)
+- Soubor trasování událostí (. ETL)
 
-- Soubor Crimson trasování
+- Trasovací soubor Crimson
 
- Prohlížeče trasování služeb můžete otevřít libovolný podporovaný trasovací soubor, přidat a integrovat další trasovací soubory, nebo otevřete a současně sloučit skupiny souborů trasování.
+ Prohlížeč trasování služby umožňuje otevřít libovolný podporovaný trasovací soubor, přidat a integrovat další trasovací soubory nebo otevřít a sloučit skupinu trasovacích souborů současně.
 
-##### <a name="to-open-a-trace-file"></a>Pro otevření souboru trasování
+##### <a name="to-open-a-trace-file"></a>Otevření trasovacího souboru
 
-1. Spuštění prohlížeče trasování služeb pomocí okno příkazového řádku a přejděte do umístění instalace WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.
+1. Spusťte prohlížeč trasování služby pomocí příkazového řádku a přejděte do umístění instalace WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.
 
 > [!NOTE]
-> Nástroj prohlížeče trasování služeb můžete přidružit dva typy souborů: .svclog a .stvproj. Dva parametry příkazového řádku můžete vytvářet a rušit registraci přípony souborů.
+> Nástroj pro prohlížeč trasování služby může přidružit dva typy souborů:. svclog a. stvproj. Pomocí dvou parametrů na příkazovém řádku můžete zaregistrovat a zrušit registraci přípon souborů.
 >
-> / register: zaregistrovat SvcTraceViewer.exe přidružení přípony souboru ".svclog" a ".stvproj"
+> /Register: Zaregistrujte přidružení přípon souborů ". svclog" a ". stvproj" pomocí souboru SvcTraceViewer. exe.
 >
-> / unregister: zrušit registraci přidružení přípony souboru ".svclog" a ".stvproj" SvcTraceViewer.exe
+> /Unregister: zruší registraci přidružení přípon souborů ". svclog" a ". stvproj" pomocí SvcTraceViewer. exe.
 
-1. Při spuštění prohlížeče trasování služeb, klikněte na tlačítko **souboru** a přejděte na **otevřít**. Přejděte do umístění, kde jsou uloženy soubory trasování.
+1. Po spuštění prohlížeče trasování služby klikněte na položku **soubor** a pak na položku **otevřít**. Přejděte do umístění, kde jsou uloženy vaše trasovací soubory.
 
-2. Poklepejte na soubor trasování, který chcete otevřít.
+2. Dvakrát klikněte na trasovací soubor, který chcete otevřít.
 
     > [!NOTE]
-    > Stiskněte klávesu SHIFT a klepnutím na více souborů trasování vyberte a otevřete je současně. Prohlížeče trasování služeb sloučí obsah všech souborů a představuje jedno zobrazení. Můžete například otevřít trasovací soubory klienta a služby. To je užitečné, když jste povolili protokolování a aktivita šíření zpráv v konfiguraci. Tímto způsobem můžete prozkoumat výměnu zpráv mezi klientem a službou. Můžete také přetáhnout více souborů do prohlížeče, nebo použít **projektu** kartu. Další podrobnosti v části Správa projektu.
+    > Stiskněte klávesu SHIFT a kliknutím na více trasovacích souborů je vyberte a otevřete současně. Prohlížeč trasování služby sloučí obsah všech souborů a prezentuje jedno zobrazení. Můžete například otevřít trasovací soubory klienta i služby. To je užitečné v případě, že jste povolili protokolování zpráv a šíření aktivit v konfiguraci. Tímto způsobem můžete ověřit výměnu zpráv mezi klientem a službou. Do prohlížeče lze také přetáhnout více souborů nebo použít kartu **projekt** . Další podrobnosti najdete v části Správa projektu.
 
-3. Chcete-li přidat další trasovací soubory do kolekce, která je otevřená, klikněte na tlačítko **souboru** a přejděte na **přidat**. V okně, které se otevře přejděte do umístění souborů trasování a poklikejte na soubor, který chcete přidat.
+3. Chcete-li přidat další trasovací soubory do kolekce, která je otevřena, klikněte na položku **soubor** a pak na položku **Přidat**. V okně, které se otevře, přejděte do umístění trasovacích souborů a dvakrát klikněte na soubor, který chcete přidat.
 
 > [!CAUTION]
-> Nedoporučuje se, že můžete načíst soubor protokolu trasování, která je větší než 200 MB. Při pokusu načíst soubor větší než tento limit, proces načítání může trvat dlouhou dobu, v závislosti na vašich prostředků počítače. Nástroj prohlížeče trasování služeb pravděpodobně responzivní dlouhou dobu, nebo ji může vyčerpat paměti v počítači. Doporučujeme, abyste nakonfigurovali částečné načtení se tomu chcete vyhnout. Další informace o tom, jak to udělat, najdete v části "Trasování načítání velkých souborů".
+> Nedoporučujeme načítat soubor protokolu trasování větší než 200 MB. Pokud se pokusíte načíst soubor větší než tento limit, proces načítání může trvat dlouhou dobu v závislosti na prostředku počítače. Nástroj pro prohlížeč trasování služby nemusí reagovat po dlouhou dobu nebo může vyčerpat paměť vašeho počítače. Doporučuje se nakonfigurovat částečné načítání, abyste tomu předešli. Další informace o tom, jak to provést, naleznete v části "načítání velkých souborů trasování".
 
 #### <a name="event-tracing-and-crimson-tracing"></a>Trasování událostí a trasování Crimson
 
-Nativní formát v prohlížeči je formát trasování aktivity, který vysílá WCF. Trasování, protože ho v jiném formátu musí být převeden, než je zobrazí v prohlížeči. V současné době kromě formátu trasování aktivity, prohlížeč podporuje trasování událostí a crimson trasování.
+Nativní formát prohlížeče je formát trasování aktivity, který WCF emituje. Trasování, která jsou generována v jiném formátu, musí být převedena předtím, než je prohlížeč zobrazí. V současné době kromě formátu trasování aktivit prohlížeč podporuje trasování událostí a trasování Crimson.
 
-Při otevření souboru, který neobsahuje trasování aktivit v prohlížeči se pokusí převést soubor. Musíte zadat název a umístění, která bude obsahovat data převedený trasovacího souboru. Po převedení dat v prohlížeči zobrazí obsah nový soubor.
+Když otevřete soubor, který neobsahuje trasování aktivity, prohlížeč se pokusí soubor převést. Je nutné zadat název a umístění souboru, který bude obsahovat převedená data trasování. Po převedení dat prohlížeč zobrazí obsah nového souboru.
 
 > [!NOTE]
-> Převod vyžaduje místo na disku k uložení dat převedený trasovacího. Ujistěte se, že máte dostatek místa na disku k uložení dat, před zahájením převodu. V opačném případě se převod nezdaří.
+> Při převodu se vyžaduje místo na disku pro uložení převedených dat trasování. Ujistěte se, že máte dostatek místa na disku pro uložení dat před zahájením převodu. V opačném případě se převod nezdařil.
 
 ### <a name="managing-projects"></a>Správa projektů
 
-Prohlížeč podporuje projekty usnadňuje zobrazení více souborů trasování. Například pokud máte soubor trasování klienta a trasovací soubor služby, můžete je přidat do projektu. Potom pokaždé, když otevřete projekt, všechny trasovací soubory v projektu jsou načteny současně.
+Prohlížeč podporuje projekty pro usnadnění prohlížení více trasovacích souborů. Například pokud máte trasovací soubor klienta a trasovací soubor služby, můžete je přidat do projektu. Pak při každém otevření projektu se všechny trasovací soubory v projektu načtou současně.
 
 Existují dva způsoby, jak spravovat projekty:
 
-- V **souboru** nabídku, můžete otevřít, uložte a zavřete projekty.
+- V nabídce **soubor** můžete otevřít, Uložit a zavřít projekty.
 
-- V **projektu** kartu, můžete přidat soubory do projektu.
+- Na kartě **projekt** můžete přidat soubory do projektu.
 
 ### <a name="viewing-wcf-traces"></a>Zobrazení trasování WCF
 
-WCF vysílá trasování pomocí formátu trasování aktivity. V modelu trasování aktivity jednotlivých trasování jsou seskupené ve aktivity podle jejich účelu. Tok řízení logické přenášena mezi aktivitami. Během životního cyklu aplikace, například mnoho "aktivity odeslat zprávu" se zobrazí a zmizí. Další informace o příliš zobrazení trasování a aktivity a uživatelské rozhraní prohlížeče trasování služeb najdete v tématu [pomocí prohlížeče trasování služeb k zobrazení korelovaných trasování a řešení potíží](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).
+WCF generuje trasování pomocí formátu trasování aktivit. V modelu trasování aktivit se jednotlivá trasování seskupují do aktivit podle jejich účelu. Logický tok řízení se přenáší mezi aktivitami. Například během životnosti aplikace se zobrazí mnoho "aktivity odeslání zprávy" a zmizí. Další informace o tom, jak zobrazit trasování a aktivity a také uživatelské rozhraní prohlížeče trasování služby, najdete v tématu [použití prohlížeče trasování služby pro zobrazení korelačních trasování a odstraňování potíží](./diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).
 
-#### <a name="switching-to-different-views"></a>Přepnutí na různá zobrazení
+#### <a name="switching-to-different-views"></a>Přechod do různých zobrazení
 
-Prohlížeče trasování služeb poskytuje následující různá zobrazení. Se zobrazí jako karty v levém podokně prohlížeče a můžete také přistupovat z **zobrazení** nabídky.
+Prohlížeč trasování služby poskytuje následující různá zobrazení. Zobrazují se jako karty v levém podokně prohlížeče a je možné k nim také přicházet z nabídky **zobrazení** .
 
 - Zobrazení aktivity
 
@@ -133,372 +133,372 @@ Prohlížeče trasování služeb poskytuje následující různá zobrazení. S
 
 ##### <a name="activity-view"></a>Zobrazení aktivity
 
-Po otevření souborů trasování, uvidíte trasování seskupeny do aktivity a zobrazí v **aktivity** zobrazení v levém podokně.
+Po otevření trasovacích souborů uvidíte trasování seskupené do aktivit a zobrazí se v zobrazení **aktivita** v levém podokně.
 
-**Aktivity** zobrazení, zobrazí název aktivity, počet trasování v aktivitě, doba trvání spuštění a koncový čas.
+Zobrazení **aktivity** zobrazuje názvy aktivit, počet trasování v aktivitě, čas trvání, čas spuštění a čas ukončení.
 
-Když kliknete na některý z uvedených aktivit, trasování v rámci této aktivity zobrazují v trasování podokno na pravé straně. Pak můžete vybrat trasování zobrazíte její podrobnosti.
+Kliknutím na některou z uvedených aktivit se trasování v této aktivitě zobrazí v podokně trasování na pravé straně. Pak můžete vybrat trasování a zobrazit jeho podrobnosti.
 
-Více aktivit můžete vybrat stisknutím klávesy **Ctrl** nebo **Shift** klíč a kliknutím na požadovaný aktivity. V podokně trasování se zobrazí všechny stopy po vybrané aktivity.
+Stisknutím klávesy **CTRL** nebo **SHIFT** a kliknutím na požadované aktivity můžete vybrat více aktivit. V podokně trasování se zobrazí všechna trasování vybraných aktivit.
 
-Dvojitým kliknutím na aktivitu pro její zobrazení v **grafu** zobrazení. Alternativní způsob je vybrat aktivitu a přepnete do **grafu** zobrazení.
+Můžete dvakrát kliknout na aktivitu a zobrazit ji v zobrazení **grafu** . Alternativním způsobem je výběr aktivity a přepnutí do zobrazení **grafu** .
 
 > [!NOTE]
-> Aktivita "000000000000" je speciální aktivitě, se nezobrazí v zobrazení grafu. Protože k němu jsou propojené všechny ostatní aktivity, zobrazuje tato aktivita má vliv výkonu.
+> Aktivita "000000000000" je zvláštní aktivita, kterou nelze zobrazit v zobrazení grafu. Vzhledem k tomu, že se k němu vztahují všechny ostatní aktivity, má zobrazení této aktivity závažný dopad na výkon.
 
-Můžete kliknout na záhlaví sloupce seřadíte seznam aktivit. Aktivity, které obsahují trasování upozornění mají žlutým pozadím a ty, které obsahují trasování chyb mít červenou jeden.
+Seznam aktivit můžete seřadit kliknutím na název sloupce. Aktivity, které obsahují trasování upozornění, mají žluté pozadí a ty, které obsahují trasování chyb, mají červenou barvu.
 
-Existují různé typy aktivit a každý typ odpovídá ikonu na levé straně každé aktivity. Najdete v části Vysvětlení trasování ikony pro jejich význam.
+Existují různé typy aktivit a každý typ odpovídá ikoně na levé straně každé aktivity. Pro svůj význam se můžete podívat na oddíl porozumění Ikonaem trasování.
 
 ##### <a name="project-view"></a>Zobrazení projektu
 
-Toto zobrazení umožňuje spravovat trasovací soubory v aktuálním projektu. Další podrobnosti v části Správa projektu.
+Toto zobrazení umožňuje spravovat trasovací soubory v aktuálním projektu. Další podrobnosti najdete v části Správa projektu.
 
 ##### <a name="message-view"></a>Zobrazení zpráv
 
-Toto zobrazení umožňuje zobrazit všechny zprávy protokolu trasování, včetně akce, datum a čas, proces, Acivity a z/do a přejděte na podrobnosti přidružené zprávy protokolu trasování. Můžete seskupit trasování zprávy protokolu hranice činnosti, procesu nebo vlákna, nebo odesílání a příjmu zjednodušují navigaci tok zpráv.
+Toto zobrazení umožňuje zobrazit všechna trasování protokolu zpráv, včetně akcí, data a času, procesu, aktivit a z/do a přejít k podrobnostem o přidruženém trasování protokolu zpráv. Můžete seskupovat trasování protokolu zpráv podle hranice aktivity, procesu/vlákna nebo Odeslat & přijmout pro snazší navigaci toku zprávy.
 
 ##### <a name="graph-view"></a>Zobrazení grafu
 
-Toto zobrazení ukazuje údaje trasování pro danou aktivitu v podobě grafu. Formulář graf umožňuje zobrazit podle jednotlivých kroků zpracování událostí a vztahy mezi více aktivit při přesunu dat mezi nimi.
+Toto zobrazení zobrazuje data trasování pro danou aktivitu ve formuláři grafu. Formulář grafu umožňuje zobrazit stupňovaný provádění událostí a vztahy mezi několika aktivitami při přesunu dat mezi nimi.
 
-Přepnout na **grafu** zobrazit, vyberte aktivitu v **aktivity** zobrazení a klikněte na tlačítko **aktivity** kartě nebo v protokolu trasování zprávy **zpráva**Zobrazení. Pokud jsou načteny více souborů trasování a aktivity zahrnuje trasování z více než jeden soubor, všechny relevantní trasování se zobrazí v zobrazení grafu. Dvojitým kliknutím na činnosti a zprávy protokolu trasování také povede k **grafu** zobrazení.
+Chcete-li přepnout do zobrazení **grafu** , vyberte aktivitu v zobrazení **aktivity** a klikněte na kartu **aktivita** nebo na trasování protokolu zpráv v zobrazení **zprávy** . Pokud je načteno více trasovacích souborů a aktivita zahrnuje trasování z více než jednoho souboru, zobrazí se v zobrazení grafu všechna relevantní trasování. Dvojím kliknutím na aktivity a trasování protokolu zpráv vás zavedete do zobrazení **grafu** .
 
-V **grafu** zobrazení, každý svislý sloupec představuje aktivity a každý blok v sloupci představuje trasování. Aktivity jsou seskupené podle procesu (nebo vlákno). Malé šipky mezi aktivitami představují přenosy. Velké objemy šipky mezi procesy představují výměně zpráv. Aktivita ve výběru je vždy žlutou barvou.
+V zobrazení **grafu** každý svislý sloupec představuje aktivitu a každý blok ve sloupci představuje trasování. Aktivity jsou seskupeny podle procesu (nebo vlákna). Malé šipky mezi aktivitami reprezentují přenosy. Velké šipky mezi procesy představují výměnu zpráv. Aktivita v výběru je vždy žlutá.
 
 ###### <a name="selecting-traces-in-the-graph"></a>Výběr trasování v grafu
 
-1. Klikněte na tlačítko blok v grafu.
+1. Klikněte na blok v grafu.
 
-2. Nahoru a dolů klíče a vyberte jeho sousedním trasování.
+2. Pomocí kláves nahoru a dolů vyberte své sousední trasování.
 
-3. Podívejte se na informace o trasování v trasování podokně a v podokně podrobností.
+3. Sledujte informace o trasování v podokně trasování a podokně podrobností.
 
-###### <a name="expanding-or-collapsing-activity-transfers"></a>Rozbalení a sbalení přenosy aktivit
+###### <a name="expanding-or-collapsing-activity-transfers"></a>Rozbalení nebo sbalení přenosů aktivit
 
-Můžete rozbalit aktivity přenosy při přenosech aktivity ve výběru navýšení kapacity na jinou aktivitu. Umožňuje sledovat přenosy.
+Přenosy aktivity můžete rozbalit, pokud aktivita ve výběru přenese přenos na jinou aktivitu. Umožňuje vám postupovat podle přenosů.
 
-Chcete-li rozbalit nebo sbalit přenosy aktivit
+Chcete-li rozbalit nebo sbalit přenosy aktivit,
 
-1. Na levé straně na ikonu přenosu najděte přenos trasování symbolem "+".
+1. Na levé straně ikony přenosu vyhledejte trasování pro přenos pomocí znaku "+".
 
-2. Klikněte "+", nebo stiskněte klávesu **Ctrl** a "+" pomocí klávesnice.
+2. Klikněte na tlačítko "+" nebo stiskněte klávesy **CTRL** a "+" pomocí klávesnice.
 
-3. Další aktivity se zobrazí v grafu.
+3. Další aktivita se zobrazí v grafu.
 
-4. A "-" se zobrazí na levé straně na ikonu převodu. Klikněte na tlačítko "-" přihlásit nebo stiskněte klávesu Ctrl a "-", sbalí přenos aktivity.
+4. Na levé straně ikony přenosu se zobrazí znak "-". Klikněte na symbol "-" nebo stiskněte klávesu CTRL a "-", tím se migrace aktivity sbalí.
 
 > [!NOTE]
-> Když aktivity obsahuje několik přenosů do ní a rozbalte jednu z přenosy, zobrazí se aktivity, které vedou novou aktivitu z kořenové aktivity. Tyto nové aktivity se zobrazí ve formuláři sbalený. Pokud chcete zobrazit podrobnosti o těchto činností, svisle rozbalit kliknutím na ikonu rozbalení v záhlaví grafu.
+> Pokud se do ní v aktivitě nachází více přenosů a rozšíříte jeden z přenosů, zobrazí se aktivity, které se zavedou k nové aktivitě z kořenové aktivity. Tyto nové aktivity se zobrazí ve sbaleném formátu. Pokud chcete zobrazit podrobnosti o těchto činnostech, rozbalte je svisle kliknutím na ikonu rozbalení v záhlaví grafu.
 
-###### <a name="expanding-or-collapsing-activities-vertically"></a>Rozbalení a sbalení aktivity svisle
+###### <a name="expanding-or-collapsing-activities-vertically"></a>Svislé rozbalení nebo sbalení aktivit
 
-V prohlížeči skryje zbytečné podrobně graf aktivity sbalením aktivity. Sbalený aktivity nejsou zobrazeny jednotlivé trasování. Zobrazí se jenom převody trasování. Pokud chcete zobrazit všechna trasování v aktivitě, rozbalte svisle aktivity klepnutím na symbol rozbalení aktivity v hlavičce tohoto grafu.
+Prohlížeč skryje nepotřebné podrobnosti v grafu aktivity sbalením aktivit. Ve sbalené aktivitě nejsou jednotlivá trasování zobrazena. Zobrazí se pouze trasování. Pokud chcete zobrazit všechna trasování v aktivitě, rozbalte aktivitu svisle kliknutím na symbol rozbalení aktivity v záhlaví grafu.
 
-Chcete-li rozbalit nebo sbalit aktivity svisle,
+Pokud chcete aktivity rozbalit nebo sbalit svisle,
 
-1. Klikněte na ikonu "+" v záhlaví činnosti rozbalte aktivity svisle.
+1. Kliknutím na ikonu "+" v hlavičce aktivity rozbalíte aktivitu svisle.
 
-2. Všimněte si, že v grafu se zobrazují všechna trasování.
+2. Všimněte si, že všechna trasování jsou zobrazena v grafu.
 
-3. Klikněte "-" ikona v záhlaví činnosti sbalte aktivity svisle.
+3. Kliknutím na ikonu-v záhlaví aktivity můžete aktivitu sbalit vertikálně.
 
-4. Všimněte si, že zprávy pouze důležité přenosy, zaprotokoluje upozornění a trasování výjimky jsou uvedeny v rámci aktivity.
+4. Všimněte si, že v aktivitě se zobrazují jenom důležité přenosy, protokoly zpráv, upozornění a trasování výjimek.
 
 ###### <a name="options"></a>Možnosti
 
-Můžete vybrat ze dvou možností **možnost** nabídky v zobrazení grafu.
+V nabídce **možností** v zobrazení grafu můžete vybrat dvě možnosti.
 
-- Zobrazit hranice trasování aktivity, které v případě nezaškrtnutí ignorovat hranice trasování aktivit v grafu.
+- Zobrazit trasování hranice aktivity, které když není zaškrtnuto, ignoruje trasování hranice aktivity v grafu.
 
-- Zobrazit podrobné trasování Non zpráv, který v případě nezaškrtnutí ignorovat podrobné úrovně trasování, s výjimkou trasování zprávy. Ve většině případů jsou méně důležité pro analýzu úroveň trasování podrobné. Tato možnost je užitečné, pokud nechcete k analýze podrobné úrovně trasování a pouze chcete se soustředit na důležité trasování.
+- Zobrazit trasování bez zpráv, které nezaškrtnutoy, ignorují trasování na úrovni podrobností, s výjimkou trasování zpráv. Ve většině případů jsou trasování podrobné úrovně pro analýzu méně důležitá. Tato možnost je užitečná v případě, že nechcete analyzovat trasování na úrovni podrobností a chcete se zaměřit pouze na důležitější trasování.
 
 ###### <a name="layout-mode"></a>Režim rozložení
 
-Prohlížeč má dva režimy rozložení: **Proces** a **vlákna**. Toto nastavení definuje největší jednotka organizace. Výchozí hodnota je režim rozložení **procesu**, což znamená, že aktivity jsou seskupené podle procesy v grafu.
+Prohlížeč má dva režimy rozložení: **proces** a **vlákno**. Toto nastavení definuje největší jednotku organizace. Výchozím režimem rozložení je **proces**, což znamená, že aktivity jsou seskupeny podle procesů v grafu.
 
 ###### <a name="execution-list"></a>Seznam spuštění
 
-Můžete vybrat, který proces nebo vlákno, který se má zobrazit v grafu z tohoto rozevíracího seznamu. Například pokud máte soubory trasování dvou klientů (A a B) a jedna služba otevřít a pouze chcete zobrazit v grafu služby a klient A, můžete zrušit zaškrtnutí klienta B ze seznamu.
+V tomto rozevíracím seznamu můžete vybrat proces nebo vlákno, které se má zobrazit v grafu. Například pokud máte trasovací soubory dvou klientů (a a B) a jednu službu otevřeli a chcete zobrazit pouze službu a klienta a v grafu, můžete zrušit výběr klienta B ze seznamu.
 
-#### <a name="viewing-trace-details"></a>Zobrazení Podrobnosti o trasování
+#### <a name="viewing-trace-details"></a>Zobrazení podrobností trasování
 
-Chcete-li zobrazit podrobné trasování, vyberte v podokně trasování trasování. Podrobnosti se zobrazí v podokně podrobností.
+Chcete-li zobrazit podrobnosti trasování, vyberte trasování v podokně trasování. Podrobnosti se zobrazí v podokně podrobností.
 
 ##### <a name="trace-pane"></a>Podokno trasování
 
-Horní pravé podokno v prohlížeče trasování služeb představuje podokně trasování. Zobrazí všechna trasování v vybranou aktivitou s dalšími informacemi, například úroveň trasování, ID vlákna a název procesu.
+V pravém horním podokně v prohlížeči trasování služby je podokno trasování. Obsahuje seznam všech trasování ve vybrané aktivitě s dalšími informacemi, například úroveň trasování, ID vlákna a název procesu.
 
-Nezpracovaná XML trasování můžete zkopírovat do schránky trasování pravým tlačítkem a výběrem **trasování kopírování do schránky**.
+Nezpracovaný kód XML trasování můžete zkopírovat do schránky tak, že kliknete pravým tlačítkem na trasování a vyberete **Kopírovat trasování do schránky**.
 
 ##### <a name="detail-pane"></a>Podokno podrobností
 
-Dolní části levého podokna prohlížeče trasování služeb je v podokně podrobností. Poskytuje tři karty, chcete-li zobrazit podrobnosti o trasování.
+Dolní levé podokno v prohlížeči trasování služby je podokno podrobností. Poskytuje tři karty k zobrazení podrobností trasování.
 
-**Formátu** zobrazení ukazuje údaje organizovanější způsobem. Zobrazí seznam všech známých elementů XML v tabulkách a stromové struktury, což usnadňuje čtení a seznamte se s informacemi.
+**Formátované** zobrazení zobrazuje tyto informace lépe uspořádaným způsobem. Obsahuje seznam všech známých prvků XML v tabulkách a stromech, což usnadňuje čtení a pochopení informací.
 
-**XML** zobrazení XML odpovídající vybraného trasování. Podporuje barevné zvýrazňování a syntaxe. Při použití **najít** Pokud chcete hledat řetězce, jde zvýraznit výsledky hledání.
+Zobrazení **XML** zobrazuje XML odpovídající vybranému trasování. Podporuje zvýraznění a barvu syntaxe. Když použijete **find** k hledání řetězců, zvýrazní se výsledky hledání.
 
-**Zpráva** zobrazení ukazuje část zprávy XML zprávy protokolu trasování. Je neviditelné při výběru bez zprávy trasování.
+V zobrazení **zprávy** se zobrazí část zprávy XML v trasování protokolu zpráv. Je neviditelná, když vyberete trasování, které není zprávy.
 
 ### <a name="filtering-wcf-traces"></a>Filtrování trasování WCF
 
-Abychom usnadnili analýzu trasování, můžete filtrovat následujícími způsoby:
+Aby bylo možné analýzu sledovat snadněji, můžete je filtrovat následujícími způsoby:
 
-- Filtr nástrojů poskytuje přístup k předdefinované a vlastní filtry. Povolit prostřednictvím **zobrazení** nabídky.
+- Panel nástrojů filtru poskytuje přístup k předem definovaným a vlastním filtrům. Dá se povolit v nabídce **zobrazení** .
 
-- Předdefinované filtru v prohlížeči je možné selektivně filtrovat součástí trasování WCF. Ve výchozím nastavení je nastavena na Povolit všechna trasování infrastruktury předávání. Nastavení tohoto filtru, jsou definovány v **možnosti filtru** dílčí nabídky v části **zobrazení** nabídky.
+- Předem definovaný filtr prohlížeče lze použít k selektivnímu filtrování částí trasování WCF. Ve výchozím nastavení je nastaveno, aby bylo možné projít všechna trasování infrastruktury. Nastavení tohoto filtru jsou definována v podnabídce **Možnosti filtru** v nabídce **zobrazení** .
 
-- Vlastní filtry XPath uživatelům plnou kontrolu nad filtrování. Je možné definovat v **vlastní filtr** pod **zobrazení** nabídky.
+- Vlastní filtry XPath poskytují uživatelům úplnou kontrolu nad filtrováním. Můžou být definované ve **vlastním filtru** v nabídce **zobrazení** .
 
-Zobrazí se pouze trasování, které prochází všechny filtry.
+Zobrazí se pouze trasování, které projde všemi filtry.
 
-#### <a name="using-the-filter-toolbar"></a>Pomocí panelu filtru
+#### <a name="using-the-filter-toolbar"></a>Použití panelu nástrojů filtru
 
-Panel nástrojů filtru se zobrazí v horní části nástroje. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má tři komponenty:
+Panel nástrojů filtru se zobrazí v horní části nástroje. Pokud není k dispozici, můžete ji aktivovat v nabídce **zobrazení** . Pruh obsahuje tři komponenty:
 
-- Hledat: **Vyhledejte** definuje předmět v operaci filtru. Například pokud chcete najít všechna trasování, které byly, protože ho v rámci procesu X, nastavte pole na X a **prohledávat** pole "Název procesu". Je vybrán tohoto pole se změní na ovládací prvek Výběr data a času při filtrování podle času.
+- Hledat **: vyhledá se** text definující předmět, který se má hledat v operaci filtru. Například pokud chcete najít všechna trasování, která byla vygenerována v kontextu procesu X, nastavte toto pole na hodnotu X a pole **Hledat v** poli název procesu. Toto pole se změní na ovládací prvek selektor data a času, pokud je vybrán filtr založený na čase.
 
-- Hledat v: Toto pole definuje typ filtr.
+- Hledat v: Toto pole definuje typ filtru, který se má použít.
 
-- Úroveň: Nastavení úrovně definuje minimální úroveň trasování povolen filtr. Například pokud je nastavena úroveň a novějšími verzemi na chybu, se zobrazují pouze trasování při chybě a kritickou úroveň. Tento filtr kombinuje kritérii zadanými Hledat a prohledávat.
+- Level: nastavení úrovně definuje minimální úroveň trasování povolenou filtrem. Například pokud je úroveň nastavena na Error a up, zobrazí se pouze trasování na úrovni chyba a kritická úroveň. Tento filtr kombinuje s kritérii určenými pro hledání a vyhledávání v.
 
-**Filtr nyní** tlačítko spustí operace filtru. Některé filtry, a to zejména v případě, že se použijí pro velké datové sady, trvat dlouhou dobu pro dokončení. Při zrušení operace filtru stisknutím klávesy **Zastavit** tlačítko, které se zobrazí ve stavovém řádku v rámci **operace** nabídky.
+Tlačítko **filtrovat nyní** spustí operaci filtrování. Některé filtry, zejména pokud jsou aplikovány na velkou datovou sadu, mohou trvat dlouhou dobu. Operaci filtrování můžete zrušit stisknutím tlačítka **zastavit** , které se zobrazí na stavovém řádku v nabídce **operace** .
 
-**Vymazat** tlačítko obnoví předdefinované a vlastní filtry, které povolí všechna trasování předávání.
+Tlačítko **clear** obnoví předdefinované a vlastní filtry, aby bylo možné projít všechna trasování.
 
-#### <a name="filter-options"></a>Možnosti filtrování
+#### <a name="filter-options"></a>Možnosti filtru
 
-Prohlížeč automaticky odebrat ze zobrazení trasování WCF. Můžete selektivně odebrat, protože ho vygeneroval určité oblasti služby WCF trasování, například odebrání transakce související trasování ze zobrazení.
+Prohlížeč může ze zobrazení automaticky odebrat trasování WCF. Může selektivně odebrat trasování emitované konkrétními oblastmi služby WCF, například odebrat trasování související s transakcí ze zobrazení.
 
-Nastavení tohoto filtru, jsou definovány v **možnosti filtru** dílčí nabídky v části **zobrazení** nabídky.
+Nastavení tohoto filtru jsou definována v podnabídce **Možnosti filtru** v nabídce **zobrazení** .
 
 #### <a name="custom-filters"></a>Vlastní filtry
 
-Pokud jste se seznámili s jazyk XML Path (XPath), můžete vytvořit vlastní filtry pro hledání dat trasování pro libovolný prvek XML, které vás zajímají. Filtry jsou přístupné prostřednictvím nástrojů filtru.
+Pokud znáte jazyk XML Path (XPath), můžete ho použít k vytvoření vlastních filtrů pro vyhledávání dat trasování pro jakýkoli XML element zájmu. Filtry jsou přístupné prostřednictvím panelu nástrojů filtru.
 
-Vlastní filtry může obsahovat parametry. Můžete také importovat existující vlastní filtry.
+Vlastní filtry můžou zahrnovat parametry. Můžete také importovat již existující vlastní filtry.
 
 ##### <a name="creating-a-custom-filter"></a>Vytvoření vlastního filtru
 
-Filtry lze vytvořit dvěma způsoby:
+Filtry je možné vytvořit dvěma způsoby:
 
-###### <a name="creating-a-custom-filter-using-the-template-wizard"></a>Vytváří se vlastní filtr pomocí Průvodce šablony
+###### <a name="creating-a-custom-filter-using-the-template-wizard"></a>Vytvoření vlastního filtru pomocí Průvodce šablonou
 
-Můžete kliknout stávající trasování a vytvořit filtr na základě struktury trasování. Tento příklad vytvoří vlastní filtr na základě ID vlákna.
+Můžete kliknout na existující trasování a vytvořit filtr na základě struktury trasování. Tento příklad vytvoří vlastní filtr na základě ID vlákna.
 
-1. V podokně trasování v horní pravé části prohlížeče vyberte trasování, který obsahuje element, který chcete filtrovat.
+1. V podokně trasování v pravém horním rohu prohlížeče vyberte trasování, které obsahuje prvek, pro který chcete filtrovat.
 
-2. Klikněte na tlačítko **vytvořit vlastní filtr** tlačítko umístěné v horní části podokna trasování.
+2. Klikněte na tlačítko **vytvořit vlastní filtr** nacházející se v horní části podokna trasování.
 
-3. V dialogovém okně, které se zobrazí zadejte název filtru. V tomto příkladu zadejte `Thread ID`. Můžete také zadat popis filtru.
+3. V dialogovém okně, které se zobrazí, zadejte název filtru. V tomto příkladu zadejte `Thread ID`. Můžete také zadat popis filtru.
 
-4. Zobrazení stromu na levé straně zobrazí strukturu záznam trasování, který jste vybrali v kroku 1. Přejděte k elementu chcete vytvořit podmínku. V tomto příkladu, přejděte na Idvlákna nacházely ve jazyka XPath: /E2ETraceEvent/System/Execution/@ThreadID uzlu. Dvakrát klikněte na atribut Idvlákna ve stromovém zobrazení. Tím se vytvoří výraz atributu na pravé straně dialogového okna.
+4. Stromové zobrazení na levé straně zobrazuje strukturu záznamu trasování, kterou jste vybrali v kroku 1. Vyhledejte prvek, pro který chcete vytvořit podmínku. V tomto příkladu přejděte na IDvlákna, který se nachází v uzlu XPath: /E2ETraceEvent/System/Execution/@ThreadID. Dvakrát klikněte na atribut IDvlákna ve stromovém zobrazení. Tím se vytvoří výraz pro atribut na pravé straně dialogového okna.
 
-5. Změňte pole parametru pro podmínku Idvlákna z žádný "{0}". Tento krok povoluje Idvlákna hodnota, která má být nakonfigurováno v případě použití filtru. (Zjistit, jak použít filtr část) Můžete definovat až čtyři parametry. Podmínky jsou kombinované pomocí operátoru OR.
+5. Změňte pole parametru pro podmínku IDvlákna z None na ' {0} '. Tento krok umožňuje nakonfigurovat hodnotu IDvlákna při použití filtru. (Viz část použití filtru) Můžete definovat až čtyři parametry. Podmínky jsou kombinovány pomocí operátoru OR.
 
-6. Klikněte na tlačítko **Ok** pro vytvoření filtru.
+6. Kliknutím na tlačítko **OK** vytvořte filtr.
 
 > [!NOTE]
-> Po vytvoření filtru pomocí Průvodce šablonou, je lze upravovat pouze ručně. Není možné aktivovat Průvodce pro filtr, který byl vytvořen dříve. Kromě toho podmínky filtru XPath vytvořené v Průvodci vytvořením šablony jsou kombinované pomocí operátoru OR. Pokud budete potřebovat a operace, můžete upravit výraz filtru, po jejím vytvoření.
+> Po vytvoření filtru pomocí Průvodce šablonou ho lze upravit pouze ručně. Není možné aktivovat Průvodce pro filtr, který byl vytvořen dříve. Kromě toho podmínky filtru XPath vytvořeného v Průvodci šablonou jsou kombinovány pomocí operátoru OR. Pokud budete potřebovat operaci a, můžete upravit výraz filtru po jeho vytvoření.
 
 ###### <a name="creating-a-custom-filter-manually"></a>Ruční vytvoření vlastního filtru
 
-Vlastní filtry nabídka umožňuje zadat filtrech XPath ručně.
+Nabídka vlastní filtry umožňuje ruční zadání filtrů XPath.
 
-1. V nabídce Zobrazit, klikněte **vlastní filtry** položky nabídky.
+1. V nabídce zobrazení klikněte na položku nabídky **vlastní filtry** .
 
-2. V zobrazeném dialogovém okně klikněte na tlačítko **nový.**
+2. V dialogovém okně, které se zobrazí, klikněte na **Nový.**
 
-3. Na minimum a zadejte název filtru a výraz XPath výrazů.
+3. V poli minimální zadejte název filtru a výraz XPath.
 
-4. Klikněte na **OK**.
+4. Klikněte na tlačítko **OK**.
 
 ###### <a name="applying-a-custom-filter"></a>Použití vlastního filtru
 
-Po vytvoření vlastního filtru, i když byl přístupný panelu filtru. Vyberte filtr, který má být použita v **prohledávat** pole panelu filtru. V předchozím příkladu vyberte "ID vlákna.
+Po vytvoření vlastního filtru ho budete mít k dispozici i na panelu nástrojů filtru. V poli **Hledat v** panelu nástrojů filtru vyberte filtr, který chcete použít. V předchozím příkladu vyberte možnost ID vlákna.
 
-1. Zadejte hodnotu v hledáte **najít** pole. V našem příkladu zadejte ID vlákna, které chcete vyhledat.
+1. V poli **Najít** , zadejte hledanou hodnotu. V našem příkladu zadejte ID vlákna, které chcete vyhledat.
 
-2. Klikněte na tlačítko **filtr nyní**a podívejte se na výsledek operace.
+2. Klikněte na **Filter Now (filtrovat**) a sledujte výsledek operace.
 
-Je-li filtr používá více parametry, zadejte je pomocí ";" jako oddělovač v **najít** pole. Například následující řetězec definuje 3 parametry: "1; findValue text". V prohlížeči se vztahuje na '1' {0} parametr filtru. 'findValue' a 'text' se použijí u {1} a {2} v uvedeném pořadí.
+Pokud váš filtr používá více parametrů, zadejte je jako oddělovač v poli **najít, které** používá znak '; '. Například následující řetězec definuje 3 parametry: ' 1; findValue; text '. Prohlížeč použije ' 1 ' na parametr {0} filtru. hodnoty findValue a text jsou aplikovány na {1} a v uvedeném {2}.
 
-###### <a name="sharing-custom-filters"></a>Sdílení vlastní filtry
+###### <a name="sharing-custom-filters"></a>Sdílení vlastních filtrů
 
-Vlastní filtry lze sdílet mezi různými relacemi a různí uživatelé. Můžete exportovat do souboru definice filtry a importování tohoto souboru v jiném umístění.
+Vlastní filtry je možné sdílet mezi různými relacemi a různými uživateli. Filtry můžete exportovat do souboru definice a importovat tento soubor do jiného umístění.
 
  Import vlastního filtru:
 
-1. V **zobrazení** nabídky, klikněte na tlačítko **vlastní filtry**.
+1. V nabídce **zobrazení** klikněte na **vlastní filtry**.
 
-2. V dialogovém okně, které se otevře, klikněte na tlačítko **Import** tlačítko.
+2. V dialogovém okně, které se otevře, klikněte na tlačítko **Import** .
 
-3. Přejděte k souboru vlastního filtru (.stvcf), klikněte na soubor a klikněte na tlačítko **otevřít** tlačítko.
+3. Přejděte do souboru vlastního filtru (. stvcf), klikněte na soubor a klikněte na tlačítko **otevřít** .
 
 Export vlastního filtru:
 
-1. V nabídce Zobrazit, klikněte na tlačítko **vlastní filtry**.
+1. V nabídce zobrazení klikněte na **vlastní filtry**.
 
-2. V dialogovém okně, které se otevře vyberte filtr, který chcete exportovat.
+2. V dialogovém okně, které se otevře, vyberte filtr, který chcete exportovat.
 
-3. Klikněte na tlačítko **exportovat** tlačítko.
+3. Klikněte na tlačítko **exportovat** .
 
-4. Zadejte název a umístění souboru definice vlastního filtru (.stvcf) a klikněte na tlačítko **Uložit** tlačítko.
+4. Zadejte název a umístění souboru definice vlastního filtru (. stvcf) a klikněte na tlačítko **Uložit** .
 
 > [!NOTE]
-> Tyto vlastní filtry lze pouze importovat a exportovat z prohlížeče trasování služeb. Nemůže být přečteny další nástroje.
+> Tyto vlastní filtry je možné importovat a exportovat jenom z prohlížeče trasování služby. Nelze je číst pomocí jiných nástrojů.
 
-### <a name="finding-data"></a>Vyhledávání dat
+### <a name="finding-data"></a>Hledání dat
 
-V prohlížeči nabízí tyto způsoby vyhledat data:
+Prohlížeč poskytuje následující způsoby, jak najít data:
 
-- Panel nástrojů najít poskytuje rychlý přístup k nejběžnější možnosti hledání.
+- Panel nástrojů najít poskytuje rychlý přístup k nejběžnějším možnostem hledání.
 
-- Dialogové okno hledání nabízí že další možnosti hledání. Je přístupné prostřednictvím **upravit** nabídky, nebo krátké kláves Ctrl + F.
+- Dialog najít nabízí více možností hledání. Je přístupná prostřednictvím nabídky **Upravit** nebo pomocí krátké klávesy CTRL + F.
 
-Panel nástrojů hledání se zobrazí v horní části okna. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má dvě součásti:
+V horní části prohlížeče se zobrazí panel nástrojů najít. Pokud není k dispozici, můžete ji aktivovat v nabídce **zobrazení** . Pruh má dvě komponenty:
 
-- Najdete: Umožňuje Zadejte hledaná klíčová slova.
+- Najít: umožňuje zadat klíčové slovo vyhledávání.
 
-- Oblast hledání: Umožňuje zadat rozsah hledání. Můžete vybrat, jestli se má hledat ve všech aktivitách nebo v rámci aktuální aktivity.
+- Oblast hledání: umožňuje zadat obor vyhledávání. Můžete vybrat, jestli se mají prohledávat všechny aktivity, nebo jenom aktuální aktivita.
 
-Dialogové okno hledání poskytuje dvě další možnosti:
+Dialog najít nabízí dvě další možnosti:
 
-- Naleznete cíl:
+- Najít cíl:
 
-  - Možnost "nezpracovaných dat protokolu" vyhledá klíčového slova ve všech nezpracovaná data.
+  - Možnost "nezpracovaná data protokolu" vyhledává klíčové slovo ve všech nezpracovaných datech.
 
-  - Možnosti "XML Text" a "Atribut XML" vyhledat pouze v elementů XML.
+  - Možnosti "text XML" a "Attribute XML" hledají pouze prvky XML.
 
-  - Možnost "Zaznamenána zpráva" vyhledá klíčové slovo pouze v zprávy.
+  - Možnost "zpráva protokolu" vyhledává klíčové slovo pouze ve zprávách.
 
-- Ignorujte kořenové aktivity: Hledání ignoruje trasování v aktivitě "000000000000". To zvyšuje výkon velké trasovací soubory po tisíce trasování, většina z nich jsou přenosy kořenovou aktivitu.
+- Ignorovat kořenovou aktivitu: hledání ignoruje trasování v aktivitě "000000000000". To zlepšuje výkon u velkých trasovacích souborů, když má kořenová aktivita tisíce trasování, z nichž většinu přenáší.
 
-### <a name="navigating-traces"></a>Navigace trasování
+### <a name="navigating-traces"></a>Navigace v Trasováních
 
-Protože trasování se zaznamenávají krok za krokem při spuštění aplikace, navigace trasování vám mohou pomoci při ladění aplikace. Prohlížeče trasování služeb poskytuje různé způsoby, jak vracet se v trasování.
+Vzhledem k tomu, že trasování jsou zaznamenávány během běhu aplikace krok za krokem, navigace trasování vám může pomáhat při ladění aplikace. Prohlížeč trasování služby poskytuje různé způsoby navigace v trasování.
 
 #### <a name="step-forward-or-backward"></a>Krok dopředu nebo dozadu
 
-Pokud považujete za každý trasování jako řádek kódu v programu, krokování vpřed je velmi podobný "Krok za" v Visual Studio integrované vývojové prostředí (IDE). Rozdíl je, že můžete také krokovat zpět v trasování. Procházení dopředu znamená přechod na další trasování v rámci aktivity.
+Pokud považujete každé trasování za řádek kódu v programu, krokování předá v integrovaném vývojovém prostředí (IDE) sady Visual Studio je velmi podobné řetězci "Krokovat s". Rozdíl je, že můžete také krokovat zpět v trasování. Krokování znamená přechod k dalšímu trasování v aktivitě.
 
-- Krok vpřed: Použití **aktivity** nabídky nebo stisknutím klávesy "F10". V podokně trasování můžete použít i klíč šipka "dolů".
+- Krok nahoru: použijte nabídku **aktivita** nebo stiskněte klávesu F10. V podokně trasování můžete také použít klávesu šipka dolů.
 
-- Krokovat zpět: Použití **aktivity** nabídky nebo stisknutím klávesy "F9". V podokně trasování můžete použít i klíč šipka "nahoru".
-
-> [!NOTE]
-> To může trvat je k aktivitě, ke kterým dochází v jiném procesu nebo i v jiném počítači, protože zpráv WCF mohou obsahovat ID, které jsou rozmístěny počítače aktivity.
-
-#### <a name="follow-transfer"></a>Postupujte podle přenosu
-
-Přenos trasování jsou speciální trasování v trasovacím souboru. Aktivita, mohou předávat na jinou aktivitu metodou přenos trasování. Například "Aktivita A", mohou předávat "Aktivita b". V takovém případě je přenos trasování v "Aktivity A" s názvem "na: Aktivita"a ikonu převodu. Přenos trasování je propojení těchto dvou trasování. V "Aktivita B" můžou být dostupné taky na konci aktivity přenést zpět do "Aktivitě A" přenos trasování. To se podobá volání funkce v programech: Volá B, B a vrátí.
-
-"Sledovat přenos" je podobný "Krokování s vnořením" ladicího programu. Následující přenos z A B. Nemá žádný vliv na ostatní trasování.
-
-Postupujte podle přenos dvěma způsoby: pomocí myši nebo klávesnice:
-
-- Pomocí myši: Klikněte dvakrát na přenos trasování v podokně trasování.
-
-- Pomocí klávesnice: Přenos trasování vyberte a použijte "Přenos postupujte podle" v **aktivity** nabídky nebo stisknutím klávesy "F11"
+- Krok zpět: použijte nabídku **aktivita** nebo stiskněte F9. V podokně trasování můžete také použít klávesu šipka nahoru.
 
 > [!NOTE]
-> V mnoha případech po aktivitě A přenese aktivita B, aktivity A počká, dokud aktivita B přenosy zpět na aktivitu A. To znamená, že má aktivita A bez trasování zaznamenána během doby, kdy je aktivita B aktivně trasování. Je však také možné, že aktivity A nečeká a pokračuje do protokolu trasování. Je také možné, že aktivita B nepřenese zpět na aktivitu A. Proto jsou stále neliší od volání funkce v tomto smyslu přenosy aktivit. Rozumíte aktivity přenosů lepších v zobrazení grafu.
+> To může mít za následek aktivitu, ke které dochází v jiném procesu, nebo dokonce i v jiném počítači, protože zprávy WCF mohou přenášet ID aktivit, která jsou na počítačích.
 
-#### <a name="jump-to-next-or-previous-transfer"></a>Přejít na další nebo předchozí přenosu
+#### <a name="follow-transfer"></a>Sledovat přenos
 
-Při analýze aktuální aktivitu nebo vybrané aktivity při výběru více aktivit, můžete rychle najít aktivity, které se přenese na. "Přechod na přenos" umožňuje najít další přenos trasování v rámci aktivity. Jakmile najdete přenos trasování, vám pomůže "Sledovat přenos" krokování s vnořením do další aktivity.
+Trasování přenosů jsou speciální trasování v trasovacím souboru. Aktivita se může přenášet do jiné aktivity trasováním přenosu. Například "aktivita A" může přenášet do "Activity B". V takovém případě je k dispozici trasování přenosu v "Activity" a "s názvem" to: Activity "a" ikona přenosu ". Toto trasování přenosu je propojení mezi dvěma trasováními. V "aktivitě B" může být také trasování přenosu na konci aktivity pro přenos zpět do "Activity A". Toto je podobné volání funkcí v programech: volání B, a B vrátí.
 
-- Přejít na další přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F10".
+"Sledování přenosu" se podobá "Krokovat s" v ladicím programu. Sleduje přenos z A do B. Nemá žádný vliv na další trasování.
 
-- Přejít na předchozí přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F9".
+Existují dva způsoby, jak přenos sledovat: pomocí myši nebo pomocí klávesnice:
 
-#### <a name="navigate-in-graph-view"></a>Přejděte v zobrazení grafu
+- Pomocí myši: dvakrát klikněte na trasování přenosu v podokně trasování.
 
-I když přejdete podokna aktivit a trasování je podobné ladění, pomocí **grafu** zobrazení poskytuje mnohem lepší prostředí v navigačním panelu. Další informace jsou uvedeny v části "Zobrazení grafu".
-
-### <a name="loading-large-trace-files"></a>Načítání velkých trasovací soubory
-
-Trasovací soubory mohou být značně velké. Pokud zapnete trasování na úrovni "Verbose", výsledný soubor trasování pro spuštění několika minut můžete snadno třeba stovek megabajtů nebo i větší v závislosti na rychlosti a komunikace vzoru sítě.
-
-Při velmi velké trasovací soubor otevřete v prohlížeče trasování služeb, může negativně ovlivněn výkon systému. Načítací rychlosti a doby odezvy po načtení může být pomalé. Skutečná rychlost se liší od času v závislosti na konfiguraci hardwaru. Ve většině počítačů načítání trasovací soubor, který je větší než 200 milionů má dopad výkonu. Pro soubory trasování je větší než 1G může nástroj použít všechnu dostupnou paměť, nebo přestane reagovat velmi dlouhou dobu.
-
-Pokud se chcete vyhnout pomalé načítání a dobu odezvy v analýze velkých trasovací soubory, prohlížeče trasování služeb poskytuje funkci s názvem "Částečné načtení", který načte pouze malou část trasování v čase. Například může mít více než 1GB, běží na serveru pro několik dní trasovací soubor. Když chcete analyzovat trasování došlo k chybám, není potřeba celý trasovací soubor otevřete. Místo toho můžete načíst trasování z určitého období čas, kdy pravděpodobně došlo k chybě. Vzhledem k tomu, že obor je menší, nástroj prohlížeče trasování služeb můžete načíst soubor rychleji a vy můžete identifikovat chyby pomocí menší sadu protokolovaných data.
-
-#### <a name="enabling-partial-loading"></a>Povolení částečné načtení.
-
-Není nutné ručně povolit částečné načtení. Pokud celková velikost souborů trasování, pokusí se načíst překročí 40 MB, prohlížeče trasování služeb automaticky zobrazí částečné načítání dialogové okno pro výběr součástí, které chcete načíst.
+- Podle klávesnice: Vyberte přenosové trasování a v nabídce **aktivita** použijte příkaz sledovat přenos, nebo stiskněte klávesu F11.
 
 > [!NOTE]
-> Protože trasování není v čase rovnoměrně distribuovaných span, délka zadaná v částečné načtení nástrojů nemusí být přímo úměrná velikosti načítání zobrazené časové období. Načítání skutečná velikost může být menší než odhadované velikosti v dialogovém okně částečné načtení.
+> V mnoha případech, když aktivita A přenáší na aktivitu B, aktivita A počká, dokud aktivita B nepřevede zpět do aktivity A. To znamená, že aktivita A nemá žádné zaznamenané trasování v průběhu období, kdy se aktivita B aktivně sleduje. Nicméně je také možné, že aktivita A nečeká a pokračuje protokolem trasování. Je také možné, že aktivita B nepřenáší zpět do aktivity A. Proto se přenosy aktivit stále liší od volání funkcí v tomto smyslu. V zobrazení grafu můžete pochopit převody aktivit lépe.
 
-#### <a name="adjusting-partial-loading"></a>Úprava částečné načtení.
+#### <a name="jump-to-next-or-previous-transfer"></a>Přejít na další nebo předchozí přenos
 
-Po částečně načtení souboru trasování můžete změnit sadu dat načítán. Můžete provést úpravou částečné načtení nástrojů v horní části okna.
+Pokud analyzujete aktuální aktivitu nebo vybrané aktivity, pokud je vybráno více aktivit, můžete chtít rychle vyhledat aktivity, na které se přenáší. Možnost přejít na další přenos vám umožní vyhledat další trasování přenosu v aktivitě. Jakmile najdete trasování přenosů, můžete ke krokování další aktivity použít "sledování přenosu".
 
-1. Přesunutí panelu nástrojů pomocí myši nebo zadat počáteční a koncový čas.
+- Přejít na další přenos: použijte nabídku **aktivita** nebo stiskněte klávesy CTRL + F10.
 
-2. Klikněte na tlačítko **upravit** tlačítko.
+- Přejít na předchozí přenos: použijte nabídku **aktivita** nebo stiskněte klávesy CTRL + F9.
 
-## <a name="understanding-trace-icons"></a>Principy trasování ikony
+#### <a name="navigate-in-graph-view"></a>Navigace v zobrazení grafu
 
-Tady je seznam ikon, které používá nástroj prohlížeče trasování služeb v **aktivity** zobrazení **grafu** zobrazení a **trasování** podokně představují různé položky.
+I když se navigace v podokně aktivity a podokno trasování podobá ladění, použití zobrazení **grafu** poskytuje mnohem lepší možnosti navigace. Další informace najdete v části "zobrazení grafu".
+
+### <a name="loading-large-trace-files"></a>Načítání velkých trasovacích souborů
+
+Soubory trasování můžou být velmi velké. Pokud například zapnete trasování na úrovni "podrobného", výsledný soubor trasování pro spuštění několika minut může být v závislosti na rychlosti sítě a způsobu komunikace snadno velký.
+
+Když v prohlížeči trasování služby otevřete velmi velký trasovací soubor, může to mít negativní vliv na výkon systému. Rychlost načítání a doba odezvy po načtení může být pomalá. Skutečná rychlost se od času od času liší v závislosti na konfiguraci hardwaru. Ve většině počítačů je načtení trasovacího souboru většího než 200M vážným dopadem na výkon. V případě trasování souborů větších než 1G může nástroj využít veškerou dostupnou paměť, nebo po velmi dlouhou dobu přestat reagovat.
+
+Aby nedošlo k pomalému načítání a době odezvy při analýze velkých trasovacích souborů, prohlížeč trasování služby poskytuje funkci s názvem "částečné načítání", která v daném okamžiku načítá pouze malou část trasování. Můžete mít například trasovací soubor větší než 1 GB, který běží na serveru několik dní. Pokud dojde k nějakým chybám a chcete analyzovat trasování, není nutné otevřít celý trasovací soubor. Místo toho můžete načíst trasování během určité doby, kdy k chybě mohlo dojít. Vzhledem k tomu, že je rozsah menší, může nástroj Prohlížeč trasování služby načíst soubor rychleji a identifikovat chyby pomocí menší sady dat.
+
+#### <a name="enabling-partial-loading"></a>Povolení částečného načítání
+
+Nemusíte ručně povolit částečné načítání. Pokud celková velikost trasovacích souborů, které se pokoušíte načíst, přesáhne 40MB, prohlížeč trasování služby automaticky zobrazí dialogové okno částečného načítání, ve kterém můžete vybrat součást, kterou chcete načíst.
 
 > [!NOTE]
-> Některá trasování, které nejsou zařazených do kategorií (například "zpráva je uzavřena") mají žádná ikona.
+> Vzhledem k tomu, že trasování nelze rovnoměrně rozmístit v časovém intervalu, Délka časového období, které zadáte v panelu nástrojů částečného načítání, nemusí být úměrná zobrazené velikosti načítání. Skutečná velikost načtení může být menší než odhadovaná velikost v dialogovém okně částečné načítání.
 
-### <a name="activity-tracing-traces"></a>Aktivita trasování trasování
+#### <a name="adjusting-partial-loading"></a>Úprava částečného načítání
+
+Po částečném načtení trasovacího souboru můžete chtít změnit načtenou datovou sadu. Můžete to udělat tak, že upravíte částečný panel nástrojů načítání v horní části okna prohlížeče.
+
+1. Přesuňte panel nástrojů pomocí myši nebo zadejte čas zahájení a ukončení.
+
+2. Klikněte na tlačítko **Upravit** .
+
+## <a name="understanding-trace-icons"></a>Principy trasovacích ikon
+
+Následující seznam obsahuje ikony, které nástroj pro prohlížeč trasování služby používá v podokně zobrazení **aktivity** , zobrazení **grafu** a **trasování** pro reprezentaci různých položek.
+
+> [!NOTE]
+> Některá trasování, která nejsou zařazená do kategorií (například zpráva "zpráva je uzavřená") nemají žádnou ikonu.
+
+### <a name="activity-tracing-traces"></a>Trasování trasování aktivity
 
 |Ikona|Popis|
 |----------|-----------------|
-|![Upozornění trasování](../../../docs/framework/wcf/media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Upozornění trasování: Trasování, které jsou vydávány na úroveň pro upozornění|
-|![Trasování chyb](../../../docs/framework/wcf/media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Trasování chyb: Trasování, které jsou vydávány na úrovni chyby.|
-|![Trasování spuštění aktivit:](../../../docs/framework/wcf/media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-afe8-0b6acd6e0317")|Trasování spuštění aktivit: Trasování, který označuje začátek aktivity. Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu zahájení trasování podle id aktivity za procesu nebo vlákna.<br /><br /> Pokud id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se pak více spuštění pro stejný id aktivity (jeden do každého zdroje trasování). Zahájení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|
-|![Aktivita zastavení trasování](../../../docs/framework/wcf/media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Aktivita zastavení trasování: Trasování, který označuje konec aktivity. . Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu Zastavit trasování podle id aktivity za zdroje trasování. Žádné trasování ze zdroje daného trasování se zobrazí po aktivitě zastavit, protože ho vygeneroval tento zdroj trasování, s výjimkou Pokud časové intervaly trasování není dostatečně malý. Pokud k tomu dojde, může být prokládané dvou trasování se stejným časem, včetně zarážku, při zobrazení. Id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se více zarážek pro stejné id aktivity (jeden do každého zdroje trasování). Zastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|
-|![Aktivita Suspend trasování](../../../docs/framework/wcf/media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Aktivita Suspend trasování: Trasování, který označuje dobou, kdy aktivita je pozastavená. Žádné trasování jsou emitovány pozastavené aktivity, dokud aktivita obnoví. Pozastavené aktivity označuje, že žádné zpracování se děje v aktivity v rámci zdroje trasování. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Pozastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|
-|![Pokračování aktivity trasování](../../../docs/framework/wcf/media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4e0a-9988-cdc2f7030f17")|Trasování činnosti obnovení: Trasování, který označuje čas, kdy aktivita obnovení poté, co bylo pozastaveno. Trasování může znovu vygenerován v této aktivitě. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Obnovit trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|
-|![Transfer](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: Trasování, který je vygenerován při převodu logické řízení toku z jedné aktivity do druhé. Aktivity, které mohou být přenos může i nadále provádět práci paralelně na aktivitu, kterou přenos přejde na. Přenos trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|
-|![Transfer From](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Přenos z: Trasování, který definuje přenos z jiné aktivity do aktuální aktivitu.|
-|![Transfer To](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenést do: Trasování, který definuje přenos logické řízení toku z aktuální aktivity k jiné aktivitě.|
+|(./media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-Bada-bcb27409da58") ![trasování upozornění]|Trasování upozornění: trasování, které je vygenerováno na úrovni upozornění|
+|![Trasování chyb](./media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Trasování chyb: trasování, které je vygenerováno na úrovni chyby.|
+|![Spustit trasování aktivity:](./media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-AFE8-0b6acd6e0317")|Spustit trasování aktivity: trasování, které označuje začátek aktivity. Obsahuje název aktivity. Jako návrhář aplikace nebo vývojář byste měli definovat jednu aktivitu spustit trasování podle ID aktivity na proces nebo vlákno.<br /><br /> Pokud je ID aktivity šířeno napříč zdroji trasování pro korelaci trasování, můžete zobrazit více spuštění pro stejné ID aktivity (jeden na zdroj trasování). Je-li ActivityTracing povolen pro zdroj trasování, je vygenerováno počáteční trasování.|
+|![Aktivita zastavení trasování](./media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Trasování zastavení aktivity: trasování, které označuje konec aktivity. . Obsahuje název aktivity. Jako návrhář aplikace nebo vývojář byste měli definovat jednu aktivitu zastavit trasování podle ID aktivity na zdroj trasování. Po zastavení aktivity vygenerovaného tímto zdrojem trasování se nezobrazí žádná trasování z daného zdroje trasování, s výjimkou případů, kdy není členit čas trasování dostatečně malý. Pokud k tomu dojde, mohou být při zobrazení provedená dvě trasování se stejnou časem, včetně stop. Pokud je ID aktivity šířeno napříč zdroji trasování pro korelaci trasování, můžete zobrazit více zarážek pro stejné ID aktivity (jeden pro každý zdroj trasování). Trasování stop je vygenerováno, pokud je pro zdroj trasování povoleno ActivityTracing.|
+|![Sledování aktivity pozastavení trasování](./media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Trasování pozastavení aktivity: trasování, které označuje čas pozastavení aktivity. Žádná trasování nejsou vygenerována v pozastavené aktivitě, dokud aktivita nebude pokračovat. Pozastavená aktivita znamená, že v této aktivitě není v oboru zdroje trasování probíhají žádné zpracování. Trasování pozastavení/obnovení je užitečné pro profilaci. Trasování pozastavení je vygenerováno, pokud je pro zdroj trasování povoleno ActivityTracing.|
+|![Activity Resume Trace](./media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4E0A-9988-cdc2f7030f17")|Trasování obnovení aktivity: trasování, které označuje čas, po který je aktivita obnovena po pozastavení. Trasování lze v této aktivitě vygenerovat znovu. Trasování pozastavení/obnovení je užitečné pro profilaci. Trasování pokračování je vygenerováno, pokud je pro zdroj trasování povoleno ActivityTracing.|
+|![Přenos](./media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: trasování, které je vygenerováno při přenosu logického toku řízení z jedné aktivity do druhé. Aktivita, ze které pochází přenos, může i nadále provádět práci paralelně s aktivitou, na kterou přenos směřuje. Trasování přenosu je vygenerováno, pokud je pro zdroj trasování povoleno ActivityTracing.|
+|![Přenos z](./media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4F36-a20d-195999bda741")|Přenos z: trasování, které definuje přenos z jiné aktivity do aktuální aktivity.|
+|![Přenést do](./media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenos do: trasování, které definuje přenos logického toku řízení z aktuální aktivity do jiné aktivity.|
 
 ### <a name="wcf-traces"></a>Trasování WCF
 
 |Ikona|Popis|
 |----------|-----------------|
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zprávy trasování protokolu: Trasování, které jsou vydávány, když se zaznamená zprávu WCF funkcí protokolování zpráv, když `System.ServiceModel.MessageLogging` zdroj trasování je povolené. Kliknutím na toto trasování zobrazí zprávu. Existují čtyři body konfigurovat protokolování zprávy: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, což je také možné zadat tak, `messageSource` atribut v protokolu trasování zpráv.|
-|![Zprávy trasování přijaté](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Trasování přijatých zpráv: Trasování, které jsou vydávány při doručení zprávy do WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|
-|![Zprávy trasování odeslaných](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Trasování odeslaných zpráv: Trasování, které jsou vydávány při odesílání zprávy WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|
+|(./media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197") ![trasování protokolu zpráv]|Trasování protokolu zpráv: trasování, které je generováno při zaprotokolování zprávy WCF funkcí protokolování zpráv, pokud je povolen zdroj trasování `System.ServiceModel.MessageLogging`. Kliknutím na toto trasování se zobrazí zpráva. Existují čtyři konfigurovatelné body protokolování pro zprávu: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, které lze také zadat v atributu `messageSource` v trasování protokolu zpráv.|
+|![Přijatá zpráva](./media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-C5DD-41EC-b1c3-ac56b4dfa35c") trasování|Trasování přijalo zprávu: trasování, které je vygenerováno při přijetí zprávy WCF, pokud je zdroj trasování `System.ServiceModel` povolen na úrovni informací nebo podrobností. Toto trasování je nezbytné pro zobrazení šipky korelace zprávy v zobrazení **grafu** aktivity.|
+|(./media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387") ![trasování odeslaných zpráv]|Trasování odeslaných zpráv: trasování, které je generováno při odeslání zprávy WCF, pokud je zdroj trasování `System.ServiceModel` povolen na úrovni informací nebo podrobností. Toto trasování je nezbytné pro zobrazení šipky korelace zprávy v zobrazení **grafu** aktivity.|
 
 ### <a name="activities"></a>Aktivity
 
 |Ikona|Popis|
 |----------|-----------------|
-|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Aktivita: Označuje, že je aktuální aktivita Obecná aktivita.|
-|![Kořenová aktivita](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Kořenová aktivita: Označuje kořenové aktivity procesu.|
+|![](./media/wcfc-defaultactivityc.gif "Wcfc_defaultActivityc") aktivity|Activity: označuje, že aktuální aktivita je obecná aktivita.|
+|![Kořenová aktivita](./media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Kořenová aktivita: označuje kořenovou aktivitu procesu.|
 
 ### <a name="wcf-activities"></a>Aktivity WCF
 
 |Ikona|Popis|
 |----------|-----------------|
-|![Environment activity](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Aktivita prostředí: Aktivita, která vytvoří, otevře se nebo zavře WCF hostitele nebo klienta. Tato aktivita se zobrazí chyby, ke kterým došlo během těchto fází.|
-|![Listen activity](../../../docs/framework/wcf/media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Naslouchání aktivity: Aktivita, která protokoluje související s naslouchací proces trasování. Uvnitř této aktivity můžeme si prohlédnout žádosti o připojení a informace o naslouchací proces.|
-|![Bajty aktivita příjmu](../../../docs/framework/wcf/media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Bajty aktivita příjmu: Aktivity, která seskupuje všechna trasování týkající se přijímání Příchozí bajty v připojení mezi dva koncové body. Tato aktivita je nezbytné v korelaci s aktivitami přenosu, které rozšíří své id aktivity, jako je například http.sys. Chyby připojení, jako je například přeruší se zobrazí v rámci této aktivity.|
-|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Zpracování zpráv aktivity: Aktivity, která seskupuje trasování související s vytvořením zprávy WCF. Chyby vzniklé v důsledku chybných obálky nebo poškozená zpráva se zobrazí v této aktivitě. Uvnitř této aktivity jsme mohli prohlédnout záhlaví zprávy zobrazíte, pokud id aktivity byla rozšířena z volající. Pokud je to pravda, pokud jsme přenést do procesu akce aktivity (Další), jsme můžete také přiřadit pro danou aktivitu rozšíří aktivity id korelace mezi volající nebo volaný trasování.|
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Aktivitu procesu akce: Aktivity, která seskupuje všechna trasování související s WCF žádostí napříč dva koncové body. Pokud `propagateActivity` je nastavena na `true` na oba koncové body v konfiguraci, všechna trasování z oba koncové body jsou sloučeny do jedné aktivity pro přímou spojitost s míněním. Tato aktivita bude obsahovat chyby kvůli přenosu nebo zabezpečení, zpracování, rozšíření na hranici kód uživatele a zpět (pokud existuje odpověď).|
-|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivita uživatelský kód spuštění: Aktivity, která seskupuje uživatele trasování kódu pro zpracování požadavku.|
+|(./media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1") ![aktivity prostředí]|Aktivita prostředí: aktivita, která vytvoří, otevře nebo uzavře hostitele nebo klienta služby WCF. V této aktivitě se objeví chyby, ke kterým došlo během těchto fází.|
+|(./media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "D7b135f6-ec7d-45d7-9913-037ab30e4c26") ![aktivity naslouchání]|Aktivita naslouchání: aktivita, která protokoluje trasování týkající se naslouchacího procesu. V rámci této aktivity můžeme zobrazit informace o naslouchacího procesu a žádosti o připojení.|
+|(./media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e") ![aktivity příjmu bajtů]|Aktivita příjmu bajtů: aktivita, která seskupuje všechna trasování související s přijímáním příchozích bajtů v připojení mezi dvěma koncovými body. Tato aktivita je zásadní ve vztahu k činnostem přenosu, které šíří své ID aktivity, jako je například http. sys. V této aktivitě se zobrazí chyby připojení, například přerušení.|
+|![Zpracování aktivity zprávy](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivita zpracování zprávy: aktivita, která seskupuje trasování související s vytvořením zprávy WCF. V této aktivitě se zobrazí chyby z důvodu chybné obálky nebo poškozené zprávy. V rámci této aktivity můžeme zkontrolovat záhlaví zpráv, abyste zjistili, jestli se od volajícího rozšířilo ID aktivity. Pokud je to pravda, můžeme při přenosu na aktivitu akce procesu (další ikona) přiřadit k této aktivitě ID šířené aktivity pro korelaci volajícího a volaného trasování.|
+|(./media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197") ![trasování protokolu zpráv]|Aktivita zpracování akce: aktivita, která seskupuje všechna trasování související se žádostí WCF napříč dvěma koncovými body. Je-li `propagateActivity` nastaven na hodnotu `true` u obou koncových bodů v konfiguraci, jsou všechna trasování z obou koncových bodů sloučena do jedné aktivity pro přímou korelaci. Tato aktivita bude obsahovat chyby z důvodu přenosu nebo zpracování zabezpečení, rozšíření na hranice uživatelského kódu a zpět (pokud existuje odpověď).|
+|![Zpracování aktivity zprávy](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivita spustit kód uživatele: aktivita, která seskupuje trasování uživatelských kódů pro zpracování požadavku.|
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Pokud nemáte oprávnění k zápisu do registru, získáte následující chybová zpráva "Microsoft Service prohlížeče trasování nebyl registrován v systému" při použití "`svctraceviewer /register`" příkaz pro registraci nástroje. V tomto případě by měl přihlásit pomocí účtu, který má oprávnění k zápisu do registru.
+Pokud nemáte oprávnění k zápisu do registru, zobrazí se tato chybová zpráva "při použití příkazu" `svctraceviewer /register` "k registraci nástroje se v systému nezaregistruje Microsoft Service Trace Viewer. Pokud k tomu dojde, měli byste se přihlásit pomocí účtu, který má k registru přístup pro zápis.
 
-Kromě toho nástroj prohlížeče trasování služeb zapisuje některá nastavení (například vlastní filtry a možnosti filtru) SvcTraceViewer.exe.settings souboru ve složce jeho sestavení. Pokud nemáte oprávnění ke čtení souboru, stále můžete spustit nástroj, ale nelze načíst nastavení.
+Kromě toho nástroj Prohlížeč trasování služby zapisuje některá nastavení (například vlastní filtry a možnosti filtru) do souboru SvcTraceViewer. exe. Settings ve složce sestavení. Pokud nemáte oprávnění ke čtení tohoto souboru, můžete ho přesto spustit, ale nastavení nemůžete načíst.
 
-Pokud se zobrazí chybová zpráva "došlo k neznámé chybě při zpracování trasování na jeden nebo více" při otevírání souboru ETL, znamená to, že formát ETL soubor je neplatný.
+Pokud se zobrazí chybová zpráva "při zpracování jednoho nebo více trasování" při otevírání souboru. ETL došlo k neznámé chybě, znamená to, že formát souboru. ETL je neplatný.
 
-Pokud otevřete protokol trasování vytvořené pomocí arabském operačním systému, můžete si všimnout, který čas, kdy filtr nefunguje. Například roku 2005 odpovídá rok 1427 Arabské kalendáře. Časový rozsah podporovaný filtr nástroje prohlížeče trasování služeb však nepodporuje data starší než 1752. To může znamenat, že zatím nejste schopni vybrat správné datum ve filtru. Chcete-li vyřešit tento problém, můžete vytvořit vlastní filtr (**zobrazení/vlastní filtry**) pomocí výrazu XPath zahrnout konkrétní časové období.
+Pokud otevřete protokol trasování vytvořený pomocí arabského operačního systému, můžete si všimnout, že filtr času nefunguje. Například rok 2005 odpovídá roku 1427 ve arabském kalendáři. Časový rozsah podporovaný filtrem nástroje Service Trace Viewer však nepodporuje datum starší než 1752. To může znamenat, že ve filtru nemůžete vybrat správné datum. Chcete-li tento problém vyřešit, můžete vytvořit vlastní filtr (**zobrazení a vlastní filtry**) pomocí výrazu XPath pro zahrnutí konkrétního časového rozsahu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](./diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Konfigurace trasování](./diagnostics/tracing/configuring-tracing.md)
 - [Komplexní trasování](./diagnostics/tracing/end-to-end-tracing.md)

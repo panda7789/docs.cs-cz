@@ -2,22 +2,22 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: 54255e07df5a46cc975ffd4db5c18dc828a1de44
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85c50e5939a5e63202d57bca08393b9b79308f57
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791180"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321218"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 
-Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednodušší.
+Toto téma popisuje nové funkce, které zjednodušují psaní aplikací WCF.
 
-## <a name="simplified-generated-configuration-files"></a>Zjednodušená generovaných konfiguračních souborů
+## <a name="simplified-generated-configuration-files"></a>Zjednodušené generované konfigurační soubory
 
-Při přidání odkazu na službu v sadě Visual Studio nebo pomocí nástroje SvcUtil.exe je vygenerován soubor konfigurace klienta. V předchozích verzích technologie WCF tyto konfigurační soubory obsahují hodnotu každé vlastnosti vazby i v případě, že její hodnota je výchozí hodnota. Ve WCF 4.5 generovaných konfiguračních souborů obsahují pouze vlastnosti vazby, které jsou nastaveny na jiné než výchozí hodnotu.
+Když přidáte odkaz na službu v aplikaci Visual Studio nebo použijete nástroj SvcUtil. exe, vygeneruje se konfigurační soubor klienta. V předchozích verzích služby WCF tyto konfigurační soubory obsahovaly hodnotu každé vlastnosti vazby, a to i v případě, že její hodnota je výchozí hodnota. Ve WCF 4,5 generované konfigurační soubory obsahují pouze vlastnosti vazby, které jsou nastaveny na hodnotu, která není výchozí.
 
-Následuje příklad konfiguračního souboru generovaných WCF 3.0.
+Následuje příklad konfiguračního souboru vygenerovaného službou WCF 3,0.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -52,7 +52,7 @@ Následuje příklad konfiguračního souboru generovaných WCF 3.0.
 </configuration>
 ```
 
-Následuje příklad konfiguračního souboru stejné generovaných WCF 4.5.
+Následuje příklad stejného konfiguračního souboru generovaného službou WCF 4,5.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,67 +72,67 @@ Následuje příklad konfiguračního souboru stejné generovaných WCF 4.5.
 </configuration>
 ```
 
-## <a name="contract-first-development"></a>Rozvoje prvního kontraktu
+## <a name="contract-first-development"></a>Vývoj pro první smlouvu
 
-WCF teď obsahují podporu pro rozvoje prvního kontraktu. Nástroje svcutil.exe má /serviceContract přepínač, který vám umožní generovat kontrakty služby a dat z dokumentu WSDL.
+WCF teď podporuje vývoj pro první smlouvu. Nástroj Svcutil. exe má přepínač/serviceContract, který umožňuje vygenerovat kontrakty služeb a dat z dokumentu WSDL.
 
-## <a name="add-service-reference-from-a-portable-subset-project"></a>Přidání odkazu na službu v přenosném dílčím projektu
+## <a name="add-service-reference-from-a-portable-subset-project"></a>Přidat odkaz na službu z přenositelné podmnožiny projektu
 
-Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat stromu jednoho zdrojového kódu a sestavovací systém. současně podporuje více implementací rozhraní .NET (desktop, Silverlight, Windows Phone a XBOX). Projekty v přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít v jakékoli implementaci rozhraní .NET. Prostředí pro vývojáře je stejné jako přidávání odkazů na služby v rámci jakékoli jiné aplikace klienta WCF. Další informace najdete v tématu [přidat odkaz na službu v projektu přenosná podmnožina](../../../docs/framework/wcf/add-service-reference-in-a-portable-subset-project.md).
+Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více implementací .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavením rozhraní .NET Framework, které lze použít v jakékoli implementaci rozhraní .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
 
-## <a name="aspnet-compatibility-mode-default-changed"></a>Změnit výchozí režim kompatibility ASP.NET
+## <a name="aspnet-compatibility-mode-default-changed"></a>Režim kompatibility ASP.NET se ve výchozím nastavení změnil
 
-WCF obsahuje režim kompatibility ASP.NET vývojáři udělit úplný přístup k funkcím v kanálu HTTP technologie ASP.NET při vytváření služeb WCF. Pro použití tohoto režimu, je nutné nastavit `aspNetCompatibilityEnabled` atribut na hodnotu true [ \<serviceHostingEnvironment >](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) části souboru Web.config. Kromě toho musí mít všechny služby v této doméně appDomain `RequirementsMode` vlastnost na jeho <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavena na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> je nyní nastaveno na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> a výchozí WCF služby aplikace šablony nastaví `aspNetCompatibilityEnabled` atribut `true`. Další informace najdete v tématu [co je nového ve Windows Communication Foundation 4.5](../../../docs/framework/wcf/whats-new.md) a [služby WCF a ASP.NET](../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).
+Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu vývojářům úplný přístup k funkcím v kanálu HTTP ASP.NET při psaní služeb WCF. Chcete-li použít tento režim, je nutné nastavit atribut `aspNetCompatibilityEnabled` na hodnotu true v části [\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md) souboru Web. config. Kromě toho musí mít všechny služby v této doméně appDomain vlastnost `RequirementsMode` ve své <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavené na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastaveno na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> a výchozí šablona aplikace služby WCF nastaví atribut `aspNetCompatibilityEnabled` na `true`. Další informace najdete v tématu [co je nového v Windows Communication Foundation 4,5](whats-new.md) a [službách WCF a ASP.NET](./feature-details/wcf-services-and-aspnet.md).
 
-## <a name="streaming-improvements"></a>Vylepšení datových proudů
+## <a name="streaming-improvements"></a>Vylepšení streamování
 
-- Nová podpora asynchronního streamování se přidala do WCF. Pokud chcete povolit, asynchronního streamování, přidejte <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> chování koncového bodu do hostitele služby a nastavte jeho <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> vlastnost `true`. To mohou využívat škálovatelnost, když služba odesílá proudu zpráv do více klientů, které čtou pomalu. WCF neblokuje jedno vlákno na jeden klienta už a tím uvolnit vlákno pro službu jiného klienta.
+- Do WCF se přidala nová podpora pro asynchronní streamování. Pokud chcete povolit asynchronní streamování, přidejte do hostitele služby chování koncového bodu <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> a nastavte jeho vlastnost <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> na `true`. Tato možnost může přinést škálovatelnost, když služba odesílá streamované zprávy více klientům, které se čtou pomalu. WCF již neblokuje jedno vlákno na klienta a uvolní vlákno pro obsluhu jiného klienta.
 
-- Odebrání omezení vyrovnávací paměti zpráv, když je služba IIS hostované. V předchozích verzích služby WCF při přijetí zprávy služby hostované v IIS, který používá streamování přenosu zpráv by ASP.NET buffer celé zprávy před odesláním do WCF. To by způsobilo velké paměťové nároky. Tato ukládání do vyrovnávací paměti byla odebrána v rozhraní .NET 4.5 a služby WCF hostované v IIS teď můžete začít zpracování příchozího datového proudu před celá zpráva byla přijata, a tím umožnit true streamování. To umožňuje okamžitě reagovat na zprávy WCF a vylepšení výkonu. Kromě toho již nebude muset zadat hodnotu `maxRequestLength`, omezení velikosti technologie ASP.NET pro příchozí požadavky. Pokud je tato vlastnost nastavena, je ignorována. Další informace o `maxRequestLength` naleznete v tématu [ \<httpRuntime > element konfigurace](https://go.microsoft.com/fwlink/?LinkId=223344). Budete stále muset nakonfigurovat maxAllowedContentLength, další informace naleznete v tématu [omezení počtu požadavků služby IIS](https://go.microsoft.com/fwlink/?LinkId=225908).
+- Odebrala se omezení týkající se ukládání zpráv do vyrovnávací paměti, když je služba IIS hostovaná. V předchozích verzích služby WCF při přijímání zprávy pro službu hostovanou službou IIS, která používala přenos zpráv, ASP.NET by mohla celou zprávu ukládat do vyrovnávací paměti před odesláním do WCF. To by způsobilo velkou spotřebu paměti. Toto ukládání do vyrovnávací paměti se odebralo v .NET 4,5 a teď můžou služby WCF hostované službou IIS začít zpracovávat příchozí datový proud před přijetím celé zprávy a tím umožnit skutečné streamování. Díky tomu může WCF reagovat okamžitě na zprávy a povolit Vylepšený výkon. Navíc už nemusíte zadávat hodnotu pro `maxRequestLength`, což je limit velikosti ASP.NET pro příchozí požadavky. Je-li tato vlastnost nastavena, je ignorována. Další informace o `maxRequestLength` naleznete v tématu [\<httpRuntime > konfiguračního prvku](https://go.microsoft.com/fwlink/?LinkId=223344). Pořád budete muset nakonfigurovat maxAllowedContentLength. Další informace najdete v tématu [omezení požadavků služby IIS](https://go.microsoft.com/fwlink/?LinkId=225908).
 
 ## <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
 
-Následující tabulka popisuje nastavení, které se změnily a kde najít další informace.
+Následující tabulka popisuje nastavení, která se změnila a kde najít další informace.
 
-|Vlastnost|On|Nová výchozí hodnota|Další informace|
+|Vlastnost|On|Nové výchozí|Další informace|
 |--------------|--------|-----------------|----------------------|
-|třídě channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může trvat připojení TCP ke svému pomocí protokolu .NET Framing ověření. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Tento časový limit je záměrně provedli menší než ReceiveTimeout (10 minut) tak, aby škodlivé neověřené klienty nezachovat připojení vázané na serveru pro dlouho. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
-|listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost úrovni soketu popisuje počet "čekající na přijmout" požadavky ve frontě. Pokud nevyřízené položky fronty naslouchání zaplní, budou odmítnuty nové žádosti o soketu. Další informace o <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počtu procesorů pro SMSvcHost.exe|Tato vlastnost omezuje počet kanálů, které serveru může být čekání na naslouchací proces. Když MaxPendingAccepts je příliš nízké, bude existovat malý interval času, ve kterém všechny kanály čekání spustili údržby připojení, ale nové kanály, které jste začali naslouchání. Připojení můžou přijít během tohoto intervalu a selže, protože nic čeká se na serveru. Tuto vlastnost lze nastavit tak, že nastavíte <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> vlastnost většímu počtu. Další informace najdete v tématu <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> a [konfigurace služby Sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)|
-|maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|Tato vlastnost určuje, kolik připojení přenosu přijal, ale nebyly vyzvednou ServiceModel dispečera. Chcete-li nastavit tuto hodnotu, použijte `MaxConnections` ve vazbě nebo `maxOutboundConnectionsPerEndpoint` v elementu vazby. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
-|receiveTimeout|SMSvcHost.exe|30 sekund|Tato vlastnost určuje časový limit pro vytváření datových rámců TCP a jejich odesílání z podkladové připojení. To existuje umístí limitu množství času, které se ukládají SMSvcHost.exe služby znamenají angažovaní číst data preambule z příchozí připojení. Další informace najdete v tématu [konfigurace služby Sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).|
+|channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může připojení TCP trvat při ověřování pomocí protokolu rámců .NET. Klient potřebuje odeslat některá počáteční data předtím, než server bude mít dostatek informací k provedení ověření. Tento časový limit je úmyslně menší než ReceiveTimeout (10 min), aby škodlivé neověřené klienty neudržovaly připojení na server po dlouhou dobu. Výchozí hodnota je 30 sekund. Další informace o @no__t – 0|
+|listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost na úrovni soketu popisuje počet požadavků čekajících na přijetí k zařazení do fronty. Pokud nevyřízená fronta nevyřízených položek vyplní, budou nové požadavky na soket odmítnuty. Další informace o @no__t – 0|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost. exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počet procesorů pro SMSvcHost. exe|Tato vlastnost omezuje počet kanálů, které server může čekat na naslouchací proces. Pokud je MaxPendingAccepts příliš nízké, bude existovat malý časový interval, ve kterém budou všechny čekající kanály začali obsluhovat připojení, ale nezačaly naslouchat žádné nové kanály. Připojení může být doručeno během tohoto intervalu a selže, protože na serveru nebude nic čekat. Tuto vlastnost lze nakonfigurovat nastavením vlastnosti <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> na větší číslo. Další informace najdete v tématu <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> a [Konfigurace služby sdílení portů Net. TCP.](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|Tato vlastnost určuje, kolik připojení bylo přenosu přijato, ale nebyl vyzvednuta dispečerem ServiceModel. Chcete-li nastavit tuto hodnotu, použijte `MaxConnections` u vazby nebo `maxOutboundConnectionsPerEndpoint` na elementu vazby. Další informace o @no__t – 0|
+|receiveTimeout|SMSvcHost. exe|30 sekund|Tato vlastnost určuje časový limit pro čtení dat rámců TCP a provádění odesílání připojení ze základních připojení. To znamená, že v době, kdy se služba SMSvcHost. exe zachová, je potřeba si přečíst data preambule z příchozího připojení. Další informace najdete v tématu [Konfigurace služby sdílení portů Net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md).|
 
 > [!NOTE]
-> Tyto nové výchozí hodnoty se používají pouze v případě, že nasadíte služby WCF na počítači s rozhraním .NET Framework 4.5. Pokud provádíte nasazení stejnou službu na počítači pomocí rozhraní .NET Framework 4.0, jsou použity výchozí hodnoty rozhraní .NET Framework 4.0. V takových případech se doporučuje k nakonfigurování těchto nastavení explicitně.
+> Tyto nové výchozí hodnoty se použijí pouze v případě, že nasadíte službu WCF do počítače s .NET Framework 4,5. Pokud nasadíte stejnou službu do počítače s .NET Framework 4,0, použijí se výchozí hodnoty .NET Framework 4,0. V takových případech se doporučuje nakonfigurovat tato nastavení explicitně.
 
 ## <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas> obsahuje hodnoty konfigurovatelné kvóty pro čtenáře slovníku XML, které omezují množství paměťových prostředků využívaných kodéru při vytváření zprávy. Během těchto kvót je možné konfigurovat, výchozí hodnoty změnily snižovat, vývojář musí explicitně nastavena možnost. `MaxReceivedMessageSize` kvóta nebylo změněno tak, aby ji stále může omezit spotřebu paměti brání nutnost řešit složité <xref:System.Xml.XmlDictionaryReaderQuotas>. V následující tabulce jsou uvedeny kvóty, nové výchozí hodnoty a stručné vysvětlení, co každá kvóta slouží.
+<xref:System.Xml.XmlDictionaryReaderQuotas> obsahuje konfigurovatelné hodnoty kvóty pro čtečky slovníku XML, které omezují velikost paměti využívané kodérem při vytváření zprávy. I když jsou tyto kvóty konfigurovatelné, výchozí hodnoty se změní tak, aby se minimalizovala možnost, že ji vývojář bude muset explicitně nastavit. kvóta `MaxReceivedMessageSize` se nezměnila, takže může stále omezit spotřebu paměti, takže nemusíte řešit složitost <xref:System.Xml.XmlDictionaryReaderQuotas>. V následující tabulce jsou uvedeny kvóty, jejich nové výchozí hodnoty a stručné vysvětlení toho, jaká kvóta se používá pro.
 
 |Název kvóty|Výchozí hodnota|Popis|
 |----------------|-------------------|-----------------|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32.MaxValue|Získá nebo nastaví maximální povolené délky pole. Tato kvóta omezuje maximální velikost pole primitivních elementů, které vrací čtecí funkce XML, včetně pole bajtů. Tato kvóta neomezuje využití paměti v samotné čtecí funkce XML, ale v libovolné součásti, která používá čtecí modul. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> použije čtečku zabezpečený pomocí <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>, není ji deserializovat bajtová pole větší než tuto kvótu.|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32.MaxValue|Získá nebo nastaví maximální povolené bajty vrácené pro každé čtení. Tato kvóta omezuje počet bajtů, které jsou pro čtení v rámci jedné operace čtení při čtení elementu spuštění značku a její atributy. (V případech,-datovým proudem, se nepočítá samotný název elementu proti kvótu). Máte příliš mnoho atributů XML může použít nepřiměřené doba zpracování, protože názvy atributů musí být vráceny jedinečný. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> omezuje tuto hrozbu.|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|hloubkové 128 uzlů|Tato kvóta omezuje maximální hloubka vnoření elementů XML. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> komunikuje se službou <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>: čtecí modul dat vždy udržuje v paměti pro aktuální element a všechny jeho předchůdce, tak maximální velikost paměti spotřeba čtečky je úměrný tato dvě nastavení. Při deserializaci graf objektu nejhlouběji vnořená, deserializátor musí pro přístup k celý zásobník a vyvolat neodstranitelné <xref:System.StackOverflowException>. Mezi XML vnoření a objekt vnoření pro obě existuje přímou spojitost s míněním <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer>. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> slouží ke zmírnění této hrozby.|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Int32.MaxValue|Tato kvóta omezuje maximální počet znaků povolených v tabulky názvů. Tabulka obsahuje některé řetězce (například obory názvů a předpony), jež byly objeveny při zpracování dokumentu XML. Protože tyto řetězce jsou ukládány do vyrovnávací paměti v paměti, tuto kvótu slouží aby se zabránilo nadměrnému ukládání do vyrovnávací paměti při streamování se očekává.|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Int32.MaxValue|Tato kvóta omezení maximální velikost řetězce, který vrací čtecí funkce XML. Tato kvóta neomezuje využití paměti v samotné čtecí funkce XML, ale v komponentě, která používá čtecí modul. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> použije čtečku zabezpečený pomocí <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>, to není deserializaci řetězců větší než tuto kvótu.|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32. MaxValue|Získá a nastaví maximální povolenou délku pole. Tato kvóta omezuje maximální velikost pole primitivních elementů, které vrátí čtecí modul XML, včetně bajtových polí. Tato kvóta neomezuje spotřebu paměti v samotném čtecím modulu XML, ale v jakékoli součásti, která používá čtecí modul. Například pokud <xref:System.Runtime.Serialization.DataContractSerializer> používá čtecí modul zabezpečený s <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>, neprovádí deserializaci polí bajtů větší než tato kvóta.|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32. MaxValue|Získá a nastaví maximální povolené bajty vracené pro každou přečtenou. Tato kvóta omezuje počet bajtů, které jsou čteny při jedné operaci čtení při čtení značky začátek elementu a jeho atributů. (V nestreamované případech se název elementu sám nepočítá s kvótou). Příliš mnoho atributů XML může použít neúměrný čas zpracování, protože názvy atributů musí být zkontrolovány pro jedinečnost. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> snižuje riziko této hrozby.|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|128 uzlů na hloubku|Tato kvóta omezuje maximální hloubku vnořování prvků XML. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> spolupracuje s <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>: čtenář vždycky uchovává data v paměti pro aktuální prvek a všechny jeho nadřazené prvky, takže maximální spotřeba paměti čtecího zařízení je úměrná produktu těchto dvou nastavení. Při deserializaci diagramu hluboko vnořeného objektu je pro deserializaci nucen přístup k celému zásobníku a vyvolat neobnovitelné <xref:System.StackOverflowException>. Mezi vnořenými a vnořenými objekty XML existuje přímá korelace pro <xref:System.Runtime.Serialization.DataContractSerializer> i <xref:System.Xml.Serialization.XmlSerializer>. pro zmírnění této hrozby se používá <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>.|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Int32. MaxValue|Tato kvóta omezuje maximální povolený počet znaků NameTable. NameTable obsahuje určité řetězce (například obory názvů a předpony), které byly zjištěny při zpracování dokumentu XML. Vzhledem k tomu, že jsou tyto řetězce uloženy do vyrovnávací paměti, se tato kvóta používá k zamezení nadměrnému ukládání do vyrovnávací paměti, když se očekává streamování.|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Int32. MaxValue|Tato kvóta omezuje maximální velikost řetězce, kterou čtecí modul XML vrátí. Tato kvóta neomezuje spotřebu paměti v samotném čtecím modulu XML, ale v komponentě, která používá čtecí modul. Například pokud <xref:System.Runtime.Serialization.DataContractSerializer> používá čtecí modul zabezpečený s <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>, neprovádí deserializaci řetězců větší než tato kvóta.|
 
 > [!IMPORTANT]
-> Odkazovat na "Pomocí XML bezpečně" v části [aspekty zabezpečení pro Data](../../../docs/framework/wcf/feature-details/security-considerations-for-data.md) pro další informace o zabezpečení vašich dat.
+> Další informace o zabezpečení dat najdete v tématu věnovaném bezpečnému používání XML v tématu [požadavky na zabezpečení pro data](./feature-details/security-considerations-for-data.md) .
 
 > [!NOTE]
-> Tyto nové výchozí hodnoty se používají pouze v případě, že nasadíte služby WCF na počítači s rozhraním .NET Framework 4.5. Pokud provádíte nasazení stejnou službu na počítači pomocí rozhraní .NET Framework 4.0, jsou použity výchozí hodnoty rozhraní .NET Framework 4.0. V takových případech se doporučuje k nakonfigurování těchto nastavení explicitně.
+> Tyto nové výchozí hodnoty se použijí pouze v případě, že nasadíte službu WCF do počítače s .NET Framework 4,5. Pokud nasadíte stejnou službu do počítače s .NET Framework 4,0, použijí se výchozí hodnoty .NET Framework 4,0. V takových případech se doporučuje nakonfigurovat tato nastavení explicitně.
 
-## <a name="wcf-configuration-validation"></a>Ověření konfigurace WCF
+## <a name="wcf-configuration-validation"></a>Ověřování konfigurace WCF
 
-Jako součást procesu sestavení v sadě Visual Studio se teď ověřují konfiguračních souborů WCF. Pokud se ověření nezdaří, zobrazí se seznam chyby nebo varování ověření v sadě Visual Studio.
+V rámci procesu sestavení v sadě Visual Studio jsou nyní ověřovány konfigurační soubory služby WCF. V aplikaci Visual Studio se zobrazí seznam chyb nebo upozornění ověřování, pokud se ověření nepovede.
 
-## <a name="xml-editor-tooltips"></a>Popisy tlačítek editoru XML
+## <a name="xml-editor-tooltips"></a>Popisy editoru XML
 
-Aby pomohli se nové i stávající vývojáři služeb WCF ke konfiguraci jeho služeb, editoru XML pro Visual Studio nyní poskytuje popisky pro každý prvek konfigurace a její vlastnosti, které je součástí konfiguračního souboru služby.
+Editor XML sady Visual Studio nyní poskytuje popisy pro každý prvek konfigurace a jeho vlastnosti, které jsou součástí konfiguračního souboru služby, aby bylo možné pomáhat novým a stávajícím vývojářům služby WCF konfigurovat své služby.
 
 ## <a name="basichttpbinding-improvements"></a>Vylepšení BasicHttpBinding
 
-1. Umožňuje jednom koncovém bodu WCF na ověřování pro různé režimy.
+1. Umožňuje jednomu koncovému bodu WCF reagovat na různé režimy ověřování.
 
-2. Umožňuje řídit pomocí služby IIS nastavení zabezpečení služby WCF
+2. Umožňuje řídit nastavení zabezpečení služby WCF pomocí služby IIS.

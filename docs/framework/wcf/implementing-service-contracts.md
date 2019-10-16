@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - implementing service contracts [WCF]
 ms.assetid: aefb6f56-47e3-4f24-ab0a-9bc07bf9885f
-ms.openlocfilehash: 766e0c4d30a4fa0eed9ce154ca932f5371a43211
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac27329278edc2b9ca693aa15bcc5bb58edffe05
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928627"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320164"
 ---
 # <a name="implementing-service-contracts"></a>Implementace kontraktů služeb
-Služba je třída, která zpřístupňuje funkce, které jsou k dispozici pro klienty na jeden nebo více koncových bodů. Pokud chcete vytvořit službu, zápis třídu, která implementuje kontraktu Windows Communication Foundation (WCF). Provedete to jedním ze dvou způsobů. Můžete definovat kontrakt samostatně jako rozhraní a pak vytvořit třídu, která implementuje rozhraní. Alternativně můžete vytvořit třídu a kontrakt přímo tak, že <xref:System.ServiceModel.ServiceContractAttribute> atributu na vlastní třídy a <xref:System.ServiceModel.OperationContractAttribute> atributů pro metody, které jsou k dispozici pro klienty službu.  
+Služba je třída, která zpřístupňuje funkce dostupné klientům v jednom nebo více koncových bodech. Chcete-li vytvořit službu, napište třídu, která implementuje kontrakt Windows Communication Foundation (WCF). To můžete provést jedním ze dvou způsobů. Kontrakt můžete definovat samostatně jako rozhraní a pak vytvořit třídu, která implementuje toto rozhraní. Alternativně můžete vytvořit třídu a kontrakt přímo tak, že umístíte atribut <xref:System.ServiceModel.ServiceContractAttribute> do samotné třídy a atribut <xref:System.ServiceModel.OperationContractAttribute> pro metody, které jsou k dispozici pro klienty služby.  
   
 ## <a name="creating-a-service-class"></a>Vytvoření třídy služby  
- Následuje příklad služby, který implementuje `IMath` kontrakt, který byl definován samostatně.  
+ Následuje příklad služby, která implementuje kontrakt `IMath`, který byl definován samostatně.  
   
 ```csharp  
 // Define the IMath contract.  
@@ -37,7 +37,7 @@ public class MathService : IMath
 }  
 ```  
   
- Služby, případně můžete zveřejnění kontraktu přímo. Následující je příkladem služby třídu, která definuje a implementuje `MathService` kontraktu.  
+ Případně může služba vystavit kontrakt přímo. Následuje příklad třídy služby, která definuje a implementuje kontrakt `MathService`.  
   
 ```csharp  
 // Define the MathService contract directly on the service class.  
@@ -51,15 +51,15 @@ class MathService
 }  
 ```  
   
- Všimněte si, že předchozí služby vystavují různé kontrakty, protože se liší názvy kontraktu. V prvním případě je zveřejněné kontraktu s názvem "`IMath`"zatímco ve druhém případě je s názvem kontraktu"`MathService`".  
+ Všimněte si, že předchozí služby zveřejňují různé kontrakty, protože názvy kontraktů se liší. V prvním případě se kontrakt s názvem "`IMath`" v druhém případě nazývá kontrakt "`MathService`".  
   
- Pár věcí můžete nastavit na služby a operace implementace úrovně, jako je například souběžnosti a vytváření instancí. Další informace najdete v tématu [návrh a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md).  
+ Na úrovních implementace služby a operace můžete nastavit pár věcí, jako je například souběžnost a vytváření instancí. Další informace najdete v tématu [navrhování a implementace služeb](designing-and-implementing-services.md).  
   
- Po implementaci kontraktu služby, je potřeba vytvořit jeden nebo víc koncových bodů služby. Další informace najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Další informace o tom, jak spustit službu, naleznete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Po implementaci kontraktu služby musíte pro službu vytvořit jeden nebo více koncových bodů. Další informace najdete v tématu [Přehled vytváření koncových bodů](endpoint-creation-overview.md). Další informace o tom, jak spustit službu, najdete v tématu [hostingové služby](hosting-services.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)
-- [Postupy: Vytvoření služby s třídou kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-contract-with-a-class.md)
-- [Postupy: Vytvoření služby pomocí rozhraní kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md)
-- [Určování chování služby za běhu](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
+- [Navrhování a implementace služeb](designing-and-implementing-services.md)
+- [Postupy: Vytvoření služby s třídou kontraktu](./feature-details/how-to-create-a-wcf-contract-with-a-class.md)
+- [Postupy: Vytvoření služby pomocí rozhraní kontraktu](./feature-details/how-to-create-a-service-with-a-contract-interface.md)
+- [Určování chování služby za běhu](specifying-service-run-time-behavior.md)

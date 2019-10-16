@@ -2,33 +2,33 @@
 title: '|| ANI (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 8e649648-eb9a-4380-9d74-36e62260628c
-ms.openlocfilehash: c88e041638fbe6f32717ce9c4f9c2ff6fb56d803
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6437b17fe1c1277701f06988ef6c02f4caf70e62
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249763"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319473"
 ---
 # <a name="-or-entity-sql"></a>|| ANI (Entity SQL)
-Kombinuje dva `Boolean` výrazy.  
+Kombinuje dva výrazy `Boolean`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 boolean_expression OR boolean_expression  
-or   
+-- or   
 boolean_expression || boolean_expression  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `boolean_expression`  
- Libovolný platný výraz, který vrátí `Boolean`.  
+ Libovolný platný výraz, který vrací `Boolean`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud je `true`jedna z podmínek, `false`v opačném případě.  
+ `true`, pokud je některá z podmínek `true`; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Nebo je [!INCLUDE[esql](../../../../../../includes/esql-md.md)] logický operátor. Používá se ke kombinování dvou podmínek. Je-li v příkazu použit více než jeden logický operátor nebo jsou operátory vyhodnoceny po operátoru AND. Pořadí vyhodnocování však můžete změnit pomocí závorek.  
+ NEBO je logický operátor [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Používá se ke kombinování dvou podmínek. Je-li v příkazu použit více než jeden logický operátor nebo jsou operátory vyhodnoceny po operátoru AND. Pořadí vyhodnocování však můžete změnit pomocí závorek.  
   
  Dvojité svislé čáry (&#124;&#124;) mají stejné funkce jako operátor OR.  
   
@@ -41,13 +41,13 @@ boolean_expression || boolean_expression
 |`NULL`|PODMÍNKA|NULL|NULL|  
   
 ## <a name="example"></a>Příklad  
- Následující Entity SQL dotaz pomocí operátoru OR kombinuje dva `Boolean` výrazy. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
+ Následující Entity SQL dotaz pomocí operátoru OR kombinuje dva výrazy `Boolean`. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
- [!code-csharp[DP EntityServices Concepts 2#OR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#or)]  
+ [!code-sql[DP EntityServices Concepts 2#OR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#or)]  
   
 ## <a name="see-also"></a>Viz také:
 

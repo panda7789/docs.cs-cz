@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 9e26fb36b77e38c81273ccda370a203dd3388e5c
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 53d7bbf214a71daff9372efcd5978f34c066c657
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291737"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319996"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. Pipelines v .NET
 
@@ -55,7 +55,7 @@ Chcete-li opravit předchozí problémy, jsou vyžadovány následující změny
 
 * Ukládat příchozí data do vyrovnávací paměti, dokud se nenajde nový řádek.
 * Analyzuje všechny řádky vrácené ve vyrovnávací paměti.
-* Je možné, že je řádek větší než 1 KB (1024 bajtů). Kód musí změnit velikost vstupní vyrovnávací paměti. byl nalezen úplný řádek.
+* Je možné, že je řádek větší než 1 KB (1024 bajtů). Kód musí změnit velikost vstupní vyrovnávací paměti, dokud není nalezen oddělovač, aby odpovídal celému řádku uvnitř vyrovnávací paměti.
 
   * Pokud se změní velikost vyrovnávací paměti, ve vstupu se zobrazí další kopie vyrovnávací paměti, ve kterých se objeví delší řádky.
   * Chcete-li snížit množství nevyužitého místa, Zkomprimujte vyrovnávací paměť použitou pro čtení řádků.

@@ -1,26 +1,26 @@
 ---
-title: 'Koncový bod: Počet nezdařených volání za sekundu'
+title: 'Koncový bod: počet nezdařených volání za sekundu'
 ms.date: 03/30/2017
 ms.assetid: bcbe9da4-c8dd-4e27-b630-11611adc7580
-ms.openlocfilehash: 52419f45adde768d19d6b46642d52ad0a1844197
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9634f8a170bb2fae2f15c3f00dcabb95d512c74e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797342"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321463"
 ---
-# <a name="endpoint-calls-failed-per-second"></a>Koncový bod: Počet nezdařených volání za sekundu
-Název čítače: Počet nezdařených volání za sekundu.  
+# <a name="endpoint-calls-failed-per-second"></a>Koncový bod: počet nezdařených volání za sekundu
+Název čítače: počet nezdařených volání za sekundu.  
   
 ## <a name="description"></a>Popis  
- Počet volání, které mají neošetřené výjimky a tento koncový bod přijatých za sekundu.  
+ Počet volání s neošetřenými výjimkami, které jsou přijímány tímto koncovým bodem za sekundu.  
   
- Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.  
+ Tento čítač má typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota se počítá pomocí následujícího vzorce.  
   
- (N 1 - N 0 ) / ( (D 1 -D 0 ) / F)  
+ (N 1-N 0)/((D 1-D 0)/F)  
   
- Tento čítač se zvyšuje vždy, když dojde k neošetřené výjimce v tomto koncovém bodu.  
+ Tento čítač se zvýší pokaždé, když se v tomto koncovém bodu nachází Neošetřená výjimka.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Určování a zpracování chyb v kontraktech a službách](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+- [Určování a zpracování chyb v kontraktech a službách](../../specifying-and-handling-faults-in-contracts-and-services.md)

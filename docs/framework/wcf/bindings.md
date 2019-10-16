@@ -4,37 +4,37 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF]
 ms.assetid: 845df323-be53-4848-92ef-ba67a406484d
-ms.openlocfilehash: c948c20788ae4e16e6b626a3f168cf9dcb94d718
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d2c27ad2b265a7feda5f013b5b0993a6cd83094
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608876"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320773"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Vazby WCF
-Vazby zadejte, jak koncový bod služby Windows Communication Foundation (WCF) komunikuje s ostatní koncové body. Ve své nejzákladnější musíte zadat vazby přenosu (například HTTP nebo TCP), který je používat. Můžete také nastavit další vlastnosti, jako je zabezpečení a transakce podporují prostřednictvím vazby.  
+Vazby určují způsob, jakým koncový bod služby Windows Communication Foundation (WCF) komunikuje s jinými koncovými body. Ve většině základních prvků musí vazba určovat přenos (například HTTP nebo TCP), který se má použít. Můžete také nastavit další vlastnosti, jako je například podpora zabezpečení a transakcí, prostřednictvím vazeb.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled vazeb WCF](../../../docs/framework/wcf/bindings-overview.md)  
- Přehled které vazby WCF provést, které vazby poskytuje tento systém a jak lze definovat nebo upravit.  
+ [Přehled vazeb WCF](bindings-overview.md)  
+ Přehled toho, co dělají vazby WCF, jaké vazby poskytuje systém a jak je můžete definovat nebo upravit.  
   
- [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)  
- Seznam součástí WCF vazby. Tyto vazby pokrývají většinu vzor zprávu požadavky na zabezpečení a.  
+ [Vazby poskytované systémem](system-provided-bindings.md)  
+ Seznam vazeb, které jsou součástí WCF. Tyto vazby se týkají většiny požadavků na složitost zabezpečení a vzoru zpráv.  
   
- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- Vazby WCF obsahuje důležité informace, které musí klienti používat pro připojení ke koncovým bodům služby.  
+ [Používání vazeb ke konfiguraci služeb a klientů](using-bindings-to-configure-services-and-clients.md)  
+ Vazba WCF obsahuje důležité informace, které musí klienti používat pro připojení ke koncovým bodům služby.  
   
- [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
- Konfigurace umožňuje správcům a instalační programy pro přizpůsobení vazeb pro koncové body služby.  
+ [Konfigurace vazeb pro služby](configuring-bindings-for-wcf-services.md)  
+ Konfigurace umožňuje správcům a instalačním modulům přizpůsobit vazby pro koncové body služby.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel.Channels>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Koncové body: Adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Koncové body: adresy, vazby a kontrakty](./feature-details/endpoints-addresses-bindings-and-contracts.md)  
   
- [Vazby](../../../docs/framework/wcf/feature-details/bindings.md)  
+ [Vazby](./feature-details/bindings.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md)
+- [Vlastní vazby](./extending/custom-bindings.md)

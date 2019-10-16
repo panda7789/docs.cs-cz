@@ -5,65 +5,65 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: 7458caee29d576d8a9d38f01027c106d39a1daf2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 12408bd9f10e7ed147a6c1adc0497d3b8d797e42
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591930"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319826"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
-Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication Foundation (WCF). Odkazované dokumenty se doporučuje počáteční body seskupený podle konkrétní zájmech a úrovně odborných znalostí.  
+Zde jsou uvedeny pokyny k dokumentaci k Windows Communication Foundation (WCF). U odkazovaných dokumentů se doporučuje spouštět body seskupené podle konkrétních zájmů a úrovně odbornosti.  
   
- Pokud chcete nainstalovat samostatnou verzi dokumentace a aplikaci Help viewer, stáhněte si [v Microsoft Windows SDK 7.1](https://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).  
+ Chcete-li nainstalovat samostatnou verzi dokumentace a prohlížeč nápovědy, stáhněte [Microsoft Windows SDK v 7,1](https://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).  
   
-## <a name="new-to-windows-communication-foundation-programming"></a>Windows Communication Foundation programování  
+## <a name="new-to-windows-communication-foundation-programming"></a>Novinka Windows Communication Foundation programování  
   
-- Pokud začínáte programování s použitím technologie WCF a chcete zobrazit ukázkové aplikace, které fungují, najdete v tématech uvedených v [ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md).  
+- Pokud s nástrojem WCF teprve začínáte a chcete jenom zobrazit ukázkové aplikace, které fungují, přečtěte si témata uvedená v [Windows Communication Foundation Samples](./samples/index.md).  
   
-- Kurz vás provede základními kroky vytvoření klienta a služby WCF, najdete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  
+- Kurz, který vás provede základními kroky vytvoření služby a klienta WCF, najdete v tématu [Začínáme kurzu](getting-started-tutorial.md).  
   
-- Pokud vás zajímají Principy WCF, najdete v tématech [koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md) oddílu.  
+- Pokud vás zajímá koncepty za WCF, přečtěte si témata v části [koncepční přehled](conceptual-overview.md) .  
   
-- Grafické příkladem konfigurace zabezpečení klienta nebo serveru, najdete v sekci [běžné scénáře zabezpečení](../../../docs/framework/wcf/feature-details/common-security-scenarios.md).  
+- Pokud chcete zobrazit grafické příklady konfigurací zabezpečení klienta a serveru, přečtěte si téma [běžné scénáře zabezpečení](./feature-details/common-security-scenarios.md).  
   
-## <a name="programming-in-depth"></a>Programování podrobné  
+## <a name="programming-in-depth"></a>Podrobné programování  
   
-- Pokud jste připravení začít vyvíjet aplikace, najdete v článku [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
+- Pokud jste připraveni začít s vývojem aplikace, přečtěte si téma [Základní programování WCF](basic-wcf-programming.md).  
   
-- Pokud hledáte pokyny týkající se konkrétní funkce nebo schopnosti služby WCF, najdete v tématech v části [podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).  
+- Pokud hledáte pokyny týkající se konkrétní funkce nebo schopnosti služby WCF, přečtěte si témata v části [Podrobnosti o funkcích WCF](./feature-details/index.md).  
   
-- Pokud chcete rozšířit nebo upravit WCF, aby vyhovoval vašim požadavkům, přečtěte si téma [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).  
+- Pokud chcete rozšířit nebo přizpůsobit WCF podle vašich požadavků, přečtěte si téma [rozšíření WCF](./extending/index.md).  
   
-- Informace o nástrojích, které pomáhají vytvářet a ladit aplikace WCF najdete v tématu [nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md).  
+- Informace o nástrojích, které vám pomůžou vytvářet a ladit aplikace WCF, najdete v tématu [Windows Communication Foundation Tools](tools.md).  
   
-- Konfigurace pomocí souboru XML je hlavní způsob, jak programování WCF služeb a klientů. Referenční dokumentace elementů XML používá v konfiguračních souborech naleznete v tématu [konfigurační schéma služby WCF](../../../docs/framework/configure-apps/file-schema/wcf/index.md).  
+- Konfigurace pomocí souborů XML je hlavním prostředkem pro programování služeb a klientů WCF. Referenční dokumentaci pro prvky XML používané v konfiguračních souborech najdete v tématu [schéma konfigurace WCF](../configure-apps/file-schema/wcf/index.md).  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
- Informace o řešení běžných potíží s WCF najdete v tématu [rychlý start řešení potíží s WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md).  
+ Informace o řešení běžných problémů s WCF najdete v tématu [rychlý Start pro řešení potíží WCF](wcf-troubleshooting-quickstart.md).  
   
-## <a name="using-windows-communication-foundation-with-other-technologies"></a>Pomocí Windows Communication Foundation s dalšími technologiemi  
+## <a name="using-windows-communication-foundation-with-other-technologies"></a>Použití Windows Communication Foundation s jinými technologiemi  
   
-- Pokud chcete vytvořit službu, která komunikuje s klienty technologie ASP.NET, naleznete v tématu [jak: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).  
+- Chcete-li vytvořit službu, která komunikuje s klienty ASP.NET, přečtěte si téma [Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET](./feature-details/config-wcf-service-with-aspnet-web-service.md).  
   
-- Integrace s vzdálené komunikace rozhraní .NET Framework je podrobně [migrace aplikací vzdálené komunikace .NET na WCF](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md).  
+- Integrace se vzdálenou komunikací .NET Framework je vysvětlena v tématu [migrace aplikací vzdálené komunikace .NET do WCF](./feature-details/migrating-net-remoting-applications-to-wcf.md).  
   
-- Integrovat existující aplikace modelu COM + se službou WCF služby ani klienta, najdete v článku [Přehled integrace s modelu COM + aplikacemi](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md).  
+- Informace o integraci existující aplikace COM+ se službou nebo klientem WCF najdete v tématu [integrace s aplikacemi modelu COM+ – přehled](./feature-details/integrating-with-com-plus-applications-overview.md).  
   
-- Integrovat existující aplikace modelu COM s WCF služby ani klienta, najdete v článku [integrace s aplikacemi modelu COM](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md).  
+- Informace o integraci existující aplikace COM se službou nebo klientem WCF najdete v tématu [integrace s aplikacemi modelu COM](./feature-details/integrating-with-com-applications.md).  
   
-- Existující aplikaci služby MSMQ integrovat se službou WCF služby ani klienta, najdete v článku [jak: Výměna zpráv pomocí koncových bodů WCF zařazených do fronty](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) a [jak: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
+- Postup integrace existující aplikace služby MSMQ se službou nebo klientem služby WCF najdete v tématu [How to: Exchange queueed Messages with WCF](./feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) a [How to: Exchange Messages with WCF koncových bodů a aplikace služby Řízení front zpráv](./feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
   
-- Pomocí Internetové informační služby (IIS) pro hostování služby naleznete v části [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+- Pokud chcete použít Internetová informační služba (IIS) k hostování služby, přečtěte si téma [hostingové služby](hosting-services.md).  
   
-- Pomocí WCF využívají webové služby rozšíření (WSE) 3.0 service, najdete v článku [jak: Přístup k WSE 3.0 Service](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
+- Chcete-li používat WCF ke využívání služby rozšíření webových služeb (WSE) 3,0, přečtěte si téma [How to: Access The WSE 3,0 Service](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
   
-## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>WS-* protokoly podporované ve Windows Communication Foundation  
- Seznam podporované v vazeb poskytovaných systémem protokoly najdete v tématu [webové služby protokoly podporované vazbami Interoperability System-Provided](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). V seznamu vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
+## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>Protokoly WS-* podporované v Windows Communication Foundation  
+ Seznam protokolů podporovaných vazbami poskytovaných systémem najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytované systémem](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Seznam vazeb poskytovaných systémem naleznete v tématu [systémové vazby](system-provided-bindings.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)
-- [Koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md)
-- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)
-- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)
+- [Ukázky Windows Communication Foundation](./samples/index.md)
+- [Koncepční přehled](conceptual-overview.md)
+- [Pokyny a osvědčené postupy](guidelines-and-best-practices.md)
+- [Sestavování klientů](building-clients.md)

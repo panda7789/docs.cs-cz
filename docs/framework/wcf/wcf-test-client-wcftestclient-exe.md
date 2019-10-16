@@ -2,17 +2,17 @@
 title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: e637a2bb26bd0cc4bea653155c2a85ef5af19fd9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ac89b234dfafe3f87f1423a04ce8e4dd6b44b991
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038354"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321179"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Testovací klient Windows Communication Foundation (WCF) (WcfTestClient. exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům zadat parametry testu, odeslat tento vstup do služby a zobrazit odpověď, kterou služba odesílá zpět. Poskytuje bezproblémové prostředí pro testování služeb při kombinaci s hostitelem služby WCF.
 
-Můžete obvykle najít testovacího klienta WCF (WcfTestClient. exe) v následujícím umístění: `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` komunita může být jednou z možností "Enterprise", "Professional" nebo "Community" v závislosti na tom, jaká úroveň sady Visual Studio je nainstalována.
+Můžete obvykle najít testovacího klienta WCF (WcfTestClient. exe) v následujícím umístění: `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`-Community může být jedna z možností "Enterprise", "Professional" nebo "Community", v závislosti na tom, jakou úroveň sady Visual Studio je nainstalována.
 
 ## <a name="scenarios-for-using-test-client"></a>Scénáře použití testovacího klienta
 
@@ -32,7 +32,7 @@ Můžete také použít testovacího klienta WCF pro usnadnění ladění projek
 
 Můžete také vyvolat testovacího klienta WCF (WcfTestClient. exe) mimo Visual Studio k otestování libovolné služby na internetu. Chcete-li najít tento nástroj, přejděte do následujícího umístění:
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`(kde Community může být jedna z "Enterprise", "Professional" nebo "Community" v závislosti na tom, jakou úroveň sady Visual Studio je v počítači nainstalováno)
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (kde Community může být jedna z "Enterprise", "Professional" nebo "Community" v závislosti na tom, jaká úroveň sady Visual Studio je v počítači nainstalována)
 
 Chcete-li použít nástroj, poklikejte na název souboru a otevřete ho z tohoto umístění, nebo ho spusťte z příkazového řádku.
 
@@ -56,7 +56,7 @@ V levém podokně jsou uvedeny také konfigurační soubory klienta. Dvojitým k
 
 ### <a name="entering-test-parameters"></a>Zadávání parametrů testu
 
-Chcete-li zobrazit parametry testu, klikněte dvakrát na operaci a otevřete ji v pravém podokně. Parametry jsou ve výchozím nastavení zobrazeny ve formátovaných zobrazeních a můžete zadat libovolné hodnoty pro parametry pro otestování služby.
+Chcete-li zobrazit parametry testu, klikněte dvakrát na operaci a otevřete ji v pravém podokně. Parametry jsou ve výchozím nastavení zobrazeny ve **formátovaných** zobrazeních a můžete zadat libovolné hodnoty pro parametry pro otestování služby.
 
 Pokud chcete zobrazit XML zprávy, klikněte na **XML**. Pokud je chcete odeslat službě, klikněte na **vyvolat**.
 
@@ -73,7 +73,7 @@ Pokud jste při vytváření smlouvy pro službu zadali určitou operaci jako je
 
 Zaškrtávací políčko **zahájit novou službu proxy** na kartě operace služby umožňuje přepnout podporu relace. Ve výchozím nastavení je toto políčko nezaškrtnuté.
 
-Když zadáte parametry testu pro určitou operaci (nebo jinou operaci ve stejném koncovém bodu služby) a zaškrtnutím políčka vyvoláte několikrát, tyto operace budou sdílet jeden proxy server a stav služby se zachová napříč více Operations.
+Když zadáte parametry testu pro určitou operaci (nebo jinou operaci ve stejném koncovém bodu služby) a zaškrtnutím políčka **vyvoláte** několikrát, tyto operace budou sdílet jeden proxy server a stav služby se zachová napříč více Operations.
 
 Pokud je zaškrtnuté políčko **Spustit nový proxy server** , spustí se pro každé **vyvolání**nový proxy server, předchozí scénář relace se ukončí a stav služby se resetuje.
 
@@ -103,7 +103,7 @@ Během generování proxy, binární kompilace nebo vyvolání služby jsou polo
 
 #### <a name="persist-client-configuration"></a>Trvalá konfigurace klienta
 
-Karta->**Možnosti** nástrojů konfigurace klienta obsahuje možnost vždy znovu generovat konfiguraci při spuštění služby, která je ve výchozím nastavení povolená.-> Tato možnost určuje, že pokaždé, když klient služby WCF test nahraje službu, znovu vygeneruje konfigurační soubor na základě nejnovějšího kontraktu služby a souborů. config aplikace služby.
+Možnosti **nástroje**->-> karta**Konfigurace klienta** obsahuje možnost **vždy znovu generovat konfiguraci při spuštění služby** , která je ve výchozím nastavení povolená. Tato možnost určuje, že pokaždé, když klient služby WCF test nahraje službu, znovu vygeneruje konfigurační soubor na základě nejnovějšího kontraktu služby a souborů. config aplikace služby.
 
 Pokud jste upravili konfiguraci klienta pro službu WCF a chcete tento aktualizovaný soubor vždy použít k ladění vaší služby, můžete zrušit možnost **znovu vygenerovat** . Provedete to i v případě, že aktualizujete službu a znovu otevřete testovacího klienta WCF, soubor Client. dll. config je ten, který jste předtím aktualizovali, místo aby se znovu vygeneroval na základě aktualizované služby.
 
@@ -112,7 +112,7 @@ Je však možné, že budete muset upravit konfigurační soubor, aby byl konzis
 > [!CAUTION]
 > Pokud jste změnili konfigurační soubor klienta a v budoucnu vyberete možnost ho znovu použít, můžete soubor najít v následujícím umístění:
 >
-> \Documents and Settings\\[uživatelský účet] \Dokumenty Documents\Test klientské projekty.
+> \Documents and Settings @ no__t-0 [uživatelský účet] \My Documents\Test Client Projects.
 >
 > Všechny aktualizované přihlašovací údaje uložené do konfiguračního souboru klienta jsou chráněny seznamem Access Control (ACL) této složky.
 
@@ -120,7 +120,7 @@ Je však možné, že budete muset upravit konfigurační soubor, aby byl konzis
 
 #### <a name="add-service"></a>Přidat službu
 
-Kliknutím na **soubor**->**Přidat službu** přidáte službu do služby WCF test Client. Pak je nutné zadat identifikátor URI (adresa koncového bodu) služby, kterou chcete přidat. Adresa služby může být adresa MEX nebo adresa WSDL.
+Klikněte na **soubor**->**Add Service (přidat službu** ) a přidejte do něj službu WCF test Client. Pak je nutné zadat identifikátor URI (adresa koncového bodu) služby, kterou chcete přidat. Adresa služby může být adresa MEX nebo adresa WSDL.
 
 V podnabídce **nedávné služby** můžete také vyhledat seznam koncových bodů 10 naposledy přidaných služeb. Pokud vyberete jednu z nich, bude Zadaná služba přidána do testovacího klienta WCF.
 
@@ -144,7 +144,7 @@ Během generování proxy, binární kompilace nebo vyvolání služby jsou polo
 
 Ve výchozím nastavení služba WCF test Client ukládá generovaný klientský kód a konfigurační soubory do složky "klientské projekty%appdata%\Local\temp\Test". Tato složka se odstraní po ukončení klienta služby WCF test. Pokud je v testovacím klientovi služby WCF upraven konfigurační soubor a možnost **vždy znovu generovat konfiguraci při spuštění služeb** je zakázána, změněný soubor bude zkopírován do složky "CachedConfig" v části "moje klientské projekty Documents\Test" s mapováním ( metadata-Address-to-File-Name) soubor XML jako index.
 
-Můžete také spustit testovacího klienta WCF na příkazovém řádku, použít `/ProjectPath` přepínač k určení nové požadované cesty pro ukládání vygenerovaných souborů nebo `/RestoreProjectPath` použít přepínač k obnovení výchozího umístění. Syntaxe je následující:
+Můžete také spustit testovacího klienta WCF na příkazovém řádku, použít přepínač `/ProjectPath` a zadat novou požadovanou cestu pro ukládání vygenerovaných souborů nebo použít přepínač `/RestoreProjectPath` k obnovení výchozího umístění. Syntaxe je následující:
 
 `wcfTestClient.exe /ProjectPath [desired location]`
 
@@ -154,7 +154,7 @@ Spuštění tohoto příkazu neotevře testovacího klienta WCF. Změnilo se jen
 
 Následuje seznam funkcí podporovaných testovacím klientem WCF:
 
-- Vyvolání služby: Požadavek/odpověď a jednosměrná zpráva.
+- Vyvolání služby: požadavek/odpověď a jednosměrná zpráva.
 
 - Vazby: všechny vazby podporované nástrojem Svcutil. exe.
 
@@ -166,15 +166,15 @@ Následuje seznam funkcí podporovaných testovacím klientem WCF:
 
 Následuje seznam funkcí, které služba WCF test Client nepodporuje:
 
-- Typy: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message> <xref:System.Xml.Serialization.IXmlSerializable> , <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> <xref:System.Xml.Linq.XElement> ,, ,<xref:System.Xml.XmlNode>typy, které implementují rozhraní, včetně souvisejícího atributu, a typů a <xref:System.Xml.Linq.XDocument> <xref:System.Xml.XmlElement> <xref:System.Xml.XmlAttribute> a ADO.NET <xref:System.Data.DataTable> typ.
+- Typy: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, typy, které implementují rozhraní <xref:System.Xml.Serialization.IXmlSerializable>, včetně souvisejícího atributu <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> a typ ADO.NET <xref:System.Data.DataTable>.
 
 - Duplexní kontrakt.
 
 - Transakce.
 
-- Bezpečnost Služba CardSpace, certifikát a uživatelské jméno a heslo.
+- Zabezpečení: CardSpace, certifikát a uživatelské jméno a heslo.
 
-- Vazeb WSFederationbinding, jakékoli vazby kontextu a vazba https, WebHttpbinding (podpora zpráv odpovědí JSON).
+- Vazby: WSFederationbinding, jakékoli vazby kontextu a vazba https, WebHttpbinding (podpora zpráv odpovědí JSON).
 
 ## <a name="closing-wcf-test-client"></a>Ukončení testovacího klienta WCF
 
@@ -186,4 +186,4 @@ Klienta služby WCF test můžete uzavřít následujícími způsoby:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+- [Hostitel služby WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

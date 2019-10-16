@@ -2,71 +2,71 @@
 title: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 ms.date: 03/30/2017
 ms.assetid: ab65f22b-0d69-4c21-9aaf-74acef0ca102
-ms.openlocfilehash: 26e7c40cb105ad10dac3b13b73cb33bc4fa57d69
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 0a65bea68f595e5e28c05a142ecdd9589f12bed5
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959858"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321039"
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
-Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction Configuration Utility (wsatConfig.exe) a doporučené akce, jež mají být provedeny.  
+Toto téma obsahuje seznam všech chybových kódů generovaných konfiguračním nástrojem WS-AtomicTransaction (wsatConfig. exe) a doporučené akce, které je třeba provést.  
   
 ## <a name="list-of-error-codes"></a>Seznam kódů chyb  
   
-|Kód chyby|Popis|Provést doporučenou akci|  
+|Kód chyby|Popis|Doporučená akce, která má být provedena|  
 |----------------|-----------------|------------------------------------|  
-|0|Operace byla úspěšná|Žádné|  
-|1|Došlo k neočekávané chybě|Kontaktujte Microsoft|  
-|2|Při pokusu o kontaktování služby MSDTC k načtení nastavení zabezpečení došlo k neočekávané chybě.|Ujistěte se, že není zakázaná služba MSDTC a vyřešit všechny problémy uvedené ve vrácené výjimce.|  
-|3|Účet, pod kterým byl spuštěn WsatConfig.exe nemá dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
-|4|Povolte "Přístup k síti služby DTC" nástroje MSDTC před pokusem o povolení podpory WS-AT.|Povolit "Přístup k síti služby DTC" nástroje MSDTC a znovu spusťte nástroj.|  
-|5|Zadaný port je mimo rozsah. Hodnota musí být v rozsahu 1 až 65535.|Opravte `-port:<portNum>`<br /><br /> Možnosti příkazového řádku, jak je uvedeno v chybové zprávě.|  
-|6|Certifikát neplatný koncový bod byl zadán v příkazovém řádku.  Certifikát se nenašel nebo ho neuspěl při ověření.|Opravte `-endpointCert` možnost příkazového řádku. Ujistěte se, že certifikát nemá privátní klíč, je určena pro použití pro Ověřeníklienta a ServerAuthentication, je nainstalován v úložišti certifikátů LocalMachine\MY a je plně důvěryhodné.|  
-|7|Certifikát neplatný účty byl zadán v příkazovém řádku.|Opravte `-accountsCerts` možnost příkazového řádku. Zadaný certifikát byl buď nesprávně zadán nebo se nenašel.|  
-|8|Výchozí hodnota časového limitu byl zadán mimo rozsah 1-3600 sekund.|Zadejte správnou výchozí hodnotu časového limitu, jak je uvedeno.|  
-|10|Při pokusu o přístup k registru došlo k neočekávané chybě.|Zkontrolujte chybovou zprávu a kód chyby pro užitečné položky|  
-|11|Nelze zapisovat do registru.|Ujistěte se, že je schopný zajistit podporu přístup k registru z účtu, který WsatConfig.exe byl spuštěn pod klíč uvedený v chybové zprávě.|  
-|12|Při pokusu o přístup k úložišti certifikátů došlo k neočekávané chybě.|Použijte kód chyby vrácený pro mapování na příslušné systémové chybě.|  
-|13|Nepovedlo se nakonfigurovat ovladač http.sys. Nejde vytvořit nové vyhrazení portu HTTPS pro příkaz MSDTC.|Použijte kód chyby vrácený pro mapování na příslušné systémové chybě.|  
-|14|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze odebrat předchozí vyhrazení portu HTTPS pro příkaz MSDTC.|Použijte kód chyby vrácený pro mapování na příslušné systémové chybě.|  
-|15|Nepovedlo se nakonfigurovat ovladač http.sys. Protokol HTTPS port existuje předchozí vyhrazení již pro zadaný port.|Jiná aplikace je již zabraný vlastnictví specifického portu. Změnit na jiný port nebo odinstalovat nebo změnit konfiguraci aktuální aplikace.|  
-|16|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze vytvořit vazbu zadaný certifikát na port.|Použijte k mapování na příslušné systémová chyba chybový kód vrácený v chybové zprávě|  
-|17|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze zrušit vazbu certifikátu SSL z předchozí portu.|Použijte kód chyby vrácený v chybové zprávě k mapování na příslušné systémové chybě. V případě potřeby použijte k odebrání rezervace chybné port httpcfg.exe nebo netsh.exe.|  
-|18|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze vytvořit vazbu zadaný certifikát na port, protože předchozí SSL vazby již existuje.|Jiná aplikace je již zabraný vlastnictví specifického portu. Změnit na jiný port nebo odinstalovat nebo změnit konfiguraci aktuální aplikace.|  
-|19|Restartování služby MSDTC se nezdařilo|Manuálně restartujte služby MSDTC v případě potřeby. Pokud se problém nevyřeší, obraťte se na Microsoft.|  
-|20|WinFX není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Na počítači nainstalujte WinFX.|  
-|21|Vzdálená konfigurace se nezdařila z důvodu operace vypršení časového limitu.|Volání konfigurace WS-AT ve vzdáleném počítači, by měla trvat déle než 90 sekund.|  
-|22|WinFX není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Na počítači nainstalujte WinFX.|  
-|23|Vzdálená konfigurace se nezdařila z důvodu výjimky na vzdáleném počítači.|Najdete v chybové zprávě užitečných položek|  
-|26|WsatConfig.exe byl předán neplatný argument.|Zkontrolujte příkazový řádek pro chyby.|  
-|27|`-accounts` Možnost příkazového řádku byl neplatný.|Opravte-`accounts` možnost příkazového řádku správně zadaný uživatelský účet.|  
-|28|`-network` Možnost příkazového řádku byl neplatný.|Opravte `-network` možnost příkazového řádku správně zadaný "zapnout" nebo "Zakázat".|  
-|29|`-maxTimeout` Možnost příkazového řádku byl neplatný.|Opravte `-maxTimeout` možnost příkazového řádku, jak je uvedeno.|  
-|30|`-timeout` Možnost příkazového řádku byl neplatný.|Opravte `-timeout` možnost příkazového řádku, jak je uvedeno.|  
-|31|`-traceLevel` Možnost příkazového řádku byl neplatný.|Opravte `-traceLevel` možnost příkazového řádku zadejte platnou hodnotu z těchto hodnot,<br /><br /> -Vypnuto<br />– Chyba<br />– Kritické<br />-Upozornění<br />– Informace<br />-Verbose<br />-Všechny|  
-|32|`-traceActivity` Možnost příkazového řádku byl neplatný.|Opravte `-traceActivity` možnost příkazového řádku zadáním "zapnout" nebo "Zakázat".|  
-|33|`-traceProp` Možnost příkazového řádku byl neplatný.|Opravte `-traceProp` možnost příkazového řádku zadáním "zapnout" nebo "Zakázat".|  
-|34|`-tracePII` Možnost příkazového řádku byl neplatný.|Opravte `-tracePII` možnost příkazového řádku zadáním "zapnout" nebo "Zakázat".|  
-|37|WsatConfig.exe nebyl schopen určit certifikát počítače přesná. To může dojít, pokud existuje více než jeden Release candidate, nebo pokud žádný neexistuje.|Zadejte kryptografický otisk certifikátu nebo dvojici Issuer\SubjectName pro zajištění správné identifikace přesné certifikát pro konfiguraci.|  
-|38|Proces nebo uživatel nemá dostatečná oprávnění ke změně konfigurace brány firewall.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
-|39|WsatConfig.exe došlo k chybě při aktualizaci konfigurace brány firewall.|Najdete v chybové zprávě užitečných položek.|  
-|40|WsatConfig.exe není schopen poskytnout oprávnění ke čtení služby MSDTC k souboru privátního klíče certifikátu|Spusťte WsatConfig.exe uživatelského účtu správce.|  
-|41|Buď nebyla nalezena žádná instalace WinFX nebo neodpovídá, co nástroj je schopen konfigurace se nenašla verze.|Ujistěte se, že je správně nainstalovaný WinFX a pouze pomocí nástroje WsatConfig.exe dodané s touto verzí WinFX WS-AT konfigurace.|  
-|42|Argument byl zadán více než jednou v příkazovém řádku.|Pouze jednou Zadejte každý argument při provádění WsatConfig.exe.|  
-|43|WsatConfig.exe nelze aktualizovat nastavení WS-AT, pokud WS-AT není povolené.|Zadejte `-network:enable` jako argument další příkazového řádku.|  
-|44|Chybí požadovaná oprava hotfix a nedá se konfigurovat WS-AT, dokud nebude nainstalována oprava hotfix.|Zobrazit WinFX poznámky k verzi pro pokyny k instalaci požadované opravy hotfix.|  
-|45|`-virtualServer` Možnost příkazového řádku byl neplatný.|Opravte `-virtualServer` možnost příkazového řádku tak, že zadáte název sítě prostředku clusteru, ve kterém chcete konfigurovat.|  
-|46|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Použijte kód chyby vrácený pro mapování na příslušné systémové chybě.|  
-|47|Proces nebo uživatel nemá dostatečná oprávnění k povolení relaci sledování ETW.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
-|48|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
-|49|Nelze vytvořit nový soubor protokolu, protože není dost místa pro % systemdrive % musí být %|Zajistěte, aby vaše % systemdrive % musí být dostatek místa pro soubor protokolu.|  
-|51|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
-|52|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
-|53|Zálohování souboru protokolu předchozí relace trasování událostí pro Windows neúspěšné.|Zajistěte, aby vaše % systemdrive % musí být dostatek místa pro soubor protokolu a zálohu předchozí soubor protokolu (pokud existuje). Ručně odeberte předchozí soubor protokolu v případě potřeby.|  
-|55|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
-|56|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
+|0,8|Operace byla úspěšná.|Žádné|  
+|první|Neočekávaná chyba|Kontaktujte Microsoft|  
+|odst|Došlo k neočekávané chybě při pokusu o kontaktování služby MSDTC, aby bylo možné načíst nastavení zabezpečení.|Zajistěte, aby Služba MSDTC nebyla zakázaná, a vyřešte všechny problémy uvedené v vrácené výjimce.|  
+|3|Účet, pod kterým běžel WsatConfig. exe, nemá dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig. exe v uživatelském účtu správce.|  
+|4|Před pokusem povolit podporu WS-AT povolte službu MSDTC "přístup k síti DTC".|Povolte položku "přístup k síti DTC" pro službu MSDTC a spusťte nástroj znovu.|  
+|5|Zadaný port je mimo rozsah. Hodnota musí být v rozsahu od 1 do 65535.|Opravte `-port:<portNum>`.<br /><br /> možnost příkazového řádku, jak je uvedeno v chybové zprávě.|  
+|6|V příkazovém řádku byl zadán neplatný certifikát koncového bodu.  Certifikát se nepovedlo najít nebo neuspěl při ověřování.|Opravte možnost příkazového řádku `-endpointCert`. Ujistěte se, že certifikát má privátní klíč, který je určen pro použití pro Ověřeníklienta i ServerAuthentication, je nainstalován v úložišti certifikátů úložišti LocalMachine\MY a je plně důvěryhodný.|  
+|čl|Na příkazovém řádku byl zadán neplatný certifikát účtů.|Opravte možnost příkazového řádku `-accountsCerts`. Zadaný certifikát byl buď nesprávně zadán, nebo nebyl nalezen.|  
+|8|Byl zadán výchozí časový limit mimo rozsah 1 až 3600 sekund.|Zadejte správnou výchozí hodnotu časového limitu, jak je uvedeno níže.|  
+|10pruhový|Při pokusu o přístup k registru došlo k neočekávané chybě.|Podívejte se na chybovou zprávu a kód chyby pro položky, které je možné provést.|  
+|odst|Do registru nejde zapisovat.|Ujistěte se, že klíč uvedený v chybové zprávě je schopný podporovat přístup k registru z účtu WsatConfig. exe, který se spustil v rámci.|  
+|12,5|Při pokusu o přístup k úložišti certifikátů došlo k neočekávané chybě.|Použijte kód chyby vrácený k namapování na příslušnou systémovou chybu.|  
+|13,5|Konfigurace HTTP. sys se nezdařila. Pro MSDTC nelze vytvořit novou rezervaci portu HTTPS.|Použijte kód chyby vrácený k namapování na příslušnou systémovou chybu.|  
+|čtrnáct|Konfigurace HTTP. sys se nezdařila. Nejde odebrat předchozí rezervaci portu HTTPS pro MSDTC.|Použijte kód chyby vrácený k namapování na příslušnou systémovou chybu.|  
+|15|Konfigurace HTTP. sys se nezdařila. Předchozí rezervace portu HTTPS již pro zadaný port existuje.|Jiná aplikace již převzala vlastnictví konkrétního portu. Přejděte na jiný port nebo odinstalujte nebo překonfigurujte aktuální aplikaci.|  
+|16bitovém|Konfigurace HTTP. sys se nezdařila. Zadaný certifikát se nedá navazovat na port.|Pomocí kódu chyby vráceného v chybové zprávě namapujte na odpovídající systémové chyby.|  
+|sedmnáct|Konfigurace HTTP. sys se nezdařila. Nelze zrušit vazbu certifikátu SSL z předchozího portu.|Pomocí kódu chyby vráceného v chybové zprávě namapujte na příslušnou systémovou chybu. V případě potřeby pomocí Httpcfg. exe nebo Netsh. exe odeberte chybné rezervace portů.|  
+|let|Konfigurace HTTP. sys se nezdařila. Zadaný certifikát nelze svázat s portem, protože již existuje předchozí vazba SSL.|Jiná aplikace již převzala vlastnictví konkrétního portu. Přejděte na jiný port nebo odinstalujte nebo překonfigurujte aktuální aplikaci.|  
+|čl|Restart služby MSDTC se nezdařil.|V případě potřeby ručně restartujte MSDTC. Pokud potíže potrvají, obraťte se na společnost Microsoft.|  
+|20o|WinFX není nainstalován na vzdáleném počítači nebo není správně nainstalován.|Nainstalujte do počítače WinFX.|  
+|20|Vzdálená konfigurace se nezdařila z důvodu vypršení časového limitu operace.|Volání ke konfiguraci WS-AT na vzdáleném počítači by mělo trvat déle než 90 sekund.|  
+|22|WinFX není nainstalován na vzdáleném počítači nebo není správně nainstalován.|Nainstalujte do počítače WinFX.|  
+|listopadu|Vzdálená konfigurace se nezdařila z důvodu výjimky na vzdáleném počítači.|Podívejte se na chybovou zprávu pro nenapadnutelné položky.|  
+|26|Do souboru WsatConfig. exe byl předán neplatný argument.|Vyhledejte chyby v příkazovém řádku.|  
+|dlouhý|Možnost příkazového řádku `-accounts` byla neplatná.|Opravte možnost příkazového řádku-`accounts` pro správné zadání uživatelského účtu.|  
+|28|Možnost příkazového řádku `-network` byla neplatná.|Opravte možnost příkazového řádku `-network` pro správné zadání možnosti "Enable" nebo "Disable".|  
+|29|Možnost příkazového řádku `-maxTimeout` byla neplatná.|Opravte možnost příkazového řádku `-maxTimeout`, jak je uvedeno níže.|  
+|30|Možnost příkazového řádku `-timeout` byla neplatná.|Opravte možnost příkazového řádku `-timeout`, jak je uvedeno níže.|  
+|čl|Možnost příkazového řádku `-traceLevel` byla neplatná.|Opravte možnost příkazového řádku `-traceLevel` a zadejte platnou hodnotu z následujících možností:<br /><br /> -Vypnuto<br />– Chyba<br />– Kritické<br />– Upozornění<br />-Informace<br />– Verbose<br />– Vše|  
+|32|Možnost příkazového řádku `-traceActivity` byla neplatná.|Opravte možnost příkazového řádku `-traceActivity` tak, že zadáte buď Enable, nebo Disable.|  
+|33|Možnost příkazového řádku `-traceProp` byla neplatná.|Opravte možnost příkazového řádku `-traceProp` tak, že zadáte buď Enable, nebo Disable.|  
+|34|Možnost příkazového řádku `-tracePII` byla neplatná.|Opravte možnost příkazového řádku `-tracePII` tak, že zadáte buď Enable, nebo Disable.|  
+|37|WsatConfig. exe nedokázal určit přesný certifikát počítače. K tomu může dojít v případě, že existuje více kandidátů nebo pokud žádná neexistuje.|Zadejte kryptografický otisk certifikátu nebo dvojici Issuer\SubjectName, abyste správně identifikovali přesný certifikát, který se má nakonfigurovat.|  
+|38|Proces nebo uživatel nemá dostatečná oprávnění ke změně konfigurace brány firewall.|Spusťte WsatConfig. exe v uživatelském účtu správce.|  
+|39|V WsatConfig. exe došlo k chybě při aktualizaci konfigurace brány firewall.|Podívejte se na chybovou zprávu s položkami, které jsou k.|  
+|40|WsatConfig. exe nemůže povolit přístup pro čtení MSDTC k souboru privátního klíče certifikátu.|Spusťte WsatConfig. exe v uživatelském účtu správce.|  
+|41|Buď se nenašla žádná instalace WinFX, nebo se verze, která se našla, neshoduje s tím, co nástroj dokáže nakonfigurovat.|Ujistěte se, že je WinFX správně nainstalovaný, a použijte nástroj WsatConfig. exe, který byl dodán s touto verzí WinFX ke konfiguraci WS-AT.|  
+|42|Argument byl na příkazovém řádku zadán více než jednou.|Při spuštění WsatConfig. exe zadejte pouze každý argument.|  
+|43|WsatConfig. exe nemůže aktualizovat nastavení WS-AT, pokud není povolen protokol WS-AT.|Jako další argument příkazového řádku zadejte `-network:enable`.|  
+|44|Požadovaná oprava hotfix chybí a služba WS-AT se nedá nakonfigurovat, dokud není nainstalovaná oprava hotfix.|Pokyny k instalaci požadované opravy hotfix najdete v poznámkách k vydání verze WinFX.|  
+|45|Možnost příkazového řádku `-virtualServer` byla neplatná.|Opravte možnost příkazového řádku `-virtualServer` zadáním názvu sítě prostředku clusteru, ve kterém se má konfigurovat.|  
+|46|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Použijte kód chyby vrácený k namapování na příslušnou systémovou chybu.|  
+|47|Proces nebo uživatel nemá dostatečná oprávnění k povolení relace trasování ETW.|Spusťte WsatConfig. exe v uživatelském účtu správce.|  
+|48|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Kontaktujte Microsoft.|  
+|49|Nelze vytvořit nový soubor protokolu z důvodu nedostatku místa na disku% systemdrive%.|Ujistěte se, že vaše% systemdrive% má dostatek místa pro soubor protokolu.|  
+|51|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Kontaktujte Microsoft.|  
+|52|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Kontaktujte Microsoft.|  
+|53|Zálohování předchozího souboru protokolu relace trasování událostí pro Windows bylo neúspěšné.|Ujistěte se, že vaše% systemdrive% má dostatek místa pro soubor protokolu a zálohu předchozího souboru protokolu (pokud existuje). V případě potřeby odeberte předchozí soubor protokolu ručně.|  
+|55|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Kontaktujte Microsoft.|  
+|56|Při pokusu o spuštění relace trasování ETW došlo k neočekávané chybě.|Kontaktujte Microsoft.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

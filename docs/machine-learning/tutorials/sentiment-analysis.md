@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c6b9d51a8ab91b4365c909993211f11ab3436808
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: e241ae8c0d39e6573b40c69611985f7095114629
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700862"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320149"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: analýza mínění komentářů k webu pomocí binární klasifikace v ML.NET
 
@@ -61,26 +61,21 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddUsings "Add necessary usings")]
 
-2. Vytvořte dvě globální pole, která budou uchovávat nedávno staženou cestu k souboru datové sady a uloženou cestu k souboru modelu:
-
-    - `_dataPath` má cestu k datové sadě, která se používá ke výukě modelu.
-    - `_modelPath` má cestu, kde je uložený model trained.
-
-3. Přidejte následující kód na řádek vpravo nad metodu `Main` pro určení cest:
+1. Přidejte následující kód na řádek vpravo nad metodou `Main` a vytvořte tak pole pro uchování nedávno stažené cesty souboru datové sady:
 
     [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
-4. Dále vytvořte třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
+1. Dále vytvořte třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
     - V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 
     - V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** .
 
-5. V editoru kódu se otevře soubor *SentimentData.cs* . Přidejte následující příkaz `using` do horní části *SentimentData.cs*:
+1. V editoru kódu se otevře soubor *SentimentData.cs* . Přidejte následující příkaz `using` do horní části *SentimentData.cs*:
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#AddUsings "Add necessary usings")]
 
-6. Odeberte existující definici třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, do souboru *SentimentData.cs* :
+1. Odeberte existující definici třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, do souboru *SentimentData.cs* :
 
     [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#DeclareTypes "Declare data record types")]
 
@@ -180,7 +175,7 @@ Při přípravě modelu použijete část datové sady ke školení a část dat
 
     Metoda `FeaturizeText()` v předchozím kódu převede sloupec text (`SentimentText`) na číselný typ klíče `Features`, který používá algoritmus strojového učení, a přidá ho jako sloupec nové datové sady:
 
-    |SentimentText                         |mínění |Funkce              |
+    |SentimentText                         |Mínění |Funkce              |
     |--------------------------------------|----------|----------------------|
     |Waitress bylo v provozu trochu pomalé.|    0,8     |[0,76, 0,65, 0,44,...] |
     |Crust není dobrá.                    |    0,8     |[0,98, 0,43, 0,54,...] |

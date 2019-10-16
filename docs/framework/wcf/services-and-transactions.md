@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-ms.openlocfilehash: 9dfe34406bfda2c16bd2f0cd53796b2fcef07b57
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9110198fa64e43c20e1e6ba0dcf158dddeac93a6
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967918"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321140"
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
-Aplikace Windows Communication Foundation (WCF) můžete zahájit transakce z v rámci klienta a koordinovat transakce v rámci operace služby. Klienti můžou zahájení transakce a volání několika operací služby a ujistěte se, že operace služby jsou buď potvrzené nebo vrátit zpět jako jednu jednotku.  
+Aplikace Windows Communication Foundation (WCF) mohou iniciovat transakci v rámci klienta a koordinovat transakci v rámci operace služby. Klienti mohou iniciovat transakci a vyvolat několik operací služby a zajistit, že operace služby jsou buď potvrzené, nebo vracené zpět jako jedna jednotka.  
   
- Chování transakce v kontraktu služby můžete povolit tak, že zadáte <xref:System.ServiceModel.ServiceBehaviorAttribute> a nastavení jeho <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> vlastnosti pro operace služby, které vyžadují transakce klienta. <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> Parametr určuje, zda je transakce, ve kterém metoda je provedena automaticky dokončit, pokud nejsou vyvolány žádné neošetřené výjimky. Další informace o těchto atributů najdete v tématu [atributy transakce ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
+ Můžete povolit chování transakce v kontraktu služby zadáním <xref:System.ServiceModel.ServiceBehaviorAttribute> a nastavením vlastností <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pro operace služby, které vyžadují transakce klienta. Parametr <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> určuje, zda transakce, ve které je metoda spuštěna, je automaticky dokončena, pokud nejsou vyvolány žádné neošetřené výjimky. Další informace o těchto atributech naleznete v tématu [atributy transakce ServiceModel](./feature-details/servicemodel-transaction-attributes.md).  
   
- Práce, které se provádí v operacích služeb a spravuje správce prostředků, jako je například protokolování aktualizace databáze je součástí klienta transakce.  
+ Práce, která je prováděna v operacích služby a spravovaná správcem prostředků, jako je například protokolování aktualizací databáze, je součástí transakce klienta.  
   
- Následující příklad ukazuje použití <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy pro řízení chování transakce na straně služby.  
+ Následující příklad ukazuje použití atributů <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> pro řízení chování transakce na straně služby.  
   
 ```csharp
 [ServiceBehavior(TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable)]  
@@ -59,7 +59,7 @@ public class CalculatorService: ICalculatorLog
 }  
 ```  
   
- Můžete povolit transakce a transakce tok pomocí klientského a vazby pro použití protokolu WS-AtomicTransaction a nastavení služby [ \<transactionFlow >](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) element `true`, jak je znázorněno v následující ukázková konfigurace.  
+ Můžete povolit transakce a tok transakce konfigurací vazeb klienta a služby k použití protokolu WS-AtomicTransaction a nastavením prvku [\<transactionFlow >](../configure-apps/file-schema/wcf/transactionflow.md) na hodnotu `true`, jak je znázorněno v následujícím příkladu. rozšířeného.  
   
 ```xml  
 <client>  
@@ -78,7 +78,7 @@ public class CalculatorService: ICalculatorLog
 </bindings>  
 ```  
   
- Klienti mohou spustit transakci tak, že vytvoříte <xref:System.Transactions.TransactionScope> a volání operací služby v rámci oboru transakce.  
+ Klienti mohou zahájit transakci vytvořením <xref:System.Transactions.TransactionScope> a vyvoláním operací služby v rámci rozsahu transakce.  
   
 ```csharp
 using (TransactionScope ts = new TransactionScope(TransactionScopeOption.RequiresNew))  
@@ -90,6 +90,6 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
   
 ## <a name="see-also"></a>Viz také:
 
-- [Podpora transakcí v System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)
-- [Modely transakcí](../../../docs/framework/wcf/feature-details/transaction-models.md)
-- [Tok transakcí WS](../../../docs/framework/wcf/samples/ws-transaction-flow.md)
+- [Podpora transakcí v System.ServiceModel](./feature-details/transactional-support-in-system-servicemodel.md)
+- [Modely transakcí](./feature-details/transaction-models.md)
+- [Tok transakcí WS](./samples/ws-transaction-flow.md)

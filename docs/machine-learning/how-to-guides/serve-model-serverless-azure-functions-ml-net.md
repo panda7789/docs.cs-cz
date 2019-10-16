@@ -5,12 +5,12 @@ ms.date: 09/12/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 2abd8588aa314b630c995e0c78b5869ec00a89df
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 31169116abdda7308ed216902b335a6b77fbcfc4
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179365"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321282"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
@@ -75,7 +75,7 @@ Vytvořte třídu pro předpověď mínění. Přidejte do projektu novou tříd
     ```csharp
     public class AnalyzeSentiment
     {
-    
+
     }
     ```
 
@@ -85,7 +85,7 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
 
 1. Vytvořte v projektu adresář s názvem *Datamodels* pro uložení datových modelů: v Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová složka**. Zadejte "datamodels" a stiskněte ENTER.
 2. V Průzkumník řešení klikněte pravým tlačítkem na adresář *Datamodels* a pak vyberte **Přidat > Nová položka**.
-3. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** . 
+3. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** .
 
     V editoru kódu se otevře soubor *SentimentData.cs* . Do horní části *SentimentData.cs*přidejte následující příkaz using:
 
@@ -113,7 +113,7 @@ Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](x
 Následující odkaz poskytuje další informace, pokud se chcete dozvědět víc o [vkládání závislostí](https://en.wikipedia.org/wiki/Dependency_injection).
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
-1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *Startup.cs*. Pak vyberte tlačítko **Přidat** . 
+1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *Startup.cs*. Pak vyberte tlačítko **Přidat** .
 
     V editoru kódu se otevře soubor *Startup.cs* . Do horní části *Startup.cs*přidejte následující příkaz using:
 
@@ -141,13 +141,13 @@ Následující odkaz poskytuje další informace, pokud se chcete dozvědět ví
     }
     ```
 
-Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro pozdější použití v případě, že je aplikace požaduje místo ručního provedení. 
+Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro pozdější použití v případě, že je aplikace požaduje místo ručního provedení.
 
-Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci. 
+Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci.
 
 Nastavte parametr `watchForChanges` na `true` a `PredictionEnginePool` spustí [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) , které naslouchají oznámením o změnách systému souborů a vyvolává události, když dojde ke změně souboru. Tím se zobrazí výzva `PredictionEnginePool` pro automatické opětovné načtení modelu.
 
-Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci. 
+Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci.
 
 > [!TIP]
 > Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace. V níže uvedeném příkladu kódu `PredictionEnginePool` cyklické dotazování modelu uloženého v zadaném identifikátoru URI každou minutu.
@@ -195,7 +195,7 @@ ILogger log)
 }
 ```
 
-Když se spustí metoda `Run`, jsou příchozí data z požadavku HTTP deserializovaná a slouží jako vstup pro `PredictionEnginePool`. Metoda `Predict` je pak volána k provedení předpovědi pomocí `SentimentAnalysisModel` zaregistrovaného ve třídě `Startup` a vrátí výsledky zpět uživateli, pokud bylo úspěšné.
+Když se spustí metoda `Run`, jsou příchozí data z požadavku HTTP deserializovaná a slouží jako vstup pro `PredictionEnginePool`. Metoda `Predict` se pak zavolá, aby předpovědi pomocí `SentimentAnalysisModel` zaregistrovaného ve třídě `Startup` a vrátí výsledky zpátky uživateli, pokud je úspěšný.
 
 ## <a name="test-locally"></a>Test lokálně
 
@@ -209,7 +209,7 @@ Teď, když je všechno nastavené, je čas otestovat aplikaci:
     ```
 
     V případě úspěchu by měl výstup vypadat podobně jako v následujícím textu:
-    
+
     ```powershell
     Negative
     ```

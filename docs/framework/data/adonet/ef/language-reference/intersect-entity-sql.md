@@ -2,19 +2,19 @@
 title: Průsečík (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 93c6fe33-f341-4b52-911e-adf503891951
-ms.openlocfilehash: a943de89de37d00cc2a643b443da7ef1fd3380b9
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: dc7338d176302b8683d541ab0dc715dd8d149c6f
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250602"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319769"
 ---
 # <a name="intersect-entity-sql"></a>Průsečík (Entity SQL)
 Vrátí kolekci všech jedinečných hodnot, které jsou vráceny výrazy dotazu na levé a pravé straně operandu INTERSECT. Všechny výrazy musí být stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 expression INTERSECT expression  
 ```  
   
@@ -26,16 +26,16 @@ expression INTERSECT expression
  Kolekce stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="remarks"></a>Poznámky  
- Průsečík je jeden ze [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sad operátorů. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory set jsou vyhodnocovány zleva doprava. Informace o prioritách pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinové operátory naleznete v tématu [Except](except-entity-sql.md).  
+ Průsečík je jednou z operátorů množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Všechny operátory množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou vyhodnocovány zleva doprava. Informace o prioritách pro operátory množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] naleznete v tématu [Except](except-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz pomocí operátoru INTERSECT vrátí kolekci všech jedinečných hodnot, které jsou vráceny výrazy dotazu na levé a pravé straně operandu INTERSECT. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
- [!code-csharp[DP EntityServices Concepts 2#INTERSECT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#intersect)]  
+ [!code-sql[DP EntityServices Concepts#INTERSECT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#intersect)]  
   
 ## <a name="see-also"></a>Viz také:
 

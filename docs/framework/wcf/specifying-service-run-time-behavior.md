@@ -5,122 +5,122 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-ms.openlocfilehash: d1635d0eccf0886577eafe2ab11126093defac2b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 087aaf5ebc69046d5404765114cfaecd28798915
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875982"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321374"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
-Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementovat vaše smlouva na služby ([implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operace služby modulu runtime. Toto téma popisuje poskytované systémem služby a operace chování a popisuje, kde najdete další informace k vytvoření nové chování. Některá chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby, najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
+Po navržení smlouvy o poskytování služeb ([Navrhování kontraktů služeb](designing-service-contracts.md)) a implementaci kontraktu služby ([implementace kontraktů služeb](implementing-service-contracts.md)) můžete nakonfigurovat chování služby Service runtime. Toto téma popisuje chování služby a operace poskytnuté systémem a popisuje, kde najít další informace pro vytvoření nového chování. I když se některé chování aplikuje jako atributy, mnohé se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby najdete v tématu [Konfigurace služeb](configuring-services.md).  
   
 ## <a name="overview"></a>Přehled  
- Kontrakt definuje vstupů, výstupů, datové typy a funkce služby daného typu. Implementace kontraktu služby vytvoří třídu, která, když je nakonfigurována s vazbou na adrese, splňuje kontrakt implementuje. Smluvní, vazby a informace o adrese jsou všechny známé klientem; bez nich klienta nemůže provádět pomocí služby.  
+ Smlouva definuje vstupy, výstupy, datové typy a možnosti služby daného typu. Implementace kontraktu služby vytvoří třídu, která, pokud je nakonfigurována s vazbou na adrese, splní kontrakt, který implementuje. Informace o smluvních, vazbách a adresách jsou všechny známy u klienta. bez nich klient nemůže službu používat.  
   
- Specifika operace, jako je například práce s vlákny problémy nebo Správa instancí, ale neprůhledné pro klienty. Když naimplementujete servisní smlouvy, velký počet vlastností operace můžete nakonfigurovat pomocí *chování*. Chování jsou objekty, které upravují modul runtime Windows Communication Foundation (WCF) tak, že nastavíte vlastnost modulu runtime nebo vložením přizpůsobení typů do modulu runtime. Další informace o změnách tak, že vytvoříte uživatelem definované chování modulu runtime, naleznete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ Nicméně konkrétní operace, jako jsou například problémy s vlákny nebo Správa instancí, jsou pro klienty neprůhledné. Po dokončení implementace kontraktu služby můžete nakonfigurovat velký počet charakteristik operací pomocí *chování*. Chování jsou objekty, které upravují modul runtime Windows Communication Foundation (WCF) buď nastavením běhové vlastnosti, nebo vložením typu vlastního nastavení do modulu runtime. Další informace o úpravách modulu runtime vytvořením uživatelsky definovaného chování naleznete v tématu [Rozšíření ServiceHost a vrstva modelu služby](./extending/extending-servicehost-and-the-service-model-layer.md).  
   
- <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> vystavení nejčastěji požadované funkce operace a atributy jsou nejčastěji užitečné chování. Protože jsou atributy, použít je pro implementaci služby nebo operace. Další chování, například <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>, jsou obvykle použity pomocí konfiguračního souboru aplikace, i když je můžete využít prostřednictvím kódu programu.  
+ Atributy <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> jsou nejrozšířenějším užitečným chováním a zpřístupňují nejčastěji požadované funkce operace. Vzhledem k tomu, že se jedná o atributy, je můžete použít pro implementaci služby nebo operace. Jiné chování, například <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>, se obvykle aplikují pomocí konfiguračního souboru aplikace, i když je můžete používat programově.  
   
- Toto téma obsahuje přehled <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, jsou popsány různé obory, na kterých může pracovat chování a poskytuje stručný popis mnoha poskytované systémem chování v různých oborech, které mohou být zajímavé pro vývojáře technologie WCF.  
+ Toto téma obsahuje přehled atributů <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute>, popisuje různé obory, ve kterých může chování fungovat, a poskytuje rychlý popis mnoha systémových chování v různých oborech, které mohou být v zájmu WCF. pracující.  
   
 ## <a name="servicebehaviorattribute-and-operationbehaviorattribute"></a>Atribut ServiceBehaviorAttribute a OperationBehaviorAttribute  
- Jsou nejdůležitějšího chování <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, které můžete použít k řízení:  
+ Nejdůležitější chování jsou atributy <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute>, které můžete použít k řízení:  
   
-- Životnost instance  
+- Životnost instancí  
   
 - Podpora souběžnosti a synchronizace  
   
-- Konfigurace chování  
+- Chování konfigurace  
   
-- Chování při transakci  
+- Chování transakce  
   
 - Chování serializace  
   
-- Metadata transformace  
+- Transformace metadat  
   
-- Životnost relace  
+- Doba života relace  
   
-- Filtrování adres a zpracování záhlaví  
+- Filtrování adres a zpracování hlaviček  
   
 - Zosobnění  
   
-- Pokud chcete použít tyto atributy, označit jako vhodný pro daný rozsah implementace služby nebo operaci s atributem a nastavte vlastnosti. Například následující příklad kódu ukazuje implementaci operace, která používá <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A?displayProperty=nameWithType> vlastnost tak, aby vyžadovala, že volající tuto operaci podporují zosobnění.  
+- Chcete-li použít tyto atributy, označte implementaci služby nebo operace s atributem odpovídajícím tomuto oboru a nastavte vlastnosti. Například následující příklad kódu ukazuje implementaci operace, která používá vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A?displayProperty=nameWithType> pro vyžadování, aby volající této operace podporoval zosobnění.  
   
  [!code-csharp[OperationBehaviorAttribute_Impersonation#1](../../../samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_impersonation/cs/services.cs#1)]
  [!code-vb[OperationBehaviorAttribute_Impersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_impersonation/vb/services.vb#1)]  
   
- Mnoho vlastností vyžadovat další podporu vazby. Například operace, která vyžaduje transakce z klienta, musí být nakonfigurován pro použití vazbu, která podporuje sdružení transakcí.  
+ Mnohé z vlastností vyžadují další podporu vazby. Například operace, která vyžaduje transakci z klienta, musí být nakonfigurována tak, aby používala vazbu, která podporuje přetečení transakcí.  
   
-### <a name="well-known-singleton-services"></a>Deklarace služeb typu Singleton známé  
- Můžete použít <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributů, které mají určité doby života, oba ovládací prvek <xref:System.ServiceModel.InstanceContext> a objektů služeb, které implementují operace.  
+### <a name="well-known-singleton-services"></a>Dobře známé služby s jedním prvkem  
+ Atributy <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> lze použít k řízení určitých životností, obou <xref:System.ServiceModel.InstanceContext> a objektů služby, které implementují operace.  
   
- Například <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnost určuje, jak často <xref:System.ServiceModel.InstanceContext> vydání a <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A?displayProperty=nameWithType> vlastnosti řídit, že se uvolnilo objekt služby.  
+ Například vlastnost <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> řídí, jak často je <xref:System.ServiceModel.InstanceContext> uvolněna, a ovládací prvek <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A?displayProperty=nameWithType>, když se objekt služby uvolní.  
   
- Můžete však také vytvořit objekt služby sami a vytvořit hostitele služby pomocí tohoto objektu. Uděláte to tak, musíte taky nastavit <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.InstanceContextMode.Single> nebo dojde k výjimce při otevření hostitele služby.  
+ Můžete ale také vytvořit objekt služby sami a vytvořit hostitele služby pomocí tohoto objektu. K tomu je nutné také nastavit vlastnost <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.InstanceContextMode.Single> nebo je vyvolána výjimka při otevření hostitele služby.  
   
- Použití <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> konstruktor k vytvoření takové služby. Poskytuje alternativu k implementaci vlastní <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> když chcete poskytovat konkrétní objekt instance pro použití službou typu singleton. Toto přetížení můžete použít, když váš typ implementace služby se obtížně vytvořit (například pokud neimplementuje výchozí veřejný konstruktor, který nemá žádné parametry).  
+ K vytvoření takové služby použijte konstruktor <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType>. Poskytuje alternativu k implementaci vlastního <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType>, pokud chcete poskytnout konkrétní instanci objektu pro použití ve službě typu singleton. Toto přetížení můžete použít, pokud je obtížné sestavit typ implementace služby (například pokud neimplementuje výchozí veřejný konstruktor bez parametrů).  
   
- Všimněte si, že je-li do tohoto konstruktoru objekt, jinak fungovat některé funkce související s pro Windows Communication Foundation (WCF) vytváření instancí chování. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici dobře známý objekt instance. Podobně jiný mechanismus uvolnění instance se ignoruje. <xref:System.ServiceModel.ServiceHost> Třídy vždy se chová jako by <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
+ Všimněte si, že když je objekt poskytnut tomuto konstruktoru, některé funkce související s chováním vytváření instancí služby Windows Communication Foundation (WCF) fungují jinak. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici dobře známá instance objektu. Podobně platí, že jakýkoli mechanismus uvolnění instancí se ignoruje. Třída <xref:System.ServiceModel.ServiceHost> se vždy chová, jako by vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> byla nastavena na hodnotu <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
   
-## <a name="other-service-endpoint-contract-and-operation-behaviors"></a>Jiné služby, koncový bod, kontrakt a operace chování  
- Chování služby, jako <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut, provoz napříč celou služby. Pokud nastavíte například <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType> musí zpracovat synchronizací vlákna uvnitř jednotlivých operací ve tuto službu, sami. Chování koncového bodu provoz přes koncový bod; mnoho chování koncového bodu poskytované systémem se pro funkce klienta. Kontrakt chování pracovat na úrovni smlouvy a doručování operaci změnit chování operace.  
+## <a name="other-service-endpoint-contract-and-operation-behaviors"></a>Jiné chování služeb, koncových bodů, kontraktů a operací  
+ Chování služby, jako je například atribut <xref:System.ServiceModel.ServiceBehaviorAttribute>, funguje v celé službě. Například pokud nastavíte vlastnost <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType>, je nutné zpracovat problémy synchronizace vláken uvnitř každé operace v dané službě sami. Chování koncového bodu funguje v rámci koncového bodu; Mnohé z chování koncových bodů poskytovaných systémem jsou určené pro funkce klienta. Chování kontraktu působí na úrovni smlouvy a chování operace upraví operace změny.  
   
- Mnoho z těchto projevů jsou definovány pro atributy a ujistěte se, můžete použít z nich, stejně jako <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy – jeho použitím na implementaci tříd nebo operace příslušnou službu. Další chování, například <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior> objekty, se obvykle používají pomocí konfiguračního souboru aplikace, i když se lze také prostřednictvím kódu programu.  
+ Mnohé z těchto chování jsou implementovány u atributů a vy je použijete jako atributy <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> – jejich použitím na příslušnou implementaci třídy služby nebo operace. Jiné chování, například objekty <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior>, se obvykle používají pomocí konfiguračního souboru aplikace, i když je lze také použít programově.  
   
- Například se konfiguruje v zveřejnění metadat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> objektu. Následující konfigurační soubor aplikace zobrazí nejběžnější využití.  
+ Například publikace metadat je nakonfigurována pomocí objektu <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Následující konfigurační soubor aplikace zobrazuje nejběžnější využití.  
   
  [!code-xml[ServiceMetadataBehavior#1](../../../samples/snippets/csharp/VS_Snippets_CFX/servicemetadatabehavior/cs/hostapplication.exe.config#1)]  
   
- Následující části popisují řadu nejužitečnější poskytnuté systémem, které můžete použít k úpravě doručování modulu runtime služby ani klienta chování. V tématu referenční téma a zjistěte, jak používat každý z nich.  
+ Následující části popisují mnoho z nejužitečnějších chování poskytovaných systémem, které můžete použít k úpravě doručování za běhu vaší služby nebo klienta. V tématu o tom, jak určit, jak se má používat, najdete v referenčním tématu.  
   
 ### <a name="service-behaviors"></a>Chování služby  
- Následující chování pracovat na služby.  
+ Následující chování působí na služby.  
   
-- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF k označení, jestli tuto službu můžete spustit v režimu kompatibility ASP.NET.  
+- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. Použito na službu WCF, která označuje, zda lze tuto službu spustit v režimu kompatibility ASP.NET.  
   
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Určuje, jak služba autorizuje deklarace identity klienta.  
   
-- <xref:System.ServiceModel.Description.ServiceCredentials>. Nakonfiguruje přihlašovacích údajů pro služby. Tato třída slouží k zadání přihlašovacích údajů pro službu, jako je například certifikát X.509.  
+- <xref:System.ServiceModel.Description.ServiceCredentials>. Nakonfiguruje pověření služby. Tato třída slouží k zadání přihlašovacích údajů pro službu, jako je například certifikát X. 509.  
   
-- <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a pomoct informace o funkcích služby WCF.  
+- <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a funkce informací o nápovědě pro službu WCF.  
   
-- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Určuje zveřejnění metadat služby a související informace.  
+- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Řídí publikování metadat služby a přidružených informací.  
   
-- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>. Určuje chování auditování událostí zabezpečení.  
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>. Určuje chování auditu událostí zabezpečení.  
   
-- <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>. Konfiguruje nastavení propustnosti za běhu, které vám umožní optimalizovat výkon služby.  
+- <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>. Konfiguruje nastavení propustnosti v době běhu, které vám umožní ladit výkon služby.  
   
 ### <a name="endpoint-behaviors"></a>Chování koncového bodu  
- Následující chování provoz na koncové body. Mnoho z těchto projevů se používají v klientských aplikacích.  
+ Následující chování fungují na koncových bodech. Mnohé z těchto chování se používají v klientských aplikacích.  
   
-- <xref:System.ServiceModel.CallbackBehaviorAttribute>. Nakonfiguruje implementaci zpětného volání služby v duplexním klientské aplikace.  
+- <xref:System.ServiceModel.CallbackBehaviorAttribute>. Konfiguruje implementaci služby zpětného volání v duplexní klientské aplikaci.  
   
-- <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povolí ladění služby WCF objekt zpětného volání.  
+- <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povoluje ladění služby pro objekt zpětného volání WCF.  
   
-- <xref:System.ServiceModel.Description.ClientCredentials>. Umožňuje uživateli konfigurovat přihlašovací údaje klienta a služby, stejně jako nastavení ověřování přihlašovacích údajů pro použití v klientovi služby.  
+- <xref:System.ServiceModel.Description.ClientCredentials>. Umožňuje uživateli konfigurovat pověření klienta a služby a také nastavení ověřování pověření služby pro použití v klientovi.  
   
-- <xref:System.ServiceModel.Description.ClientViaBehavior>. Používají klienti k určení identifikátor URI (Uniform Resource) pro který by měl být vytvořen přenosový kanál.  
+- <xref:System.ServiceModel.Description.ClientViaBehavior>. Klienti používají k určení identifikátoru URI, pro který má být vytvořen přenosový kanál.  
   
-- <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Dává pokyn WCF zakázat `MustUnderstand` zpracování.  
+- <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Instruuje WCF, aby zakázal zpracování @no__t 0.  
   
-- <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. Dá pokyn modulu runtime pomocí synchronního přijímat proces pro kanály.  
+- <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. Instruuje modul runtime, aby používal synchronní proces příjmu pro kanály.  
   
-- <xref:System.ServiceModel.Description.TransactedBatchingBehavior>. Optimalizuje operace příjmu pro přenosy, které obdrží podporu transakcí.  
+- <xref:System.ServiceModel.Description.TransactedBatchingBehavior>. Optimalizuje operace přijímání pro přenosy, které podporují transakční příjem.  
   
 ### <a name="contract-behaviors"></a>Chování kontraktu  
- <xref:System.ServiceModel.DeliveryRequirementsAttribute>. Určuje požadavky na funkce, které vazby musí poskytnout implementaci služby ani klienta.  
+ <xref:System.ServiceModel.DeliveryRequirementsAttribute>. Určuje požadavky na funkce, které musí vazby poskytovat službě nebo implementaci klienta.  
   
 ### <a name="operation-behaviors"></a>Chování operace  
- Následující operace chování zadejte ovládací prvky pro operace serializace a transakce.  
+ Následující chování operace určují serializaci a řízení transakcí pro operace.  
   
-- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Reprezentuje chování za běhu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.  
+- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Představuje chování při běhu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.  
   
-- <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>. Řídí chování za běhu `XmlSerializer` a přidruží ji k operaci.  
+- <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>. Řídí chování při běhu `XmlSerializer` a přidruží ho k operaci.  
   
-- <xref:System.ServiceModel.TransactionFlowAttribute>. Určuje úroveň, ve kterém přijímá operace služby záhlaví transakce.  
+- <xref:System.ServiceModel.TransactionFlowAttribute>. Určuje úroveň, ve které operace služby akceptuje hlavičku transakce.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)
-- [Postupy: Řízení vytváření instancí služby](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)
+- [Konfigurace služeb](configuring-services.md)
+- [Postupy: Řízení vytváření instancí služby](./feature-details/how-to-control-service-instancing.md)
