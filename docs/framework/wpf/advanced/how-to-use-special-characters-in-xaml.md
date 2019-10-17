@@ -8,15 +8,15 @@ helpviewer_keywords:
 - typography [WPF], special characters
 - special characters [WPF]
 ms.assetid: a57776d1-f353-4794-afa0-bfa3c712ed1c
-ms.openlocfilehash: 61ee38319b2f0aa46690fb063f6ffe6612f993ad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 27f2b18593d075b54eb8c3351bbb84415700cfd4
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918434"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395807"
 ---
 # <a name="how-to-use-special-characters-in-xaml"></a>Postupy: Použití speciálních znaků v kódu XAML
-Soubory značek, které jsou vytvořeny [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] v, jsou automaticky uloženy [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] ve formátu UTF-8, což znamená, že většina speciálních znaků, například značek akcentů, je správně kódována. Nicméně existuje sada běžně používaných speciálních znaků, které jsou zpracovávány jinak. Tyto speciální znaky následují [!INCLUDE[TLA#tla_w3c](../../../../includes/tlasharptla-w3c-md.md)] [!INCLUDE[TL A#tla_xml](../../../../includes/tlasharptla-xml-md.md)] standard pro kódování.  
+Soubory značek, které jsou vytvořeny v [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], jsou automaticky uloženy ve formátu Unicode UTF-8, což znamená, že většina speciálních znaků, jako jsou znaky akcentů, jsou správně kódovány. Nicméně existuje sada běžně používaných speciálních znaků, které jsou zpracovávány jinak. Tyto speciální znaky následují Standard [!INCLUDE[TLA#tla_w3c](../../../../includes/tlasharptla-w3c-md.md)] [!INCLUDE[TL A#tla_xml](../../../../includes/tlasharptla-xml-md.md)] pro kódování.  
   
  V následující tabulce je uvedena syntaxe pro kódování této sady speciálních znaků:  
   
@@ -28,7 +28,7 @@ Soubory značek, které jsou vytvořeny [!INCLUDE[TLA#tla_visualstu](../../../..
 |"|`&quot;`|Symbol dvojité uvozovky.|  
   
 > [!NOTE]
-> Vytvoříte-li soubor s označením pomocí textového editoru, jako je například Poznámkový blok systému Windows, je nutné [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] uložit soubor ve formátu UTF-8, aby bylo možné zachovat jakékoli kódované speciální znaky.  
+> Pokud vytvoříte soubor s označením pomocí textového editoru, jako je například Poznámkový blok systému Windows, je nutné uložit soubor ve formátu Unicode UTF-8, aby bylo možné zachovat všechny zakódované speciální znaky.  
   
  Následující příklad ukazuje, jak lze při vytváření značek použít speciální znaky v textu.  
   

@@ -1,34 +1,34 @@
 ---
-title: C#Výrazy – připravuje C# jazyka
-description: výrazy, operandy a operátory jsou stavební bloky C# jazyka
+title: C#Výrazy – prohlídka C# jazyka
+description: Výrazy, operandy a operátory jsou stavební bloky C# jazyka.
 ms.date: 04/25/2019
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 2553730d495942730c53d3646f35e80759a4d168
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 4866d12118518827c1f7032ac09933927f0f3c52
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609321"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395678"
 ---
 # <a name="expressions"></a>Výrazy
 
-*Výrazy* se vytvářejí na základě *operandy* a *operátory*. Operátory výrazu označují operace, které chcete použít pro operandy. Příklady operátorů `+`, `-`, `*`, `/`, a `new`. Příklady operandy: literály, pole, místní proměnné a výrazy.
+*Výrazy* jsou vytvořené z *operandů* a *operátorů*. Operátory výrazu označují, které operace se mají použít u operandů. Mezi příklady operátorů patří `+`, `-`, `*`, `/` a `new`. Příklady operandů zahrnují literály, pole, místní proměnné a výrazy.
 
-Pokud výraz obsahuje více operátorů *prioritu* operátorů určuje pořadí, ve kterém jsou jednotlivé operátory vyhodnocovány. Například výraz `x + y * z` se vyhodnotí jako `x + (y * z)` protože `*` má vyšší prioritu než operátor `+` operátor.
+Pokud výraz obsahuje více operátorů, *Priorita* operátorů řídí pořadí, ve kterém jsou jednotlivé operátory vyhodnocovány. Například výraz `x + y * z` je vyhodnocen jako `x + (y * z)`, protože operátor `*` má vyšší prioritu než operátor `+`.
 
-Dojde-li operand mezi dva operátory se stejnou prioritou, *asociativita* operátorů určuje pořadí, ve kterém jsou operace prováděny:
+Když dojde k operandu mezi dvěma operátory se stejnou prioritou, *asociativita* operátor řídí pořadí, ve kterém jsou operace prováděny:
 
-* S výjimkou operátory přiřazení jsou všechny binární operátory *asociativní zleva*, což znamená, že operace se provádějí zleva doprava. Například `x + y + z` se vyhodnotí jako `(x + y) + z`.
-* Operátory přiřazení a podmiňovací operátor (`?:`) jsou *asociativní zprava*, což znamená, že operace se provádějí zprava doleva. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
+* S výjimkou operátorů přiřazení a slučování s hodnotou null jsou všechny binární operátory *asociativní*, což znamená, že operace jsou prováděny zleva doprava. Například `x + y + z` se vyhodnotí jako `(x + y) + z`.
+* Operátory přiřazení @no__t operátory null-0 a `??=` a podmíněný operátor `?:` jsou *asociativní zprava*, což znamená, že operace jsou prováděny zprava doleva. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
 
-Přednost a asociativita operátorů lze ovládat pomocí závorek. Například `x + y * z` nejprve vynásobí `y` podle `z` a pak přidá výsledek, který má `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a pak vynásobí výsledků `z`.
+Priority a asociativita lze ovládat pomocí závorek. Například `x + y * z` nejprve vynásobí `y` hodnotou `z` a následně výsledek přidá do `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a pak výsledek vynásobí `z`.
 
-Většina operátory mohou být [ *přetížené*](../language-reference/operators/operator-overloading.md). Přetížení operátoru umožňuje uživatelem definovaný operátor implementace pro operace, kde jeden nebo oba operandy jsou třídy nebo struktury typu uživatelem definované.
+Většina operátorů může být [*přetížená*](../language-reference/operators/operator-overloading.md). Přetížení operátoru umožňuje zadat uživatelsky definované implementace operátorů pro operace, u nichž jeden nebo oba operandy jsou uživatelsky definovaný typ třídy nebo struktury.
 
-C#poskytuje několik operátorů sloužící k provedení [aritmetické](../language-reference/operators/arithmetic-operators.md), [logické](../language-reference/operators/boolean-logical-operators.md), [bitové a shift](../language-reference/operators/bitwise-and-shift-operators.md) operací a [rovnosti](../language-reference/operators/equality-operators.md) a [pořadí](../language-reference/operators/comparison-operators.md) porovnání.
+C#poskytuje několik operátorů pro provádění [aritmetických](../language-reference/operators/arithmetic-operators.md)operací, [logických](../language-reference/operators/boolean-logical-operators.md), [bitových a posunutých](../language-reference/operators/bitwise-and-shift-operators.md) a [rovnosti](../language-reference/operators/equality-operators.md) a porovnávání [objednávek](../language-reference/operators/comparison-operators.md) .
 
-Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v tématu [ C# operátory](../language-reference/operators/index.md).
+Úplný seznam C# operátorů seřazených podle priority úrovně naleznete v tématu [ C# operátory](../language-reference/operators/index.md).
 
 > [!div class="step-by-step"]
 > [Předchozí](types-and-variables.md)
-> [další](statements.md)
+> [Další](statements.md)

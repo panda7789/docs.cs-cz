@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 586e50818fc8ceaad5ca1925c0636b31015d81d4
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: d5e087647adced0b41cc6e42fcf534b274c70592
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925376"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395152"
 ---
 # <a name="virtual-c-reference"></a>virtual (Referenční dokumentace jazyka C#)
 
-`virtual` Klíčové slovo se používá k úpravě deklarace metody, vlastnosti, indexeru nebo události a umožňuje přepsání v odvozené třídě. Tuto metodu lze například přepsat libovolnou třídou, která ji dědí:
+Klíčové slovo `virtual` se používá k úpravě deklarace metody, vlastnosti, indexeru nebo události a umožňuje přepsání v odvozené třídě. Tuto metodu lze například přepsat libovolnou třídou, která ji dědí:
 
 ```csharp
 public virtual double Area() 
@@ -26,7 +26,7 @@ public virtual double Area()
 }
 ```
 
-Implementaci virtuálního člena lze změnit [přepsáním členu](override.md) v odvozené třídě. Další informace o použití `virtual` klíčového slova naleznete v tématu [Správa verzí pomocí klíčových slov override a New](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a znalost, [kdy použít klíčová slova override a New](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
+Implementaci virtuálního člena lze změnit [přepsáním členu](override.md) v odvozené třídě. Další informace o použití klíčového slova `virtual` naleznete v tématu [Správa verzí pomocí klíčových slov override a New](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [znalost, kdy použít klíčová slova override a New](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
 
 ## <a name="remarks"></a>Poznámky
 
@@ -34,27 +34,27 @@ Je-li vyvolána virtuální metoda, je typ běhu objektu zkontrolován pro přep
 
 Ve výchozím nastavení jsou metody nevirtuální. Nemůžete přepsat nevirtuální (non-Virtual) metodu.
 
-`virtual` Modifikátor nelze použít `static`s modifikátory, `abstract`, `private`nebo `override` . Následující příklad ukazuje virtuální vlastnost:
+Modifikátor `virtual` nelze použít u modifikátorů `static`, `abstract`, `private` nebo `override`. Následující příklad ukazuje virtuální vlastnost:
 
 [!code-csharp[csrefKeywordsModifiers#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#26)]
 
-Virtuální vlastnosti se chovají podobně jako abstraktní metody, s výjimkou rozdílů v deklaraci a syntaxi vyvolání.
+Virtuální vlastnosti se chovají podobně jako virtuální metody, s výjimkou rozdílů v deklaraci a syntaxi vyvolání.
 
-- Použití `virtual` modifikátoru na statické vlastnosti je chybné.
+- Použití modifikátoru `virtual` na statické vlastnosti je chyba.
 
-- Virtuální zděděnou vlastnost lze přepsat v odvozené třídě zahrnutím deklarace vlastnosti, která používá `override` modifikátor.
+- Virtuální zděděnou vlastnost lze přepsat v odvozené třídě zahrnutím deklarace vlastnosti, která používá modifikátor `override`.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu `Shape` třída obsahuje dvě souřadnice `x`, `y`a `Area()` virtuální metodu. Různé třídy `Circle`tvarů, jako například `Cylinder`,, `Sphere` a dědí `Shape` třídu a oblast povrchu je vypočítána pro každý obrázek. Každá odvozená třída má svou vlastní implementaci `Area()`přepsání.
+V tomto příkladu třída `Shape` obsahuje dvě souřadnice `x`, `y` a virtuální metoda `Area()`. Různé třídy tvarů, například `Circle`, `Cylinder` a `Sphere`, dědí třídu `Shape` a oblast Surface je vypočítána pro každý obrázek. Každá odvozená třída má svou vlastní implementaci přepsání `Area()`.
 
-Všimněte si, že zděděné `Sphere`třídy `Circle`, `Cylinder` a všechny používají konstruktory, které inicializují základní třídu, jak je znázorněno v následující deklaraci.
+Všimněte si, že zděděné třídy `Circle`, `Sphere` a `Cylinder` používají konstruktory, které inicializují základní třídu, jak je znázorněno v následující deklaraci.
 
 ```csharp
 public Cylinder(double r, double h): base(r, h) {}
 ```
 
-Následující program vypočítá a zobrazí příslušnou oblast pro každý obrázek vyvoláním příslušné implementace `Area()` metody v závislosti na objektu, který je spojen s metodou.
+Následující program vypočítá a zobrazí příslušnou oblast pro každý obrázek vyvoláním příslušné implementace metody `Area()` podle objektu, který je spojen s metodou.
 
 [!code-csharp[csrefKeywordsModifiers#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#23)]
 

@@ -1,44 +1,44 @@
 ---
 title: Co je nového v .NET Core 3.0
-description: Přečtěte si o nových funkcích, které najdete v .NET Core 3.0.
+description: Přečtěte si o nových funkcích, které najdete v .NET Core 3,0.
 dev_langs:
 - csharp
 - vb
 author: thraka
 ms.author: adegeo
 ms.date: 09/22/2019
-ms.openlocfilehash: ddb758b942099657708e79b590c7817c309396d7
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: c10023cf8cee358db41a3b90a9a0a1020c5462eb
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216273"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395438"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
-Tento článek popisuje, co je v .NET Core 3.0 novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3.0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
-.NET Core 3.0 přidává podporu pro C# 8.0. Důrazně doporučujeme, abyste k  **C# rozšíření**používali [Visual Studio 2019 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pro Mac 8.3](/visualstudio/mac/install-preview)nebo [Visual Studio Code](https://code.visualstudio.com/) .
+.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme, abyste k  **C# rozšíření**používali [Visual Studio 2019 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview)nebo [Visual Studio Code](https://code.visualstudio.com/) .
 
-[Stáhněte si a začněte používat .NET Core 3.0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
+[Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
-Další informace o této verzi najdete v tématu [oznámení .NET Core 3.0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
+Další informace o této verzi najdete v tématu [oznámení .NET Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
 .NET Core RC1 se považuje za produkční verzi Microsoft a je plně podporovaná. Pokud používáte verzi Preview, musíte pro pokračování podpory přejít na verzi RTM.
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
-Instalační program MSI pro Windows se od verze .NET Core 3.0 změnil. Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě. Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze. Například **3.0. _101_**  a **3.0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3.0. _101_**  a **3.0. _199_**  jsou ve stejném pásmu funkcí. A při .NET Core SDK **3.0. _101_**  je nainstalováno, .NET Core SDK **3.0. _100_**  se odebere z počítače, pokud existuje. Při .NET Core SDK **3.0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3.0. _101_**  nebude odebráno.
+Instalační program MSI pro Windows se od verze .NET Core 3,0 změnil. Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě. Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze. Například **3,0. _101_**  a **3,0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3,0. _101_**  a **3,0. _199_**  jsou ve stejném pásmu funkcí. A při .NET Core SDK **3,0. _101_**  je nainstalováno, .NET Core SDK **3,0. _100_**  se odebere z počítače, pokud existuje. Při .NET Core SDK **3,0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3,0. _101_**  nebude odebráno.
 
 Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho, [jak je verze .NET Core](../versions/index.md).
 
-## <a name="c-80"></a>C#8.0
+## <a name="c-80"></a>C# 8.0
 
-C#8.0 je také součástí této verze, která zahrnuje funkce typu odkazu s možnou hodnotou null, asynchronní datové proudy a další vzory. Další informace o C# funkcích 8.0 najdete v tématu [co je nového v C# 8.0](../../csharp/whats-new/csharp-8.md).
+C#8,0 je také součástí této verze, která zahrnuje funkce typu odkazu s možnou hodnotou null, asynchronní datové proudy a další vzory. Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).
 
-## <a name="net-standard-21"></a>.NET Standard 2.1
+## <a name="net-standard-21"></a>.NET Standard 2,1
 
-I když .NET Core 3.0 podporuje **.NET Standard 2.1**, vygeneruje `dotnet new classlib` výchozí šablona projekt, který se pořád cílí **.NET Standard 2.0**. Chcete-li cílit na **.NET Standard 2.1**, upravte soubor projektu a `TargetFramework` změňte vlastnost `netstandard2.1`na:
+I když .NET Core 3,0 podporuje **.NET Standard 2,1**, vytvoří výchozí šablona `dotnet new classlib` projekt, který je stále cílen **.NET Standard 2,0**. Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a změňte vlastnost `TargetFramework` na `netstandard2.1`:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -50,11 +50,11 @@ I když .NET Core 3.0 podporuje **.NET Standard 2.1**, vygeneruje `dotnet new cl
 </Project>
 ```
 
-Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2.1** nebo **.NET Core 3.0**.
+Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2,1** nebo **.NET Core 3,0**.
 
 ## <a name="improved-net-core-version-apis"></a>Vylepšená rozhraní API verze .NET Core
 
-Počínaje rozhraním .NET Core 3.0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Příklad:
+Počínaje rozhraním .NET Core 3,0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Příklad:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -91,16 +91,16 @@ Další informace najdete v tématu věnovaném [vnitřním procesorům platform
 
 .NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#framework-dependent-executables-fde) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#self-contained-deployments-scd) vyvolat spustitelný soubor.
 
-Během `dotnet build` nebo`dotnet publish`se vytvoří spustitelný soubor, který odpovídá prostředí a platformě používané sady SDK. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
+Během `dotnet build` nebo `dotnet publish` se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
 - Můžete dvakrát kliknout na spustitelný soubor.
-- Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` ve Windows, a `./myapp` v systémech Linux a MacOS.
+- Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` v systému Windows a `./myapp` v systémech Linux a macOS.
 
 ## <a name="single-file-executables"></a>Spustitelné soubory s jedním souborem
 
-`dotnet publish` Příkaz podporuje balení vaší aplikace do spustitelného souboru specifického pro jednotlivé platformy. Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativních), které jsou nutné ke spuštění vaší aplikace. Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru buildu. Spuštění je rychlejší, když aplikaci znovu spustíte. Pokud se nepoužila nová verze, aplikace se už nebude muset extrahovat druhou dobu.
+Příkaz `dotnet publish` podporuje balení vaší aplikace do spustitelného souboru specifického pro jednotlivé platformy. Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativních), které jsou nutné ke spuštění vaší aplikace. Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru buildu. Spuštění je rychlejší, když aplikaci znovu spustíte. Pokud se nepoužila nová verze, aplikace se už nebude muset extrahovat druhou dobu.
 
-Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v projektu nebo na příkazovém řádku `dotnet publish` pomocí příkazu:
+Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v projektu nebo na příkazovém řádku pomocí příkazu `dotnet publish`:
 
 ```xml
 <PropertyGroup>
@@ -112,20 +112,20 @@ Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v p
 -nebo-
 
 ```dotnetcli
-dotnet publish -r win10-x64 /p:PublishSingleFile=true
+dotnet publish -r win10-x64 -p:PublishSingleFile=true
 ```
 
 Další informace o publikování v jednom souboru najdete v [dokumentu návrhu sady prostředků s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).
 
 ## <a name="assembly-linking"></a>Propojení sestavení
 
-Sada .NET Core 3.0 SDK je dodávána s nástrojem, který umožňuje zmenšit velikost aplikací analýzou IL a oříznutím nepoužívaných sestavení.
+Sada .NET Core 3,0 SDK je dodávána s nástrojem, který umožňuje zmenšit velikost aplikací analýzou IL a oříznutím nepoužívaných sestavení.
 
 Samostatné aplikace zahrnují vše potřebné ke spuštění kódu, aniž by bylo nutné nainstalovat rozhraní .NET do hostitelského počítače. Ale hodně, kolikrát aplikace jenom vyžaduje malou podmnožinu rozhraní, a další nepoužívané knihovny by se daly odebrat.
 
 Rozhraní .NET Core nyní obsahuje nastavení, které bude používat nástroj [linkeru Il](https://github.com/mono/linker) ke kontrole Il vaší aplikace. Tento nástroj zjistí, jaký kód je požadován, a poté ořízne nepoužívané knihovny. Tento nástroj může významně snížit velikost nasazení některých aplikací.
 
-Chcete-li tento nástroj povolit, `<PublishTrimmed>` přidejte do projektu nastavení a publikujte samostatně uzavřenou aplikaci:
+Pokud chcete tento nástroj povolit, přidejte do svého projektu nastavení `<PublishTrimmed>` a publikujte samostatně uzavřenou aplikaci:
 
 ```xml
 <PropertyGroup>
@@ -137,7 +137,7 @@ Chcete-li tento nástroj povolit, `<PublishTrimmed>` přidejte do projektu nasta
 dotnet publish -r <rid> -c Release
 ```
 
-Příklad: základní šablona projektu "Hello World", která je součástí, je-li publikována, má velikost přibližně 70 MB. Pomocí `<PublishTrimmed>`této velikosti se velikost zmenší na přibližně 30 MB.
+Příklad: základní šablona projektu "Hello World", která je součástí, je-li publikována, má velikost přibližně 70 MB. Když použijete `<PublishTrimmed>`, zmenší se velikost na přibližně 30 MB.
 
 Je důležité vzít v úvahu, že aplikace nebo architektury (včetně ASP.NET Core a WPF), které používají reflexi nebo související dynamické funkce, budou často přerušit při oříznutí. K tomuto zlomku dochází, protože linker neví o tomto dynamickém chování a nemůže určit, které typy rozhraní jsou pro reflexi vyžadovány. Nástroj linkeru IL se dá nakonfigurovat tak, aby se na tento scénář dozvěděl.
 
@@ -147,7 +147,7 @@ Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.m
 
 ## <a name="tiered-compilation"></a>Vrstvená kompilace
 
-[Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnuté pomocí .NET Core 3.0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.
+[Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnutá pomocí .net Core 3,0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.
 
 Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní. To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu. To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.
 
@@ -173,7 +173,7 @@ R2R binární soubory zlepšují výkon při spuštění tím, že snižují mno
 
 Chcete-li zkompilovat projekt jako ReadyToRun, postupujte takto:
 
-01. `<PublishReadyToRun>` Přidat nastavení do projektu
+01. Přidat nastavení `<PublishReadyToRun>` do projektu
 
     ```xml
     <PropertyGroup>
@@ -199,65 +199,65 @@ Výjimky pro cílení na více platforem:
 
 ## <a name="build-copies-dependencies"></a>Sestavení kopíruje závislosti
 
-`dotnet build` Příkaz nyní kopíruje závislosti NuGet pro vaši aplikaci z mezipaměti NuGet do výstupní složky sestavení. Dříve se závislosti zkopírovaly jenom jako součást `dotnet publish`.
+Příkaz `dotnet build` nyní kopíruje závislosti NuGet pro vaši aplikaci z mezipaměti NuGet do výstupní složky sestavení. Dříve se závislosti zkopírovaly jenom jako součást `dotnet publish`.
 
 Existují některé operace, jako je propojování a publikování stránek Razor, které budou nadále vyžadovat publikování.
 
 ## <a name="local-tools"></a>Místní nástroje
 
-.NET Core 3.0 zavádí místní nástroje. Místní nástroje jsou podobné [globálním nástrojům](../tools/global-tools.md) , ale jsou přidruženy k určitému umístění na disku. Místní nástroje nejsou globálně dostupné a distribuují se jako balíčky NuGet.
+.NET Core 3,0 zavádí místní nástroje. Místní nástroje jsou podobné [globálním nástrojům](../tools/global-tools.md) , ale jsou přidruženy k určitému umístění na disku. Místní nástroje nejsou globálně dostupné a distribuují se jako balíčky NuGet.
 
 > [!WARNING]
-> Pokud jste si vyzkoušeli místní nástroje v rozhraní .NET Core 3.0 Preview 1 `dotnet tool restore` , `dotnet tool install`jako je třeba spuštění nebo, odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
+> Pokud jste zkusili místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je například spuštění `dotnet tool restore` nebo `dotnet tool install`, odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
 >
-> V macOS, Linux:`rm -r $HOME/.dotnet/toolResolverCache`
+> Na macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
-> Ve Windows:`rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
+> Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
 
-Místní nástroje spoléhají na název `dotnet-tools.json` souboru manifestu v aktuálním adresáři. Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže. Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.
+Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři. Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže. Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.
 
-U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2.1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2,1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
 
 ## <a name="major-version-roll-forward"></a>Hlavní verze – posunutí – posun
 
-.NET Core 3.0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core. Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí. Dá se nakonfigurovat následujícími způsoby:
+.NET Core 3,0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core. Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí. Dá se nakonfigurovat následujícími způsoby:
 
-- Vlastnost souboru projektu:`RollForward`
-- Vlastnost konfiguračního souboru modulu runtime:`rollForward`
-- Proměnná prostředí:`DOTNET_ROLL_FORWARD`
-- Argument příkazového řádku:`--roll-forward`
+- Vlastnost souboru projektu: `RollForward`
+- Vlastnost konfiguračního souboru modulu runtime: `rollForward`
+- Proměnná prostředí: `DOTNET_ROLL_FORWARD`
+- Argument příkazového řádku: `--roll-forward`
 
 Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je výchozí hodnota **podverze** .
 
 - **LatestPatch**\
 Vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.
-- **Moll**\
+- **Vedlejší**\
 V případě, že chybí požadovaná dílčí verze, převeďte nahoru na nejnižší nižší verzi. Pokud je k dispozici požadovaná dílčí verze, použije se zásada **LatestPatch** .
-- **Nejdůležitější**\
+- **Hlavní**@no__t – 1
 Pokud chybí požadovaná hlavní verze, převeďte ji nahoru na nejnižší nejvyšší hlavní verzi a nejnižší podverzi. Pokud je k dispozici požadovaná hlavní verze, použije se **vedlejší** zásada.
 - **LatestMinor**\
 Převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze. Určeno pro scénáře hostování součástí.
 - **LatestMajor**\
 Převeďte do nejvyšší hlavní a nejvyšší dílčí verze, a to i v případě, že je k dispozici požadovaná hlavní verze. Určeno pro scénáře hostování součástí.
-- **Dezaktivovat**\
+- **Zakázat**\
 Nezadávejte vše. Vytvoří se jenom vazba na určenou verzi. Tyto zásady se nedoporučují pro obecné použití, protože zakazují možnost navrátit se k nejnovějším opravám. Tato hodnota se doporučuje jenom pro testování.
 
 Kromě nastavení **Zakázat** bude pro všechna nastavení použita nejvyšší dostupná verze opravy.
 
 ## <a name="windows-desktop"></a>Plocha Windows
 
-.NET Core 3.0 podporuje desktopové aplikace Windows pomocí Windows Presentation Foundation (WPF) a model Windows Forms. Tyto architektury také podporují použití moderních ovládacích prvků a Fluent stylování z knihovny XAML uživatelského rozhraní systému Windows (WinUI) přes [ostrovy XAML](/windows/uwp/xaml-platform/xaml-host-controls).
+.NET Core 3,0 podporuje desktopové aplikace Windows pomocí Windows Presentation Foundation (WPF) a model Windows Forms. Tyto architektury také podporují použití moderních ovládacích prvků a Fluent stylování z knihovny XAML uživatelského rozhraní systému Windows (WinUI) přes [ostrovy XAML](/windows/uwp/xaml-platform/xaml-host-controls).
 
-Součást Desktop systému Windows je součástí sady Windows .NET Core 3.0 SDK.
+Součást Desktop systému Windows je součástí sady Windows .NET Core 3,0 SDK.
 
-Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících `dotnet` příkazů:
+Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících příkazů `dotnet`:
 
 ```dotnetcli
 dotnet new wpf
 dotnet new winforms
 ```
 
-Visual Studio 2019 přidává **nové šablony projektů** pro .NET Core 3.0 model Windows Forms a WPF.
+Visual Studio 2019 přidává **nové šablony projektů** pro .net Core 3,0 model Windows Forms a WPF.
 
 Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../porting/wpf.md) and [port model Windows Forms Projects](../porting/winforms.md).
 
@@ -271,11 +271,11 @@ Příklad vytvoření komponenty modelu COM a její využití naleznete v [ukáz
 
 ## <a name="msix-deployment---windows-desktop"></a>Nasazení MSIX – Desktop Windows
 
-[MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace systému Windows. Dá se použít k nasazení desktopových aplikací .NET Core 3.0 do Windows 10.
+[MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace systému Windows. Dá se použít k nasazení desktopových aplikací .NET Core 3,0 do Windows 10.
 
 [Projekt pro balení aplikace pro systém Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), který je k dispozici v aplikaci Visual Studio 2019, umožňuje vytvářet balíčky MSIX pomocí aplikací .NET Core s využitím [vlastních součástí](../deploying/index.md#self-contained-deployments-scd) .
 
-Soubor projektu .NET Core musí určovat podporované běhové moduly ve `<RuntimeIdentifiers>` vlastnosti:
+Soubor projektu .NET Core musí určovat podporované moduly runtime ve vlastnosti `<RuntimeIdentifiers>`:
 
 ```xml
 <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
@@ -283,9 +283,9 @@ Soubor projektu .NET Core musí určovat podporované běhové moduly ve `<Runti
 
 ## <a name="winforms-high-dpi"></a>Vysoké rozlišení DPI pro WinForms
 
-Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>rozlišením DPI pomocí. Metoda nastaví odpovídající režim vysoké úrovně dpi, pokud nastavení nebylo nastaveno jiným způsobem, jako `App.Manifest` je `Application.Run`nebo P/Invoke. `SetHighDpiMode`
+Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým rozlišením DPI pomocí <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>. Metoda `SetHighDpiMode` nastaví odpovídající režim vysoké úrovně DPI, pokud nastavení nebylo nastaveno jiným způsobem jako `App.Manifest` nebo P/Invoke před `Application.Run`.
 
-Možné `highDpiMode` hodnoty, jak je vyjádřené <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> výčtem:
+Možné hodnoty `highDpiMode` vyjádřené výčtem <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> jsou:
 
 - `DpiUnaware`
 - `SystemAware`
@@ -297,7 +297,7 @@ Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývo
 
 ## <a name="ranges-and-indices"></a>Rozsahy a indexy
 
-Nový <xref:System.Index?displayProperty=nameWithType> typ lze použít k indexování. Můžete vytvořit jednu z `int` těchto počtů od začátku nebo s operátorem prefix `^` (C#), který se počítá od konce:
+Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování. Můžete vytvořit jeden z `int`, který se počítá od začátku, nebo s předponou `^` (C#), která se počítá od konce:
 
 ```csharp
 Index i1 = 3;  // number 3 from beginning
@@ -306,7 +306,7 @@ int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 Console.WriteLine($"{a[i1]}, {a[i2]}"); // "3, 6"
 ```
 
-Je zde také <xref:System.Range?displayProperty=nameWithType> typ, který se skládá ze dvou `Index` hodnot, jeden pro začátek a jeden pro konec a `x..y` lze jej zapsat s výrazem rozsahu (C#). Pak můžete indexovat pomocí `Range`, který vytváří řez:
+K dispozici je také typ <xref:System.Range?displayProperty=nameWithType>, který se skládá ze dvou hodnot `Index`, jeden pro začátek a druhý pro konec a je možné ho zapsat pomocí výrazu rozsahu `x..y` (C#). Potom můžete indexovat pomocí `Range`, což vytvoří řez:
 
 ```csharp
 var slice = a[i1..i2]; // { 3, 4, 5 }
@@ -316,9 +316,9 @@ Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/rang
 
 ## <a name="async-streams"></a>Asynchronní streamy
 
-Typ je nová asynchronní <xref:System.Collections.Generic.IEnumerable%601>verze. <xref:System.Collections.Generic.IAsyncEnumerable%601> Jazyk vám umožní `await foreach` `IAsyncEnumerable<T>` využít jejich prvky a využít `yield return` je k vytváření prvků.
+Typ <xref:System.Collections.Generic.IAsyncEnumerable%601> je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>. Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.
 
-Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů. Příkaz je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající. `foreach` Tento vzor (použití `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.
+Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů. Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající. Tento vzor (pomocí `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.
 
 ```csharp
 async IAsyncEnumerable<int> GetBigResultsAsync()
@@ -330,52 +330,52 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 }
 ```
 
-Kromě `await foreach`toho je možné také vytvořit asynchronní iterátory, například iterátor, který `IAsyncEnumerable/IAsyncEnumerator` vrátí `yield` , který můžete i `await` v. Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které BCL různé typy, `Stream` například a `Timer`.
+Kromě možnosti `await foreach` můžete také vytvořit asynchronní iterátory, například iterátor, který vrátí `IAsyncEnumerable/IAsyncEnumerator`, který můžete `await` a `yield` v. Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které implementují různé typy BCL, například `Stream` a `Timer`.
 
 Další informace najdete v [kurzu asynchronní streamy](../../csharp/tutorials/generate-consume-asynchronous-stream.md).
 
 ## <a name="ieee-floating-point-improvements"></a>Vylepšení standardu IEEE s plovoucí desetinnou čárkou
 
-Rozhraní API s plovoucí desetinnou čárkou se aktualizují tak, aby odpovídalo [revizi IEEE 754-2008](https://en.wikipedia.org/wiki/IEEE_754-2008_revision). Cílem těchto změn je vystavit všechny **požadované** operace a zajistit, aby byly vyhovující požadavkům standardu IEEE. Další informace o vylepšeních s plovoucí desetinnou čárkou naleznete v příspěvku na blogu [.NET Core 3.0 v oblasti analýzy a formátování plovoucí desetinné](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) čárky.
+Rozhraní API s plovoucí desetinnou čárkou se aktualizují tak, aby odpovídalo [revizi IEEE 754-2008](https://en.wikipedia.org/wiki/IEEE_754-2008_revision). Cílem těchto změn je vystavit všechny **požadované** operace a zajistit, aby byly vyhovující požadavkům standardu IEEE. Další informace o vylepšeních s plovoucí desetinnou čárkou naleznete v příspěvku na blogu [.NET Core 3,0 v oblasti analýzy a formátování plovoucí desetinné](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) čárky.
 
 Mezi aktualizace pro analýzu a formátování patří:
 
 - Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.
 - Správně Analyzujte a formátujete záporné hodnoty nula.
-- Správně analyzovat `Infinity` a `NaN` provést kontrolu bez rozlišení velkých a malých písmen a povolit volitelnou předchozí `+` hodnotu.
+- Správně Analyzujte `Infinity` a `NaN`, a to provedením kontroly bez rozlišování velkých a malých písmen a povolením volitelného předchozího `+`, pokud je to možné.
 
-Mezi <xref:System.Math?displayProperty=nameWithType> nová rozhraní API patří:
+Nová rozhraní API <xref:System.Math?displayProperty=nameWithType> zahrnují:
 
-- <xref:System.Math.BitIncrement(System.Double)>ani<xref:System.Math.BitDecrement(System.Double)>\
-Odpovídá operacím `nextDown` IEEE a.`nextUp` Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.
+- <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> @ no__t-2
+Odpovídá operacím IEEE `nextUp` a `nextDown`. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.
 
-- <xref:System.Math.MaxMagnitude(System.Double,System.Double)>ani<xref:System.Math.MinMagnitude(System.Double,System.Double)>\
-Odpovídá operacím `minNumMag` IEEE a,vracíhodnotu,kterájevětšínebomenšívrozsahudvouvstupů(vuvedenémpořadí).`maxNumMag` Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> @ no__t-2
+Odpovídá operacím IEEE `maxNumMag` a `minNumMag`, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.
 
 - <xref:System.Math.ILogB(System.Double)>\
-Odpovídá operaci `logB` IEEE, která vrací celočíselnou hodnotu, vrátí protokol integrálního protokolu Base-2 vstupního parametru. Tato metoda je prakticky stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.
+Odpovídá vstupně-výstupní operaci `logB`, která vrací celočíselnou hodnotu, vrátí celočíselný protokol dekadický-2 vstupního parametru. Tato metoda je efektivně stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.
 
 - <xref:System.Math.ScaleB(System.Double,System.Int32)>\
-Odpovídá operaci `x * pow(2, n)`IEEE, která přebírá celočíselnou hodnotu, vrátí ji efektivně, ale provede minimální chybu zaokrouhlení. `scaleB`
+Odpovídá operaci `scaleB` IEEE, která přebírá celočíselnou hodnotu, vrátí efektivně `x * pow(2, n)`, ale provede s minimální chybou zaokrouhlení.
 
 - <xref:System.Math.Log2(System.Double)>\
-Odpovídá operaci `log2` IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
+Odpovídá logaritmus `log2` IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Odpovídá operaci `fma` IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jedná o jedinou operaci, čímž se minimalizuje chyba zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)` vrácení. `1e308` Funkce Regular `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
+Odpovídá `fma` IEEE operace, provádí přidaný násobek. To znamená, že v rámci jedné operace provádí `(x * y) + z`, což minimalizuje chybu zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrátí `1e308`. Normální `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
-Odpovídá operaci `x`IEEE, vrací hodnotu, `y`ale s znaménkem. `copySign`
+Odpovídá `copySign` IEEE operace, vrátí hodnotu `x`, ale s znaménkem `y`.
 
 ## <a name="fast-built-in-json-support"></a>Rychlá integrovaná podpora JSON
 
 Uživatelé rozhraní .NET mají převážně na [**JSON.NET**](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti. **JSON.NET** používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
 
-Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založená na `Span<byte>`. Do .NET Core 3.0 <xref:System.Text.Json?displayProperty=nameWithType> oboru názvů se přidaly tři nové hlavní typy související s JSON. Tyto typy *ještě* nepodporují serializaci a deserializaci objektu CLR (POCO).
+Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založená na `Span<byte>`. Do .NET Core 3,0 obor názvů <xref:System.Text.Json?displayProperty=nameWithType> se přidaly tři nové hlavní typy související s JSON. Tyto typy *ještě* nepodporují serializaci a deserializaci objektu CLR (POCO).
 
 ### <a name="utf8jsonreader"></a>Utf8JsonReader
 
-<xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType>je pro text JSON s kódováním UTF-8 s vysokým výkonem k dispozici vysoce výkonné a nízké přidělení, načtený z `ReadOnlySpan<byte>`. `Utf8JsonReader` Je základní typ nízké úrovně, který lze použít k sestavení vlastních analyzátorů a deserializace. Čtení prostřednictvím datové části JSON pomocí nového `Utf8JsonReader` je 2x rychlejší než použití čtecího zařízení z **JSON.NET**. Nepřiřazuje se, dokud nebudete muset actualize tokeny JSON jako řetězce (UTF-16).
+<xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType> je pro text JSON s kódováním UTF-8 s vysokým výkonem a s nízkou úrovní přidělování, které se čte z `ReadOnlySpan<byte>`. @No__t-0 je základní typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace. Čtení prostřednictvím datové části JSON pomocí nového `Utf8JsonReader` je dvojnásobější, než použití čtecího zařízení z **JSON.NET**. Nepřiřazuje se, dokud nebudete muset actualize tokeny JSON jako řetězce (UTF-16).
 
 Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
 
@@ -385,23 +385,23 @@ Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.
 
 ### <a name="utf8jsonwriter"></a>Utf8JsonWriter
 
-<xref:System.Text.Json.Utf8JsonWriter?displayProperty=nameWithType>poskytuje vysoce výkonný a neuložený v mezipaměti, a to jenom pro psaní textu JSON v kódování UTF-8 ze běžných typů .NET, `String`jako `Int32`jsou, `DateTime`a. Podobně jako čtenář je modul pro zápis základní typ nízké úrovně, který lze použít k vytvoření vlastních serializátorů. Zápis datové části JSON pomocí nového `Utf8JsonWriter` je 30-80% rychlejší než použití zapisovače z **JSON.NET** a nepřiřazuje.
+<xref:System.Text.Json.Utf8JsonWriter?displayProperty=nameWithType> poskytuje vysoce výkonný a neuložený v mezipaměti, a to jenom pro psaní textu JSON s kódováním UTF-8 ze běžných typů .NET, jako je `String`, `Int32` a `DateTime`. Podobně jako čtenář je modul pro zápis základní typ nízké úrovně, který lze použít k vytvoření vlastních serializátorů. Zápis datové části JSON pomocí nového `Utf8JsonWriter` je 30-80% rychlejší než použití zapisovače z **JSON.NET** a nepřiřazuje.
 
 ### <a name="jsondocument"></a>JsonDocument
 
-<xref:System.Text.Json.JsonDocument?displayProperty=nameWithType>je postaven na začátku `Utf8JsonReader`. `JsonDocument` Poskytuje možnost analyzovat data JSON a sestavit model DOM (Document Object Model) (DOM) jen pro čtení, které se dají dotazovat na podporu náhodného přístupu a výčtu. Prvky JSON, které tvoří data, mohou být přístupné prostřednictvím <xref:System.Text.Json.JsonElement> typu, který je zveřejněn `JsonDocument` jako vlastnost s názvem `RootElement`. `JsonElement` Obsahuje enumerátory pole a objektu JSON spolu s rozhraními API pro převod textu JSON na běžné typy .NET. Analýza typické datové části JSON a přístup ke všem jeho členům pomocí `JsonDocument` je 2 – 3x rychlejší než **JSON.NET** s malým přidělením dat, která mají rozumně velikost (to znamená < 1 MB).
+<xref:System.Text.Json.JsonDocument?displayProperty=nameWithType> je postaven nad `Utf8JsonReader`. @No__t-0 poskytuje možnost analyzovat data JSON a sestavit model DOM (Document Object Model) DOM (jen pro čtení), na které se dá dotazovat, aby se podporoval náhodný přístup a výčet. Prvky JSON, které tvoří data, lze zpřístupnit prostřednictvím typu <xref:System.Text.Json.JsonElement>, který je zpřístupněn `JsonDocument` jako vlastnost s názvem `RootElement`. @No__t-0 obsahuje enumerátory pole a objektu JSON spolu s rozhraními API pro převod textu JSON na běžné typy .NET. Analýza typické datové části JSON a přístup ke všem jeho členům pomocí `JsonDocument` je 2-3x rychlejší než **JSON.NET** s malým přidělením dat, která mají rozumně velikost (to znamená < 1 MB).
 
-Zde je ukázkové použití `JsonDocument` a `JsonElement` , které lze použít jako výchozí bod:
+Zde je ukázka použití `JsonDocument` a `JsonElement`, které lze použít jako výchozí bod:
 
 [!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJson)]
 
-Tady je příklad C# 8.0 souboru [Launch. JSON](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
+Tady je příklad C# 8,0 souboru [**Launch. JSON**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
 
 [!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJsonCall)]
 
 ### <a name="jsonserializer"></a>JsonSerializer
 
-<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType>je postaven na začátku <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> k poskytnutí rychlé možnosti serializace paměti při práci s dokumenty a fragmenty JSON.
+<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> je postaven na <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter>, aby při práci s dokumenty a fragmenty JSON poskytovala rychlou a nízkou možnost serializace paměti.
 
 Tady je příklad serializace objektu do formátu JSON:
 
@@ -413,68 +413,68 @@ Zde je příklad deserializace řetězce JSON na objekt. Můžete použít řet�
 
 ## <a name="interop-improvements"></a>Vylepšení spolupráce
 
-.NET Core 3.0 vylepšuje nativní interoperabilitu rozhraní API.
+.NET Core 3,0 vylepšuje nativní interoperabilitu rozhraní API.
 
 ### <a name="type-nativelibrary"></a>Zadejte: NativeLibrary
 
-<xref:System.Runtime.InteropServices.NativeLibrary?displayProperty=nameWithType>poskytuje zapouzdření pro načtení nativní knihovny (pomocí stejné logiky zatížení jako .NET Core P/Invoke) a poskytnutí relevantních pomocných funkcí, jako je `getSymbol`. Příklad kódu naleznete v [ukázce DLLMap](https://github.com/dotnet/samples/tree/master/core/extensions/DllMapDemo).
+<xref:System.Runtime.InteropServices.NativeLibrary?displayProperty=nameWithType> poskytuje zapouzdření pro načtení nativní knihovny (pomocí stejné logiky zatížení jako .NET Core P/Invoke) a poskytování relevantních pomocných funkcí, jako je například `getSymbol`. Příklad kódu naleznete v [ukázce DLLMap](https://github.com/dotnet/samples/tree/master/core/extensions/DllMapDemo).
 
 ### <a name="windows-native-interop"></a>Nativní spolupráce Windows
 
-Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání nespravovaného voláním**.NET Core 3.0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
+Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání nespravovaného voláním**.net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
 
 ## <a name="http2-support"></a>Podpora HTTP/2
 
-<xref:System.Net.Http.HttpClient?displayProperty=nameWithType> Typ podporuje protokol HTTP/2. Pokud je povolený protokol HTTP/2, vyjednává se verze protokolu HTTP prostřednictvím TLS/ALPN a protokol HTTP/2 se použije, pokud se server rozhodne ho použít.
+Typ <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> podporuje protokol HTTP/2. Pokud je povolený protokol HTTP/2, vyjednává se verze protokolu HTTP prostřednictvím TLS/ALPN a protokol HTTP/2 se použije, pokud se server rozhodne ho použít.
 
 Výchozí protokol zůstává HTTP/1.1, ale protokol HTTP/2 může být povolen dvěma různými způsoby. Nejdřív můžete nastavit zprávu požadavku HTTP na používání HTTP/2:
 
 [!CODE-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
 
-Za druhé, ve výchozím <xref:System.Net.Http.HttpClient> nastavení se dá změnit na použití HTTP/2:
+Za druhé můžete změnit <xref:System.Net.Http.HttpClient>, aby se ve výchozím nastavení použil protokol HTTP/2:
 
 [!CODE-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
 
-V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované připojení. Pokud víte, že cílový koncový bod bude používat protokol HTTP/2, můžete zapnout nezašifrovaná připojení pro HTTP/2. Můžete ji zapnout nastavením `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` proměnné prostředí na `1` nebo povolením v kontextu aplikace:
+V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované připojení. Pokud víte, že cílový koncový bod bude používat protokol HTTP/2, můžete zapnout nezašifrovaná připojení pro HTTP/2. Můžete ji zapnout nastavením proměnné prostředí `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` na `1` nebo povolením v kontextu aplikace:
 
 [!CODE-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
-## <a name="tls-13--openssl-111-on-linux"></a>TLS 1.3 & OpenSSL 1.1.1 v systému Linux
+## <a name="tls-13--openssl-111-on-linux"></a>TLS 1,3 & OpenSSL 1.1.1 v systému Linux
 
-.NET Core teď využívá [podporu TLS 1.3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí. S protokolem TLS 1.3:
+.NET Core teď využívá [podporu TLS 1,3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí. S protokolem TLS 1,3:
 
 - Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.
 - Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.
 
-V případě, že je k dispozici, .NET Core 3.0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Pokud je k dispozici služba **OpenSSL 1.1.1** <xref:System.Net.Security.SslStream?displayProperty=nameWithType> , budou v obou <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typech použity **protokoly TLS 1.3** (za předpokladu, že klient i server podporují protokol **TLS 1.3**).
+V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Pokud je k dispozici služba **OpenSSL 1.1.1** , budou používat @no__t protokol **TLS 1,3** (za předpokladu @no__t, že klient i server podporují protokol **TLS 1,3**).
 
 >[!IMPORTANT]
->Windows a macOS ještě nepodporují **TLS 1.3**. Až bude podpora k dispozici, bude .NET Core 3.0 podporovat **TLS 1.3** v těchto operačních systémech.
+>Windows a macOS ještě nepodporují **TLS 1,3**. Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.
 
-Následující C# příklad 8.0 ukazuje rozhraní .NET Core 3.0 v Ubuntu 18.10, které <https://www.cloudflare.com>se připojuje k:
+Následující C# příklad 8,0 ukazuje rozhraní .net Core 3,0 na Ubuntu 18,10 připojení k <https://www.cloudflare.com>:
 
 [!CODE-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
 
 ## <a name="cryptography-ciphers"></a>Kryptografická šifry
 
-.NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** , implementovaná <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> v <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> a v uvedeném pořadí. Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).
+Rozhraní .NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** implementovaná pomocí <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> a <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> v uvedeném pořadí. Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).
 
-Následující kód demonstruje `AesGcm` použití šifry k šifrování a dešifrování náhodných dat.
+Následující kód ukazuje použití šifry `AesGcm` k šifrování a dešifrování náhodných dat.
 
 [!CODE-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
 
 ## <a name="cryptographic-key-importexport"></a>Import/export kryptografického klíče
 
-.NET Core 3.0 podporuje import a export asymetrických veřejných a privátních klíčů ze standardních formátů. Nemusíte používat certifikát X. 509.
+.NET Core 3,0 podporuje import a export asymetrických veřejných a privátních klíčů ze standardních formátů. Nemusíte používat certifikát X. 509.
 
 Všechny typy klíčů, jako jsou *RSA*, *DSA*, *ECDSA*a *ECDiffieHellman*, podporují následující formáty:
 
 - **Veřejný klíč**
-  - X.509 SubjectPublicKeyInfo
+  - X. 509 SubjectPublicKeyInfo
 
 - **Privátní klíč**
-  - PKCS#8 PrivateKeyInfo
-  - PKCS#8 EncryptedPrivateKeyInfo
+  - PrivateKeyInfo PKCS # 8
+  - EncryptedPrivateKeyInfo PKCS # 8
 
 Klíče RSA podporují i:
 
@@ -488,19 +488,19 @@ Metody exportu vytváří binární data kódovaná v kódování DER a metody i
 
 [!CODE-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
 
-Soubory **PKCS # 8** lze kontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> souborů a soubory **PFX a PKCS # 12** lze zkontrolovat pomocí. <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType> Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
+Soubory **PKCS # 8** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> a souborů **PFX/PKCS # 12** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
 
 ## <a name="serialport-for-linux"></a>Portu SerialPort pro Linux
 
-.NET Core 3.0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> systém Linux.
+.NET Core 3,0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> v systému Linux.
 
-Dřív se .NET Core podporuje jenom pomocí `SerialPort` systému Windows.
+Dřív se .NET Core podporuje jenom pomocí `SerialPort` ve Windows.
 
 Další informace o omezené podpoře sériového portu v systému Linux najdete v tématu [#33146 problému GitHubu](https://github.com/dotnet/corefx/issues/33146).
 
 ## <a name="docker-and-cgroup-memory-limits"></a>Omezení paměti Docker a CGROUP
 
-Provoz .NET Core 3.0 na platformě Linux s Docker funguje lépe s omezeními CGROUP paměti. Spuštění kontejneru Docker s omezeními paměti, jako je například `docker run -m`s, se změní způsob, jakým se aplikace .NET Core chová.
+Provoz .NET Core 3,0 na platformě Linux s Docker funguje lépe s omezeními CGROUP paměti. Spuštění kontejneru Docker s omezeními paměti, jako je například s `docker run -m`, mění způsob, jakým se aplikace .NET Core chová.
 
 - Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.
 - Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.
@@ -527,7 +527,7 @@ Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PW
 
 ## <a name="arm64-linux-support"></a>Podpora ARM64 Linux
 
-.NET Core 3.0 přidává podporu pro ARM64 pro Linux. Primární případ použití pro ARM64 je aktuálně ve scénářích IoT. Další informace najdete v tématu [stav .NET Core ARM64](https://github.com/dotnet/announcements/issues/82).
+.NET Core 3,0 přidává podporu pro ARM64 pro Linux. Primární případ použití pro ARM64 je aktuálně ve scénářích IoT. Další informace najdete v tématu [stav .NET Core ARM64](https://github.com/dotnet/announcements/issues/82).
 
 [Image Docker pro .NET Core na ARM64](https://hub.docker.com/r/microsoft/dotnet/) jsou k dispozici pro Alpine, Debian a Ubuntu.
 

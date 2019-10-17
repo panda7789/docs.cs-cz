@@ -1,5 +1,5 @@
 ---
-title: SqlStreamChars.IsNull Property (System.Data.SqlTypes)
+title: SqlStreamChars. IsNull – vlastnost (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/19/2018
@@ -13,16 +13,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 03b702b0ffe258eb8cad0a1ece5314b363f9a0d0
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d80f653724b3ef0a1cadb69a5f72b1d9455597d6
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634617"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395738"
 ---
-# <a name="sqlstreamcharsisnull-property"></a>SqlStreamChars.IsNull Property
+# <a name="sqlstreamcharsisnull-property"></a>SqlStreamChars. IsNull – vlastnost
 
-Při přepisu v odvozené třídě získá hodnotu, která určuje, zda je datový proud `null`. Sestavení, který obsahuje tato vlastnost má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
+Při přepsání v odvozené třídě získá hodnotu, která označuje, zda je datový proud `null`. Sestavení, které obsahuje tuto vlastnost, má relaci typu Friend s SQLAccess. dll. Je určena pro použití v SQL Server. U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,19 +33,19 @@ public abstract bool IsNull { get; }
 ## <a name="property-value"></a>Hodnota vlastnosti
 
 <xref:System.Boolean>\
-`true` Pokud je datový proud `null`; v opačném případě `false`.
+`true`, pokud je datový proud `null`; v opačném případě `false`.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> `SqlStreamChars.IsNull` Vlastnost je privátní a není určena pro použití přímo v kódu.
+> Vlastnost `SqlStreamChars.IsNull` je soukromá a není určena pro použití přímo v kódu.
 >
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této vlastnosti v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Data.SqlTypes>
+**Obor názvů:** <xref:System.Data.SqlTypes>
 
-**Sestavení:** System.Data (v System.Data.dll)
+**Sestavení:** System. data (v System. data. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

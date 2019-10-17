@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 035a3c36337413153ee0370aec154d48b84a4711
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 570f6bdb8eda462b815dfc7c45f6e9a3a515f0ad
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957253"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395886"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -71,7 +71,7 @@ Než začnete, udělejte toto:
 
 [Datacihly](https://databricks.com) představují platformu, která poskytuje cloudové zpracování velkých objemů dat pomocí Apache Spark.
 
-> [!Note] 
+> [!NOTE]
 > [Datacihly](https://databricks.com/aws) [Azure Databricks](https://azure.microsoft.com/services/databricks/) a AWS jsou založené na systému Linux. Proto pokud vás zajímá nasazení vaší aplikace do datacihly, ujistěte se, že je vaše aplikace .NET Standard kompatibilní a že ke kompilaci vaší aplikace použijete [kompilátor .NET Core](https://dotnet.microsoft.com/download) .
 
 Datacihly umožňují odesílat rozhraní .NET pro aplikace Apache Spark do existujícího aktivního clusteru nebo vytvořit nový cluster při každém spuštění úlohy. K tomu je potřeba, aby byl **Microsoft. spark. Worker** nainstalovaný předtím, než odešlete rozhraní .NET pro aplikaci Apache Spark.
@@ -103,7 +103,7 @@ Tento krok se vyžaduje jenom jednou pro cluster.
 
    ![Obrázek akce skriptu](./media/databricks-deployment/deployment-databricks-init-script.png)
 
-## <a name="run-your-app"></a>Spuštění aplikace 
+## <a name="run-your-app"></a>Spuštění aplikace
 
 K odeslání vaší úlohy do datacihlů můžete použít `set JAR` nebo `spark-submit`.
 
@@ -122,7 +122,7 @@ K odeslání vaší úlohy do datacihlů můžete použít `set JAR` nebo `spark
    | Parametr   | Hodnota                                                |
    |-------------|------------------------------------------------------|
    | Main – třída  | org. Apache. spark. deploy. dotnet. DotnetRunner          |
-   | Arguments   | /dBFS/Apps/< název vaší aplikace >. zip < vaše aplikace – hlavní třída > |
+   | Arguments   | /dBFS/Apps/\<your-název aplikace >. zip \<your-App-Main-Class > |
 
 4. Nakonfigurujte **cluster** tak, aby odkazoval na existující **cluster, který** jste vytvořili v předchozí části.
 
@@ -130,27 +130,27 @@ K odeslání vaší úlohy do datacihlů můžete použít `set JAR` nebo `spark
 
 1. Použijte rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html) k nahrání vaší aplikace do vašeho clusteru datacihly.
 
-      ```bash
-      cd <path-to-your-app-publish-directory>
-      databricks fs cp <your-app-name>.zip dbfs:/apps/<your-app-name>.zip
-      ```
+    ```bash
+    cd <path-to-your-app-publish-directory>
+    databricks fs cp <your-app-name>.zip dbfs:/apps/<your-app-name>.zip
+    ```
 
 2. Tento krok je vyžadován pouze v případě, že vaše sestavení vaší aplikace (například knihovny DLL, které obsahují uživatelsky definované funkce společně s jejich závislostmi) je nutné umístit do pracovního adresáře každého z **Microsoft. spark. Worker**.
 
    - Nahrání sestavení vaší aplikace do clusteru datacihly
-      
+
       ```bash
       cd <path-to-your-app-publish-directory>
       databricks fs cp <assembly>.dll dbfs:/apps/dependencies
       ```
 
    - Odkomentujte a upravte část závislosti aplikací v [DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) tak, aby odkazovala na cestu k závislostem vaší aplikace a nahráli do vašeho clusteru datacihly.
-   
+
       ```bash
       cd <path-to-db-init-and-install-worker>
       databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
       ```
-   
+
    - Restartujte cluster.
 
 3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
@@ -163,9 +163,9 @@ Příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applicat
 
 2. Nakonfigurujte `spark-submit` s následujícími parametry:
 
-      ```bash
-      ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
-      ```
+    ```bash
+    ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
+    ```
 
 3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
 

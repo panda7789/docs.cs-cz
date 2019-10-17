@@ -1,5 +1,5 @@
 ---
-title: SqlStreamChars.CanSeek Property (System.Data.SqlTypes)
+title: SqlStreamChars. CanSeek – vlastnost (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/19/2018
@@ -13,16 +13,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: b85e21c6bc89d2a00ff8d302f67a3d074d5e7b8f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: eb32978f62b7d46f0abf715e2bca347592c0fda8
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634386"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395782"
 ---
-# <a name="sqlstreamcharscanseek-property"></a>SqlStreamChars.CanSeek Property
+# <a name="sqlstreamcharscanseek-property"></a>SqlStreamChars. CanSeek – vlastnost
 
-Při přepisu v odvozené třídě získá hodnotu, která určuje, zda aktuální datový proud podporuje operace seek. Sestavení, který obsahuje tato vlastnost má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
+Při přepsání v odvozené třídě získá hodnotu, která označuje, zda aktuální pára podporuje operaci hledání. Sestavení, které obsahuje tuto vlastnost, má relaci typu Friend s SQLAccess. dll. Je určena pro použití v SQL Server. U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.
 
 ```csharp
 public abstract bool CanSeek { get; }
@@ -31,19 +31,19 @@ public abstract bool CanSeek { get; }
 ## <a name="property-value"></a>Hodnota vlastnosti
 
 <xref:System.Boolean>\
-`true` Pokud aktuální datový proud podporuje operace seek; v opačném případě `false`.
+`true`, pokud aktuální pára podporuje operaci hledání; v opačném případě `false`.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> `SqlStreamChars.CanSeek` Vlastnost je privátní a není určena pro použití přímo v kódu.
+> Vlastnost `SqlStreamChars.CanSeek` je soukromá a není určena pro použití přímo v kódu.
 >
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této vlastnosti v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Data.SqlTypes>
+**Obor názvů:** <xref:System.Data.SqlTypes>
 
-**Sestavení:** System.Data (v System.Data.dll)
+**Sestavení:** System. data (v System. data. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

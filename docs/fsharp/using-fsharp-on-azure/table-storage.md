@@ -3,14 +3,14 @@ title: Začínáme se službou Azure Table Storage s využitím F#
 description: Ukládání strukturovaných dat v cloudu pomocí služby Azure Table Storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: 509435d47231040362586fa263fbecb1125f862b
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 30ffd5f099dbb8efbf57104a2ade6c26304b7cee
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182601"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395198"
 ---
-# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s úložištěm Azure Table a Azure Cosmos DB rozhraní API pro tabulky pomocí jazyka F\#
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s úložištěm Azure Table a Azure Cosmos DB rozhraní API pro tabulky s použitím F @ no__t-0
 
 Azure Table Storage je služba, která ukládá strukturovaná NoSQL data v cloudu. Table Storage je úložiště klíčů/atributů s návrhem bez schématu. Vzhledem k tomu, že je tabulka úložiště bez schématu, je snadné přizpůsobit data, jak jsou potřeby vaší aplikace vyvíjet. Přístup k datům je rychlý a nákladově efektivní pro všechny typy aplikací. Služba Table Storage je obvykle výrazně nižší, než tradiční SQL pro podobné objemy dat.
 
@@ -20,11 +20,11 @@ Azure Cosmos DB poskytuje rozhraní API pro tabulky pro aplikace napsané pro sl
 
 - Globální distribuce klíč.
 - Vyhrazená propustnost po celém světě.
-- Latence v řádu milisekund na 99. percentilu.
-- Záruka vysoké dostupnosti.
+- Latence v řádu milisekund na 99. percentilu
+- Garantované vysoké dostupnosti.
 - Automatické sekundární indexování.
 
-Pomocí rozhraní API tabulky je možné migrovat aplikace napsané pro Azure Table Storage beze změn kódu na službu Azure Cosmos DB a využít tak prémiové funkce. Rozhraní API tabulky má klientské sady SDK dostupné pro .NET, Java, Python a Node.js.
+Aplikace napsané pro službu Azure Table Storage můžou migrovat na Azure Cosmos DB pomocí rozhraní API pro tabulky bez změny kódu a využívat prémiové funkce. Rozhraní API pro tabulky má klientské sady SDK dostupné pro .NET, Java, Python a Node. js.
 
 Další informace najdete v tématu [Úvod do Azure Cosmos DB rozhraní API pro tabulky](https://docs.microsoft.com/azure/cosmos-db/table-introduction).
 
@@ -38,13 +38,13 @@ Pokud chcete použít tuto příručku, musíte nejdřív [vytvořit účet slu�
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skriptu a spuštění F# Interactive
 
-Ukázky v tomto článku se dají použít buď v F# aplikaci, nebo ve F# skriptu. Chcete-li F# vytvořit skript, vytvořte soubor s `.fsx` příponou, například `tables.fsx`ve F# vývojovém prostředí.
+Ukázky v tomto článku se dají použít buď v F# aplikaci, nebo ve F# skriptu. Chcete-li F# vytvořit skript, vytvořte soubor s příponou `.fsx`, například `tables.fsx`, ve vašem F# vývojovém prostředí.
 
-V dalším kroku pomocí [Správce balíčků](package-management.md) , jako je [paket](https://fsprojects.github.io/Paket/) nebo `WindowsAzure.Storage` [NuGet](https://www.nuget.org/) , nainstalujte `#r` balíček a odkazujte `WindowsAzure.Storage.dll` ve svém skriptu pomocí direktivy. Udělejte to znovu `Microsoft.WindowsAzure.ConfigurationManager` , aby se získal obor názvů Microsoft. Azure.
+V dalším kroku pomocí [Správce balíčků](package-management.md) , jako je [paket](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) , nainstalujte balíček `WindowsAzure.Storage` a odkaz `WindowsAzure.Storage.dll` ve svém skriptu pomocí direktivy `#r`. Udělejte to znovu pro `Microsoft.WindowsAzure.ConfigurationManager`, abyste získali obor názvů Microsoft. Azure.
 
 ### <a name="add-namespace-declarations"></a>Přidat deklarace oboru názvů
 
-Na začátek `open` `tables.fsx` souboru přidejte následující příkazy:
+Přidejte následující příkazy `open` do horní části souboru `tables.fsx`:
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L1-L5)]
 
@@ -54,21 +54,21 @@ Pokud se připojujete k Azure Storage Table service, budete pro tento kurz potř
 
 ### <a name="get-your-azure-cosmos-db-connection-string"></a>Získání připojovacího řetězce Azure Cosmos DB
 
-Pokud se připojujete k Azure Cosmos DB, budete pro tento kurz potřebovat připojovací řetězec. Připojovací řetězec můžete zkopírovat z Azure Portal. V Azure Portal v účtu Cosmos DB přejděte na **Nastavení** > **připojovací řetězec**a kliknutím na tlačítko **Kopírovat** zkopírujte primární připojovací řetězec. 
+Pokud se připojujete k Azure Cosmos DB, budete pro tento kurz potřebovat připojovací řetězec. Připojovací řetězec můžete zkopírovat z Azure Portal. V Azure Portal v účtu Cosmos DB přejděte na **nastavení** > **připojovací řetězec**a kliknutím na tlačítko **Kopírovat** zkopírujte primární připojovací řetězec. 
 
 V tomto kurzu do skriptu zadejte připojovací řetězec, podobně jako v následujícím příkladu:
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L11-L11)]
 
-To však **nedoporučujeme** pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
+To však **nedoporučujeme** pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy buďte opatrní, abyste chránili klíč účtu úložiště. Vyhněte se distribuci jiným uživatelům, pevným kódováním nebo uložením v souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
 
 Pro reálné aplikace je nejlepší způsob, jak udržovat připojovací řetězec úložiště, v konfiguračním souboru. Chcete-li načíst připojovací řetězec z konfiguračního souboru, můžete to provést:
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L13-L15)]
 
-Použití Azure Configuration Manager je volitelné. Můžete také použít rozhraní API, jako je `ConfigurationManager` typ .NET Framework.
+Použití Azure Configuration Manager je volitelné. Můžete také použít rozhraní API, jako je .NET Framework typ `ConfigurationManager`.
 
-### <a name="parse-the-connection-string"></a>Analýza připojovacího řetězce
+### <a name="parse-the-connection-string"></a>Analyzovat připojovací řetězec
 
 K analýze připojovacího řetězce použijte:
 
@@ -76,13 +76,13 @@ K analýze připojovacího řetězce použijte:
 
 Vrátí `CloudStorageAccount`.
 
-### <a name="create-the-table-service-client"></a>Vytvoření klienta služby Table service
+### <a name="create-the-table-service-client"></a>Vytvoření klienta Table service
 
-`CloudTableClient` Třída umožňuje načíst tabulky a entity v úložišti tabulek. Tady je jeden ze způsobů, jak vytvořit klienta služby:
+Třída `CloudTableClient` umožňuje načíst tabulky a entity v úložišti tabulek. Tady je jeden ze způsobů, jak vytvořit klienta služby:
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L28-L29)]
 
-Teď můžete napsat kód, který bude číst data z Table Storage a bude je tam také zapisovat.
+Nyní jste připraveni napsat kód, který čte data z a zapisuje data do tabulkového úložiště.
 
 ### <a name="create-a-table"></a>Vytvoření tabulky
 
@@ -92,15 +92,15 @@ Tento příklad ukazuje, jak vytvořit tabulku, pokud ještě neexistuje:
 
 ### <a name="add-an-entity-to-a-table"></a>Přidání entity do tabulky
 
-Entita musí mít typ, který dědí z `TableEntity`. Můžete se roztáhnout `TableEntity` jakýmkoli způsobem, ale váš typ *musí* mít konstruktor bez parametrů. V tabulce Azure jsou uloženy `get` pouze `set` vlastnosti, které mají obojí a.
+Entita musí mít typ, který dědí z `TableEntity`. @No__t-0 můžete roztáhnout jakýmkoli způsobem, ale váš typ *musí* mít konstruktor bez parametrů. V tabulce Azure jsou uloženy pouze vlastnosti `get` i `set`.
 
 Klíč oddílu a řádku entity jednoznačně identifikují entitu v tabulce. Na entity se stejným klíčem oddílu se dá zadávat dotaz rychleji než u různých klíčů oddílů, ale pomocí různých klíčů oddílu můžete dosáhnout větší škálovatelnosti paralelních operací.
 
-Tady je příklad `Customer` , který `lastName` používá jako klíč oddílu a `firstName` jako klíč řádku.
+Tady je příklad `Customer`, který používá `lastName` jako klíč oddílu a `firstName` jako klíč řádku.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L45-L52)]
 
-Nyní přidejte `Customer` do tabulky. Provedete to tak, `TableOperation` že vytvoříte objekt, který se spustí v tabulce. V tomto případě vytvoříte `Insert` operaci.
+Nyní do tabulky přidejte `Customer`. Provedete to tak, že vytvoříte `TableOperation`, který se spustí v tabulce. V tomto případě vytvoříte operaci `Insert`.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L54-L55)]
 
@@ -119,7 +119,7 @@ Zde je nějaký kód, který kombinuje dvě vložení do dávkové operace:
 
 ### <a name="retrieve-all-entities-in-a-partition"></a>Načtení všech entit v oddílu
 
-Chcete-li zadat dotaz na tabulku pro všechny entity v oddílu, `TableQuery` použijte objekt. Tady můžete filtrovat entity, kde "Smith" je klíč oddílu.
+Chcete-li zadat dotaz na tabulku pro všechny entity v oddílu, použijte objekt `TableQuery`. Tady můžete filtrovat entity, kde "Smith" je klíč oddílu.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L77-L82)]
 
@@ -129,7 +129,7 @@ Nyní se tisknou výsledky:
 
 ### <a name="retrieve-a-range-of-entities-in-a-partition"></a>Načtení rozsahu entit v oddílu
 
-Pokud nechcete, aby se zadával dotaz na všechny entity v oddílu, můžete zadat rozsah nakombinováním filtru klíče oddílu s filtrem klíče řádku. Tady použijete dva filtry k získání všech entit v oddílu "Smith", kde klíč řádku (jméno) začíná písmenem "M" v abecedě.
+Pokud nechcete zadávat dotazy na všechny entity v oddílu, můžete určit rozsah kombinováním filtru klíče oddílu s filtrem klíče řádku. Tady použijete dva filtry k získání všech entit v oddílu "Smith", kde klíč řádku (jméno) začíná písmenem "M" v abecedě.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L91-L100)]
 
@@ -139,7 +139,7 @@ Nyní se tisknou výsledky:
 
 ### <a name="retrieve-a-single-entity"></a>Načtení jedné entity
 
-Můžete napsat dotaz pro načtení jedné konkrétní entity. Zde můžete použít `TableOperation` k určení zákazníka "Robert Smith". Místo kolekce se vrátí `Customer`. Zadání klíče oddílu a klíče řádku v dotazu představuje nejrychlejší způsob, jak z Table service načíst jednu entitu.
+Můžete napsat dotaz, který načte jednu konkrétní entitu. Tady můžete pomocí `TableOperation` zadat zákazníka "Ben Novák". Místo kolekce se vrátíte `Customer`. Zadání klíče oddílu a klíče řádku v dotazu představuje nejrychlejší způsob, jak z Table service načíst jednu entitu.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L109-L111)]
 
@@ -149,19 +149,19 @@ Nyní se tisknou výsledky:
 
 ### <a name="replace-an-entity"></a>Nahrazení entity
 
-Chcete-li aktualizovat entitu, načtěte ji z Table Service, upravte objekt entity a uložte změny zpět do Table Service pomocí `Replace` operace. Tím dojde k tomu, že se entita na serveru úplně nahradí, pokud se entita na serveru od načtení nezměnila, a v takovém případě se operace nezdařila. Tato chyba je zabránit tomu, aby aplikace nechtěně přepsala změny z jiných zdrojů.
+Chcete-li aktualizovat entitu, načtěte ji z Table service, upravte objekt entity a uložte změny zpět do Table service pomocí operace `Replace`. Tím dojde k tomu, že se entita na serveru úplně nahradí, pokud se entita na serveru od načtení nezměnila, a v takovém případě se operace nezdařila. Tato chyba je zabránit tomu, aby aplikace nechtěně přepsala změny z jiných zdrojů.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L121-L128)]
 
 ### <a name="insert-or-replace-an-entity"></a>Vložení nebo nahrazení entity
 
-V některých případech nevíte, zda entita v tabulce existuje. A pokud k tomu dojde, aktuální hodnoty, které jsou v něm uložené, už nejsou potřeba. Pomocí `InsertOrReplace` můžete vytvořit entitu, nebo ji nahradit, pokud existuje, bez ohledu na její stav.
+V některých případech nevíte, zda entita v tabulce existuje. A pokud k tomu dojde, aktuální hodnoty, které jsou v něm uložené, už nejsou potřeba. Pomocí `InsertOrReplace` můžete entitu vytvořit, nebo ji nahradit, pokud existuje, bez ohledu na její stav.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L134-L141)]
 
 ### <a name="query-a-subset-of-entity-properties"></a>Dotaz na podmnožinu vlastností entity
 
-Dotaz na tabulku může načíst jenom několik vlastností z entity místo všech. Tato technika s názvem projekce může zlepšit výkon dotazů, zejména u velkých entit. Tady vrátíte jenom e-mailové `DynamicTableEntity` adresy `EntityResolver`pomocí a. Všimněte si, že projekce není podporována v emulátoru místního úložiště, takže tento kód bude spuštěn pouze v případě, že používáte účet na Table service.
+Dotaz na tabulku může načíst jenom několik vlastností z entity místo všech. Tato technika s názvem projekce může zlepšit výkon dotazů, zejména u velkých entit. Tady vrátíte jenom e-mailové adresy, které používají `DynamicTableEntity` a `EntityResolver`. Všimněte si, že projekce není podporována v emulátoru místního úložiště, takže tento kód bude spuštěn pouze v případě, že používáte účet na Table service.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L147-L158)]
 
@@ -183,7 +183,7 @@ Entitu můžete po načtení odstranit. Stejně jako u aktualizace entity se to 
 
 ### <a name="delete-a-table"></a>Odstranění tabulky
 
-Tabulku můžete odstranit z účtu úložiště. Tabulku, která byla odstraněna, nebude možné po odstranění nějakou dobu znovu vytvořit.
+Tabulku můžete odstranit z účtu úložiště. Vytvořená tabulka nebude k dispozici, aby se po odstranění znovu vytvořila v časovém intervalu.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L193-L193)]
 
@@ -191,9 +191,8 @@ Tabulku můžete odstranit z účtu úložiště. Tabulku, která byla odstraně
 
 Teď, když jste se seznámili se základy úložiště tabulek, postupujte podle těchto odkazů a získejte další informace o složitějších úlohách úložiště a Azure Cosmos DB rozhraní API pro tabulky.
 
-- [Úvod do rozhraní Table API služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
-- [Klientská knihovna Storage pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
+- [Úvod do Azure Cosmos DB rozhraní API pro tabulky](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
+- [Klientská knihovna pro úložiště – referenční informace pro .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
 - [Poskytovatel typu Azure Storage](https://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog týmu Azure Storage](https://blogs.msdn.microsoft.com/windowsazurestorage/)
 - [Konfigurace připojovacích řetězců](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string)
-- [Začínáme s využitím Azure Table Storage v .NET](https://azure.microsoft.com/resources/samples/storage-table-dotnet-getting-started/)

@@ -2,12 +2,12 @@
 title: Úloha asynchronního programovacího modelu (klepnutím) s modifikátorem AsyncC#a await ()
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 3ced168bada4167418bf27861c5b8666b02aa70e
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 644830ac62a4df23f22d8f91e9b3c768dd611451
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291340"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395692"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 
@@ -46,7 +46,7 @@ Na konci tohoto tématu můžete najít úplný ukázkový soubor Windows Presen
 
 ```csharp
 async Task<int> AccessTheWebAsync()
-{ 
+{
     // You need to add a reference to System.Net.Http to declare client.
     var client = new HttpClient();
 
@@ -60,7 +60,7 @@ async Task<int> AccessTheWebAsync()
     // The await operator suspends AccessTheWebAsync.
     //  - AccessTheWebAsync can't continue until getStringTask is complete.
     //  - Meanwhile, control returns to the caller of AccessTheWebAsync.
-    //  - Control resumes here when getStringTask is complete. 
+    //  - Control resumes here when getStringTask is complete.
     //  - The await operator then retrieves the string result from getStringTask.
     string urlContents = await getStringTask;
 
@@ -110,7 +110,7 @@ Další informace o asynchronii v předchozích verzích .NET Framework naleznet
 
 Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem:
 
-![Trasovat NavigationTrace asynchronního programu](./media/task-asynchronous-programming-model/navigation-trace-async-program.png "")
+![Trasování asynchronního programu](./media/task-asynchronous-programming-model/navigation-trace-async-program.png "NavigationTrace")
 
 Čísla v diagramu odpovídají následujícím krokům, které jsou iniciovány, když uživatel klikne na tlačítko Start.
 
@@ -259,7 +259,7 @@ Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouv
 
 Následující kód je soubor *MainWindow.XAML.cs* z aplikace WPF, kterou popisuje tento článek. Ukázku si můžete stáhnout z [části Async Sample: příklad z "asynchronní programování s Async a await"](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs/).
 
-[!code-csharp[async](~/samples/async/async-and-await/cs/MainWindow.xaml.cs)] 
+[!code-csharp[async](~/samples/async/async-and-await/cs/MainWindow.xaml.cs)]
 
 ## <a name="see-also"></a>Viz také:
 
@@ -267,4 +267,3 @@ Následující kód je soubor *MainWindow.XAML.cs* z aplikace WPF, kterou popisu
 - [await](../../../language-reference/operators/await.md)
 - [Asynchronní programování](../../../async.md)
 - [Asynchronní přehled](../../../../standard/async.md)
- 

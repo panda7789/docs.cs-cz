@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3acfa0da0caa29b503f47f23b0e9042d73ef0657
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: f2150351c97f6deae18177be642e6c3009422960
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353387"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72393711"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -155,7 +155,7 @@ Parametry a příklady dotazů:
 
 - OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
-  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
+  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
 
   - Pokud je procento větší než 95, vrátí se kód odpovědi HTTP 500.
 
@@ -352,7 +352,7 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 **Další rozhraní API pro shromažďování**
 
-.NET Framework 4.7.2 přidá do typů <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> řadu nových rozhraní API. Mezi ně patří:
+.NET Framework 4.7.2 přidá do typů <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> řadu nových rozhraní API. Zde jsou některé z nich:
 
 - metody `TryGetValue`, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
 
@@ -436,7 +436,7 @@ Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuth
 
 <a name="net472" />
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 **Implementace vlastností HttpClientHandler**
 
@@ -542,7 +542,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 ```
 
 ```vb
-Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
+Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
 Tato událost je vyvolána pokaždé, když modul runtime vyřeší odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Argumenty <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> popisují rozlišení a označují objekt a vlastnost, které hostují odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) a parametr @ no__t-2 a klíč, který se používá pro řešení:
@@ -632,7 +632,7 @@ Změny uvolňování paměti (GC) v .NET Framework 4.7.1 vylepšit celkový výk
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 **Podpora SHA-2 pro Message. HashAlgorithm**
 
@@ -701,7 +701,7 @@ V .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSer
 
 <a name="net47" />
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 .NET Framework 4,7 přidává následující funkci související se sítí:
 
@@ -743,7 +743,7 @@ Počínaje .NET Framework 4,7 umožňuje WCF nakonfigurovat kromě protokolu SSL
 
 **Vylepšená spolehlivost aplikací WCF a serializace WCF**
 
-WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Mezi ně patří:
+WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Zde jsou některé z nich:
 
 - Lepší podpora pro kombinování asynchronního a synchronního kódu v voláních **Připojení SocketConnection bylo. BeginRead** a **Připojení SocketConnection bylo. Read**.
 - Lepší spolehlivost při přerušení připojení pomocí **SharedConnectionListener** a **DuplexChannelBinder**.
@@ -843,7 +843,7 @@ End Class
 
 Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve složce `App.LocalResources`. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
-| Name                                 | Value                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
@@ -1039,15 +1039,15 @@ Přidání nového klíčového slova `PoolBlockingPeriod` vám umožní vybrat 
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
-Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQL Database je zakázána a je povolená doba blokování fondu připojení pro aplikaci, která se připojuje k jakékoli jiné instanci SQL Server. Toto je výchozí hodnota. Pokud název koncového bodu serveru končí některým z následujících, považují se za databáze SQL Azure:
+Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQL Database je zakázána a je povolená doba blokování fondu připojení pro aplikaci, která se připojuje k jakékoli jiné instanci SQL Server. Jedná se o výchozí hodnotu. Pokud název koncového bodu serveru končí některým z následujících, považují se za databáze SQL Azure:
 
-- .database.windows.net
+- . database.windows.net
 
-- .database.chinacloudapi.cn
+- . database.chinacloudapi.cn
 
-- .database.usgovcloudapi.net
+- . database.usgovcloudapi.net
 
-- .database.cloudapi.de
+- . database.cloudapi.de
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock>
 
@@ -1132,9 +1132,9 @@ Chcete-li tuto změnu povolit, přidejte do souboru App. config nebo Web. config
 
 Pokud používáte NetTcp se zabezpečením přenosu a typem přihlašovacích údajů certifikátu, SSL 3,0 už není výchozím protokolem používaným pro vyjednávání zabezpečeného připojení. Ve většině případů by nemělo dojít k žádným dopadům na existující aplikace, protože TLS 1,0 je zahrnutý v seznamu protokolů pro NetTcp. Všichni existující klienti by měli být schopni vyjednat připojení pomocí aspoň TLS 1,0. Pokud se vyžaduje SSL3, použijte jeden z následujících konfiguračních mechanismů a přidejte ho do seznamu sjednaných protokolů.
 
-- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols%2A?displayProperty=nameWithType> Vlastnost
+- Vlastnost <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols%2A?displayProperty=nameWithType>
 
-- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> Vlastnost
+- Vlastnost <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType>
 
 - Část [\<transport >](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) [> oddílu \<netTcpBinding](../configure-apps/file-schema/wcf/nettcpbinding.md)
 
@@ -1272,7 +1272,7 @@ Další informace o .NET Framework 4.6.1 najdete v následujících tématech:
 
 <a name="Crypto" />
 
-### <a name="cryptography-support-for-x509-certificates-containing-ecdsa"></a>Kryptografick Podpora pro certifikáty x509 obsahující ECDSA
+### <a name="cryptography-support-for-x509-certificates-containing-ecdsa"></a>Kryptografie: podpora pro certifikáty x509 obsahující ECDSA
 
 .NET Framework 4,6 přidal podporu algoritmem RSACng pro certifikáty x509. .NET Framework 4.6.1 přidává podporu pro certifikáty x509 ECDSA (s eliptickou křivkou pro digitální podpis algoritmu).
 
@@ -1355,7 +1355,7 @@ WPF obsahuje [balíček NuGet](https://go.microsoft.com/fwlink/?LinkID=691342) ,
 
 <a name="WWF461" />
 
-### <a name="windows-workflow-foundation-transactions"></a>Programovací model Windows Workflow Foundation: Transakce
+### <a name="windows-workflow-foundation-transactions"></a>Programovací model Windows Workflow Foundation: transakcí
 
 Metoda <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> nyní může použít jiný správce distribuovaných transakcí než MSDTC k povýšení transakce. To provedete tak, že zadáte identifikátor ID zvýšení transakce GUID k novému přetížení <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType>. Pokud je tato operace úspěšná, existují omezení na možnosti transakce. Jakmile je vypsána podpora transakcí bez služby MSDTC, následující metody vyvolávají <xref:System.Transactions.TransactionPromotionException>, protože tyto metody vyžadují povýšení na MSDTC:
 
@@ -1584,9 +1584,9 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
     Je výhodné použít pro přepínače konzistentní formát, protože se jedná o formální kontrakt, který je zpřístupněný knihovnou. Níže jsou uvedené dva zjevné formáty.
 
-    - *Přepínač*. *obor názvů*.*switchName*
+    - *Přepínač*. *obor názvů*. *přepínač*
 
-    - *Přepínač*. *Knihovna*.*switchName*
+    - *Přepínač*. *Knihovna*. *přepínač*
 
   - **Změny asynchronního vzoru založeného na úlohách (klepnutím)**
 
@@ -1667,7 +1667,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Posílání zpráv pomocí různých připojení HTTP**
 
-    WCF teď umožňuje uživatelům zajistit, aby se určité zprávy odesílaly pomocí různých základních připojení HTTP. Chcete-li to provést dvěma způsoby:
+    WCF teď umožňuje uživatelům zajistit, aby se určité zprávy odesílaly pomocí různých základních připojení HTTP. Toto lze provést dvěma způsoby:
 
     - **Použití předpony názvu skupiny připojení**
 
@@ -1721,7 +1721,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
     - Hodnota výčtu <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType>.
 
-    - <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> Vlastnost.
+    - Vlastnost <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType>.
 
     Ve výchozím nastavení je vlastnost <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> `false`, pokud hodnota `HWRPortReuseOnSocketBind` klíče registru `HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319` není nastavená na 0x1. Chcete-li povolit používání místních portů u připojení HTTP, nastavte vlastnost <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> na hodnotu `true`. To způsobí, že všechna odchozí připojení soketu TCP z <xref:System.Net.Http.HttpClient> a <xref:System.Net.HttpWebRequest> bude používat novou možnost soketu Windows 10 [SO_REUSE_UNICASTPORT](/windows/desktop/WinSock/sol-socket-socket-options), která umožňuje použití místního portu.
 
@@ -1745,7 +1745,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Podpora kódování znakových stránek**
 
-  .NET Core primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezené podpory pro kódování znakových stránek. Můžete přidat podporu pro kódování znakových stránek, která jsou k dispozici v .NET Framework, ale nepodporovaná v .NET Core, registrací kódování znakové stránky pomocí metody <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+  .NET Core primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezené podpory pro kódování znakových stránek. Můžete přidat podporu pro kódování znakových stránek, která jsou k dispozici v .NET Framework, ale nepodporovaná v .NET Core, registrací kódování znakové stránky pomocí metody <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Další informace najdete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 
@@ -1848,7 +1848,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - Rozhraní prostředí Windows Runtime API můžete použít v přenosných knihovnách, které cílí na Windows 8.1, Windows Phone 8,1 a Windows Phone Silverlight 8,1.
 
-  - Když cílíte Windows 8.1 nebo Windows Phone 8,1, můžete do přenosných knihoven zahrnout XAML (typy Windows. UI. XAML). Podporovány jsou následující šablony XAML:  Prázdná stránka, slovník prostředků, ovládací prvek bez vizuálního vzhledu a uživatelský ovládací prvek.
+  - Když cílíte Windows 8.1 nebo Windows Phone 8,1, můžete do přenosných knihoven zahrnout XAML (typy Windows. UI. XAML). Podporovány jsou následující šablony XAML: prázdná stránka, slovník prostředků, ovládací prvek s šablonou a uživatelský ovládací prvek.
 
   - Můžete vytvořit přenosnou součást prostředí Windows Runtime (soubor. winmd) pro použití v aplikacích pro Store, které cílí na Windows 8.1 a Windows Phone 8,1.
 
@@ -1862,11 +1862,11 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 Mezi nové funkce a vylepšení základních tříd v .NET Framework 4.5.1 patří:
 
-- Automatické přesměrování vazby pro sestavení. Počínaje Visual Studio 2013 se při kompilování aplikace, která cílí na .NET Framework 4.5.1, dají přesměrování vazby přidat do konfiguračního souboru aplikace, pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Tuto funkci můžete také povolit pro projekty, které cílí na starší verze .NET Framework. Další informace najdete v tématu [jak: Povolí nebo zakáže automatické přesměrování](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)vazby.
+- Automatické přesměrování vazby pro sestavení. Počínaje Visual Studio 2013 se při kompilování aplikace, která cílí na .NET Framework 4.5.1, dají přesměrování vazby přidat do konfiguračního souboru aplikace, pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Tuto funkci můžete také povolit pro projekty, které cílí na starší verze .NET Framework. Další informace najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Možnost shromažďovat diagnostické informace, které vývojářům pomůžou zlepšit výkon serverových a cloudových aplikací. Další informace naleznete v tématu metody <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> ve třídě <xref:System.Diagnostics.Tracing.EventSource>.
 
-- Schopnost explicitně komprimovat haldu velkých objektů (LOH) během uvolňování paměti. Další informace najdete v tématu <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost.
+- Schopnost explicitně komprimovat haldu velkých objektů (LOH) během uvolňování paměti. Další informace najdete v tématu vlastnost @no__t 0.
 
 - Další vylepšení výkonu, jako je například pozastavení aplikace ASP.NET, vícejazykové vylepšení JIT a rychlejší spuštění aplikace po aktualizaci .NET Framework. Podrobnosti najdete v příspěvku na blogu [.NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/) a v blogovém příspěvku o [pozastavení aplikace ASP.NET](https://devblogs.microsoft.com/dotnet/asp-net-app-suspend-responsive-shared-net-web-hosting/) .
 
@@ -1914,7 +1914,7 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 - Kompilace JIT (just-in-time), která je volitelně dostupná pro procesory s více jádry ke zlepšení výkonu aplikace. Viz <xref:System.Runtime.ProfileOptimization>.
 
-- Možnost omezit dobu, po kterou se modul regulárních výrazů pokusí přeložit regulární výraz předtím, než vyprší jeho časový limit. Podívejte se <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType> na vlastnost.
+- Možnost omezit dobu, po kterou se modul regulárních výrazů pokusí přeložit regulární výraz předtím, než vyprší jeho časový limit. Podívejte se na vlastnost @no__t 0.
 
 - Možnost definovat výchozí jazykovou verzi pro doménu aplikace. Podívejte se na třídu <xref:System.Globalization.CultureInfo>.
 
@@ -1994,7 +1994,7 @@ Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
 - Vylepšená podpora protokolu IPv6. Další informace najdete v oboru názvů <xref:System.Net.NetworkInformation>.
 
-- Podpora soketu s duálním režimem. Další informace naleznete v <xref:System.Net.Sockets.Socket> tématu třídy a. <xref:System.Net.Sockets.TcpListener>
+- Podpora soketu s duálním režimem. Další informace naleznete v tématu třídy <xref:System.Net.Sockets.Socket> a <xref:System.Net.Sockets.TcpListener>.
 
 <a name="client" />
 
@@ -2130,6 +2130,6 @@ Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějšíc
 
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md)
-- [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
+- [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
 - [ASP.NET](/aspnet)
 - [Co je nového v jazyce VisualC++](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

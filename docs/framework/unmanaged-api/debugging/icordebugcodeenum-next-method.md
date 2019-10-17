@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 076b5d628dfe83decdbbe2f5e74c50e08262c580
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: ac3fc157543f2990c7c9f9917140b35f8948108e
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700683"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395479"
 ---
 # <a name="icordebugcodeenumnext-method"></a>ICorDebugCodeEnum::Next – metoda
 
@@ -41,22 +41,21 @@ HRESULT Next (
 
 ## <a name="parameters"></a>Parametry
 
- `celt`  
- pro Počet instancí `ICorDebugCode`, které mají být načteny.
+`celt`  
+pro Počet instancí `ICorDebugCode`, které mají být načteny.
 
- `values`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt @no__t 0.
+`values`  
+mimo Pole ukazatelů, z nichž každý odkazuje na objekt @no__t 0.
 
- `pceltFetched`  
- mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugCode`. Tato hodnota může být null, pokud `celt` je jedna.
+`pceltFetched`  
+mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugCode`. Tato hodnota může být null, pokud `celt` je jedna.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
- **Hlavička:** CorDebug. idl, CorDebug. h
+**Hlavička:** CorDebug. idl, CorDebug. h
 
- **Knihovna:** CorGuids. lib
+**Knihovna:** CorGuids. lib
 
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
- 
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

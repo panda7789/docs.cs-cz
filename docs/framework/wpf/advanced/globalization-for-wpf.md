@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 32caf87435e23008f9f300d231c2705e7894280f
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 7826bbfca09cce7508d7352c647bafae93504e58
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291459"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395845"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli znát při psaní aplikací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v oboru názvů <xref:System.Globalization>.
@@ -23,7 +23,7 @@ V tomto tématu se seznámíte s problémy, které byste měli znát při psaní
 
 <a name="char_reference"></a>
 ### <a name="character-references"></a>Odkazy na znaky
-Odkaz na znak poskytuje UTF16 kódové jednotky konkrétního znaku [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)], který představuje, v desítkovém nebo šestnáctkovém formátu. Následující příklad ukazuje desítkový znakový odkaz pro KOPTSKÉ velké písmeno "Ϩ":
+Odkaz na znak poskytuje UTF16 kódové jednotky konkrétního znaku Unicode, který představuje, v desítkovém nebo šestnáctkovém formátu. Následující příklad ukazuje desítkový znakový odkaz pro KOPTSKÉ velké písmeno "Ϩ":
 
 ```
 &#1000;
@@ -36,8 +36,8 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ```
 
 <a name="encoding"></a>
-### <a name="encoding"></a>Encoding
- Kódování podporované [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou ASCII, [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] UTF-16 a UTF-8. Příkaz Encoding se nachází na začátku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dokumentu. Pokud neexistuje žádný atribut kódování a neexistuje žádné pořadí bajtů, analyzátor se nastaví jako výchozí kódování UTF-8. Pro kódování jsou upřednostňovány znakové sady UTF-8 a UTF-16. Kódování UTF-7 není podporováno. Následující příklad ukazuje, jak zadat kódování UTF-8 v souboru [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
+### <a name="encoding"></a>Kódování
+ Kódování podporované [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou znakové sady ASCII, Unicode UTF-16 a UTF-8. Příkaz Encoding se nachází na začátku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dokumentu. Pokud neexistuje žádný atribut kódování a neexistuje žádné pořadí bajtů, analyzátor se nastaví jako výchozí kódování UTF-8. Pro kódování jsou upřednostňovány znakové sady UTF-8 a UTF-16. Kódování UTF-7 není podporováno. Následující příklad ukazuje, jak zadat kódování UTF-8 v souboru [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 ```xaml
 ?xml encoding="UTF-8"?
@@ -47,7 +47,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ### <a name="language-attribute"></a>Atribut Language
  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá jazyk [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) pro reprezentaci atributu Language elementu.  Chcete-li využít výhod třídy <xref:System.Globalization.CultureInfo>, hodnota atributu Language musí být jedním z názvů jazykové verze předdefinovaných <xref:System.Globalization.CultureInfo>. [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) je dědičná ve stromové struktuře elementů (podle pravidel XML, ne nutně z důvodu dědičnosti vlastností závislosti) a její výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazen.
 
- Atribut Language je velmi užitečný pro určení dialektů. Francouzština má například jinou kontrolu pravopisu, slovníku a výslovnost ve Francii, v Quebec, Belgii a Švýcarsku. Také čínské, japonské a korejské body kódu pro sdílení v [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], ale grafické tvary se liší a používají úplně jiná písma.
+ Atribut Language je velmi užitečný pro určení dialektů. Francouzština má například jinou kontrolu pravopisu, slovníku a výslovnost ve Francii, v Quebec, Belgii a Švýcarsku. Také čínské, japonské a korejské body kódu pro sdílení v kódování Unicode, ale grafické tvary se liší a používají zcela jiná písma.
 
  Následující příklad [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] používá pro určení kanadské francouzštiny atribut jazyka `fr-CA`.
 
@@ -56,8 +56,8 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ```
 
 <a name="unicode"></a>
-### <a name="unicode"></a>Sady
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny funkce [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] včetně náhrad. Pokud znaková sada může být namapována na [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], je podporována. Například GB18030 zavádí některé znaky namapované na rozšíření čínština, japonština a korejština (CFK) a a B a náhradní páry, proto je plně podporovaná. Aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může použít <xref:System.Globalization.StringInfo> k manipulaci s řetězci bez porozumění, zda mají náhradní páry nebo kombinování znaků.
+### <a name="unicode"></a>Kódování Unicode
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny funkce Unicode včetně zástupných znaků. Pokud znaková sada může být namapována na kódování Unicode, je podporováno. Například GB18030 zavádí některé znaky namapované na rozšíření čínština, japonština a korejština (CFK) a a B a náhradní páry, proto je plně podporovaná. Aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může použít <xref:System.Globalization.StringInfo> k manipulaci s řetězci bez porozumění, zda mají náhradní páry nebo kombinování znaků.
 
 <a name="design_intl_ui_with_xaml"></a>
 ## <a name="designing-an-international-user-interface-with-xaml"></a>Návrh mezinárodního uživatelského rozhraní pomocí jazyka XAML
@@ -69,7 +69,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
  V současné době jsou podporovány následující skripty:
 
-- arabština
+- Arabština
 
 - Bengálština
 
@@ -119,13 +119,13 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Korejština – staré hangul
 
-- Myanmar
+- Le
 
 - Sinhálské
 
  Všechny systémové moduly pro psaní podporují písma OpenType. Písma OpenType můžou zahrnovat tabulky rozložení OpenType, které umožňují tvůrcům písem navrhovat lepší mezinárodní a špičková typografická písma. Tabulky rozložení písma OpenType obsahují informace o substitucích glyfů, umístění glyfů, zdůvodnění a umístění standardních hodnot a umožňují aplikacím pro zpracování textu zlepšit rozložení textu.
 
- Písma OpenType umožňují zpracování rozsáhlých sad glyfů pomocí kódování [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)]. Takové kódování umožňuje širokou škálu mezinárodní podpory i pro typografické varianty glyfů.
+ Písma OpenType umožňují zpracování velkých sad glyfů pomocí kódování Unicode. Takové kódování umožňuje širokou škálu mezinárodní podpory i pro typografické varianty glyfů.
 
  vykreslování textu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá technologii Microsoft ClearType sub pixelů, která podporuje nezávislost rozlišení. To významně zlepšuje čitelnost a poskytuje možnost podporovat dokumenty ve stylu časopisu High Quality pro všechny skripty.
 
@@ -163,7 +163,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 <EmbeddedResource Include="data\stringtable.en-US.restext"/>
 ```
 
- Chcete-li použít prostředek ve vaší aplikaci, vytvořte instanci <xref:System.Resources.ResourceManager> a načtěte prostředek, který chcete použít. Následující příklad ukazuje, jak to provést.
+ Chcete-li použít prostředek ve vaší aplikaci, vytvořte instanci <xref:System.Resources.ResourceManager> a načtěte prostředek, který chcete použít. Následující příklad demonstruje, jak to udělat.
 
  [!code-csharp[LocalizationResources#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationResources/CSharp/page1.xaml.cs#2)]
 
@@ -178,6 +178,6 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - [Přehled globalizace a lokalizace WPF](wpf-globalization-and-localization-overview.md)

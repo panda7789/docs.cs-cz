@@ -1,0 +1,272 @@
+- name: 'Průvodce jazykem F#'
+  href: index.md
+- name: Začínáme
+  href: get-started/index.md
+  items:
+    - name: 'Instalace F#'
+      href: get-started/install-fsharp.md
+    - name: 'Začínáme s jazykem F# v sadě Visual Studio'
+      href: get-started/get-started-visual-studio.md
+    - name: 'Začínáme s jazykem F# v sadě Visual Studio pro Mac'
+      href: get-started/get-started-with-visual-studio-for-mac.md
+    - name: 'Začínáme s jazykem F# v nástroji Visual Studio Code a Ionide'
+      href: get-started/get-started-vscode.md
+    - name: 'Začínáme s jazykem F# v .NET Core CLI'
+      href: get-started/get-started-command-line.md
+- name: 'Co je F#'
+  href: what-is-fsharp.md
+- name: 'Prohlídka jazyka F#'
+  href: tour.md
+- name: Kurzy
+  items:
+    - name: Úvod do funkčního programování
+      href: introduction-to-functional-programming/index.md
+      items:
+        - name: Funkce první třídy
+          href: introduction-to-functional-programming/first-class-functions.md
+    - name: Asynchronní a souběžné programování
+      items:
+        - name: Asynchronní programování
+          href: tutorials/asynchronous-and-concurrent-programming/async.md
+    - name: Zprostředkovatelé typů
+      href: tutorials/type-providers/index.md
+      items:
+        - name: Vytvoření zprostředkovatele typů
+          href: tutorials/type-providers/creating-a-type-provider.md
+        - name: Zabezpečení zprostředkovatele typů
+          href: tutorials/type-providers/type-provider-security.md
+        - name: Řešení potíží se zprostředkovateli typů
+          href: tutorials/type-providers/troubleshooting-type-providers.md
+    - name: 'F# Interactive'
+      href: tutorials/fsharp-interactive/index.md
+- name: 'Referenční dokumentace jazyka F#'
+  href: language-reference/index.md
+  items:
+    - name: Referenční dokumentace klíčových slov
+      href: language-reference/keyword-reference.md
+    - name: Referenční dokumentace symbolů a operátorů
+      href: language-reference/symbol-and-operator-reference/index.md
+      items:
+        - name: Aritmetické operátory
+          href: language-reference/symbol-and-operator-reference/arithmetic-operators.md
+        - name: Logické operátory
+          href: language-reference/symbol-and-operator-reference/boolean-operators.md
+        - name: Bitové operátory
+          href: language-reference/symbol-and-operator-reference/bitwise-operators.md
+        - name: Operátory s povolenou hodnotou Null
+          href: language-reference/symbol-and-operator-reference/nullable-operators.md
+    - name: Funkce
+      href: language-reference/functions/index.md
+      items:
+        - name: let – vazby
+          href: language-reference/functions/let-bindings.md
+        - name: do – vazby
+          href: language-reference/functions/do-bindings.md
+        - name: 'Výrazy lambda: Klíčové slovo fun'
+          href: language-reference/functions/lambda-expressions-the-fun-keyword.md
+        - name: 'Rekurzivní funkce: Klíčové slovo rec'
+          href: language-reference/functions/recursive-functions-the-rec-keyword.md
+        - name: Vstupní bod
+          href: language-reference/functions/entry-point.md
+        - name: Externí funkce
+          href: language-reference/functions/external-functions.md
+        - name: Vložené funkce
+          href: language-reference/functions/inline-functions.md
+    - name: Hodnoty
+      href: language-reference/values/index.md
+      items:
+        - name: Hodnoty Null
+          href: language-reference/values/null-values.md
+    - name: Literály
+      href: language-reference/literals.md
+    - name: 'Typy F#'
+      href: language-reference/fsharp-types.md
+    - name: Odvození typu
+      href: language-reference/type-inference.md
+    - name: Základní typy
+      href: language-reference/basic-types.md
+    - name: Typ jednotky
+      href: language-reference/unit-type.md
+    - name: Řetězce
+      href: language-reference/strings.md
+    - name: N-tice
+      href: language-reference/tuples.md
+    - name: 'Typy kolekcí F#'
+      href: language-reference/fsharp-collection-types.md
+    - name: Seznamy
+      href: language-reference/lists.md
+    - name: Pole
+      href: language-reference/arrays.md
+    - name: Sekvence
+      href: language-reference/sequences.md
+    - name: Řezy
+      href: language-reference/slices.md
+    - name: Možnosti
+      href: language-reference/options.md
+    - name: Možnosti pro hodnoty
+      href: language-reference/value-options.md
+    - name: Výsledky
+      href: language-reference/results.md
+    - name: Obecné typy
+      href: language-reference/generics/index.md
+      items:
+        - name: Automatická generalizace
+          href: language-reference/generics/automatic-generalization.md
+        - name: Omezení
+          href: language-reference/generics/constraints.md
+        - name: Statisticky vyřešené parametry typu
+          href: language-reference/generics/statically-resolved-type-parameters.md
+    - name: Záznamy
+      href: language-reference/records.md
+    - name: Anonymní záznamy
+      href: language-reference/anonymous-records.md
+    - name: Kopírování a aktualizace výrazů záznamů
+      href: language-reference/copy-and-update-record-expressions.md
+    - name: Rozlišovaná sjednocení
+      href: language-reference/discriminated-unions.md
+    - name: Výčty
+      href: language-reference/enumerations.md
+    - name: Zkratky typů
+      href: language-reference/type-abbreviations.md
+    - name: Třídy
+      href: language-reference/classes.md
+    - name: Struktury
+      href: language-reference/structures.md
+    - name: Dědičnost
+      href: language-reference/inheritance.md
+    - name: Rozhraní
+      href: language-reference/interfaces.md
+    - name: Abstraktní třídy
+      href: language-reference/abstract-classes.md
+    - name: Členové
+      href: language-reference/members/index.md
+      items:
+        - name: Vazby let ve třídách
+          href: language-reference/members/let-bindings-in-classes.md
+        - name: Vazby do ve třídách
+          href: language-reference/members/do-bindings-in-classes.md
+        - name: Vlastnosti
+          href: language-reference/members/properties.md
+        - name: Indexované vlastnosti
+          href: language-reference/members/indexed-properties.md
+        - name: Metody
+          href: language-reference/members/methods.md
+        - name: Konstruktory
+          href: language-reference/members/constructors.md
+        - name: Události
+          href: language-reference/members/events.md
+        - name: 'Explicitní pole: Klíčové slovo `val`'
+          href: language-reference/members/explicit-fields-the-val-keyword.md
+    - name: Rozšíření typů
+      href: language-reference/type-extensions.md
+    - name: Parametry a argumenty
+      href: language-reference/parameters-and-arguments.md
+    - name: Přetížení operátoru
+      href: language-reference/operator-overloading.md
+    - name: Flexibilní typy
+      href: language-reference/flexible-types.md
+    - name: Delegáty
+      href: language-reference/delegates.md
+    - name: Objektové výrazy
+      href: language-reference/object-expressions.md
+    - name: Přetypování a převody
+      href: language-reference/casting-and-conversions.md
+    - name: Řízení přístupu
+      href: language-reference/access-control.md
+    - name: 'Podmíněné výrazy: if...then...else'
+      href: language-reference/conditional-expressions-if-then-else.md
+    - name: Výrazy shody
+      href: language-reference/match-expressions.md
+    - name: Porovnávání vzorů
+      href: language-reference/pattern-matching.md
+    - name: Aktivní vzorky
+      href: language-reference/active-patterns.md
+    - name: 'Smyčky: Výraz for...to'
+      href: language-reference/loops-for-to-expression.md
+    - name: 'Smyčky: Výraz for...in'
+      href: language-reference/loops-for-in-expression.md
+    - name: 'Smyčky: Výraz while...do'
+      href: language-reference/loops-while-do-expression.md
+    - name: Kontrolní výrazy
+      href: language-reference/assertions.md
+    - name: Zpracování výjimek
+      href: language-reference/exception-handling/index.md
+      items:
+        - name: Typy výjimek
+          href: language-reference/exception-handling/exception-types.md
+        - name: Výraz try...with
+          href: language-reference/exception-handling/the-try-with-expression.md
+        - name: Výraz try...finally
+          href: language-reference/exception-handling/the-try-finally-expression.md
+        - name: Funkce raise
+          href: language-reference/exception-handling/the-raise-function.md
+        - name: Funkce failwith
+          href: language-reference/exception-handling/the-failwith-function.md
+        - name: Funkce invalidArg
+          href: language-reference/exception-handling/the-invalidArg-function.md
+    - name: Atributy
+      href: language-reference/attributes.md
+    - name: 'Správa prostředků: Klíčové slovo use'
+      href: language-reference/resource-management-the-use-keyword.md
+    - name: Jmenné prostory
+      href: language-reference/namespaces.md
+    - name: Moduly
+      href: language-reference/modules.md
+    - name: 'Deklarace importu: Klíčové slovo open'
+      href: language-reference/import-declarations-the-open-keyword.md
+    - name: Soubory signatur
+      href: language-reference/signature-files.md
+    - name: Měrné jednotky
+      href: language-reference/units-of-measure.md
+    - name: dokumentace XML
+      href: language-reference/xml-documentation.md
+    - name: Výrazy Lazy
+      href: language-reference/lazy-expressions.md
+    - name: Výpočetní výrazy
+      href: language-reference/computation-expressions.md
+    - name: Asynchronní pracovní postupy
+      href: language-reference/asynchronous-workflows.md
+    - name: Výrazy dotazu
+      href: language-reference/query-expressions.md
+    - name: Uvozovky kódu
+      href: language-reference/code-quotations.md
+    - name: Klíčové slovo fixed
+      href: language-reference/fixed.md
+    - name: Parametry ByRef
+      href: language-reference/byrefs.md
+    - name: Referenční buňky
+      href: language-reference/reference-cells.md
+    - name: Direktivy kompilátoru
+      href: language-reference/compiler-directives.md
+    - name: Možnosti kompilátoru
+      href: language-reference/compiler-options.md
+    - name: 'Interaktivní možnosti F#'
+      href: language-reference/fsharp-interactive-options.md
+    - name: 'Identifikátory zdrojového řádku, souboru a cesty'
+      href: language-reference/source-line-file-path-identifiers.md
+    - name: Informace o volajícím
+      href: language-reference/caller-information.md
+    - name: Podrobná syntaxe
+      href: language-reference/verbose-syntax.md
+- name: 'Příručka stylu jazyka F#'
+  href: style-guide/index.md
+  items:
+    - name: 'Pravidla formátování kódu F#'
+      href: style-guide/formatting.md
+    - name: 'Zásady kódování jazyka F#'
+      href: style-guide/conventions.md
+    - name: 'Pravidla návrhu komponent jazyka F#'
+      href: style-guide/component-design-guidelines.md
+- name: 'Použití jazyka F# v Azure'
+  href: using-fsharp-on-azure/index.md
+  items:
+    - name: 'Začínáme se službou Azure Blob Storage s využitím F#'
+      href: using-fsharp-on-azure/blob-storage.md
+    - name: 'Začínáme se službou Azure File Storage s využitím F#'
+      href: using-fsharp-on-azure/file-storage.md
+    - name: 'Začínáme se službou Azure Queue Storage s využitím F#'
+      href: using-fsharp-on-azure/queue-storage.md
+    - name: 'Začínáme se službou Azure Table Storage s využitím F#'
+      href: using-fsharp-on-azure/table-storage.md
+    - name: 'Správa balíčků pro závislosti Azure F#'
+      href: using-fsharp-on-azure/package-management.md

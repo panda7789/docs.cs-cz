@@ -2,12 +2,12 @@
 title: Zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 9ba8923d23140bb951a4993739ec267ad6f6a4c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1098057042c0842161258fd081d3ee63e82b4c5f
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911778"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395706"
 ---
 # <a name="securing-messages-using-message-security"></a>Zabezpečení zpráv
 Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.ServiceModel.NetMsmqBinding>.  
@@ -28,9 +28,9 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
  Zabezpečení zpráv WCF přidává záhlaví zabezpečení do zprávy WCF, která se integruje s existujícími infrastrukturami zabezpečení, jako je certifikát nebo protokol Kerberos.  
   
 ## <a name="message-credential-type"></a>Typ přihlašovacích údajů zprávy  
- Pomocí zabezpečení zpráv můžou služby a klienti zadat přihlašovací údaje pro jiné ověřování. Zabezpečení zpráv můžete vybrat nastavením <xref:System.ServiceModel.NetMsmqBinding.Security%2A> režimu na `Message` nebo `Both` (tj. zabezpečení přenosu i zabezpečení zpráv).  
+ Pomocí zabezpečení zpráv můžou služby a klienti zadat přihlašovací údaje pro jiné ověřování. Zabezpečení zpráv můžete vybrat nastavením režimu @no__t 0 na hodnotu `Message` nebo `Both` (to znamená zabezpečení přenosu i zabezpečení zpráv).  
   
- Služba může tuto <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> vlastnost použít ke kontrole přihlašovacích údajů používaných k ověřování klienta. Tato možnost se dá použít taky k dalším kontrolám autorizace, které služba zvolí k implementaci.  
+ Služba může pomocí vlastnosti <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> kontrolovat přihlašovací údaje používané k ověřování klienta. Tato možnost se dá použít taky k dalším kontrolám autorizace, které služba zvolí k implementaci.  
   
  V této části jsou vysvětleny různé typy přihlašovacích údajů a jejich použití s frontami.  
   
@@ -52,7 +52,7 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
   
  Všimněte si, že při použití tohoto typu pověření musí služba běžet pod účtem služby.  
   
- Protokol Kerberos se ve výchozím nastavení používá při výběru přihlašovacích údajů zprávy. Další informace najdete v tématu [prozkoumání protokolu Kerberos, protokolu pro distribuované zabezpečení ve Windows 2000](https://go.microsoft.com/fwlink/?LinkId=87790).  
+ Protokol Kerberos se ve výchozím nastavení používá při výběru přihlašovacích údajů zprávy.
   
 ### <a name="username-password"></a>Heslo pro uživatelské jméno  
  Pomocí této vlastnosti může klient ověřit server pomocí hesla uživatele v záhlaví zabezpečení zprávy.  

@@ -2,12 +2,12 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 18e3ad59af4014086bd475815011b6008bcb5052
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0938c57f48a062082fe973a670eb6a9b9fc4ed3c
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854547"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395519"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy týkající se .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient).  
@@ -18,7 +18,7 @@ Tato část popisuje známé problémy týkající se .NET Framework Zprostředk
  Pokud je nutné mít v řetězci koncové mezery, měli byste zvážit připojení prázdného znaku na konci, takže SQL Server řetězec neořízne. Pokud nejsou koncové mezery požadovány, měly by být oříznuty předtím, než budou předány do kanálu dotazu.  
   
 ## <a name="right-function"></a>PRAVÁ funkce  
- Pokud je hodnota bez`null` hodnoty předána jako první argument a 0 se předává jako druhý argument do `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`0`)`, `NULL` hodnota se vrátí místo `empty` řetězce.  
+ Pokud se hodnota bez @no__t 0 předává jako první argument a 0 se předává jako druhý argument pro `RIGHT(nvarchar(max)`, 0 @ no__t-2 nebo `RIGHT(varchar(max)`, 0 @ no__t-4, místo řetězce @no__t 6 se vrátí hodnota `NULL`.  
   
 ## <a name="cross-and-outer-apply-operators"></a>Operátory použití mezi a VNĚJŠÍmi operátory  
  Operátory VZÁJEMNÉho a VNĚJŠÍho použití byly představeny v SQL Server 2005. V některých případech může kanál dotazů vytvořit příkaz jazyka Transact-SQL, který obsahuje operátory KŘÍŽového nebo VNĚJŠÍho použití. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí SQL Server starších než SQL Server 2005, tyto operátory nepodporují, takové dotazy nelze na těchto back-end poskytovateli spustit.  
@@ -27,7 +27,7 @@ Tato část popisuje známé problémy týkající se .NET Framework Zprostředk
   
 - Korelační poddotaz se stránkováním.  
   
-- `AnyElement` Přes korelační poddotaz nebo přes kolekci vytvořenou navigací.  
+- @No__t-0 prostřednictvím korelačního dílčího dotazu nebo přes kolekci vytvořenou navigací.  
   
 - Dotazy LINQ používající seskupovací metody, které přijímají selektor elementu.  
   
@@ -43,12 +43,12 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
 ```  
   
 ## <a name="targeting-the-correct-sql-server-version"></a>Cílení na správnou verzi SQL Server  
- Entity Framework cílí na dotaz Transact-SQL na základě SQL Server verze, která je zadána v `ProviderManifestToken` atributu schématu elementu v souboru modelu úložiště (. ssdl). Tato verze se může lišit od verze samotného SQL Server, ke které jste se připojili. Například pokud používáte SQL Server 2005, ale `ProviderManifestToken` atribut je nastaven na 2008, vygenerovaný dotaz Transact-SQL se nemusí na serveru spustit. Například dotaz, který používá nové typy data a času, které byly představeny v SQL Server 2008, nebude proveden v dřívějších verzích SQL Server. Pokud používáte SQL Server 2005, ale váš `ProviderManifestToken` atribut je nastaven na 2000, vygenerovaný dotaz Transact-SQL může být méně optimalizovaný nebo se může zobrazit výjimka, která říká, že dotaz není podporován. Další informace najdete v části různé a vnější operátory použití výše v tomto tématu.  
+ Entity Framework cílí na dotaz Transact-SQL na základě verze SQL Server, která je zadána v atributu `ProviderManifestToken` elementu Schema v souboru modelu úložiště (. ssdl). Tato verze se může lišit od verze samotného SQL Server, ke které jste se připojili. Například pokud používáte SQL Server 2005, ale atribut `ProviderManifestToken` je nastaven na 2008, vygenerovaný dotaz Transact-SQL se nemusí na serveru spustit. Například dotaz, který používá nové typy data a času, které byly představeny v SQL Server 2008, nebude proveden v dřívějších verzích SQL Server. Pokud používáte SQL Server 2005, ale atribut `ProviderManifestToken` je nastaven na 2000, vygenerovaný dotaz Transact-SQL může být méně optimalizovaný nebo se může zobrazit výjimka, která říká, že dotaz není podporován. Další informace najdete v části různé a vnější operátory použití výše v tomto tématu.  
   
- Určité chování databáze závisí na úrovni kompatibility nastavené na databázi. Pokud je `ProviderManifestToken` atribut nastavený na 2005 a vaše verze SQL Server je 2005, ale úroveň kompatibility databáze je nastavená na "80" (SQL Server 2000), vygenerovaná procedura Transact-SQL bude cílena na SQL Server 2005, ale nemusí se spouštět podle očekávání z důvodu nastavení úrovně kompatibility. Například může dojít ke ztrátě informací o řazení, pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v selektoru.  
+ Určité chování databáze závisí na úrovni kompatibility nastavené na databázi. Pokud je atribut `ProviderManifestToken` nastaven na 2005 a vaše verze SQL Server je 2005, ale úroveň kompatibility databáze je nastavená na "80" (SQL Server 2000), vygenerovaný Transact-SQL bude cílit SQL Server 2005, ale nemusí se spustit podle očekávání z důvodu nastavení úrovně kompatibility. Například může dojít ke ztrátě informací o řazení, pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v selektoru.  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
- Vnořené dotazy v klauzuli projekce můžou být přeložené do Kartézskémch dotazů na produkt na serveru. Na některých back-end serverech, včetně serveru SQL, to může způsobit, že tabulka TempDB bude velmi velká. To může snížit výkon serveru.  
+ Vnořené dotazy v klauzuli projekce můžou být přeložené do Kartézskémch dotazů na produkt na serveru. Na některých back-end serverech, včetně SQL Server, to může způsobit, že se tabulka TempDB poměrně zvětší. To může snížit výkon serveru.  
   
  Následuje příklad vnořeného dotazu v klauzuli projekce:  
   

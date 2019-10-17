@@ -1,4 +1,4 @@
-- name: Další knihovny tříd a rozhraní API
+- name: Další rozhraní API
   href: index.md
   items:
     - name: Microsoft.SqlServer.Server
@@ -7,6 +7,12 @@
           items:
             - name: SmiOrderProperty.Item
               href: microsoft.sqlserver.server.smiorderproperty.item.md
+    - name: Systém
+      items:
+        - name: Exception – třída
+          items:
+            - name: Exception.PrepForRemoting – metoda
+              href: system.exception.prepforremoting.md
     - name: System.Data.SqlTypes
       items:
         - name: SqlChars – třída

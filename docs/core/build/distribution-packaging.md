@@ -1,17 +1,17 @@
 ---
-title: Balíčky distribuce .NET Core
+title: Vytváření distribučních balíčků .NET Core
 description: Naučte se, jak zabalit, pojmenovat a verze .NET Core pro distribuci.
 author: tmds
 ms.date: 10/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c41ce8a4a9ac1a914de2535a9b2423a7ddfa2cf
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 715eb944c3e7626696f64e63b874e2f77595cf46
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250144"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72393586"
 ---
-# <a name="net-core-distribution-packaging"></a>Balíčky distribuce .NET Core
+# <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET Core
 
 Rozhraní .NET Core bude k dispozici na více a více platformách. je vhodné se naučit, jak balíček, název a verzi. Tímto způsobem můžou údržba balíčků pomáhat zajistit konzistentní prostředí bez ohledu na to, kde se uživatelé spouštějí .NET. Tento článek je užitečný pro uživatele, kteří jsou:
 
@@ -72,7 +72,7 @@ I když existuje jeden hostitel, většina ostatních komponent je v adresáří
 
 - (3) **sada SDK/\<SDK verze >** sadě SDK (označované také jako "nástroje") je sada spravovaných nástrojů, které se používají k psaní a vytváření knihoven a aplikací .NET Core. Sada SDK obsahuje rozhraní příkazového řádku (CLI) .NET Core, kompilátory spravovaných jazyků, MSBuild a přidružené úlohy a cíle sestavení, NuGet, nové šablony projektů a tak dále.
 
-- (4) **sada SDK/NuGetFallbackFolder** obsahuje mezipaměť balíčků NuGet, které sada SDK používá během operace obnovení, například při spuštění `dotnet restore` nebo `dotnet build /t:Restore`. Tato složka se používá pouze před rozhraním .NET Core 3,0. Nemůže být sestaven ze zdroje, protože obsahuje předem sestavené binární prostředky z `nuget.org`.
+- (4) **sada SDK/NuGetFallbackFolder** obsahuje mezipaměť balíčků NuGet, které sada SDK používá během operace obnovení, například při spuštění `dotnet restore` nebo `dotnet build`. Tato složka se používá pouze před rozhraním .NET Core 3,0. Nemůže být sestaven ze zdroje, protože obsahuje předem sestavené binární prostředky z `nuget.org`.
 
 **Sdílená** složka obsahuje rozhraní. Sdílené rozhraní poskytuje sadu knihoven v centrálním umístění, aby mohly být používány různými aplikacemi.
 

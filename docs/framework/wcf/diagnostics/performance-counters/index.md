@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: a13cc98a88ff81afd478eaa3e40286169811233a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 73bb02379308fbfe507137e61ac8d84e6b9760b4
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320307"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395898"
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 Windows Communication Foundation (WCF) obsahuje velkou sadu čítačů výkonu, které vám pomůžou posoudit výkon aplikace.  
@@ -118,19 +118,16 @@ config.Save();
 > Pokud ve smlouvě máte duplicitní názvy operací, získáte pro obě operace jenom jednu instanci čítače.  
   
 ## <a name="programming-the-wcf-performance-counters"></a>Programování čítačů výkonu WCF  
- V instalační složce sady SDK je nainstalováno několik souborů, aby bylo možné získat přístup k čítačům výkonu WCF programově. Tyto soubory jsou uvedené níže.  
+
+V instalační složce sady SDK je nainstalováno několik souborů, aby bylo možné získat přístup k čítačům výkonu WCF programově. Tyto soubory jsou uvedené níže:
   
-- _ServiceModelEndpointPerfCounters.vrg  
+- *@no__t -1ServiceModelEndpointPerfCounters. vrg*
+- *@no__t -1ServiceModelOperationPerfCounters. vrg*
+- *@no__t -1ServiceModelServicePerfCounters. vrg*  
+- *@no__t -1SMSvcHostPerfCounters. vrg*
+- *@no__t -1TransactionBridgePerfCounters. vrg*
   
-- _ServiceModelOperationPerfCounters.vrg  
-  
-- _ServiceModelServicePerfCounters.vrg  
-  
-- _SMSvcHostPerfCounters.vrg  
-  
-- _TransactionBridgePerfCounters.vrg  
-  
- Další informace o tom, jak programově přistupovat k čítačům, najdete v tématu [Architektura programování čítače výkonu](https://go.microsoft.com/fwlink/?LinkId=95179).  
+Další informace o tom, jak programově přistupovat k čítačům, najdete v tématu [Architektura programování čítače výkonu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90)).
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 1baad9d6611a4c4340012b9a467d3499ad9ab834
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 8b96e1e8f882ee69bcf7db58ca7a5eeab89fb4fd
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181917"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395184"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -38,8 +38,8 @@ Rozhraní .NET Core zpřístupňuje rozhraní API pro mnoho scénářů, z nich�
 
 - Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/builtin-types/integral-numeric-types.md).
 - Kolekce, například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
-- Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a. <xref:System.IO.FileStream?displayProperty=nameWithType>
-- Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
+- Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> a <xref:System.IO.FileStream?displayProperty=nameWithType>.
+- Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType> a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
 - Vysoce výkonné typy, například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
 
 .NET Core poskytuje kompatibilitu s rozhraními API .NET Framework a mono implementací specifikace [.NET Standard](../standard/net-standard.md) .
@@ -81,7 +81,7 @@ Lidé často žádají, jak je .NET Core implementováno, aby podporovalo více 
 
 V následujícím grafu vidíte, že velká většina [CoreFX](https://github.com/dotnet/corefx) je neutrální kód platformy, který je sdílen napříč všemi platformami. Kód neutrální pro platformu je možné implementovat jako jedno přenosné sestavení, které se používá na všech platformách.
 
-![CoreFX: Řádky kódu na platformu](../images/corefx-platforms-loc.png)
+![CoreFX: řádky kódu na platformu](../images/corefx-platforms-loc.png)
 
 Implementace Windows a UNIX mají stejnou velikost. Systém Windows má větší implementaci, protože CoreFX implementuje některé funkce pouze pro systém Windows, například [Microsoft. Win32. Registry](https://github.com/dotnet/corefx/tree/master/src/Microsoft.Win32.Registry) , ale ještě neimplementuje mnoho konceptů pouze pro systém UNIX. Uvidíte také, že většina implementací systémů Linux a macOS je sdílena v rámci implementace systému UNIX, zatímco implementace týkající se systémů Linux a macOS mají přibližně stejnou velikost.
 
@@ -113,7 +113,7 @@ Vzhledem k tomu, že .NET Core podporuje souběžnou instalaci a její modul run
 
 ### <a name="comparison-with-mono"></a>Porovnání s mono
 
-[Mono](https://www.mono-project.com/) je původní platforma .NET pro víc platforem. Začala jako [Open-Source]([open-source](https://github.com/mono/mono)) alternativa pro .NET Framework a přechodem do cílení na mobilní zařízení jako zařízení s iOS a Androidem se stala oblíbená. Dá se představit za klonování komunity .NET Framework. Projektový tým mono se spoléhal na otevřené [standardy .NET](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména ECMA 335) publikované společností Microsoft za účelem poskytování kompatibilní implementace.
+[Mono](https://www.mono-project.com/) je původní platforma .NET pro víc platforem. Začali jako [Open-Source](https://github.com/mono/mono)alternativa pro .NET Framework a přechodem do cílení na mobilní zařízení, jako jsou zařízení s iOS a Androidem, která se stala oblíbená. Dá se představit za klonování komunity .NET Framework. Projektový tým mono se spoléhal na otevřené [standardy .NET](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména ECMA 335) publikované společností Microsoft za účelem poskytování kompatibilní implementace.
 
 Hlavní rozdíly mezi .NET Core a mono:
 

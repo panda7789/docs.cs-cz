@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 53d7bbf214a71daff9372efcd5978f34c066c657
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9efd7a7581a1e8bd2cb5f544edd1b4c965aa1866
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319996"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395945"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. Pipelines v .NET
 
@@ -23,6 +23,7 @@ ms.locfileid: "72319996"
 <a name="solve"></a>
 
 ## <a name="what-problem-does-systemiopipelines-solve"></a>Jaký problém řeší System. IO. Pipelines
+
 <!-- corner case doesn't MT (machine translate)   -->
 Aplikace, které analyzují streamovaná data, se skládají ze standardizovaného kódu, který má mnoho toků specializovaného a neobvyklého kódu Často používaný kód a zvláštní případ je složitý a obtížně udržovatelný.
 
@@ -38,7 +39,7 @@ async Task ProcessLinesAsync(NetworkStream stream)
 {
     var buffer = new byte[1024];
     await stream.ReadAsync(buffer, 0, buffer.Length);
-    
+
     // Process a single line from the buffer
     ProcessLine(buffer);
 }
@@ -97,7 +98,7 @@ Ve druhé smyčce `PipeReader` spotřebovává vyrovnávací paměti napsané `P
 * Vrátí <xref:System.IO.Pipelines.ReadResult>, která obsahuje dvě důležité informace:
 
   * Data, která byla načtena ve formě `ReadOnlySequence<byte>`.
-  * Logická hodnota `IsCompleted`, která označuje, zda byl dosažen konec dat (EOF). 
+  * Logická hodnota `IsCompleted`, která označuje, zda byl dosažen konec dat (EOF).
 
 Po nalezení oddělovače na konci řádku (konce řádku) a při analýze řádku:
 
@@ -304,7 +305,7 @@ Při psaní pomocníků, které čtou vyrovnávací paměť, je nutné před vol
 
 ## <a name="pipewriter"></a>PipeWriter
 
-@No__t-0 spravuje vyrovnávací paměti pro psaní jménem volajícího. `PipeWriter` implementuje [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter`1). `IBufferWriter<byte>` umožňuje získat přístup k vyrovnávací paměti, aby bylo možné provádět zápisy bez dalších kopií vyrovnávací paměti.
+@No__t-0 spravuje vyrovnávací paměti pro psaní jménem volajícího. `PipeWriter` implementuje [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter%601). `IBufferWriter<byte>` umožňuje získat přístup k vyrovnávací paměti, aby bylo možné provádět zápisy bez dalších kopií vyrovnávací paměti.
 
 [!code-csharp[MyPipeWriter](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet)]
 

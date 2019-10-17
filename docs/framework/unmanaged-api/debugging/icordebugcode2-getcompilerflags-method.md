@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1605ee92c8743606ff0e958f112a2d90af43e03a
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 3ebed8ea1d4943007f8f18b0baa1c676a78207c2
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700719"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395497"
 ---
 # <a name="icordebugcode2getcompilerflags-method"></a>ICorDebugCode2::GetCompilerFlags – metoda
 
@@ -38,16 +38,15 @@ HRESULT GetCompilerFlags (
 
 ## <a name="parameters"></a>Parametry
 
- `pdwFlags`  
- mimo Ukazatel na hodnotu výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) , která určuje chování kompilátoru JIT nebo nativního generátoru obrázků.
+`pdwFlags`  
+mimo Ukazatel na hodnotu výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) , která určuje chování kompilátoru JIT nebo nativního generátoru obrázků.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
- **Hlavička:** CorDebug. idl, CorDebug. h
+**Hlavička:** CorDebug. idl, CorDebug. h
 
- **Knihovna:** CorGuids. lib
+**Knihovna:** CorGuids. lib
 
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
- 
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

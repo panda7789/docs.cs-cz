@@ -7,17 +7,17 @@ helpviewer_keywords:
 - extending data types [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
-ms.openlocfilehash: b5ad066fe9ec40d715702ed99537f45b21c558cf
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d988ab36703bc20e6960d4b8ecc7a476d95ee9bc
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701054"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72396016"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 
 Metody rozšíření umožňují vývojářům přidat vlastní funkce k datovým typům, které jsou již definovány bez vytváření nového odvozeného typu. Rozšiřující metody umožňují napsat metodu, která může být volána, jako by šlo o metodu instance existujícího typu.
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Metoda rozšíření může být pouze procedura @no__t 0 nebo procedura `Function`. Nelze definovat vlastnost rozšíření, pole nebo událost. Všechny metody rozšíření musí být označené atributem rozšíření `<Extension>` z oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> a musí být definované v [modulu](../../../language-reference/statements/module-statement.md). Pokud je metoda rozšíření definována mimo modul, Visual Basic kompilátor vygeneruje chybu [BC36551](../../../misc/bc36551.md), "metody rozšíření mohou být definovány pouze v modulech".
@@ -29,7 +29,7 @@ Atribut `Extension` lze použít pouze pro Visual Basic [`Module`](../../../lang
 ## <a name="example"></a>Příklad
 
 Následující příklad definuje rozšíření `Print` pro datový typ <xref:System.String>. Metoda používá `Console.WriteLine` k zobrazení řetězce. Parametr metody `Print`, `aString`, určuje, že metoda rozšiřuje třídu <xref:System.String>.
-  
+
 [!code-vb[VbVbalrExtensionMethods#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/StringExtensions.vb#1)]
 
 Všimněte si, že definice rozšiřující metody je označena atributem rozšíření `<Extension()>`. Označení modulu, ve kterém je metoda definovaná, je volitelné, ale každá metoda rozšíření musí být označená. aby bylo možné získat přístup k atributu rozšíření, musí být importována hodnota <xref:System.Runtime.CompilerServices>.
@@ -45,7 +45,6 @@ Další příklad, `PrintAndPunctuate`, je také rozšíření pro <xref:System.
 Metoda je volána při odeslání do řetězcového argumentu pro `punc`: `example.PrintAndPunctuate(".")`.
 
 Následující příklad ukazuje `Print` a `PrintAndPunctuate` definované a volané. <xref:System.Runtime.CompilerServices> je importován v modulu definice, aby bylo možné povolit přístup k atributu rozšíření.
-
 
 ```vb
 Imports System.Runtime.CompilerServices

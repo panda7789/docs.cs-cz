@@ -1,0 +1,198 @@
+- name: 'Průvodce jazykem C#'
+  href: index.md
+- name: Začínáme
+  href: getting-started/
+- name: Kurzy
+  items:
+    - name: Přehled
+      href: tutorials/index.md
+    - name: 'Úvod do programování v C#'
+      items:
+        - name: Zvolení první lekce
+          href: tutorials/intro-to-csharp/index.md
+        - name: Hello World
+          href: tutorials/intro-to-csharp/hello-world.yml
+        - name: 'Čísla v jazyce C#'
+          href: tutorials/intro-to-csharp/numbers-in-csharp.yml
+        - name: Větve a smyčky
+          href: tutorials/intro-to-csharp/branches-and-loops.yml
+        - name: Seznam kolekcí
+          href: tutorials/intro-to-csharp/list-collection.yml
+        - name: Práce ve vašem místním prostředí
+          items:
+            - name: Nastavení vašeho prostředí
+              href: tutorials/intro-to-csharp/local-environment.md
+            - name: 'Čísla v jazyce C#'
+              href: tutorials/intro-to-csharp/numbers-in-csharp-local.md
+            - name: Větve a smyčky
+              href: tutorials/intro-to-csharp/branches-and-loops-local.md
+            - name: Seznam kolekcí
+              href: tutorials/intro-to-csharp/arrays-and-collections.md
+            - name: Úvod do tříd
+              href: tutorials/intro-to-csharp/introduction-to-classes.md
+    - name: 'Prozkoumání C# 6'
+      href: tutorials/exploration/csharp-6.yml
+    - name: Prozkoumání interpolace řetězců – interaktivní
+      href: tutorials/exploration/interpolated-strings.yml
+    - name: Prozkoumání interpolace řetězců – ve vašem prostředí
+      href: tutorials/exploration/interpolated-strings-local.md
+    - name: Pokročilé scénáře interpolace řetězců
+      href: tutorials/string-interpolation.md
+    - name: Rozhraní pro bezpečnou aktualizaci s výchozími metodami rozhraní
+      href: tutorials/default-interface-methods-versions.md
+    - name: Vytvoření funkce mixin pomocí výchozích metod rozhraní
+      href: tutorials/mixins-with-default-interface-methods.md
+    - name: Prozkoumání indexů a rozsahů
+      href: tutorials/ranges-indexes.md
+    - name: Práce s odkazovými typy s možnou hodnotou null
+      href: tutorials/nullable-reference-types.md
+    - name: Upgrade na aplikaci s odkazovými typy s možnou hodnotou null
+      href: tutorials/upgrade-to-nullable-references.md
+    - name: Generování a využívání asynchronních streamů
+      href: tutorials/generate-consume-asynchronous-stream.md
+    - name: Rozšíření možností práce s daty pomocí porovnávání vzorů
+      href: tutorials/pattern-matching.md
+    - name: Konzolová aplikace
+      href: tutorials/console-teleprompter.md
+    - name: Klient REST
+      href: tutorials/console-webapiclient.md
+    - name: 'Dědičnost v jazyce C# a technologii .NET'
+      href: tutorials/inheritance.md
+    - name: Práce s jazykem LINQ
+      href: tutorials/working-with-linq.md
+    - name: Používání atributů
+      href: tutorials/attributes.md
+- name: 'Prohlídka jazyka C#'
+  href: tour-of-csharp/
+- name: 'Co je nového v jazyce C#'
+  items:
+    - name: 'C# 8.0'
+      href: whats-new/csharp-8.md
+    - name: 'C# 7.3'
+      href: whats-new/csharp-7-3.md
+    - name: 'C# 7.2'
+      href: whats-new/csharp-7-2.md
+    - name: 'C# 7.1'
+      href: whats-new/csharp-7-1.md
+    - name: 'C# 7.0'
+      href: whats-new/csharp-7.md
+    - name: 'C# 6'
+      href: whats-new/csharp-6.md
+    - name: 'Historie verzí jazyka C#'
+      href: whats-new/csharp-version-history.md
+    - name: Vztahy mezi jazykem a architekturou
+      href: whats-new/relationships-between-language-and-library.md
+    - name: Důležité informace o verzích a aktualizacích
+      href: whats-new/version-update-considerations.md
+- name: 'Koncepty jazyka C#'
+  items:
+    - name: 'Systém typů jazyka C#'
+      href: programming-guide/types/index.md
+    - name: Odkazové typy s možnou hodnotou null
+      href: nullable-references.md
+    - name: Popisování rozhraní API s možnou hodnotou null pomocí atributů a omezení
+      href: nullable-attributes.md
+    - name: Jmenné prostory
+      href: programming-guide/namespaces/index.md
+    - name: Základní typy
+      href: basic-types.md
+    - name: Třídy
+      href: programming-guide/classes-and-structs/classes.md
+    - name: Struktury
+      href: structs.md
+    - name: N-tice
+      href: tuples.md
+    - name: Dekonstrukce řazených kolekcí členů a dalších typů
+      href: deconstruct.md
+    - name: Rozhraní
+      href: programming-guide/interfaces/index.md
+    - name: Metody
+      href: methods.md
+    - name: Lambda – výrazy
+      href: programming-guide/statements-expressions-operators/lambda-expressions.md
+    - name: Vlastnosti
+      href: properties.md
+    - name: Indexery
+      href: indexers.md
+    - name: Zahození
+      href: discards.md
+    - name: Obecné typy
+      href: programming-guide/generics/index.md
+    - name: Iterátory
+      href: iterators.md
+    - name: Delegáty a události
+      items:
+        - name: Úvod do delegátů
+          href: delegates-overview.md
+        - name: System.Delegate a klíčové slovo delegátu
+          href: delegate-class.md
+        - name: Delegáty se silnými typy
+          href: delegates-strongly-typed.md
+        - name: Obecné vzory pro delegáty
+          href: delegates-patterns.md
+        - name: Úvod do událostí
+          href: events-overview.md
+        - name: Standardní vzory událostí .NET
+          href: event-pattern.md
+        - name: Aktualizovaný vzor události .NET
+          href: modern-events.md
+        - name: Rozlišování delegátů a událostí
+          href: distinguish-delegates-events.md
+    - name: LINQ (Language Integrated Query)
+      href: linq/
+    - name: Asynchronní programování
+      href: async.md
+    - name: Porovnávání vzorů
+      href: pattern-matching.md
+    - name: Psaní bezpečného a efektivního kódu
+      href: write-safe-efficient-code.md
+    - name: Stromy výrazů
+      items:
+        - name: Úvod do stromů výrazů
+          href: expression-trees.md
+        - name: Vysvětlení stromů výrazů
+          href: expression-trees-explained.md
+        - name: Typy architektur podporující stromy výrazů
+          href: expression-classes.md
+        - name: Provádění výrazů
+          href: expression-trees-execution.md
+        - name: Interpretace výrazů
+          href: expression-trees-interpreting.md
+        - name: Vytváření výrazů
+          href: expression-trees-building.md
+        - name: Překlad výrazů
+          href: expression-trees-translating.md
+        - name: Souhrn
+          href: expression-trees-summary.md
+    - name: Nativní interoperabilita
+      href: programming-guide/interop/index.md
+    - name: Dokumentace kódu
+      href: codedoc.md
+    - name: Správa verzí
+      href: versioning.md
+- name: 'Témata s postupy k C#'
+  items:
+    - name: Rejstřík témat
+      href: how-to/index.md
+    - name: Parsování řetězců metodou `String.Split`
+      href: how-to/parse-strings-using-split.md
+    - name: Řetězení řetězců
+      href: how-to/concatenate-multiple-strings.md
+    - name: Převedení řetězce na typ DateTime
+      href: ../standard/base-types/parsing-datetime.md
+    - name: Hledání řetězců
+      href: how-to/search-strings.md
+    - name: Změna obsahu řetězce
+      href: how-to/modify-string-contents.md
+    - name: Porovnávání řetězců
+      href: how-to/compare-strings.md
+    - name: 'Bezpečné přetypování pomocí porovnávání vzorů, operátorů is a as'
+      href: how-to/safely-cast-using-pattern-matching-is-and-as-operators.md
+- name: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
+  href: roslyn-sdk/
+- name: "Průvodce programováním v\_C#"
+  href: programming-guide/
+- name: Referenční dokumentace jazyka
+  href: language-reference/
+- name: Postupy
+  href: walkthroughs.md
