@@ -8,7 +8,7 @@ ms.locfileid: "72237328"
 ---
 ### <a name="net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences"></a>.NET Core 3,0 dodržuje osvědčené postupy Unicode při nahrazování chybových sekvencí s chybou ve formátu UTF-8.
 
-Když třída <xref:System.Text.UTF8Encoding> nalezne nesprávně vytvořenou sekvenci bajtů UTF-8 během operace překódování typu Byte-Character, nahradí tuto sekvenci znakem "" (U + FFFD náhradní znak) ve výstupním řetězci. .NET Core 3,0 se liší od předchozích verzí rozhraní .NET Core a .NET Framework podle osvědčeného postupu Unicode pro provádění této náhrady během operace překódování.
+<xref:System.Text.UTF8Encoding> Když třída narazí na nesprávně vytvořenou sekvenci bajtů UTF-8 během operace překódování typu Byte-Character, nahradí tuto sekvenci znakem '�' (U + FFFD náhradní znak) ve výstupním řetězci. .NET Core 3,0 se liší od předchozích verzí rozhraní .NET Core a .NET Framework podle osvědčeného postupu Unicode pro provádění této náhrady během operace překódování.
 
 Toto je část větší snahy o zlepšení zpracování UTF-8 v rámci .NET, včetně nových typů <xref:System.Text.Unicode.Utf8?displayProperty=nameWithType> a <xref:System.Text.Rune?displayProperty=nameWithType>. Typ <xref:System.Text.UTF8Encoding> byl dán vylepšeným způsobem zpracování chyb, aby vygeneroval výstup konzistentní s nově představenými typy.
 
@@ -28,7 +28,7 @@ Tento 3 znakový výstup je preferovaný výstup podle _tabulky 3-9_ dříve pro
 
 #### <a name="version-introduced"></a>Představená verze
 
-3,0
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
