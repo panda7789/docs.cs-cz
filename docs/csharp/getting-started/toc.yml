@@ -1,6 +1,0 @@
-- name: Začínáme
-  items:
-    - name: Jak používat tohoto průvodce
-      href: index.md
-    - name: 'Úvod do jazyka C# a rozhraní .NET Framework'
-      href: introduction-to-the-csharp-language-and-the-net-framework.md

@@ -1,9 +1,0 @@
-- name: Rozhraní
-  href: index.md
-  items:
-    - name: Implementace explicitního rozhraní
-      href: explicit-interface-implementation.md
-    - name: 'Postupy: Explicitní implementace členů rozhraní'
-      href: how-to-explicitly-implement-interface-members.md
-    - name: 'Postupy: Explicitní implementace členů dvou rozhraní'
-      href: how-to-explicitly-implement-members-of-two-interfaces.md

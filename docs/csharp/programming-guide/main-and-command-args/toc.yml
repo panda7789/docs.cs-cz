@@ -1,9 +1,0 @@
-- name: Main() a argumenty příkazového řádku
-  href: index.md
-  items:
-    - name: Argumenty příkazového řádku
-      href: command-line-arguments.md
-    - name: 'Postupy: Zobrazení argumentů příkazového řádku'
-      href: how-to-display-command-line-arguments.md
-    - name: Návratové hodnoty Main()
-      href: main-return-values.md

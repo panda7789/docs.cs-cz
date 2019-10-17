@@ -1,7 +1,0 @@
-- name: Typy hodnot s povolenou hodnotou Null
-  href: index.md
-  items:
-    - name: Použití typů hodnot s povolenou hodnotou Null
-      href: using-nullable-types.md
-    - name: "Postupy: Identifikace typu hodnoty s\_povolenou hodnotou Null"
-      href: how-to-identify-a-nullable-type.md
