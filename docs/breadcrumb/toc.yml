@@ -128,9 +128,9 @@
             - name: Doplňky a rozšíření
               tocHref: /dotnet/framework/add-ins/
               topicHref: /dotnet/framework/add-ins/index
-            - name: Další knihovny tříd a rozhraní API
-              tocHref: /dotnet/framework/additional-steps/
-              topicHref: /dotnet/framework/additional-steps/index
+            - name: Další rozhraní API
+              tocHref: /dotnet/framework/additional-apis/
+              topicHref: /dotnet/framework/additional-apis/index
             - name: Domény a sestavení aplikací
               tocHref: /dotnet/framework/app-domains/
               topicHref: /dotnet/framework/app-domains/index

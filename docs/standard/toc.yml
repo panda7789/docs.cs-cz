@@ -1,0 +1,145 @@
+- name: Průvodce rozhraním .NET Standard
+  href: index.md
+- name: Začínáme s technologií .NET
+  href: get-started.md
+- name: Prohlídka technologie .NET
+  href: tour.md
+- name: Architektonické součásti technologie .NET
+  href: components.md
+- name: .NET Standard
+  href: net-standard.md
+  items:
+    - name: Novinky v rozhraní .NET Standard
+      href: whats-new/whats-new-in-dotnet-standard.md
+- name: Cílové architektury
+  href: frameworks.md
+- name: Slovníček k technologii .NET
+  href: glossary.md
+- name: Pokyny pro open-source knihovnu
+  href: library-guidance/
+- name: Volba mezi .NET Core a .NET Framework pro serverové aplikace
+  href: choosing-core-framework-server.md
+- name: Co je spravovaný kód?
+  href: managed-code.md
+  items:
+    - name: Automatická správa paměti
+      href: automatic-memory-management.md
+- name: Common Language Runtime (CLR)
+  href: clr.md
+- name: Jazyková nezávislost
+  href: language-independence.md
+  items:
+    - name: Jazyková nezávislost a jazykově nezávislé komponenty
+      href: language-independence-and-language-independent-components.md
+- name: Knihovny architektury
+  href: framework-libraries.md
+  items:
+    - name: Přehled knihovny tříd
+      href: class-library-overview.md
+    - name: Základní typy
+      href: base-types/
+- name: Knihovny tříd .NET
+  href: class-libraries.md
+- name: Analyzátory
+  href: analyzers/index.md
+  items:
+    - name: Analyzátor rozhraní API
+      href: analyzers/api-analyzer.md
+    - name: Analyzátor přenositelnosti
+      href: analyzers/portability-analyzer.md
+    - name: Analyzátor architektury
+      href: analyzers/framework-analyzer.md
+- name: Zpracování a vyvolání výjimek
+  href: exceptions/
+- name: Sestavení v .NET
+  href: assembly/
+- name: Kolekce paměti
+  href: garbage-collection/
+- name: Obecné typy
+  href: generics.md
+- name: Delegáty a výrazy lambda
+  href: delegates-lambdas.md
+- name: LINQ
+  href: using-linq.md
+- name: Obecný systém typů a specifikace CLS (Common Language Specification)
+  href: common-type-system.md
+- name: 'Paralelní zpracování, souběžnost a asynchronní programování'
+  href: parallel-processing-and-concurrency.md
+  items:
+    - name: Asynchronní programování
+      href: async.md
+      items:
+        - name: Asynchronní programování podrobněji
+          href: async-in-depth.md
+        - name: Vzory asynchronního programování
+          href: asynchronous-programming-patterns/
+    - name: Paralelní programování
+      href: parallel-programming/
+    - name: Dělení na vlákna
+      href: threading/
+- name: Typy související s Memory a Span
+  href: memory-and-spans/index.md
+  items:
+    - name: Pokyny k používání Memory<T> a Span<T>
+      href: memory-and-spans/memory-t-usage-guidelines.md
+- name: Nativní interoperabilita
+  href: native-interop/index.md
+  items:
+    - name: P/Invoke
+      href: native-interop/pinvoke.md
+    - name: Zařazování typů
+      href: native-interop/type-marshaling.md
+    - name: Přizpůsobení zařazování struktur
+      href: native-interop/customize-struct-marshaling.md
+    - name: Přizpůsobení zařazování parametrů
+      href: native-interop/customize-parameter-marshaling.md
+    - name: Pokyny pro zprostředkovatele komunikace
+      href: native-interop/best-practices.md
+    - name: Znakové sady a zařazování
+      href: native-interop/charset.md
+    - name: Zprostředkovatel komunikace s objekty COM
+      href: native-interop/cominterop.md
+      items:
+        - name: Obálky COM
+          href: native-interop/com-wrappers.md
+          items:
+            - name: Obálka volatelná za běhu
+              href: native-interop/runtime-callable-wrapper.md
+            - name: Obálka volatelná aplikacemi COM
+              href: native-interop/com-callable-wrapper.md
+        - name: Kvalifikace typů .NET pro interoperabilitu COM
+          href: native-interop/qualify-net-types-for-interoperation.md
+    - name: Použití atributů spolupráce
+      href: native-interop/apply-interop-attributes.md
+- name: Kolekce a datové struktury
+  href: collections/
+- name: Číslovky v technologii .NET
+  href: numerics.md
+- name: 'Data, časy a časová pásma'
+  href: datetime/
+- name: Události
+  href: events/
+- name: Proces spravovaného spouštění
+  href: managed-execution-process.md
+- name: Metadata a komponenty popisující samy sebe
+  href: metadata-and-self-describing-components.md
+- name: Sestavování konzolových aplikací
+  href: building-console-apps.md
+- name: Základy vytváření aplikací
+  href: application-essentials.md
+- name: I/O souborů a proudů
+  href: io/index.md
+- name: Globalizace a lokalizace
+  href: globalization-localization/
+- name: Atributy
+  href: attributes/
+- name: "Pokyny k\_návrhu architektury"
+  href: design-guidelines/
+- name: Dokumenty a data XML
+  href: data/xml/
+- name: Zabezpečení
+  href: security/
+- name: Serializace
+  href: serialization/
+- name: Vývoj pro různé platformy
+  href: cross-platform/

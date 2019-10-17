@@ -1,5 +1,5 @@
 ---
-title: Metoda SqlStreamChars.Read (Char [], Int32, Int32) (System.Data.SqlTypes)
+title: SqlStreamChars. Read (Char [], Int32, Int32) – metoda (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,48 +12,48 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: df715f622f874b3c9297c421eab9f4c7504e696b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9c8a1526e75fdc304022e74a7cc52506762489ea
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634322"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395755"
 ---
-# <a name="sqlstreamcharsreadchar-int32-int32-method"></a><span data-ttu-id="3c033-102">Metoda SqlStreamChars.Read (Char [], Int32, Int32)</span><span class="sxs-lookup"><span data-stu-id="3c033-102">SqlStreamChars.Read(Char[], Int32, Int32) Method</span></span>
+# <a name="sqlstreamcharsreadchar-int32-int32-method"></a><span data-ttu-id="89cfd-102">SqlStreamChars. Read (Char [], Int32, Int32) – metoda</span><span class="sxs-lookup"><span data-stu-id="89cfd-102">SqlStreamChars.Read(Char[], Int32, Int32) Method</span></span>
 
-<span data-ttu-id="3c033-103">Při přepisu v odvozené třídě, načte další sadu znaků ze vstupního datového proudu.</span><span class="sxs-lookup"><span data-stu-id="3c033-103">When overridden in a derived class, reads the next set of characters from the input stream.</span></span> <span data-ttu-id="3c033-104">Sestavení, který obsahuje tato metoda má relaci typu friend s SQLAccess.dll.</span><span class="sxs-lookup"><span data-stu-id="3c033-104">The assembly that contains this method has a friend relationship with SQLAccess.dll.</span></span> <span data-ttu-id="3c033-105">Je určena pro použití systémem SQL Server.</span><span class="sxs-lookup"><span data-stu-id="3c033-105">It's intended for use by SQL Server.</span></span> <span data-ttu-id="3c033-106">U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.</span><span class="sxs-lookup"><span data-stu-id="3c033-106">For other databases, use the hosting mechanism provided by that database.</span></span>
+<span data-ttu-id="89cfd-103">Při přepsání v odvozené třídě přečte další sadu znaků ze vstupního datového proudu.</span><span class="sxs-lookup"><span data-stu-id="89cfd-103">When overridden in a derived class, reads the next set of characters from the input stream.</span></span> <span data-ttu-id="89cfd-104">Sestavení, které obsahuje tuto metodu, má relaci typu Friend s SQLAccess. dll.</span><span class="sxs-lookup"><span data-stu-id="89cfd-104">The assembly that contains this method has a friend relationship with SQLAccess.dll.</span></span> <span data-ttu-id="89cfd-105">Je určena pro použití v SQL Server.</span><span class="sxs-lookup"><span data-stu-id="89cfd-105">It's intended for use by SQL Server.</span></span> <span data-ttu-id="89cfd-106">U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.</span><span class="sxs-lookup"><span data-stu-id="89cfd-106">For other databases, use the hosting mechanism provided by that database.</span></span>
 
 ```csharp
 public abstract int Read (char[] buffer, int offset, int count);
 ```
 
-## <a name="parameters"></a><span data-ttu-id="3c033-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="3c033-107">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="89cfd-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="89cfd-107">Parameters</span></span>
 
 `buffer`\
-<span data-ttu-id="3c033-108">Pole znaků ke čtení.</span><span class="sxs-lookup"><span data-stu-id="3c033-108">A char array to read.</span></span>
+<span data-ttu-id="89cfd-108">Pole znaků, které se má číst</span><span class="sxs-lookup"><span data-stu-id="89cfd-108">A char array to read.</span></span>
 
 `offset`\
-<span data-ttu-id="3c033-109">Posun vzhledem k počátku.</span><span class="sxs-lookup"><span data-stu-id="3c033-109">An offset relative to origin.</span></span>
+<span data-ttu-id="89cfd-109">Posun vzhledem ke zdroji.</span><span class="sxs-lookup"><span data-stu-id="89cfd-109">An offset relative to origin.</span></span>
 
 `count`\
-<span data-ttu-id="3c033-110">Počet znaků ke čtení z aktuální datový proud.</span><span class="sxs-lookup"><span data-stu-id="3c033-110">The number of characters to be read from the current stream.</span></span>
+<span data-ttu-id="89cfd-110">Počet znaků, které mají být načteny z aktuálního datového proudu.</span><span class="sxs-lookup"><span data-stu-id="89cfd-110">The number of characters to be read from the current stream.</span></span>
 
-## <a name="returns"></a><span data-ttu-id="3c033-111">Vrací</span><span class="sxs-lookup"><span data-stu-id="3c033-111">Returns</span></span>
+## <a name="returns"></a><span data-ttu-id="89cfd-111">Vrací</span><span class="sxs-lookup"><span data-stu-id="89cfd-111">Returns</span></span>
 
 <xref:System.Int32>\
-<span data-ttu-id="3c033-112">Celkový počet znaků do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="3c033-112">The total number of characters read into the buffer.</span></span>
+<span data-ttu-id="89cfd-112">Celkový počet znaků čtených do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="89cfd-112">The total number of characters read into the buffer.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="3c033-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3c033-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="89cfd-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="89cfd-113">Remarks</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="3c033-114">`SqlStreamChars.Read` Metoda je privátní a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="3c033-114">The `SqlStreamChars.Read` method is private and is not meant to be used directly in your code.</span></span>
+> <span data-ttu-id="89cfd-114">Metoda `SqlStreamChars.Read` je soukromá a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="89cfd-114">The `SqlStreamChars.Read` method is private and is not meant to be used directly in your code.</span></span>
 >
-> <span data-ttu-id="3c033-115">Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.</span><span class="sxs-lookup"><span data-stu-id="3c033-115">Microsoft does not support the use of this field in a production application under any circumstance.</span></span>
+> <span data-ttu-id="89cfd-115">Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.</span><span class="sxs-lookup"><span data-stu-id="89cfd-115">Microsoft does not support the use of this method in a production application under any circumstance.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="3c033-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3c033-116">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="89cfd-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="89cfd-116">Requirements</span></span>
 
-<span data-ttu-id="3c033-117">**Namespace:** <xref:System.Data.SqlTypes></span><span class="sxs-lookup"><span data-stu-id="3c033-117">**Namespace:** <xref:System.Data.SqlTypes></span></span>
+<span data-ttu-id="89cfd-117">**Obor názvů:** <xref:System.Data.SqlTypes></span><span class="sxs-lookup"><span data-stu-id="89cfd-117">**Namespace:** <xref:System.Data.SqlTypes></span></span>
 
-<span data-ttu-id="3c033-118">**Sestavení:** System.Data (v System.Data.dll)</span><span class="sxs-lookup"><span data-stu-id="3c033-118">**Assembly:** System.Data (in System.Data.dll)</span></span>
+<span data-ttu-id="89cfd-118">**Sestavení:** System. data (v System. data. dll)</span><span class="sxs-lookup"><span data-stu-id="89cfd-118">**Assembly:** System.Data (in System.Data.dll)</span></span>
 
-<span data-ttu-id="3c033-119">**Verze rozhraní .NET framework:** Dostupné od verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="3c033-119">**.NET Framework versions:** Available since 2.0.</span></span>
+<span data-ttu-id="89cfd-119">**Verze .NET Framework:** K dispozici od verze 2,0.</span><span class="sxs-lookup"><span data-stu-id="89cfd-119">**.NET Framework versions:** Available since 2.0.</span></span>

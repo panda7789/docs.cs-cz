@@ -1,219 +1,389 @@
 ---
-title: Asynchronní programování
-description: Zjistěte, jak F# asynchronního programování se provádí prostřednictvím programovací model na úrovni jazyka, který se snadno používá a je přirozený jazyk.
-ms.date: 06/20/2016
-ms.openlocfilehash: 8cd7d7bcecabe8ea2c33a4787fe9ebbadd67fe67
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+title: Asynchronní programování vF#
+description: Naučte F# se, jak poskytuje čistou podporu pro asynchronii na základě programovacího modelu na úrovni jazyka odvozeného od konceptů základních funkcí programování.
+ms.date: 12/17/2018
+ms.openlocfilehash: 1ede4a5c1e26df271ac94f9b2c216ac84fb38f59
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753589"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395794"
 ---
-# <a name="async-programming-in-f"></a><span data-ttu-id="063aa-103">Asynchronní programování v F\#</span><span class="sxs-lookup"><span data-stu-id="063aa-103">Async Programming in F\#</span></span>
+# <a name="async-programming-in-f"></a><span data-ttu-id="024a2-103">Asynchronní programování v F @ no__t-0</span><span class="sxs-lookup"><span data-stu-id="024a2-103">Async programming in F\#</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="063aa-104">Některé nepřesnosti byly zjištěny v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="063aa-104">Some inaccuracies have been discovered in this article.</span></span>  <span data-ttu-id="063aa-105">Je právě přepsán.</span><span class="sxs-lookup"><span data-stu-id="063aa-105">It is being rewritten.</span></span>  <span data-ttu-id="063aa-106">Zobrazit [problém #666](https://github.com/dotnet/docs/issues/666) Další informace o změnách.</span><span class="sxs-lookup"><span data-stu-id="063aa-106">See [Issue #666](https://github.com/dotnet/docs/issues/666) to learn about the changes.</span></span>
+<span data-ttu-id="024a2-104">Asynchronní programování je mechanismus, který je nezbytný pro moderní aplikace z nejrůznějších důvodů.</span><span class="sxs-lookup"><span data-stu-id="024a2-104">Asynchronous programming is a mechanism that is essential to modern applications for diverse reasons.</span></span> <span data-ttu-id="024a2-105">K dispozici jsou dva primární případy použití, ke kterým dojde ve většině vývojářů:</span><span class="sxs-lookup"><span data-stu-id="024a2-105">There are two primary use cases that most developers will encounter:</span></span>
 
-<span data-ttu-id="063aa-107">Asynchronní programování v F# je možné provádět prostřednictvím úrovni jazyka programovací model navržené tak, aby se snadno používá a přirozený jazyk.</span><span class="sxs-lookup"><span data-stu-id="063aa-107">Async programming in F# can be accomplished through a language-level programming model designed to be easy to use and natural to the language.</span></span>
+- <span data-ttu-id="024a2-106">Prezentující proces serveru, který může obsluhovat velký počet souběžných příchozích požadavků a současně minimalizuje systémové prostředky, které při zpracování požadavků čekají na vstupy ze systémů nebo služeb, které jsou pro tento proces externí.</span><span class="sxs-lookup"><span data-stu-id="024a2-106">Presenting a server process that can service a significant number of concurrent incoming requests, while minimizing the system resources occupied while request processing awaits inputs from systems or services external to that process</span></span>
+- <span data-ttu-id="024a2-107">Údržba s reagujícím uživatelským rozhraním nebo hlavním vláknem při současném průběhu práce na pozadí</span><span class="sxs-lookup"><span data-stu-id="024a2-107">Maintaining a responsive UI or main thread while concurrently progressing background work</span></span>
 
-<span data-ttu-id="063aa-108">Základní asynchronní programování v F# je `Async<'T>`, reprezentace práci, která se dá spouštět na spuštěný na pozadí, kde `'T` se vrátí buď typ prostřednictvím speciální `return` – klíčové slovo nebo `unit` Pokud asynchronního pracovního postupu nemá žádný výsledek určený k vrácení.</span><span class="sxs-lookup"><span data-stu-id="063aa-108">The core of async programming in F# is `Async<'T>`, a representation of work that can be triggered to run in the background, where `'T` is either the type returned via the special `return` keyword or `unit` if the async workflow has no result to return.</span></span>
+<span data-ttu-id="024a2-108">I když práce na pozadí často zahrnuje využití více vláken, je důležité vzít v úvahu koncepty asynchronii a multithreading samostatně.</span><span class="sxs-lookup"><span data-stu-id="024a2-108">Although background work often does involve the utilization of multiple threads, it's important to consider the concepts of asynchrony and multi-threading separately.</span></span> <span data-ttu-id="024a2-109">Ve skutečnosti se jedná o samostatné obavy a jedna z nich neznamená jinou.</span><span class="sxs-lookup"><span data-stu-id="024a2-109">In fact, they are separate concerns, and one does not imply the other.</span></span> <span data-ttu-id="024a2-110">Jak je uvedeno v tomto článku, popište to podrobněji.</span><span class="sxs-lookup"><span data-stu-id="024a2-110">What follows in this article will describe this in more detail.</span></span>
 
-<span data-ttu-id="063aa-109">Klíčovým konceptem pochopit je, že je typ výrazu asynchronní `Async<'T>`, což je pouze na _specifikace_ práce udělat v asynchronním kontextu.</span><span class="sxs-lookup"><span data-stu-id="063aa-109">The key concept to understand is that an async expression’s type is `Async<'T>`, which is merely a _specification_ of work to be done in an asynchronous context.</span></span> <span data-ttu-id="063aa-110">Není spuštěn, dokud ho explicitně spustit s jednou počáteční funkcí (jako například `Async.RunSynchronously`).</span><span class="sxs-lookup"><span data-stu-id="063aa-110">It is not executed until you explicitly start it with one of the starting functions (such as `Async.RunSynchronously`).</span></span> <span data-ttu-id="063aa-111">Přestože je toto různých způsobu přemýšlení o tom, jak pracovní, ukončí nebuďte úplně jednoduché v praxi.</span><span class="sxs-lookup"><span data-stu-id="063aa-111">Although this is a different way of thinking about doing work, it ends up being quite simple in practice.</span></span>
+## <a name="asynchrony-defined"></a><span data-ttu-id="024a2-111">Asynchronii – definováno</span><span class="sxs-lookup"><span data-stu-id="024a2-111">Asynchrony defined</span></span>
 
-<span data-ttu-id="063aa-112">Řekněme například, že chcete stáhnout kód HTML z dotnetfoundation.org bez blokování hlavního vlákna.</span><span class="sxs-lookup"><span data-stu-id="063aa-112">For example, say you wanted to download the HTML from dotnetfoundation.org without blocking the main thread.</span></span> <span data-ttu-id="063aa-113">Můžete provést to takto:</span><span class="sxs-lookup"><span data-stu-id="063aa-113">You can accomplish it like this:</span></span>
+<span data-ttu-id="024a2-112">Předchozí bod – tento asynchronii je nezávislý na využití více vláken – je vysvětlovat trochu dál.</span><span class="sxs-lookup"><span data-stu-id="024a2-112">The previous point - that asynchrony is independent of the utilization of multiple threads - is worth explaining a bit further.</span></span> <span data-ttu-id="024a2-113">Existují tři koncepty, které jsou někdy související, ale výhradně nezávisle na sobě.</span><span class="sxs-lookup"><span data-stu-id="024a2-113">There are three concepts that are sometimes related, but strictly independent of one another:</span></span>
 
-```fsharp
-open System
-open System.Net
+- <span data-ttu-id="024a2-114">Concurrency Když je v překrývajících se časových obdobích prováděno více výpočtů.</span><span class="sxs-lookup"><span data-stu-id="024a2-114">Concurrency; when multiple computations execute in overlapping time periods.</span></span>
+- <span data-ttu-id="024a2-115">Paralelismu v případě, že se více výpočetních nebo několika částí jednoho výpočtu spouští přesně ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="024a2-115">Parallelism; when multiple computations or several parts of a single computation run at exactly the same time.</span></span>
+- <span data-ttu-id="024a2-116">Asynchronii Když se jeden nebo víc výpočtů může spouštět odděleně od hlavního toku programu.</span><span class="sxs-lookup"><span data-stu-id="024a2-116">Asynchrony; when one or more computations can execute separately from the main program flow.</span></span>
 
-let fetchHtmlAsync url =
-    async {
-        let uri = Uri(url)
-        use webClient = new WebClient()
+<span data-ttu-id="024a2-117">Všechny tři jsou kolmé koncepty, ale dají se snadno využít, zejména při jejich použití dohromady.</span><span class="sxs-lookup"><span data-stu-id="024a2-117">All three are orthogonal concepts, but can be easily conflated, especially when they are used together.</span></span> <span data-ttu-id="024a2-118">Například může být nutné spustit více asynchronních výpočtů paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-118">For example, you may need to execute multiple asynchronous computations in parallel.</span></span> <span data-ttu-id="024a2-119">To neznamená, že paralelismus nebo asynchronii implikuje jednu jinou.</span><span class="sxs-lookup"><span data-stu-id="024a2-119">This does not mean that parallelism or asynchrony imply one another.</span></span>
 
-        // Execution of fetchHtmlAsync won't continue until the result
-        // of AsyncDownloadString is bound.
-        let! html = webClient.AsyncDownloadString(uri)
-        return html
-    }
+<span data-ttu-id="024a2-120">Pokud je třeba vzít v úvahu etymology slova "Asynchronous", jsou zapojeny dvě části:</span><span class="sxs-lookup"><span data-stu-id="024a2-120">If you consider the etymology of the word "asynchronous", there are two pieces involved:</span></span>
 
-let html = "https://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
-printfn "%s" html
-```
+- <span data-ttu-id="024a2-121">"a", což znamená "NOT".</span><span class="sxs-lookup"><span data-stu-id="024a2-121">"a", meaning "not".</span></span>
+- <span data-ttu-id="024a2-122">"synchronní", význam "ve stejnou dobu".</span><span class="sxs-lookup"><span data-stu-id="024a2-122">"synchronous", meaning "at the same time".</span></span>
 
-<span data-ttu-id="063aa-114">A to je všechno!</span><span class="sxs-lookup"><span data-stu-id="063aa-114">And that’s it!</span></span> <span data-ttu-id="063aa-115">Kromě použití `async`, `let!`, a `return`, to je jenom normální F# kódu.</span><span class="sxs-lookup"><span data-stu-id="063aa-115">Aside from the use of `async`, `let!`, and `return`, this is just normal F# code.</span></span>
+<span data-ttu-id="024a2-123">Když tyto dvě výrazy zadáte společně, uvidíte, že "asynchronní" znamená ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="024a2-123">When you put these two terms together, you'll see that "asynchronous" means "not at the same time".</span></span> <span data-ttu-id="024a2-124">A je to!</span><span class="sxs-lookup"><span data-stu-id="024a2-124">That's it!</span></span> <span data-ttu-id="024a2-125">V této definici neexistuje žádná nenásobení souběžnosti ani paralelismus.</span><span class="sxs-lookup"><span data-stu-id="024a2-125">There is no implication of concurrency or parallelism in this definition.</span></span> <span data-ttu-id="024a2-126">To platí také v praxi.</span><span class="sxs-lookup"><span data-stu-id="024a2-126">This is also true in practice.</span></span>
 
-<span data-ttu-id="063aa-116">Existuje několik syntaktické konstrukce, které stojí za zmínku:</span><span class="sxs-lookup"><span data-stu-id="063aa-116">There are a few syntactical constructs which are worth noting:</span></span>
+<span data-ttu-id="024a2-127">V praktických případech jsou asynchronní výpočty v F# nástroji naplánované k provádění nezávisle na hlavním toku programu.</span><span class="sxs-lookup"><span data-stu-id="024a2-127">In practical terms, asynchronous computations in F# are scheduled to execute independently of the main program flow.</span></span> <span data-ttu-id="024a2-128">To neznamená souběžnost ani paralelismus, ani neznamená, že na pozadí se vždy stane výpočet.</span><span class="sxs-lookup"><span data-stu-id="024a2-128">This doesn't imply concurrency or parallelism, nor does it imply that a computation always happens in the background.</span></span> <span data-ttu-id="024a2-129">V závislosti na povaze výpočtu a prostředí, ve kterém je výpočet prováděn, se asynchronní výpočty mohou dokonce provádět synchronně.</span><span class="sxs-lookup"><span data-stu-id="024a2-129">In fact, asynchronous computations can even execute synchronously, depending on the nature of the computation and the environment the computation is executing in.</span></span>
 
-* <span data-ttu-id="063aa-117">`let!` vytvoří vazbu výsledek výrazu asynchronní (který se spouští v jiném kontextu).</span><span class="sxs-lookup"><span data-stu-id="063aa-117">`let!` binds the result of an async expression (which runs on another context).</span></span>
-* <span data-ttu-id="063aa-118">`use!` funguje stejně jako `let!`, ale uvolní prostředky jeho vazby, když dostane mimo rozsah.</span><span class="sxs-lookup"><span data-stu-id="063aa-118">`use!` works just like `let!`, but disposes its bound resources when it goes out of scope.</span></span>
-* <span data-ttu-id="063aa-119">`do!` počká na asynchronní pracovní postup, který nic nevrací.</span><span class="sxs-lookup"><span data-stu-id="063aa-119">`do!` will await an async workflow which doesn’t return anything.</span></span>
-* <span data-ttu-id="063aa-120">`return` jednoduše vrací výsledek z asynchronní výraz.</span><span class="sxs-lookup"><span data-stu-id="063aa-120">`return` simply returns a result from an async expression.</span></span>
-* <span data-ttu-id="063aa-121">`return!` spustí jiný pracovní postup asynchronního a vrátí jeho návratovou hodnotu ve výsledku.</span><span class="sxs-lookup"><span data-stu-id="063aa-121">`return!` executes another async workflow and returns its return value as a result.</span></span>
+<span data-ttu-id="024a2-130">Hlavní poznatkem byste měli mít za to, že asynchronní výpočty jsou nezávislé na toku hlavního programu.</span><span class="sxs-lookup"><span data-stu-id="024a2-130">The main takeaway you should have is that asynchronous computations are independent of the main program flow.</span></span> <span data-ttu-id="024a2-131">I když je k dispozici několik záruk, kdy nebo jak se provádí asynchronní výpočty, existují některé přístupy k orchestraci a jejich plánování.</span><span class="sxs-lookup"><span data-stu-id="024a2-131">Although there are few guarantees about when or how an asynchronous computation executes, there are some approaches to orchestrating and scheduling them.</span></span> <span data-ttu-id="024a2-132">Zbývající část tohoto článku se zabývá základními koncepty pro F# asynchronii a používání typů, funkcí a výrazů integrovaných do F#.</span><span class="sxs-lookup"><span data-stu-id="024a2-132">The rest of this article explores core concepts for F# asynchrony and how to use the types, functions, and expressions built into F#.</span></span>
 
-<span data-ttu-id="063aa-122">Kromě toho normální `let`, `use`, a `do` klíčová slova můžete používat společně se asynchronní verze, stejně jako normální funkce.</span><span class="sxs-lookup"><span data-stu-id="063aa-122">Additionally, normal `let`, `use`, and `do` keywords can be used alongside the async versions just as they would in a normal function.</span></span>
+## <a name="core-concepts"></a><span data-ttu-id="024a2-133">Základní koncepty</span><span class="sxs-lookup"><span data-stu-id="024a2-133">Core concepts</span></span>
 
-## <a name="how-to-start-async-code-in-f"></a><span data-ttu-id="063aa-123">Jak můžete začít asynchronní kód v F\#</span><span class="sxs-lookup"><span data-stu-id="063aa-123">How to start Async Code in F\#</span></span>
+<span data-ttu-id="024a2-134">V F#nástroji je asynchronní programování na střed kolem tří základních konceptů:</span><span class="sxs-lookup"><span data-stu-id="024a2-134">In F#, asynchronous programming is centered around three core concepts:</span></span>
 
-<span data-ttu-id="063aa-124">Jak už bylo zmíněno dříve, asynchronní kód je specifikace práce udělat v jiném kontextu, který musí být explicitně spuštěna.</span><span class="sxs-lookup"><span data-stu-id="063aa-124">As mentioned earlier, async code is a specification of work to be done in another context which needs to be explicitly started.</span></span> <span data-ttu-id="063aa-125">Tady jsou dva základní způsoby, jak toho dosáhnout:</span><span class="sxs-lookup"><span data-stu-id="063aa-125">Here are two primary ways to accomplish this:</span></span>
+- <span data-ttu-id="024a2-135">Typ `Async<'T>`, který představuje sestavitelný asynchronní výpočet.</span><span class="sxs-lookup"><span data-stu-id="024a2-135">The `Async<'T>` type, which represents a composable asynchronous computation.</span></span>
+- <span data-ttu-id="024a2-136">Funkce modulu `Async`, které umožňují naplánovat asynchronní práci, vytváření asynchronních výpočtů a transformaci asynchronních výsledků.</span><span class="sxs-lookup"><span data-stu-id="024a2-136">The `Async` module functions, which let you schedule asynchronous work, compose asynchronous computations, and transform asynchronous results.</span></span>
+- <span data-ttu-id="024a2-137">[Výraz výpočtu](../../language-reference/computation-expressions.md)`async { }`, který poskytuje pohodlný Syntax pro sestavování a řízení asynchronních výpočtů.</span><span class="sxs-lookup"><span data-stu-id="024a2-137">The `async { }` [computation expression](../../language-reference/computation-expressions.md), which provides a convenient syntax for building and controlling asynchronous computations.</span></span>
 
-1. <span data-ttu-id="063aa-126">`Async.RunSynchronously` Asynchronní pracovní postup spustit v jiném vlákně, který se await jeho výsledek.</span><span class="sxs-lookup"><span data-stu-id="063aa-126">`Async.RunSynchronously` will start an async workflow on another thread and await its result.</span></span>
-
-    ```fsharp
-    open System
-    open System.Net
-
-    let fetchHtmlAsync url =
-        async {
-            let uri = Uri(url)
-            use webClient = new WebClient()
-            let! html = webClient.AsyncDownloadString(uri)
-            return html
-        }
-
-    // Execution will pause until fetchHtmlAsync finishes
-    let html = "https://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
-
-    // you actually have the result from fetchHtmlAsync now!
-    printfn "%s" html
-    ```
-
-2. <span data-ttu-id="063aa-127">`Async.Start` Asynchronní pracovní postup spustit v jiném vlákně a bude **není** await jeho výsledek.</span><span class="sxs-lookup"><span data-stu-id="063aa-127">`Async.Start` will start an async workflow on another thread, and will **not** await its result.</span></span>
-
-    ```fsharp
-    open System
-    open System.Net
-
-    let uploadDataAsync url data =
-        async {
-            let uri = Uri(url)
-            use webClient = new WebClient()
-            webClient.UploadStringAsync(uri, data)
-        }
-
-    let workflow = uploadDataAsync "https://url-to-upload-to.com" "hello, world!"
-
-    // Execution will continue after calling this!
-    Async.Start(workflow)
-
-    printfn "%s" "uploadDataAsync is running in the background..."
-    ```
-
-<span data-ttu-id="063aa-128">Existují jiné způsoby, jak začít asynchronní workflowu, který je k dispozici pro konkrétnější scénáře.</span><span class="sxs-lookup"><span data-stu-id="063aa-128">There are other ways to start an async workflow available for more specific scenarios.</span></span> <span data-ttu-id="063aa-129">Jsou podrobně popsány [v odkazu asynchronní](https://msdn.microsoft.com/library/ee370232.aspx).</span><span class="sxs-lookup"><span data-stu-id="063aa-129">They are detailed [in the Async reference](https://msdn.microsoft.com/library/ee370232.aspx).</span></span>
-
-### <a name="a-note-on-threads"></a><span data-ttu-id="063aa-130">Poznámka: na vláknech</span><span class="sxs-lookup"><span data-stu-id="063aa-130">A Note on Threads</span></span>
-
-<span data-ttu-id="063aa-131">Fráze "v jiném vlákně" je uvedeno výše, ale je důležité vědět, že **to neznamená, že asynchronní pracovní postupy jsou průčelím pro multithreading**.</span><span class="sxs-lookup"><span data-stu-id="063aa-131">The phrase "on another thread" is mentioned above, but it is important to know that **this does not mean that async workflows are a facade for multithreading**.</span></span> <span data-ttu-id="063aa-132">Pracovní postup ve skutečnosti "přejde" mezi vlákny vypůjčení pro malé množství času dělat užitečnou práci.</span><span class="sxs-lookup"><span data-stu-id="063aa-132">The workflow actually "jumps" between threads, borrowing them for a small amount of time to do useful work.</span></span> <span data-ttu-id="063aa-133">Když pracovním postupu asynchronní efektivně "čeká" (např. čekání na síť volání vracely něco), žádné vlákno, byla půjčky v době je uvolněna až přejděte užitečnou práci na něco jiného.</span><span class="sxs-lookup"><span data-stu-id="063aa-133">When an async workflow is effectively "waiting" (for example, waiting for a network call to return something), any thread it was borrowing at the time is freed up to go do useful work on something else.</span></span> <span data-ttu-id="063aa-134">Tato možnost povoluje asynchronní pracovní postupy pro využití systému, ve kterém jsou spuštěné na co možná nejefektivněji a je mezi nimi vlastně hlavně silným pro scénáře vysoký počet vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="063aa-134">This allows async workflows to utilize the system they run on as effectively as possible, and makes them especially strong for high-volume I/O scenarios.</span></span>
-
-## <a name="how-to-add-parallelism-to-async-code"></a><span data-ttu-id="063aa-135">Postup přidání paralelismu asynchronní kód</span><span class="sxs-lookup"><span data-stu-id="063aa-135">How to Add Parallelism to Async Code</span></span>
-
-<span data-ttu-id="063aa-136">Někdy můžete potřebovat provádět více asynchronních úloh paralelně, shromažďovat jejich výsledky a interpretovat nějakým způsobem.</span><span class="sxs-lookup"><span data-stu-id="063aa-136">Sometimes you may need to perform multiple asynchronous jobs in parallel, collect their results, and interpret them in some way.</span></span> <span data-ttu-id="063aa-137">`Async.Parallel` Umožňuje provést bez nutnosti použít Task Parallel Library, což by vyžadovalo museli vynucení `Task<'T>` a `Async<'T>` typy.</span><span class="sxs-lookup"><span data-stu-id="063aa-137">`Async.Parallel` allows you to do this without needing to use the Task Parallel Library, which would involve needing to coerce `Task<'T>` and `Async<'T>` types.</span></span>
-
-<span data-ttu-id="063aa-138">Následující příklad použije `Async.Parallel` si Pokud chcete stáhnout kód HTML z oblíbených lokalit čtyři paralelně, počkejte na dokončení těchto úloh a poté vytiskněte HTML, který byl stažen.</span><span class="sxs-lookup"><span data-stu-id="063aa-138">The following example will use `Async.Parallel` to download the HTML from four popular sites in parallel, wait for those tasks to complete, and then print the HTML which was downloaded.</span></span>
+<span data-ttu-id="024a2-138">V následujícím příkladu vidíte tyto tři koncepty:</span><span class="sxs-lookup"><span data-stu-id="024a2-138">You can see these three concepts in the following example:</span></span>
 
 ```fsharp
 open System
-open System.Net
+open System.IO
 
-let urlList =
-    [ "https://www.microsoft.com"
-      "https://www.google.com"
-      "https://www.amazon.com"
-      "https://www.facebook.com" ]
-
-let fetchHtmlAsync url =
+let printTotalFileBytes path =
     async {
-        let uri = Uri(url)
-        use webClient = new WebClient()
-        let! html = webClient.AsyncDownloadString(uri)
-        return html
+        let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
+        let fileName = Path.GetFileName(path)
+        printfn "File %s has %d bytes" fileName bytes.Length
     }
 
-let getHtmlList urls =
-    urls
-    |> Seq.map fetchHtmlAsync   // Build an Async<'T> for each site
-    |> Async.Parallel           // Returns an Async<'T []>
-    |> Async.RunSynchronously   // Wait for the result of the parallel work
+[<EntryPoint>]
+let main argv =
+    printTotalFileBytes "path-to-file.txt"
+    |> Async.RunSynchronously
 
-let htmlList = getHtmlList urlList
-
-// We now have the downloaded HTML for each site!
-for html in htmlList do
-    printfn "%s" html
+    Console.Read() |> ignore
+    0
 ```
 
-## <a name="important-info-and-advice"></a><span data-ttu-id="063aa-139">Důležité informace a Rady</span><span class="sxs-lookup"><span data-stu-id="063aa-139">Important Info and Advice</span></span>
+<span data-ttu-id="024a2-139">V příkladu je funkce `printTotalFileBytes` typu `string -> Async<unit>`.</span><span class="sxs-lookup"><span data-stu-id="024a2-139">In the example, the `printTotalFileBytes` function is of type `string -> Async<unit>`.</span></span> <span data-ttu-id="024a2-140">Volání funkce ve skutečnosti neprovede asynchronní výpočet.</span><span class="sxs-lookup"><span data-stu-id="024a2-140">Calling the function does not actually execute the asynchronous computation.</span></span> <span data-ttu-id="024a2-141">Místo toho vrátí `Async<unit>`, který funguje jako \* specifikace práce, která má být provedena asynchronně.</span><span class="sxs-lookup"><span data-stu-id="024a2-141">Instead, it returns an `Async<unit>` that acts as a \*specification- of the work that is to execute asynchronously.</span></span> <span data-ttu-id="024a2-142">Bude volat `Async.AwaitTask` v těle, který převede výsledek <xref:System.IO.File.WriteAllBytesAsync%2A> na příslušný typ při volání.</span><span class="sxs-lookup"><span data-stu-id="024a2-142">It will call `Async.AwaitTask` in its body, which will convert the result of <xref:System.IO.File.WriteAllBytesAsync%2A> to an appropriate type when it is called.</span></span>
 
-* <span data-ttu-id="063aa-140">Připojte "Async" za účelem všechny funkce, které budete používat</span><span class="sxs-lookup"><span data-stu-id="063aa-140">Append "Async" to the end of any functions you’ll consume</span></span>
+<span data-ttu-id="024a2-143">Další důležitou linkou je volání `Async.RunSynchronously`.</span><span class="sxs-lookup"><span data-stu-id="024a2-143">Another important line is the call to `Async.RunSynchronously`.</span></span> <span data-ttu-id="024a2-144">Jedná se o jednu z asynchronních funkcí modulu, které je třeba volat, pokud chcete skutečně provést F# asynchronní výpočet.</span><span class="sxs-lookup"><span data-stu-id="024a2-144">This is one of the Async module starting functions that you'll need to call if you want to actually execute an F# asynchronous computation.</span></span>
 
- <span data-ttu-id="063aa-141">I když je to jenom zásady vytváření názvů, je usnadnit věci jako rozhraní API zjistitelnost.</span><span class="sxs-lookup"><span data-stu-id="063aa-141">Although this is just a naming convention, it does make things like API discoverability easier.</span></span> <span data-ttu-id="063aa-142">Zejména v případě, že existují synchronní a asynchronní verze stejné rutiny, je vhodné k výslovnému, což je asynchronní prostřednictvím názvu.</span><span class="sxs-lookup"><span data-stu-id="063aa-142">Particularly if there are synchronous and asynchronous versions of the same routine, it’s a good idea to explicitly state which is asynchronous via the name.</span></span>
+<span data-ttu-id="024a2-145">Toto je zásadní rozdíl se stylem C#/VB programování `async`.</span><span class="sxs-lookup"><span data-stu-id="024a2-145">This is a fundamental difference with the C#/VB style of `async` programming.</span></span> <span data-ttu-id="024a2-146">V F#asynchronních výpočtech se můžete představit jako **studené úlohy**.</span><span class="sxs-lookup"><span data-stu-id="024a2-146">In F#, asynchronous computations can be thought of as **Cold tasks**.</span></span> <span data-ttu-id="024a2-147">Je nutné je explicitně spustit ke skutečnému provedení.</span><span class="sxs-lookup"><span data-stu-id="024a2-147">They must be explicitly started to actually execute.</span></span> <span data-ttu-id="024a2-148">To má několik výhod, protože umožňuje kombinovat a sekvencovat asynchronní práci mnohem jednodušší než v C#/VB.</span><span class="sxs-lookup"><span data-stu-id="024a2-148">This has some advantages, as it allows you to combine and sequence asynchronous work much more easily than in C#/VB.</span></span>
 
-* <span data-ttu-id="063aa-143">Naslouchání kompilátoru!</span><span class="sxs-lookup"><span data-stu-id="063aa-143">Listen to the compiler!</span></span>
+## <a name="combining-asynchronous-computations"></a><span data-ttu-id="024a2-149">Kombinování asynchronních výpočtů</span><span class="sxs-lookup"><span data-stu-id="024a2-149">Combining asynchronous computations</span></span>
 
-<span data-ttu-id="063aa-144">F#pro kompilátor je velmi přísná, díky tomu je téměř nemožné něco jako je zneklidňují nové spuštění kódu "async" synchronně.</span><span class="sxs-lookup"><span data-stu-id="063aa-144">F#’s compiler is very strict, making it nearly impossible to do something troubling like run "async" code synchronously.</span></span> <span data-ttu-id="063aa-145">Pokud narazíte na upozornění, který je znak, jak si myslíte, že bude kód nebude spuštěno.</span><span class="sxs-lookup"><span data-stu-id="063aa-145">If you come across a warning, that’s a sign that the code won’t execute how you think it will.</span></span> <span data-ttu-id="063aa-146">Pokud se vás kompilátor šťastný, váš kód spustí pravděpodobně podle očekávání.</span><span class="sxs-lookup"><span data-stu-id="063aa-146">If you can make the compiler happy, your code will most likely execute as expected.</span></span>
-
-## <a name="for-the-cvb-programmer-looking-into-f"></a><span data-ttu-id="063aa-147">Pro C#programátor /VB podíváme do F\#</span><span class="sxs-lookup"><span data-stu-id="063aa-147">For the C#/VB Programmer Looking Into F\#</span></span>
-
-<span data-ttu-id="063aa-148">V této části se předpokládá, seznamte se s asynchronní model v C#/VB.</span><span class="sxs-lookup"><span data-stu-id="063aa-148">This section assumes you’re familiar with the async model in C#/VB.</span></span> <span data-ttu-id="063aa-149">Pokud nemáte, [asynchronní programování v C# ](../../../csharp/async.md) je výchozím bodem.</span><span class="sxs-lookup"><span data-stu-id="063aa-149">If you are not, [Async Programming in C#](../../../csharp/async.md) is a starting point.</span></span>
-
-<span data-ttu-id="063aa-150">Je zásadní rozdíl mezi C#/VB asynchronní model a F# asynchronní model.</span><span class="sxs-lookup"><span data-stu-id="063aa-150">There is a fundamental difference between the C#/VB async model and the F# async model.</span></span>
-
-<span data-ttu-id="063aa-151">Při volání funkce, která vrátí `Task` nebo `Task<'T>`, tato úloha už začala spuštění.</span><span class="sxs-lookup"><span data-stu-id="063aa-151">When you call a function which returns a `Task` or `Task<'T>`, that job has already begun execution.</span></span> <span data-ttu-id="063aa-152">Popisovač vrácený představuje asynchronní úlohu již spuštěná.</span><span class="sxs-lookup"><span data-stu-id="063aa-152">The handle returned represents an already-running asynchronous job.</span></span> <span data-ttu-id="063aa-153">Naproti tomu při volání asynchronní funkce F#, `Async<'a>` vrátil představuje úlohu, která bude **generované** v určitém okamžiku.</span><span class="sxs-lookup"><span data-stu-id="063aa-153">In contrast, when you call an async function in F#, the `Async<'a>` returned represents a job which will be **generated** at some point.</span></span> <span data-ttu-id="063aa-154">Vysvětlení tohoto modelu je efektivní, protože to umožňuje asynchronní úlohy v F# se seskupují klidní, provádí podmíněně a pracovat s lepší intervalem ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="063aa-154">Understanding this model is powerful, because it allows for asynchronous jobs in F# to be chained together easier, performed conditionally, and be started with a finer grain of control.</span></span>
-
-<span data-ttu-id="063aa-155">Existuje několik dalších podobnosti a rozdíly za zmínku.</span><span class="sxs-lookup"><span data-stu-id="063aa-155">There are a few other similarities and differences worth noting.</span></span>
-
-### <a name="similarities"></a><span data-ttu-id="063aa-156">Podobnosti</span><span class="sxs-lookup"><span data-stu-id="063aa-156">Similarities</span></span>
-
-* <span data-ttu-id="063aa-157">`let!`, `use!`, a `do!` jsou podobná `await` při volání metody na asynchronní úlohy v rámci `async{ }` bloku.</span><span class="sxs-lookup"><span data-stu-id="063aa-157">`let!`, `use!`, and `do!` are analogous to `await` when calling an async job from within an `async{ }` block.</span></span>
-
-  <span data-ttu-id="063aa-158">Tři klíčová slova jde použít jenom v rámci `async { }` bloku, podobný postup `await` lze vyvolat pouze uvnitř `async` metoda.</span><span class="sxs-lookup"><span data-stu-id="063aa-158">The three keywords can only be used within an `async { }` block, similar to how `await` can only be invoked inside an `async` method.</span></span> <span data-ttu-id="063aa-159">Stručně řečeno `let!` je pro, pokud chcete zachytit a používat výsledku `use!` je stejný ale něco jehož prostředky by měl získat čištění po se používá, a `do!` je pro, pokud chcete čekat pro asynchronní pracovní postup s žádnou návratovou hodnotu pro dokončení než budete pokračovat.</span><span class="sxs-lookup"><span data-stu-id="063aa-159">In short, `let!` is for when you want to capture and use a result, `use!` is the same but for something whose resources should get cleaned after it’s used, and `do!` is for when you want to wait for an async workflow with no return value to finish before moving on.</span></span>
-
-* <span data-ttu-id="063aa-160">F#Datový paralelismus podporuje podobným způsobem.</span><span class="sxs-lookup"><span data-stu-id="063aa-160">F# supports data-parallelism in a similar way.</span></span>
-
-  <span data-ttu-id="063aa-161">I když to vše je přístupné nějak významně odlišně `Async.Parallel` odpovídá `Task.WhenAll` pro scénář záhlaví výsledky sadu asynchronních úloh po dokončení činnosti všech.</span><span class="sxs-lookup"><span data-stu-id="063aa-161">Although it operates very differently, `Async.Parallel` corresponds to `Task.WhenAll` for the scenario of wanting the results of a set of async jobs when they all complete.</span></span>
-
-### <a name="differences"></a><span data-ttu-id="063aa-162">Rozdíly</span><span class="sxs-lookup"><span data-stu-id="063aa-162">Differences</span></span>
-
-* <span data-ttu-id="063aa-163">Vnořené `let!` není povolené, na rozdíl od vnořené `await`</span><span class="sxs-lookup"><span data-stu-id="063aa-163">Nested `let!` is not allowed, unlike nested `await`</span></span>
-
-  <span data-ttu-id="063aa-164">Na rozdíl od `await`, které mohou být vnořené po neomezenou dobu, `let!` nelze a musíte mít jeho výsledek vázán před jeho použitím do druhého `let!`, `do!`, nebo `use!`.</span><span class="sxs-lookup"><span data-stu-id="063aa-164">Unlike `await`, which can be nested indefinitely, `let!` cannot and must have its result bound before using it inside of another `let!`, `do!`, or `use!`.</span></span>
-
-* <span data-ttu-id="063aa-165">Podporu zrušení je jednodušší v F# než C#/VB.</span><span class="sxs-lookup"><span data-stu-id="063aa-165">Cancellation support is simpler in F# than in C#/VB.</span></span>
-
-  <span data-ttu-id="063aa-166">Podpora zrušení úlohy polovině během C#/VB vyžaduje kontrolu `IsCancellationRequested` vlastností nebo volání `ThrowIfCancellationRequested()` na `CancellationToken` objektu, který je předán do asynchronní metody.</span><span class="sxs-lookup"><span data-stu-id="063aa-166">Supporting cancellation of a task midway through its execution in C#/VB requires checking the `IsCancellationRequested` property or calling `ThrowIfCancellationRequested()` on a `CancellationToken` object that’s passed into the async method.</span></span>
-
-<span data-ttu-id="063aa-167">Naproti tomu F# asynchronními pracovními postupy jsou přirozeněji zrušit.</span><span class="sxs-lookup"><span data-stu-id="063aa-167">In contrast, F# async workflows are more naturally cancellable.</span></span> <span data-ttu-id="063aa-168">Zrušení je jednoduchý proces třech krocích.</span><span class="sxs-lookup"><span data-stu-id="063aa-168">Cancellation is a simple three-step process.</span></span>
-
-1. <span data-ttu-id="063aa-169">Vytvořte nový `CancellationTokenSource`.</span><span class="sxs-lookup"><span data-stu-id="063aa-169">Create a new `CancellationTokenSource`.</span></span>
-2. <span data-ttu-id="063aa-170">Předejte ho do výchozí funkce.</span><span class="sxs-lookup"><span data-stu-id="063aa-170">Pass it into a starting function.</span></span>
-3. <span data-ttu-id="063aa-171">Volání `Cancel` na tokenu.</span><span class="sxs-lookup"><span data-stu-id="063aa-171">Call `Cancel` on the token.</span></span>
-
-<span data-ttu-id="063aa-172">Příklad:</span><span class="sxs-lookup"><span data-stu-id="063aa-172">Example:</span></span>
+<span data-ttu-id="024a2-150">Tady je příklad, který sestaví na předchozím základě kombinováním výpočtů:</span><span class="sxs-lookup"><span data-stu-id="024a2-150">Here is an example that builds upon the previous one by combining computations:</span></span>
 
 ```fsharp
-open System.Threading
+open System
+open System.IO
 
-// Create a workflow which will loop forever.
-let workflow =
+let printTotalFileBytes path =
     async {
-        while true do
-            printfn "Working..."
-            do! Async.Sleep 1000
+        let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
+        let fileName = Path.GetFileName(path)
+        printfn "File %s has %d bytes" fileName bytes.Length
     }
 
-let tokenSource = new CancellationTokenSource()
+[<EntryPoint>]
+let main argv =
+    argv
+    |> Array.map printTotalFileBytes
+    |> Async.Parallel
+    |> Async.Ignore
+    |> Async.RunSynchronously
 
-// Start the workflow in the background
-Async.Start (workflow, tokenSource.Token)
-
-// Executing the next line will stop the workflow
-tokenSource.Cancel()
+    0
 ```
 
-<span data-ttu-id="063aa-173">A to je všechno!</span><span class="sxs-lookup"><span data-stu-id="063aa-173">And that’s it!</span></span>
+<span data-ttu-id="024a2-151">Jak vidíte, funkce `main` má ještě mnohem několik dalších volání.</span><span class="sxs-lookup"><span data-stu-id="024a2-151">As you can see, the `main` function has quite a few more calls made.</span></span> <span data-ttu-id="024a2-152">V koncepčním případě provede následující:</span><span class="sxs-lookup"><span data-stu-id="024a2-152">Conceptually, it does the following:</span></span>
 
-## <a name="further-resources"></a><span data-ttu-id="063aa-174">Další materiály:</span><span class="sxs-lookup"><span data-stu-id="063aa-174">Further resources:</span></span>
+1. <span data-ttu-id="024a2-153">Transformujte argumenty příkazového řádku na `Async<unit>` výpočtů pomocí `Array.map`.</span><span class="sxs-lookup"><span data-stu-id="024a2-153">Transform the command-line arguments into `Async<unit>` computations with `Array.map`.</span></span>
+2. <span data-ttu-id="024a2-154">Vytvořte `Async<'T[]>`, který plánuje a spustí výpočty `printTotalFileBytes` paralelně při spuštění.</span><span class="sxs-lookup"><span data-stu-id="024a2-154">Create an `Async<'T[]>` that schedules and runs the `printTotalFileBytes` computations in parallel when it runs.</span></span>
+3. <span data-ttu-id="024a2-155">Vytvoří `Async<unit>`, který spustí paralelní výpočet a ignoruje výsledek.</span><span class="sxs-lookup"><span data-stu-id="024a2-155">Create an `Async<unit>` that will run the parallel computation and ignore its result.</span></span>
+4. <span data-ttu-id="024a2-156">Explicitně spusťte poslední výpočet s `Async.RunSynchronously` a zablokujte, dokud se nedokončí.</span><span class="sxs-lookup"><span data-stu-id="024a2-156">Explicitly run the last computation with `Async.RunSynchronously` and block until it is completes.</span></span>
 
-* [<span data-ttu-id="063aa-175">Asynchronní pracovní postupy na webu MSDN</span><span class="sxs-lookup"><span data-stu-id="063aa-175">Async Workflows on MSDN</span></span>](https://msdn.microsoft.com/library/dd233250.aspx)
-* [<span data-ttu-id="063aa-176">Asynchronní pořadí proF#</span><span class="sxs-lookup"><span data-stu-id="063aa-176">Asynchronous Sequences for F#</span></span>](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
-* [<span data-ttu-id="063aa-177">F#Nástroje data protokolu HTTP</span><span class="sxs-lookup"><span data-stu-id="063aa-177">F# Data HTTP Utilities</span></span>](https://fsharp.github.io/FSharp.Data/library/Http.html)
+<span data-ttu-id="024a2-157">Když se tento program spustí, `printTotalFileBytes` běží paralelně pro každý argument příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="024a2-157">When this program runs, `printTotalFileBytes` runs in parallel for each command-line argument.</span></span> <span data-ttu-id="024a2-158">Vzhledem k tomu, že asynchronní výpočty provádějí nezávisle na programu flow, neexistuje žádné pořadí, ve kterém tisknou své informace a dokončí provádění.</span><span class="sxs-lookup"><span data-stu-id="024a2-158">Because asynchronous computations execute independently of program flow, there is no order in which they print their information and finish executing.</span></span> <span data-ttu-id="024a2-159">Výpočty budou naplánovány paralelně, ale jejich pořadí provádění není zaručeno.</span><span class="sxs-lookup"><span data-stu-id="024a2-159">The computations will be scheduled in parallel, but their order of execution is not guaranteed.</span></span>
+
+## <a name="sequencing-asynchronous-computations"></a><span data-ttu-id="024a2-160">Sekvence asynchronních výpočtů</span><span class="sxs-lookup"><span data-stu-id="024a2-160">Sequencing asynchronous computations</span></span>
+
+<span data-ttu-id="024a2-161">Vzhledem k tomu, že `Async<'T>` je specifikace práce namísto již spuštěné úlohy, můžete snadno provádět komplikovanější transformace.</span><span class="sxs-lookup"><span data-stu-id="024a2-161">Because `Async<'T>` is a specification of work rather than an already-running task, you can perform more intricate transformations easily.</span></span> <span data-ttu-id="024a2-162">Tady je příklad, který sekvencí sadu asynchronních výpočtů, aby se prováděly po druhém.</span><span class="sxs-lookup"><span data-stu-id="024a2-162">Here is an example that sequences a set of Async computations so they execute one after another.</span></span>
+
+```fsharp
+let printTotalFileBytes path =
+    async {
+        let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
+        let fileName = Path.GetFileName(path)
+        printfn "File %s has %d bytes" fileName bytes.Length
+    }
+
+[<EntryPoint>]
+let main argv =
+    argv
+    |> Array.map printTotalFileBytes
+    |> Async.Sequential
+    |> Async.RunSynchronously
+    |> ignore
+```
+
+<span data-ttu-id="024a2-163">Tím se naplánuje `printTotalFileBytes`, aby se prováděly v pořadí prvků `argv` místo jejich plánování paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-163">This will schedule `printTotalFileBytes` to execute in the order of the elements of `argv` rather than scheduling them in parallel.</span></span> <span data-ttu-id="024a2-164">Vzhledem k tomu, že se další položka nebude naplánovat až po dokončení posledního výpočtu, jsou výpočty sekvencované tak, že při jejich provádění nedojde k překrytí.</span><span class="sxs-lookup"><span data-stu-id="024a2-164">Because the next item will not be scheduled until after the last computation has finished executing, the computations are sequenced such that there is no overlap in their execution.</span></span>
+
+## <a name="important-async-module-functions"></a><span data-ttu-id="024a2-165">Důležité funkce asynchronního modulu</span><span class="sxs-lookup"><span data-stu-id="024a2-165">Important Async module functions</span></span>
+
+<span data-ttu-id="024a2-166">Při psaní asynchronního kódu v F# , obvykle budete pracovat s architekturou, která zpracovává plánování výpočtů za vás.</span><span class="sxs-lookup"><span data-stu-id="024a2-166">When you write async code in F# you'll usually interact with a framework that handles scheduling of computations for you.</span></span> <span data-ttu-id="024a2-167">Nejedná se však vždy o případ, takže je dobré zjistit různé počáteční funkce pro plánování asynchronní práce.</span><span class="sxs-lookup"><span data-stu-id="024a2-167">However, this is not always the case, so it is good to learn the various starting functions to schedule asynchronous work.</span></span>
+
+<span data-ttu-id="024a2-168">Vzhledem F# k tomu, že asynchronní výpočty jsou _specifikace_ práce, nikoli reprezentace práce, která je již spuštěna, musí být explicitně spuštěny pomocí počáteční funkce.</span><span class="sxs-lookup"><span data-stu-id="024a2-168">Because F# asynchronous computations are a _specification_ of work rather than a representation of work that is already executing, they must be explicitly started with a starting function.</span></span> <span data-ttu-id="024a2-169">Existuje mnoho [asynchronních spouštěcích funkcí](https://msdn.microsoft.com/library/ee370232.aspx) , které jsou užitečné v různých kontextech.</span><span class="sxs-lookup"><span data-stu-id="024a2-169">There are many [Async starting functions](https://msdn.microsoft.com/library/ee370232.aspx) that are helpful in different contexts.</span></span> <span data-ttu-id="024a2-170">V následující části jsou popsány některé nejběžnější funkce spouštění.</span><span class="sxs-lookup"><span data-stu-id="024a2-170">The following section describes some of the more common starting functions.</span></span>
+
+### <a name="asyncstartchild"></a><span data-ttu-id="024a2-171">Async. StartChild –</span><span class="sxs-lookup"><span data-stu-id="024a2-171">Async.StartChild</span></span>
+
+<span data-ttu-id="024a2-172">Spustí podřízený výpočet v rámci asynchronního výpočtu.</span><span class="sxs-lookup"><span data-stu-id="024a2-172">Starts a child computation within an asynchronous computation.</span></span> <span data-ttu-id="024a2-173">To umožňuje spustit více asynchronních výpočtů současně.</span><span class="sxs-lookup"><span data-stu-id="024a2-173">This allows multiple asynchronous computations to be executed concurrently.</span></span> <span data-ttu-id="024a2-174">Podřízený výpočet sdílí token zrušení s nadřazeným výpočtem.</span><span class="sxs-lookup"><span data-stu-id="024a2-174">The child computation shares a cancellation token with the parent computation.</span></span> <span data-ttu-id="024a2-175">Pokud je nadřazený výpočet zrušen, je také zrušen podřízený výpočet.</span><span class="sxs-lookup"><span data-stu-id="024a2-175">If the parent computation is canceled, the child computation is also canceled.</span></span>
+
+<span data-ttu-id="024a2-176">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-176">Signature:</span></span>
+
+```fsharp
+computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
+```
+
+<span data-ttu-id="024a2-177">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-177">When to use:</span></span>
+
+- <span data-ttu-id="024a2-178">Pokud chcete spustit více asynchronních výpočtů současně, nikoli v jednom okamžiku, ale nemusíte je naplánovat paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-178">When you want to execute multiple asynchronous computations concurrently rather than one at a time, but not have them scheduled in parallel.</span></span>
+- <span data-ttu-id="024a2-179">Pokud chcete vytvořit propojení životnosti podřízeného výpočtu s nadřazeným výpočtem.</span><span class="sxs-lookup"><span data-stu-id="024a2-179">When you wish to tie the lifetime of a child computation to that of a parent computation.</span></span>
+
+<span data-ttu-id="024a2-180">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-180">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-181">Spuštění více výpočtů s `Async.StartChild` není stejné jako při jejich plánování paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-181">Starting multiple computations with `Async.StartChild` isn't the same as scheduling them in parallel.</span></span> <span data-ttu-id="024a2-182">Pokud chcete naplánovat souběžné výpočty, použijte `Async.Parallel`.</span><span class="sxs-lookup"><span data-stu-id="024a2-182">If you wish to schedule computations in parallel, use `Async.Parallel`.</span></span>
+- <span data-ttu-id="024a2-183">Zrušením nadřazeného výpočtu se spustí zrušení všech podřízených výpočtů, které začaly.</span><span class="sxs-lookup"><span data-stu-id="024a2-183">Canceling a parent computation will trigger cancellation of all child computations it started.</span></span>
+
+### <a name="asyncstartimmediate"></a><span data-ttu-id="024a2-184">Async. StartImmediate –</span><span class="sxs-lookup"><span data-stu-id="024a2-184">Async.StartImmediate</span></span>
+
+<span data-ttu-id="024a2-185">Spustí asynchronní výpočet, který se spouští okamžitě na aktuálním vlákně operačního systému.</span><span class="sxs-lookup"><span data-stu-id="024a2-185">Runs an asynchronous computation, starting immediately on the current operating system thread.</span></span> <span data-ttu-id="024a2-186">To je užitečné, pokud potřebujete během výpočtu aktualizovat něco v volajícím vlákně.</span><span class="sxs-lookup"><span data-stu-id="024a2-186">This is helpful if you need to update something on the calling thread during the computation.</span></span> <span data-ttu-id="024a2-187">Například pokud asynchronní výpočet musí aktualizovat uživatelské rozhraní (například aktualizace indikátoru průběhu), je třeba použít `Async.StartImmediate`.</span><span class="sxs-lookup"><span data-stu-id="024a2-187">For example, if an asynchronous computation must update a UI (such as updating a progress bar), then `Async.StartImmediate` should be used.</span></span>
+
+<span data-ttu-id="024a2-188">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-188">Signature:</span></span>
+
+```fsharp
+computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
+```
+
+<span data-ttu-id="024a2-189">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-189">When to use:</span></span>
+
+- <span data-ttu-id="024a2-190">Pokud potřebujete něco aktualizovat v volajícím vlákně uprostřed asynchronního výpočtu.</span><span class="sxs-lookup"><span data-stu-id="024a2-190">When you need to update something on the calling thread in the middle of an asynchronous computation.</span></span>
+
+<span data-ttu-id="024a2-191">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-191">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-192">Kód v asynchronním výpočtu se spustí na jakémkoli vlákně, na kterém je naplánováno.</span><span class="sxs-lookup"><span data-stu-id="024a2-192">Code in the asynchronous computation will run on whatever thread one happens to be scheduled on.</span></span> <span data-ttu-id="024a2-193">To může být problematické, pokud je toto vlákno v nějakých citlivých případech, jako je například vlákno uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="024a2-193">This can be problematic if that thread is in some way sensitive, such as a UI thread.</span></span> <span data-ttu-id="024a2-194">V takových případech je `Async.StartImmediate` nejspíš nevhodné použít.</span><span class="sxs-lookup"><span data-stu-id="024a2-194">In such cases, `Async.StartImmediate` is likely inappropriate to use.</span></span>
+
+### <a name="asyncstartastask"></a><span data-ttu-id="024a2-195">Async. Startastask –</span><span class="sxs-lookup"><span data-stu-id="024a2-195">Async.StartAsTask</span></span>
+
+<span data-ttu-id="024a2-196">Provede výpočet ve fondu vláken.</span><span class="sxs-lookup"><span data-stu-id="024a2-196">Executes a computation in the thread pool.</span></span> <span data-ttu-id="024a2-197">Vrátí <xref:System.Threading.Tasks.Task%601>, který bude dokončen v odpovídajícím stavu po ukončení výpočtu (vytvoří výsledek, vyvolá výjimku nebo se zruší).</span><span class="sxs-lookup"><span data-stu-id="024a2-197">Returns a <xref:System.Threading.Tasks.Task%601> that will be completed on the corresponding state once the computation terminates (produces the result, throws exception, or gets canceled).</span></span> <span data-ttu-id="024a2-198">Pokud není k dispozici žádný token zrušení, použije se výchozí token zrušení.</span><span class="sxs-lookup"><span data-stu-id="024a2-198">If no cancellation token is provided, then the default cancellation token is used.</span></span>
+
+<span data-ttu-id="024a2-199">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-199">Signature:</span></span>
+
+```fsharp
+computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
+```
+
+<span data-ttu-id="024a2-200">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-200">When to use:</span></span>
+
+- <span data-ttu-id="024a2-201">Pokud potřebujete volat rozhraní .NET API, které očekává, <xref:System.Threading.Tasks.Task%601>, aby reprezentovala výsledek asynchronního výpočtu.</span><span class="sxs-lookup"><span data-stu-id="024a2-201">When you need to call into a .NET API that expects a <xref:System.Threading.Tasks.Task%601> to represent the result of an asynchronous computation.</span></span>
+
+<span data-ttu-id="024a2-202">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-202">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-203">Toto volání přidělí další objekt @no__t 0, který může zvýšit režii v případě, že se často používá.</span><span class="sxs-lookup"><span data-stu-id="024a2-203">This call will allocate an additional `Task` object, which can increase overhead if it is used often.</span></span>
+
+### <a name="asyncparallel"></a><span data-ttu-id="024a2-204">Async. Parallel</span><span class="sxs-lookup"><span data-stu-id="024a2-204">Async.Parallel</span></span>
+
+<span data-ttu-id="024a2-205">Plánuje sekvenci asynchronních výpočtů, které se mají spustit paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-205">Schedules a sequence of asynchronous computations to be executed in parallel.</span></span> <span data-ttu-id="024a2-206">Stupeň paralelismu lze volitelně vyladit/omezit zadáním parametru `maxDegreesOfParallelism`.</span><span class="sxs-lookup"><span data-stu-id="024a2-206">The degree of parallelism can be optionally tuned/throttled by specifying the `maxDegreesOfParallelism` parameter.</span></span>
+
+<span data-ttu-id="024a2-207">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-207">Signature:</span></span>
+
+```fsharp
+computations: seq<Async<'T>> - ?maxDegreesOfParallelism: int -> Async<'T[]>
+```
+
+<span data-ttu-id="024a2-208">Kdy ji použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-208">When to use it:</span></span>
+
+- <span data-ttu-id="024a2-209">Pokud potřebujete spustit sadu výpočetních prostředků současně a nemusíte přitom spoléhat na jejich pořadí spouštění.</span><span class="sxs-lookup"><span data-stu-id="024a2-209">If you need to run a set of computations at the same time and have no reliance on their order of execution.</span></span>
+- <span data-ttu-id="024a2-210">Pokud nepotřebujete výsledky z plánovaných výpočtů paralelně, dokud nebudou dokončeny všechny.</span><span class="sxs-lookup"><span data-stu-id="024a2-210">If you don't require results from computations scheduled in parallel until they have all completed.</span></span>
+
+<span data-ttu-id="024a2-211">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-211">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-212">Po dokončení všech výpočtů máte přístup pouze k výslednému poli hodnot.</span><span class="sxs-lookup"><span data-stu-id="024a2-212">You can only access the resulting array of values once all computations have finished.</span></span>
+- <span data-ttu-id="024a2-213">Výpočty se budou spouštět, ale skončí naplánovaných.</span><span class="sxs-lookup"><span data-stu-id="024a2-213">Computations will be run however they end up getting scheduled.</span></span> <span data-ttu-id="024a2-214">To znamená, že nemůžete spoléhat na jejich pořadí provádění.</span><span class="sxs-lookup"><span data-stu-id="024a2-214">This means you cannot rely on their order of their execution.</span></span>
+
+### <a name="asyncsequential"></a><span data-ttu-id="024a2-215">Async. sekvenční</span><span class="sxs-lookup"><span data-stu-id="024a2-215">Async.Sequential</span></span>
+
+<span data-ttu-id="024a2-216">Naplánuje sekvenci asynchronních výpočtů, které se mají provést v pořadí, v jakém jsou předány.</span><span class="sxs-lookup"><span data-stu-id="024a2-216">Schedules a sequence of asynchronous computations to be executed in the order that they are passed.</span></span> <span data-ttu-id="024a2-217">První výpočet se spustí, potom klikněte na další atd.</span><span class="sxs-lookup"><span data-stu-id="024a2-217">The first computation will be executed, then the next, and so on.</span></span> <span data-ttu-id="024a2-218">Žádné výpočty se nespustí paralelně.</span><span class="sxs-lookup"><span data-stu-id="024a2-218">No computations will be executed in parallel.</span></span>
+
+<span data-ttu-id="024a2-219">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-219">Signature:</span></span>
+
+```fsharp
+computations: seq<Async<'T>> -> Async<'T[]>
+```
+
+<span data-ttu-id="024a2-220">Kdy ji použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-220">When to use it:</span></span>
+
+- <span data-ttu-id="024a2-221">Pokud potřebujete spustit více výpočtů v daném pořadí.</span><span class="sxs-lookup"><span data-stu-id="024a2-221">If you need to execute multiple computations in order.</span></span>
+
+<span data-ttu-id="024a2-222">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-222">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-223">Po dokončení všech výpočtů máte přístup pouze k výslednému poli hodnot.</span><span class="sxs-lookup"><span data-stu-id="024a2-223">You can only access the resulting array of values once all computations have finished.</span></span>
+- <span data-ttu-id="024a2-224">Výpočty se spustí v pořadí, v jakém jsou předány této funkci, což může znamenat, že uplyne další doba před vrácením výsledků.</span><span class="sxs-lookup"><span data-stu-id="024a2-224">Computations will be run in the order that they are passed to this function, which can mean that more time will elapse before the results are returned.</span></span>
+
+### <a name="asyncawaittask"></a><span data-ttu-id="024a2-225">Async. Awaittask –</span><span class="sxs-lookup"><span data-stu-id="024a2-225">Async.AwaitTask</span></span>
+
+<span data-ttu-id="024a2-226">Vrátí asynchronní výpočet, který čeká na dokončení daného <xref:System.Threading.Tasks.Task%601> a vrátí jeho výsledek jako `Async<'T>`.</span><span class="sxs-lookup"><span data-stu-id="024a2-226">Returns an asynchronous computation that waits for the given <xref:System.Threading.Tasks.Task%601> to complete and returns its result as an `Async<'T>`</span></span>
+
+<span data-ttu-id="024a2-227">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-227">Signature:</span></span>
+
+```fsharp
+task: Task<'T>  -> Async<'T>
+```
+
+<span data-ttu-id="024a2-228">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-228">When to use:</span></span>
+
+- <span data-ttu-id="024a2-229">Když spotřebováváte rozhraní .NET API, které vrací <xref:System.Threading.Tasks.Task%601> v rámci F# asynchronního výpočtu.</span><span class="sxs-lookup"><span data-stu-id="024a2-229">When you are consuming a .NET API that returns a <xref:System.Threading.Tasks.Task%601> within an F# asynchronous computation.</span></span>
+
+<span data-ttu-id="024a2-230">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-230">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-231">Výjimky jsou zabaleny do <xref:System.AggregateException> podle konvence paralelní knihovny Tasks, a to se liší od toho F# , jak obvykle výjimky asynchronních povrchů.</span><span class="sxs-lookup"><span data-stu-id="024a2-231">Exceptions are wrapped in <xref:System.AggregateException> following the convention of the Task Parallel Library, and this is different from how F# async generally surfaces exceptions.</span></span>
+
+### <a name="asynccatch"></a><span data-ttu-id="024a2-232">Async. catch</span><span class="sxs-lookup"><span data-stu-id="024a2-232">Async.Catch</span></span>
+
+<span data-ttu-id="024a2-233">Vytvoří asynchronní výpočet, který spustí daný `Async<'T>` a vrátí `Async<Choice<'T, exn>>`.</span><span class="sxs-lookup"><span data-stu-id="024a2-233">Creates an asynchronous computation that executes a given `Async<'T>`, returning an `Async<Choice<'T, exn>>`.</span></span> <span data-ttu-id="024a2-234">Pokud se předaná `Async<'T>` úspěšně dokončí, vrátí se výsledná hodnota `Choice1Of2`.</span><span class="sxs-lookup"><span data-stu-id="024a2-234">If the given `Async<'T>` completes successfully, then a `Choice1Of2` is returned with the resultant value.</span></span> <span data-ttu-id="024a2-235">Je-li před dokončením vyvolána výjimka, je vrácena výjimka `Choice2of2` s vyvolanou výjimkou.</span><span class="sxs-lookup"><span data-stu-id="024a2-235">If an exception is thrown before it completes, then a `Choice2of2` is returned with the raised exception.</span></span> <span data-ttu-id="024a2-236">Pokud se používá v asynchronním výpočtu, který je sám složený z mnoha výpočtů, a jeden z těchto výpočtů vyvolá výjimku, Výpočet zahrnuje také úplné zastavení.</span><span class="sxs-lookup"><span data-stu-id="024a2-236">If it is used on an asynchronous computation that is itself composed of many computations, and one of those computations throws an exception, the encompassing computation will be stopped entirely.</span></span>
+
+<span data-ttu-id="024a2-237">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-237">Signature:</span></span>
+
+```fsharp
+computation: Async<'T> -> Async<Choice<'T, exn>>
+```
+
+<span data-ttu-id="024a2-238">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-238">When to use:</span></span>
+
+- <span data-ttu-id="024a2-239">Při provádění asynchronní práce, která může selhat s výjimkou a chcete tuto výjimku zpracovat v volajícím.</span><span class="sxs-lookup"><span data-stu-id="024a2-239">When you are performing asynchronous work that may fail with an exception and you want to handle that exception in the caller.</span></span>
+
+<span data-ttu-id="024a2-240">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-240">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-241">Pokud používáte kombinované nebo sekvencované asynchronní výpočty, výpočet zahrnující výpočty se úplně zastaví, pokud jeden z jeho "interních" výpočtů vyvolá výjimku.</span><span class="sxs-lookup"><span data-stu-id="024a2-241">When using combined or sequenced asynchronous computations, the encompassing computation will fully stop if one of its "internal" computations throws an exception.</span></span>
+
+### <a name="asyncignore"></a><span data-ttu-id="024a2-242">Async. Ignore</span><span class="sxs-lookup"><span data-stu-id="024a2-242">Async.Ignore</span></span>
+
+<span data-ttu-id="024a2-243">Vytvoří asynchronní výpočet, který spustí daný výpočet a ignoruje jeho výsledek.</span><span class="sxs-lookup"><span data-stu-id="024a2-243">Creates an asynchronous computation that runs the given computation and ignores its result.</span></span>
+
+<span data-ttu-id="024a2-244">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-244">Signature:</span></span>
+
+```fsharp
+computation: Async<'T> -> Async<unit>
+```
+
+<span data-ttu-id="024a2-245">Kdy použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-245">When to use:</span></span>
+
+- <span data-ttu-id="024a2-246">Pokud máte asynchronní výpočet, jehož výsledek není potřeba.</span><span class="sxs-lookup"><span data-stu-id="024a2-246">When you have an asynchronous computation whose result is not needed.</span></span> <span data-ttu-id="024a2-247">To se podobá kódu `ignore` pro neasynchronní kód.</span><span class="sxs-lookup"><span data-stu-id="024a2-247">This is analogous to the `ignore` code for non-asynchronous code.</span></span>
+
+<span data-ttu-id="024a2-248">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-248">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-249">Pokud je nutné použít tuto možnost, protože chcete použít `Async.Start` nebo jinou funkci, která vyžaduje `Async<unit>`, zvažte, zda je zahození výsledku v pořádku.</span><span class="sxs-lookup"><span data-stu-id="024a2-249">If you must use this because you wish to use `Async.Start` or another function that requires `Async<unit>`, consider if discarding the result is okay to do.</span></span> <span data-ttu-id="024a2-250">Vypuštění výsledků, které se nehodí pro podpis typu, by nemělo být obecně provedeno.</span><span class="sxs-lookup"><span data-stu-id="024a2-250">Discarding results just to fit a type signature should not generally be done.</span></span>
+
+### <a name="asyncrunsynchronously"></a><span data-ttu-id="024a2-251">Async. metodu RunSynchronously nelze</span><span class="sxs-lookup"><span data-stu-id="024a2-251">Async.RunSynchronously</span></span>
+
+<span data-ttu-id="024a2-252">Spustí asynchronní výpočet a počká na jeho výsledek na volajícím vlákně.</span><span class="sxs-lookup"><span data-stu-id="024a2-252">Runs an asynchronous computation and awaits its result on the calling thread.</span></span> <span data-ttu-id="024a2-253">Toto volání je blokováno.</span><span class="sxs-lookup"><span data-stu-id="024a2-253">This call is blocking.</span></span>
+
+<span data-ttu-id="024a2-254">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-254">Signature:</span></span>
+
+```fsharp
+computation: Async<'T> - timeout: ?int - cancellationToken: ?CancellationToken -> 'T
+```
+
+<span data-ttu-id="024a2-255">Kdy ji použít:</span><span class="sxs-lookup"><span data-stu-id="024a2-255">When to use it:</span></span>
+
+- <span data-ttu-id="024a2-256">Pokud ho potřebujete, používejte ho jenom jednou v aplikaci – v vstupním bodě pro spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="024a2-256">If you need it, use it only once in an application - at the entry point for an executable.</span></span>
+- <span data-ttu-id="024a2-257">Pokud nezáleží na výkonu a chcete spustit sadu dalších asynchronních operací najednou.</span><span class="sxs-lookup"><span data-stu-id="024a2-257">When you don't care about performance and want to execute a set of other asynchronous operations at once.</span></span>
+
+<span data-ttu-id="024a2-258">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-258">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-259">Volání `Async.RunSynchronously` blokuje volající vlákno, dokud se spuštění nedokončí.</span><span class="sxs-lookup"><span data-stu-id="024a2-259">Calling `Async.RunSynchronously` blocks the calling thread until the execution completes.</span></span>
+
+### <a name="asyncstart"></a><span data-ttu-id="024a2-260">Async. Start</span><span class="sxs-lookup"><span data-stu-id="024a2-260">Async.Start</span></span>
+
+<span data-ttu-id="024a2-261">Spustí asynchronní výpočet ve fondu vláken, který vrací hodnotu `unit`.</span><span class="sxs-lookup"><span data-stu-id="024a2-261">Starts an asynchronous computation in the thread pool that returns `unit`.</span></span> <span data-ttu-id="024a2-262">Nečeká na výsledek.</span><span class="sxs-lookup"><span data-stu-id="024a2-262">Doesn't wait for its result.</span></span> <span data-ttu-id="024a2-263">Vnořené výpočty zahájené s `Async.Start` se spouští úplně nezávisle na nadřazeném výpočtu, který je volá.</span><span class="sxs-lookup"><span data-stu-id="024a2-263">Nested computations started with `Async.Start` are started completely independently of the parent computation that called them.</span></span> <span data-ttu-id="024a2-264">Jejich životnost není svázána s žádným nadřazeným výpočtem.</span><span class="sxs-lookup"><span data-stu-id="024a2-264">Their lifetime is not tied to any parent computation.</span></span> <span data-ttu-id="024a2-265">Pokud je nadřazený výpočet zrušený, žádné podřízené výpočty se neruší.</span><span class="sxs-lookup"><span data-stu-id="024a2-265">If the parent computation is canceled, no child computations are cancelled.</span></span>
+
+<span data-ttu-id="024a2-266">Označení</span><span class="sxs-lookup"><span data-stu-id="024a2-266">Signature:</span></span>
+
+```fsharp
+computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
+```
+
+<span data-ttu-id="024a2-267">Použijte pouze v těchto případech:</span><span class="sxs-lookup"><span data-stu-id="024a2-267">Use only when:</span></span>
+
+- <span data-ttu-id="024a2-268">Máte asynchronní výpočet, který nepřinese výsledek nebo vyžaduje zpracování jednoho.</span><span class="sxs-lookup"><span data-stu-id="024a2-268">You have an asynchronous computation that doesn't yield a result and/or require processing of one.</span></span>
+- <span data-ttu-id="024a2-269">Po dokončení asynchronního výpočtu nemusíte znát.</span><span class="sxs-lookup"><span data-stu-id="024a2-269">You don't need to know when an asynchronous computation completes.</span></span>
+- <span data-ttu-id="024a2-270">Nezáleží na tom, na kterém vlákně běží asynchronní výpočty.</span><span class="sxs-lookup"><span data-stu-id="024a2-270">You don't care which thread an asynchronous computation runs on.</span></span>
+- <span data-ttu-id="024a2-271">Nemusíte znát ani podávat informace o výjimkách vyplývajících z úkolu.</span><span class="sxs-lookup"><span data-stu-id="024a2-271">You don't have any need to be aware of or report exceptions resulting from the task.</span></span>
+
+<span data-ttu-id="024a2-272">Co je potřeba sledovat:</span><span class="sxs-lookup"><span data-stu-id="024a2-272">What to watch out for:</span></span>
+
+- <span data-ttu-id="024a2-273">Výjimky vyvolané výpočty zahájenými pomocí `Async.Start` nejsou šířeny volajícímu.</span><span class="sxs-lookup"><span data-stu-id="024a2-273">Exceptions raised by computations started with `Async.Start` aren't propagated to the caller.</span></span> <span data-ttu-id="024a2-274">Zásobník volání bude zcela zrušeno.</span><span class="sxs-lookup"><span data-stu-id="024a2-274">The call stack will be completely unwound.</span></span>
+- <span data-ttu-id="024a2-275">Všechny ovlivněné práce (například volání `printfn`) spuštěné s `Async.Start` nezpůsobí, že se projeví v hlavním vlákně provádění programu.</span><span class="sxs-lookup"><span data-stu-id="024a2-275">Any effectful work (such as calling `printfn`) started with `Async.Start` won't cause the effect to happen on the main thread of a program's execution.</span></span>
+
+## <a name="interoperating-with-net"></a><span data-ttu-id="024a2-276">Spolupráce s .NET</span><span class="sxs-lookup"><span data-stu-id="024a2-276">Interoperating with .NET</span></span>
+
+<span data-ttu-id="024a2-277">Možná pracujete s knihovnou .NET nebo C# základem kódu, který používá asynchronní programování typu [Async/await](../../../standard/async.md).</span><span class="sxs-lookup"><span data-stu-id="024a2-277">You may be working with a .NET library or C# codebase that uses [async/await](../../../standard/async.md)-style asynchronous programming.</span></span> <span data-ttu-id="024a2-278">Vzhledem C# k tomu, že většina knihoven .NET používá typy <xref:System.Threading.Tasks.Task%601> a <xref:System.Threading.Tasks.Task> jako základní abstrakce namísto `Async<'T>`, je nutné příčně překročit hranici mezi těmito dvěma přístupy na asynchronii.</span><span class="sxs-lookup"><span data-stu-id="024a2-278">Because C# and the majority of .NET libraries use the <xref:System.Threading.Tasks.Task%601> and <xref:System.Threading.Tasks.Task> types as their core abstractions rather than `Async<'T>`, you must cross a boundary between these two approaches to asynchrony.</span></span>
+
+### <a name="how-to-work-with-net-async-and-taskt"></a><span data-ttu-id="024a2-279">Jak pracovat s .NET Async a `Task<T>`</span><span class="sxs-lookup"><span data-stu-id="024a2-279">How to work with .NET async and `Task<T>`</span></span>
+
+<span data-ttu-id="024a2-280">Práce s asynchronními knihovnami a základem kódu .NET, které používají <xref:System.Threading.Tasks.Task%601> (tj. asynchronní výpočty, které mají návratové hodnoty), jsou jednoduché a mají F#integrovanou podporu pro.</span><span class="sxs-lookup"><span data-stu-id="024a2-280">Working with .NET async libraries and codebases that use <xref:System.Threading.Tasks.Task%601> (that is, async computations that have return values) is straightforward and has built-in support with F#.</span></span>
+
+<span data-ttu-id="024a2-281">K čekání na asynchronní výpočet rozhraní .NET můžete použít funkci `Async.AwaitTask`:</span><span class="sxs-lookup"><span data-stu-id="024a2-281">You can use the `Async.AwaitTask` function to await a .NET asynchronous computation:</span></span>
+
+```fsharp
+let getValueFromLibrary param =
+    async {
+        let! value = DotNetLibrary.GetValueAsync param |> Async.AwaitTask
+        return value
+    }
+```
+
+<span data-ttu-id="024a2-282">K předání asynchronního výpočtu volajícímu rozhraní .NET můžete použít funkci `Async.StartAsTask`:</span><span class="sxs-lookup"><span data-stu-id="024a2-282">You can use the `Async.StartAsTask` function to pass an asynchronous computation to a .NET caller:</span></span>
+
+```fsharp
+let computationForCaller param =
+    async {
+        let! result = getAsyncResult param
+        return result
+    } |> Async.StartAsTask
+```
+
+### <a name="how-to-work-with-net-async-and-task"></a><span data-ttu-id="024a2-283">Jak pracovat s .NET Async a `Task`</span><span class="sxs-lookup"><span data-stu-id="024a2-283">How to work with .NET async and `Task`</span></span>
+
+<span data-ttu-id="024a2-284">Chcete-li pracovat s rozhraními API, která používají <xref:System.Threading.Tasks.Task> (tj. asynchronní výpočty rozhraní .NET, které nevracejí hodnotu), bude pravděpodobně nutné přidat další funkci, která převede `Async<'T>` na <xref:System.Threading.Tasks.Task>:</span><span class="sxs-lookup"><span data-stu-id="024a2-284">To work with APIs that use <xref:System.Threading.Tasks.Task> (that is, .NET async computations that do not return a value), you may need to add an additional function that will convert an `Async<'T>` to a <xref:System.Threading.Tasks.Task>:</span></span>
+
+```fsharp
+module Async =
+    // Async<unit> -> Task
+    let startTaskFromAsyncUnit (comp: Async<unit>) =
+        Async.StartAsTask comp :> Task
+```
+
+<span data-ttu-id="024a2-285">Již existuje `Async.AwaitTask`, který jako vstup přijímá <xref:System.Threading.Tasks.Task>.</span><span class="sxs-lookup"><span data-stu-id="024a2-285">There is already an `Async.AwaitTask` that accepts a <xref:System.Threading.Tasks.Task> as input.</span></span> <span data-ttu-id="024a2-286">S tímto a dříve definovanou funkcí `startTaskFromAsyncUnit` můžete v F# asynchronním výpočtu začít a očekávat <xref:System.Threading.Tasks.Task> typů.</span><span class="sxs-lookup"><span data-stu-id="024a2-286">With this and the previously defined `startTaskFromAsyncUnit` function, you can start and await <xref:System.Threading.Tasks.Task> types from an F# async computation.</span></span>
+
+## <a name="relationship-to-multithreading"></a><span data-ttu-id="024a2-287">Vztah k multithreadingu</span><span class="sxs-lookup"><span data-stu-id="024a2-287">Relationship to multithreading</span></span>
+
+<span data-ttu-id="024a2-288">I když je vlákno v rámci tohoto článku zmíněno, je třeba pamatovat si dva důležité věci:</span><span class="sxs-lookup"><span data-stu-id="024a2-288">Although threading is mentioned throughout this article, there are two important things to remember:</span></span>
+
+1. <span data-ttu-id="024a2-289">Neexistuje žádné spřažení mezi asynchronním výpočtem a vláknem, pokud není explicitně spuštěno v aktuálním vlákně.</span><span class="sxs-lookup"><span data-stu-id="024a2-289">There is no affinity between an asynchronous computation and a thread, unless explicitly started on the current thread.</span></span>
+1. <span data-ttu-id="024a2-290">Asynchronní programování v F# není abstrakce pro multithreading.</span><span class="sxs-lookup"><span data-stu-id="024a2-290">Asynchronous programming in F# is not an abstraction for multi-threading.</span></span>
+
+<span data-ttu-id="024a2-291">Například výpočet může být v závislosti na povaze práce spuštěn ve vlastním vlákně volajícího.</span><span class="sxs-lookup"><span data-stu-id="024a2-291">For example, a computation may actually run on its caller's thread, depending on the nature of the work.</span></span> <span data-ttu-id="024a2-292">Výpočet může také "Přejít" mezi vlákny a jejich vypůjčení po krátkou dobu, aby bylo možné provádět užitečnou práci v obdobích "čekání" (například při přenosu síťového hovoru).</span><span class="sxs-lookup"><span data-stu-id="024a2-292">A computation could also "jump" between threads, borrowing them for a small amount of time to do useful work in between periods of "waiting" (such as when a network call is in transit).</span></span>
+
+<span data-ttu-id="024a2-293">I F# když poskytuje některé možnosti, jak spustit asynchronní výpočet v aktuálním vlákně (nebo explicitně ne na aktuálním vlákně), asynchronii obecně není přidružená k určité strategii vláken.</span><span class="sxs-lookup"><span data-stu-id="024a2-293">Although F# provides some abilities to start an asynchronous computation on the current thread (or explicitly not on the current thread), asynchrony generally is not associated with a particular threading strategy.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="024a2-294">Viz také:</span><span class="sxs-lookup"><span data-stu-id="024a2-294">See also</span></span>
+
+- [<span data-ttu-id="024a2-295">F# Asynchronní programovací model</span><span class="sxs-lookup"><span data-stu-id="024a2-295">The F# Asynchronous Programming Model</span></span>](https://www.microsoft.com/research/publication/the-f-asynchronous-programming-model)
+- [<span data-ttu-id="024a2-296">F# Asynchronní Průvodce jet. com</span><span class="sxs-lookup"><span data-stu-id="024a2-296">Jet.com's F# Async Guide</span></span>](https://medium.com/jettech/f-async-guide-eb3c8a2d180a)
+- [<span data-ttu-id="024a2-297">F#Průvodce asynchronním programováním pro zábavu a zisk</span><span class="sxs-lookup"><span data-stu-id="024a2-297">F# for fun and profit's Asynchronous Programming guide</span></span>](https://fsharpforfunandprofit.com/posts/concurrency-async-and-parallel/)
+- [<span data-ttu-id="024a2-298">Asynchronní v C# a F#: asynchronní možná úskalí vC#</span><span class="sxs-lookup"><span data-stu-id="024a2-298">Async in C# and F#: Asynchronous gotchas in C#</span></span>](http://tomasp.net/blog/csharp-async-gotchas.aspx/)
