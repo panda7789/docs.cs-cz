@@ -1,9 +1,0 @@
-- name: Indexery
-  href: index.md
-  items:
-    - name: Použití indexerů
-      href: using-indexers.md
-    - name: "Indexery v\_rozhraních"
-      href: indexers-in-interfaces.md
-    - name: Porovnání vlastností a indexerů
-      href: comparison-between-properties-and-indexers.md

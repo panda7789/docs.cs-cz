@@ -1,5 +1,0 @@
-- name: Řetězce
-  href: index.md
-  items:
-    - name: 'Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu'
-      href: how-to-determine-whether-a-string-represents-a-numeric-value.md

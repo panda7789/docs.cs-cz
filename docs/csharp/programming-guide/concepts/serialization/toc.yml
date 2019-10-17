@@ -1,9 +1,0 @@
-- name: 'Serializace (C#)'
-  href: index.md
-  items:
-    - name: 'Postupy: Zápis dat objektů do souboru XML'
-      href: how-to-write-object-data-to-an-xml-file.md
-    - name: 'Postupy: Čtení dat objektů ze souboru XML'
-      href: how-to-read-object-data-from-an-xml-file.md
-    - name: 'Návod: Uchování objektu v sadě Visual Studio'
-      href: walkthrough-persisting-an-object-in-visual-studio.md

@@ -1,7 +1,0 @@
-- name: Obory názvů
-  href: index.md
-  items:
-    - name: Používání oboru názvů
-      href: using-namespaces.md
-    - name: 'Postupy: Použití oboru názvů My'
-      href: how-to-use-the-my-namespace.md
