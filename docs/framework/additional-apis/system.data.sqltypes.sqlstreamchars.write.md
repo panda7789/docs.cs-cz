@@ -1,5 +1,5 @@
 ---
-title: Metoda SqlStreamChars.Write (Char [], Int32, Int32) (System.Data.SqlTypes)
+title: SqlStreamChars. Write – metoda (Char [], Int32, Int32) (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,16 +12,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 4084c7161eaa91d78eab32f1c14624e0032cdfcf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d952041122ceb3824712bd81cab7ce4789c9db8
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705906"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395575"
 ---
-# <a name="sqlstreamcharswritechar-int32-int32-method"></a>SqlStreamChars.Write(Char[], Int32, Int32) Method
+# <a name="sqlstreamcharswritechar-int32-int32-method"></a>SqlStreamChars. Write – metoda (Char [], Int32, Int32)
 
-Při přepisu v odvozené třídě, zapíše posloupnost znaků do aktuální datový proud a posune aktuální pozici v rámci tohoto datového proudu o počet napsaných znaků. Sestavení, který obsahuje tato metoda má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
+Při přepsání v odvozené třídě zapíše posloupnost znaků do aktuálního datového proudu a Posune aktuální pozici v rámci tohoto datového proudu o počet zapsaných znaků. Sestavení, které obsahuje tuto metodu, má relaci typu Friend s SQLAccess. dll. Je určena pro použití v SQL Server. U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.
 
 ```csharp
 public abstract void Write (char[] buffer, int offset, int count);
@@ -30,25 +30,25 @@ public abstract void Write (char[] buffer, int offset, int count);
 ## <a name="parameters"></a>Parametry
 
 `buffer`  
-Pole znaků k zápisu.
+Pole znaků, které se má zapsat
 
 `offset`  
-Posun vzhledem k počátku.
+Posun vzhledem ke zdroji.
 
 `count`  
-Počet znaků k zápisu do aktuální datový proud.
+Počet znaků, které mají být zapsány do aktuálního datového proudu.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> `SqlStreamChars.Write` Metoda je privátní a není určena pro použití přímo v kódu.
+> Metoda `SqlStreamChars.Write` je soukromá a není určena pro použití přímo v kódu.
 >
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft nepodporuje použití této metody zápisu do produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Data.SqlTypes>
+**Obor názvů:** <xref:System.Data.SqlTypes>
 
-**Sestavení:** System.Data (v System.Data.dll)
+**Sestavení:** System. data (v System. data. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

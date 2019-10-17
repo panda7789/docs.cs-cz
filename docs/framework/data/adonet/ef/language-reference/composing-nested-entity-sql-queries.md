@@ -2,12 +2,12 @@
 title: Sestavování dotazů s vnořeným jazykem Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: 0ab92c1e41c89f141c3cbd37be3e1e18e64d9666
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: cd41c36853f50597a32d511d455148d649d9eb64
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833918"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395549"
 ---
 # <a name="composing-nested-entity-sql-queries"></a>Sestavování dotazů s vnořeným jazykem Entity SQL
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je bohatě funkční jazyk. Stavebním blokem [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od konvenčního SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezen na tabulkovou sadu výsledků: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje sestavování složitých výrazů, které mohou mít literály, parametry nebo vnořené výrazy. Hodnota ve výrazu může být Parametrizovaná nebo složená z nějakého jiného výrazu.  
@@ -49,7 +49,7 @@ FROM … );
  Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Postup: seřazení sjednocení dvou dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100)).  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
- Vnořené dotazy v klauzuli Project mohou být přeloženy do Kartézskémch dotazů na produkt na serveru. V některých back-end serverech, včetně serveru SQL, to může způsobit, že by tabulka TempDB byla velmi velká, což může negativně ovlivnit výkon serveru.  
+ Vnořené dotazy v klauzuli Project mohou být přeloženy do Kartézskémch dotazů na produkt na serveru. V některých back-end serverech, včetně SQL Server, to může způsobit, že by tabulka TempDB byla velmi velká, což může negativně ovlivnit výkon serveru.  
   
  Následuje příklad takového dotazu:  
   

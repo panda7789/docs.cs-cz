@@ -1,5 +1,5 @@
 ---
-title: Metoda SqlStreamChars.Flush (System.Data.SqlTypes)
+title: SqlStreamChars. Flush – metoda (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,16 +12,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 411bd0036de904dd485d9fb54fa5fd45e3b55dbb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 38ade5ce38cfe5003b2d06c0d8bb2db1a20bc05b
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634337"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395616"
 ---
-# <a name="sqlstreamcharsflush-method"></a>SqlStreamChars.Flush – metoda
+# <a name="sqlstreamcharsflush-method"></a>SqlStreamChars. Flush – metoda
 
-Při přepisu v odvozené třídě, vymaže všechny vyrovnávací paměti pro tento datový proud a způsobí, že všechna data ve vyrovnávací paměti k zápisu do základní zařízení. Sestavení, který obsahuje tato metoda má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
+Při přepsání v odvozené třídě vymaže všechny vyrovnávací paměti pro tento datový proud a způsobí, že všechna data uložená do vyrovnávací paměti budou zapsána do základního zařízení. Sestavení, které obsahuje tuto metodu, má relaci typu Friend s SQLAccess. dll. Je určena pro použití v SQL Server. U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,14 +32,14 @@ public abstract void Flush ();
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> `SqlStreamChars.Flush` Metoda je privátní a není určena pro použití přímo v kódu.
+> Metoda `SqlStreamChars.Flush` je soukromá a není určena pro použití přímo v kódu.
 >
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Data.SqlTypes>
+**Obor názvů:** <xref:System.Data.SqlTypes>
 
-**Sestavení:** System.Data (v System.Data.dll)
+**Sestavení:** System. data (v System. data. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

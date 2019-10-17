@@ -1,5 +1,5 @@
 ---
-title: Metoda SqlStreamChars.Seek (Int64, SeekOrigin) (System.Data.SqlTypes)
+title: SqlStreamChars. Seek – Metoda (Int64, SeekOrigin) (System. data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,16 +12,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 6b69f87da9fb3829d765dc135de1f6c10765b63a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: db8aba0a86c140ba62af8056011226532d415951
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634363"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395600"
 ---
-# <a name="sqlstreamcharsseekint64-seekorigin-method"></a>Metoda SqlStreamChars.Seek (Int64, SeekOrigin)
+# <a name="sqlstreamcharsseekint64-seekorigin-method"></a>SqlStreamChars. Seek – Metoda (Int64, SeekOrigin)
 
-Při přepisu v odvozené třídě, nastaví pozici v rámci aktuální datový proud. Sestavení, který obsahuje tato metoda má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
+Při přepsání v odvozené třídě nastaví pozici v rámci aktuálního datového proudu. Sestavení, které obsahuje tuto metodu, má relaci typu Friend s SQLAccess. dll. Je určena pro použití v SQL Server. U ostatních databází použijte mechanizmus hostování, který poskytuje tato databáze.
 
 ```csharp
 public abstract long Seek (long offset, System.IO.SeekOrigin origin);
@@ -33,24 +33,24 @@ public abstract long Seek (long offset, System.IO.SeekOrigin origin);
 Posun bajtů vzhledem k `origin`.
 
 `origin`\
-Jedna z hodnot výčtu, které určuje referenční bod, ze kterého chcete získat nové pozice.
+Jedna z hodnot výčtu, která určuje referenční bod, z něhož má být získána nová pozice.
 
 ## <a name="returns"></a>Vrací
 
 <xref:System.Int32>\
-Novou pozici v rámci aktuální datový proud.
+Nová pozice v aktuálním datovém proudu.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> `SqlStreamChars.Seek` Metoda je privátní a není určena pro použití přímo v kódu.
+> Metoda `SqlStreamChars.Seek` je soukromá a není určena pro použití přímo v kódu.
 >
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Data.SqlTypes>
+**Obor názvů:** <xref:System.Data.SqlTypes>
 
-**Sestavení:** System.Data (v System.Data.dll)
+**Sestavení:** System. data (v System. data. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.
