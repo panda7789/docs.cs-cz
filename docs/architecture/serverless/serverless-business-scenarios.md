@@ -4,14 +4,14 @@ description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 7024a33f8a7fccd6afa51c126454afedd87cceee
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 8a2301b3c7a5f4a1f465677f31371d5b94783692
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834300"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522387"
 ---
-# <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře bez serveru a případy použití
+# <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
 K dispozici je mnoho případů použití a scénářů pro aplikace bez serveru. Tato kapitola obsahuje ukázky, které ilustrují různé scénáře. Scénáře obsahují odkazy na související dokumentaci a veřejné úložiště zdrojového kódu. Ukázky v této kapitole vám umožní začít pracovat s vlastními vytvářením a implementací řešení bez serveru.
 
@@ -85,17 +85,18 @@ Ukázka se skládá z IoT Hub Azure a funkce Azure Functions. Nová zpráva v Io
 
 Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příkazového testu](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/).
 
-## <a name="recommended-resources"></a>Doporučené materiály
+## <a name="recommended-resources"></a>Doporučené prostředky
 
-* [Generátor Azure Functions Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
-* [Azure IoT Hub – příkazy pro odesílání](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
-* [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
-* [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17)
-* [Import testovacího prostředí CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
-* [Připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue)
-* [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
-* [Přezvednutí a posunutí s využitím Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102)
-* [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener)
+- [Generátor Azure Functions Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
+- [Azure IoT Hub – příkazy pro odesílání](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
+- [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
+- [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17)
+- [Import testovacího prostředí CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
+- [Připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue)
+- [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+- [Přezvednutí a posunutí s využitím Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102)
+- [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener)
 
 >[!div class="step-by-step"]
->[Předchozí](orchestration-patterns.md)@no__t – 1 –[Další](serverless-conclusion.md)
+>[Předchozí](orchestration-patterns.md)
+>[Další](serverless-conclusion.md)

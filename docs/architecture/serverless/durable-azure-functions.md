@@ -4,12 +4,12 @@ description: Trvalé funkce Azure rozšiřuje modul runtime Azure Functions, aby
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
-ms.openlocfilehash: f7ee74926d6658042120113b49dc763383881423
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2c0ad086640409ac187c3aa882add4d6b39b6ff9
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676772"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522860"
 ---
 # <a name="durable-azure-functions"></a>Odolné funkce Azure
 
@@ -27,7 +27,7 @@ Stavové pracovní postupy v Durable Functions můžou být rozdělené na dvě 
 
 Orchestrace jsou v porovnání s jinými styly aktivovaných operací v Azure Functions jedinečné. Durable Functions umožňuje spuštění funkcí, které mohou trvat hodiny nebo dokonce i dny. Tento typ chování je v případě potřeby schopný kontrolovat stav probíhající orchestrace, ukončit ukončení nebo odesílat oznámení o externích událostech.
 
-V takových případech rozšíření Durable Functions poskytuje `DurableOrchestrationClient` třídu, která umožňuje interakci s orchestrací funkcí. Přístup k klientovi Orchestration získáte pomocí `OrchestrationClientAttribute` vazby. Obecně platí, že byste tento atribut zahrnuli do jiného typu triggeru, `HttpTrigger` jako `ServiceBusTrigger`je například nebo. Po aktivaci zdrojové funkce lze pomocí klienta Orchestration spustit funkci nástroje Orchestrator.
+V takových případech rozšíření Durable Functions poskytuje `DurableOrchestrationClient` třídu, která umožňuje interakci s orchestrací funkcí. Přístup k klientovi Orchestration získáte pomocí `OrchestrationClientAttribute` vazby. Obecně platí, že byste tento atribut zahrnuli do jiného typu triggeru, například `HttpTrigger` nebo `ServiceBusTrigger`. Po aktivaci zdrojové funkce lze pomocí klienta Orchestration spustit funkci nástroje Orchestrator.
 
 ```csharp
 [FunctionName("KickOff")]
@@ -47,7 +47,7 @@ public static async Task<HttpResponseMessage> Run(
 
 Poznámka k funkci s OrchestrationTriggerAttribute ve Azure Functions označuje, že funguje jako funkce nástroje Orchestrator. Zodpovídá za správu různých aktivit, které tvoří stavový pracovní postup.
 
-Funkce Orchestrator nemohou používat jiné vazby než OrchestrationTriggerAttribute. Tento atribut lze použít pouze s typem parametru DurableOrchestrationContext. Žádné jiné vstupy nelze použít, protože deserializace vstupů v signatuře funkce není podporována. Chcete-li získat vstupy poskytované klientem Orchestration, je nutné použít\<metodu\> GetInput T.
+Funkce Orchestrator nemohou používat jiné vazby než OrchestrationTriggerAttribute. Tento atribut lze použít pouze s typem parametru DurableOrchestrationContext. Žádné jiné vstupy nelze použít, protože deserializace vstupů v signatuře funkce není podporována. Chcete-li získat vstupy poskytované klientem Orchestration, je nutné použít metodu GetInput \<T \>.
 
 Návratové typy funkcí orchestrace musí být také typu void, Task nebo serializovatelného hodnoty JSON.
 
@@ -69,19 +69,19 @@ public static async Task<string> PlaceOrder([OrchestrationTrigger] DurableOrches
 }
 ```
 
-Můžete spustit a spustit více instancí orchestrace. `StartNewAsync` Volání metody`DurableOrchestrationClient` v spustí novou instanci orchestrace. Metoda vrátí `Task<string>` hodnotu, která se dokončí při zahájení orchestrace. Výjimka typu `TimeoutException` se vyvolá, pokud orchestrace nebyla zahájena během 30 sekund.
+Můžete spustit a spustit více instancí orchestrace. Volání metody `StartNewAsync` v `DurableOrchestrationClient` spouští novou instanci orchestrace. Metoda vrátí `Task<string>`, který se dokončí při zahájení orchestrace. Výjimka typu `TimeoutException` vyvolána, pokud orchestrace nebyla zahájena během 30 sekund.
 
-Dokončený `Task<string>` z `StartNewAsync` by měl obsahovat jedinečné ID instance Orchestration. Toto ID instance lze použít k vyvolání operací na konkrétní orchestraci. Orchestrace se dá dotazovat na stav nebo odeslaná oznámení o událostech.
+Dokončená `Task<string>` z `StartNewAsync` by měla obsahovat jedinečné ID instance Orchestration. Toto ID instance lze použít k vyvolání operací na konkrétní orchestraci. Orchestrace se dá dotazovat na stav nebo odeslaná oznámení o událostech.
 
 ### <a name="the-activity-functions"></a>Funkce aktivity
 
 Funkce aktivity jsou diskrétní operace, které se skládají společně v rámci orchestrace k vytvoření pracovního postupu. Tady je místo, kde se bude provádět většina skutečných prací. Představují obchodní logiku, dlouho běžící procesy a skládanky na větší řešení.
 
-Slouží k přidání poznámky k parametru funkce typu `DurableActivityContext`. `ActivityTriggerAttribute` Použití poznámky informuje modul runtime o tom, že funkce je určena pro použití jako funkce aktivity. Vstupní hodnoty funkcí aktivity jsou načteny pomocí `GetInput<T>` metody `DurableActivityContext` parametru.
+@No__t_0 slouží k přidání poznámky k parametru funkce typu `DurableActivityContext`. Použití poznámky informuje modul runtime o tom, že funkce je určena pro použití jako funkce aktivity. Vstupní hodnoty funkcí aktivity jsou načteny pomocí metody `GetInput<T>` parametru `DurableActivityContext`.
 
 Podobně jako funkce orchestrace, návratové typy funkcí aktivity musí být void, Task nebo serializovatelný hodnota JSON.
 
-Všechny neošetřené výjimky, které jsou vyvolány v rámci funkcí aktivity, budou odeslány až do volání funkce Orchestrator a `TaskFailedException`zobrazí se jako. V tomto okamžiku může být chyba zachycena a zaznamenána v nástroji Orchestrator a aktivitu lze opakovat.
+Všechny neošetřené výjimky, které jsou vyvolány v rámci funkcí aktivity, budou odeslány až do volání funkce Orchestrator a zobrazí se jako `TaskFailedException`. V tomto okamžiku může být chyba zachycena a zaznamenána v nástroji Orchestrator a aktivitu lze opakovat.
 
 ```csharp
 [FunctionName("CheckAndReserveInventory")]
@@ -96,10 +96,10 @@ public static bool CheckAndReserveInventory([ActivityTrigger] DurableActivityCon
 
 ## <a name="recommended-resources"></a>Doporučené prostředky
 
-* [Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
-* [Vazby pro Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-bindings)
-* [Správa instancí v Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-instance-management)
+- [Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
+- [Vazby pro Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-bindings)
+- [Správa instancí v Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-instance-management)
 
 >[!div class="step-by-step"]
->[Předchozí](event-grid.md)Další
->[](orchestration-patterns.md)
+>[Předchozí](event-grid.md)
+>[Další](orchestration-patterns.md)

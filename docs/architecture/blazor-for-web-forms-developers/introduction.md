@@ -4,12 +4,12 @@ description: Úvod do Blazor a psaní plně vrstvených webových aplikací s vy
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 922e72514f0283b66de971d679fab0af436f1c75
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 66b6d57b718c19b0f271c6b3a62a9d4a22d77ae0
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183845"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520308"
 ---
 # <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Úvod do Blazor pro vývojáře webových formulářů ASP.NET
 
@@ -62,25 +62,25 @@ Sám o sobě možnost spouštění kódu .NET v prohlížeči neposkytuje ucelen
 
 Blazor má skvělou podporu nástrojů v aplikaci Visual Studio a Visual Studio Code. Rozhraní zahrnuje také úplný model komponenty uživatelského rozhraní a má Vestavěná zařízení pro:
 
-* Formuláře a ověřování
-* Injektáž závislostí
-* Směrování na straně klienta
-* Rozložení
-* Ladění v prohlížeči
-* Interoperabilita JavaScriptu
+- Formuláře a ověřování
+- Injektáž závislostí
+- Směrování na straně klienta
+- Rozložení
+- Ladění v prohlížeči
+- Interoperabilita JavaScriptu
 
 Blazor má hodně společného s webovými formuláři ASP.NET. Obě architektury nabízejí základní modely programování založené na událostech, které jsou založeny na komponentách. Hlavním rozdílem architektury je, že webové formuláře ASP.NET běží pouze na serveru. Blazor může běžet na klientovi v prohlížeči. Pokud ale připravujete na pozadí webových formulářů ASP.NET, je spousta Blazor, která se dobře seznámí. Blazor je přirozené řešení pro vývojáře webových formulářů ASP.NET, který hledá způsob, jak využít výhod vývoje na straně klienta a open source řešení .NET pro různé platformy.
 
 Tato kniha poskytuje Úvod do Blazor, který je zaměřen konkrétně na vývojáře webových formulářů ASP.NET. Každý koncept Blazor je prezentován v kontextu podobných funkcí a postupů pro webové formuláře v ASP.NET. Na konci této knihy budete rozumět:
 
-* Sestavování aplikací Blazor
-* Jak Blazor funguje.
-* Jak Blazor souvisí s .NET Core.
-* Přiměřené strategie pro migraci stávajících aplikací ASP.NET Web Forms na Blazor, kde je to vhodné.
+- Sestavování aplikací Blazor
+- Jak Blazor funguje.
+- Jak Blazor souvisí s .NET Core.
+- Přiměřené strategie pro migraci stávajících aplikací ASP.NET Web Forms na Blazor, kde je to vhodné.
 
 ## <a name="get-started-with-blazor"></a>Začínáme s Blazor
 
-Začínáme s Blazor je snadné. Přejděte na <https://blazor.net> adresu a postupujte podle odkazů a nainstalujte příslušné šablony projektu .NET Core SDK a Blazor. Najdete tady také pokyny pro nastavení nástrojů Blazor v aplikaci Visual Studio nebo Visual Studio Code.
+Začínáme s Blazor je snadné. Přejděte na <https://blazor.net> a pomocí odkazů nainstalujte příslušné šablony projektů .NET Core SDK a Blazor. Najdete tady také pokyny pro nastavení nástrojů Blazor v aplikaci Visual Studio nebo Visual Studio Code.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)

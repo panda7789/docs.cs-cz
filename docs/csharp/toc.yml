@@ -1,7 +1,11 @@
 - name: 'Průvodce jazykem C#'
   href: index.md
 - name: Začínáme
-  href: getting-started/
+  items:
+    - name: Jak používat tohoto průvodce
+      href: getting-started/index.md
+    - name: 'Úvod do jazyka C# a rozhraní .NET Framework'
+      href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
 - name: Kurzy
   items:
     - name: Přehled
@@ -63,7 +67,31 @@
     - name: Používání atributů
       href: tutorials/attributes.md
 - name: 'Prohlídka jazyka C#'
-  href: tour-of-csharp/
+  items:
+    - name: Úvod
+      href: tour-of-csharp/index.md
+    - name: Struktura programu
+      href: tour-of-csharp/program-structure.md
+    - name: Typy a proměnné
+      href: tour-of-csharp/types-and-variables.md
+    - name: Výrazy
+      href: tour-of-csharp/expressions.md
+    - name: Příkazy
+      href: tour-of-csharp/statements.md
+    - name: Třídy a objekty
+      href: tour-of-csharp/classes-and-objects.md
+    - name: Struktury
+      href: tour-of-csharp/structs.md
+    - name: Pole
+      href: tour-of-csharp/arrays.md
+    - name: Rozhraní
+      href: tour-of-csharp/interfaces.md
+    - name: Výčty
+      href: tour-of-csharp/enums.md
+    - name: Delegáty
+      href: tour-of-csharp/delegates.md
+    - name: Atributy
+      href: tour-of-csharp/attributes.md
 - name: 'Co je nového v jazyce C#'
   items:
     - name: 'C# 8.0'
@@ -139,7 +167,47 @@
         - name: Rozlišování delegátů a událostí
           href: distinguish-delegates-events.md
     - name: LINQ (Language Integrated Query)
-      href: linq/
+      items:
+        - name: Přehled jazyka LINQ
+          href: linq/index.md
+        - name: Základy výrazů dotazů
+          href: linq/query-expression-basics.md
+        - name: 'LINQ v jazyku C#'
+          href: linq/linq-in-csharp.md
+        - name: "Zápis dotazů LINQ v\_jazyce C#"
+          href: linq/write-linq-queries.md
+        - name: Dotazování na kolekci objektů
+          href: linq/query-a-collection-of-objects.md
+        - name: "Vrácení dotazu z\_metody"
+          href: linq/return-a-query-from-a-method.md
+        - name: Ukládání výsledků dotazu do paměti
+          href: linq/store-the-results-of-a-query-in-memory.md
+        - name: Seskupení výsledků dotazu
+          href: linq/group-query-results.md
+        - name: Vytvoření vnořené skupiny
+          href: linq/create-a-nested-group.md
+        - name: Provádění poddotazů na skupinách
+          href: linq/perform-a-subquery-on-a-grouping-operation.md
+        - name: Seskupení výsledků podle sousedních klíčů
+          href: linq/group-results-by-contiguous-keys.md
+        - name: Dynamické určování filtrů predikátů při běhu
+          href: linq/dynamically-specify-predicate-filters-at-runtime.md
+        - name: Provádění vnitřních spojení
+          href: linq/perform-inner-joins.md
+        - name: Provádění seskupených spojení
+          href: linq/perform-grouped-joins.md
+        - name: Provedení levých vnějších spojení
+          href: linq/perform-left-outer-joins.md
+        - name: Řazení výsledků klauzule join
+          href: linq/order-the-results-of-a-join-clause.md
+        - name: Spojení pomocí složených klíčů
+          href: linq/join-by-using-composite-keys.md
+        - name: Provádění vlastních operací spojování
+          href: linq/perform-custom-join-operations.md
+        - name: Zpracování hodnot Null ve výrazech dotazů
+          href: linq/handle-null-values-in-query-expressions.md
+        - name: Zpracování výjimek ve výrazech dotazů
+          href: linq/handle-exceptions-in-query-expressions.md
     - name: Asynchronní programování
       href: async.md
     - name: Porovnávání vzorů
@@ -189,10 +257,1556 @@
     - name: 'Bezpečné přetypování pomocí porovnávání vzorů, operátorů is a as'
       href: how-to/safely-cast-using-pattern-matching-is-and-as-operators.md
 - name: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
-  href: roslyn-sdk/
+  items:
+    - name: Sada .NET Compiler Platform SDK (rozhraní Roslyn API) – přehled
+      href: roslyn-sdk/index.md
+    - name: Pochopení modelu rozhraní API kompilátoru
+      href: roslyn-sdk/compiler-api-model.md
+    - name: Práce se syntaxí
+      href: roslyn-sdk/work-with-syntax.md
+    - name: Práce se sémantikou
+      href: roslyn-sdk/work-with-semantics.md
+    - name: Práce s pracovním prostorem
+      href: roslyn-sdk/work-with-workspace.md
+    - name: Prozkoumání kódu pomocí vizualizéru syntaxe
+      href: roslyn-sdk/syntax-visualizer.md
+    - name: Rychlé starty
+      items:
+        - name: Analýza syntaxe
+          href: roslyn-sdk/get-started/syntax-analysis.md
+        - name: Sémantická analýza
+          href: roslyn-sdk/get-started/semantic-analysis.md
+        - name: Transformace syntaxe
+          href: roslyn-sdk/get-started/syntax-transformation.md
+    - name: Kurzy
+      items:
+        - name: Sestavení vašeho prvního analyzátoru a opravy kódu
+          href: roslyn-sdk/tutorials/how-to-write-csharp-analyzer-code-fix.md
 - name: "Průvodce programováním v\_C#"
-  href: programming-guide/
+  items:
+    - name: Přehled
+      href: programming-guide/index.md
+    - name: "V\_programu v\_jazyce C#"
+      items:
+        - name: "Struktura programu v\_jazyce C#"
+          href: programming-guide/inside-a-program/index.md
+        - name: Hello World! -- váš první program
+          href: programming-guide/inside-a-program/hello-world-your-first-program.md
+        - name: 'Obecná struktura programu v C#'
+          href: programming-guide/inside-a-program/general-structure-of-a-csharp-program.md
+        - name: Názvy identifikátorů
+          href: programming-guide/inside-a-program/identifier-names.md
+        - name: 'Převody kódování C#'
+          href: programming-guide/inside-a-program/coding-conventions.md
+    - name: Argumenty Main() a příkazového řádku
+      items:
+        - name: Přehled
+          href: programming-guide/main-and-command-args/index.md
+        - name: Argumenty příkazového řádku
+          href: programming-guide/main-and-command-args/command-line-arguments.md
+        - name: 'Postupy: Zobrazení argumentů příkazového řádku'
+          href: programming-guide/main-and-command-args/how-to-display-command-line-arguments.md
+        - name: Návratové hodnoty Main()
+          href: programming-guide/main-and-command-args/main-return-values.md
+    - name: Koncepty programování
+      items:
+        - name: Přehled
+          href: programming-guide/concepts/index.md
+        - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/async/index.md
+            - name: Model asynchronního programování úloh
+              href: programming-guide/concepts/async/task-asynchronous-programming-model.md
+            - name: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await'
+              href: programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md
+            - name: 'Postupy: Rozšíření návodu k modifikátoru Async pomocí metody Task.WhenAll'
+              href: programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md
+            - name: 'Postupy: Paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await'
+              href: programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
+            - name: Asynchronní návratové typy
+              href: programming-guide/concepts/async/async-return-types.md
+            - name: Řízení toku v asynchronních programech
+              href: programming-guide/concepts/async/control-flow-in-async-programs.md
+            - name: Zrušení úloh a zpracování dokončených úloh
+              items:
+                - name: Přehled
+                  href: programming-guide/concepts/async/fine-tuning-your-async-application.md
+                - name: Zrušení asynchronní úlohy nebo seznamu úloh
+                  href: programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md
+                - name: "Zrušení úloh s\_modifikátorem Async po uplynutí časového intervalu"
+                  href: programming-guide/concepts/async/cancel-async-tasks-after-a-period-of-time.md
+                - name: "Zrušení zbývajících úloh s\_modifikátorem Async po dokončení jedné z\_nich"
+                  href: programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md
+                - name: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení
+                  href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
+            - name: "Podpora vícenásobného přístupu v\_aplikacích s\_modifikátorem Async"
+              href: programming-guide/concepts/async/handling-reentrancy-in-async-apps.md
+            - name: Použití modifikátoru Async pro přístup k souborům
+              href: programming-guide/concepts/async/using-async-for-file-access.md
+        - name: Atributy
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/attributes/index.md
+            - name: Vytváření vlastních atributů
+              href: programming-guide/concepts/attributes/creating-custom-attributes.md
+            - name: AttributeUsage
+              href: programming-guide/concepts/attributes/attributeusage.md
+            - name: Přístup k atributům pomocí reflexe
+              href: programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md
+            - name: 'Postupy: Vytváření sjednocení C/C++ pomocí atributů'
+              href: programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes.md
+            - name: Běžné atributy
+              href: programming-guide/concepts/attributes/common-attributes.md
+        - name: Informace o volajícím
+          href: programming-guide/concepts/caller-information.md
+        - name: Kolekce
+          href: programming-guide/concepts/collections.md
+        - name: Kovariance a kontravariance
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/covariance-contravariance/index.md
+            - name: Odchylky obecných rozhraní
+              href: programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md
+              items:
+                - name: Vytváření variantních obecných rozhraní
+                  href: programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md
+                - name: Použití odchylky v rozhraní pro obecné kolekce
+                  href: programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md
+            - name: Odchylky v delegátech
+              href: programming-guide/concepts/covariance-contravariance/variance-in-delegates.md
+              items:
+                - name: Použití odchylek v delegátech
+                  href: programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md
+                - name: Použití odchylek pro obecné delegáty Func a Action
+                  href: programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md
+        - name: Stromy výrazů
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/expression-trees/index.md
+            - name: 'Postupy: Provádění stromů výrazů'
+              href: programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md
+            - name: 'Postupy: Úpravy stromů výrazů'
+              href: programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md
+            - name: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů'
+              href: programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md
+            - name: Ladění stromů výrazů v sadě Visual Studio
+              href: programming-guide/concepts/expression-trees/debugging-expression-trees-in-visual-studio.md
+            - name: Syntaxe vlastnosti DebugView
+              href: programming-guide/concepts/expression-trees/debugview-syntax.md
+        - name: Iterátory
+          href: programming-guide/concepts/iterators.md
+        - name: LINQ (Language-Integrated Query)
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/linq/index.md
+            - name: 'Začínáme s dotazy LINQ v jazyce C#'
+              items:
+                - name: Úvod do dotazů LINQ
+                  href: programming-guide/concepts/linq/introduction-to-linq-queries.md
+                - name: LINQ a obecné typy
+                  href: programming-guide/concepts/linq/linq-and-generic-types.md
+                - name: Základní operace dotazů LINQ
+                  href: programming-guide/concepts/linq/basic-linq-query-operations.md
+                - name: Transformace dat pomocí LINQ
+                  href: programming-guide/concepts/linq/data-transformations-with-linq.md
+                - name: Vztahy typů v operacích dotazu LINQ
+                  href: programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md
+                - name: "Syntaxe využívající dotazy a\_syntaxe využívající metody v\_jazyce LINQ"
+                  href: programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md
+                - name: 'Funkce C# podporující LINQ'
+                  href: programming-guide/concepts/linq/features-that-support-linq.md
+                - name: 'Návod: Zápis dotazů v C# (LINQ)'
+                  href: programming-guide/concepts/linq/walkthrough-writing-queries-linq.md
+            - name: Přehled standardních operátorů dotazu
+              items:
+                - name: Přehled
+                  href: programming-guide/concepts/linq/standard-query-operators-overview.md
+                - name: Syntaxe výrazu dotazu pro standardní operátory dotazu
+                  href: programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md
+                - name: Klasifikace standardních operátorů dotazu podle metody provedení
+                  href: programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md
+                - name: Řazení dat
+                  href: programming-guide/concepts/linq/sorting-data.md
+                - name: Množinové operace
+                  href: programming-guide/concepts/linq/set-operations.md
+                - name: Filtrování dat
+                  href: programming-guide/concepts/linq/filtering-data.md
+                - name: Operace kvantifikátoru
+                  href: programming-guide/concepts/linq/quantifier-operations.md
+                - name: Operace projekce
+                  href: programming-guide/concepts/linq/projection-operations.md
+                - name: Segmentace dat
+                  href: programming-guide/concepts/linq/partitioning-data.md
+                - name: Operace sjednocení
+                  href: programming-guide/concepts/linq/join-operations.md
+                - name: Seskupování dat
+                  href: programming-guide/concepts/linq/grouping-data.md
+                - name: Operace generování
+                  href: programming-guide/concepts/linq/generation-operations.md
+                - name: Operace rovnosti
+                  href: programming-guide/concepts/linq/equality-operations.md
+                - name: Operace s elementy
+                  href: programming-guide/concepts/linq/element-operations.md
+                - name: Převádění datových typů
+                  href: programming-guide/concepts/linq/converting-data-types.md
+                - name: Operace zřetězení
+                  href: programming-guide/concepts/linq/concatenation-operations.md
+                - name: Agregační operace
+                  href: programming-guide/concepts/linq/aggregation-operations.md
+            - name: LINQ na objekty
+              items:
+                - name: Přehled
+                  href: programming-guide/concepts/linq/linq-to-objects.md
+                - name: LINQ a řetězce
+                  href: programming-guide/concepts/linq/linq-and-strings.md
+                - name: Články s postupy
+                  items:
+                    - name: 'Postupy: Počítání výskytů slova v řetězci (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na věty obsahující zadanou množinu slov (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na znaky v řetězci (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-for-characters-in-a-string-linq.md
+                    - name: 'Postupy: Kombinace dotazů v jazyce LINQ s regulárními výrazy'
+                      href: programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md
+                    - name: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md
+                    - name: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md
+                    - name: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-reorder-the-fields-of-a-delimited-file-linq.md
+                    - name: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md
+                    - name: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md
+                    - name: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md
+                    - name: 'Postupy: Spojení obsahu z nepodobných souborů (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md
+                    - name: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md
+                - name: LINQ a reflexe
+                  href: programming-guide/concepts/linq/linq-and-reflection.md
+                - name: 'Postupy: Vytvoření dotazu na metadata sestavení s reflexí (LINQ)'
+                  href: programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md
+                - name: LINQ a souborové adresáře
+                  items:
+                    - name: Přehled
+                      href: programming-guide/concepts/linq/linq-and-file-directories.md
+                    - name: 'Postupy: Vytvoření dotazu na soubory s konkrétním atributem či názvem'
+                      href: programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md
+                    - name: 'Postupy: Seskupování souborů podle přípony (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na celkový počet bajtů v sadě složek (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md
+                    - name: 'Postupy: Porovnání obsahu dvou složek (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na největší soubor či soubory v adresářovém stromu (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na duplicitní soubory v adresářovém stromu (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md
+                    - name: 'Postupy: Vytvoření dotazu na obsah souborů ve složce (LINQ)'
+                      href: programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-lin.md
+                - name: 'Postupy: Vytvoření dotazu na ArrayList pomocí jazyka LINQ'
+                  href: programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md
+                - name: 'Postupy: Přidávání vlastních metod do dotazů v jazyce LINQ'
+                  href: programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md
+            - name: Technologie LINQ to XML
+              items:
+                - name: Začínáme (LINQ to XML)
+                  items:
+                    - name: Přehled LINQ to XML
+                      href: programming-guide/concepts/linq/linq-to-xml-overview.md
+                    - name: Technologie LINQ to XML vs. model DOM
+                      href: programming-guide/concepts/linq/linq-to-xml-vs-dom.md
+                    - name: Technologie LINQ to XML vs. jiné technologie XML
+                      href: programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md
+                - name: Průvodce programováním (LINQ to XML)
+                  items:
+                    - name: Přehled programování LINQ to XML
+                      items:
+                        - name: Funkční vs. procedurální programování (LINQ to XML)
+                          href: programming-guide/concepts/linq/functional-vs-procedural-programming-linq-to-xml.md
+                        - name: Přehled tříd LINQ to XML
+                          href: programming-guide/concepts/linq/linq-to-xml-classes-overview.md
+                        - name: Přehled třídy XElement
+                          href: programming-guide/concepts/linq/xelement-class-overview.md
+                        - name: Přehled třídy XAttribute
+                          href: programming-guide/concepts/linq/xattribute-class-overview.md
+                        - name: Přehled třídy XDocument
+                          href: programming-guide/concepts/linq/xdocument-class-overview.md
+                        - name: 'Postupy: Příklady vytvoření LINQ to XML'
+                          href: programming-guide/concepts/linq/how-to-build-linq-to-xml-examples.md
+                    - name: Stromy XML
+                      items:
+                        - name: funkční konstrukce (LINQ to XML)
+                          href: programming-guide/concepts/linq/functional-construction-linq-to-xml.md
+                        - name: 'Vytváření stromů XML v jazyce C# (LINQ to XML)'
+                          href: programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md
+                        - name: Analýza XML
+                          items:
+                            - name: 'Postupy: Analýza řetězce'
+                              href: programming-guide/concepts/linq/how-to-parse-a-string.md
+                            - name: 'Postupy: Načtení XML ze souboru'
+                              href: programming-guide/concepts/linq/how-to-load-xml-from-a-file.md
+                            - name: Zachování prázdných znaků při načítání nebo analýze XML
+                              href: programming-guide/concepts/linq/preserving-white-space-while-loading-or-parsing-xml1.md
+                            - name: 'Postupy: Zachycení chyb při analýze'
+                              href: programming-guide/concepts/linq/how-to-catch-parsing-errors.md
+                            - name: 'Postupy: Vytvoření stromu ze třídy XmlReader'
+                              href: programming-guide/concepts/linq/how-to-create-a-tree-from-an-xmlreader.md
+                            - name: 'Postupy: Streamování fragmentů XML ze třídy XmlReader'
+                              href: programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md
+                        - name: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md
+                        - name: 'Postupy: Ověření pomocí XSD (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md
+                        - name: Platný obsah objektů XElement a XDocument
+                          href: programming-guide/concepts/linq/valid-content-of-xelement-and-xdocument-objects3.md
+                    - name: Práce s názvovými prostory XML
+                      items:
+                        - name: Přehled názvových prostorů (LINQ to XML)
+                          href: programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md
+                        - name: 'Postupy: Vytvoření dokumentu pomocí názvových prostorů (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-create-a-document-with-namespaces-linq-to-xml.md
+                        - name: 'Postupy: Řízení předpon názvového prostoru (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml.md
+                        - name: 'Obor výchozích názvových prostorů v jazyce C#'
+                          href: programming-guide/concepts/linq/scope-of-default-namespaces.md
+                        - name: 'Postupy: Vytváření dotazů na XML v názvových prostorech'
+                          href: programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md
+                    - name: Serializace stromů XML
+                      items:
+                        - name: Zachování prázdných znaků při serializaci
+                          href: programming-guide/concepts/linq/preserving-white-space-while-serializing.md
+                        - name: Serializace pomocí deklarace XML
+                          href: programming-guide/concepts/linq/serializing-with-an-xml-declaration.md
+                        - name: 'Serializace do tříd File, TextWriter a XmlWriter'
+                          href: programming-guide/concepts/linq/serializing-to-files-textwriters-and-xmlwriters.md
+                        - name: Serializace do třídy XmlReader (vyvolání XSLT)
+                          href: programming-guide/concepts/linq/serializing-to-an-xmlreader-invoking-xslt.md
+                    - name: Osy LINQ to XML
+                      items:
+                        - name: Přehled os LINQ to XML
+                          href: programming-guide/concepts/linq/linq-to-xml-axes-overview.md
+                        - name: 'Postupy: Načtení kolekce elementů (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-a-collection-of-elements-linq-to-xml.md
+                        - name: 'Postupy: Načtení hodnoty elementu (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md
+                        - name: 'Postupy: Filtrování názvů elementů (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-filter-on-element-names-linq-to-xml.md
+                        - name: 'Postupy: Zřetězení volání metod osy (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-chain-axis-method-calls-linq-to-xml.md
+                        - name: 'Postupy: Načtení jednoho podřízeného elementu (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-a-single-child-element-linq-to-xml.md
+                        - name: 'Postupy: Načtení kolekce atributů (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-a-collection-of-attributes-linq-to-xml.md
+                        - name: 'Postupy: Načtení jednoho atributu (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-a-single-attribute-linq-to-xml.md
+                        - name: 'Postupy: Načtení hodnoty atributu (LINQ to XML)'
+                          href: programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-attribute-linq-to-xml.md
+                        - name: 'Postupy: Načtení mělké hodnoty elementu'
+                          href: programming-guide/concepts/linq/how-to-retrieve-the-shallow-value-of-an-element.md
+                    - name: Dotazování na stromy XML
+                      items:
+                        - name: Základní dotazy (LINQ to XML)
+                          items:
+                            - name: 'Postupy: Vyhledání elementu s konkrétním atributem'
+                              href: programming-guide/concepts/linq/how-to-find-an-element-with-a-specific-attribute.md
+                            - name: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem'
+                              href: programming-guide/concepts/linq/how-to-find-an-element-with-a-specific-child-element.md
+                            - name: Dotazování na XDocument vs. dotazování na XElement
+                              href: programming-guide/concepts/linq/querying-an-xdocument-vs-querying-an-xelement.md
+                            - name: 'Postupy: Vyhledání potomků s konkrétním názvem elementu'
+                              href: programming-guide/concepts/linq/how-to-find-descendants-with-a-specific-element-name.md
+                            - name: 'Postupy: Vyhledání jednoho potomka pomocí metody Descendants'
+                              href: programming-guide/concepts/linq/how-to-find-a-single-descendant-using-the-descendants-method.md
+                            - name: 'Postupy: Vytváření dotazů s komplexním filtrováním'
+                              href: programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md
+                            - name: 'Postupy: Filtrování volitelného elementu'
+                              href: programming-guide/concepts/linq/how-to-filter-on-an-optional-element.md
+                            - name: 'Postupy: Vyhledání všech uzlů v názvovém prostoru'
+                              href: programming-guide/concepts/linq/how-to-find-all-nodes-in-a-namespace.md
+                            - name: 'Postupy: Řazení elementů'
+                              href: programming-guide/concepts/linq/how-to-sort-elements.md
+                            - name: 'Postupy: Řazení elementů u více klíčů'
+                              href: programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md
+                            - name: 'Postupy: Výpočet mezilehlých hodnot'
+                              href: programming-guide/concepts/linq/how-to-calculate-intermediate-values.md
+                            - name: 'Postupy: Vytvoření dotazu, který vyhledá elementy na základě kontextu'
+                              href: programming-guide/concepts/linq/how-to-write-a-query-that-finds-elements-based-on-context.md
+                            - name: 'Postupy: Ladění prázdných sad výsledků dotazu'
+                              href: programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md
+                        - name: Projekce a transformace (LINQ to XML)
+                          items:
+                            - name: 'Postupy: Práce se slovníky pomocí LINQ to XML'
+                              href: programming-guide/concepts/linq/how-to-work-with-dictionaries-using-linq-to-xml.md
+                            - name: 'Postupy: Transformace tvaru stromu XML'
+                              href: programming-guide/concepts/linq/how-to-transform-the-shape-of-an-xml-tree.md
+                            - name: 'Postupy: Řízení typu projekce'
+                              href: programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md
+                            - name: 'Postupy: Projektování nového typu (LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-project-a-new-type-linq-to-xml.md
+                            - name: 'Postupy: Projektování grafu objektu'
+                              href: programming-guide/concepts/linq/how-to-project-an-object-graph.md
+                            - name: 'Postupy: Projektování anonymního typu'
+                              href: programming-guide/concepts/linq/how-to-project-an-anonymous-type.md
+                            - name: 'Postupy: Generování textových souborů z XML'
+                              href: programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md
+                            - name: 'Postupy: Generování XML ze souborů CSV'
+                              href: programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md
+                        - name: Pokročilé techniky dotazování (LINQ to XML)
+                          items:
+                            - name: 'Postupy: Spojení dvou kolekcí (LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md
+                            - name: 'Postupy: Vytvoření hierarchie pomocí seskupení'
+                              href: programming-guide/concepts/linq/how-to-create-hierarchy-using-grouping.md
+                            - name: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath'
+                              href: programming-guide/concepts/linq/how-to-query-linq-to-xml-using-xpath.md
+                            - name: 'Postupy: Zápis metody osy LINQ to XML'
+                              href: programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md
+                            - name: 'Postupy: Provádění transformací streamovaní textu do XML'
+                              href: programming-guide/concepts/linq/how-to-perform-streaming-transformations-of-text-to-xml.md
+                            - name: 'Postupy: Výpis všech uzlů ve stromu'
+                              href: programming-guide/concepts/linq/how-to-list-all-nodes-in-a-tree.md
+                            - name: 'Postupy: Načtení odstavců z dokumentu Office Open XML'
+                              href: programming-guide/concepts/linq/how-to-retrieve-paragraphs-from-an-office-open-xml-document.md
+                            - name: 'Postupy: Změna dokumentu Office Open XML'
+                              href: programming-guide/concepts/linq/how-to-modify-an-office-open-xml-document.md
+                            - name: 'Postupy: Naplnění stromu XML ze souborového systému'
+                              href: programming-guide/concepts/linq/how-to-populate-an-xml-tree-from-the-file-system.md
+                        - name: LINQ to XML pro uživatele jazyka XPath
+                          items:
+                            - name: Porovnání jazyka XPath a technologie LINQ to XML
+                              href: programming-guide/concepts/linq/comparison-of-xpath-and-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání podřízeného elementu (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-a-child-element-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání seznamu podřízených elementů (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-a-list-of-child-elements-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-the-root-element-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání následnických elementů (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-descendant-elements-xpath-linq-to-xml.md
+                            - name: 'Postupy: Filtrování atributu (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-filter-on-an-attribute-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-related-elements-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání elementů v názvovém prostoru (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-elements-in-a-namespace-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání předcházejících elementů na stejné úrovni (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-preceding-siblings-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-descendants-of-a-child-element-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-sibling-nodes-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-child-elements-based-on-position-xpath-linq-to-xml.md
+                            - name: 'Postupy: Vyhledání bezprostředně předcházejícího uzlu na stejné úrovni (XPath – LINQ to XML)'
+                              href: programming-guide/concepts/linq/how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml.md
+                        - name: Čistě funkční transformace XML
+                          items:
+                            - name: Úvod k čistě funkčním transformacím
+                              href: programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md
+                            - name: Koncepty a terminologie (funkční transformace)
+                              href: programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md
+                            - name: Funkční programování vs. imperativní programování
+                              href: programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md
+                            - name: Refaktoring do čistých funkcí
+                              href: programming-guide/concepts/linq/refactoring-into-pure-functions.md
+                            - name: Použitelnost funkční transformace
+                              href: programming-guide/concepts/linq/applicability-of-functional-transformation.md
+                            - name: Funkční transformace XML
+                              href: programming-guide/concepts/linq/functional-transformation-of-xml.md
+                            - name: 'Kurz: Zřetězení dotazů'
+                              items:
+                                - name: Odložené provedení a opožděné vyhodnocení v LINQ to XML
+                                  href: programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
+                                - name: Příklad odloženého provedení
+                                  href: programming-guide/concepts/linq/deferred-execution-example.md
+                                - name: Příklad řetězení dotazů
+                                  href: programming-guide/concepts/linq/chaining-queries-example.md
+                                - name: Přechodná materializace
+                                  href: programming-guide/concepts/linq/intermediate-materialization.md
+                                - name: Zřetězení standardních operátorů dotazů
+                                  href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
+                            - name: 'Kurz: Zřetězení dotazů'
+                              items:
+                                - name: Odložené provedení a opožděné vyhodnocení v LINQ to XML
+                                  href: programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
+                                - name: Příklad odloženého provedení
+                                  href: programming-guide/concepts/linq/deferred-execution-example.md
+                                - name: Příklad řetězení dotazů
+                                  href: programming-guide/concepts/linq/chaining-queries-example.md
+                                - name: Přechodná materializace
+                                  href: programming-guide/concepts/linq/intermediate-materialization.md
+                                - name: Zřetězení standardních operátorů dotazů
+                                  href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
+                            - name: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML'
+                              items:
+                                - name: Tvar dokumentů WordprocessingML
+                                  href: programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md
+                                - name: Vytvoření zdrojového dokumentu Office Open XML
+                                  href: programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md
+                                - name: Vyhledání výchozího stylu odstavce
+                                  href: programming-guide/concepts/linq/finding-the-default-paragraph-style.md
+                                - name: Načtení odstavců a jejich stylů
+                                  href: programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md
+                                - name: Načtení textu odstavců
+                                  href: programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md
+                                - name: Refaktoring pomocí rozšiřující metody
+                                  href: programming-guide/concepts/linq/refactoring-using-an-extension-method.md
+                                - name: Refaktoring pomocí čisté funkce
+                                  href: programming-guide/concepts/linq/refactoring-using-a-pure-function.md
+                                - name: Projektování XML v odlišném tvaru
+                                  href: programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md
+                                - name: Vyhledání textu v dokumentech Wordu
+                                  href: programming-guide/concepts/linq/finding-text-in-word-documents.md
+                                - name: Podrobnosti o dokumentech Office Open XML WordprocessingML
+                                  items:
+                                    - name: Dokument WordprocessingML se styly
+                                      href: programming-guide/concepts/linq/wordprocessingml-document-with-styles.md
+                                    - name: Část stylu dokumentu WordprocessingML
+                                      href: programming-guide/concepts/linq/style-part-of-a-wordprocessingml-document.md
+                                    - name: 'Příklad, jehož výstupem jsou části dokumentu Office Open XML'
+                                      href: programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md
+                    - name: Změna stromů XML (LINQ to XML)
+                      items:
+                        - name: Změna stromu XML v paměti vs. funkční konstrukce (LINQ to XML)
+                          href: programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md
+                        - name: 'Přidání elementů, atributů a uzlů do stromu XML'
+                          href: programming-guide/concepts/linq/adding-elements-attributes-and-nodes-to-an-xml-tree.md
+                        - name: 'Změna elementů, atributů a uzlů ve stromu XML'
+                          href: programming-guide/concepts/linq/modifying-elements-attributes-and-nodes-in-an-xml-tree.md
+                        - name: 'Odebrání elementů, atributů a uzlů ze stromu XML'
+                          href: programming-guide/concepts/linq/removing-elements-attributes-and-nodes-from-an-xml-tree.md
+                        - name: Zachování dvojic název a hodnota
+                          href: programming-guide/concepts/linq/maintaining-name-value-pairs.md
+                        - name: 'Postupy: Změna názvového prostoru pro celý strom XML'
+                          href: programming-guide/concepts/linq/how-to-change-the-namespace-for-an-entire-xml-tree.md
+                    - name: Výkon (LINQ to XML)
+                      items:
+                        - name: Výkon zřetězených dotazů (LINQ to XML)
+                          href: programming-guide/concepts/linq/performance-of-chained-queries-linq-to-xml.md
+                        - name: Atomizované objekty XName a XNamespace (LINQ to XML)
+                          href: programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md
+                        - name: Předběžná atomizace objektů XName (LINQ to XML)
+                          href: programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md
+                        - name: Staticky kompilované dotazy (LINQ to XML)
+                          href: programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md
+                    - name: Rozšířené programování LINQ to XML
+                      items:
+                        - name: Poznámky v LINQ to XML
+                          href: programming-guide/concepts/linq/linq-to-xml-annotations.md
+                        - name: Události LINQ to XML
+                          href: programming-guide/concepts/linq/linq-to-xml-events.md
+                        - name: Programování s uzly
+                          href: programming-guide/concepts/linq/programming-with-nodes.md
+                        - name: Chyby smíšeného deklarativního a imperativního kódu (LINQ to XML)
+                          href: programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md
+                        - name: 'Postupy: Streamování fragmentů XML pomocí přístupu k informacím hlavičky'
+                          href: programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md
+                        - name: 'Postupy: Provedení streamované transformace velkých dokumentů XML'
+                          href: programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md
+                        - name: 'Postupy: Čtení a zápis kódovaného dokumentu'
+                          href: programming-guide/concepts/linq/how-to-read-and-write-an-encoded-document.md
+                        - name: Transformace stromu XML pomocí XSLT
+                          href: programming-guide/concepts/linq/using-xslt-to-transform-an-xml-tree.md
+                        - name: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek'
+                          href: programming-guide/concepts/linq/how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style.md
+                        - name: 'Serializace grafů objektů, které obsahují objekty XElement'
+                          items:
+                            - name: 'Postupy: Serializace pomocí třídy XmlSerializer'
+                              href: programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md
+                            - name: 'Postupy: Serializace pomocí třídy DataContractSerializer'
+                              href: programming-guide/concepts/linq/how-to-serialize-using-datacontractserializer.md
+                    - name: Zabezpečení LINQ to XML
+                      href: programming-guide/concepts/linq/linq-to-xml-security.md
+                    - name: Ukázkové dokumenty XML (LINQ to XML)
+                      items:
+                        - name: 'Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md
+                        - name: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
+                          href: programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md
+                        - name: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md
+                        - name: 'Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru'
+                          href: programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md
+                        - name: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md
+                        - name: 'Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru'
+                          href: programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace1.md
+                        - name: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md
+                        - name: 'Ukázkový soubor XSD: Zákazníci a objednávky'
+                          href: programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md
+                        - name: 'Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru'
+                          href: programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md
+                        - name: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md
+                        - name: 'Ukázkový soubor XML: Numerická data v názvovém prostoru'
+                          href: programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md
+                        - name: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
+                          href: programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md
+                        - name: 'Ukázkový soubor XML: Konsolidované nákupní objednávky'
+                          href: programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md
+                - name: Referenční informace (LINQ to XML)
+                  href: programming-guide/concepts/linq/reference-linq-to-xml.md
+            - name: LINQ to ADO.NET (stránka portálu)
+              href: programming-guide/concepts/linq/linq-to-adonet-portal-page.md
+            - name: Povolení zdroje dat pro dotazy LINQ
+              href: programming-guide/concepts/linq/enabling-a-data-source-for-linq-querying1.md
+            - name: Podpora Visual Studio IDE a nástrojů pro LINQ
+              href: programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md
+        - name: Objektově orientované programování
+          href: programming-guide/concepts/object-oriented-programming.md
+        - name: Reflexe
+          href: programming-guide/concepts/reflection.md
+        - name: 'Serializace (C#)'
+          items:
+            - name: Přehled
+              href: programming-guide/concepts/serialization/index.md
+            - name: 'Postupy: Zápis dat objektů do souboru XML'
+              href: programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md
+            - name: 'Postupy: Čtení dat objektů ze souboru XML'
+              href: programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md
+            - name: 'Návod: Uchování objektu v sadě Visual Studio'
+              href: programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md
+    - name: 'Příkazy, výrazy a operátory'
+      items:
+        - name: Přehled
+          href: programming-guide/statements-expressions-operators/index.md
+        - name: Příkazy
+          href: programming-guide/statements-expressions-operators/statements.md
+        - name: Výrazy
+          href: programming-guide/statements-expressions-operators/expressions.md
+        - name: Členové tvoření výrazy
+          href: programming-guide/statements-expressions-operators/expression-bodied-members.md
+        - name: Anonymní funkce
+          items:
+            - name: Přehled
+              href: programming-guide/statements-expressions-operators/anonymous-functions.md
+            - name: Výrazy lambda
+              href: programming-guide/statements-expressions-operators/lambda-expressions.md
+            - name: "Postupy: Použití výrazů lambda v\_dotazu"
+              href: programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md
+        - name: Rovnost a porovnání rovnosti
+          items:
+            - name: Porovnání rovnosti
+              href: programming-guide/statements-expressions-operators/equality-comparisons.md
+            - name: 'Postupy: Definování rovnosti hodnoty pro typ'
+              href: programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md
+            - name: 'Postupy: Testování rovnosti (identity) odkazů'
+              href: programming-guide/statements-expressions-operators/how-to-test-for-reference-equality-identity.md
+    - name: Typy
+      items:
+        - name: Použití a definování typů
+          href: programming-guide/types/index.md
+        - name: Přetypování a převody typů
+          href: programming-guide/types/casting-and-type-conversions.md
+        - name: Zabalení a rozbalení
+          href: programming-guide/types/boxing-and-unboxing.md
+        - name: 'Postupy: Převedení pole bajtů na typ int'
+          href: programming-guide/types/how-to-convert-a-byte-array-to-an-int.md
+        - name: 'Postupy: Převedení řetězce na číslo'
+          href: programming-guide/types/how-to-convert-a-string-to-a-number.md
+        - name: 'Postupy: Převody mezi hexadecimálními řetězci a číselnými typy'
+          href: programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md
+        - name: Použití typu dynamic
+          href: programming-guide/types/using-type-dynamic.md
+        - name: 'Návod: Vytváření a používání dynamických objektů (C# a Visual Basic)'
+          href: programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md
+    - name: "Třídy a\_struktury"
+      items:
+        - name: Přehled
+          href: programming-guide/classes-and-structs/index.md
+        - name: Třídy
+          href: programming-guide/classes-and-structs/classes.md
+        - name: Objekty
+          href: programming-guide/classes-and-structs/objects.md
+        - name: Struktury
+          items:
+            - name: Přehled
+              href: programming-guide/classes-and-structs/structs.md
+            - name: Použití struktur
+              href: programming-guide/classes-and-structs/using-structs.md
+        - name: Dědičnost
+          href: programming-guide/classes-and-structs/inheritance.md
+        - name: Polymorfismus
+          items:
+            - name: Přehled
+              href: programming-guide/classes-and-structs/polymorphism.md
+            - name: Správa verzí pomocí klíčových slov override a new
+              href: programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md
+            - name: 'Znalost, kdy použít klíčová slova override a new'
+              href: programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md
+            - name: 'Postupy: Potlačení metody ToString'
+              href: programming-guide/classes-and-structs/how-to-override-the-tostring-method.md
+        - name: Členové
+          items:
+            - name: Přehled členů
+              href: programming-guide/classes-and-structs/members.md
+            - name: Abstraktní a uzavřené třídy a jejich členové
+              href: programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md
+            - name: Statické třídy a jejich členové
+              href: programming-guide/classes-and-structs/static-classes-and-static-class-members.md
+            - name: Modifikátory přístupu
+              href: programming-guide/classes-and-structs/access-modifiers.md
+            - name: Pole
+              href: programming-guide/classes-and-structs/fields.md
+            - name: Konstanty
+              href: programming-guide/classes-and-structs/constants.md
+            - name: 'Postupy: Definování abstraktních vlastností'
+              href: programming-guide/classes-and-structs/how-to-define-abstract-properties.md
+            - name: "Postupy: Definování konstant v\_jazyce C#"
+              href: programming-guide/classes-and-structs/how-to-define-constants.md
+        - name: Vlastnosti
+          items:
+            - name: Přehled vlastností
+              href: programming-guide/classes-and-structs/properties.md
+            - name: Použití vlastností
+              href: programming-guide/classes-and-structs/using-properties.md
+            - name: Vlastnosti rozhraní
+              href: programming-guide/classes-and-structs/interface-properties.md
+            - name: Omezení přístupnosti přístupového objektu
+              href: programming-guide/classes-and-structs/restricting-accessor-accessibility.md
+            - name: 'Postupy: Deklarování a použití vlastností čtení/zápisu'
+              href: programming-guide/classes-and-structs/how-to-declare-and-use-read-write-properties.md
+            - name: Automaticky implementované vlastnosti
+              href: programming-guide/classes-and-structs/auto-implemented-properties.md
+            - name: "Postupy: Implementace lehké třídy s\_automaticky implementovanými vlastnostmi"
+              href: programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md
+        - name: Metody
+          items:
+            - name: Přehled metod
+              href: programming-guide/classes-and-structs/methods.md
+            - name: Lokální funkce
+              href: programming-guide/classes-and-structs/local-functions.md
+            - name: Návratové hodnoty podle odkazu a lokální proměnné podle odkazu
+              href: programming-guide/classes-and-structs/ref-returns.md
+            - name: Parametry
+              items:
+                - name: Předávání parametrů
+                  href: programming-guide/classes-and-structs/passing-parameters.md
+                - name: Předávání parametrů typu hodnoty
+                  href: programming-guide/classes-and-structs/passing-value-type-parameters.md
+                - name: Předávání parametrů typu odkazu
+                  href: programming-guide/classes-and-structs/passing-reference-type-parameters.md
+                - name: 'Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na třídu metodě'
+                  href: programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md
+            - name: Implicitně typované lokální proměnné
+              href: programming-guide/classes-and-structs/implicitly-typed-local-variables.md
+            - name: 'Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu'
+              href: programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md
+            - name: Metody rozšíření
+              href: programming-guide/classes-and-structs/extension-methods.md
+            - name: 'Postupy: Implementace a volání vlastní metody rozšíření'
+              href: programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md
+            - name: 'Postupy: Vytvoření nové metody pro výčet'
+              href: programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md
+            - name: Pojmenované a nepovinné argumenty
+              href: programming-guide/classes-and-structs/named-and-optional-arguments.md
+            - name: "Postupy: Použití pojmenovaných a nepovinných argumentů v\_programování pro sadu Office"
+              href: programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md
+        - name: Konstruktory
+          items:
+            - name: Přehled konstruktorů
+              href: programming-guide/classes-and-structs/constructors.md
+            - name: Použití konstruktorů
+              href: programming-guide/classes-and-structs/using-constructors.md
+            - name: Konstruktory instancí
+              href: programming-guide/classes-and-structs/instance-constructors.md
+            - name: Soukromé konstruktory
+              href: programming-guide/classes-and-structs/private-constructors.md
+            - name: Statické konstruktory
+              href: programming-guide/classes-and-structs/static-constructors.md
+            - name: 'Postupy: Zápis kopírovacího konstruktoru'
+              href: programming-guide/classes-and-structs/how-to-write-a-copy-constructor.md
+        - name: Finalizační metody
+          href: programming-guide/classes-and-structs/destructors.md
+        - name: Inicializátory objektu a kolekce
+          href: programming-guide/classes-and-structs/object-and-collection-initializers.md
+        - name: 'Postupy: Inicializace objektů pomocí inicializátoru objektů'
+          href: programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md
+        - name: 'Postupy: Inicializace slovníku pomocí inicializátoru kolekce'
+          href: programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md
+        - name: Vnořené typy
+          href: programming-guide/classes-and-structs/nested-types.md
+        - name: Částečné třídy a metody
+          href: programming-guide/classes-and-structs/partial-classes-and-methods.md
+        - name: Anonymní typy
+          href: programming-guide/classes-and-structs/anonymous-types.md
+        - name: "Postupy: Vrácení podmnožin vlastností elementu v\_dotazu"
+          href: programming-guide/classes-and-structs/how-to-return-subsets-of-element-properties-in-a-query.md
+    - name: Rozhraní
+      items:
+        - name: Přehled
+          href: programming-guide/interfaces/index.md
+        - name: Implementace explicitního rozhraní
+          href: programming-guide/interfaces/explicit-interface-implementation.md
+        - name: 'Postupy: Explicitní implementace členů rozhraní'
+          href: programming-guide/interfaces/how-to-explicitly-implement-interface-members.md
+        - name: 'Postupy: Explicitní implementace členů dvou rozhraní'
+          href: programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md
+    - name: Výčtové typy
+      href: programming-guide/enumeration-types.md
+    - name: Delegáty
+      items:
+        - name: Přehled
+          href: programming-guide/delegates/index.md
+        - name: Použití delegátů
+          href: programming-guide/delegates/using-delegates.md
+        - name: "Delegáti s\_pojmenovanými vs. Anonymní metody"
+          href: programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md
+        - name: "Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v\_C#)"
+          href: programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md
+        - name: 'Postupy: Deklarování, vytváření instancí a použití delegáta'
+          href: programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md
+    - name: Pole
+      items:
+        - name: Přehled
+          href: programming-guide/arrays/index.md
+        - name: Pole jako objekty
+          href: programming-guide/arrays/arrays-as-objects.md
+        - name: Jednorozměrná pole
+          href: programming-guide/arrays/single-dimensional-arrays.md
+        - name: Vícerozměrná pole
+          href: programming-guide/arrays/multidimensional-arrays.md
+        - name: Vícenásobná pole
+          href: programming-guide/arrays/jagged-arrays.md
+        - name: Použití příkazu foreach s poli
+          href: programming-guide/arrays/using-foreach-with-arrays.md
+        - name: Předávání polí jako argumentů
+          href: programming-guide/arrays/passing-arrays-as-arguments.md
+        - name: Implicitně typovaná pole
+          href: programming-guide/arrays/implicitly-typed-arrays.md
+    - name: Řetězce
+      items:
+        - name: Programování s řetězci
+          href: programming-guide/strings/index.md
+        - name: 'Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu'
+          href: programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md
+    - name: Indexery
+      items:
+        - name: Přehled
+          href: programming-guide/indexers/index.md
+        - name: Použití indexerů
+          href: programming-guide/indexers/using-indexers.md
+        - name: "Indexery v\_rozhraních"
+          href: programming-guide/indexers/indexers-in-interfaces.md
+        - name: Porovnání mezi vlastnostmi a indexery
+          href: programming-guide/indexers/comparison-between-properties-and-indexers.md
+    - name: Události
+      items:
+        - name: Přehled
+          href: programming-guide/events/index.md
+        - name: 'Postupy: Přihlášení a odhlášení odběru událostí'
+          href: programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md
+        - name: 'Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework'
+          href: programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md
+        - name: 'Postupy: Vyvolávání událostí třídy Base v odvozených třídách'
+          href: programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md
+        - name: 'Postupy: Implementace událostí rozhraní'
+          href: programming-guide/events/how-to-implement-interface-events.md
+        - name: 'Postupy: Implementace vlastních přístupových objektů událostí'
+          href: programming-guide/events/how-to-implement-custom-event-accessors.md
+    - name: Obecné typy
+      items:
+        - name: Přehled
+          href: programming-guide/generics/index.md
+        - name: Parametry obecného typu
+          href: programming-guide/generics/generic-type-parameters.md
+        - name: Omezení parametrů typů
+          href: programming-guide/generics/constraints-on-type-parameters.md
+        - name: Obecné třídy
+          href: programming-guide/generics/generic-classes.md
+        - name: Obecná rozhraní
+          href: programming-guide/generics/generic-interfaces.md
+        - name: Obecné metody
+          href: programming-guide/generics/generic-methods.md
+        - name: Obecné typy a pole
+          href: programming-guide/generics/generics-and-arrays.md
+        - name: Obecní delegáti
+          href: programming-guide/generics/generic-delegates.md
+        - name: 'Rozdíly mezi šablonami C++ a obecnými typy C#'
+          href: programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md
+        - name: Obecné typy v běhovém prostředí
+          href: programming-guide/generics/generics-in-the-run-time.md
+        - name: Obecné typy a reflexe
+          href: programming-guide/generics/generics-and-reflection.md
+        - name: Obecné typy a atributy
+          href: programming-guide/generics/generics-and-attributes.md
+    - name: Jmenné prostory
+      items:
+        - name: Přehled
+          href: programming-guide/namespaces/index.md
+        - name: Používání oboru názvů
+          href: programming-guide/namespaces/using-namespaces.md
+        - name: 'Postupy: Použití oboru názvů My'
+          href: programming-guide/namespaces/how-to-use-the-my-namespace.md
+    - name: Typy hodnot s povolenou hodnotou Null
+      items:
+        - name: Přehled
+          href: programming-guide/nullable-types/index.md
+        - name: Použití typů hodnot s povolenou hodnotou Null
+          href: programming-guide/nullable-types/using-nullable-types.md
+        - name: "Postupy: Identifikace typu hodnoty s\_povolenou hodnotou Null"
+          href: programming-guide/nullable-types/how-to-identify-a-nullable-type.md
+    - name: Nezabezpečený kód a ukazatele
+      items:
+        - name: Přehled a omezení
+          href: programming-guide/unsafe-code-pointers/index.md
+        - name: Vyrovnávací paměti pevné velikosti
+          href: programming-guide/unsafe-code-pointers/fixed-size-buffers.md
+        - name: Typy ukazatelů
+          items:
+            - name: Přehled
+              href: programming-guide/unsafe-code-pointers/pointer-types.md
+            - name: Převody ukazatele
+              href: programming-guide/unsafe-code-pointers/pointer-conversions.md
+            - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
+              href: programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md
+    - name: Dokumentační komentáře XML
+      items:
+        - name: Přehled
+          href: programming-guide/xmldoc/index.md
+        - name: Doporučené značky pro komentáře dokumentace
+          href: programming-guide/xmldoc/recommended-tags-for-documentation-comments.md
+        - name: "Zpracování souboru\_XML"
+          href: programming-guide/xmldoc/processing-the-xml-file.md
+        - name: Oddělovače pro značky dokumentace
+          href: programming-guide/xmldoc/delimiters-for-documentation-tags.md
+        - name: 'Postupy: Používání funkcí dokumentace XML'
+          href: programming-guide/xmldoc/how-to-use-the-xml-documentation-features.md
+        - name: Referenční informace ke značkám dokumentace
+          items:
+            - name: <c>
+              href: programming-guide/xmldoc/code-inline.md
+            - name: <code>
+              href: programming-guide/xmldoc/code.md
+            - name: cref – atribut
+              href: programming-guide/xmldoc/cref-attribute.md
+            - name: <example>
+              href: programming-guide/xmldoc/example.md
+            - name: <exception>
+              href: programming-guide/xmldoc/exception.md
+            - name: <include>
+              href: programming-guide/xmldoc/include.md
+            - name: <list>
+              href: programming-guide/xmldoc/list.md
+            - name: <para>
+              href: programming-guide/xmldoc/para.md
+            - name: <param>
+              href: programming-guide/xmldoc/param.md
+            - name: <paramref>
+              href: programming-guide/xmldoc/paramref.md
+            - name: <permission>
+              href: programming-guide/xmldoc/permission.md
+            - name: <remarks>
+              href: programming-guide/xmldoc/remarks.md
+            - name: <returns>
+              href: programming-guide/xmldoc/returns.md
+            - name: <see>
+              href: programming-guide/xmldoc/see.md
+            - name: <seealso>
+              href: programming-guide/xmldoc/seealso.md
+            - name: <summary>
+              href: programming-guide/xmldoc/summary.md
+            - name: <typeparam>
+              href: programming-guide/xmldoc/typeparam.md
+            - name: <typeparamref>
+              href: programming-guide/xmldoc/typeparamref.md
+            - name: <value>
+              href: programming-guide/xmldoc/value.md
+    - name: Výjimky a jejich zpracování
+      items:
+        - name: Přehled
+          href: programming-guide/exceptions/index.md
+        - name: Použití výjimek
+          href: programming-guide/exceptions/using-exceptions.md
+        - name: Zpracování výjimek
+          href: programming-guide/exceptions/exception-handling.md
+        - name: Vytváření a vyvolávání výjimek
+          href: programming-guide/exceptions/creating-and-throwing-exceptions.md
+        - name: Výjimky generované kompilátorem
+          href: programming-guide/exceptions/compiler-generated-exceptions.md
+        - name: 'Postupy: Zpracování výjimky pomocí příkazu try-catch'
+          href: programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md
+        - name: 'Postupy: Spuštění kódu čištění pomocí příkazu finally'
+          href: programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md
+        - name: 'Postupy: Zachycení výjimky nekompatibilní se specifikací CLS'
+          href: programming-guide/exceptions/how-to-catch-a-non-cls-exception.md
+    - name: Systém souborů a registr
+      items:
+        - name: Přehled
+          href: programming-guide/file-system/index.md
+        - name: 'Postupy: Iterace v adresářovém stromě'
+          href: programming-guide/file-system/how-to-iterate-through-a-directory-tree.md
+        - name: 'Postupy: Získávání informací o souborech, složkách a jednotkách'
+          href: programming-guide/file-system/how-to-get-information-about-files-folders-and-drives.md
+        - name: 'Postupy: Vytváření souborů nebo složek'
+          href: programming-guide/file-system/how-to-create-a-file-or-folder.md
+        - name: 'Postupy: Kopírování, odstraňování a přesouvání souborů a složek'
+          href: programming-guide/file-system/how-to-copy-delete-and-move-files-and-folders.md
+        - name: 'Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory'
+          href: programming-guide/file-system/how-to-provide-a-progress-dialog-box-for-file-operations.md
+        - name: 'Postupy: Zápis do textového souboru'
+          href: programming-guide/file-system/how-to-write-to-a-text-file.md
+        - name: 'Postupy: Čtení z textového souboru'
+          href: programming-guide/file-system/how-to-read-from-a-text-file.md
+        - name: 'Postupy: Čtení textového souboru po řádcích (Průvodce programováním v C#)'
+          href: programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md
+        - name: 'Postupy: Vytvoření klíče v registru (Visual C#)'
+          href: programming-guide/file-system/how-to-create-a-key-in-the-registry.md
+    - name: Interoperabilita
+      items:
+        - name: Interoperabilita rozhraní .NET
+          href: programming-guide/interop/index.md
+        - name: Přehled interoperability
+          href: programming-guide/interop/interoperability-overview.md
+        - name: "Postupy: Přístup k\_objektům Interop sady Office pomocí funkcí Visual C#"
+          href: programming-guide/interop/how-to-access-office-onterop-objects.md
+        - name: 'Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM'
+          href: programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md
+        - name: 'Postupy: Použití vyvolání platformy pro přehrání souboru wave'
+          href: programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md
+        - name: "Návod: Programování pro Office (C# a\_Visual Basic)"
+          href: programming-guide/interop/walkthrough-office-programming.md
+        - name: Ukázka třídy COM
+          href: programming-guide/interop/example-com-class.md
 - name: Referenční dokumentace jazyka
-  href: language-reference/
+  items:
+    - name: Přehled
+      href: language-reference/index.md
+    - name: Konfigurace verze jazyka
+      href: language-reference/configure-language-version.md
+    - name: 'Klíčová slova jazyka C#'
+      items:
+        - name: Přehled
+          href: language-reference/keywords/index.md
+        - name: Předdefinované typy
+          items:
+            - name: Typy hodnot
+              items:
+                - name: Funkce typů hodnot
+                  href: language-reference/keywords/value-types.md
+                - name: bool
+                  href: language-reference/keywords/bool.md
+                - name: Celočíselné typy
+                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer'
+                  href: language-reference/builtin-types/integral-numeric-types.md
+                - name: "Číselné typy s\_plovoucí desetinnou čárkou"
+                  displayName: 'float, decimal, double, rational, real'
+                  href: language-reference/builtin-types/floating-point-numeric-types.md
+                - name: char
+                  href: language-reference/keywords/char.md
+                - name: enum
+                  href: language-reference/keywords/enum.md
+                - name: struct
+                  href: language-reference/keywords/struct.md
+            - name: Typy odkazů
+              items:
+                - name: Funkce odkazových typů
+                  href: language-reference/keywords/reference-types.md
+                - name: třída
+                  href: language-reference/keywords/class.md
+                - name: Předdefinované odkazové typy
+                  displayName: 'object, delegate, dynamic, string'
+                  href: language-reference/builtin-types/reference-types.md
+                - name: rozhraní
+                  href: language-reference/keywords/interface.md
+            - name: void
+              href: language-reference/keywords/void.md
+            - name: var
+              href: language-reference/keywords/var.md
+            - name: Nespravované typy
+              href: language-reference/builtin-types/unmanaged-types.md
+            - name: Referenční tabulky pro typy
+              items:
+                - name: Tabulka předdefinovaných typů
+                  href: language-reference/keywords/built-in-types-table.md
+                - name: Tabulka typů hodnot
+                  href: language-reference/keywords/value-types-table.md
+                - name: Tabulka výchozích hodnot
+                  href: language-reference/keywords/default-values-table.md
+                - name: Tabulka implicitních číselných převodů
+                  href: language-reference/keywords/implicit-numeric-conversions-table.md
+                - name: Tabulka explicitních číselných převodů
+                  href: language-reference/keywords/explicit-numeric-conversions-table.md
+                - name: Tabulka formátování číselných výsledků
+                  href: language-reference/keywords/formatting-numeric-results-table.md
+        - name: Modifikátory
+          items:
+            - name: Modifikátory přístupu
+              items:
+                - name: Stručná referenční dokumentace
+                  href: language-reference/keywords/access-modifiers.md
+                - name: Úrovně přístupnosti
+                  href: language-reference/keywords/accessibility-levels.md
+                - name: Doména přístupnosti
+                  href: language-reference/keywords/accessibility-domain.md
+                - name: Omezení používání úrovní přístupu
+                  href: language-reference/keywords/restrictions-on-using-accessibility-levels.md
+                - name: internal
+                  href: language-reference/keywords/internal.md
+                - name: private
+                  href: language-reference/keywords/private.md
+                - name: protected
+                  href: language-reference/keywords/protected.md
+                - name: public
+                  href: language-reference/keywords/public.md
+                - name: protected internal
+                  href: language-reference/keywords/protected-internal.md
+                - name: private protected
+                  href: language-reference/keywords/private-protected.md
+            - name: abstract
+              href: language-reference/keywords/abstract.md
+            - name: async
+              href: language-reference/keywords/async.md
+              displayName: await
+            - name: const
+              href: language-reference/keywords/const.md
+            - name: event
+              href: language-reference/keywords/event.md
+            - name: extern
+              href: language-reference/keywords/extern.md
+            - name: in (obecný modifikátor)
+              href: language-reference/keywords/in-generic-modifier.md
+            - name: new (modifikátor členů)
+              href: language-reference/keywords/new-modifier.md
+            - name: out (obecný modifikátor)
+              href: language-reference/keywords/out-generic-modifier.md
+            - name: override
+              href: language-reference/keywords/override.md
+            - name: readonly
+              href: language-reference/keywords/readonly.md
+            - name: sealed
+              href: language-reference/keywords/sealed.md
+            - name: static
+              href: language-reference/keywords/static.md
+            - name: unsafe
+              href: language-reference/keywords/unsafe.md
+            - name: virtual
+              href: language-reference/keywords/virtual.md
+            - name: volatile
+              href: language-reference/keywords/volatile.md
+        - name: Klíčová slova příkazů
+          items:
+            - name: Kategorie příkazů
+              href: language-reference/keywords/statement-keywords.md
+            - name: Příkazy výběru
+              items:
+                - name: if-else
+                  href: language-reference/keywords/if-else.md
+                - name: – přepínač
+                  href: language-reference/keywords/switch.md
+            - name: Příkazy iterace
+              items:
+                - name: do
+                  href: language-reference/keywords/do.md
+                - name: pro
+                  href: language-reference/keywords/for.md
+                - name: 'foreach, in'
+                  href: language-reference/keywords/foreach-in.md
+                - name: while
+                  href: language-reference/keywords/while.md
+            - name: Příkazy skoku
+              items:
+                - name: break
+                  href: language-reference/keywords/break.md
+                - name: continue
+                  href: language-reference/keywords/continue.md
+                - name: goto
+                  href: language-reference/keywords/goto.md
+                - name: return
+                  href: language-reference/keywords/return.md
+            - name: Příkazy zpracování výjimek
+              items:
+                - name: throw
+                  href: language-reference/keywords/throw.md
+                - name: try-catch
+                  href: language-reference/keywords/try-catch.md
+                - name: try-finally
+                  href: language-reference/keywords/try-finally.md
+                - name: try-catch-finally
+                  href: language-reference/keywords/try-catch-finally.md
+            - name: Zaškrtnuto a nezaškrtnuto
+              items:
+                - name: Přehled
+                  href: language-reference/keywords/checked-and-unchecked.md
+                - name: checked
+                  href: language-reference/keywords/checked.md
+                - name: unchecked
+                  href: language-reference/keywords/unchecked.md
+            - name: fixed – příkaz
+              href: language-reference/keywords/fixed-statement.md
+            - name: lock – příkaz
+              href: language-reference/keywords/lock-statement.md
+        - name: Parametry metody
+          items:
+            - name: Předávání parametrů
+              href: language-reference/keywords/method-parameters.md
+            - name: params
+              href: language-reference/keywords/params.md
+            - name: in (modifikátor parametrů)
+              href: language-reference/keywords/in-parameter-modifier.md
+            - name: ref
+              href: language-reference/keywords/ref.md
+            - name: out (modifikátor parametrů)
+              href: language-reference/keywords/out-parameter-modifier.md
+        - name: Klíčová slova oboru názvů
+          items:
+            - name: – obor názvů
+              href: language-reference/keywords/namespace.md
+            - name: používání
+              items:
+                - name: using – kontexty
+                  href: language-reference/keywords/using.md
+                - name: using – direktiva
+                  href: language-reference/keywords/using-directive.md
+                - name: using static – direktiva
+                  href: language-reference/keywords/using-static.md
+                - name: using – příkaz
+                  href: language-reference/keywords/using-statement.md
+            - name: externí alias
+              href: language-reference/keywords/extern-alias.md
+        - name: Klíčová slova pro testování typů
+          items:
+            - name: is
+              href: language-reference/keywords/is.md
+        - name: Klíčová slova omezení obecných typů
+          items:
+            - name: nové omezení
+              href: language-reference/keywords/new-constraint.md
+            - name: kde
+              href: language-reference/keywords/where-generic-type-constraint.md
+        - name: Klíčová slova přístupu
+          items:
+            - name: base
+              href: language-reference/keywords/base.md
+            - name: this
+              href: language-reference/keywords/this.md
+        - name: Literálová klíčová slova
+          items:
+            - name: 'null'
+              href: language-reference/keywords/null.md
+            - name: 'true'
+              href: language-reference/keywords/true-literal.md
+            - name: 'false'
+              href: language-reference/keywords/false-literal.md
+            - name: default
+              href: language-reference/keywords/default.md
+        - name: Kontextová klíčová slova
+          items:
+            - name: Stručná referenční dokumentace
+              href: language-reference/keywords/contextual-keywords.md
+            - name: add
+              href: language-reference/keywords/add.md
+            - name: get
+              href: language-reference/keywords/get.md
+            - name: partial (typ)
+              href: language-reference/keywords/partial-type.md
+            - name: partial (metoda)
+              href: language-reference/keywords/partial-method.md
+            - name: remove
+              href: language-reference/keywords/remove.md
+            - name: set
+              href: language-reference/keywords/set.md
+            - name: when (podmínka filtru)
+              href: language-reference/keywords/when.md
+            - name: value
+              href: language-reference/keywords/value.md
+            - name: yield
+              href: language-reference/keywords/yield.md
+        - name: Klíčová slova dotazu
+          items:
+            - name: Stručná referenční dokumentace
+              href: language-reference/keywords/query-keywords.md
+            - name: from – klauzule
+              href: language-reference/keywords/from-clause.md
+            - name: where – klauzule
+              href: language-reference/keywords/where-clause.md
+            - name: 'select – klauzule (C#)'
+              href: language-reference/keywords/select-clause.md
+            - name: group – klauzule
+              href: language-reference/keywords/group-clause.md
+            - name: into
+              href: language-reference/keywords/into.md
+            - name: orderby – klauzule
+              href: language-reference/keywords/orderby-clause.md
+            - name: join – klauzule
+              href: language-reference/keywords/join-clause.md
+            - name: let – klauzule
+              href: language-reference/keywords/let-clause.md
+            - name: ascending
+              href: language-reference/keywords/ascending.md
+            - name: descending
+              href: language-reference/keywords/descending.md
+            - name: 'on'
+              href: language-reference/keywords/on.md
+            - name: equals
+              href: language-reference/keywords/equals.md
+            - name: by
+              href: language-reference/keywords/by.md
+            - name: in
+              href: language-reference/keywords/in.md
+    - name: 'Operátory jazyka C#'
+      items:
+        - name: Přehled
+          href: language-reference/operators/index.md
+        - name: Aritmetické operátory
+          href: language-reference/operators/arithmetic-operators.md
+          displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'
+        - name: Logické operátory
+          href: language-reference/operators/boolean-logical-operators.md
+          displayName: '!, &&, ||, &, |, ^, &=, |=, ^='
+        - name: Bitové operátory a operátory bitového posunu
+          href: language-reference/operators/bitwise-and-shift-operators.md
+          displayName: '~, &, |, ^, <<, >>, &=, |=, ^=, <<=, >>='
+        - name: Operátory rovnosti
+          href: language-reference/operators/equality-operators.md
+          displayName: '==, !='
+        - name: Operátory porovnání
+          href: language-reference/operators/comparison-operators.md
+          displayName: '>, <, >=, <=, greater, less'
+        - name: Operátory pro přístup k členům
+          href: language-reference/operators/member-access-operators.md
+          displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
+        - name: Operátory pro testování typů a přetypování
+          href: language-reference/operators/type-testing-and-cast.md
+          displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
+        - name: Operátory převodu definované uživatelem
+          href: language-reference/operators/user-defined-conversion-operators.md
+          displayName: 'implicit, explicit'
+        - name: Operátory související s ukazatelem
+          href: language-reference/operators/pointer-related-operators.md
+          displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
+        - name: = – operátor
+          href: language-reference/operators/assignment-operator.md
+          displayName: 'assignment, ref'
+        - name: + a += – operátory
+          href: language-reference/operators/addition-operator.md
+          displayName: 'string concatenation, delegate combination, event subscription'
+        - name: '- a -= – operátory'
+          href: language-reference/operators/subtraction-operator.md
+          displayName: 'delegate removal, event unsubscription'
+        - name: '?: – operátor'
+          href: language-reference/operators/conditional-operator.md
+          displayName: 'conditional, ternary, ref'
+        - name: '! – operátor (tolerující hodnotu null)'
+          href: language-reference/operators/null-forgiving.md
+          displayName: 'nullable reference, null-forgiveness'
+        - name: '?? a ??= – operátory'
+          href: language-reference/operators/null-coalescing-operator.md
+          displayName: 'null-coalescing, assignment'
+        - name: => – operátor
+          href: language-reference/operators/lambda-operator.md
+          displayName: lambda
+        - name: ':: – operátor'
+          href: language-reference/operators/namespace-alias-qualifier.md
+          displayName: 'namespace alias qualifier, global namespace'
+        - name: await – operátor
+          href: language-reference/operators/await.md
+          displayName: async
+        - name: výchozí operátor
+          href: language-reference/operators/default.md
+          displayName: 'default value, default literal, type default'
+        - name: delegate – operátor
+          href: language-reference/operators/delegate-operator.md
+          displayName: anonymous
+        - name: nameof – operátor
+          href: language-reference/operators/nameof.md
+        - name: new – operátor
+          href: language-reference/operators/new-operator.md
+        - name: sizeof – operátor
+          href: language-reference/operators/sizeof.md
+        - name: Operátor stackalloc
+          href: language-reference/operators/stackalloc.md
+        - name: true a false – operátory
+          href: language-reference/operators/true-false-operators.md
+        - name: Přetěžování operátoru
+          href: language-reference/operators/operator-overloading.md
+    - name: 'Speciální znaky jazyka C#'
+      items:
+        - name: Přehled
+          href: language-reference/tokens/index.md
+        - name: $ – interpolace řetězců
+          href: language-reference/tokens/interpolated.md
+        - name: '@ – doslovný identifikátor'
+          href: language-reference/tokens/verbatim.md
+    - name: 'Direktivy preprocesoru jazyka C#'
+      items:
+        - name: Přehled
+          href: language-reference/preprocessor-directives/index.md
+        - name: '#if'
+          href: language-reference/preprocessor-directives/preprocessor-if.md
+        - name: '#else'
+          href: language-reference/preprocessor-directives/preprocessor-else.md
+        - name: '#elif'
+          href: language-reference/preprocessor-directives/preprocessor-elif.md
+        - name: '#endif'
+          href: language-reference/preprocessor-directives/preprocessor-endif.md
+        - name: '#define'
+          href: language-reference/preprocessor-directives/preprocessor-define.md
+        - name: '#undef'
+          href: language-reference/preprocessor-directives/preprocessor-undef.md
+        - name: '#upozornění'
+          href: language-reference/preprocessor-directives/preprocessor-warning.md
+        - name: '#error'
+          href: language-reference/preprocessor-directives/preprocessor-error.md
+        - name: '#line'
+          href: language-reference/preprocessor-directives/preprocessor-line.md
+        - name: '#oblast'
+          href: language-reference/preprocessor-directives/preprocessor-region.md
+        - name: '#endregion'
+          href: language-reference/preprocessor-directives/preprocessor-endregion.md
+        - name: '#pragma'
+          href: language-reference/preprocessor-directives/preprocessor-pragma.md
+        - name: '#pragma warning'
+          href: language-reference/preprocessor-directives/preprocessor-pragma-warning.md
+        - name: '#pragma checksum'
+          href: language-reference/preprocessor-directives/preprocessor-pragma-checksum.md
+    - name: 'Možnosti kompilátoru jazyka C#'
+      items:
+        - name: Přehled
+          href: language-reference/compiler-options/index.md
+        - name: Sestavování pomocí programu csc.exe v příkazovém řádku
+          href: language-reference/compiler-options/command-line-building-with-csc-exe.md
+        - name: 'Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia'
+          href: language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md
+        - name: 'Možnosti kompilátoru C# uvedené podle kategorie'
+          href: language-reference/compiler-options/listed-by-category.md
+        - name: 'Možnosti kompilátoru C# (abecední pořadí)'
+          href: language-reference/compiler-options/listed-alphabetically.md
+          items:
+            - name: '@'
+              href: language-reference/compiler-options/response-file-compiler-option.md
+            - name: '-addmodule'
+              href: language-reference/compiler-options/addmodule-compiler-option.md
+            - name: '-appconfig'
+              href: language-reference/compiler-options/appconfig-compiler-option.md
+            - name: '-baseaddress'
+              href: language-reference/compiler-options/baseaddress-compiler-option.md
+            - name: '-bugreport'
+              href: language-reference/compiler-options/bugreport-compiler-option.md
+            - name: '-checked'
+              href: language-reference/compiler-options/checked-compiler-option.md
+            - name: '-codepage'
+              href: language-reference/compiler-options/codepage-compiler-option.md
+            - name: '-debug'
+              href: language-reference/compiler-options/debug-compiler-option.md
+            - name: '-define'
+              href: language-reference/compiler-options/define-compiler-option.md
+            - name: '-delaysign'
+              href: language-reference/compiler-options/delaysign-compiler-option.md
+            - name: '-deterministic'
+              href: language-reference/compiler-options/deterministic-compiler-option.md
+            - name: '-doc'
+              href: language-reference/compiler-options/doc-compiler-option.md
+            - name: '-errorreport'
+              href: language-reference/compiler-options/errorreport-compiler-option.md
+            - name: '-filealign'
+              href: language-reference/compiler-options/filealign-compiler-option.md
+            - name: '-fullpaths'
+              href: language-reference/compiler-options/fullpaths-compiler-option.md
+            - name: '-help, -?'
+              href: language-reference/compiler-options/help-compiler-option.md
+            - name: '-highentropyva'
+              href: language-reference/compiler-options/highentropyva-compiler-option.md
+            - name: '-keycontainer'
+              href: language-reference/compiler-options/keycontainer-compiler-option.md
+            - name: '-keyfile'
+              href: language-reference/compiler-options/keyfile-compiler-option.md
+            - name: '-langversion'
+              href: language-reference/compiler-options/langversion-compiler-option.md
+            - name: '-lib'
+              href: language-reference/compiler-options/lib-compiler-option.md
+            - name: '-link'
+              href: language-reference/compiler-options/link-compiler-option.md
+            - name: '-linkresource'
+              href: language-reference/compiler-options/linkresource-compiler-option.md
+            - name: '-main'
+              href: language-reference/compiler-options/main-compiler-option.md
+            - name: '-moduleassemblyname'
+              href: language-reference/compiler-options/moduleassemblyname-compiler-option.md
+            - name: '-noconfig'
+              href: language-reference/compiler-options/noconfig-compiler-option.md
+            - name: '-nologo'
+              href: language-reference/compiler-options/nologo-compiler-option.md
+            - name: '-nostdlib'
+              href: language-reference/compiler-options/nostdlib-compiler-option.md
+            - name: '-nowarn'
+              href: language-reference/compiler-options/nowarn-compiler-option.md
+            - name: '-nowin32manifest'
+              href: language-reference/compiler-options/nowin32manifest-compiler-option.md
+            - name: '-optimize'
+              href: language-reference/compiler-options/optimize-compiler-option.md
+            - name: '-out'
+              href: language-reference/compiler-options/out-compiler-option.md
+            - name: '-pathmap'
+              href: language-reference/compiler-options/pathmap-compiler-option.md
+            - name: '-pdb'
+              href: language-reference/compiler-options/pdb-compiler-option.md
+            - name: '-platform'
+              href: language-reference/compiler-options/platform-compiler-option.md
+            - name: '-preferreduilang'
+              href: language-reference/compiler-options/preferreduilang-compiler-option.md
+            - name: '-publicsign'
+              href: language-reference/compiler-options/publicsign-compiler-option.md
+            - name: '-recurse'
+              href: language-reference/compiler-options/recurse-compiler-option.md
+            - name: '-reference'
+              href: language-reference/compiler-options/reference-compiler-option.md
+            - name: '-refout'
+              href: language-reference/compiler-options/refout-compiler-option.md
+            - name: '-refonly'
+              href: language-reference/compiler-options/refonly-compiler-option.md
+            - name: '-resource'
+              href: language-reference/compiler-options/resource-compiler-option.md
+            - name: '-subsystemversion'
+              href: language-reference/compiler-options/subsystemversion-compiler-option.md
+            - name: '-target'
+              href: language-reference/compiler-options/target-compiler-option.md
+              items:
+                - name: '-target:appcontainerexe'
+                  href: language-reference/compiler-options/target-appcontainerexe-compiler-option.md
+                - name: '-target:exe'
+                  href: language-reference/compiler-options/target-exe-compiler-option.md
+                - name: '-target:library'
+                  href: language-reference/compiler-options/target-library-compiler-option.md
+                - name: '-target:module'
+                  href: language-reference/compiler-options/target-module-compiler-option.md
+                - name: '-target:winexe'
+                  href: language-reference/compiler-options/target-winexe-compiler-option.md
+                - name: '-target:winmdobj'
+                  href: language-reference/compiler-options/target-winmdobj-compiler-option.md
+            - name: '-unsafe'
+              href: language-reference/compiler-options/unsafe-compiler-option.md
+            - name: '-utf8output'
+              href: language-reference/compiler-options/utf8output-compiler-option.md
+            - name: '-warn'
+              href: language-reference/compiler-options/warn-compiler-option.md
+            - name: '-warnaserror'
+              href: language-reference/compiler-options/warnaserror-compiler-option.md
+            - name: '-win32icon'
+              href: language-reference/compiler-options/win32icon-compiler-option.md
+            - name: '-win32manifest'
+              href: language-reference/compiler-options/win32manifest-compiler-option.md
+            - name: '-win32res'
+              href: language-reference/compiler-options/win32res-compiler-option.md
+    - name: 'Chyby kompilátoru jazyka C#'
+      href: language-reference/compiler-messages/index.md
+    - name: 'Specifikace konceptu jazyka C# 6.0'
+      href: language-reference/specification/
+    - name: 'C# 7.0 – 8.0 – návrhy'
+      href: language-reference/proposals/
 - name: Postupy
   href: walkthroughs.md

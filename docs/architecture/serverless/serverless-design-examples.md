@@ -4,12 +4,12 @@ description: Seznamte se s různými scénáři podporovanými architekturami be
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 096dce6ef23bde5ef9c6ca65769f4dcc7e08a904
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f7d3ec50608848b725d813ae2a9ee59ae9532ef3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676673"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522347"
 ---
 # <a name="serverless-design-examples"></a>Příklady bezserverového návrhu
 
@@ -57,13 +57,13 @@ Pro zpracování požadavků rozhraní API se dají použít koncové body bez s
 
 ![Webové rozhraní API bez serveru](./media/serverless-web-api.png)
 
-## <a name="data-pipeline"></a>Data Pipeline
+## <a name="data-pipeline"></a>Datový kanál
 
 Funkce bez serveru se dají použít k usnadnění datového kanálu. V tomto příkladu soubor aktivuje funkci pro překlad dat ze souboru CSV na řádky dat v tabulce. Uspořádaná tabulka umožňuje řídicímu panelu Power BI prezentovat analýzy koncovému uživateli.
 
 ![Datový kanál bez serveru](./media/serverless-data-pipeline.png)
 
-## <a name="stream-processing"></a>Zpracování streamů
+## <a name="stream-processing"></a>Zpracování datových proudů
 
 Zařízení a senzory často generují proudy dat, která se musí zpracovat v reálném čase. Existuje řada technologií, které mohou zachytit zprávy a datové proudy ze [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) a [IoT Hub](https://docs.microsoft.com/azure/iot-hub) na [Service Bus](https://docs.microsoft.com/azure/service-bus). Bez ohledu na přenos není server bez serveru ideálním mechanismem pro zpracování zpráv a datových proudů, jak jsou součástí. Bez serveru se dá rychle škálovat, aby se splnila poptávka s velkými objemy dat. Kód bez serveru může použít obchodní logiku k analýze dat a výstupu ve strukturovaném formátu pro akce a analýzy.
 
@@ -77,17 +77,17 @@ Brána API poskytuje pro klienty jediný bod zadávání a pak inteligentně sm�
 
 ## <a name="recommended-resources"></a>Doporučené prostředky
 
-* [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-* [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub)
-* [Výzvy a řešení správy distribuovaných dat](../microservices/architect-microservice-container-applications/distributed-data-management.md)
-* [Navrhování mikroslužeb: identifikace hranic mikroslužeb](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
-* [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
-* [Vzor zdroje událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
-* [Implementace vzoru Circuit Breaker](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
-* [IoT Hub](https://docs.microsoft.com/azure/iot-hub)
-* [Service Bus](https://docs.microsoft.com/azure/service-bus)
-* [Práce s změnu podpora kanálu ve službě Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
+- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
+- [IoT Hub Azure](https://docs.microsoft.com/azure/iot-hub)
+- [Výzvy a řešení správy distribuovaných dat](../microservices/architect-microservice-container-applications/distributed-data-management.md)
+- [Navrhování mikroslužeb: identifikace hranic mikroslužeb](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
+- [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
+- [Vzor zdroje událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Implementace vzoru Circuit Breaker](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
+- [IoT Hub](https://docs.microsoft.com/azure/iot-hub)
+- [Service Bus](https://docs.microsoft.com/azure/service-bus)
+- [Práce s podporou kanálu změn v Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
 
 >[!div class="step-by-step"]
->[Předchozí](serverless-architecture-considerations.md)Další
->[](azure-serverless-platform.md)
+>[Předchozí](serverless-architecture-considerations.md)
+>[Další](azure-serverless-platform.md)

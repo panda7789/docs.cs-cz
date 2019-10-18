@@ -4,12 +4,12 @@ description: Přečtěte si, jak porovnat struktury projektu webových formulá�
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: f9af8f88008ef45438a9104374d766cdbf8cc9a0
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: aa9157bd8627e7a03e33872c3023f91ba3d66951
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183817"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520223"
 ---
 # <a name="project-structure-for-blazor-apps"></a>Struktura projektu pro aplikace Blazor
 
@@ -59,9 +59,9 @@ Soubor projektu pro aplikaci WebAssembly v Blazor se trochu zabývají. (přesn�
 
 Blazor .NET Standard cíle projektů WebAssembly místo .NET Core, protože běží v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Rozhraní .NET nemůžete nainstalovat do webového prohlížeče, jako je to možné na serveru nebo v počítači pro vývojáře. V důsledku toho projekt odkazuje na rozhraní Blazor pomocí jednotlivých odkazů na balíčky.
 
-Porovnáním, výchozí projekt webových formulářů ASP.NET obsahuje téměř 300 řádků XML v souboru *. csproj* , přičemž většina z nich explicitně uvádí různé soubory kódu a obsahu v projektu. Mnohé z zjednodušení v projektech .NET Core a .NET Standard pocházejí z výchozích cílů a vlastností importovaných odkazem na `Microsoft.NET.Sdk.Web` sadu SDK, která se často označuje jako jednoduše webová sada SDK. Webová sada SDK obsahuje zástupné znaky a další pohodlí, které zjednodušují zahrnutí kódu a souborů obsahu v projektu. Soubory není nutné explicitně vypisovat. Při cílení na .NET Core webová sada SDK také přidá odkazy na rozhraní do sdílených rozhraní .NET Core i ASP.NET Core. Rozhraní jsou viditelná v uzlu**architektury** **závislostí** > v okně **Průzkumník řešení** . Sdílené architektury jsou kolekce sestavení, která byla nainstalována na počítači při instalaci rozhraní .NET Core.
+Porovnáním, výchozí projekt webových formulářů ASP.NET obsahuje téměř 300 řádků XML v souboru *. csproj* , přičemž většina z nich explicitně uvádí různé soubory kódu a obsahu v projektu. Mnohé z zjednodušení v projektech .NET Core a .NET Standard pocházejí z výchozích cílů a vlastností importovaných odkazem na sadu `Microsoft.NET.Sdk.Web` SDK, která se často označuje jako pouhá webová sada SDK. Webová sada SDK obsahuje zástupné znaky a další pohodlí, které zjednodušují zahrnutí kódu a souborů obsahu v projektu. Soubory není nutné explicitně vypisovat. Při cílení na .NET Core webová sada SDK také přidá odkazy na rozhraní do sdílených rozhraní .NET Core i ASP.NET Core. Rozhraní jsou viditelná v uzlu **závislosti**  > **Frameworks** v okně **Průzkumník řešení** . Sdílené architektury jsou kolekce sestavení, která byla nainstalována na počítači při instalaci rozhraní .NET Core.
 
-I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné v projektech .NET Core. Většina závislostí projektu se zpracovává jako odkazy na balíčky NuGet. V projektech .NET Core musíte odkazovat jenom na závislosti balíčků nejvyšší úrovně. Přenosné závislosti jsou zahrnuty automaticky. Namísto použití souboru *Packages. config* , který se běžně našel v projektech webových formulářů ASP.NET, na referenční balíčky, se odkazy na balíčky přidávají do `<PackageReference>` souboru projektu pomocí elementu.
+I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné v projektech .NET Core. Většina závislostí projektu se zpracovává jako odkazy na balíčky NuGet. V projektech .NET Core musíte odkazovat jenom na závislosti balíčků nejvyšší úrovně. Přenosné závislosti jsou zahrnuty automaticky. Namísto použití souboru *Packages. config* , který se běžně nachází v projektech webových formulářů ASP.NET, na referenční balíčky, se odkazy na balíčky přidávají do souboru projektu pomocí elementu `<PackageReference>`.
 
 ```xml
 <ItemGroup>
@@ -92,7 +92,7 @@ public class Program
 
 Blazor aplikace pro WebAssembly také definují vstupní bod v *program.cs*. Kód vypadá trochu jinak. Kód je podobný v tom, že nastavuje hostitele aplikace tak, aby poskytoval stejné služby na úrovni hostitele pro aplikaci. Hostitel aplikace pro WebAssembly ale nenastaví Server HTTP, protože se spustí přímo v prohlížeči.
 
-Aplikace Blazor mají `Startup` třídu namísto souboru *Global. asax* k definování spouštěcí logiky pro aplikaci. `Startup` Třída se používá ke konfiguraci aplikace a všech služeb specifických pro aplikace. V aplikaci `Startup` Blazor serveru se třída používá k nastavení koncového bodu pro připojení v reálném čase, které používá Blazor mezi klientskými prohlížeči a serverem. V aplikaci `Startup` Blazor WebAssembly třída definuje kořenové součásti pro aplikaci a tam, kde by měly být vykresleny. Podíváme `Startup` se na třídu v části [spuštění aplikace](./app-startup.md) .
+Blazor aplikace mají třídu `Startup` namísto souboru *Global. asax* pro definování spouštěcí logiky pro aplikaci. Třída `Startup` slouží ke konfiguraci aplikace a všech služeb specifických pro aplikace. V aplikaci Blazor serveru se k nastavení koncového bodu pro připojení v reálném čase používaného Blazor mezi klientskými prohlížeči a serverem používá třída `Startup`. V aplikaci Blazor WebAssembly definuje třída `Startup` kořenové součásti pro aplikaci a tam, kde by měly být vykresleny. Podíváme se podrobněji na třídu `Startup` v části [spuštění aplikace](./app-startup.md) .
 
 ## <a name="static-files"></a>Statické soubory
 
@@ -123,7 +123,7 @@ Většina souborů v projektech Blazor je soubory *. Razor* . Razor je šablonov
 
 Každý soubor komponenty Razor je zkompilován do třídy .NET při sestavení projektu. Vygenerovaná třída zachytí stav komponenty, logiku vykreslování, metody životního cyklu, obslužné rutiny události a další logiku. Podíváme se na vytváření komponent v části [sestavování opakovaně použitelných komponent uživatelského rozhraní pomocí oddílu Blazor](./components.md) .
 
-Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují sadu direktiv Razor pro import do jiných souborů *. Razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports. Razor* je konvenční způsob, jak přidat `using` příkazy pro běžně používané obory názvů:
+Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují sadu direktiv Razor pro import do jiných souborů *. Razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports. Razor* je konvenční způsob, jak přidat příkazy `using` pro běžně používané obory názvů:
 
 ```razor
 @using System.Net.Http
@@ -139,7 +139,7 @@ Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují
 
 ## <a name="pages"></a>Stránky
 
-Kde jsou stránky v aplikacích Blazor? Blazor nedefinuje samostatnou příponu souboru pro adresovatelné stránky, jako jsou soubory *. aspx* v aplikacích ASP.NET Web Forms. Místo toho jsou stránky definovány přiřazením tras k součástem. Trasa je obvykle přiřazena pomocí `@page` direktivy Razor. Například `Counter` komponenta, která se vytvořila v souboru *Pages/Counter. Razor* , definuje následující trasu:
+Kde jsou stránky v aplikacích Blazor? Blazor nedefinuje samostatnou příponu souboru pro adresovatelné stránky, jako jsou soubory *. aspx* v aplikacích ASP.NET Web Forms. Místo toho jsou stránky definovány přiřazením tras k součástem. Trasa je obvykle přiřazena pomocí direktivy `@page` Razor. Například komponenta `Counter`, která se vytvořila v souboru *Pages/Counter. Razor* , definuje následující trasu:
 
 ```razor
 @page "/counter"
@@ -159,10 +159,10 @@ V aplikacích ASP.NET Web Forms se běžné rozložení stránky zpracovává po
 
 K zavedení Blazor musí aplikace:
 
-* Určete, kam má být vygenerována kořenová komponenta (*App. Razor*) na stránce.
-* Přidejte odpovídající skript Blazor Framework.
+- Určete, kam má být vygenerována kořenová komponenta (*App. Razor*) na stránce.
+- Přidejte odpovídající skript Blazor Framework.
 
-V aplikaci Blazor Server je v souboru *_Host. cshtml* definovaná stránka hostitele kořenové součásti. Tento soubor definuje stránku Razor, nikoli komponentu. Razor Pages použít syntaxe Razor k definování serverově adresované stránky, velmi podobně jako na stránce *aspx* . `Html.RenderComponentAsync<TComponent>(RenderMode)` Metoda slouží k definování, kde má být vykreslena komponenta na úrovni root. `RenderMode` Možnost určuje způsob, jakým má být komponenta vykreslena. Následující tabulka popisuje podporované `RenderMode` možnosti.
+V aplikaci Blazor Server je v souboru *_Host. cshtml* definovaná stránka hostitele kořenové součásti. Tento soubor definuje stránku Razor, nikoli komponentu. Razor Pages použít syntaxe Razor k definování serverově adresované stránky, velmi podobně jako na stránce *aspx* . Metoda `Html.RenderComponentAsync<TComponent>(RenderMode)` slouží k definování, kde má být vykreslena komponenta na úrovni root. Možnost `RenderMode` určuje způsob, jakým má být komponenta vykreslena. Následující tabulka popisuje podporované možnosti `RenderMode`.
 
 |Možnost                        |Popis       |
 |------------------------------|------------------|
@@ -197,7 +197,7 @@ Odkaz na skript *_framework/blazor. Server. js* vytvoří připojení v reálné
 </html>
 ```
 
-V aplikaci Blazor WebAssembly je stránka hostitele jednoduchým statickým souborem HTML pod *wwwroot/index.html*. `<app>` Prvek slouží k označení, kde by měla být vykreslena kořenová komponenta.
+V aplikaci Blazor WebAssembly je stránka hostitele jednoduchým statickým souborem HTML pod *wwwroot/index.html*. Element `<app>` slouží k označení, kde by měla být vykreslena kořenová komponenta.
 
 ```html
 <!DOCTYPE html>
@@ -218,7 +218,7 @@ V aplikaci Blazor WebAssembly je stránka hostitele jednoduchým statickým soub
 </html>
 ```
 
-Konkrétní komponenta pro vykreslení je nakonfigurována v `Startup.Configure` metodě aplikace s odpovídajícím Selektor šablon stylů CSS, který určuje, kde by měla být komponenta vykreslena.
+Konkrétní komponenta pro vykreslení je nakonfigurována v `Startup.Configure` metodě aplikace s odpovídajícím selektorem šablon stylů CSS, který určuje, kde by měla být komponenta vykreslena.
 
 ```csharp
 public class Startup
@@ -240,14 +240,14 @@ Při sestavení projektu Blazor jsou všechny komponenty a soubory kódu Razor z
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
-Pokud chcete spustit aplikaci Blazor Server, stiskněte `F5` v aplikaci Visual Studio. Aplikace Blazor nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky kódu a změny kódu komponenty, sestavte a znovu spusťte aplikaci pomocí připojeného ladicího programu. Pokud spustíte program bez připojeného ladicího`Ctrl+F5`programu (), Visual Studio sleduje změny souborů a restartuje aplikaci, jakmile budou provedeny změny. Prohlížeč se aktualizuje ručně, protože se udělaly změny.
+Pokud chcete spustit aplikaci Blazor Server, stiskněte `F5` v aplikaci Visual Studio. Aplikace Blazor nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky kódu a změny kódu komponenty, sestavte a znovu spusťte aplikaci pomocí připojeného ladicího programu. Pokud spustíte bez připojeného ladicího programu (`Ctrl+F5`), Visual Studio sleduje změny souborů a restartuje aplikaci beze změny. Prohlížeč se aktualizuje ručně, protože se udělaly změny.
 
 Chcete-li spustit aplikaci WebAssembly v Blazor, vyberte jeden z následujících přístupů:
 
-* Spusťte klientský projekt přímo pomocí vývojového serveru.
-* Spusťte serverový projekt při hostování aplikace pomocí ASP.NET Core.
+- Spusťte klientský projekt přímo pomocí vývojového serveru.
+- Spusťte serverový projekt při hostování aplikace pomocí ASP.NET Core.
 
-Blazor aplikace WebAssembly nepodporují ladění pomocí sady Visual Studio. Pokud chcete aplikaci spustit, použijte `Ctrl+F5` `F5`místo. Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete v tématu [ladění ASP.NET Core Blazor](/aspnet/core/blazor/debug) .
+Blazor aplikace WebAssembly nepodporují ladění pomocí sady Visual Studio. Pokud chcete aplikaci spustit, použijte místo `F5` `Ctrl+F5`. Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete v tématu [ladění ASP.NET Core Blazor](/aspnet/core/blazor/debug) .
 
 >[!div class="step-by-step"]
 >[Předchozí](hosting-models.md)

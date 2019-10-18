@@ -2,12 +2,12 @@
 title: Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 description: Seznamte se s rozdíly a využitím vzoru brány API a přímé komunikace mezi klientem a mikroslužbou.
 ms.date: 01/07/2019
-ms.openlocfilehash: d895ae50e50ade2f8285117491733d5c9814b732
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 6b42650b2dbce093f12fe02b1605c95076dc8592
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834441"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522967"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 
@@ -17,7 +17,7 @@ V architektuře mikroslužeb každá mikroslužba zveřejňuje sadu (typicky) je
 
 Možným přístupem je použití přímé architektury komunikace mezi klientem a mikroslužbou. V tomto přístupu může klientská aplikace dělat požadavky přímo na některé mikroslužby, jak je znázorněno na obrázku 4-12.
 
-![Diagram znázorňující architekturu komunikace mezi klientem a mikroslužbou.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/direct-client-to-microservice-communication.png)
+![Diagram znázorňující architekturu komunikace mezi klientem a mikroslužbou.](./media/direct-client-to-microservice-communication.png)
 
 **Obrázek 4-12**. Použití přímé architektury komunikace mezi klientem a mikroslužbou
 
@@ -121,10 +121,10 @@ Další informace najdete v tématu [model snižování zátěže brány](https:
 
 V závislosti na každé implementaci může být k dispozici mnoho dalších častých otázek pro průřezy nabízených produkty API Gateway. Prozkoumáme toto:
 
-- [Azure API Management](https://azure.microsoft.com/services/api-management/)
+- [API Management Azure](https://azure.microsoft.com/services/api-management/)
 - [Ocelot](https://github.com/ThreeMammals/Ocelot)
 
-### <a name="azure-api-management"></a>Azure API Management
+### <a name="azure-api-management"></a>API Management Azure
 
 [Azure API Management](https://azure.microsoft.com/services/api-management/) (jak je znázorněno na obrázku 4-14) nejenom vyřeší vaše požadavky na bránu API, ale poskytuje funkce, jako je shromažďování přehledů z vašich rozhraní API. Pokud používáte řešení API Management, brána rozhraní API je jenom součást v rámci celého řešení API Management.
 
@@ -168,21 +168,21 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
 
 - Pokud je brána API vyvinutá jedním týmem, může dojít k nekritickému vývoji. To je další důvod, proč lepší přístup je mít několik jemně odstupňovaných bran rozhraní API, které reagují na různé požadavky klientů. Bránu rozhraní API můžete také interně rozdělit do několika oblastí nebo vrstev vlastněných různými týmy, které pracují na vnitřních mikroslužbách.
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další zdroje
 
-- **Chris Richardson. Vzor: Brána API/back-end pro front-end** \
+- **Chris Richardson. Vzor: Brána API/back-end pro front-end**  \
   <https://microservices.io/patterns/apigateway.html>
 
-- @No__t **vzor brány API**– 1
+- @No__t_1 **vzoru brány API**
   <https://docs.microsoft.com/azure/architecture/microservices/gateway>
 
-- **Model agregace a složení** \
+- @No__t_1 **modelu agregace a kompozice**
   <https://microservices.io/patterns/data/api-composition.html>
 
-- **Azure API Management** \
+- @No__t_1 **API Management Azure**
   <https://azure.microsoft.com/services/api-management/>
 
-- **UDI Dahan. Složení orientované na služby** \
+- **UDI Dahan. @No__t_1 kompozice pro služby**
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 - **Clemense obrovské. Zasílání zpráv a mikroslužeb na adrese GOTO 2016 (video)**  \
@@ -192,4 +192,5 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
   <https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html>
 
 >[!div class="step-by-step"]
->[Předchozí](identify-microservice-domain-model-boundaries.md)@no__t – 1 –[Další](communication-in-microservice-architecture.md)
+>[Předchozí](identify-microservice-domain-model-boundaries.md)
+>[Další](communication-in-microservice-architecture.md)

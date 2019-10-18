@@ -4,12 +4,12 @@ description: Application Insights je platforma pro diagnostiku bez serveru, kter
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 1f5b99fba448c2c1c12139524ffdcd3708b3c956
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7c1013ac029645a2da44aaf1c3b6ba74ca3f3dde
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676844"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522747"
 ---
 # <a name="telemetry-with-application-insights"></a>Telemetrie s Application Insights
 
@@ -19,12 +19,12 @@ ms.locfileid: "68676844"
 
 Přidání Application Insights do stávajících aplikací je stejně snadné jako přidání klíče instrumentace do nastavení aplikace. Pomocí Application Insights můžete:
 
-* Vytvářejte vlastní grafy a výstrahy na základě metrik, jako je počet volání funkce, čas potřebný ke spuštění funkce a výjimky.
-* Analýza selhání a výjimek serveru
-* Procházejte k podrobnostem o výkonu podle provozu a změřte čas potřebný k volání závislostí třetích stran.
-* Monitorování využití procesoru, paměti a sazeb napříč všemi servery, které hostují aplikace Function App
-* Zobrazení živého datového proudu metrik, včetně počtu požadavků a latence pro aplikace Function App
-* Využijte funkci [Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) k hledání, dotazování a vytváření vlastních grafů přes data funkcí
+- Vytvářejte vlastní grafy a výstrahy na základě metrik, jako je počet volání funkce, čas potřebný ke spuštění funkce a výjimky.
+- Analýza selhání a výjimek serveru
+- Procházejte k podrobnostem o výkonu podle provozu a změřte čas potřebný k volání závislostí třetích stran.
+- Monitorování využití procesoru, paměti a sazeb napříč všemi servery, které hostují aplikace Function App
+- Zobrazení živého datového proudu metrik, včetně počtu požadavků a latence pro aplikace Function App
+- Využijte funkci [Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) k hledání, dotazování a vytváření vlastních grafů přes data funkcí
 
 ![Průzkumník metrik](./media/metrics-explorer.png)
 
@@ -58,5 +58,5 @@ Application Insights poskytuje výkonný a pohodlný způsob, jak protokolovat p
 Další informace najdete v tématu [monitorování Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-monitoring).
 
 >[!div class="step-by-step"]
->[Předchozí](azure-functions.md)Další
->[](logic-apps.md)
+>[Předchozí](azure-functions.md)
+>[Další](logic-apps.md)

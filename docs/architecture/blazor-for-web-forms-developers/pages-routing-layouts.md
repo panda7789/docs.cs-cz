@@ -4,12 +4,12 @@ description: Naučte se vytvářet stránky v Blazor, pracovat s směrováním n
 author: danroth27
 ms.author: daroth
 ms.date: 09/19/2019
-ms.openlocfilehash: c31544156250a9e97ff8c0b17338f418817b21d2
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 693eee270a46ccb56ed5fef8fced1d4a1cf1974f
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275828"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520230"
 ---
 # <a name="pages-routing-and-layouts"></a>Stránky, směrování a rozložení
 
@@ -137,7 +137,7 @@ Směrování v Blazor se zpracovává komponentou `Router`. Komponenta `Router` 
 </Router>
 ```
 
-Komponenta `Router` zjišťuje směrovatelné komponenty v zadaném `AppAssembly` a volitelně zadaném `AdditionalAssemblies`. Když prohlížeč přejde, `Router` zachycuje navigaci a vykreslí obsah svého parametru `Found` s extrahovanou `RouteData`, pokud trasa odpovídá adrese, @no__t jinak parametr-3 vykreslí svůj parametr `NotFound`.
+Komponenta `Router` zjišťuje směrovatelné komponenty v zadaném `AppAssembly` a volitelně zadaném `AdditionalAssemblies`. Když prohlížeč přejde, `Router` zachytí navigaci a vykreslí obsah svého `Found` parametru s extrahovanou `RouteData`, pokud trasa odpovídá adrese, jinak `Router` vykreslí svůj parametr `NotFound`.
 
 Komponenta `RouteView` zpracovává vykreslování odpovídající komponenty určené `RouteData` s jeho rozložením, pokud má jednu z nich. Pokud odpovídající součást nemá rozložení, použije se volitelně zadaný `DefaultLayout`.
 
@@ -158,10 +158,10 @@ Vrácení odpovědi přesměrování není obvykle možné v Blazor. Blazor nepo
 
 Blazor poskytuje službu `NavigationManager`, kterou lze použít k těmto akcím:
 
-* Získat aktuální adresu prohlížeče
-* Získat základní adresu
-* Aktivovat navigační panel
-* Dostávat oznámení, když se změní adresa
+- Získat aktuální adresu prohlížeče
+- Získat základní adresu
+- Aktivovat navigační panel
+- Dostávat oznámení, když se změní adresa
 
 Chcete-li přejít na jinou adresu, použijte metodu `NavigateTo`:
 

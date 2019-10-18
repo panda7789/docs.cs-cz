@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: Použití Azure Monitor k získání přehledu o tom, zda je systém spuštěný.
 ms.date: 09/23/2019
-ms.openlocfilehash: 20048792e95ef1f6e75551cdd0d3571f972f6c14
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 4d7d556f030500ea6e0f608e3bdfd16d22d9eb1d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214096"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521033"
 ---
 # <a name="azure-monitor"></a>Azure Monitor 
 
@@ -15,8 +15,8 @@ ms.locfileid: "71214096"
 
 Žádný jiný poskytovatel cloudu nemá k dispozici řešení monitorování cloudových aplikací, které najdete v Azure. Azure Monitor je zastřešující program pro kolekci nástrojů navržený tak, aby poskytoval přehled o stavu systému, přehledy o všech problémech a optimalizaci vaší aplikace. 
 
-![Azure Monitor kolekce nástrojů, které poskytují přehled o fungování nativní aplikace cloudu. **Obrázek 7-9**. ](./media/azure-monitor.png)
- Azure Monitor kolekce nástrojů, které poskytují přehled o fungování nativní aplikace cloudu.
+![Azure monitorování, kolekce nástrojů, která poskytuje přehled o fungování cloudové nativní aplikace. ](./media/azure-monitor.png)
+**obrázek 7-9**. Azure Monitor kolekce nástrojů, které poskytují přehled o fungování nativní aplikace cloudu.
 
 ## <a name="gathering-logs-and-metrics"></a>Shromažďování protokolů a metrik
 
@@ -42,8 +42,8 @@ StormEvents
 | render piechart 
 ```
 
-![Výsledek](./media/azure-monitor.png)
-**obrázku Application Insights obrázek 7-10**. Výsledek dotazu Application Insights.
+![The výsledek dotazu Application Insights ](./media/azure-monitor.png)
+**obrázek 7-10**. Výsledek dotazu Application Insights.
 
 K dispozici je [Playground pro experimentování s dotazy Kusto](https://dataexplorer.azure.com/clusters/help/databases/Samples) , což je fantastická místo, které stráví hodinu nebo dvěma hodinami. Čtení [ukázkových dotazů](https://docs.microsoft.com/azure/kusto/query/samples) může být také poučené.
 
@@ -51,23 +51,23 @@ K dispozici je [Playground pro experimentování s dotazy Kusto](https://dataexp
 
 K dispozici je několik různých technologií řídicích panelů, které lze použít k obplochy těchto informací z Azure Monitor. Nejjednodušším řešením je pouze spuštění dotazů v Application Insights a [vykreslení dat do grafu](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards). 
 
-![Příklad Application Insights grafů vložených na hlavní řídicí panel](./media/azure-monitor.png)
-Azure**Obrázek 7-11**. Příklad Application Insights grafů integrovaných v hlavním řídicím panelu Azure
+![An příklad Application Insights grafů vložených na hlavní řídicí panel Azure ](./media/azure-monitor.png)
+**obrázek 7-11**. Příklad Application Insights grafů integrovaných v hlavním řídicím panelu Azure
 
 Tyto grafy pak mohou být vloženy do Azure Portal správně prostřednictvím použití funkce řídicího panelu. Pro uživatele, kteří mají větší požadavky, jako je například schopnost přejít k podrobnostem o několika úrovních dat Azure Monitor dat, je k dispozici pro [Power BI](https://powerbi.microsoft.com/). Power BI je špičková podniková třída, která business intelligence nástroj, který může agregovat data z mnoha různých zdrojů dat.
 
-![Například obrázek řídicího](./media/azure-monitor.png)
-panelu Power BI**7-12**. Příklad Power BI řídicího panelu.
+![An příklad Power BI řídicího panelu ](./media/azure-monitor.png)
+**obrázek 7-12**. Příklad Power BI řídicího panelu.
 
 ## <a name="alerts"></a>Upozornění
 
 V některých případech nejsou data řídicích panelů dostatečná. Pokud nikdo nesleduje řídicí panely, může to být ještě mnoho hodin před adresováním problému nebo dokonce i zjištěným. K tomuto účelu Azure Monitor také nabízí [řešení upozornění](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)na nejvyšší stupeň. Výstrahy se můžou aktivovat v rámci široké škály podmínek, mezi které patří:
 
-* Hodnoty metriky
-* Dotazy na hledání v protokolu
-* Události protokolu aktivit
-* Stav základní platformy Azure
-* Testy dostupnosti webu
+- Hodnoty metriky
+- Dotazy na hledání v protokolu
+- Události protokolu aktivit
+- Stav základní platformy Azure
+- Testy dostupnosti webu
 
 Při aktivaci můžou výstrahy provádět nejrůznější úlohy. Na jednoduché straně můžou výstrahy jednoduše odeslat e-mailové oznámení do seznamu adresátů nebo textové zprávy pro jednotlivce. Další zahrnuté výstrahy můžou aktivovat pracovní postup v nástroji, jako je PagerDuty, který ví, kdo je na volání konkrétní aplikace. Výstrahy můžou aktivovat akce v [Microsoft Flow](https://flow.microsoft.com/) odemykání téměř omezených možností pro pracovní postupy.
 

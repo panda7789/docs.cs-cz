@@ -4,12 +4,12 @@ description: Seznamte se s problémy při navrhování aplikací bez serveru, od
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: ecbffbbd435b4926608e4def519fdaddddab688d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c856683cf6910be98661e634246cd003b93a6d76
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676745"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522426"
 ---
 # <a name="serverless-architecture-considerations"></a>Důležité informace o bezserverové architektuře
 
@@ -21,9 +21,9 @@ Funkce bez serveru, stejně jako u mikroslužeb obecně, jsou ve výchozím nast
 
 Existuje několik řešení, která je potřeba přijmout, aniž byste ohrozili výhody bez serveru. Mezi oblíbená řešení patří:
 
-* Použít dočasné úložiště dat nebo distribuovanou mezipaměť, jako je Redis
-* Uložení stavu v databázi, jako je SQL nebo CosmosDB
-* Stav zpracování prostřednictvím modulu pracovního postupu, jako jsou trvalé funkce
+- Použít dočasné úložiště dat nebo distribuovanou mezipaměť, jako je Redis
+- Uložení stavu v databázi, jako je SQL nebo CosmosDB
+- Stav zpracování prostřednictvím modulu pracovního postupu, jako jsou trvalé funkce
 
 Dolním řádkem je, že byste měli znát potřebu jakékoli správy stavů v rámci procesů, které zvažujete k implementaci bez serveru.
 
@@ -37,9 +37,9 @@ Existuje několik výjimek a řešení. Jedním z řešení může být přeruš
 
 Jedním z možných obav s implementacemi bez serveru je čas spuštění. Pro zachování prostředků mnoho poskytovatelů bez serveru vytvoří infrastrukturu "na vyžádání". Pokud se po uplynutí určité doby aktivuje funkce bez serveru, může být potřeba vytvořit nebo restartovat prostředky pro hostování funkce. V některých situacích může studené zahájení způsobit zpoždění v několika sekundách. Čas spuštění se liší mezi poskytovateli a úrovněmi služeb. K dispozici je několik přístupů, které řeší dobu spuštění, pokud je důležité minimalizovat úspěšnost aplikace.
 
-* Někteří poskytovatelé umožňují uživatelům platit za úrovně služeb, které zaručují infrastrukturu "Always On".
-* Implementujte mechanismus Keep-Alive (pomocí příkazu příkazového koncového bodu otestujte koncový bod a zachovejte ho).
-* Použijte orchestraci jako Kubernetes s přístupem k vydaným funkcím (hostitel už je spuštěný, takže rozchází nové instance je velmi rychlé).
+- Někteří poskytovatelé umožňují uživatelům platit za úrovně služeb, které zaručují infrastrukturu "Always On".
+- Implementujte mechanismus Keep-Alive (pomocí příkazu příkazového koncového bodu otestujte koncový bod a zachovejte ho).
+- Použijte orchestraci jako Kubernetes s přístupem k vydaným funkcím (hostitel už je spuštěný, takže rozchází nové instance je velmi rychlé).
 
 ## <a name="database-updates-and-migrations"></a>Aktualizace a migrace databáze
 
@@ -55,7 +55,7 @@ Sekvence změn zajišťuje, že starší verze kódu nadále běží "tak jak js
 
 Další informace o datech v architekturách bez serveru najdete v tématu [výzvy a řešení pro správu distribuovaných dat](../microservices/architect-microservice-container-applications/distributed-data-management.md).
 
-## <a name="scaling"></a>Škálování
+## <a name="scaling"></a>Změně
 
 Jedná se o běžný nepojmový koncept, který znamená bez serveru. Je ve skutečnosti "méně serveru". Je důležité, abyste pochopili, že při škálování dojde k tomu, že budete vědět, co je záložní infrastruktura. Většina platforem bez serveru poskytuje sadu ovládacích prvků, které zpracovávají, jak by se měla infrastruktura škálovat při zvyšování hustoty událostí. Můžete si vybrat z nejrůznějších možností, ale vaše strategie se může lišit v závislosti na funkci. Kromě toho jsou funkce obvykle spouštěny v rámci souvisejícího hostitele, takže funkce na stejném hostiteli mají stejné možnosti škálování. Proto je nutné organizovat a strategize, které funkce jsou hostovány společně na základě požadavků na škálování.
 
@@ -71,7 +71,7 @@ Architektura bez serveru může zahrnovat funkce, které spoléhají na jiné fu
 
 ## <a name="managing-failure-and-providing-resiliency"></a>Správa selhání a zajištění odolnosti
 
-Je také důležité vzít v úvahu *vzor okruhu a přerušení*: Pokud z nějakého důvodu se služba stále nedaří, není vhodné tuto službu volat opakovaně. Místo toho se zavolá alternativní služba nebo se vrátí zpráva, dokud není znovu vytvořen stav závislé služby. Architektura bez serveru musí vzít v úvahu strategii pro řešení a správu závislostí mezi službami.
+Je také důležité vzít v úvahu *model přerušení okruhu*: Pokud z nějakého důvodu dojde k selhání služby, není vhodné tuto službu volat opakovaně. Místo toho se zavolá alternativní služba nebo se vrátí zpráva, dokud není znovu vytvořen stav závislé služby. Architektura bez serveru musí vzít v úvahu strategii pro řešení a správu závislostí mezi službami.
 
 Aby bylo možné pokračovat ve vzorku okruhu, je nutné, aby služba byla odolná proti chybám a odolná. Odolnost proti chybám znamená schopnost vaší aplikace pokračovat v běhu i po neočekávaných výjimkách nebo při zjištění neplatných stavů. Odolnost proti chybám je obvykle funkcí samotného kódu a způsobu jejich zápisu pro zpracování výjimek. Odolnost proti chybám označuje, jak může aplikace při obnovování selhat. Odolnost proti chybám je často spravovaná platformou bez serveru. Platforma by měla být schopná aktivovat novou instanci funkce bez serveru, když se stávající instance nezdařila. Platforma by měla být také inteligentní, aby zastavila nové instance, když dojde k chybě každé nové instance.
 
@@ -82,5 +82,5 @@ Další informace najdete v tématu [implementace vzoru pro přerušení okruhů
 Hlavní výhodou bez serveru je možnost upgradovat konkrétní funkci, aniž by bylo nutné znovu nasazovat celou aplikaci. Aby bylo možné upgrady provést, musí být funkce zavedeny se správou verzí, aby je služba volající je směrovala na správnou verzi kódu. Strategie pro nasazení nových verzí je taky důležitá. Běžným přístupem je použití zelených a modrých nasazení. Zeleným nasazením je aktuální funkce. Nová "modrá" verze se nasadí do produkčního a testovaného. Při testování projde zelená a modrá verze, takže nová verze bude živá. Pokud se vyskytnou nějaké problémy, můžou se znovu zaměnit. Podpora správy verzí a zelených a modrých nasazení vyžaduje kombinaci vytváření funkcí pro přizpůsobení změn verzí a práci s platformou bez serveru pro zpracování nasazení. Jedním z možných způsobů je použití proxy serverů, které jsou popsané v kapitole [platforma bez serveru Azure](azure-functions.md#proxies) .
 
 >[!div class="step-by-step"]
->[Předchozí](serverless-architecture.md)Další
->[](serverless-design-examples.md)
+>[Předchozí](serverless-architecture.md)
+>[Další](serverless-design-examples.md)

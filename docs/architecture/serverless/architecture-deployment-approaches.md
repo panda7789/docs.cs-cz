@@ -4,12 +4,12 @@ description: Průvodce různými způsoby, jak podnikové architektury nasadí d
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 4cc8442509fc8a0e2cc0eb797365423458e77684
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: c745a4eb1c6f4a00bf139100b02f31cf3327d01e
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834342"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522724"
 ---
 # <a name="architecture-deployment-approaches"></a>Přístupy k nasazení architektury
 
@@ -19,38 +19,38 @@ Bez ohledu na přístup k architektuře, který se používá k návrhu obchodn�
 
 [N-vrstvý model architektury](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) je vyspělá architektura a jednoduše odkazuje na aplikace, které oddělují různé logické vrstvy na samostatné fyzické vrstvy. N-vrstvá architektura je fyzická implementace N-vrstvé architektury. Nejběžnější implementace této architektury zahrnuje:
 
-* Prezentační vrstva, například webová aplikace.
-* Rozhraní API nebo úroveň přístupu k datům, jako je například REST API.
-* Datová vrstva, jako je třeba databáze SQL.
+- Prezentační vrstva, například webová aplikace.
+- Rozhraní API nebo úroveň přístupu k datům, jako je například REST API.
+- Datová vrstva, jako je třeba databáze SQL.
 
 ![N-vrstvá architektura](./media/n-tier-architecture.png)
 
 N-vrstvá řešení mají následující vlastnosti:
 
-* Projekty jsou obvykle zarovnány s vrstvami.
-* Testování se může nacházet odlišně podle úrovně.
-* Vrstvy poskytují vrstvy abstrakce, například prezentační vrstva obvykle ignoruje podrobnosti implementace datové vrstvy.
-* Vrstvy obvykle pracují pouze s sousedícími vrstvami.
-* Verze jsou často spravovány v projektu a proto úroveň. Jednoduchá změna rozhraní API může vyžadovat nové vydání celé prostřední vrstvy.
+- Projekty jsou obvykle zarovnány s vrstvami.
+- Testování se může nacházet odlišně podle úrovně.
+- Vrstvy poskytují vrstvy abstrakce, například prezentační vrstva obvykle ignoruje podrobnosti implementace datové vrstvy.
+- Vrstvy obvykle pracují pouze s sousedícími vrstvami.
+- Verze jsou často spravovány v projektu a proto úroveň. Jednoduchá změna rozhraní API může vyžadovat nové vydání celé prostřední vrstvy.
 
 Tento přístup přináší několik výhod, včetně:
 
-* Izolace databáze (často front-end nemá přímý přístup k back-endu databáze).
-* Opětovné použití rozhraní API (například klientů pro mobilní zařízení, stolní počítače a webové aplikace může používat stejná rozhraní API).
-* Možnost škálovat vrstvy nezávisle na sobě.
-* Izolace refaktoringu: jedna úroveň může být refaktorovaná, aniž by to ovlivnilo jiné úrovně.
+- Izolace databáze (často front-end nemá přímý přístup k back-endu databáze).
+- Opětovné použití rozhraní API (například klientů pro mobilní zařízení, stolní počítače a webové aplikace může používat stejná rozhraní API).
+- Možnost škálovat vrstvy nezávisle na sobě.
+- Izolace refaktoringu: jedna úroveň může být refaktorovaná, aniž by to ovlivnilo jiné úrovně.
 
 ## <a name="on-premises-and-infrastructure-as-a-service-iaas"></a>Místní prostředí a infrastruktura jako služba (IaaS)
 
 Tradiční přístup k hostování aplikací vyžaduje nákup hardwaru a správu všech instalací softwaru, včetně operačního systému. Původně to zahrnovalo náročné datové centra a fyzický hardware. Mezi výzvy, které se dodávají s provozem fyzického hardwaru, patří mnoho, včetně těchto:
 
-* Je potřeba koupit si přebytky pro scénáře "jenom v případě" nebo špičkové poptávky.
-* Zabezpečení fyzického přístupu k hardwaru.
-* Zodpovědnost za selhání hardwaru (například selhání disku).
-* Synchronizovat.
-* Konfigurace směrovačů a nástrojů pro vyrovnávání zatížení.
-* Redundance napájení.
-* Zabezpečení přístupu k softwaru.
+- Je potřeba koupit si přebytky pro scénáře "jenom v případě" nebo špičkové poptávky.
+- Zabezpečení fyzického přístupu k hardwaru.
+- Zodpovědnost za selhání hardwaru (například selhání disku).
+- Synchronizovat.
+- Konfigurace směrovačů a nástrojů pro vyrovnávání zatížení.
+- Redundance napájení.
+- Zabezpečení přístupu k softwaru.
 
 ![Přístup IaaS](./media/iaas-approach.png)
 
@@ -68,10 +68,10 @@ Platforma jako služba (PaaS) nabízí konfigurovaná řešení, která můžou 
 
 PaaS řeší výzvy společné pro IaaS. PaaS umožňuje vývojářům soustředit se na kód nebo schéma databáze místo nasazení. Mezi výhody PaaS patří:
 
-* Platíte za použití modelů, které eliminují režijní náklady na investice do nečinných počítačů.
-* Přímé nasazení a vylepšené kanály pro DevOps, kontinuální integrace (CI) a průběžné doručování (CD).
-* Automatické upgrady, aktualizace a opravy zabezpečení.
-* Horizontální navýšení kapacity a navýšení kapacity (Elastické škálování).
+- Platíte za použití modelů, které eliminují režijní náklady na investice do nečinných počítačů.
+- Přímé nasazení a vylepšené kanály pro DevOps, kontinuální integrace (CI) a průběžné doručování (CD).
+- Automatické upgrady, aktualizace a opravy zabezpečení.
+- Horizontální navýšení kapacity a navýšení kapacity (Elastické škálování).
 
 Hlavní nevýhodou PaaS tradičně byl uzamčen dodavatel. Někteří poskytovatelé PaaS například podporují ASP.NET, Node. js nebo jiné konkrétní jazyky a platformy. Produkty, jako Azure App Service, se vyvinuly k řešení více platforem a podporují různé jazyky a architektury pro hostování webových aplikací.
 
@@ -89,11 +89,11 @@ Kontejnery jsou zajímavé řešení, které umožňuje PaaSům podobných výho
 
 Mezi výhody kontejnerů patří:
 
-* Odlehčené a přenosné
-* Samostatně obsažený, takže není nutné instalovat závislosti
-* Poskytněte konzistentní prostředí bez ohledu na to, co je hostitel (spouští se přesně na přenosném počítači jako na cloudovém serveru).
-* Dá se rychle zřídit pro horizontální navýšení kapacity
-* Se dá rychle restartovat, aby se obnovila chyba.
+- Odlehčené a přenosné
+- Samostatně obsažený, takže není nutné instalovat závislosti
+- Poskytněte konzistentní prostředí bez ohledu na to, co je hostitel (spouští se přesně na přenosném počítači jako na cloudovém serveru).
+- Dá se rychle zřídit pro horizontální navýšení kapacity
+- Se dá rychle restartovat, aby se obnovila chyba.
 
 Kontejner se spouští na hostiteli kontejneru (který zase může běžet na holém počítači nebo virtuálním počítači). V jednom hostiteli může běžet více kontejnerů nebo instancí stejných kontejnerů. Pro skutečné převzetí služeb při selhání a odolnost musí být kontejnery škálované napříč hostiteli.
 
@@ -109,7 +109,7 @@ Další informace o orchestraci najdete v tématu [Kubernetes v Azure](https://d
 
 Functions as a Service (FaaS) je specializovaná služba kontejneru, která se podobá bez serveru. Konkrétní implementace FaaS, která se nazývá [OpenFaaS](https://github.com/openfaas/faas), je umístěná na kontejnerech a poskytuje možnosti bez serveru. OpenFaaS poskytuje šablony, které zabalí všechny závislosti kontejneru nezbytné ke spuštění části kódu. Použití šablon zjednodušuje proces nasazení kódu jako funkční jednotky. OpenFaaS cílí na architektury, které už obsahují kontejnery a orchestrace, protože můžou používat stávající infrastrukturu. I když poskytuje funkce bez serveru, konkrétně vyžaduje, abyste používali Docker a Orchestrator.
 
-## <a name="serverless"></a>Řešení bez serverů
+## <a name="serverless"></a>Bez serveru
 
 Architektura bez serveru poskytuje jasné oddělení kódu a jeho hostitelského prostředí. Implementujete kód ve *funkci* , která je vyvolána *triggerem*. Po ukončení této funkce mohou být všechny potřebné prostředky uvolněny. Trigger může být manuální, časový proces, požadavek HTTP nebo nahrání souboru. Výsledek triggeru je spuštění kódu. I když se platformy bez serveru liší, většina poskytuje přístup k předdefinovaným rozhraním API a vazbám, aby se zjednodušily úlohy, jako je zápis do databáze nebo zařazení výsledků do fronty.
 
@@ -125,10 +125,10 @@ Následující ilustrace znázorňuje čtyři součásti bez serveru. Požadavek
 
 Mezi výhody nástroje bez serveru patří:
 
-* **Vysoká hustota** Mnoho instancí stejného kódu bez serveru může běžet na stejném hostiteli v porovnání s kontejnery nebo virtuálními počítači. Instance se škálují napříč více hostiteli a odolnostně se škálují.
-* **Mikrofakturaci**. Většina poskytovatelů bez serveru se fakturuje na základě provádění bez serveru a umožňuje v určitých scénářích obrovské úspory nákladů.
-* **Okamžité škálování**. Škálování bez serveru se dá škálovat tak, aby se automaticky shodovala s úlohami.
-* **Rychlejší uvedení na trh** Vývojáři se zaměřují na kód a nasazují se přímo na platformu bez serveru. Součásti lze uvolnit nezávisle na sobě.
+- **Vysoká hustota** Mnoho instancí stejného kódu bez serveru může běžet na stejném hostiteli v porovnání s kontejnery nebo virtuálními počítači. Instance se škálují napříč více hostiteli a odolnostně se škálují.
+- **Mikrofakturaci.** Většina poskytovatelů bez serveru se fakturuje na základě provádění bez serveru a umožňuje v určitých scénářích obrovské úspory nákladů.
+- **Okamžité škálování.** Škálování bez serveru se dá škálovat tak, aby se automaticky shodovala s úlohami.
+- **Rychlejší uvedení na trh.** Vývojáři se zaměřují na kód a nasazují se přímo na platformu bez serveru. Součásti lze uvolnit nezávisle na sobě.
 
 Servery bez serveru se nejčastěji projednávají v kontextu COMPUTE, ale můžou se vztahovat i na data. Například [Azure SQL](https://docs.microsoft.com/azure/sql-database) a [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db) poskytují cloudové databáze, které nevyžadují konfiguraci hostitelských počítačů nebo clusterů. Tato kniha se zaměřuje na výpočetní prostředky bez serveru.
 
@@ -136,34 +136,35 @@ Servery bez serveru se nejčastěji projednávají v kontextu COMPUTE, ale můž
 
 K dispozici je široké spektrum dostupných možností architektury, včetně hybridního přístupu. Bez serveru se zjednodušuje přístup, Správa a náklady na funkce aplikací na úkor řízení a přenositelnosti. Mnoho platforem bez serveru ale zveřejňuje konfiguraci, která vám pomůžou řešení ladit. Dobré postupy programování můžou také vést k většímu přenositelnému kódu a menšímu zamykání platforem bez serveru. Následující tabulka ilustruje přístup architektury vedle sebe. Vyberte možnost bez serveru v závislosti na potřebách škálování, bez ohledu na to, jestli chcete modul runtime spravovat a jak dobře můžete úlohy rozdělit do malých součástí. Seznámíte se s potenciálními výzvami bez serveru a dalšími rozhodovacími body v další kapitole.
 
-|         |IaaS     |PaaS     |Kontejner|Řešení bez serverů|
+|         |IaaS     |PaaS     |vnitřního|Bez serveru|
 |---------|---------|---------|---------|----------|
-|**Škálování**|Virtuální počítač       |Instance |Aplikace      |Funkce  |
+|**Kapacity**|SÍŤ       |instance |Aplikace      |Funkce  |
 |**Abstrahuje**|Hardware|Platforma|Hostitel operačního systému|Modul runtime   |
-|**Jednotce** |Virtuální počítač       |Project  |Image    |Kód      |
-|**Platné**|Měsíce|Dny do měsíců|Počet minut do dnů|Milisekundy na minuty|
+|**Jednotce** |SÍŤ       |Project  |Image    |Kód      |
+|**Doba platnosti**|Měsíci|Dny do měsíců|Počet minut do dnů|Milisekundy na minuty|
 |**Zodpovědní**|Aplikace, závislosti, modul runtime a operační systém|Aplikace a závislosti|Aplikace, závislosti a modul runtime|Funkce
 
-* **Škálování** odkazuje na jednotku, která se používá ke škálování aplikace.
-* **Abstraktnís** odkazuje na vrstvu, která je abstraktní implementací.
-* **Jednotka** odkazuje na rozsah toho, co je nasazeno.
-* **Doba platnosti** odkazuje na typický modul runtime konkrétní instance.
-* **Zodpovědnost** závisí na režii při sestavování, nasazování a údržbě aplikace.
+- **Škálování** odkazuje na jednotku, která se používá ke škálování aplikace.
+- **Abstraktnís** odkazuje na vrstvu, která je abstraktní implementací.
+- **Jednotka** odkazuje na rozsah toho, co je nasazeno.
+- **Doba platnosti** odkazuje na typický modul runtime konkrétní instance.
+- **Zodpovědnost** závisí na režii při sestavování, nasazování a údržbě aplikace.
 
 Další kapitola se soustředí na architekturu bez serveru, případy použití a vzory návrhu.
 
-## <a name="recommended-resources"></a>Doporučené materiály
+## <a name="recommended-resources"></a>Doporučené prostředky
 
-* [Průvodce architekturou aplikací Azure](https://docs.microsoft.com/azure/architecture/guide/)
-* [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
-* [Azure SQL](https://docs.microsoft.com/azure/sql-database)
-* [N-vrstvý model architektury](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
-* [Kubernetes v Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-* [Mikroslužby](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
-* [Referenční architektura N-vrstvých virtuálních počítačů](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
-* [Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/)
-* [Co je Docker?](../microservices/container-docker-introduction/docker-defined.md)
-* [Aplikace SaaS lístky Wingtip](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
+- [Průvodce architekturou aplikací Azure](https://docs.microsoft.com/azure/architecture/guide/)
+- [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
+- [SQL Azure](https://docs.microsoft.com/azure/sql-database)
+- [N-vrstvý model architektury](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
+- [Kubernetes v Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+- [Mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
+- [Referenční architektura N-vrstvých virtuálních počítačů](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
+- [Virtuální počítače](https://docs.microsoft.com/azure/virtual-machines/)
+- [Co je Docker?](../microservices/container-docker-introduction/docker-defined.md)
+- [Aplikace SaaS lístky Wingtip](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
 >[!div class="step-by-step"]
->[Předchozí](architecture-approaches.md)@no__t – 1 –[Další](serverless-architecture.md)
+>[Předchozí](architecture-approaches.md)
+>[Další](serverless-architecture.md)

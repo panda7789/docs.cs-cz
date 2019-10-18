@@ -4,12 +4,12 @@ description: Azure Event Grid je řešení bez serveru pro spolehlivé doručov�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 4970130ede0c96c645129ee6c8c7d54cb1114042
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 3c577139c12567e762aabd58c9dc29457fa37aa1
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676793"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522714"
 ---
 # <a name="event-grid"></a>Event Grid
 
@@ -19,9 +19,9 @@ ms.locfileid: "68676793"
 
 Mezi hlavní funkce Event gridu patří:
 
-* Plně spravovaná směrování událostí.
-* Doručování událostí téměř v reálném čase ve velkém měřítku.
-* Široké pokrytí uvnitř i mimo Azure.
+- Plně spravovaná směrování událostí.
+- Doručování událostí téměř v reálném čase ve velkém měřítku.
+- Široké pokrytí uvnitř i mimo Azure.
 
 ## <a name="scenarios"></a>Scénáře
 
@@ -43,7 +43,7 @@ K připojení aplikace k jiným službám můžete použít Event Grid. Pomocí 
 
 ![Aplikace bez serveru](./media/serverless-apps.png)
 
-Event Grid může aktivovat Azure Functions, Logic Apps nebo vlastní kód. Hlavní výhodou použití Event Grid je to, že používá mechanismus *push* k posílání zpráv, když dojde k událostem. Architektura nabízených oznámení spotřebovává méně prostředků a škáluje lepší než mechanizmy dotazování. Cyklické dotazování musí v pravidelných intervalech kontrolovat aktualizace.
+Event Grid může aktivovat Azure Functions, Logic Apps nebo vlastní kód. Hlavní výhodou použití Event Grid je to, že používá mechanismus *push* k posílání zpráv, když dojde k událostem. Architektura nabízených oznámení spotřebovává méně prostředků a škáluje lepší než mechanizmy *dotazování* . Cyklické dotazování musí v pravidelných intervalech kontrolovat aktualizace.
 
 ## <a name="event-grid-vs-other-azure-messaging-services"></a>Event Grid vs. další služby zasílání zpráv Azure
 
@@ -57,13 +57,13 @@ Podrobnější porovnání najdete v tématu [porovnání služeb zasílání zp
 
 Pomocí Event Grid můžete využít výhod následujících záruk výkonu:
 
-* Koncová druhá sekunda v 99 percentilu.
-* 99,99 % dostupnost.
-* 10 000 000 událostí za sekundu na oblast
-* 100 000 000 předplatných na oblast
-* 50 – latence MS Publisher
-* 24 hodin opakování s exponenciálním zálohováním pro garantované doručení v rámci 1 dne.
-* Transparentní místní převzetí služeb při selhání.
+- Koncová druhá sekunda v 99 percentilu.
+- 99,99% dostupnost.
+- 10 000 000 událostí za sekundu na oblast
+- 100 000 000 předplatných na oblast
+- 50 – latence MS Publisher
+- 24 hodin opakování s exponenciálním zálohováním pro garantované doručení v rámci 1 dne.
+- Transparentní místní převzetí služeb při selhání.
 
 ## <a name="event-grid-schema"></a>Event Grid schéma
 
@@ -84,7 +84,7 @@ Event Grid používá ke zalamování vlastních událostí standardní schéma.
 }]
 ```
 
-Vše o zprávě je Standard s výjimkou `data` vlastnosti. Můžete zkontrolovat zprávu a použít `eventType` a `dataVersion` k deserializaci vlastní části datové části.
+Vše o zprávě je Standard s výjimkou vlastnosti `data`. Můžete zkontrolovat zprávu a použít `eventType` a `dataVersion` k deserializaci vlastní části datové části.
 
 ## <a name="azure-resources"></a>Prostředky Azure
 
@@ -95,18 +95,18 @@ Hlavní výhodou použití Event Grid jsou automatické zprávy vytvořené v Az
 | Předplatné Azure | Microsoft. Resources. ResourceWriteSuccess | Vyvolá se, když je operace vytvoření nebo aktualizace prostředku úspěšná. |
 | | Microsoft. Resources. ResourceWriteFailure | Vyvolá se v případě, že dojde k chybě operace vytvoření nebo aktualizace prostředku. |
 | | Microsoft. Resources. ResourceWriteCancel | Vyvolá se při zrušení operace vytvoření nebo aktualizace prostředku. |
-|  | Microsoft.Resources.ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
+|  | Microsoft. Resources. ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
 |  | Microsoft. Resources. ResourceDeleteFailure | Vyvolá se v případě, že dojde k chybě operace odstranění prostředku. |
 | | Microsoft. Resources. ResourceDeleteCancel | Vyvolá se při zrušení operace odstranění prostředku. Tato událost nastane, když se zruší nasazení šablony. |
-| Blob Storage | Microsoft.Storage.BlobCreated | Vyvolá se při vytvoření objektu BLOB. |
-| | Microsoft.Storage.BlobDeleted | Vyvolá se při odstranění objektu BLOB. |
-| Event Hubs | Microsoft.EventHub.CaptureFileCreated | Je aktivována při vytvoření sběrného souboru.
-| IoT Hub | Microsoft.Devices.DeviceCreated | Publikováno, když je zařízení zaregistrované do služby IoT Hub. |
-| | Microsoft.Devices.DeviceDeleted | Publikováno při odstranění zařízení ze služby IoT Hub. |
+| Blob Storage | Microsoft. Storage. BlobCreated | Vyvolá se při vytvoření objektu BLOB. |
+| | Microsoft. Storage. BlobDeleted | Vyvolá se při odstranění objektu BLOB. |
+| Centra událostí | Microsoft. EventHub. CaptureFileCreated | Je aktivována při vytvoření sběrného souboru.
+| IoT Hub | Microsoft. Devices. DeviceCreated | Publikováno, když je zařízení zaregistrované do služby IoT Hub. |
+| | Microsoft. Devices. DeviceDeleted | Publikováno při odstranění zařízení ze služby IoT Hub. |
 | Skupiny prostředků | Microsoft. Resources. ResourceWriteSuccess | Vyvolá se, když je operace vytvoření nebo aktualizace prostředku úspěšná. |
 | | Microsoft. Resources. ResourceWriteFailure | Vyvolá se v případě, že dojde k chybě operace vytvoření nebo aktualizace prostředku. |
 | | Microsoft. Resources. ResourceWriteCancel | Vyvolá se při zrušení operace vytvoření nebo aktualizace prostředku. |
-| | Microsoft.Resources.ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
+| | Microsoft. Resources. ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
 | | Microsoft. Resources. ResourceDeleteFailure | Vyvolá se v případě, že dojde k chybě operace odstranění prostředku. |
 | | Microsoft. Resources. ResourceDeleteCancel | Vyvolá se při zrušení operace odstranění prostředku. Tato událost nastane, když se zruší nasazení šablony. |
 
@@ -120,27 +120,27 @@ V této kapitole jste se dozvěděli o platformě bez serveru Azure, která se s
 
 ## <a name="recommended-resources"></a>Doporučené prostředky
 
-* [Plány služby App Service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
-* [Application Insights](https://docs.microsoft.com/azure/application-insights)
-* [Analýzy Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
-* [Azure: Přeneste svou aplikaci do cloudu s využitím Azure Functions bez serveru](https://channel9.msdn.com/events/Connect/2017/E102)
-* [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-* [Azure Event Grid schéma událostí](https://docs.microsoft.com/azure/event-grid/event-schema)
-* [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs)
-* [Dokumentace k Azure Functions](https://docs.microsoft.com/azure/azure-functions)
-* [Azure Functions triggery a koncepty vazeb](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)
-* [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
-* [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
-* [Azure Table Storage](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
-* [Porovnání funkcí 1. x a 2. x](https://docs.microsoft.com/azure/azure-functions/functions-versions)
-* [Připojení k místním zdrojům dat s místní bránou dat Azure](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
-* [Vytvoření první funkce v Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
-* [Vytvoření první funkce pomocí Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)
-* [Vytvoření první funkce pomocí sady Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)
-* [Funkce podporované jazyky](https://docs.microsoft.com/azure/azure-functions/supported-languages)
-* [Azure Functions monitorování](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
-* [Práce s Proxy služby Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
+- [Plány služby App Service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
+- [Application Insights](https://docs.microsoft.com/azure/application-insights)
+- [Analýzy Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
+- [Azure: přeneste svou aplikaci do cloudu pomocí Azure Functions bez serveru](https://channel9.msdn.com/events/Connect/2017/E102)
+- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
+- [Azure Event Grid schéma událostí](https://docs.microsoft.com/azure/event-grid/event-schema)
+- [Event Hubs Azure](https://docs.microsoft.com/azure/event-hubs)
+- [Dokumentace k Azure Functions](https://docs.microsoft.com/azure/azure-functions)
+- [Azure Functions triggery a koncepty vazeb](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)
+- [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
+- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
+- [Table Storage Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
+- [Porovnání funkcí 1. x a 2. x](https://docs.microsoft.com/azure/azure-functions/functions-versions)
+- [Připojení k místním zdrojům dat s místní bránou dat Azure](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
+- [Vytvoření první funkce v Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
+- [Vytvoření první funkce pomocí Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)
+- [Vytvoření první funkce pomocí sady Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)
+- [Funkce podporované jazyky](https://docs.microsoft.com/azure/azure-functions/supported-languages)
+- [Azure Functions monitorování](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
+- [Práce s Proxy služby Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
 
 >[!div class="step-by-step"]
->[Předchozí](logic-apps.md)Další
->[](durable-azure-functions.md)
+>[Předchozí](logic-apps.md)
+>[Další](durable-azure-functions.md)

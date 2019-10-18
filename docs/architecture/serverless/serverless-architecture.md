@@ -4,12 +4,12 @@ description: Průzkum různých architektur a aplikací, které podporují archi
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 3b22fecfdc693154dbdeb3e872e0e246e8ca41f9
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 838dcd7b41df0d8297e1ae10f9c04a8d5b83b332
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676721"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522405"
 ---
 # <a name="serverless-architecture"></a>Bezserverová architektura
 
@@ -27,12 +27,12 @@ Některé projekty můžou využít přístup "všechny" k serveru bez serveru. 
 
 Úplný back-end bez serveru je ideální pro několik typů scénářů, zejména při sestavování nových nebo "zelených" polí "aplikací. Aplikace s velkou plochou rozhraní API může přinést implementaci jednotlivých rozhraní API jako funkce bez serveru. Aplikace, které jsou založené na architektuře mikroslužeb, jsou další příklad, který by se mohl implementovat jako úplný back-end Server bez serveru. Mikroslužby komunikují přes různé protokoly navzájem. Mezi konkrétní scénáře patří:
 
-* SaaS produkty založené na rozhraní API (příklad: procesor finančních plateb).
-* Aplikace řízené zprávami (příklad: řešení monitorování zařízení).
-* Aplikace zaměřené na integraci mezi službami (příklad: aplikace pro rezervaci letenek).
-* Procesy, které se spouštějí pravidelně (například: vyčištění databáze na základě časovače).
-* Aplikace zaměřené na transformaci dat (příklad: import aktivovaný při nahrávání souboru)
-* Extrakce procesů transformace a načítání (ETL).
+- SaaS produkty založené na rozhraní API (příklad: procesor finančních plateb).
+- Aplikace řízené zprávami (příklad: řešení monitorování zařízení).
+- Aplikace zaměřené na integraci mezi službami (příklad: aplikace pro rezervaci letenek).
+- Procesy, které se spouštějí pravidelně (například: vyčištění databáze na základě časovače).
+- Aplikace zaměřené na transformaci dat (příklad: import aktivovaný při nahrávání souboru)
+- Extrakce procesů transformace a načítání (ETL).
 
 Existují další, konkrétnější případy použití, které jsou pokryty dále v tomto dokumentu.
 
@@ -42,7 +42,7 @@ Běžným problémem je migrace stávající aplikace v monolitické do cloudu. 
 
 ![Migrace monolitu bez serveru](./media/serverless-monolith-migration.png)
 
-Pokud se chcete dozvědět víc o tomto přístupu, podívejte se na video: [Přeneste svou aplikaci do cloudu pomocí Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102).
+Další informace o tomto přístupu najdete v tomto videu: [převedení aplikace do cloudu s využitím Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102).
 
 ## <a name="web-apps"></a>Webové aplikace
 
@@ -66,13 +66,13 @@ IoT odkazuje na fyzické objekty, které jsou propojeny společně. Někdy se oz
 
 Sheer objem zařízení a informací často vykazuje architekturu řízenou událostmi pro směrování a zpracování zpráv. Neserveru je ideální řešení z několika důvodů:
 
-* Umožňuje škálování při zvyšování objemu zařízení a dat.
-* Přizpůsobí přidávání nových koncových bodů pro podporu nových zařízení a senzorů.
-* Usnadňuje nezávislé správy verzí, takže vývojáři můžou aktualizovat obchodní logiku pro konkrétní zařízení, aniž by museli nasazovat celý systém.
-* Odolnost a méně výpadků.
+- Umožňuje škálování při zvyšování objemu zařízení a dat.
+- Přizpůsobí přidávání nových koncových bodů pro podporu nových zařízení a senzorů.
+- Usnadňuje nezávislé správy verzí, takže vývojáři můžou aktualizovat obchodní logiku pro konkrétní zařízení, aniž by museli nasazovat celý systém.
+- Odolnost a méně výpadků.
 
 Výsledkem pronikavostí IoT je několik produktů bez serveru, které se zaměřují konkrétně na problematiku IoT, jako je třeba [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub). Bez serveru se automatizují úlohy, jako je registrace zařízení, vynucování zásad, sledování a dokonce nasazení kódu do zařízení na *hraničních*zařízeních. Tato hrana odkazuje na zařízení, jako jsou senzory a poháněcí zařízení, která jsou připojená k Internetu, ale nejsou aktivní součástí.
 
 >[!div class="step-by-step"]
->[Předchozí](architecture-approaches.md)Další
->[](serverless-architecture-considerations.md)
+>[Předchozí](architecture-approaches.md)
+>[Další](serverless-architecture-considerations.md)

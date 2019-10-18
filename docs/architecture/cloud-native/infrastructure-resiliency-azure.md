@@ -2,12 +2,12 @@
 title: Odolnost platformy Azure
 description: Architekt cloudových nativních aplikací .NET pro Azure | Odolnost cloudové infrastruktury s Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 7f148588be97fa6bf8a055f5f5bed8e23908277f
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 02d661952c860da25442b0fa9fed0d5f93abe023
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214199"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520769"
 ---
 # <a name="azure-platform-resiliency"></a>Odolnost platformy Azure
 
@@ -56,7 +56,7 @@ Cloud Thrives při škálování. Schopnost zvýšit nebo snížit systémové p
 
 - *Rozdělit úlohy na oddíly*. Rozkládání domén na nezávislé, samostatné mikroslužby umožňují škálovat každou službu nezávisle na ostatních. Služby obvykle budou mít různé potřeby a požadavky na škálovatelnost. Dělení vám umožní škálovat jenom to, co je potřeba škálovat, aniž byste museli škálovat celou aplikaci.
 
-- *Upřednostnit škálování na více instancí.* Cloudové aplikace přikládají horizontální navýšení kapacity prostředků na rozdíl od škálování. Horizontální škálování (označuje se také jako horizontální škálování) zahrnuje přidání dalších prostředků služby do stávajícího systému, aby bylo možné splnit a sdílet požadovanou úroveň výkonu. Vertikální škálování (označuje se také jako vertikální škálování) zahrnuje nahrazení existujících prostředků výkonnějším hardwarem (více jader disku, paměti a zpracování). Horizontální navýšení kapacity se dá vyvolávat automaticky funkcemi automatického škálování, které jsou dostupné v některých cloudových prostředcích Azure. Horizontální navýšení kapacity mezi více prostředky také zvyšuje redundanci celého systému. Nakonec je škálování jednoho prostředku obvykle dražší než horizontální navýšení kapacity mezi mnoho menších prostředků. Obrázek 6-8 ukazuje dva přístupy:
+- *Upřednostnit škálování na* více instancí. Cloudové aplikace přikládají horizontální navýšení kapacity prostředků na rozdíl od škálování. Horizontální škálování (označuje se také jako horizontální škálování) zahrnuje přidání dalších prostředků služby do stávajícího systému, aby bylo možné splnit a sdílet požadovanou úroveň výkonu. Vertikální škálování (označuje se také jako vertikální škálování) zahrnuje nahrazení existujících prostředků výkonnějším hardwarem (více jader disku, paměti a zpracování). Horizontální navýšení kapacity se dá vyvolávat automaticky funkcemi automatického škálování, které jsou dostupné v některých cloudových prostředcích Azure. Horizontální navýšení kapacity mezi více prostředky také zvyšuje redundanci celého systému. Nakonec je škálování jednoho prostředku obvykle dražší než horizontální navýšení kapacity mezi mnoho menších prostředků. Obrázek 6-8 ukazuje dva přístupy:
 
 ![Horizontální navýšení kapacity oproti škálování](./media/scale-up-scale-out.png)
 
@@ -68,17 +68,17 @@ Cloud Thrives při škálování. Schopnost zvýšit nebo snížit systémové p
 
 - *Využijte výhod funkcí automatického škálování platformy.* Používejte integrované funkce automatického škálování, kdykoli je to možné, ale nemusíte používat vlastní mechanismy nebo mechanizmy třetích stran. Pokud je to možné, použijte plánovaná pravidla škálování k zajištění dostupnosti prostředků bez prodlevy při spuštění, ale podle potřeby přidejte do pravidel reaktivní automatické škálování, abyste se mohli vypořádat s neočekávanými změnami v poptávce. Další informace najdete v tématu [pokyny](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)k automatickému škálování.
 
-- *Horizontální navýšení kapacity* Konečným postupem je horizontální navýšení kapacity, aby bylo možné rychle vyhovět okamžitým špičkám v provozu bez ztráty podnikání. A potom Škálujte dolů (to znamená odebrání nepotřebných prostředků) uvážlivě, aby se zajistila stabilita systému. Jednoduchým způsobem, jak to provést, je nastavit dobu chladnutí, což je čas, který se má čekat mezi operacemi škálování, na pět minut při přidávání prostředků a až 15 minut pro odebrání instancí.
+- *Škálování je agresivní.* Konečným postupem by bylo horizontální navýšení kapacity, aby bylo možné rychle vyhovět okamžitým špičkám v provozu bez ztráty podnikání. A pak můžete škálovat (tj. odebrat nepotřebné instance), aby byl systém stabilní. Jednoduchým způsobem, jak to provést, je nastavit dobu chladnutí, což je čas, který se má čekat mezi operacemi škálování, na pět minut při přidávání prostředků a až 15 minut pro odebrání instancí.
 
 ## <a name="built-in-retry-in-services"></a>Integrované opakování ve službách
 
 Doporučujeme, abyste provedli osvědčené postupy implementace programových opakovaných operací v předchozí části. Mějte na paměti, že mnoho služeb Azure a jejich odpovídajících klientských SDK zahrnuje i mechanismy opakování. Následující seznam shrnuje funkce opakování v řadě služeb Azure, které jsou popsány v této příručce:
 
-- *Azure Cosmos DB.* <xref:Microsoft.Azure.Documents.Client.DocumentClient> Třída z rozhraní API klienta automaticky odřadí neúspěšné pokusy. Počet opakovaných pokusů a maximální doba čekání je konfigurovatelná. Výjimky vyvolané klientským rozhraním API jsou požadavky, které překračují zásady opakování nebo nepřechodné chyby.
+- *Azure Cosmos DB.* Třída <xref:Microsoft.Azure.Documents.Client.DocumentClient> z rozhraní API klienta automaticky odřadí neúspěšné pokusy. Počet opakovaných pokusů a maximální doba čekání je konfigurovatelná. Výjimky vyvolané klientským rozhraním API jsou požadavky, které překračují zásady opakování nebo nepřechodné chyby.
 
 - *Azure Redis Cache.* Klient Redis StackExchange používá třídu Správce připojení, která zahrnuje opakování při neúspěšných pokusech. Počet opakovaných pokusů, konkrétní zásady opakování a doba čekání jsou konfigurovatelné.
 
-- *Azure Service Bus.* Klient Service Bus zpřístupňuje [třídu RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) , která může být nakonfigurována s Back-off, počtem opakování a <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, což určuje maximální dobu, kterou může operace trvat. Výchozí zásada má devět maximálních pokusů o opakování s omezení rychlosti obdobím 30 sekund mezi pokusy.
+- *Azure Service Bus.* Klient Service Bus zpřístupňuje [třídu RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) , která se dá nakonfigurovat s Back-off intervalem, počtem opakování a <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, která určuje maximální dobu, kterou může operace trvat. Výchozí zásada má devět maximálních pokusů o opakování s omezení rychlosti obdobím 30 sekund mezi pokusy.
 
 - *Azure SQL Database.* Při použití knihovny [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) je k dispozici podpora opakování.
 

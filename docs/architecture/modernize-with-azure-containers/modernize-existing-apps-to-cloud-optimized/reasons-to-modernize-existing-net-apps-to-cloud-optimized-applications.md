@@ -2,12 +2,12 @@
 title: Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 ms.date: 04/28/2018
-ms.openlocfilehash: c86b9ec4d4a92b8daa0fceef0531ed955b9bb2bf
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3154f9a9e11b42330fcc753ffd961316e4ada335
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318540"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522933"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 
@@ -41,7 +41,7 @@ Následující seznam popisuje hlavní principy nebo postupy pro cloudově optim
 
 Obrázek 4-2 ukazuje hlavní volitelné pilíře aplikace optimalizované pro Cloud. U více sloupků, které implementujete, bude mít připravenost vaší aplikace po splnění očekávání vašich zákazníků úspěch.
 
-![Diagram pojmenovává hlavní pilíře aplikace optimalizované pro Cloud.](./media/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications/main-pillars-cloud-optimized-application.png)
+![Diagram pojmenovává hlavní pilíře aplikace optimalizované pro Cloud.](./media/main-pillars-cloud-optimized-application.png)
 
 **Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro Cloud
 
