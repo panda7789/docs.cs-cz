@@ -1,0 +1,40 @@
+- name: 'Specifikace konceptu jazyka C# 6.0'
+  items:
+    - name: Úvod
+      href: ../../../../_csharplang/spec/introduction.md
+    - name: Lexikální struktura
+      href: ../../../../_csharplang/spec/lexical-structure.md
+    - name: Základní koncepty
+      href: ../../../../_csharplang/spec/basic-concepts.md
+    - name: Typy
+      href: ../../../../_csharplang/spec/types.md
+    - name: Proměnné
+      href: ../../../../_csharplang/spec/variables.md
+    - name: Převody
+      href: ../../../../_csharplang/spec/conversions.md
+    - name: Výrazy
+      href: ../../../../_csharplang/spec/expressions.md
+    - name: Příkazy
+      href: ../../../../_csharplang/spec/statements.md
+    - name: Jmenné prostory
+      href: ../../../../_csharplang/spec/namespaces.md
+    - name: Třídy
+      href: ../../../../_csharplang/spec/classes.md
+    - name: Struktury
+      href: ../../../../_csharplang/spec/structs.md
+    - name: Pole
+      href: ../../../../_csharplang/spec/arrays.md
+    - name: Rozhraní
+      href: ../../../../_csharplang/spec/interfaces.md
+    - name: Výčty
+      href: ../../../../_csharplang/spec/enums.md
+    - name: Delegáty
+      href: ../../../../_csharplang/spec/delegates.md
+    - name: Výjimky
+      href: ../../../../_csharplang/spec/exceptions.md
+    - name: Atributy
+      href: ../../../../_csharplang/spec/attributes.md
+    - name: Nebezpečný kód
+      href: ../../../../_csharplang/spec/unsafe-code.md
+    - name: Komentáře dokumentace
+      href: ../../../../_csharplang/spec/documentation-comments.md
