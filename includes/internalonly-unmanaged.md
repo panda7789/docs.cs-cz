@@ -1,11 +1,10 @@
 ---
-ms.openlocfilehash: ad6526311fce09e49fd42707ff568745188df221
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 349801b5c6d501566855120ce881818697fef9d4
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703581"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523793"
 ---
-
-> [!NOTE] 
-> <span data-ttu-id="3ce96-101">Toto rozhraní API je jen pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="3ce96-101">This API is for internal use only.</span></span> <span data-ttu-id="3ce96-102">Není určena pro použití z kódu pro vývojáře.</span><span class="sxs-lookup"><span data-stu-id="3ce96-102">It's not intended for use from developer code.</span></span>
+> [!NOTE]
+> <span data-ttu-id="0a863-101">Toto rozhraní API je pouze pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="0a863-101">This API is for internal use only.</span></span> <span data-ttu-id="0a863-102">Není určen pro použití z kódu pro vývojáře.</span><span class="sxs-lookup"><span data-stu-id="0a863-102">It's not intended for use from developer code.</span></span>
