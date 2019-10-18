@@ -22,63 +22,66 @@ helpviewer_keywords:
 - argument passing [Visual Basic], by position
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
-ms.openlocfilehash: b872eda97d1e349ad781b12810e4b166d6e46fe1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2fa07a4ecf31b9dc0fee91593e793f3b00c5a83b
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791882"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524444"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
-Při volání `Sub` nebo `Function` postup, můžete předat argumenty *umístěním* – v pořadí, v jakém jsou uvedeny v definici procedury – nebo můžete předat je *podle názvu*, bez ohledem na pozici.  
-  
- Při předání argumentu podle názvu, můžete zadat argument deklarován název následovaný dvojtečkou a znaménko rovná se (`:=`) následovaný hodnotu argumentu. Můžete zadat pojmenované argumenty v libovolném pořadí.  
-  
- Například následující `Sub` procedura má tři argumenty:  
-  
- [!code-vb[SampleProcedure](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#1)]  
-  
- Při volání tohoto postupu můžete zadat argumentů podle pozice, podle názvu nebo s použitím kombinaci obou.  
-  
-## <a name="passing-arguments-by-position"></a>Předávání argumentů podle pozice  
- Můžete volat `Display` metoda s argumenty předány podle pozice a oddělených čárkami, jak je znázorněno v následujícím příkladu:  
-  
-[!code-vb[ByPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#2)] 
-  
- Pokud volitelný argument v seznamu poziční argument vynecháte, je třeba držet místo něj čárkou. Následující příklad volá `Display` metody bez `age` argument:  
-  
-[!code-vb[ByPositionWithOptionalArgument](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#3)] 
-  
-## <a name="passing-arguments-by-name"></a>Předávání argumentů podle názvu  
- Alternativně můžete volat `Display` s argumenty předány podle názvu, také oddělených čárkami, jak je znázorněno v následujícím příkladu:  
-  
-[!code-vb[ByName](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#4)] 
 
- Předávání argumentů podle názvu tímto způsobem je užitečné zejména při volání procedury, která má více než jeden volitelný argument. Pokud zadáte argumenty podle názvu, není nutné používat po sobě jdoucích čárek k označení chybí poziční argumenty. Předávání argumentů podle názvu také usnadňuje sledovat, které argumenty předáváte a ty, které se vynechá.  
-  
-## <a name="mixing-arguments-by-position-and-by-name"></a>Kombinace argumentů podle pozice a názvu  
+Když zavoláte `Sub` nebo `Function` postup, můžete předat argumenty *podle pozice* – v pořadí, v jakém jsou uvedeny v definici procedury, nebo je můžete předat *podle názvu*bez ohledu na pozici.
 
-Můžete zadat argumentů podle pozice a podle názvu ve volání jedné postupem, jak je znázorněno v následujícím příkladu:  
-  
-[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#5)] 
-  
- V předchozím příkladu je nezbytné k uložení místo vynechaný žádné další čárka `age` argument, protože `birth` je předán podle názvu.  
-  
-Ve verzích jazyka Visual Basic před 15.5 Pokud dodání argumentů podle pozice a názvu, poziční argumenty kombinaci musí všechny být první. Jakmile zadáte argument podle názvu, všechny zbývající argumenty musí všechny předávat podle názvu.  Například následující volání `Display` metoda zobrazí chyba kompilátoru [BC30241: Očekával se pojmenovaný argument](../../../misc/bc30241.md).
+Pokud předáte argument podle názvu, zadáte deklarovaný název argumentu následovaný dvojtečkou a symbolem rovná se (`:=`) následovaný hodnotou argumentu. Pojmenované argumenty můžete dodat v libovolném pořadí.
 
-[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#6)] 
+Například následující `Sub` procedura přijímá tři argumenty:
 
-Od verze 15.5 jazyka Visual Basic, poziční argumenty lze použít pojmenované argumenty v případě koncové poziční argumenty nejsou ve správné pozici. Je-li zkompilovat v rámci jazyka Visual Basic 15.5, předchozího volání `Display` metoda se zkompiluje úspěšně a už vygeneruje Chyba kompilátoru [BC30241](../../../misc/bc30241.md).  
+[!code-vb[SampleProcedure](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#1)]
 
-Tato schopnost kombinovat a párovat s názvem a poziční argumenty v libovolném pořadí je zvlášť užitečné, pokud chcete použít pojmenovaný argument, aby váš kód lépe čitelný. Například následující `Person` konstruktoru třídy vyžaduje dva argumenty typu `Person`, které může být `Nothing`. 
+Při volání tohoto postupu můžete dodat argumenty podle pozice, názvu nebo pomocí kombinace obou.
 
-[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#7)] 
+## <a name="passing-arguments-by-position"></a>Předávání argumentů podle pozice
 
-Smíšené pojmenované a poziční argumenty, které pomáhá provádět záměru kódu vymazat při použití hodnoty `father` a `mother` argumenty `Nothing`:
+Metodu `Display` můžete volat s argumenty předanými pozicí a oddělenými čárkami, jak je znázorněno v následujícím příkladu:
 
-[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#8)] 
+[!code-vb[ByPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#2)]
 
-Pro použít poziční argumenty s pojmenovanými argumenty, je nutné přidat následující prvek do projektu jazyka Visual Basic (\*.vbproj) souboru:
+Vynecháte-li volitelný argument v seznamu pozičních argumentů, je nutné umístit jeho umístění do čárky. Následující příklad volá metodu `Display` bez argumentu `age`:
+
+[!code-vb[ByPositionWithOptionalArgument](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#3)]
+
+## <a name="passing-arguments-by-name"></a>Předávání argumentů podle názvu
+
+Alternativně můžete volat `Display` s argumenty předanými podle názvu, také oddělené čárkami, jak je znázorněno v následujícím příkladu:
+
+[!code-vb[ByName](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#4)]
+
+Předávání argumentů podle názvu tímto způsobem je zvlášť užitečné při volání procedury, která má více než jeden volitelný argument. Pokud zadáte argumenty podle názvu, nemusíte používat po sobě jdoucí čárky k označení chybějících argumentů. Předávání argumentů podle názvu také usnadňuje sledování předávaného argumentu a těch, které jsou vynechány.
+
+## <a name="mixing-arguments-by-position-and-by-name"></a>Kombinování argumentů podle pozice a názvu
+
+Můžete dodat argumenty podle umístění a podle názvu v rámci jednoho volání procedury, jak je znázorněno v následujícím příkladu:
+
+[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#5)]
+
+V předchozím příkladu není k dispozici žádná extra čárka pro umístění vynechaného `age` argumentu, protože `birth` je předána názvem.
+
+Ve verzích Visual Basic před 15,5, pokud zadáváte argumenty podle kombinace pozice a názvu, musí být argumenty pozice napřed. Po zadání argumentu podle názvu musí všechny zbývající argumenty předávat název.  Například následující volání metody `Display` zobrazí chybu kompilátoru [BC30241: očekával se pojmenovaný argument](../../../misc/bc30241.md).
+
+[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#6)]
+
+Počínaje Visual Basic 15,5 se Poziční argumenty mohou pořídit pojmenovanými argumenty, pokud jsou konečné Poziční argumenty ve správné pozici. Pokud je kompilace v rámci Visual Basic 15,5, předchozí volání metody `Display` se úspěšně zkompiluje a již negeneruje chybu kompilátoru [BC30241](../../../misc/bc30241.md).
+
+Tuto schopnost sloučit a porovnat pojmenované a poziční argumenty v libovolném pořadí je zvláště užitečné, pokud chcete použít pojmenovaný argument k lepšímu čitelnosti kódu. Například následující konstruktor třídy `Person` vyžaduje dva argumenty typu `Person`, které mohou být `Nothing`.
+
+[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#7)]
+
+Použití smíšených pojmenovaných a pozičních argumentů pomáhá zajistit, aby byl záměr kódu jasný, pokud je hodnota `father` a `mother` argumenty `Nothing`:
+
+[!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#8)]
+
+Chcete-li následovat Poziční argumenty s pojmenovanými argumenty, je nutné přidat následující prvek do souboru Visual Basic projektu (\*. vbproj):
 
 ```xml
 <PropertyGroup>
@@ -86,14 +89,14 @@ Pro použít poziční argumenty s pojmenovanými argumenty, je nutné přidat n
 </PropertyGroup>
 ```
 
-Další informace najdete v části [nastavení verze jazyka Visual Basic](../../../language-reference/configure-language-version.md).
+Další informace najdete v tématu [nastavení jazykové verze Visual Basic](../../../language-reference/configure-language-version.md).
 
-## <a name="restrictions-on-supplying-arguments-by-name"></a>Omezení pro poskytnutí argumentů podle názvu  
+## <a name="restrictions-on-supplying-arguments-by-name"></a>Omezení pro zadání argumentů podle názvu
 
-Argumenty nelze předávat podle názvu myslet povinnými argumenty. Vynechat jenom volitelné argumenty.  
-  
-Pole parametrů nelze předat podle názvu. Je to proto, že při volání postupu zadáte nekonečný počet oddělovači argumentů pole parametrů a kompilátor nelze přidružit k více než jeden argument jeden název.  
-  
+Argumenty nelze předat podle názvu, abyste se vyhnuli zadávání požadovaných argumentů. Můžete vynechat jenom nepovinné argumenty.
+
+Pole parametrů nelze předat podle názvu. Důvodem je, že při volání procedury zadáte nekonečný počet argumentů oddělených čárkou pro pole parametrů a kompilátor nemůže přidružit více než jeden argument s jediným názvem.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury](./index.md)

@@ -2,12 +2,12 @@
 title: dotnet – sestavení – příkaz serveru
 description: Příkaz dotnet Build-Server komunikuje s servery spuštěnými sestavením.
 ms.date: 04/24/2019
-ms.openlocfilehash: 89d1aba104e2cb07b46766a3768eed68d85a7aa7
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 1c6c6dcdb53d779426daf5daa470d2ad0470a7a1
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117771"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523012"
 ---
 # <a name="dotnet-build-server"></a>dotnet build-server
 
@@ -19,7 +19,7 @@ ms.locfileid: "71117771"
 
 ## <a name="name"></a>Name
 
-`dotnet build-server`-Komunikuje se servery spuštěnými sestavením.
+`dotnet build-server` – spolupracuje se servery spuštěnými sestavením.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -31,24 +31,24 @@ dotnet build-server [-h|--help]
 
 ## <a name="commands"></a>Příkazy
 
-* **`shutdown`**
+- **`shutdown`**
 
   Ukončí sestavovací servery, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnuté.
 
 ## <a name="options"></a>Možnosti
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Vypíše krátkou nápovědu k příkazu.
 
-* **`--msbuild`**
+- **`--msbuild`**
 
   Vypne server sestavení MSBuild.
 
-* **`--razor`**
+- **`--razor`**
 
   Vypne server sestavení Razor.
 
-* **`--vbcscompiler`**
+- **`--vbcscompiler`**
 
   Ukončí server sestavení VB/C# Compiler.

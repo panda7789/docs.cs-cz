@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: e131b39e05badf0bb90fbbb14761571003156f85
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 0a6a6b6436210e699d8fd176dc1ba6e4aded7c8d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005521"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523981"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestaveních pro projekt, který právě kompilujete.  
@@ -59,7 +59,7 @@ or
   
  Pomocí [-LIBPATH](libpath.md) Určete adresář, ve kterém je umístěn jeden nebo více odkazů na sestavení.  
   
- Podobně jako možnost kompilátoru [/reference](reference.md) používá možnost kompilátoru `-link` soubor odpovědí Vbc. rsp, který odkazuje na často používané .NET Framework sestavení. Pokud nechcete, aby kompilátor používal soubor Vbc. rsp, použijte možnost kompilátoru [--config](noconfig.md) .  
+ Podobně jako u možnosti kompilátoru [-reference](reference.md) používá možnost kompilátoru `-link` soubor odpovědí Vbc. rsp, který odkazuje na často používané .NET Framework sestavení. Pokud nechcete, aby kompilátor používal soubor Vbc. rsp, použijte možnost kompilátoru [--config](noconfig.md) .  
   
  Krátká forma `-link` je `-l`.  
   

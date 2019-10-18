@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8cc2e1436059f92564d4c3ec534632674081ae75
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8979b7ffc09726c6588fe3ba60b916202697648f
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394007"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522669"
 ---
 ### <a name="signalr-hubconnectioncontext-constructors-changed"></a>Signál: HubConnectionContext konstruktory se změnily.
 
@@ -41,9 +41,9 @@ Namísto použití následujícího konstruktoru:
 
 ```csharp
 HubConnectionContext connectionContext = new HubConnectionContext(
-    connectionContext, 
-    keepAliveInterval: TimeSpan.FromSeconds(15), 
-    loggerFactory, 
+    connectionContext,
+    keepAliveInterval: TimeSpan.FromSeconds(15),
+    loggerFactory,
     clientTimeoutInterval: TimeSpan.FromSeconds(15));
 ```
 

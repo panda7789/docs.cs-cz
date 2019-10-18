@@ -5,15 +5,15 @@ helpviewer_keywords:
 - param XML tag
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
-ms.openlocfilehash: 91489ee1664da22cc8897cdf8d12b61d962d1c83
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c62eab6b1fb1ba1cc7de83c12d7205cf0bbe46fa
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664188"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524728"
 ---
-# <a name="param-visual-basic"></a>\<Param > (Visual Basic)
-Definuje parametr název a popis.  
+# <a name="param-visual-basic"></a>\<param > (Visual Basic)
+Definuje název a popis parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,24 +23,24 @@ Definuje parametr název a popis.
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- Název parametru metody. Název uzavřete do dvojitých uvozovek ("").  
+ Název parametru metody. Název uzavřete do uvozovek ("").  
   
  `description`  
- Popis pro parametr.  
+ Popis parametru  
   
 ## <a name="remarks"></a>Poznámky  
- `<param>` Značky byste měli použít ve komentář pro deklaraci metody, popisující jeden z parametrů pro metodu.  
+ Značka `<param>` by měla být použita v komentáři pro deklaraci metody pro popis jednoho z parametrů pro metodu.  
   
- Text `<param>` značky se objeví v následujících umístěních:  
+ Text značky `<param>` se zobrazí v následujících umístěních:  
   
-- Informace o parametru technologie IntelliSense. Další informace najdete v tématu [pomocí technologie IntelliSense](/visualstudio/ide/using-intellisense).  
+- Informace o parametrech technologie IntelliSense Další informace najdete v tématu [použití technologie IntelliSense](/visualstudio/ide/using-intellisense).  
   
-- Prohlížeč objektů. Další informace najdete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
+- Prohlížeč objektů. Další informace naleznete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<param>` značka, které popisují `id` parametru.  
+ V tomto příkladu se používá značka `<param>` k popisu `id` parametru.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

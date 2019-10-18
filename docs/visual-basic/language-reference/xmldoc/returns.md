@@ -5,14 +5,14 @@ helpviewer_keywords:
 - returns XML tag
 - <returns> XML tag
 ms.assetid: a03a6469-d907-425d-882f-083187950e7e
-ms.openlocfilehash: 5a0ff0da7cf26a1cea75a5b2e4678593d9b72f54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b220c2a9aa544413c3692485f6c1eb2b64e54389
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940787"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524679"
 ---
-# <a name="returns-visual-basic"></a>\<Vrátí > (Visual Basic)
+# <a name="returns-visual-basic"></a>\<returns > (Visual Basic)
 Určuje návratovou hodnotu vlastnosti nebo funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,15 +23,15 @@ Určuje návratovou hodnotu vlastnosti nebo funkce.
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- Popis návratovou hodnotu.  
+ Popis návratové hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `<returns>` značku komentáře pro deklaraci metody k popisu návratovou hodnotu.  
+ Použijte značku `<returns>` v komentáři pro deklaraci metody k popisu návratové hodnoty.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<returns>` značka, které popisují, co `DoesRecordExist` vrací funkce.  
+ V tomto příkladu se používá značka `<returns>` k vysvětlení, co funkce `DoesRecordExist` vrací.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

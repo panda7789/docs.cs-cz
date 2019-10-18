@@ -4,12 +4,12 @@ description: Přehled nástroje Microsoft WCF Web Service Reference Provider, kt
 author: mlacouture
 ms.date: 04/19/2018
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 11a18161db0fde522442e2412c4522811c5dd40a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 5c5759dcc0f428c763eddb84f3d3652fbc548cb2
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926463"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522231"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použití nástroje poskytovatele referencí webové služby WCF
 
@@ -20,16 +20,16 @@ V průběhu let mnoho vývojářů sady Visual Studio využilo produktivitu, kte
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15,5](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) nebo novější verze
+- [Visual Studio 2017 15,5](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) nebo novější verze
 
 ## <a name="how-to-use-the-extension"></a>Jak používat rozšíření
 
 > [!NOTE]
 > Možnost **odkazu webové služby WCF** je platná pro projekty vytvořené pomocí následujících šablon projektu:
 >
-> * **Visual C#**  >  **.NET Core**
-> * **Vizuální C#**  .NET standard  > 
-> * **C#** **Webová aplikace** Visual  >  **Web**ASP.NET Core > 
+> - **Visual C#**   >  **.NET Core**
+> - **Vizuální C#**   >  **.NET Standard**
+> - Webová aplikace  **C# Visual**  > **Web**  > **ASP.NET Core**
 
 Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás tento článek provede přidáním odkazu na službu WCF do projektu:
 
@@ -45,7 +45,7 @@ Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás 
 
 3. Vyberte službu.
 
-    3a. V průvodci **konfigurací odkazu webové služby WCF** je dostupných několik možností hledání služeb:
+    čl. V průvodci **konfigurací odkazu webové služby WCF** je dostupných několik možností hledání služeb:
 
      * Pokud chcete vyhledat služby definované v aktuálním řešení, klikněte na tlačítko **Vyhledat** .
      * Pokud chcete vyhledat služby hostované na zadané adrese, zadejte adresu URL služby do pole **adresa** a klikněte na tlačítko **Přejít** .
@@ -53,7 +53,7 @@ Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás 
 
     3b. Vyberte službu ze seznamu výsledků hledání v poli **služby** . V případě potřeby zadejte obor názvů pro vygenerovaný kód do textového pole odpovídající **obor názvů** .
 
-    3c. Kliknutím na tlačítko **Další** otevřete **Možnosti datový typ** a stránky **Možnosti klienta** . Případně můžete kliknutím na tlačítko **Dokončit** použít výchozí možnosti.
+    3C. Kliknutím na tlačítko **Další** otevřete **Možnosti datový typ** a stránky **Možnosti klienta** . Případně můžete kliknutím na tlačítko **Dokončit** použít výchozí možnosti.
 
 4. Formulář **Možnosti datového typu** umožňuje upřesnit vygenerovaná nastavení konfigurace odkazu na službu:
 
@@ -68,15 +68,15 @@ Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás 
 
 Během zobrazování průběhu nástroje:
 
-* Stáhne metadata ze služby WCF.
-* Generuje kód odkazu na službu v souboru s názvem *reference.cs*a přidá ho do projektu pod uzlem **připojené služby** .
-* Aktualizuje soubor projektu (. csproj) pomocí odkazů na balíček NuGet potřebných pro zkompilování a spuštění na cílové platformě.
+- Stáhne metadata ze služby WCF.
+- Generuje kód odkazu na službu v souboru s názvem *reference.cs*a přidá ho do projektu pod uzlem **připojené služby** .
+- Aktualizuje soubor projektu (. csproj) pomocí odkazů na balíček NuGet potřebných pro zkompilování a spuštění na cílové platformě.
 
 ![Okno průběhu sady Visual Studio](./media/wcf-web-service-reference-guide/wcfcs-ProgressWindow.png)
 
 Po dokončení těchto procesů můžete vytvořit instanci vygenerovaného typu klienta WCF a vyvolat operace služby.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 ### <a name="feedback--questions"></a>Názory & dotazů
 
@@ -84,4 +84,4 @@ Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](h
 
 ### <a name="release-notes"></a>Zpráva k vydání verze
 
-* Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) .
+- Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) .

@@ -1,5 +1,5 @@
 ---
-title: <exception> - C# Průvodce programováním
+title: Průvodce C# programováním <exception>
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <exception> C# XML tag
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
-ms.openlocfilehash: 639e3a345fc8ed3d348461718f73ead6167158db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e4204996c006ce6e943c9a09661001b0e0c2a14
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675920"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523470"
 ---
-# <a name="exception-c-programming-guide"></a>\<Výjimka > (C# Programming Guide)
+# <a name="exception-c-programming-guide"></a>> \<exception (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -25,19 +25,19 @@ ms.locfileid: "61675920"
   
 ## <a name="parameters"></a>Parametry  
  cref = " `member`"  
- Odkaz na výjimku, která je k dispozici z prostředí aktuální kompilace. Kompilátor kontroluje, zda existuje výjimka a přeloží `member` k názvu canonical prvku ve výstupním souboru XML. `member` musí být uvedena v uvozovkách ("").  
+ Odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace. Kompilátor kontroluje, zda daná výjimka existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. `member` musí být v uvozovkách ("").  
   
- Další informace o tom, jak formátovat `member` Pokud chcete odkazovat na obecný typ, přečtěte si téma [zpracování souboru XML](processing-the-xml-file.md).
+ Další informace o tom, jak formátovat `member` pro odkazování na obecný typ, naleznete v tématu [zpracování souboru XML](processing-the-xml-file.md).
   
  `description`  
- Popis výjimky.  
+ Popis výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- \<Výjimky > značky umožňuje určit, jaké výjimky mohou být vyvolány. Toto klíčové slovo lze použít pro definice pro metody, vlastnosti, události a indexery.  
+ Značka > \<exception umožňuje určit, které výjimky mohou být vyvolány. Tato značka se dá použít na definice pro metody, vlastnosti, události a indexery.  
   
- Kompilovat s [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
- Další informace o zpracování výjimek naleznete v tématu [výjimek a zpracování výjimek](../exceptions/index.md).  
+ Další informace o zpracování výjimek naleznete v tématu [výjimky a zpracování výjimek](../exceptions/index.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#4)]  

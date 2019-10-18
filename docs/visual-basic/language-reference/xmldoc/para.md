@@ -5,15 +5,15 @@ helpviewer_keywords:
 - <para> XML tag
 - para XML tag
 ms.assetid: a3a18b6c-6416-4358-94ec-37b22675fd37
-ms.openlocfilehash: 16d10b2f955a4d9a02075ee4cc40dfa2b18c3541
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aa4e4c14717b69b9ca4595e20c768a2b91aac1e4
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940862"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524736"
 ---
-# <a name="para-visual-basic"></a>\<para> (Visual Basic)
-Určuje, že obsah je formátován jako odstavce.  
+# <a name="para-visual-basic"></a>\<para > (Visual Basic)
+Určuje, že obsah je formátován jako odstavec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Určuje, že obsah je formátován jako odstavce.
   
 ## <a name="parameters"></a>Parametry  
  `content`  
- Text odstavce.  
+ Text odstavce  
   
 ## <a name="remarks"></a>Poznámky  
- `<para>` Značka je určen pro použití uvnitř značky, například [ \<summary >](../../../visual-basic/language-reference/xmldoc/summary.md), [ \<remarks >](../../../visual-basic/language-reference/xmldoc/remarks.md), nebo [ \<vrátí >](../../../visual-basic/language-reference/xmldoc/returns.md), a umožňuje přidání struktury textu.  
+ Značka `<para>` je určena pro použití uvnitř značky, jako je například [\<summary >](../../../visual-basic/language-reference/xmldoc/summary.md), [\<remarks >](../../../visual-basic/language-reference/xmldoc/remarks.md)nebo [\<returns >](../../../visual-basic/language-reference/xmldoc/returns.md), a umožňuje přidat do textu strukturu.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<para>` značku k rozdělení v části poznámky `UpdateRecord` metoda do dvou odstavcích.  
+ V tomto příkladu se používá značka `<para>` k rozdělení oddílu poznámky pro metodu `UpdateRecord` na dva odstavce.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

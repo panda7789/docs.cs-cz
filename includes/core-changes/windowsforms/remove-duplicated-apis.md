@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 4d67da34cf692133df95480a7f0215943337a34e
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 3d0a90a57c2b1c2759b8420e74c284668d54e9cb
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003025"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526737"
 ---
 ### <a name="duplicated-apis-removed-from-windows-forms"></a>Odebrala se duplicitní rozhraní API z model Windows Forms.
 
-Počet rozhraní API náhodně duplicitních duplikován v oboru názvů <xref:System.Windows.Forms?displayProperty=fullName>, který začíná v rozhraní .NET Core 3,0 Preview 4, byl v rozhraní .NET Core 3,0 RC1 odebraný. 
+Počet rozhraní API náhodně duplicitních duplikován v oboru názvů <xref:System.Windows.Forms?displayProperty=fullName>, který začíná v rozhraní .NET Core 3,0 Preview 4, byl v rozhraní .NET Core 3,0 RC1 odebraný.
 
 #### <a name="change-description"></a>Změnit popis
 
@@ -38,7 +38,7 @@ Windows Forms
 
 - Nedá se detekovat přes analýzu rozhraní API.
 
-<!-- 
+<!--
 
 ### Affected APIs
 

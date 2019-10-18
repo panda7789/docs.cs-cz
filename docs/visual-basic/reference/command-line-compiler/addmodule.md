@@ -6,12 +6,12 @@ helpviewer_keywords:
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-ms.openlocfilehash: fbe3634d1fbc03acd56ef7276d65fd54493b9806
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: dd98b45d75ff421dc81666ed47695132a49bfa3a
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002414"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524477"
 ---
 # <a name="-addmodule"></a>-addmodule
 Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadaných souborů pro projekt, který právě kompilujete.  
@@ -33,7 +33,7 @@ Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadanýc
   
  Pokud zadáte (implicitně nebo explicitně) možnost libovolný[cíl (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) kromě `-target:module` s `-addmodule`, soubory, které předáte do `-addmodule`, se stanou součástí sestavení projektu. Pro spuštění výstupního souboru, který obsahuje jeden nebo více souborů přidaných s `-addmodule`, je vyžadováno sestavení.  
   
- Použijte [/Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pro import metadat ze souboru, který obsahuje sestavení.  
+ Pomocí [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) můžete importovat metadata ze souboru, který obsahuje sestavení.  
   
 > [!NOTE]
 > Možnost `-addmodule` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  

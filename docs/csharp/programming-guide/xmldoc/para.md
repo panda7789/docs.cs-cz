@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: c9584d6c7fec064e2234df9db7e21a38806e8992
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 136906de855f559c8eeb27a4ae7ec481dfec3435
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587942"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523440"
 ---
-# <a name="para-c-programming-guide"></a>\<param >C# (Průvodce programováním)
+# <a name="para-c-programming-guide"></a>> \<para (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,12 +28,12 @@ ms.locfileid: "69587942"
  Text odstavce  
   
 ## <a name="remarks"></a>Poznámky  
- Param > značka je určena pro použití uvnitř značky, [ \<například souhrnný >](./summary.md), [ \<poznámky >](./remarks.md)nebo [ \<vrací >](./returns.md)a umožňuje přidat do textu strukturu. \<  
+ Značka \<para > je určena pro použití uvnitř značky, jako je například [\<summary >](./summary.md), [\<remarks >](./remarks.md)nebo [\<returns](./returns.md)>, a umožňuje přidat do textu strukturu.  
   
- Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- Příklad použití\<param > naleznete v tématu [ \<Summary >](./summary.md) .  
+ Příklad použití \<para > naleznete v tématu [\<summary >](./summary.md) .  
   
 ## <a name="see-also"></a>Viz také:
 

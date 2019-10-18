@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odkazování na objekty modelu COM z Visual Basic'
+title: 'Postupy: Odkaz na objekty modelu COM z jazyka Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop [Visual Basic], referencing COM objects
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - COM objects, referencing
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
-ms.openlocfilehash: 8e502dc9a279d9271a61fd2cf7a6afb564f09125
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: ea0e1d9b0ae9f151d901c425512508ba7bc05343
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351994"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524359"
 ---
-# <a name="how-to-reference-com-objects-from-visual-basic"></a>Postupy: Odkazování na objekty modelu COM z Visual Basic
+# <a name="how-to-reference-com-objects-from-visual-basic"></a>Postupy: Odkaz na objekty modelu COM z jazyka Visual Basic
 V Visual Basic přidávání odkazů na objekty modelu COM, které mají knihovny typů, vyžaduje vytvoření sestavení vzájemné spolupráce pro knihovnu COM. Odkazy na členy objektu COM jsou směrovány do sestavení vzájemné spolupráce a poté předány do skutečného objektu COM. Odpovědi z objektu COM jsou směrovány do sestavení vzájemné spolupráce a předány do vaší aplikace .NET Framework.  
   
- Můžete odkazovat na objekt modelu COM bez použití definičního sestavení vložením informací o typu pro objekt modelu COM v sestavení .NET. Chcete-li vložit informace o typu, nastavte vlastnost `Embed Interop Types` na hodnotu `True` pro odkaz na objekt COM. Pokud kompilujete pomocí kompilátoru příkazového řádku, použijte možnost `/link` pro odkaz na knihovnu COM. Další informace naleznete v tématu [/Link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md).  
+ Můžete odkazovat na objekt modelu COM bez použití definičního sestavení vložením informací o typu pro objekt modelu COM v sestavení .NET. Pro vložení informací o typu nastavte vlastnost `Embed Interop Types` na `True` pro odkaz na objekt COM. Pokud kompilujete pomocí kompilátoru příkazového řádku, použijte možnost `/link` pro odkaz na knihovnu COM. Další informace najdete v tématu [-Link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md).  
   
  Visual Basic automaticky vytvoří sestavení vzájemné spolupráce, když přidáte odkaz na knihovnu typů z integrovaného vývojového prostředí (IDE). Při práci z příkazového řádku můžete použít nástroj Tlbimp k ručnímu vytváření sestavení vzájemné spolupráce.  
   
@@ -28,7 +28,7 @@ V Visual Basic přidávání odkazů na objekty modelu COM, které mají knihovn
   
 2. Vyberte součást, kterou chcete použít, ze seznamu objektů COM.  
   
-3. Chcete-li zjednodušit přístup k definičnímu sestavení, přidejte příkaz `Imports` na začátek třídy nebo modulu, ve kterém budete používat objekt COM. Například následující příklad kódu importuje obor názvů `INKEDLib` pro objekty, na které se odkazuje v knihovně `Microsoft InkEdit Control 1.0`.  
+3. Chcete-li zjednodušit přístup k definičnímu sestavení, přidejte příkaz `Imports` na začátek třídy nebo modulu, ve kterém budete používat objekt COM. Například následující příklad kódu importuje obor názvů `INKEDLib` pro objekty, na které je odkazováno v knihovně `Microsoft InkEdit Control 1.0`.  
   
      [!code-vb[VbVbalrInterop#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#40)]  
   

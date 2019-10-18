@@ -4,12 +4,12 @@ description: Přečtěte si o sadě Windows Compatibility Pack a o tom, jak ji m
 author: terrajobst
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 71e390881d4e9c7836622abeed49c0ea2e5f7526
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: adf2aaab27b5a8afcc89fceac67184d3b1974037
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202560"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521278"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Compatibility Pack systému Windows k portu kódu .NET Core
 
@@ -25,23 +25,23 @@ Tento balíček je logickým [rozšířením .NET Standard 2,0](../whats-new/dot
 
 Poskytuje informace o rozhraních API 20 000, včetně pouze Windows, stejně jako rozhraní API pro různé platformy z následujících technologických oblastí:
 
-* Znakové stránky
-* CodeDom
-* Konfiguraci
-* Adresářové služby
-* Tažné
-* ODBC
-* Oprávnění
-* Porty
-* Seznamy Windows Access Control (ACL)
-* Windows Communication Foundation (WCF)
-* Kryptografie systému Windows
-* Windows EventLog
-* Rozhraní WMI (Windows Management Instrumentation) (WMI)
-* Čítače výkonu systému Windows
-* Registr systému Windows
-* Ukládání prostředí Windows Runtime do mezipaměti
-* Služby systému Windows
+- Znakové stránky
+- CodeDom
+- Konfigurace
+- Adresářové služby
+- Tažné
+- ODBC
+- Oprávnění
+- Porty
+- Seznamy Windows Access Control (ACL)
+- Windows Communication Foundation (WCF)
+- Kryptografie systému Windows
+- Protokol událostí systému Windows
+- Rozhraní WMI (Windows Management Instrumentation) (WMI)
+- Čítače výkonu systému Windows
+- Registr systému Windows
+- Ukládání prostředí Windows Runtime do mezipaměti
+- Služby systému Windows
 
 Další informace najdete v tématu [specifikace sady Compatibility Pack](https://github.com/dotnet/designs/blob/master/accepted/compat-pack/compat-pack.md).
 

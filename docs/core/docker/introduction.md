@@ -3,18 +3,18 @@ title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 5da71215e3b539f10993677d23d89e2b8a49cb39
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 3f40d2723feb5a31066115ae11cafba11981f1b4
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799369"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523001"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
 .NET Core se dá snadno spustit v kontejneru Docker. Kontejnery poskytují odlehčený způsob izolace vaší aplikace ze zbytku hostitelského systému, sdílení pouze jádra a používání prostředků, které jsou dané aplikaci k dispozici. Pokud Docker neznáte, důrazně doporučujeme, abyste si přečetli [dokumentaci k přehledům](https://docs.docker.com/engine/docker-overview/)Docker.
 
-Další informace o tom, jak nainstalovat Docker, najdete na stránce pro [stažení Docker desktopu: Edice](https://www.docker.com/products/docker-desktop)Community.
+Další informace o tom, jak nainstalovat Docker, najdete na stránce pro stažení [Docker desktopu: Community Edition](https://www.docker.com/products/docker-desktop).
 
 ## <a name="docker-basics"></a>Základy Docker
 
@@ -52,27 +52,27 @@ Společnost Microsoft poskytuje obrázky, které jsou upraveny pro konkrétní s
 
 Různé kontejnery podpory služeb Azure. Vytvoříte image Docker pro aplikaci a nasadíte ji na jednu z následujících služeb:
 
-* [Služba Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service/)\
+- [Služba Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) \
 Škálujte a orchestrujte kontejnery Linux pomocí Kubernetes.
 
-* [Azure App Service](https://azure.microsoft.com/services/app-service/containers/)\
+- [Azure App Service](https://azure.microsoft.com/services/app-service/containers/) \
 Nasaďte webové aplikace nebo rozhraní API s využitím kontejnerů Linux v prostředí PaaS.
 
-* [Azure Container Instances](https://azure.microsoft.com/services/container-instances/)\
+- [Azure Container Instances](https://azure.microsoft.com/services/container-instances/) \
 Hostujte svůj kontejner v cloudu bez jakýchkoli služeb pro správu vyšší úrovně.
 
-* [Azure Batch](https://azure.microsoft.com/services/batch/)\
+ [Azure Batch](https://azure.microsoft.com/services/batch/) \
 Spusťte opakované výpočetní úlohy s využitím kontejnerů.
 
-* [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)\
-Přezvednutí, posunutí a modernizovat aplikací .NET k mikroslužbám pomocí kontejnerů Windows serveru
+- @No__t_1 [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)
+Namodernizovat aplikace .NET do mikroslužeb pomocí kontejnerů Windows serveru.
 
-* [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)\
+- [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) \
 Ukládání a Správa imagí kontejnerů napříč všemi typy nasazení Azure
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Přečtěte si, jak kontejnerizace aplikaci .NET Core.](build-docker-netcore-container.md)
-* [Naučte se, jak kontejnerizace aplikaci ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
-* [Vyzkoušejte si kurz ASP.NET Core mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
-* [Další informace o nástrojích kontejnerů v aplikaci Visual Studio](/visualstudio/containers/overview)
+- [Přečtěte si, jak kontejnerizace aplikaci .NET Core.](build-docker-netcore-container.md)
+- [Naučte se, jak kontejnerizace aplikaci ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
+- [Vyzkoušejte si kurz ASP.NET Core mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
+- [Další informace o nástrojích kontejnerů v aplikaci Visual Studio](/visualstudio/containers/overview)

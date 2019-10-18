@@ -4,19 +4,19 @@ description: Podporované verze systému Linux a závislosti rozhraní .NET Core
 author: leecow
 ms.author: leecow
 ms.date: 10/11/2019
-ms.openlocfilehash: bb9049059de9d8208fc92234b28acdfb3d7f0cb3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 0e798e86fcf88a1b7a67f50c2301e10ad725fad8
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318329"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521484"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
 Tento článek ukazuje závislosti potřebné pro vývoj aplikací .NET Core v systému Linux. Podporované distribuce a verze systému Linux a závislosti, které následují, se vztahují na dva způsoby vývoje aplikací .NET Core v systému Linux:
 
-* [Příkazový řádek s oblíbeným editorem](tutorials/using-with-xplat-cli.md)
-* [Visual Studio Code](https://code.visualstudio.com/)
+- [Příkazový řádek s oblíbeným editorem](tutorials/using-with-xplat-cli.md)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 > [!NOTE]
 > Pro produkční servery a prostředí se .NET Core SDK balíček nevyžaduje. Pro aplikace nasazené do produkčního prostředí je potřeba jenom balíček runtime .NET Core. Modul runtime .NET Core je nasazen s aplikacemi jako součást samostatného nasazení, ale musí být nasazen pro samostatně nasazené aplikace závislé na rozhraní. Další informace o typech nasazení závislých na rozhraní a samostatně obsažených typů naleznete v tématu [nasazení aplikace .NET Core](./deploying/index.md). Konkrétní pokyny najdete také v části [samostatné aplikace pro Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md) .
@@ -112,21 +112,21 @@ Níže jsou uvedené příklady. Přesné verze a názvy se mohou mírně lišit
 
 Ubuntu distribuce vyžadují následující nainstalované knihovny:
 
-* liblttng-ust0
-* libcurl3 (pro 14. x a 16. x)
-* libcurl4 (pro 18. x)
-* libssl 1.0.0
-* libkrb5-3
-* zlib1g
-* libicu52 (pro 14. x)
-* libicu55 (pro 16. x)
-* libicu57 (pro 17. x)
-* libicu60 (pro 18. x)
+- liblttng-ust0
+- libcurl3 (pro 14. x a 16. x)
+- libcurl4 (pro 18. x)
+- libssl 1.0.0
+- libkrb5-3
+- zlib1g
+- libicu52 (pro 14. x)
+- libicu55 (pro 16. x)
+- libicu57 (pro 17. x)
+- libicu60 (pro 18. x)
 
 Pro verze starší než .NET Core 2,1 jsou vyžadovány i následující závislosti:
 
-* libunwind8
-* libuuid1
+- libunwind8
+- libuuid1
 
 Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , potřebujete také následující závislost:
 
@@ -139,19 +139,19 @@ Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common*
 
 CentOS distribuce vyžadují následující nainstalované knihovny:
 
-* lttng – tým UST
-* libcurl
-* OpenSSL – knihovny
-* krb5 – knihovny
-* libicu
-* ZLIB
+- lttng – tým UST
+- libcurl
+- OpenSSL – knihovny
+- krb5 – knihovny
+- libicu
+- ZLIB
 
 Fedora uživatelé: Pokud verze vašeho opensslu je > = 1,1, budete muset nainstalovat kompatibilní s openssl10.
 
 Pro verze starší než .NET Core 2,1 jsou vyžadovány i následující závislosti:
 
-* libunwind
-* libuuid
+- libunwind
+- libuuid
 
 Další informace o závislostech najdete v tématu [samostatné aplikace pro Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
 
@@ -168,8 +168,8 @@ Nativní instalační programy .NET Core jsou k dispozici pro podporované distr
 
 V systému Linux jsou k dispozici dvě možnosti balíčku instalačního programu:
 
-* Pomocí Správce balíčků na základě informačního kanálu, jako je apt-get pro Ubuntu, nebo Yumu pro CentOS/RHEL.
-* Použití samotných balíčků, DEB nebo ot./min.
+- Pomocí Správce balíčků na základě informačního kanálu, jako je apt-get pro Ubuntu, nebo Yumu pro CentOS/RHEL.
+- Použití samotných balíčků, DEB nebo ot./min.
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>Skripty se instalují pomocí skriptu Instalační služby .NET Core.
 
@@ -187,8 +187,8 @@ Skript bash instalačního programu se používá ve scénářích automatizace 
 
 Pokud máte problémy s instalací .NET Core v podporované distribuci/verzi systému Linux, přečtěte si následující témata o nainstalovaných distribucích a verzích:
 
-* [Známé problémy s .NET Core 3,0](https://github.com/dotnet/core/tree/master/release-notes/3.0)
-* [Známé problémy s .NET Core 2,2](https://github.com/dotnet/core/tree/master/release-notes/2.2)
-* [Známé problémy s .NET Core 2,1](https://github.com/dotnet/core/tree/master/release-notes/2.1)
-* [Známé problémy s .NET Core 1,1](https://github.com/dotnet/core/blob/master/release-notes/1.1)
-* [Známé problémy s .NET Core 1,0](https://github.com/dotnet/core/blob/master/release-notes/1.0)
+- [Známé problémy s .NET Core 3,0](https://github.com/dotnet/core/tree/master/release-notes/3.0)
+- [Známé problémy s .NET Core 2,2](https://github.com/dotnet/core/tree/master/release-notes/2.2)
+- [Známé problémy s .NET Core 2,1](https://github.com/dotnet/core/tree/master/release-notes/2.1)
+- [Známé problémy s .NET Core 1,1](https://github.com/dotnet/core/blob/master/release-notes/1.1)
+- [Známé problémy s .NET Core 1,0](https://github.com/dotnet/core/blob/master/release-notes/1.0)

@@ -1,37 +1,37 @@
 ---
-ms.openlocfilehash: dab6b435a885d862d08f94dd31de79625f19bcc0
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
+ms.openlocfilehash: 2872c5909b382e01fdd231019a12970caa3b77d2
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870510"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526738"
 ---
-## <a name="installation-instructions---visual-studio-installer"></a>Pokyny k instalaci – instalační program sady Visual Studio
+## <a name="installation-instructions---visual-studio-installer"></a>Pokyny k instalaci – Instalační program pro Visual Studio
 
-Existují dva různé způsoby, jak najít **sada SDK platformy kompilátoru .NET** v **instalační program sady Visual Studio**:
+Existují dva různé způsoby, jak **.NET Compiler Platform sadu SDK** v **instalační program pro Visual Studio**najít:
 
-### <a name="install-using-the-visual-studio-installer---workloads-view"></a>Instalace pomocí instalačního programu sady Visual Studio – zobrazení úloh
+### <a name="install-using-the-visual-studio-installer---workloads-view"></a>Instalace pomocí zobrazení Instalační program pro Visual Studio-úlohy
 
-Sada SDK platformy kompilátoru .NET nebude automaticky označen jako součást sady funkcí vývoj rozšíření sady Visual Studio. Je třeba vybrat jako volitelnou komponentu.
+Sada .NET Compiler Platform SDK není automaticky vybraná jako součást úlohy vývoje rozšíření sady Visual Studio. Je nutné ji vybrat jako volitelnou součást.
 
-1. Run **Visual Studio Installer** 
-1. Vyberte **upravit** 
-1. Zkontrolujte, **vývoj rozšíření sady Visual Studio** pracovního vytížení.
-1. Otevřít **vývoj rozšíření sady Visual Studio** uzel ve stromu souhrnu.
-1. Zaškrtněte políčko u **sada SDK platformy kompilátoru .NET**. Najdete ho naposledy pod volitelné součásti.
+1. Spustit **instalační program pro Visual Studio**
+1. Vybrat **Upravit**
+1. Projděte si úlohu **vývoj rozšíření sady Visual Studio** .
+1. Ve stromové struktuře souhrnu otevřete uzel **vývoj rozšíření sady Visual Studio** .
+1. Zaškrtněte políčko pro **sadu .NET Compiler Platform SDK**. V rámci volitelných komponent najdete ho jako poslední.
 
-V případě potřeby je také vhodné **DGML editor** zobrazit grafy ve vizualizátoru:
+Volitelně také budete chtít, aby **Editor DGML** zobrazoval grafy v Vizualizér:
 
-1. Otevřít **jednotlivé komponenty** uzel ve stromu souhrnu.
-1. Zaškrtněte políčko u **DGML editor**
+1. Ve stromové struktuře souhrnu otevřete uzel **jednotlivé komponenty** .
+1. Zaškrtněte políčko pro **Editor DGML** .
 
-### <a name="install-using-the-visual-studio-installer---individual-components-tab"></a>Instalace pomocí Visual Studio Installer - kartě jednotlivé komponenty
+### <a name="install-using-the-visual-studio-installer---individual-components-tab"></a>Instalace pomocí karty Instalační program pro Visual Studio – jednotlivé komponenty
 
-1. Run **Visual Studio Installer** 
-1. Vyberte **upravit** 
-1. Vyberte **jednotlivé komponenty** kartu 
-1. Zaškrtněte políčko u **sada SDK platformy kompilátoru .NET**. Najdete v horní části stránky v části **sestavení kompilátory, nástroje a moduly runtime** oddílu.
+1. Spustit **instalační program pro Visual Studio**
+1. Vybrat **Upravit**
+1. Výběr karty **jednotlivé součásti**
+1. Zaškrtněte políčko pro **sadu .NET Compiler Platform SDK**. Najdete ho nahoře v části **kompilátory, nástroje sestavení a moduly runtime** .
 
-V případě potřeby je také vhodné **DGML editor** zobrazit grafy ve vizualizátoru:
+Volitelně také budete chtít, aby **Editor DGML** zobrazoval grafy v Vizualizér:
 
-1. Zaškrtněte políčko u **DGML editor**. Najdete ho pod **kódu nástroje** oddílu.
+1. Zaškrtněte políčko pro **Editor DGML**. Najdete ho v části **nástroje kódu** .

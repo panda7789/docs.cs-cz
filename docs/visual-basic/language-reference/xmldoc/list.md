@@ -13,14 +13,14 @@ helpviewer_keywords:
 - item XML tag
 - <term> XML tag
 ms.assetid: ec35fced-d58e-4520-a764-0691256e014b
-ms.openlocfilehash: 7d7b85867f4c701322c5e6c31f2d89ab38fad05d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d4295d485611e75e8b6c8d8f95e079654f0cfa3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940870"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524748"
 ---
-# <a name="list-visual-basic"></a>\<list> (Visual Basic)
+# <a name="list-visual-basic"></a>\<list > (Visual Basic)
 Definuje seznam nebo tabulku.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,25 +40,25 @@ Definuje seznam nebo tabulku.
   
 ## <a name="parameters"></a>Parametry  
  `type`  
- Typ seznamu. Pro seznam s odrážkami, "number" číslovaný seznam nebo "table" pro dva sloupce tabulky musí být "bullet".  
+ Typ seznamu U seznamu s odrážkami, "Number" pro číslovaný seznam nebo "Tabulka" pro tabulku se dvěma sloupci musí být "Bullet".  
   
  `term`  
- Použije se pouze při `type` je "table". Termín, který chcete definovat, která je definována v popisu značky.  
+ Používá se pouze v případě, `type` je "Table". Termín, který má definovat, který je definován ve značce Description.  
   
  `description`  
- Když `type` "bullet" nebo "number" `description` je položka v seznamu při `type` je "table" `description` je definice `term`.  
+ Pokud je `type` "Bullet" nebo "Number", "`description` je položka v seznamu, pokud `type` je" Table ", `description` je definice `term`.  
   
 ## <a name="remarks"></a>Poznámky  
- `<listheader>` Bloku definuje záhlaví tabulky nebo definice seznamu. Při definování tabulku, stačí jenom zadat položku pro `term` v záhlaví.  
+ Blok `<listheader>` definuje nadpis tabulky nebo seznamu definic. Při definování tabulky stačí zadat položku pro `term` v záhlaví.  
   
- Každá položka v seznamu není zadán s `<item>` bloku. Při vytváření definice seznamu, musíte zadat oba `term` a `description`. Ale pro tabulku, seznam s odrážkami nebo číslovaného seznamu, stačí jenom zadat položku pro `description`.  
+ Každá položka v seznamu je určena pomocí `<item>` bloku. Při vytváření seznamu definic je nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.  
   
- Seznam nebo tabulku můžete mít kolik `<item>` blokuje podle potřeby.  
+ Seznam nebo tabulka může mít podle potřeby tolik `<item>` bloků.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<list>` značka, které definují seznam s odrážkami v části poznámky.  
+ Tento příklad používá značku `<list>` k definování seznamu s odrážkami v oddílu poznámky.  
   
  [!code-vb[VbVbcnXmlDocComments#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#5)]  
   

@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 835e7c0cffbcd5857c33694586b4d63511ecadb8
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 006ccf0370f8014e5021275c4d38cc50bf1c076f
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926288"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522908"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování částí v .NET Core a .NET Standard
 
@@ -39,30 +39,30 @@ Další informace o testování částí v projektech .NET Core:
 
 Projekty testů jednotek .NET Core jsou podporované pro:
 
-* [C#](../../csharp/index.md)
-* [F#](../../fsharp/index.md)
-* [Visual Basic](../../visual-basic/index.md) 
+- [C#](../../csharp/index.md)
+- [F#](../../fsharp/index.md)
+- [Visual Basic](../../visual-basic/index.md) 
 
 Můžete si také vybrat:
 
-* [xUnit](https://xunit.github.io) 
-* [NUnit](https://nunit.org)
-* [MSTest](https://github.com/Microsoft/testfx-docs)
+- [xUnit](https://xunit.github.io) 
+- [NUnit](https://nunit.org)
+- [MSTest](https://github.com/Microsoft/testfx-docs)
 
 Další informace najdete v následujících návodech:
 
-* Vytvářejte testy jednotek pomocí [ *xUnit* a *C#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *NUnit* a *C#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *MSTest* a *C#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *xUnit* a *F#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *NUnit* a *F#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *MSTest* a *F#* .NET Core CLI.
-* Vytvářejte testy jednotek pomocí [ *xUnit* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-dotnet-test.md).
-* Vytvářejte testy jednotek pomocí [ *NUnit* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-nunit.md).
-* Vytvářejte testy jednotek pomocí [ *MSTest* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-mstest.md).
+- Vytvářejte testy jednotek pomocí [ *xUnit* a *C#* .NET Core CLI](unit-testing-with-dotnet-test.md).
+- Vytvářejte testy jednotek pomocí [ *NUnit* a *C#* .NET Core CLI](unit-testing-with-nunit.md).
+- Vytvářejte testy jednotek pomocí [ *MSTest* a *C#* .NET Core CLI](unit-testing-with-mstest.md).
+- Vytvářejte testy jednotek pomocí [ *xUnit* a *F#* .NET Core CLI](unit-testing-fsharp-with-dotnet-test.md).
+- Vytvářejte testy jednotek pomocí [ *NUnit* a *F#* .NET Core CLI](unit-testing-fsharp-with-nunit.md).
+- Vytvářejte testy jednotek pomocí [ *MSTest* a *F#* .NET Core CLI](unit-testing-fsharp-with-mstest.md).
+- Vytvářejte testy jednotek pomocí [ *xUnit* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-dotnet-test.md).
+- Vytvářejte testy jednotek pomocí [ *NUnit* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-nunit.md).
+- Vytvářejte testy jednotek pomocí [ *MSTest* a *Visual Basic* s .NET Core CLI](unit-testing-visual-basic-with-mstest.md).
 
 Další informace najdete v následujících článcích:
 
-* Visual Studio Enterprise nabízí skvělé testovací nástroje pro .NET Core. Další informace najdete [Live Unit Testing](/visualstudio/test/live-unit-testing) nebo [pokrytí kódu](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage) .
-* Další informace o tom, jak spustit selektivní testy jednotek, najdete v tématu [spuštění selektivních testů jednotek](selective-unit-tests.md)nebo [zahrnutí a vyloučení testů v aplikaci Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
-* [Jak používat xUnit s .NET Core a sadou Visual Studio](https://xunit.github.io/docs/getting-started-dotnet-core.html).
+- Visual Studio Enterprise nabízí skvělé testovací nástroje pro .NET Core. Další informace najdete [Live Unit Testing](/visualstudio/test/live-unit-testing) nebo [pokrytí kódu](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage) .
+- Další informace o tom, jak spustit selektivní testy jednotek, najdete v tématu [spuštění selektivních testů jednotek](selective-unit-tests.md)nebo [zahrnutí a vyloučení testů v aplikaci Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
+- [Jak používat xUnit s .NET Core a sadou Visual Studio](https://xunit.github.io/docs/getting-started-dotnet-core.html).

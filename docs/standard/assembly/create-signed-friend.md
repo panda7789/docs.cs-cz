@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Vytvořit podepsaná sestavení typu Friend'
+title: 'Postupy: Vytváření podepsaných přátelských sestavení'
 ms.date: 08/19/2019
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 19c301c6b96e1070447401af9105fba2e0f0837f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 3bf71adc694f3c6e072990717198b4f2003cd503
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973360"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523882"
 ---
-# <a name="how-to-create-signed-friend-assemblies"></a>Postupy: Vytvořit podepsaná sestavení typu Friend
+# <a name="how-to-create-signed-friend-assemblies"></a>Postupy: Vytváření podepsaných přátelských sestavení
 Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, která mají silné názvy. Obě sestavení musí mít silný název. I když obě sestavení v tomto příkladu používají stejné klíče, můžete použít různé klíče pro dvě sestavení.  
   
 ## <a name="create-a-signed-assembly-and-a-friend-assembly"></a>Vytvořit podepsané sestavení a sestavení typu Friend  
@@ -33,7 +33,7 @@ Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, kt
   
          `sn -tp FriendAssemblies.publickey`  
   
-3. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_A* , který obsahuje následující kód. Kód používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut k deklaraci *friend_signed_B* jako sestavení typu Friend.  
+3. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_A* , který obsahuje následující kód. Kód používá atribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> k deklaraci *friend_signed_B* jako sestavení typu Friend.  
    
    Nástroj silného názvu vygeneruje nový veřejný klíč při každém spuštění. Proto je nutné nahradit veřejný klíč v následujícím kódu veřejným klíčem, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.  
    
@@ -79,7 +79,7 @@ Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, kt
    Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
    ```  
    
-5. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_B* , který obsahuje následující kód. Vzhledem k tomu, že *friend_signed_A* Určuje *friend_signed_B* jako sestavení typu Friend, kód v `internal` *friend_signed_B* může přistupovat `Friend` k typům (C#) nebo (Visual Basic) a členům z *friend_signed_A*. Soubor obsahuje následující kód.  
+5. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_B* , který obsahuje následující kód. Vzhledem k tomu, že *friend_signed_A* Určuje *friend_signed_B* jako sestavení typu Friend, kód v *friend_signed_B* můžeC#přistupovat k typům `internal` () nebo `Friend` (Visual Basic) a členům z *friend_signed_A*. Soubor obsahuje následující kód.  
    
    ```csharp  
    // friend_signed_B.cs  
@@ -117,22 +117,22 @@ Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, kt
    vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
    ```  
    
-   Název sestavení generované kompilátorem se musí shodovat s názvem sestavení typu Friend předanému <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributu. Je nutné explicitně zadat název výstupního sestavení ( *. exe* nebo *. dll*) pomocí `/out` možnosti kompilátoru. Další informace naleznete v tématu [/out (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
+   Název sestavení generované kompilátorem se musí shodovat s názvem sestavení typu Friend předanému atributu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Musíte explicitně zadat název výstupního sestavení ( *. exe* nebo *. dll*) pomocí možnosti kompilátoru `/out`. Další informace naleznete v tématu [/out (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
    
 7. Spusťte soubor *friend_signed_B. exe* .  
    
    Program vytvoří výstup řetězce **Class1. test**.  
   
 ## <a name="net-security"></a>Zabezpečení .NET  
- Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributem <xref:System.Security.Permissions.StrongNameIdentityPermission> a třídou. Hlavním rozdílem je, <xref:System.Security.Permissions.StrongNameIdentityPermission> že může vyžadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> zatímco `internal` atribut řídí viditelnost typů (C#) nebo `Friend` (Visual Basic) a členů.  
+ Existují podobnosti mezi atributem <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> a třídou <xref:System.Security.Permissions.StrongNameIdentityPermission>. Hlavním rozdílem je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může vyžadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco atribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> řídí viditelnost typů a členů `internal` (C#) nebo `Friend` (Visual Basic).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Sestavení v .NET](index.md)
 - [Friend – sestavení](friend.md)
-- [Postupy: Vytvořit nepodepsaná sestavení typu Friend](create-unsigned-friend.md)
-- [/keyfile (C#)](../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)
+- [Postupy: vytváření nepodepsaných přátelských sestavení](create-unsigned-friend.md)
+- [-keyfile (C#)](../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)
 - [-keyfile (Visual Basic)](../../visual-basic/reference/command-line-compiler/keyfile.md)
 - [SN. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)

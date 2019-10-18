@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 7d4343cf38f0ea1ae42b77cc1d0c755920c4a421
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: dce36c762879c829a68897d6e3c2ff18903318c6
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587744"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523335"
 ---
-# <a name="returns-c-programming-guide"></a>\<Vrátí > (C# Průvodce programováním).
+# <a name="returns-c-programming-guide"></a>> \<returns (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,9 +28,9 @@ ms.locfileid: "69587744"
  Popis návratové hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Značka \<Returns > by měla být použita v komentáři pro deklaraci metody k popisu návratové hodnoty.  
+ Značka \<returns > by měla být použita v komentáři pro deklaraci metody k popisu návratové hodnoty.  
   
- Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#10)]  

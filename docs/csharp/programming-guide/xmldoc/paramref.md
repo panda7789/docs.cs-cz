@@ -1,5 +1,5 @@
 ---
-title: <paramref>– C# Průvodce programováním
+title: Průvodce C# programováním <paramref>
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <paramref> C# XML tag
 - paramref C# XML tag
 ms.assetid: 756c24c1-f591-40e8-a838-559761539b0b
-ms.openlocfilehash: e442b6829859ebc4dce6a0f5b6cd6cb777ab1400
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 43e98565ff7294ebb6fa7e71d1be17522dbb15de
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587904"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523399"
 ---
-# <a name="paramref-c-programming-guide"></a>\<paramref > (C# Průvodce programováním)
+# <a name="paramref-c-programming-guide"></a>> \<paramref (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,9 +28,9 @@ ms.locfileid: "69587904"
  Název parametru, na který se má odkazovat Název uzavřete do uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Značka > \< \<paramref poskytuje způsob, jak označit, že slovo v komentářích kódu, například v souhrnném > nebo v > bloku, odkazuje na parametr. \< Soubor XML lze zpracovat pro formátování tohoto slova nějakým způsobem, například tučným písmem nebo kurzívou.  
+ Značka > \<paramref poskytuje způsob, jak označit, že slovo v komentářích kódu, například v \<summary > nebo \<remarks > blok odkazuje na parametr. Soubor XML lze zpracovat pro formátování tohoto slova nějakým způsobem, například tučným písmem nebo kurzívou.  
   
- Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#7)]  

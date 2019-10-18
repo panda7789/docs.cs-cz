@@ -1,76 +1,79 @@
 ---
-title: 'Postupy: Vytváření sjednocení C / C++ pomocí atributů (Visual Basic)'
+title: 'Postupy: vytvořeníC++ sjednocení jazyka C pomocí atributů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
-ms.openlocfilehash: 0c3ebf248f5d2f20e2fff25fb8326a294b51d153
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6595d6477d9d0838745e19eb2a44d26f6e534c70
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789087"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524270"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Postupy: Vytváření sjednocení C/C++ pomocí atributů (Visual Basic)
-Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  
-  
-## <a name="example"></a>Příklad  
- V tomto segmentu kódu, všechna pole z `TestUnion` začínají na stejné místo v paměti.  
-  
-```vb  
-' Add an Imports statement for System.Runtime.InteropServices.  
-  
-<System.Runtime.InteropServices.StructLayout(   
-      System.Runtime.InteropServices.LayoutKind.Explicit)>   
-Structure TestUnion  
-    <System.Runtime.InteropServices.FieldOffset(0)>   
-    Public i As Integer  
-  
-    <System.Runtime.InteropServices.FieldOffset(0)>   
-    Public d As Double  
-  
-    <System.Runtime.InteropServices.FieldOffset(0)>   
-    Public c As Char  
-  
-    <System.Runtime.InteropServices.FieldOffset(0)>   
-    Public b As Byte  
-End Structure  
-```  
-  
-## <a name="example"></a>Příklad  
- Tady je další příklad – kde pole začínají na různých explicitně nastavit umístění.  
-  
-```vb  
-' Add an Imports statement for System.Runtime.InteropServices.  
-  
- <System.Runtime.InteropServices.StructLayout(  
-      System.Runtime.InteropServices.LayoutKind.Explicit)>   
-Structure TestExplicit  
-     <System.Runtime.InteropServices.FieldOffset(0)>   
-     Public lg As Long  
-  
-     <System.Runtime.InteropServices.FieldOffset(0)>   
-     Public i1 As Integer  
-  
-     <System.Runtime.InteropServices.FieldOffset(4)>   
-     Public i2 As Integer  
-  
-     <System.Runtime.InteropServices.FieldOffset(8)>   
-     Public d As Double  
-  
-     <System.Runtime.InteropServices.FieldOffset(12)>   
-     Public c As Char  
-  
-     <System.Runtime.InteropServices.FieldOffset(14)>   
-     Public b As Byte  
- End Structure  
-```  
-  
- Dvě celočíselné pole, `i1` a `i2`, sdílet stejné umístění paměti jako `lg`. Tento typ kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.  
-  
+# <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Postupy: vytvoření C/C++ sjednocení pomocí atributů (Visual Basic)
+
+Pomocí atributů můžete přizpůsobit způsob, jakým jsou struktury rozloženy v paměti. Můžete například vytvořit, co se říká sjednocení v C/C++ pomocí atributů `StructLayout(LayoutKind.Explicit)` a `FieldOffset`.
+
+## <a name="example"></a>Příklad
+
+V tomto segmentu kódu se všechna pole `TestUnion` začínají na stejném místě v paměti.
+
+```vb
+' Add an Imports statement for System.Runtime.InteropServices.
+
+<System.Runtime.InteropServices.StructLayout(
+      System.Runtime.InteropServices.LayoutKind.Explicit)>
+Structure TestUnion
+    <System.Runtime.InteropServices.FieldOffset(0)>
+    Public i As Integer
+
+    <System.Runtime.InteropServices.FieldOffset(0)>
+    Public d As Double
+
+    <System.Runtime.InteropServices.FieldOffset(0)>
+    Public c As Char
+
+    <System.Runtime.InteropServices.FieldOffset(0)>
+    Public b As Byte
+End Structure
+```
+
+## <a name="example"></a>Příklad
+
+Následuje další příklad, kdy se pole spouštějí v různých explicitních nastaveních umístění.
+
+```vb
+' Add an Imports statement for System.Runtime.InteropServices.
+
+ <System.Runtime.InteropServices.StructLayout(
+      System.Runtime.InteropServices.LayoutKind.Explicit)>
+Structure TestExplicit
+     <System.Runtime.InteropServices.FieldOffset(0)>
+     Public lg As Long
+
+     <System.Runtime.InteropServices.FieldOffset(0)>
+     Public i1 As Integer
+
+     <System.Runtime.InteropServices.FieldOffset(4)>
+     Public i2 As Integer
+
+     <System.Runtime.InteropServices.FieldOffset(8)>
+     Public d As Double
+
+     <System.Runtime.InteropServices.FieldOffset(12)>
+     Public c As Char
+
+     <System.Runtime.InteropServices.FieldOffset(14)>
+     Public b As Byte
+ End Structure
+```
+
+Dvě celočíselná pole, `i1` a `i2`, sdílejí stejná umístění v paměti jako `lg`. Tento druh řízení nad rozložením struktury je užitečný při volání platformy.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
 - [Atributy](../../../../standard/attributes/index.md)
 - [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
 - [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)

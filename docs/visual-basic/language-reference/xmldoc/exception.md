@@ -5,15 +5,15 @@ helpviewer_keywords:
 - <exception> XML tag
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
-ms.openlocfilehash: 4e2f441863d6a8677593a257cdb2cc841634d47c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16ffb4f6b57dabb3650376c913a7d7608a00646d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940917"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523931"
 ---
-# <a name="exception-visual-basic"></a>\<exception> (Visual Basic)
-Určuje, jaké výjimky mohou být vyvolány.  
+# <a name="exception-visual-basic"></a>\<exception > (Visual Basic)
+Určuje, které výjimky mohou být vyvolány.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,18 +23,18 @@ Určuje, jaké výjimky mohou být vyvolány.
   
 ## <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na výjimku, která je k dispozici z prostředí aktuální kompilace. Kompilátor kontroluje, zda existuje výjimka a přeloží `member` k názvu canonical prvku ve výstupním souboru XML. `member` musí být uvedena v uvozovkách ("").  
+ Odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace. Kompilátor kontroluje, zda daná výjimka existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. `member` musí být v uvozovkách ("").  
   
  `description`  
  Popis.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `<exception>` značku k určení, jaké výjimky mohou být vyvolány. Tato značka se použije k definici metody.  
+ Pomocí značky `<exception>` určete, které výjimky mohou být vyvolány. Tato značka se aplikuje na definici metody.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `<exception>` značka, které popisují výjimku, která `IntDivide` funkce může vyvolat.  
+ V tomto příkladu se používá značka `<exception>` k popisu výjimky, kterou může funkce `IntDivide` vyvolat.  
   
  [!code-vb[VbVbcnXmlDocComments#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#3)]  
   

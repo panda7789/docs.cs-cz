@@ -2,100 +2,101 @@
 title: Kovariance a kontravariance (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 59224c46-9931-466b-8c6e-3648c3e609c6
-ms.openlocfilehash: 241b8f5864b6e9b3e1caddde25d032a24e4d0bb7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8315a272aca891820f7349d854a16375abdae900
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022010"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524250"
 ---
 # <a name="covariance-and-contravariance-visual-basic"></a>Kovariance a kontravariance (Visual Basic)
-V jazyce Visual Basic kovariance a kontravariance povolit implicitní převod odkazu pro typy polí, typy delegátů a argumenty obecného typu. Kompatibility přiřazení zachová kovariance a kontravariance obrátí ho.  
-  
- Následující kód ukazuje rozdíl mezi kompatibility přiřazení, kovariance a kontravariance.  
-  
-```vb  
-' Assignment compatibility.   
-Dim str As String = "test"  
-' An object of a more derived type is assigned to an object of a less derived type.   
-Dim obj As Object = str  
-  
-' Covariance.   
-Dim strings As IEnumerable(Of String) = New List(Of String)()  
-' An object that is instantiated with a more derived type argument   
-' is assigned to an object instantiated with a less derived type argument.   
-' Assignment compatibility is preserved.   
-Dim objects As IEnumerable(Of Object) = strings  
-  
-' Contravariance.             
-' Assume that there is the following method in the class:   
-' Shared Sub SetObject(ByVal o As Object)  
-' End Sub  
-Dim actObject As Action(Of Object) = AddressOf SetObject  
-  
-' An object that is instantiated with a less derived type argument   
-' is assigned to an object instantiated with a more derived type argument.   
-' Assignment compatibility is reversed.   
-Dim actString As Action(Of String) = actObject  
-```  
-  
- Kovariance polí umožňuje implicitní převod pole více odvozeného typu na celou řadu méně odvozeného typu. Ale tato operace není typově bezpečný, jak je znázorněno v následujícím příkladu kódu.  
-  
-```vb  
-Dim array() As Object = New String(10) {}  
-' The following statement produces a run-time exception.  
-' array(0) = 10  
-```  
-  
- Kovariance a kontravariance podpora pro metodu skupiny umožňuje, aby pro spárování metod podpisů s typy delegáta. To umožňuje přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí, že více odvozené typy (kovariance) nebo které přijímáte parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta. Další informace najdete v tématu [odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [použití odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).  
-  
- Následující příklad kódu ukazuje kovariance a kontravariance podporu pro skupiny metod.  
-  
-```vb  
-Shared Function GetObject() As Object  
-    Return Nothing  
-End Function  
-  
-Shared Sub SetObject(ByVal obj As Object)  
-End Sub  
-  
-Shared Function GetString() As String  
-    Return ""  
-End Function  
-  
-Shared Sub SetString(ByVal str As String)  
-  
-End Sub  
-  
-Shared Sub Test()  
-    ' Covariance. A delegate specifies a return type as object,  
-    ' but you can assign a method that returns a string.  
-    Dim del As Func(Of Object) = AddressOf GetString  
-  
-    ' Contravariance. A delegate specifies a parameter type as string,  
-    ' but you can assign a method that takes an object.  
-    Dim del2 As Action(Of String) = AddressOf SetObject  
-End Sub  
-```  
-  
- V rozhraní .NET Framework 4 nebo novější Visual Basic podporuje kovariance a kontravariance v obecných rozhraních a delegátech a umožňuje implicitní převod parametrů obecného typu. Další informace najdete v tématu [odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) a [odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).  
-  
- Následující příklad kódu ukazuje implicitní referenční převod pro obecná rozhraní.  
-  
-```vb  
-Dim strings As IEnumerable(Of String) = New List(Of String)  
-Dim objects As IEnumerable(Of Object) = strings  
-```  
-  
- Obecná rozhraní nebo delegát se nazývá *variant* pokud jeho obecné parametry jsou deklarovány kovariantní nebo kontravariantní. Visual Basic umožňuje vytvářet vlastní variant rozhraní a delegátů. Další informace najdete v tématu [vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md) a [odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).  
-  
-## <a name="related-topics"></a>Související témata  
-  
-|Název|Popis|  
-|-----------|-----------------|  
-|[Odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Tento článek popisuje kovariance a kontravariance v obecných rozhraních a obsahuje seznam variantních obecných rozhraní v rozhraní .NET Framework.|  
-|[Vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)|Ukazuje, jak vytvořit vlastní rozhraní variant.|  
-|[Použití odchylky v rozhraní pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak podporovat kovariance a kontravariance v <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601> rozhraní vám umožňují opětovné použití kódu.|  
-|[Odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)|Tento článek popisuje kovariance a kontravariance v obecných a neobecných delegátů a obsahuje seznam variantních obecných delegátů v rozhraní .NET Framework.|  
-|[Použití odchylek v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)|Ukazuje, jak používat podporu kovariance a kontravariance v obecné delegáty tak, aby odpovídaly metod podpisů s typy delegáta.|  
-|[Použití odchylek pro delegáty Func a Action obecný (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak podporovat kovariance a kontravariance v `Func` a `Action` delegáty umožňují opakované použití kódu.|
+
+V Visual Basic kovariance a kontravariance umožňují implicitní převod odkazů pro typy polí, typy delegátů a argumenty obecného typu. Kovariance zachovává kompatibilitu přiřazení a kontravariance ji obrátí.
+
+Následující kód ukazuje rozdíl mezi kompatibilitou přiřazení, koodchylky a kontravariance.
+
+```vb
+' Assignment compatibility.
+Dim str As String = "test"
+' An object of a more derived type is assigned to an object of a less derived type.
+Dim obj As Object = str
+
+' Covariance.
+Dim strings As IEnumerable(Of String) = New List(Of String)()
+' An object that is instantiated with a more derived type argument
+' is assigned to an object instantiated with a less derived type argument.
+' Assignment compatibility is preserved.
+Dim objects As IEnumerable(Of Object) = strings
+
+' Contravariance.
+' Assume that there is the following method in the class:
+' Shared Sub SetObject(ByVal o As Object)
+' End Sub
+Dim actObject As Action(Of Object) = AddressOf SetObject
+
+' An object that is instantiated with a less derived type argument
+' is assigned to an object instantiated with a more derived type argument.
+' Assignment compatibility is reversed.
+Dim actString As Action(Of String) = actObject
+```
+
+Kovariance pro pole umožňuje implicitní převod pole více odvozeného typu na pole méně odvozeného typu. Tato operace ale není typově bezpečná, jak je znázorněno v následujícím příkladu kódu.
+
+```vb
+Dim array() As Object = New String(10) {}
+' The following statement produces a run-time exception.
+' array(0) = 10
+```
+
+Kovariance a podpora kontravariance pro skupiny metod umožňuje porovnávací signatury metod s typy delegátů. To vám umožňuje přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. Další informace naleznete v tématu [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [použití variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).
+
+Následující příklad kódu ukazuje kovariance a podporu kontravariance pro skupiny metod.
+
+```vb
+Shared Function GetObject() As Object
+    Return Nothing
+End Function
+
+Shared Sub SetObject(ByVal obj As Object)
+End Sub
+
+Shared Function GetString() As String
+    Return ""
+End Function
+
+Shared Sub SetString(ByVal str As String)
+
+End Sub
+
+Shared Sub Test()
+    ' Covariance. A delegate specifies a return type as object,
+    ' but you can assign a method that returns a string.
+    Dim del As Func(Of Object) = AddressOf GetString
+
+    ' Contravariance. A delegate specifies a parameter type as string,
+    ' but you can assign a method that takes an object.
+    Dim del2 As Action(Of String) = AddressOf SetObject
+End Sub
+```
+
+V .NET Framework 4 nebo novější Visual Basic podporuje kovarianci a kontravariance v obecných rozhraních a delegátech a povoluje implicitní převod parametrů obecného typu. Další informace najdete v tématu [Variance v obecných rozhraních (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+
+Následující příklad kódu ukazuje implicitní převod odkazu pro Obecná rozhraní.
+
+```vb
+Dim strings As IEnumerable(Of String) = New List(Of String)
+Dim objects As IEnumerable(Of Object) = strings
+```
+
+Obecné rozhraní nebo delegát se nazývá *typ variant* , pokud jsou jeho obecné parametry deklarovány kovariantní nebo kontravariantní. Visual Basic umožňuje vytvořit vlastní variantní rozhraní a delegáty. Další informace najdete v tématu [vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+
+## <a name="related-topics"></a>Související témata
+
+|Název|Popis|
+|-----------|-----------------|
+|[Variance v obecných rozhraních (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Popisuje kovarianci a kontravariance v obecných rozhraních a poskytuje seznam variantních obecných rozhraní v .NET Framework.|
+|[Vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)|Ukazuje, jak vytvořit vlastní variantní rozhraní.|
+|[Použití variance v rozhraních pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak by podpora kovariance a kontravariance v rozhraních <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601> mohla pomoci znovu použít kód.|
+|[Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)|Popisuje kovarianci a kontravariance v obecných a neobecných delegátech a poskytuje seznam variant obecných delegátů v .NET Framework.|
+|[Použití variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)|Ukazuje, jak použít kovarianci a podporu kontravariance v neobecných delegátech pro porovnávání signatur metod s typy delegátů.|
+|[Použití odchylky pro obecné delegáty Func a Action (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak je podpora kovariance a kontravariance v `Func` a `Action` Delegáti vám pomohou znovu použít kód.|

@@ -2,66 +2,67 @@
 title: Vytváření vlastních atributů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5c9ef584-6c7c-496b-92a9-6e42f8d9ca28
-ms.openlocfilehash: e4b55f92466fde47011937d08c946c9c75ca07b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3b1b03f69229bd4d824d6fff734b83400c2aab44
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966334"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524300"
 ---
 # <a name="creating-custom-attributes-visual-basic"></a>Vytváření vlastních atributů (Visual Basic)
-Můžete vytvořit vlastní atributy definováním třídy atributů, třídy, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, což umožňuje rychlou a jednoduchou identifikaci definic atributů v metadatech. Předpokládejme, že chcete označit typy s názvem programátora, který typ napsal. Je možné definovat vlastní `Author` třídu atributu:  
-  
-```vb  
-<System.AttributeUsage(System.AttributeTargets.Class Or   
-                       System.AttributeTargets.Struct)>   
-Public Class Author  
-    Inherits System.Attribute  
-    Private name As String  
-    Public version As Double  
-    Sub New(ByVal authorName As String)  
-        name = authorName  
-        version = 1.0  
-    End Sub  
-End Class  
-```  
-  
- Název třídy je název atributu, `Author`. Je odvozen z `System.Attribute`, takže se jedná o vlastní třídu atributu. Parametry konstruktoru jsou poziční parametry vlastního atributu. V tomto příkladu `name` je poziční parametr. Všechna veřejná pole nebo vlastnosti pro čtení i zápis se nazývají parametry. V tomto případě `version` je jediným pojmenovaným parametrem. Všimněte si, že použití `AttributeUsage` atributu pro nastavení atributu `Author` je platné pouze pro třídu a `Structure` deklarace.  
-  
- Tento nový atribut můžete použít následujícím způsobem:  
-  
-```vb  
-<Author("P. Ackerman", Version:=1.1)>   
-Class SampleClass  
-    ' P. Ackerman's code goes here...  
-End Class  
-```  
-  
- `AttributeUsage`má pojmenovaný parametr, `AllowMultiple`pomocí kterého můžete vytvořit vlastní atribut s jedním použitím nebo Multiuse. V následujícím příkladu kódu je vytvořen atribut Multiuse.  
-  
-```vb  
-' multiuse attribute  
-<System.AttributeUsage(System.AttributeTargets.Class Or   
-                       System.AttributeTargets.Struct,   
-                       AllowMultiple:=True)>   
-Public Class Author  
-    Inherits System.Attribute  
-```  
-  
- V následujícím příkladu kódu je pro třídu použito více atributů stejného typu.  
-  
-```vb  
-<Author("P. Ackerman", Version:=1.1),   
-Author("R. Koch", Version:=1.2)>   
-Class SampleClass  
-    ' P. Ackerman's code goes here...  
-    ' R. Koch's code goes here...  
-End Class  
-```  
-  
+
+Můžete vytvořit vlastní atributy definováním třídy atributů, třídy, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, což umožňuje rychle a snadno identifikovat definice atributů v metadatech. Předpokládejme, že chcete označit typy s názvem programátora, který typ napsal. Je možné definovat vlastní třídu atributu `Author`:
+
+```vb
+<System.AttributeUsage(System.AttributeTargets.Class Or
+                       System.AttributeTargets.Struct)>
+Public Class Author
+    Inherits System.Attribute
+    Private name As String
+    Public version As Double
+    Sub New(ByVal authorName As String)
+        name = authorName
+        version = 1.0
+    End Sub
+End Class
+```
+
+Název třídy je název atributu `Author`. Je odvozen z `System.Attribute`, takže se jedná o vlastní třídu atributu. Parametry konstruktoru jsou poziční parametry vlastního atributu. V tomto příkladu je `name` poziční parametr. Všechna veřejná pole nebo vlastnosti pro čtení i zápis se nazývají parametry. V tomto případě je `version` jediným pojmenovaným parametrem. Všimněte si použití atributu `AttributeUsage`, aby byl atribut `Author` platný pouze pro deklarace třídy a `Structure`.
+
+Tento nový atribut můžete použít následujícím způsobem:
+
+```vb
+<Author("P. Ackerman", Version:=1.1)>
+Class SampleClass
+    ' P. Ackerman's code goes here...
+End Class
+```
+
+`AttributeUsage` má pojmenovaný parametr `AllowMultiple`, pomocí kterého můžete vytvořit vlastní atribut s jedním použitím nebo Multiuse. V následujícím příkladu kódu je vytvořen atribut Multiuse.
+
+```vb
+' multiuse attribute
+<System.AttributeUsage(System.AttributeTargets.Class Or
+                       System.AttributeTargets.Struct,
+                       AllowMultiple:=True)>
+Public Class Author
+    Inherits System.Attribute
+```
+
+V následujícím příkladu kódu je pro třídu použito více atributů stejného typu.
+
+```vb
+<Author("P. Ackerman", Version:=1.1),
+Author("R. Koch", Version:=1.2)>
+Class SampleClass
+    ' P. Ackerman's code goes here...
+    ' R. Koch's code goes here...
+End Class
+```
+
 > [!NOTE]
-> Pokud vaše třída atributu obsahuje vlastnost, musí být tato vlastnost pro čtení i zápis.  
-  
+> Pokud vaše třída atributu obsahuje vlastnost, musí být tato vlastnost pro čtení i zápis.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>

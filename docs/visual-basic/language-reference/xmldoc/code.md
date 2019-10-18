@@ -1,19 +1,19 @@
 ---
-title: '&lt;kód&gt; (Visual Basic)'
+title: <code> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - code XML tag
 - <code> XML tag
 ms.assetid: 925e5342-be05-45f2-bf66-7398bbd6710e
-ms.openlocfilehash: 8a4708a7b50b0e221c1ebe7f95d4f8ff80cd1ebe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4e887e3bbbc01e4cef5278f67b8c4afe273bf28
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566304"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524036"
 ---
-# <a name="ltcodegt-visual-basic"></a>&lt;kód&gt; (Visual Basic)
-Označuje, že text je více řádků kódu.  
+# <a name="code-visual-basic"></a>\<code > (Visual Basic)
+Označuje, že je text více řádky kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -21,19 +21,20 @@ Označuje, že text je více řádků kódu.
 <code>content</code>  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `content`  
- Text k označení jako kódu.  
+ Text, který se má označit jako kód  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `<code>` značky k označení jako kódu více řádků. Použití [ \<c >](../../../visual-basic/language-reference/xmldoc/c.md) k označení, že text v popisu musí být označené jako kód.  
+ Použijte značku `<code>` k označení více řádků jako kódu. Použijte [\<c >](../../../visual-basic/language-reference/xmldoc/c.md) k označení, že text v rámci popisu by měl být označený jako kód.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu \<kód > značka, které zahrnují ukázkový kód pro použití `ID` pole.  
+ V tomto příkladu se používá značka > \<code k zahrnutí vzorového kódu pro použití pole `ID`.  
   
- [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/code_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

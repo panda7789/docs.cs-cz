@@ -4,12 +4,12 @@ description: Přehled nástroje Microsoft WCF dotnet-Svcutil, který přidává 
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: c6eb17ca6cd4ce920cd358a87d2a4a6759dc3439
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 49b0579c284af74d270cac04d302ce231dcb9357
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117255"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522829"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet – nástroj Svcutil pro .NET Core
 
@@ -28,19 +28,19 @@ Nástroj **dotnet-Svcutil** je alternativou k [**webové službě WCF reference*
 
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
-* [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze
-* Váš oblíbený editor kódu
+- [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze
+- Váš oblíbený editor kódu
 
 # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
 
-* [.NET Core 1.0.4 SDK](https://dotnet.microsoft.com/download) nebo novější verze
-* Váš oblíbený editor kódu
+- [.NET Core 1.0.4 SDK](https://dotnet.microsoft.com/download) nebo novější verze
+- Váš oblíbený editor kódu
 
 ---
 
 ## <a name="getting-started"></a>Začínáme
 
-Následující příklad vás provede kroky potřebnými k přidání odkazu webové služby do webového projektu .NET Core a vyvolání služby. Vytvoříte webovou aplikaci .NET Core s názvem _HelloSvcutil_ a přidáte odkaz na webovou službu, která implementuje následující kontrakt:
+Následující příklad vás provede kroky potřebnými k přidání odkazu webové služby do webového projektu .NET Core a vyvolání služby. Vytvoříte webovou aplikaci .NET Core s názvem *HelloSvcutil* a přidáte odkaz na webovou službu, která implementuje následující kontrakt:
 
 ```csharp
 [ServiceContract]
@@ -51,7 +51,7 @@ public interface ISayHello
 }
 ```
 
-V tomto příkladu Předpokládejme, že webová služba bude hostována na následující adrese:`http://contoso.com/SayHello.svc`
+V tomto příkladu Předpokládejme, že webová služba bude hostována na následující adrese: `http://contoso.com/SayHello.svc`
 
 V okně příkazového řádku Windows, macOS nebo Linux proveďte následující kroky:
 
@@ -62,13 +62,13 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
     cd HelloSvcutil
     ```
 
-2. V tomto adresáři C# vytvořte nový webový projekt pomocí [`dotnet new`](../tools/dotnet-new.md) příkazu následujícím způsobem:
+2. V tomto adresáři C# vytvořte nový webový projekt pomocí příkazu [`dotnet new`](../tools/dotnet-new.md) následujícím způsobem:
 
     ```dotnetcli
     dotnet new web
     ```
 
-3. Nainstalujte balíček NuGet jako nástroj rozhraní příkazového řádku: [ `dotnet-svcutil` ](https://nuget.org/packages/dotnet-svcutil) <!-- markdownlint-disable MD023 -->
+3. Nainstalujte [balíček NuGet `dotnet-svcutil`](https://nuget.org/packages/dotnet-svcutil) jako nástroj rozhraní příkazového řádku:  <!-- markdownlint-disable MD023 -->
     # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
     ```dotnetcli
@@ -76,7 +76,7 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
     ```
 
     # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
-    Otevřete soubor [ `dotnet-svcutil` ](https://nuget.org/packages/dotnet-svcutil) projektu v editoru, `Project` upravte element a přidejte balíček NuGet jako odkaz na nástroj rozhraní příkazového řádku, a to pomocí následujícího kódu: `HelloSvcutil.csproj`
+    Otevřete `HelloSvcutil.csproj` soubor projektu v editoru, upravte `Project` prvek a přidejte [`dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako referenci nástroje CLI pomocí následujícího kódu:
 
     ```xml
     <ItemGroup>
@@ -84,7 +84,7 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
     </ItemGroup>
     ```
 
-    Pak obnovte balíček _dotnet-Svcutil_ pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu následujícím způsobem:
+    Pak obnovte balíček _dotnet-Svcutil_ pomocí příkazu [`dotnet restore`](../tools/dotnet-restore.md) následujícím způsobem:
 
     ```dotnetcli
     dotnet restore
@@ -112,21 +112,21 @@ Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference.
 
 ## <a name="using-the-service-reference"></a>Použití odkazu na službu
 
-1. Pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu obnovte balíčky služby WCF následujícím způsobem:
+1. Pomocí příkazu [`dotnet restore`](../tools/dotnet-restore.md) obnovte balíčky služby WCF následujícím způsobem:
 
     ```dotnetcli
     dotnet restore
     ```
 
-2. Vyhledejte název klientské třídy a operace, kterou chcete použít. `Reference.cs`bude obsahovat třídu, která dědí z `System.ServiceModel.ClientBase`, s metodami, které lze použít k volání operací ve službě. V tomto příkladu chcete zavolat operaci _Hello_ služby _sayHello_ . `ServiceReference.SayHelloClient`je název třídy klienta a má metodu nazvanou `HelloAsync` , která může být použita k volání operace.
+2. Vyhledejte název klientské třídy a operace, kterou chcete použít. `Reference.cs` bude obsahovat třídu, která dědí z `System.ServiceModel.ClientBase`, s metodami, které lze použít k volání operací ve službě. V tomto příkladu chcete zavolat operaci _Hello_ služby _sayHello_ . `ServiceReference.SayHelloClient` je název třídy klienta a má metodu nazvanou `HelloAsync`, kterou lze použít k volání operace.
 
-3. `Startup.cs` Otevřete soubor v editoru a přidejte příkaz using pro obor názvů odkazu na službu v horní části:
+3. Otevřete `Startup.cs` soubor v editoru a přidejte příkaz using pro obor názvů odkazu na službu v horní části:
 
     ```csharp
     using ServiceReference;
     ```
 
-4. `Configure` Upravte metodu pro vyvolání webové služby. To provedete vytvořením instance třídy, která dědí z `ClientBase` a voláním metody v objektu klienta:
+4. Upravte metodu `Configure` k vyvolání webové služby. To provedete vytvořením instance třídy, která dědí z `ClientBase` a voláním metody do objektu klienta:
 
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -146,7 +146,7 @@ Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference.
 
     ```
 
-5. Spusťte aplikaci pomocí [`dotnet run`](../tools/dotnet-run.md) příkazu následujícím způsobem:
+5. Spusťte aplikaci pomocí příkazu [`dotnet run`](../tools/dotnet-run.md) následujícím způsobem:
 
     ```dotnetcli
     dotnet run
@@ -154,9 +154,9 @@ Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference.
 
 6. Přejděte na adresu URL uvedenou v konzole (například `http://localhost:5000`) ve webovém prohlížeči.
 
-Měl by se zobrazit následující výstup: "Hello dotnet-Svcutil!"
+Měl by se zobrazit následující výstup: Hello dotnet-Svcutil!
 
-Podrobný popis `dotnet-svcutil` parametrů nástroje získáte tak, že vyvoláte nástroj, který předává parametr help následujícím způsobem:
+Podrobný popis parametrů `dotnet-svcutil` nástrojů získáte tak, že vyvoláte nástroj, který předává parametr help následujícím způsobem:
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
 ```dotnetcli
@@ -177,8 +177,8 @@ Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](h
 
 ## <a name="release-notes"></a>Zpráva k vydání verze
 
-* Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) .
+- Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) .
 
 ## <a name="information"></a>Informace o
 
-* [dotnet – balíček NuGet pro Svcutil](https://nuget.org/packages/dotnet-svcutil)
+- [dotnet – balíček NuGet pro Svcutil](https://nuget.org/packages/dotnet-svcutil)

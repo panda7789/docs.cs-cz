@@ -5,15 +5,15 @@ helpviewer_keywords:
 - paramref XML tag
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
-ms.openlocfilehash: 3e2bf7990343a325bbecc56f6d3754a77f1e08e2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85171bd8deeb5f54c4560bb8b2339107bb8d8c68
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940839"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524709"
 ---
 # <a name="paramref-visual-basic"></a>\<paramref > (Visual Basic)
-Formátuje slova jako parametr.  
+Zformátuje slovo jako parametr.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Formátuje slova jako parametr.
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- Název parametru jako reference. Název uzavřete do dvojitých uvozovek ("").  
+ Název parametru, na který se má odkazovat Název uzavřete do uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- `<paramref>` Značky poskytuje způsob, jak určit, že je slovo parametru. Soubor XML mohou být zpracovány k nějakým způsobem odlišné formátování tento parametr.  
+ Značka `<paramref>` poskytuje způsob, jak označit, že slovo je parametrem. Soubor XML může být zpracován pro naformátování tohoto parametru nějakým odlišným způsobem.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `<paramref>` značku k odkazování `id` parametr.  
+ Tento příklad používá značku `<paramref>` pro odkazování na parametr `id`.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

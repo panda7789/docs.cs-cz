@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: e81a95102100d3b0f3fdc84cf2113abf6ae35351
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 17956838c20a4342873478869c07c6382f037fcb
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588123"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523511"
 ---
-# <a name="example-c-programming-guide"></a>\<Příklad > (C# Průvodce programováním)
+# <a name="example-c-programming-guide"></a>> \<example (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,9 +28,9 @@ ms.locfileid: "69588123"
  Popis ukázky kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- \<Vzorový > tag umožňuje zadat příklad použití metody nebo jiného člena knihovny. To obvykle zahrnuje použití [ \<značky Code >](./code.md) .  
+ Značka > \<example umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití značky [\<code >](./code.md) .  
   
- Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  

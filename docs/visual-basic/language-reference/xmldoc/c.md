@@ -5,15 +5,15 @@ helpviewer_keywords:
 - c XML tag
 - <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-ms.openlocfilehash: 9be9f9e96fc1b79ea97d54c54352da63b93ef264
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ea19ed5330dcbb8fcd84708d1546a81d909b04e
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938590"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523937"
 ---
 # <a name="c-visual-basic"></a>\<c > (Visual Basic)
-Označuje, že je text v rámci popis kódu.  
+Označuje, že text v rámci popisu je kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,12 +28,12 @@ Označuje, že je text v rámci popis kódu.
 |`text`|Text, který chcete označit jako kód.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<c>` Značky poskytuje způsob, jak určit, že text v popisu musí být označené jako kód. Použití [ \<kód >](../../../visual-basic/language-reference/xmldoc/code.md) k označení jako kódu více řádků.  
+ Značka `<c>` poskytuje způsob, jak označit, že text v rámci popisu by měl být označen jako kód. Pomocí [\<code >](../../../visual-basic/language-reference/xmldoc/code.md) označit více řádků jako kód.  
   
- Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<c>` značky v souhrnné části, která označuje, že `Counter` je kód.  
+ Tento příklad používá značku `<c>` v části Summary k označení toho, že `Counter` je kód.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: 2ec1aaff88754848d844a56b1744beb2efa4cd89
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: d7fca40caaeb83152b8ae5260bf918981362d2c3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291231"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522798"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -33,11 +33,11 @@ Na metabalíčky se implicitně odkazuje na základě cílových rozhraní .NET 
 
 Vzhledem k tomu, že jsou implicitně odkazovány `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky, následující doporučené osvědčené postupy:
 
-* Pokud cílíte na rozhraní .NET Core nebo .NET Standard, nikdy nemusíte mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky prostřednictvím položky `<PackageReference>` v souboru projektu.
-* Pokud potřebujete specifickou verzi modulu runtime při cílení na .NET Core, měli byste použít vlastnost `<RuntimeFrameworkVersion>` v projektu (například `1.0.4`) namísto odkazování na Metapackage.
-  * K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete konkrétní opravu verze 1.0.0 LTS runtime, například.
-* Pokud potřebujete specifickou verzi `NETStandard.Library` Metapackage při cílení .NET Standard, můžete použít vlastnost `<NetStandardImplicitPackageVersion>` a nastavit požadovanou verzi.
-* Nedávejte explicitně odkazy ani neaktualizujte `Microsoft.NETCore.App` ani `NETStandard.Library` Metapackage v projektech .NET Framework. Pokud je při použití balíčku NuGet založeného na .NET Standard nutná jakákoli verze `NETStandard.Library`, NuGet tuto verzi nainstaluje automaticky.
+- Pokud cílíte na rozhraní .NET Core nebo .NET Standard, nikdy nemusíte mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky prostřednictvím položky `<PackageReference>` v souboru projektu.
+- Pokud potřebujete specifickou verzi modulu runtime při cílení na .NET Core, měli byste použít vlastnost `<RuntimeFrameworkVersion>` v projektu (například `1.0.4`) namísto odkazování na Metapackage.
+  - K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete konkrétní opravu verze 1.0.0 LTS runtime, například.
+- Pokud potřebujete specifickou verzi `NETStandard.Library` Metapackage při cílení .NET Standard, můžete použít vlastnost `<NetStandardImplicitPackageVersion>` a nastavit požadovanou verzi.
+- Nedávejte explicitně odkazy ani neaktualizujte `Microsoft.NETCore.App` ani `NETStandard.Library` Metapackage v projektech .NET Framework. Pokud je při použití balíčku NuGet založeného na .NET Standard nutná jakákoli verze `NETStandard.Library`, NuGet tuto verzi nainstaluje automaticky.
 
 ## <a name="implicit-version-for-some-package-references"></a>Implicitní verze pro některé odkazy na balíčky
 
@@ -59,8 +59,8 @@ Tyto odkazy na ASP.NET Core metabalíčky mají mírně odlišné chování z v�
 
 *Je* -li zadána verze, je zpracována jako *minimální* verze ASP.NET Core sdílené architektury pro nasazení závislá na rozhraních a jako *Přesná* verze pro samostatně nasazená nasazení. To může mít následující důsledky:
 
-* Pokud je verze ASP.NET Core nainstalovaná na serveru menší než verze zadaná na PackageReference, proces .NET Core se nepovede spustit. Aktualizace Metapackage jsou často k dispozici v NuGet.org před zpřístupněním aktualizací v hostitelských prostředích, jako je Azure. Aktualizace verze PackageReference na ASP.NET Core by mohla způsobit selhání nasazené aplikace.
-* Pokud je aplikace nasazena jako [samostatné nasazení](../deploying/index.md#self-contained-deployments-scd), aplikace nemusí obsahovat nejnovější aktualizace zabezpečení .NET Core. Pokud není určena verze, může sada SDK automaticky zahrnovat nejnovější verzi ASP.NET Core v samostatném nasazení.
+- Pokud je verze ASP.NET Core nainstalovaná na serveru menší než verze zadaná na PackageReference, proces .NET Core se nepovede spustit. Aktualizace Metapackage jsou často k dispozici v NuGet.org před zpřístupněním aktualizací v hostitelských prostředích, jako je Azure. Aktualizace verze PackageReference na ASP.NET Core by mohla způsobit selhání nasazené aplikace.
+- Pokud je aplikace nasazena jako [samostatné nasazení](../deploying/index.md#self-contained-deployments-scd), aplikace nemusí obsahovat nejnovější aktualizace zabezpečení .NET Core. Pokud není určena verze, může sada SDK automaticky zahrnovat nejnovější verzi ASP.NET Core v samostatném nasazení.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Výchozí kompilace zahrnuje v projektech .NET Core
 
@@ -72,9 +72,9 @@ Následující tabulka ukazuje, který prvek a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Sestavení           | \* @ no__t-1 @ no__t-2\*.cs (nebo jiné jazykové rozšíření) | \* @ no__t-1 @ no__t-2\*.user;  \* @ no__t-5 @ no__t-6 @ no__t-7. \*proj;  \* @ no__t-10 @ no__t-11\*2.sln;  3 @ no__t-14 @ no__t-15 @ no__t-16. vssscc  | Není k dispozici                      |
-| EmbeddedResource  | \* @ no__t-1 @ no__t-2\*.resx                              | \* @ no__t-1 @ no__t-2\*.user; \* @ no__t-5 @ no__t-6 @ no__t-7. \*proj; \* @ no__t-10 @ no__t-11\*2.sln; 3 @ no__t-14 @ no__t-15 @ no__t-16. vssscc     | Není k dispozici                      |
-| Žádné              | \*\*/\*                                   | \* @ no__t-1 @ no__t-2\*.user; \* @ no__t-5 @ no__t-6 @ no__t-7. \*proj; \* @ no__t-10 @ no__t-11\*2.sln; 3 @ no__t-14 @ no__t-15 @ no__t-16. vssscc     | \* @ no__t-1 @ no__t-2\*.cs; \* @ no__t-5 @ no__t-6\*.resx   |
+| Sestavení           | \* \* / \*. cs (nebo jiné jazykové rozšíření) | \* \* / \*. User;   \* \* / \*. \*proj;   \* 0 1 2. sln;   3 4 5 6. vssscc  | Není k dispozici                      |
+| EmbeddedResource  | \* \* / \*. resx                              | \* \* / \*. User;  \* \* / \*. \*proj;  \* 0 1 2. sln;  3 4 5 6. vssscc     | Není k dispozici                      |
+| Žádné              | \*\*/\*                                   | \* \* / \*. User;  \* \* / \*. \*proj;  \* 0 1 2. sln;  3 4 5 6. vssscc     | \* \* / \*. cs;  \* \* / \*. resx   |
 
 > [!NOTE]
 > **Exclude glob** vždy vyloučí složky `./bin` a `./obj`, které jsou reprezentovány vlastnostmi MSBuild v uvedeném pořadí `$(BaseOutputPath)` a `$(BaseIntermediateOutputPath)`. Všechna vyloučení jsou představována `$(DefaultItemExcludes)`.
@@ -145,7 +145,7 @@ Prvek položky `<PackageReference>` určuje [závislost NuGet v projektu](/nuget
 
 #### <a name="version"></a>Version
 
-Požadovaný atribut `Version` určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní zápisu NuGet `[1.2.3]` pro přesný balíček verze 1.2.3 balíčku.
+Požadovaný atribut `Version` určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní `[1.2.3]` notace NuGet pro přesný balíček verze balíčku.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
 
@@ -153,26 +153,27 @@ atribut `IncludeAssets` určuje, které prostředky patřící k balíčku urče
 
 atribut `ExcludeAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by neměly být spotřebovány.
 
-atribut `PrivateAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. @No__t-0, `Build` a `ContentFiles` jsou ve výchozím nastavení privátní, pokud tento atribut není přítomen.
+atribut `PrivateAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. @No__t_0, `Build` a `ContentFiles` assety jsou ve výchozím nastavení privátní, pokud tento atribut není k dispozici.
 
 > [!NOTE]
 > `PrivateAssets` je ekvivalentní prvku *Project. json*/*xproj* `SuppressParent`.
 
 Tyto atributy mohou obsahovat jednu nebo více následujících položek oddělených středníkem `;`, pokud je uvedeno více než jedna položka:
 
-* `Compile` – obsah složky lib je k dispozici pro zkompilování.
-* `Runtime` – obsah běhové složky se distribuuje.
-* `ContentFiles` – používá se obsah složky *contentFiles* .
-* `Build` – používají se props/targets ve složce Build.
-* `Native` – obsah z nativních assetů se zkopíruje do výstupní složky pro modul runtime.
-* `Analyzers` – používají se analyzátory.
+- `Compile` – obsah složky *lib* je k dispozici pro zkompilování.
+- `Runtime` – obsah *běhové* složky se distribuuje.
+- `ContentFiles` – používá se obsah složky *contentFiles* .
+- `Build` – používají se props/targets ve složce *Build* .
+- `Native` – obsah z nativních assetů se zkopíruje do *výstupní* složky pro modul runtime.
+- `Analyzers` – používají se analyzátory.
 
 Atribut může případně obsahovat:
 
-* `None` – žádný z prostředků se nepoužívá.
-* `All` – používají se všechny prostředky.
+- `None` – žádný z prostředků se nepoužívá.
+- `All` – používají se všechny prostředky.
 
 ### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
+
 Prvek položky `<DotNetCliToolReference>` Určuje nástroj CLI, který uživatel chce obnovit v kontextu projektu. Je náhradou za uzel `tools` v *Project. JSON*.
 
 ```xml
@@ -181,7 +182,7 @@ Prvek položky `<DotNetCliToolReference>` Určuje nástroj CLI, který uživatel
 
 #### <a name="version"></a>Version
 
-`Version` určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní zápisu NuGet `[1.2.3]` pro přesný balíček verze 1.2.3 balíčku.
+`Version` určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní `[1.2.3]` notace NuGet pro přesný balíček verze balíčku.
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
@@ -224,7 +225,7 @@ Následující příklad určuje pouze zálohy pro cíl `netcoreapp2.1`:
 
 ## <a name="nuget-metadata-properties"></a>Vlastnosti metadat NuGet
 
-Při přechodu na MSBuild jsme přesunuli vstupní metadata, která se používají při balení balíčku NuGet z *Project. JSON* do souborů *. csproj* . Vstupy jsou vlastnosti nástroje MSBuild, takže musí přejít do skupiny `<PropertyGroup>`. Následuje seznam vlastností, které se používají jako vstupy do procesu balení při použití příkazu `dotnet pack` nebo cíle nástroje `Pack` MSBuild, který je součástí sady SDK.
+Při přechodu na MSBuild jsme přesunuli vstupní metadata, která se používají při balení balíčku NuGet z *Project. JSON* do souborů *. csproj* . Vstupy jsou vlastnosti nástroje MSBuild, takže musí přejít do skupiny `<PropertyGroup>`. Následuje seznam vlastností, které se používají jako vstupy do procesu balení při použití příkazu `dotnet pack` nebo `Pack`ho cíle MSBuild, který je součástí sady SDK:
 
 ### <a name="ispackable"></a>Ispackable nastavenou
 
@@ -416,11 +417,11 @@ Každý atribut má vlastnost, která řídí svůj obsah a druhý pro zakázán
 
 Poznámky:
 
-* `AssemblyVersion` a `FileVersion` se standardně převezme hodnota `$(Version)` bez přípony. Pokud je například `$(Version)` `1.2.3-beta.4`, hodnota by byla `1.2.3`.
-* `InformationalVersion` je výchozí hodnotou `$(Version)`.
-* `InformationalVersion` má připojené `$(SourceRevisionId)`, pokud je vlastnost přítomná. Dá se zakázat pomocí `IncludeSourceRevisionInInformationalVersion`.
-* pro metadata NuGet se používají také vlastnosti `Copyright` a `Description`.
-* `Configuration` se sdílí se všemi procesy sestavení a nastavuje se pomocí parametru `--configuration` příkazů `dotnet`.
+- `AssemblyVersion` a `FileVersion` se standardně převezme hodnota `$(Version)` bez přípony. Pokud je například `$(Version)` `1.2.3-beta.4`, hodnota by byla `1.2.3`.
+- `InformationalVersion` je výchozí hodnotou `$(Version)`.
+- `InformationalVersion` má připojené `$(SourceRevisionId)`, pokud je vlastnost přítomná. Dá se zakázat pomocí `IncludeSourceRevisionInInformationalVersion`.
+- pro metadata NuGet se používají také vlastnosti `Copyright` a `Description`.
+- `Configuration` se sdílí se všemi procesy sestavení a nastavuje se pomocí parametru `--configuration` příkazů `dotnet`.
 
 ### <a name="generateassemblyinfo"></a>GenerateAssemblyInfo
 

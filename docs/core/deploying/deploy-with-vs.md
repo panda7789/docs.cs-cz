@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 4e8fbfa14c241c79f8708dfc2b288eeff2899891
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: e905d48da31bb5a2e16a645620f2c4f57dda4413
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216248"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522805"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -21,20 +21,20 @@ Můžete nasadit aplikaci .NET Core buď jako *nasazení závislé na rozhraní*
 
 Následující části ukazují, jak pomocí Microsoft Visual Studio vytvořit následující typy nasazení:
 
-- Nasazení závisí na architektuře
+- Nasazení závislé na rozhraní
 - Nasazení závislé na rozhraní se závislostmi třetích stran
-- Samostatná nasazení
+- Samostatně zahrnuté nasazení
 - Samostatné nasazení s závislostmi třetích stran
 
 Informace o použití sady Visual Studio pro vývoj aplikací .NET Core najdete v tématu [předpoklady pro .NET Core v systému Windows](../windows-prerequisites.md#prerequisites-to-develop-net-core-apps-with-visual-studio).
 
-## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
+## <a name="framework-dependent-deployment"></a>Nasazení závislé na rozhraní
 
 Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v C# tomto příkladu znázorňuje proces.  
 
 1. Vytvořte projekt.
 
-   Vyberte **Soubor** > **Nový** > **Projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "FDD". Vyberte tlačítko **OK**.
+   Vyberte **soubor**  > **Nový**  > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "FDD". Klikněte na tlačítko **OK** .
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -45,7 +45,7 @@ Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestav
 
 1. Vytvořte ladicí sestavení vaší aplikace.
 
-   Vyberte řešení **sestavení sestavení**. >  Můžete také zkompilovat a spustit sestavení ladění aplikace výběrem **ladění** > **Spustit ladění**.
+   Vyberte **sestavení** **řešení**Build  > . Můžete také zkompilovat a **Spustit ladicí sestavení** vaší aplikace, a to tak, že vyberete ladění  > **Spustit ladění**.
 
 1. Nasaďte aplikaci.
 
@@ -63,7 +63,7 @@ Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestav
 
 Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Nasaďte kompletní sadu souborů aplikace jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý `copy` příkaz nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru. Po instalaci pak uživatelé můžou aplikaci spustit pomocí `dotnet` příkazu a zadáním názvu souboru aplikace, `dotnet fdd.dll`jako je například.
+Nasaďte kompletní sadu souborů aplikace jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru. Po instalaci pak uživatelé můžou aplikaci spustit pomocí příkazu `dotnet` a zadáním názvu souboru aplikace, jako je například `dotnet fdd.dll`.
 
 Kromě binárních souborů aplikace by měl instalační program také buď seskupit rozhraní Shared Framework Installer, nebo ověřit, že je součástí instalace aplikace.  Instalace sdíleného rozhraní vyžaduje přístup správce nebo root, protože se jedná o počítač v rámci počítače.
 
@@ -71,11 +71,11 @@ Kromě binárních souborů aplikace by měl instalační program také buď ses
 
 Nasazení rozhraní závislého na rozhraní s jednou nebo více závislostmi třetí strany vyžaduje, aby byly všechny závislosti k dispozici pro váš projekt. Předtím, než budete moci sestavit aplikaci, jsou vyžadovány tyto další kroky:
 
-1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje** > správce**balíčků** > NuGet**Spravovat balíčky NuGet pro řešení**.
+1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje**  > **správce balíčků NuGet**  > **Spravovat balíčky NuGet pro řešení**.
 
-1. Potvrďte `Newtonsoft.Json` , že je v systému nainstalovaný a v případě potřeby ho nainstalujte. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
+1. Potvrďte, že je v systému nainstalovaný `Newtonsoft.Json`, a pokud není, nainstalujte ho. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud zde `Newtonsoft.Json` není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
 
-1. Pokud `Newtonsoft.Json` je v systému už nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
+1. Pokud je v systému už `Newtonsoft.Json` nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
 Všimněte si, že nasazení závislé na rozhraní se závislostmi třetích stran je pouze přenosné jako své závislosti třetích stran. Pokud například knihovna třetí strany podporuje jenom macOS, aplikace není přenosná na systémy Windows. K tomu dojde v případě, že závislost třetí strany závisí na nativním kódu. Dobrým příkladem je [Kestrel Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Pokud je vytvořen FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor modulu runtime (RID)](../rid-catalog.md) , který nativní závislost podporuje (a který existuje v jeho balíčku NuGet).
 
@@ -85,7 +85,7 @@ Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytv
 
 1. Vytvořte projekt.
 
-   Vyberte **Soubor** > **Nový** > **Projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "SCD", a klikněte na tlačítko **OK** .
+   Vyberte **soubor**  > **Nový**  > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "SCD", a klikněte na tlačítko **OK** .
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -104,7 +104,7 @@ Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytv
 
 1. Vytvořte sestavení pro ladění aplikace.
 
-   Vyberte řešení **sestavení sestavení**. >  Můžete také zkompilovat a spustit sestavení ladění aplikace výběrem **ladění** > **Spustit ladění**. Tento krok ladění vám umožní identifikovat problémy s vaší aplikací, když běží na hostitelské platformě. Pořád ho budete muset otestovat na každé cílové platformě.
+   Vyberte **sestavení** **řešení**Build  > . Můžete také zkompilovat a **Spustit ladicí sestavení** vaší aplikace, a to tak, že vyberete ladění  > **Spustit ladění**. Tento krok ladění vám umožní identifikovat problémy s vaší aplikací, když běží na hostitelské platformě. Pořád ho budete muset otestovat na každé cílové platformě.
 
    Pokud jste povolili režim invariantní globalizace, měli byste se zejména ujistit, zda neexistují data citlivá na jazykovou verzi vhodná pro vaši aplikaci.
 
@@ -122,7 +122,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
    1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt (ne řešení) a vyberte **Upravit SCD. csproj**.
 
-   1. Vytvořte značku v části souboru csproj, který definuje platformy, na které vaše aplikace cílí, a určete identifikátor modulu runtime (RID) pro každou cílovou platformu. `<PropertyGroup>` `<RuntimeIdentifiers>` Všimněte si, že je také nutné přidat středník pro oddělení identifikátorů RID. Seznam identifikátorů modulu runtime najdete v tématu [katalog identifikátorů modulu runtime](../rid-catalog.md) .
+   1. Vytvořte značku `<RuntimeIdentifiers>` v oddílu `<PropertyGroup>` souboru *csproj* , který definuje platformy, na které vaše aplikace cílí, a určete identifikátor modulu runtime (RID) pro každou cílovou platformu. Všimněte si, že je také nutné přidat středník pro oddělení identifikátorů RID. Seznam identifikátorů modulu runtime najdete v tématu [katalog identifikátorů modulu runtime](../rid-catalog.md) .
 
    Například následující příklad označuje, že aplikace běží na 64 operačních systémech Windows 10 a 64 operačním systému OS X verze 10,11.
 
@@ -132,7 +132,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
    </PropertyGroup>
    ```
 
-   Všimněte si, `<RuntimeIdentifiers>` že element může přejít do `<PropertyGroup>` libovolného, který máte v souboru *csproj* . V této části se zobrazí kompletní vzorový soubor *csproj* .
+   Všimněte si, že `<RuntimeIdentifiers>` element může přejít do jakékoli `<PropertyGroup>`, kterou máte v souboru *csproj* . V této části se zobrazí kompletní vzorový soubor *csproj* .
 
 1. Publikujte svoji aplikaci.
 
@@ -146,7 +146,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
       1. Na kartě **publikovat** vyberte **publikovat**. Visual Studio zapisuje soubory, které tvoří vaši aplikaci, do místního systému souborů.
 
-      1. Na kartě **publikovat** se teď zobrazí jeden profil, **FolderProfile**. Nastavení konfigurace profilu se zobrazí v části **Souhrn** na kartě. **Cílový modul runtime** určuje, který modul runtime byl publikován a **cílové umístění** identifikuje, kde byly zapsány soubory pro nasazení, které jsou samostatně obsaženy.
+      1. Na kartě **publikovat** se teď zobrazí jeden profil, **FolderProfile**. Nastavení konfigurace profilu se zobrazí v části **Souhrn** na kartě. **cílový modul runtime** určuje, který modul runtime byl publikován a **cílové umístění** identifikuje, kde byly soubory pro samostatné nasazení. vytvořili.
 
       1. Visual Studio ve výchozím nastavení zapisuje všechny publikované soubory do jednoho adresáře. Pro usnadnění práce je nejlepší vytvořit samostatné profily pro každý cílový modul runtime a umístit publikované soubory do adresáře specifického pro platformu. To zahrnuje vytvoření samostatného profilu publikování pro každou cílovou platformu. Takže teď aplikaci pro každou platformu znovu sestavíte následujícím způsobem:
 
@@ -154,17 +154,17 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
          1. V dialogovém okně **vybrat cíl publikování** změňte umístění **složky** na *bin\Release\PublishOutput\win10-x64*. Vyberte **OK**.
 
-         1. V seznamu profilů vyberte nový profil (**FolderProfile1**) a ujistěte se, že je `win10-x64` **cílový modul runtime** . Pokud není, vyberte **Nastavení**. V dialogovém okně **nastavení profilu** změňte **cílový modul runtime** na `win10-x64` a vyberte **Uložit**. V opačném případě vyberte **Zrušit**.
+         1. V seznamu profilů vyberte nový profil (**FolderProfile1**) a ujistěte se, že je **cílový modul runtime** `win10-x64`. Pokud není, vyberte **Nastavení**. V dialogovém okně **nastavení profilu** změňte **cílový modul runtime** na `win10-x64` a vyberte **Uložit**. V opačném případě vyberte **Zrušit**.
 
          1. Vyberte **publikovat** a publikujte svou aplikaci pro 64 platformy Windows 10.
 
-         1. Pomocí předchozích kroků znovu vytvořte profil pro `osx.10.11-x64` platformu. **Cílové umístění** je *Bin\Release\PublishOutput\osx.10.11-x64*a **cílový modul runtime** `osx.10.11-x64`. Název, který Visual Studio přiřadí k tomuto profilu, je **FolderProfile2**.
+         1. Pomocí předchozích kroků znovu vytvořte profil pro `osx.10.11-x64` platformu. **Cílové umístění** je *Bin\Release\PublishOutput\osx.10.11-x64*a **cílový modul runtime** je `osx.10.11-x64`. Název, který Visual Studio přiřadí k tomuto profilu, je **FolderProfile2**.
 
       Všimněte si, že každé cílové umístění obsahuje kompletní sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
 Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý `copy` příkaz nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
+Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
 
 Následuje úplný soubor *csproj* pro tento projekt.
 
@@ -194,9 +194,9 @@ Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
   
 1. Vyberte umístění, kde aplikace Visual Studio publikuje vaši aplikaci.
 
-   Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se do adresáře *\<Project-Directory > \bin\Release\netcoreapp2.1\publish\* publikuje nasazení aplikace závislé na rozhraní.
+   Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se do adresáře *\<project-directory > \bin\Release\netcoreapp2.1\publish* publikuje nasazení aplikace závislé na rozhraní.
 
-   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" do cesty k souboru, Visual Studio publikuje nasazení závislého rozhraní aplikace do  *\<adresáře Project-Directory > \bin\Release\netcoreapp2.1\publish\linux* .
+   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" k cestě k souboru, aplikace Visual Studio publikuje nasazení aplikace závislé na rozhraní do adresáře *\<project-directory > \bin\Release\netcoreapp2.1\publish\linux* .
 
 1. Vytvořte profil tak, že vyberete ikonu rozevíracího seznamu vedle tlačítka **publikovat** a vyberete **vytvořit profil**. Pak vyberte tlačítko **vytvořit profil** a vytvořte profil.
 
@@ -212,23 +212,23 @@ Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
 
 1. Pojmenujte profil.
 
-   1. Vyberte **Akce** > **Přejmenovat profil** pro pojmenování profilu.
+   1. Vyberte **akce**  > **Přejmenovat profil** pro pojmenování profilu.
 
    2. Přiřaďte profilu název, který identifikuje cílovou platformu, a pak vyberte **Uložit*.
 
 Zopakováním těchto kroků definujte všechny další cílové platformy, na které vaše aplikace cílí.
 
-Nakonfigurovali jste profily a teď jste připraveni publikovat svou aplikaci. Použijte následující postup:
+Nakonfigurovali jste profily a teď jste připraveni publikovat svou aplikaci. Provedete to takto:
 
    1. Pokud okno **publikovat** není momentálně otevřené, klikněte pravým tlačítkem myši na projekt (ne řešení) v **Průzkumník řešení** a vyberte **publikovat**.
 
    2. Vyberte profil, který chcete publikovat, a pak vyberte **publikovat**. Udělejte to pro každý profil, který se má publikovat.
 
-   Všimněte si, že každé cílové umístění (v případě našeho příkladu bin\release\netcoreapp2.1\publish\\*Profile-Name* obsahuje úplnou sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
+   Všimněte si, že každé cílové umístění (v případě našeho příkladu bin\release\netcoreapp2.1\publish \\*Profile-název* obsahuje úplnou sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
 Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý `copy` příkaz nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
+Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
 
 Následuje úplný soubor *csproj* pro tento projekt.
 
@@ -268,11 +268,11 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 Nasazení samostatně uzavřeného nasazení s jednou nebo více závislostmi třetích stran zahrnuje přidání závislostí. Předtím, než budete moci sestavit aplikaci, jsou vyžadovány tyto další kroky:
 
-1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje** > správce**balíčků** > NuGet**Spravovat balíčky NuGet pro řešení**.
+1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje**  > **správce balíčků NuGet**  > **Spravovat balíčky NuGet pro řešení**.
 
-1. Potvrďte `Newtonsoft.Json` , že je v systému nainstalovaný a v případě potřeby ho nainstalujte. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
+1. Potvrďte, že je v systému nainstalovaný `Newtonsoft.Json`, a pokud není, nainstalujte ho. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud zde `Newtonsoft.Json` není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
 
-1. Pokud `Newtonsoft.Json` je v systému už nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
+1. Pokud je v systému už `Newtonsoft.Json` nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
 Následuje kompletní soubor *csproj* pro tento projekt:
 

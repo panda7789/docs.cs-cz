@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 06b0c3b7877337d8a5703403af98dbacdf3ea93c
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3e59783a7f306d3d2a510fe3337a4c6490dcb3e8
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834179"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523461"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Postupy: použití funkcí dokumentace XML
 
@@ -123,11 +123,11 @@ Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vl
 
 - Vývojářům je zdarma vytvořit vlastní sadu značek. Je doporučena sada značek (viz téma [Doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)). Některé z doporučených značek mají zvláštní význam:
 
-  - K popisu parametrů se používá značka > \<param. Pokud je tento parametr použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovedlo, kompilátor vydá upozornění.
+  - K popisu parametrů se používá značka \<param >. Pokud je tento parametr použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovedlo, kompilátor vydá upozornění.
 
-  - Atribut `cref` lze připojit k libovolné značce k poskytnutí odkazu na prvek kódu. Kompilátor ověřuje, zda tento prvek kódu existuje. Pokud se ověření nepovedlo, kompilátor vydá upozornění. Kompilátor respektuje jakékoli příkazy `using`, pokud hledá typ popsaný v atributu `cref`.
+  - Atribut `cref` lze připojit k libovolné značce k poskytnutí odkazu na prvek kódu. Kompilátor ověřuje, zda tento prvek kódu existuje. Pokud se ověření nepovedlo, kompilátor vydá upozornění. Kompilátor respektuje jakékoli `using` příkazy, pokud hledá typ popsaný v atributu `cref`.
 
-  - Značka > \<summary je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
+  - Značka \<summary > je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
 
     > [!NOTE]
     > Soubor XML neposkytuje úplné informace o typu a členech (například neobsahuje žádné informace o typu). Chcete-li získat úplné informace o typu nebo členu, je nutné použít soubor dokumentace spolu s reflexí pro skutečný typ nebo člen.
@@ -135,7 +135,7 @@ Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vl
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [/doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Dokumentační komentáře XML](./index.md)
 - [Procesor dokumentace DocFX](https://dotnet.github.io/docfx/)
 - [Procesor dokumentace Sandcastle](https://github.com/EWSoftware/SHFB)

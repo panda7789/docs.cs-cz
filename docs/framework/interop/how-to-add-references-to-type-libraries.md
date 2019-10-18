@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a666c0e079fb30ecdd32aad64f44434d8253acf4
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 4908653b650f05bd25a7893d104040802f34d7e4
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971893"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523820"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Postupy: Přidávání odkazů do knihoven typů
 Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vzájemné spolupráce obsahující metadata. Pokud je k dispozici primární sestavení vzájemné spolupráce, Visual Studio použije existující sestavení před generováním nového definičního sestavení.  
@@ -29,7 +29,7 @@ Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vz�
   
 4. V seznamu vyberte knihovnu typů nebo vyhledejte soubor. tlb.  
   
-5. Zvolte **OK**.  
+5. Klikněte na **tlačítko OK**.  
   
 6. V Průzkumník řešení otevřete místní nabídku pro odkaz, který jste právě přidali, a pak zvolte **vlastnosti**.  
   
@@ -40,14 +40,14 @@ Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vz�
   
 ### <a name="to-add-a-reference-to-a-type-library-for-command-line-compilation"></a>Přidání odkazu na knihovnu typů pro kompilaci příkazového řádku  
   
-1. Vygenerujte sestavení vzájemné spolupráce, jak [je popsáno v tématu Postupy: Vygenerujte sestavení vzájemné spolupráce z](how-to-generate-interop-assemblies-from-type-libraries.md)knihoven typů.  
+1. Vygenerujte sestavení vzájemné spolupráce, jak je popsáno v tématu [Postupy: generování sestavení vzájemné spolupráce z knihoven typů](how-to-generate-interop-assemblies-from-type-libraries.md).  
   
-2. K vložení informací o typu pro typy COM ve vašich spustitelných souborech použijte možnost kompilátoru [/Link (C# Compiler Options)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) s názvem sestavení spolupráce.  
+2. K vložení informací o typu pro typy COM ve vašich spustitelných souborech použijte možnost kompilátoru [-Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) s názvem sestavení spolupráce.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
-- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio](../../standard/assembly/embed-types-visual-studio.md) 
-- [/Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
-- [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
+- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio](../../standard/assembly/embed-types-visual-studio.md) 
+- [-Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
+- [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)

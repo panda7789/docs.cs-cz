@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <value> C# XML tag
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
-ms.openlocfilehash: 4d967d671b3a27698b457c80ff5a8f7031dc6bcb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 09577d931c6b1f571cd4112c788da38bab85bf42
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587420"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523276"
 ---
-# <a name="value-c-programming-guide"></a>\<Hodnota > (C# Průvodce programováním)
+# <a name="value-c-programming-guide"></a>> \<value (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -27,9 +27,9 @@ ms.locfileid: "69587420"
  Popis vlastnosti  
   
 ## <a name="remarks"></a>Poznámky  
- \<Hodnota > tag umožňuje popsat hodnotu, kterou vlastnost představuje. Všimněte si, že při přidání vlastnosti prostřednictvím průvodce kódem ve vývojovém prostředí sady Visual Studio .NET bude přidána [ \<souhrnná >](./summary.md) značka pro novou vlastnost. Měli byste pak ručně přidat \<hodnotu > značku k popisu hodnoty, kterou vlastnost představuje.  
+ Značka > \<value umožňuje popsat hodnotu, kterou vlastnost představuje. Všimněte si, že při přidání vlastnosti prostřednictvím průvodce kódem ve vývojovém prostředí sady Visual Studio .NET bude přidána značka [\<summary >](./summary.md) pro novou vlastnost. Měli byste potom ručně přidat značku > \<value k popisu hodnoty, kterou vlastnost představuje.  
   
- Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
+ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#14)]  
