@@ -9,38 +9,41 @@ helpviewer_keywords:
 - + operator [Visual Basic], concatenation
 - concatenation operators [Visual Basic]
 ms.assetid: e59908c3-89e0-41ae-933d-3e8826c16a04
-ms.openlocfilehash: 124f0ca0cd01d7fd218fd89dfb78e70fe8aad9e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 789478cafc4ed7506d34fb4198531d437683075d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864928"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583297"
 ---
 # <a name="concatenation-operators-in-visual-basic"></a>Operátory řetězení v jazyce Visual Basic
-Operátory řetězení více řetězců připojení do jednoho řetězce. Existují dva operátory zřetězení `+` a `&`. Obě provedení operace základní zřetězení, jak ukazuje následující příklad.  
-  
+
+Operátory zřetězení spojí více řetězců do jednoho řetězce. Existují dva operátory zřetězení, `+` a `&`. Obojí provede základní operaci zřetězení, jak ukazuje následující příklad.
+
 ```vb
-Dim x As String = "Mic" & "ro" & "soft" 
-Dim y As String = "Mic" + "ro" + "soft" 
+Dim x As String = "Mic" & "ro" & "soft"
+Dim y As String = "Mic" + "ro" + "soft"
 ' The preceding statements set both x and y to "Microsoft".
-```  
-  
- Tyto operátory lze také zřetězit `String` proměnné, jak ukazuje následující příklad.  
-  
- [!code-vb[VbVbalrOperators#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#76)]  
-  
-## <a name="differences-between-the-two-concatenation-operators"></a>Rozdíly mezi dva operátory zřetězení  
- [+ – Operátor](../../../../visual-basic/language-reference/operators/addition-operator.md) je hlavním účelem sečtení dvou čísel. Nicméně lze zřetězit také číselné operandů s operandy řetězec. `+` Operátor nemá komplexní sadu pravidel, které určují, jestli se má přidat, zřetězit, signalizuje, že chyba kompilátoru nebo výjimku za běhu <xref:System.InvalidCastException> výjimky.  
-  
- [& – Operátor](../../../../visual-basic/language-reference/operators/concatenation-operator.md) je určená jenom pro `String` operandy a to vždy rozšiřuje jeho operandy `String`bez ohledu na nastavení `Option Strict`. `&` Operátor se doporučuje pro zřetězení řetězců, protože je definován výhradně pro řetězce a snižuje pravděpodobnost generování neúmyslnému převodu.  
-  
-## <a name="performance-string-and-stringbuilder"></a>Výkon: String a StringBuilder  
- Pokud tak učiníte velký počet manipulace na řetězec, například zřetězení, odstranění a nahrazení, může být z zisku výkonu <xref:System.Text.StringBuilder> třídy v <xref:System.Text> oboru názvů. Přijímá další instrukce k vytváření a inicializace <xref:System.Text.StringBuilder> objektu a další pokyny, jak převést na jeho poslední hodnotu `String`, ale tentokrát může obnovit, protože <xref:System.Text.StringBuilder> může pracovat rychleji.  
-  
+```
+
+Tyto operátory mohou také zřetězit `String` proměnné, jak ukazuje následující příklad.
+
+[!code-vb[VbVbalrOperators#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#76)]
+
+## <a name="differences-between-the-two-concatenation-operators"></a>Rozdíly mezi dvěma operátory zřetězení
+
+[Operátor +](../../../../visual-basic/language-reference/operators/addition-operator.md) má primární účel přidání dvou čísel. Může však také zřetězit číselné operandy pomocí řetězcových operandů. Operátor `+` má komplexní sadu pravidel, která určuje, zda se má přidat, zřetězit, signalizovat chybu kompilátoru nebo vyvolat výjimku za běhu <xref:System.InvalidCastException>.
+
+[Operátor &](../../../../visual-basic/language-reference/operators/concatenation-operator.md) je definován pouze pro `String` operandy a vždy rozšiřuje jeho operandy na `String`, bez ohledu na nastavení `Option Strict`. Operátor `&` je doporučen pro zřetězení řetězců, protože je definován výhradně pro řetězce a snižuje pravděpodobnost vygenerování nezamýšlené konverze.
+
+## <a name="performance-string-and-stringbuilder"></a>Výkon: String a StringBuilder
+
+Pokud provedete velký počet manipulace s řetězcem, jako jsou zřetězení, odstranění a náhrady, váš výkon může být ziskem z <xref:System.Text.StringBuilder> třídy v oboru názvů <xref:System.Text>. Vytvoření a inicializace objektu <xref:System.Text.StringBuilder> a další instrukce pro převod konečné hodnoty na `String`, ale můžete tento čas obnovit, protože <xref:System.Text.StringBuilder> může provádět rychleji.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Typy metod manipulace s řetězci v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
-- [Aritmetické operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Typy metod manipulace s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
+- [Aritmetické operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

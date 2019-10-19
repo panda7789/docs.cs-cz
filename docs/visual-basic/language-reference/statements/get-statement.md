@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-ms.openlocfilehash: 33fa6811f952d240fb86bbdf59ca83df0afc03ad
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d76155b8ff29e4f5e9206ae8fc689fa4fcaf3b8c
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625520"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581834"
 ---
 # <a name="get-statement"></a>Get – příkaz
-Deklaruje `Get` vlastnost postup použitý k načtení hodnoty vlastnosti.  
+Deklaruje proceduru vlastnosti `Get`, která slouží k načtení hodnoty vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] Get()  
     [ statements ]  
 End Get  
@@ -33,43 +33,43 @@ End Get
   
 |Termín|Definice|  
 |---|---|  
-|`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné na nanejvýš jeden z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:<br /><br /> -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`statements`|Volitelné. Jeden nebo více příkazů, které při spuštění `Get` volání procedury vlastnosti.|  
-|`End Get`|Povinný parametr. Ukončí definici `Get` procedura property.|  
+|`attributelist`|Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
+|`accessmodifier`|Volitelné na maximálně jeden z příkazů `Get` a `Set` v této vlastnosti. Může to být jedna z následujících:<br /><br /> -   [chráněno](../../../visual-basic/language-reference/modifiers/protected.md)<br />-    –[přítel](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`statements`|Volitelné. Jeden nebo více příkazů, které se spouštějí při volání procedury vlastnosti `Get`.|  
+|`End Get`|Požadováno. Ukončí definici procedury vlastnosti `Get`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každou vlastnost musí mít `Get` procedura property Pokud je vlastnost označena `WriteOnly`. `Get` Postup se používá k vrácení aktuální hodnoty vlastnosti.  
+ Každá vlastnost musí mít proceduru `Get` vlastnost, pokud vlastnost není označena `WriteOnly`. Procedura `Get` slouží k vrácení aktuální hodnoty vlastnosti.  
   
- Visual Basic automaticky volá vlastnosti `Get` postup, pokud výraz vyžaduje hodnotu vlastnosti.  
+ Visual Basic automaticky volá `Get` proceduru vlastnosti, když výraz požaduje hodnotu vlastnosti.  
   
- Text deklarace vlastnosti může obsahovat pouze vlastnosti `Get` a `Set` postupy mezi [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md) a `End Property` příkazu. Nejde uložit nic jiného než tyto postupy. Konkrétně to nejde uložit aktuální hodnota vlastnosti. Tato hodnota mimo vlastnost, musí uložit, protože pokud ukládat v některé z vlastností, jiné procedury vlastnosti nejde získat přístup. Obvyklým přístupem je uložení hodnoty [privátní](../../../visual-basic/language-reference/modifiers/private.md) proměnná deklarovaná na stejné úrovni jako vlastnost. Je nutné definovat `Get` postupu uvnitř vlastnosti, ke kterému se vztahuje.  
+ Tělo deklarace vlastnosti může obsahovat pouze `Get` vlastnosti a procedury `Set` mezi [příkazem Property](../../../visual-basic/language-reference/statements/property-statement.md) a příkazem `End Property`. Nemůže uložit cokoli jiného než tyto postupy. Konkrétně nemůže uložit aktuální hodnotu vlastnosti. Tuto hodnotu je nutné uložit mimo vlastnost, protože pokud ji uložíte uvnitř některého z procedur vlastnosti, druhá procedura vlastnosti k ní nemá přístup. Obvyklým přístupem je uložení hodnoty do [soukromé](../../../visual-basic/language-reference/modifiers/private.md) proměnné deklarované na stejné úrovni jako vlastnost. Musíte definovat `Get` proceduru uvnitř vlastnosti, na kterou se vztahuje.  
   
- `Get` Postup výchozí úroveň přístupu její nadřazenou vlastnost, pokud nechcete použít `accessmodifier` v `Get` příkazu.  
+ Pokud nepoužijete `accessmodifier` v příkazu `Get`, bude výchozí hodnota `Get` nastavena na úroveň přístupu jeho obsahující vlastnosti.  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Get` postup `Private`, ale ne `Public`.  
+- **Smíšené úrovně přístupu.** Pokud definujete vlastnost pro čtení i zápis, můžete volitelně zadat jinou úroveň přístupu pro `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být úroveň přístupu k této proceduře přísnější než úroveň přístupu vlastnosti. Například pokud je vlastnost deklarována `Friend`, můžete deklarovat `Get` proceduru `Private`, ale ne `Public`.  
   
-     Pokud definujete `ReadOnly` vlastnost, `Get` postup představuje celou vlastnost. Nelze deklarovat různý přístup úroveň `Get`, protože dvě úrovně přístupu pro vlastnost, která byste nastavili.  
+     Pokud definujete vlastnost `ReadOnly`, bude procedura `Get` představovat celou vlastnost. Pro `Get` nemůžete deklarovat jinou úroveň přístupu, protože by se pro vlastnost nastavily dvě úrovně přístupu.  
   
-- **Návratový typ.** [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md) můžete deklarovat datový typ hodnoty vrácením. `Get` Procedura automaticky vrací, datového typu. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní.  
+- **Návratový typ** [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md) může deklarovat datový typ hodnoty, kterou vrátí. @No__t_0 procedura tento datový typ automaticky vrátí. Můžete zadat libovolný datový typ nebo název výčtu, struktury, třídy nebo rozhraní.  
   
-     Pokud `Property` příkaz neurčuje `returntype`, vrátí postup `Object`.  
+     Pokud příkaz `Property` neurčí `returntype`, procedura vrátí `Object`.  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Předvídatelně  
   
-- **Vrácení z procedury.** Když `Get` postup vrátí volajícímu kódu, provádění pokračuje v rámci příkazu, který požadovaná hodnota vlastnosti.  
+- **Návrat z procedury.** Když se `Get` procedura vrátí k volajícímu kódu, provádění pokračuje v rámci příkazu, který požadoval hodnotu vlastnosti.  
   
-     `Get` procedury vlastnosti může vrátit hodnotu pomocí buď [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo přiřazením návratovou hodnotu pro název vlastnosti. Další informace najdete v tématu "Vrátit hodnotu" v [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
+     procedury vlastnosti `Get` mohou vracet hodnotu buď pomocí [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md) , nebo přiřazením návratové hodnoty názvu vlastnosti. Další informace naleznete v tématu "návratová hodnota" v [příkazu Function](../../../visual-basic/language-reference/statements/function-statement.md).  
   
-     `Exit Property` a `Return` příkazy způsobit okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
+     Příkazy `Exit Property` a `Return` způsobují bezprostřední ukončení procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Property` a `Return` příkazy.  
   
-- **Vrátí hodnotu.** Pro navrácení hodnoty z `Get` postup, můžete přiřadit hodnoty pro název vlastnosti, nebo ho v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md). `Return` Příkaz současně přiřadí `Get` procedura vracet hodnotu a ukončí proceduru.  
+- **Návratová hodnota** Chcete-li vrátit hodnotu z `Get` postup, můžete buď přiřadit hodnotu k názvu vlastnosti nebo ji zahrnout do [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md). Příkaz `Return` současně přiřadí návratovou hodnotu procedury `Get` a ukončí proceduru.  
   
-     Pokud používáte `Exit Property` bez přiřazení hodnoty pro název vlastnosti `Get` procedura vrací výchozí hodnota pro typ dat vlastnosti. Další informace najdete v tématu "Vrátit hodnotu" v [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
+     Použijete-li `Exit Property` bez přiřazení hodnoty k názvu vlastnosti, procedura `Get` vrátí výchozí hodnotu pro datový typ vlastnosti. Další informace naleznete v tématu "návratová hodnota" v [příkazu Function](../../../visual-basic/language-reference/statements/function-statement.md).  
   
-     Následující příklad ukazuje dva způsoby, jak vlastnost jen pro čtení `quoteForTheDay` může vrátit hodnotu obsaženou referenčním v soukromé proměnné `quoteValue`.  
+     Následující příklad ukazuje dva způsoby, jak vlastnost jen pro čtení `quoteForTheDay` může vracet hodnotu uloženou v soukromé proměnné `quoteValue`.  
   
      [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]  
   
@@ -78,7 +78,7 @@ End Get
      [!code-vb[VbVbalrStatements#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#29)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Get` příkazu vrátí hodnotu vlastnosti.  
+ Následující příklad používá příkaz `Get` pro návrat hodnoty vlastnosti.  
   
  [!code-vb[VbVbalrStatements#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#30)]  
   

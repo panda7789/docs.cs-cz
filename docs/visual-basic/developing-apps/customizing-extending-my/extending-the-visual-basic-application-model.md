@@ -4,92 +4,95 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: f4857d410b16c3bbcb2129cec0d753a1c3d7a726
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: 02a964506d976cb10f3f28f83f0655fecc447e59
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469487"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582765"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
-Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika umožňuje přizpůsobit chování aplikační model a přidávat volání vlastní metody aplikace po spuštění a ukončení.  
-  
-## <a name="visual-overview-of-the-application-model"></a>Vizuální přehled aplikačního modelu  
- Tato část představuje vizuálně pořadí volání funkcí v aplikačního modelu jazyka Visual Basic. Další část popisuje účel jednotlivých funkcí v podrobností.  
-  
- Následující obrázek znázorňuje sekvenci volání aplikačního modelu v normální aplikaci Windows Forms jazyka Visual Basic. Sekvence začíná, když `Sub Main` volání procedur <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody.  
-  
- ![Diagram znázorňující sekvence volání aplikačního modelu.](./media/extending-the-visual-basic-application-model/application-model-call-sequence.gif)  
-  
- Také poskytuje aplikačního modelu jazyka Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> události. Následující obrázky znázorňují mechanismus pro vyvolání těchto událostí.  
-  
- ![Diagram znázorňující OnStartupNextInstance metody vyvolání události StartupNextInstance.](./media/extending-the-visual-basic-application-model/raise-startupnextinstance-event.gif)  
-  
- ![Diagram znázorňující OnUnhandledException metody vyvolání události UnhandledException.](./media/extending-the-visual-basic-application-model/raise-unhandledexception-event.gif)  
-  
-## <a name="overriding-the-base-methods"></a>Přepisování základních metod  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> Metoda definuje pořadí, ve kterém `Application` metody spouštění. Ve výchozím nastavení `Sub Main` volání procedur pro aplikace Windows Forms <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody.  
-  
- Pokud aplikace je běžné aplikace (více instancí aplikace), nebo první výskyt aplikace s jedinou instancí, <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody `Overridable` metod v tomto pořadí:  
-  
-1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>. Ve výchozím nastavení, tato metoda nastaví vizuálních stylů, styly zobrazení textu a aktuální objekt zabezpečení pro hlavního vlákna aplikace (Pokud aplikace používá ověřování Windows) a volání `ShowSplashScreen` Pokud `/nosplash` ani `-nosplash` slouží jako argument příkazového řádku.  
-  
-     Sekvence spuštění aplikace se zruší, pokud tato funkce vrací `False`. To může být užitečné, pokud existují okolnosti, ve kterých není vhodné spouštět aplikace.  
-  
-     <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> Metoda volání těchto metod:  
-  
-    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>. Určuje, zda má aplikace úvodní obrazovku a pokud ano, zobrazí na úvodní obrazovce na samostatném vlákně.  
-  
-         <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A> Metoda obsahuje kód, který se zobrazí úvodní obrazovky pro minimální počet milisekund, které jsou určené <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A> vlastnost. Tuto funkci použít, je nutné přidat úvodní obrazovky do aplikace pomocí **Návrháře projektu** (který nastaví `My.Application.MinimumSplashScreenDisplayTime` vlastnost na dvou sekund), nebo nastavte `My.Application.MinimumSplashScreenDisplayTime` vlastnost v metodě, která přepíše <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> nebo <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metody. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>.  
-  
-    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Umožňuje generovat kód, který se inicializuje na úvodní obrazovce designeru.  
-  
-         Ve výchozím nastavení tato metoda nemá žádný účinek. Pokud vyberete úvodní obrazovka pro vaši aplikaci v jazyce Visual Basic **Návrháře projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodu s metodou, která nastavuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> vlastnost do nové instance formuláře úvodní obrazovky .  
-  
-2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>. Představuje rozšíření bod pro vyvolání `Startup` událostí. Sekvence spuštění aplikace se zastaví, pokud tato funkce vrací `False`.  
-  
-     Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událostí. Pokud je obslužná rutina události nastaví <xref:System.ComponentModel.CancelEventArgs.Cancel> vlastnosti argumentu události `True`, metoda vrátí `False` zrušit spuštění aplikace.  
-  
-3. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun%2A>. Poskytuje výchozí bod pro aplikace v hlavní aplikaci jste připravení začít spouštět po dokončení inicializace.  
-  
-     Ve výchozím nastavení, aby přešel do smyčky zpráv Windows Forms, tato metoda volá `OnCreateMainForm` (Chcete-li vytvořit hlavní formulář aplikace) a `HideSplashScreen` (pro zavření úvodní obrazovky) metody:  
-  
-    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. Poskytuje způsob pro návrháře a vygenerovat kód, který inicializuje hlavního formuláře.  
-  
-         Ve výchozím nastavení tato metoda nemá žádný účinek. Nicméně, když vyberete hlavní formulář pro vaši aplikaci v jazyce Visual Basic **Návrháře projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> metodu s metodou, která nastavuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> vlastnost na novou instanci třídy hlavního formuláře.  
-  
-    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. Pokud má aplikace úvodní obrazovku a je otevřen, tato metoda se zavře úvodní obrazovka.  
-  
-         Ve výchozím nastavení tato metoda se zavře úvodní obrazovka.  
-  
-4. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A>. Poskytuje způsob, jak přizpůsobit chování aplikace s jedinou instancí při spuštění jiná instance aplikace.  
-  
-     Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> událostí.  
-  
-5. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown%2A>. Představuje rozšíření bod pro vyvolání `Shutdown` událostí. Tato metoda se nespustí, pokud dojde k neošetřené výjimce v hlavní aplikaci.  
-  
-     Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událostí.  
-  
-6. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException%2A>. Provede, pokud dojde k neošetřené výjimce v některém z výše uvedených metod.  
-  
-     Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> , dokud není připojen ladicí program a aplikace zpracovává události `UnhandledException` událostí.  
-  
- Pokud je aplikace s jedinou instancí aplikace a aplikace je již spuštěna, další instance aplikace volá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A> metodu na původní instanci aplikace, a poté ukončí.  
- 
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> Volání konstruktoru <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> a určí, které vykreslovací jádro text pro formuláře aplikace. Ve výchozím nastavení <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vrátí vlastnost `False`, označující, že se text vykreslovací modul GDI používat, což je výchozí hodnota v jazyce Visual Basic 2005 a novějších verzích. Je možné přepsat <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost vrátit `True`, což znamená, že text vykreslovací modul GDI + používat, což je výchozí hodnotou v jazyce Visual Basic .NET 2002 a Visual Basic .NET 2003.  
-  
-## <a name="configuring-the-application"></a>Konfigurace aplikace  
- Jako součást modelu aplikace Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třída poskytuje chráněné vlastnosti, které konfigurace aplikace. Tyto vlastnosti musí být nastaveno v konstruktoru implementující třídu.  
-  
- V projektu Windows Forms výchozí **Návrháře projektu** vytvoří kód pro nastavení vlastnosti pomocí Návrháře nastavení. Vlastnosti se používají pouze v případě, že se spouští aplikace; nastavit je po spuštění aplikace nemá žádný vliv.  
-  
-|Vlastnost|Určuje|Nastavení v podokně aplikace Návrháře projektu|  
-|---|---|---|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.IsSingleInstance%2A>|Určuje, zda aplikace běží jako instance jednoho nebo více instancemi aplikace.|**Ujistěte se, jedna instance aplikace** zaškrtávací políčko|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.EnableVisualStyles%2A>|Pokud bude aplikace používat vizuální styly, které odpovídají Windows XP.|**Povolení vizuálních stylů XP** zaškrtávací políčko|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SaveMySettingsOnExit%2A>|Pokud aplikaci automaticky uloží změny nastavení uživatele vaší aplikace při ukončení aplikace.|**Při vypnutí ukládání My.Settings** zaškrtávací políčko|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle%2A>|Co způsobí, že je aplikace ukončena, třeba když se zavře úvodní formulář nebo když se zavře poslední formulář.|**Ukončení režimu** seznamu|  
-  
+
+Do aplikačního modelu můžete přidat funkce přepsáním `Overridable` členů <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika vám umožní přizpůsobit chování modelu aplikace a přidat volání vlastních metod při spuštění a vypnutí aplikace.
+
+## <a name="visual-overview-of-the-application-model"></a>Vizuální Přehled aplikačního modelu
+
+Tato část vizuálně prezentuje sekvenci volání funkcí v modelu Visual Basic aplikace. V další části se podrobně popisuje účel jednotlivých funkcí.
+
+Následující obrázek znázorňuje sekvenci volání aplikačního modelu v normální Visual Basic model Windows Forms aplikaci. Sekvence začíná, když `Sub Main` procedura volá metodu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A>.
+
+![Diagram znázorňující sekvenci volání aplikačního modelu](./media/extending-the-visual-basic-application-model/application-model-call-sequence.gif)
+
+Visual Basic aplikační model poskytuje také události <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>. Následující obrázek ukazuje mechanismus pro vyvolání těchto událostí.
+
+![Diagram znázorňující metodu OnStartupNextInstance, která vyvolává událost StartupNextInstance.](./media/extending-the-visual-basic-application-model/raise-startupnextinstance-event.gif)
+
+![Diagram znázorňující metodu ' UnhandledException ' vyvolávající událost UnhandledException.](./media/extending-the-visual-basic-application-model/raise-unhandledexception-event.gif)
+
+## <a name="overriding-the-base-methods"></a>Přepsání základních metod
+
+Metoda <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> definuje pořadí, ve kterém se spouští metody `Application`. Ve výchozím nastavení je `Sub Main` procedura pro model Windows Forms aplikace volána metoda <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A>.
+
+Pokud je aplikace normální aplikací (aplikace s více instancemi) nebo první instancí aplikace s jednou instancí, metoda <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> spouští `Overridable` metody v následujícím pořadí:
+
+1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>. Ve výchozím nastavení tato metoda nastaví vizuální styly, styly zobrazení textu a aktuální objekt zabezpečení pro hlavní vlákno aplikace (Pokud aplikace používá ověřování systému Windows) a volá `ShowSplashScreen`, pokud není `/nosplash` ani `-nosplash` použit jako argument příkazového řádku.
+
+     Spouštěcí sekvence aplikace je zrušena, pokud tato funkce vrací `False`. To může být užitečné v případě, že dojde ke situacím, kdy by aplikace neměla běžet.
+
+     Metoda <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> volá následující metody:
+
+    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>. Určuje, zda má aplikace nadefinovanou úvodní obrazovku a v případě jejího zobrazení zobrazí úvodní obrazovku samostatného vlákna.
+
+         Metoda <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A> obsahuje kód, který zobrazuje úvodní obrazovku alespoň v počtu milisekund určených vlastností <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>. Chcete-li použít tuto funkci, je nutné přidat úvodní obrazovku do aplikace pomocí **Návrháře projektu** (který nastaví vlastnost `My.Application.MinimumSplashScreenDisplayTime` na dvě sekundy) nebo nastavte vlastnost `My.Application.MinimumSplashScreenDisplayTime` v metodě, která přepíše metodu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> nebo <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Další informace najdete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>.
+
+    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Umožňuje návrháři vygenerovat kód, který inicializuje úvodní obrazovku.
+
+         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud vyberete úvodní obrazovku pro aplikaci v **Návrháři projektu**Visual Basic, Návrhář přepíše metodu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodou, která nastaví vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> na novou instanci formuláře úvodní obrazovky.
+
+2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>. Poskytuje bod rozšiřitelnosti pro vyvolání události `Startup`. Spouštěcí sekvence aplikace se zastaví, pokud tato funkce vrací `False`.
+
+     Ve výchozím nastavení tato metoda vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>. Pokud obslužná rutina události nastaví vlastnost <xref:System.ComponentModel.CancelEventArgs.Cancel> argumentu události na `True`, metoda vrátí `False`, aby se zrušilo spuštění aplikace.
+
+3. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun%2A>. Poskytuje počáteční bod, kdy je hlavní aplikace připravená začít běžet po dokončení inicializace.
+
+     Ve výchozím nastavení před tím, než vstoupí do smyčky zprávy model Windows Forms, tato metoda volá `OnCreateMainForm` (pro vytvoření hlavního formuláře aplikace) a `HideSplashScreen` (pro zavření úvodní obrazovky) metody:
+
+    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. Poskytuje pro návrháře způsob, jak vygenerovat kód, který inicializuje hlavní formulář.
+
+         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud však vyberete hlavní formulář pro aplikaci v **Návrháři projektu**Visual Basic, Návrhář přepíše metodu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> metodou, která nastaví vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> na novou instanci hlavního formuláře.
+
+    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. Pokud má aplikace nadefinovanou úvodní obrazovku a je otevřená, tato metoda zavře úvodní obrazovku.
+
+         Ve výchozím nastavení tato metoda zavře úvodní obrazovku.
+
+4. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A>. Poskytuje způsob, jak přizpůsobit způsob, jakým se aplikace s jednou instancí chová při spuštění jiné instance aplikace.
+
+     Ve výchozím nastavení tato metoda vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>.
+
+5. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown%2A>. Poskytuje bod rozšiřitelnosti pro vyvolání události `Shutdown`. Tato metoda se nespustí, pokud dojde k neošetřené výjimce v hlavní aplikaci.
+
+     Ve výchozím nastavení tato metoda vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>.
+
+6. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException%2A>. Provede se, pokud dojde k neošetřené výjimce v některé z výše uvedených metod.
+
+     Ve výchozím nastavení tato metoda vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>, pokud není připojen ladicí program a aplikace zpracovává událost `UnhandledException`.
+
+ Pokud je aplikace jedinou instancí aplikace a aplikace je již spuštěna, další instance aplikace zavolá metodu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A> v původní instanci aplikace a poté ukončí.
+
+ Konstruktor <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> volá vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> a určí, který modul vykreslování textu se má použít pro formuláře aplikace. Ve výchozím nastavení vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vrací `False`, což značí, že se používá modul vykreslování textu GDI, což je výchozí hodnota v Visual Basic 2005 a novějších verzích. Vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> můžete přepsat tak, aby vracela `True`, což znamená, že se používá modul vykreslování textu GDI+, který je ve výchozím nastavení Visual Basic .NET 2002 a Visual Basic .NET 2003.
+
+## <a name="configuring-the-application"></a>Konfigurace aplikace
+ Jako součást modelu Visual Basic aplikace poskytuje třída <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> chráněné vlastnosti, které konfigurují aplikaci. Tyto vlastnosti by měly být nastaveny v konstruktoru implementované třídy.
+
+ Ve výchozím model Windows Forms projektu vytvoří **Návrhář projektu** kód pro nastavení vlastností s nastavením návrháře. Vlastnosti jsou použity pouze v případě, že je aplikace spouštěna; nastavení se po spuštění aplikace nijak neprojeví.
+
+|Vlastnost|Stanoví|Nastavení v podokně aplikace Návrháře projektu|
+|---|---|---|
+|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.IsSingleInstance%2A>|Zda je aplikace spuštěna jako aplikace s jednou instancí nebo s více instancemi.|Zaškrtávací políčko **udělat aplikaci s jednou instancí**|
+|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.EnableVisualStyles%2A>|Pokud aplikace bude používat vizuální styly, které odpovídají systému Windows XP.|Zaškrtávací políčko **Povolit vizuální styly XP**|
+|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SaveMySettingsOnExit%2A>|Pokud aplikace po ukončení aplikace automaticky uloží změny nastavení uživatele aplikace.|Zaškrtávací políčko **Uložit nastavení při vypnutí**|
+|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle%2A>|To způsobí, že aplikace skončí, například když se zavře formulář při spuštění nebo když se zavře poslední formulář.|Seznam **režimu vypnutí**|
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>

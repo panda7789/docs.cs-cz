@@ -10,19 +10,19 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-ms.openlocfilehash: fb51dfbae4d9c4ef205e67ac15c5027e62a9a938
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb0dc76d110f3e6a3ea3e74cc0bfb5a669b35396
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663198"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583235"
 ---
 # <a name="set-statement-visual-basic"></a>Set – příkaz (Visual Basic)
-Deklaruje `Set` procedury vlastnosti použít pro přiřazení hodnoty k vlastnosti.  
+Deklaruje proceduru vlastnosti `Set`, která slouží k přiřazení hodnoty k vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] Set (ByVal value [ As datatype ])  
     [ statements ]  
 End Set  
@@ -30,10 +30,10 @@ End Set
   
 ## <a name="parts"></a>Součásti  
  `attributelist`  
- Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
+ Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
  `accessmodifier`  
- Volitelné na nanejvýš jeden z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:  
+ Volitelné na maximálně jeden z příkazů `Get` a `Set` v této vlastnosti. Může to být jedna z následujících:  
   
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
@@ -43,47 +43,47 @@ End Set
   
 - `Protected Friend`  
   
- Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `value`  
- Povinný parametr. Parametr, který obsahuje novou hodnotu pro vlastnost.  
+ Požadováno. Parametr, který obsahuje novou hodnotu pro vlastnost.  
   
  `datatype`  
- Požadováno pokud `Option Strict` je `On`. Datový typ `value` parametru. Zadaný datový typ musí být stejné jako datový typ vlastnosti kde to `Set` příkaz je deklarována.  
+ Vyžaduje se, pokud je `Option Strict` `On`. Datový typ parametru `value`. Zadaný datový typ musí být stejný jako datový typ vlastnosti, kde je tento příkaz `Set` deklarovaný.  
   
  `statements`  
- Volitelné. Jeden nebo více příkazů, které při spuštění `Set` volání procedury vlastnosti.  
+ Volitelné. Jeden nebo více příkazů, které se spouštějí při volání procedury vlastnosti `Set`.  
   
  `End Set`  
- Povinný parametr. Ukončí definici `Set` procedura property.  
+ Požadováno. Ukončí definici procedury vlastnosti `Set`.  
   
 ## <a name="remarks"></a>Poznámky  
- Každou vlastnost musí mít `Set` procedura property Pokud je vlastnost označena `ReadOnly`. `Set` Postup slouží k nastavení hodnoty vlastnosti.  
+ Každá vlastnost musí mít proceduru `Set` vlastnost, pokud vlastnost není označena `ReadOnly`. Procedura `Set` slouží k nastavení hodnoty vlastnosti.  
   
- Visual Basic automaticky volá vlastnosti `Set` postup po příkazu přiřazení poskytuje hodnotu uložená ve vlastnosti.  
+ Visual Basic automaticky volá proceduru `Set`, pokud příkaz přiřazení poskytuje hodnotu, která má být uložena ve vlastnosti.  
   
- Visual Basic předá parametr `Set` postupu během přiřazení vlastnosti. Pokud nezadáte parametr `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Parametr obsahuje hodnotu pro přiřazení k vlastnosti. Obvykle tuto hodnotu v privátní místní proměnné a vrácení pokaždé, když `Get` volání procedury.  
+ Visual Basic předá do přiřazení vlastností parametr `Set` proceduře. Pokud nezadáte parametr pro `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Parametr obsahuje hodnotu, která má být přiřazena vlastnosti. Tuto hodnotu obvykle ukládáte do privátní místní proměnné a vrátíte ji pokaždé, když je volána procedura `Get`.  
   
- Text deklarace vlastnosti může obsahovat pouze vlastnosti `Get` a `Set` postupy mezi [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md) a `End Property` příkazu. Nejde uložit nic jiného než tyto postupy. Konkrétně to nejde uložit aktuální hodnota vlastnosti. Tato hodnota mimo vlastnost, musí uložit, protože pokud ukládat v některé z vlastností, jiné procedury vlastnosti nejde získat přístup. Obvyklým přístupem je uložení hodnoty [privátní](../../../visual-basic/language-reference/modifiers/private.md) proměnná deklarovaná na stejné úrovni jako vlastnost. Je nutné definovat `Set` postupu uvnitř vlastnosti, ke kterému se vztahuje.  
+ Tělo deklarace vlastnosti může obsahovat pouze `Get` vlastnosti a procedury `Set` mezi [příkazem Property](../../../visual-basic/language-reference/statements/property-statement.md) a příkazem `End Property`. Nemůže uložit cokoli jiného než tyto postupy. Konkrétně nemůže uložit aktuální hodnotu vlastnosti. Tuto hodnotu je nutné uložit mimo vlastnost, protože pokud ji uložíte uvnitř některého z procedur vlastnosti, druhá procedura vlastnosti k ní nemá přístup. Obvyklým přístupem je uložení hodnoty do [soukromé](../../../visual-basic/language-reference/modifiers/private.md) proměnné deklarované na stejné úrovni jako vlastnost. Musíte definovat `Set` proceduru uvnitř vlastnosti, na kterou se vztahuje.  
   
- `Set` Postup výchozí úroveň přístupu její nadřazenou vlastnost, pokud nechcete použít `accessmodifier` v `Set` příkazu.  
+ Pokud nepoužijete `accessmodifier` v příkazu `Set`, bude výchozí hodnota `Set` nastavena na úroveň přístupu jeho obsahující vlastnosti.  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Set` postup `Private`, ale ne `Public`.  
+- **Smíšené úrovně přístupu.** Pokud definujete vlastnost pro čtení i zápis, můžete volitelně zadat jinou úroveň přístupu pro `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být úroveň přístupu k této proceduře přísnější než úroveň přístupu vlastnosti. Například pokud je vlastnost deklarována `Friend`, můžete deklarovat `Set` proceduru `Private`, ale ne `Public`.  
   
-     Pokud definujete `WriteOnly` vlastnost, `Set` postup představuje celou vlastnost. Nelze deklarovat různý přístup úroveň `Set`, protože dvě úrovně přístupu pro vlastnost, která byste nastavili.  
+     Pokud definujete vlastnost `WriteOnly`, bude procedura `Set` představovat celou vlastnost. Pro `Set` nemůžete deklarovat jinou úroveň přístupu, protože by se pro vlastnost nastavily dvě úrovně přístupu.  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Předvídatelně  
   
-- **Návrat z procedury vlastnosti.** Když `Set` postup vrátí volajícímu kódu, provádění pokračuje po příkazu, který poskytuje hodnota, která má být uložena.  
+- **Návrat z procedury vlastnosti.** Když se `Set` procedura vrátí k volajícímu kódu, provádění pokračuje po příkazu, který poskytl hodnotu, která má být uložena.  
   
-     `Set` procedury vlastnosti může vrátit buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo [příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md).  
+     procedury vlastnosti `Set` mohou vracet buď pomocí [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md) , nebo [příkazu exit](../../../visual-basic/language-reference/statements/exit-statement.md).  
   
-     `Exit Property` a `Return` příkazy způsobit okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
+     Příkazy `Exit Property` a `Return` způsobují bezprostřední ukončení procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Property` a `Return` příkazy.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Set` příkaz k nastavení hodnoty vlastnosti.  
+ Následující příklad používá příkaz `Set` k nastavení hodnoty vlastnosti.  
   
  [!code-vb[VbVbalrStatements#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#55)]  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - variables [Visual Basic], enumeration
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
-ms.openlocfilehash: 0a761c39b51a8d71919a84cbbbf6739fc1f5bcea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be1780b00b4d58964e1de5ec199cb80dc0f9dba5
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754615"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583397"
 ---
 # <a name="enum-statement-visual-basic"></a>Enum – příkaz (Visual Basic)
 
@@ -24,7 +24,7 @@ Deklaruje výčet a definuje hodnoty jeho členů.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 [ <attributelist> ] [ accessmodifier ]  [ Shadows ]
 Enum enumerationname [ As datatype ]
    memberlist
@@ -35,13 +35,13 @@ End Enum
 
 - `attributelist`
 
-  Volitelné. Seznam atributů, které platí pro tento výčet. Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").
+  Volitelné. Seznam atributů, které se vztahují k tomuto výčtu. [Seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) je nutné uzavřít do lomených závorek ("`<`" a "`>`").
 
-  <xref:System.FlagsAttribute> Atribut označuje, že hodnota instance výčtu může obsahovat více členů výčtu a, že každý člen představuje bitového pole hodnoty výčtu.
+  Atribut <xref:System.FlagsAttribute> označuje, že hodnota instance výčtu může zahrnovat více členů výčtu a že každý člen představuje bitové pole v hodnotě výčtu.
 
 - `accessmodifier`
 
-  Volitelné. Určuje, jaký kód může přistupovat k tento výčet. Může být jedna z následujících akcí:
+  Volitelné. Určuje, který kód má k tomuto výčtu přístup. Může to být jedna z následujících:
 
   - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 
@@ -57,130 +57,130 @@ End Enum
 
 - `Shadows`
 
-  Volitelné. Určuje, že tento výčet znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě. Můžete zadat [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) pouze na samotného výčtu, nikoli na kterýkoli z jejích členů.
+  Volitelné. Určuje, že tento výčet znovu deklaruje a skryje identicky pojmenovaný prvek programování nebo sadu přetížených prvků v základní třídě. [Stíny](../../../visual-basic/language-reference/modifiers/shadows.md) lze zadat pouze pro samotný výčet, nikoli na žádném z jeho členů.
 
 - `enumerationname`
 
-  Povinný parametr. Název výčtu. Informace o platné názvy najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+  Požadováno. Název výčtu. Informace o platných názvech naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
 - `datatype`
 
-  Volitelné. Datový typ výčtu a všechny její členy.
+  Volitelné. Datový typ výčtu a všech jeho členů.
 
 - `memberlist`
 
-  Povinný parametr. Seznam členů konstanty deklarované v tomto prohlášení. Víc členů se zobrazí na jednotlivé zdrojové řádky kódu.
+  Požadováno. Seznam konstant členů, které jsou deklarovány v tomto příkazu. Na jednotlivých řádcích zdrojového kódu se zobrazí více členů.
 
   Každý `member` má následující syntaxi a části: `[<attribute list>] member name [ = initializer ]`
 
-  |Část|Popis|
+  |Částí|Popis|
   |---|---|
-  |`membername`|Povinný parametr. Název tohoto člena.|
-  |`initializer`|Volitelné. Výraz, který je vyhodnocen v době kompilace a přiřazené k tomuto členu.|
+  |`membername`|Požadováno. Název tohoto člena|
+  |`initializer`|Volitelné. Výraz, který se vyhodnocuje v době kompilace a přiřazený k tomuto členovi.|
 
 - `End``Enum`
 
-  Ukončuje `Enum` bloku.
+  Ukončí blok `Enum`.
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud máte sadu neměnné hodnot, které logicky vzájemně souvisí, můžete je definovat společně ve výčtu. To umožňuje smysluplné názvy výčtu a její členy, které jsou jednodušší mějte na paměti než jejich hodnoty. Pak můžete použít členy výčtu na mnoha místech ve vašem kódu.
+Máte-li sadu nezměněných hodnot, které jsou logicky vzájemně propojeny, můžete je definovat společně ve výčtu. To poskytuje smysluplné názvy pro výčet a jeho členy, které je snazší pamatovat než jejich hodnoty. Pak můžete použít členy výčtu na mnoha místech v kódu.
 
-Mezi výhody používání výčtů, patří:
+Mezi výhody používání výčtů patří následující:
 
-- Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.
+- Snižuje chyby způsobené přetypováním nebo nesprávným zadáním čísel.
 
-- Umožňuje snadno ke změně hodnot v budoucnu.
+- V budoucnu usnadňuje změnu hodnot.
 
-- Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že budou zavedeny chyby.
+- Usnadňuje čtení kódu, což znamená, že je méně pravděpodobný, že budou zavedeny chyby.
 
-- Zajišťuje kompatibilitu. Pokud používáte výčty, váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.
+- Zajišťuje dopředné kompatibility. Pokud použijete výčty, váš kód je méně pravděpodobný, pokud v budoucnu někdo změní hodnoty odpovídající názvům členů.
 
-Výčet má název, příslušný datový typ a sadu členů. Každý člen představuje konstantu.
+Výčet má název, základní datový typ a sadu členů. Každý člen představuje konstantu.
 
-Výčet deklarována třída, struktura, modul nebo rozhraní úroveň mimo všechny procedury, je *člen výčtu*. Je členem třídy, struktury, modul nebo rozhraní, které se deklaruje.
+Výčet deklarovaný na úrovni třídy, struktury, modulu nebo rozhraní, mimo jakoukoli proceduru, je *výčet členů*. Je členem třídy, struktury, modulu nebo rozhraní, které je deklaruje.
 
-Výčty člen je přístupný z kdekoli v rámci třídy, struktury, modul nebo rozhraní. Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena výčtu s názvem této třídy, struktury nebo modulu. Vyhnete nutnosti použití plně kvalifikovaných názvů tak, že přidáte [importy](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) příkaz ke zdrojovému souboru.
+K výčtům členů lze přistupovat odkudkoli v rámci své třídy, struktury, modulu nebo rozhraní. Kód mimo třídu, strukturu nebo modul musí kvalifikovat název výčtu členů s názvem této třídy, struktury nebo modulu. Je možné vyhnout se nutnosti používat plně kvalifikované názvy přidáním příkazu [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) do zdrojového souboru.
 
-Výčet deklarován na úrovni oboru názvů, mimo třídu, strukturu, modul nebo rozhraní, je členem oboru názvů, ve kterém se zobrazí.
+Výčet deklarovaný na úrovni oboru názvů, mimo jakoukoliv třídu, strukturu, modul nebo rozhraní, je členem oboru názvů, ve kterém se zobrazí.
 
-*Kontext deklarace* pro výčet musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedurou. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+*Kontext deklarace* pro výčet musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
 
-Můžete použít atributy k vyčíslení jako celek, ale ne k jeho členy jednotlivě. Atribut přispívá informací o metadatech sestavení.
+Můžete použít atributy na výčet jako celek, ale nikoli na jeho členy jednotlivě. Atribut přispívá informace k metadatům sestavení.
 
 ## <a name="data-type"></a>Datový typ
 
-`Enum` Příkazu můžete deklarovat datový typ výčtu. Každý člen má datový typ výčtu. Můžete zadat `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, nebo `UShort`.
+Příkaz `Enum` může deklarovat datový typ výčtu. Každý člen získá datový typ výčtu. Můžete zadat `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong` nebo `UShort`.
 
-Pokud nezadáte `datatype` pro výčet, každý člen má datový typ jeho `initializer`. Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`. Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Integer`.
+Pokud neurčíte `datatype` pro výčet, každý člen získá datový typ jeho `initializer`. Pokud zadáte obě `datatype` i `initializer`, datový typ `initializer` musí být převeden na `datatype`. Pokud není k dispozici žádná `datatype` ani `initializer`, je výchozím nastavením datový typ `Integer`.
 
 ## <a name="initializing-members"></a>Inicializace členů
 
-`Enum` Příkazu můžete inicializovat obsah vybrané členy v `memberlist`. Použijete `initializer` zadat výraz, který má být přiřazena k členu.
+Příkaz `Enum` může inicializovat obsah vybraných členů v `memberlist`. Pomocí `initializer` můžete zadat výraz, který má být přiřazen členu.
 
-Pokud nezadáte `initializer` pro člena, Visual Basic inicializuje ji buď na hodnotu nula (Pokud je první `member` v `memberlist`), nebo na hodnotu větší než bezprostředně před jednou `member`.
+Pokud neurčíte `initializer` pro člena, Visual Basic inicializuje buď na hodnotu nula (Pokud se jedná o první `member` v `memberlist`), nebo na hodnotu větší od jedné, než je hodnota bezprostředně předcházejícího `member`.
 
-Výraz zadaný v každém `initializer` může být libovolná kombinace literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány, včetně předchozí členů tohoto výčtu. Aritmetické a logické operátory můžete kombinovat takovýchto prvků.
+Výraz zadaný v každém `initializer` může být libovolná kombinace literálů, dalších konstant, které jsou již definovány, a členů výčtu, kteří jsou již definováni, včetně předchozího člena tohoto výčtu. K kombinování takových prvků lze použít aritmetické a logické operátory.
 
-Nelze použít proměnné nebo funkce v `initializer`. Ale můžete použít klíčová slova převodu například `CByte` a `CShort`. Můžete také použít `AscW` při volání s konstantou `String` nebo `Char` argument, protože, který může být vyhodnocen v době kompilace.
+V `initializer` nemůžete použít proměnné ani funkce. Můžete však použít klíčová slova převodu, například `CByte` a `CShort`. @No__t_0 můžete použít také v případě, že ho voláte s konstantním `String` nebo argumentem `Char`, protože lze vyhodnotit v době kompilace.
 
-Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou. Pokud člen je přiřazena hodnota s plovoucí desetinnou čárkou a `Option Strict` nastavená na on, dojde k chybě kompilátoru. Pokud `Option Strict` je vypnuté, hodnota je automaticky převedena na `Enum` typu.
+Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou. Pokud je členovi přiřazena hodnota s plovoucí desetinnou čárkou a `Option Strict` je nastavena na hodnotu on, dojde k chybě kompilátoru. Pokud je `Option Strict` vypnuto, hodnota je automaticky převedena na typ `Enum`.
 
-Pokud hodnotu členu překračuje povolený rozsah pro příslušný datový typ, nebo pokud je inicializovat kteréhokoli člena na maximální hodnotu povolenou příslušný datový typ, kompilátor nahlásí chybu.
+Pokud hodnota členu překročí povolený rozsah pro základní datový typ, nebo Pokud inicializujete libovolného člena na maximální hodnotu povolenou podkladovým datovým typem, kompilátor ohlásí chybu.
 
 ## <a name="modifiers"></a>Modifikátory
 
-Třída, struktura, modul a rozhraní člen výčty výchozí veřejný přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu. Namespace člen výčty výchozí přístup typu friend. Můžete nastavit jejich úrovně veřejnosti, ale ne k soukromé nebo chráněné. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+Výčet členů třídy, struktury, modulu a rozhraní je ve výchozím nastavení veřejným přístupem. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Výčty členů oboru názvů mají ve výchozím nastavení přístup typu Friend. Úrovně přístupu můžete upravit na veřejné, ale ne na privátní nebo chráněné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-Všechny členy výčtu mít veřejný přístup a žádné modifikátory přístupu nelze použít na ně. Ale pokud stejný jako daný výčet má omezenější úroveň přístupu, úroveň přístupu zadaný výčet má přednost.
+Všichni členové výčtu mají veřejný přístup a nemůžete použít žádné modifikátory přístupu. Nicméně pokud má výčet vlastní úroveň přístupu s vyšší úrovní oprávnění, má zadaná úroveň přístupu ke výčtu přednost.
 
-Ve výchozím nastavení všechny výčty jsou typy a jejich polí jsou konstanty. Proto `Shared`, `Static`, a `ReadOnly` klíčová slova nelze použít při deklaraci výčtu ani jejích členů.
+Ve výchozím nastavení jsou všechny výčty typy a jejich pole jsou konstanty. Proto klíčová slova `Shared`, `Static` a `ReadOnly` nelze použít při deklaraci výčtu nebo jeho členů.
 
 ## <a name="assigning-multiple-values"></a>Přiřazení více hodnot
 
-Výčty obvykle představují vzájemně se vylučuje hodnoty. Zahrnutím <xref:System.FlagsAttribute> atribut `Enum` prohlášení, můžete místo toho přiřadit víc hodnot do instance výčtu. <xref:System.FlagsAttribute> Atribut určuje, že výčet považovány za bitové pole, to znamená, že sada příznaků. Toto nastavení se nazývá *bitový* výčty.
+Výčty typicky znázorňují vzájemně se vylučující hodnoty. Zahrnutím atributu <xref:System.FlagsAttribute> v deklaraci `Enum` můžete místo toho přiřadit více hodnot do instance výčtu. Atribut <xref:System.FlagsAttribute> určuje, že výčet bude zpracován jako bitové pole, tedy sada příznaků. Tyto jsou označovány jako *bitové* výčty.
 
-Pokud deklarujete výčet pomocí <xref:System.FlagsAttribute> atribut, doporučujeme použít mocninu 2, který je 1, 2, 4, 8, 16 a tak dále, pro hodnoty. Doporučujeme také, že "None" být jméno člena, jehož hodnota je 0. Další pokyny najdete v části <xref:System.FlagsAttribute> a <xref:System.Enum>.
+Pokud deklarujete výčet pomocí atributu <xref:System.FlagsAttribute>, doporučujeme pro hodnoty použít mocniny 2, to znamená 1, 2, 4, 8, 16 a tak dále. Doporučujeme také, aby "žádný" byl název členu, jehož hodnota je 0. Další pokyny najdete v tématu <xref:System.FlagsAttribute> a <xref:System.Enum>.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití `Enum` příkazu. Všimněte si, že člen se označuje jako `EggSizeEnum.Medium`a ne jako `Medium`.
+Následující příklad ukazuje, jak použít příkaz `Enum`. Všimněte si, že člen je označován jako `EggSizeEnum.Medium`, a ne jako `Medium`.
 
 [!code-vb[VbEnumsTask#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#41)]
 
 ## <a name="example"></a>Příklad
 
-Metoda v následujícím příkladu je mimo `Egg` třídy. Proto `EggSizeEnum` je plně kvalifikovaný jako `Egg.EggSizeEnum`.
+Metoda v následujícím příkladu je mimo třídu `Egg`. Proto je `EggSizeEnum` plně kvalifikovaný jako `Egg.EggSizeEnum`.
 
 [!code-vb[VbEnumsTask#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#42)]
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `Enum` příkaz k definování související sadu s názvem konstantní hodnoty. V tomto případě hodnoty jsou barvy, které můžete se rozhodnout pro návrh formulářů pro zadávání dat pro databázi.
+Následující příklad používá příkaz `Enum` k definování související sady pojmenovaných hodnot konstant. V tomto případě hodnoty jsou barvy, které můžete zvolit pro návrh formulářů pro zadávání dat pro databázi.
 
 [!code-vb[VbEnumsTask#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#30)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje hodnoty, které obsahují kladná a záporná čísla.
+Následující příklad ukazuje hodnoty, které obsahují kladná i záporná čísla.
 
 [!code-vb[VbEnumsTask#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#31)]
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `As` klauzule slouží k určení `datatype` výčtu.
+V následujícím příkladu je použita klauzule `As` k určení `datatype` výčtu.
 
 [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak použít bitový výčtu. Víc hodnot je přiřadit k instanci bitové operace výčtu. `Enum` Deklarace obsahuje <xref:System.FlagsAttribute> atribut, který označuje, že výčtu lze považovat za sada příznaků.
+Následující příklad ukazuje, jak použít bitový výčet. K instanci bitového výčtu lze přiřadit více hodnot. Deklarace `Enum` obsahuje atribut <xref:System.FlagsAttribute>, který označuje, že výčet lze považovat za sadu příznaků.
 
 [!code-vb[VbEnumsTask#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#61)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad provede iteraci výčet. Používá <xref:System.Enum.GetNames%2A> metody k načtení pole názvy členů výčtu, a <xref:System.Enum.GetValues%2A> k načtení pole hodnoty členů.
+Následující příklad prochází výčet. Používá metodu <xref:System.Enum.GetNames%2A> k načtení pole názvů členů z výčtu a <xref:System.Enum.GetValues%2A> k načtení pole hodnot členů.
 
 [!code-vb[VbEnumsTask#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#51)]
 

@@ -28,20 +28,20 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Function statements
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
-ms.openlocfilehash: 3a6184164fdc6f2517caf45f7b5e1455c9299666
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 046a3a7d50d15cd3e59205998554a4c330d4552c
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754730"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581839"
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 
-Deklaruje název, parametry a kód, které definují `Function` postup.
+Deklaruje název, parametry a kód, které definují proceduru `Function`.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 [ <attributelist> ] [ accessmodifier ] [ proceduremodifiers ] [ Shared ] [ Shadows ] [ Async | Iterator ]
 Function name [ (Of typeparamlist) ] [ (parameterlist) ] [ As returntype ] [ Implements implementslist | Handles eventlist ]
     [ statements ]
@@ -54,11 +54,11 @@ End Function
 
 - `attributelist`
 
-  Volitelné. Zobrazit [seznam atributů](attribute-list.md).
+  Volitelné. Viz [seznam atributů](attribute-list.md).
 
 - `accessmodifier`
 
-  Volitelné. Může být jedna z následujících akcí:
+  Volitelné. Může to být jedna z následujících:
 
   - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 
@@ -72,11 +72,11 @@ End Function
 
   - [Private Protected](../../language-reference/modifiers/private-protected.md)
 
-  Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+  Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
 - `proceduremodifiers`
 
-  Volitelné. Může být jedna z následujících akcí:
+  Volitelné. Může to být jedna z následujících:
 
   - [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
 
@@ -94,43 +94,43 @@ End Function
 
 - `Shared`
 
-  Volitelné. Zobrazit [sdílené](../../../visual-basic/language-reference/modifiers/shared.md).
+  Volitelné. Viz [Shared](../../../visual-basic/language-reference/modifiers/shared.md).
 
 - `Shadows`
 
-  Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).
+  Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
 
 - `Async`
 
-  Volitelné. Zobrazit [asynchronní](../../../visual-basic/language-reference/modifiers/async.md).
+  Volitelné. Viz [Async](../../../visual-basic/language-reference/modifiers/async.md).
 
 - `Iterator`
 
-  Volitelné. Zobrazit [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md).
+  Volitelné. Podívejte se na [iterátor](../../../visual-basic/language-reference/modifiers/iterator.md).
 
 - `name`
 
-  Povinný parametr. Název procedury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+  Požadováno. Název procedury. Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
 - `typeparamlist`
 
-  Volitelné. Seznam parametrů typu pro obecný postup. Zobrazit [seznamu](type-list.md).
+  Volitelné. Seznam parametrů typu pro obecný postup Viz [seznam typů](type-list.md).
 
 - `parameterlist`
 
-  Volitelné. Seznam místní názvy proměnných představující parametry tohoto postupu. Zobrazit [seznam parametrů](parameter-list.md).
+  Volitelné. Seznam názvů místních proměnných, které představují parametry tohoto postupu. Viz [seznam parametrů](parameter-list.md).
 
 - `returntype`
 
-  Požadováno pokud `Option Strict` je `On`. Datový typ hodnoty vrácené tímto postupem.
+  Vyžaduje se, pokud je `Option Strict` `On`. Datový typ hodnoty vrácené tímto postupem.
 
 - `Implements`
 
-  Volitelné. Označuje, že tento postup implementuje jednu nebo více `Function` postupy, každý z nich definované v rozhraní implementované obsahující třídu nebo strukturu, tento postup. Zobrazit [implementuje příkaz](implements-statement.md).
+  Volitelné. Označuje, že tento postup implementuje jeden nebo více `Function` procedur, každý z nich definovaný v rozhraní implementovaném touto procedurou obsahuje třídu nebo strukturu. Viz [příkaz Implements](implements-statement.md).
 
 - `implementslist`
 
-  Požadováno pokud `Implements` pochází. Seznam `Function` postupy se implementuje.
+  Vyžaduje se, pokud je dodána `Implements`. Seznam `Function`ch procedur, které jsou implementovány.
 
   `implementedprocedure [ , implementedprocedure ... ]`
 
@@ -138,18 +138,18 @@ End Function
 
   `interface.definedname`
 
-  |Část|Popis|
+  |Částí|Popis|
   |---|---|
-  |`interface`|Povinný parametr. Název rozhraní implementovaných tímto postupem obsahující třídy nebo struktury.|
-  |`definedname`|Povinný parametr. Název, podle kterého postupu je definován v `interface`.|
+  |`interface`|Požadováno. Název rozhraní implementovaného touto procedurou obsahuje třídu nebo strukturu.|
+  |`definedname`|Požadováno. Název, podle kterého je procedura definovaná v `interface`.|
 
 - `Handles`
 
-  Volitelné. Označuje, že tento postup může zpracovat jeden nebo více konkrétních událostí. Zobrazit [zpracovává](handles-clause.md).
+  Volitelné. Označuje, že tento postup může zpracovávat jednu nebo více konkrétních událostí. Viz [Handles](handles-clause.md).
 
 - `eventlist`
 
-  Požadováno pokud `Handles` pochází. Seznam událostí, který zpracovává tento postup.
+  Vyžaduje se, pokud je dodána `Handles`. Seznam událostí, které tato procedura zpracovává
 
   `eventspecifier [ , eventspecifier ... ]`
 
@@ -157,14 +157,14 @@ End Function
 
   `eventvariable.event`
 
-  |Část|Popis|
+  |Částí|Popis|
   |---|---|
-  |`eventvariable`|Povinný parametr. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|
-  |`event`|Povinný parametr. Název události, které zpracovává tento postup.|
+  |`eventvariable`|Požadováno. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|
+  |`event`|Požadováno. Název události, kterou tato procedura zpracovává|
 
 - `statements`
 
-  Volitelné. Blok příkazů má být spuštěn v rámci tohoto postupu.
+  Volitelné. Blok příkazů, které mají být provedeny v rámci tohoto postupu.
 
 - `End Function`
 
@@ -172,95 +172,95 @@ End Function
 
 ## <a name="remarks"></a>Poznámky
 
-Všechny spustitelný kód musí být uvnitř procedury. Každá procedura, pak je deklarována v rámci třídy, struktury nebo modul, který se označuje jako obsahující třídy, struktury nebo modulu.
+Veškerý spustitelný kód musí být v rámci procedury. Každý postup je deklarován v rámci třídy, struktury nebo modulu, který je označován jako obsahující třídu, strukturu nebo modul.
 
-Pokud chcete vrátit hodnotu volajícímu kódu, použijte `Function` postupu; jinak použijte `Sub` postup.
+Chcete-li vrátit hodnotu volajícímu kódu, použijte `Function` proceduru; v opačném případě použijte `Sub` proceduru.
 
-## <a name="defining-a-function"></a>Definice funkce
+## <a name="defining-a-function"></a>Definování funkce
 
-Můžete definovat `Function` postup pouze na úrovni modulu. Proto kontextu deklarace funkce musí být třída, struktura, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](declaration-contexts-and-default-access-levels.md).
+Můžete definovat `Function` proceduru pouze na úrovni modulu. Proto kontext deklarace pro funkci musí být třída, struktura, modul nebo rozhraní a nemůže se jednat o zdrojový soubor, obor názvů, proceduru nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](declaration-contexts-and-default-access-levels.md).
 
-`Function` postupy výchozí veřejný přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu.
+výchozími postupy `Function` jsou veřejné přístupy. Můžete upravit jejich úrovně přístupu modifikátory přístupu.
 
-A `Function` postupu můžete deklarovat datový typ hodnoty, která vrací postup. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní. Pokud nezadáte `returntype` vrátí parametr postupu `Object`.
+@No__t_0 procedura může deklarovat datový typ hodnoty, kterou procedura vrátí. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní. Pokud nezadáte parametr `returntype`, procedura vrátí `Object`.
 
-Pokud tento postup používá `Implements` – klíčové slovo, obsahuje třídu nebo strukturu, musíte také mít `Implements` příkaz, který bezprostředně následuje po jeho `Class` nebo `Structure` příkazu. `Implements` Příkazu musí obsahovat každé rozhraní, které je zadáno v `implementslist`. Ale název, pomocí kterého rozhraní definuje `Function` (v `definedname`) nemusí odpovídat názvu tohoto postupu (v `name`).
+Pokud tento postup používá klíčové slovo `Implements`, obsahující třídu nebo strukturu musí mít také příkaz `Implements`, který následuje bezprostředně za `Class` nebo `Structure` příkaz. Příkaz `Implements` musí zahrnovat každé rozhraní, které je určeno v `implementslist`. Název, kterým rozhraní definuje `Function` (v `definedname`), ale nemusí odpovídat názvu tohoto postupu (v `name`).
 
 > [!NOTE]
-> Výrazy lambda můžete použít k definování vložené výrazy funkce. Další informace najdete v tématu [výraz funkce](../../../visual-basic/language-reference/operators/function-expression.md) a [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+> Lambda výrazy můžete použít k definování vložených výrazů funkcí. Další informace naleznete v tématu [výraz Function](../../../visual-basic/language-reference/operators/function-expression.md) a [lambda výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
 ## <a name="returning-from-a-function"></a>Vrácení z funkce
 
-Když `Function` postup vrátí volajícímu kódu, provádění pokračuje s příkazem, který následuje příkazu, který volá postup.
+Když se `Function` procedura vrátí k volajícímu kódu, provádění pokračuje pomocí příkazu, který následuje za příkazem, který se nazývá procedura.
 
-Pro navrácení hodnoty z funkce, můžete buď přiřaďte hodnotu k názvu funkce nebo ji v zahrnout `Return` příkazu.
+Chcete-li vrátit hodnotu z funkce, můžete buď přiřadit hodnotu k názvu funkce nebo ji zahrnout do příkazu `Return`.
 
-`Return` Příkaz současně přiřadí návratovou hodnotu a ukončení funkce, jako v následujícím příkladu.
+Příkaz `Return` současně přiřadí návratovou hodnotu a ukončí funkci, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]
 
-Následující příklad přiřadí název funkce návratová hodnota `myFunction` a použije je `Exit Function` příkazu vrátit.
+Následující příklad přiřadí návratovou hodnotu k názvu funkce `myFunction` a poté pomocí příkazu `Exit Function` vrátí.
 
 [!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]
 
-`Exit Function` a `Return` příkazy způsobit okamžité ukončení `Function` postup. Libovolný počet `Exit Function` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Function` a `Return` příkazy.
+Příkazy `Exit Function` a `Return` způsobují bezprostřední ukončení `Function`ho postupu. Libovolný počet `Exit Function` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Function` a `Return` příkazy.
 
-Pokud používáte `Exit Function` bez přiřazení hodnoty k `name`, procedura vrací výchozí hodnota pro datový typ, který je zadán v `returntype`. Pokud `returntype` nezadá, vrátí postup `Nothing`, což je výchozí hodnota pro `Object`.
+Použijete-li `Exit Function` bez přiřazení hodnoty k `name`, procedura vrátí výchozí hodnotu datového typu, který je zadán v `returntype`. Pokud není zadán `returntype`, procedura vrátí `Nothing`, což je výchozí hodnota pro `Object`.
 
 ## <a name="calling-a-function"></a>Volání funkce
 
-Volání `Function` postup pomocí název procedury, za nímž následuje seznam argumentů v závorkách, ve výrazu. Závorky můžete vynechat jenom v případě, že nejsou zadávání argumentů. Váš kód je však čitelnější, pokud vždy závorek.
+Proceduru `Function` zavoláte pomocí názvu procedury následovaný seznamem argumentů v závorkách ve výrazu. Závorky můžete vynechat pouze v případě, že neposkytujete žádné argumenty. Váš kód je však čitelnější, pokud vždy zahrnete závorky.
 
-Volání `Function` postup fungovat stejným způsobem, že můžete volat všechny knihovny, jako `Sqrt`, `Cos`, nebo `ChrW`.
+Proceduru `Function` zavoláte stejným způsobem jako u libovolné funkce knihovny, jako je například `Sqrt`, `Cos` nebo `ChrW`.
 
-Můžete také volat funkci pomocí `Call` – klíčové slovo. V takovém případě je vrácená hodnota ignorována. Použití `Call` – klíčové slovo se nedoporučuje ve většině případů. Další informace najdete v tématu [zavolat příkaz](call-statement.md).
+Funkci můžete také volat pomocí klíčového slova `Call`. V takovém případě se návratová hodnota ignoruje. Ve většině případů se použití klíčového slova `Call` nedoporučuje. Další informace naleznete v tématu [Call Statement](call-statement.md).
 
-Visual Basic někdy znovu uspořádá aritmetických výrazů ke zvýšení účinnosti interní. Z tohoto důvodu byste neměli používat `Function` postupu na portále aritmetický výraz při změně hodnoty proměnné ve stejném výrazu funkce.
+Visual Basic někdy mění uspořádání aritmetických výrazů a zvyšuje tak vnitřní efektivitu. Z tohoto důvodu byste neměli použít `Function` proceduru v aritmetickém výrazu, pokud funkce změní hodnotu proměnných ve stejném výrazu.
 
 ## <a name="async-functions"></a>Asynchronní funkce
 
-*Asynchronní* funkce umožňuje vyvolat asynchronní funkce bez použití explicitní zpětná volání nebo Ruční rozdělení kódu mezi více funkcí nebo výrazů lambda.
+*Asynchronní* funkce umožňuje vyvolat asynchronní funkce bez použití explicitního zpětného volání nebo ručního rozdělení kódu napříč více funkcemi nebo lambda výrazy.
 
-Pokud označíte funkce s [asynchronní](../../../visual-basic/language-reference/modifiers/async.md) modifikátor, můžete použít [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor ve funkci. Když ovládací prvek dosáhne `Await` výrazu v `Async` funkce, ovládací prvek vrátí volajícímu a průběh ve funkci je pozastavený, až do dokončení očekávané úlohy. Po dokončení úlohy se provádění může pokračovat ve funkci.
+Pokud označíte funkci s modifikátorem [Async](../../../visual-basic/language-reference/modifiers/async.md) , můžete použít operátor [await](../../../visual-basic/language-reference/operators/await-operator.md) ve funkci. Když ovládací prvek dosáhne `Await` výraz ve funkci `Async`, ovládací prvek se vrátí volajícímu a průběh funkce je pozastaven až do dokončení očekávané úlohy. Po dokončení úlohy může provádění pokračovat ve funkci.
 
 > [!NOTE]
-> `Async` Postup vrátí řízení volajícímu, pokud buď se setká s první očekávaný objekt, který ještě není dokončeno nebo nabude na konec objektu `Async` postup, podle toho, co nastane dříve.
+> @No__t_0 procedura se vrátí volajícímu, když dojde buď k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo se dostane na konec `Async` postupu, podle toho, co nastane dříve.
 
-`Async` Funkce může mít návratový typ <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>. Příklad `Async` funkci, která má návratový typ <xref:System.Threading.Tasks.Task%601> jsou uvedeny níže.
+@No__t_0 funkce může mít návratový typ <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>. Příklad funkce `Async`, která má návratový typ <xref:System.Threading.Tasks.Task%601>, je uveden níže.
 
-`Async` Funkce nemůže deklarovat všechny [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) parametry.
+Funkce `Async` nemůže deklarovat žádné parametry [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) .
 
-A [příkaz Sub](sub-statement.md) může být označena také `Async` modifikátor. To se používá především pro obslužné rutiny událostí, ve kterém nejde vrátit hodnotu. `Async` `Sub` Nemůže být očekávána proceduru a volající `Async` `Sub` procedura nemůže zachytit výjimky, které jsou vyvolány `Sub` postup.
+[Dílčí příkaz](sub-statement.md) lze také označit modifikátorem `Async`. Používá se hlavně pro obslužné rutiny událostí, kde nelze vracet hodnotu. Procedura `Async` `Sub` nemůže být očekávána a volající procedury `Async` `Sub` nemůže zachytit výjimky, které jsou vyvolány postupem `Sub`.
 
-Další informace o `Async` funkce, najdete v článku [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md), [tok řízení v asynchronních programech](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md), a [Async Return Types](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
+Další informace o funkcích `Async` naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../../visual-basic/programming-guide/concepts/async/index.md), [řízení toku v asynchronních programech](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
 
-## <a name="iterator-functions"></a>Funkce iterátorů
+## <a name="iterator-functions"></a>Funkce iterátoru
 
-*Iterátoru* funkce provádí vlastní iterace nad kolekcí, jako je například seznamu nebo pole. Používá funkce iterátoru [Yield](yield-statement.md) příkaz vrátit vždy jeden prvek v čase. Když [Yield](yield-statement.md) je dosažen příkaz, se uloží aktuální umístění v kódu. Provádění je restartováno z tohoto umístění při příštím je zavolána funkce iterátoru.
+Funkce *iterátoru* provádí vlastní iteraci v kolekci, jako je například list nebo Array. Funkce iterátoru používá příkaz [yield](yield-statement.md) k vrácení jednotlivých prvků po jednom. Při dosažení příkazu [yield](yield-statement.md) se aktuální umístění v kódu pamatuje. Spuštění je restartováno z tohoto umístění při příštím volání funkce iterátoru.
 
-Můžete volat iterátor z klientského kódu s použitím [For Each... Další](for-each-next-statement.md) příkazu.
+Můžete zavolat iterátor z klientského kódu s použitím [pro každý... Další](for-each-next-statement.md) příkaz.
 
-Může být návratový typ funkce iterátoru <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Návratový typ funkce iterátoru může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601>.
 
 Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `Function` příkaz deklarovat název, parametry a kód, který tvoří text `Function` postup. `ParamArray` Modifikátor umožňuje funkci tak, aby přijímal proměnný počet argumentů.
+Následující příklad používá příkaz `Function` k deklaraci názvu, parametrů a kódu, který tvoří tělo `Function`ho postupu. Modifikátor `ParamArray` umožňuje funkci přijmout proměnlivý počet argumentů.
 
 [!code-vb[VbVbalrStatements#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#25)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad popisuje vyvolání funkce deklarovaná v předchozím příkladu.
+Následující příklad vyvolá funkci deklarovanou v předchozím příkladu.
 
 [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `DelayAsync` je `Async` `Function` , která má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `Return` příkaz, který vrátí celé číslo. Proto deklarace funkce z `DelayAsync` musí mít typ vrácené hodnoty `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo. To je ukázáno v tomto prohlášení: `Dim result As Integer = Await delayTask`.
+V následujícím příkladu je `DelayAsync` `Async` `Function`, který má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má příkaz `Return`, který vrací celé číslo. Proto musí deklarace funkce `DelayAsync` mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že návratový typ je `Task(Of Integer)`, vyhodnocení výrazu `Await` v `DoSomethingAsync` vytvoří celé číslo. To je znázorněno v tomto prohlášení: `Dim result As Integer = Await delayTask`.
 
-`startButton_Click` Postup je příkladem `Async Sub` postup. Protože `DoSomethingAsync` je `Async` funkce, úkol pro volání `DoSomethingAsync` musí ní použít operátor await, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. `startButton_Click` `Sub` Postupu musí být definované s `Async` modifikátor vzhledem k tomu, že má `Await` výrazu.
+Procedura `startButton_Click` je příkladem `Async Sub` postupu. Vzhledem k tomu, že `DoSomethingAsync` je `Async` funkce, musí být úkol pro volání `DoSomethingAsync` očekáván, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. Procedura `startButton_Click` `Sub` musí být definována s modifikátorem `Async`, protože obsahuje výraz `Await`.
 
 [!code-vb[csAsyncMethod#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncmethod/vb/mainwindow.xaml.vb#1)]
 
@@ -271,7 +271,7 @@ V následujícím příkladu `DelayAsync` je `Async` `Function` , která má ná
 - [Seznam parametrů](parameter-list.md)
 - [Příkaz Dim](dim-statement.md)
 - [Příkaz Call](call-statement.md)
-- [z](of-clause.md)
+- [Tohoto](of-clause.md)
 - [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
 - [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)

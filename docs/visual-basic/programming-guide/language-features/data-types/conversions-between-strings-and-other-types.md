@@ -9,43 +9,43 @@ helpviewer_keywords:
 - type conversion [Visual Basic], string
 - regional options
 ms.assetid: c3a99596-f09a-44a5-81dd-1b89a094f1df
-ms.openlocfilehash: 1e42fca7800a76cab10fd60058e34d31ae8b8830
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e1530c1772808249546b453294fc848c31c1e581
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907319"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582941"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Převody mezi řetězci a ostatními typy (Visual Basic)
-Lze převést číselnou, `Boolean`, nebo hodnotu data a času `String`. Můžete také převést v opačném směru – z řetězcové hodnoty na číselnou hodnotu, `Boolean`, nebo `Date` – zadaný obsah řetězce může být interpretován jako platná hodnota cílového datového typu. Pokud to není možné, dojde k chybě za běhu.  
+Číselnou, `Boolean` nebo hodnotu data a času můžete převést na `String`. Můžete také převést v opačném směru – od řetězcové hodnoty na číslo, `Boolean` nebo `Date` – za předpokladu, že obsah řetězce může být interpretován jako platná hodnota cílového datového typu. Pokud se nedaří, dojde k chybě za běhu.  
   
- Převody pro všechna tato přiřazení v obou směrech jsou zužujících převodů. Měli byste použít klíčová slova převodu typu (`CBool`, `CByte`, `CDate`, `CDbl`, `CDec`, `CInt`, `CLng`, `CSByte`, `CShort`, `CSng`, `CStr`, `CUInt`, `CULng`, `CUShort`, a `CType`). <xref:Microsoft.VisualBasic.Strings.Format%2A> a <xref:Microsoft.VisualBasic.Conversion.Val%2A> funkce poskytují větší kontrolu nad převody mezi řetězci a čísla.  
+ Převody všech těchto přiřazení v obou směrech mají zúžené převody. Měli byste použít klíčová slova konverze typu (`CBool`, `CByte`, `CDate`, `CDbl`, `CDec`, `CInt`, `CLng`, `CSByte`, `CShort`, `CSng`, 0, 1, 2 , 3 a 4). Funkce <xref:Microsoft.VisualBasic.Strings.Format%2A> a <xref:Microsoft.VisualBasic.Conversion.Val%2A> poskytují další kontrolu nad převody mezi řetězci a čísly.  
   
- Pokud jste definovali třídy nebo struktury, můžete definovat operátory převodů typu mezi `String` a typ třídy nebo struktury. Další informace najdete v tématu [jak: Definice operátora převodu](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ Pokud jste definovali třídu nebo strukturu, můžete definovat operátory převodu typů mezi `String` a typem vaší třídy nebo struktury. Další informace naleznete v tématu [How to: define a Conversion operátor](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
-## <a name="conversion-of-numbers-to-strings"></a>Převod čísla na řetězce  
- Můžete použít `Format` funkce pro převod čísla na formátovaný řetězec, který může obsahovat pouze odpovídající číslic, ale také formátování symboly, jako je symbolem měny (například `$`), tisíců oddělovače nebo *seskupení číslic symboly* (například `,`) a oddělovač desetinných míst (například `.`). `Format` automaticky použije příslušné symbolů podle **místní nastavení** nastavení uvedená v Windows **ovládací panely**.  
+## <a name="conversion-of-numbers-to-strings"></a>Převod čísel na řetězce  
+ Pomocí funkce `Format` můžete převést číslo na formátovaný řetězec, který může obsahovat nejen příslušné číslice, ale také formátování symbolů, jako je například symbol měny (například `$`), oddělovače tisíců nebo *symboly seskupování číslic* (například @no __t_3) a oddělovač desetinných míst (například `.`). `Format` automaticky používá příslušné symboly podle nastavení **místních možností** zadaných v **Ovládacích panelech**systému Windows.  
   
- Všimněte si, že zřetězení (`&`) – operátor lze implicitně převést na číslo na řetězec, jak ukazuje následující příklad.  
+ Všimněte si, že operátor zřetězení (`&`) může převést číslo na řetězec implicitně, jak ukazuje následující příklad.  
   
-```  
+```vb  
 ' The following statement converts count to a String value.  
 Str = "The total count is " & count  
 ```  
   
-## <a name="conversion-of-strings-to-numbers"></a>Převod řetězců na čísla  
- Můžete použít `Val` funkce k explicitnímu převodu číslice v řetězci na číslo. `Val` načte řetězec, dokud nenarazí na znak jiný než číslice, místa, tabulátor, odřádkování nebo období. Sekvence "& O" a "& H" alter základ číselné soustavy a ukončit skenování. Dokud se zastaví čtení, `Val` převede všechny odpovídající znaky na číselnou hodnotu. Například následující příkaz vrátí hodnotu `141.825`.  
+## <a name="conversion-of-strings-to-numbers"></a>Konverze řetězců na čísla  
+ Pomocí funkce `Val` lze explicitně převést číslice v řetězci na číslo. `Val` přečte řetězec, dokud nenalezne znak, který je jiný než číslice, mezera, tabulátor, řádek nebo tečka. Sekvence "& O" a "& H" mění základ číselné soustavy a ukončí kontrolu. Dokud přestane číst, `Val` převede všechny příslušné znaky na číselnou hodnotu. Například následující příkaz vrátí hodnotu `141.825`.  
   
  `Val("   14   1.825 miles")`  
   
- Visual Basic převede řetězec na číselnou hodnotu, použije **místní nastavení** nastavení uvedená v Windows **ovládací panely** k interpretaci tisíců oddělovač, oddělovač desetinných míst, a symbol měny. To znamená, že převod může proběhnout úspěšně pod jednou, ale nejsou jiné nastavení. Například `"$14.20"` je přijatelné v národním prostředí Angličtina (Spojené státy), ale ne v jakékoli francouzské národní prostředí.  
+ Když Visual Basic převede řetězec na číselnou hodnotu, použije nastavení **místní možnosti** zadané v **Ovládacích panelech** systému Windows k interpretaci oddělovače tisíců, oddělovače desetinných míst a symbolu měny. To znamená, že převod může být úspěšný při jednom nastavení, ale ne na jiném. Například `"$14.20"` je přijatelné v národním prostředí anglické (USA), ale ne v jakémkoli francouzském národním prostředí.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [Postupy: Převést objekt na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
+- [Postupy: převod objektu na jiný typ v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
 - [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

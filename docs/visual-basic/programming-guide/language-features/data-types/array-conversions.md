@@ -12,30 +12,30 @@ helpviewer_keywords:
 - conversions [Visual Basic], array types
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-ms.openlocfilehash: f69ed6e0040f33f810d324a76859d448e9dc7632
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 475f3f5357f7c989a30ca9e6c5d32b8cc989436f
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601133"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581850"
 ---
 # <a name="array-conversions-visual-basic"></a>Převody pole (Visual Basic)
-Typ pole lze převést na typ jiné pole, za předpokladu splnění následujících podmínek:  
+Typ pole můžete převést na jiný typ pole, pokud splňujete následující podmínky:  
   
-- **Stejné pořadí.** Rozměry dvě pole musí být stejná, to znamená, že musí mít stejný počet rozměrů. Délky příslušných dimenzí nemusí však být stejné.  
+- **Stejné pořadí.** Pořadí dvou polí musí být stejné, to znamená, že musí mít stejný počet rozměrů. Nicméně délky příslušných dimenzí nemusejí být stejné.  
   
-- **Typ dat prvku.** Datové typy prvky obou polí musí být typy odkazů. Nelze převést `Integer` pole k `Long` pole, nebo dokonce k `Object` pole, protože se účastní alespoň jednu hodnotu typu. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+- **Datový typ elementu.** Datové typy prvků obou polí musí být odkazové typy. Pole `Integer` nelze převést na `Long` pole, ani na pole `Object`, protože se jedná o alespoň jeden typ hodnoty. Další informace naleznete v tématu [typy hodnot a typy odkazů](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
-- **Převoditelnosti.** Převod, rozšíření ani zúžení při, musí být mezi typy prvků dvou polí. Je příklad, který tento požadavek se nezdaří pokus o převod mezi `String` pole a pole třídy odvozené z <xref:System.Attribute?displayProperty=nameWithType>. Tyto dva typy nemají co v běžných a neexistuje žádný převod jakéhokoli druhu mezi nimi.  
+- **Převoditelnosti.** Převod, buď rozšiřující nebo zúžený, musí být možný mezi typy prvků obou polí. Příklad, který tento požadavek neprojde, je pokus o převod mezi `String` polem a polem třídy odvozené z <xref:System.Attribute?displayProperty=nameWithType>. Tyto dva typy nemají nic společného a mezi nimi neexistují žádné konverze žádného druhu.  
   
- Převod jednoho pole typu na jiný je rozšíření ani zúžení v závislosti na tom, jestli je převod odpovídajících prvků rozšíření ani zúžení při. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ Převod jednoho typu pole na jiný je rozšiřující nebo zúžený v závislosti na tom, zda je převod odpovídajících prvků rozšiřující nebo zúžený. Další informace najdete v tématu [rozšiřování a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
 ## <a name="conversion-to-an-object-array"></a>Převod na pole objektů  
- Pokud deklarujete `Object` pole bez inicializuje, jeho typ elementu je `Object` dlouho, dokud zůstává Neinicializovaný. Pokud ji nastavíte na pole určité třídy, převezme typu třídy. Jeho základní typ je však stále `Object`, a můžete ho nastavit následně do jiného objektu array nesouvisejících třídy. Protože všechny třídy odvozovat z `Object`, typ elementu pole z jiné třídy, můžete změnit na jiné třídy.  
+ Při deklaraci pole `Object` bez jeho inicializace je jeho typ prvku `Object`, pokud zůstane Neinicializovaný. Když je nastavena na pole konkrétní třídy, převezme typ dané třídy. Jeho nadřízený typ je však stále `Object` a lze jej následně nastavit na jiné pole nesouvisející třídy. Vzhledem k tomu, že všechny třídy jsou odvozeny z `Object`, můžete změnit typ elementu pole z libovolné třídy na jakoukoliv jinou třídu.  
   
- V následujícím příkladu, neexistuje žádný převod mezi typy `student` a `String`, ale oba jsou odvozeny z `Object`, takže platí všechna přiřazení.  
+ V následujícím příkladu neexistuje žádný převod mezi typy `student` a `String`, ale obě jsou odvozeny z `Object`, takže všechna přiřazení jsou platná.  
   
-```  
+```vb  
 ' Assume student has already been defined as a class.  
 Dim testArray() As Object  
 ' testArray is still an Object array at this point.  
@@ -47,11 +47,11 @@ testArray = names
 ```  
   
 ### <a name="underlying-type-of-an-array"></a>Základní typ pole  
- Pokud deklarujete původně pole s konkrétní třídou, je jeho základní typ elementu třídy. Pokud následně ji nastavíte na pole jiné třídy, musí být převod mezi dvěma třídami.  
+ Pokud jste původně deklarovali pole s určitou třídou, jeho základní typ prvku je tato třída. Pokud jste následně nastavili pole jiné třídy, musí být převod mezi těmito dvěma třídami.  
   
- V následujícím příkladu `students` je `student` pole. Protože neexistuje žádný převod mezi `String` a `student`, poslední příkaz se nezdaří.  
+ V následujícím příkladu je `students` `student` poli. Vzhledem k tomu, že mezi `String` a `student` neexistuje žádný převod, poslední příkaz se nezdařil.  
   
-```  
+```vb  
 Dim students() As student  
 Dim names() As String = New String(3) {"Name0", "Name1", "Name2", "Name3"}  
 students = New Student(3) {}  
@@ -62,10 +62,10 @@ students = names
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
 - [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)
-- [Postupy: Převést objekt na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
+- [Postupy: převod objektu na jiný typ v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)

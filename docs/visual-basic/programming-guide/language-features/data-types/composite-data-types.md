@@ -11,40 +11,40 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: 65ee23c59958eefb94c7ab0c6bef4a7e992a121c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 768559c7a6caf064f7529786675e51ce19667d6b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601184"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581717"
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
-Kromě základní datové typy jazyka Visual Basic nabízí, můžete také sestavit položky k vytvoření různých typů *složené datové typy* například třídy, struktury a pole. Složené datové typy můžete vytvořit ze základních typů a z dalších složené typy. Například můžete definovat pole prvky struktury nebo strukturu s členy pole.  
+Kromě základních datových typů Visual Basic dodávek můžete také sestavit položky různých typů pro vytváření *složených datových typů* , jako jsou struktury, pole a třídy. Můžete sestavit složené datové typy z základních typů a z jiných složených typů. Například můžete definovat pole prvků struktury nebo strukturu s členy pole.  
   
 ## <a name="data-types"></a>Datové typy  
- Složený typ se liší od typu dat jeho součástí. Například pole `Integer` prvky není `Integer` datového typu.  
+ Složený typ se liší od datového typu kterékoli z jeho komponent. Například pole `Integer` prvků není datový typ `Integer`.  
   
- Datový typ pole se obvykle vyjadřuje typ elementu, závorek a čárky podle potřeby. Například jednorozměrné pole `String` elementů je vyjádřena jako `String()`a dvourozměrné pole `Boolean` elementů je vyjádřena jako `Boolean(,)`.  
+ Datový typ pole je obvykle reprezentován pomocí typu prvku, závorek a čárek podle potřeby. Například jednorozměrné pole `String` prvků je reprezentované jako `String()` a dvourozměrné pole `Boolean` prvků je reprezentované jako `Boolean(,)`.  
   
-## <a name="structure-types"></a>Typy struktur  
- Neexistuje žádný jednotlivý typ dat obsahující všechny struktury. Místo toho každá definice struktury představuje jedinečný datový typ, i v případě, že dvě struktury definují stejné prvky ve stejném pořadí. Nicméně pokud vytvoříte dvě nebo víc instancí se stejnou strukturou, Visual Basic je považuje za stejného datového typu.  
+## <a name="structure-types"></a>Typy struktury  
+ Neexistuje žádný jediný datový typ, který by zahrnoval všechny struktury. Místo toho každá definice struktury představuje jedinečný datový typ, a to i v případě, že dvě struktury definují identické prvky ve stejném pořadí. Pokud však vytvoříte dvě nebo více instancí stejné struktury, Visual Basic považují být za stejný datový typ.  
   
 ## <a name="tuples"></a>N-tice
 
-Řazená kolekce členů je zjednodušené strukturu, která obsahuje dvě nebo více polí, jejichž typy jsou předdefinovány. Řazené kolekce členů jsou podporovány, počínaje rokem 2017 jazyka Visual Basic. Řazené kolekce členů se nejčastěji používají k vrácení více hodnot z jedné metody volání bez nutnosti předávat argumenty odkazem nebo balení pole vrácené ve více zobrazené třídy nebo struktury. Zobrazit [řazených kolekcí členů](tuples.md) tématu pro další informace o řazené kolekce členů.
+Řazená kolekce členů je odlehčená struktura, která obsahuje dvě nebo více polí, jejichž typy jsou předdefinované. Řazené kolekce členů jsou podporované od Visual Basic 2017. Řazené kolekce členů se nejčastěji používají pro vracení více hodnot z jednoho volání metody bez nutnosti předávat argumenty odkazem nebo zabalení vrácených polí v rozsáhlejší třídě nebo struktuře. Další informace o řazených kolekcích členů najdete v tématu [řazené kolekce členů](tuples.md) .
 
 ## <a name="array-types"></a>Typy polí  
- Neexistuje žádný jednotlivý typ dat skládající se z aplikací všechna pole. Datový typ konkrétní instanci pole se určuje takto:  
+ Neexistuje žádný jediný datový typ, který by zahrnoval všechna pole. Datový typ konkrétní instance pole je určen následujícím způsobem:  
   
-- Skutečnost, že se pole  
+- Fakt, že se jedná o pole  
   
-- Pořadí (počet rozměrů) v poli  
+- Pořadí (počet rozměrů) pole  
   
 - Typ prvku pole  
   
- Délka dané dimenze zejména, není součástí instance datového typu. Toto dokládá následující příklad.  
+ Konkrétně délka dané dimenze není součástí datového typu instance. Toto dokládá následující příklad.  
   
-```  
+```vb  
 Dim arrayA( ) As Byte = New Byte(12) {}  
 Dim arrayB( ) As Byte = New Byte(100) {}  
 Dim arrayC( ) As Short = New Short(100) {}  
@@ -52,22 +52,22 @@ Dim arrayD( , ) As Short
 Dim arrayE( , ) As Short = New Short(4, 10) {}  
 ```  
   
- V předchozím příkladu pole proměnné `arrayA` a `arrayB` jsou považovány za stejný datový typ. – `Byte()` – i když jsou inicializovány na různých délek. Proměnné `arrayB` a `arrayC` nejsou stejného typu, protože jejich typy elementů se liší. Proměnné `arrayC` a `arrayD` nejsou stejného typu, protože jejich pořadí se liší. Proměnné `arrayD` a `arrayE` mají stejný typ – `Short(,)` – protože jejich pořadí a typy elementů jsou stejné, i když `arrayD` ještě není inicializovaná.  
+ V předchozím příkladu jsou proměnné pole `arrayA` a `arrayB` považovány za stejný datový typ – `Byte()`, i když jsou inicializovány na jinou délku. Proměnné `arrayB` a `arrayC` nejsou stejného typu, protože jejich typy elementů se liší. Proměnné `arrayC` a `arrayD` nejsou stejného typu, protože se liší jejich pořadí. Proměnné `arrayD` a `arrayE` mají stejný typ – `Short(,)`, protože jejich typy pořadí a elementů jsou stejné, i když `arrayD` ještě není inicializovaný.  
   
- Další informace o polích naleznete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další informace o polích naleznete v tématu [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="class-types"></a>Typy tříd  
- Neexistuje žádný jednotlivý typ dat obsahující všechny třídy. I když jedna třída může dědit z jiné třídy, každá je samostatná datová typu. Více instancí jedné třídy mají stejný datový typ. Pokud přiřadíte jednu proměnnou instance třídy na jiný, nejen mají stejný datový typ., ukazují na stejnou instanci třídy v paměti.  
+ Neexistuje žádný jediný datový typ obsahující všechny třídy. I když jedna třída může dědit z jiné třídy, každý z nich je samostatný datový typ. Více instancí stejné třídy je stejného datového typu. Pokud přiřadíte jednu proměnnou instance třídy k druhému, nikoli pouze stejný datový typ, nasměrují na stejnou instanci třídy v paměti.  
   
- Další informace o třídách naleznete v tématu [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+ Další informace o třídách naleznete v tématu [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Postupy: Uchování více než jedné hodnoty v proměnné](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)
+- [Postupy: Do proměnné umístit více než jednu hodnotu](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)

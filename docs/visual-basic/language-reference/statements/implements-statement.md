@@ -9,54 +9,54 @@ helpviewer_keywords:
 - Implements statement [Visual Basic]
 - interface implementation [Visual Basic], Implements statement
 ms.assetid: 1fafb83f-f55a-4215-8ea9-681e8622613d
-ms.openlocfilehash: 1f0c6b052ead303e0b43465dac2067422abc4ef8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 865e99aa0e27591d10fde1465047a2e6bf183bbf
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61637736"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581794"
 ---
 # <a name="implements-statement"></a>Implements – Příkaz
-Určuje jeden nebo více rozhraní, nebo člen rozhraní, které musí být implementován ve třídě nebo definice struktury, ve kterém se zobrazí.  
+Určuje jedno nebo více rozhraní nebo členů rozhraní, které musí být implementovány v definici třídy nebo struktury, ve které se zobrazí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Implements interfacename [, ...]  
--or-  
+' -or-  
 Implements interfacename.interfacemember [, ...]  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `interfacename`  
- Povinný parametr. Rozhraní, jehož vlastnosti, procedury a události jsou k implementaci odpovídající členy třídy nebo struktury.  
+ Požadováno. Rozhraní, jehož vlastnosti, procedury a události mají být implementovány odpovídajícími členy třídy nebo struktury.  
   
  `interfacemember`  
- Povinný parametr. Člen rozhraní, které se implementuje.  
+ Požadováno. Člen rozhraní, které je implementováno.  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní je kolekce představující členy (vlastnosti, procedury a události) prototypů zapouzdřuje rozhraní. Rozhraní obsahovat pouze deklarace pro členy. třídy a struktury implementace těchto členů. Další informace najdete v tématu [rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
+ Rozhraní je kolekce prototypů představujících členy (vlastnosti, procedury a události) zapouzdření rozhraní. Rozhraní obsahují pouze deklarace členů; třídy a struktury implementují tyto členy. Další informace naleznete v tématu [rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
   
- `Implements` Příkaz musí následovat bezprostředně `Class` nebo `Structure` příkazu.  
+ Příkaz `Implements` musí bezprostředně následovat po příkazu `Class` nebo `Structure`.  
   
- Při implementaci rozhraní, musí implementovat všechny členy deklarované v rozhraní. Každý člen s vynecháním se považuje za chybu syntaxe. Chcete-li implementovat jednotliví členové, zadejte [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md) – klíčové slovo (které jsou oddělené od `Implements` příkaz) Pokud deklarujete člena třídy nebo struktury. Další informace najdete v tématu [rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
+ Při implementaci rozhraní je nutné implementovat všechny členy deklarované v rozhraní. Vynechání všech členů je považováno za chybu syntaxe. Chcete-li implementovat jednotlivé členy, zadáte klíčové slovo [Implements](../../../visual-basic/language-reference/statements/implements-clause.md) (které je odděleno od příkazu `Implements`), pokud deklarujete člena ve třídě nebo struktuře. Další informace naleznete v tématu [rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
   
- Můžete použít třídy [privátní](../../../visual-basic/language-reference/modifiers/private.md) implementace vlastnosti a postupy, ale tyto členy jsou přístupné pouze pomocí přetypování instance implementující třídu do proměnné deklarované se typ rozhraní.  
+ Třídy mohou používat [privátní](../../../visual-basic/language-reference/modifiers/private.md) implementace vlastností a postupů, ale tyto členy jsou přístupné pouze přetypováním instance implementující třídy do proměnné deklarované jako typ rozhraní.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `Implements` příkaz implementovat členy rozhraní. Definuje rozhraní s názvem `ICustomerInfo` událost, vlastnosti a procedury. Třída `customerInfo` implementuje všechny členy definované v rozhraní.  
+ Následující příklad ukazuje, jak použít příkaz `Implements` pro implementaci členů rozhraní. Definuje rozhraní s názvem `ICustomerInfo` s událostí, vlastností a procedurou. Třída `customerInfo` implementuje všechny členy definované v rozhraní.  
   
  [!code-vb[VbVbalrStatements#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#33)]  
   
- Všimněte si, že třída `customerInfo` používá `Implements` příkazem na řádku samostatného zdrojového kódu k označení, že třída implementuje všechny členy `ICustomerInfo` rozhraní. Poté každý člen ve třídě, použije `Implements` – klíčové slovo jako součást její deklarace člena k označení, že implementuje člena rozhraní.  
+ Všimněte si, že třída `customerInfo` používá příkaz `Implements` na samostatné řádce zdrojového kódu k označení toho, že třída implementuje všechny členy rozhraní `ICustomerInfo`. Pak každý člen ve třídě používá klíčové slovo `Implements` jako součást své deklarace členů, aby označoval, že implementuje tento člen rozhraní.  
   
 ## <a name="example"></a>Příklad  
- Následující dva postupy ukazují, jak můžete použít rozhraní implementované v předchozím příkladu. K otestování implementace, přidejte do projektu a volání těchto postupů `testImplements` postup.  
+ Následující dva postupy ukazují, jak můžete použít rozhraní implementované v předchozím příkladu. Chcete-li otestovat implementaci, přidejte tyto procedury do projektu a zavolejte `testImplements` proceduru.  
   
  [!code-vb[VbVbalrStatements#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#34)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Implementuje](../../../visual-basic/language-reference/statements/implements-clause.md)
+- [Implementace](../../../visual-basic/language-reference/statements/implements-clause.md)
 - [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

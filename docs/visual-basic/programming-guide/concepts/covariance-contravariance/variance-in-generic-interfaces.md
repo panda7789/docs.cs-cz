@@ -1,99 +1,100 @@
 ---
-title: Odchylky obecných rozhraní (Visual Basic)
+title: Variance v obecných rozhraních (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: cf4096d0-4bb3-45a9-9a6b-f01e29a60333
-ms.openlocfilehash: 93e169f658a855e3b271e3e3affeadac5d7e5032
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5e849d59148e83b76da56ed6105a31a6077a3d70
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642386"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583344"
 ---
-# <a name="variance-in-generic-interfaces-visual-basic"></a>Odchylky obecných rozhraní (Visual Basic)
-Rozhraní .NET framework 4 zavedena podpora odchylku pro existující několik obecných rozhraní. Podpora Variance umožňuje implicitní převod z třídy, které implementují tato rozhraní. Následující rozhraní jsou nyní variant:  
-  
-- <xref:System.Collections.Generic.IEnumerable%601> (T je kovariantní)  
-  
-- <xref:System.Collections.Generic.IEnumerator%601> (T je kovariantní)  
-  
-- <xref:System.Linq.IQueryable%601> (T je kovariantní)  
-  
-- <xref:System.Linq.IGrouping%602> (`TKey` a `TElement` jsou kovariantní.)  
-  
-- <xref:System.Collections.Generic.IComparer%601> (T je kontravariantní.)  
-  
-- <xref:System.Collections.Generic.IEqualityComparer%601> (T je kontravariantní.)  
-  
-- <xref:System.IComparable%601> (T je kontravariantní.)  
-  
- Kovariance povoluje metoda může mít více odvozený návratový typ, než je definován parametr obecného typu rozhraní. K ilustraci této funkce kovariance, vezměte v úvahu těmito obecnými rozhraními: `IEnumerable(Of Object)` a `IEnumerable(Of String)`. `IEnumerable(Of String)` Rozhraní nedědí `IEnumerable(Of Object)` rozhraní. Ale `String` typ dědit `Object` typ a v některých případech můžete chtít přiřadit objekty z těchto rozhraní k sobě navzájem. To je ukázáno v následujícím příkladu kódu.  
-  
-```vb  
-Dim strings As IEnumerable(Of String) = New List(Of String)  
-Dim objects As IEnumerable(Of Object) = strings  
-```  
-  
- V dřívějších verzích rozhraní .NET Framework, tento kód způsobí chybu kompilace v jazyce Visual Basic s `Option Strict On`. Nyní můžete použít, ale `strings` místo `objects`, jak je znázorněno v předchozím příkladu, protože <xref:System.Collections.Generic.IEnumerable%601> rozhraní je kovariantní.  
-  
- Kontravariance umožní metoda může mít typy argumentů, které jsou méně odvozený než je určeno obecný parametr rozhraní. Pro ilustraci kontravariance se předpokládá, že jste vytvořili `BaseComparer` třídy k porovnání instance `BaseClass` třídy. `BaseComparer` Implementuje třída `IEqualityComparer(Of BaseClass)` rozhraní. Protože <xref:System.Collections.Generic.IEqualityComparer%601> rozhraní je kontravariantní, můžete použít `BaseComparer` k porovnání instance tříd, které dědí `BaseClass` třídy. To je ukázáno v následujícím příkladu kódu.  
-  
-```vb  
-' Simple hierarchy of classes.  
-Class BaseClass  
-End Class  
-  
-Class DerivedClass  
-    Inherits BaseClass  
-End Class  
-  
-' Comparer class.  
-Class BaseComparer  
-    Implements IEqualityComparer(Of BaseClass)  
-  
-    Public Function Equals1(ByVal x As BaseClass,  
-                            ByVal y As BaseClass) As Boolean _  
-                            Implements IEqualityComparer(Of BaseClass).Equals  
-        Return (x.Equals(y))  
-    End Function  
-  
-    Public Function GetHashCode1(ByVal obj As BaseClass) As Integer _  
-        Implements IEqualityComparer(Of BaseClass).GetHashCode  
-        Return obj.GetHashCode  
-    End Function  
-End Class  
-Sub Test()  
-    Dim baseComparer As IEqualityComparer(Of BaseClass) = New BaseComparer  
-    ' Implicit conversion of IEqualityComparer(Of BaseClass) to   
-    ' IEqualityComparer(Of DerivedClass).  
-    Dim childComparer As IEqualityComparer(Of DerivedClass) = baseComparer  
-End Sub  
-```  
-  
- Další příklady najdete v tématu [použití odchylky v rozhraní pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md).  
-  
- Odchylky obecných rozhraní je podporována pouze pro typy odkazů. Typy hodnot nepodporují variance. Například `IEnumerable(Of Integer)` nejde implicitně převést na `IEnumerable(Of Object)`, protože celá čísla jsou reprezentovány hodnotového typu.  
-  
-```vb  
-Dim integers As IEnumerable(Of Integer) = New List(Of Integer)  
-' The following statement generates a compiler error  
-' with Option Strict On, because Integer is a value type.  
-' Dim objects As IEnumerable(Of Object) = integers  
-```  
-  
- Taky je dobré si uvědomit, že jsou stále invariantní třídy, které implementují rozhraní variant. Například i když <xref:System.Collections.Generic.List%601> implementuje rozhraní kovariantní <xref:System.Collections.Generic.IEnumerable%601>, nelze implicitně převést `List(Of Object)` k `List(Of String)`. To je znázorněno v následujícím příkladu kódu.  
-  
-```vb  
-' The following statement generates a compiler error  
-' because classes are invariant.  
-' Dim list As List(Of Object) = New List(Of String)  
-  
-' You can use the interface object instead.  
-Dim listObjects As IEnumerable(Of Object) = New List(Of String)  
-```  
-  
+# <a name="variance-in-generic-interfaces-visual-basic"></a>Variance v obecných rozhraních (Visual Basic)
+
+.NET Framework 4 představili podporu variance pro několik existujících obecných rozhraní. Podpora variance umožňuje implicitní převod tříd, které implementují tato rozhraní. Nyní jsou k disvariantě následující rozhraní:
+
+- <xref:System.Collections.Generic.IEnumerable%601> (T je kovariantní)
+
+- <xref:System.Collections.Generic.IEnumerator%601> (T je kovariantní)
+
+- <xref:System.Linq.IQueryable%601> (T je kovariantní)
+
+- <xref:System.Linq.IGrouping%602> (`TKey` a `TElement` jsou kovariantní)
+
+- <xref:System.Collections.Generic.IComparer%601> (T je kontravariantní)
+
+- <xref:System.Collections.Generic.IEqualityComparer%601> (T je kontravariantní)
+
+- <xref:System.IComparable%601> (T je kontravariantní)
+
+Kovariance povoluje, aby metoda měla více odvozený návratový typ, než je definováno parametrem obecného typu rozhraní. Pro ilustraci funkce kovariance zvažte Tato obecná rozhraní: `IEnumerable(Of Object)` a `IEnumerable(Of String)`. Rozhraní `IEnumerable(Of String)` nedědí rozhraní `IEnumerable(Of Object)`. Typ `String` však zdědí typ `Object` a v některých případech může být vhodné přiřadit objekty těchto rozhraní k sobě navzájem. Toto je znázorněno v následujícím příkladu kódu.
+
+```vb
+Dim strings As IEnumerable(Of String) = New List(Of String)
+Dim objects As IEnumerable(Of Object) = strings
+```
+
+V dřívějších verzích .NET Framework Tento kód způsobuje chybu kompilace v Visual Basic s `Option Strict On`. Teď ale můžete místo `objects` použít `strings`, jak je znázorněno v předchozím příkladu, protože rozhraní <xref:System.Collections.Generic.IEnumerable%601> je kovariantní.
+
+Kontravariance umožňuje, aby metoda měla typy argumentů, které jsou méně odvozené než zadané obecným parametrem rozhraní. Pro ilustraci aplikace kontravariance Předpokládejme, že jste vytvořili třídu `BaseComparer` pro porovnání instancí třídy `BaseClass`. Třída `BaseComparer` implementuje rozhraní `IEqualityComparer(Of BaseClass)`. Vzhledem k tomu, že rozhraní <xref:System.Collections.Generic.IEqualityComparer%601> je nyní kontravariantní, lze pomocí `BaseComparer` porovnat instance tříd, které dědí třídu `BaseClass`. Toto je znázorněno v následujícím příkladu kódu.
+
+```vb
+' Simple hierarchy of classes.
+Class BaseClass
+End Class
+
+Class DerivedClass
+    Inherits BaseClass
+End Class
+
+' Comparer class.
+Class BaseComparer
+    Implements IEqualityComparer(Of BaseClass)
+
+    Public Function Equals1(ByVal x As BaseClass,
+                            ByVal y As BaseClass) As Boolean _
+                            Implements IEqualityComparer(Of BaseClass).Equals
+        Return (x.Equals(y))
+    End Function
+
+    Public Function GetHashCode1(ByVal obj As BaseClass) As Integer _
+        Implements IEqualityComparer(Of BaseClass).GetHashCode
+        Return obj.GetHashCode
+    End Function
+End Class
+Sub Test()
+    Dim baseComparer As IEqualityComparer(Of BaseClass) = New BaseComparer
+    ' Implicit conversion of IEqualityComparer(Of BaseClass) to
+    ' IEqualityComparer(Of DerivedClass).
+    Dim childComparer As IEqualityComparer(Of DerivedClass) = baseComparer
+End Sub
+```
+
+Další příklady naleznete v tématu [použití variance v rozhraních pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md).
+
+Variance v obecných rozhraních je podporován pouze pro typy odkazů. Typy hodnot nepodporují odchylku. Například `IEnumerable(Of Integer)` nelze implicitně převést na `IEnumerable(Of Object)`, protože celá čísla jsou reprezentována typem hodnoty.
+
+```vb
+Dim integers As IEnumerable(Of Integer) = New List(Of Integer)
+' The following statement generates a compiler error
+' with Option Strict On, because Integer is a value type.
+' Dim objects As IEnumerable(Of Object) = integers
+```
+
+Je také důležité pamatovat na to, že třídy, které implementují variantní rozhraní, jsou stále invariantní. Například i když <xref:System.Collections.Generic.List%601> implementuje kovariantní rozhraní <xref:System.Collections.Generic.IEnumerable%601>, nelze implicitně převést `List(Of Object)` na `List(Of String)`. To je znázorněno v následujícím příkladu kódu.
+
+```vb
+' The following statement generates a compiler error
+' because classes are invariant.
+' Dim list As List(Of Object) = New List(Of String)
+
+' You can use the interface object instead.
+Dim listObjects As IEnumerable(Of Object) = New List(Of String)
+```
+
 ## <a name="see-also"></a>Viz také:
 
-- [Použití odchylky v rozhraní pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)
+- [Použití variance v rozhraních pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)
 - [Vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)
 - [Obecná rozhraní](../../../../standard/generics/interfaces.md)
-- [Odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
+- [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)

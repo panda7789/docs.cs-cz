@@ -7,19 +7,19 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: 880b4cf75d518506d2bcf788ad8460274dcccefc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a8260da4d2224551de71fd54f734007c7fa214f
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638206"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583460"
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
-Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared` metodu typu nebo metodě instance objektu. Všechny procedury s parametry a návratovým typem odpovídajícím lze použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instance delegátu.  
+Slouží k deklaraci delegáta. Delegát je odkazový typ, který odkazuje na metodu `Shared` typu nebo na metodu instance objektu. Pro vytvoření instance této třídy delegáta lze použít jakýkoli postup se shodnými typy parametrů a návratových typů. Postup může být později vyvolán prostřednictvím instance delegáta.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attrlist> ] [ accessmodifier ] _  
 [ Shadows ] Delegate [ Sub | Function ] name [( Of typeparamlist )] [([ parameterlist ])] [ As type ]  
 ```  
@@ -28,49 +28,49 @@ Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared`
   
 |Termín|Definice|  
 |---|---|  
-|`attrlist`|Volitelné. Seznam atributů, které platí pro tohoto delegáta. Více atributů jsou odděleny čárkami. Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").|  
-|`accessmodifier`|Volitelné. Určuje, jaký kód může přistupovat k delegáta. Může být jedna z následujících akcí:<br /><br /> - [Veřejné](../../../visual-basic/language-reference/modifiers/public.md). Veškerý kód, který může přistupovat k elementu, který deklaruje delegáta k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md). Pouze kód uvnitř třídy delegáta nebo odvozené třídy k němu přístup.<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md). Pouze kód v rámci stejného sestavení můžete přistupovat k delegátu.<br />- [Privátní](../../../visual-basic/language-reference/modifiers/private.md). Pouze kód v rámci elementu, který deklaruje delegáta k němu přístup.<br /><br /> - [Protected Friend](../../language-reference/modifiers/protected-friend.md) pouze kód uvnitř třídy delegáta, odvozené třídy nebo stejného sestavení můžete přistupovat k delegáta. <br />- [Privátní chráněné](../../language-reference/modifiers/private-protected.md) pouze kód v rámci třídy delegáta nebo v odvozené třídě ve stejném sestavení můžete přistupovat k delegátu. |  
-|`Shadows`|Volitelné. Označuje, že tento delegát znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě. Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu.<br /><br /> Stínovaný element je k dispozici v rámci odvozené třídy, která zastiňuje, s výjimkou z kde stínového provozu prvek je přístupný. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.|  
-|`Sub`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Deklaruje tento postup jako delegát `Sub` proceduru, která nevrací hodnotu.|  
-|`Function`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Deklaruje tento postup jako delegát `Function` proceduru, která vrací hodnotu.|  
-|`name`|Povinný parametr. Název typu delegáta; splňuje standardní zásady vytváření názvů proměnných.|  
-|`typeparamlist`|Volitelné. Seznam parametrů typu pro tohoto delegáta. Více typy parametrů jsou odděleny čárkami. Volitelně můžete každý parametr typu lze deklarovat typ variant pomocí `In` a `Out` obecných parametrů. Je nutné uzavřít [seznam typů](../../../visual-basic/language-reference/statements/type-list.md) v závorkách a zavést ji `Of` – klíčové slovo.|  
-|`parameterlist`|Volitelné. Seznam parametrů, které jsou předány na postup, když je volána. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
-|`type`|Povinné, pokud zadáte `Function` postup. Datový typ vrácené hodnoty.|  
+|`attrlist`|Volitelné. Seznam atributů, které se vztahují na tohoto delegáta. Více atributů je odděleno čárkami. [Seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) je nutné uzavřít do lomených závorek ("`<`" a "`>`").|  
+|`accessmodifier`|Volitelné. Určuje, který kód má přístup k delegátovi. Může to být jedna z následujících:<br /><br /> - [veřejné](../../../visual-basic/language-reference/modifiers/public.md). Jakýkoli kód, který má přístup k prvku, který deklaruje delegáta, má k němu přístup.<br />-   [chráněno](../../../visual-basic/language-reference/modifiers/protected.md). K němu má přístup pouze kód v rámci třídy delegáta nebo odvozené třídy.<br />-   [přítele](../../../visual-basic/language-reference/modifiers/friend.md). K delegátovi může přistupovat pouze kód v rámci stejného sestavení.<br />- [privátní](../../../visual-basic/language-reference/modifiers/private.md). K němu má přístup pouze kód v rámci elementu, který deklaruje delegáta.<br /><br /> k delegátovi mají přístup pouze kód, který je v rámci třídy delegáta - [chráněný](../../language-reference/modifiers/protected-friend.md) jenom v rámci odvozené třídy nebo stejného sestavení. <br />k delegátovi mají přístup pouze kód, který je v rámci třídy delegáta nebo v odvozené třídě ve stejném sestavení -  pouze[soukromým chráněným](../../language-reference/modifiers/private-protected.md) kódem. |  
+|`Shadows`|Volitelné. Označuje, že tento delegát předeklaruje a skryje identicky pojmenovaný prvek programování nebo sadu přetížených prvků v základní třídě. Můžete vystínovat jakýkoliv druh deklarovaného prvku s jakýmkoli jiným druhem.<br /><br /> Stínovaný element není k dispozici v odvozené třídě, která ho nastínuje, s výjimkou, kde není k dispozici stínový element. Například pokud `Private` element stínování elementu základní třídy, kód, který nemá oprávnění pro přístup k `Private` elementu, přistupuje k elementu základní třídy místo toho.|  
+|`Sub`|Volitelné, ale musí se zobrazit buď `Sub`, nebo `Function`. Deklaruje tuto proceduru jako delegáta `Sub` proceduru, která nevrací hodnotu.|  
+|`Function`|Volitelné, ale musí se zobrazit buď `Sub`, nebo `Function`. Deklaruje tuto proceduru jako delegáta `Function` proceduru, která vrací hodnotu.|  
+|`name`|Požadováno. Název typu delegáta; Následují standardní zásady vytváření názvů proměnných.|  
+|`typeparamlist`|Volitelné. Seznam parametrů typu pro tohoto delegáta. Vícenásobné parametry typu jsou odděleny čárkami. Volitelně lze každý parametr typu deklarovat jako typ variant pomocí `In` a `Out` obecných modifikátorů. [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md) musíte uzavřít do závorek a vložit ho pomocí klíčového slova `Of`.|  
+|`parameterlist`|Volitelné. Seznam parametrů, které jsou předány proceduře při volání. [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) musí být uzavřen v závorkách.|  
+|`type`|Vyžaduje se, pokud zadáte proceduru `Function`. Datový typ návratové hodnoty|  
   
 ## <a name="remarks"></a>Poznámky  
- `Delegate` Prohlášení definuje parametry a návratovým typem třídy delegáta. Všechny procedury s odpovídající parametry a návratové typy lze použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instance delegátu po zavolání delegáta `Invoke` metody.  
+ Příkaz `Delegate` definuje parametry a návratové typy třídy delegáta. K vytvoření instance této třídy delegáta lze použít jakýkoli postup se shodnými parametry a návratovým typem. Postup lze později vyvolat prostřednictvím instance delegáta voláním metody `Invoke` delegáta.  
   
- Delegáty lze deklarovat v oboru názvů, modulu, třídy nebo struktury úroveň, ale ne v rámci procedury.  
+ Delegáty lze deklarovat na úrovni oboru názvů, modulu, třídy nebo struktury, ale ne v rámci procedury.  
   
- Každá třída delegáta je definován konstruktor, který je předán specifikace metodu objektu. Argument pro konstruktor delegate musí být odkaz na metodu nebo výraz lambda.  
+ Každá třída delegáta definuje konstruktor, který je předán specifikaci metody objektu. Argument konstruktoru delegáta musí být odkazem na metodu nebo výraz lambda.  
   
- Pokud chcete zadat odkaz na metodu, použijte následující syntaxi:  
+ Chcete-li zadat odkaz na metodu, použijte následující syntaxi:  
   
- `AddressOf` [`expression`.]`methodname`  
+ `AddressOf` [`expression`.] `methodname`  
   
- Typ kompilace `expression` musí být názvem třídy nebo rozhraní, které obsahuje metodu se zadaným názvem, jehož předpis shoduje se signaturou třídy delegáta. `methodname` Může být buď sdílené metody nebo metodu instance. `methodname` Není volitelný, i v případě vytvoření delegáta pro výchozí metodu třídy.  
+ Typ doby kompilace `expression` musí být název třídy nebo rozhraní, které obsahuje metodu zadaného názvu, jejíž signatura odpovídá signatuře třídy Delegate. @No__t_0 může být buď sdílená metoda, nebo metoda instance. @No__t_0 není volitelná, i když vytvoříte delegáta pro výchozí metodu třídy.  
   
- Pokud chcete zadat výraz lambda, použijte následující syntaxi:  
+ Chcete-li zadat výraz lambda, použijte následující syntaxi:  
   
- `Function` ([`parm` Jako `type`, `parm2` jako `type2`;...]) `expression`  
+ `Function` ([`parm` as `type` `parm2` jako `type2`,...])  `expression`  
   
- Signatura funkce musí odpovídat typu delegátu. Další informace o výrazech lambda naleznete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Signatura funkce musí odpovídat typu delegáta. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
- Další informace o delegátech naleznete v tématu [delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md).  
+ Další informace o delegátech naleznete v tématu [Delegates](../../../visual-basic/programming-guide/language-features/delegates/index.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Delegate` příkaz deklarovat delegáta pro účely provozování na dvou čísel a vrátí číslo. `DelegateTest` Metoda použije instanci tohoto typu delegáta a použije ho k pracovat s páry čísel.  
+ Následující příklad používá příkaz `Delegate` k deklaraci delegáta pro provoz na dvou číslech a vrácení čísla. Metoda `DelegateTest` přebírá instanci delegáta tohoto typu a používá ho k provozování párů čísel.  
   
  [!code-vb[VbVbalrDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#14)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [z](../../../visual-basic/language-reference/statements/of-clause.md)
-- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Tohoto](../../../visual-basic/language-reference/statements/of-clause.md)
+- [Delegáty](../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
-- [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
-- [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

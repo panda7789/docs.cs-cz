@@ -17,159 +17,167 @@ helpviewer_keywords:
 - Operator statement [Visual Basic]
 - CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
-ms.openlocfilehash: 4162f7cb5d8b89a1e5e8e7db429cf4e8dd9b700a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c4fae40992fa665121aff637ae427ef0cafbf547
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583592"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582386"
 ---
 # <a name="operator-statement"></a>Operator – příkaz
-Deklaruje symbol operátoru, operandy a kód, který definuje proceduru operátoru pro třídu nebo strukturu.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-[ <attrlist> ] Public [ Overloads ] Shared [ Shadows ] [ Widening | Narrowing ]   
-Operator operatorsymbol ( operand1 [, operand2 ]) [ As [ <attrlist> ] type ]  
-    [ statements ]  
-    [ statements ]  
-    Return returnvalue  
-    [ statements ]  
-End Operator  
-```  
-  
-## <a name="parts"></a>Součásti  
- `attrlist`  
- Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
-  
- `Public`  
- Povinný parametr. Označuje, že tento postup operátor [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup.  
-  
- `Overloads`  
- Volitelné. Zobrazit [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md).  
-  
- `Shared`  
- Povinný parametr. Označuje, že je tento postup operátor [Shared](../../../visual-basic/language-reference/modifiers/shared.md) postup.  
-  
- `Shadows`  
- Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).  
-  
- `Widening`  
- Vyžaduje se pro operátor převodu, pokud zadáte `Narrowing`. Označuje, že tento postup operátor definuje [Widening](../../../visual-basic/language-reference/modifiers/widening.md) převodu. Na tuto stránku nápovědy naleznete v tématu "Rozšíření a zúžení převodů".  
-  
- `Narrowing`  
- Vyžaduje se pro operátor převodu, pokud zadáte `Widening`. Označuje, že tento postup operátor definuje [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md) převodu. Na tuto stránku nápovědy naleznete v tématu "Rozšíření a zúžení převodů".  
-  
- `operatorsymbol`  
- Povinný parametr. Symbol nebo identifikátor operátor, který definuje této procedury operátora.  
-  
- `operand1`  
- Povinný parametr. Název a typ jeden operand unárního operátoru (včetně operátor převodu) nebo levý operand binárního operátoru.  
-  
- `operand2`  
- Vyžaduje se pro binární operátory. Název a typ pravý operand binárního operátoru.  
-  
- `operand1` a `operand2` mají následující syntaxi a části:  
-  
- `[ ByVal ] operandname [ As operandtype ]`  
-  
-|Část|Popis|  
-|----------|-----------------|  
-|`ByVal`|Musí být nepovinné, ale mechanismus předávání [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).|  
-|`operandname`|Povinný parametr. Název proměnné představující tento operand. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`operandtype`|Volitelné Pokud `Option Strict` je `On`. Datový typ tohoto operandu.|  
-  
- `type`  
- Volitelné Pokud `Option Strict` je `On`. Vrací datový typ hodnoty procedury operátora.  
-  
- `statements`  
- Volitelné. Blok příkazů, které spouští procedury operátora.  
-  
- `returnvalue`  
- Povinný parametr. Hodnota, která procedury operátora vrátí volajícímu kódu.  
-  
- `End``Operator`  
- Povinný parametr. Ukončí definici této procedury operátora.  
-  
-## <a name="remarks"></a>Poznámky  
- Můžete použít `Operator` pouze ve třídě nebo struktuře. To znamená, že *kontext deklarace* operátor nesmí být zdrojový soubor, obor názvů, modulu, rozhraní, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
-  
- Musí být všechny operátory `Public Shared`. Nelze zadat `ByRef`, `Optional`, nebo `ParamArray` pro jeden z operandů.  
-  
- Symbol operátoru nebo identifikátor nelze použít k uložení návratovou hodnotu. Je nutné použít `Return` příkaz který musíte zadat hodnotu. Libovolný počet `Return` příkazů může vyskytovat kdekoli v postupu.  
-  
- Definování operátor tento způsob se nazývá *přetížení operátoru*to, jestli používáte `Overloads` – klíčové slovo. V následující tabulce jsou uvedeny operátory, které můžete definovat.  
-  
-|Type|Operátory|  
-|----------|---------------|  
-|Unární|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
-|binární|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
-|Převod (unární)|`CType`|  
-  
- Všimněte si, že `=` operátor v binárním seznamu je relační operátor, operátor přiřazení.  
-  
- Při definování `CType`, musíte zadat buď `Widening` nebo `Narrowing`.  
-  
-## <a name="matched-pairs"></a>Odpovídající páry  
- Některé operátory je nutné definovat jako odpovídající dvojice. Pokud definujete buď operátor tyto dvojice, je nutné definovat druhé také. Odpovídající páry jsou následující:  
-  
-- `=` a `<>`  
-  
-- `>` a `<`  
-  
-- `>=` a `<=`  
-  
-- `IsTrue` a `IsFalse`  
-  
-## <a name="data-type-restrictions"></a>Omezení typu dat  
- Každý operátor, který definujete musí zahrnovat třídy nebo struktury, ve kterém můžete definovat. To znamená, že třída nebo struktura musí být uvedena jako datový typ z následujících akcí:  
-  
-- Operand unárního operátoru.  
-  
-- Nejméně jeden z operandů binárního operátoru.  
-  
-- Operand nebo návratového typu operátoru převodu.  
-  
- Některé operátory mají další datový typ omezení, následujícím způsobem:  
-  
-- Pokud definujete `IsTrue` a `IsFalse` operátory, musí oba vracejí `Boolean` typu.  
-  
-- Pokud definujete `<<` a `>>` operátory, je nutné obojí zadat `Integer` zadejte `operandtype` z `operand2`.  
-  
- Návratový typ nemá tak, aby odpovídaly typu jeden z operandů. Například operátor porovnání jako `=` nebo `<>` může vrátit `Boolean` i v případě, že ani jeden operand není `Boolean`.  
-  
-## <a name="logical-and-bitwise-operators"></a>Logické a bitové operátory  
- `And`, `Or`, `Not`, A `Xor` operátory mohou provádět logické a bitové operace v jazyce Visual Basic. Ale pokud definujete jeden z těchto operátorů v třídě nebo struktuře, můžete definovat pouze jeho bitová operace.  
-  
- Nelze definovat `AndAlso` operátor přímo s `Operator` příkazu. Můžete však použít `AndAlso` Pokud jste splnili tyto podmínky:  
-  
-- Jste definovali `And` na stejné typy operandů, kterou chcete použít pro `AndAlso`.  
-  
-- Definice `And` vrátí hodnotu stejného typu jako třídy nebo struktury, na kterém jste ji definovali.  
-  
-- Jste definovali `IsFalse` operátor v třídě nebo struktuře, na které jste definovali `And`.  
-  
- Podobně můžete použít `OrElse` Pokud jste definovali `Or` u stejné operandů s návratovým typem třídy nebo struktury a jste definovali `IsTrue` v třídě nebo struktuře.  
-  
-## <a name="widening-and-narrowing-conversions"></a>Rozšíření a zúžení převodů  
- A *rozšiřující převod* vždy úspěšná v době běhu, zatímco *zužující převod* za běhu nemusí zdařit. Další informace najdete v tématu [Widening a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
-  
- Pokud deklarujete proceduru převod bude `Widening`, váš kód procedury nesmí generovat žádné chyby. To znamená, následující:  
-  
-- Platná hodnota typu musí vracet vždycky `type`.  
-  
-- Je musí zpracovat všechny výjimky a další chybové stavy.  
-  
-- Vrátí všechny chyby z všechny postupy, které volá, je musí zpracovat.  
-  
- Pokud existuje riziko, které by se nemusela podařit proceduru převod, nebo ji může dojít k neošetřené výjimce, je třeba deklarovat bude `Narrowing`.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Operator` příkaz k definování obrysu strukturu, která zahrnuje procedury operátoru pro `And`, `Or`, `IsFalse`, a `IsTrue` operátory. `And` a `Or` každý používají dva operandy typu `abc` a návratový typ `abc`. `IsFalse` a `IsTrue` každá vzít jeden operand typu `abc` a vrátit `Boolean`. Tyto definice povolit, aby volající kód použít `And`, `AndAlso`, `Or`, a `OrElse` s operandy typu `abc`.  
-  
- [!code-vb[VbVbalrStatements#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#44)]  
-  
+
+Deklaruje symbol operátoru, operandy a kód, který definuje proceduru operátoru pro třídu nebo strukturu.
+
+## <a name="syntax"></a>Syntaxe
+
+```vb
+[ <attrlist> ] Public [ Overloads ] Shared [ Shadows ] [ Widening | Narrowing ]
+Operator operatorsymbol ( operand1 [, operand2 ]) [ As [ <attrlist> ] type ]
+    [ statements ]
+    [ statements ]
+    Return returnvalue
+    [ statements ]
+End Operator
+```
+
+## <a name="parts"></a>Součásti
+
+`attrlist`  
+Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).
+
+`Public`  
+Požadováno. Označuje, že tato procedura operátoru má [veřejný](../../../visual-basic/language-reference/modifiers/public.md) přístup.
+
+`Overloads`  
+Volitelné. Viz [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md).
+
+`Shared`  
+Požadováno. Označuje, že procedura tohoto operátoru je [sdílená](../../../visual-basic/language-reference/modifiers/shared.md) procedura.
+
+`Shadows`  
+Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
+
+`Widening`  
+Požadováno pro operátor převodu, pokud nezadáte `Narrowing`. Označuje, že tato procedura operátora definuje [rozšiřující](../../../visual-basic/language-reference/modifiers/widening.md) převod. Viz "rozšiřující a zúžené převody" na této stránce s technickou pomocí.
+
+`Narrowing`  
+Požadováno pro operátor převodu, pokud nezadáte `Widening`. Označuje, že tato procedura operátora definuje [zužující](../../../visual-basic/language-reference/modifiers/narrowing.md) převod. Viz "rozšiřující a zúžené převody" na této stránce s technickou pomocí.
+
+`operatorsymbol`  
+Požadováno. Symbol nebo identifikátor operátoru, který definuje tento operátor procedury.
+
+`operand1`  
+Požadováno. Název a typ jednoho operandu unárního operátoru (včetně operátoru převodu) nebo levého operandu binárního operátoru.
+
+`operand2`  
+Vyžaduje se pro binární operátory. Název a typ pravého operandu binárního operátoru.
+
+`operand1` a `operand2` mají následující syntaxi a části:
+
+`[ ByVal ] operandname [ As operandtype ]`
+
+|Částí|Popis|
+|----------|-----------------|
+|`ByVal`|Volitelné, ale mechanismus předávání musí být [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).|
+|`operandname`|Požadováno. Název proměnné představující tento operand Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
+|`operandtype`|Volitelné, pokud není `On` `Option Strict`. Datový typ tohoto operandu.|
+
+`type`  
+Volitelné, pokud není `On` `Option Strict`. Datový typ hodnoty, kterou procedura operátor vrátí
+
+`statements`  
+Volitelné. Blok příkazů, které spouští proceduru operátoru.
+
+`returnvalue`  
+Požadováno. Hodnota, kterou procedura operátor vrátí na volající kód.
+
+`End``Operator`  
+Požadováno. Ukončí definici této procedury operátoru.
+
+## <a name="remarks"></a>Poznámky
+
+@No__t_0 lze použít pouze ve třídě nebo struktuře. To znamená, že *kontext deklarace* pro operátor nemůže být zdrojový soubor, obor názvů, modul, rozhraní, procedura nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+
+Všechny operátory musí být `Public Shared`. U obou operandů nelze zadat `ByRef`, `Optional` ani `ParamArray`.
+
+Symbol operátoru ani identifikátor nelze použít pro uložení návratové hodnoty. Je nutné použít příkaz `Return` a musí zadat hodnotu. Libovolný počet příkazů `Return` se může objevit kdekoli v proceduře.
+
+Definování operátoru tímto způsobem se nazývá *přetížení operátoru*, bez ohledu na to, zda použijete klíčové slovo `Overloads`. V následující tabulce jsou uvedeny operátory, které můžete definovat.
+
+|Typ|Operátory|
+|----------|---------------|
+|Unární|`+`, `-`, `IsFalse`, `IsTrue` `Not`|
+|binární|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, 0, 1, 2, 3, 4, 5 , 6, 7, 8 9|
+|Převod (Unární)|`CType`|
+
+Všimněte si, že operátor `=` v binárním seznamu je operátor porovnání, nikoli operátor přiřazení.
+
+Při definování `CType` musíte zadat buď `Widening`, nebo `Narrowing`.
+
+## <a name="matched-pairs"></a>Spárované páry
+
+Je nutné definovat určité operátory jako spárované páry. Pokud definujete některý z operátorů takového páru, je nutné definovat i další. Spárované páry jsou následující:
+
+- `=` a `<>`
+
+- `>` a `<`
+
+- `>=` a `<=`
+
+- `IsTrue` a `IsFalse`
+
+## <a name="data-type-restrictions"></a>Omezení datového typu
+
+Každý operátor, který definujete, musí zahrnovat třídu nebo strukturu, na které definujete. To znamená, že třída nebo struktura se musí objevit jako datový typ následujících:
+
+- Operand unárního operátoru.
+
+- Nejméně jeden z operandů binárního operátoru.
+
+- Buď operand, nebo návratový typ operátoru převodu.
+
+ Některé operátory mají další omezení datového typu, jak je znázorněno níže:
+
+- Pokud definujete operátory `IsTrue` a `IsFalse`, musí oba vracet typ `Boolean`.
+
+- Pokud definujete operátory `<<` a `>>`, musí pro `operandtype` `operand2` určovat typ `Integer`.
+
+Návratový typ nemusí odpovídat typu žádného operandu. Například operátor porovnání, například `=` nebo `<>`, může vracet `Boolean` i v případě, že není `Boolean` žádný operand.
+
+## <a name="logical-and-bitwise-operators"></a>Logické a bitové operátory
+
+Operátory `And`, `Or`, `Not` a `Xor` mohou v Visual Basic provádět logické nebo bitové operace. Pokud však definujete jeden z těchto operátorů pro třídu nebo strukturu, můžete definovat pouze jeho bitovou operaci.
+
+Operátor `AndAlso` nelze definovat přímo pomocí příkazu `Operator`. Můžete však použít `AndAlso`, pokud splňujete následující podmínky:
+
+- Definovali jste `And` pro stejné typy operandů, které chcete použít pro `AndAlso`.
+
+- Vaše definice `And` vrací stejný typ jako třída nebo struktura, na které jste ji definovali.
+
+- Definovali jste operátor `IsFalse` pro třídu nebo strukturu, na které jste definovali `And`.
+
+Podobně můžete použít `OrElse`, pokud jste definovali `Or` na stejných operandech, s návratovým typem třídy nebo struktury a jste definovali `IsTrue` pro třídu nebo strukturu.
+
+## <a name="widening-and-narrowing-conversions"></a>Rozšíření a zúžení převodů
+
+*Rozšiřující převod* v době běhu vždy proběhne úspěšně, zatímco *zužující převod* může v době běhu selhat. Další informace najdete v tématu [rozšiřování a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).
+
+Pokud deklarujete postup převodu, který má být `Widening`, kód procedury nesmí generovat žádné chyby. To znamená následující:
+
+- Vždy musí vracet platnou hodnotu typu `type`.
+
+- Musí zpracovat všechny možné výjimky a jiné chybové stavy.
+
+- Musí zpracovat jakékoli návratové chyby ze všech procedur, které volá.
+
+Pokud existuje možnost, že postup převodu nemusí být úspěšný nebo že může způsobit neošetřenou výjimku, je nutné deklarovat, aby byla `Narrowing`.
+
+## <a name="example"></a>Příklad
+
+Následující příklad kódu používá příkaz `Operator` k definování obrysu struktury, která obsahuje procedury operátoru pro operátory `And`, `Or`, `IsFalse` a `IsTrue`. `And` a `Or` každý z nich přijímá dva operandy typu `abc` a návratový typ `abc`. `IsFalse` a `IsTrue` každý z nich přijímá jeden operand typu `abc` a vrací `Boolean`. Tyto definice umožňují, aby volající kód používal `And`, `AndAlso`, `Or` a `OrElse` s operandy typu `abc`.
+
+[!code-vb[VbVbalrStatements#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#44)]
+
 ## <a name="see-also"></a>Viz také:
 
 - [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)
@@ -178,7 +186,7 @@ End Operator
 - [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
 - [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Postupy: Volání procedury operátora](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)
+- [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Postupy: Volání procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)
 - [Postupy: Použití třídy, která definuje operátory](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)

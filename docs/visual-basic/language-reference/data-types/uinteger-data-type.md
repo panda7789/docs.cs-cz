@@ -1,5 +1,5 @@
 ---
-title: Uinteger – datový typ (Visual Basic)
+title: UInteger – – datový typ (Visual Basic)
 ms.date: 01/31/2018
 f1_keywords:
 - vb.uinteger
@@ -16,39 +16,39 @@ helpviewer_keywords:
 - UI literal type characters [Visual Basic]
 - data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
-ms.openlocfilehash: 12447e56f89914121dcc9eda2bee0700343baf12
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ae0cbd3a518bf863a3c57f50934837a486d2901
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646984"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583124"
 ---
 # <a name="uinteger-data-type"></a>UInteger – datový typ
 
-Obsahuje 32bitová (4bajtová) celá čísla bez znaménka v rozmezí od 0 do 4 294 967 295.  
-  
+Obsahuje nepodepsaná 32 (4 bajt) celá čísla v rozsahu od 0 do 4 294 967 295.
+
 ## <a name="remarks"></a>Poznámky
 
- `UInteger` Datový typ poskytuje největší hodnoty bez znaménka na nejúčinnější šířku data.  
-  
- Výchozí hodnota `UInteger` je 0.  
-  
-## <a name="literal-assignments"></a>Literál přiřazení
+@No__t_0 datový typ poskytuje největší hodnotu bez znaménka v nejúčinnější šířce dat.
 
-Můžete deklarovat a inicializovat `UInteger` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `UInteger` (tj. Pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
+Výchozí hodnota `UInteger` je 0.
 
-V následujícím příkladu celých čísel je rovno 3,000,000,000, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `UInteger` hodnoty.
-  
-[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UInt)]  
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-> [!NOTE] 
-> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
+Můžete deklarovat a inicializovat `UInteger` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah `UInteger` (to znamená, pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 
-Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+V následujícím příkladu jsou celá čísla rovna 3 000 000 000, která jsou reprezentována jako Desítková, šestnáctková a binární literála, přiřazena `UInteger` hodnot.
 
-[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UIntS)]  
+[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UInt)]
 
-Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
+> [!NOTE]
+> Použijete předponu `&h` nebo `&H` k označení šestnáctkového literálu, předponu `&b` nebo `&B` k označení binárního literálu a prefixu `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
+
+Počínaje Visual Basic 2017 můžete použít také znak podtržítka, `_` jako oddělovač číslic ke zvýšení čitelnosti, jak ukazuje následující příklad.
+
+[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UIntS)]
+
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka (`_`) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As UInteger = &H_0F8C_0326
@@ -56,33 +56,33 @@ Dim number As UInteger = &H_0F8C_0326
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také zahrnovat `UI` nebo `ui` [znak](../../programming-guide/language-features/data-types/type-characters.md) k označení `UInteger` datového typu, jak ukazuje následující příklad.
+Číselné literály mohou také zahrnovat `UI` nebo `ui` [znak typu](../../programming-guide/language-features/data-types/type-characters.md) pro označení `UInteger` datový typ, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_0FAC_14D7ui
 ```
 
-## <a name="programming-tips"></a>Tipy pro programování
+## <a name="programming-tips"></a>Tipy k programování
 
- `UInteger` a `Integer` datových typů poskytuje optimální výkon na 32bitových procesorech, protože menší typy celých čísel (`UShort`, `Short`, `Byte`, a `SByte`), i když používají menší počet bitů, trvat déle načíst, uložit a načíst.  
-  
-- **Záporná čísla.** Protože `UInteger` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `UInteger`, Visual Basic Převede výraz, který má `Long` první.  
-  
-- **Dodržování specifikace CLS.** `UInteger` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
-  
-- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `uint` může mít v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
-  
-- **Rozšíření.** `UInteger` Datový typ rozšiřuje na `Long`, `ULong`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `UInteger` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
-  
-- **Znaky typu.** Přidávání znaky literálového typu `UI` k literálu se z něj stane `UInteger` datového typu. `UInteger` nemá žádné – znak typu identifikátoru.  
-  
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt32?displayProperty=nameWithType> struktury.  
-  
+Datové typy `UInteger` a `Integer` poskytují optimální výkon na 32 procesor, protože menší celočíselné typy (`UShort`, `Short`, `Byte` a `SByte`), i když používají méně bitů, více času načtení , uložte a načtěte.
+
+- **Záporná čísla.** Vzhledem k tomu, že `UInteger` je typ bez znaménka, nemůže představovat záporné číslo. Použijete-li unární operátor mínus (`-`) u výrazu, který je vyhodnocen jako typ `UInteger`, Visual Basic výraz převede na `Long` jako první.
+
+- **Kompatibilita se specifikací CLS.** @No__t_0 datový typ není součástí specifikace CLS ( [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) ), takže kód odpovídající specifikaci CLS nemůže spotřebovat komponentu, která ji používá.
+
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy jako `uint` mohou mít v jiných prostředích jinou šířku dat (16 bitů). Pokud předáváte pro takovou součást 16bitový argument, deklarujte ji jako `UShort` místo `UInteger` ve spravovaném kódu Visual Basic.
+
+- **Rozšiřující.** @No__t_0 datový typ se rozšíří na `Long`, `ULong`, `Decimal`, `Single` a `Double`. To znamená, že můžete převést `UInteger` na některý z těchto typů, aniž by došlo k chybě <xref:System.OverflowException?displayProperty=nameWithType>.
+
+- **Znaky typu.** Připojení znaků literálového typu `UI` k literálu vynutí tento datový typ `UInteger`. `UInteger` nemá žádný znak typu identifikátoru.
+
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.UInt32?displayProperty=nameWithType>.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.UInt32>
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

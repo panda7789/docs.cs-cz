@@ -9,40 +9,40 @@ helpviewer_keywords:
 - Return statement [Visual Basic]
 - expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
-ms.openlocfilehash: af49ea95d7f9d01072190ac3ccf6ba2f1041347e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: edaaf09f5a984344f7e89c9da988c529774934e9
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957675"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583261"
 ---
 # <a name="return-statement-visual-basic"></a>Return – příkaz (Visual Basic)
-Vrátí řízení kódu `Function`, který se nazývá procedura `Get`, `Sub` `Set`,, nebo `Operator` .  
+Vrátí řízení kódu, který se nazývá `Function`, `Sub`, `Get`, `Set` nebo `Operator` procedury.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Return  
--or-  
+' -or-  
 Return expression  
 ```  
   
 ## <a name="part"></a>Částí  
  `expression`  
- Vyžadováno v `Function`proceduře, `Get`nebo. `Operator` Výraz, který představuje hodnotu, která má být vrácena volajícímu kódu.  
+ Vyžaduje se v `Function`, `Get` nebo `Operator` postupu. Výraz, který představuje hodnotu, která má být vrácena volajícímu kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- `Sub` V proceduře `Set`neboje příkazekvivalentní`Exit Sub` příkazu nebo`Exit Property` a`expression`nesmíbýtdodán. `Return`  
+ V proceduře `Sub` nebo `Set` je příkaz `Return` ekvivalentem `Exit Sub` nebo příkazu `Exit Property` a `expression` nesmí být dodán.  
   
- `Get` Vproceduře`Return` ,nebo`expression`musí příkaz obsahovat a`expression` musí vyhodnotit na datový typ, který lze převést na návratový typ procedury. `Operator` `Function` V proceduře `Get` `Exit Function` nebo máte také alternativu k názvu procedury, která má sloužit jako návratová hodnota, a poté provedení příkazu nebo `Exit Property`. `Function` V proceduře je nutné použít `Return expression`. `Operator`  
+ V `Function`, `Get` nebo `Operator`, musí příkaz `Return` zahrnovat `expression` a `expression` musí vyhodnotit na datový typ, který lze převést na návratový typ procedury. V proceduře `Function` nebo `Get` máte také alternativu k názvu procedury, která bude sloužit jako návratová hodnota, a následným spuštěním příkazu `Exit Function` nebo `Exit Property`. V `Operator` proceduře je nutné použít `Return expression`.  
   
- Stejný postup můžete použít jako `Return` vhodný počet příkazů.  
+ Stejným postupem můžete zahrnout tolik `Return` příkazů.  
   
 > [!NOTE]
-> Kód `Finally` v bloku se spustí `Try` `Return` po zjištění příkazu v bloku nebo `Catch` , ale před spuštěním tohoto `Return` příkazu. Příkaz nelze zahrnout `Finally` do bloku. `Return`  
+> Kód v `Finally`ovém bloku se spustí po zjištění `Return` v `Try` nebo `Catch` bloku, ale před tím, než se spustí příkaz `Return`. Příkaz `Return` nelze zahrnout do bloku `Finally`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Return` příkaz několikrát pro návrat na volající kód v případě, že procedura nemusí dělat cokoli jiného.  
+ Následující příklad používá příkaz `Return` několikrát pro návrat k volajícímu kódu, když procedura nemusí dělat něco jiného.  
   
  [!code-vb[VbVbalrStatements#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#53)]  
   

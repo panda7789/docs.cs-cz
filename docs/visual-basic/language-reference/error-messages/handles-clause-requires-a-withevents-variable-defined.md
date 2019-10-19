@@ -7,32 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC30506
 ms.assetid: 5b66f6a8-f050-4e03-a57f-a64e85f80cb5
-ms.openlocfilehash: 04c94d3d32660d1a186a9bb377c49a53e1451be6
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 191415408f607d0ff768e50c41fa9b3c4405a688
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512736"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582829"
 ---
 # <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a>Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.
-V klauzuli jste nezadali `WithEvents`proměnnou `Handles` . Klíčové slovo na konci deklarace procedury způsobí, že zpracovává události vyvolané proměnnou objektu deklarované `WithEvents` pomocí klíčového slova. `Handles`
-  
- **ID chyby:** BC30506
+
+V klauzuli `Handles` jste nezadali `WithEvents` proměnnou. Klíčové slovo `Handles` na konci deklarace procedury způsobí, že má zpracovávat události vyvolané proměnnou objektu deklarovanou pomocí klíčového slova `WithEvents`.
+
+**ID chyby:** BC30506
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
-  
-- Zadejte potřebnou `WithEvents` proměnnou.
-  
+
+Zadejte potřebnou `WithEvents` proměnnou.
+
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu Visual Basic generuje chybu `BC30506` kompilátoru, protože klíčové slovo [WithEvents](../modifiers/withevents.md) není v definici <xref:System.Timers.Timer?displayProperty=nameWithType> instance použito.
+V následujícím příkladu Visual Basic generuje chybu kompilátoru `BC30506` protože klíčové slovo [WithEvents](../modifiers/withevents.md) není v definici instance <xref:System.Timers.Timer?displayProperty=nameWithType> použito.
 
 ```vb
 Imports System.Timers
 
 Module Module1
     Private _timer1 As New Timer() With {.Interval = 1000, .Enabled = True}
-    
+
     Sub Main()
         Console.WriteLine("Press any key to start the timer...")
         Console.ReadKey()
@@ -46,7 +47,7 @@ Module Module1
 End Module
 ```
 
-Následující příklad se úspěšně zkompiluje, protože `_timer1` proměnná je definována `WithEvents` s klíčovým slovem:
+Následující příklad je úspěšně zkompilován, protože proměnná `_timer1` je definována pomocí klíčového slova `WithEvents`:
 
 ```vb
 Imports System.Timers

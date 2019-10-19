@@ -9,18 +9,18 @@ helpviewer_keywords:
 - navigation topologies [WPF]
 - dynamically-generated topology
 ms.assetid: 5d5ee837-629a-4933-869a-186dc22ac43d
-ms.openlocfilehash: b62432d64393f4fb749af2e25c42e2e0161de219
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5d9b09085ed8057f53cae9f9177682b01e698f6d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950738"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72580712"
 ---
 # <a name="navigation-topologies-overview"></a>Přehled topologií navigace
-<a name="introduction"></a>Tento přehled poskytuje Úvod k topologiím navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji. Následně jsou popsány tři běžné topologie navigace s ukázkami.  
+<a name="introduction"></a>Tento přehled poskytuje Úvod k topologiím navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Následně jsou popsány tři běžné topologie navigace s ukázkami.  
   
 > [!NOTE]
-> Před čtením tohoto tématu byste měli být obeznámeni s konceptem strukturované navigace při [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] používání funkcí stránky. Další informace o obou těchto tématech najdete v tématu [Přehled strukturované navigace](structured-navigation-overview.md).  
+> Před čtením tohoto tématu byste měli být obeznámeni s konceptem strukturované navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pomocí funkcí stránky. Další informace o obou těchto tématech najdete v tématu [Přehled strukturované navigace](structured-navigation-overview.md).  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -36,7 +36,7 @@ ms.locfileid: "69950738"
   
 <a name="Navigation_Topologies"></a>   
 ## <a name="navigation-topologies"></a>Topologie navigace  
- V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]systému se navigace obvykle skládá ze stránek<xref:System.Windows.Controls.Page>() s hypertextovými<xref:System.Windows.Documents.Hyperlink>odkazy (), které po kliknutí přejdou na jiné stránky. Stránky, na které se navigují, se [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] identifikují (viz [identifikátory URI balíčku v](pack-uris-in-wpf.md)subsystému WPF). Vezměte v úvahu následující jednoduchý příklad, který ukazuje stránky, hypertextové odkazy a [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)]:  
+ V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] se navigace obvykle skládá ze stránek (<xref:System.Windows.Controls.Page>) s hypertextovými odkazy (<xref:System.Windows.Documents.Hyperlink>), které po kliknutí přejdou na jiné stránky. Stránky, na které se navigují, se identifikují pomocí identifikátorů URI (Uniform Resource Identifier) (viz [identifikátory URI balíčku v WPF](pack-uris-in-wpf.md)). Vezměte v úvahu následující jednoduchý příklad, který ukazuje stránky, hypertextové odkazy a identifikátory URI (Uniform Resource Identifier):  
   
  [!code-xaml[NavigationTopologiesOverviewSnippets#Page1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationTopologiesOverviewSnippets/CS/Page1.xaml#page1)]  
   
@@ -44,7 +44,7 @@ ms.locfileid: "69950738"
   
  Tyto stránky jsou uspořádány do *navigační topologie* , jejíž struktura je určena podle toho, jak můžete mezi stránkami přecházet. Tato konkrétní navigační topologie je vhodná v jednoduchých scénářích, i když navigace může vyžadovat složitější topologie, některé z nich lze definovat pouze v případě, že je aplikace spuštěna.  
   
- V tomto tématu se dozvíte o třech běžných topologiích navigace: *pevné lineární*, *pevné hierarchické*a *dynamicky generované*. Každá navigační topologie je znázorněna s ukázkou, který má [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] podobné zobrazení jako na následujícím obrázku:  
+ V tomto tématu se dozvíte o třech běžných topologiích navigace: *pevné lineární*, *pevné hierarchické*a *dynamicky generované*. Každá navigační topologie je znázorněna s ukázkou, která má [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] jako na následujícím obrázku:  
   
  ![Stránky úloh s datovými položkami a navigačními tlačítky.](./media/navigation-topologies-overview/navigation-topology-data-items.png)  
   
@@ -66,7 +66,7 @@ ms.locfileid: "69950738"
   
  Typické chování pro navigaci přes pevnou lineární topologii zahrnuje následující:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče (a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
   
 - Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
   
@@ -94,7 +94,7 @@ ms.locfileid: "69950738"
   
  I když je pořadí, ve kterém se stránky v pevné hierarchické struktuře procházejí, určuje za běhu, činnost koncového uživatele je stejná jako činnost koncového uživatele pro pevnou lineární topologii:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče (a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
   
 - Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
   
@@ -124,7 +124,7 @@ ms.locfileid: "69950738"
   
  Navigační sekvence je označována jako dynamicky generovaná topologie. Pro uživatele stejně jako u ostatních topologií navigace je prostředí uživatele stejné jako u předchozích topologií:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče (a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
   
 - Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
   

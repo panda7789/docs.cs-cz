@@ -13,51 +13,51 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: 3034c84684e94dfe8c334107a16df8cbd227c4d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4b7a5cce56dfdd2bdc7e068aadbc18b92bba269d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912451"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581821"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
 Větve nepodmíněně na určený řádek v proceduře.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 GoTo line  
 ```  
   
 ## <a name="part"></a>Částí  
  `line`  
- Povinný parametr. Libovolný popisek čáry.  
+ Požadováno. Libovolný popisek čáry.  
   
 ## <a name="remarks"></a>Poznámky  
- `GoTo` Příkaz může být větví pouze na řádky v proceduře, ve které se vyskytuje. Řádek musí mít popisek řádku, na který `GoTo` může odkazovat. Další informace najdete v tématu [jak: Příkazy](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)Label.  
+ Příkaz `GoTo` se může větvit jenom na řádky v proceduře, ve které se vyskytuje. Řádek musí mít popisek čáry, na který `GoTo` může odkazovat. Další informace naleznete v tématu [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
   
 > [!NOTE]
-> `GoTo`příkazy mohou ztížit čtení a údržbu kódu. Kdykoli je to možné, použijte místo toho strukturu ovládacího prvku. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
+> příkazy `GoTo` mohou ztížit čtení a údržbu kódu. Kdykoli je to možné, použijte místo toho strukturu ovládacího prvku. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
   
- Nemůžete použít `GoTo` příkaz k vytvoření `For`větve mimo... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, `With`... `End With`, nebo`Using`... `End Using` konstrukce na návěští uvnitř.  
+ Příkaz `GoTo` nelze použít pro větev mimo `For`... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, 0... 1 nebo 2... 3 konstrukce na popisek uvnitř.  
   
 ## <a name="branching-and-try-constructions"></a>Větvení a vytváření try  
- V rámci `Try`... `Catch`... konstrukce: následující pravidla platí pro větvení `GoTo` s příkazem. `Finally`  
+ V rámci `Try`... `Catch`... `Finally` konstrukce se následující pravidla vztahují na větvení pomocí příkazu `GoTo`.  
   
 |Blok nebo oblast|Větvení z vnějšku|Vyskočení z vnitřku|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try`Blokované|Pouze z `Catch` bloku stejné konstrukce <sup>1</sup>|Jenom mimo celou konstrukci|  
-|`Catch`Blokované|Nikdy Nepovoleno|Pouze vně celé konstrukce nebo do `Try` bloku stejné konstrukce <sup>1</sup>|  
-|`Finally`Blokované|Nikdy Nepovoleno|Nikdy Nepovoleno|  
+|blok `Try`|Pouze z `Catch`ho bloku stejné konstrukce <sup>1</sup>|Jenom mimo celou konstrukci|  
+|blok `Catch`|Nikdy Nepovoleno|Pouze mimo celou konstrukci nebo do `Try`ho bloku stejné konstrukce <sup>1</sup>|  
+|blok `Finally`|Nikdy Nepovoleno|Nikdy Nepovoleno|  
   
- <sup>1</sup> , pokud `Try`jedna... `Catch`... konstrukce je vnořena do jiného, `Catch` `Try` blok může být větví do bloku na vlastní úrovni vnoření, ale ne do žádného jiného `Try` bloku. `Finally` Vnořený `Try`... `Catch`... konstrukce musí být zcela obsažena `Try` v bloku `Catch` nebo konstrukce, v rámci které je vnořena. `Finally`  
+ <sup>1</sup> , pokud jedna `Try`... `Catch`... `Finally` konstrukce je vnořená do jiného, `Catch` blok se může větvit do `Try` bloku na vlastní úrovni vnoření, ale ne do žádného jiného `Try` bloku. Vnořený `Try`... `Catch`... konstrukce `Finally` musí být zcela obsažena v bloku `Try` nebo `Catch` konstrukce, v rámci které je vnořena.  
   
- Následující ilustrace znázorňuje jeden `Try` konstrukcí vnořený do jiného. Různé větve mezi bloky dvou konstrukcí jsou označeny jako platné nebo neplatné.  
+ Následující ilustrace znázorňuje jeden `Try` konstrukce vnořené v rámci jiného. Různé větve mezi bloky dvou konstrukcí jsou označeny jako platné nebo neplatné.  
   
  ![Grafický diagram větvení v konstrukcích try](./media/goto-statement/try-construction-branching.gif)  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `GoTo` příkaz pro větvení popiskům čáry v proceduře.  
+ Následující příklad používá příkaz `GoTo` pro větvení popiskům čáry v proceduře.  
   
  [!code-vb[VbVbalrStatements#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#31)]  
   

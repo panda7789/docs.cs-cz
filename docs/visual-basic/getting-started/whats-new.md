@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: d286cc811c87f2d45d5a9e6d4e8acd9c430ff346
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 64f8d536212cd379337ad437c1e15ae356890ddb
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835252"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581965"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -26,34 +26,49 @@ Nové funkce najdete v tématu [Visual Basic 16,0](#visual-basic-160).
 
 ## <a name="previous-versions"></a>Předchozí verze
 
-Visual Basic 15,8/Visual Studio 2017 verze 15,8 pro nové funkce najdete v článku [Visual Basic 15,8](#visual-basic-158).
+Visual Basic 15,8/Visual Studio 2017 verze 15,8  
+Nové funkce najdete v tématu [Visual Basic 15,8](#visual-basic-158).
 
-Visual Basic 15,5/Visual Studio 2017 verze 15,5 pro nové funkce najdete v článku [Visual Basic 15,5](#visual-basic-155).
+Visual Basic 15,5/Visual Studio 2017 verze 15,5  
+Nové funkce najdete v tématu [Visual Basic 15,5](#visual-basic-155).
 
-Visual Basic 15,3/Visual Studio 2017 verze 15,3 pro nové funkce najdete v článku [Visual Basic 15,3](#visual-basic-153).
+Visual Basic 15,3/Visual Studio 2017 verze 15,3  
+Nové funkce najdete v tématu [Visual Basic 15,3](#visual-basic-153).
 
-Visual Basic 2017/Visual Studio 2017 pro nové funkce se podívejte na téma [Visual Basic 2017](#visual-basic-2017).
+Visual Basic 2017/Visual Studio 2017  
+Nové funkce najdete v tématu [Visual Basic 2017](#visual-basic-2017).
 
-Visual Basic/Visual Studio 2015 pro nové funkce najdete v článku [Visual Basic 14](#visual-basic-14).
+Visual Basic/Visual Studio 2015  
+Nové funkce najdete v tématu [Visual Basic 14](#visual-basic-14).
 
-Visual Basic/Visual Studio 2013 verze Preview .NET Compiler Platform ("Roslyn")
+Visual Basic/Visual Studio 2013  
+Verze Preview .NET Compiler Platform pro technologie ("Roslyn")
 
-Visual Basic/Visual Studio 2012 `Async` a `await` klíčová slova, iterátory, atributy informací o volajícím
+Visual Basic/Visual Studio 2012  
+Klíčová slova `Async` a `await`, iterátory, atributy informací o volajícím
 
-Visual Basic, Visual Studio 2010 automaticky implementované vlastnosti, inicializátory kolekce, implicitní pokračování řádku, dynamická, obecná kovariantní odchylka, globální přístup k oboru názvů
+Visual Basic, Visual Studio 2010  
+Automaticky implementované vlastnosti, inicializátory kolekce, implicitní pokračování řádku, dynamická, obecná kovariantní odchylka, globální přístup k oboru názvů
 
-Visual Basic/Visual Studio 2008 Language Integrated Query (LINQ), literály XML, odvození místního typu, Inicializátory objektů, anonymní typy, metody rozšíření, místní `var` odvození typu, výrazy lambda, operátor `if`, částečné metody, Nullable typy hodnot
+Visual Basic/Visual Studio 2008  
+Jazykově integrovaný dotaz (LINQ), literály XML, odvození místního typu, Inicializátory objektů, anonymní typy, metody rozšíření, místní `var` typu odvození, výrazy lambda, `if` operátor, částečné metody, typy hodnot s možnou hodnotou null
 
-Visual Basic/Visual Studio 2005 typ `My` a pomocné typy (přístup k aplikaci, počítač, systém souborů, síť)
+Visual Basic/Visual Studio 2005  
+Typ `My` a pomocné typy (přístup k aplikaci, počítač, systém souborů, síť)
 
-Visual Basic/operátory bitových posunutí sady Visual Studio .NET 2003, deklarace proměnné smyčky
+Visual Basic/Visual Studio .NET 2003  
+Operátory bitového posunutí, deklarace proměnné smyčky
 
-Visual Basic/Visual Studio .NET 2002 první verze Visual Basic .NET
+Visual Basic/Visual Studio .NET 2002  
+První vydání rozhraní Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
-Visual Basic 16,0 se zaměřuje na poskytnutí více funkcí modulu runtime Visual Basic (Microsoft. VisualBasic. dll) do .NET Core a je první verzí Visual Basic zaměřená na rozhraní .NET Core. Mnoho částí modulu runtime Visual Basic závisí na WinForms a ty budou přidány v novější verzi Visual Basic. 
 
-**Komentáře povolené na více místech v rámci příkazů** V Visual Basic 15,8 a dřívějších verzích jsou komentáře povoleny pouze na prázdných řádcích, na konci příkazu nebo na specifických místech v rámci příkazu, kde je povoleno implicitní pokračování řádku. Počínaje Visual Basic 16,0 jsou komentáře povoleny také po explicitním pokračování řádku a v rámci příkazu na řádku, který začíná mezerou následovanou podtržítkem.
+Visual Basic 16,0 se zaměřuje na poskytnutí více funkcí modulu runtime Visual Basic (Microsoft. VisualBasic. dll) do .NET Core a je první verzí Visual Basic zaměřená na rozhraní .NET Core. Mnoho částí modulu runtime Visual Basic závisí na WinForms a ty budou přidány v novější verzi Visual Basic.
+
+**Komentáře povolené na více místech v rámci příkazů**
+
+V Visual Basic 15,8 a dřívějších verzích jsou komentáře povoleny pouze na prázdných řádcích, na konci příkazu nebo na specifických místech v rámci příkazu, kde je povoleno implicitní pokračování řádku. Počínaje Visual Basic 16,0 jsou komentáře povoleny také po explicitním pokračování řádku a v rámci příkazu na řádku, který začíná mezerou následovanou podtržítkem.
 
 ```vb
 Public Sub Main()
@@ -110,19 +125,19 @@ Například následující volání metody má dva Poziční argumenty mezi pojm
 StudentInfo.Display("Mary", age:=19, #9/21/1998#)
 ```
 
-[modifikátor přístupu člena `Private Protected`](../language-reference/modifiers/private-protected.md)
+[modifikátor přístupu ke členu `Private Protected`](../language-reference/modifiers/private-protected.md)
 
-Tato nová kombinace klíčových slov definuje člena, ke kterému mají přístup všichni členové ve své nadřazené třídě, a také typy odvozené z nadřazené třídy, ale pouze v případě, že jsou také v nadřazeném sestavení. Protože struktury nelze dědit, `Private Protected` lze použít pouze pro členy třídy.
+Tato nová kombinace klíčových slov definuje člena, ke kterému mají přístup všichni členové ve své nadřazené třídě, a také typy odvozené z nadřazené třídy, ale pouze v případě, že jsou také v nadřazeném sestavení. Protože struktury nelze zdědit, `Private Protected` lze použít pouze pro členy třídy.
 
 **Počáteční hex/binární/osmičkový oddělovač**
 
-Visual Basic 2017 přidala se podpora znaku podtržítka (`_`) jako oddělovače číslic. Počínaje Visual Basic 15,5 můžete použít znak podtržítka jako úvodní oddělovač mezi předponou a hexadecimální, binární nebo osmičkovou číslicí. Následující příklad používá úvodní oddělovač číslic k definování 3 271 948 384 jako šestnáctkového čísla:
+Visual Basic 2017 byla přidána podpora znaku podtržítka (`_`) jako oddělovače číslic. Počínaje Visual Basic 15,5 můžete použít znak podtržítka jako úvodní oddělovač mezi předponou a hexadecimální, binární nebo osmičkovou číslicí. Následující příklad používá úvodní oddělovač číslic k definování 3 271 948 384 jako šestnáctkového čísla:
 
 ```vb
 Dim number As Integer = &H_C305_F860
 ```
 
-Chcete-li použít znak podtržítka jako úvodní oddělovač, je nutné přidat následující prvek do souboru Visual Basic projektu (@no__t -0. vbproj):
+Chcete-li použít znak podtržítka jako úvodní oddělovač, je nutné přidat následující prvek do souboru Visual Basic projektu (\*. vbproj):
 
 ```xml
 <PropertyGroup>
@@ -140,7 +155,7 @@ Pokud přiřadíte hodnotu prvků řazené kolekce členů z proměnných, Visua
 
 **Další přepínače kompilátoru**
 
-Kompilátor příkazového řádku Visual Basic nyní podporuje možnosti kompilátoru [**-refout**](../reference/command-line-compiler/refout-compiler-option.md) a [**-nepoužívejte refout**](../reference/command-line-compiler/refonly-compiler-option.md) pro řízení výstupu referenčních sestavení. **-refout** definuje výstupní adresář referenčního sestavení a **-nepoužívejte refout** určuje, že kompilace bude výstupem pouze referenční sestavení.
+Kompilátor příkazového řádku Visual Basic nyní podporuje možnosti kompilátoru [ **-refout**](../reference/command-line-compiler/refout-compiler-option.md) a [ **-nepoužívejte refout**](../reference/command-line-compiler/refonly-compiler-option.md) pro řízení výstupu referenčních sestavení. **-refout** definuje výstupní adresář referenčního sestavení a **-nepoužívejte refout** určuje, že kompilace bude výstupem pouze referenční sestavení.
 
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
@@ -150,7 +165,7 @@ Kompilátor příkazového řádku Visual Basic nyní podporuje možnosti kompil
 
 - Definujte vlastní typ (`Class` nebo `Structure`). Toto je těžké řešení.
 
-- Definování jednoho nebo více parametrů @no__t 0, kromě vrácení hodnoty z metody.
+- Definování jednoho nebo více parametrů `ByRef`, kromě vrácení hodnoty z metody.
 
 Podpora Visual Basic řazených kolekcí členů vám umožní rychle definovat řazenou kolekci členů, volitelně přiřadit sémantické názvy k jejím hodnotám a rychle načíst její hodnoty. Následující příklad zalomí volání metody <xref:System.Int32.TryParse%2A> a vrátí řazenou kolekci členů.
 
@@ -162,7 +177,7 @@ Pak můžete zavolat metodu a zpracovat vrácenou řazenou kolekci členů s kó
 
 **Binární literály a oddělovače číslic**
 
-Binární literál můžete definovat pomocí předpony `&B` nebo `&b`. Kromě toho můžete použít znak podtržítka, `_` jako oddělovač číslic pro zlepšení čitelnosti. V následujícím příkladu se pomocí obou funkcí přiřadí hodnota @no__t 0 a zobrazí se jako desítkové, šestnáctkové a binární číslo.
+Můžete definovat binární literál pomocí předpony `&B` nebo `&b`. Kromě toho můžete použít znak podtržítka, `_` jako oddělovač číslic pro zlepšení čitelnosti. V následujícím příkladu se pomocí obou funkcí přiřadí hodnota `Byte` a zobrazí se jako desítkové, šestnáctkové a binární číslo.
 
 [!code-vb[Binary](../../../samples/snippets/visualbasic/getting-started/bin-example.vb#1)]
 
@@ -172,7 +187,7 @@ Další informace naleznete v části "přiřazení literálů" v datových type
 
 Počínaje C# 7,0 C# podporuje návratové hodnoty odkazů. To znamená, že když volající metoda obdrží hodnotu vrácenou odkazem, může změnit hodnotu odkazu. Visual Basic neumožňuje vytvářet metody s návratovými hodnotami odkazů, ale umožňuje využívat a upravovat návratové hodnoty odkazů.
 
-Například následující třída `Sentence` napsaná v C# zahrnuje metodu `FindNext`, která najde další slovo ve větě začínající zadaným podřetězcem. Řetězec je vrácen jako návratová hodnota odkazu a proměnná `Boolean` předaná odkazem na metodu označuje, zda bylo hledání úspěšné. To znamená, že volající může načíst pouze vrácenou hodnotu; může ho také upravit a tato úprava se projeví ve třídě `Sentence`.
+Například následující `Sentence` třídy napsané v C# zahrnuje metodu `FindNext`, která nalezne další slovo ve větě začínající zadaným podřetězcem. Řetězec je vrácen jako návratová hodnota odkazu a proměnná `Boolean` předaná odkazem na metodu označuje, zda bylo hledání úspěšné. To znamená, že volající může načíst pouze vrácenou hodnotu; může ho také upravit a tato úprava se projeví ve třídě `Sentence`.
 
 [!code-csharp[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
@@ -180,7 +195,7 @@ V nejjednodušším tvaru můžete změnit slovo, které se nachází ve větě,
 
 [!code-vb[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-return.vb#1)]
 
-Problém s tímto kódem je však v případě, že není nalezena shoda, metoda vrátí první slovo. Vzhledem k tomu, že tento příklad neověřuje hodnotu argumentu `Boolean`, aby bylo možné určit, zda je nalezena shoda, upraví první slovo, pokud se neshoduje. Následující příklad tento problém opraví nahrazením prvního slova samotným, pokud se neshodují.
+Problém s tímto kódem je však v případě, že není nalezena shoda, metoda vrátí první slovo. Vzhledem k tomu, že tento příklad neověřuje hodnotu argumentu `Boolean`, abyste zjistili, zda je nalezena shoda, upraví první slovo, pokud se neshoduje. Následující příklad tento problém opraví nahrazením prvního slova samotným, pokud se neshodují.
 
 [!code-vb[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-return.vb#2)]
 
@@ -202,11 +217,11 @@ Výrazy interpolace řetězce lze použít k sestavení řetězců.  Výraz inte
 
 [Přístup k podmíněnému přístupu a indexování člena s hodnotou null](../language-reference/operators/null-conditional-operators.md)
 
-Před provedením operace s přístupem členů (`?.`) nebo indexu (`?[]`) můžete otestovat pro hodnotu null v velice lehkém syntaktickém zobrazení.  Tyto operátory vám pomůžou napsat méně kódu pro zpracování kontrol s hodnotou null, zejména pro sestupné seřazení do datových struktur.  Pokud levý operand nebo odkaz na objekt má hodnotu null, operace vrátí hodnotu null.
+Před provedením operace s přístupem členů (`?.`) nebo indexu (`?[]`) můžete otestovat pro hodnotu null v velice lehké syntaktické syntaxi.  Tyto operátory vám pomůžou napsat méně kódu pro zpracování kontrol s hodnotou null, zejména pro sestupné seřazení do datových struktur.  Pokud levý operand nebo odkaz na objekt má hodnotu null, operace vrátí hodnotu null.
 
 [Víceřádkové řetězcové literály](../../visual-basic/programming-guide/language-features/strings/string-basics.md)
 
-Řetězcové literály mohou obsahovat sekvence nového řádku.  Nebudete už potřebovat použití `<xml><![CDATA[...text with newlines...]]></xml>.Value`.
+Řetězcové literály mohou obsahovat sekvence nového řádku.  Nebudete už potřebovat, abyste používali starou práci `<xml><![CDATA[...text with newlines...]]></xml>.Value`
 
 **Komentáře**
 
@@ -214,7 +229,7 @@ Komentáře lze vložit po implicitním pokračování řádku, uvnitř výrazů
 
 **Plně kvalifikované rozlišení názvů pro inteligentnější**
 
-Daný kód, jako je například `Threading.Thread.Sleep(1000)` Visual Basic použit k vyhledání oboru názvů "Threading", zjistíte, že je nejednoznačný mezi System. Threading a System. Windows. Threading a potom nahlásit chybu.  Visual Basic nyní posuzuje jak možné obory názvů současně.  Pokud zobrazíte seznam dokončení, Editor sady Visual Studio vypíše členy z obou typů v seznamu pro doplňování.
+Z kódu, jako je například `Threading.Thread.Sleep(1000)`, Visual Basic použit k vyhledání oboru názvů "Threading", zjistíte, že byla nejednoznačná mezi System. Threading a System. Windows. Threading a potom nahlásit chybu.  Visual Basic nyní posuzuje jak možné obory názvů současně.  Pokud zobrazíte seznam dokončení, Editor sady Visual Studio vypíše členy z obou typů v seznamu pro doplňování.
 
 **Literály počátečního data roku**
 
@@ -224,11 +239,11 @@ Můžete mít literály kalendářních dat ve formátu RRRR-MM-DD `#2015-03-17 
 
 Vlastnosti rozhraní jen pro čtení můžete implementovat pomocí vlastnosti.  Rozhraní garantuje minimální funkčnost a neukončí implementující třídu, která umožňuje nastavit vlastnost.
 
-[TypeOf \<expr > IsNot @no__t 2type >](../../visual-basic/language-reference/operators/typeof-operator.md)
+[TypeOf \<expr > IsNot \<type >](../../visual-basic/language-reference/operators/typeof-operator.md)
 
-Pro lepší čitelnost kódu teď můžete použít `TypeOf` s `IsNot`.
+Pro lepší čitelnost kódu můžete nyní použít `TypeOf` s `IsNot`.
 
-[Upozornění #Disable @no__t 1ID > a #Enable upozornění \<ID >](../../visual-basic/language-reference/directives/index.md)
+[#Disable upozornění \<ID > a #Enable upozornění \<ID >](../../visual-basic/language-reference/directives/index.md)
 
 Můžete zakázat a povolit specifická upozornění pro oblasti v rámci zdrojového souboru.
 
@@ -254,7 +269,7 @@ Kompilátor použitý k chybě, která CObj (...), není při použití v konstr
 
 **Deklarace a využívání dvojznačných metod z různých rozhraní**
 
-Dříve následující kód způsobil chyby, které vám zabraňují v deklaraci `IMock` nebo volání `GetDetails` (pokud byly deklarovány v C#):
+Dříve následující kód způsobil chyby, které vám zabraňují v deklarování `IMock` nebo volání `GetDetails` (pokud jsou deklarovány v C#):
 
 ```vb
 Interface ICustomer
@@ -273,7 +288,7 @@ Interface IMock2 : Inherits ICustomer, ITime
 End Interface
 ```
 
-Kompilátor nyní použije normální pravidla pro rozlišení přetížení k výběru nejvhodnější `GetDetails` pro volání a můžete deklarovat vztahy rozhraní v Visual Basic, jako jsou ty, které jsou uvedeny v ukázce.
+Nyní kompilátor použije normální pravidla pro rozlišení přetížení k výběru nejvhodnějšího `GetDetails` pro volání a můžete deklarovat vztahy rozhraní v Visual Basic, jako jsou ty, které jsou uvedeny v ukázce.
 
 ## <a name="see-also"></a>Viz také:
 

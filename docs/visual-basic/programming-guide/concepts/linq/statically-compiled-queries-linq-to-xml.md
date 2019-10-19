@@ -2,16 +2,16 @@
 title: Staticky kompilované dotazy (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3f4825c7-c3b0-48da-ba4e-8e97fb2a2f34
-ms.openlocfilehash: ed701f57821c18f4cfa75a3bb7cd5a652ab384d8
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: f295e8aa8b747b90933d6a35e5352f66740ef071
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373739"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582910"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky kompilované dotazy (LINQ to XML) (Visual Basic)
 
-Jedna z nejdůležitějších výhod výkonu LINQ to XML, na rozdíl od <xref:System.Xml.XmlDocument>, je, že dotazy v LINQ to XML jsou staticky kompilovány, zatímco dotazy XPath musí být interpretovány za běhu. Tato funkce je integrovaná do LINQ to XML, takže není nutné provádět další kroky, abyste je mohli využít, ale je užitečné pochopit rozdíl mezi těmito dvěma technologiemi. Toto téma popisuje rozdíl.
+Jedna z nejdůležitějších výhod výkonu LINQ to XML, na rozdíl od <xref:System.Xml.XmlDocument>, je, že dotazy v LINQ to XML jsou staticky kompilovány, zatímco dotazy jazyka XPath je nutné interpretovat za běhu. Tato funkce je integrovaná do LINQ to XML, takže není nutné provádět další kroky, abyste je mohli využít, ale je užitečné pochopit rozdíl mezi těmito dvěma technologiemi. Toto téma popisuje rozdíl.
 
 ## <a name="statically-compiled-queries-vs-xpath"></a>Staticky kompilované dotazy vs. XPath
 
@@ -19,7 +19,7 @@ Následující příklad ukazuje, jak získat odvozené prvky se zadaným názve
 
 Následuje ekvivalentní výraz XPath:
 
-```
+```vb
 //Address[@Type='Shipping']
 ```
 
@@ -46,7 +46,7 @@ For Each el In list1
 Next
 ```
 
-<xref:System.Linq.Enumerable.Where%2A> Metoda je rozšiřující metoda. Další informace naleznete v tématu [metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Vzhledem <xref:System.Linq.Enumerable.Where%2A> k tomu, že je metoda rozšíření, je dotaz výše zkompilován, jako by byl napsán takto:
+Metoda <xref:System.Linq.Enumerable.Where%2A> je rozšiřující metoda. Další informace naleznete v tématu [metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Vzhledem k tomu, že <xref:System.Linq.Enumerable.Where%2A> je rozšiřující metoda, je dotaz výše zkompilován, jako by byl napsán takto:
 
 ```vb
 Dim po = XDocument.Load("PurchaseOrders.xml")
@@ -65,7 +65,7 @@ Tento příklad vytváří přesně stejné výsledky jako v předchozích dvou 
 
 ## <a name="executing-xpath-expressions-with-xmldocument"></a>Provádění výrazů XPath s XmlDocument
 
-Následující příklad používá <xref:System.Xml.XmlDocument> k dosažení stejných výsledků jako předchozí příklady:
+Následující příklad používá <xref:System.Xml.XmlDocument> k dosažení stejných výsledků jako v předchozích příkladech:
 
 ```vb
 Dim reader = Xml.XmlReader.Create("PurchaseOrders.xml")
@@ -78,9 +78,9 @@ Next
 reader.Close()
 ```
 
-Tento dotaz vrátí stejný výstup jako příklady, které používají LINQ to XML; Jediným rozdílem je, že LINQ to XML odsadí vytištěný XML, <xref:System.Xml.XmlDocument> zatímco ne.
+Tento dotaz vrátí stejný výstup jako příklady, které používají LINQ to XML; Jediným rozdílem je, že LINQ to XML odsadí tištěný kód XML, zatímco <xref:System.Xml.XmlDocument> ne.
 
-Obecně se ale neprovádí ani LINQ to XML, <xref:System.Xml.XmlNode.SelectNodes%2A> protože metoda musí provést následující interně při každém volání: <xref:System.Xml.XmlDocument>
+Nicméně <xref:System.Xml.XmlDocument> přístup obecně neprovádí ani LINQ to XML, protože metoda <xref:System.Xml.XmlNode.SelectNodes%2A> musí provést následující interně pokaždé, když je volána:
 
 - Analyzuje řetězec, který obsahuje výraz XPath a přerušuje řetězec na tokeny.
 

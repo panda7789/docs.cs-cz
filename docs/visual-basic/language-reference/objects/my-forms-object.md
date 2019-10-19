@@ -7,65 +7,69 @@ f1_keywords:
 helpviewer_keywords:
 - My.Forms object
 ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
-ms.openlocfilehash: 9fa5c77dd12c98100e3d17fc473a6802180d1e32
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9a0b3b9202972122aea4a7147d8d872486418264
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965973"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581873"
 ---
 # <a name="myforms-object"></a>My.Forms – objekt
-Poskytuje vlastnosti pro přístup k instanci každého formuláře Windows deklarovaného v aktuálním projektu.  
-  
-## <a name="remarks"></a>Poznámky  
- `My.Forms` Objekt poskytuje instanci každého formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje.   
-  
- K formulářům poskytnutým `My.Forms` objektem můžete přistupovat pomocí názvu formuláře bez kvalifikace. Vzhledem k tomu, že název vlastnosti je stejný jako název typu formuláře, umožňuje přístup k formuláři, jako by měl výchozí instanci. Například `My.Forms.Form1.Show` je ekvivalentem k `Form1.Show`.  
-  
- `My.Forms` Objekt zpřístupňuje pouze formuláře přidružené k aktuálnímu projektu. Neposkytuje přístup k formulářům deklarovaným v odkazovaných knihovnách DLL. Chcete-li získat přístup k formuláři, který poskytuje knihovna DLL, je nutné použít kvalifikovaný název formuláře, který je napsán jako *Název_souboru_DLL*. *Formace*.  
-  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> Vlastnost můžete použít k získání kolekce všech otevřených formulářů aplikace.  
-  
- Objekt a jeho vlastnosti jsou k dispozici pouze pro aplikace systému Windows.  
-  
-## <a name="properties"></a>Vlastnosti  
- Každá vlastnost `My.Forms` objektu poskytuje přístup k instanci formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje, a typ vlastnosti je stejný jako typ formuláře.  
-  
+
+Poskytuje vlastnosti pro přístup k instanci každého formuláře Windows deklarovaného v aktuálním projektu.
+
+## <a name="remarks"></a>Poznámky
+
+Objekt `My.Forms` poskytuje instanci každého formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje.
+
+K formulářům poskytovaným objektem `My.Forms` můžete přistupovat pomocí názvu formuláře bez kvalifikace. Vzhledem k tomu, že název vlastnosti je stejný jako název typu formuláře, umožňuje přístup k formuláři, jako by měl výchozí instanci. Například `My.Forms.Form1.Show` je ekvivalentem `Form1.Show`.
+
+Objekt `My.Forms` zpřístupňuje pouze formuláře přidružené k aktuálnímu projektu. Neposkytuje přístup k formulářům deklarovaným v odkazovaných knihovnách DLL. Chcete-li získat přístup k formuláři, který poskytuje knihovna DLL, je nutné použít kvalifikovaný název formuláře, který je napsán jako *Název_souboru_DLL*. *Formace*.
+
+Vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> lze použít k získání kolekce všech otevřených formulářů aplikace.
+
+Objekt a jeho vlastnosti jsou k dispozici pouze pro aplikace systému Windows.
+
+## <a name="properties"></a>Vlastnosti
+
+Každá vlastnost objektu `My.Forms` poskytuje přístup k instanci formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje, a typ vlastnosti je stejný jako typ formuláře.
+
 > [!NOTE]
-> Pokud dojde ke kolizi názvů, název vlastnosti pro přístup k formuláři je *RootNamespace*_*Namespace*\_. Zvažte například dva `Form1.`formuláře s názvem, pokud je jeden z těchto formulářů v kořenovém oboru názvů `WindowsApplication1` a v oboru `Namespace1`názvů, k tomuto formuláři byste měli `My.Forms.WindowsApplication1_Namespace1_Form1`přistupovat prostřednictvím.  
-  
- `My.Forms` Objekt poskytuje přístup k instanci hlavního formuláře aplikace, který byl vytvořen při spuštění. Pro všechny ostatní formuláře `My.Forms` vytvoří objekt novou instanci formuláře při jeho otevření a uložení. Následné pokusy o přístup k této vlastnosti vrátí tuto instanci formuláře.  
-  
- Formulář můžete uvolnit tak, že mu přiřadíte `Nothing` vlastnost pro tento formulář. Vlastnost setter volá <xref:System.Windows.Forms.Form.Close%2A> metodu formuláře a potom přiřadí `Nothing` uloženou hodnotu. Pokud přiřadíte jinou hodnotu než `Nothing` k vlastnosti, metoda setter <xref:System.ArgumentException> vyvolá výjimku.  
-  
- Můžete otestovat, zda vlastnost `My.Forms` objektu ukládá instanci formuláře `Is` pomocí operátoru OR `IsNot` . Tyto operátory můžete použít ke kontrole, zda je `Nothing`hodnota vlastnosti.  
-  
+> Pokud dojde ke kolizi názvů, název vlastnosti pro přístup k formuláři je *RootNamespace*_*názvový prostor* \_ název*formuláře*. Například uvažujte dva formuláře s názvem `Form1.`If jeden z těchto formulářů je v kořenovém oboru názvů `WindowsApplication1` a v `Namespace1` oboru názvů, měli byste k tomuto formuláři přistupovat prostřednictvím `My.Forms.WindowsApplication1_Namespace1_Form1`.
+
+Objekt `My.Forms` poskytuje přístup k instanci hlavního formuláře aplikace, který byl vytvořen při spuštění. Pro všechny ostatní formuláře vytvoří objekt `My.Forms` novou instanci formuláře, když je k němu přidaný a uložený. Následné pokusy o přístup k této vlastnosti vrátí tuto instanci formuláře.
+
+Formulář můžete vyřadit přiřazením `Nothing` k vlastnosti tohoto formuláře. Vlastnost setter volá metodu <xref:System.Windows.Forms.Form.Close%2A> formuláře a potom přiřadí `Nothing` uložené hodnotě. Pokud k vlastnosti přiřadíte jinou hodnotu než `Nothing`, vyvolá metoda setter výjimku <xref:System.ArgumentException>.
+
+Můžete otestovat, zda vlastnost objektu `My.Forms` ukládá instanci formuláře pomocí operátoru `Is` nebo `IsNot`. Tyto operátory můžete použít ke kontrole, zda je hodnota vlastnosti `Nothing`.
+
 > [!NOTE]
-> `Is` Operátor OR `IsNot` obvykle musí číst hodnotu vlastnosti pro provedení porovnání. Pokud je však vlastnost aktuálně uložena `Nothing`, vlastnost vytvoří novou instanci formuláře a následně vrátí tuto instanci. Nicméně kompilátor Visual Basic zpracovává vlastnosti `My.Forms` objektu odlišně a `Is` umožňuje operátoru OR `IsNot` kontrolovat stav vlastnosti bez změny její hodnoty.  
-  
-## <a name="example"></a>Příklad  
- Tento příklad změní název výchozího `SidebarMenu` formuláře.  
-  
- [!code-vb[VbVbalrMyForms#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyForms/VB/Class1.vb#2)]  
-  
- Aby tento příklad fungoval, projekt musí mít formulář s názvem `SidebarMenu`.  
-  
- Tento kód bude fungovat pouze v projektu aplikace systému Windows.  
-  
-## <a name="requirements"></a>Požadavky  
-  
-### <a name="availability-by-project-type"></a>Dostupnost podle typu projektu  
-  
-|Typ projektu|K dispozici|  
-|---|---|  
-|Aplikace systému Windows|**Ano**|  
-|Knihovna tříd|Ne|  
-|Konzolová aplikace|Ne|  
-|Knihovna ovládacích prvků Windows|Ne|  
-|Knihovna webového ovládacího prvku|Ne|  
-|Služba systému Windows|Ne|  
-|Web|Ne|  
-  
+> Operátor `Is` nebo `IsNot` obvykle musí číst hodnotu vlastnosti pro provedení porovnání. Pokud však vlastnost aktuálně ukládá `Nothing`, vlastnost vytvoří novou instanci formuláře a následně vrátí tuto instanci. Nicméně kompilátor Visual Basic pracuje s vlastnostmi objektu `My.Forms` odlišně a umožňuje operátoru `Is` nebo `IsNot` ke kontrole stavu vlastnosti bez změny její hodnoty.
+
+## <a name="example"></a>Příklad
+
+Tento příklad změní název výchozího formuláře `SidebarMenu`.
+
+[!code-vb[VbVbalrMyForms#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyForms/VB/Class1.vb#2)]
+
+Aby tento příklad fungoval, projekt musí mít formulář s názvem `SidebarMenu`.
+
+Tento kód bude fungovat pouze v projektu aplikace systému Windows.
+
+## <a name="requirements"></a>Požadavky
+
+### <a name="availability-by-project-type"></a>Dostupnost podle typu projektu
+
+|Typ projektu|K dispozici|
+|---|---|
+|Aplikace systému Windows|**Ano**|
+|Knihovna tříd|Ne|
+|Konzolová aplikace|Ne|
+|Knihovna ovládacích prvků Windows|Ne|
+|Knihovna webového ovládacího prvku|Ne|
+|Služba systému Windows|Ne|
+|Web|Ne|
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>

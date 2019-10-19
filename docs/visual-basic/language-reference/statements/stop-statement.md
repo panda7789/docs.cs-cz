@@ -12,32 +12,32 @@ helpviewer_keywords:
 - processes, interrupting
 - execution [Visual Basic], stopping
 ms.assetid: c9a9fde0-d649-4662-9bef-bd0146ebc2a7
-ms.openlocfilehash: a617038ec51d98c62b6cf7e3c124c8af01305bac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e9382ee34842fc3a3b4b23f71848bda602c99780
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957624"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583222"
 ---
 # <a name="stop-statement-visual-basic"></a>Stop – příkaz (Visual Basic)
 Pozastaví provádění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Stop  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Příkazy lze umístit `Stop` kdekoli v postupech pro pozastavení provádění. `Stop` Použití příkazu je podobné jako nastavení zarážky v kódu.  
+ Můžete umístit `Stop` příkazy kdekoli v postupech pro pozastavení provádění. Použití příkazu `Stop` je podobné jako nastavení zarážky v kódu.  
   
- Příkaz pozastaví provádění, ale na rozdíl od `End`, neuzavře žádné soubory ani nevymaže žádné proměnné, pokud se nevyskytly v kompilovaném spustitelném souboru (. exe). `Stop`  
+ Příkaz `Stop` pozastaví provádění, ale na rozdíl od `End` nezavře žádné soubory ani nevymaže žádné proměnné, pokud se nevyskytly v kompilovaném spustitelném souboru (. exe).  
   
 > [!NOTE]
-> Je-li příkaz nalezen v kódu, který je spuštěn mimo integrované vývojové prostředí (IDE), je vyvolán ladicí program. `Stop` To platí bez ohledu na to, zda byl kód zkompilován v režimu ladění nebo maloobchodu.  
+> Pokud je v kódu, který běží mimo integrované vývojové prostředí (IDE), nalezen příkaz `Stop`, je vyvolán ladicí program. To platí bez ohledu na to, zda byl kód zkompilován v režimu ladění nebo maloobchodu.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se `Stop` používá příkaz pro pozastavení provádění každé iterace `For...Next` prostřednictvím smyčky.  
+ V tomto příkladu se používá příkaz `Stop` k pozastavení provádění každé iterace prostřednictvím smyčky `For...Next`.  
   
  [!code-vb[VbVbalrStatements#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#56)]  
   

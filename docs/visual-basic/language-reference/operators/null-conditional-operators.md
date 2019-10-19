@@ -1,36 +1,36 @@
 ---
-title: Podmíněné operátory s Null (Visual Basic)
+title: Podmíněné operátory s hodnotou null (Visual Basic)
 ms.date: 10/19/2018
 helpviewer_keywords:
 - null-conditional operators [Visual Basic]
 - ?. operator [Visual Basic]
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
-ms.openlocfilehash: 4815fe7ad337634cfb56127fbd24a47a37fdd74b
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 40cb63705eda563b4c3cfd30fa9836a8f632dccf
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65062940"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581637"
 ---
-# <a name="-and--null-conditional-operators-visual-basic"></a>?. a? () podmíněné operátory s null (Visual Basic)
+# <a name="-and--null-conditional-operators-visual-basic"></a>?. ani? () podmíněné operátory s hodnotou null (Visual Basic)
 
-Testuje hodnotu levý operand pro null (`Nothing`) před provedením přístup ke členu (`?.`) nebo indexu (`?()`) časový limit operace; vrátí `Nothing` pokud levý operand je vyhodnocen jako `Nothing`. Všimněte si, že ve výrazech, které obvykle vrací typy hodnot, null podmíněný operátor, který se vrátí <xref:System.Nullable%601>.
+Před provedením operace pro přístup členů (`?.`) nebo indexu (`?()`) testuje hodnotu operandu levého horního operandu pro hodnotu null (`Nothing`); Vrátí `Nothing`, je-li operand na levé straně vyhodnocen jako `Nothing`. Všimněte si, že ve výrazech, které obvykle vracejí typy hodnot, vrátí operátor null-Condition <xref:System.Nullable%601>.
 
-Tyto operátory usnadňuje psaní méně kód pro zpracování kontroly hodnoty null, zejména v případě, že sestupně do datové struktury. Příklad:
+Tyto operátory vám pomůžou napsat méně kódu pro zpracování kontrol s hodnotou null, zejména při seřazení do datových struktur. Příklad:
 
 ```vb
-' Nothing if customers is Nothing  
-Dim length As Integer? = customers?.Length  
+' Nothing if customers is Nothing
+Dim length As Integer? = customers?.Length
 
 ' Nothing if customers is Nothing
 Dim first As Customer = customers?(0)
 
 ' Nothing if customers, the first customer, or Orders is Nothing
-Dim count As Integer? = customers?(0)?.Orders?.Count()   
+Dim count As Integer? = customers?(0)?.Orders?.Count()
 ```
 
-Pro porovnání alternativní kód pro první z těchto výrazů bez null podmíněného operátoru je:
+Pro porovnání alternativní kód pro první z těchto výrazů bez podmíněného operátoru null je:
 
 ```vb
 Dim length As Integer
@@ -39,35 +39,35 @@ If customers IsNot Nothing Then
 End If
 ```
 
-Někdy je potřeba provést akci na objekt, který může mít hodnotu null, na základě hodnoty Boolean člen k tomuto objektu (například vlastnost typu Boolean `IsAllowedFreeShipping` v následujícím příkladu):
+Někdy je nutné provést akci s objektem, který může mít hodnotu null, na základě hodnoty logického člena na tomto objektu (například vlastnost Boolean `IsAllowedFreeShipping` v následujícím příkladu):
 
 ```vb
-  Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
-  
-  If customer IsNot Nothing AndAlso customer.IsAllowedFreeShipping Then
-   ApplyFreeShippingToOrders(customer)
-  End If
+Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
+
+If customer IsNot Nothing AndAlso customer.IsAllowedFreeShipping Then
+  ApplyFreeShippingToOrders(customer)
+End If
 ```
 
-Můžete zkrátit váš kód a vyhnout se ručně kontrola null použitím operátoru podmíněného null následujícím způsobem:
+Můžete zkrátit kód a vyhnout se ruční kontrole null pomocí operátoru s hodnotou null, jak je znázorněno níže:
 
 ```vb
- Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
- 
- If customer?.IsAllowedFreeShipping Then ApplyFreeShippingToOrders(customer)
+Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
+
+If customer?.IsAllowedFreeShipping Then ApplyFreeShippingToOrders(customer)
 ```
 
-Podmíněné operátory s null jsou short-circuiting.  Pokud jedna operace v řetězci Podmíněný člen přístup a index operace vrátí `Nothing`, zbytek zastaví provádění řetězec.  V následujícím příkladu `C(E)` není vyhodnocen, pokud `A`, `B`, nebo `C` vyhodnotí jako `Nothing`.
+Operátory podmíněné hodnotou null jsou krátkodobé okruhy.  Pokud se jedna operace v řetězci přístupu podmíněného člena a operace indexu vrátí `Nothing`, zbývající část spuštění řetězce se zastaví.  V následujícím příkladu není `C(E)` vyhodnocována, pokud `A`, `B` nebo `C` vyhodnocuje jako `Nothing`.
 
 ```vb
 A?.B?.C?(E);
 ```
 
-Další možností použití pro přístup ke členům podmíněných null je vyvoláte způsobem bezpečným pro vlákno s mnohem menším množstvím kódu.  Následující příklad definuje dva typy `NewsBroadcaster` a `NewsReceiver`. Příspěvky se odesílají do příjemce podle `NewsBroadcaster.SendNews` delegovat.
+Další možností použití pro přístup s podmíněnými členy s hodnotou null je vyvolat delegáty v bezpečném vlákně s mnohem menším kódem.  Následující příklad definuje dva typy, `NewsBroadcaster` a `NewsReceiver`. Položky zpráv jsou odesílány příjemci delegáta `NewsBroadcaster.SendNews`.
 
 ```vb
 Public Module NewsBroadcaster
-   Dim SendNews As Action(Of String) 
+   Dim SendNews As Action(Of String)
 
    Public Sub Main()
       Dim rec As New NewsReceiver()
@@ -91,26 +91,26 @@ Public Class NewsReceiver
 End Class
 ```
 
-Pokud neexistují žádné prvky v `SendNews` vyvolávacím seznamu `SendNews` delegáta vyvolá výjimku <xref:System.NullReferenceException>. Před podmíněných operátorů s null, kód jako následující zajistit, že se seznamu vyvolání delegáta `Nothing`:
+Pokud v seznamu `SendNews` vyvolání nejsou žádné prvky, delegát `SendNews` vyvolá <xref:System.NullReferenceException>. Před nulovými podmíněnými operátory by kód podobný následujícímu byly zajištěny, že seznam volání delegáta nebyl `Nothing`:
 
-```vb  
-SendNews = SendNews.Combine({SendNews, client})  
-If SendNews IsNot Nothing Then 
+```vb
+SendNews = SendNews.Combine({SendNews, client})
+If SendNews IsNot Nothing Then
    SendNews("Just in...")
 End If
 ```
 
-Nový způsob je mnohem jednodušší:  
+Nový způsob je mnohem jednodušší:
 
 ```vb
-SendNews = SendNews.Combine({SendNews, client})  
+SendNews = SendNews.Combine({SendNews, client})
 SendNews?.Invoke("Just in...")
 ```
 
-Nový způsob je bezpečná pro vlákno, protože kompilátor generuje kód do vyhodnocení `SendNews` pouze jednou, uchovávání výsledek v dočasné proměnné. Je třeba explicitně volat `Invoke` metoda vzhledem k tomu, že neexistuje žádná syntaxe vyvolání delegáta null podmíněných `SendNews?(String)`.  
+Nový způsob je bezpečný pro přístup z více vláken, protože kompilátor generuje kód pro vyhodnocení `SendNews` pouze jednou a udržování výsledku v dočasné proměnné. Je nutné explicitně volat metodu `Invoke`, protože neexistuje žádná `SendNews?(String)` syntaxe vyvolání podmíněného delegáta s hodnotou null.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Operátory (Visual Basic)](index.md)
-- [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)
 - [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)

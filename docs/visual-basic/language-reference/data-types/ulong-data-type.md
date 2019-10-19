@@ -16,39 +16,39 @@ helpviewer_keywords:
 - ULong data type
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
-ms.openlocfilehash: 7f8a19e2e4395e43aa99b6ff63536fbbbc26cb2a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19a75f056436b858a22588d7ac5f37df5dd326f2
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646957"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583116"
 ---
-# <a name="ulong-data-type-visual-basic"></a>Ulong – datový typ (Visual Basic)
+# <a name="ulong-data-type-visual-basic"></a>ULong – datový typ (Visual Basic)
 
-Obsahuje bez znaménka 64bitová (8 bajtů) celá čísla v rozmezí od 0 do 18,446,744,073,709,551,615 (více než 1.84 časy 10 ^ 19).  
-  
+Obsahuje nepodepsaná 64 (8 bajtů) celých čísel v rozsahu od 0 do 18446744073709551615 (více než 1,84 krát 10 ^ 19).
+
 ## <a name="remarks"></a>Poznámky
 
-Použití `ULong` datový typ obsahující binární data jsou příliš velká pro `UInteger`, nebo unsigned nejvyšší možné celočíselné hodnoty.  
-  
+Datový typ `ULong` použijte k zahrnutí binárních dat, která jsou pro `UInteger` příliš velká, nebo největší možné hodnoty unsigned integer.
+
 Výchozí hodnota `ULong` je 0.
 
-## <a name="literal-assignments"></a>Literál přiřazení
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-Můžete deklarovat a inicializovat `ULong` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `ULong` (tj. Pokud je menší než <xref:System.UInt64.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `ULong` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah `ULong` (to znamená, pokud je menší než <xref:System.UInt64.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 
-V následujícím příkladu celých čísel je rovno 7,934,076,125, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `ULong` hodnoty.
-  
+V následujícím příkladu jsou celá čísla rovna 7 934 076 125, která jsou reprezentována jako Desítková, šestnáctková a binární literála, přiřazena `ULong` hodnot.
+
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ULong)]
 
-> [!NOTE] 
-> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
+> [!NOTE]
+> Použijete předponu `&h` nebo `&H` k označení šestnáctkového literálu, předponu `&b` nebo `&B` k označení binárního literálu a prefixu `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
 
-Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+Počínaje Visual Basic 2017 můžete použít také znak podtržítka, `_` jako oddělovač číslic ke zvýšení čitelnosti, jak ukazuje následující příklad.
 
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#LongS)]
 
-Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka (`_`) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As ULong = &H_F9AC_0326_1489_D68C
@@ -56,33 +56,33 @@ Dim number As ULong = &H_F9AC_0326_1489_D68C
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také zahrnovat `UL` nebo `ul` [znak](../../programming-guide/language-features/data-types/type-characters.md) k označení `ULong` datového typu, jak ukazuje následující příklad.
+Číselné literály mohou také zahrnovat `UL` nebo `ul` [znak typu](../../programming-guide/language-features/data-types/type-characters.md) pro označení `ULong` datový typ, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
 ```
 
-## <a name="programming-tips"></a>Tipy pro programování
-  
-- **Záporná čísla.** Protože `ULong` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `ULong`, Visual Basic Převede výraz, který má `Decimal` první.  
-  
-- **Dodržování specifikace CLS.** `ULong` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.  
-  
-- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `ulong` může mít v jiných prostředích odlišnou datovou šířku (32bitová verze). Pokud takové součásti předáváte 32-bit argument, deklarujte ho jako `UInteger` místo `ULong` v spravovaného kódu jazyka Visual Basic.  
-  
-     Kromě toho automatizace nepodporuje 64bitová celá čísla na Windows 95, Windows 98, Windows ME nebo Windows 2000. V jazyce Visual Basic nelze předat `ULong` argument pro komponentu služby Automation na těchto platformách.  
-  
-- **Rozšíření.** `ULong` Datový typ rozšiřuje na `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `ULong` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
-  
-- **Znaky typu.** Přidávání znaky literálového typu `UL` k literálu se z něj stane `ULong` datového typu. `ULong` nemá žádné – znak typu identifikátoru.
-  
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt64?displayProperty=nameWithType> struktury.  
-  
+## <a name="programming-tips"></a>Tipy k programování
+
+- **Záporná čísla.** Vzhledem k tomu, že `ULong` je typ bez znaménka, nemůže představovat záporné číslo. Použijete-li unární operátor mínus (`-`) u výrazu, který je vyhodnocen jako typ `ULong`, Visual Basic výraz převede na `Decimal` jako první.
+
+- **Kompatibilita se specifikací CLS.** @No__t_0 datový typ není součástí specifikace CLS ( [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) ), takže kód odpovídající specifikaci CLS nemůže spotřebovat komponentu, která ji používá.
+
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy jako `ulong` mohou mít v jiných prostředích jinou šířku dat (32 bitů). Pokud předáváte 32 argument pro takovou komponentu, deklarujte ji jako `UInteger` místo `ULong` ve spravovaném kódu Visual Basic.
+
+  Kromě toho Automation nepodporuje 64 celých čísel v systémech Windows 95, Windows 98, Windows MILLENNIUM nebo Windows 2000. Do komponenty automatizace na těchto platformách nelze předat Visual Basic `ULong` argument.
+
+- **Rozšiřující.** @No__t_0 datový typ se rozšíří na `Decimal`, `Single` a `Double`. To znamená, že můžete převést `ULong` na některý z těchto typů, aniž by došlo k chybě <xref:System.OverflowException?displayProperty=nameWithType>.
+
+- **Znaky typu.** Připojení znaků literálového typu `UL` k literálu vynutí tento datový typ `ULong`. `ULong` nemá žádný znak typu identifikátoru.
+
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.UInt64?displayProperty=nameWithType>.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.UInt64>
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

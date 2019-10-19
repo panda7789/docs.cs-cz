@@ -12,19 +12,19 @@ helpviewer_keywords:
 - UDT (user-defined types)
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-ms.openlocfilehash: c6871a9bae84d0eff79876d7d9668ec5e91d3ebc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cec04880dd7cadc627ab090a45468dbad83c8d84
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615088"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583211"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
-Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a postupů, které tvoří strukturu.  
+Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a procedur, které struktura zahrnuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Partial ] _  
 Structure name [ ( Of typelist ) ]  
     [ Implements interfacenames ]  
@@ -37,70 +37,70 @@ End Structure
   
 |Termín|Definice|  
 |---|---|  
-|`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br/>- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md) <br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|  
+|`attributelist`|Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
+|`accessmodifier`|Volitelné. Může to být jedna z následujících:<br /><br /> -   [veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [chráněno](../../../visual-basic/language-reference/modifiers/protected.md)<br />-    –[přítel](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />[přítel chráněný](../../language-reference/modifiers/protected-friend.md) - <br/>- [Private Protected](../../language-reference/modifiers/private-protected.md) <br /><br /> Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
 |`Partial`|Volitelné. Označuje částečnou definici struktury. Zobrazit [částečné](../../../visual-basic/language-reference/modifiers/partial.md).|  
-|`name`|Povinný parametr. Název této struktury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`name`|Požadováno. Název této struktury Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`Of`|Volitelné. Určuje, že se jedná o obecnou strukturu.|  
-|`typelist`|Povinné, pokud používáte [z](../../../visual-basic/language-reference/statements/of-clause.md) – klíčové slovo. Seznam parametrů typu v této struktuře. Zobrazit [seznamu](../../../visual-basic/language-reference/statements/type-list.md).|  
-|`Implements`|Volitelné. Označuje, že tato struktura implementuje členy jednoho nebo více rozhraní. Zobrazit [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).|  
-|`interfacenames`|Povinné, pokud používáte `Implements` příkazu. Názvy rozhraní, které implementuje tato struktura.|  
-|`datamemberdeclarations`|Povinný parametr. Nula nebo více `Const`, `Dim`, `Enum`, nebo `Event` příkazy deklarace *datové členy* struktury.|  
-|`methodmemberdeclarations`|Volitelné. Nula nebo více deklarací `Function`, `Operator`, `Property`, nebo `Sub` postupy, které slouží jako *členové metody* struktury.|  
-|`End Structure`|Povinný parametr. Ukončuje `Structure` definice.|  
+|`typelist`|Povinné, pokud použijete klíčové slovo [of](../../../visual-basic/language-reference/statements/of-clause.md) . Seznam parametrů typu pro tuto strukturu Viz [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).|  
+|`Implements`|Volitelné. Označuje, že tato struktura implementuje členy jednoho nebo více rozhraní. Viz [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md).|  
+|`interfacenames`|Vyžaduje se, pokud použijete příkaz `Implements`. Názvy rozhraní, které tato struktura implementuje.|  
+|`datamemberdeclarations`|Požadováno. Nula nebo více `Const`, `Dim`, `Enum` nebo `Event` příkazy pro deklaraci *datových členů* struktury.|  
+|`methodmemberdeclarations`|Volitelné. Nula nebo více deklarací `Function`, `Operator`, `Property` nebo `Sub` procedur, které slouží jako *Členové metody* struktury.|  
+|`End Structure`|Požadováno. Ukončí definici `Structure`.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Structure` Prohlášení definuje složený typ hodnoty, kterou můžete přizpůsobit. A *struktura* je generalizace uživatelem definovaného typu (UDT) z předchozích verzí jazyka Visual Basic. Další informace najdete v tématu [struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md).  
+ Příkaz `Structure` definuje typ složené hodnoty, kterou můžete přizpůsobit. *Struktura* je generalizace uživatelsky definovaného typu (UDT) předchozích verzí Visual Basic. Další informace najdete v tématu [struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md).  
   
- Struktury podporují mnoho stejných funkcí jako třídy. Například struktury mohou mít vlastnosti a postupy, mohou implementovat rozhraní a mohou mít parametrizované konstruktory. Nicméně existují významné rozdíly mezi strukturami a třídami v oblastech, jako je dědičnost, prohlášení a využití. Také třídy jsou odkazové typy a struktury jsou typy hodnot. Další informace najdete v tématu [struktury a třídy](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
+ Struktury podporují mnoho stejných funkcí jako třídy. Například struktury mohou mít vlastnosti a postupy, mohou implementovat rozhraní a mohou mít parametrizované konstruktory. Existují však významné rozdíly mezi strukturami a třídami v oblastech, jako jsou dědičnost, deklarace a použití. Třídy jsou také typy odkazů a struktury jsou typy hodnot. Další informace naleznete v tématu [struktury a třídy](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
   
- Můžete použít `Structure` pouze na úrovni oboru názvů nebo modulu. To znamená, že *kontext deklarace* pro strukturu musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nesmí být procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ @No__t_0 můžete použít jenom na úrovni oboru názvů nebo modulu. To znamená, že *kontext deklarace* struktury musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Struktury výchozí pro [Friend](../../../visual-basic/language-reference/modifiers/friend.md) přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Struktury se ve výchozím nastavení přistupují k [příteli](../../../visual-basic/language-reference/modifiers/friend.md) . Můžete upravit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Vnoření.** Můžete definovat jednu strukturu v jiné. Vnější struktura se nazývá *obsahující struktura*, a vnitřní struktura se nazývá *vnořené struktury*. K členům vnořené konstrukce však nelze přistupovat prostřednictvím obsažené struktury. Místo toho je třeba deklarovat proměnnou datového typu vnořené struktury.  
+- **Vnoření.** Můžete definovat jednu strukturu v rámci jiné. Vnější struktura se nazývá *obsažená struktura*a vnitřní struktura se nazývá *vnořená struktura*. Nemůžete ale přistupovat k členům vnořené struktury prostřednictvím obsahující struktury. Místo toho je nutné deklarovat proměnnou datového typu vnořené struktury.  
   
-- **Deklarace člena.** Je třeba deklarovat každého člena struktury. Člen struktury nemůže být [chráněné](../../../visual-basic/language-reference/modifiers/protected.md) nebo `Protected Friend` protože nic zdědit ze struktury. Struktura samotná však může být `Protected` nebo `Protected Friend`.  
+- **Deklarace člena** Musíte deklarovat každého člena struktury. Člen struktury nemůže být [chráněný](../../../visual-basic/language-reference/modifiers/protected.md) ani `Protected Friend`, protože nic nemůže dědit ze struktury. Samotnou strukturu však lze `Protected` nebo `Protected Friend`.  
   
-     Můžete deklarovat nula nebo více nesdílených proměnných nebo nesdílených, nevlastních událostí ve struktuře. Nemůžete mít pouze konstanty, vlastnosti a postupy, i když jsou některé z nich nesdílené.  
+     V rámci struktury můžete deklarovat nula nebo více nesdílených proměnných nebo nesdílených nevlastních událostí. Nemůžete mít jenom konstanty, vlastnosti a postupy, i když některé z nich nejsou sdílené.  
   
-- **Inicializace.** Nelze inicializovat hodnotu žádného nesdíleného datového člena struktury jako součást její deklarace. Musíte inicializovat takového datového člena parametrizovaným konstruktorem ve struktuře nebo přiřadit hodnotu člena po vytvoření instance struktury.  
+- **Operace.** V rámci deklarace nelze inicializovat hodnotu žádného nesdíleného datového členu struktury. Takový datový člen musíte buď inicializovat pomocí parametrizovaného konstruktoru ve struktuře, nebo přiřadit hodnotu členu po vytvoření instance struktury.  
   
-- **Dědičnost.** Struktura nemůže dědit z libovolného typu jiného než <xref:System.ValueType>, ze kterého dědí všechny struktury. Zejména jedna struktura nemůže dědit z jiné.  
+- **Dědičnost.** Struktura nemůže dědit z jiného typu než <xref:System.ValueType>, ze kterého všechny struktury dědí. Konkrétně jedna struktura nemůže dědit od druhé.  
   
-     Nelze použít [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md) v definici struktury, ani k určení <xref:System.ValueType>.  
+     [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md) nelze použít v definici struktury, ani pro určení <xref:System.ValueType>.  
   
-- **Implementace.** Pokud struktura používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), musíte implementovat každého člena definovaného každým rozhraním, zadejte v `interfacenames`.  
+- **Provádění.** Pokud struktura používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), je nutné implementovat každého člena definovaného každým rozhraním, které zadáte v `interfacenames`.  
   
-- **Výchozí vlastnost.** Struktura může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*, použije [výchozí](../../../visual-basic/language-reference/modifiers/default.md) modifikátor. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
+- **Výchozí vlastnost.** Struktura může určovat maximálně jednu vlastnost jako *výchozí vlastnost*pomocí [výchozího](../../../visual-basic/language-reference/modifiers/default.md) modifikátoru. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Předvídatelně  
   
-- **Úroveň přístupu.** V rámci struktury můžete deklarovat každého člena se svou vlastní úroveň přístupu. Všechny členy struktury přejdou ve výchozím nastavení [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup. Všimněte si, že pokud má sama struktura omezenější úroveň přístupu, automaticky to omezuje přístup k jejím členům, i v případě, že upravíte jejich úroveň přístupu modifikátory přístupu.  
+- **Úroveň přístupu.** V rámci struktury můžete deklarovat každého člena s vlastní úrovní přístupu. Všechny členy struktury jsou ve výchozím nastavení [veřejným](../../../visual-basic/language-reference/modifiers/public.md) přístupem. Všimněte si, že pokud má struktura vlastní více úrovní přístupu, automaticky se tím omezí přístup k jejím členům, i když upravíte jejich úrovně přístupu modifikátory přístupu.  
   
-- **Obor.** Struktura je v oboru v celém jeho nadřazeného oboru názvů, třídy, struktury nebo modulu.  
+- **Oboru.** Struktura je v oboru, který obsahuje obor názvů, třídu, strukturu nebo modul.  
   
-     Obor každého člena struktury je celá struktura.  
+     Rozsah každého člena struktury je celá struktura.  
   
-- **Doba platnosti.** Struktura sama nemá životnost. Místo toho každá instance této struktury má životnost nezávislou na všech ostatních instancích.  
+- **Platné.** Struktura sama o sobě nemá život. Místo toho má každá instance struktury životnost nezávisle na všech ostatních instancích.  
   
-     Životnost instance začne, když je vytvořena [operátor New](../../../visual-basic/language-reference/operators/new-operator.md) klauzuli. Končí při ukončení platnosti proměnné, která obsahuje skončí.  
+     Doba životnosti instance začíná, když je vytvořena [novou klauzulí operátoru](../../../visual-basic/language-reference/operators/new-operator.md) . Končí v případě, že skončí životnost proměnné, která ho obsahuje.  
   
-     Nelze prodloužit životnost instance struktury. Modul zajišťuje aproximaci funkce statické struktury. Další informace najdete v tématu [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md).  
+     Nemůžete roztáhnout dobu života instance struktury. Modul nabízí sbližování funkcí statické struktury. Další informace naleznete v tématu [příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md).  
   
-     Členové struktury mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace najdete v tématu "Životnost" [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md).  
+     Členové struktury mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace naleznete v části "doba života" v [příkazu třídy](../../../visual-basic/language-reference/statements/class-statement.md).  
   
-- **Kvalifikace.** Kód mimo strukturu musí kvalifikovat název člena s názvem této struktury.  
+- **Vydal.** Kód mimo strukturu musí kvalifikovat název člena s názvem této struktury.  
   
-     Pokud kód uvnitř vnořené struktury vytváří nekvalifikovaný odkaz na programovací prvek, Visual Basic vyhledá prvek nejprve ve vnořené struktuře, pak v jeho obsahující struktuře, a tak dále navýšení kapacity na vnější obsahující element. Další informace najdete v tématu [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+     Pokud kód uvnitř vnořené struktury vytvoří nekvalifikovaný odkaz na prvek programování, Visual Basic vyhledá prvek nejprve ve vnořené struktuře, poté v jeho obsahující struktuře a tak dále k vnějšímu nadřazenému prvku. Další informace naleznete v tématu [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
-- **Využití paměti.** Stejně jako u všech složených datových typů nelze bezpečně vypočítat celkovou spotřebu paměti struktury sečtením nominálních přidělení úložiště jejích členů. Kromě toho nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` příkazu.  
+- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> u příkazu `Structure`.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Structure` příkaz k definování sady souvisejících dat pro zaměstnance. Ukazuje použití `Public`, `Friend`, a `Private` členy pro vyznačení citlivosti datových položek. Také ukazuje proceduru, vlastnost a členy události.  
+ Následující příklad používá příkaz `Structure` k definování sady souvisejících dat pro zaměstnance. Zobrazuje použití `Public`, `Friend` a `Private` členů, aby odrážela citlivost datových položek. Také ukazuje proceduru, vlastnost a členy události.  
   
  [!code-vb[VbVbalrStatements#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#57)]  
   

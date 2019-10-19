@@ -7,38 +7,38 @@ helpviewer_keywords:
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-ms.openlocfilehash: a52daddaa8701ccca9bd9b5b4a48535a6ffa19ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3090b5b8e53e5a5a990ae11c91464797bde9803
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906708"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582309"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
-Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a to s `End Structure` příkazu. Mezi tyto dva příkazy musí deklarovat alespoň jeden *element*. Prvků může být libovolného datového typu, ale alespoň jedna musí být nesdílené proměnné nebo nesdílených, nevlastních událostí.  
+Zahájíte deklaraci struktury pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md)a ukončíte ji pomocí příkazu `End Structure`. Mezi těmito dvěma příkazy musíte deklarovat alespoň jeden *prvek*. Prvky mohou být libovolného datového typu, ale nejméně jedna musí být buď nesdílená proměnná, nebo nesdílená, nevlastní událost.  
   
- Nelze inicializovat prvky struktury v deklaraci struktury. Když deklarujete proměnnou typu Struktura, přiřadit hodnoty k elementům díky přístupu prostřednictvím proměnné.  
+ V deklaraci struktury nelze inicializovat žádné prvky struktury. Pokud deklarujete proměnnou, která má být typu struktury, přiřazujete hodnoty k prvkům jejich přístupem přes proměnnou.  
   
- Diskuzi o rozdílech mezi struktur a tříd, naleznete v tématu [struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
+ Diskuzi o rozdílech mezi strukturami a třídami naleznete v tématu [struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
   
- Pro demonstrační účely Představte si situaci, ve které chcete udržovat přehled o název, telefonní číslo a salary zaměstnance. Struktury můžete to provést v jedné proměnné.  
+ Pro demonstrační účely Zvažte situaci, kdy si přejete sledovat jméno zaměstnance, telefonní linky a mzdu. Struktura vám to umožňuje v rámci jedné proměnné.  
   
-### <a name="to-declare-a-structure"></a>Chcete-li deklarovat strukturu  
+### <a name="to-declare-a-structure"></a>Deklarace struktury  
   
-1. Vytvořte počáteční a koncové příkazy pro strukturu.  
+1. Vytvořte na začátku a konci příkazy pro strukturu.  
   
-     Můžete určit úroveň přístupu pomocí struktury [veřejné](../../../../visual-basic/language-reference/modifiers/public.md), [chráněné](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo, nebo ho můžete nechat ve výchozím nastavení `Public`.  
+     Úroveň přístupu ke struktuře můžete určit pomocí klíčového slova [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../../visual-basic/language-reference/modifiers/private.md) , nebo můžete nechat výchozí `Public`.  
   
-    ```  
+    ```vb  
     Private Structure employee  
     End Structure  
     ```  
   
-2. Přidáte prvky do těla struktury.  
+2. Přidejte prvky do těla struktury.  
   
-     Struktura musí mít alespoň jeden element. Musíte deklarovat každý prvek a zadat úroveň přístupu pro něj. Pokud používáte [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) bez klíčová slova, přístupnost výchozí hodnota je `Public`.  
+     Struktura musí mít alespoň jeden element. Musíte deklarovat každý prvek a zadat úroveň přístupu. Použijete-li [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) bez klíčových slov, je výchozí nastavení přístupnosti `Public`.  
   
-    ```  
+    ```vb  
     Private Structure employee  
         Public givenName As String  
         Public familyName As String  
@@ -51,9 +51,9 @@ Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic
     End Structure  
     ```  
   
-     `salary` Pole v předchozím příkladu je `Private`, což znamená, že není přístupná mimo strukturu, dokonce i z obsahující třídy. Ale `giveRaise` postup je `Public`, takže je možné vyvolat z mimo strukturu. Podobně můžete zvýšit `salaryReviewTime` události z mimo strukturu.  
+     Pole `salary` v předchozím příkladu je `Private`, což znamená, že je nepřístupný mimo strukturu, dokonce i z nadřazené třídy. Nicméně procedura `giveRaise` je `Public`, takže může být volána mimo strukturu. Podobně můžete vyvolat událost `salaryReviewTime` mimo strukturu.  
   
-     Kromě proměnných `Sub` procedury a události, můžete také definovat konstanty, `Function` postupy a vlastnosti ve struktuře. Můžete určit nejvýše jednu vlastnost jako *výchozí vlastnost*za předpokladu, že trvá nejméně jeden argument. Dokáže zpracovat událost se [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` postup. Další informace najdete v tématu [jak: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md).  
+     Kromě proměnných, `Sub` procedur a událostí, můžete také definovat konstanty, `Function` procedury a vlastnosti ve struktuře. Můžete určit maximálně jednu vlastnost jako *výchozí vlastnost*za předpokladu, že převezme aspoň jeden argument. Událost můžete zpracovat pomocí [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` procedury. Další informace naleznete v tématu [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md).  
   
 ## <a name="see-also"></a>Viz také:
 
