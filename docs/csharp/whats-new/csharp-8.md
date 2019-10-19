@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: 6b5602db6ee61b1d9db4c906d6a14ea2f918ad0a
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 12e41a3bca981d04f7b29970eba1f737254f2b58
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275779"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579140"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -23,7 +23,7 @@ C#8,0 přidává následující funkce a vylepšení C# jazyka:
 - [Používání deklarací](#using-declarations)
 - [Statické místní funkce](#static-local-functions)
 - [Struktury odkazů na jedno použití](#disposable-ref-structs)
-- [Typy odkazů s možnou hodnotou null](#nullable-reference-types)
+- [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
 - [Přiřazení slučování s hodnotou null](#null-coalescing-assignment)
@@ -137,7 +137,7 @@ Tady je několik vylepšení syntaxe:
 
 - Proměnná se nachází před klíčovým slovem `switch`. V jiném pořadí je vizuálně snadné odlišit výraz přepínače od příkazu switch.
 - Prvky `case` a `:` jsou nahrazeny `=>`. Je výstižnější a intuitivní.
-- Případ `default` se nahradí pomocí zahození `_`.
+- @No__t_0 případ se nahradí `_` zahození.
 - Tělo jsou výrazy, nikoli příkazy.
 
 Kontrast s ekvivalentním kódem pomocí příkazu Classic `switch`:
@@ -261,25 +261,36 @@ Techniky porovnávání vzorů můžete prozkoumat v tomto [pokročilém kurzu o
 **Deklarace using** je deklarace proměnné před klíčovým slovem `using`. Dává kompilátoru pokyn, že proměnná, která má být deklarována, by měla být uvolněna na konci ohraničujícího oboru. Zvažte například následující kód, který zapisuje textový soubor:
 
 ```csharp
-static void WriteLinesToFile(IEnumerable<string> lines)
+static int WriteLinesToFile(IEnumerable<string> lines)
 {
     using var file = new System.IO.StreamWriter("WriteLines2.txt");
+    // Notice how we declare skippedLines after the using statement.
+    int skippedLines = 0;
     foreach (string line in lines)
     {
         if (!line.Contains("Second"))
         {
             file.WriteLine(line);
         }
+        else
+        {
+            skippedLines++;
+        }
     }
-// file is disposed here
+    // Notice how skippedLines is in scope here.
+    return skippedLines;
+    // file is disposed here
 }
 ```
 
 V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky pro metodu. To je konec oboru, ve kterém je deklarováno `file`. Předchozí kód je ekvivalentní následujícímu kódu, který používá [příkaz Classic using](../language-reference/keywords/using-statement.md):
 
 ```csharp
-static void WriteLinesToFile(IEnumerable<string> lines)
+static int WriteLinesToFile(IEnumerable<string> lines)
 {
+    // We must declare the variable outside of the using block
+    // so that it is in scope to be returned.
+    int skippedLines = 0;
     using (var file = new System.IO.StreamWriter("WriteLines2.txt"))
     {
         foreach (string line in lines)
@@ -288,8 +299,13 @@ static void WriteLinesToFile(IEnumerable<string> lines)
             {
                 file.WriteLine(line);
             }
+            else
+            {
+                skippedLines++;
+            }
         }
     } // file is disposed here
+    return skippedLines;
 }
 ```
 
@@ -329,9 +345,9 @@ int M()
 
 ## <a name="disposable-ref-structs"></a>Struktury odkazů na jedno použití
 
-@No__t-0 deklarované s modifikátorem `ref` nesmí implementovat žádná rozhraní a proto nemohou implementovat <xref:System.IDisposable>. Proto aby bylo možné odstranit `ref struct`, musí mít přístupnou metodu `void Dispose()`. To platí také pro deklarace `readonly ref struct`.
+@No__t_0 deklarovaný s modifikátorem `ref` nesmí implementovat žádná rozhraní a proto nemohou implementovat <xref:System.IDisposable>. Proto aby bylo možné odstranit `ref struct`, musí mít přístupnou metodu `void Dispose()`. To platí také pro deklarace `readonly ref struct`.
 
-## <a name="nullable-reference-types"></a>Typy odkazů s možnou hodnotou null
+## <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
 V kontextu anotace s možnou hodnotou null je jakákoli proměnná typu odkazu považována za **typ odkazu**, který není null. Pokud chcete označit, že proměnná může mít hodnotu null, je nutné připojit název typu s `?` pro deklaraci proměnné jako **typ odkazu s možnou hodnotou null**.
 
@@ -384,7 +400,7 @@ Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 - <xref:System.Range?displayProperty=nameWithType> představuje dílčí rozsah sekvence.
 - Operátor rozsahu `..`, který jako svůj operand Určuje začátek a konec rozsahu.
 
-Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. Index `0` je stejný jako `sequence[0]`. Index `^0` je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. U všech čísel `n` je index `^n` stejný jako `sequence.Length - n`.
+Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. @No__t_0 index je stejný jako `sequence[0]`. @No__t_0 index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n` index `^n` stejný jako `sequence.Length - n`.
 
 Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
 
@@ -406,20 +422,20 @@ var words = new string[]
 };              // 9 (or words.Length) ^0
 ```
 
-Poslední slovo můžete načíst pomocí indexu `^1`:
+Poslední slovo můžete načíst pomocí `^1` indexu:
 
 ```csharp
 Console.WriteLine($"The last word is {words[^1]}");
 // writes "dog"
 ```
 
-Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` až `words[3]`. Element `words[4]` není v rozsahu.
+Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu.
 
 ```csharp
 var quickBrownFox = words[1..4];
 ```
 
-Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index @no__t – 0 není zahrnutý:
+Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Konec `words[^0]` indexu není zahrnutý:
 
 ```csharp
 var lazyDog = words[^2..^0];
@@ -439,13 +455,13 @@ Rozsahy můžete deklarovat také jako proměnné:
 Range phrase = 1..4;
 ```
 
-Rozsah se pak dá použít uvnitř `[` a `]` znaků:
+Rozsah se pak dá použít uvnitř `[` a `]`ch znaků:
 
 ```csharp
 var text = words[phrase];
 ```
 
-Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězcem](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězci](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
 
@@ -496,7 +512,7 @@ Další informace naleznete v tématu [nespravované typy](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc ve vnořených výrazech
 
-Počínaje C# 8,0 platí, že pokud výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu je typu <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, můžete použít výraz `stackalloc` v jiných výrazech:
+Počínaje C# 8,0 platí, že pokud je výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> typu, můžete použít výraz `stackalloc` v jiných výrazech:
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };

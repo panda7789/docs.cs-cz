@@ -1,20 +1,17 @@
 ---
 title: ASP.NET Core zásadní změny – .NET Core
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 10/16/2019
+ms.date: 10/17/2019
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 2b9ef4cd53772e30198ab2b4171f78503088ae83
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: HT
+ms.openlocfilehash: 4a382fc94eac656605260f628f3eaa5b41bc24da
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522887"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579987"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
-
-> [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam ASP.NET Corech nejnovějších změn. Další informace o ASP.NET Core zásadních změnách můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) .
 
 Následuje seznam ASP.NET Core zásadní změny ve verzi ASP.NET Core. ASP.NET Core poskytuje funkce pro vývoj webových aplikací, které používá .NET Core.
 

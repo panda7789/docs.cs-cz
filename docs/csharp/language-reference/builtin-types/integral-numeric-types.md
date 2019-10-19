@@ -1,7 +1,7 @@
 ---
-title: Integrální číselné typy - C# odkaz
-description: Další oblasti, velikosti úložiště a používá pro každý integrální číselné typy.
-ms.date: 06/25/2019
+title: Celočíselné číselné typy C# – referenční informace
+description: Seznamte se s rozsahem, velikostí úložiště a s využitím pro každý celočíselný numerický typ.
+ms.date: 10/18/2019
 f1_keywords:
 - byte
 - byte_CSharpKeyword
@@ -32,46 +32,52 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: dfb1298abaff0cfe8eae7536f94511a30012a4a9
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 3d4f3164d67a000123417619f3be6be455d5ab87
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68236079"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579185"
 ---
-# <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# odkaz)
+# <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# Referenční dokumentace)
 
-**Integrální číselné typy** jsou podmnožinou **jednoduché typy** a mohou být inicializovány pomocí [ *literály*](#integral-literals). Typy hodnot jsou také všechny celočíselné typy. Všechny integrální číselné typy. podpora [aritmetické](../operators/arithmetic-operators.md), [bitový logický](../operators/bitwise-and-shift-operators.md), [porovnání a rovnost](../operators/equality-operators.md) operátory.
+**Integrální číselné typy** jsou podmnožinou **jednoduchých typů** a lze je inicializovat pomocí [*literálů*](#integer-literals). Všechny celočíselné typy jsou také typy hodnot. Všechny integrální číselné typy podporují [aritmetické](../operators/arithmetic-operators.md)a [logické](../operators/bitwise-and-shift-operators.md)operátory, [porovnání](../operators/comparison-operators.md)a [rovnost](../operators/equality-operators.md) .
 
-## <a name="characteristics-of-the-integral-types"></a>Vlastnosti celočíselných typů
+## <a name="characteristics-of-the-integral-types"></a>Charakteristiky integrálních typů
 
-C#podporuje následující předdefinované integrální typy:
+C#podporuje následující předdefinované celočíselné typy:
 
-|C#typ nebo klíčové slovo|Rozsah|Velikost|Typ formátu .NET|
+|C#typ/klíčové slovo|Rozsah|Velikost|Typ .NET|
 |----------|-----------|----------|-------------|
 |`sbyte`|-128 až 127|8bitové celé číslo se znaménkem|<xref:System.SByte?displayProperty=nameWithType>|
-|`byte`|0 až 255|Celé číslo bez znaménka 8 bitů|<xref:System.Byte?displayProperty=nameWithType>|
-|`short`|-32 768 do 32 767|16bitové celé číslo se znaménkem|<xref:System.Int16?displayProperty=nameWithType>|
-|`ushort`|0 až 65 535|Celé číslo bez znaménka 16 bitů|<xref:System.UInt16?displayProperty=nameWithType>|
-|`int`|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|
-|`uint`|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|<xref:System.UInt32?displayProperty=nameWithType>|
-|`long`|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|<xref:System.Int64?displayProperty=nameWithType>|
-|`ulong`|0 na 18,446,744,073,709,551,615|64-bit znaménka.|<xref:System.UInt64?displayProperty=nameWithType>|
+|`byte`|0 až 255|8bitové celé číslo bez znaménka|<xref:System.Byte?displayProperty=nameWithType>|
+|`short`|-32 768 až 32 767|16bitové celé číslo se znaménkem|<xref:System.Int16?displayProperty=nameWithType>|
+|`ushort`|0 až 65 535|16bitové celé číslo bez znaménka|<xref:System.UInt16?displayProperty=nameWithType>|
+|`int`|-2 147 483 648 až 2 147 483 647|Podepsané 32 – celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|
+|`uint`|0 až 4 294 967 295|Celé číslo bez znaménka 32-bit|<xref:System.UInt32?displayProperty=nameWithType>|
+|`long`|– 9223372036854775808 na 9 223 372 036 854 775 807|Podepsané 64 – celé číslo se znaménkem|<xref:System.Int64?displayProperty=nameWithType>|
+|`ulong`|0 až 18446744073709551615|Celé číslo bez znaménka 64-bit|<xref:System.UInt64?displayProperty=nameWithType>|
 
-V předchozí tabulce každý C# – klíčové slovo typ ve sloupci nejvíce vlevo je alias pro odpovídající typ formátu .NET. Jsou zaměnitelné. Například následující deklarace deklarování proměnných stejného typu:
+V předchozí tabulce je každé C# klíčové slovo Type ze sloupce úplně vlevo alias pro odpovídající typ rozhraní .NET. Jsou zaměnitelné. Například následující deklarace deklaruje proměnné stejného typu:
 
 ```csharp
 int a = 123;
 System.Int32 b = 123;
 ```
 
-Výchozí hodnota každý integrální typ je nula, `0`. Každý z celočíselných typů má `MinValue` a `MaxValue` konstanty, minimální a maximální hodnotu daného typu.
+Výchozí hodnota každého integrálního typu je nula, `0`. Každý celočíselný typ má `MinValue` a `MaxValue` konstanty, které poskytují minimální a maximální hodnotu tohoto typu.
 
-Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> strukturu představující celé číslo se znaménkem s žádná horní nebo dolní meze.
+Pomocí <xref:System.Numerics.BigInteger?displayProperty=nameWithType> struktury reprezentovat celé číslo se znaménkem bez horních nebo dolních mezí.
 
-## <a name="integral-literals"></a>Integrální literály
+## <a name="integer-literals"></a>Celočíselné literály
 
-Integrální literály lze zadat jako *desítkové literály*, *šestnáctkové literály*, nebo *binární literály:* . Níže je uveden příklad každé:
+Celočíselné literály mohou být
+
+- *Decimal*: bez předpony
+- *šestnáctková*: s předponou `0x` nebo `0X`
+- *binární*: s předponou `0b` nebo `0B` (k dispozici v C# 7,0 a novějším)
+
+Následující kód ukazuje příklad každé z nich:
 
 ```csharp
 var decimalLiteral = 42;
@@ -79,50 +85,53 @@ var hexLiteral = 0x2A;
 var binaryLiteral = 0b_0010_1010;
 ```
 
-Desítkové literály nevyžadují jakoukoli předponu. `x` Nebo `X` označuje, že předpona *šestnáctkové literál*. `b` Nebo `B` označuje, že předpona *binární literál*. Deklarace `binaryLiteral` demonstruje použití `_` jako *oddělovač číslic*. Oddělovač číslic jde použít s všechny číselné literály. Binární literály a oddělovače číslic `_` podporuje workflowy C# 7.0.
+Předchozí příklad také ukazuje použití `_` jako *oddělovač číslic*, který je podporován od C# 7,0. Oddělovač číslic se dá použít u všech druhů číselných literálů.
 
-### <a name="literal-suffixes"></a>Přípony literálu
+Typ celočíselného literálu je určen jeho příponou takto:
 
-`l` Nebo `L` příponu Určuje, že by měl být celočíselný literál `long` typu. `ul` Nebo `UL` Určuje příponu `ulong` typu. Pokud `L` přípona se používá na literál, který je větší než 9,223,372,036,854,775,807 (maximální hodnota `long`), hodnota převedená na `ulong` typu. Pokud se překročí Hodnota reprezentovaná celočíselný literál <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, Chyba kompilátoru [CS1021](../../misc/cs1021.md) vyvolá. 
+- Pokud literál nemá žádnou příponu, je jeho typ prvním z následujících typů, ve kterém může být jeho hodnota reprezentovaná: `int`, `uint`, `long` `ulong`.
+- Je-li literál určen `U` nebo `u`, je jeho typ prvním z následujících typů, ve kterém lze jeho hodnotu reprezentovat: `uint`, `ulong`.
+- Je-li literál určen `L` nebo `l`, je jeho typ prvním z následujících typů, ve kterém lze jeho hodnotu reprezentovat: `long`, `ulong`.
 
-> [!NOTE]
-> Malé písmeno "l" můžete použít jako příponu. Nicméně tím se vygeneruje upozornění kompilátoru protože písmeno "l" je snadno zaměnitelná s číslicí "1". Pro přehlednost použijte "L".
+  > [!NOTE]
+  > Jako příponu můžete použít malé písmeno `l`. Tím se však vygeneruje upozornění kompilátoru, protože písmeno `l` může být zaměněno pomocí číslice `1`. Pro přehlednost použijte `L`.
 
-### <a name="type-of-an-integral-literal"></a>Typ celočíselný literál
+- Pokud má literál příponu `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU` nebo `lu`, jeho typ je `ulong`.
 
-Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu:
+Pokud hodnota reprezentovaná celočíselným literálem překračuje <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilátoru [CS1021](../../misc/cs1021.md) .
 
-1. `int`
-1. `uint`
-1. `long`
-1. `ulong`
-
-Celočíselný literál lze převést na typ s menší rozsah, než je výchozí přiřazení nebo výraz přetypování:
+Hodnota reprezentovaná celočíselným literálem se dá implicitně převést na typ s menším rozsahem, než je určený typ literálu. To je možné, pokud je hodnota v rozsahu cílového typu:
 
 ```csharp
-byte byteVariable = 42; // type is byte
-var signedByte = (sbyte)42; // type is sbyte.
+byte a = 17;
+byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
 ```
 
-Celočíselný literál lze převést na typ s větším než výchozí, pomocí přiřazení, přetypování nebo příponu na literál:
+Jak ukazuje předchozí příklad, pokud hodnota literálu není v rozsahu cílového typu, dojde k chybě kompilátoru [CS0031](../../misc/cs0031.md) .
+
+Můžete také použít přetypování k převodu hodnoty reprezentované celočíselným literálem na jiný typ, než je určený typ literálu:
 
 ```csharp
-var unsignedLong = 42UL;
-var longVariable = 42L;
-ulong anotherUnsignedLong = 42;
-var anotherLong = (long)42;
+var signedByte = (sbyte)42;
+var longVariable = (long)42;
 ```
 
 ## <a name="conversions"></a>Převody
 
-Je implicitní převod (volá se *rozšiřující převod*) mezi dvou celočíselných typů kde cílový typ můžete uložit všechny hodnoty typu zdroje. Například je implicitní převod z `int` k `long` protože rozsah `int` hodnoty jsou správné podmnožinou `long`. Nejsou k dispozici implicitní převod z menší celočíselný typ bez znaménka větší celočíselný typ se znaménkem. Existuje také implicitní převod z libovolný integrální typ na libovolný typ s plovoucí desetinnou čárkou.  Neexistuje žádný implicitní převod z libovolný integrální typ se znaménkem na libovolný integrální typ bez znaménka.
+Existuje implicitní převod (nazývaný *rozšiřující převod*) mezi dvěma celočíselnými typy, kde cílový typ může ukládat všechny hodnoty zdrojového typu. Například existuje implicitní převod z `int` na `long`, protože rozsah hodnot `int` je správná podmnožina `long`. Existují implicitní převody z menšího integrálního typu bez znaménka na větší typ se znaménkem. Je také implicitní převod z libovolného integrálního typu na libovolný typ s plovoucí desetinnou čárkou.  Neexistuje žádný implicitní převod z žádného typu se znaménkem na celočíselný typ bez znaménka.
 
-Pro převod jedné celočíselného typu na jiný celočíselný typ při implicitní převod není definován zdrojový typ pro cílový typ je nutné použít explicitní přetypování. Jedná se *zužující převod*. Explicitní případu se totiž převod může dojít ke ztrátě.
+Je nutné použít explicitní přetypování pro převod jednoho celočíselného typu na jiný integrálový typ, pokud implicitní převod není definován ze zdrojového typu na cílový typ. Tato metoda se nazývá *zužující převod*. Explicitní případ je vyžadován, protože převod může mít za následek ztrátu dat.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+
+- [Celočíselné typy](~/_csharplang/spec/types.md#integral-types)
+- [Celočíselné literály](~/_csharplang/spec/lexical-structure.md#integer-literals)
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#Specifikace jazyka - integrální typy](~/_csharplang/spec/types.md#integral-types)
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
 - [Tabulka výchozích hodnot](../keywords/default-values-table.md)
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)

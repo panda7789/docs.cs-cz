@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 766da517d247361f747591c3758e8610927866a9
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 7d69528804cf0cee1302fd62fa2301e06076897a
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116096"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579205"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
@@ -43,12 +43,12 @@ V následující tabulce jsou uvedeny C# operátory od nejvyšší priority k ne
 | Operátory | Kategorie nebo název |
 | --------- | ---------------- |
 | [x. y](member-access-operators.md#member-access-operator-), [x?. y](member-access-operators.md#null-conditional-operators--and-), [x? [ y]](member-access-operators.md#null-conditional-operators--and-), [f (x)](member-access-operators.md#invocation-operator-), [a&#91;i&#93;](member-access-operators.md#indexer-operator-), [x + +](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [New](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [zaškrtnutí](../keywords/checked.md), [nezaškrtnuto](../keywords/unchecked.md), [Default](default.md), [nameof](nameof.md), [Delegate](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x-> y](pointer-related-operators.md#pointer-member-access-operator--) | Primární |
-| [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \!x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-operator-), [await](await.md), [& x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true a false](true-false-operators.md) | Unární |
+| [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [\!x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(t) x](type-testing-and-cast.md#cast-operator-), [await](await.md), [& x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true a false](true-false-operators.md) | Unární |
 | [x.. požadované](member-access-operators.md#range-operator-) | Rozsah |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-) | Multiplikativní|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Přičítáním |
-| [ x\< y ,\< ](bitwise-and-shift-operators.md#left-shift-operator-) [x > > y](bitwise-and-shift-operators.md#right-shift-operator-) | SHIFT |
-| [x\< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-), [je](type-testing-and-cast.md#is-operator), [jako](type-testing-and-cast.md#as-operator) | Relační testování a testování typu |
+| [x \< \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x > > y](bitwise-and-shift-operators.md#right-shift-operator-) | Posouvá |
+| [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \< = y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-), [je](type-testing-and-cast.md#is-operator), [jako](type-testing-and-cast.md#as-operator) | Relační testování a testování typu |
 | [x = = y](equality-operators.md#equality-operator-), [x! = y](equality-operators.md#inequality-operator-) | Rovnost |
 | `x & y` | Logická [logický operátor and](boolean-logical-operators.md#logical-and-operator-) nebo [BITOVÝ logický operátor and](bitwise-and-shift-operators.md#logical-and-operator-) |
 | `x ^ y` | [Logická logická hodnota XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) nebo [bitový logický operátor XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) |
@@ -57,14 +57,14 @@ V následující tabulce jsou uvedeny C# operátory od nejvyšší priority k ne
 | [× &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | Podmiňovací operátor OR |
 | [x?? požadované](null-coalescing-operator.md) | Operátor slučování null |
 | [r? t: f](conditional-operator.md) | Podmíněný operátor |
-| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x?? = y](null-coalescing-operator.md),[=>](lambda-operator.md) | Přiřazení a deklarace lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x?? = y](null-coalescing-operator.md), [4](lambda-operator.md) | Přiřazení a deklarace lambda |
 
 ## <a name="operator-associativity"></a>Operátor asociativita
 
 Pokud mají operátory stejnou prioritu, asociativita operátor určuje pořadí, ve kterém jsou operace provedeny:
 
-- Operátory *asociativní zleva* jsou vyhodnocovány v pořadí zleva doprava. S výjimkou operátorů [přiřazení](assignment-operator.md) a [operátoru `??`slučování null ](null-coalescing-operator.md)jsou všechny binární operátory asociativní. Například `a + b - c` je vyhodnocen jako `(a + b) - c`.
-- Operátory *asociativní zprava* jsou vyhodnocovány v pořadí zprava doleva. Operátory přiřazení, operátor `??`slučování null a [podmíněný operátor `?:` ](conditional-operator.md) jsou asociativní zprava. Například `x = y = z` je vyhodnocen jako `x = (y = z)`.
+- Operátory *asociativní zleva* jsou vyhodnocovány v pořadí zleva doprava. S výjimkou [operátorů přiřazení](assignment-operator.md) a [operátorů slučování null](null-coalescing-operator.md)jsou všechny binární operátory asociativní. Například `a + b - c` je vyhodnocen jako `(a + b) - c`.
+- Operátory *asociativní zprava* jsou vyhodnocovány v pořadí zprava doleva. Operátory přiřazení, operátory slučování null a [podmíněný operátor `?:`](conditional-operator.md) jsou asociativní zprava. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
 
 Pomocí závorek změňte pořadí hodnocení, které je asociativita operátorem:
 
@@ -85,7 +85,7 @@ Nesouvisí s prioritou operátorů a asociativita, jsou operandy ve výrazu vyho
 |`a / b + c * d`|a, b,/, c, d, *, +|
 |`a / (b + c) * d`|a, b, c, +,/, d, *|
 
-Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory vyhodnocují operandy podmíněně. To znamená, že hodnota prvního operandu takového operátoru definuje, zda (nebo které) by měly být vyhodnoceny jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [`||`or ()](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátoru `??`nulového ](null-coalescing-operator.md)sjednocení, [podmíněné operátory `?.` s hodnotou null a `?[]` ](member-access-operators.md#null-conditional-operators--and-)a [podmíněný operátor `?:` ](conditional-operator.md). Další podrobnosti najdete v popisu každého operátoru.
+Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory vyhodnocují operandy podmíněně. To znamená, že hodnota prvního operandu takového operátoru definuje, zda (nebo které) by měly být vyhodnoceny jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátory sloučení s hodnotou null `??` a `??=`](null-coalescing-operator.md), [operátory s hodnotou null `?.` a `?[]`](member-access-operators.md#null-conditional-operators--and-)a [ podmíněný operátor 1](conditional-operator.md). Další podrobnosti najdete v popisu každého operátoru.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

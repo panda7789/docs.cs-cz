@@ -11,39 +11,39 @@ helpviewer_keywords:
 - explicit variable declaration
 - Option Explicit statement [Visual Basic]
 ms.assetid: e82ac1ad-2cd3-49b2-b985-8bcf016f3fcc
-ms.openlocfilehash: c027964d185d7f69c0a56a4386bedc2d8f9d2eac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 19ff8cf1dbcdb941e38f23be4cb68d3a5e5b83a8
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912338"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582583"
 ---
 # <a name="option-explicit-statement-visual-basic"></a>Option Explicit – příkaz (Visual Basic)
 Vynutí explicitní deklaraci všech proměnných v souboru nebo umožňuje implicitní deklarace proměnných.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Option Explicit { On | Off }  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `On`  
- Volitelný parametr. Povoluje `Option Explicit` kontrolu. Pokud parametr není zadán, je `On`použita výchozí hodnota. `On` `Off`  
+ Volitelné. Povolí `Option Explicit` kontrolu. Pokud není zadán `On` nebo `Off`, výchozí hodnota je `On`.  
   
  `Off`  
- Volitelný parametr. Zakáže `Option Explicit` kontrolu.  
+ Volitelné. Zakáže kontrolu `Option Explicit`.  
   
 ## <a name="remarks"></a>Poznámky  
- Když `Option Explicit On` `Dim` `ReDim` nebo `Option Explicit` se zobrazí v souboru, musíte explicitně deklarovat všechny proměnné pomocí příkazů nebo. Pokud se pokusíte použít nedeklarovaný název proměnné, dojde k chybě v době kompilace. `Option Explicit Off` Příkaz umožňuje implicitní deklaraci proměnných.  
+ Když se `Option Explicit On` nebo `Option Explicit` objeví v souboru, musíte explicitně deklarovat všechny proměnné pomocí příkazů `Dim` nebo `ReDim`. Pokud se pokusíte použít nedeklarovaný název proměnné, dojde k chybě v době kompilace. Příkaz `Option Explicit Off` umožňuje implicitní deklaraci proměnných.  
   
- Je-li použit `Option Explicit` , příkaz se musí objevit v souboru před jakýmkoli jiným příkazy zdrojového kódu.  
+ Při použití musí být příkaz `Option Explicit` uveden v souboru před jakýmkoli jiným příkazy zdrojového kódu.  
   
 > [!NOTE]
-> Nastavení `Option Explicit` na`Off` není obvykle dobrým zvykem. V jednom nebo více umístěních byste mohli nastavovat navýšení názvu proměnné, což způsobí, že při spuštění programu dojde k neočekávaným výsledkům.  
+> Nastavení `Option Explicit` na `Off` není většinou dobrým zvykem. V jednom nebo více umístěních byste mohli nastavovat navýšení názvu proměnné, což způsobí, že při spuštění programu dojde k neočekávaným výsledkům.  
   
 ## <a name="when-an-option-explicit-statement-is-not-present"></a>Pokud není k dispozici příkaz Option Explicit  
- Pokud zdrojový kód `Option Explicit` neobsahuje příkaz, je použita **možnost explicitní** nastavení na [stránce kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [/OptionExplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
+ Pokud zdrojový kód neobsahuje příkaz `Option Explicit`, je použita **možnost explicitní** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [/OptionExplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
   
 #### <a name="to-set-option-explicit-in-the-ide"></a>Nastavení možnosti Explicit v integrovaném vývojovém prostředí  
   
@@ -53,14 +53,14 @@ Option Explicit { On | Off }
   
 3. Nastavte hodnotu v poli **explicitní možnosti** .  
   
- Při vytváření nového projektu je **možnost explicitní** nastavení na kartě **kompilovat** nastavena na **možnost explicitní** nastavení v dialogovém okně **výchozí hodnoty VB** . Chcete-li získat přístup k dialogovému oknu **výchozí hodnoty VB** , v nabídce **nástroje** klikněte na možnost **Možnosti**. V dialogovém okně **Možnosti** rozbalte **projekty a řešení**a potom klikněte na **výchozí hodnoty VB**. Výchozí výchozí nastavení ve výchozím nastavení **jazyka VB** je `On`.  
+ Při vytváření nového projektu je **možnost explicitní** nastavení na kartě **kompilovat** nastavena na **možnost explicitní** nastavení v dialogovém okně **výchozí hodnoty VB** . Chcete-li získat přístup k dialogovému oknu **výchozí hodnoty VB** , v nabídce **nástroje** klikněte na možnost **Možnosti**. V dialogovém okně **Možnosti** rozbalte **projekty a řešení**a potom klikněte na **výchozí hodnoty VB**. Počáteční výchozí nastavení ve **výchozích hodnotách VB** je `On`.  
   
 #### <a name="to-set-option-explicit-on-the-command-line"></a>Nastavení možnosti Explicit na příkazovém řádku  
   
 - Do příkazu **Vbc** zahrňte možnost kompilátoru [/OptionExplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Option Explicit` příkaz k vynucení explicitní deklarace všech proměnných. Pokus o použití nedeklarované proměnné způsobí chybu v době kompilace.  
+ Následující příklad používá příkaz `Option Explicit` k vynucení explicitní deklarace všech proměnných. Pokus o použití nedeklarované proměnné způsobí chybu v době kompilace.  
   
  [!code-vb[VbVbalrStatements#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#47)]  
   

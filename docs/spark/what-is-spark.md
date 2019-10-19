@@ -4,12 +4,12 @@ description: Přečtěte si o scénářích Apache Spark a velkých objemů dat.
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: ccf41f08df3c68a039210320f14219e6b6229a64
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 187a37897c23809d91820bd79b476e775fb5b99b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72396234"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583487"
 ---
 # <a name="what-is-apache-spark"></a>Co je Apache Spark?
 
@@ -69,30 +69,30 @@ Každý vykonavatel nebo pracovní uzel přijme úkol od ovladače a provede tut
 
 Správce clusteru komunikuje s ovladačem i s prováděcími moduly pro:
 
-- Spravovat přidělení prostředků
-- Spravovat rozdělení programu
-- Správa provádění programu
+* Spravovat přidělení prostředků
+* Spravovat rozdělení programu
+* Správa provádění programu
 
 ## <a name="language-support"></a>Podpora jazyků
 
 Apache Spark podporuje následující programovací jazyky:
 
-- Scala
-- Python
-- Java
-- SQL
-- R
-- .NET
+* Scala
+* Python
+* Java
+* SQL
+* R
+* .NET
 
 ## <a name="spark-apis"></a>Rozhraní Spark API
 
 Apache Spark podporuje následující rozhraní API:
 
-- [Rozhraní Spark Scala API](https://spark.apache.org/docs/2.2.0/api/scala/index.html)
-- [Rozhraní Spark Java API](https://spark.apache.org/docs/2.2.0/api/java/index.html)
-- [Rozhraní Spark Python API](https://spark.apache.org/docs/2.2.0/api/python/index.html)
-- [Rozhraní Spark R API](https://spark.apache.org/docs/2.2.0/api/R/index.html)
-- [Spark SQL](https://spark.apache.org/docs/latest/api/sql/index.html), integrované funkce
+* [Rozhraní Spark Scala API](https://spark.apache.org/docs/2.2.0/api/scala/index.html)
+* [Rozhraní Spark Java API](https://spark.apache.org/docs/2.2.0/api/java/index.html)
+* [Rozhraní Spark Python API](https://spark.apache.org/docs/2.2.0/api/python/index.html)
+* [Rozhraní Spark R API](https://spark.apache.org/docs/2.2.0/api/R/index.html)
+* [Spark SQL](https://spark.apache.org/docs/latest/api/sql/index.html), integrované funkce
 
 ## <a name="next-steps"></a>Další kroky
 

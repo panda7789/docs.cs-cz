@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Získání a nastavení hlavního okna aplikace'
+title: 'Postupy: získání a nastavení hlavního okna aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,29 +10,29 @@ helpviewer_keywords:
 - windows objects [WPF], getting
 - getting windows objects [WPF]
 ms.assetid: ec902bc4-4a59-46f5-8ec1-963b46789356
-ms.openlocfilehash: ea8333aa82f1159afb438215940ee1e7c2605e96
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5894761c4b6258cbf90d369a722ffc5abca51885
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947794"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582549"
 ---
-# <a name="how-to-get-and-set-the-main-application-window"></a>Postupy: Získání a nastavení hlavního okna aplikace
-Tento příklad ukazuje, jak k získání a nastavení hlavního okna aplikace.  
+# <a name="how-to-get-and-set-the-main-application-window"></a>Postupy: získání a nastavení hlavního okna aplikace
+Tento příklad ukazuje, jak získat a nastavit hlavní okno aplikace.  
   
 ## <a name="example"></a>Příklad  
- První <xref:System.Windows.Window> , která je vytvořena instance v rámci Windows Presentation Foundation (WPF) aplikace je automaticky nastaven na <xref:System.Windows.Application> jako hlavního okna aplikace. První <xref:System.Windows.Window> bude instance bude pravděpodobně možné okna, který je zadán jako počáteční [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] (viz <xref:System.Windows.Application.StartupUri%2A>).  
+ První <xref:System.Windows.Window>, který je vytvořen v rámci aplikace Windows Presentation Foundation (WPF), je automaticky nastavena <xref:System.Windows.Application> jako hlavní okno aplikace. První <xref:System.Windows.Window>, který má být vytvořen jako instance, bude pravděpodobně okno, které je zadáno jako spouštěcí identifikátor URI (Uniform Resource Identifier) (viz <xref:System.Windows.Application.StartupUri%2A>).  
   
- První <xref:System.Windows.Window> může také vytvořit instanci pomocí kódu. Jedním z příkladů je otevřete okno při spuštění aplikace, jako je následující:  
+ První <xref:System.Windows.Window> může být také vytvořena pomocí kódu. Jedním z příkladů je otevření okna během spouštění aplikace, jako například následující:  
   
  [!code-csharp[HOWTOWindowManagementSnippets#FirstWindowUsingCodeCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/App.xaml.cs#firstwindowusingcodecodebehind)]
  [!code-vb[HOWTOWindowManagementSnippets#FirstWindowUsingCodeCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/application.xaml.vb#firstwindowusingcodecodebehind)]  
   
- V některých případech první instance <xref:System.Windows.Window> je ve skutečnosti hlavního okna aplikace například úvodní obrazovky. V takovém případě můžete zadat hlavního okna aplikace pomocí značek, jako je následující:  
+ Někdy první vytvořená instance <xref:System.Windows.Window> není ve skutečnosti hlavní okno aplikace, například úvodní obrazovka. V takovém případě můžete určit hlavní okno aplikace pomocí značek, například takto:  
   
  [!code-xaml[ApplicationMainWindowSnippets#SetApplicationMainWindowXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/ApplicationMainWindowSnippets/XAML/App.xaml#setapplicationmainwindowxaml)]  
   
- Specifikovaných hlavní okno se automaticky nebo ručně, můžete získat z hlavního okna <xref:System.Windows.Application.MainWindow%2A> pomocí následujícího kódu, jako je následující:  
+ Bez ohledu na to, jestli je hlavní okno zadané automaticky nebo ručně, můžete získat hlavní okno z <xref:System.Windows.Application.MainWindow%2A> pomocí následujícího kódu, například takto:  
   
  [!code-csharp[ApplicationMainWindowSnippets#GetApplicationMainWindowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationMainWindowSnippets/CSharp/App.xaml.cs#getapplicationmainwindowcode)]
  [!code-vb[ApplicationMainWindowSnippets#GetApplicationMainWindowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationMainWindowSnippets/visualbasic/application.xaml.vb#getapplicationmainwindowcode)]

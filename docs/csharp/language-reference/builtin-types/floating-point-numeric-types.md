@@ -1,7 +1,7 @@
 ---
 title: Číselné typy s plovoucí desetinnou C# čárkou – referenční informace
 description: Přehled předdefinovaných typů s C# plovoucí desetinnou čárkou
-ms.date: 06/30/2019
+ms.date: 10/18/2019
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,16 +18,16 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 17ae154780679dd1f42f43f1ec345cdc722815d3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fa6cbb869d90113414cc6f8ffe231386c3596b1d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002191"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579373"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnouC# čárkou (referenční)
 
-**Typy s plovoucí desetinnou** čárkou jsou podmnožinou **jednoduchých typů** a lze je inicializovat pomocí [*literálů*](#floating-point-literals). Všechny typy s plovoucí desetinnou čárkou jsou také typy hodnot. Všechny číselné typy s plovoucí desetinnou čárkou podporují operátory [aritmetické](../operators/arithmetic-operators.md), [porovnání a rovnosti](../operators/equality-operators.md) .
+**Typy s plovoucí desetinnou** čárkou jsou podmnožinou **jednoduchých typů** a lze je inicializovat pomocí [*literálů*](#real-literals). Všechny typy s plovoucí desetinnou čárkou jsou také typy hodnot. Všechny číselné typy s plovoucí desetinnou čárkou podporují operátory [aritmetické](../operators/arithmetic-operators.md), [porovnání](../operators/comparison-operators.md)a [rovnosti](../operators/equality-operators.md) .
 
 ## <a name="characteristics-of-the-floating-point-types"></a>Vlastnosti typů s plovoucí desetinnou čárkou
 
@@ -52,8 +52,8 @@ Vzhledem k tomu, že typ `decimal` má větší přesnost a menší rozsah než 
 
 Ve výrazu můžete kombinovat [integrální](integral-numeric-types.md) typy a typy s plovoucí desetinnou čárkou. V tomto případě jsou integrální typy převedeny na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu je provedeno podle následujících pravidel:
 
-- Pokud je jeden z typů s plovoucí desetinnou čárkou `double`, výraz se vyhodnotí jako `double` nebo na [logickou](../keywords/bool.md) hodnotu v relačních porovnáních nebo porovnávání pro rovnost.
-- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float` nebo na [logickou](../keywords/bool.md) hodnotu v relačních porovnáních nebo porovnávání pro rovnost.
+- Pokud je jeden z typů s plovoucí desetinnou čárkou `double`, výraz se vyhodnotí jako `double` nebo [bool](../keywords/bool.md) v relačních porovnáních a porovnávání rovnosti.
+- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float` nebo [bool](../keywords/bool.md) v relačních porovnáních a porovnávání rovnosti.
 
 Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:
 
@@ -66,23 +66,41 @@ Další informace o těchto hodnotách najdete v tématu IEEE standard pro biná
 
 K formátování hodnoty s plovoucí desetinnou čárkou můžete použít buď [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md) , nebo [řetězce vlastního číselného formátu](../../../standard/base-types/custom-numeric-format-strings.md) .
 
-## <a name="floating-point-literals"></a>Literály s plovoucí desetinnou čárkou
+## <a name="real-literals"></a>Reálné literály
 
-Ve výchozím nastavení je číselný literál s plovoucí desetinnou čárkou na pravé straně operátoru přiřazení považován za `double`. Můžete použít přípony pro převod plovoucí desetinné čárky nebo integrálního literálu na konkrétní typ:
+Typ reálného literálu je určen jeho příponou takto:
 
-- Přípona `d` nebo `D` převede literál na `double`.
-- Přípona `f` nebo `F` převede literál na `float`.
-- Přípona `m` nebo `M` převede literál na `decimal`.
+- Literál bez přípony nebo s příponou `d` nebo `D` je typu `double`
+- Literál s příponou `f` nebo `F` je typu `float`
+- Literál s příponou `m` nebo `M` je typu `decimal`
 
-Následující příklady znázorňují jednotlivé přípony:
+Následující kód ukazuje příklad každé z nich:
 
 ```csharp
 double d = 3D;
 d = 4d;
-float f = 3.5F;
+d = 3.934_001;
+
+float f = 3_000.5F;
 f = 5.4f;
-decimal myMoney = 300.5m;
+
+decimal myMoney = 3_000.5m;
 myMoney = 400.75M;
+```
+
+Předchozí příklad také ukazuje použití `_` jako *oddělovač číslic*, který je podporován od C# 7,0. Oddělovač číslic se dá použít u všech druhů číselných literálů.
+
+Můžete také použít vědeckou notaci, to znamená, že určíte exponent, který je součástí reálného literálu, jak ukazuje následující příklad:
+
+```csharp-interactive
+double d = 0.42e2;
+Console.WriteLine(d);  // output 42;
+
+float f = 134.45E-2f;
+Console.WriteLine(f);  // output: 1.3445
+
+decimal m = 1.5E6m;
+Console.WriteLine(m);  // output: 1500000
 ```
 
 ## <a name="conversions"></a>Převody
@@ -95,15 +113,21 @@ Další informace o implicitním číselném převodu naleznete v tématu [impli
 
 Další informace o explicitních číselných převodech naleznete v tématu [explicitní číselná](../keywords/explicit-numeric-conversions-table.md)převodová tabulka.
 
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+
+- [Typy s plovoucí desetinnou čárkou](~/_csharplang/spec/types.md#floating-point-types)
+- [Typ Decimal](~/_csharplang/spec/types.md#the-decimal-type)
+- [Reálné literály](~/_csharplang/spec/lexical-structure.md#real-literals)
+
 ## <a name="see-also"></a>Viz také:
 
-- [C#Odkaz](../index.md)
+- [C#odkaz](../index.md)
 - [Celočíselné typy](integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)
 - [Přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md)
-- [Tabulka implicitních číselných převodů](../keywords/implicit-numeric-conversions-table.md)
-- [Tabulka explicitních číselných převodů](../keywords/explicit-numeric-conversions-table.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
-- [Standardní řetězce číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Řetězce standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
