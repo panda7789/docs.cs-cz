@@ -17,6 +17,8 @@
       href: file-format.md
     - name: 'Postupy: Použití a ladění funkce uvolnění sestavení v .NET Core'
       href: unloadability.md
+    - name: Referenční sestavení
+      href: reference-assemblies.md
     - name: Řešení zavedení sestavení
       href: resolve-loads.md
     - name: Programování se sestaveními
