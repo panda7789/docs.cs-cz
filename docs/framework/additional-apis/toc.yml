@@ -106,6 +106,12 @@
               href: xpsdocumentwriter-writingcompleted-event-system-windows-xps.md
             - name: _WritingProgressChanged
               href: xpsdocumentwriter-writingprogresschanged-event-system-windows-xps.md
+    - name: System.Xml
+      items:
+        - name: XmlReader – třída
+          items:
+            - name: XmlReader.CreateSqlReader – metoda
+              href: system.xml.xmlreader.createsqlreader.md
     - name: adodb – názvový prostor
       items:
         - name: Připojení rozhraní
