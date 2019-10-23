@@ -2,12 +2,12 @@
 title: Co je Docker?
 description: Podrobnější informace najdete v tématu o tom, jak vám to může porozumět.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7747c4985af27be0a073fad2f22622f697f4ce27
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7fd3c599afda2d59e0d56756bd61495f2d0370a0
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295610"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770719"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -78,5 +78,5 @@ Obrázek si můžete představit jako pomocný pevný disk jen pro čtení, kter
 Podobně můžete představit kontejner jako počítač s nainstalovaným pevným diskem image. Kontejner, stejně jako počítač, lze zapnout nebo vypnout.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](docker-terminology.md)
+>[Předchozí](index.md)
+>[Další](docker-terminology.md)

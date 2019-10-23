@@ -3,12 +3,12 @@ title: Migrace řešení WCF do gRPC-gRPC pro vývojáře WCF
 description: Postup migrace různých typů služby WCF na ekvivalent v gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: a9cfb87361194d998a3c4dfff4fe434be64f0d65
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 77bcb1412803b371778943763308c3010ed35aac
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184293"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770107"
 ---
 # <a name="migrate-a-wcf-solution-to-grpc"></a>Migrace řešení WCF do gRPC
 
@@ -23,7 +23,7 @@ V této kapitole se dozvíte, jak pracovat s projekty ASP.NET Core 3,0 gRPC a p�
 
 Existuje také porovnání používání služby streamování a opakujících se polí pro vracení datových sad a použití klientských knihoven na konci kapitoly.
 
-Ukázková aplikace WCF je minimální zástupná procedura sady burzovních obchodních služeb s použitím open source knihovny kontejnerů IoC (inverze Control) s názvem *Autofac* pro vkládání závislostí. Zahrnuje tři služby, jeden pro každý typ služby WCF. V následujících částech jsou popsány podrobné informace o službách. Řešení je možné stáhnout z [RendleLabs/grpc-for-WCF-Developers](https://github.com/dotnet-architecture/grpc-for-wcf-developers) na GitHubu. Služby používají falešná data k minimalizaci externích závislostí.
+Ukázková aplikace WCF je minimální zástupná procedura sady burzovních obchodních služeb s použitím open source knihovny kontejnerů IoC (inverze Control) s názvem *Autofac* pro vkládání závislostí. Zahrnuje tři služby, jeden pro každý typ služby WCF. V následujících částech jsou popsány podrobné informace o službách. Řešení je možné stáhnout z příkazu [dotnet-Architecture/grpc-for-WCF-Developers](https://github.com/dotnet-architecture/grpc-for-wcf-developers) na GitHubu. Služby používají falešná data k minimalizaci externích závislostí.
 
 Ukázky zahrnují implementace WCF a gRPC každé služby.
 

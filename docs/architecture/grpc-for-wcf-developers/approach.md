@@ -3,14 +3,14 @@ title: Jak gRPC přistupuje k RPC – gRPC pro vývojáře WCF
 description: Porovnání klíčových funkcí WCF a gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 65d61c8246569d81dfec3aeb8e3df4bea26258dc
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 36d51b96796f274811bfeea64c159afcc9bce301
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184601"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770678"
 ---
-# <a name="how-grpc-approaches-rpc"></a>Jak gRPC přistupuje k RPC
+# <a name="how-grpc-approaches-rpc"></a>Přístup gRPC k RPC
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -25,7 +25,7 @@ Následující tabulka obsahuje informace o tom, jak se klíčové funkce WCF vz
 | Jazyk (kapitola 3-5) | Smlouvy napsané C# nebo Visual Basic | Jazyk vyrovnávací paměti protokolu |
 | Formát vedení (kapitola 3) | Konfigurovatelné, včetně SOAP/XML, prostého formátu XML, JSON, .NET binary a tak dále. | Binární formát vyrovnávací paměti protokolu (i když je možné použít jiné formáty).
 | Interoperabilita (kapitola 4) | Při použití protokolu SOAP přes protokol HTTP | Oficiální podpora: .NET, Java, Python, JavaScript, C/C++, přejít, Rust, Ruby, SWIFT, DART, php. Neoficiální podpora jiných jazyků od komunity. |
-| Sítě (kapitola 4) | Nakonfigurováno za běhu. Přepínejte mezi protokoly TCP, HTTP, MSMQ atd. | Vždycky HTTP/2 |
+| Sítě (kapitola 4) | Nakonfigurováno za běhu. Přepínejte mezi NetTCP, HTTP, MSMQ a tak dále. | HTTP/2, aktuálně přes protokol TCP, s ASP.NET Core gRPC. |
 | Přístup (kapitola 4) | Generování/Deserialization serializace a kódu sítě v základních třídách za běhu | Generování serializace/Deserialization a kódu sítě v základních třídách během sestavení |
 | Zabezpečení (kapitola 6) | Ověřování, WS-Security, šifrování zpráv | Přihlašovací údaje, ASP.NET Core zabezpečení, sítě TLS |
 

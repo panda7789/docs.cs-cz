@@ -3,12 +3,12 @@ title: Komunikační infrastruktura Service Mesh
 description: Přečtěte si, jak technologie sítě sítě zefektivňují komunikaci mikroslužeb v cloudu.
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: 884b3bf9afd80144a36d3328af916f1c1f12bf4f
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: a9192bf9f5827d05b2453c796c72e11782f9f911
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214345"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771029"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Komunikační infrastruktura Service Mesh
 
@@ -26,9 +26,9 @@ Klíčovou součástí sítě je proxy. V nativní aplikaci pro Cloud je instanc
 
 **Obrázek 4-23**. Síť s postranním vozíkem
 
-Všimněte si na předchozím obrázku, jak jsou zprávy zachyceny proxy serverem, který se souběžně používá v rámci každé mikroslužby. Jednotlivé proxy servery je možné nakonfigurovat s pravidly přenosů, které jsou specifické pro mikroslužby. Chápe zprávy a můžou je směrovat mezi vaše služby a vnějším světem. 
+Všimněte si na předchozím obrázku, jak jsou zprávy zachyceny proxy serverem, který se souběžně používá v rámci každé mikroslužby. Jednotlivé proxy servery je možné nakonfigurovat s pravidly přenosů, které jsou specifické pro mikroslužby. Chápe zprávy a můžou je směrovat mezi vaše služby a vnějším světem.
 
-Spolu se správou komunikace mezi službami zajišťuje služba síť podporu zjišťování služeb a vyrovnávání zatížení. 
+Spolu se správou komunikace mezi službami zajišťuje služba síť podporu zjišťování služeb a vyrovnávání zatížení.
 
 Po nakonfigurování je síť velmi funkční. Síť načte odpovídající fond instancí z koncového bodu zjišťování služby. Pošle požadavek na konkrétní instanci služby, která zaznamená latenci a typ odpovědi pro výsledek. Zvolí instanci, která pravděpodobně vrátí rychlou odpověď na základě různých faktorů, včetně pozorované latence pro poslední požadavky.
 
@@ -38,7 +38,7 @@ V kapitole 6 jsme podrobně na technologie sítě, včetně diskuzí o architekt
 
 ## <a name="summary"></a>Souhrn
 
-V této kapitole jsme probrali vzory komunikace v cloudu Native. Začali jsme zkoumat, jak klienti front-end komunikují s back-end mikroslužbami. Mluvili se na platformě rozhraní API Gateway a na komunikaci v reálném čase. Pak jsme si prohlédli, jak mikroslužby komunikují s jinými back-endové službami. Vyhledali jsme synchronní komunikaci HTTP i asynchronní zasílání zpráv napříč službami. Pokryli jsme gRPC, nadcházející technologii v cloudu Native World. Nakonec jsme zavedli novou a rychle se vyvíjející technologii, která může zjednodušit komunikaci mikroslužeb. 
+V této kapitole jsme probrali vzory komunikace v cloudu Native. Začali jsme zkoumat, jak klienti front-end komunikují s back-end mikroslužbami. Mluvili se na platformě rozhraní API Gateway a na komunikaci v reálném čase. Pak jsme si prohlédli, jak mikroslužby komunikují s jinými back-endové službami. Vyhledali jsme synchronní komunikaci HTTP i asynchronní zasílání zpráv napříč službami. Pokryli jsme gRPC, nadcházející technologii v cloudu Native World. Nakonec jsme zavedli novou a rychle se vyvíjející technologii, která může zjednodušit komunikaci mikroslužeb.
 
 Speciální důraz byl na spravované služby Azure, které můžou přispět k implementaci komunikace v systémech nativních pro Cloud:
 
@@ -52,25 +52,25 @@ Speciální důraz byl na spravované služby Azure, které můžou přispět k 
 
 Dál jsme přešli na distribuovaná data v systémech nativních pro Cloud a na výhody a výzvy, které prezentují.
 
-### <a name="references"></a>Odkazy 
+### <a name="references"></a>Odkazy
 
-- [Mikroslužby .NET: Architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
-  
+- [Mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
+
 - [Návrh komunikace mezi službami pro mikroslužby](https://docs.microsoft.com/azure/architecture/microservices/design/interservice-communication)
 
 - [Služba signalizace Azure, plně spravovaná služba pro přidání funkcí v reálném čase](https://azure.microsoft.com/blog/azure-signalr-service-a-fully-managed-service-to-add-real-time-functionality/)
-  
+
 - [Kontroler příchozího přenosu brány API Azure](https://azure.github.io/application-gateway-kubernetes-ingress/)
-  
+
 - [Informace o příchozím přenosu ve službě Azure Kubernetes (AKS)](https://vincentlauzon.com/2018/10/10/about-ingress-in-azure-kubernetes-service-aks/)
- 
+
 - [Praktické gRPC](https://www.worldcat.org/title/practical-grpc/oclc/1042342319)
 
 - [Dokumentace k gRPC](https://grpc.io/docs/guides/)
 
-- [gRPC pro vývojáře WCF](https://bing.com) [Mark 's book gRPC]
-  
-- [Porovnávání služeb gRPC s rozhraními API HTTP](https://docs.microsoft.com/en-us/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
+- [gRPC pro vývojáře WCF](https://bing.com) [značka gRPC]
+
+- [Porovnávání služeb gRPC s rozhraními API HTTP](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
 >[!div class="step-by-step"]
 >[Předchozí](rest-grpc.md)

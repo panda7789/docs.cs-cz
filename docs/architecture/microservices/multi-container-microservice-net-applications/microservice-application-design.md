@@ -2,12 +2,12 @@
 title: Návrh aplikace orientované na mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s výhodami a downsides aplikací orientovaných na mikroslužby, abyste mohli vzít v úvahu své rozhodnutí.
 ms.date: 10/02/2018
-ms.openlocfilehash: dc3c8ccd95505cb828383f499b9bf950e7c12a30
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1c2fe341c62111e915df35aab818b8a980004834
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039818"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72772064"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
 
@@ -65,7 +65,7 @@ Takže se můžete soustředit na architekturu a technologie a nemusíte se zaj�
 
 Aplikace se skládá z několika subsystémů, včetně několika front-endu uživatelského rozhraní úložiště (webová aplikace a nativní mobilní aplikace), spolu s back-endové mikroslužby a kontejnery pro všechny požadované operace na straně serveru s několika branami rozhraní API, jako je konsolidované vstupní body do interních mikroslužeb. Obrázek 6-1 ukazuje architekturu referenční aplikace.
 
-![Mobilní a SPA klienti komunikují s jedním z koncových bodů brány rozhraní API, které pak komunikují s mikroslužbami. Tradiční webový klient komunikuje s mikroslužbou MVC, která komunikuje s mikroslužbami](./media/image1.png)
+![Mobilní a SPA klienti komunikují s koncovými body brány rozhraní API, které pak komunikují s mikroslužbami. Tradiční webový klient komunikuje s mikroslužbou MVC, která komunikuje s mikroslužbami](./media/image1.png)
 
 **Obrázek 6-1**. Architektura referenčních aplikací eShopOnContainers pro vývojové prostředí
 
@@ -89,7 +89,7 @@ Jednotky nasazení pro mikroslužby (a dokonce i pro databáze v této aplikaci)
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **úložiště GitHub eShopOnContainers Zdrojový kód referenční aplikace** \
+- **úložiště GitHub eShopOnContainers Zdrojový kód pro referenční aplikaci**  \
   <https://aka.ms/eShopOnContainers/>
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Výhody řešení založeného na mikroslužbách
@@ -146,7 +146,7 @@ Externí architektura je architektura mikroslužeb, která se skládá z několi
 
 Například v naší ukázce *eShopOnContainers* jsou mikroslužby katalogu, košíku a profilů uživatelů jednoduché (v podstatě i subsystémy CRUD). Proto jsou jejich interní architektura a návrh jednoduché. Můžete ale mít jiné mikroslužby, jako je objednávání mikroslužby, což je složitější a představuje neustále se měnící obchodní pravidla s vysokou mírou složitosti domény. V takových případech můžete chtít implementovat pokročilejší vzory v rámci určité mikroslužby, jako jsou ty, které jsou definované pomocí přístupů k návrhu řízenému doménou (DDD), jak provádíme v *eShopOnContainers* řazení mikroslužeb. (Tyto DDD vzory prozkoumáme později v části, které popisují implementaci mikroslužby pro řazení *eShopOnContainers* .)
 
-Dalším důvodem pro jinou technologii na mikroslužbu může být povaha každé mikroslužby. Může být například lepší používat funkční programovací jazyk, jako je F\#, nebo i jazyk, jako je R, pokud cílíte na domény AI a strojového učení, a ne na objektově orientovaný programovací jazyk, jako je C.\#
+Dalším důvodem pro jinou technologii na mikroslužbu může být povaha každé mikroslužby. Může být například lepší používat funkční programovací jazyk, například F \#, nebo i jazyk, jako je R, pokud cílíte na domény AI a strojového učení, nikoli na objektově orientovaný programovací jazyk, jako je C \#.
 
 Dolním řádkem je, že každá mikroslužba může mít jinou interní architekturu založenou na různých vzorech návrhu. Ne všechny mikroslužby by se měly implementovat pomocí pokročilých vzorů DDD, protože by byly předálené. Podobně komplexní mikroslužby s neustále se měnící obchodní logikou by neměly být implementovány jako komponenty CRUD nebo můžete ukončit kód s nízkou kvalitou.
 
@@ -160,13 +160,13 @@ Software architekti a vývojáři používá mnoho vzorů architektury. Níže j
 
 - [Návrh založený na doméně N-vrstvý](https://devblogs.microsoft.com/cesardelatorre/published-first-alpha-version-of-domain-oriented-n-layered-architecture-v2-0/).
 
-- [Čistá architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) (jak se používá s [eShopOnWeb](https://aka.ms/WebAppArchitecture))
+- [Čistá architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) (jako při použití s [eShopOnWeb](https://aka.ms/WebAppArchitecture))
 
 - [CQRS (Command and Query Responsibility segregation)](https://martinfowler.com/bliki/CQRS.html) (CQRS).
 
 - [Architektura řízená událostmi](https://en.wikipedia.org/wiki/Event-driven_architecture) (EDA).
 
-Můžete také vytvářet mikroslužby s mnoha technologiemi a jazyky, jako jsou ASP.NET Core Web API, NancyFx, ASP.NET Core Signal (k dispozici v .NET Core 2), F\#, Node. js, Python, Java, C++, GoLang a další.
+Můžete také vytvářet mikroslužby s mnoha technologiemi a jazyky, jako jsou ASP.NET Core Web API, NancyFx, ASP.NET Core Signal (k dispozici v .NET Core 2), F \#, Node. js, Python, Java, C++, GoLang a další.
 
 Důležitým bodem je, že žádný konkrétní model ani styl architektury ani žádná konkrétní technologie nejsou pro všechny situace správné. Obrázek 6-3 ukazuje některé přístupy a technologie (i když nejsou v žádné konkrétní objednávce), které by mohly být použity v různých mikroslužbách.
 
@@ -183,5 +183,5 @@ Zejména při práci s velkými aplikacemi, které se skládají z více podsyst
 U každého daného případu není k dispozici žádný stříbrný nebo správný vzor architektury. Nemůžete mít žádný vzor architektury, který by je měl pokaždé. V závislosti na prioritách každé mikroslužby musíte pro každý z nich zvolit jiný přístup, jak je vysvětleno v následujících oddílech.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](data-driven-crud-microservice.md)
+>[Předchozí](index.md)
+>[Další](data-driven-crud-microservice.md)

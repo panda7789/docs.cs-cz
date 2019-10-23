@@ -3,12 +3,12 @@ title: Přehled gRPC-gRPC pro vývojáře WCF
 description: Seznamte se se sadou principů, které vyvíjejí vývoj gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: b372cc9dcdb2efd605b3d9b688513e4ff8530b01
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 489b91f6aa279d9c457e2e8fccd4438885076779
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184440"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770455"
 ---
 # <a name="grpc-overview"></a>gRPC – přehled
 
@@ -18,9 +18,9 @@ Po zobrazení genesisy WCF a gRPC v poslední kapitole bude tato kapitola brát 
 
 ASP.NET Core 3,0 je první verze ASP.NET, která nativně podporuje gRPC jako občana první třídy, s týmy Microsoftu, které přispívají k oficiální implementaci rozhraní .NET gRPC. Doporučuje se jako nejlepší přístup pro vytváření distribuovaných aplikací s .NET, které mohou spolupracovat se všemi ostatními hlavními programovacími jazyky a architekturami.
 
-## <a name="key-principles"></a>Klíč zásad
+## <a name="key-principles"></a>Klíčové principy
 
-Jak je popsáno v kapitole 1, Google chtěla použít zavedení HTTP/2 pro repráci Stubby, její interní infrastrukturu RPC pro obecné účely. Stubby, přejmenované gRPC, teď můžou využít standardizaci a by rozšířila její použitelnost na Mobile Computing, Cloud a Internet věcí.
+Jak je popsáno v kapitole 1, Google chtěla použít zavedení HTTP/2 k nahrazení Stubby, jeho interní infrastruktury RPC pro obecné účely. gRPC, na základě Stubby, teď můžou využít standardizaci a by rozšířila její použitelnost na Mobile Computing, Cloud a Internet věcí.
 
 Za tímto účelem vytvořila sada [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) sadu principů, které by se řídily gRPC. V následujícím seznamu jsou uvedeny nejdůležitější ty, které se hlavně týkají maximalizace usnadnění přístupu a použitelnosti:
 

@@ -2,12 +2,12 @@
 title: Kontejnerizování monolitických aplikací
 description: Uzavření monolitické aplikace, i když nezískají všechny výhody architektury mikroslužeb, přináší důležité výhody nasazení, které se dají hned doručovat.
 ms.date: 09/20/2018
-ms.openlocfilehash: 9e457fba56c8fdf946618fca10285f4c0a343af4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5b38ba1c2954f4fd4064723b1316afbf09d25bf2
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295542"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771482"
 ---
 # <a name="containerizing-monolithic-applications"></a>Kontejnerizování monolitických aplikací
 
@@ -23,7 +23,7 @@ Do každého kontejneru můžete zahrnout více komponent, knihoven nebo vnitřn
 
 Nevýhodou tohoto přístupu se projeví i v případě, že aplikace roste a vyžaduje, aby se změnila. Pokud se celá aplikace může škálovat, není ve skutečnosti problém. Ve většině případů je však pouze několik částí aplikace sytiče body, které vyžadují škálování, zatímco jiné součásti jsou používány méně.
 
-Například v typické aplikaci elektronického obchodování pravděpodobně budete potřebovat škálovat podsystém informací o produktu, protože mnoho dalších zákazníků prochází produkty, než je koupí. Další zákazníci používají svůj koš, než používá platební kanál. Méně zákazníkům přidávají komentáře nebo zobrazují historii jejich nákupu. A můžete mít jenom několik zaměstnance, kteří potřebují spravovat kampaně a marketing pro obsah. Pokud budete škálovat návrh monolitické, veškerý kód těchto různých úloh se nasadí několikrát a škáluje se ve stejné třídě.
+Například v typické aplikaci elektronického obchodování pravděpodobně budete potřebovat škálovat podsystém informací o produktu, protože mnoho dalších zákazníků prochází produkty, než je koupí. Další zákazníci používají svůj koš, než používá platební kanál. Méně zákazníkům přidávají komentáře nebo zobrazují historii jejich nákupu. A můžete mít jenom několik zaměstnance, kteří potřebují spravovat obsah a marketingové kampaně. Pokud budete škálovat návrh monolitické, veškerý kód těchto různých úloh se nasadí několikrát a škáluje se ve stejné třídě.
 
 Existuje několik způsobů, jak škálovat horizontální duplikaci aplikace, dělení různých oblastí aplikace a dělení podobných obchodních konceptů nebo dat. Kromě problému s škálováním všech komponent ale změny jedné součásti vyžadují dokončení opětovného testování celé aplikace a úplné opětovné nasazení všech instancí.
 
@@ -33,7 +33,7 @@ Z hlediska infrastruktury může každý server spouštět mnoho aplikací v rá
 
 ![Hostitel může spustit několik aplikací monolitické, každý z nich na samostatném kontejneru.](./media/image2.png)
 
-**Obrázek 4-2**. Monolitické přístup: Hostování s více aplikacemi, každou aplikaci spuštěnou jako kontejner
+**Obrázek 4-2**. Přístup k monolitické: hostitel spouštějící víc aplikací, každou aplikaci spuštěnou jako kontejner.
 
 Monolitické aplikace v Microsoft Azure lze nasadit pomocí vyhrazených virtuálních počítačů pro každou instanci. Kromě toho můžete pomocí [Azure Virtual Machine Scale Sets](https://azure.microsoft.com/documentation/services/virtual-machine-scale-sets/)snadno škálovat virtuální počítače. [Azure App Service](https://azure.microsoft.com/services/app-service/) můžou také spouštět aplikace monolitické a snadno škálovat instance, aniž byste museli spravovat virtuální počítače. Od 2016 může Azure App Services spustit i jednu instanci kontejnerů Docker a zjednodušit tak nasazení.
 
@@ -43,13 +43,13 @@ Jako prostředí QA nebo omezené provozní prostředí můžete nasadit víc vi
 
 **Obrázek 4-3**. Příklad více hostitelů s vertikálním škálováním jedné aplikace kontejneru
 
-Nasazení na různé hostitele je možné spravovat pomocí tradičních technik nasazení. Hostitele Docker je možné spravovat pomocí příkazů, `docker run` jako `docker-compose` je nebo provést ručně, nebo prostřednictvím automatizace, jako jsou kanály pro průběžné doručování (CD).
+Nasazení na různé hostitele je možné spravovat pomocí tradičních technik nasazení. Hostitelé Docker je možné spravovat pomocí příkazů, jako je `docker run` nebo `docker-compose` provést ručně nebo prostřednictvím automatizace, jako jsou kanály pro průběžné doručování (CD).
 
 ## <a name="deploying-a-monolithic-application-as-a-container"></a>Nasazení aplikace monolitické jako kontejneru
 
 Existují výhody použití kontejnerů ke správě nasazení aplikací monolitické. Škálování instancí kontejnerů je mnohem rychlejší a jednodušší než nasazení dalších virtuálních počítačů. I když používáte Virtual Machine Scale Sets, virtuální počítače se budou spouštět až po dobu. Při nasazení jako tradičních instancí aplikace namísto kontejnerů se konfigurace aplikace spravuje jako součást virtuálního počítače, což není ideální.
 
-Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Image Docker obvykle začínají během pár sekund, což zrychluje uvádění. Odložení instance image Docker je stejně snadné jako vystavení `docker stop` příkazu a obvykle se dokončí za méně než sekundu.
+Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Image Docker obvykle začínají během pár sekund, což zrychluje uvádění. Zrušení instance image Docker je stejně snadné jako vystavení příkazu `docker stop` a obvykle se dokončí za méně než sekundu.
 
 Vzhledem k tomu, že kontejnery nejsou proměnlivé návrhem, nikdy nemusíte mít starosti s poškozenými virtuálními počítači. Naproti tomu se skriptům aktualizace pro virtuální počítač může zapomenout na určitou konkrétní konfiguraci nebo soubor, které zůstaly na disku.
 
@@ -70,5 +70,5 @@ Podpora kontejnerů v aplikaci Visual Studio 2017 a novější vám dává možn
 Jak ukazuje obrázek 4-4, tok publikování nahraje obrázek prostřednictvím registru kontejneru. Může to být Azure Container Registry (registr blízko nasazení v Azure a zabezpečený Azure Active Directorymi skupinami a účty), nebo jakýmkoli jiným registrem Docker, jako je Docker Hub nebo místní registr.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](docker-application-state-data.md)
+>[Předchozí](index.md)
+>[Další](docker-application-state-data.md)

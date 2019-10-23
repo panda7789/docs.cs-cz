@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje aplikací Dockeru
 description: Pochopte podrobnosti pracovního postupu pro vývoj aplikací založených na Docker. Zahajte krok za krokem a získejte do některých podrobností, abyste mohli optimalizovat fázemi a skončit s zjednodušeným pracovním postupem, který je dostupný při používání sady Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: f7c7252edc82400e2af4b96a75ed040e11df392f
-ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
+ms.openlocfilehash: cd599753a5e89504f11226e89837df7665bca641
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72031882"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771490"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -23,7 +23,7 @@ Každý kontejner (instance image Docker) obsahuje následující komponenty:
 
 ## <a name="workflow-for-developing-docker-container-based-applications"></a>Pracovní postup pro vývoj aplikací založených na kontejnerech Docker
 
-Tato část popisuje pracovní postup vývoje *vnitřních smyček* pro aplikace založené na kontejnerech Docker. Pracovní postup vnitřní smyčky znamená, že se nepovažuje za širší DevOps pracovní postup, který může zahrnovat až do produkčního nasazení a zaměřuje se na vývojovou práci, která se provádí na počítači vývojáře. Úvodní kroky pro nastavení prostředí nejsou zahrnuté, protože se tyto kroky provádějí jenom jednou.
+Tato část popisuje pracovní postup vývoje *vnitřních smyček* pro aplikace založené na kontejnerech Docker. Pracovní postup vnitřní smyčky znamená, že se nepovažuje za širší DevOps pracovní postup, který může zahrnovat až produkční nasazení, a zaměřuje se na vývojovou práci, která se provádí na počítači vývojáře. Úvodní kroky pro nastavení prostředí nejsou zahrnuté, protože se tyto kroky provádějí jenom jednou.
 
 Aplikace se skládá z vašich vlastních služeb a dalších knihoven (závislosti). Následují základní kroky, které obvykle provádíte při sestavování aplikace Docker, jak je znázorněno na obrázku 5-1.
 
@@ -264,7 +264,7 @@ Nicméně `dotnet restore` se spustí pouze v případě, že je v této složce
 
 1. Přidejte následující řádky do **. dockerignore**:
 
-   - @no__t – 0 pro ignorování všech souborů řešení ve stromu hlavní složky
+   - `*.sln` pro ignorování všech souborů řešení ve stromu hlavní složky
 
    - `!eShopOnContainers-ServicesAndWebApps.sln`, chcete-li zahrnout pouze tento soubor řešení.
 

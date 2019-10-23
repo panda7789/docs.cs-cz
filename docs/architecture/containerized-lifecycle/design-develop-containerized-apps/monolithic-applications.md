@@ -2,12 +2,12 @@
 title: Monolitické aplikace
 description: Seznamte se se základními koncepty pro aplikace uzavření monolitické.
 ms.date: 02/15/2019
-ms.openlocfilehash: 1d4b54017e431bd9775bf2aee8c88f56e0489367
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8664153ee2e9d1d253164e43ac13105f6dbf476c
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394671"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771034"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
@@ -61,7 +61,7 @@ Vzhledem k tomu, že kontejnery jsou z vlastního podstaty neměnné, nemusíte 
 
 I když aplikace monolitické můžou využívat Docker, zajímáme jenom tipy k výhodám. Větší výhody správy kontejnerů přináší nasazení s orchestrací kontejnerů, které spravují různé instance a životní cyklus každé instance kontejneru. Rozdělení aplikace monolitické do subsystémů, které je možné škálovat, vyvíjet a nasadit samostatně, je vstupním bodem ve sféře mikroslužeb.
 
-Další informace o tom, jak namonolitické aplikace pomocí kontejnerů a jak modernizovat vaše aplikace, si můžete přečíst v této další příručce Microsoftu, [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](../../modernize-with-azure-containers/index.md), které Můžete si také stáhnout jako PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Další informace o tom, jak namonolitické aplikace pomocí kontejnerů a jak modernizovat vaše aplikace, si můžete přečíst v této další příručce k Microsoftu, [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](../../modernize-with-azure-containers/index.md). které můžete také stáhnout jako PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
 
 ## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publikování jedné aplikace kontejneru Docker pro Azure App Service
 

@@ -3,22 +3,22 @@ title: Zprávy Protobuf – gRPC pro vývojáře WCF
 description: Přečtěte si, jak jsou Protobuf zprávy definovány v IDL a C#vygenerované v.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: f6bb67fe3bc37fcb49c0e69b7960a00d584307b8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1fdbedaadb33ac3eb99ca360018beb36ac7a8d78
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184202"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771624"
 ---
-# <a name="protobuf-messages"></a>Protobuf zprávy
+# <a name="protobuf-messages"></a>Zprávy ve formátu protobuf
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-V této části se dozvíte, jak deklarovat `.proto` Protobuf zprávy v souborech, vysvětluje základní koncepty čísel polí a typů a vyhledává C# kód, který `protoc` je generován kompilátorem. Zbytek kapitoly se podrobněji podívá na to, jak se v Protobuf reprezentují různé typy dat.
+V této části se dozvíte, jak deklarovat zprávy Protobuf v souborech `.proto`, vysvětluje základní koncepty čísel a typů polí a vyhledává se C# v kódu, který je generován kompilátorem `protoc`. Zbytek kapitoly se podrobněji podívá na to, jak se v Protobuf reprezentují různé typy dat.
 
 ## <a name="declaring-a-message"></a>Deklarace zprávy
 
-Ve službě WCF je `Stock` možné definovat třídu pro obchodní aplikace na burze trhu, jako je například následující příklad:
+Ve službě WCF může být `Stock` třída pro obchodní obchodní aplikace, jak je uvedeno v následujícím příkladu:
 
 ```csharp
 namespace TraderSys
@@ -38,7 +38,7 @@ namespace TraderSys
 }
 ```
 
-Chcete-li implementovat ekvivalentní třídu v Protobuf, musí být deklarována v `.proto` souboru. `protoc` Kompilátor poté vytvoří třídu .NET jako součást procesu sestavení.
+Chcete-li implementovat ekvivalentní třídu v Protobuf, musí být deklarována v souboru `.proto`. Kompilátor `protoc` pak vygeneruje třídu .NET jako součást procesu sestavení.
 
 ```protobuf
 syntax "proto3";
@@ -49,15 +49,15 @@ message Stock {
 
     int32 id = 1;
     string symbol = 2;
-    string displayName = 3;
-    int32 marketId = 4;
+    string display_name = 3;
+    int32 market_id = 4;
 
 }  
 ```
 
 První řádek deklaruje použitou verzi syntaxe. Verze 3 jazyka byla vydána v 2016 a jedná se o doporučenou verzi pro služby gRPC Services.
 
-Řádek určuje obor názvů, který má být použit pro vygenerované C# typy. `option csharp_namespace` Tato možnost bude ignorována, `.proto` Pokud je soubor zkompilován pro jiné jazyky. Pro soubory Protobuf je běžné, že obsahují možnosti specifické pro jazyk pro několik jazyků.
+@No__t_0 řádek určuje obor názvů, který se má použít pro generované C# typy. Tato možnost bude ignorována, pokud je soubor `.proto` kompilován pro jiné jazyky. Pro soubory Protobuf je běžné, že obsahují možnosti specifické pro jazyk pro několik jazyků.
 
 Definice `Stock` zprávy určuje čtyři pole, každý s typem, název a číslo pole.
 
@@ -72,7 +72,7 @@ V binárním formátu je číslo pole kombinováno s identifikátorem typu. Čí
 Deklarace typu používají nativní skalární datové typy Protobuf, které jsou podrobněji popsány v [následující části](protobuf-data-types.md). Zbytek této kapitoly se zabývá vestavěnými typy Protobuf a ukazuje, jak se vztahují na běžné typy .NET.
 
 > [!NOTE]
-> Protobuf nedokáže nativně podporovat `decimal` typ, takže se místo toho použije Double. Pro aplikace, které vyžadují plnou desítkovou přesnost, se podívejte na [část na desetinných číslech](protobuf-data-types.md#decimals) v další části této kapitoly.
+> Protobuf netivně podporuje `decimal` typ, takže se místo toho použije Double. Pro aplikace, které vyžadují plnou desítkovou přesnost, se podívejte na [část na desetinných číslech](protobuf-data-types.md#decimals) v další části této kapitoly.
 
 ## <a name="the-generated-code"></a>Generovaný kód
 
@@ -92,7 +92,7 @@ Skutečný kód, který je generován, je mnohem složitější než to, protož
 
 ### <a name="property-names"></a>Názvy vlastností
 
-Všimněte si, že kompilátor Protobuf `PascalCase` aplikovaný na názvy vlastností, i když `camelCase` byly v `.proto` souboru. Je nejvhodnější použít `camelCase` v definici zprávy tak, aby generování kódu pro jiné platformy vytvořilo očekávaný případ pro jejich konvence.
+Všimněte si, že kompilátor Protobuf použili `PascalCase` k názvům vlastností, i když byly `snake_case` v souboru `.proto`. [Průvodce stylem Protobuf](https://developers.google.com/protocol-buffers/docs/style) doporučuje použít `snake_case` ve vašich definicích zpráv, aby generování kódu pro jiné platformy vytvořilo očekávaný případ pro jejich konvence.
 
 >[!div class="step-by-step"]
 >[Předchozí](protocol-buffers.md)

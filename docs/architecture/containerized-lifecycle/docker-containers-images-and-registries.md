@@ -2,12 +2,12 @@
 title: Registry, image a kontejnery Dockeru
 description: Přečtěte si klíčovou roli, kterou Registry hrají celkově v Docker způsob nasazení aplikací.
 ms.date: 02/15/2019
-ms.openlocfilehash: 32240ac4f6dec67531d8e618cff153d235c073c7
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: bfef21cab7be89abaf33b89366d7cff2115a7cc6
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394611"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770920"
 ---
 # <a name="docker-containers-images-and-registries"></a>Registry, image a kontejnery Dockeru
 
@@ -15,7 +15,7 @@ Při použití Docker vytvoříte aplikaci nebo službu a zabalíte ji a její z
 
 Pokud chcete spustit aplikaci nebo službu, vytvoří se instance image aplikace, aby se vytvořil kontejner, který se bude spouštět na hostiteli Docker. Kontejnery jsou zpočátku testovány ve vývojovém prostředí nebo v počítači.
 
-Obrázky ukládáte do registru, který funguje jako knihovna imagí. Při nasazování do produkčních orchestrací budete potřebovat registr. Docker udržuje veřejný registr přes [Docker Hub](https://hub.docker.com/); Jiní dodavatelé poskytují registry pro různé kolekce imagí, včetně [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). Podniky můžou případně mít privátní místní registr pro vlastní image Docker.
+Obrázky můžete ukládat do registru, který funguje jako knihovna imagí. Při nasazování do produkčních orchestrací budete potřebovat registr. Docker udržuje veřejný registr přes [Docker Hub](https://hub.docker.com/); Jiní dodavatelé poskytují registry pro různé kolekce imagí, včetně [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). Podniky můžou případně mít privátní místní registr pro vlastní image Docker.
 
 Obrázek 1-4 ukazuje, jak obrázky a registry v Docker souvisejí s ostatními komponentami. Zobrazuje také více nabídek registru od dodavatelů.
 

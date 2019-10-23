@@ -2,12 +2,12 @@
 title: Co je Docker?
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Co je Docker?
 ms.date: 08/31/2018
-ms.openlocfilehash: 7f7844f51e96914c1432332d9b641ea65bf48f07
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 6fb08157a78bfaee48e0bf919fc5942eadf0f287
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296187"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771349"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -35,9 +35,9 @@ Obrázky pro tyto kontejnery jsou vytvářeny stejným způsobem a fungují stej
 
 Obrázek 2-3 ukazuje porovnání mezi virtuálními počítači a kontejnery Docker.
 
-| Virtuální počítače | Kontejnery Docker |
+| Virtual Machines | Kontejnery Docker |
 | -----------------| ------------------|
-|![Pro virtuální počítače jsou na hostitelském serveru tři základní vrstvy, od dolní části: infrastruktura, hostitelský operační systém a hypervisor a na všech virtuálních počítačích, které mají vlastní operační systém a všechny potřebné knihovny.](./media/image3.png)|![V případě Docker má hostitelský server jenom infrastrukturu a operační systém a nad ním kontejnerový modul, který udržuje kontejner izolovaný, ale sdílí základní služby operačního systému.](./media/image4.png)|
+|![Pro virtuální počítače jsou na hostitelském serveru tři základní vrstvy, od dolní části: infrastruktura, hostitelský operační systém a hypervisor a na všech virtuálních počítačích, které mají vlastní operační systém a všechny potřebné knihovny.](./media/image3.png)|![V případě Docker má hostitelský server pouze infrastrukturu a operační systém a nad ním modul kontejnerů, který uchovává kontejner izolovaný, ale sdílí základní služby operačního systému.](./media/image4.png)|
 |Virtuální počítače zahrnují aplikaci, požadované knihovny, binární soubory a úplný hostovaný operační systém. Úplná virtualizace vyžaduje více prostředků než containering. | Kontejnery zahrnují aplikaci a všechny její závislosti. Sdílí ale jádro operačního systému s jinými kontejnery spuštěnými jako izolované procesy v prostoru uživatele v hostitelském operačním systému. (Kromě kontejnerů technologie Hyper-V, kde se každý kontejner spouští ve speciálním virtuálním počítači na kontejner.) |
 
 **Obrázek 2-3**. Porovnání tradičních virtuálních počítačů s kontejnery Docker
@@ -81,5 +81,5 @@ Obrázek si můžete představit jako pomocný pevný disk jen pro čtení, kter
 Podobně můžete představit kontejner jako počítač s nainstalovaným pevným diskem image. Kontejner, stejně jako počítač, lze zapnout nebo vypnout.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](docker-terminology.md)
+>[Předchozí](index.md)
+>[Další](docker-terminology.md)
