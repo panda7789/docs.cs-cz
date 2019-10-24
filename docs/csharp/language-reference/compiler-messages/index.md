@@ -6,33 +6,33 @@ helpviewer_keywords:
 - Visual C# compiler, errors
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
-ms.openlocfilehash: 3714223209a3298706960625ea383e42dc2b2154
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: af1ec49e6c7eb94c4e324b947e8ead8149d0a997
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69607180"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771878"
 ---
-# <a name="c-compiler-errors"></a><span data-ttu-id="4039b-102">Chyby kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="4039b-102">C# Compiler Errors</span></span>
+# <a name="c-compiler-errors"></a><span data-ttu-id="76209-102">Chyby kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="76209-102">C# Compiler Errors</span></span>
 
-<span data-ttu-id="4039b-103">Některé C# chyby kompilátoru mají odpovídající témata, která vysvětlují, proč se chyba vygenerovala, a v některých případech, jak chybu opravit.</span><span class="sxs-lookup"><span data-stu-id="4039b-103">Some C# compiler errors have corresponding topics that explain why the error is generated, and, in some cases, how to fix the error.</span></span> <span data-ttu-id="4039b-104">Pomocí některého z následujících kroků zjistíte, zda je k dispozici nápovědu pro konkrétní chybovou zprávu.</span><span class="sxs-lookup"><span data-stu-id="4039b-104">Use one of the following steps to see whether help is available for a particular error message.</span></span>  
+<span data-ttu-id="76209-103">Některé C# chyby kompilátoru mají odpovídající témata, která vysvětlují, proč se chyba vygenerovala, a v některých případech, jak chybu opravit.</span><span class="sxs-lookup"><span data-stu-id="76209-103">Some C# compiler errors have corresponding topics that explain why the error is generated, and, in some cases, how to fix the error.</span></span> <span data-ttu-id="76209-104">Pomocí některého z následujících kroků zjistíte, zda je k dispozici nápovědu pro konkrétní chybovou zprávu.</span><span class="sxs-lookup"><span data-stu-id="76209-104">Use one of the following steps to see whether help is available for a particular error message.</span></span>  
   
-- <span data-ttu-id="4039b-105">Vyhledejte číslo chyby (například CS0029) v [okno výstup](/visualstudio/ide/reference/output-window)a potom ho vyhledejte v Microsoft docs.</span><span class="sxs-lookup"><span data-stu-id="4039b-105">Find the error number (for example, CS0029) in the [Output Window](/visualstudio/ide/reference/output-window), and then search for it on Microsoft Docs.</span></span>  
+- <span data-ttu-id="76209-105">Vyhledejte číslo chyby (například CS0029) v [okno výstup](/visualstudio/ide/reference/output-window)a potom ho vyhledejte v Microsoft docs.</span><span class="sxs-lookup"><span data-stu-id="76209-105">Find the error number (for example, CS0029) in the [Output Window](/visualstudio/ide/reference/output-window), and then search for it on Microsoft Docs.</span></span>  
   
-- <span data-ttu-id="4039b-106">V [okno výstup](/visualstudio/ide/reference/output-window)vyberte číslo chyby (například CS0029) a pak zvolte klávesu F1.</span><span class="sxs-lookup"><span data-stu-id="4039b-106">Choose the error number (for example, CS0029) in the [Output Window](/visualstudio/ide/reference/output-window), and then choose the F1 key.</span></span>  
+- <span data-ttu-id="76209-106">V [okno výstup](/visualstudio/ide/reference/output-window)vyberte číslo chyby (například CS0029) a pak zvolte klávesu F1.</span><span class="sxs-lookup"><span data-stu-id="76209-106">Choose the error number (for example, CS0029) in the [Output Window](/visualstudio/ide/reference/output-window), and then choose the F1 key.</span></span>  
   
-- <span data-ttu-id="4039b-107">Do pole index zadejte číslo chyby v poli **Hledat** .</span><span class="sxs-lookup"><span data-stu-id="4039b-107">In the Index, enter the error number in the **Look for** box.</span></span>  
+- <span data-ttu-id="76209-107">Do pole index zadejte číslo chyby v poli **Hledat** .</span><span class="sxs-lookup"><span data-stu-id="76209-107">In the Index, enter the error number in the **Look for** box.</span></span>  
   
- <span data-ttu-id="4039b-108">Pokud žádný z těchto kroků nevede k informacím o vaší chybě, pokračujte na konec této stránky a odešlete zpětnou vazbu, která obsahuje číslo nebo text chyby.</span><span class="sxs-lookup"><span data-stu-id="4039b-108">If none of these steps leads to information about your error, go to the end of this page, and send feedback that includes the number or text of the error.</span></span>  
+ <span data-ttu-id="76209-108">Pokud žádný z těchto kroků nevede k informacím o vaší chybě, pokračujte na konec této stránky a odešlete zpětnou vazbu, která obsahuje číslo nebo text chyby.</span><span class="sxs-lookup"><span data-stu-id="76209-108">If none of these steps leads to information about your error, go to the end of this page, and send feedback that includes the number or text of the error.</span></span>  
   
- <span data-ttu-id="4039b-109">Informace o tom, jak nakonfigurovat možnosti chyb a upozornění v C#nástroji, naleznete v tématu [Stránka sestavení,C#Návrhář projektu ()](/visualstudio/ide/reference/build-page-project-designer-csharp).</span><span class="sxs-lookup"><span data-stu-id="4039b-109">For information about how to configure error and warning options in C#, see [Build Page, Project Designer (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).</span></span>  
+ <span data-ttu-id="76209-109">Informace o tom, jak nakonfigurovat možnosti chyb a upozornění v C#nástroji, naleznete v tématu [Stránka sestavení,C#Návrhář projektu ()](/visualstudio/ide/reference/build-page-project-designer-csharp).</span><span class="sxs-lookup"><span data-stu-id="76209-109">For information about how to configure error and warning options in C#, see [Build Page, Project Designer (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="4039b-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4039b-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76209-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76209-110">See also</span></span>
 
-- [<span data-ttu-id="4039b-111">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="4039b-111">C# Compiler Options</span></span>](../compiler-options/index.md)
-- [<span data-ttu-id="4039b-112">Omlouváme se, ale pro tuto C# chybu neexistují konkrétní podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="4039b-112">Sorry, we don't have specifics on this C# error</span></span>](../../misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)
-- [<span data-ttu-id="4039b-113">Stránka Sestavení, Návrhář projektu (C#)</span><span class="sxs-lookup"><span data-stu-id="4039b-113">Build Page, Project Designer (C#)</span></span>](/visualstudio/ide/reference/build-page-project-designer-csharp)
-- [<span data-ttu-id="4039b-114">/Warn (C# možnosti kompilátoru)</span><span class="sxs-lookup"><span data-stu-id="4039b-114">/warn (C# Compiler Options)</span></span>](../compiler-options/warn-compiler-option.md)
-- [<span data-ttu-id="4039b-115">/nowarn (C# možnosti kompilátoru)</span><span class="sxs-lookup"><span data-stu-id="4039b-115">/nowarn (C# Compiler Options)</span></span>](../compiler-options/nowarn-compiler-option.md)
+- [<span data-ttu-id="76209-111">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="76209-111">C# Compiler Options</span></span>](../compiler-options/index.md)
+- [<span data-ttu-id="76209-112">Omlouváme se, ale pro tuto C# chybu neexistují konkrétní podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="76209-112">Sorry, we don't have specifics on this C# error</span></span>](../../misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)
+- [<span data-ttu-id="76209-113">Stránka Sestavení, Návrhář projektu (C#)</span><span class="sxs-lookup"><span data-stu-id="76209-113">Build Page, Project Designer (C#)</span></span>](/visualstudio/ide/reference/build-page-project-designer-csharp)
+- [<span data-ttu-id="76209-114">-Warn (C# možnosti kompilátoru)</span><span class="sxs-lookup"><span data-stu-id="76209-114">-warn (C# Compiler Options)</span></span>](../compiler-options/warn-compiler-option.md)
+- [<span data-ttu-id="76209-115">-Warn (C# možnosti kompilátoru)</span><span class="sxs-lookup"><span data-stu-id="76209-115">-nowarn (C# Compiler Options)</span></span>](../compiler-options/nowarn-compiler-option.md)
