@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte, jak vytvořit regresní model s využit
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: 51617d14e84fa46464d7b44dbdb20afaf196924f
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 298dd4aa97518bcfdb0c5c4f00e0135a328b3b9a
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957383"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774424"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>Kurz: předpověď cen pomocí regrese s ML.NET
 
@@ -27,7 +27,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+* [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -43,11 +43,11 @@ V tomto kurzu se naučíte:
 
 1. Stáhněte si sady dat [taxi-Fare-Train. csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-train.csv) a [taxi-Fare-test. csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-test.csv) a uložte je do složky *dat* , kterou jste vytvořili v předchozím kroku. Tyto sady dat používáme ke studiu modelu strojového učení a vyhodnocení toho, jak je model přesný. Tyto sady dat jsou původně ze [sady NYC TLC taxislužby Trip data](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml).
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na všechny soubory @no__t -1. csv a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na každý ze \* souborů. csv a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
 1. Otevřete sadu dat **taxi-Fare-Train. csv** a podívejte se na záhlaví sloupců v prvním řádku. Podívejte se na všechny sloupce. Pochopte data a rozhodněte, které sloupce jsou **funkce** a které jsou **označeny**.
 
-@No__t-0 je sloupec, který chcete předpovědět. Identifikované @no__t – 0are vstupy, které model udělíte, aby předpovídat `Label`.
+@No__t_0 je sloupec, který chcete předpovědět. Identifikujte `Features`are vstupy, které modelu udělíte, aby předpovídat `Label`.
 
 Poskytnutá datová sada obsahuje následující sloupce:
 
@@ -78,7 +78,7 @@ Odeberte existující definici třídy a přidejte následující kód, který m
 Třída `TaxiTripFarePrediction` představuje předpovězené výsledky. Má jedno pole s plovoucí desetinnou čárkou, `FareAmount` s použitým atributem `Score` <xref:Microsoft.ML.Data.ColumnNameAttribute>. V případě regresní úlohy obsahuje sloupec **skóre** předpovězené hodnoty popisku.
 
 > [!NOTE]
-> K reprezentaci hodnot s plovoucí desetinnou čárkou ve vstupních a prediktivních datových třídách použijte typ `float`.
+> Použijte `float` typ pro reprezentaci hodnot s plovoucí desetinnou čárkou ve vstupní a předpovědi třídy dat.
 
 ### <a name="define-data-and-model-paths"></a>Definování cest k datům a modelům
 
@@ -89,10 +89,10 @@ Do horní části souboru *program.cs* přidejte následující dodatečné př�
 Je potřeba vytvořit tři pole, která budou uchovávat cesty k souborům s datovými sadami a soubor pro uložení modelu:
 
 * `_trainDataPath` obsahuje cestu k souboru s datovou sadou, která se používá ke výukě modelu.
-* `_testDataPath` obsahuje cestu k souboru s datovou sadou použitou k vyhodnocení modelu.
+* `_testDataPath` obsahuje cestu k souboru s datovou sadou, která se používá k vyhodnocení modelu.
 * `_modelPath` obsahuje cestu k souboru, ve kterém je uložený model trained.
 
-Přidejte následující kód přímo nad metodu `Main` pro určení těchto cest a pro proměnnou `_textLoader`:
+Přidejte následující kód přímo nad `Main` metodu pro určení těchto cest a pro `_textLoader` proměnnou:
 
 [!code-csharp[InitializePaths](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#2 "Define variables to store the data file paths")]
 
@@ -100,11 +100,11 @@ Všechny operace ML.NET začínají ve [třídě MLContext](xref:Microsoft.ML.ML
 
 ### <a name="initialize-variables-in-main"></a>Inicializovat proměnné v Main
 
-Nahraďte řádek `Console.WriteLine("Hello World!")` v metodě `Main` následujícím kódem pro deklaraci a inicializaci proměnné `mlContext`:
+Nahraďte `Console.WriteLine("Hello World!")` řádek v metodě `Main` následujícím kódem pro deklaraci a inicializaci proměnné `mlContext`:
 
 [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#3 "Create the ML Context")]
 
-Přidejte následující jako další řádek kódu do metody `Main` pro volání metody `Train`:
+Přidejte následující jako další řádek kódu v metodě `Main` pro volání metody `Train`:
 
 [!code-csharp[Train](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#5 "Train your model")]
 
@@ -115,7 +115,7 @@ Metoda `Train()` provádí následující úlohy:
 * Navlakuje model.
 * Vrátí model.
 
-Metoda `Train` navlakuje model. Vytvořte tuto metodu hned pod `Main` pomocí následujícího kódu:
+Metoda `Train` navlakuje model. Vytvořte tuto metodu hned pod `Main`, a to pomocí následujícího kódu:
 
 ```csharp
 public static ITransformer Train(MLContext mlContext, string dataPath)
@@ -126,19 +126,19 @@ public static ITransformer Train(MLContext mlContext, string dataPath)
 
 ## <a name="load-and-transform-data"></a>Načtení a transformace dat
 
-ML.NET používá [třídu IDataView](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob popisující číselná nebo textová tabulková data. `IDataView` může načíst buď textové soubory, nebo v reálném čase (například databáze SQL nebo soubory protokolu). Do prvního řádku metody `Train()` přidejte následující kód:
+ML.NET používá [třídu IDataView](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob popisující číselná nebo textová tabulková data. `IDataView` může načíst buď textové soubory, nebo v reálném čase (například databáze SQL nebo soubory protokolu). Do prvního řádku `Train()` metody přidejte následující kód:
 
 [!code-csharp[LoadTrainData](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#6 "loading training dataset")]
 
-Jak chcete předpovědět tarif taxislužby TRIPS, sloupec `FareAmount` je `Label`, který budete předpovědět (výstup modelu) použijte ke kopírování `FareAmount` třídu transformace `CopyColumnsEstimator` a přidejte následující kód: 
+Vzhledem k odhadu `FareAmount` tarifů taxislužby Trip je `Label`, který budete předpovědět (výstup modelu), ke kopírování `FareAmount` použijte třídu pro transformaci `CopyColumnsEstimator` a přidejte následující kód:
 
 [!code-csharp[CopyColumnsEstimator](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#7 "Use the CopyColumnsEstimator")]
 
-Algoritmus, který předává model, vyžaduje **číselné** funkce, takže je nutné transformovat hodnoty dat kategorií (`VendorId`, `RateCode` a `PaymentType`) na čísla (`VendorIdEncoded`, `RateCodeEncoded` a `PaymentTypeEncoded`). K tomu použijte transformační třídu [OneHotEncodingTransformer](xref:Microsoft.ML.Transforms.OneHotEncodingTransformer) , která přiřadí různé hodnoty číselného klíče k různým hodnotám každého sloupce a přidejte následující kód:
+Algoritmus, který vlaky nastavil, vyžaduje **číselné** funkce, takže je nutné transformovat hodnoty kategorií dat (`VendorId`, `RateCode` a `PaymentType`) na čísla (`VendorIdEncoded`, `RateCodeEncoded` a `PaymentTypeEncoded`). K tomu použijte transformační třídu [OneHotEncodingTransformer](xref:Microsoft.ML.Transforms.OneHotEncodingTransformer) , která přiřadí různé hodnoty číselného klíče k různým hodnotám každého sloupce a přidejte následující kód:
 
 [!code-csharp[OneHotEncodingEstimator](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#8 "Use the OneHotEncodingEstimator")]
 
-Poslední krok v přípravě dat kombinuje všechny sloupce funkcí do sloupce **funkce** pomocí transformační třídy `mlContext.Transforms.Concatenate`. Ve výchozím nastavení se pro vzdělávací algoritmus zpracovávají jenom funkce ze sloupce **funkce** . Přidejte následující kód:
+Poslední krok v přípravě dat kombinuje všechny sloupce funkcí do sloupce **funkce** pomocí třídy `mlContext.Transforms.Concatenate` transformace. Ve výchozím nastavení se pro vzdělávací algoritmus zpracovávají jenom funkce ze sloupce **funkce** . Přidejte následující kód:
 
 [!code-csharp[ColumnConcatenatingEstimator](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#9 "Use the ColumnConcatenatingEstimator")]
 
@@ -152,19 +152,19 @@ Přidejte úlohu strojového učení [FastTreeRegressionTrainer](xref:Microsoft.
 
 ## <a name="train-the-model"></a>Výuka modelu
 
-Přizpůsobit model školením `dataview` a vrátit vyškolený model přidáním následujícího řádku kódu do metody `Train()`:
+Přizpůsobit model na školicí `dataview` a vrátit vyškolený model přidáním následujícího řádku kódu do metody `Train()`:
 
 [!code-csharp[TrainModel](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#11 "Train the model")]
 
 Metoda [přizpůsobení () nasadí](xref:Microsoft.ML.Trainers.FastTree.FastTreeRegressionTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) váš model pomocí transformace datové sady a použití školení.
 
-Vraťte vyškolený model s následujícím řádkem kódu v metodě `Train()`:
+Vraťte školený model s následujícím řádkem kódu v metodě `Train()`:
 
 [!code-csharp[ReturnModel](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#12 "Return the model")]
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Dále vyhodnoťte výkon vašeho modelu s testovacími daty pro zajištění a ověření kvality. Vytvořte metodu `Evaluate()` hned za `Train()` s následujícím kódem:
+Dále vyhodnoťte výkon vašeho modelu s testovacími daty pro zajištění a ověření kvality. Vytvořte metodu `Evaluate()` hned po `Train()` s následujícím kódem:
 
 ```csharp
 private static void Evaluate(MLContext mlContext, ITransformer model)
@@ -180,7 +180,7 @@ Metoda `Evaluate` provádí následující úlohy:
 * Vyhodnotí model a vytvoří metriky.
 * Zobrazí metriky.
 
-Přidejte volání do nové metody z metody `Main` přímo pod voláním metody `Train` pomocí následujícího kódu:
+Přidejte volání do nové metody z metody `Main`, přímo pod voláním metody `Train`, pomocí následujícího kódu:
 
 [!code-csharp[CallEvaluate](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#14 "Call the Evaluate method")]
 
@@ -194,7 +194,7 @@ Dále Transformujte data `Test` přidáním následujícího kódu do `Evaluate(
 
 Metoda [Transforming ()](xref:Microsoft.ML.ITransformer.Transform%2A) zpřístupňuje předpovědi pro vstupní řádky sady testů.
 
-Metoda `RegressionContext.Evaluate` počítá metriky kvality pro `PredictionModel` pomocí zadané datové sady. Vrátí objekt <xref:Microsoft.ML.Data.RegressionMetrics>, který obsahuje celkové metriky vypočítané pomocí regresních vyhodnocení. 
+Metoda `RegressionContext.Evaluate` vypočítá metriky kvality pro `PredictionModel` pomocí zadané datové sady. Vrátí objekt <xref:Microsoft.ML.Data.RegressionMetrics>, který obsahuje celkové metriky vypočítané hodnotiteli regrese.
 
 Aby bylo možné zjistit kvalitu modelu, je třeba nejprve získat metriky. Přidejte následující kód jako další řádek v metodě `Evaluate`:
 
@@ -211,11 +211,11 @@ Console.WriteLine($"*       Model quality metrics evaluation         ");
 Console.WriteLine($"*------------------------------------------------");
 ```
 
-[RSquared](../resources/glossary.md#coefficient-of-determination) je další metrika hodnocení regresních modelů. RSquared přebírá hodnoty mezi 0 a 1. Bližší hodnota je 1, tím lepší je model. Přidejte následující kód do metody `Evaluate`, aby se zobrazila hodnota RSquared:
+[RSquared](../resources/glossary.md#coefficient-of-determination) je další metrika hodnocení regresních modelů. RSquared přebírá hodnoty mezi 0 a 1. Bližší hodnota je 1, tím lepší je model. Přidejte následující kód do metody `Evaluate` pro zobrazení hodnoty RSquared:
 
 [!code-csharp[DisplayRSquared](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#18 "Display the RSquared metric.")]
 
-[RMS](../resources/glossary.md##root-of-mean-squared-error-rmse) je jednou ze zkušebních metrik modelu regrese. Čím nižší je, tím lepší je model. Přidejte následující kód do metody `Evaluate` pro zobrazení hodnoty RMS:
+[RMS](../resources/glossary.md##root-of-mean-squared-error-rmse) je jednou ze zkušebních metrik modelu regrese. Čím nižší je, tím lepší je model. Přidejte následující kód do metody `Evaluate` k zobrazení hodnoty RMS:
 
 [!code-csharp[DisplayRMS](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#19 "Display the RMS metric.")]
 
@@ -237,7 +237,7 @@ Metoda `TestSinglePrediction` provádí následující úlohy:
 * Kombinuje testovací data a předpovědi pro vytváření sestav.
 * Zobrazí předpovězené výsledky.
 
-Přidejte volání do nové metody z metody `Main` přímo pod voláním metody `Evaluate` pomocí následujícího kódu:
+Přidejte volání do nové metody z metody `Main`, přímo pod voláním metody `Evaluate`, pomocí následujícího kódu:
 
 [!code-csharp[CallTestSinglePrediction](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#20 "Call the TestSinglePrediction method")]
 
@@ -245,7 +245,7 @@ Pomocí `PredictionEngine` můžete odhadnout tarif přidáním následujícího
 
 [!code-csharp[MakePredictionEngine](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
 
-[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o [použití `PredictionEnginePool` v ASP.NET Core webovém rozhraní API](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application) .
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ve ASP.NET corem webovém rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
 > rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
@@ -254,13 +254,13 @@ V tomto kurzu se používá jedna zkušební cesta v rámci této třídy. Pozd�
 
 [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#23 "Create test data for single prediction")]
 
-Dále předpovídat tarify na základě jedné instance dat taxislužby a předejte ji do `PredictionEngine` přidáním následujícího jako další řádky kódu v metodě `TestSinglePrediction()`:
+Dále předpovídat tarify na základě jedné instance dat taxislužby a předejte je do `PredictionEngine` přidáním následujícího jako další řádky kódu v metodě `TestSinglePrediction()`:
 
 [!code-csharp[Predict](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#24 "Create a prediction of taxi fare")]
 
 Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provádí předpovědi pro jednu instanci dat.
 
-Chcete-li zobrazit předpovězené tarify zadané cesty, přidejte následující kód do metody `TestSinglePrediction`:
+Chcete-li zobrazit předpovězené tarify zadané cesty, přidejte do metody `TestSinglePrediction` následující kód:
 
 [!code-csharp[Predict](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#25 "Display the prediction.")]
 

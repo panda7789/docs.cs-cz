@@ -6,12 +6,12 @@ ms.date: 04/12/2018
 ms.technology: dotnet-standard
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 476b6047fe9872f13f2f0298fb331eb7d888a73d
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: f69dfe77e5d485c4c7ffcbf2b98657eab87d452d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117864"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775223"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Novinky v rozhraní .NET Standard
 
@@ -39,19 +39,19 @@ Nejnovější verze .NET Standard je 2,0. Je součástí sady .NET Core 2,0 SDK 
 
 Až do verze 1,6, .NET Standard zahrnuli relativně malou podmnožinu rozhraní API. Mezi vyloučenými z těchto možností bylo mnoho rozhraní API, které se běžně používalo v .NET Framework nebo Xamarin. To ztěžuje vývoj, protože vyžaduje, aby vývojáři našli vhodné náhrady pro známá rozhraní API při vývoji aplikací a knihoven, které cílí na více implementací rozhraní .NET. .NET Standard 2,0 řeší toto omezení přidáním více než 20 000 více rozhraní API, než je k dispozici v .NET Standard 1,6, předchozí verze standardu. Seznam rozhraní API, která byla přidána do .NET Standard 2,0, najdete v článku [.NET Standard 2,0 vs 1,6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
-Mezi dodatky k <xref:System> oboru názvů v .NET Standard 2,0 patří:
+Mezi doplňky <xref:System> oboru názvů v .NET Standard 2,0 patří:
 
-- Podpora pro <xref:System.AppDomain> třídu.
-- Lepší podpora pro práci s poli z dalších členů <xref:System.Array> třídy.
-- Lepší podpora pro práci s atributy z dalších členů <xref:System.Attribute> třídy.
+- Podpora pro třídu <xref:System.AppDomain>.
+- Lepší podpora pro práci s poli z dalších členů třídy <xref:System.Array>.
+- Lepší podpora pro práci s atributy z dalších členů ve třídě <xref:System.Attribute>.
 - Lepší podpora kalendáře a další možnosti formátování pro <xref:System.DateTime> hodnoty.
-- Další <xref:System.Decimal> funkce zaokrouhlování.
-- Další funkce ve <xref:System.Environment> třídě.
+- Další funkce zaokrouhlování <xref:System.Decimal>.
+- Další funkce ve třídě <xref:System.Environment>.
 - Vylepšená kontrola uvolňování paměti prostřednictvím <xref:System.GC> třídy.
-- Rozšířená podpora pro porovnání řetězců, výčet a normalizaci ve <xref:System.String> třídě.
-- Podpora pro letní čas a časy přechodu v <xref:System.TimeZoneInfo.AdjustmentRule> třídách a. <xref:System.TimeZoneInfo.TransitionTime>
-- Výrazně rozšířené funkce ve <xref:System.Type> třídě.
-- Lepší podpora pro deserializaci objektů výjimek přidáním konstruktoru výjimky s <xref:System.Runtime.Serialization.SerializationInfo> parametry a. <xref:System.Runtime.Serialization.StreamingContext>
+- Rozšířená podpora pro porovnání řetězců, výčet a normalizaci ve třídě <xref:System.String>.
+- Podpora pro letní čas a časy přechodu v <xref:System.TimeZoneInfo.AdjustmentRule> a <xref:System.TimeZoneInfo.TransitionTime>ch třídách.
+- Výrazně vylepšené funkce třídy <xref:System.Type>.
+- Lepší podpora pro deserializaci objektů výjimek přidáním konstruktoru výjimky s parametry <xref:System.Runtime.Serialization.SerializationInfo> a <xref:System.Runtime.Serialization.StreamingContext>.
 
 ### <a name="support-for-net-framework-libraries"></a>Podpora pro knihovny .NET Framework
 

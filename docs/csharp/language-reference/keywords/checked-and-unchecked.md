@@ -1,5 +1,5 @@
 ---
-title: Zkontrolováno a nezkontrolováno - C# odkaz
+title: Zaškrtnuto a nezaškrtnuto- C# odkaz
 ms.custom: seodec18
 ms.date: 05/15/2018
 helpviewer_keywords:
@@ -10,35 +10,35 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 3378cffc1dcee7bb12705704e66b7fdd287105fb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7abc19e0657330752e7798d060516c48aa402297
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592995"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771767"
 ---
-# <a name="checked-and-unchecked-c-reference"></a>Zkontrolováno a nezkontrolováno (Referenční dokumentace jazyka C#)
-Příkazy jazyka C# lze spustit v kontextu zaškrtnuté nebo nezaškrtnuté. Aritmetické přetečení ve zkontrolovaném kontextu, vyvolá výjimku. V nekontrolovaném kontextu je ignorován Přetečení aritmetické operace a výsledek je rozdělená do se zahodí všechny bity nejvyšším, které se nehodí do cílového typu.  
+# <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
+C#příkazy mohou být provedeny v kontrolovaném nebo nezaškrtnutém kontextu. V kontrolovaném kontextu přetečení aritmetického přetečení vyvolá výjimku. V nekontrolovaném kontextu se aritmetické přetečení ignoruje a výsledek se zkrátí tak, že zahodí jakékoli bity s vysokým pořadím, které se nevejdou do cílového typu.  
   
-- [checked](checked.md) kontextu zadejte zaškrtnuto.  
+- [zaškrtnuté políčko](checked.md) Zadejte kontrolovaný kontext.  
   
-- [unchecked](unchecked.md) zadejte nezkontrolovaném kontextu.  
+- [nezaškrtnuto](unchecked.md) Zadejte nezaškrtnutý kontext.  
   
- Tyto operace jsou ovlivněny kontrola přetečení:  
+ Kontrola přetečení má vliv na následující operace:  
   
-- Pomocí následující předdefinované operátory na integrální typy výrazů:  
+- Výrazy s použitím následujících předdefinovaných operátorů pro celočíselné typy:  
   
      `++`, `--`, unární `-`, `+`, `-`, `*`, `/`  
   
 - Explicitní číselné převody mezi celočíselnými typy nebo z `float` nebo `double` na celočíselný typ.  
   
- Pokud ani `checked` ani `unchecked` není zadán, výchozí kontext pro výrazy nekonstantní (výrazy, které jsou vyhodnocovány v době běhu) je definován hodnotou [-checked](../compiler-options/checked-compiler-option.md) – možnost kompilátoru. Ve výchozím nastavení má tato možnost hodnotu unset a aritmetické operace jsou provedeny v nekontrolovaném kontextu.
+ Pokud není zadána žádná `checked` ani `unchecked`, výchozí kontext pro nekonstantní výrazy (výrazy, které jsou vyhodnocovány za běhu) je definován hodnotou možnosti kompilátoru [zaškrtnuto](../compiler-options/checked-compiler-option.md) . Ve výchozím nastavení je hodnota této možnosti nastavená na hodnotu zrušit a aritmetické operace jsou spouštěny v nekontrolovaném kontextu.
  
- Pro konstantní výrazy (výrazy, které může být plně vyhodnocen v době kompilace) je vždy zaškrtnuto výchozí kontext. Pokud není konstantní výraz je explicitně umístěné v nekontrolovaném kontextu, přetečení, ke kterým dochází při vyhodnocení za kompilace výrazu způsobit chyby kompilace.
+ V případě konstantních výrazů (výrazy, které mohou být plně vyhodnocovány v době kompilace) je výchozí kontext vždy zaškrtnuto. Pokud není konstantní výraz explicitně umístěn v nekontrolovaném kontextu, přetečení, ke kterým dojde během kompilace výrazu, způsobují chyby při kompilaci.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova příkazů](statement-keywords.md)

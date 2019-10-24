@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 64f8d536212cd379337ad437c1e15ae356890ddb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: f5630f7947125dd5eb8a5b58e79add1aec4c689b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581965"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774922"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -21,45 +21,45 @@ V tomto tématu je uveden seznam klíčových funkcí pro jednotlivé verze Visu
 
 ## <a name="current-version"></a>Aktuální verze
 
-Visual Basic 16,0/Visual Studio 2019 verze 16,0  
+Visual Basic 16,0/Visual Studio 2019 verze 16,0 \
 Nové funkce najdete v tématu [Visual Basic 16,0](#visual-basic-160).
 
 ## <a name="previous-versions"></a>Předchozí verze
 
-Visual Basic 15,8/Visual Studio 2017 verze 15,8  
+Visual Basic 15,8/Visual Studio 2017 verze 15,8 \
 Nové funkce najdete v tématu [Visual Basic 15,8](#visual-basic-158).
 
-Visual Basic 15,5/Visual Studio 2017 verze 15,5  
+Visual Basic 15,5/Visual Studio 2017 verze 15,5 \
 Nové funkce najdete v tématu [Visual Basic 15,5](#visual-basic-155).
 
-Visual Basic 15,3/Visual Studio 2017 verze 15,3  
+Visual Basic 15,3/Visual Studio 2017 verze 15,3 \
 Nové funkce najdete v tématu [Visual Basic 15,3](#visual-basic-153).
 
-Visual Basic 2017/Visual Studio 2017  
+Visual Basic 2017/Visual Studio 2017 \
 Nové funkce najdete v tématu [Visual Basic 2017](#visual-basic-2017).
 
-Visual Basic/Visual Studio 2015  
+Visual Basic/Visual Studio 2015 \
 Nové funkce najdete v tématu [Visual Basic 14](#visual-basic-14).
 
-Visual Basic/Visual Studio 2013  
+Visual Basic/Visual Studio 2013 \
 Verze Preview .NET Compiler Platform pro technologie ("Roslyn")
 
-Visual Basic/Visual Studio 2012  
+Visual Basic/Visual Studio 2012 \
 Klíčová slova `Async` a `await`, iterátory, atributy informací o volajícím
 
-Visual Basic, Visual Studio 2010  
+Visual Basic, Visual Studio 2010 \
 Automaticky implementované vlastnosti, inicializátory kolekce, implicitní pokračování řádku, dynamická, obecná kovariantní odchylka, globální přístup k oboru názvů
 
-Visual Basic/Visual Studio 2008  
+Visual Basic/Visual Studio 2008 \
 Jazykově integrovaný dotaz (LINQ), literály XML, odvození místního typu, Inicializátory objektů, anonymní typy, metody rozšíření, místní `var` typu odvození, výrazy lambda, `if` operátor, částečné metody, typy hodnot s možnou hodnotou null
 
-Visual Basic/Visual Studio 2005  
+Visual Basic/Visual Studio 2005 \
 Typ `My` a pomocné typy (přístup k aplikaci, počítač, systém souborů, síť)
 
-Visual Basic/Visual Studio .NET 2003  
+Visual Basic/Visual Studio .NET 2003 \
 Operátory bitového posunutí, deklarace proměnné smyčky
 
-Visual Basic/Visual Studio .NET 2002  
+Visual Basic/Visual Studio .NET 2002 \
 První vydání rozhraní Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
@@ -108,7 +108,6 @@ Dim b1 As Byte = CByte(Int(d))                 ' Result: 173
 Dim s1 AS Short = CShort(Math.Truncate(s))     ' Result: 173
 Dim i2 As Integer = CInt(Math.Ceiling(d))      ' Result: 174
 Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
-
 ```
 
 Všimněte si, že se zkrátí místo zaokrouhlení hodnot s plovoucí desetinnou čárkou.
@@ -237,7 +236,7 @@ Můžete mít literály kalendářních dat ve formátu RRRR-MM-DD `#2015-03-17 
 
 **Vlastnosti rozhraní jen pro čtení**
 
-Vlastnosti rozhraní jen pro čtení můžete implementovat pomocí vlastnosti.  Rozhraní garantuje minimální funkčnost a neukončí implementující třídu, která umožňuje nastavit vlastnost.
+Vlastnosti rozhraní jen pro čtení můžete implementovat pomocí vlastnosti. Rozhraní garantuje minimální funkčnost a neukončí implementující třídu, která umožňuje nastavit vlastnost.
 
 [TypeOf \<expr > IsNot \<type >](../../visual-basic/language-reference/operators/typeof-operator.md)
 

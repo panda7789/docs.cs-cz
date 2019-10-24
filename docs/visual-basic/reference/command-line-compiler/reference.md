@@ -9,12 +9,12 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 552fbcf920be609de83708a995a87761f6080220
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 8f144dbd9376f15ac92e283472dac786a6972045
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005268"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775608"
 ---
 # <a name="-reference-visual-basic"></a>-Reference (Visual Basic)
 Způsobí, že kompilátor provede informace o typech v zadaných sestaveních, které jsou k dispozici pro projekt, který právě kompilujete.  
@@ -38,7 +38,7 @@ or
 |`fileList`|Požadováno. Seznam názvů souborů sestavení oddělených čárkami. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek.|  
   
 ## <a name="remarks"></a>Poznámky  
- Soubory, které importujete, musí obsahovat metadata sestavení. Mimo sestavení jsou viditelné pouze veřejné typy. Možnost [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) Importuje metadata z modulu.  
+ Soubory, které importujete, musí obsahovat metadata sestavení. Mimo sestavení jsou viditelné pouze veřejné typy. Možnost [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md) Importuje metadata z modulu.  
   
  Pokud odkazujete na sestavení (sestavení A), které odkazuje na jiné sestavení (sestavení B), musíte odkazovat na sestavení B, pokud:  
   

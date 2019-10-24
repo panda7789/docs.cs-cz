@@ -5,12 +5,12 @@ f1_keywords:
 - NETSDK1045
 ms.custom: updateeachvsrelease
 ms.date: 09/20/2019
-ms.openlocfilehash: b1557e6910cb6d0b6d7e2b3ce2aec97d3715fec7
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 6885f6c853efb0dcb2cb64b83f07e12b1dc2e3cf
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591675"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771958"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -27,7 +27,7 @@ Pokud vyvíjíte v systému Windows pomocí sady Visual Studio, [požadavky pro 
 Následující články obsahují úplný seznam podporovaných operačních systémů .NET Core na verzi:
 
 * [.NET Core 3.0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
-* [.NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
+* [.NET Core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
 * [.NET Core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
 
 Odkazy ke stažení a další informace najdete v tématu stažení z [rozhraní .NET](https://dotnet.microsoft.com/download) pro stažení nejnovější verze nebo [archivu ke stažení](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
@@ -44,14 +44,14 @@ Odkazy ke stažení a další informace najdete v tématu stažení z [rozhraní
 > [!NOTE]
 > **Pro Windows 8.1 a starší verze nebo Windows Server 2012 R2 a starší verze:**
 >
-> Ujistěte se, že je instalace Windows aktuální a zahrnuje [KB2999226](https://support.microsoft.com/help/2999226/update-for-universal-c-runtime-in-windows), která se dá nainstalovat prostřednictvím web Windows Update. Pokud tuto aktualizaci nemáte nainstalovanou, při spuštění aplikace .NET Core se zobrazí chybová zpráva podobná následující:`The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
+> Ujistěte se, že je instalace Windows aktuální a zahrnuje [KB2999226](https://support.microsoft.com/help/2999226/update-for-universal-c-runtime-in-windows), která se dá nainstalovat prostřednictvím web Windows Update. Pokud tuto aktualizaci nemáte nainstalovanou, při spuštění aplikace .NET Core se zobrazí chybová zpráva podobná následující: `The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
 >
 > **Pro Windows 7 nebo Windows Server 2008 R2:**
 >
 > Kromě KB2999226 se ujistěte, že máte nainstalovanou také [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) . Pokud tuto aktualizaci nemáte nainstalovanou, při spuštění aplikace .NET Core se zobrazí chybová zpráva podobná následující: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
 ## <a name="prerequisites-to-develop-net-core-apps-with-visual-studio"></a>Předpoklady pro vývoj aplikací .NET Core pomocí sady Visual Studio
-    
+
 I když můžete použít libovolný editor pro vývoj aplikací .NET Core pomocí .NET Core SDK, Visual Studio 2017 a novější verze poskytují integrované vývojové prostředí pro aplikace .NET Core ve Windows.
 
 <a name="vs-mapping"></a>
@@ -63,11 +63,11 @@ Pro každou verzi .NET Core je vyžadována minimální verze sady Visual Studio
 
 Následující tabulka uvádí minimální verzi pro jednotlivé sady SDK:
 
-| Verze .NET Core SDK | Verze Visual Studio                      |
+| Verze .NET Core SDK | Verze sady Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3.0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
-| 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
-| 2.1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
+| 2,2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
+| 2,1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
 | verze                   | Visual Studio 2017 verze 15,0 nebo vyšší. |
 
 <!-- markdownlint-disable MD025 -->
@@ -86,7 +86,7 @@ Na následujícím obrázku vidíte úlohy **vývoje .NET Core pro různé platf
 
 ![Snímek obrazovky s instalací sady Visual Studio 2019 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2019-workloads.jpg)
 
-Sada Visual Studio 2019 16,3 po instalaci kterékoli z těchto úloh používá standardně sadu .NET Core 3,0 SDK.
+Sada Visual Studio 2019 verze 16,3 po instalaci kterékoli z těchto úloh používá standardně sadu .NET Core 3,0 SDK.
 
 Pokud chcete, aby existující projekty používaly nejnovější modul runtime .NET Core, proveďte cílení každého existujícího projektu .NET Core na .NET Core 3,0 pomocí následujících pokynů:
 
@@ -101,7 +101,7 @@ Jakmile máte sadu Visual Studio nakonfigurovanou pomocí sady .NET Core 3,0 SDK
 * Proveďte změny cílení na projekty .NET Core 1. x a 2. x na .NET Core 3,0, sestavte a spusťte.
 * Vytvořte nové projekty .NET Core 3,0.
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2. x](#tab/netcore2x)
 
 Vývoj aplikací .NET Core v sadě Visual Studio 2017 pomocí sady .NET Core 2,2 SDK:
 
@@ -111,7 +111,7 @@ Vývoj aplikací .NET Core v sadě Visual Studio 2017 pomocí sady .NET Core 2,2
 ![Snímek obrazovky s instalací sady Visual Studio 2017 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2017-workloads.jpg)
 
 Po instalaci sady nástrojů pro **vývoj pro různé platformy .NET Core** se v sadě Visual Studio obvykle nainstaluje předchozí verze .NET Core SDK.
-Sada Visual Studio 2017 15,9 například po instalaci úlohy používá .NET Core 2,1 SDK ve výchozím nastavení.
+Například sada Visual Studio 2017 verze 15,9 po instalaci úlohy používá .NET Core 2,1 SDK ve výchozím nastavení.
 
 Aktualizace sady Visual Studio tak, aby používala sadu .NET Core 2,2 SDK:
 
