@@ -2,12 +2,12 @@
 title: Nástroje definice schématu XML (Xsd.exe)
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: 7a27b05a12017a3c0de6b0d036f480b3e7fdeda7
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 9de4a195f34b0daedcfb3687dbb36495b985092d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392739"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775261"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Nástroje definice schématu XML (Xsd.exe)
 
@@ -16,13 +16,13 @@ Nástroj pro definici schématu XML (Xsd.exe) generuje schématu XML nebo běžn
 ## <a name="syntax"></a>Syntaxe
 
 ```console
-xsd file.xdr [/outputdir:directory][/parameters:file.xml]
-xsd file.xml [/outputdir:directory] [/parameters:file.xml]
+xsd file.xdr [-outputdir:directory][/parameters:file.xml]
+xsd file.xml [-outputdir:directory] [/parameters:file.xml]
 xsd file.xsd {/classes | /dataset} [/element:element]
              [/enableLinqDataSet] [/language:language]
-                          [/namespace:namespace] [/outputdir:directory] [URI:uri]
+                          [/namespace:namespace] [-outputdir:directory] [URI:uri]
                           [/parameters:file.xml]
-xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/parameters:file.xml]
+xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/parameters:file.xml]
 ```
 
 ## <a name="argument"></a>Argument
@@ -35,39 +35,39 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/h @ no__t-1elp @ no__t-2**|Zobrazí syntaxi příkazu a možnosti nástroje.|
-|**/o @ no__t-1utputdir @ no__t-2:** _adresář_|Určuje výstupní soubory v adresáři. Tento argument může být pouze jednou. Výchozí je aktuální adresář.|
+|**/h \[elp \]**|Zobrazí syntaxi příkazu a možnosti nástroje.|
+|**/o \[utputdir \]:** _adresář_|Určuje výstupní soubory v adresáři. Tento argument může být pouze jednou. Výchozí je aktuální adresář.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
-|**/p @ no__t-1arameters @ no__t-2:** _File. XML_|Možnosti pro různé režimy operace čtení ze souboru zadaného .xml. Krátký tvar je `/p:`. Další informace najdete v části [poznámky](#remarks) .|
+|**/p \[arameters \]:** _File. XML_|Možnosti pro různé režimy operace čtení ze souboru zadaného .xml. Krátký tvar je `/p:`. Další informace najdete v části [poznámky](#remarks) .|
 
 ## <a name="xsd-file-options"></a>Možnosti souboru XSD
  Je třeba zadat pouze jeden z následujících možností pro soubory XSD.
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/c @ no__t-1lasses @ no__t-2**|Vytvoří třídy, které odpovídají zadaným schématu. Chcete-li číst data XML do objektu, použijte metodu <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A?displayProperty=nameWithType>.|
-|**/d\[ataset\]**|Vygeneruje třídu odvozenou z <xref:System.Data.DataSet> , který odpovídá zadané schéma. Chcete-li číst data XML do odvozené třídy, použijte metodu <xref:System.Data.DataSet.ReadXml%2A?displayProperty=nameWithType>.|
+|**/c \[lasses \]**|Vytvoří třídy, které odpovídají zadaným schématu. Chcete-li číst data XML do objektu, použijte metodu <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A?displayProperty=nameWithType>.|
+|**/d \[ataset \]**|Vygeneruje třídu odvozenou z <xref:System.Data.DataSet> , který odpovídá zadané schéma. Chcete-li číst data XML do odvozené třídy, použijte metodu <xref:System.Data.DataSet.ReadXml%2A?displayProperty=nameWithType>.|
 
  Můžete také určit některý z následujících možností pro soubory XSD.
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/e @ no__t-1lement @ no__t-2:** _element_|Určuje element ve schématu pro generování kódu pro. Ve výchozím nastavení jsou zadány všechny elementy. Tento parametr lze zadat více než jednou.|
+|**/e \[lement \]:** _element_|Určuje element ve schématu pro generování kódu pro. Ve výchozím nastavení jsou zadány všechny elementy. Tento parametr lze zadat více než jednou.|
 |**/enableDataBinding**|Implementuje <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní na všechny typy generovaného povolit datové vazby. Krátký tvar je `/edb`.|
-|**/enableLinqDataSet**|(Krátký tvar: `/eld`.) Určuje, že generované datová sada může být dotázán proti pomocí jazyka LINQ k datové. Tato možnost se používá, pokud je také zadán parametr /dataset. Další informace najdete v tématu [LINQ to DataSet Overview](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) a [dotazování na typové datové sady](../../../docs/framework/data/adonet/querying-typed-datasets.md). Obecné informace o použití LINQ naleznete v tématu [Language-Integrated Query (LINQ) C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [LINQ (Language-Integrated Query)-Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).|
-|**/f @ no__t-1ields @ no__t-2**|Generuje polí místo vlastností. Ve výchozím nastavení jsou generovány vlastnosti.|
-|**/l @ no__t-1anguage @ no__t-2:** _jazyk_|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, který je ve výchozím nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název třídy implementující<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|
-|**/n @ no__t-1amespace @ no__t-2:** _obor názvů_|Určuje runtime obor názvů pro generovaný typy. Výchozí obor názvů je `Schemas`.|
+|**/enableLinqDataSet**|(Krátký tvar: `/eld`.) Určuje, že vygenerovaná datová sada může být dotazována pomocí LINQ to DataSet. Tato možnost se používá, pokud je také zadán parametr /dataset. Další informace najdete v tématu [LINQ to DataSet Overview](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) a [dotazování na typové datové sady](../../../docs/framework/data/adonet/querying-typed-datasets.md). Obecné informace o použití LINQ naleznete v tématu [Language-Integrated Query (LINQ) C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [LINQ (Language-Integrated Query)-Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).|
+|**/f \[ields \]**|Generuje polí místo vlastností. Ve výchozím nastavení jsou generovány vlastnosti.|
+|**/l \[anguage \]:** _jazyk_|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, který je ve výchozím nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název třídy implementující<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|
+|**/n \[amespace \]:** _obor názvů_|Určuje runtime obor názvů pro generovaný typy. Výchozí obor názvů je `Schemas`.|
 |**/nologo**|Potlačí hlavičky.|
 |**/Order**|Generuje explicitní pořadí identifikátory pro všechny členy částic.|
-|**/o @ no__t-1ut @ no__t-2:** _Directory_|Určuje výstupní adresář pro soubory v. Výchozí je aktuální adresář.|
-|**/u @ no__t-1ri @ no__t-2:** _URI_|Určuje identifikátor URI pro elementy ve schématu pro generování kódu pro. Tento identifikátor URI, pokud je k dispozici, se vztahuje na všechny prvky určené s `/element` možnost.|
+|**/o \[ut \]:** _Directory_|Určuje výstupní adresář pro soubory v. Výchozí je aktuální adresář.|
+|**/u \[ri \]:** _identifikátor URI_|Určuje identifikátor URI pro elementy ve schématu pro generování kódu pro. Tento identifikátor URI, pokud je k dispozici, se vztahuje na všechny prvky určené s `/element` možnost.|
 
 ## <a name="dll-and-exe-file-options"></a>Knihovna DLL a EXE soubor možnosti
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/t @ no__t-1ype @ no__t-2:** _TypeName_|Určuje název typu vytvořit schéma pro. Můžete zadat více argumentů typu. Pokud *TypeName* neurčuje obor názvů, XSD. exe odpovídá všem typům v sestavení se zadaným typem. Pokud *TypeName* určuje obor názvů, bude porovnán pouze tento typ. Pokud *TypeName* končí znakem hvězdičky (\*), nástroj odpovídá všem typům, které začínají řetězcem předcházejícím \*. V případě vynechání `/type` možnost, Xsd.exe generuje schémata pro všechny typy v sestavení.|
+|**/t \[ype \]:** _TypeName_|Určuje název typu vytvořit schéma pro. Můžete zadat více argumentů typu. Pokud *TypeName* neurčuje obor názvů, XSD. exe odpovídá všem typům v sestavení se zadaným typem. Pokud *TypeName* určuje obor názvů, bude porovnán pouze tento typ. Pokud *TypeName* končí znakem hvězdičky (\*), nástroj odpovídá všem typům, které začínají řetězcem předcházejícím \*. V případě vynechání `/type` možnost, Xsd.exe generuje schémata pro všechny typy v sestavení.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -79,9 +79,9 @@ V následující tabulce jsou uvedeny operace, že provede Xsd.exe.
 |XML na XSD|Generuje schématu XML ze souboru XML.|
 |XSD sadu dat|Generuje modul common language runtime <xref:System.Data.DataSet> třídy ze souboru schématu XSD. Generované třídy poskytují bohatý objektový model pro běžné data XML.|
 |XSD do tříd|Generuje runtime třídy ze souboru schématu XSD. Generované třídy lze použít ve spojení s <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> ke čtení a zápisu kód XML, který následuje schéma.|
-|Třídy, které mají XSD| Generuje schématu XML z typ nebo typy v sestavení soubor za běhu. Generované schéma definuje formát XML, který používá <xref:System.Xml.Serialization.XmlSerializer>.|
+|Třídy, které mají XSD| Generuje schématu XML z typ nebo typy v sestavení soubor za běhu. Generované schéma definuje formát XML používaný <xref:System.Xml.Serialization.XmlSerializer>.|
 
- XSD.exe umožňuje pracovat s schémat XML, které následují definici schématu XML (XSD) jazyk navrhovaná World Wide Web Consortium (W3C). Další informace o návrhu definice schématu XML nebo standardu XML najdete v tématu <https://w3.org>.
+ XSD.exe umožňuje pracovat s schémat XML, které následují definici schématu XML (XSD) jazyk navrhovaná World Wide Web Consortium (W3C). Další informace o návrhu definice schématu XML nebo standardu XML naleznete v tématu <https://w3.org>.
 
 ## <a name="setting-options-with-an-xml-file"></a>Nastavení možností pomocí souboru XML
 
@@ -96,7 +96,7 @@ Pomocí přepínače `/parameters` můžete zadat jeden soubor XML, který nasta
 </xsd>
 ```
 
-Pokud je předchozí kód XML obsažen v souboru s názvem GenerateSchemas. XML, použijte přepínač `/parameters` tak, že na příkazovém řádku zadáte následující příkaz a stisknete klávesu ENTER:
+Pokud je předchozí kód XML obsažen v souboru s názvem GenerateSchemas. XML, použijte přepínač `/parameters` zadáním následujícího příkazu na příkazovém řádku a stisknutím klávesy ENTER:
 
 ```console
  xsd /p:GenerateSchemas.xml
@@ -123,10 +123,10 @@ Je třeba zadat pouze jeden z následujících možností `<generateSchemas>` el
 
 |Prvek|Popis|
 |-------------|-----------------|
-|@no__t – 0assembly >|Určuje sestavení, které chcete vytvořit schéma z.|
-|@no__t – 0type >|Určuje typ v sestavení, které chcete vytvořit schéma pro nalezen.|
-|\<xml>|Určuje soubor XML pro schéma pro generování.|
-|\<xdr>|Určuje soubor XDR ke generování schéma pro.|
+|\<assembly >|Určuje sestavení, které chcete vytvořit schéma z.|
+|\<type >|Určuje typ v sestavení, které chcete vytvořit schéma pro nalezen.|
+|\<xml >|Určuje soubor XML pro schéma pro generování.|
+|\<xdr >|Určuje soubor XDR ke generování schéma pro.|
 
 Chcete-li generovat soubor s kódem, použijte `<generateClasses>` elementu. Následující příklad generuje soubor kódu. Všimněte si, že jsou také zobrazeny dva atributy, které umožňují nastavit programovací jazyk a obor názvů generovaného souboru.
 
@@ -142,9 +142,9 @@ Chcete-li generovat soubor s kódem, použijte `<generateClasses>` elementu. Ná
 
 |Prvek|Popis|
 |-------------|-----------------|
-|@no__t – 0element >|Určuje element v souboru XSD pro generování kódu pro.|
-|\<schemaImporterExtensions>|Určuje typu odvozeného z <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> třídy.|
-|\<schema>|Určuje soubor schématu XML pro generování kódu pro. Více souborů schématu XML lze zadat pomocí více @no__tch > prvků.|
+|\<element >|Určuje element v souboru XSD pro generování kódu pro.|
+|\<schemaImporterExtensions >|Určuje typu odvozeného z <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> třídy.|
+|\<schema >|Určuje soubor schématu XML pro generování kódu pro. Více souborů schématu XML lze zadat pomocí více \<schema > prvků.|
 
 V následující tabulce jsou uvedeny atributy, které lze také použít s `<generateClasses>` elementu.
 
@@ -152,9 +152,9 @@ V následující tabulce jsou uvedeny atributy, které lze také použít s `<ge
 |---------------|-----------------|
 |jazyk|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, výchozí nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název pro třídu, která implementuje <xref:System.CodeDom.Compiler.CodeDomProvider>.|
 |– obor názvů|Určuje obor názvů pro generovaný kód. Obor názvů musí odpovídat CLR standardů (například bez mezer nebo zpětné lomítko znaků).|
-|options|Jedna z následujících hodnot: `none`, `properties` (generuje vlastnosti místo veřejných polí), `order` nebo `enableDataBinding` (Další informace najdete v částech `/order` a `/enableDataBinding` v předchozím oddílu Možnosti souboru XSD.|
+|možnosti|Jedna z následujících hodnot: `none`, `properties` (generuje vlastnosti namísto veřejných polí), `order` nebo `enableDataBinding` (podívejte se na `/order` a `/enableDataBinding` přepínače v předchozím oddílu Možnosti souboru XSD.|
 
- Můžete také určit, jak `DataSet` kód je generována pomocí `<generateDataSet>` elementu. Následující kód XML určuje, že generovaný kód používá struktury `DataSet` (například třída <xref:System.Data.DataTable>) k vytvoření Visual Basicho kódu pro zadaný element. Vygenerovaný struktury datová sada bude podporovat LINQ dotazů.
+ Můžete také určit, jak `DataSet` kód je generována pomocí `<generateDataSet>` elementu. Následující kód XML určuje, že generovaný kód používá `DataSet` struktury (například třídu <xref:System.Data.DataTable>) k vytvoření Visual Basicho kódu pro zadaný element. Vygenerovaný struktury datová sada bude podporovat LINQ dotazů.
 
  ```xml
  <xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
@@ -167,13 +167,13 @@ Možnosti pro můžete nastavit `<generateDataSet>` element patří následujíc
 
 |Prvek|Popis|
 |-------------|-----------------|
-|\<schema>|Určuje soubor schématu XML pro generování kódu pro. Více souborů schématu XML lze zadat pomocí více @no__tch > prvků.|
+|\<schema >|Určuje soubor schématu XML pro generování kódu pro. Více souborů schématu XML lze zadat pomocí více \<schema > prvků.|
 
  V následující tabulce jsou uvedeny atributy, které lze používat s `<generateDataSet>` elementu.
 
 |Atribut|Popis|
 |---------------|-----------------|
-|enableLinqDataSet|Určuje, že generované datová sada může být dotázán proti pomocí jazyka LINQ k datové. Výchozí hodnota je false.|
+|enableLinqDataSet|Určuje, že generované datová sada může být dotázán proti pomocí jazyka LINQ k datové. Výchozí hodnota je False.|
 |jazyk|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, výchozí nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název pro třídu, která implementuje <xref:System.CodeDom.Compiler.CodeDomProvider>.|
 |– obor názvů|Určuje obor názvů pro generovaný kód. Obor názvů musí odpovídat CLR standardů (například bez mezer nebo zpětné lomítko znaků).|
 

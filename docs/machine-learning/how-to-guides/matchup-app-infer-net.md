@@ -3,12 +3,12 @@ title: Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravd
 description: Naučte se používat programování pravděpodobnostní s Infer.NET k vytvoření aplikace seznamu her pro zápasu v závislosti na zjednodušené verzi TrueSkill.
 ms.date: 05/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: f6f91aecfe7fdeffb7e8913309046c7942ecbab7
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 69515c7b3518c35bf84335c453408b1466f93f34
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957216"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774547"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
 
@@ -33,11 +33,11 @@ dotnet new console -o myApp
 cd myApp
 ```
 
-Příkaz `dotnet` vytvoří aplikaci `new` typu `console`. Parametr `-o` vytvoří adresář s názvem `myApp`, kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd myApp` vloží do nově vytvořeného adresáře aplikace.
+Příkaz `dotnet` vytvoří `new` aplikace typu `console`. Parametr `-o` vytvoří adresář s názvem `myApp`, kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd myApp` vloží do nově vytvořeného adresáře aplikace.
 
 ## <a name="install-infernet-package"></a>Nainstalovat balíček Infer.NET
 
-Chcete-li použít Infer.NET, je třeba nainstalovat balíček `Microsoft.ML.Probabilistic.Compiler`. Na příkazovém řádku spusťte následující příkaz:
+Pokud chcete používat Infer.NET, musíte nainstalovat balíček `Microsoft.ML.Probabilistic.Compiler`. Na příkazovém řádku spusťte následující příkaz:
 
 ```dotnetcli
 dotnet add package Microsoft.ML.Probabilistic.Compiler
@@ -45,7 +45,7 @@ dotnet add package Microsoft.ML.Probabilistic.Compiler
 
 ## <a name="design-your-model"></a>Návrh modelu
 
-Vzorový příklad používá v sadě Office shodu tabulky tenis nebo Foosball. Máte účastníky a výsledek každé shody.  Chcete odvodit dovednosti přehrávače od těchto dat. Předpokládejme, že každý hráč má obvykle distribuovanou latentní dovednost a jejich odpovídající výkon je tato dovednostní verze. Data omezí výkon vítěze tak, aby byla větší než výkon loser. Toto je zjednodušená verze oblíbeného modelu [TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) , která také podporuje týmy, kreslení a další rozšíření. [Pokročilá verze](https://www.microsoft.com/en-us/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tohoto modelu se používá pro Matchmaking v nejlepším prodeji názvů her Halo a ozubeného kolaci války.
+Vzorový příklad používá v sadě Office shodu tabulky tenis nebo Foosball. Máte účastníky a výsledek každé shody.  Chcete odvodit dovednosti přehrávače od těchto dat. Předpokládejme, že každý hráč má obvykle distribuovanou latentní dovednost a jejich odpovídající výkon je tato dovednostní verze. Data omezí výkon vítěze tak, aby byla větší než výkon loser. Toto je zjednodušená verze oblíbeného modelu [TrueSkill](https://www.microsoft.com/research/project/trueskill-ranking-system/) , která také podporuje týmy, kreslení a další rozšíření. [Pokročilá verze](https://www.microsoft.com/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tohoto modelu se používá pro Matchmaking v nejlepším prodeji názvů her Halo a ozubeného kolaci války.
 
 Musíte uvést, jaké dovednosti v přehrávači jsou společně s jejich odchylkou – míra nejistoty v rámci dovedností.
 
@@ -64,7 +64,7 @@ Podíváme se na vzorová data a Všimněte si, že hráči 3 a 4 mají jednu ze
 
 ## <a name="write-some-code"></a>Napsat nějaký kód
 
-Model byl navržený tak, jak ho vyjádřit jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. V oblíbeném textovém editoru otevřete `Program.cs` a nahraďte jeho obsah následujícím kódem:
+Model byl navržený tak, jak ho vyjádřit jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. Ve svém oblíbeném textovém editoru otevřete `Program.cs` a nahraďte jeho obsah následujícím kódem:
 
 ```csharp
 namespace myApp

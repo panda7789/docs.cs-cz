@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27d1a8cc80db9e17000880c006ac1d7c1bd12fec
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5c0b3c9d13267abe50ee187bce0c56485be29613
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631342"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775286"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
-<xref:System.Runtime.InteropServices> Obor názvů poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů spolupráce modelu COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty com.  
+Obor názvů <xref:System.Runtime.InteropServices> poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů pro spolupráci s objekty COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty COM.  
   
  Pokud nejste obeznámeni s úlohou použití atributů pro spravovaný kód, přečtěte si téma [rozšíření metadat pomocí atributů](../../../docs/standard/attributes/index.md). Podobně jako u jiných vlastních atributů můžete použít atributy specifické pro spolupráci na typy, metody, vlastnosti, parametry, pole a další členy.  
   
@@ -40,7 +40,8 @@ ms.locfileid: "68631342"
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|Označuje rozhraní, která jsou zdrojem událostí pro třídu.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|Označuje, že metoda by měla být volána, když je zrušena registrace sestavení z modelu COM, aby mohl být během procesu proveden uživatelsky napsaný kód.|  
 |<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Pokud se hodnota atributu rovná **false**, vykresluje se typy neviditelné na com. Tento atribut lze použít na jednotlivý typ nebo na celé sestavení pro řízení viditelnosti modelu COM. Ve výchozím nastavení jsou viditelné všechny spravované, veřejné typy. atribut není nutné, aby jej bylo možné zobrazit.|  
-|<xref:System.Runtime.InteropServices.DispIdAttribute>|Určuje identifikátor odeslání objektu COM (DISPID) metody nebo pole. Tento atribut obsahuje identifikátor DISPID pro metodu, pole nebo vlastnost, kterou popisuje.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|  
+|<xref:System.Runtime.InteropServices.DispIdAttribute>|Určuje identifikátor odeslání objektu COM (DISPID) metody nebo pole. Tento atribut obsahuje identifikátor DISPID pro metodu, pole nebo vlastnost, kterou popisuje.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.| 
+|<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|Označuje výchozí rozhraní pro třídu COM implementovanou v rozhraní .NET.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|
 |<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Označuje fyzickou pozici každého pole v rámci třídy při použití s **StructLayoutAttribute**a **LayoutKind** je nastaven na hodnotu Explicit.|  
 |<xref:System.Runtime.InteropServices.GuidAttribute>|Určuje globálně jedinečný identifikátor (GUID) třídy, rozhraní nebo celé knihovny typů. Řetězec předaný atributu musí být formát, který je přijatelným argumentem konstruktoru pro typ **System. GUID**.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute>|Určuje, která implementace rozhraní **IDispatch** používá modul CLR při vystavování duálních rozhraní a IDispatch do modelu COM.|  

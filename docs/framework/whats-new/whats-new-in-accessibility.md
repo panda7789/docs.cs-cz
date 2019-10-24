@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22e1ae495276b0c474ad47f695d8410288289f83
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: cfea1d5ee19d9fb61094b60e0175ddfd2f120494
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053726"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774287"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -22,17 +22,17 @@ ms.locfileid: "71053726"
 
 ## <a name="accessibility-switches"></a>Přepínače přístupnosti
 
-Aplikaci můžete nakonfigurovat tak, aby se přihlásila k funkcím přístupnosti, pokud cílíte .NET Framework 4,7 nebo starší verzi, ale běží na .NET Framework 4.7.1 nebo novějším. Pokud cílíte .NET Framework 4.7.1 nebo novější, můžete aplikaci nakonfigurovat tak, aby používala starší funkce (a nevyužila výhody funkcí usnadnění). Každá verze .NET Framework, která zahrnuje funkce usnadnění, má přepínač dostupnosti specifický pro verzi, který přidáte do [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvku [`<runtime>`](../configure-apps/file-schema/runtime/index.md) v části konfiguračního souboru aplikace. Podporovány jsou následující přepínače:
+Aplikaci můžete nakonfigurovat tak, aby se přihlásila k funkcím přístupnosti, pokud cílíte .NET Framework 4,7 nebo starší verzi, ale běží na .NET Framework 4.7.1 nebo novějším. Pokud cílíte .NET Framework 4.7.1 nebo novější, můžete aplikaci nakonfigurovat tak, aby používala starší funkce (a nevyužila výhody funkcí usnadnění). Každá verze .NET Framework, která zahrnuje funkce usnadnění, má přepínač dostupnosti specifický pro verzi, který přidáte do prvku [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) v části [`<runtime>`](../configure-apps/file-schema/runtime/index.md) konfiguračního souboru aplikace. Podporovány jsou následující přepínače:
 
 |Version|Přepínač|
 |---|---|
 |.NET Framework 4.7.1|"Switch. UseLegacyAccessibilityFeatures"|
-|.NET Framework 4.7.2|"Switch.UseLegacyAccessibilityFeatures.2"|
-|.NET Framework 4,8|"Switch.UseLegacyAccessibilityFeatures.3"|
+|.NET Framework 4.7.2|"Switch. UseLegacyAccessibilityFeatures. 2"|
+|.NET Framework 4,8|"Switch. UseLegacyAccessibilityFeatures. 3"|
 
 ### <a name="taking-advantage-of-accessibility-enhancements"></a>Využití výhod vylepšení usnadnění přístupu
 
-Nové funkce usnadnění jsou ve výchozím nastavení povolené pro aplikace, které cílí na .NET Framework 4.7.1 nebo novější. Kromě toho aplikace, které cílí na starší verzi .NET Framework, ale běží v .NET Framework 4.7.1 nebo novějším, se můžou odhlásit ze starší verze chování přístupnosti (a tím využít vylepšení usnadnění) přidáním přepínačů do [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) element `false`v [`<runtime>`](../configure-apps/file-schema/runtime/index.md) části konfiguračního souboru aplikace a nastavení jejich hodnoty na. V následující části se dozvíte, jak se vyjádřit k vylepšením usnadnění zavedeným v .NET Framework 4.7.1:
+Nové funkce usnadnění jsou ve výchozím nastavení povolené pro aplikace, které cílí na .NET Framework 4.7.1 nebo novější. Kromě toho aplikace, které cílí na starší verzi .NET Framework, ale běží v .NET Framework 4.7.1 nebo novějším, se můžou odhlásit ze starší verze chování přístupnosti (a tím využít vylepšení usnadnění) přidáním přepínačů do [ `<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) element v části [`<runtime>`](../configure-apps/file-schema/runtime/index.md) konfiguračního souboru aplikace a nastavení jejich hodnoty na `false`. V následující části se dozvíte, jak se vyjádřit k vylepšením usnadnění zavedeným v .NET Framework 4.7.1:
 
 ```xml
 <runtime>
@@ -41,7 +41,7 @@ Nové funkce usnadnění jsou ve výchozím nastavení povolené pro aplikace, k
 </runtime>
 ```
 
-Pokud se rozhodnete pro funkce přístupnosti v novější verzi .NET Framework vyjádřit, musíte se taky výslovně odhlásit k funkcím z dřívějších verzí .NET Framework. Konfigurace vaší aplikace pro využívání výhod vylepšení usnadnění v .NET Framework 4.7.1 i 4.7.2 vyžaduje následující [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) element:
+Pokud se rozhodnete pro funkce přístupnosti v novější verzi .NET Framework vyjádřit, musíte se taky výslovně odhlásit k funkcím z dřívějších verzí .NET Framework. Konfigurace vaší aplikace pro využívání výhod vylepšení usnadnění v .NET Framework 4.7.1 i 4.7.2 vyžaduje následující [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek:
 
 ```xml
 <runtime>
@@ -50,7 +50,7 @@ Pokud se rozhodnete pro funkce přístupnosti v novější verzi .NET Framework 
 </runtime>
 ```
 
-Konfigurace vaší aplikace pro využívání výhod vylepšení usnadnění v .NET Framework 4.7.1, 4.7.2 a 4,8 vyžaduje následující [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) element:
+Konfigurace vaší aplikace pro využívání výhod vylepšení usnadnění v .NET Framework 4.7.1, 4.7.2 a 4,8 vyžaduje následující [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek:
 
 ```xml
 <runtime>
@@ -61,7 +61,7 @@ Konfigurace vaší aplikace pro využívání výhod vylepšení usnadnění v .
 
 ### <a name="restoring-legacy-behavior"></a>Obnovení starší verze chování
 
-Aplikace, které cílí na verze .NET Framework začínající na 4.7.1, mohou zakázat funkce usnadnění přidáním přepínačů do [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvku [`<runtime>`](../configure-apps/file-schema/runtime/index.md) v části konfiguračního souboru aplikace a nastavením jejich hodnoty na `true`. Například následující konfigurace výslovný z funkcí usnadnění zavedených v .NET Framework 4.7.2:
+Aplikace, které cílí na verze .NET Framework začínající na 4.7.1, mohou zakázat funkce usnadnění přidáním přepínačů do [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) elementu v části [`<runtime>`](../configure-apps/file-schema/runtime/index.md) konfiguračního souboru aplikace a nastavením jejich hodnoty. `true`. Například následující konfigurace výslovný z funkcí usnadnění zavedených v .NET Framework 4.7.2:
 
 ```xml
 <runtime>
@@ -88,9 +88,9 @@ V .NET Framework 4,8 model Windows Forms přidává podporu pro události LiveRe
 
 **Podpora UIA LiveRegions ve jmenovkách a StatusStrips**
 
-UIA LiveRegions umožňuje vývojářům aplikací upozorňovat čtečky obrazovky na změnu textu v ovládacím prvku, který se nachází vedle místa, kde uživatel pracuje. To je užitečné například pro <xref:System.Windows.Forms.StatusStrip> ovládací prvek, který zobrazuje stav připojení. Pokud se připojení vynechá a změní se stav, vývojář může chtít informovat čtečku obrazovky.
+UIA LiveRegions umožňuje vývojářům aplikací upozorňovat čtečky obrazovky na změnu textu v ovládacím prvku, který se nachází vedle místa, kde uživatel pracuje. To je užitečné, například pro <xref:System.Windows.Forms.StatusStrip> ovládací prvek, který zobrazuje stav připojení. Pokud se připojení vynechá a změní se stav, vývojář může chtít informovat čtečku obrazovky.
 
-Počínaje .NET Framework 4,8 model Windows Forms implementuje UIA LiveRegions pro <xref:System.Windows.Forms.Label> ovládací prvky a. <xref:System.Windows.Forms.StatusStrip> Například následující kód používá LiveRegion v <xref:System.Windows.Forms.Label> ovládacím prvku s názvem: `label1`
+Počínaje .NET Framework 4,8 model Windows Forms implementuje UIA LiveRegions pro ovládací prvky <xref:System.Windows.Forms.Label> a <xref:System.Windows.Forms.StatusStrip>. Například následující kód používá LiveRegion v ovládacím prvku <xref:System.Windows.Forms.Label> s názvem `label1`:
 
 ```csharp
 public Form1()
@@ -105,7 +105,7 @@ Label1.Text = “Ready!”;
 
 Narrator oznamuje "připravený" bez ohledu na to, kde uživatel interakci s aplikací.
 
-Můžete také implementovat <xref:System.Windows.Forms.UserControl> jako LiveRegion:
+@No__t_0 můžete implementovat taky jako LiveRegion:
 
 ```csharp
 using System;
@@ -179,25 +179,25 @@ Počínaje .NET Framework 4,8, WPF zahrnuje řadu vylepšení usnadnění.
 
 **Narrator obrazovky již neoznamuje prvky se sbalenou nebo skrytou viditelností**
 
-Prvky se sbalenou nebo skrytou viditelností již nejsou oznamovány čtečkou obrazovky. Uživatelská rozhraní, která obsahují prvky s viditelností <xref:System.Windows.Visibility.Collapsed?displayProperty=nameWithType> nebo <xref:System.Windows.Visibility.Hidden?displayProperty=nameWithType> mohou být reprezentována čtečkami obrazovky, pokud jsou uživateli oznámena. Počínaje .NET Framework 4,8, WPF již nezahrnuje sbalené nebo skryté prvky v zobrazení ovládacích prvků stromu UIAutomation, takže čtečky obrazovky již nemohou tyto prvky oznamovat.
+Prvky se sbalenou nebo skrytou viditelností již nejsou oznamovány čtečkou obrazovky. Uživatelská rozhraní, která obsahují prvky s viditelností <xref:System.Windows.Visibility.Collapsed?displayProperty=nameWithType> nebo <xref:System.Windows.Visibility.Hidden?displayProperty=nameWithType>, mohou být vystupovat čtečkami obrazovky, pokud jsou uživateli oznámena. Počínaje .NET Framework 4,8, WPF již nezahrnuje sbalené nebo skryté prvky v zobrazení ovládacích prvků stromu UIAutomation, takže čtečky obrazovky již nemohou tyto prvky oznamovat.
 
 **Vlastnost SelectionTextBrush, která se má použít pro výběr textu, který není založený na Doplňky**
 
-V .NET Framework 4.7.2 WPF přidala možnost kreslit <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.PasswordBox> vybírat text bez použití přípravné vrstvy. Barva popředí vybraného textu v tomto scénáři byla vyřízena nástrojem <xref:System.Windows.SystemColors.HighlightTextBrush?displayProperty=nameWithType>.
+Ve .NET Framework 4.7.2 WPF přidala možnost nakreslit <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.PasswordBox> výběr textu bez použití přípravné vrstvy. Barva popředí vybraného textu v tomto scénáři byla vyřízena <xref:System.Windows.SystemColors.HighlightTextBrush?displayProperty=nameWithType>.
 
-.NET Framework 4,8 přidá novou vlastnost `SelectionTextBrush`, která umožňuje vývojářům vybrat konkrétní štětec pro vybraný text při použití bez vizuálního výběru textu. Tato vlastnost funguje pouze na <xref:System.Windows.Controls.Primitives.TextBoxBase>odvozených ovládacích prvcích <xref:System.Windows.Controls.PasswordBox> a ovládacím prvku v aplikacích WPF, které mají povolený výběr textu založený na nedoplňky. Nefunguje na <xref:System.Windows.Controls.RichTextBox> ovládacím prvku. Pokud není povolený výběr textu založený na doplňku, bude tato vlastnost ignorována.
+.NET Framework 4,8 přidá novou vlastnost `SelectionTextBrush`, která umožňuje vývojářům vybrat konkrétní štětec pro vybraný text při použití bez výběru textu založeného na doplňku. Tato vlastnost funguje pouze na <xref:System.Windows.Controls.Primitives.TextBoxBase> – odvozené ovládací prvky a ovládací prvek <xref:System.Windows.Controls.PasswordBox> v aplikacích WPF s povoleným ovládacím prvkem pro výběr textu, který není založen na prvcích doplňky. Nefunguje na ovládacím prvku <xref:System.Windows.Controls.RichTextBox>. Pokud není povolený výběr textu založený na doplňku, bude tato vlastnost ignorována.
 
 Chcete-li použít tuto vlastnost, jednoduše ji přidejte do kódu XAML a použijte příslušný štětec nebo vazbu. Výsledný výběr textu vypadá takto:
 
 ![Popis tlačítka, když uživatel přejde na tlačítko s klávesnicí](./media/selectiontextbrush-property.png)
 
-Můžete zkombinovat použití `SelectionBrush` vlastností a `SelectionTextBrush` k vygenerování libovolné kombinace barev pozadí a popředí, kterou považujete za vhodnou.
+Můžete zkombinovat použití vlastností `SelectionBrush` a `SelectionTextBrush` k vygenerování jakékoli kombinace barev pozadí a popředí, kterou považujete za vhodnou.
 
 **Podpora pro vlastnost UIAutomation ControllerFor**
 
-`ControllerFor` Vlastnost UIAutomation vrací pole prvků automatizace, které jsou manipulovány prvkem automatizace, který tuto vlastnost podporuje. Tato vlastnost se běžně používá pro usnadnění přístupu k automatickým návrhům. `ControllerFor`se používá v případě, že prvek automatizace ovlivňuje jeden nebo více segmentů uživatelského rozhraní aplikace nebo plochy. V opačném případě je těžké přidružit dopad operace řízení k prvkům uživatelského rozhraní. Tato funkce přidává možnost pro ovládací prvky pro poskytnutí hodnoty `ControllerFor` vlastnosti.
+Vlastnost `ControllerFor` UIAutomation vrací pole prvků automatizace, které jsou manipulovány prvkem automatizace, který tuto vlastnost podporuje. Tato vlastnost se běžně používá pro usnadnění přístupu k automatickým návrhům. `ControllerFor` se používá v případě, že prvek automatizace ovlivňuje jeden nebo více segmentů uživatelského rozhraní aplikace nebo plochy. V opačném případě je těžké přidružit dopad operace řízení k prvkům uživatelského rozhraní. Tato funkce přidává možnost pro ovládací prvky pro poskytnutí hodnoty vlastnosti `ControllerFor`.
 
-.NET Framework 4,8 přidá novou virtuální metodu <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType>. Chcete-li zadat hodnotu `ControllerFor` vlastnosti, jednoduše přepište tuto metodu a `List<AutomationPeer>` vraťte se k ovládacím prvkům, které jsou zpracovávány tímto <xref:System.Windows.Automation.Peers.AutomationPeer>způsobem:
+.NET Framework 4,8 přidá novou virtuální metodu <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType>. Chcete-li zadat hodnotu vlastnosti `ControllerFor`, jednoduše popište tuto metodu a vraťte `List<AutomationPeer>` ovládacích prvků, které jsou tímto <xref:System.Windows.Automation.Peers.AutomationPeer> zpracovávány:
 
 ```csharp
 public class AutoSuggestTextBox: TextBox
@@ -230,7 +230,7 @@ internal class AutoSuggestTextBoxAutomationPeer : TextBoxAutomationPeer
 
 V .NET Framework 4.7.2 a starších verzích se popisy tlačítek zobrazují pouze v případě, že uživatel najede myší na ovládací prvek. V .NET Framework 4,8 se popisy tlačítek zobrazují také u fokusu klávesnice a také prostřednictvím klávesové zkratky.
 
-Chcete-li povolit tuto funkci, aplikace musí cílit .NET Framework 4,8 nebo se `Switch.UseLegacyAccessibilityFeatures.3` přihlásit pomocí přepínačů a [](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) `Switch.UseLegacyToolTipDisplay` AppContext. Následuje ukázkový konfigurační soubor aplikace:
+Chcete-li povolit tuto funkci, aplikace musí cílit .NET Framework 4,8 nebo se přihlásit pomocí přepínačů `Switch.UseLegacyAccessibilityFeatures.3` a `Switch.UseLegacyToolTipDisplay` [AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) . Následuje ukázkový konfigurační soubor aplikace:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -247,17 +247,17 @@ Chcete-li povolit tuto funkci, aplikace musí cílit .NET Framework 4,8 nebo se 
 Jakmile je tato možnost povolená, všechny ovládací prvky, které obsahují popisek, ji zobrazí, jakmile ovládací prvek dostane fokus klávesnice. Popis tlačítka může být v průběhu času zavřen nebo se změní fokus klávesnice. Uživatelé mohou popisek také zavřít ručně pomocí nové klávesové zkratky CTRL + SHIFT + F10. Po odvolání ovládacího prvku ToolTip se můžete znovu zobrazit pomocí stejné klávesové zkratky.
 
 > [!NOTE]
-> [Popisky pásu karet](xref:System.Windows.Controls.Ribbon.RibbonToolTip) u <xref:System.Windows.Controls.Ribbon.Ribbon> ovládacích prvků se nezobrazují na fokusu klávesnice. zobrazují se pouze prostřednictvím klávesové zkratky.
+> [Popisky pásu karet](xref:System.Windows.Controls.Ribbon.RibbonToolTip) u ovládacích prvků <xref:System.Windows.Controls.Ribbon.Ribbon> se nebudou zobrazovat u fokusu klávesnice; zobrazují se pouze prostřednictvím klávesové zkratky.
 
 **Přidaná podpora vlastností SizeOfSet a PositionInSet UIAutomation**
 
-Windows 10 představil dvě nové vlastnosti `SizeOfSet` UIAutomation a `PositionInSet`, které aplikace používají k popisu počtu položek v sadě. UIAutomation klientské aplikace, jako jsou čtečky obrazovky, pak mohou pro tyto vlastnosti zadat dotaz na aplikaci a oznámit přesnou reprezentaci uživatelského rozhraní aplikace.
+Windows 10 představil dvě nové vlastnosti UIAutomation `SizeOfSet` a `PositionInSet`, které aplikace používají k popisu počtu položek v sadě. UIAutomation klientské aplikace, jako jsou čtečky obrazovky, pak mohou pro tyto vlastnosti zadat dotaz na aplikaci a oznámit přesnou reprezentaci uživatelského rozhraní aplikace.
 
 Počínaje .NET Framework 4,8, WPF zpřístupňuje tyto dvě vlastnosti UIAutomation v aplikacích WPF. Toho lze dosáhnout dvěma způsoby:
 
 - Pomocí vlastností závislosti.
 
-  WPF přidává dvě nové vlastnosti <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> závislosti a. <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType> Vývojář může použít jazyk XAML k nastavení jejich hodnot:
+  WPF přidává dvě nové vlastnosti závislosti <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Vývojář může použít jazyk XAML k nastavení jejich hodnot:
 
   ```xaml
   <Button AutomationProperties.SizeOfSet="3"
@@ -272,7 +272,7 @@ Počínaje .NET Framework 4,8, WPF zpřístupňuje tyto dvě vlastnosti UIAutoma
 
 - Přepsáním virtuálních metod AutomationPeer.
 
-  Virtuální metody <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> a byly přidány do třídy AutomationPeer. <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> Vývojář může poskytnout hodnoty pro `SizeOfSet` a `PositionInSet` přepsáním těchto metod, jak je znázorněno v následujícím příkladu:
+  Do třídy AutomationPeer byly přidány virtuální metody <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> a <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore>. Vývojář může poskytnout hodnoty pro `SizeOfSet` a `PositionInSet` přepsáním těchto metod, jak je znázorněno v následujícím příkladu:
 
   ```csharp
   public class MyButtonAutomationPeer : ButtonAutomationPeer
@@ -291,9 +291,9 @@ Počínaje .NET Framework 4,8, WPF zpřístupňuje tyto dvě vlastnosti UIAutoma
   }
   ```
 
-Kromě toho položky v <xref:System.Windows.Controls.ItemsControl> instancích poskytují hodnotu pro tyto vlastnosti automaticky bez dalšího zásahu od vývojáře. <xref:System.Windows.Controls.ItemsControl> Pokud je seskupená, kolekce skupin se reprezentuje jako sada a každá skupina se počítá jako samostatná sada, přičemž každá položka v této skupině poskytuje polohu v této skupině a také velikost skupiny. Automatické hodnoty nejsou virtualizací ovlivněny. I v případě, že položka není vytvořena, je stále započítána do celkové velikosti sady a má vliv na pozici v sadě položek na stejné úrovni.
+Kromě toho položky v instancích <xref:System.Windows.Controls.ItemsControl> poskytují hodnotu pro tyto vlastnosti automaticky bez dalšího zásahu od vývojáře. Pokud se <xref:System.Windows.Controls.ItemsControl> seskupí, kolekce skupin se reprezentuje jako sada a každá skupina se počítá jako samostatná sada, přičemž každá položka v této skupině poskytuje polohu v této skupině a také velikost skupiny. Automatické hodnoty nejsou virtualizací ovlivněny. I v případě, že položka není vytvořena, je stále započítána do celkové velikosti sady a má vliv na pozici v sadě položek na stejné úrovni.
 
-Automatické hodnoty jsou poskytnuty pouze v případě, že aplikace cílí na .NET Framework 4,8. Pro aplikace, které cílí na starší verzi .NET Framework, můžete nastavit `Switch.UseLegacyAccessibilityFeatures.3` [přepínač AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), jak je znázorněno v následujícím souboru App. config:
+Automatické hodnoty jsou poskytnuty pouze v případě, že aplikace cílí na .NET Framework 4,8. Pro aplikace, které cílí na starší verzi .NET Framework, můžete nastavit [přepínač `Switch.UseLegacyAccessibilityFeatures.3` AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), jak je znázorněno v následujícím souboru App. config:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -319,7 +319,7 @@ Návrhář pracovního postupu obsahuje následující změny v .NET Framework 4
 
 - Uživatelům, kteří si zvolí Vysoký kontrast motivům, se budou zobrazovat vylepšení viditelnosti Návrhář postupu provádění a jeho ovládacích prvků, jako jsou lepší poměry kontrastu mezi prvky a další pole výběru, která se používají pro prvky fokusu.
 
-Pokud je vaše aplikace cílena .NET Framework 4.7.2 nebo starší verze, můžete tyto změny `Switch.UseLegacyAccessibilityFeatures.3` vyjádřit nastavením [přepínače AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) na `false` v konfiguračním souboru aplikace. Další informace najdete v části využití [vylepšení usnadnění](#taking-advantage-of-accessibility-enhancements) v tomto článku.
+Pokud je vaše aplikace cílena .NET Framework 4.7.2 nebo starší verze, můžete se k těmto změnám vyjádřit nastavením `Switch.UseLegacyAccessibilityFeatures.3` [přepínač AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) na `false` v konfiguračním souboru aplikace. Další informace najdete v části využití [vylepšení usnadnění](#taking-advantage-of-accessibility-enhancements) v tomto článku.
 
 ## <a name="whats-new-in-accessibility-in-net-framework-472"></a>Co je nového v přístupnosti v .NET Framework 4.7.2
 
@@ -337,51 +337,51 @@ Pokud je vaše aplikace cílena .NET Framework 4.7.2 nebo starší verze, může
 
 Počínaje .NET Framework 4.7.2 model Windows Forms používá v Vysoký kontrast motivech barvy definované operačním systémem. To má vliv na následující ovládací prvky:
 
-- Rozevírací šipka <xref:System.Windows.Forms.ToolStripDropDownButton> ovládacího prvku
+- Rozevírací šipka ovládacího prvku <xref:System.Windows.Forms.ToolStripDropDownButton>
 
-- <xref:System.Windows.Forms.Button> Ovládacíprvky<xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType>a s<xref:System.Windows.Forms.ButtonBase.FlatStyle>nastavením na nebo<xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> . <xref:System.Windows.Forms.RadioButton> <xref:System.Windows.Forms.CheckBox> Dříve byly barvy vybraného textu a pozadí nekontrastované a bylo těžké je přečíst.
+- Ovládací prvky <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.RadioButton> a <xref:System.Windows.Forms.CheckBox> s <xref:System.Windows.Forms.ButtonBase.FlatStyle> nastavenými na <xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType>. Dříve byly barvy vybraného textu a pozadí nekontrastované a bylo těžké je přečíst.
 
-- Ovládací prvky obsažené v <xref:System.Windows.Forms.GroupBox> rámci, které <xref:System.Windows.Forms.Control.Enabled> mají svou vlastnost `false`nastavenou na.
+- Ovládací prvky obsažené v <xref:System.Windows.Forms.GroupBox>, které mají jeho vlastnost <xref:System.Windows.Forms.Control.Enabled> nastavenou na `false`.
 
-- Ovládací prvky, a<xref:System.Windows.Forms.ToolStripDropDownButton> , které mají vyšší poměr kontrastu světelnosti v režimu Vysoký kontrast. <xref:System.Windows.Forms.ToolStripButton> <xref:System.Windows.Forms.ToolStripComboBox>
+- Ovládací prvky <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripComboBox> a <xref:System.Windows.Forms.ToolStripDropDownButton>, které mají vyšší poměr kontrastu pro světelnost v režimu Vysoký kontrast.
 
-- <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor> Vlastnost .<xref:System.Windows.Forms.DataGridViewLinkCell>
+- Vlastnost <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor> <xref:System.Windows.Forms.DataGridViewLinkCell>
 
 **Vylepšení Předčítání**
 
 Počínaje .NET Framework 4.7.2 se podpora Narrator rozšiřuje takto:
 
-- Oznamuje hodnotu <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> vlastnosti při oznamování textu <xref:System.Windows.Forms.ToolStripMenuItem>.
+- Oznamuje hodnotu vlastnosti <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> při oznamování textu <xref:System.Windows.Forms.ToolStripMenuItem>.
 
-- Indikuje <xref:System.Windows.Forms.ToolStripMenuItem> , že <xref:System.Windows.Forms.Control.Enabled> má vlastnost nastavenou na `false`.
+- Indikuje, že <xref:System.Windows.Forms.ToolStripMenuItem> má vlastnost <xref:System.Windows.Forms.Control.Enabled> nastavenou na `false`.
 
-- Pokud <xref:System.Windows.Forms.ListView.CheckBoxes?displayProperty=nameWithType> je vlastnost nastavena na `true`hodnotu, poskytuje zpětnou vazbu ke stavu zaškrtávacího políčka.
+- Pokud je vlastnost <xref:System.Windows.Forms.ListView.CheckBoxes?displayProperty=nameWithType> nastavena na `true`, poskytuje zpětnou vazbu ke stavu zaškrtávacího políčka.
 
 - Pořadí fokusu v režimu kontroly mluveného komentáře je konzistentní s vizuálním pořadím ovládacích prvků v dialogovém okně Stažení ClickOnce.
 
 **Vylepšení ovládacího prvku DataGridView**
 
-Počínaje .NET Framework 4.7.2 <xref:System.Windows.Forms.DataGridView> zavedl ovládací prvek následující vylepšení přístupnosti:
+Počínaje .NET Framework 4.7.2, <xref:System.Windows.Forms.DataGridView> ovládací prvek přináší následující vylepšení přístupnosti:
 
 - Řádky lze seřadit pomocí klávesnice. Uživatel může použít klávesu F3, aby bylo možné řadit podle aktuálního sloupce.
 
-- Když je nastavená na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect?displayProperty=nameWithType>, změní se barva záhlaví sloupce tak, aby označovala aktuální sloupec jako karty uživatelů na aktuálním řádku. <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType>
+- Pokud je <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType> nastaveno na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect?displayProperty=nameWithType>, záhlaví sloupce změní barvu tak, aby označovala aktuální sloupec jako karty uživatelů na aktuálním řádku.
 
-- <xref:System.Windows.Forms.AccessibleObject.Parent?displayProperty=nameWithType> Vlastnost<xref:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject?displayProperty=nameWithType> objektu vrátí správný nadřazený ovládací prvek.
+- Vlastnost <xref:System.Windows.Forms.AccessibleObject.Parent?displayProperty=nameWithType> <xref:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject?displayProperty=nameWithType> vrací správný nadřazený ovládací prvek.
 
 **Vylepšené vizuální pomůcky**
 
-- Ovládací prvky <xref:System.Windows.Forms.CheckBox> <xref:System.Windows.Forms.ButtonBase.Text> a s prázdnou vlastností zobrazují indikátor fokusu, když obdrží fokus. <xref:System.Windows.Forms.RadioButton>
+- Ovládací prvky <xref:System.Windows.Forms.RadioButton> a <xref:System.Windows.Forms.CheckBox> s prázdnou vlastností <xref:System.Windows.Forms.ButtonBase.Text> zobrazují indikátor fokusu, když získají fokus.
 
 **Vylepšená podpora mřížky vlastností**
 
-- Podřízené prvky `true` ovládacího prvku nyní vrátí <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> vlastnost pro vlastnost pouze v případě, že je povolen prvek PropertyGrid. <xref:System.Windows.Forms.PropertyGrid>
+- Podřízené prvky ovládacího prvku <xref:System.Windows.Forms.PropertyGrid> nyní vrátí `true` pro vlastnost <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> pouze v případě, že je povolen prvek PropertyGrid.
 
-- Podřízené prvky `false`ovládacíhoprvku vrátí <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> vlastnost pro vlastnost pouze v případě, že uživatel může změnit element PropertyGrid. <xref:System.Windows.Forms.PropertyGrid>
+- Podřízené prvky ovládacího prvku <xref:System.Windows.Forms.PropertyGrid> vrátí `false` pro vlastnost <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> pouze v případě, že uživatel může změnit element PropertyGrid.
 
 **Vylepšená navigace klávesnicí**
 
-- Ovládací prvek umožňuje fokus, pokud je obsažen <xref:System.Windows.Forms.ToolStripPanel> v typu, <xref:System.Windows.Forms.ToolStripPanel.TabStop> který má vlastnost nastavenou na hodnotu <xref:System.Windows.Forms.ToolStripButton>`true`
+- Ovládací prvek <xref:System.Windows.Forms.ToolStripButton> umožňuje fokus, pokud je obsažen v <xref:System.Windows.Forms.ToolStripPanel> s vlastností <xref:System.Windows.Forms.ToolStripPanel.TabStop> nastavenou na `true`
 
 <a name="wpf472"></a>
 
@@ -389,13 +389,13 @@ Počínaje .NET Framework 4.7.2 <xref:System.Windows.Forms.DataGridView> zavedl 
 
 **Změny ovládacích prvků CheckBox a RadioButton**
 
-V .NET Framework 4.7.1 a starších verzích mají WPF <xref:System.Windows.Controls.CheckBox?displayProperty=nameWIthType> a <xref:System.Windows.Controls.RadioButton?displayProperty=nameWIthType> Controls nekonzistentní a v klasických a vysoký kontrast motivech nesprávné vizuály fokusu.  K těmto problémům dochází v případech, kdy ovládací prvky nemají sadu obsahu.  To může zjednodušit přechod mezi motivy a označit vizuál jako fokus.
+V .NET Framework 4.7.1 a starších verzích jsou ovládací prvky WPF <xref:System.Windows.Controls.CheckBox?displayProperty=nameWIthType> a <xref:System.Windows.Controls.RadioButton?displayProperty=nameWIthType> nekonzistentní a v klasických a Vysoký kontrast motivech jsou nesprávné vizuály fokusu.  K těmto problémům dochází v případech, kdy ovládací prvky nemají sadu obsahu.  To může zjednodušit přechod mezi motivy a označit vizuál jako fokus.
 
 V .NET Framework 4.7.2 jsou teď tyto vizuály v různých motivech konzistentní a snadněji viditelné v klasických a Vysoký kontrastch motivech.
 
 **Ovládací prvky WinForms hostované v aplikaci WPF**
 
-Pro ovládací prvek WinForms, který je hostován v aplikaci WPF v .NET Framework 4.7.1 a starších verzích, uživatelé nemohli kartu vymezit vrstvy WinForms, pokud je první nebo poslední ovládací prvek v <xref:System.Windows.Forms.Integration.ElementHost> této vrstvě ovládacím prvkem WPF. V .NET Framework 4.7.2 uživatelé teď můžou z vrstvy WinForms vymezit kartu.
+Pro ovládací prvek WinForms, který je hostován v aplikaci WPF v .NET Framework 4.7.1 a starších verzích, uživatelé nemohli kartu vymezit vrstvy WinForms, pokud je první nebo poslední ovládací prvek v této vrstvě ovládacím prvkem WPF <xref:System.Windows.Forms.Integration.ElementHost>. V .NET Framework 4.7.2 uživatelé teď můžou z vrstvy WinForms vymezit kartu.
 
 Automatizované aplikace, které spoléhají na fokus bez použití řídicího panelu Vrstvy WinForms, ale nemusí nadále fungovat podle očekávání.
 
@@ -421,13 +421,13 @@ Automatizované aplikace, které spoléhají na fokus bez použití řídicího 
 
 Pokud jsou povolena vylepšení přístupnosti, .NET Framework 4.7.1 zahrnuje následující vylepšení, která ovlivňují čtečky obrazovky:
 
-- V .NET Framework 4,7 a starších verzích <xref:System.Windows.Controls.Expander> byly ovládací prvky oznámeny čtečkami obrazovky jako tlačítka. Počínaje .NET Framework 4.7.1 jsou správně ohlášeny jako rozbalitelné nebo Sbalitelné skupiny.
+- V .NET Framework 4,7 a starších verzích byly <xref:System.Windows.Controls.Expander> ovládací prvky ohlášeny čtečkami obrazovky jako tlačítka. Počínaje .NET Framework 4.7.1 jsou správně ohlášeny jako rozbalitelné nebo Sbalitelné skupiny.
 
-- V .NET Framework 4,7 a dřívějších verzích <xref:System.Windows.Controls.DataGridCell> byly ovládací prvky oznámeny čtečkami obrazovky jako "vlastní". Počínaje .NET Framework 4.7.1 jsou teď správně ohlášené jako buňka datové mřížky (lokalizovaná).
+- V .NET Framework 4,7 a starších verzích byly <xref:System.Windows.Controls.DataGridCell> ovládací prvky oznámeny čtečkami obrazovky jako "vlastní". Počínaje .NET Framework 4.7.1 jsou teď správně ohlášené jako buňka datové mřížky (lokalizovaná).
 
-- Počínaje .NET Framework 4.7.1, čtečky obrazovky oznamují název, který lze upravovat <xref:System.Windows.Controls.ComboBox>.
+- Počínaje .NET Framework 4.7.1, čtečky obrazovky oznamuje název upravitelného <xref:System.Windows.Controls.ComboBox>.
 
-- V .NET Framework 4,7 a dřívějších verzích <xref:System.Windows.Controls.PasswordBox> byly ovládací prvky oznámeny jako "žádná položka v zobrazení" nebo jinak nesprávnému chování. Tento problém je vyřešený od .NET Framework 4.7.1.
+- V .NET Framework 4,7 a dřívějších verzích byly <xref:System.Windows.Controls.PasswordBox> ovládací prvky ohlášeny jako "žádná položka v zobrazení" nebo kdyby jinak nedošlo k nesprávnému chování. Tento problém je vyřešený od .NET Framework 4.7.1.
 
 **Podpora UIAutomation LiveRegion**
 
@@ -435,17 +435,17 @@ Pokud jsou povolena vylepšení přístupnosti, .NET Framework 4.7.1 zahrnuje n�
 
 V rámci podpory živých oblastí byla do WPF přidána následující rozhraní API:
 
-- Pole <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType> , která identifikují vlastnost **LiveSetting** a událost **LiveRegionChanged** . Lze je nastavit pomocí jazyka XAML.
+- Pole <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType>, která identifikují vlastnost **LiveSetting** a událost **LiveRegionChanged** . Lze je nastavit pomocí jazyka XAML.
 
 - Připojená vlastnost **Vlastnosti automatizace. LiveSetting** , která informuje čtečku obrazovky o důležitosti změny uživatelského rozhraní pro uživatele.
 
-- Vlastnost, která identifikuje vlastnost **Vlastnosti automatizace. LiveSetting** připojené. <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType>
+- Vlastnost <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType>, která identifikuje připojenou vlastnost **Vlastnosti automatizace. LiveSetting** .
 
-- Metoda, která může být přepsána tak, aby poskytovala hodnotu **LiveSetting.** <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType>
+- Metoda <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType>, která může být přepsána tak, aby poskytovala hodnotu **LiveSetting** .
 
-- Metody <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType> , které získají a nastavují hodnotu **LiveSetting** .
+- Metody <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType>, které získají a nastavují hodnotu **LiveSetting** .
 
-- Výčet, který definuje následující možné hodnoty **LiveSetting:** <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType>
+- Výčet <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType>, který definuje následující možné hodnoty **LiveSetting** :
 
   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>. Element neodesílá oznámení v případě, že se změnil obsah oblasti v reálném čase.
   - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>. Element odesílá nepřerušovaná oznámení, pokud se změní obsah živé oblasti.
@@ -474,11 +474,11 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **Vysoký kontrast**
 
-Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když <xref:System.Windows.SystemParameters.HighContrast%2A> je motiv nastaven. Zde jsou některé z nich:
+Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když je nastaven motiv <xref:System.Windows.SystemParameters.HighContrast%2A>. Zde jsou některé z nich:
 
-- <xref:System.Windows.Controls.Expander>nad
+- ovládací prvek <xref:System.Windows.Controls.Expander>
 
-  Vizuál fokusu pro <xref:System.Windows.Controls.Expander> ovládací prvek je nyní viditelný. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox>ovládací prvky,<xref:System.Windows.Controls.ListBox>a <xref:System.Windows.Controls.RadioButton> jsou viditelné také. Příklad:
+  Vizuál fokusu pro ovládací prvek <xref:System.Windows.Controls.Expander> je teď viditelný. K dispozici jsou také vizuály klávesnice pro ovládací prvky <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.RadioButton>. Příklad:
 
   Před: 
 
@@ -488,9 +488,9 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Rozšíření ovládacího prvku s fokusem po vylepšeních přístupnosti](./media/expander-after.png)
 
-- <xref:System.Windows.Controls.CheckBox>a <xref:System.Windows.Controls.RadioButton> ovládací prvky
+- ovládací prvky <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton>
 
-  Text v <xref:System.Windows.Controls.CheckBox> ovládacích prvcích a <xref:System.Windows.Controls.RadioButton> se teď snáze zobrazuje, když je vybraný v motivech s vysokým kontrastem. Příklad:
+  Text v ovládacích prvcích <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> se teď snáze zobrazuje, když je vybraný v motivech s vysokým kontrastem. Příklad:
 
   Před: 
 
@@ -500,9 +500,9 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Přepínač vysoký kontrast s fokusem po vylepšeních přístupnosti](./media/radio-button-after.png)
 
-- <xref:System.Windows.Controls.ComboBox>nad
+- ovládací prvek <xref:System.Windows.Controls.ComboBox>
 
-  Počínaje .NET Framework 4.7.1 je ohraničení zakázaného <xref:System.Windows.Controls.ComboBox> ovládacího prvku stejné barvy jako zakázaný text. Příklad:
+  Počínaje .NET Framework 4.7.1 je ohraničení zakázaného <xref:System.Windows.Controls.ComboBox>ho ovládacího prvku stejné barvy jako zakázaný text. Příklad:
 
   Před: 
 
@@ -522,7 +522,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Barvy motivů tlačítek po vylepšeních přístupnosti](./media/button-themes-after.png) 
 
-  Nakonec v .NET Framework 4,7 a starších verzích nastaví styl ovládacího prvku <xref:System.Windows.Controls.ComboBox> na `Toolbar.ComboBoxStyleKey` hodnotu neviditelná šipka rozevíracího seznamu. Tento problém je vyřešený od .NET Framework 4.7.1. Příklad:
+  Nakonec, v .NET Framework 4,7 a starších verzích, nastavení stylu <xref:System.Windows.Controls.ComboBox> ovládacího prvku na `Toolbar.ComboBoxStyleKey` způsobilo, že šipka rozevíracího seznamu nebude viditelná. Tento problém je vyřešený od .NET Framework 4.7.1. Příklad:
 
   Před: 
 
@@ -532,9 +532,9 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Panel nástrojů. ComboBoxStyleKey po vylepšeních přístupnosti](./media/comboboxstylekey-after.png) 
 
-- <xref:System.Windows.Controls.DataGrid>nad
+- ovládací prvek <xref:System.Windows.Controls.DataGrid>
 
-  Počínaje .NET Framework 4.7.1, šipka indikátoru řazení v <xref:System.Windows.Controls.DataGrid> ovládacích prvcích teď používá správné barvy motivu. Příklad:
+  Počínaje .NET Framework 4.7.1 se šipka indikátoru řazení v <xref:System.Windows.Controls.DataGrid> ovládacích prvcích nyní používá pro správné barvy motivů. Příklad:
 
   Před: 
 
@@ -544,7 +544,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Seřadit šipku indikátoru po vylepšeních přístupnosti](./media/sort-indicator-after.png) 
 
-  Kromě toho se v .NET Framework 4,7 a dřívějších verzích změnil výchozí styl propojení na nesprávnou barvu při stisknutí myši v režimech s vysokým kontrastem. Tento problém se vyřeší od .NET Framework 4.7.1. Podobně, <xref:System.Windows.Controls.DataGrid> sloupce Zaškrtávací políčko používá očekávané barvy zpětné vazby pro fokus klávesnice počínaje .NET Framework 4.7.1.
+  Kromě toho se v .NET Framework 4,7 a dřívějších verzích změnil výchozí styl propojení na nesprávnou barvu při stisknutí myši v režimech s vysokým kontrastem. Tento problém se vyřeší od .NET Framework 4.7.1. Podobně <xref:System.Windows.Controls.DataGrid> sloupce Zaškrtávací políčko používá očekávané barvy zpětné vazby pro fokus klávesnice počínaje .NET Framework 4.7.1.
 
   Před: 
 
@@ -573,11 +573,11 @@ Počínaje .NET Framework 4.7.1 různé ovládací prvky WinForms nabízejí Vyl
 
 Mezi tyto změny vysokého kontrastu patří:
 
-- Zaškrtnutí v <xref:System.Windows.Forms.MenuStrip> položkách je snazší zobrazit.
+- Zaškrtnutí v <xref:System.Windows.Forms.MenuStrip> položky se snáze zobrazují.
 
-- Je-li toto <xref:System.Windows.Forms.MenuStrip> políčko zaškrtnuto, je snazší zobrazit zakázané položky.
+- Je-li toto políčko zaškrtnuto, je snazší zobrazit zakázané položky <xref:System.Windows.Forms.MenuStrip>.
 
-- Text ve vybraném <xref:System.Windows.Forms.Button> ovládacím prvku má kontrast na barvě výběru.
+- Text ve vybraném <xref:System.Windows.Forms.Button> ovládacím prvku se liší od barvy výběru.
 
 - Nepovolený text je snazší číst. Příklad:
 
@@ -595,25 +595,25 @@ Mezi tyto změny vysokého kontrastu patří:
 
 Model Windows Forms v .NET Framework 4.7.1 obsahuje následující vylepšení přístupnosti pro program Narrator:
 
-- K <xref:System.Windows.Forms.MonthCalendar> ovládacímu prvku může přicházet program Narrator a také k ostatním nástrojům pro automatizaci uživatelského rozhraní.
+- K ovládacímu prvku <xref:System.Windows.Forms.MonthCalendar> může mít přistup Nástroj Narrator a také jiné nástroje pro automatizaci uživatelského rozhraní.
 
-- <xref:System.Windows.Forms.CheckedListBox> Ovládací prvek upozorní program Narrator, když se změní stav kontroly položky, takže uživatel bude informován o tom, že změnil hodnotu položky seznamu.
+- Ovládací prvek <xref:System.Windows.Forms.CheckedListBox> upozorní program Narrator, když se změní stav kontroly položky, takže uživatel bude informován o tom, že změnil hodnotu položky seznamu.
 
-- <xref:System.Windows.Forms.DataGridViewCell> Ovládací prvek oznamuje do programu Narrator správný stav jen pro čtení.
+- Ovládací prvek <xref:System.Windows.Forms.DataGridViewCell> oznamuje do programu Narrator správný stav jen pro čtení.
 
-- Program Narrator teď může číst zakázaný <xref:System.Windows.Forms.ToolStripMenuItem> text, zatímco dřív by přeskočil zakázané položky nabídky.
+- Program Narrator teď může číst zakázaný text <xref:System.Windows.Forms.ToolStripMenuItem>, zatímco dřív by přeskočil zakázané položky nabídky.
 
 **Vylepšená podpora pro vzory usnadnění UIAutomation**
 
 Od .NET Framework 4.7.1 můžou vývojáři nástrojů pro usnadnění přístupu využít běžné vzory a vlastnosti přístupnosti rozhraní API pro několik ovládacích prvků WinForms. Mezi tato vylepšení přístupnosti patří:
 
-- A teď <xref:System.Windows.Forms.ToolStripSplitButton> podporuje [model rozbalení a sbalení.](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md) <xref:System.Windows.Forms.ComboBox>
+- @No__t_0 a <xref:System.Windows.Forms.ToolStripSplitButton> nyní podporují [model rozbalení a sbalení](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 
-- Teď podporuje [vzor přepínacího tlačítka.](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md) <xref:System.Windows.Forms.DataGridViewCheckBoxCell>
+- @No__t_0 teď podporuje [vzor přepínacího](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)tlačítka.
 
-- Ovládací prvek podporuje vlastnost a vzorek pro [rozbalení a sbalení.](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md) <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> <xref:System.Windows.Forms.ToolStripItem>
+- Ovládací prvek <xref:System.Windows.Forms.ToolStripItem> podporuje vlastnost <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> a vzorek pro [rozbalení a sbalení](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 
-- Ovládací prvky <xref:System.Windows.Forms.DomainUpDown> apodporují<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name>vlastnost. <xref:System.Windows.Forms.NumericUpDown>
+- Ovládací prvky <xref:System.Windows.Forms.NumericUpDown> a <xref:System.Windows.Forms.DomainUpDown> podporují vlastnost <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name>.
 
 **Vylepšené prostředí prohlížeče vlastností**
 
@@ -628,7 +628,7 @@ Počínaje .NET Framework 4.7.1 model Windows Forms zahrnuje:
 
 ### <a name="aspnet-web-controls"></a>Webové ovládací prvky ASP.NET
 
-Od .NET Framework 4.7.1 a sady Visual Studio 2017 15,3 ASP.NET vylepšuje, jak ASP.NET webové ovládací prvky fungují s technologiemi usnadnění v aplikaci Visual Studio. Změny zahrnují následující:
+Počínaje .NET Framework 4.7.1 a sadou Visual Studio 2017 verze 15,3 ASP.NET vylepšuje, jak ASP.NET webové ovládací prvky fungují s technologiemi usnadnění v aplikaci Visual Studio. Změny zahrnují následující:
 
 - Změny pro implementaci chybějících vzorů přístupnosti uživatelského rozhraní v ovládacích prvcích, jako je dialogové okno **Přidat pole** v průvodci **zobrazení podrobností** nebo dialogové okno **Konfigurovat ListView** průvodce **ListView** .
 
@@ -652,9 +652,9 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
 - Pořadí karet se změní na zleva doprava a shora dolů v některých ovládacích prvcích:
 
-  - Okno Inicializace korelace pro nastavení dat korelace pro <xref:System.ServiceModel.Activities.InitializeCorrelation> aktivitu.
+  - Okno Inicializace korelace pro nastavení dat korelace pro aktivitu <xref:System.ServiceModel.Activities.InitializeCorrelation>.
 
-  - Okno Definice <xref:System.ServiceModel.Activities.Receive>obsahu pro <xref:System.ServiceModel.Activities.ReceiveReply> aktivity, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.SendReply>a.
+  - Okno Definice obsahu pro aktivity <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.SendReply> a <xref:System.ServiceModel.Activities.ReceiveReply>.
 
 - Další funkce jsou k dispozici prostřednictvím klávesnice:
 
@@ -670,7 +670,7 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
   - Přidávání řádků do datových mříží používaných návrháři Návrhář postupu provádění a aktivit.
 
-  - Procházení polí v <xref:System.ServiceModel.Activities.ReceiveReply> aktivitách a <xref:System.ServiceModel.Activities.SendReply>
+  - Procházení polí v aktivitách <xref:System.ServiceModel.Activities.ReceiveReply> a <xref:System.ServiceModel.Activities.SendReply>
 
   - Nastavení výchozích hodnot pro proměnné nebo argumenty
 
@@ -678,18 +678,18 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
   - Zarážky nastavené v Návrháři postupu.
 
-  - Aktivity <xref:System.Activities.Statements.FlowSwitch%601>, <xref:System.Activities.Statements.FlowDecision>a .<xref:System.ServiceModel.Activities.CorrelationScope>
-  - Obsah <xref:System.ServiceModel.Activities.Receive> aktivity
+  - Aktivity <xref:System.Activities.Statements.FlowSwitch%601>, <xref:System.Activities.Statements.FlowDecision> a <xref:System.ServiceModel.Activities.CorrelationScope>.
+  - Obsah aktivity <xref:System.ServiceModel.Activities.Receive>
 
-  - Cílový typ <xref:System.Activities.Statements.InvokeMethod> aktivity.
+  - Cílový typ aktivity <xref:System.Activities.Statements.InvokeMethod>.
 
-  - Pole se seznamem výjimek a oddíl finally v <xref:System.Activities.Statements.TryCatch> aktivitě.
+  - Pole se seznamem výjimek a oddíl finally v aktivitě <xref:System.Activities.Statements.TryCatch>.
 
-  - Pole se seznamem typ zprávy, rozdělovač v okně Přidat Inicializátory korelace, okno Definice obsahu a okno definice vlastnosti CorrelatesOn v aktivitách zasílání zpráv<xref:System.ServiceModel.Activities.Receive>( <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, a <xref:System.ServiceModel.Activities.ReceiveReply>).
+  - Pole se seznamem typ zprávy, příčka v okně Přidat Inicializátory korelace, okno Definice obsahu a okno definice vlastnosti CorrelatesOn v aktivitách zasílání zpráv (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.SendReply> a <xref:System.ServiceModel.Activities.ReceiveReply>).
 
   - Cíle přechodů a přechodů stavového stroje.
 
-  - Poznámky a konektory <xref:System.Activities.Statements.FlowDecision> v aktivitách.
+  - Poznámky a konektory <xref:System.Activities.Statements.FlowDecision> aktivity.
 
   - Místní nabídky pro aktivity v kontextu (klikněte pravým tlačítkem myši).
 
@@ -697,11 +697,11 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
   - Procento přiblížení v Návrhář postupu provádění.
 
-  - Oddělovač v <xref:System.Activities.Statements.Parallel> rámci a <xref:System.Activities.Statements.Pick> aktivity.
+  - Oddělovač v aktivitách <xref:System.Activities.Statements.Parallel> a <xref:System.Activities.Statements.Pick>.
 
-  - <xref:System.Activities.Statements.InvokeDelegate> Aktivita.
+  - Aktivita <xref:System.Activities.Statements.InvokeDelegate>.
 
-  - Okno vybrat typy pro aktivity slovníku (`Microsoft.Activities.AddToDictionary<TKey,TValue>`, `Microsoft.Activities.RemoveFromDictionary<TKey,TValue>`atd.).
+  - Okno vybrat typy pro aktivity slovníku (`Microsoft.Activities.AddToDictionary<TKey,TValue>`, `Microsoft.Activities.RemoveFromDictionary<TKey,TValue>` atd.).
 
   - Okno Procházet a vybrat typ .NET.
 

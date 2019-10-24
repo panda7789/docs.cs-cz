@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c0fa0e2c59856beda65ec5804b8896352db98b3
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 2c1b73108227160aaff28525beeca7f3bd4cb5f8
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180198"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775328"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
 
@@ -50,7 +50,7 @@ Následující seznam shrnuje důležité koncepty paměti CLR.
 
 - Virtuální paměť může být ve třech stavech:
 
-  - Zdarma. Blok paměti neobsahuje žádné odkazy a je k dispozici pro přidělení.
+  - Dost. Blok paměti neobsahuje žádné odkazy a je k dispozici pro přidělení.
 
   - Rezervovaný. Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádnou jinou žádost o přidělení. Do tohoto bloku paměti však nelze ukládat data, dokud není potvrzeno.
 
@@ -125,7 +125,7 @@ K uvolňování paměti dochází na určitých generacích, protože podmínky 
 
 Objekty, které nejsou znovu získány v uvolňování paměti, jsou označovány jako pozůstaly a povýšeny na další generaci. Objekty, které jsou zachovány uvolňováním paměti generace 0, jsou povýšeny na generaci 1; objekty, které jsou zachovány uvolňováním paměti generace 1, jsou povýšeny na generaci 2; a objekty, které jsou v procesu uvolňování paměti generace 2, zůstávají v generaci 2.
 
-Když systém uvolňování paměti zjistí, že je míra přežití vysoká v generaci, zvyšuje prahovou hodnotu přidělení pro tuto generaci, takže další kolekce získá značnou velikost uvolněné paměti. CLR průběžně vyrovnává dvě priority: Pokud nechcete, aby pracovní sada aplikace byla příliš velká a neumožnila uvolňování paměti trvat příliš dlouho.
+Když systém uvolňování paměti zjistí, že je míra přežití vysoká v generaci, zvyšuje prahovou hodnotu přidělení pro tuto generaci, takže další kolekce získá značnou velikost uvolněné paměti. CLR průběžně vyrovnává dvě priority: Pokud nechcete, aby pracovní sada aplikace byla příliš velká, pomocí opožděného uvolňování paměti a neumožnilo spouštění uvolňování paměti příliš často.
 
 ### <a name="ephemeral-generations-and-segments"></a>Dočasné generace a segmenty
 
@@ -135,11 +135,11 @@ Dočasné generace musí být přiděleny v segmentu paměti, který je znám ja
 
 Velikost dočasného segmentu se liší v závislosti na tom, zda je systém 32 nebo 64 a na typu uvolňování paměti, které je spuštěn. Výchozí hodnoty jsou uvedeny v následující tabulce.
 
-||32 – bit|64 – bit|
+||32bitová|64bitová|
 |-|-------------|-------------|
 |GC pracovní stanice|16 MB|256 MB|
 |Uvolňování paměti serveru|64 MB|4 GB|
-|GC serveru s logickými procesory > 4|32 MB|2 GB|
+|GC serveru s logickými procesory > 4|32 MB|2 GB|
 |Uvolňování paměti serveru s využitím > 8 logických procesorů|16 MB|1 GB|
 
 Dočasný segment může zahrnovat objekty generace 2. Objekty generace 2 můžou používat víc segmentů (tolik, kolik je váš proces vyžaduje, a paměť umožňuje).
@@ -176,7 +176,7 @@ Před spuštěním uvolňování paměti jsou všechna spravovaná vlákna pozas
 
 Následující ilustrace znázorňuje vlákno, které spouští uvolňování paměti a způsobuje pozastavení ostatních vláken.
 
-![Když vlákno vyvolá uvolňování paměti,](../../../docs/standard/garbage-collection/media/gc-triggered.png "když vlákno spustí uvolňování paměti")
+![Když vlákno spustí uvolňování paměti](../../../docs/standard/garbage-collection/media/gc-triggered.png "Když vlákno spustí uvolňování paměti")
 
 [Zpět na začátek](#top)
 
@@ -208,7 +208,7 @@ Systém uvolňování paměti je samoobslužné ladění a může fungovat v nej
 
 Následující ilustrace znázorňuje vyhrazená vlákna, která provádějí uvolňování paměti na serveru.
 
-(../../../docs/standard/garbage-collection/media/gc-server.png "Vlákna") uvolňování paměti serveru vlákna uvolňování ![paměti serveru]
+![Vlákna uvolňování paměti serveru](../../../docs/standard/garbage-collection/media/gc-server.png "Vlákna uvolňování paměti serveru")
 
 ### <a name="configuring-garbage-collection"></a>Konfigurace uvolňování paměti
 
@@ -230,7 +230,7 @@ Následují požadavky na vlákna a výkon pro uvolňování paměti pracovních
 
 Následují požadavky na vlákna a výkon pro uvolňování paměti serveru:
 
-- Kolekce probíhá na více vyhrazených vláknech, které jsou spuštěny na úrovni priority `THREAD_PRIORITY_HIGHEST`.
+- Kolekce probíhá na několika vyhrazených vláknech, které jsou spuštěny na úrovni priority `THREAD_PRIORITY_HIGHEST`.
 
 - Halda a vyhrazené vlákno pro provádění uvolňování paměti jsou k dispozici pro každý procesor a haldy jsou shromažďovány ve stejnou dobu. Každá halda obsahuje malou haldu objektů a velké haldy objektů a ke všem haldám je možné přistupovat pomocí uživatelského kódu. Objekty na různých haldách mohou vzájemně odkazovat.
 
@@ -262,7 +262,7 @@ Souběžné uvolňování paměti má mírně větší pracovní sadu (ve srovn�
 
 Následující ilustrace znázorňuje souběžné uvolňování paměti prováděné na samostatném vyhrazeném vlákně.
 
-![Souběžná vlákna uvolňování paměti vlákna](../../../docs/standard/garbage-collection/media/gc-concurrent.png "souběžného uvolňování paměti")
+![Souběžná vlákna uvolňování paměti](../../../docs/standard/garbage-collection/media/gc-concurrent.png "Souběžná vlákna uvolňování paměti")
 
 [Zpět na začátek](#top)
 
@@ -297,6 +297,6 @@ Následující obrázek znázorňuje pozadí uvolňování paměti prováděné 
 
 ![Diagram, který zobrazuje uvolňování paměti serveru na pozadí.](./media/fundamentals/background-server-garbage-collection.png "Diagram, který zobrazuje uvolňování paměti serveru na pozadí.")
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

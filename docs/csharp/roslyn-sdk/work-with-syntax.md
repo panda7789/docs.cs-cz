@@ -1,77 +1,77 @@
 ---
-title: Použití syntaxe modelu sada SDK platformy kompilátoru .NET
-description: V tomto přehledu pochopení typů, které používáte k pochopení a manipulaci s uzlů syntaxe.
+title: Použití modelu syntaxe .NET Compiler Platform SDK
+description: Tento přehled poskytuje pochopení typů, které používáte pro pochopení a manipulaci se syntaxmi uzlů.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: a48d48168dffdb439c984f5b4209019514b3b970
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 940d2756ef7735ee96d38d0286f99fadf7b81dc6
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706595"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774104"
 ---
 # <a name="work-with-syntax"></a>Práce se syntaxí
 
-**Stromu syntaxe** je základní datová struktura vystavené kompilátoru rozhraní API. Tyto stromů představují lexikální nebo syntaktické struktury zdrojového kódu. Dvě důležité funkce slouží:
+**Strom syntaxe** je základní struktura dat vystavená rozhraními API kompilátoru. Tyto stromy reprezentují lexikální a syntaktickou strukturu zdrojového kódu. Slouží k tomu dva důležité účely:
 
-1. Povolit nástroje – například integrované vývojové prostředí, kódu doplňků, analytické nástroje a refaktoringy – naleznete v tématu a zpracovávat syntaktické konstrukce zdrojový kód v projektu uživatele.
-2. K povolení nástrojů – například refaktoringů a integrované vývojové prostředí – Pokud chcete vytvořit, upravit a změna uspořádání zdrojový kód přirozeným způsobem, bez nutnosti použití s přímým přístupem textových úprav. Vytváření a manipulaci s stromové struktury, nástroje snadno vytvořit a uspořádat zdrojový kód.
+1. Pro povolení nástrojů, jako je IDE, doplňky, nástroje pro analýzu kódu a Refaktoring – pro zobrazení a zpracování syntaktické struktury zdrojového kódu v projektu uživatele.
+2. Aby bylo možné povolit nástroje, jako je refaktoring a integrované vývojové prostředí (IDE) pro vytváření, úpravy a změny uspořádání zdrojového kódu, bez použití přímých úprav textu. Díky vytváření stromů a manipulaci s nimi můžou nástroje snadno vytvořit a změnit uspořádání zdrojového kódu.
 
-## <a name="syntax-trees"></a>Syntaxe stromů
+## <a name="syntax-trees"></a>Stromy syntaxe
 
-Syntaxi struktury jsou primární struktura používaná pro kompilaci, analýzy kódu, vazbu, refaktoring, funkce integrovaného vývojového prostředí a generování kódu. Žádná část zdrojového kódu je pochopitelné i bez ji nejdřív se identifikovat a rozdělená na jeden z mnoha prvků dobře známé strukturální jazyka. 
+Stromy syntaxe jsou primární strukturou, která se používá pro kompilaci, analýzu kódu, vázání, refaktoring, funkce rozhraní IDE a generování kódu. Žádná část zdrojového kódu není chápána bez toho, aby byla identifikována a zařazena do jedné z mnoha dobře známých prvků strukturálního jazyka.
 
-Syntaxi struktury mají tři klíčové atributy. První atribut je, že syntaxe stromů obsahovat všechny informace o zdroji v plnou věrností. To znamená, že obsahuje stromu syntaxe. Každá část informace nacházející se v zdrojový text, každý gramatické konstrukce, každý lexikální token a všechno ostatní mezi, včetně mezer, komentáře a direktivy preprocesoru. Například každý literál uvedených ve zdroji je reprezentován přesně tak, jak byl zadán. Stromové struktury syntaxe také představovat chyby ve zdrojovém kódu, pokud program je neúplná nebo poškozená představující chybí nebo přeskočené tokeny ve stromu syntaxe.  
+Stromy syntaxe mají tři klíčové atributy. Prvním atributem je, že stromy syntaxe uchovávají všechny informace o zdroji v plné přesnosti. To znamená, že strom syntaxe obsahuje všechny informace, které byly nalezeny ve zdrojovém textu, každé gramatické konstrukce, každý lexikální token a vše ostatní v rámci, včetně prázdných znaků, komentářů a direktiv preprocesoru. Například každý literál uvedený ve zdroji je reprezentován přesně tak, jak byl zadán. Stromy syntaxe také představují chyby ve zdrojovém kódu, pokud je program neúplný nebo poškozený pomocí reprezentace nebo chybějících tokenů ve stromu syntaxe.
 
-To umožňuje druhý atribut stromu syntaxe. Strom syntaxe získané z analyzátor můžete vytvořit přesný text, který se získá analýzou z. Z libovolného uzlu syntaxi je možné získat textovou reprezentaci podstromě kořenovým adresářem v tomto uzlu. To znamená, že syntaxe stromů může sloužit jako způsob, jak vytvořit a upravit zdrojový text. Vytvořením větve, které máte již vytvořen odpovídající text a úpravou stromu syntaxe vytváření větve mimo změny na stávající strom, musíte upravit efektivně text. 
+To umožňuje druhý atribut stromové struktury syntaxe. Strom syntaxe získaný z analyzátoru může vytvořit přesný text, ze kterého byl analyzován. Z libovolného uzlu syntaxe je možné získat textovou reprezentaci podstromu root v tomto uzlu. To znamená, že stromy syntaxe lze použít jako způsob, jak vytvořit a upravit zdrojový text. Vytvořením stromu, který máte v důsledku vytvoření ekvivalentního textu, a úpravou stromu syntaxe tak, aby se nový strom nezměnil v existujícím stromu, byl text efektivně upravován.
 
-Třetí atribut stromu syntaxe je, že jsou neměnné a bezpečné pro vlákna.  To znamená, že po získání stromu je snímek aktuálního stavu kódu a nikdy nemění. To umožňuje více uživatelům interakci s stejném stromu syntaxe ve stejnou dobu v různých vláknech bez uzamčení nebo duplicity. Protože stromy jsou neměnné a provádět žádné úpravy přímo do stromu, metody pro vytváření objektů pomáhají vytvářet a upravovat tak, že vytvoříte další snímky stromu stromu syntaxe. Stromy jsou efektivní tak, jak jsou opakovaně používat podřízených uzlů, tak novou verzi můžete znovu sestavit rychle a s malou paměť navíc.
+Třetí atribut stromové struktury syntaxe je, že jsou neměnné a jsou bezpečné pro přístup z více vláken.  To znamená, že po získání stromu se jedná o snímek aktuálního stavu kódu a nikdy se nemění. To umožňuje více uživatelům pracovat se stejným stromem syntaxe ve stejnou dobu v různých vláknech bez uzamčení nebo duplikace. Vzhledem k tomu, že stromy jsou neměnné a nelze provádět změny přímo ve stromu, metody továrny pomohou vytvořit a upravit stromy syntaxe vytvořením dalších snímků stromu. Stromy jsou efektivní způsobem, jakým znovu používají podkladové uzly, takže je možné novou verzi znovu sestavit rychle a s trochu dodatečnou pamětí.
 
-Strom syntaxe je doslova stromové struktury dat, kde není konečný konstrukční prvky nadřazené další prvky. Každý stromu syntaxe se skládá z uzlů, tokenů a triviální prvek.  
+Strom syntaxe je doslova stromovou strukturou dat, kde neterminálové strukturální prvky nadřazené jiné prvky. Každý strom syntaxe je tvořen uzly, tokeny a minihry.
 
-## <a name="syntax-nodes"></a>Syntaxe uzly
+## <a name="syntax-nodes"></a>Uzly syntaxe
 
-Syntaxe uzly jsou jedním z primárních prvků stromu syntaxe. Tyto uzly představují syntaktické konstrukce, jako je například prohlášení, příkazy, klauzule a výrazy. Každou kategorii syntaxe uzly představuje samostatnou třídu odvozenou z <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>. Sadu tříd uzel není rozšiřitelný. 
+Uzly syntaxe jsou jedním z primárních prvků stromové struktury syntaxe. Tyto uzly reprezentují syntaktické konstrukce, jako jsou deklarace, příkazy, klauzule a výrazy. Jednotlivé kategorie uzlů syntaxe jsou reprezentovány samostatnou třídou odvozenou z <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>. Sada tříd uzlů není rozšiřitelná.
 
-Všechny uzly syntaxe jsou není konečný uzlů ve stromu syntaxe, což znamená, že vždy mají ostatní uzly a tokeny jako podřízené objekty. Jako podřízený objekt jiného uzlu, každý uzel nemá nadřazený uzel, který je přístupný prostřednictvím <xref:Microsoft.CodeAnalysis.SyntaxNode.Parent?displayProperty=nameWithType> vlastnost. Protože jsou neměnné uzly a stromové struktury, nadřazený uzel se nikdy nemění. Kořen stromu má hodnotu null nadřazený prvek.  
+Všechny uzly syntaxe jsou uzly bez terminálů ve stromu syntaxe, což znamená, že mají vždy jiné uzly a tokeny jako podřízené objekty. Jako podřízený uzel jiného uzlu má každý uzel nadřazený uzel, ke kterému lze přistupovat prostřednictvím vlastnosti <xref:Microsoft.CodeAnalysis.SyntaxNode.Parent?displayProperty=nameWithType>. Vzhledem k tomu, že uzly a stromy jsou neměnné, nadřazený uzel se nikdy nemění. Kořen stromu má nadřazený prvek s hodnotou null.
 
-Každý uzel má <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType> metodu, která vrátí seznam podřízených uzlů v pořadí podle jejich umístění ve zdrojovém textu. Tento seznam neobsahuje tokeny. Každý uzel má také metody prozkoumat, jako potomci, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A>, nebo <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A> – které představují seznam uzlů, tokeny nebo triviální prvek, který neexistuje v podstromě root k uzlu.  
+Každý uzel má <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType> metodu, která vrátí seznam podřízených uzlů v sekvenčním pořadí na základě jejich pozice ve zdrojovém textu. Tento seznam neobsahuje tokeny. Každý uzel obsahuje také metody pro prohlédnutí následníků, jako jsou <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A> nebo <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A>, které reprezentují seznam všech uzlů, tokenů nebo minihryů, které existují v podstromu, který je v tomto uzlu rootem.
 
-Kromě toho každý uzel podtřídy syntaxe zpřístupňuje stejné děti prostřednictvím vlastnosti se silnými typy. Například <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> uzel třída má tři další vlastnosti specifické pro binární operátory: <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>, a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. Typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>a typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> je <xref:Microsoft.CodeAnalysis.SyntaxToken>.
+Kromě toho každá podtřída uzlu syntaxe zveřejňuje všechny stejné podřízené objekty prostřednictvím vlastností silného typu. Například třída Node <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> obsahuje tři další vlastnosti, které jsou specifické pro binární operátory: <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. Typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> a typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> je <xref:Microsoft.CodeAnalysis.SyntaxToken>.
 
-Některé uzly syntaxe mít volitelné podřízené objekty. Například <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax> má volitelnou <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax>. Pokud podřízený není k dispozici, vlastnost vrací hodnotu null. 
+Některé uzly syntaxe mají volitelné podřízené objekty. Například <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax> má volitelný <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax>. Pokud podřízená položka není k dispozici, vlastnost vrátí hodnotu null.
 
-## <a name="syntax-tokens"></a>Syntaxe tokenů
+## <a name="syntax-tokens"></a>Syntaktické tokeny
 
-Syntaxe tokeny jsou terminály gramatiku jazyka představující nejmenší syntaktické fragmenty kódu. Jsou to nikdy nadřazených položek jinými uzly nebo tokeny. Syntaxe tokenů obsahovat klíčová slova, identifikátory, literály a interpunkční znaménka. 
+Tokeny syntaxe jsou terminály jazykové gramatiky, které představují nejmenší syntaktické fragmenty kódu. Nejsou nikdy nadřazenými členy jiných uzlů nebo tokenů. Tokeny syntaxe se skládají z klíčových slov, identifikátorů, literálů a interpunkce.
 
-Pro účely efektivitu <xref:Microsoft.CodeAnalysis.SyntaxToken> typ je typ hodnoty modulu CLR. Na rozdíl od syntaxe uzly, existuje tedy pouze jednu strukturu pro všechny druhy tokenů s využitím kombinace vlastnosti, které mají význam v závislosti na druhu token, který je reprezentované.
+Pro účely efektivity je typ <xref:Microsoft.CodeAnalysis.SyntaxToken> typ hodnoty CLR. Proto na rozdíl od uzlů syntaxe existuje pouze jedna struktura pro všechny druhy tokenů se směsí vlastností, které mají význam v závislosti na druhu tokenu, který je reprezentován.
 
-Například token literál celého čísla reprezentuje číselnou hodnotu. Kromě textu nezpracovaná zdrojová token rozsahy literál má token <xref:Microsoft.CodeAnalysis.SyntaxToken.Value> vlastnost, která vám říká přesné dekódovat celočíselnou hodnotu. Tato vlastnost je zadán jako <xref:System.Object> vzhledem k tomu může být jedna z mnoha primitivní typy.
+Například celočíselný literálový token představuje číselnou hodnotu. Kromě nezpracovaného zdrojového textu, který token pokrývá, má literální token vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.Value>, která poskytuje přesné dekódování celočíselné hodnoty. Tato vlastnost je zapsána jako <xref:System.Object>, protože může být jedním z mnoha primitivních typů.
 
-<xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> Vlastnost zjistíte stejné informace jako <xref:Microsoft.CodeAnalysis.SyntaxToken.Value> vlastností, ale tato vlastnost je vždy typu <xref:System.String>. Identifikátor v C# zdrojový text může obsahovat řídicí znaky Unicode, ale syntaxe řídicí sekvence, samotný není považováno za součást název identifikátoru. Ano, i když nezpracovaný text předané token, který zahrnuje řídicí sekvence <xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> vlastnost nepodporuje. Místo toho zahrnuje identifikované řídicí znaky Unicode. Například, pokud je zdrojový text obsahuje identifikátor zapsán jako `\u03C0`, pak bude <xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> vrátí vlastnost pro tento token `π`.
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> oznamuje stejné informace jako vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.Value>; Tato vlastnost je však vždy zadána jako <xref:System.String>. Identifikátor ve C# zdrojovém textu může obsahovat řídicí znaky Unicode, ale syntaxe samotné sekvence escape není považována za součást názvu identifikátoru. I když nezpracovaný text, který je předaný tokenem, zahrnuje řídicí sekvenci, vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> ne. Místo toho obsahuje znaky Unicode identifikované řídicím znakem. Pokud například zdrojový text obsahuje identifikátor napsaný jako `\u03C0`, pak vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.ValueText> pro tento token vrátí `π`.
 
-## <a name="syntax-trivia"></a>Triviální prvek syntaxe
+## <a name="syntax-trivia"></a>Minihry syntaxe
 
-Triviální prvek syntaxe představují části zdrojového textu, které jsou do značné míry nevýznamné pro normální porozumění kódu, jako je například prázdné znaky, komentáře a direktivy preprocesoru. Triviální prvek jako syntaxe tokenů jsou typy hodnot. Jedné <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> typ se používá k popisu všech typů triviální prvek.
+Syntaxe minihry představuje části zdrojového textu, které jsou převážně nevýznamné pro normální porozumění kódu, jako jsou prázdné znaky, komentáře a direktivy preprocesoru. Podobně jako tokeny syntaxe jsou minihry typy hodnot. Typ Single <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> slouží k popisu všech druhů minihry.
 
-Protože triviální prvek nejsou součástí syntaxe jazyka běžné a může vyskytovat kdekoli mezi všechny dvěma tokeny, nejsou zahrnuty ve stromu syntaxe jako podřízený uzel. Zatím protože jsou tak důležité při implementaci funkce, jako je Refaktoring a zachovat plnou věrností s textem zdrojového, existují v rámci stromu syntaxe.
+Vzhledem k tomu, že minihry nejsou součástí normální syntaxe jazyka a mohou se vyskytovat kdekoli mezi dvěma tokeny, nejsou zahrnuty ve stromové struktuře syntaxe jako podřízený uzel uzlu. Vzhledem k tomu, že jsou důležité při implementaci funkce, jako je refaktoring a udržování plné přesnosti se zdrojovým textem, existují v rámci stromu syntaxe.
 
-Triviální prvek se zpřístupní po kontrole token <xref:Microsoft.CodeAnalysis.SyntaxToken.LeadingTrivia?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.SyntaxToken.TrailingTrivia?displayProperty=nameWithType> kolekce. Pokud je zdrojový text analyzován, jsou spojeny s tokeny pořadí triviální prvek. Obecně platí vlastní token jakékoli triviální prvek za ním na stejném řádku až do další token. Žádné triviální prvek za tento řádek je přidružen následující token. Počáteční triviální prvek získá první token ve zdrojovém souboru, a poslední sekvence triviální prvek v souboru je skládaný na token souboru, který jinak má nulovou šířku.
+K minihry se dostanete tak, že zkontrolujete kolekce <xref:Microsoft.CodeAnalysis.SyntaxToken.LeadingTrivia?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.SyntaxToken.TrailingTrivia?displayProperty=nameWithType>y tokenu. Při analýze zdrojového textu jsou sekvence minihry přidruženy k tokenům. Obecně platí, že token vlastní minihry po stejném řádku až na další token. Všechny minihry po tomto řádku jsou přidruženy k následujícímu tokenu. První token ve zdrojovém souboru získá všechny počáteční minihry a poslední sekvence minihry v souboru se rozsměruje na token konce souboru, který má v opačném případě nulovou šířku.
 
-Na rozdíl od syntaxe uzly a tokeny nemají syntaxi triviální prvek nadřazené položky. Zatím, protože jsou součástí stromu a každá je přidružen jeden token, můžete získat token, který je přidružen k použití <xref:Microsoft.CodeAnalysis.SyntaxTrivia.Token?displayProperty=nameWithType> vlastnost.
+Na rozdíl od syntaktických uzlů a tokenů syntaxe minihry neobsahuje rodiče. Vzhledem k tomu, že jsou součástí stromu a každá z nich je přidružena k jednomu tokenu, můžete získat přístup k tokenu, ke kterému je přidruženo, pomocí vlastnosti <xref:Microsoft.CodeAnalysis.SyntaxTrivia.Token?displayProperty=nameWithType>.
 
-## <a name="spans"></a>Rozpětí
+## <a name="spans"></a>Přes
 
-Každý uzel, tokenem nebo triviální prvek ví jeho pozice v rámci zdrojového textu a počet znaků, které se skládá. Umístění textu je vyjádřena jako 32bitové celé číslo nulovým základem je `char` indexu. A <xref:Microsoft.CodeAnalysis.Text.TextSpan> objekt je počáteční pozice a počet znaků, obě vyjádřena jako celá čísla. Pokud <xref:Microsoft.CodeAnalysis.Text.TextSpan> má nulovou délku, odkazuje na umístění mezi dvěma znaky.
+Každý uzel, token nebo minihry ví svou polohu v rámci zdrojového textu a počtu znaků, ze kterých se skládá. Pozice textu je reprezentována jako 32ová celá čísla, což je index `char` založený na nule. Objekt <xref:Microsoft.CodeAnalysis.Text.TextSpan> je počáteční pozice a počet znaků, který je reprezentován jako celé číslo. Pokud má <xref:Microsoft.CodeAnalysis.Text.TextSpan> nulovou délku, odkazuje na umístění mezi dvěma znaky.
 
-Každý uzel má dvě <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> a <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*>. 
+Každý uzel má dvě <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> a <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*>.
 
-<xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> Vlastností je text rozpětí od samého začátku prvním tokenem v podstromě uzlu za účelem posledním tokenem. Tomuto rozpětí nezahrnuje žádné počáteční ani koncové triviální prvek.
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> je textový rozsah od začátku prvního tokenu v podstromu uzlu na konec posledního tokenu. Tento rozsah neobsahuje žádné počáteční ani koncové minihryy.
 
-<xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*> Rozpětí textu, který zahrnuje normální rozpětí uzlu funkce a v rozsahu žádné počáteční ani koncové triviální prvek je vlastnost.
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*> je textový rozsah, který zahrnuje normální rozpětí uzlu, a rozpětí všech úvodních a koncových minihry.
 
-Příklad: 
+Příklad:
 
 ``` csharp
       if (x > 3)
@@ -81,20 +81,20 @@ Příklad:
       }
 ```
 
-Příkaz uzel uvnitř bloku má rozpětí indikován jeden svislé čáry (|). Obsahuje znaky `throw new Exception("Not right.");`. Úplný rozsah je indikován double svislé čáry (|). Zahrnuje stejné znaky jako rozsah a související s triviální prvek úvodní a koncové znaky.
+Uzel příkazu uvnitř bloku má rozpětí vyznačené jednotlivými svislými pruhy (|). Obsahuje znaky `throw new Exception("Not right.");`. Celý rozsah je určen dvojitými svislými pruhy (| |). Obsahuje stejné znaky jako rozsah a znaky spojené s úvodním a koncovým minihry.
 
-## <a name="kinds"></a>Typy
+## <a name="kinds"></a>Druzí
 
-Každý uzel, tokenem nebo triviální prvek má <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> vlastnost typu <xref:System.Int32?displayProperty=nameWithType>, který identifikuje syntaxe elementu reprezentovaného. Tuto hodnotu lze převést na výčet konkrétní jazyk; Každý jazyk C# nebo VB, má jediný `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>v uvedeném pořadí), který obsahuje všechny možné uzlů, tokenů a triviální prvek prvky v gramatice. Tento převod může probíhat automaticky díky přístupu <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType> metody rozšíření.
+Každý uzel, token nebo minihry má vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> typu <xref:System.Int32?displayProperty=nameWithType>, která identifikuje přesný reprezentovaný prvek syntaxe. Tuto hodnotu lze přetypovat na výčet specifický pro jazyk; každý jazyk C# nebo VB má jeden `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>), který obsahuje seznam všech možných uzlů, tokenů a minihry prvků v gramatice. Tento převod lze provést automaticky přístupem k metodám rozšíření <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
 
-<xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> Vlastnost umožňuje snadno odstraňování mnohoznačností syntaxe typy uzlů, které sdílejí stejný uzel třídy. Tokeny a triviální prvek tato vlastnost je jediný způsob, jak rozlišovat jeden typ prvku z jiného. 
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> umožňuje snadnou nejednoznačnost typů uzlů syntaxe, které sdílejí stejnou třídu Node. Pro tokeny a minihry je tato vlastnost jediným způsobem, jak odlišit jeden typ prvku od jiného.
 
-Například jeden <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> třída má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>, a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> Vlastnost rozlišuje, zda se jedná <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression>, nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
+Například jedna třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. Vlastnost <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> rozlišuje, zda se jedná o <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression> nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
 
-## <a name="errors"></a>Chyby
+## <a name="errors"></a>Vyskytl
 
-I v případě, že zdrojový text obsahuje chyby syntaxe, je přístupný úplnou syntaxi strom, který je odbavovaná ke zdroji. Když analyzátor narazí na kód, který není v souladu s definovanou syntaxe jazyka, používá jednu z dvě techniky k vytvoření stromu syntaxe.
+I v případě, že zdrojový text obsahuje syntaktické chyby, je zveřejněn úplný strom syntaxe, který je k dispozici jako kulatý trippable do zdroje. Když analyzátor nalezne kód, který není v souladu s definovanou syntaxí jazyka, používá jeden ze dvou postupů pro vytvoření stromu syntaxe.
 
-Nejprve Pokud analyzátor očekává, že konkrétní druh tokenu, ale nebyl nalezen, můžou vložit chybí token do stromu syntaxe. v umístění, byl očekáván token. Chybí token představuje skutečný token, který byl očekáván, ale má prázdný značka span a jeho <xref:Microsoft.CodeAnalysis.SyntaxNode.IsMissing?displayProperty=nameWithType> vrátí vlastnost `true`.
+Za prvé, pokud analyzátor očekává určitý druh tokenu, ale nenalezne jej, může vložit chybějící token do stromu syntaxe v umístění, ve kterém byl token očekáván. Chybějící token představuje skutečný token, který se očekával, ale má prázdný rozsah a jeho vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.IsMissing?displayProperty=nameWithType> vrací `true`.
 
-Za druhé analyzátor může přeskočit tokeny, dokud nenalezne kde ho můžete pokračovat s analýzou. V tomto případě bylo přeskočeno tokeny jsou připojené jako uzel triviální prvek s druh <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SkippedTokensTrivia>.
+Za druhé, analyzátor může přeskočit tokeny, dokud nenalezne ten, kde může pokračovat v analýze. V tomto případě jsou vynechané tokeny připojené jako minihry uzel s typem <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SkippedTokensTrivia>.

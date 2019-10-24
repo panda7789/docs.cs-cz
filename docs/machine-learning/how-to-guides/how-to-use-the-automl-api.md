@@ -3,12 +3,12 @@ title: Jak používat automatizované rozhraní API pro ML.NET
 description: Rozhraní ML.NET Automated ML API automatizuje proces vytváření modelů a vygeneruje model připravený pro nasazení. Seznamte se s možnostmi, které můžete použít ke konfiguraci automatizovaných úloh strojového učení.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: a7057337fb6ff19a1e402d7bf74a766b246ea3c1
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: bb1cd66e7341f2ada57d533d8b2dcbb48f08f726
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332721"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774555"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Jak používat automatizované rozhraní API pro strojové učení ML.NET
 
@@ -36,7 +36,7 @@ Než začnete vytvářet experiment, určete druh problému strojového učení,
 
 * Binární klasifikace
 * Klasifikace s více třídami
-* Regrese
+* Nevýhody
 
 ## <a name="create-experiment-settings"></a>Vytvořit nastavení experimentu
 
@@ -54,7 +54,7 @@ Vytvořit nastavení experimentu pro stanovený typ úkolu ML:
   var experimentSettings = new MulticlassExperimentSettings();
   ```
 
-* Regrese
+* Nevýhody
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
@@ -64,7 +64,7 @@ Vytvořit nastavení experimentu pro stanovený typ úkolu ML:
 
 Experimenty jsou vysoce konfigurovatelné. Úplný seznam nastavení konfigurace najdete v [dokumentaci k rozhraní AutoML API](https://docs.microsoft.com/dotnet/api/?view=automl-dotnet) .
 
-Možné příklady:
+Mezi příklady patří:
 
 1. Zadejte maximální dobu, po kterou může experiment běžet.
 
@@ -88,15 +88,15 @@ Možné příklady:
     experimentSettings.OptimizingMetric = RegressionMetric.MeanSquaredError;
     ```
 
-1. Toto `CacheDirectory` nastavení je ukazatel na adresář, do kterého budou uloženy všechny modely školené během AutoML úlohy. Pokud `CacheDirectory` je nastaven na hodnotu null, budou se modely uchovávat v paměti místo zápis na disk.
- 
+1. Nastavení `CacheDirectory` je ukazatel na adresář, do kterého se uloží všechny modely školené během AutoML úlohy. Pokud je `CacheDirectory` nastavená na hodnotu null, budou se modely uchovávat v paměti místo zápisu na disk.
+
     ```csharp
     experimentSettings.CacheDirectory = null;
     ```
 
 1. Požádejte o automatizovanou ML, aby nepoužívali určitou školitele.
 
-    Výchozí seznam školitelů, které se mají optimalizovat, se prozkoumá na úkol. Tento seznam je možné upravit pro každý experiment. Například školitele, které běží pomalu na vaší datové sadě, můžete ze seznamu odebrat. Pro optimalizaci na jednom konkrétním Trainer volání `experimentSettings.Trainers.Clear()`přidejte Trainer, který chcete použít.
+    Výchozí seznam školitelů, které se mají optimalizovat, se prozkoumá na úkol. Tento seznam je možné upravit pro každý experiment. Například školitele, které běží pomalu na vaší datové sadě, můžete ze seznamu odebrat. Chcete-li provést optimalizaci na jednom konkrétním Trainer volání `experimentSettings.Trainers.Clear()`, přidejte Trainer, který chcete použít.
 
     ```csharp
     var experimentSettings = new RegressionExperimentSettings();
@@ -116,35 +116,35 @@ Optimalizace metriky, jak je znázorněno v příkladu výše, Určuje metriku, 
 
 |[Binární klasifikace](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Klasifikace s více třídami](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Nevýhody](xref:Microsoft.ML.AutoML.RegressionMetric)
 |-- |-- |--
-|údajů| LogLoss | RSquared
+|Údajů| LogLoss | RSquared
 |AreaUnderPrecisionRecallCurve | LogLossReduction | MeanAbsoluteError
 |AreaUnderRocCurve | MacroAccuracy | MeanSquaredError
-|F1Score | MicroAccuracy | RootMeanSquaredError
+|F1Score | Mikropřesnost | RootMeanSquaredError
 |NegativePrecision | TopKAccuracy
 |NegativeRecall |
 |PositivePrecision
 |PositiveRecall
 
-## <a name="data-pre-processing-and-featurization"></a>Předběžné zpracování dat a snadné
+## <a name="data-pre-processing-and-featurization"></a>Předběžné zpracování dat a featurization
 
 > [!NOTE]
-> Sloupec funkce podporuje pouze typy [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [`Single`](https://docs.microsoft.com/en-us/dotnet/api/system.single)a [`String`](https://docs.microsoft.com/en-us/dotnet/api/system.string).
+> Sloupec funkce podporuje pouze typy <xref:System.Boolean>, <xref:System.Single> a <xref:System.String>.
 
 Předběžné zpracování dat probíhá ve výchozím nastavení a k provedení následujících kroků dojde automaticky:
 
 1. Vyřadit funkce bez užitečných informací
 
-    Vyřaďte ze sady pro trénování a ověření funkce s žádnou užitečnou informaci. Patří mezi funkce s všechny hodnoty, které chybí, stejnou hodnotu napříč všemi řádky nebo s velmi vysokou kardinalitu (například hodnoty hash ID nebo identifikátory GUID).
+    Vyřaďte funkce bez užitečných informací ze školicích a ověřovacích sad. Mezi ně patří funkce se všemi chybějícími hodnotami, stejnou hodnotou ve všech řádcích nebo s velmi vysokou mohutnosti (například hodnoty hash, ID nebo identifikátory GUID).
 
 1. Chybí indikace hodnoty a imputace.
 
-    Vyplňte chybějící buňky s hodnotou výchozí hodnotou pro datový typ. Přidejte funkce indikátoru se stejným počtem slotů jako vstupní sloupec. Hodnota v funkcích připojeného indikátoru je `1` v případě, že hodnota ve sloupci Input chybí a `0` je v opačném případě.
+    Vyplňte chybějící buňky s hodnotou výchozí hodnotou pro datový typ. Přidejte funkce indikátoru se stejným počtem slotů jako vstupní sloupec. Hodnota ve funkcích s připojeným indikátorem je `1`, pokud hodnota ve sloupci Input chybí a `0` jinak.
 
-1. Generovat další funkce
-    
-    Pro funkce textu: Funkce pro penaltu s využitím unigrams a Tri-Character-gramů.
-    
-    Pro funkce kategorií: Jedno horké kódování pro funkce s nízkou mohutnost a kódování One-Hot-hash pro funkce vysoké mohutnosti kategorií.
+1. Generování dalších funkcí
+
+    Pro funkce textu: funkce typu penalta v aplikaci Word s využitím unigrams a Tri-Character-gramů.
+
+    Pro funkce kategorií: jedno horké kódování pro funkce s nízkou mohutnost a kódování One-Hot-hash pro funkce High mohutnosti kategorií.
 
 1. Transformace a kódování
 
@@ -154,7 +154,7 @@ Předběžné zpracování dat probíhá ve výchozím nastavení a k provedení
 
 Zadejte kritéria pro dokončení úlohy:
 
-1. Po uplynutí doby použití `MaxExperimentTimeInSeconds` v nastavení experimentů můžete definovat dobu v sekundách, po kterou by úloha měla běžet.
+1. Po uplynutí časového intervalu použijte `MaxExperimentTimeInSeconds` v nastavení experimentu můžete definovat dobu v sekundách, po kterou by úloha měla běžet.
 
 1. Ukončit na tokenu zrušení – můžete použít token zrušení, který vám umožní zrušit úlohu před tím, než se naplánuje na dokončení.
 
@@ -175,14 +175,14 @@ RegressionExperiment experiment = mlContext.Auto().CreateRegressionExperiment(ex
 
 ## <a name="run-the-experiment"></a>Spuštění experimentu
 
-Spuštění experimentu aktivuje předběžné zpracování dat, výběr výukového algoritmu a ladění předaných parametrů. AutoML bude nadále generovat kombinace featurization, výukových algoritmů a parametrů, dokud `MaxExperimentTimeInSeconds` není dosaženo nebo experiment se ukončí.
+Spuštění experimentu aktivuje předběžné zpracování dat, výběr výukového algoritmu a ladění předaných parametrů. AutoML bude nadále generovat kombinace featurization, výukových algoritmů a parametrů, dokud není dosaženo `MaxExperimentTimeInSeconds` nebo je experiment ukončen.
 
 ```csharp
 ExperimentResult<RegressionMetrics> experimentResult = experiment
     .Execute(trainingDataView, LabelColumnName, progressHandler: progressHandler);
 ```
 
-Prozkoumejte další přetížení `Execute()` , pokud chcete předat ověřovací data, informace o sloupci, které označují účel sloupce nebo prefeaturizers.
+Prozkoumejte další přetížení pro `Execute()`, pokud chcete předat ověřovací data, informace o sloupci, které označují účel sloupce nebo prefeaturizers.
 
 ## <a name="training-modes"></a>Školicí režimy
 
@@ -191,18 +191,18 @@ Prozkoumejte další přetížení `Execute()` , pokud chcete předat ověřovac
 AutoML poskytuje přetíženou metodu spuštění experimentu, která umožňuje poskytovat školicí data. Interně automatizované ML rozděluje data do přístrojově ověřovaného rozdělení.
 
 ```csharp
-experiment.Execute(trainDataView);   
+experiment.Execute(trainDataView);
 ```
 
-### <a name="custom-validation-dataset"></a>Vlastní ověření datové sady
+### <a name="custom-validation-dataset"></a>Vlastní ověřovací datová sada
 
-Použijte vlastní ověřovací datovou sadu, pokud není přijatelné náhodné rozdělení, což je obvykle případ s daty časových řad. Můžete zadat vlastní ověření datové sady. Model bude vyhodnocen proti zadané datové sadě ověřování místo jedné nebo více náhodných datových sad.
+Použijte vlastní ověřovací datovou sadu, pokud není přijatelné náhodné rozdělení, což je obvykle případ s daty časových řad. Můžete zadat vlastní ověřovací datovou sadu. Model bude vyhodnocen proti zadané datové sadě ověřování místo jedné nebo více náhodných datových sad.
 
 ```csharp
-experiment.Execute(trainDataView, validationDataView);   
+experiment.Execute(trainDataView, validationDataView);
 ```
 
-## <a name="explore-model-metrics"></a>Zkoumání metrik model
+## <a name="explore-model-metrics"></a>Prozkoumat metriky modelu
 
 Po každé iteraci experimentu ML se budou ukládat metriky související s touto úlohou.
 

@@ -5,23 +5,23 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 6cc8b80edb3206bb2ef3a8a1ffa34ab40af77612
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 7aa3755be97a839cb576d53852b75cfe50e39276
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398142"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773937"
 ---
-# <a name="client"></a>\<> klienta
-`client` Prvek definuje seznam koncových bodů, ke kterým se klient může připojit.  
-  
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> klienta**  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```xml  
+# <a name="client"></a>\<client >
+Element `client` definuje seznam koncových bodů, ke kterým se klient může připojit.
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp; &nbsp; &nbsp; &nbsp; **\<client >**
+
+## <a name="syntax"></a>Syntaxe
+
+```xml
 <system.serviceModel>
   <client>
     <endpoint>
@@ -30,35 +30,35 @@ ms.locfileid: "70398142"
     </metadata>
   </client>
 </system.serviceModel>
-```  
-  
-## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
-  
-### <a name="attributes"></a>Atributy  
- Žádné  
-  
-### <a name="child-elements"></a>Podřízené elementy  
-  
-|Prvek|Popis|  
-|-------------|-----------------|  
-|[\<endpoint>](endpoint-of-client.md)|Obsahuje kolekci elementů koncového bodu, které určují koncové body, ke kterým se může tento klient připojit.|  
-|[\<metadata>](metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
-  
-### <a name="parent-elements"></a>Nadřazené elementy  
-  
-|Prvek|Popis|  
-|-------------|-----------------|  
-|[\<system.serviceModel>](system-servicemodel.md)|Kořenový element všech prvků konfigurace Windows Communication Foundation (WCF).|  
-  
-## <a name="remarks"></a>Poznámky  
- `client` Oddíl definuje seznam koncových bodů, ke kterým se klient může připojit. Každý koncový bod uvedený v části klienta definuje vlastní vazbu, chování a kontrakt. Je jednoznačně identifikován kombinací `name` atributů a. `contract` Kód klienta Určuje, že `name` se má připojit ke koncovému bodu pro službu, kterou klient implementuje. Pokud je `name` atribut vynechán, koncový bod funguje jako výchozí koncový bod pro kontrakt, který implementuje.  
-  
- Kromě toho tato část také určuje nastavení pro zpracování metadat.  
-  
-## <a name="example"></a>Příklad  
-  
-```xml  
+```
+
+## <a name="attributes-and-elements"></a>Atributy a elementy
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.
+
+### <a name="attributes"></a>Atributy
+ Žádné
+
+### <a name="child-elements"></a>Podřízené elementy
+
+|Prvek|Popis|
+|-------------|-----------------|
+|[\<endpoint >](endpoint-of-client.md)|Obsahuje kolekci elementů koncového bodu, které určují koncové body, ke kterým se může tento klient připojit.|
+|[\<metadata >](metadata.md)|Obsahuje nastavení pro zpracování metadat.|
+
+### <a name="parent-elements"></a>Nadřazené elementy
+
+|Prvek|Popis|
+|-------------|-----------------|
+|[\<system. serviceModel >](system-servicemodel.md)|Kořenový element všech prvků konfigurace Windows Communication Foundation (WCF).|
+
+## <a name="remarks"></a>Poznámky
+ Oddíl `client` definuje seznam koncových bodů, ke kterým se klient může připojit. Každý koncový bod uvedený v části klienta definuje vlastní vazbu, chování a kontrakt. Je jednoznačně identifikován kombinací atributů `name` a `contract`. Klientský kód určuje `name` pro připojení ke koncovému bodu pro službu, kterou klient implementuje. Pokud je atribut `name` vynechán, koncový bod funguje jako výchozí koncový bod pro kontrakt, který implementuje.
+
+ Kromě toho tato část také určuje nastavení pro zpracování metadat.
+
+## <a name="example"></a>Příklad
+
+```xml
 <client>
   <endpoint address="/HelloWorld/"
             bindingConfiguration="usingDefaults"
@@ -71,8 +71,8 @@ ms.locfileid: "70398142"
                        isAddressPrivate="false">
   </endpoint>
 </client>
-```  
-  
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ClientSection>

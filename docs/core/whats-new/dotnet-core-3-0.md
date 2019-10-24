@@ -7,18 +7,18 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 09/22/2019
-ms.openlocfilehash: c10023cf8cee358db41a3b90a9a0a1020c5462eb
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 758c8fd30fbd2e5ce8ace997005b91d6872a06d1
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395438"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773886"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
 Tento článek popisuje, co je v .NET Core 3,0 novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
-.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme, abyste k  **C# rozšíření**používali [Visual Studio 2019 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview)nebo [Visual Studio Code](https://code.visualstudio.com/) .
+.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme, abyste používali [Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější, [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview) nebo novější, nebo [Visual Studio Code](https://code.visualstudio.com/) s nejnovějším  **C# rozšířením**.
 
 [Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
@@ -233,7 +233,7 @@ Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno,
 Vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.
 - **Vedlejší**\
 V případě, že chybí požadovaná dílčí verze, převeďte nahoru na nejnižší nižší verzi. Pokud je k dispozici požadovaná dílčí verze, použije se zásada **LatestPatch** .
-- **Hlavní**@no__t – 1
+- **Hlavní** \
 Pokud chybí požadovaná hlavní verze, převeďte ji nahoru na nejnižší nejvyšší hlavní verzi a nejnižší podverzi. Pokud je k dispozici požadovaná hlavní verze, použije se **vedlejší** zásada.
 - **LatestMinor**\
 Převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze. Určeno pro scénáře hostování součástí.
@@ -297,7 +297,7 @@ Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývo
 
 ## <a name="ranges-and-indices"></a>Rozsahy a indexy
 
-Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování. Můžete vytvořit jeden z `int`, který se počítá od začátku, nebo s předponou `^` (C#), která se počítá od konce:
+Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování. Můžete vytvořit jednu z `int`, která se počítá od začátku, nebo s předponou `^` operátor (C#), která se počítá od konce:
 
 ```csharp
 Index i1 = 3;  // number 3 from beginning
@@ -316,7 +316,7 @@ Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/rang
 
 ## <a name="async-streams"></a>Asynchronní streamy
 
-Typ <xref:System.Collections.Generic.IAsyncEnumerable%601> je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>. Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.
+@No__t_0 typ je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>. Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.
 
 Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů. Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající. Tento vzor (pomocí `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.
 
@@ -346,10 +346,10 @@ Mezi aktualizace pro analýzu a formátování patří:
 
 Nová rozhraní API <xref:System.Math?displayProperty=nameWithType> zahrnují:
 
-- <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> @ no__t-2
+- <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> \
 Odpovídá operacím IEEE `nextUp` a `nextDown`. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.
 
-- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> @ no__t-2
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> \
 Odpovídá operacím IEEE `maxNumMag` a `minNumMag`, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.
 
 - <xref:System.Math.ILogB(System.Double)>\
@@ -375,7 +375,7 @@ Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založen�
 
 ### <a name="utf8jsonreader"></a>Utf8JsonReader
 
-<xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType> je pro text JSON s kódováním UTF-8 s vysokým výkonem a s nízkou úrovní přidělování, které se čte z `ReadOnlySpan<byte>`. @No__t-0 je základní typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace. Čtení prostřednictvím datové části JSON pomocí nového `Utf8JsonReader` je dvojnásobější, než použití čtecího zařízení z **JSON.NET**. Nepřiřazuje se, dokud nebudete muset actualize tokeny JSON jako řetězce (UTF-16).
+<xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType> je pro text JSON s kódováním UTF-8 s vysokým výkonem a s nízkou úrovní přidělování, které se čte z `ReadOnlySpan<byte>`. @No__t_0 je základní typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace. Čtení prostřednictvím datové části JSON pomocí nového `Utf8JsonReader` je dvojnásobější, než použití čtecího zařízení z **JSON.NET**. Nepřiřazuje se, dokud nebudete muset actualize tokeny JSON jako řetězce (UTF-16).
 
 Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
 
@@ -389,7 +389,7 @@ Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.
 
 ### <a name="jsondocument"></a>JsonDocument
 
-<xref:System.Text.Json.JsonDocument?displayProperty=nameWithType> je postaven nad `Utf8JsonReader`. @No__t-0 poskytuje možnost analyzovat data JSON a sestavit model DOM (Document Object Model) DOM (jen pro čtení), na které se dá dotazovat, aby se podporoval náhodný přístup a výčet. Prvky JSON, které tvoří data, lze zpřístupnit prostřednictvím typu <xref:System.Text.Json.JsonElement>, který je zpřístupněn `JsonDocument` jako vlastnost s názvem `RootElement`. @No__t-0 obsahuje enumerátory pole a objektu JSON spolu s rozhraními API pro převod textu JSON na běžné typy .NET. Analýza typické datové části JSON a přístup ke všem jeho členům pomocí `JsonDocument` je 2-3x rychlejší než **JSON.NET** s malým přidělením dat, která mají rozumně velikost (to znamená < 1 MB).
+<xref:System.Text.Json.JsonDocument?displayProperty=nameWithType> je postaven nad `Utf8JsonReader`. @No__t_0 poskytuje možnost analyzovat data JSON a sestavit model DOM (Document Object Model) DOM (jen pro čtení), na které se dá dotazovat, aby podporovala náhodný přístup a výčet. Prvky JSON, které tvoří data, lze zpřístupnit prostřednictvím typu <xref:System.Text.Json.JsonElement>, který je zpřístupněn `JsonDocument` jako vlastnost s názvem `RootElement`. @No__t_0 obsahuje enumerátory polí a objektů JSON spolu s rozhraními API pro převod textu JSON na běžné typy .NET. Analýza typické datové části JSON a přístup ke všem jeho členům pomocí `JsonDocument` je 2-3x rychlejší než **JSON.NET** s malým přidělením dat, která mají rozumně velikost (to znamená < 1 MB).
 
 Zde je ukázka použití `JsonDocument` a `JsonElement`, které lze použít jako výchozí bod:
 
@@ -446,7 +446,7 @@ V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované při
 - Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.
 - Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.
 
-V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Pokud je k dispozici služba **OpenSSL 1.1.1** , budou používat @no__t protokol **TLS 1,3** (za předpokladu @no__t, že klient i server podporují protokol **TLS 1,3**).
+V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Když je k dispozici **OpenSSL 1.1.1** , budou používat <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> **TLS 1,3** (za předpokladu <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, že klient i server podporují protokol **TLS 1,3**).
 
 >[!IMPORTANT]
 >Windows a macOS ještě nepodporují **TLS 1,3**. Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.
