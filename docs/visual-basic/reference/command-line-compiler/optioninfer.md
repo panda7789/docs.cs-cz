@@ -8,57 +8,57 @@ helpviewer_keywords:
 - /optioninfer compiler option [Visual Basic]
 - optioninfer compiler option [Visual Basic]
 ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
-ms.openlocfilehash: c6fc7e9dcfbce938ad75b0f357c2bfa9cd10703a
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: d7209e431b84e52e487bccbf73bd633a346efde0
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005321"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775610"
 ---
-# <a name="-optioninfer"></a><span data-ttu-id="689c3-102">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="689c3-102">-optioninfer</span></span>
-<span data-ttu-id="689c3-103">Povoluje použití odvození místního typu v deklaracích proměnných.</span><span class="sxs-lookup"><span data-stu-id="689c3-103">Enables the use of local type inference in variable declarations.</span></span>  
+# <a name="-optioninfer"></a><span data-ttu-id="ad7dd-102">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="ad7dd-102">-optioninfer</span></span>
+<span data-ttu-id="ad7dd-103">Povoluje použití odvození místního typu v deklaracích proměnných.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-103">Enables the use of local type inference in variable declarations.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="689c3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="689c3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ad7dd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad7dd-104">Syntax</span></span>  
   
 ```console  
 -optioninfer[+ | -]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="689c3-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="689c3-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="ad7dd-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="ad7dd-105">Arguments</span></span>  
   
-|<span data-ttu-id="689c3-106">Termín</span><span class="sxs-lookup"><span data-stu-id="689c3-106">Term</span></span>|<span data-ttu-id="689c3-107">Definice</span><span class="sxs-lookup"><span data-stu-id="689c3-107">Definition</span></span>|  
+|<span data-ttu-id="ad7dd-106">Termín</span><span class="sxs-lookup"><span data-stu-id="ad7dd-106">Term</span></span>|<span data-ttu-id="ad7dd-107">Definice</span><span class="sxs-lookup"><span data-stu-id="ad7dd-107">Definition</span></span>|  
 |---|---|  
-|<span data-ttu-id="689c3-108">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="689c3-108">`+` &#124; `-`</span></span>|<span data-ttu-id="689c3-109">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="689c3-109">Optional.</span></span> <span data-ttu-id="689c3-110">Chcete-li povolit odvození místního typu, zadejte hodnotu `-optioninfer+`, nebo `-optioninfer-` pro jeho blokování.</span><span class="sxs-lookup"><span data-stu-id="689c3-110">Specify `-optioninfer+` to enable local type inference, or `-optioninfer-` to block it.</span></span> <span data-ttu-id="689c3-111">Možnost `-optioninfer` bez zadané hodnoty je stejná jako `-optioninfer+`.</span><span class="sxs-lookup"><span data-stu-id="689c3-111">The `-optioninfer` option, with no value specified, is the same as `-optioninfer+`.</span></span> <span data-ttu-id="689c3-112">Výchozí hodnota, pokud není k dispozici přepínač `-optioninfer`, je také `-optioninfer+`.</span><span class="sxs-lookup"><span data-stu-id="689c3-112">The default value when the `-optioninfer` switch is not present is also `-optioninfer+`.</span></span> <span data-ttu-id="689c3-113">Výchozí hodnota je nastavena v souboru odpovědí Vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="689c3-113">The default value is set in the Vbc.rsp response file.</span></span>|  
+|<span data-ttu-id="ad7dd-108">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="ad7dd-108">`+` &#124; `-`</span></span>|<span data-ttu-id="ad7dd-109">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-109">Optional.</span></span> <span data-ttu-id="ad7dd-110">Chcete-li povolit odvození místního typu, zadejte hodnotu `-optioninfer+`, nebo `-optioninfer-` pro jeho blokování.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-110">Specify `-optioninfer+` to enable local type inference, or `-optioninfer-` to block it.</span></span> <span data-ttu-id="ad7dd-111">Možnost `-optioninfer` bez zadané hodnoty je stejná jako `-optioninfer+`.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-111">The `-optioninfer` option, with no value specified, is the same as `-optioninfer+`.</span></span> <span data-ttu-id="ad7dd-112">Výchozí hodnota, pokud není k dispozici přepínač `-optioninfer`, je také `-optioninfer+`.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-112">The default value when the `-optioninfer` switch is not present is also `-optioninfer+`.</span></span> <span data-ttu-id="ad7dd-113">Výchozí hodnota je nastavena v souboru odpovědí Vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-113">The default value is set in the Vbc.rsp response file.</span></span>|  
   
 > [!NOTE]
-> <span data-ttu-id="689c3-114">Pomocí možnosti `-noconfig` můžete zachovat interní výchozí hodnoty kompilátoru místo těch, které jsou zadány v Vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="689c3-114">You can use the `-noconfig` option to retain the compiler's internal defaults instead of those specified in vbc.rsp.</span></span> <span data-ttu-id="689c3-115">Výchozí hodnota kompilátoru pro tuto možnost je `-optioninfer-`.</span><span class="sxs-lookup"><span data-stu-id="689c3-115">The compiler default for this option is `-optioninfer-`.</span></span>  
+> <span data-ttu-id="ad7dd-114">Pomocí možnosti `-noconfig` můžete zachovat interní výchozí hodnoty kompilátoru místo těch, které jsou zadány v Vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-114">You can use the `-noconfig` option to retain the compiler's internal defaults instead of those specified in vbc.rsp.</span></span> <span data-ttu-id="ad7dd-115">Výchozí hodnota kompilátoru pro tuto možnost je `-optioninfer-`.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-115">The compiler default for this option is `-optioninfer-`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="689c3-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="689c3-116">Remarks</span></span>  
- <span data-ttu-id="689c3-117">Pokud soubor zdrojového kódu obsahuje [příkaz Option](../../../visual-basic/language-reference/statements/option-infer-statement.md), přepíše příkaz nastavení kompilátoru příkazového řádku `-optioninfer`.</span><span class="sxs-lookup"><span data-stu-id="689c3-117">If the source code file contains an [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md), the statement overrides the `-optioninfer` command-line compiler setting.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ad7dd-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ad7dd-116">Remarks</span></span>  
+ <span data-ttu-id="ad7dd-117">Pokud soubor zdrojového kódu obsahuje [příkaz Option](../../../visual-basic/language-reference/statements/option-infer-statement.md), přepíše příkaz nastavení kompilátoru příkazového řádku `-optioninfer`.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-117">If the source code file contains an [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md), the statement overrides the `-optioninfer` command-line compiler setting.</span></span>  
   
-### <a name="to-set--optioninfer-in-the-visual-studio-ide"></a><span data-ttu-id="689c3-118">Nastavení-optioninfer – v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="689c3-118">To set -optioninfer in the Visual Studio IDE</span></span>  
+### <a name="to-set--optioninfer-in-the-visual-studio-ide"></a><span data-ttu-id="ad7dd-118">Nastavení-optioninfer – v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="ad7dd-118">To set -optioninfer in the Visual Studio IDE</span></span>  
   
-1. <span data-ttu-id="689c3-119">Vyberte projekt v **Průzkumník řešení**.</span><span class="sxs-lookup"><span data-stu-id="689c3-119">Select a project in **Solution Explorer**.</span></span> <span data-ttu-id="689c3-120">V nabídce **projekt** klikněte na příkaz **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="689c3-120">On the **Project** menu, click **Properties**.</span></span>  
+1. <span data-ttu-id="ad7dd-119">Vyberte projekt v **Průzkumník řešení**.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-119">Select a project in **Solution Explorer**.</span></span> <span data-ttu-id="ad7dd-120">V nabídce **projekt** klikněte na příkaz **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-120">On the **Project** menu, click **Properties**.</span></span>  
   
-2. <span data-ttu-id="689c3-121">Na kartě **kompilovat** upravte hodnotu v poli **možnost odvodit** .</span><span class="sxs-lookup"><span data-stu-id="689c3-121">On the **Compile** tab, modify the value in the **Option infer** box.</span></span>  
+2. <span data-ttu-id="ad7dd-121">Na kartě **kompilovat** upravte hodnotu v poli **možnost odvodit** .</span><span class="sxs-lookup"><span data-stu-id="ad7dd-121">On the **Compile** tab, modify the value in the **Option infer** box.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="689c3-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="689c3-122">Example</span></span>  
- <span data-ttu-id="689c3-123">Následující kód zkompiluje `test.vb` s povoleným odvozením místního typu.</span><span class="sxs-lookup"><span data-stu-id="689c3-123">The following code compiles `test.vb` with local type inference enabled.</span></span>  
+## <a name="example"></a><span data-ttu-id="ad7dd-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="ad7dd-122">Example</span></span>  
+ <span data-ttu-id="ad7dd-123">Následující kód zkompiluje `test.vb` s povoleným odvozením místního typu.</span><span class="sxs-lookup"><span data-stu-id="ad7dd-123">The following code compiles `test.vb` with local type inference enabled.</span></span>  
   
 ```console
 vbc -optioninfer+ test.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="689c3-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="689c3-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ad7dd-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ad7dd-124">See also</span></span>
 
-- [<span data-ttu-id="689c3-125">Visual Basic Kompilátor příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="689c3-125">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="689c3-126">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="689c3-126">-optioncompare</span></span>](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [<span data-ttu-id="689c3-127">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="689c3-127">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [<span data-ttu-id="689c3-128">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="689c3-128">-optionstrict</span></span>](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [<span data-ttu-id="689c3-129">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="689c3-129">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [<span data-ttu-id="689c3-130">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="689c3-130">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [<span data-ttu-id="689c3-131">Odvození místního typu</span><span class="sxs-lookup"><span data-stu-id="689c3-131">Local Type Inference</span></span>](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [<span data-ttu-id="689c3-132">Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="689c3-132">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
-- [<span data-ttu-id="689c3-133">Stránka Kompilovat, Návrhář projektu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="689c3-133">Compile Page, Project Designer (Visual Basic)</span></span>](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
-- [<span data-ttu-id="689c3-134">/noconfig</span><span class="sxs-lookup"><span data-stu-id="689c3-134">/noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [<span data-ttu-id="689c3-135">Sestavení z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="689c3-135">Building from the Command Line</span></span>](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)
+- [<span data-ttu-id="ad7dd-125">Visual Basic Kompilátor příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="ad7dd-125">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="ad7dd-126">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="ad7dd-126">-optioncompare</span></span>](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
+- [<span data-ttu-id="ad7dd-127">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="ad7dd-127">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [<span data-ttu-id="ad7dd-128">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="ad7dd-128">-optionstrict</span></span>](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [<span data-ttu-id="ad7dd-129">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="ad7dd-129">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="ad7dd-130">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="ad7dd-130">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)
+- [<span data-ttu-id="ad7dd-131">Odvození místního typu</span><span class="sxs-lookup"><span data-stu-id="ad7dd-131">Local Type Inference</span></span>](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [<span data-ttu-id="ad7dd-132">Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="ad7dd-132">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [<span data-ttu-id="ad7dd-133">Stránka Kompilovat, Návrhář projektu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ad7dd-133">Compile Page, Project Designer (Visual Basic)</span></span>](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
+- [<span data-ttu-id="ad7dd-134">-noconfig</span><span class="sxs-lookup"><span data-stu-id="ad7dd-134">-noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
+- [<span data-ttu-id="ad7dd-135">Sestavení z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="ad7dd-135">Building from the Command Line</span></span>](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)

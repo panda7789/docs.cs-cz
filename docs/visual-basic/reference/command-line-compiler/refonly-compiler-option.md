@@ -1,5 +1,5 @@
 ---
-title: -refout (Visual Basic)
+title: -Nepoužívejte refout (Visual Basic)
 ms.date: 03/16/2018
 f1_keywords:
 - -refonly
@@ -7,37 +7,35 @@ helpviewer_keywords:
 - /refonly compiler option [Visual Basic]
 - -refonly compiler option [Visual Basic]
 - refonly compiler option [Visual Basic]
-ms.openlocfilehash: 4093e98738cf6e41cd450229d82e3672fe9687ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e64989ac1410b51991027ffcb33e8dae0c0284b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788866"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775568"
 ---
-# <a name="-refonly-visual-basic"></a><span data-ttu-id="24c4f-102">-refout (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="24c4f-102">-refonly (Visual Basic)</span></span>
+# <a name="-refonly-visual-basic"></a><span data-ttu-id="b954b-102">-Nepoužívejte refout (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b954b-102">-refonly (Visual Basic)</span></span>
 
-<span data-ttu-id="24c4f-103">**- Refout** možnost znamená, že primární výstup tohoto sestavení by měl být referenční sestavení místo sestavení implementace.</span><span class="sxs-lookup"><span data-stu-id="24c4f-103">The **-refonly** option indicates that the primary output of the compilation should be a reference assembly instead of an implementation assembly.</span></span> <span data-ttu-id="24c4f-104">`-refonly` Parametr tiše zakáže generování souborů pdb, jako referenční sestavení nelze spustit.</span><span class="sxs-lookup"><span data-stu-id="24c4f-104">The `-refonly` parameter silently disables outputting PDBs, as reference assemblies cannot be executed.</span></span>
+<span data-ttu-id="b954b-103">Možnost **-nepoužívejte refout** označuje, že primární výstup kompilace by měl být referenční sestavení namísto sestavení implementace.</span><span class="sxs-lookup"><span data-stu-id="b954b-103">The **-refonly** option indicates that the primary output of the compilation should be a reference assembly instead of an implementation assembly.</span></span> <span data-ttu-id="b954b-104">Parametr `-refonly` tiše zakáže soubory pdbí výstupu, protože referenční sestavení nelze spustit.</span><span class="sxs-lookup"><span data-stu-id="b954b-104">The `-refonly` parameter silently disables outputting PDBs, as reference assemblies cannot be executed.</span></span>
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
 
-## <a name="syntax"></a><span data-ttu-id="24c4f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="24c4f-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b954b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b954b-105">Syntax</span></span>
 
 ```console
 -refonly
 ```
 
-## <a name="remarks"></a><span data-ttu-id="24c4f-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="24c4f-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b954b-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b954b-106">Remarks</span></span>
 
-<span data-ttu-id="24c4f-107">Visual Basic podporuje `-refout` přepnout od verze 15.3.</span><span class="sxs-lookup"><span data-stu-id="24c4f-107">Visual Basic supports the `-refout` switch starting with version 15.3.</span></span>
+<span data-ttu-id="b954b-107">Visual Basic podporuje přepínač `-refonly` počínaje verzí 15,3.</span><span class="sxs-lookup"><span data-stu-id="b954b-107">Visual Basic supports the `-refonly` switch starting with version 15.3.</span></span>
 
-<span data-ttu-id="24c4f-108">Referenční sestavení jsou pouze metadata sestavení, která obsahují metadata, ale žádný implementační kód.</span><span class="sxs-lookup"><span data-stu-id="24c4f-108">Reference assemblies are metadata-only assemblies that contain metadata but no implementation code.</span></span> <span data-ttu-id="24c4f-109">Patří mezi ně typů a členů informace pro všechno, co s výjimkou anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="24c4f-109">They include type and member information for everything except anonymous types.</span></span> <span data-ttu-id="24c4f-110">Důvod pro použití `throw null` subjektů (na rozdíl od bez těla) je tak, aby PEVerify může spuštění a předání (tedy ověřování úplnost metadata).</span><span class="sxs-lookup"><span data-stu-id="24c4f-110">The reason for using `throw null` bodies (as opposed to no bodies) is so that PEVerify could run and pass (thus validating the completeness of the metadata).</span></span>
+<span data-ttu-id="b954b-108">Referenční sestavení jsou speciálním typem sestavení, který obsahuje pouze minimální velikost metadat, která je vyžadována pro reprezentaci veřejného povrchu rozhraní API knihovny.</span><span class="sxs-lookup"><span data-stu-id="b954b-108">Reference assemblies are a special type of assembly that contain only the minimum amount of metadata required to represent the library's public API surface.</span></span> <span data-ttu-id="b954b-109">Zahrnují deklarace pro všechny členy, které jsou významné při odkazování na sestavení v nástrojích sestavení, ale vyloučí všechny implementace členů a deklarace privátních členů, které nemají žádný pozor na jejich kontrakty rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="b954b-109">They include declarations for all members that are significant when referencing an assembly in build tools, but exclude all member implementations and declarations of private members that have no observable impact on their API contract.</span></span> <span data-ttu-id="b954b-110">Další informace najdete v tématu [referenční sestavení](../../../standard/assembly/reference-assemblies.md) v příručce .NET.</span><span class="sxs-lookup"><span data-stu-id="b954b-110">For more information, see [Reference assemblies](../../../standard/assembly/reference-assemblies.md) in .NET Guide.</span></span>
 
-<span data-ttu-id="24c4f-111">Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) atribut.</span><span class="sxs-lookup"><span data-stu-id="24c4f-111">Reference assemblies include an assembly-level [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) attribute.</span></span> <span data-ttu-id="24c4f-112">Tento atribut může být zadaný ve zdroji (a kompilátor nebude nutné tak, aby odpovídaly ho).</span><span class="sxs-lookup"><span data-stu-id="24c4f-112">This attribute may be specified in source (then the compiler won't need to synthesize it).</span></span> <span data-ttu-id="24c4f-113">Z důvodu tohoto atributu moduly runtime odmítne načíst referenční sestavení pro spuštění (ale stále může být načteny v kontextu pouze pro reflexi).</span><span class="sxs-lookup"><span data-stu-id="24c4f-113">Because of this attribute, runtimes will refuse to load reference assemblies for execution (but they can still be loaded in a reflection-only context).</span></span> <span data-ttu-id="24c4f-114">Nástroje, které odpovídají na sestavení se muset ujistit, že se načítají referenční sestavení jako pouze pro reflexi; v opačném případě modul runtime vyvolá <xref:System.BadImageFormatException>.</span><span class="sxs-lookup"><span data-stu-id="24c4f-114">Tools that reflect on assemblies need to ensure they load reference assemblies as reflection-only; otherwise, the runtime throws a <xref:System.BadImageFormatException>.</span></span>
+<span data-ttu-id="b954b-111">Možnosti `-refonly` a [`-refout`](refout-compiler-option.md) se vzájemně vylučují.</span><span class="sxs-lookup"><span data-stu-id="b954b-111">The `-refonly` and [`-refout`](refout-compiler-option.md) options are mutually exclusive.</span></span>
 
-<span data-ttu-id="24c4f-115">`-refonly` a [ `-refout` ](refout-compiler-option.md) možnosti se vzájemně vylučují.</span><span class="sxs-lookup"><span data-stu-id="24c4f-115">The `-refonly` and [`-refout`](refout-compiler-option.md) options are mutually exclusive.</span></span>
+## <a name="see-also"></a><span data-ttu-id="b954b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b954b-112">See also</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="24c4f-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="24c4f-116">See also</span></span>
-
-- [<span data-ttu-id="24c4f-117">-refout</span><span class="sxs-lookup"><span data-stu-id="24c4f-117">-refout</span></span>](refout-compiler-option.md)
-- [<span data-ttu-id="24c4f-118">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="24c4f-118">Visual Basic Command-Line Compiler</span></span>](index.md)
-- [<span data-ttu-id="24c4f-119">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="24c4f-119">Sample Compilation Command Lines</span></span>](sample-compilation-command-lines.md)
+- [<span data-ttu-id="b954b-113">-refout</span><span class="sxs-lookup"><span data-stu-id="b954b-113">-refout</span></span>](refout-compiler-option.md)
+- [<span data-ttu-id="b954b-114">Visual Basic Kompilátor příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="b954b-114">Visual Basic Command-Line Compiler</span></span>](index.md)
+- [<span data-ttu-id="b954b-115">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="b954b-115">Sample Compilation Command Lines</span></span>](sample-compilation-command-lines.md)
