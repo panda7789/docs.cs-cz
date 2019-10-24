@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: fd8f4cc48fa0536de3d84856ac826a8525f7ab88
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 10/22/2019
 ms.locfileid: "65635572"
 ---
-<span data-ttu-id="ce1c1-101">WF</span><span class="sxs-lookup"><span data-stu-id="ce1c1-101">WF</span></span>
+<span data-ttu-id="6d3e9-101">WF</span><span class="sxs-lookup"><span data-stu-id="6d3e9-101">WF</span></span>
