@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /errorreport compiler option [Visual Basic]
 - errorreport compiler option [Visual Basic]
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
-ms.openlocfilehash: c8e193a8cb4d4dbc7515c32139bad9dce8b48ed7
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: a9741f7a8283f8603e02dae5abea151c6ee5d75e
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005617"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775672"
 ---
 # <a name="-errorreport"></a>-errorreport
 
@@ -40,7 +40,7 @@ Následující tabulka shrnuje efekt možnosti `-errorreport`.
 
 Kompilátor odesílá data, která zahrnují zásobník v době chyby, což obvykle zahrnuje nějaký zdrojový kód. Pokud se `-errorreport` používá s možností [-bugreport –](../../../visual-basic/reference/command-line-compiler/bugreport.md) , pak se pošle celý zdrojový soubor.
 
-Tato možnost se nejlépe používá s možností [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) , protože umožňuje vývojářům Microsoftu snadněji reprodukování chyby.
+Tato možnost se nejlépe používá s možností [-bugreport –](../../../visual-basic/reference/command-line-compiler/bugreport.md) , protože umožňuje vývojářům Microsoftu snadněji reprodukování chyby.
 
 > [!NOTE]
 > Možnost `-errorreport` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.

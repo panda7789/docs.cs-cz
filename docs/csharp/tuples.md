@@ -3,12 +3,12 @@ title: Typy řazené C# kolekce členů – Průvodce
 description: Další informace o nepojmenovaných a pojmenovaných typech řazených kolekcí členů vC#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 7e5df8c20dbbddbe84a56883a6d2a027f32d8ff7
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3c8d4acfe231be63e1d70d467cbb72ecfa4f767d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319760"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774062"
 ---
 # <a name="c-tuple-types"></a>C#typy řazené kolekce členů
 
@@ -24,7 +24,7 @@ V tomto článku se naučíte jazykové pravidla upravující řazené kolekce �
 
 Pojďme začít s důvody pro přidání nové podpory řazené kolekce členů. Metody vrací jeden objekt. Řazené kolekce členů umožňují snadněji zabalit více hodnot v jednom objektu.
 
-.NET Framework již obsahuje obecné třídy `Tuple`. Tyto třídy však měly dvě hlavní omezení. Pro jednu @no__t třídy-0 s názvem jejich vlastnosti `Item1`, `Item2` atd. Tyto názvy nenesou žádné sémantické informace. Použití těchto typů `Tuple` neumožňuje komunikaci významu jednotlivých vlastností. Nové funkce jazyka umožňují deklarovat a používat sémanticky smysluplné názvy pro prvky v řazené kolekci členů.
+.NET Framework již obsahuje obecné třídy `Tuple`. Tyto třídy však měly dvě hlavní omezení. Pro jednu třídu `Tuple` třídy s názvem jejich vlastnosti `Item1`, `Item2` a tak dále. Tyto názvy nenesou žádné sémantické informace. Použití těchto typů `Tuple` neumožňuje komunikaci významu jednotlivých vlastností. Nové funkce jazyka umožňují deklarovat a používat sémanticky smysluplné názvy pro prvky v řazené kolekci členů.
 
 Třídy `Tuple` způsobují větší vliv na výkon, protože se jedná o odkazové typy. Použití jednoho z typů `Tuple` znamená přidělení objektů. V případě aktivních cest může mít přidělení mnoha malých objektů měřitelný dopad na výkon aplikace. Proto jazyková podpora pro řazené kolekce členů využívá nové struktury `ValueTuple`.
 
@@ -62,7 +62,7 @@ Kompilátor musí komunikovat s názvy, které jste vytvořili pro řazené kole
 > [!NOTE]
 > Nástroje pro vývoj, jako je třeba Visual Studio, čtou tato metadata a poskytují IntelliSense a další funkce pomocí názvů polí metadat.
 
-Je důležité pochopit tyto základní základy nových řazených kolekcí členů a typ @no__t 0, aby bylo možné pochopit pravidla pro přiřazování pojmenovaných řazených kolekcí členů.
+Je důležité pochopit tyto základní základy nových řazených kolekcí členů a typ `ValueTuple`, aby bylo možné pochopit pravidla pro přiřazování pojmenovaných řazených kolekcí členů.
 
 ## <a name="tuple-projection-initializers"></a>Inicializátory řazené kolekce členů
 
@@ -77,7 +77,7 @@ Pro jakékoli pole, kde není zadáno explicitní jméno, je projekt použit s i
 
 Existují dvě podmínky, kdy názvy polí kandidátů nejsou promítnuty do pole řazené kolekce členů:
 
-1. Pokud je kandidátem název vyhrazený název řazené kolekce členů. Mezi příklady patří `Item3` `ToString`. nebo `Rest`.
+1. Pokud je kandidátem název vyhrazený název řazené kolekce členů. Příklady zahrnují `Item3`, `ToString` nebo `Rest`.
 1. Pokud je název kandidáta duplicitní s jiným názvem pole řazené kolekce členů, buď explicitní, nebo implicitní.
 
 Tyto podmínky zabraňují nejednoznačnosti. Tyto názvy by způsobily nejednoznačnost, pokud byly použity jako názvy polí v řazené kolekci členů. Ani jedna z těchto podmínek nezpůsobí chyby při kompilaci. Místo toho pro prvky bez projektových názvů nejsou pro ně sémanticky pojmenovány.  Následující příklady znázorňují tyto podmínky:
@@ -251,7 +251,7 @@ public class Point
 
 Libovolný typ řazené kolekce členů lze dekonstruovat, jak je uvedeno výše. Je také snadné povolit dekonstrukci u libovolného uživatelsky definovaného typu (třídy, struktury nebo dokonce rozhraní).
 
-Autor typu může definovat jednu nebo více metod @no__t 0, které přidělují hodnoty libovolnému počtu proměnných `out` reprezentujících datové prvky, které tvoří typ. Například následující typ `Person` definuje metodu `Deconstruct`, která dekonstruuje objekt Person do prvků představujících křestní jméno a příjmení:
+Autor typu může definovat jednu nebo více `Deconstruct` metod, které přiřazují hodnoty k libovolnému počtu `out` proměnných reprezentujícím datové prvky, které tvoří typ. Například následující typ `Person` definuje metodu `Deconstruct`, která dekonstruuje objekt Person do prvků představujících křestní jméno a příjmení:
 
 [!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]
 
@@ -260,7 +260,7 @@ Metoda deconstruct umožňuje přiřazení z `Person` do dvou řetězců, které
 [!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/program.cs#12A_DeconstructType "Deconstruct a class type")]
 
 Můžete povolit dekonstrukci i pro typy, které jste nevytvořili.
-Metoda `Deconstruct` může být metoda rozšíření, která rozbalí přístupné datové členy objektu. Níže uvedený příklad ukazuje @no__t typ 0, odvozený z typu `Person` a metodu rozšíření, která dekonstruuje `Student` na tři proměnné představující `FirstName`, `LastName` a `GPA`:
+Metoda `Deconstruct` může být metoda rozšíření, která rozbalí přístupné datové členy objektu. Následující příklad ukazuje typ `Student`, odvozený z typu `Person` a metodu rozšíření, která dekonstruuje `Student` na tři proměnné představující `FirstName`, `LastName` a `GPA`:
 
 [!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#13_ExtensionDeconstructMethod "Type with a deconstruct extension method")]
 

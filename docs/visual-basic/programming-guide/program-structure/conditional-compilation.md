@@ -5,23 +5,23 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: 1bee64568ff92468e29226a395f7e5335387e256
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0767b2054697735c3f5190b6e30a2c80ea5288bc
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945576"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775705"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Podmíněná kompilace v jazyce Visual Basic
 V *podmíněné kompilaci*jsou konkrétní bloky kódu v programu kompilovány selektivně, zatímco ostatní jsou ignorovány.  
   
  Například můžete chtít napsat příkazy ladění, které porovnávají rychlost různých přístupů ke stejnému programovacímu úkolu, nebo můžete chtít lokalizovat aplikaci pro více jazyků. Příkazy podmíněné kompilace jsou navrženy tak, aby běžely v době kompilace, nikoli v době běhu.  
   
- Všimněte si, že bloky kódu budou podmíněně kompilovány s `#If...Then...#Else` direktivou. Chcete-li například vytvořit francouzsky a německé jazykové verze stejné aplikace ze stejného zdrojového kódu, vložte segmenty kódu specifické pro platformu v `#If...Then` příkazech pomocí předdefinovaných konstant `FrenchVersion` a `GermanVersion`. Následující příklad ukazuje, jak:  
+ Všimněte si, že bloky kódu budou podmíněně kompilovány pomocí direktivy `#If...Then...#Else`. Chcete-li například vytvořit francouzsky a německé verze stejné aplikace ze stejného zdrojového kódu, vložte segmenty kódu specifické pro platformu v příkazu `#If...Then` pomocí předdefinovaných konstant `FrenchVersion` a `GermanVersion`. Následující příklad ukazuje, jak:  
   
  [!code-vb[VbVbalrConditionalComp#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#5)]  
   
- Pokud nastavíte hodnotu `FrenchVersion` konstanty podmíněné kompilace na `True` v době kompilace, bude zkompilován podmíněný kód pro francouzskou verzi. Pokud nastavíte hodnotu `GermanVersion` konstanty na `True`, kompilátor použije německou verzi. Pokud není ani nastaveno na `True`, kód v posledním `Else` bloku se spustí.  
+ Pokud nastavíte hodnotu `FrenchVersion` konstanty podmíněné kompilace na `True` v době kompilace, bude zkompilován podmíněný kód pro francouzskou verzi. Pokud nastavíte hodnotu `GermanVersion` konstanty na `True`, kompilátor použije německou verzi. Pokud není ani nastaveno na `True`, kód v posledním bloku `Else` spuštěn.  
   
 > [!NOTE]
 > Automatického dokončování nebude fungovat při úpravách kódu a použití direktiv podmíněné kompilace, pokud kód není součástí aktuální větve.  
@@ -41,7 +41,7 @@ V *podmíněné kompilaci*jsou konkrétní bloky kódu v programu kompilovány s
 |---|---|  
 |**Návrhář projektu**|Veřejné pro všechny soubory v projektu|  
 |Příkazový řádek|Veřejné ke všem souborům předaným kompilátoru příkazového řádku|  
-|`#Const`příkaz v kódu|Soukromá k souboru, ve kterém je deklarovaný|  
+|`#Const` – příkaz v kódu|Soukromá k souboru, ve kterém je deklarovaný|  
   
 |Nastavení konstant v Návrháři projektu|  
 |---|  
@@ -49,7 +49,7 @@ V *podmíněné kompilaci*jsou konkrétní bloky kódu v programu kompilovány s
   
 |Nastavení konstant na příkazovém řádku|  
 |---|  
-|– Použijte přepínač **/d** a zadejte konstanty podmíněné kompilace, jako v následujícím příkladu:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Mezi přepínačem **/d** a první konstantou není nutné žádné místo. Další informace najdete v tématu [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Deklarace příkazového řádku, které jsou popsány v **Návrháři projektu**, však nejsou smazány. Argumenty nastavené v **Návrháři projektu** zůstávají platné pro následné kompilace.<br />     Při psaní konstant v samotném kódu nejsou k dispozici žádná striktní pravidla pro jejich umístění, protože jejich rozsah je celý modul, ve kterém jsou deklarovány.|  
+|– Použijte přepínač **-d** k zadání konstant podmíněné kompilace, jako v následujícím příkladu:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Mezi přepínačem **-d** a první konstantou není nutné žádné místo. Další informace naleznete v tématu [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Deklarace příkazového řádku, které jsou popsány v **Návrháři projektu**, však nejsou smazány. Argumenty nastavené v **Návrháři projektu** zůstávají platné pro následné kompilace.<br />     Při psaní konstant v samotném kódu nejsou k dispozici žádná striktní pravidla pro jejich umístění, protože jejich rozsah je celý modul, ve kterém jsou deklarovány.|  
   
 |Nastavení konstant v kódu|  
 |---|  
@@ -61,9 +61,9 @@ V *podmíněné kompilaci*jsou konkrétní bloky kódu v programu kompilovány s
 |---|---|  
 |[Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Poskytuje návrhy, jak snadno číst a udržovat váš kód.|  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)  
   
  [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
   
- [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
+ [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)

@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Větve a smyčky vC#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 42d9784b9aa35fbb739e09dd79d72996b0f15950
-  ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+  ms.openlocfilehash: 31647906dd3e1286220077831d2ce90b65a5b73c
+  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/12/2019
-  ms.locfileid: "72291369"
+  ms.lasthandoff: 10/22/2019
+  ms.locfileid: "72774004"
 items:
 - durationInMinutes: 1
   content: >
@@ -192,7 +192,7 @@ items:
   content: >
     Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.
 
-    **Zbytek** můžete získat pomocí operátoru **modulo** , znaku `%`:
+    **Zbytek** můžete získat pomocí operátoru **modulo** , `%`ho znaku:
 
 
     ```csharp
@@ -247,7 +247,7 @@ items:
     Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.
 
 
-    Existují i jiné číselné typy s různými limity a přesností, které byste použili, když @no__t typ 0 nevyhovuje vašim potřebám. Pojďme se podívat na další.
+    Existují i jiné číselné typy s různými limity a přesností, které byste použili, když `int` typ nevyhovuje vašim potřebám. Pojďme se podívat na další.
 
 
     > [!NOTE]
@@ -421,12 +421,8 @@ items:
     Další informace o číslech v C# najdete v následujících tématech:
 
 
-    - [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)
+    - [Celočíselné číselné typy](../../language-reference/builtin-types/integral-numeric-types.md)
 
-    - [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/builtin-types/floating-point-numeric-types.md)
+    - [Číselné typy s plovoucí desetinnou čárkou](../../language-reference/builtin-types/floating-point-numeric-types.md)
 
-    - [Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)
-
-    - [Tabulka implicitních převodů čísel](../../language-reference/keywords/implicit-numeric-conversions-table.md)
-
-    - [Tabulka explicitních převodů čísel](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+    - [Předdefinované číselné převody](../../language-reference/builtin-types/numeric-conversions.md)

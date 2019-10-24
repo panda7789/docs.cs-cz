@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-ms.openlocfilehash: 52da5d059369f8f5a85c23d1ed5ade97523a0e78
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 4dcca0f0ed9989577ded27bab7cf3b16f3036964
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582635"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775459"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 
@@ -62,7 +62,7 @@ Další informace naleznete v tématu [odvození místního typu](../../../visua
 
 ## <a name="when-an-option-infer-statement-is-not-present"></a>Pokud není k dispozici příkaz k odvození možnosti
 
-Pokud zdrojový kód neobsahuje příkaz `Option Infer`, je použita **možnost odvodit** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
+Pokud zdrojový kód neobsahuje příkaz `Option Infer`, je použita **možnost odvodit** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [-optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
 
 #### <a name="to-set-option-infer-in-the-ide"></a>Nastavení volby odvoditelné v integrovaném vývojovém prostředí
 
@@ -76,7 +76,7 @@ Při vytváření nového projektu je **možnost odvodit** nastavení na kartě 
 
 #### <a name="to-set-option-infer-on-the-command-line"></a>Nastavení možnosti odvození v příkazovém řádku
 
-Do příkazu **Vbc** zahrňte možnost kompilátoru [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
+Do příkazu **Vbc** zahrňte možnost kompilátoru [-optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
 
 ## <a name="default-data-types-and-values"></a>Výchozí datové typy a hodnoty
 
@@ -109,5 +109,5 @@ Následující příklad ukazuje, že běhový typ se může lišit, když je pr
 - [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
-- [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

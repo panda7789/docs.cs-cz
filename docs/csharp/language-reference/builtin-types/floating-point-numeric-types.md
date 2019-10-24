@@ -1,7 +1,7 @@
 ---
 title: Číselné typy s plovoucí desetinnou C# čárkou – referenční informace
 description: Přehled předdefinovaných typů s C# plovoucí desetinnou čárkou
-ms.date: 10/18/2019
+ms.date: 10/22/2019
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: fa6cbb869d90113414cc6f8ffe231386c3596b1d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 4d71f7eea3f574e483dc4250f5c87e1ffd551f2f
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579373"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771908"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnouC# čárkou (referenční)
 
@@ -105,13 +105,7 @@ Console.WriteLine(m);  // output: 1500000
 
 ## <a name="conversions"></a>Převody
 
-Existuje implicitní převod (nazývaný *rozšiřující převod*) z `float` na `double`, protože rozsah hodnot `float` je správnou podmnožinou `double` a nedochází ke ztrátě přesnosti od `float` do `double`.
-
-Je nutné použít explicitní přetypování pro převod jednoho typu s plovoucí desetinnou čárkou na jiný typ s plovoucí desetinnou čárkou, pokud implicitní převod není definován ze zdrojového typu na cílový typ. Tato metoda se nazývá *zužující převod*. Explicitní případ je vyžadován, protože převod může mít za následek ztrátu dat. Neexistuje žádný implicitní převod mezi jinými typy s plovoucí desetinnou čárkou a typem `decimal`, protože typ `decimal` má větší přesnost než `float` nebo `double`.
-
-Další informace o implicitním číselném převodu naleznete v tématu [implicitní číselná převodová tabulka](../keywords/implicit-numeric-conversions-table.md).
-
-Další informace o explicitních číselných převodech naleznete v tématu [explicitní číselná](../keywords/explicit-numeric-conversions-table.md)převodová tabulka.
+Existuje pouze jeden implicitní převod mezi číselnými typy s plovoucí desetinnou čárkou: od `float` po `double`. Můžete však převést libovolný typ s plovoucí desetinnou čárkou na jakýkoli jiný typ s plovoucí desetinnou čárkou s [explicitním přetypováním](../operators/type-testing-and-cast.md#cast-operator-). Další informace najdete v tématu [integrované číselné převody](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -124,10 +118,9 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 ## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [Celočíselné typy](integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
-- [Číslovky v technologii .NET](../../../standard/numerics.md)
-- [Přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md)
-- <xref:System.Numerics.Complex?displayProperty=nameWithType>
+- [Celočíselné typy](integral-numeric-types.md)
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Řetězce standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Číslovky v technologii .NET](../../../standard/numerics.md)
+- <xref:System.Numerics.Complex?displayProperty=nameWithType>

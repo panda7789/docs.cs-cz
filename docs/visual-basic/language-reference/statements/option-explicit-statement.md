@@ -11,12 +11,12 @@ helpviewer_keywords:
 - explicit variable declaration
 - Option Explicit statement [Visual Basic]
 ms.assetid: e82ac1ad-2cd3-49b2-b985-8bcf016f3fcc
-ms.openlocfilehash: 19ff8cf1dbcdb941e38f23be4cb68d3a5e5b83a8
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 0405814efecbdff5769af36b27dce1cd3305aab5
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582583"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775487"
 ---
 # <a name="option-explicit-statement-visual-basic"></a>Option Explicit – příkaz (Visual Basic)
 Vynutí explicitní deklaraci všech proměnných v souboru nebo umožňuje implicitní deklarace proměnných.  
@@ -43,7 +43,7 @@ Option Explicit { On | Off }
 > Nastavení `Option Explicit` na `Off` není většinou dobrým zvykem. V jednom nebo více umístěních byste mohli nastavovat navýšení názvu proměnné, což způsobí, že při spuštění programu dojde k neočekávaným výsledkům.  
   
 ## <a name="when-an-option-explicit-statement-is-not-present"></a>Pokud není k dispozici příkaz Option Explicit  
- Pokud zdrojový kód neobsahuje příkaz `Option Explicit`, je použita **možnost explicitní** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [/OptionExplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
+ Pokud zdrojový kód neobsahuje příkaz `Option Explicit`, je použita **možnost explicitní** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [-OptionExplicit –](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
   
 #### <a name="to-set-option-explicit-in-the-ide"></a>Nastavení možnosti Explicit v integrovaném vývojovém prostředí  
   
@@ -57,7 +57,7 @@ Option Explicit { On | Off }
   
 #### <a name="to-set-option-explicit-on-the-command-line"></a>Nastavení možnosti Explicit na příkazovém řádku  
   
-- Do příkazu **Vbc** zahrňte možnost kompilátoru [/OptionExplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
+- Do příkazu **Vbc** zahrňte možnost kompilátoru [-OptionExplicit –](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) .  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá příkaz `Option Explicit` k vynucení explicitní deklarace všech proměnných. Pokus o použití nedeklarované proměnné způsobí chybu v době kompilace.  
@@ -72,7 +72,7 @@ Option Explicit { On | Off }
 - [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)
 - [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
+- [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
-ms.openlocfilehash: afe2181e031a651767e6a6eec0397300b03fce50
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 8b7dfcfa394ed2c45adec9661ee1ea5823435223
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582559"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775445"
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezuje implicitní převody datových typů pouze na rozšiřování převodů, nepovoluje pozdní vazbu a nepovoluje implicitní psaní, které má za následek `Object` typ.  
@@ -104,7 +104,7 @@ Option Strict { On | Off }
 ## <a name="when-an-option-strict-statement-is-not-present"></a>Pokud není k dispozici příkaz Option Strict  
  Pokud zdrojový kód neobsahuje příkaz `Option Strict`, je použita **možnost striktní** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . **Stránka kompilace** obsahuje nastavení, která poskytují další kontrolu nad podmínkami, které generují chybu.  
   
- Pokud používáte kompilátor příkazového řádku, můžete použít možnost kompilátoru [/OptionStrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) k určení nastavení pro `Option Strict`.  
+ Pokud používáte kompilátor příkazového řádku, můžete použít možnost kompilátoru [-OptionStrict –](../../../visual-basic/reference/command-line-compiler/optionstrict.md) k určení nastavení pro `Option Strict`.  
   
 ### <a name="to-set-option-strict-in-the-ide"></a>Nastavení možnosti Strict v integrovaném vývojovém prostředí  
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
@@ -132,7 +132,7 @@ Option Strict { On | Off }
  Chcete-li nastavit `Option Strict` v tomto dialogovém okně, v nabídce **nástroje** klikněte na položku **Možnosti**. V dialogovém okně **Možnosti** rozbalte **projekty a řešení**a potom klikněte na **výchozí hodnoty VB**. Počáteční výchozí nastavení ve **výchozích hodnotách VB** je `Off`.  
   
 ### <a name="to-set-option-strict-on-the-command-line"></a>Nastavení možnosti Strict na příkazovém řádku  
- Do příkazu **Vbc** zahrňte možnost kompilátoru [/OptionStrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) .  
+ Do příkazu **Vbc** zahrňte možnost kompilátoru [-OptionStrict –](../../../visual-basic/reference/command-line-compiler/optionstrict.md) .  
   
 ## <a name="example"></a>Příklad  
  Následující příklady demonstrují chyby při kompilaci způsobené implicitními převody typů, které jsou zužující převody. Tato kategorie chyb odpovídá **implicitní podmíněné konverzi** na **stránce kompilace**.  
@@ -162,5 +162,5 @@ Option Strict { On | Off }
 - [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
 - [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
 - [Pozdní vazba v řešeních pro systém Office](/visualstudio/vsto/late-binding-in-office-solutions)
-- [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
