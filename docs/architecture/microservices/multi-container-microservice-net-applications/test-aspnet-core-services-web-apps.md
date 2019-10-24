@@ -2,12 +2,12 @@
 title: Testování služeb a webových aplikací ASP.NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET Core služeb a webových aplikací v kontejnerech.
 ms.date: 10/02/2018
-ms.openlocfilehash: 042f7a6171a88025d3d4a8e37c4deceb416e5711
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 278d12b8215195351673a41149db5af6fcecddfb
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291281"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72772019"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 
@@ -31,7 +31,7 @@ Při testování akcí kontroleru se ujistěte, že se zaměříte jenom na jeji
 
 Testy jednotek jsou implementovány na základě testovacích rozhraní, jako jsou xUnit.net, MSTest, MOQ nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme xUnit.
 
-Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v C @ no__t-0, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
+Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v jazyce C \#, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
 
 ```csharp
 [Fact]

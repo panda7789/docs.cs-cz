@@ -2,12 +2,12 @@
 title: Operační systém, na který mají cílit kontejnery .NET
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Jaký operační systém pro cílení na kontejnery .NET
 ms.date: 01/07/2019
-ms.openlocfilehash: 7380889374e69ca4d3c981a401af703c19263de5
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8bcfa0212f84c575a63f76e05edec1e511cadc36
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039693"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72772005"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Operační systém, na který mají cílit kontejnery .NET
 
@@ -25,15 +25,23 @@ Na obrázku 3-1 můžete zobrazit možnou verzi operačního systému v závislo
 
 Můžete také vytvořit vlastní image Docker v případech, kdy chcete použít jiný distribuce pro Linux nebo kde chcete image s verzemi, které Microsoft neposkytuje. Můžete například vytvořit bitovou kopii s ASP.NET Core spuštěnou v tradičním .NET Framework a jádro Windows serveru, což je neobvyklý scénář pro Docker.
 
+> [!IMPORTANT]
+> Při použití základních imagí Windows serveru se můžete setkat s tím, že v porovnání s úplnými bitovými kopiemi systému Windows chybí některé knihovny DLL. Tento problém může být možné vyřešit vytvořením vlastní image jádra serveru, přidáním chybějících souborů v době sestavení obrázku, jak je uvedeno v tomto [komentáři k GitHubu](https://github.com/microsoft/dotnet-framework-docker/issues/299#issuecomment-511537448).
+
 Když přidáte název Image do souboru souboru Dockerfile, můžete vybrat operační systém a verzi v závislosti na používané značce, jako v následujících příkladech:
 
 | Image | Komentáře |
 |-------|----------|
-| mcr.microsoft.com/dotnet/core/runtime:2.2 | .NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2 | ASP.NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. <br/> Obrázek aspnetcore má několik optimalizací pro ASP.NET Core. |
+| mcr.microsoft.com/dotnet/core/runtime:2.2 | .NET Core 2,2 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. |
+| mcr.microsoft.com/dotnet/core/aspnet:2.2 | ASP.NET Core 2,2 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. <br/> Obrázek aspnetcore má několik optimalizací pro ASP.NET Core. |
 | mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine | .NET Core 2,2 runtime – jenom pro Linux Alpine distribuce |
 | mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803 | .NET Core 2,2 runtime – jenom na Windows nano serveru (Windows Server verze 1803) |
 
+## <a name="additional-resources"></a>Další zdroje
+
+- **BitmapDecoder se nezdařila z důvodu chybějícího souboru WindowsCodecsExt. dll (problém GitHubu).**  
+  <https://github.com/microsoft/dotnet-framework-docker/issues/299>
+
 > [!div class="step-by-step"]
-> [Předchozí](container-framework-choice-factors.md)Další
-> [](official-net-docker-images.md)
+> [Předchozí](container-framework-choice-factors.md)
+> [Další](official-net-docker-images.md)

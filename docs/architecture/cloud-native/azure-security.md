@@ -2,18 +2,18 @@
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
 ms.date: 06/30/2019
-ms.openlocfilehash: 59b99dfea4926c4b89d7704b3ec3640990747212
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 44e81bc91fa952448f501a29e9db8afb2dbda752
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520826"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770241"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Nativní aplikace v cloudu můžou být jednodušší a obtížnější pro zabezpečení než tradiční aplikace. Na nevýhodou je nutné zabezpečit více menších aplikací a zvýšit spotřebu energie pro sestavení infrastruktury zabezpečení. Heterogenní povaha programovacích jazyků a stylů ve většině nasazení služeb také znamená, že je potřeba věnovat větší pozornost bulletinům zabezpečení z mnoha různých poskytovatelů. 
+Nativní aplikace v cloudu můžou být jednodušší a obtížnější pro zabezpečení než tradiční aplikace. Na nevýhodou je nutné zabezpečit více menších aplikací a zvýšit spotřebu energie pro sestavení infrastruktury zabezpečení. Heterogenní povaha programovacích jazyků a stylů ve většině nasazení služeb také znamená, že je potřeba věnovat větší pozornost bulletinům zabezpečení z mnoha různých poskytovatelů.
 
 V případě překlopení menších služeb, z nichž každá má vlastní úložiště dat, omezte rozsah útoku. Pokud útočník napadnout jeden systém, je pravděpodobnější, že by útočník mohl přejít na jiný systém, než je v aplikaci monolitické. Hranice procesu jsou silné hranice. Pokud se navíc nevrátí záloha databáze, poškození je více omezené, protože tato databáze obsahuje pouze podmnožinu dat a pravděpodobně neobsahuje osobní údaje.
 
@@ -26,53 +26,53 @@ Bez ohledu na to, zda výhody převažují z nevýhod aplikací nativních pro C
 - Kdo má mít přístup k těmto datům?
 - Jsou v rámci procesu vývoje a vydávání k dispozici zásady auditu?
 
-Všechny tyto otázky jsou součástí procesu nazývaného [modelování hrozeb](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool). Tento proces se snaží odpovědět na otázku, jaké hrozby se v systému nacházejí, jak by se staly hrozbami, a potenciální poškození. 
+Všechny tyto otázky jsou součástí procesu nazývaného [modelování hrozeb](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool). Tento proces se snaží odpovědět na otázku, jaké hrozby se v systému nacházejí, jak by se staly hrozbami, a potenciální poškození.
 
 Po navázání seznamu hrozeb se musíte rozhodnout, jestli se mají zmírnit. V některých případech je hrozba nepravděpodobné a nákladná k plánování za to, že nestojí za to, že se na ni stráví energie. Například některý objekt actor na úrovni stavu může vložit změny do návrhu procesu, který je používán miliony zařízení. Nyní namísto spuštění určité části kódu v [okruhu 3](https://en.wikipedia.org/wiki/Protection_ring)se tento kód spouští na prstenci 0. To umožňuje zneužití, které může obejít hypervisor a spustit kód útoku na holé počítače, což umožňuje útoky na všech virtuálních počítačích, které jsou na tomto hardwaru spuštěny.
 
-Změněné procesory se obtížně zjišťují bez použití mikrooboru a pokročilých znalostí na návrh Silicon tohoto procesoru. Tento scénář se pravděpodobně nestane a finančně se omezuje, takže by pravděpodobně nedocházelo k tomu, že by pro něj bylo vhodné vytvářet ochranu proti zneužití. 
+Změněné procesory se obtížně zjišťují bez použití mikrooboru a pokročilých znalostí na návrh Silicon tohoto procesoru. Tento scénář se pravděpodobně nestane a finančně se omezuje, takže by pravděpodobně nedocházelo k tomu, že by pro něj bylo vhodné vytvářet ochranu proti zneužití.
 
-Pravděpodobnější hrozby, jako jsou například přerušené řízení přístupu, což umožňuje `Id` zvýšit počet útoků (nahrazení `Id=2` `Id=3` v adrese URL) nebo injektáže SQL, jsou přitažlivější k vytváření ochrany proti. Zmírnění těchto hrozeb je poměrně přijatelné pro sestavování a ochranu proti bezpečnostním otvorům absolutně, které vycházejí ze své pověsti společnosti. 
+Pravděpodobnější hrozby, jako jsou například přerušené řízení přístupu, což umožňuje `Id` zvýšit počet útoků (nahrazení `Id=2` `Id=3` v adrese URL) nebo injektáže SQL, jsou přitažlivější k vytváření ochrany proti. Zmírnění těchto hrozeb je poměrně přijatelné pro sestavování a ochranu proti bezpečnostním otvorům absolutně, které vycházejí ze své pověsti společnosti.
 
 ## <a name="principle-of-least-privilege"></a>Princip nejnižších oprávnění
 
-Jednou z nalezených nápadů v zabezpečení počítače je princip minimálního oprávnění (POLP). V podstatě je to základní nápad v podobě zabezpečení, který je digitální nebo fyzický. V krátkém případě se jedná o to, že každý uživatel nebo proces by měl mít nejnižší počet práv ke spuštění úkolu. 
+Jednou z nalezených nápadů v zabezpečení počítače je princip minimálního oprávnění (POLP). V podstatě je to základní nápad v podobě zabezpečení, který je digitální nebo fyzický. V krátkém případě se jedná o to, že každý uživatel nebo proces by měl mít nejnižší počet práv ke spuštění úkolu.
 
-Jako příklad si můžete představit jako v bance: přístup k bezpečnosti je neobvyklá aktivita. Proto Průměrná známka nemůže otevřít bezpečný sám sebe. Aby bylo možné získat přístup, musí zvýšit svůj požadavek pomocí Správce banky, který provede další kontroly zabezpečení. 
+Jako příklad si můžete představit jako v bance: přístup k bezpečnosti je neobvyklá aktivita. Proto Průměrná známka nemůže otevřít bezpečný sám sebe. Aby bylo možné získat přístup, musí zvýšit svůj požadavek pomocí Správce banky, který provede další kontroly zabezpečení.
 
-V systému počítače je příkladem fantastická práva uživatele, který se připojuje k databázi. V mnoha případech existuje jeden uživatelský účet, který se používá pro sestavení struktury databáze a spuštění aplikace. S výjimkou případů, kdy účet, na kterém běží aplikace, nemusí mít možnost aktualizovat informace o schématu. Měl by existovat několik účtů, které poskytují různé úrovně oprávnění. Aplikace by měla používat pouze úroveň oprávnění, která uděluje přístup pro čtení a zápis k datům v tabulkách. Tento druh ochrany eliminuje útoky zaměřené na vyřazení tabulek databáze nebo zavedení škodlivých triggerů. 
+V systému počítače je příkladem fantastická práva uživatele, který se připojuje k databázi. V mnoha případech existuje jeden uživatelský účet, který se používá pro sestavení struktury databáze a spuštění aplikace. S výjimkou případů, kdy účet, na kterém běží aplikace, nemusí mít možnost aktualizovat informace o schématu. Měl by existovat několik účtů, které poskytují různé úrovně oprávnění. Aplikace by měla používat pouze úroveň oprávnění, která uděluje přístup pro čtení a zápis k datům v tabulkách. Tento druh ochrany eliminuje útoky zaměřené na vyřazení tabulek databáze nebo zavedení škodlivých triggerů.
 
 Skoro každá část sestavování nativních cloudových aplikací může mít za to, že je nutné vytvořit princip nejnižších oprávnění. Při nastavování bran firewall, skupin zabezpečení sítě, rolí a oborů v řízení přístupu na základě role (RBAC) je můžete najít při hraní.
 
 ## <a name="penetration-testing"></a>Testování průniku
 
-Vzhledem k většímu počtu aplikací se počet vektorů útoku zvyšuje na míru alarmu. Pro modelování hrozeb dochází k chybě, která by mohla být vykonána stejnými lidmi, kteří sestavují systém. Stejně jako v případě, že mnoho vývojářů má potíže s plánováním interakcí uživatelů a pak vytvářet nepoužitelná uživatelská rozhraní, většina vývojářů má potíže se zobrazením všech vektorů útoku. Je také možné, že vývojáři, kteří sestavují systém, nejsou dobře vycházet z metodologie útoků a nezpůsobují něco důležitého. 
+Vzhledem k většímu počtu aplikací se počet vektorů útoku zvyšuje na míru alarmu. Pro modelování hrozeb dochází k chybě, která by mohla být vykonána stejnými lidmi, kteří sestavují systém. Stejně jako v případě, že mnoho vývojářů má potíže s plánováním interakcí uživatelů a pak vytvářet nepoužitelná uživatelská rozhraní, většina vývojářů má potíže se zobrazením všech vektorů útoku. Je také možné, že vývojáři, kteří sestavují systém, nejsou dobře vycházet z metodologie útoků a nezpůsobují něco důležitého.
 
 Testování průniku nebo "testování perem" zahrnuje uvedení do externích aktérů k pokusu o útok na systém. Tyto útočníci můžou být externími poradenskými společnostmi nebo jinými vývojáři, kteří mají dobré znalosti zabezpečení z jiné části firmy. Přidávají se carte blanche k pokusu o převýšení systému. Často se v nich nacházejí velké bezpečnostní otvory, které je potřeba opravit. Někdy se může stát, že vektor útoku bude něco zcela neočekávaně, například zneužití útoku phishing proti generální ŘEDITELi.
 
-Samotný Azure neustále prochází útoky z [týmu hackerů v Microsoftu](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/). V průběhu let byly nejprve vyhledány desítky potenciálně závažných vektorů útoku a jejich uzavírání předtím, než bude možné je zneužít externě. Lépe se zaměřuje na cíl, což je pravděpodobnější, že se externí actor pokusí ho zneužít a existuje několik cílů na světovém větším cíli, než je Azure. 
+Samotný Azure neustále prochází útoky z [týmu hackerů v Microsoftu](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/). V průběhu let byly nejprve vyhledány desítky potenciálně závažných vektorů útoku a jejich uzavírání předtím, než bude možné je zneužít externě. Lépe se zaměřuje na cíl, což je pravděpodobnější, že se externí actor pokusí ho zneužít a existuje několik cílů na světovém větším cíli, než je Azure.
 
 ## <a name="monitoring"></a>Sledovaný
 
-Pokud by se útočník pokusil proniknout aplikaci, mělo by to být upozornění. Často se útoky můžou Spotted prozkoumáním protokolů ze služeb. Útoky opouští příznakem příznaku, který může být Spotted před úspěchem. V případě, že se útočník pokouší odhadnout heslo, provede mnoho požadavků na přihlašovací systém. Monitorování systému přihlášení dokáže detekovat divné vzory, které nejsou v typickém vzorovém přístupu. Toto monitorování se dá přepínat na výstrahu, která může zase upozornit na určitou osobu, aby aktivovala určitý druh protiopatření. Vysoce vyspělý monitorovací systém může dokonce provádět akce na základě těchto odchylek, které přidávají pravidla pro blokování požadavků nebo omezení odezvy. 
+Pokud by se útočník pokusil proniknout aplikaci, mělo by to být upozornění. Často se útoky můžou Spotted prozkoumáním protokolů ze služeb. Útoky opouští příznakem příznaku, který může být Spotted před úspěchem. V případě, že se útočník pokouší odhadnout heslo, provede mnoho požadavků na přihlašovací systém. Monitorování systému přihlášení dokáže detekovat divné vzory, které nejsou v typickém vzorovém přístupu. Toto monitorování se dá přepínat na výstrahu, která může zase upozornit na určitou osobu, aby aktivovala určitý druh protiopatření. Vysoce vyspělý monitorovací systém může dokonce provádět akce na základě těchto odchylek, které přidávají pravidla pro blokování požadavků nebo omezení odezvy.
 
 ## <a name="securing-the-build"></a>Zabezpečení sestavení
 
-Jedno místo, kde je často přehledáno zabezpečení, je okolo procesu sestavení. Pouze by měl spustit kontroly zabezpečení, jako je například vyhledávání nezabezpečeného kódu nebo přihlašovací údaje k vrácení se změnami, ale samotný Build by měl být zabezpečený. Pokud dojde k ohrožení bezpečnosti serveru sestavení, poskytuje fantastická vektor k zavedení libovolného kódu do produktu. 
+Jedno místo, kde je často přehledáno zabezpečení, je okolo procesu sestavení. Pouze by měl spustit kontroly zabezpečení, jako je například vyhledávání nezabezpečeného kódu nebo přihlašovací údaje k vrácení se změnami, ale samotný Build by měl být zabezpečený. Pokud dojde k ohrožení bezpečnosti serveru sestavení, poskytuje fantastická vektor k zavedení libovolného kódu do produktu.
 
-Představte si, že útočník se zlými úmysly ukrást hesla uživatelů přihlašovat k webové aplikaci. Mohli by zavést krok sestavení, který upraví rezervovaného kódu tak, aby na jiný server kontroloval jakoukoli žádost o přihlášení. Při dalším kódu projde sestavení se tiše aktualizuje. Kontrola ohrožení zabezpečení zdrojového kódu nebude zachytit při spuštění před sestavením. Stejně tak nikdo nebude zachytit v revizi kódu, protože kroky sestavení jsou na serveru sestavení živé. Zneužitný kód bude jít do produkčního prostředí, kde může shromažďovat hesla. Pravděpodobně není k dispozici žádný protokol auditu změny procesu sestavení nebo alespoň nikdo nesleduje audit. 
+Představte si, že útočník se zlými úmysly ukrást hesla uživatelů přihlašovat k webové aplikaci. Mohli by zavést krok sestavení, který upraví rezervovaného kódu tak, aby na jiný server kontroloval jakoukoli žádost o přihlášení. Při dalším kódu projde sestavení se tiše aktualizuje. Kontrola ohrožení zabezpečení zdrojového kódu nebude zachytit při spuštění před sestavením. Stejně tak nikdo nebude zachytit v revizi kódu, protože kroky sestavení jsou na serveru sestavení živé. Zneužitný kód bude jít do produkčního prostředí, kde může shromažďovat hesla. Pravděpodobně není k dispozici žádný protokol auditu změny procesu sestavení nebo alespoň nikdo nesleduje audit.
 
 Toto je dokonalý příklad zdánlivě nízké hodnoty, který se dá použít k přerušení systému. Jakmile útočník dojde k porušení hraničního systému, může začít pracovat na hledání způsobů, jak zvýšit svoje oprávnění na místo, kde může způsobit skutečnou škodu.
 
 ## <a name="building-secure-code"></a>Sestavování zabezpečeného kódu
 
-.NET Framework je již poměrně zabezpečenou architekturou. Zabrání některému nástrah nespravovaného kódu, jako je například procházení konců polí. Práce se aktivně provádí za účelem opravy děr zabezpečení při jejich zjištění. K dispozici je i [Bounty program](https://www.microsoft.com/msrc/bounty) , který zaplatí výzkumným pracovníkům, aby vyhledal problémy v rámci rozhraní a nahlásil je místo jejich zneužití. 
+.NET Framework je již poměrně zabezpečenou architekturou. Zabrání některému nástrah nespravovaného kódu, jako je například procházení konců polí. Práce se aktivně provádí za účelem opravy děr zabezpečení při jejich zjištění. K dispozici je i [Bounty program](https://www.microsoft.com/msrc/bounty) , který zaplatí výzkumným pracovníkům, aby vyhledal problémy v rámci rozhraní a nahlásil je místo jejich zneužití.
 
 Existuje mnoho způsobů, jak zvýšit zabezpečení kódu .NET. Následující pokyny, jako je například [pokyny k zabezpečenému kódování pro článek o rozhraní .NET](https://docs.microsoft.com/dotnet/standard/security/secure-coding-guidelines) , jsou přijatelné krok k zajištění zabezpečení kódu od základu. [OWASP prvních 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) je další nevýznamný průvodce pro sestavování zabezpečeného kódu.
 
-Proces sestavení je dobrým místem, kde můžete umístit nástroje pro kontrolu, aby se zjistily problémy ve zdrojovém kódu předtím, než se provedou v produkci. Většina každého projektu má závislosti na některých dalších balíčcích. Nástroj, který může kontrolovat zastaralé balíčky, zachytí problémy v noci. I při sestavování imagí Docker je vhodné zkontrolovat a ujistit se, že základní image nemá známá slabá místa. Další věc, kterou je třeba zkontrolovat, je, že nikdo nechtěně rezervoval přihlašovací údaje. 
+Proces sestavení je dobrým místem, kde můžete umístit nástroje pro kontrolu, aby se zjistily problémy ve zdrojovém kódu předtím, než se provedou v produkci. Většina každého projektu má závislosti na některých dalších balíčcích. Nástroj, který může kontrolovat zastaralé balíčky, zachytí problémy v noci. I při sestavování imagí Docker je vhodné zkontrolovat a ujistit se, že základní image nemá známá slabá místa. Další věc, kterou je třeba zkontrolovat, je, že nikdo nechtěně rezervoval přihlašovací údaje.
 
-## <a name="built-in-security"></a>Integrované zabezpečení 
+## <a name="built-in-security"></a>Integrované zabezpečení
 
 Azure je navržený tak, aby se vyrovnal použitelnost a zabezpečení pro většinu uživatelů. Různí uživatelé budou mít různé požadavky na zabezpečení, takže potřebují vyladit jejich přístup k zabezpečení cloudu. Microsoft zveřejňuje v [centru](https://azure.microsoft.com/support/trust-center/)zabezpečení skvělé informace o zabezpečení. Tento prostředek by měl být prvním zastavením pro odborníky, kteří mají zájem o fungování integrovaných technologií pro zmírnění útoků.
 
@@ -99,15 +99,15 @@ Pokračujeme v cestě k ilustraci principu minimálního oprávnění, ne všech
 
 Zásada odepření komunikace mezi prostředky může být obtěžující k implementaci, zejména z pozadí používání Azure bez omezení provozu. V některých dalších cloudech je koncept skupin zabezpečení sítě mnohem více rozšířených. Výchozí zásadou pro AWS je například to, že prostředky nemohou komunikovat mezi sebou, dokud nejsou povoleny pravidly v NSG. I když je to pomalejší, nabízí více omezující prostředí bezpečnější výchozí nastavení. Použití řádných postupů DevOps, zejména použití [Azure Resource Manager nebo terraformu](infrastructure-as-code.md) ke správě oprávnění, může zjednodušit řízení pravidel.
 
-Virtuální sítě mohou být užitečné také při nastavování komunikace mezi místními a cloudovým prostředkům. K bezproblémovému připojení těchto dvou sítí lze použít virtuální privátní síť. To umožňuje provozování virtuální sítě bez jakéhokoli řazení brány pro scénáře, ve kterých jsou všichni uživatelé na pracovišti. K dispozici je řada technologií, které lze použít k vytvoření této sítě. Nejjednodušší je použít síť VPN typu [site-to-site](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) , kterou je možné zřídit mezi mnoha směrovači a Azure. Provoz se šifruje a tuneluje přes Internet za stejné náklady za každý bajt jako jakýkoliv jiný provoz. V případě scénářů, kde je žádoucí větší šířka pásma nebo větší zabezpečení, Azure nabízí službu s názvem [Express Route](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#ExpressRoute) , která používá privátní okruh mezi místní sítí a Azure. Je levnější a obtížné vytvořit, ale také bezpečnější. 
+Virtuální sítě mohou být užitečné také při nastavování komunikace mezi místními a cloudovým prostředkům. K bezproblémovému připojení těchto dvou sítí lze použít virtuální privátní síť. To umožňuje provozování virtuální sítě bez jakéhokoli řazení brány pro scénáře, ve kterých jsou všichni uživatelé na pracovišti. K dispozici je řada technologií, které lze použít k vytvoření této sítě. Nejjednodušší je použít síť VPN typu [site-to-site](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) , kterou je možné zřídit mezi mnoha směrovači a Azure. Provoz se šifruje a tuneluje přes Internet za stejné náklady za každý bajt jako jakýkoliv jiný provoz. V případě scénářů, kde je žádoucí větší šířka pásma nebo větší zabezpečení, Azure nabízí službu s názvem [Express Route](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#ExpressRoute) , která používá privátní okruh mezi místní sítí a Azure. Je levnější a obtížné vytvořit, ale také bezpečnější.
 
 ## <a name="role-based-access-control-for-restricting-access-to-azure-resources"></a>Řízení přístupu na základě role pro omezení přístupu k prostředkům Azure
 
-RBAC je systém, který poskytuje identitu aplikacím běžícím v Azure. Aplikace mají přístup k prostředkům pomocí této identity místo nebo kromě používání klíčů nebo hesel. 
+RBAC je systém, který poskytuje identitu aplikacím běžícím v Azure. Aplikace mají přístup k prostředkům pomocí této identity místo nebo kromě používání klíčů nebo hesel.
 
 ## <a name="security-principals"></a>Objekty zabezpečení
 
-První komponentou v RBAC je objekt zabezpečení. Objekt zabezpečení může být uživatel, skupina, instanční objekt nebo spravovaná identita. 
+První komponentou v RBAC je objekt zabezpečení. Objekt zabezpečení může být uživatel, skupina, instanční objekt nebo spravovaná identita.
 
 ![Figure 10-2 různé typy objektů zabezpečení ](./media/rbac-security-principal.png)
 **obrázek 10-2**. Různé typy objektů zabezpečení.
@@ -117,7 +117,7 @@ První komponentou v RBAC je objekt zabezpečení. Objekt zabezpečení může b
 - Instanční objekt – identita zabezpečení, pod kterou se spouštějí služby nebo aplikace.
 - Spravovaná identita – Azure Active Directory identitou, kterou spravuje Azure. Spravované identity se obvykle používají při vývoji cloudových aplikací, které spravují přihlašovací údaje pro ověřování ve službách Azure.
 
-Objekt zabezpečení lze použít pro většinu prostředků. To znamená, že je možné přiřadit objekt zabezpečení k kontejneru běžícímu v rámci Azure Kubernetes a umožnit mu tak přístup k tajným klíčům uloženým v Key Vault. Funkce Azure by mohla převzít oprávnění, které mu umožní komunikovat s instancí služby Active Directory a ověřit token JWT pro volajícího uživatele. Po povolení služeb u instančního objektu je možné jejich oprávnění spravovat podrobně pomocí rolí a oborů.  
+Objekt zabezpečení lze použít pro většinu prostředků. To znamená, že je možné přiřadit objekt zabezpečení k kontejneru běžícímu v rámci Azure Kubernetes a umožnit mu tak přístup k tajným klíčům uloženým v Key Vault. Funkce Azure by mohla převzít oprávnění, které mu umožní komunikovat s instancí služby Active Directory a ověřit token JWT pro volajícího uživatele. Po povolení služeb u instančního objektu je možné jejich oprávnění spravovat podrobně pomocí rolí a oborů.
 
 ## <a name="roles"></a>Role
 
@@ -153,17 +153,17 @@ Kalkulačka oprávnění ![Figure 10-4 pro službu App Service ](./media/check-r
 
 ## <a name="securing-secrets"></a>Zabezpečení tajných kódů
 
-Hesla a certifikáty jsou běžným vektorem útoku pro útočníky. Hardware odhalující hesla může provést útok hrubou silou a pokusit se odhadnout miliardy hesel za sekundu. Proto je důležité, aby hesla používaná pro přístup k prostředkům byla silná a s velkým množstvím znaků. Tato hesla jsou přesně typu hesla, která jsou prakticky nemožná zapamatovatelná. Naštěstí hesla v Azure ve skutečnosti nemusíte znát ani žádný člověk. 
+Hesla a certifikáty jsou běžným vektorem útoku pro útočníky. Hardware odhalující hesla může provést útok hrubou silou a pokusit se odhadnout miliardy hesel za sekundu. Proto je důležité, aby hesla používaná pro přístup k prostředkům byla silná a s velkým množstvím znaků. Tato hesla jsou přesně typu hesla, která jsou prakticky nemožná zapamatovatelná. Naštěstí hesla v Azure ve skutečnosti nemusíte znát ani žádný člověk.
 
 Mnohé z [odborníků na zabezpečení navrhují](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/) použití Správce hesel k tomu, aby vaše vlastní hesla byla nejlepším řešením. Při centralizaci hesel na jednom místě vám taky umožní používat velmi složitá hesla a zajistit, aby byly pro každý účet jedinečné. V Azure existuje stejný systém: centrální úložiště tajných kódů.
 
 ## <a name="azure-key-vault"></a>Azure Key Vault
 
-Azure Key Vault poskytuje centralizované umístění pro ukládání hesel pro věci, jako jsou databáze, klíče rozhraní API a certifikáty. Po zadání tajného klíče do trezoru se už znovu nezobrazí a příkazy k jeho extrakci a zobrazení jsou záměrně komplikované. Informace v bezpečí jsou chráněné pomocí softwarového šifrování nebo ověřených modulů zabezpečení hardwaru na úrovni FIPS 140-2 úrovně 2. 
+Azure Key Vault poskytuje centralizované umístění pro ukládání hesel pro věci, jako jsou databáze, klíče rozhraní API a certifikáty. Po zadání tajného klíče do trezoru se už znovu nezobrazí a příkazy k jeho extrakci a zobrazení jsou záměrně komplikované. Informace v bezpečí jsou chráněné pomocí softwarového šifrování nebo ověřených modulů zabezpečení hardwaru na úrovni FIPS 140-2 úrovně 2.
 
-Přístup k trezoru klíčů se poskytuje prostřednictvím RBACs, což znamená, že k informacím v trezoru nemůžou přistupovat jenom žádného uživatele. Řekněme, že webová aplikace chce získat přístup k databázovému připojovacímu řetězci uloženému v Azure Key Vault. Aby bylo možné získat přístup, aplikace musí být spuštěny pomocí instančního objektu. V rámci této předpokládané role mohou tajné klíče přečíst z bezpečného. Existuje řada různých nastavení zabezpečení, která mohou dále omezovat přístup k úložišti aplikace, aby nemohly aktualizovat tajné kódy, ale číst je pouze. 
+Přístup k trezoru klíčů se poskytuje prostřednictvím RBACs, což znamená, že k informacím v trezoru nemůžou přistupovat jenom žádného uživatele. Řekněme, že webová aplikace chce získat přístup k databázovému připojovacímu řetězci uloženému v Azure Key Vault. Aby bylo možné získat přístup, aplikace musí být spuštěny pomocí instančního objektu. V rámci této předpokládané role mohou tajné klíče přečíst z bezpečného. Existuje řada různých nastavení zabezpečení, která mohou dále omezovat přístup k úložišti aplikace, aby nemohly aktualizovat tajné kódy, ale číst je pouze.
 
-Přístup k trezoru klíčů je možné monitorovat, aby se zajistilo, že k trezoru budou přistupovat jenom očekávané aplikace. Protokoly je možné integrovat zpátky do Azure Monitor a odemknout možnost nastavení výstrah při zjištění neočekávaných podmínek. 
+Přístup k trezoru klíčů je možné monitorovat, aby se zajistilo, že k trezoru budou přistupovat jenom očekávané aplikace. Protokoly je možné integrovat zpátky do Azure Monitor a odemknout možnost nastavení výstrah při zjištění neočekávaných podmínek.
 
 ## <a name="kubernetes"></a>Kubernetes
 
@@ -209,11 +209,11 @@ Zachování bezpečnosti dat je důležité, ať už se jedná o disk nebo přen
 
 Existuje několik způsobů, jak šifrovat provoz v síti v Azure. Přístup ke službám Azure se obvykle provádí prostřednictvím připojení, která používají protokol TLS (Transport Layer Security). Například všechna připojení k rozhraním API Azure vyžadují připojení TLS. Připojení ke koncovým bodům ve službě Azure Storage může být stejně omezené jenom přes šifrovaná připojení TLS.
 
-TLS je složitý protokol a stačí vědět, že připojení pomocí protokolu TLS nestačí k zajištění zabezpečení. Například protokol TLS 1,0 je chronicky nezabezpečený a TLS 1,1 není mnohem lepší. I v rámci verzí TLS existují různá nastavení, která umožňují snazší dešifrování připojení. Nejlepším postupem je ověřit a zjistit, jestli připojení k serveru používá aktualizované a dobře nakonfigurované protokoly. 
+TLS je složitý protokol a stačí vědět, že připojení pomocí protokolu TLS nestačí k zajištění zabezpečení. Například protokol TLS 1,0 je chronicky nezabezpečený a TLS 1,1 není mnohem lepší. I v rámci verzí TLS existují různá nastavení, která umožňují snazší dešifrování připojení. Nejlepším postupem je ověřit a zjistit, jestli připojení k serveru používá aktualizované a dobře nakonfigurované protokoly.
 
 Tuto kontrolu může provést externí služba, například test serveru SSL Labs SSL. Testovací běh na typický koncový bod Azure, v tomto případě koncový bod služby Service Bus, poskytuje téměř dokonalý výsledek A.
 
-Dokonce i služby, jako jsou databáze SQL Azure, používají šifrování TLS, aby data zůstala skrytá. Zajímavou součástí šifrování přenášených dat pomocí protokolu TLS je to, že není možné, ani pro společnost Microsoft, aby naslouchala v souvislosti s připojením mezi počítači se systémem TLS. To by mělo poskytovat pohodlí pro společnosti, které se zabývají tím, že jejich data mohou být ohrožena společností Microsoft nebo dokonce i objektem Actor, který má více prostředků než standardní útočník. 
+Dokonce i služby, jako jsou databáze SQL Azure, používají šifrování TLS, aby data zůstala skrytá. Zajímavou součástí šifrování přenášených dat pomocí protokolu TLS je to, že není možné, ani pro společnost Microsoft, aby naslouchala v souvislosti s připojením mezi počítači se systémem TLS. To by mělo poskytovat pohodlí pro společnosti, které se zabývají tím, že jejich data mohou být ohrožena společností Microsoft nebo dokonce i objektem Actor, který má více prostředků než standardní útočník.
 
 ![Figure 10-5 protokolu SSL Labs zobrazuje skóre pro Service Bus koncový bod. ](./media/ssl-report.png)
 **obrázek 10-5**. Sestava SSL Labs zobrazuje skóre pro Service Bus koncový bod.
@@ -230,7 +230,7 @@ Jako modul Azure Storage se používá větší počet Azure. Disky virtuálníh
 
 Pokud je Azure Storage dobře zašifrovaná, pak poskytuje základ pro většinu všeho jiného, než se šifrují taky. Azure Storage [je šifrovaný](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) pomocí standardu AES [140-2](https://en.wikipedia.org/wiki/FIPS_140) kompatibilního s [256 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Jedná se o dobře používanou technologii šifrování, která byla předmětem rozsáhlých akademickch kontrol za posledních 20 let. V současné době neexistuje žádný známý praktický útok, který by někomu neměl vědět, že by mohl číst data zašifrovaná pomocí AES.
 
-Ve výchozím nastavení jsou klíče používané pro šifrování Azure Storage spravovány společností Microsoft. Existují rozsáhlé ochrany, které zajišťují, aby se zabránilo škodlivému přístupu k těmto klíčům. Uživatelé s konkrétními požadavky na šifrování ale můžou taky [poskytovat vlastní klíče úložiště](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell), které se spravují v Azure Key Vault. Tyto klíče můžete kdykoli odvolat, což by efektivně vykreslilo obsah účtu úložiště, který je nepřístupný.
+Ve výchozím nastavení jsou klíče používané pro šifrování Azure Storage spravovány společností Microsoft. Existují rozsáhlé ochrany, které zajišťují, aby se zabránilo škodlivému přístupu k těmto klíčům. Uživatelé s konkrétními požadavky na šifrování ale můžou taky [poskytovat vlastní klíče úložiště](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell) , které se spravují v Azure Key Vault. Tyto klíče můžete kdykoli odvolat, což by efektivně vykreslilo obsah účtu úložiště, který je nepřístupný.
 
 Virtuální počítače používají šifrované úložiště, ale je možné poskytnout další vrstvu šifrování pomocí technologií, jako je BitLocker ve Windows nebo DM-crypt v systému Linux. Tyto technologie znamenají, že i v případě, že se image disku nevrátila z úložiště, zůstane v blízkosti nemožné ji přečíst.
 
@@ -242,7 +242,7 @@ Parametry šifrování jsou uloženy v databázi `master` a při spuštění jso
 
 "Transparentní" část protokolu TDS pochází ze skutečnosti, že nejsou k dispozici žádné změny klienta k používání šifrované databáze. I když tento přístup poskytuje dobré zabezpečení, je nevrácení hesla databáze dostatečné, aby mohli uživatelé data dešifrovat. Existuje další postup, který šifruje jednotlivé sloupce nebo tabulky v databázi. [Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) zajistí, že šifrovaná data se v rámci databáze zobrazí v prostém textu.
 
-Nastavení této úrovně šifrování vyžaduje spuštění prostřednictvím průvodce v SQL Server Management Studio k výběru řazení šifrování a místa, kde v Key Vault ukládat přidružené klíče. 
+Nastavení této úrovně šifrování vyžaduje spuštění prostřednictvím průvodce v SQL Server Management Studio k výběru řazení šifrování a místa, kde v Key Vault ukládat přidružené klíče.
 
 ![Figure 10-6 výběru sloupců v tabulce k šifrování pomocí Always Encrypted ](./media/always-encrypted.png)
 **obrázek 10-6**. Výběr sloupců v tabulce k šifrování pomocí Always Encrypted.
@@ -262,7 +262,7 @@ I když Cosmos DB neposkytuje pro poskytování šifrovacích klíčů zákazní
 
 ## <a name="keeping-secure"></a>Zachování zabezpečení
 
-Azure obsahuje všechny nástroje, které jsou nezbytné pro vydání vysoce zabezpečeného produktu. Řetěz je však pouze tak silný jako jeho slabý odkaz. Pokud se aplikace nasazené na Azure nevyvinuly se správnými bezpečnostními místo a dobrými audity zabezpečení, stane se slabým odkazem v řetězu. Existuje mnoho skvělých statických nástrojů pro analýzu, šifrovacích knihoven a postupů zabezpečení, které je možné použít k zajištění toho, aby byl software nainstalovaný v Azure jako takový jako samotný Azure sám zabezpečený. Příklady [statických analytických nástrojů](https://www.whitesourcesoftware.com/), [knihoven šifrování](https://www.libressl.org/)a [postupů zabezpečení](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/), [LibreSSL](https://www.libressl.org/) a [červeného a nemodrého testování průniku zabezpečení Microsoft Azure](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/) jsou příklady toho, v uvedeném pořadí. 
+Azure obsahuje všechny nástroje, které jsou nezbytné pro vydání vysoce zabezpečeného produktu. Řetěz je však pouze tak silný jako jeho slabý odkaz. Pokud se aplikace nasazené na Azure nevyvinuly se správnými bezpečnostními místo a dobrými audity zabezpečení, stane se slabým odkazem v řetězu. Existuje mnoho skvělých statických nástrojů pro analýzu, šifrovacích knihoven a postupů zabezpečení, které je možné použít k zajištění toho, aby byl software nainstalovaný v Azure jako takový jako samotný Azure sám zabezpečený. Mezi příklady patří [statické nástroje pro analýzu](https://www.whitesourcesoftware.com/), [knihovny šifrování](https://www.libressl.org/)a [postupy zabezpečení](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/).
 
 >[!div class="step-by-step"]
 >[Předchozí](security.md)

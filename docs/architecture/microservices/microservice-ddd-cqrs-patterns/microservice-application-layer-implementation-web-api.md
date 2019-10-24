@@ -2,12 +2,12 @@
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
 ms.date: 10/08/2018
-ms.openlocfilehash: df304ffbe2406323e3dcf42b9eb989b02a62b28b
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 38c0bdb32666ab727c573d466d3e30d739bdd3b3
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249737"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771120"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -181,7 +181,7 @@ Vzor příkazu je vnitřně spojen se vzorem CQRS, který byl představen dřív
 
 Jak je znázorněno na obrázku 7-24, je vzor založený na přijímání příkazů ze strany klienta, jejich zpracování na základě pravidel doménové struktury a nakonec trvalého uchování stavů transakcemi.
 
-![Zobrazení vysoké úrovně na straně zápisu v CQRS: aplikace uživatelského rozhraní odesílá příkaz prostřednictvím rozhraní API, které se dostane k CommandHandler –, které závisí na doménovém modelu a infrastruktuře pro aktualizaci databáze.](./media/image21.png)
+![Zobrazení vysoké úrovně na straně zápisu v CQRS: aplikace uživatelského rozhraní odesílá příkaz prostřednictvím rozhraní API, které se dostane k CommandHandler –, který závisí na doménovém modelu a infrastruktuře pro aktualizaci databáze.](./media/image21.png)
 
 **Obrázek 7-24**. Pohled na vysoké úrovni příkazů nebo "na straně transakčního" ve vzoru CQRS
 
@@ -285,7 +285,7 @@ V podstatě třída Command obsahuje všechna data, která potřebujete pro prov
 
 V důsledku dalších charakteristik jsou příkazy neměnné, protože očekávané využití je, že jsou zpracovávány přímo doménovým modelem. Nemusejí se měnit během plánované životnosti. Ve C# třídě lze neměnnosti dosáhnout tak, že neexistují žádné metody setter nebo jiné metody, které mění vnitřní stav.
 
-Je třeba mít na paměti, že Pokud zamýšlíte nebo očekáváte, že se budou provádět příkazy serializace/deserializace, vlastnosti musí mít privátní metodu setter a atribut `[DataMember]` (nebo `[JsonProperty]`), jinak by deserializátor nedokázal rekonstruovat objekt v cíl s požadovanými hodnotami.
+Uvědomte si, že Pokud zamýšlíte nebo očekáváte, že bude provedený proces serializace/deserializace, vlastnosti musí mít privátní metodu setter a atribut `[DataMember]` (nebo `[JsonProperty]`), jinak deserializátor nebude moci rekonstruovat objekt v cíl s požadovanými hodnotami.
 
 Například třída příkazu pro vytvoření objednávky je pravděpodobně podobná z údajů pro pořadí, které chcete vytvořit, ale pravděpodobně nepotřebujete stejné atributy. Například `CreateOrderCommand` nemá ID objednávky, protože objednávka ještě nebyla vytvořena.
 
@@ -451,9 +451,9 @@ Proto schopnost reagovat na klienta po ověření zprávy příkazu, která byla
 
 Kromě toho asynchronní příkazy jsou jednosměrné příkazy, které v mnoha případech nemusí být potřeba, jak je vysvětleno v následujícím zajímavém Exchangi mezi Burtsev Alexey a Greg Youngem v [online konverzaci](https://groups.google.com/forum/#!msg/dddcqrs/xhJHVxDx2pM/WP9qP8ifYCwJ):
 
-> \[Burtsev Alexey @ no__t-1 najdu spoustu kódu, kde lidé používají zpracování asynchronních příkazů nebo jednosměrné zasílání zpráv bez jakéhokoli důvodu (neprovádí se žádné dlouhé operace) hranice, která bude používat sběrnici zpráv). Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
+> \[Burtsev Alexey \] najdu spoustu kódu, kde lidé používají zpracování asynchronních příkazů nebo jednosměrné zasílání zpráv bez jakéhokoli důvodu (neprovádí žádnou dlouhou operaci) (neprovádí se žádné dlouhé operace), neprovádí externí asynchronní kód, nejedná se dokonce o různé aplikace. hranice, která bude používat sběrnici zpráv). Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
 >
-> \[Greg Young @ no__t-1 \[... \] neexistují asynchronní příkazy; ve skutečnosti se jedná o jinou událost. Pokud je potřeba přijmout, co pošlete, a vyvolat událost, Pokud nesouhlasíte, už Neoznamujeme, že vám @no__t – 0that je, není to příkaz @ no__t-1. Je to vám řekněte mi, že se něco udělalo. Vypadá to jako mírně rozdíl v prvním, ale má mnoho aspektů.
+> \[Greg mladý \] \[... \] neexistují asynchronní příkazy. ve skutečnosti se jedná o jinou událost. Pokud musím připomenout, co posílám, a vyvolat událost, Pokud nesouhlasíte, už Neoznamujeme, že vám \[that, že není \] příkazů. Je to vám řekněte mi, že se něco udělalo. Vypadá to jako mírně rozdíl v prvním, ale má mnoho aspektů.
 
 Asynchronní příkazy významně zvyšují složitost systému, protože neexistuje žádný jednoduchý způsob, jak označovat selhání. Proto nejsou asynchronní příkazy jiné doporučovány než při vyžadování požadavků na škálování nebo ve zvláštních případech při komunikaci interních mikroslužeb prostřednictvím zasílání zpráv. V těchto případech je třeba navrhnout samostatné vytváření sestav a systém obnovení pro selhání.
 
@@ -586,7 +586,7 @@ public class IdentifiedCommandHandler<T, R> :
 }
 ```
 
-Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak provede interní obchodní příkaz a znovu ho odešle zprostředkovateli, jako v poslední části kódu uvedeného výše. spuštění `_mediator.Send(message.Command)` z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
+Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak provede interní obchodní příkaz a znovu ho odešle zprostředkovateli, jako v poslední části kódu uvedeného výše. spuštění `_mediator.Send(message.Command)`, z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
 
 Při tomto postupu bude probíhat odkazování a spuštění obslužné rutiny obchodního příkazu, v tomto případě [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs) , který spouští transakce proti objednávce databáze, jak je znázorněno v následujícím kódu.
 
@@ -662,7 +662,7 @@ public class MediatorModule : Autofac.Module
 
 V takovém případě se s MediatR stane "Magic".
 
-Vzhledem k tomu, že každá obslužná rutina příkazu implementuje při registraci sestavení Obecné rozhraní @no__t 0, registruje kód s `RegisteredAssemblyTypes` všechny typy označené jako `IAsyncRequestHandler`, zatímco se vztahuje na `CommandHandlers` s jejich `Commands` díky vztahu uvedenému na Třída `CommandHandler`, jak je uvedeno v následujícím příkladu:
+Vzhledem k tomu, že každá obslužná rutina příkazu implementuje obecné `IAsyncRequestHandler<T>` rozhraní při registraci sestavení, registruje kód s `RegisteredAssemblyTypes` všech typů označených jako `IAsyncRequestHandler` při souvisejícím `CommandHandlers` s jejich `Commands`, a to díky vztahu uvedenému na  `CommandHandler` třídy, jako v následujícím příkladu:
 
 ```csharp
 public class CreateOrderCommandHandler
