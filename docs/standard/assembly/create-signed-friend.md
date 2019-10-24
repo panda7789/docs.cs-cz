@@ -5,12 +5,12 @@ ms.assetid: bab62063-61e6-453f-905f-77673df9534e
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 3bf71adc694f3c6e072990717198b4f2003cd503
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 52ecfbae11c7be125d0e60a0fce6a05182e2db9e
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523882"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774354"
 ---
 # <a name="how-to-create-signed-friend-assemblies"></a>Postupy: Vytváření podepsaných přátelských sestavení
 Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, která mají silné názvy. Obě sestavení musí mít silný název. I když obě sestavení v tomto příkladu používají stejné klíče, můžete použít různé klíče pro dvě sestavení.  
@@ -79,7 +79,7 @@ Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, kt
    Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
    ```  
    
-5. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_B* , který obsahuje následující kód. Vzhledem k tomu, že *friend_signed_A* Určuje *friend_signed_B* jako sestavení typu Friend, kód v *friend_signed_B* můžeC#přistupovat k typům `internal` () nebo `Friend` (Visual Basic) a členům z *friend_signed_A*. Soubor obsahuje následující kód.  
+5. Vytvořte soubor C# nebo Visual Basic s názvem *friend_signed_B* , který obsahuje následující kód. Vzhledem k tomu, že *friend_signed_A* Určuje *friend_signed_B* jako sestavení typu Friend, kód v *friend_signed_B* můžeC#přistupovat k typům `internal` () nebo`Friend`(Visual Basic) a členům z *friend_signed_A*. Soubor obsahuje následující kód.  
    
    ```csharp  
    // friend_signed_B.cs  
@@ -117,7 +117,7 @@ Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, kt
    vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
    ```  
    
-   Název sestavení generované kompilátorem se musí shodovat s názvem sestavení typu Friend předanému atributu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Musíte explicitně zadat název výstupního sestavení ( *. exe* nebo *. dll*) pomocí možnosti kompilátoru `/out`. Další informace naleznete v tématu [/out (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
+   Název sestavení generované kompilátorem se musí shodovat s názvem sestavení typu Friend předanému atributu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Musíte explicitně zadat název výstupního sestavení ( *. exe* nebo *. dll*) pomocí možnosti kompilátoru `-out`. Další informace naleznete v tématu [-out (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
    
 7. Spusťte soubor *friend_signed_B. exe* .  
    

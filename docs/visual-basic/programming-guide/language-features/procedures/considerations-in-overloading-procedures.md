@@ -25,65 +25,65 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-ms.openlocfilehash: b5a26a8b68a2f786213aa49f30247d692b3de2f7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bd5b0032ca63ccb2f2cc30d72a5b3f3c7eb3c346
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649648"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775739"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)
-Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých přetížených verzí. To obvykle znamená, že každá verze musíte zadat seznam různých parametrů. Další informace najdete v tématu "Jiný podpis" [přetížení procedury](./procedure-overloading.md).  
+Pokud převedete proceduru, musíte pro každou přetíženou verzi použít jiný *podpis* . To obvykle znamená, že každá verze musí určovat jiný seznam parametrů. Další informace naleznete v části "různé signatury" v tématu [Process Overloads](./procedure-overloading.md).  
   
- Můžete použít přetížení `Function` procedury s `Sub` postupu a naopak, pokud mají různé podpisy. Dvě přetížení nemůže se liší pouze v tom, jedna má návratovou hodnotu a druhá ne.  
+ Můžete přetížit `Function` proceduru pomocí `Sub` procedury a naopak, pokud mají různé signatury. Dvě přetížení se nemohou lišit pouze v tom, že jedna má návratovou hodnotu a druhá ne.  
   
- Vlastnost můžete přetížit stejným způsobem jako přetížení procedury a omezení. Nelze však přetížení procedury s vlastností nebo naopak.  
+ Můžete přetížit vlastnost stejným způsobem jako procedura přetížení a se stejnými omezeními. Nemůžete však přetížit proceduru s vlastností, ani naopak.  
   
-## <a name="alternatives-to-overloaded-versions"></a>Alternativy k přetížené verze  
- Máte někdy alternativy k přetížené verze, zejména pokud přítomnost argumentů je volitelný nebo jejich počet je proměnná.  
+## <a name="alternatives-to-overloaded-versions"></a>Alternativy k přetíženým verzím  
+ Někdy máte alternativu k přetíženým verzím, zejména v případě, že je přítomnost argumentů volitelná nebo jejich počet je proměnná.  
   
- Mějte na paměti, že volitelné argumenty nejsou nutně nepodporuje všechny jazyky a pole parametrů jsou omezené na Visual Basic. Pokud píšete procedury, která by mohla být volány kódem napsaným v některém z několika různých jazyků, přetížené verze nabídky nejvyšší flexibilitu.  
+ Mějte na paměti, že volitelné argumenty nejsou nutně podporovány všemi jazyky a pole parametrů jsou omezeny na Visual Basic. Pokud píšete proceduru, která je pravděpodobně volána z kódu napsaného v některém z několika různých jazyků, přetížené verze nabízejí největší flexibilitu.  
   
-### <a name="overloads-and-optional-arguments"></a>Přetížení a nepovinné argumenty.  
- Pokud volající kód může volitelně můžete zadat nebo vynechat jeden nebo více argumentů, můžete definovat více přetížené verze nebo používat volitelné parametry.  
+### <a name="overloads-and-optional-arguments"></a>Přetížení a volitelné argumenty  
+ Když volající kód může volitelně zadat nebo vynechat jeden nebo více argumentů, můžete definovat více přetížených verzí nebo použít volitelné parametry.  
   
 #### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
- Můžete zvážit, definování řadu přetížené verze v následujících případech:  
+ Můžete zvážit definování řady přetížených verzí v následujících případech:  
   
-- Logika v kódu procedury je výrazně liší v závislosti na tom, zda volající kód poskytuje volitelný argument nebo ne.  
+- Logika v kódu procedury je výrazně odlišná v závislosti na tom, zda volající kód dodává nepovinný argument nebo ne.  
   
-- Kód procedury nelze spolehlivě otestovat, zda volající kód dodal nepovinný argument. To platí, například, pokud neexistuje žádný možné Release candidate pro výchozí hodnotu, která volající kód nelze očekávat, že zadat.  
+- Kód procedury nemůže spolehlivě testovat, zda volající kód zadal volitelný argument. Jedná se například o případ, kdy není možný kandidát na výchozí hodnotu, kterou by volající kód nemohl dodat.  
   
-#### <a name="when-to-use-optional-parameters"></a>Kdy použít nepovinné parametry  
- Můžete dát přednost jeden nebo více volitelných parametrů v následujících případech:  
+#### <a name="when-to-use-optional-parameters"></a>Kdy použít volitelné parametry  
+ V následujících případech můžete preferovat jeden nebo více volitelných parametrů:  
   
-- Pouze požadované akce, když volající kód neposkytuje nepovinný argument je nastavena na výchozí hodnotu parametru. V takovém případě může být méně složitý kód procedury definujete jednu verzi s jednou nebo více `Optional` parametry.  
+- Jediná požadovaná akce, když volající kód neposkytne volitelný argument, je nastavit parametr na výchozí hodnotu. V takovém případě může být kód procedury méně komplikovaný, pokud definujete jednu verzi s jedním nebo více `Optional` parametry.  
   
  Další informace najdete v tématu [volitelné parametry](./optional-parameters.md).  
   
-### <a name="overloads-and-paramarrays"></a>Přetížení a ParamArrays  
- Pokud volající kód může předat proměnlivý počet argumentů, můžete definovat více přetížené verze nebo použití pole parametrů.  
+### <a name="overloads-and-paramarrays"></a>Přetížení a ParamArray  
+ Když volající kód může předat proměnný počet argumentů, můžete definovat více přetížených verzí nebo použít pole parametrů.  
   
 #### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
- Můžete zvážit, definování řadu přetížené verze v následujících případech:  
+ Můžete zvážit definování řady přetížených verzí v následujících případech:  
   
-- Víte, že volající kód nikdy neprocházejí více než malý počet hodnot pro pole parametrů.  
+- Víte, že volající kód nikdy nepředává více než malý počet hodnot do pole parametrů.  
   
-- Logika v kódu procedury je výrazně liší v závislosti na tom, kolik hodnot volající kód předá.  
+- Logika v kódu procedury je výrazně odlišná v závislosti na tom, kolik hodnot volající kód předává.  
   
-- Volající kód může předat hodnoty z různých datových typů.  
+- Volající kód může předat hodnoty různých datových typů.  
   
-#### <a name="when-to-use-a-parameter-array"></a>Kdy použít pole parametrů.  
- Budete se lépe vyhovovat `ParamArray` parametr v následujících případech:  
+#### <a name="when-to-use-a-parameter-array"></a>Kdy použít pole parametrů  
+ V následujících případech je lepší obsluhou `ParamArray` parametrem:  
   
-- Nejste schopni předpovědět, kolik hodnot volající kód můžete předat pole parametrů a může to být hodně.  
+- Nemůžete odhadnout, kolik hodnot může volající kód předat poli parametrů, a může to být velké číslo.  
   
-- Logiky postup slouží k procházení všech hodnot volající kód předá, provádí se v podstatě stejné operace v každé hodnotě.  
+- Procedura procedury je sama o sobě k iterování všech hodnot, které volající kód projde, a provádí v podstatě stejné operace na každé hodnotě.  
   
- Další informace najdete v tématu [pole parametrů](./parameter-arrays.md).  
+ Další informace naleznete v tématu [pole parametrů](./parameter-arrays.md).  
   
 ## <a name="implicit-overloads-for-optional-parameters"></a>Implicitní přetížení pro volitelné parametry  
- Procedura se [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametr je ekvivalentní na dvě přetížení procedury, jednu s volitelným parametrem a druhou bez parametru. Tento postup nejde přetížit se seznamem parametrů odpovídá buď z nich. Následující deklarace ukazuje to.  
+ Procedura s [volitelným](../../../../visual-basic/language-reference/modifiers/optional.md) parametrem je ekvivalentní dvou přetíženým procedurám, jeden s volitelným parametrem a druhý bez něj. Taková procedura se nedá přetížit se seznamem parametrů, který odpovídá některé z nich. Tuto ilustraci ilustrují následující deklarace.  
   
  [!code-vb[VbVbcnProcedures#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#58)]  
   
@@ -91,35 +91,35 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
   
  [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
- Pro proceduru s více než jeden volitelný parametr je sada implicitní přetížení, které byly přijaty logikou podobné jako v předchozím příkladu.  
+ Pro proceduru s více než jedním volitelným parametrem je množina implicitních přetížení, kterou dorazila v logice podobně jako v předchozím příkladu.  
   
-## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicitní přetížení pro ParamArray parametr  
- Kompilátor považuje postupu názvem [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr mít neomezený počet přetížení lišící se od sebe navzájem co volající kód předá pole parametrů, následujícím způsobem:  
+## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicitní přetížení parametru ParamArray  
+ Kompilátor považuje proceduru s parametrem [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) za nekonečný počet přetížení a liší se od sebe v tom, co volající kód předává do pole parametrů, následovně:  
   
-- Když volající kód neposkytuje argument pro jeden přetížená metoda `ParamArray`  
+- Jedno přetížení pro, když volající kód nedodá argument pro `ParamArray`  
   
-- Jedním přetížením pro když volající kód poskytuje jednorozměrné pole `ParamArray` typ elementu  
+- Jedno přetížení pro, když volající kód dodá jednorozměrné pole typu elementu `ParamArray`.  
   
-- Pro každý kladné celé číslo, jeden přetížení pro když volající kód poskytuje tento počet argumentů, každý z `ParamArray` typ elementu  
+- Pro každé kladné celé číslo jedno přetížení pro, když volající kód dodá tento počet argumentů, každý z `ParamArray` typ elementu.  
   
- Následující deklarace ukazují tyto implicitní přetížení.  
+ Následující deklarace ilustrují tato implicitní přetížení.  
   
  [!code-vb[VbVbcnProcedures#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#68)]  
   
  [!code-vb[VbVbcnProcedures#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#70)]  
   
- Tento postup se seznamem parametrů, který přebírá jednorozměrné pole pro pole parametrů nelze přetížit. Můžete však použít podpisy implicitní přetížení. Následující deklarace ukazuje to.  
+ Taková procedura se nedá přetížit se seznamem parametrů, který přebírá jednorozměrné pole pro pole parametrů. Můžete však použít signatury dalších implicitních přetížení. Tuto ilustraci ilustrují následující deklarace.  
   
  [!code-vb[VbVbcnProcedures#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#71)]  
   
-## <a name="typeless-programming-as-an-alternative-to-overloading"></a>Programování bez psaní jako alternativu k přetížení  
- Pokud chcete povolit, aby volající kód předat parametr různé datové typy, je alternativním přístupem programování bez psaní. Můžete nastavit typ kontroly přepínač tak, aby `Off` buď [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nebo [/optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) – možnost kompilátoru. Potom není potřeba deklarovat datový typ parametru. Tento přístup má ale tyto nevýhody ve srovnání s přetížení:  
+## <a name="typeless-programming-as-an-alternative-to-overloading"></a>Programování jako alternativa k přetížení  
+ Pokud chcete, aby volající kód předával jiné datové typy parametru, alternativním přístupem je beztyp programování. Můžete nastavit přepínač pro kontrolu typu na `Off` s použitím [příkazu Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nebo pomocí možnosti kompilátoru [-OptionStrict –](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) . Pak nemusíte deklarovat datový typ parametru. Tento přístup ale má v porovnání s přetížením následující nevýhody:  
   
-- Programování bez psaní vytvoří méně efektivní provádění kódu.  
+- Programování bez typů produkuje méně efektivní kód spuštění.  
   
-- Postup, musíte otestovat pro každý typ dat je připraven předávaný.  
+- Procedura musí být testována pro každý datový typ, který předpokládá předání.  
   
-- Kompilátor nemůže signalizujete chybu, pokud volající kód předá datový typ, který postup není podporován.  
+- Kompilátor nemůže signalizovat chybu, pokud volající kód předává datový typ, který procedura nepodporuje.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -128,7 +128,7 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
 - [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
 - [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)
-- [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá nepovinné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
 - [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Řešení přetížení](./overload-resolution.md)
 - [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)

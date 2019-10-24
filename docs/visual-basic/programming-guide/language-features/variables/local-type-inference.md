@@ -12,12 +12,12 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-ms.openlocfilehash: 26df91229f7c640f53fcc018d881f7d24baf7e42
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 2b239e17ba7fa0b6a6b08d52f4394541eaa08b28
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582456"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775714"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
 
@@ -82,5 +82,5 @@ Další informace naleznete v tématu [možnost odvození příkazu](../../../..
 - [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
 - [Příkaz For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md)
 - [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [/optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [-optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

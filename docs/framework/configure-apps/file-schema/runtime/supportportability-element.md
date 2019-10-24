@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 011793006f2aff32486fbe4537b46517e0a2b888
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 7a76c378038a19d3edb9fe0c5e61012cc854c1b7
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252308"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773933"
 ---
-# <a name="supportportability-element"></a>\<Značka supportPortability – element >
+# <a name="supportportability-element"></a>\<element > Značka supportPortability
 Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích .NET Framework tím, že zakáže výchozí chování, které zpracovává sestavení jako ekvivalent pro účely přenositelnosti aplikace.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Značka supportPortability >**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<značka supportportability >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,11 +37,11 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |Atribut|Popis|  
 |---------------|-----------------|  
 |PKT|Požadovaný atribut.<br /><br /> Určuje token veřejného klíče pro ovlivněné sestavení jako řetězec.|  
-|enabled|Nepovinný atribut.<br /><br /> Určuje, zda by měla být povolena podpora přenositelnosti mezi implementacemi zadaného .NET Framework sestavení.|  
+|umožněn|Nepovinný atribut.<br /><br /> Určuje, zda by měla být povolena podpora přenositelnosti mezi implementacemi zadaného .NET Framework sestavení.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |true|Povolí podporu přenositelnosti mezi implementacemi zadaného .NET Framework sestavení. Toto nastavení je výchozí.|  
 |false|Zakažte podporu přenositelnosti mezi implementacemi zadaného .NET Framework sestavení. To umožňuje, aby aplikace měla odkazy na více implementací určeného sestavení.|  
@@ -60,16 +60,16 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ## <a name="remarks"></a>Poznámky  
 
-Počínaje .NET Framework 4 je podpora automaticky poskytována pro aplikace, které mohou používat jednu ze dvou implementací .NET Framework, například implementaci .NET Framework nebo .NET Framework pro implementaci Silverlight. Dvě implementace konkrétního sestavení .NET Framework jsou v pořadači sestavení zobrazeny jako ekvivalent. V několika scénářích Tato funkce přenositelnosti aplikace způsobuje problémy. V těchto scénářích `<supportPortability>` lze prvek použít k zakázání funkce.  
+Počínaje .NET Framework 4 je podpora automaticky poskytována pro aplikace, které mohou používat jednu ze dvou implementací .NET Framework, například implementaci .NET Framework nebo .NET Framework pro implementaci Silverlight. Dvě implementace konkrétního sestavení .NET Framework jsou v pořadači sestavení zobrazeny jako ekvivalent. V několika scénářích Tato funkce přenositelnosti aplikace způsobuje problémy. V těchto scénářích lze pomocí elementu `<supportPortability>` funkci zakázat.  
   
 Jedním z takových scénářů je sestavení, které má odkazovat jak na implementaci .NET Framework, tak na .NET Framework pro implementaci Silverlightu konkrétního referenčního sestavení. Například Návrhář XAML napsaný v Windows Presentation Foundation (WPF) může potřebovat odkaz na implementaci WPF Desktop, pro uživatelské rozhraní návrháře a podmnožinu WPF, která je součástí implementace Silverlight. Ve výchozím nastavení samostatné odkazy způsobí chybu kompilátoru, protože vazba sestavení uvidí dvě sestavení jako ekvivalentní. Tento prvek zakáže výchozí chování a umožňuje, aby kompilace proběhla úspěšně.  
   
 > [!IMPORTANT]
-> Aby mohl kompilátor předat informace do logiky vytváření vazeb sestavení (Common Language Runtime), je nutné použít `/appconfig` možnost kompilátoru k určení umístění souboru App. config, který obsahuje tento prvek.  
+> Aby mohl kompilátor předat informace do logiky vytváření vazeb sestavení (Common Language Runtime), je nutné použít možnost kompilátoru `/appconfig` k určení umístění souboru App. config, který obsahuje tento prvek.  
   
 ## <a name="example"></a>Příklad  
 
-Následující příklad umožňuje, aby aplikace měla odkazy na implementaci .NET Framework a .NET Framework pro implementaci technologie Silverlight pro jakékoli .NET Framework sestavení, které existuje v obou implementacích. Možnost `/appconfig` kompilátoru se musí použít k určení umístění tohoto souboru App. config.  
+Následující příklad umožňuje, aby aplikace měla odkazy na implementaci .NET Framework a .NET Framework pro implementaci technologie Silverlight pro jakékoli .NET Framework sestavení, které existuje v obou implementacích. Možnost kompilátoru `/appconfig` musí být použita k určení umístění tohoto souboru App. config.  
   
 ```xml  
 <configuration>  
@@ -84,5 +84,5 @@ Následující příklad umožňuje, aby aplikace měla odkazy na implementaci .
   
 ## <a name="see-also"></a>Viz také:
 
-- [/appconfig (C# možnosti kompilátoru)](../../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)
+- [-appconfig (C# možnosti kompilátoru)](../../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)
 - [Přehled sjednocení .NET Framework sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))

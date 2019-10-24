@@ -1,7 +1,7 @@
 ---
 title: Celočíselné číselné typy C# – referenční informace
 description: Seznamte se s rozsahem, velikostí úložiště a s využitím pro každý celočíselný numerický typ.
-ms.date: 10/18/2019
+ms.date: 10/22/2019
 f1_keywords:
 - byte
 - byte_CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 3d4f3164d67a000123417619f3be6be455d5ab87
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c255711e4b165fdca27d50c6bd0f2debfe15ae25
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579185"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773871"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# Referenční dokumentace)
 
@@ -100,7 +100,7 @@ Typ celočíselného literálu je určen jeho příponou takto:
 
 Pokud hodnota reprezentovaná celočíselným literálem překračuje <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilátoru [CS1021](../../misc/cs1021.md) .
 
-Hodnota reprezentovaná celočíselným literálem se dá implicitně převést na typ s menším rozsahem, než je určený typ literálu. To je možné, pokud je hodnota v rozsahu cílového typu:
+Pokud je určený typ celočíselného literálu `int` a hodnota spadá do rozsahu cílového typu, hodnota reprezentovaná literálem se může implicitně převést na `sbyte`, `byte`, `short`, `ushort`, `uint`nebo `ulong`:
 
 ```csharp
 byte a = 17;
@@ -118,9 +118,7 @@ var longVariable = (long)42;
 
 ## <a name="conversions"></a>Převody
 
-Existuje implicitní převod (nazývaný *rozšiřující převod*) mezi dvěma celočíselnými typy, kde cílový typ může ukládat všechny hodnoty zdrojového typu. Například existuje implicitní převod z `int` na `long`, protože rozsah hodnot `int` je správná podmnožina `long`. Existují implicitní převody z menšího integrálního typu bez znaménka na větší typ se znaménkem. Je také implicitní převod z libovolného integrálního typu na libovolný typ s plovoucí desetinnou čárkou.  Neexistuje žádný implicitní převod z žádného typu se znaménkem na celočíselný typ bez znaménka.
-
-Je nutné použít explicitní přetypování pro převod jednoho celočíselného typu na jiný integrálový typ, pokud implicitní převod není definován ze zdrojového typu na cílový typ. Tato metoda se nazývá *zužující převod*. Explicitní případ je vyžadován, protože převod může mít za následek ztrátu dat.
+Libovolný celočíselný numerický typ můžete převést na jakýkoliv jiný integrální číselný typ. Pokud cílový typ může ukládat všechny hodnoty zdrojového typu, je převod implicitní. V opačném případě je nutné použít [operátor přetypování `()`](../operators/type-testing-and-cast.md#cast-operator-) k vyvolání explicitního převodu. Další informace najdete v tématu [integrované číselné převody](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -132,8 +130,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 ## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [Typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
-- [Tabulka výchozích hodnot](../keywords/default-values-table.md)
-- [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
+- [Typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
+- [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)

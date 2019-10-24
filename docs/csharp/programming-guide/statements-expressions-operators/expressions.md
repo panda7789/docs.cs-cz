@@ -6,16 +6,16 @@ helpviewer_keywords:
 - expressions [C#]
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
-ms.openlocfilehash: 1a0e94f40a9dc861b32e6a1c12935faadda9921b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2db08bd89b5e0fc612599f83cb02178aef5ee5fb
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921811"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774172"
 ---
 # <a name="expressions-c-programming-guide"></a>Výrazy (Průvodce programováním v C#)
 
-*Výraz* je sekvence jednoho nebo více operandů a nula nebo více operátorů, [](../../language-reference/operators/index.md) které lze vyhodnotit na jedinou hodnotu, objekt, metodu nebo obor názvů. Výrazy mohou být tvořeny literálovou hodnotou, voláním metody, operátorem a jeho operandy nebo jednoduchým *názvem*. Jednoduché názvy mohou být název proměnné, typ členu, parametr metody, obor názvů nebo typ.  
+*Výraz* je sekvence jednoho nebo více operandů a nula nebo více [operátorů](../../language-reference/operators/index.md) , které lze vyhodnotit na jedinou hodnotu, objekt, metodu nebo obor názvů. Výrazy mohou být tvořeny literálovou hodnotou, voláním metody, operátorem a jeho operandy nebo *jednoduchým názvem*. Jednoduché názvy mohou být název proměnné, typ členu, parametr metody, obor názvů nebo typ.  
   
  Výrazy můžou používat operátory, které zase používají jiné výrazy jako parametry, nebo volání metod, jejichž parametry jsou zase jiné volání metody, takže výrazy můžou být v rozsahu od jednoduchých až po velmi složité. Následují dva příklady výrazů:  
   
@@ -27,13 +27,13 @@ System.Convert.ToInt32("35");
   
 ## <a name="expression-values"></a>Hodnoty výrazů
 
- Ve většině kontextů, ve kterých jsou výrazy použity, například v příkazech nebo parametrech metody, je očekáván výraz pro vyhodnocení na určitou hodnotu. Pokud jsou celá čísla x a y, výraz `x + y` se vyhodnotí jako číselná hodnota. Výraz `new MyClass()` se vyhodnotí jako odkaz na novou instanci `MyClass` třídy. Výraz `myClass.ToString()` se vyhodnotí jako řetězec, protože to je návratový typ metody. Nicméně i když je název oboru názvů klasifikován jako výraz, nevyhodnotí se na hodnotu, takže nikdy nemůže být konečný výsledek jakéhokoli výrazu. Do parametru metody nelze předat název oboru názvů, nebo jej použít v novém výrazu, nebo jej přiřadit proměnné. Můžete ho použít jenom jako dílčí výraz ve větším výrazu. Totéž platí pro typy (jako oddělené od <xref:System.Type?displayProperty=nameWithType> objektů), názvy skupin metod (jako oddělené od konkrétních metod) a přístup k událostem [Přidat](../../language-reference/keywords/add.md) a [Odebrat](../../language-reference/keywords/remove.md) .  
+ Ve většině kontextů, ve kterých jsou výrazy použity, například v příkazech nebo parametrech metody, je očekáván výraz pro vyhodnocení na určitou hodnotu. Jsou-li x a y celá čísla, výraz `x + y` vyhodnotí na číselnou hodnotu. Výraz `new MyClass()` vyhodnocen jako odkaz na novou instanci `MyClass` třídy. Výraz `myClass.ToString()` vyhodnotí jako řetězec, protože to je návratový typ metody. Nicméně i když je název oboru názvů klasifikován jako výraz, nevyhodnotí se na hodnotu, takže nikdy nemůže být konečný výsledek jakéhokoli výrazu. Do parametru metody nelze předat název oboru názvů, nebo jej použít v novém výrazu, nebo jej přiřadit proměnné. Můžete ho použít jenom jako dílčí výraz ve větším výrazu. Totéž platí pro typy (jako oddělené od <xref:System.Type?displayProperty=nameWithType> objektů), názvy skupin metod (jako oddělené od konkrétních metod) a přístup k událostem [Přidat](../../language-reference/keywords/add.md) a [Odebrat](../../language-reference/keywords/remove.md) .  
   
- Každá hodnota má přidružený typ. Například pokud jsou x a y proměnné typu `int`, je hodnota výrazu `x + y` také typu `int`. Pokud je hodnota přiřazena proměnné jiného typu nebo pokud x a y jsou jiné typy, jsou použita pravidla převodu typu. Další informace o tom, jak tyto převody fungují, naleznete v tématu [přetypování a převody typu](../types/casting-and-type-conversions.md).  
+ Každá hodnota má přidružený typ. Například pokud jsou x a y proměnné typu `int`, hodnota `x + y` výrazu je také zadána jako `int`. Pokud je hodnota přiřazena proměnné jiného typu nebo pokud x a y jsou jiné typy, jsou použita pravidla převodu typu. Další informace o tom, jak tyto převody fungují, naleznete v tématu [přetypování a převody typu](../types/casting-and-type-conversions.md).  
   
 ## <a name="overflows"></a>Přetečení
 
- Číselné výrazy mohou způsobit přetečení, pokud je hodnota větší než maximální hodnota typu hodnoty. Další informace najdete v tématu [kontrolovaná a](../../language-reference/keywords/checked-and-unchecked.md) nezaškrtnutá a [explicitní číselná převodová tabulka](../../language-reference/keywords/explicit-numeric-conversions-table.md).  
+ Číselné výrazy mohou způsobit přetečení, pokud je hodnota větší než maximální hodnota typu hodnoty. Další informace najdete v části [zaškrtnuté a nezaškrtnuté](../../language-reference/keywords/checked-and-unchecked.md) a v části [explicitní číselné převody](../../language-reference/builtin-types/numeric-conversions.md#explicit-numeric-conversions) v tématu [integrovaných číselných převodů](../../language-reference/builtin-types/numeric-conversions.md) .
   
 ## <a name="operator-precedence-and-associativity"></a>Priorita operátorů a asociativita
 
@@ -43,19 +43,19 @@ System.Convert.ToInt32("35");
   
 ## <a name="literals-and-simple-names"></a>Literály a jednoduché názvy
 
- Dva nejjednodušší typy výrazů jsou literály a jednoduché názvy. Literál je konstantní hodnota, která nemá žádný název. Například v následujícím příkladu `5` kódu a `"Hello World"` jsou hodnoty literálu:  
+ Dva nejjednodušší typy výrazů jsou literály a jednoduché názvy. Literál je konstantní hodnota, která nemá žádný název. Například v následujícím příkladu kódu jsou `5` i `"Hello World"` hodnoty literálu:  
   
  [!code-csharp[csProgGuideStatements#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#2)]  
   
  Další informace o literálech naleznete v tématu [Types](../../language-reference/keywords/types.md).  
   
- V předchozím příkladu jsou oba `i` i `s` jednoduché názvy, které identifikují lokální proměnné. Pokud jsou tyto proměnné použity ve výrazu, název proměnné se vyhodnotí na hodnotu, která je aktuálně uložena v umístění proměnné v paměti. To je ukázáno v následujícím příkladu:  
+ V předchozím příkladu jsou `i` i `s` jednoduché názvy, které identifikují místní proměnné. Pokud jsou tyto proměnné použity ve výrazu, název proměnné se vyhodnotí na hodnotu, která je aktuálně uložena v umístění proměnné v paměti. To je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#3)]
 
 ## <a name="invocation-expressions"></a>Výrazy vyvolání
 
- V následujícím příkladu kódu volání `DoWork` je výraz vyvolání.  
+ V následujícím příkladu kódu je volání `DoWork` výrazem vyvolání.  
   
 ```csharp
 DoWork();  
@@ -92,6 +92,6 @@ Další informace naleznete v oddílu [Expressions](~/_csharplang/spec/expressio
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Operátory](../../language-reference/operators/index.md)
 - [Metody](../classes-and-structs/methods.md)
-- [Delegáti](../delegates/index.md)
+- [Delegáty](../delegates/index.md)
 - [Typy](../types/index.md)
 - [LINQ](../../linq/index.md)

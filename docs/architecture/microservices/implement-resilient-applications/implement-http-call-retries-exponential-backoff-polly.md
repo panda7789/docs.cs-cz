@@ -2,12 +2,12 @@
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
 ms.date: 01/07/2019
-ms.openlocfilehash: 82b3b0d37815e2f16ed3be1b1e7de37019b08ee8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9988f70513959c099c771fcc0221bba7e2e70200
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318414"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798813"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
 
@@ -53,17 +53,20 @@ Pomocí Polly můžete definovat zásady opakování s počtem opakování, expo
 
 ## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Přidání strategie kolísání do zásady opakování
 
-Pravidelná zásada opakování může mít vliv na váš systém v případech vysoké souběžnosti a škálovatelnosti a vysokého sporu. Chcete-li překonat špičky podobných pokusů přicházejících z mnoha klientů v případě částečných výpadků, dobrým řešením je přidat strategii kolísání do algoritmu opakování nebo zásady. To může zvýšit celkový výkon kompletního systému přidáním náhodnosti do exponenciálního omezení rychlostiu. Tím se rozšíří špičky, když dojde k problémům. Při použití jednoduchých zásad Polly by kód pro implementaci kolísání mohl vypadat jako v následujícím příkladu:
+Pravidelná zásada opakování může mít vliv na váš systém v případech vysoké souběžnosti a škálovatelnosti a vysokého sporu. Chcete-li překonat špičky podobných pokusů přicházejících z mnoha klientů v případě částečných výpadků, dobrým řešením je přidat strategii kolísání do algoritmu opakování nebo zásady. To může zvýšit celkový výkon kompletního systému přidáním náhodnosti do exponenciálního omezení rychlostiu. Tím se rozšíří špičky, když dojde k problémům. Princip je znázorněn v následujícím příkladu:
 
 ```csharp
 Random jitterer = new Random(); 
-Policy
-  .Handle<HttpResponseException>() // etc
-  .WaitAndRetry(5,    // exponential back-off plus some jitter
-      retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))  
-                    + TimeSpan.FromMilliseconds(jitterer.Next(0, 100)) 
-  );
+var retryWithJitterPolicy = HttpPolicyExtensions
+    .HandleTransientHttpError()
+    .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+    .WaitAndRetryAsync(6,    // exponential back-off plus some jitter
+        retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))  
+                      + TimeSpan.FromMilliseconds(jitterer.Next(0, 100)) 
+    );
 ```
+
+Polly poskytuje algoritmy chvění připravené k výrobě prostřednictvím webu projektu.
 
 ## <a name="additional-resources"></a>Další zdroje
 
@@ -75,6 +78,9 @@ Policy
 
 - **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
   <https://github.com/App-vNext/Polly>
+
+- **Polly: opakovat se kolísáním**  
+  <https://github.com/App-vNext/Polly/wiki/Retry-with-jitter>
 
 - **Brooker ohraničení Kolísání: lepší práce díky náhodnosti**  
   <https://brooker.co.za/blog/2015/03/21/backoff.html>

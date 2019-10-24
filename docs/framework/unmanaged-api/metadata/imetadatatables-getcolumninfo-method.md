@@ -1,6 +1,6 @@
 ---
 title: IMetaDataTables::GetColumnInfo – metoda
-ms.date: 03/30/2017
+ms.date: 10/10/2019
 api_name:
 - IMetaDataTables.GetColumnInfo
 api_location:
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c0755cb2a91d61725338562cb1fe249a9cfacc38
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dd67d9faafedf4fb92c69618d4464ebb2ce47dcc
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781518"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774249"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
-Získá data o zadaný sloupec zadané tabulky.  
+Načte data o zadaném sloupci v zadané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,61 @@ HRESULT GetColumnInfo (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry
+=======
+
  `ixTbl`  
- [in] Index požadovanou tabulku.  
+ pro Index požadované tabulky  
   
  `ixCol`  
- [in] Index na požadovaný sloupec.  
+ pro Index požadovaného sloupce  
   
  `poCol`  
- [out] Ukazatel na posun sloupce v řádku.  
+ mimo Ukazatel na posun sloupce v řádku.  
   
  `pcbCol`  
- [out] Ukazatel na velikost v bajtech, ve sloupci.  
+ mimo Ukazatel na velikost sloupce v bajtech.  
   
  `pType`  
- [out] Ukazatel na typ hodnoty ve sloupci.  
+ mimo Ukazatel na typ hodnot ve sloupci.  
   
  `ppName`  
- [out] Ukazatel na ukazatel na název sloupce.  
-  
+ mimo Ukazatel na ukazatel na název sloupce.  
+ 
+## <a name="remarks"></a>Poznámky
+
+Vrácený typ sloupce spadá do rozsahu hodnot:
+
+| pType                    | Popis   | Pomocná funkce                   |
+|--------------------------|---------------|-----------------------------------|
+| `0`..`iRidMax`<br>(0.. 63)   | Mezinárodní           | **IsRidType**<br>**IsRidOrToken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Kódovaný token | **IsCodedTokenType** <br>**IsRidOrToken** |
+| `iSHORT` (96)            | Int16         | **IsFixedType**                   |
+| `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
+| `iLONG` (98)             | Int32         | **IsFixedType**                   |
+| `iULONG` (99)            | UInt32        | **IsFixedType**                   |
+| `iBYTE` (100)            | Byte          | **IsFixedType**                   |
+| `iSTRING` (101)          | String        | **IsHeapType**                    |
+| `iGUID` (102)            | Hlavních          | **IsHeapType**                    |
+| `iBLOB` (103)            | Příznaky          | **IsHeapType**                    |
+
+Hodnoty, které jsou uloženy v *haldě* (to znamená `IsHeapType == true`), lze číst pomocí:
+
+- `iSTRING`: **IMetadataTables. GetString**
+- `iGUID`: **IMetadataTables. GETguid**
+- `iBLOB`: **IMetadataTables. Getblob**
+
+> [!IMPORTANT]
+> Chcete-li použít konstanty definované v tabulce výše, zahrňte direktivu `#define _DEFINE_META_DATA_META_CONSTANTS` poskytnutou hlavičkovým souborem *cor. h* .
+
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,76 +6,76 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: e51d2d5c34a501368ed77d6ceef73b57c6bd79be
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: ec314f78cf4c22c39d1ce41a7623bb4891f6ecd0
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469499"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774858"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
-Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládání hodnot, které zůstávají neměnný po celou dobu spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související s konstantami a přidružení konstantních hodnot s názvy.  
+Visual Basic poskytuje řadu předdefinovaných konstant a výčtů pro vývojáře. Konstanty ukládají hodnoty, které zůstávají v průběhu provádění aplikace konstantní. Výčty poskytují pohodlný způsob práce se sadami souvisejících konstant a k přidružení konstantních hodnot k názvům.  
   
 ## <a name="constants"></a>Konstanty  
   
-### <a name="conditional-compilation-constants"></a>Konstanty pro podmíněnou kompilaci  
- V následující tabulce jsou uvedeny předdefinované konstanty, které jsou dostupné pro podmíněnou kompilaci.  
+### <a name="conditional-compilation-constants"></a>Konstanty podmíněné kompilace  
+ Následující tabulka uvádí předdefinované konstanty, které jsou k dispozici pro podmíněnou kompilaci.  
   
-|**Konstanty**|**Popis**|  
+|**Změnil**|**Popis**|  
 |---|---|  
-|`CONFIG`|Řetězec, který odpovídá aktuální nastavení **aktivní konfigurace řešení** pole **nástroje Configuration Manager**.|  
-|`DEBUG`|A `Boolean` hodnotu, která je možné nastavit v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, konfiguraci ladění pro projekt definuje `DEBUG`. Když `DEBUG` je definován, <xref:System.Diagnostics.Debug> metody třídy generovat výstup do **výstup** okna. Pokud není definované, <xref:System.Diagnostics.Debug> metody třídy nejsou zkompilovány a nebude vygenerován žádný výstup ladění.|  
-|`TARGET`|Řetězec představující typ výstupu pro projekt, nebo nastavení příkazového řádku **/target** možnost. Možné hodnoty `TARGET` jsou:<br /><br /> -"winexe" pro aplikace Windows.<br />-řetězec "exe" pro konzolové aplikace.<br />-"library" pro knihovnu tříd.<br />-"modul" pro modul.<br />– **/Target** možnost může být nastavena v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu [/Target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
-|`TRACE`|A `Boolean` hodnotu, která je možné nastavit v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, všechny konfigurace projektu definovat `TRACE`. Když `TRACE` je definován, <xref:System.Diagnostics.Trace> metody třídy generovat výstup do **výstup** okna. Pokud není definované, <xref:System.Diagnostics.Trace> třídy, metody nejsou zkompilovány ale žádné `Trace` výstup vygenerován.|  
-|`VBC_VER`|Číslo, které představuje verzi jazyka Visual Basic v *hlavní*. *vedlejší* formátu.|  
+|`CONFIG`|Řetězec, který odpovídá aktuálnímu nastavení pole **Konfigurace aktivního řešení** v **Configuration Manager**.|  
+|`DEBUG`|Hodnota `Boolean`, kterou lze nastavit v dialogovém okně **Vlastnosti projektu** . Ve výchozím nastavení konfigurace ladění pro projekt definuje `DEBUG`. Pokud je definována `DEBUG`, metody třídy <xref:System.Diagnostics.Debug> generují výstup do okna **výstup** . Pokud není definován, <xref:System.Diagnostics.Debug> metody třídy nejsou zkompilovány a není vygenerován žádný výstup ladění.|  
+|`TARGET`|Řetězec představující typ výstupu pro projekt nebo nastavení možnosti **/target** příkazového řádku. Možné hodnoty `TARGET` jsou:<br /><br /> – "winexe" pro aplikaci pro Windows.<br />– "exe" pro konzolovou aplikaci.<br />– "knihovna" pro knihovnu tříd.<br />– "modul" pro modul.<br />-Možnost **/target** lze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu [-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
+|`TRACE`|Hodnota `Boolean`, kterou lze nastavit v dialogovém okně **Vlastnosti projektu** . Ve výchozím nastavení všechny konfigurace pro projekt definují `TRACE`. Pokud je definována `TRACE`, metody třídy <xref:System.Diagnostics.Trace> generují výstup do okna **výstup** . Pokud není definován, <xref:System.Diagnostics.Trace> metody třídy nejsou kompilovány a není vygenerován žádný `Trace` výstup.|  
+|`VBC_VER`|Číslo představující Visual Basic verze, v *Hlavní*. *vedlejší* formát|  
   
-### <a name="print-and-display-constants"></a>Tisk a zobrazení konstanty  
- Při volání tisku a zobrazit funkce, můžete ve svém kódu místo skutečných hodnot použít následující konstanty.  
+### <a name="print-and-display-constants"></a>Tisk a zobrazení konstant  
+ Při volání funkcí Print a Display můžete v kódu místo skutečných hodnot použít následující konstanty.  
   
-|**Konstanty**|**Popis**|  
+|**Změnil**|**Popis**|  
 |---|---|  
-|`vbCrLf`|Návrat na začátek řádku kombinaci znaků návrat a odřádkování.|  
-|`vbCr`|Návratový znak.|  
+|`vbCrLf`|Kombinace znaků pro návrat na začátek řádku nebo odřádkování|  
+|`vbCr`|Znak návratu na začátek řádku.|  
 |`vbLf`|Znak odřádkování.|  
-|`vbNewLine`|Znak nového řádku.|  
-|`vbNullChar`|Znak null.|  
-|`vbNullString`|Není stejný jako řetězec nulové délky (""); použít pro volání externí procedury.|  
-|`vbObjectError`|Číslo chyby. Uživatelem definované chybové čísla musí být větší než tato hodnota. Příklad:<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
+|`vbNewLine`|Znak nového řádku|  
+|`vbNullChar`|Znak null|  
+|`vbNullString`|Není stejný jako řetězec s nulovou délkou (""); používá se pro volání externích procedur.|  
+|`vbObjectError`|Číslo chyby. Uživatelsky definovaná čísla chyb by měla být větší než tato hodnota. Příklad:<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
 |`vbTab`|Znak tabulátoru.|  
-|`vbBack`|Znak Backspace.|  
-|`vbFormFeed`|Nepoužívá se v Microsoft Windows.|  
-|`vbVerticalTab`|V Microsoft Windows nejsou moc užitečná.|  
+|`vbBack`|Znak BACKSPACE.|  
+|`vbFormFeed`|Nepoužívá se v systému Microsoft Windows.|  
+|`vbVerticalTab`|Neužitečné v systému Microsoft Windows.|  
   
 ## <a name="enumerations"></a>Výčty  
- Následující tabulka uvádí a popisuje výčty poskytované jazyka Visual Basic.  
+ V následující tabulce jsou uvedeny a popsány výčty poskytované Visual Basic.  
   
 |Výčet|Popis|  
 |---|---|  
-|<xref:Microsoft.VisualBasic.AppWinStyle>|Určuje styl okna pro vyvolaný program budete používat při volání <xref:Microsoft.VisualBasic.Interaction.Shell%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.AudioPlayMode>|Určuje, jak má-li přehrát zvuky, při volání metody zvuku.|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.BuiltInRole>|Určuje typ role ke kontrole při volání <xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A> metody.|  
-|<xref:Microsoft.VisualBasic.CallType>|Určuje typ volané při volání procedury <xref:Microsoft.VisualBasic.Interaction.CallByName%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.CompareMethod>|Určuje, jak porovnat řetězce při volání funkce porovnání.|  
-|<xref:Microsoft.VisualBasic.DateFormat>|Určuje, jak zobrazit data při volání <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.DateInterval>|Určuje, jak určit a formátování časové intervaly při volání funkce související s datem.|  
-|<xref:Microsoft.VisualBasic.FileIO.DeleteDirectoryOption>|Určuje, co by mělo být provedeno, když adresář, který má být odstraněn obsahuje soubory nebo adresáře.|  
-|<xref:Microsoft.VisualBasic.DueDate>|Určuje způsob platby při volání metody finanční.|  
-|<xref:Microsoft.VisualBasic.FileIO.FieldType>|Určuje, zda jsou oddělené textová pole nebo pevnou šířkou.|  
-|<xref:Microsoft.VisualBasic.FileAttribute>|Určuje atributy souborů pro použití při volání funkcí přístup k souborům.|  
-|<xref:Microsoft.VisualBasic.FirstDayOfWeek>|Určuje první den v týdnu, kdy chcete použít při volání funkce související s datem.|  
-|<xref:Microsoft.VisualBasic.FirstWeekOfYear>|Určuje první týden v roce určený při volání funkce související s datem.|  
-|<xref:Microsoft.VisualBasic.MsgBoxResult>|Indikuje stisknutí tlačítka, které na okno se zprávou, vrácený <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.MsgBoxStyle>|Označuje tlačítek, která se zobrazí při volání <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.OpenAccess>|Určuje, jak otevřít soubor při volání funkcí přístup k souborům.|  
-|<xref:Microsoft.VisualBasic.OpenMode>|Určuje, jak otevřít soubor při volání funkcí přístup k souborům.|  
-|<xref:Microsoft.VisualBasic.OpenShare>|Určuje, jak otevřít soubor při volání funkcí přístup k souborům.|  
-|<xref:Microsoft.VisualBasic.FileIO.RecycleOption>|Určuje, zda soubor trvale odstraněn nebo umístit do složky Koš.|  
-|<xref:Microsoft.VisualBasic.FileIO.SearchOption>|Určuje, jestli se má hledat ve všech nebo jenom na nejvyšší úrovni adresáře.|  
-|<xref:Microsoft.VisualBasic.TriState>|Označuje `Boolean` hodnotu nebo výchozí hodnota určuje, zda má být použit při volání funkcí formátování čísel.|  
-|<xref:Microsoft.VisualBasic.FileIO.UICancelOption>|Určuje, co by mělo být provedeno v případě, že uživatel klikne **zrušit** během operace.|  
-|<xref:Microsoft.VisualBasic.FileIO.UIOption>|Určuje, jestli se má zobrazit dialogové okno průběhu při kopírování, odstraňování, přesouvání souborů či adresářů.|  
-|<xref:Microsoft.VisualBasic.VariantType>|Určuje typ objektu variant, vrátí <xref:Microsoft.VisualBasic.Information.VarType%2A> funkce.|  
-|<xref:Microsoft.VisualBasic.VbStrConv>|Určuje, jaký typ převodu se provede při volání <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkce.|  
+|<xref:Microsoft.VisualBasic.AppWinStyle>|Určuje styl okna, který se má použít pro vyvolaný program při volání funkce <xref:Microsoft.VisualBasic.Interaction.Shell%2A>.|  
+|<xref:Microsoft.VisualBasic.AudioPlayMode>|Označuje, jak přehrát zvuky při volání metod zvuku.|  
+|<xref:Microsoft.VisualBasic.ApplicationServices.BuiltInRole>|Určuje typ role, která se má ověřit při volání metody <xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>.|  
+|<xref:Microsoft.VisualBasic.CallType>|Určuje typ procedury, která se vyvolá při volání funkce <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>.|  
+|<xref:Microsoft.VisualBasic.CompareMethod>|Označuje způsob porovnávání řetězců při volání funkcí porovnání.|  
+|<xref:Microsoft.VisualBasic.DateFormat>|Určuje, jak se mají zobrazovat data při volání funkce <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>.|  
+|<xref:Microsoft.VisualBasic.DateInterval>|Určuje, jak určit a formátovat časové intervaly při volání funkcí souvisejících s datem.|  
+|<xref:Microsoft.VisualBasic.FileIO.DeleteDirectoryOption>|Určuje, co se má provést, když adresář, který se má odstranit, obsahuje soubory nebo adresáře.|  
+|<xref:Microsoft.VisualBasic.DueDate>|Určuje, kdy jsou platby splatné při volání finančních metod.|  
+|<xref:Microsoft.VisualBasic.FileIO.FieldType>|Označuje, zda jsou textová pole oddělena nebo pevná šířka.|  
+|<xref:Microsoft.VisualBasic.FileAttribute>|Určuje atributy souboru, které se mají použít při volání funkcí přístupu k souborům.|  
+|<xref:Microsoft.VisualBasic.FirstDayOfWeek>|Označuje první den v týdnu, který má být použit při volání funkcí souvisejících s datem.|  
+|<xref:Microsoft.VisualBasic.FirstWeekOfYear>|Označuje první týden v roce, který má být použit při volání funkcí souvisejících s datem.|  
+|<xref:Microsoft.VisualBasic.MsgBoxResult>|Určuje, které tlačítko bylo stisknuto na okně se zprávou, které vrátila funkce <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.|  
+|<xref:Microsoft.VisualBasic.MsgBoxStyle>|Určuje, která tlačítka se zobrazí při volání funkce <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.|  
+|<xref:Microsoft.VisualBasic.OpenAccess>|Určuje, jak otevřít soubor při volání funkcí přístupu k souborům.|  
+|<xref:Microsoft.VisualBasic.OpenMode>|Určuje, jak otevřít soubor při volání funkcí přístupu k souborům.|  
+|<xref:Microsoft.VisualBasic.OpenShare>|Určuje, jak otevřít soubor při volání funkcí přístupu k souborům.|  
+|<xref:Microsoft.VisualBasic.FileIO.RecycleOption>|Určuje, jestli se má soubor trvale odstranit, nebo umístit do koše.|  
+|<xref:Microsoft.VisualBasic.FileIO.SearchOption>|Určuje, zda mají být prohledány všechny nebo pouze adresáře nejvyšší úrovně.|  
+|<xref:Microsoft.VisualBasic.TriState>|Označuje `Boolean` hodnotu nebo, zda má být při volání funkcí formátování čísel použito výchozí nastavení.|  
+|<xref:Microsoft.VisualBasic.FileIO.UICancelOption>|Určuje, co se má udělat, pokud uživatel klikne na **Zrušit** během operace.|  
+|<xref:Microsoft.VisualBasic.FileIO.UIOption>|Určuje, zda se má při kopírování, odstraňování a přesouvání souborů nebo adresářů zobrazovat dialogové okno průběhu.|  
+|<xref:Microsoft.VisualBasic.VariantType>|Určuje typ objektu variant vrácený funkcí <xref:Microsoft.VisualBasic.Information.VarType%2A>.|  
+|<xref:Microsoft.VisualBasic.VbStrConv>|Určuje, který typ převodu má být proveden při volání funkce <xref:Microsoft.VisualBasic.Strings.StrConv%2A>.|  
   
 ## <a name="see-also"></a>Viz také:
 

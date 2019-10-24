@@ -5,12 +5,12 @@ ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 42f8d51f2547cd6f3240a05420b2da10b7cf52e3
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: b85d77900c5d9227ecc6fe81b8a8d68171dd9ef5
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179397"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774511"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu do ASP.NET Core webového rozhraní API
 
@@ -21,7 +21,7 @@ Naučte se, jak na webu sloužit předem trained ML.NET model strojového učen�
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 - Prostředí.
 - Předem vyškolený model. Pomocí [kurzu ML.NET analýza mínění](../tutorials/sentiment-analysis.md) sestavte svůj vlastní model nebo si stáhněte tento [model služby Machine Learning s představitelnou mínění analýzou](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip) .
 
@@ -62,9 +62,9 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
     ```csharp
     using Microsoft.ML.Data;
     ```
-    
+
     Odeberte existující definici třídy a přidejte následující kód do souboru **SentimentData.cs** :
-    
+
     ```csharp
     public class SentimentData
     {
@@ -83,9 +83,9 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
     ```csharp
     using Microsoft.ML.Data;
     ```
-    
+
     Odeberte existující definici třídy a přidejte následující kód do souboru *SentimentPrediction.cs* :
-    
+
     ```csharp
     public class SentimentPrediction : SentimentData
     {
@@ -99,7 +99,7 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
     }
     ```
 
-    `SentimentPrediction` dědí z `SentimentData`. To usnadňuje zobrazení původních dat ve vlastnosti `SentimentText` spolu s výstupem generovaným modelem. 
+    `SentimentPrediction` dědí z `SentimentData`. To usnadňuje zobrazení původních dat ve vlastnosti `SentimentText` spolu s výstupem generovaným modelem.
 
 ## <a name="register-predictionenginepool-for-use-in-the-application"></a>Registrovat PredictionEnginePool pro použití v aplikaci
 
@@ -130,22 +130,22 @@ Následující odkaz poskytuje další informace, pokud se chcete dozvědět ví
     }
     ```
 
-Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro pozdější použití v případě, že je aplikace požaduje místo ručního provedení. 
+Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro pozdější použití v případě, že je aplikace požaduje místo ručního provedení.
 
-Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci. 
+Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci.
 
 Nastavte parametr `watchForChanges` na `true` a `PredictionEnginePool` spustí [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) , které naslouchají oznámením o změnách systému souborů a vyvolává události, když dojde ke změně souboru. Tím se zobrazí výzva `PredictionEnginePool` pro automatické opětovné načtení modelu.
 
-Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci. 
+Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci.
 
 > [!TIP]
 > Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace. V níže uvedeném příkladu kódu `PredictionEnginePool` cyklické dotazování modelu uloženého v zadaném identifikátoru URI každou minutu.
->    
+>
 >```csharp
 >builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
 >   .FromUri(
->       modelName: "SentimentAnalysisModel", 
->       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip", 
+>       modelName: "SentimentAnalysisModel",
+>       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip",
 >       period: TimeSpan.FromMinutes(1));
 >```
 
@@ -165,7 +165,7 @@ Pokud chcete zpracovat příchozí požadavky HTTP, vytvořte kontroler.
     ```
 
     Odeberte existující definici třídy a přidejte následující kód do souboru *PredictController.cs* :
-    
+
     ```csharp
     public class PredictController : ControllerBase
     {
@@ -207,7 +207,7 @@ Jakmile je všechno nastavené, je čas otestovat aplikaci.
     ```
 
     V případě úspěchu by měl výstup vypadat podobně jako v následujícím textu:
-    
+
     ```powershell
     Negative
     ```

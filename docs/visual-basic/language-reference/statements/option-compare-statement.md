@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Option Compare statement [Visual Basic]
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
-ms.openlocfilehash: 43d3faf3a6630cd308913ce2325a5f7fe96e474c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: efd033e6c12637b8dc12fb886f46a267e677aa42
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581589"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775505"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
 Deklaruje výchozí metodu porovnání, která se má použít při porovnávání řetězcových dat.  
@@ -59,7 +59,7 @@ Option Compare { Binary | Text }
  `(A=a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
 ## <a name="when-an-option-compare-statement-is-not-present"></a>Pokud není k dispozici příkaz Option Compare  
- Pokud zdrojový kód neobsahuje příkaz `Option Compare`, je použita **možnost porovnat** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Použijete-li kompilátor příkazového řádku, je použito nastavení určené možností kompilátoru [/OptionCompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
+ Pokud zdrojový kód neobsahuje příkaz `Option Compare`, je použita **možnost porovnat** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Použijete-li kompilátor příkazového řádku, je použito nastavení určené možností kompilátoru [-OptionCompare –](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -75,7 +75,7 @@ Option Compare { Binary | Text }
   
 #### <a name="to-set-option-compare-on-the-command-line"></a>Nastavení možnosti Compare v příkazovém řádku  
   
-- Do příkazu **Vbc** zahrňte možnost kompilátoru [/OptionCompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
+- Do příkazu **Vbc** zahrňte možnost kompilátoru [-OptionCompare –](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá příkaz `Option Compare` pro nastavení binárního porovnání jako výchozí metody porovnání řetězců. Chcete-li použít tento kód, odkomentujte příkaz `Option Compare Binary` a umístěte jej do horní části zdrojového souboru.  
@@ -94,7 +94,7 @@ Option Compare { Binary | Text }
 - <xref:Microsoft.VisualBasic.Strings.Replace%2A>
 - <xref:Microsoft.VisualBasic.Strings.Split%2A>
 - <xref:Microsoft.VisualBasic.Strings.StrComp%2A>
-- [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
+- [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory porovnávání v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)

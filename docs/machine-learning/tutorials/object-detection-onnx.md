@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f31c5155dd3ca59b1a370599b3ffabb2648791b1
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 6d13e7e4788dfd2bad6fd26015d76342b38f1142
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318522"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774453"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -30,7 +30,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="pre-requisites"></a>Předpoklady
 
-- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 - [Balíček NuGet Microsoft.ML](https://www.nuget.org/packages/Microsoft.ML/)
 - [Balíček NuGet Microsoft. ML. ImageAnalytics](https://www.nuget.org/packages/Microsoft.ML.ImageAnalytics/)
 - [Balíček NuGet Microsoft. ML. OnnxTransformer](https://www.nuget.org/packages/Microsoft.ML.OnnxTransformer/)
@@ -110,7 +110,7 @@ Teď, když máte obecné informace o tom, co ONNX je a jak malý YOLOv2 funguje
     tar -xvzf tiny_yolov2.tar.gz
     ```
 
-1. Extrahujte extrahovaný soubor `model.onnx` z adresáře, který se nachází v projektu *ObjectDetection* `assets\Model` a přejmenujte ho na `TinyYolo2_model.onnx`. Tento adresář obsahuje model potřebný pro tento kurz.
+1. Zkopírujte extrahovaný `model.onnx` soubor z adresáře, který se do projektu *ObjectDetection* `assets\Model`, a přejmenujte ho na `TinyYolo2_model.onnx`. Tento adresář obsahuje model potřebný pro tento kurz.
 
 1. V Průzkumník řešení klikněte pravým tlačítkem na každý ze souborů v adresáři assetů a podadresářích a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
@@ -185,7 +185,7 @@ Model segmentuje obrázek do mřížky `13 x 13`, kde je každá buňka mřížk
 
 ![Ukázka mřížky vlevo a vzorek ohraničovacího rámečku na pravé straně](./media/object-detection-onnx/model-output-description.png)
 
-- @no__t – 0 pozice x ohraničovacího boxu v středu vzhledem k buňce mřížky, ke které je přidružena.
+- `x` pozici x středu ohraničovacího boxu vzhledem k buňce mřížky, ke které je přidružena.
 - `y` pozice y ohraničovacího boxu vzhledem k buňce mřížky, ke které je přidružena.
 - `w` šířka ohraničovacího rámečku.
 - `h` výška ohraničovacího rámečku.
@@ -374,7 +374,7 @@ Pomocí `topScore` můžete znovu zachovat pouze ty ohraničovací schránky, kt
 
 [!code-csharp [CheckThreshold2](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L179-L180)]
 
-Nakonec, pokud aktuální ohraničující rámeček překračuje prahovou hodnotu, vytvořte nový objekt @no__t 0 a přidejte ho do seznamu `boxes`.
+Nakonec, pokud aktuální ohraničující rámeček překračuje prahovou hodnotu, vytvořte nový objekt `BoundingBox` a přidejte ho do seznamu `boxes`.
 
 [!code-csharp [AddBBoxToList](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L182-L194)]
 

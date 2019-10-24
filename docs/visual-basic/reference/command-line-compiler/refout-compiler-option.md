@@ -7,12 +7,12 @@ helpviewer_keywords:
 - refout compiler option [Visual Basic]
 - /refout compiler option [Visual Basic]
 - -refout compiler option [Visual Basic]
-ms.openlocfilehash: c11d83ff37da41faa3dc6b66a87e2c52c5f6c7ac
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 552e611f222bfcc3ce12520ecdb891fd7b8b21de
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582876"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775552"
 ---
 # <a name="-refout-visual-basic"></a>-refout (Visual Basic)
 
@@ -35,9 +35,7 @@ Cesta a název souboru referenčního sestavení. Obvykle by měla být v podslo
 
 Visual Basic podporuje přepínač `-refout` počínaje verzí 15,3.
 
-Referenční sestavení jsou pouze metadata sestavení, která obsahují metadata, ale nemají kód implementace. Zahrnují informace o typu a členu pro vše kromě anonymních typů. Jejich těla metod jsou nahrazeny jediným příkazem `throw null`. Důvodem použití `throw null` tělo metody (na rozdíl od žádného těla) je, aby bylo možné spustit a předat nástroj PEverify (čímž se ověří úplnost metadat).
-
-Referenční sestavení obsahují atribut [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) na úrovni sestavení. Tento atribut může být zadán ve zdroji (pak ho kompilátor nebude muset syntetizovat). Z důvodu tohoto atributu modul runtime odmítne načíst referenční sestavení ke spuštění (ale mohou být i nadále načteny v kontextu pouze pro reflexi). Nástroje, které reflektují sestavení, musí zajistit, aby načetly referenční sestavení pouze pro reflexi. v opačném případě modul runtime vyvolá <xref:System.BadImageFormatException>.
+Referenční sestavení jsou speciálním typem sestavení, který obsahuje pouze minimální velikost metadat, která je vyžadována pro reprezentaci veřejného povrchu rozhraní API knihovny. Zahrnují deklarace pro všechny členy, které jsou významné při odkazování na sestavení v nástrojích sestavení, ale vyloučí všechny implementace členů a deklarace privátních členů, které nemají žádný pozor na jejich kontrakty rozhraní API. Další informace najdete v tématu [referenční sestavení](../../../standard/assembly/reference-assemblies.md) v příručce .NET.
 
 Možnosti `-refout` a [`-refonly`](refonly-compiler-option.md) se vzájemně vylučují.
 
