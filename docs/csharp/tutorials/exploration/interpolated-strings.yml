@@ -1,5 +1,5 @@
 ### YamlMime:Tutorial
-title: <span data-ttu-id="fa462-101">Použití interpolace řetězců k vytvoření formátovaných řetězců</span><span class="sxs-lookup"><span data-stu-id="fa462-101">Use string interpolation to construct formatted strings</span></span>
+title: Použití interpolace řetězců k vytvoření formátovaných řetězců
 metadata:
   title: Interpolace řetězců – C# Interaktivní kurz
   description: V tomto kurzu použijete prohlížeč k interaktivnímu prozkoumání C# funkce interpolace řetězce. Napíšete C# kód a zobrazíte výsledky kompilace a spuštění kódu přímo v prohlížeči.
@@ -9,20 +9,20 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: eb4b1571b4d00d90034148f7b595f4499859ce4b
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: 460accc4f0877265a5a3d72ad3272502da9e5119
+  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850957"
+  ms.lasthandoff: 10/22/2019
+  ms.locfileid: "72774035"
 items:
 - durationInMinutes: 2
   content: >
-    <span data-ttu-id="fa462-105">V tomto kurzu se naučíte, jak pomocí [interpolace řetězců](../../language-reference/tokens/interpolated.md) vkládat hodnoty do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="fa462-105">This tutorial teaches you how to use [string interpolation](../../language-reference/tokens/interpolated.md) to insert values into a single string.</span></span> <span data-ttu-id="fa462-106">Naučíte se také, jak ovládat formátování textu výsledného řetězce.</span><span class="sxs-lookup"><span data-stu-id="fa462-106">You also learn how to control text formatting of the result string.</span></span> <span data-ttu-id="fa462-107">Prohlížeč použijete k psaní a spouštění C# kódu a výsledky se můžou hned zobrazit.</span><span class="sxs-lookup"><span data-stu-id="fa462-107">You use your browser to write and run C# code and can immediately see the results.</span></span>
-- title: <span data-ttu-id="fa462-108">Vytvořit interpolované řetězce</span><span class="sxs-lookup"><span data-stu-id="fa462-108">Create an interpolated string</span></span>
+    V tomto kurzu se naučíte, jak pomocí [interpolace řetězců](../../language-reference/tokens/interpolated.md) vkládat hodnoty do jednoho řetězce. Naučíte se také, jak ovládat formátování textu výsledného řetězce. Prohlížeč použijete k psaní a spouštění C# kódu a výsledky se můžou hned zobrazit.
+- title: Vytvořit interpolované řetězce
   durationInMinutes: 2
   content: >
-    <span data-ttu-id="fa462-109">Spusťte následující kód v interaktivním okně.</span><span class="sxs-lookup"><span data-stu-id="fa462-109">Run the following code in the interactive window.</span></span> <span data-ttu-id="fa462-110">Provedete to tak, že zadáte kód do interaktivního `<name>` okna (nahraďte svým jménem) a vyberete **Spustit**:</span><span class="sxs-lookup"><span data-stu-id="fa462-110">To do that, type the code in the interactive window (replace `<name>` with your name) and select **Run**:</span></span>
+    Spusťte následující kód v interaktivním okně. Provedete to tak, že do interaktivního okna zadáte kód (nahraďte `<name>` názvem) a vyberete **Spustit**:
 
 
     ```csharp
@@ -34,31 +34,63 @@ items:
     ```
 
 
-    <span data-ttu-id="fa462-111">Při spuštění kódu zobrazí **výstup** řetězec, který obsahuje vaše jméno na přání.</span><span class="sxs-lookup"><span data-stu-id="fa462-111">When you run the code, **Output** displays a string that includes your name in the greeting.</span></span> <span data-ttu-id="fa462-112">Řetězcový argument <xref:System.Console.WriteLine%2A> volání metody je *interpolovaná řetězcová výraz*.</span><span class="sxs-lookup"><span data-stu-id="fa462-112">The string argument of the <xref:System.Console.WriteLine%2A> method call is an *interpolated string expression*.</span></span> <span data-ttu-id="fa462-113">Je to druh šablony, která umožňuje vytvořit jeden řetězec (nazývaný *výsledný řetězec*) z řetězce, který obsahuje vložený kód.</span><span class="sxs-lookup"><span data-stu-id="fa462-113">It's a kind of template that lets you construct a single string (called the *result string*) from a string that includes embedded code.</span></span> <span data-ttu-id="fa462-114">Interpolované řetězcové výrazy jsou zvláště užitečné pro vkládání hodnot do řetězce nebo zřetězení (spojování dohromady) několika řetězců.</span><span class="sxs-lookup"><span data-stu-id="fa462-114">Interpolated string expressions are particularly useful for inserting values into a string or concatenating (joining together) several strings.</span></span>
+    Při spuštění kódu zobrazí **výstup** řetězec, který obsahuje vaše jméno na přání. Řetězcový argument volání metody <xref:System.Console.WriteLine%2A> je *výraz interpolující řetězec*. Je to druh šablony, která umožňuje vytvořit jeden řetězec (nazývaný *výsledný řetězec*) z řetězce, který obsahuje vložený kód. Interpolované řetězcové výrazy jsou zvláště užitečné pro vkládání hodnot do řetězce nebo zřetězení (spojování dohromady) několika řetězců.
 
 
-    <span data-ttu-id="fa462-115">Výše uvedený příklad obsahuje dva prvky, které musí každý interpolující řetězcový výraz obsahovat:</span><span class="sxs-lookup"><span data-stu-id="fa462-115">The example above contains the two elements that every interpolated string expression must have:</span></span>
+    Výše uvedený příklad obsahuje dva prvky, které musí každý interpolující řetězcový výraz obsahovat:
 
 
-    - <span data-ttu-id="fa462-116">Řetězcový literál, který začíná `$` znakem před počátečním znakem uvozovky.</span><span class="sxs-lookup"><span data-stu-id="fa462-116">A string literal that begins with the `$` character before its opening quotation mark character.</span></span> <span data-ttu-id="fa462-117">Mezi `$` symbolem a znakem uvozovky nesmí být žádné mezery.</span><span class="sxs-lookup"><span data-stu-id="fa462-117">There can't be any spaces between the `$` symbol and the quotation mark character.</span></span> <span data-ttu-id="fa462-118">(Pokud se chcete podívat, co se stane, když ho zahrnete, vložte mezeru za `$` znak v interaktivním okně a spusťte aktualizovaný kód.</span><span class="sxs-lookup"><span data-stu-id="fa462-118">(If you'd like to see what happens if you include one, insert a space after the `$` character in the interactive window and run the updated code.</span></span> <span data-ttu-id="fa462-119">Stížnost C# kompilátoru, "neočekávaný znak" $ "".)</span><span class="sxs-lookup"><span data-stu-id="fa462-119">The C# compiler complains, "Unexpected character '$'".)</span></span>
+    - Řetězcový literál, který začíná znakem `$` před počátečním znakem uvozovky. Mezi symbolem `$` a znakem uvozovky nesmí být žádné mezery. (Pokud se chcete podívat, co se stane, když ho zahrnete, vložte mezeru za `$` znak v interaktivním okně a spusťte aktualizovaný kód. Stížnost C# kompilátoru, "neočekávaný znak" $ "".)
 
 
-    - <span data-ttu-id="fa462-120">Jeden nebo více *výrazů interpolace*.</span><span class="sxs-lookup"><span data-stu-id="fa462-120">One or more *interpolation expressions*.</span></span> <span data-ttu-id="fa462-121">Výraz interpolace je označen levou a pravou závorkou (`{` a `}`).</span><span class="sxs-lookup"><span data-stu-id="fa462-121">An interpolation expression is indicated by an opening and closing brace (`{` and `}`).</span></span> <span data-ttu-id="fa462-122">Můžete vložit libovolný C# výraz, který vrátí hodnotu (včetně `null`) uvnitř složených závorek.</span><span class="sxs-lookup"><span data-stu-id="fa462-122">You can put any C# expression that returns a value (including `null`) inside the braces.</span></span>
+    - Jeden nebo více *výrazů interpolace*. Výraz interpolace je označen levou a pravou složenou závorkou (`{` a `}`). Do složených závorek C# můžete vložit libovolný výraz, který vrátí hodnotu (včetně `null`).
 
 
-    <span data-ttu-id="fa462-123">Pojďme vyzkoušet několik příkladů interpolace řetězců s některými jinými datovými typy.</span><span class="sxs-lookup"><span data-stu-id="fa462-123">Let's try a few more string interpolation examples with some other data types.</span></span>
+    Pojďme vyzkoušet několik příkladů interpolace řetězců s některými jinými datovými typy.
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="fa462-124">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="fa462-124">This online coding experience is in preview mode.</span></span> <span data-ttu-id="fa462-125">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="fa462-125">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="fa462-126">Zahrnutí různých datových typů</span><span class="sxs-lookup"><span data-stu-id="fa462-126">Include different data types</span></span>
-  durationInMinutes: 5
-  content: "<span data-ttu-id=\"fa462-127\">V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-127\">In the previous step, you used string interpolation to insert one string inside of another.</span></span> <span data-ttu-id=\"fa462-128\">Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-128\">Each interpolation expression that is part of an interpolated string expression can be of any data type, though.</span></span> <span data-ttu-id=\"fa462-129\">Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-129\">Let's include values of various data type expressions in an interpolated string.</span></span>\n\n<span data-ttu-id=\"fa462-130\">V následujícím příkladu jsme nejdřív definovali [řazenou kolekci](../../tuples.md) členů, `Name`která `Price`obsahuje členy `perPackage` , a.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-130\">In the following example, we first define a [tuple](../../tuples.md) that has `Name`, `Price`, and `perPackage` members.</span></span> <span data-ttu-id=\"fa462-131\">V interaktivním okně spusťte následující kód:</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-131\">Run the following code in the interactive window:</span></span>\n\n```csharp\nvar item = (Name: \"eggplant\", Price: 1.99m, perPackage: 3);\nvar date = DateTime.Now;\nConsole.WriteLine($\"On {date}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items.\");\n```\n\n<span data-ttu-id=\"fa462-132\">Všimněte si, že výraz `item.Price` interpolace v interpolované řetězci se překládá na text \"1,99\" ve výsledném řetězci.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-132\">Note that the interpolation expression `item.Price` in the interpolated string resolves to the text \"1.99\" in the result string.</span></span> <span data-ttu-id=\"fa462-133\">To je způsobeno tím, že když typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-133\">That's because, when the type of the expression result is not a string, the result is resolved to a string in the following way:</span></span>\n\n- <span data-ttu-id=\"fa462-134\">Pokud je výraz interpolace vyhodnocen `null`, je použit prázdný řetězec (\"\" nebo <xref:System.String.Empty?displayProperty=nameWithType>).</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-134\">If the interpolation expression evaluates to `null`, an empty string (\"\", or <xref:System.String.Empty?displayProperty=nameWithType>) is used.</span></span>\n\n- <span data-ttu-id=\"fa462-135\">Pokud výraz interpolace není vyhodnocen `null`, `ToString` obvykle je volána metoda výsledného výrazu.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-135\">If the interpolation expression doesn't evaluate to `null`, typically the `ToString` method of the result expression is called.</span></span> \n\n<span data-ttu-id=\"fa462-136\">Ve výstupu z tohoto příkladu je datum příliš přesné (cena za lilek se nemění každou sekundu) a hodnota Price neindikuje jednotku měny.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-136\">In the output from this example, the date is too precise (the price of eggplant doesn't change every second), and the price value doesn't indicate a unit of currency.</span></span> <span data-ttu-id=\"fa462-137\">V dalším kroku se dozvíte, jak tyto problémy vyřešit kontrolou formátu řetězcové reprezentace výsledků výrazu.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-137\">In the next step, you'll learn how to fix those issues by controlling the format of string representations of the expression results.</span></span>\n\n> [!NOTE]\n> <span data-ttu-id=\"fa462-138\">Toto online prostředí kódování je v režimu náhledu.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-138\">This online coding experience is in preview mode.</span></span> <span data-ttu-id=\"fa462-139\">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class=\"sxs-lookup\"><span data-stu-id=\"fa462-139\">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>\n"
-- title: <span data-ttu-id="fa462-140">Řízení formátování výrazů interpolace</span><span class="sxs-lookup"><span data-stu-id="fa462-140">Control the formatting of interpolation expressions</span></span>
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Zahrnutí různých datových typů
   durationInMinutes: 5
   content: >
-    <span data-ttu-id="fa462-141">V předchozím kroku byly do výsledného řetězce vloženy dva špatně formátované řetězce.</span><span class="sxs-lookup"><span data-stu-id="fa462-141">In the previous step, two poorly formatted strings were inserted into the result string.</span></span> <span data-ttu-id="fa462-142">Jedna byla hodnota data a času, pro kterou bylo pouze vhodné datum.</span><span class="sxs-lookup"><span data-stu-id="fa462-142">One was a date and time value for which only the date was appropriate.</span></span> <span data-ttu-id="fa462-143">Druhá se jednalo o cenu, která neuváděla jednotku měny.</span><span class="sxs-lookup"><span data-stu-id="fa462-143">The second was a price that didn't indicate its unit of currency.</span></span> <span data-ttu-id="fa462-144">Oba problémy se snadno řeší.</span><span class="sxs-lookup"><span data-stu-id="fa462-144">Both issues are easy to address.</span></span> <span data-ttu-id="fa462-145">Interpolace řetězců umožňuje zadat *formátovací řetězce* , které řídí formátování konkrétních typů.</span><span class="sxs-lookup"><span data-stu-id="fa462-145">String interpolation lets you specify *format strings* that control the formatting of particular types.</span></span> <span data-ttu-id="fa462-146">Upravte volání `Console.WriteLine` z předchozího příkladu tak, aby zahrnovalo formátovací řetězce pro výrazy data a ceny, jak je znázorněno na následujícím řádku:</span><span class="sxs-lookup"><span data-stu-id="fa462-146">Modify the call to `Console.WriteLine` from the previous example to include the format strings for the date and price expressions as shown in the following line:</span></span>
+    V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného. Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale. Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.
+
+
+    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci členů](../../tuples.md) , která má `Name`, `Price` a členy `perPackage`. V interaktivním okně spusťte následující kód:
+
+
+    ```csharp
+
+    var item = (Name: "eggplant", Price: 1.99m, perPackage: 3);
+
+    var date = DateTime.Now;
+
+    Console.WriteLine($"On {date}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items.");
+
+    ```
+
+
+    Všimněte si, že výraz interpolace `item.Price` v interpolované řetězci se přeloží na text "1,99" ve výsledném řetězci. To je způsobeno tím, že když typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:
+
+
+    - Pokud je výraz interpolace vyhodnocen jako `null`, je použit prázdný řetězec ("" nebo <xref:System.String.Empty?displayProperty=nameWithType>).
+
+
+    - Pokud výraz interpolace není vyhodnocen jako `null`, je obvykle volána metoda `ToString` výsledného výrazu.
+
+
+    Ve výstupu z tohoto příkladu je datum příliš přesné (cena za lilek se nemění každou sekundu) a hodnota Price neindikuje jednotku měny. V dalším kroku se dozvíte, jak tyto problémy vyřešit kontrolou formátu řetězcové reprezentace výsledků výrazu.
+
+
+    > [!NOTE]
+
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Řízení formátování výrazů interpolace
+  durationInMinutes: 5
+  content: >
+    V předchozím kroku byly do výsledného řetězce vloženy dva špatně formátované řetězce. Jedna byla hodnota data a času, pro kterou bylo pouze vhodné datum. Druhá se jednalo o cenu, která neuváděla jednotku měny. Oba problémy se snadno řeší. Interpolace řetězců umožňuje zadat *formátovací řetězce* , které řídí formátování konkrétních typů. Upravte volání `Console.WriteLine` v předchozím příkladu pro zahrnutí formátovacích řetězců pro výrazy data a ceny, jak je znázorněno na následujícím řádku:
 
 
     ```csharp
@@ -68,25 +100,25 @@ items:
     ```
 
 
-    <span data-ttu-id="fa462-147">Řetězec formátu určíte pomocí výrazu interpolace dvojtečkou (":") a formátovacím řetězcem.</span><span class="sxs-lookup"><span data-stu-id="fa462-147">You specify a format string by following the interpolation expression with a colon (":") and the format string.</span></span> <span data-ttu-id="fa462-148">"d" je [standardní řetězec formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) , který představuje formát krátkého data.</span><span class="sxs-lookup"><span data-stu-id="fa462-148">"d" is a [standard date and time format string](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) that represents the short date format.</span></span> <span data-ttu-id="fa462-149">C2 je [standardní číselný formátovací řetězec](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) , který představuje číslo jako hodnotu měny se dvěma číslicemi za desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="fa462-149">"C2" is a [standard numeric format string](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) that represents a number as a currency value with two digits after the decimal point.</span></span>
+    Řetězec formátu určíte pomocí výrazu interpolace dvojtečkou (":") a formátovacím řetězcem. "d" je [standardní řetězec formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) , který představuje formát krátkého data. C2 je [standardní číselný formátovací řetězec](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) , který představuje číslo jako hodnotu měny se dvěma číslicemi za desetinnou čárkou.
 
 
-    <span data-ttu-id="fa462-150">Řada typů v knihovnách .NET podporuje předdefinovanou sadu formátovacích řetězců.</span><span class="sxs-lookup"><span data-stu-id="fa462-150">A number of types in the .NET libraries support a predefined set of format strings.</span></span> <span data-ttu-id="fa462-151">Patří sem všechny číselné typy a typy data a času.</span><span class="sxs-lookup"><span data-stu-id="fa462-151">These include all the numeric types and the date and time types.</span></span> <span data-ttu-id="fa462-152">Úplný seznam typů, které podporují řetězce formátu, naleznete v tématu [formátovací řetězce a typy knihoven tříd .NET](../../../standard/base-types/formatting-types.md#stringRef) v článku [formátování typů v rozhraní .NET](../../../standard/base-types/formatting-types.md) .</span><span class="sxs-lookup"><span data-stu-id="fa462-152">For a complete list of types that support format strings, see [Format Strings and .NET Class Library Types](../../../standard/base-types/formatting-types.md#stringRef) in the [Formatting Types in .NET](../../../standard/base-types/formatting-types.md) article.</span></span>
+    Řada typů v knihovnách .NET podporuje předdefinovanou sadu formátovacích řetězců. Patří sem všechny číselné typy a typy data a času. Úplný seznam typů, které podporují řetězce formátu, naleznete v tématu [formátovací řetězce a typy knihoven tříd .NET](../../../standard/base-types/formatting-types.md#format-strings-and-net-types) v článku [formátování typů v rozhraní .NET](../../../standard/base-types/formatting-types.md) .
 
 
-    <span data-ttu-id="fa462-153">Zkuste upravit řetězce formátu v příkladu, abyste viděli, jak ovlivňují formátování data a času a číselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fa462-153">Try modifying the format strings in the example to see how they affect the formatting of the date and time and the numeric value.</span></span> <span data-ttu-id="fa462-154">Změňte "d" `{date:d}` na "t" (pro zobrazení krátkého formátu času), "y" (zobrazí se rok a měsíc) a "rrrr" (zobrazí se rok jako čtyřmístné číslo).</span><span class="sxs-lookup"><span data-stu-id="fa462-154">Change the "d" in `{date:d}` to "t" (to display the short time format), "y" (to display the year and month), and "yyyy" (to display the year as a four-digit number).</span></span> <span data-ttu-id="fa462-155">Změňte "C2" `{price:C2}` na "e" (pro exponenciální zápis) a "F3" (pro číselnou hodnotu se třemi číslicemi za desetinnou čárkou).</span><span class="sxs-lookup"><span data-stu-id="fa462-155">Change the "C2" in `{price:C2}` to "e" (for exponential notation) and "F3" (for a numeric value with three digits after the decimal point).</span></span>
+    Zkuste upravit řetězce formátu v příkladu, abyste viděli, jak ovlivňují formátování data a času a číselné hodnoty. Změňte "d" v `{date:d}` na "t" (pro zobrazení krátkého formátu času), "y" (zobrazí se rok a měsíc) a "rrrr" (zobrazí se rok jako číslo se čtyřmi číslicemi). Změňte "C2" v `{price:C2}` na "e" (pro exponenciální zápis) a "F3" (pro číselnou hodnotu se třemi číslicemi za desetinnou čárkou).
 
 
-    <span data-ttu-id="fa462-156">Kromě řízení formátování můžete také nastavit šířku pole a zarovnání formátovaných řetězců, které jsou zahrnuty ve výsledném řetězci.</span><span class="sxs-lookup"><span data-stu-id="fa462-156">In addition to controlling formatting, you can also control the field width and alignment of the formatted strings that are included in the result string.</span></span> <span data-ttu-id="fa462-157">V dalším kroku se dozvíte, jak to provést.</span><span class="sxs-lookup"><span data-stu-id="fa462-157">In the next step, you'll learn how to do this.</span></span>
+    Kromě řízení formátování můžete také nastavit šířku pole a zarovnání formátovaných řetězců, které jsou zahrnuty ve výsledném řetězci. V dalším kroku se dozvíte, jak to provést.
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="fa462-158">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="fa462-158">This online coding experience is in preview mode.</span></span> <span data-ttu-id="fa462-159">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="fa462-159">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="fa462-160">Řízení šířky pole a zarovnání výrazů interpolace</span><span class="sxs-lookup"><span data-stu-id="fa462-160">Control the field width and alignment of interpolation expressions</span></span>
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Řízení šířky pole a zarovnání výrazů interpolace
   durationInMinutes: 6
   content: >
-    <span data-ttu-id="fa462-161">V případě, že je výsledek interpolující řetězcového výrazu naformátován na řetězec, je tento řetězec obsažen ve výsledném řetězci bez počátečních nebo koncových mezer.</span><span class="sxs-lookup"><span data-stu-id="fa462-161">Ordinarily, when the result of an interpolated string expression is formatted to string, that string is included in a result string without leading or trailing spaces.</span></span> <span data-ttu-id="fa462-162">Zejména při práci se sadou dat, která je schopná řídit šířku pole a zarovnání textu, pomáhají vytvořit čitelnější výstup.</span><span class="sxs-lookup"><span data-stu-id="fa462-162">Particularly when you work with a set of data, being able to control a field width and text alignment helps to produce a more readable output.</span></span> <span data-ttu-id="fa462-163">Chcete-li se podívat, spusťte následující kód:</span><span class="sxs-lookup"><span data-stu-id="fa462-163">To see this, run the following code:</span></span>
+    V případě, že je výsledek interpolující řetězcového výrazu naformátován na řetězec, je tento řetězec obsažen ve výsledném řetězci bez počátečních nebo koncových mezer. Zejména při práci se sadou dat, která je schopná řídit šířku pole a zarovnání textu, pomáhají vytvořit čitelnější výstup. Chcete-li se podívat, spusťte následující kód:
 
 
     ```csharp
@@ -105,13 +137,13 @@ items:
     ```
 
 
-    <span data-ttu-id="fa462-164">Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnána vpravo.</span><span class="sxs-lookup"><span data-stu-id="fa462-164">The item names are left-aligned, and their quantities are right-aligned.</span></span> <span data-ttu-id="fa462-165">Zarovnání zadáte přidáním čárky (",") po výrazu interpolace a určením *minimální* šířky pole.</span><span class="sxs-lookup"><span data-stu-id="fa462-165">You specify the alignment by adding a comma (",") after an interpolation expression and designating the *minimum* field width.</span></span> <span data-ttu-id="fa462-166">Pokud je zadaná hodnota kladné číslo, bude pole zarovnáno vpravo.</span><span class="sxs-lookup"><span data-stu-id="fa462-166">If the specified value is a positive number, the field is right-aligned.</span></span> <span data-ttu-id="fa462-167">Pokud se jedná o záporné číslo, bude pole zarovnané vlevo.</span><span class="sxs-lookup"><span data-stu-id="fa462-167">If it is a negative number, the field is left-aligned.</span></span>
+    Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnána vpravo. Zarovnání zadáte přidáním čárky (",") po výrazu interpolace a určením *minimální* šířky pole. Pokud je zadaná hodnota kladné číslo, bude pole zarovnáno vpravo. Pokud se jedná o záporné číslo, bude pole zarovnané vlevo.
 
 
-    <span data-ttu-id="fa462-168">Zkuste odebrat záporné znaménka z `{"Item",-25}` kódu a `{item.Key,-25}` a spustit tento příklad znovu.</span><span class="sxs-lookup"><span data-stu-id="fa462-168">Try removing the negative signs from the `{"Item",-25}` and `{item.Key,-25}` code and run the example again.</span></span> <span data-ttu-id="fa462-169">V tuto chvíli jsou názvy položek zarovnané doprava.</span><span class="sxs-lookup"><span data-stu-id="fa462-169">This time, the item names are right-aligned.</span></span>
+    Zkuste odebrat záporné znaménka z `{"Item",-25}` a `{item.Key,-25}` kódu a spustit tento příklad znovu. V tuto chvíli jsou názvy položek zarovnané doprava.
 
 
-    <span data-ttu-id="fa462-170">Můžete zkombinovat specifikátor zarovnání a formátovací řetězec pro jedinou interpolaci výrazu.</span><span class="sxs-lookup"><span data-stu-id="fa462-170">You can combine an alignment specifier and a format string for a single interpolation expression.</span></span> <span data-ttu-id="fa462-171">Chcete-li to provést, zadejte nejprve zarovnání následovaný dvojtečkou a řetězcem formátu.</span><span class="sxs-lookup"><span data-stu-id="fa462-171">To do that, specify the alignment first, followed by a colon and the format string.</span></span> <span data-ttu-id="fa462-172">Vyzkoušejte následující kód, který zobrazí tři formátované řetězce s definovanými šířkami polí:</span><span class="sxs-lookup"><span data-stu-id="fa462-172">Try the following code that displays three formatted strings with defined field widths:</span></span>
+    Můžete zkombinovat specifikátor zarovnání a formátovací řetězec pro jedinou interpolaci výrazu. Chcete-li to provést, zadejte nejprve zarovnání následovaný dvojtečkou a řetězcem formátu. Vyzkoušejte následující kód, který zobrazí tři formátované řetězce s definovanými šířkami polí:
 
 
     ```csharp
@@ -123,9 +155,9 @@ items:
 
     > [!NOTE]
 
-    > <span data-ttu-id="fa462-173">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="fa462-173">This online coding experience is in preview mode.</span></span> <span data-ttu-id="fa462-174">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="fa462-174">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >-
-    <span data-ttu-id="fa462-175">Dokončili jste Interaktivní kurz o interpolaci řetězce.</span><span class="sxs-lookup"><span data-stu-id="fa462-175">You've completed the string interpolation interactive tutorial.</span></span> <span data-ttu-id="fa462-176">Kliknutím na níže uvedený odkaz \*\*kolekce C# \*\* můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování.</span><span class="sxs-lookup"><span data-stu-id="fa462-176">You can click the **Collections in C#** link below to start the next interactive tutorial, or you can visit the [.NET site](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) to download the .NET Core SDK, create a project on your machine, and keep coding.</span></span> <span data-ttu-id="fa462-177">Oddíl "další kroky" vás převede zpět na tyto kurzy.</span><span class="sxs-lookup"><span data-stu-id="fa462-177">The "Next steps" section brings you back to these tutorials.</span></span>
+    Dokončili jste Interaktivní kurz o interpolaci řetězce. Kliknutím na níže uvedený odkaz **kolekce C# ** můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
 
-    <span data-ttu-id="fa462-178">Další informace naleznete v tématu [interpolace řetězce](../../language-reference/tokens/interpolated.md).</span><span class="sxs-lookup"><span data-stu-id="fa462-178">For more information, see [String interpolation](../../language-reference/tokens/interpolated.md).</span></span>
+    Další informace naleznete v tématu [interpolace řetězce](../../language-reference/tokens/interpolated.md).
