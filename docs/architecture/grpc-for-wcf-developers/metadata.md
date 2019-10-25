@@ -3,26 +3,24 @@ title: Metadata – gRPC pro vývojáře WCF
 description: Jak se v gRPC používají metadata k předání dalšího kontextu mezi klienty a servery
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 71ac60cd4c389277675dd452430735fb698fd342
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: HT
+ms.openlocfilehash: 32559b3404b12f366fc1624299d04cff9faad9d6
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770483"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846616"
 ---
-# <a name="metadata"></a><span data-ttu-id="75c12-103">Metadata</span><span class="sxs-lookup"><span data-stu-id="75c12-103">Metadata</span></span>
+# <a name="metadata"></a><span data-ttu-id="b5adf-103">Metadata</span><span class="sxs-lookup"><span data-stu-id="b5adf-103">Metadata</span></span>
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+<span data-ttu-id="b5adf-104">"Metadata" odkazují na další data, která mohou být užitečná při zpracování požadavků a odpovědí, ale nejsou součástí skutečných aplikačních dat.</span><span class="sxs-lookup"><span data-stu-id="b5adf-104">"Metadata" refers to additional data that may be useful while processing requests and responses but is not part of the actual application data.</span></span> <span data-ttu-id="b5adf-105">Metadata mohou zahrnovat ověřovací tokeny, vyžádat si identifikátory a značky pro účely monitorování nebo informace o datech, jako je počet záznamů v datové sadě.</span><span class="sxs-lookup"><span data-stu-id="b5adf-105">Metadata might include authentication tokens, request identifiers and tags for monitoring purposes, or information about the data like the number of records in a dataset.</span></span>
 
-<span data-ttu-id="75c12-104">"Metadata" odkazují na další data, která mohou být užitečná při zpracování požadavků a odpovědí, ale nejsou součástí skutečných aplikačních dat.</span><span class="sxs-lookup"><span data-stu-id="75c12-104">"Metadata" refers to additional data that may be useful while processing requests and responses but is not part of the actual application data.</span></span> <span data-ttu-id="75c12-105">Metadata mohou zahrnovat ověřovací tokeny, vyžádat si identifikátory a značky pro účely monitorování nebo informace o datech, jako je počet záznamů v datové sadě.</span><span class="sxs-lookup"><span data-stu-id="75c12-105">Metadata might include authentication tokens, request identifiers and tags for monitoring purposes, or information about the data like the number of records in a dataset.</span></span>
+<span data-ttu-id="b5adf-106">Je možné přidat do zpráv WCF záhlaví obecných klíčů a hodnot pomocí <xref:System.ServiceModel.OperationContextScope> a vlastnost <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> a pomocí <xref:System.ServiceModel.Channels.MessageProperties> je zpracovat.</span><span class="sxs-lookup"><span data-stu-id="b5adf-106">It's possible to add generic key/value headers to WCF messages using an <xref:System.ServiceModel.OperationContextScope> and the <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> property, and handle them using <xref:System.ServiceModel.Channels.MessageProperties>.</span></span>
 
-<span data-ttu-id="75c12-106">Je možné přidat do zpráv WCF záhlaví obecných klíčů a hodnot pomocí <xref:System.ServiceModel.OperationContextScope> a vlastnost <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> a pomocí <xref:System.ServiceModel.Channels.MessageProperties> je zpracovat.</span><span class="sxs-lookup"><span data-stu-id="75c12-106">It's possible to add generic key/value headers to WCF messages using an <xref:System.ServiceModel.OperationContextScope> and the <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> property, and handle them using <xref:System.ServiceModel.Channels.MessageProperties>.</span></span>
+<span data-ttu-id="b5adf-107">volání a odpovědi gRPC můžou zahrnovat i metadata podobná hlavičkám HTTP.</span><span class="sxs-lookup"><span data-stu-id="b5adf-107">gRPC calls and responses can also include metadata similar to HTTP headers.</span></span> <span data-ttu-id="b5adf-108">Ty jsou většinou neviditelné, protože gRPC sebe sama a jsou předávány prostřednictvím kódu aplikace nebo middlewaru.</span><span class="sxs-lookup"><span data-stu-id="b5adf-108">These are mostly invisible to gRPC itself and are passed through to be processed by your application code or middleware.</span></span> <span data-ttu-id="b5adf-109">Metadata jsou reprezentována jako páry klíč/hodnota, kde klíč je řetězec a hodnota je buď řetězec, nebo binární data.</span><span class="sxs-lookup"><span data-stu-id="b5adf-109">Metadata is represented as key/value pairs where the key is a string and the value is either a string or binary data.</span></span> <span data-ttu-id="b5adf-110">V souboru `.proto` nemusíte zadávat metadata.</span><span class="sxs-lookup"><span data-stu-id="b5adf-110">You don’t need to specify metadata in the `.proto` file.</span></span>
 
-<span data-ttu-id="75c12-107">volání a odpovědi gRPC můžou zahrnovat i metadata podobná hlavičkám HTTP.</span><span class="sxs-lookup"><span data-stu-id="75c12-107">gRPC calls and responses can also include metadata similar to HTTP headers.</span></span> <span data-ttu-id="75c12-108">Ty jsou většinou neviditelné, protože gRPC sebe sama a jsou předávány prostřednictvím kódu aplikace nebo middlewaru.</span><span class="sxs-lookup"><span data-stu-id="75c12-108">These are mostly invisible to gRPC itself and are passed through to be processed by your application code or middleware.</span></span> <span data-ttu-id="75c12-109">Metadata jsou reprezentována jako páry klíč/hodnota, kde klíč je řetězec a hodnota je buď řetězec, nebo binární data.</span><span class="sxs-lookup"><span data-stu-id="75c12-109">Metadata is represented as key/value pairs where the key is a string and the value is either a string or binary data.</span></span> <span data-ttu-id="75c12-110">V souboru `.proto` nemusíte zadávat metadata.</span><span class="sxs-lookup"><span data-stu-id="75c12-110">You don’t need to specify metadata in the `.proto` file.</span></span>
+<span data-ttu-id="b5adf-111">Metadata se zpracovávají pomocí `Metadata` třídy z balíčku NuGet pro [Grpc. Core. API](https://www.nuget.org/packages/Grpc.Core.Api/) .</span><span class="sxs-lookup"><span data-stu-id="b5adf-111">Metadata is handled using the `Metadata` class from the [Grpc.Core.Api](https://www.nuget.org/packages/Grpc.Core.Api/) NuGet package.</span></span> <span data-ttu-id="b5adf-112">Tato třída se dá použít se syntaxí inicializátoru kolekce.</span><span class="sxs-lookup"><span data-stu-id="b5adf-112">This class can be used with collection initializer syntax.</span></span>
 
-<span data-ttu-id="75c12-111">Metadata se zpracovávají pomocí `Metadata` třídy z balíčku NuGet pro [Grpc. Core. API](https://www.nuget.org/packages/Grpc.Core.Api/) .</span><span class="sxs-lookup"><span data-stu-id="75c12-111">Metadata is handled using the `Metadata` class from the [Grpc.Core.Api](https://www.nuget.org/packages/Grpc.Core.Api/) NuGet package.</span></span> <span data-ttu-id="75c12-112">Tato třída se dá použít se syntaxí inicializátoru kolekce.</span><span class="sxs-lookup"><span data-stu-id="75c12-112">This class can be used with collection initializer syntax.</span></span>
-
-<span data-ttu-id="75c12-113">Následující příklad ukazuje, jak přidat metadata k volání z C# klienta:</span><span class="sxs-lookup"><span data-stu-id="75c12-113">The following example shows how to add metadata to a call from a C# client:</span></span>
+<span data-ttu-id="b5adf-113">Následující příklad ukazuje, jak přidat metadata k volání z C# klienta:</span><span class="sxs-lookup"><span data-stu-id="b5adf-113">The following example shows how to add metadata to a call from a C# client:</span></span>
 
 ```csharp
 var metadata = new Metadata
@@ -38,7 +36,7 @@ var request = new GetPortfolioRequest
 var response = await client.GetPortfolioAsync(request, metadata);
 ```
 
-<span data-ttu-id="75c12-114">služby gRPC Services mají přístup k metadatům z vlastnosti `RequestHeaders` argumentu `ServerCallContext`:</span><span class="sxs-lookup"><span data-stu-id="75c12-114">gRPC services can access metadata from the `ServerCallContext` argument's `RequestHeaders` property:</span></span>
+<span data-ttu-id="b5adf-114">služby gRPC Services mají přístup k metadatům z vlastnosti `RequestHeaders` argumentu `ServerCallContext`:</span><span class="sxs-lookup"><span data-stu-id="b5adf-114">gRPC services can access metadata from the `ServerCallContext` argument's `RequestHeaders` property:</span></span>
 
 ```csharp
 public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request, ServerCallContext context)
@@ -52,7 +50,7 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 }
 ```
 
-<span data-ttu-id="75c12-115">Služby mohou odesílat metadata klientům pomocí vlastnosti `ResponseTrailers` `ServerCallContext`:</span><span class="sxs-lookup"><span data-stu-id="75c12-115">Services can send metadata to clients using the `ResponseTrailers` property of `ServerCallContext`:</span></span>
+<span data-ttu-id="b5adf-115">Služby mohou odesílat metadata klientům pomocí vlastnosti `ResponseTrailers` `ServerCallContext`:</span><span class="sxs-lookup"><span data-stu-id="b5adf-115">Services can send metadata to clients using the `ResponseTrailers` property of `ServerCallContext`:</span></span>
 
 ```csharp
 public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request, ServerCallContext context)
@@ -64,6 +62,6 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 ```
 
 >[!div class="step-by-step"]
-><span data-ttu-id="75c12-116">[Předchozí](rpc-types.md)
->[Další](error-handling.md)</span><span class="sxs-lookup"><span data-stu-id="75c12-116">[Previous](rpc-types.md)
+><span data-ttu-id="b5adf-116">[Předchozí](rpc-types.md)
+>[Další](error-handling.md)</span><span class="sxs-lookup"><span data-stu-id="b5adf-116">[Previous](rpc-types.md)
 [Next](error-handling.md)</span></span>
