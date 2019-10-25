@@ -3,24 +3,22 @@ title: Protobuf jakákoli pole a oneof pro typy variant – gRPC pro vývojáře
 description: Naučte se používat libovolný typ a klíčové slovo oneof k reprezentaci typů objektů variant ve zprávách.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 9e730e96bfdb25ef6e07ee10967921408c6f2e84
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 10f55288eb4a6aa603228da5b4850317d6bde614
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184279"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846383"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf všechna pole a oneof pro typy variant
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+Manipulace s dynamickými typy vlastností (to znamená, vlastnosti typu `object`) ve službě WCF je složitá. Je nutné zadat serializátory, musí být zadány atributy [Třída KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) a tak dále.
 
-Manipulace s dynamickými typy vlastností (to znamená, vlastnosti `object`typu) ve službě WCF je složitá. Je nutné zadat serializátory, musí být zadány atributy [Třída KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) a tak dále.
+Protobuf poskytuje dvě jednodušší možnosti pro práci s hodnotami, které mohou být více než jedním typem. Typ `Any` může představovat libovolný známý typ zprávy Protobuf, zatímco klíčové slovo `oneof` umožňuje určit, že v dané zprávě lze nastavit pouze jeden z rozsahů polí.
 
-Protobuf poskytuje dvě jednodušší možnosti pro práci s hodnotami, které mohou být více než jedním typem. Typ může představovat libovolný známý typ zprávy Protobuf, `oneof` zatímco klíčové slovo umožňuje určit, že v dané zprávě lze nastavit pouze jeden z rozsahů polí. `Any`
+## <a name="any"></a>Jakýmikoli
 
-## <a name="any"></a>Any
-
-`Any`je jedním z "dobře známých typů" Protobuf: kolekce užitečných a opakovaně použitelných typů zpráv s implementacemi ve všech podporovaných jazycích. Chcete-li `Any` použít typ, je nutné `google/protobuf/any.proto` importovat definici.
+`Any` je jedním z "dobře známých typů" Protobuf: kolekce užitečných a opakovaně použitelných typů zpráv s implementacemi ve všech podporovaných jazycích. Chcete-li použít typ `Any`, je nutné naimportovat definici `google/protobuf/any.proto`.
 
 ```protobuf
 syntax "proto3"
@@ -41,7 +39,7 @@ message ChangeNotification {
 }
 ```
 
-V C# kódu `Any` Třída poskytuje metody pro nastavení pole, extrakci zprávy a kontrolu typu.
+V C# kódu poskytuje třída`Any`metody pro nastavení pole, extrakci zprávy a kontrolu typu.
 
 ```csharp
 public void FormatChangeNotification(ChangeNotification change)
@@ -61,11 +59,11 @@ public void FormatChangeNotification(ChangeNotification change)
 }
 ```
 
-Statické pole každého generovaného typu je používáno vnitřním kódem reflexe Protobuf k řešení `Any` typů polí. `Descriptor` Existuje také `TryUnpack<T>` metoda, která vytvoří neinicializované instance i v `T` případě, že se nezdařila, takže je lepší použít `Is` metodu, jak je uvedeno výše.
+`Descriptor` statické pole každého generovaného typu je používáno vnitřním kódem reflexe Protobuf k překladu `Any` typů polí. K dispozici je také metoda `TryUnpack<T>`, která vytvoří neinicializované instance `T` i v případě, že se nezdařila, takže je lepší použít metodu `Is`, jak je uvedeno výše.
 
 ## <a name="oneof"></a>Oneof
 
-Pole oneof jsou funkcí jazyka: `oneof` klíčové slovo je při generování třídy zprávy zpracováno kompilátorem. Použití `oneof` k`ChangeNotification` určení zprávy může vypadat takto:
+Pole oneof jsou funkcí jazyka: klíčové slovo `oneof` je při generování třídy zprávy zpracováno kompilátorem. Použití `oneof` k určení `ChangeNotification` zprávy může vypadat takto:
 
 ```protobuf
 message Stock {
@@ -85,9 +83,9 @@ message ChangeNotification {
 }
 ```
 
-Pole v `oneof` sadě musí mít v rámci celkové deklarace zprávy jedinečné číselné pole.
+Pole v rámci `oneof` sady musí mít v rámci celkové deklarace zprávy jedinečné číselné pole.
 
-Při použití `oneof`, vygenerovaný C# kód obsahuje výčet, který určuje, která z polí byla nastavena. Chcete-li zjistit, které pole je nastaveno, můžete otestovat výčet. Pole, která nejsou nastavena `null` jako návratová hodnota nebo výchozí hodnotu, namísto vyvolání výjimky.
+Při použití `oneof`generovaný C# kód obsahuje výčet, který určuje, která z polí byla nastavena. Chcete-li zjistit, které pole je nastaveno, můžete otestovat výčet. Pole, která nejsou nastavena jako návratová `null` nebo výchozí hodnota namísto vyvolání výjimky.
 
 ```csharp
 public void FormatChangeNotification(ChangeNotification change)
@@ -108,7 +106,7 @@ public void FormatChangeNotification(ChangeNotification change)
 }
 ```
 
-Nastavení libovolného pole, které je součástí `oneof` sady, bude automaticky vyjasnit všechna ostatní pole v sadě. Nelze použít `repeated` s `oneof`. Místo toho můžete vytvořit vnořenou zprávu s tímto omezením buď pomocí opakujícího `oneof` se pole, nebo nastavením.
+Když se nastaví jakékoli pole, které je součástí `oneof` sady, automaticky se vymaže všechna ostatní pole v sadě. `repeated` nelze použít s `oneof`. Místo toho můžete vytvořit vnořenou zprávu s použitím opakujícího se pole nebo `oneof` sady, aby toto omezení bylo možné vyřešit.
 
 >[!div class="step-by-step"]
 >[Předchozí](protobuf-reserved.md)

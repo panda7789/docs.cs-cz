@@ -3,16 +3,14 @@ title: Docker – gRPC pro vývojáře WCF
 description: Vytváření imagí Docker pro aplikace ASP.NET Core gRPC
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 2ed3e823c83d8f11fb7290ba6c343b4b47e68e0b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: HT
+ms.openlocfilehash: cc369da9494ade532187dfc8d19a94a3a037ebab
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770541"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846676"
 ---
 # <a name="docker"></a>Docker
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Tato část se zabývá vytvářením imagí Docker pro aplikace ASP.NET Core gRPC, které jsou připravené ke spuštění v Docker, Kubernetes nebo v jiných kontejnerových prostředích. Použitá ukázková aplikace s ASP.NET Core webovou aplikací MVC a službou gRPC je k dispozici v úložišti [dotnet-Architecture/gRPC-for-WCF-Developers](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/KubernetesSample) na GitHubu.
 
@@ -117,7 +115,7 @@ Pro řešení s jednou aplikací, a proto jediným souboru Dockerfile, je nejjed
 docker build --tag stockdata .
 ```
 
-Nematoucí název `--tag` příznakem (který může být zkrácen na `-t`) určuje celý název obrázku, *včetně* skutečné značky, je-li tento parametr zadán. @No__t_0 na konci určuje *kontext* , ve kterém se bude sestavení spouštět; aktuální pracovní adresář pro příkazy `COPY` v souboru Dockerfile.
+Nematoucí název `--tag` příznakem (který může být zkrácen na `-t`) určuje celý název obrázku, *včetně* skutečné značky, je-li tento parametr zadán. `.` na konci určuje *kontext* , ve kterém se bude sestavení spouštět; aktuální pracovní adresář pro příkazy `COPY` v souboru Dockerfile.
 
 Máte-li v rámci jednoho řešení více aplikací, můžete souboru Dockerfile pro každou aplikaci ve vlastní složce vedle `.csproj` souboru, ale přesto byste měli spustit příkaz `docker build` ze základního adresáře, aby bylo zajištěno, že řešení a všechny projekty jsou zkopírovány do obrázku. Pomocí příznaku `--file` (nebo `-f`) můžete zadat souboru Dockerfile pod aktuálním adresářem.
 
@@ -133,7 +131,7 @@ Pokud chcete spustit image v místní instanci Docker, použijte příkaz `docke
 docker run -ti -p 5000:80 stockdata
 ```
 
-Příznak `-ti` připojí aktuální terminál k terminálu kontejneru a spustí se v interaktivním režimu. @No__t_0 zveřejňuje (odkazy) port 80 na kontejneru na port 80 na síťovém rozhraní localhost.
+Příznak `-ti` připojí aktuální terminál k terminálu kontejneru a spustí se v interaktivním režimu. `-p 5000:80` zveřejňuje (odkazy) port 80 na kontejneru na port 80 na síťovém rozhraní localhost.
 
 ## <a name="push-the-image-to-a-registry"></a>Vložení image do registru
 

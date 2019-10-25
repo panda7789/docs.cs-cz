@@ -3,18 +3,16 @@ title: WS-* Protocols – gRPC pro vývojáře WCF
 description: Kontrola protokolů WS-* podporovaných službou WCF a alternativami, které jsou k dispozici v gRPC
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: cd9af401fc46297fc0c67f5b3e5d6b34177d6a87
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 4e7b80df182fb69cc51e14738e59ad87efaf5dd2
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184027"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846041"
 ---
-# <a name="ws--protocols"></a>\* Protokoly WS
+# <a name="ws--protocols"></a>Protokoly WS-\*
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-Jednou ze skutečných výhod práce s Windows Communication Foundation (WCF) bylo, že se podporovalo mnoho existujících protokolů _WS-\*_  Standard. Tato část stručně popisuje, jak gRPC spravuje stejné WS-\* Protocols a diskutuje, jaké možnosti jsou k dispozici, pokud neexistuje žádná alternativa.
+Jednou ze skutečných výhod práce s Windows Communication Foundation (WCF) bylo, že se podporovalo mnoho existujících protokolů standardu _WS-\*_ . Tato část stručně popisuje, jak gRPC spravuje stejné protokoly WS-\* a pojednávají, jaké možnosti jsou k dispozici, pokud neexistuje žádná alternativa.
 
 ## <a name="metadata-exchange---ws-policy-ws-discovery-and-so-on"></a>Výměna metadat – WS-Policy, WS-Discovery atd.
 

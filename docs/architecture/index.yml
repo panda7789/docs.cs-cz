@@ -6,12 +6,14 @@ metadata:
   title: Doprovodné materiály k architektuře aplikací .NET
   meta.description: 'Learn about recommended practices for architecting, designing and building .NET software.'
   ms.topic: landing-page
-  ms.date: 06/12/2019
+  ms.date: 10/22/2019
 abstract:
   description: Naučte se vytvářet aplikace .NET připravené pro produkční prostředí s využitím bezplatného Průvodce architekturou aplikací.
 sections:
   - title: Publikované elektronické knihy
     items:
+      - html: <ul><li><p><a href="grpc-for-wcf-developers/index">ASP.NET Core gRPC pro vývojáře WCF</a></p>
+      - html: '<p>Tato příručka vysvětluje, co je gRPC, s ohledem na každý koncept na ekvivalentní funkce WCF a poskytuje pokyny pro migraci existující aplikace WCF na gRPC.</p></li></ul>'
       - html: <ul><li><p><a href="containerized-lifecycle/index">Kontejnerové životní cykly aplikace Docker s platformou a nástroji Microsoftu</a></p>
       - html: '<p>Tato příručka představuje úvod k doporučeným procesům životního cyklu životnosti, které použijete k vývoji, ověřování a nasazení kontejnerových aplikací Docker pomocí sady Visual Studio a Microsoft Azure.</p></li></ul>'
       - html: <ul><li><p><a href="modernize-with-azure-containers/index">Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows</a></p>
@@ -28,5 +30,3 @@ sections:
       - html: '<p>Tato příručka definuje, jaký cloudový nativní je, zavádí ukázkovou aplikaci vytvořenou pomocí principů nativních pro Cloud a popisuje témata, která jsou společná pro většinu cloudových nativních aplikací.</p></li></ul>'
       - html: <ul><li><p><a href="blazor-for-web-forms-developers/index">Blazor pro vývojáře webových formulářů ASP.NET</a></p>
       - html: <p>Úvod do Blazor pro vývojáře webových formulářů ASP.NET. Naučte se vytvářet plnohodnotné webové aplikace s využitím .NET pomocí Blazor a .NET Core jednoduchým a známým způsobem.</p></li></ul>
-      - html: <ul><li><p><a href="grpc-for-wcf-developers/index">ASP.NET Core gRPC pro vývojáře WCF</a></p>
-      - html: '<p>Tato příručka vysvětluje, co je gRPC, s ohledem na každý koncept na ekvivalentní funkce WCF a poskytuje pokyny pro migraci existující aplikace WCF na gRPC.</p></li></ul>'

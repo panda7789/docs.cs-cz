@@ -3,12 +3,12 @@ title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: c99a99ec2cd7a8c4263ae3321d5a836bc40da087
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: aec199aee52a4ab3202c3ec0ceb769fecd168cfe
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315942"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846732"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -95,7 +95,7 @@ V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-
 
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
-| 13,5 | Nejdřív rozhraní API | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end. brána nebo jiná služba. |
+| 13,5 | Nejdřív rozhraní API | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end, bránou nebo jinou službou. |
 | čtrnáct | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
 | 15 | Ověřování/autorizace  | Implementujte identitu od začátku. Vezměte v úvahu funkce [RBAC (řízení přístupu na základě role)](https://docs.microsoft.com/azure/role-based-access-control/overview) , které jsou dostupné ve veřejných cloudech.  |
 

@@ -3,16 +3,14 @@ title: Příloha – gRPC pro vývojáře WCF
 description: Diskuze nad distribuovanými transakcemi a jejich implementaci v moderních architekturách mikroslužeb.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 10c4e77794c5ffe1aa6d5a629ce0b6cdf92f4ada
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d181eb07dd50ed338d02edb1908626e6ca3fb56c
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184615"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846725"
 ---
 # <a name="appendix-a---transactions"></a>Příloha A – transakce
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Windows Communication Foundation (WCF) podporuje distribuované transakce, což umožňuje provádět atomické operace napříč více službami. Tato funkce je založená na [DTC (Distributed Transaction Coordinator) Microsoftu](https://docs.microsoft.com/previous-versions/windows/desktop/ms684146(v=vs.85)).
 

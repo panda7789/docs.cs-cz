@@ -3,16 +3,14 @@ title: Metadata – gRPC pro vývojáře WCF
 description: Jak se v gRPC používají metadata k předání dalšího kontextu mezi klienty a servery
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 71ac60cd4c389277675dd452430735fb698fd342
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: HT
+ms.openlocfilehash: 32559b3404b12f366fc1624299d04cff9faad9d6
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770483"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846616"
 ---
 # <a name="metadata"></a>Metadata
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 "Metadata" odkazují na další data, která mohou být užitečná při zpracování požadavků a odpovědí, ale nejsou součástí skutečných aplikačních dat. Metadata mohou zahrnovat ověřovací tokeny, vyžádat si identifikátory a značky pro účely monitorování nebo informace o datech, jako je počet záznamů v datové sadě.
 

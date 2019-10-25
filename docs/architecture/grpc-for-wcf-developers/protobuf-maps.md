@@ -3,18 +3,16 @@ title: Protobuf Maps for slovníks – gRPC pro vývojáře WCF
 description: Seznamte se s použitím Protobuf Maps k vyjádření. Typy slovníků netto.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: f6a71fb7940145571a94eaf5c8bae9dfc91a30db
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: aef6b0f378e7a63f362ec42642cae15b32d49a08
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184209"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846333"
 ---
-# <a name="protobuf-maps-for-dictionaries"></a>Protobuf Maps pro slovníky
+# <a name="protobuf-maps-for-dictionaries"></a>Mapování protobuf pro slovníky
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-Je důležité, aby bylo možné vyjádřit libovolné kolekce pojmenovaných hodnot ve zprávách. V rozhraní .NET to se běžně zpracovává pomocí typů slovníků. Typ je ekvivalentem Protobuf typu <xref:System.Collections.Generic.IDictionary%602>.NET. `map<key_type, value_type>` `map` V této části se dozvíte, jak deklarovat v Protobuf a jak používat generovaný kód.
+Je důležité, aby bylo možné vyjádřit libovolné kolekce pojmenovaných hodnot ve zprávách. V rozhraní .NET to se běžně zpracovává pomocí typů slovníků. Protobuf ekvivalentem typu .NET <xref:System.Collections.Generic.IDictionary%602> je `map<key_type, value_type>` typ. V této části se dozvíte, jak deklarovat `map` v Protobuf a jak používat generovaný kód.
 
 ```protobuf
 message StockPrices {
@@ -22,9 +20,9 @@ message StockPrices {
 }
 ```
 
-Ve vygenerovaném kódu `map` pole `Google.Protobuf.Collections.MapField<TKey, TValue>` používá třídu, která implementuje standardní rozhraní kolekce .NET, včetně <xref:System.Collections.Generic.IDictionary%602>.
+Ve vygenerovaném kódu `map` pole používají třídu `Google.Protobuf.Collections.MapField<TKey, TValue>`, která implementuje standardní rozhraní kolekce .NET, včetně <xref:System.Collections.Generic.IDictionary%602>.
 
-Pole mapování nelze přímo zopakovat v definici zprávy, ale můžete vytvořit vnořenou zprávu obsahující mapu a použít `repeated` ji jako typ zprávy, jako v následujícím příkladu:
+Pole mapování nelze přímo zopakovat v definici zprávy, ale můžete vytvořit vnořenou zprávu obsahující mapu a použít `repeated` pro typ zprávy, jako v následujícím příkladu:
 
 ```protobuf
 message Order {
@@ -37,7 +35,7 @@ message Order {
 
 ## <a name="using-mapfield-properties-in-code"></a>Použití vlastností MapField v kódu
 
-Vlastnosti generované z `map` polí jsou jen pro čtení a nikdy `null`nebudou. `MapField` Chcete-li nastavit vlastnost mapy, použijte `Add(IDictionary<TKey,TValue> values)` k kopírování hodnot z `MapField` libovolného slovníku .NET metodu pro vlastnost Empty.
+Vlastnosti `MapField` generované z polí `map` jsou jen pro čtení a nikdy nebudou `null`. Chcete-li nastavit vlastnost mapy, použijte k zkopírování hodnot z libovolného slovníku .NET metodu `Add(IDictionary<TKey,TValue> values)` pro prázdnou vlastnost `MapField`.
 
 ```csharp
 public Order CreateOrder(Dictionary<string, string> attributes)

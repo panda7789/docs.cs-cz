@@ -3,28 +3,26 @@ title: Sítě – gRPC pro vývojáře WCF
 description: Použití sítě k směrování a vyrovnání požadavků na služby gRPC Services v clusteru Kubernetes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 7fc80b95937dab9153b72aa6bc8da90f6453779f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 18c12af787f32988bbf17b1561d4ba1fb4deaf41
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846048"
 ---
 # <a name="service-meshes"></a>Sítě – sítě
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Síť je součást infrastruktury, která přebírá řízení žádostí o služby směrování v rámci sítě. Sítě sítí mohou zpracovávat všechny druhy obav na úrovni sítě v rámci clusteru Kubernetes, včetně těchto:
 
 - Zjišťování služby
 - Vyrovnávání zatížení
 - Odolnost proti chybám
-- Šifrování
-- Monitorování
+- Šifr
+- Sledovaný
 
 Sítě Kubernetes fungují přidáním dalšího kontejneru, který se označuje jako *proxy vozíku*, do každého pod tím, co je zahrnuto do sítě. Proxy přebírá všechny příchozí a odchozí síťové požadavky, což umožňuje, aby konfigurace a Správa síťových aspektů byly oddělené od kontejnerů aplikací a v mnoha případech bez nutnosti provádět změny kódu aplikace.
 
-Proveďte [příklad předchozí kapitoly](kubernetes.md#testing-the-application), ve kterém byly všechny požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života `HttpClientHandler` instance. Můžete to vyřešit tak, že ručně vyřešíte vyhledávání DNS nebo vytváříte více klientů, ale tím se kód aplikace významně nemění bez nutnosti přidat jakoukoli firmu nebo hodnotu zákazníka.
+Proveďte [příklad předchozí kapitoly](kubernetes.md#testing-the-application), ve kterém byly všechny požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života instance `HttpClientHandler`. Můžete to vyřešit tak, že ručně vyřešíte vyhledávání DNS nebo vytváříte více klientů, ale tím se kód aplikace významně nemění bez nutnosti přidat jakoukoli firmu nebo hodnotu zákazníka.
 
 Pomocí sítě služby se požadavky z kontejneru aplikace odesílají na proxy vozík, který je může rozmístit inteligentně napříč všemi instancemi jiné služby. Síť může také:
 
@@ -32,17 +30,17 @@ Pomocí sítě služby se požadavky z kontejneru aplikace odesílají na proxy 
 - Zpracovat sémantiku opakování pro neúspěšná volání nebo vypršení časových limitů
 - Přesměrovat neúspěšné požadavky na alternativní instanci bez návratu do klientské aplikace.
 
-Na následujícím snímku obrazovky se zobrazuje aplikace StockWeb běžící s mřížkou linkeru služby bez jakýchkoli změn v kódu aplikace nebo i v případě, že se používá Image Docker. Jediná požadovaná změna byla přidání poznámky k nasazení v souborech YAML pro `stockdata` služby a. `stockweb`
+Na následujícím snímku obrazovky se zobrazuje aplikace StockWeb běžící s mřížkou linkeru služby bez jakýchkoli změn v kódu aplikace nebo i v případě, že se používá Image Docker. Jediná požadovaná změna byla přidání poznámky k nasazení v souborech YAML pro služby `stockdata` a `stockweb`.
 
 ![StockWeb s sítí služby](media/service-mesh/stockweb-servicemesh-screenshot.png)
 
-Můžete vidět ze sloupce Server, že požadavky z aplikace StockWeb byly směrovány do obou replik služby StockData, a to i přes z jedné `HttpClient` instance v kódu aplikace. Pokud zkontrolujete kód, uvidíte, že všechny požadavky 100 na službu StockData se současně používají stejnou `HttpClient` instancí, ale i s sítí služby, tyto požadavky budou vyvážené i v případě, že jsou dostupné spousty instancí služby.
+Můžete vidět ze sloupce Server, že požadavky z aplikace StockWeb byly směrovány do obou replik služby StockData, a to i v případě, že pocházejí z jediné instance `HttpClient` v kódu aplikace. Pokud zkontrolujete kód, uvidíte, že všechny požadavky 100 na službu StockData se současně používají stejnou instanci `HttpClient`, ale i s sítí služby, tyto požadavky budou vyvážené i v případě, že jsou dostupné spousty instancí služby.
 
 Sítě se vztahují jenom na přenosy v rámci clusteru. U externích klientů si přečtěte [další kapitolu vyrovnávání zatížení](load-balancing.md).
 
 ## <a name="service-mesh-options"></a>Možnosti sítě
 
-Existují tři implementace sítě pro obecné účely, které jsou aktuálně k dispozici pro použití s Kubernetes: Istio, Linkerd a Consul Connect. Všechny tři poskytují požadavky na směrování a proxy, šifrování provozu, odolnost, ověřování od hostitele do hostitele a řízení provozu.
+Existují tři implementace sítě pro obecné účely, které jsou aktuálně k dispozici pro použití s Kubernetes: Istio, linkerem a Consul Connect. Všechny tři poskytují požadavky na směrování a proxy, šifrování provozu, odolnost, ověřování od hostitele do hostitele a řízení provozu.
 
 Volba sítě služby závisí na několika faktorech: 
 
@@ -65,7 +63,7 @@ Po nainstalování linkeru rozhraní příkazového řádku, postupujte podle po
 
 ### <a name="add-linkerd-to-kubernetes-deployments"></a>Přidat linkery do nasazení Kubernetes
 
-Linkerované rozhraní příkazového řádku `inject` poskytuje příkaz pro přidání nezbytných oddílů a vlastností do souborů Kubernetes. Můžete spustit příkaz a zapsat výstup do nového souboru.
+Linkerované rozhraní příkazového řádku poskytuje `inject` příkaz pro přidání nezbytných oddílů a vlastností do souborů Kubernetes. Můžete spustit příkaz a zapsat výstup do nového souboru.
 
 ```console
 linkerd inject stockdata.yml > stockdata-with-mesh.yml
@@ -74,7 +72,7 @@ linkerd inject stockweb.yml > stockweb-with-mesh.yml
 
 Můžete zkontrolovat nové soubory a zjistit, jaké změny byly provedeny. Pro objekty nasazení je přidána anotace metadat, která přihlašuje linker pro vložení kontejneru proxy vozíku do objektu pod při jeho vytvoření.
 
-Je také možné přesměrovat výstup `linkerd inject` příkazu na `kubectl` přímo. Následující příkazy budou fungovat v PowerShellu nebo v jakémkoli prostředí Linux.
+Je také možné přesměrovat výstup příkazu `linkerd inject` na `kubectl` přímo. Následující příkazy budou fungovat v PowerShellu nebo v jakémkoli prostředí Linux.
 
 ```console
 linkerd inject stockdata.yml | kubectl apply -f -
@@ -83,7 +81,7 @@ linkerd inject stockweb.yml | kubectl apply -f -
 
 ### <a name="inspect-services-in-the-linkerd-dashboard"></a>Kontrola služeb v řídicím panelu linkeru
 
-Spusťte linkerový řídicí panel pomocí rozhraní `linkerd` příkazového řádku.
+Spusťte Linkerový řídicí panel pomocí rozhraní příkazového řádku `linkerd`.
 
 ```console
 linkerd dashboard

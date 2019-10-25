@@ -3,16 +3,14 @@ title: Správa výkonu aplikací – gRPC pro vývojáře WCF
 description: Protokolování, metriky a trasování pro aplikace ASP.NET Core gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6e4c32d057c1ac143e18a4a3ddc83dd8b1f62800
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 6ba67fd069e7efc232f912e50c0e283facb79e9c
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184608"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846723"
 ---
-# <a name="application-performance-management"></a>Správa výkonu aplikací
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="application-performance-management"></a>Správa výkonu aplikace
 
 V moderních produkčních prostředích, jako je Kubernetes, je velmi důležité, abyste mohli monitorovat aplikace, aby se zajistila optimální provoz. Obavy, jako protokolování a metriky, nebyly nikdy důležitější. ASP.NET Core, včetně gRPC, má prvotřídní podporu pro vytváření a správu zpráv protokolu a dat metrik a také pro *trasování* dat. V této části se podrobněji Prozkoumejte tyto oblasti.
 
@@ -56,7 +54,7 @@ Další informace o psaní zpráv protokolu a dostupných umyvadel a cílů prot
 
 ## <a name="metrics-in-aspnet-core-grpc"></a>Metriky v ASP.NET Core gRPC
 
-Modul runtime .NET Core poskytuje sadu komponent pro generování a sledování metrik, které obsahují rozhraní API, jako jsou <xref:System.Diagnostics.Tracing.EventSource> třídy a. <xref:System.Diagnostics.Tracing.EventCounter> Tato rozhraní API lze použít k vygenerování základních číselných dat, která lze spotřebovat externími procesy, jako jsou [globální nástroje dotnet-Counters](https://github.com/dotnet/diagnostics/blob/master/documentation/dotnet-counters-instructions.md)nebo trasování událostí pro systém Windows. Další informace o použití `EventCounter` ve vlastním kódu najdete v kurzu Úvod do [EventCounter](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md) .
+Modul runtime .NET Core poskytuje sadu komponent pro generování a sledování metrik, které obsahují rozhraní API, jako jsou <xref:System.Diagnostics.Tracing.EventSource> a <xref:System.Diagnostics.Tracing.EventCounter> třídy. Tato rozhraní API lze použít k vygenerování základních číselných dat, která lze spotřebovat externími procesy, jako jsou [globální nástroje dotnet-Counters](https://github.com/dotnet/diagnostics/blob/master/documentation/dotnet-counters-instructions.md)nebo trasování událostí pro systém Windows. Další informace o použití `EventCounter` ve vlastním kódu najdete v [úvodním](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md) kurzu pro EventCounter.
 
 Pro pokročilejší metriky a pro zápis dat metrik do širší škály úložišť dat je k dispozici skvělý open source projekt s názvem [metriky aplikace](https://www.app-metrics.io). Tato sada knihoven poskytuje rozsáhlou sadu typů pro instrumentaci kódu. Nabízí také balíčky pro zápis metrik do různých druhů cílů, které obsahují databáze časových řad, například Prometheus a InfluxDB, [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)a další. Balíček NuGet [App. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) dokonce přidá komplexní sadu základních metrik, které se automaticky generují prostřednictvím integrace s ASP.NET Core Framework, a web nabízí [šablony](https://www.app-metrics.io/samples/grafana/) pro zobrazování těchto metrik. s platformou pro vizualizaci [Grafana](https://grafana.com/)
 
@@ -69,12 +67,12 @@ Většina platforem metrik podporuje pět základních typů metriky, které jso
 | Typ metriky | Popis |
 | ----------- | ----------- |
 | Čítač     | Sleduje, jak často se něco stane, například požadavky, chyby a tak dále. |
-| Ukazatel       | Zaznamenává jednu hodnotu, která se mění v průběhu času, například aktivních připojení. |
+| Měřená       | Zaznamenává jednu hodnotu, která se mění v průběhu času, například aktivních připojení. |
 | Histogram   | Měří distribuci hodnot napříč libovolnými limity. Například histogram může sledovat velikost datové sady a počítat, kolik z nich obsahovalo < 10 záznamů, kolik 11-100 a 101-1000 a > 1000 záznamů. |
 | Měřiče       | Měří rychlost, s jakou dojde k události v různých časových intervalech. |
 | Časovač       | Sleduje dobu trvání událostí a rychlost, s jakou se vyskytuje, a ukládá se jako histogram. |
 
-Pomocí *metriky aplikací*se `IMetrics` dá rozhraní získat pomocí injektáže závislosti a použít k zaznamenání kterékoli z těchto metrik pro službu gRPC. Následující příklad ukazuje, jak spočítat počet `Get` požadavků v průběhu času:
+Pomocí *metriky aplikací*se dá rozhraní `IMetrics` získat prostřednictvím injektáže závislosti a používá se k záznamu kterékoli z těchto metrik pro službu gRPC. Následující příklad ukazuje, jak spočítat počet `Get` požadavků provedených v čase:
 
 ```csharp
 public class StockData : Stocks.StocksBase
@@ -127,9 +125,9 @@ Distribuované trasování vychází z konceptu různých *rozsahů*: pojmenovan
 
 ### <a name="distributed-tracing-with-diagnosticsource"></a>Distribuované trasování pomocí DiagnosticSource
 
-.NET Core má interní modul, který mapuje dobře na distribuované trasování a zahrnuje: [DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). A poskytuje jednoduchý způsob, jak vytvořit a zpracovat diagnostiku v rámci procesu, `DiagnosticSource` má modul koncept *aktivity*, což je efektivně implementace distribuovaného trasování nebo rozpětí v rámci trasování. Interní moduly se postarou o aktivity nadřazené/podřízené, včetně přidělování identifikátorů. Další informace o použití tohoto `Activity` typu najdete v [uživatelské příručce aktivity na GitHubu](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide) .
+.NET Core má interní modul, který se mapuje dobře na distribuované trasování a zahrnuje: [DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). A také poskytnutí jednoduchého způsobu, jak vytvořit a používat diagnostiku v rámci procesu, má modul `DiagnosticSource` koncept *aktivity*, což je efektivně implementace distribuovaného trasování nebo rozpětí v rámci trasování. Interní moduly se postarou o aktivity nadřazené/podřízené, včetně přidělování identifikátorů. Další informace o použití typu `Activity` najdete v [uživatelské příručce aktivity na GitHubu](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide) .
 
-Vzhledem k tomu, že DiagnosticSource je součástí základní architektury, je podporován několika základními součástmi, <xref:System.Net.Http.HttpClient>včetně Entity Framework Core a ASP.NET Core, včetně explicitní podpory v rozhraní gRPC. Když ASP.NET Core obdrží požadavek, zkontroluje dvojici hlaviček HTTP, které odpovídají standardu [trasování W3C](https://www.w3.org/TR/trace-context) Standard. Pokud jsou hlavičky nalezeny, aktivita se spustí s použitím hodnot identity a kontextu z hlaviček. Pokud se nenajde žádná záhlaví, spustí se aktivita s generovanými hodnotami identity, které odpovídají standardnímu formátu. Jakékoli diagnostiky vygenerované rozhraním nebo kódem aplikace během životnosti této aktivity lze označit pomocí identifikátorů trasování a rozpětí. `HttpClient` Podpora tento postup dále rozšiřuje kontrolou aktuální aktivity na každém požadavku a automatickým přidáním hlaviček trasování do odchozího požadavku.
+Vzhledem k tomu, že DiagnosticSource je součástí základní architektury, je podporována několika základními součástmi, včetně <xref:System.Net.Http.HttpClient>, Entity Framework Core a ASP.NET Core, včetně explicitní podpory v gRPC Framework. Když ASP.NET Core obdrží požadavek, zkontroluje dvojici hlaviček HTTP, které odpovídají standardu [trasování W3C](https://www.w3.org/TR/trace-context) Standard. Pokud jsou hlavičky nalezeny, aktivita se spustí s použitím hodnot identity a kontextu z hlaviček. Pokud se nenajde žádná záhlaví, spustí se aktivita s generovanými hodnotami identity, které odpovídají standardnímu formátu. Jakékoli diagnostiky vygenerované rozhraním nebo kódem aplikace během životnosti této aktivity lze označit pomocí identifikátorů trasování a rozpětí. Podpora `HttpClient` tuto možnost dále rozšiřuje kontrolou aktuální aktivity pro každý požadavek a automatickým přidáním hlaviček trasování do odchozího požadavku.
 
 Mezi klientské a serverové knihovny ASP.NET Core gRPC patří explicitní podpora pro DiagnosticSource a aktivitu a vytvoří se aktivity a použije se k automatickému použití informací v hlavičce.
 
@@ -148,7 +146,7 @@ Rozhraní OpenTracing API je popsané níže. Pokud dáváte přednost použití
 
 #### <a name="use-the-opentracing-package-to-store-distributed-trace-data"></a>Použití balíčku OpenTracing k ukládání dat distribuovaných trasování
 
-[Balíček OpenTracing NuGet](https://www.nuget.org/packages/OpenTracing/) , který podporuje všechny back-endy kompatibilní s OpenTracing (který se dá použít nezávisle `DiagnosticSource`). K dispozici je další balíček z projektu příspěvky OpenTracing API [OpenTracing. contrib. Netcore](https://www.nuget.org/packages/OpenTracing.Contrib.NetCore/), který přidává `DiagnosticSource` naslouchací proces a zapisuje události a aktivity do back-endu automaticky. Povolení tohoto balíčku je jednoduché, protože ho nainstalujete z NuGet a přidáte ho jako službu do vaší `Startup` třídy.
+[Balíček OpenTracing NuGet](https://www.nuget.org/packages/OpenTracing/) , který podporuje všechny back-endy kompatibilní s OpenTracing, které se dají používat nezávisle na `DiagnosticSource`). K dispozici je další balíček z projektu příspěvky OpenTracing API [OpenTracing. contrib. Netcore](https://www.nuget.org/packages/OpenTracing.Contrib.NetCore/), který přidává `DiagnosticSource` naslouchací proces a zapisuje události a aktivity do back-endu automaticky. Povolení tohoto balíčku je jednoduché, protože ho nainstalujete z NuGet a přidáte ho jako službu ve vaší třídě `Startup`.
 
 ```csharp
 public class Startup

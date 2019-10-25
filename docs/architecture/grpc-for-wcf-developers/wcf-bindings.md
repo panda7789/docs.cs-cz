@@ -3,16 +3,14 @@ title: Vazby a přenosy WCF – gRPC pro vývojáře WCF
 description: Přečtěte si, jak se liší vazby WCF a přenosy na gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: f1866fe379dd307ede8128b43cf8f70c8b4caf69
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 34321395ddd7059ac7e3c268e313a03251662911
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771608"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846053"
 ---
 # <a name="wcf-bindings-and-transports"></a>Vazby a přenosy WCF
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 WCF má spoustu různých předdefinovaných *vazeb* , které určují různé síťové protokoly, formáty drátů a další podrobnosti implementace. gRPC má efektivně jenom jeden síťový protokol a jeden telegrafický formát (technicky *může* být přizpůsobený síťový formát, ale je nad rámec této knihy). Pravděpodobně zjistíte, že gRPC nabízí nejlepší řešení ve většině případů. Níže je Stručná diskuze o nejdůležitějších vazbách WCF a jejich porovnání s jejich ekvivalentem v gRPC.
 

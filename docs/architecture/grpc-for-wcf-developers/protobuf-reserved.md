@@ -3,18 +3,16 @@ title: Protobuf vyhrazená pole – gRPC pro vývojáře WCF
 description: Přečtěte si o vyhrazených polích pro kompatibilitu mezi verzemi.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: d4d40ca12d41ec37e0baebf10de9d0690e4297cc
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 34697371299bdc5d9a58c0696c1ce7d19816ca87
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184174"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846328"
 ---
-# <a name="protobuf-reserved-fields"></a>Protobuf vyhrazená pole
+# <a name="protobuf-reserved-fields"></a>Vyhrazená pole protobuf
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-Záruky zpětné kompatibility Protobuf spoléhají na čísla polí, která vždy představují stejnou datovou položku. Pokud se pole odebere ze zprávy v nové verzi služby, toto číslo pole by se nikdy nepoužilo. To je možné vyhovět pomocí `reserved` klíčového slova. Pokud byla `marketId` pole a odebrána ze zprávy definované dříve, jejich čísla polí by měla být vyhrazena jako v následujícím příkladu. `Stock` `displayName`
+Záruky zpětné kompatibility Protobuf spoléhají na čísla polí, která vždy představují stejnou datovou položku. Pokud se pole odebere ze zprávy v nové verzi služby, toto číslo pole by se nikdy nepoužilo. To je možné vyhovět pomocí klíčového slova `reserved`. Pokud se pole `displayName` a `marketId` odebrala ze zprávy `Stock` definované dříve, jejich čísla polí by měla být vyhrazena jako v následujícím příkladu.
 
 ```protobuf
 syntax "proto3";
@@ -28,7 +26,7 @@ message Stock {
 }
 ```
 
-`reserved` Klíčové slovo lze použít také jako zástupný text pro pole, která mohou být v budoucnu přidána. Souvislá čísla polí lze vyjádřit jako rozsah pomocí `to` klíčového slova.
+Klíčové slovo `reserved` lze také použít jako zástupný text pro pole, která mohou být v budoucnu přidána. Souvislá čísla polí lze vyjádřit jako rozsah pomocí klíčového slova `to`.
 
 ```protobuf
 syntax "proto3";

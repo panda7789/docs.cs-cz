@@ -3,16 +3,14 @@ title: Zabezpečení v gRPC aplikacích – gRPC pro vývojáře WCF
 description: Přehled ověřování volání a kanálu a autorizaci v gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 5f3d32817ccb5d9f278d256c0ee135f0e2a17cf2
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d0b7ff5bef755c5eeb9b3c419dcda1cb75ac4031
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846233"
 ---
 # <a name="security-in-grpc-applications"></a>Zabezpečení v aplikacích gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V jakémkoli scénáři reálného světa je zabezpečení aplikací a služeb zásadní. Zabezpečení pokrývá tři klíčové oblasti: šifrování síťového provozu, aby se zabránilo jeho zachycení nesprávnými aktéry. ověřování klientů a serverů za účelem vytvoření identity a vztahu důvěryhodnosti; a autorizace klientů pro řízení přístupu k systémům a uplatnění oprávnění na základě identity.
 
@@ -23,7 +21,7 @@ Tato kapitola se zabývá zařízeními pro ověřování a autorizaci v gRPC pr
 
 ## <a name="wcf-authentication-and-authorization"></a>Ověřování a autorizace WCF
 
-Ověřování a autorizace ve službě WCF byly zpracovávány různými způsoby v závislosti na používaných přenosech a vazbách. Služba WCF podporuje různé standardy\* protokolu WS-Security a ověřování systému Windows pro služby HTTP spuštěné ve službě IIS nebo NetTcp Services mezi systémy Windows.
+Ověřování a autorizace ve službě WCF byly zpracovávány různými způsoby v závislosti na používaných přenosech a vazbách. Služba WCF podporuje různé standardy zabezpečení WS-\* a také ověřování systému Windows pro služby HTTP spuštěné ve službě IIS nebo NetTCP Services mezi systémy Windows.
 
 ## <a name="grpc-authentication-and-authorization"></a>ověřování a autorizace gRPC
 

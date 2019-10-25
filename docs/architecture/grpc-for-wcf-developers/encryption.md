@@ -3,22 +3,20 @@ title: Šifrování a zabezpečení sítě – gRPC pro vývojáře WCF
 description: Některé poznámky k zabezpečení sítě a šifrování v gRPC
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 8a115b59337003669b4e5436edffe239489ca79e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67ee1ffaf00ea0cc6b771ede9f49b6a691af0968
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846669"
 ---
 # <a name="encryption-and-network-security"></a>Šifrování a zabezpečení sítě
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Model zabezpečení sítě WCF je rozsáhlý a složitý, včetně zabezpečení na úrovni přenosu pomocí protokolu HTTPS nebo TLS-over-TCP a zabezpečení na úrovni zpráv pomocí specifikace WS-Security k šifrování jednotlivých zpráv.
 
 gRPC ponechá zabezpečenou síť k základnímu protokolu HTTP/2, který je možné zabezpečit pomocí běžných certifikátů TLS.
 
-Webové prohlížeče zachází s používáním připojení TLS pro HTTP/2, ale u většiny programových klientů, včetně. `HttpClient`Netto může používat HTTP/2 přes nešifrovaná připojení. `HttpClient`*vyžaduje šifrování* ve výchozím nastavení, ale můžete ho přepsat pomocí <xref:System.AppContext> přepínače.
+Webové prohlížeče zachází s používáním připojení TLS pro HTTP/2, ale u většiny programových klientů, včetně. `HttpClient`netto můžou používat HTTP/2 přes nešifrovaná připojení. `HttpClient` *vyžaduje* šifrování ve výchozím nastavení, ale můžete ho přepsat pomocí přepínače <xref:System.AppContext>.
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);

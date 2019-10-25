@@ -3,16 +3,14 @@ title: Porovnání WCF s gRPC-gRPC pro vývojáře WCF
 description: Porovnání rozhraní WCF a gRPC pro vytváření distribuovaných aplikací.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: c763048d09e7ed5ca0a3d5240f6b3cf5262f897c
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 5ab1380d4ded52abff08c35c430adf2f3ed7c58b
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184041"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846068"
 ---
 # <a name="comparing-wcf-to-grpc"></a>Porovnávání WCF s gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Předchozí kapitola by měla mít za cíl dobrý pohled na Protobuf a způsob, jakým gRPC zpracovává zprávy. Před provedením podrobného převodu z WCF na gRPC je důležité pohlížet na to, jak se rozsah funkcí aktuálně dostupných ve službě WCF zpracovává v gRPC a jaká alternativní řešení můžete použít, když se zdá, že se nejeví jako ekvivalentní gRPC. Konkrétně tato kapitola se zabývá následujícími tématy:
 
@@ -21,11 +19,11 @@ Předchozí kapitola by měla mít za cíl dobrý pohled na Protobuf a způsob, 
 - Typy RPC
 - Metadata
 - Zpracování chyb
-- \* Protokoly WS
+- Protokoly WS-\*
 
 ## <a name="grpc-example"></a>Příklad gRPC
 
-Při vytváření nového projektu ASP.NET Core 3,0 gRPC ze sady Visual Studio 2019 nebo příkazového řádku, je pro vás vygenerován ekvivalent gRPC "Hello World". Skládá se ze `greeter.proto` souboru, který definuje službu a její zprávy `GreeterService.cs` a soubor s implementací služby.
+Při vytváření nového projektu ASP.NET Core 3,0 gRPC ze sady Visual Studio 2019 nebo příkazového řádku, je pro vás vygenerován ekvivalent gRPC "Hello World". Skládá se z `greeter.proto` souboru, který definuje službu a její zprávy a `GreeterService.cs` soubor s implementací služby.
 
 ```protobuf
 syntax = "proto3";

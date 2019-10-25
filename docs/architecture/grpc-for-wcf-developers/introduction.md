@@ -3,16 +3,14 @@ title: Úvod – gRPC pro vývojáře WCF
 description: Úvod
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 2782f28e8a99fa7c0bde69f757d14e96e91f5cd4
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 9eb12d5060ddf4f345ebe095738c98238c6caab7
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184419"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846629"
 ---
 # <a name="introduction"></a>Úvod
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Napomáháte počítačům navzájem komunikovat s jednou z primárních pracovních verzí digitálního stáří. K určení optimálního vzdáleného komunikačního mechanismu, který bude vyhovovat požadavkům na interoperabilitu aktuální infrastruktury, je zejména průběžné úsilí. Jak můžete představovat, tento mechanismus se mění jak v rámci požadavků, tak ve vývojovém infrastruktuře.
 
@@ -39,7 +37,7 @@ SOAP definuje pravidla, podle kterých mohou distribuované prvky aplikace vzáj
 
 Windows Communication Foundation je rozhraní pro vytváření služeb. Byla navržena v 2000s, aby usnadnila vývojářům použití prvotního SOA ke správě složitosti práce s protokolem SOAP. I když odebere požadavek, aby vývojář mohl zapisovat svoje vlastní protokoly SOAP, WCF dál používá protokol SOAP, aby bylo možné vzájemnou spolupráci s jinými systémy. Služba WCF byla také navržena tak, aby poskytovala řešení pro různé protokoly (HTTP/1.1, NetTCP a tak dále).
 
-## <a name="microservices"></a>Mikroslužby
+## <a name="microservices"></a>Mikroslužeb
 
 V architektuře mikroslužeb jsou velké aplikace sestavené jako kolekce menších modulárních služeb. Každá součást provede konkrétní úlohu nebo proces a komponenty jsou navrženy tak, aby fungovaly, ale mohou být izolované podle potřeby.
 

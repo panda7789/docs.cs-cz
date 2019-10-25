@@ -3,16 +3,14 @@ title: Migrace duplexních služeb WCF na gRPC-gRPC pro vývojáře WCF
 description: Naučte se migrovat různé formy duplexní služby WCF na služby gRPC streaming.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 1c3f87b035cea367188e8357f4755c7b6786ab77
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1702c9f7659f056af9009e81847f28c6e65b277c
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770393"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846604"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>Migrace duplexních služeb WCF do gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Teď, když jsou na začátku základní koncepty, Tato část se bude pohlížet na složitější *streamování* gRPC Services.
 
@@ -244,7 +242,7 @@ static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, Can
 > [!TIP]
 > Oddíl na [klientských knihovnách](client-libraries.md#iobservable) na konci této kapitoly si vyhledá, jak přidat rozšiřující metodu a třídy pro zabalení `IAsyncStreamReader<T>` v `IObservable<T>` pro vývojáře pomocí reaktivních programovacích vzorů.
 
-Znovu pečlivě Zachyťte výjimky z důvodu možnosti selhání sítě a <xref:System.OperationCanceledException>, které budou nevyhnutelně vyvolány, protože kód používá <xref:System.Threading.CancellationToken> k přerušení smyčky. @No__t_0 typ obsahuje spoustu užitečných informací o chybách běhového prostředí gRPC, včetně `StatusCode`. Další informace najdete v části [ *zpracování chyb* v kapitole 4](error-handling.md).
+Znovu pečlivě Zachyťte výjimky z důvodu možnosti selhání sítě a <xref:System.OperationCanceledException>, které budou nevyhnutelně vyvolány, protože kód používá <xref:System.Threading.CancellationToken> k přerušení smyčky. `RpcException` typ obsahuje spoustu užitečných informací o chybách běhového prostředí gRPC, včetně `StatusCode`. Další informace najdete v části [ *zpracování chyb* v kapitole 4](error-handling.md).
 
 ## <a name="bidirectional-streaming"></a>Obousměrný streamování
 

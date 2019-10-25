@@ -3,16 +3,14 @@ title: Kubernetes-gRPC pro vývojáře WCF
 description: Spuštění ASP.NET Core gRPC Services v clusteru Kubernetes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 8a04e59bb23b802af6907a369e2c278f64f3fa9d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: HT
+ms.openlocfilehash: 819c761a7a55485612b7fb0c8b392971751d8724
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770503"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846640"
 ---
 # <a name="kubernetes"></a>Kubernetes
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Přestože je možné ručně spustit kontejnery na hostitelích Docker, pro spolehlivé provozní systémy je vhodnější použít modul orchestrace kontejnerů ke správě více instancí spuštěných v několika serverech v clusteru. K dispozici jsou různé moduly pro orchestraci kontejnerů, včetně Kubernetes, Docker Swarm a Apache Mesos. V těchto modulech ale Kubernetes je daleko a nejvíce využíváno, takže bude tato kapitola zaměřena.
 
@@ -85,7 +83,7 @@ V tomto příkladu jsou spuštěny `kubectl` CLI a server Kubernetes verze 1.14.
 
 ## <a name="run-services-on-kubernetes"></a>Spuštění služeb na Kubernetes
 
-Ukázková aplikace má `kube` adresář obsahující tři soubory YAML. @No__t_0 soubor deklaruje vlastní obor názvů `stocks`. @No__t_0 soubor deklaruje nasazení a službu pro aplikaci gRPC a soubor `stockweb.yml` deklaruje nasazení a službu pro webovou aplikaci ASP.NET Core 3,0 MVC, která využívá službu gRPC.
+Ukázková aplikace má `kube` adresář obsahující tři soubory YAML. `namespace.yml` soubor deklaruje vlastní obor názvů `stocks`. `stockdata.yml` soubor deklaruje nasazení a službu pro aplikaci gRPC a soubor `stockweb.yml` deklaruje nasazení a službu pro webovou aplikaci ASP.NET Core 3,0 MVC, která využívá službu gRPC.
 
 Chcete-li použít soubor `YAML` s `kubectl`, použijte příkaz `apply -f`.
 
@@ -119,7 +117,7 @@ stocks            Active   2m53s
 
 ### <a name="the-stockdata-application"></a>Aplikace StockData
 
-@No__t_0 soubor deklaruje dva objekty: nasazení a službu.
+`stockdata.yml` soubor deklaruje dva objekty: nasazení a službu.
 
 #### <a name="the-stockdata-deployment"></a>Nasazení StockData
 
@@ -206,7 +204,7 @@ stockdata   ClusterIP   10.97.132.103   <none>        80/TCP    33s
 
 ### <a name="the-stockweb-application"></a>Aplikace StockWeb
 
-@No__t_0 soubor deklaruje nasazení a službu pro aplikaci MVC.
+`stockweb.yml` soubor deklaruje nasazení a službu pro aplikaci MVC.
 
 ```yaml
 apiVersion: apps/v1

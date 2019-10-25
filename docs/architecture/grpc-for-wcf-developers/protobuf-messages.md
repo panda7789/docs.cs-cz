@@ -3,16 +3,14 @@ title: Zprávy Protobuf – gRPC pro vývojáře WCF
 description: Přečtěte si, jak jsou Protobuf zprávy definovány v IDL a C#vygenerované v.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 1fdbedaadb33ac3eb99ca360018beb36ac7a8d78
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 9943478698acfbb54b3e1dd0e6a856d11b9266c3
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771624"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846338"
 ---
 # <a name="protobuf-messages"></a>Zprávy ve formátu protobuf
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V této části se dozvíte, jak deklarovat zprávy Protobuf v souborech `.proto`, vysvětluje základní koncepty čísel a typů polí a vyhledává se C# v kódu, který je generován kompilátorem `protoc`. Zbytek kapitoly se podrobněji podívá na to, jak se v Protobuf reprezentují různé typy dat.
 
@@ -57,7 +55,7 @@ message Stock {
 
 První řádek deklaruje použitou verzi syntaxe. Verze 3 jazyka byla vydána v 2016 a jedná se o doporučenou verzi pro služby gRPC Services.
 
-@No__t_0 řádek určuje obor názvů, který se má použít pro generované C# typy. Tato možnost bude ignorována, pokud je soubor `.proto` kompilován pro jiné jazyky. Pro soubory Protobuf je běžné, že obsahují možnosti specifické pro jazyk pro několik jazyků.
+`option csharp_namespace` řádek určuje obor názvů, který se má použít pro generované C# typy. Tato možnost bude ignorována, pokud je soubor `.proto` kompilován pro jiné jazyky. Pro soubory Protobuf je běžné, že obsahují možnosti specifické pro jazyk pro několik jazyků.
 
 Definice `Stock` zprávy určuje čtyři pole, každý s typem, název a číslo pole.
 

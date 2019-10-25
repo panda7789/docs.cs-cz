@@ -3,16 +3,14 @@ title: Volání pověření – gRPC pro vývojáře WCF
 description: Jak implementovat a používat přihlašovací údaje volání gRPC v ASP.NET Core 3,0.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 483f540a0ed3849883c07cc70f0e3d45a6b121ad
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 5f29d69ec37fe60bcd7ca01391001ea9eb71e7e4
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184594"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846687"
 ---
-# <a name="call-credentials"></a>Zavolat přihlašovací údaje
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="call-credentials"></a>Přihlašovací údaje volání
 
 Přihlašovací údaje volání jsou všechny na základě určitého druhu tokenu předaného v metadatech s každou žádostí.
 
@@ -60,7 +58,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-`IssuerSigningKey` Vlastnost vyžaduje`Microsoft.IdentityModels.Tokens.SecurityKey` implementaci s kryptografickými daty potřebnými k ověření podepsaných tokenů. Tento token by měl být bezpečně uložený na *tajných serverech* , jako je Azure klíčů trezor.
+Vlastnost `IssuerSigningKey` vyžaduje implementaci `Microsoft.IdentityModels.Tokens.SecurityKey` s kryptografickými daty potřebnými k ověření podepsaných tokenů. Tento token by měl být bezpečně uložený na *tajných serverech* , jako je Azure klíčů trezor.
 
 Dále přidejte autorizační službu, která řídí přístup k systému.
 
@@ -79,7 +77,7 @@ Dále přidejte autorizační službu, která řídí přístup k systému.
 > [!TIP]
 > Ověřování a autorizace jsou dva samostatné kroky. Ověřování se používá k určení identity uživatele. Autorizace rozhoduje, jestli má tento uživatel povolený přístup k různým částem systému.
 
-Nyní do kanálu ASP.NET Core v `Configure` metodě přidejte middleware pro ověřování a autorizaci.
+Nyní do kanálu ASP.NET Core v metodě `Configure` přidejte middleware pro ověřování a autorizaci.
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -102,7 +100,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-Nakonec použijte `User` `HttpContext` atribut na všechny služby nebo metody, které mají být zabezpečeny, a pomocí vlastnosti z podkladové metody ověřte oprávnění. `[Authorize]`
+Nakonec použijte atribut `[Authorize]` pro všechny služby nebo metody, které mají být zabezpečeny, a pomocí vlastnosti `User` z podkladového `HttpContext` Ověřte oprávnění.
 
 ```csharp
 [Authorize]

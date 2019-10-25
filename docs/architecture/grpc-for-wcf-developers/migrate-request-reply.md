@@ -3,16 +3,14 @@ title: Migrace služby Request-Reply WCF do gRPC-gRPC pro vývojáře WCF
 description: Naučte se migrovat jednoduchou službu Request-Reply z WCF na gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 183e3b0ab1ce5c63714ced064f0d0901f59819c7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 12e042e8e7e3683cc4da1fedce2482e7199b04a7
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770403"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846612"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>Migrace služby požadavek-odpověď WCF na gRPC unární RPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V této části se dozvíte, jak migrovat základní službu Request-Reply ve službě WCF do unární služby RPC v ASP.NET Core gRPC. Tyto služby jsou nejjednodušší typy služeb v Windows Communication Foundation (WCF) i v gRPC, takže je to vynikající místo, kde začít. Po migraci služby se dozvíte, jak vygenerovat klientskou knihovnu ze stejného `.proto` souboru pro využívání služby z klientské aplikace .NET.
 
@@ -32,7 +30,7 @@ public interface IPortfolioService
 }
 ```
 
-@No__t_0 model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), včetně seznamu objektů `PortfolioItem`. Tyto modely jsou definovány v projektu `TraderSys.PortfolioData` společně s třídou úložiště, která představuje abstrakci přístupu k datům.
+`Portfolio` model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), včetně seznamu objektů`PortfolioItem`. Tyto modely jsou definovány v projektu `TraderSys.PortfolioData` společně s třídou úložiště, která představuje abstrakci přístupu k datům.
 
 ```csharp
 [DataContract]
@@ -137,7 +135,7 @@ Teď máme naši datovou zprávu, abychom mohli deklarovat koncové body RPC slu
 
 ## <a name="convert-the-servicecontract-to-a-grpc-service"></a>Převést třídu ServiceContract na službu gRPC
 
-Metoda `Get` WCF používá dva parametry: `Guid traderId` a `int portfolioId`. metody služby gRPC mohou převzít pouze jeden parametr, takže je nutné vytvořit zprávu pro uložení dvou hodnot. Běžným postupem je pojmenování těchto objektů požadavků stejným názvem jako metoda a přípona `Request`. @No__t_0 se znovu používá pro pole `traderId` namísto `Guid`.
+Metoda `Get` WCF používá dva parametry: `Guid traderId` a `int portfolioId`. metody služby gRPC mohou převzít pouze jeden parametr, takže je nutné vytvořit zprávu pro uložení dvou hodnot. Běžným postupem je pojmenování těchto objektů požadavků stejným názvem jako metoda a přípona `Request`. `string` se znovu používá pro pole `traderId` namísto `Guid`.
 
 Služba může pouze vrátit `Portfolio` zprávu přímo, ale to může mít dopad na zpětnou kompatibilitu v budoucnu. Je vhodné definovat samostatné `Request` a `Response` zprávy pro každou metodu ve službě, a to i v případě, že je mnoho z nich stejné, a to v případě, že se jedná o `GetResponse` zprávu s jediným `Portfolio` polem.
 

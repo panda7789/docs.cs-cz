@@ -3,18 +3,16 @@ title: Zpracování chyb – gRPC pro vývojáře WCF
 description: BUDE URČENO K ZÁPISU
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 3535a00aad49f532eb5f5f778116454a12bfd639
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 2ef1a0b38d9b63af7244c6e0428c9adbcb1d6527
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846663"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-WCF používá `FaultException<T>` a `FaultContract` poskytuje podrobné informace o chybě, včetně podpory standardu SOAP chyb.
+WCF používá `FaultException<T>` a `FaultContract` k poskytnutí podrobných informací o chybách, včetně podpory standardu SOAP chyb.
 
 Aktuální verze gRPC bohužel neobsahuje sofistikovanější nalezené ve službě WCF a má pouze omezené integrované zpracování chyb na základě jednoduchých stavových kódů a metadat. V následující tabulce je Stručná příručka k nejčastěji používaným stavovým kódům:
 
@@ -25,12 +23,12 @@ Aktuální verze gRPC bohužel neobsahuje sofistikovanější nalezené ve služ
 | `GRPC_STATUS_UNKNOWN` | Neplatná odpověď. |
 | `GRPC_STATUS_INTERNAL` | Problém s kódováním/dekódováním. |
 | `GRPC_STATUS_UNAUTHENTICATED` | Ověřování se nezdařilo. |
-| `GRPC_STATUS_PERMISSION_DENIED` | Ověření se nepovedlo. |
+| `GRPC_STATUS_PERMISSION_DENIED` | Autorizace se nezdařila. |
 | `GRPC_STATUS_CANCELLED` | Volání bylo zrušeno, obvykle volající. |
 
 ## <a name="raising-errors-in-aspnet-core-grpc"></a>Vyvolávání chyb v ASP.NET Core gRPC
 
-Služba ASP.NET Core gRPC může odeslat chybovou odpověď vyvoláním `RpcException`, které může klient zachytit, jako kdyby byl ve stejném procesu. `RpcException` Musí zahrnovat stavový kód a popis a může volitelně zahrnovat metadata a delší zprávu o výjimce. Metadata lze použít k odesílání podpůrných dat, podobně jako `FaultContract` u objektů, které mohou mít další data pro chyby WCF.
+Služba ASP.NET Core gRPC může odeslat chybovou odpověď vyvoláním `RpcException`, kterou může klient zachytit, jako kdyby byl ve stejném procesu. `RpcException` musí zahrnovat stavový kód a popis a může volitelně zahrnovat metadata a delší zprávu o výjimce. Metadata lze použít k odesílání podpůrných dat, podobně jako `FaultContract` objekty mohou mít další data pro chyby WCF.
 
 ```csharp
 public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request, ServerCallContext context)
@@ -49,7 +47,7 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 
 ## <a name="catching-errors-in-grpc-clients"></a>Zachycení chyb v klientech gRPC
 
-Stejně jako klienti WCF mohou zachytit <xref:System.ServiceModel.FaultException%601> chyby, klient gRPC může `RpcException` zachytit chyby a zpracovat chyby. Vzhledem `RpcException` k tomu, že není obecný typ, nemůžete zachytit různé typy chyb v různých blocích, C#ale můžete použít funkci *filtrů výjimek* pro `catch` deklaraci samostatných bloků pro různé stavové kódy, jak je znázorněno v následujícím příkladu. případě
+Stejně jako klienti WCF můžou zachytit chyby <xref:System.ServiceModel.FaultException%601>, klient gRPC může zachytit `RpcException` a zpracovávat chyby. Vzhledem k tomu, že `RpcException` není obecný typ, nemůžete zachytávání různých typů chyb v různých blocích C#, ale můžete použít funkci *filtrů výjimek* pro deklaraci samostatných`catch`ch bloků pro různé stavové kódy, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 try
@@ -68,7 +66,7 @@ catch (RpcException)
 ```
 
 > [!IMPORTANT]
-> Když zadáte další metadata pro chyby, nezapomeňte zdokumentovat příslušné klíče a hodnoty v dokumentaci k rozhraní API nebo v komentářích v `.proto` souboru.
+> Když zadáte další metadata pro chyby, nezapomeňte zdokumentovat příslušné klíče a hodnoty v dokumentaci k rozhraní API nebo v komentářích v souboru `.proto`.
 
 ## <a name="grpc-richer-error-model"></a>Model gRPC bohatých chyb
 

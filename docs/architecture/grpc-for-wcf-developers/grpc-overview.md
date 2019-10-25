@@ -3,16 +3,14 @@ title: Přehled gRPC-gRPC pro vývojáře WCF
 description: Seznamte se se sadou principů, které vyvíjejí vývoj gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 489b91f6aa279d9c457e2e8fccd4438885076779
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 6980b473a6f9852a4e4f396355e98e2d3300cabe
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846648"
 ---
 # <a name="grpc-overview"></a>gRPC – přehled
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Po zobrazení genesisy WCF a gRPC v poslední kapitole bude tato kapitola brát v úvahu některé klíčové funkce gRPC a jejich porovnání s WCF.
 
