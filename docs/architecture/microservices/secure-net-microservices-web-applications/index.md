@@ -4,12 +4,12 @@ description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získej
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 0894465858e3503e2eddb5299b404f7ba95fdd6a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f405b4199e8239e86c4799a649c3d87811d99828
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296473"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798852"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
@@ -33,7 +33,7 @@ Pokud se k službám dají získat přístup přímo, můžete k ověřování u
 
 ### <a name="authenticate-with-aspnet-core-identity"></a>Ověřování pomocí ASP.NET Core identity
 
-Primárním mechanismem v ASP.NET Core pro identifikaci uživatelů aplikace je systém členství [ASP.NET Core identit](/aspnet/core/security/authentication/identity) . ASP.NET Core identity ukládá informace o uživateli (včetně přihlašovacích údajů, rolí a deklarací) do úložiště dat nakonfigurovaného vývojářem. Úložiště dat ASP.NET Core identity je obvykle úložiště Entity Framework, které je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíčku. Vlastní úložiště nebo jiné balíčky třetích stran ale můžou sloužit k ukládání informací o identitě do Azure Table Storage, CosmosDB nebo jiných umístění.
+Primárním mechanismem v ASP.NET Core pro identifikaci uživatelů aplikace je systém členství [ASP.NET Core identit](/aspnet/core/security/authentication/identity) . ASP.NET Core identity ukládá informace o uživateli (včetně přihlašovacích údajů, rolí a deklarací) do úložiště dat nakonfigurovaného vývojářem. Úložiště dat ASP.NET Core identity je obvykle Entity Framework úložiště, které je k dispozici v balíčku `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Vlastní úložiště nebo jiné balíčky třetích stran ale můžou sloužit k ukládání informací o identitě do Azure Table Storage, CosmosDB nebo jiných umístění.
 
 Následující kód je pořízen ze šablony projektu ASP.NET Core webové aplikace s vybraným ověřováním individuálního uživatelského účtu. Ukazuje, jak nakonfigurovat ASP.NET Core identity pomocí EntityFramework. Core v metodě Startup. ConfigureServices.
 
@@ -45,13 +45,13 @@ services.AddDbContext<ApplicationDbContext>(options =>
         .AddDefaultTokenProviders();
 ```
 
-Po nakonfigurování ASP.NET Core identity ji povolíte voláním aplikace. UseIdentity v `Startup.Configure` metodě služby.
+Po nakonfigurování ASP.NET Core identity ji povolíte voláním aplikace. UseIdentity v metodě `Startup.Configure` služby.
 
 Použití ASP.NET Core identity umožňuje několik scénářů:
 
 - Vytvořte nové informace o uživateli pomocí typu UserManager (userManager. CreateAsync).
 
-- Ověřování uživatelů pomocí typu SignInManager Můžete použít `signInManager.SignInAsync` pro přihlášení přímo nebo `signInManager.PasswordSignInAsync` pro potvrzení, že je heslo uživatele správné a pak se do něj přihlásí.
+- Ověřování uživatelů pomocí typu SignInManager Můžete použít `signInManager.SignInAsync` k přímému přihlášení nebo `signInManager.PasswordSignInAsync` k potvrzení hesla uživatele a jeho přihlášení.
 
 - Identifikujte uživatele na základě informací uložených v souboru cookie (načtený middleware ASP.NET Core identity) tak, aby následné požadavky z prohlížeče zahrnovaly identitu a deklarace uživatele přihlášeného uživatele.
 
@@ -67,16 +67,16 @@ Chcete-li použít externí ověřování, zahrňte příslušný middleware ov�
 
 Oblíbená externí poskytovatelé ověřování a jejich přidružené balíčky NuGet jsou uvedené v následující tabulce:
 
-| **Poskytovatel**  | **Balíček**                                          |
+| **Zprostředkovatele**  | **Balíček**                                          |
 | ------------- | ---------------------------------------------------- |
-| **Microsoft** | **Microsoft.AspNetCore.Authentication.MicrosoftAccount** |
-| **Google**    | **Microsoft.AspNetCore.Authentication.Google**           |
-| **Facebook**  | **Microsoft.AspNetCore.Authentication.Facebook**         |
-| **Twitter**   | **Microsoft.AspNetCore.Authentication.Twitter**          |
+| **Microsoft** | **Microsoft. AspNetCore. Authentication. MicrosoftAccount** |
+| **Internetového**    | **Microsoft. AspNetCore. Authentication. Google**           |
+| **Přes**  | **Microsoft. AspNetCore. Authentication. Facebook**         |
+| **Službě**   | **Microsoft. AspNetCore. Authentication. Twitter**          |
 
-Ve všech případech je middleware zaregistrován voláním metody registrace podobné `app.Use{ExternalProvider}Authentication` v. `Startup.Configure` Tyto metody registrace přebírají objekt Options, který obsahuje ID aplikace a tajné informace (například heslo), jak to vyžaduje poskytovatel. Externí zprostředkovatelé ověřování vyžadují, aby se aplikace zaregistrovala (jak je vysvětleno v [dokumentaci ASP.NET Core](/aspnet/core/security/authentication/social/)), aby mohla informovat uživatele o tom, co aplikace žádá o přístup k jejich identitě.
+Ve všech případech je middleware zaregistrován voláním metody registrace podobné `app.Use{ExternalProvider}Authentication` v `Startup.Configure`. Tyto metody registrace přebírají objekt Options, který obsahuje ID aplikace a tajné informace (například heslo), jak to vyžaduje poskytovatel. Externí zprostředkovatelé ověřování vyžadují, aby se aplikace zaregistrovala (jak je vysvětleno v [dokumentaci ASP.NET Core](/aspnet/core/security/authentication/social/)), aby mohla informovat uživatele o tom, co aplikace žádá o přístup k jejich identitě.
 
-Jakmile je middleware zaregistrován v `Startup.Configure`nástroji, můžete uživatele vyzvat, aby se přihlásili z jakékoli akce kontroleru. K tomu je potřeba vytvořit `AuthenticationProperties` objekt, který obsahuje název poskytovatele ověřování a adresu URL pro přesměrování. Pak vrátíte odpověď na výzvu, která `AuthenticationProperties` objekt předává. Příklad ukazuje následující kód.
+Jakmile je middleware zaregistrován v `Startup.Configure`, můžete uživatele vyzvat, aby se přihlásili z jakékoli akce kontroleru. Uděláte to tak, že vytvoříte objekt `AuthenticationProperties`, který obsahuje název poskytovatele ověřování a adresu URL pro přesměrování. Pak vrátíte odpověď na výzvu, která předá objekt `AuthenticationProperties`. Příklad ukazuje následující kód.
 
 ```csharp
 var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider,
@@ -137,7 +137,7 @@ Například v ASP.NET Core webové rozhraní API, které zveřejňuje koncové b
 
 ### <a name="authenticate-with-an-openid-connect-or-oauth-20-identity-provider"></a>Ověřování pomocí zprostředkovatele identity OpenID Connect nebo OAuth 2,0
 
-Pokud jsou informace o uživateli uložené v Azure Active Directory nebo jiném řešení identity, které podporuje OpenID Connect nebo OAuth 2,0, můžete k ověření pomocí OpenID Connect použít balíček **Microsoft. AspNetCore. Authentication. OpenIdConnect** . pracovního postupu. Chcete-li například ověřit identitu. rozhraní API mikroslužeb v eShopOnContainers, může webová aplikace ASP.NET Core použít middleware z tohoto balíčku, jak je znázorněno v následujícím zjednodušeném `Startup.cs`příkladu:
+Pokud jsou informace o uživateli uložené v Azure Active Directory nebo jiném řešení identity, které podporuje OpenID Connect nebo OAuth 2,0, můžete k ověření pomocí OpenID Connect použít balíček **Microsoft. AspNetCore. Authentication. OpenIdConnect** . pracovního postupu. Například pro ověření identity. v ASP.NET Core eShopOnContainers může webová aplikace použít middleware z tohoto balíčku, jak je znázorněno v následujícím zjednodušeném příkladu v `Startup.cs`:
 
 ```csharp
 // Startup.cs
@@ -211,7 +211,7 @@ Pokud dáváte přednost vydávání tokenů zabezpečení pro místní ASP.NET 
 
    - Mechanizmus úložiště pro informace o uživateli, například [ASP.NET Core identitu](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html) nebo alternativu.
 
-Když zadáte klienty a prostředky, které má IdentityServer4 použít, můžete předat <xref:System.Collections.Generic.IEnumerable%601> kolekci příslušného typu metodám, které přijímají úložiště klientů v paměti nebo zdrojů. V případě složitějších scénářů můžete poskytovat typy klientů nebo prostředků poskytovatele prostřednictvím injektáže závislostí.
+Když zadáte klienty a prostředky, které má IdentityServer4 použít, můžete předat <xref:System.Collections.Generic.IEnumerable%601> kolekci příslušného typu do metod, které přijímají úložiště klientů v paměti nebo zdrojů. V případě složitějších scénářů můžete poskytovat typy klientů nebo prostředků poskytovatele prostřednictvím injektáže závislostí.
 
 Ukázková konfigurace IdentityServer4 pro použití prostředků v paměti a klientů, které poskytuje vlastní typ IClientStore, může vypadat podobně jako v následujícím příkladu:
 
@@ -264,25 +264,25 @@ public void ConfigureServices(IServiceCollection services)
 
 Parametry v tomto použití jsou:
 
-- `Audience`představuje přijímač příchozího tokenu nebo prostředku, ke kterému token uděluje přístup. Pokud hodnota zadaná v tomto parametru neodpovídá parametru v tokenu, token se odmítne.
+- `Audience` představuje přijímač příchozího tokenu nebo prostředku, ke kterému token uděluje přístup. Pokud hodnota zadaná v tomto parametru neodpovídá parametru v tokenu, token se odmítne.
 
-- `Authority`je adresa ověřovacího serveru pro vydávání tokenů. Middleware pro ověření nosiče JWT pomocí tohoto identifikátoru URI získá veřejný klíč, který lze použít k ověření podpisu tokenu. Middleware také potvrdí, že `iss` parametr v tokenu odpovídá tomuto identifikátoru URI.
+- `Authority` je adresa ověřovacího serveru pro vydávání tokenů. Middleware pro ověření nosiče JWT pomocí tohoto identifikátoru URI získá veřejný klíč, který lze použít k ověření podpisu tokenu. Middleware také potvrdí, že parametr `iss` v tokenu odpovídá tomuto identifikátoru URI.
 
-Další parametr, `RequireHttpsMetadata`, je užitečný pro účely testování. Tento parametr nastavíte na hodnotu false, abyste mohli testovat v prostředích, kde nemáte certifikáty. V reálných nasazeních by se tokeny JWT nosiče měly vždycky předávat jenom přes HTTPS.
+Další parametr, `RequireHttpsMetadata`, je užitečný pro účely testování; Nastavte tento parametr na hodnotu false, abyste mohli testovat v prostředích, kde nemáte certifikáty. V reálných nasazeních by se tokeny JWT nosiče měly vždycky předávat jenom přes HTTPS.
 
-Díky tomuto middlewaru jsou tokeny JWT automaticky extrahovány z autorizačních hlaviček. Pak jsou deserializovatelné, ověřené (pomocí hodnot v `Audience` parametrech a `Authority` ) a uložené jako informace o uživateli, na které se později odkazuje pomocí akcí MVC nebo filtrů autorizace.
+Díky tomuto middlewaru jsou tokeny JWT automaticky extrahovány z autorizačních hlaviček. Poté jsou deserializovány, ověřovány (pomocí hodnot v parametrech `Audience` a `Authority`) a uloženy jako informace o uživateli, které budou později odkazovány pomocí akcí MVC nebo filtrů autorizace.
 
-Middleware pro ověření nosiče JWT může také podporovat pokročilejší scénáře, jako je například použití místního certifikátu k ověření tokenu, není-li tato autorita k dispozici. V tomto scénáři můžete určit `TokenValidationParameters` objekt v objektu.`JwtBearerOptions`
+Middleware pro ověření nosiče JWT může také podporovat pokročilejší scénáře, jako je například použití místního certifikátu k ověření tokenu, není-li tato autorita k dispozici. V tomto scénáři můžete zadat objekt `TokenValidationParameters` v objektu `JwtBearerOptions`.
 
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Sdílení souborů cookie mezi aplikacemi** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)
 
-- **Úvod do identity** \
+- **Úvod k identitě** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)
 
-- **Rick Anderson. Dvojúrovňové ověřování pomocí SMS** \
+- **Rick Anderson. Dvojúrovňové ověřování pomocí serveru SMS** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/2fa](/aspnet/core/security/authentication/2fa)
 
 - **Povolení ověřování přes Facebook, Google a další externí poskytovatele** \
@@ -294,12 +294,9 @@ Middleware pro ověření nosiče JWT může také podporovat pokročilejší sc
 - **ASPNET. Security. OAuth. Providers** (úložiště GitHub pro poskytovatele OAuth ASP.NET) \
   <https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src>
 
-- **Danny Strockis. Integrace Azure AD do webové aplikace ASP.NET Core** \
-  <https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/>
-
 - **IdentityServer4. Oficiální dokumentace** \
   <https://identityserver4.readthedocs.io/en/latest/>
 
 >[!div class="step-by-step"]
->[Předchozí](../implement-resilient-applications/monitor-app-health.md)Další
->[](authorization-net-microservices-web-applications.md)
+>[Předchozí](../implement-resilient-applications/monitor-app-health.md)
+>[Další](authorization-net-microservices-web-applications.md)

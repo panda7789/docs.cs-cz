@@ -4,12 +4,12 @@ description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pom
 ms.date: 06/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c4dbce74d0d8c0a682250a8021d983ef2990971f
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 19efc8412d834d73069c61e1cc1ccd9e5eb8593b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250314"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774366"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
@@ -44,9 +44,9 @@ Než začnete, ujistěte se, že na příkazovém řádku můžete spustit `dotn
     * K ověření instalace použijte příkaz prostředí PowerShell `java -version`.
 
 4. Nainstalujte [Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi).
-    * Stáhněte si [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.zip).
-    * Extrahuje do místního adresáře. Například `c:\bin\apache-maven-3.6.0\`.
-    * Přidejte Apache Maven do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml). Pokud jste extrahovali do `c:\bin\apache-maven-3.6.0\`, přidali byste do cesty `c:\bin\apache-maven-3.6.0\bin`.
+    * Stáhněte si [Apache Maven 3.6.2](http://mirror.metrocast.net/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.zip).
+    * Extrahuje do místního adresáře. Například `c:\bin\apache-maven-3.6.2\`.
+    * Přidejte Apache Maven do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml). Pokud jste extrahovali `c:\bin\apache-maven-3.6.2\`, měli byste do cesty přidat `c:\bin\apache-maven-3.6.2\bin`.
     * K ověření instalace použijte příkaz prostředí PowerShell `mvn -version`.
 
 5. Nainstalujte [Apache Spark 2.3 +](https://spark.apache.org/downloads.html). Apache Spark 2.4 + se nepodporuje.
@@ -119,7 +119,7 @@ git clone https://github.com/dotnet/spark.git c:\github\dotnet-spark
     dotnet HelloSpark.dll
     ```
 
-Gratulujeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.
+Blahopřejeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.
 
 ## <a name="next-steps"></a>Další kroky
 
