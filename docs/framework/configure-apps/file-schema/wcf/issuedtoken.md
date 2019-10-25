@@ -2,23 +2,23 @@
 title: <issuedToken>
 ms.date: 03/30/2017
 ms.assetid: b6eae4b7-a6cd-4e1a-b0f6-f407022550b0
-ms.openlocfilehash: b5ab3c3ad070499d686ea74b9fd459e89f380cfa
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 56439748926ada642018f48a5787634a50d0f180
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846863"
 ---
-# <a name="issuedtoken"></a>\<Třídy IssuedToken >
+# <a name="issuedtoken"></a>\<třídy IssuedToken >
 Určuje vlastní token, který slouží k ověření klienta ke službě.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**chování**](behaviors.md)\<
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> clientCredentials**](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Třídy IssuedToken >**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<chování**](behavior-of-endpointbehaviors.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<třídy issuedtoken >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Určuje vlastní token, který slouží k ověření klienta ke službě.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`cacheIssuedTokens`|Volitelný logický atribut, který určuje, zda jsou tokeny uloženy v mezipaměti. Výchozí hodnota je `true`.|  
-|`defaultKeyEntropyMode`|Volitelný řetězcový atribut určující, které náhodné hodnoty (jenž) se používají pro operace handshake. Mezi hodnoty `ClientEntropy`patří `ServerEntropy`, a `CombinedEntropy`. výchozí hodnota je `CombinedEntropy`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
+|`defaultKeyEntropyMode`|Volitelný řetězcový atribut určující, které náhodné hodnoty (jenž) se používají pro operace handshake. Mezi hodnoty patří `ClientEntropy`, `ServerEntropy`a `CombinedEntropy`, výchozí hodnota je `CombinedEntropy`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
 |`issuedTokenRenewalThresholdPercentage`|Volitelný celočíselný atribut, který určuje procentuální hodnotu platného časového rámce (poskytnutý vystavitelem tokenu), který může uplynout před obnovením tokenu. Hodnoty jsou od 0 do 100. Výchozí hodnota je 60, která určuje 60% času průchodu před pokusem o obnovení.|  
 |`issuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu, které se má použít při komunikaci s vystavitelem.|  
 |`localIssuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu, které se má použít při komunikaci s místním vystavitelem.|  
@@ -50,19 +50,19 @@ Určuje vlastní token, který slouží k ověření klienta ke službě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<localIssuer>](localissuer.md)|Určuje adresu místního vystavitele tokenu a vazbu, která se používá ke komunikaci s koncovým bodem.|  
-|[\<issuerChannelBehaviors>](issuerchannelbehaviors-element.md)|Určuje chování koncového bodu, které se má použít při kontaktování místního vystavitele.|  
+|[\<localIssuer >](localissuer.md)|Určuje adresu místního vystavitele tokenu a vazbu, která se používá ke komunikaci s koncovým bodem.|  
+|[\<issuerChannelBehaviors >](issuerchannelbehaviors-element.md)|Určuje chování koncového bodu, které se má použít při kontaktování místního vystavitele.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
+|[\<clientCredentials >](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vydaný token je vlastní typ přihlašovacích údajů, který se používá například při ověřování pomocí služby tokenů zabezpečení (STS) ve federovaném scénáři. Ve výchozím nastavení je tokenem token SAML. Další informace najdete v tématu [federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md). a [federačních a vydaných tokenů](../../../wcf/feature-details/federation-and-issued-tokens.md).  
+ Vydaný token je vlastní typ přihlašovacích údajů, který se používá například při ověřování pomocí služby tokenů zabezpečení (STS) ve federovaném scénáři. Ve výchozím nastavení je tokenem token SAML. Další informace najdete v tématech [federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)a [federační a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md).  
   
- Tato část obsahuje prvky, které slouží ke konfiguraci místního vystavitele tokenů nebo chování používaného se službou tokenů zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele najdete v tématu [How to: Konfigurace místního vystavitele](../../../wcf/feature-details/how-to-configure-a-local-issuer.md).  
+ Tato část obsahuje prvky, které slouží ke konfiguraci místního vystavitele tokenů nebo chování používaného se službou tokenů zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele najdete v tématu [Postupy: Konfigurace místního vystavitele](../../../wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 ## <a name="see-also"></a>Viz také:
 

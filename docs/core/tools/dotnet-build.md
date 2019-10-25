@@ -1,13 +1,13 @@
 ---
 title: dotnet – příkaz sestavení
 description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
-ms.date: 10/07/2019
-ms.openlocfilehash: 0a3e2c0e441cfdd1cb8266bc77dc1aba08af84d6
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.date: 10/14/2019
+ms.openlocfilehash: fe2135c150be46997699f756f7f0c9bc18bbb529
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522779"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846827"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -32,9 +32,17 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet build` sestaví projekt a jeho závislosti do sady binárních souborů. Binární soubory obsahují kód projektu v souborech IL (Intermediate Language) s příponou *. dll* a soubory symbolů používané pro ladění s příponou *. pdb* . Vytvoří se soubor JSON závislosti ( *. DEPS. JSON*), který obsahuje seznam závislostí aplikace. Je vytvořen soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime a jeho verzi aplikace.
+Příkaz `dotnet build` sestaví projekt a jeho závislosti do sady binárních souborů. Binární soubory obsahují kód projektu v souborech IL (Intermediate Language) s příponou *. dll* .  V závislosti na typu projektu a nastavení může být zahrnutých dalších souborů, například:
 
-Pokud má projekt závislosti třetích stran, jako jsou knihovny z NuGet, jsou vyřešeny z mezipaměti NuGet a nejsou k dispozici s vytvořeným výstupem projektu. V takovém případě produkt `dotnet build` není připraven k přenosu do jiného počítače ke spuštění. To je v kontrastu s chováním .NET Framework, při které sestavení spustitelného projektu (aplikace) vytvoří výstup, který je spustitelný na jakémkoli počítači, kde je nainstalován .NET Framework. Chcete-li mít rozhraní .NET Core podobné prostředí, je nutné použít příkaz [dotnet Publish](dotnet-publish.md) . Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+- Spustitelný soubor, který lze použít ke spuštění aplikace, pokud je typ projektu spustitelný soubor cílící na rozhraní .NET Core 3,0 nebo novější.
+- Soubory symbolů používané pro ladění s příponou *. pdb* .
+- Soubor *. DEPS. JSON* , který obsahuje závislosti aplikace nebo knihovny.
+- Soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime a jeho verzi pro aplikaci.
+- Další knihovny, na kterých projekt závisí (prostřednictvím odkazů na projekt nebo odkazů na balíček NuGet).
+
+U spustitelných projektů, které cílí na verze starší než .NET Core 3,0, se obvykle nekopírují závislosti knihoven z NuGet do výstupní složky.  Jsou vyřešeny ze složky globálních balíčků NuGet v době běhu. V takovém případě produkt `dotnet build` není připraven k přenosu do jiného počítače ke spuštění. Chcete-li vytvořit verzi aplikace, kterou lze nasadit, je nutné ji publikovat (například pomocí příkazu [dotnet Publish](dotnet-publish.md) ). Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+
+Pro spustitelné projekty cílené na .NET Core 3,0 a novější se závislosti knihoven zkopírují do výstupní složky. To znamená, že pokud neexistují žádné jiné logiky specifické pro publikování (například webové projekty), měl by být výstup sestavení nasazený.
 
 Sestavování vyžaduje soubor *Project. assets. JSON* , který obsahuje závislosti vaší aplikace. Soubor se vytvoří při spuštění [`dotnet restore`](dotnet-restore.md) . Bez zavedeného souboru prostředků nemůže nástroj překládat referenční sestavení, což má za následek chyby. Pomocí sady .NET Core 1. x SDK jste před spuštěním `dotnet build` museli explicitně spustit `dotnet restore`. Počínaje verzí .NET Core 2,0 SDK se `dotnet restore` spouští implicitně při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu Build, můžete předat možnost `--no-restore`.
 
@@ -48,7 +56,7 @@ Zda je projekt spustitelný nebo není určen vlastností `<OutputType>` v soubo
 </PropertyGroup>
 ```
 
-Chcete-li vytvořit knihovnu, vynechejte vlastnost `<OutputType>`. Hlavním rozdílem v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nemůže být provedena.
+Chcete-li vytvořit knihovnu, vynechejte vlastnost `<OutputType>` nebo změňte její hodnotu na `Library`. Knihovna DLL IL pro knihovnu neobsahuje vstupní body a nelze ji spustit.
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -56,7 +64,7 @@ Chcete-li vytvořit knihovnu, vynechejte vlastnost `<OutputType>`. Hlavním rozd
 
 Kromě možností příkaz `dotnet build` přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností nebo `-l` pro definování protokolovacího nástroje. Další informace o těchto možnostech naleznete v tématu Referenční dokumentace k [příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). Případně můžete použít také příkaz [dotnet MSBuild](dotnet-msbuild.md) .
 
-Spuštění `dotnet build` je ekvivalentem `dotnet msbuild -restore -target:Build`.
+Spuštění `dotnet build` je ekvivalentem spuštění `dotnet msbuild -restore`; výchozí podrobnost výstupu se ale liší.
 
 ## <a name="arguments"></a>Arguments
 
@@ -104,7 +112,7 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, do kterého se umístí sestavené binární soubory. I když zadáte tuto možnost, musíte definovat `--framework`. Pokud není zadán, výchozí cesta je `./bin/<configuration>/<framework>/`.
+  Adresář, do kterého se umístí sestavené binární soubory. Pokud není zadán, výchozí cesta je `./bin/<configuration>/<framework>/`.  Pro projekty s více cílovými rozhraními (prostřednictvím vlastnosti `TargetFrameworks`) je také potřeba definovat `--framework` při zadání této možnosti.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -112,7 +120,7 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` a `diag[nostic]`. Výchozí hodnota je `minimal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 

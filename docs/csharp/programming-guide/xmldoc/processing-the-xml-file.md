@@ -6,20 +6,20 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: bb713fbc5ddd3737cb629c5c09c25ff2980c73dc
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b2b19a2b2c46df5b78b6ebba48955cae55d32121
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523385"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846939"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 
 Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je označen pro generování dokumentace. (Informace o tom, jak označit svůj kód, naleznete v tématu [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md).) Řetězec ID jednoznačně identifikuje konstrukci. Programy, které zpracovávají soubor XML, mohou použít řetězec ID k identifikaci odpovídající .NET Framework metadat nebo položek reflexe, na které se dokumentace vztahuje.
 
- Soubor XML není hierarchická reprezentace vašeho kódu; Jedná se o nestrukturovaný seznam, který má vygenerované ID pro každý prvek.
+Soubor XML není hierarchická reprezentace vašeho kódu; Jedná se o nestrukturovaný seznam, který má vygenerované ID pro každý prvek.
 
- Kompilátor při generování řetězců ID sleduje následující pravidla:
+Kompilátor při generování řetězců ID sleduje následující pravidla:
 
 - Řetězec neobsahuje prázdné znaky.
 
@@ -41,7 +41,7 @@ Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je ozna
 
   - Základní typy. Běžné typy (ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE) jsou reprezentovány jako plně kvalifikovaný název typu.
 
-  - Vnitřní typy (například ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF. a ELEMENT_TYPE_VOID) jsou reprezentovány jako plně kvalifikovaný název odpovídajícího úplného typu. Například System. Int32 nebo System. TypedReference.
+  - Vnitřní typy (například ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF a ELEMENT_TYPE_VOID) jsou reprezentovány jako plně kvalifikovaný název odpovídající úplného typu. Například System. Int32 nebo System. TypedReference.
 
   - ELEMENT_TYPE_PTR se reprezentuje jako "\*" za upraveným typem.
 
@@ -57,9 +57,9 @@ Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je ozna
 
   - ELEMENT_TYPE_GENERICARRAY je reprezentována jako "[?]" za typem elementu pole. C# Kompilátor to nikdy negeneruje.
 
-  - ELEMENT_TYPE_ARRAY je reprezentována jako [*lowerbound*: `size`,*lowerbound*: `size`], kde je počet čárek-1 a dolní meze a velikost jednotlivých dimenzí, pokud jsou známy, jsou reprezentovány v desítkové soustavě. Pokud není zadaná dolní mez nebo velikost, je tato hodnota jednoduše vynechána. Pokud je spodní mez a velikost pro konkrétní dimenzi vynechána, je vynechána i znak ': '. Například dvojrozměrné pole s 1 jako dolní meze a nespecifikované velikosti je [1:, 1:].
+  - ELEMENT_TYPE_ARRAY je reprezentována jako [*lowerbound*:`size`,*lowerbound*:`size`], kde je počet čárek-1 a dolní meze a velikost jednotlivých dimenzí, pokud jsou známy, jsou reprezentovány v desítkové soustavě. Pokud není zadaná dolní mez nebo velikost, je tato hodnota jednoduše vynechána. Pokud je spodní mez a velikost pro konkrétní dimenzi vynechána, je vynechána i znak ': '. Například dvojrozměrné pole s 1 jako dolní meze a nespecifikované velikosti je [1:, 1:].
 
-  - ELEMENT_TYPE_FNPTR je reprezentovaná jako "= FUNC: `type` (*Signature*)", kde `type` je návratový typ a *Signatura* jsou argumenty metody. Nejsou-li žádné argumenty, jsou vynechány kulaté závorky. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_FNPTR je reprezentovaná jako "= FUNC:`type`(*Signature*)", kde `type` je návratový typ a *Signatura* jsou argumenty metody. Nejsou-li žádné argumenty, jsou vynechány kulaté závorky. C# Kompilátor to nikdy negeneruje.
 
     Následující komponenty signatur nejsou reprezentovány, protože nejsou nikdy použity pro odlišení přetížených metod:
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 5484dfeb8cf5292fb43393bb39b9878114119d29
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 608918828bf72369a1bd48e2391e2423078e9df0
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991198"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846837"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 
@@ -63,7 +63,7 @@ V tomto příkazu:
 
 - Argument *publisherPolicyAssemblyFile* je název sestavení zásad vydavatele, které je výsledkem tohoto příkazu. Název souboru sestavení musí odpovídat formátu:
 
-  **politických.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**
+  **politických.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **. dll**
 
 - Argument *keyPairFile* je název souboru, který obsahuje dvojici klíčů. Sestavení zásad sestavení a vydavatel je nutné podepsat se stejnou dvojicí klíčů.
 
@@ -72,13 +72,13 @@ V tomto příkazu:
   > [!NOTE]
   > Možnost cílení na konkrétní architekturu procesoru je k dispozici od .NET Framework 2,0.
 
-Možnost cílení na konkrétní architekturu procesoru je dostupná od .NET Framework 2.0. následující příkaz vytvoří sestavení zásad vydavatele, které se zavolá `policy.1.0.myAssembly` ze souboru zásad vydavatele s názvem `pub.config`, přiřadí se silnému názvu. sestavení používající dvojici klíčů v `sgKey.snk` souboru a určuje, že sestavení cílí na architekturu procesoru x86.
+Možnost cílení na konkrétní architekturu procesoru je k dispozici od .NET Framework 2,0. Následující příkaz vytvoří sestavení zásad vydavatele s názvem `policy.1.0.myAssembly` ze souboru zásad vydavatele s názvem `pub.config`, přiřadí sestavení silný název pomocí páru klíčů v souboru `sgKey.snk` a určí, že sestavení cílí na procesor x86. Architektura.
 
 ```
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
 ```
 
-Sestavení zásad vydavatele se musí shodovat s architekturou procesoru sestavení, na které se vztahuje. Proto pokud má <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> vaše sestavení <xref:System.Reflection.ProcessorArchitecture.MSIL>hodnotu, musí být sestavení zásad vydavatele pro toto sestavení vytvořeno pomocí `/platform:anycpu`. Pro každé sestavení specifické pro procesor musíte zadat samostatné sestavení zásad vydavatele.
+Sestavení zásad vydavatele se musí shodovat s architekturou procesoru sestavení, na které se vztahuje. Proto pokud má vaše sestavení hodnotu <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> <xref:System.Reflection.ProcessorArchitecture.MSIL>, musí být sestavení zásad vydavatele pro toto sestavení vytvořeno pomocí `/platform:anycpu`. Pro každé sestavení specifické pro procesor musíte zadat samostatné sestavení zásad vydavatele.
 
 V důsledku tohoto pravidla je, že pro změnu architektury procesoru pro sestavení je nutné změnit hlavní nebo dílčí komponentu čísla verze, abyste mohli dodat nové sestavení zásad vydavatele se správnou architekturou procesoru. Sestavení původní zásady vydavatele nemůže obsluhovat sestavení, jakmile má vaše sestavení jinou architekturu procesoru.
 
@@ -92,7 +92,7 @@ K přidání sestavení zásad vydavatele do globální mezipaměti sestavení [
 
 Do příkazového řádku zadejte následující příkaz:
 
-**Gacutil /i** *publisherPolicyAssemblyFile*
+**Gacutil/I**  *publisherPolicyAssemblyFile*
 
 Následující příkaz přidá `policy.1.0.myAssembly.dll` do globální mezipaměti sestavení (GAC).
 

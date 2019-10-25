@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 7d60578ac2913037e1cdeda329f06f9a4986574d
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: fc315faef750d93d914104dd568078aa3fc430d4
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67857573"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72887752"
 ---
-### <a name="rsacngverifyhash-now-returns-false-for-any-verification-failure"></a>RSACng.VerifyHash nyní vrací hodnotu False pro jakékoli neúspěchy ověření
+### <a name="rsacngverifyhash-now-returns-false-for-any-verification-failure"></a>Algoritmem RSACng. VerifyHash teď pro jakékoli selhání ověřování vrátí hodnotu false.
 
 |   |   |
 |---|---|
-|Podrobnosti|Od verze rozhraní .NET Framework 4.6.2, vrátí tato metoda <strong>False</strong> Pokud samotný podpis má chybný formát. Nyní vrací hodnotu false pro všechny chyby ověření. V rozhraní .NET Framework 4.6 a 4.6.1, vyvolá metoda výjimku <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> Pokud samotný podpis má chybný formát.|
-|Doporučení|Jakýkoli kód, jejichž spuštění závisí na zpracování <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> by se měl spustit místo toho, pokud ověření selže a metoda vrátí <strong>False</strong>.|
-|Scope|Vedlejší|
+|Podrobnosti|Počínaje .NET Framework 4.6.2 vrátí tato metoda **hodnotu false** , pokud samotný podpis není správně naformátován. Nyní vrátí hodnotu false pro jakékoli selhání ověřování. V .NET Framework 4,6 a 4.6.1 metoda vyvolá <xref:System.Security.Cryptography.CryptographicException?displayProperty=name>, pokud samotný podpis není správně naformátován.|
+|Doporučení|Jakýkoli kód, jehož provádění závisí na zpracování <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> je třeba provést, pokud se ověření nepovede a metoda vrátí **hodnotu false**.|
+|Rozsah|Vedlejší|
 |Version|4.6.2|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.RSACng.VerifyHash(System.Byte[],System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)?displayProperty=nameWithType></li></ul>|
-
