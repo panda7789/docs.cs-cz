@@ -1,22 +1,22 @@
 ---
-title: Uložení a načtení trénované modely
-description: Zjistěte, jak uložit a načíst trénované modely
+title: Ukládání a načítání vycvičených modelů
+description: Naučte se ukládat a načítat školené modely.
 ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: e3d4a51ceaf707d30c5072b91d7baf7fe02ef433
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: f1a3131126f9f3af0bab0b1592430fbf7dddf78a
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066169"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799087"
 ---
-# <a name="save-and-load-trained-models"></a>Uložení a načtení trénované modely
+# <a name="save-and-load-trained-models"></a>Ukládání a načítání vycvičených modelů
 
-Zjistěte, jak uložit a načíst trénované modely ve vaší aplikaci. 
+Naučte se, jak ukládat a načítat do vaší aplikace školený modely. 
 
-V průběhu procesu vytváření modelu model je umístěn v paměti a je dostupný v průběhu životního cyklu aplikace. Po aplikaci se zastaví, pokud model není uložen někde místně nebo vzdáleně, je však již nebude dostupná. Modely se obvykle používají v určitém okamžiku po školení v jiných aplikacích, ať už pro odvození nebo znovu školení. Proto je důležité k ukládání modelu. Uložení a načtení modelů pomocí kroků popsaných v dalších částech tohoto dokumentu, při použití přípravy dat a modelu trénovacích kanálů stejný, jako je podrobně popsaný níže. I když tato ukázka používá model lineární regrese, stejný postup se vztahuje na jiné ML.NET algoritmy.
+V průběhu procesu sestavování modelu je model umístěn v paměti a je přístupný v rámci životního cyklu aplikace. Pokud se ale aplikace zastaví, pokud se model neuloží místně nebo vzdáleně, už není přístupný. Modely jsou obvykle používány v určitém bodě po školení v jiných aplikacích, a to buď pro odvození nebo opětovné školení. Proto je důležité model Uložit. Pomocí kroků popsaných v následujících částech tohoto dokumentu uložte a načtěte modely při použití kanálů pro přípravu a školicí kanály pro přípravu dat, jako je tomu níže. I když tato ukázka používá model lineární regrese, stejný postup se vztahuje i na jiné algoritmy ML.NET.
 
 ```csharp
 HousingData[] housingData = new HousingData[]
@@ -24,7 +24,7 @@ HousingData[] housingData = new HousingData[]
     new HousingData
     {
         Size = 600f,
-        HistoricalPrices = new float[] { 100000f ,125000f ,122000f },
+        HistoricalPrices = new float[] { 100000f, 125000f, 122000f },
         CurrentPrice = 170000f
     },
     new HousingData
@@ -60,27 +60,27 @@ ITransformer trainedModel = pipelineEstimator.Fit(data);
 mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 ```
 
-Protože většina modely a data přípravy kanály dědit z stejná sada tříd, uložit a načíst podpisy metod pro tyto součásti je stejný. V závislosti na vašemu případu použití, můžete buď kombinovat kanálu přípravy dat a modelu do jednoho [ `EstimatorChain` ](xref:Microsoft.ML.Data.TransformerChain%601) který by výstup jedné [ `ITransformer` ](xref:Microsoft.ML.ITransformer) nebo jim tak vytváření oddělení samostatné [ `ITransformer` ](xref:Microsoft.ML.ITransformer) pro každý. 
+Vzhledem k tomu, že většina modelů a kanálů přípravy dat dědí ze stejné sady tříd, signatury metody Save a Load pro tyto komponenty jsou stejné. V závislosti na vašem případu použití můžete kombinovat kanál přípravy dat a model do jediného [`EstimatorChain`](xref:Microsoft.ML.Data.TransformerChain%601) , který by představoval výstup jednoho [`ITransformer`](xref:Microsoft.ML.ITransformer) nebo oddělit je tak, aby pro každý vytvořil samostatný [`ITransformer`](xref:Microsoft.ML.ITransformer) . 
 
-## <a name="save-a-model-locally"></a>Uložit model místně
+## <a name="save-a-model-locally"></a>Místní uložení modelu
 
-Při ukládání modelu budete potřebovat dvě věci:
+Při ukládání modelu potřebujete dvě věci:
 
-1. [ `ITransformer` ](xref:Microsoft.ML.ITransformer) Modelu.
-2. [ `DataViewSchema` ](xref:Microsoft.ML.DataViewSchema) z [ `ITransformer` ](xref:Microsoft.ML.ITransformer)očekávaný vstup.
+1. [`ITransformer`](xref:Microsoft.ML.ITransformer) modelu.
+2. [`DataViewSchema`](xref:Microsoft.ML.DataViewSchema) očekávaného vstupu [`ITransformer`](xref:Microsoft.ML.ITransformer).
 
-Po trénování modelu, použijte [ `Save` ](xref:Microsoft.ML.ModelOperationsCatalog.Save*) volá metodu pro uložení naučeného modelu do souboru `model.zip` pomocí `DataViewSchema` vstupní data. 
+Po školení modelu použijte metodu [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) k uložení proučeného modelu do souboru s názvem `model.zip` pomocí `DataViewSchema` vstupních dat. 
 
 ```csharp
 // Save Trained Model
 mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 ```
 
-## <a name="load-a-model-stored-locally"></a>Načtení modelu ukládají místně
+## <a name="load-a-model-stored-locally"></a>Načtení modelu místně uloženého
 
-Modely se ukládají místně se dá použít v jiných procesů nebo aplikace, jako je `ASP.NET Core` a `Serverless Web Applications`. Zobrazit [ML.NET použití v rozhraní Web API](./serve-model-web-api-ml-net.md) a [nasazení ML.NET bez serveru webové aplikace](./serve-model-serverless-azure-functions-ml-net.md) články s postupy pro další informace. 
+Místně uložené modely lze použít v jiných procesech nebo aplikacích, jako jsou `ASP.NET Core` a `Serverless Web Applications`. Další informace najdete v článcích [použití ml.NET ve webovém rozhraní API](./serve-model-web-api-ml-net.md) a [nasazení ml.NET webových aplikací bez serveru](./serve-model-serverless-azure-functions-ml-net.md) . 
 
-V samostatné aplikace nebo proces, použijte [ `Load` ](xref:Microsoft.ML.ModelOperationsCatalog.Load*) metoda spolu se cesta k souboru zobrazíte trénovaného modelu do vaší aplikace.
+V samostatné aplikaci nebo procesu použijte metodu [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load*) společně s cestou k souboru, abyste získali vyškolený model do aplikace.
 
 ```csharp
 //Define DataViewSchema for data preparation pipeline and trained model
@@ -90,9 +90,9 @@ DataViewSchema modelSchema;
 ITransformer trainedModel = mlContext.Model.Load("model.zip", out modelSchema);
 ```
 
-## <a name="load-a-model-stored-remotely"></a>Načtení modelu vzdáleně uložen
+## <a name="load-a-model-stored-remotely"></a>Načtení modelu uloženého vzdáleně
 
-Chcete-li načíst kanálů přípravy dat a modely, které jsou uložené ve vzdáleném umístění do vaší aplikace, použijte [ `Stream` ](xref:System.IO.Stream) namísto cesty souboru v [ `Load` ](xref:Microsoft.ML.ModelOperationsCatalog.Load*) – metoda.
+Chcete-li načíst přípravné kanály a modely uložené ve vzdáleném umístění do vaší aplikace, použijte místo cesty k souboru v metodě [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load*) [`Stream`](xref:System.IO.Stream) .
 
 ```csharp
 // Create MLContext
@@ -111,14 +111,14 @@ using (HttpClient client = new HttpClient())
 }
 ```
 
-## <a name="working-with-separate-data-preparation-and-model-pipelines"></a>Práce s kanály modelu a samostatná data pro přípravu
+## <a name="working-with-separate-data-preparation-and-model-pipelines"></a>Práce s oddělenými kanály pro přípravu a modelování dat
 
 > [!NOTE]
-> Práce s kanály trénování modelu a samostatná data pro přípravu je volitelné. Oddělení kanály usnadňuje Zkontrolujte parametry zjištěná modelu. Pro predikcí je jednodušší pro uložení a načtení jeden kanál, který zahrnuje přípravy dat a operace trénování modelu.
+> Práce s oddělenými kanály pro přípravu dat a výuku modelu je volitelná. Oddělení kanálů usnadňuje kontrolu zjištěných parametrů modelu. V případě předpovědi je snazší Uložit a načíst jeden kanál, který obsahuje operace školení pro přípravu a modelování dat.
 
-Při práci s kanály samostatná data pro přípravu a modely, stejně jako jeden kanály platí; s výjimkou nyní obou kanálů je potřeba uložit a načíst současně.
+Při práci se samostatnými kanály pro přípravu dat a modely se používá stejný postup jako u jednoho kanálu. s výjimkou toho je potřeba současně ukládat a načítat oba kanály.
 
-Daný samostatná data pro přípravu a model trénovacích kanálů:
+Předané samostatné kanály pro přípravu a přípravu dat:
 
 ```csharp
 // Define data preparation estimator
@@ -139,9 +139,9 @@ IDataView transformedData = dataPrepTransformer.Transform(data);
 RegressionPredictionTransformer<LinearRegressionModelParameters> trainedModel = sdcaEstimator.Fit(transformedData);
 ```
 
-### <a name="save-data-preparation-pipeline-and-trained-model"></a>Uložení kanálu přípravy dat a trénovaného modelu
+### <a name="save-data-preparation-pipeline-and-trained-model"></a>Uložení kanálu přípravy dat a trained model
 
-Uložení kanálu přípravy dat i trénovaného modelu, použijte následující příkazy:
+Pokud chcete uložit jak kanál pro přípravu dat, tak i školený model, použijte následující příkazy:
 
 ```csharp
 // Save Data Prep transformer
@@ -151,9 +151,9 @@ mlContext.Model.Save(dataPrepTransformer, data.Schema, "data_preparation_pipelin
 mlContext.Model.Save(trainedModel, transformedData.Schema, "model.zip");
 ```
 
-### <a name="load-data-preparation-pipeline-and-trained-model"></a>Načíst kanálu přípravy dat a trénovaného modelu 
+### <a name="load-data-preparation-pipeline-and-trained-model"></a>Načtení kanálu přípravy dat a trained model 
 
-V samostatném procesu nebo v aplikaci načtěte kanálu přípravy dat a trénovaného modelu současně následujícím způsobem:
+V samostatném procesu nebo aplikaci načtěte následující kanál pro přípravu dat a školený model současně:
 
 ```csharp
 // Create MLContext

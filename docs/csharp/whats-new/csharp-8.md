@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: 12e41a3bca981d04f7b29970eba1f737254f2b58
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 335ae37b20f752f4181a4d1828cb2a1f02c0fa9e
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579140"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798919"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -28,7 +28,7 @@ C#8,0 přidává následující funkce a vylepšení C# jazyka:
 - [Indexy a rozsahy](#indices-and-ranges)
 - [Přiřazení slučování s hodnotou null](#null-coalescing-assignment)
 - [Nespravované konstruované typy](#unmanaged-constructed-types)
-- [stackalloc ve vnořených výrazech](#stackalloc-in-nested-expressions)
+- [Stackalloc ve vnořených výrazech](#stackalloc-in-nested-expressions)
 - [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
 
 Zbývající část tohoto článku stručně popisuje tyto funkce. Kde jsou k dispozici podrobné články, jsou uvedeny odkazy na tyto kurzy a přehledy. Pomocí globálního nástroje `dotnet try` můžete prozkoumat tyto funkce ve vašem prostředí:
@@ -73,7 +73,9 @@ Kompilátor vás upozorní, když potřebuje vytvořit obrannou linií kopii.  V
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Všimněte si, že modifikátor `readonly` je nezbytný pro vlastnost jen pro čtení. Kompilátor nepředpokládá, že přístupové objekty `get` nemění stav; je nutné deklarovat `readonly` explicitně. Kompilátor vynutil pravidlo, které `readonly` členové nemění stav. Následující metoda nebude zkompilována, dokud neodeberete modifikátor `readonly`:
+Všimněte si, že modifikátor `readonly` je nezbytný pro vlastnost jen pro čtení. Kompilátor nepředpokládá, že přístupové objekty `get` nemění stav; je nutné deklarovat `readonly` explicitně. Automaticky implementované vlastnosti představují výjimku. Kompilátor bude považovat všechny automaticky implementované metody getter jako jen pro čtení, takže zde není nutné přidávat modifikátor `readonly` do vlastností `X` a `Y`.
+
+Kompilátor vynutil pravidlo, které `readonly` členové nemění stav. Následující metoda nebude zkompilována, dokud neodeberete modifikátor `readonly`:
 
 ```csharp
 public readonly void Translate(int xOffset, int yOffset)
@@ -137,7 +139,7 @@ Tady je několik vylepšení syntaxe:
 
 - Proměnná se nachází před klíčovým slovem `switch`. V jiném pořadí je vizuálně snadné odlišit výraz přepínače od příkazu switch.
 - Prvky `case` a `:` jsou nahrazeny `=>`. Je výstižnější a intuitivní.
-- @No__t_0 případ se nahradí `_` zahození.
+- `default` případ se nahradí `_` zahození.
 - Tělo jsou výrazy, nikoli příkazy.
 
 Kontrast s ekvivalentním kódem pomocí příkazu Classic `switch`:
@@ -400,7 +402,7 @@ Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 - <xref:System.Range?displayProperty=nameWithType> představuje dílčí rozsah sekvence.
 - Operátor rozsahu `..`, který jako svůj operand Určuje začátek a konec rozsahu.
 
-Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. @No__t_0 index je stejný jako `sequence[0]`. @No__t_0 index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n` index `^n` stejný jako `sequence.Length - n`.
+Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence.Length - n`.
 
 Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
 
@@ -461,7 +463,7 @@ Rozsah se pak dá použít uvnitř `[` a `]`ch znaků:
 var text = words[phrase];
 ```
 
-Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězci](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězci](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
 
@@ -512,7 +514,7 @@ Další informace naleznete v tématu [nespravované typy](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc ve vnořených výrazech
 
-Počínaje C# 8,0 platí, že pokud je výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> typu, můžete použít výraz `stackalloc` v jiných výrazech:
+Počínaje C# 8,0 platí, že pokud je výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu<xref:System.Span%601?displayProperty=nameWithType>nebo<xref:System.ReadOnlySpan%601?displayProperty=nameWithType>typu, můžete použít výraz`stackalloc`v jiných výrazech:
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };

@@ -5,12 +5,12 @@ ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 33e0cb74342ca3e82ff5f108453d63e022d63d20
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: f764d2147ec56f8dcc38f96d566ac746cf205650
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71118013"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799136"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Vytvoření předpovědi s poučeným modelem
 
@@ -38,9 +38,9 @@ public class HousingData
 
 ### <a name="output-data"></a>Výstupní data
 
-Podobně jako vstupní `Label` názvy sloupců aml.NETmávýchozínázvypropředpovězenéhodnotysloupcevytvářenémodelem.`Features` V závislosti na úloze se název může lišit.
+Podobně jako u názvů vstupních sloupců `Features` a `Label` má ML.NET výchozí názvy pro předpovězené hodnoty sloupce vytvářené modelem. V závislosti na úloze se název může lišit.
 
-Vzhledem k tomu, že algoritmus použitý v této ukázce je lineární regresní algoritmus, výchozí název výstupního sloupce `Score` je definován [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atributem `PredictedPrice` vlastnosti.
+Vzhledem k tomu, že algoritmus použitý v této ukázce je lineární regresní algoritmus, výchozí název výstupního sloupce je `Score`, který je definován atributem [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) vlastnosti `PredictedPrice`.
 
 ```csharp
 class HousingPrediction
@@ -65,14 +65,14 @@ ITransformer predictionPipeline = mlContext.Model.Load("model.zip", out predicti
 
 ## <a name="single-prediction"></a>Jedna předpověď
 
-Chcete-li udělat jednu předpověď, vytvořte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pomocí načteného kanálu předpovědi.
+Chcete-li vytvořit jedinou předpověď, vytvořte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pomocí načteného kanálu předpovědi.
 
 ```csharp
 // Create PredictionEngines
 PredictionEngine<HousingData, HousingPrediction> predictionEngine = mlContext.Model.CreatePredictionEngine<HousingData, HousingPrediction>(predictionPipeline);
 ```
 
-Pak použijte [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) metodu a předejte vstupní data jako parametr. Všimněte si, že [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) použití metody nevyžaduje vstup [`IDataView`](xref:Microsoft.ML.IDataView)jako). Důvodem je to, že pohodlně internalizes manipulaci s datovým typem vstupu, takže můžete předat objekt vstupního datového typu. Vzhledem `CurrentPrice` k tomu, že se jedná o cíl nebo popisek, který se pokoušíte odhadnout pomocí nových dat, předpokládáme, že v tuto chvíli není k dispozici žádná hodnota.
+Pak použijte metodu [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) a předejte vstupní data jako parametr. Všimněte si, že použití metody [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) nevyžaduje vstup jako [`IDataView`](xref:Microsoft.ML.IDataView)). Důvodem je to, že pohodlně internalizes manipulaci s datovým typem vstupu, takže můžete předat objekt vstupního datového typu. Vzhledem k tomu, že `CurrentPrice` je cílem nebo návěští, které se pokoušíte odhadnout pomocí nových dat, předpokládáme, že v tuto chvíli není k dispozici žádná hodnota.
 
 ```csharp
 // Input Data
@@ -86,11 +86,11 @@ HousingData inputData = new HousingData
 HousingPrediction prediction = predictionEngine.Predict(inputData);
 ```
 
-Pokud přistupujete `Score` k vlastnosti `prediction` objektu, měli byste `150079`získat hodnotu podobnou.
+Pokud přistupujete k vlastnosti `Score` objektu `prediction`, měli byste získat hodnotu podobnou `150079`.
 
 ## <a name="multiple-predictions"></a>Několik předpovědi
 
-Když jsou uvedena následující data, načtěte je [`IDataView`](xref:Microsoft.ML.IDataView)do. V tomto případě [`IDataView`](xref:Microsoft.ML.IDataView) je `inputData`název. Vzhledem `CurrentPrice` k tomu, že se jedná o cíl nebo popisek, který se pokoušíte odhadnout pomocí nových dat, předpokládá se, že v tuto chvíli není k dispozici žádná hodnota.
+Když se dostanou následující data, načtou se do [`IDataView`](xref:Microsoft.ML.IDataView). V tomto případě je název [`IDataView`](xref:Microsoft.ML.IDataView) `inputData`. Vzhledem k tomu, že `CurrentPrice` je cílem nebo návěští, které se pokoušíte odhadnout pomocí nových dat, předpokládá se, že v tuto chvíli není k dispozici žádná hodnota.
 
 ```csharp
 // Actual data
@@ -99,7 +99,7 @@ HousingData[] housingData = new HousingData[]
     new HousingData
     {
         Size = 850f,
-        HistoricalPrices = new float[] { 150000f,175000f,210000f }
+        HistoricalPrices = new float[] { 150000f, 175000f, 210000f }
     },
     new HousingData
     {
@@ -114,14 +114,14 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-Pak použijte [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) metodu pro použití transformace dat a generování předpovědi.
+Pak použijte metodu [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) pro použití transformace dat a generování předpovědi.
 
 ```csharp
 // Predicted Data
 IDataView predictions = predictionPipeline.Transform(inputData);
 ```
 
-Zkontrolujte předpovězené hodnoty pomocí [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) metody.
+Zkontrolujte předpovězené hodnoty pomocí metody [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) .
 
 ```csharp
 // Get Predictions
@@ -130,8 +130,8 @@ float[] scoreColumn = predictions.GetColumn<float>("Score").ToArray();
 
 Předpovídané hodnoty ve sloupci skóre by měly vypadat takto:
 
-| Příležitostný | Předpověď |
+| Příležitostný | Předpovědi |
 |---|---|
-| 1 | 144638,2 |
-| 2 | 150079,4 |
+| první | 144638,2 |
+| odst | 150079,4 |
 | 3 | 107789,8 |

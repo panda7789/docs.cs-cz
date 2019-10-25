@@ -2,28 +2,40 @@
 title: Analyzovat závislosti na kód portu pro .NET Core
 description: Naučte se analyzovat externí závislosti, abyste mohli přenést projekt z .NET Framework do .NET Core.
 author: cartermp
-ms.date: 12/07/2018
+ms.date: 10/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 36d1c1d2090a0fb9e6f48fe519d15897579df2d5
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 5fa5a20e9a2b5427401835a0c1c6e1845d86c3ef
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521469"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798791"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analyzovat závislosti na kód portu pro .NET Core
 
-Chcete-li svůj kód přenést do rozhraní .NET Core nebo .NET Standard, je nutné pochopit závislosti. Externí závislosti jsou [balíčky NuGet](#analyze-referenced-nuget-packages-in-your-projects) nebo [knihovny DLL](#analyze-dependencies-that-arent-nuget-packages) , na které odkazujete v projektu, ale nebudete je sestavovat. Vyhodnoťte každou závislost a vytvořte pohotovostní plán pro ty, které nejsou kompatibilní s .NET Core. Tady je postup, jak zjistit, jestli je závislost kompatibilní s .NET Core.
+Chcete-li svůj kód přenést do rozhraní .NET Core nebo .NET Standard, je nutné pochopit závislosti. Externí závislosti jsou balíčky NuGet nebo `.dll`s, na které odkazujete v projektu, ale nevytváříte sami sebe.
 
-## <a name="analyze-referenced-nuget-packages-in-your-projects"></a>Analyzovat odkazované balíčky NuGet ve vašich projektech
+## <a name="migrate-your-nuget-packages-to-packagereference"></a>Migrace balíčků NuGet do `PackageReference`
 
-Pokud odkazujete na balíčky NuGet v projektu, musíte ověřit, jestli jsou kompatibilní s .NET Core.
-Existují dva způsoby, jak to provést:
+.NET Core používá [PackageReference](/nuget/consume-packages/package-references-in-project-files) k určení závislostí balíčku. Pokud používáte [balíčky. config](/nuget/reference/packages-config) k určení balíčků v projektu, je nutné ji převést na formát `PackageReference`, protože `packages.config` není v rozhraní .NET Core podporován.
 
-- [Použití aplikace Průzkumník balíčků NuGet](#analyze-nuget-packages-using-nuget-package-explorer)
-- [Používání webu nuget.org](#analyze-nuget-packages-using-nugetorg)
+Informace o tom, jak migrovat, najdete v článku [migrace ze souboru Packages. config na PackageReference](/nuget/reference/migrate-packages-config-to-package-reference) .
 
-Pokud nejsou po analýze balíčků kompatibilní s .NET Core a pouze cílovými .NET Framework, můžete zjistit, zda [.NET Framework režim kompatibility](#net-framework-compatibility-mode) může pomáhat s vaším procesem přenosu.
+## <a name="upgrade-your-nuget-packages"></a>Upgrade balíčků NuGet
+
+Po migraci projektu do formátu `PackageReference` musíte ověřit, jestli jsou balíčky kompatibilní s .NET Core.
+
+Nejprve upgradujte balíčky na nejnovější verzi, kterou můžete. To se dá udělat s uživatelským rozhraním správce balíčků NuGet v aplikaci Visual Studio. Je pravděpodobný, že novější verze závislostí balíčku jsou již kompatibilní s .NET Core.
+
+## <a name="analyze-your-package-dependencies"></a>Analýza závislostí balíčku
+
+Pokud jste ještě neověřili, že vaše převedené a upgradované balíčky fungují v .NET Core, existuje několik způsobů, jak to dosáhnout:
+
+### <a name="analyze-nuget-packages-using-nugetorg"></a>Analýza balíčků NuGet pomocí nuget.org
+
+V části **závislosti** stránky balíčku můžete zobrazit monikery cílového rozhraní (TFM), které každý balíček podporuje v [NuGet.org](https://www.nuget.org/) .
+
+I když použití webu je jednodušší způsob, jak ověřit kompatibilitu, informace o **závislostech** nejsou v lokalitě k dispozici pro všechny balíčky.
 
 ### <a name="analyze-nuget-packages-using-nuget-package-explorer"></a>Analýza balíčků NuGet pomocí Průzkumníka balíčků NuGet
 
@@ -37,27 +49,7 @@ Nejjednodušší způsob, jak zkontrolovat složky balíčku NuGet, je použít 
 4. Ve výsledcích hledání vyberte název balíčku a klikněte na **otevřít**.
 5. Rozbalte složku *lib* na pravé straně a podívejte se na názvy složek.
 
-Vyhledejte složku s některým z následujících názvů:
-
-```
-netstandard1.0
-netstandard1.1
-netstandard1.2
-netstandard1.3
-netstandard1.4
-netstandard1.5
-netstandard1.6
-netstandard2.0
-netcoreapp1.0
-netcoreapp1.1
-netcoreapp2.0
-netcoreapp2.1
-netcoreapp2.2
-portable-net45-win8
-portable-win8-wpa8
-portable-net451-win81
-portable-net45-win8-wpa8-wpa81
-```
+Vyhledejte složku s názvy pomocí jednoho z následujících vzorů: `netstandardX.Y` nebo `netcoreappX.Y`.
 
 Tyto hodnoty jsou [cílové monikery rozhraní .NET Framework (TFM)](../../standard/frameworks.md) , které jsou namapovány na verze [.NET Standard](../../standard/net-standard.md), .NET Core a tradiční profily PŘENOSITELNÉ knihovny tříd (PCL), které jsou kompatibilní s .NET Core.
 
@@ -65,15 +57,9 @@ Tyto hodnoty jsou [cílové monikery rozhraní .NET Framework (TFM)](../../stand
 > Při prohlížení TFM, který balíček podporuje, pamatujte, že `netcoreapp*`, i když je kompatibilní, je jenom pro projekty .NET Core, a ne pro .NET Standard projekty.
 > Knihovna, která cílí jenom na `netcoreapp*` a ne `netstandard*`, může být spotřebovaná jenom jinými aplikacemi .NET Core.
 
-### <a name="analyze-nuget-packages-using-nugetorg"></a>Analýza balíčků NuGet pomocí nuget.org
+## <a name="net-framework-compatibility-mode"></a>Režim kompatibility .NET Framework
 
-Případně se můžete podívat na TFM, který každý balíček podporuje v [NuGet.org](https://www.nuget.org/) v části **závislosti** stránky balíčku.
-
-I když použití webu je jednodušší způsob, jak ověřit kompatibilitu, informace o **závislostech** nejsou v lokalitě k dispozici pro všechny balíčky.
-
-### <a name="net-framework-compatibility-mode"></a>Režim kompatibility .NET Framework
-
-Po analýze balíčků NuGet můžete zjistit, že cílí jenom na .NET Framework jako většina balíčků NuGet.
+Po analýze balíčků NuGet se může stát, že budou cílit jenom na .NET Framework.
 
 Počínaje .NET Standard 2,0 byl zaveden režim kompatibility .NET Framework. Tento režim kompatibility umožňuje projektům .NET Standard a .NET Core odkazovat na .NET Framework knihovny. Odkazování na knihovny .NET Framework nefunguje pro všechny projekty, například pokud knihovna používá rozhraní API Windows Presentation Foundation (WPF), ale odblokuje mnoho scénářů přenosu.
 
@@ -92,12 +78,6 @@ Chcete-li potlačit upozornění úpravou souboru projektu, vyhledejte položku 
 ```
 
 Další informace o potlačení upozornění kompilátoru v aplikaci Visual Studio naleznete v tématu [potlačení upozornění pro balíčky NuGet](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages).
-
-## <a name="port-your-packages-to-packagereference"></a>Portování balíčků pro `PackageReference`
-
-.NET Core používá [PackageReference](/nuget/consume-packages/package-references-in-project-files) k určení závislostí balíčku. Pokud k určení balíčků používáte [Package. config](/nuget/reference/packages-config) , budete muset převést na `PackageReference`.
-
-Další informace najdete na adrese [migrace ze souboru Packages. config na PackageReference](/nuget/reference/migrate-packages-config-to-package-reference).
 
 ## <a name="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core"></a>Co dělat, když se závislost balíčku NuGet nespustí v .NET Core
 

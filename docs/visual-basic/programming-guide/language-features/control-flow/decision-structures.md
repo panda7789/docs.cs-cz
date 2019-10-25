@@ -21,9 +21,9 @@ Visual Basic umožňuje testovat podmínky a provádět různé operace v závis
   
  Následující ilustrace znázorňuje rozhodovací strukturu, která testuje podmínku na hodnotu true a provede různé akce v závislosti na tom, zda je hodnota true nebo false.  
   
- ![Vývojový diagram if... Pak... Jinak konstrukce.](./media/decision-structures/if-then-else-construction.gif)  
+ ![Vývojový diagram If...Then...Else konstrukce.](./media/decision-structures/if-then-else-construction.gif)  
   
-## <a name="ifthenelse-construction"></a>Pokud... Pak... Konstrukce else  
+## <a name="ifthenelse-construction"></a>If...Then...Else konstrukce  
  `If...Then...Else`konstrukce umožňují otestovat jednu nebo více podmínek a spustit jeden nebo více příkazů v závislosti na každé podmínce. Můžete testovat podmínky a provádět akce následujícími způsoby:  
   
 - Spustit jeden nebo více příkazů, pokud je podmínka`True`  
@@ -34,13 +34,13 @@ Visual Basic umožňuje testovat podmínky a provádět různé operace v závis
   
 - Test další podmínky, pokud je předchozí podmínka`False`  
   
- Struktura ovládacího prvku, která nabízí všechny tyto možnosti, je [if... Pak... ELSE – příkaz](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). Pokud máte pouze jeden test a jeden příkaz ke spuštění, můžete použít jednořádkových verzí. Pokud máte složitější sadu podmínek a akcí, můžete použít víceřádkovou verzi.  
+ Struktura ovládacího prvku, která nabízí všechny tyto možnosti, je [If...Then...Else – příkaz](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). Pokud máte pouze jeden test a jeden příkaz ke spuštění, můžete použít jednořádkových verzí. Pokud máte složitější sadu podmínek a akcí, můžete použít víceřádkovou verzi.  
   
-## <a name="selectcase-construction"></a>Vybrat... Konstrukce případu  
- `Select...Case` Konstrukce umožňuje vyhodnotit výraz jednou a spouštět různé sady příkazů na základě různých možných hodnot. Další informace najdete v tématu věnovaném [výběru... Příkaz Case](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
+## <a name="selectcase-construction"></a>Select...Case konstrukce  
+ `Select...Case` Konstrukce umožňuje vyhodnotit výraz jednou a spouštět různé sady příkazů na základě různých možných hodnot. Další informace najdete v tématu věnovaném [Select...Case příkaz](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
   
-## <a name="trycatchfinally-construction"></a>Zkusit... Zachytit... Nakonec konstrukce  
- `Try...Catch...Finally`konstrukce umožňují spustit sadu příkazů v prostředí, které si zachovají řízení, pokud některý z vašich příkazů způsobí výjimku. Můžete provádět různé akce pro různé výjimky. Volitelně můžete zadat blok kódu, který se spustí před ukončením celé `Try...Catch...Finally` konstrukce bez ohledu na to, co se děje. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+## <a name="trycatchfinally-construction"></a>Try...Catch...Finally konstrukce  
+ `Try...Catch...Finally`konstrukce umožňují spustit sadu příkazů v prostředí, které si zachovají řízení, pokud některý z vašich příkazů způsobí výjimku. Můžete provádět různé akce pro různé výjimky. Volitelně můžete zadat blok kódu, který se spustí před ukončením celé `Try...Catch...Finally` konstrukce bez ohledu na to, co se děje. Další informace najdete v tématu [Try...Catch...Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 > [!NOTE]
 > U mnoha řídicích struktur se při kliknutí na klíčové slovo zvýrazní všechna klíčová slova ve struktuře. `If` Například při kliknutí `If...Then...Else` na `Then` `ElseIf` `End If` konstrukci jsou zvýrazněny všechny`Else`instance,,, a v konstrukci. `If` Chcete-li přejít na další nebo předchozí zvýrazněné klíčové slovo, stiskněte klávesy CTRL + SHIFT + šipka dolů nebo CTRL + SHIFT + šipka nahoru.  

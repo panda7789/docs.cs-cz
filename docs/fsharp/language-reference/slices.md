@@ -2,16 +2,16 @@
 title: Řezy (F#)
 description: Přečtěte si, jak používat řezy pro F# existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
 ms.date: 01/22/2019
-ms.openlocfilehash: 3067982c2b4249312c7e9365bbfb994be840911d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cbff1b055ea99ef708f9db191be49275e630ee90
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627143"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798904"
 ---
 # <a name="slices"></a>Řezy
 
-V F#je řez podmnožinou datového typu. Aby bylo možné převzít řez z datového typu, musí datový typ buď definovat `GetSlice` metodu, nebo v [rozšíření typu](type-extensions.md) , které je v oboru. Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní.
+V F#je řez podmnožinou datového typu. Aby bylo možné převzít řezy z datového typu, musí datový typ definovat buď metodu `GetSlice`, nebo v [rozšíření typu](type-extensions.md) , které je v oboru. Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní.
 
 Řezy se podobají [indexerům](./members/indexed-properties.md), ale místo toho, aby vydávaly jedinou hodnotu z podkladové datové struktury, poskytují více.
 
@@ -89,19 +89,19 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-F# Základní knihovna není definována `GetSlice`pro prostorová pole. Pokud chcete rozdělit takové nebo jiné pole více dimenzí, je nutné definovat `GetSlice` člena sami.
+F# Základní knihovna nedefinuje`GetSlice`pro 3D pole. Pokud chcete rozdělit takové nebo jiné pole více dimenzí, je nutné definovat člena `GetSlice` sami.
 
 ## <a name="defining-slices-for-other-data-structures"></a>Definování řezů pro jiné datové struktury
 
 F# Základní knihovna definuje řezy pro omezené sady typů. Pokud chcete definovat řezy pro více datových typů, můžete tak učinit buď v samotné definici typu, nebo v rozšíření typu.
 
-Tady je příklad, jak můžete definovat řezy pro třídu, aby <xref:System.ArraySegment%601> bylo možné pohodlné manipulaci s daty:
+Tady je příklad, jak můžete definovat řezy pro třídu <xref:System.ArraySegment%601>, abyste umožnili pohodlné manipulaci s daty:
 
 ```fsharp
 open System
 
 type ArraySegment<'TItem> with
-    member segment.GetSlice(?start, ?finish) =
+    member segment.GetSlice(start, finish) =
         let start = defaultArg start 0
         let finish = defaultArg finish segment.Count
         ArraySegment(segment.Array, segment.Offset + start, finish - start)
@@ -112,7 +112,7 @@ let slice = arr.[2..5] //[ 3; 4; 5]
 
 ### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Použít vkládání k zamezení zabalení, pokud je to nezbytné
 
-Pokud definujete řezy pro typ, který je ve skutečnosti strukturou, doporučujeme, `inline` `GetSlice` abyste členem. F# Kompilátor optimalizuje volitelné argumenty a vyloučí případné přidělení haldy jako výsledek vytváření řezů. To je velmi důležité pro vytváření <xref:System.Span%601> řezů, jako je například to, že nelze přidělit haldě.
+Pokud definujete řezy pro typ, který je ve skutečnosti strukturou, doporučujeme, abyste `inline` `GetSlice` člen. F# Kompilátor optimalizuje volitelné argumenty a vyloučí případné přidělení haldy jako výsledek vytváření řezů. To je důležité pro vytváření řezů, jako je například <xref:System.Span%601>, které nelze přidělit haldě.
 
 ```fsharp
 open System

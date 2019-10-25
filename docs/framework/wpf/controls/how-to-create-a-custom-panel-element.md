@@ -9,20 +9,20 @@ helpviewer_keywords:
 - Panel control [WPF]
 - custom Panel elements [WPF]
 ms.assetid: e0df4f1e-8c07-4e86-89a3-e22acfffdc2a
-ms.openlocfilehash: d4fc9d76ada9f27bd52619280b323691af9382c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31edc75114c5dad613e5b65e7d8b051e2c3713af
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61910959"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799143"
 ---
 # <a name="how-to-create-a-custom-panel-element"></a>Postupy: Vytvoření vlastního elementu panelu
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak přepsat výchozí chování rozložení <xref:System.Windows.Controls.Panel> elementu a vytvářet vlastní rozložení prvků, které jsou odvozeny z <xref:System.Windows.Controls.Panel>.  
+ Tento příklad ukazuje, jak přepsat výchozí chování rozložení prvku <xref:System.Windows.Controls.Panel> a vytvořit vlastní prvky rozložení, které jsou odvozeny z <xref:System.Windows.Controls.Panel>.  
   
- V příkladu je definována jednoduchý vlastní <xref:System.Windows.Controls.Panel> prvek s názvem `PlotPanel`, které se umístí podřízené prvky podle dvě pevně zakódované souřadnic x a y-. V tomto příkladu `x` a `y` jsou nastaveny na `50`; proto všechny podřízené prvky jsou umístěny na tomto místě na x a y osy.  
+ Příklad definuje jednoduchý prvek vlastní <xref:System.Windows.Controls.Panel> s názvem `PlotPanel`, který umístí podřízené prvky podle dvou pevně zakódovaných souřadnic x-a y. V tomto příkladu jsou `x` a `y` obě nastaveny na `50`; Proto jsou všechny podřízené prvky umístěny v tomto umístění na osách x a y.  
   
- K implementaci vlastní <xref:System.Windows.Controls.Panel> chování, v příkladu se používá <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody. Každá metoda vrátí <xref:System.Windows.Size> data, která je potřeba umístit a vykreslování podřízených elementů.  
+ K implementaci vlastního chování <xref:System.Windows.Controls.Panel> používá tento příklad metody <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>. Každá metoda vrátí <xref:System.Windows.Size> data, která jsou nutná k umístění a vykreslení podřízených prvků.  
   
  [!code-cpp[PlotPanel#1](~/samples/snippets/cpp/VS_Snippets_Wpf/PlotPanel/CPP/PlotPanel.cpp#1)]
  [!code-csharp[PlotPanel#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]
@@ -32,4 +32,3 @@ ms.locfileid: "61910959"
 
 - <xref:System.Windows.Controls.Panel>
 - [Přehled panelu](panels-overview.md)
-- [Vytvoření vlastního panelu ukázky zabalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)

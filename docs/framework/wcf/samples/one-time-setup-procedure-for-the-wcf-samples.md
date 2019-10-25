@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 4fe77455c26393455c66c24c74691a335ad8cb1b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 7c07f39ebff0caf97a9561f08826a0c95ac81140
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039180"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799028"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -22,11 +22,11 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
 
 1. Ujistěte se, že je nastavené ASP.NET. Další informace o tom, jak nastavit ASP.NET, najdete v tématu [pokyny pro hostování internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).
 
-2. Ujistěte se [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] , že je nainstalována. V tomto adresáři vyhledejte v 4.0 (nebo novějším): **\WINDOWS\Microsoft.NET\Framework**
+2. Ujistěte se, že je nainstalovaná [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]. V tomto adresáři vyhledejte v 4.0 (nebo novějším): **\WINDOWS\Microsoft.NET\Framework**
 
 3. Pokud není nainstalováno Visual Studio 2012 a váš operační systém není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).
 
-4. Spusťte následující příkazy. Další informace o tom, proč je nutné tyto příkazy spustit, najdete v tématu [služba hostovaná službou IIS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90))se nezdařila.
+4. Spusťte následující příkazy. Další informace o tom, proč je nutné tyto příkazy spustit, najdete v tématu [služba hostovaná službou IIS se nezdařila](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90)).
 
     > [!WARNING]
     > Pokud dojde k přeinstalování služby IIS, bude nutné znovu spustit následující příkazy.
@@ -37,15 +37,15 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     ```
 
     > [!WARNING]
-    > Spuštěním příkazu `aspnet_regiis –i –enable` se [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]spustí výchozí fond aplikací, což může způsobit problémy s nekompatibilitou pro jiné aplikace ve stejném počítači.
+    > Spuštěním příkazu `aspnet_regiis –i –enable` nastavíte výchozí fond aplikací pomocí [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], což může způsobit problémy s nekompatibilitou pro jiné aplikace ve stejném počítači.
 
 5. Pokud chcete povolit porty používané ukázkami, postupujte podle [pokynů pro bránu firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md) .
 
-6. Ověřte následující výchozí adresář: \<InstallDrive>: **\WF_WCF_Samples**. Pokud byly ukázky dříve nainstalovány, jedná se o výchozí adresář.
+6. Ověřte následující výchozí adresář: \<InstallDrive >: **\WF_WCF_Samples**. Pokud byly ukázky dříve nainstalovány, jedná se o výchozí adresář.
 
-7. Pokud ukázky nejsou nainstalovány, nainstalujte je z umístění pro stažení ukázek pro [Visual C# ](https://go.microsoft.com/fwlink/?LinkId=190939) nebo [Visual Basic](https://go.microsoft.com/fwlink/?LinkID=193373).
+7. Pokud ukázky nejsou nainstalovány, nainstalujte je z umístění pro stažení ukázek pro [C#](https://go.microsoft.com/fwlink/?LinkId=190939).
 
-8. Po instalaci ukázek si projděte: \<InstallDrive>: **\WF_WCF_Samples\WCF\Setup\\**
+8. Po instalaci ukázek použijte: \<InstallDrive >: **\WF_WCF_Samples\WCF\Setup\\**
 
 9. Spusťte dávkový soubor **Setupvroot. bat** . Provedou se následující kroky:
 
@@ -63,9 +63,9 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     > [!NOTE]
     > Pokud tento krok není dokončený, všechny ukázky hostované službou IIS při sestavování nebudou úspěšné. Ujistěte se, že jste správně nastavili oprávnění, nebo spusťte příkazový řádek sady SDK a příkazový řádek sady Visual Studio (2012) jako správce.
 
-11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. V systémech Windows 7 [!INCLUDE[wv](../../../../includes/wv-md.md)], a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]je tento účet NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je tento účet ASPNET.
+11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. Pro Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]a Windows Server 2008 R2 je tento účet **Network Service**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]účet je NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je účet ASPNET.
 
-12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve \<složce InstallPath > \WF_WCF_Samples\WCF\Setup\.  Tento skript provede následující úlohy:
+12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \WF_WCF_Samples\WCF\Setup\.  Tento skript provede následující úlohy:
 
     - Sestavte Nástroj FindPrivateKey.
 
