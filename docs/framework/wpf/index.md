@@ -14,18 +14,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 35a936cbc34bf10219099090e1af8c145d7fb23d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764540"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919359"
 ---
-# <a name="windows-presentation-foundation"></a><span data-ttu-id="a07bd-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="a07bd-102">Windows Presentation Foundation</span></span>
-<span data-ttu-id="a07bd-103">Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření desktopových-obchodních aplikací na Windows.</span><span class="sxs-lookup"><span data-stu-id="a07bd-103">Windows Presentation Foundation (WPF) in Visual Studio provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>  
-  
- [<span data-ttu-id="a07bd-104">Vytváření desktopových aplikací pomocí Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="a07bd-104">Create Desktop Applications with Windows Presentation Foundation</span></span>](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+# <a name="windows-presentation-foundation"></a><span data-ttu-id="63dca-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="63dca-102">Windows Presentation Foundation</span></span>
 
- [<span data-ttu-id="a07bd-105">Návrh XAML v sadě Visual Studio a Blend pro Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a07bd-105">Designing XAML in Visual Studio and Blend for Visual Studio</span></span>](/visualstudio/designers/designing-xaml-in-visual-studio)  
-  
- [<span data-ttu-id="a07bd-106">Získat Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a07bd-106">Get Visual Studio</span></span>](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+<span data-ttu-id="63dca-103">Windows Presentation Foundation (WPF) poskytuje vývojářům jednotný programovací model pro vytváření podnikových aplikací pro stolní počítače ve Windows.</span><span class="sxs-lookup"><span data-stu-id="63dca-103">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
+
+- [<span data-ttu-id="63dca-104">Úvod do WPF</span><span class="sxs-lookup"><span data-stu-id="63dca-104">Introduction to WPF</span></span>](introduction-to-wpf.md)
+- [<span data-ttu-id="63dca-105">Začínáme</span><span class="sxs-lookup"><span data-stu-id="63dca-105">Getting Started</span></span>](getting-started/index.md)
+- [<span data-ttu-id="63dca-106">Vývoj aplikací</span><span class="sxs-lookup"><span data-stu-id="63dca-106">Application Development</span></span>](app-development/index.md)
+- [<span data-ttu-id="63dca-107">Pokročilé</span><span class="sxs-lookup"><span data-stu-id="63dca-107">Advanced</span></span>](advanced/index.md)
+- [<span data-ttu-id="63dca-108">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="63dca-108">Controls</span></span>](controls/index.md)
+- [<span data-ttu-id="63dca-109">Data</span><span class="sxs-lookup"><span data-stu-id="63dca-109">Data</span></span>](data/index.md)
+- [<span data-ttu-id="63dca-110">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="63dca-110">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
+- [<span data-ttu-id="63dca-111">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="63dca-111">Security</span></span>](security-wpf.md)
+- [<span data-ttu-id="63dca-112">Ukázky WPF</span><span class="sxs-lookup"><span data-stu-id="63dca-112">WPF Samples</span></span>](wpf-samples.md)
+- [<span data-ttu-id="63dca-113">Knihovna tříd</span><span class="sxs-lookup"><span data-stu-id="63dca-113">Class Library</span></span>](class-library-wpf.md)
