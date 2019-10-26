@@ -10,12 +10,12 @@ ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: mairaw
 ms.author: mairaw
 ms.topic: conceptual
-ms.openlocfilehash: 809ac026244b24aee69ec0d6c40c10a1248c234c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 4b47847e9d6e9424d4442d655c40a637383c7229
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579118"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72847072"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
@@ -57,18 +57,22 @@ Tato rozhraní API podporují infrastrukturu produktů a nejsou zamýšlená ani
 * [System. data. SqlTypes. SqlStreamChars. SetLength – metoda](system.data.sqltypes.sqlstreamchars.setlength.md)
 * [System. data. SqlTypes. SqlStreamChars. Write – Metoda](system.data.sqltypes.sqlstreamchars.write.md)
 * [System .NET. Connection – třída](connection.md)
-* [System .NET. Connection. m \_WriteList pole](m_writelist.md)
+* [System .NET. Connection. m\_pole WriteList](m_writelist.md)
 * [System .NET. Connection – třída](connectiongroup.md)
-* [System .NET. Connection. m \_ConnectionList pole](m_connectionlist.md)
+* [System .NET. Connection. m\_pole ConnectionList](m_connectionlist.md)
+* [System .NET. ConnectStream. Connection – vlastnost](system.net.connectstream.connection.md)
 * [System .NET. CoreResponseData – třída](coreresponsedata.md)
-* [System .NET. CoreResponseData. m \_ResponseHeaders pole](coreresponsedata_m_responseheaders.md)
-* [System .NET. CoreResponseData. m \_StatusCode pole](coreresponsedata_m_statuscode.md)
-* [System .NET. HttpWebRequest. \_AutoRedirects – pole](_autoredirects.md)
-* [System .NET. HttpWebRequest. \_CoreResponse – pole](httpwebrequest__coreresponse.md)
-* [System .NET. HttpWebRequest. \_HttpResponse – pole](_httpresponse.md)
-* [System .NET. ServicePoint. m \_ConnectionGroupList pole](m_connectiongrouplist.md)
-* [System .NET. Třída ServicePointManager. s \_ServicePointTable pole](s_servicepointtable.md)
-* [@No__t_1isDebuggerCheckDisabledForTestPurposes pole System. Windows. Diagnostics. VisualDiagnostics. s](s-isdebuggercheckdisabledfortestpurposes-field.md)
+* [System .NET. CoreResponseData. m\_pole ResponseHeaders hostitele](coreresponsedata_m_responseheaders.md)
+* [System .NET. CoreResponseData. m\_pole StatusCode](coreresponsedata_m_statuscode.md)
+* [Pole autoredirect pro System .NET. HttpWebRequest.\_](_autoredirects.md)
+* [Pole System .NET. HttpWebRequest.\_CoreResponse](httpwebrequest__coreresponse.md)
+* [Pole System .NET. HttpWebRequest.\_HttpResponse](_httpresponse.md)
+* [System .NET. PooledStream. NetworkStream – vlastnost](system.net.pooledstream.networkstream.md)
+* [System .NET. ServicePoint. m\_pole ConnectionGroupList](m_connectiongrouplist.md)
+* [System .NET. Třída ServicePointManager. s\_pole ServicePointTable](s_servicepointtable.md)
+* [Pole System .NET. TlsStream. m_Worker](system.net.tlsstream.m_worker.md)
+* [System .NET. Security. SslState. SslProtocol – vlastnost](system.net.security.sslstate.sslprotocol.md)
+* [System. Windows. Diagnostics. VisualDiagnostics. s\_pole isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * [System. Windows. Forms. Design. DataMemberFieldEditor – třída](datamemberfieldeditor-class.md)
 * [System. Windows. Forms. Design. DataMemberListEditor – třída](datamemberlisteditor-class.md)
 * [System. XML. XmlReader. CreateSqlReader – metoda](system.xml.xmlreader.createsqlreader.md)
