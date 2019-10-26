@@ -11,91 +11,99 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: dc9b6b5399063026c0bbe5735964ed42a21168fa
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 98854fa0dff8d4cfb1d67d5864751ab01a21150b
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048372"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920300"
 ---
 # <a name="how-to-configure-network-tracing"></a>Postupy: Konfigurace trasování sítě
-Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Informace o povolení trasování najdete v tématu [Povolení trasování sítě](enabling-network-tracing.md).  
+
+Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Další informace najdete v tématu [Povolení trasování sítě](enabling-network-tracing.md).
+
+Konfigurační soubor počítače Machine. config je uložený ve složce%windir%\Microsoft.NET\Framework. Pro každou verzi .NET Framework nainstalovanou v počítači existuje samostatný soubor Machine. config ve složkách v rámci%windir%\Microsoft.NET\Framework, například:
+
+- C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Config\machine.config
+- C:\WINDOWS\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config
   
- Konfigurační soubor počítače machine.config je uložen ve složce %Windir%\Microsoft.NET\Framework v adresáři, do něhož byl nainstalován systém Windows. Ve složkách v%Windir%\Microsoft.NET\Framework je k dispozici samostatný soubor Machine. config pro každou verzi .NET Framework nainstalovanou v počítači (například C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config nebo C:\Windows\ Microsoft. NET\Framework64\v4.0.30319\Config\machine.config.).  
+Tato nastavení lze provést také v konfiguračním souboru aplikace, který má vyšší prioritu než konfigurační soubor počítače.  
   
- Tato nastavení lze provést také v konfiguračním souboru aplikace, který má vyšší prioritu než konfigurační soubor počítače.  
+## <a name="configure-network-tracing"></a>Konfigurace trasování sítě  
   
-### <a name="to-configure-network-tracing"></a>Konfigurace trasování sítě  
+Chcete-li nakonfigurovat trasování sítě, přidejte následující řádky do příslušného konfiguračního souboru. Hodnoty a možnosti těchto nastavení jsou popsány v níže uvedených tabulkách.  
   
-- Přidejte následující řádky do příslušného konfiguračního souboru. Hodnoty a možnosti těchto nastavení jsou popsány v níže uvedených tabulkách.  
-  
-    ```xml  
-    <configuration>  
-      <system.diagnostics>  
-        <sources>  
-          <source name="System.Net" tracemode="includehex" maxdatasize="1024">  
-            <listeners>  
-              <add name="System.Net"/>  
-            </listeners>  
-          </source>  
-          <source name="System.Net.Cache">  
-            <listeners>  
-              <add name="System.Net"/>  
-            </listeners>  
-          </source>  
-          <source name="System.Net.Http">  
-            <listeners>  
-              <add name="System.Net"/>  
-            </listeners>  
-          </source>  
-          <source name="System.Net.Sockets">  
-            <listeners>  
-              <add name="System.Net"/>  
-            </listeners>  
-          </source>  
-          <source name="System.Net.WebSockets">  
-            <listeners>  
-              <add name="System.Net"/>  
-            </listeners>  
-          </source>  
-        </sources>  
-        <switches>  
-          <add name="System.Net" value="Verbose"/>  
-          <add name="System.Net.Cache" value="Verbose"/>  
-          <add name="System.Net.Http" value="Verbose"/>  
-          <add name="System.Net.Sockets" value="Verbose"/>  
-          <add name="System.Net.WebSockets" value="Verbose"/>  
-        </switches>  
-        <sharedListeners>  
-          <add name="System.Net"  
-            type="System.Diagnostics.TextWriterTraceListener"  
-            initializeData="network.log"
-            traceOutputOptions="ProcessId, DateTime" 
-          />  
-        </sharedListeners>  
-        <trace autoflush="true"/>  
-      </system.diagnostics>  
-    </configuration>  
-    ```  
-  
- Když přidáte název do `<switches>` bloku, výstup trasování obsahuje informace z některých metod souvisejících s tímto názvem. Výstup popisuje následující tabulka.  
+```xml  
+<configuration>  
+  <system.diagnostics>  
+    <sources>  
+      <source name="System.Net" tracemode="includehex" maxdatasize="1024">  
+        <listeners>  
+          <add name="System.Net"/>  
+        </listeners>  
+      </source>  
+      <source name="System.Net.Cache">  
+        <listeners>  
+          <add name="System.Net"/>  
+        </listeners>  
+      </source>  
+      <source name="System.Net.Http">  
+        <listeners>  
+          <add name="System.Net"/>  
+        </listeners>  
+      </source>  
+      <source name="System.Net.Sockets">  
+        <listeners>  
+          <add name="System.Net"/>  
+        </listeners>  
+      </source>  
+      <source name="System.Net.WebSockets">  
+        <listeners>  
+          <add name="System.Net"/>  
+        </listeners>  
+      </source>  
+   </sources> 
+    <switches>
+      <add name="System.Net" value="Verbose"/>
+      <add name="System.Net.Cache" value="Verbose"/>  
+      <add name="System.Net.Http" value="Verbose"/>  
+      <add name="System.Net.Sockets" value="Verbose"/>  
+      <add name="System.Net.WebSockets" value="Verbose"/>  
+    </switches>  
+    <sharedListeners>  
+      <add name="System.Net"  
+        type="System.Diagnostics.TextWriterTraceListener"  
+        initializeData="network.log"
+        traceOutputOptions="ProcessId, DateTime" 
+      />  
+    </sharedListeners>  
+    <trace autoflush="true"/>  
+  </system.diagnostics>  
+</configuration>  
+```  
+
+### <a name="trace-output-from-methods"></a>Trasovat výstup z metod
+
+Když přidáte název do bloku `<switches>`, výstup trasování obsahuje informace z některých metod souvisejících s názvem. Následující tabulka popisuje výstup:
   
 |Name|Výstup z|  
 |----------|-----------------|  
-|`System.Net.Sockets`|Některé <xref:System.Net.Sockets.Socket>veřejné metody <xref:System.Net.Sockets.TcpListener> tříd<xref:System.Net.Dns> ,, <xref:System.Net.Sockets.TcpClient>a|  
-|`System.Net`|Některé veřejné metody <xref:System.Net.HttpWebRequest>tříd, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest>a <xref:System.Net.FtpWebResponse> a ladicí informace SSL (neplatné certifikáty, chybějící seznam vystavitelů a chyby klientského certifikátu)|  
-|`System.Net.HttpListener`|Některé veřejné metody <xref:System.Net.HttpListener> <xref:System.Net.HttpListenerResponse> tříd, <xref:System.Net.HttpListenerRequest>a.|  
+|`System.Net.Sockets`|Některé veřejné metody tříd <xref:System.Net.Sockets.Socket>, <xref:System.Net.Sockets.TcpListener>, <xref:System.Net.Sockets.TcpClient>a <xref:System.Net.Dns>.|  
+|`System.Net`|Některé veřejné metody tříd <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest>a <xref:System.Net.FtpWebResponse> a informace o ladění SSL (neplatné certifikáty, seznam vystavitelů a chyby klientského certifikátu).|  
+|`System.Net.HttpListener`|Některé veřejné metody tříd <xref:System.Net.HttpListener>, <xref:System.Net.HttpListenerRequest>a <xref:System.Net.HttpListenerResponse>.|  
 |`System.Net.Cache`|Některé soukromé a interní metody v `System.Net.Cache`.|  
-|`System.Net.Http`|Některé <xref:System.Net.Http.HttpClient>veřejné metody <xref:System.Net.Http.HttpClientHandler> <xref:System.Net.Http.DelegatingHandler> tříd<xref:System.Net.Http.WebRequestHandler> ,, <xref:System.Net.Http.HttpMessageHandler>, ,<xref:System.Net.Http.MessageProcessingHandler>a.|  
-|`System.Net.WebSockets.WebSocket`|Některé veřejné metody <xref:System.Net.WebSockets.ClientWebSocket> tříd a <xref:System.Net.WebSockets.WebSocket> .|  
-  
- Výstup trasování konfigurují atributy uvedené v následující tabulce.  
+|`System.Net.Http`|Některé veřejné metody <xref:System.Net.Http.HttpClient>, <xref:System.Net.Http.DelegatingHandler>, <xref:System.Net.Http.HttpClientHandler>, <xref:System.Net.Http.HttpMessageHandler>, <xref:System.Net.Http.MessageProcessingHandler>a <xref:System.Net.Http.WebRequestHandler> třídy.|  
+|`System.Net.WebSockets.WebSocket`|Některé veřejné metody <xref:System.Net.WebSockets.ClientWebSocket> a <xref:System.Net.WebSockets.WebSocket> třídy.|  
+
+### <a name="trace-output-attributes"></a>Trasovat výstupní atributy
+
+Atributy uvedené v následující tabulce konfigurují výstupy trasování:
   
 |Název atributu|Hodnota atributu|  
 |--------------------|---------------------|  
-|`Value`|Požadovaný <xref:System.String> atribut. Nastavuje úroveň podrobností výstupu. Legitimní hodnoty jsou `Critical`, `Error`, `Verbose` `Warning`, a .`Information`<br /><br /> Tento atribut musí být nastaven na \<prvku add name > elementu \<Switches > elementu, jak je znázorněno v příkladu. Pokud je tento atribut nastaven na \<zdrojovém > elementu, je vyvolána výjimka.|  
-|`maxdatasize`|Volitelný <xref:System.Int32> atribut. Nastavuje maximální počet bajtů dat sítě zahrnutých na každém řádku trasování. Výchozí hodnota je 1024.<br /><br /> Tento atribut musí být nastaven na \<zdrojovém > element, jak je znázorněno v příkladu. Výjimka je vyvolána, pokud je tento atribut nastaven na prvku pod \<přepínači > elementu.|  
-|`Tracemode`|Volitelný <xref:System.String> atribut. `includehex` Nastavte na zobrazovat trasování protokolu v hexadecimálním a textovém formátu. `protocolonly` Nastavte na hodnotu zobrazit pouze text. Výchozí hodnota je `includehex`.<br /><br /> Tento atribut musí být nastaven u \<přepínačů > element, jak je znázorněno v příkladu. Výjimka je vyvolána, pokud je tento atribut nastaven na prvku pod \<zdrojovým > prvkem.|  
+|`value`|Požadovaný atribut <xref:System.String>. Nastavuje úroveň podrobností výstupu. Legitimní hodnoty jsou `Critical`, `Error`, `Verbose`, `Warning`a `Information`.<br /><br />Tento atribut musí být nastaven na elementu **Add** elementu **Switched** . Pokud je tento atribut nastaven na **zdrojovém** elementu, je vyvolána výjimka.<br/><br/>Příklad: `<add name="System.Net" value="Verbose"/>`|
+|`maxdatasize`|Volitelný atribut <xref:System.Int32>. Nastavuje maximální počet bajtů dat sítě zahrnutých na každém řádku trasování. Výchozí hodnota je 1024.<br /><br />Tento atribut musí být nastaven u **zdrojového** elementu. Výjimka je vyvolána, pokud je tento atribut nastaven na elementu v rámci elementu **Switched** .<br/><br/>Příklad: `<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
+|`tracemode`|Volitelný atribut <xref:System.String>. Nastavte na `includehex` pro zobrazení trasování protokolu v hexadecimálním a textovém formátu. Nastavte na `protocolonly`, aby se zobrazil jenom text. Výchozí hodnota je `includehex`.<br /><br />Tento atribut musí být nastaven u **zdrojového** elementu. Výjimka je vyvolána, pokud je tento atribut nastaven na elementu v rámci elementu **Switched** .<br/><br/>Příklad: `<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
   
 ## <a name="see-also"></a>Viz také:
 

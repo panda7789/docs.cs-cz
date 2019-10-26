@@ -3,16 +3,14 @@ title: ASP.NET Core gRPC pro vývojáře WCF – gRPC pro vývojáře WCF
 description: BUDE URČENO K ZÁPISU
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: dc39fc96e7154fb50acd0b65a58586b3fa12ab50
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 6a5b4f6d0b47a272f7a753e22bfd61b06202944a
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696922"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919380"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pro vývojáře WCF
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![titulní obrázek](./media/cover.png)
 
@@ -34,7 +32,7 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené na https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na adrese https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
 
@@ -62,7 +60,7 @@ TODO
 
 **AKTUALIZOVAT**
 
-Cílovou skupinou pro tento průvodce jsou vývojáři WCF, vedoucí vývoje a architekti, kteří mají zájem o migraci řešení WCF v rozhraní .NET 4 a starších ASP.NET Core 3,0 pomocí služeb gRPC.
+Cílovou skupinou pro tento průvodce jsou vývojáři WCF, vedoucí vývoje a architekti, kteří mají zájem o migraci řešení WCF na .NET Framework 4 a starším ASP.NET Core 3,0 pomocí služeb gRPC Services.
 
 ## <a name="how-you-can-use-this-guide"></a>Jak můžete použít tuto příručku
 

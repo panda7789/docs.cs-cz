@@ -17,12 +17,12 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 2bf815a5b34726b8316eea53786811abec00f5bb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: e50f542086aadc2f61412fe409d7df0f49422718
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581731"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920365"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace často závisí na souborech, které obsahují data, která nejsou spustitelná, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuky. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se otáčí kolem konkrétní sady typů datových souborů aplikace, včetně:  
@@ -55,7 +55,7 @@ ms.locfileid: "72581731"
 > Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v tématu [prostředky XAML](../advanced/xaml-resources.md) a liší se od vložených nebo propojených prostředků popsaných v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
   
 ### <a name="configuring-resource-files"></a>Konfigurace souborů prostředků  
- V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] soubor prostředků je soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  
+ V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]soubor prostředků je soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -68,7 +68,7 @@ ms.locfileid: "72581731"
 ```  
   
 > [!NOTE]
-> V [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] vytvoříte soubor prostředků přidáním souboru do projektu a nastavením jeho `Build Action` na `Resource`.  
+> V aplikaci Visual Studio vytvoříte soubor prostředků přidáním souboru do projektu a nastavením jeho `Build Action` na `Resource`.  
   
  Když je projekt sestaven, MSBuild zkompiluje prostředek do sestavení.  
   
@@ -109,7 +109,7 @@ ms.locfileid: "72581731"
 ```  
   
 > [!NOTE]
-> V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] přidáte do projektu nové <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument> nebo <xref:System.Windows.ResourceDictionary>, `Build Action` pro soubor označení bude standardně `Page`.  
+> V aplikaci Visual Studio přidáte do projektu novou <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument>nebo <xref:System.Windows.ResourceDictionary>, `Build Action` pro soubor označení bude standardně `Page`.  
   
  Když je zkompilován projekt s `Page`mi položkami, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] položky jsou převedeny do binárního formátu a zkompilovány do přidruženého sestavení. V důsledku toho lze tyto soubory použít stejným způsobem jako typické soubory prostředků.  
   
@@ -140,7 +140,7 @@ ms.locfileid: "72581731"
 ```  
   
 > [!NOTE]
-> V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] vytvoříte soubor obsahu přidáním souboru do projektu a nastavením jeho `Build Action` na `Content` a nastavíte jeho `Copy to Output Directory` na `Copy always` (stejné jako `Always`) a `Copy if newer` (totéž jako `PreserveNewest`).  
+> V sadě Visual Studio vytvoříte soubor obsahu přidáním souboru do projektu a nastavením jeho `Build Action` na `Content`a nastavíte jeho `Copy to Output Directory` na `Copy always` (totéž jako `Always`) a `Copy if newer` (totéž jako `PreserveNewest`).  
   
  Při sestavení projektu je atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> zkompilován do metadat sestavení pro každý soubor obsahu.  
   
@@ -187,7 +187,7 @@ ms.locfileid: "72581731"
   
  [!code-xaml[WPFAssemblyResourcesSnippets#AbsolutePackUriFileHttpReferenceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/AbsolutePackUriPage.xaml#absolutepackurifilehttpreferencexaml)]  
   
- Schémata file:///a http://však vyžadují, aby vaše aplikace měla úplný vztah důvěryhodnosti. Pokud je vaše aplikace [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], která byla spuštěna z Internetu nebo intranetu, a požádá pouze o sadu oprávnění povolených pro aplikace spouštěné z těchto umístění, volné soubory lze načíst pouze z lokality původu aplikace (spuštění umístění). Takové soubory se označují jako *weby se zdrojovými* soubory.  
+ Schémata file:///a http://však vyžadují, aby vaše aplikace měla úplný vztah důvěryhodnosti. Pokud je vaše aplikace [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], která byla spuštěna z Internetu nebo intranetu, a požaduje pouze sadu oprávnění, která jsou povolena pro aplikace spouštěné z těchto umístění, volné soubory lze načíst pouze z lokality původu aplikace ( umístění pro spuštění). Takové soubory se označují jako *weby se zdrojovými* soubory.  
   
  Lokalita počátečních souborů je jedinou možností pro aplikace s částečným vztahem důvěryhodnosti, i když nejsou omezeny na aplikace s částečným vztahem důvěryhodnosti. Aplikace s plnou důvěryhodností stále můžou potřebovat načíst datové soubory aplikace, které neznají v době sestavení. zatímco aplikace s plnou důvěryhodností můžou používat file:///, je nejspíš, že se soubory dat aplikace nainstalují do stejné složky jako nebo z podsložky sestavení aplikace. V takovém případě je používání webu s odkazem na počátek snazší než použití file:///, protože použití file:///vyžaduje, abyste si vypracovali celou cestu k souboru.  
   
@@ -210,7 +210,7 @@ ms.locfileid: "72581731"
 ```  
   
 > [!NOTE]
-> V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] vytvoříte web se zdrojovým souborem přidáním souboru do projektu a nastavením jeho `Build Action` na `None`.  
+> V aplikaci Visual Studio vytvoříte web se zdrojovým souborem přidáním souboru do projektu a nastavením jeho `Build Action` na `None`.  
   
  Po sestavení projektu nástroj MSBuild zkopíruje zadané soubory do výstupní složky sestavení.  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Hostování ovládacího prvku ActiveX ve WPF'
+title: 'Návod: Hostování ovládacího prvku ActiveX v objektu WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,107 +8,107 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: 0181093de1c40889110ab7eae75a3847a17845a9
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 395081640815f00ce4ae8e83f25b37de567adc01
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859939"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920203"
 ---
-# <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX ve WPF
-Chcete-li umožňují lepší interakci s prohlížeči, můžete použít ovládacími prvky ActiveX v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na. Tento návod ukazuje, jak můžete hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.
+# <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX v objektu WPF
+Chcete-li povolit vylepšenou interakci s prohlížeči, můžete v aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]použít ovládací prvky Microsoft ActiveX. Tento návod ukazuje, jak lze hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek na stránce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
- Úlohy v tomto návodu zahrnují:
+ Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytvoření projektu.
+- Vytváří se projekt.
 
 - Vytvoření ovládacího prvku ActiveX.
 
 - Hostování ovládacího prvku ActiveX na stránce WPF.
 
- Po dokončení tohoto návodu budete rozumět použití ovládacími prvky ActiveX v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.
+ Po dokončení tohoto návodu budete pochopit, jak používat ovládací prvky Microsoft ActiveX ve vaší aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 ## <a name="prerequisites"></a>Požadavky
  K dokončení tohoto návodu budete potřebovat následující komponenty:
 
-- [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] nainstalované v počítači nainstalovanou aplikaci Visual Studio.
+- [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] nainstalován v počítači, kde je nainstalována aplikace Visual Studio.
 
 - Visual Studio 2010.
 
 ## <a name="creating-the-project"></a>Vytvoření projektu
 
-### <a name="to-create-and-set-up-the-project"></a>K vytvoření a nastavení projektu
+### <a name="to-create-and-set-up-the-project"></a>Vytvoření a nastavení projektu
 
-1. Vytvoření projektu aplikace WPF s názvem `HostingAxInWpf`.
+1. Vytvořte projekt aplikace WPF s názvem `HostingAxInWpf`.
 
-2. Přidat do řešení projekt Knihovna ovládacích prvků Windows Forms a pojmenujte projekt `WmpAxLib`.
+2. Přidejte do řešení projekt knihovny ovládacích prvků model Windows Forms a pojmenujte projekt `WmpAxLib`.
 
-3. V projektu WmpAxLib přidejte odkaz na sestavení programu Windows Media Player, který se nazývá wmp.dll.
+3. V projektu WmpAxLib přidejte odkaz na sestavení Windows Media Player, které je pojmenované WMP. dll.
 
-4. Otevřít **nástrojů**.
+4. Otevřete **sadu nástrojů**.
 
-5. Klikněte pravým tlačítkem **nástrojů**a potom klikněte na tlačítko **zvolit položky**.
+5. Klikněte pravým tlačítkem myši na **panel nástrojů**a potom klikněte na příkaz **zvolit položky**.
 
-6. Klikněte na tlačítko **komponenty modelu COM** kartu, vyberte **Windows Media Player** ovládací prvek a potom klikněte na tlačítko **OK**.
+6. Klikněte na kartu **komponenty modelu COM** , vyberte ovládací prvek **Windows Media Player** a pak klikněte na tlačítko **OK**.
 
-     Ovládací prvek programu Windows Media Player je přidán do **nástrojů**.
+     Do **sady nástrojů**se přidá ovládací prvek Windows Media Player.
 
-7. V Průzkumníku řešení klikněte pravým tlačítkem myši **UserControl1** souboru a pak klikněte na tlačítko **přejmenovat**.
+7. V Průzkumník řešení klikněte pravým tlačítkem na soubor **UserControl1** a pak klikněte na **Přejmenovat**.
 
-8. Změňte název na `WmpAxControl.vb` nebo `WmpAxControl.cs`, v závislosti na jazyku.
+8. Změňte název na `WmpAxControl.vb` nebo `WmpAxControl.cs`v závislosti na jazyku.
 
-9. Pokud se zobrazí výzva k přejmenování všech odkazů, klikněte na tlačítko **Ano**.
+9. Pokud se zobrazí výzva k přejmenování všech odkazů, klikněte na **Ano**.
 
 ## <a name="creating-the-activex-control"></a>Vytvoření ovládacího prvku ActiveX
- [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] automaticky generuje <xref:System.Windows.Forms.AxHost> obálkovou třídu pro ovládací prvek Microsoft ActiveX, když je ovládací prvek přidán na návrhovou plochu. Následujícím postupem vytvoříte spravované sestavení s názvem AxInterop.WMPLib.dll.
+Když je ovládací prvek přidán na návrhovou plochu, Visual Studio automaticky vygeneruje <xref:System.Windows.Forms.AxHost> obálkovou třídu pro ovládací prvek Microsoft ActiveX. Následující postup vytvoří spravované sestavení s názvem AxInterop. WMPLib. dll.
 
 ### <a name="to-create-the-activex-control"></a>Vytvoření ovládacího prvku ActiveX
 
-1. Otevřete WmpAxControl.vb nebo WmpAxControl.cs v Návrháři formulářů Windows.
+1. Otevřete WmpAxControl. vb nebo WmpAxControl.cs v Návrhář formulářů.
 
-2. Z **nástrojů**, přidejte ovládací prvek programu Windows Media Player na návrhovou plochu.
+2. Z **panelu nástrojů**přidejte ovládací prvek Windows Media Player na návrhovou plochu.
 
-3. V okně Vlastnosti nastavte hodnotu ovládacího prvku programu Windows Media Player <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
+3. V okno Vlastnosti nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> ovládacího prvku Windows Media Player na <xref:System.Windows.Forms.DockStyle.Fill>.
 
-4. Vytvoření projektu knihovny ovládacích prvků WmpAxLib.
+4. Sestavte projekt knihovny ovládacích prvků WmpAxLib.
 
 ## <a name="hosting-the-activex-control-on-a-wpf-page"></a>Hostování ovládacího prvku ActiveX na stránce WPF
 
-### <a name="to-host-the-activex-control"></a>K hostování ovládacího prvku ActiveX
+### <a name="to-host-the-activex-control"></a>Hostování ovládacího prvku ActiveX
 
-1. V projektu HostingAxInWpf přidáte odkaz do generovaného sestavení, vzájemná funkční spolupráce ActiveX.
+1. V projektu HostingAxInWpf přidejte odkaz na vygenerované sestavení interoperability ActiveX.
 
-     Toto sestavení je s názvem AxInterop.WMPLib.dll a byl přidán do složky ladění projektu WmpAxLib při importu ovládací prvek programu Windows Media Player.
+     Toto sestavení má název AxInterop. WMPLib. dll a bylo přidáno do složky ladění projektu WmpAxLib při importu ovládacího prvku Windows Media Player.
 
-2. Přidáte odkaz na sestavení WindowsFormsIntegration, který se nazývá WindowsFormsIntegration.dll.
+2. Přidejte odkaz na sestavení WindowsFormsIntegration, které má název WindowsFormsIntegration. dll.
 
-3. Přidejte odkaz na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sestavení, který se nazývá System.Windows.Forms.dll.
+3. Přidejte odkaz na sestavení [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], které má název System. Windows. Forms. dll.
 
-4. Otevřete soubor MainWindow.xaml v návrháři pro WPF.
+4. Otevřete MainWindow. XAML v Návrháři WPF.
 
-5. Název <xref:System.Windows.Controls.Grid> element `grid1`.
+5. Pojmenujte <xref:System.Windows.Controls.Grid> element `grid1`.
 
      [!code-xaml[HostingAxInWpf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]
 
-6. V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
+6. V zobrazení zobrazení Návrh nebo XAML vyberte prvek <xref:System.Windows.Window>.
 
-7. V okně Vlastnosti klikněte na tlačítko **události** kartu.
+7. V okno Vlastnosti klikněte na kartu **události** .
 
-8. Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
+8. Dvakrát klikněte na událost <xref:System.Windows.FrameworkElement.Loaded>.
 
-9. Vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.
+9. Vložte následující kód pro zpracování události <xref:System.Windows.FrameworkElement.Loaded>.
 
-     Tento kód vytvoří instanci <xref:System.Windows.Forms.Integration.WindowsFormsHost> řídit a přidá instanci `AxWindowsMediaPlayer` ovládací prvek jako jeho podřízených.
+     Tento kód vytvoří instanci ovládacího prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost> a přidá instanci ovládacího prvku `AxWindowsMediaPlayer` jako jeho podřízenou položku.
 
      [!code-csharp[HostingAxInWpf#11](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml.cs#11)]
      [!code-vb[HostingAxInWpf#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingAxInWpf/VisualBasic/HostingAxInWpf/window1.xaml.vb#11)]  
   
-10. Stisknutím klávesy F5 sestavte a spusťte aplikaci.  
+10. Stisknutím klávesy F5 Sestavte a spusťte aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

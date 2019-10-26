@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: 3f85d7d454247694d084ac68780f830c4301b6c7
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: a0792beca358de52a24bd9bb0dd48a20c175f8ff
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332801"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920188"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 
-Cílem tohoto návodu je zjistit, jak vytvořit animované tlačítko pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá styly a šablonu k vytvoření vlastního prostředku tlačítka, který umožňuje opakované použití kódu a oddělení logiky tlačítek z deklarace tlačítka. Tento názorný postup je zcela zapsaný [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].
+Cílem tohoto návodu je zjistit, jak vytvořit animované tlačítko pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá styly a šablonu k vytvoření vlastního prostředku tlačítka, který umožňuje opakované použití kódu a oddělení logiky tlačítek z deklarace tlačítka. Tento návod se zapisuje výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].
 
 > [!IMPORTANT]
-> Tento návod vás provede kroky pro vytvoření aplikace zadáním nebo zkopírováním a vložením [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do Microsoft Visual Studio. Pokud se chcete dozvědět, jak pomocí nástroje pro návrh (Microsoft Expression Blend) vytvořit stejnou aplikaci, přečtěte si téma [Vytvoření tlačítka pomocí sady Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md).
+> Tento návod vás provede kroky pro vytvoření aplikace zadáním nebo zkopírováním a vložením [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do sady Visual Studio. Pokud se chcete dozvědět, jak pomocí návrháře vytvořit stejnou aplikaci, přečtěte si téma [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md).
 
 Následující obrázek ukazuje tlačítka dokončená.
 
-![Vlastní tlačítka, která byla vytvořena pomocí XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
+![Vlastní tlačítka, která byla vytvořena pomocí jazyka XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
 
 ## <a name="create-basic-buttons"></a>Vytvoření základních tlačítek
 
@@ -32,7 +32,7 @@ Pojďme začít vytvořením nového projektu a přidáním několika tlačítek
 
 2. **Vytvořit nový projekt WPF:** V nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**. Vyhledejte šablonu **aplikace systému Windows (WPF)** a pojmenujte projekt "AnimatedButton". Tím se vytvoří kostra aplikace.
 
-3. **Přidat základní výchozí tlačítka:** Všechny soubory, které potřebujete pro tento návod, poskytuje šablona. Otevřete soubor Window1. XAML dvojitým kliknutím na něj v Průzkumník řešení. Ve výchozím nastavení je @no__t element-0 v souboru Window1. XAML. Odeberte prvek <xref:System.Windows.Controls.Grid> a přidejte několik tlačítek na stránku [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] zadáním nebo zkopírováním a vložením následujícího zvýrazněného kódu do souboru Window1. XAML:
+3. **Přidat základní výchozí tlačítka:** Všechny soubory, které potřebujete pro tento návod, poskytuje šablona. Otevřete soubor Window1. XAML dvojitým kliknutím na něj v Průzkumník řešení. Ve výchozím nastavení je <xref:System.Windows.Controls.Grid> element v souboru Window1. XAML. Odeberte prvek <xref:System.Windows.Controls.Grid> a přidejte do stránky [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] několik tlačítek, a to tak, že do souboru Window1. XAML zadáte nebo zkopírujete a vložíte následující zvýrazněný kód:
 
     ```xaml
     <Window x:Class="AnimatedButton.Window1"
@@ -75,9 +75,9 @@ Nyní na těchto tlačítkách nastavíme některé vlastnosti, které řídí v
     </Application>
     ```
 
-     Rozsah prostředku určuje, kde můžete prostředek definovat. Definování prostředků v souboru App. XAML v `Application.Resources` umožňuje použít prostředek z libovolného místa v aplikaci. Další informace o definování rozsahu vašich prostředků najdete v tématu věnovaném [prostředkům XAML](../advanced/xaml-resources.md).
+     Rozsah prostředku určuje, kde můžete prostředek definovat. Definování prostředků v `Application.Resources` souboru App. XAML umožňuje použít prostředek z libovolného místa v aplikaci. Další informace o definování rozsahu vašich prostředků najdete v tématu věnovaném [prostředkům XAML](../advanced/xaml-resources.md).
 
-2. **Vytvořte styl a definujte pro něj základní hodnoty vlastností:** Přidejte následující značku do bloku `Application.Resources`. Tento kód vytvoří <xref:System.Windows.Style>, který se vztahuje na všechna tlačítka v aplikaci, nastavení <xref:System.Windows.FrameworkElement.Width%2A> tlačítek na 90 a <xref:System.Windows.FrameworkElement.Margin%2A> na 10:
+2. **Vytvořte styl a definujte pro něj základní hodnoty vlastností:** Do bloku `Application.Resources` přidejte následující kód. Tento kód vytvoří <xref:System.Windows.Style>, který se vztahuje na všechna tlačítka v aplikaci, nastavení <xref:System.Windows.FrameworkElement.Width%2A> tlačítek na 90 a <xref:System.Windows.FrameworkElement.Margin%2A> na 10:
 
     ```xaml
     <Application.Resources>
@@ -88,7 +88,7 @@ Nyní na těchto tlačítkách nastavíme některé vlastnosti, které řídí v
     </Application.Resources>
     ```
 
-     Vlastnost <xref:System.Windows.Style.TargetType%2A> určuje, že styl se vztahuje na všechny objekty typu <xref:System.Windows.Controls.Button>. Každý <xref:System.Windows.Setter> nastaví jinou hodnotu vlastnosti pro <xref:System.Windows.Style>. Proto v tomto okamžiku každé tlačítko v aplikaci má šířku 90 a okraj 10.  Pokud stisknete klávesu F5 ke spuštění aplikace, zobrazí se následující okno.
+     Vlastnost <xref:System.Windows.Style.TargetType%2A> určuje, že styl platí pro všechny objekty typu <xref:System.Windows.Controls.Button>. Každý <xref:System.Windows.Setter> nastaví pro <xref:System.Windows.Style>jinou hodnotu vlastnosti. Proto v tomto okamžiku každé tlačítko v aplikaci má šířku 90 a okraj 10.  Pokud stisknete klávesu F5 ke spuštění aplikace, zobrazí se následující okno.
 
      ![Tlačítka s šířkou 90 a okrajem 10](./media/custom-button-animatedbutton-2.gif "custom_button_AnimatedButton_2")
 
@@ -111,11 +111,11 @@ Nyní na těchto tlačítkách nastavíme některé vlastnosti, které řídí v
     </Application.Resources>
     ```
 
-     Přímo pod blokem `Application.Resources` jste vytvořili prostředek nazvaný "GrayBlueGradientBrush". Tento prostředek definuje Vodorovný přechod. Tento prostředek lze použít jako hodnotu vlastnosti z libovolného místa v aplikaci, včetně nastavení stylu tlačítka pro vlastnost <xref:System.Windows.Controls.Control.Background%2A>. Nyní všechna tlačítka mají hodnotu vlastnosti @no__t 0 tohoto přechodu.
+     Přímo pod blokem `Application.Resources` jste vytvořili prostředek nazvaný "GrayBlueGradientBrush". Tento prostředek definuje Vodorovný přechod. Tento prostředek lze použít jako hodnotu vlastnosti z libovolného místa v aplikaci, včetně nastavení stylu tlačítka pro vlastnost <xref:System.Windows.Controls.Control.Background%2A>. Nyní všechna tlačítka mají hodnotu vlastnosti <xref:System.Windows.Controls.Control.Background%2A> tohoto přechodu.
 
      Stisknutím klávesy F5 spusťte aplikaci. Měl by vypadat nějak takto.
 
-     Tlačítka s(./media/custom-button-animatedbutton-3.gif "custom_button_AnimatedButton_3em") ![na pozadí s barevným přechodem]
+     ![Tlačítka s pozadím přechodu](./media/custom-button-animatedbutton-3.gif "custom_button_AnimatedButton_3")
 
 ## <a name="create-a-template-that-defines-the-look-of-the-button"></a>Vytvoření šablony definující vzhled tlačítka
 
@@ -125,7 +125,7 @@ V tuto dobu byl ovládací prvek toho, jak se tlačítka vypadají v aplikaci, o
 
 ### <a name="to-use-the-template-to-define-the-look-of-the-button"></a>Chcete-li použít šablonu k definování vzhledu tlačítka
 
-1. **Nastavte šablonu:** Vzhledem k tomu, že ovládací prvky jako <xref:System.Windows.Controls.Button> mají vlastnost <xref:System.Windows.Controls.Control.Template%2A>, můžete definovat hodnotu vlastnosti šablony stejně jako ostatní hodnoty vlastností, které jsme nastavili v <xref:System.Windows.Style> pomocí <xref:System.Windows.Setter>. Přidejte následující zvýrazněný kód na styl tlačítka.
+1. **Nastavte šablonu:** Vzhledem k tomu, že ovládací prvky, jako <xref:System.Windows.Controls.Button> mají vlastnost <xref:System.Windows.Controls.Control.Template%2A>, lze definovat hodnotu vlastnosti šablony stejně jako jiné hodnoty vlastností, které byly nastaveny v <xref:System.Windows.Style> pomocí <xref:System.Windows.Setter>. Přidejte následující zvýrazněný kód na styl tlačítka.
 
     ```xaml
     <Application.Resources>
@@ -148,7 +148,7 @@ V tuto dobu byl ovládací prvek toho, jak se tlačítka vypadají v aplikaci, o
     </Application.Resources>
     ```
 
-2. **Upravit úpravu tlačítek:** V tomto okamžiku je nutné šablonu definovat. Přidejte následující zvýrazněný kód. Tento kód určuje dva <xref:System.Windows.Shapes.Rectangle> prvků s zaoblenými hranami následovaných <xref:System.Windows.Controls.DockPanel>. @No__t-0 slouží k hostování <xref:System.Windows.Controls.ContentPresenter> tlačítka. @No__t-0 zobrazí obsah tlačítka. V tomto návodu je obsahem text ("tlačítko 1", "tlačítko 2", "tlačítko 3"). Všechny součásti šablony (obdélníky a <xref:System.Windows.Controls.DockPanel>) jsou rozloženy v rámci <xref:System.Windows.Controls.Grid>.
+2. **Upravit úpravu tlačítek:** V tomto okamžiku je nutné šablonu definovat. Přidejte následující zvýrazněný kód. Tento kód určuje dva <xref:System.Windows.Shapes.Rectangle> prvky se zaoblenými hranami následovaným <xref:System.Windows.Controls.DockPanel>. <xref:System.Windows.Controls.DockPanel> slouží k hostování <xref:System.Windows.Controls.ContentPresenter> tlačítka. <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah tlačítka. V tomto návodu je obsahem text ("tlačítko 1", "tlačítko 2", "tlačítko 3"). Všechny součásti šablony (obdélníky a <xref:System.Windows.Controls.DockPanel>) jsou rozloženy v <xref:System.Windows.Controls.Grid>.
 
     ```xaml
     <Setter.Value>
@@ -171,7 +171,7 @@ V tuto dobu byl ovládací prvek toho, jak se tlačítka vypadají v aplikaci, o
 
      ![Okno se třemi tlačítky](./media/custom-button-animatedbutton-4.gif)
 
-3. **Přidat glasseffect do šablony:** V dalším kroku přidáte skleněnou. Nejprve vytvoříte některé prostředky, které vytvoří efekt skleněného přechodu. Přidejte tyto prostředky přechodu kamkoli do bloku `Application.Resources`:
+3. **Přidat glasseffect do šablony:** V dalším kroku přidáte skleněnou. Nejprve vytvoříte některé prostředky, které vytvoří efekt skleněného přechodu. Přidejte tyto prostředky přechodu kamkoli v rámci `Application.Resources` bloku:
 
     ```xaml
     <Application.Resources>
@@ -246,15 +246,15 @@ V tuto dobu byl ovládací prvek toho, jak se tlačítka vypadají v aplikaci, o
     </Setter.Value>
     ```
 
-     Všimněte si, že <xref:System.Windows.UIElement.Opacity%2A> obdélníku s vlastností `x:Name` glassCube je 0, takže při spuštění ukázky se nezobrazuje skleněný obdélník překrytý nahoře. Důvodem je, že později přidáte triggery do šablony, když uživatel komunikuje s tlačítkem. Můžete ale vidět, co tlačítko vypadá nyní, změnou hodnoty <xref:System.Windows.UIElement.Opacity%2A> na 1 a spuštěním aplikace. Prohlédněte si následující obrázek. Než budete pokračovat k dalšímu kroku, změňte <xref:System.Windows.UIElement.Opacity%2A> zpátky na 0.
+     Všimněte si, že <xref:System.Windows.UIElement.Opacity%2A> obdélníku s vlastností `x:Name` typu "glassCube" je 0, takže při spuštění ukázky se nezobrazuje skleněný obdélník překrytý nahoře. Důvodem je, že později přidáte triggery do šablony, když uživatel komunikuje s tlačítkem. Můžete ale vidět, co tlačítko vypadá nyní, změnou <xref:System.Windows.UIElement.Opacity%2A> hodnoty na 1 a spuštěním aplikace. Prohlédněte si následující obrázek. Než budete pokračovat k dalšímu kroku, změňte <xref:System.Windows.UIElement.Opacity%2A> zpět na 0.
 
-     ![Vlastní tlačítka, která byla vytvořena pomocí XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
+     ![Vlastní tlačítka, která byla vytvořena pomocí jazyka XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
 
 ## <a name="create-button-interactivity"></a>Vytvořit interaktivitu tlačítka
 
 V této části vytvoříte triggery vlastností a aktivační události pro změnu hodnot vlastností a spustíte animace v reakci na akce uživatele, jako je například přesunutí ukazatele myši na tlačítko a kliknutí.
 
-Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání myší, kliknutí atd.), je definovat triggery v rámci šablony nebo stylu. Chcete-li vytvořit <xref:System.Windows.Trigger>, definujete vlastnost "podmínka", například: Hodnota vlastnosti <xref:System.Windows.UIElement.IsMouseOver%2A> je rovna hodnotě `true`. Pak definujete metody setter (akce), které se provedou, když je podmínka triggeru pravdivá.
+Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání myší, kliknutí atd.), je definovat triggery v rámci šablony nebo stylu. Chcete-li vytvořit <xref:System.Windows.Trigger>, definujete vlastnost "podmínka", například: hodnota vlastnosti <xref:System.Windows.UIElement.IsMouseOver%2A> tlačítko je rovna `true`. Pak definujete metody setter (akce), které se provedou, když je podmínka triggeru pravdivá.
 
 ### <a name="to-create-button-interactivity"></a>Vytvoření interaktivity tlačítek
 
@@ -323,7 +323,7 @@ Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání my�
     </Setter.Value>
     ```
 
-2. **Přidat triggery vlastností:** Přidejte zvýrazněný kód do bloku `ControlTemplate.Triggers`:
+2. **Přidat triggery vlastností:** Přidejte zvýrazněný kód do `ControlTemplate.Triggers` bloku:
 
     ```xaml
     <ControlTemplate.Triggers>
@@ -366,7 +366,7 @@ Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání my�
 
      Stisknutím klávesy F5 spusťte aplikaci a klikněte na jedno z tlačítek. Všimněte si, že tlačítko zůstane zvýrazněné, i když na něj kliknete, protože pořád má fokus. Pokud kliknete na jiné tlačítko, nové tlačítko získá fokus, zatímco poslední ho ztratí.
 
-4. **Přidat animace pro**  <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** V dalším kroku přidáme k aktivačním událostem nějaké animace. Přidejte následující kód kdekoli uvnitř bloku `ControlTemplate.Triggers`.
+4. **Přidat animace pro**  <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** následně do triggerů přidáme nějaké animace. Přidejte následující kód kdekoli uvnitř bloku `ControlTemplate.Triggers`.
 
     ```xaml
     <!-- Animations that start when mouse enters and leaves button. -->
@@ -399,11 +399,11 @@ Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání my�
 
      Skleněný obdélník se zmenší, když se ukazatel myši přesune nad tlačítko a vrátí se zpět na normální velikost, když ukazatel opustí.
 
-     Existují dva animace, které jsou aktivovány, když se ukazatel myši nachází nad tlačítkem (událost <xref:System.Windows.UIElement.MouseEnter> je aktivována). Tyto animace zmenší skleněný obdélník podél osy X a Y. Všimněte si vlastností <xref:System.Windows.Media.Animation.DoubleAnimation> prvků – <xref:System.Windows.Media.Animation.Timeline.Duration%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>. @No__t-0 určuje, že animace probíhá za poloviční a druhý a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> určuje, že se skleněná zmenší o 10%.
+     Existují dva animace, které jsou aktivovány, když ukazatel myši přejde na tlačítko (<xref:System.Windows.UIElement.MouseEnter> událost je aktivována). Tyto animace zmenší skleněný obdélník podél osy X a Y. Všimněte si vlastností <xref:System.Windows.Media.Animation.DoubleAnimation> prvků – <xref:System.Windows.Media.Animation.Timeline.Duration%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>. <xref:System.Windows.Media.Animation.Timeline.Duration%2A> určuje, že animace probíhá za poloviční a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> určuje, že se skleněná zmenší o 10%.
 
-     Druhý Trigger události (<xref:System.Windows.UIElement.MouseLeave>) jednoduše zastaví první z nich. Při zastavení <xref:System.Windows.Media.Animation.Storyboard> se všechny animované vlastnosti vrátí do jejich výchozích hodnot. Proto když uživatel přesune ukazatel myši na tlačítko, tlačítko se vrátí k tomu, jak bylo předtím, než se ukazatel myši přesunul nad tlačítko. Další informace o animacích najdete v tématu [Přehled animací](../graphics-multimedia/animation-overview.md).
+     Druhá aktivační procedura události (<xref:System.Windows.UIElement.MouseLeave>) jednoduše zastaví první z nich. Při zastavení <xref:System.Windows.Media.Animation.Storyboard>se všechny animované vlastnosti vrátí do jejich výchozích hodnot. Proto když uživatel přesune ukazatel myši na tlačítko, tlačítko se vrátí k tomu, jak bylo předtím, než se ukazatel myši přesunul nad tlačítko. Další informace o animacích najdete v tématu [Přehled animací](../graphics-multimedia/animation-overview.md).
 
-5. **Přidat animaci pro, když se klikne na tlačítko:** Posledním krokem je přidání triggeru pro, když uživatel klikne na tlačítko. Přidejte následující kód kdekoli uvnitř bloku `ControlTemplate.Triggers`:
+5. **Přidat animaci pro, když se klikne na tlačítko:** Posledním krokem je přidání triggeru pro, když uživatel klikne na tlačítko. Přidejte následující kód kdekoli uvnitř `ControlTemplate.Triggers` bloku:
 
     ```xaml
     <!-- Animation fires when button is clicked, causing glass to spin.  -->
@@ -426,15 +426,15 @@ Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání my�
 ## <a name="summary"></a>Souhrn
  V tomto návodu jste provedli následující cvičení:
 
-- Cílem <xref:System.Windows.Style> pro typ objektu (<xref:System.Windows.Controls.Button>).
+- Cílem <xref:System.Windows.Style> typu objektu (<xref:System.Windows.Controls.Button>).
 
 - Řízená základní vlastnosti tlačítek v celé aplikaci pomocí <xref:System.Windows.Style>.
 
-- Vytvořené prostředky jako přechody, které se použijí pro hodnoty vlastností <xref:System.Windows.Style>.
+- Vytvořené prostředky jako přechody, které se použijí pro hodnoty vlastností <xref:System.Windows.Style> setter.
 
 - Přizpůsobený vzhled tlačítek v celé aplikaci aplikováním šablony na tlačítka.
 
-- Přizpůsobení chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave> a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), která obsahovala animační efekty.
+- Přizpůsobení chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave>a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), která obsahovala animační efekty.
 
 ## <a name="see-also"></a>Viz také:
 

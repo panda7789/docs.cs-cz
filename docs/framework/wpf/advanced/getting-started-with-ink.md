@@ -1,5 +1,5 @@
 ---
-title: Vytvoření objektu InkCanvas v aplikaci WPF v sadě Visual Studio
+title: Vytvoření InkCanvas v aplikaci WPF v aplikaci Visual Studio
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -9,50 +9,50 @@ helpviewer_keywords:
 - XAML [WPF], procedural code in lieu of
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: d633111c5abc572b0fc27c1a5b32050681504073
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ebbf25037921e7802b2bfcb6ffa562d16a849ffa
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753007"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920254"
 ---
-# <a name="get-started-with-ink-in-wpf"></a>Začínáme s inkoustem v subsystému WPF
+# <a name="get-started-with-ink-in-wpf"></a>Začínáme s rukopisem v subsystému WPF
 
-Windows Presentation Foundation (WPF) obsahuje funkci rukopisu, se kterou snadno začlenit digitálních inkoust do vaší aplikace.
+Windows Presentation Foundation (WPF) má funkci rukopisu, která usnadňuje začleňování digitálního inkoustu do vaší aplikace.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Pokud chcete použít v následujících příkladech, nejprve nainstalujte [sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Pomáhá také vědět, jak zapsat základní aplikace pro WPF. Začínáme s WPF pomoc najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
+Chcete-li použít následující příklady, nejprve nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Pomáhá také zjistit, jak psát základní aplikace WPF. Nápovědu Začínáme s WPF naleznete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="quick-start"></a>Rychlý Start
+## <a name="quick-start"></a>rychlé zprovoznění
 
-Tato část vám pomůže psát jednoduché aplikace WPF, která shromažďuje rukopisu.
+Tato část vám pomůže napsat jednoduchou aplikaci WPF, která shromažďuje rukopis.
 
-### <a name="got-ink"></a>Máte inkoustu?
+### <a name="got-ink"></a>Máte inkoust?
 
-Vytvoření aplikace WPF, která podporuje rukopisu:
+Vytvoření aplikace WPF podporující rukopis:
 
-1. Otevřít Visual Studio.
+1. Otevřete Visual Studio.
 
-2. Vytvořte nový **aplikace WPF**.
+2. Vytvořte novou **aplikaci WPF**.
 
-   V **nový projekt** dialogového okna, rozbalte **nainstalováno** > **Visual C#** nebo **jazyka Visual Basic**  >   **Windows Desktop** kategorie. Vyberte **aplikace WPF (.NET Framework)** šablony aplikace. Zadejte název a potom vyberte **OK**.
+   V dialogovém okně **Nový projekt** rozbalte kategorii **nainstalované** > **Visual C#**  nebo **Visual Basic** > **Windows Desktop** . Pak vyberte šablonu aplikace **WPF App (.NET Framework)** . Zadejte název a pak vyberte **OK**.
 
-   Visual Studio vytvoří projekt, a *souboru MainWindow.xaml* otevře v návrháři.
+   Visual Studio vytvoří projekt a v návrháři se otevře *MainWindow. XAML* .
 
-3. Typ `<InkCanvas/>` mezi `<Grid>` značky.
+3. Zadejte `<InkCanvas/>` mezi značkami `<Grid>`.
 
-   ![Návrhář XAML s inkcanvas – značka](./media/getting-started-with-ink/inkcanvas-xaml.png)
+   ![Návrhář XAML se značkou InkCanvas](./media/getting-started-with-ink/inkcanvas-xaml.png)
 
-4. Stisknutím klávesy **F5** ke spuštění aplikace v ladicím programu.
+4. Stisknutím klávesy **F5** spusťte aplikaci v ladicím programu.
 
-5. Pomocí pera nebo myš, zápis **hello world** v okně.
+5. Pomocí pera nebo myši napište do okna **Hello World** .
 
-Jste napsali ekvivalent inkoustu aplikace "hello world" pomocí pouze 12 stisknutí kláves!
+Napsali jste ekvivalent inkoustu aplikace "Hello World" s pouze 12 klávesami.
 
-### <a name="spice-up-your-app"></a>Okořeňte kapacity aplikace
+### <a name="spice-up-your-app"></a>Spice své aplikace
 
-Můžeme využít některé funkce WPF. Nahradit vše, co mezi otevírací a zavírací \<okna > značky následujícím kódem:
+Pojďme využít některé funkce WPF. Nahraďte vše mezi otevíracím a zavíracím \<oknem > značky následujícím kódem:
 
 ```xaml
 <Page>
@@ -68,43 +68,43 @@ Můžeme využít některé funkce WPF. Nahradit vše, co mezi otevírací a zav
 </Page>
 ```
 
-Tento XAML vytvoří štětce přechodu pozadí na pera surface.
+Tento kód XAML vytvoří pozadí barevného štětce na ploše pro rukopis.
 
-![Barvy přechodu na rukopis plochu v aplikaci WPF](./media/getting-started-with-ink/gradient-colors.png)
+![Barvy přechodu na rukopisné ploše v aplikaci WPF](./media/getting-started-with-ink/gradient-colors.png)
 
-### <a name="add-some-code-behind-the-xaml"></a>Přidat některé kódu na pozadí XAML
+### <a name="add-some-code-behind-the-xaml"></a>Přidat kód za XAML
 
-Zatímco XAML velmi usnadňuje návrh uživatelského rozhraní, žádné reálné aplikaci je potřeba přidat kód pro zpracování událostí. Tady je jednoduchý příklad, který se přiblíží rukopisu v reakci klikněte pravým tlačítkem myši.
+Zatímco XAML usnadňuje návrh uživatelského rozhraní, všechny reálné aplikace musí přidat kód pro zpracování událostí. Tady je jednoduchý příklad, který se přiblíží inkoustu v reakci na pravé tlačítko myši.
 
-1. Nastavte `MouseRightButtonUp` obslužné rutiny ve vaší XAML:
+1. Nastavte obslužnou rutinu `MouseRightButtonUp` ve vašem kódu XAML:
 
    [!code-xaml[DigitalInkTopics#3](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#3)]
 
-1. V **Průzkumníka řešení**, rozbalte soubor MainWindow.xaml a otevřete soubor kódu na pozadí (MainWindow.xaml.cs nebo soubor MainWindow.xaml.vb). Přidejte následující kód obslužné rutiny události:
+1. V **Průzkumník řešení**rozbalte MainWindow. XAML a otevřete soubor kódu na pozadí (MainWindow.XAML.cs nebo MainWindow. XAML. vb). Přidejte následující kód obslužné rutiny události:
 
    [!code-csharp[DigitalInkTopics#4](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml.cs#4)]
    [!code-vb[DigitalInkTopics#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window2.xaml.vb#4)]
 
-1. Spusťte aplikaci. Přidat nějaký inkoust a potom klikněte pravým tlačítkem myši nebo provést ekvivalent stiskněte a podržte pomocí pera.
+1. Spusťte aplikaci. Přidejte nějaký rukopis, klikněte na něj pravým tlačítkem myši nebo proveďte ekvivalent stisknutí klávesy stylus a podržením stylusu.
 
-   Zobrazení přiblíží pokaždé, když klepnete pravým tlačítkem myši.
+   Zobrazení se přiblíží pokaždé, když kliknete pravým tlačítkem myši.
 
-### <a name="use-procedural-code-instead-of-xaml"></a>Použít kód procedury namísto XAML
+### <a name="use-procedural-code-instead-of-xaml"></a>Použití procedurálního kódu místo XAML
 
-Všechny funkce WPF můžete přistupovat z kódu procedury. Postupujte podle těchto kroků můžete vytvořit "inkoustu aplikace Hello World" pro WPF, která nebude vůbec používat jakékoli XAML.
+Ke všem funkcím WPF můžete přistupovat z procedurálního kódu. Pomocí těchto kroků můžete vytvořit aplikaci Hello World Ink World pro WPF, která vůbec nepoužívá žádný XAML.
 
-1. Vytvořte nový projekt konzolové aplikace v sadě Visual Studio.
+1. Vytvořte nový projekt konzolové aplikace v aplikaci Visual Studio.
 
-   V **nový projekt** dialogového okna, rozbalte **nainstalováno** > **Visual C#** nebo **jazyka Visual Basic**  >   **Windows Desktop** kategorie. Vyberte **Konzolová aplikace (.NET Framework)** šablony aplikace. Zadejte název a potom vyberte **OK**.
+   V dialogovém okně **Nový projekt** rozbalte kategorii **nainstalované** > **Visual C#**  nebo **Visual Basic** > **Windows Desktop** . Pak vyberte šablonu aplikace **Konzolová aplikace (.NET Framework)** . Zadejte název a pak vyberte **OK**.
 
-1. Vložte následující kód do souboru Program.cs nebo soubor Program.vb:
+1. Vložte následující kód do souboru Program.cs nebo program. vb:
 
    [!code-csharp[InkCanvasConsoleApp#1](~/samples/snippets/csharp/VS_Snippets_Wpf/InkCanvasConsoleApp/CSharp/Program.cs#1)]
    [!code-vb[InkCanvasConsoleApp#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkCanvasConsoleApp/VisualBasic/Module1.vb#1)]
 
-1. Přidat odkazy na sestavení PresentationCore PresentationFramework a WindowsBase kliknutím pravým tlačítkem na **odkazy** v **Průzkumníka řešení** a zvolíte **přidat odkaz**.
+1. Přidejte odkazy na PresentationCore, PresentationFramework a WindowsBase sestavení tak, že kliknete pravým tlačítkem na **odkazy** v **Průzkumník řešení** a zvolíte **Přidat odkaz**.
 
-   ![Zobrazuje PresentationCore a PresentationFramework správce odkazů](./media/getting-started-with-ink/reference-manager-presentationcore-presentationframework.png)
+   ![Správce odkazů zobrazující PresentationCore a PresentationFramework](./media/getting-started-with-ink/reference-manager-presentationcore-presentationframework.png)
 
 1. Sestavte aplikaci stisknutím klávesy **F5**.
 

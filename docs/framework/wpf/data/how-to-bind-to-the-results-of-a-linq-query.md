@@ -1,37 +1,38 @@
 ---
-title: 'Postupy: Vytvoření vazby k výsledkům dotazu LINQ'
+title: 'Postupy: Připojení k výsledkům dotazu LINQ'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - running a LINQ query [WPF], bind to results
 - binding to LINQ query results [WPF]
 ms.assetid: ff2844d9-17ed-4ea6-aab1-5111af0bc684
-ms.openlocfilehash: 5464ee9c59a7c99a83774a7535b9b3c422c1d2e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70f4b439d231d69e5671216bc4e62d0789ce66c7
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644409"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920126"
 ---
-# <a name="how-to-bind-to-the-results-of-a-linq-query"></a>Postupy: Vytvoření vazby k výsledkům dotazu LINQ
-Tento příklad ukazuje, jak spustit dotaz LINQ a potom připojení k výsledkům.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad vytvoří dvě pole se seznamem. První seznam obsahuje tři položky seznamu.  
-  
- [!code-xaml[LinqExample#UI](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml#ui)]  
-  
- Výběrem položky z prvního seznamu vyvolá následující obslužnou rutinu události. V tomto příkladu `Tasks` je kolekce `Task` objekty. `Task` Třída nemá vlastnost s názvem `Priority`. Tato obslužná rutina události spustí dotaz LINQ, který vrátí kolekci `Task` objekty, které mají hodnotu priority vybrané a pak nastaví jako <xref:System.Windows.FrameworkElement.DataContext%2A>:  
-  
- [!code-csharp[LinqExample#Using](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#using)]  
-[!code-csharp[LinqExample#Tasks](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#tasks)]  
-[!code-csharp[LinqExample#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#handler)]  
-  
- Druhý seznam vytvoří vazbu na tuto kolekci, protože jeho <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> nastavena na hodnotu `{Binding}`. V důsledku toho se zobrazí vrácená kolekce (na základě `myTaskTemplate` <xref:System.Windows.DataTemplate>).  
-  
+# <a name="how-to-bind-to-the-results-of-a-linq-query"></a>Postupy: Připojení k výsledkům dotazu LINQ
+
+Tento příklad ukazuje, jak spustit dotaz LINQ a následně vytvořit vazby k výsledkům.
+
+## <a name="example"></a>Příklad
+
+Následující příklad vytvoří dvě seznam polí. První rozevírací seznam obsahuje tři položky seznamu.
+
+[!code-xaml[LinqExample#UI](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml#ui)]
+
+Výběr položky z prvního seznamu vyvolá následující obslužnou rutinu události. V tomto příkladu je `Tasks` kolekce objektů `Task`. Třída `Task` obsahuje vlastnost s názvem `Priority`. Tato obslužná rutina události spustí dotaz LINQ, který vrátí kolekci `Task` objektů, které mají vybranou hodnotu priority, a poté nastaví jako <xref:System.Windows.FrameworkElement.DataContext%2A>:
+
+[!code-csharp[LinqExample#Using](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#using)]
+[!code-csharp[LinqExample#Tasks](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#tasks)]
+[!code-csharp[LinqExample#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#handler)]
+
+Druhý rozevírací seznam se váže k této kolekci, protože jeho <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> hodnota je nastavena na `{Binding}`. V důsledku toho zobrazí vrácenou kolekci (na základě <xref:System.Windows.DataTemplate>`myTaskTemplate`).
+
 ## <a name="see-also"></a>Viz také:
 
 - [Zpřístupnění dat pro vazbu v jazyku XAML](how-to-make-data-available-for-binding-in-xaml.md)
 - [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md)
 - [Novinky ve verzi 4.5 grafického subsystému WPF](../getting-started/whats-new.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)

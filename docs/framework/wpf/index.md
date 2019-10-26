@@ -14,18 +14,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 35a936cbc34bf10219099090e1af8c145d7fb23d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764540"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919359"
 ---
 # <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
-Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření desktopových-obchodních aplikací na Windows.  
-  
- [Vytváření desktopových aplikací pomocí Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
 
- [Návrh XAML v sadě Visual Studio a Blend pro Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
-  
- [Získat Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+Windows Presentation Foundation (WPF) poskytuje vývojářům jednotný programovací model pro vytváření podnikových aplikací pro stolní počítače ve Windows.
+
+- [Úvod do WPF](introduction-to-wpf.md)
+- [Začínáme](getting-started/index.md)
+- [Vývoj aplikací](app-development/index.md)
+- [Pokročilé](advanced/index.md)
+- [Ovládací prvky](controls/index.md)
+- [Data](data/index.md)
+- [Grafika a multimédia](graphics-multimedia/index.md)
+- [Zabezpečení](security-wpf.md)
+- [Ukázky WPF](wpf-samples.md)
+- [Knihovna tříd](class-library-wpf.md)

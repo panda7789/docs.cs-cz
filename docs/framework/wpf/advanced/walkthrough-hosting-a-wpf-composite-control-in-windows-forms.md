@@ -1,22 +1,22 @@
 ---
-title: 'Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms'
+title: 'Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: a062095885e6c1fc8816a78847968b1c250eabf8
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0054ac49589991d754da655e9f8f52d63e9a6274
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991451"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920223"
 ---
-# <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu značnou investici, může být výhodnější prodloužit svou stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , a nikoli přepsat jejich přepis od nuly. Běžným scénářem je situace, kdy chcete vložit jeden nebo více ovládacích prvků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementovaných v rámci aplikace model Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v tématu [Control Customizing](../controls/control-customization.md).  
+# <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohatou prostředí pro vytváření aplikací. Pokud ale v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu máte významnou investici, může být efektivnější rozlišit vaši stávající aplikaci [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] místo toho, aby se přepsala od začátku. Běžným scénářem je, že chcete vložit jeden nebo více ovládacích prvků implementovaných pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace model Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v tématu [Control Customizing](../controls/control-customization.md).  
   
- Tento názorný postup vás provede aplikací, která je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hostitelem složeného ovládacího prvku, aby prováděla datovou položku v aplikaci model Windows Forms. Složený ovládací prvek je zabalen v knihovně DLL. Tento obecný postup se dá rozšířit na složitější aplikace a ovládací prvky. Tento názorný postup je navržený tak, aby byl skoro stejný [jako v podrobném zobrazení a funkci: Hostování model Windows Forms složeného ovládacího prvku v](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)subsystému WPF. Hlavním rozdílem je, že hostující scénář je obrácený.  
+ Tento názorný postup vás provede aplikací, která je hostitelem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku, aby prováděla datovou položku v aplikaci model Windows Forms. Složený ovládací prvek je zabalen v knihovně DLL. Tento obecný postup se dá rozšířit na složitější aplikace a ovládací prvky. Tento návod je téměř identický v zobrazení a funkcionalita pro [Návod: hostování model Windows Forms složeného ovládacího prvku v](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)subsystému WPF. Hlavním rozdílem je, že hostující scénář je obrácený.  
   
- Návod je rozdělen do dvou částí. První oddíl stručně popisuje implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku. Druhá část podrobně popisuje, jak hostovat složený ovládací prvek v aplikaci model Windows Forms, přijímat události z ovládacího prvku a přistupovat k některým vlastnostem ovládacího prvku.  
+ Návod je rozdělen do dvou částí. První část stručně popisuje implementaci složeného ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Druhá část podrobně popisuje, jak hostovat složený ovládací prvek v aplikaci model Windows Forms, přijímat události z ovládacího prvku a přistupovat k některým vlastnostem ovládacího prvku.  
   
  Úlohy, které jsou znázorněné v tomto návodu, zahrnují:  
   
@@ -31,7 +31,7 @@ ms.locfileid: "70991451"
 K dokončení tohoto Názorného postupu potřebujete Visual Studio.  
   
 ## <a name="implementing-the-wpf-composite-control"></a>Implementace složeného ovládacího prvku WPF  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Složený ovládací prvek použitý v tomto příkladu je jednoduchý formulář pro zadávání dat, který přebírá jméno a adresu uživatele. Když uživatel klikne na jedno ze dvou tlačítek, aby označovali, že úkol je dokončen, ovládací prvek vyvolá vlastní událost, která vrátí tyto informace hostiteli. Následující ilustrace znázorňuje vykreslený ovládací prvek. 
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složený ovládací prvek použitý v tomto příkladu je jednoduchý formulář pro zadávání dat, který přebírá jméno a adresu uživatele. Když uživatel klikne na jedno ze dvou tlačítek, aby označovali, že úkol je dokončen, ovládací prvek vyvolá vlastní událost, která vrátí tyto informace hostiteli. Následující ilustrace znázorňuje vykreslený ovládací prvek. 
 
  Následující obrázek znázorňuje složený ovládací prvek WPF: 
 
@@ -40,17 +40,17 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 ### <a name="creating-the-project"></a>Vytvoření projektu  
  Spuštění projektu:  
   
-1. Spusťte [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]a otevřete dialogové okno **Nový projekt** .  
+1. Spusťte Visual Studio a otevřete dialogové okno **Nový projekt** .  
   
 2. V kategorii C# vizuál a kategorie systému Windows vyberte šablonu **Knihovna uživatelských ovládacích prvků WPF** .  
   
-3. Pojmenujte nový `MyControls`projekt.  
+3. Pojmenujte nový projekt `MyControls`.  
   
 4. Pro umístění zadejte pohodlně pojmenovanou složku nejvyšší úrovně, například `WindowsFormsHostingWpfControl`. Později vložíte hostitelskou aplikaci do této složky.  
   
 5. Kliknutím na tlačítko **OK** vytvořte projekt. Výchozí projekt obsahuje jeden ovládací prvek s názvem `UserControl1`.  
   
-6. V Průzkumník řešení `UserControl1` přejmenujte `MyControl1`na.  
+6. V Průzkumník řešení přejmenujte `UserControl1` na `MyControl1`.  
   
  Projekt by měl mít odkazy na následující systémové knihovny DLL. Pokud některá z těchto knihoven DLL není ve výchozím nastavení součástí, přidejte je do projektu.  
   
@@ -63,12 +63,12 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 - WindowsBase  
   
 ### <a name="creating-the-user-interface"></a>Vytvoření uživatelského rozhraní  
- Pro složený ovládací prvek je implementováno s [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] Složený ovládací prvek [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se skládá z <xref:System.Windows.Controls.TextBox> pěti prvků. Každý <xref:System.Windows.Controls.TextBox> prvek má přidružený <xref:System.Windows.Controls.TextBlock> element, který slouží jako popisek. V dolní části <xref:System.Windows.Controls.Button> jsou dva prvky, **OK** a **Zrušit**. Když uživatel klikne na tlačítko, ovládací prvek vyvolá vlastní událost, která vrátí informace hostiteli.  
+ [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pro složený ovládací prvek je implementován pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Složený ovládací prvek [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] sestává z pěti <xref:System.Windows.Controls.TextBox> prvků. Každý prvek <xref:System.Windows.Controls.TextBox> má přidružený <xref:System.Windows.Controls.TextBlock> prvek, který slouží jako jmenovka. V dolní části jsou k dispozici dva prvky <xref:System.Windows.Controls.Button>, **OK** a **Zrušit**. Když uživatel klikne na tlačítko, ovládací prvek vyvolá vlastní událost, která vrátí informace hostiteli.  
   
 #### <a name="basic-layout"></a>Základní rozložení  
- Různé [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky jsou obsaženy <xref:System.Windows.Controls.Grid> v elementu. Můžete použít <xref:System.Windows.Controls.Grid> k uspořádání obsahu složeného ovládacího prvku v podstatě stejným způsobem, jako byste `Table` používali element v HTML. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]má <xref:System.Windows.Documents.Table> také element, ale <xref:System.Windows.Controls.Grid> je obtížnější a lepší pro jednoduché úlohy rozložení.  
+ Různé prvky [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] jsou obsaženy v <xref:System.Windows.Controls.Grid> elementu. Můžete použít <xref:System.Windows.Controls.Grid> k uspořádání obsahu složeného ovládacího prvku v podstatě stejným způsobem, jako byste používali `Table` prvek ve formátu HTML. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má také prvek <xref:System.Windows.Documents.Table>, ale <xref:System.Windows.Controls.Grid> je jednodušší a lepší pro jednoduché úlohy rozložení.  
   
- Následující kód XAML znázorňuje základní rozložení. Tento kód XAML definuje celkovou strukturu ovládacího prvku zadáním počtu sloupců a řádků v <xref:System.Windows.Controls.Grid> prvku.  
+ Následující kód XAML znázorňuje základní rozložení. Tento kód XAML definuje celkovou strukturu ovládacího prvku zadáním počtu sloupců a řádků v prvku <xref:System.Windows.Controls.Grid>.  
   
  V souboru MyControl1. xaml nahraďte existující kód XAML následujícím XAML.  
   
@@ -76,29 +76,29 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 [!code-xaml[WindowsFormsHostingWpfControl#102](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml#102)]  
   
 #### <a name="adding-textblock-and-textbox-elements-to-the-grid"></a>Přidání elementů TextBlock a TextBox do mřížky  
- [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Element v mřížce umístíte nastavením atributů <xref:System.Windows.Controls.Grid.RowProperty> elementu a <xref:System.Windows.Controls.Grid.ColumnProperty> na příslušné číslo řádku a sloupce. Mějte na paměti, že číslování řádků a sloupců je založené na nule. Můžete mít prvek span více sloupců nastavením jeho <xref:System.Windows.Controls.Grid.ColumnSpanProperty> atributu. Další informace o <xref:System.Windows.Controls.Grid> elementech naleznete v tématu [Create a Grid element](../controls/how-to-create-a-grid-element.md).  
+ Do mřížky umístíte prvek [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nastavením atributů <xref:System.Windows.Controls.Grid.RowProperty> a <xref:System.Windows.Controls.Grid.ColumnProperty> na příslušné číslo řádku a sloupce. Mějte na paměti, že číslování řádků a sloupců je založené na nule. Můžete mít prvek span více sloupců nastavením jeho <xref:System.Windows.Controls.Grid.ColumnSpanProperty> atributu. Další informace o <xref:System.Windows.Controls.Grid> prvky naleznete v tématu [Create a Grid element](../controls/how-to-create-a-grid-element.md).  
   
- Následující kód XAML <xref:System.Windows.Controls.TextBox> znázorňuje složené ovládací prvky a <xref:System.Windows.Controls.TextBlock> elementy s jejich <xref:System.Windows.Controls.Grid.RowProperty> atributy a <xref:System.Windows.Controls.Grid.ColumnProperty> , které jsou nastaveny tak, aby prvky správně umístily do mřížky.  
+ Následující kód XAML ukazuje <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.TextBlock> prvky složeného ovládacího prvku s jejich atributy <xref:System.Windows.Controls.Grid.RowProperty> a <xref:System.Windows.Controls.Grid.ColumnProperty>, které jsou nastaveny tak, aby prvky správně umístily do mřížky.  
   
- V souboru MyControl1. XAML přidejte následující XAML v rámci <xref:System.Windows.Controls.Grid> elementu.  
+ V souboru MyControl1. XAML přidejte následující kód XAML do prvku <xref:System.Windows.Controls.Grid>.  
   
  [!code-xaml[WindowsFormsHostingWpfControl#103](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml#103)]  
   
 #### <a name="styling-the-ui-elements"></a>Určení stylu prvků uživatelského rozhraní  
- Mnohé prvky formuláře pro zadávání dat mají podobný vzhled, což znamená, že mají stejné nastavení pro několik jejich vlastností. Namísto nastavování atributů každého elementu samostatně, předchozí XAML používá <xref:System.Windows.Style> prvky pro definování standardních nastavení vlastností pro třídy prvků. Tento přístup omezuje složitost ovládacího prvku a umožňuje změnit vzhled více prvků prostřednictvím atributu s jedním stylem.  
+ Mnohé prvky formuláře pro zadávání dat mají podobný vzhled, což znamená, že mají stejné nastavení pro několik jejich vlastností. Místo nastavování atributů každého elementu samostatně, předchozí XAML používá <xref:System.Windows.Style> prvky pro definování standardních nastavení vlastností pro třídy prvků. Tento přístup omezuje složitost ovládacího prvku a umožňuje změnit vzhled více prvků prostřednictvím atributu s jedním stylem.  
   
- Prvky jsou obsaženy <xref:System.Windows.Controls.Grid> v <xref:System.Windows.FrameworkElement.Resources%2A> vlastnosti elementu, takže je lze použít pro všechny prvky v ovládacím prvku. <xref:System.Windows.Style> Pokud je styl pojmenován, použijte jej pro prvek přidáním <xref:System.Windows.Style> prvku nastaveného na název stylu. Styly, které nejsou pojmenované, se stanou výchozím stylem pro element. Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stylech naleznete v tématu [stylování and šablonování](../controls/styling-and-templating.md).  
+ Prvky <xref:System.Windows.Style> jsou obsaženy ve vlastnosti <xref:System.Windows.FrameworkElement.Resources%2A> elementu <xref:System.Windows.Controls.Grid>, takže je lze použít pro všechny prvky v ovládacím prvku. Pokud je styl pojmenován, můžete jej použít na prvek přidáním prvku <xref:System.Windows.Style> nastaveného na název stylu. Styly, které nejsou pojmenované, se stanou výchozím stylem pro element. Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stylů naleznete v tématu [stylování and šablonování](../controls/styling-and-templating.md).  
   
- Následující kód XAML ukazuje <xref:System.Windows.Style> prvky pro složený ovládací prvek. Chcete-li zjistit, jak jsou styly použity pro prvky, viz předchozí XAML. Například poslední <xref:System.Windows.Controls.TextBlock> prvek `inlineText` má styl a poslední <xref:System.Windows.Controls.TextBox> prvek používá výchozí styl.  
+ Následující kód XAML ukazuje prvky <xref:System.Windows.Style> pro složený ovládací prvek. Chcete-li zjistit, jak jsou styly použity pro prvky, viz předchozí XAML. Například poslední <xref:System.Windows.Controls.TextBlock> prvek má styl `inlineText` a poslední <xref:System.Windows.Controls.TextBox> element používá výchozí styl.  
   
- V souboru MyControl1. XAML přidejte následující XAML hned za <xref:System.Windows.Controls.Grid> počáteční element.  
+ V souboru MyControl1. XAML přidejte následující XAML hned za element <xref:System.Windows.Controls.Grid> Start.  
   
  [!code-xaml[WindowsFormsHostingWpfControl#104](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml#104)]  
   
 #### <a name="adding-the-ok-and-cancel-buttons"></a>Přidání tlačítek OK a Storno  
- Konečné prvky složeného ovládacího prvku jsou prvky **OK** a **Storno** <xref:System.Windows.Controls.Button> , které zabírají první dva sloupce posledního řádku. <xref:System.Windows.Controls.Grid> Tyto prvky používají společnou obslužnou rutinu události `ButtonClicked`, a výchozí <xref:System.Windows.Controls.Button> styl definovaný v předchozím jazyce XAML.  
+ Konečné prvky složeného ovládacího prvku jsou elementy **OK** a **Zrušit**<xref:System.Windows.Controls.Button>, které zabírají první dva sloupce posledního řádku <xref:System.Windows.Controls.Grid>. Tyto prvky používají společnou obslužnou rutinu události, `ButtonClicked`a výchozí styl <xref:System.Windows.Controls.Button> definovaný v předchozím kódu XAML.  
   
- V souboru MyControl1. XAML přidejte následující XAML za poslední <xref:System.Windows.Controls.TextBox> prvek. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Část složeného ovládacího prvku je nyní dokončena.  
+ V souboru MyControl1. XAML přidejte za poslední <xref:System.Windows.Controls.TextBox> prvek následující kód XAML. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] část složeného ovládacího prvku je teď dokončená.  
   
  [!code-xaml[WindowsFormsHostingWpfControl#105](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml#105)]  
   
@@ -107,14 +107,14 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
   
 1. Zpracovává událost, která nastane, když uživatel klikne na jedno z tlačítek.  
   
-2. Načte data z <xref:System.Windows.Controls.TextBox> prvků a zabalí je do objektu vlastního argumentu události.  
+2. Načte data z prvků <xref:System.Windows.Controls.TextBox> a zabalí je do objektu vlastního argumentu události.  
   
-3. Vyvolá vlastní `OnButtonClick` událost, která upozorní hostitele, že uživatel je dokončen, a předá data zpět hostiteli.  
+3. Vyvolá vlastní událost `OnButtonClick`, která upozorní hostitele, že uživatel je dokončený, a předá data zpět hostiteli.  
   
- Ovládací prvek také zpřístupňuje počet barev a vlastností písma, které umožňují změnit vzhled. Na rozdíl od <xref:System.Windows.Forms.Integration.WindowsFormsHost> třídy, která se používá k hostování ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Integration.ElementHost> , <xref:System.Windows.Controls.Panel.Background%2A> třída zpřístupňuje pouze vlastnost ovládacího prvku. Chcete-li zachovat podobnost mezi tímto příkladem kódu a příkladem popsaným v [návodu: Hostování model Windows Forms složeného ovládacího prvku v](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)subsystému WPF, ovládací prvek zpřístupní zbývající vlastnosti přímo.  
+ Ovládací prvek také zpřístupňuje počet barev a vlastností písma, které umožňují změnit vzhled. Na rozdíl od <xref:System.Windows.Forms.Integration.WindowsFormsHost> třídy, která se používá k hostování model Windows Formsho ovládacího prvku, třída <xref:System.Windows.Forms.Integration.ElementHost> zpřístupňuje pouze <xref:System.Windows.Controls.Panel.Background%2A> vlastnost ovládacího prvku. Chcete-li zachovat podobnost mezi tímto příkladem kódu a příkladem popsaným v [návodu: hostování model Windows Forms složeného ovládacího prvku v](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)subsystému WPF, ovládací prvek zpřístupní zbývající vlastnosti přímo.  
   
 #### <a name="the-basic-structure-of-the-code-behind-file"></a>Základní struktura souboru s kódem na pozadí  
- Soubor kódu na pozadí se skládá z jednoho oboru názvů `MyControls`, který bude obsahovat dvě `MyControl1` třídy a `MyControlEventArgs`.  
+ Soubor kódu na pozadí se skládá z jednoho oboru názvů `MyControls`, který bude obsahovat dvě třídy, `MyControl1` a `MyControlEventArgs`.  
   
 ```csharp  
 namespace MyControls  
@@ -130,7 +130,7 @@ namespace MyControls
 }  
 ```  
   
- První třída, `MyControl1`, je částečná třída obsahující kód, který implementuje funkci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definovanou v souboru MyControl1. XAML. Když je analyzován MyControl1. XAML, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je převedena na stejnou částečnou třídu a dvě částečné třídy jsou sloučeny pro vytvoření zkompilovaného ovládacího prvku. Z tohoto důvodu musí název třídy v souboru kódu na pozadí odpovídat názvu třídy přiřazenému k MyControl1. XAML a musí dědit z kořenového prvku ovládacího prvku. Druhá třída `MyControlEventArgs`je třída argumentů události, která se používá k odesílání dat zpět do hostitele.  
+ První třída, `MyControl1`, je částečná třída obsahující kód, který implementuje funkce [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definované v souboru MyControl1. XAML. Při analýze souboru MyControl1. XAML je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] převedena na stejnou částečnou třídu a dvě částečné třídy jsou sloučeny pro vytvoření zkompilovaného ovládacího prvku. Z tohoto důvodu musí název třídy v souboru kódu na pozadí odpovídat názvu třídy přiřazenému k MyControl1. XAML a musí dědit z kořenového prvku ovládacího prvku. Druhá třída, `MyControlEventArgs`, je třída argumenty události, která se používá k odesílání dat zpět do hostitele.  
   
  Otevřete MyControl1.xaml.cs. Změňte existující deklaraci třídy tak, aby měla následující název a dědí z <xref:System.Windows.Controls.Grid>.  
   
@@ -139,40 +139,40 @@ namespace MyControls
 #### <a name="initializing-the-control"></a>Inicializace ovládacího prvku  
  Následující kód implementuje několik základních úloh:  
   
-- Deklaruje soukromou událost, `OnButtonClick`a jejího přidruženého `MyControlEventHandler`delegáta.  
+- Deklaruje soukromou událost, `OnButtonClick`a jejího přidruženého delegáta `MyControlEventHandler`.  
   
 - Vytvoří několik privátních globálních proměnných, které ukládají data uživatele. Tato data se zveřejňují prostřednictvím odpovídajících vlastností.  
   
-- Implementuje obslužnou rutinu `Init`pro <xref:System.Windows.FrameworkElement.Loaded> událost ovládacího prvku. Tato obslužná rutina inicializuje globální proměnné tak, že jim přiřadí hodnoty definované v souboru MyControl1. XAML. K tomuto účelu používá <xref:System.Windows.FrameworkElement.Name%2A> přiřazený k typickému <xref:System.Windows.Controls.TextBlock> prvku `nameLabel`, pro přístup k nastavení vlastností tohoto prvku.  
+- Implementuje obslužnou rutinu, `Init`pro událost <xref:System.Windows.FrameworkElement.Loaded> ovládacího prvku. Tato obslužná rutina inicializuje globální proměnné tak, že jim přiřadí hodnoty definované v souboru MyControl1. XAML. K tomuto účelu používá <xref:System.Windows.FrameworkElement.Name%2A> přiřazený k typickému <xref:System.Windows.Controls.TextBlock> prvku `nameLabel`pro přístup k nastavení vlastností tohoto prvku.  
   
- Odstraňte existující konstruktor a přidejte následující kód do `MyControl1` třídy.  
+ Odstraňte existující konstruktor a přidejte následující kód do třídy `MyControl1`.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#11](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml.cs#11)]  
   
 #### <a name="handling-the-buttons-click-events"></a>Zpracování tlačítek kliknutí na události  
- Uživatel indikuje, že úloha vstupu na data je dokončená kliknutím na tlačítko **OK** nebo na tlačítko **Storno** . Obě tlačítka používají stejnou <xref:System.Windows.Controls.Primitives.ButtonBase.Click> `ButtonClicked`obslužnou rutinu události. Obě tlačítka mají název, nebo `btnOK` `btnCancel`, který umožňuje obslužné rutině určit, na které tlačítko bylo kliknuto, `sender` prozkoumáním hodnoty argumentu. Obslužná rutina provede následující:  
+ Uživatel indikuje, že úloha vstupu na data je dokončená kliknutím na tlačítko **OK** nebo na tlačítko **Storno** . Obě tlačítka používají stejnou <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události `ButtonClicked`. Obě tlačítka mají název, `btnOK` nebo `btnCancel`, který umožňuje obslužné rutině určit, na které tlačítko bylo kliknuto, prozkoumáním hodnoty argumentu `sender`. Obslužná rutina provede následující:  
   
-- Vytvoří objekt, který obsahuje data <xref:System.Windows.Controls.TextBox> z prvků. `MyControlEventArgs`  
+- Vytvoří objekt `MyControlEventArgs`, který obsahuje data z prvků <xref:System.Windows.Controls.TextBox>.  
   
-- Pokud uživatel klikl na tlačítko **Storno** , nastaví `MyControlEventArgs` `IsOK` vlastnost objektu na `false`hodnotu.  
+- Pokud uživatel klikl na tlačítko **Storno** , nastaví vlastnost `IsOK` objektu `MyControlEventArgs` na `false`.  
   
-- `OnButtonClick` Vyvolá událost pro indikaci hostitele, že uživatel je dokončen, a předává zpět shromážděná data.  
+- Vyvolává `OnButtonClick` událost, která oznamuje hostiteli, že uživatel je dokončený, a předává zpět shromážděná data.  
   
- Po metodě přidejte následující kód do `MyControl1` třídy. `Init`  
+ Po `Init` metodě přidejte následující kód do třídy `MyControl1`.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#12](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml.cs#12)]  
   
 #### <a name="creating-properties"></a>Vytváření vlastností  
  Zbytek třídy jednoduše zveřejňuje vlastnosti, které odpovídají globálním proměnným, které jsou popsány dříve. Když se změní vlastnost, přistupující objekt set upraví vzhled ovládacího prvku změnou odpovídajících vlastností elementu a aktualizací základních globálních proměnných.  
   
- Do `MyControl1` třídy přidejte následující kód.  
+ Do své `MyControl1` třídy přidejte následující kód.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#13](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml.cs#13)]  
   
 #### <a name="sending-the-data-back-to-the-host"></a>Posílání dat zpět na hostitele  
  Poslední komponentou v souboru je `MyControlEventArgs` třída, která slouží k posílání shromážděných dat zpět na hostitele.  
   
- Do svého `MyControls` oboru názvů přidejte následující kód. Implementace je jednoduchá a není popsána dále.  
+ Do oboru názvů `MyControls` přidejte následující kód. Implementace je jednoduchá a není popsána dále.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#14](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/MyControls/Page1.xaml.cs#14)]  
   
@@ -180,7 +180,7 @@ namespace MyControls
   
 <a name="winforms_host_section"></a>   
 ## <a name="implementing-the-windows-forms-host-application"></a>Implementace aplikace model Windows Forms Host  
- Hostitelská aplikace model Windows Forms používá <xref:System.Windows.Forms.Integration.ElementHost> objekt pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hostování složeného ovládacího prvku. Aplikace zpracovává `OnButtonClick` událost pro příjem dat ze složeného ovládacího prvku. Aplikace má také sadu přepínačů, které lze použít pro úpravu vzhledu ovládacího prvku. Na následujícím obrázku je znázorněna aplikace.  
+ Hostitelská aplikace model Windows Forms používá objekt <xref:System.Windows.Forms.Integration.ElementHost> k hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku. Aplikace zpracovává událost `OnButtonClick` pro příjem dat ze složeného ovládacího prvku. Aplikace má také sadu přepínačů, které lze použít pro úpravu vzhledu ovládacího prvku. Na následujícím obrázku je znázorněna aplikace.  
 
 Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v aplikaci model Windows Forms "  
 
@@ -189,11 +189,11 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
 ### <a name="creating-the-project"></a>Vytvoření projektu  
  Spuštění projektu:  
   
-1. Spusťte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]a otevřete dialogové okno **Nový projekt** .  
+1. Spusťte Visual Studio a otevřete dialogové okno **Nový projekt** .  
   
 2. V kategorii C# vizuál a kategorie systému Windows vyberte šablonu **model Windows Forms aplikace** .  
   
-3. Pojmenujte nový `WFHost`projekt.  
+3. Pojmenujte nový projekt `WFHost`.  
   
 4. Pro umístění zadejte stejnou složku nejvyšší úrovně, která obsahuje projekt MyControls.  
   
@@ -213,7 +213,7 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
     - PresentationFramework  
   
-    - System.Xaml  
+    - System. XAML  
   
     - WindowsBase  
   
@@ -226,13 +226,13 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
 2. Zvětšete formulář tak, aby vyhovoval ovládacím prvkům.  
   
-3. V pravém horním rohu formuláře přidejte <xref:System.Windows.Forms.Panel?displayProperty=nameWithType> ovládací prvek pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uložení složeného ovládacího prvku.  
+3. V pravém horním rohu formuláře přidejte ovládací prvek <xref:System.Windows.Forms.Panel?displayProperty=nameWithType> pro uchování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku.  
   
-4. Do formuláře přidejte <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> následující ovládací prvky.  
+4. Do formuláře přidejte následující ovládací prvky <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>.  
   
     |Name|Text|  
     |----------|----------|  
-    |groupBox1|Barva pozadí|  
+    |Skupinový rámeček 1|Barva pozadí|  
     |groupBox2|Barva popředí|  
     |groupBox3|Velikost písma|  
     |groupBox4|Rodina písem|  
@@ -240,28 +240,28 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
     |groupBox6|Tloušťka písma|  
     |groupBox7|Data z ovládacího prvku|  
   
-5. Do ovládacích prvků <xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType> přidejte následující ovládací prvky. <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>  
+5. Do ovládacích prvků <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> přidejte následující ovládací prvky <xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType>.  
   
     |GroupBox|Name|Text|  
     |--------------|----------|----------|  
-    |groupBox1|radioBackgroundOriginal|Původně|  
-    |groupBox1|radioBackgroundLightGreen|LightGreen|  
-    |groupBox1|radioBackgroundLightSalmon|LightSalmon|  
+    |Skupinový rámeček 1|radioBackgroundOriginal|Původně|  
+    |Skupinový rámeček 1|radioBackgroundLightGreen|LightGreen|  
+    |Skupinový rámeček 1|radioBackgroundLightSalmon|LightSalmon|  
     |groupBox2|radioForegroundOriginal|Původně|  
-    |groupBox2|radioForegroundRed|Červená|  
-    |groupBox2|radioForegroundYellow|Opatřen|  
+    |groupBox2|radioForegroundRed|erytrocyty|  
+    |groupBox2|radioForegroundYellow|opatřen|  
     |groupBox3|radioSizeOriginal|Původně|  
-    |groupBox3|radioSizeTen|10|  
-    |groupBox3|radioSizeTwelve|12|  
+    |groupBox3|radioSizeTen|10pruhový|  
+    |groupBox3|radioSizeTwelve|12,5|  
     |groupBox4|radioFamilyOriginal|Původně|  
     |groupBox4|radioFamilyTimes|Times New Roman|  
     |groupBox4|radioFamilyWingDings|Písm|  
-    |groupBox5|radioStyleOriginal|Normální|  
+    |groupBox5|radioStyleOriginal|Běžnou|  
     |groupBox5|radioStyleItalic|Kurzíva|  
     |groupBox6|radioWeightOriginal|Původně|  
     |groupBox6|radioWeightBold|Psaného|  
   
-6. Do poslední <xref:System.Windows.Forms.Label?displayProperty=nameWithType> <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>části přidejte následující ovládací prvky. Tyto ovládací prvky zobrazují data vrácená [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeným ovládacím prvkem.  
+6. Do posledního <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>přidejte následující ovládací prvky <xref:System.Windows.Forms.Label?displayProperty=nameWithType>. Tyto ovládací prvky zobrazují data vrácená [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeným ovládacím prvkem.  
   
     |GroupBox|Name|Text|  
     |--------------|----------|----------|  
@@ -269,43 +269,43 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
     |groupBox7|lblAddress|Adresa ulice:|  
     |groupBox7|lblCity|Vatikán|  
     |groupBox7|lblState|Státech|  
-    |groupBox7|lblZip|Zip:|  
+    |groupBox7|lblZip|Věřitel|  
   
 ### <a name="initializing-the-form"></a>Inicializuje se formulář.  
- Obecně implementujete hostující kód v obslužné rutině <xref:System.Windows.Forms.Form.Load> události formuláře. Následující kód ukazuje <xref:System.Windows.Forms.Form.Load> obslužnou rutinu události, obslužnou rutinu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement.Loaded> události složeného ovládacího prvku a deklarace pro několik globálních proměnných, které jsou používány později.  
+ Obecně implementujete hostující kód v obslužné rutině události <xref:System.Windows.Forms.Form.Load> formuláře. Následující kód ukazuje obslužnou rutinu události <xref:System.Windows.Forms.Form.Load>, obslužná rutina pro <xref:System.Windows.FrameworkElement.Loaded> událost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku a deklarace pro několik globálních proměnných, které jsou používány později.  
   
- V Návrhář formulářů dvakrát klikněte na formulář a vytvořte <xref:System.Windows.Forms.Form.Load> obslužnou rutinu události. V horní části Form1.cs přidejte následující `using` příkazy.  
+ V Návrhář formulářů dvakrát klikněte na formulář a vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Form.Load>. V horní části Form1.cs přidejte následující příkazy `using`.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#10](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/WFHost/Form1.cs#10)]  
   
- Nahraďte obsah existující `Form1` třídy následujícím kódem.  
+ Obsah existující třídy `Form1` nahraďte následujícím kódem.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/WFHost/Form1.cs#2)]  
   
- Metoda v předchozím kódu ukazuje obecný postup pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hostování ovládacího prvku: `Form1_Load`  
+ Metoda `Form1_Load` v předchozím kódu ukazuje obecný postup hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ho ovládacího prvku:  
   
-1. Vytvoří nový <xref:System.Windows.Forms.Integration.ElementHost> objekt.  
+1. Vytvoří nový objekt <xref:System.Windows.Forms.Integration.ElementHost>.  
   
-2. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost ovládacího prvku na <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType>.  
+2. Nastavte vlastnost <xref:System.Windows.Forms.Control.Dock%2A> ovládacího prvku na hodnotu <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType>.  
   
-3. Přidejte ovládací prvek <xref:System.Windows.Forms.Panel> do <xref:System.Windows.Forms.Control.Controls%2A> kolekce ovládacího prvku. <xref:System.Windows.Forms.Integration.ElementHost>  
+3. Přidejte ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> do kolekce <xref:System.Windows.Forms.Control.Controls%2A> ovládacího prvku <xref:System.Windows.Forms.Panel>.  
   
-4. Vytvořte instanci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacího prvku.  
+4. Vytvořte instanci ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-5. Nahostování složeného ovládacího prvku na formuláři přiřazením ovládacího prvku k <xref:System.Windows.Forms.Integration.ElementHost> <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> vlastnosti ovládacího prvku.  
+5. Nahostování složeného ovládacího prvku na formuláři přiřazením ovládacího prvku k vlastnosti <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>.  
   
- Zbývající dva řádky v `Form1_Load` metodě připojovat obslužné rutiny ke dvěma událostem ovládacího prvku:  
+ Zbývající dva řádky v metodě `Form1_Load` připojovat obslužné rutiny ke dvěma událostem ovládacího prvku:  
   
-- `OnButtonClick`je vlastní událost, která je vyvolána složeným ovládacím prvkem, když uživatel klikne na tlačítko **OK** nebo **Storno** . Událost zpracujete, abyste získali odpověď uživatele a mohli shromažďovat všechna data, která uživatel zadal.  
+- `OnButtonClick` je vlastní událost, která je vyvolána složeným ovládacím prvkem, když uživatel klikne na tlačítko **OK** nebo **Storno** . Událost zpracujete, abyste získali odpověď uživatele a mohli shromažďovat všechna data, která uživatel zadal.  
   
-- <xref:System.Windows.FrameworkElement.Loaded>je standardní událost, která je vyvolána [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacím prvkem, když je plně načtena. Zde se používá událost, protože příklad musí inicializovat několik globálních proměnných pomocí vlastností z ovládacího prvku. V době <xref:System.Windows.Forms.Form.Load> události formuláře není ovládací prvek plně načten a tyto hodnoty jsou stále nastaveny na `null`. Než budete mít přístup k těmto vlastnostem <xref:System.Windows.FrameworkElement.Loaded> , musíte počkat, dokud událost ovládacího prvku neproběhne.  
+- <xref:System.Windows.FrameworkElement.Loaded> je standardní událost, která je vyvolána [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacím prvkem, když je plně načtena. Zde se používá událost, protože příklad musí inicializovat několik globálních proměnných pomocí vlastností z ovládacího prvku. V době <xref:System.Windows.Forms.Form.Load> události formuláře ovládací prvek není zcela načten a tyto hodnoty jsou stále nastaveny na `null`. Než budete mít přístup k těmto vlastnostem, musíte počkat, dokud nedojde k události <xref:System.Windows.FrameworkElement.Loaded> ovládacího prvku.  
   
- Obslužná <xref:System.Windows.FrameworkElement.Loaded> rutina události je zobrazena v předchozím kódu. `OnButtonClick` Obslužná rutina je popsána v následující části.  
+ V předchozím kódu je zobrazená obslužná rutina události <xref:System.Windows.FrameworkElement.Loaded>. Obslužná rutina `OnButtonClick` je popsána v následující části.  
   
 ### <a name="handling-onbuttonclick"></a>Zpracování OnButtonClick  
- K události dojde, když uživatel klikne na tlačítko **OK** nebo **Storno.** `OnButtonClick`  
+ K události `OnButtonClick` dojde, když uživatel klikne na tlačítko **OK** nebo **Storno** .  
   
- Obslužná rutina události zkontroluje `IsOK` pole argumentu události a určí, na které tlačítko bylo kliknuto. `lbl` *Datové* proměnnéodpovídajíovládacímprvkům,které<xref:System.Windows.Forms.Label> byly popsány dříve. Pokud uživatel klikne na tlačítko **OK** , data z <xref:System.Windows.Controls.TextBox> ovládacích prvků ovládacího prvku jsou přiřazena k odpovídajícímu <xref:System.Windows.Forms.Label> ovládacímu prvku. Pokud uživatel klikne na **Storno**, <xref:System.Windows.Forms.Label.Text%2A> hodnoty se nastaví na výchozí řetězce.  
+ Obslužná rutina události zkontroluje pole `IsOK` argumentu události a určí, na které tlačítko bylo kliknuto. Proměnné `lbl`*dat* odpovídají ovládacím prvkům <xref:System.Windows.Forms.Label>, které byly popsány dříve. Pokud uživatel klikne na tlačítko **OK** , data z ovládacích prvků <xref:System.Windows.Controls.TextBox> ovládacího prvku jsou přiřazena k odpovídajícímu ovládacímu prvku <xref:System.Windows.Forms.Label>. Pokud uživatel klikne na **Storno**, hodnoty <xref:System.Windows.Forms.Label.Text%2A> jsou nastaveny na výchozí řetězce.  
   
  Do `Form1` třídy přidejte následující kód obslužné rutiny události kliknutí na tlačítko.  
   
@@ -314,9 +314,9 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
  Sestavte a spusťte aplikaci. Do složeného ovládacího prvku WPF přidejte nějaký text a pak klikněte na **OK**. Text se zobrazí v popiscích. V tomto okamžiku nebyl kód přidán pro zpracování přepínačů.  
   
 ### <a name="modifying-the-appearance-of-the-control"></a>Úprava vzhledu ovládacího prvku  
- Ovládací prvky ve formuláři umožní uživateli [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] změnit barvy popředí a pozadí složeného ovládacího prvku a také několik vlastností písma. <xref:System.Windows.Forms.RadioButton> Barva pozadí je vystavena <xref:System.Windows.Forms.Integration.ElementHost> objektem. Zbývající vlastnosti jsou zveřejněny jako vlastní vlastnosti ovládacího prvku.  
+ Ovládací prvky <xref:System.Windows.Forms.RadioButton> ve formuláři umožní uživateli měnit barvy popředí a pozadí složeného ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a také několik vlastností písma. Barva pozadí je vystavena objektem <xref:System.Windows.Forms.Integration.ElementHost>. Zbývající vlastnosti jsou zveřejněny jako vlastní vlastnosti ovládacího prvku.  
   
- Dvojím kliknutím na <xref:System.Windows.Forms.RadioButton> každý ovládací prvek na formuláři vytvořte <xref:System.Windows.Forms.RadioButton.CheckedChanged> obslužné rutiny událostí. Nahraďte obslužné rutiny události následujícím kódem. <xref:System.Windows.Forms.RadioButton.CheckedChanged>  
+ Dvojím kliknutím na každý ovládací prvek <xref:System.Windows.Forms.RadioButton> na formuláři vytvořte obslužné rutiny události <xref:System.Windows.Forms.RadioButton.CheckedChanged>. Pomocí následujícího kódu nahraďte obslužné rutiny událostí <xref:System.Windows.Forms.RadioButton.CheckedChanged>.  
   
  [!code-csharp[WindowsFormsHostingWpfControl#4](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsFormsHostingWpfControl/CSharp/WFHost/Form1.cs#4)]  
   
@@ -327,5 +327,5 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování model Windows Forms složeného ovládacího prvku v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [Návod: Hostování složeného ovládacího prvku 3D WPF v model Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)
+- [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

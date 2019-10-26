@@ -13,37 +13,40 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-ms.openlocfilehash: e428939253065a5f66ca13f3d9f8a3321f3666ec
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: c98035ef0b4ea1add22b09fb9927bcd49c00cd9b
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660333"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920044"
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
 
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje možnost vytvářet ovládací prvek, jehož vzhledu lze přizpůsobit. Například můžete změnit vzhled <xref:System.Windows.Controls.CheckBox> rámec toho, jaká nastavení vlastnosti provede vytvořením nového <xref:System.Windows.Controls.ControlTemplate>. Následující ilustrace ukazuje <xref:System.Windows.Controls.CheckBox> , který používá výchozí <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.Controls.CheckBox> , která používá vlastní <xref:System.Windows.Controls.ControlTemplate>.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám dává možnost vytvořit ovládací prvek, jehož vzhled se dá přizpůsobit. Můžete například změnit vzhled <xref:System.Windows.Controls.CheckBox> nad rámec toho, co nastavení vlastností provede vytvořením nového <xref:System.Windows.Controls.ControlTemplate>. Následující ilustrace znázorňuje <xref:System.Windows.Controls.CheckBox>, která používá výchozí <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.Controls.CheckBox>, která používá vlastní <xref:System.Windows.Controls.ControlTemplate>.
 
-![Zaškrtávací políčko pomocí výchozí šablony ovládacího prvku. ](./media/ndp-checkboxdefault.png "NDP_CheckBoxDefault") A zaškrtávacího políčka, která používá výchozí šablonu ovládacího prvku
+![Zaškrtávací políčko s výchozí šablonou ovládacího prvku.](./media/ndp-checkboxdefault.png "NDP_CheckBoxDefault")
+Zaškrtávací políčko, které používá výchozí šablonu ovládacího prvku
 
-![Zaškrtávací políčko se šablonou vlastního ovládacího prvku. ](./media/ndp-checkboxcustom.png "NDP_CheckBoxCustom") A zaškrtávací políčko, který používá šablonu vlastního ovládacího prvku
+![Zaškrtávací políčko s šablonou vlastního ovládacího prvku.](./media/ndp-checkboxcustom.png "NDP_CheckBoxCustom")
+Zaškrtávací políčko, které používá vlastní šablonu ovládacího prvku
 
-Pokud budete postupovat podle modelu částí a stavy při vytvoření ovládacího prvku, bude lze přizpůsobit vzhled ovládacího prvku. Návrhářské nástroje, jako je například Microsoft Expression Blend podporu částí a stavů modelu, takže pokud budete postupovat podle tohoto modelu bude váš ovládací prvek přizpůsobitelné tyto typy aplikací.  Toto téma popisuje model částí a stavy a jak na něho při vytváření vlastního ovládacího prvku. Toto téma používá příklad vlastního ovládacího prvku `NumericUpDown`, k objasnění filozofií tohoto modelu.  `NumericUpDown` Ovládací prvek zobrazí číselná hodnota, která uživatel může zvýšit nebo snížit po kliknutí na ovládací prvek tlačítka.  Je vidět na následujícím obrázku `NumericUpDown` ovládací prvek, který je popsán v tomto tématu.
+Pokud při vytváření ovládacího prvku budete postupovat podle modelu částí a stavů, bude možné vzhled ovládacího prvku přizpůsobit. Nástroje návrháře, jako je například Blend pro Visual Studio podporují model komponent a stavů, takže když použijete tento model, váš ovládací prvek bude přizpůsobitelný v těchto typech aplikací.  Toto téma popisuje model částí a stavů a postup, jak ho sledovat při vytváření vlastního ovládacího prvku. Toto téma používá příklad vlastního ovládacího prvku `NumericUpDown`k ilustraci filozofie tohoto modelu.  Ovládací prvek `NumericUpDown` zobrazí číselnou hodnotu, kterou může uživatel zvětšit nebo zmenšit kliknutím na tlačítka ovládacího prvku.  Následující ilustrace znázorňuje ovládací prvek `NumericUpDown`, který je popsán v tomto tématu.
 
-![Vlastní ovládací prvek NumericUpDown. ](./media/ndp-numericupdown.png "NDP_NumericUPDown") vlastního ovládacího prvku NumericUpDown
+![Vlastní ovládací prvek NumericUpDown](./media/ndp-numericupdown.png "NDP_NumericUPDown")
+Vlastní ovládací prvek NumericUpDown
 
 Toto téma obsahuje následující oddíly:
 
-- [Požadavky](#prerequisites)
+- [Požadovaný](#prerequisites)
 
-- [Části a stavů modelu](#parts_and_states_model)
+- [Model částí a stavů](#parts_and_states_model)
 
-- [Definování vizuální struktury a vizuální chování ovládacího prvku v objektu ControlTemplate](#defining_the_visual_structure_and_visual_behavior_of_a_control_in_a_controltemplate)
+- [Definování vizuální struktury a vizuálního chování ovládacího prvku v ControlTemplate](#defining_the_visual_structure_and_visual_behavior_of_a_control_in_a_controltemplate)
 
-- [Pomocí části ControlTemplate v kódu](#using_parts_of_the_controltemplate_in_code)
+- [Použití částí ControlTemplate v kódu](#using_parts_of_the_controltemplate_in_code)
 
-- [Poskytuje kontrakt ovládacího prvku](#providing_the_control_contract)
+- [Poskytování kontraktu řízení](#providing_the_control_contract)
 
 - [Kompletní příklad](#complete_example)
 
@@ -51,170 +54,170 @@ Toto téma obsahuje následující oddíly:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Toto téma předpokládá, že víte, jak vytvořit nový <xref:System.Windows.Controls.ControlTemplate> pro existující ovládací prvek, obeznámeni s co jsou prvky na kontrakt ovládacího prvku a seznamte se s principy probírané v [přizpůsobení vzhledu stávajícího ovládacího prvku pomocí Vytvoření objektu ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+V tomto tématu se předpokládá, že víte, jak vytvořit novou <xref:System.Windows.Controls.ControlTemplate> pro existující ovládací prvek, jsou obeznámené s tím, co jsou prvky na kontraktu ovládacího prvku, a pochopení konceptů popsaných v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 
 > [!NOTE]
-> Vytvoření ovládacího prvku, který může mít jeho vzhled, upravit, musíte vytvořit ovládací prvek, který dědí z <xref:System.Windows.Controls.Control> třída nebo jedna z jejích podtříd jiných než <xref:System.Windows.Controls.UserControl>.  Ovládací prvek, který dědí z <xref:System.Windows.Controls.UserControl> je ovládací prvek, který je možné rychle vytvořit, ale nepoužívá <xref:System.Windows.Controls.ControlTemplate> a nelze přizpůsobit její vzhled.
+> Chcete-li vytvořit ovládací prvek, který může mít vlastní vzhled, je nutné vytvořit ovládací prvek, který dědí z třídy <xref:System.Windows.Controls.Control> nebo jedné z jeho podtříd jiných než <xref:System.Windows.Controls.UserControl>.  Ovládací prvek, který dědí z <xref:System.Windows.Controls.UserControl> je ovládací prvek, který lze rychle vytvořit, ale nepoužívá <xref:System.Windows.Controls.ControlTemplate> a nelze přizpůsobit jeho vzhled.
 
 <a name="parts_and_states_model"></a>
 
-## <a name="parts-and-states-model"></a>Části a stavů modelu
+## <a name="parts-and-states-model"></a>Model částí a stavů
 
-Částí a stavy model Určuje, jak se používá k definování vizuální struktury a chování ovládacího prvku visual. Postupovat podle částí a stavů modelu, proveďte následující:
+Model součásti a stavy určuje, jak definovat vizuální strukturu a vizuální chování ovládacího prvku. Chcete-li postupovat podle modelu součásti a stavy, postupujte následovně:
 
-- Definování vizuální struktury a vizuální chování v <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku.
+- Definujte vizuální strukturu a vizuální chování v <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku.
 
-- Postupujte podle některých osvědčených postupů při logiky ovládacího prvku interakci s části šablony ovládacích prvků.
+- Použijte určité osvědčené postupy, když logika ovládacího prvku komunikuje s částmi šablony ovládacího prvku.
 
-- Zadejte kontrakt ovládacího prvku k určení, co by měl být součástí <xref:System.Windows.Controls.ControlTemplate>.
+- Poskytněte kontrakt ovládacího prvku, který určuje, co by mělo být zahrnuto do <xref:System.Windows.Controls.ControlTemplate>.
 
-Při definování vizuální struktury a vizuální chování v <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku, autoři aplikace můžete změnit vizuální struktury a vizuální chování ovládacího prvku vytvořením nového <xref:System.Windows.Controls.ControlTemplate> místo psaní kódu.   Je nutné zadat autory kontrakt ovládacího prvku, který Instruuje aplikaci, která <xref:System.Windows.FrameworkElement> objekty a stavy musí být definován v <xref:System.Windows.Controls.ControlTemplate>. Měli byste postupovat podle některých osvědčených postupů při interakci s částmi v <xref:System.Windows.Controls.ControlTemplate> tak, aby váš ovládací prvek správně zpracovává neúplnou <xref:System.Windows.Controls.ControlTemplate>.  Pokud budete postupovat podle těchto tří zásad, autoři aplikace budou moci vytvářet <xref:System.Windows.Controls.ControlTemplate> jenom ovládacího prvku stejně snadno, jako jsou ovládací prvky, které zaslat s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Následující část podává přehled o každé z těchto doporučení podrobně.
+Při definování vizuální struktury a vizuálního chování v <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku mohou autoři aplikace změnit vizuální strukturu a vizuální chování ovládacího prvku vytvořením nového <xref:System.Windows.Controls.ControlTemplate> namísto psaní kódu.   Je nutné zadat kontrakt řízení, který sděluje autorům aplikace, které <xref:System.Windows.FrameworkElement> objekty a stavy by měly být definovány v <xref:System.Windows.Controls.ControlTemplate>. Při interakci s částmi v <xref:System.Windows.Controls.ControlTemplate> byste měli dodržovat některé osvědčené postupy, aby ovládací prvek správně nedokončil nekompletní <xref:System.Windows.Controls.ControlTemplate>.  Pokud budete postupovat podle těchto tří principů, autoři aplikací budou moci vytvářet <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek stejně snadno, jako mohou pro ovládací prvky dodávané s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  V následující části jsou podrobněji vysvětlena všechna tato doporučení.
 
 <a name="defining_the_visual_structure_and_visual_behavior_of_a_control_in_a_controltemplate"></a>
 
-## <a name="defining-the-visual-structure-and-visual-behavior-of-a-control-in-a-controltemplate"></a>Definování vizuální struktury a vizuální chování ovládacího prvku v objektu ControlTemplate
+## <a name="defining-the-visual-structure-and-visual-behavior-of-a-control-in-a-controltemplate"></a>Definování vizuální struktury a vizuálního chování ovládacího prvku v ControlTemplate
 
-Při vytváření vlastního ovládacího prvku s použitím modelu částí a stavy definování vizuální struktury a vizuální chování v ovládacího prvku jeho <xref:System.Windows.Controls.ControlTemplate> místo svou logikou.  Vizuální struktury ovládací prvek je složený z <xref:System.Windows.FrameworkElement> objekty, které tvoří ovládacího prvku.  Vizuální chování je způsob, jakým ovládací prvek se zobrazí, když je v určitých stavu.   Další informace o vytváření <xref:System.Windows.Controls.ControlTemplate> , který určuje vizuální struktury a vizuální chování ovládacího prvku, naleznete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Při vytváření vlastního ovládacího prvku pomocí modelu části a stavy můžete definovat vizuální strukturu ovládacího prvku a vizuální chování v jeho <xref:System.Windows.Controls.ControlTemplate> místo v jeho logice.  Vizuální struktura ovládacího prvku je složený z <xref:System.Windows.FrameworkElement> objektů, které tvoří ovládací prvek.  Chování vizuálu je způsob, jakým se ovládací prvek zobrazuje, když je v určitém stavu.   Další informace o vytváření <xref:System.Windows.Controls.ControlTemplate>, které určují vizuální strukturu a vizuální chování ovládacího prvku, naleznete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 
-V příkladu `NumericUpDown` ovládacího prvku, vizuální struktury zahrnuje dva <xref:System.Windows.Controls.Primitives.RepeatButton> ovládací prvky a <xref:System.Windows.Controls.TextBlock>.  Pokud chcete přidat tyto ovládací prvky v kódu `NumericUpDown` ovládacího prvku – v konstruktoru, například pozice tyto ovládací prvky by být změnit.  Místo definování vizuální struktury a vizuální chování ovládacího prvku v jeho kód, byste měli definovat v <xref:System.Windows.Controls.ControlTemplate>.  Potom vývojář aplikace k přizpůsobení umístění tlačítek a <xref:System.Windows.Controls.TextBlock> a určete, jaké chování při `Value` je záporný protože <xref:System.Windows.Controls.ControlTemplate> lze nahradit.
+V příkladu ovládacího prvku `NumericUpDown` obsahuje vizuální struktura dva ovládací prvky <xref:System.Windows.Controls.Primitives.RepeatButton> a <xref:System.Windows.Controls.TextBlock>.  Pokud přidáte tyto ovládací prvky do kódu `NumericUpDown` ovládacího prvku – v jeho konstruktoru, například, umístění těchto ovládacích prvků by nebylo možné změnit.  Namísto definování vizuální struktury ovládacího prvku a vizuálního chování ve svém kódu byste jej měli definovat v <xref:System.Windows.Controls.ControlTemplate>.  Pak vývojář aplikace Přizpůsobte pozici tlačítek a <xref:System.Windows.Controls.TextBlock> a určete, k jakým chování dochází, když je `Value` záporné, protože <xref:System.Windows.Controls.ControlTemplate> může být nahrazena.
 
-Následující příklad ukazuje strukturu visual `NumericUpDown` ovládací prvek, který zahrnuje <xref:System.Windows.Controls.Primitives.RepeatButton> zvýšit `Value`, <xref:System.Windows.Controls.Primitives.RepeatButton> snížení `Value`a <xref:System.Windows.Controls.TextBlock> zobrazíte `Value`.
+Následující příklad ukazuje vizuální strukturu ovládacího prvku `NumericUpDown`, který obsahuje <xref:System.Windows.Controls.Primitives.RepeatButton> ke zvýšení `Value`, <xref:System.Windows.Controls.Primitives.RepeatButton> pro snížení `Value`a <xref:System.Windows.Controls.TextBlock> k zobrazení `Value`.
 
 [!code-xaml[VSMCustomControl#VisualStructure](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#visualstructure)]
 
-Vizuální chování `NumericUpDown` ovládací prvek je, že hodnota je v red písma, pokud je záporné.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> v kódu při `Value` je záporný, `NumericUpDown` vždy zobrazí červený zápornou hodnotu. Zadejte visual chování ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přidáním <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> pro objekty `Positive` a `Negative` stavy.  `Positive` a `Negative` jsou vzájemně se vylučující (ovládací prvek, je vždy přesně jeden z nich), takže se v příkladu se umístí <xref:System.Windows.VisualState> objekty do jednoho <xref:System.Windows.VisualStateGroup>.  Při přechodu ovládací prvek do `Negative` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> zčervená.  Pokud je ovládací prvek v `Positive` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí na původní hodnotu.  Definování <xref:System.Windows.VisualState> objekty v <xref:System.Windows.Controls.ControlTemplate> je popsána dále v [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Vizuální chování ovládacího prvku `NumericUpDown` je, že hodnota je červeným písmem, pokud je záporná.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> <xref:System.Windows.Controls.TextBlock> v kódu, když je `Value` záporné, `NumericUpDown` se vždycky zobrazí červená záporná hodnota. Chování ovládacího prvku v <xref:System.Windows.Controls.ControlTemplate> zadáte přidáním <xref:System.Windows.VisualState> objektů do <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> objekty pro `Positive` a `Negative` stavy.  `Positive` a `Negative` se vzájemně vylučují (ovládací prvek je vždycky v jednom z těchto dvou), takže v příkladu se objekty <xref:System.Windows.VisualState> vloží do jednoho <xref:System.Windows.VisualStateGroup>.  Když se ovládací prvek přejde do stavu `Negative`, <xref:System.Windows.Controls.TextBlock.Foreground%2A> <xref:System.Windows.Controls.TextBlock> se změní na červenou.  Když je ovládací prvek ve stavu `Positive`, <xref:System.Windows.Controls.TextBlock.Foreground%2A> se vrátí na původní hodnotu.  Definování objektů <xref:System.Windows.VisualState> v <xref:System.Windows.Controls.ControlTemplate> je dále popsáno v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 
 > [!NOTE]
-> Nezapomeňte nastavit <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost v kořenovém adresáři <xref:System.Windows.FrameworkElement> z <xref:System.Windows.Controls.ControlTemplate>.
+> Nezapomeňte nastavit <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> připojenou vlastnost v kořenovém <xref:System.Windows.FrameworkElement> <xref:System.Windows.Controls.ControlTemplate>.
 
 [!code-xaml[VSMCustomControl#ValueStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#valuestates)]
 
 <a name="using_parts_of_the_controltemplate_in_code"></a>
 
-## <a name="using-parts-of-the-controltemplate-in-code"></a>Pomocí části ControlTemplate v kódu
+## <a name="using-parts-of-the-controltemplate-in-code"></a>Použití částí ControlTemplate v kódu
 
-A <xref:System.Windows.Controls.ControlTemplate> Autor může vynechat <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.VisualState> objekty záměrně nebo omylem, ale logiky ovládacího prvku může být nutné tyto součásti fungovat správně. Částí a stavy model Určuje, že ovládací prvek by měl být odolné vůči <xref:System.Windows.Controls.ControlTemplate> , kde chybí <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.VisualState> objekty.  Ovládacího prvku by neměl vyvolá výjimku nebo sestavy chybu, pokud <xref:System.Windows.FrameworkElement>, <xref:System.Windows.VisualState>, nebo <xref:System.Windows.VisualStateGroup> chybí <xref:System.Windows.Controls.ControlTemplate>. Tato část popisuje doporučené postupy pro interakci s <xref:System.Windows.FrameworkElement> objektů a správa stavů.
+<xref:System.Windows.Controls.ControlTemplate> autor může vynechat objekty <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.VisualState>, buď záměrně nebo omylem, ale logika ovládacího prvku může tyto součásti potřebovat správně fungovat. Model součásti a stavy určuje, že váš ovládací prvek by měl být odolný vůči <xref:System.Windows.Controls.ControlTemplate>, který postrádá objekty <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.VisualState>.  Váš ovládací prvek by neměl vyvolat výjimku nebo ohlásit chybu, pokud v <xref:System.Windows.Controls.ControlTemplate>chybí <xref:System.Windows.FrameworkElement>, <xref:System.Windows.VisualState>nebo <xref:System.Windows.VisualStateGroup>. Tato část popisuje doporučené postupy pro interakci s <xref:System.Windows.FrameworkElement>mi objekty a správou stavů.
 
-### <a name="anticipate-missing-frameworkelement-objects"></a>Příprava na vyčerpání chybí FrameworkElement – objekty
+### <a name="anticipate-missing-frameworkelement-objects"></a>Předvídání chybějících objektů FrameworkElement
 
-Při definování <xref:System.Windows.FrameworkElement> objekty v <xref:System.Windows.Controls.ControlTemplate>, logiky ovládacího prvku může být nutné k interakci s některé z nich.  Například `NumericUpDown` ovládací prvek přihlásí na tlačítka <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události chcete zvýšit nebo snížit `Value` a nastaví <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost <xref:System.Windows.Controls.TextBlock> k `Value`. Pokud vlastní <xref:System.Windows.Controls.ControlTemplate> vynechává <xref:System.Windows.Controls.TextBlock> nebo tlačítka, je to přijatelné, že ovládací prvek ztratí některé ze svých funkcí, ale měli byste být jisti, že ovládací prvek nezpůsobí chybu. Například pokud <xref:System.Windows.Controls.ControlTemplate> neobsahuje tlačítka, chcete-li změnit `Value`, `NumericUpDown` ztratí, které tuto funkci, ale aplikace, která se používá <xref:System.Windows.Controls.ControlTemplate> budou nadále spuštěné.
+Při definování <xref:System.Windows.FrameworkElement> objektů v <xref:System.Windows.Controls.ControlTemplate>může logika ovládacího prvku vyžadovat interakci s některými z nich.  Například `NumericUpDown` ovládací prvek se přihlásí k odběru tlačítek ' <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události pro zvýšení nebo snížení `Value` a nastaví vlastnost <xref:System.Windows.Controls.TextBlock.Text%2A> <xref:System.Windows.Controls.TextBlock> na `Value`. Pokud vlastní <xref:System.Windows.Controls.ControlTemplate> vynechá <xref:System.Windows.Controls.TextBlock> nebo tlačítka, je přijatelné, že ovládací prvek ztratí některé z jeho funkcí, ale měli byste se ujistit, že váš ovládací prvek nezpůsobí chybu. Pokud například <xref:System.Windows.Controls.ControlTemplate> neobsahuje tlačítka pro změnu `Value`, `NumericUpDown` ztratí tuto funkci, ale aplikace, která <xref:System.Windows.Controls.ControlTemplate> používá, bude nadále běžet.
 
-Následující postupy se zajistí, že ovládací prvek správně reaguje na chybějící <xref:System.Windows.FrameworkElement> objekty:
+Následující postupy zajistí, že ovládací prvek bude správně reagovat na chybějící <xref:System.Windows.FrameworkElement> objekty:
 
-1. Nastavte `x:Name` atribut pro každý <xref:System.Windows.FrameworkElement> , budete muset odkaz v kódu.
+1. Nastavte atribut `x:Name` pro každý <xref:System.Windows.FrameworkElement>, na který musíte odkazovat v kódu.
 
-2. Definovat privátní vlastnosti pro každý <xref:System.Windows.FrameworkElement> vyžadující interakci s.
+2. Definujte soukromé vlastnosti pro každý <xref:System.Windows.FrameworkElement>, se kterými potřebujete pracovat.
 
-3. Přihlášení a odhlášení ze všech událostí, které váš ovládací prvek zpracovává v <xref:System.Windows.FrameworkElement> vlastnost nastaví přístupový objekt.
+3. Přihlaste se k odběru a odhlaste se k odběru všech událostí, které ovládací prvek zpracovává v přístupovém objektu set vlastnosti <xref:System.Windows.FrameworkElement>.
 
-4. Nastavte <xref:System.Windows.FrameworkElement> vlastnosti, které jste definovali v kroku 2 v <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> metody. Toto je první, který <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate> je k dispozici pro ovládací prvek. Použití `x:Name` z <xref:System.Windows.FrameworkElement> zobrazíte ho <xref:System.Windows.Controls.ControlTemplate>.
+4. Nastavte vlastnosti <xref:System.Windows.FrameworkElement>, které jste definovali v kroku 2 v metodě <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A>. Toto je nejstarší, že <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate> jsou k dispozici pro ovládací prvek. Pomocí `x:Name` <xref:System.Windows.FrameworkElement> je můžete získat z <xref:System.Windows.Controls.ControlTemplate>.
 
-5. Zkontrolujte, že <xref:System.Windows.FrameworkElement> není `null` před přístupem k jeho členů.  Pokud je `null`, není hlášena chyba.
+5. Před přístupem ke svým členům ověřte, zda <xref:System.Windows.FrameworkElement> není `null`.  Pokud je `null`, neohlaste chybu.
 
-Následující příklady ukazují jak `NumericUpDown` ovládací prvek komunikuje s <xref:System.Windows.FrameworkElement> objekty v souladu s doporučení v předchozím seznamu.
+Následující příklady ukazují, jak `NumericUpDown` ovládací prvek komunikuje s objekty <xref:System.Windows.FrameworkElement> v souladu s doporučeními v předchozím seznamu.
 
-V následujícím příkladu definuje strukturu visual `NumericUpDown` v ovládacím prvku <xref:System.Windows.Controls.ControlTemplate>, <xref:System.Windows.Controls.Primitives.RepeatButton> , který zvyšuje `Value` má jeho `x:Name` atribut nastaven na `UpButton`.  Následující příklad deklaruje vlastnost s názvem `UpButtonElement` , která představuje <xref:System.Windows.Controls.Primitives.RepeatButton> , která je deklarována v <xref:System.Windows.Controls.ControlTemplate>. `set` Přistupující objekt nejprve zrušení odběru na tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události Pokud `UpDownElement` není `null`, nastaví vlastnost a potom se přihlásí k odběru <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. Je také vlastnost definovaná, ale zde nejsou uvedené, pro ostatní <xref:System.Windows.Controls.Primitives.RepeatButton>, označované jako `DownButtonElement`.
+V příkladu, který definuje vizuální strukturu `NumericUpDown` ovládacího prvku v <xref:System.Windows.Controls.ControlTemplate>, <xref:System.Windows.Controls.Primitives.RepeatButton>, která zvyšuje `Value` má atribut `x:Name` nastaven na `UpButton`.  Následující příklad deklaruje vlastnost nazvanou `UpButtonElement`, která představuje <xref:System.Windows.Controls.Primitives.RepeatButton> deklarované v <xref:System.Windows.Controls.ControlTemplate>. Přístupový objekt `set` nejdřív zruší odběr události <xref:System.Windows.Controls.Primitives.ButtonBase.Click> tlačítka, pokud `UpDownElement` `null`, nastaví vlastnost a pak se přihlásí k odběru události <xref:System.Windows.Controls.Primitives.ButtonBase.Click>. K dispozici je také vlastnost, která zde není zobrazena, pro druhý <xref:System.Windows.Controls.Primitives.RepeatButton>volána `DownButtonElement`.
 
 [!code-csharp[VSMCustomControl#UpButtonProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#upbuttonproperty)]
 [!code-vb[VSMCustomControl#UpButtonProperty](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#upbuttonproperty)]
 
-Následující příklad ukazuje <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> pro `NumericUpDown` ovládacího prvku.  V příkladu se používá <xref:System.Windows.FrameworkElement.GetTemplateChild%2A> metodu k získání <xref:System.Windows.FrameworkElement> objekty z <xref:System.Windows.Controls.ControlTemplate>.  Všimněte si, že v příkladu budete chráněni před případech, kdy <xref:System.Windows.FrameworkElement.GetTemplateChild%2A> najde <xref:System.Windows.FrameworkElement> se zadaným názvem, který není očekávaného typu. Je také vhodné ignorovat prvky, které mají zadanou `x:Name` , ale jsou chybného typu.
+Následující příklad ukazuje <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> pro ovládací prvek `NumericUpDown`.  V příkladu se používá metoda <xref:System.Windows.FrameworkElement.GetTemplateChild%2A> k získání objektů <xref:System.Windows.FrameworkElement> z <xref:System.Windows.Controls.ControlTemplate>.  Všimněte si, že příklad chrání proti případům, kde <xref:System.Windows.FrameworkElement.GetTemplateChild%2A> najde <xref:System.Windows.FrameworkElement> se zadaným názvem, který není očekávaného typu. Je také osvědčeným postupem ignorovat prvky, které mají zadanou `x:Name`, ale jsou nesprávného typu.
 
 [!code-csharp[VSMCustomControl#ApplyTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#applytemplate)]
 [!code-vb[VSMCustomControl#ApplyTemplate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#applytemplate)]
 
-Pomocí následujících postupů, které jsou uvedeny v předchozích příkladech, zajistíte tím, že ovládací prvek bude nadále spouštět v případě <xref:System.Windows.Controls.ControlTemplate> chybí <xref:System.Windows.FrameworkElement>.
+Podle postupů uvedených v předchozích příkladech se ujistěte, že se ovládací prvek bude nadále spouštět, i když <xref:System.Windows.Controls.ControlTemplate> chybí <xref:System.Windows.FrameworkElement>.
 
 ### <a name="use-the-visualstatemanager-to-manage-states"></a>Použití VisualStateManager ke správě stavů
 
-<xref:System.Windows.VisualStateManager> Uchovává informace o stavu ovládacího prvku a provádějí logiku potřebnou pro přechod mezi stavy. Když přidáte <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>, přidejte je do <xref:System.Windows.VisualStateGroup> a přidejte <xref:System.Windows.VisualStateGroup> k <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost tak, aby <xref:System.Windows.VisualStateManager> k nim má přístup.
+<xref:System.Windows.VisualStateManager> udržuje přehled o stavech ovládacího prvku a provádí logiku potřebnou k přechodu mezi stavy. Když do <xref:System.Windows.Controls.ControlTemplate>přidáte <xref:System.Windows.VisualState> objekty, přidáte je do <xref:System.Windows.VisualStateGroup> a přidáte <xref:System.Windows.VisualStateGroup> do vlastnosti <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> připojené, aby k nim <xref:System.Windows.VisualStateManager> přístup.
 
-V následujícím příkladu se opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídají `Positive` a `Negative` stavy ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative` <xref:System.Windows.VisualState> se změní <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> červené.   Při `NumericUpDown` ovládací prvek je v `Negative` scénář ve stavu `Negative` začíná stavu.  Pak bude <xref:System.Windows.Media.Animation.Storyboard> v `Negative` stavu zastaví, když se ovládací prvek vrátí `Positive` stavu.  `Positive` <xref:System.Windows.VisualState> Nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard> vzhledem k tomu, když <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí původní barvu.
+Následující příklad opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídají `Positive` a `Negative` stavů ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative`<xref:System.Windows.VisualState> zapne <xref:System.Windows.Controls.TextBlock.Foreground%2A> <xref:System.Windows.Controls.TextBlock> červeně.   Když je ovládací prvek `NumericUpDown` ve stavu `Negative`, začíná scénář ve stavu `Negative`.  Pak <xref:System.Windows.Media.Animation.Storyboard> ve stavu `Negative` zastaví, když se ovládací prvek vrátí do `Positive` stavu.  `Positive`<xref:System.Windows.VisualState> nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard>, protože když se <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> se vrátí do původní barvy.
 
 [!code-xaml[VSMCustomControl#ValueStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#valuestates)]
 
-Všimněte si, že <xref:System.Windows.Controls.TextBlock> je přiřazen název, ale <xref:System.Windows.Controls.TextBlock> se nenachází v kontrakt ovládacího prvku pro `NumericUpDown` protože logiky ovládacího prvku nikdy odkazuje <xref:System.Windows.Controls.TextBlock>.  Prvky, které jsou odkazovány v <xref:System.Windows.Controls.ControlTemplate> mít názvy, ale nemusí být součástí kontrakt ovládacího prvku, protože nový <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek nemusí odkazovat na tento element.  Například tím, kdo vytváří nový <xref:System.Windows.Controls.ControlTemplate> pro `NumericUpDown` není označuje, že se rozhodnout `Value` je záporný tak, že změníte <xref:System.Windows.Controls.Control.Foreground%2A>.  V takovém případě žádný kód ani <xref:System.Windows.Controls.ControlTemplate> odkazy <xref:System.Windows.Controls.TextBlock> podle názvu.
+Všimněte si, že <xref:System.Windows.Controls.TextBlock> má daný název, ale <xref:System.Windows.Controls.TextBlock> není v kontraktu ovládacího prvku pro `NumericUpDown`, protože logika ovládacího prvku nikdy neodkazuje na <xref:System.Windows.Controls.TextBlock>.  Prvky, které jsou odkazovány v <xref:System.Windows.Controls.ControlTemplate> mají názvy, ale nemusejí být součástí kontraktu řízení, protože nový <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku nemusí být odkazován na tento prvek.  Například někdo, který vytvoří novou <xref:System.Windows.Controls.ControlTemplate> pro `NumericUpDown`, se může rozhodnout, že `Value` je negativní, změnou <xref:System.Windows.Controls.Control.Foreground%2A>.  V takovém případě ani kód ani <xref:System.Windows.Controls.ControlTemplate> neodkazují na <xref:System.Windows.Controls.TextBlock> podle názvu.
 
-Logiky ovládacího prvku je zodpovědná za změnu stavu ovládacího prvku. Následující příklad ukazuje, že `NumericUpDown` řídit volání <xref:System.Windows.VisualStateManager.GoToState%2A> metoda přejde do `Positive` stav, kdy `Value` je 0 nebo větší a `Negative` stav, kdy `Value` je menší než 0.
+Logika ovládacího prvku zodpovídá za změnu stavu ovládacího prvku. Následující příklad ukazuje, že ovládací prvek `NumericUpDown` volá metodu <xref:System.Windows.VisualStateManager.GoToState%2A> a přejde do stavu `Positive`, pokud `Value` je 0 nebo vyšší a `Negative` stav, pokud je `Value` menší než 0.
 
 [!code-csharp[VSMCustomControl#ValueStateChange](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#valuestatechange)]
 [!code-vb[VSMCustomControl#ValueStateChange](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#valuestatechange)]
 
-<xref:System.Windows.VisualStateManager.GoToState%2A> Metoda provádí logiku potřebnou ke spuštění a zastavení scénáře odpovídajícím způsobem. Když ovládacího prvku volá <xref:System.Windows.VisualStateManager.GoToState%2A> změnit její stav <xref:System.Windows.VisualStateManager> provede následující akce:
+Metoda <xref:System.Windows.VisualStateManager.GoToState%2A> provádí logiku potřebnou ke správnému spuštění a zastavení scénářů. Když ovládací prvek volá <xref:System.Windows.VisualStateManager.GoToState%2A> ke změně jeho stavu, <xref:System.Windows.VisualStateManager> provede následující:
 
-- Pokud <xref:System.Windows.VisualState> , že se bude ovládací prvek má <xref:System.Windows.Media.Animation.Storyboard>, začne scénáři. Když se poté <xref:System.Windows.VisualState> pocházejí ovládací prvek má <xref:System.Windows.Media.Animation.Storyboard>, elementy end scénáře.
+- Pokud <xref:System.Windows.VisualState>, na které ovládací prvek bude mít <xref:System.Windows.Media.Animation.Storyboard>, začne scénář. V případě, že <xref:System.Windows.VisualState>, ze kterého ovládací prvek přichází, má <xref:System.Windows.Media.Animation.Storyboard>, scénář skončí.
 
-- Pokud je ovládací prvek ve stavu, který je zadán, <xref:System.Windows.VisualStateManager.GoToState%2A> neprovede žádnou akci a vrátí `true`.
+- Pokud je ovládací prvek již ve stavu, který je zadán, <xref:System.Windows.VisualStateManager.GoToState%2A> neprovede žádnou akci a vrátí `true`.
 
-- Pokud v neexistuje stav, který je zadán <xref:System.Windows.Controls.ControlTemplate> z `control`, <xref:System.Windows.VisualStateManager.GoToState%2A> neprovede žádnou akci a vrátí `false`.
+- Pokud stav, který je zadán, neexistuje v <xref:System.Windows.Controls.ControlTemplate> `control`, <xref:System.Windows.VisualStateManager.GoToState%2A> neprovede žádnou akci a vrátí `false`.
 
 #### <a name="best-practices-for-working-with-the-visualstatemanager"></a>Osvědčené postupy pro práci s VisualStateManager
 
-Doporučujeme, abyste udělali následující Udržovat stavy ovládacího prvku:
+Chcete-li zachovat stavy vašeho ovládacího prvku, doporučujeme provést následující akce:
 
-- Pomocí vlastnosti můžete sledovat její stav.
+- Ke sledování jeho stavu použijte vlastnosti.
 
-- Vytvoření Pomocná metoda pro přechod mezi stavy.
+- Vytvořte pomocnou metodu pro přechod mezi stavy.
 
-`NumericUpDown` Používá ovládací prvek jeho `Value` vlastnost sleduje, zda se `Positive` nebo `Negative` stavu.  `NumericUpDown` Také definuje ovládací prvek `Focused` a `UnFocused` stavy, které sleduje <xref:System.Windows.UIElement.IsFocused%2A> vlastnost. Pokud používáte stavy, které neodpovídají přirozeně vlastnost ovládacího prvku, můžete definovat privátní vlastnosti, které chcete sledovat stav.
+Ovládací prvek `NumericUpDown` používá jeho vlastnost `Value` ke sledování, zda je ve stavu `Positive` nebo `Negative`.  Ovládací prvek `NumericUpDown` také definuje `Focused` a `UnFocused` stavy, které sledují vlastnost <xref:System.Windows.UIElement.IsFocused%2A>. Pokud používáte stavy, které přirozeně neodpovídají vlastnosti ovládacího prvku, můžete definovat vlastnost Private pro sledování stavu.
 
-Jedinou metodu, která aktualizuje všechny stavy centralizuje volání <xref:System.Windows.VisualStateManager> a udržuje spravovat váš kód. Následující příklad ukazuje `NumericUpDown` ovládacího prvku Pomocná metoda `UpdateStates`. Když `Value` je větší než nebo rovno 0, <xref:System.Windows.Controls.Control> probíhá `Positive` stavu.  Když `Value` je menší než 0, ovládací prvek je `Negative` stavu.  Když <xref:System.Windows.UIElement.IsFocused%2A> je `true`, tento ovládací prvek `Focused` stavu; jinak, je v `Unfocused` stavu.  Ovládací prvek může volat `UpdateStates` vždy, když je potřeba změnit její stav, bez ohledu na to, jaký stav se změní.
+Jediná metoda, která aktualizuje všechny stavy, centralizace volá do <xref:System.Windows.VisualStateManager> a udržuje kód spravovaný. Následující příklad ukazuje pomocnou metodu ovládacího prvku `NumericUpDown`, `UpdateStates`. Když `Value` je větší nebo rovno 0, <xref:System.Windows.Controls.Control> je ve stavu `Positive`.  Pokud je `Value` menší než 0, ovládací prvek je ve stavu `Negative`.  Pokud je <xref:System.Windows.UIElement.IsFocused%2A> `true`, je ovládací prvek ve stavu `Focused`; v opačném případě je ve stavu `Unfocused`.  Ovládací prvek může volat `UpdateStates`, kdykoli potřebuje změnit svůj stav bez ohledu na to, jaké změny stavu.
 
 [!code-csharp[VSMCustomControl#UpdateStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#updatestates)]
 [!code-vb[VSMCustomControl#UpdateStates](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#updatestates)]
 
-Pokud předáte název stavu, který <xref:System.Windows.VisualStateManager.GoToState%2A> ovládací prvek je již v tomto stavu <xref:System.Windows.VisualStateManager.GoToState%2A> nemá žádný účinek, takže není nutné ke kontrole aktuální stav ovládacího prvku.  Například pokud `Value` změní z jedné záporné číslo na jiné záporné číslo, scénář pro `Negative` stavu proces se nepřerušil, a uživatel neuvidí změn v ovládacím prvku.
+Pokud předáte název stavu <xref:System.Windows.VisualStateManager.GoToState%2A>, když je ovládací prvek již v tomto stavu, <xref:System.Windows.VisualStateManager.GoToState%2A> neprovede žádnou akci, takže nemusíte kontrolovat aktuální stav ovládacího prvku.  Například pokud `Value` změny z jednoho záporného čísla na jiné záporné číslo, scénář pro `Negative` stav není přerušen a uživatel se v ovládacím prvku nezobrazuje žádná změna.
 
-<xref:System.Windows.VisualStateManager> Používá <xref:System.Windows.VisualStateGroup> objekty k určení stavu, které pro ukončení při volání <xref:System.Windows.VisualStateManager.GoToState%2A>. Ovládací prvek je vždy v jednom ze stavů pro každou <xref:System.Windows.VisualStateGroup> , která je definována v jeho <xref:System.Windows.Controls.ControlTemplate> a pouze opustí stavu při přechodu do jiného státu ze stejné <xref:System.Windows.VisualStateGroup>. Například <xref:System.Windows.Controls.ControlTemplate> z `NumericUpDown` definuje ovládací prvek `Positive` a `Negative` <xref:System.Windows.VisualState> objektů v jednom <xref:System.Windows.VisualStateGroup> a `Focused` a `Unfocused` <xref:System.Windows.VisualState> objekty v jiném. (Můžete zobrazit `Focused` a `Unfocused` <xref:System.Windows.VisualState> definované v [kompletní příklad](#complete_example) v tomto tématu, když se ovládací prvek dostane od `Positive` do stavu `Negative` stavu, nebo naopak, ovládací prvek zůstane v buď `Focused` nebo `Unfocused` stavu.
+<xref:System.Windows.VisualStateManager> používá objekty <xref:System.Windows.VisualStateGroup> k určení stavu, který se má ukončit při volání <xref:System.Windows.VisualStateManager.GoToState%2A>. Ovládací prvek je vždy v jednom stavu pro každý <xref:System.Windows.VisualStateGroup> definovaný v jeho <xref:System.Windows.Controls.ControlTemplate> a opustí stav, když přejde do jiného stavu ze stejného <xref:System.Windows.VisualStateGroup>. Například <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku `NumericUpDown` definuje `Positive` a `Negative`objekty<xref:System.Windows.VisualState> v jednom <xref:System.Windows.VisualStateGroup> a `Focused` a `Unfocused`objekty<xref:System.Windows.VisualState> v jiném. (V části [kompletní příklad](#complete_example) v tomto tématu se můžete podívat na `Focused` a<xref:System.Windows.VisualState> `Unfocused`, když ovládací prvek přejde ze stavu `Positive` do stavu `Negative` nebo naopak, ovládací prvek zůstane buď `Focused`, nebo `Unfocused` státech.
 
-Existují tři typické místa, kde může změnit stav ovládacího prvku:
+Existují tři obvyklá místa, kde se může změnit stav ovládacího prvku:
 
-- Když <xref:System.Windows.Controls.ControlTemplate> platí pro <xref:System.Windows.Controls.Control>.
+- Když se <xref:System.Windows.Controls.ControlTemplate> aplikuje na <xref:System.Windows.Controls.Control>.
 
-- Když se změní vlastnost.
+- Při změně vlastnosti.
 
 - Při výskytu události.
 
-Následující příklady ukazují, aktualizuje se stav `NumericUpDown` ovládacího prvku v těchto případech.
+Následující příklady ukazují, jak aktualizovat stav ovládacího prvku `NumericUpDown` v těchto případech.
 
-Měli byste aktualizovat stav ovládacího prvku <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> metoda tak, aby ovládací prvek zobrazil ve správné stav, kdy <xref:System.Windows.Controls.ControlTemplate> platí. Následující příklad volá `UpdateStates` v <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> tak, aby byl ovládací prvek v příslušné stavy.  Předpokládejme například, že vytvoříte `NumericUpDown` ovládací prvek a pak nastavte jeho <xref:System.Windows.Controls.Control.Foreground%2A> na zelenou a `Value` k -5.  Pokud není volána `UpdateStates` při <xref:System.Windows.Controls.ControlTemplate> platí pro `NumericUpDown` ovládací prvek, ovládací prvek není v `Negative` stavu a jeho hodnota je místo červená zelená.  Je nutné volat `UpdateStates` vložit ovládací prvek `Negative` stavu.
+Měli byste aktualizovat stav ovládacího prvku v metodě <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> tak, aby se ovládací prvek zobrazil ve správném stavu při použití <xref:System.Windows.Controls.ControlTemplate>. Následující příklad volá `UpdateStates` v <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A>, aby se zajistilo, že se ovládací prvek nachází v příslušných stavech.  Předpokládejme například, že vytvoříte ovládací prvek `NumericUpDown` a potom nastavíte jeho <xref:System.Windows.Controls.Control.Foreground%2A> na zelenou a `Value` na-5.  Pokud nevoláte `UpdateStates` při použití <xref:System.Windows.Controls.ControlTemplate> na ovládací prvek `NumericUpDown`, ovládací prvek není ve stavu `Negative` a hodnota je zelená namísto Red.  Je nutné volat `UpdateStates` pro vložení ovládacího prvku do stavu `Negative`.
 
 [!code-csharp[VSMCustomControl#ApplyTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#applytemplate)]
 [!code-vb[VSMCustomControl#ApplyTemplate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#applytemplate)]
 
-Často je potřeba aktualizovat stav ovládacího prvku, když se změní vlastnost. Následující příklad ukazuje celý `ValueChangedCallback` metody. Protože `ValueChangedCallback` je volána, když `Value` změní, volání metod `UpdateStates` v případě, že `Value` změnil z kladné na zápornou nebo naopak. Je to přijatelné pro volání `UpdateStates` při `Value` změní, ale zůstává kladné nebo záporné, protože v takovém případě nebude ovládací prvek změnit stavy.
+Při změně vlastnosti často potřebujete aktualizovat stavy ovládacího prvku. Následující příklad ukazuje celou metodu `ValueChangedCallback`. Vzhledem k tomu, že je volána `ValueChangedCallback` při `Value` změně, metoda volá `UpdateStates` v případě, `Value` se změnily z pozitivního na záporné nebo naopak. Je přijatelné volat `UpdateStates`, když `Value` změní, ale zůstává kladné nebo záporné, protože v takovém případě ovládací prvek nezmění stavy.
 
 [!code-csharp[VSMCustomControl#EntireValueChangedCallback](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#entirevaluechangedcallback)]
 [!code-vb[VSMCustomControl#EntireValueChangedCallback](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#entirevaluechangedcallback)]
 
-Potřebujete také aktualizovat stavy při výskytu události. Následující příklad ukazuje, že `NumericUpDown` volání `UpdateStates` na <xref:System.Windows.Controls.Control> ke zpracování <xref:System.Windows.UIElement.GotFocus> událostí.
+Pokud dojde k události, může být také nutné aktualizovat stavy. Následující příklad ukazuje, že `NumericUpDown` volá `UpdateStates` na <xref:System.Windows.Controls.Control> pro zpracování události <xref:System.Windows.UIElement.GotFocus>.
 
 [!code-csharp[VSMCustomControl#OnGotFocus](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#ongotfocus)]
 [!code-vb[VSMCustomControl#OnGotFocus](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#ongotfocus)]
 
-<xref:System.Windows.VisualStateManager> Vám usnadní správu stavů ovládacího prvku. S použitím <xref:System.Windows.VisualStateManager>, zajistíte tím, že ovládací prvek správně přechody mezi stavy.  Pokud budete postupovat podle doporučení popsané v této části pro práci s <xref:System.Windows.VisualStateManager>, ovládacího prvku kód zůstane čitelný a udržovatelný.
+<xref:System.Windows.VisualStateManager> vám pomůže se správou stavů vašeho ovládacího prvku. Pomocí <xref:System.Windows.VisualStateManager>zajistíte, aby ovládací prvek správně přechází mezi stavy.  Pokud budete postupovat podle doporučení popsaných v této části pro práci s <xref:System.Windows.VisualStateManager>, kód ovládacího prvku zůstane čitelný a udržovatelný.
 
 <a name="providing_the_control_contract"></a>
 
-## <a name="providing-the-control-contract"></a>Poskytuje kontrakt ovládacího prvku
+## <a name="providing-the-control-contract"></a>Poskytování kontraktu řízení
 
-Zadejte kontrakt ovládacího prvku tak, aby <xref:System.Windows.Controls.ControlTemplate> autoři vědět, co vložit v šabloně. Kontrakt ovládacího prvku má tři prvky:
+Poskytnete kontrakt řízení, aby <xref:System.Windows.Controls.ControlTemplate> autoři věděli, co umístit do šablony. Kontrakt ovládacího prvku má tři prvky:
 
-- Vizuální prvky, které používá logiky ovládacího prvku.
+- Vizuální prvky, které logika ovládacího prvku používá.
 
-- Stavy ovládacího prvku a skupiny, do které patří každý stav.
+- Stavy ovládacího prvku a skupiny, do kterých každý stav patří.
 
-- Veřejné vlastnosti, které ovlivňují vizuální ovládací prvek.
+- Veřejné vlastnosti, které vizuálně ovlivňují ovládací prvek.
 
-Uživatel, který vytvoří nový <xref:System.Windows.Controls.ControlTemplate> potřebuje vědět, co <xref:System.Windows.FrameworkElement> objekty ovládacího prvku logika více cest použije, jaký typ každý objekt je a zadejte jeho název je. A <xref:System.Windows.Controls.ControlTemplate> Autor také potřeba znát název jednotlivých možných stavech ovládací prvek může být v a které <xref:System.Windows.VisualStateGroup> stav není v.
+Někdo, který vytvoří nový <xref:System.Windows.Controls.ControlTemplate> potřebuje znát, co <xref:System.Windows.FrameworkElement> objekty logiky ovládacího prvku, jaký typ každého objektu je a jaký je jeho název. <xref:System.Windows.Controls.ControlTemplate> autor také musí znát název každého možného stavu, ve kterém se ovládací prvek může nacházet a který <xref:System.Windows.VisualStateGroup> stavu.
 
-Vrácení `NumericUpDown` očekává, že například ovládací prvek <xref:System.Windows.Controls.ControlTemplate> mít následující <xref:System.Windows.FrameworkElement> objekty:
+Návrat do `NumericUpDown`ového příkladu, ovládací prvek očekává, že <xref:System.Windows.Controls.ControlTemplate> mají následující objekty <xref:System.Windows.FrameworkElement>:
 
-- A <xref:System.Windows.Controls.Primitives.RepeatButton> volá `UpButton`.
+- <xref:System.Windows.Controls.Primitives.RepeatButton> s názvem `UpButton`.
 
-- A <xref:System.Windows.Controls.Primitives.RepeatButton> volá `DownButton.`
+- <xref:System.Windows.Controls.Primitives.RepeatButton> s názvem `DownButton.`
 
- Ovládací prvek může být v následujících stavů:
+ Ovládací prvek může být v následujících stavech:
 
 - V `ValueStates`<xref:System.Windows.VisualStateGroup>
 
@@ -228,11 +231,11 @@ Vrácení `NumericUpDown` očekává, že například ovládací prvek <xref:Sys
 
   - `Unfocused`
 
-Chcete-li určit, co <xref:System.Windows.FrameworkElement> očekává, že objekty ovládacího prvku, je použít <xref:System.Windows.TemplatePartAttribute>, který určuje název a typ očekávané prvky.  Chcete-li určit možné stavy ovládacího prvku, použijete <xref:System.Windows.TemplateVisualStateAttribute>, který určuje název stavu a která <xref:System.Windows.VisualStateGroup> patří do.  Vložit <xref:System.Windows.TemplatePartAttribute> a <xref:System.Windows.TemplateVisualStateAttribute> na definici třídy ovládacího prvku.
+Chcete-li určit, co <xref:System.Windows.FrameworkElement> objekty, které ovládací prvek očekává, použijte <xref:System.Windows.TemplatePartAttribute>, který určuje název a typ očekávaných prvků.  Chcete-li určit možné stavy ovládacího prvku, použijte <xref:System.Windows.TemplateVisualStateAttribute>, který určuje název stavu a který <xref:System.Windows.VisualStateGroup> patří do.  Do definice třídy ovládacího prvku vložte <xref:System.Windows.TemplatePartAttribute> a <xref:System.Windows.TemplateVisualStateAttribute>.
 
-Veřejná vlastnost, která má vliv na vzhled ovládacího prvku je také součástí kontrakt ovládacího prvku.
+Jakákoli veřejná vlastnost, která má vliv na vzhled vašeho ovládacího prvku, je také součástí kontraktu řízení.
 
-V následujícím příkladu <xref:System.Windows.FrameworkElement> objektu a stavy `NumericUpDown` ovládacího prvku.
+Následující příklad určuje <xref:System.Windows.FrameworkElement> objekt a stavy pro ovládací prvek `NumericUpDown`.
 
 [!code-csharp[VSMCustomControl#ControlContract](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#controlcontract)]
 [!code-vb[VSMCustomControl#ControlContract](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#controlcontract)]
@@ -241,7 +244,7 @@ V následujícím příkladu <xref:System.Windows.FrameworkElement> objektu a st
 
 ## <a name="complete-example"></a>Kompletní příklad
 
-V následujícím příkladu je celý <xref:System.Windows.Controls.ControlTemplate> pro `NumericUpDown` ovládacího prvku.
+Následující příklad je celý <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek `NumericUpDown`.
 
 [!code-xaml[VSMCustomControl#NUDTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/themes/generic.xaml#nudtemplate)]
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 925250a2284a47d0f9caf93158e2e23d9283aef3
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: fdeb40f1e092f8c7e96e9d59e1b07673201fbe9d
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774736"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920380"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují tak, aby poskytovaly [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silný a odolný model zabezpečení, který se pokusí vyhnout se jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -165,7 +165,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- ClickOnce je komplexní technologie nasazení, která je součástí .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (podrobné informace najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] lze nasadit pomocí technologie ClickOnce, zatímco aplikace hostované v prohlížeči musí být nasazeny s ClickOnce.  
+ ClickOnce je komplexní technologie nasazení, která je součástí .NET Framework a integruje se se sadou Visual Studio (podrobné informace najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] lze nasadit pomocí technologie ClickOnce, zatímco aplikace hostované v prohlížeči musí být nasazeny s ClickOnce.  
   
  Aplikacím nasazeným pomocí technologie ClickOnce je poskytnuta další vrstva zabezpečení než zabezpečení přístupu kódu (CAS); v podstatě aplikace nasazené ClickOnce požaduje oprávnění, která potřebují. Jsou jim udělena pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze které je aplikace nasazena. Omezením sady oprávnění jenom na ty, které jsou potřeba, i když jsou menší než ta, kterou poskytuje sada oprávnění pro spouštěcí zónu. počet prostředků, ke kterým má aplikace přístup, se zkracuje na minimum. V důsledku toho, pokud dojde k narušení aplikace, je možné omezit poškození klientského počítače.  
   

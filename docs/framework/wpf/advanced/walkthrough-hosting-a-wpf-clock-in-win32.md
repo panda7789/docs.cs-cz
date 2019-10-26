@@ -1,21 +1,21 @@
 ---
-title: 'Návod: Hostování hodin WPF ve Win32'
+title: 'Návod: Hostování hodin WPF v systému Win32'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperability [WPF], tutorials
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 27e1a2e88beeacf8c2cd98f61b11542ee2341e8f
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 42ed51a1a1ce59b6a3cc3319d86d3a7445403ce4
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433978"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919745"
 ---
-# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Návod: Hostování hodin WPF ve Win32
+# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Návod: Hostování hodin WPF v systému Win32
 
-Pro vložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Interop.HwndSource>do aplikací použijte, který poskytuje HWND, který obsahuje váš [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] Nejdřív vytvoříte <xref:System.Windows.Interop.HwndSource>a dáte parametrům, které se budou podobat funkci CreateWindow. Pak se <xref:System.Windows.Interop.HwndSource> dozvíte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] o obsahu, který v něm chcete. Nakonec obdržíte HWND z <xref:System.Windows.Interop.HwndSource>. Tento návod ukazuje, jak vytvořit smíšený [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] program v rámci [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace, který znovu implementuje dialogové okno **vlastností data a času** operačního systému.
+Chcete-li umístit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikací, použijte <xref:System.Windows.Interop.HwndSource>, která poskytuje HWND, který obsahuje váš [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Nejdřív vytvoříte <xref:System.Windows.Interop.HwndSource>, takže parametry pro něj budou podobné funkci CreateWindow. Pak <xref:System.Windows.Interop.HwndSource> informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]m obsahu, který v něm potřebujete. Nakonec obdržíte HWND z <xref:System.Windows.Interop.HwndSource>. Tento návod ukazuje, jak vytvořit smíšený [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], která znovu implementuje dialog **vlastností data a času** operačního systému.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -23,7 +23,7 @@ Viz [spolupráce WPF a Win32](wpf-and-win32-interoperation.md).
 
 ## <a name="how-to-use-this-tutorial"></a>Jak používat tento kurz
 
-Tento kurz se zaměřuje na důležité kroky k vytvoření meziprovozního aplikace. Tento kurz je zálohovaný ukázkou, [Ukázka mezioperace v prostředí Win32](https://go.microsoft.com/fwlink/?LinkID=160051), ale tato ukázka se odráží u koncového produktu. V tomto kurzu se dokončí postup, jak jste se rozhodli, [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] že jste začali s existujícím projektem, který je třeba již existujícím projektem, a přidali [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jste hostovaný do vaší aplikace. Můžete porovnat svůj koncový produkt s [ukázkou meziprovozu pro hodiny Win32](https://go.microsoft.com/fwlink/?LinkID=160051).
+Tento kurz se zaměřuje na důležité kroky k vytvoření meziprovozního aplikace. Tento kurz je zálohovaný ukázkou, [Ukázka mezioperace v prostředí Win32](https://go.microsoft.com/fwlink/?LinkID=160051), ale tato ukázka se odráží u koncového produktu. V tomto kurzu se dokončí postup, jak jste se rozhodli, že jste začali s existujícím projektem [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] vlastní, možná již existující projekt a jste do své aplikace přidali hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Můžete porovnat svůj koncový produkt s [ukázkou meziprovozu pro hodiny Win32](https://go.microsoft.com/fwlink/?LinkID=160051).
 
 ## <a name="a-walkthrough-of-windows-presentation-framework-inside-win32-hwndsource"></a>Návod pro Windows Presentation Framework uvnitř Win32 (HwndSource)
 
@@ -35,25 +35,25 @@ Tento dialog můžete znovu vytvořit tak, že vytvoříte C++ projekt Win32 v a
 
 ![Dialogové okno znovu vytvořit vlastnosti data a času](./media/walkthrough-hosting-a-wpf-clock-in-win32/recreated-date-time-properties-dialog.png)
 
-(Nemusíte [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] používat <xref:System.Windows.Interop.HwndSource>, abyste mohli používat, a nemusíte používat C++ k psaní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programů, ale jedná se o poměrně typický způsob, jak to udělat, tak se dobře hodí k vysvětlení kurzu stupňovaný).
+(Nemusíte používat Visual Studio k použití <xref:System.Windows.Interop.HwndSource>a nemusíte používat C++ k psaní[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ch programů, ale jedná se o poměrně typický způsob, jak to provést, a sám se zahodí na vysvětlení kurzu stupňovaný).
 
-Chcete-li vložit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny do dialogového okna, je třeba provést pět jednotlivých podkroků:
+Chcete-li vložit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny do dialogového okna, je nutné provést pět jednotlivých podkroků:
 
-1. Povolit vašemu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] projektu volání spravovaného kódu ( **/CLR**) změnou nastavení projektu v [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)].
+1. Povolte vašemu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] projektu volání spravovaného kódu ( **/CLR**) změnou nastavení projektu v aplikaci Visual Studio.
 
-2. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vytvořte<xref:System.Windows.Controls.Page> v samostatné knihovně DLL.
+2. Vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page> v samostatné knihovně DLL.
 
-3. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umístěte dovnitř.<xref:System.Windows.Controls.Page> <xref:System.Windows.Interop.HwndSource>
+3. Vložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page> dovnitř <xref:System.Windows.Interop.HwndSource>.
 
-4. Získejte HWND pro, který <xref:System.Windows.Controls.Page> <xref:System.Windows.Interop.HwndSource.Handle%2A> používá vlastnost.
+4. Získat HWND pro tento <xref:System.Windows.Controls.Page> pomocí vlastnosti <xref:System.Windows.Interop.HwndSource.Handle%2A>.
 
-5. Použijte [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] k rozhodnutí, kam umístit HWND v rámci větší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace
+5. Pomocí [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] se rozhodnout, kam umístit HWND v rámci větší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace
 
 ## <a name="clr"></a>možností
 
-Prvním krokem je zapínání tohoto nespravovaného [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] projektu na jeden, který může volat spravovaný kód. Použijete možnost kompilátoru/CLR, která se připojí k potřebným knihovnám DLL, které chcete použít, a upravte metodu Main pro použití s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Prvním krokem je vypnutí tohoto nespravovaného projektu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] do některého, který může volat spravovaný kód. Použijete možnost kompilátoru/CLR, která se připojí k potřebným knihovnám DLL, které chcete použít, a upravte metodu Main pro použití s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
-Povolení použití spravovaného kódu v rámci C++ projektu: Klikněte pravým tlačítkem na projekt win32clock a vyberte **vlastnosti**. Na stránce **Obecné** vlastnosti (výchozí) změňte podporu modulu Common Language Runtime na `/clr`.
+Povolení použití spravovaného kódu v rámci C++ projektu: klikněte pravým tlačítkem na projekt win32clock a vyberte **vlastnosti**. Na stránce **Obecné** vlastnosti (výchozí) změňte podporu modulu Common Language Runtime na `/clr`.
 
 Dále přidejte odkazy na knihovny DLL nutné pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]: PresentationCore. dll, PresentationFramework. dll, System. dll, WindowsBase. dll, UIAutomationProvider. dll a UIAutomationTypes. dll. (V následujících pokynech se předpokládá, že je operační systém nainstalovaný na jednotce C:.)
 
@@ -75,7 +75,7 @@ Dále přidejte odkazy na knihovny DLL nutné pro [!INCLUDE[TLA2#tla_winclient](
 
 9. Kliknutím na tlačítko **OK** zavřete stránky vlastností win32clock pro přidání odkazů.
 
- Nakonec přidejte `STAThreadAttribute` `_tWinMain` do metody pro použití s: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]
+ Nakonec přidejte `STAThreadAttribute` do metody `_tWinMain` pro použití s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:
 
 ```cpp
 [System::STAThreadAttribute]
@@ -89,11 +89,11 @@ Tento atribut oznamuje modulu CLR (Common Language Runtime), že při inicializa
 
 ## <a name="create-a-windows-presentation-framework-page"></a>Vytvoření stránky Windows Presentation Framework
 
-V dalším kroku vytvoříte knihovnu DLL, která definuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. <xref:System.Windows.Controls.Page> Často je nejjednodušší vytvořit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Page> jako samostatnou aplikaci a napsat a ladit tak, jak je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] . Po dokončení lze tento projekt přepínat na knihovnu DLL tak, že kliknete pravým tlačítkem myši na projekt, kliknete na **vlastnosti**, přejdete do aplikace a změníte typ výstupu na knihovnu tříd systému Windows.
+V dalším kroku vytvoříte knihovnu DLL, která definuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page>. Často je nejjednodušší vytvořit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page> jako samostatnou aplikaci a napsat a ladit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ou část. Po dokončení lze tento projekt přepínat na knihovnu DLL tak, že kliknete pravým tlačítkem myši na projekt, kliknete na **vlastnosti**, přejdete do aplikace a změníte typ výstupu na knihovnu tříd systému Windows.
 
-Projekt knihovny DLL lze následně kombinovat [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] s projektem (jedno řešení, které obsahuje dva projekty) – klikněte pravým tlačítkem na řešení, vyberte **projekt Add\Existing**. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]
+Projekt [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] DLL lze poté kombinovat s projektem [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] (jedno řešení, které obsahuje dva projekty) – klikněte pravým tlačítkem na řešení, vyberte **projekt Add\Existing**.
 
-Chcete-li [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít tuto knihovnu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] dll z projektu, je nutné přidat odkaz:
+Chcete-li použít tuto [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dll z projektu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], je nutné přidat odkaz:
 
 1. Klikněte pravým tlačítkem na projekt win32clock a vyberte **odkazy...** .
 
@@ -105,7 +105,7 @@ Chcete-li [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-wincli
 
 ## <a name="hwndsource"></a>HwndSource
 
-V <xref:System.Windows.Interop.HwndSource> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dalším kroku použijete k vytvoření vzhledu jako HWND. <xref:System.Windows.Controls.Page> Tento blok kódu přidáte do C++ souboru:
+V dalším kroku použijete <xref:System.Windows.Interop.HwndSource>, aby [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page> vypadal jako HWND. Tento blok kódu přidáte do C++ souboru:
 
 ```cpp
 namespace ManagedCode
@@ -144,13 +144,13 @@ namespace ManagedCode
     using namespace System::Windows::Media;
 ```
 
- Pak definujte funkci, která vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah, <xref:System.Windows.Interop.HwndSource> vloží kolem něj a vrátí HWND:
+ Pak definujte funkci, která vytvoří obsah [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vloží <xref:System.Windows.Interop.HwndSource> kolem něj a vrátí HWND:
 
 ```cpp
 HWND GetHwnd(HWND parent, int x, int y, int width, int height) {
 ```
 
-Nejdřív vytvoříte <xref:System.Windows.Interop.HwndSource>, jejichž parametry jsou podobné funkci CreateWindow:
+Nejprve vytvoříte <xref:System.Windows.Interop.HwndSource>, jejichž parametry jsou podobné funkci CreateWindow:
 
 ```cpp
 HwndSource^ source = gcnew HwndSource(
@@ -163,13 +163,13 @@ HwndSource^ source = gcnew HwndSource(
 );
 ```
 
-Pak vytvoříte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídu obsahu voláním jejího konstruktoru:
+Pak vytvoříte třídu obsahu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] voláním jejího konstruktoru:
 
 ```cpp
 UIElement^ page = gcnew WPFClock::Clock();
 ```
 
-Pak se stránka připojí k <xref:System.Windows.Interop.HwndSource>:
+Pak stránku připojíte k <xref:System.Windows.Interop.HwndSource>:
 
 ```cpp
 source->RootVisual = page;
@@ -183,7 +183,7 @@ return (HWND) source->Handle.ToPointer();
 
 ## <a name="positioning-the-hwnd"></a>Umístění HWND
 
-Teď, když máte HWND, který obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny, je nutné vložit HWND [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] do dialogového okna. Pokud jste věděli, kam chcete umístit HWND, stačí pouze předat tuto velikost a umístění do `GetHwnd` dříve definované funkce. Ale použili jste soubor prostředků k definování dialogu, takže nejste přesně jisti, kde jsou umístěny všechny HWND. Editor [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] dialogového okna můžete použít k [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] vložení statického ovládacího prvku, kam chcete hodiny přidat ("vložit hodiny sem"), a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít ho k umístění hodin.
+Teď, když máte HWND, který obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodin, je nutné vložit HWND do dialogového okna [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. Pokud jste věděli, kam chcete přidat HWND, stačí pouze předat tuto velikost a umístění do funkce `GetHwnd`, kterou jste definovali dříve. Ale použili jste soubor prostředků k definování dialogu, takže nejste přesně jisti, kde jsou umístěny všechny HWND. Editor dialogových oken sady Visual Studio můžete použít k vložení [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] STATICKÉho ovládacího prvku, kde chcete, aby se hodiny posunuly ("vložit hodiny sem"), a použít k umístění [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodin.
 
 Kde WM_INITDIALOG zpracováváte, použijete `GetDlgItem` k načtení HWND pro statický zástupný symbol:
 
@@ -191,7 +191,7 @@ Kde WM_INITDIALOG zpracováváte, použijete `GetDlgItem` k načtení HWND pro s
 HWND placeholder = GetDlgItem(hDlg, IDC_CLOCK);
 ```
 
-Pak můžete vypočítat velikost a umístění zástupného symbolu, aby bylo možné vložit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny do tohoto umístění:
+Pak můžete vypočítat velikost a umístění zástupného symbolu, aby bylo možné umístit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny na toto místo:
 
 Obdélník RECT;
 
@@ -211,13 +211,13 @@ Pak skryjete zástupný symbol STATIC:
 ShowWindow(placeholder, SW_HIDE);
 ```
 
-A v tomto [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umístění vytvořte časové HWND:
+A vytvořte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodinového HWND v tomto umístění:
 
 ```cpp
 HWND clock = ManagedCode::GetHwnd(hDlg, point.x, point.y, width, height);
 ```
 
-Chcete-li vytvořit kurz zajímavé a vytvořit reálné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny, budete v tomto okamžiku muset [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvořit ovládací prvek hodin. To lze provést hlavně v označení, a to s několika obslužnými rutinami událostí v kódu na pozadí. Vzhledem k tomu, že tento kurz se týká vzájemného provozu a nikoli o návrhu řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , je zde k dispozici kompletní kód pro hodiny, a to bez diskrétních instrukcí pro sestavování a toho, co jednotlivé části znamenají. Nebojte se s tímto kódem pro změnu vzhledu a chování ovládacího prvku.
+Aby se kurz zajímavý a vytvořil reálné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]é hodiny, budete v tomto okamžiku muset vytvořit ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodin. To lze provést hlavně v označení, a to s několika obslužnými rutinami událostí v kódu na pozadí. Vzhledem k tomu, že tento kurz se týká vzájemného provozu a nikoli o návrhu ovládacích prvků, je zde k dispozici kompletní kód pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodiny, a to bez diskrétních instrukcí pro sestavování a toho, co jednotlivé části znamenají. Nebojte se s tímto kódem pro změnu vzhledu a chování ovládacího prvku.
 
 Zde je značka:
 

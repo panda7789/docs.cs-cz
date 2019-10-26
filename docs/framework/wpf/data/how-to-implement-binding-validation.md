@@ -1,42 +1,48 @@
 ---
-title: 'Postupy: Implementace ověření vazby'
+title: 'Postupy: Implementace ověření připojení'
 ms.date: 03/30/2017
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - validation of binding [WPF]
 - data binding [WPF], validation of binding
 - binding [WPF], validation of
 ms.assetid: eb98b33d-9866-49ae-b981-bc5ff20d607a
-ms.openlocfilehash: 3950df8b6f4b48a035c6ebf37d8d65c18cb82e1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7a1a8df78a785066992472c7de37f958ae3467f1
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010329"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920159"
 ---
-# <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření vazby
-Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a aktivační událost stylu poskytnout vizuální zpětnou vazbu a informuje uživatele, pokud je zadána neplatná hodnota, podle vlastního ověřovacího pravidla.  
+# <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření připojení
+
+Tento příklad ukazuje, jak použít <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a Trigger stylu k poskytnutí vizuální zpětné vazby, která uživatele informují o tom, že je zadána neplatná hodnota, a to na základě vlastního ověřovacího pravidla.
+
+## <a name="example"></a>Příklad
+
+Textový obsah <xref:System.Windows.Controls.TextBox> v následujícím příkladu je vázán na vlastnost `Age` (typu int) objektu zdroje vazby s názvem `ods`. Vazba je nastavená tak, aby používala ověřovací pravidlo s názvem `AgeRangeRule` tak, aby pokud uživatel zadal jiné než číselné znaky nebo hodnotu menší než 21 nebo větší než 130, zobrazí se vedle textového pole červený vykřičník a zobrazí se popis tlačítka s chybovou zprávou, když  uživatel přesune ukazatel myši na textové pole.
+
+[!code-xaml[BindValidation#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#2)]
+
+Následující příklad ukazuje implementaci `AgeRangeRule`, která dědí z <xref:System.Windows.Controls.ValidationRule> a přepisuje metodu <xref:System.Windows.Controls.ValidationRule.Validate%2A>. Pro tuto hodnotu je volána metoda `Int32.Parse`, aby se zajistilo, že neobsahuje žádné neplatné znaky. Metoda <xref:System.Windows.Controls.ValidationRule.Validate%2A> vrátí <xref:System.Windows.Controls.ValidationResult>, která určuje, zda je hodnota platná na základě toho, zda je při analýze zachycena výjimka a zda je hodnota stáří mimo dolní a horní mez.
+
+[!code-csharp[BindValidation#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/AgeRangeRule.cs#3)]
+[!code-vb[BindValidation#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindValidation/VisualBasic/AgeRangeRule.vb#3)]
+
+Následující příklad ukazuje vlastní <xref:System.Windows.Controls.ControlTemplate> `validationTemplate`, který vytvoří červený vykřičník pro upozornění uživatele na chybu ověřování. Šablony ovládacích prvků slouží k předefinování vzhledu ovládacího prvku.
+
+[!code-xaml[BindValidation#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#4)]
+
+Jak je znázorněno v následujícím příkladu, <xref:System.Windows.Controls.ToolTip>, která zobrazuje chybovou zprávu, je vytvořena pomocí stylu s názvem `textBoxInError`. Pokud je hodnota <xref:System.Windows.Controls.Validation.HasError%2A> `true`, aktivační událost nastaví popis tlačítka pro aktuální <xref:System.Windows.Controls.TextBox> na první chybu ověření. <xref:System.Windows.Data.Binding.RelativeSource%2A> je nastavena na <xref:System.Windows.Data.RelativeSourceMode.Self>a odkazuje na aktuální prvek.
+
+[!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]
+
+Úplný příklad najdete v tématu [Ukázka ověření vazby](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/BindValidation).
   
-## <a name="example"></a>Příklad  
- Obsah textu <xref:System.Windows.Controls.TextBox> v následujícím příkladu je vázán na `Age` vlastnosti (typ int) objektu vazby zdroje s názvem `ods`. Vazba byla nastavená pro použití ověřovacího pravidla s názvem `AgeRangeRule` tak, že pokud uživatel zadá jiné než číselné znaky nebo hodnotu, která je menší než 21 nebo větší než 130, vedle textového pole se zobrazí červený vykřičník a popisku tlačítka s chybovou zprávou kde n uživatel pohybuje ukazatelem myši přes textové pole.  
-  
- [!code-xaml[BindValidation#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#2)]  
-  
- Následující příklad ukazuje implementaci `AgeRangeRule`, který dědí z <xref:System.Windows.Controls.ValidationRule> a přepíše <xref:System.Windows.Controls.ValidationRule.Validate%2A> metody. Je volána metoda Int32.Parse() na hodnotu a ujistěte se, zda neobsahuje neplatné znaky. <xref:System.Windows.Controls.ValidationRule.Validate%2A> Metoda vrátí hodnotu <xref:System.Windows.Controls.ValidationResult> , který označuje, zda je hodnota platná na základě Určuje, zda je zachycena výjimka při analýze a určuje, zda je hodnota stáří mimo dolní a horní hranice.  
-  
- [!code-csharp[BindValidation#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/AgeRangeRule.cs#3)]  
-  
- Následující příklad ukazuje vlastní <xref:System.Windows.Controls.ControlTemplate> `validationTemplate` , který vytváří červený vykřičník a upozorňovaly uživatele k chybě ověřování. Šablony ovládacích prvků se používají k předefinování vzhledu ovládacího prvku.  
-  
- [!code-xaml[BindValidation#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#4)]  
-  
- Jak je znázorněno v následujícím příkladu <xref:System.Windows.Controls.ToolTip> , který se zobrazí chybová zpráva je vytvořený pomocí style s názvem `textBoxInError`. Pokud hodnota <xref:System.Windows.Controls.Validation.HasError%2A> je `true`, aktivační událost nastaví popis tlačítka aktuálního <xref:System.Windows.Controls.TextBox> do své první chyby ověření. <xref:System.Windows.Data.Binding.RelativeSource%2A> Je nastavena na <xref:System.Windows.Data.RelativeSourceMode.Self>odkazující na aktuální prvek.  
-  
- [!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
-  
- Kompletní příklad naleznete v tématu [vazby Ukázka ověřování](https://go.microsoft.com/fwlink/?LinkID=159972).  
-  
- Všimněte si, že pokud nezadáte vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> výchozí šablonu chyb se zobrazí na poskytují uživateli vizuální zpětnou vazbu, když dojde k chybě ověřování. Naleznete v části "Ověření dat" v [přehled datových vazeb](data-binding-overview.md) Další informace. Navíc [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány při aktualizaci vlastnosti zdroje vazby. Další informace naleznete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.  
-  
+Pamatujte, že pokud neposkytnete vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A>, zobrazí se výchozí šablona chyby, která uživateli poskytne vizuální zpětnou vazbu, když dojde k chybě ověření. Další informace najdete v tématu věnovaném ověření dat v [přehledu datových vazeb](data-binding-overview.md) . [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány během aktualizace vlastnosti zdroje vazby. Další informace najdete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled datových vazeb](data-binding-overview.md)

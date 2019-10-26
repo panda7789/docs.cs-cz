@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 405a8d3c8b922d0f74e522e85ea3096d989c478e
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 85218bd4b6e900bd4508a5c90132419a07846f2c
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582506"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920204"
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a>Windows Presentation Foundation (WPF) je prezentační rozhraní, které lze použít k vývoji následujících typů aplikací:  
@@ -46,7 +46,7 @@ ms.locfileid: "72582506"
   
 - Správa systému Windows v samostatných aplikacích.  
   
-- Sledování navigace v [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a samostatné aplikace s navigačními okny a snímky.  
+- Sledování navigace v [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]a samostatné aplikace s navigačními okny a snímky.  
   
  Tyto možnosti jsou implementovány třídou <xref:System.Windows.Application>, kterou přidáte do aplikací pomocí *definice aplikace*.  
   
@@ -60,7 +60,7 @@ ms.locfileid: "72582506"
   
 <a name="Windows_and_Dialog_Boxes"></a>   
 ## <a name="windows-and-dialog-boxes"></a>Okna a dialogová okna  
- Uživatelé komunikují s [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatnými aplikacemi prostřednictvím Windows. Účelem okna je hostování obsahu aplikace a vystavení funkcí aplikace, které obvykle uživatelům umožňují pracovat s obsahem. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] jsou Windows zapouzdřeny pomocí <xref:System.Windows.Window> třídy, která podporuje:  
+ Uživatelé komunikují s [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatnými aplikacemi prostřednictvím Windows. Účelem okna je hostování obsahu aplikace a vystavení funkcí aplikace, které obvykle uživatelům umožňují pracovat s obsahem. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]jsou Windows zapouzdřeny pomocí <xref:System.Windows.Window> třídy, která podporuje:  
   
 - Vytváření a zobrazování oken.  
   
@@ -74,7 +74,7 @@ ms.locfileid: "72582506"
   
  <xref:System.Windows.Window> podporuje možnost vytvoření speciálního typu okna označovaného jako dialogové okno. Lze vytvořit modální i nemodální typy dialogových oken.  
   
- Pro usnadnění a výhody opětovné použitelnosti a konzistentní uživatelské prostředí napříč aplikacemi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zveřejňuje tři dialogová okna běžných oken: <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog> a <xref:System.Windows.Controls.PrintDialog>.  
+ Pro usnadnění a výhody opětovné použitelnosti a konzistentní uživatelské prostředí napříč aplikacemi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zveřejňuje tři dialogová okna běžných oken: <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog>a <xref:System.Windows.Controls.PrintDialog>.  
   
  Okno se zprávou je speciální typ dialogového okna pro zobrazení důležitých textových informací uživatelům a pro dotazování jednoduchých dotazů Ano/Ne/OK/zrušit. Pro vytváření a zobrazování oken se zprávami se používá třída <xref:System.Windows.MessageBox>.  
   
@@ -94,7 +94,7 @@ ms.locfileid: "72582506"
   
  Pro usnadnění navigace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implementuje následující:  
   
-- <xref:System.Windows.Navigation.NavigationService> sdílený navigační modul pro zpracování žádostí o navigaci, které jsou používány <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow> a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] k podpoře navigace uvnitř aplikace.  
+- <xref:System.Windows.Navigation.NavigationService>sdílený navigační modul pro zpracování žádostí o navigaci, které jsou používány <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] k podpoře navigace uvnitř aplikace.  
   
 - Navigační metody pro zahájení navigace  
   
@@ -112,7 +112,7 @@ ms.locfileid: "72582506"
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Sestavení a nasazení  
- I když mohou být jednoduché aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestaveny z příkazového řádku pomocí kompilátorů příkazového řádku, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] integrovány s [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] k poskytnutí další podpory, která zjednodušuje proces vývoje a sestavování. Další informace naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
+ I když mohou být jednoduché aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavené z příkazového řádku pomocí kompilátorů příkazového řádku, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] integrovány se sadou Visual Studio, aby poskytovaly další podporu, která zjednodušuje proces vývoje a sestavování. Další informace naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
  V závislosti na typu aplikace, kterou sestavíte, existuje jedna nebo více možností nasazení, ze kterých si můžete vybrat. Další informace naleznete v tématu [nasazení aplikace WPF](deploying-a-wpf-application-wpf.md).  
   
