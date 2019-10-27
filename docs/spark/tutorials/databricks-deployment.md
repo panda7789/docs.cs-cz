@@ -4,170 +4,221 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 55fa9b42e04a540deb245887d601e6cce0e6e623
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9e338886c68845d5f95e7beb0cd7ac3a729d3281
+ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583524"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72961109"
 ---
-# <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
+# <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
-V tomto kurzu se naučíte nasadit rozhraní .NET pro Apache Spark aplikaci do datacihlů.
+V tomto kurzu se naučíte, jak nasadit vaši aplikaci do cloudu prostřednictvím Azure Databricks, analytických platforem založených na Apache Spark s nastavením jedním kliknutím, zjednodušenými pracovními postupy a interaktivním pracovním prostorem, který umožňuje spolupráci.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
->
-> * Příprava Microsoft. spark. Worker
-> * Publikování aplikace Spark .NET
-> * Nasazení aplikace do datacihlů
-> * Spuštění aplikace
+> Vytvořte pracovní prostor Azure Databricks.
+> Publikování aplikace .NET pro Apache Spark.
+> Vytvoření úlohy Spark a clusteru Spark
+> Spusťte aplikaci v clusteru Spark.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Než začnete, udělejte toto:
+Než začnete, proveďte následující úlohy:
 
-* Stáhněte si rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html).
-* Stáhněte si [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do svého místního počítače. Toto je pomocný skript, který později použijete ke kopírování rozhraní .NET pro Apache Spark závislé soubory do pracovních uzlů clusteru Spark.
+* Pokud nemáte účet Azure, vytvořte si [bezplatný účet](https://azure.microsoft.com/free/).
+* Přihlaste se k [Azure Portal](https://portal.azure.com/).
+* Dokončete kurz [k rozhraní .NET pro Apache Spark – Začínáme během 10 minut](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) .
 
-## <a name="prepare-worker-dependencies"></a>Příprava závislostí pracovního procesu
+## <a name="create-an-azure-databricks-workspace"></a>Vytvoření pracovního prostoru Azure Databricks
 
-**Microsoft. spark. Worker** je back-endové komponenta, která je umístěná na jednotlivých pracovních uzlech clusteru Spark. Pokud chcete spustit systém C# souborů UDF (uživatelsky definovaná funkce), musí Spark pochopit, jak spustit modul CLR .NET pro spouštění systému souborů UDF. **Microsoft. spark. Worker** poskytuje kolekci tříd pro Spark, které tuto funkci povolují.
+> [!Note]
+> Tento kurz se nedá provést pomocí **předplatného Azure free zkušební verze**.
+> Pokud máte bezplatný účet, přejděte na svůj profil a změňte si předplatné na **průběžné platby**. Další informace najdete v tématu [bezplatný účet Azure](https://azure.microsoft.com/free/). Pak [odeberte limit útraty](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)a [požádejte o zvýšení kvóty](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) pro vCPU ve vaší oblasti. Když vytváříte pracovní prostor Azure Databricks, můžete vybrat cenovou úroveň **DBU (Premium-14-days)** a poskytnout tak přístup k pracovnímu prostoru zdarma Premium Azure Databricks DBU po dobu 14 dnů.
 
-1. Vyberte verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) Linux netcoreapp, která se má nasadit na váš cluster.
+V této části vytvoříte Azure Databricks pracovní prostor pomocí Azure Portal.
 
-   Pokud například chcete `.NET for Apache Spark v0.1.0` pomocí `netcoreapp2.1`, Stáhněte si soubor [Microsoft. spark. work. netcoreapp 2.1. Linux-x64-0.1.0. tar. gz](https://github.com/dotnet/spark/releases/download/v0.1.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.1.0.tar.gz).
+1. V Azure Portal vyberte **vytvořit prostředek** > **Analytics** > **Azure Databricks**.
 
-2. Nahrajte `Microsoft.Spark.Worker.<release>.tar.gz` a [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do distribuovaného systému souborů (například DBFS), ke kterému má váš cluster přístup.
+   ![Vytvoření prostředku Azure Databricks v Azure Portal](./media/databricks-deployment/create-databricks-resource.png)
 
-## <a name="prepare-your-net-for-apache-spark-app"></a>Příprava rozhraní .NET pro aplikaci Apache Spark
+2. V části **služba Azure Databricks**zadejte hodnoty pro vytvoření pracovního prostoru datacihly.
+    
+    |Vlastnost  |Popis  |
+    |---------|---------|
+    |**Název pracovního prostoru**     | Zadejte název pracovního prostoru datacihly.        |
+    |**Formě**     | V rozevíracím seznamu vyberte své předplatné Azure.        |
+    |**Skupina prostředků**     | Určete, zda chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který obsahuje související prostředky pro řešení Azure. Další informace najdete v tématu [Přehled skupiny prostředků Azure](/azure/azure-databricks/azure-resource-manager/resource-group-overview). |
+    |**Poloha**     | Vyberte upřednostňovanou oblast. Informace o dostupných oblastech najdete v tématu [služby Azure dostupné v jednotlivých oblastech](https://azure.microsoft.com/regions/services/).        |
+    |**Cenová úroveň**     |  Vyberte si mezi **standardem**, **Premium**nebo **zkušební verzí**. Další informace o těchto úrovních najdete na stránce s [cenami pro datacihly](https://azure.microsoft.com/pricing/details/databricks/).       |
+    |**Virtual Network**     |   Ne       |
 
-1. Při sestavování aplikace postupujte podle kurzu [Začínáme](get-started.md) .
+3. Vyberte **vytvořit**. Vytváření pracovního prostoru trvá několik minut. Při vytváření pracovního prostoru můžete zobrazit stav nasazení v části **oznámení**.
 
-2. Publikujte aplikaci Spark .NET jako samostatnou.
+## <a name="install-azure-databricks-tools"></a>Nainstalovat Azure Databricks nástroje
 
-   V systému Linux můžete spustit následující příkaz.
+Pomocí rozhraní příkazového **řádku datacihly** se můžete připojit k Azure Databricks clusterům a odesílat do nich soubory z místního počítače. Clustery datacihly přistupují k souborům prostřednictvím DBFS (systém souborů datacihly). 
 
-   ```dotnetcli
-   dotnet publish -c Release -f netcoreapp2.1 -r ubuntu.16.04-x64
-   ```
+1. Rozhraní příkazového řádku datacihly vyžaduje Python 3,6 nebo vyšší. Pokud už máte nainstalovaný Python, můžete tento krok přeskočit.
+ 
+   **Pro Windows:**
 
-3. Vyprodukuje pro publikované soubory `<your app>.zip`.
+   [Stažení Pythonu pro Windows](https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe)
 
-   Následující příkaz můžete na platformě Linux spustit pomocí `zip`.
-
-   ```bash
-   zip -r <your app>.zip .
-   ```
-
-4. Nahrajte do distribuovaného systému souborů (například DBFS), ke kterému má cluster přístup, následující:
-
-   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Tento JAR je součástí balíčku NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) a je umístěn v adresáři výstupu sestavení vaší aplikace.
-   * `<your app>.zip`
-   * Soubory (jako jsou soubory závislosti nebo společná data dostupná pro každého pracovního procesu) nebo sestavení (například knihovny DLL, které obsahují uživatelem definované funkce nebo knihovny, na kterých je vaše aplikace závislá), aby se umístily do pracovního adresáře každého prováděcího modulu.
-
-## <a name="deploy-to-databricks"></a>Nasazení do Databricks
-
-[Datacihly](https://databricks.com) představují platformu, která poskytuje cloudové zpracování velkých objemů dat pomocí Apache Spark.
-
-> [!NOTE]
-> [Datacihly](https://databricks.com/aws) [Azure Databricks](https://azure.microsoft.com/services/databricks/) a AWS jsou založené na systému Linux. Proto pokud vás zajímá nasazení vaší aplikace do datacihly, ujistěte se, že je vaše aplikace .NET Standard kompatibilní a že ke kompilaci vaší aplikace použijete [kompilátor .NET Core](https://dotnet.microsoft.com/download) .
-
-Datacihly umožňují odesílat rozhraní .NET pro aplikace Apache Spark do existujícího aktivního clusteru nebo vytvořit nový cluster při každém spuštění úlohy. K tomu je potřeba, aby byl **Microsoft. spark. Worker** nainstalovaný předtím, než odešlete rozhraní .NET pro aplikaci Apache Spark.
-
-### <a name="deploy-microsoftsparkworker"></a>Nasazení Microsoft. spark. Worker
-
-Tento krok se vyžaduje jenom jednou pro cluster.
-
-1. Stáhněte si do svého místního počítače [DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) a [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh
-) .
-
-2. Upravte **DB-init.sh** tak, aby odkazoval na verzi **Microsoft. spark. Worker** , kterou chcete stáhnout a nainstalovat do clusteru.
-
-3. Nainstalujte rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html).
-
-4. [Nastavte podrobnosti ověření](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html#set-up-authentication) pro rozhraní PŘÍKAZového řádku datacihly.
-
-5. Nahrajte soubory do clusteru datacihly pomocí následujícího příkazu:
+   **Pro Linux:** Python přichází do předinstalovaných distribucí pro Linux. Spuštěním následujícího příkazu zobrazíte verzi, kterou jste nainstalovali:
 
    ```bash
-   cd <path-to-db-init-and-install-worker>
+   python3 --version
+   ```
+
+2. Pomocí PIP nainstalujte rozhraní příkazového řádku datacihly. Python 3,4 a novější standardně zahrnují PIP. Použijte PIP3 pro Python 3. Spusťte následující příkaz:
+
+   ```bash
+   pip3 install databricks-cli
+   ```
+
+3. Po instalaci CLI datacihly otevřete nový příkazový řádek a spusťte příkaz `databricks`. Pokud **se zobrazí "datacihly" nejsou rozpoznány jako vnitřní nebo externí Chyba příkazu**, otevřete nový příkazový řádek.
+
+## <a name="set-up-azure-databricks"></a>Nastavit Azure Databricks
+
+Teď, když máte nainstalované rozhraní příkazového řádku datacihly, je potřeba nastavit podrobnosti ověřování.
+
+1. Spusťte příkaz rozhraní příkazového řádku datacihly `databricks configure --token`.
+
+2. Po spuštění příkazu konfigurace se zobrazí výzva k zadání hostitele. Adresa URL hostitele používá formát: **https://< \Location >. NET**. Pokud jste například během vytváření Azure Databricks služby vybrali možnost **eastus2** , bude hostitel **https://eastus2.azuredatabricks.net** .
+
+3. Po zadání hostitele se zobrazí výzva k zadání tokenu. V Azure Portal vyberte **Spustit pracovní prostor** a spusťte Azure Databricks pracovní prostor.
+
+   ![Spustit Azure Databricks pracovní prostor](./media/databricks-deployment/launch-databricks-workspace.png)
+
+4. Na domovské stránce pracovního prostoru vyberte **nastavení uživatele**.
+
+   ![Nastavení uživatele v pracovním prostoru Azure Databricks](./media/databricks-deployment/databricks-user-settings.png)
+
+5. Na stránce nastavení uživatele můžete vygenerovat nový token. Zkopírujte vygenerovaný token a vložte ho zpátky do příkazového řádku.
+
+   ![Vygenerování nového přístupového tokenu v pracovním prostoru Azure Databricks](./media/databricks-deployment/generate-token.png)
+
+Nyní byste měli mít přístup k jakýmkoli Azure Databricks clusterům, které vytvoříte a nahrajete soubory do DBFS.
+
+## <a name="download-worker-dependencies"></a>Stáhnout závislosti pracovního procesu
+
+1. Microsoft. spark. Worker pomáhá Apache Spark spustit vaši aplikaci, jako jsou například všechny uživatelsky definované funkce (UDF), které jste mohli napsat. Stáhněte si [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz).
+
+2. *Install-Worker.sh* je skript, který umožňuje zkopírovat rozhraní .net pro Apache Spark závislé soubory do uzlů clusteru. 
+
+   V místním počítači vytvořte nový soubor s názvem **install-Worker.sh** a vložte [obsah Install-Worker.sh](https://raw.githubusercontent.com/dotnet/spark/master/deployment/install-worker.sh) umístěný na GitHubu. 
+
+3. *DB-init.sh* je skript, který nainstaluje závislosti do vašeho clusteru datacihly Spark.
+
+   V místním počítači vytvořte nový soubor s názvem **DB-init.sh** a vložte [obsah DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) umístěný na GitHubu. 
+   
+   V souboru, který jste právě vytvořili, nastavte proměnnou `DOTNET_SPARK_RELEASE` na `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz`. Zbývající část souboru *DB-init.sh* ponechte beze změny.
+
+> [!Note]
+> Pokud používáte systém Windows, ověřte, že zakončení řádků ve skriptech *install-Worker.sh* a *DB-init.sh* mají formát UNIX (LF). Konce řádků můžete změnit pomocí textových editorů, jako je Poznámkový blok + + a Atom.
+
+## <a name="publish-your-app"></a>Publikování aplikace
+
+V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apache Spark – Začínáme s 10 minutami](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) , abyste zajistili, že cluster Spark bude mít přístup ke všem souborům, které potřebuje ke spuštění vaší aplikace. 
+
+1. Pro publikování *mySparkApp*spusťte následující příkazy:
+
+   **Ve Windows:**
+
+   ```console
+   cd mySparkApp
+   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x6
+   ```
+
+   **V systému Linux:**
+
+   ```bash
+   cd mySparkApp
+   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
+   ```
+
+2. Proveďte následující úlohy pro zip publikovaných souborů aplikace, abyste je mohli snadno nahrát do vašeho clusteru datacihly Spark.
+
+   **Ve Windows:**
+
+   Přejděte na mySparkApp/bin/Release/netcoreapp 3.0/Ubuntu. 16.04-x64. Potom klikněte pravým tlačítkem na složku pro **publikování** a vyberte **Odeslat do > Komprimovaná složka (ZIP)** . Pojmenujte novou složku **Publish. zip**.
+
+   **V systému Linux spusťte následující příkaz:**
+
+   ```bash
+   zip -r publish.zip .
+   ```
+
+## <a name="upload-files"></a>Nahrání souborů
+
+V této části nahrajete několik souborů do DBFS, aby měl váš cluster vše, co potřebuje ke spuštění vaší aplikace v cloudu. Pokaždé, když nahrajete soubor do DBFS, ujistěte se, že jste v adresáři, ve kterém je tento soubor umístěný ve vašem počítači.
+
+1. Spusťte následující příkazy, abyste nahráli *DB-init.sh*, *install-Worker.sh*a *Microsoft. spark. Worker* do DBFS:
+
+   ```console
    databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
+   databricks fs cp Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
-6. Přejdete do pracovního prostoru datacihly. V nabídce na levé straně vyberte **clustery** a pak vyberte **vytvořit cluster**.
+2. Spuštěním následujících příkazů nahrajte zbývající soubory, které cluster bude potřebovat ke spuštění vaší aplikace: složku pro stažení zip, *input. txt*a *Microsoft-Spark-2.4. x-0.3.0. jar*. 
 
-7. Po správné konfiguraci clusteru nastavte **skript init** a vytvořte cluster.
+   ```console
+   cd mySparkApp 
+   databricks fs cp input.txt dbfs:/input.txt
+   
+   cd mySparkApp\bin\Release\netcoreapp3.0\ubuntu.16.04-x64 directory 
+   databricks fs cp mySparkApp.zip dbfs:/spark-dotnet/publish.zip
+   databricks fs cp microsoft-spark-2.4.x-0.6.0.jar dbfs:/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar
+   ```
 
-   ![Obrázek akce skriptu](./media/databricks-deployment/deployment-databricks-init-script.png)
+## <a name="create-a-job"></a>Vytvoření úlohy
+
+Vaše aplikace se spouští na Azure Databricks prostřednictvím úlohy, která spouští **Spark-Submit**, což je příkaz, který použijete ke spuštění .NET pro úlohy Apache Spark.
+
+1. V pracovním prostoru Azure Databricks vyberte ikonu **úlohy** a potom **+ vytvořit úlohu**. 
+
+   ![Vytvoření úlohy Azure Databricks](./media/databricks-deployment/create-job.png)
+
+2. Zvolte název úlohy a pak vyberte **Konfigurovat Spark-Submit**.
+
+   ![Konfigurace úlohy Spark-submit pro datacihly](./media/databricks-deployment/configure-spark-submit.png)
+
+3. Do konfigurace úlohy vložte následující parametry. Pak vyberte **Potvrdit**.
+
+   ```
+   ["--class","org.apache.spark.deploy.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
+   ```
+
+## <a name="create-a-cluster"></a>Vytvoření clusteru
+
+1. Přejděte do úlohy a výběrem **Upravit** Nakonfigurujte cluster vaší úlohy.
+
+2. Nastavte cluster na **Spark 2.4.1**. Pak vyberte **Upřesnit možnosti** > **skripty init**. Nastavte cestu ke skriptu init jako `dbfs:/spark-dotnet/db-init.sh`. 
+
+   ![Konfigurace clusteru Spark v Azure Databricks](./media/databricks-deployment/cluster-config.png)
+
+3. Vyberte **Potvrdit** a potvrďte nastavení clusteru.
 
 ## <a name="run-your-app"></a>Spuštění aplikace
 
-K odeslání vaší úlohy do datacihlů můžete použít `set JAR` nebo `spark-submit`.
+1. Přejděte do úlohy a výběrem **Spustit nyní** spusťte úlohu na nově nakonfigurovaném clusteru Spark.
 
-### <a name="use-set-jar"></a>Použít nastavení JAR
+2. Vytvoření clusteru úlohy trvá několik minut. Po vytvoření bude vaše úloha odeslána a můžete zobrazit výstup.
 
-[Nastavení jar](https://docs.databricks.com/user-guide/jobs.html#create-a-job) umožňuje odeslat úlohu do existujícího aktivního clusteru.
+3. V nabídce vlevo vyberte **clustery** a potom název a spuštění úlohy. 
 
-#### <a name="one-time-setup"></a>Nastavení jednorázového času
+4. Vyberte **protokoly ovladačů** a zobrazte výstup vaší úlohy. Až se vaše aplikace dokončí, zobrazí se stejná tabulka počtu slov z místního spouštěného příkazu Začínáme do standardní výstupní konzoly.
 
-1. Přejděte do svého clusteru datacihly a v nabídce vlevo vyberte **úlohy** . Pak vyberte **nastavit jar**.
+   ![Výstupní tabulka úlohy Azure Databricks](./media/databricks-deployment/table-output.png)
 
-2. Nahrajte příslušný soubor `microsoft-spark-<spark-version>-<spark-dotnet-version>.jar`.
+   Gratulujeme, spustili jste první rozhraní .NET pro Apache Spark aplikaci v cloudu!
 
-3. Nastavte parametry odpovídajícím způsobem.
+## <a name="clean-up-resources"></a>Vyčištění prostředků
 
-   | Parametr   | Hodnota                                                |
-   |-------------|------------------------------------------------------|
-   | Main – třída  | org. Apache. spark. deploy. dotnet. DotnetRunner          |
-   | Arguments   | /dBFS/Apps/\<your-název aplikace >. zip \<your-App-Main-Class > |
-
-4. Nakonfigurujte **cluster** tak, aby odkazoval na existující **cluster, který** jste vytvořili v předchozí části.
-
-#### <a name="publish-and-run-your-app"></a>Publikování a spuštění vaší aplikace
-
-1. Použijte rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html) k nahrání vaší aplikace do vašeho clusteru datacihly.
-
-    ```bash
-    cd <path-to-your-app-publish-directory>
-    databricks fs cp <your-app-name>.zip dbfs:/apps/<your-app-name>.zip
-    ```
-
-2. Tento krok je vyžadován pouze v případě, že vaše sestavení vaší aplikace (například knihovny DLL, které obsahují uživatelsky definované funkce společně s jejich závislostmi) je nutné umístit do pracovního adresáře každého z **Microsoft. spark. Worker**.
-
-   * Nahrání sestavení vaší aplikace do clusteru datacihly
-
-      ```bash
-      cd <path-to-your-app-publish-directory>
-      databricks fs cp <assembly>.dll dbfs:/apps/dependencies
-      ```
-
-   * Odkomentujte a upravte část závislosti aplikací v [DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) tak, aby odkazovala na cestu k závislostem vaší aplikace a nahráli do vašeho clusteru datacihly.
-
-      ```bash
-      cd <path-to-db-init-and-install-worker>
-      databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
-      ```
-
-   * Restartujte cluster.
-
-3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
-
-### <a name="use-spark-submit"></a>Použití Spark-Submit
-
-Příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applications.html) umožňuje odeslat úlohu do nového clusteru.
-
-1. [Vytvořte úlohu](https://docs.databricks.com/user-guide/jobs.html) a vyberte **Konfigurovat Spark-odeslat**.
-
-2. Nakonfigurujte `spark-submit` s následujícími parametry:
-
-    ```bash
-    ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
-    ```
-
-3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
+Pokud už nepotřebujete pracovní prostor datacihly, můžete prostředek Azure Databricks odstranit v Azure Portal. Můžete také vybrat název skupiny prostředků a otevřít tak stránku skupiny prostředků a pak vybrat **Odstranit skupinu prostředků**.
 
 ## <a name="next-steps"></a>Další kroky
 
