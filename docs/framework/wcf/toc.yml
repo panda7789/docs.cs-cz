@@ -184,8 +184,6 @@
           href: deploying-wcf-applications-with-clickonce.md
     - name: Správa a diagnostika
       href: diagnostics/
-    - name: Požadavky na systém
-      href: wcf-system-requirements.md
     - name: Prostředky operačního systému požadované službou WCF
       href: operating-system-resources-required-by-wcf.md
     - name: Odstraňování potíží s instalací
