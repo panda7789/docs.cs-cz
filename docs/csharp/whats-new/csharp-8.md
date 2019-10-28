@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: 335ae37b20f752f4181a4d1828cb2a1f02c0fa9e
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: e6a2357f4405b4eb31b12a1e3faa6896a31c21a1
+ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798919"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72960821"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -40,7 +40,7 @@ Zbývající část tohoto článku stručně popisuje tyto funkce. Kde jsou k d
 
 ## <a name="readonly-members"></a>Členové jen pro čtení
 
-Modifikátor `readonly` můžete použít pro libovolný člen struktury. Indikuje, že člen nemění stav. Je lépe podrobnější než použití modifikátoru `readonly` u deklarace `struct`.  Vezměte v úvahu následující proměnlivou strukturu:
+Modifikátor `readonly` lze použít pro členy struktury. Indikuje, že člen nemění stav. Je lépe podrobnější než použití modifikátoru `readonly` u deklarace `struct`.  Vezměte v úvahu následující proměnlivou strukturu:
 
 ```csharp
 public struct Point
@@ -54,7 +54,7 @@ public struct Point
 }
 ```
 
-Podobně jako u většiny struktur nemění metoda `ToString()` stav. Můžete určit, že přidáním modifikátoru `readonly` do deklarace `ToString()`:
+Podobně jako u většiny struktur `ToString()` metoda nemění stav. Můžete určit, že přidáním modifikátoru `readonly` do deklarace `ToString()`:
 
 ```csharp
 public readonly override string ToString() =>
@@ -67,13 +67,13 @@ Předchozí změna vygeneruje upozornění kompilátoru, protože `ToString` př
 warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonly' member results in an implicit copy of 'this'
 ```
 
-Kompilátor vás upozorní, když potřebuje vytvořit obrannou linií kopii.  Vlastnost `Distance` nezmění stav, takže můžete toto upozornění opravit přidáním modifikátoru `readonly` k deklaraci:
+Kompilátor vás upozorní, když potřebuje vytvořit obrannou linií kopii.  Vlastnost `Distance` nemění stav, takže můžete toto upozornění opravit přidáním modifikátoru `readonly` k deklaraci:
 
 ```csharp
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Všimněte si, že modifikátor `readonly` je nezbytný pro vlastnost jen pro čtení. Kompilátor nepředpokládá, že přístupové objekty `get` nemění stav; je nutné deklarovat `readonly` explicitně. Automaticky implementované vlastnosti představují výjimku. Kompilátor bude považovat všechny automaticky implementované metody getter jako jen pro čtení, takže zde není nutné přidávat modifikátor `readonly` do vlastností `X` a `Y`.
+Všimněte si, že modifikátor `readonly` je nezbytný pro vlastnost, která je jen pro čtení. Kompilátor nepředpokládá, `get` přistupující objekty nemění stav; je nutné deklarovat `readonly` explicitně. Automaticky implementované vlastnosti představují výjimku. Kompilátor bude považovat všechny automaticky implementované metody getter jako jen pro čtení, takže tady není nutné přidávat modifikátor `readonly` do vlastností `X` a `Y`.
 
 Kompilátor vynutil pravidlo, které `readonly` členové nemění stav. Následující metoda nebude zkompilována, dokud neodeberete modifikátor `readonly`:
 
@@ -85,7 +85,7 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit a na základě tohoto záměru provádět optimalizace.
+Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit a na základě tohoto záměru provádět optimalizace. Další informace o členech jen pro čtení najdete v článku referenční informace k jazyku o [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
 
 ## <a name="default-interface-methods"></a>Výchozí metody rozhraní
 
@@ -171,7 +171,7 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 
 ### <a name="property-patterns"></a>Vzory vlastností
 
-**Vzor vlastnosti** umožňuje porovnávat vlastnosti objektu, který je zkontrolován. Vezměte v úvahu web elektronického obchodování, který musí počítat DPH na základě adresy kupujícího. Toto výpočtu není základní zodpovědností třídy `Address`. Změní se v průběhu času, nejspíš častěji než změny formátu adresy. Objem DPH závisí na vlastnosti `State` adresy. Následující metoda používá vzorek vlastností k výpočtu DPH z adresy a ceny:
+**Vzor vlastnosti** umožňuje porovnávat vlastnosti objektu, který je zkontrolován. Vezměte v úvahu web elektronického obchodování, který musí počítat DPH na základě adresy kupujícího. Tento výpočet není základní zodpovědností `Address` třídy. Změní se v průběhu času, nejspíš častěji než změny formátu adresy. Objem DPH závisí na vlastnosti `State` adresy. Následující metoda používá vzorek vlastností k výpočtu DPH z adresy a ceny:
 
 ```csharp
 public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
@@ -313,7 +313,7 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 
 V předchozím příkladu je soubor uvolněn, pokud je dosažena pravá složená závorka přidružená k příkazu `using`.
 
-V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v příkazu `using` není na jedno použití.
+V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v příkazu `using` není jednorázově.
 
 ## <a name="static-local-functions"></a>Statické místní funkce
 
@@ -347,13 +347,13 @@ int M()
 
 ## <a name="disposable-ref-structs"></a>Struktury odkazů na jedno použití
 
-@No__t_0 deklarovaný s modifikátorem `ref` nesmí implementovat žádná rozhraní a proto nemohou implementovat <xref:System.IDisposable>. Proto aby bylo možné odstranit `ref struct`, musí mít přístupnou metodu `void Dispose()`. To platí také pro deklarace `readonly ref struct`.
+`struct` deklarovaný s modifikátorem `ref` nesmí implementovat žádná rozhraní a proto nemohou implementovat <xref:System.IDisposable>. Proto aby bylo možné odstranit `ref struct`, musí mít přístupnou metodu `void Dispose()`. Tato funkce se vztahuje také na deklarace `readonly ref struct`.
 
 ## <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
 V kontextu anotace s možnou hodnotou null je jakákoli proměnná typu odkazu považována za **typ odkazu**, který není null. Pokud chcete označit, že proměnná může mít hodnotu null, je nutné připojit název typu s `?` pro deklaraci proměnné jako **typ odkazu s možnou hodnotou null**.
 
-Pro nehodnotový odkazový typ kompilátor používá analýzu toků k zajištění, že lokální proměnné jsou inicializovány na hodnotu, která není null, je-li deklarována. Pole musí být inicializována během konstrukce. Kompilátor vygeneruje upozornění, pokud proměnná není nastavena voláním žádné z dostupných konstruktorů nebo inicializátorem. Kromě toho nemůžete přiřadit typy odkazů, které mohou mít hodnotu null.
+Pro nehodnotový odkazový typ kompilátor používá analýzu toků k zajištění, že lokální proměnné jsou inicializovány na hodnotu, která není null, je-li deklarována. Pole musí být inicializována během konstrukce. Kompilátor vygeneruje upozornění, pokud proměnná není nastavena voláním žádné z dostupných konstruktorů nebo inicializátoru. Kromě toho nemůžete přiřadit typy odkazů, které mohou mít hodnotu null.
 
 Typy odkazů s možnou hodnotou null nejsou kontrolovány, aby se zajistilo, že nejsou přiřazeny nebo inicializovány Kompilátor však používá analýzu toků k zajištění toho, aby byla jakákoli proměnná typu odkazu s možnou hodnotou null zkontrolována před tím, než bude k dispozici nebo přiřazena k neprázdnému typu odkazu.
 
@@ -404,7 +404,7 @@ Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 
 Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence.Length - n`.
 
-Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
+Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnutý v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
 
 Pojďme se podívat na několik příkladů. Vezměte v úvahu následující pole s poznámkou s jeho indexem od začátku do konce:
 
@@ -437,7 +437,7 @@ Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fo
 var quickBrownFox = words[1..4];
 ```
 
-Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Konec `words[^0]` indexu není zahrnutý:
+Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index `words[^0]` není zahrnutý:
 
 ```csharp
 var lazyDog = words[^2..^0];

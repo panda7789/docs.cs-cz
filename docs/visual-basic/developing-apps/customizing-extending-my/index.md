@@ -6,45 +6,41 @@ helpviewer_keywords:
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 06ca80b9-1192-4eb5-8537-8ef5edfb9be0
-ms.openlocfilehash: d7fca92f541ffeca7a6e8267260d3b665271e90a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97933a9d014a54d5b6e333090cddccace99fcc3c
+ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014191"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72960946"
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic
-Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. To usnadňuje vyhledání a používání vašich objektů jinými vývojáři.  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Rozšíření My Namespace v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
- Popisuje, jak přidat vlastní členy a hodnoty `My` oboru názvů v jazyce Visual Basic.  
-  
- [Balení a nasazení vlastních rozšíření oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)  
- Popisuje, jak publikovat vlastní `My` rozšíření oboru názvů pomocí šablony sady Visual Studio.  
-  
- [Rozšíření aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)  
- Popisuje, jak zadat vlastní rozšíření modelu aplikace tak, že přepíšete členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy.  
-  
- [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
- Popisuje, jak určit, které `My` objekty jsou povolené tak, že nastavíte váš projekt \_MYTYPE Konstanta podmíněné kompilace.  
-  
-## <a name="related-sections"></a>Související oddíly  
- [Vývoj s použitím oboru názvů My](../../../visual-basic/developing-apps/development-with-my/index.md)  
- Popisuje, které `My` objekty jsou k dispozici v různých typech projektů ve výchozím nastavení.  
-  
- [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
- Popisuje model Visual Basic pro řízení chování aplikací modelu Windows Forms.  
-  
- [Závislost oboru názvů My na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
- Popisuje, které `My` objekty jsou k dispozici v různých typech projektů ve výchozím nastavení.  
-  
- [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
- Tento článek popisuje, jak kompilátor používá k výběru určité části kódu zkompilovat a vyloučit jiné části podmíněné kompilace.  
-  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
- Popisuje `My` objektu, který obsahuje vlastnosti, metody a události související s aktuální aplikace.  
-  
+
+Můžete přizpůsobit šablony projektů k poskytnutí dalších `My` objektů. To usnadňuje ostatním vývojářům hledání a používání vašich objektů.
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+- [Rozšíření oboru názvů My v Visual Basic](extending-the-my-namespace.md)  
+ Popisuje postup přidání vlastních členů a hodnot do oboru názvů `My` v Visual Basic.
+- [Balení a nasazení vlastních rozšíření oboru názvů My](packaging-and-deploying-custom-my-extensions.md)  
+ Popisuje, jak publikovat vlastní `My` rozšíření oboru názvů pomocí šablon sady Visual Studio.
+- [Rozšíření aplikačního modelu jazyka Visual Basic](extending-the-visual-basic-application-model.md)  
+ Popisuje, jak zadat vlastní rozšíření pro model aplikace přepsáním členů třídy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>.
+- [Přizpůsobení výběru objektů dostupných v oboru názvů My](customizing-which-objects-are-available-in-my.md)  
+ Popisuje, jak lze určit, které `My` objekty jsou povoleny, nastavením \_ho konstanty podmíněné kompilace MYTYPE projektu.
+
+## <a name="related-sections"></a>Související oddíly
+
+- [Vývoj s použitím oboru názvů My](../development-with-my/index.md)  
+ Popisuje, které `My` objekty jsou v různých typech projektů k dispozici ve výchozím nastavení.
+- [Přehled aplikačního modelu jazyka Visual Basic](../development-with-my/overview-of-the-visual-basic-application-model.md)  
+ Popisuje model Visual Basic pro řízení chování model Windows Formsch aplikací.
+- [Závislost oboru názvů My na typu projektu](../development-with-my/how-my-depends-on-project-type.md)  
+ Popisuje, které `My` objekty jsou v různých typech projektů k dispozici ve výchozím nastavení.
+- [Podmíněná kompilace](../../programming-guide/program-structure/conditional-compilation.md)  
+ Popisuje, jak kompilátor používá Podmíněná kompilace k výběru konkrétních sekcí kódu pro zkompilování a vyloučení dalších sekcí.
+- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
+ Popisuje objekt `My`, který poskytuje vlastnosti, metody a události související s aktuální aplikací.
+
 ## <a name="see-also"></a>Viz také:
 
-- [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)
+- [Vývoj aplikací pomocí Visual Basic](../index.md)
