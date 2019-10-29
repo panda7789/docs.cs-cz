@@ -1,28 +1,29 @@
 - name: Windows Presentation Foundation
   href: index.md
+- name: Úvod do WPF
+  href: introduction-to-wpf.md
+- name: Začínáme
+  href: getting-started/
+- name: Vývoj aplikací
+  href: app-development/
+- name: Upřesnit
+  href: advanced/
+- name: Ovládací prvky
+  href: controls/
+- name: Data
+  href: data/
+- name: Grafika a multimédia
+  href: graphics-multimedia/
+- name: Zabezpečení
+  href: security-wpf.md
   items:
-    - name: Začínáme
-      href: getting-started/
-    - name: Vývoj aplikací
-      href: app-development/
-    - name: Upřesnit
-      href: advanced/
-    - name: Ovládací prvky
-      href: controls/
-    - name: Data
-      href: data/
-    - name: Grafika a multimédia
-      href: graphics-multimedia/
-    - name: Zabezpečení
-      href: security-wpf.md
-      items:
-        - name: Částečné zabezpečení důvěryhodnosti WPF
-          href: wpf-partial-trust-security.md
-        - name: Strategie zabezpečení WPF – zabezpečení platformy
-          href: wpf-security-strategy-platform-security.md
-        - name: Strategie zabezpečení WPF – engineering zabezpečení
-          href: wpf-security-strategy-security-engineering.md
-    - name: Ukázky WPF
-      href: wpf-samples.md
-    - name: Knihovna tříd
-      href: class-library-wpf.md
+    - name: Částečné zabezpečení důvěryhodnosti WPF
+      href: wpf-partial-trust-security.md
+    - name: Zabezpečení platformy
+      href: wpf-security-strategy-platform-security.md
+    - name: Engineering zabezpečení
+      href: wpf-security-strategy-security-engineering.md
+- name: WPF – ukázky
+  href: wpf-samples.md
+- name: Knihovna tříd
+  href: class-library-wpf.md

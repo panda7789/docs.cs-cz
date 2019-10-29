@@ -2,20 +2,20 @@
 title: Přihlášení k odběru událostí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s podrobnostmi o publikování a předplatném integračních událostí.
 ms.date: 10/02/2018
-ms.openlocfilehash: ac9715c7c282be845e1e47516d06945c31f70209
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 208b0f27aa1e6ceb6686e9e846b6e31d9f1c74df
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039785"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035642"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
 Prvním krokem pro použití sběrnice Event je přihlášení k odběru mikroslužeb k událostem, které chtějí přijímat. To by mělo být provedeno v mikroslužbách přijímače.
 
-Následující jednoduchý kód ukazuje, co každá mikroslužba přijímače potřebuje implementovat při spuštění služby (to znamená ve `Startup` třídě), aby se přihlásila k odběru událostí, které potřebuje. V takovém případě se `basket.api` mikroslužba musí `ProductPriceChangedIntegrationEvent` přihlásit k odběru a `OrderStartedIntegrationEvent` zpráv.
+Následující jednoduchý kód ukazuje, co každá mikroslužba přijímače potřebuje implementovat při spuštění služby (to znamená ve třídě `Startup`), aby se přihlásila k odběru událostí, které potřebuje. V takovém případě se `basket.api` mikroslužeb musí přihlásit k odběru `ProductPriceChangedIntegrationEvent` a `OrderStartedIntegrationEvent` zpráv.
 
-Například při přihlášení k `ProductPriceChangedIntegrationEvent` odběru události, který mikroslužba košíku ví o změnách ceny za produkt a umožňuje uživateli upozornit na změnu, pokud je tento produkt v košíku uživatele.
+Například při přihlášení k odběru události `ProductPriceChangedIntegrationEvent`, která umožňuje, aby mikroslužba koše mohla vědět o jakýchkoli změnách ceny za produkt, a umožňuje uživateli upozornit na změnu v případě, že je tento produkt v koši uživatele.
 
 ```csharp
 var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
@@ -87,7 +87,7 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem product)
 
 V tomto případě, vzhledem k tomu, že je zdrojem mikroslužeb jednoduchá CRUD, je kód umístěný přímo do kontroleru webového rozhraní API.
 
-V pokročilejších mikroslužbách, například při použití CQRS přístupů, je možné ji implementovat ve `CommandHandler` třídě v `Handle()` rámci metody.
+V pokročilejších mikroslužbách, například při použití CQRS přístupů, je možné ji implementovat do třídy `CommandHandler` v rámci metody `Handle()`.
 
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>Návrh atomické a odolnosti při publikování do sběrnice událostí
 
@@ -97,7 +97,7 @@ V podstatě používáte mikroslužby k vytváření škálovatelných systémů
 
 V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste zdůraznit silnou konzistenci. Proto ve většině moderních aplikací založených na mikroslužbách nechcete při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) na základě Windows DTC (DISTRIBUTED Transaction Coordinator) (DTC) obvykle používat distribuované transakce v rámci zasílání zpráv. pomocí [služby MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
-Pojďme se vrátit k původnímu problému a jeho příkladu. Pokud služba po aktualizaci databáze dojde k chybě (v tomto případě je to hned za řádkem kódu s \_kontextem. SaveChangesAsync ()), ale před publikováním události integrace, by celkový systém mohl být nekonzistentní. To může být důležité pro podnikání v závislosti na konkrétní obchodní operaci, se kterou se chystáte pracovat.
+Pojďme se vrátit k původnímu problému a jeho příkladu. Pokud služba po aktualizaci databáze dojde k chybě (v tomto případě je to hned za řádkem kódu s \_m kontextem. SaveChangesAsync ()), ale před publikováním události integrace, by celkový systém mohl být nekonzistentní. To může být důležité pro podnikání v závislosti na konkrétní obchodní operaci, se kterou se chystáte pracovat.
 
 Jak bylo zmíněno dříve v části architektura, můžete mít několik přístupů k řešení tohoto problému:
 
@@ -105,9 +105,9 @@ Jak bylo zmíněno dříve v části architektura, můžete mít několik přís
 
 - Pomocí [dolování protokolu transakcí](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
-- Pomocí [vzoru pošty k odeslání](http://gistlabs.com/2014/05/the-outbox/). Toto je transakční tabulka pro uložení integračních událostí (rozšíření místní transakce).
+- Pomocí [vzoru pošty k odeslání](https://www.kamilgrzybek.com/design/the-outbox-pattern/). Toto je transakční tabulka pro uložení integračních událostí (rozšíření místní transakce).
 
-V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikací ale nemusí být možné implementovat úplný systém ES. ES znamená ukládání pouze doménových událostí do transakční databáze místo ukládání aktuálních dat o stavu. Ukládání pouze událostí v doméně může mít skvělé výhody, jako je třeba historie vašeho systému a možnost zjistit stav systému v minulosti. Implementace celého systému ES ale vyžaduje, abyste převedli své architekty na většinu systému a předvedli spoustu dalších složitých a požadavků. Například byste chtěli použít databázi specifickou pro daný původ události, jako je například [úložiště událostí](https://eventstore.org/), nebo databáze orientovaný na dokument, například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělý přístup k tomuto problému, ale ne nejjednodušší řešení, pokud už neznáte jeho původ.
+V tomto scénáři je jedním z nejlepších přístupů použití vzoru úplných událostí (ES), pokud *to není nejlepší* . V mnoha scénářích aplikací ale nemusí být možné implementovat úplný systém ES. ES znamená ukládání pouze doménových událostí do transakční databáze místo ukládání aktuálních dat o stavu. Ukládání pouze událostí v doméně může mít skvělé výhody, jako je třeba historie vašeho systému a možnost zjistit stav systému v minulosti. Implementace celého systému ES ale vyžaduje, abyste převedli své architekty na většinu systému a předvedli spoustu dalších složitých a požadavků. Například byste chtěli použít databázi specifickou pro daný původ události, jako je například [úložiště událostí](https://eventstore.org/), nebo databáze orientovaný na dokument, například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělý přístup k tomuto problému, ale ne nejjednodušší řešení, pokud už neznáte jeho původ.
 
 Možnost použít dolování protokolu transakcí zpočátku vypadá velmi transparentně. Chcete-li však použít tento přístup, musí být mikroslužba spojena s protokolem transakcí RDBMS, jako je například protokol transakcí SQL Server. To pravděpodobně není žádoucí. Další nevýhodou je, že aktualizace nízké úrovně zaznamenané v protokolu transakcí nemusí být na stejné úrovni jako vaše integrační události vysoké úrovně. V takovém případě může být proces zpětného strojírenství těchto operací s protokolem transakcí obtížné.
 
@@ -147,7 +147,7 @@ Při přístupu na obrázku 6-22 chybí další mikroslužba pracovního procesu
 
 O druhém přístupu: použijte tabulku EventLog jako frontu a vždy použijte k publikování těchto zpráv pracovní mikroslužbu. V takovém případě se jedná o proces, který je znázorněn na obrázku 6-23. Zobrazí se další mikroslužba a tabulka je jediným zdrojem při publikování událostí.
 
-![Další postup pro zpracování nedělitelnost: Publikování do tabulky protokolu událostí a následná další mikroslužba (pracovník na pozadí), která publikuje událost.](./media/image24.png)
+![Další způsob, jak ošetřit nedělitelnost: publikovat do tabulky protokolu událostí a pak mít další mikroslužbu (pracovníka na pozadí), která tuto událost publikuje.](./media/image24.png)
 
 **Obrázek 6-23**. Nedělitelnost při publikování událostí do sběrnice událostí pomocí mikroslužby pracovního procesu
 
@@ -322,22 +322,22 @@ Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráv
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Rozvětvené eShopOnContainers s využitím NServiceBus (konkrétní software)**  \
+- **Rozvětvené eShopOnContainers s použitím NServiceBus (konkrétní software)**  \
     <https://go.particular.net/eShopOnContainers>
 
 - **Zasílání zpráv řízených událostmi** \
-    [http://soapatterns.org/design\_patterns/event\_driven\_messaging](http://soapatterns.org/design_patterns/event_driven_messaging)
+    <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
-- **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocování spojovacího zařízení** \
+- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocení spojovacího** \
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
-- **Kanál pro publikování a odběr** \
+-  \ **kanálu pro publikování a odběr**
     <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
 - **Komunikace mezi ohraničenými kontexty** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- **Konečná konzistence** \
+- Konečné \ **konzistence**
     [https://en.wikipedia.org/wiki/Eventual\_consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 - **Philip Brown. Strategie pro integraci ohraničených kontextů** \
@@ -346,10 +346,10 @@ Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráv
 - **Chris Richardson. Vývoj transakčních mikroslužeb pomocí agregací, zdroje událostí a CQRS – část 2** \
     <https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson>
 
-- **Chris Richardson. Vzor zdroje událostí** \
+- **Chris Richardson. \ vzorového zdroje událostí**
     <https://microservices.io/patterns/data/event-sourcing.html>
 
-- **Představení zdroje událostí** \
+- **Představujeme \ zdrojů událostí**
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591559(v=pandp.10)>
 
 - **Databáze úložiště událostí** Oficiální lokalita. \
@@ -358,7 +358,7 @@ Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráv
 - **NeNommensený. Správa dat řízená událostmi pro mikroslužby** \
     <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
-- **Věta CAP** \
+- **Limit věta** \
     [https://en.wikipedia.org/wiki/CAP\_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
 - **Co je CAP věta?** \
@@ -367,18 +367,18 @@ Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráv
 - **Úvod do konzistence dat** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Rick Saling. Věta CAP: Proč "vše je jiné" s cloudem a internetem** \
+- **Rick Saling. CAP věta: Proč "vše je jiné" s cloudem a Internet** \
     <https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
-- **Eric pivovar. LIMIT 12 let později: Jak se změnila pravidla** \
+- **Eric pivovar. LIMIT 12 let později: způsob, jakým se změnila pravidla** \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>
 
-- **Azure Service Bus. Zprostředkované zasílání zpráv: Zjištění duplicit**  \
+- **Azure Service Bus. Zprostředkované zasílání zpráv:  \ zjišťování duplicit**
     <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
 
-- **Průvodce spolehlivostí** (Dokumentace RabbitMQ) \
+- **Průvodce spolehlivostí** (dokumentace RabbitMQ) \
     [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html#consumer)
 
 > [!div class="step-by-step"]
-> [Předchozí](rabbitmq-event-bus-development-test-environment.md)Další
-> [](test-aspnet-core-services-web-apps.md)
+> [Předchozí](rabbitmq-event-bus-development-test-environment.md)
+> [Další](test-aspnet-core-services-web-apps.md)

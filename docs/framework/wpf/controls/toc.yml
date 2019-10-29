@@ -389,7 +389,7 @@
           items:
             - name: Použití vlastností roztažení na obsah Viewbox
               href: how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md
-    - name: " – styly a\_šablony"
+    - name: "– styly a\_šablony"
       href: styles-and-templates.md
       items:
         - name: Styly a šablony
@@ -497,7 +497,7 @@
         - name: 'Návody: Vytvoření tlačítka s vlastní animací'
           href: walkthroughs-create-a-custom-animated-button.md
           items:
-            - name: Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend
+            - name: Vytvoření tlačítka použitím Blendu
               href: walkthrough-create-a-button-by-using-microsoft-expression-blend.md
-            - name: Vytvoření tlačítka pomocí XAML
+            - name: Vytvoření tlačítka použitím XAML
               href: walkthrough-create-a-button-by-using-xaml.md
