@@ -961,10 +961,10 @@
           href: language-reference/error-messages/bad-file-name-or-number.md
         - name: Chybná délka záznamu
           href: language-reference/error-messages/bad-record-length.md
-        - name: 'Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.'
-          href: language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md
-        - name: 'Anonymní typ nelze převést na strom výrazu, protože obsahuje pole, které se používá při inicializaci jiného pole.'
-          href: language-reference/error-messages/cannot-convert-anonymous-type-to-expression-tree.md
+        - name: 'Protože se toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání.'
+          href: language-reference/error-messages/bc42358.md
+        - name: 'Anonymní typ nejde převést na strom výrazů, protože vlastnost tohoto typu se používá k inicializaci jiné vlastnosti.'
+          href: language-reference/error-messages/bc36548.md
         - name: Součást prvku ActiveX nelze vytvořit.
           href: language-reference/error-messages/cannot-create-activex-component.md
         - name: 'Na člena ''<name>'' nelze odkazovat, protože se jedná o člen pole typu hodnota ''<name>'' třídy ''<classname>'', jehož třídou Base je ''System.MarshalByRefObject''.'

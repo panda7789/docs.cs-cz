@@ -30,6 +30,8 @@
         - name: Doporučování videí (faktorizace matice)
           href: tutorials/movie-recommendation.md
         - name: Klasifikace obrázků (přenos učení)
+          href: tutorials/image-classification-api-transfer-learning.md
+        - name: Klasifikace obrázků (složení modelu)
           href: tutorials/image-classification.md
         - name: Analýza prodeje produktu (detekce anomálií)
           href: tutorials/sales-anomaly-detection.md
@@ -93,6 +95,8 @@
               href: how-to-guides/serve-model-web-api-ml-net.md
     - name: Nástroje
       items:
+        - name: Načtení dat do Model Builderu
+          href: how-to-guides/load-data-model-builder.md
         - name: Instalace nástroje Model Builder
           href: how-to-guides/install-model-builder.md
         - name: Instalace rozhraní příkazového řádku
