@@ -2,24 +2,24 @@
 title: Použití tříd Enumeration místo typů výčtů
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mazat, jak lze použít třídy výčtu namísto výčtů jako způsob, jak vyřešit některá omezení.
 ms.date: 10/08/2018
-ms.openlocfilehash: 575757b6022a9e7468c0ffc5d576dd16de3018f5
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 255bccab0e1fe71e00c0d0b47c8af05f80cb760b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039933"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093868"
 ---
-# <a name="use-enumeration-classes-instead-of-enum-types"></a><span data-ttu-id="0759c-103">Použijte třídy výčtu místo typů Enum.</span><span class="sxs-lookup"><span data-stu-id="0759c-103">Use enumeration classes instead of enum types</span></span>
+# <a name="use-enumeration-classes-instead-of-enum-types"></a><span data-ttu-id="8a318-103">Použijte třídy výčtu místo typů Enum.</span><span class="sxs-lookup"><span data-stu-id="8a318-103">Use enumeration classes instead of enum types</span></span>
 
-<span data-ttu-id="0759c-104">[Výčty](../../../csharp/language-reference/keywords/enum.md) (nebo *výčtové typy* pro Short) jsou obálka s dynamickým jazykem kolem integrálního typu.</span><span class="sxs-lookup"><span data-stu-id="0759c-104">[Enumerations](../../../csharp/language-reference/keywords/enum.md) (or *enum types* for short) are a thin language wrapper around an integral type.</span></span> <span data-ttu-id="0759c-105">Můžete chtít omezit jejich použití na, pokud ukládáte jednu hodnotu z uzavřené sady hodnot.</span><span class="sxs-lookup"><span data-stu-id="0759c-105">You might want to limit their use to when you are storing one value from a closed set of values.</span></span> <span data-ttu-id="0759c-106">Dobrým příkladem je klasifikace založená na velikostech (malá, střední, Velká).</span><span class="sxs-lookup"><span data-stu-id="0759c-106">Classification based on sizes (small, medium, large) is a good example.</span></span> <span data-ttu-id="0759c-107">Používání výčtů pro tok řízení nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/).</span><span class="sxs-lookup"><span data-stu-id="0759c-107">Using enums for control flow or more robust abstractions can be a [code smell](https://deviq.com/code-smells/).</span></span> <span data-ttu-id="0759c-108">Tento typ použití vede k křehkému kódu s mnoha příkazy toku řízení, které kontrolují hodnoty výčtu.</span><span class="sxs-lookup"><span data-stu-id="0759c-108">This type of usage leads to fragile code with many control flow statements checking values of the enum.</span></span>
+<span data-ttu-id="8a318-104">[Výčty](../../../csharp/language-reference/keywords/enum.md) (nebo *výčtové typy* pro Short) jsou obálka s dynamickým jazykem kolem integrálního typu.</span><span class="sxs-lookup"><span data-stu-id="8a318-104">[Enumerations](../../../csharp/language-reference/keywords/enum.md) (or *enum types* for short) are a thin language wrapper around an integral type.</span></span> <span data-ttu-id="8a318-105">Můžete chtít omezit jejich použití na, pokud ukládáte jednu hodnotu z uzavřené sady hodnot.</span><span class="sxs-lookup"><span data-stu-id="8a318-105">You might want to limit their use to when you are storing one value from a closed set of values.</span></span> <span data-ttu-id="8a318-106">Dobrým příkladem je klasifikace založená na velikostech (malá, střední, Velká).</span><span class="sxs-lookup"><span data-stu-id="8a318-106">Classification based on sizes (small, medium, large) is a good example.</span></span> <span data-ttu-id="8a318-107">Používání výčtů pro tok řízení nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/).</span><span class="sxs-lookup"><span data-stu-id="8a318-107">Using enums for control flow or more robust abstractions can be a [code smell](https://deviq.com/code-smells/).</span></span> <span data-ttu-id="8a318-108">Tento typ použití vede k křehkému kódu s mnoha příkazy toku řízení, které kontrolují hodnoty výčtu.</span><span class="sxs-lookup"><span data-stu-id="8a318-108">This type of usage leads to fragile code with many control flow statements checking values of the enum.</span></span>
 
-<span data-ttu-id="0759c-109">Místo toho můžete vytvořit třídy výčtu, které umožňují všechny bohatě orientované funkce pro objektově orientovaný jazyk.</span><span class="sxs-lookup"><span data-stu-id="0759c-109">Instead, you can create Enumeration classes that enable all the rich features of an object-oriented language.</span></span>
+<span data-ttu-id="8a318-109">Místo toho můžete vytvořit třídy výčtu, které umožňují všechny bohatě orientované funkce pro objektově orientovaný jazyk.</span><span class="sxs-lookup"><span data-stu-id="8a318-109">Instead, you can create Enumeration classes that enable all the rich features of an object-oriented language.</span></span>
 
-<span data-ttu-id="0759c-110">Nejedná se však o důležité téma a v mnoha případech pro jednoduchost můžete i nadále používat běžné [typy výčtu](../../../csharp/language-reference/keywords/enum.md) , pokud je to vaše preference.</span><span class="sxs-lookup"><span data-stu-id="0759c-110">However, this isn't a critical topic and in many cases, for simplicity, you can still use regular [enum types](../../../csharp/language-reference/keywords/enum.md) if that's your preference.</span></span> <span data-ttu-id="0759c-111">Přesto se použití tříd výčtu podrobněji týká konceptů souvisejících s firmou.</span><span class="sxs-lookup"><span data-stu-id="0759c-111">Anyway, the use of enumeration classes is more related to business-related concepts.</span></span>
+<span data-ttu-id="8a318-110">Nejedná se však o důležité téma a v mnoha případech pro jednoduchost můžete i nadále používat běžné [typy výčtu](../../../csharp/language-reference/keywords/enum.md) , pokud je to vaše preference.</span><span class="sxs-lookup"><span data-stu-id="8a318-110">However, this isn't a critical topic and in many cases, for simplicity, you can still use regular [enum types](../../../csharp/language-reference/keywords/enum.md) if that's your preference.</span></span> <span data-ttu-id="8a318-111">Přesto se použití tříd výčtu podrobněji týká konceptů souvisejících s firmou.</span><span class="sxs-lookup"><span data-stu-id="8a318-111">Anyway, the use of enumeration classes is more related to business-related concepts.</span></span>
 
-## <a name="implement-an-enumeration-base-class"></a><span data-ttu-id="0759c-112">Implementace základní třídy výčtu</span><span class="sxs-lookup"><span data-stu-id="0759c-112">Implement an Enumeration base class</span></span>
+## <a name="implement-an-enumeration-base-class"></a><span data-ttu-id="8a318-112">Implementace základní třídy výčtu</span><span class="sxs-lookup"><span data-stu-id="8a318-112">Implement an Enumeration base class</span></span>
 
-<span data-ttu-id="0759c-113">Dořazení mikroslužeb v eShopOnContainers poskytuje ukázkovou implementaci základní třídy výčtu, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="0759c-113">The ordering microservice in eShopOnContainers provides a sample Enumeration base class implementation, as shown in the following example:</span></span>
+<span data-ttu-id="8a318-113">Dořazení mikroslužeb v eShopOnContainers poskytuje ukázkovou implementaci základní třídy výčtu, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="8a318-113">The ordering microservice in eShopOnContainers provides a sample Enumeration base class implementation, as shown in the following example:</span></span>
 
 ```csharp
 public abstract class Enumeration : IComparable
@@ -28,28 +28,28 @@ public abstract class Enumeration : IComparable
 
     public int Id { get; private set; }
 
-    protected Enumeration(int id, string name) 
+    protected Enumeration(int id, string name)
     {
-        Id = id; 
-        Name = name; 
+        Id = id;
+        Name = name;
     }
 
     public override string ToString() => Name;
 
     public static IEnumerable<T> GetAll<T>() where T : Enumeration
     {
-        var fields = typeof(T).GetFields(BindingFlags.Public | 
-                                         BindingFlags.Static | 
-                                         BindingFlags.DeclaredOnly); 
+        var fields = typeof(T).GetFields(BindingFlags.Public |
+                                         BindingFlags.Static |
+                                         BindingFlags.DeclaredOnly);
 
         return fields.Select(f => f.GetValue(null)).Cast<T>();
     }
 
-    public override bool Equals(object obj) 
+    public override bool Equals(object obj)
     {
-        var otherValue = obj as Enumeration; 
+        var otherValue = obj as Enumeration;
 
-        if (otherValue == null) 
+        if (otherValue == null)
             return false;
 
         var typeMatches = GetType().Equals(obj.GetType());
@@ -58,13 +58,13 @@ public abstract class Enumeration : IComparable
         return typeMatches && valueMatches;
     }
 
-    public int CompareTo(object other) => Id.CompareTo(((Enumeration)other).Id); 
+    public int CompareTo(object other) => Id.CompareTo(((Enumeration)other).Id);
 
-    // Other utility methods ... 
+    // Other utility methods ...
 }
 ```
 
-<span data-ttu-id="0759c-114">Tuto třídu můžete použít jako typ v jakémkoli objektu entity nebo hodnoty, jako u následující `CardType` třídy: `Enumeration`</span><span class="sxs-lookup"><span data-stu-id="0759c-114">You can use this class as a type in any entity or value object, as for the following `CardType` : `Enumeration` class:</span></span>
+<span data-ttu-id="8a318-114">Tuto třídu můžete použít jako typ v jakémkoli objektu entity nebo hodnoty, jako u následujících `CardType`: `Enumeration` třídy:</span><span class="sxs-lookup"><span data-stu-id="8a318-114">You can use this class as a type in any entity or value object, as for the following `CardType` : `Enumeration` class:</span></span>
 
 ```csharp
 public class CardType : Enumeration
@@ -80,30 +80,30 @@ public class CardType : Enumeration
 }
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="0759c-115">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="0759c-115">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="8a318-115">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="8a318-115">Additional resources</span></span>
 
-- <span data-ttu-id="0759c-116">**Výčet je Evil – Update** </span><span class="sxs-lookup"><span data-stu-id="0759c-116">**Enum’s are evil—update** </span></span>\
+- <span data-ttu-id="8a318-116">**Výčet je Evil – aktualizace** </span><span class="sxs-lookup"><span data-stu-id="8a318-116">**Enum’s are evil—update** </span></span>\
   <https://www.planetgeek.ch/2009/07/01/enums-are-evil/>
 
-- <span data-ttu-id="0759c-117">**Daniel Jak výčty rozšíří chorobu – a jak ji vyřídit** </span><span class="sxs-lookup"><span data-stu-id="0759c-117">**Daniel Hardman. How Enums Spread Disease — And How To Cure It** </span></span>\
+- <span data-ttu-id="8a318-117">**Daniel Jak výčty rozšíří choroby a jak ji** </span><span class="sxs-lookup"><span data-stu-id="8a318-117">**Daniel Hardman. How Enums Spread Disease — And How To Cure It** </span></span>\
   <https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/>
 
-- <span data-ttu-id="0759c-118">**Jimmy Bogard. Třídy výčtu** </span><span class="sxs-lookup"><span data-stu-id="0759c-118">**Jimmy Bogard. Enumeration classes** </span></span>\
+- <span data-ttu-id="8a318-118">**Jimmy Bogard. \ třídy výčtu**</span><span class="sxs-lookup"><span data-stu-id="8a318-118">**Jimmy Bogard. Enumeration classes** \</span></span>
   <https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/>
 
-- <span data-ttu-id="0759c-119">**Steve Smith. Alternativy výčtu vC#**  </span><span class="sxs-lookup"><span data-stu-id="0759c-119">**Steve Smith. Enum Alternatives in C#** </span></span>\
+- <span data-ttu-id="8a318-119">**Steve Smith. Alternativy výčtu v C#**  </span><span class="sxs-lookup"><span data-stu-id="8a318-119">**Steve Smith. Enum Alternatives in C#** </span></span>\
   <https://ardalis.com/enum-alternatives-in-c>
 
-- <span data-ttu-id="0759c-120">**Enumeration.cs.**</span><span class="sxs-lookup"><span data-stu-id="0759c-120">**Enumeration.cs.**</span></span> <span data-ttu-id="0759c-121">Základní třída výčtu v eShopOnContainers </span><span class="sxs-lookup"><span data-stu-id="0759c-121">Base Enumeration class in eShopOnContainers </span></span>\
+- <span data-ttu-id="8a318-120">**Enumeration.cs.**</span><span class="sxs-lookup"><span data-stu-id="8a318-120">**Enumeration.cs.**</span></span> <span data-ttu-id="8a318-121">Základní třída výčtu v eShopOnContainers </span><span class="sxs-lookup"><span data-stu-id="8a318-121">Base Enumeration class in eShopOnContainers </span></span>\
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs>
 
-- <span data-ttu-id="0759c-122">**CardType.cs**.</span><span class="sxs-lookup"><span data-stu-id="0759c-122">**CardType.cs**.</span></span> <span data-ttu-id="0759c-123">Ukázková třída výčtu v eShopOnContainers.</span><span class="sxs-lookup"><span data-stu-id="0759c-123">Sample Enumeration class in eShopOnContainers.</span></span> \
+- <span data-ttu-id="8a318-122">**CardType.cs**.</span><span class="sxs-lookup"><span data-stu-id="8a318-122">**CardType.cs**.</span></span> <span data-ttu-id="8a318-123">Ukázková třída výčtu v eShopOnContainers.</span><span class="sxs-lookup"><span data-stu-id="8a318-123">Sample Enumeration class in eShopOnContainers.</span></span> \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs>
 
-- <span data-ttu-id="0759c-124">**SmartEnum**.</span><span class="sxs-lookup"><span data-stu-id="0759c-124">**SmartEnum**.</span></span> <span data-ttu-id="0759c-125">Ardalis – třídy, které vám pomůžou vydávat silné typy inteligentnějších výčtů v .NET.</span><span class="sxs-lookup"><span data-stu-id="0759c-125">Ardalis - Classes to help produce strongly typed smarter enums in .NET.</span></span> \
+- <span data-ttu-id="8a318-124">**SmartEnum**.</span><span class="sxs-lookup"><span data-stu-id="8a318-124">**SmartEnum**.</span></span> <span data-ttu-id="8a318-125">Ardalis – třídy, které vám pomůžou vydávat silné typy inteligentnějších výčtů v .NET.</span><span class="sxs-lookup"><span data-stu-id="8a318-125">Ardalis - Classes to help produce strongly typed smarter enums in .NET.</span></span> \
   <https://www.nuget.org/packages/Ardalis.SmartEnum/>
 
 >[!div class="step-by-step"]
-><span data-ttu-id="0759c-126">[Předchozí](implement-value-objects.md)Další
->[](domain-model-layer-validations.md)</span><span class="sxs-lookup"><span data-stu-id="0759c-126">[Previous](implement-value-objects.md)
+><span data-ttu-id="8a318-126">[Předchozí](implement-value-objects.md)
+>[Další](domain-model-layer-validations.md)</span><span class="sxs-lookup"><span data-stu-id="8a318-126">[Previous](implement-value-objects.md)
 [Next](domain-model-layer-validations.md)</span></span>
