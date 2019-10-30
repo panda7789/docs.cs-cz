@@ -1,62 +1,62 @@
 ---
-title: 'Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování'
+title: 'Postupy: použití EdmGen. exe ke generování modelu a souborů mapování'
 ms.date: 03/30/2017
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
-ms.openlocfilehash: 04606e23cffd03dea956076a07bb6cf2fadb4c9c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: c74f9344891d43f21034a48ac51723fa7441744d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854564"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040309"
 ---
-# <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a><span data-ttu-id="b2970-102">Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování</span><span class="sxs-lookup"><span data-stu-id="b2970-102">How to: Use EdmGen.exe to Generate the Model and Mapping Files</span></span>
-<span data-ttu-id="b2970-103">V tomto tématu se dozvíte, jak pomocí nástroje generátoru EDM (EdmGen. exe) vygenerovat následující soubory založené na školní databázi:</span><span class="sxs-lookup"><span data-stu-id="b2970-103">This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:</span></span>  
+# <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a><span data-ttu-id="c4426-102">Postupy: použití EdmGen. exe ke generování modelu a souborů mapování</span><span class="sxs-lookup"><span data-stu-id="c4426-102">How to: Use EdmGen.exe to Generate the Model and Mapping Files</span></span>
+<span data-ttu-id="c4426-103">V tomto tématu se dozvíte, jak pomocí nástroje generátoru EDM (EdmGen. exe) vygenerovat následující soubory založené na školní databázi:</span><span class="sxs-lookup"><span data-stu-id="c4426-103">This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:</span></span>  
   
-- <span data-ttu-id="b2970-104">Koncepční model (soubor. CSDL).</span><span class="sxs-lookup"><span data-stu-id="b2970-104">A conceptual model (a .csdl file).</span></span>  
+- <span data-ttu-id="c4426-104">Koncepční model (soubor. CSDL).</span><span class="sxs-lookup"><span data-stu-id="c4426-104">A conceptual model (a .csdl file).</span></span>  
   
-- <span data-ttu-id="b2970-105">Model úložiště (soubor. ssdl).</span><span class="sxs-lookup"><span data-stu-id="b2970-105">A storage model (a .ssdl file).</span></span>  
+- <span data-ttu-id="c4426-105">Model úložiště (soubor. ssdl).</span><span class="sxs-lookup"><span data-stu-id="c4426-105">A storage model (a .ssdl file).</span></span>  
   
-- <span data-ttu-id="b2970-106">Mapování mezi koncepční modely a modely úložiště (soubor. MSL).</span><span class="sxs-lookup"><span data-stu-id="b2970-106">Mapping between the conceptual and storage models (a .msl file).</span></span>  
+- <span data-ttu-id="c4426-106">Mapování mezi koncepční modely a modely úložiště (soubor. MSL).</span><span class="sxs-lookup"><span data-stu-id="c4426-106">Mapping between the conceptual and storage models (a .msl file).</span></span>  
   
-- <span data-ttu-id="b2970-107">Kód vrstvy objektu v Visual Basic nebo C#.</span><span class="sxs-lookup"><span data-stu-id="b2970-107">Object-layer code in Visual Basic or C#.</span></span>  
+- <span data-ttu-id="c4426-107">Kód vrstvy objektu v Visual Basic nebo C#.</span><span class="sxs-lookup"><span data-stu-id="c4426-107">Object-layer code in Visual Basic or C#.</span></span>  
   
-- <span data-ttu-id="b2970-108">Zobrazit soubory.</span><span class="sxs-lookup"><span data-stu-id="b2970-108">View files.</span></span>  
+- <span data-ttu-id="c4426-108">Zobrazit soubory.</span><span class="sxs-lookup"><span data-stu-id="c4426-108">View files.</span></span>  
   
- <span data-ttu-id="b2970-109">Nástroj EdmGen. exe používá/Mode: FullGeneration k vygenerování souborů uvedených výše.</span><span class="sxs-lookup"><span data-stu-id="b2970-109">The EdmGen.exe tool uses /mode:FullGeneration to generate the files listed above.</span></span> <span data-ttu-id="b2970-110">Další informace o příkazech EdmGen. exe najdete v tématu [generátor EDM (EdmGen. exe)](edm-generator-edmgen-exe.md).</span><span class="sxs-lookup"><span data-stu-id="b2970-110">For more information about EdmGen.exe commands, see [EDM Generator (EdmGen.exe)](edm-generator-edmgen-exe.md).</span></span>  
+ <span data-ttu-id="c4426-109">Nástroj EdmGen. exe používá/Mode: FullGeneration k vygenerování souborů uvedených výše.</span><span class="sxs-lookup"><span data-stu-id="c4426-109">The EdmGen.exe tool uses /mode:FullGeneration to generate the files listed above.</span></span> <span data-ttu-id="c4426-110">Další informace o příkazech EdmGen. exe najdete v tématu [generátor EDM (EdmGen. exe)](edm-generator-edmgen-exe.md).</span><span class="sxs-lookup"><span data-stu-id="c4426-110">For more information about EdmGen.exe commands, see [EDM Generator (EdmGen.exe)](edm-generator-edmgen-exe.md).</span></span>  
   
- <span data-ttu-id="b2970-111">Použijete-li EdmGen. exe ke generování modelu a mapování souborů, je stále nutné nakonfigurovat projekt sady Visual Studio tak, aby používal Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="b2970-111">If you use EdmGen.exe to generate the model and mapping files, you still need to configure your Visual Studio project to use the Entity Framework.</span></span> <span data-ttu-id="b2970-112">Další informace najdete v tématu [jak: Ručně nakonfigurujte Entity Framework projekt](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="b2970-112">For more information, see [How to: Manually Configure an Entity Framework Project](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).</span></span>  
+ <span data-ttu-id="c4426-111">Použijete-li EdmGen. exe ke generování modelu a mapování souborů, je stále nutné nakonfigurovat projekt sady Visual Studio tak, aby používal Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="c4426-111">If you use EdmGen.exe to generate the model and mapping files, you still need to configure your Visual Studio project to use the Entity Framework.</span></span> <span data-ttu-id="c4426-112">Další informace naleznete v tématu [How to: ručně configure Entity Framework Project](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c4426-112">For more information, see [How to: Manually Configure an Entity Framework Project](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="b2970-113">Koncepční model generovaný nástrojem EdmGen. exe obsahuje všechny objekty v databázi.</span><span class="sxs-lookup"><span data-stu-id="b2970-113">A conceptual model generated by EdmGen.exe includes all the objects in the database.</span></span> <span data-ttu-id="b2970-114">Pokud chcete vygenerovat koncepční model, který obsahuje pouze konkrétní objekty, použijte Průvodce model EDM (Entity Data Model).</span><span class="sxs-lookup"><span data-stu-id="b2970-114">If you want to generate a conceptual model that includes only specific objects, use the Entity Data Model Wizard.</span></span> <span data-ttu-id="b2970-115">Další informace najdete v tématu [jak: Použijte průvodce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))model EDM (Entity Data Model).</span><span class="sxs-lookup"><span data-stu-id="b2970-115">For more information, see [How to: Use the Entity Data Model Wizard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).</span></span>  
+> <span data-ttu-id="c4426-113">Koncepční model generovaný nástrojem EdmGen. exe obsahuje všechny objekty v databázi.</span><span class="sxs-lookup"><span data-stu-id="c4426-113">A conceptual model generated by EdmGen.exe includes all the objects in the database.</span></span> <span data-ttu-id="c4426-114">Pokud chcete vygenerovat koncepční model, který obsahuje pouze konkrétní objekty, použijte Průvodce model EDM (Entity Data Model).</span><span class="sxs-lookup"><span data-stu-id="c4426-114">If you want to generate a conceptual model that includes only specific objects, use the Entity Data Model Wizard.</span></span> <span data-ttu-id="c4426-115">Další informace naleznete v tématu [How to: use the model EDM (Entity Data Model) Wizard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c4426-115">For more information, see [How to: Use the Entity Data Model Wizard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).</span></span>  
   
-### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a><span data-ttu-id="b2970-116">Vygenerování školního modelu pro Visual Basic projekt pomocí nástroje EdmGen. exe</span><span class="sxs-lookup"><span data-stu-id="b2970-116">To generate the School model for a Visual Basic project using EdmGen.exe</span></span>  
+### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a><span data-ttu-id="c4426-116">Vygenerování školního modelu pro Visual Basic projekt pomocí nástroje EdmGen. exe</span><span class="sxs-lookup"><span data-stu-id="c4426-116">To generate the School model for a Visual Basic project using EdmGen.exe</span></span>  
   
-1. <span data-ttu-id="b2970-117">Vytvořte školní databázi.</span><span class="sxs-lookup"><span data-stu-id="b2970-117">Create the School database.</span></span> <span data-ttu-id="b2970-118">Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="b2970-118">For more information, see [Creating the School Sample Database](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span></span>  
+1. <span data-ttu-id="c4426-117">Vytvořte školní databázi.</span><span class="sxs-lookup"><span data-stu-id="c4426-117">Create the School database.</span></span> <span data-ttu-id="c4426-118">Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c4426-118">For more information, see [Creating the School Sample Database](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span></span>  
   
-2. <span data-ttu-id="b2970-119">Na příkazovém řádku spusťte následující příkaz bez konců řádků:</span><span class="sxs-lookup"><span data-stu-id="b2970-119">At the command prompt, execute the following command without line breaks:</span></span>  
+2. <span data-ttu-id="c4426-119">Na příkazovém řádku spusťte následující příkaz bez konců řádků:</span><span class="sxs-lookup"><span data-stu-id="c4426-119">At the command prompt, execute the following command without line breaks:</span></span>  
   
-    ```  
+    ```console  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
     /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
     /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:VB  
     ```  
   
-### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a><span data-ttu-id="b2970-120">Vygenerování školního modelu pro C# projekt pomocí EdmGen. exe</span><span class="sxs-lookup"><span data-stu-id="b2970-120">To generate the School model for a C# project using EdmGen.exe</span></span>  
+### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a><span data-ttu-id="c4426-120">Vygenerování školního modelu pro C# projekt pomocí EdmGen. exe</span><span class="sxs-lookup"><span data-stu-id="c4426-120">To generate the School model for a C# project using EdmGen.exe</span></span>  
   
-1. <span data-ttu-id="b2970-121">Vytvořte školní databázi.</span><span class="sxs-lookup"><span data-stu-id="b2970-121">Create the School database.</span></span> <span data-ttu-id="b2970-122">Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="b2970-122">For more information, see [Creating the School Sample Database](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span></span>  
+1. <span data-ttu-id="c4426-121">Vytvořte školní databázi.</span><span class="sxs-lookup"><span data-stu-id="c4426-121">Create the School database.</span></span> <span data-ttu-id="c4426-122">Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c4426-122">For more information, see [Creating the School Sample Database](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).</span></span>  
   
-2. <span data-ttu-id="b2970-123">Na příkazovém řádku spusťte následující příkaz bez konců řádků:</span><span class="sxs-lookup"><span data-stu-id="b2970-123">At the command prompt, execute the following command without line breaks:</span></span>  
+2. <span data-ttu-id="c4426-123">Na příkazovém řádku spusťte následující příkaz bez konců řádků:</span><span class="sxs-lookup"><span data-stu-id="c4426-123">At the command prompt, execute the following command without line breaks:</span></span>  
   
-    ```  
+    ```console  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
     /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
     /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:CSharp  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="b2970-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b2970-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4426-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4426-124">See also</span></span>
 
-- [<span data-ttu-id="b2970-125">Modelování a mapování</span><span class="sxs-lookup"><span data-stu-id="b2970-125">Modeling and Mapping</span></span>](modeling-and-mapping.md)
-- <span data-ttu-id="b2970-126">[Postupy: Ruční konfigurace Entity Frameworkho projektu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="b2970-126">[How to: Manually Configure an Entity Framework Project](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))</span></span>
-- <span data-ttu-id="b2970-127">[Postupy: Předem generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="b2970-127">[How to: Pre-Generate Views to Improve Query Performance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))</span></span>
-- <span data-ttu-id="b2970-128">[ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="b2970-128">[ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))</span></span>
-- [<span data-ttu-id="b2970-129">Postupy: Použití EdmGen. exe k ověření modelu a souborů mapování</span><span class="sxs-lookup"><span data-stu-id="b2970-129">How to: Use EdmGen.exe to Validate Model and Mapping Files</span></span>](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
+- [<span data-ttu-id="c4426-125">Modelování a mapování</span><span class="sxs-lookup"><span data-stu-id="c4426-125">Modeling and Mapping</span></span>](modeling-and-mapping.md)
+- <span data-ttu-id="c4426-126">[Postupy: ruční konfigurace Entity Frameworkho projektu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="c4426-126">[How to: Manually Configure an Entity Framework Project](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))</span></span>
+- <span data-ttu-id="c4426-127">[Postupy: předběžné generování zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="c4426-127">[How to: Pre-Generate Views to Improve Query Performance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))</span></span>
+- <span data-ttu-id="c4426-128">[ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="c4426-128">[ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))</span></span>
+- [<span data-ttu-id="c4426-129">Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování</span><span class="sxs-lookup"><span data-stu-id="c4426-129">How to: Use EdmGen.exe to Validate Model and Mapping Files</span></span>](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)

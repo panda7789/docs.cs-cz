@@ -6,39 +6,38 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 09/22/2019
-ms.openlocfilehash: 758c8fd30fbd2e5ce8ace997005b91d6872a06d1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.date: 10/22/2019
+ms.openlocfilehash: 712e1644ea21e500265bc2a9bf9b4df9d20450a6
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773886"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037786"
 ---
-# <a name="whats-new-in-net-core-30"></a><span data-ttu-id="62025-103">Co je nového v .NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="62025-103">What's new in .NET Core 3.0</span></span>
+# <a name="whats-new-in-net-core-30"></a><span data-ttu-id="955c5-103">Co je nového v .NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="955c5-103">What's new in .NET Core 3.0</span></span>
 
-<span data-ttu-id="62025-104">Tento článek popisuje, co je v .NET Core 3,0 novinkou.</span><span class="sxs-lookup"><span data-stu-id="62025-104">This article describes what is new in .NET Core 3.0.</span></span> <span data-ttu-id="62025-105">Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows).</span><span class="sxs-lookup"><span data-stu-id="62025-105">One of the biggest enhancements is support for Windows desktop applications (Windows only).</span></span> <span data-ttu-id="62025-106">Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="62025-106">By using the .NET Core 3.0 SDK component Windows Desktop, you can port your Windows Forms and Windows Presentation Foundation (WPF) applications.</span></span> <span data-ttu-id="62025-107">Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows.</span><span class="sxs-lookup"><span data-stu-id="62025-107">To be clear, the Windows Desktop component is only supported and included on Windows.</span></span> <span data-ttu-id="62025-108">Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="62025-108">For more information, see the [Windows desktop](#windows-desktop) section later in this article.</span></span>
+<span data-ttu-id="955c5-104">Tento článek popisuje, co je v .NET Core 3,0 novinkou.</span><span class="sxs-lookup"><span data-stu-id="955c5-104">This article describes what is new in .NET Core 3.0.</span></span> <span data-ttu-id="955c5-105">Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows).</span><span class="sxs-lookup"><span data-stu-id="955c5-105">One of the biggest enhancements is support for Windows desktop applications (Windows only).</span></span> <span data-ttu-id="955c5-106">Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="955c5-106">By using the .NET Core 3.0 SDK component Windows Desktop, you can port your Windows Forms and Windows Presentation Foundation (WPF) applications.</span></span> <span data-ttu-id="955c5-107">Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows.</span><span class="sxs-lookup"><span data-stu-id="955c5-107">To be clear, the Windows Desktop component is only supported and included on Windows.</span></span> <span data-ttu-id="955c5-108">Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="955c5-108">For more information, see the [Windows desktop](#windows-desktop) section later in this article.</span></span>
 
-<span data-ttu-id="62025-109">.NET Core 3,0 přidává podporu pro C# 8,0.</span><span class="sxs-lookup"><span data-stu-id="62025-109">.NET Core 3.0 adds support for C# 8.0.</span></span> <span data-ttu-id="62025-110">Důrazně doporučujeme, abyste používali [Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější, [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview) nebo novější, nebo [Visual Studio Code](https://code.visualstudio.com/) s nejnovějším  **C# rozšířením**.</span><span class="sxs-lookup"><span data-stu-id="62025-110">It's highly recommended that you use [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) or newer, [Visual Studio for Mac 8.3](/visualstudio/mac/install-preview) or newer, or [Visual Studio Code](https://code.visualstudio.com/) with the latest **C# extension**.</span></span>
+<span data-ttu-id="955c5-109">.NET Core 3,0 přidává podporu pro C# 8,0.</span><span class="sxs-lookup"><span data-stu-id="955c5-109">.NET Core 3.0 adds support for C# 8.0.</span></span> <span data-ttu-id="955c5-110">Důrazně doporučujeme, abyste používali [Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější, [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview) nebo novější, nebo [Visual Studio Code](https://code.visualstudio.com/) s nejnovějším  **C# rozšířením**.</span><span class="sxs-lookup"><span data-stu-id="955c5-110">It's highly recommended that you use [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) or newer, [Visual Studio for Mac 8.3](/visualstudio/mac/install-preview) or newer, or [Visual Studio Code](https://code.visualstudio.com/) with the latest **C# extension**.</span></span>
 
-<span data-ttu-id="62025-111">[Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.</span><span class="sxs-lookup"><span data-stu-id="62025-111">[Download and get started with .NET Core 3.0](https://aka.ms/netcore3download) right now on Windows, macOS, or Linux.</span></span>
+<span data-ttu-id="955c5-111">[Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.</span><span class="sxs-lookup"><span data-stu-id="955c5-111">[Download and get started with .NET Core 3.0](https://aka.ms/netcore3download) right now on Windows, macOS, or Linux.</span></span>
 
-<span data-ttu-id="62025-112">Další informace o této verzi najdete v tématu [oznámení .NET Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).</span><span class="sxs-lookup"><span data-stu-id="62025-112">For more information about the release, see the [.NET Core 3.0 announcement](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).</span></span>
+<span data-ttu-id="955c5-112">Další informace o této verzi najdete v tématu [oznámení .NET Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).</span><span class="sxs-lookup"><span data-stu-id="955c5-112">For more information about the release, see the [.NET Core 3.0 announcement](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).</span></span>
 
-<span data-ttu-id="62025-113">.NET Core RC1 se považuje za produkční verzi Microsoft a je plně podporovaná.</span><span class="sxs-lookup"><span data-stu-id="62025-113">.NET Core RC1 was considered production ready by Microsoft and was fully supported.</span></span> <span data-ttu-id="62025-114">Pokud používáte verzi Preview, musíte pro pokračování podpory přejít na verzi RTM.</span><span class="sxs-lookup"><span data-stu-id="62025-114">If you're using a preview release, you must move to the RTM version for continued support.</span></span>
+<span data-ttu-id="955c5-113">.NET Core RC1 se považuje za produkční verzi Microsoft a je plně podporovaná.</span><span class="sxs-lookup"><span data-stu-id="955c5-113">.NET Core RC1 was considered production ready by Microsoft and was fully supported.</span></span> <span data-ttu-id="955c5-114">Pokud používáte verzi Preview, musíte pro pokračování podpory přejít na verzi RTM.</span><span class="sxs-lookup"><span data-stu-id="955c5-114">If you're using a preview release, you must move to the RTM version for continued support.</span></span>
 
-## <a name="net-core-sdk-windows-installer"></a><span data-ttu-id="62025-115">.NET Core SDK Instalační služba systému Windows</span><span class="sxs-lookup"><span data-stu-id="62025-115">.NET Core SDK Windows Installer</span></span>
+## <a name="language-improvements-c-80"></a><span data-ttu-id="955c5-115">Jazykové vylepšení C# 8,0</span><span class="sxs-lookup"><span data-stu-id="955c5-115">Language improvements C# 8.0</span></span>
 
-<span data-ttu-id="62025-116">Instalační program MSI pro Windows se od verze .NET Core 3,0 změnil.</span><span class="sxs-lookup"><span data-stu-id="62025-116">The MSI installer for Windows has changed starting with .NET Core 3.0.</span></span> <span data-ttu-id="62025-117">Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě.</span><span class="sxs-lookup"><span data-stu-id="62025-117">The SDK installers will now upgrade SDK feature-band releases in place.</span></span> <span data-ttu-id="62025-118">Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze.</span><span class="sxs-lookup"><span data-stu-id="62025-118">Feature bands are defined in the *hundreds* groups in the *patch* section of the version number.</span></span> <span data-ttu-id="62025-119">Například **3,0. _101_**  a **3,0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3,0. _101_**  a **3,0. _199_**  jsou ve stejném pásmu funkcí.</span><span class="sxs-lookup"><span data-stu-id="62025-119">For example, **3.0._101_** and **3.0._201_** are versions in two different feature bands while **3.0._101_** and **3.0._199_** are in the same feature band.</span></span> <span data-ttu-id="62025-120">A při .NET Core SDK **3,0. _101_**  je nainstalováno, .NET Core SDK **3,0. _100_**  se odebere z počítače, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="62025-120">And, when .NET Core SDK **3.0._101_** is installed, .NET Core SDK **3.0._100_** will be removed from the machine if it exists.</span></span> <span data-ttu-id="62025-121">Při .NET Core SDK **3,0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3,0. _101_**  nebude odebráno.</span><span class="sxs-lookup"><span data-stu-id="62025-121">When .NET Core SDK **3.0._200_** is installed on the same machine, .NET Core SDK **3.0._101_** won't be removed.</span></span>
+<span data-ttu-id="955c5-116">C#8,0 je také součástí této verze, která zahrnuje funkce [typu odkazu s možnou hodnotou null](../../csharp/tutorials/nullable-reference-types.md) , [asynchronní datové proudy](../../csharp/tutorials/generate-consume-asynchronous-stream.md)a [Další vzory](../../csharp/tutorials/pattern-matching.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-116">C# 8.0 is also part of this release, which includes the [nullable reference types](../../csharp/tutorials/nullable-reference-types.md) feature, [async streams](../../csharp/tutorials/generate-consume-asynchronous-stream.md), and [more patterns](../../csharp/tutorials/pattern-matching.md).</span></span> <span data-ttu-id="955c5-117">Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-117">For more information about C# 8.0 features, see [What's new in C# 8.0](../../csharp/whats-new/csharp-8.md).</span></span>
 
-<span data-ttu-id="62025-122">Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho, [jak je verze .NET Core](../versions/index.md).</span><span class="sxs-lookup"><span data-stu-id="62025-122">For more information about versioning, see [Overview of how .NET Core is versioned](../versions/index.md).</span></span>
+<span data-ttu-id="955c5-118">Byla přidána vylepšení jazyka pro podporu následujících funkcí rozhraní API, které jsou popsány níže:</span><span class="sxs-lookup"><span data-stu-id="955c5-118">Language enhancements were added to support the following API features detailed below:</span></span>
 
-## <a name="c-80"></a><span data-ttu-id="62025-123">C# 8.0</span><span class="sxs-lookup"><span data-stu-id="62025-123">C# 8.0</span></span>
+- [<span data-ttu-id="955c5-119">Rozsahy a indexy</span><span class="sxs-lookup"><span data-stu-id="955c5-119">Ranges and indices</span></span>](#ranges-and-indices)
+- [<span data-ttu-id="955c5-120">Asynchronní streamy</span><span class="sxs-lookup"><span data-stu-id="955c5-120">Async streams</span></span>](#async-streams)
 
-<span data-ttu-id="62025-124">C#8,0 je také součástí této verze, která zahrnuje funkce typu odkazu s možnou hodnotou null, asynchronní datové proudy a další vzory.</span><span class="sxs-lookup"><span data-stu-id="62025-124">C# 8.0 is also part of this release, which includes the nullable reference types feature, async streams, and more patterns.</span></span> <span data-ttu-id="62025-125">Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).</span><span class="sxs-lookup"><span data-stu-id="62025-125">For more information about C# 8.0 features, see [What's new in C# 8.0](../../csharp/whats-new/csharp-8.md).</span></span>
+## <a name="net-standard-21"></a><span data-ttu-id="955c5-121">.NET Standard 2,1</span><span class="sxs-lookup"><span data-stu-id="955c5-121">.NET Standard 2.1</span></span>
 
-## <a name="net-standard-21"></a><span data-ttu-id="62025-126">.NET Standard 2,1</span><span class="sxs-lookup"><span data-stu-id="62025-126">.NET Standard 2.1</span></span>
-
-<span data-ttu-id="62025-127">I když .NET Core 3,0 podporuje **.NET Standard 2,1**, vytvoří výchozí šablona `dotnet new classlib` projekt, který je stále cílen **.NET Standard 2,0**.</span><span class="sxs-lookup"><span data-stu-id="62025-127">Even though .NET Core 3.0 supports **.NET Standard 2.1**, the default `dotnet new classlib` template generates a project that still targets **.NET Standard 2.0**.</span></span> <span data-ttu-id="62025-128">Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a změňte vlastnost `TargetFramework` na `netstandard2.1`:</span><span class="sxs-lookup"><span data-stu-id="62025-128">To target **.NET Standard 2.1**, edit your project file and change the `TargetFramework` property to `netstandard2.1`:</span></span>
+<span data-ttu-id="955c5-122">.NET Core 3,0 implementuje **.NET Standard 2,1**.</span><span class="sxs-lookup"><span data-stu-id="955c5-122">.NET Core 3.0 implements **.NET Standard 2.1**.</span></span> <span data-ttu-id="955c5-123">Výchozí šablona `dotnet new classlib` však vygeneruje projekt, který je stále cílen **.NET Standard 2,0**.</span><span class="sxs-lookup"><span data-stu-id="955c5-123">However, the default `dotnet new classlib` template generates a project that still targets **.NET Standard 2.0**.</span></span> <span data-ttu-id="955c5-124">Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a změňte vlastnost `TargetFramework` na `netstandard2.1`:</span><span class="sxs-lookup"><span data-stu-id="955c5-124">To target **.NET Standard 2.1**, edit your project file and change the `TargetFramework` property to `netstandard2.1`:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -50,11 +49,416 @@ ms.locfileid: "72773886"
 </Project>
 ```
 
-<span data-ttu-id="62025-129">Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2,1** nebo **.NET Core 3,0**.</span><span class="sxs-lookup"><span data-stu-id="62025-129">If you're using Visual Studio, you need [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), as Visual Studio 2017 doesn't support **.NET Standard 2.1** or **.NET Core 3.0**.</span></span>
+<span data-ttu-id="955c5-125">Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2,1** nebo **.NET Core 3,0**.</span><span class="sxs-lookup"><span data-stu-id="955c5-125">If you're using Visual Studio, you need [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), as Visual Studio 2017 doesn't support **.NET Standard 2.1** or **.NET Core 3.0**.</span></span>
 
-## <a name="improved-net-core-version-apis"></a><span data-ttu-id="62025-130">Vylepšená rozhraní API verze .NET Core</span><span class="sxs-lookup"><span data-stu-id="62025-130">Improved .NET Core Version APIs</span></span>
+## <a name="compiledeploy"></a><span data-ttu-id="955c5-126">Kompilovat/nasadit</span><span class="sxs-lookup"><span data-stu-id="955c5-126">Compile/Deploy</span></span>
 
-<span data-ttu-id="62025-131">Počínaje rozhraním .NET Core 3,0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace.</span><span class="sxs-lookup"><span data-stu-id="62025-131">Starting with .NET Core 3.0, the version APIs provided with .NET Core now return the information you expect.</span></span> <span data-ttu-id="62025-132">Příklad:</span><span class="sxs-lookup"><span data-stu-id="62025-132">For example:</span></span>
+### <a name="default-executables"></a><span data-ttu-id="955c5-127">Výchozí spustitelné soubory</span><span class="sxs-lookup"><span data-stu-id="955c5-127">Default executables</span></span>
+
+<span data-ttu-id="955c5-128">.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#framework-dependent-executables-fde) .</span><span class="sxs-lookup"><span data-stu-id="955c5-128">.NET Core now builds [framework-dependent executables](../deploying/index.md#framework-dependent-executables-fde) by default.</span></span> <span data-ttu-id="955c5-129">Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="955c5-129">This behavior is new for applications that use a globally installed version of .NET Core.</span></span> <span data-ttu-id="955c5-130">Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#self-contained-deployments-scd) vyvolat spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="955c5-130">Previously, only [self-contained deployments](../deploying/index.md#self-contained-deployments-scd) would produce an executable.</span></span>
+
+<span data-ttu-id="955c5-131">Během `dotnet build` nebo `dotnet publish` se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte.</span><span class="sxs-lookup"><span data-stu-id="955c5-131">During `dotnet build` or `dotnet publish`, an executable is created that matches the environment and platform of the SDK you're using.</span></span> <span data-ttu-id="955c5-132">Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:</span><span class="sxs-lookup"><span data-stu-id="955c5-132">You can expect the same things with these executables as you would other native executables, such as:</span></span>
+
+- <span data-ttu-id="955c5-133">Můžete dvakrát kliknout na spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="955c5-133">You can double-click on the executable.</span></span>
+- <span data-ttu-id="955c5-134">Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` v systému Windows a `./myapp` v systémech Linux a macOS.</span><span class="sxs-lookup"><span data-stu-id="955c5-134">You can launch the application from a command prompt directly, such as `myapp.exe` on Windows, and `./myapp` on Linux and macOS.</span></span>
+
+### <a name="single-file-executables"></a><span data-ttu-id="955c5-135">Spustitelné soubory s jedním souborem</span><span class="sxs-lookup"><span data-stu-id="955c5-135">Single-file executables</span></span>
+
+<span data-ttu-id="955c5-136">Příkaz `dotnet publish` podporuje balení vaší aplikace do spustitelného souboru specifického pro jednotlivé platformy.</span><span class="sxs-lookup"><span data-stu-id="955c5-136">The `dotnet publish` command supports packaging your app into a platform-specific single-file executable.</span></span> <span data-ttu-id="955c5-137">Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativních), které jsou nutné ke spuštění vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="955c5-137">The executable is self-extracting and contains all dependencies (including native) that are required to run your app.</span></span> <span data-ttu-id="955c5-138">Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru buildu.</span><span class="sxs-lookup"><span data-stu-id="955c5-138">When the app is first run, the application is extracted to a directory based on the app name and build identifier.</span></span> <span data-ttu-id="955c5-139">Spuštění je rychlejší, když aplikaci znovu spustíte.</span><span class="sxs-lookup"><span data-stu-id="955c5-139">Startup is faster when the application is run again.</span></span> <span data-ttu-id="955c5-140">Pokud se nepoužila nová verze, aplikace se už nebude muset extrahovat druhou dobu.</span><span class="sxs-lookup"><span data-stu-id="955c5-140">The application doesn't need to extract itself a second time unless a new version was used.</span></span>
+
+<span data-ttu-id="955c5-141">Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v projektu nebo na příkazovém řádku pomocí příkazu `dotnet publish`:</span><span class="sxs-lookup"><span data-stu-id="955c5-141">To publish a single-file executable, set the `PublishSingleFile` in your project or on the command line with the `dotnet publish` command:</span></span>
+
+```xml
+<PropertyGroup>
+  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+  <PublishSingleFile>true</PublishSingleFile>
+</PropertyGroup>
+```
+
+<span data-ttu-id="955c5-142">-nebo-</span><span class="sxs-lookup"><span data-stu-id="955c5-142">-or-</span></span>
+
+```dotnetcli
+dotnet publish -r win10-x64 -p:PublishSingleFile=true
+```
+
+<span data-ttu-id="955c5-143">Další informace o publikování v jednom souboru najdete v [dokumentu návrhu sady prostředků s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-143">For more information about single-file publishing, see the [single-file bundler design document](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).</span></span>
+
+### <a name="assembly-linking"></a><span data-ttu-id="955c5-144">Propojení sestavení</span><span class="sxs-lookup"><span data-stu-id="955c5-144">Assembly linking</span></span>
+
+<span data-ttu-id="955c5-145">Sada .NET Core 3,0 SDK je dodávána s nástrojem, který umožňuje zmenšit velikost aplikací analýzou IL a oříznutím nepoužívaných sestavení.</span><span class="sxs-lookup"><span data-stu-id="955c5-145">The .NET core 3.0 SDK comes with a tool that can reduce the size of apps by analyzing IL and trimming unused assemblies.</span></span>
+
+<span data-ttu-id="955c5-146">Samostatné aplikace zahrnují vše potřebné ke spuštění kódu, aniž by bylo nutné nainstalovat rozhraní .NET do hostitelského počítače.</span><span class="sxs-lookup"><span data-stu-id="955c5-146">Self-contained apps include everything needed to run your code, without requiring .NET to be installed on the host computer.</span></span> <span data-ttu-id="955c5-147">Ale hodně, kolikrát aplikace jenom vyžaduje malou podmnožinu rozhraní, a další nepoužívané knihovny by se daly odebrat.</span><span class="sxs-lookup"><span data-stu-id="955c5-147">However, many times the app only requires a small subset of the framework to function, and other unused libraries could be removed.</span></span>
+
+<span data-ttu-id="955c5-148">Rozhraní .NET Core nyní obsahuje nastavení, které bude používat nástroj [linkeru Il](https://github.com/mono/linker) ke kontrole Il vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="955c5-148">.NET Core now includes a setting that will use the [IL linker](https://github.com/mono/linker) tool to scan the IL of your app.</span></span> <span data-ttu-id="955c5-149">Tento nástroj zjistí, jaký kód je požadován, a poté ořízne nepoužívané knihovny.</span><span class="sxs-lookup"><span data-stu-id="955c5-149">This tool detects what code is required, and then trims unused libraries.</span></span> <span data-ttu-id="955c5-150">Tento nástroj může významně snížit velikost nasazení některých aplikací.</span><span class="sxs-lookup"><span data-stu-id="955c5-150">This tool can significantly reduce the deployment size of some apps.</span></span>
+
+<span data-ttu-id="955c5-151">Pokud chcete tento nástroj povolit, přidejte do svého projektu nastavení `<PublishTrimmed>` a publikujte samostatně uzavřenou aplikaci:</span><span class="sxs-lookup"><span data-stu-id="955c5-151">To enable this tool, add the `<PublishTrimmed>` setting in your project and publish a self-contained app:</span></span>
+
+```xml
+<PropertyGroup>
+  <PublishTrimmed>true</PublishTrimmed>
+</PropertyGroup>
+```
+
+```dotnetcli
+dotnet publish -r <rid> -c Release
+```
+
+<span data-ttu-id="955c5-152">Příklad: základní šablona projektu "Hello World", která je součástí, je-li publikována, má velikost přibližně 70 MB.</span><span class="sxs-lookup"><span data-stu-id="955c5-152">As an example, the basic "hello world" new console project template that is included, when published, hits about 70 MB in size.</span></span> <span data-ttu-id="955c5-153">Když použijete `<PublishTrimmed>`, zmenší se velikost na přibližně 30 MB.</span><span class="sxs-lookup"><span data-stu-id="955c5-153">By using `<PublishTrimmed>`, that size is reduced to about 30 MB.</span></span>
+
+<span data-ttu-id="955c5-154">Je důležité vzít v úvahu, že aplikace nebo architektury (včetně ASP.NET Core a WPF), které používají reflexi nebo související dynamické funkce, budou často přerušit při oříznutí.</span><span class="sxs-lookup"><span data-stu-id="955c5-154">It's important to consider that applications or frameworks (including ASP.NET Core and WPF) that use reflection or related dynamic features, will often break when trimmed.</span></span> <span data-ttu-id="955c5-155">K tomuto zlomku dochází, protože linker neví o tomto dynamickém chování a nemůže určit, které typy rozhraní jsou pro reflexi vyžadovány.</span><span class="sxs-lookup"><span data-stu-id="955c5-155">This breakage occurs because the linker doesn't know about this dynamic behavior and can't determine which framework types are required for reflection.</span></span> <span data-ttu-id="955c5-156">Nástroj linkeru IL se dá nakonfigurovat tak, aby se na tento scénář dozvěděl.</span><span class="sxs-lookup"><span data-stu-id="955c5-156">The IL Linker tool can be configured to be aware of this scenario.</span></span>
+
+<span data-ttu-id="955c5-157">Nad všemi ostatními nezapomeňte aplikaci otestovat po jejím oříznutí.</span><span class="sxs-lookup"><span data-stu-id="955c5-157">Above all else, be sure to test your app after trimming.</span></span>
+
+<span data-ttu-id="955c5-158">Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.ms/dotnet-illink) nebo v úložišti [mono/linker]( https://github.com/mono/linker) .</span><span class="sxs-lookup"><span data-stu-id="955c5-158">For more information about the IL Linker tool, see the [documentation](https://aka.ms/dotnet-illink) or visit the [mono/linker]( https://github.com/mono/linker) repo.</span></span>
+
+### <a name="tiered-compilation"></a><span data-ttu-id="955c5-159">Vrstvená kompilace</span><span class="sxs-lookup"><span data-stu-id="955c5-159">Tiered compilation</span></span>
+
+<span data-ttu-id="955c5-160">[Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnutá pomocí .net Core 3,0.</span><span class="sxs-lookup"><span data-stu-id="955c5-160">[Tiered compilation](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) is on by default with .NET Core 3.0.</span></span> <span data-ttu-id="955c5-161">Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.</span><span class="sxs-lookup"><span data-stu-id="955c5-161">This feature enables the runtime to more adaptively use the Just-In-Time (JIT) compiler to get better performance.</span></span>
+
+<span data-ttu-id="955c5-162">Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní.</span><span class="sxs-lookup"><span data-stu-id="955c5-162">The main benefit of TC is to enable (re-)jitting methods with a lower-quality-but-faster tier or a higher-quality-but-slower tier.</span></span> <span data-ttu-id="955c5-163">To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu.</span><span class="sxs-lookup"><span data-stu-id="955c5-163">This helps increase performance of an application as it goes through various stages of execution, from startup through steady-state.</span></span> <span data-ttu-id="955c5-164">To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.</span><span class="sxs-lookup"><span data-stu-id="955c5-164">This contrasts with the non-TC approach, where every method is compiled a single way (the same as the high-quality tier), which is biased to steady-state over startup performance.</span></span>
+
+<span data-ttu-id="955c5-165">Chcete-li povolit rychlou JIT (zpracovaných kompilátorem JIT kód vrstvy 0), použijte toto nastavení v souboru projektu:</span><span class="sxs-lookup"><span data-stu-id="955c5-165">To enable Quick JIT (tier 0 jitted code), use this setting in your project file:</span></span>
+
+```xml
+<PropertyGroup>
+  <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+</PropertyGroup>
+```
+
+<span data-ttu-id="955c5-166">Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru projektu:</span><span class="sxs-lookup"><span data-stu-id="955c5-166">To disable TC completely, use this setting in your project file:</span></span>
+
+```xml
+<TieredCompilation>false</TieredCompilation>
+```
+
+### <a name="readytorun-images"></a><span data-ttu-id="955c5-167">ReadyToRun image</span><span class="sxs-lookup"><span data-stu-id="955c5-167">ReadyToRun images</span></span>
+
+<span data-ttu-id="955c5-168">Můžete zlepšit čas spuštění aplikace .NET Core kompilováním sestavení aplikace jako formátu ReadyToRun (R2R).</span><span class="sxs-lookup"><span data-stu-id="955c5-168">You can improve the startup time of your .NET Core application by compiling your application assemblies as ReadyToRun (R2R) format.</span></span> <span data-ttu-id="955c5-169">R2R je forma kompilace v čase před zahájením (AOT).</span><span class="sxs-lookup"><span data-stu-id="955c5-169">R2R is a form of ahead-of-time (AOT) compilation.</span></span>
+
+<span data-ttu-id="955c5-170">R2R binární soubory zlepšují výkon při spuštění tím, že snižují množství práce, které kompilátor JIT (just-in-time) potřebuje k tomu, aby se vaše aplikace načítají.</span><span class="sxs-lookup"><span data-stu-id="955c5-170">R2R binaries improve startup performance by reducing the amount of work the just-in-time (JIT) compiler needs to do as your application loads.</span></span> <span data-ttu-id="955c5-171">Binární soubory obsahují podobný nativní kód v porovnání s tím, co by kompilátor JIT vytvořil.</span><span class="sxs-lookup"><span data-stu-id="955c5-171">The binaries contain similar native code compared to what the JIT would produce.</span></span> <span data-ttu-id="955c5-172">R2R binární soubory jsou však větší, protože obsahují kód pro mezilehlé jazyky (IL), který je stále potřeba pro některé scénáře, a nativní verzi stejného kódu.</span><span class="sxs-lookup"><span data-stu-id="955c5-172">However, R2R binaries are larger because they contain both intermediate language (IL) code, which is still needed for some scenarios, and the native version of the same code.</span></span> <span data-ttu-id="955c5-173">R2R je k dispozici pouze v případě, že publikujete samostatnou aplikaci, která cílí na konkrétní běhové prostředí (RID), jako je Linux x64 nebo Windows x64.</span><span class="sxs-lookup"><span data-stu-id="955c5-173">R2R is only available when you publish a self-contained app that targets specific runtime environments (RID) such as Linux x64 or Windows x64.</span></span>
+
+<span data-ttu-id="955c5-174">Chcete-li zkompilovat projekt jako ReadyToRun, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="955c5-174">To compile your project as ReadyToRun, do the following:</span></span>
+
+01. <span data-ttu-id="955c5-175">Přidejte do projektu nastavení `<PublishReadyToRun>`:</span><span class="sxs-lookup"><span data-stu-id="955c5-175">Add the `<PublishReadyToRun>` setting to your project:</span></span>
+
+    ```xml
+    <PropertyGroup>
+      <PublishReadyToRun>true</PublishReadyToRun>
+    </PropertyGroup>
+    ```
+
+01. <span data-ttu-id="955c5-176">Publikujte samostatně uzavřenou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="955c5-176">Publish a self-contained app.</span></span> <span data-ttu-id="955c5-177">Tento příkaz například vytvoří samostatnou aplikaci pro 64 verzi Windows:</span><span class="sxs-lookup"><span data-stu-id="955c5-177">For example, this command creates a self-contained app for the 64-bit version of Windows:</span></span>
+
+    ```dotnetcli
+    dotnet publish -c Release -r win-x64 --self-contained
+    ```
+
+#### <a name="cross-platformarchitecture-restrictions"></a><span data-ttu-id="955c5-178">Omezení pro různé platformy a architektury</span><span class="sxs-lookup"><span data-stu-id="955c5-178">Cross platform/architecture restrictions</span></span>
+
+<span data-ttu-id="955c5-179">Kompilátor ReadyToRun v současné době nepodporuje cílení na více platforem.</span><span class="sxs-lookup"><span data-stu-id="955c5-179">The ReadyToRun compiler doesn't currently support cross-targeting.</span></span> <span data-ttu-id="955c5-180">Je nutné kompilovat na daném cíli.</span><span class="sxs-lookup"><span data-stu-id="955c5-180">You must compile on a given target.</span></span> <span data-ttu-id="955c5-181">Například pokud chcete image R2R pro Windows x64, musíte v tomto prostředí spustit příkaz publikovat.</span><span class="sxs-lookup"><span data-stu-id="955c5-181">For example, if you want R2R images for Windows x64, you need to run the publish command on that environment.</span></span>
+
+<span data-ttu-id="955c5-182">Výjimky pro cílení na více platforem:</span><span class="sxs-lookup"><span data-stu-id="955c5-182">Exceptions to cross-targeting:</span></span>
+
+- <span data-ttu-id="955c5-183">Systém Windows x64 lze použít ke kompilaci imagí Windows ARM32, ARM64 a x86.</span><span class="sxs-lookup"><span data-stu-id="955c5-183">Windows x64 can be used to compile Windows ARM32, ARM64, and x86 images.</span></span>
+- <span data-ttu-id="955c5-184">K kompilování imagí Windows ARM32 lze použít systém Windows x86.</span><span class="sxs-lookup"><span data-stu-id="955c5-184">Windows x86 can be used to compile Windows ARM32 images.</span></span>
+- <span data-ttu-id="955c5-185">Linux x64 lze použít ke kompilaci imagí ARM32 a ARM64 pro Linux.</span><span class="sxs-lookup"><span data-stu-id="955c5-185">Linux x64 can be used to compile Linux ARM32 and ARM64 images.</span></span>
+
+## <a name="runtimesdk"></a><span data-ttu-id="955c5-186">Modul runtime/sada SDK</span><span class="sxs-lookup"><span data-stu-id="955c5-186">Runtime/SDK</span></span>
+
+### <a name="major-version-roll-forward"></a><span data-ttu-id="955c5-187">Hlavní verze – posunutí – posun</span><span class="sxs-lookup"><span data-stu-id="955c5-187">Major-version Roll Forward</span></span>
+
+<span data-ttu-id="955c5-188">.NET Core 3,0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="955c5-188">.NET Core 3.0 introduces an opt-in feature that allows your app to roll forward to the latest major version of .NET Core.</span></span> <span data-ttu-id="955c5-189">Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí.</span><span class="sxs-lookup"><span data-stu-id="955c5-189">Additionally, a new setting has been added to control how roll forward is applied to your app.</span></span> <span data-ttu-id="955c5-190">Dá se nakonfigurovat následujícími způsoby:</span><span class="sxs-lookup"><span data-stu-id="955c5-190">This can be configured in the following ways:</span></span>
+
+- <span data-ttu-id="955c5-191">Vlastnost souboru projektu: `RollForward`</span><span class="sxs-lookup"><span data-stu-id="955c5-191">Project file property: `RollForward`</span></span>
+- <span data-ttu-id="955c5-192">Vlastnost konfiguračního souboru modulu runtime: `rollForward`</span><span class="sxs-lookup"><span data-stu-id="955c5-192">Runtime configuration file property: `rollForward`</span></span>
+- <span data-ttu-id="955c5-193">Proměnná prostředí: `DOTNET_ROLL_FORWARD`</span><span class="sxs-lookup"><span data-stu-id="955c5-193">Environment variable: `DOTNET_ROLL_FORWARD`</span></span>
+- <span data-ttu-id="955c5-194">Argument příkazového řádku: `--roll-forward`</span><span class="sxs-lookup"><span data-stu-id="955c5-194">Command-line argument: `--roll-forward`</span></span>
+
+<span data-ttu-id="955c5-195">Je nutné zadat jednu z následujících hodnot.</span><span class="sxs-lookup"><span data-stu-id="955c5-195">One of the following values must be specified.</span></span> <span data-ttu-id="955c5-196">Pokud je nastavení vynecháno, je výchozí hodnota **podverze** .</span><span class="sxs-lookup"><span data-stu-id="955c5-196">If the setting is omitted, **Minor** is the default.</span></span>
+
+- <span data-ttu-id="955c5-197">**LatestPatch**</span><span class="sxs-lookup"><span data-stu-id="955c5-197">**LatestPatch**</span></span>\
+<span data-ttu-id="955c5-198">Vraťte se k nejvyšší verzi opravy.</span><span class="sxs-lookup"><span data-stu-id="955c5-198">Roll forward to the highest patch version.</span></span> <span data-ttu-id="955c5-199">Tím se zakáže dílčí verze s posunem.</span><span class="sxs-lookup"><span data-stu-id="955c5-199">This disables minor version roll forward.</span></span>
+- <span data-ttu-id="955c5-200">**Vedlejší**</span><span class="sxs-lookup"><span data-stu-id="955c5-200">**Minor**</span></span>\
+<span data-ttu-id="955c5-201">V případě, že chybí požadovaná dílčí verze, převeďte nahoru na nejnižší nižší verzi.</span><span class="sxs-lookup"><span data-stu-id="955c5-201">Roll forward to the lowest higher minor version, if requested minor version is missing.</span></span> <span data-ttu-id="955c5-202">Pokud je k dispozici požadovaná dílčí verze, použije se zásada **LatestPatch** .</span><span class="sxs-lookup"><span data-stu-id="955c5-202">If the requested minor version is present, then the **LatestPatch** policy is used.</span></span>
+- <span data-ttu-id="955c5-203">**Hlavní** </span><span class="sxs-lookup"><span data-stu-id="955c5-203">**Major**</span></span>\
+<span data-ttu-id="955c5-204">Pokud chybí požadovaná hlavní verze, převeďte ji nahoru na nejnižší nejvyšší hlavní verzi a nejnižší podverzi.</span><span class="sxs-lookup"><span data-stu-id="955c5-204">Roll forward to lowest higher major version, and lowest minor version, if requested major version is missing.</span></span> <span data-ttu-id="955c5-205">Pokud je k dispozici požadovaná hlavní verze, použije se **vedlejší** zásada.</span><span class="sxs-lookup"><span data-stu-id="955c5-205">If the requested major version is present, then the **Minor** policy is used.</span></span>
+- <span data-ttu-id="955c5-206">**LatestMinor**</span><span class="sxs-lookup"><span data-stu-id="955c5-206">**LatestMinor**</span></span>\
+<span data-ttu-id="955c5-207">Převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze.</span><span class="sxs-lookup"><span data-stu-id="955c5-207">Roll forward to highest minor version, even if requested minor version is present.</span></span> <span data-ttu-id="955c5-208">Určeno pro scénáře hostování součástí.</span><span class="sxs-lookup"><span data-stu-id="955c5-208">Intended for component hosting scenarios.</span></span>
+- <span data-ttu-id="955c5-209">**LatestMajor**</span><span class="sxs-lookup"><span data-stu-id="955c5-209">**LatestMajor**</span></span>\
+<span data-ttu-id="955c5-210">Převeďte do nejvyšší hlavní a nejvyšší dílčí verze, a to i v případě, že je k dispozici požadovaná hlavní verze.</span><span class="sxs-lookup"><span data-stu-id="955c5-210">Roll forward to highest major and highest minor version, even if requested major is present.</span></span> <span data-ttu-id="955c5-211">Určeno pro scénáře hostování součástí.</span><span class="sxs-lookup"><span data-stu-id="955c5-211">Intended for component hosting scenarios.</span></span>
+- <span data-ttu-id="955c5-212">**Zakázat**</span><span class="sxs-lookup"><span data-stu-id="955c5-212">**Disable**</span></span>\
+<span data-ttu-id="955c5-213">Nezadávejte vše.</span><span class="sxs-lookup"><span data-stu-id="955c5-213">Don't roll forward.</span></span> <span data-ttu-id="955c5-214">Vytvoří se jenom vazba na určenou verzi.</span><span class="sxs-lookup"><span data-stu-id="955c5-214">Only bind to specified version.</span></span> <span data-ttu-id="955c5-215">Tyto zásady se nedoporučují pro obecné použití, protože zakazují možnost navrátit se k nejnovějším opravám.</span><span class="sxs-lookup"><span data-stu-id="955c5-215">This policy isn't recommended for general use because it disables the ability to roll forward to the latest patches.</span></span> <span data-ttu-id="955c5-216">Tato hodnota se doporučuje jenom pro testování.</span><span class="sxs-lookup"><span data-stu-id="955c5-216">This value is only recommended for testing.</span></span>
+
+<span data-ttu-id="955c5-217">Kromě nastavení **Zakázat** bude pro všechna nastavení použita nejvyšší dostupná verze opravy.</span><span class="sxs-lookup"><span data-stu-id="955c5-217">Besides the **Disable** setting, all settings will use the highest available patch version.</span></span>
+
+### <a name="build-copies-dependencies"></a><span data-ttu-id="955c5-218">Sestavení kopíruje závislosti</span><span class="sxs-lookup"><span data-stu-id="955c5-218">Build copies dependencies</span></span>
+
+<span data-ttu-id="955c5-219">Příkaz `dotnet build` nyní kopíruje závislosti NuGet pro vaši aplikaci z mezipaměti NuGet do výstupní složky sestavení.</span><span class="sxs-lookup"><span data-stu-id="955c5-219">The `dotnet build` command now copies NuGet dependencies for your application from the NuGet cache to the build output folder.</span></span> <span data-ttu-id="955c5-220">Dříve se závislosti zkopírovaly jenom jako součást `dotnet publish`.</span><span class="sxs-lookup"><span data-stu-id="955c5-220">Previously, dependencies were only copied as part of `dotnet publish`.</span></span>
+
+<span data-ttu-id="955c5-221">Existují některé operace, jako je propojování a publikování stránek Razor, které budou nadále vyžadovat publikování.</span><span class="sxs-lookup"><span data-stu-id="955c5-221">There are some operations, like linking and razor page publishing that will still require publishing.</span></span>
+
+### <a name="local-tools"></a><span data-ttu-id="955c5-222">Místní nástroje</span><span class="sxs-lookup"><span data-stu-id="955c5-222">Local tools</span></span>
+
+<span data-ttu-id="955c5-223">.NET Core 3,0 zavádí místní nástroje.</span><span class="sxs-lookup"><span data-stu-id="955c5-223">.NET Core 3.0 introduces local tools.</span></span> <span data-ttu-id="955c5-224">Místní nástroje jsou podobné [globálním nástrojům](../tools/global-tools.md) , ale jsou přidruženy k určitému umístění na disku.</span><span class="sxs-lookup"><span data-stu-id="955c5-224">Local tools are similar to [global tools](../tools/global-tools.md) but are associated with a particular location on disk.</span></span> <span data-ttu-id="955c5-225">Místní nástroje nejsou globálně dostupné a distribuují se jako balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="955c5-225">Local tools aren't available globally and are distributed as NuGet packages.</span></span>
+
+> [!WARNING]
+> <span data-ttu-id="955c5-226">Pokud jste zkusili místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je například spuštění `dotnet tool restore` nebo `dotnet tool install`, odstraňte složku mezipaměti místních nástrojů.</span><span class="sxs-lookup"><span data-stu-id="955c5-226">If you tried local tools in .NET Core 3.0 Preview 1, such as running `dotnet tool restore` or `dotnet tool install`, delete the local tools cache folder.</span></span> <span data-ttu-id="955c5-227">V opačném případě místní nástroje nebudou fungovat v novější verzi.</span><span class="sxs-lookup"><span data-stu-id="955c5-227">Otherwise, local tools won't work on any newer release.</span></span> <span data-ttu-id="955c5-228">Tato složka je umístěna v umístění:</span><span class="sxs-lookup"><span data-stu-id="955c5-228">This folder is located at:</span></span>
+>
+> <span data-ttu-id="955c5-229">Na macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`</span><span class="sxs-lookup"><span data-stu-id="955c5-229">On macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`</span></span>
+>
+> <span data-ttu-id="955c5-230">Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`</span><span class="sxs-lookup"><span data-stu-id="955c5-230">On Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`</span></span>
+
+<span data-ttu-id="955c5-231">Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="955c5-231">Local tools rely on a manifest file name `dotnet-tools.json` in your current directory.</span></span> <span data-ttu-id="955c5-232">Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže.</span><span class="sxs-lookup"><span data-stu-id="955c5-232">This manifest file defines the tools to be available at that folder and below.</span></span> <span data-ttu-id="955c5-233">Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.</span><span class="sxs-lookup"><span data-stu-id="955c5-233">You can distribute the manifest file with your code to ensure that anyone who works with your code can restore and use the same tools.</span></span>
+
+<span data-ttu-id="955c5-234">U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="955c5-234">For both global and local tools, a compatible version of the runtime is required.</span></span> <span data-ttu-id="955c5-235">Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2,1.</span><span class="sxs-lookup"><span data-stu-id="955c5-235">Many tools currently on NuGet.org target .NET Core Runtime 2.1.</span></span> <span data-ttu-id="955c5-236">Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).</span><span class="sxs-lookup"><span data-stu-id="955c5-236">To install these tools globally or locally, you would still need to install the [NET Core 2.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/2.1).</span></span>
+
+### <a name="smaller-garbage-collection-heap-sizes"></a><span data-ttu-id="955c5-237">Menší velikosti haldy uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="955c5-237">Smaller Garbage Collection heap sizes</span></span>
+
+<span data-ttu-id="955c5-238">Výchozí velikost haldy systému uvolňování paměti byla snížena z výsledku rozhraní .NET Core s menším množstvím paměti.</span><span class="sxs-lookup"><span data-stu-id="955c5-238">The Garbage Collector's default heap size has been reduced resulting in .NET Core using less memory.</span></span> <span data-ttu-id="955c5-239">Tato změna se lépe zarovnává s rozpočtem přidělení 0. generace s moderními velikostmi mezipaměti procesoru.</span><span class="sxs-lookup"><span data-stu-id="955c5-239">This change better aligns with the generation 0 allocation budget with modern processor cache sizes.</span></span>
+
+### <a name="garbage-collection-large-page-support"></a><span data-ttu-id="955c5-240">Podpora velkokapacitních stránek uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="955c5-240">Garbage Collection Large Page support</span></span>
+
+<span data-ttu-id="955c5-241">Velké stránky (označované také jako velké stránky na platformě Linux) jsou funkce, ve které může operační systém vytvořit oblasti paměti větší než velikost nativní stránky (často 4K), aby se zlepšil výkon aplikace požadující tyto velké stránky.</span><span class="sxs-lookup"><span data-stu-id="955c5-241">Large Pages (also known as Huge Pages on Linux) is a feature where the operating system is able to establish memory regions larger than the native page size (often 4K) to improve performance of the application requesting these large pages.</span></span>
+
+<span data-ttu-id="955c5-242">Systém uvolňování paměti se teď dá nakonfigurovat s nastavením **GCLargePages** jako funkce výslovného souhlasu, která se rozhodne přidělit velké stránky ve Windows.</span><span class="sxs-lookup"><span data-stu-id="955c5-242">The Garbage Collector can now be configured with the **GCLargePages** setting as an opt-in feature to choose to allocate large pages on Windows.</span></span>
+
+## <a name="windows-desktop--com"></a><span data-ttu-id="955c5-243">Windows Desktop & COM</span><span class="sxs-lookup"><span data-stu-id="955c5-243">Windows Desktop & COM</span></span>
+
+### <a name="net-core-sdk-windows-installer"></a><span data-ttu-id="955c5-244">.NET Core SDK Instalační služba systému Windows</span><span class="sxs-lookup"><span data-stu-id="955c5-244">.NET Core SDK Windows Installer</span></span>
+
+<span data-ttu-id="955c5-245">Instalační program MSI pro Windows se od verze .NET Core 3,0 změnil.</span><span class="sxs-lookup"><span data-stu-id="955c5-245">The MSI installer for Windows has changed starting with .NET Core 3.0.</span></span> <span data-ttu-id="955c5-246">Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě.</span><span class="sxs-lookup"><span data-stu-id="955c5-246">The SDK installers will now upgrade SDK feature-band releases in place.</span></span> <span data-ttu-id="955c5-247">Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze.</span><span class="sxs-lookup"><span data-stu-id="955c5-247">Feature bands are defined in the *hundreds* groups in the *patch* section of the version number.</span></span> <span data-ttu-id="955c5-248">Například **3,0. _101_**  a **3,0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3,0. _101_**  a **3,0. _199_**  jsou ve stejném pásmu funkcí.</span><span class="sxs-lookup"><span data-stu-id="955c5-248">For example, **3.0._101_** and **3.0._201_** are versions in two different feature bands while **3.0._101_** and **3.0._199_** are in the same feature band.</span></span> <span data-ttu-id="955c5-249">A při .NET Core SDK **3,0. _101_**  je nainstalováno, .NET Core SDK **3,0. _100_**  se odebere z počítače, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="955c5-249">And, when .NET Core SDK **3.0._101_** is installed, .NET Core SDK **3.0._100_** will be removed from the machine if it exists.</span></span> <span data-ttu-id="955c5-250">Při .NET Core SDK **3,0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3,0. _101_**  nebude odebráno.</span><span class="sxs-lookup"><span data-stu-id="955c5-250">When .NET Core SDK **3.0._200_** is installed on the same machine, .NET Core SDK **3.0._101_** won't be removed.</span></span>
+
+<span data-ttu-id="955c5-251">Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho, [jak je verze .NET Core](../versions/index.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-251">For more information about versioning, see [Overview of how .NET Core is versioned](../versions/index.md).</span></span>
+
+### <a name="windows-desktop"></a><span data-ttu-id="955c5-252">Plocha Windows</span><span class="sxs-lookup"><span data-stu-id="955c5-252">Windows desktop</span></span>
+
+<span data-ttu-id="955c5-253">.NET Core 3,0 podporuje desktopové aplikace Windows pomocí Windows Presentation Foundation (WPF) a model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="955c5-253">.NET Core 3.0 supports Windows desktop applications using Windows Presentation Foundation (WPF) and Windows Forms.</span></span> <span data-ttu-id="955c5-254">Tyto architektury také podporují použití moderních ovládacích prvků a Fluent stylování z knihovny XAML uživatelského rozhraní systému Windows (WinUI) přes [ostrovy XAML](/windows/uwp/xaml-platform/xaml-host-controls).</span><span class="sxs-lookup"><span data-stu-id="955c5-254">These frameworks also support using modern controls and Fluent styling from the Windows UI XAML Library (WinUI) via [XAML islands](/windows/uwp/xaml-platform/xaml-host-controls).</span></span>
+
+<span data-ttu-id="955c5-255">Součást Desktop systému Windows je součástí sady Windows .NET Core 3,0 SDK.</span><span class="sxs-lookup"><span data-stu-id="955c5-255">The Windows Desktop component is part of the Windows .NET Core 3.0 SDK.</span></span>
+
+<span data-ttu-id="955c5-256">Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících příkazů `dotnet`:</span><span class="sxs-lookup"><span data-stu-id="955c5-256">You can create a new WPF or Windows Forms app with the following `dotnet` commands:</span></span>
+
+```dotnetcli
+dotnet new wpf
+dotnet new winforms
+```
+
+<span data-ttu-id="955c5-257">Visual Studio 2019 přidává **nové šablony projektů** pro .net Core 3,0 model Windows Forms a WPF.</span><span class="sxs-lookup"><span data-stu-id="955c5-257">Visual Studio 2019 adds **New Project** templates for .NET Core 3.0 Windows Forms and WPF.</span></span>
+
+<span data-ttu-id="955c5-258">Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../porting/wpf.md) and [port model Windows Forms Projects](../porting/winforms.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-258">For more information about how to port an existing .NET Framework application, see [Port WPF projects](../porting/wpf.md) and [Port Windows Forms projects](../porting/winforms.md).</span></span>
+
+#### <a name="winforms-high-dpi"></a><span data-ttu-id="955c5-259">Vysoké rozlišení DPI pro WinForms</span><span class="sxs-lookup"><span data-stu-id="955c5-259">WinForms high DPI</span></span>
+
+<span data-ttu-id="955c5-260">Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým rozlišením DPI pomocí <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="955c5-260">.NET Core Windows Forms applications can set high DPI mode with <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>.</span></span> <span data-ttu-id="955c5-261">Metoda `SetHighDpiMode` nastaví odpovídající režim vysoké úrovně DPI, pokud nastavení nebylo nastaveno jiným způsobem jako `App.Manifest` nebo P/Invoke před `Application.Run`.</span><span class="sxs-lookup"><span data-stu-id="955c5-261">The `SetHighDpiMode` method sets the corresponding high DPI mode unless the setting has been set by other means like `App.Manifest` or P/Invoke before `Application.Run`.</span></span>
+
+<span data-ttu-id="955c5-262">Možné hodnoty `highDpiMode` vyjádřené výčtem <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> jsou:</span><span class="sxs-lookup"><span data-stu-id="955c5-262">The possible `highDpiMode` values, as expressed by the <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> enum are:</span></span>
+
+- `DpiUnaware`
+- `SystemAware`
+- `PerMonitor`
+- `PerMonitorV2`
+- `DpiUnawareGdiScaled`
+
+<span data-ttu-id="955c5-263">Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).</span><span class="sxs-lookup"><span data-stu-id="955c5-263">For more information about high DPI modes, see [High DPI Desktop Application Development on Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).</span></span>
+
+### <a name="create-com-components"></a><span data-ttu-id="955c5-264">Vytvořit komponenty COM</span><span class="sxs-lookup"><span data-stu-id="955c5-264">Create COM components</span></span>
+
+<span data-ttu-id="955c5-265">Ve Windows teď můžete vytvářet spravované komponenty, které lze volat v modelu COM.</span><span class="sxs-lookup"><span data-stu-id="955c5-265">On Windows, you can now create COM-callable managed components.</span></span> <span data-ttu-id="955c5-266">Tato možnost je zásadní pro použití .NET Core s modely doplňku COM a také k zajištění parity s .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="955c5-266">This capability is critical to use .NET Core with COM add-in models and also to provide parity with .NET Framework.</span></span>
+
+<span data-ttu-id="955c5-267">Na rozdíl od .NET Framework, kde se *Knihovna Mscoree. dll* použila jako server com, .NET Core při sestavování komponenty com přidá nativní spouštěcí knihovnu DLL do adresáře *bin* .</span><span class="sxs-lookup"><span data-stu-id="955c5-267">Unlike .NET Framework where the *mscoree.dll* was used as the COM server, .NET Core will add a native launcher dll to the *bin* directory when you build your COM component.</span></span>
+
+<span data-ttu-id="955c5-268">Příklad vytvoření komponenty modelu COM a její využití naleznete v [ukázce modelu COM](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo).</span><span class="sxs-lookup"><span data-stu-id="955c5-268">For an example of how to create a COM component and consume it, see the [COM Demo](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo).</span></span>
+
+### <a name="windows-native-interop"></a><span data-ttu-id="955c5-269">Nativní spolupráce Windows</span><span class="sxs-lookup"><span data-stu-id="955c5-269">Windows Native Interop</span></span>
+
+<span data-ttu-id="955c5-270">Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT.</span><span class="sxs-lookup"><span data-stu-id="955c5-270">Windows offers a rich native API in the form of flat C APIs, COM, and WinRT.</span></span> <span data-ttu-id="955c5-271">I když .NET Core podporuje **volání nespravovaného voláním**.net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**.</span><span class="sxs-lookup"><span data-stu-id="955c5-271">While .NET Core supports **P/Invoke**, .NET Core 3.0 adds the ability to **CoCreate COM APIs** and **Activate WinRT APIs**.</span></span> <span data-ttu-id="955c5-272">Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).</span><span class="sxs-lookup"><span data-stu-id="955c5-272">For a code example, see the [Excel Demo](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).</span></span>
+
+### <a name="msix-deployment"></a><span data-ttu-id="955c5-273">Nasazení MSIX</span><span class="sxs-lookup"><span data-stu-id="955c5-273">MSIX Deployment</span></span>
+
+<span data-ttu-id="955c5-274">[MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace systému Windows.</span><span class="sxs-lookup"><span data-stu-id="955c5-274">[MSIX](https://docs.microsoft.com/windows/msix/) is a new Windows application package format.</span></span> <span data-ttu-id="955c5-275">Dá se použít k nasazení desktopových aplikací .NET Core 3,0 do Windows 10.</span><span class="sxs-lookup"><span data-stu-id="955c5-275">It can be used to deploy .NET Core 3.0 desktop applications to Windows 10.</span></span>
+
+<span data-ttu-id="955c5-276">[Projekt pro balení aplikace pro systém Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), který je k dispozici v aplikaci Visual Studio 2019, umožňuje vytvářet balíčky MSIX pomocí aplikací .NET Core s využitím [vlastních součástí](../deploying/index.md#self-contained-deployments-scd) .</span><span class="sxs-lookup"><span data-stu-id="955c5-276">The [Windows Application Packaging Project](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), available in Visual Studio 2019, allows you to create MSIX packages with [self-contained](../deploying/index.md#self-contained-deployments-scd) .NET Core applications.</span></span>
+
+<span data-ttu-id="955c5-277">Soubor projektu .NET Core musí určovat podporované moduly runtime ve vlastnosti `<RuntimeIdentifiers>`:</span><span class="sxs-lookup"><span data-stu-id="955c5-277">The .NET Core project file must specify the supported runtimes in the `<RuntimeIdentifiers>` property:</span></span>
+
+```xml
+<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+```
+
+## <a name="linux-improvements"></a><span data-ttu-id="955c5-278">Vylepšení systému Linux</span><span class="sxs-lookup"><span data-stu-id="955c5-278">Linux improvements</span></span>
+
+### <a name="serialport-for-linux"></a><span data-ttu-id="955c5-279">Portu SerialPort pro Linux</span><span class="sxs-lookup"><span data-stu-id="955c5-279">SerialPort for Linux</span></span>
+
+<span data-ttu-id="955c5-280">.NET Core 3,0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> v systému Linux.</span><span class="sxs-lookup"><span data-stu-id="955c5-280">.NET Core 3.0 provides basic support for <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> on Linux.</span></span>
+
+<span data-ttu-id="955c5-281">Dřív se .NET Core podporuje jenom pomocí `SerialPort` ve Windows.</span><span class="sxs-lookup"><span data-stu-id="955c5-281">Previously, .NET Core only supported using `SerialPort` on Windows.</span></span>
+
+<span data-ttu-id="955c5-282">Další informace o omezené podpoře sériového portu v systému Linux najdete v tématu [#33146 problému GitHubu](https://github.com/dotnet/corefx/issues/33146).</span><span class="sxs-lookup"><span data-stu-id="955c5-282">For more information about the limited support for the serial port on Linux, see [GitHub issue #33146](https://github.com/dotnet/corefx/issues/33146).</span></span>
+
+### <a name="docker-and-cgroup-memory-limits"></a><span data-ttu-id="955c5-283">Omezení paměti Docker a CGROUP</span><span class="sxs-lookup"><span data-stu-id="955c5-283">Docker and cgroup memory Limits</span></span>
+
+<span data-ttu-id="955c5-284">Provoz .NET Core 3,0 na platformě Linux s Docker funguje lépe s omezeními CGROUP paměti.</span><span class="sxs-lookup"><span data-stu-id="955c5-284">Running .NET Core 3.0 on Linux with Docker works better with cgroup memory limits.</span></span> <span data-ttu-id="955c5-285">Spuštění kontejneru Docker s omezeními paměti, jako je například s `docker run -m`, mění způsob, jakým se aplikace .NET Core chová.</span><span class="sxs-lookup"><span data-stu-id="955c5-285">Running a Docker container with memory limits, such as with `docker run -m`, changes how .NET Core behaves.</span></span>
+
+- <span data-ttu-id="955c5-286">Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.</span><span class="sxs-lookup"><span data-stu-id="955c5-286">Default Garbage Collector (GC) heap size: maximum of 20 mb or 75% of the memory limit on the container.</span></span>
+- <span data-ttu-id="955c5-287">Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.</span><span class="sxs-lookup"><span data-stu-id="955c5-287">Explicit size can be set as an absolute number or percentage of cgroup limit.</span></span>
+- <span data-ttu-id="955c5-288">Minimální velikost rezervovaného segmentu na haldě GC je 16 MB.</span><span class="sxs-lookup"><span data-stu-id="955c5-288">Minimum reserved segment size per GC heap is 16 mb.</span></span> <span data-ttu-id="955c5-289">Tato velikost snižuje počet hald, které jsou vytvořeny na počítačích.</span><span class="sxs-lookup"><span data-stu-id="955c5-289">This size reduces the number of heaps that are created on machines.</span></span>
+
+### <a name="gpio-support-for-raspberry-pi"></a><span data-ttu-id="955c5-290">Podpora GPIO pro maliny PI</span><span class="sxs-lookup"><span data-stu-id="955c5-290">GPIO Support for Raspberry Pi</span></span>
+
+<span data-ttu-id="955c5-291">Do NuGet byly vydány dva balíčky, které můžete použít pro GPIO programování:</span><span class="sxs-lookup"><span data-stu-id="955c5-291">Two packages have been released to NuGet that you can use for GPIO programming:</span></span>
+
+- [<span data-ttu-id="955c5-292">System. Device. GPIO</span><span class="sxs-lookup"><span data-stu-id="955c5-292">System.Device.Gpio</span></span>](https://www.nuget.org/packages/System.Device.Gpio)
+- [<span data-ttu-id="955c5-293">IoT. Device. Bindings</span><span class="sxs-lookup"><span data-stu-id="955c5-293">Iot.Device.Bindings</span></span>](https://www.nuget.org/packages/Iot.Device.Bindings)
+
+<span data-ttu-id="955c5-294">Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PWM* .</span><span class="sxs-lookup"><span data-stu-id="955c5-294">The GPIO packages include APIs for *GPIO*, *SPI*, *I2C*, and *PWM* devices.</span></span> <span data-ttu-id="955c5-295">Balíček vazeb IoT zahrnuje vazby zařízení.</span><span class="sxs-lookup"><span data-stu-id="955c5-295">The IoT bindings package includes device bindings.</span></span> <span data-ttu-id="955c5-296">Další informace najdete v [úložišti GitHubu zařízení](https://github.com/dotnet/iot/blob/master/src/devices/).</span><span class="sxs-lookup"><span data-stu-id="955c5-296">For more information, see the [devices GitHub repo](https://github.com/dotnet/iot/blob/master/src/devices/).</span></span>
+
+### <a name="arm64-linux-support"></a><span data-ttu-id="955c5-297">Podpora ARM64 Linux</span><span class="sxs-lookup"><span data-stu-id="955c5-297">ARM64 Linux support</span></span>
+
+<span data-ttu-id="955c5-298">.NET Core 3,0 přidává podporu pro ARM64 pro Linux.</span><span class="sxs-lookup"><span data-stu-id="955c5-298">.NET Core 3.0 adds support for ARM64 for Linux.</span></span> <span data-ttu-id="955c5-299">Primární případ použití pro ARM64 je aktuálně ve scénářích IoT.</span><span class="sxs-lookup"><span data-stu-id="955c5-299">The primary use case for ARM64 is currently with IoT scenarios.</span></span> <span data-ttu-id="955c5-300">Další informace najdete v tématu [stav .NET Core ARM64](https://github.com/dotnet/announcements/issues/82).</span><span class="sxs-lookup"><span data-stu-id="955c5-300">For more information, see [.NET Core ARM64 Status](https://github.com/dotnet/announcements/issues/82).</span></span>
+
+<span data-ttu-id="955c5-301">[Image Docker pro .NET Core na ARM64](https://hub.docker.com/r/microsoft/dotnet/) jsou k dispozici pro Alpine, Debian a Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="955c5-301">[Docker images for .NET Core on ARM64](https://hub.docker.com/r/microsoft/dotnet/) are available for Alpine, Debian, and Ubuntu.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="955c5-302">**ARM64** Podpora Windows není ještě dostupná.</span><span class="sxs-lookup"><span data-stu-id="955c5-302">**ARM64** Windows support isn't yet available.</span></span>
+
+## <a name="security"></a><span data-ttu-id="955c5-303">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="955c5-303">Security</span></span>
+
+### <a name="tls-13--openssl-111-on-linux"></a><span data-ttu-id="955c5-304">TLS 1,3 & OpenSSL 1.1.1 v systému Linux</span><span class="sxs-lookup"><span data-stu-id="955c5-304">TLS 1.3 & OpenSSL 1.1.1 on Linux</span></span>
+
+<span data-ttu-id="955c5-305">.NET Core teď využívá [podporu TLS 1,3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí.</span><span class="sxs-lookup"><span data-stu-id="955c5-305">.NET Core now takes advantage of [TLS 1.3 support in OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), when it's available in a given environment.</span></span> <span data-ttu-id="955c5-306">S protokolem TLS 1,3:</span><span class="sxs-lookup"><span data-stu-id="955c5-306">With TLS 1.3:</span></span>
+
+- <span data-ttu-id="955c5-307">Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="955c5-307">Connection times are improved with reduced round trips required between the client and server.</span></span>
+- <span data-ttu-id="955c5-308">Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.</span><span class="sxs-lookup"><span data-stu-id="955c5-308">Improved security because of the removal of various obsolete and insecure cryptographic algorithms.</span></span>
+
+<span data-ttu-id="955c5-309">V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux.</span><span class="sxs-lookup"><span data-stu-id="955c5-309">When available, .NET Core 3.0 uses **OpenSSL 1.1.1**, **OpenSSL 1.1.0**, or **OpenSSL 1.0.2** on a Linux system.</span></span> <span data-ttu-id="955c5-310">Když je k dispozici **OpenSSL 1.1.1** , budou používat <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> **TLS 1,3** (za předpokladu <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, že klient i server podporují protokol **TLS 1,3**).</span><span class="sxs-lookup"><span data-stu-id="955c5-310">When **OpenSSL 1.1.1** is available, both <xref:System.Net.Security.SslStream?displayProperty=nameWithType> and <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> types will use **TLS 1.3** (assuming both the client and server support **TLS 1.3**).</span></span>
+
+>[!IMPORTANT]
+><span data-ttu-id="955c5-311">Windows a macOS ještě nepodporují **TLS 1,3**.</span><span class="sxs-lookup"><span data-stu-id="955c5-311">Windows and macOS do not yet support **TLS 1.3**.</span></span> <span data-ttu-id="955c5-312">Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="955c5-312">.NET Core 3.0 will support **TLS 1.3** on these operating systems when support becomes available.</span></span>
+
+<span data-ttu-id="955c5-313">Následující C# příklad 8,0 ukazuje rozhraní .net Core 3,0 na Ubuntu 18,10 připojení k <https://www.cloudflare.com>:</span><span class="sxs-lookup"><span data-stu-id="955c5-313">The following C# 8.0 example demonstrates .NET Core 3.0 on Ubuntu 18.10 connecting to <https://www.cloudflare.com>:</span></span>
+
+[!CODE-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+
+### <a name="cryptography-ciphers"></a><span data-ttu-id="955c5-314">Kryptografická šifry</span><span class="sxs-lookup"><span data-stu-id="955c5-314">Cryptography ciphers</span></span>
+
+<span data-ttu-id="955c5-315">Rozhraní .NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** implementovaná pomocí <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> a <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="955c5-315">.NET 3.0 adds support for **AES-GCM** and **AES-CCM** ciphers, implemented with <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> and <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> respectively.</span></span> <span data-ttu-id="955c5-316">Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).</span><span class="sxs-lookup"><span data-stu-id="955c5-316">These algorithms are both [Authenticated Encryption with Association Data (AEAD) algorithms](https://en.wikipedia.org/wiki/Authenticated_encryption).</span></span>
+
+<span data-ttu-id="955c5-317">Následující kód ukazuje použití šifry `AesGcm` k šifrování a dešifrování náhodných dat.</span><span class="sxs-lookup"><span data-stu-id="955c5-317">The following code demonstrates using `AesGcm` cipher to encrypt and decrypt random data.</span></span>
+
+[!CODE-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+
+### <a name="cryptographic-key-importexport"></a><span data-ttu-id="955c5-318">Import/export kryptografického klíče</span><span class="sxs-lookup"><span data-stu-id="955c5-318">Cryptographic Key Import/Export</span></span>
+
+<span data-ttu-id="955c5-319">.NET Core 3,0 podporuje import a export asymetrických veřejných a privátních klíčů ze standardních formátů.</span><span class="sxs-lookup"><span data-stu-id="955c5-319">.NET Core 3.0 supports the import and export of asymmetric public and private keys from standard formats.</span></span> <span data-ttu-id="955c5-320">Nemusíte používat certifikát X. 509.</span><span class="sxs-lookup"><span data-stu-id="955c5-320">You don't need to use an X.509 certificate.</span></span>
+
+<span data-ttu-id="955c5-321">Všechny typy klíčů, jako jsou *RSA*, *DSA*, *ECDSA*a *ECDiffieHellman*, podporují následující formáty:</span><span class="sxs-lookup"><span data-stu-id="955c5-321">All key types, such as *RSA*, *DSA*, *ECDsa*, and *ECDiffieHellman*, support the following formats:</span></span>
+
+- <span data-ttu-id="955c5-322">**Veřejný klíč**</span><span class="sxs-lookup"><span data-stu-id="955c5-322">**Public Key**</span></span>
+  - <span data-ttu-id="955c5-323">X. 509 SubjectPublicKeyInfo</span><span class="sxs-lookup"><span data-stu-id="955c5-323">X.509 SubjectPublicKeyInfo</span></span>
+
+- <span data-ttu-id="955c5-324">**Privátní klíč**</span><span class="sxs-lookup"><span data-stu-id="955c5-324">**Private key**</span></span>
+  - <span data-ttu-id="955c5-325">PrivateKeyInfo PKCS # 8</span><span class="sxs-lookup"><span data-stu-id="955c5-325">PKCS#8 PrivateKeyInfo</span></span>
+  - <span data-ttu-id="955c5-326">EncryptedPrivateKeyInfo PKCS # 8</span><span class="sxs-lookup"><span data-stu-id="955c5-326">PKCS#8 EncryptedPrivateKeyInfo</span></span>
+
+<span data-ttu-id="955c5-327">Klíče RSA podporují i:</span><span class="sxs-lookup"><span data-stu-id="955c5-327">RSA keys also support:</span></span>
+
+- <span data-ttu-id="955c5-328">**Veřejný klíč**</span><span class="sxs-lookup"><span data-stu-id="955c5-328">**Public Key**</span></span>
+  - <span data-ttu-id="955c5-329">RSAPublicKey PKCS # 1</span><span class="sxs-lookup"><span data-stu-id="955c5-329">PKCS#1 RSAPublicKey</span></span>
+
+- <span data-ttu-id="955c5-330">**Privátní klíč**</span><span class="sxs-lookup"><span data-stu-id="955c5-330">**Private key**</span></span>
+  - <span data-ttu-id="955c5-331">RSAPrivateKey PKCS # 1</span><span class="sxs-lookup"><span data-stu-id="955c5-331">PKCS#1 RSAPrivateKey</span></span>
+
+<span data-ttu-id="955c5-332">Metody exportu vytváří binární data kódovaná v kódování DER a metody importu očekávají stejné.</span><span class="sxs-lookup"><span data-stu-id="955c5-332">The export methods produce DER-encoded binary data, and the import methods expect the same.</span></span> <span data-ttu-id="955c5-333">Pokud je klíč uložený v textovém formátu PEM, volající bude muset před voláním metody import kódování Base64 a dekódovat obsah.</span><span class="sxs-lookup"><span data-stu-id="955c5-333">If a key is stored in the text-friendly PEM format, the caller will need to base64-decode the content before calling an import method.</span></span>
+
+[!CODE-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+
+<span data-ttu-id="955c5-334">Soubory **PKCS # 8** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> a souborů **PFX/PKCS # 12** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="955c5-334">**PKCS#8** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> and **PFX/PKCS#12** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>.</span></span> <span data-ttu-id="955c5-335">Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="955c5-335">**PFX/PKCS#12** files can be manipulated with <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.</span></span>
+
+## <a name="net-core-30-api-changes"></a><span data-ttu-id="955c5-336">Změny rozhraní API .NET Core 3,0</span><span class="sxs-lookup"><span data-stu-id="955c5-336">.NET Core 3.0 API changes</span></span>
+
+### <a name="ranges-and-indices"></a><span data-ttu-id="955c5-337">Rozsahy a indexy</span><span class="sxs-lookup"><span data-stu-id="955c5-337">Ranges and indices</span></span>
+
+<span data-ttu-id="955c5-338">Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování.</span><span class="sxs-lookup"><span data-stu-id="955c5-338">The new <xref:System.Index?displayProperty=nameWithType> type can be used for indexing.</span></span> <span data-ttu-id="955c5-339">Můžete vytvořit jednu z `int`, která se počítá od začátku, nebo s předponou `^` operátor (C#), která se počítá od konce:</span><span class="sxs-lookup"><span data-stu-id="955c5-339">You can create one from an `int` that counts from the beginning, or with a prefix `^` operator (C#) that counts from the end:</span></span>
+
+```csharp
+Index i1 = 3;  // number 3 from beginning
+Index i2 = ^4; // number 4 from end
+int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+Console.WriteLine($"{a[i1]}, {a[i2]}"); // "3, 6"
+```
+
+<span data-ttu-id="955c5-340">K dispozici je také typ <xref:System.Range?displayProperty=nameWithType>, který se skládá ze dvou hodnot `Index`, jeden pro začátek a druhý pro konec a je možné ho zapsat pomocí výrazu rozsahu `x..y` (C#).</span><span class="sxs-lookup"><span data-stu-id="955c5-340">There's also the <xref:System.Range?displayProperty=nameWithType> type, which consists of two `Index` values, one for the start and one for the end, and can be written with a `x..y` range expression (C#).</span></span> <span data-ttu-id="955c5-341">Potom můžete indexovat pomocí `Range`, což vytvoří řez:</span><span class="sxs-lookup"><span data-stu-id="955c5-341">You can then index with a `Range`, which produces a slice:</span></span>
+
+```csharp
+var slice = a[i1..i2]; // { 3, 4, 5 }
+```
+
+<span data-ttu-id="955c5-342">Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/ranges-indexes.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-342">For more information, see the [ranges and indices tutorial](../../csharp/tutorials/ranges-indexes.md).</span></span>
+
+### <a name="async-streams"></a><span data-ttu-id="955c5-343">Asynchronní streamy</span><span class="sxs-lookup"><span data-stu-id="955c5-343">Async streams</span></span>
+
+<span data-ttu-id="955c5-344"><xref:System.Collections.Generic.IAsyncEnumerable%601> typ je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>.</span><span class="sxs-lookup"><span data-stu-id="955c5-344">The <xref:System.Collections.Generic.IAsyncEnumerable%601> type is a new asynchronous version of <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="955c5-345">Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.</span><span class="sxs-lookup"><span data-stu-id="955c5-345">The language lets you `await foreach` over `IAsyncEnumerable<T>` to consume their elements, and use `yield return` to them to produce elements.</span></span>
+
+<span data-ttu-id="955c5-346">Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů.</span><span class="sxs-lookup"><span data-stu-id="955c5-346">The following example demonstrates both production and consumption of async streams.</span></span> <span data-ttu-id="955c5-347">Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající.</span><span class="sxs-lookup"><span data-stu-id="955c5-347">The `foreach` statement is async and itself uses `yield return` to produce an async stream for callers.</span></span> <span data-ttu-id="955c5-348">Tento vzor (pomocí `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.</span><span class="sxs-lookup"><span data-stu-id="955c5-348">This pattern (using `yield return`) is the recommended model for producing async streams.</span></span>
+
+```csharp
+async IAsyncEnumerable<int> GetBigResultsAsync()
+{
+    await foreach (var result in GetResultsAsync())
+    {
+        if (result > 20) yield return result;
+    }
+}
+```
+
+<span data-ttu-id="955c5-349">Kromě možnosti `await foreach` můžete také vytvořit asynchronní iterátory, například iterátor, který vrátí `IAsyncEnumerable/IAsyncEnumerator`, který můžete `await` a `yield` v.</span><span class="sxs-lookup"><span data-stu-id="955c5-349">In addition to being able to `await foreach`, you can also create async iterators, for example, an iterator that returns an `IAsyncEnumerable/IAsyncEnumerator` that you can both `await` and `yield` in.</span></span> <span data-ttu-id="955c5-350">Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které implementují různé typy BCL, například `Stream` a `Timer`.</span><span class="sxs-lookup"><span data-stu-id="955c5-350">For objects that need to be disposed, you can use `IAsyncDisposable`, which various BCL types implement, such as `Stream` and `Timer`.</span></span>
+
+<span data-ttu-id="955c5-351">Další informace najdete v [kurzu asynchronní streamy](../../csharp/tutorials/generate-consume-asynchronous-stream.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-351">For more information, see the [async streams tutorial](../../csharp/tutorials/generate-consume-asynchronous-stream.md).</span></span>
+
+### <a name="ieee-floating-point"></a><span data-ttu-id="955c5-352">IEEE s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="955c5-352">IEEE Floating-point</span></span>
+
+<span data-ttu-id="955c5-353">Rozhraní API s plovoucí desetinnou čárkou se aktualizují tak, aby odpovídalo [revizi IEEE 754-2008](https://en.wikipedia.org/wiki/IEEE_754-2008_revision).</span><span class="sxs-lookup"><span data-stu-id="955c5-353">Floating point APIs are being updated to comply with [IEEE 754-2008 revision](https://en.wikipedia.org/wiki/IEEE_754-2008_revision).</span></span> <span data-ttu-id="955c5-354">Cílem těchto změn je vystavit všechny **požadované** operace a zajistit, aby byly vyhovující požadavkům standardu IEEE. Další informace o vylepšeních s plovoucí desetinnou čárkou naleznete v příspěvku na blogu [.NET Core 3,0 v oblasti analýzy a formátování plovoucí desetinné](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) čárky.</span><span class="sxs-lookup"><span data-stu-id="955c5-354">The goal of these changes is to expose all **required** operations and ensure that they're behaviorally compliant with the IEEE spec. For more information about floating-point improvements, see the [Floating-Point Parsing and Formatting improvements in .NET Core 3.0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) blog post.</span></span>
+
+<span data-ttu-id="955c5-355">Mezi aktualizace pro analýzu a formátování patří:</span><span class="sxs-lookup"><span data-stu-id="955c5-355">Parsing and formatting fixes include:</span></span>
+
+- <span data-ttu-id="955c5-356">Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.</span><span class="sxs-lookup"><span data-stu-id="955c5-356">Correctly parse and round inputs of any length.</span></span>
+- <span data-ttu-id="955c5-357">Správně Analyzujte a formátujete záporné hodnoty nula.</span><span class="sxs-lookup"><span data-stu-id="955c5-357">Correctly parse and format negative zero.</span></span>
+- <span data-ttu-id="955c5-358">Správně Analyzujte `Infinity` a `NaN`, a to provedením kontroly bez rozlišování velkých a malých písmen a povolením volitelného předchozího `+`, pokud je to možné.</span><span class="sxs-lookup"><span data-stu-id="955c5-358">Correctly parse `Infinity` and `NaN` by doing a case-insensitive check and allowing an optional preceding `+` where applicable.</span></span>
+
+<span data-ttu-id="955c5-359">Nová rozhraní API <xref:System.Math?displayProperty=nameWithType> zahrnují:</span><span class="sxs-lookup"><span data-stu-id="955c5-359">New <xref:System.Math?displayProperty=nameWithType> APIs include:</span></span>
+
+- <span data-ttu-id="955c5-360"><xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> </span><span class="sxs-lookup"><span data-stu-id="955c5-360"><xref:System.Math.BitIncrement(System.Double)> and <xref:System.Math.BitDecrement(System.Double)></span></span>\
+<span data-ttu-id="955c5-361">Odpovídá operacím IEEE `nextUp` a `nextDown`.</span><span class="sxs-lookup"><span data-stu-id="955c5-361">Corresponds to the `nextUp` and `nextDown` IEEE operations.</span></span> <span data-ttu-id="955c5-362">Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí).</span><span class="sxs-lookup"><span data-stu-id="955c5-362">They return the smallest floating-point number that compares greater or lesser than the input (respectively).</span></span> <span data-ttu-id="955c5-363">Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.</span><span class="sxs-lookup"><span data-stu-id="955c5-363">For example, `Math.BitIncrement(0.0)` would return `double.Epsilon`.</span></span>
+
+- <span data-ttu-id="955c5-364"><xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> </span><span class="sxs-lookup"><span data-stu-id="955c5-364"><xref:System.Math.MaxMagnitude(System.Double,System.Double)> and <xref:System.Math.MinMagnitude(System.Double,System.Double)></span></span>\
+<span data-ttu-id="955c5-365">Odpovídá operacím IEEE `maxNumMag` a `minNumMag`, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí).</span><span class="sxs-lookup"><span data-stu-id="955c5-365">Corresponds to the `maxNumMag` and `minNumMag` IEEE operations, they return the value that is greater or lesser in magnitude of the two inputs (respectively).</span></span> <span data-ttu-id="955c5-366">Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.</span><span class="sxs-lookup"><span data-stu-id="955c5-366">For example, `Math.MaxMagnitude(2.0, -3.0)` would return `-3.0`.</span></span>
+
+- <xref:System.Math.ILogB(System.Double)>\
+<span data-ttu-id="955c5-367">Odpovídá vstupně-výstupní operaci `logB`, která vrací celočíselnou hodnotu, vrátí celočíselný protokol dekadický-2 vstupního parametru.</span><span class="sxs-lookup"><span data-stu-id="955c5-367">Corresponds to the `logB` IEEE operation that returns an integral value, it returns the integral base-2 log of the input parameter.</span></span> <span data-ttu-id="955c5-368">Tato metoda je efektivně stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="955c5-368">This method is effectively the same as `floor(log2(x))`, but done with minimal rounding error.</span></span>
+
+- <xref:System.Math.ScaleB(System.Double,System.Int32)>\
+<span data-ttu-id="955c5-369">Odpovídá operaci `scaleB` IEEE, která přebírá celočíselnou hodnotu, vrátí efektivně `x * pow(2, n)`, ale provede s minimální chybou zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="955c5-369">Corresponds to the `scaleB` IEEE operation that takes an integral value, it returns effectively `x * pow(2, n)`, but is done with minimal rounding error.</span></span>
+
+- <xref:System.Math.Log2(System.Double)>\
+<span data-ttu-id="955c5-370">Odpovídá logaritmus `log2` IEEE, vrátí logaritmus o základu 2.</span><span class="sxs-lookup"><span data-stu-id="955c5-370">Corresponds to the `log2` IEEE operation, it returns the base-2 logarithm.</span></span> <span data-ttu-id="955c5-371">Minimalizuje chybu zaokrouhlování.</span><span class="sxs-lookup"><span data-stu-id="955c5-371">It minimizes rounding error.</span></span>
+
+- <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
+<span data-ttu-id="955c5-372">Odpovídá `fma` IEEE operace, provádí přidaný násobek.</span><span class="sxs-lookup"><span data-stu-id="955c5-372">Corresponds to the `fma` IEEE operation, it performs a fused multiply add.</span></span> <span data-ttu-id="955c5-373">To znamená, že v rámci jedné operace provádí `(x * y) + z`, což minimalizuje chybu zaokrouhlování.</span><span class="sxs-lookup"><span data-stu-id="955c5-373">That is, it does `(x * y) + z` as a single operation, thereby minimizing the rounding error.</span></span> <span data-ttu-id="955c5-374">Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrátí `1e308`.</span><span class="sxs-lookup"><span data-stu-id="955c5-374">An example would be `FusedMultiplyAdd(1e308, 2.0, -1e308)` which returns `1e308`.</span></span> <span data-ttu-id="955c5-375">Normální `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.</span><span class="sxs-lookup"><span data-stu-id="955c5-375">The regular `(1e308 * 2.0) - 1e308` returns `double.PositiveInfinity`.</span></span>
+
+- <xref:System.Math.CopySign(System.Double,System.Double)>\
+<span data-ttu-id="955c5-376">Odpovídá `copySign` IEEE operace, vrátí hodnotu `x`, ale s znaménkem `y`.</span><span class="sxs-lookup"><span data-stu-id="955c5-376">Corresponds to the `copySign` IEEE operation, it returns the value of `x`, but with the sign of `y`.</span></span>
+
+### <a name="net-platform-dependent-intrinsics"></a><span data-ttu-id="955c5-377">Vnitřní objekty závislé na platformě .NET</span><span class="sxs-lookup"><span data-stu-id="955c5-377">.NET Platform-Dependent Intrinsics</span></span>
+
+<span data-ttu-id="955c5-378">Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady **instrukcí pro manipulaci** .</span><span class="sxs-lookup"><span data-stu-id="955c5-378">APIs have been added that allow access to certain perf-oriented CPU instructions, such as the **SIMD** or **Bit Manipulation instruction** sets.</span></span> <span data-ttu-id="955c5-379">Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně.</span><span class="sxs-lookup"><span data-stu-id="955c5-379">These instructions can help achieve significant performance improvements in certain scenarios, such as processing data efficiently in parallel.</span></span>
+
+<span data-ttu-id="955c5-380">V případě potřeby se pomocí těchto pokynů Vylepšete knihovny .NET, aby se zlepšil výkon.</span><span class="sxs-lookup"><span data-stu-id="955c5-380">Where appropriate, the .NET libraries have begun using these instructions to improve performance.</span></span>
+
+<span data-ttu-id="955c5-381">Další informace najdete v tématu věnovaném [vnitřním procesorům platformy .NET](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-381">For more information, see [.NET Platform Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).</span></span>
+
+### <a name="improved-net-core-version-apis"></a><span data-ttu-id="955c5-382">Vylepšená rozhraní API verze .NET Core</span><span class="sxs-lookup"><span data-stu-id="955c5-382">Improved .NET Core Version APIs</span></span>
+
+<span data-ttu-id="955c5-383">Počínaje rozhraním .NET Core 3,0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace.</span><span class="sxs-lookup"><span data-stu-id="955c5-383">Starting with .NET Core 3.0, the version APIs provided with .NET Core now return the information you expect.</span></span> <span data-ttu-id="955c5-384">Příklad:</span><span class="sxs-lookup"><span data-stu-id="955c5-384">For example:</span></span>
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -72,464 +476,36 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 // Old result
 //   RuntimeInformation.FrameworkDescription: .NET Core 4.6.27415.71
 //
-// New result
+// New result (notice the value includes any preview release information)
 //   RuntimeInformation.FrameworkDescription: .NET Core 3.0.0-preview4-27615-11
 ```
 
 > [!WARNING]
-> <span data-ttu-id="62025-133">Zásadní změna.</span><span class="sxs-lookup"><span data-stu-id="62025-133">Breaking change.</span></span> <span data-ttu-id="62025-134">To je technicky zásadní změna, protože se změnilo schéma správy verzí.</span><span class="sxs-lookup"><span data-stu-id="62025-134">This is technically a breaking change because the versioning scheme has changed.</span></span>
+> <span data-ttu-id="955c5-385">Zásadní změna.</span><span class="sxs-lookup"><span data-stu-id="955c5-385">Breaking change.</span></span> <span data-ttu-id="955c5-386">To je technicky zásadní změna, protože se změnilo schéma správy verzí.</span><span class="sxs-lookup"><span data-stu-id="955c5-386">This is technically a breaking change because the versioning scheme has changed.</span></span>
 
-## <a name="net-platform-dependent-intrinsics"></a><span data-ttu-id="62025-135">Vnitřní objekty závislé na platformě .NET</span><span class="sxs-lookup"><span data-stu-id="62025-135">.NET Platform-Dependent Intrinsics</span></span>
+### <a name="fast-built-in-json-support"></a><span data-ttu-id="955c5-387">Rychlá integrovaná podpora JSON</span><span class="sxs-lookup"><span data-stu-id="955c5-387">Fast built-in JSON support</span></span>
 
-<span data-ttu-id="62025-136">Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady **instrukcí pro manipulaci** .</span><span class="sxs-lookup"><span data-stu-id="62025-136">APIs have been added that allow access to certain perf-oriented CPU instructions, such as the **SIMD** or **Bit Manipulation instruction** sets.</span></span> <span data-ttu-id="62025-137">Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně.</span><span class="sxs-lookup"><span data-stu-id="62025-137">These instructions can help achieve significant performance improvements in certain scenarios, such as processing data efficiently in parallel.</span></span>
+<span data-ttu-id="955c5-388">Uživatelé rozhraní .NET mají převážně na [**JSON.NET**](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti.</span><span class="sxs-lookup"><span data-stu-id="955c5-388">.NET users have largely relied on [**Json.NET**](https://www.newtonsoft.com/json) and other popular JSON libraries, which continue to be good choices.</span></span> <span data-ttu-id="955c5-389">**JSON.NET** používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.</span><span class="sxs-lookup"><span data-stu-id="955c5-389">**Json.NET** uses .NET strings as its base datatype, which is UTF-16 under the hood.</span></span>
 
-<span data-ttu-id="62025-138">V případě potřeby se pomocí těchto pokynů Vylepšete knihovny .NET, aby se zlepšil výkon.</span><span class="sxs-lookup"><span data-stu-id="62025-138">Where appropriate, the .NET libraries have begun using these instructions to improve performance.</span></span>
+<span data-ttu-id="955c5-390">Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založená na `Span<byte>`.</span><span class="sxs-lookup"><span data-stu-id="955c5-390">The new built-in JSON support is high-performance, low allocation, and based on `Span<byte>`.</span></span> <span data-ttu-id="955c5-391">Další informace o <xref:System.Text.Json> obor názvů a typy naleznete v tématu [serializace JSON v rozhraní .NET – přehled](../../standard/serialization/system-text-json-overview.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-391">For more information about the <xref:System.Text.Json> namespace and types, see [JSON serialization in .NET - overview](../../standard/serialization/system-text-json-overview.md).</span></span> <span data-ttu-id="955c5-392">Výukové programy k běžným scénářům serializace JSON najdete [v tématu jak serializovat a deserializovat JSON v rozhraní .NET](../../standard/serialization/system-text-json-how-to.md).</span><span class="sxs-lookup"><span data-stu-id="955c5-392">For tutorials on common JSON serialization scenarios, see [How to serialize and deserialize JSON in .NET](../../standard/serialization/system-text-json-how-to.md).</span></span>
 
-<span data-ttu-id="62025-139">Další informace najdete v tématu věnovaném [vnitřním procesorům platformy .NET](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).</span><span class="sxs-lookup"><span data-stu-id="62025-139">For more information, see [.NET Platform Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).</span></span>
+### <a name="http2-support"></a><span data-ttu-id="955c5-393">Podpora HTTP/2</span><span class="sxs-lookup"><span data-stu-id="955c5-393">HTTP/2 support</span></span>
 
-## <a name="default-executables"></a><span data-ttu-id="62025-140">Výchozí spustitelné soubory</span><span class="sxs-lookup"><span data-stu-id="62025-140">Default executables</span></span>
+<span data-ttu-id="955c5-394">Typ <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> podporuje protokol HTTP/2.</span><span class="sxs-lookup"><span data-stu-id="955c5-394">The <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> type supports the HTTP/2 protocol.</span></span> <span data-ttu-id="955c5-395">Pokud je povolený protokol HTTP/2, vyjednává se verze protokolu HTTP prostřednictvím TLS/ALPN a protokol HTTP/2 se použije, pokud se server rozhodne ho použít.</span><span class="sxs-lookup"><span data-stu-id="955c5-395">If HTTP/2 is enabled, the HTTP protocol version is negotiated via TLS/ALPN, and HTTP/2 is used if the server elects to use it.</span></span>
 
-<span data-ttu-id="62025-141">.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#framework-dependent-executables-fde) .</span><span class="sxs-lookup"><span data-stu-id="62025-141">.NET Core now builds [framework-dependent executables](../deploying/index.md#framework-dependent-executables-fde) by default.</span></span> <span data-ttu-id="62025-142">Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="62025-142">This behavior is new for applications that use a globally installed version of .NET Core.</span></span> <span data-ttu-id="62025-143">Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#self-contained-deployments-scd) vyvolat spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="62025-143">Previously, only [self-contained deployments](../deploying/index.md#self-contained-deployments-scd) would produce an executable.</span></span>
-
-<span data-ttu-id="62025-144">Během `dotnet build` nebo `dotnet publish` se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte.</span><span class="sxs-lookup"><span data-stu-id="62025-144">During `dotnet build` or `dotnet publish`, an executable is created that matches the environment and platform of the SDK you're using.</span></span> <span data-ttu-id="62025-145">Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:</span><span class="sxs-lookup"><span data-stu-id="62025-145">You can expect the same things with these executables as you would other native executables, such as:</span></span>
-
-- <span data-ttu-id="62025-146">Můžete dvakrát kliknout na spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="62025-146">You can double-click on the executable.</span></span>
-- <span data-ttu-id="62025-147">Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` v systému Windows a `./myapp` v systémech Linux a macOS.</span><span class="sxs-lookup"><span data-stu-id="62025-147">You can launch the application from a command prompt directly, such as `myapp.exe` on Windows, and `./myapp` on Linux and macOS.</span></span>
-
-## <a name="single-file-executables"></a><span data-ttu-id="62025-148">Spustitelné soubory s jedním souborem</span><span class="sxs-lookup"><span data-stu-id="62025-148">Single-file executables</span></span>
-
-<span data-ttu-id="62025-149">Příkaz `dotnet publish` podporuje balení vaší aplikace do spustitelného souboru specifického pro jednotlivé platformy.</span><span class="sxs-lookup"><span data-stu-id="62025-149">The `dotnet publish` command supports packaging your app into a platform-specific single-file executable.</span></span> <span data-ttu-id="62025-150">Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativních), které jsou nutné ke spuštění vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="62025-150">The executable is self-extracting and contains all dependencies (including native) that are required to run your app.</span></span> <span data-ttu-id="62025-151">Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru buildu.</span><span class="sxs-lookup"><span data-stu-id="62025-151">When the app is first run, the application is extracted to a directory based on the app name and build identifier.</span></span> <span data-ttu-id="62025-152">Spuštění je rychlejší, když aplikaci znovu spustíte.</span><span class="sxs-lookup"><span data-stu-id="62025-152">Startup is faster when the application is run again.</span></span> <span data-ttu-id="62025-153">Pokud se nepoužila nová verze, aplikace se už nebude muset extrahovat druhou dobu.</span><span class="sxs-lookup"><span data-stu-id="62025-153">The application doesn't need to extract itself a second time unless a new version was used.</span></span>
-
-<span data-ttu-id="62025-154">Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v projektu nebo na příkazovém řádku pomocí příkazu `dotnet publish`:</span><span class="sxs-lookup"><span data-stu-id="62025-154">To publish a single-file executable, set the `PublishSingleFile` in your project or on the command line with the `dotnet publish` command:</span></span>
-
-```xml
-<PropertyGroup>
-  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
-  <PublishSingleFile>true</PublishSingleFile>
-</PropertyGroup>
-```
-
-<span data-ttu-id="62025-155">-nebo-</span><span class="sxs-lookup"><span data-stu-id="62025-155">-or-</span></span>
-
-```dotnetcli
-dotnet publish -r win10-x64 -p:PublishSingleFile=true
-```
-
-<span data-ttu-id="62025-156">Další informace o publikování v jednom souboru najdete v [dokumentu návrhu sady prostředků s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).</span><span class="sxs-lookup"><span data-stu-id="62025-156">For more information about single-file publishing, see the [single-file bundler design document](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).</span></span>
-
-## <a name="assembly-linking"></a><span data-ttu-id="62025-157">Propojení sestavení</span><span class="sxs-lookup"><span data-stu-id="62025-157">Assembly linking</span></span>
-
-<span data-ttu-id="62025-158">Sada .NET Core 3,0 SDK je dodávána s nástrojem, který umožňuje zmenšit velikost aplikací analýzou IL a oříznutím nepoužívaných sestavení.</span><span class="sxs-lookup"><span data-stu-id="62025-158">The .NET core 3.0 SDK comes with a tool that can reduce the size of apps by analyzing IL and trimming unused assemblies.</span></span>
-
-<span data-ttu-id="62025-159">Samostatné aplikace zahrnují vše potřebné ke spuštění kódu, aniž by bylo nutné nainstalovat rozhraní .NET do hostitelského počítače.</span><span class="sxs-lookup"><span data-stu-id="62025-159">Self-contained apps include everything needed to run your code, without requiring .NET to be installed on the host computer.</span></span> <span data-ttu-id="62025-160">Ale hodně, kolikrát aplikace jenom vyžaduje malou podmnožinu rozhraní, a další nepoužívané knihovny by se daly odebrat.</span><span class="sxs-lookup"><span data-stu-id="62025-160">However, many times the app only requires a small subset of the framework to function, and other unused libraries could be removed.</span></span>
-
-<span data-ttu-id="62025-161">Rozhraní .NET Core nyní obsahuje nastavení, které bude používat nástroj [linkeru Il](https://github.com/mono/linker) ke kontrole Il vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="62025-161">.NET Core now includes a setting that will use the [IL linker](https://github.com/mono/linker) tool to scan the IL of your app.</span></span> <span data-ttu-id="62025-162">Tento nástroj zjistí, jaký kód je požadován, a poté ořízne nepoužívané knihovny.</span><span class="sxs-lookup"><span data-stu-id="62025-162">This tool detects what code is required, and then trims unused libraries.</span></span> <span data-ttu-id="62025-163">Tento nástroj může významně snížit velikost nasazení některých aplikací.</span><span class="sxs-lookup"><span data-stu-id="62025-163">This tool can significantly reduce the deployment size of some apps.</span></span>
-
-<span data-ttu-id="62025-164">Pokud chcete tento nástroj povolit, přidejte do svého projektu nastavení `<PublishTrimmed>` a publikujte samostatně uzavřenou aplikaci:</span><span class="sxs-lookup"><span data-stu-id="62025-164">To enable this tool, add the `<PublishTrimmed>` setting in your project and publish a self-contained app:</span></span>
-
-```xml
-<PropertyGroup>
-  <PublishTrimmed>true</PublishTrimmed>
-</PropertyGroup>
-```
-
-```dotnetcli
-dotnet publish -r <rid> -c Release
-```
-
-<span data-ttu-id="62025-165">Příklad: základní šablona projektu "Hello World", která je součástí, je-li publikována, má velikost přibližně 70 MB.</span><span class="sxs-lookup"><span data-stu-id="62025-165">As an example, the basic "hello world" new console project template that is included, when published, hits about 70 MB in size.</span></span> <span data-ttu-id="62025-166">Když použijete `<PublishTrimmed>`, zmenší se velikost na přibližně 30 MB.</span><span class="sxs-lookup"><span data-stu-id="62025-166">By using `<PublishTrimmed>`, that size is reduced to about 30 MB.</span></span>
-
-<span data-ttu-id="62025-167">Je důležité vzít v úvahu, že aplikace nebo architektury (včetně ASP.NET Core a WPF), které používají reflexi nebo související dynamické funkce, budou často přerušit při oříznutí.</span><span class="sxs-lookup"><span data-stu-id="62025-167">It's important to consider that applications or frameworks (including ASP.NET Core and WPF) that use reflection or related dynamic features, will often break when trimmed.</span></span> <span data-ttu-id="62025-168">K tomuto zlomku dochází, protože linker neví o tomto dynamickém chování a nemůže určit, které typy rozhraní jsou pro reflexi vyžadovány.</span><span class="sxs-lookup"><span data-stu-id="62025-168">This breakage occurs because the linker doesn't know about this dynamic behavior and can't determine which framework types are required for reflection.</span></span> <span data-ttu-id="62025-169">Nástroj linkeru IL se dá nakonfigurovat tak, aby se na tento scénář dozvěděl.</span><span class="sxs-lookup"><span data-stu-id="62025-169">The IL Linker tool can be configured to be aware of this scenario.</span></span>
-
-<span data-ttu-id="62025-170">Nad všemi ostatními nezapomeňte aplikaci otestovat po jejím oříznutí.</span><span class="sxs-lookup"><span data-stu-id="62025-170">Above all else, be sure to test your app after trimming.</span></span>
-
-<span data-ttu-id="62025-171">Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.ms/dotnet-illink) nebo v úložišti [mono/linker]( https://github.com/mono/linker) .</span><span class="sxs-lookup"><span data-stu-id="62025-171">For more information about the IL Linker tool, see the [documentation](https://aka.ms/dotnet-illink) or visit the [mono/linker]( https://github.com/mono/linker) repo.</span></span>
-
-## <a name="tiered-compilation"></a><span data-ttu-id="62025-172">Vrstvená kompilace</span><span class="sxs-lookup"><span data-stu-id="62025-172">Tiered compilation</span></span>
-
-<span data-ttu-id="62025-173">[Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnutá pomocí .net Core 3,0.</span><span class="sxs-lookup"><span data-stu-id="62025-173">[Tiered compilation](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) is on by default with .NET Core 3.0.</span></span> <span data-ttu-id="62025-174">Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.</span><span class="sxs-lookup"><span data-stu-id="62025-174">This feature enables the runtime to more adaptively use the Just-In-Time (JIT) compiler to get better performance.</span></span>
-
-<span data-ttu-id="62025-175">Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní.</span><span class="sxs-lookup"><span data-stu-id="62025-175">The main benefit of TC is to enable (re-)jitting methods with a lower-quality-but-faster tier or a higher-quality-but-slower tier.</span></span> <span data-ttu-id="62025-176">To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu.</span><span class="sxs-lookup"><span data-stu-id="62025-176">This helps increase performance of an application as it goes through various stages of execution, from startup through steady-state.</span></span> <span data-ttu-id="62025-177">To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.</span><span class="sxs-lookup"><span data-stu-id="62025-177">This contrasts with the non-TC approach, where every method is compiled a single way (the same as the high-quality tier), which is biased to steady-state over startup performance.</span></span>
-
-<span data-ttu-id="62025-178">Chcete-li povolit rychlou JIT (zpracovaných kompilátorem JIT kód vrstvy 0), použijte toto nastavení v souboru projektu:</span><span class="sxs-lookup"><span data-stu-id="62025-178">To enable Quick JIT (tier 0 jitted code), use this setting in your project file:</span></span>
-
-```xml
-<PropertyGroup>
-  <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
-</PropertyGroup>
-```
-
-<span data-ttu-id="62025-179">Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru projektu:</span><span class="sxs-lookup"><span data-stu-id="62025-179">To disable TC completely, use this setting in your project file:</span></span>
-
-```xml
-<TieredCompilation>false</TieredCompilation>
-```
-
-## <a name="readytorun-images"></a><span data-ttu-id="62025-180">ReadyToRun image</span><span class="sxs-lookup"><span data-stu-id="62025-180">ReadyToRun images</span></span>
-
-<span data-ttu-id="62025-181">Můžete zlepšit čas spuštění aplikace .NET Core kompilováním sestavení aplikace jako formátu ReadyToRun (R2R).</span><span class="sxs-lookup"><span data-stu-id="62025-181">You can improve the startup time of your .NET Core application by compiling your application assemblies as ReadyToRun (R2R) format.</span></span> <span data-ttu-id="62025-182">R2R je forma kompilace v čase před zahájením (AOT).</span><span class="sxs-lookup"><span data-stu-id="62025-182">R2R is a form of ahead-of-time (AOT) compilation.</span></span>
-
-<span data-ttu-id="62025-183">R2R binární soubory zlepšují výkon při spuštění tím, že snižují množství práce, které kompilátor JIT (just-in-time) potřebuje k tomu, aby se vaše aplikace načítají.</span><span class="sxs-lookup"><span data-stu-id="62025-183">R2R binaries improve startup performance by reducing the amount of work the just-in-time (JIT) compiler needs to do as your application loads.</span></span> <span data-ttu-id="62025-184">Binární soubory obsahují podobný nativní kód v porovnání s tím, co by kompilátor JIT vytvořil.</span><span class="sxs-lookup"><span data-stu-id="62025-184">The binaries contain similar native code compared to what the JIT would produce.</span></span> <span data-ttu-id="62025-185">R2R binární soubory jsou však větší, protože obsahují kód pro mezilehlé jazyky (IL), který je stále potřeba pro některé scénáře, a nativní verzi stejného kódu.</span><span class="sxs-lookup"><span data-stu-id="62025-185">However, R2R binaries are larger because they contain both intermediate language (IL) code, which is still needed for some scenarios, and the native version of the same code.</span></span> <span data-ttu-id="62025-186">R2R je k dispozici pouze v případě, že publikujete samostatnou aplikaci, která cílí na konkrétní běhové prostředí (RID), jako je Linux x64 nebo Windows x64.</span><span class="sxs-lookup"><span data-stu-id="62025-186">R2R is only available when you publish a self-contained app that targets specific runtime environments (RID) such as Linux x64 or Windows x64.</span></span>
-
-<span data-ttu-id="62025-187">Chcete-li zkompilovat projekt jako ReadyToRun, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="62025-187">To compile your project as ReadyToRun, do the following:</span></span>
-
-01. <span data-ttu-id="62025-188">Přidat nastavení `<PublishReadyToRun>` do projektu</span><span class="sxs-lookup"><span data-stu-id="62025-188">Add the `<PublishReadyToRun>` setting to your project</span></span>
-
-    ```xml
-    <PropertyGroup>
-      <PublishReadyToRun>true</PublishReadyToRun>
-    </PropertyGroup>
-    ```
-
-01. <span data-ttu-id="62025-189">Publikujte samostatně uzavřenou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="62025-189">Publish a self-contained app.</span></span> <span data-ttu-id="62025-190">Tento příkaz například vytvoří samostatnou aplikaci pro 64 verzi Windows:</span><span class="sxs-lookup"><span data-stu-id="62025-190">For example, this command creates a self-contained app for the 64-bit version of Windows:</span></span>
-
-    ```dotnetcli
-    dotnet publish -c Release -r win-x64 --self-contained true
-    ```
-
-### <a name="cross-platformarchitecture-restrictions"></a><span data-ttu-id="62025-191">Omezení pro různé platformy a architektury</span><span class="sxs-lookup"><span data-stu-id="62025-191">Cross platform/architecture restrictions</span></span>
-
-<span data-ttu-id="62025-192">Kompilátor ReadyToRun v současné době nepodporuje cílení na více platforem.</span><span class="sxs-lookup"><span data-stu-id="62025-192">The ReadyToRun compiler doesn't currently support cross-targeting.</span></span> <span data-ttu-id="62025-193">Je nutné kompilovat na daném cíli.</span><span class="sxs-lookup"><span data-stu-id="62025-193">You must compile on a given target.</span></span> <span data-ttu-id="62025-194">Například pokud chcete image R2R pro Windows x64, musíte v tomto prostředí spustit příkaz publikovat.</span><span class="sxs-lookup"><span data-stu-id="62025-194">For example, if you want R2R images for Windows x64, you need to run the publish command on that environment.</span></span>
-
-<span data-ttu-id="62025-195">Výjimky pro cílení na více platforem:</span><span class="sxs-lookup"><span data-stu-id="62025-195">Exceptions to cross-targeting:</span></span>
-
-- <span data-ttu-id="62025-196">Systém Windows x64 lze použít ke kompilaci imagí Windows ARM32, ARM64 a x86.</span><span class="sxs-lookup"><span data-stu-id="62025-196">Windows x64 can be used to compile Windows ARM32, ARM64, and x86 images.</span></span>
-- <span data-ttu-id="62025-197">K kompilování imagí Windows ARM32 lze použít systém Windows x86.</span><span class="sxs-lookup"><span data-stu-id="62025-197">Windows x86 can be used to compile Windows ARM32 images.</span></span>
-- <span data-ttu-id="62025-198">Linux x64 lze použít ke kompilaci imagí ARM32 a ARM64 pro Linux.</span><span class="sxs-lookup"><span data-stu-id="62025-198">Linux x64 can be used to compile Linux ARM32 and ARM64 images.</span></span>
-
-## <a name="build-copies-dependencies"></a><span data-ttu-id="62025-199">Sestavení kopíruje závislosti</span><span class="sxs-lookup"><span data-stu-id="62025-199">Build copies dependencies</span></span>
-
-<span data-ttu-id="62025-200">Příkaz `dotnet build` nyní kopíruje závislosti NuGet pro vaši aplikaci z mezipaměti NuGet do výstupní složky sestavení.</span><span class="sxs-lookup"><span data-stu-id="62025-200">The `dotnet build` command now copies NuGet dependencies for your application from the NuGet cache to the build output folder.</span></span> <span data-ttu-id="62025-201">Dříve se závislosti zkopírovaly jenom jako součást `dotnet publish`.</span><span class="sxs-lookup"><span data-stu-id="62025-201">Previously, dependencies were only copied as part of `dotnet publish`.</span></span>
-
-<span data-ttu-id="62025-202">Existují některé operace, jako je propojování a publikování stránek Razor, které budou nadále vyžadovat publikování.</span><span class="sxs-lookup"><span data-stu-id="62025-202">There are some operations, like linking and razor page publishing that will still require publishing.</span></span>
-
-## <a name="local-tools"></a><span data-ttu-id="62025-203">Místní nástroje</span><span class="sxs-lookup"><span data-stu-id="62025-203">Local tools</span></span>
-
-<span data-ttu-id="62025-204">.NET Core 3,0 zavádí místní nástroje.</span><span class="sxs-lookup"><span data-stu-id="62025-204">.NET Core 3.0 introduces local tools.</span></span> <span data-ttu-id="62025-205">Místní nástroje jsou podobné [globálním nástrojům](../tools/global-tools.md) , ale jsou přidruženy k určitému umístění na disku.</span><span class="sxs-lookup"><span data-stu-id="62025-205">Local tools are similar to [global tools](../tools/global-tools.md) but are associated with a particular location on disk.</span></span> <span data-ttu-id="62025-206">Místní nástroje nejsou globálně dostupné a distribuují se jako balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="62025-206">Local tools aren't available globally and are distributed as NuGet packages.</span></span>
-
-> [!WARNING]
-> <span data-ttu-id="62025-207">Pokud jste zkusili místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je například spuštění `dotnet tool restore` nebo `dotnet tool install`, odstraňte složku mezipaměti místních nástrojů.</span><span class="sxs-lookup"><span data-stu-id="62025-207">If you tried local tools in .NET Core 3.0 Preview 1, such as running `dotnet tool restore` or `dotnet tool install`, delete the local tools cache folder.</span></span> <span data-ttu-id="62025-208">V opačném případě místní nástroje nebudou fungovat v novější verzi.</span><span class="sxs-lookup"><span data-stu-id="62025-208">Otherwise, local tools won't work on any newer release.</span></span> <span data-ttu-id="62025-209">Tato složka je umístěna v umístění:</span><span class="sxs-lookup"><span data-stu-id="62025-209">This folder is located at:</span></span>
->
-> <span data-ttu-id="62025-210">Na macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`</span><span class="sxs-lookup"><span data-stu-id="62025-210">On macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`</span></span>
->
-> <span data-ttu-id="62025-211">Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`</span><span class="sxs-lookup"><span data-stu-id="62025-211">On Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`</span></span>
-
-<span data-ttu-id="62025-212">Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="62025-212">Local tools rely on a manifest file name `dotnet-tools.json` in your current directory.</span></span> <span data-ttu-id="62025-213">Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže.</span><span class="sxs-lookup"><span data-stu-id="62025-213">This manifest file defines the tools to be available at that folder and below.</span></span> <span data-ttu-id="62025-214">Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.</span><span class="sxs-lookup"><span data-stu-id="62025-214">You can distribute the manifest file with your code to ensure that anyone who works with your code can restore and use the same tools.</span></span>
-
-<span data-ttu-id="62025-215">U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="62025-215">For both global and local tools, a compatible version of the runtime is required.</span></span> <span data-ttu-id="62025-216">Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2,1.</span><span class="sxs-lookup"><span data-stu-id="62025-216">Many tools currently on NuGet.org target .NET Core Runtime 2.1.</span></span> <span data-ttu-id="62025-217">Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).</span><span class="sxs-lookup"><span data-stu-id="62025-217">To install these tools globally or locally, you would still need to install the [NET Core 2.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/2.1).</span></span>
-
-## <a name="major-version-roll-forward"></a><span data-ttu-id="62025-218">Hlavní verze – posunutí – posun</span><span class="sxs-lookup"><span data-stu-id="62025-218">Major-version Roll Forward</span></span>
-
-<span data-ttu-id="62025-219">.NET Core 3,0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="62025-219">.NET Core 3.0 introduces an opt-in feature that allows your app to roll forward to the latest major version of .NET Core.</span></span> <span data-ttu-id="62025-220">Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí.</span><span class="sxs-lookup"><span data-stu-id="62025-220">Additionally, a new setting has been added to control how roll forward is applied to your app.</span></span> <span data-ttu-id="62025-221">Dá se nakonfigurovat následujícími způsoby:</span><span class="sxs-lookup"><span data-stu-id="62025-221">This can be configured in the following ways:</span></span>
-
-- <span data-ttu-id="62025-222">Vlastnost souboru projektu: `RollForward`</span><span class="sxs-lookup"><span data-stu-id="62025-222">Project file property: `RollForward`</span></span>
-- <span data-ttu-id="62025-223">Vlastnost konfiguračního souboru modulu runtime: `rollForward`</span><span class="sxs-lookup"><span data-stu-id="62025-223">Runtime configuration file property: `rollForward`</span></span>
-- <span data-ttu-id="62025-224">Proměnná prostředí: `DOTNET_ROLL_FORWARD`</span><span class="sxs-lookup"><span data-stu-id="62025-224">Environment variable: `DOTNET_ROLL_FORWARD`</span></span>
-- <span data-ttu-id="62025-225">Argument příkazového řádku: `--roll-forward`</span><span class="sxs-lookup"><span data-stu-id="62025-225">Command-line argument: `--roll-forward`</span></span>
-
-<span data-ttu-id="62025-226">Je nutné zadat jednu z následujících hodnot.</span><span class="sxs-lookup"><span data-stu-id="62025-226">One of the following values must be specified.</span></span> <span data-ttu-id="62025-227">Pokud je nastavení vynecháno, je výchozí hodnota **podverze** .</span><span class="sxs-lookup"><span data-stu-id="62025-227">If the setting is omitted, **Minor** is the default.</span></span>
-
-- <span data-ttu-id="62025-228">**LatestPatch**</span><span class="sxs-lookup"><span data-stu-id="62025-228">**LatestPatch**</span></span>\
-<span data-ttu-id="62025-229">Vraťte se k nejvyšší verzi opravy.</span><span class="sxs-lookup"><span data-stu-id="62025-229">Roll forward to the highest patch version.</span></span> <span data-ttu-id="62025-230">Tím se zakáže dílčí verze s posunem.</span><span class="sxs-lookup"><span data-stu-id="62025-230">This disables minor version roll forward.</span></span>
-- <span data-ttu-id="62025-231">**Vedlejší**</span><span class="sxs-lookup"><span data-stu-id="62025-231">**Minor**</span></span>\
-<span data-ttu-id="62025-232">V případě, že chybí požadovaná dílčí verze, převeďte nahoru na nejnižší nižší verzi.</span><span class="sxs-lookup"><span data-stu-id="62025-232">Roll forward to the lowest higher minor version, if requested minor version is missing.</span></span> <span data-ttu-id="62025-233">Pokud je k dispozici požadovaná dílčí verze, použije se zásada **LatestPatch** .</span><span class="sxs-lookup"><span data-stu-id="62025-233">If the requested minor version is present, then the **LatestPatch** policy is used.</span></span>
-- <span data-ttu-id="62025-234">**Hlavní** </span><span class="sxs-lookup"><span data-stu-id="62025-234">**Major**</span></span>\
-<span data-ttu-id="62025-235">Pokud chybí požadovaná hlavní verze, převeďte ji nahoru na nejnižší nejvyšší hlavní verzi a nejnižší podverzi.</span><span class="sxs-lookup"><span data-stu-id="62025-235">Roll forward to lowest higher major version, and lowest minor version, if requested major version is missing.</span></span> <span data-ttu-id="62025-236">Pokud je k dispozici požadovaná hlavní verze, použije se **vedlejší** zásada.</span><span class="sxs-lookup"><span data-stu-id="62025-236">If the requested major version is present, then the **Minor** policy is used.</span></span>
-- <span data-ttu-id="62025-237">**LatestMinor**</span><span class="sxs-lookup"><span data-stu-id="62025-237">**LatestMinor**</span></span>\
-<span data-ttu-id="62025-238">Převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze.</span><span class="sxs-lookup"><span data-stu-id="62025-238">Roll forward to highest minor version, even if requested minor version is present.</span></span> <span data-ttu-id="62025-239">Určeno pro scénáře hostování součástí.</span><span class="sxs-lookup"><span data-stu-id="62025-239">Intended for component hosting scenarios.</span></span>
-- <span data-ttu-id="62025-240">**LatestMajor**</span><span class="sxs-lookup"><span data-stu-id="62025-240">**LatestMajor**</span></span>\
-<span data-ttu-id="62025-241">Převeďte do nejvyšší hlavní a nejvyšší dílčí verze, a to i v případě, že je k dispozici požadovaná hlavní verze.</span><span class="sxs-lookup"><span data-stu-id="62025-241">Roll forward to highest major and highest minor version, even if requested major is present.</span></span> <span data-ttu-id="62025-242">Určeno pro scénáře hostování součástí.</span><span class="sxs-lookup"><span data-stu-id="62025-242">Intended for component hosting scenarios.</span></span>
-- <span data-ttu-id="62025-243">**Zakázat**</span><span class="sxs-lookup"><span data-stu-id="62025-243">**Disable**</span></span>\
-<span data-ttu-id="62025-244">Nezadávejte vše.</span><span class="sxs-lookup"><span data-stu-id="62025-244">Don't roll forward.</span></span> <span data-ttu-id="62025-245">Vytvoří se jenom vazba na určenou verzi.</span><span class="sxs-lookup"><span data-stu-id="62025-245">Only bind to specified version.</span></span> <span data-ttu-id="62025-246">Tyto zásady se nedoporučují pro obecné použití, protože zakazují možnost navrátit se k nejnovějším opravám.</span><span class="sxs-lookup"><span data-stu-id="62025-246">This policy isn't recommended for general use because it disables the ability to roll forward to the latest patches.</span></span> <span data-ttu-id="62025-247">Tato hodnota se doporučuje jenom pro testování.</span><span class="sxs-lookup"><span data-stu-id="62025-247">This value is only recommended for testing.</span></span>
-
-<span data-ttu-id="62025-248">Kromě nastavení **Zakázat** bude pro všechna nastavení použita nejvyšší dostupná verze opravy.</span><span class="sxs-lookup"><span data-stu-id="62025-248">Besides the **Disable** setting, all settings will use the highest available patch version.</span></span>
-
-## <a name="windows-desktop"></a><span data-ttu-id="62025-249">Plocha Windows</span><span class="sxs-lookup"><span data-stu-id="62025-249">Windows desktop</span></span>
-
-<span data-ttu-id="62025-250">.NET Core 3,0 podporuje desktopové aplikace Windows pomocí Windows Presentation Foundation (WPF) a model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="62025-250">.NET Core 3.0 supports Windows desktop applications using Windows Presentation Foundation (WPF) and Windows Forms.</span></span> <span data-ttu-id="62025-251">Tyto architektury také podporují použití moderních ovládacích prvků a Fluent stylování z knihovny XAML uživatelského rozhraní systému Windows (WinUI) přes [ostrovy XAML](/windows/uwp/xaml-platform/xaml-host-controls).</span><span class="sxs-lookup"><span data-stu-id="62025-251">These frameworks also support using modern controls and Fluent styling from the Windows UI XAML Library (WinUI) via [XAML islands](/windows/uwp/xaml-platform/xaml-host-controls).</span></span>
-
-<span data-ttu-id="62025-252">Součást Desktop systému Windows je součástí sady Windows .NET Core 3,0 SDK.</span><span class="sxs-lookup"><span data-stu-id="62025-252">The Windows Desktop component is part of the Windows .NET Core 3.0 SDK.</span></span>
-
-<span data-ttu-id="62025-253">Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících příkazů `dotnet`:</span><span class="sxs-lookup"><span data-stu-id="62025-253">You can create a new WPF or Windows Forms app with the following `dotnet` commands:</span></span>
-
-```dotnetcli
-dotnet new wpf
-dotnet new winforms
-```
-
-<span data-ttu-id="62025-254">Visual Studio 2019 přidává **nové šablony projektů** pro .net Core 3,0 model Windows Forms a WPF.</span><span class="sxs-lookup"><span data-stu-id="62025-254">Visual Studio 2019 adds **New Project** templates for .NET Core 3.0 Windows Forms and WPF.</span></span>
-
-<span data-ttu-id="62025-255">Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../porting/wpf.md) and [port model Windows Forms Projects](../porting/winforms.md).</span><span class="sxs-lookup"><span data-stu-id="62025-255">For more information about how to port an existing .NET Framework application, see [Port WPF projects](../porting/wpf.md) and [Port Windows Forms projects](../porting/winforms.md).</span></span>
-
-## <a name="com-callable-components---windows-desktop"></a><span data-ttu-id="62025-256">Komponenty s podporou modelu COM – Desktop Windows</span><span class="sxs-lookup"><span data-stu-id="62025-256">COM-callable components - Windows Desktop</span></span>
-
-<span data-ttu-id="62025-257">Ve Windows teď můžete vytvářet spravované komponenty, které lze volat v modelu COM.</span><span class="sxs-lookup"><span data-stu-id="62025-257">On Windows, you can now create COM-callable managed components.</span></span> <span data-ttu-id="62025-258">Tato možnost je zásadní pro použití .NET Core s modely doplňku COM a také k zajištění parity s .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="62025-258">This capability is critical to use .NET Core with COM add-in models and also to provide parity with .NET Framework.</span></span>
-
-<span data-ttu-id="62025-259">Na rozdíl od .NET Framework, kde se *Knihovna Mscoree. dll* použila jako server com, .NET Core při sestavování komponenty com přidá nativní spouštěcí knihovnu DLL do adresáře *bin* .</span><span class="sxs-lookup"><span data-stu-id="62025-259">Unlike .NET Framework where the *mscoree.dll* was used as the COM server, .NET Core will add a native launcher dll to the *bin* directory when you build your COM component.</span></span>
-
-<span data-ttu-id="62025-260">Příklad vytvoření komponenty modelu COM a její využití naleznete v [ukázce modelu COM](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo).</span><span class="sxs-lookup"><span data-stu-id="62025-260">For an example of how to create a COM component and consume it, see the [COM Demo](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo).</span></span>
-
-## <a name="msix-deployment---windows-desktop"></a><span data-ttu-id="62025-261">Nasazení MSIX – Desktop Windows</span><span class="sxs-lookup"><span data-stu-id="62025-261">MSIX Deployment - Windows Desktop</span></span>
-
-<span data-ttu-id="62025-262">[MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace systému Windows.</span><span class="sxs-lookup"><span data-stu-id="62025-262">[MSIX](https://docs.microsoft.com/windows/msix/) is a new Windows application package format.</span></span> <span data-ttu-id="62025-263">Dá se použít k nasazení desktopových aplikací .NET Core 3,0 do Windows 10.</span><span class="sxs-lookup"><span data-stu-id="62025-263">It can be used to deploy .NET Core 3.0 desktop applications to Windows 10.</span></span>
-
-<span data-ttu-id="62025-264">[Projekt pro balení aplikace pro systém Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), který je k dispozici v aplikaci Visual Studio 2019, umožňuje vytvářet balíčky MSIX pomocí aplikací .NET Core s využitím [vlastních součástí](../deploying/index.md#self-contained-deployments-scd) .</span><span class="sxs-lookup"><span data-stu-id="62025-264">The [Windows Application Packaging Project](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), available in Visual Studio 2019, allows you to create MSIX packages with [self-contained](../deploying/index.md#self-contained-deployments-scd) .NET Core applications.</span></span>
-
-<span data-ttu-id="62025-265">Soubor projektu .NET Core musí určovat podporované moduly runtime ve vlastnosti `<RuntimeIdentifiers>`:</span><span class="sxs-lookup"><span data-stu-id="62025-265">The .NET Core project file must specify the supported runtimes in the `<RuntimeIdentifiers>` property:</span></span>
-
-```xml
-<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-```
-
-## <a name="winforms-high-dpi"></a><span data-ttu-id="62025-266">Vysoké rozlišení DPI pro WinForms</span><span class="sxs-lookup"><span data-stu-id="62025-266">WinForms high DPI</span></span>
-
-<span data-ttu-id="62025-267">Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým rozlišením DPI pomocí <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="62025-267">.NET Core Windows Forms applications can set high DPI mode with <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>.</span></span> <span data-ttu-id="62025-268">Metoda `SetHighDpiMode` nastaví odpovídající režim vysoké úrovně DPI, pokud nastavení nebylo nastaveno jiným způsobem jako `App.Manifest` nebo P/Invoke před `Application.Run`.</span><span class="sxs-lookup"><span data-stu-id="62025-268">The `SetHighDpiMode` method sets the corresponding high DPI mode unless the setting has been set by other means like `App.Manifest` or P/Invoke before `Application.Run`.</span></span>
-
-<span data-ttu-id="62025-269">Možné hodnoty `highDpiMode` vyjádřené výčtem <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> jsou:</span><span class="sxs-lookup"><span data-stu-id="62025-269">The possible `highDpiMode` values, as expressed by the <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> enum are:</span></span>
-
-- `DpiUnaware`
-- `SystemAware`
-- `PerMonitor`
-- `PerMonitorV2`
-- `DpiUnawareGdiScaled`
-
-<span data-ttu-id="62025-270">Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).</span><span class="sxs-lookup"><span data-stu-id="62025-270">For more information about high DPI modes, see [High DPI Desktop Application Development on Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).</span></span>
-
-## <a name="ranges-and-indices"></a><span data-ttu-id="62025-271">Rozsahy a indexy</span><span class="sxs-lookup"><span data-stu-id="62025-271">Ranges and indices</span></span>
-
-<span data-ttu-id="62025-272">Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování.</span><span class="sxs-lookup"><span data-stu-id="62025-272">The new <xref:System.Index?displayProperty=nameWithType> type can be used for indexing.</span></span> <span data-ttu-id="62025-273">Můžete vytvořit jednu z `int`, která se počítá od začátku, nebo s předponou `^` operátor (C#), která se počítá od konce:</span><span class="sxs-lookup"><span data-stu-id="62025-273">You can create one from an `int` that counts from the beginning, or with a prefix `^` operator (C#) that counts from the end:</span></span>
-
-```csharp
-Index i1 = 3;  // number 3 from beginning
-Index i2 = ^4; // number 4 from end
-int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-Console.WriteLine($"{a[i1]}, {a[i2]}"); // "3, 6"
-```
-
-<span data-ttu-id="62025-274">K dispozici je také typ <xref:System.Range?displayProperty=nameWithType>, který se skládá ze dvou hodnot `Index`, jeden pro začátek a druhý pro konec a je možné ho zapsat pomocí výrazu rozsahu `x..y` (C#).</span><span class="sxs-lookup"><span data-stu-id="62025-274">There's also the <xref:System.Range?displayProperty=nameWithType> type, which consists of two `Index` values, one for the start and one for the end, and can be written with a `x..y` range expression (C#).</span></span> <span data-ttu-id="62025-275">Potom můžete indexovat pomocí `Range`, což vytvoří řez:</span><span class="sxs-lookup"><span data-stu-id="62025-275">You can then index with a `Range`, which produces a slice:</span></span>
-
-```csharp
-var slice = a[i1..i2]; // { 3, 4, 5 }
-```
-
-<span data-ttu-id="62025-276">Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/ranges-indexes.md).</span><span class="sxs-lookup"><span data-stu-id="62025-276">For more information, see the [ranges and indices tutorial](../../csharp/tutorials/ranges-indexes.md).</span></span>
-
-## <a name="async-streams"></a><span data-ttu-id="62025-277">Asynchronní streamy</span><span class="sxs-lookup"><span data-stu-id="62025-277">Async streams</span></span>
-
-<span data-ttu-id="62025-278">@No__t_0 typ je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>.</span><span class="sxs-lookup"><span data-stu-id="62025-278">The <xref:System.Collections.Generic.IAsyncEnumerable%601> type is a new asynchronous version of <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="62025-279">Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.</span><span class="sxs-lookup"><span data-stu-id="62025-279">The language lets you `await foreach` over `IAsyncEnumerable<T>` to consume their elements, and use `yield return` to them to produce elements.</span></span>
-
-<span data-ttu-id="62025-280">Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů.</span><span class="sxs-lookup"><span data-stu-id="62025-280">The following example demonstrates both production and consumption of async streams.</span></span> <span data-ttu-id="62025-281">Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající.</span><span class="sxs-lookup"><span data-stu-id="62025-281">The `foreach` statement is async and itself uses `yield return` to produce an async stream for callers.</span></span> <span data-ttu-id="62025-282">Tento vzor (pomocí `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.</span><span class="sxs-lookup"><span data-stu-id="62025-282">This pattern (using `yield return`) is the recommended model for producing async streams.</span></span>
-
-```csharp
-async IAsyncEnumerable<int> GetBigResultsAsync()
-{
-    await foreach (var result in GetResultsAsync())
-    {
-        if (result > 20) yield return result;
-    }
-}
-```
-
-<span data-ttu-id="62025-283">Kromě možnosti `await foreach` můžete také vytvořit asynchronní iterátory, například iterátor, který vrátí `IAsyncEnumerable/IAsyncEnumerator`, který můžete `await` a `yield` v.</span><span class="sxs-lookup"><span data-stu-id="62025-283">In addition to being able to `await foreach`, you can also create async iterators, for example, an iterator that returns an `IAsyncEnumerable/IAsyncEnumerator` that you can both `await` and `yield` in.</span></span> <span data-ttu-id="62025-284">Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které implementují různé typy BCL, například `Stream` a `Timer`.</span><span class="sxs-lookup"><span data-stu-id="62025-284">For objects that need to be disposed, you can use `IAsyncDisposable`, which various BCL types implement, such as `Stream` and `Timer`.</span></span>
-
-<span data-ttu-id="62025-285">Další informace najdete v [kurzu asynchronní streamy](../../csharp/tutorials/generate-consume-asynchronous-stream.md).</span><span class="sxs-lookup"><span data-stu-id="62025-285">For more information, see the [async streams tutorial](../../csharp/tutorials/generate-consume-asynchronous-stream.md).</span></span>
-
-## <a name="ieee-floating-point-improvements"></a><span data-ttu-id="62025-286">Vylepšení standardu IEEE s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="62025-286">IEEE Floating-point improvements</span></span>
-
-<span data-ttu-id="62025-287">Rozhraní API s plovoucí desetinnou čárkou se aktualizují tak, aby odpovídalo [revizi IEEE 754-2008](https://en.wikipedia.org/wiki/IEEE_754-2008_revision).</span><span class="sxs-lookup"><span data-stu-id="62025-287">Floating point APIs are being updated to comply with [IEEE 754-2008 revision](https://en.wikipedia.org/wiki/IEEE_754-2008_revision).</span></span> <span data-ttu-id="62025-288">Cílem těchto změn je vystavit všechny **požadované** operace a zajistit, aby byly vyhovující požadavkům standardu IEEE. Další informace o vylepšeních s plovoucí desetinnou čárkou naleznete v příspěvku na blogu [.NET Core 3,0 v oblasti analýzy a formátování plovoucí desetinné](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) čárky.</span><span class="sxs-lookup"><span data-stu-id="62025-288">The goal of these changes is to expose all **required** operations and ensure that they're behaviorally compliant with the IEEE spec. For more information about floating-point improvements, see the [Floating-Point Parsing and Formatting improvements in .NET Core 3.0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) blog post.</span></span>
-
-<span data-ttu-id="62025-289">Mezi aktualizace pro analýzu a formátování patří:</span><span class="sxs-lookup"><span data-stu-id="62025-289">Parsing and formatting fixes include:</span></span>
-
-- <span data-ttu-id="62025-290">Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.</span><span class="sxs-lookup"><span data-stu-id="62025-290">Correctly parse and round inputs of any length.</span></span>
-- <span data-ttu-id="62025-291">Správně Analyzujte a formátujete záporné hodnoty nula.</span><span class="sxs-lookup"><span data-stu-id="62025-291">Correctly parse and format negative zero.</span></span>
-- <span data-ttu-id="62025-292">Správně Analyzujte `Infinity` a `NaN`, a to provedením kontroly bez rozlišování velkých a malých písmen a povolením volitelného předchozího `+`, pokud je to možné.</span><span class="sxs-lookup"><span data-stu-id="62025-292">Correctly parse `Infinity` and `NaN` by doing a case-insensitive check and allowing an optional preceding `+` where applicable.</span></span>
-
-<span data-ttu-id="62025-293">Nová rozhraní API <xref:System.Math?displayProperty=nameWithType> zahrnují:</span><span class="sxs-lookup"><span data-stu-id="62025-293">New <xref:System.Math?displayProperty=nameWithType> APIs include:</span></span>
-
-- <span data-ttu-id="62025-294"><xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> </span><span class="sxs-lookup"><span data-stu-id="62025-294"><xref:System.Math.BitIncrement(System.Double)> and <xref:System.Math.BitDecrement(System.Double)></span></span>\
-<span data-ttu-id="62025-295">Odpovídá operacím IEEE `nextUp` a `nextDown`.</span><span class="sxs-lookup"><span data-stu-id="62025-295">Corresponds to the `nextUp` and `nextDown` IEEE operations.</span></span> <span data-ttu-id="62025-296">Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí).</span><span class="sxs-lookup"><span data-stu-id="62025-296">They return the smallest floating-point number that compares greater or lesser than the input (respectively).</span></span> <span data-ttu-id="62025-297">Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.</span><span class="sxs-lookup"><span data-stu-id="62025-297">For example, `Math.BitIncrement(0.0)` would return `double.Epsilon`.</span></span>
-
-- <span data-ttu-id="62025-298"><xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> </span><span class="sxs-lookup"><span data-stu-id="62025-298"><xref:System.Math.MaxMagnitude(System.Double,System.Double)> and <xref:System.Math.MinMagnitude(System.Double,System.Double)></span></span>\
-<span data-ttu-id="62025-299">Odpovídá operacím IEEE `maxNumMag` a `minNumMag`, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí).</span><span class="sxs-lookup"><span data-stu-id="62025-299">Corresponds to the `maxNumMag` and `minNumMag` IEEE operations, they return the value that is greater or lesser in magnitude of the two inputs (respectively).</span></span> <span data-ttu-id="62025-300">Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.</span><span class="sxs-lookup"><span data-stu-id="62025-300">For example, `Math.MaxMagnitude(2.0, -3.0)` would return `-3.0`.</span></span>
-
-- <xref:System.Math.ILogB(System.Double)>\
-<span data-ttu-id="62025-301">Odpovídá vstupně-výstupní operaci `logB`, která vrací celočíselnou hodnotu, vrátí celočíselný protokol dekadický-2 vstupního parametru.</span><span class="sxs-lookup"><span data-stu-id="62025-301">Corresponds to the `logB` IEEE operation that returns an integral value, it returns the integral base-2 log of the input parameter.</span></span> <span data-ttu-id="62025-302">Tato metoda je efektivně stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="62025-302">This method is effectively the same as `floor(log2(x))`, but done with minimal rounding error.</span></span>
-
-- <xref:System.Math.ScaleB(System.Double,System.Int32)>\
-<span data-ttu-id="62025-303">Odpovídá operaci `scaleB` IEEE, která přebírá celočíselnou hodnotu, vrátí efektivně `x * pow(2, n)`, ale provede s minimální chybou zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="62025-303">Corresponds to the `scaleB` IEEE operation that takes an integral value, it returns effectively `x * pow(2, n)`, but is done with minimal rounding error.</span></span>
-
-- <xref:System.Math.Log2(System.Double)>\
-<span data-ttu-id="62025-304">Odpovídá logaritmus `log2` IEEE, vrátí logaritmus o základu 2.</span><span class="sxs-lookup"><span data-stu-id="62025-304">Corresponds to the `log2` IEEE operation, it returns the base-2 logarithm.</span></span> <span data-ttu-id="62025-305">Minimalizuje chybu zaokrouhlování.</span><span class="sxs-lookup"><span data-stu-id="62025-305">It minimizes rounding error.</span></span>
-
-- <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-<span data-ttu-id="62025-306">Odpovídá `fma` IEEE operace, provádí přidaný násobek.</span><span class="sxs-lookup"><span data-stu-id="62025-306">Corresponds to the `fma` IEEE operation, it performs a fused multiply add.</span></span> <span data-ttu-id="62025-307">To znamená, že v rámci jedné operace provádí `(x * y) + z`, což minimalizuje chybu zaokrouhlování.</span><span class="sxs-lookup"><span data-stu-id="62025-307">That is, it does `(x * y) + z` as a single operation, thereby minimizing the rounding error.</span></span> <span data-ttu-id="62025-308">Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrátí `1e308`.</span><span class="sxs-lookup"><span data-stu-id="62025-308">An example would be `FusedMultiplyAdd(1e308, 2.0, -1e308)` which returns `1e308`.</span></span> <span data-ttu-id="62025-309">Normální `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.</span><span class="sxs-lookup"><span data-stu-id="62025-309">The regular `(1e308 * 2.0) - 1e308` returns `double.PositiveInfinity`.</span></span>
-
-- <xref:System.Math.CopySign(System.Double,System.Double)>\
-<span data-ttu-id="62025-310">Odpovídá `copySign` IEEE operace, vrátí hodnotu `x`, ale s znaménkem `y`.</span><span class="sxs-lookup"><span data-stu-id="62025-310">Corresponds to the `copySign` IEEE operation, it returns the value of `x`, but with the sign of `y`.</span></span>
-
-## <a name="fast-built-in-json-support"></a><span data-ttu-id="62025-311">Rychlá integrovaná podpora JSON</span><span class="sxs-lookup"><span data-stu-id="62025-311">Fast built-in JSON support</span></span>
-
-<span data-ttu-id="62025-312">Uživatelé rozhraní .NET mají převážně na [**JSON.NET**](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti.</span><span class="sxs-lookup"><span data-stu-id="62025-312">.NET users have largely relied on [**Json.NET**](https://www.newtonsoft.com/json) and other popular JSON libraries, which continue to be good choices.</span></span> <span data-ttu-id="62025-313">**JSON.NET** používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.</span><span class="sxs-lookup"><span data-stu-id="62025-313">**Json.NET** uses .NET strings as its base datatype, which is UTF-16 under the hood.</span></span>
-
-<span data-ttu-id="62025-314">Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založená na `Span<byte>`.</span><span class="sxs-lookup"><span data-stu-id="62025-314">The new built-in JSON support is high-performance, low allocation, and based on `Span<byte>`.</span></span> <span data-ttu-id="62025-315">Do .NET Core 3,0 obor názvů <xref:System.Text.Json?displayProperty=nameWithType> se přidaly tři nové hlavní typy související s JSON.</span><span class="sxs-lookup"><span data-stu-id="62025-315">Three new main JSON-related types have been added to .NET Core 3.0 the <xref:System.Text.Json?displayProperty=nameWithType> namespace.</span></span> <span data-ttu-id="62025-316">Tyto typy *ještě* nepodporují serializaci a deserializaci objektu CLR (POCO).</span><span class="sxs-lookup"><span data-stu-id="62025-316">These types don't *yet* support plain old CLR object (POCO) serialization and deserialization.</span></span>
-
-### <a name="utf8jsonreader"></a><span data-ttu-id="62025-317">Utf8JsonReader</span><span class="sxs-lookup"><span data-stu-id="62025-317">Utf8JsonReader</span></span>
-
-<span data-ttu-id="62025-318"><xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType> je pro text JSON s kódováním UTF-8 s vysokým výkonem a s nízkou úrovní přidělování, které se čte z `ReadOnlySpan<byte>`.</span><span class="sxs-lookup"><span data-stu-id="62025-318"><xref:System.Text.Json.Utf8JsonReader?displayProperty=nameWithType> is a high-performance, low allocation, forward-only reader for UTF-8 encoded JSON text, read from a `ReadOnlySpan<byte>`.</span></span> <span data-ttu-id="62025-319">@No__t_0 je základní typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace.</span><span class="sxs-lookup"><span data-stu-id="62025-319">The `Utf8JsonReader` is a foundational, low-level type, that can be used to build custom parsers and deserializers.</span></span> <span data-ttu-id="62025-320">Čtení prostřednictvím datové části JSON pomocí nového `Utf8JsonReader` je dvojnásobější, než použití čtecího zařízení z **JSON.NET**.</span><span class="sxs-lookup"><span data-stu-id="62025-320">Reading through a JSON payload using the new `Utf8JsonReader` is 2x faster than using the reader from **Json.NET**.</span></span> <span data-ttu-id="62025-321">Nepřiřazuje se, dokud nebudete muset actualize tokeny JSON jako řetězce (UTF-16).</span><span class="sxs-lookup"><span data-stu-id="62025-321">It doesn't allocate until you need to actualize JSON tokens as (UTF-16) strings.</span></span>
-
-<span data-ttu-id="62025-322">Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="62025-322">Here is an example of reading through the [**launch.json**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) file created by Visual Studio Code:</span></span>
-
-[!CODE-csharp[Utf8JsonReader](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#PrintJson)]
-
-[!CODE-csharp[Utf8JsonReader](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#PrintJsonCall)]
-
-### <a name="utf8jsonwriter"></a><span data-ttu-id="62025-323">Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="62025-323">Utf8JsonWriter</span></span>
-
-<span data-ttu-id="62025-324"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=nameWithType> poskytuje vysoce výkonný a neuložený v mezipaměti, a to jenom pro psaní textu JSON s kódováním UTF-8 ze běžných typů .NET, jako je `String`, `Int32` a `DateTime`.</span><span class="sxs-lookup"><span data-stu-id="62025-324"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=nameWithType> provides a high-performance, non-cached, forward-only way to write UTF-8 encoded JSON text from common .NET types like `String`, `Int32`, and `DateTime`.</span></span> <span data-ttu-id="62025-325">Podobně jako čtenář je modul pro zápis základní typ nízké úrovně, který lze použít k vytvoření vlastních serializátorů.</span><span class="sxs-lookup"><span data-stu-id="62025-325">Like the reader, the writer is a foundational, low-level type, that can be used to build custom serializers.</span></span> <span data-ttu-id="62025-326">Zápis datové části JSON pomocí nového `Utf8JsonWriter` je 30-80% rychlejší než použití zapisovače z **JSON.NET** a nepřiřazuje.</span><span class="sxs-lookup"><span data-stu-id="62025-326">Writing a JSON payload using the new `Utf8JsonWriter` is 30-80% faster than using the writer from **Json.NET** and doesn't allocate.</span></span>
-
-### <a name="jsondocument"></a><span data-ttu-id="62025-327">JsonDocument</span><span class="sxs-lookup"><span data-stu-id="62025-327">JsonDocument</span></span>
-
-<span data-ttu-id="62025-328"><xref:System.Text.Json.JsonDocument?displayProperty=nameWithType> je postaven nad `Utf8JsonReader`.</span><span class="sxs-lookup"><span data-stu-id="62025-328"><xref:System.Text.Json.JsonDocument?displayProperty=nameWithType> is built on top of the `Utf8JsonReader`.</span></span> <span data-ttu-id="62025-329">@No__t_0 poskytuje možnost analyzovat data JSON a sestavit model DOM (Document Object Model) DOM (jen pro čtení), na které se dá dotazovat, aby podporovala náhodný přístup a výčet.</span><span class="sxs-lookup"><span data-stu-id="62025-329">The `JsonDocument` provides the ability to parse JSON data and build a read-only Document Object Model (DOM) that can be queried to support random access and enumeration.</span></span> <span data-ttu-id="62025-330">Prvky JSON, které tvoří data, lze zpřístupnit prostřednictvím typu <xref:System.Text.Json.JsonElement>, který je zpřístupněn `JsonDocument` jako vlastnost s názvem `RootElement`.</span><span class="sxs-lookup"><span data-stu-id="62025-330">The JSON elements that compose the data can be accessed via the <xref:System.Text.Json.JsonElement> type that is exposed by the `JsonDocument` as a property called `RootElement`.</span></span> <span data-ttu-id="62025-331">@No__t_0 obsahuje enumerátory polí a objektů JSON spolu s rozhraními API pro převod textu JSON na běžné typy .NET.</span><span class="sxs-lookup"><span data-stu-id="62025-331">The `JsonElement` contains the JSON array and object enumerators along with APIs to convert JSON text to common .NET types.</span></span> <span data-ttu-id="62025-332">Analýza typické datové části JSON a přístup ke všem jeho členům pomocí `JsonDocument` je 2-3x rychlejší než **JSON.NET** s malým přidělením dat, která mají rozumně velikost (to znamená < 1 MB).</span><span class="sxs-lookup"><span data-stu-id="62025-332">Parsing a typical JSON payload and accessing all its members using the `JsonDocument` is 2-3x faster than **Json.NET** with little allocations for data that is reasonably sized (that is, < 1 MB).</span></span>
-
-<span data-ttu-id="62025-333">Zde je ukázka použití `JsonDocument` a `JsonElement`, které lze použít jako výchozí bod:</span><span class="sxs-lookup"><span data-stu-id="62025-333">Here is a sample usage of the `JsonDocument` and `JsonElement` that can be used as a starting point:</span></span>
-
-[!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJson)]
-
-<span data-ttu-id="62025-334">Tady je příklad C# 8,0 souboru [**Launch. JSON**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="62025-334">Here is a C# 8.0 example of reading through the [**launch.json**](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) file created by Visual Studio Code:</span></span>
-
-[!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJsonCall)]
-
-### <a name="jsonserializer"></a><span data-ttu-id="62025-335">JsonSerializer</span><span class="sxs-lookup"><span data-stu-id="62025-335">JsonSerializer</span></span>
-
-<span data-ttu-id="62025-336"><xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> je postaven na <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter>, aby při práci s dokumenty a fragmenty JSON poskytovala rychlou a nízkou možnost serializace paměti.</span><span class="sxs-lookup"><span data-stu-id="62025-336"><xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> is built on top of <xref:System.Text.Json.Utf8JsonReader> and <xref:System.Text.Json.Utf8JsonWriter> to provide a fast, low-memory serialization option when working with JSON documents and fragments.</span></span>
-
-<span data-ttu-id="62025-337">Tady je příklad serializace objektu do formátu JSON:</span><span class="sxs-lookup"><span data-stu-id="62025-337">Here is an example of serializing an object to JSON:</span></span>
-
-[!CODE-csharp[JsonSerializer](~/samples/snippets/core/whats-new/whats-new-in-30/cs/JSON.cs#JsonSerialize)]
-
-<span data-ttu-id="62025-338">Zde je příklad deserializace řetězce JSON na objekt.</span><span class="sxs-lookup"><span data-stu-id="62025-338">Here is an example of deserializing a JSON string to an object.</span></span> <span data-ttu-id="62025-339">Můžete použít řetězec JSON vyprodukovaný předchozím příkladem:</span><span class="sxs-lookup"><span data-stu-id="62025-339">You can use the JSON string produced by the previous example:</span></span>
-
-[!CODE-csharp[JsonDeserializer](~/samples/snippets/core/whats-new/whats-new-in-30/cs/JSON.cs#JsonDeserialize)]
-
-## <a name="interop-improvements"></a><span data-ttu-id="62025-340">Vylepšení spolupráce</span><span class="sxs-lookup"><span data-stu-id="62025-340">Interop improvements</span></span>
-
-<span data-ttu-id="62025-341">.NET Core 3,0 vylepšuje nativní interoperabilitu rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="62025-341">.NET Core 3.0 improves native API interop.</span></span>
-
-### <a name="type-nativelibrary"></a><span data-ttu-id="62025-342">Zadejte: NativeLibrary</span><span class="sxs-lookup"><span data-stu-id="62025-342">Type: NativeLibrary</span></span>
-
-<span data-ttu-id="62025-343"><xref:System.Runtime.InteropServices.NativeLibrary?displayProperty=nameWithType> poskytuje zapouzdření pro načtení nativní knihovny (pomocí stejné logiky zatížení jako .NET Core P/Invoke) a poskytování relevantních pomocných funkcí, jako je například `getSymbol`.</span><span class="sxs-lookup"><span data-stu-id="62025-343"><xref:System.Runtime.InteropServices.NativeLibrary?displayProperty=nameWithType> provides an encapsulation for loading a native library (using the same load logic as .NET Core P/Invoke) and providing the relevant helper functions such as `getSymbol`.</span></span> <span data-ttu-id="62025-344">Příklad kódu naleznete v [ukázce DLLMap](https://github.com/dotnet/samples/tree/master/core/extensions/DllMapDemo).</span><span class="sxs-lookup"><span data-stu-id="62025-344">For a code example, see the [DLLMap Demo](https://github.com/dotnet/samples/tree/master/core/extensions/DllMapDemo).</span></span>
-
-### <a name="windows-native-interop"></a><span data-ttu-id="62025-345">Nativní spolupráce Windows</span><span class="sxs-lookup"><span data-stu-id="62025-345">Windows Native Interop</span></span>
-
-<span data-ttu-id="62025-346">Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT.</span><span class="sxs-lookup"><span data-stu-id="62025-346">Windows offers a rich native API in the form of flat C APIs, COM, and WinRT.</span></span> <span data-ttu-id="62025-347">I když .NET Core podporuje **volání nespravovaného voláním**.net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**.</span><span class="sxs-lookup"><span data-stu-id="62025-347">While .NET Core supports **P/Invoke**, .NET Core 3.0 adds the ability to **CoCreate COM APIs** and **Activate WinRT APIs**.</span></span> <span data-ttu-id="62025-348">Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).</span><span class="sxs-lookup"><span data-stu-id="62025-348">For a code example, see the [Excel Demo](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).</span></span>
-
-## <a name="http2-support"></a><span data-ttu-id="62025-349">Podpora HTTP/2</span><span class="sxs-lookup"><span data-stu-id="62025-349">HTTP/2 support</span></span>
-
-<span data-ttu-id="62025-350">Typ <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> podporuje protokol HTTP/2.</span><span class="sxs-lookup"><span data-stu-id="62025-350">The <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> type supports the HTTP/2 protocol.</span></span> <span data-ttu-id="62025-351">Pokud je povolený protokol HTTP/2, vyjednává se verze protokolu HTTP prostřednictvím TLS/ALPN a protokol HTTP/2 se použije, pokud se server rozhodne ho použít.</span><span class="sxs-lookup"><span data-stu-id="62025-351">If HTTP/2 is enabled, the HTTP protocol version is negotiated via TLS/ALPN, and HTTP/2 is used if the server elects to use it.</span></span>
-
-<span data-ttu-id="62025-352">Výchozí protokol zůstává HTTP/1.1, ale protokol HTTP/2 může být povolen dvěma různými způsoby.</span><span class="sxs-lookup"><span data-stu-id="62025-352">The default protocol remains HTTP/1.1, but HTTP/2 can be enabled in two different ways.</span></span> <span data-ttu-id="62025-353">Nejdřív můžete nastavit zprávu požadavku HTTP na používání HTTP/2:</span><span class="sxs-lookup"><span data-stu-id="62025-353">First, you can set the HTTP request message to use HTTP/2:</span></span>
+<span data-ttu-id="955c5-396">Výchozí protokol zůstává HTTP/1.1, ale protokol HTTP/2 může být povolen dvěma různými způsoby.</span><span class="sxs-lookup"><span data-stu-id="955c5-396">The default protocol remains HTTP/1.1, but HTTP/2 can be enabled in two different ways.</span></span> <span data-ttu-id="955c5-397">Nejdřív můžete nastavit zprávu požadavku HTTP na používání HTTP/2:</span><span class="sxs-lookup"><span data-stu-id="955c5-397">First, you can set the HTTP request message to use HTTP/2:</span></span>
 
 [!CODE-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
 
-<span data-ttu-id="62025-354">Za druhé můžete změnit <xref:System.Net.Http.HttpClient>, aby se ve výchozím nastavení použil protokol HTTP/2:</span><span class="sxs-lookup"><span data-stu-id="62025-354">Second, you can change <xref:System.Net.Http.HttpClient> to use HTTP/2 by default:</span></span>
+<span data-ttu-id="955c5-398">Za druhé můžete změnit <xref:System.Net.Http.HttpClient>, aby se ve výchozím nastavení použil protokol HTTP/2:</span><span class="sxs-lookup"><span data-stu-id="955c5-398">Second, you can change <xref:System.Net.Http.HttpClient> to use HTTP/2 by default:</span></span>
 
 [!CODE-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
 
-<span data-ttu-id="62025-355">V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované připojení.</span><span class="sxs-lookup"><span data-stu-id="62025-355">Many times when you're developing an application, you want to use an unencrypted connection.</span></span> <span data-ttu-id="62025-356">Pokud víte, že cílový koncový bod bude používat protokol HTTP/2, můžete zapnout nezašifrovaná připojení pro HTTP/2.</span><span class="sxs-lookup"><span data-stu-id="62025-356">If you know the target endpoint will be using HTTP/2, you can turn on unencrypted connections for HTTP/2.</span></span> <span data-ttu-id="62025-357">Můžete ji zapnout nastavením proměnné prostředí `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` na `1` nebo povolením v kontextu aplikace:</span><span class="sxs-lookup"><span data-stu-id="62025-357">You can turn it on by setting the `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` environment variable to `1` or by enabling it in the app context:</span></span>
+<span data-ttu-id="955c5-399">V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované připojení.</span><span class="sxs-lookup"><span data-stu-id="955c5-399">Many times when you're developing an application, you want to use an unencrypted connection.</span></span> <span data-ttu-id="955c5-400">Pokud víte, že cílový koncový bod bude používat protokol HTTP/2, můžete zapnout nezašifrovaná připojení pro HTTP/2.</span><span class="sxs-lookup"><span data-stu-id="955c5-400">If you know the target endpoint will be using HTTP/2, you can turn on unencrypted connections for HTTP/2.</span></span> <span data-ttu-id="955c5-401">Můžete ji zapnout nastavením proměnné prostředí `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` na `1` nebo povolením v kontextu aplikace:</span><span class="sxs-lookup"><span data-stu-id="955c5-401">You can turn it on by setting the `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` environment variable to `1` or by enabling it in the app context:</span></span>
 
 [!CODE-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
-## <a name="tls-13--openssl-111-on-linux"></a><span data-ttu-id="62025-358">TLS 1,3 & OpenSSL 1.1.1 v systému Linux</span><span class="sxs-lookup"><span data-stu-id="62025-358">TLS 1.3 & OpenSSL 1.1.1 on Linux</span></span>
+## <a name="next-steps"></a><span data-ttu-id="955c5-402">Další kroky</span><span class="sxs-lookup"><span data-stu-id="955c5-402">Next steps</span></span>
 
-<span data-ttu-id="62025-359">.NET Core teď využívá [podporu TLS 1,3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí.</span><span class="sxs-lookup"><span data-stu-id="62025-359">.NET Core now takes advantage of [TLS 1.3 support in OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), when it's available in a given environment.</span></span> <span data-ttu-id="62025-360">S protokolem TLS 1,3:</span><span class="sxs-lookup"><span data-stu-id="62025-360">With TLS 1.3:</span></span>
-
-- <span data-ttu-id="62025-361">Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="62025-361">Connection times are improved with reduced round trips required between the client and server.</span></span>
-- <span data-ttu-id="62025-362">Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.</span><span class="sxs-lookup"><span data-stu-id="62025-362">Improved security because of the removal of various obsolete and insecure cryptographic algorithms.</span></span>
-
-<span data-ttu-id="62025-363">V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux.</span><span class="sxs-lookup"><span data-stu-id="62025-363">When available, .NET Core 3.0 uses **OpenSSL 1.1.1**, **OpenSSL 1.1.0**, or **OpenSSL 1.0.2** on a Linux system.</span></span> <span data-ttu-id="62025-364">Když je k dispozici **OpenSSL 1.1.1** , budou používat <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> **TLS 1,3** (za předpokladu <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, že klient i server podporují protokol **TLS 1,3**).</span><span class="sxs-lookup"><span data-stu-id="62025-364">When **OpenSSL 1.1.1** is available, both <xref:System.Net.Security.SslStream?displayProperty=nameWithType> and <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> types will use **TLS 1.3** (assuming both the client and server support **TLS 1.3**).</span></span>
-
->[!IMPORTANT]
-><span data-ttu-id="62025-365">Windows a macOS ještě nepodporují **TLS 1,3**.</span><span class="sxs-lookup"><span data-stu-id="62025-365">Windows and macOS do not yet support **TLS 1.3**.</span></span> <span data-ttu-id="62025-366">Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="62025-366">.NET Core 3.0 will support **TLS 1.3** on these operating systems when support becomes available.</span></span>
-
-<span data-ttu-id="62025-367">Následující C# příklad 8,0 ukazuje rozhraní .net Core 3,0 na Ubuntu 18,10 připojení k <https://www.cloudflare.com>:</span><span class="sxs-lookup"><span data-stu-id="62025-367">The following C# 8.0 example demonstrates .NET Core 3.0 on Ubuntu 18.10 connecting to <https://www.cloudflare.com>:</span></span>
-
-[!CODE-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
-
-## <a name="cryptography-ciphers"></a><span data-ttu-id="62025-368">Kryptografická šifry</span><span class="sxs-lookup"><span data-stu-id="62025-368">Cryptography ciphers</span></span>
-
-<span data-ttu-id="62025-369">Rozhraní .NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** implementovaná pomocí <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> a <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="62025-369">.NET 3.0 adds support for **AES-GCM** and **AES-CCM** ciphers, implemented with <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> and <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> respectively.</span></span> <span data-ttu-id="62025-370">Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).</span><span class="sxs-lookup"><span data-stu-id="62025-370">These algorithms are both [Authenticated Encryption with Association Data (AEAD) algorithms](https://en.wikipedia.org/wiki/Authenticated_encryption).</span></span>
-
-<span data-ttu-id="62025-371">Následující kód ukazuje použití šifry `AesGcm` k šifrování a dešifrování náhodných dat.</span><span class="sxs-lookup"><span data-stu-id="62025-371">The following code demonstrates using `AesGcm` cipher to encrypt and decrypt random data.</span></span>
-
-[!CODE-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
-
-## <a name="cryptographic-key-importexport"></a><span data-ttu-id="62025-372">Import/export kryptografického klíče</span><span class="sxs-lookup"><span data-stu-id="62025-372">Cryptographic Key Import/Export</span></span>
-
-<span data-ttu-id="62025-373">.NET Core 3,0 podporuje import a export asymetrických veřejných a privátních klíčů ze standardních formátů.</span><span class="sxs-lookup"><span data-stu-id="62025-373">.NET Core 3.0 supports the import and export of asymmetric public and private keys from standard formats.</span></span> <span data-ttu-id="62025-374">Nemusíte používat certifikát X. 509.</span><span class="sxs-lookup"><span data-stu-id="62025-374">You don't need to use an X.509 certificate.</span></span>
-
-<span data-ttu-id="62025-375">Všechny typy klíčů, jako jsou *RSA*, *DSA*, *ECDSA*a *ECDiffieHellman*, podporují následující formáty:</span><span class="sxs-lookup"><span data-stu-id="62025-375">All key types, such as *RSA*, *DSA*, *ECDsa*, and *ECDiffieHellman*, support the following formats:</span></span>
-
-- <span data-ttu-id="62025-376">**Veřejný klíč**</span><span class="sxs-lookup"><span data-stu-id="62025-376">**Public Key**</span></span>
-  - <span data-ttu-id="62025-377">X. 509 SubjectPublicKeyInfo</span><span class="sxs-lookup"><span data-stu-id="62025-377">X.509 SubjectPublicKeyInfo</span></span>
-
-- <span data-ttu-id="62025-378">**Privátní klíč**</span><span class="sxs-lookup"><span data-stu-id="62025-378">**Private key**</span></span>
-  - <span data-ttu-id="62025-379">PrivateKeyInfo PKCS # 8</span><span class="sxs-lookup"><span data-stu-id="62025-379">PKCS#8 PrivateKeyInfo</span></span>
-  - <span data-ttu-id="62025-380">EncryptedPrivateKeyInfo PKCS # 8</span><span class="sxs-lookup"><span data-stu-id="62025-380">PKCS#8 EncryptedPrivateKeyInfo</span></span>
-
-<span data-ttu-id="62025-381">Klíče RSA podporují i:</span><span class="sxs-lookup"><span data-stu-id="62025-381">RSA keys also support:</span></span>
-
-- <span data-ttu-id="62025-382">**Veřejný klíč**</span><span class="sxs-lookup"><span data-stu-id="62025-382">**Public Key**</span></span>
-  - <span data-ttu-id="62025-383">RSAPublicKey PKCS # 1</span><span class="sxs-lookup"><span data-stu-id="62025-383">PKCS#1 RSAPublicKey</span></span>
-
-- <span data-ttu-id="62025-384">**Privátní klíč**</span><span class="sxs-lookup"><span data-stu-id="62025-384">**Private key**</span></span>
-  - <span data-ttu-id="62025-385">RSAPrivateKey PKCS # 1</span><span class="sxs-lookup"><span data-stu-id="62025-385">PKCS#1 RSAPrivateKey</span></span>
-
-<span data-ttu-id="62025-386">Metody exportu vytváří binární data kódovaná v kódování DER a metody importu očekávají stejné.</span><span class="sxs-lookup"><span data-stu-id="62025-386">The export methods produce DER-encoded binary data, and the import methods expect the same.</span></span> <span data-ttu-id="62025-387">Pokud je klíč uložený v textovém formátu PEM, volající bude muset před voláním metody import kódování Base64 a dekódovat obsah.</span><span class="sxs-lookup"><span data-stu-id="62025-387">If a key is stored in the text-friendly PEM format, the caller will need to base64-decode the content before calling an import method.</span></span>
-
-[!CODE-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
-
-<span data-ttu-id="62025-388">Soubory **PKCS # 8** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> a souborů **PFX/PKCS # 12** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="62025-388">**PKCS#8** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> and **PFX/PKCS#12** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>.</span></span> <span data-ttu-id="62025-389">Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="62025-389">**PFX/PKCS#12** files can be manipulated with <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.</span></span>
-
-## <a name="serialport-for-linux"></a><span data-ttu-id="62025-390">Portu SerialPort pro Linux</span><span class="sxs-lookup"><span data-stu-id="62025-390">SerialPort for Linux</span></span>
-
-<span data-ttu-id="62025-391">.NET Core 3,0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> v systému Linux.</span><span class="sxs-lookup"><span data-stu-id="62025-391">.NET Core 3.0 provides basic support for <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> on Linux.</span></span>
-
-<span data-ttu-id="62025-392">Dřív se .NET Core podporuje jenom pomocí `SerialPort` ve Windows.</span><span class="sxs-lookup"><span data-stu-id="62025-392">Previously, .NET Core only supported using `SerialPort` on Windows.</span></span>
-
-<span data-ttu-id="62025-393">Další informace o omezené podpoře sériového portu v systému Linux najdete v tématu [#33146 problému GitHubu](https://github.com/dotnet/corefx/issues/33146).</span><span class="sxs-lookup"><span data-stu-id="62025-393">For more information about the limited support for the serial port on Linux, see [GitHub issue #33146](https://github.com/dotnet/corefx/issues/33146).</span></span>
-
-## <a name="docker-and-cgroup-memory-limits"></a><span data-ttu-id="62025-394">Omezení paměti Docker a CGROUP</span><span class="sxs-lookup"><span data-stu-id="62025-394">Docker and cgroup memory Limits</span></span>
-
-<span data-ttu-id="62025-395">Provoz .NET Core 3,0 na platformě Linux s Docker funguje lépe s omezeními CGROUP paměti.</span><span class="sxs-lookup"><span data-stu-id="62025-395">Running .NET Core 3.0 on Linux with Docker works better with cgroup memory limits.</span></span> <span data-ttu-id="62025-396">Spuštění kontejneru Docker s omezeními paměti, jako je například s `docker run -m`, mění způsob, jakým se aplikace .NET Core chová.</span><span class="sxs-lookup"><span data-stu-id="62025-396">Running a Docker container with memory limits, such as with `docker run -m`, changes how .NET Core behaves.</span></span>
-
-- <span data-ttu-id="62025-397">Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.</span><span class="sxs-lookup"><span data-stu-id="62025-397">Default Garbage Collector (GC) heap size: maximum of 20 mb or 75% of the memory limit on the container.</span></span>
-- <span data-ttu-id="62025-398">Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.</span><span class="sxs-lookup"><span data-stu-id="62025-398">Explicit size can be set as an absolute number or percentage of cgroup limit.</span></span>
-- <span data-ttu-id="62025-399">Minimální velikost rezervovaného segmentu na haldě GC je 16 MB.</span><span class="sxs-lookup"><span data-stu-id="62025-399">Minimum reserved segment size per GC heap is 16 mb.</span></span> <span data-ttu-id="62025-400">Tato velikost snižuje počet hald, které jsou vytvořeny na počítačích.</span><span class="sxs-lookup"><span data-stu-id="62025-400">This size reduces the number of heaps that are created on machines.</span></span>
-
-## <a name="smaller-garbage-collection-heap-sizes"></a><span data-ttu-id="62025-401">Menší velikosti haldy uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="62025-401">Smaller Garbage Collection heap sizes</span></span>
-
-<span data-ttu-id="62025-402">Výchozí velikost haldy systému uvolňování paměti byla snížena z výsledku rozhraní .NET Core s menším množstvím paměti.</span><span class="sxs-lookup"><span data-stu-id="62025-402">The Garbage Collector's default heap size has been reduced resulting in .NET Core using less memory.</span></span> <span data-ttu-id="62025-403">Tato změna se lépe zarovnává s rozpočtem přidělení 0. generace s moderními velikostmi mezipaměti procesoru.</span><span class="sxs-lookup"><span data-stu-id="62025-403">This change better aligns with the generation 0 allocation budget with modern processor cache sizes.</span></span>
-
-## <a name="garbage-collection-large-page-support"></a><span data-ttu-id="62025-404">Podpora velkokapacitních stránek uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="62025-404">Garbage Collection Large Page support</span></span>
-
-<span data-ttu-id="62025-405">Velké stránky (označované také jako velké stránky na platformě Linux) jsou funkce, ve které může operační systém vytvořit oblasti paměti větší než velikost nativní stránky (často 4K), aby se zlepšil výkon aplikace požadující tyto velké stránky.</span><span class="sxs-lookup"><span data-stu-id="62025-405">Large Pages (also known as Huge Pages on Linux) is a feature where the operating system is able to establish memory regions larger than the native page size (often 4K) to improve performance of the application requesting these large pages.</span></span>
-
-<span data-ttu-id="62025-406">Systém uvolňování paměti se teď dá nakonfigurovat s nastavením **GCLargePages** jako funkce výslovného souhlasu, která se rozhodne přidělit velké stránky ve Windows.</span><span class="sxs-lookup"><span data-stu-id="62025-406">The Garbage Collector can now be configured with the **GCLargePages** setting as an opt-in feature to choose to allocate large pages on Windows.</span></span>
-
-## <a name="gpio-support-for-raspberry-pi"></a><span data-ttu-id="62025-407">Podpora GPIO pro maliny PI</span><span class="sxs-lookup"><span data-stu-id="62025-407">GPIO Support for Raspberry Pi</span></span>
-
-<span data-ttu-id="62025-408">Do NuGet byly vydány dva balíčky, které můžete použít pro GPIO programování:</span><span class="sxs-lookup"><span data-stu-id="62025-408">Two packages have been released to NuGet that you can use for GPIO programming:</span></span>
-
-- [<span data-ttu-id="62025-409">System. Device. GPIO</span><span class="sxs-lookup"><span data-stu-id="62025-409">System.Device.Gpio</span></span>](https://www.nuget.org/packages/System.Device.Gpio)
-- [<span data-ttu-id="62025-410">IoT. Device. Bindings</span><span class="sxs-lookup"><span data-stu-id="62025-410">Iot.Device.Bindings</span></span>](https://www.nuget.org/packages/Iot.Device.Bindings)
-
-<span data-ttu-id="62025-411">Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PWM* .</span><span class="sxs-lookup"><span data-stu-id="62025-411">The GPIO packages include APIs for *GPIO*, *SPI*, *I2C*, and *PWM* devices.</span></span> <span data-ttu-id="62025-412">Balíček vazeb IoT zahrnuje vazby zařízení.</span><span class="sxs-lookup"><span data-stu-id="62025-412">The IoT bindings package includes device bindings.</span></span> <span data-ttu-id="62025-413">Další informace najdete v [úložišti GitHubu zařízení](https://github.com/dotnet/iot/blob/master/src/devices/).</span><span class="sxs-lookup"><span data-stu-id="62025-413">For more information, see the [devices GitHub repo](https://github.com/dotnet/iot/blob/master/src/devices/).</span></span>
-
-## <a name="arm64-linux-support"></a><span data-ttu-id="62025-414">Podpora ARM64 Linux</span><span class="sxs-lookup"><span data-stu-id="62025-414">ARM64 Linux support</span></span>
-
-<span data-ttu-id="62025-415">.NET Core 3,0 přidává podporu pro ARM64 pro Linux.</span><span class="sxs-lookup"><span data-stu-id="62025-415">.NET Core 3.0 adds support for ARM64 for Linux.</span></span> <span data-ttu-id="62025-416">Primární případ použití pro ARM64 je aktuálně ve scénářích IoT.</span><span class="sxs-lookup"><span data-stu-id="62025-416">The primary use case for ARM64 is currently with IoT scenarios.</span></span> <span data-ttu-id="62025-417">Další informace najdete v tématu [stav .NET Core ARM64](https://github.com/dotnet/announcements/issues/82).</span><span class="sxs-lookup"><span data-stu-id="62025-417">For more information, see [.NET Core ARM64 Status](https://github.com/dotnet/announcements/issues/82).</span></span>
-
-<span data-ttu-id="62025-418">[Image Docker pro .NET Core na ARM64](https://hub.docker.com/r/microsoft/dotnet/) jsou k dispozici pro Alpine, Debian a Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="62025-418">[Docker images for .NET Core on ARM64](https://hub.docker.com/r/microsoft/dotnet/) are available for Alpine, Debian, and Ubuntu.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="62025-419">**ARM64** Podpora Windows není ještě dostupná.</span><span class="sxs-lookup"><span data-stu-id="62025-419">**ARM64** Windows support isn't yet available.</span></span>
+- [<span data-ttu-id="955c5-403">Přečtěte si o nejnovějších změnách mezi .NET Core 2,2 a 3,0.</span><span class="sxs-lookup"><span data-stu-id="955c5-403">Review the breaking changes between .NET Core 2.2 and 3.0.</span></span>](../compatibility/2.2-3.0.md)
+- [<span data-ttu-id="955c5-404">Přečtěte si o nejnovějších změnách mezi .NET Framework a .NET Core 3,0.</span><span class="sxs-lookup"><span data-stu-id="955c5-404">Review the breaking changes between .NET Framework and .NET Core 3.0.</span></span>](../compatibility/framework-core.md)

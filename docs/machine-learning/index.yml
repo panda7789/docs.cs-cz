@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: natke
   ms.author: nakersha
-  ms.date: 10/02/2019
-  ms.openlocfilehash: 4d9e3f78b02e7e95567dc9f025a1123966038770
-  ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+  ms.date: 10/28/2019
+  ms.openlocfilehash: d5aedcd118fc0558a5f425ccad7fb1ad67992f74
+  ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/15/2019
-  ms.locfileid: "72320526"
+  ms.lasthandoff: 10/29/2019
+  ms.locfileid: "73038229"
 landingContent:
 - title: Základy ML.NET
   linkLists:
@@ -53,7 +53,9 @@ landingContent:
       url: tutorials/predict-prices-with-model-builder.md
     - text: Kategorizace problémů podpory (API)
       url: tutorials/github-issue-classification.md
-    - text: Klasifikace imagí pomocí TensorFlow (API)
+    - text: Klasifikace imagí pomocí rozhraní API pro klasifikaci imagí (API)
+      url: tutorials/image-classification-api-transfer-learning.md
+    - text: Klasifikace imagí pomocí kompozice modelů (API)
       url: tutorials/image-classification.md
     - text: Detekovat objekty v obrázcích (rozhraní API)
       url: tutorials/object-detection-onnx.md

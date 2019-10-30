@@ -3,24 +3,24 @@ title: Čísla v C# úvodu k C# kurzu
 description: Naučte C# se prozkoumat číselné typy, jejich vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: e9d8b09bde6e87edf9f483c0c296dbb256343f58
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b392682a245101e37a182cb92d36ccb1dd34b13e
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039692"
 ---
-# <a name="manipulate-integral-and-floating-point-numbers-in-c"></a><span data-ttu-id="f854e-103">Manipulace s čísly integrálních a plovoucích bodů v jazyce C \#</span><span class="sxs-lookup"><span data-stu-id="f854e-103">Manipulate integral and floating point numbers in C\#</span></span>
+# <a name="manipulate-integral-and-floating-point-numbers-in-c"></a><span data-ttu-id="d51df-103">Manipulace s čísly integrálních a plovoucích bodů v jazyce C \#</span><span class="sxs-lookup"><span data-stu-id="d51df-103">Manipulate integral and floating point numbers in C\#</span></span>
 
-<span data-ttu-id="f854e-104">V tomto kurzu se naučíte, aby se číselné C# typy v interaktivně.</span><span class="sxs-lookup"><span data-stu-id="f854e-104">This tutorial teaches you about the numeric types in C# interactively.</span></span> <span data-ttu-id="f854e-105">Budete psát malé množství kódu, potom zkompilujete a spustíte tento kód.</span><span class="sxs-lookup"><span data-stu-id="f854e-105">You'll write small amounts of code, then you'll compile and run that code.</span></span> <span data-ttu-id="f854e-106">Kurz obsahuje řadu lekcí, které prozkoumají čísla a matematické operace v C#.</span><span class="sxs-lookup"><span data-stu-id="f854e-106">The tutorial contains a series of lessons that explore numbers and math operations in C#.</span></span> <span data-ttu-id="f854e-107">V těchto lekcích se naučíte základy C# jazyka.</span><span class="sxs-lookup"><span data-stu-id="f854e-107">These lessons teach you the fundamentals of the C# language.</span></span>
+<span data-ttu-id="d51df-104">V tomto kurzu se naučíte, aby se číselné C# typy v interaktivně.</span><span class="sxs-lookup"><span data-stu-id="d51df-104">This tutorial teaches you about the numeric types in C# interactively.</span></span> <span data-ttu-id="d51df-105">Budete psát malé množství kódu, potom zkompilujete a spustíte tento kód.</span><span class="sxs-lookup"><span data-stu-id="d51df-105">You'll write small amounts of code, then you'll compile and run that code.</span></span> <span data-ttu-id="d51df-106">Kurz obsahuje řadu lekcí, které prozkoumají čísla a matematické operace v C#.</span><span class="sxs-lookup"><span data-stu-id="d51df-106">The tutorial contains a series of lessons that explore numbers and math operations in C#.</span></span> <span data-ttu-id="d51df-107">V těchto lekcích se naučíte základy C# jazyka.</span><span class="sxs-lookup"><span data-stu-id="d51df-107">These lessons teach you the fundamentals of the C# language.</span></span>
 
-<span data-ttu-id="f854e-108">V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj.</span><span class="sxs-lookup"><span data-stu-id="f854e-108">This tutorial expects you to have a machine you can use for development.</span></span> <span data-ttu-id="f854e-109">Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS.</span><span class="sxs-lookup"><span data-stu-id="f854e-109">The .NET tutorial [Hello World in 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) has instructions for setting up your local development environment on Windows, Linux, or macOS.</span></span> <span data-ttu-id="f854e-110">Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="f854e-110">A quick overview of the commands you'll use is in the [Become familiar with the development tools](local-environment.md) with links to more details.</span></span>
+<span data-ttu-id="d51df-108">V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj.</span><span class="sxs-lookup"><span data-stu-id="d51df-108">This tutorial expects you to have a machine you can use for development.</span></span> <span data-ttu-id="d51df-109">Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS.</span><span class="sxs-lookup"><span data-stu-id="d51df-109">The .NET tutorial [Hello World in 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) has instructions for setting up your local development environment on Windows, Linux, or macOS.</span></span> <span data-ttu-id="d51df-110">Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="d51df-110">A quick overview of the commands you'll use is in the [Become familiar with the development tools](local-environment.md) with links to more details.</span></span>
 
-## <a name="explore-integer-math"></a><span data-ttu-id="f854e-111">Prozkoumat celočíselné matematické</span><span class="sxs-lookup"><span data-stu-id="f854e-111">Explore integer math</span></span>
+## <a name="explore-integer-math"></a><span data-ttu-id="d51df-111">Prozkoumat celočíselné matematické</span><span class="sxs-lookup"><span data-stu-id="d51df-111">Explore integer math</span></span>
 
-<span data-ttu-id="f854e-112">Vytvořte adresář s názvem *Numbers – rychlý Start*.</span><span class="sxs-lookup"><span data-stu-id="f854e-112">Create a directory named *numbers-quickstart*.</span></span> <span data-ttu-id="f854e-113">Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n NumbersInCSharp -o .`.</span><span class="sxs-lookup"><span data-stu-id="f854e-113">Make that the current directory and run `dotnet new console -n NumbersInCSharp -o .`.</span></span>
+<span data-ttu-id="d51df-112">Vytvořte adresář s názvem *Numbers – rychlý Start*.</span><span class="sxs-lookup"><span data-stu-id="d51df-112">Create a directory named *numbers-quickstart*.</span></span> <span data-ttu-id="d51df-113">Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n NumbersInCSharp -o .`.</span><span class="sxs-lookup"><span data-stu-id="d51df-113">Make that the current directory and run `dotnet new console -n NumbersInCSharp -o .`.</span></span>
 
-<span data-ttu-id="f854e-114">Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte `Console.WriteLine("Hello World!");` řádku následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="f854e-114">Open *Program.cs* in your favorite editor, and replace the line `Console.WriteLine("Hello World!");` with the following:</span></span>
+<span data-ttu-id="d51df-114">Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte `Console.WriteLine("Hello World!");` řádku následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="d51df-114">Open *Program.cs* in your favorite editor, and replace the line `Console.WriteLine("Hello World!");` with the following:</span></span>
 
 ```csharp
 int a = 18;
@@ -29,34 +29,40 @@ int c = a + b;
 Console.WriteLine(c);
 ```
 
-<span data-ttu-id="f854e-115">Spusťte tento kód zadáním `dotnet run` v příkazovém okně.</span><span class="sxs-lookup"><span data-stu-id="f854e-115">Run this code by typing `dotnet run` in your command window.</span></span>
+<span data-ttu-id="d51df-115">Spusťte tento kód zadáním `dotnet run` v příkazovém okně.</span><span class="sxs-lookup"><span data-stu-id="d51df-115">Run this code by typing `dotnet run` in your command window.</span></span>
 
-<span data-ttu-id="f854e-116">Právě jste viděli jednu ze základních matematických operací s celými čísly.</span><span class="sxs-lookup"><span data-stu-id="f854e-116">You've just seen one of the fundamental math operations with integers.</span></span> <span data-ttu-id="f854e-117">Typ `int` představuje **celé**číslo, nula, kladné nebo záporné celé číslo.</span><span class="sxs-lookup"><span data-stu-id="f854e-117">The `int` type represents an **integer**, a zero, positive, or negative whole number.</span></span> <span data-ttu-id="f854e-118">K přidání použijte symbol `+`.</span><span class="sxs-lookup"><span data-stu-id="f854e-118">You use the `+` symbol for addition.</span></span> <span data-ttu-id="f854e-119">Mezi další běžné matematické operace pro celá čísla patří:</span><span class="sxs-lookup"><span data-stu-id="f854e-119">Other common mathematical operations for integers include:</span></span>
+<span data-ttu-id="d51df-116">Právě jste viděli jednu ze základních matematických operací s celými čísly.</span><span class="sxs-lookup"><span data-stu-id="d51df-116">You've just seen one of the fundamental math operations with integers.</span></span> <span data-ttu-id="d51df-117">Typ `int` představuje **celé**číslo, nula, kladné nebo záporné celé číslo.</span><span class="sxs-lookup"><span data-stu-id="d51df-117">The `int` type represents an **integer**, a zero, positive, or negative whole number.</span></span> <span data-ttu-id="d51df-118">K přidání použijte symbol `+`.</span><span class="sxs-lookup"><span data-stu-id="d51df-118">You use the `+` symbol for addition.</span></span> <span data-ttu-id="d51df-119">Mezi další běžné matematické operace pro celá čísla patří:</span><span class="sxs-lookup"><span data-stu-id="d51df-119">Other common mathematical operations for integers include:</span></span>
 
-- <span data-ttu-id="f854e-120">`-` pro odčítání</span><span class="sxs-lookup"><span data-stu-id="f854e-120">`-` for subtraction</span></span>
-- <span data-ttu-id="f854e-121">`*` pro násobení</span><span class="sxs-lookup"><span data-stu-id="f854e-121">`*` for multiplication</span></span>
-- <span data-ttu-id="f854e-122">`/` pro dělení</span><span class="sxs-lookup"><span data-stu-id="f854e-122">`/` for division</span></span>
+- <span data-ttu-id="d51df-120">`-` pro odčítání</span><span class="sxs-lookup"><span data-stu-id="d51df-120">`-` for subtraction</span></span>
+- <span data-ttu-id="d51df-121">`*` pro násobení</span><span class="sxs-lookup"><span data-stu-id="d51df-121">`*` for multiplication</span></span>
+- <span data-ttu-id="d51df-122">`/` pro dělení</span><span class="sxs-lookup"><span data-stu-id="d51df-122">`/` for division</span></span>
 
-<span data-ttu-id="f854e-123">Začněte tím, že prozkoumáte tyto různé operace.</span><span class="sxs-lookup"><span data-stu-id="f854e-123">Start by exploring those different operations.</span></span> <span data-ttu-id="f854e-124">Přidejte tyto řádky za řádek, který zapíše hodnotu `c`:</span><span class="sxs-lookup"><span data-stu-id="f854e-124">Add these lines after the line that writes the value of `c`:</span></span>
+<span data-ttu-id="d51df-123">Začněte tím, že prozkoumáte tyto různé operace.</span><span class="sxs-lookup"><span data-stu-id="d51df-123">Start by exploring those different operations.</span></span> <span data-ttu-id="d51df-124">Přidejte tyto řádky za řádek, který zapíše hodnotu `c`:</span><span class="sxs-lookup"><span data-stu-id="d51df-124">Add these lines after the line that writes the value of `c`:</span></span>
 
 ```csharp
+
+// subtraction
 c = a - b;
 Console.WriteLine(c);
+
+// multiplication
 c = a * b;
 Console.WriteLine(c);
+
+// division
 c = a / b;
 Console.WriteLine(c);
 ```
 
-<span data-ttu-id="f854e-125">Spusťte tento kód zadáním `dotnet run` v příkazovém okně.</span><span class="sxs-lookup"><span data-stu-id="f854e-125">Run this code by typing `dotnet run` in your command window.</span></span>
+<span data-ttu-id="d51df-125">Spusťte tento kód zadáním `dotnet run` v příkazovém okně.</span><span class="sxs-lookup"><span data-stu-id="d51df-125">Run this code by typing `dotnet run` in your command window.</span></span>
 
-<span data-ttu-id="f854e-126">Můžete také experimentovat při provádění více matematických operací na stejném řádku, pokud byste chtěli.</span><span class="sxs-lookup"><span data-stu-id="f854e-126">You can also experiment by performing multiple mathematics operations in the same line, if you'd like.</span></span> <span data-ttu-id="f854e-127">Zkuste například `c = a + b - 12 * 17;`.</span><span class="sxs-lookup"><span data-stu-id="f854e-127">Try `c = a + b - 12 * 17;` for example.</span></span> <span data-ttu-id="f854e-128">Jsou povoleny kombinace proměnných a konstantních čísel.</span><span class="sxs-lookup"><span data-stu-id="f854e-128">Mixing variables and constant numbers is allowed.</span></span>
+<span data-ttu-id="d51df-126">Můžete také experimentovat při provádění více matematických operací na stejném řádku, pokud byste chtěli.</span><span class="sxs-lookup"><span data-stu-id="d51df-126">You can also experiment by performing multiple mathematics operations in the same line, if you'd like.</span></span> <span data-ttu-id="d51df-127">Zkuste například `c = a + b - 12 * 17;`.</span><span class="sxs-lookup"><span data-stu-id="d51df-127">Try `c = a + b - 12 * 17;` for example.</span></span> <span data-ttu-id="d51df-128">Jsou povoleny kombinace proměnných a konstantních čísel.</span><span class="sxs-lookup"><span data-stu-id="d51df-128">Mixing variables and constant numbers is allowed.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="f854e-129">Při prozkoumávání C# (nebo jakémkoli programovacím jazyce) budete při psaní kódu dělat chyby.</span><span class="sxs-lookup"><span data-stu-id="f854e-129">As you explore C# (or any programming language), you'll make mistakes when you write code.</span></span> <span data-ttu-id="f854e-130">**Kompilátor** tyto chyby vyhledá a nahlásí je.</span><span class="sxs-lookup"><span data-stu-id="f854e-130">The **compiler** will find those errors and report them to you.</span></span> <span data-ttu-id="f854e-131">Pokud výstup obsahuje chybové zprávy, Prohlédněte si v příkladu kód a kód v okně, co je třeba opravit.</span><span class="sxs-lookup"><span data-stu-id="f854e-131">When the output contains error messages, look closely at the example code and the code in your window to see what to fix.</span></span>
-> <span data-ttu-id="f854e-132">Toto cvičení vám pomůže zjistit strukturu C# kódu.</span><span class="sxs-lookup"><span data-stu-id="f854e-132">That exercise will help you learn the structure of C# code.</span></span>
+> <span data-ttu-id="d51df-129">Při prozkoumávání C# (nebo jakémkoli programovacím jazyce) budete při psaní kódu dělat chyby.</span><span class="sxs-lookup"><span data-stu-id="d51df-129">As you explore C# (or any programming language), you'll make mistakes when you write code.</span></span> <span data-ttu-id="d51df-130">**Kompilátor** tyto chyby vyhledá a nahlásí je.</span><span class="sxs-lookup"><span data-stu-id="d51df-130">The **compiler** will find those errors and report them to you.</span></span> <span data-ttu-id="d51df-131">Pokud výstup obsahuje chybové zprávy, Prohlédněte si v příkladu kód a kód v okně, co je třeba opravit.</span><span class="sxs-lookup"><span data-stu-id="d51df-131">When the output contains error messages, look closely at the example code and the code in your window to see what to fix.</span></span>
+> <span data-ttu-id="d51df-132">Toto cvičení vám pomůže zjistit strukturu C# kódu.</span><span class="sxs-lookup"><span data-stu-id="d51df-132">That exercise will help you learn the structure of C# code.</span></span>
 
-<span data-ttu-id="f854e-133">Dokončili jste první krok.</span><span class="sxs-lookup"><span data-stu-id="f854e-133">You've finished the first step.</span></span> <span data-ttu-id="f854e-134">Než začnete s další částí, přesuňte aktuální kód do samostatné metody.</span><span class="sxs-lookup"><span data-stu-id="f854e-134">Before you start the next section, let's move the current code into a separate method.</span></span> <span data-ttu-id="f854e-135">Díky tomu je snazší začít pracovat s novým příkladem.</span><span class="sxs-lookup"><span data-stu-id="f854e-135">That makes it easier to start working with a new example.</span></span> <span data-ttu-id="f854e-136">Přejmenujte metodu `Main` na `WorkingWithIntegers` a zapište novou `Main` metodu, která volá `WorkingWithIntegers`.</span><span class="sxs-lookup"><span data-stu-id="f854e-136">Rename your `Main` method to `WorkingWithIntegers` and write a new `Main` method that calls `WorkingWithIntegers`.</span></span> <span data-ttu-id="f854e-137">Až skončíte, váš kód by měl vypadat takto:</span><span class="sxs-lookup"><span data-stu-id="f854e-137">When you finish, your code should look like this:</span></span>
+<span data-ttu-id="d51df-133">Dokončili jste první krok.</span><span class="sxs-lookup"><span data-stu-id="d51df-133">You've finished the first step.</span></span> <span data-ttu-id="d51df-134">Než začnete s další částí, přesuňte aktuální kód do samostatné metody.</span><span class="sxs-lookup"><span data-stu-id="d51df-134">Before you start the next section, let's move the current code into a separate method.</span></span> <span data-ttu-id="d51df-135">Díky tomu je snazší začít pracovat s novým příkladem.</span><span class="sxs-lookup"><span data-stu-id="d51df-135">That makes it easier to start working with a new example.</span></span> <span data-ttu-id="d51df-136">Přejmenujte metodu `Main` na `WorkingWithIntegers` a zapište novou `Main` metodu, která volá `WorkingWithIntegers`.</span><span class="sxs-lookup"><span data-stu-id="d51df-136">Rename your `Main` method to `WorkingWithIntegers` and write a new `Main` method that calls `WorkingWithIntegers`.</span></span> <span data-ttu-id="d51df-137">Až skončíte, váš kód by měl vypadat takto:</span><span class="sxs-lookup"><span data-stu-id="d51df-137">When you finish, your code should look like this:</span></span>
 
 ```csharp
 using System;
@@ -69,12 +75,20 @@ namespace NumbersInCSharp
         {
             int a = 18;
             int b = 6;
+            
+            // addition
             int c = a + b;
             Console.WriteLine(c);
+            
+            // subtraction
             c = a - b;
             Console.WriteLine(c);
+            
+            // multiplication
             c = a * b;
             Console.WriteLine(c);
+            
+            // division
             c = a / b;
             Console.WriteLine(c);
         }
@@ -87,19 +101,19 @@ namespace NumbersInCSharp
 }
 ```
 
-## <a name="explore-order-of-operations"></a><span data-ttu-id="f854e-138">Prozkoumat pořadí operací</span><span class="sxs-lookup"><span data-stu-id="f854e-138">Explore order of operations</span></span>
+## <a name="explore-order-of-operations"></a><span data-ttu-id="d51df-138">Prozkoumat pořadí operací</span><span class="sxs-lookup"><span data-stu-id="d51df-138">Explore order of operations</span></span>
 
-<span data-ttu-id="f854e-139">Odkomentujte volání `WorkingWithIntegers()`.</span><span class="sxs-lookup"><span data-stu-id="f854e-139">Comment out the call to `WorkingWithIntegers()`.</span></span> <span data-ttu-id="f854e-140">Výsledkem je, že při práci v této části bude výstup méně zbytečný:</span><span class="sxs-lookup"><span data-stu-id="f854e-140">It will make the output less cluttered as you work in this section:</span></span>
+<span data-ttu-id="d51df-139">Odkomentujte volání `WorkingWithIntegers()`.</span><span class="sxs-lookup"><span data-stu-id="d51df-139">Comment out the call to `WorkingWithIntegers()`.</span></span> <span data-ttu-id="d51df-140">Výsledkem je, že při práci v této části bude výstup méně zbytečný:</span><span class="sxs-lookup"><span data-stu-id="d51df-140">It will make the output less cluttered as you work in this section:</span></span>
 
 ```csharp
 //WorkingWithIntegers();
 ```
 
-<span data-ttu-id="f854e-141">@No__t_0 spustí **Komentář** v C#.</span><span class="sxs-lookup"><span data-stu-id="f854e-141">The `//` starts a **comment** in C#.</span></span> <span data-ttu-id="f854e-142">Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód.</span><span class="sxs-lookup"><span data-stu-id="f854e-142">Comments are any text you want to keep in your source code but not execute as code.</span></span> <span data-ttu-id="f854e-143">Kompilátor negeneruje žádný spustitelný kód z komentářů.</span><span class="sxs-lookup"><span data-stu-id="f854e-143">The compiler does not generate any executable code from comments.</span></span>
+<span data-ttu-id="d51df-141">`//` spustí **Komentář** v C#.</span><span class="sxs-lookup"><span data-stu-id="d51df-141">The `//` starts a **comment** in C#.</span></span> <span data-ttu-id="d51df-142">Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód.</span><span class="sxs-lookup"><span data-stu-id="d51df-142">Comments are any text you want to keep in your source code but not execute as code.</span></span> <span data-ttu-id="d51df-143">Kompilátor negeneruje žádný spustitelný kód z komentářů.</span><span class="sxs-lookup"><span data-stu-id="d51df-143">The compiler does not generate any executable code from comments.</span></span>
 
-<span data-ttu-id="f854e-144">C# Jazyk definuje prioritu různých matematických operací s pravidly, která jsou v souladu s pravidly, která jste se naučili v matematice.</span><span class="sxs-lookup"><span data-stu-id="f854e-144">The C# language defines the precedence of different mathematics operations with rules consistent with the rules you learned in mathematics.</span></span>
-<span data-ttu-id="f854e-145">Násobení a dělení mají přednost před sčítáním a odčítáním.</span><span class="sxs-lookup"><span data-stu-id="f854e-145">Multiplication and division take precedence over addition and subtraction.</span></span>
-<span data-ttu-id="f854e-146">Prozkoumejte to přidáním následujícího kódu do metody `Main` a spuštěním `dotnet run`:</span><span class="sxs-lookup"><span data-stu-id="f854e-146">Explore that by adding the following code to your `Main` method, and executing `dotnet run`:</span></span>
+<span data-ttu-id="d51df-144">C# Jazyk definuje prioritu různých matematických operací s pravidly, která jsou v souladu s pravidly, která jste se naučili v matematice.</span><span class="sxs-lookup"><span data-stu-id="d51df-144">The C# language defines the precedence of different mathematics operations with rules consistent with the rules you learned in mathematics.</span></span>
+<span data-ttu-id="d51df-145">Násobení a dělení mají přednost před sčítáním a odčítáním.</span><span class="sxs-lookup"><span data-stu-id="d51df-145">Multiplication and division take precedence over addition and subtraction.</span></span>
+<span data-ttu-id="d51df-146">Prozkoumejte to přidáním následujícího kódu do metody `Main` a spuštěním `dotnet run`:</span><span class="sxs-lookup"><span data-stu-id="d51df-146">Explore that by adding the following code to your `Main` method, and executing `dotnet run`:</span></span>
 
 ```csharp
 int a = 5;
@@ -109,25 +123,25 @@ int d = a + b * c;
 Console.WriteLine(d);
  ```
 
-<span data-ttu-id="f854e-147">Výstup ukazuje, že násobení je provedeno před sčítáním.</span><span class="sxs-lookup"><span data-stu-id="f854e-147">The output demonstrates that the multiplication is performed before the addition.</span></span>
+<span data-ttu-id="d51df-147">Výstup ukazuje, že násobení je provedeno před sčítáním.</span><span class="sxs-lookup"><span data-stu-id="d51df-147">The output demonstrates that the multiplication is performed before the addition.</span></span>
 
-<span data-ttu-id="f854e-148">Můžete vynutit jiné pořadí operací přidáním závorek kolem operace nebo operací, které chcete provést jako první.</span><span class="sxs-lookup"><span data-stu-id="f854e-148">You can force a different order of operation by adding parentheses around the operation or operations you want performed first.</span></span> <span data-ttu-id="f854e-149">Přidejte následující řádky a spusťte znovu:</span><span class="sxs-lookup"><span data-stu-id="f854e-149">Add the following lines and run again:</span></span>
+<span data-ttu-id="d51df-148">Můžete vynutit jiné pořadí operací přidáním závorek kolem operace nebo operací, které chcete provést jako první.</span><span class="sxs-lookup"><span data-stu-id="d51df-148">You can force a different order of operation by adding parentheses around the operation or operations you want performed first.</span></span> <span data-ttu-id="d51df-149">Přidejte následující řádky a spusťte znovu:</span><span class="sxs-lookup"><span data-stu-id="d51df-149">Add the following lines and run again:</span></span>
 
 ```csharp
 d = (a + b) * c;
 Console.WriteLine(d);
 ```
 
-<span data-ttu-id="f854e-150">Kombinování různých operací vám umožní prozkoumat víc.</span><span class="sxs-lookup"><span data-stu-id="f854e-150">Explore more by combining many different operations.</span></span> <span data-ttu-id="f854e-151">V dolní části metody `Main` přidejte něco jako na následující řádky.</span><span class="sxs-lookup"><span data-stu-id="f854e-151">Add something like the following lines at the bottom of your `Main` method.</span></span> <span data-ttu-id="f854e-152">Zkuste to znovu `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="f854e-152">Try `dotnet run` again.</span></span>
+<span data-ttu-id="d51df-150">Kombinování různých operací vám umožní prozkoumat víc.</span><span class="sxs-lookup"><span data-stu-id="d51df-150">Explore more by combining many different operations.</span></span> <span data-ttu-id="d51df-151">V dolní části metody `Main` přidejte něco jako na následující řádky.</span><span class="sxs-lookup"><span data-stu-id="d51df-151">Add something like the following lines at the bottom of your `Main` method.</span></span> <span data-ttu-id="d51df-152">Zkuste to znovu `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="d51df-152">Try `dotnet run` again.</span></span>
 
 ```csharp
 d = (a + b) - 6 * c + (12 * 4) / 3 + 12;
 Console.WriteLine(d);
 ```
 
-<span data-ttu-id="f854e-153">Možná jste si všimli zajímavého chování pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="f854e-153">You may have noticed an interesting behavior for integers.</span></span> <span data-ttu-id="f854e-154">Celočíselné dělení vždy vytváří celočíselný výsledek, i když byste očekávali, že by výsledek zahrnoval desítkovou nebo zlomkovou část.</span><span class="sxs-lookup"><span data-stu-id="f854e-154">Integer division always produces an integer result, even when you'd expect the result to include a decimal or fractional portion.</span></span>
+<span data-ttu-id="d51df-153">Možná jste si všimli zajímavého chování pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="d51df-153">You may have noticed an interesting behavior for integers.</span></span> <span data-ttu-id="d51df-154">Celočíselné dělení vždy vytváří celočíselný výsledek, i když byste očekávali, že by výsledek zahrnoval desítkovou nebo zlomkovou část.</span><span class="sxs-lookup"><span data-stu-id="d51df-154">Integer division always produces an integer result, even when you'd expect the result to include a decimal or fractional portion.</span></span>
 
-<span data-ttu-id="f854e-155">Pokud jste toto chování neviděli, vyzkoušejte následující kód na konci vaší `Main` metody:</span><span class="sxs-lookup"><span data-stu-id="f854e-155">If you haven't seen this behavior, try the following code at the end of your `Main` method:</span></span>
+<span data-ttu-id="d51df-155">Pokud jste toto chování neviděli, vyzkoušejte následující kód na konci vaší `Main` metody:</span><span class="sxs-lookup"><span data-stu-id="d51df-155">If you haven't seen this behavior, try the following code at the end of your `Main` method:</span></span>
 
 ```csharp
 int e = 7;
@@ -137,10 +151,10 @@ int h = (e + f) / g;
 Console.WriteLine(h);
 ```
 
-<span data-ttu-id="f854e-156">Opětovným zadáním `dotnet run` zobrazíte výsledky.</span><span class="sxs-lookup"><span data-stu-id="f854e-156">Type `dotnet run` again to see the results.</span></span>
+<span data-ttu-id="d51df-156">Opětovným zadáním `dotnet run` zobrazíte výsledky.</span><span class="sxs-lookup"><span data-stu-id="d51df-156">Type `dotnet run` again to see the results.</span></span>
 
-<span data-ttu-id="f854e-157">Než začnete pokračovat, Pojďme si z tohoto oddílu pořizovat veškerý kód, který jste napsali, a vložte ho do nové metody.</span><span class="sxs-lookup"><span data-stu-id="f854e-157">Before moving on, let's take all the code you've written in this section and put it in a new method.</span></span> <span data-ttu-id="f854e-158">Zavolejte novou metodu `OrderPrecedence`.</span><span class="sxs-lookup"><span data-stu-id="f854e-158">Call that new method `OrderPrecedence`.</span></span>
-<span data-ttu-id="f854e-159">Měli byste skončit přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="f854e-159">You should end up with something like this:</span></span>
+<span data-ttu-id="d51df-157">Než začnete pokračovat, Pojďme si z tohoto oddílu pořizovat veškerý kód, který jste napsali, a vložte ho do nové metody.</span><span class="sxs-lookup"><span data-stu-id="d51df-157">Before moving on, let's take all the code you've written in this section and put it in a new method.</span></span> <span data-ttu-id="d51df-158">Zavolejte novou metodu `OrderPrecedence`.</span><span class="sxs-lookup"><span data-stu-id="d51df-158">Call that new method `OrderPrecedence`.</span></span>
+<span data-ttu-id="d51df-159">Měli byste skončit přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="d51df-159">You should end up with something like this:</span></span>
 
 ```csharp
 using System;
@@ -153,12 +167,20 @@ namespace NumbersInCSharp
         {
             int a = 18;
             int b = 6;
+            
+            // addition
             int c = a + b;
             Console.WriteLine(c);
+            
+            // subtraction
             c = a - b;
             Console.WriteLine(c);
+            
+            // multiplication
             c = a * b;
             Console.WriteLine(c);
+            
+            // division
             c = a / b;
             Console.WriteLine(c);
         }
@@ -195,10 +217,10 @@ namespace NumbersInCSharp
 }
 ```
 
-## <a name="explore-integer-precision-and-limits"></a><span data-ttu-id="f854e-160">Prozkoumat celočíselnou přesnost a omezení</span><span class="sxs-lookup"><span data-stu-id="f854e-160">Explore integer precision and limits</span></span>
+## <a name="explore-integer-precision-and-limits"></a><span data-ttu-id="d51df-160">Prozkoumat celočíselnou přesnost a omezení</span><span class="sxs-lookup"><span data-stu-id="d51df-160">Explore integer precision and limits</span></span>
 
-<span data-ttu-id="f854e-161">Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.</span><span class="sxs-lookup"><span data-stu-id="f854e-161">That last sample showed you that integer division truncates the result.</span></span>
-<span data-ttu-id="f854e-162">**Zbytek** můžete získat pomocí operátoru **modulo** , `%`ho znaku.</span><span class="sxs-lookup"><span data-stu-id="f854e-162">You can get the **remainder** by using the **modulo** operator, the `%` character.</span></span> <span data-ttu-id="f854e-163">Vyzkoušejte následující kód v metodě `Main`:</span><span class="sxs-lookup"><span data-stu-id="f854e-163">Try the following code in your `Main` method:</span></span>
+<span data-ttu-id="d51df-161">Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.</span><span class="sxs-lookup"><span data-stu-id="d51df-161">That last sample showed you that integer division truncates the result.</span></span>
+<span data-ttu-id="d51df-162">**Zbytek** můžete získat pomocí operátoru **modulo** , `%`ho znaku.</span><span class="sxs-lookup"><span data-stu-id="d51df-162">You can get the **remainder** by using the **modulo** operator, the `%` character.</span></span> <span data-ttu-id="d51df-163">Vyzkoušejte následující kód v metodě `Main`:</span><span class="sxs-lookup"><span data-stu-id="d51df-163">Try the following code in your `Main` method:</span></span>
 
 ```csharp
 int a = 7;
@@ -210,7 +232,7 @@ Console.WriteLine($"quotient: {d}");
 Console.WriteLine($"remainder: {e}");
 ```
 
-<span data-ttu-id="f854e-164">C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: typ `int` má minimální a maximální limity.</span><span class="sxs-lookup"><span data-stu-id="f854e-164">The C# integer type differs from mathematical integers in one other way: the `int` type has minimum and maximum limits.</span></span> <span data-ttu-id="f854e-165">Přidejte tento kód do metody `Main`, abyste viděli tato omezení:</span><span class="sxs-lookup"><span data-stu-id="f854e-165">Add this code to your `Main` method to see those limits:</span></span>
+<span data-ttu-id="d51df-164">C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: typ `int` má minimální a maximální limity.</span><span class="sxs-lookup"><span data-stu-id="d51df-164">The C# integer type differs from mathematical integers in one other way: the `int` type has minimum and maximum limits.</span></span> <span data-ttu-id="d51df-165">Přidejte tento kód do metody `Main`, abyste viděli tato omezení:</span><span class="sxs-lookup"><span data-stu-id="d51df-165">Add this code to your `Main` method to see those limits:</span></span>
 
 ```csharp
 int max = int.MaxValue;
@@ -218,25 +240,25 @@ int min = int.MinValue;
 Console.WriteLine($"The range of integers is {min} to {max}");
 ```
 
-<span data-ttu-id="f854e-166">Pokud výpočet vytvoří hodnotu, která překračuje tato omezení, **dojde k podtečení nebo** **podtečení** .</span><span class="sxs-lookup"><span data-stu-id="f854e-166">If a calculation produces a value that exceeds those limits, you have an **underflow** or **overflow** condition.</span></span> <span data-ttu-id="f854e-167">Odpověď se zobrazí jako zabalení od jednoho limitu k druhému.</span><span class="sxs-lookup"><span data-stu-id="f854e-167">The answer appears to wrap from one limit to the other.</span></span> <span data-ttu-id="f854e-168">Přidejte tyto dva řádky do metody `Main`, abyste viděli příklad:</span><span class="sxs-lookup"><span data-stu-id="f854e-168">Add these two lines to your `Main` method to see an example:</span></span>
+<span data-ttu-id="d51df-166">Pokud výpočet vytvoří hodnotu, která překračuje tato omezení, **dojde k podtečení nebo** **podtečení** .</span><span class="sxs-lookup"><span data-stu-id="d51df-166">If a calculation produces a value that exceeds those limits, you have an **underflow** or **overflow** condition.</span></span> <span data-ttu-id="d51df-167">Odpověď se zobrazí jako zabalení od jednoho limitu k druhému.</span><span class="sxs-lookup"><span data-stu-id="d51df-167">The answer appears to wrap from one limit to the other.</span></span> <span data-ttu-id="d51df-168">Přidejte tyto dva řádky do metody `Main`, abyste viděli příklad:</span><span class="sxs-lookup"><span data-stu-id="d51df-168">Add these two lines to your `Main` method to see an example:</span></span>
 
 ```csharp
 int what = max + 3;
 Console.WriteLine($"An example of overflow: {what}");
 ```
 
-<span data-ttu-id="f854e-169">Všimněte si, že odpověď se velmi blíží minimálnímu (zápornému) celému číslu.</span><span class="sxs-lookup"><span data-stu-id="f854e-169">Notice that the answer is very close to the minimum (negative) integer.</span></span> <span data-ttu-id="f854e-170">Je stejný jako `min + 2`.</span><span class="sxs-lookup"><span data-stu-id="f854e-170">It's the same as `min + 2`.</span></span>
-<span data-ttu-id="f854e-171">Operace sčítání **přetéká** povolené hodnoty pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="f854e-171">The addition operation **overflowed** the allowed values for integers.</span></span>
-<span data-ttu-id="f854e-172">Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.</span><span class="sxs-lookup"><span data-stu-id="f854e-172">The answer is a very large negative number because an overflow "wraps around" from the largest possible integer value to the smallest.</span></span>
+<span data-ttu-id="d51df-169">Všimněte si, že odpověď se velmi blíží minimálnímu (zápornému) celému číslu.</span><span class="sxs-lookup"><span data-stu-id="d51df-169">Notice that the answer is very close to the minimum (negative) integer.</span></span> <span data-ttu-id="d51df-170">Je stejný jako `min + 2`.</span><span class="sxs-lookup"><span data-stu-id="d51df-170">It's the same as `min + 2`.</span></span>
+<span data-ttu-id="d51df-171">Operace sčítání **přetéká** povolené hodnoty pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="d51df-171">The addition operation **overflowed** the allowed values for integers.</span></span>
+<span data-ttu-id="d51df-172">Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.</span><span class="sxs-lookup"><span data-stu-id="d51df-172">The answer is a very large negative number because an overflow "wraps around" from the largest possible integer value to the smallest.</span></span>
 
-<span data-ttu-id="f854e-173">Existují i jiné číselné typy s různými limity a přesností, které byste použili, když `int` typ nevyhovuje vašim potřebám.</span><span class="sxs-lookup"><span data-stu-id="f854e-173">There are other numeric types with different limits and precision that you would use when the `int` type doesn't meet your needs.</span></span> <span data-ttu-id="f854e-174">Pojďme se podívat na další.</span><span class="sxs-lookup"><span data-stu-id="f854e-174">Let's explore those next.</span></span>
+<span data-ttu-id="d51df-173">Existují i jiné číselné typy s různými limity a přesností, které byste použili, když `int` typ nevyhovuje vašim potřebám.</span><span class="sxs-lookup"><span data-stu-id="d51df-173">There are other numeric types with different limits and precision that you would use when the `int` type doesn't meet your needs.</span></span> <span data-ttu-id="d51df-174">Pojďme se podívat na další.</span><span class="sxs-lookup"><span data-stu-id="d51df-174">Let's explore those next.</span></span>
 
-<span data-ttu-id="f854e-175">Později můžete kód, který jste napsali v této části, přesunout do samostatné metody.</span><span class="sxs-lookup"><span data-stu-id="f854e-175">Once again, let's move the code you wrote in this section into a separate method.</span></span> <span data-ttu-id="f854e-176">Pojmenujte ji `TestLimits`.</span><span class="sxs-lookup"><span data-stu-id="f854e-176">Name it `TestLimits`.</span></span>
+<span data-ttu-id="d51df-175">Později můžete kód, který jste napsali v této části, přesunout do samostatné metody.</span><span class="sxs-lookup"><span data-stu-id="d51df-175">Once again, let's move the code you wrote in this section into a separate method.</span></span> <span data-ttu-id="d51df-176">Pojmenujte ji `TestLimits`.</span><span class="sxs-lookup"><span data-stu-id="d51df-176">Name it `TestLimits`.</span></span>
 
-## <a name="work-with-the-double-type"></a><span data-ttu-id="f854e-177">Práce s typem Double</span><span class="sxs-lookup"><span data-stu-id="f854e-177">Work with the double type</span></span>
+## <a name="work-with-the-double-type"></a><span data-ttu-id="d51df-177">Práce s typem Double</span><span class="sxs-lookup"><span data-stu-id="d51df-177">Work with the double type</span></span>
 
-<span data-ttu-id="f854e-178">Číselný typ `double` představuje číslo s dvojitou přesností s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="f854e-178">The `double` numeric type represents a double-precision floating point number.</span></span> <span data-ttu-id="f854e-179">Tyto výrazy můžou být pro vás nové.</span><span class="sxs-lookup"><span data-stu-id="f854e-179">Those terms may be new to you.</span></span> <span data-ttu-id="f854e-180">Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá.</span><span class="sxs-lookup"><span data-stu-id="f854e-180">A **floating point** number is useful to represent non-integral numbers that may be very large or small in magnitude.</span></span> <span data-ttu-id="f854e-181">**Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**.</span><span class="sxs-lookup"><span data-stu-id="f854e-181">**Double-precision** means that these numbers are stored using greater precision than **single-precision**.</span></span> <span data-ttu-id="f854e-182">Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.</span><span class="sxs-lookup"><span data-stu-id="f854e-182">On modern computers, it is more common to use double precision than single precision numbers.</span></span>
-<span data-ttu-id="f854e-183">Pojďme prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="f854e-183">Let's explore.</span></span> <span data-ttu-id="f854e-184">Přidejte následující kód a podívejte se na výsledek:</span><span class="sxs-lookup"><span data-stu-id="f854e-184">Add the following code and see the result:</span></span>
+<span data-ttu-id="d51df-178">Číselný typ `double` představuje číslo s dvojitou přesností s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="d51df-178">The `double` numeric type represents a double-precision floating point number.</span></span> <span data-ttu-id="d51df-179">Tyto výrazy můžou být pro vás nové.</span><span class="sxs-lookup"><span data-stu-id="d51df-179">Those terms may be new to you.</span></span> <span data-ttu-id="d51df-180">Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá.</span><span class="sxs-lookup"><span data-stu-id="d51df-180">A **floating point** number is useful to represent non-integral numbers that may be very large or small in magnitude.</span></span> <span data-ttu-id="d51df-181">**Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**.</span><span class="sxs-lookup"><span data-stu-id="d51df-181">**Double-precision** means that these numbers are stored using greater precision than **single-precision**.</span></span> <span data-ttu-id="d51df-182">Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.</span><span class="sxs-lookup"><span data-stu-id="d51df-182">On modern computers, it is more common to use double precision than single precision numbers.</span></span>
+<span data-ttu-id="d51df-183">Pojďme prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="d51df-183">Let's explore.</span></span> <span data-ttu-id="d51df-184">Přidejte následující kód a podívejte se na výsledek:</span><span class="sxs-lookup"><span data-stu-id="d51df-184">Add the following code and see the result:</span></span>
 
 ```csharp
 double a = 5;
@@ -246,7 +268,7 @@ double d = (a + b) / c;
 Console.WriteLine(d);
 ```
 
-<span data-ttu-id="f854e-185">Všimněte si, že odpověď obsahuje desetinnou část podílu.</span><span class="sxs-lookup"><span data-stu-id="f854e-185">Notice that the answer includes the decimal portion of the quotient.</span></span> <span data-ttu-id="f854e-186">Vyzkoušejte trochu složitější výraz s dvojitou přesností:</span><span class="sxs-lookup"><span data-stu-id="f854e-186">Try a slightly more complicated expression with doubles:</span></span>
+<span data-ttu-id="d51df-185">Všimněte si, že odpověď obsahuje desetinnou část podílu.</span><span class="sxs-lookup"><span data-stu-id="d51df-185">Notice that the answer includes the decimal portion of the quotient.</span></span> <span data-ttu-id="d51df-186">Vyzkoušejte trochu složitější výraz s dvojitou přesností:</span><span class="sxs-lookup"><span data-stu-id="d51df-186">Try a slightly more complicated expression with doubles:</span></span>
 
 ```csharp
 double e = 19;
@@ -256,7 +278,7 @@ double h = (e + f) / g;
 Console.WriteLine(h);
 ```
 
-<span data-ttu-id="f854e-187">Rozsah hodnoty Double je mnohem větší než celočíselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f854e-187">The range of a double value is much greater than integer values.</span></span> <span data-ttu-id="f854e-188">Vyzkoušejte následující kód, který jste doposud napsali:</span><span class="sxs-lookup"><span data-stu-id="f854e-188">Try the following code below what you've written so far:</span></span>
+<span data-ttu-id="d51df-187">Rozsah hodnoty Double je mnohem větší než celočíselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d51df-187">The range of a double value is much greater than integer values.</span></span> <span data-ttu-id="d51df-188">Vyzkoušejte následující kód, který jste doposud napsali:</span><span class="sxs-lookup"><span data-stu-id="d51df-188">Try the following code below what you've written so far:</span></span>
 
 ```csharp
 double max = double.MaxValue;
@@ -264,26 +286,26 @@ double min = double.MinValue;
 Console.WriteLine($"The range of double is {min} to {max}");
 ```
 
-<span data-ttu-id="f854e-189">Tyto hodnoty se tisknou v matematickém zápisu.</span><span class="sxs-lookup"><span data-stu-id="f854e-189">These values are printed out in scientific notation.</span></span> <span data-ttu-id="f854e-190">Číslo nalevo od `E` je mantisa.</span><span class="sxs-lookup"><span data-stu-id="f854e-190">The number to the left of the `E` is the significand.</span></span> <span data-ttu-id="f854e-191">Číslo vpravo je exponent, jako mocnina 10.</span><span class="sxs-lookup"><span data-stu-id="f854e-191">The number to the right is the exponent, as a power of 10.</span></span>
+<span data-ttu-id="d51df-189">Tyto hodnoty se tisknou v matematickém zápisu.</span><span class="sxs-lookup"><span data-stu-id="d51df-189">These values are printed out in scientific notation.</span></span> <span data-ttu-id="d51df-190">Číslo nalevo od `E` je mantisa.</span><span class="sxs-lookup"><span data-stu-id="d51df-190">The number to the left of the `E` is the significand.</span></span> <span data-ttu-id="d51df-191">Číslo vpravo je exponent, jako mocnina 10.</span><span class="sxs-lookup"><span data-stu-id="d51df-191">The number to the right is the exponent, as a power of 10.</span></span>
 
-<span data-ttu-id="f854e-192">Stejně jako desítková čísla v matematických případech můžou C# být v uvozovkách chyby zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="f854e-192">Just like decimal numbers in math, doubles in C# can have rounding errors.</span></span> <span data-ttu-id="f854e-193">Vyzkoušejte tento kód:</span><span class="sxs-lookup"><span data-stu-id="f854e-193">Try this code:</span></span>
+<span data-ttu-id="d51df-192">Stejně jako desítková čísla v matematických případech můžou C# být v uvozovkách chyby zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="d51df-192">Just like decimal numbers in math, doubles in C# can have rounding errors.</span></span> <span data-ttu-id="d51df-193">Vyzkoušejte tento kód:</span><span class="sxs-lookup"><span data-stu-id="d51df-193">Try this code:</span></span>
 
 ```csharp
 double third = 1.0 / 3.0;
 Console.WriteLine(third);
 ```
 
-<span data-ttu-id="f854e-194">Víte, že `0.3` opakování není přesně stejné jako `1/3`.</span><span class="sxs-lookup"><span data-stu-id="f854e-194">You know that `0.3` repeating is not exactly the same as `1/3`.</span></span>
+<span data-ttu-id="d51df-194">Víte, že `0.3` opakování není přesně stejné jako `1/3`.</span><span class="sxs-lookup"><span data-stu-id="d51df-194">You know that `0.3` repeating is not exactly the same as `1/3`.</span></span>
 
-<span data-ttu-id="f854e-195">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="f854e-195">***Challenge***</span></span>
+<span data-ttu-id="d51df-195">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="d51df-195">***Challenge***</span></span>
 
-<span data-ttu-id="f854e-196">Zkuste další výpočty s velkými čísly, malými čísly, násobení a dělení pomocí typu `double`.</span><span class="sxs-lookup"><span data-stu-id="f854e-196">Try other calculations with large numbers, small numbers, multiplication and division using the `double` type.</span></span> <span data-ttu-id="f854e-197">Vyzkoušejte složitější výpočty.</span><span class="sxs-lookup"><span data-stu-id="f854e-197">Try more complicated calculations.</span></span>
+<span data-ttu-id="d51df-196">Zkuste další výpočty s velkými čísly, malými čísly, násobení a dělení pomocí typu `double`.</span><span class="sxs-lookup"><span data-stu-id="d51df-196">Try other calculations with large numbers, small numbers, multiplication and division using the `double` type.</span></span> <span data-ttu-id="d51df-197">Vyzkoušejte složitější výpočty.</span><span class="sxs-lookup"><span data-stu-id="d51df-197">Try more complicated calculations.</span></span>
 
-<span data-ttu-id="f854e-198">Po vykonání nějakého času u výzvy Vezměte kód, který jste napsali, a umístěte ho do nové metody.</span><span class="sxs-lookup"><span data-stu-id="f854e-198">After you've spent some time with the challenge, take the code you've written and place it in a new method.</span></span> <span data-ttu-id="f854e-199">Pojmenujte novou metodu `WorkWithDoubles`.</span><span class="sxs-lookup"><span data-stu-id="f854e-199">Name that new method `WorkWithDoubles`.</span></span>
+<span data-ttu-id="d51df-198">Po vykonání nějakého času u výzvy Vezměte kód, který jste napsali, a umístěte ho do nové metody.</span><span class="sxs-lookup"><span data-stu-id="d51df-198">After you've spent some time with the challenge, take the code you've written and place it in a new method.</span></span> <span data-ttu-id="d51df-199">Pojmenujte novou metodu `WorkWithDoubles`.</span><span class="sxs-lookup"><span data-stu-id="d51df-199">Name that new method `WorkWithDoubles`.</span></span>
 
-## <a name="work-with-fixed-point-types"></a><span data-ttu-id="f854e-200">Práce s pevnými typy bodů</span><span class="sxs-lookup"><span data-stu-id="f854e-200">Work with fixed point types</span></span>
+## <a name="work-with-fixed-point-types"></a><span data-ttu-id="d51df-200">Práce s pevnými typy bodů</span><span class="sxs-lookup"><span data-stu-id="d51df-200">Work with fixed point types</span></span>
 
-<span data-ttu-id="f854e-201">Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.</span><span class="sxs-lookup"><span data-stu-id="f854e-201">You've seen the basic numeric types in C#: integers and doubles.</span></span>  <span data-ttu-id="f854e-202">Existuje jeden další typ, se kterým se naučíte: typ `decimal`.</span><span class="sxs-lookup"><span data-stu-id="f854e-202">There is one other type to learn: the `decimal` type.</span></span> <span data-ttu-id="f854e-203">Typ `decimal` má menší rozsah, ale větší přesnost než `double`.</span><span class="sxs-lookup"><span data-stu-id="f854e-203">The `decimal` type has a smaller range but greater precision than `double`.</span></span> <span data-ttu-id="f854e-204">**Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá.</span><span class="sxs-lookup"><span data-stu-id="f854e-204">The term **fixed point** means that the decimal point (or binary point) doesn't move.</span></span> <span data-ttu-id="f854e-205">Pojďme se podívat:</span><span class="sxs-lookup"><span data-stu-id="f854e-205">Let's take a look:</span></span>
+<span data-ttu-id="d51df-201">Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.</span><span class="sxs-lookup"><span data-stu-id="d51df-201">You've seen the basic numeric types in C#: integers and doubles.</span></span>  <span data-ttu-id="d51df-202">Existuje jeden další typ, se kterým se naučíte: typ `decimal`.</span><span class="sxs-lookup"><span data-stu-id="d51df-202">There is one other type to learn: the `decimal` type.</span></span> <span data-ttu-id="d51df-203">Typ `decimal` má menší rozsah, ale větší přesnost než `double`.</span><span class="sxs-lookup"><span data-stu-id="d51df-203">The `decimal` type has a smaller range but greater precision than `double`.</span></span> <span data-ttu-id="d51df-204">**Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá.</span><span class="sxs-lookup"><span data-stu-id="d51df-204">The term **fixed point** means that the decimal point (or binary point) doesn't move.</span></span> <span data-ttu-id="d51df-205">Pojďme se podívat:</span><span class="sxs-lookup"><span data-stu-id="d51df-205">Let's take a look:</span></span>
 
 ```csharp
 decimal min = decimal.MinValue;
@@ -291,7 +313,7 @@ decimal max = decimal.MaxValue;
 Console.WriteLine($"The range of the decimal type is {min} to {max}");
 ```
 
-<span data-ttu-id="f854e-206">Všimněte si, že rozsah je menší než typ `double`.</span><span class="sxs-lookup"><span data-stu-id="f854e-206">Notice that the range is smaller than the `double` type.</span></span> <span data-ttu-id="f854e-207">Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:</span><span class="sxs-lookup"><span data-stu-id="f854e-207">You can see the greater precision with the decimal type by trying the following code:</span></span>
+<span data-ttu-id="d51df-206">Všimněte si, že rozsah je menší než typ `double`.</span><span class="sxs-lookup"><span data-stu-id="d51df-206">Notice that the range is smaller than the `double` type.</span></span> <span data-ttu-id="d51df-207">Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:</span><span class="sxs-lookup"><span data-stu-id="d51df-207">You can see the greater precision with the decimal type by trying the following code:</span></span>
 
 ```csharp
 double a = 1.0;
@@ -303,23 +325,23 @@ decimal d = 3.0M;
 Console.WriteLine(c / d);
 ```
 
-<span data-ttu-id="f854e-208">Přípona `M` v číslech představuje způsob, jakým by měla konstanta používat typ `decimal`.</span><span class="sxs-lookup"><span data-stu-id="f854e-208">The `M` suffix on the numbers is how you indicate that a constant should use the `decimal` type.</span></span>
+<span data-ttu-id="d51df-208">Přípona `M` v číslech představuje způsob, jakým by měla konstanta používat typ `decimal`.</span><span class="sxs-lookup"><span data-stu-id="d51df-208">The `M` suffix on the numbers is how you indicate that a constant should use the `decimal` type.</span></span>
 
-<span data-ttu-id="f854e-209">Všimněte si, že matematický použití typu Decimal má na pravé straně desetinné čárky více číslic.</span><span class="sxs-lookup"><span data-stu-id="f854e-209">Notice that the math using the decimal type has more digits to the right of the decimal point.</span></span>
+<span data-ttu-id="d51df-209">Všimněte si, že matematický použití typu Decimal má na pravé straně desetinné čárky více číslic.</span><span class="sxs-lookup"><span data-stu-id="d51df-209">Notice that the math using the decimal type has more digits to the right of the decimal point.</span></span>
 
-<span data-ttu-id="f854e-210">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="f854e-210">***Challenge***</span></span>
+<span data-ttu-id="d51df-210">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="d51df-210">***Challenge***</span></span>
 
-<span data-ttu-id="f854e-211">Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů.</span><span class="sxs-lookup"><span data-stu-id="f854e-211">Now that you've seen the different numeric types, write code that calculates the area of a circle whose radius is 2.50 centimeters.</span></span> <span data-ttu-id="f854e-212">Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí.</span><span class="sxs-lookup"><span data-stu-id="f854e-212">Remember that the area of a circle is the radius squared multiplied by PI.</span></span> <span data-ttu-id="f854e-213">Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType>, kterou můžete použít pro tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="f854e-213">One hint: .NET contains a constant for PI, <xref:System.Math.PI?displayProperty=nameWithType> that you can use for that value.</span></span>
+<span data-ttu-id="d51df-211">Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů.</span><span class="sxs-lookup"><span data-stu-id="d51df-211">Now that you've seen the different numeric types, write code that calculates the area of a circle whose radius is 2.50 centimeters.</span></span> <span data-ttu-id="d51df-212">Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí.</span><span class="sxs-lookup"><span data-stu-id="d51df-212">Remember that the area of a circle is the radius squared multiplied by PI.</span></span> <span data-ttu-id="d51df-213">Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType>, kterou můžete použít pro tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="d51df-213">One hint: .NET contains a constant for PI, <xref:System.Math.PI?displayProperty=nameWithType> that you can use for that value.</span></span>
 
-<span data-ttu-id="f854e-214">Měli byste získat odpověď mezi 19 a 20.</span><span class="sxs-lookup"><span data-stu-id="f854e-214">You should get an answer between 19 and 20.</span></span>
-<span data-ttu-id="f854e-215">Svou odpověď si můžete prohlédnout na [stránce dokončený vzorový kód na GitHubu](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106) .</span><span class="sxs-lookup"><span data-stu-id="f854e-215">You can check your answer by [looking at the finished sample code on GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106)</span></span>
+<span data-ttu-id="d51df-214">Měli byste získat odpověď mezi 19 a 20.</span><span class="sxs-lookup"><span data-stu-id="d51df-214">You should get an answer between 19 and 20.</span></span>
+<span data-ttu-id="d51df-215">Svou odpověď si můžete prohlédnout na [stránce dokončený vzorový kód na GitHubu](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106) .</span><span class="sxs-lookup"><span data-stu-id="d51df-215">You can check your answer by [looking at the finished sample code on GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106)</span></span>
 
-<span data-ttu-id="f854e-216">Pokud chcete, zkuste použít jiné vzorce.</span><span class="sxs-lookup"><span data-stu-id="f854e-216">Try some other formulas if you'd like.</span></span>
+<span data-ttu-id="d51df-216">Pokud chcete, zkuste použít jiné vzorce.</span><span class="sxs-lookup"><span data-stu-id="d51df-216">Try some other formulas if you'd like.</span></span>
 
-<span data-ttu-id="f854e-217">Dokončili jste rychlý Start s čísly C#.</span><span class="sxs-lookup"><span data-stu-id="f854e-217">You've completed the "Numbers in C#" quickstart.</span></span> <span data-ttu-id="f854e-218">Můžete pokračovat v rychlém startu [větví a smyček](branches-and-loops-local.md) ve vlastním vývojovém prostředí.</span><span class="sxs-lookup"><span data-stu-id="f854e-218">You can continue with the [Branches and loops](branches-and-loops-local.md) quickstart in your own development environment.</span></span>
+<span data-ttu-id="d51df-217">Dokončili jste rychlý Start s čísly C#.</span><span class="sxs-lookup"><span data-stu-id="d51df-217">You've completed the "Numbers in C#" quickstart.</span></span> <span data-ttu-id="d51df-218">Můžete pokračovat v rychlém startu [větví a smyček](branches-and-loops-local.md) ve vlastním vývojovém prostředí.</span><span class="sxs-lookup"><span data-stu-id="d51df-218">You can continue with the [Branches and loops](branches-and-loops-local.md) quickstart in your own development environment.</span></span>
 
-<span data-ttu-id="f854e-219">Další informace o číslech v C# najdete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="f854e-219">You can learn more about numbers in C# in the following topics:</span></span>
+<span data-ttu-id="d51df-219">Další informace o číslech v C# najdete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="d51df-219">You can learn more about numbers in C# in the following topics:</span></span>
 
-- [<span data-ttu-id="f854e-220">Celočíselné číselné typy</span><span class="sxs-lookup"><span data-stu-id="f854e-220">Integral numeric types</span></span>](../../language-reference/builtin-types/integral-numeric-types.md)
-- [<span data-ttu-id="f854e-221">Číselné typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="f854e-221">Floating-point numeric types</span></span>](../../language-reference/builtin-types/floating-point-numeric-types.md)
-- [<span data-ttu-id="f854e-222">Předdefinované číselné převody</span><span class="sxs-lookup"><span data-stu-id="f854e-222">Built-in numeric conversions</span></span>](../../language-reference/builtin-types/numeric-conversions.md)
+- [<span data-ttu-id="d51df-220">Celočíselné číselné typy</span><span class="sxs-lookup"><span data-stu-id="d51df-220">Integral numeric types</span></span>](../../language-reference/builtin-types/integral-numeric-types.md)
+- [<span data-ttu-id="d51df-221">Číselné typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="d51df-221">Floating-point numeric types</span></span>](../../language-reference/builtin-types/floating-point-numeric-types.md)
+- [<span data-ttu-id="d51df-222">Předdefinované číselné převody</span><span class="sxs-lookup"><span data-stu-id="d51df-222">Built-in numeric conversions</span></span>](../../language-reference/builtin-types/numeric-conversions.md)
