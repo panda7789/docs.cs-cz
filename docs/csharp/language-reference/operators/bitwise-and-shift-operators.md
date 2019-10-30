@@ -29,16 +29,16 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 0a251e8d04f31a736ee6acbf4b8e913cfb8ca6df
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 9336ff57722e575d3ecfdb3db2b99bf7bbb6b433
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039104"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operátory bitových a posunutí (C# referenční)
 
-Následující operátory provádějí operace bitového nebo posunutí s operandy [integrálních typů](../builtin-types/integral-numeric-types.md):
+Následující operátory provádějí operace bitového nebo posunutí s operandy [integrálních číselných typů](../builtin-types/integral-numeric-types.md) nebo typu [znaku](../keywords/char.md) :
 
 - Unární operátor [`~` (bitový doplněk)](#bitwise-complement-operator-)
 - Binární [`<<` (levý SHIFT)](#left-shift-operator-) a [`>>` (posunutí doprava)](#right-shift-operator-) – operátory posunu
@@ -46,7 +46,7 @@ Následující operátory provádějí operace bitového nebo posunutí s operan
 
 Tyto operátory jsou definovány pro typy `int`, `uint`, `long` a `ulong`. Pokud jsou oba operandy jiných integrálních typů (`sbyte`, `byte`, `short`, `ushort` nebo `char`), jejich hodnoty jsou převedeny na typ `int`, což je také výsledný typ operace. Pokud jsou operandy různých integrálních typů, jejich hodnoty jsou převedeny na nejbližší obsahující celočíselný typ. Další informace naleznete v části [Číselná propagace](~/_csharplang/spec/expressions.md#numeric-promotions) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-Operátory `&`, `|` a `^` jsou definovány také pro operandy `bool` typu. Další informace naleznete v tématu logické [logické operátory](boolean-logical-operators.md).
+Operátory `&`, `|`a `^` jsou definovány také pro operandy `bool` typu. Další informace naleznete v tématu logické [logické operátory](boolean-logical-operators.md).
 
 Operace bitového a posunutí nikdy nezpůsobí přetečení a vytvářejí stejné výsledky v [zaškrtnutých a nekontrolovaných](../keywords/checked-and-unchecked.md) kontextech.
 
@@ -82,11 +82,11 @@ Operace pravého posunutí zahodí bity nízkého řádu, jak ukazuje následuj�
 
 Horní pořadí prázdných bitových pozic je nastaveno na základě typu levého operandu následujícím způsobem:
 
-- Pokud je levý operand typu [int](../builtin-types/integral-numeric-types.md) nebo [Long](../builtin-types/integral-numeric-types.md), operátor pravého posunutí provede *aritmetický* posun: hodnota nejvýznamnějšího bitu (bit znaménka) levého operandu je rozšířena na horní pořadí prázdných bitových pozic. To znamená, že horní pozice prázdných pozic je nastavena na hodnotu nula, je-li operand na levé straně nezáporný a je-li záporná, nastavte na jeden.
+- Pokud je levý operand typu `int` nebo `long`, operátor pravého posunutí provede *aritmetický* posun: hodnota nejvýznamnějšího bitu (bit znaménka) levého operandu je rozšířena na horní pořadí prázdných bitových pozic. To znamená, že horní pozice prázdných pozic je nastavena na hodnotu nula, je-li operand na levé straně nezáporný a je-li záporná, nastavte na jeden.
 
   [!code-csharp-interactive[arithmetic right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
-- Pokud je levý operand typu [uint](../builtin-types/integral-numeric-types.md) nebo [ulong](../builtin-types/integral-numeric-types.md), provede operátor pravého posunutí *logický* posun: vysoké prázdné bitové pozice jsou vždy nastaveny na hodnotu nula.
+- Pokud je levý operand typu `uint` nebo `ulong`, provede operátor pravého posunutí *logický* posun: vysoké prázdné bitové pozice jsou vždy nastaveny na hodnotu nula.
 
   [!code-csharp-interactive[logical right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
@@ -98,7 +98,7 @@ Operátor `&` vypočítá bitovou logickou a jeho operandy:
 
 [!code-csharp-interactive[bitwise AND](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
-Pro operandy typu `bool` `&` operátor vypočítá [logickou a](boolean-logical-operators.md#logical-and-operator-) jeho operandy. Unární operátor `&` je [operátor address-of](pointer-related-operators.md#address-of-operator-).
+Pro `bool` operandy vypočítá operátor `&` [logickou a](boolean-logical-operators.md#logical-and-operator-) jeho operandy. Unární operátor `&` je [operátor address-of](pointer-related-operators.md#address-of-operator-).
 
 ## <a name="logical-exclusive-or-operator-"></a>Logický exkluzivní operátor OR ^
 
@@ -106,7 +106,7 @@ Operátor `^` Vypočítá bitový logický operátor exclusive OR, také označo
 
 [!code-csharp-interactive[bitwise XOR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
-Pro operandy typu `bool` `^` operátor vypočítá [logickou výlučnou nebo](boolean-logical-operators.md#logical-exclusive-or-operator-) jeho operandy.
+Pro `bool` operandy vypočítá operátor `^` [logickou výhradní nebo](boolean-logical-operators.md#logical-exclusive-or-operator-) jeho operandy.
 
 ## <a name="logical-or-operator-"></a>Logický operátor OR |
 
@@ -114,7 +114,7 @@ Operátor `|` vypočítá bitovou logickou nebo jeho operandy:
 
 [!code-csharp-interactive[bitwise OR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseOr)]
 
-Pro operandy typu `bool` `|` operátor vypočítá [logickou nebo](boolean-logical-operators.md#logical-or-operator-) jeho operandy.
+Pro `bool` operandy vypočítá operátor `|` [logickou nebo](boolean-logical-operators.md#logical-or-operator-) jeho operandy.
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
@@ -147,24 +147,24 @@ Následující seznam řadí operátory bitových operátorů and Shift počína
 - Operátor bitového doplňku `~`
 - Operátory posunutí `<<` a `>>`
 - Logický operátor AND `&`
-- @No__t_0 logický exkluzivní operátor OR
+- `^` logický exkluzivní operátor OR
 - Logický operátor OR `|`
 
 Chcete-li změnit pořadí vyhodnocování stanovené předností operátorů, použijte závorky `()`:
 
 [!code-csharp-interactive[operator precedence](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#Precedence)]
 
-Úplný seznam C# operátorů seřazených podle priority úrovně naleznete v tématu [ C# operátory](index.md).
+Úplný seznam C# operátorů seřazených podle priority najdete v části [Priorita operátorů](index.md#operator-precedence) [ C# v článku věnovaném operátorům](index.md) .
 
 ## <a name="shift-count-of-the-shift-operators"></a>Počet posunutí operátorů Shift
 
-Pro operátory Shift `<<` a `>>` musí být typ operandu na pravé straně [int](../builtin-types/integral-numeric-types.md) nebo typ, který má [předdefinovaný implicitní číselný převod](../builtin-types/numeric-conversions.md#implicit-numeric-conversions) na `int`.
+Pro operátory Shift `<<` a `>>`musí být typ operandu na pravé straně `int` nebo typ, který má [předdefinovaný implicitní číselný převod](../builtin-types/numeric-conversions.md#implicit-numeric-conversions) na `int`.
 
 Pro výrazy `x << count` a `x >> count` závisí skutečný počet posunutí na typ `x` následujícím způsobem:
 
-- Pokud typ `x` je [int](../builtin-types/integral-numeric-types.md) nebo [uint](../builtin-types/integral-numeric-types.md), počet posunutí je definován pomocí *pěti* bitů pravého operandu v dolním pořadí. To znamená, že počet posunutí je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
+- Pokud je typ `x` `int` nebo `uint`, je počet posunutí definováno *pěti* bity pravého operandu. To znamená, že počet posunutí je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
 
-- Pokud je typ `x` [Long](../builtin-types/integral-numeric-types.md) nebo [ulong](../builtin-types/integral-numeric-types.md), je počet posunutí definován v dolním *šesti* bitech operandu na pravé straně. To znamená, že počet posunutí je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
+- Pokud je typ `x` `long` nebo `ulong`, je počet posunutí definován v dolním *šesti* bitech operandu na pravé straně. To znamená, že počet posunutí je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
 
 Následující příklad ukazuje toto chování:
 
@@ -172,13 +172,13 @@ Následující příklad ukazuje toto chování:
 
 ## <a name="enumeration-logical-operators"></a>Logické operátory výčtu
 
-Operátory `~`, `&`, `|` a `^` jsou definovány také pro libovolný typ [výčtu](../keywords/enum.md) . U operandů stejného výčtového typu je logická operace provedena na odpovídajících hodnotách základního integrálního typu. Například pro jakékoli `x` a `y` typu výčtu `T` s podkladovým typem `U` výraz `x & y` vytvoří stejný výsledek jako výraz `(T)((U)x & (U)y)`.
+Operátory `~`, `&`, `|`a `^` jsou podporovány také jakýmkoli [výčtovým](../keywords/enum.md) typem. Pro operandy se stejným výčtovým typem je logická operace provedena na odpovídajících hodnotách základního integrálního typu. Například pro jakékoli `x` a `y` typu výčtu `T` s podkladovým typem `U` výraz `x & y` vytvoří stejný výsledek jako výraz `(T)((U)x & (U)y)`.
 
 Obvykle používáte bitové logické operátory s výčtovým typem, který je definován pomocí atributu [Flags](xref:System.FlagsAttribute) . Další informace naleznete v části [výčtové typy jako bitové příznaky](../../programming-guide/enumeration-types.md#enumeration-types-as-bit-flags) v článku [výčtové typy](../../programming-guide/enumeration-types.md) .
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelsky definovaný typ může [přetížit](operator-overloading.md) operátory `~`, `<<`, `>>`, `&`, `|` a `^`. Při přetížení binárního operátoru je také implicitně přetížen odpovídající operátor složeného přiřazení. Uživatelsky definovaný typ nemůže explicitně přetížit operátor složeného přiřazení.
+Uživatelsky definovaný typ může [přetížit](operator-overloading.md) operátory `~`, `<<`, `>>`, `&`, `|`a `^`. Při přetížení binárního operátoru je také implicitně přetížen odpovídající operátor složeného přiřazení. Uživatelsky definovaný typ nemůže explicitně přetížit operátor složeného přiřazení.
 
 Pokud uživatelsky definovaný typ `T` přetížení operátoru `<<` nebo `>>`, musí být typ operandu na levé straně `T` a typ operandu na pravé straně musí být `int`.
 

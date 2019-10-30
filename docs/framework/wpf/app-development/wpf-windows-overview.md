@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: b9aa3f4e386ca5de79fe028b10d0d68343aba06b
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: e62825a88858a63984860cbc8a1c570f784f663f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920023"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040865"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytují vlastní okna pomocí <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před tím, než se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
@@ -442,7 +442,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  [!code-xaml[WindowsOverviewSnippets#WindowStyleWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStyleWindow.xaml#windowstylewindowmarkup1)]  
   
 #### <a name="non-rectangular-window-style"></a>Styl neobdélníkového okna  
- Existují také situace, kdy styly ohraničení, které <xref:System.Windows.Window.WindowStyle%2A> umožňují, nejsou dostačující. Například můžete chtít vytvořit aplikaci s neobdélníkovým ohraničením, jako je [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] použití.  
+ Existují také situace, kdy styly ohraničení, které <xref:System.Windows.Window.WindowStyle%2A> umožňují, nejsou dostačující. Například můžete chtít vytvořit aplikaci s neobdélníkovým ohraničením, například Microsoft Windows Media Player používá.  
   
  Představte si například okno bublinového slova, které vidíte na následujícím obrázku:  
   

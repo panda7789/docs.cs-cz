@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: a8cca707f8fa82e97e988fcbe015b55e35b93499
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ddb53c9224d56803c3528d79c5ccdf5534b9ab03
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794678"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039820"
 ---
 # <a name="optimistic-concurrency"></a>Optimistická metoda souběžného zpracování
-Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v databázi: Optimistická souběžnost a pesimistická souběžnost. <xref:System.Data.DataSet> Objekt je navržený tak, aby podporoval použití optimistické souběžnosti pro dlouhotrvající aktivity, jako jsou vzdálená data a interakce s daty.  
+Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v databázi: Optimistická souběžnost a pesimistická souběžnost. Objekt <xref:System.Data.DataSet> je navržený tak, aby podporoval použití optimistické souběžnosti pro dlouhotrvající aktivity, jako jsou vzdálená data a interakce s daty.  
   
  Pesimistická souběžnost zahrnuje uzamykání řádků ve zdroji dat, aby ostatní uživatelé nemohli upravovat data způsobem, který má vliv na aktuálního uživatele. V pesimistické modelu, pokud uživatel provede akci, která způsobí použití zámku, nemohou jiní uživatelé provádět akce, které by mohly být v konfliktu s zámkem, dokud ho vlastník zámku neuvolní. Tento model se primárně používá v prostředích, kde se vyskytují silné kolize dat, takže náklady na ochranu dat s zámky jsou nižší než náklady na vracení zpět transakcí, pokud dojde ke konfliktům souběžnosti.  
   
@@ -37,8 +37,8 @@ Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v da
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|LastName|Smith|Smith|Smith|  
-|FirstName|Bob|Bob|Bob|  
+|Polím|Smith|Smith|Smith|  
+|firstName|Bobem|Bobem|Bobem|  
   
  V 1:01 večer uživatel2 načte stejný řádek.  
   
@@ -47,8 +47,8 @@ Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v da
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|LastName|Smith|Smith|Smith|  
-|FirstName|Bob|Robert|Bob|  
+|Polím|Smith|Smith|Smith|  
+|firstName|Bobem|Robert|Bobem|  
   
  Aktualizace je úspěšná, protože hodnoty v databázi v době aktualizace odpovídají původním hodnotám, které má uživatel2.  
   
@@ -57,8 +57,8 @@ Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v da
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|LastName|Smith|Smith|Smith|  
-|FirstName|Bob|Petr|Robert|  
+|Polím|Smith|Smith|Smith|  
+|firstName|Bobem|Petr|Robert|  
   
  V tomto okamžiku uživatel1 narazí na porušení optimistické souběžnosti, protože hodnota v databázi ("Robert") se už neshoduje s původní hodnotou, kterou uživatel1 očekával ("Bob"). Porušení souběžnosti vám stačí, když zjistíte, že se aktualizace nezdařila. Rozhodnutí teď musí být provedeno bez ohledu na to, jestli se změny dodávají v rámci aplikace uživatel2, a změny poskytované uživatelem user1, nebo změny podle uživatele user1 zrušit.  
   
@@ -67,13 +67,13 @@ Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v da
   
  Další technikou pro testování pro porušení optimistické souběžnosti je ověřit, zda všechny původní hodnoty sloupců v řádku stále odpovídají hodnotám nalezeným v databázi. Zvažte například následující dotaz:  
   
-```  
+```sql
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
  Chcete-li provést test optimistického chování souběžnosti při aktualizaci řádku ve vlastnosti **Tabulka1**, vydejte následující příkaz Update:  
   
-```  
+```sql
 UPDATE Table1 Set Col1 = @NewCol1Value,  
               Set Col2 = @NewCol2Value,  
               Set Col3 = @NewCol3Value  
@@ -88,7 +88,7 @@ WHERE Col1 = @OldCol1Value AND
   
  Pokud sloupec v datovém zdroji povoluje hodnoty null, může být nutné zvětšit klauzuli WHERE, aby kontrolovala shodný odkaz null v místní tabulce a ve zdroji dat. Například následující příkaz UPDATE ověřuje, že odkaz s hodnotou null v místním řádku se stále shoduje s nulovým odkazem ve zdroji dat nebo že hodnota v místním řádku se stále shoduje s hodnotou ve zdroji dat.  
   
-```  
+```sql
 UPDATE Table1 Set Col1 = @NewVal1  
   WHERE (@OldVal1 IS NULL AND Col1 IS NULL) OR Col1 = @OldVal1  
 ```  
@@ -96,7 +96,7 @@ UPDATE Table1 Set Col1 = @NewVal1
  Při použití optimistického modelu souběžnosti můžete také zvolit, že se mají použít méně omezující kritéria. Například použití pouze sloupců primárního klíče v klauzuli WHERE způsobí, že data budou přepsána bez ohledu na to, zda byly od posledního dotazu aktualizovány ostatní sloupce. Klauzuli WHERE můžete také použít pouze na konkrétní sloupce a výsledná data budou přepsána, pokud nebyla aktualizována konkrétní pole od posledního dotazu.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Událost DataAdapter. RowUpdated metody Update  
- Událost<xref:System.Data.Common.DataAdapter> **RowUpdated metody Update** objektu lze použít ve spojení s výše popsanými postupy, aby bylo možné poskytnout oznámení vaší aplikaci s porušením optimistické souběžnosti. K **RowUpdated metody Update** dochází po každém pokusu o aktualizaci **upraveného** řádku z **datové sady**. To umožňuje přidat speciální kód pro zpracování, včetně zpracování, když dojde k výjimce, přidání vlastních informací o chybě, přidání logiky opakování atd. Objekt vrátí vlastnost RecordsAffected obsahující počet řádků ovlivněných určitým příkazem aktualizace pro upravený řádek v tabulce. <xref:System.Data.Common.RowUpdatedEventArgs> Nastavením příkazu Update na test pro optimistickou souběžnost bude vlastnost **RecordsAffected** v důsledku toho vracet hodnotu 0, pokud došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated metody Update** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs. status** , například **UpdateStatus. SkipCurrentRow**. Další informace o události **RowUpdated metody Update** naleznete v tématu [zpracování událostí DataAdapter](handling-dataadapter-events.md).  
+ Událost **RowUpdated metody Update** objektu <xref:System.Data.Common.DataAdapter> lze použít ve spojení s výše popsanými postupy, aby bylo možné poskytnout oznámení do vaší aplikace porušení optimistické souběžnosti. K **RowUpdated metody Update** dochází po každém pokusu o aktualizaci **upraveného** řádku z **datové sady**. To umožňuje přidat speciální kód pro zpracování, včetně zpracování, když dojde k výjimce, přidání vlastních informací o chybě, přidání logiky opakování atd. Objekt <xref:System.Data.Common.RowUpdatedEventArgs> vrátí vlastnost **RecordsAffected** obsahující počet řádků ovlivněných určitým příkazem Update pro upravený řádek v tabulce. Nastavením příkazu Update na test pro optimistickou souběžnost bude vlastnost **RecordsAffected** v důsledku toho vracet hodnotu 0, pokud došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated metody Update** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs. status** , například **UpdateStatus. SkipCurrentRow**. Další informace o události **RowUpdated metody Update** naleznete v tématu [zpracování událostí DataAdapter](handling-dataadapter-events.md).  
   
  Volitelně můžete nastavit vlastnost **DataAdapter. ContinueUpdateOnError** na **hodnotu true**, před voláním metody **Update**a reagovat na informace o chybě uložené ve vlastnosti **RowError** určitého řádku po dokončení **aktualizace** . Další informace najdete v tématu [informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md).  
   

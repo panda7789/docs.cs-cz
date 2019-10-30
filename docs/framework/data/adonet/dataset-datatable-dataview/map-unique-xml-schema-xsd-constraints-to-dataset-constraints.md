@@ -2,22 +2,22 @@
 title: Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
-ms.openlocfilehash: 4aa94dfaf088a2a934c8901e2720f166d3a38dae
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6b847aba31aa75f7be3bd6a11b6bcb8231c06bc4
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040366"
 ---
 # <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
-Ve schématu XSD (XML Schema Definition Language) definuje **jedinečný** element omezení jedinečnosti pro element nebo atribut. V procesu překladu schématu XML do relačního schématu je jedinečné omezení zadané u elementu nebo atributu ve schématu XML mapováno na jedinečné omezení v <xref:System.Data.DataTable> v odpovídajícím <xref:System.Data.DataSet> generovaném objektu.  
+Ve schématu XSD (XML Schema Definition Language) definuje **jedinečný** element omezení jedinečnosti pro element nebo atribut. V procesu překladu schématu XML do relačního schématu je jedinečné omezení zadané u elementu nebo atributu ve schématu XML mapováno na jedinečné omezení v <xref:System.Data.DataTable> v odpovídající <xref:System.Data.DataSet>, která je generována.  
   
  Následující tabulka popisuje atributy **msdata** , které lze zadat v **jedinečném** prvku.  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Pokud je tento atribut zadán, použije se jako název omezení jeho hodnota. V opačném případě atribut **Name** poskytuje hodnotu názvu omezení.|  
-|**msdata:PrimaryKey**|Pokud `PrimaryKey="true"` se nachází v **jedinečném** elementu, je vytvořeno jedinečné omezení s vlastností **IsPrimaryKey** nastavenou na **hodnotu true**.|  
+|**msdata: Constraint**|Pokud je tento atribut zadán, použije se jako název omezení jeho hodnota. V opačném případě atribut **Name** poskytuje hodnotu názvu omezení.|  
+|**msdata: PrimaryKey**|Pokud je `PrimaryKey="true"` k dispozici v **jedinečném** prvku, je vytvořeno jedinečné omezení s vlastností **IsPrimaryKey** nastavenou na **hodnotu true**.|  
   
  Následující příklad ukazuje schéma XML, které používá **jedinečný** element k určení omezení jedinečnosti.  
   
@@ -50,13 +50,13 @@ Ve schématu XSD (XML Schema Definition Language) definuje **jedinečný** eleme
   
  **Jedinečný** prvek ve schématu určuje, že pro všechny **zákazníky** v instanci dokumentu musí být hodnota podřízeného elementu **CustomerID** jedinečná. Při sestavování **datové sady**načte proces mapování toto schéma a vygeneruje následující tabulku:  
   
-```  
+```text  
 Customers (CustomerID, CompanyName, Phone)  
 ```  
   
  Proces mapování také vytvoří jedinečné omezení pro sloupec **KódZákazníka** , jak je znázorněno v následující **datové sadě**. (Pro jednoduchost se zobrazí pouze příslušné vlastnosti.)  
   
-```  
+```text  
       DataSetName: MyDataSet  
 TableName: Customers  
   ColumnName: CustomerID  
@@ -64,7 +64,7 @@ TableName: Customers
       Unique: True  
   ConstraintName: UcustID       Type: UniqueConstraint  
       Table: Customers  
-      Columns: CustomerID   
+      Columns: CustomerID
       IsPrimaryKey: False  
 ```  
   
@@ -86,10 +86,10 @@ TableName: Customers
   
  Toto je omezení vytvořené ve výsledné **sadě dat**.  
   
-```  
+```text  
 ConstraintName: SomeName  
   Table: Customers  
-  Columns: CustomerID CompanyName   
+  Columns: CustomerID CompanyName
   IsPrimaryKey: False  
 ```  
   

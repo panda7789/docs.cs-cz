@@ -1,28 +1,29 @@
 ---
-title: System.Delegate a `delegate` – klíčové slovo
-description: Další informace o třídách v rozhraní .NET Framework, které podporují delegáty a jak jsou mapovány – klíčové slovo 'delegáta'.
+title: System. Delegate a klíčové slovo `delegate`
+description: Přečtěte si o třídách v .NET Framework, které podporují delegáty, a o tom, jak jsou tato mapování na klíčové slovo Delegate.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 4cf2b113fc9e2c6621f648af7ecb272a42b1f056
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7aca2d3ba7aefd103ac927a6ce905938262ae39c
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646706"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037454"
 ---
-# <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate a `delegate` – klíčové slovo
+# <a name="systemdelegate-and-the-delegate-keyword"></a>System. Delegate a klíčové slovo `delegate`
 
 [Předchozí](delegates-overview.md)
 
-Tento článek se zabývá třídy v rozhraní .NET framework, které podporují delegáty a jak jsou mapovány `delegate` – klíčové slovo.
+Tento článek bude pokrývat třídy v rozhraní .NET Framework, které podporují delegáty, a způsob mapování na klíčové slovo `delegate`.
 
-## <a name="defining-delegate-types"></a>Definování typů delegátů.
+## <a name="defining-delegate-types"></a>Definování typů delegátů
 
-Začněme s klíčovým slovem 'delegáta', protože, který se primárně se používá při práci s delegátů. Kód, který kompilátor generuje při použití `delegate` – klíčové slovo bude mapovat na volání metody, které vyvolají členy <xref:System.Delegate> a <xref:System.MulticastDelegate> třídy. 
+Pojďme začít s klíčovým slovem Delegate, protože to je primárně to, co budete používat při práci s delegáty. Kód, který kompilátor generuje při použití klíčového slova `delegate`, se namapuje na volání metod, která vyvolávají členy třídy <xref:System.Delegate> a <xref:System.MulticastDelegate>. 
 
-Můžete definovat delegáta typu pomocí syntaxe, která se podobá definuje podpis metody. Stačí přidat `delegate` – klíčové slovo k definici.
+Můžete definovat typ delegáta pomocí syntaxe, která je podobná definování signatury metody. Pouze přidáte klíčové slovo `delegate` do definice.
 
-Můžeme dál používat metodu List.Sort() jako náš příklad. Prvním krokem je vytvoření typu pro porovnání delegáta:
+Pojďme dál používat metodu list. Sort () jako náš příklad. Prvním krokem je vytvoření typu pro delegáta porovnání:
 
 ```csharp
 // From the .NET Core library
@@ -31,19 +32,19 @@ Můžeme dál používat metodu List.Sort() jako náš příklad. Prvním krokem
 public delegate int Comparison<in T>(T left, T right);
 ```
 
-Kompilátor vygeneruje třídu odvozenou z `System.Delegate` , která odpovídá podpisu použít (v tomto případě metodu, která vrátí celé číslo a má dva argumenty). Je typ delegátu `Comparison`. `Comparison` Obecný typ je typ delegátu. Viz podrobnosti o obecných typů [tady](generics.md).
+Kompilátor vygeneruje třídu odvozenou z `System.Delegate`, která odpovídá použitému podpisu (v tomto případě metoda, která vrací celé číslo a má dva argumenty). Typ delegáta je `Comparison`. Typ delegáta `Comparison` je obecný typ. Podrobnosti o obecných typech najdete [tady](generics.md).
 
-Všimněte si, že syntaxe může zdát, že to je deklarace proměnné, ale ve skutečnosti je deklarace *typ*. Můžete definovat typy delegátů uvnitř třídy, přímo v oborech názvů, nebo dokonce i v globálním oboru názvů.
+Všimněte si, že se syntaxe může zobrazit, jako by deklaruje proměnnou, ale ve skutečnosti deklaruje *typ*. Můžete definovat typy delegátů uvnitř tříd, přímo v oborech názvů nebo dokonce v globálním oboru názvů.
 
 > [!NOTE]
-> Deklarace delegáta typy (nebo jiné typy) přímo v globálním oboru názvů se nedoporučuje. 
+> Deklarace typů delegátů (nebo jiných typů) přímo v globálním oboru názvů se nedoporučuje. 
 
-Kompilátor generuje také přidávat a odebírat obslužné rutiny pro tento nový typ tak, aby klienti této třídy můžete přidávat a odebírat metody ze seznamu vyvolání instance. Kompilátor vynutí, že podpis metody přidávání nebo odebírání odpovídá podpisu použít při deklaraci metody. 
+Kompilátor také generuje přidat a odebrat obslužné rutiny pro tento nový typ tak, aby klienti této třídy mohli přidávat a odebírat metody ze seznamu volání instance. Kompilátor vyhodnotí, že signatura přidávaného nebo odebraného metody odpovídá podpisu použitému při deklaraci metody. 
 
-## <a name="declaring-instances-of-delegates"></a>Deklarování instance delegátů
+## <a name="declaring-instances-of-delegates"></a>Deklarace instancí delegátů
 
-Po definování delegáta, můžete vytvořit instanci tohoto typu.
-Všechny proměnné v, jako jsou C#, nelze deklarovat delegáta instance přímo v oboru názvů nebo v globálním oboru názvů.
+Po definování delegáta můžete vytvořit instanci tohoto typu.
+Podobně jako všechny proměnné C#v nemůžete deklarovat instance delegátů přímo v oboru názvů nebo v globálním oboru názvů.
 
 ```csharp
 // inside a class definition:
@@ -52,84 +53,84 @@ Všechny proměnné v, jako jsou C#, nelze deklarovat delegáta instance přímo
 public Comparison<T> comparator;
 ```
 
-Typ proměnné je `Comparison<T>`, typ delegáta definovali dříve. Název proměnné je `comparator`.
+Typ proměnné je `Comparison<T>`, dříve definovaný typ delegáta. Název proměnné je `comparator`.
  
- Tento fragment kódu nad deklaraci členské proměnné uvnitř třídy. Můžete také deklarovat delegáta proměnné, které jsou lokálních proměnných nebo argumentů metody.
+ Tento fragment kódu výše deklaruje členskou proměnnou uvnitř třídy. Můžete také deklarovat proměnné delegáta, které jsou lokální proměnné nebo argumenty metody.
 
 ## <a name="invoking-delegates"></a>Vyvolání delegátů
 
-Vyvolání metody, které jsou v seznamu vyvolání delegátu po zavolání tohoto delegátu. Uvnitř `Sort()` metoda, kód bude volat metodu porovnání k určení pořadí umístit objekty:
+Vyvoláte metody, které jsou v seznamu volání delegáta, voláním tohoto delegáta. V rámci metody `Sort()` kód zavolá metodu porovnání k určení, které pořadí umístit objekty:
 
 ```csharp
 int result = comparator(left, right);
 ```
 
-V řádku nad kódem *vyvolá* metodu připojené k delegátu.
-Proměnnou považovat za název metody a vyvolat pomocí syntaxe pro volání normální metody.
+V řádku výše kód *vyvolá* metodu připojenou k delegátovi.
+Zacházíte s proměnnou jako s názvem metody a vyvoláte ji pomocí syntaxe volání normální metody.
 
-Tento řádek kódu vytvoří nebezpečné předpokladů: Není zaručeno, že cíl je přidaný do delegáta. Pokud byly připojeny žádné cíle, by způsobit, že řádek výše `NullReferenceException` vyvolání. Idiomy použít k vyřešení tohoto problému jsou složitější než jednoduchého vyhledání null a jsou popsané dále v tomto [řady](delegates-patterns.md).
+Tento řádek kódu představuje nebezpečný předpoklad: není nijak zaručeno, že do delegáta byl přidán cíl. Pokud nejsou k dispozici žádné cíle, by výše uvedený řádek způsobil vyvolání `NullReferenceException`. Idiomy, který se používá k vyřešení tohoto problému, je složitější než jednoduchá hodnota null a jsou pokrytá později v této [sérii](delegates-patterns.md).
 
-## <a name="assigning-adding-and-removing-invocation-targets"></a>Přiřazení, přidávání a odebírání cílů vyvolání
+## <a name="assigning-adding-and-removing-invocation-targets"></a>Přiřazení, přidávání a odebírání cílů volání
 
-To je, jak je definován typ delegáta a jak deklarovat a vyvolání delegáta instance.
+To je způsob, jakým je definován typ delegáta a jak jsou instance delegáta deklarovány a vyvolány.
 
-Vývojáři, kteří mají používat `List.Sort()` metoda muset definovat metodu, jejíž podpis odpovídá definici typu delegáta a přiřaďte ho ke delegát používá metodu řazení. Toto přiřazení přidá metodu do seznamu vyvolání tohoto delegáta objektu.
+Vývojáři, kteří chtějí používat metodu `List.Sort()`, musí definovat metodu, jejíž signatura odpovídá definici typu delegáta, a přiřadit ji k delegátovi použitému metodou řazení. Toto přiřazení přidá metodu do seznamu volání daného objektu Delegate.
 
-Předpokládejme, že chcete seřadit řetězce podle jejich délky. Funkce porovnání může být následující:
+Předpokládejme, že jste chtěli seřadit seznam řetězců podle jejich délky. Vaše funkce porovnání může být následující:
 
 ```csharp
 private static int CompareLength(string left, string right) =>
     left.Length.CompareTo(right.Length);
 ```
 
-Metoda je deklarován jako privátní metodu. To je v pořádku. Možná nebudete chtít tuto metodu za účelem být součástí veřejného rozhraní. Může být stále použit jako metodu porovnání při připojení k delegáta. Volající kód bude mít tato metoda připojen k seznamu cílové objektů delegáta a k němu přístup prostřednictvím tohoto delegátu.
+Metoda je deklarována jako soukromá metoda. To je dobré. Možná nebudete chtít, aby tato metoda byla součástí vašeho veřejného rozhraní. Tuto možnost lze použít jako metodu porovnání, je-li připojena k delegátovi. Volající kód bude mít tuto metodu připojenou k cílovému seznamu objektu delegáta a může k němu přistupovat prostřednictvím tohoto delegáta.
 
-Vytvořte vztah předáním této metody `List.Sort()` metody:
+Tuto relaci vytvoříte předáním této metody metodě `List.Sort()`:
 
 ```csharp
 phrases.Sort(CompareLength);
 ```
 
-Všimněte si, že název metody, který se používá, bez závorek. Pomocí metody jako argument instruuje kompilátor, aby metoda odkaz převést na odkaz, který lze použít jako cíl vyvolání delegáta a připojit jako cíl volání metody.
+Všimněte si, že se používá název metody bez závorek. Použití metody jako argument říká kompilátoru, aby převedl odkaz na metodu na odkaz, který se dá použít jako cíl vyvolání delegáta, a připojte tuto metodu jako cíl volání.
 
-Může také byli jste explicitní deklarováním proměnné typu `Comparison<string>` a provádění přiřazení:
+Mohli jste být také explicitní deklarací proměnné typu `Comparison<string>` a provedením přiřazení:
 
 ```csharp
 Comparison<string> comparer = CompareLength;
 phrases.Sort(comparer);
 ```
 
-Při využití, ve kterém metoda používá jako cíl delegáta je malý metoda, je běžné použití [výraz lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) syntaxe provést přiřazení:
+V použití, kde je metoda používaná jako cíl delegáta malá metoda, je běžné použít syntaxi [výrazu lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) k provedení přiřazení:
 
 ```csharp
 Comparison<string> comparer = (left, right) => left.Length.CompareTo(right.Length);
 phrases.Sort(comparer);
 ```
 
-Použití výrazů lambda pro cíle delegáta je věnují více [později části](delegates-patterns.md).
+Použití výrazů lambda pro cíle delegátů je podrobněji popsáno v [pozdější části](delegates-patterns.md).
 
-Příklad Sort() se obvykle připojuje jedné cílové metody delegáta. Delegáta objekty však nepodporují vyvolání seznamy, které mají více cílové metody připojen k objektu delegáta.
+Příklad řazení () obvykle k delegátovi připojí jedinou cílovou metodu. Nicméně objekty delegáta podporují seznamy vyvolání s více cílovými metodami připojenými k objektu delegáta.
 
-## <a name="delegate-and-multicastdelegate-classes"></a>Třídy delegáta a MulticastDelegate, nebude
+## <a name="delegate-and-multicastdelegate-classes"></a>Třídy Delegate a MulticastDelegate
 
-Podpora jazyků je popsáno výše poskytuje funkce a podporu, kterou budete obvykle potřebovat pro práci s delegátů. Tyto funkce jsou postavené na dvě třídy v rozhraní .NET Core: <xref:System.Delegate> a <xref:System.MulticastDelegate>.
+Výše popsaná jazyková podpora poskytuje funkce a podporu, které obvykle budete potřebovat pro práci s delegáty. Tyto funkce jsou postavené na dvou třídách v rozhraní .NET Core Framework: <xref:System.Delegate> a <xref:System.MulticastDelegate>.
 
-`System.Delegate` Třídy a jednu třídu s přímým přístupem dílčí `System.MulticastDelegate`, poskytují podporu rozhraní pro vytváření delegátů, registrace metody jako delegát cíle a vyvolání všechny metody, které jsou registrovány jako cíl delegáta. 
+Třída `System.Delegate` a její samostatná přímá dílčí třída, `System.MulticastDelegate`, poskytují podporu rozhraní pro vytváření delegátů, registraci metod jako cíle delegátů a vyvolání všech metod, které jsou registrovány jako cíl delegáta. 
 
-Zajímavé `System.Delegate` a `System.MulticastDelegate` třídy nejsou sami typy delegátů. Poskytují základ pro všemi typy delegátů konkrétní. Že stejný jazyk návrhu procesu přidělených, nelze deklarovat třídu, která je odvozena z `Delegate` nebo `MulticastDelegate`. C# Jazykových pravidel zakázat.
+V zájmech se třídy `System.Delegate` a `System.MulticastDelegate` samy nedelegovaní sami. Poskytují základ pro všechny konkrétní typy delegátů. Stejný proces návrhu jazyka má pověření, že nelze deklarovat třídu, která je odvozena z `Delegate` nebo `MulticastDelegate`. C# Jazyková pravidla zakazují.
  
-Místo toho C# kompilátor vytvoří instance třídy odvozené od `MulticastDelegate` při použití C# klíčové slovo jazyka, chcete-li deklarovat typy delegátů.
+Místo toho C# kompilátor vytvoří instance třídy odvozené z `MulticastDelegate`při použití klíčového slova C# jazyka k deklaraci typů delegátů.
 
-Tento návrh byl jeho kořenové adresáře v první verzi C# a .NET. Jedním z cílů týmu návrhu se zajistit, že jazyk vynucuje bezpečnost typů, při použití delegátů. To znamenalo, zajištění, že s správný typ a počet argumentů, které se vyvolaly delegátů. A že jakýkoli návratový typ se správně uvedeném v době kompilace. Delegáti byly součástí verzi 1.0 rozhraní .NET, která byla před obecných typů.
+Tento návrh má své kořeny v první verzi C# a .NET. Jedním z cílů pro návrhového týmu bylo zajistit, aby při použití delegátů byl vynutilný bezpečnost typu. Což znamenalo, že Delegáti byli vyvoláni se správným typem a počtem argumentů. A že libovolný návratový typ byl správně uveden v době kompilace. Delegáti byli součástí verze 1,0 .NET, která byla před obecnými typy.
 
-Nejlepší způsob, jak vynucovat bezpečnostní tento typ byl pro kompilátor vytvoří konkrétní delegát třídy, které jsou reprezentovány podpis metody se používají.
+Nejlepším způsobem, jak vyhovět této bezpečnosti typu, bylo, že kompilátor vytvoří konkrétní třídy delegátů, které představují použitou signaturu metody.
 
-I když odvozené třídy nelze vytvořit přímo, použijete metody definované v těchto tříd. Podívejme se nejčastěji používané metody, které budete používat při práci s delegátů.
+I když nemůžete vytvořit odvozené třídy přímo, budete používat metody definované na těchto třídách. Pojďme si projít nejběžnějšími metodami, které budete používat při práci s delegáty.
 
-Je první a nejdůležitější skutečnost na paměti, že každý delegát při práci s je odvozen z `MulticastDelegate`. Delegát vícesměrového vysílání znamená, že více než jeden cíl metoda může být vyvolána při volání prostřednictvím delegáta. Původní návrh považovat za rozlišovat delegáty, kde může připojené a vyvolala metodu pouze jeden cíl a delegáty, kde může připojit a vyvolána více cílové metody. Tento rozdíl dokázaly méně užitečné v praxi, než se původně mluvit. Dvě různé třídy již byly vytvořeny a byly v rámci od its vitial release veřejné.
+První, nejdůležitější fakt, jak si pamatovat, je, že každý delegát, se kterým pracujete, je odvozen z `MulticastDelegate`. Delegát vícesměrového vysílání znamená, že při volání prostřednictvím delegáta lze vyvolat více než jeden cíl metody. Původní návrh se považuje za způsobující rozdíl mezi delegáty, kde lze připojit a vyvolat pouze jednu cílovou metodu, a delegáti, kde lze připojit a vyvolat více cílových metod. Toto rozlišení se ukázalo jako méně užitečné v praxi, než jsme původně mysleli. Dvě různé třídy již byly vytvořeny a byly v rozhraní od počáteční veřejné verze.
 
-Metody, které budou používat na maximum pomocí delegátů jsou `Invoke()` a `BeginInvoke()`  /  `EndInvoke()`. `Invoke()` všechny metody, které byly připojeny k instanci konkrétního delegáta vyvolá. Jak už jste viděli výše, je obvykle vyvoláte pomocí syntaxe volání metody delegáta proměnné. Jak uvidíte [dále v této sérii](delegates-patterns.md), jsou vzorce, které pracují přímo s těmito metodami.
+Metody, které použijete nejvíce s delegáty, jsou `Invoke()` a `BeginInvoke()` / `EndInvoke()`. `Invoke()` vyvolá všechny metody, které byly připojeny ke konkrétní instanci delegáta. Jak jste viděli výše, obvykle vyvoláte delegáty pomocí syntaxe volání metody v proměnné Delegate. Jak vidíte [později v této sérii](delegates-patterns.md), existují vzory, které pracují přímo s těmito metodami.
 
-Teď, když už víte, syntaxe jazyka a tříd, které podporují delegáty, Pojďme prozkoumat, jak se silnými typy delegátů jsou používány, vytvořena a vyvolána.
+Teď, když jste viděli syntaxi jazyka a třídy, které podporují delegáty, Podívejme se, jak se používají Delegáti silného typu, vytvoří a vyvolají.
 
 [Next](delegates-strongly-typed.md)

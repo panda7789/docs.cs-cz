@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 7d69528804cf0cee1302fd62fa2301e06076897a
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 78233b9a18f4369ebb086f2016af3f945b6a654a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579205"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039019"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
@@ -57,7 +57,7 @@ V následující tabulce jsou uvedeny C# operátory od nejvyšší priority k ne
 | [× &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | Podmiňovací operátor OR |
 | [x?? požadované](null-coalescing-operator.md) | Operátor slučování null |
 | [r? t: f](conditional-operator.md) | Podmíněný operátor |
-| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x?? = y](null-coalescing-operator.md), [4](lambda-operator.md) | Přiřazení a deklarace lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x?? = y](null-coalescing-operator.md), [=>](lambda-operator.md) | Přiřazení a deklarace lambda |
 
 ## <a name="operator-associativity"></a>Operátor asociativita
 
@@ -85,7 +85,7 @@ Nesouvisí s prioritou operátorů a asociativita, jsou operandy ve výrazu vyho
 |`a / b + c * d`|a, b,/, c, d, *, +|
 |`a / (b + c) * d`|a, b, c, +,/, d, *|
 
-Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory vyhodnocují operandy podmíněně. To znamená, že hodnota prvního operandu takového operátoru definuje, zda (nebo které) by měly být vyhodnoceny jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátory sloučení s hodnotou null `??` a `??=`](null-coalescing-operator.md), [operátory s hodnotou null `?.` a `?[]`](member-access-operators.md#null-conditional-operators--and-)a [ podmíněný operátor 1](conditional-operator.md). Další podrobnosti najdete v popisu každého operátoru.
+Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory však vyhodnocuje operandy podmíněně. To znamená, že hodnota operandu úplně vlevo takového operátoru definuje, zda má být vyhodnocen (nebo které) jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátory sloučení s hodnotou null `??` a `??=`](null-coalescing-operator.md), [operátory s hodnotou null `?.` a `?[]`](member-access-operators.md#null-conditional-operators--and-)a [ podmíněný operátor `?:`](conditional-operator.md). Další informace naleznete v popisu každého operátoru.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

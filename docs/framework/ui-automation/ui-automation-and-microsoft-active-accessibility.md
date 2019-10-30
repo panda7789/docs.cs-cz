@@ -7,18 +7,18 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: a88046868a26c3da29712ffd6a231505ba64f9af
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 99909f29e3228e7bc140ebdc888d4663bcbca0b5
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846881"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040523"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
 > Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Microsoft Active Accessibility je dřívější řešení pro zpřístupnění aplikací. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový model přístupnosti pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] a je určený k řešení potřeb technologií pro usnadnění práce a automatizovaných testovacích nástrojů. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nabízí mnoho vylepšení nad aktivní přístupností.  
+ Microsoft Active Accessibility je dřívější řešení pro zpřístupnění aplikací. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový model přístupnosti pro Microsoft Windows a je určený pro řešení potřeb technologií pro usnadnění a automatizovaných testovacích nástrojů. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nabízí mnoho vylepšení nad aktivní přístupností.  
   
  Toto téma obsahuje hlavní funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a vysvětluje, jak se tyto funkce liší od aktivního přístupnosti.  
   

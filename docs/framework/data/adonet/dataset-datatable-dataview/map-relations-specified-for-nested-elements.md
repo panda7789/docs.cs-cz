@@ -2,12 +2,12 @@
 title: Mapování relací zadaných pro vnořené elementy
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
-ms.openlocfilehash: e8cdf73b6277abdaab1256ca87e615a5e25e7336
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 138fbbc3ccaa90096a15fa87544e5c29f66beb08
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786083"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040060"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>Mapování relací zadaných pro vnořené elementy
 Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určení mapování mezi dvěma prvky ve schématu. Dva prvky určené v **msdata: vztah** může být vnořen ve schématu, ale nemusí být. Proces mapování používá **msdata: Relationship** ve schématu k vygenerování vztahu primárního klíče/cizího klíče mezi dvěma sloupci.  
@@ -52,18 +52,18 @@ Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určen
 </xs:schema>  
 ```  
   
- Proces mapování schématu XML vytvoří následující v <xref:System.Data.DataSet>:  
+ Proces mapování schématu XML vytvoří v <xref:System.Data.DataSet>následující:  
   
 - **Objednávka** a tabulka **OrderDetail**  
   
-    ```  
+    ```text  
     Order(OrderNumber, EmpNumber)  
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
 - Vztah mezi tabulkami **Order** a **OrderDetail** . **Vnořená** vlastnost pro tento vztah je nastavena na **hodnotu true** , protože prvky **Order** a **OrderDetail** jsou vnořené ve schématu.  
   
-    ```  
+    ```text  
     ParentTable: Order  
     ParentColumns: OrderNumber   
     ChildTable: OrderDetail  

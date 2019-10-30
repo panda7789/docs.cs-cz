@@ -2,12 +2,12 @@
 title: Generování SQL ze stromů příkazů – osvědčené postupy
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 9859c7df941ae6681c991001e0d1e5a50c7ffc60
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 869722b91550855a184a74e706271c3e2d417b84
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855013"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040001"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování SQL ze stromů příkazů – osvědčené postupy
 
@@ -31,7 +31,7 @@ Možný převod stromu příkazů dotazu na příkaz SQL SELECT by vytvořil jed
 
 Podívejte se například na následující strom příkazů dotazu.
 
-```
+```csharp
 Project (
 a.x,
    a = Filter(
@@ -68,7 +68,7 @@ Jeden případ agregace více uzlů do jednoho příkazu SELECT SQL sestaví ví
 
 Spojení s levou hřbetou, (spojení, která se zobrazují jako levý podřízený objekt jiného spojení), lze snadněji sloučit do jednoho příkazu SELECT jazyka SQL. Zvažte například následující strom příkazů dotazu:
 
-```
+```csharp
 InnerJoin(
    a = LeftOuterJoin(
    b = Extent("TableA")
@@ -90,7 +90,7 @@ INNER JOIN TableC as d ON b.y = d.z
 
 Spojení páteře bez levého hřbetu ale nejdou snadno sloučit a neměli byste je slučovat. Například spojení v následujícím stromu příkazů dotazu:
 
-```
+```csharp
 InnerJoin(
    a = Extent("TableA")
    b = LeftOuterJoin(
@@ -121,7 +121,7 @@ Každý z těchto typů má jednu nebo více vstupních vlastností popisující
 
 Při agregaci dalších uzlů relačních výrazů do jednoho příkazu SELECT jazyka SQL a vyhodnocení výrazu, který je součástí relačního výrazu (například část vlastnosti projekce DbProjectExpression), kterou proměnnou vazby může používat. nesmí být stejný jako alias vstupu, protože vícenásobné vazby výrazů by musely být přesměrovány do jednoho rozsahu.  Tento problém se nazývá přejmenování aliasu.
 
-Vezměte v úvahu první příklad v tomto tématu. Pokud se provádí překlad Naive a překlad projekce a. x (DbPropertyExpression (a, x)), je správné ho přeložit do `a.x` , protože máme alias vstupu jako "a", aby se shodoval s proměnnou vazby.  Při agregaci uzlů do jednoho příkazu SELECT SQL je však nutné přeložit stejný DbPropertyExpression do `b.x`, protože vstup byl aliasem "b".
+Vezměte v úvahu první příklad v tomto tématu. Pokud se provádí překlad Naive a překlad projekce a. x (DbPropertyExpression (a, x)), je správné ho přeložit do `a.x`, protože máme alias zadaný jako "a", aby se shodoval s proměnnou vazby.  Při agregaci uzlů do jednoho příkazu SELECT SQL je však nutné přeložit stejný DbPropertyExpression do `b.x`, protože vstup byl alias "b".
 
 ## <a name="join-alias-flattening"></a>Spojit sloučení aliasů
 
@@ -137,7 +137,7 @@ Také při sloučení spojení mohou mít zúčastněné tabulky (nebo poddotazy
 
 ## <a name="avoid-select-"></a>Vyhněte se výběru *
 
-Nepoužívejte `SELECT *` k výběru ze základních tabulek. Model úložiště v aplikaci Entity Framework může obsahovat jenom podmnožinu sloupců, které se nacházejí v tabulce databáze. V takovém případě `SELECT *` může způsobit nesprávný výsledek. Místo toho byste měli zadat všechny účastnící se sloupce pomocí názvů sloupců z výsledného typu výrazů, které se účastní.
+Nepoužívejte `SELECT *` k výběru ze základních tabulek. Model úložiště v aplikaci Entity Framework může obsahovat jenom podmnožinu sloupců, které se nacházejí v tabulce databáze. V takovém případě `SELECT *` může vést k nesprávnému výsledku. Místo toho byste měli zadat všechny účastnící se sloupce pomocí názvů sloupců z výsledného typu výrazů, které se účastní.
 
 ## <a name="reuse-of-expressions"></a>Opakované použití výrazů
 

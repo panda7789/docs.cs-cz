@@ -2,13 +2,14 @@
 title: Zápis bezpečného a C# efektivního kódu
 description: Nedávná vylepšení C# jazyka umožňují psát ověřitelný bezpečný kód, který byl dříve přidružen k nezabezpečenému kódu.
 ms.date: 10/23/2018
+ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 89a0bcf28c3c398865082e120ca9c16fe2c00651
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 3dc3213cf24f4cdd8f0f1b7752263b4a609b2fa2
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960845"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039632"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečného a C# efektivního kódu
 
@@ -229,7 +230,7 @@ Kompilátor generuje efektivnější kód při volání členů `readonly struct
 
 Nemůžete předat typ hodnoty s možnou hodnotou null jako argument `in`. Typ <xref:System.Nullable%601> není deklarován jako struktura jen pro čtení. To znamená, že kompilátor musí generovat obrannou linií kopie pro libovolný argument typu hodnoty s možnou hodnotou null předaný metodě pomocí modifikátoru `in` v deklaraci parametru.
 
-Můžete si prohlédnout ukázkový program, který ukazuje rozdíly v výkonu pomocí [benchmark.NET](https://www.nuget.org/packages/BenchmarkDotNet/) v našem [úložišti ukázek](https://github.com/dotnet/samples/tree/master/csharp/safe-efficient-code/benchmark) na GitHubu. Porovná předání proměnlivé struktury podle hodnoty a odkazu s předáním neměnné struktury podle hodnoty a odkazu. Použití neproměnlivé struktury a předávání odkazem je nejrychlejší.
+Můžete si prohlédnout ukázkový program, který ukazuje rozdíly v výkonu pomocí [BenchmarkDotNet](https://www.nuget.org/packages/BenchmarkDotNet/) v našem [úložišti ukázek](https://github.com/dotnet/samples/tree/master/csharp/safe-efficient-code/benchmark) na GitHubu. Porovná předání proměnlivé struktury podle hodnoty a odkazu s předáním neměnné struktury podle hodnoty a odkazu. Použití neproměnlivé struktury a předávání odkazem je nejrychlejší.
 
 ## <a name="use-ref-struct-types-to-work-with-blocks-or-memory-on-a-single-stack-frame"></a>Použití typů `ref struct` pro práci s bloky nebo pamětí v jednom bloku zásobníku
 

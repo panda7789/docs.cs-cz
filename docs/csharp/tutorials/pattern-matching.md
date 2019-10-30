@@ -2,15 +2,16 @@
 title: Použití funkcí pro porovnávání vzorů k rozšiřování datových typů
 description: Tento rozšířený kurz ukazuje, jak používat techniky porovnávání vzorů k vytváření funkcionality pomocí dat a algoritmů, které se vytvářejí samostatně.
 ms.date: 03/13/2019
+ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: 036a6bcda04771eb8cf3699af8756e83bb144389
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: ca7ae63a038fce0b2569e7a4bd1805765bc23d44
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332354"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039194"
 ---
-# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití funkcí pro porovnávání vzorů k rozšiřování datových typů
+# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: použití funkcí pro porovnávání vzorů k rozšiřování datových typů
 
 C#7 představil základní funkce pro porovnávání vzorů. Tyto funkce se v C# 8 rozšiřují novými výrazy a vzorci. Můžete napsat funkčnost, která se chová, jako byste rozšířili typy, které mohou být v jiných knihovnách. Další možností použití vzorů je vytvořit funkce, které vaše aplikace vyžaduje, nejedná se o základní funkci typu, který se rozšiřuje.
 
@@ -42,7 +43,7 @@ Z tohoto krátkého popisu jste mohli rychle vykreslit hierarchii objektů k mod
 
 [!code-csharp[ExternalSystems](~/samples/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
 
-Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) GitHub. Můžete vidět, že třídy vozidel jsou z různých systémů a jsou v různých oborech názvů. Není `System.Object` možné využít žádnou společnou základní třídu, která není k dispozici.
+Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) GitHub. Můžete vidět, že třídy vozidel jsou z různých systémů a jsou v různých oborech názvů. Není možné využít žádnou společnou základní třídu, kromě `System.Object`.
 
 ## <a name="pattern-matching-designs"></a>Vzory porovnávání vzorů
 
@@ -57,12 +58,12 @@ Pokud *tvar* dat a *operace* na těchto datech nejsou popsány společně, funkc
 
 Základní výpočet placená linka se spoléhá jenom na typ vozidla:
 
-- A `Car` je $2,00.
-- A `Taxi` je $3,50.
-- A `Bus` je $5,00.
-- A `DeliveryTruck` je $10,00
+- `Car` je $2,00.
+- `Taxi` je $3,50.
+- `Bus` je $5,00.
+- `DeliveryTruck` je $10,00
 
-Vytvořte novou `TollCalculator` třídu a implementujte porovnávání vzorů pro typ vozidla, abyste získali hodnotu mýtné. Následující kód ukazuje počáteční implementaci rozhraní `TollCalculator`.
+Vytvořte novou třídu `TollCalculator` a implementujte porovnávání vzorů pro typ vozidla, abyste získali hodnotu mýtné. Následující kód ukazuje počáteční implementaci `TollCalculator`.
 
 ```csharp
 using System;
@@ -88,7 +89,7 @@ namespace toll_calculator
 }
 ```
 
-Předchozí kód používá **výraz Switch** (není stejný jako [`switch`](../language-reference/keywords/switch.md) příkaz), který testuje **vzor typu**. **Výraz Switch** začíná proměnnou `vehicle` v předchozím kódu následovaný `switch` klíčovým slovem. Dál přijde všechna **ramena přepínače** uvnitř složených závorek. Výraz umožňuje další vylepšení syntaxe, která obklopuje `switch` příkaz. `switch` `case` Klíčové slovo je vynecháno a výsledek každého ARM je výraz. Poslední dvě paže zobrazují novou funkci jazyka. `{ }` Velikost písmen odpovídá jakémukoli objektu, který není null, který se neshodoval s dřívějším procesorem ARM. Tato ARM zachytí všechny nesprávné typy předané do této metody.  `{ }` Případ musí postupovat podle případů pro každý typ vozidla. Pokud byla objednávka stornována, bude `{ }` mít případ přednost. Nakonec `null` vzor detekuje, `null` kdy se do této metody předává. `null` Vzor může být poslední, protože jiné vzorce typu odpovídají pouze nenulovému objektu správného typu.
+Předchozí kód používá **výraz Switch** (není stejný jako příkaz [`switch`](../language-reference/keywords/switch.md) ), který testuje **vzor typu**. **Výraz Switch** začíná proměnnou, `vehicle` v předchozím kódu následovaný klíčovým slovem `switch`. Dál přijde všechna **ramena přepínače** uvnitř složených závorek. Výraz `switch` umožňuje další upřesnění syntaxe, která obklopuje příkaz `switch`. Klíčové slovo `case` je vynecháno a výsledek každého ARM je výraz. Poslední dvě paže zobrazují novou funkci jazyka. `{ }` Case odpovídá jakémukoli objektu, který není null, který se neshodoval s dřívějším procesorem ARM. Tato ARM zachytí všechny nesprávné typy předané do této metody.  `{ }` případ musí splňovat jednotlivé typy vozidel. Pokud byla objednávka stornována, má `{ }` případ přednost. A konečně, `null` vzor detekuje, když se do této metody předává `null`. Vzor `null` může být poslední, protože jiné vzorce typu odpovídají pouze nenulovému objektu správného typu.
 
 Tento kód můžete otestovat pomocí následujícího kódu v `Program.cs`:
 
@@ -139,7 +140,7 @@ namespace toll_calculator
 
 Tento kód je obsažen v projektu Starter, ale je označen jako komentář. Odstraňte komentáře a můžete testovat, co jste napsali.
 
-Začínáte, jak vzory vám pomohou vytvořit algoritmy, kde je kód a data odděleny. `switch` Výraz testuje typ a vytváří různé hodnoty na základě výsledků. To je jenom začátek.
+Začínáte, jak vzory vám pomohou vytvořit algoritmy, kde je kód a data odděleny. Výraz `switch` testuje typ a vytváří různé hodnoty na základě výsledků. To je jenom začátek.
 
 ## <a name="add-occupancy-pricing"></a>Přidat ceny obsazení
 
@@ -151,7 +152,7 @@ Autorita pro telefonní linky chce, aby dokázala povzbudit kapacitu vozidel př
 - Na sběrnicích, které jsou menší než 50%, se zaplatí extra $2,00.
 - Pro autobusy, které jsou v plném rozsahu 90%, se zobrazí sleva $1,00.
 
-Tato pravidla lze implementovat pomocí **vzoru vlastnosti** ve stejném výrazu přepínače. Po určení typu se vzorek vlastnosti prověřuje vlastnostmi objektu. Samostatný případ pro `Car` rozšíření na čtyři různé případy:
+Tato pravidla lze implementovat pomocí **vzoru vlastnosti** ve stejném výrazu přepínače. Po určení typu se vzorek vlastnosti prověřuje vlastnostmi objektu. Jednotlivý případ `Car` se rozšíří na čtyři různé případy:
 
 ```csharp
 vehicle switch
@@ -165,7 +166,7 @@ vehicle switch
 };
 ```
 
-První tři případy testují typ jako `Car`a pak zkontrolují hodnotu `Passengers` vlastnosti. Pokud oba odpovídají, vyhodnotí se tento výraz a vrátí se.
+První tři případy testují typ jako `Car`a pak zkontrolují hodnotu vlastnosti `Passengers`. Pokud oba odpovídají, vyhodnotí se tento výraz a vrátí se.
 
 Také rozšíříte případy pro Taxis podobným způsobem:
 
@@ -183,7 +184,7 @@ vehicle switch
 };
 ```
 
-V předchozím příkladu `when` byla klauzule v konečném případě vynechána.
+V předchozím příkladu byla klauzule `when` v konečném případě vynechána.
 
 Dále implementujte pravidla obsazení rozšířením případů pro autobusy, jak je znázorněno v následujícím příkladu:
 
@@ -218,7 +219,7 @@ vehicle switch
 };
 ```
 
-Předchozí kód ukazuje `when` klauzuli ARM přepínače. Použijete `when` klauzuli pro testování jiných podmínek než rovnosti u vlastnosti. Až budete hotovi, budete mít metodu, která vypadá podobně jako následující:
+Předchozí kód ukazuje klauzuli `when` ARM přepínače. Použijte klauzuli `when` pro testování jiných podmínek než rovnosti u vlastnosti. Až budete hotovi, budete mít metodu, která vypadá podobně jako následující:
 
 ```csharp
 vehicle switch
@@ -246,9 +247,9 @@ vehicle switch
 };
 ```
 
-Mnohé z těchto palných zbraní jsou příklady **rekurzivních vzorů**. Například `Car { Passengers: 1}` zobrazuje konstantní vzorek uvnitř vzoru vlastnosti.
+Mnohé z těchto palných zbraní jsou příklady **rekurzivních vzorů**. Například `Car { Passengers: 1}` zobrazuje v rámci vzoru vlastnosti konstantní vzorek.
 
-Pomocí vnořených přepínačů můžete tento kód méně vyměnit. `Car` A`Taxi` oba mají čtyři různé zbraně v předchozích příkladech. V obou případech můžete vytvořit vzor typu, který bude informační kanál do vzoru vlastnosti. Tato technika je znázorněna v následujícím kódu:
+Pomocí vnořených přepínačů můžete tento kód méně vyměnit. V předchozích příkladech mají `Car` a `Taxi` obě různé zbraně. V obou případech můžete vytvořit vzor typu, který bude informační kanál do vzoru vlastnosti. Tato technika je znázorněna v následujícím kódu:
 
 ```csharp
 public decimal CalculateToll(object vehicle) =>
@@ -283,7 +284,7 @@ public decimal CalculateToll(object vehicle) =>
     };
 ```
 
-V předchozím příkladu použití rekurzivního výrazu znamená, že se neopakují `Car` a `Taxi` zbraně obsahující podřízená zbraně, které testují hodnotu vlastnosti. Tato technika se nepoužívá pro `Bus` zbraně `DeliveryTruck` a, protože tyto zbraně jsou testovací rozsahy pro vlastnost, nikoli diskrétní hodnoty.
+V předchozím příkladu použití rekurzivního výrazu znamená, že neopakujete `Car` a `Taxi` zbraně obsahující podřízená ramena, která testují hodnotu vlastnosti. Tato technika se nepoužívá pro `Bus` a `DeliveryTruck` zbraně, protože tyto zbraně jsou testovací rozsahy pro vlastnost, nikoli diskrétní hodnoty.
 
 ## <a name="add-peak-pricing"></a>Přidat ceny ve špičce
 
@@ -297,7 +298,7 @@ Pro tuto funkci použijete porovnávání vzorů, ale budete je integrovat s jin
 
 V následující tabulce jsou uvedeny kombinace vstupních hodnot a násobitele cen ve špičce:
 
-| Den        | Time         | Direction | Premium |
+| Den        | Interval         | Směr | Nárok |
 | ---------- | ------------ | --------- |--------:|
 | Názvy    | ráno nespěcháte | Příjem   | × 2,00  |
 | Názvy    | ráno nespěcháte | Komunikace  | × 1,00  |
@@ -318,7 +319,7 @@ V následující tabulce jsou uvedeny kombinace vstupních hodnot a násobitele 
 
 Existují 16 různých kombinací tří proměnných. Kombinací některých podmínek zjednodušete výraz finálního přepínače.
 
-Systém, který shromažďuje mýtné, používá <xref:System.DateTime> strukturu pro čas, kdy byla placená linka shromažďována. Sestavujte členské metody, které vytvoří proměnné z předchozí tabulky. Následující funkce používá výraz porovnávání vzorů k vyjádření, zda <xref:System.DateTime> představuje víkend nebo pracovní den:
+Systém, který shromažďuje mýtné, používá strukturu <xref:System.DateTime> pro čas, kdy byla placená linka shromažďována. Sestavujte členské metody, které vytvoří proměnné z předchozí tabulky. Následující funkce používá výraz porovnávání vzorů k vyjádření, zda <xref:System.DateTime> představuje víkend nebo den v týdnu:
 
 ```csharp
 private static bool IsWeekDay(DateTime timeOfToll) =>
@@ -342,9 +343,9 @@ Dále přidejte podobnou funkci pro kategorizaci času do bloků:
 
 [!code-csharp[GetTimeBand](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
-Předchozí metoda nepoužívá porovnávání vzorů. Je jasné, že používá známé kaskády `if` příkazů. Přidáte soukromou `enum` pro převod každého časového rozsahu na samostatnou hodnotu.
+Předchozí metoda nepoužívá porovnávání vzorů. Je jasné, že se seznámíte s `if`mi příkazy. Můžete přidat privátní `enum` pro převod jednotlivých časových úseků na samostatnou hodnotu.
 
-Po vytvoření těchto metod můžete pro výpočet cenové úrovně Premium `switch` použít jiný výraz se **vzorem řazené kolekce členů** . Můžete sestavit `switch` výraz se všemi 16 opěrkami rukou:
+Po vytvoření těchto metod můžete použít jiný výraz `switch` se **vzorem řazené kolekce členů** pro výpočet cenové úrovně Premium. Můžete sestavit výraz `switch` se všemi 16 opěrkami rukou:
 
 [!code-csharp[FullTuplePattern](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
 
@@ -377,7 +378,7 @@ public decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
     };
 ```
 
-Nakonec můžete odebrat dvě nespěcháte hodiny, které platí pro běžnou cenu. Po odebrání těchto zbraní můžete nahradit `false` pomocí zahození (`_`) v posledním přepínači ARM. Budete mít následující metodu, kterou jste dokončili:
+Nakonec můžete odebrat dvě nespěcháte hodiny, které platí pro běžnou cenu. Po odebrání těchto zbraní můžete `false` nahradit pomocí zahození (`_`) v konečném přepínači ARM. Budete mít následující metodu, kterou jste dokončili:
 
 [!code-csharp[SimplifiedTuplePattern](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
 

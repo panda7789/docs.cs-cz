@@ -27,21 +27,21 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 9760be0fcfe29d2c11cbb1f4d4d81c5a79261a0d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: ca2513a0f865fd7da728f7d3247bdb7b50a2f48a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771737"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036430"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátoryC# (referenční)
 
-Následující operátory provádějí aritmetické operace s číselnými typy:
+Následující operátory provádějí aritmetické operace s operandy číselných typů:
 
 - Unární operátory [`++` (přírůstek)](#increment-operator-), [`--` (snížení)](#decrement-operator---), [`+` (plus)](#unary-plus-and-minus-operators)a [`-` (mínus)](#unary-plus-and-minus-operators)
 - Binární [`*` (násobení)](#multiplication-operator-), [`/` (dělení)](#division-operator-), [`%` (zbytek)](#remainder-operator-), [`+` (sčítání](#addition-operator-)) a [`-`ch (odčítání)](#subtraction-operator--) operátorů
 
-Tyto operátory podporují všechny číselné typy [integrálních](../builtin-types/integral-numeric-types.md) a [plovoucích bodů](../builtin-types/floating-point-numeric-types.md) .
+Tyto operátory jsou podporovány všemi [celočíselnými](../builtin-types/integral-numeric-types.md) typy a čísly [s plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou.
 
 ## <a name="increment-operator-"></a>Operátor přírůstku + +
 
@@ -85,7 +85,7 @@ Unární operátor `+` vrací hodnotu jeho operandu. Operátor unární `-` vypo
 
 [!code-csharp-interactive[unary plus and minus](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#UnaryPlusAndMinus)]
 
-Unární operátor `-` nepodporuje typ [ulong](../builtin-types/integral-numeric-types.md) .
+Typ [ulong](../builtin-types/integral-numeric-types.md) nepodporuje unární operátor `-`.
 
 ## <a name="multiplication-operator-"></a>Operátor násobení *
 
@@ -122,7 +122,7 @@ Pokud je jeden z operandů `decimal`, jiný operand nemůže být `float` ani `d
 Operátor zbývající `%` vypočítá zbytek po dělení jeho levého operandu jeho pravým operandem.
 
 ### <a name="integer-remainder"></a>Celočíselný zbytek
-  
+
 U operandů typu integer je výsledkem `a % b` hodnota vytvořená `a - (a / b) * b`. Znaménko nenulového zbytku je stejné jako u levého operandu, jak ukazuje následující příklad:
 
 [!code-csharp-interactive[integer remainder](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#IntegerRemainder)]
@@ -137,7 +137,7 @@ U operandů `float` a `double` je výsledkem `x % y` pro konečnou `x` a `y` hod
 - Absolutní hodnota `z` je hodnota vytvořená `|x| - n * |y|`, kde `n` je největší možné celé číslo, které je menší nebo rovno `|x| / |y|` a `|x|` a `|y|` jsou absolutními hodnotami `x` a `y` přestup.
 
 > [!NOTE]
-> Tato metoda výpočetního zbytku je podobná, jako se používá pro celočíselné operandy, ale liší se od IEEE 754. Pokud potřebujete zbývající operaci, která je v souladu s NORMou IEEE 754, použijte metodu <xref:System.Math.IEEERemainder%2A?displayProperty=nameWithType>.
+> Tato metoda výpočtu zbytku je podobná, jako by se použila pro celočíselné operandy, ale liší se od specifikace IEEE 754. Pokud potřebujete zbývající operaci, která je v souladu se specifikací IEEE 754, použijte metodu <xref:System.Math.IEEERemainder%2A?displayProperty=nameWithType>.
 
 Informace o chování operátoru `%` s nekonečnými operandy naleznete v části [operátor zbytek](~/_csharplang/spec/expressions.md#remainder-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
@@ -161,7 +161,7 @@ Operátor odčítání `-` odečte svůj pravý operand od jeho levého operandu
 
 [!code-csharp-interactive[subtraction operator](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#Subtraction)]
 
-K odebrání delegáta můžete také použít operátor `-`. Další informace najdete v článku o [operátoru `-`](subtraction-operator.md) .
+K odebrání delegáta můžete také použít operátor `-`. Další informace najdete v článku [operátory`-` a `-=`](subtraction-operator.md) .
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
@@ -187,7 +187,7 @@ Z důvodu [numerických propagačních akcí](~/_csharplang/spec/expressions.md#
 
 [!code-csharp-interactive[compound assignment with cast](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
 
-K přihlášení a odhlášení odběru [událostí](../keywords/event.md)můžete použít také operátory `+=` a `-=`. Další informace najdete v tématu [Postup: přihlášení a](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)odhlášení odběru událostí.
+Pomocí operátorů `+=` a `-=` se můžete přihlásit k odběru a zrušit odběr [události](../keywords/event.md)v uvedeném pořadí. Další informace najdete v tématu [Postup: přihlášení a](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)odhlášení odběru událostí.
 
 ## <a name="operator-precedence-and-associativity"></a>Priorita operátorů a asociativita
 
@@ -195,7 +195,7 @@ Následující seznam řadí aritmetické operátory počínaje od nejvyšší p
 
 - Přírůstek přípony `x++` a snížení `x--` operátory
 - Zvýšení prefixu `++x` a snížení `--x` a unární operátory `+` a `-`
-- Multiplikativní operátory `*`, `/` a `%`
+- Multiplikativní operátory `*`, `/`a `%`
 - Aditivní `+` a `-` operátory
 
 Binární aritmetické operátory jsou asociativní zleva. To znamená, že operátory se stejnou úrovní priority jsou vyhodnocovány zleva doprava.
@@ -204,7 +204,7 @@ Pomocí závorek, `()` můžete změnit pořadí vyhodnocování stanovené prio
 
 [!code-csharp-interactive[precedence and associativity](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
 
-Úplný seznam C# operátorů seřazených podle priority úrovně naleznete v tématu [ C# operátory](index.md).
+Úplný seznam C# operátorů seřazených podle priority najdete v části [Priorita operátorů](index.md#operator-precedence) [ C# v článku věnovaném operátorům](index.md) .
 
 ## <a name="arithmetic-overflow-and-division-by-zero"></a>Aritmetické přetečení a dělení nulou
 
@@ -235,7 +235,7 @@ Pro operandy typu `decimal` aritmetické přetečení vždy vyvolá <xref:System
 
 ## <a name="round-off-errors"></a>Chyby zaokrouhlení
 
-Z důvodu obecného omezení reprezentace reálných čísel s plovoucí desetinnou čárkou a aritmetických operací s plovoucí desetinnou čárkou může dojít k chybám zaokrouhlení ve výpočtech s typy s plovoucí desetinnou čárkou. To znamená, že získaný výsledek výrazu se může lišit od očekávaného matematického výsledku. Následující příklad ukazuje několik takových případů:
+Z důvodu obecného omezení reprezentace reálných čísel s plovoucí desetinnou čárkou a aritmetických operací s plovoucí desetinnou čárkou mohou být při výpočtech s typy s plovoucí desetinnou čárkou zjištěny chyby zaokrouhlení. To znamená, že získaný výsledek výrazu se může lišit od očekávaného matematického výsledku. Následující příklad ukazuje několik takových případů:
 
 [!code-csharp-interactive[round-off errors](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#RoundOffErrors)]
 
@@ -243,7 +243,7 @@ Další informace najdete v tématu poznámky na referenčních stránkách [Sys
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelsky definovaný typ může [přetížit](operator-overloading.md) unární operátory (`++`, `--`, `+` a `-`) a binární (`*`, `/`, `%`, `+` a `-`). Při přetížení binárního operátoru je také implicitně přetížen odpovídající operátor složeného přiřazení. Uživatelsky definovaný typ nemůže explicitně přetížit operátor složeného přiřazení.
+Uživatelsky definovaný typ může [přetížit](operator-overloading.md) unární operátory (`++`, `--`, `+`a `-`) a binární (`*`, `/`, `%`, `+`a `-`). Při přetížení binárního operátoru je také implicitně přetížen odpovídající operátor složeného přiřazení. Uživatelsky definovaný typ nemůže explicitně přetížit operátor složeného přiřazení.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

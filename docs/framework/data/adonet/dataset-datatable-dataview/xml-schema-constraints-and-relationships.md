@@ -2,20 +2,20 @@
 title: Omezení schématu XML a relací
 ms.date: 03/30/2017
 ms.assetid: 165bc2bc-60a1-40e0-9b89-7c68ef979079
-ms.openlocfilehash: 76af1c2e9d85d18a68b8c0a947dfba3b3291326c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 47b1a3e81cfbc4eb58531b1633dd29becbe497a2
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784189"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040036"
 ---
 # <a name="xml-schema-constraints-and-relationships"></a>Omezení schématu XML a relací
-Ve schématu XSD (XML Schema Definition Language) můžete určit omezení (jedinečné omezení, klíč a možnost keyref) a vztahy (pomocí poznámky **msdata: Relationship** ). Toto téma vysvětluje, jak jsou interpretována omezení a vztahy, které jsou zadány ve schématu <xref:System.Data.DataSet>XML pro generování.  
+Ve schématu XSD (XML Schema Definition Language) můžete určit omezení (jedinečné omezení, klíč a možnost keyref) a vztahy (pomocí poznámky **msdata: Relationship** ). Toto téma vysvětluje, jak jsou interpretována omezení a vztahy, které jsou zadány ve schématu XML pro generování <xref:System.Data.DataSet>.  
   
  Obecně platí, že ve schématu XML zadáte anotaci **msdata: Relationship** , pokud chcete generovat pouze relace v **datové sadě**. Další informace najdete v tématu [generování vztahů datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md). Určete omezení (jedinečné, klíč, a keyref), pokud chcete generovat omezení v **datové sadě**. Všimněte si, že omezení Key a keyref se také používají ke generování vztahů, jak je vysvětleno dále v tomto tématu.  
   
 ## <a name="generating-a-relationship-from-key-and-keyref-constraints"></a>Generování vztahu z omezení klíče a elementu keyref  
- Namísto zadání poznámky **msdata: Relationship** můžete zadat omezení Key a keyref, která se používají během procesu mapování schématu XML pro generování nejen omezení, ale i vztahu v **datové sadě**. Pokud však zadáte `msdata:ConstraintOnly="true"` v elementu **keyref** , **datová sada** bude obsahovat pouze omezení a nebude obsahovat vztah.  
+ Namísto zadání poznámky **msdata: Relationship** můžete zadat omezení Key a keyref, která se používají během procesu mapování schématu XML pro generování nejen omezení, ale i vztahu v **datové sadě**. Nicméně pokud zadáte `msdata:ConstraintOnly="true"` v elementu **keyref** , **datová sada** bude obsahovat pouze omezení a nebude obsahovat vztah.  
   
  Následující příklad ukazuje schéma XML, které obsahuje prvky **Order** a **OrderDetail** , které nejsou vnořené. Schéma také určuje omezení Key a keyref.  
   
@@ -61,7 +61,7 @@ Ve schématu XSD (XML Schema Definition Language) můžete určit omezení (jedi
   
  **Datová sada** , která je generována během procesu mapování schématu XML, zahrnuje tabulky **Order** a **OrderDetail** . Kromě toho **datová sada** zahrnuje vztahy a omezení. Následující příklad ukazuje tyto vztahy a omezení. Všimněte si, že schéma neurčuje anotaci **msdata: Relationship** ; místo toho se k vygenerování vztahu použijí omezení Key a keyref.  
   
-```  
+```text
 ....ConstraintName: OrderNumberKey  
 ....Type: UniqueConstraint  
 ....Table: Order  
@@ -131,14 +131,14 @@ Ve schématu XSD (XML Schema Definition Language) můžete určit omezení (jedi
   
  **Datová sada** výsledná z procesu mapování schématu XML zahrnuje dvě tabulky:  
   
-```  
+```text  
 Order(OrderNumber, EmpNumber, Order_Id)  
 OrderDetail(OrderNumber, ItemNumber, Order_Id)  
 ```  
   
  **Datová sada** obsahuje také dvě relace (jedna na základě poznámky **msdata: Relationship** a druhá v závislosti na omezeních Key a keyref) a v různých omezeních. Následující příklad ukazuje vztahy a omezení.  
   
-```  
+```text
 ..RelationName: Order_OrderDetail  
 ..ParentTable: Order  
 ..ParentColumns: Order_Id  

@@ -8,16 +8,16 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: d983ee09704ff69fdedfa95a31942161162f73eb
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 242234d93bc1b8f9b88749f2e3bcfb37c2bde86d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970652"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037967"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny .NET Standard pomocí platformy .NET Core v sadě Visual Studio 2017
 
-V [sestavách knihovny .NET standard C# s a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení knihovny .NET Standard pomocí Visual Basic a .NET core v aplikaci Visual Studio 2017](vb-library-with-visual-studio.md)jste vytvořili jednoduchou knihovnu tříd, která přidá metodu rozšíření do <xref:System.String> třída. Nyní vytvoříte test jednotky, abyste se ujistili, že funguje podle očekávání. Projekt testování částí přidáte do řešení, které jste vytvořili v předchozím článku.
+V [sestavách knihovny .NET standard C# s a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení knihovny .NET Standard s Visual Basic a .NET core v aplikaci Visual Studio 2017](vb-library-with-visual-studio.md)jste vytvořili jednoduchou knihovnu tříd, která přidá do @no__t_ metodu rozšíření. Třída 3_ Nyní vytvoříte test jednotky, abyste se ujistili, že funguje podle očekávání. Projekt testování částí přidáte do řešení, které jste vytvořili v předchozím článku.
 
 ## <a name="creating-a-unit-test-project"></a>Vytvoření projektu testu jednotek
 
@@ -42,17 +42,17 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
    Zdrojový kód vytvořený šablonou testu jednotky provede následující akce:
 
-   * Importuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType> obor názvů, který obsahuje typy používané pro testování částí.
+   - Importuje obor názvů <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType>, který obsahuje typy používané pro testování částí.
 
-   * Aplikuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atribut `UnitTest1` na třídu. Každá testovací metoda v testovací třídě, která je označena\] atributem TestMethod, \[je provedena automaticky při spuštění testu jednotky.
+   - Používá atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> pro třídu `UnitTest1`. Každá testovací metoda v testovací třídě, která je označena atributem \[TestMethod\], je provedena automaticky při spuštění testu jednotky.
 
-   * Použije <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atribut pro definování `TestMethod1` jako testovací metodu pro automatické provádění při spuštění testu jednotky.
+   - Používá atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> pro definování `TestMethod1` jako testovací metodu pro automatické spouštění při spuštění testu jednotky.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **závislosti** projektu **StringLibraryTest** a vyberte možnost **Přidat odkaz** z místní nabídky.
 
    ![Kontextová nabídka závislostí StringLibraryTest-C#](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít metody **StringLibrary** . Vyberte tlačítko **OK**. Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
+1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Klikněte na tlačítko **OK** . Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
 
    ![Dialogová okna pro přidání odkazu na projekt v aplikaci Visual Studio](./media/testing-library-with-visual-studio/project-reference-manager.png)
 
@@ -73,17 +73,17 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
    Zdrojový kód vytvořený šablonou testu jednotky provede následující akce:
 
-   * Importuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType> obor názvů, který obsahuje typy používané pro testování částí.
+   - Importuje obor názvů <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType>, který obsahuje typy používané pro testování částí.
 
-   * Aplikuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute>atribut) `UnitTest1` na třídu. Každá testovací metoda v testovací třídě, která je označena atributem, <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> je provedena automaticky při spuštění testu jednotky.
+   - Používá atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> pro třídu `UnitTest1`. Každá testovací metoda v testovací třídě, která je označena atributem <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute>, je provedena automaticky při spuštění testu jednotky.
 
-   * Použije <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atribut pro definování `TestMethod1` jako testovací metodu pro automatické provádění při spuštění testu jednotky.
+   - Používá atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> pro definování `TestMethod1` jako testovací metodu pro automatické spouštění při spuštění testu jednotky.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **závislosti** projektu **StringLibraryTest** a vyberte možnost **Přidat odkaz** z místní nabídky.
 
    ![Kontextová nabídka závislostí StringLibraryTest](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít metody **StringLibrary** . Vyberte tlačítko **OK**. Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
+1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Klikněte na tlačítko **OK** . Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
 
    ![Dialogová okna pro přidání odkazu na projekt v aplikaci Visual Studio – Visual Basic](./media/testing-library-with-visual-studio/project-reference-manager.png)
 
@@ -91,24 +91,24 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
 ## <a name="adding-and-running-unit-test-methods"></a>Přidávání a spouštění metod testování částí
 
-Když aplikace Visual Studio spustí test jednotky, provede každou metodu označenou <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atributem ve třídě testu jednotek, třída, na <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> kterou je atribut použit. Testovací metoda končí, když dojde k první chybě nebo když všechny testy obsažené v metodě byly úspěšné.
+Když aplikace Visual Studio spustí test jednotky, provede každou metodu označenou atributem <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> ve třídě test jednotky, třída, na kterou je atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> použit. Testovací metoda končí, když dojde k první chybě nebo když všechny testy obsažené v metodě byly úspěšné.
 
-Nejběžnější testy volají členy <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> třídy. Mnoho metod Assert zahrnuje nejméně dva parametry, jeden z nich je očekávaný výsledek testu a druhý z nich je skutečný výsledek testu. Některé z nejčastěji volaných metod jsou uvedeny v následující tabulce.
+Nejběžnější testy volají členy třídy <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert>. Mnoho metod Assert zahrnuje nejméně dva parametry, jeden z nich je očekávaný výsledek testu a druhý z nich je skutečný výsledek testu. Některé z nejčastěji volaných metod jsou uvedeny v následující tabulce:
 
 Metody Assert | Funkce
 --- | ---
 `Assert.AreEqual` | Ověřuje, zda jsou dvě hodnoty nebo objekty stejné. Pokud hodnoty nebo objekty nejsou stejné, vyhodnocení se nezdařilo.
 `Assert.AreSame` | Ověřuje, že dvě proměnné objektu odkazují na stejný objekt. Pokud proměnné odkazují na různé objekty, vyhodnocení se nezdařilo.
-`Assert.IsFalse` | Ověřuje, jestli je `false`podmínka. Pokud je `true`podmínka, vyhodnocení se nezdařilo.
-`Assert.IsNotNull` | Ověřuje, že objekt `null`není. Pokud je `null`objekt, vyhodnocení se nezdařilo.
+`Assert.IsFalse` | Ověřuje, že je `false`podmínka. Pokud je podmínka `true`, vyhodnocení se nezdařilo.
+`Assert.IsNotNull` | Ověřuje, že objekt není `null`. Pokud je objekt `null`, vyhodnocení se nezdařilo.
 
-Můžete také použít <xref:Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute> atribut na testovací metodu. Označuje typ výjimky. očekává se, že testovací metoda bude vyvolána. Test se nezdařil, pokud není vyvolána zadaná výjimka.
+Můžete také použít atribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute> pro testovací metodu. Označuje typ výjimky. očekává se, že testovací metoda bude vyvolána. Test se nezdařil, pokud není vyvolána zadaná výjimka.
 
-Při testování `StringLibrary.StartsWithUpper` metody je třeba zadat počet řetězců, které začínají velkým znakem. Očekáváte, že se metoda `true` vrátí v těchto případech, takže můžete <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue%2A> volat metodu. Podobně je vhodné zadat počet řetězců, které začínají jinou výjimkou znaku velkého písmene. Očekáváte, že se metoda `false` vrátí v těchto případech, takže můžete <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse%2A> volat metodu.
+Při testování metody `StringLibrary.StartsWithUpper` chcete zadat počet řetězců, které začínají velkým znakem. Očekáváte, že metoda vrátí `true` v těchto případech, takže můžete volat metodu <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue%2A>. Podobně je vhodné zadat počet řetězců, které začínají jinou výjimkou znaku velkého písmene. Očekáváte, že metoda vrátí `false` v těchto případech, takže můžete volat metodu <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse%2A>.
 
-Vzhledem k tomu, že vaše metoda knihovny zpracovává řetězce, je také vhodné se ujistit, že úspěšně zpracovává [prázdný`String.Empty`řetězec ()](xref:System.String.Empty), platný řetězec, který neobsahuje žádné znaky <xref:System.String.Length> a jehož hodnota je 0 `null` , a řetězec, který nebyl inicializované. Pokud `StartsWithUpper` je volána jako metoda rozšíření <xref:System.String> v instanci, nelze předat `null` řetězec. Můžete ji však také volat přímo jako statickou metodu a předat jeden <xref:System.String> argument.
+Vzhledem k tomu, že vaše metoda knihovny zpracovává řetězce, je také vhodné se ujistit, že úspěšně zpracovává [prázdný řetězec (`String.Empty`)](xref:System.String.Empty), platný řetězec, který neobsahuje žádné znaky a jehož <xref:System.String.Length> je 0, a `null` řetězec, který nebyl inicializován. Pokud je `StartsWithUpper` volána jako metoda rozšíření v instanci <xref:System.String>, nelze předat `null` řetězec. Můžete ji však také volat přímo jako statickou metodu a předat jeden <xref:System.String> argument.
 
-Budete definovat tři metody, z nichž každá volá svou <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> metodu opakovaně pro každý prvek v poli řetězců. Vzhledem k tomu, že testovací metoda selže, jakmile dojde k první chybě, zavoláte přetížení metody, které vám umožní předat řetězec, který označuje hodnotu řetězce použitou ve volání metody.
+Budete definovat tři metody, z nichž každý volá svou <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> metodu pro každý prvek v poli řetězců. Vzhledem k tomu, že testovací metoda selže, jakmile dojde k první chybě, zavoláte přetížení metody, které vám umožní předat řetězec, který označuje hodnotu řetězce použitou ve volání metody.
 
 Postup vytvoření testovacích metod:
 
@@ -116,9 +116,9 @@ Postup vytvoření testovacích metod:
 
 1. V okně *UnitTest1.cs* kód nahraďte kód následujícím kódem:
 
-   [!CODE-csharp[Test#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/testlib1.cs)]
+   [!code-csharp[Test#1](~/samples/snippets/csharp/getting_started/with_visual_studio_2017/testlib1.cs)]
 
-   Všimněte si, že váš test velkých písmen v `TestStartsWithUpper` metodě obsahuje řecké velké písmeno alfa (u + 0391) a velké písmeno cyrilice em (u + 041C) a test malých písmen `TestDoesNotStartWithUpper` v metodě zahrnuje řecký malý znak. Alpha (U + 03B1) a malé písmeno g (U + 0433).
+   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice EM (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (U + 0433) v cyrilici.
 
 1. Na řádku nabídek vyberte **soubor** > **Uložit UnitTest1.cs jako**. V dialogovém okně **Uložit soubor jako** vyberte šipku vedle tlačítka **Uložit** a vyberte **Uložit s kódováním**.
 
@@ -128,9 +128,9 @@ Postup vytvoření testovacích metod:
 
 1. V okně kódu *UnitTest1. vb* nahraďte kód následujícím kódem:
 
-    [!CODE-vb[Test#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/testlib.vb)]
+    [!code-vb[Test#1](~/samples/snippets/core/tutorials/vb-library-with-visual-studio/testlib.vb)]
 
-   Všimněte si, že váš test velkých písmen v `TestStartsWithUpper` metodě obsahuje řecké velké písmeno alfa (u + 0391) a velké písmeno cyrilice em (u + 041C) a test malých písmen `TestDoesNotStartWithUpper` v metodě zahrnuje řecký malý znak. Alpha (U + 03B1) a malé písmeno g (U + 0433).
+   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice EM (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (U + 0433) v cyrilici.
 
 1. Na panelu nabídek vyberte **soubor** > **Uložit UnitTest1. vb jako**. V dialogovém okně **Uložit soubor jako** vyberte šipku vedle tlačítka **Uložit** a vyberte **Uložit s kódováním**.
 
@@ -146,7 +146,7 @@ Postup vytvoření testovacích metod:
 
    Pokud neuložíte zdrojový kód jako soubor s kódováním UTF8, Visual Studio ho může uložit jako soubor ASCII. Pokud k tomu dojde, modul runtime nebude přesně kódovat znaky UTF8 mimo rozsah ASCII a výsledky testu nebudou přesné.
 
-1. Na panelu nabídek vyberte možnost **test** > **Spustit** > **všechny testy**. Otevře se okno **Průzkumník testů** , ve kterém se zobrazí, že testy proběhly úspěšně. Tři testy jsou uvedeny v části **prošlé testy** a v části **Souhrn** se zobrazí výsledek testovacího běhu.
+1. Na panelu nabídek vyberte možnost **Test** > **Spustit** > **všechny testy**. Otevře se okno **Průzkumník testů** , ve kterém se zobrazí, že testy proběhly úspěšně. Tři testy jsou uvedeny v části **prošlé testy** a v části **Souhrn** se zobrazí výsledek testovacího běhu.
 
    ![Okno Průzkumníka testů s předáváním testů](./media/testing-library-with-visual-studio/test-explorer-window.png)
 
@@ -154,7 +154,7 @@ Postup vytvoření testovacích metod:
 
 V testovacím běhu došlo k žádným chybám, ale mírně ho změňte, aby jedna z testovacích metod nebyla úspěšná:
 
-1. `words` Upravte pole`TestDoesNotStartWithUpper` v metodě tak, aby obsahovalo řetězec "Error" (chyba). Nemusíte soubor ukládat, protože Visual Studio automaticky ukládá otevřené soubory, když je řešení sestaveno pro spouštění testů.
+1. Upravte pole `words` v metodě `TestDoesNotStartWithUpper` tak, aby obsahovala řetězec "Error" (chyba). Nemusíte soubor ukládat, protože Visual Studio automaticky ukládá otevřené soubory, když je řešení sestaveno pro spouštění testů.
 
    ```csharp
    string[] words = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
@@ -171,7 +171,7 @@ V testovacím běhu došlo k žádným chybám, ale mírně ho změňte, aby jed
 
    ![Okno Průzkumníka testů s neúspěšnými testy](./media/testing-library-with-visual-studio/failed-test-window.png)
 
-1. V části **nezdařené testy** vyberte neúspěšný test, `TestDoesNotStartWith`. V okně **Průzkumník testů** se zobrazí zpráva vytvořená pomocí kontrolního výrazu: Výraz Assert. NEPRAVDA se nezdařil. Očekávané pro ' error ': false; provedené True ". Z důvodu chyby nebyly testovány všechny řetězce v poli za "Error".
+1. V části **nezdařené testy** vyberte neúspěšný test `TestDoesNotStartWith`. V okně **Průzkumník testů** se zobrazí zpráva vytvořená kontrolním výrazem: Assert. NEPRAVDA. Očekávané pro ' error ': false; skutečnost: true ". Z důvodu chyby nebyly testovány všechny řetězce v poli za "Error".
 
    ![Okno Průzkumníka testů, které zobrazuje nepravdivé selhání kontrolního výrazu](./media/testing-library-with-visual-studio/failed-test-detail.png)
 
@@ -191,6 +191,6 @@ Testování sestavení pro vydání:
 
    ![Místní nabídka StringLibrary s příkazem Build](./media/testing-library-with-visual-studio/build-library-context-menu.png)
 
-1. Spusťte testy jednotek výběrem možnosti **test** > **Spustit** > **všechny testy** z řádku nabídek. Testy jsou passované.
+1. Spusťte testy jednotek výběrem možnosti **Test** > **Spustit** > **všechny testy** z řádku nabídek. Testy jsou passované.
 
 Teď, když jste dokončili testování knihovny, je dalším krokem zpřístupnění volajícím. Můžete ho seskupit s jednou nebo více aplikacemi nebo ho můžete distribuovat jako balíček NuGet. Další informace naleznete v tématu [spotřebovávání knihovny tříd .NET Standard](./consuming-library-with-visual-studio.md).

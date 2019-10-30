@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 624814e40c361c30e251a9388f1444734a276c0a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 0783c6ab80f3a07bd7b7e5a005444218c17e85fb
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315868"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035462"
 ---
 # <a name="contributing"></a>Zvaní
 
@@ -79,7 +79,7 @@ docs
 
 **Krok 4:** Odešlete žádost o přijetí změn z větve a `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` nebo `dotnet/samples/master`.
 
-Vaše žádost o přijetí změn by měla *vždycky* cílit na hlavní větev. *Nikdy* byste neměli otevřít žádost o přijetí změn, která se zaměřuje na živou větev.
+Vaše žádost o přijetí změn by měla *vždycky* cílit na výchozí větev úložiště (Pokud nepracujete na větvi vydané verze). Pro dotnet/Docs je hlavní větev výchozí větev. V případě lokalizovaných úložišť je výchozím nastavením jedna živá větev. *Nikdy* byste neměli otevřít žádost o přijetí změn, která se zaměřuje na živou větev v dotnet/docs.
 
 Každá žádost o přijetí změn by obvykle měla řešit jeden problém v jednom okamžiku. Žádosti o přijetí změn můžou upravovat jeden nebo víc souborů. Pokud řešíte více oprav v různých souborech, jsou upřednostňovány samostatné pr.
 
@@ -140,14 +140,14 @@ C# Interaktivní prostředí mění způsob práce s ukázkami. Návštěvníci 
 
 Následující seznam obsahuje pravidla pro GUID, která byste měli mít na paměti při přispívání do dokumentace rozhraní .NET:
 
-- **Nedělejte** si u velkých žádostí o přijetí změn. Místo toho nahlaste problém a začněte diskuzi, abychom mohli vyjádřit souhlas s orientací ještě před tím, než investovat velké množství času.
+- **Nedělejte** si u velkých žádostí o přijetí změn. Místo toho nahlaste problém a začněte diskuzi, abychom mohli vyjádřit souhlas s orientací ještě před tím, než investovat velké množství času. Pro hromadné změny Přerušte práci na menší PR (až 100 souborů).
 - **Přečtěte si** článek [Průvodce stylem](./styleguide/template.md) a pokyny pro [hlasové a tónové](./styleguide/voice-tone.md) funkce.
 - **Použijte soubor** [šablony](./styleguide/template.md) jako výchozí bod vaší práce.
 - Než začnete pracovat na článcích **, vytvořte na** svém rozvětve samostatnou větev.
 - **Postupujte podle** [pracovního postupu Flow GitHub](https://guides.github.com/introduction/flow/).
 - **Udělejte to** na blogu (nebo cokoli) o příspěvcích, často!
 
-> Poznámka: můžete si všimnout, že některá témata aktuálně nejsou v současné době podle všech uvedených pokynů a také v [Průvodci styly](./styleguide/template.md) . Pracujeme na dosažení konzistence v celé lokalitě. Podívejte se na seznam [otevřených problémů](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) , které aktuálně sledujeme pro konkrétní cíl.
+> Poznámka: můžete si všimnout, že některá témata aktuálně nejsou v současné době podle všech uvedených pokynů a také v [Průvodci styly](./styleguide/template.md) . Pracujeme na dosažení konzistence v celé lokalitě.
 
 ## <a name="contributor-license-agreement"></a>Licenční smlouva přispěvatele
 

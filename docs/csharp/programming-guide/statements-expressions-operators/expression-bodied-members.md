@@ -1,5 +1,5 @@
 ---
-title: Členové tvoření - C# Průvodce programováním pro službu
+title: Expression – těle členové – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 02/06/2019
 helpviewer_keywords:
@@ -7,92 +7,92 @@ helpviewer_keywords:
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7c282157639a6a60270ce8dbebbc91dd0e0a3f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b336834dcc021b986d79f09d2a9440de0b102f78
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61709988"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039765"
 ---
-# <a name="expression-bodied-members-c-programming-guide"></a>Členové tvoření (C# programovací příručka)
+# <a name="expression-bodied-members-c-programming-guide"></a>Výrazy – těle členové (C# Průvodce programováním)
 
-Definice těla výrazu umožňují poskytovat implementace člena ve velmi stručným čitelné formy. Definice těla výrazu můžete použít pokaždé, když se logika pro všechny podporované členu, například metody nebo vlastnosti, se skládá z jednoho výrazu. Definice těla výrazu má následující obecnou syntaxi:
+Definice textu výrazu umožňují poskytovat implementaci člena ve velmi stručné a čitelné podobě. Definici těla výrazu můžete použít vždy, když logika pro libovolný podporovaný člen, jako je například metoda nebo vlastnost, se skládá z jednoho výrazu. Definice těla výrazu má následující obecnou syntaxi:
 
 ```csharp
 member => expression;
 ```
 
-kde *výraz* je platný výraz.
+*výraz* WHERE je platný výraz.
 
-Podpora pro definice těla výrazu byla zavedená pro metody a vlastnosti jen pro čtení v C# 6 a se rozbalil v C# 7.0. Definice těla výrazu jde použít s členy typu uvedené v následující tabulce:
+Pro metody a vlastnosti jen pro čtení v C# 6 byly zavedeny podpory definic těla výrazů a v C# 7,0 byly rozbaleny. Definice textu výrazu lze použít s členy typu uvedenými v následující tabulce:
 
-|Člen  |Podporované od systému... |
+|Člen  |Podporováno pro... |
 |---------|---------|
-|[– Metoda](#methods)  |C# 6 |
+|[Metoda](#methods)  |C# 6 |
 |[Vlastnost jen pro čtení](#read-only-properties)   |C# 6  |
-|[Vlastnost](#properties)  |C# 7.0 |
-|[Konstruktor](#constructors)   |C# 7.0 |
-|[Finalizační metody](#finalizers)     |C# 7.0 |
+|[Majetek](#properties)  |C# 7.0 |
+|[BeginRequestEventArgs](#constructors)   |C# 7.0 |
+|[Finalizační metodu](#finalizers)     |C# 7.0 |
 |[Indexer](#indexers)       |C# 7.0 |
 
 ## <a name="methods"></a>Metody
 
-S výrazem v těle metody obsahuje jediný výraz, který vrací hodnotu, jehož typ odpovídá návratový typ metody nebo pro metody, které vracejí `void`, který provede některé operace. Například typy toto přepsání <xref:System.Object.ToString%2A> metoda obvykle zahrnují jeden výraz, který vrátí řetězcovou reprezentaci aktuálního objektu.
+Metoda těle výrazu se skládá z jednoho výrazu, který vrací hodnotu, jejíž typ odpovídá návratový typ metody, nebo, pro metody, které vracejí `void`, které provádí určitou operaci. Například typy, které přepisují metodu <xref:System.Object.ToString%2A> obvykle zahrnují jeden výraz, který vrací řetězcovou reprezentaci aktuálního objektu.
 
-Následující příklad definuje `Person` třídu, která přepíše <xref:System.Object.ToString%2A> metodu s definici tělo výrazu. Definuje také `DisplayName` metodu, která zobrazuje název do konzoly. Všimněte si, že `return` – klíčové slovo se nepoužívá `ToString` definice těla výrazu.
+Následující příklad definuje třídu `Person`, která přepisuje metodu <xref:System.Object.ToString%2A> pomocí definice těla výrazu. Definuje také metodu `DisplayName`, která zobrazuje název konzoly. Všimněte si, že klíčové slovo `return` se v definici těla výrazu `ToString` nepoužívá.
 
 [!code-csharp[expression-bodied-methods](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-methods.cs)]  
 
-Další informace najdete v tématu [Methods (C# Programming Guide)](../classes-and-structs/methods.md).
+Další informace naleznete v tématu [metody (C# Průvodce programováním)](../classes-and-structs/methods.md).
 
 ## <a name="read-only-properties"></a>Vlastnosti jen pro čtení
 
-Počínaje C# 6, definice těla výrazu můžete použít k implementaci vlastnost jen pro čtení. K tomuto účelu použijte následující syntaxi:
+Počínaje C# 6 můžete použít definici textu výrazu k implementaci vlastnosti jen pro čtení. K tomu použijte následující syntaxi:
 
 ```csharp
 PropertyType PropertyName => expression;
 ```
 
-Následující příklad definuje `Location` třídy, jejichž jen pro čtení `Name` vlastnost je implementovaný jako definici tělo výrazu, který vrací hodnotu privátní `locationName` pole:
+Následující příklad definuje třídu `Location`, jejíž vlastnost `Name` jen pro čtení je implementována jako definice těla výrazu, která vrací hodnotu soukromého `locationName` pole:
 
 [!code-csharp[expression-bodied-read-only-property](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-readonly.cs#1)]  
 
-Další informace o vlastnostech najdete v tématu [vlastnosti (C# Programming Guide)](../classes-and-structs/properties.md).
+Další informace o vlastnostech naleznete v tématu [vlastnosti (C# Průvodce programováním)](../classes-and-structs/properties.md).
 
 ## <a name="properties"></a>Vlastnosti
 
-Počínaje C# 7.0, definice těla výrazu můžete použít k implementaci vlastnost `get` a `set` přistupující objekty. Následující příklad ukazuje, jak to udělat:
+Počínaje verzí C# 7,0 můžete použít definice těla výrazu k implementaci`get`vlastností a přístupových objektů`set`. Následující příklad ukazuje, jak to provést:
 
 [!code-csharp[expression-bodied-property-get-set](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]
 
-Další informace o vlastnostech najdete v tématu [vlastnosti (C# Programming Guide)](../classes-and-structs/properties.md).
+Další informace o vlastnostech naleznete v tématu [vlastnosti (C# Průvodce programováním)](../classes-and-structs/properties.md).
 
 ## <a name="constructors"></a>Konstruktory
 
-Definice těla výrazu pro konstruktor se obvykle skládá z výrazu přiřazení jednoho nebo volání metody, která zpracuje argumenty konstruktoru nebo inicializuje stav instance.
+Definice těla výrazu pro konstruktor se obvykle skládá z jednoho výrazu přiřazení nebo volání metody, které zpracovává argumenty konstruktoru nebo inicializuje stav instance.
 
-Následující příklad definuje `Location` třídy, jejíž konstruktor má jeden řetězcový parametr s názvem *název*. Definice textu výrazu přiřadí argument `Name` vlastnost.
+Následující příklad definuje třídu `Location`, jejíž konstruktor má jeden řetězcový parametr s názvem *Name*. Definice těla výrazu přiřadí argument vlastnosti `Name`.
 
 [!code-csharp[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
 
-Další informace najdete v tématu [konstruktory (C# Programming Guide)](../classes-and-structs/constructors.md).
+Další informace naleznete v tématu [konstruktory (C# Průvodce programováním)](../classes-and-structs/constructors.md).
 
 ## <a name="finalizers"></a>Finalizační metody
 
-Definice těla výrazu pro finalizační metodu obvykle obsahuje příkazy vyčištění, jako je například příkazy, které uvolnění nespravovaných prostředků.
+Definice těla výrazu pro finalizační metodu obvykle obsahuje příkazy vyčištění, například příkazy, které uvolní nespravované prostředky.
 
-Následující příklad definuje finalizační metodu, která používá definici tělo výrazu k označení, že byla zavolána finalizační metodu.
+Následující příklad definuje finalizační metodu, která používá definici těla výrazu k označení toho, že finalizační metoda byla volána.
 
 [!code-csharp[expression-bodied-finalizer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-destructor.cs#1)]  
 
-Další informace najdete v tématu [finalizační metody (C# Programming Guide)](../classes-and-structs/destructors.md).
+Další informace naleznete v tématu [finalizační metody (C# Průvodce programováním)](../classes-and-structs/destructors.md).
 
 ## <a name="indexers"></a>Indexery
 
-Jako jsou vlastnosti indexeru pro operace get a přístupové objekty set se skládají z definice těla výrazu Pokud přistupující objekt get se skládá z jednoho příkazu, který vrací hodnotu, nebo přístupový objekt set provádí jednoduché přiřazení.
+Podobně jako u vlastností, indexerů `get` a přistupujících objektů `set` se skládají z definic textu výrazu, pokud se `get` přistupující objekt skládá z jediného výrazu, který vrací hodnotu nebo objekt pro přístup k `set` provádí jednoduché přiřazení.
 
-Následující příklad definuje třídu s názvem `Sports` , který obsahuje interní <xref:System.String> pole, které obsahuje názvy počet sportu. Get indexeru a přístupové objekty set jsou implementovány jako definice těla výrazu.
+Následující příklad definuje třídu s názvem `Sports`, která obsahuje interní <xref:System.String> pole, které obsahuje názvy pro řadu sportovních. Indexer `get` i přistupující objekty `set` jsou implementovány jako definice textu výrazu.
 
 [!code-csharp[expression-bodied-indexer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-indexers.cs#1)]
 
-Další informace najdete v tématu [indexery (C# Programming Guide)](../indexers/index.md).
+Další informace najdete v tématu [indexery (C# Průvodce programováním)](../indexers/index.md).

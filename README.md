@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 246dbeed69fbd54c2c52bce2414363ddc9c62204
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: d384aa2daea17581402dc45dc3104a0d97f77f3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658443"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035449"
 ---
 # <a name="net-docs"></a>Dokumentace .NET
 
@@ -16,7 +16,9 @@ Toto úložiště obsahuje koncepční dokumentaci pro .NET. Kromě tohoto nást
 
 Tady jsou sledované problémy a úlohy pro všechny, ale úložiště referencí rozhraní API. Pomocí těchto prostředků máme rozsáhlou komunitu. Díky naší snaze reagovat na problémy včas. Můžete si přečíst další informace o našich postupech pro klasifikaci a řešení problémů v tématu [zásady problémů](issues-policy.md) .
 
-Vítejte v příspěvcích, abychom nám pomohli vylepšit a dokončit dokumentaci .NET. Pro přispívání v [projektech pro přispěvatele komunit .NET](https://github.com/dotnet/docs/projects/35) pro nápady. [Příručka](CONTRIBUTING.md) pro přispívání obsahuje pokyny pro postupy, které používáme. Nebo se v [seznamu problémů](https://github.com/dotnet/docs/issues) podívejte na úkoly, které vás zajímají. 
+Vítejte v příspěvcích, abychom nám pomohli vylepšit a dokončit dokumentaci .NET. To je velmi velké úložiště, které pokrývá velkou oblast. Pokud se jedná o vaši první návštěvu, přečtěte si článek [Průvodce štítky a projekty](styleguide/labels-projects.md) , který vám umožní přejít na problémy a projekty v tomto úložišti.
+
+Pro přispívání v [projektech pro přispěvatele komunit .NET](https://github.com/dotnet/docs/projects/35) pro nápady. [Příručka pro přispívání](CONTRIBUTING.md) obsahuje pokyny pro postupy, které používáme. 
 
 Pokud máte zájem o pomoc s migrací stávajícího kódu, který cílí na .NET Framework z [Galerie kódu](https://code.msdn.microsoft.com) na aplikace .NET Core uložené v našem [úložišti ukázek](https://github.com/dotnet/samples) a stáhnout z [prohlížeče ukázek](https://docs.microsoft.com/samples/browse), přečtěte si téma [Galerie kódu. projekt migrace](https://github.com/dotnet/docs/projects/88) . 
 

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: 351175b96d354a264a9280018ce21de8870beda2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: df6da84dfc120e3f6c3cb0e46729ca2cecc9fe3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784801"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040403"
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typovým datovým sadám
-Poznámky umožňují upravit názvy elementů ve vašem typu <xref:System.Data.DataSet> bez změny v podkladovém schématu. Změna názvů prvků v základním schématu způsobí, že zadaná **datová sada** odkazuje na objekty, které neexistují ve zdroji dat, a také ztratí odkaz na objekty, které existují ve zdroji dat.  
+Poznámky umožňují upravit názvy prvků v zadaných <xref:System.Data.DataSet>ch bez změny podkladového schématu. Změna názvů prvků v základním schématu způsobí, že zadaná **datová sada** odkazuje na objekty, které neexistují ve zdroji dat, a také ztratí odkaz na objekty, které existují ve zdroji dat.  
   
- Pomocí poznámek můžete přizpůsobit názvy objektů v zadané **datové sadě** s smysluplnými názvy, což usnadňuje čtení kódu a zadaná **datová sada** je pro klienty snazší a přitom ponechá základní schéma beze změny. Například následující prvek schématu pro tabulku **Customers** v databázi **Northwind** by měl <xref:System.Data.DataRowCollection> mít název objektu **DataRow** **CustomersRow** a pojmenované **zákazníky**.  
+ Pomocí poznámek můžete přizpůsobit názvy objektů v zadané **datové sadě** s smysluplnými názvy, což usnadňuje čtení kódu a zadaná **datová sada** je pro klienty snazší a přitom ponechá základní schéma beze změny. Například následující prvek schématu pro tabulku **Customers** databáze **Northwind** má za následek název objektu **DataRow** **CustomersRow** a <xref:System.Data.DataRowCollection> s názvem **Customers**.  
   
 ```xml  
 <xs:element name="Customers">  
@@ -64,19 +64,19 @@ Poznámky umožňují upravit názvy elementů ve vašem typu <xref:System.Data.
   
 |Objekt/metoda/událost|Výchozí|Poznámka|  
 |---------------------------|-------------|----------------|  
-|**DataTable**|TableNameDataTable|typedPlural|  
+|**Objekt**|TableNameDataTable|typedPlural|  
 |**DataTable** Způsobů|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typ typu|  
-|**DataRowCollection**|TableName|typedPlural|  
-|**DataRow**|TableNameRow|typ typu|  
-|**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typ typu|  
-|**Majetek**|Vlastnost PropertyName|typ typu|  
+|**Kolekci DataRowCollection**|Tabulky|typedPlural|  
+|**Objekt**|TableNameRow|typ typu|  
+|**DataColumn**|DataTable. ColumnNameColumn<br /><br /> DataRow. ColumnName|typ typu|  
+|**Majetek**|PropertyName|typ typu|  
 |**Podřízená položka** Zbývá|GetChildTableNameRows|typedChildren|  
 |**Nadřazený prvek** Zbývá|TableNameRow|typedParent|  
 |**Datová sada** Událost|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typ typu|  
   
- Chcete-li použít typové anotace **datové sady** , musíte zahrnout následující odkaz **xmlns** do schématu XML schématu definice jazyka (XSD). Chcete-li vytvořit XSD z databázových tabulek <xref:System.Data.DataSet.WriteXmlSchema%2A> , přečtěte si nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
+ Chcete-li použít typové anotace **datové sady** , musíte zahrnout následující odkaz **xmlns** do schématu XML schématu definice jazyka (XSD). Chcete-li vytvořit XSD z databázových tabulek, přečtěte si téma <xref:System.Data.DataSet.WriteXmlSchema%2A> nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
   
-```  
+```xml  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
@@ -134,7 +134,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- Následující příklad kódu používá **datovou sadu** silného typu vytvořenou z ukázkového schématu. Používá jeden <xref:System.Data.SqlClient.SqlDataAdapter> k naplnění tabulky **Customers** a <xref:System.Data.SqlClient.SqlDataAdapter> druhý k naplnění tabulky **Orders** . **Datová sada** silného typu definuje **DataRelations**.  
+ Následující příklad kódu používá **datovou sadu** silného typu vytvořenou z ukázkového schématu. K naplnění tabulky **Customers** používá jednu <xref:System.Data.SqlClient.SqlDataAdapter> a další <xref:System.Data.SqlClient.SqlDataAdapter> k naplnění tabulky **Orders** . **Datová sada** silného typu definuje **DataRelations**.  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  

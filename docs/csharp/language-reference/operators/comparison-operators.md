@@ -1,6 +1,6 @@
 ---
-title: Operátory porovnání - C# odkaz
-description: Další informace o C# operátory porovnání, které vám umožní zkontrolovat pořadí číselné hodnoty.
+title: Operátory porovnání – C# referenční informace
+description: Přečtěte C# si o relačních operátorech, které můžete použít ke kontrole pořadí číselných hodnot.
 ms.date: 04/25/2019
 author: pkulikov
 f1_keywords:
@@ -19,61 +19,61 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: d3e9bf1356218f223f959b423dfc048972b075d3
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: bb28e2adba896ae85b189858283376fbe3250dce
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661509"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039069"
 ---
-# <a name="comparison-operators-c-reference"></a>Operátory porovnání (C# odkaz)
+# <a name="comparison-operators-c-reference"></a>Operátory porovnání (C# referenční)
 
-[ `<` (Menší než)](#less-than-operator-), [ `>` (větší)](#greater-than-operator-), [ `<=` (menší než nebo rovno)](#less-than-or-equal-operator-), a [ `>=` () větší než nebo rovno)](#greater-than-or-equal-operator-) porovnání, také známé jako relační, operátory porovnání svých operandů. Tyto operátory podporují všechny [integrální](../builtin-types/integral-numeric-types.md) a [s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md) číselné typy.
+[`<` (menší než)](#less-than-operator-), [`>` (je větší než)](#greater-than-operator-), [`<=` (menší nebo rovno)](#less-than-or-equal-operator-)a [`>=` (větší než nebo rovno](#greater-than-or-equal-operator-) ), které se označují také jako relační, operátory porovnávají jejich operandy. Tyto operátory jsou podporovány všemi [celočíselnými](../builtin-types/integral-numeric-types.md) typy a čísly [s plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou.
 
 > [!NOTE]
-> Pro `==`, `<`, `>`, `<=`, a `>=` operátory, pokud žádný z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>), je výsledek operace `false`. To znamená, že `NaN` hodnota není větší než, menší než, ani jakýkoli jiný roven `double` (nebo `float`) hodnotu, včetně `NaN`. Další informace a příklady najdete v tématu <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType> článku.
+> Pro operátory `==`, `<`, `>`, `<=`a `>=`, pokud některý z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>), je výsledek operace `false`. To znamená, že hodnota `NaN` není větší než, menší nebo rovna žádné jiné hodnotě `double` (nebo `float`), včetně `NaN`. Další informace a příklady najdete v článku referenční článek o <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>.
 
-Výčtové typy také podporují operátory porovnání. Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.
+Výčtové typy také podporují operátory porovnání. Pro operandy stejného typu [výčtu](../keywords/enum.md) jsou porovnány odpovídající hodnoty základního integrálního typu.
 
-[ `==` a `!=` operátory](equality-operators.md) zkontrolujte, jestli operandy jsou stejné, nebo ne.
+[Operátory`==` a `!=`](equality-operators.md) kontrolují, jestli jsou jejich operandy stejné.
 
 ## <a name="less-than-operator-"></a>Operátor menší než \<
 
-`<` Operátor vrátí `true` pokud jeho levý operand je menší než jeho zpracovával pravý operand `false` jinak:
+Operátor `<` vrátí `true`, pokud je jeho levý operand menší než jeho pravý operand, `false` jinak:
 
 [!code-csharp-interactive[less than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Less)]
 
-## <a name="greater-than-operator-"></a>Operátor větší než >
+## <a name="greater-than-operator-"></a>> Operátoru větší než
 
-`>` Operátor vrátí `true` pokud jeho levý operand je větší než jeho zpracovával pravý operand `false` jinak:
+Operátor `>` vrátí `true`, pokud je jeho levý operand větší než jeho pravý operand, `false` jinak:
 
 [!code-csharp-interactive[greater than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Greater)]
 
-## <a name="less-than-or-equal-operator-"></a>Menší než nebo rovno – operátor \<=
+## <a name="less-than-or-equal-operator-"></a>\<= operátoru menší než nebo rovno
 
-`<=` Operátor vrátí `true` pokud jeho levý operand je menší nebo rovna zpracovával pravý operand, `false` jinak:
+Operátor `<=` vrátí `true`, pokud je jeho levý operand menší nebo roven jeho pravému operandu, `false` jinak:
 
 [!code-csharp-interactive[less than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#LessOrEqual)]
 
-## <a name="greater-than-or-equal-operator-"></a>Operátor větší než nebo rovna > =
+## <a name="greater-than-or-equal-operator-"></a>Operátor větší než nebo rovno > =
 
-`>=` Operátor vrátí `true` pokud jeho levý operand je větší než nebo rovna hodnotě zpracovával pravý operand, `false` jinak:
+Operátor `>=` vrátí `true`, pokud je jeho levý operand větší nebo roven jeho pravému operandu, `false` jinak:
 
 [!code-csharp-interactive[greater than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#GreaterOrEqual)]
 
-## <a name="operator-overloadability"></a>Overloadability – operátor
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelem definovaný typ může [přetížení](operator-overloading.md) `<`, `>`, `<=`, a `>=` operátory.
+Uživatelsky definovaný typ může [přetížit](operator-overloading.md) operátory `<`, `>`, `<=`a `>=`.
 
-Pokud typ jednoho z přetížení `<` nebo `>` operátory, ho musíte přetížení obě `<` a `>`. Pokud typ jednoho z přetížení `<=` nebo `>=` operátory, ho musíte přetížení obě `<=` a `>=`.
+Pokud typ přetěžuje jednu z `<` nebo `>` operátory, musí přetížit jak `<`, tak `>`. Pokud typ přetěžuje jednu z `<=` nebo `>=` operátory, musí přetížit jak `<=`, tak `>=`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [relační a typové zkoušky operátory](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [relační operátory and type-Testing](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) v [ C# tématu Specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
 - <xref:System.IComparable%601?displayProperty=nameWithType>
 - [Operátory rovnosti](equality-operators.md)

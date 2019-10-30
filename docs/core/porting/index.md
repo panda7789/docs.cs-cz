@@ -4,12 +4,12 @@ description: Pochopení procesu přenosu a zjišťování nástrojů, které mů
 author: cartermp
 ms.date: 10/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0684be25cee6ae3f778e7134b4c3a29ac87caf25
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 89f00e5c6ce7f3cea7a3135c9b2856c54a70da40
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798804"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038522"
 ---
 # <a name="overview-of-the-porting-process-from-net-framework-to-net-core"></a>Přehled procesu přenosu z .NET Framework do .NET Core
 
@@ -46,7 +46,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
    Vzhledem k tomu, že přenos do .NET Core je podstatnou změnou základu kódu, důrazně doporučujeme, abyste si nadostali své testy, abyste mohli spouštět testy během přenosu kódu. MSTest, xUnit a NUnit všechny fungují na .NET Core.
 
-Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé projekty do formátu souboru projektu .NET Core pomocí nástroje [dotnet try-Convert](https://github.com/dotnet/try-convert) v jedné operaci. `dotnet try-convert` není guaranteedto práce pro všechny vaše projekty a může způsobit drobné změny v chování, které byste zjistili, že jste v závislosti na. Měl by se použít jako _výchozí bod_ , který automatizuje základní věci, které je možné automatizovat. Není zaručené řešení pro migraci projektu.
+Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé projekty do formátu souboru projektu .NET Core pomocí nástroje [dotnet try-Convert](https://github.com/dotnet/try-convert) v jedné operaci. `dotnet try-convert` není zaručená práce pro všechny vaše projekty a může způsobit drobné změny v chování, které byste zjistili, na kterých jste se zapracovali. Měl by se použít jako _výchozí bod_ , který automatizuje základní věci, které je možné automatizovat. Není zaručené řešení pro migraci projektu.
 
 >[!div class="step-by-step"]
 >[Next](net-framework-tech-unavailable.md)

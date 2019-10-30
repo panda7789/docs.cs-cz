@@ -10,43 +10,43 @@ helpviewer_keywords:
 - validation of PrintTickets [WPF]
 - PrintTicket [WPF], validation
 ms.assetid: 4fe2d501-d0b0-4fef-86af-6ffe6c162532
-ms.openlocfilehash: 9e5242c07179501e6b39840a36f8dd6364d65b84
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 15e328729886e0f1efc3b47705fcb4ce13013137
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918349"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035577"
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
-Schéma tisku zahrnuje flexibilní a rozšiřitelnost <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> prvky. [](https://go.microsoft.com/fwlink/?LinkId=186397) [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] Předchozí rozepisuje možnosti tiskového zařízení a druhého nastavení určují, jak by mělo zařízení používat tyto možnosti s ohledem na konkrétní posloupnost dokumentů, jednotlivé dokumenty nebo jednotlivé stránky.  
+[Schéma tisku](https://go.microsoft.com/fwlink/?LinkId=186397) v systému Microsoft Windows zahrnuje flexibilní a rozšiřitelné prvky <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket>. Předchozí rozepisuje možnosti tiskového zařízení a druhého nastavení určují, jak by mělo zařízení používat tyto možnosti s ohledem na konkrétní posloupnost dokumentů, jednotlivé dokumenty nebo jednotlivé stránky.  
   
  Typická posloupnost úloh pro aplikaci, která podporuje tisk, by byla následující.  
   
 1. Určete schopnosti tiskárny.  
   
-2. Nakonfigurujte, <xref:System.Printing.PrintTicket> aby se tyto možnosti používaly.  
+2. Nakonfigurujte <xref:System.Printing.PrintTicket>, aby tyto možnosti používaly.  
   
-3. <xref:System.Printing.PrintTicket>Ověřte.  
+3. Ověřte <xref:System.Printing.PrintTicket>.  
   
  Tento článek ukazuje, jak to provést.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu vás zajímá pouze to, jestli tiskárna podporuje oboustranný tisk – oboustranný tisk. Hlavní kroky jsou následující.  
   
-1. <xref:System.Printing.PrintCapabilities> Získat objekt<xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> s metodou.  
+1. Získá objekt <xref:System.Printing.PrintCapabilities> s metodou <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>.  
   
-2. Otestujte přítomnost požadované schopnosti. V následujícím příkladu testujeme <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> vlastnost <xref:System.Printing.PrintCapabilities> objektu pro přítomnost možnosti tisku na obou stranách listu papíru s "otáčením stránky" podél pravé strany listu. Vzhledem <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> k tomu, že `Contains` je kolekce, používáme <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>metodu.  
+2. Otestujte přítomnost požadované schopnosti. V následujícím příkladu otestujeme vlastnost <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> objektu <xref:System.Printing.PrintCapabilities>, aby byla přítomna možnost tisku na obou stranách listu papíru se stránkou otáčení stránky podél pravé strany listu. Vzhledem k tomu, že <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> je kolekce, používáme metodu `Contains` <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>.  
   
     > [!NOTE]
-    > Tento krok není nezbytně nezbytný. <xref:System.Printing.PrintTicket> Níže uvedená <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> metoda zkontroluje všechny požadavky v s funkcemi tiskárny. Pokud není požadovaná schopnost tiskárny podporována, ovladač tiskárny nahradí alternativní požadavek <xref:System.Printing.PrintTicket> vrácený metodou.  
+    > Tento krok není nezbytně nezbytný. Níže uvedená metoda <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> bude kontrolovat všechny žádosti v <xref:System.Printing.PrintTicket> na možnosti tiskárny. Pokud tiskárna nepodporuje požadovanou funkci, ovladač tiskárny nahradí alternativní požadavek v <xref:System.Printing.PrintTicket> vráceném metodou.  
   
-3. Pokud tiskárna podporuje duplexní režim, vzorový kód vytvoří a <xref:System.Printing.PrintTicket> požádá o oboustranný přenos. Aplikace ale neurčuje všechna možná nastavení tiskárny, která jsou k dispozici v <xref:System.Printing.PrintTicket> elementu. To by bylo wasteful programátora i času programu. Místo toho kód nastaví pouze duplexní požadavek a pak ho sloučí <xref:System.Printing.PrintTicket> s existujícím, plně nakonfigurovaným a <xref:System.Printing.PrintTicket>ověřeným, v tomto případě jako výchozí nastavení <xref:System.Printing.PrintTicket>uživatele.  
+3. Pokud tiskárna podporuje duplexní režim, vzorový kód vytvoří <xref:System.Printing.PrintTicket>, která žádá o oboustranný přenos. Aplikace ale neurčuje všechna možná nastavení tiskárny, která jsou k dispozici v prvku <xref:System.Printing.PrintTicket>. To by bylo wasteful programátora i času programu. Místo toho kód nastaví pouze duplexní požadavek a potom tento <xref:System.Printing.PrintTicket> sloučí s existujícím, plně nakonfigurovaným a ověřeným <xref:System.Printing.PrintTicket>, v tomto případě výchozí <xref:System.Printing.PrintTicket>uživatele.  
   
-4. Proto ukázka volá <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> metodu pro sloučení nového, <xref:System.Printing.PrintTicket> minimálního s výchozím nastavením <xref:System.Printing.PrintTicket>uživatele. Vrátí <xref:System.Printing.ValidationResult> , který obsahuje nový <xref:System.Printing.PrintTicket> jako jednu z jeho vlastností.  
+4. Proto ukázka zavolá metodu <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> pro sloučení nového, minimálního <xref:System.Printing.PrintTicket> s výchozím <xref:System.Printing.PrintTicket>uživatele. Vrátí <xref:System.Printing.ValidationResult>, který obsahuje nový <xref:System.Printing.PrintTicket> jako jednu z jeho vlastností.  
   
-5. Ukázka potom testuje, zda nové <xref:System.Printing.PrintTicket> požadavky přibyly duplexní. V takovém případě ukázka vytvoří nový výchozí tiskový lístek pro uživatele. Pokud byl krok 2 výše popsaný a tiskárna nepodporovala oboustranně, pak test by byl výsledkem `false`. (Viz poznámka výše.)  
+5. Ukázka potom testuje, zda nový <xref:System.Printing.PrintTicket> žádá o oboustranný přenos. V takovém případě ukázka vytvoří nový výchozí tiskový lístek pro uživatele. Pokud byl krok 2 výše popsaný a tiskárna nepodporovala oboustranný přenos, pak test by byl výsledkem `false`. (Viz poznámka výše.)  
   
-6. Posledním významným krokem je potvrzení změny <xref:System.Printing.PrintQueue.UserPrintTicket%2A> vlastnosti <xref:System.Printing.PrintQueue> <xref:System.Printing.PrintQueue.Commit%2A> metody s metodou.  
+6. Posledním významným krokem je potvrzení změny vlastnosti <xref:System.Printing.PrintQueue.UserPrintTicket%2A> <xref:System.Printing.PrintQueue> pomocí metody <xref:System.Printing.PrintQueue.Commit%2A>.  
   
  [!code-csharp[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#usingmergeandvalidate)]
  [!code-vb[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#usingmergeandvalidate)]  

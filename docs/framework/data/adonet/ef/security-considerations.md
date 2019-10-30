@@ -2,12 +2,12 @@
 title: Požadavky na zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 1865afb384cfff41ede953c00f01cc96aea9a080
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: d9adf4ed9e340ff589117f160e370c7d1595a207
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854257"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039871"
 ---
 # <a name="security-considerations-entity-framework"></a>Požadavky na zabezpečení (Entity Framework)
 Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění aplikací Entity Framework. Měli byste také postupovat podle doporučení pro vytváření zabezpečených .NET Framework aplikací. Další informace najdete v tématu [Přehled zabezpečení](../security-overview.md).  
@@ -46,12 +46,12 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
   
 - Při dynamickém vytváření připojení použijte tvůrci připojovacích řetězců.  
   
-     Pokud je nutné sestavit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídu. Tato třída tvůrce řetězců pomáhá zabránit útokům prostřednictvím injektáže připojovacího řetězce pomocí ověření a uvozovacího neplatných vstupních informací. Další informace najdete v tématu [jak: Sestavte připojovací řetězec](how-to-build-an-entityconnection-connection-string.md)EntityConnection. Použijte také příslušnou třídu tvůrce řetězců k vytvoření připojovacího řetězce zdroje dat, který je součástí připojovacího řetězce Entity Framework. Informace o sestavách připojovacích řetězců pro poskytovatele ADO.NET naleznete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
+     Pokud je nutné sestavit připojovací řetězce za běhu, použijte třídu <xref:System.Data.EntityClient.EntityConnectionStringBuilder>. Tato třída tvůrce řetězců pomáhá zabránit útokům prostřednictvím injektáže připojovacího řetězce pomocí ověření a uvozovacího neplatných vstupních informací. Další informace naleznete v tématu [How to: Build a EntityConnection Connection String](how-to-build-an-entityconnection-connection-string.md). Použijte také příslušnou třídu tvůrce řetězců k vytvoření připojovacího řetězce zdroje dat, který je součástí připojovacího řetězce Entity Framework. Informace o sestavách připojovacích řetězců pro poskytovatele ADO.NET naleznete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
   
  Další informace najdete v tématu [ochrana informací o připojení](../protecting-connection-information.md).  
   
 #### <a name="do-not-expose-an-entityconnection-to-untrusted-users"></a>Nezveřejňujte EntityConnection k nedůvěryhodným uživatelům.  
- <xref:System.Data.EntityClient.EntityConnection> Objekt zpřístupňuje připojovací řetězec podkladového připojení. Uživatel s přístupem k <xref:System.Data.EntityClient.EntityConnection> objektu může také <xref:System.Data.ConnectionState> změnit původní připojení. Třída <xref:System.Data.EntityClient.EntityConnection> není bezpečná pro přístup z více vláken.  
+ Objekt <xref:System.Data.EntityClient.EntityConnection> zpřístupňuje připojovací řetězec podkladového připojení. Uživatel s přístupem k objektu <xref:System.Data.EntityClient.EntityConnection> může také změnit <xref:System.Data.ConnectionState> základního připojení. Třída <xref:System.Data.EntityClient.EntityConnection> není bezpečná pro přístup z více vláken.  
   
 #### <a name="do-not-pass-connections-outside-the-security-context"></a>Neprovádějte předávání připojení mimo kontext zabezpečení.  
  Po navázání spojení je nesmíte předat mimo kontext zabezpečení. Například jedno vlákno s oprávněním k otevření připojení by nemělo ukládat připojení v globálním umístění. Pokud je připojení k dispozici v globálním umístění, pak jiné škodlivé vlákno může používat otevřené připojení, aniž by mu bylo uděleno oprávnění explicitně.  
@@ -69,11 +69,11 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
   
 - <xref:System.Security.Permissions.ReflectionPermission>: <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> pro podporu LINQ to Entitiesch dotazů.  
   
-- <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> k <xref:System.Transactions> zařazení<xref:System.Transactions.Transaction>do.  
+- <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> zařazení do <xref:System.Transactions>ho<xref:System.Transactions.Transaction>.  
   
-- <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimek <xref:System.Runtime.Serialization.ISerializable> pomocí rozhraní.  
+- <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimek pomocí rozhraní <xref:System.Runtime.Serialization.ISerializable>.  
   
-- Oprávnění k otevření databázového připojení a provedení příkazů <xref:System.Data.SqlClient.SqlClientPermission> pro databázi, například pro databázi SQL Server.  
+- Oprávnění k otevření připojení k databázi a provedení příkazů pro databázi, jako je například <xref:System.Data.SqlClient.SqlClientPermission> pro databázi SQL Server.  
   
  Další informace najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../code-access-security.md).  
   
@@ -81,7 +81,7 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
  Entity Framework nevynutila žádná oprávnění zabezpečení a vyvolá libovolný uživatelem zadaný datový objekt v procesu bez ohledu na to, zda je důvěryhodný nebo nikoli. Ujistěte se, že úložiště dat a aplikace provádí ověřování a autorizaci klienta.  
   
 #### <a name="restrict-access-to-all-configuration-files"></a>Omezte přístup ke všem konfiguračním souborům.  
- Správce musí omezit přístup pro zápis do všech souborů, které určují konfiguraci aplikace, včetně souborů enterprisesec. config, Security. config, Machine. conf a konfiguračního \< *souboru aplikace >* . exe. config.  
+ Správce musí omezit přístup pro zápis do všech souborů, které určují konfiguraci aplikace, včetně souborů enterprisesec. config, Security. config, Machine. conf a konfiguračního souboru aplikace \<> *aplikace*. exe. config.  
   
  Neutrální název zprostředkovatele je v App. config upravitelný. Klientská aplikace musí převzít zodpovědnost za přístup k základnímu poskytovateli prostřednictvím modelu výroby standardního zprostředkovatele pomocí silného názvu.  
   
@@ -89,20 +89,20 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
  Správce musí omezit přístup pro zápis k modelu a mapování souborů (. edmx,. csdl,. ssdl a. MSL) pouze na uživatele, kteří mění model nebo mapování. Entity Framework vyžaduje pouze přístup pro čtení těchto souborů v době běhu. Správce by měl také omezit přístup ke vrstvě objektů a předkompilovaným souborům zdrojového kódu zobrazení, které jsou generovány nástroji model EDM (Entity Data Model).  
   
 ## <a name="security-considerations-for-queries"></a>Otázky zabezpečení pro dotazy  
- Při dotazování konceptuálního modelu platí následující informace o zabezpečení. Tyto požadavky se vztahují [!INCLUDE[esql](../../../../../includes/esql-md.md)] na dotazy používající zprostředkovatele EntityClient a k vytváření dotazů na [!INCLUDE[esql](../../../../../includes/esql-md.md)]objekty pomocí metod Tvůrce dotazů LINQ, a.  
+ Při dotazování konceptuálního modelu platí následující informace o zabezpečení. Tyto požadavky platí pro [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy pomocí zprostředkovatele EntityClient a k vytváření dotazů na objekty pomocí metod LINQ, [!INCLUDE[esql](../../../../../includes/esql-md.md)]a tvůrce dotazů.  
   
 #### <a name="prevent-sql-injection-attacks"></a>Zabraňuje útokům prostřednictvím injektáže SQL.  
  Aplikace často přijímají externí vstup (od uživatele nebo jiného externího agenta) a provádějí akce založené na tomto vstupu. Jakýkoli vstup, který je přímo nebo nepřímo odvozený od uživatele nebo externího agenta, může mít obsah, který používá syntaxi cílového jazyka, aby mohl provádět neoprávněné akce. Pokud je cílovým jazykem jazyk SQL (Structured Query Language) (SQL), jako je například Transact-SQL, tato manipulace je označována jako útok prostřednictvím injektáže SQL. Uživatel se zlými úmysly může vložit příkazy přímo do dotazu a odstranit databázovou tabulku, způsobit odepření služby nebo jinak měnit povahu prováděné operace.  
   
-- [!INCLUDE[esql](../../../../../includes/esql-md.md)]útoky prostřednictvím injektáže:  
+- útoky prostřednictvím injektáže [!INCLUDE[esql](../../../../../includes/esql-md.md)]:  
   
-     Útoky prostřednictvím injektáže SQL je možné provést [!INCLUDE[esql](../../../../../includes/esql-md.md)] v rámci poskytnutím škodlivého vstupu k hodnotám, které se používají v predikátu dotazu a v názvech parametrů. Abyste se vyhnuli riziku injektáže SQL, neměli byste nikdy kombinovat vstup [!INCLUDE[esql](../../../../../includes/esql-md.md)] uživatele s textem příkazu.  
+     Útoky prostřednictvím injektáže SQL je možné provádět v [!INCLUDE[esql](../../../../../includes/esql-md.md)] tím, že zadáváte škodlivý vstup k hodnotám, které se používají v predikátu dotazu a v názvech parametrů. Abyste se vyhnuli riziku injektáže SQL, neměli byste nikdy kombinovat vstup uživatele s textem příkazu [!INCLUDE[esql](../../../../../includes/esql-md.md)].  
   
-     [!INCLUDE[esql](../../../../../includes/esql-md.md)]dotazy přijímají parametry všude, kde jsou povoleny literály. Měli byste použít parametrizované dotazy namísto vložení literálů z externího agenta přímo do dotazu. Měli byste taky zvážit použití [metod Tvůrce dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) k bezpečnému vytváření Entity SQL.  
+     [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijímají parametry všude, kde jsou povoleny literály. Měli byste použít parametrizované dotazy namísto vložení literálů z externího agenta přímo do dotazu. Měli byste taky zvážit použití [metod Tvůrce dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) k bezpečnému vytváření Entity SQL.  
   
 - Útoky prostřednictvím injektáže LINQ to Entities:  
   
-     I když je v LINQ to Entities možné kompozice dotazů, provádí se prostřednictvím rozhraní API objektového modelu. Na rozdíl [!INCLUDE[esql](../../../../../includes/esql-md.md)] od dotazů se LINQ to Entities dotazy neskládají pomocí manipulace s řetězci nebo zřetězení a nejsou náchylné k tradičním útokům prostřednictvím injektáže SQL.  
+     I když je v LINQ to Entities možné kompozice dotazů, provádí se prostřednictvím rozhraní API objektového modelu. Na rozdíl od [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazů se LINQ to Entities dotazy neskládají pomocí manipulace s řetězci nebo zřetězení a nejsou náchylné k tradičním útokům prostřednictvím injektáže SQL.  
   
 #### <a name="prevent-very-large-result-sets"></a>Prevence velkých sad výsledků.  
  Velmi velká sada výsledků by mohla způsobit vypnutí klienta, pokud klient provádí operace, které spotřebovávají prostředky úměrné velikosti sady výsledků dotazu. Neočekávané velké sady výsledků můžou nastat za následujících podmínek:  
@@ -111,47 +111,47 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
   
 - V dotazech, které vytvářejí kartézském spojení na serveru.  
   
-- Ve vnořených [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazech.  
+- Ve vnořených [!INCLUDE[esql](../../../../../includes/esql-md.md)]ch dotazech.  
   
- Při přijímání uživatelského vstupu je nutné zajistit, aby vstup nemohlo způsobit, že se sady výsledků budou větší než to, co systém dokáže zpracovat. Můžete také použít <xref:System.Linq.Queryable.Take%2A> metodu v LINQ to Entities nebo operátor [limit](./language-reference/limit-entity-sql.md) v [!INCLUDE[esql](../../../../../includes/esql-md.md)] pro omezení velikosti sady výsledků dotazu.  
+ Při přijímání uživatelského vstupu je nutné zajistit, aby vstup nemohlo způsobit, že se sady výsledků budou větší než to, co systém dokáže zpracovat. Můžete také použít metodu <xref:System.Linq.Queryable.Take%2A> v LINQ to Entities nebo operátor [limit](./language-reference/limit-entity-sql.md) v [!INCLUDE[esql](../../../../../includes/esql-md.md)] pro omezení velikosti sady výsledků dotazu.  
   
 #### <a name="avoid-returning-iqueryable-results-when-exposing-methods-to-potentially-untrusted-callers"></a>Vyhněte se vrácení výsledků IQueryable při vystavení metod potenciálním nedůvěryhodným volajícím.  
- Vyhněte <xref:System.Linq.IQueryable%601> se vrácení typů z metod, které jsou vystaveny potenciálním nedůvěryhodným volajícím z následujících důvodů:  
+ Vyhněte se vrácení <xref:System.Linq.IQueryable%601> typů z metod, které jsou vystaveny potenciálně nedůvěryhodným volajícím z následujících důvodů:  
   
-- Příjemce dotazu, který zveřejňuje <xref:System.Linq.IQueryable%601> typ, může volat metody pro výsledek, který zveřejňuje zabezpečená data nebo zvětší velikost sady výsledků dotazu. Zvažte například následující signatura metody:  
+- Příjemce dotazu, který zveřejňuje typ <xref:System.Linq.IQueryable%601>, může volat metody pro výsledek, který zveřejňuje zabezpečená data nebo zvětší velikost sady výsledků dotazu. Zvažte například následující signatura metody:  
   
-    ```  
+    ```csharp  
     public IQueryable<Customer> GetCustomer(int customerId)  
     ```  
   
-     Příjemce tohoto dotazu může zavolat `.Include("Orders")` na vráceno `IQueryable<Customer>` a načíst data, která dotaz nechtěl vystavit. To lze vyhnout změnou návratového typu metody na <xref:System.Collections.Generic.IEnumerable%601> a voláním metody ( `.ToList()`například), která materializuje výsledky.  
+    Příjemce tohoto dotazu může volat `.Include("Orders")` u vrácených `IQueryable<Customer>` a načíst data, která dotaz nechtěl vystavit. To lze vyhnout změnou návratového typu metody pro <xref:System.Collections.Generic.IEnumerable%601> a voláním metody (například `.ToList()`), která materializuje výsledky.  
   
-- Vzhledem <xref:System.Linq.IQueryable%601> k tomu, že dotazy jsou spouštěny při iteraci výsledků, příjemce dotazu, který <xref:System.Linq.IQueryable%601> zveřejňuje typ, může zachytit výjimky, které jsou vyvolány. Výjimky mohou obsahovat informace, které nejsou určeny pro příjemce.  
+- Vzhledem k tomu, že <xref:System.Linq.IQueryable%601> dotazy jsou spouštěny při iteraci výsledků, příjemce dotazu, který zveřejňuje typ <xref:System.Linq.IQueryable%601>, může zachytit výjimky, které jsou vyvolány. Výjimky mohou obsahovat informace, které nejsou určeny pro příjemce.  
   
 ## <a name="security-considerations-for-entities"></a>Požadavky na zabezpečení pro entity  
  Při generování a práci s typy entit platí následující požadavky na zabezpečení.  
   
 #### <a name="do-not-share-an-objectcontext-across-application-domains"></a>Nesdílejte ObjectContext napříč aplikačními doménami.  
- <xref:System.Data.Objects.ObjectContext> Sdílení s více než jednou aplikační doménou může vystavovat informace v připojovacím řetězci. Místo toho byste měli přenést Serializované objekty nebo grafy objektů do druhé domény aplikace a pak tyto objekty připojit k objektu <xref:System.Data.Objects.ObjectContext> v dané doméně aplikace. Další informace naleznete v tématu [serializace objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
+ Sdílení <xref:System.Data.Objects.ObjectContext> s více než jednou aplikační doménou může vystavovat informace v připojovacím řetězci. Místo toho byste měli přenést Serializované objekty nebo grafy objektů do druhé domény aplikace a pak tyto objekty připojit k <xref:System.Data.Objects.ObjectContext> v dané doméně aplikace. Další informace naleznete v tématu [serializace objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
 #### <a name="prevent-type-safety-violations"></a>Zabraňte narušení bezpečnosti typů.  
  V případě porušení zabezpečení typu Entity Framework nemůže zaručit integritu dat v objektech. Pokud povolíte, aby nedůvěryhodné aplikace běžely s plně důvěryhodným zabezpečením přístupu ke kódu, mohlo by dojít k narušení bezpečnosti typů.  
   
 #### <a name="handle-exceptions"></a>Zpracování výjimek.  
- Přístupové metody a vlastnosti <xref:System.Data.Objects.ObjectContext> v rámci bloku try-catch. Zachycování výjimek zabraňuje neošetřeným výjimkám při vystavení záznamů v <xref:System.Data.Objects.ObjectStateManager> modelu nebo informacích o modelu (například názvy tabulek) uživatelům vaší aplikace.  
+ Přístup k metodám a vlastnostem <xref:System.Data.Objects.ObjectContext> v rámci bloku try-catch. Zachycování výjimek zabraňuje neošetřeným výjimkám při vystavení záznamů v <xref:System.Data.Objects.ObjectStateManager> nebo informace o modelu (například názvy tabulek) uživatelům vaší aplikace.  
   
 ## <a name="security-considerations-for-aspnet-applications"></a>Požadavky na zabezpečení pro aplikace ASP.NET  
 
 Při práci s cestami v aplikacích ASP.NET byste měli vzít v úvahu následující:  
   
 #### <a name="verify-whether-your-host-performs-path-checks"></a>Ověřte, zda hostitel provádí kontroly cest.  
- Pokud je použit náhradní řetězec (uzavřenývsymbolechkanálu),ADO.NETověří,zdajepřeloženácestapodporována.`|DataDirectory|` Například znak ".." není povolen na pozadí `DataDirectory`. Tuto stejnou kontrolu pro vyřešení kořenového operátoru webové aplikace`~`() provádí proces hostující ASP.NET. Tato kontrolu provede služba IIS. hostitelé jiné než IIS ale nemusí ověřit, jestli je přeložená cesta podporovaná. Měli byste znát chování hostitele, na kterém nasazujete Entity Framework aplikaci.  
+ Pokud je použit náhradní řetězec `|DataDirectory|` (uzavřeno v symbolech kanálu), ADO.NET ověří, zda je přeložená cesta podporována. Například ".." není povoleno za `DataDirectory`. Tuto stejnou kontrolu pro vyřešení kořenového operátoru webové aplikace (`~`) provádí proces hostující ASP.NET. Tato kontrolu provede služba IIS. hostitelé jiné než IIS ale nemusí ověřit, jestli je přeložená cesta podporovaná. Měli byste znát chování hostitele, na kterém nasazujete Entity Framework aplikaci.  
   
 #### <a name="do-not-make-assumptions-about-resolved-path-names"></a>Nevytvářejte předpoklady o vyřešených názvech cest.  
- I když hodnoty, na které by kořenový operátor`~`() `DataDirectory` a náhradní řetězec by měly zůstat během modulu runtime aplikace konstantní, Entity Framework neomezuje hostitele na úpravu těchto hodnot.  
+ I když hodnoty, na které kořenový operátor (`~`) a `DataDirectory` náhradní řetězec by měly zůstat během modulu runtime aplikace konstantní, Entity Framework neomezuje hostitele na úpravu těchto hodnot.  
   
 #### <a name="verify-the-path-length-before-deployment"></a>Před nasazením ověřte délku cesty.  
- Před nasazením Entity Framework aplikace byste měli zajistit, aby hodnoty kořenového operátoru (~) a `DataDirectory` náhradní řetězec nepřekročily omezení délky cesty v operačním systému. Poskytovatelé dat ADO.NET nezajistí, že délka cesty spadá do platných omezení.  
+ Před nasazením Entity Framework aplikace byste měli zajistit, aby hodnoty kořenového operátoru (~) a `DataDirectory` náhradního řetězce nepřekročily omezení délky cesty v operačním systému. Poskytovatelé dat ADO.NET nezajistí, že délka cesty spadá do platných omezení.  
   
 ## <a name="security-considerations-for-adonet-metadata"></a>Požadavky na zabezpečení pro metadata ADO.NET  
  Následující požadavky na zabezpečení platí při generování a práci s modelem a mapováním souborů.  

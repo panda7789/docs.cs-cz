@@ -2,12 +2,12 @@
 title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: 94b6c3c97e8255db2dc4d72bae6c6c12905d9710
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b6c1b71effba17d33c035d0f1df386bf56d405b5
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854288"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039886"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 
@@ -29,7 +29,7 @@ DbModificationCommandTree je reprezentace objektového modelu operace DML změny
 
 DbModificationCommandTree a jeho implementace, které jsou vytvářeny Entity Framework vždy představují operaci s jedním řádkem. Tato část popisuje tyto typy s omezeními v .NET Framework verze 3,5.
 
-![Diagram](./media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
+![Znázorňuje](./media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
 
 DbModificationCommandTree má cílovou vlastnost, která představuje cílovou sadu pro operaci úpravy. Vlastnost Expression cíle definující vstupní sadu je vždy DbScanExpression.  DbScanExpression může představovat tabulku nebo zobrazení nebo sadu dat, která je definována s dotazem, pokud vlastnost metadat "definující dotaz" cílového objektu nemá hodnotu null.
 
@@ -62,9 +62,7 @@ Návratová hodnota určuje projekci výsledků, které se mají vrátit na zák
 
 SetClauses určuje seznam klauzulí INSERT nebo Update set, které definují operaci INSERT nebo Update.
 
-```
-The elements of the list are specified as type DbModificationClause, which specifies a single clause in an insert or update modification operation. DbSetClause inherits from DbModificationClause and specifies the clause in a modification operation that sets the value of a property. Beginning in version 3.5 of the .NET Framework, all elements in SetClauses are of type SetClause.
-```
+Prvky seznamu jsou zadány jako DbModificationClause typu, který určuje jednu klauzuli v operaci vložení nebo aktualizace změny. DbSetClause dědí z DbModificationClause a určuje klauzuli v operaci úpravy, která nastaví hodnotu vlastnosti. Počínaje verzí 3,5 .NET Framework jsou všechny prvky v SetClauses typu SetClause.
 
 Vlastnost určuje vlastnost, která má být aktualizována. Je vždy DbPropertyExpression prostřednictvím DbVariableReferenceExpression, který představuje odkaz na cíl odpovídajícího DbModificationCommandTree.
 
@@ -84,7 +82,7 @@ Predikát určuje predikát použitý k určení, které členy cílové kolekce
 
 - DbAndExpression
 
-- DbNotExpression
+- Třída DbNotExpression
 
 - DbOrExpression
 
@@ -100,7 +98,7 @@ ExpressionTranslator slouží jako společný odlehčený překladatel pro všec
 
 Následující informace jsou popsány v tématu návštěvy specifických typů výrazů (uzly s triviálními překlady jsou vynechány).
 
-### <a name="dbcomparisonexpression"></a>DbComparisonExpression
+### <a name="dbcomparisonexpression"></a>Objekt DbComparisonExpression
 
 Když je ExpressionTranslator vytvořen pomocí preserveMemberValues = true a pokud je konstanta pravého DbConstantExpression (namísto DbNullExpression), přidružuje levý operand (DbPropertyExpressions) k tomuto DbConstantExpression. Který se používá v případě, že je nutné vygenerovat návratový příkaz SELECT pro identifikaci ovlivněného řádku.
 
@@ -116,7 +114,7 @@ Vzhledem k tomu, že instance DbPropertyExpression vždy představuje vstupní t
 
 V případě daného DbInsertCommandTree ve zprostředkovateli ukázky se za generovaným příkazem INSERT používá jedna z následujících dvou šablon pro vložení.
 
-První šablona obsahuje příkaz pro vložení hodnot v seznamu SetClauses a příkaz SELECT, který vrátí vlastnosti zadané ve vlastnosti vracející vloženého řádku, pokud vlastnost vracející nebyla null. Element predikátu "\@ @ROWCOUNT > 0" má hodnotu true, pokud byl řádek vložen. Element predikátu "SCOPE_IDENTITY členi = klíč hodnota &#124; SCOPE_IDENTITY ()" převezme tvar "členi = ()" pouze v případě, že je klíčovým členem klíč generovaný úložištěm, protože SCOPE_IDENTITY () vrátí hodnotu poslední identity vloženou do identity ( sloupec generovaný úložištěm.
+První šablona obsahuje příkaz pro vložení hodnot v seznamu SetClauses a příkaz SELECT, který vrátí vlastnosti zadané ve vlastnosti vracející vloženého řádku, pokud vlastnost vracející nebyla null. Element predikátu "\@@ROWCOUNT > 0" má hodnotu true, pokud byl řádek vložen. Element predikátu "SCOPE_IDENTITY členi = klíč hodnota &#124; SCOPE_IDENTITY ()" převezme tvar "členi = ()" pouze v případě, že je klíčovým členem klíč generovaný úložištěm, protože SCOPE_IDENTITY () vrátí hodnotu poslední identity vloženou do identity ( sloupec generovaný úložištěm.
 
 ```sql
 -- first insert Template
@@ -160,7 +158,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Tento kód vytvoří následující strom příkazů, který je předán poskytovateli:
 
-```
+```output
 DbInsertCommandTree
 |_Parameters
 |_Target : 'target'
@@ -212,7 +210,7 @@ WHERE <predicate>
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]
 ```
 
-Klauzule SET má nafalešnou klauzuli set (@i = 0), pouze pokud nejsou zadány žádné klauzule SET. K tomu je potřeba zajistit, aby se přepočítaly všechny počítané sloupce v úložišti.
+Klauzule SET má nafalešnou klauzuli set ("@i = 0"), pouze pokud nejsou zadány žádné klauzule SET. K tomu je potřeba zajistit, aby se přepočítaly všechny počítané sloupce v úložišti.
 
 Pouze v případě, že návratová vlastnost nemá hodnotu null, je vygenerován příkaz SELECT, který vrátí vlastnosti zadané ve vlastnosti vráceno.
 
@@ -230,7 +228,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Tento uživatelský kód vytvoří následující strom příkazů, který se předává poskytovateli:
 
-```
+```output
 DbUpdateCommandTree
 |_Parameters
 |_Target : 'target'
@@ -281,7 +279,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Tento uživatelský kód vytvoří následující strom příkazů, který je předán poskytovateli.
 
-```
+```output
 DbDeleteCommandTree
 |_Parameters
 |_Target : 'target'

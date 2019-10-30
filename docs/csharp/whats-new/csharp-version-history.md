@@ -3,14 +3,14 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: bce61d7a1838753f6cc2397440208e0c02b8194a
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 11463f7d47c5fb5b71bd16d73039b22e4a6ca43e
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002691"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039642"
 ---
-# <a name="the-history-of-c"></a>Historie jazyka C @ no__t-0
+# <a name="the-history-of-c"></a>Historie\# jazyka C
 
 Tento článek poskytuje historii všech hlavních vydání C# jazyka. Tým C# pokračuje v inovacích a přidává nové funkce. Podrobný stav funkcí jazyka, včetně funkcí, které se považují za nadcházející verze, najdete [v úložišti dotnet/Roslyn](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) na GitHubu.
 
@@ -48,7 +48,7 @@ K dispozici jsou C# hlavní funkce 1,0:
 
 ## <a name="c-version-12"></a>C#verze 1,2
 
-C#verze 1,2 byla dodávána se sadou Visual Studio .NET 2003. Obsahuje několik malých vylepšení jazyka. Nejvýraznější je, že od této verze kód vygenerovaný ve smyčce `foreach` s názvem <xref:System.IDisposable.Dispose%2A> v <xref:System.Collections.IEnumerator>, pokud <xref:System.Collections.IEnumerator> implementoval <xref:System.IDisposable>.
+C#verze 1,2 byla dodávána se sadou Visual Studio .NET 2003. Obsahuje několik malých vylepšení jazyka. Nejvýraznější je, že počínaje touto verzí kód vygenerovaný ve `foreach` smyčce se říká <xref:System.IDisposable.Dispose%2A> na <xref:System.Collections.IEnumerator>, pokud <xref:System.Collections.IEnumerator> implementoval <xref:System.IDisposable>.
 
 ## <a name="c-version-20"></a>C#verze 2,0
 
@@ -132,7 +132,7 @@ Ale `async` a `await` jsou reálné hvězdičky této verze. Po vyřazení těch
 
 ## <a name="c-version-60"></a>C#verze 6,0
 
-S verzemi 3,0 a 5,0 C# byly přidány hlavní nové funkce do objektově orientovaného jazyka. S verzí 6,0, která byla vydaná s Visual Studio 2013, by nedošlo k tomu, že by se prováděla dominantní funkce Killer a C# místo toho se uvolnilo mnoho menších funkcí, které přidávají větší produktivitu Tady jsou některé z nich:
+S verzemi 3,0 a 5,0 C# byly přidány hlavní nové funkce do objektově orientovaného jazyka. S verzí 6,0, která byla vydaná se sadou Visual Studio 2015, by nedošlo k tomu, že by se prováděla dominantní funkce Killer C# a místo toho se uvolnilo mnoho menších funkcí, které přidávají lepší produktivitu Tady jsou některé z nich:
 
 - [Statické importy](./csharp-6.md#using-static)
 - [Filtry výjimek](./csharp-6.md#exception-filters)

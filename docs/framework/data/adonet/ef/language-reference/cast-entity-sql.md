@@ -2,28 +2,28 @@
 title: Přetypování (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: 385f9a8057ea6aa3637f7fae6fec79154ac625ba
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c16270babe4daa8e703b24b27211c6fd6f53677d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251235"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039920"
 ---
 # <a name="cast-entity-sql"></a>Přetypování (Entity SQL)
 Převede výraz jednoho datového typu na jiný.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 CAST ( expression AS data_type )  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný výraz, který lze převést `data_type`na.  
+ Libovolný platný výraz, který lze převést na `data_type`.  
   
  `data_type`  
- Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. `data_type` Použitá velikost závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](csdl-specification.md). Pokud je spuštěn dotaz s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
+ Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. Použitá `data_type` závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](csdl-specification.md). Pokud je dotaz spuštěn s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrací stejnou hodnotu jako `data_type`.  
@@ -31,7 +31,7 @@ CAST ( expression AS data_type )
 ## <a name="remarks"></a>Poznámky  
  Výraz přetypování má podobnou sémantiku jako výraz převodu Transact-SQL. Výraz přetypování se používá k převodu hodnoty jednoho typu na hodnotu jiného typu.  
   
-```  
+```csharp
 CAST( e as T )  
 ```  
   
@@ -53,9 +53,9 @@ CAST( e as T )
 ## <a name="example"></a>Příklad  
  Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor přetypování k přetypování výrazu jednoho datového typu na jiný. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecutePrimitiveTypeQuery`:  
   
  [!code-csharp[DP EntityServices Concepts 2#CAST](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#cast)]  
   

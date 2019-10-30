@@ -2,13 +2,14 @@
 title: Interpretace výrazů
 description: Naučte se psát kód pro kontrolu struktury stromu výrazů.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: c9d80ca234e298df2f2e7ce48fbf92cb817fc8a7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 34434a633d866b82da3da713aaecc218c7d35124
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925677"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036899"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů
 
@@ -50,9 +51,9 @@ Pojďme začít s ukázkou sčítání z úvodu do této části.
 Expression<Func<int>> sum = () => 1 + 2;
 ```
 
-> Nepoužívám `var` deklaraci tohoto stromu výrazů, protože není možné, protože pravá strana přiřazení je implicitně typu. Pro pochopení tohoto příkladu si [Přečtěte toto](implicitly-typed-lambda-expressions.md)téma.
+> Nepoužívám `var` k deklaraci tohoto stromu výrazu, protože není možné, protože pravá strana přiřazení je implicitně zadaná. Pro pochopení tohoto příkladu si [Přečtěte toto](implicitly-typed-lambda-expressions.md)téma.
 
-Kořenový uzel je `LambdaExpression`. Aby bylo možné získat zajímavý kód na pravé straně `=>` operátoru, je nutné najít jeden z podřízených objektů. `LambdaExpression` Provedeme to se všemi výrazy v této části. Nadřazený uzel nám pomohly najít návratový typ `LambdaExpression`.
+Kořenový uzel je `LambdaExpression`. Aby bylo možné získat zajímavý kód na pravé straně operátoru `=>`, je nutné najít jeden z podřízených `LambdaExpression`. Provedeme to se všemi výrazy v této části. Nadřazený uzel nám pomohly najít návratový typ `LambdaExpression`.
 
 Abychom prozkoumali jednotlivé uzly v tomto výrazu, budeme muset rekurzivně navštívit několik uzlů. Tady je jednoduchá první implementace:
 
@@ -214,7 +215,7 @@ public class ConstantVisitor : Visitor
 }
 ```
 
-Tento algoritmus je základem algoritmu, který může libovolně navštívit libovolný `LambdaExpression`objekt. Existuje spousta děr, což znamená, že kód, který jsem vytvořil, vyhledává jenom velmi malý vzorek možných sad uzlů stromu výrazů, ke kterým může dojít. Stále ale můžete zjistit, jak trochu z toho vyprodukuje. (Výchozí případ v `Visitor.CreateFromExpression` metodě vytiskne zprávu do chybové konzoly při zjištění nového typu uzlu. Tímto způsobem víte, že chcete přidat nový typ výrazu.)
+Tento algoritmus je základem algoritmu, který může navštívit libovolný `LambdaExpression`. Existuje spousta děr, což znamená, že kód, který jsem vytvořil, vyhledává jenom velmi malý vzorek možných sad uzlů stromu výrazů, ke kterým může dojít. Stále ale můžete zjistit, jak trochu z toho vyprodukuje. (Výchozí případ v metodě `Visitor.CreateFromExpression` vytiskne zprávu do chybové konzoly při zjištění nového typu uzlu. Tímto způsobem víte, že chcete přidat nový typ výrazu.)
 
 Po spuštění tohoto návštěvníka na výše uvedeném výrazu sčítání získáte následující výstup:
 
@@ -247,7 +248,7 @@ Pojďme si vyzkoušet složitější příklad, stále ale omezit typy uzlů jen
 Expression<Func<int>> sum = () => 1 + 2 + 3 + 4;
 ```
 
-Před spuštěním tohoto algoritmu pro návštěvníky Vyzkoušejte myšlenkový postup, který bude fungovat jako výstup. Uvědomte si `+` , že operátor je *binární operátor*: musí mít dvě podřízené prvky, reprezentující levý a pravý operand. Existuje několik možných způsobů, jak vytvořit stromovou strukturu, která může být správná:
+Před spuštěním tohoto algoritmu pro návštěvníky Vyzkoušejte myšlenkový postup, který bude fungovat jako výstup. Mějte na paměti, že operátor `+` je *binární operátor*: musí mít dvě podřízené prvky, které představují levý a pravý operand. Existuje několik možných způsobů, jak vytvořit stromovou strukturu, která může být správná:
 
 ```csharp
 Expression<Func<int>> sum1 = () => 1 + (2 + (3 + 4));
@@ -301,7 +302,7 @@ The expression body is:
                 The value of the constant value is 4
 ```
 
-Můžete také spustit libovolný z dalších ukázek prostřednictvím kódu návštěvníka a zjistit, který strom představuje. Zde je příklad `sum3` výše uvedeného výrazu (s dalším parametrem, který zabrání kompilátoru v výpočtu konstanty):
+Můžete také spustit libovolný z dalších ukázek prostřednictvím kódu návštěvníka a zjistit, který strom představuje. Zde je příklad výrazu `sum3` výše (s dalším parametrem, který zabrání kompilátoru v výpočtu konstanty):
 
 ```csharp
 Expression<Func<int, int, int>> sum3 = (a, b) => (1 + a) + (3 + b);
@@ -344,7 +345,7 @@ Všimněte si, že kulaté závorky nejsou součástí výstupu. Ve stromové st
 
 ## <a name="extending-from-this-sample"></a>Rozšíření z této ukázky
 
-Ukázka se zabývá pouze základní stromy výrazů. Kód, který jste viděli v této části, zpracovává pouze konstantní celá čísla a binární `+` operátor. Jako poslední ukázka Pojďme aktualizovat návštěvníka na zpracování složitějšího výrazu. Pojďme na to, aby to fungovalo:
+Ukázka se zabývá pouze základní stromy výrazů. Kód, který jste viděli v této části, zpracovává pouze konstantní celá čísla a binární operátor `+`. Jako poslední ukázka Pojďme aktualizovat návštěvníka na zpracování složitějšího výrazu. Pojďme na to, aby to fungovalo:
 
 ```csharp
 Expression<Func<int, int>> factorial = (n) =>
@@ -363,7 +364,7 @@ V tomto výrazu se setkáte s uzly všech těchto typů:
 3. Podmíněný (? vyjádření
 4. Výraz volání metody (volání `Range()` a `Aggregate()`)
 
-Jedním ze způsobů, jak změnit algoritmus návštěvníka, je zachovat jeho spuštění a napsat typ uzlu při každém dosažení `default` klauzule. Po několika iteracích se vám podíváte na každý z možných uzlů. Pak budete mít všechno, co potřebujete. Výsledek by byl podobný tomuto:
+Jedním ze způsobů, jak změnit algoritmus návštěvníka, je zachovat jeho spuštění a napsat typ uzlu při každém dosažení klauzule `default`. Po několika iteracích se vám podíváte na každý z možných uzlů. Pak budete mít všechno, co potřebujete. Výsledek by byl podobný tomuto:
 
 ```csharp
 public static Visitor CreateFromExpression(Expression node)

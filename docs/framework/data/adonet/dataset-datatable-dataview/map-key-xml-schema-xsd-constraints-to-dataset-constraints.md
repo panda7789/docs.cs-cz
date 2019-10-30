@@ -2,12 +2,12 @@
 title: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: 8543f5b34ee2a80ff0154897cf7678b244a8d357
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 670c07dd83e880b79c1ccf0c5af00d253b83f827
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786102"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040068"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí elementu **Key** . Element nebo atribut, u kterého je zadáno omezení klíče, musí mít jedinečné hodnoty v libovolné instanci schématu a nesmí mít hodnoty null.  
@@ -18,10 +18,10 @@ Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí el
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Pokud je tento atribut zadán, použije se jako název omezení jeho hodnota. V opačném případě atribut **Name** poskytuje hodnotu názvu omezení.|  
-|**msdata:PrimaryKey**|Pokud `PrimaryKey="true"` je k dispozici, vlastnost omezení **IsPrimaryKey** je nastavena na **hodnotu true**, takže ji vytvoří primární klíč. Vlastnost **AllowDBNull** sloupce je nastavena na **hodnotu false**, protože primární klíče nemohou mít hodnoty null.|  
+|**msdata: Constraint**|Pokud je tento atribut zadán, použije se jako název omezení jeho hodnota. V opačném případě atribut **Name** poskytuje hodnotu názvu omezení.|  
+|**msdata: PrimaryKey**|Pokud je k dispozici `PrimaryKey="true"`, vlastnost omezení **IsPrimaryKey** je nastavena na **hodnotu true**, čímž se nastaví jako primární klíč. Vlastnost **AllowDBNull** sloupce je nastavena na **hodnotu false**, protože primární klíče nemohou mít hodnoty null.|  
   
- Při převádění schématu, ve kterém je zadáno omezení klíče, proces mapování vytvoří v tabulce jedinečné omezení s vlastností **AllowDBNull** Column nastavenou na **hodnotu false** pro každý sloupec v omezení. Vlastnost **IsPrimaryKey** jedinečného omezení je také nastavena na **hodnotu false** , pokud jste neurčili `msdata:PrimaryKey="true"` u elementu **Key** . Toto je stejné jako jedinečné omezení ve schématu, ve kterém `PrimaryKey="true"`.  
+ Při převádění schématu, ve kterém je zadáno omezení klíče, proces mapování vytvoří v tabulce jedinečné omezení s vlastností **AllowDBNull** Column nastavenou na **hodnotu false** pro každý sloupec v omezení. Vlastnost **IsPrimaryKey** jedinečného omezení je také nastavena na **hodnotu false** , pokud jste nezadali `msdata:PrimaryKey="true"` u elementu **Key** . Toto je stejné jako jedinečné omezení ve schématu, ve kterém `PrimaryKey="true"`.  
   
  V následujícím příkladu schématu **klíč** elementu určuje omezení klíče u elementu **CustomerID** .  
   
@@ -56,13 +56,13 @@ Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí el
   
  **Klíčový** prvek určuje, že hodnoty podřízeného prvku **KódZákazníka** elementu **Customers** musí mít jedinečné hodnoty a nesmí mít hodnoty null. V rámci překladu schématu XML Schema Definition Language (XSD) vytvoří proces mapování následující tabulku:  
   
-```  
+```text  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- Mapování schématu XML také vytvoří **UniqueConstraint** ve sloupci **KódZákazníka** , jak je znázorněno v následujícím <xref:System.Data.DataSet>příkladu. (Pro jednoduchost se zobrazí pouze příslušné vlastnosti.)  
+ Mapování schématu XML také vytvoří **UniqueConstraint** ve sloupci **KódZákazníka** , jak je znázorněno na následujícím <xref:System.Data.DataSet>. (Pro jednoduchost se zobrazí pouze příslušné vlastnosti.)  
   
-```  
+```text  
       DataSetName: MyDataSet  
 TableName: customers  
   ColumnName: CustomerID  
@@ -74,7 +74,7 @@ TableName: customers
       IsPrimaryKey: True  
 ```  
   
- V **datové sadě** , která je generována, vlastnost **IsPrimaryKey** třídy **UniqueConstraint** je nastavena na **hodnotu true** , protože schéma `msdata:PrimaryKey="true"` určuje element **Key** .  
+ V **datové sadě** , která je generována, vlastnost **IsPrimaryKey** třídy **UniqueConstraint** je nastavena na **hodnotu true** , protože schéma určuje `msdata:PrimaryKey="true"` v elementu **Key** .  
   
  Hodnota vlastnosti **Constraint** objektu **UniqueConstraint** v **datové sadě** je hodnota atributu **msdata: Constraint** uvedená v elementu **Key** ve schématu.  
   

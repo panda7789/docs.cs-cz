@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 130eb4be66d13b43e5605ef98a647fa9f4223014
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 04c8731867e32ce1000a511c9ab36db554664a97
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116109"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038954"
 ---
 # <a name="operator-overloading-c-reference"></a>Přetížení operátoru (C# reference)
 
-Uživatelsky definovaný typ může přetížit předdefinovaný C# operátor. To znamená, že typ může poskytnout vlastní implementaci operace, když jeden nebo oba operandy jsou tohoto typu. Oddíl [přetížené operátory](#overloadable-operators) ukazuje, které C# operátory mohou být přetíženy.
+Uživatelsky definovaný typ může přetížit předdefinovaný C# operátor. To znamená, že typ může poskytnout vlastní implementaci operace v případě, že jeden nebo oba operandy jsou tohoto typu. Oddíl [přetížené operátory](#overloadable-operators) ukazuje, které C# operátory mohou být přetíženy.
 
-`operator` Použijte klíčové slovo k deklarování operátoru. Deklarace operátoru musí splňovat následující pravidla:
+K deklarování operátoru použijte klíčové slovo `operator`. Deklarace operátoru musí splňovat následující pravidla:
 
-- Zahrnuje jak `public` `static` a, tak i modifikátor.
-- Unární operátor přijímá jeden parametr. Binární operátor používá dva parametry. V každém případě musí mít alespoň jeden parametr typ `T` , nebo `T?` kde `T` je typ, který obsahuje deklaraci operátoru.
+- Zahrnuje jak `public`, tak modifikátor `static`.
+- Unární operátor má jeden vstupní parametr. Binární operátor má dva vstupní parametry. V každém případě musí mít alespoň jeden parametr typ `T` nebo `T?`, kde `T` je typ, který obsahuje deklaraci operátoru.
 
 Následující příklad definuje zjednodušenou strukturu, která představuje racionální číslo. Struktura přetěžuje některé [aritmetické operátory](arithmetic-operators.md):
 
 [!code-csharp[fraction example](~/samples/csharp/language-reference/operators/OperatorOverloading.cs)]
 
-Předchozí příklad můžete zvětšit definováním implicitního převodu z `int` na. `Fraction` Přetížené operátory pak podporují argumenty těchto dvou typů. To znamená, že by bylo možné přidat celé číslo do zlomku a získat zlomek jako výsledek.
+Předchozí příklad můžete zvětšit [definováním implicitního převodu](user-defined-conversion-operators.md) z `int` na `Fraction`. Přetížené operátory pak podporují argumenty těchto dvou typů. To znamená, že by bylo možné přidat celé číslo do zlomku a získat zlomek jako výsledek.
 
-`operator` Klíčové slovo můžete také použít k definování vlastního převodu typu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
+Pomocí klíčového slova `operator` také můžete definovat vlastní převod typu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
 
 ## <a name="overloadable-operators"></a>Přetížené operátory
 
@@ -38,19 +38,19 @@ Následující tabulka poskytuje informace o přetížení C# operátorů:
 | Operátory | Přetížení |
 | --------- | --------------- |
 |[+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [! x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [++](arithmetic-operators.md#increment-operator-), [--](arithmetic-operators.md#decrement-operator---), [true](true-false-operators.md), [false](true-false-operators.md)|Tyto unární operátory mohou být přetíženy.|
-|[x + y](addition-operator.md), [x-y](subtraction-operator.md), [x \* y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-), [x & y](boolean-logical-operators.md#logical-and-operator-), [x &#124; y](boolean-logical-operators.md#logical-or-operator-), [x ^ y](boolean-logical-operators.md#logical-exclusive-or-operator-), [x \< \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x > > y](bitwise-and-shift-operators.md#right-shift-operator-), [x = = y](equality-operators.md#equality-operator-), [x! = y](equality-operators.md#inequality-operator-), [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-)|Tyto binární operátory mohou být přetíženy. Některé operátory musí být v páru přetížené. Další informace najdete v poznámce, které následují po této tabulce.|
-|[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-), [x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-)|Podmíněné logické operátory nelze přečítat. Nicméně pokud typ s přetíženou `&` [ `true` a `false` operátory](true-false-operators.md) také přetěžuje operátor OR <code>&#124;</code> určitým způsobem, `&&` může být operátor OR <code>&#124;&#124;</code> (v uvedeném pořadí) vyhodnocen pro operandy daného typu. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).|
+|[x + y](addition-operator.md), [x-y](subtraction-operator.md), [x \* y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-), [x & y](boolean-logical-operators.md#logical-and-operator-), [x &#124; y](boolean-logical-operators.md#logical-or-operator-), [x ^ y](boolean-logical-operators.md#logical-exclusive-or-operator-), [x \<\< y](bitwise-and-shift-operators.md#left-shift-operator-), [x > > y](bitwise-and-shift-operators.md#right-shift-operator-), [x = = y](equality-operators.md#equality-operator-), [x! = y](equality-operators.md#inequality-operator-), [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-)|Tyto binární operátory mohou být přetíženy. Některé operátory musí být v páru přetížené. Další informace najdete v poznámce, které následují po této tabulce.|
+|[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-), [x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-)|Podmíněné logické operátory nelze přečítat. Nicméně pokud typ s přetíženými [`true` a `false` operátory](true-false-operators.md) přetěžuje `&` nebo <code>&#124;</code> operátor určitým způsobem, lze pro operandy daného typu vyhodnotit operátor `&&` nebo <code>&#124;&#124;</code>. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).|
 |[a&#91;&#93;](member-access-operators.md#indexer-operator-)|Přístup k prvku není považován za přetížený operátor, ale můžete definovat [indexer](../../programming-guide/indexers/index.md).|
-|[(T)x](type-testing-and-cast.md#cast-operator-)|Operátor přetypování nemůže být přetížen, ale lze definovat nové operátory převodu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).|
-|[+=](arithmetic-operators.md#compound-assignment), [-=](arithmetic-operators.md#compound-assignment), [\*=](arithmetic-operators.md#compound-assignment), [/=](arithmetic-operators.md#compound-assignment), [%=](arithmetic-operators.md#compound-assignment), [&=](boolean-logical-operators.md#compound-assignment), [&#124;=](boolean-logical-operators.md#compound-assignment), [^=](boolean-logical-operators.md#compound-assignment), [\<\<=](bitwise-and-shift-operators.md#compound-assignment), [>>=](bitwise-and-shift-operators.md#compound-assignment)|Operátory složeného přiřazení nelze explicitně přečítat. Nicméně při přetížení binárního operátoru je odpovídající složený operátor přiřazení, pokud existuje, také implicitně přetížený. Například `+=` je vyhodnocen pomocí `+`, který může být přetížen.|
-|[^ x](member-access-operators.md#index-from-end-operator-), [x = y](assignment-operator.md), [x. y](member-access-operators.md#member-access-operator-), [c? t: f](conditional-operator.md), [x?? y](null-coalescing-operator.md), [x?? = y](null-coalescing-operator.md), [x... y](member-access-operators.md#range-operator-), [x-> y](pointer-related-operators.md#pointer-member-access-operator--), [=>](lambda-operator.md), [f (x)](member-access-operators.md#invocation-operator-), [jako](type-testing-and-cast.md#as-operator), [await](await.md), [zaškrtnuto](../keywords/checked.md), [nezaškrtnuto](../keywords/unchecked.md), [Default](default.md), [Delegate](delegate-operator.md), [is](type-testing-and-cast.md#is-operator), [nameof](nameof.md), [New](new-operator.md), [sizeof ](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Tyto operátory nemůžou být přetížené.|
+|[(T) x](type-testing-and-cast.md#cast-operator-)|Operátor přetypování nemůže být přetížen, ale lze definovat nové operátory převodu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).|
+|[+=](arithmetic-operators.md#compound-assignment), [-=](arithmetic-operators.md#compound-assignment), [\*=](arithmetic-operators.md#compound-assignment), [/=](arithmetic-operators.md#compound-assignment), [%=](arithmetic-operators.md#compound-assignment), [&=](boolean-logical-operators.md#compound-assignment), [ &#124;=](boolean-logical-operators.md#compound-assignment), [^=](boolean-logical-operators.md#compound-assignment), [\<](bitwise-and-shift-operators.md#compound-assignment)\<=, [@no__ t_22_](bitwise-and-shift-operators.md#compound-assignment)|Operátory složeného přiřazení nelze explicitně přečítat. Nicméně při přetížení binárního operátoru je odpovídající složený operátor přiřazení, pokud existuje, také implicitně přetížený. Například `+=` se vyhodnocuje pomocí `+`, která může být přetížena.|
+|[^ x](member-access-operators.md#index-from-end-operator-), [x = y](assignment-operator.md), [x. y](member-access-operators.md#member-access-operator-), [c? t: f](conditional-operator.md), [x?? y](null-coalescing-operator.md), [x?? = y](null-coalescing-operator.md), [x... y](member-access-operators.md#range-operator-), [x-> y](pointer-related-operators.md#pointer-member-access-operator--), [=>](lambda-operator.md), [f (x)](member-access-operators.md#invocation-operator-), [jako](type-testing-and-cast.md#as-operator), [await](await.md), [zaškrtnuto](../keywords/checked.md), [nezaškrtnuto](../keywords/unchecked.md), [Default](default.md), [Delegate](delegate-operator.md), [is](type-testing-and-cast.md#is-operator), [nameof](nameof.md), [New](new-operator.md), [ sizeof](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Tyto operátory nemůžou být přetížené.|
 
 > [!NOTE]
 > Operátory porovnání musí být přetíženy v páru. To znamená, že pokud je jeden operátor páru přetížený, druhý operátor musí být přetížený. Tyto páry jsou následující:
 >
-> - `==`operátory `!=` a
-> - `<`operátory `>` a
-> - `<=`operátory `>=` a
+> - operátory `==` a `!=`
+> - operátory `<` a `>`
+> - operátory `<=` a `>=`
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

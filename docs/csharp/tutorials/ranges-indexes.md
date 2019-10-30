@@ -2,13 +2,14 @@
 title: Prozkoumat rozsahy dat pomocí indexů a rozsahů
 description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí indexů a rozsahů, abyste prozkoumali řezy sekvenční sady dat.
 ms.date: 09/20/2019
+ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: 1be144560d2b20bafc66cd68de0735e6dc7f0124
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: bbf3f257db9079c4f69f25c9ea08e7711b5ea04b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699940"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039671"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
@@ -20,7 +21,7 @@ V tomto kurzu se naučíte:
 >
 > - Použijte syntaxi pro rozsahy v sekvenci.
 > - Pochopení rozhodnutí o návrhu pro začátek a konec každé sekvence.
-> - Seznamte se s scénáři pro typy <xref:System.Index> a <xref:System.Range>.
+> - Seznamte se s scénáři <xref:System.Index> a <xref:System.Range>ch typů.
 
 ## <a name="language-support-for-indices-and-ranges"></a>Podpora jazyků pro indexy a rozsahy
 
@@ -31,7 +32,7 @@ Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 - <xref:System.Range?displayProperty=nameWithType> představuje dílčí rozsah sekvence.
 - Operátor rozsahu `..`, který jako svůj operand Určuje začátek a konec rozsahu.
 
-Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. Index `0` je stejný jako `sequence[0]`. Index `^0` je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. U všech čísel `n` je index `^n` stejný jako `sequence[sequence.Length - n]`.
+Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence[sequence.Length - n]`.
 
 ```csharp
 string[] words = new string[]
@@ -55,11 +56,11 @@ Poslední slovo můžete načíst pomocí indexu `^1`. Pod inicializaci přidejt
 
 Rozsah Určuje *začátek* a *konec* rozsahu. Rozsahy jsou exkluzivní, což znamená, že *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah. 
 
-Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` až `words[3]`. Element `words[4]` není v rozsahu. Do stejné metody přidejte následující kód. Zkopírujte ho a vložte ho do dolní části okna interaktivní.
+Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu. Do stejné metody přidejte následující kód. Zkopírujte ho a vložte ho do dolní části okna interaktivní.
 
 [!code-csharp[Range](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Range)]
 
-Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index @no__t – 0 není zahrnutý. Přidejte také následující kód:
+Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index `words[^0]` není zahrnutý. Přidejte také následující kód:
 
 [!code-csharp[LastRange](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastRange)]
 
@@ -67,11 +68,11 @@ V následujících příkladech jsou vytvořeny rozsahy, které jsou otevřeny p
 
 [!code-csharp[PartialRange](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_PartialRanges)]
 
-Můžete také deklarovat rozsahy nebo indexy jako proměnné. Proměnná se pak dá použít uvnitř `[` a `]` znaků:
+Můžete také deklarovat rozsahy nebo indexy jako proměnné. Proměnná se pak dá použít uvnitř `[` a `]`ch znaků:
 
 [!code-csharp[IndexRangeTypes](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_RangeIndexTypes)]
 
-Následující příklad znázorňuje mnoho z důvodů pro tyto volby. Pokud chcete vyzkoušet různé kombinace, upravte `x`, `y` a `z`. Při experimentování použijte hodnoty, kde `x` je menší než `y` a `y` je menší než `z` pro platné kombinace. Do nové metody přidejte následující kód. Vyzkoušejte různé kombinace:
+Následující příklad znázorňuje mnoho z důvodů pro tyto volby. Pokud chcete vyzkoušet různé kombinace, upravte `x`, `y`a `z`. Při experimentování použijte hodnoty, kde je `x` menší než `y`a `y` je nižší než `z` pro platné kombinace. Do nové metody přidejte následující kód. Vyzkoušejte různé kombinace:
 
 [!code-csharp[SemanticsExamples](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
 
@@ -81,11 +82,11 @@ Pokud typ poskytuje [indexer](../programming-guide/indexers/index.md) s parametr
 
 Typ je **vypočítán** , pokud má vlastnost s názvem `Length` nebo `Count` s přístupným mechanismem getter a návratovým typem `int`. Typ Count, který explicitně nepodporuje indexy nebo rozsahy, může pro ně poskytnout implicitní podporu. Další informace naleznete v části Podpora [implicitního indexu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) a [Podpora implicitního rozsahu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) v [poznámce k návrhu funkcí](~/_csharplang/proposals/csharp-8.0/ranges.md).
 
-Například následující typy rozhraní .NET podporují jak indexy, tak rozsahy: <xref:System.Array>, <xref:System.String>, <xref:System.Span%601> a <xref:System.ReadOnlySpan%601>. @No__t-0 podporuje indexy, ale nepodporuje rozsahy.
+Například následující typy rozhraní .NET podporují jak indexy, tak rozsahy: <xref:System.Array>, <xref:System.String>, <xref:System.Span%601>a <xref:System.ReadOnlySpan%601>. <xref:System.Collections.Generic.List%601> podporuje indexy, ale nepodporuje rozsahy.
 
 ## <a name="scenarios-for-indices-and-ranges"></a>Scénáře pro indexy a rozsahy
 
-Pokud chcete provést analýzu v podrozsahu celé sekvence, často použijete rozsahy a indexy. Nová syntaxe je jasná při čtení přesně z toho, co je dílčí rozsah zahrnutý. Místní funkce `MovingAverage` přebírá jako argument hodnotu <xref:System.Range>. Metoda pak při výpočtu minimálních, maximálních a průměrů vytvoří výčet pouze tohoto rozsahu. Vyzkoušejte následující kód v projektu:
+Pokud chcete provést analýzu v podrozsahu celé sekvence, často použijete rozsahy a indexy. Nová syntaxe je jasná při čtení přesně z toho, co je dílčí rozsah zahrnutý. Místní funkce `MovingAverage` jako argument převezme <xref:System.Range>. Metoda pak při výpočtu minimálních, maximálních a průměrů vytvoří výčet pouze tohoto rozsahu. Vyzkoušejte následující kód v projektu:
 
 [!code-csharp[MovingAverages](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_MovingAverage)]
 

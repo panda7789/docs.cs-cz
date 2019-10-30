@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 41a0885f828e45e1216805533a977fc3d5eaf5cb
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: e83c10d6d7b66723d8347f98c1f7b118d7a2f963
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798899"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040168"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 .NET Framework nabízí zabezpečení na základě rolí a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžné infrastruktury dodávané modulem CLR (Common Language Runtime). V celém světě nespravovaného kódu je většina aplikací spouštěna s oprávněními uživatele nebo objektu zabezpečení. V důsledku toho může dojít k poškození počítačových systémů a ohrožení bezpečnosti osobních dat, když uživatel se zvýšenými oprávněními spustí škodlivý software nebo chybně vyplněný software.  
@@ -175,7 +175,7 @@ AllowBlankPassword="False">
   
  Tento výstup by se měl zobrazit v okně konzoly:  
   
-```  
+```output  
 Failed, as expected: <IPermission class="System.Data.SqlClient.  
 SqlClientPermission, System.Data, Version=2.0.0.0,   
   Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1"  

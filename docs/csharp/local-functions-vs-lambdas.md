@@ -1,35 +1,36 @@
 ---
 title: Lokální funkce vs. výrazy lambda
-description: Zjistěte, proč lokální funkce může být vhodnější než výrazů lambda.
+description: Přečtěte si, proč místní funkce mohou být lepší volbou než výrazy lambda.
 ms.date: 06/27/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
-ms.openlocfilehash: 7577950314f8c57fba635db8b2bcd69e8d427dc3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a644b6868a37b3d6231a514dc37030cae062785a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61659771"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038803"
 ---
-# <a name="local-functions-compared-to-lambda-expressions"></a>Lokální funkce ve srovnání s výrazy lambda
+# <a name="local-functions-compared-to-lambda-expressions"></a>Místní funkce ve srovnání s lambda výrazy
 
-Na první pohled [lokální funkce](programming-guide/classes-and-structs/local-functions.md) a [výrazy lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) jsou velmi podobné. V mnoha případech mezi pomocí výrazů lambda a lokální funkce je otázkou styl a osobních preferencích. Existují však skutečné rozdíly ve které můžete použít jeden z nich, kterých byste měli vědět.
+Na první pohled jsou [místní funkce](programming-guide/classes-and-structs/local-functions.md) a [výrazy lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) velmi podobné. V mnoha případech je volba mezi používáním výrazů lambda a místními funkcemi v oblasti stylu a osobní preference. Existují však reálné rozdíly v tom, kde můžete použít jednu nebo druhou, o které byste měli vědět.
 
-Podívejme se na rozdíly mezi lokální funkcí a implementací výraz lambda faktoriálu algoritmu. První verze pomocí lokální funkce:
+Pojďme se podívat na rozdíly mezi implementací algoritmu faktoriál lokální funkce a výrazu lambda. První verze pomocí místní funkce:
 
 [!code-csharp[LocalFunctionFactorial](../../samples/snippets/csharp/new-in-7/MathUtilities.cs#37_LocalFunctionFactorial "Recursive factorial using local function")]
 
-Kontrast tuto implementaci s verzí, který používá výrazy lambda:
+Naproti tomu implementace s verzí, která používá výrazy lambda:
 
 [!code-csharp[26_LambdaFactorial](../../samples/snippets/csharp/new-in-7/MathUtilities.cs#38_LambdaFactorial "Recursive factorial using lambda expressions")]
 
-Lokální funkce mají názvy. Výrazy lambda jsou anonymní metody, které jsou přiřazeny proměnné, které jsou `Func` nebo `Action` typy. Při deklaraci lokální funkce typy argumentů a návratový typ jsou součástí deklarace funkce. Namísto část těla výrazu lambda výraz, typ argumentu a návratový typ jsou součástí deklarace proměnné typu výrazu lambda. Tyto dva rozdíly může vést k srozumitelnější kód.
+Místní funkce mají názvy. Výrazy lambda jsou anonymní metody, které jsou přiřazeny k proměnným, které jsou `Func` nebo `Action` typech. Při deklaraci místní funkce jsou typy argumentů a návratový typ součástí deklarace funkce. Namísto části těla výrazu lambda jsou typy argumentů a návratový typ součástí deklarace typu proměnné výrazu lambda. Tyto dvě rozdíly mohou být způsobeny jasným kódem.
 
-Místní funkce mají jiná pravidla pro jednoznačného přiřazení než výrazů lambda. Deklarace lokální funkce lze odkazovat z libovolného kódu místa, kde se nachází v oboru. Výraz lambda musí být přiřazen proměnné delegáta předtím, než ho můžete získat přístup (nebo ji volat prostřednictvím delegáta odkazující na výraz lambda.) Všimněte si, že verze použití výrazu lambda musí deklarovat a inicializovat výraz lambda `nthFactorial` před potřeba ho definovat. Pokud to neuděláte má za následek chybu v době kompilace pro odkazování na `nthFactorial` před přiřazením.
-Tyto rozdíly znamená, že jsou rekurzivní algoritmy vytvářel pomocí místních funkcí. Můžete deklarovat a definovat místní funkci, která se zavolá sama sebe. Výrazy lambda musí být deklarovány a přiřadit výchozí hodnotu dříve, než je možné znovu přiřazen do textu, který odkazuje na stejný výraz lambda.
+Místní funkce mají různá pravidla pro jednoznačné přiřazení než výrazy lambda. Na deklaraci místní funkce se dá odkazovat z libovolného umístění kódu, kde se nachází v oboru. Výraz lambda musí být přiřazen proměnné delegáta před tím, než může být k němu přistupný (nebo volán prostřednictvím delegáta odkazujícího na výraz lambda.) Všimněte si, že verze s výrazem lambda musí deklarovat a inicializovat výraz lambda `nthFactorial` před jeho definováním. To nevede k chybě kompilace pro odkazování `nthFactorial` před jejich přiřazením.
+Tyto rozdíly znamenají, že rekurzivní algoritmy je snazší vytvořit pomocí místních funkcí. Můžete deklarovat a definovat místní funkci, která volá sama sebe. Lambda výrazy musí být deklarovány a přiřazena výchozí hodnota, aby bylo možné je znovu přiřadit k těle, který odkazuje na stejný výraz lambda.
 
-Pravidla jednoznačného přiřazení také vliv na všechny proměnné, které jsou zachyceny na základě místní funkce nebo lambda výraz. Lambda výraz pravidla i lokální funkce vyžadují, že všechny zachycené proměnné jsou jednoznačně přiřazena v okamžiku, když místní funkce nebo lambda výraz je převeden na delegáta. Rozdíl je, že výrazy lambda jsou převedeny na delegáty, pokud jsou deklarovány. Lokální funkce jsou převedeny na delegáty pouze při použití jako delegát. Je-li deklarovat lokální funkce a jenom na něj odkazovat pomocí volání jako metodu, nebudou převedeny na delegáta. Toto pravidlo umožňuje deklarovat lokální funkce v libovolném vhodné umístění ve svém nadřazeném oboru. Je běžné, chcete-li deklarovat lokální funkce na konci nadřazenou metodu po všechny návratové příkazy.
+Pravidla přiřazení mají vliv také na všechny proměnné, které jsou zachyceny místní funkcí nebo výrazem lambda. Místní funkce i pravidla výrazů lambda vyžadují, aby všechny zachycené proměnné byly jednoznačně přiřazeny v okamžiku, kdy je místní funkce nebo lambda výraz převedena na delegáta. Rozdílem je, že výrazy lambda jsou převedeny na delegáty při jejich deklaraci. Lokální funkce jsou převedeny na delegáty pouze v případě, že se používají jako delegát. Deklarujete-li místní funkci a pouze na ni odkazujete tak, že ji zavoláte jako metodu, nebude převedena na delegáta. Toto pravidlo umožňuje deklarovat místní funkci v jakémkoli vhodném umístění v jeho ohraničujícím oboru. Je běžné deklarovat místní funkce na konci nadřazené metody za libovolnými návratovými příkazy.
 
-Třetí kompilátor může provádět statické analýzy umožňující místní funkce jednoznačně přiřadit zachyceným proměnným v nadřazeném oboru. Podívejte se například:
+Třetí, kompilátor může provádět statickou analýzu, která umožňuje místním funkcím omezit přiřazení zachycených proměnných v ohraničujícím oboru. Vezměte v úvahu tento příklad:
 
 ```csharp
 int M()
@@ -42,26 +43,26 @@ int M()
 }
 ```
 
-Kompilátor může určit, který `LocalFunction` jednoznačně přiřadí `y` při volání. Protože `LocalFunction` je volána před provedením `return` příkazu `y` je jednoznačně přiřazena v `return` příkazu.
+Kompilátor může určit, že `LocalFunction` jednoznačně přiřadí `y` při volání. Vzhledem k tomu, že `LocalFunction` je volána před příkazem `return`, `y` je jednoznačně přiřazeno v příkazu `return`.
 
-Analýzy, která umožňuje analýzu příklad umožňuje čtvrtý rozdíl.
-V závislosti na jejich používání se můžete vyhnout místních funkcí přidělení haldy, které jsou vždy nezbytné pro výrazy lambda. Pokud je lokální funkce nikdy převeden na delegáta a žádné zachycené ve funkci místní proměnné nezachytává dalších výrazů lambda nebo místní funkce, které jsou převedeny na delegáty, kompilátor se vyhnout přidělení haldy. 
+Analýza, která umožňuje ukázkovou analýzu, umožňuje čtvrtý rozdíl.
+V závislosti na jejich použití se můžou místní funkce vyhnout přidělení haldy, které jsou vždy nutné pro výrazy lambda. Pokud místní funkce není nikdy převedena na delegáta a žádná z proměnných zachycených lokální funkcí není zachycena jinými výrazy lambda nebo místními funkcemi, které jsou převedeny na delegáty, kompilátor může vyhnout přidělení haldy. 
 
-Podívejte se například asynchronní:
+Vezměte v úvahu tento asynchronní příklad:
 
 [!code-csharp[TaskLambdaExample](../../samples/snippets/csharp/new-in-7/AsyncWork.cs#36_TaskLambdaExample "Task returning method with lambda expression")]
 
-Obsahuje uzavření pro tento výraz lambda `address`, `index` a `name` proměnné. V případě místních funkcí, může být objekt, který implementuje uzavření `struct` typu. Tento typ struktury by být předány podle odkazu na místní funkci. Tento rozdíl v implementaci byste uložit na přidělení.
+Uzavření tohoto výrazu lambda obsahuje proměnné `address`, `index` a `name`. V případě místních funkcí může být objekt, který implementuje uzávěr, `struct` typ. Tento typ struktury by byl předán odkazem na místní funkci. Tento rozdíl v implementaci by byl uložen při přidělení.
 
-Instance, které jsou nezbytné pro výrazy lambda znamená, že paměť navíc přidělení, které mohou být faktor výkonu v cestách časově kritického kódu.
-Lokální funkce nejsou tato dodatečná režie spojené. V předchozím příkladu má lokální funkce verze 2 přidělení méně než verze výrazu lambda.
+Vytváření instancí nezbytných pro výrazy lambda znamená dodatečné přidělení paměti, což může být výkonový faktor v časově důležitých cestách kódu.
+Místní funkce tyto režie neúčtují. V příkladu výše má verze lokálních funkcí 2 méně přidělení než verze výrazu lambda.
 
 > [!NOTE]
-> Lokální funkce ekvivalent tato metoda také používá třídu pro uzavření. Zda uzávěru lokální funkce je implementovaná jako `class` nebo `struct` je podrobnost implementace. Použít lokální funkci `struct` že výraz lambda bude vždy používat `class`.
+> Lokální funkce ekvivalentní této metodě používá také třídu pro uzavření. Určuje, zda je uzavření místní funkce implementováno jako `class` nebo `struct` je podrobnosti implementace. Místní funkce může použít `struct`, zatímco lambda bude vždy používat `class`.
 
 [!code-csharp[TaskLocalFunctionExample](../../samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
-Jednou z výhod konečné není ukázáno v tomto příkladu je, že je lokální funkce implementovat jako iterátory, přičemž pomocí `yield return` syntaxi pro vytvoření sekvenci hodnot. `yield return` Nejsou povoleny ve výrazech lambda.
+Jedna poslední výhoda není v této ukázce znázorněná, protože místní funkce se dají implementovat jako iterátory pomocí syntaxe `yield return` k vytvoření sekvence hodnot. Ve výrazech lambda není povolený příkaz `yield return`.
 
-Zatímco lokální funkce se může zdát redundantní pro výrazy lambda, jsou ve skutečnosti slouží k jiným účelům a mají různá použití.
-Lokální funkce jsou efektivnější pro případ, když chcete vytvořit funkci, která je volána pouze z kontextu jinou metodu.
+I když se místní funkce můžou jevit jako redundantní pro lambda výrazy, mají ve skutečnosti různé účely a mají odlišná použití.
+Lokální funkce jsou efektivnější pro případ, když chcete napsat funkci, která je volána pouze z kontextu jiné metody.

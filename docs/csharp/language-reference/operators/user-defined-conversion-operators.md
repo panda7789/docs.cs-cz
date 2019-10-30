@@ -10,28 +10,28 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 8788883a6c60032de2ffab658fcf2721654fc6f7
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 25f042dec5fd5594b7e166cc064394e90db01c27
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036120"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Uživatelsky definované operátory převodu (C# referenční)
 
 Uživatelsky definovaný typ může definovat vlastní implicitní nebo explicitní převod z nebo na jiný typ.
 
-Implicitní převody nevyžadují, aby se vyvolala speciální syntaxe, která může nastat v různých situacích, například v přiřazení a volání metod. Předdefinované C# implicitní převody jsou vždy úspěšné a nikdy nevyvolávají výjimku nebo ztratí informace. Uživatelem definované implicitní převody by se měly chovat i tímto způsobem. Pokud vlastní převod může vyvolat výjimku nebo ztratit informace, definujte ji jako explicitní převod.
+Implicitní převody nevyžadují, aby se vyvolala speciální syntaxe, která může nastat v různých situacích, například v přiřazení a volání metod. Předdefinované C# implicitní převody jsou vždy úspěšné a nikdy nevyvolávají výjimku. Uživatelem definované implicitní převody by se měly chovat i tímto způsobem. Pokud vlastní převod může vyvolat výjimku nebo ztratit informace, definujte ji jako explicitní převod.
 
 Uživatelem definované převody nejsou považovány za operátory [is](type-testing-and-cast.md#is-operator) a [as](type-testing-and-cast.md#as-operator) . Použijte [operátor přetypování ()](type-testing-and-cast.md#cast-operator-) pro vyvolání uživatelem definovaného explicitního převodu.
 
-Použijte klíčová `implicit` slova `explicit` a nebo pro definování implicitního nebo explicitního převodu v uvedeném pořadí. `operator` Typ, který definuje převod, musí být buď zdrojový typ, nebo cílový typ převodu. Převod mezi dvěma uživatelsky definovanými typy lze definovat v jednom ze dvou typů.
+Použijte klíčová slova `operator` a `implicit` nebo `explicit` k definování implicitního nebo explicitního převodu v uvedeném pořadí. Typ, který definuje převod, musí být buď zdrojový typ, nebo cílový typ převodu. Převod mezi dvěma uživatelsky definovanými typy lze definovat v jednom ze dvou typů.
 
 Následující příklad ukazuje, jak definovat implicitní a explicitní převod:
 
 [!code-csharp[implicit an explicit conversions](~/samples/csharp/language-reference/operators/UserDefinedConversions.cs)]
 
-`operator` Klíčové slovo lze použít také k přetížení předdefinovaného C# operátoru. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
+Také použijte klíčové slovo `operator` k přetížení předdefinovaného C# operátoru. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

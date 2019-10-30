@@ -2,12 +2,12 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 0938c57f48a062082fe973a670eb6a9b9fc4ed3c
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: f42ef8dfa1c3041faf7179665cced3c2b9fcf3a6
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395519"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039975"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy týkající se .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient).  
@@ -18,7 +18,7 @@ Tato část popisuje známé problémy týkající se .NET Framework Zprostředk
  Pokud je nutné mít v řetězci koncové mezery, měli byste zvážit připojení prázdného znaku na konci, takže SQL Server řetězec neořízne. Pokud nejsou koncové mezery požadovány, měly by být oříznuty předtím, než budou předány do kanálu dotazu.  
   
 ## <a name="right-function"></a>PRAVÁ funkce  
- Pokud se hodnota bez @no__t 0 předává jako první argument a 0 se předává jako druhý argument pro `RIGHT(nvarchar(max)`, 0 @ no__t-2 nebo `RIGHT(varchar(max)`, 0 @ no__t-4, místo řetězce @no__t 6 se vrátí hodnota `NULL`.  
+ Pokud je hodnota bez`null` předána jako první argument a 0 se předává jako druhý argument pro `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`, 0`)`, bude místo řetězce `NULL` vrácena `empty` hodnota.  
   
 ## <a name="cross-and-outer-apply-operators"></a>Operátory použití mezi a VNĚJŠÍmi operátory  
  Operátory VZÁJEMNÉho a VNĚJŠÍho použití byly představeny v SQL Server 2005. V některých případech může kanál dotazů vytvořit příkaz jazyka Transact-SQL, který obsahuje operátory KŘÍŽového nebo VNĚJŠÍho použití. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí SQL Server starších než SQL Server 2005, tyto operátory nepodporují, takové dotazy nelze na těchto back-end poskytovateli spustit.  
@@ -27,7 +27,7 @@ Tato část popisuje známé problémy týkající se .NET Framework Zprostředk
   
 - Korelační poddotaz se stránkováním.  
   
-- @No__t-0 prostřednictvím korelačního dílčího dotazu nebo přes kolekci vytvořenou navigací.  
+- `AnyElement` přes korelační poddotaz nebo přes kolekci vytvořenou navigací.  
   
 - Dotazy LINQ používající seskupovací metody, které přijímají selektor elementu.  
   
@@ -38,7 +38,7 @@ Tato část popisuje známé problémy týkající se .NET Framework Zprostředk
 ## <a name="skip-operator"></a>SKIP – operátor  
  Pokud používáte SQL Server 2000, může při použití příkazu přeskočit s řazením na jiné než klíčové sloupce vracet nesprávné výsledky. Pokud neklíčový sloupec obsahuje duplicitní data, může být vynecháno více než zadaný počet řádků. Je to kvůli tomu, jak je PŘESKOČENí přeloženo pro SQL Server 2000. Například v následujícím dotazu může být vynecháno více než pět řádků, pokud `E.NonKeyColumn` má duplicitní hodnoty:  
   
-```  
+```sql  
 SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L  
 ```  
   
@@ -52,7 +52,7 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
   
  Následuje příklad vnořeného dotazu v klauzuli projekce:  
   
-```  
+```sql  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   

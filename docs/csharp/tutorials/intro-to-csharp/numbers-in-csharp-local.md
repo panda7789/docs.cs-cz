@@ -3,12 +3,12 @@ title: Čísla v C# úvodu k C# kurzu
 description: Naučte C# se prozkoumat číselné typy, jejich vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: e9d8b09bde6e87edf9f483c0c296dbb256343f58
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b392682a245101e37a182cb92d36ccb1dd34b13e
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039692"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipulace s čísly integrálních a plovoucích bodů v jazyce C \#
 
@@ -40,10 +40,16 @@ Právě jste viděli jednu ze základních matematických operací s celými č�
 Začněte tím, že prozkoumáte tyto různé operace. Přidejte tyto řádky za řádek, který zapíše hodnotu `c`:
 
 ```csharp
+
+// subtraction
 c = a - b;
 Console.WriteLine(c);
+
+// multiplication
 c = a * b;
 Console.WriteLine(c);
+
+// division
 c = a / b;
 Console.WriteLine(c);
 ```
@@ -69,12 +75,20 @@ namespace NumbersInCSharp
         {
             int a = 18;
             int b = 6;
+            
+            // addition
             int c = a + b;
             Console.WriteLine(c);
+            
+            // subtraction
             c = a - b;
             Console.WriteLine(c);
+            
+            // multiplication
             c = a * b;
             Console.WriteLine(c);
+            
+            // division
             c = a / b;
             Console.WriteLine(c);
         }
@@ -95,7 +109,7 @@ Odkomentujte volání `WorkingWithIntegers()`. Výsledkem je, že při práci v 
 //WorkingWithIntegers();
 ```
 
-@No__t_0 spustí **Komentář** v C#. Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód. Kompilátor negeneruje žádný spustitelný kód z komentářů.
+`//` spustí **Komentář** v C#. Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód. Kompilátor negeneruje žádný spustitelný kód z komentářů.
 
 C# Jazyk definuje prioritu různých matematických operací s pravidly, která jsou v souladu s pravidly, která jste se naučili v matematice.
 Násobení a dělení mají přednost před sčítáním a odčítáním.
@@ -153,12 +167,20 @@ namespace NumbersInCSharp
         {
             int a = 18;
             int b = 6;
+            
+            // addition
             int c = a + b;
             Console.WriteLine(c);
+            
+            // subtraction
             c = a - b;
             Console.WriteLine(c);
+            
+            // multiplication
             c = a * b;
             Console.WriteLine(c);
+            
+            // division
             c = a / b;
             Console.WriteLine(c);
         }

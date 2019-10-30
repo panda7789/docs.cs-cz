@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8d7942ef6c36c01a9ae7ae2a9739f26dfcda5813
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: c5e4b5619394f99a419fe48aee190ad741ea8c0d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394358"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73041656"
 ---
 ### <a name="identity-ui-uses-static-web-assets-feature"></a>Identita: uživatelské rozhraní používá funkci statických webových prostředků.
 
@@ -23,11 +23,11 @@ Následkem toho, že uživatelské rozhraní identity přijímá funkci statick�
 
 #### <a name="old-behavior"></a>Staré chování
 
-Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity byla **bootstrap 3**. ROZHRANÍ .NET Framework může být nakonfigurováno pomocí parametru pro volání metody `AddIdentityUI` v `Startup.ConfigureServices`.
+Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity byla **bootstrap 3**. ROZHRANÍ .NET Framework může být nakonfigurováno pomocí parametru pro volání metody `AddDefaultUI` v `Startup.ConfigureServices`.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity je **bootstrap 4**. ROZHRANÍ .NET Framework musí být nakonfigurováno v souboru projektu namísto volání metody `AddIdentityUI`.
+Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity je **bootstrap 4**. ROZHRANÍ .NET Framework musí být nakonfigurováno v souboru projektu místo ve volání metody `AddDefaultUI`.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
@@ -47,12 +47,12 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-<xref:Microsoft.AspNetCore.Identity.IdentityBuilderUIExtensions.AddDefaultUI(Microsoft.AspNetCore.Identity.IdentityBuilder)?displayProperty=nameWithType>
+<xref:Microsoft.AspNetCore.Identity.IdentityBuilderUIExtensions.AddDefaultUI(Microsoft.AspNetCore.Identity.IdentityBuilder,Microsoft.AspNetCore.Identity.UI.UIFramework)?displayProperty=nameWithType>
 
 <!-- 
 
 #### Affected APIs
 
-`M:Microsoft.AspNetCore.Identity.IdentityBuilderUIExtensions.AddDefaultUI(Microsoft.AspNetCore.Identity.IdentityBuilder)`
+`M:Microsoft.AspNetCore.Identity.IdentityBuilderUIExtensions.AddDefaultUI(Microsoft.AspNetCore.Identity.IdentityBuilder,Microsoft.AspNetCore.Identity.UI.UIFramework)`
 
 -->

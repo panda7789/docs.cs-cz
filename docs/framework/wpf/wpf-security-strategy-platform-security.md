@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: fdeb40f1e092f8c7e96e9d59e1b07673201fbe9d
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 7559c7ec9aef8f95336d53e62ca9bf5861a9b22f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920380"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040728"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují tak, aby poskytovaly [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silný a odolný model zabezpečení, který se pokusí vyhnout se jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -31,17 +31,15 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
  Zbývající část tohoto tématu se zabývá funkcemi v každé z těchto vrstev, které se vztahují k [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] specificky.  
 
-<a name="Operating_System_Security"></a>   
 ## <a name="operating-system-security"></a>Zabezpečení operačního systému  
 Jádro systému Windows poskytuje několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace systému Windows, včetně těch, které jsou vytvořeny pomocí WPF. Toto téma popisuje širokou škálu těchto funkcí zabezpečení, které jsou důležité pro WPF, a také způsob, jakým se WPF integruje s nimi za účelem zajištění další ochrany.  
   
-<a name="Microsoft_Windows_XP_Service_Pack_2__SP2_"></a>   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
  Kromě obecného přezkoumání a posílení systému Windows jsou k dispozici tři klíčové funkce [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)], které probereme v tomto tématu:  
   
 - Kompilace/GS  
   
-- [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)].  
+- Microsoft web Windows Update.  
   
 #### <a name="gs-compilation"></a>Kompilace/GS  
  [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje ochranu tím, že znovu zkompiluje mnoho základních systémových knihoven, včetně všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ch závislostí, jako je CLR, které pomáhají zmírnit přetečení vyrovnávací paměti. Toho dosáhnete použitím parametru/GS s kompilátorem C/C++ Command-line. I když by se přetečení vyrovnávací paměti mělo výslovně vyhnout, kompilace/GS poskytuje příklad ochrany proti potenciálním ohrožením zabezpečení, která jsou neúmyslně nebo škodlivě vytvořená v nich.  
@@ -52,10 +50,6 @@ Jádro systému Windows poskytuje několik funkcí zabezpečení, které tvoří
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] je kompilována s příznakem/GS, aby bylo možné přidat další vrstvu obrany pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
   
-#### <a name="microsoft-windows-update-enhancements"></a>Vylepšení Microsoft web Windows Update  
- [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)] byla také vylepšena v [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] pro zjednodušení procesu stahování a instalace aktualizací. Tyto změny významně zvyšují zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zákazníky tím, že pomáhají zajistit aktuálnost jejich systémů, zejména v souvislosti s aktualizacemi zabezpečení.  
-  
-<a name="Windows_Vista"></a>   
 ### <a name="windows-vista"></a>Windows Vista  
 Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení zabezpečení operačního systému, včetně přístupu uživatelů s minimálními oprávněními, kontroly integrity kódu a izolace oprávnění.  
   
@@ -72,8 +66,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 #### <a name="code-integrity-checks"></a>Kontroly integrity kódu  
  Systém Windows Vista zahrnuje hlubší kontroly integrity kódu, které zabraňují v vkládání škodlivého kódu do systémových souborů nebo do jádra za běhu za běhu. To překračuje ochranu systémových souborů.  
-  
-<a name="Limited_Rights_Process_for_Browser_Hosted_Applications"></a>   
+   
 ### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezených práv pro aplikace hostované v prohlížeči  
  Aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] hostované v prohlížeči se spouštějí v izolovaném prostoru (sandboxu) internetové zóny. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] integrace s aplikací Microsoft Internet Explorer rozšiřuje tuto ochranu o další podporu.  
   
@@ -81,11 +74,9 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Viz [použití účtu uživatele s nejnižšími oprávněními](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29).  
   
-<a name="Common_Language_Runtime_Security"></a>   
 ## <a name="common-language-runtime-security"></a>Zabezpečení společného jazykového modulu runtime  
  Modul CLR (Common Language Runtime) nabízí řadu výhod zabezpečení klíčů, které zahrnují ověřování a ověřování, zabezpečení přístupu kódu (CAS) a kritickou metodologii zabezpečení.  
-  
-<a name="Validation_and_Verification"></a>   
+    
 ### <a name="validation-and-verification"></a>Ověřování a ověřování  
  Pro zajištění izolace a integrity sestavení používá CLR proces ověřování. Ověřování CLR zajišťuje izolaci sestavení tím, že ověřuje jejich formát přenositelného spustitelného souboru (PE) pro adresy, které ukazují mimo sestavení. Ověřování CLR také ověřuje integritu metadat, která jsou vložena do sestavení.  
   
@@ -103,7 +94,6 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Výhodou ověřitelného kódu je klíčovým důvodem, proč [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] sestavovat na .NET Framework. V rozsahu, ve kterém se používá ověřitelný kód, se výrazně sníží možnost zneužití možných ohrožení zabezpečení.  
   
-<a name="Code_Access_Security"></a>   
 ### <a name="code-access-security"></a>Zabezpečení přístupu kódu  
  Klientský počítač zveřejňuje širokou škálu prostředků, ke kterým může mít spravovaná aplikace přístup, včetně systému souborů, registru, tiskových služeb, uživatelského rozhraní, reflexe a proměnných prostředí. Aby mohla spravovaná aplikace přistupovat ke všem prostředkům v klientském počítači, musí mít .NET Framework oprávnění k tomu. Oprávnění v certifikačních autoritách je podtřídou <xref:System.Security.CodeAccessPermission>; CAS implementuje jednu podtřídu pro každý prostředek, ke kterému mají přístup spravované aplikace.  
   
@@ -163,13 +153,11 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Z perspektivy platformy je [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zodpovědný za správné použití **Assert** ; nesprávné použití **výrazu Assert** by mohlo povolit zvýšení oprávnění škodlivým kódem. V důsledku toho je důležité volat pouze **Assert** v případě potřeby a zajistit, aby omezení izolovaného prostoru zůstala nedotčená. Například kód v izolovaném prostoru (sandbox) nesmí otevírat náhodné soubory, ale může používat písma. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] umožňuje aplikacím v izolovaném prostoru (sandbox) používat funkce písem voláním **Assert**a pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] čtení souborů, které obsahují tato písma jménem aplikace v izolovaném prostoru.  
   
-<a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
  ClickOnce je komplexní technologie nasazení, která je součástí .NET Framework a integruje se se sadou Visual Studio (podrobné informace najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] lze nasadit pomocí technologie ClickOnce, zatímco aplikace hostované v prohlížeči musí být nasazeny s ClickOnce.  
   
  Aplikacím nasazeným pomocí technologie ClickOnce je poskytnuta další vrstva zabezpečení než zabezpečení přístupu kódu (CAS); v podstatě aplikace nasazené ClickOnce požaduje oprávnění, která potřebují. Jsou jim udělena pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze které je aplikace nasazena. Omezením sady oprávnění jenom na ty, které jsou potřeba, i když jsou menší než ta, kterou poskytuje sada oprávnění pro spouštěcí zónu. počet prostředků, ke kterým má aplikace přístup, se zkracuje na minimum. V důsledku toho, pokud dojde k narušení aplikace, je možné omezit poškození klientského počítače.  
   
-<a name="Security_Critical_Methodology"></a>   
 ### <a name="security-critical-methodology"></a>Metodika kritické pro zabezpečení  
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód, který používá oprávnění k povolení izolovaného prostoru Internet Zone pro aplikace XBAP, je nutné uchovávat do nejvyšší možné míry zabezpečení a řízení zabezpečení. Pro usnadnění tohoto požadavku .NET Framework poskytuje novou podporu pro správu kódu, který zvyšuje oprávnění. Konkrétně modul CLR vám umožňuje identifikovat kód, který zvyšuje oprávnění, a označit ho pomocí <xref:System.Security.SecurityCriticalAttribute>; kód, který není označený <xref:System.Security.SecurityCriticalAttribute>, se bude *transparentní* pomocí této metodologie. V opačném případě spravovaný kód, který není označený <xref:System.Security.SecurityCriticalAttribute>, brání oprávnění zvýšit oprávnění.  
   
@@ -177,7 +165,6 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Všimněte si, že .NET Framework povoluje, aby důvěryhodný kód rozšířil izolovanou prostorovou mezipaměť internetové zóny XBAP tím, že umožňuje vývojářům psát spravovaná sestavení označená pomocí <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasazená do globální mezipaměti sestavení (GAC) uživatele. Označení sestavení pomocí APTCA je vysoce citlivá operace zabezpečení, protože umožňuje jakémukoli volání tohoto sestavení, včetně škodlivého kódu z Internetu. Při tomto postupu se musí použít extrémní opatrnost a osvědčené postupy. aby se uživatelé museli nainstalovat, musí si vybrat, aby tento software důvěřoval.  
   
-<a name="Microsoft_Internet_Explorer_Security"></a>   
 ## <a name="microsoft-internet-explorer-security"></a>Zabezpečení aplikace Microsoft Internet Explorer  
  Kromě snížení zabezpečení a zjednodušení konfigurace zabezpečení Microsoft Internet Explorer 6 (SP2) obsahuje několik funkcí, které zlepšují zabezpečení, které zvyšují zabezpečení pro uživatele [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
   

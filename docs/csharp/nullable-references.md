@@ -1,13 +1,14 @@
 ---
 title: Odkazové typy s možnou hodnotou null
 description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8,0. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
+ms.technology: csharp-null-safety
 ms.date: 02/19/2019
-ms.openlocfilehash: 2c2148b3ae50ce6c00e523390ea02686d9106b8b
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: e20ea6efa389ba1aa0d8432a408c0b2a06a61c30
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846763"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039770"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -66,6 +67,12 @@ Kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null lze na
   - Proměnné typu odkazu, například řetězec, nesmí být null. Všechna upozornění na možnost použití hodnoty null jsou zakázána.
 - `disable`: kontext anotace s možnou hodnotou null je **zakázán**. Výstražný kontext s možnou hodnotou null je **zakázán**.
   - Proměnné typu odkazu jsou oblivious, stejně jako starší verze C#. Všechna upozornění na možnost použití hodnoty null jsou zakázána.
+
+**Příklad**:
+
+```xml
+<Nullable>enable</Nullable>
+```
 
 Můžete také použít direktivy pro nastavení stejných kontextů kdekoli v projektu:
 

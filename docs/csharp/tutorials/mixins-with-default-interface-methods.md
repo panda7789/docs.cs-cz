@@ -1,13 +1,14 @@
 ---
 title: Vytváření Mixin typů pomocí výchozích metod rozhraní
 description: Pomocí výchozích členů rozhraní můžete roztáhnout rozhraní s nepovinnými výchozími implementacemi pro implementátory.
+ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: 4dee97226420139d9cd09ad75d7c8caf4967273d
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 798413f0071159893de39f3e190a9b2693571bb7
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321622"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039275"
 ---
 # <a name="tutorial-mix-in-functionality-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
 
@@ -94,11 +95,11 @@ Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Ten
 
 [!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
 
-@No__t-0 může podporovat přímo funkce Blink i Timer:
+`ExtraFancyLight` může podporovat funkce blikání i časovače přímo:
 
 [!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
-@No__t-0, který jste vytvořili dříve, nepodporuje blikání. Nepřidejte tedy `IBlinkingLight` do seznamu podporovaných rozhraní.
+`HalogenLight`, který jste vytvořili dříve, nepodporuje blikání. Nepřidejte tedy `IBlinkingLight` do seznamu podporovaných rozhraní.
 
 ## <a name="detect-the-light-types-using-pattern-matching"></a>Detekovat světlo typy pomocí porovnávání vzorů
 

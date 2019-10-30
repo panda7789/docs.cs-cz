@@ -1,53 +1,54 @@
 ---
 title: Stromy výrazů
-description: Další informace o stromů výrazů v .NET Core a jak se dají použít k reprezentaci kód jako struktury, které můžete zkontrolovat, upravit a spustit.
+description: Přečtěte si o stromech výrazů v .NET Core a jejich použití k reprezentaci kódu jako struktur, které můžete prozkoumávat, upravovat a spouštět.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: db6e23d1ad0014a7dbb58a0cd473e67d6bd9acc0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7d039ea4585953473dc88cebcc516ea240cdc3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614346"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036326"
 ---
 # <a name="expression-trees"></a>Stromy výrazů
 
-Pokud jste použili LINQ, budete mít prostředí, bohatá knihovna kde `Func` typy jsou součástí sady rozhraní API. (Pokud nejste obeznámeni s jazykem LINQ, pravděpodobně chtít číst [kurzu LINQ](linq/index.md) a v článku o [výrazy lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) před tímto.) *Stromy výrazů* poskytovat lepší interakci s argumenty, které jsou funkce.
+Pokud jste použili LINQ, máte zkušenosti s bohatou knihovnou, kde `Func` typy jsou součástí sady rozhraní API. (Pokud nejste obeznámeni s LINQ, pravděpodobně budete chtít přečíst [kurz LINQ](linq/index.md) a článek o [výrazech lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) před tímto.) *Stromy výrazů* poskytují bohatou interakci s argumenty, které jsou funkcemi.
 
-Můžete napsat argumenty funkce, obvykle pomocí výrazů Lambda, při vytváření dotazů LINQ. V typické dotaz LINQ jsou tyto argumenty funkce transformuje na delegáta, který kompilátor vytvoří. 
+Při vytváření dotazů LINQ píšete argumenty funkce, obvykle pomocí výrazů lambda. V typických dotazech LINQ jsou tyto argumenty funkce transformovány na delegáta, který kompilátor vytvoří. 
 
-Pokud chcete mít lepší interakci, budete muset použít *stromů výrazů*.
-Stromy výrazů reprezentovala strukturu, která můžete zkontrolovat, upravit nebo spuštění kódu. Tyto nástroje vám poskytnou výkon během manipulace s kódem. Můžete napsat kód, který prověří spuštěnými algoritmy nebo vloží nové funkce. V pokročilejších scénářích, můžete upravit, spouštění algoritmů a dokonce i přeložit C# výrazy do jiného formátu pro spuštění v jiném prostředí.
+Pokud chcete mít rozsáhlejší interakci, je nutné použít *stromy výrazů*.
+Stromy výrazů reprezentují kód jako strukturu, kterou můžete prostudovat, upravit nebo spustit. Tyto nástroje umožňují pracovat s kódem během běhu. Můžete napsat kód, který prověřuje spuštěné algoritmy nebo vloží nové funkce. V pokročilejších scénářích můžete upravovat spuštěné algoritmy a dokonce i překládat C# výrazy do jiné formy pro provádění v jiném prostředí.
 
-Pravděpodobně jste už napsali kód, který používá stromy výrazů. Rozhraní Entity Framework LINQ API přijmout stromů výrazů jako argumenty pro vzor výrazu dotazu LINQ.
-Která umožňuje [Entity Framework](/ef/) přeložit dotazu, který jste napsali v C# do SQL, který se spustí v databázovém stroji. Dalším příkladem je [Moq](https://github.com/Moq/moq), což je oblíbená architektura napodobování .NET.
+Pravděpodobně jste již napsali kód, který používá stromy výrazů. Rozhraní API LINQ Entity Framework akceptují stromy výrazů jako argumenty pro vzor výrazu dotazu LINQ.
+Umožňuje [Entity Framework](/ef/) přeložit dotaz, který jste napsali, C# do jazyka SQL, který se spouští v databázovém stroji. Dalším příkladem je [MOQ](https://github.com/Moq/moq), což je oblíbená rozhraní pro návrhy rozhraní .NET.
 
-Zbývající části tohoto kurzu bude prozkoumejte, jaké jsou stromů výrazů, prozkoumejte třídy rozhraní, které podporují stromů výrazů a ukazují, jak pracovat s stromy výrazů. Dozvíte se, jak číst stromů výrazů, k vytvoření stromů výrazu, k vytvoření stromů výrazu upravené a ke spouštění kódu vytvořeného reprezentována stromy výrazů. Po přečtení, bude připravené k použití těchto struktur vytvořit bohaté adaptivní algoritmy.
+Zbývající části tohoto kurzu budou zkoumat, jaké stromy výrazů jsou, prozkoumat třídy architektury, které podporují stromy výrazů, a Ukázat, jak pracovat se stromy výrazů. Naučíte se, jak číst stromy výrazů, jak vytvářet stromy výrazů, jak vytvářet stromy upravených výrazů a jak spustit kód reprezentovaný stromy výrazů. Po přečtení budete připraveni tyto struktury použít k vytváření bohatých adaptivních algoritmů.
 
 1. [Vysvětlení stromů výrazů](expression-trees-explained.md)
 
-    Princip struktury a Principy *stromů výrazů*.
+    Pochopení struktury a konceptů za *stromy výrazů*.
     
 2. [Typy architektur podporující stromy výrazů](expression-classes.md)
     
-    Další informace o struktur a tříd, které definují a manipulaci s stromy výrazů.
+    Přečtěte si o strukturách a třídách, které definují a manipulují s stromy výrazů.
     
 3. [Provádění výrazů](expression-trees-execution.md)
 
-    Zjistěte, jak převést na strom výrazu, který je reprezentován jako výraz Lambda delegátovi a spusťte Výsledný delegát.
+    Přečtěte si, jak převést strom výrazu reprezentovaný jako výraz lambda do delegáta a provést výsledný delegát.
 
 4. [Interpretace výrazů](expression-trees-interpreting.md)
 
-    Další informace o procházení a prozkoumání *stromů výrazů* pochopit, co kód stromu výrazů představuje.
+    Naučte se procházet a prozkoumávat *stromy výrazů* , abyste pochopili, jaký kód strom výrazu představuje.
 
 5. [Vytváření výrazů](expression-trees-building.md)
 
-    Zjistěte, jak můžete vytvářet na uzly stromu výrazů a vytváření stromů výrazů.
+    Naučte se vytvářet uzly pro strom výrazů a stromy výrazů sestavení.
 
 6. [Překlad výrazů](expression-trees-translating.md)
 
-    Zjistěte, jak sestavovat upravenou kopii strom výrazu, nebo strom výrazů se převedou do jiného formátu.
+    Naučte se, jak vytvořit upravenou kopii stromu výrazů nebo jak přeložit strom výrazu do jiného formátu.
 
-7. [Shrnutí](expression-trees-summary.md)
+7. [Sčítání](expression-trees-summary.md)
 
-    Projděte si informace na stromy výrazů.
+    Projděte si informace o stromech výrazů.

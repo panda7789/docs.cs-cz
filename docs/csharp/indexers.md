@@ -1,29 +1,30 @@
 ---
 title: Indexery
-description: Další informace o C# indexery a jak implementovat indexovaných vlastností, které jsou vlastnosti odkazovat pomocí jedné nebo více argumentů.
+description: Seznamte C# se s indexery a jejich implementací indexovaných vlastností, což jsou vlastnosti, na které odkazuje jeden nebo více argumentů.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: a13163cb6bd835dfdd16c83c905c134eb8a86e7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86e646b341cf098d8621f095d4bfc9ea2191940d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672026"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039122"
 ---
 # <a name="indexers"></a>Indexery
 
-*Indexery* jsou podobné vlastnostem. Ve spoustě ohledů indexery sestavení na stejné funkce jako jazyk [vlastnosti](properties.md). Indexery povolují *indexované* vlastnosti: vlastnosti odkazovat pomocí jedné nebo více argumentů. Tyto argumenty poskytuje index do některé kolekce hodnot.
+*Indexery* jsou podobné vlastnostem. V mnoha způsobech indexerů vytváří stejné jazykové funkce jako [vlastnosti](properties.md). Indexery povolují *indexované* vlastnosti: vlastnosti odkazované pomocí jednoho nebo více argumentů. Tyto argumenty poskytují index pro určitou kolekci hodnot.
 
 ## <a name="indexer-syntax"></a>Syntaxe indexeru
 
-Přístup indexeru prostřednictvím název proměnné a hranaté závorky. Umístíte argumenty indexeru v závorkách:
+K indexeru přistupujete pomocí názvu proměnné a hranatých závorek. Argumenty indexeru umístíte do závorek:
 
 ```csharp
 var item = someObject["key"];
 someObject["AnotherKey"] = item;
 ```
 
-Deklarovat pomocí indexerů `this` klíčového slova jako názvu vlastnosti a deklarační popisovač argumenty v hranatých závorkách. Tato deklarace odpovídají využití je znázorněno v předchozím odstavci:
+Indexery deklarujete pomocí klíčového slova `this` jako názvu vlastnosti a deklarujete argumenty v hranatých závorkách. Tato deklarace by odpovídala využití uvedenému v předchozím odstavci:
 
 ```csharp
 public int this[string key]
@@ -33,25 +34,25 @@ public int this[string key]
 }
 ```
 
-Z tohoto počátečního příkladu uvidíte vztah mezi syntaxi pro vlastnosti a indexery. Tato analogie přenáší přes většinu pravidel syntaxe pro indexování. Indexery můžete mít libovolný platný přístupu modifikátory přístupu (veřejné, chráněné vnitřní, chráněný, interní, privátní nebo privátní chráněné). Mohou být zapečetěné, virtuální nebo abstraktní. Stejně jako u vlastnosti, můžete zadat různé přístupu modifikátory přístupu pro metodu get a přístupové objekty set v indexeru.
-Můžete také zadat indexery jen pro čtení (vynecháním přístupový objekt set) nebo pouze pro zápis indexery (vynecháním přistupující objekt get).
+Z tohoto počátečního příkladu můžete vidět vztah mezi syntaxí pro vlastnosti a indexery. Tato analogická průchody procházejí většinou pravidel syntaxe pro indexery. Indexery můžou mít libovolný platný modifikátor přístupu (Public, Protected Internal, Protected, Internal, private nebo Private Protected). Můžou být zapečetěné, virtuální nebo abstraktní. Stejně jako u vlastností můžete určit různé modifikátory přístupu pro přístupové objekty get a Set v indexeru.
+Můžete také zadat indexery jen pro čtení (vynecháním přístupového objektu set) nebo indexerů jen pro zápis (vynecháním přístupového objektu Get).
 
-Můžete použít téměř vše, co jste Učte se od práce s vlastnostmi pro indexery. Jedinou výjimkou tohoto pravidla je *automaticky implementované vlastnosti*. Kompilátor nemůže vždy generovat správný úložiště pro indexer.
+Můžete použít téměř všechno, co se naučíte pracovat s vlastnostmi pro indexery. Jedinou výjimkou z tohoto pravidla jsou *automaticky implementované vlastnosti*. Kompilátor nemůže vždy vygenerovat správné úložiště pro indexer.
 
-Přítomnost argumenty odkažte na položku v sadě položek odlišuje od vlastnosti indexery. Několik indexerů může definovat podle typu, jako argument uvádí pro každý indexer je jedinečný. Podíváme na různé scénáře ve kterém můžete použít jeden nebo více indexerů v definici třídy. 
+Přítomnost argumentů odkazujících na položku v sadě položek rozlišuje indexery od vlastností. Můžete definovat více indexerů pro typ, pokud je seznam argumentů pro každý indexer jedinečný. Pojďme prozkoumat různé scénáře, kde můžete použít jeden nebo více indexerů v definici třídy. 
 
 ## <a name="scenarios"></a>Scénáře
 
-Můžete definovat *indexery* v typu při jeho API modely některé kolekce, ve kterém definujete argumenty do této kolekce. Vaše indexerů může nebo nemusí mapují přímo na typy kolekcí, které jsou součástí rozhraní .NET core framework. Typ může být další úkoly, kromě modelování kolekce.
-Indexery povolují, abychom vám poskytli rozhraní API, která odpovídá abstrakce váš typ bez vystavení vnitřní podrobnosti, jak jsou uložená nebo vypočítané hodnoty pro tento odběr.
+*Indexery* byste definovali v typu, když jeho model rozhraní API nějaké kolekce, kde definujete argumenty této kolekce. Indexery mohou nebo nemusí být mapovány přímo na typy kolekce, které jsou součástí rozhraní .NET Core Framework. Váš typ může kromě modelování kolekce obsahovat i další zodpovědnosti.
+Indexery umožňují poskytovat rozhraní API, které odpovídá abstrakci typu, bez vystavení vnitřních podrobností o tom, jak se hodnoty pro tuto abstrakci ukládají nebo vypočítávají.
 
-Pojďme si projít některé běžné scénáře použití *indexery*. Můžete přistupovat [složky s ukázkou pro indexery](https://github.com/dotnet/samples/tree/master/csharp/indexers). Pokyny ke stažení najdete v tématu [ukázek a kurzů](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Pojďme si projít některé z běžných scénářů použití *indexerů*. K [ukázkové složce pro indexery](https://github.com/dotnet/samples/tree/master/csharp/indexers)můžete získat přístup. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-### <a name="arrays-and-vectors"></a>Pole a vektorů
+### <a name="arrays-and-vectors"></a>Pole a vektory
 
-Jednou z nejběžnějších scénářů pro vytváření indexerů je modely typu pole nebo vektoru. Indexer pro modelování uspořádaný seznam dat můžete vytvořit. 
+Jedním z nejběžnějších scénářů pro vytváření indexerů je, že typ modeluje pole nebo vektor. Můžete vytvořit indexer pro modelování seřazeného seznamu dat. 
 
-Výhoda vytváření vlastních indexeru je, že můžete definovat úložiště pro danou kolekci tak, aby odpovídala vašim potřebám. Představte si situaci, kdy váš typ modely historická data, která je příliš velký, aby najednou načíst do paměti. Budete muset načtení a uvolnění oddíly kolekce na základě využití. Následující příklad modely toto chování. Oznámí na existují jak mnoho datových bodů. Vytvoří stránky pro uložení části dat na vyžádání. Odebírá stránky z paměti, aby uvolnil prostor pro stránky vyžaduje novější požadavky.
+Výhodou vytvoření vlastního indexeru je, že můžete definovat úložiště pro tuto kolekci tak, aby vyhovovalo vašim potřebám. Představte si situaci, kdy váš typ modeluje historická data, která jsou příliš velká pro načtení do paměti najednou. Musíte načíst a uvolnit části kolekce na základě využití. V následujícím příkladu jsou modely tohoto chování. Oznamuje, kolik datových bodů existuje. Vytvoří stránky pro uložení částí dat na vyžádání. Odstraní stránky z paměti a uvolní tak místo pro stránky vyžadované novějšími požadavky.
 
 ```csharp
 public class DataSamples
@@ -172,11 +173,11 @@ public class DataSamples
 }
 ```
 
-Můžete postupovat podle tohoto idiomu návrhu modelovat jakýkoli druh kolekce Pokud existují oprávněné důvody nenačte celá sada dat do kolekce v paměti. Všimněte si, že `Page` třída je privátní vnořené třídy, který není součástí veřejného rozhraní. Tyto podrobnosti jsou skryté všichni uživatelé této třídy.
+Můžete postupovat podle tohoto návrhu idiom a modelovat jakýkoli druh kolekce, kde jsou dobré důvody, proč nenačíst celou sadu dat do kolekce v paměti. Všimněte si, že třída `Page` je soukromá vnořená třída, která není součástí veřejného rozhraní. Tyto podrobnosti jsou skryté od všech uživatelů této třídy.
 
 ### <a name="dictionaries"></a>slovníky
 
-Další z typických možností je, když budete potřebovat k modelování slovníku nebo mapy. Tento scénář je typ ukládá hodnoty na základě klíče, obvykle text klíče. Tento příklad vytvoří slovník, který mapuje argumenty příkazového řádku [výrazy lambda](delegates-overview.md) , které spravují tyto možnosti. Následující příklad ukazuje dvě třídy: `ArgsActions` třída, která mapuje možnosti příkazového řádku pro `Action` delegovat a `ArgsProcessor` , která používá `ArgsActions` ke spuštění každého `Action` při výskytu této možnosti.
+Dalším běžným scénářem je situace, kdy potřebujete modelovat slovník nebo mapu. Tento scénář je v případě, že váš typ ukládá hodnoty na základě klíče, obvykle textových klíčů. Tento příklad vytvoří slovník, který mapuje argumenty příkazového řádku na [výrazy lambda](delegates-overview.md) , které spravují tyto možnosti. Následující příklad ukazuje dvě třídy: `ArgsActions` třídu, která mapuje možnost příkazového řádku na delegáta `Action` a `ArgsProcessor`, který používá `ArgsActions` ke spuštění každého `Action`, když k této možnosti dojde.
 
 ```csharp
 public class ArgsProcessor
@@ -218,15 +219,15 @@ public class ArgsActions
 }
 ```
 
-V tomto příkladu `ArgsAction` kolekce úzce mapuje na zdrojové kolekce.
-`get` Určuje-li dané možnosti není nakonfigurovaná. Pokud ano, vrátí `Action` přidružené k této možnosti. Pokud ne, vrátí `Action` , který nemá žádný účinek. Veřejný přístupový objekt neobsahuje `set` přistupujícího objektu. Místo toho návrh s použitím veřejné metody pro nastavení možností.
+V tomto příkladu je kolekce `ArgsAction` úzce namapována na podkladovou kolekci.
+`get` určuje, zda byla daná možnost nakonfigurována. Pokud ano, vrátí `Action` přidružené k této možnosti. Pokud ne, vrátí `Action`, který nic nedělá. Veřejný přistupující objekt nezahrnuje přistupující objekt `set`. Místo toho návrh pomocí veřejné metody pro nastavení možností.
 
 ### <a name="multi-dimensional-maps"></a>Multidimenzionální mapy
 
-Můžete vytvořit indexerů, které používají více argumentů. Kromě toho tyto argumenty nejsou omezeny na být stejného typu. Pojďme se podívat na dva příklady.   
+Můžete vytvořit indexery, které používají více argumentů. Kromě toho nejsou tyto argumenty omezeny na stejný typ. Pojďme se podívat na dva příklady.   
 
-První příklad ukazuje třídu, která generuje hodnoty pro skupinu Mandelbrot. Další informace o matematiku za čtení [v tomto článku](https://en.wikipedia.org/wiki/Mandelbrot_set). Indexer používá dvě Double pro definování bod v X, Y roviny.
-Přístupový objekt get vypočítá počet iterací, dokud se určuje bod tak, aby nebyl v sadě. Pokud je dosažen maximální počet iterací, bod nachází v sadě a vrátí se hodnota maxIterations třídy. (Počítače, generovány Image, který pro sadu Mandelbrot definovat barvy pro počet iterací, které jsou nezbytné k určení, že bod je mimo sadu.
+První příklad ukazuje třídu, která generuje hodnoty pro Mandelbrot sadu. Další informace o matematikě za sadou najdete v [tomto článku](https://en.wikipedia.org/wiki/Mandelbrot_set). Indexer používá dvě dvojité čárky k definování bodu v rovině X, Y.
+Přistupující objekt get vypočítá počet iterací, dokud není v sadě zjištěn bod. Pokud je dosaženo maximálního počtu iterací, je bod v sadě a vrátí se hodnota maxIterations třídy. (Počítače generované obrázky, které jsou populární pro Mandelbrot sadu, definují barvy pro počet iterací potřebných k určení, jestli je bod mimo sadu.
 
 ```csharp
 public class Mandelbrot
@@ -260,10 +261,10 @@ public class Mandelbrot
 }
 ```
 
-Sada Mandelbrot definuje hodnoty v každé (x, y) koordinovat skutečných číselné hodnoty.
-Který definuje slovník, který může obsahovat neomezený počet hodnot. Proto neexistuje žádné úložiště za sady. Místo toho tuto třídu vypočítá hodnotu pro každý bod, když kód volá `get` přistupujícího objektu. Neexistuje žádný použité úložiště.
+Mandelbrot sada definuje hodnoty v každé souřadnici (x, y) pro hodnoty reálného čísla.
+Který definuje slovník, který by mohl obsahovat nekonečný počet hodnot. Proto neexistuje žádné úložiště za sadou. Místo toho tato třída vypočítá hodnotu pro každý bod, když kód volá přistupující objekt `get`. Nepoužívá se žádné základní úložiště.
 
-Podívejme se na poslední užívání indexery, kdy indexer využívá více argumentů různých typů. Vezměte v úvahu program, který spravuje data o teplotě historických. Indexer využívá Město a datum nastavit nebo získat teploty vysoké a nízké pro toto umístění:
+Pojďme se podívat na poslední použití indexerů, kde indexer přijímá více argumentů různých typů. Vezměte v úvahu program, který spravuje historická data o teplotě. Tento indexer používá město a datum k nastavení nebo získání vysoké a nízké teploty pro toto umístění:
 
 ```csharp
 using DateMeasurements = 
@@ -309,21 +310,21 @@ public class HistoricalWeatherData
 }
 ```
 
-Tento příklad vytvoří indexer, který mapuje data o počasí na dva různé argumenty: města (reprezentované `string`) a data (reprezentované `DateTime`). Interní úložiště používá dvě `Dictionary` třídy, které představují dvojrozměrné slovníku. Veřejné rozhraní API už nebude představuje základní úložiště. Místo toho funkce jazyků indexerů umožňuje vytvářet veřejné rozhraní, která představuje abstrakci, i když základního úložiště musí používat různé základní typy kolekcí.
+Tento příklad vytvoří indexer, který mapuje data o počasí ve dvou různých argumentech: město (reprezentované `string`) a datum (reprezentované `DateTime`). Interní úložiště používá dvě `Dictionary` třídy k reprezentaci dvojrozměrného slovníku. Veřejné rozhraní API už nepředstavuje základní úložiště. Spíše funkce jazyka indexerů vám umožní vytvořit veřejné rozhraní, které představuje vaši abstrakci, i když základní úložiště musí používat jiné typy základních kolekcí.
 
-Existují dvě části tohoto kódu, který může být obeznámeni pro některé vývojáře. Tyto dvě `using` příkazy:
+Existují dvě části tohoto kódu, které mohou být někteří vývojáři Neobeznámeni. Tyto dva `using` příkazy:
 
 ```csharp
 using DateMeasurements = System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>;
 using CityDataMeasurements = System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 ```
 
-vytvoření *alias* pro Konstruovaný obecný typ. Tyto příkazy Povolit kódu později použít více popisné `DateMeasurements` a `CityDateMeasurements` názvy místo obecné konstrukce `Dictionary<DateTime, Measurements>` a `Dictionary<string, Dictionary<DateTime, Measurements> >`. Tento konstruktor vyžaduje použití názvů plně kvalifikovaný typ na pravé straně `=` přihlašování.
+vytvoří *alias* pro konstruovaný obecný typ. Tyto příkazy umožňují kódu později použít výstižnější `DateMeasurements` a `CityDateMeasurements` názvy namísto obecné konstrukce `Dictionary<DateTime, Measurements>` a `Dictionary<string, Dictionary<DateTime, Measurements> >`. Tento konstruktor vyžaduje použití plně kvalifikovaného názvu typu na pravé straně znaku `=`.
 
-Druhý postup je pro odstranění vypnout části času žádné `DateTime` objekt použitý k indexu do kolekce. Rozhraní .NET framework nezahrnuje jediný typ Date.
-Vývojáři `DateTime` typu, ale použít `Date` vlastnost a zkontrolujte, že některé `DateTime` objektu v daný den jsou stejné.
+Druhým postupem je obložení časových částí libovolného objektu `DateTime`, který se používá k indexování do kolekcí. Rozhraní .NET Framework neobsahuje typ pouze datum.
+Vývojáři používají `DateTime` typ, ale pomocí vlastnosti `Date` zajistěte, aby všechny objekty `DateTime` z tohoto dne byly stejné.
 
-## <a name="summing-up"></a>Shrnutí
+## <a name="summing-up"></a>Sčítání
 
-Indexery byste měli vytvořit kdykoli mít element jako vlastnost ve své třídě, kde tato vlastnost představuje jednu hodnotu, ale spíše kolekci hodnot, kde jednotlivé položky je identifikován sady argumentů. Tyto argumenty může jedinečně identifikovat, která položka v kolekci by se měla odkazovat.
-Indexery rozšířit koncept [vlastnosti](properties.md), kdy je člen zpracován jako položku dat z vně třídy, ale jako metody na straně. Indexery povolit argumenty k nalezení konkrétní položce v vlastnost, která představuje sadu položek.
+Indexery byste měli vytvořit kdykoli, když máte element, který je ve vaší třídě, kde tato vlastnost představuje nejedinou hodnotu, ale spíše kolekci hodnot, kde je každá jednotlivá položka identifikována sadou argumentů. Tyto argumenty mohou jednoznačně určit, která položka v kolekci má být odkazována.
+Indexery rozšiřuje koncept [vlastností](properties.md), kde se člen považuje za datovou položku z vnějšku třídy, ale jako metodu v rámci. Indexery umožňují argumentům vyhledat jednu položku ve vlastnosti, která představuje sadu položek.

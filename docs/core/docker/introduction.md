@@ -3,12 +3,12 @@ title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 3f40d2723feb5a31066115ae11cafba11981f1b4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: af1213eefb013f8911a865e7e2e318a8beadc9a5
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038466"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -40,7 +40,7 @@ Microsoft Container Registry (MCR) je oficiálním zdrojem imagí kontejnerů po
 
 ### <a name="dockerfile"></a>Souboru Dockerfile
 
-**Souboru Dockerfile** je soubor, který definuje sadu instrukcí, které vytvoří obrázek. Každá instrukce v **souboru Dockerfile** vytvoří vrstvu v obrázku. Ve většině případů, když znovu sestavíte image, se znovu sestaví pouze vrstvy, které se změnily. **Souboru Dockerfile** je možné distribuovat jiným uživatelům a umožňuje jejich opětovné vytvoření vytvořit novou image stejným způsobem jako v případě, že jste ji vytvořili. I když vám to umožňuje distribuovat *pokyny* k vytvoření image, hlavní způsob, jak distribuovat image, je publikovat je do registru.
+**Souboru Dockerfile** je soubor, který definuje sadu instrukcí, které vytvoří obrázek. Každá instrukce v **souboru Dockerfile** vytvoří vrstvu v obrázku. Ve většině případů se při opětovném sestavování image znovu sestaví jenom vrstvy, které se změnily. **Souboru Dockerfile** je možné distribuovat jiným uživatelům a umožnit jim opětovné vytvoření nového obrázku stejným způsobem, jako jste ho vytvořili. I když vám to umožňuje distribuovat *pokyny* k vytvoření image, hlavní způsob, jak distribuovat image, je publikovat je do registru.
 
 ## <a name="net-core-images"></a>Image .NET Core
 
@@ -64,7 +64,7 @@ Hostujte svůj kontejner v cloudu bez jakýchkoli služeb pro správu vyšší �
  [Azure Batch](https://azure.microsoft.com/services/batch/) \
 Spusťte opakované výpočetní úlohy s využitím kontejnerů.
 
-- @No__t_1 [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)
+- \ [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)
 Namodernizovat aplikace .NET do mikroslužeb pomocí kontejnerů Windows serveru.
 
 - [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) \

@@ -1,54 +1,54 @@
 ---
 title: Literály
-description: Seznamte se s typy literálu v F# programovací jazyk.
+description: Seznamte se s typy literálů F# v programovacím jazyce.
 ms.date: 06/28/2019
-ms.openlocfilehash: 0c9ced0b505817a161ca39c6c9f853f94cedf410
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 9792a24ac28eb402e35e78574cd6a2bf9526734d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610157"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73041033"
 ---
 # <a name="literals"></a>Literály
 
 > [!NOTE]
-> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN (prozatím).
+> Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN (teď).
 
-Toto téma obsahuje tabulku, která ukazuje, jak určit typ literály v F#.
+Toto téma obsahuje tabulku, která ukazuje, jak zadat typ literálu v F#.
 
-## <a name="literal-types"></a>Typy literálu
+## <a name="literal-types"></a>Typy literálů
 
-Následující tabulka uvádí typy literálu v F#. Znaky, které představují číslice v šestnáctkové soustavě nerozlišují; znaky, které označují typ rozlišují malá a velká písmena.
+V následující tabulce jsou uvedeny typy literálů F#v. Znaky, které představují číslice v šestnáctkovém zápisu, nerozlišují velká a malá písmena; znaky, které identifikují typ, rozlišují velká a malá písmena.
 
-|type|Popis|Přípona nebo předpona|Příklady|
+|Typ|Popis|Přípona nebo předpona|Příklady|
 |----|-----------|----------------|--------|
 |sbyte|8bitové celé číslo se znaménkem|y|`86y`<br /><br />`0b00000101y`|
-|byte|přirozené číslo bez znaménka 8 bitů|UY|`86uy`<br /><br />`0b00000101uy`|
-|int16|16bitové celé číslo se znaménkem|s|`86s`|
-|uint16|přirozené číslo bez znaménka 16 bitů|USA|`86us`|
-|int<br /><br />int32|32bitové celé číslo se znaménkem|l nebo žádný|`86`<br /><br />`86l`|
-|uint<br /><br />uint32|přirozené číslo bez znaménka 32-bit|u nebo ul|`86u`<br /><br />`86ul`|
-|nativeint –|Nativní ukazatel na číslo se znaménkem přirozeného|n|`123n`|
-|unativeint –|Nativní ukazatel jako přirozené číslo bez znaménka|zrušení|`0x00002D3Fun`|
-|int64|64bitové celé číslo se znaménkem|L|`86L`|
-|uint64|přirozené číslo bez znaménka 64-bit|UL|`86UL`|
-|jeden, float32.|32bitové číslo s plovoucí desetinnou|F nebo f|`4.14F` Nebo `4.14f`|
-|||lf|`0x00000000lf`|
-|plovoucí; Double|64bitové číslo s plovoucí desetinnou|žádná|`4.14` nebo `2.3E+32` nebo `2.3e+32`|
-|||LF|`0x0000000000000000LF`|
-|bigint|celé číslo, ne pouze 64bitové znázornění|I|`9999999999999999999999999999I`|
-|decimal|desetinné číslo, které jsou reprezentovány jako pevný bod nebo racionální číslo|M nebo m|`0.7833M` Nebo `0.7833m`|
-|Char|znak Unicode|žádná|`'a'`|
-|String|Řetězec znaků Unicode|žádná|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Viz také [řetězce](Strings.md).|
+|byte|8bitové přirozené číslo bez znaménka|uy|`86uy`<br /><br />`0b00000101uy`|
+|Int16|16bitové celé číslo se znaménkem|s|`86s`|
+|UInt16|16bitové přirozené číslo bez znaménka|vylepšení|`86us`|
+|int<br /><br />Uvedena|Podepsané 32 – celé číslo se znaménkem|l nebo None|`86`<br /><br />`86l`|
+|uint<br /><br />UInt32|nepodepsané 32 – přirozené číslo v bitech|u nebo ul|`86u`<br /><br />`86ul`|
+|nativeint –|nativní ukazatel na podepsané přirozené číslo|N|`123n`|
+|unativeint –|nativní ukazatel jako přirozené číslo bez znaménka|instalován|`0x00002D3Fun`|
+|Int64|Podepsané 64 – celé číslo se znaménkem|L|`86L`|
+|UInt64|nepodepsané 64 – přirozené číslo v bitech|UL|`86UL`|
+|Single, float32|32-bitové číslo s plovoucí desetinnou čárkou|F nebo f|`4.14F` nebo `4.14f`|
+|||znaky|`0x00000000lf`|
+|Plovák klepat|64-bitové číslo s plovoucí desetinnou čárkou|žádná|`4.14` nebo `2.3E+32` nebo `2.3e+32`|
+|||ZNAKY|`0x0000000000000000LF`|
+|bigint|celé číslo není omezeno na 64-bitovou reprezentaci|I|`9999999999999999999999999999I`|
+|decimal|desetinné číslo reprezentované jako pevný bod nebo racionální číslo|M nebo m|`0.7833M` nebo `0.7833m`|
+|Char|znak Unicode|žádná|`'a'` nebo `'\u0061'`|
+|String|Řetězec Unicode|žádná|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Viz také [řetězce](Strings.md).|
 |byte|Znak ASCII|B|`'a'B`|
-|Byte|Řetězec ASCII|B|`"text"B`|
-|Řetězec nebo byte]|řetězec verbatim|předponu @|`@"\\server\share"` (Unicode)<br /><br />`@"\\server\share"B` (ASCII)|
+|Byte []|Řetězec ASCII|B|`"text"B`|
+|Řetězec nebo Byte []|řetězec doslovného řetězce|@ prefix|`@"\\server\share"` (Unicode)<br /><br />`@"\\server\share"B` (ASCII)|
 
 ## <a name="named-literals"></a>Pojmenované literály
 
-Hodnoty, které mají být konstantami, mohou být označeny [literálu](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) atribut. Tento atribut má efekt sestavení hodnoty se zkompiluje jako konstanta.
+Hodnoty, které mají být konstanty, mohou být označeny atributem [Literal](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) . Tento atribut má vliv, který způsobí, že se hodnota zkompiluje jako konstanta.
 
-Ve vzoru porovnávání výrazů identifikátory, které začínají malými písmeny, jsou vždy považovány za proměnné ke svázání, nikoli jako literály, takže obecně používejte počáteční velká písmena při definování literálů.
+V výrazech porovnávání se vzorem se identifikátory začínající malým písmenem vždy považují za proměnné, které mají být vázány, nikoli jako literály, takže při definování literálů byste obecně měli použít počáteční velká písmena.
 
 ```fsharp
 [<Literal>]
@@ -69,13 +69,13 @@ let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 
 ## <a name="remarks"></a>Poznámky
 
-Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` následovaný 16bitové šestnáctkové (0000 - FFFF), nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje libovolný bod kódu Unicode (00000000 - 0010FFFF).
+Řetězce Unicode mohou obsahovat explicitní kódování, která lze zadat pomocí `\u` následovaný 16 bitovým hexadecimálním kódem (0000-FFFF) nebo kódováním UTF-32, které lze zadat pomocí `\U` následovaným 32 šestnáctkovým kódem, který představuje libovolnou znakovou sadu Unicode bod kódu (00000000-0010FFFF).
 
-Použití jiných operátorů bitového jiných než `|||` není povolený.
+Použití jiných bitových operátorů kromě `|||` není povoleno.
 
-## <a name="integers-in-other-bases"></a>Celá čísla v jiných základů
+## <a name="integers-in-other-bases"></a>Celá čísla v jiných základech
 
-Je taky možné specifikovat podepsaný 32bitová celá čísla v šestnáctkové soustavě, osmičkové nebo binární pomocí `0x`, `0o` nebo `0b` předpony v uvedeném pořadí.
+Podepsaná 32. celá čísla se znaménkem lze zadat také v šestnáctkovém, osmičkovém nebo binárním formátu pomocí `0x`, `0o` nebo předpony `0b`.
 
 ```fsharp
 let numbers = (0x9F, 0o77, 0b1010)
@@ -84,7 +84,7 @@ let numbers = (0x9F, 0o77, 0b1010)
 
 ## <a name="underscores-in-numeric-literals"></a>Podtržítka v numerických literálech
 
-Číslice můžete oddělit znakem podtržítka (`_`).
+Můžete oddělit číslice znakem podtržítka (`_`).
 
 ```fsharp
 let value = 0xDEAD_BEEF
@@ -96,4 +96,4 @@ let exampleSSN = 123_456_7890
 
 ## <a name="see-also"></a>Viz také:
 
-- [Core.literalattribute – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)
+- [Core. LiteralAttribute – – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)

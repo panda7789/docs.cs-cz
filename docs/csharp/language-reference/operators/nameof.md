@@ -8,28 +8,28 @@ f1_keywords:
 helpviewer_keywords:
 - nameof operator [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 965b3e96a20906187df4c8693f050c550a747091
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: fa858db918cdaf04c757f2741265e359acb74f7b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331434"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036341"
 ---
 # <a name="nameof-operator-c-reference"></a>nameof – operátorC# (Referenční dokumentace)
 
-`nameof` Operátor Získá název proměnné, typu nebo členu jako řetězcové konstanty:
+Operátor `nameof` Získá název proměnné, typu nebo členu jako řetězcové konstanty:
 
 [!code-csharp-interactive[nameof operator](~/samples/csharp/language-reference/operators/NameOfOperator.cs#Examples)]
 
 Jak ukazuje předchozí příklad, v případě typu a oboru názvů není vytvořen název obvykle [plně kvalifikovaný](~/_csharplang/spec/basic-concepts.md#fully-qualified-names).
 
-`nameof` Operátor je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
+Operátor `nameof` je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
 
-`nameof` Operátor lze použít k zajištění udržovatelnosti kódu kontroly argumentu:
+Operátor `nameof` lze použít k zajištění udržovatelnosti kódu pro kontrolu argumentu:
 
 [!code-csharp[nameof and argument check](~/samples/csharp/language-reference/operators/NameOfOperator.cs#ExceptionMessage)]
 
-Operátor je k dispozici C# v 6 a novějším. `nameof`
+Operátor `nameof` je k dispozici C# v 6 nebo novějším.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

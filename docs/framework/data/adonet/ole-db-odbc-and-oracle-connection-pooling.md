@@ -2,12 +2,12 @@
 title: Sdružování připojení OLE DB, ODBC a Oracle
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: b83b53550964b3149f3bc711eaf119e749d1834b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4b801032e67d1c4c51fed8556ff1fea05c214aff
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794689"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039835"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Sdružování připojení OLE DB, ODBC a Oracle
 Připojení sdružování můžou významně zlepšit výkon a škálovatelnost vaší aplikace. Tato část popisuje sdružování připojení pro poskytovatele .NET Framework dat pro OLE DB, ODBC a Oracle.  
@@ -15,7 +15,7 @@ Připojení sdružování můžou významně zlepšit výkon a škálovatelnost 
 ## <a name="connection-pooling-for-oledb"></a>Sdružování připojení pro OleDb  
  Zprostředkovatel dat .NET Framework pro OLE DB automaticky poolují připojení pomocí sdružování relací OLE DB. Argumenty připojovacího řetězce se dají použít k povolení nebo zakázání OLE DBch služeb, včetně sdružování. Například následující připojovací řetězec zakáže OLE DB sdružování relací a automatické zařazení transakce.  
   
-```  
+```csharp
 Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=SSPI;  
 ```  
   
@@ -39,7 +39,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 ### <a name="connection-addition"></a>Přidání připojení  
  U každého jedinečného připojovacího řetězce se vytvoří fond připojení. Při vytvoření fondu se vytvoří víc objektů připojení a přidají se do fondu, aby se splnil minimální požadavek na velikost fondu. Připojení se do fondu přidají podle potřeby až do maximální velikosti fondu.  
   
- Když je <xref:System.Data.OracleClient.OracleConnection> objekt požadován, získá se z fondu, pokud je k dispozici použitelné připojení. Aby bylo možné připojení použít, musí být aktuálně nepoužitelné, mít odpovídající kontext transakce nebo nemusí být přidruženo k žádnému kontextu transakce a musí obsahovat platný odkaz na server.  
+ Pokud je požadován objekt <xref:System.Data.OracleClient.OracleConnection>, získá se z fondu, pokud je k dispozici použitelné připojení. Aby bylo možné připojení použít, musí být aktuálně nepoužitelné, mít odpovídající kontext transakce nebo nemusí být přidruženo k žádnému kontextu transakce a musí obsahovat platný odkaz na server.  
   
  Pokud byla dosažena maximální velikost fondu a není k dispozici žádné použitelné připojení, je požadavek zařazen do fronty. Pooler připojení splňuje tyto požadavky tím, že je znovu přidělí, protože se uvolní do fondu. Připojení se uvolní zpátky do fondu, když se zavřou nebo odstraněly.  
   
@@ -48,7 +48,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
   
  Pokud připojení existuje na serveru, který zmizel, může být toto připojení vykresleno z fondu, pokud Pooler připojení nerozpoznalo vážné připojení a označil ho jako neplatný. Pokud k tomu dojde, je vygenerována výjimka. Je však nutné připojení ukončit, aby bylo možné ho uvolnit zpátky do fondu.  
   
- `Close` Nevolejte nebo `Dispose` na `Connection`, `Finalize` nebo na jiný spravovaný objekt v metodě vaší třídy. `DataReader` V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, `Finalize` nezahrnujte metodu do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
+ Nevolejte `Close` ani `Dispose` na `Connection`, `DataReader`nebo jiném spravovaném objektu v metodě `Finalize` vaší třídy. V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, nezahrnujte metodu `Finalize` do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
   
 ### <a name="transaction-support"></a>Podpora transakcí  
  Připojení jsou vykreslena z fondu a přiřazena na základě kontextu transakce. Kontext žádajícího vlákna a přiřazeného připojení se musí shodovat. Proto každý fond připojení je ve skutečnosti rozdělen na připojení bez kontextu transakce, který je k nim přidružen, a do *N* dílčích dělení, které obsahují připojení s konkrétním kontextem transakce.  
@@ -56,17 +56,17 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
  Když je připojení ukončeno, je uvolněno zpátky do fondu a do příslušného dílčího dělení na základě jeho transakčního kontextu. Proto můžete připojení zavřít bez vygenerování chyby, i když distribuovaná transakce stále čeká na vyřízení. Díky tomu můžete distribuovanou transakci potvrdit nebo přerušit v pozdějším čase.  
   
 ### <a name="controlling-connection-pooling-with-connection-string-keywords"></a>Řízení sdružování připojení pomocí klíčových slov připojovacího řetězce  
- <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> Vlastnost<xref:System.Data.OracleClient.OracleConnection> objektu podporuje páry klíč/hodnota připojovacího řetězce, které lze použít k úpravě chování logiky sdružování připojení.  
+ Vlastnost <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> objektu <xref:System.Data.OracleClient.OracleConnection> podporuje páry klíč/hodnota připojovacího řetězce, které lze použít k úpravě chování logiky sdružování připojení.  
   
  Následující tabulka popisuje <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> hodnoty, které můžete použít k úpravě chování sdružování připojení.  
   
 |Name|Výchozí|Popis|  
 |----------|-------------|-----------------|  
-|`Connection Lifetime`|0|Při vrácení připojení do fondu se jeho čas vytvoření porovná s aktuálním časem a připojení je zničeno, pokud časový rozsah (v sekundách) překračuje hodnotu zadanou parametrem `Connection Lifetime`. To je užitečné v clusterovaných konfiguracích, aby vynutilo vyrovnávání zatížení mezi běžícím serverem a serverem, který je právě online.<br /><br /> Hodnota nula (0) způsobí maximální časový limit připojení ve fondu.|  
+|`Connection Lifetime`|0,8|Při vrácení připojení do fondu se jeho čas vytvoření porovná s aktuálním časem a připojení je zničeno, pokud časový rozsah (v sekundách) překračuje hodnotu zadanou v `Connection Lifetime`. To je užitečné v clusterovaných konfiguracích, aby vynutilo vyrovnávání zatížení mezi běžícím serverem a serverem, který je právě online.<br /><br /> Hodnota nula (0) způsobí maximální časový limit připojení ve fondu.|  
 |`Enlist`|podmínka|Když `true`, Pooler automaticky zařadí připojení v kontextu aktuálního transakce vlákna vytváření, pokud existuje kontext transakce.|  
 |`Max Pool Size`|100|Maximální počet připojení povolených ve fondu.|  
-|`Min Pool Size`|0|Minimální počet připojení udržovaných ve fondu.|  
-|`Pooling`|podmínka|Když `true`se připojení vykreslí z příslušného fondu nebo v případě potřeby se vytvoří a přidá do příslušného fondu.|  
+|`Min Pool Size`|0,8|Minimální počet připojení udržovaných ve fondu.|  
+|`Pooling`|podmínka|Když `true`, připojení se vykreslí z příslušného fondu nebo v případě potřeby se vytvoří a přidá do příslušného fondu.|  
   
 ## <a name="see-also"></a>Viz také:
 

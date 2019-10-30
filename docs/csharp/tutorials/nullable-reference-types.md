@@ -2,13 +2,14 @@
 title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
+ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: e58f2bac23fabf734df93aa2a643106f1c1bd5f3
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 3ee5e50cf889dd0e02bf58f1e3471fc709b729cd
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291390"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039704"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Seznámení s typem s možnou hodnotou null a odkazy, které neumožňují hodnotu null, je jasné.
 
@@ -23,7 +24,7 @@ V tomto kurzu se naučíte:
 > - Napsat kód, kde kompilátor vynutil tato rozhodnutí o návrhu.
 > - Použití funkce odkazu s možnou hodnotou null ve vlastních návrzích
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici v rámci sady [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
@@ -37,7 +38,7 @@ Kód, který zapíšete pro tuto ukázku, tento záměr vyjádří a kompilátor
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Vytvoření aplikace a povolení typů odkazů s možnou hodnotou null
 
-Vytvořte novou konzolovou aplikaci buď v aplikaci Visual Studio, nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace budete muset určit, že se celý projekt zkompiluje v povoleném **kontextu anotace s možnou hodnotou null**. Otevřete soubor *. csproj* a přidejte `Nullable` prvku do prvku `PropertyGroup`. Nastavte její hodnotu na `enable`. Je nutné, abyste se přihlásili k funkci **typů odkazů s možnou hodnotou null** , i v C# projektech 8,0. To je proto, že když je funkce zapnutá, existující deklarace referenčních proměnných se stanou odkazy, které neumožňují **hodnotu null**. I když toto rozhodnutí pomůže najít problémy, kdy existující kód nemusí mít správné kontroly hodnoty null, nemusí přesně odrážet původní záměr návrhu:
+Vytvořte novou konzolovou aplikaci buď v aplikaci Visual Studio, nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace budete muset určit, že se celý projekt zkompiluje v povoleném **kontextu anotace s možnou hodnotou null**. Otevřete soubor *. csproj* a přidejte `Nullable` prvku do prvku `PropertyGroup`. Nastavte jeho hodnotu na `enable`. Je nutné, abyste se přihlásili k funkci **typů odkazů s možnou hodnotou null** , i v C# projektech 8,0. To je proto, že když je funkce zapnutá, existující deklarace referenčních proměnných se stanou odkazy, které neumožňují **hodnotu null**. I když toto rozhodnutí pomůže najít problémy, kdy existující kód nemusí mít správné kontroly hodnoty null, nemusí přesně odrážet původní záměr návrhu:
 
 ```xml
 <Nullable>enable</Nullable>
@@ -57,7 +58,7 @@ Tyto typy využívají odkaz s možnou hodnotou null a neumožňující použit�
 - Respondenti nikdy nemohou mít hodnotu null. Budete chtít sledovat lidi, ke kterým jste kontaktovali, dokonce i respondenti, kteří se odmítli zúčastnit.
 - Každá odpověď na otázku může mít hodnotu null. Respondenti mohou odmítnout odpověď na některé nebo všechny otázky.
 
-Pokud jste napracovali v C#nástroji, možná jste zvyklí na odkazování na typy, které umožňují @no__t hodnoty-1, které jste pravděpodobně vynechali při deklaraci instancí, které neumožňují hodnotu null:
+Pokud jste pracovali v C#nástroji, možná jste zvyklí na odkazování na typy, které umožňují`null`hodnoty, které jste pravděpodobně vynechali při deklaraci instancí, které neumožňují hodnotu null:
 
 - Kolekce dotazů by neměla mít hodnotu null.
 - Kolekce respondentů by neměla mít hodnotu null.
@@ -175,7 +176,7 @@ Do třídy `SurveyResponse` přidejte následující kód:
 
 [!code-csharp[AnswerSurvey](~/samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#AnswerSurvey)]
 
-Úložiště pro odpovědi na průzkum je `Dictionary<int, string>?`, což znamená, že může mít hodnotu null. Používáte novou funkci jazyka k deklaraci záměru návrhu, jak pro kompilátor, tak pro každého, kdo váš kód čte, později. Pokud někdy zrušíte odkaz `surveyResponses`, aniž byste nejprve kontrolovali hodnotu `null`, zobrazí se upozornění kompilátoru. Nezobrazuje se upozornění v metodě @no__t 0, protože kompilátor může určit, že proměnná `surveyResponses` byla nastavena na hodnotu jinou než null.
+Úložiště pro odpovědi na průzkum je `Dictionary<int, string>?`, což znamená, že může mít hodnotu null. Používáte novou funkci jazyka k deklaraci záměru návrhu, jak pro kompilátor, tak pro každého, kdo váš kód čte, později. Pokud někdy zrušíte odkaz `surveyResponses`, aniž byste nejprve kontrolovali hodnotu `null`, zobrazí se upozornění kompilátoru. V metodě `AnswerSurvey` nezískáte upozornění, protože kompilátor může určit, že proměnná `surveyResponses` byla nastavena na hodnotu jinou než null.
 
 Použití `null` pro chybějící odpovědi zvýrazní klíčové body pro práci s typy odkazů s možnou hodnotou null: vaším cílem není odebrat všechny hodnoty `null` z programu. Místo toho je vaším cílem zajistit, aby kód, který píšete, vyjadřoval záměr vašeho návrhu. Chybějící hodnoty jsou nezbytným konceptem, který by bylo možné vyjádřit do kódu. Hodnota `null` představuje jasný způsob, jak vyjádřit chybějící hodnoty. Pokus o odebrání všech hodnot `null` vede pouze k definování jiného způsobu, jak tyto chybějící hodnoty vyjádřit bez `null`.
 
@@ -183,7 +184,7 @@ Dále je nutné zapsat metodu `PerformSurvey` ve třídě `SurveyRun`. Do tříd
 
 [!code-csharp[PerformSurvey](~/samples/csharp/NullableIntroduction/NullableIntroduction/SurveyRun.cs#PerformSurvey)]
 
-Tady můžete znovu vybrat @no__t s možnou hodnotou null-0, což znamená, že odpověď může být null. To indikuje, že průzkum ještě není předaný žádným respondentům. Všimněte si, že se přidávají respondenti, dokud nepřijdete o dostatek.
+Tady můžete znovu vybrat `List<SurveyResponse>?` s možnou hodnotou null a odpověď může mít hodnotu null. To indikuje, že průzkum ještě není předaný žádným respondentům. Všimněte si, že se přidávají respondenti, dokud nepřijdete o dostatek.
 
 Posledním krokem ke spuštění průzkumu je přidání volání pro provedení průzkumu na konci metody `Main`:
 

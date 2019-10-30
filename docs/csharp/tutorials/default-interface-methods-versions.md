@@ -2,13 +2,14 @@
 title: Bezpečně aktualizovat rozhraní pomocí výchozích metod rozhraní vC#
 description: V tomto rozšířeném kurzu se seznámíte s tím, jak můžete bezpečně přidat nové funkce do stávajících definic rozhraní bez přerušení všech tříd a struktur, které implementují toto rozhraní.
 ms.date: 05/06/2019
+ms.technlogy: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 71fce2594dbf5ef3175a6b9bdf4e6edba754bb84
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: b9194b769a3ba6d2906d6177c2363d6093b85188
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275999"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039254"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-methods-in-c-80"></a>Kurz: aktualizace rozhraní s použitím výchozích metod rozhraní C# v 8,0
 
@@ -22,7 +23,7 @@ V tomto kurzu se naučíte:
 > * Vytváření parametrizovaných implementací k zajištění větší flexibility.
 > * Povolit implementátorům poskytnutí konkrétnější implementace ve formě přepsání.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
@@ -40,7 +41,7 @@ Z těchto rozhraní může tým sestavit knihovnu pro své uživatele a vytvoři
 
 Teď je čas upgradovat knihovnu pro další verzi. Jedna z požadovaných funkcí umožňuje zákazníkům, kteří mají spoustu objednávek, věrnostní slevu. Tato nová věrnostní sleva se použije vždy, když zákazník provede objednávku. Konkrétní sleva je vlastnost každého jednotlivého zákazníka. Každá implementace `ICustomer` může nastavit jiná pravidla pro věrnostní slevu. 
 
-Nejpřirozenější způsob, jak tuto funkci přidat, je vylepšit rozhraní @no__t 0 s metodou pro použití věrnostní slevy. Tento návrh návrhu způsobil obavy mezi zkušenými vývojáři: "rozhraní jsou po vydání proměnlivá. Toto je zásadní změna. " C#8,0 přidává *výchozí implementaci rozhraní* pro upgrade rozhraní. Autoři knihovny mohou přidat nové členy do rozhraní a poskytnout výchozí implementaci pro tyto členy.
+Nejpřirozenější způsob, jak tuto funkci přidat, je vylepšit rozhraní `ICustomer` s metodou pro použití věrnostní slevy. Tento návrh návrhu způsobil obavy mezi zkušenými vývojáři: "rozhraní jsou po vydání proměnlivá. Toto je zásadní změna. " C#8,0 přidává *výchozí implementaci rozhraní* pro upgrade rozhraní. Autoři knihovny mohou přidat nové členy do rozhraní a poskytnout výchozí implementaci pro tyto členy.
 
 Implementace výchozích rozhraní umožňují vývojářům upgradovat rozhraní a zároveň přitom povolit jakékoli implementátory k přepsání této implementace. Uživatelé knihovny mohou přijmout výchozí implementaci jako neprůlomou změnu. Pokud jsou jejich obchodní pravidla odlišná, můžou je přepsat.
 
@@ -48,7 +49,7 @@ Implementace výchozích rozhraní umožňují vývojářům upgradovat rozhran�
 
 Tým se dohodl s nejpravděpodobnější výchozí implementací: věrnostní sleva pro zákazníky.
 
-Upgrade by měl poskytovat funkce pro nastavení dvou vlastností: počet objednávek potřebných k poskytnutí slevy a procento slevy. Díky tomu je ideální scénář pro výchozí metody rozhraní. Můžete přidat metodu do rozhraní @no__t 0 a poskytnout nejpravděpodobnější implementaci. Všechny stávající a jakékoli nové implementace mohou použít výchozí implementaci nebo zadat vlastní.
+Upgrade by měl poskytovat funkce pro nastavení dvou vlastností: počet objednávek potřebných k poskytnutí slevy a procento slevy. Díky tomu je ideální scénář pro výchozí metody rozhraní. Můžete přidat metodu do rozhraní `ICustomer` a poskytnout nejpravděpodobnější implementaci. Všechny stávající a jakékoli nové implementace mohou použít výchozí implementaci nebo zadat vlastní.
 
 Nejdřív přidejte do implementace novou metodu:
 

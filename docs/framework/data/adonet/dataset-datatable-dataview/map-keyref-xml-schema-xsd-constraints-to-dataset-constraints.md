@@ -2,12 +2,12 @@
 title: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-ms.openlocfilehash: b5ffe69886b08903feab4373b1cd5c5244b3b3b9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 93f766003326fd41357581196015fd58c71d7508
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784509"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040373"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu. To se podobá relaci cizího klíče v relační databázi. Pokud schéma určuje element **keyref** , je element převeden během procesu mapování schématu na odpovídající omezení cizího klíče pro sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení element **keyref** také generuje relaci s vlastnostmi **nadřazené tabulky**, **podřízenosti**, **ParentColumn**a **ChildColumn** , které jsou zadány v relaci.  
@@ -17,7 +17,7 @@ Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu
 |Název atributu|Popis|  
 |--------------------|-----------------|  
 |**msdata:ConstraintOnly**|Pokud je v elementu **keyref** ve schématu zadán parametr **ConstraintOnly = "true"** , je vytvořeno omezení, ale není vytvořena žádná relace. Pokud tento atribut není zadán (nebo je nastaven na **hodnotu false**), je omezení i vztah vytvořen v **datové sadě**.|  
-|**msdata:ConstraintName**|Pokud je zadán atribut **Constraint** , použije se jako název omezení jeho hodnota. Jinak atribut **Name** elementu **keyref** ve schématu poskytuje název omezení v **datové sadě**.|  
+|**msdata: Constraint**|Pokud je zadán atribut **Constraint** , použije se jako název omezení jeho hodnota. Jinak atribut **Name** elementu **keyref** ve schématu poskytuje název omezení v **datové sadě**.|  
 |**msdata:UpdateRule**|Pokud je atribut **UpdateRule** zadán v elementu **keyref** ve schématu, je jeho hodnota přiřazena vlastnosti omezení **UpdateRule** v **datové sadě**. V opačném případě je vlastnost **UpdateRule** nastavena na hodnotu **Cascade**.|  
 |**msdata:DeleteRule**|Pokud je atribut **DeleteRule** zadán v elementu **keyref** ve schématu, je jeho hodnota přiřazena vlastnosti omezení **DeleteRule** v **datové sadě**. V opačném případě je vlastnost **DeleteRule** nastavena na hodnotu **Cascade**.|  
 |**msdata:AcceptRejectRule**|Pokud je atribut **AcceptRejectRule** zadán v elementu **keyref** ve schématu, je jeho hodnota přiřazena vlastnosti omezení **AcceptRejectRule** v **datové sadě**. V opačném případě je vlastnost **AcceptRejectRule** nastavena na **hodnotu None**.|  
@@ -68,7 +68,7 @@ Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu
   
  Proces mapování schématu XSD (XML Schema Definition Language) vytvoří následující **datovou sadu** se dvěma tabulkami:  
   
-```  
+```text  
 OrderDetail(OrderNo, ItemNo) and  
 Order(OrderNumber, EmpNumber)  
 ```  
@@ -77,9 +77,9 @@ Order(OrderNumber, EmpNumber)
   
 - Jedinečné omezení v tabulce **Order** .  
   
-    ```  
+    ```text
               Table: Order  
-    Columns: OrderNumber   
+    Columns: OrderNumber
     ConstraintName: OrderNumberKey  
     Type: UniqueConstraint  
     IsPrimaryKey: False  
@@ -87,7 +87,7 @@ Order(OrderNumber, EmpNumber)
   
 - Vztah mezi tabulkami **Order** a **OrderDetail** . **Vnořená** vlastnost je nastavena na **hodnotu false** , protože tyto dva prvky nejsou vnořené ve schématu.  
   
-    ```  
+    ```text
               ParentTable: Order  
     ParentColumns: OrderNumber   
     ChildTable: OrderDetail  
@@ -100,13 +100,13 @@ Order(OrderNumber, EmpNumber)
   
 - Omezení cizího klíče v tabulce **OrderDetail**  
   
-    ```  
+    ```text  
               ConstraintName: OrderNoRef  
     Type: ForeignKeyConstraint  
     Table: OrderDetail  
-    Columns: OrderNo   
+    Columns: OrderNo
     RelatedTable: Order  
-    RelatedColumns: OrderNumber   
+    RelatedColumns: OrderNumber
     ```  
   
 ## <a name="see-also"></a>Viz také:

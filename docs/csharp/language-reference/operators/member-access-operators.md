@@ -32,47 +32,47 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 45af31d10d77f4c63b27b34595b97fdd11ef95a1
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: ba2a8cd4995b9baab2071d3fb3c7980e45565692
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116128"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039001"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# referenční)
 
 Při přístupu k členu typu můžete použít následující operátory:
 
-- [(přístup ke členu): přístup ke členu oboru názvů nebo typu `.` ](#member-access-operator-)
-- [(element pole nebo přístup indexeru): pro přístup k prvku pole nebo indexeru typu `[]` ](#indexer-operator-)
-- [a (podmíněnéoperátoryshodnotounull):kprovedeníoperacepřístupučlenaneboelementupouzevpřípadě,žeoperandjenenulový`?[]` `?.` ](#null-conditional-operators--and-)
-- (vyvolání): pro volání metody, která je k dispozici, nebo vyvolání delegáta [ `()` ](#invocation-operator-)
-- [(index od konce): k označení, že pozice prvku je od konce sekvence `^` ](#index-from-end-operator-)
-- (rozsah): Pokud chcete zadat rozsah indexů, které můžete použít k získání rozsahu elementů Sequence. [ `..` ](#range-operator-)
+- [`.` (přístup do členů)](#member-access-operator-): přístup ke členu oboru názvů nebo typu
+- [`[]` (element pole nebo přístup indexeru)](#indexer-operator-): pro přístup k prvku pole nebo indexeru typu
+- [`?.` a `?[]` (koncoví operátoři s hodnotou null)](#null-conditional-operators--and-): k provedení operace přístupu člena nebo elementu pouze v případě, že operand je jiný než null
+- [`()` (vyvolání)](#invocation-operator-): pro volání metody, která je k dispozici, nebo vyvolání delegáta
+- [`^` (index z konce)](#index-from-end-operator-): k označení, že pozice prvku je od konce sekvence
+- [`..` (rozsah)](#range-operator-): Pokud chcete zadat rozsah indexů, které můžete použít k získání rozsahu elementů Sequence.
 
 ## <a name="member-access-operator-"></a>Operátor přístupu ke členu.
 
-`.` Token použijete pro přístup ke členu oboru názvů nebo typu, jak ukazuje následující příklad:
+Token `.` použijete pro přístup ke členu oboru názvů nebo typu, jak ukazuje následující příklad:
 
-- Použijte `.` pro přístup k vnořenému oboru názvů v rámci oboru názvů, jak ukazuje následující příklad [ `using` direktivy](../keywords/using-directive.md) :
+- Použijte `.` pro přístup k vnořenému oboru názvů v rámci oboru názvů, jak ukazuje následující příklad [direktivy`using`](../keywords/using-directive.md) :
 
   [!code-csharp[nested namespaces](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NestedNamespace)]
 
-- Slouží `.` k vytvoření *kvalifikovaného názvu* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
+- Použijte `.` k vytvoření *kvalifikovaného názvu* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
 
   [!code-csharp[qualified name](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#QualifiedName)]
 
-  Použijte směrnici pro použití kvalifikovaných názvů jako nepovinné. [ `using` ](../keywords/using-directive.md)
+  Použijte [direktivu`using`](../keywords/using-directive.md) , aby bylo možné používat kvalifikované názvy jako nepovinné.
 
 - Použijte `.` pro přístup ke [členům typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, jak ukazuje následující kód:
 
   [!code-csharp-interactive[type members](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#TypeMemberAccess)]
 
-Můžete také použít `.` pro přístup k [metodě rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
+Pro přístup k [metodě rozšíření](../../programming-guide/classes-and-structs/extension-methods.md)můžete použít také `.`.
 
 ## <a name="indexer-operator-"></a>Operátor indexer []
 
-Hranaté závorky `[]`se obvykle používají pro přístup k objektům Array, indexer nebo Pointer.
+Hranaté závorky, `[]`, se obvykle používají pro přístup k objektům Array, indexer nebo Pointer.
 
 ### <a name="array-access"></a>Přístup k poli
 
@@ -80,7 +80,7 @@ Následující příklad ukazuje, jak získat přístup k prvkům pole:
 
 [!code-csharp-interactive[array access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Arrays)]
 
-Pokud je index pole mimo hranice odpovídající dimenze pole, <xref:System.IndexOutOfRangeException> je vyvolána výjimka.
+Pokud je index pole mimo hranice odpovídající dimenze pole, je vyvolána <xref:System.IndexOutOfRangeException>.
 
 Jak ukazuje předchozí příklad, je také možné použít hranaté závorky, pokud deklarujete typ pole nebo instanci pole instance.
 
@@ -88,11 +88,11 @@ Další informace o polích naleznete v tématu [Arrays](../../programming-guide
 
 ### <a name="indexer-access"></a>Přístup indexeru
 
-Následující příklad používá typ .NET <xref:System.Collections.Generic.Dictionary%602> k demonstraci přístupu indexeru:
+Následující příklad používá typ <xref:System.Collections.Generic.Dictionary%602> .NET k demonstraci přístupu indexeru:
 
 [!code-csharp-interactive[indexer access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Indexers)]
 
-Indexery umožňují indexovat instance uživatelsky definovaného typu podobným způsobem jako indexování pole. Na rozdíl od indexů pole, který musí být celé číslo, argumenty indexeru lze deklarovat jako libovolný typ.
+Indexery umožňují indexovat instance uživatelsky definovaného typu podobným způsobem jako indexování pole. Na rozdíl od indexů pole, který musí být celé číslo, lze parametry indexeru deklarovat jako libovolný typ.
 
 Další informace o indexerech najdete v tématu [indexery](../../programming-guide/indexers/index.md).
 
@@ -109,24 +109,24 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Podmíněné operátory s hodnotou null?. ani? []
 
-K dispozici v 6 nebo novějším, operátor s hodnotou null aplikuje na `?.`operand přístup člena, `?[]`nebo element, operace na jeho operand pouze v C# případě, že se tento operand vyhodnocuje jako nenulový. Pokud je operand vyhodnocen `null`jako, výsledek použití operátoru je. `null` Operátor `?.` přístupu k podmíněnému členu s hodnotou null je také označován jako Elvis operátor.
+K dispozici v 6 nebo novějším, operátor s hodnotou null používá pro přístup člena přístup,`?.`nebo element,`?[]`, operaci na jeho operand pouze v C# případě, že se tento operand vyhodnocuje jako hodnota, která není null. Pokud je operand vyhodnocen jako `null`, je výsledek použití operátoru `null`. Podmíněný operátor přístupu člena s hodnotou null `?.` je také označován jako operátor Elvis.
 
-Operátory podmíněné hodnotou null jsou krátkodobé okruhy. To znamená, že pokud se vrátí `null`jedna operace v řetězci podmíněného člena nebo operace přístupu k prvkům, zbytek řetězu se nespustí. V následujícím `B` příkladu není vyhodnocena, pokud `A` `null` je vyhodnocena `C` jako a není vyhodnocena v případě `null`, že `A` nebo `B` je vyhodnocena jako:
+Operátory podmíněné hodnotou null jsou krátkodobé okruhy. To znamená, že pokud jedna operace v řetězci podmíněného člena nebo operace přístupu k elementu vrátí `null`, zbytek řetězu se nespustí. V následujícím příkladu není `B` vyhodnocena, pokud `A` vyhodnocena `null` a `C` nejsou vyhodnoceny, pokud `A` nebo `B` vyhodnocena jako `null`:
 
 ```csharp
 A?.B?.Do(C);
 A?.B?[C];
 ```
 
-Následující příklad ukazuje použití `?.` operátorů a: `?[]`
+Následující příklad ukazuje použití operátorů `?.` a `?[]`:
 
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
-Předchozí příklad také ukazuje použití [operátoru nulového slučování](null-coalescing-operator.md). Operátor pro sjednocení hodnoty null můžete použít k poskytnutí alternativního výrazu pro vyhodnocení pro případ, že je `null`výsledkem operace podmíněného zpracování hodnoty null.
+Předchozí příklad také používá [operátor slučování null `??`](null-coalescing-operator.md) k určení alternativního výrazu pro vyhodnocení pro případ, že je `null`výsledek operace podmíněného hodnoty null.
 
 ### <a name="thread-safe-delegate-invocation"></a>Volání delegáta bezpečné pro přístup z více vláken
 
-Použijte operátor ke kontrole, zda delegát není null a vyvolá ho v bezpečném režimu (například při [vyvolání události](../../../standard/events/how-to-raise-and-consume-events.md)), jak ukazuje následující kód: `?.`
+Použijte operátor `?.`, chcete-li zjistit, zda delegát není null, a vyvolat ho v bezpečném režimu (například při [vyvolání události](../../../standard/events/how-to-raise-and-consume-events.md)), jak ukazuje následující kód:
 
 ```csharp
 PropertyChanged?.Invoke(…)
@@ -144,13 +144,13 @@ if (handler != null)
 
 ## <a name="invocation-operator-"></a>Operátor vyvolání ()
 
-Použijte závorky, `()`, pro volání [metody](../../programming-guide/classes-and-structs/methods.md) nebo vyvolání [delegáta](../../programming-guide/delegates/index.md).
+Použijte kulaté závorky, `()`, pro volání [metody](../../programming-guide/classes-and-structs/methods.md) nebo vyvolání [delegáta](../../programming-guide/delegates/index.md).
 
 Následující příklad ukazuje, jak zavolat metodu s argumenty nebo bez argumentů a vyvolat delegáta:
 
 [!code-csharp-interactive[invocation with ()](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Invocation)]
 
-Při vyvolání [konstruktoru](../../programming-guide/classes-and-structs/constructors.md) s [`new`](new-operator.md) operátorem můžete také použít závorky.
+Závorky můžete použít také při volání [konstruktoru](../../programming-guide/classes-and-structs/constructors.md) s operátorem [`new`](new-operator.md) .
 
 ### <a name="other-usages-of-"></a>Další použití pro ()
 
@@ -160,27 +160,27 @@ Pomocí závorek můžete také upravit pořadí, ve kterém se mají vyhodnocov
 
 ## <a name="index-from-end-operator-"></a>Index z operátoru end ^
 
-K dispozici v C# 8,0 a novějším, `^` operátor označuje pozici elementu na konci sekvence. Pro sekvenci délky `length` `^n` odkazuje na prvek s posunem `length - n` od začátku sekvence. Například `^1` odkazuje na poslední prvek sekvence a `^length` odkazuje na první prvek sekvence.
+K dispozici v C# 8,0 a novějším, operátor`^`označuje pozici elementu na konci sekvence. Pro sekvenci délky `length``^n` odkazuje na prvek s posunem `length - n` od začátku sekvence. Například `^1` odkazuje na poslední prvek sekvence a `^length` odkazuje na první prvek sekvence.
 
 [!code-csharp[index from end](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#IndexFromEnd)]
 
-Jak ukazuje předchozí příklad, výraz `^e` je <xref:System.Index?displayProperty=nameWithType> typu. Ve výrazu `^e`je `e` výsledek nutné implicitně převést na `int`.
+Jak ukazuje předchozí příklad, `^e` výrazů je typ <xref:System.Index?displayProperty=nameWithType>. Ve výrazu `^e`musí být výsledek `e` implicitně převoditelné na `int`.
 
-Můžete také použít `^` operátor s [operátorem Range](#range-operator-) a vytvořit tak rozsah indexů. Další informace najdete v tématu [indexy a rozsahy](../../tutorials/ranges-indexes.md).
+Můžete také použít operátor `^` s [operátorem Range](#range-operator-) a vytvořit tak rozsah indexů. Další informace najdete v tématu [indexy a rozsahy](../../tutorials/ranges-indexes.md).
 
 ## <a name="range-operator-"></a>Operátor rozsahu..
 
-K dispozici v C# 8,0 a novějším, `..` operátor určuje začátek a konec rozsahu indexů jako své operandy. Levý operand je *Celková* začátek rozsahu. Pravý operand je *výhradním* koncem rozsahu. Jedním z operandů může být index od začátku nebo po konci sekvence, jak ukazuje následující příklad:
+K dispozici v C# 8,0 a novějším, operátor`..`Určuje začátek a konec rozsahu indexů jako své operandy. Levý operand je *Celková* začátek rozsahu. Pravý operand je *výhradním* koncem rozsahu. Jedním z operandů může být index od začátku nebo po konci sekvence, jak ukazuje následující příklad:
 
 [!code-csharp[range examples](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Ranges)]
 
-Jak ukazuje předchozí příklad, výraz `a..b` je <xref:System.Range?displayProperty=nameWithType> typu. Ve výrazu `a..b` `a` jsou výsledky a `b` musí být implicitně převoditelné na `int` nebo <xref:System.Index>.
+Jak ukazuje předchozí příklad, `a..b` výrazů je typ <xref:System.Range?displayProperty=nameWithType>. Ve výrazu `a..b`musí být výsledky `a` a `b` implicitně převoditelné na `int` nebo <xref:System.Index>.
 
-Pokud chcete získat rozsah otevřeného a koncového výrazu `..` , můžete vynechat kterýkoli z operandů operátoru:
+Můžete vynechat kterýkoli z operandů operátoru `..`, abyste získali rozsah otevřeného a koncového výrazu:
 
-- `a..`je ekvivalentem`a..^0`
-- `..b`je ekvivalentem`0..b`
-- `..`je ekvivalentem`0..^0`
+- `a..` je ekvivalentem `a..^0`
+- `..b` je ekvivalentem `0..b`
+- `..` je ekvivalentem `0..^0`
 
 [!code-csharp[ranges with omitted operands](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#RangesOptional)]
 
@@ -188,7 +188,7 @@ Další informace najdete v tématu [indexy a rozsahy](../../tutorials/ranges-in
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Operátory, `()` ,`^`anemohoubýtpřetíženy. `.` `..` `[]` Operátor je také považován za operátor, který není přetížen. Použijte [indexery](../../programming-guide/indexers/index.md) k podpoře indexování s uživatelsky definovanými typy.
+Operátory `.`, `()`, `^`a `..` nelze přečítat. Operátor `[]` je také považován za operátor, který není přetížen. Použijte [indexery](../../programming-guide/indexers/index.md) k podpoře indexování s uživatelsky definovanými typy.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -198,6 +198,8 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Přístup k prvkům](~/_csharplang/spec/expressions.md#element-access)
 - [Podmíněný operátor s hodnotou null](~/_csharplang/spec/expressions.md#null-conditional-operator)
 - [Výrazy vyvolání](~/_csharplang/spec/expressions.md#invocation-expressions)
+
+Další informace o indexech a oblastech najdete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-8.0/ranges.md).
 
 ## <a name="see-also"></a>Viz také:
 

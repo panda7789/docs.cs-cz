@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: 357812aa95ea731fe86fbe49b2cb1b2806e3915a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a9c81c8554c0fb393c10ed69f84c8b2d936ec1e6
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784863"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040131"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mapování adaptéru dat, datové tabulky a datového sloupce
 Objekt **DataAdapter** obsahuje kolekci nula nebo více <xref:System.Data.Common.DataTableMapping> objektů ve vlastnosti **vlastnosti TableMappings** . **DataTableMapping** poskytuje mapování mezi daty vrácenými z dotazu na zdroj dat a <xref:System.Data.DataTable>. Název **DataTableMapping** může být předán namísto názvu **DataTable** do metody **Fill** objektu **DataAdapter**. Následující příklad vytvoří **DataTableMapping** s názvem **AuthorsMapping** pro tabulku **autoři** .  
@@ -27,7 +27,7 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors");
   
  Pokud nezadáte **TableName** nebo **DataTableMapping** název při volání metody **Fill** nebo **Update** pro **Vlastnost DataAdapter**, modul **DataAdapter** vyhledá **DataTableMapping** s názvem "Table". Pokud tento **DataTableMapping** neexistuje, **TableName** **objektu DataTable** je "Table". Výchozí **DataTableMapping** můžete zadat tak, že vytvoříte **DataTableMapping** s názvem "Table".  
   
- Následující příklad kódu vytvoří **DataTableMapping** (z <xref:System.Data.Common> oboru názvů) a nastaví ho jako výchozí mapování pro zadaný objekt **DataAdapter** pojmenováním "Table". Příklad pak mapuje sloupce z první tabulky ve výsledku dotazu (tabulka **zákazníci** databáze **Northwind** ) na sadu více uživatelsky přívětivých názvů v tabulce <xref:System.Data.DataSet> **Northwind Customers** v. Pro sloupce, které nejsou namapované, se použije název sloupce ze zdroje dat.  
+ Následující příklad kódu vytvoří **DataTableMapping** (z oboru názvů <xref:System.Data.Common>) a nastaví ho jako výchozí mapování pro zadaný objekt **DataAdapter** pojmenováním "Table". Příklad pak mapuje sloupce z první tabulky ve výsledku dotazu (tabulka **zákazníci** databáze **Northwind** ) na sadu více uživatelsky přívětivých názvů v tabulce **Northwind Customers** v <xref:System.Data.DataSet>. Pro sloupce, které nejsou namapované, se použije název sloupce ze zdroje dat.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -86,16 +86,25 @@ adapter.Fill(custDS, "Customers");
 ## <a name="handling-multiple-result-sets"></a>Zpracování více sad výsledků  
  Pokud **vlastnost SelectCommand** vrátí více tabulek, **vyplní** automaticky názvy tabulek s přírůstkovým hodnotami pro tabulky v **datové sadě**počínaje zadaným názvem tabulky a pokračuje ve formuláři **TableName** . *N*, počínaje **TableName1**. Mapování tabulek můžete použít k mapování automaticky generovaného názvu tabulky na název, který chcete zadat pro tabulku v **datové sadě**. Například pro **vlastnost SelectCommand** , která vrací dvě tabulky, **zákazníky** a **objednávky**, vydejte následující volání k **vyplnění**.  
   
-```  
+```vb  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
-  
- V **datové sadě**se vytvoří dvě tabulky: **Zákazníci** a **Customers1**. Mapování tabulek můžete použít k zajištění toho, aby se druhá tabulka jmenovala **Orders** místo **Customers1**. Chcete-li to provést, namapujte zdrojovou tabulku **Customers1** na **objednávky**tabulky **DataSet** , jak je znázorněno v následujícím příkladu.  
-  
+
+```csharp  
+adapter.Fill(customersDataSet, "Customers");  
 ```  
+
+ V **datové sadě**jsou vytvořeny dvě tabulky: **Customers** a **Customers1**. Mapování tabulek můžete použít k zajištění toho, aby se druhá tabulka jmenovala **Orders** místo **Customers1**. Chcete-li to provést, namapujte zdrojovou tabulku **Customers1** na **objednávky**tabulky **DataSet** , jak je znázorněno v následujícím příkladu.  
+  
+```vb  
 adapter.TableMappings.Add("Customers1", "Orders")  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
+
+```csharp  
+adapter.TableMappings.Add("Customers1", "Orders");  
+adapter.Fill(customersDataSet, "Customers");  
+```
   
 ## <a name="see-also"></a>Viz také:
 

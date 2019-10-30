@@ -2,19 +2,19 @@
 title: + (Sečíst)
 ms.date: 03/30/2017
 ms.assetid: 51769b02-a8f7-4177-9e99-bbd10e77092c
-ms.openlocfilehash: 8c9a6b2c8168e4677c37cfdb0b401a93ee0040cf
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 62bb4782f135309eed8efa7e182fd8b75f92e126
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251361"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040296"
 ---
 # <a name="-add"></a>+ (Přidat)
 Přidá dvě čísla.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 expression + expression  
 ```  
   
@@ -31,9 +31,9 @@ expression + expression
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz pomocí operátoru + aritmetické přidají dvě čísla. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
  [!code-csharp[DP EntityServices Concepts 2#ADD](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#add)]  
   

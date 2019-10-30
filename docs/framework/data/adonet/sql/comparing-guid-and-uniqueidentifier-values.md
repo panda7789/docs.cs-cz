@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aababd75-2335-43e3-ace8-4b7ae84191a8
-ms.openlocfilehash: d773b6e49a9f3c2909b2479abdc498d4b059f660
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18f7ad8f6ef9cdf726bdf606ab108e2c5140aed7
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878108"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040468"
 ---
 # <a name="comparing-guid-and-uniqueidentifier-values"></a>Porovnání hodnoty GUID a uniqueidentifier
-Datový typ globálně jedinečný identifikátor (GUID) v systému SQL Server je reprezentována `uniqueidentifier` datového typu, který uloží binární hodnotu 16 bajtů. Identifikátor GUID je binární číslo a nejčastěji se využívá jako identifikátor, který musí být jedinečný v síti, která má mnoho počítačů ve více lokalitách. Identifikátory GUID mohou být generovány volání funkce NEWID příkazů jazyka Transact-SQL a zaručeně jedinečná v celém světě. Další informace najdete v tématu [uniqueidentifier (Transact-SQL)](/sql/t-sql/data-types/uniqueidentifier-transact-sql).  
+Datový typ globálně jedinečný identifikátor (GUID) v SQL Server představuje datový typ `uniqueidentifier`, který ukládá 16 bajtů binární hodnoty. Identifikátor GUID je binární číslo a jeho hlavní použití je identifikátor, který musí být jedinečný v síti, která má mnoho počítačů v mnoha lokalitách. Identifikátory GUID lze generovat voláním funkce Transact-SQL NEWID a zaručená, aby byla v celém světě jedinečná. Další informace naleznete v tématu [uniqueidentifier (Transact-SQL)](/sql/t-sql/data-types/uniqueidentifier-transact-sql).  
   
 ## <a name="working-with-sqlguid-values"></a>Práce s hodnotami SqlGuid  
- Protože jsou identifikátory GUID hodnoty dlouhé a skrytého, nejsou smysl pro uživatele. Pokud náhodně generované identifikátory GUID slouží pro klíčové hodnoty a vložit velké množství řádků, získáte do indexů, které může mít negativní vliv na výkon náhodných vstupně-výstupních operací. Identifikátory GUID jsou také relativně velké ve srovnání s jinými datovými typy. Obecně doporučujeme používat identifikátory GUID pouze pro velmi krátkého scénáře, pro které žádná jiná data typ je vhodný.  
+ Vzhledem k tomu, že hodnoty GUID jsou dlouhé a zakryté, nejsou pro uživatele smysluplné. Pokud jsou pro klíčové hodnoty použity náhodně generované identifikátory GUID a vložíte mnoho řádků, dostanete do svých indexů náhodné vstupně-výstupní operace, což může mít negativní vliv na výkon. V porovnání s jinými datovými typy jsou GUID také poměrně velká. Obecně doporučujeme používat identifikátory GUID jenom pro velmi úzké scénáře, pro které není vhodný žádný jiný datový typ.  
   
-### <a name="comparing-guid-values"></a>Porovnání hodnoty GUID  
- Operátory porovnání lze použít s `uniqueidentifier` hodnoty. Ale řazení není implementováno pomocí porovnávání vzorů bit ze dvou hodnot. Jediné operace, které jsou povoleny před `uniqueidentifier` hodnota jsou porovnání (= <>, \<, >, \<=, > =) a kontrola NULL (IS NULL a IS NOT NULL). Nepovolení aritmetických operátorů jsou povoleny.  
+### <a name="comparing-guid-values"></a>Porovnání hodnot GUID  
+ Operátory porovnání lze použít s hodnotami `uniqueidentifier`. Řazení však není implementováno porovnáním bitových vzorů dvou hodnot. Pouze operace, které jsou povoleny u `uniqueidentifier` hodnoty, jsou srovnávány (=, < >, \<, >, \<=, > =) a kontrola hodnoty NULL (je NULL a není NULL). Nejsou povoleny žádné jiné aritmetické operátory.  
   
- Obě <xref:System.Guid> a <xref:System.Data.SqlTypes.SqlGuid> mít `CompareTo` metody pro porovnávání hodnot jiný identifikátor GUID. Ale `System.Guid.CompareTo` a `SqlTypes.SqlGuid.CompareTo` jsou implementováno jinak. <xref:System.Data.SqlTypes.SqlGuid> implementuje `CompareTo` pomocí chování systému SQL Server v posledních šest bajtů hodnoty jsou nejdůležitější. <xref:System.Guid> vyhodnotí všechny 16 bajtů. Následující příklad ukazuje toto chování rozdíl. První část kódu zobrazí neseřazené <xref:System.Guid> hodnoty a druhá část kódu znázorňuje seřazené <xref:System.Guid> hodnoty. Třetí část ukazuje seřazené <xref:System.Data.SqlTypes.SqlGuid> hodnoty. Ve výstupu se zobrazí pod výpis kódu.  
+ <xref:System.Guid> i <xref:System.Data.SqlTypes.SqlGuid> mají `CompareTo` metodu pro porovnání různých hodnot GUID. `System.Guid.CompareTo` a `SqlTypes.SqlGuid.CompareTo` však jsou implementovány jinak. <xref:System.Data.SqlTypes.SqlGuid> implementuje `CompareTo` pomocí SQL Serverho chování, za posledních šest bajtů hodnoty má největší význam. <xref:System.Guid> vyhodnocuje všechny 16 bajtů. Následující příklad demonstruje tento rozdíl chování. První část kódu zobrazuje neseřazené <xref:System.Guid> hodnoty a druhá část kódu zobrazuje seřazené <xref:System.Guid> hodnoty. Třetí část zobrazuje seřazené hodnoty <xref:System.Data.SqlTypes.SqlGuid>. Výstup se zobrazí pod seznamem kódu.  
   
  [!code-csharp[DataWorks SqlTypes.Guid#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.Guid/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTypes.Guid#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTypes.Guid/VB/source.vb#1)]  
   
  Tento příklad vytvoří následující výsledky.  
   
-```  
+```output  
 Unsorted Guids:  
 3aaaaaaa-bbbb-cccc-dddd-2eeeeeeeeeee  
 2aaaaaaa-bbbb-cccc-dddd-1eeeeeeeeeee  

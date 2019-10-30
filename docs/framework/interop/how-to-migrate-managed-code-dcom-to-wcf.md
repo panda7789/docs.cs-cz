@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 42edce63856b629511faeb165362da18ea3cecad
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 6fdd5c9b285bdc948af876c72e85590500dd41c8
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833621"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039596"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Postup: Migrace spravovaného kódu DCOM do WCF
 Windows Communication Foundation (WCF) je doporučená a bezpečná volba pro volání spravovaného kódu mezi servery a klienty v distribuovaném prostředí pomocí modelu DCOM (Distributed Component Object Model). V tomto článku se dozvíte, jak migrovat kód z modelu DCOM do WCF v následujících scénářích.  
@@ -165,6 +165,7 @@ public class CustomerService: ICustomerManager
                 address="http://localhost:8083/CustomerManager"   
                 binding="basicHttpBinding"   
                 contract="Shared.ICustomerManager"/>  
+    </client>  
   </system.serviceModel>  
 </configuration>  
 ```  
@@ -213,9 +214,9 @@ public interface ICustomerManager
 ```  
   
 ### <a name="add-code-to-the-client-that-sends-a-by-value-object"></a>Přidání kódu do klienta odesílajícího objekt podle hodnoty  
- Následující kód ukazuje, jak klient vytvoří nový objekt zákazníka podle hodnoty, vytvoří kanál ke komunikaci se službou `ICustomerManager` a odešle do něj objekt zákazníka.  
+ Následující kód ukazuje, jak klient vytvoří nový objekt zákazníka podle hodnoty, vytvoří kanál pro komunikaci se službou `ICustomerManager` a odešle do něj objekt zákazníka.  
   
- Objekt zákazníka bude serializován a odeslán službě, kde je deserializována službou do nové kopie tohoto objektu.  Jakékoli metody, které služba volá s tímto objektem, se spustí jenom místně na serveru. Je důležité si uvědomit, že tento kód znázorňuje odeslání odvozeného typu (`PremiumCustomer`).  Kontrakt služby očekává objekt `Customer`, ale kontrakt dat služby používá atribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>] k označení toho, že je povolen i `PremiumCustomer`.  Služba WCF selže při pokusu o serializaci nebo deserializaci jiného typu prostřednictvím tohoto rozhraní služby.  
+ Objekt zákazníka bude serializován a odeslán službě, kde je deserializována službou do nové kopie tohoto objektu.  Jakékoli metody, které služba volá s tímto objektem, se spustí jenom místně na serveru. Je důležité si uvědomit, že tento kód znázorňuje odeslání odvozeného typu (`PremiumCustomer`).  Kontrakt služby očekává objekt `Customer`, ale kontrakt dat služby používá atribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>] k označení toho, že je povolená i `PremiumCustomer`.  Služba WCF selže při pokusu o serializaci nebo deserializaci jiného typu prostřednictvím tohoto rozhraní služby.  
   
 ```csharp  
 PremiumCustomer customer = new PremiumCustomer();  
@@ -235,7 +236,7 @@ customerManager.StoreCustomer(customer);
 ## <a name="the-service-returns-an-object-by-reference"></a>Služba vrátí objekt podle odkazu.  
  V tomto scénáři klientská aplikace provede volání vzdálené služby a metoda vrátí objekt, který je předán odkazem ze služby na klienta.  
   
- Jak bylo zmíněno dříve, služby WCF vždy vracejí objekt podle hodnoty.  Podobný výsledek však můžete dosáhnout pomocí třídy <xref:System.ServiceModel.EndpointAddress10>.  @No__t-0 je serializovatelný objekt podle hodnoty, který může klient použít k získání relace pomocí objektu odkazem na server.  
+ Jak bylo zmíněno dříve, služby WCF vždy vracejí objekt podle hodnoty.  Podobný výsledek však můžete dosáhnout pomocí <xref:System.ServiceModel.EndpointAddress10> třídy.  <xref:System.ServiceModel.EndpointAddress10> je serializovatelný objekt podle hodnoty, který může klient použít k získání relace odkazem objektu na serveru.  
   
  Chování objektu podle odkazu ve službě WCF zobrazené v tomto scénáři se liší od modelu DCOM.  V modelu DCOM může server vrátit objekt podle odkazu přímo klientovi a klient může volat metody tohoto objektu, které jsou spuštěny na serveru.  Ve službě WCF je však vrácen objekt vždy podle hodnoty.  Klient musí přijmout objekt podle hodnoty reprezentovaný <xref:System.ServiceModel.EndpointAddress10> a použít ho k vytvoření vlastního relace pomocí objektu s odkazem.  Metoda klienta volá objekt relace spuštěný na serveru. Jinými slovy je tento objekt odkazem na WCF normální službu WCF, která je nakonfigurovaná tak, aby byla relace.  
   
@@ -253,7 +254,7 @@ public interface IRemoteService
 ### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Krok 1: definování relace rozhraní WCF a implementace služby WCF  
  Nejdřív definujte rozhraní služby WCF, které obsahuje objekt sessioning.  
   
- V tomto kódu je objekt Session označený s atributem `ServiceContract`, který ho identifikuje jako regulární rozhraní služby WCF.  Kromě toho je vlastnost <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> nastavená tak, aby označovala, že se jedná o relaci služby.  
+ V tomto kódu je objekt relace označen atributem `ServiceContract`, který ho identifikuje jako regulární rozhraní služby WCF.  Kromě toho je vlastnost <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> nastavena na hodnotu indikující, že se jedná o relaci služby.  
   
 ```csharp  
 [ServiceContract(SessionMode = SessionMode.Allowed)]  
@@ -325,9 +326,9 @@ public class SessionBoundFactory : ISessionBoundFactory
 ### <a name="step-3-configure-and-start-the-wcf-services"></a>Krok 3: konfigurace a spuštění služeb WCF  
  Chcete-li hostovat tyto služby, budete muset provést následující přidání do konfiguračního souboru serveru (Web. config).  
   
-1. Přidejte část `<client>` popisující koncový bod objektu Session.  V tomto scénáři server funguje taky jako klient a musí se nakonfigurovat, aby se povolil.  
+1. Přidejte část `<client>`, která popisuje koncový bod pro objekt sessioning.  V tomto scénáři server funguje taky jako klient a musí se nakonfigurovat, aby se povolil.  
   
-2. V části `<services>` deklarujete koncové body služby objektu pro vytváření a relaci.  Díky tomu může klient komunikovat s koncovými body služby, získat <xref:System.ServiceModel.EndpointAddress10> a vytvořit kanál relace.  
+2. V části `<services>` deklarujete koncové body služby objektu pro vytváření a relaci.  Díky tomu může klient komunikovat s koncovými body služby, získat <xref:System.ServiceModel.EndpointAddress10> a vytvořit kanál s relacemi.  
   
  Následuje příklad konfiguračního souboru s těmito nastaveními:  
   
@@ -390,13 +391,13 @@ sessionBoundServiceHost.Open();
   
  Chcete-li zavolat službu, přidejte do klienta kód, abyste mohli provést následující akce:  
   
-1. Vytvořte kanál pro službu `ISessionBoundFactory`.  
+1. Vytvořte kanál ke službě `ISessionBoundFactory`.  
   
 2. Použijte kanál k vyvolání služby `ISessionBoundFactory` a získejte objekt <xref:System.ServiceModel.EndpointAddress10>.  
   
 3. K vytvoření kanálu pro získání objektu relace použijte <xref:System.ServiceModel.EndpointAddress10>.  
   
-4. Voláním metod `SetCurrentValue` a `GetCurrentValue` ukážeme, že zůstane stejná instance objektu použita v rámci více volání.  
+4. Zavolejte metody `SetCurrentValue` a `GetCurrentValue` k předvedení, že se stejná instance objektu používá v rámci více volání.  
   
 ```csharp  
 ChannelFactory<ISessionBoundFactory> factory =  

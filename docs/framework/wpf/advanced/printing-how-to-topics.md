@@ -5,19 +5,19 @@ helpviewer_keywords:
 - printing [WPF]
 - print system management [WPF]
 ms.assetid: 5f3d391a-4afd-49ee-ad99-ceb737c0c8a8
-ms.openlocfilehash: db40213bd6e20468706afda8a11d76e5a5a3c4e0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9ca812948926f80d9f8ec5b8cead4538d09fa7a1
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254269"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035632"
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
-Témata v této části ukazují, jak používat funkce pro správu tiskových a tiskových systémů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] , které jsou součástí systému, a také novou cestu k tisku XPS (XML Paper Specification).  
+Témata v této části ukazují, jak používat funkce pro správu tiskových a tiskových systémů, které jsou součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], a také novou cestu k tisku XPS (XML Paper Specification).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vyvolání dialogového okna Tisk](how-to-invoke-a-print-dialog.md)  
- Pokyny pro kód jazyka XAML k deklaraci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] objektu tiskového dialogového okna a použití kódu k vyvolání dialogového okna v rámci aplikace Windows Presentation Foundation (WPF).  
+ Pokyny pro kód jazyka XAML pro deklaraci objektu tiskového dialogového okna systému Microsoft Windows a použití kódu k vyvolání dialogového okna v aplikaci Windows Presentation Foundation (WPF).  
   
  [Klonování tiskárny](how-to-clone-a-printer.md)  
  Pokyny k instalaci druhé tiskové fronty se stejnými vlastnostmi jako stávající tisková fronta.  

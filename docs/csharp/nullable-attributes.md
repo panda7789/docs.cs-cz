@@ -1,13 +1,14 @@
 ---
 title: Upgradovat rozhraní API s atributy pro definování očekávání null
 description: Tento článek vysvětluje podněty a techniky pro přidání popisných atributů k popisu nulového stavu argumentů a vrácených hodnot z rozhraní API.
+ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: c51ec81f77bb1d31168848d8d51e68a08965d42c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 102598843b091ea25e6456aeedcccf43f056250d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319071"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039372"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
@@ -171,7 +172,7 @@ Předpokládejme, že máte metodu s následujícím podpisem:
 public Customer FindCustomer(string lastName, string firstName)
 ```
 
-Pravděpodobně jste napsali metodu, jako to, aby vracela `null`, když se hledané jméno nenašlo. @No__t-0 jasně označuje, že se záznam nenašel. V tomto příkladu jste pravděpodobně změnili návratový typ z `Customer` na `Customer?`. Deklarace návratové hodnoty jako typ odkazu s možnou hodnotou null určuje záměr tohoto rozhraní API jasně. 
+Pravděpodobně jste napsali metodu, jako to, aby vracela `null`, když se hledané jméno nenašlo. `null` jasně indikuje, že se záznam nenašel. V tomto příkladu jste pravděpodobně změnili návratový typ z `Customer` na `Customer?`. Deklarace návratové hodnoty jako typ odkazu s možnou hodnotou null určuje záměr tohoto rozhraní API jasně. 
 
 Z důvodů uvedených v rámci [obecných definic a možností použití hodnoty null](#generic-definitions-and-nullability) , které technika nepracuje s obecnými metodami. Je možné, že budete mít obecnou metodu, která následuje podobný vzor:
 
@@ -237,7 +238,7 @@ if (!(string.IsNullOrEmpty(userInput))
 
 Metoda <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType> bude označena jako uvedená výše pro .NET Core 3,0. Můžete mít podobné metody v základu kódu, které kontrolují stav objektů pro hodnoty null. Kompilátor nerozpozná vlastní metody kontroly null a bude nutné poznámky přidat sami. Když přidáte atribut, statická analýza kompilátoru zná, když byla testovaná proměnná vrácena na hodnotu null.
 
-Jiné použití pro tyto atributy je vzor @no__t 0. Následné podmínky pro proměnné `ref` a `out` jsou přenášeny prostřednictvím návratové hodnoty. Zvažte tuto metodu popsanou výše:
+Jiné použití pro tyto atributy je `Try*` vzor. Následné podmínky pro proměnné `ref` a `out` jsou přenášeny prostřednictvím návratové hodnoty. Zvažte tuto metodu popsanou výše:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
@@ -282,11 +283,11 @@ Podmíněný následné podmínky můžete zadat pomocí těchto atributů:
 
 ## <a name="generic-definitions-and-nullability"></a>Obecné definice a možnost použití hodnoty null
 
-Správně komunikující stav null obecných typů a obecné metody vyžadují zvláštní péči. To je fakt, že typ hodnoty s možnou hodnotou null a typ odkazu s možnou hodnotou null jsou zásadním rozdílem. @No__t-0 je synonymum pro `Nullable<int>`, zatímco `string?` je `string` s atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže vygenerovat správný kód pro `T?` bez vědomí, zda `T` je `class` nebo `struct`. 
+Správně komunikující stav null obecných typů a obecné metody vyžadují zvláštní péči. To je fakt, že typ hodnoty s možnou hodnotou null a typ odkazu s možnou hodnotou null jsou zásadním rozdílem. `int?` je synonymum pro `Nullable<int>`, zatímco `string?` je `string` s atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže vygenerovat správný kód pro `T?` bez vědomí, zda `T` je `class` nebo `struct`. 
 
-To neznamená, že nemůžete použít typ s povolenou hodnotou null (buď typ hodnoty, nebo odkazový typ) jako argument typu pro uzavřený obecný typ. @No__t-0 a `List<int?>` jsou platné instance `List<T>`. 
+To neznamená, že nemůžete použít typ s povolenou hodnotou null (buď typ hodnoty, nebo odkazový typ) jako argument typu pro uzavřený obecný typ. `List<string?>` i `List<int?>` jsou platné instance `List<T>`. 
 
-To znamená, že nemůžete použít `T?` v deklaraci obecné třídy nebo metody bez omezení. Například <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> se nezmění, aby vracel `T?`. Toto omezení můžete překonat přidáním omezení `struct` nebo `class`. U některého z těchto omezení kompilátor ví, jak generovat kód pro `T` i `T?`.
+To znamená, že nemůžete použít `T?` v deklaraci obecné třídy nebo metody bez omezení. <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> například nebude změněno, aby vracela `T?`. Toto omezení můžete překonat přidáním omezení `struct` nebo `class`. U některého z těchto omezení kompilátor ví, jak generovat kód pro `T` i `T?`.
 
 Můžete chtít omezit typy používané pro argument obecného typu, aby byly typy bez hodnoty null. To lze provést přidáním omezení `notnull` u tohoto argumentu typu. Při použití tohoto omezení nesmí argument type být typ s možnou hodnotou null.
 

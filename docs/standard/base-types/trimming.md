@@ -1,5 +1,5 @@
 ---
-title: Ořezávání a odebírání znaků z řetězců v .NET
+title: Ořezávání a odstraňování znaků z řetězců v .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,39 +17,41 @@ helpviewer_keywords:
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d13d4e115caa636e5d760b65bc98e195490f911
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c694a6792168f37e1f134cf965658e8a058e240a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037877"
 ---
-# <a name="trimming-and-removing-characters-from-strings-in-net"></a>Ořezávání a odebírání znaků z řetězců v .NET
-Pokud analyzujete větu na jednotlivá slova, může skončit s slova, která mají mezery (také nazývané prázdné znaky) na jednom konci slovo. V takovém případě můžete použít jednu z metod uvolnění dočasné paměti v **System.String** třídy odebrat libovolný počet mezery ani jiných znaků od určené pozice v řetězci. Následující tabulka popisuje dostupné metody uvolnění dočasné paměti.  
+# <a name="trimming-and-removing-characters-from-strings-in-net"></a>Ořezávání a odstraňování znaků z řetězců v .NET
+Pokud analyzujete větu na jednotlivá slova, může se stát, že se na konci slova dokončí slova, která obsahují prázdné mezery (označované také jako prázdné znaky). V této situaci můžete použít jednu z metod Trim třídy **System. String** k odebrání libovolného počtu mezer nebo jiných znaků ze zadané pozice v řetězci. Následující tabulka popisuje dostupné metody Trim.  
   
 |Název metody|Použití|  
 |-----------------|---------|  
-|<xref:System.String.Trim%2A?displayProperty=nameWithType>|Odstraní prázdné znaky nebo znaky zadané do pole znaků ze začátku a konce řetězce.|  
-|<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|Odebere znaky zadané do pole znaků z konce řetězce.|  
-|<xref:System.String.TrimStart%2A?displayProperty=nameWithType>|Odebere znaky zadané do pole znaků od začátku řetězce.|  
-|<xref:System.String.Remove%2A?displayProperty=nameWithType>|Odebere zadaný počet znaků z pozice zadaným indexem v řetězci.|  
+|<xref:System.String.Trim%2A?displayProperty=nameWithType>|Odstraní prázdné znaky nebo znaky zadané v poli znaků od začátku a konce řetězce.|  
+|<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|Odebere znaky zadané v poli znaků z konce řetězce.|  
+|<xref:System.String.TrimStart%2A?displayProperty=nameWithType>|Odebere znaky zadané v poli znaků od začátku řetězce.|  
+|<xref:System.String.Remove%2A?displayProperty=nameWithType>|Odebere zadaný počet znaků ze zadané pozice indexu v řetězci.|  
   
-## <a name="trim"></a>Trim  
- Prázdné znaky z obou směru řetězce můžete snadno odebrat pomocí <xref:System.String.Trim%2A?displayProperty=nameWithType> způsob, jak je znázorněno v následujícím příkladu.  
+## <a name="trim"></a>Sklon
+
+ Pomocí metody <xref:System.String.Trim%2A?displayProperty=nameWithType> lze snadno odebrat prázdné znaky z obou konců řetězce, jak je znázorněno v následujícím příkladu.  
   
  [!code-cpp[Conceptual.String.BasicOps#17](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#17)]
  [!code-csharp[Conceptual.String.BasicOps#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#17)]
  [!code-vb[Conceptual.String.BasicOps#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trimming.vb#17)]  
   
- Můžete také odebrat znaky, které jste zadali v pole znaků ze začátku a konce řetězce. Následující příklad odstraní prázdné znaky, tečky a hvězdičky z obou stran.  
+ Můžete také odebrat znaky, které zadáte v poli znaků od začátku a konce řetězce. Následující příklad odebere prázdné znaky, tečky a hvězdičky.  
   
  [!code-csharp[Conceptual.String.BasicOps#22](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trim2.cs#22)]
  [!code-vb[Conceptual.String.BasicOps#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trim2.vb#22)]  
   
-## <a name="trimend"></a>TrimEnd  
- **String.TrimEnd** metoda odstraní znaků z konce řetězce, vytvoří nový objekt řetězce. Pole znaků je předat tuto metodu za účelem zadejte znaky, které mají být odebrány. Pořadí prvků v poli znak nemá vliv na operace uvolnění dočasné paměti. Trim přestane při nalezení znaku není určené v poli.  
+## <a name="trimend"></a>TrimEnd
+
+ Metoda **String. TrimEnd** odstraní znaky z konce řetězce a vytvoří nový objekt řetězce. Pole znaků je předáno této metodě pro určení znaků, které mají být odebrány. Pořadí prvků v poli znaků nemá vliv na operaci ořezávání. Ořezávání se zastaví, když se najde znak, který není zadaný v poli.  
   
- Následující příklad odebere poslední písmena řetězce pomocí elementu **TrimEnd** metody. V tomto příkladu pozice `'r'` znak a `'W'` přehozeny pro ilustraci, že se pořadí znaků v poli není důležitá. Všimněte si, že tento kód odebere poslední slovo `MyString` plus část první.  
+ Následující příklad odebere poslední písmena řetězce pomocí metody **trimEnd** . V tomto příkladu je pozice `'r'`ho znaku a `'W'` znak obrácena, aby se ilustraci, že pořadí znaků v poli nezáleží. Všimněte si, že tento kód odstraní poslední slovo `MyString` a část prvního.  
   
  [!code-cpp[Conceptual.String.BasicOps#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#18)]
  [!code-csharp[Conceptual.String.BasicOps#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#18)]
@@ -57,7 +59,7 @@ Pokud analyzujete větu na jednotlivá slova, může skončit s slova, která ma
   
  Tento kód zobrazí `He` do konzoly.  
   
- Následující příklad odebere poslední slovo řetězce pomocí elementu **TrimEnd** metody. V tomto kódu, následuje čárka slovo `Hello` a, protože čárka není zadána jako pole znaků, které mají být odebrány, ořezávání končí čárka.  
+ Následující příklad odebere poslední slovo řetězce pomocí metody **trimEnd** . V tomto kódu čárka následuje slova `Hello` a, protože čárka není určena v poli znaků, které mají být oříznuty, ořezávání končí čárkou.  
   
  [!code-cpp[Conceptual.String.BasicOps#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#19)]
  [!code-csharp[Conceptual.String.BasicOps#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#19)]
@@ -65,10 +67,11 @@ Pokud analyzujete větu na jednotlivá slova, může skončit s slova, která ma
   
  Tento kód zobrazí `Hello,` do konzoly.  
   
-## <a name="trimstart"></a>TrimStart  
- **String.TrimStart** metoda je podobná **String.TrimEnd** metoda s výjimkou, že vytvoří nový řetězec tak, že odeberete znaků od začátku existující objekt řetězce. Pole znaků je předán **TrimStart** metody zadejte znaky, které mají být odebrány. Stejně jako u **TrimEnd** metoda pořadí prvků v poli znak nemá vliv na operace uvolnění dočasné paměti. Trim přestane při nalezení znaku není určené v poli.  
+## <a name="trimstart"></a>TrimStart
+
+ Metoda **String. TrimStart** je podobná metodě **String. TrimEnd** s tím rozdílem, že vytvoří nový řetězec odebráním znaků ze začátku existujícího objektu řetězce. Pole znaků je předáno metodě **trimStart** pro určení znaků, které mají být odebrány. Stejně jako u metody **trimEnd** nemá pořadí prvků v poli znaků vliv na operaci ořezávání. Ořezávání se zastaví, když se najde znak, který není zadaný v poli.  
   
- Následující příklad odebere první slovo řetězce. V tomto příkladu pozice `'l'` znak a `'H'` přehozeny pro ilustraci, že se pořadí znaků v poli není důležitá.  
+ Následující příklad odebere první slovo řetězce. V tomto příkladu je pozice `'l'`ho znaku a `'H'` znak obrácena, aby se ilustraci, že pořadí znaků v poli nezáleží.  
   
  [!code-cpp[Conceptual.String.BasicOps#20](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#20)]
  [!code-csharp[Conceptual.String.BasicOps#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#20)]
@@ -76,16 +79,19 @@ Pokud analyzujete větu na jednotlivá slova, může skončit s slova, která ma
   
  Tento kód zobrazí `World!` do konzoly.  
   
-## <a name="remove"></a>odebrat  
- <xref:System.String.Remove%2A?displayProperty=nameWithType> Metoda odstraní zadaný počet znaků, které začínají na určenou pozici do existujícího řetězce. Tato metoda předpokládá index založený na nule.  
+## <a name="remove"></a>Odebrány 
+
+ Metoda <xref:System.String.Remove%2A?displayProperty=nameWithType> Odstraní zadaný počet znaků, který začíná na zadané pozici v existujícím řetězci. Tato metoda předpokládá index založený na nule.  
   
- Následující příklad odebere deset znaků od začátku řetězce na pozici pět z nuly vycházející index řetězce.  
+ Následující příklad odebere deset znaků z řetězce, který začíná na pozici pět nul indexu řetězce.  
   
  [!code-cpp[Conceptual.String.BasicOps#21](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#21)]
  [!code-csharp[Conceptual.String.BasicOps#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#21)]
  [!code-vb[Conceptual.String.BasicOps#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trimming.vb#21)]  
   
- Můžete také odebrat zadaný znak nebo podřetězec z řetězce pomocí volání <xref:System.String.Replace%28System.String%2CSystem.String%29?displayProperty=nameWithType> metoda a zadáte prázdný řetězec (<xref:System.String.Empty?displayProperty=nameWithType>) jako náhrada. Následující příklad odebere všechny mezery v řetězci.  
+## <a name="replace"></a>náhrady
+
+ Můžete také odebrat zadaný znak nebo podřetězec z řetězce voláním metody <xref:System.String.Replace%28System.String%2CSystem.String%29?displayProperty=nameWithType> a zadáním prázdného řetězce (<xref:System.String.Empty?displayProperty=nameWithType>) jako náhrady. Následující příklad odebere všechny čárky z řetězce.  
   
  [!code-csharp[Conceptual.String.BasicOps#23](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/replace1.cs#23)]
  [!code-vb[Conceptual.String.BasicOps#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/replace1.vb#23)]  

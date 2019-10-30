@@ -5,12 +5,12 @@ ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 4008f38bf4a20113a3f5c865e38222e5b82f2acc
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 82a4d19a6296faa6d195e301016b1bf97d483a2c
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991367"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040806"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a jiných zdrojů
 
@@ -48,23 +48,23 @@ public class HousingData
 
 Atributy poskytují ML.NET více informací o datovém modelu a zdroji dat.
 
-[`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) Atribut určuje vlastnosti ' indexy sloupců '.
+Atribut [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) určuje vlastnosti indexy sloupců.
 
 > [!IMPORTANT]
-> [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute)je vyžadován pouze při načítání dat ze souboru.
+> [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) se vyžaduje jenom při načítání dat ze souboru.
 
 Načíst sloupce jako:
 
-- Jednotlivé sloupce jako `Size` a `CurrentPrices` ve `HousingData` třídě.
-- Více sloupců v čase ve formě vektoru, jako `HistoricalPrices` `HousingData` ve třídě.
+- Jednotlivé sloupce, například `Size` a `CurrentPrices` ve třídě `HousingData`.
+- Více sloupců v čase ve formě vektoru, jako je `HistoricalPrices` ve třídě `HousingData`.
 
-Máte-li vlastnost Vector, použijte [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) atribut na vlastnost v datovém modelu. Je důležité si uvědomit, že všechny prvky ve vektoru musí být stejného typu. Udržování sloupců s oddělovači umožňuje snadnou a flexibilitu funkcí, ale pro velmi velký počet sloupců, který pracuje na jednotlivých sloupcích, způsobuje vliv na rychlost školení.
+Máte-li vlastnost Vector, použijte atribut [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) na vlastnost v datovém modelu. Je důležité si uvědomit, že všechny prvky ve vektoru musí být stejného typu. Udržování sloupců s oddělovači umožňuje snadnou a flexibilitu funkcí, ale pro velmi velký počet sloupců, který pracuje na jednotlivých sloupcích, způsobuje vliv na rychlost školení.
 
-ML.NET funguje prostřednictvím názvů sloupců. Pokud chcete změnit název sloupce na jinou hodnotu než název vlastnosti, použijte [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut. Při vytváření objektů v paměti stále vytváříte objekty pomocí názvu vlastnosti. Pro zpracování dat a vytváření modelů strojového učení však ml.NET Přepisuje a odkazuje na vlastnost s hodnotou poskytnutou v [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atributu.
+ML.NET funguje prostřednictvím názvů sloupců. Chcete-li změnit název sloupce na jinou hodnotu než název vlastnosti, použijte atribut [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) . Při vytváření objektů v paměti stále vytváříte objekty pomocí názvu vlastnosti. Pro zpracování dat a vytváření modelů strojového učení však ML.NET Přepisuje a odkazuje na vlastnost s hodnotou poskytnutou v atributu [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) .
 
 ## <a name="load-data-from-a-single-file"></a>Načtení dat z jednoho souboru
 
-Chcete-li načíst data ze souboru, [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) použijte metodu spolu s datovým modelem pro načtení dat. Vzhledem `separatorChar` k tomu, že parametr je ve výchozím nastavení oddělený tabulátorem, změňte ho podle potřeby na datový soubor. Pokud má soubor záhlaví, nastavte `hasHeader` parametr na `true` hodnotu pro ignorování prvního řádku v souboru a začněte načítat data z druhého řádku.
+Chcete-li načíst data ze souboru, použijte metodu [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) společně s datovým modelem pro načtení dat. Vzhledem k tomu, že parametr `separatorChar` je ve výchozím nastavení oddělený tabulátorem, změňte ho podle potřeby na datový soubor. Pokud má soubor záhlaví, nastavte parametr `hasHeader` na `true` tak, aby ignoroval první řádek v souboru a začal načíst data z druhého řádku.
 
 ```csharp
 //Create MLContext
@@ -80,7 +80,7 @@ V případě, že jsou vaše data uložená ve více souborech, pokud je schéma
 
 ### <a name="load-from-files-in-a-single-directory"></a>Načtení ze souborů v jednom adresáři
 
-Pokud jsou všechny datové soubory ve stejném adresáři, použijte zástupné znaky v [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) metodě.
+Pokud jsou všechny datové soubory ve stejném adresáři, použijte zástupné znaky v metodě [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) .
 
 ```csharp
 //Create MLContext
@@ -92,7 +92,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("Data/*", separato
 
 ### <a name="load-from-files-in-multiple-directories"></a>Načtení ze souborů ve více adresářích
 
-Chcete-li načíst data z více adresářů, [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) použijte metodu pro [`TextLoader`](xref:Microsoft.ML.Data.TextLoader)vytvoření. Pak použijte [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) metodu a určete jednotlivé cesty k souboru (zástupné znaky nelze použít).
+Chcete-li načíst data z více adresářů, vytvořte [`TextLoader`](xref:Microsoft.ML.Data.TextLoader)pomocí metody [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) . Pak použijte metodu [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) a určete jednotlivé cesty k souboru (zástupné znaky nelze použít).
 
 ```csharp
 //Create MLContext
@@ -110,25 +110,28 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 > [!NOTE]
 > DatabaseLoader je aktuálně ve verzi Preview. Dá se použít na základě odkazů na balíčky NuGet [Microsoft. ml. experimentální](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) a [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) .
 
-ML.NET podporuje načítání dat z nejrůznějších relačních databází [`System.Data`](xref:System.Data) , které podporuje, mezi které patří SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, pokrok, IBM DB2 a spousta dalších.
+ML.NET podporuje načítání dat z nejrůznějších relačních databází, které podporuje [`System.Data`](xref:System.Data) , které zahrnují SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, pokrok, IBM DB2 a mnoho dalších.
 
 Pro databázi s tabulkou s názvem `House` a následujícím schématem:
 
 ```SQL
 CREATE TABLE [House] (
-    [HouseId] int NOT NULL IDENTITY,
-    [Size] real NOT NULL,
-    [Price] real NOT NULL
+    [HouseId] INT NOT NULL IDENTITY,
+    [Size] INT NOT NULL,
+    [NumBed] INT NOT NULL,
+    [Price] REAL NOT NULL
     CONSTRAINT [PK_House] PRIMARY KEY ([HouseId])
 );
 ```
 
-Data je možné modelovat podle třídy, jako `HouseData`je.
+Data je možné modelovat podle třídy, jako je `HouseData`.
 
 ```csharp
 public class HouseData
 {
     public float Size { get; set; }
+    
+    public float NumBed { get; set; }
 
     public float Price { get; set; }
 }
@@ -142,17 +145,19 @@ MLContext mlContext = new MLContext();
 DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```
 
-Definujte připojovací řetězec a příkaz SQL, který se má spustit v databázi, a vytvořte `DatabaseSource` instanci. V této ukázce se používá databáze LocalDB SQL Server s cestou k souboru. DatabaseLoader však podporuje jakýkoli jiný platný připojovací řetězec pro databáze v místním prostředí i v cloudu.
+Definujte připojovací řetězec a příkaz SQL, který se má spustit v databázi, a vytvořte instanci `DatabaseSource`. V této ukázce se používá databáze LocalDB SQL Server s cestou k souboru. DatabaseLoader však podporuje jakýkoli jiný platný připojovací řetězec pro databáze v místním prostředí i v cloudu.
 
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
 
-string sqlCommand = "SELECT Size,Price FROM House";
+string sqlCommand = "SELECT Size, CAST(NumBed as REAL) as NumBed, Price FROM House";
 
-DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance,connectionString,sqlCommand);
+DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance, connectionString, sqlCommand);
 ```
 
-Nakonec pomocí `Load` metody načtěte data [`IDataView`](xref:Microsoft.ML.IDataView)do.
+Číselná data, která nejsou typu [`Real`](xref:System.Data.SqlDbType) musí být převedena na [`Real`](xref:System.Data.SqlDbType). Typ [`Real`](xref:System.Data.SqlDbType) je reprezentován jako hodnota s jednoduchou přesností a plovoucí desetinnou čárkou, nebo [`Single`](xref:System.Single), vstupní typ očekávaný algoritmem ml.NET. V této ukázce je sloupec `NumBed` v databázi celé číslo. Pomocí `CAST` integrované funkce se převede na [`Real`](xref:System.Data.SqlDbType). Vzhledem k tomu, že vlastnost `Price` je již typu [`Real`](xref:System.Data.SqlDbType) je načtena tak, jak je.
+
+K načtení dat do [`IDataView`](xref:Microsoft.ML.IDataView)použijte metodu `Load`.
 
 ```csharp
 IDataView data = loader.Load(dbSource);
@@ -193,10 +198,10 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-Načtěte kolekci v paměti do [`IDataView`](xref:Microsoft.ML.IDataView) [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) s metodou:
+Načtěte kolekci v paměti do [`IDataView`](xref:Microsoft.ML.IDataView) s metodou [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) :
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*)předpokládá, že [`IEnumerable`](xref:System.Collections.IEnumerable) se načte z aplikace je bezpečná pro přístup z více vláken.
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) předpokládá, že [`IEnumerable`](xref:System.Collections.IEnumerable) , ze kterého se načítá, je bezpečný pro přístup z více vláken.
 
 ```csharp
 // Create MLContext
@@ -205,3 +210,7 @@ MLContext mlContext = new MLContext();
 //Load Data
 IDataView data = mlContext.Data.LoadFromEnumerable<HousingData>(inMemoryCollection);
 ```
+
+## <a name="next-steps"></a>Další kroky
+
+Pokud ke výukovém modelu Machine Learning používáte tvůrce modelů, přečtěte si téma [načtení dat o školení do konfigurátoru modelu](load-data-model-builder.md).

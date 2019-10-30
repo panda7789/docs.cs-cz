@@ -1,34 +1,35 @@
 ---
-title: Provádění stromů výrazů
-description: Další informace o provádění stromů výrazů jejich převedením na spustitelný soubor pokynů Intermediate Language (IL).
+title: Spouštění stromů výrazů
+description: Přečtěte si informace o spouštění stromů výrazů jejich převodem na instrukce ke spustitelnému jazyku IL (executable Intermediate Language).
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: f6dca5a3965924e8eb6e1c04fe7ffc3c78c7df93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9af4b346962cb743daddf774e8b3c1f8fa722ae4
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664555"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037117"
 ---
-# <a name="executing-expression-trees"></a>Provádění stromů výrazů
+# <a name="executing-expression-trees"></a>Spouštění stromů výrazů
 
-[Předchozí – Typy architektur podporující stromy výrazů](expression-classes.md)
+[Předchozí typy architektury podporující stromy výrazů](expression-classes.md)
 
-*Stromu výrazů* je datová struktura, která představuje nějaký kód.
-Není zkompilovaných a spustitelný kód. Pokud chcete spustit kód v .NET, která je reprezentována strom výrazů, je nutné ji převést do spustitelného souboru instrukcí IL.
+*Strom výrazů* je datová struktura, která představuje nějaký kód.
+Není zkompilován a spustitelný kód. Pokud chcete spustit kód .NET, který je reprezentován stromem výrazu, je nutné jej převést na spustitelné instrukce IL.
 
-## <a name="lambda-expressions-to-functions"></a>Výrazy lambda na funkce
+## <a name="lambda-expressions-to-functions"></a>Výrazy lambda pro funkce
 
-Můžete převést všechny LambdaExpression nebo libovolného typu odvozeného z LambdaExpression do spustitelného souboru IL. Jiné typy výrazů nelze převést přímo do kódu. Toto omezení má malý vliv v praxi. Výrazy lambda jsou pouze typy výrazů, které byste měli provést převedením na spustitelný soubor (IL intermediate language). (Představit, co to znamenalo přímé spuštění `ConstantExpression`. By to znamenat nic užitečného?) Žádné strom výrazu, který je `LambdaExpression`, nebo typ odvozený od `LambdaExpression` lze převést na IL.
-Typ výrazu `Expression<TDelegate>` je pouze konkrétní příklad v .NET Core knihovny. Používá se k reprezentaci výrazu, který se mapuje na typ delegáta. Protože tento typ se mapuje na typ delegáta, .NET můžete prozkoumat výraz a generovat IL pro příslušné delegát, který odpovídá signatuře výrazu lambda. 
+Můžete převést libovolný LambdaExpression nebo jakýkoli typ odvozený z LambdaExpression do spustitelného IL. Jiné typy výrazů nelze přímo převést na kód. Toto omezení má malý účinek v praxi. Výrazy lambda jsou jediné typy výrazů, které byste chtěli provést převodem do spustitelného zprostředkujícího jazyka (IL). (Zamyslete se nad tím, co by to znamenalo k přímému spuštění `ConstantExpression`. To znamená cokoli užitečné?) Libovolný strom výrazů, který je `LambdaExpression`nebo typ odvozený od `LambdaExpression`, lze převést na IL.
+Typ výrazu `Expression<TDelegate>` je jediný konkrétní příklad v knihovnách .NET Core. Slouží k reprezentaci výrazu, který se mapuje na libovolný typ delegáta. Vzhledem k tomu, že tento typ je namapován na typ delegáta, může rozhraní .NET prověřit výraz a vygenerovat IL pro příslušný delegáta, který odpovídá signatuře výrazu lambda. 
 
-Ve většině případů tím se vytvoří jednoduchý mapování mezi výrazem a jeho odpovídající delegáta. Například strom výrazu, která je reprezentována `Expression<Func<int>>` bude převeden na delegáta typu `Func<int>`. Pro výraz lambda s jakékoli návratový typ a seznam argumentů existuje typ delegáta, který je cílový typ pro spustitelný kód reprezentována tento výraz lambda.
+Ve většině případů to vytvoří jednoduché mapování mezi výrazem a jeho odpovídajícím delegátem. Například strom výrazu, který je reprezentován `Expression<Func<int>>`, by byl převeden na delegáta typu `Func<int>`. Pro výraz lambda s jakýmkoli návratovým typem a seznamem argumentů existuje typ delegáta, který je cílovým typem pro spustitelný kód reprezentovaný tímto výrazem lambda.
 
-`LambdaExpression` Typ obsahuje `Compile` a `CompileToMethod` členy, které můžete použít k převedení strom výrazu na spustitelný kód. `Compile` Metoda vytvoří delegát. `CompileToMethod` Metodu aktualizace `MethodBuilder` objekt s IL, který představuje kompilovaném výstupu stromu výrazu. Všimněte si, že `CompileToMethod` dostupná jenom v rámci plně, ne na .NET Core.
+Typ `LambdaExpression` obsahuje členy `Compile` a `CompileToMethod`, které byste použili k převodu stromu výrazu na spustitelný kód. Metoda `Compile` vytvoří delegáta. Metoda `CompileToMethod` aktualizuje objekt `MethodBuilder` pomocí IL, který představuje zkompilovaný výstup stromu výrazu. Všimněte si, že `CompileToMethod` je k dispozici pouze v rozhraních kompletní plocha, nikoli v rozhraní .NET Core.
 
-Volitelně můžete zadat taky `DebugInfoGenerator` , který se zobrazí symbol ladicí informace pro objekt generované delegáta. To umožňuje převést na strom výrazu objektu delegáta a mít úplné ladicí informace o vygenerovaný delegáta.
+Volitelně můžete také zadat `DebugInfoGenerator`, které obdrží informace o ladění symbolů pro generovaný objekt delegáta. To umožňuje převést strom výrazu na objekt delegáta a získat úplné informace o ladění vygenerovaného delegáta.
 
-Výraz by převést na delegáta, pomocí následujícího kódu:
+Výraz byste převedli na delegáta pomocí následujícího kódu:
 
 ```csharp
 Expression<Func<int>> add = () => 1 + 2;
@@ -37,25 +38,25 @@ var answer = func(); // Invoke Delegate
 Console.WriteLine(answer);
 ```
 
-Všimněte si, že typ delegáta je založen na typ výrazu. Pokud chcete používat objekt delegáta silného typu způsobem, musíte znát návratový typ a seznam argumentů. `LambdaExpression.Compile()` Vrátí metoda `Delegate` typu. Je nutné přetypovat na typ správného delegáta mít žádné nástroje kompilace zkontrolujte seznam argumentů nebo návratového typu.
+Všimněte si, že typ delegáta je založen na typu výrazu. Je nutné znát návratový typ a seznam argumentů, pokud chcete použít objekt delegáta ve silném typu. Metoda `LambdaExpression.Compile()` vrací typ `Delegate`. Budete je muset přetypovat na správný typ delegáta, aby se všechny nástroje v čase kompilace zkontrolovaly v seznamu argumentů nebo v návratovém typu.
 
-## <a name="execution-and-lifetimes"></a>Spuštění a životnosti
+## <a name="execution-and-lifetimes"></a>Spuštění a životnost
 
-Při spuštění kódu tak, že vyvolá delegáta vytvoří, když jste volali `LambdaExpression.Compile()`. Tohle je vidět výše where `add.Compile()` vrátí delegáta. Vyvolání tohoto delegáta voláním `func()` spustí kód.
+Spusťte kód vyvoláním delegáta vytvořeného při volání `LambdaExpression.Compile()`. Vidíte to výše, kde `add.Compile()` vrací delegáta. Volání tohoto delegáta voláním `func()` spustí kód.
 
-Tento delegát představuje kód ve stromu výrazu. Můžete zachovat popisovač delegátu a později ho vyvolat. Není nutné ke kompilaci pokaždé, když chcete spustit kód, který představuje strom výrazu. (Mějte na paměti, že stromů výrazů jsou neměnné a později kompilaci stejném stromu pro výraz vytvoří delegát, který spouští stejný kód.)
+Tento delegát představuje kód ve stromu výrazu. Můžete zachovat popisovač pro daného delegáta a vyvolat ho později. Strom výrazů není nutné kompilovat pokaždé, když chcete spustit kód, který představuje. (Nezapomeňte, že stromy výrazů jsou neměnné a kompilace stejného stromu výrazů později vytvoří delegáta, který spustí stejný kód.)
 
-Můžu se průkaz pokusu o vytvoření jakékoli sofistikovanější ukládání do mezipaměti mechanismy pro zvýšení výkonu zabráněním volání zbytečných kompilace. Porovnání dvou stromů výrazů libovolného k určení, zda představují stejný algoritmus bude taky časově náročné ke spuštění. Pravděpodobně zjistíte, že výpočetní čas uložíte vyhnout jakékoli další volání `LambdaExpression.Compile()` bude používat více než v době provádění kódu, který určuje dvě různé stromů výrazů za následek stejný spustitelný kód.
+Při pokusu o vytvoření jakýchkoli propracovaných mechanismů pro ukládání do mezipaměti se mi bude snažit zvýšit výkon tím, že se vyhnete zbytečným voláním kompilace. Porovnání dvou libovolných stromů výrazů k určení, jestli představují stejný algoritmus, bude také časově náročné na provedení. Pravděpodobně zjistíte, že úsporný čas, který byste ušetřili, aby nedošlo k žádnému nadbytečnému volání `LambdaExpression.Compile()` bude více než spotřebované při provádění kódu, který určuje, že se dvě různé stromy výrazů vrátí do stejného spustitelného kódu.
 
 ## <a name="caveats"></a>Upozornění
 
-Probíhá kompilace výrazu lambda delegátovi a vyvolání tohoto delegáta je jedním z nejjednodušší operace, které můžete provádět pomocí strom výrazu. Ale i v této jednoduché operaci existují upozornění, které musí mít přehled o. 
+Kompilování výrazu lambda do delegáta a vyvolání tohoto delegáta je jedním z nejjednodušších operací, které můžete provádět se stromem výrazů. I když je však tato jednoduchá operace k dispozici, je nutné mít na paměti informace o aspektech. 
 
-Výrazy lambda vytvoření uzávěry přes místní proměnné, které se odkazuje ve výrazu. Je nutné zaručit, že jsou všechny proměnné, které by byly součástí delegáta použitelné na místě, kde volání `Compile`, a při spuštění Výsledný delegát.
+Výrazy lambda vytvoří uzávěry pro všechny místní proměnné, na které se odkazuje ve výrazu. Musíte zaručit, aby všechny proměnné, které by byly součástí delegáta, byly použitelné v umístění, kde zavoláte `Compile`, a při spuštění výsledného delegáta.
 
-Kompilátor bude obecně platí, ujistěte se, že je hodnota true. Nicméně pokud výraz přistupuje k proměnné, která implementuje `IDisposable`, je možné, že váš kód může uvolnění objektu, zatímco se stále nachází ve stromu výrazu.
+Obecně kompilátor zajistí, že se jedná o true. Nicméně pokud váš výraz přistupuje k proměnné, která implementuje `IDisposable`, je možné, že váš kód může vyřadit objekt, když je stále ve stromu výrazu.
 
-Například tento kód funguje, protože `int` neimplementuje `IDisposable`:
+Tento kód například funguje správně, protože `int` neimplementuje `IDisposable`:
 
 ```csharp
 private static Func<int, int> CreateBoundFunc()
@@ -67,10 +68,10 @@ private static Func<int, int> CreateBoundFunc()
 }
 ```
 
-Delegát má zachytit odkazem na místní proměnnou `constant`.
-Tuto proměnnou přistupuje kdykoli později, pokud funkce vrátí `CreateBoundFunc` spustí.
+Delegát zachytil odkaz na místní proměnnou `constant`.
+K této proměnné lze kdykoli později přejít, když se funkce vrátí `CreateBoundFunc` spustí.
 
-Zvažte však, zda tato (místo toho contrived) třída, která implementuje `IDisposable`:
+Zvažte však tuto třídu (spíše contrived), která implementuje `IDisposable`:
 
 ```csharp
 public class Resource : IDisposable
@@ -93,7 +94,7 @@ public class Resource : IDisposable
 }
 ```
 
-Pokud používáte ho ve výrazu, jak je znázorněno níže, získáte `ObjectDisposedException` při spuštění kód odkazuje `Resource.Argument` vlastnost:
+Pokud ho použijete ve výrazu, jak je vidět níže, dostanete `ObjectDisposedException`, když spustíte kód, na který odkazuje vlastnost `Resource.Argument`:
 
 ```csharp
 private static Func<int, int> CreateBoundResource()
@@ -107,20 +108,20 @@ private static Func<int, int> CreateBoundResource()
 }
 ```
 
-Delegát, tato metoda vrátí byl uzavřen za `constant` objektu, který byl vyřazen. (Je byla vyřazena, protože byl deklarován v `using` příkazu.) 
+Delegát vrácený touto metodou byl uzavřen nad objektem `constant`, který byl odstraněn. (Bylo zrušeno, protože bylo deklarováno v příkazu `using`.) 
 
-Teď, když provedete delegáta, tato metoda vrátí, máte k dispozici `ObjectDisposedException` vyvolána v době vykonání.
+Když nyní spustíte delegáta, který je vrácen z této metody, budete mít `ObjectDisposedException` vyvolána v okamžiku spuštění.
 
-Zdát neobvyklé obsahuje chybu modulu runtime představující konstrukci za kompilace, ale to je svět, ve kterém jsme zadejte při spolupracujeme s stromy výrazů.
+Zdá se, že došlo k chybě za běhu představující konstrukci v čase kompilace, ale to je World, který zadáte při práci s stromy výrazů.
 
-Existuje velké množství permutací tento problém tak, aby byl těžko poskytují obecné pokyny, jak jí předcházet. Buďte opatrní při přístupu k místní proměnné při definování výrazy a buďte opatrní při přístupu k stavu v aktuálním objektu (představované `this`) při vytváření stromu výrazů, který může být vrácen veřejné rozhraní API.
+Tento problém je hodně permutací, takže je těžké nabídnout obecné pokyny, abyste se k tomu předešli. Při vytváření stromu výrazů, který může být vrácen veřejným rozhraním API, buďte opatrní při přístupu k místním proměnným při definování výrazů a buďte opatrní při přístupu ke stavu v aktuálním objektu (reprezentovaný `this`).
 
-Kód ve výrazu může odkazovat na metody nebo vlastnosti v jiných sestaveních. Toto sestavení musí být přístupné, když je definována výrazem a při kompilaci a kdy je výsledný delegát vyvolán. Budete splnit pomocí `ReferencedAssemblyNotFoundException` v případech, kdy není k dispozici.
+Kód ve výrazu může odkazovat na metody nebo vlastnosti v jiných sestaveních. Toto sestavení musí být přístupné při definování výrazu a při jeho kompilaci a při vyvolání výsledného delegáta. V případech, kdy není k dispozici, se zobrazí `ReferencedAssemblyNotFoundException`.
 
 ## <a name="summary"></a>Souhrn
 
-Stromy výrazů, které představují výrazy lambda mohou být zkompilovány k vytvoření delegáta, který můžete spustit. To poskytuje jeden mechanismus ke spouštění kódu vytvořeného reprezentována strom výrazu.
+Stromy výrazů, které reprezentují výrazy lambda, mohou být zkompilovány k vytvoření delegáta, který lze spustit. To poskytuje jeden mechanismus pro spuštění kódu reprezentovaného stromem výrazu.
 
-Strom výrazu představuje kód, který bude spuštěn pro jakékoli dané konstrukce, které vytvoříte. Za předpokladu, prostředí, ve kterém zkompilovat a spustit kód odpovídá prostředí, ve kterém vytvoříte výrazu, všechno funguje podle očekávání. Když, který nestane, chyby jsou velmi předvídatelné a, bude zachycena v první testy z jakéhokoli kódu pomocí stromů výrazů.
+Strom výrazu představuje kód, který by byl proveden pro libovolnou vytvořenou konstrukci. Dokud prostředí, kde kompilujete a spouštíte kód, odpovídá prostředí, ve kterém vytvoříte výraz, vše funguje podle očekávání. Pokud k tomu nedojde, chyby jsou velmi předvídatelné a budou zachyceny v prvních testech libovolného kódu pomocí stromů výrazů.
 
-[Další--Interpretace výrazů](expression-trees-interpreting.md)
+[Další – interpretují se výrazy.](expression-trees-interpreting.md)

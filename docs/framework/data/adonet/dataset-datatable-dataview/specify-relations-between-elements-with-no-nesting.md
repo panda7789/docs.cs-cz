@@ -2,12 +2,12 @@
 title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: d6cd6f04a9fdeafe7c419b40023af6c71d553ac7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 3aa9976ccde426eeda1d869164409c5235a629fe
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784282"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040049"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
 Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Můžete však explicitně zadat vztahy mezi prvky, které nejsou vnořeny pomocí anotace **msdata: Relationship** .  
@@ -53,9 +53,9 @@ Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Může
 </xs:schema>  
 ```  
   
- Proces mapování schématu XSD (XML Schema Definition Language) vytvoří <xref:System.Data.DataSet> s tabulkami **Order** a **OrderDetail** a vztah zadaný mezi těmito dvěma tabulkami, jak je znázorněno níže.  
+ Proces mapování schématu XSD (XML Schema Definition Language) vytvoří <xref:System.Data.DataSet> s tabulkami **Order** a **OrderDetail** a relací zadanou mezi těmito dvěma tabulkami, jak je znázorněno níže.  
   
-```  
+```text  
 RelationName: OrdOrderDetailRelation  
 ParentTable: Order  
 ParentColumns: OrderNumber   

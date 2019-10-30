@@ -2,24 +2,24 @@
 title: Architektura a návrh
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-ms.openlocfilehash: 50fc643fecf4b188123c556d754b3cbfa529e5e9
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 35fbc39db23a2b08ab926e122d2f1eb1806a369b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251721"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040028"
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 
 Modul pro generování SQL ve [vzorovém poskytovateli](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) je implementován jako návštěvník ve stromu výrazů, který představuje strom příkazů. Generování se provádí v rámci jednoho průchodu ve stromu výrazu.
 
-Uzly stromu jsou zpracovávány zdola nahoru. Za prvé se vytvoří zprostředkující struktura: SqlSelectStatement nebo SqlBuilder, implementace ISqlFragment. Dále je příkaz String jazyka SQL vytvořen z této struktury. Existují dva důvody pro mezilehlé struktury:
+Uzly stromu jsou zpracovávány zdola nahoru. Nejprve je vytvořena zprostředkující struktura: SqlSelectStatement nebo SqlBuilder, jak implementace ISqlFragment. Dále je příkaz String jazyka SQL vytvořen z této struktury. Existují dva důvody pro mezilehlé struktury:
 
 - Logicky se vyplní příkaz SQL SELECT mimo pořadí. Uzly, které jsou součástí klauzule FROM, jsou navštíveny před uzly, které jsou součástí klauzule WHERE, GROUP BY a ORDER BY.
 
 - Chcete-li přejmenovat aliasy, je nutné identifikovat všechny použité aliasy, abyste se vyhnuli kolizím při přejmenování. Chcete-li odložit možnosti přejmenování v SqlBuilder, použijte objekty symbolů pro reprezentaci sloupců, které jsou kandidáty k přejmenování.
 
-![Diagram](./media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")
+![Znázorňuje](./media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")
 
 V první fázi při návštěvě stromu výrazů jsou výrazy seskupeny do SqlSelectStatements, spojení jsou shrnuty a jsou shrnuty aliasy. Během tohoto průchodu objekty symbolů reprezentují sloupce nebo vstupní aliasy, které mohou být přejmenovány.
 
@@ -129,7 +129,7 @@ Třída SymbolPair řeší sloučení záznamů.
 
 Vezměte v úvahu výraz vlastnosti D (v, "J3. J2. J1. a. x"), kde v je VarRef, J1, J2, J3, je rozsah a x je sloupce.
 
-To je třeba přeložit do . {x}.Zdrojové pole představuje nejvzdálenější SqlStatement, představující výraz Join (řekněme J2); Toto je vždy symbol spojení. Sloupcové pole se přesune z jednoho symbolu spojení na další, dokud se nezastaví na symbolu bez spojení. Tato zpráva se vrátí při návštěvě DbPropertyExpression, ale nikdy se nepřidá do SqlBuilder.
+To je třeba přeložit do {j}. {x}. Zdrojové pole představuje nejvzdálenější SqlStatement, představující výraz Join (řekněme J2); Toto je vždy symbol spojení. Sloupcové pole se přesune z jednoho symbolu spojení na další, dokud se nezastaví na symbolu bez spojení. Tato zpráva se vrátí při návštěvě DbPropertyExpression, ale nikdy se nepřidá do SqlBuilder.
 
 ```csharp
 class SymbolPair : ISqlFragment {
@@ -221,7 +221,7 @@ Když se spustí nový SqlSelectStatement a do vstupu se přidá aktuální SqlS
 
 ### <a name="join-flattening"></a>Spojit sloučení
 
-Vlastnost IsParentAJoin pomáhá určit, zda lze dané spojení Sloučit. Konkrétně IsParentAJoin vrátí `true` pouze pro levý podřízený objekt JOIN a pro každý DbScanExpression, který je okamžitým vstupem do spojení. v takovém případě bude podřízený uzel znovu používat stejný SqlSelectStatement, který by měl nadřazený objekt později použít. Další informace najdete v tématu výrazy JOIN.
+Vlastnost IsParentAJoin pomáhá určit, zda lze dané spojení Sloučit. Konkrétně IsParentAJoin vrací `true` pouze pro levý podřízený objekt JOIN a pro každý DbScanExpression, který je okamžitým vstupem ke spojení. v takovém případě bude podřízený uzel znovu používat stejný SqlSelectStatement, který by měl nadřazený objekt později použít. Další informace najdete v tématu výrazy JOIN.
 
 ### <a name="input-alias-redirecting"></a>Přesměrování vstupního aliasu
 
@@ -229,7 +229,7 @@ Přesměrování vstupního aliasu je provedeno s tabulkou symbolů.
 
 Chcete-li vysvětlit přesměrování vstupního aliasu, podívejte se na první příklad v tématu [generování SQL z příkazových stromů – osvědčené postupy](generating-sql-from-command-trees-best-practices.md).  V projekci je potřeba přesměrovat "a" na "b".
 
-Když je vytvořen objekt SqlSelectStatement, rozsah, který je vstupem do uzlu, je umístěn do vlastnosti from třídy SqlSelectStatement. Symbol (\<symbol_b >) je vytvořen na základě názvu vstupní vazby ("b"), který představuje tento rozsah, a "as" + \<symbol_b > je připojen k klauzuli FROM.  Symbol je také přidán do vlastnosti FromExtents.
+Když je vytvořen objekt SqlSelectStatement, rozsah, který je vstupem do uzlu, je umístěn do vlastnosti from třídy SqlSelectStatement. Symbol (\<symbol_b >) se vytvoří na základě názvu vstupní vazby ("b"), který bude představovat tento rozsah, a > se k klauzuli FROM připojí \<symbol_b.  Symbol je také přidán do vlastnosti FromExtents.
 
 Symbol je také přidán do tabulky symbolů, aby propojí název vstupní vazby s ním ("b", \<symbol_b >).
 
@@ -243,9 +243,9 @@ Sloučení aliasu JOIN se dosáhne při návštěvě DbPropertyExpression, jak j
 
 ### <a name="column-name-and-extent-alias-renaming"></a>Název sloupce a přejmenování aliasu rozsahu
 
-Problémy s názvem sloupce a přejmenováním aliasu rozsahu jsou adresovány pomocí symbolů, které nahradí pouze aliasy ve druhé fázi generování popsané v části s názvem druhá fáze generování SQL: Generuje se příkaz řetězce.
+Problémy s názvem sloupce a přejmenováním aliasu rozsahu jsou adresovány pomocí symbolů, které nahradí pouze aliasy ve druhé fázi generování popsané v části s názvem druhá fáze generování kódu SQL: vygenerování příkazu řetězce.
 
-## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>První fáze generování SQL: Návštěvy stromu výrazů
+## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>První fáze generování SQL: návštěvy stromu výrazů
 
 Tato část popisuje první fázi generování kódu SQL, pokud je výraz reprezentující dotaz navštíven a je vytvořena zprostředkující struktura, buď SqlSelectStatement nebo SqlBuilder.
 
@@ -259,7 +259,7 @@ Následující typy výrazů podporují uzly bez připojení:
 
 - DbFilterExpression
 
-- DbGroupByExpression
+- DbGroupAggregate
 
 - DbLimitExpression
 
@@ -345,7 +345,7 @@ Množina operací DbUnionAllExpression, DbExceptExpression a DbIntersectExpressi
 <leftSqlSelectStatement> <setOp> <rightSqlSelectStatement>
 ```
 
-Kde \<leftSqlSelectStatement > a \<rightSqlSelectStatement > jsou SqlSelectStatements získány návštěvou každého vstupu a \<setOp > je odpovídající operace (například UNION ALL).
+Kde \<leftSqlSelectStatement > a \<rightSqlSelectStatement > jsou SqlSelectStatements získány návštěvou každého ze vstupů a \<setOp > je odpovídající operace (například UNION ALL).
 
 ### <a name="dbscanexpression"></a>DbScanExpression
 
@@ -375,9 +375,9 @@ Pokud má DbNewInstanceExpression návratový typ kolekce a definuje novou kolek
 
 - Pokud DbNewInstanceExpression má DbElementExpression jako jediný argument, je přeložen následujícím způsobem:
 
-    ```
-    NewInstance(Element(X)) =>  SELECT TOP 1 …FROM X
-    ```
+```sql
+NewInstance(Element(X)) =>  SELECT TOP 1 …FROM X
+```
 
 Pokud DbNewInstanceExpression nemá žádné argumenty (představuje prázdnou tabulku), DbNewInstanceExpression se převede na:
 
@@ -409,18 +409,18 @@ Metoda, která navštíví DbElementExpression, je vyvolána pouze pro návště
 
 ### <a name="dbquantifierexpression"></a>DbQuantifierExpression
 
-V závislosti na typu výrazu (any nebo All) je DbQuantifierExpression přeložit jako:
+V závislosti na typu výrazu (any nebo All) je DbQuantifierExpression přeložen jako:
 
-```
+```sql
 Any(input, x) => Exists(Filter(input,x))
 All(input, x) => Not Exists(Filter(input, not(x))
 ```
 
-### <a name="dbnotexpression"></a>DbNotExpression
+### <a name="dbnotexpression"></a>Třída DbNotExpression
 
 V některých případech je možné sbalit překlad třída DbNotExpression se vstupním výrazem. Příklad:
 
-```
+```sql
 Not(IsNull(a)) =>  "a IS NOT NULL"
 Not(All(input, x) => Not (Not Exists(Filter(input, not(x))) => Exists(Filter(input, not(x))
 ```
@@ -431,11 +431,11 @@ Důvod, proč je provedeno druhé sbalení, je, že poskytovatel při překladu 
 
 DbIsEmptyExpression je přeložen jako:
 
-```
+```sql
 IsEmpty(input) = Not Exists(input)
 ```
 
-## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: Generování řetězcového příkazu
+## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: vygenerování řetězcového příkazu
 
 Při generování příkazu String SQL SqlSelectStatement vytvoří vlastní aliasy pro symboly, které řeší problém s názvem sloupce a přejmenováním aliasu rozsahu.
 
@@ -443,7 +443,7 @@ K přejmenování aliasu rozsahu dojde při zápisu objektu SqlSelectStatement d
 
 Při zápisu objektu symbolu do řetězce dojde k přejmenování sloupce. AddDefaultColumns v první fázi určuje, zda je nutné přejmenovat určitý symbol sloupce. V druhé fázi se pouze přejmenování provádí se zachováním, že vytvořený název není v konfliktu s žádným názvem používaným v AllColumnNames.
 
-Pro vytváření jedinečných názvů pro aliasy rozsahu i pro sloupce použijte \<existing_name > _n, kde n je nejmenší alias, který ještě nebyl použit. Globální seznam všech aliasů zvyšuje nutnost kaskádového přejmenování.
+Pro vytváření jedinečných názvů pro aliasy rozsahu i pro sloupce použijte \<existing_name > _n, kde n je nejmenší alias, který se ještě nepoužil. Globální seznam všech aliasů zvyšuje nutnost kaskádového přejmenování.
 
 ## <a name="see-also"></a>Viz také:
 

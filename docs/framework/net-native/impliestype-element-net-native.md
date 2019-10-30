@@ -1,17 +1,17 @@
 ---
-title: <ImpliesType>– Element (.NET Native)
+title: <ImpliesType> – element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10fa3a0ac04038bb686311a4d86c99442c0fcf26
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 38bdfc974a6942596e9778cabb87b275f1e51db8
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049666"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039522"
 ---
-# <a name="impliestype-element-net-native"></a>\<Element > ImpliesType (.NET Native)
+# <a name="impliestype-element-net-native"></a>\<element > ImpliesType (.NET Native)
 Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ nebo metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,24 +42,24 @@ Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ ne
 |`Browse`|Reflexe|Nepovinný atribut. Řídí dotazování pro informace o prvcích programu, ale nepovoluje přístup za běhu.|  
 |`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování.|  
 |`Serialize`|Serializace|Nepovinný atribut. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> používají třídu.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která používá třídu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které používají třídu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType>.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které používají třídu <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>.|  
 |`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů odkazů do prostředí Windows Runtime a COM.|  
 |`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.|  
 |`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů hodnot do nativního kódu.|  
   
 ## <a name="name-attribute"></a>Atribut Name  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|*type_name*|Název typu. Pokud je typ reprezentovaný tímto `<ImpliesType>` prvkem umístěný ve stejném oboru názvů jako element, který `<Type>` obsahuje, *TYPE_NAME* může obsahovat název typu bez jeho oboru názvů. Jinak musí *TYPE_NAME* obsahovat plně kvalifikovaný název typu.|  
+|*type_name*|Název typu. Pokud je typ reprezentovaný tímto `<ImpliesType>` element umístěn ve stejném oboru názvů jako jeho element obsahující `<Type>`, *TYPE_NAME* může obsahovat název typu bez jeho oboru názvů. Jinak musí *TYPE_NAME* obsahovat plně kvalifikovaný název typu.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které se má použít u tohoto typu zásad Možné hodnoty jsou `All`, `Auto`, `Excluded` ,`PublicAndInternal`,, ,`Required PublicAndInternal`a. `Required Public` `Public` `Required All` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít u tohoto typu zásad Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,12 +68,12 @@ Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ ne
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zadejte >](type-element-net-native.md)|Aplikuje zásadu odrazu na typ a všechny jeho členy.|  
-|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ a všechny její členy.|  
-|[\<Method>](method-element-net-native.md)|Aplikuje zásadu reflexe na metodu.|  
+|[Typ\<](type-element-net-native.md)|Aplikuje zásadu odrazu na typ a všechny jeho členy.|  
+|[\<TypeInstantiation >](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ a všechny její členy.|  
+|[Metoda\<](method-element-net-native.md)|Aplikuje zásadu reflexe na metodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<ImpliesType>` Element je primárně určen pro použití v knihovnách. Řeší následující scénář:  
+ Element `<ImpliesType>` je primárně určen pro použití v knihovnách. Řeší následující scénář:  
   
 - Pokud rutina potřebuje reflektovat na jeden typ, musí být nutně odpovídat druhému typu.  
   
@@ -81,7 +81,7 @@ Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ ne
   
  Nejčastěji jsou tyto dva typy obecné instance s argumenty sdíleného typu.  
   
- Element byl definován s předpokladem, že nutnost reflexe u typu určeného jeho nadřazeným elementem implikuje nutnost reflexe u typu určeného `<ImpliesType>` elementem. `<ImpliesType>` Například následující direktivy reflexe platí pro dva typy, `Explicit<T>` a `Implicit<T>`.  
+ `<ImpliesType>` element byl definován s předpokladem, že nutnost reflexe u typu určeného jeho nadřazeným elementem implikuje nutnost reflexe u typu určeného `<ImpliesType>` prvkem. Například následující direktivy reflexe platí pro dva typy `Explicit<T>` a `Implicit<T>`.  
   
 ```xml  
 <Type Name="Explicit{ET}">  
@@ -89,9 +89,9 @@ Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ ne
 </Type>  
 ```  
   
- Tato direktiva nemá žádný vliv, pokud vytvoření instance `Explicit` má definované `Dynamic` nastavení zásad. Například pokud se jedná o případ `Explicit<Int32>`, `Implicit<Int32>` je vytvořena instance s jeho veřejnými členy rootd a jejich metadata jsou k dispozici pro dynamické programování.  
+ Tato direktiva nemá žádný vliv, pokud vytvoření instance `Explicit` nemá definované nastavení zásad `Dynamic`. Pokud se například jedná o případ `Explicit<Int32>`, `Implicit<Int32>` se vytvoří instance se svými veřejnými členy rooted a jejich metadata jsou k dispozici pro dynamické programování.  
   
- Následuje příklad reálného světa, který se vztahuje alespoň na jeden serializátor. Direktivy zachytí požadavek, který reflektuje na něco napsaného `IList<`jako *něco* `>` zahrnuje také reflektování `List<`na odpovídající typ *něčeho* `>` , aniž by to vyžadovalo. Anotace jednotlivých aplikací.  
+ Následuje příklad reálného světa, který se vztahuje alespoň na jeden serializátor. Direktivy zachytí požadavek, který se odráží na něco, co je `IList<`*něco*`>` zahrnuje také reflektování na odpovídající *`List<`typ*`>`, aniž by to vyžadovalo jednotlivé aplikace. poznámky.  
   
 ```xml  
 <Type Name="System.Collections.Generic.IList{T}">  
@@ -99,13 +99,13 @@ Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ ne
 </Type>  
 ```  
   
- Element se může také objevit `<Method>` v rámci elementu, protože v některých případech instance obecné metody implikuje odrážející typ instance. `<ImpliesType>` Představte si například obecnou `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` metodu, kterou bude mít daná knihovna k dynamickému přístupu <xref:System.Collections.Generic.List%601> společně <xref:System.Array> s přidruženými typy a. Tato možnost může být vyjádřena takto:  
+ Element `<ImpliesType>` se může také zobrazit v elementu `<Method>`, protože v některých případech instance obecné metody implikuje odrážející typ instance. Představte si například obecnou metodu `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)`, že daná knihovna bude dynamicky přistupovat společně s přidruženými <xref:System.Collections.Generic.List%601> a <xref:System.Array> typy. Tato možnost může být vyjádřena takto:  
   
 ```xml  
 <Type Name="MyType">  
     <Method Name="MakeEnumerable{T}" Signature="(System.String, T)" Dynamic="Included">  
         <ImpliesType Name="T[]" Dynamic="Public" />  
-        <ImpliesType Name="System.Collections.Generic.List{T}" Dynamic="Public">  
+        <ImpliesType Name="System.Collections.Generic.List{T}" Dynamic="Public" />  
     </Method>  
 </Type>  
 ```  

@@ -2,13 +2,14 @@
 title: Struktury – C# Průvodce
 description: Přečtěte si o typu struktury a způsobu jejich vytváření.
 ms.date: 10/12/2016
+ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: e0974b7dcf3c0888cb52bea81b07a58e3a98640b
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a7cdd84677cb84038aae89da9774c6e365275963
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396124"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039732"
 ---
 # <a name="structs"></a>Struktury
 
@@ -26,7 +27,7 @@ Ale deklarujete a přiřadíte jim hodnoty, jako kdyby byly jednoduché neagrego
   
 [!code-csharp[Assign Values](../../samples/snippets/csharp/concepts/structs/assign-value.cs)] 
   
-Typy hodnot jsou *zapečetěné*, což znamená, že nemůžete odvodit typ z <xref:System.Int32> a nemůžete definovat strukturu, která by dědila z jakékoli uživatelsky definované třídy nebo struktury, protože struktura může dědit jenom z <xref:System.ValueType>. Struktura však může implementovat jedno nebo více rozhraní. Typ struktury můžete přetypovat na typ rozhraní; To způsobí, že operace *zabalení* zabalí strukturu uvnitř objektu typu reference na spravované haldě. K operacím zabalení dojde, když předáte typ hodnoty metodě, která jako vstupní parametr přebírá <xref:System.Object>. Další informace naleznete v tématu [zabalení a rozbalení](./programming-guide/types/boxing-and-unboxing.md ).  
+Typy hodnot jsou *zapečetěné*, což znamená, že nemůžete odvodit typ z <xref:System.Int32>a nemůžete definovat strukturu, která by dědila z jakékoli uživatelsky definované třídy nebo struktury, protože struktura může dědit pouze z <xref:System.ValueType>. Struktura však může implementovat jedno nebo více rozhraní. Typ struktury můžete přetypovat na typ rozhraní; To způsobí, že operace *zabalení* zabalí strukturu uvnitř objektu typu reference na spravované haldě. K operacím zabalení dojde, když předáte typ hodnoty metodě, která přijímá <xref:System.Object> jako vstupní parametr. Další informace naleznete v tématu [zabalení a rozbalení](./programming-guide/types/boxing-and-unboxing.md ).  
   
 Klíčové slovo [struct](./language-reference/keywords/struct.md) můžete použít k vytvoření vlastních typů hodnot. Struktura se obvykle používá jako kontejner pro malou sadu souvisejících proměnných, jak je znázorněno v následujícím příkladu:  
   
@@ -48,13 +49,13 @@ Struktury sdílejí většinu stejné syntaxe jako třídy, i když jsou struktu
   
 - Struktury mohou deklarovat konstruktory, které mají parametry.  
   
-- Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, který dědí z <xref:System.Object>.  
+- Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, které dědí z <xref:System.Object>.  
   
 - Struktura může implementovat rozhraní.
 
 ## <a name="literal-values"></a>Hodnoty literálu
 
-V C#rozhraní hodnoty literálu obdrží typ z kompilátoru. Můžete určit, jak se má číselný literál zadat připojením písmene ke konci čísla. Například chcete-li určit, že hodnota 4,56 by měla být považována za float, přidejte "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí typ `double` pro literál. Další informace o tom, které typy lze zadat s příponami písmen, naleznete v tématu referenční stránky pro jednotlivé typy v [hodnotových typech](./language-reference/keywords/value-types.md).  
+V C#rozhraní hodnoty literálu obdrží typ z kompilátoru. Můžete určit, jak se má číselný literál zadat připojením písmene ke konci čísla. Například chcete-li určit, že hodnota 4,56 by měla být považována za float, přidejte "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí `double` typ literálu. Další informace o tom, které typy lze zadat s příponami písmen, naleznete v tématu referenční stránky pro jednotlivé typy v [hodnotových typech](./language-reference/keywords/value-types.md).  
   
 Vzhledem k tomu, že jsou zadány literály a všechny typy jsou odvozeny od <xref:System.Object>, můžete napsat a zkompilovat kód, například následující:  
   
@@ -64,9 +65,9 @@ Poslední dva příklady ukazují jazykové funkce představené v C# 7,0. Prvn�
 
 Druhý ukazuje *binární literály*, které umožňují zadat bitové vzory přímo místo použití šestnáctkového zápisu.
 
-## <a name="nullable-value-types"></a>Typy hodnot s možnou hodnotou null
+## <a name="nullable-value-types"></a>Typy hodnot s povolenou hodnotou Null
 
-Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že za typ připojíte `?`. Například `int?` je typ `int`, který může mít také hodnotu [null](./language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601>. Typy hodnot s možnou hodnotou null jsou zvláště užitečné při předávání dat do a z databází, ve kterých mohou být číselné hodnoty null nebo nedefinovány. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](programming-guide/nullable-types/index.md).
+Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](./language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601>. Typy hodnot s možnou hodnotou null jsou zvláště užitečné při předávání dat do a z databází, ve kterých mohou být číselné hodnoty null nebo nedefinovány. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](programming-guide/nullable-types/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

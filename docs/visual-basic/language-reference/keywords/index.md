@@ -10,113 +10,115 @@ helpviewer_keywords:
 - reserved words, Visual Basic keywords
 - Visual Basic, keywords
 ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
-ms.openlocfilehash: 61dc57b2e44e7b98fbce85e81491c76736c7ad78
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 66eb6984bb6bb93dc7015a9da8c3099637bc2722
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959954"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039401"
 ---
 # <a name="keywords-visual-basic"></a>Klíčová slova (Visual Basic)
-Následující tabulky uvádějí všechna Visual Basic klíčová slova jazyka.  
-  
-## <a name="reserved-keywords"></a>Vyhrazená klíčová slova  
- Následující klíčová slova jsou *vyhrazena*, což znamená, že je nelze použít jako názvy pro programovací prvky, jako jsou proměnné nebo procedury. Toto omezení můžete obejít uzavřením názvu do hranatých závorek`[]`(). Další informace naleznete v tématu "řídicí názvy" v [deklarovaných názvech elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+
+Následující tabulky uvádějí všechna Visual Basic klíčová slova jazyka.
+
+## <a name="reserved-keywords"></a>Vyhrazená klíčová slova
+
+Následující klíčová slova jsou *vyhrazena*, což znamená, že je nelze použít jako názvy pro programovací prvky, jako jsou proměnné nebo procedury. Toto omezení můžete obejít uzavřením názvu do hranatých závorek (`[]`). Další informace naleznete v tématu "řídicí názvy" v [deklarovaných názvech elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+
+> [!NOTE]
+> Nedoporučujeme používat řídicí názvy, protože to může způsobit těžkou čitelnost kódu a může vést k drobným chybám, které může být obtížné najít.
+
+|||||
+|---|---|---|---|
+|[AddHandler](../statements/addhandler-statement.md)|[AddressOf](../operators/addressof-operator.md)|[Zástupný](../statements/alias-clause.md)|[Ani](../operators/and-operator.md)|  
+|[AndAlso –](../operators/andalso-operator.md)|[Formátu](../statements/as-clause.md)|[Datového](../data-types/boolean-data-type.md)|[ByRef](../modifiers/byref.md)|  
+|[Bytové](../data-types/byte-data-type.md)|[ByVal](../modifiers/byval.md)|[Volání](../statements/call-statement.md)|[Tom](../statements/select-case-statement.md)|  
+|[Catch](../statements/try-catch-finally-statement.md)|[CBool](../functions/type-conversion-functions.md)|[CByte](../functions/type-conversion-functions.md)|[Funkce](../functions/type-conversion-functions.md)|  
+|[CDate](../functions/type-conversion-functions.md)|[CDbl](../functions/type-conversion-functions.md)|[CDec](../functions/type-conversion-functions.md)|[Char](../data-types/char-data-type.md)|  
+|[CInt](../functions/type-conversion-functions.md)|[Omezení třídy](../statements/type-list.md)|[Příkaz Class](../statements/class-statement.md)|[CLng](../functions/type-conversion-functions.md)|  
+|[CObj](../functions/type-conversion-functions.md)|[MX](../statements/const-statement.md)|[Continue](../statements/continue-statement.md)|[CSByte](../functions/type-conversion-functions.md)|  
+|[CShort](../functions/type-conversion-functions.md)|[CSng](../functions/type-conversion-functions.md)|[CStr](../functions/type-conversion-functions.md)|[CType](../functions/type-conversion-functions.md)|  
+|[CUInt](../functions/type-conversion-functions.md)|[CULng](../functions/type-conversion-functions.md)|[CUShort](../functions/type-conversion-functions.md)|[Datum](../data-types/date-data-type.md)|  
+|[Notaci](../data-types/decimal-data-type.md)|[Deklaroval](../statements/declare-statement.md)|[Default](../modifiers/default.md)|[Dostával](../statements/delegate-statement.md)|  
+|[Dimenzí](../statements/dim-statement.md)|[DirectCast](../operators/directcast-operator.md)|[Postup](../statements/do-loop-statement.md)|[Klepat](../data-types/double-data-type.md)|  
+|[Postupně](../statements/for-each-next-statement.md)|[Ostatních](../statements/else-statement.md)|[ElseIf](../statements/if-then-else-statement.md)|[Příkaz End](../statements/end-statement.md)|  
+|[Koncová \<– klíčové slovo >](../statements/end-keyword-statement.md)|`EndIf`|[Vytváření](../statements/enum-statement.md)|[Ověřování](../statements/erase-statement.md)|  
+|[Chyba](../statements/on-error-statement.md)|[Event](../statements/event-statement.md)|[Akci](../statements/exit-statement.md)|[Chybné](../data-types/boolean-data-type.md)|  
+|[Uznan](../statements/try-catch-finally-statement.md)|[Pro (v pro... Generace](../statements/for-next-statement.md)|[For each... Generace](../statements/for-each-next-statement.md)|[Friend](../modifiers/friend.md)|  
+|[Slouží](../statements/function-statement.md)|[Čtěte](../statements/get-statement.md)|[GetType](../operators/gettype-operator.md)|[GetXMLNamespace](../operators/getxmlnamespace-operator.md)|  
+|[Globální](../../../visual-basic/programming-guide/program-structure/namespaces.md)|`GoSub`|[GoTo](../statements/goto-statement.md)|[Řeší](../statements/handles-clause.md)|  
+|[If](../statements/if-then-else-statement.md)|[If ()](../operators/if-operator.md)|[Implementace](../statements/implements-clause.md)|[Příkaz Implements](../statements/implements-statement.md)|  
+|[Importy (obor názvů a typ .NET)](../statements/imports-statement-net-namespace-and-type.md)|[Importy (obor názvů XML)](../statements/imports-statement-xml-namespace.md)|[Pro](../statements/in-clause.md)|[In (generický modifikátor)](../modifiers/in-generic-modifier.md)|  
+|[Zdědí](../statements/inherits-statement.md)|[Čísla](../data-types/integer-data-type.md)|[Prostředí](../statements/interface-statement.md)|[Dojde](../operators/is-operator.md)|  
+|[IsNot](../operators/isnot-operator.md)|[Aplikaci](../queries/let-clause.md)|[Knihovna](../statements/declare-statement.md)|[Jako](../operators/like-operator.md)|  
+|[Dlouhou](../data-types/long-data-type.md)|[Procházet](../statements/do-loop-statement.md)|[Pamatovat](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)|[Střední](../operators/mod-operator.md)|  
+|[Modul](../modifiers/module-keyword.md)|[Příkaz Module](../statements/module-statement.md)|[MustInherit](../modifiers/mustinherit.md)|[MustOverride](../modifiers/mustoverride.md)|  
+|[MyBase](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[MyClass](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[Hosting](../statements/namespace-statement.md)|[Narrowing](../modifiers/narrowing.md)|  
+|[Nové omezení](../statements/type-list.md)|[Operátor New](../operators/new-operator.md)|[Next](../statements/for-next-statement.md)|[Další (v pokračování)](../statements/resume-statement.md)|  
+|[Mění](../operators/not-operator.md)|[Nothing](../nothing.md)|[NotInheritable](../modifiers/notinheritable.md)|[NotOverridable](../modifiers/notoverridable.md)|  
+|[Předmětů](../data-types/object-data-type.md)|[Tohoto](../statements/of-clause.md)|[Pnete](../../../visual-basic/misc/on.md)|[Podnikatel](../statements/operator-statement.md)|  
+|[Nastavení](../statements/option-keyword-statement.md)|[Optional](../modifiers/optional.md)|[Ani](../operators/or-operator.md)|[OrElse](../operators/orelse-operator.md)|  
+|[Out (generický modifikátor)](../modifiers/out-generic-modifier.md)|[Overloads](../modifiers/overloads.md)|[Overridable](../modifiers/overridable.md)|[Overrides](../modifiers/overrides.md)|  
+|[ParamArray](../modifiers/paramarray.md)|[Partial](../modifiers/partial.md)|[Private](../modifiers/private.md)|[Majetek](../statements/property-statement.md)|  
+|[Protected](../modifiers/protected.md)|[Public](../modifiers/public.md)|[RaiseEvent](../statements/raiseevent-statement.md)|[ReadOnly](../modifiers/readonly.md)|  
+|[ReDim](../statements/redim-statement.md)|[VĚCNÝ](../statements/rem-statement.md)|[RemoveHandler](../statements/removehandler-statement.md)|[Resume](../statements/resume-statement.md)|  
+|[Vrátit](../statements/return-statement.md)|[SByte](../data-types/sbyte-data-type.md)|[Výběr](../statements/select-case-statement.md)|[Stanovenými](../statements/set-statement.md)|  
+|[Shadows](../modifiers/shadows.md)|[Shared](../modifiers/shared.md)|[Dostatečná](../data-types/short-data-type.md)|[Konkrétní](../data-types/single-data-type.md)|  
+|[Static](../modifiers/static.md)|[Step](../statements/for-next-statement.md)|[Stop](../statements/stop-statement.md)|[Řetězec](../data-types/string-data-type.md)|  
+|[Omezení struktury](../statements/type-list.md)|[Příkaz Structure](../statements/structure-statement.md)|[Jednotk](../statements/sub-statement.md)|[SyncLock](../statements/synclock-statement.md)|  
+|[Stisknutím](../statements/then-statement.md)|[Throw](../statements/throw-statement.md)|[Schopn](../statements/for-next-statement.md)|[Podmínka](../data-types/boolean-data-type.md)|  
+|[Zkuste](../statements/try-catch-finally-statement.md)|[TryCast](../operators/trycast-operator.md)|[TypeOf... Dojde](../operators/typeof-operator.md)|[UInteger –](../data-types/uinteger-data-type.md)|  
+|[ULong](../data-types/ulong-data-type.md)|[UShort](../data-types/ushort-data-type.md)|[Použití](../statements/using-statement.md)|`Variant`|  
+|`Wend`|[Kdy](../statements/try-catch-finally-statement.md)|[While](../statements/while-end-while-statement.md)|[Widening](../modifiers/widening.md)|  
+|[Řetězce](../statements/with-end-with-statement.md)|[WithEvents](../modifiers/withevents.md)|[WriteOnly](../modifiers/writeonly.md)|[XOR](../operators/xor-operator.md)|  
+|[#Const](../directives/const-directive.md)|[#Else](../directives/if-then-else-directives.md)|[#ElseIf](../directives/if-then-else-directives.md)|[#End](../directives/if-then-else-directives.md)|  
+|[#If](../directives/if-then-else-directives.md)|[=](../operators/assignment-operator.md)|[&](../operators/concatenation-operator.md)|[&=](../operators/and-assignment-operator.md)|  
+|[*](../operators/multiplication-operator.md)|[*=](../operators/multiplication-assignment-operator.md)|[/](../operators/floating-point-division-operator.md)|[/=](../operators/floating-point-division-assignment-operator.md)|  
+|[\\](../operators/integer-division-operator.md)|[\\=](../operators/integer-division-assignment-operator.md)|[^](../operators/exponentiation-operator.md)|[^=](../operators/exponentiation-assignment-operator.md)|  
+|[+](../operators/addition-operator.md)|[+=](../operators/addition-assignment-operator.md)|[-](../operators/subtraction-operator.md)|[-=](../operators/subtraction-assignment-operator.md)|  
+|[Operátor >>](../operators/right-shift-operator.md)|[Operátor >>=](../operators/right-shift-assignment-operator.md)|[<<](../operators/left-shift-operator.md)|[<\<=](../operators/left-shift-assignment-operator.md)|  
   
 > [!NOTE]
-> Nedoporučujeme používat řídicí názvy, protože to může způsobit těžkou čitelnost kódu a může vést k drobným chybám, které může být obtížné najít.  
-  
-|||||  
-|---|---|---|---|  
-|[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)|[Alias](../../../visual-basic/language-reference/statements/alias-clause.md)|[Ani](../../../visual-basic/language-reference/operators/and-operator.md)|  
-|[AndAlso](../../../visual-basic/language-reference/operators/andalso-operator.md)|[Formátu](../../../visual-basic/language-reference/statements/as-clause.md)|[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)|  
-|[Bytové](../../../visual-basic/language-reference/data-types/byte-data-type.md)|[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)|[Volání](../../../visual-basic/language-reference/statements/call-statement.md)|[Tom](../../../visual-basic/language-reference/statements/select-case-statement.md)|  
-|[Catch](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[CBool](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CByte](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
-|[CDate](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CDbl](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CDec](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Char](../../../visual-basic/language-reference/data-types/char-data-type.md)|  
-|[CInt](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Omezení třídy](../../../visual-basic/language-reference/statements/type-list.md)|[Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)|[CLng](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
-|[CObj](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[MX](../../../visual-basic/language-reference/statements/const-statement.md)|[Continue](../../../visual-basic/language-reference/statements/continue-statement.md)|[CSByte](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
-|[CShort](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CSng](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CStr](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CType](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
-|[CUInt](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CULng](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CUShort](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Datum](../../../visual-basic/language-reference/data-types/date-data-type.md)|  
-|[Notaci](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|[Deklaroval](../../../visual-basic/language-reference/statements/declare-statement.md)|[Default](../../../visual-basic/language-reference/modifiers/default.md)|[Delegát](../../../visual-basic/language-reference/statements/delegate-statement.md)|  
-|[Dimenzí](../../../visual-basic/language-reference/statements/dim-statement.md)|[DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)|[Do](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Klepat](../../../visual-basic/language-reference/data-types/double-data-type.md)|  
-|[Postupně](../../../visual-basic/language-reference/statements/for-each-next-statement.md)|[Ostatních](../../../visual-basic/language-reference/statements/else-statement.md)|[ElseIf](../../../visual-basic/language-reference/statements/if-then-else-statement.md)|[Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)|  
-|[Klíčové \<slovo End >](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|`EndIf`|[Vytváření](../../../visual-basic/language-reference/statements/enum-statement.md)|[Ověřování](../../../visual-basic/language-reference/statements/erase-statement.md)|  
-|[Chyba](../../../visual-basic/language-reference/statements/on-error-statement.md)|[Event](../../../visual-basic/language-reference/statements/event-statement.md)|[Akci](../../../visual-basic/language-reference/statements/exit-statement.md)|[Chybné](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|  
-|[Uznan](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[Pro (v pro... Generace](../../../visual-basic/language-reference/statements/for-next-statement.md)|[For each... Generace](../../../visual-basic/language-reference/statements/for-each-next-statement.md)|[Friend](../../../visual-basic/language-reference/modifiers/friend.md)|  
-|[Slouží](../../../visual-basic/language-reference/statements/function-statement.md)|[Čtěte](../../../visual-basic/language-reference/statements/get-statement.md)|[GetType](../../../visual-basic/language-reference/operators/gettype-operator.md)|[GetXMLNamespace](../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md)|  
-|[Globální](../../../visual-basic/programming-guide/program-structure/namespaces.md)|`GoSub`|[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md)|[Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)|  
-|[If](../../../visual-basic/language-reference/statements/if-then-else-statement.md)|[If()](../../../visual-basic/language-reference/operators/if-operator.md)|[Implementace](../../../visual-basic/language-reference/statements/implements-clause.md)|[Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)|  
-|[Importy (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)|[Importy (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)|[Pro](../../../visual-basic/language-reference/statements/in-clause.md)|[In (generický modifikátor)](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)|  
-|[Zdědí](../../../visual-basic/language-reference/statements/inherits-statement.md)|[Čísla](../../../visual-basic/language-reference/data-types/integer-data-type.md)|[Rozhraní](../../../visual-basic/language-reference/statements/interface-statement.md)|[Dojde](../../../visual-basic/language-reference/operators/is-operator.md)|  
-|[IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)|[Aplikaci](../../../visual-basic/language-reference/queries/let-clause.md)|[Lib](../../../visual-basic/language-reference/statements/declare-statement.md)|[Jako](../../../visual-basic/language-reference/operators/like-operator.md)|  
-|[Dlouhou](../../../visual-basic/language-reference/data-types/long-data-type.md)|[smyčka](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Pamatovat](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)|[Střední](../../../visual-basic/language-reference/operators/mod-operator.md)|  
-|[Modul](../../../visual-basic/language-reference/modifiers/module-keyword.md)|[Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)|[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)|[MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)|  
-|[MyBase](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[MyClass](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)|[Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)|  
-|[Nové omezení](../../../visual-basic/language-reference/statements/type-list.md)|[Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)|[Next](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Další (v pokračování)](../../../visual-basic/language-reference/statements/resume-statement.md)|  
-|[Mění](../../../visual-basic/language-reference/operators/not-operator.md)|[Nothing](../../../visual-basic/language-reference/nothing.md)|[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)|[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)|  
-|[objekt](../../../visual-basic/language-reference/data-types/object-data-type.md)|[Tohoto](../../../visual-basic/language-reference/statements/of-clause.md)|[On](../../../visual-basic/misc/on.md)|[– Operátor](../../../visual-basic/language-reference/statements/operator-statement.md)|  
-|[Možnost](../../../visual-basic/language-reference/statements/option-keyword-statement.md)|[Optional](../../../visual-basic/language-reference/modifiers/optional.md)|[Nebo](../../../visual-basic/language-reference/operators/or-operator.md)|[OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)|  
-|[Out (generický modifikátor)](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)|[Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)|[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)|[Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)|  
-|[ParamArray](../../../visual-basic/language-reference/modifiers/paramarray.md)|[Partial](../../../visual-basic/language-reference/modifiers/partial.md)|[Private](../../../visual-basic/language-reference/modifiers/private.md)|[Majetek](../../../visual-basic/language-reference/statements/property-statement.md)|  
-|[Protected](../../../visual-basic/language-reference/modifiers/protected.md)|[Public](../../../visual-basic/language-reference/modifiers/public.md)|[RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)|[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)|  
-|[ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|[VĚCNÝ](../../../visual-basic/language-reference/statements/rem-statement.md)|[RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)|[Resume](../../../visual-basic/language-reference/statements/resume-statement.md)|  
-|[Vrátit](../../../visual-basic/language-reference/statements/return-statement.md)|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|[Výběr](../../../visual-basic/language-reference/statements/select-case-statement.md)|[Stanovenými](../../../visual-basic/language-reference/statements/set-statement.md)|  
-|[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)|[Shared](../../../visual-basic/language-reference/modifiers/shared.md)|[Dostatečná](../../../visual-basic/language-reference/data-types/short-data-type.md)|[Konkrétní](../../../visual-basic/language-reference/data-types/single-data-type.md)|  
-|[Static](../../../visual-basic/language-reference/modifiers/static.md)|[Step](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Stop](../../../visual-basic/language-reference/statements/stop-statement.md)|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
-|[Omezení struktury](../../../visual-basic/language-reference/statements/type-list.md)|[Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)|[Jednotk](../../../visual-basic/language-reference/statements/sub-statement.md)|[SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md)|  
-|[Stisknutím](../../../visual-basic/language-reference/statements/then-statement.md)|[Throw](../../../visual-basic/language-reference/statements/throw-statement.md)|[To](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Podmínka](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|  
-|[Zkuste](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)|[TypeOf... Dojde](../../../visual-basic/language-reference/operators/typeof-operator.md)|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|  
-|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|[Použití](../../../visual-basic/language-reference/statements/using-statement.md)|`Variant`|  
-|`Wend`|[Kdy](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)|[Widening](../../../visual-basic/language-reference/modifiers/widening.md)|  
-|[Řetězce](../../../visual-basic/language-reference/statements/with-end-with-statement.md)|[WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)|[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)|[XOR](../../../visual-basic/language-reference/operators/xor-operator.md)|  
-|[#Const](../../../visual-basic/language-reference/directives/const-directive.md)|[#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)|[#ElseIf](../../../visual-basic/language-reference/directives/if-then-else-directives.md)|[#End](../../../visual-basic/language-reference/directives/if-then-else-directives.md)|  
-|[#If](../../../visual-basic/language-reference/directives/if-then-else-directives.md)|[=](../../../visual-basic/language-reference/operators/assignment-operator.md)|[&](../../../visual-basic/language-reference/operators/concatenation-operator.md)|[&=](../../../visual-basic/language-reference/operators/and-assignment-operator.md)|  
-|[*](../../../visual-basic/language-reference/operators/multiplication-operator.md)|[*=](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)|[/](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)|[/=](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)|  
-|[\\](../../../visual-basic/language-reference/operators/integer-division-operator.md)|[\\=](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)|[^](../../../visual-basic/language-reference/operators/exponentiation-operator.md)|[^=](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)|  
-|[+](../../../visual-basic/language-reference/operators/addition-operator.md)|[+=](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)|[-](../../../visual-basic/language-reference/operators/subtraction-operator.md)|[-=](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)|  
-|[>> – operátor](../../../visual-basic/language-reference/operators/right-shift-operator.md)|[>>= – operátor](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)|[<<](../../../visual-basic/language-reference/operators/left-shift-operator.md)|[<\<=](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)|  
-  
-> [!NOTE]
-> `EndIf`, `GoSub`, `Variant` a`Wend` jsou uchována jako vyhrazená klíčová slova, i když již nejsou používána v Visual Basic. Význam `Let` klíčového slova se změnil. `Let`se nyní používá v dotazech LINQ. Další informace naleznete v [klauzuli let](../../../visual-basic/language-reference/queries/let-clause.md).  
+> `EndIf`, `GoSub`, `Variant`a `Wend` se uchovávají jako vyhrazená klíčová slova, i když se už nepoužívají v Visual Basic. Význam klíčového slova `Let` se změnil. `Let` se nyní používá v dotazech LINQ. Další informace naleznete v [klauzuli let](../queries/let-clause.md).  
   
 ## <a name="unreserved-keywords"></a>Nerezervovaná klíčová slova  
  Následující klíčová slova nejsou vyhrazena, což znamená, že je můžete použít jako názvy pro vaše programovací prvky. To se ale nedoporučuje, protože to může způsobit, že se váš kód těžko čte a může vést k drobným chybám, které se můžou obtížně najít.  
   
 |||||  
 |---|---|---|---|  
-|[Souhrnné](../../../visual-basic/language-reference/queries/aggregate-clause.md)|[ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)|[Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)|[Async](../../../visual-basic/language-reference/modifiers/async.md)|  
-|[Auto](../../../visual-basic/language-reference/modifiers/auto.md)|[Await](../../../visual-basic/language-reference/operators/await-operator.md)|[Binární](../../../visual-basic/language-reference/statements/option-compare-statement.md)|[Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)|  
-|[Vlastní](../../../visual-basic/language-reference/statements/event-statement.md)|[Znak](../../../visual-basic/language-reference/queries/distinct-clause.md)|[Rovná](../../../visual-basic/language-reference/queries/equals-clause.md)|[Explicitně](../../../visual-basic/language-reference/statements/option-explicit-statement.md)|  
-|[from](../../../visual-basic/language-reference/queries/from-clause.md)|[Seskupit podle](../../../visual-basic/language-reference/queries/group-by-clause.md)|[Spojení skupin](../../../visual-basic/language-reference/queries/group-join-clause.md)|[Uskladněn](../../../visual-basic/language-reference/statements/into-clause.md)|  
-|[IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)|[IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)|[Iterator](../../../visual-basic/language-reference/modifiers/iterator.md)|[Spojení](../../../visual-basic/language-reference/queries/join-clause.md)|  
-|[Key](../../../visual-basic/language-reference/modifiers/key.md)|[Středně](../../../visual-basic/language-reference/statements/mid-statement.md)|[Zaokrouhl](../../../visual-basic/misc/off.md)|[Řadit podle](../../../visual-basic/language-reference/queries/order-by-clause.md)|  
-|[Chovají](../../../visual-basic/language-reference/statements/redim-statement.md)|[Skip](../../../visual-basic/language-reference/queries/skip-clause.md)|[Přeskočit během](../../../visual-basic/language-reference/queries/skip-while-clause.md)|[Zásadní](../../../visual-basic/language-reference/statements/option-strict-statement.md)|  
-|[Nezbytná](../../../visual-basic/language-reference/queries/take-clause.md)|[Provést během](../../../visual-basic/language-reference/queries/take-while-clause.md)|[Text](../../../visual-basic/language-reference/statements/option-compare-statement.md)|[Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)|  
-|[Vrátí](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[,](../../../visual-basic/language-reference/queries/where-clause.md)|[YIELD](../../../visual-basic/language-reference/statements/yield-statement.md)|[#ExternalSource](../../../visual-basic/language-reference/directives/externalsource-directive.md)|  
-|[#Region](../../../visual-basic/language-reference/directives/region-directive.md)||||  
+|[Souhrnné](../queries/aggregate-clause.md)|[ANSI](../modifiers/ansi.md)|[Assembly](../modifiers/assembly.md)|[Async](../modifiers/async.md)|  
+|[Auto](../modifiers/auto.md)|[Await](../operators/await-operator.md)|[Tvaru](../statements/option-compare-statement.md)|[Compare](../statements/option-compare-statement.md)|  
+|[Uživatelská](../statements/event-statement.md)|[Znak](../queries/distinct-clause.md)|[Rovná](../queries/equals-clause.md)|[Explicitně](../statements/option-explicit-statement.md)|  
+|[Výsledkem](../queries/from-clause.md)|[Seskupit podle](../queries/group-by-clause.md)|[Spojení skupin](../queries/group-join-clause.md)|[Uskladněn](../statements/into-clause.md)|  
+|[IsFalse](../operators/isfalse-operator.md)|[IsTrue](../operators/istrue-operator.md)|[Iterator](../modifiers/iterator.md)|[Spojení](../queries/join-clause.md)|  
+|[Key](../modifiers/key.md)|[Středně](../statements/mid-statement.md)|[Zaokrouhl](../../../visual-basic/misc/off.md)|[Řadit podle](../queries/order-by-clause.md)|  
+|[Chovají](../statements/redim-statement.md)|[Skip](../queries/skip-clause.md)|[Přeskočit během](../queries/skip-while-clause.md)|[Zásadní](../statements/option-strict-statement.md)|  
+|[Nezbytná](../queries/take-clause.md)|[Provést během](../queries/take-while-clause.md)|[Text](../statements/option-compare-statement.md)|[Unicode](../modifiers/unicode.md)|  
+|[Vrátí](../statements/do-loop-statement.md)|[,](../queries/where-clause.md)|[Výsledkem](../statements/yield-statement.md)|[#ExternalSource](../directives/externalsource-directive.md)|  
+|[#Region](../directives/region-directive.md)||||  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Souhrn polí](../../../visual-basic/language-reference/keywords/arrays-summary.md)|Obsahuje seznam prvků jazyka, které se používají k vytváření, definování a používání polí.|  
-|[Souhrn objektů kolekce](../../../visual-basic/language-reference/keywords/collection-object-summary.md)|Obsahuje seznam prvků jazyka, které se používají pro kolekce.|  
-|[Souhrn toku řízení](../../../visual-basic/language-reference/keywords/control-flow-summary.md)|Obsahuje seznam příkazů, které se používají pro tok procedur a řízení.|  
-|[Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)|Obsahuje seznam funkcí, které slouží k převodu čísel, kalendářních dat, časů a řetězců.|  
-|[Souhrn datových typů](../../../visual-basic/language-reference/keywords/data-types-summary.md)|Zobrazí seznam datových typů. Obsahuje také seznam funkcí, které slouží k převodu mezi datovými typy a k ověření datových typů.|  
-|[Souhrn dat a časů](../../../visual-basic/language-reference/keywords/dates-and-times-summary.md)|Obsahuje seznam prvků jazyka, které se používají pro data a časy.|  
-|[Souhrn deklarací a konstant](../../../visual-basic/language-reference/keywords/declarations-and-constants-summary.md)|Obsahuje seznam příkazů, které slouží k deklaraci proměnných, konstant, tříd, modulů a dalších prvků programování. Obsahuje také seznam prvků jazyka, které se používají k získání informací o objektu, zpracování událostí a implementaci dědičnosti.|  
-|[Souhrn adresářů a souborů](../../../visual-basic/language-reference/keywords/directories-and-files-summary.md)|Obsahuje seznam funkcí, které slouží k řízení systému souborů a ke zpracování souborů.|  
-|[Souhrn chyb](../../../visual-basic/language-reference/keywords/errors-summary.md)|Obsahuje seznam prvků jazyka, které se používají k zachycení a vrácení hodnot běhových chyb.|  
-|[Finanční souhrn](../../../visual-basic/language-reference/keywords/financial-summary.md)|Obsahuje seznam funkcí, které se používají k provádění finančních výpočtů.|  
-|[Souhrn vstupu a výstupu](../../../visual-basic/language-reference/keywords/input-and-output-summary.md)|Seznam funkcí, které se používají ke čtení a zápisu do souborů, správě souborů a tisku výstupu.|  
-|[Souhrn informací a interakce](../../../visual-basic/language-reference/keywords/information-and-interaction-summary.md)|Obsahuje seznam funkcí, které se používají ke spouštění jiných programů, získávání argumentů příkazového řádku, manipulaci s objekty COM, načtení informací o barvách a používání dialogových oken ovládacích prvků.|  
-|[Matematický souhrn](../../../visual-basic/language-reference/keywords/math-summary.md)|Obsahuje seznam funkcí, které se používají k provádění trigonometrickéch a dalších matematických výpočtů.|  
-|[Referenční informace k funkci My](../../../visual-basic/language-reference/keywords/my-reference.md)|Obsahuje seznam objektů obsažených v `My`nástroji, což je funkce, která poskytuje přístup k často používaným metodám, vlastnostem a událostem počítače, ve kterém je aplikace spuštěná, aktuální aplikace, prostředky aplikace, aplikace nastavení atd.|  
-|[Souhrn operátorů](../../../visual-basic/language-reference/keywords/operators-summary.md)|Vypisuje výrazy přiřazení a porovnání a další operátory.|  
-|[Souhrn registru](../../../visual-basic/language-reference/keywords/registry-summary.md)|Seznam funkcí, které se používají ke čtení, ukládání a odstraňování nastavení programu.|  
-|[Souhrn manipulace s řetězci](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|Obsahuje seznam funkcí, které se používají k manipulaci s řetězci.|  
+|[Souhrn polí](arrays-summary.md)|Obsahuje seznam prvků jazyka, které se používají k vytváření, definování a používání polí.|  
+|[Souhrn objektů kolekce](collection-object-summary.md)|Obsahuje seznam prvků jazyka, které se používají pro kolekce.|  
+|[Souhrn toku řízení](control-flow-summary.md)|Obsahuje seznam příkazů, které se používají pro tok procedur a řízení.|  
+|[Souhrn převodu](conversion-summary.md)|Obsahuje seznam funkcí, které slouží k převodu čísel, kalendářních dat, časů a řetězců.|  
+|[Souhrn datových typů](data-types-summary.md)|Zobrazí seznam datových typů. Obsahuje také seznam funkcí, které slouží k převodu mezi datovými typy a k ověření datových typů.|  
+|[Souhrn dat a časů](dates-and-times-summary.md)|Obsahuje seznam prvků jazyka, které se používají pro data a časy.|  
+|[Souhrn deklarací a konstant](declarations-and-constants-summary.md)|Obsahuje seznam příkazů, které slouží k deklaraci proměnných, konstant, tříd, modulů a dalších prvků programování. Obsahuje také seznam prvků jazyka, které se používají k získání informací o objektu, zpracování událostí a implementaci dědičnosti.|  
+|[Souhrn adresářů a souborů](directories-and-files-summary.md)|Obsahuje seznam funkcí, které slouží k řízení systému souborů a ke zpracování souborů.|  
+|[Souhrn chyb](errors-summary.md)|Obsahuje seznam prvků jazyka, které se používají k zachycení a vrácení hodnot běhových chyb.|  
+|[Finanční souhrn](financial-summary.md)|Obsahuje seznam funkcí, které se používají k provádění finančních výpočtů.|  
+|[Souhrn vstupu a výstupu](input-and-output-summary.md)|Seznam funkcí, které se používají ke čtení a zápisu do souborů, správě souborů a tisku výstupu.|  
+|[Souhrn informací a interakce](information-and-interaction-summary.md)|Obsahuje seznam funkcí, které se používají ke spouštění jiných programů, získávání argumentů příkazového řádku, manipulaci s objekty COM, načtení informací o barvách a používání dialogových oken ovládacích prvků.|  
+|[Matematický souhrn](math-summary.md)|Obsahuje seznam funkcí, které se používají k provádění trigonometrickéch a dalších matematických výpočtů.|  
+|[Referenční informace k funkci My](my-reference.md)|Obsahuje seznam objektů obsažených v `My`, funkce, která poskytuje přístup k často používaným metodám, vlastnostem a událostem počítače, na kterém je aplikace spuštěná, aktuální aplikaci, prostředky aplikace, nastavení aplikace. a tak dále.|  
+|[Souhrn operátorů](operators-summary.md)|Vypisuje výrazy přiřazení a porovnání a další operátory.|  
+|[Souhrn registru](registry-summary.md)|Seznam funkcí, které se používají ke čtení, ukládání a odstraňování nastavení programu.|  
+|[Souhrn manipulace s řetězci](string-manipulation-summary.md)|Obsahuje seznam funkcí, které se používají k manipulaci s řetězci.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Členové knihovny modulu runtime jazyka Visual Basic](../runtime-library-members.md)

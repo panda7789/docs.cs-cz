@@ -2,13 +2,14 @@
 title: Iterátory
 description: Naučte se používat integrované C# iterátory a vytvářet vlastní metody iterátoru.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: c378ceb651eed7e7a3d8c738bd4b2b3cf7de2a0f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1933ecf83e9fa234f9b88c815d8ab527997c97f2
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773879"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036418"
 ---
 # <a name="iterators"></a>Iterátory
 

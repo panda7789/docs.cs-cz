@@ -2,12 +2,12 @@
 title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 49835ebf8ebe4d5bd200ed771477edc8af580b7d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 09f7825fd6b4f852b24142ea297c078bd8a1e221
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794290"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040272"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
 SQL Server podporuje dva režimy ověřování, režim ověřování systému Windows a smíšený režim.  
@@ -19,10 +19,10 @@ SQL Server podporuje dva režimy ověřování, režim ověřování systému Wi
 > [!IMPORTANT]
 > Pokud je to možné, doporučujeme používat ověřování systému Windows. Ověřování systému Windows používá k ověřování uživatelů v SQL Server řadu šifrovaných zpráv. Při SQL Server používání přihlašovacích jmen SQL Server přihlašovací jména a šifrovaná hesla se předávají přes síť, což snižuje jejich zabezpečení.  
   
- Při ověřování Windows se uživatelé už přihlásili k Windows a nemusíte se k SQL Server přihlašovat samostatně. `SqlConnection.ConnectionString` Toto Určuje ověřování systému Windows, aniž by uživatelé museli zadat uživatelské jméno nebo heslo.  
+ Při ověřování Windows se uživatelé už přihlásili k Windows a nemusíte se k SQL Server přihlašovat samostatně. Následující `SqlConnection.ConnectionString` Určuje ověřování systému Windows, aniž by uživatelé museli zadat uživatelské jméno nebo heslo.  
   
-```  
-"Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;  
+```csharp  
+"Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;"
 ```  
   
 > [!NOTE]
@@ -64,17 +64,17 @@ SQL Server podporuje dva režimy ověřování, režim ověřování systému Wi
  Pokud je potřeba použít smíšený režim ověřování, musíte vytvořit SQL Server přihlašovacích údajů, které jsou uložené v SQL Server. Pak je nutné zadejte SQL Server uživatelské jméno a heslo v době běhu.  
   
 > [!IMPORTANT]
-> SQL Server se instaluje s přihlašovacím SQL Server `sa` s názvem (zkratka "správce systému"). Přiřaďte `sa` přihlášení silné heslo a `sa` nepoužívejte přihlašovací údaje ve vaší aplikaci. Přihlašovací údaje se mapují `sysadmin` na pevnou roli serveru, která má nevratná pověření pro správu na celém serveru. `sa` V případě, že útočník získá přístup jako správce systému, neexistují žádná omezení na potenciální škodu. Všichni členové skupiny Windows `BUILTIN\Administrators` (skupina místních správců) jsou ve výchozím nastavení členy `sysadmin` této role, ale je možné je z této role odebrat.  
+> SQL Server se nainstaluje s přihlašovacím SQL Server s názvem `sa` (zkratka "správce systému"). Přiřaďte k `sa` přihlášení silné heslo a nepoužívejte přihlášení `sa` ve vaší aplikaci. `sa` přihlašovací údaje se mapují k pevné roli serveru `sysadmin`, která má neodvolatelná pověření pro správu na celém serveru. V případě, že útočník získá přístup jako správce systému, neexistují žádná omezení na potenciální škodu. Všichni členové skupiny Windows `BUILTIN\Administrators` (skupina místních správců) jsou ve výchozím nastavení členy role `sysadmin`, ale je možné je z této role odebrat.  
   
- SQL Server poskytuje mechanismy zásad hesel Windows pro SQL Server přihlášení, když běží v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] systému nebo novějších verzích. Zásady složitosti hesla jsou navržené tak, aby se zvýšil počet útoků hrubou silou, a to zvýšením počtu možných hesel. SQL Server můžou použít stejné zásady složitosti a vypršení platnosti [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] používané v k heslům použitým v rámci SQL Server.  
+ SQL Server poskytuje mechanismy zásad hesel Windows pro SQL Server přihlášení, když běží na [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] nebo novějších verzích. Zásady složitosti hesla jsou navržené tak, aby se zvýšil počet útoků hrubou silou, a to zvýšením počtu možných hesel. SQL Server může použít stejné zásady složitosti a vypršení platnosti používané v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] k heslům použitým v SQL Server.  
   
 > [!IMPORTANT]
-> Zřetězení připojovacích řetězců ze vstupu uživatele může opustit útok prostřednictvím injektáže připojovacího řetězce. <xref:System.Data.SqlClient.SqlConnectionStringBuilder> Použijte k vytvoření syntakticky platných připojovacích řetězců v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
+> Zřetězení připojovacích řetězců ze vstupu uživatele může opustit útok prostřednictvím injektáže připojovacího řetězce. Použijte <xref:System.Data.SqlClient.SqlConnectionStringBuilder> k vytvoření syntakticky platných připojovacích řetězců v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v následujících materiálech.  
+ Další informace najdete v následujících zdrojích informací.  
   
-|Resource|Popis|  
+|Partner|Popis|  
 |--------------|-----------------|  
 |[Objekty](/sql/relational-databases/security/authentication-access/principals-database-engine)|Popisuje přihlašovací údaje a další objekty zabezpečení v SQL Server.|  
   

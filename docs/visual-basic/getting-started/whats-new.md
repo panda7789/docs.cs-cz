@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: f5630f7947125dd5eb8a5b58e79add1aec4c689b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a1db44259ccfe0fe8fb6e2849fb60fe52475b3ce
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774922"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73041060"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -176,7 +176,7 @@ Pak můžete zavolat metodu a zpracovat vrácenou řazenou kolekci členů s kó
 
 **Binární literály a oddělovače číslic**
 
-Můžete definovat binární literál pomocí předpony `&B` nebo `&b`. Kromě toho můžete použít znak podtržítka, `_` jako oddělovač číslic pro zlepšení čitelnosti. V následujícím příkladu se pomocí obou funkcí přiřadí hodnota `Byte` a zobrazí se jako desítkové, šestnáctkové a binární číslo.
+Můžete definovat binární literál pomocí předpony `&B` nebo `&b`. Kromě toho můžete použít znak podtržítka, `_`jako oddělovač číslic pro zlepšení čitelnosti. V následujícím příkladu se pomocí obou funkcí přiřadí hodnota `Byte` a zobrazí se jako desítkové, šestnáctkové a binární číslo.
 
 [!code-vb[Binary](../../../samples/snippets/visualbasic/getting-started/bin-example.vb#1)]
 
@@ -206,7 +206,7 @@ Další informace najdete v tématu [referenční návratové hodnoty](../progra
 
 ## <a name="visual-basic-14"></a>Visual Basic 14
 
-[Nameof](../../csharp/language-reference/operators/nameof.md)
+[NameOf](../language-reference/operators/nameof.md)
 
 Můžete získat Nekvalifikovaný název řetězce typu nebo člena pro použití v chybové zprávě bez pevného kódování řetězce.  To umožňuje, aby kód zůstal správný při refaktoringu.  Tato funkce je užitečná také pro zapojení odkazů Model-View-Controller a při vyvolávání událostí změněných vlastností.
 

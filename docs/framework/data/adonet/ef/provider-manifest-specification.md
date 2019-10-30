@@ -2,12 +2,12 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: cc58bbc82f3930f087b5da0c64afb4f9f03e905b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: bef4868ccc52d287baaceca32c4943723be7531f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854502"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040495"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat typy a funkce v úložišti dat.  
@@ -32,7 +32,7 @@ Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat t
 |Problém|Výjimka|  
 |-----------|---------------|  
 |Zprostředkovatel nepodporuje GetProviderManifest v DbProviderServices.|ProviderIncompatibleException|  
-|Chybějící manifest zprostředkovatele: poskytovatel se vrátí `null` při pokusu o načtení manifestu poskytovatele.|ProviderIncompatibleException|  
+|Chybějící manifest zprostředkovatele: Zprostředkovatel vrací `null` při pokusu o načtení manifestu poskytovatele.|ProviderIncompatibleException|  
 |Neplatný manifest zprostředkovatele: zprostředkovatel při pokusu o načtení manifestu poskytovatele vrátí neplatný kód XML.|ProviderIncompatibleException|  
   
 ## <a name="scenarios"></a>Scénáře  
@@ -66,7 +66,7 @@ Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat t
  Daný zprostředkovatel však může podporovat různá úložiště nebo různé verze stejného úložiště. Proto musí zprostředkovatel nahlásit jiný manifest pro každé podporované úložiště dat.  
   
 ### <a name="provider-manifest-token"></a>Token manifestu zprostředkovatele  
- Když je otevřeno připojení úložiště dat, může se zprostředkovatel dotazovat na informace, které vrátí správný manifest. To nemusí být možné v offline scénářích, kde nejsou k dispozici informace o připojení nebo když není možné se připojit k úložišti. Identifikujte manifest pomocí `ProviderManifestToken` atributu `Schema` elementu v souboru. ssdl. Pro tento atribut není vyžadován žádný formát. poskytovatel zvolí minimální informace potřebné k identifikaci manifestu bez otevření připojení k úložišti.  
+ Když je otevřeno připojení úložiště dat, může se zprostředkovatel dotazovat na informace, které vrátí správný manifest. To nemusí být možné v offline scénářích, kde nejsou k dispozici informace o připojení nebo když není možné se připojit k úložišti. Identifikujte manifest pomocí atributu `ProviderManifestToken` elementu `Schema` v souboru. ssdl. Pro tento atribut není vyžadován žádný formát. poskytovatel zvolí minimální informace potřebné k identifikaci manifestu bez otevření připojení k úložišti.  
   
  Příklad:  
   
@@ -75,15 +75,15 @@ Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat t
 ```  
   
 ## <a name="provider-manifest-programming-model"></a>Model programování manifestu zprostředkovatele  
- Zprostředkovatelé jsou <xref:System.Data.Common.DbXmlEnabledProviderManifest>odvozeni z, což umožňuje jejich deklarativní určení jejich manifestů. Následující ilustrace znázorňuje hierarchii tříd zprostředkovatele:  
+ Zprostředkovatelé jsou odvozeni z <xref:System.Data.Common.DbXmlEnabledProviderManifest>, což umožňuje jejich deklarativní určení jejich manifestů. Následující ilustrace znázorňuje hierarchii tříd zprostředkovatele:  
   
- ![None](./media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
+ ![NTato](./media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
   
 ### <a name="discoverability-api"></a>Rozhraní API pro zjišťování  
  Manifest zprostředkovatele je načten zavaděčem metadat úložiště (StoreItemCollection), a to buď pomocí připojení úložiště dat, nebo tokenu manifestu zprostředkovatele.  
   
 #### <a name="using-a-data-store-connection"></a>Použití připojení úložiště dat  
- Když je k dispozici připojení úložiště dat, <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> zavolejte na vrácení tokenu, který je předán <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A> metodě, která vrací <xref:System.Data.Common.DbProviderManifest>. Tato metoda se deleguje k implementaci `GetDbProviderManifestToken`poskytovatele.  
+ Když je k dispozici připojení úložiště dat, zavolejte <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> a vraťte token, který je předán metodě <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A>, která vrátí <xref:System.Data.Common.DbProviderManifest>. Tato metoda se deleguje k implementaci `GetDbProviderManifestToken`poskytovatele.  
   
 ```csharp
 public string GetProviderManifestToken(DbConnection connection);  
@@ -93,7 +93,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 #### <a name="using-a-provider-manifest-token"></a>Použití tokenu manifestu zprostředkovatele  
  Pro offline scénář je token vydaný z reprezentace SSDL. SSDL umožňuje zadat ProviderManifestToken (Další informace naleznete v tématu [Schema element (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) ). Například pokud nelze připojení otevřít, má SSDL token manifestu, který určuje informace o manifestu.  
   
-```  
+```csharp  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
 ```  
   
@@ -251,7 +251,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Name|String|Ano|není k dispozici|Název specifického datového typu pro konkrétního poskytovatele|  
-|PrimitiveTypeKind|PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
+|Vlastnost PrimitiveTypeKind|Vlastnost PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel funkce  
  Každá funkce definuje jednu funkci dostupnou prostřednictvím poskytovatele.  
@@ -259,10 +259,10 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Name|String|Ano|není k dispozici|Identifikátor/název funkce|  
-|ReturnType|String|Ne|šekem|Návratový typ EDM funkce|  
+|ReturnType|String|Ne|Šekem|Návratový typ EDM funkce|  
 |Aggregate|Boolean|Ne|False|True, pokud je funkce agregační funkcí|  
-|Integrované|Boolean|Ne|Pravda|True, pokud je funkce integrovaná do úložiště dat|  
-|StoreFunctionName|String|Ne|\<Název >|Název funkce v úložišti dat.  Umožňuje úroveň přesměrování názvů funkcí.|  
+|Integrované|Boolean|Ne|Podmínka|True, pokud je funkce integrovaná do úložiště dat|  
+|StoreFunctionName|String|Ne|Název \<|Název funkce v úložišti dat.  Umožňuje úroveň přesměrování názvů funkcí.|  
 |NiladicFunction|Boolean|Ne|False|True, pokud funkce nevyžaduje parametry a je volána bez parametrů|  
 |Zadanému ParameterType<br /><br /> Sémantiku|ParameterSemantics|Ne|AllowImplicit<br /><br /> Konverze|Volba způsobu, jakým by měl kanál dotazu pracovat s nahrazením typu parametru:<br /><br /> – ExactMatchOnly<br />– AllowImplicitPromotion<br />– AllowImplicitConversion|  
   
@@ -273,7 +273,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Name|String|Ano|není k dispozici|Identifikátor/název parametru.|  
-|type|String|Ano|není k dispozici|Typ typu EDM parametru.|  
+|Typ|String|Ano|není k dispozici|Typ typu EDM parametru.|  
 |Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -in<br />-out<br />– InOut|  
   
 ##### <a name="namespace-attribute"></a>Atribut namespace  

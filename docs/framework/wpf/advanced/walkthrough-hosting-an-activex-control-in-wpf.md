@@ -8,15 +8,15 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: 395081640815f00ce4ae8e83f25b37de567adc01
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 959bc7942eaae91c0a7a72124f6ab1ab92a3553f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920203"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040828"
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX v objektu WPF
-Chcete-li povolit vylepšenou interakci s prohlížeči, můžete v aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]použít ovládací prvky Microsoft ActiveX. Tento návod ukazuje, jak lze hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek na stránce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Chcete-li povolit vylepšenou interakci s prohlížeči, můžete v aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]použít ovládací prvky Microsoft ActiveX. Tento návod ukazuje, jak můžete hostovat Microsoft Windows Media Player jako ovládací prvek na stránce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
  Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
@@ -31,7 +31,7 @@ Chcete-li povolit vylepšenou interakci s prohlížeči, můžete v aplikaci zal
 ## <a name="prerequisites"></a>Požadavky
  K dokončení tohoto návodu budete potřebovat následující komponenty:
 
-- [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] nainstalován v počítači, kde je nainstalována aplikace Visual Studio.
+- V počítači, kde je nainstalována aplikace Visual Studio, je nainstalována aplikace Microsoft Windows Media Player.
 
 - Visual Studio 2010.
 

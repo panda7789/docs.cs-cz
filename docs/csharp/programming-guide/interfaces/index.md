@@ -6,16 +6,16 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: a2cc7cb1b6da860a2c27bc8d2fe74e0ffde5f5e1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 950a74dd663249b2a59bf746d02b5992733d0ce9
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053266"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039345"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
-Rozhraní obsahuje definice pro skupinu souvisejících funkcí, které mohou být implementovány [třídou](../../language-reference/keywords/class.md) nebo [strukturou](../../language-reference/keywords/struct.md) .
+Rozhraní obsahuje definice pro skupinu souvisejících funkcí, které musí implementovat [třídu](../../language-reference/keywords/class.md) , která není abstrat nebo [strukturou](../../language-reference/keywords/struct.md) .
   
 Pomocí rozhraní můžete například zahrnout chování z více zdrojů ve třídě. Tato funkce je důležitá v C# , protože jazyk nepodporuje vícenásobnou dědičnost tříd. Kromě toho je nutné použít rozhraní, pokud chcete simulovat dědičnost pro struktury, protože nemohou být ve skutečnosti děděny z jiné struktury nebo třídy.  
   
@@ -23,9 +23,9 @@ Rozhraní definujete pomocí klíčového slova [rozhraní](../../language-refer
   
  [!code-csharp[csProgGuideInheritance#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#47)]  
 
-Název struktury musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Podle konvence názvy rozhraní začínají velkým písmenem `I`.
+Název struktury musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Podle konvence názvy rozhraní začínají velkým `I`.
 
-Libovolná třída nebo struktura, která <xref:System.IEquatable%601> implementuje rozhraní, musí obsahovat definici <xref:System.IEquatable%601.Equals%2A> pro metodu, která odpovídá signatuře, kterou určuje rozhraní. V důsledku toho můžete spočítat třídu, která implementuje `IEquatable<T>` , aby `Equals` obsahovala metodu, se kterou může instance třídy určit, zda je rovna jiné instanci stejné třídy.  
+Všechny třídy nebo struktury, které implementují rozhraní <xref:System.IEquatable%601> musí obsahovat definici pro metodu <xref:System.IEquatable%601.Equals%2A>, která odpovídá signatuře, kterou určuje rozhraní. V důsledku toho můžete spočítat třídu, která implementuje `IEquatable<T>`, aby obsahovala metodu `Equals`, se kterou může instance třídy určit, zda je rovna jiné instanci stejné třídy.  
   
 Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Třída nebo struktura může implementovat více rozhraní, ale třída může dědit pouze z jedné třídy.
   
@@ -37,11 +37,11 @@ Chcete-li implementovat člena rozhraní, musí být odpovídající člen tří
   
 Pokud třída nebo struktura implementuje rozhraní, třída nebo struktura musí poskytovat implementaci pro všechny členy, které definuje rozhraní. Samotné rozhraní neposkytuje žádnou funkci, kterou třída nebo struktura může dědit v tom, jak může dědit funkčnost základní třídy. Nicméně pokud základní třída implementuje rozhraní, jakákoliv třída odvozená od základní třídy zdědí tuto implementaci.  
   
-Následující příklad ukazuje implementaci <xref:System.IEquatable%601> rozhraní. Implementující třída `Car`, musí poskytnout implementaci <xref:System.IEquatable%601.Equals%2A> metody.  
+Následující příklad ukazuje implementaci rozhraní <xref:System.IEquatable%601>. Implementující třída `Car`musí poskytovat implementaci <xref:System.IEquatable%601.Equals%2A> metody.  
   
  [!code-csharp[csProgGuideInheritance#48](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#48)]  
   
-Vlastnosti a indexery třídy mohou definovat nadbytečné přistupující objekty pro vlastnost nebo indexer, který je definován v rozhraní. Rozhraní může například deklarovat vlastnost, která má přistupující objekt [Get](../../language-reference/keywords/get.md) . Třída, která implementuje rozhraní, může deklarovat stejnou vlastnost s `get` přístupovým objektem a [nastavením](../../language-reference/keywords/set.md) . Pokud však vlastnost nebo indexer používá explicitní implementaci, přistupující objekty se musí shodovat. Další informace o explicitní implementaci naleznete v tématu [explicitní implementace rozhraní](explicit-interface-implementation.md) a [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md).  
+Vlastnosti a indexery třídy mohou definovat nadbytečné přistupující objekty pro vlastnost nebo indexer, který je definován v rozhraní. Rozhraní může například deklarovat vlastnost, která má přistupující objekt [Get](../../language-reference/keywords/get.md) . Třída, která implementuje rozhraní, může deklarovat stejnou vlastnost s přístupovým objektem `get` a [nastavením](../../language-reference/keywords/set.md) . Pokud však vlastnost nebo indexer používá explicitní implementaci, přistupující objekty se musí shodovat. Další informace o explicitní implementaci naleznete v tématu [explicitní implementace rozhraní](explicit-interface-implementation.md) a [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md).  
 
 Rozhraní můžou dědit z jiných rozhraní. Třída může obsahovat rozhraní několikrát prostřednictvím základních tříd, které dědí nebo prostřednictvím rozhraní, která dědí jiná rozhraní. Nicméně třída může poskytnout implementaci rozhraní pouze jednou a pouze v případě, že třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud je rozhraní zděděné, protože jste zdědili základní třídu, která implementuje rozhraní, základní třída poskytuje implementaci členů rozhraní. Odvozená třída však může znovu implementovat jakékoli členy virtuálních rozhraní namísto použití zděděné implementace.  
   
@@ -72,7 +72,7 @@ Rozhraní má následující vlastnosti:
 
 - [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md)  
 - [Indexery v rozhraní](../indexers/indexers-in-interfaces.md)  
-- [Postupy:  Implementace událostí rozhraní](../events/how-to-implement-interface-events.md)  
+- [Postupy: implementace událostí rozhraní](../events/how-to-implement-interface-events.md)  
 - [Třídy a struktury](../classes-and-structs/index.md)  
 - [Dědičnost](../classes-and-structs/inheritance.md)  
 - [Metody](../classes-and-structs/methods.md)  
@@ -84,7 +84,7 @@ Rozhraní má následující vlastnosti:
   
 ## <a name="featured-book-chapter"></a>Doporučená kapitola knihy
 
-[Rozhraní](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652489%28v%3Dorm.10%29) ve [studiu C# 3,0: Hlavní základy C# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v%253dorm.10%29)
+[Rozhraní](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652489%28v%3Dorm.10%29) ve [studiu C# 3,0: hlavní základy C# pro 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v%253dorm.10%29)
 
 ## <a name="see-also"></a>Viz také:
 

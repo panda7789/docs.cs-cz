@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: 988e868b1a1698d00a6d77fd715b2a76b1790132
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: f8fe5c5e0afac071ce7e036ceccd0b66351b0e1d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321269"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040886"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpečení pro klienty. To znamená, že služba Určuje, který režim zabezpečení má být použit, a zda klient musí zadat pověření. Proces zabezpečení klienta je proto jednoduchý: použijte metadata získaná ze služby (je-li publikována) a vytvořte klienta. Metadata určují, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadal přihlašovací údaje, musíte získat přihlašovací údaje, které vyhovují danému požadavku. Toto téma pojednává o procesu podrobněji. Další informace o vytváření zabezpečené služby najdete v tématu [zabezpečení služeb](securing-services.md).  
@@ -76,7 +76,7 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
  Přidáním oddílu [\<behaviors >](../configure-apps/file-schema/wcf/behaviors.md) konfiguračního souboru pro klienta a pomocí elementu `clientCredentials` (viz níže).  
   
 #### <a name="setting-a-clientcredentials-value-in-code"></a>Nastavení hodnoty \<clientCredentials > v kódu  
- Chcete-li nastavit hodnotu [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) v kódu, musíte získat přístup k vlastnosti <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> třídy <xref:System.ServiceModel.ClientBase%601>. Vlastnost vrátí objekt <xref:System.ServiceModel.Description.ClientCredentials>, který umožňuje přístup k různým typům přihlašovacích údajů, jak je znázorněno v následující tabulce.  
+ Chcete-li nastavit [\<ovou hodnotu clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) v kódu, musíte získat přístup k vlastnosti <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> třídy <xref:System.ServiceModel.ClientBase%601>. Vlastnost vrátí objekt <xref:System.ServiceModel.Description.ClientCredentials>, který umožňuje přístup k různým typům přihlašovacích údajů, jak je znázorněno v následující tabulce.  
   
 |Vlastnost ClientCredential|Popis|Poznámky|  
 |-------------------------------|-----------------|-----------|  
@@ -95,14 +95,15 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
 <configuration>  
   <system.serviceModel>  
     <behaviors>  
-      <endpointBehaviors>  
+      <endpointBehaviors>
         <behavior name="myEndpointBehavior">  
           <clientCredentials>  
             <clientCertificate findvalue="myMachineName"   
             storeLocation="Current" X509FindType="FindBySubjectName" />  
           </clientCredentials>  
-        </behavior>              
-    </behaviors>  
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
   </system.serviceModel>  
 </configuration>  
 ```  
@@ -151,7 +152,7 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [@no__t – 1bindings >](../configure-apps/file-schema/wcf/bindings.md)
+- [vazby\<](../configure-apps/file-schema/wcf/bindings.md)
 - [Editor konfigurace (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)
 - [Zabezpečení služeb](securing-services.md)
 - [Přístup ke službám pomocí klienta WCF](accessing-services-using-a-wcf-client.md)

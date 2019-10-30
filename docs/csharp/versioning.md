@@ -2,15 +2,16 @@
 title: C#C# Průvodce správou verzí
 description: Informace o tom, jak funguje C# Správa verzí v prostředí a .NET
 ms.date: 01/08/2017
+ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: dcfe373312b88c8ddd8587e27c566a90b25e3c13
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3fadbc1257ae758fc220685fa074a4fa68b20ba1
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834062"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039659"
 ---
-# <a name="versioning-in-c"></a>Správa verzí v jazyce C @ no__t-0
+# <a name="versioning-in-c"></a>Správa verzí v jazyce C\#
 
 V tomto kurzu se dozvíte, co znamená Správa verzí v .NET. Dozvíte se také o faktorech, které je potřeba vzít v úvahu při použití verze knihovny a upgradu na novou verzi knihovny.
 
@@ -23,11 +24,11 @@ Jako vývojář, který vytvořil knihovny .NET pro veřejné použití, jste pr
 [Sémantická Správa verzí](https://semver.org/) (SemVer pro krátké verze) je konvence pojmenování, která se používá ve verzích vaší knihovny k označení konkrétních událostí milníku.
 V ideálním případě informace o verzi vaší knihovny by vám měly pomáhat vývojářům určit kompatibilitu s jejich projekty, které využívají starší verze stejné knihovny.
 
-Nejzákladnější přístup k SemVer je 3 formát součásti `MAJOR.MINOR.PATCH`, kde:
+Nejzákladnější přístup k SemVer je 3 `MAJOR.MINOR.PATCH`formátu komponenty, kde:
 
 - `MAJOR` se zvýší, když provedete nekompatibilní změny rozhraní API
 - `MINOR` se zvýší, když přidáváte funkce zpětně kompatibilním způsobem.
-- @no__t – 0 se zvýší, když provedete zpětně kompatibilní opravy chyb.
+- `PATCH` se zvýší, když provedete zpětně kompatibilní opravy chyb.
 
 Existují také způsoby určení dalších scénářů, jako jsou předběžné verze verzí atd. při použití informací o verzi do knihovny .NET.
 
@@ -51,8 +52,8 @@ To je snazší, když uživatelům umožníte upgradovat na novou verzi knihovny
 
 ### <a name="application-configuration-file"></a>Konfigurační soubor aplikace
 
-Jako vývojář rozhraní .NET existuje velmi vysoká pravděpodobnost, že jste narazili [na soubor `app.config`](../framework/configure-apps/file-schema/index.md) ve většině typů projektů.
-Tento jednoduchý konfigurační soubor může být delší způsob, jak zlepšit zavedení nových aktualizací. Obecně byste měli navrhovat knihovny tak, aby se informace, které se pravděpodobně mění pravidelně, ukládaly do souboru `app.config`. tímto způsobem se tyto informace aktualizují, konfigurační soubor starších verzí stačí nahradit novým a bez je potřeba pro rekompilaci knihovny.
+Jako vývojář rozhraní .NET existuje velmi vysoká pravděpodobnost, že jste narazili [na `app.config` soubor](../framework/configure-apps/file-schema/index.md) ve většině typů projektů.
+Tento jednoduchý konfigurační soubor může být delší způsob, jak zlepšit zavedení nových aktualizací. Obecně byste měli navrhovat knihovny tak, aby se informace, které se pravděpodobně mění pravidelně, ukládaly do souboru `app.config`. tímto způsobem se tyto informace aktualizují, konfigurační soubor starších verzí stačí nahradit novým a bez nutnost rekompilace knihovny.
 
 ## <a name="consuming-libraries"></a>Využívání knihoven
 
@@ -62,7 +63,7 @@ Jako vývojář, který využívá knihovny .NET vytvořené jinými vývojáři
 
 ### <a name="assembly-binding-redirection"></a>Přesměrování vazby sestavení
 
-Soubor *App. config* můžete použít k aktualizaci verze knihovny, kterou vaše aplikace používá. Přidáním toho, co se nazývá [*přesměrování vazby*](../framework/configure-apps/redirect-assembly-versions.md), můžete použít novou verzi knihovny, aniž by bylo nutné aplikaci znovu kompilovat. Následující příklad ukazuje, jak byste aktualizovali soubor *App. config* aplikace tak, aby používal opravu `1.0.1` verze `ReferencedLibrary` namísto verze `1.0.0`, na kterou byl původně zkompilován.
+Soubor *App. config* můžete použít k aktualizaci verze knihovny, kterou vaše aplikace používá. Přidáním toho, co se nazývá [*přesměrování vazby*](../framework/configure-apps/redirect-assembly-versions.md), můžete použít novou verzi knihovny, aniž by bylo nutné aplikaci znovu kompilovat. Následující příklad ukazuje, jak byste aktualizovali soubor *App. config* aplikace tak, aby používal `1.0.1` verzi opravy `ReferencedLibrary` namísto verze `1.0.0`, na kterou byl původně zkompilován.
 
 ```xml
 <dependentAssembly>
@@ -77,7 +78,7 @@ Soubor *App. config* můžete použít k aktualizaci verze knihovny, kterou vaš
 
 ### <a name="new"></a>new
 
-Pomocí modifikátoru `new` skryjete zděděné členy základní třídy. Toto je jeden ze způsobů, které odvozené třídy mohou reagovat na aktualizace v základních třídách.
+Použijete modifikátor `new` ke skrytí zděděných členů základní třídy. Toto je jeden ze způsobů, které odvozené třídy mohou reagovat na aktualizace v základních třídách.
 
 Vezměte v úvahu následující příklad:
 
@@ -90,7 +91,7 @@ A base method
 A derived method
 ```
 
-Z výše uvedeného příkladu vidíte, jak `DerivedClass` skrývá metodu `MyMethod`, která je k dispozici v `BaseClass`.
+Z výše uvedeného příkladu vidíte, jak `DerivedClass` skrývá `MyMethod`, která se nachází v `BaseClass`.
 To znamená, že když základní třída v nové verzi knihovny přidá člena, který již existuje v odvozené třídě, můžete jednoduše použít modifikátor `new` na odvozeném členu třídy pro skrytí člena základní třídy.
 
 Pokud není zadán modifikátor `new`, bude ve výchozím nastavení v odvozené třídě automaticky skrývat konfliktní členy v základní třídě, i když bude vygenerováno upozornění kompilátoru, kód bude stále zkompilován. To znamená, že pouhým přidáním nových členů do existující třídy dojde k tomu, že nová verze knihovny je kompatibilní se zdrojovým i binárním kódem, který na něm závisí.

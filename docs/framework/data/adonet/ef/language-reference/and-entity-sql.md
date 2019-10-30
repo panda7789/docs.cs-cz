@@ -1,22 +1,26 @@
 ---
-title: '&amp;&amp;ANI (Entity SQL)'
+title: '&amp;&amp; (a) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
-ms.openlocfilehash: 02e404b73e5a9a9c3963e2d2b58ab7592afabc13
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: be6e7120e6c19714f151aa38a8b9a1355de29d1a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251318"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039954"
 ---
-# <a name="ampamp-and-entity-sql"></a>&amp;&amp;ANI (Entity SQL)
-Vrátí `true` , zda jsou `true`oba výrazy; v `false` opačném případě nebo `NULL`.  
+# <a name="ampamp-and-entity-sql"></a>&amp;&amp; (a) (Entity SQL)
+Vrátí `true`, pokud jsou oba výrazy `true`; v opačném případě `false` nebo `NULL`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
-boolean_expression AND boolean_expression  
+```csharp  
+boolean_expression AND boolean_expression
+```
+ 
 or  
+
+```csharp
 boolean_expression && boolean_expression  
 ```  
   
@@ -38,9 +42,9 @@ boolean_expression && boolean_expression
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz ukazuje použití operátoru AND. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
  [!code-csharp[DP EntityServices Concepts 2#AND](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#and)]  
   

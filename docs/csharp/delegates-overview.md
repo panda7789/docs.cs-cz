@@ -1,47 +1,48 @@
 ---
 title: Úvod do delegátů
-description: Další informace o delegátech v tomto úvodním tématu, který představuje základní koncepty a popisuje cíle návrhu jazyk pro delegáty.
+description: Přečtěte si o delegátech v tomto přehledovém tématu, které přináší základní koncepty a popisuje jazykové cíle návrhu pro delegáty.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-ms.openlocfilehash: 43cdf9345f0bae9d5c4d0e6a31d80bc269c37fec
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: deff297ccce6cd14a7cd21c49638a9c6030a9996
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879033"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037405"
 ---
 # <a name="introduction-to-delegates"></a>Úvod do delegátů
 
-Delegáti poskytují *pozdní vazby* mechanismus v rozhraní .NET. Pozdní vazby znamená, že vytvoříte algoritmus kde volající také poskytuje alespoň jednu metodu, která implementuje část algoritmus.
+Delegáti poskytují v .NET mechanismus *pozdní vazby* . Pozdní vazba znamená, že vytvoříte algoritmus, kde volající také dodá alespoň jednu metodu, která implementuje část algoritmu.
 
-Představte si třeba seznam hvězdiček v aplikaci astronomii řazení.
-Můžete seřadit tyto hvězdiček podle jejich vzdálenost od země nebo velikost na hvězdičku nebo jejich vnímaná jasu.
+Zvažte například řazení seznamu hvězdiček v aplikaci astronomická aplikace.
+Tyto hvězdy můžete seřadit podle jejich vzdálenosti od země nebo podle velikosti hvězdičky nebo jejich vypozorovaného jasu.
 
-V těchto případech se metoda Sort() provede v podstatě totéž: Uspořádá položky v seznamu na základě některých porovnání. Kód, který porovná dvě hvězdičky se liší pro každý z pořadí řazení.
+Ve všech těchto případech metoda sort () má v podstatě stejnou věc: Uspořádá položky v seznamu na základě nějakého porovnání. Kód, který porovnává dvě hvězdičky, se liší pro každé pořadí řazení.
 
 Tyto druhy řešení se používají v softwaru pro polovinu století.
-C# Konceptu jazyka delegáta poskytuje prvotřídní podporu a bezpečnost typů kolem koncepce.
+Koncept C# delegáta jazyka poskytuje prvotřídní podporu pro jazyky a bezpečnost typů kolem konceptu.
 
-Jak uvidíte později v tomto seriálu C# kód, který píšete pro algoritmy, jako to je typově bezpečný a využívá jazyk, a kompilátor zajistíte, že typy odpovídají pro argumenty a vrátí typy.
+Jak uvidíte později v této sérii, C# kód, který napíšete pro algoritmy jako je typově bezpečný, a využívá jazyk a kompilátor k zajištění shody typů pro argumenty a návratové typy.
 
-## <a name="language-design-goals-for-delegates"></a>Cíle návrhu jazyk pro delegáty
+## <a name="language-design-goals-for-delegates"></a>Cíle návrhu jazyka pro delegáty
 
-Návrháři jazyka Výčtový několik cílů pro funkci, která se nakonec začal být delegáti.
+Návrháři jazyka vyčíslují několik cílů pro funkci, která se nakonec stala delegáty.
 
-Tým chtěla při podpoře běžné konstrukce jazyka, která se dá použít pro jakékoli pozdní vazby algoritmů. Který umožňuje vývojářům další jeden koncept a použijte tento stejný koncept napříč řadou různých softwarových problémů.
+Tým chtěl, aby se vytvořila společná jazyková konstrukce, která by se dala použít pro všechny algoritmy s pozdní vazbou. To umožňuje vývojářům naučit se jeden koncept a stejný koncept používat v mnoha různých problémech se softwarem.
 
-Za druhé tým chtěli podporu obou volání metody single a vícesměrového vysílání. (Vícesměroví Delegáti jsou delegáty, kteří zřetězit více volání metody. Zobrazí se vám příklady [dále v této sérii](delegate-class.md).) 
+Za druhé tým chtěl podporovat volání metody Single i Multicast. (Delegáti vícesměrového vysílání jsou delegáti, kteří zřetězit dohromady více volání metody. [V této sérii](delegate-class.md)uvidíte příklady později.) 
 
-Tým chtěla delegáty pro podporu stejné bezpečnost typů, který vývojářům ze všech C# vytvoří. 
+Tým chtěl, aby podporoval stejnou bezpečnost typů, kterou vývojáři očekávají ze všech C# konstrukcí. 
 
-Nakonec tým rozpoznat, že vzor události je jeden konkrétní vzor, kde je velmi užitečné delegáty nebo libovolný algoritmus pozdní vazbu. Tým chtěli Ujistěte se, že kód pro delegáty, může být základem pro vzor události .NET.
+Nakonec tým rozpoznal, že vzor události je jeden konkrétní vzor, ve kterém jsou delegáti nebo jakékoli pozdní vazby algoritmu velmi užitečné. Tým chtěl zajistit, aby kód pro delegáty mohl poskytnout základ pro vzor události .NET.
 
-Výsledek všechnu tu práci byla podpora delegátů a událostí v C# a .NET. Zbývající články v této části probereme funkce jazyka, podpora knihovny a společné idiomy, které se používají při práci s delegátů.
+Výsledek všechny této práce byl delegát a podpora událostí v C# a .NET. Zbývající články v této části se týkají funkcí jazyka, podpory knihoven a běžných idiomy, které se používají při práci s delegáty.
 
-Seznámí vás `delegate` – klíčové slovo a co kódu generuje. Se dozvíte o funkcích `System.Delegate` třídy a jak se používají tyto funkce. Dozvíte se, jak vytvořit typ bezpečné delegáty a vytvoření metody, které mohou být vyvolány prostřednictvím delegátů. Budete se také dozvíte, jak pracovat s Delegáti a události pomocí výrazů Lambda. Uvidíte, kde delegáti stal jednou z stavební bloky pro funkci LINQ. Dozvíte se, jak Delegáti jsou základem pro vzor události .NET a jak se liší.
+Dozvíte se o klíčovém slově `delegate` a o tom, jaký kód generuje. Dozvíte se o funkcích ve třídě `System.Delegate` a o tom, jak se tyto funkce používají. Naučíte se, jak vytvořit typy bezpečných delegátů a jak vytvořit metody, které mohou být vyvolány prostřednictvím delegátů. Naučíte se také, jak pracovat s delegáty a událostmi pomocí výrazů lambda. Uvidíte, kde se delegáti stanou jedním ze stavebních bloků pro LINQ. Dozvíte se, jak jsou delegáti základem pro vzorec události .NET a jak se liší.
 
-Celkově uvidíte, jak Delegáti jsou nedílnou součástí programování v rozhraní .NET a používání rozhraní API.
+Celkově vidíte, jak jsou delegáti nedílnou součástí programování v rozhraní .NET a pracují s rozhraními API rozhraní Framework.
 
-Pusťme se do práce.
+Pojďme začít.
 
 [Next](delegate-class.md)

@@ -1,5 +1,5 @@
 ---
-title: = – odkaz C# – operátor
+title: Operátory přiřazení – C# referenční informace
 ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: a450a55524f33f4f06ed077aba864e8f641a458d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 103bc823ab6a56d53a3f2ec05b8de9295f1de400
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70924662"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039083"
 ---
-# <a name="-operator-c-reference"></a>= – operátorC# (Referenční dokumentace)
+# <a name="assignment-operators-c-reference"></a>Operátory přiřazení (C# Referenční dokumentace)
 
-Operátor `=` přiřazení přiřadí hodnotu jeho pravého operandu proměnné, [vlastnosti](../../programming-guide/classes-and-structs/properties.md)nebo prvku [indexeru](../../programming-guide/indexers/index.md) , který je dán jeho levým operandem. Výsledkem výrazu přiřazení je hodnota přiřazená k levému operandu. Typ operandu na pravé straně musí být stejný jako typ operandu na levé straně nebo implicitně převést na něj.
+Operátor přiřazení `=` přiřadí hodnotu jeho pravého operandu proměnné, [vlastnosti](../../programming-guide/classes-and-structs/properties.md)nebo prvku [indexeru](../../programming-guide/indexers/index.md) , který je dán jeho levým operandem. Výsledkem výrazu přiřazení je hodnota přiřazená k levému operandu. Typ operandu na pravé straně musí být stejný jako typ operandu na levé straně nebo implicitně převést na něj.
 
-Operátor přiřazení je asociativní zprava, tj. výraz formuláře.
+Operátor přiřazení `=` je asociativní zprava, to znamená výraz formuláře.
 
 ```csharp
 a = b = c
@@ -36,17 +36,15 @@ Následující příklad ukazuje použití operátoru přiřazení s lokální p
 
 ## <a name="ref-assignment-operator"></a>operátor přiřazení ref
 
-Počínaje C# 7,3 můžete použít operátor `= ref` přiřazení ref k opětovnému přiřazení místní proměnné typu [ref](../keywords/ref.md#ref-locals) nebo [ref jen pro čtení](../keywords/ref.md#ref-readonly-locals) . Následující příklad ukazuje použití operátoru přiřazení ref:
+Počínaje C# 7,3 můžete použít operátor přiřazení ref`= ref`k opětovnému přiřazení místní proměnné ref nebo [ref](../keywords/ref.md#ref-readonly-locals) pro [místní](../keywords/ref.md#ref-locals) typ. Následující příklad ukazuje použití operátoru přiřazení ref:
 
 [!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
-V případě operátoru přiřazení ref musí být typ obou operandů stejný.
-
-Další informace najdete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
+V případě operátoru přiřazení odkazu musí být oba operandy stejného typu.
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
-Pro binární operátor `op`, výraz složeného přiřazení formuláře
+Pro binární operátor `op` se složený výraz přiřazení formuláře
 
 ```csharp
 x op= y
@@ -64,15 +62,19 @@ Složené přiřazení je podporováno [aritmetickými](arithmetic-operators.md#
 
 ## <a name="null-coalescing-assignment"></a>Přiřazení slučování s hodnotou null
 
-Počínaje C# 8,0 můžete použít operátor `??=` přiřazení s použitím hodnoty null k přiřazení hodnoty jeho pravého operandu k levému operandu pouze v případě, že je `null`operand na levé straně vyhodnocen. Další informace najdete v tématu [?? a?? =](null-coalescing-operator.md) – článek o operátorech
+Počínaje C# 8,0 můžete použít operátor přiřazení s použitím hodnoty null`??=`k přiřazení hodnoty jeho pravého operandu k jeho levému operandu pouze v případě, že je operand na levé straně vyhodnocen jako`null`. Další informace najdete v tématu [?? a?? =](null-coalescing-operator.md) – článek o operátorech
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelsky definovaný typ nemůže přetížit operátor přiřazení. Uživatelsky definovaný typ však může definovat implicitní převod na jiný typ. Tímto způsobem lze hodnotu uživatelsky definovaného typu přiřadit proměnné, vlastnosti nebo prvku indexeru jiného typu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
+Uživatelsky definovaný typ nemůže [přetížit](operator-overloading.md) operátor přiřazení. Uživatelsky definovaný typ však může definovat implicitní převod na jiný typ. Tímto způsobem lze hodnotu uživatelsky definovaného typu přiřadit proměnné, vlastnosti nebo prvku indexeru jiného typu. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
+
+Uživatelsky definovaný typ nemůže explicitně přetížit operátor složeného přiřazení. Pokud však uživatelsky definovaný typ převede binární operátor `op`, je-li objekt `op=`, pokud existuje, je také implicitně přetížený.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [operátory přiřazení](~/_csharplang/spec/expressions.md#assignment-operators) ve [ C# specifikaci jazyka](../language-specification/index.md).
+Další informace naleznete v části [operátory přiřazení](~/_csharplang/spec/expressions.md#assignment-operators) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
+
+Další informace o operátoru přiřazení ref `= ref`naleznete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
 
 ## <a name="see-also"></a>Viz také:
 
