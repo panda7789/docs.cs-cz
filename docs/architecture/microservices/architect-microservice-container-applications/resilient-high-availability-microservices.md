@@ -2,12 +2,12 @@
 title: Odolnost a vysoká dostupnost v mikroslužbách
 description: Mikroslužby musí být navržené tak, aby odolaly přechodným chybám sítě a závislostem, musí být odolné, aby dosáhli vysoké dostupnosti.
 ms.date: 09/20/2018
-ms.openlocfilehash: 6c110b0fe7a80842f12779494e5b0bdd29c5fb64
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1c0f75a8c68d1f84ba24c550e854edc5372cf7f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834354"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094217"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 
@@ -31,8 +31,8 @@ V části [implementace kontrol stavu v rámci služby ASP.NET Core v](../implem
 
 Máte také možnost použít skvělou Open Source knihovnu s názvem otřesový Pulsi, která je k dispozici na [GitHubu](https://github.com/Xabaril/BeatPulse) a jako [balíček NuGet](https://www.nuget.org/packages/BeatPulse/). Tato knihovna také provádí kontroly stavu s otočením, zpracovává dva typy kontrol:
 
-- **Živý**: kontroluje, jestli je mikroslužba aktivní, to znamená, že pokud je možné přijímat žádosti a reagovat na ně. 
-- **Připravenost**: kontroluje, jestli jsou závislosti mikroslužby (databáze, služby front atd.) připravené, takže mikroslužba může provést to, co má dělat. 
+- **Živý**: kontroluje, jestli je mikroslužba aktivní, to znamená, že pokud je možné přijímat žádosti a reagovat na ně.
+- **Připravenost**: kontroluje, jestli jsou závislosti mikroslužby (databáze, služby front atd.) připravené, takže mikroslužba může provést to, co má dělat.
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Používání diagnostiky a protokolování datových proudů událostí
 
@@ -54,7 +54,7 @@ Složité problémy zobrazené na obrázku 4-22 jsou velmi obtížně řešeny u
 
 Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické kontroly, které každý z nich nabízí, se liší v funkcích a stavu zralosti, někdy v závislosti na platformě operačního systému, jak je vysvětleno v další části.
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další zdroje
 
 - **Dvanáct-Factor App. XI. Protokoly: zpracování protokolů jako datových proudů událostí** \
   <https://12factor.net/logs>
@@ -68,7 +68,7 @@ Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické 
 - **Připojení počítačů s Windows ke službě Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows>
 
-- **Protokolování toho, co znamenáte: použití bloku aplikace sémantického protokolování** \
+- **Protokolování toho, co znamenáte: používání bloku aplikace sémantického protokolování** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn440729(v=pandp.60)>
 
 - **Splunk** Oficiální lokalita. \
@@ -78,4 +78,5 @@ Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické 
   [https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource](xref:System.Diagnostics.Tracing.EventSource)
 
 >[!div class="step-by-step"]
->[Předchozí](microservice-based-composite-ui-shape-layout.md)@no__t – 1 –[Další](scalable-available-multi-container-microservice-applications.md)
+>[Předchozí](microservice-based-composite-ui-shape-layout.md)
+>[Další](scalable-available-multi-container-microservice-applications.md)

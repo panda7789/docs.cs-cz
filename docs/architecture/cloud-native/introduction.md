@@ -1,16 +1,16 @@
 ---
-title: Úvod do nativních aplikací cloudu
+title: Úvod k aplikacím nativním pro cloud
 description: Další informace o computingu nativního cloudu
 author: robvet
 ms.date: 08/26/2019
-ms.openlocfilehash: a99e4b5599efee8b171c48a5b17e75b9e6cd63ca
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1d3679c7f1ab940d7ab3e194c200483b63276883
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087238"
 ---
-# <a name="introduction-to-cloud-native-applications"></a>Úvod do nativních aplikací cloudu
+# <a name="introduction-to-cloud-native-applications"></a>Úvod k aplikacím nativním pro cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -18,7 +18,7 @@ Druhý den, v kanceláři, pracuje na "dalších velkých věcí".
 
 Vaše cellphoneové prstence. Je to uživatelsky přívětivý náborový pracovník – ten, který se na nové úlohy zavolá dvakrát denně.
 
-Ale v tuto chvíli se liší: Spuštění, jmění a dostatečné množství finančních prostředků.
+V tuto chvíli se ale liší: spuštění, jmění a dostatek finančních prostředků.
 
 Zmínka o cloudových a špičkových technologiích vás na hraničních zařízeních nabízí.
 
@@ -38,7 +38,7 @@ Blahopřejeme!  Právě jste vytvořili aplikaci monolitické.
 
 Ne vše je chybné. Monolitů nabízí několik různých výhod. Například jsou jednoduché...
 
-- sestavení 
+- sestavení
 - test
 - Nasazení
 - Poradce
@@ -76,7 +76,7 @@ Cloudový nativní se v krátké době stal vývojovým trendem v softwarovém o
 
 Na rozdíl od souvislého hypeu, který je v našem odvětví, je cloudový nativní Cloud "*for-Real*". Vezměte v úvahu [Cloud Native Computing Foundation](https://www.cncf.io/) (CNCF), konsorcium více než 300 hlavních společností s Chartou pro vytváření cloudových všudypřítomných computingu napříč technologiemi a cloudových zásobníků. Jako jedna z nejvíc neužitečných Open Source skupin je hostitelem mnoha nejrychlejších open source projektů v GitHubu. Zahrnují projekty, jako jsou [Kubernetes](https://kubernetes.io/), [Prometheus](https://prometheus.io/), [Helm](https://helm.sh/), [zástupné](https://www.envoyproxy.io/)a [gRPC](https://grpc.io/).
 
-CNCF podporuje ekosystém open source a neutrálního dodavatele. Po tomto vedoucím předvedeme zásady, vzory a osvědčené postupy pro Cloud, které jsou nezávislá technologií. Ve stejnou chvíli probereme služby a infrastrukturu, které jsou k dispozici v cloudu Microsoft Azure pro vytváření nativních systémů cloudu. 
+CNCF podporuje ekosystém open source a neutrálního dodavatele. Po tomto vedoucím předvedeme zásady, vzory a osvědčené postupy pro Cloud, které jsou nezávislá technologií. Ve stejnou chvíli probereme služby a infrastrukturu, které jsou k dispozici v cloudu Microsoft Azure pro vytváření nativních systémů cloudu.
 
 Takže co přesně je cloudová nativní? Nasaďte se zpátky, uvolněte a sdělte nám, jak vám pomůžeme prozkoumat tento nový svět.
 

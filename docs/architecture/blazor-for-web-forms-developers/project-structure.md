@@ -4,12 +4,12 @@ description: Přečtěte si, jak porovnat struktury projektu webových formulá�
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: aa9157bd8627e7a03e33872c3023f91ba3d66951
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 2c383e86ff22f5a3460476998992b66e9417cc11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520223"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087864"
 ---
 # <a name="project-structure-for-blazor-apps"></a>Struktura projektu pro aplikace Blazor
 
@@ -145,7 +145,7 @@ Kde jsou stránky v aplikacích Blazor? Blazor nedefinuje samostatnou příponu 
 @page "/counter"
 ```
 
-Směrování v Blazor je zpracováváno na straně klienta, nikoli na serveru. Když uživatel přejde v prohlížeči, Blazor zachytí navigaci a potom vykreslí komponentu se stejným směrováním. 
+Směrování v Blazor je zpracováváno na straně klienta, nikoli na serveru. Když uživatel přejde v prohlížeči, Blazor zachytí navigaci a potom vykreslí komponentu se stejným směrováním.
 
 Trasy součástí nejsou aktuálně odvozeny z umístění souboru komponenty, jako jsou stránky *aspx* . Tato funkce může být v budoucnu přidána. Každou trasu musíte explicitně zadat na komponentě. Ukládání komponent s přísměrováním ve složce *Pages* nemá žádný zvláštní význam a je čistě konvencí.
 

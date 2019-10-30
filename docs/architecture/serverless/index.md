@@ -4,12 +4,12 @@ description: Průvodce architekturou bez serveru. Zjistěte, kdy, proč a jak im
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: af930ba3d704e9bbf22f03ad6a4a547c5fbff4d3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9dea7dbccb5c9e125f792e6a7287a7dd2fad26f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522842"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093538"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Aplikace bez serveru: architektura, vzory a implementace Azure
 
@@ -43,17 +43,17 @@ Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
 Autorizova
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)** , Poradce pro cloudový vývoj, Poradce pro cloudový vývoj, Apex, Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)** , hlavní poradce pro Cloud, společnost Microsoft Corp.
 
 Skupinou
 
-> **[Cecil Phillip](https://twitter.com/cecilphillip)** , Poradce pro cloudový vývoj II, Apex, Microsoft Corp.
+> **[Cecil Phillip](https://twitter.com/cecilphillip)** , hlavní poradce pro Cloud, společnost Microsoft Corp.
 
 Editory
 
-> **[Bill Wagner](https://twitter.com/billwagner)** , náměstek – vývojář obsahu, Apex, Microsoft Corp.
+> **[Bill Wagner](https://twitter.com/billwagner)** , vedoucí pro vývojáře obsahu, Microsoft Corp.
 
-> **[Maira Wenzel](https://twitter.com/mairacw)** , vrchní vývojář obsahu, Apex, Microsoft Corp.
+> **[Maira Wenzel](https://twitter.com/mairacw)** , náměstek – vývojář obsahu, společnost Microsoft Corp.
 
 Účastníci a kontroloři:
 

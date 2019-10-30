@@ -3,12 +3,12 @@ title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: aec199aee52a4ab3202c3ec0ceb769fecd168cfe
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 27191a67b2964ac2e1636a4d7dc55d5314b78439
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846732"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087536"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -18,7 +18,7 @@ Zastavte si, co děláte, a text 10 vašich kolegů. Požádejte je, aby definov
 
 Cloud Native je vše o změně způsobu, jakým se myslíme na vytváření důležitých podnikových systémů.
 
-Systémy nativní pro Cloud jsou navržené tak, aby zajišťují rychlou změnu, velký rozsah a odolnost. 
+Systémy nativní pro Cloud jsou navržené tak, aby zajišťují rychlou změnu, velký rozsah a odolnost.
 
 Cloud Native Computing Foundation poskytuje [oficiální definici](https://github.com/cncf/foundation/blob/master/charter.md):
 
@@ -28,14 +28,14 @@ Cloud Native Computing Foundation poskytuje [oficiální definici](https://githu
 
 Aplikace jsou stále složitější s tím, že uživatelé přibývají více a více. Uživatelé očekávají rychlou odezvu, inovativní funkce a nulové výpadky. Problémy s výkonem, opakujícími se chybami a neschopností rychlé přesuny již nejsou přijatelné. Budou snadno přesunuty na konkurenci.
 
-Nativní Cloud je mnohem o *rychlosti* a *flexibilitě*. Firemní systémy se vyvíjející od umožnění obchodních schopností prostřednictvím zbraní při strategické transformaci a urychlení obchodních rychlostí a růstu. Je naprosto nezbytné získat návrhy na uvedení na trh hned. 
+Nativní Cloud je mnohem o *rychlosti* a *flexibilitě*. Firemní systémy se vyvíjející od umožnění obchodních schopností prostřednictvím zbraní při strategické transformaci a urychlení obchodních rychlostí a růstu. Je naprosto nezbytné získat návrhy na uvedení na trh hned.
 
 Zde jsou některé společnosti, které implementovaly tyto techniky. Vezměte v úvahu rychlost, flexibilitu a škálovatelnost, které dosáhly.
 
-| Podnikový | Využij | 
+| Podnikový | Využij |
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | Má 600 + služby v produkčním prostředí. Nasadí stovky časů za den. |
-| [Uber](https://eng.uber.com/micro-deploy/) | Má 1000 000 služeb uložených v produkčním prostředí. Každý týden nasadí několik tisíc sestavení. | 
+| [Uber](https://eng.uber.com/micro-deploy/) | Má 1000 000 služeb uložených v produkčním prostředí. Každý týden nasadí několik tisíc sestavení. |
 | [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Má 300 + služby v produkčním prostředí. Provede téměř 1 000 změn za den. |
 
 Jak vidíte, Netflix, Uber a WeChat zpřístupňují systémy, které se skládají ze stovek nezávislých mikroslužeb. Tento styl architektury umožňuje rychle reagovat na podmínky na trhu. Můžou okamžitě aktualizovat malé oblasti živé, složité aplikace a individuálně škálovat tyto oblasti podle potřeby.
@@ -132,6 +132,7 @@ Jak vaše služba identifikuje, kdo k němu přistupuje a jaká oprávnění maj
 Identita je uvedena v podrobnostech kapitoly 8, *identity*.
 
 ## <a name="microservices"></a>Mikroslužeb
+
 Nativní systémy pro Cloud mají mikroslužby, což je oblíbený styl architektury pro vytváření moderních aplikací.
 
 Mikroslužby vytvořené jako distribuovaná sada malých nezávislých služeb, které komunikují prostřednictvím sdílených prostředků infrastruktury, sdílí následující vlastnosti:
@@ -160,7 +161,7 @@ Všimněte si, jak mikroslužby povýší "jeden základ kódu, jedna aplikace" 
 
 Mikroslužby poskytují flexibilitu.
 
-Dříve v této kapitole jsme porovnali elektronického obchodování aplikaci sestavenou jako monolitu s mikroslužbami. V tomto příkladu jsme viděli nějaké výhody, které jsou jasné: 
+Dříve v této kapitole jsme porovnali elektronického obchodování aplikaci sestavenou jako monolitu s mikroslužbami. V tomto příkladu jsme viděli nějaké výhody, které jsou jasné:
 
 - Každá mikroslužba má autonomní životní cyklus a může se vyvíjet nezávisle a často se nasazovat. Nemusíte čekat na čtvrtletní vydání, aby se nasadily nové funkce nebo aktualizace. Malou oblast komplexní aplikace můžete aktualizovat s menším rizikem, které by narušilo celý systém.
 
@@ -174,9 +175,9 @@ Mikroslužby se dají vytvořit s libovolnou moderní vývojovou platformou.
 
 Platforma Microsoft .NET Core je vynikající volbou. Bezplatný a Open Source má mnoho vestavěných funkcí, které zjednodušují vývoj mikroslužeb. .NET Core je platforma pro různé platformy. Aplikace se dají vytvářet a spouštět na Windows, macOS a nejvíc charakterech systému Linux.
 
-.NET Core je vysoce výkonné a má ve srovnání s Node. js a dalšími konkurenčními platformami velmi kvalitní skóre. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core skóre v horních 10 – dobře nad Node. js a dalšími konkurenčními platformami. 
+.NET Core je vysoce výkonné a má ve srovnání s Node. js a dalšími konkurenčními platformami velmi kvalitní skóre. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core skóre v horních 10 – dobře nad Node. js a dalšími konkurenčními platformami.
 
-.NET Core spravuje Microsoft a komunita .NET na GitHubu. 
+.NET Core spravuje Microsoft a komunita .NET na GitHubu.
 
 ## <a name="containers"></a>Kontejnery
 
@@ -188,11 +189,11 @@ V případě potřeby Transformujte obrázek na spuštěnou instanci kontejneru.
 
 Obrázek 1-5 ukazuje tři různé mikroslužby, každé ve vlastním kontejneru spuštěném na jednom hostiteli.
 
-![Více kontejnerů spuštěných v hostiteli kontejneru](./media/hosting-mulitple-containers.png)  
+![Více kontejnerů spuštěných v hostiteli kontejneru](./media/hosting-mulitple-containers.png)
 
 **Obrázek 1-5**. Více kontejnerů spuštěných v hostiteli kontejneru
 
-Všimněte si, jak každý kontejner udržuje svou vlastní sadu závislostí a modulu runtime, který se může lišit. Tady vidíte různé verze mikroslužby produktu běžící na stejném hostiteli. Každý kontejner sdílí řez základního hostitelského operačního systému, paměti a procesoru, ale je od sebe izolovaný. 
+Všimněte si, jak každý kontejner udržuje svou vlastní sadu závislostí a modulu runtime, který se může lišit. Tady vidíte různé verze mikroslužby produktu běžící na stejném hostiteli. Každý kontejner sdílí řez základního hostitelského operačního systému, paměti a procesoru, ale je od sebe izolovaný.
 
 Všimněte si, jak dobře model kontejneru zahrnuje Princip závislostí z [aplikace v dvanácti faktorech](https://12factor.net/).
 
@@ -204,7 +205,7 @@ I když existuje několik dodavatelů kontejnerů, Docker zachytil podíl na trh
 
 ### <a name="why-containers"></a>Proč kontejnery?
 
-Kontejnery poskytují přenositelnost a zaručují konzistenci napříč prostředími. Zapouzdřením všeho do jednoho balíčku *izolujete* mikroslužbu a její závislosti z základní infrastruktury. 
+Kontejnery poskytují přenositelnost a zaručují konzistenci napříč prostředími. Zapouzdřením všeho do jednoho balíčku *izolujete* mikroslužbu a její závislosti z základní infrastruktury.
 
 Stejný kontejner můžete nasadit v jakémkoli prostředí, které má modul runtime Docker. Kontejnerové úlohy také odstraňují náklady před konfigurací jednotlivých prostředí s architekturou, softwarovými knihovnami a běhovými moduly.
 
@@ -212,7 +213,7 @@ Díky sdílení základního operačního systému a prostředků hostitele maj�
 
 ### <a name="container-orchestration"></a>Orchestrace kontejnerů
 
-I když nástroje, jako je Docker, vytvářejí image a spouštějí kontejnery, potřebujete nástroje pro jejich správu. Správa kontejnerů se provádí pomocí speciálního softwarového programu nazvaného produkt Orchestrator pro kontejner. Při současném škálování je orchestrace kontejnerů zásadní. 
+I když nástroje, jako je Docker, vytvářejí image a spouštějí kontejnery, potřebujete nástroje pro jejich správu. Správa kontejnerů se provádí pomocí speciálního softwarového programu nazvaného produkt Orchestrator pro kontejner. Při současném škálování je orchestrace kontejnerů zásadní.
 
 Obrázek 1-6 ukazuje úlohy správy, které poskytují orchestrace kontejnerů.
 
@@ -239,7 +240,7 @@ Všimněte si, jak orchestrace vychází ze zásad disposability a souběžnosti
 
 > *Faktor \#8 určuje, že "služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od škálování jedné velké instance na nejvýkonnějším dostupném počítači."*
 
-I když existuje několik orchestrací kontejnerů, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) se stal de facto standardem pro cloudově Native World. Je to přenosná, rozšiřitelná a open source platforma pro správu kontejnerových úloh. 
+I když existuje několik orchestrací kontejnerů, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) se stal de facto standardem pro cloudově Native World. Je to přenosná, rozšiřitelná a open source platforma pro správu kontejnerových úloh.
 
 Mohli byste hostovat svou vlastní instanci Kubernetes, ale pak byste měli být odpovědni za zřizování a správu svých prostředků – což může být složité. Azure Cloud Features Kubernetes jako spravovaná služba [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/). Spravovaná služba vám umožňuje plně využít své funkce, aniž byste je museli instalovat a udržovat.
 
@@ -287,7 +288,7 @@ Pomocí IaC automatizujete zřizování platforem a nasazení aplikací. V podst
 
 ### <a name="automating-infrastructure"></a>Automatizace infrastruktury
 
-Nástroje jako [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraformu a [Azure CLI](https://docs.microsoft.com/cli/azure/)umožňují deklarativní skriptování cloudové infrastruktury, kterou požadujete. Názvy prostředků, umístění, kapacity a tajné klíče jsou parametrizované a dynamické. Skript se zaznamená ve verzi a do správy zdrojového kódu se zaregistruje jako artefakt vašeho projektu. Vyvoláte skript, který zřídí jednotnou a možnou infrastrukturu v rámci systémových prostředí, jako je třeba QA, fázování a produkce. 
+Nástroje jako [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraformu a [Azure CLI](https://docs.microsoft.com/cli/azure/)umožňují deklarativní skriptování cloudové infrastruktury, kterou požadujete. Názvy prostředků, umístění, kapacity a tajné klíče jsou parametrizované a dynamické. Skript se zaznamená ve verzi a do správy zdrojového kódu se zaregistruje jako artefakt vašeho projektu. Vyvoláte skript, který zřídí jednotnou a možnou infrastrukturu v rámci systémových prostředí, jako je třeba QA, fázování a produkce.
 
 V digestoři je IaC idempotentní, což znamená, že můžete spustit stejný skript i bez vedlejších účinků. Pokud tým potřebuje provést změnu, upraví a znovu spustí skript. Ovlivněny jsou pouze aktualizované prostředky.
 
@@ -299,7 +300,7 @@ V článku [co je infrastruktura jako kód](https://docs.microsoft.com/azure/dev
 
 > *Faktor \#5* určuje, že každá verze musí vymáhat striktní oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každá by měla být označena jedinečným IDENTIFIKÁTORem a podporuje možnost vracet se zpět. "
 
-Moderní systémy CI/CD můžou splnit tento princip. Poskytují samostatné kroky nasazení a umožňují zajistit konzistentní a kvalitní kód, který je uživatelům snadno dostupný. 
+Moderní systémy CI/CD můžou splnit tento princip. Poskytují samostatné kroky nasazení a umožňují zajistit konzistentní a kvalitní kód, který je uživatelům snadno dostupný.
 
 Obrázek 1-8 ukazuje oddělení v rámci procesu nasazení.
 
@@ -307,17 +308,17 @@ Obrázek 1-8 ukazuje oddělení v rámci procesu nasazení.
 
 **Obrázek 1-8**. Postup nasazení v kanálu CI/CD
 
-Na předchozím obrázku věnujte zvláštní pozornost oddělení úloh. 
+Na předchozím obrázku věnujte zvláštní pozornost oddělení úloh.
 
-Vývojář sestaví funkci ve vývojovém prostředí a provede iteraci tím, co se nazývá vnitřní smyčka kódu, spuštění a ladění. Po dokončení bude tento kód *vložen* do úložiště kódu, jako je GitHub, Azure DevOps nebo Bitbucket. 
+Vývojář sestaví funkci ve vývojovém prostředí a provede iteraci tím, co se nazývá vnitřní smyčka kódu, spuštění a ladění. Po dokončení bude tento kód *vložen* do úložiště kódu, jako je GitHub, Azure DevOps nebo Bitbucket.
 
-Nabízená oznámení spustí fázi sestavení, která transformuje kód do binárního artefaktu. Práce je implementovaná pomocí kanálu [průběžné integrace (CI)](https://martinfowler.com/articles/continuousIntegration.html) . Automaticky vytvoří, otestuje a zabalí aplikaci. 
+Nabízená oznámení spustí fázi sestavení, která transformuje kód do binárního artefaktu. Práce je implementovaná pomocí kanálu [průběžné integrace (CI)](https://martinfowler.com/articles/continuousIntegration.html) . Automaticky vytvoří, otestuje a zabalí aplikaci.
 
 Fáze vydaných verzí převezme binární artefakt, použije informace o konfiguraci externích aplikací a prostředí a vytvoří neměnné vydání. Verze je nasazená v zadaném prostředí. Práce je implementována s kanálem [průběžného doručování (CD)](https://martinfowler.com/bliki/ContinuousDelivery.html) . Každá verze by měla být identifikovatelná. Můžete vyslovit "Toto nasazení používá verzi 2.1.1 aplikace."
 
-Nakonec se vydaná funkce spustí v cílovém prostředí pro spuštění. Verze jsou neměnné, což znamená, že každá změna musí vytvořit novou verzi. 
+Nakonec se vydaná funkce spustí v cílovém prostředí pro spuštění. Verze jsou neměnné, což znamená, že každá změna musí vytvořit novou verzi.
 
-Při použití těchto postupů se organizacím při dodávání softwaru odvíjejí základní informace. Mnohé se přesunuly z čtvrtletních vydání na aktualizace na vyžádání. Cílem je zachytit problémy v předstihu vývojového cyklu, pokud je jejich oprava méně náročná. Čím déle trvá integrace, tím dražší problémy se vyřeší.  Díky konzistenci v procesu integrace můžou týmy potvrzovat změny kódu častěji, což vede k lepší spolupráci a kvalitě softwaru.  
+Při použití těchto postupů se organizacím při dodávání softwaru odvíjejí základní informace. Mnohé se přesunuly z čtvrtletních vydání na aktualizace na vyžádání. Cílem je zachytit problémy v předstihu vývojového cyklu, pokud je jejich oprava méně náročná. Čím déle trvá integrace, tím dražší problémy se vyřeší.  Díky konzistenci v procesu integrace můžou týmy potvrzovat změny kódu častěji, což vede k lepší spolupráci a kvalitě softwaru.
 
 ### <a name="azure-pipelines"></a>Azure Pipelines
 

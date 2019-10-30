@@ -4,17 +4,17 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 4e4ab71cc542767460e92be1510ccc5c5e0e7ce0
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 9bc97efdda44ca4dfa4a583c32e9e55c9502d975
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374074"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089685"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
 > *"Pokud si nejste spokojeni s testováním částí vašeho produktu, pravděpodobně ho vaši zákazníci nechtějí testovat, buď."*
- > \_Anonymous
+ > \_– anonymní –
 
 Software jakékoli složitosti může při reakci na změny selhat neočekávaným způsobem. Proto se testování po provedení změn vyžaduje pro všechny, ale nejvíce triviální (nebo nejméně kritické) aplikace. Manuální testování je nejpomalejší, nejméně spolehlivý a nejnákladný způsob testování softwaru. Pokud aplikace není navržena tak, aby se testovatelné, může to být pouze to, co je k dispozici. Aplikace napsané podle principů architektury, které jsou uvedeny v [kapitole 4](architectural-principles.md) , by měly být jednotky testovatelné a aplikace ASP.NET Core podporují také automatickou integraci a funkční testování.
 
@@ -40,7 +40,7 @@ Integrační testy se napíší z perspektivy vývojářů, aby bylo možné ov�
 
 > "" Hodně vývoje systému likened do budování domu. I když tato analogová možnost není poměrně správná, můžeme ji pro účely porozumění rozdílu mezi jednotkou a funkčními testy roztáhnout. Testování částí je obdobné jako inspektor stavby, který se navštíví na staveništi. Zaměřuje se na různé interní systémy domu, základů, rámců, elektroinstalace, instalací a tak dále. Zajišťuje (testuje), že části domu budou fungovat správně a bezpečně, to znamená, že budou splňovat stavební kód. Funkční testy v tomto scénáři jsou obdobou domácnosti návštěvě tohoto téhož staveništového webu. Předpokládá, že se interní systémy budou chovat patřičně, takže inspektor budovy provádí jeho úlohu. Domácnosti se zaměřuje na to, co bude v této domácnosti v provozu. Záleží na tom, jak se na pracovišti nachází, na různých místnostech a na tom, kde se v rodině hodí, jsou Windows na dobrém místě pro zachycení ráno. Domácnosti provádí funkční testy na domu. Má perspektivu uživatele. Inspektor budovy provádí testování částí na pracovišti. Má perspektivu tvůrce. "
 
-Zdrojová [Testování částí versus funkční testy](https://www.softwaretestingtricks.com/2007/01/unit-testing-versus-functional-tests.html)
+Zdroj: [testování částí versus funkční testy](https://www.softwaretestingtricks.com/2007/01/unit-testing-versus-functional-tests.html)
 
 Fond jsem se říkám vývojářům, že nedošlo k chybě dvěma způsoby: nepovedlo se nám sestavit chybu, nebo jsme vytvořili špatné věci. " Testování částí vám zajistí, že vytváříte přímo věc. funkční testy zajistí, že vytváříte správnou věc.
 
@@ -90,9 +90,9 @@ Testy byste měli pojmenovat konzistentním způsobem s názvy, které určují,
 
 Variace tohoto přístupu končí každý název třídy testu pomocí "by" měl "a vhodné mírně mění:
 
-- `CatalogControllerGetImage`**By mělo**`.`**zavolat**`ImageServiceWithId`
+- `CatalogControllerGetImage`**by měl**`.`**volat**`ImageServiceWithId`
 
-- `CatalogControllerGetImage`**Měl by**`.`se**Protokolovat**`WarningGivenImageMissingException`
+- `CatalogControllerGetImage`**by měl**`.`**protokol**`WarningGivenImageMissingException`
 
 Někteří týmy hledají druhý jasný přístup k pojmenování, i když mírně podrobnější. V každém případě se pokuste použít konvenci pojmenování, která poskytuje přehled o chování testu, aby při selhání jednoho nebo více testů bylo zřejmé, že se nezdařily jejich názvy. Vyhněte se pojmenovávání testů Vaguely, jako je ControllerTests. test1, protože při jejich zobrazení ve výsledcích testů nejsou k dispozici žádná hodnota.
 
@@ -121,7 +121,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Testování částí: Tato metoda je obtížná při přímé závislosti na `System.IO.File`, kterou používá ke čtení ze systému souborů. Toto chování můžete otestovat, abyste zajistili, že funguje podle očekávání, ale v reálném souboru je test integrace. Vybereme na vědomí, že nemůžete testovat tuto trasu této metody – v krátké době se vám ukáže, jak to udělat s funkčním testem.
+Testování částí této metody je obtížné, protože přímá závislost na `System.IO.File`, kterou používá ke čtení ze systému souborů. Toto chování můžete otestovat, abyste zajistili, že funguje podle očekávání, ale v reálném souboru je test integrace. Vybereme na vědomí, že nemůžete testovat tuto trasu této metody – v krátké době se vám ukáže, jak to udělat s funkčním testem.
 
 Pokud nemůžete testovat chování systému souborů přímo a nemůžete testovat trasu, co je pro test k dispozici? I po refaktorování, aby bylo možné testování jednotek, můžete zjistit některé testovací případy a chybějící chování, například zpracování chyb. Co metoda dělá, když se soubor nenajde? Co by mělo dělat? V tomto příkladu vypadá refaktoring Method takto:
 
@@ -143,7 +143,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Protokolovací nástroje a \_imageService jsou vloženy jako závislosti. \_ Nyní můžete testovat, že stejné ID, které je předáno metodě Action, je předáno do \_imageService a že výsledné bajty jsou vráceny jako součást výsledku. Můžete také otestovat, že protokolování chyb probíhá podle očekávání, a že se vrátí výsledek NotFound v případě, že chybí obrázek. za předpokladu, že se jedná o důležité chování aplikace (ne pouze dočasný kód, který vývojář přidal k diagnostice problému). Skutečná logika souboru se přesunula do samostatné implementační služby a rozšířila se, aby vracela výjimku specifickou pro danou aplikaci pro případ chybějícího souboru. Tuto implementaci můžete testovat nezávisle pomocí testu integrace.
+Protokolovací nástroj \_a \_imageService jsou vloženy jako závislosti. Nyní můžete testovat, zda stejné ID, které je předáno metodě Action, je předáno \_imageService a že výsledné bajty jsou vráceny jako součást výsledku. Můžete také otestovat, že protokolování chyb probíhá podle očekávání, a že se vrátí výsledek NotFound v případě, že chybí obrázek. za předpokladu, že se jedná o důležité chování aplikace (ne pouze dočasný kód, který vývojář přidal k diagnostice problému). Skutečná logika souboru se přesunula do samostatné implementační služby a rozšířila se, aby vracela výjimku specifickou pro danou aplikaci pro případ chybějícího souboru. Tuto implementaci můžete testovat nezávisle pomocí testu integrace.
 
 Ve většině případů budete chtít použít globální obslužné rutiny výjimek v řadičích, takže v nich by měla být velikost logiky minimální a pravděpodobně nebude znamenat testování částí. Většinu testování akcí kontroleru byste měli provést pomocí funkčních testů a `TestServer` třídy popsané níže.
 
@@ -153,9 +153,9 @@ Většina testů integrace v aplikacích ASP.NET Core by měla být testovací s
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování ASP.NET Core aplikací
 
-U ASP.NET Corech aplikací `TestServer` třída provádí funkční testy poměrně snadného zápisu. Můžete nakonfigurovat `TestServer` `WebHostBuilder` přímým použitím (jako obvykle pro aplikaci `WebApplicationFactory` ) nebo s typem (k dispozici od verze 2,1). Měli byste se pokusit přesně vyhledat svého testovacího hostitele na produkčního hostitele, aby testy mohly postupovat podobně jako v případě, že aplikace provede v produkčním prostředí. Tato `WebApplicationFactory` třída je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
+U ASP.NET Corech aplikací poskytuje třída `TestServer` funkční testy poměrně snadného zápisu. `TestServer` můžete nakonfigurovat pomocí `WebHostBuilder` přímo (obvykle pro aplikaci) nebo s typem `WebApplicationFactory` (k dispozici od verze 2,1). Měli byste se pokusit přesně vyhledat svého testovacího hostitele na produkčního hostitele, aby testy mohly postupovat podobně jako v případě, že aplikace provede v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
 
-Jednoduché funkční testy můžete vytvořit vytvořením třídy testu, která implementuje IClassFixture\<WebApplicationFactory\<TEntry > >, kde TEntry je vaše spouštěcí třída vaší webové aplikace. Na tomto místě testovací přípravek může vytvořit klienta pomocí metody CreateClient objektu pro vytváření:
+Jednoduché funkční testy můžete vytvořit vytvořením třídy testu, která implementuje IClassFixture\<WebApplicationFactory\<TEntry > >, kde TEntry je třída Startup vaší webové aplikace. Na tomto místě testovací přípravek může vytvořit klienta pomocí metody CreateClient objektu pro vytváření:
 
 ```cs
 public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
@@ -198,7 +198,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
                     .AddEntityFrameworkInMemoryDatabase()
                     .BuildServiceProvider();
 
-                // Add a database context (ApplicationDbContext) using an in-memory 
+                // Add a database context (ApplicationDbContext) using an in-memory
                 // database for testing.
                 services.AddDbContext<CatalogContext>(options =>
                 {
@@ -293,5 +293,5 @@ Tento funkční test vykonává úplný ASP.NET Core zásobník aplikací MVC/Ra
 >   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
 
 >[!div class="step-by-step"]
->[Předchozí](work-with-data-in-asp-net-core-apps.md)Další
->[](development-process-for-azure.md)
+>[Předchozí](work-with-data-in-asp-net-core-apps.md)
+>[Další](development-process-for-azure.md)

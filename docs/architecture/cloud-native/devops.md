@@ -2,12 +2,12 @@
 title: Cloud Native DevOps
 description: Architekt cloudových nativních aplikací .NET pro Azure | Cloud Native DevOps
 ms.date: 06/30/2019
-ms.openlocfilehash: 84d37d14af8a68a51088568ded05ceef2e5e11fb
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 2b3dd47eeeb69d63f5ae39705abb9d1d51295645
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393728"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087543"
 ---
 # <a name="cloud-native-devops"></a>Cloud Native DevOps
 
@@ -25,7 +25,7 @@ Nyní je poměrně dobře navázáno, aby bylo možné rychle vydávat software,
 
 Vzorce a postupy, které umožňují rychlejší a spolehlivější vydání hodnoty podniku, jsou souhrnně označovány jako DevOps. Skládají se z široké škály nápadů, které pokrývá celý životní cyklus vývoje softwaru, od určení aplikace až po doručení a provozování této aplikace.
 
-DevOps se předtím, než mikroslužby a je pravděpodobné, že přesun směrem k menšímu a většímu množství služeb by nebylo možné, aniž by DevOps mohl vydávat a provozovat nejen jednu, ale mnoho aplikací v produkčním prostředí je snazší. 
+DevOps se předtím, než mikroslužby a je pravděpodobné, že přesun směrem k menšímu a většímu množství služeb by nebylo možné, aniž by DevOps mohl vydávat a provozovat nejen jednu, ale mnoho aplikací v produkčním prostředí je snazší.
 
 ![Obrázek 11-0 hledání trendů znázorňuje, že růst v mikroslužbách nezačíná až po DevOps je poměrně dobře zavedený nápad.](./media/microservices-vs-devops.png)
 
@@ -41,7 +41,7 @@ Azure DevOps je rozdělené na pět hlavních součástí:
 
 ![Obrázek 11-1 pět hlavních oblastí služby Azure DevOps](./media/devops-components.png)
 
-**Azure boards** – poskytuje nástroj pro sledování problémů a pracovních položek, který se snaží dovolit uživatelům vybrat pracovní postupy, které jsou pro ně nejvhodnější. Obsahuje řadu předem nakonfigurovaných šablon, včetně těch, které podporují SCRUM a kanbanové styly vývoje. 
+**Azure boards** – poskytuje nástroj pro sledování problémů a pracovních položek, který se snaží dovolit uživatelům vybrat pracovní postupy, které jsou pro ně nejvhodnější. Obsahuje řadu předem nakonfigurovaných šablon, včetně těch, které podporují SCRUM a kanbanové styly vývoje.
 
 **Azure Repos** – Správa zdrojového kódu, která podporuje Venerable Správa verzí Team Foundation (TFVC) a obor oblíbených v oboru Git. Žádosti o přijetí změn poskytují způsob, jak povolit sociální kódování prostřednictvím diskuze o změnách, které se provedou.
 
@@ -78,9 +78,9 @@ Na první pohled se zdá, že se jedná o největší logický přístup k rozd�
 
 Jednou z klíčových nápadů za mikroslužby je, že služby by měly být silo a oddělené od sebe. Když použijete návrh založený na doméně, můžete se rozhodnout na hranicích služeb, které služby působí jako transakční hranice. Aktualizace databáze by neměly zahrnovat více služeb. Tato kolekce souvisejících dat je označována jako ohraničený kontext.  Tato nápad se projeví v izolaci dat mikroslužeb k databázi oddělené a autonomní od ostatních služeb. Přináší skvělou představu o tom, jak tento nápad přenést až do zdrojového kódu.
 
-Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný adresář `node_modules`. Nová instalace nějakého, jako je `create-react-app`, se může dostat do tisíců balíčků. Otázka, jak tyto závislosti spravovat, je obtížné. 
+Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný `node_modules` adresář. Nová instalace nějakého, jako je `create-react-app`, se může dostat do tisíců balíčků. Otázka, jak tyto závislosti spravovat, je obtížné.
 
-Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede ke vývojářské práci, takže invariably adresář `node_modules` skončil s více verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu odlišný tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
+Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede k práci s vývojem, takže invariably `node_modules` Adresář skončil s více verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu odlišný tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
 
 Existují knihovny, které jsou závislé na nejrůznějších projektech. Tím, že mikroslužby vydělíte pomocí jednoho z nich, interní závislosti se můžou nejlépe vyřešit pomocí interního úložiště, Azure Artifacts. Sestavení pro knihovny budou nabízet své nejnovější verze do Azure Artifacts pro interní spotřebu. Aby bylo možné převzít závislosti na nově aktualizovaných balíčcích, musí se projekt pro příjem dat ještě ručně aktualizovat.
 
@@ -195,7 +195,7 @@ steps:
   displayName: 'NuGet restore'
   inputs:
     restoreSolution: '$(solution)'
-    
+
 - task: VSBuild@1
   displayName: 'Build solution'
   inputs:
@@ -250,7 +250,7 @@ Pro konfiguraci mnoha kanálů sestavení se neúčtují žádné náklady, tak�
 
 ### <a name="versioning-releases"></a>Verze verzí
 
-Jednou z nevýhod používání funkce releases je, že není možné ji definovat v souboru @no__t 0 vráceného se změnami. Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
+Jednou z nevýhod používání funkce releases je, že se nedá definovat v souboru `azure-pipelines.yml` se změnami. Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
 
 >[!div class="step-by-step"]
 >[Předchozí](azure-security.md)

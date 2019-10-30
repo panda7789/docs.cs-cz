@@ -2,12 +2,12 @@
 title: Ukládání dat v Azure
 description: Architekt cloudových nativních aplikací .NET pro Azure | Ukládání dat v Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 6834e47e11c4941735343e3f6bfbfe4cb642e0dd
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 1a86cecf005c6dbdfda5cf4cacfafaad4711c076
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521111"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087765"
 ---
 # <a name="data-storage-in-azure"></a>Ukládání dat v Azure
 
@@ -15,7 +15,7 @@ ms.locfileid: "72521111"
 
 Jak jsme viděli v této příručce, Cloud mění způsob, jakým se aplikace navrhují, nasazují a spravují. Při přesunu do cloudu se kritickou otázkou, jak přesouváte data? Naštěstí cloud Azure nabízí spoustu možností.
 
-Mohli jste jenom zřídit virtuální počítač Azure a nainstalovat svou databázi podle vlastního výběru. Tato služba se nazývá [Infrastruktura jako služba (IaaS)](https://www.techopedia.com/definition/141/infrastructure-as-a-service-iaas). Tento přístup zjednodušuje přesun místní databáze do cloudu, jak je, ale posune zatížení pro správu virtuálního počítače a databáze.  
+Mohli jste jenom zřídit virtuální počítač Azure a nainstalovat svou databázi podle vlastního výběru. Tato služba se nazývá [Infrastruktura jako služba (IaaS)](https://www.techopedia.com/definition/141/infrastructure-as-a-service-iaas). Tento přístup zjednodušuje přesun místní databáze do cloudu, jak je, ale posune zatížení pro správu virtuálního počítače a databáze.
 
 Místo toho je lepší volbou plně spravovaná [databáze jako služba (DBaaS)](https://www.stratoscale.com/blog/dbaas/what-is-database-as-a-service/) . Získáte spoustu integrovaných funkcí, zatímco hostování, údržba a licencování spravuje společnost Microsoft. Azure nabízí různé druhy plně spravovaných možností úložiště dat, z nichž každá má konkrétní výhody. Všechny podporují kapacitu za běhu a model průběžných plateb.
 
@@ -23,7 +23,7 @@ Dál se podíváme na možnosti DBaaS dostupné v Azure. Zjistíte, jak bude Mic
 
 ## <a name="azure-sql-database"></a>Azure SQL Database
 
-[Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) je bohatá relační databáze jako služba (DBaaS) pro obecné účely, založená na databázovém stroji Microsoft SQL Server. Je plně spravovaná Microsoftem a je vysoce výkonná, spolehlivá a zabezpečená cloudová databáze. Služba sdílí mnoho funkcí, které najdete v místní verzi SQL Server. 
+[Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) je bohatá relační databáze jako služba (DBaaS) pro obecné účely, založená na databázovém stroji Microsoft SQL Server. Je plně spravovaná Microsoftem a je vysoce výkonná, spolehlivá a zabezpečená cloudová databáze. Služba sdílí mnoho funkcí, které najdete v místní verzi SQL Server.
 
 SQL Database Server a databázi můžete zřídit během několika minut. Když poptávka po vaší aplikaci roste od několik zákazníků po miliony, Azure SQL Database se průběžně škáluje s minimálními prostoji. Můžete dynamicky přidávat nebo odebírat prostředky, včetně výkonu procesoru, paměti, propustnosti v/v a úložiště, které jsou přiděleny vašim databázím.
 
@@ -47,7 +47,7 @@ Azure SQL Database obsahuje [integrované funkce monitorování a inteligentníh
 
 [Azure SQL Database bez serveru](https://docs.microsoft.com/azure/sql-database/sql-database-serverless) (k dispozici pro náhled v době psaní této knihy) je výpočetní vrstva pro izolovanou databázi, která se automaticky škáluje na základě požadavků na úlohy a účtuje se na množství výpočetního počtu využitých za sekundu. Výpočetní vrstva bez serveru taky automaticky pozastaví databáze během neaktivních období, takže se účtují jenom poplatky za úložiště. Automaticky pokračuje při návratu aktivity.
 
-Nakonec je k dispozici nová Azure SQL Database cenová úroveň s [měřítkem](https://azure.microsoft.com/services/sql-database/) . Využívá vysoce škálovatelnou architekturu úložiště a umožňuje, aby se databáze v případě potřeby rostla a nemusela předem zřizovat prostředky úložiště. Výpočetní prostředky a prostředky úložiště můžete škálovat nezávisle a zajistit tak flexibilitu pro optimalizaci výkonu pro jednotlivé úlohy. Azure SQL Database škálování je optimalizované pro zpracování [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) a úlohy s vysokou propustností s úložištěm až 100 TB.  Díky úlohám náročným na čtení poskytuje škálování na více instancí rychlé škálování tím, že je potřeba zřídit další repliky pro čtení podle potřeby pro přesměrování zatížení pro úlohy čtení. 
+Nakonec je k dispozici nová Azure SQL Database cenová úroveň s [měřítkem](https://azure.microsoft.com/services/sql-database/) . Využívá vysoce škálovatelnou architekturu úložiště a umožňuje, aby se databáze v případě potřeby rostla a nemusela předem zřizovat prostředky úložiště. Výpočetní prostředky a prostředky úložiště můžete škálovat nezávisle a zajistit tak flexibilitu pro optimalizaci výkonu pro jednotlivé úlohy. Azure SQL Database škálování je optimalizované pro zpracování [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) a úlohy s vysokou propustností s úložištěm až 100 TB.  Díky úlohám náročným na čtení poskytuje škálování na více instancí rychlé škálování tím, že je potřeba zřídit další repliky pro čtení podle potřeby pro přesměrování zatížení pro úlohy čtení.
 
 Kromě tradičního Microsoft SQL Serverového zásobníku nabízí Azure taky spravované verze několika oblíbených open source databází.
 
@@ -59,7 +59,7 @@ Kromě tradičního Microsoft SQL Serverového zásobníku nabízí Azure taky s
 
 - Integrovaná [Vysoká dostupnost](https://docs.microsoft.com/azure/mysql/concepts-high-availability).
 
-- Předvídatelný výkon s využitím celkových cen průběžných [plateb](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers). 
+- Předvídatelný výkon s využitím celkových cen průběžných [plateb](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers).
 
 - [Škálování](https://docs.microsoft.com/azure/mysql/concepts-high-availability) podle potřeby během několika sekund.
 
@@ -69,7 +69,7 @@ Kromě tradičního Microsoft SQL Serverového zásobníku nabízí Azure taky s
 
 - Zabezpečení a dodržování předpisů na podnikové úrovni.
 
-Tyto integrované funkce PaaS jsou důležité pro organizace, které mají v datových centrech stovky databází taktické (nestrategická), ale nemají k dispozici žádné prostředky, které by měly provádět opravy, zálohování, zabezpečení a sledování výkonu. 
+Tyto integrované funkce PaaS jsou důležité pro organizace, které mají v datových centrech stovky databází taktické (nestrategická), ale nemají k dispozici žádné prostředky, které by měly provádět opravy, zálohování, zabezpečení a sledování výkonu.
 
 Kromě toho může [Služba Azure Data Migration Service](https://azure.microsoft.com/services/database-migration/) migrovat data z více databázových zdrojů do datových platforem Azure s minimálními výpadky. Služba generuje sestavy hodnocení a poskytuje doporučení, která vás provedou změnami potřebnými k provádění migrace, malými i velkými.
 
@@ -87,8 +87,8 @@ MariaDB má silný následující a používá se v mnoha velkých podnicích. I
 
 - Integrovaná [Vysoká dostupnost](https://docs.microsoft.com/azure/mariadb/concepts-high-availability).
 
-- Předvídatelný výkon s využitím celkových cen průběžných [plateb](https://docs.microsoft.com/azure/mariadb/concepts-pricing-tiers). 
- 
+- Předvídatelný výkon s využitím celkových cen průběžných [plateb](https://docs.microsoft.com/azure/mariadb/concepts-pricing-tiers).
+
 - [Škálování](https://docs.microsoft.com/azure/mariadb/concepts-high-availability) podle potřeby během několika sekund.
 
 - Zabezpečená ochrana citlivých dat v klidovém provozu a v pohybu.
@@ -97,7 +97,7 @@ MariaDB má silný následující a používá se v mnoha velkých podnicích. I
 
 - Zabezpečení a dodržování předpisů na podnikové úrovni.
 
-## <a name="azure-database-for-postgresql"></a>Azure Database for PostgreSQL 
+## <a name="azure-database-for-postgresql"></a>Azure Database for PostgreSQL
 
 [PostgreSQL](https://www.postgresql.org/) je jiná oblíbená a open source relační databáze s více než 30 lety aktivního vývoje. Je to univerzální systém pro správu relačních databází a objektů. Jeho licence se považují za "svobodně" a produkt je zdarma používat, upravovat a distribuovat v jakékoli podobě. Řada velkých podniků, včetně Apple, Red Hat a Fujitsu, vytvořila produkty s využitím PostgreSQL.
 
@@ -163,7 +163,7 @@ Dříve v části *relační versus NoSQL* jsme probrali předmět *konzistence 
 
 Většina distribuovaných databází umožňuje vývojářům vybírat ze dvou modelů konzistence: [silná konzistence](https://en.wikipedia.org/wiki/Strong_consistency) a konečná [konzistence](https://en.wikipedia.org/wiki/Eventual_consistency). *Silná konzistence* je Gold Standard pro programovatelnost dat. Zaručuje, že výsledek dotazu vždycky vrátí nejaktuálnější data, a to i v případě, že systém musí nabývat latencí, která čeká na replikaci u všech kopií databáze. Na druhé straně systém nakonfigurovaný pro konečnou *konzistenci* vrátí data okamžitě, i když tato data nejsou nejaktuálnější kopie. Tato možnost umožňuje vyšší dostupnost, větší měřítko a vyšší výkon.
 
-Azure Cosmos DB nabízí spektrum [pěti jasně definovaných modelů konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) znázorněných na obrázku 5-16. Tyto možnosti umožňují provést přesné volby a členitosti s ohledem na dostupnost a výkon na základě potřeb vaší aplikace. Tyto modely jsou dobře definované, intuitivní a jsou založené na smlouvách o úrovni služeb (SLA). 
+Azure Cosmos DB nabízí spektrum [pěti jasně definovaných modelů konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) znázorněných na obrázku 5-16. Tyto možnosti umožňují provést přesné volby a členitosti s ohledem na dostupnost a výkon na základě potřeb vaší aplikace. Tyto modely jsou dobře definované, intuitivní a jsou založené na smlouvách o úrovni služeb (SLA).
 
 ![Cosmos DB úrovně konzistence](./media/cosmos-db-consistency-levels.png)
 
@@ -171,7 +171,7 @@ Azure Cosmos DB nabízí spektrum [pěti jasně definovaných modelů konzistenc
 
 ### <a name="partitioning"></a>Dělení
 
-Azure Cosmos DB používá automatické [dělení](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) ke škálování databáze tak, aby splňovala požadavky vaší aplikace na výkon. 
+Azure Cosmos DB používá automatické [dělení](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) ke škálování databáze tak, aby splňovala požadavky vaší aplikace na výkon.
 
 Data můžete spravovat v Cosmos DB dat vytvořením [databází, kontejnerů a položek](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items), které jsou znázorněné na obrázku 5-17.
 
@@ -193,7 +193,7 @@ Interně Cosmos DB automaticky spravuje umístění [logických oddílů](https:
 
 ## <a name="azure-redis-cache"></a>Azure Redis Cache
 
-Výhody ukládání do mezipaměti pro zlepšení výkonu a škálovatelnosti se dobře rozumí. 
+Výhody ukládání do mezipaměti pro zlepšení výkonu a škálovatelnosti se dobře rozumí.
 
 Pro cloudovou nativní aplikaci je běžné umístění pro přidání do mezipaměti uvnitř brány rozhraní API. Brána slouží jako front-end pro všechny příchozí požadavky. Přidáním ukládání do mezipaměti můžete zvýšit výkon a rychlost odezvy vrácením dat uložených v mezipaměti a zabráněním zpátečním cestám do místní databáze nebo služby pro příjem dat. Obrázek 5-19 ukazuje architekturu ukládání do mezipaměti pro nativní cloudovou aplikaci.
 

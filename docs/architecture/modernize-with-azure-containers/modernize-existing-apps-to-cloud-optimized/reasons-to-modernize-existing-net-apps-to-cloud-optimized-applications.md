@@ -2,12 +2,12 @@
 title: Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 ms.date: 04/28/2018
-ms.openlocfilehash: 3154f9a9e11b42330fcc753ffd961316e4ada335
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 55eb3fb9b0b6c91e25bcdb23056a8a8e51463ef7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522933"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093631"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 
@@ -19,7 +19,7 @@ Potřeba průběžných firemních inovací do limitu nabízí vývoj a provozn�
 
 Dolním řádkem je, že když organizace sestavuje a spravuje aplikace, které jsou optimalizované pro Cloud, můžou do rukou zákazníků vložit řešení a při jejich relevantních nápadech přinášet nové nápady na trh.
 
-## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy a principy optimalizované pro cloudové aplikace 
+## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy a principy optimalizované pro cloudové aplikace
 
 Vylepšení v cloudu se většinou zaměřují na splnění dvou cílů: Snižte náklady a zvyšte růst podnikání díky vylepšení flexibility. Tyto cíle se dosahují zjednodušením procesů a snížením třením při vydávání a dodávání aplikací.
 

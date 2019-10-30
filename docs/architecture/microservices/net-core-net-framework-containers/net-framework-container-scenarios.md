@@ -2,12 +2,12 @@
 title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Framework pro kontejnery Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 575af1bc1966a25a01acdcfe106870ad1b7c477d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8316d17aae09ddbd70bd80af4f06d8cb029f2752
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039646"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093769"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -27,7 +27,7 @@ Kromě toho se [Sada Windows Compatibility Pack](../../../core/porting/windows-c
 
 Nicméně i s výjimečným průběhem od .NET Standard 2,0 a .NET Core 2,1 mohou nastat případy, kdy některé balíčky NuGet potřebují ke spuštění Windows a nemusí podporovat .NET Core. Pokud jsou tyto balíčky pro vaši aplikaci důležité, budete je muset použít .NET Framework v kontejnerech Windows.
 
-## <a name="using-net-technologies-not-available-for-net-core"></a>Používání technologií .NET není k dispozici pro .NET Core 
+## <a name="using-net-technologies-not-available-for-net-core"></a>Používání technologií .NET není k dispozici pro .NET Core
 
 Některé technologie .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2,2 v tomto zápisu). Některé z nich budou dostupné v novějších verzích .NET Core (.NET Core 2. x), ale ostatní se nevztahují na nové vzory aplikací, na které cílí .NET Core, a nemusí být nikdy dostupné.
 
@@ -57,11 +57,11 @@ Pokud však libovolná platforma nebo služba v Azure stále nepodporuje .NET Co
 - **Přenos z .NET Framework do .NET Core**  
   [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
-- **Příručka .NET Core v Docker**[https://docs.microsoft.com/dotnet/core/docker/introduction](../../../core/docker/introduction.md)
+- **Průvodce rozhraním .NET Core v docker** [https://docs.microsoft.com/dotnet/core/docker/introduction](../../../core/docker/introduction.md)
 
 - **Přehled komponent .NET**  
   [https://docs.microsoft.com/dotnet/standard/components](../../../standard/components.md)
 
 >[!div class="step-by-step"]
->[Předchozí](net-core-container-scenarios.md)Další
->[](container-framework-choice-factors.md)
+>[Předchozí](net-core-container-scenarios.md)
+>[Další](container-framework-choice-factors.md)

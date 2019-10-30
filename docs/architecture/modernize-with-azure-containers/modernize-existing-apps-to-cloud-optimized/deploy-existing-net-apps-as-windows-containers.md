@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Nasazení stávajících aplikací .NET jako kontejnerů Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 997b32e51272be2126bd824de1f8f026d77ca203
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 28568ca363bfc8100f78b100f8a7f0242c4f04c9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318659"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089561"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -154,11 +154,11 @@ U produktů v Azure podporujících kontejnery, které jsou na úrovni PaaS (pla
 
 - **Azure App Service**
 - **Služba Azure Kubernetes (AKS a ACS)**
-- **Azure Batch** 
+- **Azure Batch**
 
 Pak Azure Container Registry je vysoce škálovatelný registr kontejnerů hostovaný v Azure, který můžete použít ze všech předchozích produktů při registraci a nasazení vlastních imagí kontejneru.
 
-Z vašich kontejnerů navíc můžete využívat jiné spravované služby v Azure, jako je Azure SQL Database, Azure Redis Cache, Azure Cosmos DB atd. k dispozici jsou řešení/platformy třetích stran, které jsou dostupné v Azure Marketplace jako Cloud Foundry a OpenShift, kde můžete také používat kontejnery v Azure. 
+Z vašich kontejnerů navíc můžete využívat jiné spravované služby v Azure, jako je Azure SQL Database, Azure Redis Cache, Azure Cosmos DB atd. k dispozici jsou řešení/platformy třetích stran, které jsou dostupné v Azure Marketplace jako Cloud Foundry a OpenShift, kde můžete také používat kontejnery v Azure.
 
 V dalších částech můžete prozkoumat doporučení Microsoftu, kdy používat jednotlivé produkty a řešení Azure konkrétně při cílení na kontejnery Windows.
 

@@ -2,18 +2,18 @@
 title: Vzory odolnosti aplikací
 description: Architekt cloudových nativních aplikací .NET pro Azure | Vzory odolnosti aplikací
 ms.date: 06/30/2019
-ms.openlocfilehash: 67ae20f14a67f3a96d6c74cad727afe680ff3178
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 13811efaa88e0bd2824add1c8712b78b18d46375
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315951"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087753"
 ---
 # <a name="application-resiliency-patterns"></a>Vzory odolnosti aplikací
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-První linií obrany je odolnost aplikace s podporou softwaru. 
+První linií obrany je odolnost aplikace s podporou softwaru.
 
 I když můžete investovat do svého vlastního rozhraní odolného proti chybám, takové produkty už existují. [Polly](http://www.thepollyproject.org/) je například komplexní odolnost proti chybám .NET a knihovnou s přechodným zpracováním chyb, která vývojářům umožňuje vyjádřit zásady odolnosti proti chybám v rámci technologie Fluent a bezpečných pro přístup z více vláken. Polly cílí na aplikace sestavené s úplnými .NET Framework nebo .NET Core. Obrázek 6-2 ukazuje zásady odolnosti (tj. funkce) dostupné v knihovně Polly. Tyto zásady je možné použít individuálně nebo společně.
 

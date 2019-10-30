@@ -1,15 +1,15 @@
 ---
-title: Orchestrace mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost
+title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Seznamte se s možnostmi pro orchestraci mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev Spaces během vývoje životního cyklu aplikace Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: f0efad0134ec95028ecd49ad8d294ae4813940e9
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3915e6386e66d40bedc92368bfbcda81790c6923
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834327"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090145"
 ---
-# <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost
+# <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
 Použití orchestrací pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založená na mikroslužbách nebo jednoduše rozdělená mezi několik kontejnerů. Jak jsme už dřív představili, v rámci přístupu na základě mikroslužeb každá mikroslužba vlastní svůj model a data tak, že bude autonomní z pohledu vývoje a nasazení. I když máte obecnější aplikaci, která se skládá z několika služeb (například SOA), budete mít také více kontejnerů nebo služeb tvořících jednu obchodní aplikaci, která musí být nasazena jako distribuovaný systém. Tyto druhy systémů jsou složité pro horizontální navýšení kapacity a správu. Proto budete potřebovat Orchestrator, pokud chcete mít aplikaci s více kontejnery připravenou pro produkční prostředí a škálovatelnost.
 
@@ -37,8 +37,8 @@ Koncepty clusteru a plánovače úzce souvisejí, takže produkty poskytované r
 
 |     |   |
 |-----|---|
-| **Kubernetes** <br> @no__t 0An obrázek loga Kubernetes. ](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) je open source produkt, který poskytuje funkce, které jsou v rozsahu od infrastruktury clusteru a plánování kontejneru až po orchestraci možností. Umožňuje automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br><br> *Kubernetes* poskytuje infrastrukturu zaměřenou na kontejner, která seskupuje kontejnery aplikací do logických jednotek pro jednoduchou správu a zjišťování. <br><br> *Kubernetes* je vyspělá v systému Linux a méně vyspělá ve Windows. |
-| **Azure Kubernetes Service (AKS)** <br> @no__t 0An obrázek loga služby Azure Kubernetes. ](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes. |
+| **Kubernetes** <br> ![obrázek loga Kubernetes](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) je open source produkt, který poskytuje funkce, které jsou v rozsahu od infrastruktury clusteru a plánování kontejneru až po orchestraci možností. Umožňuje automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br><br> *Kubernetes* poskytuje infrastrukturu zaměřenou na kontejner, která seskupuje kontejnery aplikací do logických jednotek pro jednoduchou správu a zjišťování. <br><br> *Kubernetes* je vyspělá v systému Linux a méně vyspělá ve Windows. |
+| **Služba Azure Kubernetes (AKS)** <br> ![obrázek loga služby Azure Kubernetes.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes. |
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Použití orchestrací založených na kontejnerech v Microsoft Azure
 
@@ -50,7 +50,7 @@ Cluster Kubernetes fonduje několik hostitelů Docker a zpřístupňuje je jako 
 
 AKS poskytuje způsob, jak zjednodušit vytváření, konfiguraci a správu clusteru virtuálních počítačů v Azure, které jsou předem nakonfigurované tak, aby se spouštěly aplikace s využitím kontejnerů. Díky optimalizované konfiguraci oblíbených open source nástrojů pro plánování a orchestraci vám AKS umožňuje využívat stávající dovednosti nebo nakládat na velký a rostoucí tělo odborného posudku komunity k nasazení a správě kontejnerových aplikací na Microsoft Azure .
 
-Služba Azure Kubernetes optimalizuje konfiguraci oblíbených nástrojů a technologií open-source pro clustery Docker, konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i konfigurace aplikací. Vyberte velikost, počet hostitelů a nástroje Orchestrator a AKS zpracuje všechno ostatní.
+Služba Azure Kubernetes optimalizuje konfiguraci oblíbených nástrojů a technologií open-source pro clustery Docker, konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i konfiguraci vaší aplikace. Vyberte velikost, počet hostitelů a nástroje Orchestrator a AKS zpracuje všechno ostatní.
 
 ![Diagram znázorňující strukturu clusteru Kubernetes.](./media/scalable-available-multi-container-microservice-applications/kubernetes-cluster-simplified-structure.png)
 
@@ -62,11 +62,11 @@ Na obrázku 4-24 můžete zobrazit strukturu clusteru Kubernetes, kde hlavní uz
 
 V vývojovém prostředí [Docker oznámil v červenci 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) , že Kubernetes může také běžet na jednom vývojovém počítači (Windows 10 nebo MacOS) pouhou instalací [Docker desktopu](https://docs.docker.com/install/). Později můžete nasadit do cloudu (AKS) pro další testy integrace, jak je znázorněno na obrázku 4-25.
 
-![Diagram znázorňující Kubernetes na vývojovém počítači, který se pak nasadí do AKS](./media/scalable-available-multi-container-microservice-applications/kubernetes-development-environment.png) 
+![Diagram znázorňující Kubernetes na vývojovém počítači, který se pak nasadí do AKS](./media/scalable-available-multi-container-microservice-applications/kubernetes-development-environment.png)
 
 **Obrázek 4-25**. Spuštění Kubernetes ve vývojovém počítači a v cloudu
 
-## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Začínáme se službou Azure Kubernetes (AKS) 
+## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Začínáme se službou Azure Kubernetes (AKS)
 
 Chcete-li začít používat AKS, nasaďte cluster AKS z Azure Portal nebo pomocí rozhraní příkazového řádku. Další informace o nasazení clusteru Kubernetes v Azure najdete v tématu [nasazení clusteru Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
@@ -88,7 +88,7 @@ Další informace o implementaci Helm grafů a Kubernetes najdete v příspěvku
 
 ## <a name="use-azure-dev-spaces-for-your-kubernetes-application-lifecycle"></a>Použití Azure Dev Spaces pro životní cyklus aplikace Kubernetes
 
-[Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) poskytuje rychlé a iterativní vývojové prostředí Kubernetes pro týmy. S minimálním nastavováním počítačů pro vývoj můžete iterativně spouštět a ladit kontejnery přímo ve službě Azure Kubernetes Service (AKS). Můžete vyvíjet pro Windows, Mac nebo Linux pomocí známých nástrojů, jako jsou Visual Studio a Visual Studio Code, nebo pomocí příkazového řádku.
+[Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) poskytuje rychlé a iterativní vývojové prostředí Kubernetes pro týmy. S minimálním nastavením pro vývoj počítačů můžete iterativní spouštění a ladění kontejnerů přímo ve službě Azure Kubernetes Service (AKS). Vývoj v systémech Windows, Mac nebo Linux pomocí známých nástrojů, jako je Visual Studio, Visual Studio Code nebo příkazového řádku.
 
 Jak bylo zmíněno, Azure Dev Spaces používá při nasazování aplikací založených na kontejneru Helm grafy.
 
@@ -100,7 +100,7 @@ Jak je znázorněno na obrázku 4-26, nejrozdílnou funkcí v Azure Dev Spaces j
 
 **Obrázek 4-26**. Použití více mezer v Azure Dev Spaces
 
-V podstatě můžete nastavit sdílený prostor pro vývoj v Azure. Každý vývojář se může zaměřit jenom na jejich část aplikace a může iterativním způsobem vyvíjet kód před potvrzením ve vývojovém prostoru, který už obsahuje všechny ostatní služby a cloudové prostředky, na kterých jsou závislé jejich scénáře. Závislosti jsou vždycky aktuální a vývojáři pracují způsobem, který odpovídá produkčnímu prostředí.
+V podstatě můžete nastavit sdílený prostor pro vývoj v Azure. Každý vývojář se může zaměřit jenom na jejich část aplikace a může iterativním způsobem vyvíjet kód před potvrzením ve vývojovém prostoru, který už obsahuje všechny ostatní služby a cloudové prostředky, na kterých jsou závislé jejich scénáře. Závislosti jsou vždycky aktuální a vývojáři pracují způsobem, který zrcadlí produkci.
 
 Azure Dev Spaces poskytuje koncept prostoru, který vám umožní pracovat v relativní izolaci a bez obav, že váš tým funguje. Každé vývojové místo je součástí hierarchické struktury, která umožňuje potlačit jednu mikroslužbu (nebo mnoho) z hlavního vývojového prostoru "nejdůležitější" a vlastní mikroslužba probíhající v práci.
 
@@ -110,7 +110,7 @@ Tato funkce je založena na předponách adres URL, takže při použití předp
 
 Další informace najdete v článku o [vývoji týmu pomocí Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další zdroje
 
 - **Začínáme se službou Azure Kubernetes Service (AKS)**  \
   <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>
@@ -122,4 +122,5 @@ Další informace najdete v článku o [vývoji týmu pomocí Azure dev Spaces](
   <https://kubernetes.io/>
 
 >[!div class="step-by-step"]
->[Předchozí](resilient-high-availability-microservices.md)@no__t – 1 –[Další](../docker-application-development-process/index.md)
+>[Předchozí](resilient-high-availability-microservices.md)
+>[Další](../docker-application-development-process/index.md)

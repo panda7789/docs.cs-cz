@@ -4,12 +4,12 @@ description: Naučte se sestavovat znovu použitelné součásti uživatelského
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: ab9697bcb12ec17528415b3ad4d850803f472b36
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 79919b183a4eb759f0b27c97500ee71c9378770b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520331"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088102"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Sestavení opakovaně použitelných součástí uživatelského rozhraní pomocí Blazor
 
@@ -237,7 +237,7 @@ Obslužné rutiny událostí mohou pro poskytnutí dalších informací o událo
 <button @onclick="OnClick">Click me!</button>
 
 @code {
-    void OnClick(MouseEventArgs e) 
+    void OnClick(MouseEventArgs e)
     {
         Console.WriteLine($"Mouse clicked at {e.ScreenX}, {e.ScreenY}.");
     }
@@ -259,7 +259,7 @@ Obslužné rutiny událostí lze provádět synchronně nebo asynchronně. Např
 <button @onclick="OnClick">Click me!</button>
 
 @code {
-    async Task OnClick() 
+    async Task OnClick()
     {
         var result = await Http.GetAsync("api/values");
     }
@@ -283,7 +283,7 @@ Po zpracování události se komponenta vykreslí do účtu pro všechny změny 
     }
 }
 
-@code 
+@code
 {
     bool showMessage = false;
     string message;
@@ -343,9 +343,9 @@ Komponenty mohou také podporovat datovou vazbu k jejich parametrům. Pro vázá
 *PasswordBox. Razor*
 
 ```razor
-Password: <input 
-    value="@Password" 
-    @oninput="OnPasswordChanged" 
+Password: <input
+    value="@Password"
+    @oninput="OnPasswordChanged"
     type="@(showPassword ? "text" : "password")" />
 
 <label><input type="checkbox" @bind="showPassword" />Show password</label>
@@ -431,7 +431,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Komponenty Blazor mají také dobře definovaný životní cyklus. Životní cyklus komponenty lze použít k inicializaci stavu součásti a implementaci pokročilého chování komponent. 
+Komponenty Blazor mají také dobře definovaný životní cyklus. Životní cyklus komponenty lze použít k inicializaci stavu součásti a implementaci pokročilého chování komponent.
 
 Všechny metody životního cyklu komponenty Blazor mají synchronní i asynchronní verzi. Vykreslování součásti je synchronní. Asynchronní logiku nelze spustit jako součást vykreslování komponenty. Veškerá asynchronní logika musí být spuštěna jako součást metody životního cyklu `async`.
 
@@ -455,7 +455,7 @@ protected override async Task OnParametersSetAsync() { await ... }
 
 ### <a name="onafterrender"></a>OnAfterRender
 
-Metody `OnAfterRender` a `OnAfterRenderAsync` jsou volány po dokončení vykreslování součásti. V tomto bodě jsou zaplněny odkazy na elementy a součásti (Další informace o těchto konceptech). V tuto chvíli je povolená interaktivita v prohlížeči. Interakce s modelem DOM a prováděním JavaScriptu můžou bezpečně probíhat. 
+Metody `OnAfterRender` a `OnAfterRenderAsync` jsou volány po dokončení vykreslování součásti. V tomto bodě jsou zaplněny odkazy na elementy a součásti (Další informace o těchto konceptech). V tuto chvíli je povolená interaktivita v prohlížeči. Interakce s modelem DOM a prováděním JavaScriptu můžou bezpečně probíhat.
 
 ```csharp
 protected override void OnAfterRender(bool firstRender)
@@ -525,9 +525,9 @@ Komponenty Blazor mohou zachytit odkazy na prvek. Na rozdíl od serverových ovl
 
 ## <a name="templated-components"></a>Komponenty se šablonami
 
-Ve webových formulářích ASP.NET můžete vytvořit *ovládací prvky s šablonami*. Ovládací prvky s šablonou umožňují vývojáři zadat část kódu HTML použitou k vykreslení ovládacího prvku kontejneru. Mechanismus sestavování serverových ovládacích prvků na základě šablon je složitý, ale umožňuje výkonné scénáře pro vykreslování dat uživatelsky přizpůsobitelným způsobem. Příklady ovládacích prvků s šablonami zahrnují `Repeater` a `DataList`. 
+Ve webových formulářích ASP.NET můžete vytvořit *ovládací prvky s šablonami*. Ovládací prvky s šablonou umožňují vývojáři zadat část kódu HTML použitou k vykreslení ovládacího prvku kontejneru. Mechanismus sestavování serverových ovládacích prvků na základě šablon je složitý, ale umožňuje výkonné scénáře pro vykreslování dat uživatelsky přizpůsobitelným způsobem. Příklady ovládacích prvků s šablonami zahrnují `Repeater` a `DataList`.
 
-Komponenty Blazor lze také šablonou definovat definováním parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>`. @No__t_0 představuje blok kódu Razor, který lze následně vykreslit komponentou. @No__t_0 je blok značek Razor, který přebírá parametr, který lze zadat při vykreslení fragmentu vykreslování.
+Komponenty Blazor lze také šablonou definovat definováním parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>`. `RenderFragment` představuje blok kódu Razor, který lze následně vykreslit komponentou. `RenderFragment<T>` je blok značek Razor, který přebírá parametr, který lze zadat při vykreslení fragmentu vykreslování.
 
 ### <a name="child-content"></a>Podřízený obsah
 
@@ -626,7 +626,7 @@ Komponenta Blazor je obvykle vytvořená v jednom souboru *. Razor* . Je však t
 *Counter.razor.cs*
 
 ```csharp
-public class CounterBase : ComponentBase 
+public class CounterBase : ComponentBase
 {
     protected int currentCount = 0;
 

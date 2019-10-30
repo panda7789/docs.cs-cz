@@ -3,12 +3,12 @@ title: Komunikace mezi službami
 description: Přečtěte si, jak cloudové mikroslužby back-end komunikují s ostatními back-end mikroslužbami.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 0917ae8bf38b117619cec63411ea8f4f084ae6f2
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 6a7e72491cb56d925e684b94109b1aaa98e24df3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315863"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094625"
 ---
 # <a name="service-to-service-communication"></a>Komunikace mezi službami
 
@@ -60,13 +60,13 @@ Oblíbenou možností pro odebrání spojení s mikroslužbami je [model materia
 
 ### <a name="service-aggregator-pattern"></a>Model Agregátoru služby
 
-Další možností pro odstranění spojení mikroslužeb proti mikroslužbám je [agregátorová mikroslužba](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), která je znázorněná fialově na obrázku 4-10. 
+Další možností pro odstranění spojení mikroslužeb proti mikroslužbám je [agregátorová mikroslužba](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), která je znázorněná fialově na obrázku 4-10.
 
 ![Služba Agregátoru](./media/aggregator-service.png)
 
 **Obrázek 4-10**. Mikroslužba Agregátoru
 
-Vzorek izoluje operaci, která umožňuje volat více back-endové mikroslužby a soustřeďuje logiku do specializované mikroslužby.  Mikroslužba Agregátoru pro fialovou rezervaci na předchozím obrázku orchestruje pracovní postup pro operaci rezervace. Zahrnuje volání několika mikroslužeb back-end v pořadí podle pořadí. Data z pracovního postupu se agreguje a vrátí volajícímu. I když stále implementuje Přímá volání HTTP, omezuje mikroslužba Agregátoru přímé závislosti mezi back-endové mikroslužby. 
+Vzorek izoluje operaci, která umožňuje volat více back-endové mikroslužby a soustřeďuje logiku do specializované mikroslužby.  Mikroslužba Agregátoru pro fialovou rezervaci na předchozím obrázku orchestruje pracovní postup pro operaci rezervace. Zahrnuje volání několika mikroslužeb back-end v pořadí podle pořadí. Data z pracovního postupu se agreguje a vrátí volajícímu. I když stále implementuje Přímá volání HTTP, omezuje mikroslužba Agregátoru přímé závislosti mezi back-endové mikroslužby.
 
 ### <a name="requestreply-pattern"></a>Vzor požadavků a odpovědí
 
@@ -80,7 +80,7 @@ V tomto případě producent zprávy vytvoří zprávu založenou na dotazech, k
 
 ## <a name="commands"></a>Příkazy
 
-Dalším typem interakce komunikace je *příkaz*. Mikroslužba může pro provedení akce potřebovat jinou mikroslužbu. Mikroslužba objednávání možná potřebuje, aby mikroslužba expedice vytvořila dodávku pro schválenou objednávku. Na obrázku 4-12 jedna mikroslužba, označovaná jako producent, pošle zprávu jiné mikroslužbě, příjemce a provede to. 
+Dalším typem interakce komunikace je *příkaz*. Mikroslužba může pro provedení akce potřebovat jinou mikroslužbu. Mikroslužba objednávání možná potřebuje, aby mikroslužba expedice vytvořila dodávku pro schválenou objednávku. Na obrázku 4-12 jedna mikroslužba, označovaná jako producent, pošle zprávu jiné mikroslužbě, příjemce a provede to.
 
 ![Interakce příkazů s frontou](./media/command-interaction-with-queue.png)
 
@@ -88,7 +88,7 @@ Dalším typem interakce komunikace je *příkaz*. Mikroslužba může pro prove
 
 Ve většině případů producent nevyžaduje odpověď a zprávu může spustit *a zapomenout* . Pokud je vyžadována odpověď, příjemce pošle samostatnou zprávu zpět producentovi na jiném kanálu. Zpráva příkazu se nejlépe odesílá asynchronně s frontou zpráv. podporováno nezjednodušeným zprostředkovatelem zpráv. V předchozím diagramu si všimněte, jak fronta odděluje a odděluje obě služby.
 
-Fronta zpráv je zprostředkující konstrukce, přes kterou producent a příjemce docházejí zprávu. Fronty implementují asynchronní model zasílání zpráv typu Point-to-Point. Výrobce ví, kde je třeba odeslat a správně směrovat příkazy. Ve frontě je zaručeno, že zpráva je zpracována přes právě jednu z instancí spotřebitele, která je čtena z kanálu. V tomto scénáři může producent nebo služba příjemce škálovat horizontální navýšení kapacity, aniž by to mělo vliv na ostatní. I ty technologie můžou být různorodé na každé straně, což znamená, že mikroslužba Java může volat mikroslužbu [golang](https://golang.org) . 
+Fronta zpráv je zprostředkující konstrukce, přes kterou producent a příjemce docházejí zprávu. Fronty implementují asynchronní model zasílání zpráv typu Point-to-Point. Výrobce ví, kde je třeba odeslat a správně směrovat příkazy. Ve frontě je zaručeno, že zpráva je zpracována přes právě jednu z instancí spotřebitele, která je čtena z kanálu. V tomto scénáři může producent nebo služba příjemce škálovat horizontální navýšení kapacity, aniž by to mělo vliv na ostatní. I ty technologie můžou být různorodé na každé straně, což znamená, že mikroslužba Java může volat mikroslužbu [golang](https://golang.org) .
 
 V kapitole 1 se mluvili o *službách zálohování*. Záložní služby jsou pomocné prostředky, na kterých jsou závislé nativní systémy cloudu. Fronty zpráv jsou zálohovací služby. Cloud Azure podporuje dva typy front zpráv, které můžou vaše cloudové nativní systémy využívat k implementaci zasílání zpráv příkazem: Azure Storage front a Azure Service Bus front.
 
@@ -116,7 +116,7 @@ Obrázek 4-13 ukazuje hierarchii Azure Storage fronty.
 
 Na předchozím obrázku si všimněte, jak fronty úložiště ukládají své zprávy v podkladovém účtu Azure Storage.
 
-Pro vývojáře nabízí Microsoft několik klientských a serverových knihoven pro zpracování fronty úložiště. Většina hlavních platforem je podporovaná, včetně .NET, Java, JavaScriptu, Ruby, Pythonu a přechodu. Vývojáři by nikdy neměli komunikovat přímo s těmito knihovnami. Provedete to tak, že kód mikroslužby pevně propojíte s Azure Storage Služba front. Je lepší postupovat při izolaci podrobností o implementaci rozhraní API. Zavedení vícevrstvé vrstvy nebo zprostředkujícího rozhraní API, které zpřístupňuje obecné operace a zapouzdřuje konkrétní knihovnu. Toto volné spojení vám umožní odpínat jednu službu Řízení front pro jinou, aniž by bylo nutné provádět změny v kódu služby hlavní. 
+Pro vývojáře nabízí Microsoft několik klientských a serverových knihoven pro zpracování fronty úložiště. Většina hlavních platforem je podporovaná, včetně .NET, Java, JavaScriptu, Ruby, Pythonu a přechodu. Vývojáři by nikdy neměli komunikovat přímo s těmito knihovnami. Provedete to tak, že kód mikroslužby pevně propojíte s Azure Storage Služba front. Je lepší postupovat při izolaci podrobností o implementaci rozhraní API. Zavedení vícevrstvé vrstvy nebo zprostředkujícího rozhraní API, které zpřístupňuje obecné operace a zapouzdřuje konkrétní knihovnu. Toto volné spojení vám umožní odpínat jednu službu Řízení front pro jinou, aniž by bylo nutné provádět změny v kódu služby hlavní.
 
 Fronty Azure Storage jsou ekonomicky výhodné k implementaci příkazů pro zasílání zpráv v cloudových nativních aplikacích. Obzvláště když velikost fronty překročí 80 GB, nebo je jednoduchá sada funkcí přijatelná. Platíte jenom za úložiště zpráv. neexistují žádné pevné hodinové poplatky.
 
@@ -146,9 +146,9 @@ Na předchozím obrázku si všimněte vztahu Point-to-Point. Dvě instance stej
 
 ## <a name="events"></a>Události
 
-Služba Řízení front zpráv představuje účinný způsob, jak implementovat komunikaci, když producent může asynchronně poslat zprávu příjemce. Co se ale stane, když se stejná zpráva zajímá *mnoho různých uživatelů* ? Vyhrazená fronta zpráv pro každého příjemce by nemusela správně škálovat a měla by být obtížná spravovat. 
+Služba Řízení front zpráv představuje účinný způsob, jak implementovat komunikaci, když producent může asynchronně poslat zprávu příjemce. Co se ale stane, když se stejná zpráva zajímá *mnoho různých uživatelů* ? Vyhrazená fronta zpráv pro každého příjemce by nemusela správně škálovat a měla by být obtížná spravovat.
 
-Pro vyřešení tohoto scénáře se přesunete na třetí typ interakce zprávy, která je v *události*. Jedna mikroslužba oznamuje, že došlo k nějaké akci. Další mikroslužby, pokud to zajímá, reagují na akci nebo na událost. 
+Pro vyřešení tohoto scénáře se přesunete na třetí typ interakce zprávy, která je v *události*. Jedna mikroslužba oznamuje, že došlo k nějaké akci. Další mikroslužby, pokud to zajímá, reagují na akci nebo na událost.
 
 Událost je proces se dvěma kroky. Pro danou změnu stavu mikroslužba publikuje událost zprostředkovateli zpráv a zpřístupní ji všem dalším zúčastněným mikroslužbám. Zúčastněná mikroslužba je informována o přihlášení k odběru události v zprostředkovateli zpráv. Ke implementaci [komunikace založené na událostech](https://docs.microsoft.com/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications)slouží model [publikování/odběr](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) .
 
@@ -226,7 +226,7 @@ Event Hubs implementuje streamování zpráv prostřednictvím [děleného](http
 
 **Obrázek 4-19**. Vytváření oddílů centra událostí
 
-Místo čtení ze stejného prostředku každá skupina uživatelů čte celou podmnožinu nebo oddíl datového proudu zpráv. 
+Místo čtení ze stejného prostředku každá skupina uživatelů čte celou podmnožinu nebo oddíl datového proudu zpráv.
 
 V případě cloudových nativních aplikací, které musí streamovat velký počet událostí, může být centrum událostí Azure robustní a dostupné řešení.
 

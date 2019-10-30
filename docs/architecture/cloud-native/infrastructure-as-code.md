@@ -2,12 +2,12 @@
 title: Infrastruktura jako kód
 description: Architekt cloudových nativních aplikací .NET pro Azure | Infrastruktura jako kód
 ms.date: 06/30/2019
-ms.openlocfilehash: e395db28bdeff785251b91ed643f9920873d26e8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 3957da68ac28774f899f49fb181a29c2435902f8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183012"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087247"
 ---
 # <a name="infrastructure-as-code"></a>Infrastruktura jako kód
 
@@ -37,7 +37,7 @@ Sestavování prostředí může a také být automatizované. Existuje celá ř
 **Obrázek 11-10** – schéma pro šablonu správce prostředků
 
 V rámci této šablony může jedna definovat kontejner úložiště uvnitř oddílu prostředků, například takto:
- 
+
 ```json
 "resources": [
     {
@@ -62,11 +62,11 @@ V projektu [šablon rychlého startu Azure](https://github.com/Azure/azure-quick
 
 Šablony Správce prostředků lze spouštět různými způsoby. Možná je nejjednodušší způsob, jak je jednoduše vložit do Azure Portal. Pro experimentální nasazení může být tato metoda velmi rychlá. Můžete je také spustit jako součást procesu sestavení nebo vydání v Azure DevOps. K dispozici jsou úlohy, které budou používat připojení do Azure ke spouštění šablon. Změny šablon Správce prostředků se aplikují postupně, což znamená, že pokud chcete přidat nový prostředek, musíte ho jenom přidat do šablony. Nástroj bude zpracovávat rozdíl mezi aktuální skupinou prostředků a požadovanou skupinou prostředků definovanou v šabloně. Prostředky se pak vytvoří nebo změní, aby odpovídaly tomu, co je definováno v šabloně.  
 
-## <a name="terraform"></a>Terraform
+## <a name="terraform"></a>Terraformu
 
 Napozorovaná nevýhody Správce prostředků šablon je, že jsou specifická pro cloud Azure. Nezvykle vytvářet aplikace, které zahrnují prostředky z více než jednoho cloudu, ale v případě, že podnik spoléhá na Spectacular dobu provozu, může to mít za následek i náklady na podporu více cloudů. Pokud by existoval jeden šablonování jazyk, který by se mohl použít v každém cloudu, měl by taky zajistit, aby byly dovednosti pro vývojáře mnohem lépe přenosné.
 
-Existuje několik technologií, které to dělají jenom teď! Nejaktivnější nabídka v tomto prostoru se označuje jako [terraformu](https://www.terraform.io/). Terraformu podporuje všechny hlavní cloudové přehrávače, jako je Azure, Google Cloud Platform, AWS a AliCloud, a podporuje také desítky vedlejších hráčů, jako je Heroku a DigitalOcean. Místo použití formátu JSON jako jazyka definice šablony používá poněkud více stručný YAML. 
+Existuje několik technologií, které to dělají jenom teď! Nejaktivnější nabídka v tomto prostoru se označuje jako [terraformu](https://www.terraform.io/). Terraformu podporuje všechny hlavní cloudové přehrávače, jako je Azure, Google Cloud Platform, AWS a AliCloud, a podporuje také desítky vedlejších hráčů, jako je Heroku a DigitalOcean. Místo použití formátu JSON jako jazyka definice šablony používá poněkud více stručný YAML.
 
 Příklad souboru Terraformu, který se shoduje s předchozí šablonou Správce prostředků (obrázek 11-11), je znázorněn na obrázku 11-12:
 

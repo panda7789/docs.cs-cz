@@ -2,16 +2,16 @@
 title: Migrace relačních databází do Azure
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | migrace relačních databází do Azure
 ms.date: 04/28/2018
-ms.openlocfilehash: b2153e65a12706b97fae11c5f23846c83bcd6642
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: efd1548c3f74fc27450f4949d71a1c4d61907ba5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374100"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093618"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do Azure
 
-Vidění Azure nabízí nejkomplexnější migraci databáze.
+Vize: Azure nabízí nejkomplexnější migraci databáze.
 
 V Azure můžete své databázové servery migrovat přímo do virtuálních počítačů s IaaS (čistý výtah a Shift), případně můžete migrovat na Azure SQL Database a získat další výhody. Azure SQL Database nabízí možnost Managed instance a úplné možnosti databáze jako služby (DBaaS). Obrázek 3-1 ukazuje několik cest k migraci relačních databází, které jsou k dispozici v Azure.
 
@@ -90,7 +90,7 @@ V současné době Microsoft Azure podporuje až [331 různých databázových s
 
 Může existovat několik případů, kdy stále potřebujete migrovat na SQL Server jako běžný virtuální počítač. Příkladem scénáře je, že je třeba použít SQL Server Reporting Services. Ve většině případů může ale Azure SQL Database spravovaná instance poskytnout vše, co potřebujete k migraci z místních serverů SQL, takže by migrace na SQL Server VM měla být vaše poslední možnost, kterou si můžete vyzkoušet.
 
-## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Použití Azure Database Migration Service k migraci relačních databází do Azure 
+## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Použití Azure Database Migration Service k migraci relačních databází do Azure
 
 Pomocí Azure Database Migration Service můžete migrovat relační databáze jako SQL Server, Oracle a MySQL do Azure, ať už máte cílovou databázi Azure SQL Database, Azure SQL Database spravovanou instanci nebo SQL Server na virtuálním počítači Azure.
 
@@ -104,7 +104,7 @@ Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Vyberte možnost cloudového SQL Server: Azure SQL Database (PaaS) nebo SQL Server na virtuálním počítači Azure (IaaS)**
+- **Volba cloudového SQL Serveru: Azure SQL Database (PaaS) nebo SQL Server na virtuálním počítači Azure (IaaS)**
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas>
 
@@ -112,7 +112,7 @@ Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service
 
     <https://channel9.msdn.com/Events/Build/2017/P4008>
 
-- **Migrace databáze SQL serveru do služby SQL Database v cloudu**
+- **Migrace databáze SQL Server do SQL Database v cloudu**
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate>
 
@@ -125,5 +125,5 @@ Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service
     <https://azure.microsoft.com/services/virtual-machines/sql-server/>
 
 > [!div class="step-by-step"]
-> [Předchozí](lift-and-shift-existing-apps-azure-iaas.md)Další
-> [](modernize-existing-apps-to-cloud-optimized/index.md) <!-- Next Chapter -->
+> [Předchozí](lift-and-shift-existing-apps-azure-iaas.md)
+> [Další](modernize-existing-apps-to-cloud-optimized/index.md) <!-- Next Chapter -->

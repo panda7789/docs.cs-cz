@@ -2,12 +2,12 @@
 title: Implementace čtení nebo dotazů v mikroslužbě CQRS
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení implementace dotazů, které jsou součástí CQRS, na základě řazení mikroslužby v eShopOnContainers pomocí Dapperem.
 ms.date: 10/08/2018
-ms.openlocfilehash: c39a42b7f5200208a0f812665a2d1c87b4433ba9
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 6541a0cb7ce8ac3946e119483308d91158bdb522
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275784"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094056"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementace čtení/dotazů v mikroslužbě CQRS
 
@@ -35,7 +35,7 @@ Vrácená data (ViewModel) mohou být výsledkem propojení dat z více entit ne
 
 ViewModels mohou být statické typy definované v třídách. Nebo je lze vytvořit dynamicky na základě provedených dotazů (jak je implementováno v mikroslužbě řazení), což je pro vývojáře velmi agilní.
 
-## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Použití Dapperem jako mikroorm k provádění dotazů 
+## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Použití Dapperem jako mikroorm k provádění dotazů
 
 Pro dotazování můžete použít jakýkoli mikroorm, Entity Framework Core nebo i prostý ADO.NET. V ukázkové aplikaci byl jako dobrý příklad oblíbených mikroorm vybraný Dapperem pro řazení mikroslužeb v eShopOnContainers. Může spouštět prosté dotazy SQL se skvělým výkonem, protože se jedná o velmi lehké rozhraní. Pomocí Dapperem můžete napsat dotaz SQL, který může přistupovat k několika tabulkám a připojovat se k nim.
 
@@ -119,16 +119,16 @@ public class OrderQueries : IOrderQueries
         {
             connection.Open();
             return await connection.QueryAsync<OrderSummary>(
-                  @"SELECT o.[Id] as ordernumber, 
-                  o.[OrderDate] as [date],os.[Name] as [status], 
+                  @"SELECT o.[Id] as ordernumber,
+                  o.[OrderDate] as [date],os.[Name] as [status],
                   SUM(oi.units*oi.unitprice) as total
                   FROM [ordering].[Orders] o
-                  LEFT JOIN[ordering].[orderitems] oi ON  o.Id = oi.orderid 
+                  LEFT JOIN[ordering].[orderitems] oi ON  o.Id = oi.orderid
                   LEFT JOIN[ordering].[orderstatus] os on o.OrderStatusId = os.Id
                   GROUP BY o.[Id], o.[OrderDate], os.[Name]
                   ORDER BY o.[Id]");
         }
-    } 
+    }
 }
 ```
 

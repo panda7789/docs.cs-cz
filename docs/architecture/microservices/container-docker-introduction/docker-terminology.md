@@ -2,12 +2,12 @@
 title: Terminologie Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Terminologie Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: a5f78ea0e848ef14f6b37e2d97d7546df20096c2
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 2735188c508a7bbb0101946429faec122b13a17b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179410"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090057"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -17,7 +17,7 @@ V této části jsou uvedeny pojmy a definice, se kterými byste se měli sezná
 
 **Souboru Dockerfile**: textový soubor, který obsahuje pokyny pro vytvoření image Docker. Je to jako dávkový skript, první řádek uvádí základní image, která se má začít, a potom postupujte podle pokynů k instalaci požadovaných programů, kopírování souborů a tak dále, dokud nezískáte pracovní prostředí, které potřebujete.
 
-**Sestavení**: akce vytvoření bitové kopie kontejneru na základě informací a kontextu, které poskytuje jeho souboru Dockerfile, a dalších souborů ve složce, ve které je obrázek sestaven. Image můžete vytvářet pomocí příkazu Docker **Docker Build** . 
+**Sestavení**: akce vytvoření bitové kopie kontejneru na základě informací a kontextu, které poskytuje jeho souboru Dockerfile, a dalších souborů ve složce, ve které je obrázek sestaven. Image můžete vytvářet pomocí příkazu Docker **Docker Build** .
 
 **Container**: instance bitové kopie Docker. Kontejner představuje spuštění jedné aplikace, procesu nebo služby. Skládá se z obsahu bitové kopie Docker, spouštěcího prostředí a standardní sady instrukcí. Při škálování služby vytvoříte více instancí kontejneru ze stejné image. Nebo úloha služby Batch může vytvořit více kontejnerů ze stejné image a předat do každé instance různé parametry.
 
@@ -47,7 +47,7 @@ V této části jsou uvedeny pojmy a definice, se kterými byste se měli sezná
 
 **Cluster**: kolekce hostitelů Docker, která byla vystavena jako jeden virtuální hostitel Docker, aby se aplikace mohla škálovat na víc instancí služeb, které jsou rozloženy mezi více hostitelů v rámci clusteru. Clustery Docker je možné vytvořit pomocí Kubernetes, Azure Service Fabric, Docker Swarm a Mesosphere DC/OS.
 
-**Orchestrator**: nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrace umožňují spravovat jejich image, kontejnery a hostitele prostřednictvím rozhraní příkazového řádku (CLI) nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služeb, vysokou dostupnost, konfiguraci hostitele Docker a další. Produkt Orchestrator zodpovídá za spouštění, distribuci, škálování a retušovaní úloh napříč kolekcí uzlů. Produkty Orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mimo jiné nabídky na trhu. 
+**Orchestrator**: nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrace umožňují spravovat jejich image, kontejnery a hostitele prostřednictvím rozhraní příkazového řádku (CLI) nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služeb, vysokou dostupnost, konfiguraci hostitele Docker a další. Produkt Orchestrator zodpovídá za spouštění, distribuci, škálování a retušovaní úloh napříč kolekcí uzlů. Produkty Orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mimo jiné nabídky na trhu.
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-defined.md)

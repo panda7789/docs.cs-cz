@@ -4,12 +4,12 @@ description: Úvod do Blazor a psaní plně vrstvených webových aplikací s vy
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 66b6d57b718c19b0f271c6b3a62a9d4a22d77ae0
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 6c045cd9c4378bd19f97dd722db054c969491d0b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520308"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087927"
 ---
 # <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Úvod do Blazor pro vývojáře webových formulářů ASP.NET
 
@@ -21,7 +21,7 @@ V průběhu let společnost Microsoft zavedla nové webové architektury založe
 
 V době psaní téměř poloviční miliony webových vývojářů využívají webové formuláře ASP.NET každý měsíc. Rozhraní webových formulářů ASP.NET je stabilní v bodě, kdy dokumentace, ukázky, knihy a blogové příspěvky z dekády zůstávají užitečné a relevantní. Pro mnoho webových vývojářů .NET je "ASP.NET" stále synonymem "ASP.NET Web Forms", stejně jako při prvním předí .NET. Argumenty pro profesionály a nevýhody webových formulářů ASP.NET ve srovnání s ostatními novými webovými rozhraními .NET Framework mohou být Rage zapnuty. Webové formuláře ASP.NET zůstanou oblíbená architektura pro vytváření webových aplikací.
 
-I tak se inovace při vývoji softwaru nezpomalují. Všichni vývojáři softwaru musí mít přehled o nových technologiích a trendech. K tomu je potřeba zvážit dva trendy: 
+I tak se inovace při vývoji softwaru nezpomalují. Všichni vývojáři softwaru musí mít přehled o nových technologiích a trendech. K tomu je potřeba zvážit dva trendy:
 
 1. Posun na open source a pro různé platformy
 2. Posunutí aplikační logiky na klienta

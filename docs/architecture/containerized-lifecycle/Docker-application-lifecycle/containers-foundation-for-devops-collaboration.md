@@ -2,12 +2,12 @@
 title: Kontejnery jako základ pro spolupráci DevOps
 description: Pochopte klíčovou roli kontejnerů, abyste zjednodušili DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: 16cccef0545f0da14128e31dc8f7ad78369cf23a
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8258f4331212d92376d64fef318adcdff492f61f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394816"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094503"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Kontejnery jako základ pro spolupráci DevOps
 
@@ -51,7 +51,7 @@ Tyto problémy vytvářejí nové požadavky při použití nástrojů DevOps, t
 
 - Jak můžeme používat Open Source nástroje/platformy pro kontejnery v Microsoft Azure?
 
-Pokud můžete odpovědět na všechny tyto otázky, budete lépe připraveni přesunout své aplikace (existující nebo nové aplikace) do kontejnerů Docker. 
+Pokud můžete odpovědět na všechny tyto otázky, budete lépe připraveni přesunout své aplikace (existující nebo nové aplikace) do kontejnerů Docker.
 
 ## <a name="introduction-to-a-generic-end-to-end-docker-application-life-cycle-workflow"></a>Seznámení s obecným pracovním postupem pro kompletní životní cyklus aplikací Docker
 

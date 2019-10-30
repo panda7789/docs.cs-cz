@@ -4,12 +4,12 @@ description: Seznamte se s různými způsoby hostování aplikace v Blazor, vč
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 82628976bcb1f1cee3089aa25488396af44d0f1a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 5bf55fa686691acc25508d3d9a6dfaf8aca321ca
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520297"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088048"
 ---
 # <a name="blazor-app-hosting-models"></a>Modely hostování aplikací Blazor
 
@@ -18,13 +18,13 @@ ms.locfileid: "72520297"
 Aplikace Blazor se dají hostovat ve službě IIS stejně jako aplikace webových formulářů ASP.NET. Aplikace Blazor lze také hostovat jedním z následujících způsobů:
 
 - Klientská strana v prohlížeči na webovém sestavení.
-- Na straně serveru v aplikaci ASP.NET Core. 
+- Na straně serveru v aplikaci ASP.NET Core.
 
 ## <a name="blazor-webassembly-apps"></a>Blazor aplikace WebAssembly
 
-Blazor aplikace WebAssembly se spouštějí přímo v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Blazor aplikace WebAssembly funguje podobným způsobem jako front-endové rozhraní JavaScript, jako je například úhlová nebo reakce. Ale namísto psaní JavaScriptu napíšete C#. Modul runtime .NET se stáhne spolu s aplikací společně se sestavením aplikace a všemi požadovanými závislostmi. Nevyžadují se žádné moduly plug-in a doplňky prohlížeče. 
+Blazor aplikace WebAssembly se spouštějí přímo v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Blazor aplikace WebAssembly funguje podobným způsobem jako front-endové rozhraní JavaScript, jako je například úhlová nebo reakce. Ale namísto psaní JavaScriptu napíšete C#. Modul runtime .NET se stáhne spolu s aplikací společně se sestavením aplikace a všemi požadovanými závislostmi. Nevyžadují se žádné moduly plug-in a doplňky prohlížeče.
 
-Stažená sestavení jsou běžná sestavení .NET, podobně jako byste použili v jakékoli jiné aplikaci .NET. Vzhledem k tomu, že modul runtime podporuje .NET Standard, můžete použít existující knihovny .NET Standard s vaší aplikací Blazor WebAssembly. Tato sestavení se ale pořád spustí v izolovaném prostoru zabezpečení prohlížeče. Některé funkce mohou vyvolat <xref:System.PlatformNotSupportedException>, jako je například pokus o přístup k systému souborů nebo otevírání libovolných síťových připojení. 
+Stažená sestavení jsou běžná sestavení .NET, podobně jako byste použili v jakékoli jiné aplikaci .NET. Vzhledem k tomu, že modul runtime podporuje .NET Standard, můžete použít existující knihovny .NET Standard s vaší aplikací Blazor WebAssembly. Tato sestavení se ale pořád spustí v izolovaném prostoru zabezpečení prohlížeče. Některé funkce mohou vyvolat <xref:System.PlatformNotSupportedException>, jako je například pokus o přístup k systému souborů nebo otevírání libovolných síťových připojení.
 
 Po načtení aplikace se spustí modul runtime .NET a nasměruje se na sestavení aplikace. Spustí se logika spouštění aplikace a vykreslí se kořenové součásti. Blazor vypočítá aktualizace uživatelského rozhraní na základě vykresleného výstupu z komponent. Budou se pak použít aktualizace modelu DOM.
 

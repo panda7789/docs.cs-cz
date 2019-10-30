@@ -3,12 +3,12 @@ title: Kandidátské aplikace pro cloudové nativní
 description: Seznamte se s typy aplikací, které využívají nativní přístup z cloudu.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: e8d520e0a1ad5ab8854d0628daa56a390de523cd
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 127dca45ce8a5e025ca7511e6513afffe64e592d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291222"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087681"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Kandidátské aplikace pro cloudové nativní
 
@@ -30,7 +30,7 @@ Jaký typ aplikace může být kandidátem na nativní Cloud?
 
 - Aplikace s komponentami, které se musí nezávisle škálovat
 
-Pak jsou starší verze systémů. I když bychom chtěli vytvářet nové aplikace, často zodpovídáme za modernizaci starší verze úloh, které jsou pro firmu zásadní. V průběhu času může být starší verze aplikace rozdělená do mikroslužeb, kontejnerů a nakonec "navýšení" na nativní cloudovou architekturu.  
+Pak jsou starší verze systémů. I když bychom chtěli vytvářet nové aplikace, často zodpovídáme za modernizaci starší verze úloh, které jsou pro firmu zásadní. V průběhu času může být starší verze aplikace rozdělená do mikroslužeb, kontejnerů a nakonec "navýšení" na nativní cloudovou architekturu.
 
 ### <a name="modernizing-legacy-apps"></a>Modernizaci starší verze aplikací
 
@@ -40,7 +40,7 @@ Bezplatná elektronická kniha Microsoftu [modernizovat stávající aplikace .N
 
 **Obrázek 1-10**. Strategie migrace starších verzí úloh
 
-Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu. 
+Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu.
 
 Monolitické aplikace, které jsou důležité pro obchodní často, využívají výhod vylepšené migrace za provozu a posunutí (*optimalizované pro Cloud*). Tento přístup zahrnuje optimalizace nasazení, které umožňují klíčovou službu Cloud Services – bez změny základní architektury aplikace. Například můžete aplikaci [kontejnerizace](https://docs.microsoft.com/virtualization/windowscontainers/about/) a nasadit ji na produkt Orchestrator, jako je třeba [Služba Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/), která je popsána dále v této příručce. V cloudu může aplikace využívat jiné cloudové služby, jako jsou databáze, fronty zpráv, monitorování a distribuované ukládání do mezipaměti.
 

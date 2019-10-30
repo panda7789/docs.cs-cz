@@ -3,12 +3,12 @@ title: REST a gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od protokolu HTTP REST.
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: fed8e7d86a8ddc268f1264728d9631a561c1b310
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: ba15bb1c5ee7c2cd48d75867512539190c80b0e5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291322"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094542"
 ---
 # <a name="rest-and-grpc"></a>REST a gRPC
 
@@ -28,7 +28,7 @@ gRPC je moderní architektura RPC, která je odlehčená a vysoce výkonná. Pro
 - Streamování je integrované do HTTP/2, což znamená, že požadavky i odpovědi můžou asynchronně streamovat velké datové sady.
 - V kombinaci gRPC a HTTP/2 se výrazně zvyšuje výkon. V [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) agilním výkon gPRC a překračuje rychlost a efektivitu [vazeb NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8). Ale na rozdíl od NetTCP se gRPC neomezuje na jazyky Microsoftu, jako je C# nebo VB.NET.
 
-gRPC se podporuje na nejoblíbenějších platformách, včetně jazyků C#Java,, golang a NodeJS. 
+gRPC se podporuje na nejoblíbenějších platformách, včetně jazyků C#Java,, golang a NodeJS.
 
 ## <a name="protocol-buffers"></a>Vyrovnávací paměti protokolů
 
@@ -44,7 +44,7 @@ Rozhraní Microsoft .NET Core Framework 3,0 zahrnuje nástroje a nativní podpor
 
 **Obrázek 4-20**. Podpora gRPC v aplikaci Visual Studio 2019
 
-.NET Core 3,0 bez problémů integruje gRPC do své architektury, včetně směrování koncových bodů, integrované podpory IoC a protokolování. Open source webový server Kestrel plně podporuje připojení HTTP/2. 
+.NET Core 3,0 bez problémů integruje gRPC do své architektury, včetně směrování koncových bodů, integrované podpory IoC a protokolování. Open source webový server Kestrel plně podporuje připojení HTTP/2.
 
 Obrázek 4-21 ukazuje strukturu služby gRPC ve Visual Studiu 2019. Všimněte si, jak struktura složek zahrnuje složky pro soubory a kód služby.
 
@@ -69,7 +69,7 @@ V době psaní této knihy mají většina prohlížečů omezené podpory pro g
 
 Všimněte si, že předchozí obrázek je vyvolán front-end přenosem pomocí protokolu HTTP, zatímco mikroslužba back-end používá gRPC.
 
-GRPC se může hrát významnou roli v dethroning dominantnímu postavení REST pro nativní cloudové systémy. Výhody výkonu a snadné vývoje jsou příliš dobré. Bez jakýchkoli chyb však bude klid stále delší dobu trvat. Stále jsou v Excelu pro veřejně vystavená rozhraní API a z důvodů zpětné kompatibility. 
+GRPC se může hrát významnou roli v dethroning dominantnímu postavení REST pro nativní cloudové systémy. Výhody výkonu a snadné vývoje jsou příliš dobré. Bez jakýchkoli chyb však bude klid stále delší dobu trvat. Stále jsou v Excelu pro veřejně vystavená rozhraní API a z důvodů zpětné kompatibility.
 
 >[!div class="step-by-step"]
 >[Předchozí](service-to-service-communication.md)

@@ -2,16 +2,16 @@
 title: Implementace odolných Entity Framework Core připojení SQL
 description: Naučte se implementovat odolná Entity Framework Core připojení SQL. Tato technika je obzvláště důležitá při použití Azure SQL Database v cloudu.
 ms.date: 10/16/2018
-ms.openlocfilehash: 3bf5c1827cee1da69aeccdc9f15573c301fc9363
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 3128cf1be7f2dc8804a002556db232f4e0fc8c33
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296069"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094052"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných Entity Framework Core připojení SQL
 
-Pro Azure SQL DB, Entity Framework (EF), již základní jádro poskytuje odolnost interního připojení databáze a logiku opakování. Ale pokud chcete mít [odolná EF Core připojení](/ef/core/miscellaneous/connection-resiliency), musíte povolit <xref:Microsoft.EntityFrameworkCore.DbContext> Entity Framework strategii spouštění pro každé připojení.
+Pro Azure SQL DB, Entity Framework (EF), již základní jádro poskytuje odolnost interního připojení databáze a logiku opakování. Pro každé připojení <xref:Microsoft.EntityFrameworkCore.DbContext> ale musíte povolit strategii spouštění Entity Framework, pokud chcete mít [odolná EF Coreová připojení](/ef/core/miscellaneous/connection-resiliency).
 
 Například následující kód na úrovni připojení EF Core umožňuje odolné připojení SQL, které se opakuje, pokud se připojení nepovede.
 
@@ -45,11 +45,11 @@ Když jsou v EF Core připojení povolené opakované pokusy, každá operace, k
 
 Nicméně pokud váš kód inicializuje transakci pomocí `BeginTransaction`, definujete vlastní skupinu operací, které je třeba považovat za jednotku. Vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání.
 
-Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásady) a voláte `SaveChanges` z více DbContexts, získáte výjimku, jako je tato:
+Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásad) a zavoláte `SaveChanges` z více DbContexts, získáte výjimku, jako je tato:
 
-> System.InvalidOperationException: Nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
+> System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
 
-Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Například následující kód ukazuje, jak je implementován v eShopOnContainers se dvěma více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a následném uložení Objekt ProductPriceChangedIntegrationEvent, který potřebuje použít jiný DbContext.
+Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Například následující kód ukazuje, jak je implementován v eShopOnContainers pomocí dvou více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a následném uložení ProductPriceChangedIntegrationEvent objekt, který potřebuje použít jiný DbContext.
 
 ```csharp
 public async Task<IActionResult> UpdateProduct(
@@ -88,9 +88,9 @@ public async Task<IActionResult> UpdateProduct(
 }
 ```
 
-První <xref:Microsoft.EntityFrameworkCore.DbContext> je `_catalogContext` a `_integrationEventLogService` druhá `DbContext` je v rámci objektu. Akce potvrzení se provádí napříč všemi `DbContext` objekty pomocí strategie provádění EF.
+První <xref:Microsoft.EntityFrameworkCore.DbContext> je `_catalogContext` a druhý `DbContext` v rámci objektu `_integrationEventLogService`. Akce potvrzení se provádí napříč všemi `DbContext` objekty pomocí strategie provádění EF.
 
-Chcete-li dosáhnout `DbContext` tohoto vícenásobného `SaveEventAndCatalogContextChangesAsync` potvrzení, `ResilientTransaction` používá třídu, jak je znázorněno v následujícím kódu:
+Chcete-li dosáhnout tohoto vícenásobného potvrzení `DbContext`, `SaveEventAndCatalogContextChangesAsync` používá třídu `ResilientTransaction`, jak je znázorněno v následujícím kódu:
 
 ```csharp
 public class CatalogIntegrationEventService : ICatalogIntegrationEventService
@@ -104,7 +104,7 @@ public class CatalogIntegrationEventService : ICatalogIntegrationEventService
         // https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency
         await ResilientTransaction.New(_catalogContext).ExecuteAsync(async () =>
         {
-            // Achieving atomicity between original catalog database 
+            // Achieving atomicity between original catalog database
             // operation and the IntegrationEventLog thanks to a local transaction
             await _catalogContext.SaveChangesAsync();
             await _eventLogService.SaveEventAsync(evt,
@@ -114,7 +114,7 @@ public class CatalogIntegrationEventService : ICatalogIntegrationEventService
 }
 ```
 
-Metoda `ResilientTransaction.ExecuteAsync` v podstatě zahájí transakci z předaného `DbContext` (`_catalogContext`) a poté provede `EventLogService` tuto transakci k uložení změn z `IntegrationEventLogContext` a poté k potvrzení celé transakce.
+Metoda `ResilientTransaction.ExecuteAsync` v podstatě zahájí transakci z předaného `DbContext` (`_catalogContext`) a pak `EventLogService` tuto transakci použije k uložení změn z `IntegrationEventLogContext` a následnému potvrzení celé transakce.
 
 ```csharp
 public class ResilientTransaction
@@ -128,7 +128,7 @@ public class ResilientTransaction
 
     public async Task ExecuteAsync(Func<Task> action)
     {
-        // Use of an EF Core resiliency strategy when using multiple DbContexts 
+        // Use of an EF Core resiliency strategy when using multiple DbContexts
         // within an explicit BeginTransaction():
         // https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency
         var strategy = _context.Database.CreateExecutionStrategy();
@@ -153,5 +153,5 @@ public class ResilientTransaction
   <https://devblogs.microsoft.com/cesardelatorre/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
 >[!div class="step-by-step"]
->[Předchozí](implement-retries-exponential-backoff.md)Další
->[](explore-custom-http-call-retries-exponential-backoff.md)
+>[Předchozí](implement-retries-exponential-backoff.md)
+>[Další](explore-custom-http-call-retries-exponential-backoff.md)

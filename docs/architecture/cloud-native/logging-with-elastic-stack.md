@@ -2,18 +2,19 @@
 title: Protokolování pomocí řešení Elastic Stack
 description: Protokolování pomocí elastického zásobníku, Logstash a Kibana
 ms.date: 09/23/2019
-ms.openlocfilehash: 62115edc3f64d87d2c3e84a7b5319ce42cbe729b
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 989834925bc08541bf484e1a4567a56ac324872f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315799"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087068"
 ---
-# <a name="logging-with-elastic-stack"></a>Protokolování pomocí řešení Elastic Stack 
+# <a name="logging-with-elastic-stack"></a>Protokolování pomocí řešení Elastic Stack
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Existuje mnoho dobře centralizovaných nástrojů protokolování, které se liší od bezplatného, open-source nástrojů až po dražší možnosti. V mnoha případech jsou bezplatné nástroje jako dobrá nebo lepší než placené nabídky. Jedním z těchto nástrojů je kombinace tří open-source komponent: elastické vyhledávání, Logstash a Kibana. Souhrn těchto nástrojů je známý jako elastický zásobník nebo zásobník ELK.
+Existuje mnoho dobře centralizovaných nástrojů protokolování, které se liší od bezplatného, open-source nástrojů až po dražší možnosti. V mnoha případech jsou bezplatné nástroje jako dobrá nebo lepší než placené nabídky. Jedním z těchto nástrojů je kombinace tří open-source komponent: elastické vyhledávání, Logstash a Kibana.
+Souhrn těchto nástrojů je známý jako elastický zásobník nebo zásobník ELK.
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Jaké jsou výhody elastického zásobníku?
 
@@ -21,19 +22,19 @@ Elastický zásobník poskytuje centralizované protokolování s nízkými nák
 
 ## <a name="logstash"></a>Logstash
 
-První součást je [Logstash](https://www.elastic.co/products/logstash). Tento nástroj slouží ke shromažďování informací protokolu z velkého množství různých zdrojů. Logstash může například číst protokoly z disku a také přijímat zprávy z knihoven protokolování, jako je [Serilog](https://serilog.net/). Logstash může v protokolech provést několik základních filtrů a rozšíření při jejich doručování. Například pokud vaše protokoly obsahují IP adresy, pak Logstash může být nakonfigurován tak, aby provede zeměpisné vyhledávání a získala zemi nebo dokonce město původu této zprávy. 
+První součást je [Logstash](https://www.elastic.co/products/logstash). Tento nástroj slouží ke shromažďování informací protokolu z velkého množství různých zdrojů. Logstash může například číst protokoly z disku a také přijímat zprávy z knihoven protokolování, jako je [Serilog](https://serilog.net/). Logstash může v protokolech provést několik základních filtrů a rozšíření při jejich doručování. Například pokud vaše protokoly obsahují IP adresy, pak Logstash může být nakonfigurován tak, aby provede zeměpisné vyhledávání a získala zemi nebo dokonce město původu této zprávy.
 
 Serilog je knihovna protokolování pro jazyky .NET, která umožňuje parametrizované protokolování. Namísto generování textové zprávy protokolu, která vkládá pole, jsou parametry oddělené. To umožňuje více inteligentních filtrování a hledání. Ukázková konfigurace Serilog pro zápis do Logstash se zobrazí na obrázku 7-2.
 
 ```csharp
-var log = new LoggerConfiguration()   
+var log = new LoggerConfiguration()
          .WriteTo.Http("http://localhost:8080")
          .CreateLogger();
 ```
 
 **Obrázek 7-2** Serilog config pro zápis informací protokolu přímo do logstash prostřednictvím protokolu HTTP
 
-Logstash by používal konfiguraci, která je znázorněna na obrázku 7-3. 
+Logstash by používal konfiguraci, která je znázorněna na obrázku 7-3.
 
 ```
 input {
@@ -59,7 +60,7 @@ Po shromáždění protokolů nástrojem Logstash je potřeba je umístit někam
 
 ## <a name="elastic-search"></a>Elastické hledání
 
-Elastické vyhledávání je výkonný vyhledávací modul, který umožňuje indexovat protokoly při jejich doručování. Díky rychlému spouštění dotazů v protokolech. Elastické vyhledávání může zpracovávat velké množství protokolů a v extrémních případech je možné škálovat napříč mnoha uzly. 
+Elastické vyhledávání je výkonný vyhledávací modul, který umožňuje indexovat protokoly při jejich doručování. Díky rychlému spouštění dotazů v protokolech. Elastické vyhledávání může zpracovávat velké množství protokolů a v extrémních případech je možné škálovat napříč mnoha uzly.
 
 Protokolované zprávy, které byly vytvořené tak, aby obsahovaly parametry nebo byly rozděleny pomocí parametrů prostřednictvím zpracování Logstash, se dají dotazovat přímo jako Elasticsearch, které tyto informace zachová.
 
@@ -85,11 +86,11 @@ Dotaz, který vyhledává prvních 10 stránek navštívených `jill@example.com
 
 ## <a name="visualizing-information-with-kibana-web-dashboards"></a>Vizualizace informací pomocí webových řídicích panelů Kibana
 
-Konečná součást zásobníku je Kibana. Tento nástroj slouží k zajištění interaktivních vizualizací na webovém řídicím panelu. Řídicí panely můžou být vytvořené i uživateli, kteří nejsou techničtí. Většina dat, která jsou rezidentem v indexu Elasticsearch, může být součástí řídicích panelů Kibana. Jednotliví uživatelé mohou mít různé požadované možnosti řídicího panelu a Kibana toto přizpůsobení umožňují prostřednictvím uživatelských řídicích panelů. 
+Konečná součást zásobníku je Kibana. Tento nástroj slouží k zajištění interaktivních vizualizací na webovém řídicím panelu. Řídicí panely můžou být vytvořené i uživateli, kteří nejsou techničtí. Většina dat, která jsou rezidentem v indexu Elasticsearch, může být součástí řídicích panelů Kibana. Jednotliví uživatelé mohou mít různé požadované možnosti řídicího panelu a Kibana toto přizpůsobení umožňují prostřednictvím uživatelských řídicích panelů.
 
 ## <a name="installing-elastic-stack-on-azure"></a>Instalace elastického zásobníku v Azure
 
-Elastický zásobník se dá nainstalovat do Azure mnoha různými způsoby. Jako vždy je možné [zřídit virtuální počítače a nainstalovat elastické zásobníky přímo](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch). Tato možnost je preferována některými zkušenými uživateli, protože nabízí nejvyšší stupeň úprav. Nasazení na infrastrukturu jako službu přináší významné nároky na správu, které přijímají tuto cestu, aby bylo možné převzít vlastnictví všech úkolů přidružených k infrastruktuře jako služby, jako je například zabezpečení počítačů a udržování aktuálnosti oprav. 
+Elastický zásobník se dá nainstalovat do Azure mnoha různými způsoby. Jako vždy je možné [zřídit virtuální počítače a nainstalovat elastické zásobníky přímo](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch). Tato možnost je preferována některými zkušenými uživateli, protože nabízí nejvyšší stupeň úprav. Nasazení na infrastrukturu jako službu přináší významné nároky na správu, které přijímají tuto cestu, aby bylo možné převzít vlastnictví všech úkolů přidružených k infrastruktuře jako služby, jako je například zabezpečení počítačů a udržování aktuálnosti oprav.
 
 Možnost s menší režií je použití jednoho z mnoha kontejnerů Docker, na kterých je elastický zásobník již nakonfigurován. Tyto kontejnery lze přetáhnout do existujícího clusteru Kubernetes a spustit společně s kódem aplikace. Kontejner [sebp/Elk](https://elk-docker.readthedocs.io/) je dobře dokumentovaný a testovaný kontejner elastického zásobníku.
 

@@ -2,12 +2,12 @@
 title: Použití HttpClientFactory k implementaci odolných požadavků HTTP
 description: Naučte se používat HttpClientFactory, která je k dispozici od .NET Core 2,1, pro vytváření instancí `HttpClient`, což usnadňuje jejich použití ve svých aplikacích.
 ms.date: 08/08/2019
-ms.openlocfilehash: 3f9b3b18cede07e4c5c56600634ae230c0e251bb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: e32ffdd43ce8968ef9a0694873870b61510d7300
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578910"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094002"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavků HTTP
 
@@ -21,7 +21,7 @@ Jako první problém, zatímco tato třída je na jedno použití, není při po
 
 Proto je `HttpClient`, aby se vytvořila instance jednou a znovu používala po celou dobu životnosti aplikace. Vytvoření instance `HttpClient` třídy pro každý požadavek vyčerpá počet soketů, které jsou k dispozici v případě velkého zatížení. Tento problém bude mít za následek `SocketException` chyby. Možné přístupy k vyřešení tohoto problému jsou založené na vytvoření objektu `HttpClient` jako singleton nebo static, jak je vysvětleno v tomto [článku o použití HttpClient](../../../csharp/tutorials/console-webapiclient.md).
 
-Ale existuje druhý problém s `HttpClient`, který můžete mít, když ho použijete jako singleton nebo statický objekt. V tomto případě typ singleton nebo statický `HttpClient` nerespektuje změny DNS, jak je vysvětleno v tomto [problému](https://github.com/dotnet/corefx/issues/11224) v úložišti GitHub/corefx GitHub. 
+Ale existuje druhý problém s `HttpClient`, který můžete mít, když ho použijete jako singleton nebo statický objekt. V tomto případě typ singleton nebo statický `HttpClient` nerespektuje změny DNS, jak je vysvětleno v tomto [problému](https://github.com/dotnet/corefx/issues/11224) v úložišti GitHub/corefx GitHub.
 
 Rozhraní .NET Core 2,1 zavedlo nové `HttpClientFactory`, které lze použít také k implementaci odolných volání HTTP integrací Polly s tím, aby vyřešila zmíněné problémy a zjednodušila správu instancí `HttpClient`.
 
@@ -35,6 +35,9 @@ Rozhraní .NET Core 2,1 zavedlo nové `HttpClientFactory`, které lze použít t
 - Codify koncept odchozího middleware prostřednictvím delegování obslužných rutin v `HttpClient` a implementace middleware založeného na Polly, který využívá zásady Polly pro zajištění odolnosti.
 - `HttpClient` už má koncept delegování obslužných rutin, které by se daly propojit pro odchozí požadavky HTTP. Do továrny zaregistrujete klienty HTTP a pomocí obslužné rutiny Polly můžete použít zásady Polly pro opakování, CircuitBreakers a tak dále.
 - Spravujte dobu života `HttpClientMessageHandlers`, abyste se vyhnuli uvedeným problémům nebo problémům, ke kterým může dojít při správě `HttpClient`ch životních cyklů.
+
+> [!NOTE]
+> `HttpClientFactory` je úzce spjat s implementací (DI) pro vkládání závislostí v balíčku NuGet `Microsoft.Extensions.DependencyInjection`. Další informace o používání dalších kontejnerů vkládání závislostí naleznete v této [diskuzi GitHubu](https://github.com/aspnet/Extensions/issues/1345).
 
 ## <a name="multiple-ways-to-use-httpclientfactory"></a>Několik způsobů použití HttpClientFactory
 
@@ -63,7 +66,7 @@ V dalším kódu vidíte, jak `AddHttpClient()` lze použít k registraci typov�
 
 ```csharp
 // Startup.cs
-//Add http client services at ConfigureServices(IServiceCollection services) 
+//Add http client services at ConfigureServices(IServiceCollection services)
 services.AddHttpClient<ICatalogService, CatalogService>();
 services.AddHttpClient<IBasketService, BasketService>();
 services.AddHttpClient<IOrderingService, OrderingService>();
@@ -105,7 +108,7 @@ Sdružování obslužných rutin je žádoucí, protože každá obslužná ruti
 Objekty `HttpMessageHandler` ve fondu mají dobu života, která je doba, po kterou lze znovu použít instanci `HttpMessageHandler` ve fondu. Výchozí hodnota je dvě minuty, ale je možné ji přepsat na typového klienta. Chcete-li jej přepsat, zavolejte `SetHandlerLifetime()` na `IHttpClientBuilder`, který je vrácen při vytváření klienta, jak je znázorněno v následujícím kódu:
 
 ```csharp
-//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Catalog Typed Client 
+//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Catalog Typed Client
 services.AddHttpClient<ICatalogService, CatalogService>()
     .SetHandlerLifetime(TimeSpan.FromMinutes(5));
 ```
@@ -127,10 +130,10 @@ public class CatalogService : ICatalogService
         _httpClient = httpClient;
     }
 
-    public async Task<Catalog> GetCatalogItems(int page, int take, 
+    public async Task<Catalog> GetCatalogItems(int page, int take,
                                                int? brand, int? type)
     {
-        var uri = API.Catalog.GetAllCatalogItems(_remoteServiceBaseUrl, 
+        var uri = API.Catalog.GetAllCatalogItems(_remoteServiceBaseUrl,
                                                  page, take, brand, type);
 
         var responseString = await _httpClient.GetStringAsync(uri);
@@ -180,14 +183,17 @@ V tomto okamžiku je zobrazený kód pouze provádění běžných požadavků p
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Použití HttpClientFactory v .NET Core**  \
+- **Používání HttpClientFactory v .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
 
-- @No__t_1 **úložiště GitHubu HttpClientFactory**
+- **Zdrojový kód HttpClientFactory v úložišti GitHub `aspnet/Extensions`**  
   <https://github.com/aspnet/Extensions/tree/master/src/HttpClientFactory>
 
-- **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  \
+- **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
   <http://www.thepollyproject.org/>
+  
+- **Použití HttpClientFactory bez injektáže závislosti (problém GitHubu)**  
+  <https://github.com/aspnet/Extensions/issues/1345>
 
 >[!div class="step-by-step"]
 >[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)

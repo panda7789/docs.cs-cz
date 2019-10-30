@@ -2,12 +2,12 @@
 title: Události domény. návrh a implementace
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte podrobné zobrazení událostí domény, klíčový koncept k navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4fe0c1fa04bbecb64783e070838ab796de4f90d6
-ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
+ms.openlocfilehash: eea72633d3460f51821e8a939b14acff2f17965c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72031836"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093957"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -145,9 +145,9 @@ Odvoditelné přístupu je to, co eShopOnContainers používá. Nejprve do kolek
 ```csharp
 public abstract class Entity
 {
-     //... 
+     //...
      private List<INotification> _domainEvents;
-     public List<INotification> DomainEvents => _domainEvents; 
+     public List<INotification> DomainEvents => _domainEvents;
 
      public void AddDomainEvent(INotification eventItem)
      {
@@ -194,7 +194,7 @@ public class OrderingContext : DbContext, IUnitOfWork
         // handlers that are using the same DbContext with Scope lifetime
         // B) Right AFTER committing data (EF SaveChanges) into the DB. This makes
         // multiple transactions. You will need to handle eventual consistency and
-        // compensatory actions in case of failures.        
+        // compensatory actions in case of failures.
         await _mediator.DispatchDomainEventsAsync(this);
 
         // After this line runs, all the changes (from the Command Handler and Domain
@@ -208,7 +208,7 @@ S tímto kódem odesíláte události entit do příslušných obslužných ruti
 
 Celkový výsledek je, že jste odkázali vyvolání události domény (jednoduchým přidáním do seznamu v paměti) od jejich odeslání obslužné rutině události. V závislosti na tom, jaký typ dispečera používáte, můžete události odesílat synchronně nebo asynchronně.
 
-Počítejte s tím, že hranice transakcí přicházejí do značného množství. Pokud vaše pracovní jednotka a transakce mohou rozbírat více než jednu agregaci (jako při použití EF Core a relační databáze), může to dobře fungovat. Pokud však transakce nemůže zahrnovat agregace, například pokud používáte databázi NoSQL jako Azure CosmosDB, je nutné implementovat další kroky, abyste dosáhli konzistence. Toto je další důvod, proč ignorování trvalosti není univerzální; závisí na používaném úložném systému. 
+Počítejte s tím, že hranice transakcí přicházejí do značného množství. Pokud vaše pracovní jednotka a transakce mohou rozbírat více než jednu agregaci (jako při použití EF Core a relační databáze), může to dobře fungovat. Pokud však transakce nemůže zahrnovat agregace, například pokud používáte databázi NoSQL jako Azure CosmosDB, je nutné implementovat další kroky, abyste dosáhli konzistence. Toto je další důvod, proč ignorování trvalosti není univerzální; závisí na používaném úložném systému.
 
 ### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>Jedna transakce napříč agregacemi a konečná konzistence napříč agregacemi
 
@@ -218,13 +218,13 @@ Otázka, zda provést jednu transakci napříč agregacemi a spoléhácí se na 
 
 Vaughn Vernon uvádí následující v [účinném agregovaném návrhu. Část II: vytváření agregačních prvků společně](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
 
-> Proto pokud provádění příkazu u jedné agregační instance vyžaduje, aby další obchodní pravidla běžela v jedné nebo více agregacích, použijte konečnou konzistenci \[... \] existuje praktický způsob, jak podporovat konečnou konzistenci v modelu DDD. Agregační metoda publikuje událost domény, která je v čase Doručená jednomu nebo více asynchronním předplatitelům.
+> Proto pokud provádění příkazu u jedné agregační instance vyžaduje, aby další obchodní pravidla běžela v jedné nebo více agregacích, použijte konečnou \[...\] existuje praktický způsob, jak podporovat konečnou konzistenci v modelu DDD. Agregační metoda publikuje událost domény, která je v čase Doručená jednomu nebo více asynchronním předplatitelům.
 
 Tato odůvodnění je založena na přechodu jemně odstupňovaných transakcí namísto transakcí, které pokrývá mnoho agregací nebo entit. Výsledkem je, že v druhém případě bude počet zámků databáze podstatný v rozsáhlých aplikacích s vysokými nároky na škálovatelnost. Přechodu se skutečnost, že vysoce škálovatelné aplikace nepotřebují okamžitou transakční konzistenci mezi několika agregacemi, což pomáhá přijmout koncept konečné konzistence. Tyto atomické změny často nejsou potřebné pro firmu a jsou v každém případě odpovědné odborníky na domény, kteří říkají, jestli konkrétní operace potřebují atomické transakce, nebo ne. Pokud operace vždy potřebuje atomovou transakci mezi více agregacemi, můžete se zeptat, zda má být agregace větší nebo nebyla správně navržena.
 
 Další vývojáři a architekty, jako je Jimmy Bogard, jsou v pořádku, pokud pokrývá jednu transakci napříč několika agregacemi, ale pouze v případě, že tyto další agregace souvisejí s vedlejšími účinky pro stejný původní příkaz. Například v [lepším vzoru doménových událostí](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)Bogard říká toto:
 
-> Obvykle chci, aby došlo k vedlejším účinkům události domény v rámci stejné logické transakce, ale ne nutně ve stejném rozsahu vyvolání události domény \[... \] těsně před potvrzením naší transakce, odesíláme naše události příslušnému žádostí.
+> Obvykle chci, aby došlo k vedlejším účinkům události domény v rámci stejné logické transakce, ale ne nutně ve stejném rozsahu vyvolání události domény \[...\] těsně před potvrzením naší transakce, odesíláme naše události do jejich příslušné obslužné rutiny.
 
 Pokud odesíláte události domény přímo *před* potvrzením původní transakce, je to proto, že chcete, aby se vedlejší účinky těchto událostí zahrnuly do stejné transakce. Například pokud metoda EF DbContext SaveChanges selže, transakce vrátí všechny změny, včetně výsledku všech operací vedlejších účinků implementovaných souvisejícími obslužnými rutinami událostí domény. Důvodem je to, že rozsah životnosti DbContext je ve výchozím nastavení definovaný jako "obor". Proto je objekt DbContext sdílen mezi více objektů úložiště, které jsou vytvořeny v rámci stejného oboru nebo grafu objektů. Při vývoji webových rozhraní API nebo aplikací MVC se to bude shodovat s oborem HttpRequest.
 
@@ -234,7 +234,7 @@ Způsob, jak umožnit kompenzační akce, by měl ukládat události domény do 
 
 V každém případě můžete zvolit přístup, který potřebujete. Ale počáteční odložený přístup – vyvolal události před potvrzením, takže používáte jedinou transakci – je nejjednodušší přístup při použití EF Core a relační databáze. Implementaci a platnost je snazší v mnoha obchodních případech. Je to také přístup k použití při řazení mikroslužby v eShopOnContainers.
 
-Ale jak skutečně odesíláte tyto události do příslušných obslužných rutin událostí? Jaký je objekt @no__t 0, který vidíte v předchozím příkladu? Je nutné, abyste provedli postupy a artefakty, které používáte k mapování mezi událostmi a jejich obslužnými rutinami událostí.
+Ale jak skutečně odesíláte tyto události do příslušných obslužných rutin událostí? Jaký je objekt `_mediator`, který vidíte v předchozím příkladu? Je nutné, abyste provedli postupy a artefakty, které používáte k mapování mezi událostmi a jejich obslužnými rutinami událostí.
 
 ### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>Dispečer událostí domény: mapování událostí na obslužné rutiny událostí
 
@@ -303,7 +303,7 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 
     public async Task Handle(OrderStartedDomainEvent orderStartedEvent)
     {
-        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;        
+        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;
         var userGuid = _identityService.GetUserIdentity();
         var buyer = await _buyerRepository.FindAsync(userGuid);
         bool buyerOriginallyExisted = (buyer == null) ? false : true;
@@ -321,7 +321,7 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
                                        orderStartedEvent.CardExpiration,
                                        orderStartedEvent.Order.Id);
 
-        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) 
+        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer)
                                                                       : _buyerRepository.Add(buyer);
 
         await _buyerRepository.UnitOfWork

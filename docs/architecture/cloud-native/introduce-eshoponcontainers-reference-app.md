@@ -2,12 +2,12 @@
 title: Představení referenční aplikace eShopOnContainers
 description: Představujeme referenční aplikaci eShopOnContainers Cloud Native mikroslužeb pro ASP.NET Core a Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 20f9175ada2e5439be363781a2b187c10ba86d37
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0d55f248acbc34bcc76d38987d7e1d537cf6065a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182858"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087248"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Představení referenční aplikace eShopOnContainers
 
@@ -32,16 +32,16 @@ Pojďme začít s přezkoumáním funkcí a požadavků aplikace. Aplikace eShop
 - Upravit nebo odebrat položky z koše
 - Registr
 - Registrace účtu
-- Přihlášení
+- Přihlásit se
 - Odhlásit se
 - Revidovat objednávky
 
 Aplikace má také tyto nefunkční požadavky:
 
-- Je potřeba, aby byla vysoce dostupná a musí se automaticky škálovat, aby se dosáhlo zvýšeného objemu provozu (a mohlo by se škálovat zpátky po přenosu dat). 
-- Měla by poskytovat snadno použitelné monitorování svých stavových protokolů a diagnostické protokoly, které vám pomůžou vyřešit případné problémy, se kterými se setká. 
-- Měl by podporovat proces agilního vývoje, včetně podpory pro průběžnou integraci a nasazování (CI/CD). 
-- Kromě dvou webových front-endy (tradiční a jednostránkové aplikace) musí aplikace podporovat také mobilní klientské aplikace s různými druhy operačních systémů. 
+- Je potřeba, aby byla vysoce dostupná a musí se automaticky škálovat, aby se dosáhlo zvýšeného objemu provozu (a mohlo by se škálovat zpátky po přenosu dat).
+- Měla by poskytovat snadno použitelné monitorování svých stavových protokolů a diagnostické protokoly, které vám pomůžou vyřešit případné problémy, se kterými se setká.
+- Měl by podporovat proces agilního vývoje, včetně podpory pro průběžnou integraci a nasazování (CI/CD).
+- Kromě dvou webových front-endy (tradiční a jednostránkové aplikace) musí aplikace podporovat také mobilní klientské aplikace s různými druhy operačních systémů.
 - Měla by podporovat hostování mezi platformami a vývoj pro různé platformy.
 
 ![Architektura vývoje referenčních aplikací eShopOnContainers.](./media/eshoponcontainers-development-architecture.png)
@@ -70,7 +70,7 @@ Kód je uspořádán tak, aby podporoval různé mikroslužby, a v rámci každ�
 
 ## <a name="understanding-microservices"></a>Porozumění mikroslužbám
 
-Tato kniha se zaměřuje na nativní cloudové aplikace sestavené pomocí technologie Azure. Další informace o osvědčených postupech mikroslužeb a o tom, jak navrhovat aplikace založené na mikroslužbách, najdete v doprovodné příručce [pro .NET mikroslužby: Architektura pro kontejnerové aplikace](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture).NET. Kniha je dostupná online, ve formátu PDF nebo ve formátech eReader.
+Tato kniha se zaměřuje na nativní cloudové aplikace sestavené pomocí technologie Azure. Další informace o osvědčených postupech mikroslužeb a o tom, jak navrhovat aplikace založené na mikroslužbách, najdete v doprovodné příručce, [mikroslužby .NET: architektura pro kontejnery aplikací .NET](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture). Kniha je dostupná online, ve formátu PDF nebo ve formátech eReader.
 
 >[!div class="step-by-step"]
 >[Předchozí](candidate-apps.md)

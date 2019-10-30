@@ -2,20 +2,20 @@
 title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Získejte informace o tom, jak Microsoft nabízí podporu životního cyklu aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 6907528a5d7ff354a312e7575531b9c608cb479f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1829ce1051f091065f543a6cadcf5d179a284834
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295868"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094455"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Seznámení s platformou a nástroji Microsoftu pro kontejnery aplikací
 
-*Vidění Vytvořte adaptivní životní cyklus aplikací na podnikové úrovni, který bude zahrnovat vývoj, IT operace a správu výroby.*
+*Vize: Vytvořte adaptivní životní cyklus aplikací na podnikové úrovni, který pokrývá vývoj, IT operace a správu výroby.*
 
 Obrázek 3-1 ukazuje hlavní pilíře v životním cyklu aplikací Docker klasifikovaných podle typu práce, kterou doručí více týmů (vývoj aplikací, procesy infrastruktury DevOps a správa IT a operace). V podniku obvykle jsou profily "osoby" zodpovědné za jednotlivé oblasti jiné. Takže jsou jejich dovednosti.
 
-![Nástroje společnosti Microsoft. Pro úlohy vývoj/navrhování: Modul Docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Pro úlohu sestavení/testování/expedice: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Pro úlohu spustit/monitorovat/spravovat: Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, další orchestrace.](./media/image1.png)
+![Nástroje společnosti Microsoft. Pro úlohy pro vývoj/navrhování: modul Docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Pro úlohy sestavení/testování/expedice: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Pro úlohy spustit/monitor/spravovat: Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, dalších orchestrers.](./media/image1.png)
 
 **Obrázek 3-1.** Hlavní pilíře v životním cyklu pro kontejnerové aplikace Docker s platformou a nástroji Microsoftu
 
@@ -41,18 +41,18 @@ Platforma a nástroje Microsoftu pro kontejnerové aplikace Docker, jak je defin
 
 - **Správa a monitorování** Může spravovat a monitorovat produkční aplikace a služby několika způsoby integrací obou perspektiv do konsolidovaného prostředí.
 
-  - AzurePortal Pokud používáte Kubernetesy Open Source Orchestration, služba Azure (AKS), Service Fabric a další orchestrace vám pomůžou nastavit a udržovat vaše prostředí Docker. Pokud používáte Azure Service Fabric, nástroj Service Fabric Explorer umožňuje vizualizovat a konfigurovat cluster.
+  - **Azure Portal** Pokud používáte Open Source orchestrace, služba Azure KUBERNETES (AKS), Service Fabric a další orchestrace vám pomůžou nastavit a udržovat vaše prostředí Docker. Pokud používáte Azure Service Fabric, nástroj Service Fabric Explorer umožňuje vizualizovat a konfigurovat cluster.
 
-  - **Nástroje Docker**můžetespravovatsvéaplikacekontejnerupomocíznámýchnástrojů . Pokud chcete přesunout úlohy kontejneru do cloudu, není potřeba měnit stávající postupy pro správu Docker. Použijte nástroje pro správu aplikací, které už znáte, a připojte se přes standardní koncové body rozhraní API pro Orchestrator podle vašeho výběru. Můžete také použít další nástroje třetích stran ke správě aplikací Docker, jako je Docker Datacenter nebo dokonce nástroje CLI Docker. 
+  - **Nástroje docker** můžete spravovat své aplikace kontejneru pomocí známých nástrojů. Pokud chcete přesunout úlohy kontejneru do cloudu, není potřeba měnit stávající postupy pro správu Docker. Použijte nástroje pro správu aplikací, které už znáte, a připojte se přes standardní koncové body rozhraní API pro Orchestrator podle vašeho výběru. Můžete také použít další nástroje třetích stran ke správě aplikací Docker, jako je Docker Datacenter nebo dokonce nástroje CLI Docker.
 
     I v případě, že jste obeznámeni s příkazy pro Linux, můžete spravovat aplikace typu kontejner pomocí Microsoft Windows a PowerShellu s příkazovým řádkem pro subsystém Linux a produkty (Docker, Kubernetes...), které jsou spuštěné v této schopnosti subsystému Linux. Další informace o těchto nástrojích najdete v části subsystém Linux pomocí svého oblíbeného operačního systému Microsoft Windows dále v této příručce.
 
-  - **Open Source nástroje** , protože AKS zpřístupňuje standardní koncové body rozhraní API pro modul Orchestration, nejoblíbenější nástroje jsou kompatibilní s AKS a ve většině případů budou fungovat mimo pole, včetně nástrojů pro vizualizaci, monitorování a nástrojů příkazového řádku. a dokonce i budoucí nástroje, jakmile budou k dispozici.
+  - **Open-Source nástroje** protože AKS zpřístupňuje standardní koncové body rozhraní API pro modul Orchestration, nejoblíbenější nástroje jsou kompatibilní s AKS a ve většině případů dostanou fungovat, včetně nástrojů pro vizualizaci, monitorování a nástrojů příkazového řádku. a dokonce i budoucí nástroje, jakmile budou k dispozici.
 
   - **Azure monitor** Je řešení Azure pro monitorování každého úhlu produkčního prostředí. Aplikace v produkčním prostředí můžete monitorovat pouhým nastavením své sady SDK na vaše služby, abyste mohli z aplikací získat data protokolu generovaná systémem.
 
 Proto Microsoft nabízí ucelenou základnu pro kompletní kontejnerový životní cyklus aplikací Docker. Jedná se však o *kolekci produktů a technologií, které vám umožní vybrat a integrovat s existujícími nástroji a procesy*. Flexibilita širokého přístupu společně s silou v hloubkě možností je Microsoft na silném místě pro vytváření kontejnerů aplikací Docker.
 
 >[!div class="step-by-step"]
->[Předchozí](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)Další
->[](../design-develop-containerized-apps/index.md)
+>[Předchozí](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
+>[Další](../design-develop-containerized-apps/index.md)

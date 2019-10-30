@@ -1,15 +1,15 @@
 ---
-title: Modely nativních dat v cloudu
+title: Vzorky dat nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Modely nativních dat v cloudu
 ms.date: 06/30/2019
-ms.openlocfilehash: 8fc5a09dca61e6644fdcaa692ff1a21f40ebf179
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0d251f3046fcd3f3a2f5d856a123a35d3f7ecff2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183411"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087700"
 ---
-# <a name="cloud-native-data-patterns"></a>Modely nativních dat v cloudu
+# <a name="cloud-native-data-patterns"></a>Vzorky dat nativní pro cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -127,15 +127,15 @@ Databáze NoSQL jsou distribuované a běžně se škálují napříč komoditn�
 
 Jedná se o konečnou [konzistenci](https://www.cloudcomputingpatterns.org/eventual_consistency/), která je charakteristická pro distribuované datové systémy, kde se nepodporují nepodporované transakce kyseliny. Jedná se o krátké zpoždění mezi aktualizací datové položky a časem potřebným k rozšíření této aktualizace na každý uzel repliky. Pokud aktualizujete položku produktu v NoSQL databázi v USA, ale současně se dotazuje na stejnou datovou položku z uzlu repliky v Evropě, můžete načíst předchozí informace o produktu – dokud se neaktualizuje Evropský uzel o změnu produktu. Je možné, že při zajištění [vysoké konzistence](https://en.wikipedia.org/wiki/Strong_consistency)čeká na aktualizaci všech uzlů repliky, než se vrátí výsledek dotazu, můžete podporovat obrovský objem škálování a provozu, ale s možností prezentace starších dat.
 
-Databáze NoSQL je možné rozdělit do kategorií podle následujících čtyř modelů: 
+Databáze NoSQL je možné rozdělit do kategorií podle následujících čtyř modelů:
 
 - *Úložiště dokumentů* (MongoDB, CouchDB, Couchbase): data (a odpovídající metadata) se ukládají nevztahně do denormalizovaných dokumentů založených na JSON v rámci databáze.
 
 - *Úložiště klíč/hodnota* (Redis, Riak, memcached): data jsou uložená v jednoduchých dvojicích klíč-hodnota se systémovými operacemi provedenými u jedinečného přístupového klíče, který je namapovaný na hodnotu uživatelských dat.
 
-- *Úložiště s nejrůznějšími sloupci* (HBA, Cassandra): související data jsou uložená ve sloupcovém formátu jako sada párů s vnořenými klíči a hodnotami v jednom sloupci, kde se data obvykle načítají jako jediná jednotka bez nutnosti spojit více tabulek dohromady.
+- *Úložiště* se sjednocenými sloupci (HBA, Cassandra): související data jsou uložená ve sloupcovém formátu jako množina párů s vnořenými klíči a hodnotami v jednom sloupci, kde se data obvykle načítají jako jedna jednotka, aniž by bylo nutné spojit více tabulek dohromady.
 
-- *Grafy obchodů* (NEO4J, Titan): data jsou uložená jako grafická reprezentace v rámci uzlu spolu s hranami, které určují vztah mezi uzly.
+- *Úložiště grafů* (NEO4J, Titan): data jsou uložená jako grafická reprezentace v rámci uzlu spolu s hranami, které určují vztah mezi uzly.
 
 Databáze NoSQL můžou být optimalizované tak, aby se zabývat velkými objemy dat, hlavně když jsou data relativně jednoduchá. Vezměte v úvahu databázi NoSQL v těchto případech:
 

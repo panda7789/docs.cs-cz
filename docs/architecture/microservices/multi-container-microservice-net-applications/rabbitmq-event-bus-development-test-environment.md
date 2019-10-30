@@ -2,12 +2,12 @@
 title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte RabbitMQ k implementaci zasílání zpráv služby Event Bus pro integrační události pro vývojová nebo testovací prostředí.
 ms.date: 10/02/2018
-ms.openlocfilehash: af02208bb9e680403a04377ccb740a8b15be29bc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7d51054d444ce1e35fabab94cc803e74dbd96f19
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296562"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089733"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
@@ -35,7 +35,7 @@ RabbitMQ implementace ukázkové sběrnice událostí pro vývoj/testování je 
 
 ## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>Implementace jednoduché metody publikování s RabbitMQ
 
-Následující kód je ***zjednodušenou*** verzí implementace sběrnice událostí pro RabbitMQ, která prezentuje celý scénář. Toto připojení opravdu nezpracováváte tímto způsobem. Chcete-li zobrazit úplnou implementaci, přečtěte si skutečný kód v úložišti [dotnet-Architecture/eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) . 
+Následující kód je ***zjednodušenou*** verzí implementace sběrnice událostí pro RabbitMQ, která prezentuje celý scénář. Toto připojení opravdu nezpracováváte tímto způsobem. Chcete-li zobrazit úplnou implementaci, přečtěte si skutečný kód v úložišti [dotnet-Architecture/eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) .
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -82,7 +82,7 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
         where TH : IIntegrationEventHandler<T>
     {
         var eventName = _subsManager.GetEventKey<T>();
-        
+
         var containsKey = _subsManager.HasSubscriptionsForEvent(eventName);
         if (!containsKey)
         {
@@ -109,5 +109,5 @@ Každý typ události má související kanál pro získání událostí z Rabbi
 Metoda přihlášení k odběru akceptuje objekt IIntegrationEventHandler, který je jako metoda zpětného volání v aktuální mikroslužbě, a příslušný objekt IntegrationEvent. Kód pak přidá tuto obslužnou rutinu události do seznamu obslužných rutin událostí, které mohou mít každý typ události Integration pro každou klientskou mikroslužbu. Pokud kód klienta ještě není přihlášený k odběru události, kód vytvoří kanál pro typ události, aby mohl přijímat události ve stylu nabízených oznámení z RabbitMQ, pokud je tato událost publikována z jakékoli jiné služby.
 
 >[!div class="step-by-step"]
->[Předchozí](integration-event-based-microservice-communications.md)Další
->[](subscribe-events.md)
+>[Předchozí](integration-event-based-microservice-communications.md)
+>[Další](subscribe-events.md)

@@ -2,12 +2,12 @@
 title: Monitorování stavu
 description: Prozkoumejte jeden ze způsobů implementace monitorování stavu.
 ms.date: 01/07/2019
-ms.openlocfilehash: 3b81537ca8e0c5cc7ce15ab64ab3235b699dc7a9
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2d43efa7b6cfb855a033ee4d766c64c2472ceb36
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71040063"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094070"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -44,11 +44,11 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-V předchozím kódu `services.AddHealthChecks()` metoda nakonfiguruje základní kontrolu http, která vrátí stavový kód **200** s názvem "v pořádku".  Kromě toho `AddCheck()` rozšiřující metoda konfiguruje vlastní `SqlConnectionHealthCheck` , který kontroluje stav souvisejících SQL Database.
+V předchozím kódu metoda `services.AddHealthChecks()` konfiguruje základní kontrolu HTTP, která vrátí stavový kód **200** s "dobrým".  Dále metoda rozšíření `AddCheck()` konfiguruje vlastní `SqlConnectionHealthCheck`, která kontroluje stav souvisejících SQL Database.
 
-Metoda přidá novou kontrolu stavu se zadaným názvem a implementací typu `IHealthCheck`. `AddCheck()` Pomocí metody AddCheck můžete přidat několik kontrol stavu, takže mikroslužba neposkytne stav "dobrý", dokud nebudou všechny jeho kontroly v pořádku.
+Metoda `AddCheck()` přidá novou kontrolu stavu se zadaným názvem a implementací typu `IHealthCheck`. Pomocí metody AddCheck můžete přidat několik kontrol stavu, takže mikroslužba neposkytne stav "dobrý", dokud nebudou všechny jeho kontroly v pořádku.
 
-`SqlConnectionHealthCheck`je vlastní třída, která implementuje `IHealthCheck`rozhraní, které používá připojovací řetězec jako parametr konstruktoru a spustí jednoduchý dotaz pro kontrolu úspěšného připojení k databázi SQL. Vrátí `HealthCheckResult.Healthy()` , zda byl dotaz úspěšně proveden `FailureStatus` a se skutečnou výjimkou, když dojde k chybě.
+`SqlConnectionHealthCheck` je vlastní třída, která implementuje `IHealthCheck`, která používá připojovací řetězec jako parametr konstruktoru a spustí jednoduchý dotaz pro kontrolu úspěšného připojení k databázi SQL. Vrátí `HealthCheckResult.Healthy()`, pokud se dotaz úspěšně provedl a při neúspěchu `FailureStatus` se skutečnou výjimkou.
 
 ```csharp
 // Sample SQL Connection Health Check
@@ -98,7 +98,7 @@ public class SqlConnectionHealthCheck : IHealthCheck
 }
 ```
 
-Všimněte si, že v předchozím kódu `Select 1` je dotaz, který slouží ke kontrole stavu databáze. Aby bylo možné monitorovat dostupnost mikroslužeb, orchestrace, jako je Kubernetes, a Service Fabric pravidelně provádět kontroly stavu tím, že odesílají požadavky na testování mikroslužeb. Je důležité uchovávat dotazy v databázi efektivně, aby tyto operace byly rychlé a nevedly k vyššímu využití prostředků.
+Všimněte si, že v předchozím kódu je `Select 1` dotazem, který slouží ke kontrole stavu databáze. Aby bylo možné monitorovat dostupnost mikroslužeb, orchestrace, jako je Kubernetes, a Service Fabric pravidelně provádět kontroly stavu tím, že odesílají požadavky na testování mikroslužeb. Je důležité uchovávat dotazy v databázi efektivně, aby tyto operace byly rychlé a nevedly k vyššímu využití prostředků.
 
 Nakonec vytvořte middleware, který reaguje na cestu URL/HC:
 
@@ -110,18 +110,18 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     //…
     app.UseHealthChecks("/hc");
     //…
-} 
+}
 ```
 
-Při vyvolání koncového bodu `<yourmicroservice>/hc` spustí všechny kontroly stavu, které jsou konfigurovány `AddHealthChecks()` v metodě třídy po spuštění, a zobrazí výsledek.
+Po vyvolání koncového bodu `<yourmicroservice>/hc` spustí všechny kontroly stavu, které jsou konfigurovány v metodě `AddHealthChecks()` ve třídě Startup a zobrazí výsledek.
 
 ### <a name="healthchecks-implementation-in-eshoponcontainers"></a>Implementace HealthChecks v eShopOnContainers
 
-Mikroslužby v eShopOnContainers spoléhají na provádění svých úkolů více službami. Například `Catalog.API` mikroslužba z eShopOnContainers závisí na mnoha službách, jako je například Azure Blob Storage, SQL Server a RabbitMQ. Proto má pomocí `AddCheck()` metody přidáno několik kontrol stavu. Pro každou závislou službu musí být přidána `IHealthCheck` vlastní implementace definující příslušný stav jeho stavu.
+Mikroslužby v eShopOnContainers spoléhají na provádění svých úkolů více službami. Například `Catalog.API` mikroslužba z eShopOnContainers závisí na mnoha službách, jako je Azure Blob Storage, SQL Server a RabbitMQ. Proto má pomocí metody `AddCheck()` přidáno několik kontrol stavu. Pro každou závislou službu musí být přidána vlastní implementace `IHealthCheck` definující příslušný stav jeho stavu.
 
 Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) tento problém vyřeší tím, že poskytuje implementace vlastního ověření stavu pro každou z těchto podnikových služeb, které jsou postaveny na .net Core 2,2. Každá kontrolu stavu je k dispozici jako samostatný balíček NuGet, který lze snadno přidat do projektu. eShopOnContainers je často používejte ve všech mikroslužbách.
 
-V `Catalog.API` případě mikroslužby byly přidány následující balíčky NuGet:
+Například v `Catalog.API` mikroslužeb byly přidány následující balíčky NuGet:
 
 ![Zobrazení Průzkumníka řešení projektu Catalog. API, kde se odkazuje na balíčky NuGet AspNetCore. Diagnostics. HealthChecks](./media/image6.png)
 
@@ -189,7 +189,7 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
 
 ### <a name="query-your-microservices-to-report-about-their-health-status"></a>Dotazování mikroslužeb na zprávu o jejich stavu
 
-Pokud jste nakonfigurovali kontroly stavu, jak je popsáno v tomto článku, a máte mikroslužbu spuštěnou v Docker, můžete přímo z prohlížeče zkontrolovat, jestli je v pořádku. Musíte publikovat port kontejneru v hostiteli Docker, abyste měli k kontejneru přístup prostřednictvím IP adresy externího hostitele Docker nebo prostřednictvím `localhost`, jak je znázorněno na obrázku 8-8.
+Pokud jste nakonfigurovali kontroly stavu, jak je popsáno v tomto článku, a máte mikroslužbu spuštěnou v Docker, můžete přímo z prohlížeče zkontrolovat, jestli je v pořádku. Musíte publikovat port kontejneru v hostiteli Docker, abyste mohli ke kontejneru přistupovat prostřednictvím IP adresy externího hostitele Docker nebo prostřednictvím `localhost`, jak ukazuje obrázek 8-8.
 
 ![Zobrazení prohlížeče odpovědi JSON vrácené kontrolou stavu](./media/image7.png)
 
@@ -199,7 +199,7 @@ V tomto testu vidíte, že `Catalog.API` mikroslužba (běžící na portu 5101)
 
 ## <a name="use-watchdogs"></a>Použití sledovacích zařízení
 
-Sledovací zařízení je samostatná služba, která může sledovat stav a zatížení napříč službami a nahlásit stav mikroslužeb pomocí dotazování pomocí `HealthChecks` knihovny představené dříve. To může zabránit chybám, které se nezjistily na základě zobrazení jedné služby. Sledovací zařízení jsou také dobrým místem pro hostování kódu, který může provádět nápravné akce pro známé podmínky bez zásahu uživatele.
+Sledovací zařízení je samostatná služba, která může sledovat stav a zatížení napříč službami a nahlásit stav mikroslužeb pomocí dotazování pomocí knihovny `HealthChecks` představené dříve. To může zabránit chybám, které se nezjistily na základě zobrazení jedné služby. Sledovací zařízení jsou také dobrým místem pro hostování kódu, který může provádět nápravné akce pro známé podmínky bez zásahu uživatele.
 
 Ukázka eShopOnContainers obsahuje webovou stránku, která zobrazuje ukázkové sestavy kontroly stavu, jak je znázorněno na obrázku 8-9. Toto je nejjednodušší sledovací zařízení, které byste mohli mít, protože zobrazuje jenom stav mikroslužeb a webových aplikací v eShopOnContainers. K tomu obvykle dochází v případě, že zařízení detekuje stav, který není v pořádku.
 
@@ -276,12 +276,12 @@ Nakonec, pokud ukládáte všechny streamy událostí, můžete k vizualizaci da
 - **Uživatelské rozhraní HealthChecks a HealthChecks pro ASP.NET Core** \
   <https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks>
 
-- **Úvod do monitorování stavu Service Fabric** \
+- **Úvod do Service Fabric monitoring stavu** \
   [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
 - **Azure Monitor**  
   <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]
->[Předchozí](implement-circuit-breaker-pattern.md)Další
->[](../secure-net-microservices-web-applications/index.md)
+>[Předchozí](implement-circuit-breaker-pattern.md)
+>[Další](../secure-net-microservices-web-applications/index.md)

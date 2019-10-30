@@ -2,12 +2,12 @@
 title: Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 description: Seznamte se s rozdíly a využitím vzoru brány API a přímé komunikace mezi klientem a mikroslužbou.
 ms.date: 01/07/2019
-ms.openlocfilehash: 6b42650b2dbce093f12fe02b1605c95076dc8592
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 47e9a383c1fcb6c9fec38cb376b60a4ab839077d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522967"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090125"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 
@@ -132,7 +132,7 @@ V závislosti na každé implementaci může být k dispozici mnoho dalších č
 
 **Obrázek 4-14**. Použití Azure API Management pro vaši bránu API
 
-Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd. V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by se mohl vyvíjet k komponenta monolitické 
+Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd. V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by se mohl vyvíjet k komponenta monolitické
 
 Produkty brány rozhraní API obvykle fungují jako reverzní proxy server pro komunikaci příchozího přenosu dat, kde můžete také vyfiltrovat rozhraní API z interních mikroslužeb a použít autorizaci na publikovaná rozhraní API v této jedné vrstvě.
 
@@ -173,16 +173,16 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
 - **Chris Richardson. Vzor: Brána API/back-end pro front-end**  \
   <https://microservices.io/patterns/apigateway.html>
 
-- @No__t_1 **vzoru brány API**
+-  \ **vzoru brány API**
   <https://docs.microsoft.com/azure/architecture/microservices/gateway>
 
-- @No__t_1 **modelu agregace a kompozice**
+-  \ **modelu agregace a kompozice**
   <https://microservices.io/patterns/data/api-composition.html>
 
-- @No__t_1 **API Management Azure**
+-  \ **API Management Azure**
   <https://azure.microsoft.com/services/api-management/>
 
-- **UDI Dahan. @No__t_1 kompozice pro služby**
+- **UDI Dahan. \ kompozice pro služby**
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 - **Clemense obrovské. Zasílání zpráv a mikroslužeb na adrese GOTO 2016 (video)**  \

@@ -2,20 +2,20 @@
 title: Implementace vzoru pro přerušení okruhu
 description: Naučte se implementovat vzor pro přerušení okruhu jako doplňkový systém pro opakované pokusy http.
 ms.date: 10/16/2018
-ms.openlocfilehash: eec14273cb9480df51d6e5865106ccfc045845c4
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: a1a24094ae98d8c767ccf692fe8ded6e28d47854
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181937"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094119"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace systému jističe
 
 Jak bylo uvedeno dříve, měli byste zpracovat chyby, které mohou trvat proměnlivou dobu, kdy se může stát, když se pokusíte připojit ke vzdálené službě nebo prostředku. Zpracování tohoto typu chyby může zlepšit stabilitu a odolnost aplikace.
 
-V distribuovaném prostředí můžou volání vzdálených prostředků a služeb selhat kvůli přechodným chybám, třeba k pomalým síťovým připojením a časovým limitům, nebo pokud prostředky nereagují pomalu nebo jsou dočasně nedostupné. Tyto chyby se obvykle po krátké době opravují a robustní cloudová aplikace by se měla připravit na jejich zpracování pomocí strategie, jako je "vzor opakování". 
+V distribuovaném prostředí můžou volání vzdálených prostředků a služeb selhat kvůli přechodným chybám, třeba k pomalým síťovým připojením a časovým limitům, nebo pokud prostředky nereagují pomalu nebo jsou dočasně nedostupné. Tyto chyby se obvykle po krátké době opravují a robustní cloudová aplikace by se měla připravit na jejich zpracování pomocí strategie, jako je "vzor opakování".
 
-Mohou však nastat situace, kdy jsou chyby způsobeny neočekávanými událostmi, které mohou trvat mnohem déle. Tyto chyby můžou být v rozsahu závažnosti od částečné ztráty připojení k úplnému selhání služby. V těchto situacích může být bezúčelné, aby aplikace nepřetržitě opakovala operaci, která pravděpodobně nebude úspěšná. 
+Mohou však nastat situace, kdy jsou chyby způsobeny neočekávanými událostmi, které mohou trvat mnohem déle. Tyto chyby můžou být v rozsahu závažnosti od částečné ztráty připojení k úplnému selhání služby. V těchto situacích může být bezúčelné, aby aplikace nepřetržitě opakovala operaci, která pravděpodobně nebude úspěšná.
 
 Místo toho by měla být aplikace kódována tak, aby přijímala, že operace se nezdařila, a odpovídajícím způsobem zpracovat selhání.
 
@@ -42,9 +42,9 @@ services.AddHttpClient<IBasketService, BasketService>()
         .AddPolicyHandler(GetCircuitBreakerPolicy());
 ```
 
-Tato `AddPolicyHandler()` metoda přidává zásady `HttpClient` pro objekty, které budete používat. V takovém případě přidá zásady Polly pro přepínací modul okruhů.
+Metoda `AddPolicyHandler()` je to, co přidává zásady pro objekty `HttpClient`, které budete používat. V takovém případě přidá zásady Polly pro přepínací modul okruhů.
 
-Chcete-li mít více modulární přístup, je zásada pro přerušení okruhu definována v samostatné metodě s `GetCircuitBreakerPolicy()`názvem, jak je znázorněno v následujícím kódu:
+Chcete-li mít více modulární přístup, je zásada pro přerušení okruhu definována v samostatné metodě s názvem `GetCircuitBreakerPolicy()`, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
@@ -57,11 +57,11 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 
 Ve výše uvedeném příkladu kódu je zásada pro přerušení okruhu nakonfigurovaná tak, že se přeruší nebo otevře okruh v případě, že při opakování požadavků HTTP došlo k pěti po sobě jdoucími chybám. Pokud k tomu dojde, okruh bude po dobu 30 sekund přerušen: v takovém případě budou volání okamžitě neúspěšná pomocí přepínacího modulu okruhů, nikoli ve skutečnosti.  Zásady automaticky interpretují [relevantní výjimky a stavové kódy http](/aspnet/core/fundamentals/http-requests#handle-transient-faults) jako chyby.  
 
-K přesměrování požadavků na záložní infrastrukturu by se měly také použít vypínače okruhů, pokud máte problémy v konkrétním prostředku, který je nasazený v jiném prostředí než klientská aplikace nebo služba provádějící volání HTTP. Tímto způsobem dojde v případě výpadku v datovém centru, které ovlivňuje pouze vaše mikroslužby back-end, ale ne klientské aplikace, a klientské aplikace se mohou přesměrovat na záložní služby. Polly plánuje novou zásadu pro automatizaci tohoto scénáře [zásad převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) . 
+K přesměrování požadavků na záložní infrastrukturu by se měly také použít vypínače okruhů, pokud máte problémy v konkrétním prostředku, který je nasazený v jiném prostředí než klientská aplikace nebo služba provádějící volání HTTP. Tímto způsobem dojde v případě výpadku v datovém centru, které ovlivňuje pouze vaše mikroslužby back-end, ale ne klientské aplikace, a klientské aplikace se mohou přesměrovat na záložní služby. Polly plánuje novou zásadu pro automatizaci tohoto scénáře [zásad převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) .
 
-Všechny tyto funkce jsou pro případy, kdy spravujete převzetí služeb při selhání z kódu .NET, a to na rozdíl od toho, že je spravujete automaticky za vás Azure s transparentností polohy. 
+Všechny tyto funkce jsou pro případy, kdy spravujete převzetí služeb při selhání z kódu .NET, a to na rozdíl od toho, že je spravujete automaticky za vás Azure s transparentností polohy.
 
-Z bodu použití v zobrazení není nutné přidávat nic nového, protože kód je stejný, než když používáte HttpClient s HttpClientFactory, jak je znázorněno v předchozích částech. 
+Z bodu použití v zobrazení není nutné přidávat nic nového, protože kód je stejný, než když používáte HttpClient s HttpClientFactory, jak je znázorněno v předchozích částech.
 
 ## <a name="test-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>Testování opakovaných pokusů http a přepínacích cyklů okruhů v eShopOnContainers
 
@@ -69,7 +69,7 @@ Kdykoli na hostiteli Docker spustíte řešení eShopOnContainers, musí být sp
 
 Při nasazování aplikace do cloudu můžete také zobrazit tento typ chyby při spuštění. V takovém případě mohou orchestrace přesunout kontejnery z jednoho uzlu nebo virtuálního počítače do jiného (to znamená spouštění nových instancí) při vyrovnávání počtu kontejnerů v uzlech clusteru.
 
-Způsob, jakým "eShopOnContainers" řeší tyto problémy při spouštění všech kontejnerů, je pomocí vzoru opakování popsaného výše. 
+Způsob, jakým "eShopOnContainers" řeší tyto problémy při spouštění všech kontejnerů, je pomocí vzoru opakování popsaného výše.
 
 ### <a name="test-the-circuit-breaker-in-eshoponcontainers"></a>Test přerušení okruhu v eShopOnContainers
 
@@ -90,9 +90,9 @@ Další možností je použít vlastní middleware, který je implementován v m
 
 Například po spuštění aplikace můžete povolit middleware pomocí následujícího identifikátoru URI v jakémkoli prohlížeči. Všimněte si, že mikroslužba řazení používá port 5103.
 
-`http://localhost:5103/failing?enable` 
+`http://localhost:5103/failing?enable`
 
-Pak můžete zjistit stav pomocí identifikátoru URI `http://localhost:5103/failing`, jak je znázorněno na obrázku 8-5.
+Potom můžete stav ověřit pomocí `http://localhost:5103/failing`identifikátoru URI, jak je znázorněno na obrázku 8-5.
 
 ![Zobrazení prohlížeče výsledku z kontroly stavu neúspěšné simulace middlewaru](./media/image4.png)
 
@@ -100,7 +100,7 @@ Pak můžete zjistit stav pomocí identifikátoru URI `http://localhost:5103/fai
 
 V tomto okamžiku bude mikroslužba košíku reagovat se stavovým kódem 500, kdykoli volání vyvolá.
 
-Jakmile middleware běží, můžete vyzkoušet vytvoření objednávky z webové aplikace MVC. Vzhledem k tomu, že se požadavky selžou, okruh se otevře. 
+Jakmile middleware běží, můžete vyzkoušet vytvoření objednávky z webové aplikace MVC. Vzhledem k tomu, že se požadavky selžou, okruh se otevře.
 
 V následujícím příkladu vidíte, že webová aplikace MVC má v logice blok catch pro umístění objednávky.  Pokud kód zachytí výjimku otevřeného okruhu, zobrazí uživateli uživatelsky přívětivou zprávu s oznámením, že má počkat.
 
@@ -138,13 +138,13 @@ Tady je souhrn. Zásada opakování se několikrát pokusí vytvořit požadavek
 
 **Obrázek 8-6**. Přepínací modul okruhů vrátil chybu do uživatelského rozhraní.
 
-Můžete implementovat jinou logiku pro otevření nebo přerušení okruhu. Nebo můžete vyzkoušet požadavek HTTP na jinou back-end mikroslužbu, pokud existuje záložní datové centrum nebo redundantní back-end systém. 
+Můžete implementovat jinou logiku pro otevření nebo přerušení okruhu. Nebo můžete vyzkoušet požadavek HTTP na jinou back-end mikroslužbu, pokud existuje záložní datové centrum nebo redundantní back-end systém.
 
-Nakonec další možnost pro `CircuitBreakerPolicy` je použít `Isolate` (které vynutí otevření a blokování otevřeného okruhu) a `Reset` (které se znovu zavřou). Ty je možné použít k vytvoření koncového bodu HTTP nástroje, který vyvolá izolaci a resetování přímo na zásadě.  Takový koncový bod HTTP by se taky mohl použít, vhodně zabezpečený v produkčním prostředí pro dočasný izolaci systému pro příjem dat, třeba když ho chcete upgradovat. Nebo může obcházet okruh ručně, aby se chránil systém pro příjem dat, u kterého se domníváte, že se jedná o poruchu.
+Nakonec je další možností pro `CircuitBreakerPolicy` použít `Isolate` (které vynutí otevření a blokování otevřeného okruhu) a `Reset` (které se znovu zavřou). Ty je možné použít k vytvoření koncového bodu HTTP nástroje, který vyvolá izolaci a resetování přímo na zásadě.  Takový koncový bod HTTP by se taky mohl použít, vhodně zabezpečený v produkčním prostředí pro dočasný izolaci systému pro příjem dat, třeba když ho chcete upgradovat. Nebo může obcházet okruh ručně, aby se chránil systém pro příjem dat, u kterého se domníváte, že se jedná o poruchu.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Vzorek pro přerušení okruhu**\
+- \ **vzoru pro přerušení okruhu**
   [https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker](/azure/architecture/patterns/circuit-breaker)
 
 >[!div class="step-by-step"]

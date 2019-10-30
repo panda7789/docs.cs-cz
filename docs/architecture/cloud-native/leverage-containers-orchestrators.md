@@ -2,12 +2,12 @@
 title: Využití kontejnerů a orchestrátorů
 description: Využití kontejnerů Docker a orchestrace Kubernetes v Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 62aaa68b2ada0725f33df62e97f1ca3216b91ccf
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7b136ed2760ea471f42ff82d20298ff8714c6dee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315883"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087233"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Využití kontejnerů a orchestrátorů
 
@@ -53,7 +53,7 @@ A co více kontejnerů jsou definovány jednoduchými soubory, které lze zkontr
 
 Kontejnery jsou neměnné. Jakmile budete mít definici kontejneru, můžete tento kontejner znovu vytvořit a spustí se přesně stejným způsobem. Tato neměnnosti se zapůjčuje do návrhu založeného na komponentách. Pokud se některé části aplikace nemění tak často jako jiné, proč je možné znovu nasadit celou aplikaci, když můžete jenom nasadit části, které se mění nejčastěji? Různé funkce a průřezové aspekty aplikace je možné rozdělit na samostatné jednotky. Obrázek 3-2 ukazuje, jak může aplikace monolitické využít výhod kontejnerů a mikroslužeb pomocí delegování určitých funkcí nebo funkcí. Zbývající funkce samotné aplikace také byly kontejnery.
 
-@no__t 0Breaking aplikaci monolitické, aby používala mikroslužby v back-endu. ](./media/breaking-up-monolith-with-backend-microservices.png)
+![rozdělení aplikace monolitické, aby používala mikroslužby v back-endu.](./media/breaking-up-monolith-with-backend-microservices.png)
 **obrázek 3-2**. Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu.
 
 Cloudové nativní aplikace sestavené pomocí samostatných kontejnerů využívají výhod nasazení aplikace v případě potřeby co nejvíc nebo i trochu. Jednotlivé služby můžou být hostované na uzlech s prostředky, které jsou vhodné pro každou službu. Prostředí, ve kterém je každá služba spuštěná, je neměnné, dá se sdílet mezi vývojem, testováním a výrobou a dá se snadno používat ve verzi. Propojení mezi různými oblastmi aplikace probíhá explicitně jako volání nebo zprávy mezi službami, nikoli závislosti na kompilaci v rámci monolitu. A libovolná část celkové aplikace může zvolit technologii, která dává smysl pro tuto funkci nebo schopnost, a to bez nutnosti provádět změny ve zbývající části aplikace.
@@ -62,7 +62,7 @@ Cloudové nativní aplikace sestavené pomocí samostatných kontejnerů využí
 
 Služby postavené na kontejnerech můžou využívat výhody škálování poskytované nástroji pro orchestraci, jako je Kubernetes. Kontejnery návrhu se týkají pouze samotných. Jakmile začnete mít více kontejnerů, které potřebují společně spolupracovat, může být vhodné je uspořádat na vyšší úrovni. Uspořádání velkého počtu kontejnerů a jejich sdílených závislostí, jako je například konfigurace sítě, je místo, kde nástroje pro orchestraci docházejí, aby ušetřily den. Kubernetes je platforma pro orchestraci kontejnerů navržená pro automatizaci nasazení, škálování a správy kontejnerových aplikací. Vytvoří vrstvu abstrakce nad skupinami kontejnerů a uspořádá je do *lusků*. Lusky se spouštějí na pracovních počítačích, které jsou označovány jako *uzly*. Celá uspořádaná skupina se označuje jako *cluster*. Obrázek 3-3 ukazuje různé komponenty clusteru Kubernetes.
 
-@no__t – součásti clusteru 0Kubernetes. ](./media/kubernetes-cluster-components.png)
+![součásti clusteru Kubernetes.](./media/kubernetes-cluster-components.png)
 **obrázek 3-3**. Součásti clusteru Kubernetes.
 
 Kubernetes má integrovanou podporu pro škálování clusterů tak, aby splňovala požadavky. V kombinaci s dodanými mikroslužbami poskytuje cloudové nativní aplikace s možností rychle a efektivně reagovat na špičky v poptávce s dalšími prostředky, když jsou a tam, kde jsou potřeba.
@@ -117,7 +117,7 @@ Organizace, které nasazují a musí následně uchovávat velký počet aplikac
 
 ## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Kdy byste se měli vyhnout použití kontejnerů a orchestrací?
 
-Pokud nebudete nebo nebudete moct sestavovat aplikaci po dvanácti zásadách aplikace, bude pravděpodobně lepší vycházet z předcházení kontejnerům a orchestraci. V těchto případech může být nejlepší přesunout vpřed s hostující platformou založenou na virtuálním počítači, nebo potenciálně nějaký hybridní systém, ve kterém můžete určité části funkcí vypnout do samostatných kontejnerů nebo i bez serveru. 
+Pokud nebudete nebo nebudete moct sestavovat aplikaci po dvanácti zásadách aplikace, bude pravděpodobně lepší vycházet z předcházení kontejnerům a orchestraci. V těchto případech může být nejlepší přesunout vpřed s hostující platformou založenou na virtuálním počítači, nebo potenciálně nějaký hybridní systém, ve kterém můžete určité části funkcí vypnout do samostatných kontejnerů nebo i bez serveru.
 
 ## <a name="development-resources"></a>Prostředky pro vývoj
 

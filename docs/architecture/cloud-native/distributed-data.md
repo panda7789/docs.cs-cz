@@ -2,12 +2,12 @@
 title: Distribuovaná data
 description: Architekt cloudových nativních aplikací .NET pro Azure | Distribuovaná data pro nativní cloudové aplikace
 ms.date: 06/30/2019
-ms.openlocfilehash: 92086c52b02360e90461aea9ad23a2068224e187
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: b715ae5203264a023bc9f911aa74ee222afe3d68
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183131"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087449"
 ---
 # <a name="distributed-data-for-cloud-native-apps"></a>Distribuovaná data pro cloudové nativní aplikace
 
@@ -15,7 +15,7 @@ ms.locfileid: "71183131"
 
 Při sestavování nativního cloudového systému, který se skládá z mnoha nezávislých mikroslužeb, si myslíte, jak si myslíte o změnách v úložišti dat.
 
-Tradiční aplikace monolitické přilákat centralizované úložiště dat zobrazené na obrázku 5-1. 
+Tradiční aplikace monolitické přilákat centralizované úložiště dat zobrazené na obrázku 5-1.
 
 ![Jedna databáze monolitické](./media/single-monolithic-database.png)
 
@@ -32,7 +32,7 @@ Systémy nativní pro Cloud jsou upřednostněny datovou architekturu na obrázk
 **Obrázek 5-2**. Více databází napříč mikroslužbami
 
 Všimněte si, jak je předchozí obrázek vlastníkem každé mikroslužby, a zapouzdřuje úložiště dat IT a zpřístupňuje data na vnějším světě z jeho veřejného rozhraní API.
- 
+
 Tento model umožňuje, aby se každá mikroslužba nezávisle vyvinula bez nutnosti koordinovat změny schématu dat s ostatními mikroslužbami. Každá mikroslužba je bezplatná pro implementaci úložiště dat (relační databáze, databáze dokumentů, úložiště hodnot typu klíč-hodnota), který nejlépe odpovídá jeho potřebám. V době běhu může každá mikroslužba odpovídajícím způsobem škálovat data. To je znázorněno na obrázku 5-3:
 
 ![Trvalost dat Polyglot](./media/polyglot-data-persistence.png)

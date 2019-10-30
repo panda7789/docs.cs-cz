@@ -4,12 +4,12 @@ description: Naučte se vytvářet plnohodnotné webové aplikace s využitím .
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 936f85d4fda9c5396a6586810735877488226157
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 394d11038b59f4cbe9e9955df43b6198eb5daaf8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696935"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088133"
 ---
 # <a name="blazor-for-aspnet-web-forms-developers"></a>Blazor pro vývojáře ASP.NET Web Forms
 
@@ -17,7 +17,7 @@ ms.locfileid: "71696935"
 
 ![Snímek obrazovky zobrazující titulní knihu aplikací bez serveru](./media/index/blazor-for-web-forms-developers-cover.png)
 
-> STAŽENÍ k dispozici v: <https://aka.ms/blazor-ebook>
+> STAŽENÍ k dispozici na adrese: <https://aka.ms/blazor-ebook>
 
 PUBLIKOVAL (A)
 
@@ -37,7 +37,7 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené na <https://www.microsoft.com> na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na adrese <https://www.microsoft.com> na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
@@ -75,7 +75,7 @@ Tato kniha představuje úvod do Blazor, ne komplexní průvodce migrací. I kdy
 
 ### <a name="additional-resources"></a>Další zdroje
 
-Oficiální domovskou stránku Blazor a dokumentaci najdete na adrese <https://blazor.net>.
+Oficiální domovskou stránku Blazor a dokumentaci najdete na <https://blazor.net>.
 
 ## <a name="send-your-feedback"></a>Poslat svůj názor
 
