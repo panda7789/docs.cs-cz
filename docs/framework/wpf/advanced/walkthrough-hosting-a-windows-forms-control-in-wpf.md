@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF'
+title: 'Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,68 +7,68 @@ dev_langs:
 helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-ms.openlocfilehash: af5a0d58e789e609a25aa828493a3b0722cc83e1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3cd01126e22927151f3c7fb08726c006c710dd34
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64605483"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197920"
 ---
-# <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a><span data-ttu-id="e1c3c-102">Návod: Hostování ovládacího prvku Windows Forms ve WPF</span><span class="sxs-lookup"><span data-stu-id="e1c3c-102">Walkthrough: Hosting a Windows Forms Control in WPF</span></span>
+# <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a><span data-ttu-id="cc37b-102">Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="cc37b-102">Walkthrough: Hosting a Windows Forms Control in WPF</span></span>
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <span data-ttu-id="e1c3c-103">nabízí mnoho ovládacích prvků s bohatou sadou funkcí.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-103">provides many controls with a rich feature set.</span></span> <span data-ttu-id="e1c3c-104">Však můžete někdy chtít použít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky ve vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-104">However, you may sometimes want to use [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] controls on your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pages.</span></span> <span data-ttu-id="e1c3c-105">Například můžete mít značné investice v existujícím [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, nebo můžete mít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který poskytuje jedinečné funkce.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-105">For example, you may have a substantial investment in existing [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] controls, or you may have a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] control that provides unique functionality.</span></span>
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <span data-ttu-id="cc37b-103">poskytuje mnoho ovládacích prvků s bohatou sadou funkcí.</span><span class="sxs-lookup"><span data-stu-id="cc37b-103">provides many controls with a rich feature set.</span></span> <span data-ttu-id="cc37b-104">Někdy ale můžete chtít použít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky na stránkách [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cc37b-104">However, you may sometimes want to use [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] controls on your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pages.</span></span> <span data-ttu-id="cc37b-105">Například můžete mít významnou investici do stávajících [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]ch ovládacích prvků, nebo můžete mít ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], který poskytuje jedinečné funkce.</span><span class="sxs-lookup"><span data-stu-id="cc37b-105">For example, you may have a substantial investment in existing [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] controls, or you may have a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] control that provides unique functionality.</span></span>
 
-<span data-ttu-id="e1c3c-106">Tento návod ukazuje, jak hostovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> ovládání na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky pomocí kódu.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-106">This walkthrough shows you how to host a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> control on a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page by using code.</span></span>
+<span data-ttu-id="cc37b-106">Tento návod ukazuje, jak hostovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> ovládací prvek na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránce pomocí kódu.</span><span class="sxs-lookup"><span data-stu-id="cc37b-106">This walkthrough shows you how to host a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> control on a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page by using code.</span></span>
 
-<span data-ttu-id="e1c3c-107">Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [hostování ovládacího prvku Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=160057).</span><span class="sxs-lookup"><span data-stu-id="e1c3c-107">For a complete code listing of the tasks shown in this walkthrough, see [Hosting a Windows Forms Control in WPF Sample](https://go.microsoft.com/fwlink/?LinkID=160057).</span></span>
+<span data-ttu-id="cc37b-107">Úplný výpis kódu úloh uvedených v tomto návodu naleznete v tématu [hostování ovládacího prvku model Windows Forms v UKÁZCE WPF](https://go.microsoft.com/fwlink/?LinkID=160057).</span><span class="sxs-lookup"><span data-stu-id="cc37b-107">For a complete code listing of the tasks shown in this walkthrough, see [Hosting a Windows Forms Control in WPF Sample](https://go.microsoft.com/fwlink/?LinkID=160057).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e1c3c-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1c3c-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="cc37b-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cc37b-108">Prerequisites</span></span>
 
-<span data-ttu-id="e1c3c-109">Visual Studio k dokončení tohoto návodu potřebujete.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-109">You need Visual Studio to complete this walkthrough.</span></span>
+<span data-ttu-id="cc37b-109">K dokončení tohoto Názorného postupu potřebujete Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cc37b-109">You need Visual Studio to complete this walkthrough.</span></span>
 
-## <a name="hosting-the-windows-forms-control"></a><span data-ttu-id="e1c3c-110">Hostování ovládacího prvku Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e1c3c-110">Hosting the Windows Forms Control</span></span>
+## <a name="hosting-the-windows-forms-control"></a><span data-ttu-id="cc37b-110">Hostování ovládacího prvku model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cc37b-110">Hosting the Windows Forms Control</span></span>
 
-### <a name="to-host-the-maskedtextbox-control"></a><span data-ttu-id="e1c3c-111">K hostování ovládacím prvkem MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="e1c3c-111">To host the MaskedTextBox control</span></span>
+### <a name="to-host-the-maskedtextbox-control"></a><span data-ttu-id="cc37b-111">Hostování ovládacího prvku ovládacím MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="cc37b-111">To host the MaskedTextBox control</span></span>
 
-1. <span data-ttu-id="e1c3c-112">Vytvoření projektu aplikace WPF s názvem `HostingWfInWpf`.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-112">Create a WPF Application project named `HostingWfInWpf`.</span></span>
+1. <span data-ttu-id="cc37b-112">Vytvořte projekt aplikace WPF s názvem `HostingWfInWpf`.</span><span class="sxs-lookup"><span data-stu-id="cc37b-112">Create a WPF Application project named `HostingWfInWpf`.</span></span>
 
-2. <span data-ttu-id="e1c3c-113">Přidáte odkazy na následující sestavení.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-113">Add references to the following assemblies.</span></span>
+2. <span data-ttu-id="cc37b-113">Přidejte odkazy na následující sestavení.</span><span class="sxs-lookup"><span data-stu-id="cc37b-113">Add references to the following assemblies.</span></span>
 
-    - <span data-ttu-id="e1c3c-114">WindowsFormsIntegration</span><span class="sxs-lookup"><span data-stu-id="e1c3c-114">WindowsFormsIntegration</span></span>
+    - <span data-ttu-id="cc37b-114">WindowsFormsIntegration</span><span class="sxs-lookup"><span data-stu-id="cc37b-114">WindowsFormsIntegration</span></span>
 
-    - <span data-ttu-id="e1c3c-115">System.Windows.Forms</span><span class="sxs-lookup"><span data-stu-id="e1c3c-115">System.Windows.Forms</span></span>
+    - <span data-ttu-id="cc37b-115">System. Windows. Forms</span><span class="sxs-lookup"><span data-stu-id="cc37b-115">System.Windows.Forms</span></span>
 
-3. <span data-ttu-id="e1c3c-116">Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e1c3c-116">Open MainWindow.xaml in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>
+3. <span data-ttu-id="cc37b-116">Otevřete MainWindow. XAML v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cc37b-116">Open MainWindow.xaml in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>
 
-4. <span data-ttu-id="e1c3c-117">Název <xref:System.Windows.Controls.Grid> element `grid1`.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-117">Name the <xref:System.Windows.Controls.Grid> element `grid1`.</span></span>
+4. <span data-ttu-id="cc37b-117">Pojmenujte <xref:System.Windows.Controls.Grid> element `grid1`.</span><span class="sxs-lookup"><span data-stu-id="cc37b-117">Name the <xref:System.Windows.Controls.Grid> element `grid1`.</span></span>
 
      [!code-xaml[HostingWfInWPF#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml#1)]
 
-5. <span data-ttu-id="e1c3c-118">V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-118">In Design view or XAML view, select the <xref:System.Windows.Window> element.</span></span>
+5. <span data-ttu-id="cc37b-118">V zobrazení zobrazení Návrh nebo XAML vyberte prvek <xref:System.Windows.Window>.</span><span class="sxs-lookup"><span data-stu-id="cc37b-118">In Design view or XAML view, select the <xref:System.Windows.Window> element.</span></span>
 
-6. <span data-ttu-id="e1c3c-119">V okně Vlastnosti klikněte na tlačítko **události** kartu.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-119">In the Properties window, click the **Events** tab.</span></span>
+6. <span data-ttu-id="cc37b-119">V okno Vlastnosti klikněte na kartu **události** .</span><span class="sxs-lookup"><span data-stu-id="cc37b-119">In the Properties window, click the **Events** tab.</span></span>
 
-7. <span data-ttu-id="e1c3c-120">Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-120">Double-click the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>
+7. <span data-ttu-id="cc37b-120">Dvakrát klikněte na událost <xref:System.Windows.FrameworkElement.Loaded>.</span><span class="sxs-lookup"><span data-stu-id="cc37b-120">Double-click the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>
 
-8. <span data-ttu-id="e1c3c-121">Vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-121">Insert the following code to handle the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>
+8. <span data-ttu-id="cc37b-121">Vložte následující kód pro zpracování události <xref:System.Windows.FrameworkElement.Loaded>.</span><span class="sxs-lookup"><span data-stu-id="cc37b-121">Insert the following code to handle the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>
 
      [!code-csharp[HostingWfInWPF#10](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml.cs#10)]
      [!code-vb[HostingWfInWPF#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfInWPF/VisualBasic/HostingWfInWpf/Window1.xaml.vb#10)]
 
-9. <span data-ttu-id="e1c3c-122">Na začátek souboru přidejte následující `Imports` nebo `using` příkazu.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-122">At the top of the file, add the following `Imports` or `using` statement.</span></span>
+9. <span data-ttu-id="cc37b-122">V horní části souboru přidejte následující `Imports` nebo příkaz `using`.</span><span class="sxs-lookup"><span data-stu-id="cc37b-122">At the top of the file, add the following `Imports` or `using` statement.</span></span>
 
      [!code-csharp[HostingWfInWPF#11](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml.cs#11)]
      [!code-vb[HostingWfInWPF#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfInWPF/VisualBasic/HostingWfInWpf/Window1.xaml.vb#11)]
 
-10. <span data-ttu-id="e1c3c-123">Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="e1c3c-123">Press **F5** to build and run the application.</span></span>
+10. <span data-ttu-id="cc37b-123">Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="cc37b-123">Press **F5** to build and run the application.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="e1c3c-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1c3c-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cc37b-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cc37b-124">See also</span></span>
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [<span data-ttu-id="e1c3c-125">Návrh kódu XAML v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e1c3c-125">Design XAML in Visual Studio</span></span>](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [<span data-ttu-id="e1c3c-126">Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF pomocí XAML</span><span class="sxs-lookup"><span data-stu-id="e1c3c-126">Walkthrough: Hosting a Windows Forms Control in WPF by Using XAML</span></span>](walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)
-- [<span data-ttu-id="e1c3c-127">Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="e1c3c-127">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [<span data-ttu-id="e1c3c-128">Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e1c3c-128">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
-- [<span data-ttu-id="e1c3c-129">Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF</span><span class="sxs-lookup"><span data-stu-id="e1c3c-129">Windows Forms Controls and Equivalent WPF Controls</span></span>](windows-forms-controls-and-equivalent-wpf-controls.md)
-- [<span data-ttu-id="e1c3c-130">Hostování ovládacího prvku Windows Forms v ukázce WPF</span><span class="sxs-lookup"><span data-stu-id="e1c3c-130">Hosting a Windows Forms Control in WPF Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160057)
+- [<span data-ttu-id="cc37b-125">Návrh kódu XAML v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="cc37b-125">Design XAML in Visual Studio</span></span>](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
+- [<span data-ttu-id="cc37b-126">Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF pomocí kódu XAML</span><span class="sxs-lookup"><span data-stu-id="cc37b-126">Walkthrough: Hosting a Windows Forms Control in WPF by Using XAML</span></span>](walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)
+- [<span data-ttu-id="cc37b-127">Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="cc37b-127">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [<span data-ttu-id="cc37b-128">Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cc37b-128">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [<span data-ttu-id="cc37b-129">Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF</span><span class="sxs-lookup"><span data-stu-id="cc37b-129">Windows Forms Controls and Equivalent WPF Controls</span></span>](windows-forms-controls-and-equivalent-wpf-controls.md)
+- [<span data-ttu-id="cc37b-130">Hostování ovládacího prvku model Windows Forms v ukázce WPF</span><span class="sxs-lookup"><span data-stu-id="cc37b-130">Hosting a Windows Forms Control in WPF Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160057)
