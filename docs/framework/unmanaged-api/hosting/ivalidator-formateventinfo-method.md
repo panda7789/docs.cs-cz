@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4c0c7477-05ba-461b-b21b-cbfba95f1db1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31329a8674a9991a3f306eeff44ee3437ad64a5c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9b3a6bab8672f3ef3fca5f89c60b03a43477cce5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779431"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123302"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo – metoda
-Získá odpovídající zadaným ověřovéní chybovou zprávu.  
+Načte chybovou zprávu odpovídající zadané chybě ověřování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT FormatEventInfo(
   
 ## <a name="parameters"></a>Parametry  
  `hVECode`  
- [in] Hodnota HRESULT, který byl předán obslužná rutina chyb ověření.  
+ pro Hodnota HRESULT, která byla předána obslužné rutině chyby ověřování.  
   
  `Context`  
- [in] A `VEContext` instance, která obsahuje kontextové informace o chybě ověření.  
+ pro Instance `VEContext`, která obsahuje kontextové informace o chybě ověření.  
   
  `msg`  
- [out v] Řetězec, který obsahuje vrácené chybovou zprávu.  
+ [in, out] Řetězec, který obsahuje vrácenou chybovou zprávu.  
   
  `ulMaxLength`  
- [in] Maximální délka chybová zpráva.  
+ pro Maximální délka chybové zprávy.  
   
  `psa`  
- [in] Bezpečné pole, která obsahuje další parametry popisující chybu.  
+ pro Bezpečné pole, které obsahuje další parametry popisující chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** IValidator.idl, IValidator.h  
+ **Hlavička:** IValidator. idl, IValidator. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

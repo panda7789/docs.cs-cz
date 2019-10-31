@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 62e0630c-8cb7-45d2-b622-5a472abfd8cf
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e69957bdc5f70aba361b2574a7f6ebe26d4dd43f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4eb6682ac5a8b7788d97f752f249d85886fba0b6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738391"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111653"
 ---
 # <a name="iclrdebuggingcanunloadnow-method"></a>ICLRDebugging::CanUnloadNow – metoda
-Určuje, zda knihovnu, která byla [iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) rozhraní je stále používán, nebo může být uvolněna.  
+Určuje, zda se knihovna, která byla poskytnuta rozhraním [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) , stále používá, nebo může být uvolněna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +33,30 @@ HRESULT CanUnloadNow(HMODULE hModule);
   
 ## <a name="parameters"></a>Parametry  
  `hmodule`  
- [in] Základní adresa modul v cílovém procesu.  
+ pro Základní adresa modulu v cílovém procesu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Modul, který je odkazován `hmodule` může být uvolněna.|  
-|S_FALSE|Modul, který je odkazován `hmodule` je stále používán.|  
-|COR_E_NOT_CLR|Zadaný modul není modul CLR.|  
+|S_OK|Modul, na který odkazuje `hmodule`, může být uvolněn.|  
+|S_FALSE|Modul, na který odkazuje `hmodule`, se stále používá.|  
+|COR_E_NOT_CLR|Uvedený modul není modul CLR.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda zkontroluje, zda mají všechny výskyty `ICorDebug*` byly vydány rozhraní a žádné vlákno je nyní v rámci volání [iclrdebugging::openvirtualprocess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) metody.  
+ Tato metoda kontroluje, zda byly uvolněny všechny instance rozhraní `ICorDebug*` a v současné době není v rámci volání metody [ICLRDebugging:: OpenVirtualProcess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) žádné vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,14 +2,12 @@
 title: 'ICorDebugVariableSymbol:: GetSlotIndex – metoda'
 ms.date: 03/30/2017
 ms.assetid: 09c19f5f-afc4-4e0c-bffe-cd7147bc7a43
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58bb2cc63f2336ca9cfbed8ebeac0d607c18b2c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a7a7ecf7d3e3d0d2125b03d3604c44138a2be0cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968160"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120975"
 ---
 # <a name="icordebugvariablesymbolgetslotindex-method"></a>ICorDebugVariableSymbol:: GetSlotIndex – metoda
 Načte index spravovaného slotu místní proměnné.  
@@ -27,7 +25,7 @@ HRESULT GetSlotIndex(
  mimo Ukazatel na index slotu místní proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`v případě úspěchu. `E_FAIL`je-li proměnná argumentem funkce.  
+ `S_OK`, pokud bylo úspěšné. `E_FAIL`, je-li proměnná argumentem funkce.  
   
 ## <a name="remarks"></a>Poznámky  
  K načtení informací o metadatech proměnné lze použít index spravované patice místní proměnné.  
@@ -36,11 +34,11 @@ HRESULT GetSlotIndex(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b862ff3e-e480-4cdf-84e2-e1013334a467
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 291246169a5cc2c95b117bc55bc269791885b2ea
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8c884569a452fb2985713956f942205cda6ea1ff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749103"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141243"
 ---
 # <a name="imanagedobjectgetobjectidentity-method"></a>IManagedObject::GetObjectIdentity – metoda
 Získá identitu tohoto spravovaného objektu.  
@@ -39,25 +37,25 @@ HRESULT GetObjectIdentity (
   
 ## <a name="parameters"></a>Parametry  
  `pBSTRGUID`  
- [out] Ukazatel na identifikátor GUID procesu, ve kterém se objekt nachází.  
+ mimo Ukazatel na identifikátor GUID procesu, ve kterém se nachází objekt.  
   
  `AppDomainID`  
- [out] Ukazatel na ID objektu domény aplikace.  
+ mimo Ukazatel na ID domény aplikace objektu.  
   
  `pCCW`  
- [out] Ukazatel na indexu objektu v modelu COM classic tabulce.  
+ mimo Ukazatel na index objektu v tabulce modelu COM Classic v-Table.  
   
 ## <a name="remarks"></a>Poznámky  
- Identitu spravovaného objektu obsahuje proces identifikátor GUID ID domény aplikace a index objektu v COM classic v-table.  
+ Identita spravovaného objektu obsahuje identifikátor GUID procesu, ID domény aplikace a index objektu v tabulce modelu COM Classic v-Table.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

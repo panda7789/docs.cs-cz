@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 4401546e-4d48-453f-a1fb-b2ebda54df5c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2455c896ebdc12f2bb92a30d55745f7bd5bc308a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b0a2e5f259fe1ee566f9cc25152b2d2a1f740bea
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765530"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120339"
 ---
 # <a name="iclrruntimeinfogetruntimedirectory-method"></a>ICLRRuntimeInfo::GetRuntimeDirectory – metoda
-Načte instalační adresář modulu common language runtime (CLR) spojený s tímto rozhraním.  
+Získá instalační adresář modulu CLR (Common Language Runtime) přidruženého k tomuto rozhraní.  
   
- Tato metoda nahrazuje [getcorsystemdirectory –](../../../../docs/framework/unmanaged-api/hosting/getcorsystemdirectory-function.md) funkce k dispozici v rozhraní .NET Framework verze 2.0, 3.0 a 3.5.  
+ Tato metoda nahrazuje funkci [GetCORSystemDirectory –](../../../../docs/framework/unmanaged-api/hosting/getcorsystemdirectory-function.md) , která je k dispozici v .NET Framework verzích 2,0, 3,0 a 3,5.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +37,29 @@ HRESULT GetRuntimeDirectory(
   
 ## <a name="parameters"></a>Parametry  
  `pwzBuffer`  
- [out] Vrátí instalační adresář modulu CLR. Cesta instalace je plně kvalifikovaný; například "c:\windows\microsoft.net\framework\v1.0.3705\\".  
+ mimo Vrátí instalační adresář CLR. Cesta instalace je plně kvalifikovaná; například "c:\Windows\Microsoft.NET\Framework\v1.0.3705\\".  
   
  `pchBuffer`  
- [out v] Určuje velikost `pwzBuffer` , aby přetečení vyrovnávací paměti. Pokud `pwzBuffer` má hodnotu null, `pchBuffer` vrátí velikost požadované `pwzBuffer`.  
+ [in, out] Určuje velikost `pwzBuffer`, aby se předešlo přetečení vyrovnávací paměti. Pokud je `pwzBuffer` null, `pchBuffer` vrátí požadovanou velikost `pwzBuffer`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pwzBuffer` nebo `pchBuffer` má hodnotu null.|  
+|E_POINTER|`pwzBuffer` nebo `pchBuffer` je null.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

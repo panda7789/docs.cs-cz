@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 93232222-926e-42ac-b85d-8a6d33977672
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: adbbf94dc36c6d82360ed532b283cd666a1a52ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1aabfad14ee2eb35916bbf115631602276cd1fc3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109897"
 ---
 # <a name="gethistoryfiledirectory-function"></a>GetHistoryFileDirectory – funkce
 Načte cestu k adresáři historie aplikace.  
@@ -48,17 +46,17 @@ HRESULT GetHistoryFileDirectory (
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`wzDir`nebo `pdwSize` je null nebo je řetězec verze nesprávný.|  
+|E_INVALIDARG|`wzDir` nebo `pdwSize` je null nebo je řetězec verze nesprávný.|  
   
 ## <a name="remarks"></a>Poznámky  
- Po úspěšném dokončení `pdwSize` je argument nastaven na délku řetězce cesty.  
+ Po úspěšném dokončení se argument `pdwSize` nastaví na délku řetězce cesty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
+ **Knihovna:** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

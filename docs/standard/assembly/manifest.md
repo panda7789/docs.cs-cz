@@ -8,14 +8,12 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET Framework], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 053726b200b73956099ff9274cc8f63f21d8fc64
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: f1913f8c41ba4a7b54f7abcdfb97400503da8ac5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973171"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107154"
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Každé sestavení, bez ohledu na to, zda statický nebo dynamický obsahuje kolekci dat, která popisuje, jak se prvky v sestavení vzájemně vztahují. Manifest sestavení obsahuje tato metadata sestavení. Manifest sestavení obsahuje všechna metadata potřebná k určení požadavků na verzi sestavení a identitu zabezpečení a veškerá metadata potřebná k definování rozsahu sestavení a rozpoznání odkazů na prostředky a třídy. Manifest sestavení může být uložen v souboru PE (soubor *. exe* nebo *. dll*) s kódem jazyka MSIL (Microsoft Intermediate Language) nebo v samostatném souboru PE, který obsahuje pouze informace o manifestu sestavení.  
@@ -45,7 +43,7 @@ Každé sestavení, bez ohledu na to, zda statický nebo dynamický obsahuje kol
 |-----------------|-----------------|  
 |Název sestavení|Textový řetězec, který určuje název sestavení.|  
 |Číslo verze|Číslo hlavní verze a podverze a číslo revize a buildu. Modul CLR (Common Language Runtime) používá tato čísla k vymáhání zásad verze.|  
-|Jazyková verze|Informace o jazykové verzi nebo jazyku, který sestavení podporuje. Tyto informace by měly být použity pouze k určení sestavení jako satelitního sestavení, které obsahuje jazykovou verzi nebo informace specifické pro jazyk. (Sestavení s informacemi o jazykové verzi se automaticky předpokládá jako satelitní sestavení.)|  
+|jazykových|Informace o jazykové verzi nebo jazyku, který sestavení podporuje. Tyto informace by měly být použity pouze k určení sestavení jako satelitního sestavení, které obsahuje jazykovou verzi nebo informace specifické pro jazyk. (Sestavení s informacemi o jazykové verzi se automaticky předpokládá jako satelitní sestavení.)|  
 |Informace o silných názvech|Veřejný klíč od vydavatele, pokud se sestavení dostalo silný název.|  
 |Seznam všech souborů v sestavení|Hodnota hash jednotlivých souborů obsažených v sestavení a název souboru. Všimněte si, že všechny soubory, které tvoří sestavení, musí být ve stejném adresáři jako soubor obsahující manifest sestavení.|  
 |Referenční informace o typu|Informace používané modulem runtime k mapování odkazu na typ souboru, který obsahuje jeho deklaraci a implementaci. Tento typ se používá pro typy, které jsou exportovány ze sestavení.|  

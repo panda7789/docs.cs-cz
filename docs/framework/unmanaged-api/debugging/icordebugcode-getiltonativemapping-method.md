@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8ecd8c8-9627-4356-9c6f-bd05e24637c0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7c9e2bb9ef97326c3d11553b6cabd0de0fd6e495
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 011da6aacbf4c40420329952f47b1fabdfc2c1a3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747502"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125623"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping – metoda
-Získává pole instancí "cor_debug_il_to_native_map –", které představují mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů.  
+Získá pole instancí "COR_DEBUG_IL_TO_NATIVE_MAP", které reprezentují mapování z posunu jazyka MSIL (Microsoft Intermediate Language) na nativní posuny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT GetILToNativeMapping (
   
 ## <a name="parameters"></a>Parametry  
  `cMap`  
- [in] Velikost `map` pole.  
+ pro Velikost pole `map`.  
   
  `pcMap`  
- [out] Ukazatel na skutečný počet prvků vrácených v `map` pole.  
+ mimo Ukazatel na skutečný počet prvků vrácených v poli `map`.  
   
  `map`  
- [out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, z nichž každý představuje mapování z jazyka MSIL posun na nativní posun.  
+ mimo Pole struktur `COR_DEBUG_IL_TO_NATIVE_MAP`, z nichž každý představuje mapování z posunu MSIL na nativní posun.  
   
- Neexistuje žádné řazení k poli prvků vrácených.  
+ Poli vrácených prvků není žádné řazení.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetILToNativeMapping` Metoda vrátí smysluplné výsledky, pouze v případě, že tato instance "ICorDebugCode" představuje nativní kód, který byl just-in-time (JIT) kompilaci kódu jazyka MSIL.  
+ Metoda `GetILToNativeMapping` vrací smysluplné výsledky pouze v případě, že tato instance "ICorDebugCode" představuje nativní kód, který byl za běhu zkompilován z kódu jazyka MSIL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Icordebugcode – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+- [Rozhraní ICorDebugCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)

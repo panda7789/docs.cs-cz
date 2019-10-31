@@ -16,15 +16,13 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 5f722977928604e5876e52a7329eef5c933bf2a7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: bf5e98f895c17a3ab9b16e63601fa40fb9e15417
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046472"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140541"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a>Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí být shoda. Použijete-li ve výrazu hledání kotvu, modul regulárních výrazů neprojde řetězcem ani nespotřebovává znaky; vyhledá shodu pouze na zadané pozici. Například `^` určuje, že shoda musí začínat na začátku řádku nebo řetězce. Proto regulární výraz `^http:` odpovídá "http:" pouze v případě, že dojde na začátku řádku. V následující tabulce jsou uvedeny kotvy podporované regulárními výrazy v rozhraní .NET.  
@@ -32,9 +30,9 @@ ms.locfileid: "70046472"
 |Ukotvení|Popis|  
 |------------|-----------------|  
 |`^`|Ve výchozím nastavení se shoda musí vyskytovat na začátku řetězce; v víceřádkovém režimu se musí vyskytovat na začátku řádku. Další informace naleznete v tématu [Začátek řetězce nebo řádku](#Start).|  
-|`$`|Ve výchozím nastavení se shoda musí vyskytovat na konci řetězce nebo před `\n` koncem řetězce; ve víceřádkovém režimu se musí vyskytovat na konci řádku nebo před `\n` koncem řádku. Další informace najdete v tématu [konec řetězce nebo řádku](#End).|  
+|`$`|Ve výchozím nastavení se shoda musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce; v víceřádkovém režimu se musí vyskytovat na konci řádku nebo před `\n` na konci řádku. Další informace najdete v tématu [konec řetězce nebo řádku](#End).|  
 |`\A`|Shoda se musí vyskytovat na začátku jenom řetězce (bez víceřádkové podpory). Další informace najdete v tématu [začátek pouze řetězce](#StartOnly).|  
-|`\Z`|Shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce. Další informace najdete v tématu [konec řetězce nebo před ukončením nového řádku](#EndOrNOnly).|  
+|`\Z`|Ke shodě musí dojít na konci řetězce nebo před `\n` na konci řetězce. Další informace najdete v tématu [konec řetězce nebo před ukončením nového řádku](#EndOrNOnly).|  
 |`\z`|Shoda se musí vyskytovat na konci řetězce. Další informace naleznete v tématu [konec řetězce](#EndOnly).|  
 |`\G`|Shoda musí začínat na pozici, kde byla ukončena předchozí shoda. Další informace naleznete v tématu [souvislé shody](#Contiguous).|  
 |`\b`|Shoda se musí vyskytovat na hranici slova. Další informace najdete v tématu [hranice slova](#WordBoundary).|  
@@ -42,23 +40,23 @@ ms.locfileid: "70046472"
   
 <a name="Start"></a>   
 ## <a name="start-of-string-or-line-"></a>Na začátku řetězce nebo řádku: ^  
- Ve výchozím nastavení `^` kotva určuje, že následující vzor musí začínat na první pozici znaku v řetězci. Pokud použijete `^` <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> s možností (viz [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)), shoda se musí vyskytovat na začátku každého řádku.  
+ Ve výchozím nastavení kotva `^` určuje, že následující vzor musí začínat na první pozici znaku v řetězci. Použijete-li `^` s možností <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> (viz [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)), shoda se musí vyskytovat na začátku každého řádku.  
   
- Následující příklad používá `^` kotvu v regulárním výrazu, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Příklad volá dvě přetížení <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metody:  
+ Následující příklad používá kotvu `^` v regulárním výrazu, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Příklad volá dvě přetížení metody <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>:  
   
-- Volání <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29> přetížení vyhledá pouze první podřetězec ve vstupním řetězci, který odpovídá vzoru regulárního výrazu.  
+- Volání metody <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29> Overload vyhledá pouze první podřetězec ve vstupním řetězci, který odpovídá vzoru regulárního výrazu.  
   
-- Volání <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29> <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> přetížení `options` s parametrem nastaveným k vyhledá všechny pět podřetězců.  
+- Volání <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29> přetížení s parametrem `options` nastaveným na <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> vyhledá všechny pět podřetězců.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/startofstring1.cs#1)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/startofstring1.vb#1)]  
   
- Vzor `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+` regulárního výrazu je definován tak, jak je uvedeno v následující tabulce.  
+ Vzor regulárního výrazu `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+` je definován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`^`|Zahajte porovnávání na začátku vstupního řetězce (nebo začátek řádku, pokud je metoda volána s <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možností).|  
-|`((\w+(\s?)){2,}`|Porovná jeden nebo více znaků slova následovaných žádným nebo jedním mezerou alespoň dvakrát. Toto je první zachytávající skupina. Tento výraz také definuje druhou a třetí zachytávající skupinu: Druhý obsahuje zachycené slovo a třetí tvoří zachycené prázdné znaky.|  
+|`^`|Zahajte shodu na začátku vstupního řetězce (nebo začátek řádku, pokud je metoda volána s možností <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>).|  
+|`((\w+(\s?)){2,}`|Porovná jeden nebo více znaků slova následovaných žádným nebo jedním mezerou alespoň dvakrát. Toto je první zachytávající skupina. Tento výraz také definuje druhou a třetí zachytávající skupinu: Druhá obsahuje zachycené slovo a třetí tvoří zachycené prázdné znaky.|  
 |`,\s`|Porovnává čárku následovanou prázdným znakem.|  
 |`(\w+\s\w+)`|Porovnává jeden nebo více slovních znaků následovaných mezerou a následováním jednoho nebo více znaků slova. Toto je čtvrtá zachytávající skupina.|  
 |`,`|Porovnává čárku.|  
@@ -71,11 +69,11 @@ ms.locfileid: "70046472"
   
 <a name="End"></a>   
 ## <a name="end-of-string-or-line-"></a>Na konci řetězce nebo řádku: $  
- Kotva určuje, že předchozí vzorek musí být na konci vstupního řetězce nebo před `\n` na konci vstupního řetězce. `$`  
+ Kotva `$` určuje, že předchozí vzor musí být na konci vstupního řetězce nebo před `\n` na konci vstupního řetězce.  
   
- Použijete `$` -li <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> s možností, může k shodě dojít také na konci řádku. Všimněte si `$` , `\n` že se shodují, `\r\n` ale neshodují se (kombinace návratových znaků a znaků nového řádku, nebo CR/LF). Chcete-li porovnat kombinaci znaků CR/LF, `\r?$` zahrňte do vzoru regulárního výrazu.  
+ Použijete-li `$` s možností <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>, může k shodě dojít také na konci řádku. Všimněte si, že `$` odpovídá `\n`, ale neodpovídá `\r\n` (kombinace návratových znaků a znaků nového řádku, nebo CR/LF). Chcete-li porovnat kombinaci znaků CR/LF, zahrňte `\r?$` do vzoru regulárního výrazu.  
   
- Následující příklad přidá `$` kotvu do vzoru regulárního výrazu, který je použit v příkladu v části [Začátek řetězce nebo řádku](#Start) . Při použití s původním vstupním řetězcem, který obsahuje pět řádků textu, <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29?displayProperty=nameWithType> metoda nemůže najít shodu, protože konec prvního řádku `$` neodpovídá vzoru. Když je původní vstupní řetězec rozdělen do pole řetězce, metoda bude <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29?displayProperty=nameWithType> úspěšná v porovnání s každým pěti řádky. Pokud je `options` <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>metoda volána s parametrem nastaveným na hodnotu, nebyly nalezeny žádné shody, protože vzor regulárního výrazu není v účtu pro návratový element (\u + 000D). <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> Nicméně, když je vzor regulárního výrazu upraven nahrazením `$` pomocí `\r?$`, `options` volání <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metody s parametrem nastaveným pro <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> opětovné vyhledá pět shod.  
+ Následující příklad přidá kotvu `$` do vzoru regulárního výrazu, který je použit v příkladu v části [Začátek řetězce nebo řádku](#Start) . Při použití s původním vstupním řetězcem, který obsahuje pět řádků textu, metoda <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29?displayProperty=nameWithType> nemůže najít shodu, protože konec prvního řádku neodpovídá vzoru `$`. Když je původní vstupní řetězec rozdělen do pole řetězců, metoda <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29?displayProperty=nameWithType> je úspěšná v porovnání s každým pěti řádky. Pokud je metoda <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> volána s parametrem `options` nastaveným na <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>, nebyly nalezeny žádné shody, protože vzor regulárního výrazu není v účtu pro návratový element (\u + 000D). Pokud je však změněn vzor regulárního výrazu nahrazením `$` `\r?$`, voláním metody <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> s parametrem `options` nastaveným na <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> znovu najde pět shod.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/endofstring1.cs#2)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring1.vb#2)]  
@@ -84,9 +82,9 @@ ms.locfileid: "70046472"
   
 <a name="StartOnly"></a>   
 ## <a name="start-of-string-only-a"></a>Jen za začátku řetězce: \A  
- `\A` Kotva určuje, že shoda se musí vyskytovat na začátku vstupního řetězce. Je totožný `^` s ukotvením, s tím rozdílem, <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> že `\A` ignoruje možnost. Proto může odpovídat pouze začátku prvního řádku ve víceřádkovém vstupním řetězci.  
+ Kotva `\A` určuje, že shoda se musí vyskytovat na začátku vstupního řetězce. Je totožný s kotvou `^`, s tím rozdílem, že `\A` ignoruje možnost <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>. Proto může odpovídat pouze začátku prvního řádku ve víceřádkovém vstupním řetězci.  
   
- Následující příklad je podobný příkladům pro `^` kotvy a. `$` Používá `\A` kotvu v regulárním výrazu, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Vstupní řetězec obsahuje pět řádků. Volání <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metody vyhledá pouze první podřetězec ve vstupním řetězci, který odpovídá vzoru regulárního výrazu. Jak ukazuje příklad, <xref:System.Text.RegularExpressions.RegexOptions.Multiline> možnost nemá žádný vliv.  
+ Následující příklad je podobný příkladům pro `^` a `$` kotvy. Používá kotvu `\A` v regulárním výrazu, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Vstupní řetězec obsahuje pět řádků. Volání metody <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> vyhledá pouze první podřetězec ve vstupním řetězci, který odpovídá vzoru regulárního výrazu. Jak ukazuje příklad, možnost <xref:System.Text.RegularExpressions.RegexOptions.Multiline> nemá žádný vliv.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/startofstring2.cs#3)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/startofstring2.vb#3)]  
@@ -95,11 +93,11 @@ ms.locfileid: "70046472"
   
 <a name="EndOrNOnly"></a>   
 ## <a name="end-of-string-or-before-ending-newline-z"></a>Na konci řetězce nebo před novým řádkem na konci řetězce: \Z  
- Kotva určuje, že shoda se musí vyskytovat na konci vstupního řetězce nebo před `\n` na konci vstupního řetězce. `\Z` Je totožný `$` s ukotvením, s tím rozdílem, <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> že `\Z` ignoruje možnost. Proto může být v víceřádkovém řetězci jen na konci posledního řádku nebo posledního řádku `\n`.  
+ Kotva `\Z` určuje, že shoda se musí vyskytovat na konci vstupního řetězce, nebo před `\n` na konci vstupního řetězce. Je totožný s kotvou `$`, s tím rozdílem, že `\Z` ignoruje možnost <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>. Proto může být v víceřádkovém řetězci pouze pro konec posledního řádku nebo poslední řádek před `\n`.  
   
- Všimněte si `\Z` , `\n` že se shodují, `\r\n` ale neshodují se (kombinace znaků CR/LF). Chcete-li porovnat znaky CR/ `\r?\Z` LF, zahrňte do vzoru regulárního výrazu.  
+ Všimněte si, že `\Z` odpovídá `\n`, ale neodpovídá `\r\n` (kombinace znaků CR/LF). Chcete-li porovnat znaky CR/LF, zahrňte `\r?\Z` do vzoru regulárního výrazu.  
   
- V následujícím příkladu je použita `\Z` kotva regulárního výrazu, který je podobný příkladu v části [Začátek řetězce nebo řádku](#Start) , který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Dílčí výraz `\r?\Z` regulárního výrazu `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\Z` odpovídá konci řetězce a také odpovídá řetězci, který končí `\n` nebo `\r\n`. V důsledku toho každý prvek v poli odpovídá vzoru regulárního výrazu.  
+ Následující příklad používá kotvu `\Z` v regulárním výrazu, který je podobný příkladu v části [Začátek řetězce nebo řádku](#Start) , který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Dílčí výraz `\r?\Z` v regulárním výrazu `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\Z` odpovídá konci řetězce a také odpovídá řetězci, který končí `\n` nebo `\r\n`. V důsledku toho každý prvek v poli odpovídá vzoru regulárního výrazu.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/endofstring2.cs#4)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring2.vb#4)]  
@@ -108,9 +106,9 @@ ms.locfileid: "70046472"
   
 <a name="EndOnly"></a>   
 ## <a name="end-of-string-only-z"></a>Jen na konci řetězce: \z  
- `\z` Kotva určuje, že shoda se musí vyskytovat na konci vstupního řetězce. Podobně jako prvek <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> `\z` `$` jazyka, ignoruje možnost. Na rozdíl od `\Z` elementu jazyka, `\z` `\n` neodpovídá znaku na konci řetězce. Proto může odpovídat pouze poslednímu řádku vstupního řetězce.  
+ Kotva `\z` určuje, že shoda se musí vyskytovat na konci vstupního řetězce. Podobně jako prvek jazyka `$` `\z` ignoruje možnost <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>. Na rozdíl od elementu `\Z` jazyka `\z` neodpovídá znaku `\n` na konci řetězce. Proto může odpovídat pouze poslednímu řádku vstupního řetězce.  
   
- V následujícím příkladu je použita `\z` kotva regulárního výrazu, který je jinak totožný s příkladem v předchozí části, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Tento příklad se pokusí porovnat každý z pěti prvků v poli řetězců se vzorem `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\z`regulárního výrazu. Dva z řetězců končí znakem pro návrat na začátek řádku a znakem kanálu čáry, jeden končí znakem kanálu čáry a dva elementy end bez znaku návratu na začátek řádku ani znakového kanálu. Jak ukazuje výstup, pouze řetězce bez návratu na začátek řádku nebo znak kanálu čáry se shodují se vzorem.  
+ Následující příklad používá kotvu `\z` v regulárním výrazu, který je jinak totožný s příkladem v předchozí části, který extrahuje informace o letech, během kterých existovaly některé profesionální baseballové týmy. Tento příklad se pokusí porovnat každý z pěti prvků v poli řetězců se vzorem regulárního výrazu `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\z`. Dva z řetězců končí znakem pro návrat na začátek řádku a znakem kanálu čáry, jeden končí znakem kanálu čáry a dva elementy end bez znaku návratu na začátek řádku ani znakového kanálu. Jak ukazuje výstup, pouze řetězce bez návratu na začátek řádku nebo znak kanálu čáry se shodují se vzorem.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/endofstring3.cs#5)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring3.vb#5)]  
@@ -119,7 +117,7 @@ ms.locfileid: "70046472"
   
 <a name="Contiguous"></a>   
 ## <a name="contiguous-matches-g"></a>Souvislé porovnávání: \G  
- `\G` Kotva určuje, že shoda se musí vyskytovat v místě, kde byla ukončena předchozí shoda. Použijete-li tento kotvu <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> s <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metodou nebo, zajistíte, aby všechny shody byly souvislé.  
+ Kotva `\G` určuje, že shoda se musí vyskytovat v místě, kde byla ukončena předchozí shoda. Při použití tohoto kotvy s metodou <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> zajistíte, aby všechny shody byly souvislé.  
   
  Následující příklad používá regulární výraz k extrakci názvů druhů hlodavců z řetězce odděleného čárkami.  
   
@@ -141,9 +139,9 @@ ms.locfileid: "70046472"
   
 <a name="WordBoundary"></a>   
 ## <a name="word-boundary-b"></a>Na hranici slova: \b  
- Kotva určuje, že shoda se musí vyskytovat na hranici mezi znakem slova `\w` (element jazyka) a znakem, který není ( `\W` element jazyka). `\b` Znaky slova se skládají z alfanumerických znaků a podtržítek; znak jiný než Word je libovolný znak, který není alfanumerický nebo podtržítko. (Další informace naleznete v tématu [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Shoda se může vyskytovat také na hranici slova na začátku nebo konci řetězce.  
+ Kotva `\b` určuje, že shoda se musí vyskytovat na hranici mezi znakem slova (prvek jazyka `\w`) a znakem, který není znakem slova (prvek jazyka `\W`). Znaky slova se skládají z alfanumerických znaků a podtržítek; znak jiný než Word je libovolný znak, který není alfanumerický nebo podtržítko. (Další informace naleznete v tématu [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Shoda se může vyskytovat také na hranici slova na začátku nebo konci řetězce.  
   
- `\b` Kotva se často používá k zajištění, že dílčí výraz odpovídá celému slovu, a ne jenom začátku nebo konci slova. Regulární výraz `\bare\w*\b` v následujícím příkladě znázorňuje toto použití. Odpovídá libovolnému slovu, které začíná podřetězcem "jsou". Výstup z příkladu také znázorňuje, že `\b` odpovídá začátku i konci vstupního řetězce.  
+ Kotva `\b` se často používá k zajištění, že dílčí výraz odpovídá celému slovu, a ne jenom začátku nebo konci slova. Toto použití ukazuje regulární výraz `\bare\w*\b` v následujícím příkladu. Odpovídá libovolnému slovu, které začíná podřetězcem "jsou". Výstup z příkladu také znázorňuje, že `\b` odpovídá začátku i konci vstupního řetězce.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/word1.cs#7)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/word1.vb#7)]  
@@ -161,9 +159,9 @@ ms.locfileid: "70046472"
   
 <a name="NonwordBoundary"></a>   
 ## <a name="non-word-boundary-b"></a>Mimo hranice slova: \B  
- `\B` Kotva určuje, že shoda se nesmí vyskytovat na hranici slova. Je opakem `\b` kotvy.  
+ Kotva `\B` určuje, že shoda se nesmí vyskytovat na hranici slova. Je opakem `\b` kotvy.  
   
- Následující příklad používá `\B` kotvu k vyhledání výskytů podřetězce "qu" ve slově. Vzor `\Bqu\w+` regulárního výrazu se shoduje s podřetězcem, který začíná "qu", který nespouští slovo a pokračuje na konci slova.  
+ Následující příklad používá kotvu `\B` k vyhledání výskytů podřetězce "qu" ve slově. Vzor regulárního výrazu `\Bqu\w+` shodný s podřetězcem, který začíná "qu", který nespouští slovo a pokračuje na konci slova.  
   
  [!code-csharp[Conceptual.RegEx.Language.Assertions#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.assertions/cs/nonword1.cs#8)]
  [!code-vb[Conceptual.RegEx.Language.Assertions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/nonword1.vb#8)]  

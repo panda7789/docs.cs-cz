@@ -18,14 +18,12 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5079f0243faefaab6ada23cc98f5214a616c1d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e6c4baae854e5997b153e1363ca8ed4204e10e2b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044367"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085212"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 
@@ -46,7 +44,7 @@ Změny nástroje Ngen.exe v rozhraní .NET Framework verze 2.0:
 
 - Nativní bitové kopie mohou být nyní sdíleny napříč doménami aplikací.
 
-- Nová akce `update`způsobí, že znovu vytvoří image, jejichž platnost byla zrušena.
+- Nová akce `update`znovu vytvoří bitové kopie, jejichž platnost byla zrušena.
 
 - Pro generování a instalaci bitových kopií může být spuštění akcí odloženo službou využívající dobu nečinnosti.
 
@@ -75,13 +73,13 @@ ngen /? | /help
 
 ## <a name="actions"></a>Akce
 
-V následující tabulce je uvedena syntaxe každého z `action`nich. Popisy `action`jednotlivých částí sady najdete v tabulkách [argumenty](#ArgumentTable), [úrovně priority](#PriorityTable), [scénáře](#ScenarioTable)a [Konfigurace](#ConfigTable) . V tabulce [Options](#OptionTable) jsou popsány `options` přepínače Help a.
+V následující tabulce je uvedena syntaxe každého `action`. Popisy jednotlivých částí `action`naleznete v tabulkách [argumenty](#ArgumentTable), [úrovně priority](#PriorityTable), [scénáře](#ScenarioTable)a [Konfigurace](#ConfigTable) . Tabulka [Options](#OptionTable) popisuje `options` a přepínače help.
 
 |Akce|Popis|
 |------------|-----------------|
-|`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|Vygeneruje nativní bitové kopie sestavení a jeho závislosti a nainstaluje bitové kopie do mezipaměti nativních bitových kopií.<br /><br /> Je `/queue` -li parametr zadán, je akce zařazena do fronty pro službu nativních bitových kopií. Výchozí hodnota priority je 3. Podívejte se na tabulku [úrovně priority](#PriorityTable) .|
-|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Odstraní nativní bitové kopie sestavení a jeho závislosti z mezipaměti nativních bitových kopií.<br /><br /> Chcete-li odinstalovat pouze jednu bitovou kopii a její závislosti, použijte stejné argumenty příkazového řádku, které byly použity při instalaci kopie. **Poznámka:**  Počínaje .NET Framework 4 není akce `uninstall` * nadále podporována.|
-|`update` [`/queue`]|Aktualizuje nativní bitové kopie, které se staly neplatnými.<br /><br /> Pokud `/queue` je zadaný, aktualizace se zařadí do fronty pro nativní Image Service. Aktualizace jsou vždy naplánovány s prioritou 3, jsou tedy spouštěny při nečinnosti počítače.|
+|`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|Vygeneruje nativní bitové kopie sestavení a jeho závislosti a nainstaluje bitové kopie do mezipaměti nativních bitových kopií.<br /><br /> Je-li zadán `/queue`, akce je zařazena do fronty pro službu nativních bitových kopií. Výchozí hodnota priority je 3. Podívejte se na tabulku [úrovně priority](#PriorityTable) .|
+|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Odstraní nativní bitové kopie sestavení a jeho závislosti z mezipaměti nativních bitových kopií.<br /><br /> Chcete-li odinstalovat pouze jednu bitovou kopii a její závislosti, použijte stejné argumenty příkazového řádku, které byly použity při instalaci kopie. **Poznámka:**  Počínaje .NET Framework 4 už není podporovaná akce `uninstall` *.|
+|`update` [`/queue`]|Aktualizuje nativní bitové kopie, které se staly neplatnými.<br /><br /> Pokud je zadaný `/queue`, aktualizace se zařadí do fronty pro nativní Image Service. Aktualizace jsou vždy naplánovány s prioritou 3, jsou tedy spouštěny při nečinnosti počítače.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Zobrazí stav nativních bitových kopií pro sestavení a jeho závislosti.<br /><br /> Není-li zadán žádný argument, je zobrazen celý obsah mezipaměti nativních bitových kopií.|
 |`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -nebo-<br /><br /> `eqi` [1&#124;2&#124;3]|Spustí úlohy kompilace ve frontě.<br /><br /> Je-li zadána priorita, jsou spuštěny úlohy kompilace s větší nebo shodnou prioritou. Není-li priorita zadána, jsou spuštěny všechny úlohy kompilace.|
 |`queue` {`pause` &#124; `continue` &#124; `status`}|Pozastaví službu nativních bitových kopií, umožní pozastavené službě pokračovat nebo se dotáže na stav služby.|
@@ -92,14 +90,14 @@ V následující tabulce je uvedena syntaxe každého z `action`nich. Popisy `ac
 
 |Argument|Popis|
 |--------------|-----------------|
-|`assemblyName`|Plný zobrazovaný název sestavení. Například, `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`. **Poznámka:**  Pro akce `myAssembly` a`uninstall`můžete uvést částečný název sestavení, například. `display` <br /><br /> V jednom příkazovém řádku nástroje Ngen.exe lze zadat pouze jedno sestavení.|
+|`assemblyName`|Plný zobrazovaný název sestavení. Například `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`. **Poznámka:**  Pro akce `display` a `uninstall` můžete pro akce a zadávat název částečného sestavení, například `myAssembly`. <br /><br /> V jednom příkazovém řádku nástroje Ngen.exe lze zadat pouze jedno sestavení.|
 |`assemblyPath`|Explicitní cesta k sestavení. Lze zadat úplnou nebo relativní cestu.<br /><br /> Zadáte-li název souboru bez cesty, musí se sestavení nacházet v aktuálním adresáři.<br /><br /> V jednom příkazovém řádku nástroje Ngen.exe lze zadat pouze jedno sestavení.|
 
 <a name="PriorityTable"></a>
 
 ## <a name="priority-levels"></a>Úrovně priority
 
-|Priority|Popis|
+|Priorita|Popis|
 |--------------|-----------------|
 |`1`|Nativní bitové kopie jsou generovány a nainstalovány okamžitě, nečeká se na nečinnost počítače.|
 |`2`|Nativní bitové kopie jsou generovány a instalovány bez čekání na nečinnost počítače, ale až po dokončení všech akcí s prioritou 1 (a jejich závislostí).|
@@ -119,9 +117,9 @@ V následující tabulce je uvedena syntaxe každého z `action`nich. Popisy `ac
 
 ## <a name="config"></a>Konfigurace
 
-|Konfiguraci|Popis|
+|Konfigurace|Popis|
 |-------------------|-----------------|
-|`/ExeConfig:``exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Při načtení sdílené komponenty za běhu pomocí <xref:System.Reflection.Assembly.Load%2A> metody určuje konfigurační soubor aplikace závislosti, které jsou načteny pro sdílenou součást, například verzi načtené závislosti. `/ExeConfig` Přepínač poskytuje pokyny Ngen. exe, na kterých by se měly načíst závislosti za běhu.|
+|`/ExeConfig:``exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Pokud je v době běhu načtena sdílená komponenta pomocí metody <xref:System.Reflection.Assembly.Load%2A>, určuje konfigurační soubor aplikace závislosti, které jsou načteny pro sdílenou součást, například verzi načtené závislosti. Přepínač `/ExeConfig` poskytuje pokyny Ngen. exe, na kterých by se měly načíst závislosti za běhu.|
 |`/AppBase:``directoryPath`|Při hledání závislostí aplikace použije jako základ cesty zadaný adresář.|
 
 <a name="OptionTable"></a>
@@ -133,7 +131,7 @@ V následující tabulce je uvedena syntaxe každého z `action`nich. Popisy `ac
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
 |`/silent`|Potlačí zobrazování zpráv o úspěchu.|
 |`/verbose`|Zobrazí podrobné informace o ladění. **Poznámka:**  V důsledku omezení operačního systému Tato možnost nezobrazuje ve Windows 98 a Windows Millennium Edition tolik dalších informací.|
-|`/help`, `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
+|`/help``/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -144,20 +142,20 @@ Chcete-li spustit nástroj Ngen.exe, je zapotřebí mít oprávnění správce.
 
 Počínaje .NET Framework 4 již nelze načíst nativní bitové kopie, které jsou generovány pomocí nástroje Ngen. exe, do aplikací, které běží v částečném vztahu důvěryhodnosti. Namísto toho je vyvolán kompilátor za běhu (JIT).
 
-Ngen. exe generuje nativní bitové kopie pro sestavení určené `assemblyname` argumentem `install` pro akci a všechny její závislosti. Závislosti se stanoví z odkazů v manifestu sestavení. Jediným scénářem, kdy je nutné nainstalovat závislost samostatně, je, když ji aplikace načte pomocí reflexe, například voláním <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody.
+Ngen. exe generuje nativní bitové kopie pro sestavení určené argumentem `assemblyname` pro akci `install` a všechny její závislosti. Závislosti se stanoví z odkazů v manifestu sestavení. Jediným scénářem, kdy je nutné nainstalovat závislost samostatně, je, když ji aplikace načte pomocí reflexe, například voláním metody <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.
 
 > [!IMPORTANT]
-> Nepoužívejte <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metodu s nativními bitovými kopiemi. Bitovou kopii zavedenou touto metodou nelze v kontextu spuštění používat jinými sestaveními.
+> Nepoužívejte metodu <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> s nativními bitovými kopiemi. Bitovou kopii zavedenou touto metodou nelze v kontextu spuštění používat jinými sestaveními.
 
-Nástroj Ngen.exe udržuje počet odkazů na závislosti. Předpokládejme například, že `MyAssembly.exe` a `YourAssembly.exe` jsou nainstalovány v mezipaměti nativní bitové kopie a oba mají odkazy na `OurDependency.dll`. Pokud `MyAssembly.exe` je odinstalován, `OurDependency.dll` nedojde k odinstalaci. Odstraní se jenom v případě `YourAssembly.exe` , že se taky odinstaluje.
+Nástroj Ngen.exe udržuje počet odkazů na závislosti. Předpokládejme například, že `MyAssembly.exe` a `YourAssembly.exe` jsou nainstalovány v mezipaměti nativní bitové kopie a oba mají odkazy na `OurDependency.dll`. Pokud `MyAssembly.exe` odinstalujete, `OurDependency.dll` se neodinstaluje. Odebere se, jenom když se odinstaluje i `YourAssembly.exe`.
 
 Pokud generujete nativní bitovou kopii pro sestavení v globální mezipaměti sestavení (GAC), zadejte její zobrazovaný název. Viz <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>.
 
 Nativní bitové kopie, které generuje Ngen.exe, mohou být sdíleny napříč doménami aplikace. To znamená, že nástroj Ngen.exe lze použít ve scénářích aplikací, které vyžadují, aby byla sestavení sdílena napříč doménami aplikace. Určení neutrality domény:
 
-- <xref:System.LoaderOptimizationAttribute> Použijte atribut pro aplikaci.
+- Použijte atribut <xref:System.LoaderOptimizationAttribute> pro vaši aplikaci.
 
-- <xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=nameWithType> Nastavte vlastnost při vytváření informací o instalaci pro novou doménu aplikace.
+- Nastavte vlastnost <xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=nameWithType> při vytváření informací o instalaci pro novou doménu aplikace.
 
 Vždy je třeba použít doménově neutrální kód, pokud je dané sestavení načítáno do více domén aplikace. Pokud je nativní bitová kopie načtena do nesdílené domény aplikace poté, co byla načtena do sdílené domény, nelze ji použít.
 
@@ -204,9 +202,9 @@ V tomto oddílu Poznámky:
 
 Po vygenerování nativní bitové kopie pro sestavení se modul runtime automaticky pokusí vyhledat a použít tuto nativní bitovou kopii při každém spuštění sestavení. V závislosti na scénáři lze generovat více bitových kopií.
 
-Například pokud spustíte sestavení ve scénáři ladění nebo profilace, modul runtime vyhledá nativní bitovou kopii, která byla vygenerována s `/Debug` možnostmi nebo. `/Profile` Pokud nemůže najít odpovídající nativní bitovou kopii, vrátí se modul runtime ke standardní JIT kompilaci. Jediným způsobem, jak ladit nativní bitové kopie, je vytvořit nativní bitovou kopii `/Debug` s možností.
+Například pokud spustíte sestavení ve scénáři ladění nebo profilace, modul runtime vyhledá nativní bitovou kopii, která byla vygenerována s možností `/Debug` nebo `/Profile`. Pokud nemůže najít odpovídající nativní bitovou kopii, vrátí se modul runtime ke standardní JIT kompilaci. Jediným způsobem, jak ladit nativní bitové kopie, je vytvoření nativní bitové kopie s možností `/Debug`.
 
-Tato `uninstall` akce také rozpoznává scénáře, takže můžete odinstalovat všechny scénáře nebo pouze vybrané scénáře.
+Akce `uninstall` také rozpoznává scénáře, takže můžete odinstalovat všechny scénáře nebo pouze vybrané scénáře.
 
 <a name="WhenToUse"></a>
 
@@ -296,7 +294,7 @@ Pevné vazby zvyšují propustnost a snižují velikost pracovní sady pro nativ
 
 Pevná vazba je vhodná pro závislosti, které jsou načteny ve všech scénářích aplikace, u kterých velmi záleží na výkonu. Stejně jako u jakéhokoli jiného aspektu použití nativní bitové kopie je měření výkonu jediným způsobem, jak určit, zda pevná vazba zlepšuje výkon vaší aplikace.
 
-Atributy <xref:System.Runtime.CompilerServices.DependencyAttribute> a<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> umožňují zadat pomocný parametr pro pevné vazby do nástroje Ngen. exe.
+Atributy <xref:System.Runtime.CompilerServices.DependencyAttribute> a <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> umožňují poskytnout nástroje Ngen. exe pomocný parametr pro pevné vazby.
 
 > [!NOTE]
 > Tyto atributy jsou informace pro Ngen.exe, nikoli příkazy. Jejich použití nezaručuje pevné vazby. V budoucích verzích se může změnit význam těchto atributů.
@@ -305,7 +303,7 @@ Atributy <xref:System.Runtime.CompilerServices.DependencyAttribute> a<xref:Syste
 
 ### <a name="specifying-a-binding-hint-for-a-dependency"></a>Zadání pomocného parametru vazby pro závislost
 
-<xref:System.Runtime.CompilerServices.DependencyAttribute> Použijte pro sestavení k označení pravděpodobnosti, že se načte zadaná závislost. <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType>označuje, že pevná vazba je vhodná <xref:System.Runtime.CompilerServices.LoadHint.Default> , indikuje, že by měla být použita výchozí hodnota závislosti, <xref:System.Runtime.CompilerServices.LoadHint.Sometimes> a označuje, že pevná vazba není vhodná.
+Použijte <xref:System.Runtime.CompilerServices.DependencyAttribute> pro sestavení k označení pravděpodobnosti, že se načte zadaná závislost. <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> označuje, že je pevná vazba vhodná, <xref:System.Runtime.CompilerServices.LoadHint.Default> indikuje, že by měla být použita výchozí hodnota pro závislost a <xref:System.Runtime.CompilerServices.LoadHint.Sometimes> označuje, že pevná vazba není vhodná.
 
 Následující kód zobrazuje atributy pro sestavení, které má dvě závislosti. První závislost (Assembly1) je vhodným kandidátem pro pevnou vazbu, druhá závislost (Assembly2) nikoliv.
 
@@ -333,18 +331,18 @@ Název sestavení neobsahuje příponu názvu souboru. Lze použít zobrazené n
 
 ### <a name="specifying-a-default-binding-hint-for-an-assembly"></a>Určení výchozího parametru vazby pro sestavení
 
-Výchozí pokyny pro vazby jsou zapotřebí pouze pro sestavení, která budou použita okamžitě a často aplikací, která na nich závisí. <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> Použijte s <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> u těchto sestavení k určení, že se má použít pevná vazba.
+Výchozí pokyny pro vazby jsou zapotřebí pouze pro sestavení, která budou použita okamžitě a často aplikací, která na nich závisí. Použijte <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> s <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> na taková sestavení a určete tak, že se má použít pevná vazba.
 
 > [!NOTE]
-> Neexistuje žádný důvod, jak použít <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> na sestavení knihovny DLL, která nespadají do této kategorie, protože použití atributu s jinou hodnotou než <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> má stejný efekt jako nepoužití atributu vůbec.
+> Neexistuje žádný důvod, jak použít <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> na sestavení knihovny DLL, která nespadají do této kategorie, protože použití atributu s jinou hodnotou než <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> má stejný účinek jako nepoužití atributu vůbec.
 
-Společnost Microsoft používá <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> k určení této pevné vazby výchozí hodnotu pro velmi malý počet sestavení v .NET Framework, jako je například mscorlib. dll.
+Společnost Microsoft používá <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> k určení, že pevná vazba je výchozím nastavením pro velmi malý počet sestavení v .NET Framework, jako je například mscorlib. dll.
 
 <a name="Deferred"></a>
 
 ## <a name="deferred-processing"></a>Odložené zpracování
 
-Generování nativních bitových kopií pro velmi velké aplikace může být časově náročné. Obdobně změny sdílené komponenty nebo změny nastavení počítače mohou vyžadovat aktualizaci mnoha nativních bitových kopií. Akce `install` a `update` mají`/queue` možnost, která zařadí do fronty operaci pro odložené spouštění pomocí nativní bitové kopie služby. Kromě toho nástroj Ngen. exe obsahuje `queue` akce `executeQueuedItems` a, které poskytují určitou kontrolu nad službou. Další informace najdete v tématu [nativní Image Service](#native-image-service).
+Generování nativních bitových kopií pro velmi velké aplikace může být časově náročné. Obdobně změny sdílené komponenty nebo změny nastavení počítače mohou vyžadovat aktualizaci mnoha nativních bitových kopií. Akce `install` a `update` mají možnost `/queue`, která zařadí do fronty operaci pro odložené vykonání pomocí nativní bitové kopie služby. Nástroj Ngen. exe navíc má `queue` a `executeQueuedItems` akce, které poskytují určitou kontrolu nad službou. Další informace najdete v tématu [nativní Image Service](#native-image-service).
 
 <a name="JITCompilation"></a>
 
@@ -374,7 +372,7 @@ Nástroj Ngen.exe zaznamenává tyto informace při generování nativní bitov�
 
 - Verze rozhraní .NET Framework.
 
-     Pokud použijete aktualizaci rozhraní .NET Framework, všechny nativní bitové kopie, které jste vytvořili pomocí Ngen.exe, se zneplatní. Z tohoto důvodu všechny aktualizace .NET Framework spustí `Ngen Update` příkaz, aby se zajistilo opětovné vygenerování všech nativních imagí. Rozhraní .NET Framework automaticky vytvoří nové nativní bitové kopie pro knihovny rozhraní .NET Framework, které nainstaluje.
+     Pokud použijete aktualizaci rozhraní .NET Framework, všechny nativní bitové kopie, které jste vytvořili pomocí Ngen.exe, se zneplatní. Z tohoto důvodu všechny aktualizace .NET Framework spustí příkaz `Ngen Update`, aby bylo zajištěno, že budou všechny nativní bitové kopie znovu vygenerovány. Rozhraní .NET Framework automaticky vytvoří nové nativní bitové kopie pro knihovny rozhraní .NET Framework, které nainstaluje.
 
 - Verze operačního systému, pokud je změna z řady Windows 9x na řadu Windows NT.
 
@@ -386,7 +384,7 @@ Nástroj Ngen.exe zaznamenává tyto informace při generování nativní bitov�
 
 - Přesná identita všech sestavení, na která sestavení odkazuje.
 
-     Pokud aktualizujete spravované sestavení, všechny nativní bitové kopie, které přímo nebo nepřímo závisí na tomto sestavení, se zneplatní a musí být znovu vygenerovány. To zahrnuje jak běžné odkazy, tak pevně vázané závislosti. Pokaždé, když se použije aktualizace softwaru, instalační program by měl `Ngen Update` spustit příkaz, aby se zajistilo, že se znovu vygenerují všechny závislé nativní bitové kopie.
+     Pokud aktualizujete spravované sestavení, všechny nativní bitové kopie, které přímo nebo nepřímo závisí na tomto sestavení, se zneplatní a musí být znovu vygenerovány. To zahrnuje jak běžné odkazy, tak pevně vázané závislosti. Pokaždé, když se použije aktualizace softwaru, instalační program by měl spustit příkaz `Ngen Update`, aby se zajistilo, že se znovu vygenerují všechny závislé nativní bitové kopie.
 
 - Bezpečnostní faktory.
 
@@ -416,21 +414,21 @@ K určení, kdy kompilátor JIT začne kompilovat funkci, můžete použít pomo
 
 ### <a name="opting-out-of-native-image-generation"></a>Vypnutí generování nativních imagí
 
-V některých případech může NGen. exe mít potíže při generování nativní bitové kopie pro konkrétní metodu, nebo může být vhodnější, aby byla metoda JIT zkompilována, spíše zkompilována do nativní bitové kopie. V takovém případě můžete použít `System.Runtime.BypassNGenAttribute` atribut k zabránění generování nativní bitové kopie pro určitou metodu pomocí atributu Ngen. exe. Atribut musí být použit samostatně pro každou metodu, jejíž kód nechcete zahrnout do nativní bitové kopie. NGen. exe rozpoznává atribut a negeneruje kód v nativní imagi pro odpovídající metodu.
+V některých případech může NGen. exe mít potíže při generování nativní bitové kopie pro konkrétní metodu, nebo může být vhodnější, aby byla metoda JIT zkompilována, spíše zkompilována do nativní bitové kopie. V tomto případě můžete použít atribut `System.Runtime.BypassNGenAttribute` a zabránit tak nástroji NGen. exe v generování nativní bitové kopie pro určitou metodu. Atribut musí být použit samostatně pro každou metodu, jejíž kód nechcete zahrnout do nativní bitové kopie. NGen. exe rozpoznává atribut a negeneruje kód v nativní imagi pro odpovídající metodu.
 
 Všimněte si však, že `BypassNGenAttribute` není definován jako typ v knihovně tříd .NET Framework. Aby bylo možné používat atribut v kódu, je nutné nejprve definovat následující:
 
 [!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)]
 [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]
 
-Pak můžete použít atribut na základě jednotlivých metod. Následující příklad instruuje generátor nativních bitových kopií, který by neměl generovat nativní bitovou kopii `ExampleClass.ToJITCompile` pro metodu.
+Pak můžete použít atribut na základě jednotlivých metod. Následující příklad instruuje generátor nativních bitových kopií, který by neměl generovat nativní bitovou kopii pro metodu `ExampleClass.ToJITCompile`.
 
 [!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)]
 [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]
 
 ## <a name="examples"></a>Příklady
 
-Následující příkaz vytvoří nativní bitovou kopii pro `ClientApp.exe`objekt umístěný v aktuálním adresáři a nainstaluje bitovou kopii do mezipaměti nativní bitové kopie. Pokud pro sestavení existuje soubor nastavení, Ngen.exe jej použije. Kromě toho jsou vygenerovány nativní bitové kopie pro všechny soubory DLL `ClientApp.exe` , které odkazují na.
+Následující příkaz vytvoří nativní bitovou kopii pro `ClientApp.exe`umístěnou v aktuálním adresáři a nainstaluje bitovou kopii do mezipaměti nativní bitové kopie. Pokud pro sestavení existuje soubor nastavení, Ngen.exe jej použije. Kromě toho jsou vygenerovány nativní bitové kopie pro všechny soubory DLL, které `ClientApp.exe` odkazy.
 
 ```console
 ngen install ClientApp.exe
@@ -438,18 +436,18 @@ ngen install ClientApp.exe
 
 Bitová kopie nainstalovaná pomocí Ngen.exe se také nazývá kořen. Kořen může být aplikace nebo sdílená komponenta.
 
-Následující příkaz vytvoří nativní bitovou kopii pro `MyAssembly.exe` zadanou cestu.
+Následující příkaz vytvoří nativní bitovou kopii pro `MyAssembly.exe` se zadanou cestou.
 
 ```console
 ngen install c:\myfiles\MyAssembly.exe
 ```
 
-Při hledání sestavení a jejich závislosti používá Ngen.exe stejnou logiku při zjišťování, jaká je použita u Common Language Runtime (CLR). Ve výchozím nastavení se adresář, který `ClientApp.exe` obsahuje, používá jako základní adresář aplikace a veškeré zjišťování sestavení začíná v tomto adresáři. Toto chování můžete přepsat pomocí `/AppBase` možnosti.
+Při hledání sestavení a jejich závislosti používá Ngen.exe stejnou logiku při zjišťování, jaká je použita u Common Language Runtime (CLR). Ve výchozím nastavení se adresář, který obsahuje `ClientApp.exe`, používá jako základní adresář aplikace a veškeré zjišťování sestavení začíná v tomto adresáři. Toto chování můžete přepsat pomocí možnosti `/AppBase`.
 
 > [!NOTE]
 > Jde o změnu oproti chování nástroje Ngen.exe v rozhraních .NET Framework verze 1.0 a 1.1, kde základ cesty aplikace je nastaven na aktuální adresář.
 
-Sestavení může mít závislost bez odkazu, například pokud načte soubor DLL pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody. Můžete vytvořit nativní bitovou kopii pro takový soubor. dll pomocí informací o konfiguraci pro sestavení aplikace s `/ExeConfig` možností. Následující příkaz vytvoří nativní bitovou kopii pro `MyLib.dll,` použití informací o konfiguraci z `MyApp.exe`.
+Sestavení může mít závislost bez odkazu, například pokud načte soubor DLL pomocí metody <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>. Můžete vytvořit nativní bitovou kopii pro takový soubor DLL pomocí informací o konfiguraci pro sestavení aplikace s možností `/ExeConfig`. Následující příkaz vytvoří nativní bitovou kopii pro `MyLib.dll,` s použitím informací o konfiguraci z `MyApp.exe`.
 
 ```console
 ngen install c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe
@@ -486,15 +484,15 @@ Jakmile jsou nativní bitové kopie nainstalovány v mezipaměti, lze je zobrazi
 ngen display
 ```
 
-`display` Akce nejprve Vypíše všechna kořenová sestavení a potom seznam všech nativních bitových kopií v počítači.
+Akce `display` uvádí nejprve všechna kořenová sestavení a následuje seznam všech nativních bitových kopií v počítači.
 
-Chcete-li zobrazit pouze informace o sestavení, použijte jeho jednoduchý název. Následující příkaz zobrazí všechny nativní bitové kopie v mezipaměti nativních imagí, které odpovídají částečnému `MyAssembly`názvu, jejich závislostem a všem kořenům, na `MyAssembly`kterých závisí:
+Chcete-li zobrazit pouze informace o sestavení, použijte jeho jednoduchý název. Následující příkaz zobrazí všechny nativní bitové kopie v mezipaměti nativních imagí, které odpovídají částečnému názvu `MyAssembly`, jejich závislostem a všem kořenům, které mají závislost na `MyAssembly`:
 
 ```console
 ngen display MyAssembly
 ```
 
-Znalost toho, které kořeny závisí na sestavení sdílené komponenty, je užitečné v měření dopad `update` akce po upgradu sdílené komponenty.
+Znalost toho, které kořeny závisí na sestavení sdílené komponenty, je užitečné v měření vlivu akce `update` po upgradu sdílené komponenty.
 
 Zadáte-li příponu souboru sestavení, musí být buď zadána cesta, nebo spuštěn nástroj Ngen.exe z adresáře obsahujícího sestavení:
 
@@ -510,13 +508,13 @@ ngen display "myAssembly, version=1.0.0.0"
 
 ### <a name="updating-images"></a>Aktualizace bitových kopií
 
-Bitové kopie jsou obvykle aktualizovány po upgradu sdílené komponenty. Chcete-li aktualizovat všechny nativní bitové kopie, které se změnily nebo jejichž závislosti se `update` změnily, použijte akci bez argumentů.
+Bitové kopie jsou obvykle aktualizovány po upgradu sdílené komponenty. Chcete-li aktualizovat všechny nativní bitové kopie, které se změnily nebo jejichž závislosti se změnily, použijte akci `update` bez argumentů.
 
 ```console
 ngen update
 ```
 
-Aktualizace všech bitových kopií může být časově náročný proces. Aktualizace můžete zařadit do fronty pro spouštění pomocí služby nativních imagí pomocí `/queue` možnosti. Další informace o `/queue` možnosti a prioritách instalace najdete v tématu [nativní Image Service](#native-image-service).
+Aktualizace všech bitových kopií může být časově náročný proces. Aktualizace můžete zařadit do fronty pro spouštění pomocí služby nativních imagí pomocí možnosti `/queue`. Další informace o možnosti `/queue` a prioritách instalace najdete v tématu [nativní Image Service](#native-image-service).
 
 ```console
 ngen update /queue
@@ -526,22 +524,22 @@ ngen update /queue
 
 Nástroj Ngen.exe udržuje seznam závislostí, takže sdílené komponenty jsou odstraněny pouze v případě, že byla odebrána všechna sestavení, která na nich závisí. Kromě toho, pokud byla sdílená komponenta nainstalována jako kořen, nebude odstraněna.
 
-Následující příkaz odinstaluje všechny scénáře pro kořen `ClientApp.exe`:
+Následující příkaz odinstaluje všechny scénáře pro kořenový `ClientApp.exe`:
 
 ```console
 ngen uninstall ClientApp
 ```
 
-`uninstall` Akci lze použít k odebrání konkrétních scénářů. Následující příkaz odinstaluje všechny scénáře ladění pro `ClientApp.exe`:
+Akci `uninstall` lze použít k odebrání konkrétních scénářů. Následující příkaz odinstaluje všechny scénáře ladění pro `ClientApp.exe`:
 
 ```console
 ngen uninstall ClientApp /debug
 ```
 
 > [!NOTE]
-> Při `/debug` odinstalaci scénářů nedojde k odinstalování `/profile` scénáře, který zahrnuje i`/debug.`
+> Odinstalováním `/debug` scénářů nedojde k odinstalování scénáře, který zahrnuje `/profile` a `/debug.`
 
-Následující příkaz odinstaluje všechny scénáře pro konkrétní verzi `ClientApp.exe`nástroje:
+Následující příkaz odinstaluje všechny scénáře pro konkrétní verzi `ClientApp.exe`:
 
 ```console
 ngen uninstall "ClientApp, Version=1.0.0.0"
@@ -556,7 +554,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL" /debug
 ```
 
-Stejně jako u `install` akce vyžaduje poskytnutí rozšíření buď spuštění nástroje Ngen. exe z adresáře obsahujícího sestavení, nebo zadání úplné cesty.
+Stejně jako v případě akce `install`, poskytnutí rozšíření vyžaduje buď spuštění nástroje Ngen. exe z adresáře obsahujícího sestavení, nebo zadání úplné cesty.
 
 Příklady týkající se služby nativních bitových kopií naleznete v tématu [Native Image Service](#native-image-service).
 
@@ -604,16 +602,16 @@ Když jsou všechny odložené operace zařazené do fronty, následující př�
 ngen queue continue
 ```
 
-Chcete-li při instalaci nové aplikace nebo při aktualizaci sdílené součásti odložit generování nativních imagí, `/queue` použijte možnost `install` s akcemi nebo `update` . Následující příkazové řádky nástroje Ngen. exe nainstalují nativní bitovou kopii pro sdílenou součást a provedou aktualizaci všech kořenových složek, které mohly být ovlivněny:
+Chcete-li při instalaci nové aplikace nebo při aktualizaci sdílené součásti odložit generování nativních imagí, použijte možnost `/queue` s akcemi `install` nebo `update`. Následující příkazové řádky nástroje Ngen. exe nainstalují nativní bitovou kopii pro sdílenou součást a provedou aktualizaci všech kořenových složek, které mohly být ovlivněny:
 
 ```console
 ngen install MyComponent /queue
 ngen update /queue
 ```
 
-Akce znovu vygeneruje všechny neověřené nativní bitové kopie, nikoli jenom ty, které používají `MyComponent`. `update`
+Akce `update` znovu vygeneruje všechny nativní bitové kopie, jejichž platnost byla zrušena, nejen ty, které používají `MyComponent`.
 
-Pokud se vaše aplikace skládá z mnoha kořenů, můžete řídit prioritu odložených akcí. Následující příkazy zařadí do fronty instalaci tří kořenů. `Assembly1`je nainstalovaná jako první, bez čekání na dobu nečinnosti. `Assembly2`je nainstalována i bez čekání na čas nečinnosti, ale po dokončení všech akcí s prioritou 1. `Assembly3`se nainstaluje, když služba zjistí, že je počítač nečinný.
+Pokud se vaše aplikace skládá z mnoha kořenů, můžete řídit prioritu odložených akcí. Následující příkazy zařadí do fronty instalaci tří kořenů. Nejprve je nainstalovaná `Assembly1`, ale nečeká na dobu nečinnosti. `Assembly2` je nainstalována i bez čekání na dobu nečinnosti, ale po dokončení všech akcí s prioritou 1. `Assembly3` se nainstaluje, když služba zjistí, že je počítač nečinný.
 
 ```console
 ngen install Assembly1 /queue:1
@@ -621,7 +619,7 @@ ngen install Assembly2 /queue:2
 ngen install Assembly3 /queue:3
 ```
 
-Můžete vynutit, aby se akce zařazené do fronty probíhaly `executeQueuedItems` synchronně pomocí akce. Pokud zadáte volitelnou prioritu, tato akce ovlivní pouze akce zařazené do fronty, které mají stejnou nebo nižší prioritu. Výchozí priorita je 3, takže následující příkaz Ngen. exe zpracuje všechny akce zařazené do fronty hned a nevrátí, dokud nebudou dokončeny:
+Můžete vynutit, aby se akce zařazené do fronty probíhaly synchronně pomocí akce `executeQueuedItems`. Pokud zadáte volitelnou prioritu, tato akce ovlivní pouze akce zařazené do fronty, které mají stejnou nebo nižší prioritu. Výchozí priorita je 3, takže následující příkaz Ngen. exe zpracuje všechny akce zařazené do fronty hned a nevrátí, dokud nebudou dokončeny:
 
 ```console
 ngen executeQueuedItems
@@ -631,7 +629,7 @@ Synchronní příkazy jsou spouštěny pomocí nástroje Ngen. exe a nepoužíva
 
 ### <a name="service-shutdown"></a>Vypnutí služby
 
-Po spuštění příkazu Ngen. exe, který obsahuje `/queue` možnost, je služba spuštěna na pozadí, dokud nebudou dokončeny všechny akce. Služba ukládá svůj stav, takže v případě potřeby může pokračovat v několika restartováních. Pokud služba zjistí, že žádné další akce nejsou zařazeny do fronty, obnoví její stav tak, aby se při příštím spuštění počítače nerestartoval a pak se sám ukončí.
+Po spuštění příkazu Ngen. exe, který obsahuje možnost `/queue`, se služba spustí na pozadí, dokud nebudou všechny akce dokončeny. Služba ukládá svůj stav, takže v případě potřeby může pokračovat v několika restartováních. Pokud služba zjistí, že žádné další akce nejsou zařazeny do fronty, obnoví její stav tak, aby se při příštím spuštění počítače nerestartoval a pak se sám ukončí.
 
 ### <a name="service-interaction-with-clients"></a>Interakce služby s klienty
 

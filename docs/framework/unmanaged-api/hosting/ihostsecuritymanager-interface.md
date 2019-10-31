@@ -14,50 +14,48 @@ helpviewer_keywords:
 ms.assetid: c3be2cbd-2d93-438b-9888-9a0251b63c03
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a2c71f32dfd190e188bb28aad5d51c72160eb4bc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b7cc41848e41976f388e38bf22c9ea0f90abbae
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603227"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121483"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager – rozhraní
-Poskytuje metody, které umožňují přístup a kontrolu nad kontextu zabezpečení aktuálně spuštěné vlákno.  
+Poskytuje metody, které umožňují přístup a řízení kontextu zabezpečení aktuálně prováděného vlákna.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetSecurityContext – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md)|Získá požadovanou [ihostsecuritycontext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) z hostitele.|  
-|[ImpersonateLoggedOnUser – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)|Požadavky, který kód spuštěn pomocí pověření aktuální identitu uživatele.|  
-|[OpenThreadToken – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-openthreadtoken-method.md)|Otevře se token přístupu spojený s aktuální vlákno.|  
-|[RevertToSelf – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-reverttoself-method.md)|Zosobnění aktuální identitu uživatele se ukončí a vrátí původní token vlákna.|  
-|[SetSecurityContext – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-setsecuritycontext-method.md)|Nastaví kontext zabezpečení pro aktuálně spuštěné vlákno.|  
-|[SetThreadToken – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-setthreadtoken-method.md)|Nastaví obslužnou rutinu pro aktuálně spuštěné vlákno.|  
+|[GetSecurityContext – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md)|Získá požadovaná [IHostSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) z hostitele.|  
+|[ImpersonateLoggedOnUser – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)|Požaduje, aby se kód spustil s použitím přihlašovacích údajů aktuální identity uživatele.|  
+|[OpenThreadToken – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-openthreadtoken-method.md)|Otevře volitelný přístupový token přidružený k aktuálnímu vláknu.|  
+|[RevertToSelf – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-reverttoself-method.md)|Ukončí zosobnění identity aktuálního uživatele a vrátí původní token vlákna.|  
+|[SetSecurityContext – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-setsecuritycontext-method.md)|Nastaví kontext zabezpečení pro aktuálně prováděné vlákno.|  
+|[SetThreadToken – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-setthreadtoken-method.md)|Nastaví popisovač pro aktuálně prováděné vlákno.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitele můžete řídit veškerý kód přístup k vláknu tokeny common language runtime (CLR) a kód uživatele. Můžete také zajistit zabezpečení úplné informace o kontextu je předán přes asynchronní operace nebo body kódu s přístup ke kódu s omezeným přístupem. `IHostSecurityContext` zapouzdřuje tyto informace kontextu zabezpečení, což je neprůhledný modulu CLR.  
+ Hostitel může řídit všechna přístupová oprávnění k tokenům vláken pomocí modulu CLR (Common Language Runtime) i uživatelského kódu. Může také zajistit, aby byly kompletní informace o kontextu zabezpečení předány přes asynchronní operace nebo body kódu s omezeným přístupem ke kódu. `IHostSecurityContext` zapouzdřuje tyto informace kontextu zabezpečení, které jsou neprůhledné pro CLR.  
   
- Modul CLR interně zpracovává kontext spravované vlákna. Dotazy specifické pro proces `IHostSecurityManager` v následujících situacích:  
+ Modul CLR zpracovává kontext spravovaného vlákna interně. Dotazuje se `IHostSecurityManager` specifických pro proces v následujících situacích:  
   
-- Na finalizační podproces během spuštění finalizační metody.  
+- Ve vlákně finalizační metody při provádění finalizační metody.  
   
 - Během provádění konstruktoru třídy a modulu.  
   
-- V asynchronní body na pracovního vlákna ve voláních [ihostthreadpoolmanager::QueueUserWorkItem –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md) metody.  
+- V asynchronních bodech v pracovním vlákně v volání metody [IHostThreadPoolManager:: QueueUserWorkItem](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md) .  
   
-- V obslužném portů dokončení vstupně-výstupních operací.  
+- Při údržbě portů pro dokončení vstupně-výstupních operací.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

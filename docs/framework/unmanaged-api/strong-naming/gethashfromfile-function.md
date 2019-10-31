@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b3c526a4-8fb4-4ad6-b6af-42ce9c06492e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0e79c1d89d767832022d487681e0515e5e92a7f3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ffa25b1ec6fda80099f333c1d0a4cf57b76379e2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799215"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140687"
 ---
 # <a name="gethashfromfile-function"></a>GetHashFromFile – funkce
 Vygeneruje hodnotu hash přes obsah zadaného souboru.  
@@ -45,7 +43,7 @@ HRESULT GetHashFromFile (
  pro Název souboru, na který se má vypočítat hodnota hash  
   
  `piHashAlg`  
- [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Pokud `piHashAlg` je nastavená na 0, použije se výchozí algoritmus CALG_SHA-1.  
+ [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Je-li `piHashAlg` nastavena na hodnotu 0, je použit výchozí algoritmus CALG_SHA-1.  
   
  `pbHash`  
  mimo Bajtové pole obsahující vygenerovanou hodnotu hash.  
@@ -54,17 +52,17 @@ HRESULT GetHashFromFile (
  pro Maximální velikost vyrovnávací paměti, na kterou `pbHash` odkazuje.  
   
  `pchHash`  
- mimo Velikost vracené `pbHash`velikosti (v bajtech)  
+ mimo Velikost vrácených `pbHash`v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato funkce je stejná jako [GetHashFromFileW –](gethashfromfilew-function.md)s tím rozdílem, že specifikace názvu souboru je ANSI namísto Unicode.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

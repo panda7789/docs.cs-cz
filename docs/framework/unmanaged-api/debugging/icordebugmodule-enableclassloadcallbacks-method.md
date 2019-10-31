@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78dad5e4-8e2e-400f-bec3-92ff0205cd82
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ec9b4867ad19f25e35ca31c007c0d238b949abab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c18ed781d44c873b4cd1957bf0102a4ce0cccad4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762221"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139223"
 ---
 # <a name="icordebugmoduleenableclassloadcallbacks-method"></a>ICorDebugModule::EnableClassLoadCallbacks – metoda
-Ovládací prvky, zda [icordebugmanagedcallback::loadclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) a [icordebugmanagedcallback::unloadclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) zpětná volání jsou volány pro tento modul.  
+Určuje, zda jsou pro tento modul volána zpětná volání [ICorDebugManagedCallback:: LoadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) a [ICorDebugManagedCallback:: UnloadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT EnableClassLoadCallbacks(
   
 ## <a name="parameters"></a>Parametry  
  `bClassLoadCallbacks`  
- [in] Nastavte tuto hodnotu na `true` povolit modul CLR (CLR) k volání `ICorDebugManagedCallback::LoadClass` a `ICorDebugManagedCallback::UnloadClass` metody, pokud dojde k jejich související události.  
+ pro Nastavte tuto hodnotu na `true`, pokud chcete povolit modul CLR (Common Language Runtime) pro volání metod `ICorDebugManagedCallback::LoadClass` a `ICorDebugManagedCallback::UnloadClass`, když dojde k jejich přidruženým událostem.  
   
- Výchozí hodnota je `false` nedynamickou modulů. Hodnota je vždy `true` pro dynamické moduly a nedá se změnit.  
+ Výchozí hodnota je `false` pro jiné než dynamické moduly. Hodnota je vždy `true` pro dynamické moduly a nelze ji změnit.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugManagedCallback::LoadClass` a `ICorDebugManagedCallback::UnloadClass` zpětná volání jsou vždy povoleny pro dynamické moduly a nedá se zakázat.  
+ Zpětná volání `ICorDebugManagedCallback::LoadClass` a `ICorDebugManagedCallback::UnloadClass` jsou vždy povolena pro dynamické moduly a nelze je zakázat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

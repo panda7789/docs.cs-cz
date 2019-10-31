@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 077e6c7f-f857-480c-bebb-76ee1de4e8fc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 23f248625753c15a4798ea69a1eb3b377b79f95d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a862dd3f6a9c10c6b3a5a0bb41208d351c4ca9f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747750"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125694"
 ---
 # <a name="icordebugclass2setjmcstatus-method"></a>ICorDebugClass2::SetJMCStatus – metoda
-Pro každou metodu třídy nastaví hodnotu, která určuje, zda je metoda uživatelského kódu.  
+Pro každou metodu třídy nastaví hodnotu, která označuje, zda je metoda uživatelem definovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Parametry  
  `bIsJustMyCode`  
- [in] Nastavte na `true` k označení, že metoda je uživatelem definovaný kód; v opačném případě nastavte na `false`.  
+ pro Nastavte na `true` pro indikaci, že metoda je uživatelsky definovaný kód; v opačném případě nastavte na `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Krokovač just my kód (JMC) přeskočí bez uživatelem definovaný kód. Uživatelský kód musí být podmnožinou laditelný kód.  
+ JMC (Just-The-Code) stepper přeskočí neuživatelsky definovaný kód. Uživatelsky definovaný kód musí být podmnožinou laděného kódu.  
   
- `SetJMCStatus` Pokud se nezdaří nastavit hodnotu pro libovolnou metodu, i v případě, že úspěšně nastaví hodnotu pro všechny ostatní metody, vrátí hodnotu HRESULT S_FALSE.  
+ `SetJMCStatus` vrátí hodnotu HRESULT S_FALSE, pokud se nepodaří nastavit hodnotu pro jakoukoliv metodu, i když úspěšně nastaví hodnotu pro všechny ostatní metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

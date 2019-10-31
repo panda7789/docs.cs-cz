@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c8d9959-95b5-4131-be4a-556d97774014
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 29311f00f5ac4b61380b57cdd9fda07ec7de1b23
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f9d6c4f01b01944c885190f90e2195c3a308490a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966206"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141202"
 ---
 # <a name="iclrgcmanagersetgcstartuplimits-method"></a>ICLRGCManager::SetGCStartupLimits – metoda
 Nastaví velikost segmentu uvolňování paměti a maximální velikost generace 0 systému uvolňování paměti.  
@@ -54,7 +52,7 @@ HRESULT SetGCStartupLimits (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimits`úspěšně vráceno.|  
+|S_OK|`SetGCStartupLimits` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -62,14 +60,14 @@ HRESULT SetGCStartupLimits (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, které `SetGCStartupLimits` nastavíte, lze zadat pouze jednou. Pozdější volání do `SetGCStartupLimits` jsou ignorována.  
+ Hodnoty, které `SetGCStartupLimits` sady, lze zadat pouze jednou. Pozdější volání `SetGCStartupLimits` jsou ignorována.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

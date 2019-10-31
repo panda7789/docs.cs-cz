@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 45ae0502-0a31-4342-b7e3-f36e1cf738f3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b58da58897edbf3ec9492c1f9f1b2f3d7b83e07a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bcf1b49f0576f5dbd73c001f8edff7a9ab29af22
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780088"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139520"
 ---
 # <a name="icorruntimehostmapfile-method"></a>ICorRuntimeHost::MapFile – metoda
-Mapuje zadaný soubor do paměti. Tato metoda je zastaralá.  
+Namapuje zadaný soubor na paměť. Tato metoda je zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT MapFile(
   
 ## <a name="parameters"></a>Parametry  
  `hFile`  
- [in] Popisovač souboru, který má být namapována.  
+ pro Popisovač souboru, který má být namapován.  
   
  `hMapAddress`  
- [out] Počáteční adresa paměti na kterém má být mapování souboru.  
+ mimo Počáteční adresa paměti, na které chcete zahájit mapování souboru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** 1.0, 1.1  
+ **Verze .NET Framework:** 1,0, 1,1  
   
 ## <a name="see-also"></a>Viz také:
 

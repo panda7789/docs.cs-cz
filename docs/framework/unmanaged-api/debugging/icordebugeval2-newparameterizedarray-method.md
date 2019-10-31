@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 45efb8ba-c4de-4109-945f-e734d376b43c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 973f975885bbbf5cbed74adef7b9f4f423c42583
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9476bcc9706e89fd3d7e0abc14031f70a0aa0ad0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753652"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084835"
 ---
 # <a name="icordebugeval2newparameterizedarray-method"></a>ICorDebugEval2::NewParameterizedArray – metoda
-Přidělí nové pole typu zadaného elementu a dimenze.  
+Přidělí nové pole zadaného typu a dimenzí prvku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT NewParameterizedArray(
   
 ## <a name="parameters"></a>Parametry  
  `pElementType`  
- [in] Ukazatel na objekt ICorDebugType, který představuje typ prvků uložených v poli.  
+ pro Ukazatel na objekt ICorDebugType, který představuje typ elementu uloženého v poli.  
   
  `rank`  
- [in] Počet rozměrů pole. V rozhraní .NET Framework verze 2.0 tato hodnota musí být 1.  
+ pro Počet rozměrů pole. V .NET Framework verze 2,0 musí být tato hodnota 1.  
   
  `dims`  
- [in] Velikost v bajtech každého rozměru pole.  
+ pro Velikost každého rozměru pole v bajtech.  
   
  `lowBounds`  
- [in] Volitelné. Dolní mez každé dimenze matice. Pokud je tato hodnota vynechána, předpokládá se pro jednotlivé rozměry dolní mez nula.  
+ pro Volitelné. Dolní mez každého rozměru pole. Pokud je tato hodnota vynechána, předpokládá se pro každou dimenzi spodní mez nula.  
   
 ## <a name="remarks"></a>Poznámky  
- Prvky pole mohou být instancí obecného typu. Pole je vytvořen vždy v aplikační doméně, ve kterém je spuštěn podproces. V rozhraní .NET Framework 2.0, hodnota `rank` musí být 1.  
+ Prvky pole mohou být instancemi obecného typu. Pole je vždy vytvořeno v doméně aplikace, ve které je vlákno aktuálně spuštěno. V .NET Framework 2,0 musí být hodnota `rank` 1.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

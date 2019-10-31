@@ -5,14 +5,12 @@ helpviewer_keywords:
 - strong-named assemblies
 - strong naming [.NET Framework], enhanced
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1ab1087a840fe41b9fac7779c73797c470899408
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1d582513b10de88e4e5b9b9ef8c338599d6980f2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834884"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141171"
 ---
 # <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci sestavení. Jedná se o digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat předávaných od původce (Signer) příjemci (Verifier). Tento podpis slouží jako jedinečná identita pro sestavení a zajišťuje, aby odkazy na sestavení nebyly jednoznačné. Sestavení je podepsáno jako součást procesu sestavení a poté ověřeno při jeho načtení.  
@@ -36,7 +34,7 @@ Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci
 ## <a name="use-enhanced-strong-names"></a>Použití rozšířených silných názvů  
  Klíče se silným názvem se skládají z klíče podpisu a klíče identity. Sestavení je podepsáno klíčem podpisu a je identifikováno klíčem identity. Před .NET Framework 4,5 byly tyto dva klíče identické. Počínaje verzí .NET Framework 4,5 zůstane klíč identity stejný jako ve starších .NET Framework verzích, ale klíč podpisu se rozšiřuje s silnějším algoritmem hash. Kromě toho je podpisový klíč podepsaný klíčem identity pro vytvoření počítadla signatury.  
   
- Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> umožňuje metadatům sestavení použít již existující veřejný klíč pro identitu sestavení, což umožňuje, aby staré odkazy na sestavení pokračovaly v práci.  Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> používá k zajištění toho, že vlastník nového klíče pro podpis je zároveň vlastníkem starého klíče identity.  
+ Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> umožňuje metadatům sestavení použít již existující veřejný klíč pro identitu sestavení, což umožňuje, aby staré odkazy na sestavení pokračovaly v práci.  Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> používá k zajištění, že vlastník nového klíče pro podpis je zároveň vlastníkem starého klíče identity.  
   
 ### <a name="sign-with-sha-2-without-key-migration"></a>Podepsat pomocí SHA-2 bez použití migrace klíče  
  Spusťte následující příkazy z příkazového řádku pro podepsání sestavení bez migrace signatury silného názvu:  

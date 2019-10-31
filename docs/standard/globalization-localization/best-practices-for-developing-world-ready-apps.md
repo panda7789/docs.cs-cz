@@ -8,98 +8,96 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d96e223b85178c7f2784a523e5609057d1432488
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2cd1039f95a763002922fc2fa24eff77838de80
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683207"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141296"
 ---
-# <a name="best-practices-for-developing-world-ready-applications"></a>Osvědčené postupy pro vývoj globalizovaných aplikací
+# <a name="best-practices-for-developing-world-ready-applications"></a>Osvědčené postupy pro vývoj aplikací připravených pro použití ve světě
 
-Tato část popisuje doporučené postupy při vývoji aplikací nasadit kdekoli na světě.
+Tato část popisuje osvědčené postupy, které je třeba provést při vývoji aplikací připravených pro použití ve světě.
 
-## <a name="globalization-best-practices"></a>Doporučené postupy pro globalizaci
+## <a name="globalization-best-practices"></a>Osvědčené postupy globalizace
 
-1. Ujistěte se, aplikace kódování Unicode interně.
+1. Zajistěte, aby byla aplikace Unicode interně.
 
-2. Použití třídy podporující jazykové verze poskytované <xref:System.Globalization> obor názvů pro manipulaci a formátování data.
+2. Použijte třídy zohledňující jazykovou verzi poskytované oborem názvů <xref:System.Globalization> k manipulaci s daty a jejich formátování.
 
-    - Pro řazení používejte <xref:System.Globalization.SortKey> třídy a <xref:System.Globalization.CompareInfo> třídy.
+    - Pro řazení použijte třídu <xref:System.Globalization.SortKey> a třídu <xref:System.Globalization.CompareInfo>.
 
-    - Pro porovnávání řetězců, použijte <xref:System.Globalization.CompareInfo> třídy.
+    - Pro porovnávání řetězců použijte třídu <xref:System.Globalization.CompareInfo>.
 
-    - Pro formátování data a času, použijte <xref:System.Globalization.DateTimeFormatInfo> třídy.
+    - Pro formátování data a času použijte třídu <xref:System.Globalization.DateTimeFormatInfo>.
 
-    - Pro formátování čísel, použijte <xref:System.Globalization.NumberFormatInfo> třídy.
+    - Pro formátování čísel použijte třídu <xref:System.Globalization.NumberFormatInfo>.
 
-    - Pro gregoriánský kalendář i jiném než gregoriánském kalendáři, použijte <xref:System.Globalization.Calendar> třídy nebo některé z konkrétních implementací kalendáře.
+    - U gregoriánských a negregoriánských kalendářů použijte třídu <xref:System.Globalization.Calendar> nebo jednu z konkrétních implementací kalendáře.
 
-3. Použít nastavení vlastností jazykové verze poskytované <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> třídy ve vhodných situacích. Použití <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost pro formátování úlohy, jako je data a času či formátování čísel. Použití <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost pro načtení prostředků. Všimněte si, `CurrentCulture` a `CurrentUICulture` vlastnosti můžete nastavit pro vlákno.
+3. Použijte nastavení vlastností jazykové verze poskytované třídou <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> v příslušných situacích. Pomocí vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> můžete formátovat úkoly, jako je datum a čas nebo formátování čísel. K načtení prostředků použijte vlastnost <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>. Všimněte si, že vlastnosti `CurrentCulture` a `CurrentUICulture` lze nastavit na vlákno.
 
-4. Umožněte aplikaci číst a zapisovat data do a z různých kódování pomocí tříd kódování v <xref:System.Text> oboru názvů. Nepředpokládejte data ve standardu ASCII. Předpokládejme, že mezinárodní znaky mohou být vloženy kdekoliv může uživatel zadat text. Aplikace například měly přijímat mezinárodní znaky v názvy serverů, adresářů, názvy souborů, uživatelských jmen a adres URL.
+4. Umožněte vaší aplikaci číst a zapisovat data do různých kódování pomocí tříd kódování v oboru názvů <xref:System.Text>. Nepředpokládají data ASCII. Předpokládá, že mezinárodní znaky budou dodány kdekoliv, kde může uživatel zadat text. Například aplikace by měla přijímat mezinárodní znaky v názvech serverů, adresářích, názvech souborů, uživatelských jménech a adresách URL.
 
-5. Při použití <xref:System.Text.UTF8Encoding> tříd, z bezpečnostních důvodů, použijte funkci rozpoznávání chyb nabízenou touto třídou. Zapnutí funkce rozpoznávání chyb, vytvoření instance třídy pomocí konstruktoru, který přijímá `throwOnInvalidBytes` parametr a hodnotu tohoto parametru na `true`.
+5. Při použití třídy <xref:System.Text.UTF8Encoding> z bezpečnostních důvodů použijte funkci detekce chyb nabízené touto třídou. Chcete-li zapnout funkci detekce chyb, vytvořte instanci třídy pomocí konstruktoru, který převezme parametr `throwOnInvalidBytes` a nastavte hodnotu tohoto parametru na `true`.
 
-6. Kdykoli je to možné, zpracovávejte řetězce jako celé řetězce namísto jednotlivých znaků. To je důležité zejména při řazení nebo vyhledání podřetězců. Tím zabráníte problémům spojeným s analýzou kombinovaných znaků. Jednotky text spíše než jednotlivé znaky může také pracovat s použitím <xref:System.Globalization.StringInfo?displayProperty=nameWithType> třídy.
+6. Kdykoli je to možné, zpracujte řetězce jako celé řetězce namísto řady jednotlivých znaků. To je obzvláště důležité při řazení nebo hledání podřetězců. Tím zabráníte problémům spojeným s analýzou kombinovaných znaků. Můžete také pracovat s jednotkami textu namísto jednotlivých znaků pomocí třídy <xref:System.Globalization.StringInfo?displayProperty=nameWithType>.
 
-7. Zobrazujte text pomocí tříd poskytovaných oborem <xref:System.Drawing> oboru názvů.
+7. Zobrazí text pomocí tříd poskytovaných oborem názvů <xref:System.Drawing>.
 
-8. Pro konzistenci mezi operačními systémy, nejsou povoleny uživatelskému nastavení přepsat <xref:System.Globalization.CultureInfo>. Použití `CultureInfo` konstruktor, který přijímá `useUserOverride` parametr a nastavte ho na `false`.
+8. Pro konzistenci mezi operačními systémy nepovolujte uživatelské nastavení pro přepsání <xref:System.Globalization.CultureInfo>. Použijte konstruktor `CultureInfo`, který přijímá parametr `useUserOverride` a nastavte jej na `false`.
 
-9. Otestujte funkčnost aplikace na mezinárodních verzích operačního systému, použitím mezinárodních dat.
+9. Otestujte funkčnost aplikace na mezinárodních verzích operačního systému pomocí mezinárodních dat.
 
-10. Pokud je rozhodnutí o zabezpečení založeno na výsledku porovnání řetězců nebo operaci změny velikosti písmen, pomocí operace s řetězci nezávislé na jazykové verzi. Tento postup zajišťuje, že výsledek není ovlivněn hodnotou z `CultureInfo.CurrentCulture`. Najdete v článku ["Řetězec porovnání, které používají aktuální jazykovou verzi"](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) část [osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md) příklad, který ukazuje, jak jazykové řetězce může vést k porovnání nekonzistentní výsledky.
+10. Je-li rozhodnutí o zabezpečení založeno na výsledku porovnání řetězců nebo operaci změny velikosti písmen, použijte operaci s řetězci nezávislou na jazykové verzi. Tento postup zajistí, že výsledek nebude ovlivněn hodnotou `CultureInfo.CurrentCulture`. Viz ["porovnání řetězců, které používají aktuální jazykovou verzi"](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) v tématu [osvědčené postupy pro použití řetězců](../../../docs/standard/base-types/best-practices-strings.md) pro příklad, který ukazuje, jak porovnávání řetězců závislé na jazykové verzi může způsobit nekonzistentní výsledky.
 
-## <a name="localization-best-practices"></a>Doporučené postupy pro lokalizaci
+## <a name="localization-best-practices"></a>Osvědčené postupy lokalizace
 
-1. Přesuňte všechny lokalizovatelné prostředky do oddělených knihoven DLL určených pouze prostředků. Lokalizovatelné prostředky zahrnují prvky uživatelského rozhraní, jako je například řetězce, chybové zprávy, dialogová okna, nabídky a prostředky vložených objektů.
+1. Přesuňte všechny lokalizovatelné prostředky do samostatných knihoven DLL pouze prostředků. Lokalizovatelné prostředky zahrnují prvky uživatelského rozhraní, jako jsou například řetězce, chybové zprávy, dialogová okna, nabídky a prostředky vloženého objektu.
 
-2. To není napevno do kódu řetězce nebo prostředky uživatelského rozhraní.
+2. Nenekódujte pevně řetězce nebo prostředky uživatelského rozhraní.
 
-3. Neumísťujte nelokalizovatelné prostředky do knihovny DLL pouze prostředků. Toto mate překladatele.
+3. Neumísťujte nelokalizovatelné prostředky do knihoven DLL pouze prostředků. To způsobuje nejasnost pro překladatele.
 
-4. Proveďte složené řetězce, které jsou vytvořeny v době běhu ze spojených frází. Složené řetězce se obtížně lokalizují, protože často předpokládají anglický gramatický slovosled, který se nedá použít u všech jazycích.
+4. Nepoužívejte složené řetězce, které jsou vytvořeny v době běhu ze zřetězených frází. Složené řetězce je obtížné lokalizovat, protože často předpokládají anglickou gramatickou objednávku, která se nevztahuje na všechny jazyky.
 
-5. Vyhněte se dvojznačným konstrukcím, jako je například "Prázdná složka", kdy lze řetězce přeložit odlišně v závislosti na gramatických rolích součástí řetězce. Například "empty" může být příkaz nebo přídavné jméno, což může vést k odlišnému překladu do jazyků, jako je například italština nebo francouzština.
+5. Vyhněte se nejednoznačným konstrukcím, jako je "prázdná složka", kde lze řetězce přeložit různě v závislosti na gramatických rolích komponent řetězce. Například "Empty" může být buď operace, nebo adjektivum, což může vést k různým překlady v jazycích, jako je italština nebo francouzština.
 
-6. Vyhněte se používání obrázků a ikon, které obsahují text ve vaší aplikaci. Je náročné je lokalizovat.
+6. Vyhněte se použití obrázků a ikon, které obsahují text v aplikaci. Je náročné je lokalizovat.
 
-7. Vyhraďte dostatek místa pro delší řetězce v uživatelském rozhraní. V některých jazycích mohou věty vyžadovat o 50-75 procent více prostoru než potřebovat v jiných jazycích.
+7. Povolí dostatek místa pro rozšíření řetězců v uživatelském rozhraní na délku. V některých jazycích můžou fráze vyžadovat 50-75 procent více místa, než potřebují v jiných jazycích.
 
-8. Použití <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třída pro načítání prostředků podle jazykové verze.
+8. Použijte třídu <xref:System.Resources.ResourceManager?displayProperty=nameWithType> pro načtení prostředků na základě jazykové verze.
 
-9. Použití [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) vytváření formulářů Windows dialogových tak mohly být lokalizovány pomocí [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md). Nevytvářejte ručně kód dialogových oken modelu Windows Forms.
+9. Pomocí sady [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) můžete vytvářet model Windows Forms dialogová okna, aby je bylo možné lokalizovat pomocí [editoru model Windows Forms prostředků (Winres. exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md). Nevytvářejte kód model Windows Forms dialogová okna ručně.
 
-10. Zajistěte profesionální lokalizaci (překlad).
+10. Uspořádejte pro profesionální lokalizaci (překlad).
 
-11. Úplný popis vytváření a lokalizace prostředků naleznete v tématu [prostředky v aplikacích](../../../docs/framework/resources/index.md).
+11. Úplný popis vytváření a lokalizace prostředků najdete v tématu [prostředky v aplikacích](../../../docs/framework/resources/index.md).
 
-## <a name="globalization-best-practices-for-aspnet-applications"></a>Doporučené postupy pro globalizaci aplikací technologie ASP.NET
+## <a name="globalization-best-practices-for-aspnet-applications"></a>Osvědčené postupy globalizace pro aplikace ASP.NET
 
-1. Explicitně nastavit <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A> vlastnosti ve vaší aplikaci. Nespoléhejte na výchozí hodnoty.
+1. Explicitně nastavte <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> a vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A> ve vaší aplikaci. Nespoléhá se na výchozí hodnoty.
 
-2. Mějte na paměti, že aplikace ASP.NET jsou spravované aplikace a proto můžete použít stejné třídy jako jiné spravované aplikace pro načítání, zobrazování a manipulaci s informacemi na základě jazykové verze.
+2. Všimněte si, že aplikace ASP.NET jsou spravované aplikace, a proto mohou používat stejné třídy jako jiné spravované aplikace pro načítání, zobrazování a manipulaci s informacemi na základě jazykové verze.
 
-3. Mějte na paměti, že můžete zadat následující tři typy kódování v technologii ASP.NET:
+3. Mějte na paměti, že v ASP.NET můžete zadat následující tři typy kódování:
 
-    - requestEncoding určuje kódování přijímané z prohlížeče klienta.
+    - requestEncoding určuje kódování přijaté z prohlížeče klienta.
 
-    - responseEncoding určuje kódování odesílané do prohlížeče klienta. Ve většině případů toto kódování mělo být stejné jako requestEncoding.
+    - responseEncoding určuje kódování, které se odešle do prohlížeče klienta. Ve většině případů by toto kódování mělo být stejné, jako je určeno pro requestEncoding.
 
-    - fileEncoding určuje výchozí kódování pro .aspx, .asmx a .asax souborů.
+    - Kódování souboru určuje výchozí kódování pro analýzu souborů. aspx,. asmx a. asax.
 
-4. Zadejte hodnoty pro atributy requestEncoding, responseEncoding, fileEncoding, culture a uiCulture na následujících třech místech v aplikaci technologie ASP.NET:
+4. Zadejte hodnoty pro atributy requestEncoding, responseEncoding, Encoding, Culture a uiCulture na následujících třech místech aplikace ASP.NET:
 
-    - V oddíle globalizace v souboru Web.config. Tento soubor je externí aplikace technologie ASP.NET. Další informace najdete v tématu [ \<globalization > prvek](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
+    - V sekci globalizace v souboru Web. config. Tento soubor je z aplikace ASP.NET externí. Další informace naleznete v tématu [\<> elementu globalizace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
 
-    - V direktivě stránky. Všimněte si, že když se aplikace nachází na stránce, soubor již byl načten. Proto je příliš pozdě zadat fileEncoding a requestEncoding. V direktivě stránky lze zadat pouze uiCulture, Culture a responseEncoding.
+    - V direktivě stránky. Všimněte si, že když je aplikace na stránce, soubor již byl přečten. Proto je příliš pozdě zadat kódování a requestEncoding. V direktivě stránky lze zadat pouze uiCulture, Culture a responseEncoding.
 
-    - Programově v kódu aplikace. Toto nastavení se může lišit dle požadavku. Jak u direktivy stránky, době aplikace je dosaženo kódu je příliš pozdě zadat fileEncoding a requestEncoding. V kódu aplikace lze zadat pouze uiCulture, Culture a responseEncoding.
+    - Programově v kódu aplikace. Toto nastavení se může u jednotlivých požadavků lišit. Stejně jako u direktivy stránky, v době, kdy je dosaženo kódu aplikace, je příliš pozdě zadat kódování a requestEncoding. V kódu aplikace lze zadat pouze uiCulture, Culture a responseEncoding.
 
-5. Všimněte si, že hodnotu uiCulture lze nastavit v prohlížeči jazyk přijímaný.
+5. Všimněte si, že hodnota uiCulture může být nastavena na jazyk přijmout prohlížeč.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -6,14 +6,12 @@ helpviewer_keywords:
 - fusion interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], fusion
 ms.assetid: e2cf98b7-40c1-4f74-86c7-8a76dd9da677
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1605605f8510f7ccf5f0bbf2f3f6b09050a16025
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 81c66825e69d9526abddfe06133426a2274ad08f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795299"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108184"
 ---
 # <a name="fusion-interfaces"></a>Rozhraní fúze
 Tato část popisuje nespravovaná rozhraní, která rozhraní API pro syntézu používá pro přístup k vlastnostem prostředků aplikace a k vyhledání správné verze těchto prostředků pro aplikaci.  
@@ -29,7 +27,7 @@ Tato část popisuje nespravovaná rozhraní, která rozhraní API pro syntézu 
  Představuje jedno sestavení v globální mezipaměti sestavení (GAC).  
   
  [IAssemblyEnum – rozhraní](iassemblyenum-interface.md)  
- Představuje enumerátor pro pole `IAssemblyName` objektů.  
+ Představuje enumerátor pro pole objektů `IAssemblyName`.  
   
  [IAssemblyName – rozhraní](iassemblyname-interface.md)  
  Poskytuje metody pro popis a práci s jedinečnou identitou sestavení.  
@@ -64,7 +62,7 @@ Tato část popisuje nespravovaná rozhraní, která rozhraní API pro syntézu 
  [IReferenceIdentity – rozhraní](ireferenceidentity-interface.md)  
  Představuje odkaz na jedinečný podpis objektu kódu.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  <xref:System.Reflection>  
   
  <xref:System.Reflection.Emit>  

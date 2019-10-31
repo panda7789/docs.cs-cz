@@ -2,14 +2,12 @@
 title: 'ICorDebugVariableSymbol:: GetValue – metoda'
 ms.date: 03/30/2017
 ms.assetid: 90abece1-392e-4ade-94a1-30c75b0f7074
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6b72b9dbeff6aa06a132dc7ec3ddd9477553c4c2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5ef7e67efb2bafd9b9f52203246fd7d1590e6107
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967985"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120966"
 ---
 # <a name="icordebugvariablesymbolgetvalue-method"></a>ICorDebugVariableSymbol:: GetValue – metoda
 Získá hodnotu proměnné jako bajtové pole.  
@@ -32,7 +30,7 @@ HRESULT GetValue(
  pro Počáteční posun v proměnné, ze které se má číst hodnota Tento parametr se používá při čtení polí členů v objektu.  
   
  `cbContext`  
- pro Velikost `context` argumentu v bajtech  
+ pro Velikost argumentu `context` v bajtech.  
   
  `context`  
  pro Kontext vlákna použitý ke čtení hodnoty.  
@@ -41,7 +39,7 @@ HRESULT GetValue(
  pro Velikost `pValue` vyrovnávací paměti v bajtech.  
   
  `pcbValue`  
- mimo Počet bajtů, které jsou `pValue` ve skutečnosti zapsány do vyrovnávací paměti.  
+ mimo Počet bajtů, které jsou ve skutečnosti zapsány do vyrovnávací paměti `pValue`.  
   
  `pValue`  
  mimo Bajtové pole, které obsahuje hodnotu proměnné.  
@@ -52,11 +50,11 @@ HRESULT GetValue(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

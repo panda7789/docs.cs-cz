@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 80dbbbf8-54fc-4894-b74a-0179d3201083
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d696326ff8861ed8496474f76e9eaf89b4ead3e8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f089769f854bad5d3e572e0307734e06e72ca89c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795401"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108570"
 ---
 # <a name="createinstallreferenceenum-function"></a>CreateInstallReferenceEnum – funkce
 Získá ukazatel na instanci [IInstallReferenceEnum –](iinstallreferenceenum-interface.md) , která představuje seznam odkazů aplikace na zadané sestavení.  
@@ -41,7 +39,7 @@ HRESULT CreateInstallReferenceEnum (
   
 ## <a name="parameters"></a>Parametry  
  `ppRefEnum`  
- mimo Vrácený `IInstallReferenceEnum` ukazatel.  
+ mimo Vrácený ukazatel `IInstallReferenceEnum`.  
   
  `pName`  
  pro [IAssemblyName](iassemblyname-interface.md) , který identifikuje sestavení, pro které mají být vyčísleny odkazy.  
@@ -50,14 +48,14 @@ HRESULT CreateInstallReferenceEnum (
  pro Příznaky ovlivňující chování čítače.  
   
  `pvReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být odkaz s hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
+ **Knihovna:** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

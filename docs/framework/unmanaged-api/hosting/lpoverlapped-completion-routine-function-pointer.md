@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 5fb645d9-b818-401c-8c2c-c30d86de58ba
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dcf63000de549b42d92ba157a7e550ac605bbfcd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 103ac75e7c3eaf9739c3a448ff1c052c158621db
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768389"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090906"
 ---
-# <a name="lpoverlappedcompletionroutine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci
-Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchronní) vstupně-výstupních operací na zařízení byla dokončena.  
+# <a name="lpoverlapped_completion_routine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci
+Odkazuje na funkci, která upozorňuje hostitele, když je dokončeno překrytí (tj. asynchronní) vstupně-výstupní operace se zařízením.  
   
- Tento ukazatel na funkci se již nepoužívá v rozhraní .NET Framework 4.  
+ Tento ukazatel funkce je zastaralý v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +38,27 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
   
 ## <a name="parameters"></a>Parametry  
  `dwErrorCode`  
- [in] Hodnotu, která je kód chyby, pokud bylo ukončeno zařízení; v opačném případě tato hodnota je nula.  
+ pro Hodnota, která je kód chyby v případě, že zařízení bylo zavřeno; v opačném případě je tato hodnota nulová.  
   
- Zavření zařízení způsobí, že všechny čekající vstupně-výstupních operací zařízení okamžitě provést.  
+ Když se zařízení uzavírá, způsobí to okamžité dokončení všech nedokončených vstupně-výstupních operací.  
   
  `dwNumberOfBytesTransfered`  
- [in] Počet bajtů přenesených vstupně-výstupní operace.  
+ pro Počet bajtů přenesených operací I/O.  
   
  `lpOverlapped`  
- [in] Ukazatel na strukturu, která obsahuje informace, které se dá použít k dokončení žádosti o vstupně-výstupních operací.  
+ pro Ukazatel na strukturu, která obsahuje informace, které se mají použít k dokončení vstupně-výstupních požadavků.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce, které `LPOVERLAPPED_COMPLETION_ROUTINE` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace. Funkce zpětného volání umožňuje hostiteli zpracování dokončenou žádost vstupně-výstupních operací.  
+ Funkce, na kterou `LPOVERLAPPED_COMPLETION_ROUTINE` body, je funkce zpětného volání a musí být implementována zapisovačí hostující aplikace. Funkce zpětného volání umožňuje hostiteli zpracovat dokončenou vstupně-výstupní žádost.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorWks.dll  
+ **Knihovna:** Knihovny Mscorwks. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

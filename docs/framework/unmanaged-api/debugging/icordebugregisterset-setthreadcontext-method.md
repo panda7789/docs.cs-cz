@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 73afa930-32cb-4c40-81f8-83e8e6fbe213
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ff1365ddb46ca28cbcaa4f1383b293681e6ec214
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8731b57206f7987efc2498a5abe62295cd1cfae5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956774"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131330"
 ---
 # <a name="icordebugregistersetsetthreadcontext-method"></a>ICorDebugRegisterSet::SetThreadContext – metoda
-`SetThreadContext`není implementována v .NET Framework verze 2,0. Nevolejte tuto metodu.  
+`SetThreadContext` není implementována v .NET Framework verze 2,0. Nevolejte tuto metodu.  
   
 > [!NOTE]
 > Pro nastavení kontextu vlákna použijte operaci vyšší úrovně [ICorDebugNativeFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md) .  
@@ -41,13 +39,13 @@ HRESULT SetThreadContext (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

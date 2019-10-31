@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fab037cb-fda6-40fb-9367-921e435dd5a0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c9f58e66286f5e3e169507efd2f87ce10e9d323b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 828e4dc67cb93d0a35879e94b54c9fac6e5bda16
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754854"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124087"
 ---
 # <a name="icordebugframegetstackrange-method"></a>ICorDebugFrame::GetStackRange – metoda
-Získá absolutní adresu rozsahu tohoto rámce zásobníku.  
+Získá absolutní rozsah adres tohoto rámce zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetStackRange (
   
 ## <a name="parameters"></a>Parametry  
  `pStart`  
- [out] Ukazatel `CORDB_ADDRESS` určující počáteční adresu zásobníku představovaného tímto rozhraním `ICorDebugFrame` objektu.  
+ mimo Ukazatel na `CORDB_ADDRESS`, který určuje počáteční adresu rámce zásobníku reprezentovaného tímto objektem `ICorDebugFrame`.  
   
  `pEnd`  
- [out] Ukazatel `CORDB_ADDRESS` , který určuje koncovou adresu zásobníku představovaného tímto rozhraním `ICorDebugFrame` objektu.  
+ mimo Ukazatel na `CORDB_ADDRESS`, který určuje koncovou adresu rámce zásobníku reprezentovaného tímto objektem `ICorDebugFrame`.  
   
 ## <a name="remarks"></a>Poznámky  
- Rozsah adres zásobníku je užitečné pro piecing společně trasování zásobníků shromážděných z více ladicí moduly. Číselný rozsah poskytuje žádné informace o obsahu tohoto rámce zásobníku. To má smysl pouze pro porovnání umístění rámce zásobníku.  
+ Rozsah adres zásobníku je užitečný pro piecing společně prokládaných trasování zásobníku shromážděných z několika ladicích modulů. Číselný rozsah neposkytuje žádné informace o obsahu rámce zásobníku. Má smysl jenom pro porovnání umístění rámce zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

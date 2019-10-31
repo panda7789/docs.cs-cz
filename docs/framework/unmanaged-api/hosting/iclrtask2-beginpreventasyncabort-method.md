@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 75754c2f-38c7-4707-85fe-559db4542729
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 23ead080823ace1b091568108af8866dcbca14ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 67841bbcd796e41b3b81f922020fe6c3677730c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770274"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124566"
 ---
 # <a name="iclrtask2beginpreventasyncabort-method"></a>ICLRTask2::BeginPreventAsyncAbort – metoda
-Nové vlákno zpoždění přerušení žádosti z výsledkem přerušení vlákna v aktuálním vláknu.  
+Zpozdí žádosti o přerušení nových vláken z výsledku v aktuálním vlákně.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,30 +32,30 @@ HRESULT BeginPreventAsyncAbort();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|HOST_E_INVALIDOPERATION|Metoda byla volána pro vlákno, které není aktuální vlákno.|  
+|HOST_E_INVALIDOPERATION|Metoda byla volána pro vlákno, které není aktuálním vláknem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Čítač přerušení podprocesu zpoždění pro aktuální vlákno voláním této metody zvýší o jedna.  
+ Voláním této metody dojde k zvýšení počítadla zpožděného a přerušeného vlákna pro aktuální vlákno o jednu.  
   
- Volání `BeginPreventAsyncAbort` a [iclrtask2::endpreventasyncabort –](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-endpreventasyncabort-method.md) mohou být vnořené. Čítač je větší než nula, jsou zpožděné přerušení vlákna pro aktuální vlákno. Pokud se toto volání není spárovaný s volání `EndPreventAsyncAbort` metoda, je možné dosáhnout stavu, ve které vlákno nelze doručit přeruší aktuální vlákno.  
+ Volání `BeginPreventAsyncAbort` a [ICLRTask2:: EndPreventAsyncAbort –](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-endpreventasyncabort-method.md) lze vnořovat. Dokud je čítač větší než nula, přerušení vlákna pro aktuální vlákno jsou zpožděna. Není-li toto volání spárováno s voláním metody `EndPreventAsyncAbort`, je možné spojit se stavem, ve kterém nelze podprocesy přerušit, aby bylo možné doručit do aktuálního vlákna.  
   
- Prodleva není podporována pro vlákna je samotný přeruší.  
+ Zpoždění se nerespektuje pro vlákno, které se přerušuje.  
   
- Funkce, který je zveřejněný prostřednictvím této funkce se používá interně pro virtuální počítač (VM). Nesprávné použití těchto metod může způsobit neurčené chování ve virtuálním počítači. Například volání `EndPreventAsyncAbort` bez první volání `BeginPreventAsyncAbort` čítač by mohl nastavit na nulu, když virtuální počítač má dříve zvýší jeho. Podobně čítač interní nepovolenou přetečení. Pokud překročí limit integrální vzhledem k tomu, že je zvýšen o hostitele a virtuální počítač, výsledné chování není zadána.  
+ Funkce, která je vystavena touto funkcí, je interně používána virtuálním počítačem (VM). Zneužití těchto metod může způsobit nespecifikované chování virtuálního počítače. Například volání `EndPreventAsyncAbort` bez prvního volání `BeginPreventAsyncAbort` může nastavit čítač na hodnotu nula, pokud ho virtuální počítač dříve přizpůsobil. Podobně není u vnitřního čítače přetečení kontrolováno. Pokud překročí svůj integrální limit, protože se zvyšuje od hostitele i virtuálního počítače, výsledné chování není určeno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

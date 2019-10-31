@@ -11,17 +11,16 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.author: ronpet
-ms.openlocfilehash: 53a8938a373136df65e23c162b94c4d8dc1f30b4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5f0388d90119455833eb6dba6ac808cdc8517865
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253866"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101660"
 ---
 # <a name="---string-interpolation-c-reference"></a>$-Řetězcová interpolaceC# (Referenční dokumentace)
 
-Speciální znak identifikuje řetězcový literál jako *interpolovaná řetězec.* `$` Interpolovaná řetězcová konstanta je řetězcový literál, který může obsahovat *výrazy interpolace*. Když je interpolovaná řetězcová událost přeložena na výsledný řetězec, položky s výrazy interpolace jsou nahrazeny řetězcovými reprezentacemi výsledků výrazu. Tato funkce je k dispozici C# od 6.
+`$` speciální znak identifikuje řetězcový literál jako *interpolovaná řetězec*. Interpolovaná řetězcová konstanta je řetězcový literál, který může obsahovat *výrazy interpolace*. Když je interpolovaná řetězcová událost přeložena na výsledný řetězec, položky s výrazy interpolace jsou nahrazeny řetězcovými reprezentacemi výsledků výrazu. Tato funkce je k dispozici C# od 6.
 
 Interpolace řetězců poskytuje čitelnější a pohodlný Syntax pro vytváření formátovaných řetězců, než je funkce [složeného formátování řetězce](../../../standard/base-types/composite-formatting.md) . Následující příklad používá obě funkce k produkci stejného výstupu:
 
@@ -29,7 +28,7 @@ Interpolace řetězců poskytuje čitelnější a pohodlný Syntax pro vytváře
 
 ## <a name="structure-of-an-interpolated-string"></a>Struktura interpolované řetězce
 
-Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho `$` symbolem. Mezi `$` znakem `"` a, který začíná řetězcovým literálem, nelze zadat prázdný znak.
+Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho symbolem `$`. Mezi `$` a `"`, které začínají řetězcovým literálem, nelze mít žádné prázdné znaky.
 
 Struktura položky s výraz interpolace je následující:
 
@@ -59,10 +58,10 @@ Následující příklad ukazuje, jak zahrnout složenou závorku ve výsledném
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Interpolované doslovné řetězce začíná `$` znakem následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../keywords/string.md) a [doslovného identifikátoru](verbatim.md) .
+Interpolované doslovné řetězce začíná znakem `$` následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../keywords/string.md) a [doslovného identifikátoru](verbatim.md) .
 
 > [!NOTE]
-> Počínaje C# 8,0 můžete použít `$` tokeny a `@` v libovolném pořadí: `$@"..."` a `@$"..."` jsou platné interpolované řetězce. V dřívějších C# verzích `$` se token `@` musí vyskytovat před tokenem.
+> Počínaje C# 8,0 můžete použít tokeny`$`a`@`v libovolném pořadí: `$@"..."`i`@$"..."`jsou platné interpolované řetězce. V dřívějších C# verzích musí být token `$` uveden před tokenem `@`.
 
 ## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Implicitní převody a určení `IFormatProvider` implementace
 
@@ -70,15 +69,15 @@ Existují tři implicitní převody z interpolované řetězce:
 
 1. Převod interpolované řetězcové na <xref:System.String> instanci, která je výsledkem interpolované řetězcové překladu s položkami výrazu interpolace, které se nahrazují správně formátovanými řetězcovými reprezentacemi jejich výsledků. Tento převod používá <xref:System.Globalization.CultureInfo.CurrentCulture> k formátování výsledků výrazu.
 
-1. Převod interpolované řetězcové na <xref:System.FormattableString> instanci, která představuje složený řetězec formátu společně s výsledky výrazu, který má být formátován. To umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z <xref:System.FormattableString> jedné instance. Chcete-li to provést, zavolejte jednu z následujících metod:
+1. Konverze interpolované řetězcové instance na <xref:System.FormattableString>, která představuje složený řetězec formátu společně s výsledky výrazu, který má být formátován. To umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z jedné instance <xref:System.FormattableString>. Chcete-li to provést, zavolejte jednu z následujících metod:
 
-      - Přetížení, které vytváří výsledný řetězec <xref:System.Globalization.CultureInfo.CurrentCulture>pro. <xref:System.FormattableString.ToString>
-      - Metoda, která vytváří výsledný řetězec <xref:System.Globalization.CultureInfo.InvariantCulture>pro. <xref:System.FormattableString.Invariant%2A>
-      - <xref:System.FormattableString.ToString(System.IFormatProvider)> Metoda, která vytváří výsledný řetězec pro zadanou jazykovou verzi.
+      - <xref:System.FormattableString.ToString> přetížení, které vytváří výsledný řetězec pro <xref:System.Globalization.CultureInfo.CurrentCulture>.
+      - Metoda <xref:System.FormattableString.Invariant%2A>, která vytváří výsledný řetězec pro <xref:System.Globalization.CultureInfo.InvariantCulture>.
+      - <xref:System.FormattableString.ToString(System.IFormatProvider)> metoda, která vytváří výsledný řetězec pro určenou jazykovou verzi.
 
-    Můžete také použít <xref:System.FormattableString.ToString(System.IFormatProvider)> metodu k poskytnutí uživatelsky definované implementace <xref:System.IFormatProvider> rozhraní, které podporuje vlastní formátování. Další informace naleznete v části [vlastní formátování pomocí ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter) oddílu [typy formátování v článku .NET](../../../standard/base-types/formatting-types.md) .
+    Můžete také použít metodu <xref:System.FormattableString.ToString(System.IFormatProvider)> k poskytnutí uživatelsky definované implementace rozhraní <xref:System.IFormatProvider>, která podporuje vlastní formátování. Další informace naleznete v části [vlastní formátování pomocí ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter) oddílu [typy formátování v článku .NET](../../../standard/base-types/formatting-types.md) .
 
-1. Převod interpolované řetězce na <xref:System.IFormattable> instanci, která také umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z jedné <xref:System.IFormattable> instance.
+1. Převod interpolované řetězcové instance na <xref:System.IFormattable>, která umožňuje také vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z jedné instance <xref:System.IFormattable>.
 
 Následující příklad používá implicitní převod na <xref:System.FormattableString> k vytvoření řetězců výsledků specifických pro jazykovou verzi:
 
@@ -90,9 +89,9 @@ Pokud s interpolací řetězce začínáte, přečtěte si téma o [interpolaci 
 
 ## <a name="compilation-of-interpolated-strings"></a>Kompilace interpolovaná řetězce
 
-Pokud má interpolující řetězec typ `string`, je obvykle transformovaná <xref:System.String.Format%2A?displayProperty=nameWithType> na volání metody. Kompilátor může nahradit <xref:System.String.Format%2A?displayProperty=nameWithType> , <xref:System.String.Concat%2A?displayProperty=nameWithType> Pokud bylo analyzované chování ekvivalentní zřetězení.
+Pokud má interpolující řetězec typ `string`, je obvykle transformovaná na volání metody <xref:System.String.Format%2A?displayProperty=nameWithType>. Kompilátor může nahradit <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.String.Concat%2A?displayProperty=nameWithType>, pokud bylo analyzované chování ekvivalentní zřetězení.
 
-Pokud má interpolující řetězec typ <xref:System.IFormattable> nebo <xref:System.FormattableString>, kompilátor <xref:System.Runtime.CompilerServices.FormattableStringFactory.Create%2A?displayProperty=nameWithType> vygeneruje volání metody.
+Pokud má interpolující řetězec typ <xref:System.IFormattable> nebo <xref:System.FormattableString>, kompilátor vygeneruje volání metody <xref:System.Runtime.CompilerServices.FormattableStringFactory.Create%2A?displayProperty=nameWithType>.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

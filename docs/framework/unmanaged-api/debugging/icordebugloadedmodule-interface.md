@@ -2,14 +2,12 @@
 title: Rozhraní ICorDebugLoadedModule
 ms.date: 03/30/2017
 ms.assetid: 34be6369-2e75-4a95-a538-3b29ac97cf6d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a9da6aba61382381fc25fe70615976cd0e744ee1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9fe36497844b9c33cefcf8c63711941196847525
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910007"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122607"
 ---
 # <a name="icordebugloadedmodule-interface"></a>Rozhraní ICorDebugLoadedModule
 Poskytuje informace o načteném modulu.  
@@ -23,17 +21,17 @@ Poskytuje informace o načteném modulu.
 |[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-getsize-method.md)|Získá velikost načteného modulu v bajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugLoadedModule` Rozhraní je implementováno pomocí ladicího programu a používá rozhraní ladění CLR k získání informací o načteném modulu z ladicího programu.  
+ Rozhraní `ICorDebugLoadedModule` je implementováno pomocí ladicího programu a používá rozhraní ladění CLR k získání informací o načteném modulu z ladicího programu.  
   
 > [!NOTE]
 > Toto rozhraní je dostupné jenom pro .NET Native. Pokud implementujete Toto rozhraní pro ICorDebug scénáře mimo .NET Native, modul CLR (Common Language Runtime) bude toto rozhraní ignorovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

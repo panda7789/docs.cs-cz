@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fee56a29-3154-4192-958d-71da2ced3740
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96e63d121bb64fd1aa6433881f7806b5c4058115
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 72a1b6fdc40f3169500d8cf3b3028315106ecc69
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773996"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140229"
 ---
 # <a name="icordebugvalue3getsize64-method"></a>ICorDebugValue3::GetSize64 – metoda
-Získá velikost v bajtech, to [icordebugvalue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) objektu.  
+Získá velikost objektu [ICorDebugValue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +35,21 @@ HRESULT GetSize64(
   
 ## <a name="parameters"></a>Parametry  
  pSize  
- [out] Ukazatel na velikost v bajtech tohoto objektu.  
+ mimo Ukazatel na velikost (v bajtech) tohoto objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud tato hodnota typu je odkazový typ, vrátí tato metoda velikosti ukazatele, nikoli velikost objektu.  
+ Pokud je typ této hodnoty odkazový typ, vrátí tato metoda velikost ukazatele, nikoli velikost objektu.  
   
- `ICorDebugValue3::GetSize` Metoda se liší od [icordebugvalue::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md) metoda v typu jeho výstupní parametr. V [icordebugvalue::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md), je výstupní parametr `ULONG32`; v `ICorDebugValue3::GetSize`, jde `ULONG64`. Díky tomu [icordebugvalue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) rozhraní oznamuje velikost pole, které je větší než 2 GB.  
+ Metoda `ICorDebugValue3::GetSize` se liší od metody [ICorDebugValue:: GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md) v typu jeho výstupního parametru. V [ICorDebugValue:: GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)je výstupní parametr `ULONG32`; v `ICorDebugValue3::GetSize`se jedná o `ULONG64`. To umožňuje, aby rozhraní [ICorDebugValue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) nahlásilo velikost polí, která překračují 2 GB.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

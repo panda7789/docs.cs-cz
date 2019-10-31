@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3b93bcff-62a4-47b2-babc-6bcf4216119a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c1de0b3b05d38c1fec38b9436c653973dfaa4136
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b68f24908a5b214d507da8e8a4636a7c55259604
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739010"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123018"
 ---
-# <a name="efngetmanagedobjectfieldinfo-function"></a>\_EFN\_GetManagedObjectFieldInfo Function
-Získá posun od začátku objekt pole a hodnota pole pomocí ukazatele zadaného objektu a název pole.  
+# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_EFN\_funkce GetManagedObjectFieldInfo
+Získá posun od začátku objektu k poli a hodnotu pole pomocí zadaného ukazatele objektu a názvu pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +38,31 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
   
 ## <a name="parameters"></a>Parametry  
  `Client`  
- [in] Ukazatel na klientovi ladění.  
+ pro Ukazatel na ladicího klienta.  
   
  `objAddr`  
- [in] Ukazatel spravovaného objektu.  
+ pro Ukazatel spravovaného objektu.  
   
  szFieldName  
- [in] Spravovaný objekt ukazatel na název pole.  
+ pro Ukazatel spravovaného objektu na název pole.  
   
  `pValue`  
- [out] Hodnota pole. Tento parametr může mít hodnotu null.  
+ mimo Hodnota pole Tento parametr může mít hodnotu null.  
   
  `pOffset`  
- [out] Posun od `objAddr` do příslušného pole. Tento parametr může mít hodnotu null.  
+ mimo Posun od `objAddr` k poli. Tento parametr může mít hodnotu null.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud posun je 0, je zapsán bez posunutí.  
+ Pokud je posun 0, není zapsán žádný posun.  
   
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
+ Pokud ve vlákně, které je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** SOS_Stacktrace.h  
+ **Hlavička:** SOS_Stacktrace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

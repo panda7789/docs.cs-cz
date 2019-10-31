@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1d3d1eb-8370-4f25-8297-3bd262b4740a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c0e72d15ab4ca9b4468efb2a671022f30bfb3cc6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8b9ec94184945c19b77247175e51bd5e8dc1ceee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759944"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122667"
 ---
 # <a name="icordebuginternalframe2isclosertoleaf-method"></a>ICorDebugInternalFrame2::IsCloserToLeaf – metoda
-Kontroluje, zda `this` vnitřní rámec je blíže než zadaný objekt ICorDebugFrame listu.  
+Kontroluje, zda je vnitřní rámec `this` blíž k listu, než je zadaný objekt ICorDebugFrame.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,31 +34,31 @@ HRESULT IsCloserToLeaf([in] ICorDebugFrame * pFrameToCompare,
   
 ## <a name="parameters"></a>Parametry  
  `pFrameToCompare`  
- [in] Ukazatel na porovnání `ICorDebugFrame` objektu.  
+ pro Ukazatel na objekt porovnání `ICorDebugFrame`.  
   
  `pIsCloser`  
- [out] `true` Pokud `this` vnitřní rámec je blíž ke listu než rámce určené `pFrameToCompare`; v opačném případě `false`.  
+ [out] `true`, zda `this` interní rámec je blíž k listu, než je rámec určený `pFrameToCompare`; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Porovnání se úspěšně provedla.|  
+|S_OK|Porovnání bylo úspěšně provedeno.|  
 |E_FAIL|Porovnání nelze provést.|  
-|E_INVALIDARG|`pFrameToCompare` nebo `pIsCloser` má hodnotu null.|  
+|E_INVALIDARG|`pFrameToCompare` nebo `pIsCloser` je null.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IsCloserToLeaf` je možné implementovat zásady pro prokládání vnitřních rámcích pomocí jiné rámce v zásobníku.  
+ `IsCloserToLeaf` lze použít k implementaci zásad pro překládání vnitřních snímků s ostatními snímky v zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

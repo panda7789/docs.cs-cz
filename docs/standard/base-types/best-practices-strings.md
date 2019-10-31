@@ -18,15 +18,13 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: d2255d935f59bc7a999819d345b35db3e5916656
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b427c579b4190acaf715147908b38ea57ab7aea3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037856"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120639"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 
@@ -312,7 +310,7 @@ Následující příklad vytvoří instanci objektu <xref:System.Collections.Has
 Když zobrazíte data, která nejsou řetězcová, například čísla a data a časy, naformátujete je pomocí kulturního nastavení uživatele. Ve výchozím nastavení následující všechny používají aktuální jazykovou verzi vlákna při formátování operací:
 
 - Interpolované řetězce podporované kompilátory [C#](../../csharp/language-reference/tokens/interpolated.md) a [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) .
-- Operace zřetězení řetězců, které používají [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) operátory zřetězení nebo [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ) nebo které volají metodu<xref:System.String.Concat%2A?displayProperty=nameWithType>přímo
+- Operace zřetězení řetězců, které používají [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) operátory zřetězení nebo [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ) nebo které volají metodu <xref:System.String.Concat%2A?displayProperty=nameWithType> přímo
 - Metoda <xref:System.String.Format%2A?displayProperty=nameWithType>.
 - Metody `ToString` číselné typy a typy data a času.
 

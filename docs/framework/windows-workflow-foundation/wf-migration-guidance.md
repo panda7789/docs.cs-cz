@@ -2,14 +2,14 @@
 title: Pokyny k migraci programovací model Windows Workflow Foundation (WF)
 ms.date: 06/19/2017
 ms.assetid: 1da7f5ff-5a67-44ba-b165-f3e5de008e4a
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: edbc5b9c174497a35eaa037718766b31ffa04de3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ece4c7d6addd10b4a626dc9e9dcb9f1dc5abfc8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913680"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140360"
 ---
 # <a name="windows-workflow-foundation-wf-migration-guidance"></a>Pokyny k migraci programovací model Windows Workflow Foundation (WF)
 

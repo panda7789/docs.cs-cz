@@ -12,19 +12,17 @@ api_type:
 ms.assetid: 0e350a1b-6997-46d0-bfc5-962a5011ef43
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 839e698c8921f916fad174bae4f4cc8bb4d02994
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f35e979a5107064d2987a385a989075ef71283ff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609071"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098862"
 ---
 # <a name="cordebugehclause-structure"></a>Struktura CorDebugEHClause
-[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
+[Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Představuje výjimku zpracování – klauzule (EH) pro danou část kódu (IL intermediate language).  
+ Představuje klauzuli zpracování výjimek (EH) pro danou část kódu přestupného jazyka (IL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,36 +42,36 @@ typedef struct _CorDebugEHClause {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`Flags`|Bitové pole, která popisuje informace o výjimce v klauzuli EH. Další informace najdete v části poznámky.|  
-|`TryOffset`|Posun v bajtech, nástroje `try` bloku od samého začátku tělo metody.|  
-|`TryLength`|Délka v bajtech, nástroje `try` bloku.|  
-|`HandlerOffset`|Umístění obslužné rutiny pro tuto `try` bloku.|  
-|`HandlerLength`|Velikost v bajtech kód obslužné rutiny.|  
-|`ClassToken`|Token metadat pro obslužnou rutinu na základě typu výjimky.|  
-|`FilterOffset`|Posun v bajtech od začátku tělo metody obslužné rutiny na základě filtru výjimky.|  
+|`Flags`|Bitové pole, které popisuje informace o výjimce v klauzuli EH. Další informace najdete v části poznámky.|  
+|`TryOffset`|Posun v bajtech `try` bloku od začátku těla metody.|  
+|`TryLength`|Délka bloku `try` v bajtech.|  
+|`HandlerOffset`|Umístění obslužné rutiny pro tento blok `try`.|  
+|`HandlerLength`|Velikost kódu obslužné rutiny v bajtech|  
+|`ClassToken`|Token metadat pro obslužnou rutinu výjimky založené na typu.|  
+|`FilterOffset`|Posun v bajtech od začátku těla metody pro obslužnou rutinu výjimky na základě filtru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pole `CoreDebugEHClause` hodnoty vrácené [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) metody.  
+ Metoda [GetEHClauses –](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) vrací pole hodnot `CoreDebugEHClause`.  
   
- Klauzule informace EH je definován specifikací CLI. Další informace najdete v tématu [Standard ECMA-355: Common Language Infrastructure (CLI), 6 Edition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+ Informace o klauzuli EH jsou definovány specifikací CLI. Další informace naleznete v tématu [Standard ECMA-355: Common Language Infrastructure (CLI), 6. verze](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
- `flags` Pole může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug.idl nebo CorDebug.h.  
+ Pole `flags` může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug. idl nebo CorDebug. h.  
   
-|Příznak|Hodnota|Popis|  
+|příznaků|Hodnota|Popis|  
 |----------|-----------|-----------------|  
-|`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Klauzule typovou výjimku.|  
-|`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Výjimka filtr a obslužné rutiny klauzuli.|  
-|`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|A `finally` klauzuli.|  
-|`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Klauzule fault ( `finally` klauzuli, která je volána, pouze když je vyvolána výjimka).|  
+|`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Typová klauzule Exception|  
+|`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Filtr výjimky a klauzule obslužné rutiny.|  
+|`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|Klauzule `finally`.|  
+|`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Klauzule Fault (`finally` klauzule, která je volána pouze v případě, že je vyvolána výjimka).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

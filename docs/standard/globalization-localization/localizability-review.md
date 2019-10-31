@@ -16,46 +16,44 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8645f77c8d03a475fe0fcc49f3e6d5e28829f9e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b286bdd2c5d7b03a0a2b5f94478e252da6cd0ae2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026130"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120852"
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 
-Přezkoumání lokalizovatelnosti je mezikroku vývoj světově připravených aplikací. Ověřuje, že globalizovaná aplikace je připravena k lokalizaci a identifikuje jakýkoli kód, nebo všechny aspekty uživatelského rozhraní, které vyžadují speciální zacházení. Tento krok také pomáhá zajistit, že proces lokalizace nezpůsobí žádné funkčních chyb do vaší aplikace. Při všech problémech, přezkoumání lokalizovatelnosti vyvolané vyřeší, vaše aplikace je připravena k lokalizaci. Pokud je důkladné přezkoumání lokalizovatelnosti, by nemělo být upravit veškerý kód zdroje během proces lokalizace.
+Kontrola lokalizovatelnosti je přechodný krok vývoje aplikace připravené pro použití ve světě. Ověřuje, zda je globální aplikace připravena k lokalizaci a identifikuje jakýkoli kód nebo jakékoli aspekty uživatelského rozhraní, které vyžadují zvláštní zpracování. Tento krok také pomáhá zajistit, že proces lokalizace nezavede do vaší aplikace žádné funkční nedostatky. Když byly vyřešeny všechny problémy vyvolané přezkoumáním lokalizovatelnosti, je vaše aplikace připravená na lokalizaci. Pokud je kontrola lokalizovatelnosti důkladná, neměli byste během procesu lokalizace upravovat žádný zdrojový kód.
 
-Přezkoumání lokalizovatelnosti se skládá z následujících tří kontroly:
+Kontrola lokalizovatelnosti se skládá z následujících tří kontrol:
 
-- [Implementace doporučení pro globalizaci?](#global)
+- [Jsou implementovaná doporučení globalizace?](#global)
 
-- [Jazykové funkce správného zpracování?](#culture)
+- [Jsou funkce závislé na jazykové verzi zpracovávány správně?](#culture)
 
 - [Otestovali jste aplikaci s mezinárodními daty?](#test)
 
 <a name="global"></a>
-## <a name="implement-globalization-recommendations"></a>Implementace doporučení pro globalizaci
+## <a name="implement-globalization-recommendations"></a>Implementace doporučení globalizace
 
-Pokud máte navržená a vyvinutá vaší aplikace pomocí na lokalizaci a pokud jste postupovali podle doporučení popsaných v [globalizace](../../../docs/standard/globalization-localization/globalization.md) článku, přezkoumání lokalizovatelnosti do značné míry budou pouze kontrolou kvality . V opačném případě během této fáze je vhodné zkontrolovat a implementaci doporučení pro [globalizace](../../../docs/standard/globalization-localization/globalization.md) a opravte chyby ve zdrojovém kódu, které brání lokalizaci.
+Pokud jste aplikaci navrhli a vyvinuli s lokalizací a pokud jste postupovali s doporučeními popsanými v článku [globalizace](../../../docs/standard/globalization-localization/globalization.md) , přezkoumání lokalizovatelnosti bude převážně složitosti. V opačném případě byste měli v průběhu této fáze zkontrolovat a implementovat doporučení pro [globalizaci](../../../docs/standard/globalization-localization/globalization.md) a opravit chyby ve zdrojovém kódu, které brání lokalizaci.
 
 <a name="culture"></a>
-## <a name="handle-culture-sensitive-features"></a>Jazykové funkce
+## <a name="handle-culture-sensitive-features"></a>Zpracování funkcí závislých na jazykové verzi
 
-.NET neposkytuje programové podpory v různých oblastech, které výrazně lišit podle jazykové verze. Ve většině případů musíte napsat vlastní kód pro zpracování oblasti funkcí, jako je následující:
+Rozhraní .NET neposkytuje programovou podporu v řadě oblastí, které jsou široce závislé na jazykové verzi. Ve většině případů je třeba napsat vlastní kód, který bude zpracovávat oblasti funkcí jako následující:
 
 - Adresy
 
 - Telefonní čísla
 
-- Formáty papíru
+- Velikosti papíru
 
-- Jednotky délky, váhy, oblasti, svazek a teploty
+- Měrné jednotky používané pro délky, váhy, oblast, hlasitost a teploty
 
-   Přestože .NET nenabízí integrovanou podporu pro převod mezi měrné jednotky, můžete použít <xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=nameWithType> a určí, zda konkrétní zemi nebo oblast používá metrika systému, jak ukazuje následující příklad.
+   I když rozhraní .NET nenabízí integrovanou podporu pro převod mezi jednotkami měření, můžete použít vlastnost <xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=nameWithType> k určení, zda konkrétní země nebo oblast používá systém metriky, jak ukazuje následující příklad.
 
    [!code-csharp[Conceptual.Localizability#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.localizability/cs/ismetric1.cs#1)]
    [!code-vb[Conceptual.Localizability#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.localizability/vb/ismetric1.vb#1)]
@@ -63,21 +61,21 @@ Pokud máte navržená a vyvinutá vaší aplikace pomocí na lokalizaci a pokud
 <a name="test"></a>
 ## <a name="test-your-application"></a>Testování aplikace
 
-Předtím, než je lokalizovat aplikaci, měli byste otestovat pomocí mezinárodní data na mezinárodních verzích operačního systému. I když většina uživatelského rozhraní nebude v tomto okamžiku lokalizována, bude možné zjišťovat problémy, jako je následující:
+Před lokalizací aplikace byste ji měli otestovat pomocí mezinárodních dat v mezinárodní verzi operačního systému. I když většina uživatelského rozhraní nebude v tomto okamžiku lokalizována, budete moci detekovat následující problémy:
 
-- Serializovaná data, která není správně deserializovat mezi verzemi operačního systému.
+- Serializovaná data, která nejsou v rámci verzí operačního systému správně reserializována.
 
-- Číselná data, která nebere v úvahu konvence aktuální jazykové verze. Například může být zobrazena čísla s nepřesné skupiny oddělovače, oddělovače desetinných míst nebo symboly měny.
+- Číselná data, která nereflektují konvence aktuální jazykové verze. Čísla lze například zobrazit s nepřesnými oddělovači skupin, oddělovači desetinných míst nebo symboly měny.
 
-- Datum a čas dat, který nepředstavuje konvence aktuální jazykové verze. Například číslo představující měsíc a den mohou objevit v nesprávném pořadí, oddělovače data může být nesprávný nebo může být nesprávné informace o časovém pásmu.
+- Data a času, která nereflektují konvence aktuální jazykové verze. Například čísla představující měsíc a den se mohou zobrazit v nesprávném pořadí, oddělovače dat mohou být nesprávné nebo informace o časovém pásmu mohou být nesprávné.
 
-- Prostředky, které nelze nalézt, protože nebylo nalezeno výchozí jazykovou verzi pro vaši aplikaci.
+- Prostředky, které se nenašly, protože jste pro svou aplikaci neoznačili výchozí jazykovou verzi.
 
-- Řetězce, které jsou zobrazeny v neobvyklé objednávky pro konkrétní jazykovou verzi.
+- Řetězce, které jsou zobrazeny v neobvyklém pořadí pro konkrétní jazykovou verzi.
 
-- Řetězec porovnání nebo porovnání rovnosti, které vrací neočekávané výsledky.
+- Porovnávání řetězců nebo porovnání pro rovnost, které vracejí neočekávané výsledky.
 
-Pokud jste postupovali podle doporučení pro globalizaci při vývoji vaší aplikace, zpracovává zohledňující jazykovou verzi funkce správně a identifikovat a řešit problémy lokalizace, které vznikly během testování, můžete přejít k dalšímu kroku, [Lokalizace](../../../docs/standard/globalization-localization/localization.md).
+Pokud jste postupovali s doporučeními globalizace při vývoji aplikace, zpracování funkcí závislých na jazykové verzi a identifikaci a řešení problémů lokalizace, které vznikly během testování, můžete přejít k dalšímu kroku [. Lokalizace](../../../docs/standard/globalization-localization/localization.md).
 
 ## <a name="see-also"></a>Viz také:
 

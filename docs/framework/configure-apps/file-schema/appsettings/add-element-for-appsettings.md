@@ -7,22 +7,22 @@ helpviewer_keywords:
 - add Element
 - <add> Element
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 594ba4f289012e775e93acba98056b60bdd94cbd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09864ea8f174d0c23f26db49f8cc0d43608522a0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927751"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119342"
 ---
-# <a name="add-element-for-appsettings"></a>\<Přidat > element pro \<appSettings >
+# <a name="add-element-for-appsettings"></a>\<přidat > element pro \<appSettings >
 
 Přidá vlastní nastavení aplikace.
 
-[ **\<> Konfigurace**](../configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**
+[**konfigurační >\<** ](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,14 +36,14 @@ Přidá vlastní nastavení aplikace.
 
 |           | Popis |
 | --------- | ----------- |
-| **key**   | Požadovaný atribut.<br><br>Určuje název klíče, který chcete přidat. |
+| **zkrat**   | Požadovaný atribut.<br><br>Určuje název klíče, který chcete přidat. |
 | **value** | Požadovaný atribut.<br><br>Určuje hodnotu klíče, který se má přidat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci. |
+| [ **\<appSettings >** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -59,7 +59,7 @@ Následující příklad ukazuje, jak přidat vlastní nastavení konfigurace pr
 </appSettings>
 ```
 
-Následující příklad používá `<add>` element k definování dvou nastavení kompatibility v aplikaci ASP.NET:
+Následující příklad používá element `<add>` k definování dvou nastavení kompatibility v aplikaci ASP.NET:
 
 ```xml
 <appSettings>

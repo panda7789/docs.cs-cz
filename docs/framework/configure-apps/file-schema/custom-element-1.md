@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fae3673fe72d036802cb1a8366aaa2430c38884
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ac2d01121e81b545556fb082fa7b82c31cccf9da
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927503"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118839"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Vlastní element pro SingleTagSectionHandler
 
-Definuje nastavení ve vlastní konfigurační sekci, která je definována \<oddílem > elementem a <xref:System.Configuration.SingleTagSectionHandler> používá třídu.
+Definuje nastavení v oddílu vlastní konfigurace, která je definována \<sekcí > element a používá třídu <xref:System.Configuration.SingleTagSectionHandler>.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp; *\<sectionName>*
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp; *\<sectiongroup >*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,7 +36,7 @@ Atributy a hodnoty atributů jsou definované uživatelem.
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<> Konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**Konfigurace \<** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -44,11 +44,11 @@ Atributy a hodnoty atributů jsou definované uživatelem.
 
 ## <a name="remarks"></a>Poznámky
 
-[ **\<** ](section-element.md) [ **\<** ](configsections-element-for-configuration.md) Element **sectionGroup > je vlastní element definovaný oddílem >m tagu v prvku configSections >. \<** Konfigurační systém vrátí <xref:System.Collections.IDictionary> objekt při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
+Element **\<** je vlastní element definovaný [ **\<oddílem >** ](section-element.md) značky v\<m prvku [ **> configSections**](configsections-element-for-configuration.md) . Konfigurační systém vrátí objekt <xref:System.Collections.IDictionary> při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad deklaruje vlastní element s názvem  **\<sampleSection >** , který obsahuje <xref:System.Configuration.SingleTagSectionHandler> nastavení čtená třídou:
+Následující příklad deklaruje vlastní element s názvem **\<sampleSection >** obsahující nastavení přečtená třídou <xref:System.Configuration.SingleTagSectionHandler>:
 
 ```xml
 <configuration>

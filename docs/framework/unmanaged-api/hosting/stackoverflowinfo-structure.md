@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 519389f2-0217-436c-99d4-93a76ebce5b5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7de5a6d38d43c20ce52f609ef6514a1f28022416
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1072026f92edbc646653c6dd74ec8e22d5b887e5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781141"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105910"
 ---
 # <a name="stackoverflowinfo-structure"></a>StackOverflowInfo – struktura
-Ukládá typu došlo k přetečení a informace o výjimce, která byla vyvolána z důvodu přetečení.  
+Ukládá typ přetečení, ke kterému došlo, a informace o výjimce, která byla vyvolána z důvodu přetečení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ typedef struct _StackOverflowInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`soType`|Hodnota [stackoverflowtype –](../../../../docs/framework/unmanaged-api/hosting/stackoverflowtype-enumeration.md) výčet, který určuje typ přetečení.|  
-|`pExceptionInfo`|Ukazatel na Win32 `EXCEPTION_POINTERS` objektu, který obsahuje záznam o výjimce s popisem nezávislé na počítač výjimku a kontextového záznamu s popisem závislé na počítači kontext procesoru v okamžiku výjimky.|  
+|`soType`|Hodnota výčtu [StackOverflowType –](../../../../docs/framework/unmanaged-api/hosting/stackoverflowtype-enumeration.md) , která určuje typ přetečení.|  
+|`pExceptionInfo`|Ukazatel na objekt Win32 `EXCEPTION_POINTERS`, který obsahuje záznam výjimky s popisem výjimky a záznamem kontextu s popisem procesoru závislého na počítači v okamžiku výjimky.|  
   
 ## <a name="remarks"></a>Poznámky  
- A `StackOverflowInfo` objekt je předán [iactiononclrevent::ONEVENT –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) metodu `Event_StackOverflow` události.  
+ `StackOverflowInfo` objekt je předán metodě [IActionOnCLREvent –::](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) prohledatelné události `Event_StackOverflow`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
+title: 'Postupy: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,18 +9,16 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, improving efficiency
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 32255c988397853c4b38e4ab723c7261a8999899
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 4b2b6a6124bf8cc0fb3b379607135283678e3268
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929219"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091363"
 ---
-# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
+# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Postupy: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
 
-Knihovna rozhraní <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> TPL Dataflow poskytuje třídy a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> , aby bylo možné přijímat data a ukládat je do vyrovnávací paměti z jednoho nebo více zdrojů a následně šířit tato data do vyrovnávací paměti jako jednu kolekci. Tento mechanismus dávkování je užitečný při shromažďování dat z jednoho nebo více zdrojů a následném zpracování více datových prvků jako dávky. Představte si například aplikaci, která používá tok k vkládání záznamů do databáze. Tato operace může být efektivnější, pokud je vloženo více položek současně namísto jednoho intervalu. Tento dokument popisuje, jak použít <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> třídu ke zlepšení efektivity těchto operací vložení databáze. Popisuje také, jak použít <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třídu k zachycení výsledků a všech výjimek, ke kterým dojde, když program čte z databáze.
+Knihovna Dataflow v TPL poskytuje třídy <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType>, abyste mohli přijímat data a ukládat je do vyrovnávací paměti z jednoho nebo více zdrojů a potom šířit tato data do vyrovnávací paměti jako jednu kolekci. Tento mechanismus dávkování je užitečný při shromažďování dat z jednoho nebo více zdrojů a následném zpracování více datových prvků jako dávky. Představte si například aplikaci, která používá tok k vkládání záznamů do databáze. Tato operace může být efektivnější, pokud je vloženo více položek současně namísto jednoho intervalu. Tento dokument popisuje, jak použít třídu <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> ke zlepšení efektivity těchto operací vložení databáze. Popisuje také, jak použít třídu <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> k zachycení výsledků a všech výjimek, ke kterým dojde, když program čte z databáze.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
@@ -53,16 +51,16 @@ Tento návod obsahuje následující oddíly:
 
 ## <a name="creating-the-console-application"></a>Vytvoření konzolové aplikace
 
-1. V aplikaci Visual Studio vytvořte projekt C# **konzolové aplikace** pro Visual nebo Visual Basic. V tomto dokumentu se projekt jmenuje `DataflowBatchDatabase`.
+1. V aplikaci Visual Studio vytvořte projekt C# **konzolové aplikace** pro Visual nebo Visual Basic. V tomto dokumentu má projekt název `DataflowBatchDatabase`.
 
 2. V projektu přidejte odkaz na System. data. SqlServerCe. dll a odkaz na System. Threading. Tasks. Dataflow. dll.
 
-3. Ujistěte se, že Form1.cs (Form1. vb pro Visual Basic) obsahuje `using` následující`Imports` příkazy (v Visual Basic).
+3. Ujistěte se, že Form1.cs (Form1. vb pro Visual Basic) obsahuje následující příkazy `using` (`Imports` v Visual Basic).
 
     [!code-csharp[TPLDataflow_BatchDatabase#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#1)]
     [!code-vb[TPLDataflow_BatchDatabase#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#1)]
 
-4. Přidejte do `Program` třídy následující datové členy.
+4. Do třídy `Program` přidejte následující datové členy.
 
     [!code-csharp[TPLDataflow_BatchDatabase#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#2)]
     [!code-vb[TPLDataflow_BatchDatabase#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#2)]
@@ -71,62 +69,62 @@ Tento návod obsahuje následující oddíly:
 
 ## <a name="defining-the-employee-class"></a>Definování třídy Employee
 
-Přidejte do `Program` `Employee` třídy třídu.
+Do třídy `Program` přidejte třídu `Employee`.
 
 [!code-csharp[TPLDataflow_BatchDatabase#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#3)]
 [!code-vb[TPLDataflow_BatchDatabase#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#3)]
 
-Třída obsahuje tři vlastnosti `EmployeeID` `FirstName`,, a. `LastName` `Employee` Tyto vlastnosti odpovídají `Employee ID`sloupcům, `Last Name`a `First Name` v `Employees` tabulce databáze Northwind. Pro tuto ukázku `Employee` třída také `Random` definuje `Employee` metodu, která vytvoří objekt, který má náhodné hodnoty pro jeho vlastnosti.
+Třída `Employee` obsahuje tři vlastnosti, `EmployeeID`, `LastName`a `FirstName`. Tyto vlastnosti odpovídají sloupcům `Employee ID`, `Last Name`a `First Name` v tabulce `Employees` v databázi Northwind. Pro tuto ukázku třída `Employee` definuje také metodu `Random`, která vytvoří objekt `Employee`, který má náhodné hodnoty pro jeho vlastnosti.
 
 <a name="operations"></a>
 
 ## <a name="defining-employee-database-operations"></a>Definování operací databáze zaměstnanců
 
-Přidejte do `Program` `GetEmployeeCount`třídy metody `InsertEmployees`, a `GetEmployeeID` .
+Do `Program` třídy přidejte metody `InsertEmployees`, `GetEmployeeCount`a `GetEmployeeID`.
 
 [!code-csharp[TPLDataflow_BatchDatabase#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#4)]
 [!code-vb[TPLDataflow_BatchDatabase#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#4)]
 
-`InsertEmployees` Metoda přidá do databáze nové záznamy o zaměstnancích. Metoda načte počet položek `Employees` v tabulce. `GetEmployeeCount` `GetEmployeeID` Metoda načte identifikátor prvního zaměstnance, který má zadaný název. Každá z těchto metod vezme připojovací řetězec k databázi Northwind a používá funkce v `System.Data.SqlServerCe` oboru názvů ke komunikaci s databází.
+Metoda `InsertEmployees` přidá do databáze nové záznamy o zaměstnancích. Metoda `GetEmployeeCount` načítá počet položek v tabulce `Employees`. Metoda `GetEmployeeID` načte identifikátor prvního zaměstnance, který má zadaný název. Každá z těchto metod vezme připojovací řetězec k databázi Northwind a používá funkce v oboru názvů `System.Data.SqlServerCe` ke komunikaci s databází.
 
 <a name="nonBuffering"></a>
 
 ## <a name="adding-employee-data-to-the-database-without-using-buffering"></a>Přidání dat zaměstnanců do databáze bez použití ukládání do vyrovnávací paměti
 
-Přidejte do `Program` `AddEmployees` třídy metody a. `PostRandomEmployees`
+Do `Program` třídy přidejte metody `AddEmployees` a `PostRandomEmployees`.
 
 [!code-csharp[TPLDataflow_BatchDatabase#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#5)]
 [!code-vb[TPLDataflow_BatchDatabase#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#5)]
 
-`AddEmployees` Metoda přidá náhodná data zaměstnanců do databáze pomocí toku dat. Vytvoří <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objekt, který `InsertEmployees` volá metodu pro přidání záznamu zaměstnance do databáze. Metoda pak zavolá `Employee` metodu pro odeslání více objektů do objektu.<xref:System.Threading.Tasks.Dataflow.ActionBlock%601> `PostRandomEmployees` `AddEmployees` `AddEmployees` Metoda pak počká na dokončení všech operací vložení.
+Metoda `AddEmployees` přidá náhodná data zaměstnanců do databáze pomocí toku dat. Vytvoří objekt <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>, který volá metodu `InsertEmployees` pro přidání záznamu zaměstnance do databáze. Metoda `AddEmployees` pak zavolá metodu `PostRandomEmployees` pro odeslání více objektů `Employee` do objektu <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>. Metoda `AddEmployees` pak počká na dokončení všech operací vložení.
 
 <a name="buffering"></a>
 
 ## <a name="using-buffering-to-add-employee-data-to-the-database"></a>Přidání dat zaměstnanců do databáze pomocí ukládání do vyrovnávací paměti
 
-Přidejte do `Program` `AddEmployeesBatched` třídy metodu.
+Do `Program` třídy přidejte metodu `AddEmployeesBatched`.
 
 [!code-csharp[TPLDataflow_BatchDatabase#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#6)]
 [!code-vb[TPLDataflow_BatchDatabase#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#6)]
 
-Tato metoda `AddEmployees`se podobá, s tím rozdílem, <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> že také používá třídu `Employee` k ukládání více <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objektů do vyrovnávací paměti předtím, než je pošle tyto objekty objektu. Vzhledem k tomu <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> , že `Employee` Třídašířívíceprvkůjakokolekci,objektjeupraventak,abyfungoval<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> na poli objektů. Stejně jako v `AddEmployees` `AddEmployeesBatched` metodě volá `PostRandomEmployees` metodupro`Employee` odeslání více objektů; tyto objekty však tyto objekty <xref:System.Threading.Tasks.Dataflow.BatchBlock%601>odešledo objektu. `AddEmployeesBatched` `AddEmployeesBatched` Metoda také čeká na dokončení všech operací vložení.
+Tato metoda se podobá `AddEmployees`, s tím rozdílem, že používá také třídu <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> k ukládání více objektů `Employee` do vyrovnávací paměti předtím, než je pošle objektům <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>. Vzhledem k tomu, že třída <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> rozšířila více prvků jako kolekci, je objekt <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> změněn tak, aby fungoval na poli objektů `Employee`. Stejně jako v metodě `AddEmployees` `AddEmployeesBatched` volá metodu `PostRandomEmployees` pro odeslání více objektů `Employee`; `AddEmployeesBatched` však tyto objekty přemístit do objektu <xref:System.Threading.Tasks.Dataflow.BatchBlock%601>. Metoda `AddEmployeesBatched` také čeká na dokončení všech operací vložení.
 
 <a name="bufferedJoin"></a>
 
 ## <a name="using-buffered-join-to-read-employee-data-from-the-database"></a>Čtení dat zaměstnanců z databáze pomocí připojení do vyrovnávací paměti
 
-Přidejte do `Program` `GetRandomEmployees` třídy metodu.
+Do `Program` třídy přidejte metodu `GetRandomEmployees`.
 
 [!code-csharp[TPLDataflow_BatchDatabase#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#7)]
 [!code-vb[TPLDataflow_BatchDatabase#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#7)]
 
-Tato metoda vytiskne informace o náhodných zaměstnancích do konzoly. Vytvoří několik náhodných `Employee` objektů a `GetEmployeeID` zavolá metodu pro načtení jedinečného identifikátoru pro každý objekt. `Employee` `GetRandomEmployees` <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> Vzhledem k tomu, že `GetEmployeeID` metoda vyvolá výjimku, pokud neexistuje žádný shodný zaměstnanec s danými křestními a posledními názvy, metoda používá třídu k ukládání objektů pro úspěšná volání do a `GetEmployeeID` <xref:System.Exception?displayProperty=nameWithType> objekty pro volání, která selžou. Objekt v tomto příkladu funguje <xref:System.Tuple%602> na objektu `Employee` , který obsahuje seznam objektů a seznam <xref:System.Exception> objektů. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> Objekt šíří tato data v případě, že součet přijatých `Employee` hodnot a <xref:System.Exception> počtu objektů se rovná velikosti dávky. <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602>
+Tato metoda vytiskne informace o náhodných zaměstnancích do konzoly. Vytvoří několik náhodných `Employee` objektů a zavolá metodu `GetEmployeeID` pro získání jedinečného identifikátoru pro každý objekt. Vzhledem k tomu, že metoda `GetEmployeeID` vyvolá výjimku, pokud neexistuje žádný odpovídající zaměstnanec s danými křestními a posledními jmény, metoda `GetRandomEmployees` používá třídu <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> k ukládání `Employee` objektů pro úspěšné volání `GetEmployeeID` a <xref:System.Exception?displayProperty=nameWithType> objektů pro volání, která selžou . Objekt <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> v tomto příkladu funguje na objektu <xref:System.Tuple%602>, který obsahuje seznam `Employee` objektů a seznam objektů <xref:System.Exception>. Objekt <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> rozšíří tato data, když se součet přijatých objektů `Employee` a <xref:System.Exception> rovná velikosti dávky.
 
 <a name="complete"></a>
 
 ## <a name="the-complete-example"></a>Kompletní příklad
 
-Následující příklad ukazuje úplný kód. `Main` Metoda porovnává dobu potřebnou k provedení vkládání dávkových databází oproti době provádění nedávkových vkládání databází. Ukazuje také použití spojení ve vyrovnávací paměti pro čtení dat zaměstnanců z databáze a také hlášení chyb.
+Následující příklad ukazuje úplný kód. Metoda `Main` porovnává dobu potřebnou k provedení vkládání dávkových databází v době, kdy je potřeba provést nedávková vkládání databáze. Ukazuje také použití spojení ve vyrovnávací paměti pro čtení dat zaměstnanců z databáze a také hlášení chyb.
 
 [!code-csharp[TPLDataflow_BatchDatabase#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#100)]
 [!code-vb[TPLDataflow_BatchDatabase#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#100)]

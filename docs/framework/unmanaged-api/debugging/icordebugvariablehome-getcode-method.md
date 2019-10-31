@@ -1,5 +1,5 @@
 ---
-title: ICorDebugVariableHome::GetCode – metoda
+title: 'ICorDebugVariableHome:: GetCode – metoda'
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHome.GetCode
@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ef002890-4a7b-4a5d-abbf-16c60083f794
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4c0cae29cceb3f23c7d09cf096937c99641d5a87
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4770eb3e93104dd3862eb2163faf1dc7fe9008ba
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773600"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125140"
 ---
-# <a name="icordebugvariablehomegetcode-method"></a>ICorDebugVariableHome::GetCode – metoda
-Získá instanci "ICorDebugCode", která obsahuje tato [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) objektu.  
+# <a name="icordebugvariablehomegetcode-method"></a>ICorDebugVariableHome:: GetCode – metoda
+Získá instanci "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetCode(
   
 ## <a name="parameters"></a>Parametry  
  `ppCode`  
- [out] Ukazatel na adresu "ICorDebugCode" instanci, která obsahuje tato [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) objektu.  
+ mimo Ukazatel na adresu instance "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

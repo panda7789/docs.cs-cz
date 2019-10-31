@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: df7595d1-430f-44b4-8160-4c2ba9df70b1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1fb752822cd406585f7f4a257ea4c51dab7b1f16
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0648ba9a35290543f485a67719c6adfeba9114b3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795463"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108957"
 ---
 # <a name="cleardownloadcache-function"></a>ClearDownloadCache – funkce
 Vymaže globální mezipaměť sestavení (GAC) pro stažená sestavení.  
@@ -35,11 +33,11 @@ HRESULT ClearDownloadCache ();
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
+ **Knihovna:** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

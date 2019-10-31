@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetMethodQualifierSet function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 86a7788736c3c12cfcfd405de88dfadfb14c1eca
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1a36200fd214d013a10ed21c22e1f652de2cbf17
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798526"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102578"
 ---
 # <a name="getmethodqualifierset-function"></a>Funkce GetMethodQualifierSet
 
@@ -49,20 +47,20 @@ pro Tento parametr se nepoužívá.
 pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszMethod`\
-pro Název metody. `wszMethod`musí odkazovat na platný `LPCWSTR`.
+pro Název metody. `wszMethod` musí ukazovat na platný `LPCWSTR`.
 
 `ppQualSet`\
-mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům metody. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel je nastaven na hodnotu Point `null`.
+mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům metody. `ppQualSet` nelze `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel je nastaven tak, aby odkazoval na `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je `null`. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -74,9 +72,9 @@ Vzhledem k tomu, že každá metoda může mít své vlastní kvalifikátory, [u
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

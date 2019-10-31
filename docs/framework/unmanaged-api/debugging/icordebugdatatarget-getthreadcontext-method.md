@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8954268-1821-4b23-b665-dbb55f2af31b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2047929c52dbb7b0d780a4ea0f180bae48a3ce79
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 278320391615eddaa8ba878ef87f802f30cddb95
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750394"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122028"
 ---
 # <a name="icordebugdatatargetgetthreadcontext-method"></a>ICorDebugDataTarget::GetThreadContext – metoda
-Vrátí kontext aktuálního vlákna pro zadaný podproces.  
+Vrátí aktuální kontext vlákna pro zadané vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +37,28 @@ HRESULT GetThreadContext(
   
 ## <a name="parameters"></a>Parametry  
  `dwThreadID`  
- [in] Identifikátor vlákna, jehož rámci má být načtena. Identifikátor je definován v operačním systému.  
+ pro Identifikátor vlákna, jehož kontext má být načten. Identifikátor je definován operačním systémem.  
   
  `contextFlags`  
- [in] Bitová kombinace příznaků závislého na platformě, které označují, které části kontextu byste si měli přečíst.  
+ pro Bitová kombinace příznaků závislých na platformě, která označuje, které části kontextu by měly být čteny.  
   
  `contextSize`  
- [in] Velikost `pContext`.  
+ pro Velikost `pContext`.  
   
  `pContext`  
- [out] Vyrovnávací paměť, kam se má kontext vlákna uložit.  
+ mimo Vyrovnávací paměť, kde bude uložen kontext vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Na platformách Windows `pContext` musí být `CONTEXT` strukturu (definované v souboru WinNT.h), který je vhodný pro typ počítače určené [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metody. `contextFlags` musí mít stejné hodnoty jako `ContextFlags` pole `CONTEXT` struktury. `CONTEXT` Struktura je specifické pro procesor, naleznete v souboru WinNT.h souboru podrobnosti.  
+ Na platformách systému Windows musí být `pContext` `CONTEXT` struktuře (definované v souboru WinNT. h), která je vhodná pro typ počítače určený metodou [ICorDebugDataTarget:: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) . `contextFlags` musí mít stejné hodnoty jako pole `ContextFlags` struktury `CONTEXT`. Struktura `CONTEXT` je specifická pro procesor; Podrobnosti najdete v souboru WinNT. h.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

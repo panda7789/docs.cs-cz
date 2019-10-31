@@ -12,34 +12,32 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cb99d6d78fc381e0b56efae51307eb469c535a9a
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: f9fe33bb46f0ba78756c4172032dfbaf45d6fc89
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457347"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123977"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interoperabilita s jinými asynchronními vzory a typy
-Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak známé jako [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md), nebo `Begin/End` vzor.  Přidání rozhraní .NET Framework 2.0 [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Od verze rozhraní .NET Framework 4 [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) nahrazuje funkce APM a protokolu EAP, ale umožňuje snadno vytvářet migraci rutin z předchozích vzory.  
+.NET Framework 1,0 představil vzor <xref:System.IAsyncResult>, jinak označované jako [asynchronní programovací model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)nebo vzor `Begin/End`.  .NET Framework 2,0 přidal [asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Počínaje .NET Framework 4, [asynchronní vzor založený na úlohách (klepněte) nahrazuje rozhraní](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) APM i EAP, ale poskytuje možnost snadného sestavení rutin migrace z předchozích vzorů.  
   
  V tomto tématu:  
   
-- [Úlohy a APM](#APM) ([z APM klepnutím](#ApmToTap) nebo [z klepnutím APM](#TapToApm))  
+- [Úlohy a APM](#APM) ([od APM po klepnutí](#ApmToTap) nebo [z klepněte na APM](#TapToApm))  
   
-- [Úlohy a protokolu EAP](#EAP)  
+- [Úlohy a EAP](#EAP)  
   
-- [Úkoly a obslužné rutiny čekání](#WaitHandles) ([z obslužné rutiny čekání klepnutím](#WHToTap) nebo [z klepněte sem a můžete obslužné rutiny čekání](#TapToWH))  
+- [Úlohy a obslužné rutiny čekání](#WaitHandles) ([z obslužných rutin čekání na klepnutí](#WHToTap) nebo [z klepnutí na obslužné rutiny čekání](#TapToWH))  
   
 <a name="APM"></a>   
-## <a name="tasks-and-the-asynchronous-programming-model-apm"></a>Úlohy a Model asynchronního programování (APM)  
+## <a name="tasks-and-the-asynchronous-programming-model-apm"></a>Úlohy a model asynchronního programování (APM)  
   
 <a name="ApmToTap"></a>   
-### <a name="from-apm-to-tap"></a>Z APM klepnutím  
- Vzhledem k tomu, [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) vzor je velmi strukturovaných, je poměrně snadné sestavení obálky vystavit jako implementace TAP implementaci APM. Ve skutečnosti rozhraní .NET Framework, od verze rozhraní .NET Framework 4, obsahuje pomocné rutiny ve formě <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> přetížení metody k poskytování tohoto převodu.  
+### <a name="from-apm-to-tap"></a>Od APM po klepnutí  
+ Vzhledem k tomu, že je vzor [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) velmi strukturovaný, je poměrně snadné vytvořit obálku, aby vystavila implementaci APM jako klepnutím na implementaci. Ve skutečnosti .NET Framework, počínaje .NET Framework 4, obsahuje pomocné rutiny ve formě <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> přetížení metod pro poskytnutí tohoto překladu.  
   
- Vezměte v úvahu <xref:System.IO.Stream> třídy a jeho <xref:System.IO.Stream.BeginRead%2A> a <xref:System.IO.Stream.EndRead%2A> metody, které představují protějšek APM synchronní <xref:System.IO.Stream.Read%2A> metody:  
+ Zvažte třídu <xref:System.IO.Stream> a její metody <xref:System.IO.Stream.BeginRead%2A> a <xref:System.IO.Stream.EndRead%2A>, které reprezentují protějšek APM pro synchronní <xref:System.IO.Stream.Read%2A> metodu:  
   
  [!code-csharp[Conceptual.AsyncInterop#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Stream1.cs#1)]
  [!code-vb[Conceptual.AsyncInterop#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/stream1.vb#1)]  
@@ -48,43 +46,43 @@ Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak zn
 [!code-csharp[Conceptual.AsyncInterop#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Stream1.cs#3)]
 [!code-vb[Conceptual.AsyncInterop#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/stream1.vb#3)]  
   
- Můžete použít <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> metody k implementaci klepněte na obálku pro tuto operaci následujícím způsobem:  
+ Pomocí metody <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> můžete pro tuto operaci implementovat obálku klepnutím následujícím způsobem:  
   
  [!code-csharp[Conceptual.AsyncInterop#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wrap1.cs#4)]
  [!code-vb[Conceptual.AsyncInterop#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Wrap1.vb#4)]  
   
- Tato implementace se podobá této:  
+ Tato implementace je podobná následující:  
   
  [!code-csharp[Conceptual.AsyncInterop#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wrap2.cs#5)]
  [!code-vb[Conceptual.AsyncInterop#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Wrap2.vb#5)]  
   
 <a name="TapToApm"></a>   
-### <a name="from-tap-to-apm"></a>Z klepnutím APM  
- Pokud vaší stávající infrastruktury očekává, že vzor APM, je také vhodné přijmout implementace TAP a jeho použití, kde je očekávána implementace APM.  Vzhledem k tomu, že úkoly lze vytvářet a třída <xref:System.Threading.Tasks.Task> implementuje třídu <xref:System.IAsyncResult>, můžete použít jednoduchou pomocnou funkci. Následující kód používá rozšíření <xref:System.Threading.Tasks.Task%601> třídy, ale můžete použít téměř identické funkce pro obecné úlohy.  
+### <a name="from-tap-to-apm"></a>Z klepnutí na APM  
+ Pokud vaše stávající infrastruktura očekává vzor APM, budete také chtít provést implementaci klepnutím a použít ji tam, kde se očekává implementace APM.  Vzhledem k tomu, že úkoly lze vytvářet a třída <xref:System.Threading.Tasks.Task> implementuje třídu <xref:System.IAsyncResult>, můžete použít jednoduchou pomocnou funkci. Následující kód používá rozšíření <xref:System.Threading.Tasks.Task%601> třídy, ale můžete použít téměř totožnou funkci pro neobecné úlohy.  
   
  [!code-csharp[Conceptual.AsyncInterop#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM1.cs#6)]
  [!code-vb[Conceptual.AsyncInterop#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM1.vb#6)]  
   
- Nyní Představte si případ, kdy máte následující implementace TAP:  
+ Nyní vezměte v úvahu případ, kde máte následující implementaci klepnutím:  
   
  [!code-csharp[Conceptual.AsyncInterop#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM2.cs#7)]
  [!code-vb[Conceptual.AsyncInterop#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM2.vb#7)]  
   
- a chcete poskytnout implementaci této funkce APM:  
+ a chcete poskytnout tuto implementaci APM:  
   
  [!code-csharp[Conceptual.AsyncInterop#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM2.cs#8)]
  [!code-vb[Conceptual.AsyncInterop#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM2.vb#8)]  
 [!code-csharp[Conceptual.AsyncInterop#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM2.cs#9)]
 [!code-vb[Conceptual.AsyncInterop#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM2.vb#9)]  
   
- Následující příklad ukazuje jednu migraci do APM:  
+ Následující příklad ukazuje jednu migraci na APM:  
   
  [!code-csharp[Conceptual.AsyncInterop#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM2.cs#10)]
  [!code-vb[Conceptual.AsyncInterop#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM2.vb#10)]  
   
 <a name="EAP"></a>   
-## <a name="tasks-and-the-event-based-asynchronous-pattern-eap"></a>Úlohy a asynchronní vzor (EAP) založených na událostech  
- Zabalení [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) implementace je složitější než pro zabalení APM vzor, protože vzoru EAP má méně struktury než vzor APM a více variant.  Abychom si předvedli, zabalí následující kód `DownloadStringAsync` metody.  `DownloadStringAsync` přijímá identifikátor URI, vyvolá `DownloadProgressChanged` událostí při stahování za účelem hlášení o průběhu a vyvolá více statistiky `DownloadStringCompleted` událost, když se to dělá.  Konečný výsledek je řetězec, který obsahuje obsah stránky se zadaným identifikátorem URI.  
+## <a name="tasks-and-the-event-based-asynchronous-pattern-eap"></a>Úlohy a asynchronní vzor založený na událostech (EAP)  
+ Zabalení implementace [asynchronního vzoru založeného na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) je větší než zabalení vzoru APM, protože vzor protokolu EAP má větší variaci a méně než strukturu APM.  K předvedení následujícího kódu zabalí metodu `DownloadStringAsync`.  `DownloadStringAsync` přijímá identifikátor URI, vyvolává během stahování událost `DownloadProgressChanged`, aby bylo možné ohlásit více statistik průběhu, a událost `DownloadStringCompleted` po dokončení vyvolá.  Konečný výsledek je řetězec, který obsahuje obsah stránky se zadaným identifikátorem URI.  
   
  [!code-csharp[Conceptual.AsyncInterop#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/EAP1.cs#11)]
  [!code-vb[Conceptual.AsyncInterop#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/EAP1.vb#11)]  
@@ -93,22 +91,22 @@ Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak zn
 ## <a name="tasks-and-wait-handles"></a>Úlohy a obslužné rutiny čekání  
   
 <a name="WHToTap"></a>   
-### <a name="from-wait-handles-to-tap"></a>Z obslužné rutiny čekání klepnutím  
- I když obslužné rutiny čekání nemusíte implementovat asynchronní vzor, pokročilé mohou vývojáři <xref:System.Threading.WaitHandle> třídy a <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> metody pro asynchronní oznámení, když je nastaven popisovač čekání.  Můžete zabalit <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> metoda umožňuje založené na úlohách alternativu jakékoli synchronní čekání na popisovač čekání:  
+### <a name="from-wait-handles-to-tap"></a>Z obslužných rutin čekání na klepnutí  
+ Ačkoli obslužné rutiny čekání neimplementují asynchronní vzorek, pokročilí vývojáři mohou použít třídu <xref:System.Threading.WaitHandle> a metodu <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> pro asynchronní oznámení, když je nastaven popisovač čekání.  Metodu <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> lze zabalit, chcete-li povolit alternativu na základě úlohy do synchronního čekání na popisovač čekání:  
   
  [!code-csharp[Conceptual.AsyncInterop#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wait1.cs#12)]
  [!code-vb[Conceptual.AsyncInterop#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Wait1.vb#12)]  
   
- Pomocí této metody můžete použít existující <xref:System.Threading.WaitHandle> implementace v asynchronních metodách.  Například pokud chcete omezit počet asynchronních operací, které jsou spuštěny v určitém čase, můžete využít semafor ( <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> objekt).  Můžete omezit na *N* počet operací, které běží souběžně podle počtu semaforu pro inicializaci *N*, čeká na semaforu kdykoli chcete provádět operace a uvolněním Semaphore – až budete hotovi s operací:  
+ Pomocí této metody můžete použít existující implementace <xref:System.Threading.WaitHandle> v asynchronních metodách.  Například pokud chcete omezit počet asynchronních operací, které jsou spuštěny v určitém čase, můžete použít semafor (objekt <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>).  Můžete omezit na *n* počet operací, které se souběžně spouštějí, inicializací počtu semaforu na *N*, čekáním na semafor kdykoli chcete provést operaci, a uvolněním semaforu, když jste dokončili operaci:  
   
  [!code-csharp[Conceptual.AsyncInterop#13](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Semaphore1.cs#13)]
  [!code-vb[Conceptual.AsyncInterop#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Semaphore1.vb#13)]  
   
- Můžete také vytvořit asynchronní semafor, který nevyžaduje obslužné rutiny čekání a místo toho pracuje úplně s úkoly. K tomuto účelu můžete použít techniky, jako jsou ty popsané v [využívání Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md) pro vytváření datových struktur nad <xref:System.Threading.Tasks.Task>.  
+ Můžete také vytvořit asynchronní semafor, který nespoléhá na obslužné rutiny čekání a místo toho funguje zcela s úkoly. K tomu můžete použít techniky, jako jsou popsány v tématu použití [asynchronního vzoru založeného na úlohách](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md) pro vytváření datových struktur nad <xref:System.Threading.Tasks.Task>.  
   
 <a name="TapToWH"></a>   
-### <a name="from-tap-to-wait-handles"></a>Z klepněte sem a můžete obslužné rutiny čekání  
- Jak už jsme zmínili, <xref:System.Threading.Tasks.Task> implementuje třída <xref:System.IAsyncResult>, a zpřístupňuje tuto implementaci <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle%2A> vlastnosti, která vrací popisovač čekání, který bude nastavit, když <xref:System.Threading.Tasks.Task> dokončí.  Můžete získat <xref:System.Threading.WaitHandle> pro <xref:System.Threading.Tasks.Task> následujícím způsobem:  
+### <a name="from-tap-to-wait-handles"></a>Od klepnutí do čekání na zpracování  
+ Jak už jsme uvedli, třída <xref:System.Threading.Tasks.Task> implementuje <xref:System.IAsyncResult>a tato implementace zpřístupňuje vlastnost <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle%2A>, která vrací popisovač čekání, který se nastaví po dokončení <xref:System.Threading.Tasks.Task>.  <xref:System.Threading.WaitHandle> pro <xref:System.Threading.Tasks.Task> můžete získat takto:  
   
  [!code-csharp[Conceptual.AsyncInterop#14](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wait1.cs#14)]
  [!code-vb[Conceptual.AsyncInterop#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Wait1.vb#14)]  

@@ -9,14 +9,12 @@ helpviewer_keywords:
 - text files produced by MSIL Disassembler
 - disassembling file for MSIL Assembler input
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d08d6164c00d2b5b750c9edda46a7be18153152
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f23f8c48a31dffa7d350c872aed7505da7a36861
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044647"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105060"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -38,7 +36,7 @@ Pro soubory *. exe*, *. dll*, *. obj*, *. lib*a *. winmd* jsou k dispozici násl
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/out =** `filename`|Vytvoří výstupní soubor se zadaným parametrem `filename`namísto zobrazení výsledků v grafickém uživatelském rozhraní.|
+|**/out =** `filename`|Vytvoří výstupní soubor se zadaným `filename`namísto zobrazení výsledků v grafickém uživatelském rozhraní.|
 |**/rtf**|Vytvoří výstup ve formátu RTF (Rich Text Format). Neplatné s možností **/text**|
 |**/text**|Zobrazí výsledky v okně konzoly namísto grafického uživatelského rozhraní nebo výstupního souboru.|
 |**/html**|Vytvoří výstup ve formátu HTML. Platí pouze s možností **/Output** .|
@@ -53,13 +51,13 @@ Pro soubory *. exe*, *. dll*a *. winmd* jsou k dispozici následující další 
 |**/linenum**|Zahrne odkazy do původních zdrojových řádků.|
 |**/nobar**|Potlačí místní okno indikátoru průběhu zpětného překladu.|
 |**/noca**|Potlačí výstup vlastních atributů.|
-|**/project**|Zobrazuje metadata tak, jak se zobrazí spravovanému kódu, namísto způsobu zobrazení v nativním prostředí Windows Runtime. Pokud `PEfilename` není soubor metadat Windows ( *. winmd*), tato možnost nemá žádný vliv. Viz [.NET Framework Podpora aplikací pro Windows Store a prostředí Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/Project**|Zobrazuje metadata tak, jak se zobrazí spravovanému kódu, namísto způsobu zobrazení v nativním prostředí Windows Runtime. Pokud `PEfilename` není soubor metadat Windows ( *. winmd*), tato možnost nemá žádný vliv. Viz [.NET Framework Podpora aplikací pro Windows Store a prostředí Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalent **/visibility: Pub**.|
 |**/quoteallnames**|Vloží všechny názvy do jednoduchých uvozovek.|
 |**/raweh**|Zobrazí klauzule zpracování výjimek v nezpracovaném tvaru.|
 |**/Source**|Zobrazí původní zdrojové řádky jako komentáře.|
 |**/Tokens**|Zobrazí tokeny metadat pro třídy a členy.|
-|**/visibility:** `vis`[+`vis`...]|Zpětně přeloží pouze typy nebo členy se zadanou viditelností. Platné jsou následující hodnoty `vis`:<br /><br /> **Pub** – veřejné<br /><br /> **Pri** – privátní<br /><br /> **FAM** – rodina<br /><br /> **ASM** – sestavení<br /><br /> **FAA** – řada a sestavení<br /><br /> **FOA** – řada nebo sestavení<br /><br /> **PSC** – privátní obor<br /><br /> Definice těchto modifikátorů viditelnosti naleznete v tématech <xref:System.Reflection.MethodAttributes> a <xref:System.Reflection.TypeAttributes>.|
+|**/visibility:** `vis`[+`vis`...]|Zpětně přeloží pouze typy nebo členy se zadanou viditelností. Níže jsou uvedené platné hodnoty pro `vis`:<br /><br /> **Pub** – veřejné<br /><br /> **Pri** – privátní<br /><br /> **FAM** – rodina<br /><br /> **ASM** – sestavení<br /><br /> **FAA** – řada a sestavení<br /><br /> **FOA** – řada nebo sestavení<br /><br /> **PSC** – privátní obor<br /><br /> Definice těchto modifikátorů viditelnosti naleznete v tématu <xref:System.Reflection.MethodAttributes> a <xref:System.Reflection.TypeAttributes>.|
 
 Následující možnosti jsou platné pro soubory *. exe*, *. dll*a *. winmd* pouze pro výstup do souboru nebo konzoly.
 
@@ -69,7 +67,7 @@ Následující možnosti jsou platné pro soubory *. exe*, *. dll*a *. winmd* po
 |**/classlist**|Zahrne seznam tříd definovaných v modulu.|
 |**/forward**|Použije dopřednou deklaraci tříd.|
 |**/Headers**|Zahrne do výstupu informace z hlavičky souboru.|
-|**/Item:** `class`[ **::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Rozloží zadanou `class`.<br />-Rozloží zadanou `member` `class`z.<br />-Rozloží `member` `class` sadu se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** V .NET Framework verzích 1,0 a 1,1 `sig` musí následovat pravá závorka:. `(sig)` Počínaje rozhraním .NET Framework 2,0 musí být uzavírací závorka vynechána: `(sig`.|
+|**/Item:** `class`[ **::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Rozloží zadanou `class`.<br />-Rozloží zadanou `member` `class`.<br />-Rozloží `member` `class` se zadaným podpisovým `sig`. `sig` formátu je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`,..., `parameterTypeN`)<br />     **Poznámka:** V .NET Framework verzích 1,0 a 1,1 musí za `sig` následovat uzavírací závorka: `(sig)`. Počínaje rozhraním .NET Framework 2,0 musí být uzavírací závorka vynechána: `(sig`.|
 |**/noil**|Potlačí výstup kódu sestavení jazyka IL.|
 |**/stats**|Vloží statistiky o bitové kopii.|
 |**/typelist**|Vytvoří úplný seznam typů pro zachování řazení typů při přenosu.|
@@ -80,7 +78,7 @@ Následující možnosti jsou platné pro soubory *. exe*, *. dll*, *. obj*, *. 
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/metadata**[=`specifier`]|Zobrazuje metadata, kde `specifier` je:<br /><br /> **MDHEADER** – zobrazí informace a velikosti záhlaví metadat.<br /><br /> **Hex** – zobrazí informace v šestnáctkové soustavě i v slovech.<br /><br /> **CSV** – zobrazit počty záznamů a velikosti haldy.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **Schéma** – zobrazí hlavičku metadat a informace o schématu.<br /><br /> **Raw** – zobrazí nezpracované tabulky metadat.<br /><br /> **Haldy** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistenci metadat.<br /><br /> **/Metadata** můžete zadat vícekrát s různými hodnotami pro `specifier`.|
+|**/metadata**[=`specifier`]|Zobrazuje metadata, kde `specifier`:<br /><br /> **MDHEADER** – zobrazí informace a velikosti záhlaví metadat.<br /><br /> **Hex** – zobrazí informace v šestnáctkové soustavě i v slovech.<br /><br /> **CSV** – zobrazit počty záznamů a velikosti haldy.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **Schéma** – zobrazí hlavičku metadat a informace o schématu.<br /><br /> **Raw** – zobrazí nezpracované tabulky metadat.<br /><br /> **Haldy** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistenci metadat.<br /><br /> **/Metadata** můžete zadat několikrát s různými hodnotami pro `specifier`.|
 
 Následující možnosti jsou platné pro soubory *. lib* pouze pro výstup do souboru nebo konzoly.
 
@@ -137,7 +135,7 @@ Od .NET Framework 4,5 nástroj *Ildasm. exe* zobrazí atributy, které jsou apli
 
 ## <a name="examples"></a>Příklady
 
-Následující příkaz způsobí, že metadata a zpětně přeložený kód pro soubor `MyHello.exe` PE se zobrazí ve výchozím grafickém uživatelském rozhraní *Ildasm. exe* .
+Následující příkaz způsobí, že metadata a zpětně přeložený kód pro soubor PE `MyHello.exe` zobrazit ve výchozím grafickém uživatelském rozhraní *Ildasm. exe* .
 
 ```console
 ildasm myHello.exe
@@ -167,7 +165,7 @@ Následující příkaz zpětně přeloží metodu `MyMethod` v rámci třídy `
 ildasm /item:MyClass::MyMethod MyFile.exe /text
 ```
 
-V předchozím příkladu může existovat několik metod s názvem `MyMethod` s různými podpisy. Následující příkaz zpětně přeloží `MyMethod` metodu instance s návratovým typem **void** a typy parametrů **Int32** a **String**.
+V předchozím příkladu může být několik metod s názvem `MyMethod` s různými signaturami. Následující příkaz zpětně přeloží metodu instance `MyMethod` s návratovým typem **void** a typy parametrů **Int32** a **String**.
 
 ```console
 ildasm /item:"MyClass::MyMethod(instance void(int32,string)" MyFile.exe /text
@@ -176,13 +174,13 @@ ildasm /item:"MyClass::MyMethod(instance void(int32,string)" MyFile.exe /text
 > [!NOTE]
 > V .NET Framework verzích 1,0 a 1,1 musí být levá závorka, která následuje za názvem metody, vyrovnávána pravou závorkou za signaturou: `MyMethod(instance void(int32))`. Počínaje .NET Framework 2,0 musí být uzavírací závorka vynechána: `MyMethod(instance void(int32)`.
 
-Chcete-li `static` načíst metodu`Shared` (metodu v Visual Basic), vynechejte `instance`klíčové slovo. Typy tříd, které nejsou primitivní typy jako `int32` a `string` musí obsahovat obor názvů a musí předcházet klíčové slovo `class`. Před externími typy musí být uveden název knihovny v hranatých závorkách. Následující příkaz zpětně přeloží statickou metodu s názvem `MyMethod` , která má jeden parametr typu <xref:System.AppDomain> a <xref:System.AppDomain>má návratový typ.
+Chcete-li načíst metodu `static` (metoda`Shared` v Visual Basic), vynechejte klíčové slovo `instance`. Typy tříd, které nejsou primitivní typy jako `int32` a `string` musí zahrnovat obor názvů a musí předcházet klíčové slovo `class`. Před externími typy musí být uveden název knihovny v hranatých závorkách. Následující příkaz zpětně přeloží statickou metodu s názvem `MyMethod`, která má jeden parametr typu <xref:System.AppDomain> a má návratový typ <xref:System.AppDomain>.
 
 ```console
 ildasm /item:"MyClass::MyMethod(class [mscorlib]System.AppDomain(class [mscorlib]System.AppDomain)" MyFile.exe /text
 ```
 
-Před vnořeným typem musí být uvedena třída, která jej obsahuje, oddělená lomítkem. Například pokud `MyNamespace.MyClass` třída obsahuje vnořenou třídu s názvem `NestedClass`, vnořená třída je identifikována takto: `class MyNamespace.MyClass/NestedClass`.
+Před vnořeným typem musí být uvedena třída, která jej obsahuje, oddělená lomítkem. Například pokud třída `MyNamespace.MyClass` obsahuje vnořenou třídu s názvem `NestedClass`, vnořená třída je identifikována takto: `class MyNamespace.MyClass/NestedClass`.
 
 ## <a name="see-also"></a>Viz také:
 

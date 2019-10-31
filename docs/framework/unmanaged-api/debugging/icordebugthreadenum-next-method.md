@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f967c93d-9a7f-4aaf-99a1-a1317899ff3f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5e9e33e65b1cdeabe203c67ee4d4f259e2f7ac99
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c455706b0d644d2444e9fbdf49c5a5d4f5295a9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770079"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122393"
 ---
 # <a name="icordebugthreadenumnext-method"></a>ICorDebugThreadEnum::Next – metoda
-Získá počet instancí zadané ICorDebugThread z výčtu od aktuální pozice.  
+Získá počet zadaných instancí ICorDebugThread z výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet `ICorDebugThread` instancí, který se má načíst.  
+ pro Počet instancí `ICorDebugThread`, které mají být načteny.  
   
  `threads`  
- [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugThread` objekt, který představuje vlákno.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugThread`, který představuje vlákno.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugThread` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugThread`. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c96770b0-3e09-47bb-bd29-20353b043459
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0fc65f5b55082970a0cd59a6850aaaa6779d0821
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 002c6cccb3ddf29b831ba5e14baa5e51f1b82433
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766408"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095884"
 ---
 # <a name="icordebugobjectvaluegetfieldvalue-method"></a>ICorDebugObjectValue::GetFieldValue – metoda
-Získá hodnotu zadaného pole ze zadané třídy pro tuto hodnotu objektu.  
+Získá hodnotu zadaného pole zadané třídy pro tuto hodnotu objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT GetFieldValue (
   
 ## <a name="parameters"></a>Parametry  
  `pClass`  
- [in] Ukazatel na objekt "ICorDebugClass", který představuje třídu, pro kterou má být získána hodnota pole.  
+ pro Ukazatel na objekt "ICorDebugClass", který představuje třídu, pro kterou chcete získat hodnotu pole.  
   
  `fieldDef`  
- [in] `mdFieldDef` Token, který odkazuje na metadata popisující pole.  
+ pro Token `mdFieldDef`, který odkazuje na metadata popisující pole.  
   
  `ppValue`  
- [out] Ukazatel na objekt "ICorDebugValue", která představuje hodnotu zadaného pole.  
+ mimo Ukazatel na objekt "ICorDebugValue", který představuje hodnotu zadaného pole.  
   
 ## <a name="remarks"></a>Poznámky  
- Třída zadaná v `pClass` parametr, musí být v hierarchii třídy hodnota objektu a pole této třídy musí být pole.  
+ Třída zadaná v parametru `pClass` musí být v hierarchii třídy Value objektu a pole musí být pole této třídy.  
   
- `GetFieldValue` Metoda i tak proběhne úspěšně obecných objektů a obecné třídy. Například pokud MyDictionary\<V > dědí ze slovníku\<string, V >, a hodnota objekt je typu MyDictionary\<int32 >, předejte `ICorDebugClass` objekt slovníku\<K, V > bude úspěšně získat pole slovníku\<řetězec, int32 >.  
+ Metoda `GetFieldValue` bude stále úspěšná pro obecné objekty a obecné třídy. Například pokud MyDictionary\<V > dědí ze slovníku\<String, V > a hodnota objektu je typu MyDictionary\<Int32 >, předáním objektu `ICorDebugClass` pro slovník\<K, V > se úspěšně získá pole\<řetězec slovníku, Int32 >.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

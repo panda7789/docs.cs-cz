@@ -1,5 +1,5 @@
 ---
-title: ServicePointManager.s_ServicePointTable Field
+title: Třída ServicePointManager. s_ServicePointTable – pole
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 840d068d282e3ba35df5aee6a11ff96d9e6bfdbd
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 68445f4a290b9f4fe2696e35cda391b6c0ee8f85
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301381"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120002"
 ---
-# <a name="servicepointmanagersservicepointtable-field"></a>ServicePointManager.s\_ServicePointTable Field
+# <a name="servicepointmanagers_servicepointtable-field"></a>Třída ServicePointManager. s\_pole ServicePointTable
 
-`ServicePointManager.s_ServicePointTable` je <xref:System.Collections.Hashtable> , který obsahuje seznam aktivních připojení HTTP (<xref:System.Net.ServicePoint>s) v <xref:System.AppDomain>.
+`ServicePointManager.s_ServicePointTable` je <xref:System.Collections.Hashtable>, který obsahuje seznam aktivních připojení HTTP (<xref:System.Net.ServicePoint>s) v <xref:System.AppDomain>.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ private static Hashtable s_ServicePointTable
 ```
 
 > [!WARNING]
-> `ServicePointManager.s_ServicePointTable` Pole je privátní a není určena pro použití přímo v kódu.
+> Pole `ServicePointManager.s_ServicePointTable` je soukromé a není určeno pro použití přímo v kódu.
 > 
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

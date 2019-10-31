@@ -14,35 +14,33 @@ helpviewer_keywords:
 ms.assetid: 43416dd5-8892-4106-9f59-f9143b19ddb4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b5328442ceaee05b3f81466b785f04a361d456a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a5762079861f04e1869b206c3200c3a024c1b77a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995914"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091011"
 ---
 # <a name="icordebugexceptionobjectvalue-interface"></a>ICorDebugExceptionObjectValue – rozhraní
-Rozšiřuje rozhraní "ICorDebugObjectValue" k poskytnutí informací o trasování zásobníku z objektu spravované výjimky.  
+Rozšiřuje rozhraní "ICorDebugObjectValue", aby poskytovala informace o trasování zásobníku z objektu spravované výjimky.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateExceptionCallStack – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Získá enumerátor pro zásobník volání, které jsou součástí objektu výjimky.|  
+|[EnumerateExceptionCallStack – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Načte enumerátor do zásobníku volání vložený v objektu výjimky.|  
   
 ## <a name="remarks"></a>Poznámky  
  Volání `QueryInterface` bude úspěšné pro spravované objekty, které jsou odvozeny z <xref:System.Exception?displayProperty=nameWithType>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

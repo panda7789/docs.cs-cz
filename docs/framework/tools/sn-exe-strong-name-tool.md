@@ -10,14 +10,12 @@ helpviewer_keywords:
 - strong-named assemblies, signing files
 - key pairs for signing files
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3ad535e9b862cce93244524c6cd67f667abaaa0e
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: dc9b8beafe1b174543afaf9da7e7180638d561ff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919358"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104359"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
 Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými názvy](../../standard/assembly/strong-named.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  

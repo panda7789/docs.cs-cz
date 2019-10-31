@@ -1,5 +1,5 @@
 ---
-title: <remove>– element pro NameValueSectionHandler a DictionarySectionHandler
+title: element <remove> pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd338ff2d613be31ab1524f6baed6107f803a688
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dc1519a794e24e04074dd2a674ecc2c0f3666521
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920950"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118568"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Odebrat element > pro NameValueSectionHandler a DictionarySectionHandler
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<odebrat > element pro NameValueSectionHandler a DictionarySectionHandler
 
 Odebere dříve definované nastavení.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
 ## <a name="syntax"></a>Syntaxe
@@ -34,13 +34,13 @@ Odebere dříve definované nastavení.
 
 |           | Popis |
 | --------- | ----------- |
-| **key**   | Požadovaný atribut.<br><br>Určuje název nastavení, které se má odebrat. |
+| **zkrat**   | Požadovaný atribut.<br><br>Určuje název nastavení, které se má odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 | Prvek | Popis |
 | ------- | ------------|
-| [ **sectionGroup>\<** element](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> třídy <xref:System.Configuration.DictionarySectionHandler> a. |
+| [ **\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -48,13 +48,13 @@ Odebere dříve definované nastavení.
 
 ## <a name="remarks"></a>Poznámky
 
-Pomocí elementu Remove > můžete odebrat nastavení z aplikace, které bylo definováno na vyšší úrovni v hierarchii konfiguračního souboru.  **\<**
+Pomocí elementu **\<remove >** můžete odebrat nastavení z aplikace, které bylo definováno na vyšší úrovni v hierarchii konfiguračního souboru.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak pomocí  **\<elementu Remove >** v konfiguračním souboru aplikace odebrat nastavení dříve definované v konfiguračním souboru počítače.
+Následující příklad ukazuje, jak použít **\<odebrat >** elementu v konfiguračním souboru aplikace k odebrání nastavení dříve definovaného v konfiguračním souboru počítače.
 
-Následující kód konfiguračního souboru počítače deklaruje oddíl  **\<mySection >** a `key1` přidá dvě nastavení a `key2`do něj:
+Následující kód konfiguračního souboru počítače deklaruje oddíl **\<mySection >** a přidává do něj dvě nastavení, `key1` a `key2`:
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Následující kód konfiguračního souboru počítače deklaruje oddíl  **\<m
 </configuration>
 ```
 
-Následující kód konfiguračního souboru aplikace odebere `key2` nastavení z  **\<mySection >** :
+Následující kód konfiguračního souboru aplikace odebere `key2` nastavení z **\<mySection >** :
 
 ```xml
 <!--Application configuration file -->

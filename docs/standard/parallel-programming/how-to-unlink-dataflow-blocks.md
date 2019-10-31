@@ -10,29 +10,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, unlinking dataflow blocks
 ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 989220141e4af5d64c3994479949547136843ff5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: b49cfc9730ba154202baf15093a54ba3ce0e2a8a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591992"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139298"
 ---
 # <a name="how-to-unlink-dataflow-blocks"></a>Postupy: Zrušení propojení bloků toku dat
-Tento dokument popisuje, jak zrušit propojení cílový blok toku dat z jeho zdroje.
+Tento dokument popisuje, jak odpojit cílový blok toku dat od jeho zdroje.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří tři <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> objekty, každý z který volá `TrySolution` metodu za účelem výpočtu hodnoty. Tento příklad vyžaduje pouze výsledky z prvního volání `TrySolution` na dokončení.  
+ Následující příklad vytvoří tři objekty <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>, z nichž každá volá metodu `TrySolution` pro výpočet hodnoty. Tento příklad vyžaduje pouze výsledek z prvního volání `TrySolution` k dokončení.  
   
  [!code-csharp[TPLDataflow_ReceiveAny#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_receiveany/cs/dataflowreceiveany.cs#1)]
  [!code-vb[TPLDataflow_ReceiveAny#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_receiveany/vb/dataflowreceiveany.vb#1)]  
   
- Pro příjem hodnoty z prvního <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> definuje objekt, který je dokončen, v tomto příkladu `ReceiveFromAny(T)` metoda. `ReceiveFromAny(T)` Metoda přijímá pole <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> objektů a každý z těchto objektů do odkazů <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> objektu. Při použití <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> metoda odkaz bloku toku dat zdrojového na cílový blok, zdroj šíří zprávy na cíl, jak budou data k dispozici. Protože <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> třídy přijímá pouze první zprávu, která je k dispozici, `ReceiveFromAny(T)` metoda vytváří výsledek voláním <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A> metody. Tímto se vytvoří první zprávu, která je nabízena <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> objektu. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Metoda je přetížené verze, která přebírá <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions> objektu <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions.MaxMessages> vlastnost, když je nastaveno na `1`, dává pokyn zdrojový blok se zrušit propojení z cíle, až cílový obdrží jednu zprávu ze zdroje . Je důležité pro <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> objektu, který chcete odpojit ze zdrojů, protože vztah mezi poli zdrojů a <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> objekt se už nevyžaduje po <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> objekt přijme zprávu.  
+ Chcete-li získat hodnotu z prvního objektu <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>, který skončí, tento příklad definuje metodu `ReceiveFromAny(T)`. Metoda `ReceiveFromAny(T)` přijímá pole objektů <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> a propojí každý z těchto objektů s objektem <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601>. Použijete-li metodu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> k propojení bloku zdrojového toku dat s cílovým blokem, zdroj šíří zprávy do cíle, protože data budou k dispozici. Vzhledem k tomu, že třída <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> přijímá pouze první zprávu, která je nabízena, metoda `ReceiveFromAny(T)` vytvoří svůj výsledek voláním metody <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A>. Tím se vytvoří první zpráva, která je nabídnuta objektu <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601>. Metoda <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> má přetíženou verzi, která přebírá objekt <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions> s vlastností <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions.MaxMessages>, která, pokud je nastavena na `1`, instruuje zdrojový blok k odpojení od cíle poté, co cíl přijme jednu zprávu ze zdroje. Je důležité, aby objekt <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> odpojování od zdrojů, protože vztah mezi polem zdrojů a objektem <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> již není vyžadován poté, co objekt <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> obdrží zprávu.  
   
- Povolit zbývající volání `TrySolution` k ukončení po jeden z nich vypočítá hodnotu, `TrySolution` přijímá metodu <xref:System.Threading.CancellationToken> objekt, který je zrušen po volání `ReceiveFromAny(T)` vrátí. <xref:System.Threading.SpinWait.SpinUntil%2A> Metoda vrátí, když to <xref:System.Threading.CancellationToken> objektu se zruší.  
+ Chcete-li povolit zbývající volání `TrySolution` do konce po jednom z nich vypočítá hodnotu, metoda `TrySolution` převezme objekt <xref:System.Threading.CancellationToken>, který je zrušen po volání metody `ReceiveFromAny(T)` vrátí. Metoda <xref:System.Threading.SpinWait.SpinUntil%2A> vrátí, když je tento objekt <xref:System.Threading.CancellationToken> zrušen.  
   
 ## <a name="see-also"></a>Viz také:
 

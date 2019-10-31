@@ -1,5 +1,5 @@
 ---
-title: ICorDebugVariableHomeEnum::Next – metoda
+title: 'ICorDebugVariableHomeEnum:: Next – metoda'
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHomeEnum.Next
@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb9ea96c-5b58-4655-8104-094fc8b393b8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 41aff94b8241f07c8646ecc52c06567fc262f703
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9c2c16789fb61099c9b7c58154810739d225af1f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774920"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121924"
 ---
-# <a name="icordebugvariablehomeenumnext-method"></a>ICorDebugVariableHomeEnum::Next – metoda
-Získá zadaný počet [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instancí, které obsahují informace o lokálních proměnných a argumentů funkce.  
+# <a name="icordebugvariablehomeenumnext-method"></a>ICorDebugVariableHomeEnum:: Next – metoda
+Získá zadaný počet instancí [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) , které obsahují informace o místních proměnných a argumentech ve funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +37,33 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet objektů, které se mají načíst.  
+ pro Počet objektů, které mají být načteny.  
   
  `homes`  
- Pole ukazatelů, každý z nich odkazuje [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) objekt, který poskytuje informace o místní proměnné nebo argumentu funkce.  
+ Pole ukazatelů, z nichž každý odkazuje na objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) , který poskytuje informace o lokální proměnné nebo argumentu funkce.  
   
  `pceltFetched`  
- [out] Počet instancí, které skutečně vrácených objektů.  
+ mimo Počet instancí skutečně vrácených v objektech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Metoda vrátí následující hodnoty.  
+ Metoda vrací následující hodnoty.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |`S_OK`|Metoda byla úspěšně dokončena.|  
-|`S_FALSE`|Načíst skutečný počet instancí, jak jsou uvedeny v `pceltFetched`, je menší než počet instancí požadavku.|  
+|`S_FALSE`|Skutečný počet načtených instancí, jak se odráží v `pceltFetched`, je menší než počet požadovaných instancí.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ICorDebugVariableHomeEnum::Next](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md) metoda načte maximálně `celt` objekty od aktuální pozice čítače výčtu. Po návratu metody `pceltFetched` obsahuje skutečný počet objektů, které jsou načteny.  
+ Metoda [ICorDebugVariableHomeEnum:: Next](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md) načte maximálně `celt` objektů počínaje aktuální pozicí čítače. Když se metoda vrátí, `pceltFetched` obsahuje skutečný počet načtených objektů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

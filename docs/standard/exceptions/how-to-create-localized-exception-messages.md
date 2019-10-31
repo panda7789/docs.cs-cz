@@ -1,19 +1,18 @@
 ---
-title: 'Postupy: vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek'
+title: 'Postupy: Vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek'
 description: Naučte se vytvářet uživatelsky definované výjimky s lokalizovanými zprávami výjimek.
 author: Youssef1313
-ms.author: ronpet
 ms.date: 09/13/2019
-ms.openlocfilehash: b4aa567fccda9354bc5959d6b9838d678d53abef
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 453e332541628770932da2a6802fdcaee5211a84
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696707"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141521"
 ---
-# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postupy: vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
+# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postupy: Vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
 
-V tomto článku se naučíte, jak vytvořit uživatelsky definované výjimky, které jsou zděděné ze základní třídy <xref:System.Exception> s lokalizovanými zprávami výjimek pomocí satelitních sestavení.
+V tomto článku se naučíte, jak vytvořit uživatelsky definované výjimky, které jsou zděděné ze základní <xref:System.Exception> třídy s lokalizovanými zprávami výjimek pomocí satelitních sestavení.
 
 ## <a name="create-custom-exceptions"></a>Vytváření vlastních výjimek
 
@@ -83,7 +82,7 @@ Tato možnost je vhodná pro [satelitní sestavení](../../framework/resources/c
 Chcete-li vytvořit lokalizované zprávy o výjimce:
 
 1. Vytvořte novou složku s názvem *Resources* , která bude obsahovat soubory prostředků.
-1. Přidejte do něj nový soubor prostředků. Provedete to tak, že v aplikaci Visual Studio kliknete pravým tlačítkem na složku v **Průzkumník řešení**a vyberete **přidat** **soubor prostředků** > **nové položky** > . Pojmenujte soubor *ExceptionMessages. resx*. Toto je výchozí soubor prostředků.
+1. Přidejte do něj nový soubor prostředků. Chcete-li to provést v aplikaci Visual Studio, klikněte pravým tlačítkem myši na složku v **Průzkumník řešení**a vyberte **Přidat** > **Nový** **soubor > prostředků**. Pojmenujte soubor *ExceptionMessages. resx*. Toto je výchozí soubor prostředků.
 1. Přidejte dvojici název/hodnota pro vaši zprávu o výjimce, podobně jako na následujícím obrázku:
 
    ![Přidat prostředky do výchozí jazykové verze](media/add-resources-to-default-culture.jpg)

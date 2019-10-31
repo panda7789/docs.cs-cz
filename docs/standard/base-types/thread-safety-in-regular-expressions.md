@@ -9,24 +9,22 @@ helpviewer_keywords:
 - parsing text with regular expressions, threads
 - pattern-matching with regular expressions, threads
 ms.assetid: 7c4a167b-5236-4cde-a2ca-58646230730f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1c0bcab0757bc48f6a8216dd5878f0289e49a275
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db25028e10872cfca08d28518c795414d06c5d49
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766750"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124802"
 ---
 # <a name="thread-safety-in-regular-expressions"></a>Bezpečnost vlákna v regulárních výrazech
-<xref:System.Text.RegularExpressions.Regex> Třídu je vlákno, byla v bezpečí a neměnné (jen pro čtení). To znamená **regulární výraz** objektů se dají vytvářet v libovolném vlákně a sdílet mezi vlákny; odpovídající metody lze volat z libovolného vlákna a nikdy měnit žádné globální stav.  
+Samotná třída <xref:System.Text.RegularExpressions.Regex> je vláknově bezpečná a neměnná (jen pro čtení). To znamená, že objekty **Regex** lze vytvořit v jakémkoli vlákně a sdílet je mezi vlákny. metody porovnání mohou být volány z libovolného vlákna a nikdy nemění žádný globální stav.  
   
- Nicméně objekty výsledků (**shoda** a **MatchCollection**) vrácený **regulární výraz** byste neměli používat v jednom vlákně. I když mnohé z těchto objektů jsou logicky neměnné, jejich implementace mohly zpožďovat výpočtu některé výsledky pro zvýšení výkonu a v důsledku toho volající musí serializovat přístup k nim.  
+ Nicméně objekty výsledků (**Match** a **MatchCollection**) vrácené **výrazem Regex** by měly být použity v jednom vlákně. I když je mnoho z těchto objektů logicky neměnný, jejich implementace mohou zpozdit výpočet některých výsledků za účelem zvýšení výkonu, a v důsledku toho volající musí serializovat přístup.  
   
- Pokud je potřeba sdílet **regulární výraz** výsledek objektů z více vláken, tyto objekty lze převést na instance bezpečným pro vlákno voláním jejich synchronizované metody. S výjimkou enumerátory všechny třídy regulárních výrazů jsou bezpečné pro vlákna nebo mohou být převedeny na bezpečné pro vlákna objekty synchronizované metody.  
+ Pokud je nutné sdílet objekty výsledků **regulárního výrazu** ve více vláknech, lze tyto objekty převést na instance bezpečné pro přístup z více vláken voláním jejich synchronizovaných metod. S výjimkou enumerátorů jsou všechny třídy regulárních výrazů bezpečné pro přístup z více vláken nebo mohou být převedeny na objekty bezpečné pro přístup z více vláken synchronizované metodou.  
   
- Enumerátory jsou jedinou výjimkou. Aplikace musí serializovat volání kolekce enumerátory. Pokud kolekce jsou současně uvedené na více než jedno vlákno, bude třeba synchronizovat enumerátor metody na kořenový objekt kolekce procházené pomocí čítače výčtu je pravidlo.  
+ Enumerátory jsou jedinou výjimkou. Aplikace musí serializovat volání enumerátorů kolekcí. Pravidlem je, že pokud kolekci lze vytvořit ve více než jednom vlákně, je třeba synchronizovat metody enumerátoru v kořenovém objektu kolekce prochází enumerátorem.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)

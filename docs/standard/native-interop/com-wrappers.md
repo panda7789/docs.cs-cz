@@ -9,14 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: af9b87e83def5578ea38e94a4f69c657ac5f7c99
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d647a8cd73fa714e86454687a25501259f894f6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631324"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120715"
 ---
 # <a name="com-wrappers"></a>Obálky COM
 Model COM se liší od modelu objektu .NET runtime v několika důležitých způsobech:  
@@ -39,4 +37,4 @@ Model COM se liší od modelu objektu .NET runtime v několika důležitých zp�
 - [Obálka volatelná za běhu](runtime-callable-wrapper.md)
 - [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)
 - [Přizpůsobení standardních obálek v .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [Postupy: Přizpůsobení předdefinovaných obálek za běhu v .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))
+- [Postupy: přizpůsobení obálek za běhu, které lze volat v .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))

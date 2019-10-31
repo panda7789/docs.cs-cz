@@ -12,46 +12,44 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6be45a3d03d8cff580653260081a20d518448237
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 04bed819b472abe23ae6a9e89de149e715272505
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662736"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141361"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Vymazání nespravovaných prostředků
 
-U většiny objektů, které vaše aplikace vytvoří můžete se spolehnout na. NET pro uvolňování paměti správy paměti. Pokud však vytváříte objekty, které zahrnují nespravované prostředky, musíte tyto prostředky explicitně uvolnit, pokud je v rámci aplikace již nepoužíváte. Nejběžnějšími typy nespravovaných prostředků jsou objekty, které obalují prostředky operačního systému, jako jsou soubory, okna, síťová připojení nebo připojení databáze. Přestože je systém uvolňování paměti schopen sledovat dobu platnosti objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak spravovaný prostředek uvolnit a vyčistit.
+Pro většinu objektů, které vaše aplikace vytvoří, můžete spoléhat na. Systém uvolňování paměti sítě pro zpracování správy paměti. Pokud však vytváříte objekty, které zahrnují nespravované prostředky, musíte tyto prostředky explicitně uvolnit, pokud je v rámci aplikace již nepoužíváte. Nejběžnějšími typy nespravovaných prostředků jsou objekty, které obalují prostředky operačního systému, jako jsou soubory, okna, síťová připojení nebo připojení databáze. Přestože je systém uvolňování paměti schopen sledovat dobu platnosti objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak spravovaný prostředek uvolnit a vyčistit.
 
 Pokud vaše typy používají nespravované prostředky, měli byste provést následující úkony:
 
-- Implementace [vzor dispose](../../../docs/standard/design-guidelines/dispose-pattern.md). To vyžaduje, že jste zadali <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace umožňující deterministické uvolnění nespravovaných prostředků. Příjemce vašeho typu volání <xref:System.IDisposable.Dispose%2A> když objekt (a jimi používané prostředky) je už nepotřebujete. <xref:System.IDisposable.Dispose%2A> Metoda okamžitě uvolní nespravované prostředky.
+- Implementujte [vzor Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md). K tomu je potřeba, abyste zajistili <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci, která umožňuje deterministické vydání nespravovaných prostředků. Příjemce vašeho typu volá <xref:System.IDisposable.Dispose%2A>, když objekt (a prostředky, které používá) už není potřeba. Metoda <xref:System.IDisposable.Dispose%2A> hned uvolní nespravované prostředky.
 
-- Zadejte pro vaše nespravovaných prostředků v případě, že příjemce vašeho typu zapomene zavolat <xref:System.IDisposable.Dispose%2A>. Toto lze provést dvěma způsoby:
+- Poskytněte nespravované prostředky, které mají být vydány v případě, že příjemce vašeho typu zapomene volat <xref:System.IDisposable.Dispose%2A>. Toto lze provést dvěma způsoby:
 
-  - Použijte bezpečný popisovač, který zajistí obtékání nespravovaných prostředků. Toto je doporučený postup. Bezpečné popisovače jsou odvozeny z <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> třídy a zahrnují robustní <xref:System.Object.Finalize%2A> metody. Pokud použijete bezpečný popisovač, stačí pouze implementovat <xref:System.IDisposable> rozhraní a volat bezpečný popisovač <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> metoda ve vaší <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace. Finalizační metoda bezpečného popisovače je volána automaticky metodou systému uvolňování paměti pokud jeho <xref:System.IDisposable.Dispose%2A> metoda není volána.
+  - Použijte bezpečný popisovač, který zajistí obtékání nespravovaných prostředků. Toto je doporučený postup. Bezpečné popisovače jsou odvozeny z třídy <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> a obsahují robustní <xref:System.Object.Finalize%2A> metodu. Pokud používáte bezpečný popisovač, jednoduše implementujete rozhraní <xref:System.IDisposable> a ve své implementaci <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> zavoláte metodu <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> bezpečného popisovače. Finalizační metoda bezpečného popisovače je volána automaticky systémem uvolňování paměti, pokud jeho <xref:System.IDisposable.Dispose%2A> metoda není volána.
 
     —nebo—
 
-  - Přepsat <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metody. Finalizace umožňuje nedeterministické uvolnění nespravovaných prostředků, pokud příjemce typu selže při volání <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> a deterministicky neprovede. Vzhledem k tomu, že finalizace objektu může být složitá operace náchylná k chybám, doporučujeme namísto poskytování vlastní finalizační metody použít bezpečný popisovač.
+  - Přepsat metodu <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. Finalizace umožňuje nedeterministické vydání nespravovaných prostředků, když příjemce typu nevolá <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> k jejich uvolnění. Vzhledem k tomu, že finalizace objektu může být složitá operace náchylná k chybám, doporučujeme namísto poskytování vlastní finalizační metody použít bezpečný popisovač.
 
-Mohou příjemci typu provést zavoláním vaše <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> provádění uvolnění paměti využívané nespravovanými prostředky. Při správné implementaci <xref:System.IDisposable.Dispose%2A> metoda, buď bezpečný popisovač <xref:System.Object.Finalize%2A> metody nebo vaše vlastní přepsání metody <xref:System.Object.Finalize%2A?displayProperty=nameWithType> zabezpečení pro vyčištění prostředků v případě, že <xref:System.IDisposable.Dispose%2A> metoda není volána.
+Příjemci vašeho typu pak mohou volat vaši <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci přímo do volné paměti používané nespravovanými prostředky. Při správné implementaci <xref:System.IDisposable.Dispose%2A> metody, buď metoda bezpečného popisovač <xref:System.Object.Finalize%2A> nebo vaše vlastní přepsání metody <xref:System.Object.Finalize%2A?displayProperty=nameWithType>, se změní na zabezpečení pro vyčištění prostředků v případě, že metoda <xref:System.IDisposable.Dispose%2A> není volána.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Implementace metody Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) popisuje, jak implementovat [vzor dispose](../../../docs/standard/design-guidelines/dispose-pattern.md) pro uvolnění nespravovaných prostředků.
+[Implementace metody Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) Popisuje, jak implementovat [vzor Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md) pro uvolnění nespravovaných prostředků.
 
-[Použití objektů, které implementují rozhraní IDisposable](../../../docs/standard/garbage-collection/using-objects.md) popisuje, jak mohou příjemci typu zajistit, aby jeho <xref:System.IDisposable.Dispose%2A> volána implementace. Doporučujeme použít C# `using` příkazu nebo Visual Basic `Using` příkaz provedete to tak.
+[Použití objektů, které implementují IDisposable](../../../docs/standard/garbage-collection/using-objects.md) Popisuje způsob, jakým uživatelé typu zajišťují, aby byla volána jeho <xref:System.IDisposable.Dispose%2A> implementace. K tomu doporučujeme použít C# příkaz `using` nebo příkaz Visual Basic `Using`.
 
 ## <a name="reference"></a>Odkaz
 
 <xref:System.IDisposable?displayProperty=nameWithType>\
-Definuje <xref:System.IDisposable.Dispose%2A> metodu pro uvolnění nespravovaných prostředků.
+Definuje metodu <xref:System.IDisposable.Dispose%2A> pro uvolňování nespravovaných prostředků.
 
 <xref:System.Object.Finalize%2A?displayProperty=nameWithType>\
-Zajišťuje finalizaci objektu, pokud nedojde k uvolnění nespravovaných prostředků podle <xref:System.IDisposable.Dispose%2A> metody.
+Poskytuje finalizaci objektů, pokud metoda <xref:System.IDisposable.Dispose%2A> neuvolní nespravované prostředky.
 
 <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>\
-Potlačí finalizaci. Tato metoda je obvykle volána z `Dispose` metoda zabránit spuštění finalizační metody.
+Potlačí finalizaci. Tato metoda je obvykle volána z metody `Dispose`, aby zabránila spuštění finalizační metody.

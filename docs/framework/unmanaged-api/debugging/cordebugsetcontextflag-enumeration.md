@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: b30280bb-fe75-44ed-8589-bcff081fae44
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e959ce7a77ad6ceb7f2fc848193cbd9fff028279
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 251c96042e8e56112015fb869176c708322267f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739615"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097269"
 ---
 # <a name="cordebugsetcontextflag-enumeration"></a>CorDebugSetContextFlag – výčet
-Určuje, zda je kontext z aktivního (nebo listu) rámce v zásobníku nebo byl vypočítán pomocí návrat zpět z jiného snímku.  
+Označuje, zda je kontext z aktivního (nebo koncového) rámce v zásobníku nebo byl vypočítán odvinutím z jiného rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +39,19 @@ typedef enum CorDebugSetContextFlag
 |Člen|Popis|  
 |------------|-----------------|  
 |SET_CONTEXT_FLAG_ACTIVE_FRAME|Kontext je aktivní kontext vlákna.|  
-|SET_CONTEXT_FLAG_UNWIND_FRAME|Kontext obsahuje se počítají tak, že návrat zpět z jiného snímku.|  
+|SET_CONTEXT_FLAG_UNWIND_FRAME|Kontext byl vypočítán odvinutím z jiného rámce.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CorDebugSetContextFlag` obsahuje hodnoty, které jsou používány [icordebugstackwalk::setcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) metody.  
+ `CorDebugSetContextFlag` poskytuje hodnoty, které jsou používány metodou [ICorDebugStackWalk:: SetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

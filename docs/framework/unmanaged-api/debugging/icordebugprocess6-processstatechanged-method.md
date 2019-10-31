@@ -2,14 +2,12 @@
 title: ICorDebugProcess6::ProcessStateChanged – metoda
 ms.date: 03/30/2017
 ms.assetid: fb6d30d9-54f3-462b-8ebf-ce0440791ad5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb158b383745cd7e44c8fede6ddd43ae81ced2d6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3927e57883ebe282b262cb03ececc3b2cd96fd46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930768"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123419"
 ---
 # <a name="icordebugprocess6processstatechanged-method"></a>ICorDebugProcess6::ProcessStateChanged – metoda
 Upozorní [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) , že proces běží.  
@@ -31,11 +29,11 @@ HRESULT ProcessStateChanged(   [in] CorDebugStateChange change);
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

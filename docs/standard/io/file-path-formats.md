@@ -9,204 +9,202 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 75261bc44b938432c9c22b90dc4db30ca00d630b
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 808c92e906a0bf6f8fdc368396d6d240573de501
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170731"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120777"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formáty cesty k souborům v systémech Windows
 
-Členy typů v mnoha <xref:System.IO> zahrnovat obor názvů `path` parametr, který vám umožní zadat absolutní nebo relativní cesta k souboru systémového prostředku. Tato cesta je pak předán [systém rozhraní API souborů Windows](/windows/desktop/fileio/file-systems). Toto téma popisuje formáty pro cesty k souborům, které vám v systémech Windows.
+Mezi členy mnoha typů v oboru názvů <xref:System.IO> patří parametr `path`, který umožňuje zadat absolutní nebo relativní cestu k prostředku systému souborů. Tato cesta je pak předána [rozhraním API systému souborů systému Windows](/windows/desktop/fileio/file-systems). Toto téma pojednává o formátech pro cesty k souborům, které můžete použít v systémech Windows.
 
-## <a name="traditional-dos-paths"></a>Tradiční DOS cesty
+## <a name="traditional-dos-paths"></a>Tradiční cesty DOS
 
-Standardní cesta systému DOS se může skládat ze tří komponent:
+Standardní cesta systému DOS se může skládat ze tří součástí:
 
-- Na svazku nebo písmeno jednotky, za nímž následuje oddělovač svazků (`:`).
-- Název adresáře. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořené adresářů.
-- Volitelný název souboru. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
+- Svazek nebo písmeno jednotky následované oddělovačem svazku (`:`).
+- Název adresáře. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořeného adresáře.
+- Nepovinný název souboru. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
 
-Pokud jsou k dispozici všechny tři komponenty, je absolutní cesta. Pokud je zadán žádný svazku nebo písmeno jednotky a název adresáře začíná [znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>), cesta je relativní od kořenové aktuální jednotku. V opačném případě cesta je relativní vzhledem k aktuálnímu adresáři. V následující tabulce jsou uvedeny některé možné adresáře a cesty k souborům.
+Pokud jsou k dispozici všechny tři komponenty, je cesta absolutní. Pokud není zadán žádný svazek ani písmeno jednotky a název adresáře začíná [znakem oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>), bude cesta relativní od kořene aktuální jednotky. V opačném případě je cesta relativní vzhledem k aktuálnímu adresáři. V následující tabulce jsou uvedeny některé možné cesty k adresářům a souborům.
 
 |Cesta  |Popis  |
 | -- | -- |
-| `C:\Documents\Newsletters\Summer2018.pdf` | Absolutní cestu k souboru z kořenové složky jednotky C: |
-| `\Program Files\Custom Utilities\StringFinder.exe` | Absolutní cesta z kořenového adresáře aktuální jednotku. |
+| `C:\Documents\Newsletters\Summer2018.pdf` | Absolutní cesta k souboru z kořene jednotky C: |
+| `\Program Files\Custom Utilities\StringFinder.exe` | Absolutní cesta z kořene aktuální jednotky. |
 | `2018\January.xlsx` | Relativní cesta k souboru v podadresáři aktuálního adresáře. |
-| `..\Publications\TravelBrochure.pdf` | Relativní cesta k souboru v adresáři, který je partnerské zařízení do aktuálního adresáře. |
-| `C:\Projects\apilibrary\apilibrary.sln` | Absolutní cesta k souboru z kořenové složky jednotky C: |
-| `C:Projects\apilibrary\apilibrary.sln` | Relativní cesta z aktuálního adresáře jednotku C:. |
+| `..\Publications\TravelBrochure.pdf` | Relativní cesta k souboru v adresáři, který je partnerským uzlem aktuálního adresáře. |
+| `C:\Projects\apilibrary\apilibrary.sln` | Absolutní cesta k souboru z kořene jednotky C: |
+| `C:Projects\apilibrary\apilibrary.sln` | Relativní cesta z aktuálního adresáře jednotky C:. |
 
 > [!IMPORTANT]
-> Všimněte si rozdílu mezi poslední dvě cesty. Jak zadat volitelný svazku specifikátor (C: v obou případech), ale první začíná kořenové zadaný svazek, zatímco druhá ne. První je jako výsledek, absolutní cesta z kořenového adresáře jednotku C:, zatímco druhá je relativní cesta z aktuálního adresáře jednotce C:. Použijte druhý formulář, když je první určené je běžné příčiny chyby, které se týkají cesty k souborům Windows.
+> Všimněte si rozdílu mezi posledními dvěma cestami. Oba určují volitelné specifikátory svazku (C: v obou případech), ale první začíná kořenem zadaného svazku, zatímco druhý ne. V důsledku toho je první absolutní cesta z kořenového adresáře jednotky C:, zatímco druhá je relativní cesta z aktuálního adresáře jednotky C:. Použití druhého formuláře, pokud je první záměr, je běžným zdrojem chyb, které obsahují cesty k souborům Windows.
 
-Můžete určit, zda je plně kvalifikovanou cestu k souboru (to znamená, ho cesta je nezávislý na aktuálním adresáři a nemění, když se změní aktuální adresář) voláním <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> metody. Všimněte si, že tyto cesty může obsahovat relativní directory segmentů (`.` a `..`) a i nadále plně kvalifikovaný Pokud Vyhodnocená cesta vždy odkazuje na stejném umístění.
+Můžete určit, zda je cesta k souboru plně kvalifikovaná (to znamená, že cesta je nezávislá na aktuálním adresáři a nemění se, když se změní aktuální adresář) voláním metody <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType>. Všimněte si, že taková cesta může zahrnovat relativní segmenty adresářů (`.` a `..`) a pořád musí být plně kvalifikované, pokud se přeložená cesta vždy odkazuje na stejné umístění.
 
-Následující příklad ukazuje rozdíl mezi absolutní a relativní cesty. Předpokládá, že existuje adresář D:\FY2018\ a, že jste nenastavili žádné aktuální adresář pro D:\ z příkazového řádku před spuštěním v příkladu.
+Následující příklad znázorňuje rozdíl mezi absolutními a relativními cestami. Předpokládá, že adresář D:\FY2018\ existuje a že jste nenastavili žádný adresář aktuální pro D:\. před spuštěním příkladu z příkazového řádku.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
 
 ## <a name="unc-paths"></a>Cesty UNC
 
-Universal naming convention (UNC) cesty, které se používají pro přístup k síťovým prostředkům, mají tento formát:
+Cesty UNC (Universal Naming Convention), které se používají pro přístup k síťovým prostředkům, mají následující formát:
 
-- Název serveru nebo hostitele, která je uvedena ve \\ \\. Název serveru může být název počítače pro rozhraní NetBIOS nebo IP nebo plně kvalifikovaný název domény adresy (IPv4 a IPv6 jsou podporovány).
-- Název sdílené složky, která je oddělená od názvu hostitele ve \\. Název sdílené složky serveru a tvoří společně svazku.
-- Název adresáře. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořené adresářů.
-- Volitelný název souboru. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
+- Název serveru nebo hostitele, který je \\\\. Název serveru může být název počítače pro rozhraní NetBIOS nebo adresa IP nebo plně kvalifikovaného názvu domény (IPv4 a i taky 6 – podporované).
+- Název sdílené složky, který je oddělený od názvu hostitele pomocí \\. Společně se název serveru a sdílené složky skládá ze svazku.
+- Název adresáře. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořeného adresáře.
+- Nepovinný název souboru. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
 
-Následují příklady cesty UNC:
+Následuje několik příkladů cest UNC:
 
 |Cesta  |Popis  |
 | -- | -- |
-| `\\system07\C$\` | Do kořenového adresáře C: jednotky na `system07`. |
-| `\\Server2\Share\Test\Foo.txt` | Foo.txt soubor v adresáři Test \\ \\Server2\\sdílet svazku.|
+| `\\system07\C$\` | Kořenový adresář jednotky C: na `system07`. |
+| `\\Server2\Share\Test\Foo.txt` | Soubor foo. txt v adresáři testu \\\\Server2\\sdílet svazek.|
 
-Musí být vždy plně kvalifikované cesty UNC. Mohou obsahovat relativní directory segmentů (`.` a `..`), ale musí být součástí plně kvalifikovanou cestu. Pouze pomocí mapování cestu UNC k písmenu jednotky můžete použít relativní cesty.
+Cesty UNC musí být vždy plně kvalifikované. Můžou zahrnovat relativní segmenty adresářů (`.` a `..`), ale musí být součástí plně kvalifikované cesty. Relativní cesty můžete použít jenom tak, že namapujete cestu UNC k písmenu jednotky.
 
-## <a name="dos-device-paths"></a>Umístění zařízení DOS
+## <a name="dos-device-paths"></a>Cesty zařízení DOS
 
-Operační systém Windows obsahuje jednotné objektový model, který odkazuje na všechny prostředky, včetně souborů. Tyto cesty k objektům jsou přístupné z okna konzoly a jsou přístupné prostřednictvím speciální složky symbolické odkazy, které jsou starší verze programů DOS a UNC cesty mapované na vrstvě Win32. Tato zvláštní složka se přistupuje přes syntaxe cesty zařízení DOS, což je jedna z:
+Operační systém Windows má jednotný objektový model, který odkazuje na všechny prostředky, včetně souborů. Tyto cesty k objektům jsou přístupné z okna konzoly a jsou zpřístupněny vrstvě Win32 prostřednictvím speciální složky symbolických odkazů, na které jsou namapovány starší verze DOS a cesty UNC. K této speciální složce se dostanete pomocí syntaxe cesty zařízení DOS, což je jedna z těchto:
 
 `\\.\C:\Test\Foo.txt`  
 `\\?\C:\Test\Foo.txt`
 
-Kromě identifikace disku podle jeho písmeno jednotky, můžete identifikovat pomocí jeho identifikátoru GUID svazku. To má podobu:
+Kromě identifikace jednotky podle písmene jednotky můžete určit svazek pomocí identifikátoru GUID svazku. To má podobu:
 
 `\\.\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
 `\\?\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
 
 > [!NOTE]
-> Syntaxe cesty zařízení DOS je podporovaná v implementace .NET běžící na Windows od verze 1.1 rozhraní .NET Core a .NET Framework 4.6.2.
+> Syntaxe cest zařízení DOS je podporovaná u implementací .NET běžících na Windows počínaje .NET Core 1,1 a .NET Framework 4.6.2.
 
-Cesta systému DOS zařízení se skládá z následujících součástí:
+Cesta k zařízení DOS se skládá z následujících součástí:
 
-- Specifikátor cesta zařízení (`\\.\` nebo `\\?\`), který určuje cestu jako cesta systému DOS zařízení.
+- Specifikátor cesty zařízení (`\\.\` nebo `\\?\`), který identifikuje cestu jako cestu k zařízení DOS.
 
    > [!NOTE]
-   > `\\?\` Je podporována ve všech verzích .NET Core a .NET Framework, od verze 4.6.2.
+   > `\\?\` se podporuje ve všech verzích .NET Core a v .NET Framework počínaje verzí 4.6.2.
 
-- Symbolický odkaz na objekt "real" zařízení (v případě název jednotky C:) nebo svazek {b75e2c83-0000-0000-0000-602f00000000} v případě identifikátoru GUID svazku.
+- Symbolický odkaz na "reálný" objekt zařízení (C: v případě názvu jednotky nebo svazek {b75e2c83-0000-0000-0000-602f00000000} v případě identifikátoru GUID svazku).
 
-   První segment cesty zařízení DOS po specifikátoru cesta zařízení identifikuje svazku nebo jednotce. (Například `\\?\C:\` a `\\.\BootPartition\`.)
+   První segment cesty zařízení systému DOS po určení svazku cesty zařízení, který identifikuje svazek nebo jednotku. (Například `\\?\C:\` a `\\.\BootPartition\`.)
 
-   Konkrétní odkaz pro UNC, která je volána, nejsou překvapivě `UNC`. Příklad:
+   K dispozici je konkrétní odkaz pro UNCs, který se nazývá, ne překvapivě `UNC`. Příklad:
 
   `\\.\UNC\Server\Share\Test\Foo.txt`  
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    Pro zařízení UNC tvoří část sdílené složky serveru/svazek. Například v `\\?\server1\e:\utilities\\filecomparer\`, část server a sdílet je server1\utilities. To je důležité při volání metody, jako <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> relativní directory segmenty; se nikdy možné přejít po svazku. 
+    V případě UNCs zařízení tvoří část server/sdílení svazku svazek. Například v `\\?\server1\e:\utilities\\filecomparer\`je část Server/sdílená složka server1\utilities. To je důležité při volání metody, jako je <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> s relativními segmenty adresářů; Nelze přejít na předchozí svazek. 
 
-Podle definice jsou plně kvalifikované cesty zařízení DOS. Relativní directory segmentů (`.` a `..`) nejsou povoleny. Aktuální adresáře nikdy odsouhlasit jejich využití.
+Cesty zařízení DOS jsou plně kvalifikované podle definice. Relativní segmenty adresářů (`.` a `..`) nejsou povoleny. Aktuální adresáře nikdy nevstoupí do jejich použití.
 
-## <a name="example-ways-to-refer-to-the-same-file"></a>Příklad: Způsoby, jak odkazovat na stejný soubor
+## <a name="example-ways-to-refer-to-the-same-file"></a>Příklad: způsoby, jak odkazovat na stejný soubor
 
-Následující příklad ukazuje několik způsobů jak, ve kterém najdete soubor při použití rozhraní API v <xref:System.IO> oboru názvů. Příkladu je vytvořena instance <xref:System.IO.FileInfo> a použije jeho <xref:System.IO.FileInfo.Name> a <xref:System.IO.FileInfo.Length> vlastnosti, které chcete zobrazit název souboru a délku souboru.
+Následující příklad znázorňuje některé způsoby, jak můžete odkazovat na soubor při použití rozhraní API v oboru názvů <xref:System.IO>. Příklad vytvoří instanci objektu <xref:System.IO.FileInfo> a pomocí vlastností <xref:System.IO.FileInfo.Name> a <xref:System.IO.FileInfo.Length> zobrazí název souboru a délku souboru.
 
 [!code-csharp[referring-to-the-same-file](~/samples/snippets/standard/io/file-names/cs/file-refs.cs)]
 [!code-vb[referring-to-the-same-file](~/samples/snippets/standard/io/file-names/vb/file-refs.vb)]
 
-## <a name="path-normalization"></a>Normalizace cesta
+## <a name="path-normalization"></a>Normalizace cest
 
-Jsou normalizovány téměř všechny cesty předán rozhraní Windows API. Během normalizace Windows provede následující kroky:
+Skoro všechny cesty předané rozhraním API systému Windows jsou normalizovány. Během normalizace systém Windows provede následující kroky:
 
-- Určuje cestu.
-- Částečně kvalifikované (relativní) cesty se týká aktuální adresář.
-- Canonicalizes oddělovače komponentu a adresáře.
-- Vyhodnotí jako relativní directory součásti (`.` pro aktuální adresář a `..` pro nadřazený adresář).
-- Ořízne určitých znaků.
+- Identifikuje cestu.
+- Použije aktuální adresář na částečně kvalifikované (relativní) cesty.
+- Canonicalizes součásti a oddělovače adresářů.
+- Vyhodnotí relativní součásti adresáře (`.` pro aktuální adresář a `..` pro nadřazený adresář).
+- Ořízne určité znaky.
 
-Implicitně se stane toto normalizace, ale můžete to provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metoda, která zabalí volání [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). Můžete také volat Windows [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) přímo pomocí deklarace P/Invoke.
+K této normalizaci dochází implicitně, ale můžete to provést explicitně voláním metody <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType>, která zabalí volání [funkce GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). [Funkci Windows GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) můžete také volat přímo pomocí volání nespravovaného volání.
 
-### <a name="identifying-the-path"></a>Určení cesty
+### <a name="identifying-the-path"></a>Identifikace cesty
 
-Prvním krokem při normalizaci cesta je identifikace typu cesty. Cesty spadají do jedné z několika kategorií:
+Prvním krokem normalizace cesty je určení typu cesty. Cesty spadají do jedné z několika kategorií:
 
-- Jsou cesty zařízení; To znamená, že začínat dva oddělovače a otazník nebo období (`\\?` nebo `\\.`).
-- Jsou cesty UNC; To znamená že začínat dva oddělovače bez otazník nebo období. 
-- Jsou plně kvalifikovanou cestou DOS; To znamená, začněte s písmenem jednotky, oddělovač svazků a oddělovač komponent (`C:\`).
-- Určí starší zařízení (`CON`, `LPT1`).
-- Jsou kořeni aktuální jednotce. To znamená, začínat oddělovačem jednotlivé součásti (`\`).
-- Jsou relativní vzhledem k aktuální adresář zadané jednotky. To znamená, začněte s písmenem jednotky, oddělovač svazků a žádný oddělovač komponent (`C:`).
-- Jsou relativní vzhledem k aktuálnímu adresáři; To znamená, že začínat cokoli jiného (`temp\testfile.txt`).
+- Jsou to cesty zařízení; To znamená, že začínají dvěma oddělovači a otazníkem nebo tečkou (`\\?` nebo `\\.`).
+- Jsou to cesty UNC; To znamená, že začínají dvěma oddělovači bez otazníku nebo tečky. 
+- Jsou to plně kvalifikované cesty DOS; To znamená, že začínají písmenem jednotky, oddělovačem svazků a oddělovačem komponent (`C:\`).
+- Určují starší zařízení (`CON``LPT1`).
+- Jsou relativní vzhledem ke kořenu aktuální jednotky; To znamená, že začínají jediným oddělovačem komponent (`\`).
+- Jsou relativní vzhledem k aktuálnímu adresáři zadané jednotky; To znamená, že začínají písmenem jednotky, oddělovačem svazků a bez oddělovače komponent (`C:`).
+- Jsou relativní vzhledem k aktuálnímu adresáři. To znamená, že začínají cokoliv jiného (`temp\testfile.txt`).
 
-Typ cesty určuje, zda je nějakým způsobem použít aktuální adresář. Také určuje, co je "root" cesty.
+Typ cesty určuje, zda je aktuální adresář použit nějakým způsobem. Také určuje, co je "kořen" cesty.
 
-### <a name="handling-legacy-devices"></a>Manipulace se zařízením starší verze
+### <a name="handling-legacy-devices"></a>Zpracování starších zařízení
 
-Pokud cestu, jako je starší verze zařízení DOS `CON`, `COM1`, nebo `LPT1`, je převeden na cestu zařízení předponou v podobě `\\.\` a vrátilo. 
+Pokud se jedná o starší zařízení se systémem DOS, například `CON`, `COM1`nebo `LPT1`, převede se na cestu k zařízení pomocí předpřipraveného `\\.\` a vráceného. 
 
-Cestu, která začíná názvem starší zařízení je vždy interpretováno jako starší zařízení podle <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType> metody. Například zařízení cesta systému DOS pro `CON.TXT` je `\\.\CON`a cesta systému DOS zařízení pro `COM1.TXT\file1.txt` je `\\.\COM1`.
+Cesta začínající starším názvem zařízení je vždy interpretována jako starší zařízení metodou <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType>. Například cesta zařízení DOS pro `CON.TXT` je `\\.\CON`a cesta k zařízení DOS pro `COM1.TXT\file1.txt` je `\\.\COM1`.
 
-### <a name="applying-the-current-directory"></a>Použití aktuální adresář
+### <a name="applying-the-current-directory"></a>Použití aktuálního adresáře
 
-Pokud není plně kvalifikovanou cestu, Windows použije aktuální adresář na něj. UNC a cesty k zařízení není nutné použít aktuální adresář. Ani nemá jednotku úplné oddělovačem C:\\.
+Pokud cesta není plně kvalifikovaná, systém Windows použije pro něj aktuální adresář. UNCs a cesty zařízení nemají použit aktuální adresář. Ani celá jednotka s oddělovačem C:\\.
 
-Pokud cesta musí začínat znakem oddělovače jednu součást, použije se jednotky z aktuálního adresáře. Například, pokud je cesta k souboru `\utilities` a aktuální adresář je `C:\temp\`, vytvoří normalizace `C:\utilities`.
+Pokud cesta začíná jediným oddělovačem komponent, použije se jednotka z aktuálního adresáře. Například pokud je cesta k souboru `\utilities` a aktuální adresář je `C:\temp\`, normalizace vytvoří `C:\utilities`.
 
-Pokud cesta musí začínat písmenem jednotky, oddělovač svazků a žádný oddělovač komponent, použije se poslední aktuální adresář sady z příkazového okna na zadané jednotce. Pokud poslední aktuální adresář nebyla nastavena, použije se na jednotku, samotného. Například, pokud je cesta k souboru `D:sources`, aktuální adresář je `C:\Documents\`, a poslední aktuální adresář na jednotce D: `D:\sources\`, výsledkem je `D:\sources\sources`. Tyto cesty "jednotka relativní" jsou běžné příčiny chyby logiku programu a skript. Za předpokladu, že se relativní cesta začínající písmenem a dvojtečky je samozřejmě není správná.
+Pokud cesta začíná písmenem jednotky, oddělovačem svazků a žádným oddělovačem komponent, použije se poslední aktuální adresářová sada z příkazového prostředí pro zadanou jednotku. Pokud nebyl poslední aktuální adresář nastaven, použije se samotný disk. Pokud je například cesta k souboru `D:sources`, je aktuální adresář `C:\Documents\`a poslední aktuální adresář na jednotce D: byl `D:\sources\`, výsledek je `D:\sources\sources`. Tyto "relativní" cesty k jednotce jsou běžným zdrojem chyb logiky programu a skriptu. Za předpokladu, že cesta začínající písmenem a dvojtečkou není relativní, je zjevně nesprávná.
 
-Pokud cesta musí začínat znakem něco jiného než oddělovač, se použijí aktuální jednotky a aktuální adresář. Například, pokud je cesta `filecompare` a aktuální adresář je `C:\utilities\`, výsledkem je `C:\utilities\filecompare\`.
+Pokud cesta začíná jinou než oddělovačem, použije se aktuální jednotka a aktuální adresář. Pokud je například cesta `filecompare` a aktuální adresář je `C:\utilities\`, výsledek je `C:\utilities\filecompare\`.
 
 > [!IMPORTANT]
-> Relativní cesty jsou nebezpečné ve vícevláknových aplikacích (to znamená, že většina aplikací), protože aktuální adresář je na úrovni jednotlivého procesu nastavení. Jakékoli vlákno může kdykoli změnit aktuální adresář. Počínaje .NET Core 2.1, lze volat <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> metodu k získání absolutní cesta relativní cestu a základní cesta (aktuální adresář), který chcete vyřešit proti. 
+> Relativní cesty jsou nebezpečné v aplikacích s více vlákny (tj. ve většině aplikací), protože aktuální adresář je nastavení pro jednotlivé procesy. V každém vlákně může aktuální adresář kdykoli změnit. Počínaje rozhraním .NET Core 2,1 můžete zavolat metodu <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> a získat tak absolutní cestu z relativní cesty a základní cestu (aktuální adresář), pro kterou ji chcete vyřešit. 
 
-### <a name="canonicalizing-separators"></a>Kanonizace oddělovače
+### <a name="canonicalizing-separators"></a>Oddělovače kanonizace
 
-Všechna lomítka (`/`) se převedou na standardní oddělovač Windows zpětné lomítko (`\`). Pokud jsou k dispozici, řadu lomítka, které následují první dvě lomítka, jsou sbaleny do jedné lomítko.
+Všechna lomítka (`/`) se převedou na standardní oddělovač Windows, zpětné lomítko (`\`). Pokud jsou k dispozici, řada lomítek, které následují dvě lomítka, jsou sbaleny do jednoho lomítka.
 
-### <a name="evaluating-relative-components"></a>Hodnocení relativní komponenty
+### <a name="evaluating-relative-components"></a>Vyhodnocení relativních součástí
 
-Po zpracování cestu žádné komponenty nebo segmenty, které se skládají z jednoho ani dvojitou tečku (`.` nebo `..`) jsou vyhodnoceny: 
+Jak je cesta zpracována, jsou vyhodnoceny všechny součásti nebo segmenty, které se skládají z jedné nebo dvou tečky (`.` nebo `..`): 
 
-- Pro jedno období aktuální segment Odebereme, protože odkazuje na aktuální adresář.
+- V rámci jednoho období je aktuální segment odebraný, protože odkazuje na aktuální adresář.
 
-- Pro dvojitou tečku aktuální segment a tento segment nadřazené jsou odebrané, protože dvojitou tečku odkazuje na nadřazený adresář.
+- Pro dvojitou dobu se odstraní aktuální segment a nadřazený segment, protože dvojitá tečka odkazuje na nadřazený adresář.
 
-   Nadřazené adresáře se odeberou, pouze pokud nejsou po kořen cesty. Kořenovou cestu, závisí na typu cesty. Je na jednotce (`C:\`) pro cesty DOS, nebo sdílené složky na serveru pro UNC (`\\Server\Share`) a předpona cesty zařízení pro zařízení cesty (`\\?\` nebo `\\.\`).
+   Nadřazené adresáře jsou odebrány pouze v případě, že nejsou za kořenem cesty. Kořen cesty závisí na typu cesty. Jedná se o jednotku (`C:\`) pro cesty pro DOS, server/sdílenou složku pro UNCs (`\\Server\Share`) a předponu cesty zařízení pro cesty zařízení (`\\?\` nebo `\\.\`).
 
-### <a name="trimming-characters"></a>Oříznutí znaků
+### <a name="trimming-characters"></a>Ořezávání znaků
 
-Spolu s výskytů oddělovače a relativní segmenty odebrat dříve odeberou se nějakými dalšími znaky během normalizace:
+Společně s odebranými oddělovači a relativními segmenty odebranými dříve byly některé další znaky během normalizace odebrány:
 
-- Segment, který končí na jednu tečku, odeberou se tohoto období. (Segment jednoduchých nebo dvojitých období je normalizovány v předchozím kroku. Segment tři nebo více období není normalizovaná a je ve skutečnosti název platný soubor nebo adresář.)
+- Pokud segment skončí v jednom období, toto období se odebere. (V předchozím kroku jsou normalizovány segmenty jedné nebo dvojité tečky. Segment tří nebo více teček není normalizován a ve skutečnosti je platný název souboru nebo adresáře.)
 
-- Pokud cesta není končit oddělovačem, všechny koncové tečky ani mezery (U + 0020) se odeberou. Pokud poslední segment je jednoduše jednoduchých nebo dvojitých období, spadají do výše uvedené pravidlo relativní komponenty. 
+- Pokud cesta nekončí oddělovačem, odeberou se všechna koncová tečka a mezery (U + 0020). Pokud je poslední segment jednoduše jedna nebo dvojitá tečka, spadá do výše uvedeného pravidla relativních součástí. 
 
-   Toto pravidlo znamená, že můžete vytvořit název adresáře s koncovou mezerou přidáním koncové oddělovače za prostor.  
+   Toto pravidlo znamená, že můžete vytvořit název adresáře s koncovým místem přidáním koncového oddělovače za mezerou.  
 
    > [!IMPORTANT]
-   > Měli byste **nikdy** vytvořit adresář nebo název souboru s koncovou mezerou. Koncové mezery může být obtížné nebo nemožné pro přístup k adresáři a aplikace běžně selhání při pokusu o zpracování adresářů a souborů, jejichž názvy obsahují koncové mezery.
+   > **Nikdy** byste neměli vytvořit adresář nebo název souboru s koncovým místem. Koncové mezery můžou ztížit nebo nemožné získat přístup k adresáři a aplikace se často nezdaří při pokusu o zpracování adresářů nebo souborů, jejichž názvy obsahují koncové mezery.
 
-## <a name="skipping-normalization"></a>Přeskakuje se normalizace
+## <a name="skipping-normalization"></a>Vynechává se normalizace.
 
-Za normálních okolností libovolnou cestu předán rozhraní API Windows (efektivně) předán [GetFullPathName funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) a normalizovaná. Existuje jedna důležitá výjimka: cesta zařízení, která začíná otazníkem místo tečku. Pokud cesta musí začínat znakem přesně `\\?\` (Všimněte si použití canonical zpětné lomítko), je normalizovat.
+V normálním případě je jakákoli Cesta předaná do rozhraní API systému Windows (efektivně) předána [funkci GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) a normalizována. Existuje jedna důležitá výjimka: cesta zařízení, která začíná otazníkem místo tečky. Pokud cesta začíná přesně s `\\?\` (Všimněte si použití kanonického zpětného lomítka), je normalizovaná.
 
-Proč byste měli přeskočit normalizace? Existují tři hlavní důvody:
+Proč byste chtěli přeskočit normalizaci? Existují tři hlavní důvody:
 
-1. Chcete-li získat přístup k cesty, které jsou běžně k dispozici, ale jsou platné. Soubor nebo adresář volá `hidden.`, například je možné pro přístup k žádným jiným způsobem. 
+1. Získat přístup k cestám, které jsou normálně nedostupné, ale jsou právní. K souboru nebo adresáři s názvem `hidden.`například nelze přistupovat jiným způsobem. 
 
-1. Ke zlepšení výkonu přeskočením normalizace, pokud jste již normalizovat.
+1. Chcete-li zvýšit výkon, přeskočí normalizace, pokud jste již byli normalizováni.
 
-1. Na rozhraní .NET Framework pouze, přejděte `MAX_PATH` vyhledat délka cesty umožňující cesty, které jsou větší než 259 znaků. Většina rozhraní API povolí tato, s několika výjimkami.
+1. Pouze v .NET Framework, chcete-li přeskočit `MAX_PATH` kontrolu délky cesty, aby bylo možné použít cestu větší než 259 znaků. Většina rozhraní API to umožňuje s některými výjimkami.
 
 > [!NOTE]
-> .NET core implicitně zpracovává dlouhé cesty a nebude provádět `MAX_PATH` zkontrolovat. `MAX_PATH` Kontrola platí, pouze na rozhraní .NET Framework.
+> .NET Core zpracovává dlouhé cesty implicitně a neprovádí `MAX_PATH` kontrolu. Ověření `MAX_PATH` se vztahuje pouze na .NET Framework.
 
-Přeskočení kontroly cesta normalizace a maximální počet je jediným rozdílem mezi syntaxe cesty dvě zařízení; jinak jsou identické. Buďte opatrní při přeskočení normalizace, protože můžete snadno vytvořit cesty, které jsou pro "normální" aplikace řešit složité používání.
+Normalizace a maximální počet kontrol cest se přeskočí jediným rozdílem mezi těmito dvěma syntaxemi cesty zařízení: jsou jinak identické. Při přeskočení normalizace buďte opatrní, protože můžete snadno vytvářet cesty, které jsou obtížné pro práci s běžnými aplikacemi.
 
-Cesty, které začínají `\\?\` jsou stále normalized, pokud jim explicitně předávat [GetFullPathName funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).
+Cesty začínající `\\?\` jsou stále normalizovány, pokud je explicitně předáte [funkci GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).
 
-Všimněte si, že je možné cesty více než `MAX_PATH` znaků [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) bez `\\?\`. Podporuje libovolné délky cesty až maximální velikost řetězce, který dokáže zpracovat Windows.
+Všimněte si, že můžete cesty více než `MAX_PATH` znaků [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) bez `\\?\`. Podporuje cesty s libovolnou délkou až do maximální velikosti řetězce, kterou může systém Windows zpracovat.
 
-## <a name="case-and-the-windows-file-system"></a>Případ a systému souborů Windows
+## <a name="case-and-the-windows-file-system"></a>Případ a systém souborů systému Windows
 
-Zvláštností systému souborů Windows, který není Windows uživatele a vývojáře najít matoucí této cesty a názvy adresářů jsou malá a velká písmena. To znamená adresáře a souboru názvy odrážet malých a velkých písmen řetězců používané při jejich vytváření. Například volání metody
+V systému souborů systému Windows, který nepoužívají uživatelé a vývojáři systému Windows, se v názvech cest a adresářů nerozlišují velká a malá písmena. To znamená, že názvy adresářů a souborů odrážejí velikost písmen řetězců použitých při jejich vytvoření. Například volání metody
 
 ```csharp
 Directory.Create("TeStDiReCtOrY");
@@ -216,9 +214,9 @@ Directory.Create("TeStDiReCtOrY");
 Directory.Create("TeStDiReCtOrY")
 ```
 
-Vytvoří adresář s názvem TeStDiReCtOrY. Pokud přejmenujete adresář nebo soubor změnit jeho velikost písmen, názvu adresáře nebo souboru odráží případ řetězec použitý při jeho přejmenování. Následující kód například přejmenuje soubor s názvem test.txt do Test.txt:
+vytvoří adresář s názvem TeStDiReCtOrY. Pokud přejmenujete adresář nebo soubor, aby se změnil jeho případ, název adresáře nebo souboru bude odpovídat velikosti řetězce použitého při jeho přejmenování. Například následující kód přejmenuje soubor s názvem test. txt na test. txt:
 
 [!code-csharp[case-and-renaming](~/samples/snippets/standard/io/file-names/cs/rename.cs)]
 [!code-vb[case-and-renaming](~/samples/snippets/standard/io/file-names/vb/rename.vb)]
 
-Porovnání název adresáře a souboru jsou však malá a velká písmena. Je-li vyhledat soubor s názvem "test.txt" rozhraní API pro .NET systému souborů ignorovat velikost písmen při porovnání. Test.txt, testu. TXT, testu. "Test.txt" bude odpovídat TXT a jinou kombinaci velkých a malých písmen.
+Porovnávání názvů adresářů a souborů ale nerozlišuje velká a malá písmena. Pokud vyhledáte soubor s názvem test. txt, rozhraní API systému souborů .NET ignorují velikost písmen v porovnání. Test. txt, TEST. TXT, test. TXT a další kombinace velkých a malých písmen budou odpovídat "test. txt".

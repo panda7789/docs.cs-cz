@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení plánovače úloh v bloku toku dat'
+title: 'Postupy: Určení plánovače úloh v bloku toku dat'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,73 +10,71 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 681c0f1f918c8991ed2544189488d1ea25547834
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2abac1ccf45fc9c9c28e27c132e72fe483a24d75
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935392"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122222"
 ---
-# <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Postupy: Určení plánovače úloh v bloku toku dat
-Tento dokument ukazuje, jak přiřadit určitým plánovačem úloh, při použití toku dat ve vaší aplikaci. V příkladu se používá <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> třídy v aplikaci Windows Forms k zobrazení, čtečky úkoly, které mají aktivní a pokud je aktivní úlohy zapisovače. Využívá také <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> způsob povolení bloku toku dat pro spuštění ve vlákně uživatelského rozhraní.
+# <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Postupy: Určení plánovače úloh v bloku toku dat
+Tento dokument ukazuje, jak přidružit konkrétní Plánovač úloh při použití toku dat ve vaší aplikaci. V příkladu se používá třída <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> v model Windows Forms aplikaci k zobrazení, když jsou úlohy čtecího zařízení aktivní a když je aktivní úkol zapisovače. Používá také metodu <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> k umožnění spuštění bloku toku dat ve vlákně uživatelského rozhraní.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
-## <a name="to-create-the-windows-forms-application"></a>Chcete-li vytvořit Windows Forms aplikace  
+## <a name="to-create-the-windows-forms-application"></a>Vytvoření aplikace model Windows Forms  
   
-1. Vytvoření aplikace Visual C# nebo Visual Basic **formulářová aplikace Windows** projektu. V následujících krocích se projekt s názvem `WriterReadersWinForms`.  
+1. Vytvořte projekt aplikace C# Visual nebo Visual Basic **model Windows Forms** . V následujících krocích se projekt jmenuje `WriterReadersWinForms`.  
   
-2. V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb pro jazyk Visual Basic), přidejte čtyři <xref:System.Windows.Forms.CheckBox> ovládacích prvků. Nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost **čtečky 1** pro `checkBox1`, **čtečky 2** pro `checkBox2`, **čtečky 3** pro `checkBox3`, a  **Zapisovač** pro `checkBox4`. Nastavte <xref:System.Windows.Forms.Control.Enabled%2A> vlastnost pro každý ovládací prvek na `False`.  
+2. V návrháři formuláře pro hlavní formulář Form1.cs (Form1. vb pro Visual Basic) přidejte čtyři ovládací prvky <xref:System.Windows.Forms.CheckBox>. Vlastnost <xref:System.Windows.Forms.Control.Text%2A> nastavte na **Reader 1** pro `checkBox1`, **reader 2** pro `checkBox2`, **Reader 3** pro `checkBox3`a **zapisovač** pro `checkBox4`. Nastavte vlastnost <xref:System.Windows.Forms.Control.Enabled%2A> pro každý ovládací prvek na `False`.  
   
-3. Přidat <xref:System.Windows.Forms.Timer> ovládacího prvku na formuláři. Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost `2500`.  
+3. Přidejte ovládací prvek <xref:System.Windows.Forms.Timer> do formuláře. Vlastnost <xref:System.Windows.Forms.Timer.Interval%2A> nastavte na hodnotu `2500`.  
   
 ## <a name="adding-dataflow-functionality"></a>Přidání funkce toku dat  
- Tato část popisuje postup vytvoření bloků toku dat, které se účastní v aplikaci a jak přidružit každý z nich pomocí plánovače úloh.  
+ V této části se dozvíte, jak vytvořit bloky toku dat, které se účastní aplikace, a jak je přidružit k Plánovači úloh.  
   
-### <a name="to-add-dataflow-functionality-to-the-application"></a>Přidání funkčnosti toku dat do aplikace  
+### <a name="to-add-dataflow-functionality-to-the-application"></a>Přidání funkce toku dat do aplikace  
   
-1. Ve vašem projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
+1. V projektu přidejte odkaz na System. Threading. Tasks. Dataflow. dll.  
   
-2. Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` příkazy (`Imports` v jazyce Visual Basic).  
+2. Ujistěte se, že Form1.cs (Form1. vb pro Visual Basic) obsahuje následující příkazy `using` (`Imports` v Visual Basic).  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#1)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#1)]  
   
-3. Přidat <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> datový člen do `Form1` třídy.  
+3. Přidejte datový člen <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> do třídy `Form1`.  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#2)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#2)]  
   
-4. V `Form1` konstruktor po volání `InitializeComponent`, vytvoření <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objektu, která přepíná stav <xref:System.Windows.Forms.CheckBox> objekty.  
+4. V konstruktoru `Form1` po volání `InitializeComponent`vytvořte objekt <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>, který přepíná stav objektů <xref:System.Windows.Forms.CheckBox>.  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#3)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#3)]  
   
-5. V `Form1` konstruktoru, vytvořit <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> objektu a čtyři <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objekty, jeden <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objekt pro každou <xref:System.Windows.Forms.CheckBox> objektu. Pro každou <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objektu, zadejte <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> vlastnost nastavena na hodnotu <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ConcurrentScheduler%2A> vlastnost pro čtení a <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ExclusiveScheduler%2A> vlastnost pro modul pro zápis.  
+5. V konstruktoru `Form1` vytvořte objekt <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> a čtyři objekty <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>, jeden <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objekt pro každý objekt <xref:System.Windows.Forms.CheckBox>. Pro každý objekt <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> určete <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> objekt, který má vlastnost <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> nastavenou na vlastnost <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ConcurrentScheduler%2A> pro čtecí zařízení a vlastnost <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ExclusiveScheduler%2A> pro modul pro zápis.  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#4)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#4)]  
   
-6. V `Form1` konstruktoru, start <xref:System.Windows.Forms.Timer> objektu.  
+6. V konstruktoru `Form1` spusťte objekt <xref:System.Windows.Forms.Timer>.  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#5)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#5)]  
   
-7. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.Timer.Tick> událost časovače.  
+7. V návrháři formuláře pro hlavní formulář vytvořte obslužnou rutinu události pro událost <xref:System.Windows.Forms.Timer.Tick> pro časovač.  
   
-8. Implementace <xref:System.Windows.Forms.Timer.Tick> událost časovače.  
+8. Implementujte událost <xref:System.Windows.Forms.Timer.Tick> pro časovač.  
   
      [!code-csharp[TPLDataflow_WriterReadersWinForms#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#6)]
      [!code-vb[TPLDataflow_WriterReadersWinForms#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#6)]  
   
- Vzhledem k tomu, `toggleCheckBox` funguje bloku toku dat v uživatelském rozhraní, je důležité, tato akce vyskytovat ve vlákně uživatelského rozhraní. K tomu, během konstrukce, které obsahuje tento objekt <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> nastavenou na <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A> Metoda vytvoří <xref:System.Threading.Tasks.TaskScheduler> objekt, který provede práci na aktuálním kontextu synchronizace. Vzhledem k tomu, `Form1` konstruktoru se volá z vlákna uživatelského rozhraní, akce pro `toggleCheckBox` bloku toku dat také běží na vlákně uživatelského rozhraní.  
+ Vzhledem k tomu, že blok toku dat `toggleCheckBox` pracuje na uživatelském rozhraní, je důležité, aby tato akce probíhala ve vlákně uživatelského rozhraní. Chcete-li to provést, během vytváření tohoto objektu poskytuje objekt <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions>, který má vlastnost <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> nastavena na hodnotu <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. Metoda <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A> vytvoří objekt <xref:System.Threading.Tasks.TaskScheduler>, který provádí práci na aktuálním kontextu synchronizace. Vzhledem k tomu, že konstruktor `Form1` je volán z vlákna uživatelského rozhraní, je akce pro `toggleCheckBox` bloku toku dat spuštěna také ve vlákně uživatelského rozhraní.  
   
- Tento příklad také používá <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> třídy umožňující některé bloků toku dat tak, aby fungoval současně a jiného bloku toku dat tak, aby fungoval s ohledem na všechny ostatní bloků toku dat, které běží na stejné exkluzivní <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> objektu. Tato technika je užitečná, když více bloků toku dat sdílet prostředek a některé vyžadují výhradní přístup k prostředku, protože eliminuje nutnost ručně synchronizovat přístup k prostředku. Eliminace ruční synchronizace může být efektivnější kódu.  
+ Tento příklad také používá třídu <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> k tomu, aby mohly některé bloky toku dat fungovat souběžně, a jiný blok toku dat, který bude fungovat výhradně s ohledem na všechny ostatní bloky toku dat spuštěné ve stejném objektu <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>. Tato technika je užitečná, když více bloků toku dat sdílí prostředek a vyžaduje výhradní přístup k tomuto prostředku, protože eliminuje požadavek na ruční synchronizaci přístupu k tomuto prostředku. Odstranění ruční synchronizace může zvýšit efektivitu kódu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje kompletní kód pro Form1.cs (Form1.vb pro jazyk Visual Basic).  
+ Následující příklad ukazuje úplný kód pro Form1.cs (Form1. vb pro Visual Basic).  
   
  [!code-csharp[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#100)]
  [!code-vb[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#100)]  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b518a3be939c70b207a71d79a3d362dba26fd3d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2f91891164f1f80617cab10347eb4a7a08762c10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774199"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140349"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName – metoda
-Získá název domény aplikace, která je reprezentována to [icorpublishappdomain –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  
+Získá název domény aplikace, která je reprezentovaná tímto [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +38,27 @@ HRESULT GetName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost `szName` pole.  
+ pro Velikost pole `szName`.  
   
  `pcchName`  
- [out] Ukazatel na počet širokých znaků, včetně znaku null, vrátí v `szName` pole.  
+ mimo Ukazatel na počet velkých znaků, včetně znaku null, vrácený v poli `szName`.  
   
  `szName`  
- [out] Pole pro uložení názvu.  
+ mimo Pole, do kterého se má uložit název  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `szName` je jiná než null, `GetName` metoda zkopíruje až `cchName` znaků (včetně ukončovacího znaku null) do `szName`. Pokud se vrátí jinou hodnotu null v `pcchName`, skutečný počet znaků v názvu (včetně ukončovacího znaku null) je uložen v `szName` pole.  
+ Pokud `szName` není null, metoda `GetName` kopíruje až `cchName` znaky (včetně ukončovacího znaku null) do `szName`. Pokud je v `pcchName`vrácena hodnota, která není null, je v poli `szName` uložen skutečný počet znaků v názvu (včetně ukončovacího znaku null).  
   
- `GetName` Metoda vrátí hodnotu S_OK HRESULT bez ohledu na to, kolik znaků byly zkopírovány.  
+ Metoda `GetName` vrátí hodnotu S_OK HRESULT bez ohledu na to, kolik znaků bylo kopírováno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

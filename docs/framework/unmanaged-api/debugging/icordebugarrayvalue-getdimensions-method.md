@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9c0f4836a3dc848b52ee7fe6947f350e6fab787f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c5199794098e4d83588728eeb165aee5f81fe4c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737561"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088502"
 ---
 # <a name="icordebugarrayvaluegetdimensions-method"></a>ICorDebugArrayValue::GetDimensions – metoda
-Získá počet elementů v každé dimenzi tohoto pole.  
+Získá počet prvků v každé dimenzi tohoto pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +37,18 @@ HRESULT GetDimensions (
   
 ## <a name="parameters"></a>Parametry  
  `cdim`  
- [in] Počet dimenzí tohoto objektu icordebugarrayvalue –.  
+ pro Počet dimenzí tohoto objektu ICorDebugArrayValue  
   
- Tato hodnota je také velikost `dims` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.  
+ Tato hodnota je také velikost pole `dims`, protože jeho velikost je rovna počtu rozměrů `ICorDebugArrayValue` objektu.  
   
  `dims`  
- [out] Pole celých čísel, z nichž každý určuje počet prvků v dimenzi v tomto `ICorDebugArrayValue` objektu.  
+ mimo Pole celých čísel, z nichž každý Určuje počet prvků v dimenzi v tomto objektu `ICorDebugArrayValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

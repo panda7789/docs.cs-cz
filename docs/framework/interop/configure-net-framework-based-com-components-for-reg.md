@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace'
+title: 'Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -8,16 +8,14 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: baabff187fb8a22aea37c4fb4c1dc11a680d3bb8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 61f5f0f3ec9a4386fa12e7511b4a518f2b56a21c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123670"
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework
 Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud složitější než pro součásti modelu COM. Instalační program vyžaduje dva manifesty:  
   
 - Aby bylo možné identifikovat spravovanou součást, musí mít aplikace modelu COM manifest aplikace ve stylu Win32.  
@@ -90,7 +88,7 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-3. Identifikujte vlastníka souboru. Element `<assemblyIdentity>` `<dependentAssembly>` elementu v souboru manifestu aplikace se musí shodovat s prvkem v manifestu součásti. V následujícím příkladu `myManagedComp` je verze 1.2.3.4 vlastníkem souboru manifestu.  
+3. Identifikujte vlastníka souboru. Element `<assemblyIdentity>` elementu `<dependentAssembly>` v souboru manifestu aplikace musí odpovídat jedné v manifestu součásti. V následujícím příkladu `myManagedComp` verze 1.2.3.4 vlastní soubor manifestu.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -103,7 +101,7 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
            />  
     ```  
   
-4. Identifikujte každou třídu v sestavení. `<clrClass>` Pomocí elementu jednoznačně Identifikujte jednotlivé třídy ve spravovaném sestavení. Element, který je dílčím prvkem `<assembly>` elementu, má atributy popsané v následující tabulce.  
+4. Identifikujte každou třídu v sestavení. Pomocí elementu `<clrClass>` jednoznačně Identifikujte jednotlivé třídy ve spravovaném sestavení. Element, který je dílčím prvkem `<assembly>` elementu, má atributy popsané v následující tabulce.  
   
     |Atribut|Popis|Požadováno|  
     |---------------|-----------------|--------------|  
@@ -117,7 +115,7 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
   
      U všech značek atributů se rozlišují velká a malá písmena. Identifikátory CLSID, ProgID, modely vláken a verze modulu runtime lze získat zobrazením exportované knihovny typů pro sestavení pomocí technologie OLE/COM ObjectViewer (Oleview. exe).  
   
-     Následující manifest komponenty identifikuje dvě třídy, `testClass1` a. `testClass2`  
+     Následující manifest komponenty identifikuje dvě třídy, `testClass1` a `testClass2`.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -156,19 +154,19 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
   
      `RT_MANIFEST 1 myManagedComp.manifest`  
   
-     V tomto příkazu je `myManagedComp.manifest` název manifestu součásti, který se má vložit. V tomto příkladu je `myresource.rc`název souboru skriptu.  
+     V tomto příkazu je `myManagedComp.manifest` název manifestu součásti, který se má vložit. V tomto příkladu je název souboru skriptu `myresource.rc`.  
   
 2. Zkompilujte skript pomocí kompilátoru prostředků Microsoft Windows (RC. exe). V příkazovém řádku zadejte následující příkaz:  
   
      `rc myresource.rc`  
   
-     RC. exe vytvoří `myresource.res` soubor prostředků.  
+     RC. exe vytvoří soubor prostředků `myresource.res`.  
   
 3. Zkompilujte zdrojový soubor sestavení znovu a zadejte soubor prostředků pomocí možnosti **parametr/win32res** :  
   
     `/win32res:myresource.res`  
   
-     `myresource.res` Znovu je název souboru prostředků obsahujícího vložené prostředky.  
+     Znovu je `myresource.res` název souboru prostředků obsahujícího vložené prostředky.  
   
 ## <a name="see-also"></a>Viz také:
 

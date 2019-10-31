@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: cfe4b634-18bf-44b8-9773-d94fb7e8a480
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 08247c1ec5b868055e4836b3c0fb520a536374e8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ca428d680df1710d8e74441d9945d4c3545b0482
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798913"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121149"
 ---
 # <a name="strongnamesignatureverificationex-function"></a>StrongNameSignatureVerificationEx – funkce
 Načte hodnotu, která označuje, zda manifest sestavení v zadané cestě obsahuje podpis silného názvu.  
@@ -44,23 +42,23 @@ BOOLEAN StrongNameSignatureVerificationEx (
  pro Cesta k přenositelnému spustitelnému souboru (. exe nebo. dll) pro sestavení, které má být ověřeno.  
   
  `fForceVerification`  
- pro provést ověření, i když je nutné přepsat nastavení registru, `false`jinak. `true`  
+ [in] `true` provádět ověřování, i když je nutné přepsat nastavení registru. v opačném případě `false`.  
   
  `pfWasVerified`  
- mimo Pokud byl podpis silného názvu ověřen; `false`v opačném případě. `true` `pfWasVerified`je také nastaveno na `false` , pokud bylo ověření úspěšné z důvodu nastavení registru.  
+ [out] `true`, jestli se podpis silného názvu ověřil; v opačném případě `false`. `pfWasVerified` je také nastaveno na `false`, pokud bylo ověření úspěšné z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud bylo ověření úspěšné; v opačném případě. `false`  
+ `true`, zda bylo ověření úspěšné; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- `StrongNameSignatureVerificationEx`poskytuje funkci podobnou funkci [StrongNameSignatureVerification –](strongnamesignatureverification-function.md) . Druhý vstupní parametr a výstupní parametr pro `StrongNameSignatureVerificationEx` jsou však typu `BOOLEAN` místo `DWORD`.  
+ `StrongNameSignatureVerificationEx` poskytuje možnost podobnou funkci [StrongNameSignatureVerification –](strongnamesignatureverification-function.md) . Druhý vstupní parametr a výstupní parametr pro `StrongNameSignatureVerificationEx` jsou však typu `BOOLEAN` namísto `DWORD`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně Mscoree. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně Mscoree. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

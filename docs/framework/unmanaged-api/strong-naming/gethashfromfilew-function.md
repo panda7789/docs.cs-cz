@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd96b5acb22f63b6e06c981119186680d6593a79
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: db6f39119d143d27c0d3a80a9c65565d4dfd0d39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799198"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140671"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW – funkce
 Vygeneruje hodnotu hash přes obsah souboru určeného řetězcem Unicode.  
@@ -45,26 +43,26 @@ HRESULT GetHashFromFileW (
  pro Název Unicode souboru, na který se má vypočítat hodnota hash  
   
  `piHashAlg`  
- [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Pokud `piHashAlg` je nastavená na 0, použije se výchozí algoritmus CALG_SHA-1.  
+ [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Je-li `piHashAlg` nastavena na hodnotu 0, je použit výchozí algoritmus CALG_SHA-1.  
   
  `pbHash`  
  mimo Bajtové pole obsahující vygenerovanou hodnotu hash.  
   
  `cchHash`  
- pro Maximální velikost vyrovnávací paměti, na `pbHash`kterou ukazuje.  
+ pro Maximální velikost vyrovnávací paměti, na kterou ukazuje `pbHash`.  
   
  `pchHash`  
- mimo Velikost v bajtech `pbHash`.  
+ mimo Velikost `pbHash`v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato funkce je stejná jako [GetHashFromFile –](gethashfromfile-function.md)s tím rozdílem, že specifikace názvu souboru je Unicode namísto ANSI.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

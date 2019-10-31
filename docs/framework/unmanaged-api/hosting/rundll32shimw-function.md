@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 9ea07b57-96e2-44df-8711-8fe6c119087f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 569efa9d14ef10d8c5cf735091778a6c78882815
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e661bd82ecf6d804e852cca4a4478084edf303c5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781166"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141498"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW – funkce
 Provede zadaný příkaz.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT RunDll32ShimW (
   
 ## <a name="parameters"></a>Parametry  
  `hwnd`  
- [in] Popisovač okna, ve kterém se zobrazí výstup příkazu.  
+ pro Popisovač okna, ve kterém se zobrazí výstup příkazu.  
   
  `hinst`  
- [in] Popisovač do knihovny, který obsahuje příkaz.  
+ pro Popisovač knihovny, která obsahuje příkaz.  
   
  `lpszCmdLine`  
- [in] Řetězec, který určuje příkaz, který se spustí.  
+ pro Řetězec, který určuje příkaz, který má být spuštěn.  
   
  `nCmdShow`  
- [in] Celé číslo, které určuje režim zobrazení v okně výstup.  
+ pro Celé číslo, které určuje režim zobrazení okna výstup.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

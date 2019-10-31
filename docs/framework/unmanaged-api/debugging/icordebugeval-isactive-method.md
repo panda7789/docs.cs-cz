@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bf2bba24-d278-43bd-b1c5-35680e748d3e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: be7dde136c5bc26148468d3d8031426b17f44292
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bd10af53d7803964ed6e699ce5328aa8a860216c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753128"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085024"
 ---
 # <a name="icordebugevalisactive-method"></a>ICorDebugEval::IsActive – metoda
-Získá hodnotu určující, zda tento objekt ICorDebugEval právě probíhá.  
+Získá hodnotu, která označuje, zda je tento objekt ICorDebugEval právě spuštěn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT IsActive (
   
 ## <a name="parameters"></a>Parametry  
  `pbActive`  
- [out] Ukazatel na hodnotu, která určuje, zda toto testování je aktivní.  
+ mimo Ukazatel na hodnotu, která označuje, zda je toto vyhodnocení aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

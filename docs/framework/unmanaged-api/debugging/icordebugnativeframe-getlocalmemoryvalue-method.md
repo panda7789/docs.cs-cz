@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b600b3a2-9908-42d8-8093-ab6f39e9a2c9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9a8e5a1813a81a84eac612a53964d39b48f0c536
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cee095003c136142052b8f946fa8227927c80ee2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746216"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096869"
 ---
 # <a name="icordebugnativeframegetlocalmemoryvalue-method"></a>ICorDebugNativeFrame::GetLocalMemoryValue – metoda
-Získá hodnotu argumentu nebo místní proměnná, která je uložena v zadaném umístění v paměti pro tuto nativní rámce.  
+Získá hodnotu argumentu nebo místní proměnné, která je uložena v zadaném umístění v paměti pro tento nativní rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +38,24 @@ HRESULT GetLocalMemoryValue (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] A `CORDB_ADDRESS` hodnota, která určuje umístění v paměti, který obsahuje hodnotu.  
+ pro Hodnota `CORDB_ADDRESS`, která určuje umístění paměti obsahující hodnotu.  
   
  `cbSigBlob`  
- [in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.  
+ pro Celé číslo, které určuje velikost binárního podpisu metadat, na které odkazuje parametr `pvSigBlob`.  
   
  `pvSigBlob`  
- [in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.  
+ pro Hodnota `PCCOR_SIGNATURE`, která odkazuje na binární signaturu metadat typu hodnoty.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena v zadaném umístění v paměti.  
+ mimo Ukazatel na adresu objektu "ICorDebugValue" představující načtenou hodnotu, která je uložena v zadaném umístění v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

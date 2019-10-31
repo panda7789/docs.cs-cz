@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58ee2764d2e2c4c4e21effa3e0c3551a2e145f40
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 212a9f46dd33f98abd31e7a78c7a830cb3386cb6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796500"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108013"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
-Obsahuje informace o jednom atributu v sestavení a skládá se ze tří `DWORD`s. Každé `DWORD` je posun do vyrovnávací paměti znaků vytvářený `CurrentIntoBuffer` metodou rozhraní [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md) .  
+Obsahuje informace o jednom atributu v sestavení a skládá se ze tří `DWORD`s. Každý `DWORD` je posunem na vyrovnávací paměť znaků vytvořenou metodou `CurrentIntoBuffer` rozhraní [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,15 +45,15 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
 |`ofsValue`|Třetí posun do vyrovnávací paměti znaků. Toto umístění označuje začátek hodnoty atributu.|  
   
 ## <a name="sample"></a>Ukázka  
- Následující příklad znázorňuje několik základních kroků, které nakonec mají za následek vyplněnou `IDENTITY_ATTRIBUTE_BLOB` strukturu:  
+ Následující příklad znázorňuje několik základních kroků, které nakonec vedou k vyplnění `IDENTITY_ATTRIBUTE_BLOB` struktury:  
   
 1. Získejte [IReferenceIdentity –](ireferenceidentity-interface.md) pro sestavení.  
   
-2. Zavolejte metodu a získejte [IEnumIDENTITY_ATTRIBUTE.](ienumidentity-attribute-interface.md) `IReferenceIdentity::EnumAttributes`  
+2. Zavolejte metodu `IReferenceIdentity::EnumAttributes` a získejte [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Vytvořte vyrovnávací paměť znaků a přetypujte ji jako `IDENTITY_ATTRIBUTE_BLOB` strukturu.  
+3. Vytvořte vyrovnávací paměť znaků a přetypujte ji jako strukturu `IDENTITY_ATTRIBUTE_BLOB`.  
   
-4. `CurrentIntoBuffer` Zavolejte metodu`IEnumIDENTITY_ATTRIBUTE` rozhraní. Tato metoda zkopíruje atributy `Namespace`, `Name`a `Value` do vyrovnávací paměti znaků. Tři posuny k těmto řetězcům budou k dispozici ve `IDENTITY_ATTRIBUTE_BLOB` struktuře.  
+4. Zavolejte metodu `CurrentIntoBuffer` rozhraní `IEnumIDENTITY_ATTRIBUTE`. Tato metoda zkopíruje atributy `Namespace`, `Name`a `Value` do vyrovnávací paměti znaků. Tři posuny k těmto řetězcům budou k dispozici ve struktuře `IDENTITY_ATTRIBUTE_BLOB`.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -222,7 +220,7 @@ Exit:
 ```  
   
 ### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
- C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
+ C:\\> EnumAssemblyAttributes. exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Ukázkový výstup  
  Culture = neutrální  
@@ -236,9 +234,9 @@ Exit:
  Verze = 2.0.0.0  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Izolace. h  
+ **Hlavička:** Izolace. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

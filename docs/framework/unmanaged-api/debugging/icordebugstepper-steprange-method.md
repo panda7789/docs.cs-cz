@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b9776112-6e6d-4708-892a-8873db02e16f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7e1ace501bf5de741ea110fe4d3bb4bc44843bf8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ca4542fe42fab0b5ff54b23b9492d3906698c10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760533"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120625"
 ---
 # <a name="icordebugsteppersteprange-method"></a>ICorDebugStepper::StepRange – metoda
-Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a vrátit se dosáhne kódu za poslední zadaný rozsah.  
+Způsobí, že se toto ICorDebugStepper do jednoho kroku prostřednictvím jeho obsahujícího vlákna a vrátí se, když dosáhne kódu za poslední z určených rozsahů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT StepRange (
   
 ## <a name="parameters"></a>Parametry  
  `bStepIn`  
- [in] Nastavte na `true` krok do funkce, která je volána v rámci vlákna. Nastavte na `false` krok přes funkci.  
+ pro Nastavte na `true` pro krokování do funkce, která je volána v rámci vlákna. Nastavte na `false` pro krok nad funkcí.  
   
  `ranges`  
- [in] Pole struktur cor_debug_step_range –, z nichž každý určuje rozsah.  
+ pro Pole struktur COR_DEBUG_STEP_RANGE, z nichž každý určuje rozsah.  
   
  `cRangeCount`  
- [in] Velikost `ranges` pole.  
+ pro Velikost pole `ranges`.  
   
 ## <a name="remarks"></a>Poznámky  
- `StepRange` Metoda se dá použít jako [icordebugstepper::Step –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) metody, s tím rozdílem, že nedokončí až do kódu mimo zadaný rozsah je dosaženo.  
+ Metoda `StepRange` funguje podobně jako metoda [ICorDebugStepper:: Step](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) , s tím rozdílem, že není dokončena, dokud není dosaženo kódu mimo daný rozsah.  
   
- To může být efektivnější než krokování jedné instrukce v čase. Rozsahy jsou zadané jako seznam dvojic posunu od začátku krokovač rámce.  
+ To může být efektivnější než v jednom okamžiku krokování jednotlivých instrukcí. Rozsahy jsou zadány jako seznam párů posunů od začátku rámce stepper.  
   
- Rozsahy jsou relativní vzhledem k kód Microsoft intermediate language (MSIL) metody. Volání [icordebugstepper::setrangeil –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) s `false` aby rozsahy vzhledem k nativního kódu metody.  
+ Rozsahy jsou relativní vzhledem k kódu jazyka MSIL (Microsoft Intermediate Language) metody. Zavolejte [ICorDebugStepper:: SetRangeIL –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) s `false`, aby byly rozsahy relativní vzhledem k nativnímu kódu metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

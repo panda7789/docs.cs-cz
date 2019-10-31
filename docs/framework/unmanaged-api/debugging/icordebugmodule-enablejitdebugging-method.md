@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0a65e2a4-5bb6-496c-ae6f-40474426b5a6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8aeb6ed448539db2720fee0d42cfcc344fd3bbf7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da532ee1b5909a68bedbb9e6f6c96333e88002a8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762773"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109730"
 ---
 # <a name="icordebugmoduleenablejitdebugging-method"></a>ICorDebugModule::EnableJITDebugging – metoda
-Určuje, zda kompilátor just-in-time (JIT) uchovává informace o ladění pro metody v rámci tohoto modulu.  
+Určuje, zda kompilátor JIT (just-in-time) zachovává ladicí informace pro metody v rámci tohoto modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT EnableJITDebugging(
   
 ## <a name="parameters"></a>Parametry  
  `bTrackJITInfo`  
- [in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro zachování informací o mapování mezi Microsoft intermediate language (MSIL) verze a verze zkompilovaný pomocí kompilátoru JIT jednotlivých metod v tomto modulu.  
+ pro Nastavte tuto hodnotu na `true`, pokud chcete, aby kompilátor JIT zachoval informace o mapování mezi verzí jazyka MSIL (Microsoft Intermediate Language) a verzí kompilovánou JIT pro všechny metody v tomto modulu.  
   
  `bAllowJitOpts`  
- [in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro generování kódu pomocí některé optimalizace JIT specifické pro ladění.  
+ pro Nastavte tuto hodnotu na `true`, pokud chcete, aby kompilátor JIT vygeneroval kód s některými optimalizacemi specifickými pro JIT pro ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení pro všechny moduly, které jsou načteny, když je aktivní ladicí program je povoleno ladění JIT. Programově povolení nebo zakázání nastavení přepíše globální nastavení.  
+ Ladění JIT je ve výchozím nastavení povoleno pro všechny moduly, které jsou načteny, když je ladicí program aktivní. Programové povolení nebo zakázání nastavení přepisuje globální nastavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

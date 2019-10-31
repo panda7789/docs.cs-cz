@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 392e9009-40ef-40e3-ad4d-7ce93a989e78
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bf285b6e1f703c8776937fa33c7ab5801f04f80f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 62fcdb60b83c88738ebe2e39455b8eae60fb705e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950163"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126785"
 ---
 # <a name="iclrappdomainresourcemonitorgetcurrentsurvived-method"></a>ICLRAppDomainResourceMonitor::GetCurrentSurvived – metoda
 Vrátí počet bajtů, které byly zachovány při posledním plném, blokování uvolnění paměti a odkazují aktuální doménu aplikace.  
@@ -55,16 +53,16 @@ HRESULT STDMETHODCALLTYPE GetCurrentSurvived(
 |COR_E_APPDOMAINUNLOADED|Doména aplikace byla uvolněna nebo neexistuje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Statistika se aktualizuje až po úplném a blokujícím uvolňování paměti. To znamená, že kolekce obsahující všechny generace a zastavuje aplikaci, když dojde ke shromažďování. Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody provádí úplnou, blokující kolekci. Souběžné uvolňování paměti probíhá na pozadí a neblokuje aplikaci.  
+ Statistika se aktualizuje až po úplném a blokujícím uvolňování paměti. To znamená, že kolekce obsahující všechny generace a zastavuje aplikaci, když dojde ke shromažďování. Například přetížení metody <xref:System.GC.Collect?displayProperty=nameWithType> provádí úplnou, blokující kolekci. Souběžné uvolňování paměti probíhá na pozadí a neblokuje aplikaci.  
   
- Metoda je nespravovaný ekvivalent spravované <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnosti. `GetCurrentSurvived`  
+ Metoda `GetCurrentSurvived` je nespravovaný ekvivalent vlastnosti Managed <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

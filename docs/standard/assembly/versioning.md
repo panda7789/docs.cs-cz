@@ -8,14 +8,12 @@ helpviewer_keywords:
 - resolving assembly binding requests
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1363ce758929414f054e3d28dc6cd02bd618a8ac
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bbb3dae2ce66c93d05a2a1c0f7e426901fa7b2e0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053964"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140175"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 
@@ -52,7 +50,7 @@ Každé sestavení má dva různé způsoby, jak vyjádřit informace o verzi:
 
 Každé sestavení má v rámci své identity číslo verze. V takovém případě se dvě sestavení, která se liší číslem verze, považují za modul runtime za zcela odlišná sestavení. Toto číslo verze je fyzicky reprezentované jako řetězec o čtyřech částech v následujícím formátu:  
   
-\<> *hlavní verze*. *vedlejší verze >.* \< *číslo buildu >.* \< \< *Revize*>  
+\<*hlavní verze*>. > *dílčí verze*\<.\<*číslo buildu*>.\<*revize*>  
   
 Například verze 1.5.1254.0 označuje 1 jako hlavní verzi, 5 jako dílčí verzi, 1254 jako číslo sestavení a 0 jako číslo revize.  
   
@@ -71,7 +69,7 @@ Informační verze je řetězec, který připojuje informace o dalších verzíc
 > [!NOTE]
 > I když můžete zadat libovolný text, zobrazí se při kompilaci zpráva upozornění, pokud řetězec není ve formátu používaném číslem verze sestavení, nebo pokud je v tomto formátu, ale obsahuje zástupné znaky. Toto upozornění je neškodné.  
   
-Informační verze je reprezentovaná pomocí vlastního atributu <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Další informace o atributu informační verze naleznete v tématu [set Assembly Attributes](set-attributes.md).  
+Informační verze je reprezentovaná pomocí <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>vlastního atributu. Další informace o atributu informační verze naleznete v tématu [set Assembly Attributes](set-attributes.md).  
   
 ## <a name="see-also"></a>Viz také:
 

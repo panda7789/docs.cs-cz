@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5f54a34-6335-4708-b407-a756ec70fab4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a90f0a0319d88654d0310530749ef35b7095e0fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3836b6c08098d38516c8a25260fb28998a2317fe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754424"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084786"
 ---
 # <a name="icordebugeval2newstringwithlength-method"></a>ICorDebugEval2::NewStringWithLength – metoda
-Řetězce zadané délky, vytvoří se zadaným obsahem.  
+Vytvoří řetězec o zadané délce se zadaným obsahem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +36,21 @@ HRESULT NewStringWithLength (
   
 ## <a name="parameters"></a>Parametry  
  `string`  
- [in] Ukazatel na hodnotu řetězce.  
+ pro Ukazatel na hodnotu řetězce.  
   
  `uiLength`  
- [in] Délka řetězce.  
+ pro Délka řetězce  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je na konci řetězce znak null je očekávané ve spravované řetězce volající `NewStringWithLength` – metoda musíte zajistit, že obsahuje délku řetězce znakem null.  
+ Pokud se očekává, že koncová hodnota řetězce null je ve spravovaném řetězci, volající metody `NewStringWithLength` musí zajistit, aby délka řetězce zahrnovala koncový znak null.  
   
- Řetězec se vždy vytvoří v aplikační doméně, ve které vlákno právě probíhá.  
+ Řetězec je vždy vytvořen v doméně aplikace, ve které je vlákno aktuálně prováděno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

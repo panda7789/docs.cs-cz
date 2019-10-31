@@ -5,21 +5,19 @@ helpviewer_keywords:
 - appDomainResourceMonitoring element
 - <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1395ee64d94e33693344b678c7a949665f994079
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 991833500cae4d96e9c28f7e94ca366e9b976a9d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252827"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118256"
 ---
-# <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring> Element
+# <a name="appdomainresourcemonitoring-element"></a>\<element > appDomainResourceMonitoring
 Instruuje modul runtime za účelem shromažďování statistik o všech doménách aplikace v procesu po dobu životního cyklu procesu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainResourceMonitoring>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainResourceMonitoring >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +37,7 @@ Instruuje modul runtime za účelem shromažďování statistik o všech domén�
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`true`|Shromažďují se statistiky pro monitorování prostředků domény aplikace.|  
 |`false`|Statistika pro monitorování prostředků domény aplikace se neshromažďují.|  
@@ -57,7 +55,7 @@ Instruuje modul runtime za účelem shromažďování statistik o všech domén�
 ## <a name="remarks"></a>Poznámky  
  Monitorování prostředků domény aplikace je dostupné prostřednictvím třídy domény spravované aplikace, hostitelského rozhraní [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) a trasování událostí pro Windows (ETW). Pokud je monitorování povoleno, Statistika se shromáždí pro všechny domény aplikace v procesu po dobu životního cyklu procesu.  
   
- Chcete-li povolit monitorování ze spravovaného kódu <xref:System.AppDomain.MonitoringIsEnabled%2A> , použijte vlastnost.  
+ Chcete-li povolit monitorování ze spravovaného kódu, použijte vlastnost <xref:System.AppDomain.MonitoringIsEnabled%2A>.  
   
  Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   

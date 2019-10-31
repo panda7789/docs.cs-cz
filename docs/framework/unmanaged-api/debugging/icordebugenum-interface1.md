@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 80be7efe-2c32-4b9f-8c52-40c6f6268219
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b25c47e101ad0fb8e8cbdbb2718a41c9be6c0c22
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 59dcb7ae6f27f8d049cd4dc2d313f7f1130fc503
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931988"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085266"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum – rozhraní
 
@@ -31,15 +29,15 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Vytvoří kopii tohoto `ICorDebugEnum` objektu.|  
+|[Clone – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Vytvoří kopii tohoto objektu `ICorDebugEnum`.|  
 |[GetCount – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-getcount-method.md)|Získá počet položek ve výčtu.|  
 |[Reset – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-reset-method.md)|Přesune kurzor na začátek výčtu.|  
 |[Skip – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-skip-method.md)|Přesune kurzor do výčtu směrem nahoru podle zadaného počtu položek.|  
   
 ## <a name="remarks"></a>Poznámky  
- Následující enumerátory jsou odvozeny `ICorDebugEnum`z:  
+ Následující enumerátory jsou odvozeny z `ICorDebugEnum`:  
   
-- "ICorDebugAppDomainEnum"  
+- ICorDebugAppDomainEnum  
   
 - ICorDebugAssemblyEnum  
   
@@ -85,11 +83,11 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

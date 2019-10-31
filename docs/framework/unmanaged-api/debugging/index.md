@@ -6,24 +6,22 @@ helpviewer_keywords:
 - debugging [.NET Framework], using the unmanaged API
 - native API reference [.NET Framework], debugging
 ms.assetid: f0bf70be-42ef-4c46-8709-1694b5f99018
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 86be3e7edb7149ed42dd053156de0f649f1480b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6e6f011bf3970dac280f2fed2f3e84c9bae132a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763682"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103301"
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Ladění (referenční dokumentace nespravovaného rozhraní API)
-Rozhraní API pro ladění umožňuje ladicí program k ladění kódu spuštěného v prostředí common language runtime (CLR). Kód pro ladění může být libovolný typ kódu, který podporuje modul CLR.  
+Rozhraní API pro ladění umožňuje ladicímu programu ladit kód, který běží v prostředí modulu CLR (Common Language Runtime). Kód, který se má ladit, může být jakýkoli typ kódu, který podporuje modul CLR.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
- Popisuje nespravované typy coclass, které používá rozhraní API pro ladění.  
+ Popisuje nespravované třídy typu coclass, které používá rozhraní API pro ladění.  
   
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- Popisuje nespravovaná rozhraní, které umožňují ladění programu, který se provádí pomocí modulu CLR.  
+ Popisuje nespravovaná rozhraní, která umožňují ladění programu, který je spouštěn modulem CLR.  
   
  [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
  Popisuje nespravované globální statické funkce, které používá rozhraní API pro ladění.  

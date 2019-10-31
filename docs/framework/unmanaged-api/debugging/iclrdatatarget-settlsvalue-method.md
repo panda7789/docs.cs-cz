@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a2d6a24-749a-47ad-9f01-4517203d3f35
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 34c0ab32d18d5aeeb81befa736cc42b678b11fb1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1425d48bb18d4161a1c96239b76b8315ae258705
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738549"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73112781"
 ---
 # <a name="iclrdatatargetsettlsvalue-method"></a>ICLRDataTarget::SetTLSValue – metoda
-Nastaví hodnotu v místním úložišti vláken (TLS) ze zadaného vlákna v cílovém procesu. Tato metoda je volána službami common language runtime (CLR) přístup k datům.  
+Nastaví hodnotu v thread local Storage (TLS) zadaného vlákna v cílovém procesu. Tato metoda je volána službou Common Language Runtime (CLR) pro přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +37,25 @@ HRESULT SetTLSValue (
   
 ## <a name="parameters"></a>Parametry  
  `threadID`  
- [in] Operační systém identifikátor vlákna v cílovém procesu.  
+ pro Identifikátor operačního systému vlákna v cílovém procesu.  
   
  `index`  
- [in] Index umístění. Tato hodnota musí být platný index v místním úložišti ze zadaného vlákna.  
+ pro Index umístění. Tato hodnota musí být platný index v místním úložišti zadaného vlákna.  
   
  `value`  
- [in] A `CLRDATA_ADDRESS` hodnotu, která určuje hodnotu umístit do daného umístění protokolu TLS.  
+ pro Hodnota `CLRDATA_ADDRESS`, která určuje hodnotu, která má být umístěna v daném umístění protokolu TLS.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementováno tvůrci ladění aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

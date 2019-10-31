@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: db34d56fd4d074551ca4823681bc5d94e76df758
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fbff178efd4d0dff3593907b3d40e946be2ff6e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756615"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121295"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList – metoda
-Poskytuje seřazený seznam vláken, které jsou zařazeny do fronty na událost, která souvisí se zámkem monitorování.  
+Poskytuje uspořádaný seznam vláken, která jsou zařazená do fronty pro událost přidruženou ke zámku monitoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +35,10 @@ HRESULT GetMonitorEventWaitList (
   
 ## <a name="parameters"></a>Parametry  
  `ppThreadEnum`  
- [out] Icordebugthreadenum – enumerátor, který poskytuje seřazený seznam vláken.  
+ mimo Enumerátor ICorDebugThreadEnum, který poskytuje uspořádaný seznam vláken.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
@@ -50,24 +48,24 @@ HRESULT GetMonitorEventWaitList (
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- První vlákno v seznamu je první vlákno, které se vydal další volání <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Další vlákno v seznamu je vydána následující volání a tak dále.  
+ Prvním vláknem v seznamu je první vlákno, které je vydané při příštím volání <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Další vlákno v seznamu se uvolní při následujícím volání, a tak dále.  
   
- Pokud seznam není prázdný, tato metoda vrátí hodnotu S_OK. Pokud je seznam prázdný, vrátí metoda S_FALSE; v tomto případě je stále platné, výčtu, i když je prázdný.  
+ Pokud seznam není prázdný, vrátí tato metoda hodnotu S_OK. Pokud je seznam prázdný, vrátí metoda S_FALSE; v tomto případě je výčet stále platný, i když je prázdný.  
   
- V obou případech rozhraní výčtu je použitelné pouze po dobu trvání aktuálního stavu synchronizovaná. Však rozhraní vlákna distribuován z něj platí až do ukončení vlákna.  
+ V obou případech je rozhraní výčtu použitelné pouze pro dobu trvání aktuálního synchronizovaného stavu. Nicméně rozhraní vlákna, která jsou z něj, jsou platná až do ukončení vlákna.  
   
- Pokud `ppThreadEnum` není platný ukazatel, výsledek nedefinován.  
+ Pokud `ppThreadEnum` není platný ukazatel, výsledek není definován.  
   
- Pokud dojde k chybě, takže ji nelze určit, které případně vlákna čekají na monitorování, metoda vrátí HRESULT označující selhání.  
+ Pokud dojde k chybě, kterou nelze určit, který z nich, pokud nějaká existuje, čeká na monitorování, metoda vrátí hodnotu HRESULT, která označuje selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

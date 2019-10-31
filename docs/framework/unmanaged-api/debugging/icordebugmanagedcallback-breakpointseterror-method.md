@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f2b773a4-c4d0-429c-9717-51d6e2ed86af
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3ef4b284676608363281e04087f6435dcb1ef74
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dae04e1809c1bb3260461086a4953b8b4e5cce52
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759837"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122575"
 ---
 # <a name="icordebugmanagedcallbackbreakpointseterror-method"></a>ICorDebugManagedCallback::BreakpointSetError – metoda
-Upozorní ladicí program nemohl modul common language runtime přesně svázat zarážku, která byla nastavena před funkci just-in-time (JIT) zkompilována.  
+Oznamuje ladicímu programu, že modul CLR (Common Language Runtime) nedokázal přesně navazovat zarážku, která byla nastavena předtím, než byla funkce kompilována za běhu (just-in-time).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT BreakpointSetError (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje nevázaného zarážku.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující nevázanou zarážku.  
   
  `pThread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje nevázaného zarážku.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno obsahující nevázanou zarážku.  
   
  `pBreakpoint`  
- [in] Ukazatel na objekt ICorDebugBreakpoint představující odvázat zarážku.  
+ pro Ukazatel na objekt ICorDebugBreakpoint, který představuje nevázanou zarážku.  
   
  `dwError`  
- [in] Celé číslo, které označuje chybu.  
+ pro Celé číslo, které označuje chybu.  
   
 ## <a name="remarks"></a>Poznámky  
- Daném bude nikdy dosaženo zarážkou. Ladicí program by měl deaktivovat a znovu se připojit.  
+ Tato zarážka nebude nikdy dosaženo. Ladicí program by měl ho deaktivovat a znovu vytvořit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

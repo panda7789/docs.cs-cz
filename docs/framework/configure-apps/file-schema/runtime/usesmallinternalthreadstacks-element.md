@@ -5,21 +5,19 @@ helpviewer_keywords:
 - UseSmallInternalThreadStacks element
 - <UseSmallInternalThreadStacks> element
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 515ea076c5eaead50b41e45e415725d0439914bc
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 2fd776ce8605e6dcf288dcb3852ded16638a1873
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252210"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114926"
 ---
-# <a name="usesmallinternalthreadstacks-element"></a>\<UseSmallInternalThreadStacks – element >
+# <a name="usesmallinternalthreadstacks-element"></a>\<element > UseSmallInternalThreadStacks
 Požadavky, které modul CLR (Common Language Runtime) omezuje využití paměti tím, že při vytváření určitých vláken, která používá interně, nepoužijí výchozí velikost zásobníku pro tato vlákna, a to zadáním explicitní velikosti zásobníku.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,11 +32,11 @@ Požadavky, které modul CLR (Common Language Runtime) omezuje využití paměti
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda má být vyžádat, aby CLR používal explicitní velikosti zásobníku namísto výchozí velikosti zásobníku, když vytvoří určitá vlákna, která používá interně. Explicitní velikosti zásobníku jsou menší než výchozí velikost zásobníku 1 MB.|  
+|umožněn|Požadovaný atribut.<br /><br /> Určuje, zda má být vyžádat, aby CLR používal explicitní velikosti zásobníku namísto výchozí velikosti zásobníku, když vytvoří určitá vlákna, která používá interně. Explicitní velikosti zásobníku jsou menší než výchozí velikost zásobníku 1 MB.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |true|Požádejte o explicitní velikosti zásobníku.|  
 |false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro .NET Framework 4.|  

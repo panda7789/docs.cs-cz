@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a92fdf95-492b-49ae-a741-2186e5c1d7c5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c59ddec655f3127e8dab8d8c41543f03a896cf63
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 270360a8950197eca14e02a60554659e5ac7b91c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274038"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099081"
 ---
 # <a name="cor_heapobject-structure"></a>COR_HEAPOBJECT – struktura
 Poskytuje informace o objektu na spravované haldě.  
@@ -45,22 +43,22 @@ typedef struct _COR_HEAPOBJECT {
 |`type`|Token [COR_TYPEID](cor-typeid-structure.md) , který představuje typ objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_HEAPOBJECT`instance lze načíst vytvořením výčtu objektu rozhraní [ICorDebugHeapEnum –](icordebugheapenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeap –](icordebugprocess5-enumerateheap-method.md) .  
+ instance `COR_HEAPOBJECT` lze načíst vytvořením výčtu objektu rozhraní [ICorDebugHeapEnum –](icordebugheapenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeap –](icordebugprocess5-enumerateheap-method.md) .  
   
- `COR_HEAPOBJECT` Instance poskytuje informace buď o živém objektu na spravované haldě, nebo o objektu, který není rootem žádného objektu, ale ještě nebyl shromážděn systémem uvolňování paměti.  
+ Instance `COR_HEAPOBJECT` poskytuje informace buď o živém objektu na spravované haldě, nebo o objektu, který není rootem žádného objektu, ale ještě nebyl shromážděn systémem uvolňování paměti.  
   
- Pro lepší výkon `COR_HEAPOBJECT.address` `CORDB_ADDRESS` je pole hodnota, nikoli hodnota rozhraní ICorDebugValue, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugValue pro danou adresu objektu, můžete předat `CORDB_ADDRESS` hodnotu metodě [ICorDebugProcess5:: GetObject](icordebugprocess5-getobject-method.md) .  
+ Pro lepší výkon je pole `COR_HEAPOBJECT.address` `CORDB_ADDRESS` hodnota, nikoli hodnota rozhraní ICorDebugValue, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugValue pro danou adresu objektu, můžete předat `CORDB_ADDRESS` hodnotu metodě [ICorDebugProcess5:: GetObject](icordebugprocess5-getobject-method.md) .  
   
- Pro lepší výkon `COR_HEAPOBJECT.type` `COR_TYPEID` je pole hodnota, nikoli hodnota rozhraní ICorDebugType, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugType pro daný typ ID, můžete předat `COR_TYPEID` hodnotu metodě [ICorDebugProcess5:: GetTypeForTypeID –](icordebugprocess5-gettypefortypeid-method.md) .  
+ Pro lepší výkon je pole `COR_HEAPOBJECT.type` `COR_TYPEID` hodnota, nikoli hodnota rozhraní ICorDebugType, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugType pro daný typ ID, můžete předat `COR_TYPEID` hodnotu metodě [ICorDebugProcess5:: GetTypeForTypeID –](icordebugprocess5-gettypefortypeid-method.md) .  
   
- `COR_HEAPOBJECT` Struktura zahrnuje rozhraní COM s vypočítáným odkazem. Pokud nanačítáte `COR_HEAPOBJECT` instanci z čítače pomocí volání metody [ICorDebugHeapEnum –:: Next](icordebugheapenum-next-method.md) , je nutné odkaz vydat následně.  
+ Struktura `COR_HEAPOBJECT` zahrnuje rozhraní COM s vypočítáným odkazem. Pokud načtete instanci `COR_HEAPOBJECT` z čítače voláním metody [ICorDebugHeapEnum –:: Next](icordebugheapenum-next-method.md) , je nutné odkaz vydat následně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

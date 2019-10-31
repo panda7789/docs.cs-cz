@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 02c596d7-00b0-4e2c-856b-5425158fcefd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 535d94688d02a7315529d17fae555fba457bbb86
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2c9aa6792885c685195049948a540453b1f5235e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737870"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110313"
 ---
 # <a name="icordebugappdomaingetname-method"></a>ICorDebugAppDomain::GetName – metoda
 Získá název domény aplikace.  
@@ -40,22 +38,22 @@ HRESULT GetName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost `szName` pole. Tuto hodnotu nastavte na hodnotu nula, tato metoda uvést do režimu dotazu.  
+ pro Velikost pole `szName`. Nastavte tuto hodnotu na nula pro vložení této metody do režimu dotazu.  
   
  `pcchName`  
- [out] Ukazatel na velikost název nebo počet znaků ve skutečnosti vrátí v `szName`. V režimu dotazu, tato hodnota umožňuje volajícímu vědět, jak velkou vyrovnávací paměti k přidělení pro název.  
+ mimo Ukazatel na velikost názvu nebo počet znaků, které jsou ve skutečnosti vráceny v `szName`. V režimu dotazu tato hodnota umožňuje volajícímu zjistit, jak velký má vyrovnávací paměť přidělit pro název.  
   
  `szName`  
- [out] Pole uchovávající název domény aplikace.  
+ mimo Pole, ve kterém je uložen název domény aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program volá `GetName` jednou metodu k získání velikost vyrovnávací paměti, třeba název. Ladicí program přiděluje vyrovnávací paměti a potom volá metodu podruhé tak, aby vyplnil vyrovnávací paměti. První volání, získat její velikost názvu, se označuje jako *režim dotazů*.  
+ Ladicí program volá metodu `GetName` jednou, aby získala velikost vyrovnávací paměti potřebné pro název. Ladicí program přidělí vyrovnávací paměť a poté zavolá metodu za sekundu, aby vyplnila vyrovnávací paměť. První volání, pro získání velikosti názvu, je označováno jako *režim dotazu*.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

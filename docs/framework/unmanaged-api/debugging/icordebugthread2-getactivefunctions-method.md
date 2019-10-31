@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 27fae01a-ecec-423a-973e-24f8de55826c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fdf3998d7430348cb71af8e7dd75cf2203d380ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9b9a301714ea60b4e3220eb75721e56e39bd9659
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769030"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139931"
 ---
 # <a name="icordebugthread2getactivefunctions-method"></a>ICorDebugThread2::GetActiveFunctions – metoda
-Získá informace o funkci aktivní ve všech snímků toto vlákno.  
+Načte informace o aktivní funkci v každém z rámců tohoto vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +38,26 @@ HRESULT GetActiveFunctions (
   
 ## <a name="parameters"></a>Parametry  
  `cFunctions`  
- [in] Velikost `pFunctions` pole.  
+ pro Velikost pole `pFunctions`.  
   
  `pcFunctions`  
- [out] Ukazatel na počet objektů vrácených v `pFunctions` pole. Počet objektů vrácených bude rovnat počtu spravovaných rámců v zásobníku.  
+ mimo Ukazatel na počet objektů vrácených v poli `pFunctions`. Počet vrácených objektů bude roven počtu spravovaných snímků v zásobníku.  
   
  `pFunctions`  
- [out v] Pole objektů cor_active_function –, z nichž každý obsahuje informace o funkcích aktivní v rámcích toto vlákno.  
+ [in, out] Pole objektů COR_ACTIVE_FUNCTION, z nichž každá obsahuje informace o aktivních funkcích v rámečcích tohoto vlákna.  
   
- První prvek se použije pro než pro rámce a tak dále zpět do kořenového adresáře do zásobníku.  
+ První prvek bude použit pro listový rámec a tak dále zpět do kořenového adresáře zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `pFunctions` má hodnotu null na vstupu `GetActiveFunctions` vrátí počet funkcí, které jsou v zásobníku. To znamená pokud `pFunctions` má hodnotu null na vstupu `GetActiveFunctions` vrací hodnotu pouze v `pcFunctions`.  
+ Pokud je u vstupu `pFunctions` null, `GetActiveFunctions` vrátí pouze počet funkcí, které jsou v zásobníku. To znamená, že pokud `pFunctions` pro vstup hodnotu null, `GetActiveFunctions` vrátí hodnotu pouze v `pcFunctions`.  
   
- `GetActiveFunctions` Metody slouží jako optimalizace za získání stejných informací z rámců v zásobníku a obsahuje pouze rámce, které by měly objekt ICorDebugILFrame jejich úplné trasování zásobníku.  
+ Metoda `GetActiveFunctions` je určena jako optimalizace při získávání stejných informací z snímků v trasování zásobníku a zahrnuje pouze rámce, které by měly mít pro sebe objekt ICorDebugILFrame v plném trasování zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

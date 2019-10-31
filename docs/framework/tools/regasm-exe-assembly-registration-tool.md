@@ -7,14 +7,12 @@ helpviewer_keywords:
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4038f8e4a3c012fab9df6019b5f9f19375f61f2a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 45b4c6c08d3afb948444a8c97dc32bd41f2615ce
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044292"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104953"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
@@ -42,7 +40,7 @@ regasm assemblyFile [options]
 |**/registered odkazuje**|Určuje, že tento nástroj bude odkazovat pouze na knihovny typů, které již byly zaregistrovány.|
 |**/asmPath: adresář**|Určuje adresář obsahující odkazy na sestavení. Musí být použit s možností **/regfile** .|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
-|**/regfile** [ **:** *regFile*]|Generuje soubor .reg určený pro sestavení, která obsahují potřebné položky registru. Použití této možnosti nezmění registr. Tuto možnost nelze použít s možnostmi **/u** nebo **/TLB** .|
+|**/regfile** [ **:** *regfile*]|Generuje soubor .reg určený pro sestavení, která obsahují potřebné položky registru. Použití této možnosti nezmění registr. Tuto možnost nelze použít s možnostmi **/u** nebo **/TLB** .|
 |**/Silent** nebo **/s**|Potlačí zobrazování zpráv o úspěšném dokončení.|
 |**/TLB** [ **:** *typeLibFile*]|Ze zadaného sestavení vytvoří knihovnu typů obsahující definice dostupných typů definovaných v rámci sestavení.|
 |**/Unregister** nebo **/u**|Zruší registraci tříd, které se v *assemblyFile*nacházejí. Vynechání této možnosti způsobí, že nástroj Regasm.exe zaregistruje vytvořitelné třídy v rámci sestavení.|
@@ -78,7 +76,7 @@ Následující příkaz vygeneruje soubor `myTest.reg`, který obsahuje všechny
 regasm myTest.dll /regfile:myTest.reg
 ```
 
-Následující příkaz registruje všechny veřejné třídy obsažené v `myTest.dll`a generuje a zaregistruje knihovnu `myTest.tlb`typů, která obsahuje definice všech veřejných typů definovaných v `myTest.dll`.
+Následující příkaz registruje všechny veřejné třídy obsažené v `myTest.dll`a generuje a zaregistruje knihovnu typů `myTest.tlb`, která obsahuje definice všech veřejných typů definovaných v `myTest.dll`.
 
 ```console
 regasm myTest.dll /tlb:myTest.tlb

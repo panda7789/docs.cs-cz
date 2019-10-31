@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 988718c1-1a4a-40f2-a04c-7d67e5cfe1e2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7336f958019c2f696a9b1a26b075c076cfc84f5d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: feaf5bd25e276bb93c076f200912965c612af453
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953022"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139001"
 ---
 # <a name="icordebugstepperenum-interface"></a>ICorDebugStepperEnum – rozhraní
 Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.  
@@ -30,7 +28,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Získá zadaný počet `ICorDebugStepper` instancí z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Získá zadaný počet instancí `ICorDebugStepper` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -38,11 +36,11 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

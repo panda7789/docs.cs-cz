@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bc0fc18e31b89b22ffd30d99a8b079ed7b87fa1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1cd3c34fc292e4a050fa8a75078283e34425fc8f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752499"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139132"
 ---
-# <a name="stacktracesimplecontext-structure"></a>StackTrace_SimpleContext – struktura
-Poskytuje jednoduchý kontext, který jde použít místo úplné `CONTEXT` struktury.  
+# <a name="stacktrace_simplecontext-structure"></a>StackTrace_SimpleContext – struktura
+Poskytuje jednoduchý kontext, který lze použít místo úplné `CONTEXT` struktury.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,19 +40,19 @@ struct StackTrace_SimpleContext
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`StackOffset`|Ukazatel zásobníku a ukazatel zásobníku enter (ESP) na x86 platformy.|  
-|`FrameOffset`|Odsazení rámce nebo registru EBP na x86 platformy.|  
-|`InstructionOffset`|Ukazatele na instrukci nebo ukazatele na instrukci enter (EIP) na x86 platformy.|  
+|`StackOffset`|Ukazatel zásobníku nebo ukazatel na vložení zásobníku (ESP) na platformách x86.|  
+|`FrameOffset`|Posun snímku nebo EBP registr na platformách x86.|  
+|`InstructionOffset`|Ukazatel na instrukci nebo ukazatel na instrukci ENTER (EIP) na platformách x86.|  
   
 ## <a name="remarks"></a>Poznámky  
- Protože funkce trasování zásobníku je obvykle potřeba vrátit pouze adresy, odsazení rámce a adresy zásobníku, můžete volitelně použít `SimpleContext` struktura místo velké `CONTEXT` struktury.  
+ Vzhledem k tomu, že funkce trasování zásobníku obvykle potřebují vracet pouze adresu, posun snímku a adresu zásobníku, můžete místo velké `CONTEXT` struktury použít `SimpleContext` strukturu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** SOS_Stacktrace.h  
+ **Hlavička:** SOS_Stacktrace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

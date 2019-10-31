@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: c0774f70-5bed-45e8-9922-fdad778c4c33
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 39bc1316bb7d8e2aba3390499437aadf263dac07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 739b491d343c0eba76160c15719069ffae385f46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097978"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags – výčet
-Obsahuje hodnoty, které ovlivňují chování spravované kompilátor just-in-time (JIT).  
+Obsahuje hodnoty, které mají vliv na chování spravovaného kompilátoru JIT (just-in-time).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,18 +40,18 @@ typedef enum CorDebugJITCompilerFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CORDEBUG_JIT_DEFAULT`|Určuje, že kompilátor by měl sledovat kompilace data a umožňuje optimalizace.|  
-|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Určuje, že kompilátor by měl sledovat data kompilace, ale zakáže optimalizace.|  
-|`CORDEBUG_JIT_ENABLE_ENC`|Určuje, že kompilátor by měl sledovat data kompilace, zakáže optimalizace, a umožňuje upravit a pokračovat technologie.|  
+|`CORDEBUG_JIT_DEFAULT`|Určuje, že má kompilátor sledovat data kompilace a umožňuje optimalizace.|  
+|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Určuje, že má kompilátor sledovat data kompilace, ale zakáže optimalizace.|  
+|`CORDEBUG_JIT_ENABLE_ENC`|Určuje, že má kompilátor sledovat data kompilace, zakázat optimalizace a povolit technologie pro úpravy a pokračování.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

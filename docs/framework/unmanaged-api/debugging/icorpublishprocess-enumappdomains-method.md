@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7da621fc-e7d0-4c00-9439-5c93619d7414
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c614afee18824e1672b378dd468cb11c9c173d9f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aa76bf511ff1e1710a7ff86ad2ac97665969f2bf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764958"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140437"
 ---
 # <a name="icorpublishprocessenumappdomains-method"></a>ICorPublishProcess::EnumAppDomains – metoda
-Získá enumerátor pro domény aplikace v procesu, který se odkazuje v tomto [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
+Získá enumerátor pro domény aplikace v procesu, na který odkazuje tento [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +35,21 @@ HRESULT EnumAppDomains (
   
 ## <a name="parameters"></a>Parametry  
  `ppEnum`  
- [out] Ukazatel na adresu [icorpublishappdomainenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md) instanci, která umožňuje iteraci prostřednictvím kolekce aplikační domény v tomto procesu.  
+ mimo Ukazatel na adresu instance [ICorPublishAppDomainEnum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md) , která umožňuje iteraci v kolekci aplikačních domén v tomto procesu.  
   
 ## <a name="remarks"></a>Poznámky  
- Seznam domén aplikace je založena na snímek domény aplikace, které existují při `EnumAppDomains` metoda je volána. Tato metoda může být volána více než jednou. Chcete-li vytvořit nový seznam aktuální. Existující seznamy tyto zásady neovlivní z následných volání této metody.  
+ Seznam domén aplikace je založen na snímku domén aplikace, které existují při volání metody `EnumAppDomains`. Tato metoda může být volána více než jednou pro vytvoření nového seznamu v aktuálním stavu. Existující seznamy nebudou ovlivněny následnými voláními této metody.  
   
- Pokud proces byl ukončen, `EnumAppDomains` dojde k selhání s hodnotou HRESULT CORDBG_E_PROCESS_TERMINATED.  
+ Pokud byl proces ukončen, `EnumAppDomains` se nezdaří s hodnotou HRESULT CORDBG_E_PROCESS_TERMINATED.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

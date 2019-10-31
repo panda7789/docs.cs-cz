@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7ac3cba5-c282-402e-b7ef-b46634f5176b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 356f7ec9c50ce511883cbf0f5fbcb729493c92af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3d45caae56403d77776f1a8adbb5fb9c368ff105
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737580"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088495"
 ---
 # <a name="icordebugarrayvaluegetelement-method"></a>ICorDebugArrayValue::GetElement – metoda
-Získá hodnotu prvku daného pole.  
+Získá hodnotu daného elementu pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT GetElement (
   
 ## <a name="parameters"></a>Parametry  
  `cdim`  
- [in] Počet dimenzí tohoto `ICorDebugArrayValue` objektu.  
+ pro Počet dimenzí tohoto objektu `ICorDebugArrayValue`.  
   
- Tato hodnota je také velikost `indices` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.  
+ Tato hodnota je také velikost pole `indices`, protože jeho velikost je rovna počtu rozměrů `ICorDebugArrayValue` objektu.  
   
  `indices`  
- [in] Pole hodnot indexu, z nichž každý určuje pozici v rámci dimenze sady `ICorDebugArrayValue` objektu.  
+ pro Pole hodnot indexu, z nichž každý Určuje pozici v rámci dimenze objektu `ICorDebugArrayValue`.  
   
  Tato hodnota nesmí být null.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu zadaného prvku.  
+ mimo Ukazatel na adresu objektu ICorDebugValue, který představuje hodnotu zadaného elementu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

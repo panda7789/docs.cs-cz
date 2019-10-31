@@ -9,14 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd2558d854986d3dc541a9adf3c15abd553ce2ea
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e339767b981cea80b1b804db7360961dc42f2102
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039572"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126312"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 

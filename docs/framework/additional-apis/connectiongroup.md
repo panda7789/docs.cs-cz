@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 25c08217-fdeb-44b9-9cd6-1b4955d6e602
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1064c15fc6fc1416f9c2b3a7aac51ef30d78ca7a
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 5a9041ab75836b4239d492987e94c9104133e9bf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300923"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120039"
 ---
 # <a name="connectiongroup-class"></a>ConnectionGroup – třída
 
-`ConnectionGroup` Seznam připojení v rámci skupiny třídy <xref:System.Net.ServicePoint> kontextu a je používán pro zachování kontextu pro síťové prostředky (například servery proxy a samostatné klientů).
+Třída `ConnectionGroup` seskupuje seznam připojení v rámci <xref:System.Net.ServicePoint>ho kontextu a slouží k udržení kontextu síťových prostředků (například proxy a samostatných klientů).
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ internal class ConnectionGroup
 ```
 
 > [!WARNING]
-> `ConnectionGroup` Třídy je interní a není určena pro použití přímo v kódu.
+> Třída `ConnectionGroup` je interní a není určena pro použití přímo v kódu.
 > 
-> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: e9226e6e-ca2c-428e-bb38-0c099210f507
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c48c222a34e2e78f29c33e49da331d97d409bae1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6cc3ec1c802c28b74248380aa7f686e675a92f1d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949749"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088845"
 ---
 # <a name="icordebugappdomainenum-interface"></a>ICorDebugAppDomainEnum – rozhraní
 
-Poskytuje metodu, která vrací zadaný `ICorDebugAppDomainEnum` počet hodnot od dalšího umístění ve výčtu. `Next` Toto rozhraní je podtřídou třídy "ICorDebugEnum".  
+Poskytuje metodu `Next`, která vrací zadaný počet `ICorDebugAppDomainEnum` hodnot od dalšího umístění ve výčtu. Toto rozhraní je podtřídou třídy "ICorDebugEnum".  
   
 ## <a name="methods"></a>Metody  
   
@@ -39,11 +37,11 @@ Poskytuje metodu, která vrací zadaný `ICorDebugAppDomainEnum` počet hodnot o
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 091c5f32-c160-49e3-a75f-4692e084c8e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9dbb655d6ed0b9bd88c5eedf61a191401a805fb3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fed643ae52f50b1b8cd134880c644c8941da6f56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738754"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122878"
 ---
 # <a name="iclrdatatargetgetimagebase-method"></a>ICLRDataTarget::GetImageBase – metoda
-Získá adresu základní paměti zadané bitové kopie.  
+Získá základní adresu paměti určeného obrázku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT GetImageBase (
   
 ## <a name="parameters"></a>Parametry  
  `imagePath`  
- [in] Název souboru obrázku, včetně jeho cesty.  
+ pro Název souboru obrázku, včetně jeho cesty  
   
  `baseAddress`  
- [out] Ukazatel na CLRDATA_ADDRESS, která ukládá adresu základní Image.  
+ mimo Ukazatel na CLRDATA_ADDRESS, který ukládá základní adresu obrázku.  
   
 ## <a name="remarks"></a>Poznámky  
- Název souboru obrázku může nebo nemusí mít cestu. Pokud je zadána cesta, odpovídající se provádí na celou cestu. v opačném případě odpovídající se provádí pouze na název souboru.  
+ Název souboru obrázku může nebo nemusí mít cestu. Je-li zadána cesta, je shoda provedena na celé cestě; v opačném případě se shoda provede pouze s názvem souboru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

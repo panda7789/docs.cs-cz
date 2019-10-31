@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 794c6f8e-ed58-416b-b756-e864f2c958f7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dc5bed553ac54eb708beae23f5c29cbedcb2b4e0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: be488ebe663169cabc5b569335dfc784fdf30556
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749061"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102697"
 ---
 # <a name="iobjecthandleunwrap-method"></a>IObjectHandle::Unwrap – metoda
-Rozbalí objekt zařazování podle hodnot z dereference.  
+Rozbalí objekt zařazování podle hodnoty z indirekce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT Unwrap (
   
 ## <a name="parameters"></a>Parametry  
  `ppv`  
- [out] Ukazatel na objekt k rozbalení.  
+ mimo Ukazatel na objekt, který má být zabalen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

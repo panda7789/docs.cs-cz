@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: 6325a782-6862-4346-8e20-d922ca246169
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2e59ec88ea001640ba0dc3e923fa62a064a2d007
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d9ae66b7c77a0d3482b7c68a824a8a148ba2595
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752483"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139157"
 ---
 # <a name="shutdowndbgtransportmanager-function"></a>ShutdownDbgTransportManager – funkce
-Správce přenosu pro připojení k vzdálené cílový počítač vypne.  
+Ukončí Správce přenosů pro připojení ke vzdálenému cílovému počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,10 +33,10 @@ void InitDbgTransportManager ();
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

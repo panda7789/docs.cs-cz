@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f15b5b78-94f4-4eb9-b3b3-a621272f357c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e4434f5d0eaa45c9cfcbadb20b29564f0643a2dc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 770a9280d27c84b950e00e71328c9b28e61c9e7c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754445"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084812"
 ---
 # <a name="icordebugeval2newparameterizedobjectnoconstructor-method"></a>ICorDebugEval2::NewParameterizedObjectNoConstructor – metoda
-Vytvoří nový objekt typ s parametry ze zadané třídy bez pokusu o volání metody konstruktoru.  
+Vytvoří instanci nového parametrizovaného typu objektu zadané třídy bez pokusu o volání metody konstruktoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT NewParameterizedObjectNoConstructor (
   
 ## <a name="parameters"></a>Parametry  
  `pClass`  
- [in] Ukazatel na objekt ICorDebugClass, který představuje třídu objektu, který má být vytvořena.  
+ pro Ukazatel na objekt ICorDebugClass, který představuje třídu objektu, který má být vytvořen.  
   
  `nTypeArgs`  
- [in] Byl předán počet argumentů typu.  
+ pro Počet předaných argumentů typu.  
   
  `ppTypeArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument typu pro objekt, který je vytvořena instance.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje argument typu pro objekt, který je právě vytvořen.  
   
 ## <a name="remarks"></a>Poznámky  
- `NewParameterizedObjectNoConstructor` Metoda selže, pokud nesprávný počet argumentů typu nebo jsou předány nesprávné typy argumentů typu.  
+ Metoda `NewParameterizedObjectNoConstructor` nebude úspěšná, pokud je předán nesprávný počet argumentů typu nebo nesprávné typy argumentů typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

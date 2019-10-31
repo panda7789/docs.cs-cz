@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ae668a40ba1510e0e3d4f509643022ebe822a4f0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 69288e995ec789091bf089368cd9a60f003df86e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738938"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122978"
 ---
 # <a name="enumerateclrs-function"></a>EnumerateCLRs – funkce
-Poskytuje mechanismus pro vytvoření výčtu CLRs v procesu.  
+Poskytuje mechanismus pro vytváření výčtu CLRs v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,44 +39,44 @@ HRESULT EnumerateCLRs (
   
 ## <a name="parameters"></a>Parametry  
  `debuggeePID`  
- [in] Zpracovat identifikátor procesu, ze kterého bude načten CLRs výčtu.  
+ pro Identifikátor procesu, ze kterého se má vyčíslit načtené CLRs  
   
  `ppHandleArrayOut`  
- [out] Ukazatel na pole obsahující obslužné rutiny událostí, které se používají k pokračování spouštění modulu CLR. Každý popisovač pole nemusí být platný. Pokud platné, popisovač je má být použit jako událost pokračovat spuštění pro odpovídající modul runtime umístěný ve stejné index `ppStringArrayOut`.  
+ mimo Ukazatel na pole obsahující obslužné rutiny událostí, které se používají k pokračování spuštění modulu CLR. Není zaručeno, že každý popisovač v poli je platný. Je-li tento postup platný, je třeba použít popisovač jako událost pokračování po spuštění pro odpovídající modul runtime umístěný ve stejném indexu `ppStringArrayOut`.  
   
  `ppStringArrayOut`  
- [out] Ukazatel na pole řetězců, které určují úplné cesty k CLRs načtené v procesu.  
+ mimo Ukazatel na pole řetězců, které určují úplné cesty pro CLRs načtené v procesu.  
   
  `pdwArrayLengthOut`  
- [out] Ukazatel na DWORD, který obsahuje délku stejně velké `ppHandleArrayOut` a `pdwArrayLengthOut`.  
+ mimo Ukazatel na DWORD, který obsahuje délku rovnoměrné velikosti `ppHandleArrayOut` a `pdwArrayLengthOut`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěšně bylo zjištěno číslo CLRs v procesu a odpovídající popisovač a pole cesty byly správně vyplněné.  
+ Počet CLRs v procesu byl úspěšně zjištěn a odpovídající pole popisovače a cesty byly správně vyplněny.  
   
  E_INVALIDARG  
- Buď `ppHandleArrayOut` nebo `ppStringArrayOut` má hodnotu null, nebo `pdwArrayLengthOut` má hodnotu null.  
+ Buď je `ppHandleArrayOut` nebo `ppStringArrayOut` null, nebo je `pdwArrayLengthOut` null.  
   
  E_OUTOFMEMORY  
- Funkce se nemůže přidělit dostatek paměti pro popisovač a cesta pole.  
+ Funkce nemůže přidělit dostatek paměti pro pole popisovač a cesta.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Nepovedlo se vytvořit výčet načíst CLRs.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Nelze vytvořit výčet načtených CLRs.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro cílový proces, který je identifikován podle `debuggeePID`, funkce vrátí pole cest, `ppStringArrayOut`do CLRs načtené v procesu; pole obslužné rutiny událostí, `ppHandleArrayOut`, který může obsahovat pokračovat spouštěcí událost pro modul CLR ve stejném indexu; a Velikost pole, `pdwArrayLengthOut`, která určuje počet CLRs, které jsou načteny.  
+ Pro cílový proces, který je identifikován `debuggeePID`, funkce vrátí pole cest, `ppStringArrayOut`, na CLRs načtený v procesu; pole obslužných rutin událostí, `ppHandleArrayOut`, které mohou obsahovat událost pokračování-spuštění pro modul CLR ve stejném indexu; a velikost polí `pdwArrayLengthOut`, které určují počet načtených CLRs.  
   
- V operačním systému Windows `debuggeePID` mapuje na operační systém zpracovávat identifikátor.  
+ V operačním systému Windows `debuggeePID` mapuje identifikátor procesu operačního systému.  
   
- Paměť pro `ppHandleArrayOut` a `ppStringArrayOut` přidělují touto funkcí. K uvolnění paměti přidělené, musí volat [closeclrenumeration – funkce](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md).  
+ Tato funkce přiděluje paměť pro `ppHandleArrayOut` a `ppStringArrayOut`. Chcete-li uvolnit přidělenou paměť, je nutné volat [funkci CloseCLREnumeration –](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md).  
   
- Tuto funkci lze volat s oba parametry pole nastavena na hodnotu null, aby mohla vrátit počet CLRs v cílovém procesu. Z tohoto počtu může volající odvodit velikost vyrovnávací paměti, která bude vytvořena: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
+ Tuto funkci lze volat s parametrem pole nastaveným na hodnotu null, aby bylo možné vrátit počet CLRs v cílovém procesu. Od tohoto počtu může volající odvodit velikost vyrovnávací paměti, která se vytvoří: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** dbgshim.h  
+ **Záhlaví:** dbgshim. h  
   
- **Knihovna:** dbgshim.dll  
+ **Knihovna:** dbgshim. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

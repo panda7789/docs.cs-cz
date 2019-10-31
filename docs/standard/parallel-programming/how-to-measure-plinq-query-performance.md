@@ -8,25 +8,23 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to measure performance
 ms.assetid: 491ba43b-2c10-473d-9aab-e2cb96446711
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dd9e3a0ead62450e87225212f4fc6ecec6ec9489
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91b6165be2f4f464626fb25f7152de68de9d86e8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941983"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124997"
 ---
 # <a name="how-to-measure-plinq-query-performance"></a>Postupy: Měření výkonu dotazu PLINQ
-Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Stopwatch> třídy k měření čas potřebný k provedení PLINQ dotazu.  
+Tento příklad ukazuje, jak použít třídu <xref:System.Diagnostics.Stopwatch> k měření doby potřebné k provedení dotazu PLINQ.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu prázdný `foreach` smyčky (`For Each` v jazyce Visual Basic) k měření čas potřebný pro dotaz můžete spustit. V reálné kód smyčky obvykle obsahuje další kroky, které aplikacím dodávají doba provádění dotazu na celkový počet. Všimněte si, že je stopky spustit, až bude vždy před provedením smyčky, vzhledem k tomu, že začne provádění dotazu. Pokud budete potřebovat další jemné měření, můžete použít `ElapsedTicks` vlastnosti namísto `ElapsedMilliseconds`.  
+ V tomto příkladu je použita prázdná smyčka `foreach` (`For Each` v Visual Basic) pro měření doby potřebné k provedení dotazu. Ve skutečném kódu smyčka obvykle obsahuje další kroky zpracování, které se přidávají do celkové doby provádění dotazu. Všimněte si, že Stopwatch není spuštěn, dokud není těsně před smyčkou, protože to je, když je zahájeno provádění dotazu. Pokud potřebujete přesnější měření, můžete místo `ElapsedMilliseconds`použít vlastnost `ElapsedTicks`.  
   
  [!code-csharp[PLINQ#19](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/measure2.cs#19)]
  [!code-vb[PLINQ#19](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/measure2.vb#19)]  
   
- Celkové doby provádění je užitečné metriky, když jsou experimentování s implementacemi dotazu, ale to není vždy poskytují kompletní představu. Chcete-li získat podrobnější a bohatší zobrazení interakce vláken dotazů mezi sebou a s ostatními spuštěné procesy, použijte Vizualizátor souběžnosti. Další informace najdete v tématu [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer).  
+ Celková doba spuštění je užitečnou metrikou při experimentování s implementacemi dotazů, ale nikdy neříká celému článku. Chcete-li získat hlubší a širší pohled na interakci s vlákny dotazů mezi sebou a s jinými běžícími procesy, použijte Vizualizátor souběžnosti. Další informace najdete v tématu [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer).  
   
 ## <a name="see-also"></a>Viz také:
 

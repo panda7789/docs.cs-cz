@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4c6f4f6e-52cc-402e-881b-7b8526544c90
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e8192bd7ccaebab78158f11adb79509031132ecd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5fb4a8a508cde4455bbee8c08432d3549e3fac43
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937016"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122760"
 ---
 # <a name="icordebugbreakpointenum-interface"></a>ICorDebugBreakpointEnum – rozhraní
 
@@ -31,7 +29,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugBreakpoint
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-next-method.md)|Získá zadaný počet `ICorDebugBreakpoint` instancí z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-next-method.md)|Získá zadaný počet instancí `ICorDebugBreakpoint` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -39,11 +37,11 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugBreakpoint
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

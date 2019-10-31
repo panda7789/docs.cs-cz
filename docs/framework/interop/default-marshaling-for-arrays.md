@@ -8,14 +8,12 @@ helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96300808ba3024a138678494200b10ef722c6fd9
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 8505f4c742fb002be249ab069708f7f768c672df
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894230"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123580"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V aplikaci, která se skládá výhradně ze spravovaného kódu, modul common language runtime předá typy polí jako vstupně-výstupní parametry. Naproti tomu zařazovací modul Interop předá pole jako parametry ve výchozím nastavení.  
@@ -25,17 +23,17 @@ V aplikaci, která se skládá výhradně ze spravovaného kódu, modul common l
  Pole jsou složitá podle povahy a rozdíly mezi spravovanými a nespravovanými poli opravňují více informací než jiné nepřenositelné typy.  
   
 ## <a name="managed-arrays"></a>Spravovaná pole  
- Typy spravovaných polí se mohou lišit. <xref:System.Array?displayProperty=nameWithType> třída je však základní třídou všech typů polí. Třída **System. Array** má vlastnosti pro určení pořadí, délky a dolních a horních mezí pole a také metod pro přístup, řazení, hledání, kopírování a vytváření polí.  
+ Typy spravovaných polí se mohou lišit. Třída <xref:System.Array?displayProperty=nameWithType> je však základní třídou všech typů polí. Třída **System. Array** má vlastnosti pro určení pořadí, délky a dolních a horních mezí pole a také metod pro přístup, řazení, hledání, kopírování a vytváření polí.  
   
  Tyto typy polí jsou dynamické a nemají odpovídající statický typ definovaný v knihovně základních tříd. Je vhodné si představit každou kombinaci typu prvku a seřadit jako odlišný typ pole. Proto jednorozměrné pole celých čísel je jiného typu než jednorozměrné pole typu Double. Podobně dvourozměrné pole celých čísel je jiné než jednorozměrné pole celých čísel. Hranice pole se při porovnávání typů neberou v potaz.  
   
  Jak ukazuje následující tabulka, jakákoli instance spravovaného pole musí být konkrétního typu prvku, pořadí a dolní mez.  
   
-|Typ spravovaného pole|Typ elementu|pořadí|Dolní mez|Zápis signatury|  
+|Typ spravovaného pole|Typ elementu|Pořadí|Dolní mez|Zápis signatury|  
 |------------------------|------------------|----------|-----------------|------------------------|  
 |**ELEMENT_TYPE_ARRAY**|Zadáno podle typu.|Určeno podle pořadí.|Volitelně určené hranicemi.|*typ* **[** *n*,*m* **]**|  
-|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array**|  
-|**ELEMENT_TYPE_SZARRAY**|Zadáno podle typu.|1|0|*typ* **[** *n* **]**|  
+|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System. Array**|  
+|**ELEMENT_TYPE_SZARRAY**|Zadáno podle typu.|první|0,8|*typ* **[** *n* **]**|  
   
 ## <a name="unmanaged-arrays"></a>Nespravovaná pole  
  Nespravovaná pole jsou buď bezpečná pole ve stylu COM, nebo pole ve stylu jazyka C s pevnou nebo proměnnou délkou. Bezpečná pole jsou samy popisující pole, která přenesou typ, pořadí a meze přidružených dat pole. Pole stylu C jsou jednorozměrná typová pole s pevně nastavenou dolní mezí 0. Zařazovací služba má omezené podpory pro oba typy polí.  
@@ -46,12 +44,12 @@ V aplikaci, která se skládá výhradně ze spravovaného kódu, modul common l
 |Nespravovaný typ|Importovaný typ|  
 |--------------------|-------------------|  
 |**SAFEARRAY (** *typ* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Rank = 1, dolní mez = 0. Velikost je známá pouze v případě, že je k dispozici ve spravovaném podpisu. Bezpečná pole, která nejsou pořadí = 1 nebo dolní mez = 0, nelze zařadit jako **SZARRAY**.|  
-|*Typ* **]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Rank = 1, dolní mez = 0. Velikost je známá pouze v případě, že je k dispozici ve spravovaném podpisu.|  
+|*Typ*  **[]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Rank = 1, dolní mez = 0. Velikost je známá pouze v případě, že je k dispozici ve spravovaném podpisu.|  
   
 ### <a name="safe-arrays"></a>Bezpečná pole  
- Když je bezpečné pole importováno z knihovny typů do sestavení .NET, pole je převedeno na jednorozměrné pole známého typu (například **int**). Stejná pravidla převodu typů, která platí pro parametry, platí také pro prvky pole. Například bezpečné pole typů **BSTR** se stávají spravovaným polem řetězců a bezpečné pole variant se stávají spravovaným polem objektů. Typ elementu **SAFEARRAY** je zachycen z knihovny typů a uložen v <xref:System.Runtime.InteropServices.UnmanagedType> hodnotě **SAFEARRAY** výčtu.  
+ Když je bezpečné pole importováno z knihovny typů do sestavení .NET, pole je převedeno na jednorozměrné pole známého typu (například **int**). Stejná pravidla převodu typů, která platí pro parametry, platí také pro prvky pole. Například bezpečné pole typů **BSTR** se stávají spravovaným polem řetězců a bezpečné pole variant se stávají spravovaným polem objektů. Typ elementu **SAFEARRAY** je zachycen z knihovny typů a uložen v hodnotě **SAFEARRAY** výčtu <xref:System.Runtime.InteropServices.UnmanagedType>.  
   
- Vzhledem k tomu, že pořadí a meze bezpečného pole nelze určit z knihovny typů, předpokládá se, že pořadí je rovno 1 a dolní mez je rovna 0. Pořadí a meze musí být definovány ve spravovaném podpisu vytvořeném pomocí nástroje pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md). Pokud pořadí předané metodě v době běhu se liší, <xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> je vyvolána. Pokud se typ pole předaného v době běhu liší, <xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> je vyvolána. Následující příklad zobrazuje bezpečná pole ve spravovaném a nespravovaném kódu.  
+ Vzhledem k tomu, že pořadí a meze bezpečného pole nelze určit z knihovny typů, předpokládá se, že pořadí je rovno 1 a dolní mez je rovna 0. Pořadí a meze musí být definovány ve spravovaném podpisu vytvořeném pomocí nástroje pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md). Pokud pořadí předané metodě v době běhu se liší, je vyvolána <xref:System.Runtime.InteropServices.SafeArrayRankMismatchException>. Pokud se typ pole předaného v době běhu liší, je vyvolána <xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException>. Následující příklad zobrazuje bezpečná pole ve spravovaném a nespravovaném kódu.  
   
  **Nespravovaný podpis**  
   
@@ -80,12 +78,12 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- Vícerozměrné nebo nenulové bezpečné pole s vazbou lze zařadit do spravovaného kódu, je-li signatura metody vytvořená pomocí nástroje Tlbimp. exe změněna tak, aby označovala typ prvku **ELEMENT_TYPE_ARRAY** namísto **ELEMENT_TYPE_SZARRAY**. Alternativně můžete použít přepínač **/sysarray** s nástrojem Tlbimp. exe pro import všech polí jako <xref:System.Array?displayProperty=nameWithType> objektů. V případech, kdy je předávané pole známo multidimenzionální, můžete upravit kód jazyka MSIL (Microsoft Intermediate Language) vytvořený pomocí nástroje Tlbimp. exe a poté jej znovu zkompilovat. Podrobnosti o tom, jak upravit kód jazyka MSIL, najdete v tématu [přizpůsobení obálek za běhu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)), které lze volat.  
+ Vícerozměrné nebo nenulové bezpečné pole s vazbou lze zařadit do spravovaného kódu, je-li signatura metody vytvořená pomocí nástroje Tlbimp. exe změněna tak, aby označovala typ prvku **ELEMENT_TYPE_ARRAY** namísto **ELEMENT_TYPE_SZARRAY**. Alternativně můžete použít přepínač **/sysarray** s nástrojem Tlbimp. exe pro import všech polí jako objektů <xref:System.Array?displayProperty=nameWithType>. V případech, kdy je předávané pole známo multidimenzionální, můžete upravit kód jazyka MSIL (Microsoft Intermediate Language) vytvořený pomocí nástroje Tlbimp. exe a poté jej znovu zkompilovat. Podrobnosti o tom, jak upravit kód jazyka MSIL, najdete v tématu [přizpůsobení obálek za běhu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)), které lze volat.  
   
 ### <a name="c-style-arrays"></a>Pole stylu C  
  Když je pole ve stylu jazyka C importováno z knihovny typů do sestavení .NET, pole je převedeno na **ELEMENT_TYPE_SZARRAY**.  
   
- Typ prvku pole je určen z knihovny typů a zůstane během importu. Stejná pravidla převodu, která platí pro parametry, platí také pro prvky pole. Například pole typů **typem LPStr** se stávají polem typů **řetězců** . Nástroj Tlbimp. exe zachytí typ elementu pole a použije <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut na parametr.  
+ Typ prvku pole je určen z knihovny typů a zůstane během importu. Stejná pravidla převodu, která platí pro parametry, platí také pro prvky pole. Například pole typů **typem LPStr** se stávají polem typů **řetězců** . Nástroj Tlbimp. exe zachytí typ prvku pole a použije atribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pro parametr.  
   
  Předpokládá se, že se rozměr pole rovná 1. Pokud je pořadí větší než 1, pole je zařazeno jako jednorozměrné pole v pořadí podle sloupců. Dolní mez se vždycky rovná 0.  
   
@@ -184,8 +182,8 @@ void New3(ref String ar);
   
 |Typ spravovaného pole|Exportováno jako|  
 |------------------------|-----------------|  
-|**ELEMENT_TYPE_SZARRAY** **\<** *typ* **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **. SafeArray (** *typ* **)**<br /><br /> **UnmanagedType. typy LPArray**<br /><br /> V signatuře je uveden typ. Pořadí je vždy 1, dolní hranice je vždy 0. Velikost je vždy známá v době běhu.|  
-|**ELEMENT_TYPE_ARRAY** **\<** *pořadí* *typů* **[meze\<** ] **>** **\<** **>** **>**|**UnmanagedType. SAFEARRAY (** *typ* **)**<br /><br /> **UnmanagedType. typy LPArray**<br /><br /> Typ, rozsah, meze jsou k dispozici v signatuře. Velikost je vždy známá v době běhu.|  
+|*Typ* **\<** **ELEMENT_TYPE_SZARRAY** **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **. SafeArray (** *typ* **)**<br /><br /> **UnmanagedType. typy LPArray**<br /><br /> V signatuře je uveden typ. Pořadí je vždy 1, dolní hranice je vždy 0. Velikost je vždy známá v době běhu.|  
+|**ELEMENT_TYPE_ARRAY** **\<** *typ* **>** **\<** *pořadí* **>** [ **\<** *hranice* **>** ]|**UnmanagedType. SAFEARRAY (** *typ* **)**<br /><br /> **UnmanagedType. typy LPArray**<br /><br /> Typ, rozsah, meze jsou k dispozici v signatuře. Velikost je vždy známá v době běhu.|  
 |**ELEMENT_TYPE_CLASS** **\<** <xref:System.Array?displayProperty=nameWithType> **>**|**UT_Interface**<br /><br /> **UnmanagedType. SAFEARRAY (** *typ* **)**<br /><br /> Typ, pořadí, meze a velikost jsou vždy známy v době běhu.|  
   
  V automatizaci OLE existuje omezení související s poli struktur, která obsahují typem LPStr nebo LPWSTR.  Proto musí být pole **řetězců** zařazena jako **UnmanagedType. BSTR**. V opačném případě bude vyvolána výjimka.  
@@ -214,7 +212,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Rozsah bezpečných polí je vždycky 1 a dolní hranice je vždycky 0. Velikost je určena v době běhu podle velikosti předávaného spravovaného pole.  
   
- Pole lze také zařadit jako pole ve stylu jazyka C pomocí <xref:System.Runtime.InteropServices.MarshalAsAttribute> atributu. Příklad:  
+ Pole lze také zařadit jako pole ve stylu jazyka C pomocí atributu <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Příklad:  
   
 #### <a name="managed-signature"></a>Spravovaný podpis  
   
@@ -272,7 +270,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Pořadí, velikost a hranice bezpečných polí jsou určeny za běhu podle vlastností spravovaného pole.  
   
- Pole lze také zařadit jako pole <xref:System.Runtime.InteropServices.MarshalAsAttribute> ve stylu jazyka C použitím atributu. Příklad:  
+ Pole lze také zařadit jako pole ve stylu jazyka C použitím atributu <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Příklad:  
   
 #### <a name="managed-signature"></a>Spravovaný podpis  
   
@@ -312,7 +310,7 @@ void New(long [][][] ar );
 ```  
   
 ### <a name="element_type_class-systemarray"></a>ELEMENT_TYPE_CLASS \<System. Array >  
- Je-li metoda, <xref:System.Array?displayProperty=nameWithType> která obsahuje parametr, exportována ze sestavení .NET do knihovny typů, je parametr pole převeden na rozhraní **_array** . Obsah spravovaného pole je přístupný pouze prostřednictvím metod a vlastností rozhraní **_array** . **System. Array** se dá také zařadit jako **SAFEARRAY** pomocí <xref:System.Runtime.InteropServices.MarshalAsAttribute> atributu. Při zařazování jako bezpečné pole jsou prvky pole zařazeny jako varianty. Příklad:  
+ Je-li metoda, která obsahuje parametr <xref:System.Array?displayProperty=nameWithType>, exportována ze sestavení .NET do knihovny typů, je parametr pole převeden na rozhraní **_array** . Obsah spravovaného pole je přístupný pouze prostřednictvím metod a vlastností rozhraní **_array** . **System. Array** se dá také zařadit jako **SAFEARRAY** pomocí atributu <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Při zařazování jako bezpečné pole jsou prvky pole zařazeny jako varianty. Příklad:  
   
 #### <a name="managed-signature"></a>Spravovaný podpis  
   
@@ -334,7 +332,7 @@ HRESULT New([in] SAFEARRAY(VARIANT) ar);
 ```  
   
 ### <a name="arrays-within-structures"></a>Pole ve strukturách  
- Nespravované struktury mohou obsahovat vložená pole. Ve výchozím nastavení jsou tato vložená pole pole zařazena jako SAFEARRAY. V následujícím příkladu `s1` je vloženo pole, které je přiděleno přímo v rámci struktury samotné.  
+ Nespravované struktury mohou obsahovat vložená pole. Ve výchozím nastavení jsou tato vložená pole pole zařazena jako SAFEARRAY. V následujícím příkladu je `s1` vložené pole, které je přiděleno přímo v rámci struktury samotné.  
   
 #### <a name="unmanaged-representation"></a>Nespravované reprezentace  
   
@@ -344,7 +342,7 @@ struct MyStruct {
 }  
 ```  
   
- Pole lze zařadit jako <xref:System.Runtime.InteropServices.UnmanagedType>, což vyžaduje, abyste <xref:System.Runtime.InteropServices.MarshalAsAttribute> nastavili pole. Velikost lze nastavit pouze jako konstantu. Následující kód ukazuje odpovídající spravovanou definici `MyStruct`.  
+ Pole lze zařadit jako <xref:System.Runtime.InteropServices.UnmanagedType>, což vyžaduje, abyste nastavili pole <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Velikost lze nastavit pouze jako konstantu. Následující kód ukazuje odpovídající spravovanou definici `MyStruct`.  
   
 ```vb  
 Public Structure <StructLayout(LayoutKind.Sequential)> MyStruct  

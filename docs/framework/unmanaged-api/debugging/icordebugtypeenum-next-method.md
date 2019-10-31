@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0fdeba3-c195-4ece-8caf-79b1f40025d2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5efc83152763c5ef8b65a1fad33460c5354c0dc5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fc205e347fc39fd486d9b8a3fb256a5d29a980a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772427"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110066"
 ---
 # <a name="icordebugtypeenumnext-method"></a>ICorDebugTypeEnum::Next – metoda
-Získá počet instancí "ICorDebugType" určené `celt` z výčtu od aktuální pozice.  
+Získá počet instancí "ICorDebugType" určených `celt` z výčtu, počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet `ICorDebugType` instancí, který se má načíst.  
+ pro Počet instancí `ICorDebugType`, které mají být načteny.  
   
  `values`  
- [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugType` objektu.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugType`.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugType` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugType`. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

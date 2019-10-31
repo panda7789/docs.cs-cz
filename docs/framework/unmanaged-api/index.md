@@ -7,14 +7,12 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 677bee7319a80e405098f0dd5c8684765806c5f7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f7dd78b889129998dee31a22f5dd23325613b8ea
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796883"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092018"
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
 Tato část obsahuje informace o nespravovaných rozhraních API, která mohou používat aplikace související se spravovaným kódem, jako jsou hostitelé modulu runtime, kompilátory, rozdávající, deassemblery, ladicí programy a profilery.  
@@ -59,7 +57,7 @@ Tato část obsahuje informace o nespravovaných rozhraních API, která mohou p
  [WMI a čítače výkonu](wmi/index.md)  
  Popisuje rozhraní API, která zabalí volání do knihoven rozhraní WMI (Windows Management Instrumentation) (WMI).
   
- [Pomocné funkce Tlbexp](./tlbexp/index.md)  
+ [Podpůrné funkce Tlbexp](./tlbexp/index.md)  
  V této části najdete popis dvou pomocných funkcí a rozhraní, které používá Exportér knihovny typů (Tlbexp. exe) během procesu převodu sestavení na typ knihovny.  
   
 ## <a name="related-sections"></a>Související oddíly  

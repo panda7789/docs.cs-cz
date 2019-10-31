@@ -2,20 +2,18 @@
 title: Element <EnableAmPmParseAdjustment>
 ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f132ce0a114a6fc904d86ca3ce893c447366523f
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8920e51fcaaca5cb78b80a99ea321163c9b5240f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252627"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117372"
 ---
-# <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment – element >
+# <a name="enableampmparseadjustment-element"></a>\<element > EnableAmPmParseAdjustment
 Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k analýze datových řetězců obsahujících den, měsíc, hodinu a označení dopoledne/odpoledne.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<EnableAmPmParseAdjustment >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,10 +33,10 @@ Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k
   
 ### <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Metody analýzy data a času nepoužívají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
-|1|Metody analýzy data a času používají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
+|0,8|Metody analýzy data a času nepoužívají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
+|první|Metody analýzy data a času používají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,7 +49,7 @@ Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<EnableAmPmParseAdjustment>` Prvek řídí způsob, jakým následující metody analyzují řetězec data obsahující číselný den a měsíc následovaný hodinu a označení dopoledne/odpoledne (například "4/10 6 dop."):  
+ Element `<EnableAmPmParseAdjustment>` řídí, jak následující metody analyzují řetězec data obsahující číselný den a měsíc následovaný hodinou a označení AM/PM (například "4/10 6 dop."):  
   
 - <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
   
@@ -65,7 +63,7 @@ Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k
   
  Žádné další vzory nejsou ovlivněny.  
   
- <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType> <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> Element nemá žádný vliv <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>na metody,, a. `<EnableAmPmParseAdjustment>`  
+ `<EnableAmPmParseAdjustment>` element nemá žádný vliv na metody <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>a <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType>.  
   
 > [!IMPORTANT]
 > V rozhraní .NET Core a .NET Native jsou ve výchozím nastavení povolená upravená pravidla analýzy dopoledne/odpoledne.  
@@ -74,14 +72,14 @@ Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k
   
  Pokud je pravidlo úpravy analýzy povoleno, metoda analýzy interpretuje den a měsíc jako patřící do aktuálního roku a interpretuje čas jako hodinu z 12 hodin.  
   
- Následující tabulka ukazuje rozdíl <xref:System.DateTime> v hodnotě <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> při použití metody k analýze řetězce "" `<EnableAmPmParseAdjustment>` 4/10 6 am `enabled` "s vlastností elementu nastavenou na hodnotu" 0 "nebo" 1 ". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazuje datum, jako by bylo formátováno pomocí formátovacího řetězce "G" zadané jazykové verze.  
+ Následující tabulka ilustruje rozdíl v hodnotě <xref:System.DateTime>, pokud je metoda <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> použita k analýze řetězce "" 4/10 6 AM "s vlastností `enabled` elementu `<EnableAmPmParseAdjustment>` nastaveným na hodnotu" 0 "nebo" 1 ". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazuje datum, jako by bylo formátováno pomocí formátovacího řetězce "G" zadané jazykové verze.  
   
-|Název jazykové verze|enabled="0"|enabled="1"|  
+|Název jazykové verze|Enabled = "0"|Enabled = "1"|  
 |------------------|------------------|------------------|  
-|en-US|1/5/2017 4:00:00 DOP.|4/10/2017 6:00:00 DOP.|  
+|EN-US|1/5/2017 4:00:00 DOP.|4/10/2017 6:00:00 DOP.|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<Běhový > element](runtime-element.md)
-- [\<Element > Konfigurace](../configuration-element.md)
+- [\<element > runtime](runtime-element.md)
+- [> element konfigurace \<](../configuration-element.md)

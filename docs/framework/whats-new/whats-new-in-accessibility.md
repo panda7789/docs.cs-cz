@@ -7,14 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cfea1d5ee19d9fb61094b60e0175ddfd2f120494
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 150b8458828b1c0f42fc4cb0980a8ff090a89e2a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774287"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140645"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -105,7 +103,7 @@ Label1.Text = “Ready!”;
 
 Narrator oznamuje "připravený" bez ohledu na to, kde uživatel interakci s aplikací.
 
-@No__t_0 můžete implementovat taky jako LiveRegion:
+<xref:System.Windows.Forms.UserControl> můžete implementovat taky jako LiveRegion:
 
 ```csharp
 using System;
@@ -607,9 +605,9 @@ Model Windows Forms v .NET Framework 4.7.1 obsahuje následující vylepšení p
 
 Od .NET Framework 4.7.1 můžou vývojáři nástrojů pro usnadnění přístupu využít běžné vzory a vlastnosti přístupnosti rozhraní API pro několik ovládacích prvků WinForms. Mezi tato vylepšení přístupnosti patří:
 
-- @No__t_0 a <xref:System.Windows.Forms.ToolStripSplitButton> nyní podporují [model rozbalení a sbalení](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
+- <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.ToolStripSplitButton> nyní podporují [model rozbalení a sbalení](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 
-- @No__t_0 teď podporuje [vzor přepínacího](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)tlačítka.
+- <xref:System.Windows.Forms.DataGridViewCheckBoxCell> teď podporuje [vzor přepínacího](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)tlačítka.
 
 - Ovládací prvek <xref:System.Windows.Forms.ToolStripItem> podporuje vlastnost <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> a vzorek pro [rozbalení a sbalení](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 
@@ -678,7 +676,7 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
   - Zarážky nastavené v Návrháři postupu.
 
-  - Aktivity <xref:System.Activities.Statements.FlowSwitch%601>, <xref:System.Activities.Statements.FlowDecision> a <xref:System.ServiceModel.Activities.CorrelationScope>.
+  - Aktivity <xref:System.Activities.Statements.FlowSwitch%601>, <xref:System.Activities.Statements.FlowDecision>a <xref:System.ServiceModel.Activities.CorrelationScope>.
   - Obsah aktivity <xref:System.ServiceModel.Activities.Receive>
 
   - Cílový typ aktivity <xref:System.Activities.Statements.InvokeMethod>.

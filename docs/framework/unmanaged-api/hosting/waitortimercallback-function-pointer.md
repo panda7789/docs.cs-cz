@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 1fec4aef-0a06-4df0-bae7-d31a9ef9603d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 65af5303468904ee40da4d567381782af70bfb38
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: db6a20dee21b6c8bbd55fa9b52a159a00fe310d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776495"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092040"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK – ukazatel na funkci
-Odkazuje na funkci, která upozorňuje hostitele, popisovače čekání (<xref:System.Threading.WaitHandle>) buď byl signalizován nebo vypršel časový limit.  
+Odkazuje na funkci, která upozorňuje hostitele, že obslužná rutina čekání (<xref:System.Threading.WaitHandle>) buď byla signalizována, nebo vypršela jeho platnost.  
   
- Tento ukazatel na funkci se již nepoužívá v rozhraní .NET Framework 4.  
+ Tento ukazatel funkce je zastaralý v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
   
 ## <a name="parameters"></a>Parametry  
  `lpParameter`  
- [in] Ukazatel na objekt, který obsahuje informace stanovené hostitelem.  
+ pro Ukazatel na objekt, který obsahuje informace definované hostitelem.  
   
  `TimerOrWaitFired`  
- [in] `true` Pokud popisovač čekání vypršel časový limit, nebo `false` Pokud bylo signalizováno.  
+ [in] `true` v případě, že vypršel časový limit čekání nebo `false`, pokud mu byla signalizována signalizace.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce, které `WAITORTIMERCALLBACK` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.  
+ Funkce, na kterou `WAITORTIMERCALLBACK` body, je funkce zpětného volání a musí být implementována zapisovačí hostující aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorWks.dll  
+ **Knihovna:** Knihovny Mscorwks. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

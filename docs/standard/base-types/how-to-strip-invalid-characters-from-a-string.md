@@ -16,26 +16,24 @@ helpviewer_keywords:
 - Replace method
 - validating user input
 ms.assetid: b4319c8a-9032-4129-a9d5-6f6fc28e7f32
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3bbd25e40607bd316f1bbab974174fe5433770f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc90e6609f9335b7e2f08271e5540b182901e8c9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768395"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127656"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>Postupy: Odstranění neplatných znaků z řetězce
-Následující příklad používá statickou <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodu k odstranění neplatných znaků z řetězce.  
+Následující příklad používá metodu static <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> k odstranění neplatných znaků z řetězce.  
   
 ## <a name="example"></a>Příklad  
- Můžete použít `CleanInput` metody definované v tomto příkladu pro odstranění potenciálně nebezpečné znaky zadané do textového pole, která přijímá vstup uživatele. V takovém případě `CleanInput` odstraní všechny nealfanumerické znaky s výjimkou tečky (.), symbolů (@), spojovníky (-) a vrátí zbývající řetězec. Vzor regulárního výrazu, ale můžete upravit tak, aby se odstraní všechny znaky, které by neměly být obsažené ve vstupním řetězci.  
+ Metodu `CleanInput` definovanou v tomto příkladu můžete použít k odstranění potenciálně škodlivých znaků, které byly zadány do textového pole, které přijímá vstup uživatele. V tomto případě `CleanInput` vydělení všech nealfanumerických znaků s výjimkou teček (.), symbolem (@) a spojovníky (-) a vrátí zbývající řetězec. Můžete však upravit vzor regulárního výrazu tak, aby vyčerpal všechny znaky, které by neměly být zahrnuty ve vstupním řetězci.  
   
  [!code-csharp[RegularExpressions.Examples.StripChars#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.StripChars/cs/Example.cs#1)]
  [!code-vb[RegularExpressions.Examples.StripChars#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.StripChars/vb/Example.vb#1)]  
   
- Vzor regulárního výrazu `[^\w\.@-]` odpovídá jakémukoli znaku, který není znakem slova, tečky, symbolu @ nebo pomlčkou. Znak slova je libovolný písmeno, desítková číslice nebo interpunkční znaménka konektoru, jako je například podtržítko. Libovolný znak, který odpovídá tomuto vzoru nahrazuje <xref:System.String.Empty?displayProperty=nameWithType>, což je řetězec určené vzor pro nahrazení. Povolit další znaky ve vstupu uživatele, přidejte do třídy znak ve vzorku regulárního výrazu znaky. Například vzor regulárního výrazu `[^\w\.@-\\%]` také umožňuje symbol procenta a zpětné lomítko ve vstupním řetězci.  
+ Vzor regulárního výrazu `[^\w\.@-]` odpovídá jakémukoli znaku, který není znakem slova, tečku, symbolem @ nebo spojovníkem. Znak slova je jakékoli písmeno, desítkovou číslici nebo konektor interpunkce, například podtržítko. Libovolný znak, který odpovídá tomuto vzoru, je nahrazen <xref:System.String.Empty?displayProperty=nameWithType>, což je řetězec definovaný vzorem pro nahrazení. Chcete-li v uživatelském vstupu připustit další znaky, přidejte tyto znaky do třídy znaků ve vzoru regulárního výrazu. Například vzor regulárního výrazu `[^\w\.@-\\%]` také umožňuje ve vstupním řetězci symbol procenta a zpětné lomítko.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)

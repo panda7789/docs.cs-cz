@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 43a7addd-f25a-4049-9907-abec3eb17af2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6bd274b1eb14532629580e777288317186544912
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 12c594f157c803d5fc179e09a8ca6c0ef40f3f44
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274167"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099028"
 ---
 # <a name="cor_type_layout-structure"></a>COR_TYPE_LAYOUT – struktura
 Poskytuje informace o rozložení objektu v paměti.  
@@ -42,21 +40,21 @@ typedef struct COR_TYPE_LAYOUT {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`parentID`|Identifikátor nadřazeného typu na tento typ. Toto bude identifikátor typu s hodnotou NULL (token1 = 0, token2 = 0), pokud ID typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
+|`parentID`|Identifikátor nadřazeného typu na tento typ. Toto bude identifikátor typu NULL (token1 = 0, token2 = 0), pokud ID typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
 |`objectSize`|Základní velikost objektu tohoto typu. Toto je celková velikost pro objekty, které nejsou proměnné velikosti.|  
 |`numFields`|Počet polí, která jsou součástí objektů tohoto typu.|  
 |`boxOffset`|Pokud je tento typ zabalený, počáteční posun pole objektu. Toto pole je platné pouze pro typy hodnot, jako jsou primitivní prvky a struktury.|  
 |`type`|CorElementType –, ke kterému patří tento typ.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `numFields` je větší než nula, můžete zavolat metodu [ICorDebugProcess5:: GetTypeFields –](icordebugprocess5-gettypefields-method.md) a získat informace o polích v tomto typu. Pokud `type` je `ELEMENT_TYPE_STRING` ,`ELEMENT_TYPE_ARRAY` [](cor-typeid-structure.md) nebo ,`ELEMENT_TYPE_SZARRAY`velikost objektů tohoto typu je proměnná, a můžete předat strukturu COR_TYPEID do metody [ICorDebugProcess5:: GetArrayLayout –](icordebugprocess5-getarraylayout-method.md) .  
+ Pokud je `numFields` větší než nula, můžete zavolat metodu [ICorDebugProcess5:: GetTypeFields –](icordebugprocess5-gettypefields-method.md) a získat informace o polích v tomto typu. Pokud je `type` `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`nebo `ELEMENT_TYPE_SZARRAY`, velikost objektů tohoto typu je proměnná a můžete předat strukturu [COR_TYPEID](cor-typeid-structure.md) do metody [ICorDebugProcess5:: GetArrayLayout –](icordebugprocess5-getarraylayout-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

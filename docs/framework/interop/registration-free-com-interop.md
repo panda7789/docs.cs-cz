@@ -10,14 +10,12 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0ae92232b1d50d1381b6873e21a4c185db6efd25
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f73bb2ac9e1b942c08f83507589b534d7e67748d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051651"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124964"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači během nasazení vytvoříte v době návrhu soubory manifestu ve stylu Win32, které obsahují informace o vazbách a aktivaci. Tyto soubory manifestu, nikoli klíče registru, nasměrují aktivaci objektu.  
@@ -36,7 +34,7 @@ Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu be
   
     |Typ sestavení|Operační systém|Verze rozhraní .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |COM vedle sebe|Microsoft Windows XP|Není nutné.|  
+    |COM vedle sebe|Microsoft Windows XP|Nepožadováno.|  
     |. Založený na síti|Windows XP s aktualizací SP2|Rozhraní .NET Framework verze 1,1 nebo novější.|  
   
      Řada Windows Server 2003 také podporuje zprostředkovatele komunikace COM bez registrace pro. Sestavení založená na síti.  
@@ -56,4 +54,4 @@ Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu be
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Konfigurace komponent COM na bázi .NET Framework pro aktivaci bez registrace](configure-net-framework-based-com-components-for-reg.md)
+- [Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](configure-net-framework-based-com-components-for-reg.md)

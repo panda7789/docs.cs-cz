@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5de13327-96c6-4697-a89e-b8bf40717855
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f9dc3f87ce727076d561923fe35495bbfe4419e3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c1d796c6ef5f707f865a60023899d3b451c2085b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768123"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131956"
 ---
 # <a name="clrcreateinstance-function"></a>CLRCreateInstance – funkce
-Poskytuje jednu ze tří rozhraní: [Iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [iclrmetahostpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), nebo [iclrdebugging –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+Poskytuje jedno ze tří rozhraní: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,21 +37,21 @@ HRESULT CLRCreateInstance(
   
 ## <a name="parameters"></a>Parametry  
  `clsid`  
- [in] Jeden z identifikátorů tří tříd: Argumenty CLSID_CLRMetaHost CLSID_CLRMetaHostPolicy či CLSID_CLRDebugging.  
+ pro Jeden ze tří identifikátorů třídy: CLSID_CLRMetaHost, CLSID_CLRMetaHostPolicy nebo CLSID_CLRDebugging.  
   
  `riid`  
- [in] Jeden z identifikátorů tři rozhraní (IID): IID_ICLRMetaHost, IID_ICLRMetaHostPolicy nebo IID_ICLRDebugging.  
+ pro Jeden ze tří identifikátorů rozhraní (IID): IID_ICLRMetaHost, IID_ICLRMetaHostPolicy nebo IID_ICLRDebugging.  
   
  `ppInterface`  
- [out] Jeden ze tří rozhraní: [Iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [iclrmetahostpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), nebo [iclrdebugging –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+ mimo Jedno ze tří rozhraní: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`ppInterface` má hodnotu null.|  
+|E_POINTER|`ppInterface` je null.|  
   
 ## <a name="remarks"></a>Poznámky  
  V následující tabulce jsou uvedeny podporované kombinace pro `clsid` a `riid`.  
@@ -64,7 +62,7 @@ HRESULT CLRCreateInstance(
 |CLSID_CLRMetaHostPolicy|IID_ICLRMetaHostPolicy|  
 |CLSID_CLRDebugging|IID_ICLRDebugging|  
   
- Následující kód ukazuje, jak používat `CLRCreateInstance` zobrazíte všechny tři rozhraní:  
+ Následující kód ukazuje, jak použít `CLRCreateInstance` k získání všech tří rozhraní:  
   
 ```cpp  
 #include <metahost.h>  
@@ -83,13 +81,13 @@ hr = CLRCreateInstance (CLSID_CLRDebugging, IID_ICLRDebugging,
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

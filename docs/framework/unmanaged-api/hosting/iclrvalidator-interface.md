@@ -14,33 +14,31 @@ helpviewer_keywords:
 ms.assetid: 2edd0a10-77fb-4173-91eb-f2970cc364d0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05287d3674e55a87cfe359fc08f74fa46000d79f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 483d647028d1a05ea20ab836730099afe3e09374
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763296"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127851"
 ---
 # <a name="iclrvalidator-interface"></a>ICLRValidator – rozhraní
-Poskytuje metody pro ověřování přenosné spustitelné (PE) bitové kopie a oznamování chyb ověřování.  
+Poskytuje metody pro ověřování přenosných spustitelných souborů (PE) a chyb ověřování sestav.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[FormatEventInfo – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Získá podrobnou zprávu o chybě ověření pro zadané.|  
-|[Validate – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)|Ověří přenosný spustitelný soubor nebo jazyk Microsoft intermediate language (MSIL) do zadaného souboru.|  
+|[FormatEventInfo – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Získá podrobnou zprávu o zadané chybě ověřování.|  
+|[Validate – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)|Ověří v zadaném souboru přenositelné spustitelné soubory nebo jazyk MSIL (Microsoft Intermediate Language).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** IValidator.idl, IValidator.h  
+ **Hlavička:** IValidator. idl, IValidator. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

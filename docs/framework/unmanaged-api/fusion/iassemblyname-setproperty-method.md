@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 496c3add-f60b-4073-943f-d1bcf33330cb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17e96f56c57d896397489e27bcc072d8e7df05ec
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ffa1fa2f5e141728a56f1b598a1aae9602b2ac86
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796538"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108210"
 ---
 # <a name="iassemblynamesetproperty-method"></a>IAssemblyName::SetProperty – metoda
 Nastaví hodnotu vlastnosti, na kterou odkazuje zadaný identifikátor vlastnosti.  
@@ -42,15 +40,15 @@ HRESULT SetProperty (
  pro Jedinečný identifikátor vlastnosti, jejíž hodnota bude nastavena.  
   
  `pvProperty`  
- pro Hodnota, na kterou chcete nastavit vlastnost `PropertyId`, na kterou odkazuje.  
+ pro Hodnota, na kterou chcete nastavit vlastnost, na kterou odkazuje `PropertyId`.  
   
  `cbProperty`  
- pro Velikost v bajtech `pvProperty`.  
+ pro Velikost `pvProperty`v bajtech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

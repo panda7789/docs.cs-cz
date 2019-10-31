@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b33ff059-40c4-4dfe-9cb2-21bfed2de0b0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 99dbe5c5da5b8c169e34aa29afca507cc6624f0f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f24c07a654dc2345cb65226463573576a6fb3658
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748788"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125343"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a>ICorDebugController::IsRunning – metoda
-Získá hodnotu, která označuje, zda vlákna v procesu jsou aktuálně spuštěna bez omezení.  
+Získá hodnotu, která označuje, zda jsou vlákna v procesu aktuálně spuštěna volně.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT IsRunning (
   
 ## <a name="parameters"></a>Parametry  
  `pbRunning`  
- [out] Ukazatel na hodnotu, která je `true` Pokud vlákna v procesu systém volně; v opačném případě `false`.  
+ mimo Ukazatel na hodnotu, která je `true`, pokud jsou vlákna v procesu volně spuštěná; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

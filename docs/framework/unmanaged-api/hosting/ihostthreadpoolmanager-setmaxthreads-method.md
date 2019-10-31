@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 77cfd347-95c2-4425-b807-4ecc2a8d4578
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 442e4566749aade5a7f8164fcc43baad902928c0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 30c4ff93688396dd9a6a8086fbb53ad1c763ead0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749125"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141294"
 ---
 # <a name="ihostthreadpoolmanagersetmaxthreads-method"></a>IHostThreadPoolManager::SetMaxThreads – metoda
-Nastaví maximální počet vláken, které hostitele může udržovat ve fondu vláken.  
+Nastaví maximální počet vláken, která může hostitel udržovat ve fondu vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,25 +41,25 @@ HRESULT SetMaxThreads (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetMaxThreads` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`SetMaxThreads` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé, katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámému a závažnému selhání. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|Hostitel neposkytuje implementaci `SetMaxThreads`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel není potřeba povolit modul CLR lze konfigurovat velikost fondu vláken. Někteří hostitelé může být vhodné výhradní kontrolu nad fondu vláken z důvodů, například provádění, výkon a škálovatelnost. V takovém případě hostitele by měl vrátit hodnotu HRESULT E_NOTIMPL.  
+ Hostitel není vyžadován, aby mohl CLR nakonfigurovat velikost fondu vláken. Někteří hostitelé můžou chtít exkluzivní kontrolu nad fondem vláken, z důvodů, jako je implementace, výkon nebo škálovatelnost. V takovém případě by měl hostitel vracet hodnotu HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

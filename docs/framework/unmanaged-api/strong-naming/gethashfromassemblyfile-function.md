@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 751ed69f-b7ab-4e07-80de-e17ca9319b0c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9f984d44d0a8acb85562a58653dfd2882053a0ce
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 866b34acae333f043d8e13f4d0ebd55f32046334
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799285"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140730"
 ---
 # <a name="gethashfromassemblyfile-function"></a>GetHashFromAssemblyFile – funkce
 Načte hodnotu hash zadaného souboru sestavení pomocí zadaného algoritmu hash.  
@@ -54,14 +52,14 @@ HRESULT GetHashFromAssemblyFile (
  pro Požadovaná maximální velikost `pbHash`.  
   
  `pchHash`  
- mimo Vrácená velikost (v bajtech `pbHash`).  
+ mimo Vrácená velikost (v bajtech) `pbHash`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

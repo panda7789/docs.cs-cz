@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: d4755569-85b8-4ff4-bf50-0e608e76429f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2377773b471b387376f0284522ebe29d6b003ae3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5a451218e0fdc32132a4e79d091ada8355d32fe7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910114"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122688"
 ---
 # <a name="icordebuginternalframe2-interface"></a>ICorDebugInternalFrame2 – rozhraní
 Obsahuje informace o vnitřních rámečcích, včetně adresy zásobníku a pozice ve vztahu k ICorDebugFrame objektům.  
@@ -31,7 +29,7 @@ Obsahuje informace o vnitřních rámečcích, včetně adresy zásobníku a poz
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetFrameAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Vrátí adresu zásobníku interního rámce.|  
-|[IsCloserToLeaf – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Kontroluje, zda `this` je interní rámec blíže k listu, než je zadaný objekt ICorDebugFrame.|  
+|[IsCloserToLeaf – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Kontroluje, zda je vnitřní rámec `this` blíž k listu, než je zadaný objekt ICorDebugFrame.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní rozšiřuje rozhraní ICorDebugInternalFrame.  
@@ -40,11 +38,11 @@ Obsahuje informace o vnitřních rámečcích, včetně adresy zásobníku a poz
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

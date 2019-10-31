@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a1c4d165-9bdc-4ca8-940e-292d4ffcc338
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d8ea7df9396e9199d04ad5609daa9d2b01761f36
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e64a0512e05965b3da2e7486e986ee34ca8a20d6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798890"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104306"
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo – funkce
 Vrátí informace o zadané knihovně typů prozkoumáním její struktury [TLIBATTR](https://docs.microsoft.com/windows/win32/api/oaidl/ns-oaidl-tlibattr) .  
@@ -59,20 +57,20 @@ HRESULT GetTypeLibInfo(
  mimo Číslo dílčí verze knihovny typů. Například pro verzi *x. y*je číslo dílčí verze *y*.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce je volána nástrojem [Tlbexp. exe (Exportér knihovny typů).](../../tools/tlbexp-exe-type-library-exporter.md) `GetTypeLibInfo` Tento nástroj generuje knihovnu typů, která popisuje typy v sestavení modulu CLR (Common Language Runtime).  
+ Funkce `GetTypeLibInfo` je volána nástrojem [Tlbexp. exe (Exportér knihovny typů)](../../tools/tlbexp-exe-type-library-exporter.md). Tento nástroj generuje knihovnu typů, která popisuje typy v sestavení modulu CLR (Common Language Runtime).  
   
- Pokud je libovolný parametr null, funkce vrátí hodnotu `HRESULT` z. `E_POINTER` V opačném případě `S_OK`vrátí.  
+ Pokud je libovolný parametr null, funkce vrátí `HRESULT` `E_POINTER`. V opačném případě vrátí `S_OK`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** TlbRef. h  
+ **Hlavička:** TlbRef. h  
   
- **Knihovna** TlbRef.lib  
+ **Knihovna:** TlbRef. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pomocné funkce Tlbexp](index.md)
+- [Podpůrné funkce Tlbexp](index.md)
 - [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

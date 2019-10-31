@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f759f87a-18ae-4c1a-8300-29b803432d0a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 30097ff0cd92253897a366a5a18f305eddb06b5b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 683c2853ea2ed43e61eb666ec56619cb58cde273
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763526"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129500"
 ---
 # <a name="icordebugmodulegettoken-method"></a>ICorDebugModule::GetToken – metoda
-Získá token pro záznam tabulky pro tento modul.  
+Získá token pro položku tabulky pro tento modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetToken(
   
 ## <a name="parameters"></a>Parametry  
  `pToken`  
- [out] Ukazatel `mdModule` token, který odkazuje na metadata modulu.  
+ mimo Ukazatel na token `mdModule`, který odkazuje na metadata modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- Token, který lze předat [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [imetadataimport2 –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md), a [imetadataassemblyimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní import metadat.  
+ Token se dá předat rozhraním pro import metadat [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)a [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

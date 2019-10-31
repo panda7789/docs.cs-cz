@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d69796b4-5b6d-457c-85f6-2cf42e8a8773
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58aaf0445fe42d083c12541056cb362f9a994944
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b4f228d55c9ffd6b85ebd0b430a7f5db404320f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765207"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124337"
 ---
 # <a name="icordebugthread3getactiveinternalframes-method"></a>ICorDebugThread3::GetActiveInternalFrames – metoda
-Vrátí pole vnitřních rámcích ([icordebuginternalframe2 –](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md) objektů) v zásobníku.  
+Vrátí pole vnitřních rámců (objektů[ICorDebugInternalFrame2](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md) ) v zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,42 +39,42 @@ HRESULT GetActiveInternalFrames
   
 ## <a name="parameters"></a>Parametry  
  `cInternalFrames`  
- [in] Počet vnitřních rámcích, byl očekáván v `ppInternalFrames`.  
+ pro Počet vnitřních snímků očekávaných v `ppInternalFrames`.  
   
  `pcInternalFrames`  
- [out] Ukazatel `ULONG32` , který obsahuje počet vnitřních rámcích v zásobníku.  
+ mimo Ukazatel na `ULONG32`, který obsahuje počet vnitřních snímků v zásobníku.  
   
  `ppInternalFrames`  
- [out v] Ukazatel na adresu pole interní rámce v zásobníku.  
+ [in, out] Ukazatel na adresu pole vnitřních snímků v zásobníku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|[Icordebuginternalframe2 –](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md) objekt byl úspěšně vytvořen.|  
-|E_INVALIDARG|`cInternalFrames` není nula a `ppInternalFrames` je `null`, nebo `pcInternalFrames` je `null`.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|`ppInternalFrames` je menší než počet vnitřních rámcích.|  
+|S_OK|Objekt [ICorDebugInternalFrame2](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md) byl úspěšně vytvořen.|  
+|E_INVALIDARG|`cInternalFrames` není nula a `ppInternalFrames` je `null`nebo `pcInternalFrames` `null`.|  
+|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|`ppInternalFrames` je menší než počet vnitřních snímků.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- Vnitřních rámcích jsou vloženy do zásobníku modulem runtime pro ukládání dočasných dat datové struktury.  
+ Interní snímky jsou datové struktury vložené do zásobníku modulem runtime k ukládání dočasných dat.  
   
- Při prvním volání `GetActiveInternalFrames`, byste měli nastavit `cInternalFrames` parametru na hodnotu 0 (nula) a `ppInternalFrames` parametr na hodnotu null. Když `GetActiveInternalFrames` nejprve vrátí `pcInternalFrames` obsahuje počet vnitřních rámcích v zásobníku.  
+ Při prvním volání `GetActiveInternalFrames`byste měli nastavit parametr `cInternalFrames` na hodnotu 0 (nula) a parametr `ppInternalFrames` na hodnotu null. Když `GetActiveInternalFrames` první vrátí, `pcInternalFrames` obsahuje počet vnitřních snímků v zásobníku.  
   
- `GetActiveInternalFrames` pak lze volat podruhé. Je třeba předat správný počet (`pcInternalFrames`) v `cInternalFrames` parametr, a zadejte ukazatel na odpovídající velikosti pole v `ppInternalFrames`.  
+ `GetActiveInternalFrames` by se měla volat podruhé. V parametru `cInternalFrames` byste měli předat správný počet (`pcInternalFrames`) a určit ukazatel na pole odpovídající velikosti v `ppInternalFrames`.  
   
- Použití [icordebugstackwalk::getframe –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) metoda vrátí skutečný rámců zásobníku.  
+ K vrácení skutečných rámců zásobníku použijte metodu [ICorDebugStackWalk:: GetFrame](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

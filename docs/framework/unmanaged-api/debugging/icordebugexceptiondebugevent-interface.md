@@ -2,14 +2,12 @@
 title: Rozhraní ICorDebugExceptionDebugEvent
 ms.date: 03/30/2017
 ms.assetid: f9ba60d8-b54d-417e-bb3e-fde4b41ca44c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 522bccb4a424da620063995d02ae15d09ecbf2fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 985edaa14510b7ca03399ae17cf1d89f28fd04c3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929876"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084655"
 ---
 # <a name="icordebugexceptiondebugevent-interface"></a>Rozhraní ICorDebugExceptionDebugEvent
 Rozšiřuje rozhraní [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md) pro podporu událostí výjimek.  
@@ -23,7 +21,7 @@ Rozšiřuje rozhraní [ICorDebugDebugEvent](../../../../docs/framework/unmanaged
 |[GetStackPointer – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-getstackpointer-method.md)|Získá ukazatel zásobníku pro tuto událost ladění výjimky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugExceptionDebugEvent` Rozhraní je implementováno následujícími typy událostí:  
+ Rozhraní `ICorDebugExceptionDebugEvent` je implementováno následujícími typy událostí:  
   
 - [MANAGED_EXCEPTION_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
   
@@ -34,14 +32,14 @@ Rozšiřuje rozhraní [ICorDebugDebugEvent](../../../../docs/framework/unmanaged
 - [MANAGED_EXCEPTION_UNHANDLED](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
   
 > [!NOTE]
-> Rozhraní je k dispozici pouze s .NET Native. Pokus o volání metody `QueryInterface` načtení `E_NOINTERFACE` ukazatele rozhraní pro ICorDebug scénáře mimo .NET Native.  
+> Rozhraní je k dispozici pouze s .NET Native. Pokus o volání `QueryInterface` pro načtení ukazatele rozhraní vrátí `E_NOINTERFACE` pro scénáře ICorDebug mimo .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

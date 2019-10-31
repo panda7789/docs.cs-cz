@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3d705463-e640-4249-8036-4e8206d03cfe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aae5f4c79acd6f92d42c2890ba64fa66e1b4bfbe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d01ab0b6b5d489b2181056129e22661a50108a3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753586"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084847"
 ---
 # <a name="icordebugeval2newparameterizedobject-method"></a>ICorDebugEval2::NewParameterizedObject – metoda
-Vytvoří nový objekt typ s parametry a volání metody konstruktoru objektu.  
+Vytvoří instanci nového parametrizovaného typu objektu a zavolá metodu konstruktoru objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT NewParameterizedObject (
   
 ## <a name="parameters"></a>Parametry  
  `pConstructor`  
- [in] Ukazatel na objekt ICorDebugFunction představující konstruktor objektu má být vytvořena.  
+ pro Ukazatel na objekt ICorDebugFunction, který představuje konstruktor objektu, který má být vytvořen.  
   
  `nTypeArgs`  
- [in] Byl předán počet argumentů typu.  
+ pro Počet předaných argumentů typu.  
   
  `ppTypeArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument typu pro objekt, který je vytvořena instance.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje argument typu pro objekt, který je právě vytvořen.  
   
  `nArgs`  
- [in] Počet argumentů předaný konstruktoru.  
+ pro Počet argumentů předaných konstruktoru.  
   
  `ppArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který reprezentuje hodnota argumentu, který je předán konstruktoru.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugValue, který představuje hodnotu argumentu, která je předána konstruktoru.  
   
 ## <a name="remarks"></a>Poznámky  
- Konstruktor objektu může trvat <xref:System.Type> parametry.  
+ Konstruktor objektu může převzít parametry <xref:System.Type>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

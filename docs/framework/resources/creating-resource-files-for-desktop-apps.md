@@ -10,14 +10,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 893b6e6e61e23bdc0da1902407017a836bc6cbe8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 92e52fb130adecd6acdbeb8eac8d624d3c291094
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045683"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129981"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Vytváření souborů prostředků pro aplikace .NET
 
@@ -27,7 +25,7 @@ Do souborů prostředků můžete zahrnout prostředky, jako jsou řetězce, obr
 
 - Vytvořte soubor prostředků XML (. resx), který obsahuje data o řetězci, obrázku nebo objektu. Můžete použít [generátor souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) k převedení souboru. resx na binární soubor prostředků (. Resources). Pak můžete vložit binární soubor prostředků do spustitelného souboru aplikace nebo knihovny aplikace pomocí kompilátoru jazyka, nebo jej můžete vložit do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md). Další informace naleznete v části [prostředky v souborech. resx](creating-resource-files-for-desktop-apps.md#ResxFiles) .
 
-- Vytvořte soubor prostředků XML (. resx) programově pomocí typů v <xref:System.Resources> oboru názvů. Můžete vytvořit soubor. resx, zobrazit výčet jeho prostředků a načíst konkrétní prostředky podle názvu. Další informace naleznete v tématu [práce se soubory. resx programově](working-with-resx-files-programmatically.md).
+- Vytvořte soubor prostředků XML (. resx) programově pomocí typů v oboru názvů <xref:System.Resources>. Můžete vytvořit soubor. resx, zobrazit výčet jeho prostředků a načíst konkrétní prostředky podle názvu. Další informace naleznete v tématu [práce se soubory. resx programově](working-with-resx-files-programmatically.md).
 
 - Vytvořte soubor binárního prostředku (. Resources) programově. Pak můžete soubor vložit do spustitelného souboru aplikace nebo knihovny aplikace pomocí kompilátoru jazyka, nebo jej můžete vložit do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md). Další informace najdete v části [prostředky v souborech. Resources](creating-resource-files-for-desktop-apps.md#ResourcesFiles) .
 
@@ -60,7 +58,7 @@ name2=value2
 
  Formát souboru prostředků souborů. txt a. restext je identický. Přípona souboru. restext slouží pouze k okamžité identifikaci textových souborů jako souborů prostředků založených na textu.
 
- Prostředky řetězců se zobrazí jako páry *název-hodnota* , kde *název* je řetězec, který identifikuje prostředek, a *hodnota* je řetězec prostředku, který je vrácen při předání *názvu* metodě načtení prostředku, jako je například <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>. *název* a *hodnota* musí být odděleny symbolem rovná se (=). Příklad:
+ Prostředky řetězců se zobrazí jako páry *název-hodnota* , kde *název* je řetězec, který identifikuje prostředek, a *hodnota* je řetězec prostředku, který je vrácen při předání *názvu* metodě načtení prostředku, například <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>. *název* a *hodnota* musí být odděleny symbolem rovná se (=). Příklad:
 
 ```text
 FileMenuName=File
@@ -72,19 +70,19 @@ HelpMenuName=Help
 > [!CAUTION]
 > Nepoužívejte soubory prostředků k ukládání hesel, informací citlivých na zabezpečení nebo soukromých dat.
 
- Prázdné řetězce (tj. prostředek, jehož hodnota je <xref:System.String.Empty?displayProperty=nameWithType>) jsou povoleny v textových souborech. Příklad:
+ Prázdné řetězce (tj. prostředek, jehož hodnota je <xref:System.String.Empty?displayProperty=nameWithType>), jsou povoleny v textových souborech. Příklad:
 
 ```text
 EmptyString=
 ```
 
- Počínaje .NET Framework 4,5 a ve všech verzích .NET Core podporuje textové soubory podmíněnou kompilaci se `#ifdef` *symbolem*... `#endif` a symbol`#if !`... `#endif` konstrukce. Pak můžete použít `/define` přepínač se [generátorem souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) k definování symbolů. Každý prostředek vyžaduje vlastní `#ifdef` *symbol*... `#endif` nebo symbol`#if !`... `#endif` konstrukce. Pokud použijete `#ifdef` příkaz a *symbol* , je přidružený prostředek zahrnut do souboru. Resources. v opačném případě není zahrnutý. Použijete `#if !` -li příkaz a *symbol* není definován, je přidružený prostředek zahrnut do souboru. Resources. v opačném případě není zahrnut.
+ Počínaje .NET Framework 4,5 a ve všech verzích .NET Core podporují textové soubory podmíněnou kompilaci se *symbolem*`#ifdef`... `#endif` a `#if !`*symbol*... `#endif` konstrukce. Pak můžete použít přepínač `/define` se [generátorem souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) k definování symbolů. Každý prostředek vyžaduje vlastní `#ifdef`*symbol*... `#endif` nebo `#if !`*symbol*... `#endif` konstrukce. Pokud použijete příkaz `#ifdef` a *symbol* je definován, je přidružený prostředek zahrnut do souboru. Resources; v opačném případě není zahrnutý. Použijete-li příkaz `#if !` a *symbol* není definován, je přidružený prostředek zahrnut do souboru. Resources; v opačném případě není zahrnutý.
 
  Komentáře jsou v textových souborech volitelné a předcházejí středníkem (;) nebo znak křížku (#) na začátku řádku. Řádky, které obsahují komentáře, mohou být umístěny kdekoli v souboru. Komentáře nejsou zahrnuty v kompilovaném souboru. Resources, který je vytvořen pomocí [generátoru souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md).
 
  Všechny prázdné řádky v textových souborech jsou považovány za prázdné znaky a jsou ignorovány.
 
- Následující příklad definuje dva řetězcové prostředky s `OKButton` názvem `CancelButton`a.
+ Následující příklad definuje dva řetězcové prostředky s názvem `OKButton` a `CancelButton`.
 
 ```text
 #Define resources for buttons in the user interface.
@@ -94,13 +92,13 @@ CancelButton=Cancel
 
  Pokud textový soubor obsahuje duplicitní výskyty *názvu*, [generátor souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) zobrazí upozornění a ignoruje druhý název.
 
- *hodnota* nesmí obsahovat znaky nového řádku, ale můžete použít řídicí znaky jazyka C, jako je například `\n` , aby představovaly nový řádek a `\t` představovala kartu. Znak zpětného lomítka můžete také zahrnout, pokud je řídicí sekvence (například "\\\\"). Kromě toho je povolen prázdný řetězec.
+ *hodnota* nesmí obsahovat znaky nového řádku, ale můžete použít řídicí znaky jazyka C, jako je například `\n`, aby představovaly nový řádek a `\t` reprezentující kartu. Znak zpětného lomítka můžete také zahrnout, pokud je řídicí sekvence (například "\\\\"). Kromě toho je povolen prázdný řetězec.
 
  Prostředky byste měli ukládat ve formátu textového souboru pomocí kódování UTF-8 nebo UTF-16 v pořadí bajtů ve formátu Little endian nebo big endian. [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md), který převede soubor. txt na soubor. Resources, považuje ve výchozím nastavení soubory jako UTF-8. Pokud chcete, aby nástroj Resgen. exe rozpoznal soubor, který byl kódovaný pomocí kódování UTF-16, musíte na začátku souboru použít znak pořadí bajtů Unicode (U + FEFF).
 
  Chcete-li vložit soubor prostředků v textovém formátu do sestavení .NET, je nutné převést soubor do binárního souboru prostředků (. Resources) pomocí [generátoru souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md). Pak můžete vložit soubor. Resources do sestavení .NET pomocí kompilátoru jazyka nebo ho vložit do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md).
 
- Následující příklad používá soubor prostředků v textovém formátu s názvem GreetingResources. txt pro jednoduchou konzolovou aplikaci "Hello World". Textový soubor definuje dva řetězce, `prompt` a `greeting`, které vyzvat uživatele k zadání jeho názvu a zobrazení pozdravu.
+ Následující příklad používá soubor prostředků v textovém formátu s názvem GreetingResources. txt pro jednoduchou konzolovou aplikaci "Hello World". Textový soubor definuje dva řetězce `prompt` a `greeting`, které vyzvat uživatele k zadání jeho názvu a zobrazení pozdravu.
 
 ```text
 # GreetingResources.txt
@@ -137,9 +135,9 @@ csc greeting.cs -resource:GreetingResources.resources
 
 <a name="ResxFiles"></a>
 ## <a name="resources-in-resx-files"></a>Prostředky v souborech. resx
- Na rozdíl od textových souborů, které mohou ukládat pouze řetězcové prostředky, soubory prostředků XML (. resx) mohou ukládat řetězce, binární data, jako jsou obrázky, ikony, zvukové klipy a programové objekty. Soubor. resx obsahuje standardní hlavičku, která popisuje formát položek prostředku a určuje informace o verzích pro XML, které se používají k analýze dat. Data souboru prostředků se řídí hlavičkou XML. Každá datová položka se skládá z dvojice název/hodnota, která je obsažena `data` ve značce. Jeho `name` atribut definuje název prostředku a vnořená `value` značka obsahuje hodnotu prostředku. V `value` případě řetězcových dat značka obsahuje řetězec.
+ Na rozdíl od textových souborů, které mohou ukládat pouze řetězcové prostředky, soubory prostředků XML (. resx) mohou ukládat řetězce, binární data, jako jsou obrázky, ikony, zvukové klipy a programové objekty. Soubor. resx obsahuje standardní hlavičku, která popisuje formát položek prostředku a určuje informace o verzích pro XML, které se používají k analýze dat. Data souboru prostředků se řídí hlavičkou XML. Každá datová položka se skládá z dvojice název/hodnota, která je obsažena ve značce `data`. Jeho atribut `name` definuje název prostředku a vnořená `value` značka obsahuje hodnotu prostředku. V případě řetězcových dat značka `value` obsahuje řetězec.
 
- Například následující `data` značka definuje prostředek řetězce s názvem `prompt` , jehož hodnota je "zadejte vaše jméno:".
+ Například následující značka `data` definuje prostředek řetězce s názvem `prompt`, jehož hodnota je "zadejte vaše jméno:".
 
 ```xml
 <data name="prompt" xml:space="preserve">
@@ -150,12 +148,12 @@ csc greeting.cs -resource:GreetingResources.resources
 > [!WARNING]
 > Nepoužívejte soubory prostředků k ukládání hesel, informací citlivých na zabezpečení nebo soukromých dat.
 
- Pro objekty prostředků obsahuje `type` **datová** značka atribut, který označuje datový typ prostředku. Pro objekty, které se skládají z binárních `data` dat, značka také `mimetype` obsahuje `base64` atribut, který označuje typ binárních dat.
+ Pro objekty prostředků obsahuje **datová** značka atribut `type`, který určuje datový typ prostředku. Pro objekty, které se skládají z binárních dat, obsahuje značka `data` také atribut `mimetype`, který označuje `base64` typ binárních dat.
 
 > [!NOTE]
 > Všechny soubory RESX používají formátovací modul binární serializace pro generování a analýzu binárních dat zadaného typu. V důsledku toho může být soubor. resx neplatným, pokud se formát binární serializace objektu změní nekompatibilním způsobem.
 
- Následující příklad ukazuje část souboru. resx, který obsahuje <xref:System.Int32> prostředek a rastrový obrázek.
+ Následující příklad ukazuje část souboru. resx, který obsahuje prostředek <xref:System.Int32> a rastrový obrázek.
 
 ```xml
 <data name="i1" type="System.Int32, mscorlib">
@@ -177,23 +175,23 @@ csc greeting.cs -resource:GreetingResources.resources
 <a name="ResourcesFiles"></a>
 ## <a name="resources-in-resources-files"></a>Prostředky v souborech. Resources
 
-<xref:System.Resources.ResourceWriter?displayProperty=nameWithType> Třídu můžete použít k programovému vytvoření binárního souboru prostředků (. Resources) přímo z kódu. Nástroj [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) můžete také použít k vytvoření souboru. Resources z textového souboru nebo souboru. resx. Soubor. Resources může obsahovat binární data (pole bajtů) a data objektů kromě řetězcových dat. Programové vytváření souboru. resources vyžaduje následující kroky:
+Třídu <xref:System.Resources.ResourceWriter?displayProperty=nameWithType> lze použít k programovému vytvoření binárního souboru prostředků (. Resources) přímo z kódu. Nástroj [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) můžete také použít k vytvoření souboru. Resources z textového souboru nebo souboru. resx. Soubor. Resources může obsahovat binární data (pole bajtů) a data objektů kromě řetězcových dat. Programové vytváření souboru. resources vyžaduje následující kroky:
 
-1. <xref:System.Resources.ResourceWriter> Vytvořte objekt s jedinečným názvem souboru. To lze provést zadáním názvu souboru nebo datového proudu <xref:System.Resources.ResourceWriter> souboru konstruktoru třídy.
+1. Vytvořte objekt <xref:System.Resources.ResourceWriter> s jedinečným názvem souboru. To lze provést zadáním názvu souboru nebo datového proudu souboru do konstruktoru <xref:System.Resources.ResourceWriter> třídy.
 
-2. Zavolejte jedno z přetížení <xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=nameWithType> metody pro každý pojmenovaný prostředek, který chcete přidat do souboru. Prostředkem může být řetězec, objekt nebo kolekce binárních dat (bajtové pole).
+2. Zavolejte jedno z přetížení metody <xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=nameWithType> pro každý pojmenovaný prostředek, který chcete přidat do souboru. Prostředkem může být řetězec, objekt nebo kolekce binárních dat (bajtové pole).
 
-3. Zavolejte metodu pro zápis prostředků do souboru a pro <xref:System.Resources.ResourceWriter> zavření objektu. <xref:System.Resources.ResourceWriter.Close%2A?displayProperty=nameWithType>
+3. Zavolejte metodu <xref:System.Resources.ResourceWriter.Close%2A?displayProperty=nameWithType> pro zápis prostředků do souboru a pro zavření objektu <xref:System.Resources.ResourceWriter>.
 
 > [!NOTE]
 > Nepoužívejte soubory prostředků k ukládání hesel, informací citlivých na zabezpečení nebo soukromých dat.
 
- Následující příklad programově vytvoří soubor. Resources s názvem CarResources. Resources, který ukládá šest řetězců, ikonu a dva objekty definované aplikací ( `Automobile` dva objekty). Všimněte si, `Automobile` že třída, která je definována a vytvořena v příkladu, je označena <xref:System.SerializableAttribute> atributem, který umožňuje trvalé formátování binární serializace.
+ Následující příklad programově vytvoří soubor. Resources s názvem CarResources. Resources, který ukládá šest řetězců, ikonu a dva objekty definované aplikací (dva `Automobile` objekty). Všimněte si, že třída `Automobile`, která je definována a vytvořena v příkladu, je označena atributem <xref:System.SerializableAttribute>, který umožňuje jeho trvalé formátování binární serializace.
 
  [!code-csharp[Conceptual.Resources.Resources#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resources/cs/resources1.cs#1)]
  [!code-vb[Conceptual.Resources.Resources#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resources/vb/resources1.vb#1)]
 
- Až vytvoříte soubor. Resources, můžete ho vložit do spustitelného souboru run-time nebo knihovny, a to tak, že `/resource` zahrnete přepínač kompilátoru jazyka nebo ho vložíte do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md).
+ Po vytvoření souboru. Resources jej můžete vložit do spustitelného souboru nebo knihovny run-time zahrnutím `/resource`ho přepínače kompilátoru, nebo vložením do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md).
 
 <a name="VSResFiles"></a>
 ## <a name="resource-files-in-visual-studio"></a>Soubory prostředků v aplikaci Visual Studio

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5efaee1c-a001-4c73-9525-4160f4c71567
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ffbe571ebc3d14c12e57b1f805d77e56e97d12e1
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: cc9a67e16635209c3bf303e97dc3e5938943a653
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274176"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099095"
 ---
 # <a name="cor_version-structure"></a>COR_VERSION – struktura
 Ukládá standardní číslo verze se čtyřmi částmi modulu CLR (Common Language Runtime).  
@@ -50,11 +48,11 @@ typedef struct _COR_VERSION {
  Pokud je číslo verze 1.0.3705.288, 1 je hlavní číslo verze, 0 je číslo dílčí verze, 3705 je číslo sestavení a 288 je číslo dílčího sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl  
+ **Hlavička:** CorDebug. idl  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -9,24 +9,22 @@ helpviewer_keywords:
 - Global Assembly Cache tool
 - windows installer, global assembly cache
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: de5ae03ab885c4368e39b6339b5a14d1082e6df5
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: e670f5dba47393b7df047fb4e6f7d92df8cb187c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972933"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119809"
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)
 
 Globální mezipaměť sestavení (GAC) ukládá sestavení, která sdílí několik aplikací. Nainstalujte sestavení do [globální mezipaměti sestavení](gac.md) (GAC) pomocí jedné z následujících součástí: 
 
-- [Windows Installer](#windows-installer)
+- [Instalační služba systému Windows](#windows-installer)
 - [Nástroj globální mezipaměti sestavení](#global-assembly-cache-tool)
 
 > [!IMPORTANT]
-> Do globální mezipaměti sestavení (GAC) lze nainstalovat pouze sestavení se silným názvem. Informace o tom, jak vytvořit sestavení se silným názvem, naleznete [v tématu How to: Podepište sestavení silným názvem](../../standard/assembly/sign-strong-name.md).
+> Do globální mezipaměti sestavení (GAC) lze nainstalovat pouze sestavení se silným názvem. Informace o tom, jak vytvořit sestavení se silným názvem, naleznete v tématu [How to: Sign a Assembly se silným názvem](../../standard/assembly/sign-strong-name.md).
 
 ## <a name="windows-installer"></a>Instalační služba systému Windows
 
@@ -45,9 +43,9 @@ Syntaxe pro použití nástroje *Gacutil. exe* pro instalaci sestavení v globá
 gacutil -i <assembly name>
 ```
 
-V tomto příkazu  *\<je název sestavení >* název sestavení pro instalaci do globální mezipaměti sestavení (GAC).
+V tomto příkazu *\<název sestavení >* je název sestavení k instalaci v globální mezipaměti sestavení (GAC).
 
-Pokud nástroj *Gacutil. exe* není v systémové cestě, použijte [příkazový řádek pro vývojáře pro vs  *\<Version >* ](../tools/developer-command-prompt-for-vs.md).
+Pokud nástroj *Gacutil. exe* není v systémové cestě, použijte [příkazový řádek pro vývojáře pro vs *\<> verzi*](../tools/developer-command-prompt-for-vs.md).
 
 Následující příklad nainstaluje sestavení s názvem souboru *Hello. dll* do globální mezipaměti sestavení (GAC).
 
@@ -61,6 +59,6 @@ gacutil -i hello.dll
 ## <a name="see-also"></a>Viz také:
 
 - [Práce se sestaveními a globální mezipamětí sestavení](working-with-assemblies-and-the-gac.md)
-- [Postupy: Odebrání sestavení z globální mezipaměti sestavení (GAC)](how-to-remove-an-assembly-from-the-gac.md)
+- [Postupy: odebrání sestavení z globální mezipaměti sestavení (GAC)](how-to-remove-an-assembly-from-the-gac.md)
 - [Gacutil. exe (nástroj globální mezipaměť sestavení)](../tools/gacutil-exe-gac-tool.md)
-- [Postupy: Podepsat sestavení silným názvem](../../standard/assembly/sign-strong-name.md)
+- [Postupy: podepsání sestavení silným názvem](../../standard/assembly/sign-strong-name.md)

@@ -12,40 +12,38 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ca2dfcfbb5407be2727343a5b3a5b429af83ae20
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3e1dfe8373145286b03e503f038e267ff0d4c4f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634587"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091734"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilace a opětovné používání v regulárních výrazech
-Můžete optimalizovat výkon aplikací, které usnadňují rozsáhlé používání regulárních výrazů, pochopení, jak modul regulárních výrazů zkompiluje výrazy a principy regulárních výrazů v mezipaměti. Toto téma popisuje kompilace a ukládání do mezipaměti.  
+Můžete optimalizovat výkon aplikací, které využívají rozsáhlé používání regulárních výrazů, a porozumět, jak modul regulárních výrazů kompiluje výrazy a porozumění způsobu, jakým jsou regulární výrazy ukládány do mezipaměti. Toto téma popisuje kompilaci a ukládání do mezipaměti.  
   
 ## <a name="compiled-regular-expressions"></a>Kompilované regulární výrazy  
- Ve výchozím nastavení zkompiluje modul regulárních výrazů regulární výraz k sekvenci interních instrukcí (jedná se vysoké úrovně kódy, které se liší od jazyk Microsoft intermediate language, nebo jazyk MSIL). Když se modul spouští regulárního výrazu, interpretuje interní kódy.  
+ Ve výchozím nastavení modul regulárních výrazů zkompiluje regulární výraz do sekvence vnitřních instrukcí (Jedná se o kódy vysoké úrovně, které se liší od jazyka MSIL nebo jazyka MSIL). Když modul spustí regulární výraz, interpretuje vnitřní kódy.  
   
- Pokud <xref:System.Text.RegularExpressions.Regex> objekt je vytvořen s <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost kompiluje regulární výraz k explicitní kód jazyka MSIL místo interní pokyny vysoké úrovně regulární výraz. To umožňuje. NET pro kompilátor just-in-time (JIT) převede výraz do nativního strojového kódu pro vyšší výkon.  
+ Pokud je objekt <xref:System.Text.RegularExpressions.Regex> vytvořen pomocí možnosti <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>, Kompiluje regulární výraz na explicitní kód jazyka MSIL namísto interních instrukcí regulárního výrazu vysoké úrovně. To umožňuje. Kompilátor JIT (just-in-time) pro převod výrazu na nativní strojový kód pro vyšší výkon.  
   
-Generovaný jazyk MSIL však nelze uvolnit. Jediný způsob, jak uvolnit kód je k uvolnění domény celé aplikace (to znamená, uvolnit všechny aplikace v kódu.). Efektivně Jakmile regulární výraz je zkompilován s <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost, nikdy uvolní prostředky využívané třídou kompilované výrazu i v případě, že byl vytvořen regulárního výrazu <xref:System.Text.RegularExpressions.Regex> objekt, který je sám uvolněn uvolňování paměti.  
+Generovaný jazyk MSIL však nelze uvolnit. Jediným způsobem, jak uvolnit kód, je uvolnit celou doménu aplikace (tj. pro uvolnění všech kódů vaší aplikace). Po kompilaci regulárního výrazu s možností <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> nikdy neuvolní prostředky používané kompilovaným výrazem, a to ani v případě, že regulární výraz byl vytvořen pomocí objektu <xref:System.Text.RegularExpressions.Regex>, který je samotný uvolněn do uvolňování paměti.  
   
- Musíte být opatrní a omezit počet různých regulárních výrazů při kompilaci s <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost vyhnout se spotřebovávají příliš mnoho zdrojů. Pokud aplikace musí používat velká, nebo bez vazby počet regulárních výrazů, každý výraz by měl být interpretován, není zkompilován. Ale pokud malý počet regulárních výrazů jsou opakovaně používá, že by měl být zkompilován s <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> pro zajištění lepšího výkonu. Alternativou je použití předkompilované regulárních výrazů. Všechny vaše výrazy do opakovaně použitelné knihovny DLL můžete zkompilovat pomocí <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A> metody. Tím se vyhnete nutnosti kompilace za běhu přitom výhod rychlost kompilované regulární výrazy.  
+ Musíte být opatrní, abyste omezili počet různých regulárních výrazů, které kompilujete s možností <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>, abyste se vyhnuli využívání příliš velkého počtu prostředků. Pokud aplikace musí používat velký nebo neohraničený počet regulárních výrazů, každý výraz by měl být interpretován, nikoli kompilován. Pokud se však používá malý počet regulárních výrazů opakovaně, měly by být kompilovány s <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> pro lepší výkon. Alternativou je použití předkompilovaných regulárních výrazů. Všechny vaše výrazy můžete zkompilovat do opakovaně použitelné knihovny DLL pomocí metody <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A>. Tím se vyhnete nutnosti kompilovat za běhu a přitom stále využívat rychlost kompilovaných regulárních výrazů.  
   
 ## <a name="the-regular-expressions-cache"></a>Mezipaměť regulárních výrazů  
- Kvůli zvýšení výkonu se modul regulárních výrazů udržuje mezipaměť celou aplikaci zkompilovaných regulárních výrazů. Mezipaměti ukládá vzory regulárních výrazů, které se používají pouze ve volání statické metody. (Vzory regulárních výrazů zadané metod, které nejsou uložené v mezipaměti.) Tím se vyhnete nutnosti rozboru výraz do vysoké úrovně bajtový kód pokaždé, když se používá.  
+ Pro zlepšení výkonu modul regulárních výrazů udržuje mezipaměť zkompilovaných regulárních výrazů v celé aplikaci. Mezipaměť ukládá vzory regulárních výrazů, které jsou používány pouze ve voláních statických metod. (Vzory regulárních výrazů dodávané do metod instancí nejsou ukládány do mezipaměti.) To brání nutnosti znovu analyzovat výraz do bajtového kódu vysoké úrovně pokaždé, když se použije.  
   
- Maximální počet v mezipaměti regulárních výrazů je určen hodnotou `static` (`Shared` v jazyce Visual Basic) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType> vlastnost. Ve výchozím nastavení modul regulárních výrazů ukládá do mezipaměti až 15 kompilované regulární výrazy. Pokud počet zkompilovaných regulárních výrazů překračuje velikost mezipaměti, nejdéle regulárního výrazu zahozena a nové regulárního výrazu se uloží do mezipaměti.  
+ Maximální počet regulárních výrazů uložených v mezipaměti je určen hodnotou `static` (`Shared` ve Visual Basic) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType> Property. Ve výchozím nastavení modul regulárních výrazů ukládá do mezipaměti až 15 kompilovaných regulárních výrazů. Pokud počet zkompilovaných regulárních výrazů překročí velikost mezipaměti, je poslední nepoužitý regulární výraz zahozen a nový regulární výraz je uložen do mezipaměti.  
   
- Aplikace můžete využít předkompilované regulárních výrazů v jednom z následujících dvou způsobů:  
+ Vaše aplikace může využít předkompilovaných regulárních výrazů jedním z následujících dvou způsobů:  
   
-- Pomocí statické metody <xref:System.Text.RegularExpressions.Regex> objektu k definování regulárního výrazu. Pokud používáte vzor regulárního výrazu, který již byl definován v jiné volání statické metody, modul regulárních výrazů budou načítat z mezipaměti. Pokud ne, modul se kompiluje regulární výraz a přidejte ji do mezipaměti.  
+- Pomocí statické metody objektu <xref:System.Text.RegularExpressions.Regex> k definování regulárního výrazu. Pokud používáte vzor regulárního výrazu, který již byl definován v jiném volání statické metody, modul regulárních výrazů ho načte z mezipaměti. V takovém případě bude modul kompilovat regulární výraz a přidat jej do mezipaměti.  
   
-- Opětovným použitím existující <xref:System.Text.RegularExpressions.Regex> objekt tak dlouho, dokud jeho vzor regulárního výrazu je potřeba.  
+- Tím, že znovu použijete existující <xref:System.Text.RegularExpressions.Regex> objekt, pokud je třeba jeho vzor regulárního výrazu.  
   
- Z důvodu režie vytváření instancí objektu a kompilace regulárních výrazů, vytváření a ničení rychle mnoho <xref:System.Text.RegularExpressions.Regex> objekty je velmi nákladný proces. Pro aplikace, které používají velký počet různých regulárních výrazů, můžete optimalizovat výkon pomocí volání statických `Regex` metody a případně zvětšením velikosti mezipaměti regulárních výrazů.  
+ Kvůli režii při vytváření instancí objektů a kompilaci regulárních výrazů vytváření a rychlé zničení řady <xref:System.Text.RegularExpressions.Regex> objektů je velmi nákladný proces. Pro aplikace, které používají velký počet různých regulárních výrazů, můžete optimalizovat výkon pomocí volání statických `Regex` metod a případně zvýšením velikosti mezipaměti regulárních výrazů.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)

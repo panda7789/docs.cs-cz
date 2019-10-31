@@ -1,5 +1,5 @@
 ---
-title: Podpora vysoké DPI ve Windows Forms
+title: Podpora vysokého rozlišení DPI v model Windows Forms
 ms.date: 05/16/2017
 helpviewer_keywords:
 - High DPI in Windows Forms
@@ -7,36 +7,34 @@ helpviewer_keywords:
 - Windows Forms layout
 - Windows Forms dynamic resizing
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1641702c7b1c3d3b0e83c59a96529de70f699d17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9183b15da24f70b6fceaa90f718c5af93a3cdda
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966942"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139082"
 ---
-# <a name="high-dpi-support-in-windows-forms"></a>Podpora vysoké DPI ve Windows Forms
+# <a name="high-dpi-support-in-windows-forms"></a>Podpora vysokého rozlišení DPI v model Windows Forms
 
-Od verze rozhraní .NET Framework 4.7, Windows Forms obsahuje vylepšení pro běžné vysokého nastavení DPI a scénáře dynamických DPI. Zde jsou některé z nich:
+Počínaje .NET Framework 4,7 obsahuje model Windows Forms vylepšení běžných scénářů s vysokým rozlišením DPI a dynamickým DPI. Zde jsou některé z nich:
 
-- Vylepšení ve škálování a rozložení počtu Windows Forms ovládací prvky, jako <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku a <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku.
+- Vylepšení škálování a rozložení řady model Windows Formsch ovládacích prvků, jako je <xref:System.Windows.Forms.MonthCalendar> ovládací prvek a ovládací prvek <xref:System.Windows.Forms.CheckedListBox>.
 
-- Škálování jednoho průchodu.  V rozhraní .NET Framework 4.6 a dřívějších verzích škálování se provádí prostřednictvím několik průchodů, která způsobila některé ovládací prvky škálovat víc než bylo nutné.
+- Škálování s jedním průchodem.  V .NET Framework 4,6 a starších verzích bylo škálování provedeno prostřednictvím několika průchodů, což způsobilo, že některé ovládací prvky byly zvětšeny, než bylo nutné.
 
-- Podpora pro dynamické DPI scénáře, ve kterých uživatel změní DPI nebo škálovací faktor po aplikace modelu Windows Forms byl spuštěn.
+- Podpora pro scénáře dynamického rozlišení DPI, ve kterých uživatel po spuštění model Windows Forms aplikace změní faktor DPI nebo měřítko.
 
-Ve verzích rozhraní .NET Framework počínaje .NET Framework 4.7 rozšířenou podporu vysoké rozlišení DPI je přihlašovaná funkce. Musíte nakonfigurovat aplikaci využívat jejich výhod.
+Ve verzích .NET Framework počínaje .NET Framework 4,7 je vylepšená podpora vysokého rozlišení DPI funkce výslovného souhlasu. Aby bylo možné aplikaci využít, je nutné ji nakonfigurovat.
 
-## <a name="configuring-your-windows-forms-app-for-high-dpi-support"></a>Konfigurace aplikace Windows Forms pro podporu vysoké rozlišení DPI
+## <a name="configuring-your-windows-forms-app-for-high-dpi-support"></a>Konfigurace aplikace model Windows Forms pro podporu s vysokým rozlišením DPI
 
-Nové funkce Windows Forms, které podporují vysokou rozpoznání nastavení dpi jsou k dispozici pouze v aplikacích, které cílí .NET Framework 4.7 a běží na operačních systémech Windows od verze Windows 10 Creators Update.
+Nové funkce model Windows Forms s podporou vysokého rozlišení DPI jsou k dispozici pouze v aplikacích, které cílí na .NET Framework 4,7 a jsou spuštěny v operačních systémech Windows počínaje aktualizací Windows 10 Creators Update.
 
-Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windows Forms, je nutné takto:
+K nakonfigurování podpory vysokého rozlišení DPI v aplikaci model Windows Forms je třeba provést následující akce:
 
-- Deklarujte kompatibilitu s Windows 10.
+- Deklarace kompatibility s Windows 10
 
-  Chcete-li to provést, přidejte následující do souboru manifestu:
+  Chcete-li to provést, přidejte do souboru manifestu následující:
 
   ```xml
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
@@ -47,9 +45,9 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
   </compatibility>
   ```
 
-- Povolit sledování DPI podle monitoru *app.config* souboru.
+- V souboru *App. config* Povolte sledování rozlišení DPI podle monitoru.
 
-  Windows Forms zavádí nový [ `<System.Windows.Forms.ApplicationConfigurationSection>` ](../configure-apps/file-schema/winforms/index.md) element na podporu nových funkcí a od verze rozhraní .NET Framework 4.7 přidání vlastního nastavení. Abyste mohli využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující konfigurační soubor aplikace.
+  Model Windows Forms zavádí nový prvek [`<System.Windows.Forms.ApplicationConfigurationSection>`](../configure-apps/file-schema/winforms/index.md) , který bude podporovat nové funkce a vlastní nastavení, které jsme přidali od .NET Framework 4,7. Chcete-li využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující do konfiguračního souboru aplikace.
 
   ```xml
   <System.Windows.Forms.ApplicationConfigurationSection>
@@ -58,11 +56,11 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
   ```
 
   > [!IMPORTANT]
-  > V předchozích verzích rozhraní .NET Framework použít manifest přidává vysoké rozlišení DPI. Tento přístup je už se nedoporučuje, protože přepisuje nastaveních definovaných v souboru app.config.
+  > V předchozích verzích .NET Framework jste použili manifest pro přidání podpory s vysokým rozlišením DPI. Tento přístup se už nedoporučuje, protože přepisuje nastavení definovaná v souboru App. config.
 
-- Zavolejte statickou <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metody.
+- Zavolejte statickou metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.
 
-  To by mělo být prvním volání metoda ve vstupní bod aplikace. Příklad:
+  Mělo by se jednat o první volání metody v vstupním bodě vaší aplikace. Příklad:
 
   ```csharp
   static void Main()
@@ -73,9 +71,9 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
   }
   ```
 
-## <a name="opting-out-of-individual-high-dpi-features"></a>Výslovné odhlášení z jednotlivých funkcí vysoké rozlišení DPI
+## <a name="opting-out-of-individual-high-dpi-features"></a>Vypnutí jednotlivých funkcí vysokého rozlišení DPI
 
-Nastavení `DpiAwareness` hodnota, která se `PerMonitorV2` umožňuje všechny vysokou funkce povědomí o DPI podporovaných verzí rozhraní .NET Framework počínaje .NET Framework 4.7. Obvykle je to dostatečné pro většinu aplikací Windows Forms. Však můžete vyjádřit výslovný nesouhlas jeden nebo více jednotlivých funkcí. Nejdůležitější důvod, proč to je, že váš stávající kód aplikace již zpracovává tuto funkci.  Pokud vaše aplikace se stará o automatické škálování, můžete chtít zakázat funkci automatickou změnu velikosti, následujícím způsobem:
+Nastavení hodnoty `DpiAwareness` na `PerMonitorV2` povolí všechny funkce s vysokým rozlišením DPI podporované .NET Frameworkmi verzemi počínaje .NET Framework 4,7. Obvykle je to vhodné pro většinu model Windows Formsch aplikací. Je však možné, že budete chtít odhlásit z jedné nebo více jednotlivých funkcí. Nejdůležitějším důvodem pro to je, že váš stávající kód aplikace již tuto funkci zpracovává.  Například pokud vaše aplikace zpracovává automatické škálování, možná budete chtít zakázat funkci automatické změny velikosti následujícím způsobem:
 
 ```xml
 <System.Windows.Forms.ApplicationConfigurationSection>
@@ -84,31 +82,31 @@ Nastavení `DpiAwareness` hodnota, která se `PerMonitorV2` umožňuje všechny 
 </System.Windows.Forms.ApplicationConfigurationSection>
 ```
 
-Seznam jednotlivých klíče a jejich hodnoty, najdete v části [přidat Element konfigurace aplikace Windows Forms](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md).
+Seznam jednotlivých klíčů a jejich hodnot naleznete v tématu [model Windows Forms přidání konfiguračního prvku](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md).
 
-## <a name="new-dpi-change-events"></a>Nové události změny DPI
+## <a name="new-dpi-change-events"></a>Nové události změny v DPI
 
-Tři nové události od verze rozhraní .NET Framework 4.7, umožňují programově zpracovávat dynamické DPI změny:
+Počínaje .NET Framework 4,7, tři nové události umožňují programově zpracovat dynamické změny v DPI:
 
-- <xref:System.Windows.Forms.Control.DpiChangedAfterParent>, která je vyvolána při nastavení hodnoty DPI pro ovládací prvek je programově změnit po události DPI změny pro nadřazený prvek nebo formuláře došlo k chybě.
-- <xref:System.Windows.Forms.Control.DpiChangedBeforeParent>, která je vyvolána při nastavení hodnoty DPI pro ovládací prvek se změní prostřednictvím kódu programu před DPI události změn pro jeho nadřazenému ovládacímu prvku nebo formuláře došlo k chybě.
-- <xref:System.Windows.Forms.Form.DpiChanged>, která je vyvolána při nastavení hodnoty DPI změní na zobrazovací zařízení, ve kterém se nyní zobrazí formulář.
+- <xref:System.Windows.Forms.Control.DpiChangedAfterParent>, která se aktivuje, když se změní nastavení DPI pro ovládací prvek programově po události změny DPI nadřazeného ovládacího prvku nebo formuláře.
+- <xref:System.Windows.Forms.Control.DpiChangedBeforeParent>, která se aktivuje, když se nastavení DPI pro ovládací prvek změní programově předtím, než dojde k události změny v DPI pro svůj nadřazený ovládací prvek nebo formulář.
+- <xref:System.Windows.Forms.Form.DpiChanged>, která se aktivuje, když se nastavení DPI změní na zobrazovací zařízení, ve kterém je formulář aktuálně zobrazený.
 
 ## <a name="new-helper-methods-and-properties"></a>Nové pomocné metody a vlastnosti
 
-Rozhraní .NET Framework 4.7 také přidává několik nových pomocné metody a vlastnosti, které poskytují informace o Škálování DPI a umožňují provádět Škálování DPI. Zde jsou některé z nich:
+.NET Framework 4,7 také přidává řadu nových pomocných metod a vlastností, které poskytují informace o škálování DPI a umožňují provádět škálování DPI. Zde jsou některé z nich:
 
-- <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>, která převede hodnotu z logické pixelů zařízení.
+- <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>, která převede hodnotu z logického na pixely zařízení.
 
-- <xref:System.Windows.Forms.Control.ScaleBitmapLogicalToDevice%2A>, která se škáluje rastrový obrázek na logické DPI pro zařízení.
+- <xref:System.Windows.Forms.Control.ScaleBitmapLogicalToDevice%2A>, která škáluje rastrový obrázek na logické rozlišení DPI pro zařízení.
 
-- <xref:System.Windows.Forms.Control.DeviceDpi%2A>, který vrátí DPI pro aktuální zařízení.
+- <xref:System.Windows.Forms.Control.DeviceDpi%2A>, která vrací DPI pro aktuální zařízení.
 
-## <a name="versioning-considerations"></a>Aspekty správy verzí
+## <a name="versioning-considerations"></a>Požadavky na správu verzí
 
-Kromě spuštění v rozhraní .NET Framework 4.7 a Windows 10 Creators Update, může aplikace také spustit v prostředí, ve kterém není kompatibilní s vysokou vylepšení DPI. V takovém případě budete potřebovat k vývoji jako základní pro vaši aplikaci. Lze to provést [vlastního vykreslení](./controls/user-drawn-controls.md) zpracování škálování.
+Kromě provozu na .NET Framework 4,7 a Windows 10 Creators Update může být aplikace spuštěná také v prostředí, ve kterém není kompatibilní s vysokým rozlišením DPI. V takovém případě budete muset pro svou aplikaci vytvořit zálohu. To můžete provést k provedení [vlastního vykreslování](./controls/user-drawn-controls.md) pro zpracování škálování.
 
-Provedete to tak, musíte také určit operační systém, na kterém je spuštěná aplikace. Můžete to udělat s kódem, jako je následující:
+K tomu je potřeba určit i operační systém, na kterém je vaše aplikace spuštěná. To lze provést pomocí kódu podobného následujícímu:
 
 ```csharp
 // Create a reference to the OS version of Windows 10 Creators Update.
@@ -122,9 +120,9 @@ Console.WriteLine(Environment.OSVersion.VersionString);
 Console.WriteLine(Environment.OSVersion.Version.CompareTo(OsMinVersion));
 ```
 
-Všimněte si, že vaše aplikace nezjistí úspěšně Windows 10 Pokud nebyl uveden jako podporovaný operační systém v manifestu aplikace.
+Všimněte si, že aplikace nebude úspěšně detekovat Windows 10, pokud nebyla uvedena jako podporovaný operační systém v manifestu aplikace.
 
-Můžete také zkontrolovat verzi rozhraní .NET Framework, kterou byla aplikace vytvořena proti:
+Můžete také ověřit verzi .NET Framework, na které byla aplikace vytvořena:
 
 ```csharp
 Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName);
@@ -132,5 +130,5 @@ Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName);
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přidání konfiguračního prvku Windows Forms](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md)
+- [model Windows Forms přidat element konfigurace](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md)
 - [Úprava velikosti a měřítka Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)

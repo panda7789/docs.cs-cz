@@ -13,16 +13,16 @@ helpviewer_keywords:
 - file extensions [WPF], registering
 - registering MIME types [WPF]
 ms.assetid: c6e8c2cb-9ba2-4e75-a0d5-180ec9639433
-ms.openlocfilehash: 3a9bf79a9d505fef53b62cb589920adcf95ae92a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a731dc49556a73c585c6201a80ea3ea77c15cb11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611501"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124415"
 ---
 # <a name="how-to-configure-iis-50-and-iis-60-to-deploy-wpf-applications"></a>Postupy: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Aplikaci můžete nasadit z většiny webových serverů, pokud jsou nakonfigurované odpovídající typy MIME (Multipurpose Internet Mail Extensions). Ve výchozím nastavení je Microsoft Internetová informační služba (IIS) 7,0 nakonfigurovaný s těmito typy MIME, ale Microsoft Internetová informační služba (IIS) 5,0 a Microsoft Internetová informační služba (IIS) 6,0 nejsou.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci můžete nasadit z většiny webových serverů, pokud jsou nakonfigurované odpovídající typy MIME (Multipurpose Internet Mail Extensions). Ve výchozím nastavení je Microsoft Internetová informační služba (IIS) 7,0 nakonfigurovaný s těmito typy MIME, ale Microsoft Internetová informační služba (IIS) 5,0 a Microsoft Internetová informační služba (IIS) 6,0 nejsou.
 
 Toto téma popisuje, jak nakonfigurovat Microsoft Internetová informační služba (IIS) 5,0 a Microsoft Internetová informační služba (IIS) 6,0 pro nasazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.
 
@@ -51,19 +51,19 @@ Nastavení vypršení platnosti obsahu byste měli upravit na 1 minutu. Následu
 
 Je nutné zaregistrovat několik typů MIME a přípon souborů, aby prohlížeč v systému klienta mohl načíst správnou obslužnou rutinu. Je nutné přidat následující typy:
 
-|Linka|Typ MIME|
+|klapk|Typ MIME|
 |---------------|---------------|
-|.manifest|Aplikace/manifest|
+|. manifest|Aplikace/manifest|
 |. XAML|Application/XAML + XML|
 |. Application|aplikace/x-MS-aplikace|
-|.xbap|application/x-ms-xbap|
+|. XBAP|aplikace/x-MS-XBAP|
 |. deploy|aplikace/oktet – Stream|
-|. XPS|application/vnd.ms-xpsdocument|
+|. XPS|application/vnd. MS-XpsDocument|
 
 > [!NOTE]
 > V klientských systémech nemusíte registrovat typy MIME ani přípony souborů. Jsou zaregistrovány automaticky při instalaci aplikace Microsoft .NET Framework.
 
-Následující ukázka jazyka VBScript (Microsoft Visual Basic Scripting Edition) automaticky přidá nezbytné typy MIME do služby IIS. Chcete-li použít skript, zkopírujte kód do souboru. vbs na vašem serveru. Potom spusťte skript spuštěním souboru z příkazového řádku nebo Poklikáním na soubor v [!INCLUDE[TLA#tla_winexpl](../../../../includes/tlasharptla-winexpl-md.md)].
+Následující ukázka jazyka VBScript (Microsoft Visual Basic Scripting Edition) automaticky přidá nezbytné typy MIME do služby IIS. Chcete-li použít skript, zkopírujte kód do souboru. vbs na vašem serveru. Potom spusťte skript spuštěním souboru z příkazového řádku nebo Poklikáním na soubor v Průzkumníkovi Microsoft Windows.
 
 ```vb
 ' This script adds the necessary Windows Presentation Foundation MIME types
@@ -147,7 +147,7 @@ For Each mimeMap In allMimeMaps
 Next
 ```
 
-Uložte skript jako `.vbs` soubor ( `DiscoverIISMimeTypes.vbs`například) a spusťte ho z příkazového řádku pomocí následujícího příkazu:
+Uložte skript jako soubor `.vbs` (například `DiscoverIISMimeTypes.vbs`) a spusťte ho z příkazového řádku pomocí následujícího příkazu:
 
 ```console
 cscript DiscoverIISMimeTypes.vbs

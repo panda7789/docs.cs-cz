@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: c8b65b19-d777-428f-bc0c-0d84c78a37bc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 698fb8c8efcbe347c0e833b0dba01fffd3030de6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 355f9da29a435a02d929cc01f28e95c4e04cdfcc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795506"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109146"
 ---
 # <a name="asm_name-enumeration"></a>ASM_NAME – výčet
 Označuje verzi, sestavení, jazykovou verzi, signaturu a tak dále, sestavení, jehož vlastnosti budou načteny nebo nastaveny metodou [IAssemblyName](iassemblyname-interface.md) .  
@@ -65,11 +63,11 @@ typedef enum {
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

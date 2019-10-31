@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3d3f6eec-d772-401f-a028-1a2ecdc31e95
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 804aa4a6508713b2d6f2d154fc47e09638994468
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 61563488bff682cc7a417296c3db8eb7e7cf965a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747361"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139324"
 ---
 # <a name="icordebugreferencevaluesetvalue-method"></a>ICorDebugReferenceValue::SetValue – metoda
-Nastaví adresu zadané paměti. To znamená tato metoda nastaví tento ICorDebugReferenceValue tak, aby odkazoval na objekt.  
+Nastaví zadanou adresu paměti. To znamená, že tato metoda nastaví tento ICorDebugReferenceValue tak, aby odkazoval na objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT SetValue (
   
 ## <a name="parameters"></a>Parametry  
  `value`  
- [in] A `CORDB_ADDRESS` hodnota, která určuje adresu objektu, ke kterému je tento `ICorDebugReferenceValue` body.  
+ pro Hodnota `CORDB_ADDRESS`, která určuje adresu objektu, na který odkazuje tento `ICorDebugReferenceValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

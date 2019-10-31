@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_EndEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2c5a817174ec4c4e4407c19bb1d6d2d852d86dd2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 82627fa416f71e123ed2c03bae4584e4433310eb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798315"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127280"
 ---
 # <a name="qualifierset_endenumeration-function"></a>QualifierSet_EndEnumeration – funkce
 Ukončí výčet zahájený voláním funkce [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) .  
@@ -49,9 +47,9 @@ pro Ukazatel na instanci [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbe
 
 Následující hodnota vrácená touto funkcí je definována v souboru hlaviček *WbemCli. h* nebo ji můžete definovat jako konstantu v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
@@ -61,9 +59,9 @@ Toto volání se doporučuje, ale není povinné. Okamžitě uvolňuje prostřed
 
 ## <a name="requirements"></a>Požadavky  
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
-**Hlaviček** WMINet_Utils.idl  
+**Hlavička:** WMINet_Utils. idl  
   
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

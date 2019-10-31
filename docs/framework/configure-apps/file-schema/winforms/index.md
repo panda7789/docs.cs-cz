@@ -2,14 +2,12 @@
 title: Konfigurační oddíl pro model Windows Forms
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e76e11ef8bb39d72cb16655c948354bc326e75bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4a54df0b6301f1aae14d5561c91c6792cb0a1620
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913086"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109816"
 ---
 # <a name="windows-forms-configuration-section"></a>Konfigurační oddíl pro model Windows Forms
 Nastavení konfigurace model Windows Forms umožňuje aplikaci model Windows Forms ukládat a načítat informace o přizpůsobených nastaveních aplikace, jako je podpora více monitorů, podpora vysokého rozlišení DPI a další předdefinovaná nastavení konfigurace.
@@ -44,13 +42,13 @@ Prvek  |Popis |
 
 Prvek  |Popis |
 ---------|---------|
-[\<> Konfigurace](../configuration-element.md) | Kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a model Windows Forms aplikacemi |
+[Konfigurace \<](../configuration-element.md) | Kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a model Windows Forms aplikacemi |
 
 ## <a name="remarks"></a>Poznámky
 
-Počínaje .NET Framework 4,7 `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje nakonfigurovat model Windows Forms aplikace, aby využívaly výhody funkcí přidaných v posledních verzích .NET Framework. 
+Počínaje .NET Framework 4,7 `<System.Windows.Forms.ApplicationConfigurationSection>` prvek umožňuje nakonfigurovat model Windows Forms aplikace, aby využívaly funkce přidané v posledních verzích .NET Framework. 
 
-Element může obsahovat jeden nebo více podřízených [`<add>`](windows-forms-add-configuration-element.md) elementů, z nichž každý definuje konkrétní nastavení konfigurace. `<System.Windows.Forms.ApplicationConfigurationSection>`
+Element `<System.Windows.Forms.ApplicationConfigurationSection>` může obsahovat jeden nebo více podřízených [`<add>`](windows-forms-add-configuration-element.md) prvků, z nichž každý definuje konkrétní nastavení konfigurace.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5e83c82c-593d-4691-90b0-383d218b415e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: abf24b81bae4d16c3a03aa668d4e1f5e8117cc93
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9a4cf1f9ea1ccb174b5fb9336040d5e168653fb1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737459"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088278"
 ---
 # <a name="icordebugarrayvaluegetrank-method"></a>ICorDebugArrayValue::GetRank – metoda
-Získá počet dimenzí v poli.  
+Získá počet rozměrů v poli.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetRank (
   
 ## <a name="parameters"></a>Parametry  
  `pnRank`  
- [out] Ukazatel na počet dimenzí v tomto `ICorDebugArrayValue` objektu.  
+ mimo Ukazatel na počet dimenzí v tomto objektu `ICorDebugArrayValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

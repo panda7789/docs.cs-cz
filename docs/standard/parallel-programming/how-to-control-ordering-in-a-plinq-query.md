@@ -8,17 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to control ordering
 ms.assetid: c67eccc7-004d-4b2f-987e-919cbbd62ef7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7416f2f9c200d687d3f2c1f14b01cafdb48f85b1
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: d38c039fa99433d9476d62c1e96dff7e306fd766
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988186"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123124"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a>Postupy: Řazení ovládacích prvků v PLINQ dotazu
-Tyto příklady ukazují, jak řídit řazení v PLINQ dotazu pomocí <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> metody rozšíření.  
+Tyto příklady ukazují, jak řídit řazení v PLINQ dotazu pomocí metody rozšíření <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>.  
   
 > [!WARNING]
 > Tyto příklady jsou primárně určeny k předvedení používání a mohou nebo nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotazy.  

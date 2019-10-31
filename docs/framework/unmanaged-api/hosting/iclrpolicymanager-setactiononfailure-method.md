@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4664033f-db97-4388-b988-2ec470796e58
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 76f064d1683615ef8f665cf1facaa31d61b294a5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 143052febe136e969987c35bc06f6c3b3356aedf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759593"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140778"
 ---
 # <a name="iclrpolicymanagersetactiononfailure-method"></a>ICLRPolicyManager::SetActionOnFailure – metoda
-Určuje akci zásad by měl trvat common language runtime (CLR), když dojde k selhání zadané.  
+Určuje akci zásad, kterou by modul CLR (Common Language Runtime) měl provést při výskytu zadaného selhání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +36,25 @@ HRESULT SetActionOnFailure (
   
 ## <a name="parameters"></a>Parametry  
  `failure`  
- [in] Jeden z [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty určující typ selhání, pro které chcete provést akci.  
+ pro Jedna z hodnot [EClrFailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) , která označuje typ selhání, u kterého se má provést akce.  
   
  `action`  
- [in] Jeden z [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty indikující akce, která má být provedeny, když dojde k chybě. Seznam podporovaných hodnot naleznete v části poznámky.  
+ pro Jedna z hodnot [EPolicyAction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) označující akci, která se má provést, když dojde k selhání. Seznam podporovaných hodnot naleznete v části poznámky.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetActionOnFailure` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`SetActionOnFailure` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_INVALIDARG|Akce zásad nelze nastavit pro zadanou operaci, nebo byla zadána neplatná zásada akci pro tuto operaci.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_INVALIDARG|Pro zadanou operaci nelze nastavit akci zásad, nebo byla pro tuto operaci zadána neplatná akce zásad.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení CLR vyvolá výjimku, pokud se nezdaří pro přidělení prostředků, jako je paměť. `SetActionOnFailure` umožňuje hostiteli toto chování lze přepsat zadáním zásad akce má být provedena po selhání. V následující tabulce jsou uvedeny kombinace [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) a [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které jsou podporovány. (Předpona FAIL_ je vynecháno z [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty.)  
+ Ve výchozím nastavení vyvolá CLR výjimku, když se nepovede přidělit prostředek, jako je například paměť. `SetActionOnFailure` umožňuje hostiteli přepsat toto chování zadáním akce zásady, která se má provést při selhání. V následující tabulce jsou uvedeny kombinace hodnot [EClrFailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) a [EPolicyAction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) , které jsou podporovány. (Předpona FAIL_ se vynechává z hodnot [EClrFailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) .)  
   
 ||NonCriticalResource|CriticalResource|FatalRuntime|OrphanedLock|StackOverflow|AccessViolation|CodeContract|  
 |-|-------------------------|----------------------|------------------|------------------|-------------------|---------------------|------------------|  
@@ -72,13 +70,13 @@ HRESULT SetActionOnFailure (
 |`eDisableRuntime`|X|X|X|X|X|Není k dispozici||  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,15 +1,13 @@
 ---
 title: Návratové hodnoty ref a lokální hodnoty REFC# (Průvodce)
 description: Naučte se definovat a používat místní hodnoty Return a ref ref.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: e23007deffea0f542d623be918cd1c61496d1362
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 99e0f9d995cf3bf5c0486415b6f2d578147d3c7f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353883"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114477"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Návratové hodnoty podle odkazu a lokální proměnné podle odkazu
 
@@ -19,13 +17,13 @@ Počínaje C# 7,0 C# podporuje návratové hodnoty odkazů (vrátí ref). Návra
 
 Většina vývojářů je obeznámená s předáním argumentu s volanou metodou *odkazem*. Seznam argumentů volané metody obsahuje proměnnou předanou odkazem. Všechny změny provedené v hodnotě volané metodou jsou pozorovány volajícím. *Návratová hodnota odkazu* znamená, že metoda vrátí *odkaz* (nebo alias) na určitou proměnnou. Rozsah této proměnné musí zahrnovat metodu. Životnost této proměnné musí překračovat rámec návratové metody. Změny návratové hodnoty metody volajícím jsou provedeny na proměnnou, která je vrácena metodou.
 
-Deklarace, že metoda vrátí *návratovou hodnotu odkazu* , označuje, že metoda vrací alias k proměnné. Záměr návrhu je často, že volající kód by měl mít přístup k této proměnné prostřednictvím aliasu, včetně změny. Tyto metody vracené odkazem nemůžou mít návratový typ `void`.
+Deklarace, že metoda vrátí *návratovou hodnotu odkazu* , označuje, že metoda vrací alias k proměnné. Záměr návrhu je často, že volající kód by měl mít přístup k této proměnné prostřednictvím aliasu, včetně změny. Tyto metody vracené odkazem nemohou mít návratový typ `void`.
 
 Existují určitá omezení pro výraz, který metoda může vracet jako návratovou hodnotu odkazu. Mezi omezení patří:
 
 - Návratová hodnota musí mít životnost, která překračuje provádění metody. Jinými slovy nemůže být lokální proměnná v metodě, která ji vrací. Může to být instance nebo statické pole třídy, nebo může být argument předaný metodě. Pokus o návrat lokální proměnné generuje chybu kompilátoru CS8168, "" nemůže vrátit místní "obj" odkazem, protože se nejedná o místní odkaz. "
 
-- Návratovou hodnotou nemůže být literál `null`. Vrácení `null` generuje chybu kompilátoru CS8156; "výraz nelze v tomto kontextu použít, protože jej nelze vrátit odkazem."
+- Návratovou hodnotou nemůže být literální `null`. Vrácení `null` generuje chybu kompilátoru CS8156; "výraz nelze v tomto kontextu použít, protože jej nelze vrátit odkazem."
 
    Metoda s návratovým odkazem může vracet alias k proměnné, jejíž hodnota je aktuálně hodnotou null (bez instancí) nebo [typ hodnoty s možnou hodnotou null](../nullable-types/index.md) pro typ hodnoty.
 
@@ -62,7 +60,7 @@ Návratová hodnota REF je alias jiné proměnné v oboru volané metody. Může
 
 ## <a name="ref-locals"></a>Lokální hodnoty REF
 
-Předpokládat, že metoda `GetContactInformation` je deklarovaná jako návratová hodnota REF:
+Předpokládat, že metoda `GetContactInformation` je deklarovaná jako ref Return:
 
 ```csharp
 public ref Person GetContactInformation(string fname, string lname)
@@ -74,7 +72,7 @@ Přiřazení podle hodnoty přečte hodnotu proměnné a přiřadí ji k nové p
 Person p = contacts.GetContactInformation("Brandie", "Best");
 ```
 
-Předchozí přiřazení deklaruje `p` jako místní proměnnou. Počáteční hodnota je zkopírována z čtení hodnoty vrácené funkcí `GetContactInformation`. Jakákoli budoucí přiřazení `p` nezmění hodnotu proměnné vrácenou `GetContactInformation`. Proměnná `p` již není aliasem pro vrácenou proměnnou.
+Předchozí přiřazení deklaruje `p` jako místní proměnnou. Počáteční hodnota je zkopírována z čtení hodnoty vrácené `GetContactInformation`. Jakákoli budoucí přiřazení `p` nemění hodnotu proměnné vrácené `GetContactInformation`. Proměnná `p` již není aliasem pro vrácenou proměnnou.
 
 Deklaraci *místní proměnné ref* můžete pro zkopírování aliasu na původní hodnotu. V následujícím přiřazení je `p` alias pro proměnnou vrácenou z `GetContactInformation`.
 
@@ -82,7 +80,7 @@ Deklaraci *místní proměnné ref* můžete pro zkopírování aliasu na původ
 ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 ```
 
-Následné použití `p` je stejné jako použití proměnné vrácené `GetContactInformation`, protože `p` je aliasem pro tuto proměnnou. Změny `p` také mění proměnnou vrácenou z `GetContactInformation`.
+Následné použití `p` je stejné jako použití proměnné vrácené `GetContactInformation`, protože `p` je alias pro tuto proměnnou. Změny `p` také mění proměnnou vrácenou z `GetContactInformation`.
 
 Klíčové slovo `ref` se používá před deklarací místní proměnné *a* před voláním metody. 
 
@@ -109,13 +107,13 @@ Následující příklad definuje třídu `NumberStore`, která ukládá pole ce
 
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStore.cs#1)]
 
-Následující příklad volá metodu `NumberStore.FindNumber` pro načtení první hodnoty, která je větší nebo rovna 16. Volající pak zdvojnásobí hodnotu vrácenou metodou. Výstup z příkladu ukazuje změnu, která se odráží v hodnotě prvků pole instance `NumberStore`.
+Následující příklad volá metodu `NumberStore.FindNumber` pro načtení první hodnoty, která je větší nebo rovna 16. Volající pak zdvojnásobí hodnotu vrácenou metodou. Výstup z příkladu ukazuje změnu odrážející se v hodnotě prvků pole instance `NumberStore`.
 
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStore.cs#2)]
 
 Bez podpory návratových hodnot odkazů je taková operace provedena vrácením indexu prvku pole spolu s jeho hodnotou. Volající pak může použít tento index k úpravě hodnoty v samostatném volání metody. Volající však může také změnit index k přístupu a případně upravit jiné hodnoty pole.  
 
-Následující příklad ukazuje, jak může být metoda `FindNumber` přepsána po C# 7,3 použití místního opětovného přiřazení ref:
+Následující příklad ukazuje, jak může být metoda `FindNumber` přepsána po C# 7,3 pro použití místního opětovného přiřazení ref:
 
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStoreUpdated.cs#1)]
 

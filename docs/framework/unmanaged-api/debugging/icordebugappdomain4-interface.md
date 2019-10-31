@@ -2,34 +2,32 @@
 title: Rozhraní ICorDebugAppDomain4
 ms.date: 03/30/2017
 ms.assetid: c536b9dc-148e-4924-bde1-1daa98d49d90
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5c6077f16f07c5f1fc76b6525ccb036aa1e4fa06
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db5c08f74795026d7c6f3b5872fb6fdabf88ee5d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922162"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088810"
 ---
 # <a name="icordebugappdomain4-interface"></a>Rozhraní ICorDebugAppDomain4
-Logicky rozšiřuje icordebugappdomain – rozhraní, jak získat objekt spravovaného z obálka volatelná aplikacemi COM.  
+Logicky rozšiřuje rozhraní ICorDebugAppDomain, aby získala spravovaný objekt z obálky s přípravnou modelem COM.  
   
 ## <a name="method"></a>Metoda  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetObjectForCCW – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain4-getobjectforccw-method.md)|Získá z ukazatele (CCW) obálka volatelná aplikacemi COM spravovaný objekt.|  
+|[GetObjectForCCW – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain4-getobjectforccw-method.md)|Načte spravovaný objekt z ukazatele na obálku s přívolatelné v modelu COM.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

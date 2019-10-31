@@ -2,14 +2,12 @@
 title: Síťové zásadní změny – .NET Core
 description: Obsahuje seznam nejnovějších změn v sítích .NET Core.
 ms.date: 10/03/2019
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f1db9ee7e8897e5a8c2f5e486d2636a8d44f23be
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fba784b7533ff571164bc87af58ece5a47b7766d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72007795"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092951"
 ---
 # <a name="networking-breaking-changes"></a>Síťové přerušující změny 
 

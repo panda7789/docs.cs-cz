@@ -7,21 +7,21 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31b53837e24029fc7ff0b576d95c0213041a434e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6024144b6f12df22369366f04c3cbad02c5011d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927674"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119017"
 ---
-# <a name="configsections-element-for-configuration"></a>\<element configSections > pro \<konfigurační >
+# <a name="configsections-element-for-configuration"></a>\<> configSections – element pro \<konfigurace >
 
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections>**
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp; **\<configSections >**
 
 ## <a name="attributes"></a>Atributy
 
@@ -31,20 +31,20 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<> Konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**Konfigurace \<** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<> oddílu**](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
-| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
-| [ **\<remove>** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
-| [ **\<Vymazat >** ](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
+| [**oddíl \<** ](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
+| [ **> \<sectionGroup**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [ **\<odebrat >** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
+| [ **\<vymazat >** ](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je tento prvek v konfiguračním souboru, musí být prvním podřízeným prvkem  **\<> elementu konfigurace** .
+Pokud je tento prvek v konfiguračním souboru, musí být prvním podřízeným prvkem prvku **\<> Konfigurace** .
 
 ## <a name="example"></a>Příklad
 

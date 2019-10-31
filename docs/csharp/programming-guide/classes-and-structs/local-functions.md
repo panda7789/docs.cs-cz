@@ -4,14 +4,12 @@ ms.custom: seodec18
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f572f683511fe90951f841c80eae448a9cb6054b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b4d1115ceba16b1589b69d0aa91e472befea2ac8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785087"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114630"
 ---
 # <a name="local-functions-c-programming-guide"></a>Místní funkce (C# Průvodce programováním)
 
@@ -47,13 +45,13 @@ Všimněte si, že všechny místní proměnné, které jsou definovány v nadř
 
 Na rozdíl od definice metody nemůže definice lokální funkce obsahovat následující prvky:
 
-- Modifikátor přístupu ke členu Vzhledem k tomu, že všechny místní funkce jsou soukromé, včetně modifikátoru přístupu `private` , jako je klíčové slovo, vygeneruje chybu kompilátoru CS0106, modifikátor Private není pro tuto položku platný.
+- Modifikátor přístupu ke členu Vzhledem k tomu, že jsou všechny místní funkce soukromé, včetně modifikátoru přístupu, jako je například klíčové slovo `private`, vygeneruje chybu kompilátoru CS0106, modifikátor Private není pro tuto položku platný.
  
-- Klíčové slovo [static](../../language-reference/keywords/static.md) . `static` Zahrnutí klíčového slova generuje chybu kompilátoru CS0106, modifikátor "static" není pro tuto položku platný. "
+- Klíčové slovo [static](../../language-reference/keywords/static.md) . Zahrnutí klíčového slova `static` generuje chybu kompilátoru CS0106, modifikátor "static" není pro tuto položku platný. "
 
 Kromě toho nelze atributy použít pro místní funkci nebo její parametry a parametry typu. 
  
-Následující příklad definuje místní funkci s názvem `AppendPathSeparator` , která je soukromá pro metodu s názvem: `GetText`
+Následující příklad definuje místní funkci s názvem `AppendPathSeparator`, která je soukromá pro metodu s názvem `GetText`:
    
 [!code-csharp[LocalFunctionExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions1.cs)]  
    
@@ -61,7 +59,7 @@ Následující příklad definuje místní funkci s názvem `AppendPathSeparator
 
 Jednou z užitečných funkcí lokálních funkcí je to, že může dojít k okamžitému povrchování výjimek. U iterátorů metod jsou výjimky vyhodnoceny pouze v případě, že je vyhodnocena vrácená sekvence, a ne při načtení iterátoru. Pro asynchronní metody jsou při očekávaných úlohách pozorovány jakékoli výjimky vyvolané v asynchronní metodě. 
 
-Následující příklad definuje `OddSequence` metodu, která vytváří výčty lichých čísel mezi zadaným rozsahem. Protože předá metodě `OddSequence` Enumerator číslo větší než 100, <xref:System.ArgumentOutOfRangeException>vyvolá metoda. Jak výstup z příkladu ukazuje, plochy výjimky pouze při iteraci čísel, a ne při načtení čítače výčtu.
+Následující příklad definuje metodu `OddSequence`, která vytváří výčet lichých čísel mezi zadaným rozsahem. Vzhledem k tomu, že předává číslo větší než 100 metodě čítače `OddSequence`, vyvolá metoda <xref:System.ArgumentOutOfRangeException>. Jak výstup z příkladu ukazuje, plochy výjimky pouze při iteraci čísel, a ne při načtení čítače výčtu.
 
 [!code-csharp[LocalFunctionIterator1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-iterator1.cs)] 
 
@@ -71,11 +69,11 @@ Místo toho můžete vyvolat výjimku při provádění ověřování a před na
 
 Místní funkce lze použít podobným způsobem pro zpracování výjimek mimo asynchronní operaci. Výjimky vyvolané v asynchronní metodě obvykle vyžadují, abyste prozkoumali vnitřní výjimky <xref:System.AggregateException>. Místní funkce umožňují vašemu kódu selhání rychle a umožňují, aby vaše výjimka byla vyvolána a byla sledována synchronně.
 
-Následující příklad používá asynchronní metodu pojmenovanou `GetMultipleAsync` k pozastavení po zadaný počet sekund a vrátí hodnotu, která je náhodné násobek tohoto počtu sekund. Maximální zpoždění je 5 sekund; <xref:System.ArgumentOutOfRangeException> výsledkem je, že je hodnota větší než 5. Jak ukazuje následující příklad, výjimka, která je vyvolána, když je předána `GetMultipleAsync` hodnota 6 metodě, je zabalena <xref:System.AggregateException> do metody po `GetMultipleAsync` zahájení provádění.
+Následující příklad používá asynchronní metodu s názvem `GetMultipleAsync` k pozastavení po zadaný počet sekund a vrátí hodnotu, která je náhodnou násobek tohoto počtu sekund. Maximální zpoždění je 5 sekund; <xref:System.ArgumentOutOfRangeException> výsledků, pokud je hodnota větší než 5. Jak ukazuje následující příklad, výjimka, která je vyvolána, když je předána hodnota 6 do metody `GetMultipleAsync` je zabalena do <xref:System.AggregateException> poté, co metoda `GetMultipleAsync` zahájí provádění.
 
 [!code-csharp[LocalFunctionAsync`](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-async1.cs)] 
 
-Stejně jako u metody iterátoru můžeme kód z tohoto příkladu Refaktorovat, aby bylo ověřování provedeno před voláním asynchronní metody. Jak ukazuje výstup z následujícího příkladu, <xref:System.ArgumentOutOfRangeException> není zabalen <xref:System.AggregateException>do.
+Stejně jako u metody iterátoru můžeme kód z tohoto příkladu Refaktorovat, aby bylo ověřování provedeno před voláním asynchronní metody. Jak ukazuje výstup z následujícího příkladu, <xref:System.ArgumentOutOfRangeException> není zabalen do <xref:System.AggregateException>.
 
 [!code-csharp[LocalFunctionAsync`](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-async2.cs)] 
 

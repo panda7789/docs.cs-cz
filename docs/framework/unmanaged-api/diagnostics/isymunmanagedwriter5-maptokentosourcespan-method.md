@@ -2,19 +2,17 @@
 title: ISymUnmanagedWriter5::MapTokenToSourceSpan – metoda
 ms.date: 03/30/2017
 ms.assetid: d0fbbf61-71c6-4fb1-8c9f-d619ca5d7d68
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 08c219dd033b39fc07159875b184cdf70e3aa3ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 876804e7b825443116b1f44a02a685a73153915c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937862"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121628"
 ---
 # <a name="isymunmanagedwriter5maptokentosourcespan-method"></a>ISymUnmanagedWriter5::MapTokenToSourceSpan – metoda
-Mapy token daná metadata do daného zdroje řádku span zadaného zdrojového souboru.  
+Mapuje daný token metadat na zadaný rozsah řádku zdroje v zadaném zdrojovém souboru.  
   
- Musí být volána mezi voláními [openmaptokenstosourcespans – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) a [closemaptokenstosourcespans – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md).  
+ Musí být volána mezi voláním [metody openmaptokenstosourcespans –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) a [metodou closemaptokenstosourcespans –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +35,7 @@ HRESULT MapTokenToSourceSpan(    [in] mdToken token,    [in] ISymUnmanagedDocume
  Vrátí `HRESULT`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

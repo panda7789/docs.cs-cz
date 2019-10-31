@@ -9,14 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 04ebdf5d3e5caf2c34823528703f75cf972f302f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f0b9bc03225ae3d2365a21fd3b78d09c08d4fc1a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631312"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091582"
 ---
 # <a name="qualifying-net-types-for-com-interoperation"></a>Kvalifikace typů .NET pro mezichodové operace COM
 Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zvažte požadavky zprostředkovatele komunikace s objekty COM v době návrhu. Spravované typy (třída, rozhraní, struktura a výčet) hladce integrují s typy modelu COM, když dodržujete následující pokyny:  
@@ -35,7 +33,7 @@ Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zva�
   
 - Metody, vlastnosti, pole a události musí být veřejné.  
   
-     Členové veřejných typů musí být také veřejné, pokud mají být viditelné modelu COM. Můžete omezit viditelnost sestavení, veřejného typu nebo veřejných členů veřejného typu <xref:System.Runtime.InteropServices.ComVisibleAttribute>použitím. Ve výchozím nastavení jsou všechny veřejné typy a členy viditelné.  
+     Členové veřejných typů musí být také veřejné, pokud mají být viditelné modelu COM. Můžete omezit viditelnost sestavení, veřejného typu nebo veřejných členů veřejného typu použitím <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Ve výchozím nastavení jsou všechny veřejné typy a členy viditelné.  
   
 - Typy musí mít veřejný konstruktor bez parametrů, který se má aktivovat z modelu COM.  
   

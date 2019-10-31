@@ -1,35 +1,33 @@
 ---
-title: 'Postupy: Najít plně kvalifikovaný název sestavení'
+title: 'Postupy: hledání plně kvalifikovaného názvu sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - names [.NET Framework], fully qualified type names
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 4fc670adc80a6f4ce7b36074185dcd3bb85fbc67
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 49d6d6cf5c138df671d061beb23cb57bcb0667b5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991312"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140302"
 ---
-# <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Postupy: Najít plně kvalifikovaný název sestavení
+# <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Postupy: hledání plně kvalifikovaného názvu sestavení
 
-Chcete-li zjistit plně kvalifikovaný název .NET Framework sestavení v globální mezipaměti sestavení (GAC), použijte nástroj Global Assembly Cache ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Viz [jak: Zobrazení obsahu globální mezipaměti](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md)sestavení (GAC).
+Chcete-li zjistit plně kvalifikovaný název .NET Framework sestavení v globální mezipaměti sestavení (GAC), použijte nástroj Global Assembly Cache ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Viz [Postup: zobrazení obsahu globální mezipaměti sestavení (GAC](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md)).
 
 Pro sestavení .NET Core a pro .NET Framework sestavení, která nejsou v globální mezipaměti sestavení (GAC), můžete získat plně kvalifikovaný název sestavení několika způsoby:
 
 - Můžete použít kód pro výstup informací do konzoly nebo proměnné, nebo můžete použít nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) k prohlédnutí metadat sestavení, která obsahují plně kvalifikovaný název.
 
-- Pokud je sestavení již načteno aplikací, můžete načíst hodnotu <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> vlastnosti pro získání plně kvalifikovaného názvu. Pomocí <xref:System.Type.Assembly> <xref:System.Reflection.Assembly> vlastnosti <xref:System.Type> definované v tomto sestavení můžete načíst odkaz na objekt. Příklad uvádí ukázku.
+- Pokud je sestavení již načteno aplikací, můžete získat hodnotu vlastnosti <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> pro získání plně kvalifikovaného názvu. Můžete použít vlastnost <xref:System.Type.Assembly> <xref:System.Type> definované v tomto sestavení k načtení odkazu na objekt <xref:System.Reflection.Assembly>. Příklad uvádí ukázku.
 
-- Pokud znáte cestu k systému souborů sestavení `static` , můžete zavolat metodu (C#) nebo `Shared` (Visual Basic) <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> pro získání plně kvalifikovaného názvu sestavení. Následuje jednoduchý příklad.
+- Pokud znáte cestu k systému souborů sestavení, můžete volat <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> metodu `static` (C#) nebo `Shared` (Visual Basic) k získání plně kvalifikovaného názvu sestavení. Následuje jednoduchý příklad.
 
   ```csharp
   using System;
@@ -64,7 +62,7 @@ Další informace o nastavení atributů sestavení, jako je verze, jazyková ve
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak zobrazit plně kvalifikovaný název sestavení, které obsahuje zadanou třídu, do konzoly. Pomocí <xref:System.Type.Assembly?displayProperty=nameWithType> vlastnosti načte odkaz na sestavení z typu, který je definován v tomto sestavení.
+Následující příklad ukazuje, jak zobrazit plně kvalifikovaný název sestavení, které obsahuje zadanou třídu, do konzoly. Pomocí vlastnosti <xref:System.Type.Assembly?displayProperty=nameWithType> načte odkaz na sestavení z typu, který je definován v tomto sestavení.
 
 ```cpp
 #using <System.dll>

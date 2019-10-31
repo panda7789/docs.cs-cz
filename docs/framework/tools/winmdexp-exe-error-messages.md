@@ -157,17 +157,15 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad4ea3b2d5fb828c425f30e76244772f5ca9a11a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5d75f60cb96ddb7bd9e24a7cdc4b8d2b61aff8f4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043976"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104191"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe
-Proces sestavení volá [Winmdexp. exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **prostředí Windows Runtime součásti** v aplikaci Visual Studio 2012, takže se v **Seznam chyb**zobrazí chybové zprávy Winmdexp. exe. Winmdexp. exe pracuje na modulu, který je zkompilován s `/target:winmdobj` možností. Protože vyžaduje zkompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace nebude úspěšná.  
+Proces sestavení volá [Winmdexp. exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **prostředí Windows Runtime součásti** v aplikaci Visual Studio 2012, takže se v **Seznam chyb**zobrazí chybové zprávy Winmdexp. exe. Winmdexp. exe pracuje na modulu, který je zkompilován s možností `/target:winmdobj`. Protože vyžaduje zkompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace nebude úspěšná.  
   
  Chybové zprávy jsou navržené tak, aby obsahovaly všechny informace, které potřebujete k vyřešení chybových podmínek, které jsou vykazují. Některé problémy ale vyžadují více informací, než se bude vejít do zprávy. Další informace najdete v části [Diagnostika chybových stavů součásti prostředí Windows Runtime](https://go.microsoft.com/fwlink/p/?LinkId=251127) na stránce Windows Dev Center.  
   

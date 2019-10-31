@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d627e8b7-a605-40ac-b9bb-da9a3f1b66d9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a0ad4b7e907412aced911d7869ffce81eb867448
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c6b4303163140c9c5553d02855c64dd2a3f5b134
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738517"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73112740"
 ---
 # <a name="iclrdatatargetwritevirtual-method"></a>ICLRDataTarget::WriteVirtual – metoda
-Zapisuje data ze zadané vyrovnávací paměti na adresu zadanou virtuální paměti.  
+Zapisuje data ze zadané vyrovnávací paměti do zadané adresy virtuální paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT WriteVirtual (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] CLRDATA_ADDRESS, která ukládá adresu virtuální paměti.  
+ pro CLRDATA_ADDRESS, který ukládá adresu virtuální paměti.  
   
  `buffer`  
- [in] Ukazatel do vyrovnávací paměti, která ukládá data, která má být proveden zápis.  
+ pro Ukazatel na vyrovnávací paměť, ve kterém jsou uložena data, která mají být zapsána.  
   
  `bytesRequested`  
- [in] Počet bajtů, které mají být zapsána.  
+ pro Počet bajtů, které mají být zapsány.  
   
  `bytesWritten`  
- [out] Ukazatel na skutečný počet bajtů, které byly vytvořeny.  
+ mimo Ukazatel na skutečný počet zapsaných bajtů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetMethodOrigin function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9cea7251353dae093f64448c8d84157917fa74c5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1f669d5721a7bd9434f0ce4b1e2290c0633e1b46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798555"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102531"
 ---
 # <a name="getmethodorigin-function"></a>Funkce GetMethodOrigin
 Určuje třídu, ve které je deklarována metoda.
@@ -57,11 +55,11 @@ mimo Přijímá název třídy, která vlastní metodu.
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda nebyla nalezena. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů je neplatných. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
@@ -69,12 +67,12 @@ Tato funkce zalomí volání metody [IWbemclassObject:: GetMethodOrigin](/window
 
 Vzhledem k tomu, že třída může dědit metody z jedné nebo více základních tříd, vývojáři často chtějí určit třídu, ve které je daná metoda definována.
 
-Parametr nesmí ukazovat na platnou `BSTR` hodnotu před voláním funkce, protože se jedná o `out` parametr; po návratu funkce se tento ukazatel nevrátí. `pstrClassName`
+Parametr `pstrClassName` nesmí nasměrovat na platný `BSTR` před voláním funkce, protože se jedná o parametr `out`; Tento ukazatel se nevrátí po vrácení funkce.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7e6c54e-7be9-4e52-bbb4-95f52458e8e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d83f9c0b187ad8b2955bc12ff168e0c4f26b909
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4d5582b7a3df16db58ea0ed001dcbffcdcaab79
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765225"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122452"
 ---
 # <a name="icordebugthread4getblockingobjects-method"></a>ICorDebugThread4::GetBlockingObjects – metoda
-Poskytuje seřazený výčet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) vlákna struktury, které poskytují informace o blokování.  
+Poskytuje seřazený výčet struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) , které poskytují informace o blokování vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +34,27 @@ HRESULT GetBlockingObjects (
   
 ## <a name="parameters"></a>Parametry  
  `ppBlockingObjectEnum`  
- [out] Ukazatel na seřazený výčet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.  
+ mimo Ukazatel na seřazený výčet struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) .  
   
 ## <a name="remarks"></a>Poznámky  
- První prvek ve vrácené výčtu odpovídá první strukturu, která blokuje vlákno. Druhý prvek odpovídá blokující položkou, na kterou narazí při spouštění volání rozhraní asynchronní procedury (APC) při zablokování prvního a tak dále.  
+ První prvek vráceného výčtu odpovídá první struktuře, která blokuje vlákno. Druhý prvek odpovídá blokující položce, která se objevila při spuštění asynchronní procedury volání (APC) při zablokování v prvním, a tak dále.  
   
- Výčet je platný pouze po dobu trvání aktuálního stavu synchronizovaná.  
+ Výčet je platný pouze po dobu trvání aktuálního synchronizovaného stavu.  
   
- Tato metoda musí být volána, když laděný proces je ve stavu synchronizovaná.  
+ Tato metoda musí být volána, když je laděného procesu v synchronizovaném stavu.  
   
- Pokud `ppBlockingObjectEnum` není platný ukazatel, výsledek nedefinován.  
+ Pokud `ppBlockingObjectEnum` není platný ukazatel, výsledek není definován.  
   
- Pokud je vlákno blokované a chyba nelze určit, že vrátí tato metoda hodnotu HRESULT označující selhání; v opačném případě vrátí hodnotu S_OK.  
+ Pokud je vlákno blokované a chybu nelze určit, metoda vrátí hodnotu HRESULT, která označuje selhání. v opačném případě vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

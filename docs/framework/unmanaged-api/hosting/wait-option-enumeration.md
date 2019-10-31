@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 962fc293-8ded-4b3b-90ce-2c21a4f1b244
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eda866c1a1f1f69f0d042ccfde3dfad293df9b37
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ecfb551b55551e5f6cc7e7e9ffb55e5a96259ee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776505"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141512"
 ---
-# <a name="waitoption-enumeration"></a>WAIT_OPTION – výčet
-Obsahuje hodnoty, které označují, že by akce hostitele zabrat Pokud operace požadoval společné bloky language runtime (CLR).  
+# <a name="wait_option-enumeration"></a>WAIT_OPTION – výčet
+Obsahuje hodnoty, které určují akci, kterou by měl hostitel provést, pokud je operace požadována v rámci bloků modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`WAIT_ALERTABLE`|Upozorňuje hostitele, že úloha se probudí, modul CLR volá-li [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) metody.|  
-|`WAIT_MSGPUMP`|Upozorňuje hostitele, že ho musí pump zprávy v aktuálním vlákně operačního systému, pokud vlákno bude blokováno. Modul runtime určuje pouze na tuto hodnotu <xref:System.Threading.ApartmentState.STA> vlákna.|  
-|`WAIT_NOTINDEADLOCK`|Upozorňuje hostitele, nelze rozdělit žádost o synchronizaci zadaný hostitel. To znamená, nejde vrátit hostitele `HOST_E_DEADLOCK`.|  
+|`WAIT_ALERTABLE`|Upozorní hostitele, že by měl být úkol probuzeny, pokud CLR volá metodu [IHostTask:: Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) .|  
+|`WAIT_MSGPUMP`|Upozorní hostitele, že musí pumpovat zprávy v aktuálním vláknu operačního systému, pokud se vlákno zablokuje. Modul runtime tuto hodnotu určuje pouze v <xref:System.Threading.ApartmentState.STA> vlákně.|  
+|`WAIT_NOTINDEADLOCK`|Upozorní hostitele, že zadaný požadavek na synchronizaci nemůže být hostitelem. To znamená, že hostitel nemůže vracet `HOST_E_DEADLOCK`.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Ihosttaskmanager::Sleep –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [ihosttaskmanager::switchtotask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) metody obou přijímají parametr tohoto typu.  
+ Metody [IHostTaskManager:: Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [IHostTaskManager:: SwitchToTask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) obě přebírají parametr tohoto typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

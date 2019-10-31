@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 313e71e4-1790-4d2f-b68b-5040ebd1c149
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17d35193f69966e02ac5e483924fcb3ee2e06758
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d37f990241ae704abef55d863da0f40a31284837
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799029"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141596"
 ---
 # <a name="strongnamekeydelete-function"></a>StrongNameKeyDelete – funkce
 
@@ -44,21 +42,21 @@ pro Název kontejneru klíčů, který se má odstranit
 
 ## <a name="return-value"></a>Návratová hodnota
 
-`true`Po úspěšném dokončení; v opačném případě. `false`
+`true` po úspěšném dokončení; v opačném případě `false`.
 
 ## <a name="remarks"></a>Poznámky
 
 Pomocí funkce [StrongNameKeyInstall –](strongnamekeyinstall-function.md) importujte pár veřejného a privátního klíče do kontejneru.
 
-Pokud se `StrongNameKeyDelete` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
+Pokud se funkce `StrongNameKeyDelete` nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** StrongName. h
+**Hlavička:** StrongName. h
 
-**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
+**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 

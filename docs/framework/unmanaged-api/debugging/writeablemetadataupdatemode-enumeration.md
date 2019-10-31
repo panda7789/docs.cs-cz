@@ -12,19 +12,17 @@ api_type:
 ms.assetid: 6758f4d3-6bc7-4c99-8582-e9be00566784
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 62e4328b75a7f6fecc28cd620ec3ac18460316c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98566176ff33000fc4b4587b5669a037c90268f5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993444"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139096"
 ---
 # <a name="writeablemetadataupdatemode-enumeration"></a>Výčet WriteableMetadataUpdateMode
-[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
+[Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Obsahuje hodnoty, které určují, jestli jsou viditelné pro ladicí program v paměti aktualizace metadat.  
+ Poskytuje hodnoty, které určují, zda mají být aktualizace metadat v paměti viditelné ladicímu programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ typedef enum WriteableMetadataUpdateMode {
   
 |Název členu|Popis|  
 |-----------------|-----------------|  
-|`LegacyCompatPolicy`|Zachování kompatibility s předchozími verzemi rozhraní .NET Framework při provádění aktualizací v paměti k metadatům viditelné. Další informace naleznete v části Poznámky.|  
-|`AlwaysShowUpdates`|Zviditelnit v paměti aktualizace metadat k ladicímu programu.|  
+|`LegacyCompatPolicy`|Zachovat kompatibilitu s předchozími verzemi .NET Framework při zpřístupnění aktualizací v paměti na metadatech Další informace naleznete v části Poznámky.|  
+|`AlwaysShowUpdates`|Zpřístupnit v paměti aktualizace metadat viditelných pro ladicí program.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen `WriteableMetadataUpdateMode` výčet může být předán [SetWriteableMetadataUpdateMode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md) metoda řídit, jestli v paměti aktualizace metadat v cílovém procesu jsou viditelné pro ladicí program.  
+ Člen výčtu `WriteableMetadataUpdateMode` lze předat metodě [SetWriteableMetadataUpdateMode –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md) a určit tak, zda mají být aktualizace v paměti metadaty v cílovém procesu viditelné ladicímu programu.  
   
- `LegacyCompatPolicy` Možnost vynucuje stejné chování jako verze rozhraní .NET Framework před 4.5.2. To často znamená, že metadata z webu aktualizace od není viditelný. Volání na počet ladění metody však implicitně převedeno ladicí program ke zviditelnění aktualizace. Například, pokud ladicí program projde [icordebugilframe::getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) index proměnná se nenašla v metadatech původní metody, všechna metadata modulu je aktualizovaná na snímek aktuálního stavu odpovídajících proces. Jinými slovy, se `LegacyCompatPolicy` možnost, ladicí program může zobrazit, none, některé nebo všechny aktualizace metadat k dispozici, v závislosti na tom, jak používá jiné části nespravované ladění rozhraní API.  
+ Možnost `LegacyCompatPolicy` vynutila stejné chování jako ve verzích .NET Framework před 4.5.2. To často znamená, že metadata z aktualizací nejsou viditelná. Nicméně volání na řadu metod ladění implicitně převede ladicí program, aby byly aktualizace viditelné. Například pokud ladicí program projde [ICorDebugILFrame:: GetLocalVariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) index proměnné, který nebyl nalezen v původních metadatech metody, všechna metadata pro modul jsou aktualizována na snímek, který odpovídá aktuálnímu stavu procesu. Jinými slovy, s možností `LegacyCompatPolicy`, ladicí program se může v závislosti na tom, jak používá jiné části nespravovaného rozhraní API pro ladění, zobrazovat žádná, některá nebo všechna dostupná aktualizace metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

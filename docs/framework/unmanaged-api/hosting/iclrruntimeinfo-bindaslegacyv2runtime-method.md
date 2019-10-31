@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 65fd55ac-4a24-4479-9384-a2e8013bfb2b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a0ea4bd222500015f6c78cb0455539aa2c24e681
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d37ec8e17e62f58212a5f79f4d6b6aa75f57bf7c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765613"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120261"
 ---
 # <a name="iclrruntimeinfobindaslegacyv2runtime-method"></a>ICLRRuntimeInfo::BindAsLegacyV2Runtime – metoda
-Vytvoří vazbu aktuální modul runtime pro všechny starší verze common language runtime (CLR) verze 2 aktivace rozhodnutí o zásadách.  
+Váže aktuální modul runtime pro všechna starší verze modulu CLR (Common Language Runtime) verze 2 – rozhodnutí zásad aktivace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,28 +32,28 @@ HRESULT BindAsLegacyV2Runtime ();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT:  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT:  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Byla vazba úspěšná, nebo tento modul runtime již byl vázaný jako starší verze runtime 2 Aktivace zásady CLR verze.|  
-|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime je již vázán na starší verze 2 Aktivace zásady CLR verze.|  
+|S_OK|Buď byla vazba úspěšná, nebo tento modul runtime již byl svázán jako starší modul runtime zásad aktivace CLR verze 2.|  
+|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime již byl svázán se staršími zásadami aktivace CLR verze 2.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud aktuální modul runtime je již vázán pro všechny starší verze CLR verze 2 aktivace rozhodnutí o zásadách (například pomocí `useLegacyV2RuntimeActivationPolicy` atribut na [ \<spuštění > element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) v konfiguračním souboru), tato metoda nevrátí chybného výsledku; Výsledkem je místo toho S_OK, stejně jako by bylo, pokud metoda bylo úspěšně navázán Zásady aktivace starší verze.  
+ Pokud je aktuální modul runtime již svázán pro všechna starší rozhodnutí zásad aktivace CLR verze 2 (například pomocí atributu `useLegacyV2RuntimeActivationPolicy` v [prvku\<startup >](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) v konfiguračním souboru), tato metoda nevrátí výsledek chyby. místo toho je výsledkem S_OK, stejně jako by to bylo, kdyby byla metoda úspěšně vázaná na starší Zásady aktivace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
 - [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
-- [\<Po spuštění > – Element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
+- [\<> element Startup](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)

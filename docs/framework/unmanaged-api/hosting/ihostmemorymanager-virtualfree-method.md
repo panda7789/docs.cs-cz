@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a436e89-eb28-4d15-bcf1-a072f86dbd99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a60d954cf4331d46a4667afba1e9dee0d214f0a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b53c0bb38922ae8de048c131807eb32f97423d6c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767678"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128580"
 ---
 # <a name="ihostmemorymanagervirtualfree-method"></a>IHostMemoryManager::VirtualFree – metoda
-Slouží jako logické obálku pro odpovídající funkci Win32. Implementace Win32 `VirtualFree` uvolní, rozváže, uvolní nebo rozváže oblast stránky v rámci virtuálního adresového prostoru volajícího procesu.  
+Slouží jako logická obálka odpovídající funkce Win32. Implementace Win32 `VirtualFree` vydání, zrušení potvrzení nebo uvolnění a zrušení potvrzení oblasti stránek v rámci virtuálního adresového prostoru volajícího procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +37,39 @@ HRESULT VirtualFree (
   
 ## <a name="parameters"></a>Parametry  
  `lpAddress`  
- [in] Ukazatel na základní adresa stránky virtuální paměti k uvolnění.  
+ pro Ukazatel na základní adresu stránky virtuální paměti, která se uvolní.  
   
  `dwSize`  
- [in] Velikost v bajtech, oblasti, kterou chcete být uvolněna.  
+ pro Velikost oblasti, která se má uvolnit (v bajtech)  
   
  `dwFreeType`  
- [in] Typ operace uvolnění.  
+ pro Typ uvolnění operace.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`VirtualFree` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`VirtualFree` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_INVALIDOPERATION|Byl proveden pokus o uvolnění paměti, který nebyl přidělen prostřednictvím hostitele.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_INVALIDOPERATION|Byl proveden pokus o uvolnění paměti, která nebyla přidělena prostřednictvím hostitele.|  
   
 ## <a name="remarks"></a>Poznámky  
- `VirtualFree` uvolní stránky virtuální paměti, které jsou spojené s `lpAddress` parametr prostřednictvím dřívějším volání [ihostmemorymanager::VirtualAlloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualalloc-method.md) funkce. Pokusy o uvolnění paměti, který nebyl přidělen prostřednictvím hostitele by měl vrátit HOST_E_INVALIDOPERATION.  
+ `VirtualFree` uvolní stránky virtuální paměti přidružené k parametru `lpAddress` prostřednictvím předchozího volání funkce [IHostMemoryManager:: VirtualAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualalloc-method.md) . Pokusy o volnou paměť, která nebyla přidělena prostřednictvím hostitele, by měly vracet HOST_E_INVALIDOPERATION.  
   
- Sémantika je stejné jako ty Win32 provádění `VirtualFree`. Další informace najdete v dokumentaci k platformě Windows.  
+ Sémantika je stejná jako u implementace `VirtualFree`v systému Win32. Další informace najdete v dokumentaci k platformě Windows.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

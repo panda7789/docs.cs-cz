@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1f1e3239-438e-4be9-a3bb-7d0722d3a76d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a73232fb9327880f0038097d71698ddf8bf005e3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c5d6cfa3826667514eb70f9bb0df118d9ba0d07c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779905"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127823"
 ---
 # <a name="icorconfigurationadddebuggerspecialthread-method"></a>ICorConfiguration::AddDebuggerSpecialThread – metoda
-Ladění služeb označuje, že konkrétní vlákno by měla být povolena má pokračovat provedením zatímco ladicí program zastavuje během scénáře ladění spravované nebo nespravované aplikace.  
+Označuje ladicí služby, že by mělo být povoleno pokračování v provádění určitého vlákna, zatímco ladicí program aplikace zastavil během spravovaných nebo nespravovaných scénářů ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT AddDebuggerSpecialThread (
   
 ## <a name="parameters"></a>Parametry  
  `dwSpecialThreadId`  
- [in] ID vlákna, která by měla bude moct pokračovat v provádění.  
+ pro ID vlákna, které by mělo být povoleno pokračovat v provádění.  
   
 ## <a name="remarks"></a>Poznámky  
- Zadané vlákno nebude moci spouštět spravovaný kód nebo zadejte modul runtime žádným způsobem. Příkladem takových vlákno může být vlákno v procesu pro podporu ladicí programy starší verzi skriptu.  
+ V zadaném vlákně nebude povoleno spustit spravovaný kód nebo zadat modul runtime jakýmkoli způsobem. Příkladem takového vlákna by bylo vlákno v rámci procesu, které podporuje ladicí programy starších skriptů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

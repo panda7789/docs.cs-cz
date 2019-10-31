@@ -8,14 +8,12 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3d8ab96c758b946684af78bfa21822fdaf96530a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7cd25a24533b04dc45ee734f9e9639391311405a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786968"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099732"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>Funkce CertVerifyAuthenticodeLicense
 Ověřuje platnost licence na technologii Authenticode pro technologii Authenticode.  
@@ -58,12 +56,12 @@ HRESULT CertVerifyAuthenticodeLicense (
  Viz [Struktura AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md).  
   
  `pTimestamperInfo`  
- mimo Pro získání informací o časovém razítku, pokud je k dispozici. Pokud licence nebyla označena časovým razítkem `dwError` , je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeTimestamperInfo](certfreeauthenticodetimestamperinfo-function.md) po použití.  
+ mimo Pro získání informací o časovém razítku, pokud je k dispozici. Pokud licence nebyla označena časovým razítkem, `dwError` je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeTimestamperInfo](certfreeauthenticodetimestamperinfo-function.md) po použití.  
   
  Viz [Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO](axl-authenticode-timestamper-info-structure.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí `S_OK` , pokud bylo úspěšné. V opačném případě vrátí kód chyby.  
+ Pokud je úspěšná, vrátí `S_OK`. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

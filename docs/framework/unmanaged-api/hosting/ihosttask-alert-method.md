@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 75b3fc0b1dde35e743e699d22c5766cab4cf0faf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b2fc1d6c45eb72410ccfa1071064aa1a31ae46e6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964721"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121408"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert – metoda
 Vyžádá, aby hostitel probudil úlohu reprezentovanou aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) , takže úlohu můžete zrušit.  
@@ -45,17 +43,17 @@ HRESULT Alert ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá `Alert` metodu, pokud <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> je volána z uživatelského <xref:System.AppDomain> kódu nebo když je přidružena k aktuálnímu <xref:System.Threading.Thread> vypnutí. Hostitel musí vracet okamžitě, protože volání je provedeno asynchronně. Pokud hostitel nemůže úlohu okamžitě upozornit, musí se vystavit při příštím vstupu do stavu, ve kterém může být upozorněn.  
+ Modul CLR volá metodu `Alert`, pokud je <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> volána z uživatelského kódu nebo když <xref:System.AppDomain> přidružená k aktuálnímu <xref:System.Threading.Thread> ukončena. Hostitel musí vracet okamžitě, protože volání je provedeno asynchronně. Pokud hostitel nemůže úlohu okamžitě upozornit, musí se vystavit při příštím vstupu do stavu, ve kterém může být upozorněn.  
   
 > [!NOTE]
-> `Alert`má vliv pouze na úlohy, ke kterým modul runtime předal hodnotu [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) WAIT_ALERTABLE do metod, jako je [Join](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md).  
+> `Alert` ovlivňuje pouze ty úlohy, na které modul runtime předal hodnotu [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) WAIT_ALERTABLE do metod, jako je [Join](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

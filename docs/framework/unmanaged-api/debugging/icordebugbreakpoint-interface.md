@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa5ad3d7-e1bb-42af-99bc-471224e3bcaa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 608c2cea79c20a43d65fcbf37ba13242fa465100
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 29bb84341c2cb4177c43f798d25a1a6d50099aa5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969314"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122780"
 ---
 # <a name="icordebugbreakpoint-interface"></a>ICorDebugBreakpoint – rozhraní
 
@@ -31,23 +29,23 @@ Představuje zarážku ve funkci nebo bod sledování na hodnotě.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Activate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-activate-method.md)|Nastaví aktivní stav této `ICorDebugBreakpoint`.|  
-|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-isactive-method.md)|Načte hodnotu, která označuje, zda `ICorDebugBreakpoint` je tato hodnota aktivní.|  
+|[Activate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-activate-method.md)|Nastaví aktivní stav tohoto `ICorDebugBreakpoint`.|  
+|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-isactive-method.md)|Získá hodnotu, která označuje, zda je tato `ICorDebugBreakpoint` aktivní.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zarážky přímo nepodporují podmíněné výrazy. Pokud jsou takové funkce žádoucí, ladicí program je musí implementovat nad `ICorDebugBreakpoint`.  
   
- Rozhraní ICorDebugFunctionBreakpoint rozšiřuje `ICorDebugBreakpoint` na podporu zarážek v rámci funkcí.  
+ Rozhraní ICorDebugFunctionBreakpoint rozšiřuje `ICorDebugBreakpoint` pro podporu zarážek v rámci funkcí.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

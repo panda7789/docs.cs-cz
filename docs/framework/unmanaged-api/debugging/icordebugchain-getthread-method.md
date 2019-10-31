@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b3390319-6366-418c-ba80-b552ac4dfc1e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d05002ecdb903a1adfeea88930083ba472164324
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b964d58bddb174da38fc8988ec807fd3129b5fcf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745635"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123816"
 ---
 # <a name="icordebugchaingetthread-method"></a>ICorDebugChain::GetThread – metoda
-Získá fyzické vlákno, které tento řetěz volání je součástí.  
+Získá fyzické vlákno, na kterém je tento řetěz volání součástí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetThread (
   
 ## <a name="parameters"></a>Parametry  
  `ppThread`  
- [out] Ukazatel na objekt, který představuje fyzické vlákno ICorDebugThread tento řetěz volání je součástí.  
+ mimo Ukazatel na objekt ICorDebugThread, který představuje fyzické vlákno, na kterém je tento řetěz volání součástí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

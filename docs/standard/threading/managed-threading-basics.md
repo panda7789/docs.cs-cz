@@ -8,14 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f55057e40a251be49898b9b1b7862bd243b2a70c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bec769043ab630b37609bed12302ceff5b90474a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913184"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139233"
 ---
 # <a name="managed-threading-basics"></a>Základy spravovaného zřetězení
 
@@ -43,10 +41,10 @@ Prvních pět témat této části vám pomůže určit, kdy použít spravovan�
  [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)  
  Popisuje vztah mezi spravovaným a nespravovaným vláknem, uvádí spravované ekvivalenty pro rozhraní API pro dělení na vlákna systému Windows a popisuje interakci objektů COM a spravovaných vláken.  
   
- [Místní úložiště vláken: Statická pole a datové sloty relativní vzhledem k vláknům](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
+ [Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Popisuje mechanismy úložiště související s vlákny.  
   
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Odkaz
 
  <xref:System.Threading.Thread>  
  Poskytuje referenční dokumentaci pro třídu **vlákna** , která představuje spravované vlákno, bez ohledu na to, zda pochází z nespravovaného kódu nebo byl vytvořen ve spravované aplikaci.  

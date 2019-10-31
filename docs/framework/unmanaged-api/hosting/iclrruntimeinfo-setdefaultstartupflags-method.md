@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 98ae174f-bff0-48f1-9e05-6cb63b451824
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2996acd9678557b08fcfa543ecc7648ed639b143
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36851ac4573d0d65caffaa3f82a1f6fc8440a2d0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748338"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092743"
 ---
 # <a name="iclrruntimeinfosetdefaultstartupflags-method"></a>ICLRRuntimeInfo::SetDefaultStartupFlags – metoda
-Nastaví příznaky spuštění a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime. Tato metoda nahrazuje použití `startupFlags` parametr [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) funkce.  
+Nastaví spouštěcí příznaky a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime. Tato metoda nahrazuje použití parametru `startupFlags` ve funkcích [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +35,29 @@ HRESULT SetDefaultStartupFlags(
   
 ## <a name="parameters"></a>Parametry  
  `dwStartupFlags`  
- [in] Příznaky spuštění hostitele nastavení. Použijte stejné příznaky jako se [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) funkce.  
+ pro Příznaky spuštění hostitele, které mají být nastaveny. Používejte stejné příznaky jako s funkcemi [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) .  
   
  `pwzHostConfigFile`  
- [in] Cesta k adresáři souboru konfigurace hostitele nastavení.  
+ pro Cesta k adresáři konfiguračního souboru hostitele, který se má nastavit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volání této metody by měl synchronizovat s více vlákny hostitele. V opačném případě vlákno A může volat `SetStartupFlags` metoda po dokončení volání vlákna B `SetStartupFlags` a před spuštěním podprocesu B modulu runtime.  
+ Hostitel s více vlákny by měl synchronizovat volání této metody. V opačném případě vlákno A může zavolat metodu `SetStartupFlags` poté, co vlákno B dokončí volání `SetStartupFlags` a před tím, než vlákno B spustí modul runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

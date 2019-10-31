@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: 7d78a301-82b3-43b2-9d65-3cda3285ae97
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 621c5b1e32a1a21c2b0b883249c3b65fadceb5f2
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: efc9de050e34867c14f8e85e091e2b959c30f213
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632347"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122588"
 ---
 # <a name="icordebugmanagedcallbackbreak-method"></a>ICorDebugManagedCallback::Break – metoda
 
-Upozorní ladicí program při <xref:System.Reflection.Emit.OpCodes.Break> instrukce v datovém proudu kód provádí.
+Upozorní ladicí program, když se spustí instrukce <xref:System.Reflection.Emit.OpCodes.Break> v datovém proudu kódu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,20 +38,20 @@ HRESULT Break (
 ## <a name="parameters"></a>Parametry
 
 `pAppDomain`\
-[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje instrukce break.
+pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující instrukci Break.
 
 `thread`\
-[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje instrukce break.
+pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, které obsahuje instrukci Break.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** CorDebug.idl, CorDebug.h
+**Hlavička:** CorDebug. idl, CorDebug. h
 
-**Knihovna:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

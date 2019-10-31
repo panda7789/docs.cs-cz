@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 58eed4c8-d80c-4c6a-a875-967a90dd926c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31c795c2fbbfdc45b6e1aac6684f730f55fc106a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c7598a9d93631ca93187886fd8929ba10726dad7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746415"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124726"
 ---
 # <a name="icordebugchaingetprevious-method"></a>ICorDebugChain::GetPrevious – metoda
-Získá předchozí řetězu rámce pro vlákno.  
+Načte předchozí řetězec snímků pro vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetPrevious (
   
 ## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresa icordebugchain – objekt, který představuje předchozí řetězu snímků pro toto vlákno. Pokud se tento řetězec je první řetězec `ppChain` má hodnotu null.  
+ mimo Ukazatel na adresu objektu ICorDebugChain, který představuje předchozí řetězec snímků pro toto vlákno. Pokud je tento řetěz prvním řetězcem, `ppChain` je null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

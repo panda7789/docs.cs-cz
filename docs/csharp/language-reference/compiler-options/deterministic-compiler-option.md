@@ -7,14 +7,12 @@ helpviewer_keywords:
 - -deterministic compiler option [C#]
 - deterministic compiler option [C#]
 - /deterministic compiler option [C#]
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e77c14a1c3a4ba11b8ae6556be4f1c3c0cd42788
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2f0f9680668d67867d4bd7b60cb54d48ed7c4776
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202917"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73086899"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -28,7 +26,7 @@ Způsobí, že kompilátor sestaví sestavení, jejichž výstup Byte-byte je st
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete `-deterministic` možnost k vytvoření deterministického *sestavení*, jehož binární obsah je identický v rámci kompilací, pokud vstup zůstává stejný.
+Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete-li možnost `-deterministic` k vytvoření *deterministického sestavení*, jeden z nich je identický s binárním obsahem v rámci kompilací, pokud vstup zůstává stejný.
 
 Kompilátor považuje za účel determinismem následující vstupy:
 

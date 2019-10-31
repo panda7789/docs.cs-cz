@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetObjectText function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d47fcd59204a4d114fc9f0dc5bc4550ba1681f33
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 412e1ad503fa0e0b4f813298c0ac96ae80098c06
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798502"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102456"
 ---
 # <a name="getobjecttext-function"></a>Funkce GetObjectText
 Vrátí textové vykreslování objektu v syntaxi formát MOF (Managed Object Format) (MOF).
@@ -48,21 +46,21 @@ pro Tento parametr se nepoužívá.
 pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lFlags`  
-pro Normálně 0. Pokud `WBEM_FLAG_NO_FLAVORS` je zadáno (nebo 0x1), kvalifikátory jsou zahrnuty bez informací o šíření nebo charakteru.
+pro Normálně 0. Jsou-li zadány `WBEM_FLAG_NO_FLAVORS` (nebo 0x1), jsou kvalifikátory zahrnuty bez informací o šíření nebo charakteru.
 
 `pstrObjectText`   
-mimo Ukazatel na `null` položku při zadání. Při návratu se nově přidělený `BSTR` , který obsahuje vykreslování syntaxe MOF objektu.  
+mimo Ukazatel na `null` na vstupu. Při návratu se nově přidělená `BSTR`, která obsahuje vykreslování syntaxe MOF objektu.  
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
@@ -73,14 +71,14 @@ Vrácený text MOF neobsahuje všechny informace o objektu, ale pouze dostatek i
 Následující algoritmus slouží k rekonstrukci textu parametrů metody:
 
 1. Parametry se přesekvencují v pořadí jejich hodnot identifikátorů.
-1. Parametry, které jsou zadány `[out]` jako `[in]` a jsou zkombinovány do jediného parametru.
+1. Parametry, které jsou zadány jako `[in]` a `[out]` jsou zkombinovány do jednoho parametru.
  
-`pstrObjectText`musí být ukazatel na hodnotu `null` , když je funkce volána; nesmí ukazovat na řetězec, který je platný před voláním metody, protože ukazatel nebude navrácen.
+`pstrObjectText` musí být ukazatel na `null` při volání funkce. nesmí ukazovat na řetězec, který je platný před voláním metody, protože ukazatel nebude navrácen.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

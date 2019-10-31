@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1bdde382-f8ba-4cc8-94b2-d1ac919c585e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2e51c5cda8eca1737e2daab4cbe94a78433c8608
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a3a2d1827774ddedc00eb849f64256e3f425b3fa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762114"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127715"
 ---
 # <a name="icorruntimehostcreatedomainex-method"></a>ICorRuntimeHost::CreateDomainEx – metoda
-Vytvoří doménu aplikace. Volající přijímá ukazatel rozhraní, typu <xref:System._AppDomain>, do instance typu <xref:System.AppDomain?displayProperty=nameWithType>. Tato metoda umožňuje volajícímu předejte instanci iappdomainsetup – ke konfiguraci dalších funkcí vráceného <xref:System._AppDomain> instance.  
+Vytvoří doménu aplikace. Volající obdrží ukazatel rozhraní typu <xref:System._AppDomain>do instance typu <xref:System.AppDomain?displayProperty=nameWithType>. Tato metoda umožňuje volajícímu předat instanci IAppDomainSetup – ke konfiguraci dalších funkcí vrácené instance <xref:System._AppDomain>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +38,16 @@ HRESULT CreateDomainEx (
   
 ## <a name="parameters"></a>Parametry  
  `pwzFriendlyName`  
- [in] Volitelný parametr, který slouží k pojmenování k doméně popisným názvem. Tento popisný název lze zobrazit v uživatelských rozhraních, jako je například ladicí programy k identifikaci domény.  
+ pro Volitelný parametr, který slouží k poskytnutí popisného názvu doméně. Tento popisný název lze zobrazit v uživatelských rozhraních, jako jsou například ladicí programy, a identifikovat doménu.  
   
  `pSetup`  
- [in] Ukazatel volitelné rozhraní typu `IAppDomainSetup`, získaný voláním [icorruntimehost::createdomainsetup –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainsetup-method.md) metody.  
+ pro Volitelný ukazatel rozhraní typu `IAppDomainSetup`, získaný voláním metody [ICorRuntimeHost:: createdomainsetup –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainsetup-method.md) .  
   
  `pIdentityArray`  
- [in] Volitelné pole ukazatelů na `IIdentity` instancí, které představují důkazy mapovaný prostřednictvím zásad zabezpečení sadu oprávnění. `IIdentity` Objektu lze získat voláním [createevidence –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createevidence-method.md) metody.  
+ pro Volitelné pole ukazatelů `IIdentity` instancí, které reprezentují legitimace namapované prostřednictvím zásad zabezpečení pro vytvoření sady oprávnění. Objekt `IIdentity` lze získat voláním metody [createevidence –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createevidence-method.md) .  
   
  `pAppDomain`  
- [out] Ukazatel rozhraní typu <xref:System._AppDomain> do instance <xref:System.AppDomain?displayProperty=nameWithType> , který slouží k podrobnějšímu řízení domény.  
+ mimo Ukazatel rozhraní typu <xref:System._AppDomain> k instanci <xref:System.AppDomain?displayProperty=nameWithType>, kterou lze použít k další kontrole domény.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -57,20 +55,20 @@ HRESULT CreateDomainEx (
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
 |S_FALSE|Operaci se nepodařilo dokončit.|  
-|E_FAIL|Došlo k neznámé, katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR (CLR) už nejsou použitelné v procesu. Následující volání jakékoli hostitelské rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrátí HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateDomainEx` rozšiřuje možnosti [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) tím, že volající a zajistěte tak předání `IAppDomainSetup` instance s hodnotami vlastností konfigurace domény aplikace.  
+ `CreateDomainEx` rozšiřuje možnosti [CreateDomain –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) tím, že volajícímu předává instanci `IAppDomainSetup` s hodnotami vlastností pro konfiguraci domény aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** 1.0, 1.1  
+ **Verze .NET Framework:** 1,0, 1,1  
   
 ## <a name="see-also"></a>Viz také:
 

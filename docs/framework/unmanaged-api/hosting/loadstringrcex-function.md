@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: bc789636-ca14-4f07-8f77-9305874d7495
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4a0cac77d7bf7611acf6042298bfe6814d8f4352
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 68332aee895f012bcf6ab6a72936c8dddc7f28a0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768448"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122035"
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx – funkce
-Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
+Přeloží hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,42 +41,42 @@ HRESULT LoadStringRCEx (
   
 ## <a name="parameters"></a>Parametry  
  `lcid`  
- [in] Identifikátor jazykové verze. Předejte hodnotu -1 `lcid` používat výchozí jazykovou verzi.  
+ pro Identifikátor jazykové verze. Pass-1 pro `lcid` použít výchozí jazykovou verzi.  
   
  `iResourceID`  
- [in] HRESULT.  
+ pro HRESULT.  
   
  `szBuffer`  
- [out] Vyrovnávací paměti, který obsahuje chybovou zprávu po úspěšném dokončení.  
+ mimo Vyrovnávací paměť, která obsahuje chybovou zprávu po úspěšném dokončení.  
   
  `iMax`  
- [in] Velikost vyrovnávací paměti zpráv chyby.  
+ pro Velikost vyrovnávací paměti chybové zprávy.  
   
  `bQuiet`  
- [in] Ignorovat.  
+ pro Přeskočen.  
   
  `pcwchUsed`  
- [out] Ukazatel na délku chybová zpráva.  
+ mimo Ukazatel na délku chybové zprávy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb modelu COM, jak je definovaný ve WinError.h, kromě následujících hodnot.  
+ Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`szBuffer` má hodnotu null, nebo `iMax` je nula (0).|  
+|E_INVALIDARG|`szBuffer` je null nebo je `iMax` nula (0).|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud metoda nedokončí úspěšně, `szBuffer` obsahuje prázdný řetězec.  
+ Pokud metoda není úspěšně dokončena, `szBuffer` obsahuje prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -12,17 +12,15 @@ api_type:
 ms.assetid: 6643c2af-2ee6-4789-aa25-1d8eaf500c94
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b667ac16a4bbe6bdab1814b66fb1121b34b2d945
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: d5e7841844c8fa500935eb9cba06f4e2fe95d2d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039573"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111986"
 ---
 # <a name="iclrdatatarget3getexceptionrecord-method"></a>ICLRDataTarget3::GetExceptionRecord – metoda
-Je volána službami modulu Common Language Runtime (CLR) pro přístup k datům za účelem získání záznamu o výjimce související s cílovým procesem. Například pro cíl výpisu paměti by to byl ekvivalentem záznamu výjimky předaného přes `ExceptionParam` argument do funkce [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) v knihovně dbghelp (ladění v nápovědě systému Windows).  
+Je volána službami modulu Common Language Runtime (CLR) pro přístup k datům za účelem získání záznamu o výjimce související s cílovým procesem. Například pro cíl výpisu paměti by to byl ekvivalentem záznamu výjimky předaného prostřednictvím argumentu `ExceptionParam` do funkce [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) v knihovně dbghelp (Windows ladění Help Library).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +34,22 @@ HRESULT GetExceptionRecord(
   
 ## <a name="parameters"></a>Parametry  
  `bufferSize`  
- pro Velikost vstupní vyrovnávací paměti (v bajtech). Toto musí být rovno `sizeof(` [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception)`)`.  
+ pro Velikost vstupní vyrovnávací paměti (v bajtech). Ta musí být rovna `sizeof(`[MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception)`)`.  
   
  `bufferUsed`  
- mimo Ukazatel na `ULONG32` typ, který přijímá počet bajtů, které jsou ve skutečnosti zapisovány do vyrovnávací paměti.  
+ mimo Ukazatel na typ `ULONG32`, který přijímá počet bajtů, které jsou ve skutečnosti zapisovány do vyrovnávací paměti.  
   
  `buffer`  
  mimo Ukazatel na vyrovnávací paměť, která obdrží kopii záznamu výjimky. Záznam výjimky je vrácen jako [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) typ.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrácená hodnota je `S_OK` při úspěchu nebo při selhání kódu chyby `HRESULT` . `HRESULT` Kódy mohou zahrnovat, ale nejsou omezeny na následující:  
+ Vrácená hodnota je `S_OK` při úspěchu nebo selhání `HRESULT` kódu při selhání. Kódy `HRESULT` mohou zahrnovat, ale nejsou omezeny na následující:  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |`S_OK`|Metoda byla úspěšná. Záznam výjimky byl zkopírován do výstupní vyrovnávací paměti.|  
 |`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|K cíli není přidružen žádný záznam výjimky.|  
-|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměti není rovna `sizeof(MINIDUMP_EXCEPTION)`.|  
+|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměti se nerovná `sizeof(MINIDUMP_EXCEPTION)`.|  
   
 ## <a name="remarks"></a>Poznámky  
  [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) je struktura definovaná v dbghelp. h a Imagehlp. h v Windows SDK.  
@@ -59,11 +57,11 @@ HRESULT GetExceptionRecord(
  Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** ClrData. idl, ClrData. h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[v451_update](../../../../includes/net-current-v451-nov-plus.md)]  
   

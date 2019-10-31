@@ -6,79 +6,77 @@ helpviewer_keywords:
 - reflection, dynamic assembly
 - assemblies, collectible
 - collectible assemblies, retrieving
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b26da264b2da40e19db4bc5e3b3575505f5c979c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85eacff22cf2e1c0b8c3d74a4971de035dfafbe4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860902"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130293"
 ---
 # <a name="collectible-assemblies-for-dynamic-type-generation"></a>Kolekční sestavení pro generování dynamických typů
 
-*Kolekční sestavení* jsou dynamické sestavení, které může být uvolněno bez uvolnění domény aplikace, ve kterém byly vytvořeny. Všechny spravované a nespravované paměti používané na kolekční sestavení a typy, které obsahuje, se nedá uvolnit. Informace, jako je název sestavení je odebrán z interních tabulkách.
+*Sestavení kolekční* jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byly vytvořeny. Veškerá spravovaná a nespravovaná paměť, kterou používá kolekční sestavení, a typy, které obsahuje, mohou být uvolněny. Informace, jako je název sestavení, jsou odebrány z interní tabulky.
 
-Chcete-li povolit uvolnění, použijte <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndCollect?displayProperty=nameWithType> příznak při vytváření dynamických sestavení. Sestavení je přechodná (to znamená, ho nejdou ukládat) a je náchylné ke omezení popsaná v [omezení na Kolekční sestavení](#restrictions-on-collectible-assemblies) oddílu. Modul CLR (CLR) na kolekční sestavení uvolní automaticky při uvolnění všechny objekty přidružené k sestavení. Ve všech dalších ohledech jsou kolekční sestavení vytvořen a použít stejným způsobem jako ostatní dynamických sestavení.
+Chcete-li povolit uvolnění, při vytváření dynamického sestavení použijte příznak <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndCollect?displayProperty=nameWithType>. Sestavení je přechodné (to znamená, nemůže být uloženo) a podléhá omezením popsaným v části [omezení pro sestavení kolekční](#restrictions-on-collectible-assemblies) . Modul CLR (Common Language Runtime) uvolní sestavení kolekční automaticky při uvolnění všech objektů přidružených k sestavení. Ve všech ostatních ohledech se kolekční sestavení vytvářejí a používají stejným způsobem jako ostatní dynamická sestavení.
 
 ## <a name="lifetime-of-collectible-assemblies"></a>Doba života kolekční sestavení
 
-Existence odkazy na typy, které obsahuje a objekty, které jsou vytvářené z typů řídí životnost kolekční sestavení. Modul common language runtime neuvolní sestavení, tak dlouho, dokud jeden nebo více z následujících existují (`T` je libovolný typ, který je definovaný v sestavení): 
+Životnost sestavení kolekční je řízena existencí odkazů na typy, které obsahuje, a objekty, které jsou vytvořeny z těchto typů. Modul CLR (Common Language Runtime) neuvolní sestavení, pokud existuje jeden nebo více z následujících typů (`T` je jakýkoli typ, který je definován v sestavení): 
 
 - Instance `T`.
 
 - Instance pole `T`.
  
-- Instance obecného typu, který má `T` jako jeden z argumentů typu. Jedná se o obecných kolekcí `T`i v případě, že kolekce je prázdná.
+- Instance obecného typu, který má `T` jako jeden z jeho argumentů typu. To zahrnuje obecné kolekce `T`, a to i v případě, že je kolekce prázdná.
 
-- Instance <xref:System.Type> nebo <xref:System.Reflection.Emit.TypeBuilder> , která představuje `T`. 
+- Instance <xref:System.Type> nebo <xref:System.Reflection.Emit.TypeBuilder>, která představuje `T`. 
 
    > [!IMPORTANT]
-   > Je nutné uvolnit všechny objekty, které představují části sestavení. <xref:System.Reflection.Emit.ModuleBuilder> , Který definuje `T` uchovává odkaz na <xref:System.Reflection.Emit.TypeBuilder>a <xref:System.Reflection.Emit.AssemblyBuilder> uchovává odkaz na objekt <xref:System.Reflection.Emit.ModuleBuilder>, takže se odkazy na tyto objekty musí být uvolněny. Dokonce i existenci <xref:System.Reflection.Emit.LocalBuilder> nebo <xref:System.Reflection.Emit.ILGenerator> používají v konstrukci `T` znemožňuje uvolnění.
+   > Je nutné uvolnit všechny objekty, které reprezentují části sestavení. <xref:System.Reflection.Emit.ModuleBuilder> definující `T` zachovává odkaz na <xref:System.Reflection.Emit.TypeBuilder>a objekt <xref:System.Reflection.Emit.AssemblyBuilder> uchovává odkaz na <xref:System.Reflection.Emit.ModuleBuilder>, takže odkazy na tyto objekty musí být uvolněny. Dokonce i existence <xref:System.Reflection.Emit.LocalBuilder> nebo <xref:System.Reflection.Emit.ILGenerator> používaného při vytváření `T` brání vykládku.
 
-- Statický odkaz na `T` jiným typem dynamicky definované `T1` , který je stále dostupný spuštěním kódu. Například `T1` může být odvozen od `T`, nebo `T` může být typ parametru metody `T1`.
+- Statický odkaz na `T` jiným dynamicky definovaným typem `T1`, který je stále dosažitelný spuštěním kódu. Například `T1` může odvozovat z `T`nebo `T` může být typ parametru v metodě `T1`.
  
-- A **ByRef** do statických polí, která patří do `T`.
+- Typ **ByRef** ke statickému poli, které patří do `T`.
 
-- A <xref:System.RuntimeTypeHandle>, <xref:System.RuntimeFieldHandle>, nebo <xref:System.RuntimeMethodHandle> , který odkazuje na `T` nebo na jednu ze součástí `T`.
+- <xref:System.RuntimeTypeHandle>, <xref:System.RuntimeFieldHandle>nebo <xref:System.RuntimeMethodHandle>, které odkazují na `T` nebo na součást `T`.
 
-- Instance libovolného objektu reflexe, která se dá použít nepřímo nebo přímo k přístupu <xref:System.Type> objekt, který reprezentuje `T`. Například <xref:System.Type> objekt pro `T` lze získat z typu pole, jehož typ prvku je `T`, nebo z obecného typu, který má `T` jako argument typu. 
+- Instance libovolného objektu reflexe, který může být použit nepřímo nebo přímo pro přístup k objektu <xref:System.Type>, který představuje `T`. Například objekt <xref:System.Type> pro `T` lze získat z typu pole, jehož typ elementu je `T`nebo z obecného typu, který má `T` jako argument typu. 
 
-- Metoda `M` v zásobníku volání jakékoli vlákno, kde `M` je metoda `T` nebo úrovni modulu metodu, která je definována v sestavení.
+- Metoda `M` v zásobníku volání libovolného vlákna, kde `M` je metoda `T` nebo metoda na úrovni modulu, která je definována v sestavení.
 
 - Delegát pro statickou metodu, která je definována v modulu sestavení.
 
-Pokud pouze jednu položku z tohoto seznamu existuje pouze jeden typ nebo jednu metodu v sestavení, modul runtime nemůže uvolnit sestavení.
+Pokud pouze jedna položka z tohoto seznamu existuje pouze pro jeden typ nebo jednu metodu v sestavení, modul runtime nemůže uvolnit sestavení.
 
 > [!NOTE]
-> Modul runtime neuvolní skutečně sestavení dokud spuštění finalizační metody pro všechny položky v seznamu.
+> Modul runtime ve skutečnosti nenačítá sestavení, dokud nejsou spuštěny finalizační metody pro všechny položky v seznamu.
 
-Pro účely sledování životnosti Konstruovaný obecný typ, jako `List<int>` (v C#) nebo `List(Of Integer)` (v jazyce Visual Basic), která je vytvořená a používaných pro generování kolekční sestavení se považuje za byly definované v sestavení který obsahuje definici obecného typu nebo v sestavení, který obsahuje definici jednoho z argumentů typu. Přesné sestavení, který se používá je podrobnosti implementace a mohou se změnit.
+Pro účely sledování životního cyklu se konstruovaný obecný typ, například `List<int>` (in C#) nebo `List(Of Integer)` (v Visual Basic), který je vytvořen a použit při generování sestavení kolekční, je považován za definovaný buď v sestavení, které obsahuje definice obecného typu nebo v sestavení, které obsahuje definici jednoho z jeho typů argumentů. Přesné sestavení, které je použito, je podrobné informace o implementaci a může se změnit.
  
-## <a name="restrictions-on-collectible-assemblies"></a>Omezení na kolekční sestavení
+## <a name="restrictions-on-collectible-assemblies"></a>Omezení pro kolekční sestavení
 
-Na kolekční sestavení se vztahují následující omezení: 
+Následující omezení platí pro kolekční sestavení: 
 
-- **Statických odkazů.**   
-  Typy v běžné dynamické sestavení nemůže mít statické odkazy na typy, které jsou definovány v kolekční sestavení. Například pokud definujete běžný typ, který je odvozen z typu v kolekční sestavení <xref:System.NotSupportedException> je vyvolána výjimka. Typ v kolekční sestavení může mít statické odkazy na typ v jiném kolekční sestavení, ale tato zásada rozšiřuje životnost odkazované sestavení k době života odkazující sestavení.
+- **Statické odkazy**   
+  Typy v běžném dynamickém sestavení nemohou mít statické odkazy na typy, které jsou definovány v sestavení kolekční. Například pokud definujete běžný typ, který dědí z typu v sestavení kolekční, je vyvolána výjimka <xref:System.NotSupportedException>. Typ v sestavení kolekční může mít statické odkazy na typ v jiném sestavení kolekční, ale rozšiřuje životnost odkazovaného sestavení na životnost odkazujícího sestavení.
 
-- **Komunikace s objekty COM**   
-   Kolekční sestavení lze definovat rozhraní COM. rozhraní a žádné instance typů v rámci na kolekční sestavení lze převést na objekty modelu COM. Typ v kolekční sestavení nemůže sloužit jako obálka volatelná aplikacemi COM (CCW) nebo Obálka volatelná za běhu (RCW). Typy v kolekční sestavení však můžete použít objekty, které implementují rozhraní modelu COM.
+-   **zprostředkovatele komunikace s objekty COM**  
+   V rámci kolekční sestavení nelze definovat žádná rozhraní modelu COM a žádné instance typů v rámci sestavení kolekční nelze převést na objekty modelu COM. Typ v sestavení kolekční nemůže sloužit jako obálka s možnou modelem COM (doleva) nebo obálka s možnou (RCW). Typy v sestaveních kolekční však mohou používat objekty, které implementují rozhraní COM.
 
-- **Vyvolání platformy**   
-   Metody, které mají <xref:System.Runtime.InteropServices.DllImportAttribute> atribut nebude kompilovat, pokud jsou deklarovány v kolekční sestavení. <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> Instrukci nelze použít v implementaci typu v kolekční sestavení a takové typy nelze zařadit do nespravovaného kódu. Můžete však volání do nativního kódu s využitím vstupní bod, který je deklarován v nekolekční sestavení.
+-   **volání platformy**  
+   Metody, které mají atribut <xref:System.Runtime.InteropServices.DllImportAttribute>, nebudou zkompilovány, pokud jsou deklarovány v sestavení kolekční. Instrukci <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> nelze použít při implementaci typu v sestavení kolekční a takové typy nelze zařadit do nespravovaného kódu. Do nativního kódu však můžete zavolat pomocí vstupního bodu, který je deklarován v sestavení bez kolekční.
  
-- **zařazování**   
-   Objekty (v konkrétní, delegátů), které jsou definovány v kolekční sestavení nelze zařadit. Toto je omezení na všechny přechodné emitovaný typy.
+- **Zařazování**   
+   Objekty (zejména Delegáti), které jsou definovány v sestaveních kolekční, nelze zařadit. Toto je omezení pro všechny přechodné emitované typy.
 
-- **Načítání sestavení**   
-   Emitování reflexe je pouze mechanismus, který je podporován pro načítání kolekční sestavení. Sestavení, která jsou načtena pomocí jakoukoli jinou formu načítání sestavení nemůže být uvolněna.
+- **Načítání  sestavení**  
+   Generování reflexe je jediným mechanismem, který je podporován pro načítání sestavení kolekční. Sestavení, která jsou načtena pomocí jakékoliv jiné formy načítání sestavení, nelze uvolnit.
  
 - **Objekty vázané na kontext**    
-   Statické místní proměnné nejsou podporovány. Typy v kolekční sestavení nelze rozšířit <xref:System.ContextBoundObject>. Kód v kolekční sestavení však můžete použít objekty vázané na kontext, které jsou definovány jinde.
+   Kontext – statické proměnné nejsou podporovány. Typy v sestavení kolekční nemůžou <xref:System.ContextBoundObject>rozšířily. Nicméně kód v sestaveních kolekční může používat kontextově vázané objekty, které jsou definovány jinde.
 
-- **Data vlákna**       
-   Vlákno statické proměnné nejsou podporovány.
+-       **statických dat z vlákna**  
+   Proměnné statických vláken nejsou podporovány.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7962ce88-7e86-4a6f-8298-621b01ffc3c2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17947526513bd1fbe3cb093e8ecaa7ed67983a7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f37cd6ef85985784303aeb976776b03fbc74dec3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759163"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092522"
 ---
 # <a name="iclrstrongnamestrongnametokenfrompublickey-method"></a>ICLRStrongName::StrongNameTokenFromPublicKey – metoda
-Získá token, který představuje veřejný klíč. Zkráceným tvarem veřejný klíč je token silného názvu.  
+Získá token, který představuje veřejný klíč. Token silného názvu je zkrácenou formou veřejného klíče.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +38,31 @@ HRESULT StrongNameTokenFromPublicKey (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
- [in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.  
+ pro Struktura typu [PublicKeyBlob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.  
   
  `cbPublicKeyBlob`  
- [in] Velikost v bajtech, z `pbPublicKeyBlob`.  
+ pro Velikost `pbPublicKeyBlob`v bajtech.  
   
  `ppbStrongNameToken`  
- [out] Silný název tokenu odpovídající klíči předaný `pbPublicKeyBlob`. Modul common language runtime přiděluje paměť ke vrácení tokenu. Volající musí uvolnit tato paměť pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metody.  
+ mimo Token silného názvu odpovídající klíči předanému `pbPublicKeyBlob`. Modul CLR (Common Language Runtime) přiděluje paměť, ve které má být token vrácen. Volající musí uvolnit tuto paměť pomocí metody [ICLRStrongName:: StrongNameFreeBuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) .  
   
  `pcbStrongNameToken`  
- [out] Velikost v bajtech, token vrácený silného názvu.  
+ mimo Velikost vráceného tokenu silného názvu (v bajtech)  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Token silného názvu je zkrácený tvar veřejný klíč, který se používá pro úsporu místa při ukládání informací o klíči v metadatech. Konkrétně tokeny silným názvem se používají v odkazy na sestavení odkázat na závislého sestavení.  
+ Token silného názvu je zkráceným tvarem veřejného klíče, který se používá k ukládání místa při ukládání klíčových informací v metadatech. Konkrétně tokeny se silným názvem se používají v odkazech na sestavení pro odkazování na závislé sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně Mscoree. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

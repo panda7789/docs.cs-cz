@@ -8,21 +8,19 @@ helpviewer_keywords:
 - gcServer element
 - <gcServer> element
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aa03179df1cd2595b4be428106dd3ec10b309317
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 98ecc7069df20a92492e9a6276a0d88331ccc0bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252552"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116660"
 ---
-# <a name="gcserver-element"></a>\<gcServer – element >
+# <a name="gcserver-element"></a>\<element > gcServer
 Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti serveru.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +40,7 @@ Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Nespustí shromažďování paměti serveru. Toto nastavení je výchozí.|  
 |`true`|Spustí shromažďování paměti serveru.|  
@@ -58,14 +56,14 @@ Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR (Common Language Runtime) podporuje dva typy uvolňování paměti: uvolnění paměti pracovní stanice, které je k dispozici ve všech systémech a uvolňování paměti serveru, které je k dispozici v systémech s více procesory. Pomocí `<gcServer>` elementu lze řídit typ uvolňování paměti, který modul CLR provede. <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> Pomocí vlastnosti určíte, zda je povoleno uvolňování paměti serveru.  
+ Modul CLR (Common Language Runtime) podporuje dva typy uvolňování paměti: uvolnění paměti pracovní stanice, které je k dispozici ve všech systémech a uvolňování paměti serveru, které je k dispozici v systémech s více procesory. Pomocí elementu `<gcServer>` lze řídit typ uvolňování paměti, který modul CLR provede. Pomocí vlastnosti <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> určete, zda je povoleno uvolňování paměti serveru.  
   
  V případě počítačů s jedním procesorem by měla být výchozí kolekce uvolnění paměti pracovní stanice nejrychlejší možností. Pro počítače se dvěma procesory lze použít buď pracovní stanici, nebo server. Uvolňování paměti serveru by mělo být nejrychlejší možností pro více než dva procesory.  
   
  Tento element lze použít pouze v konfiguračním souboru aplikace; ignoruje se, pokud je v konfiguračním souboru počítače.  
   
 > [!NOTE]
-> V .NET Framework 4 a starších verzích není souběžné uvolňování paměti k dispozici, když je povoleno uvolňování paměti serveru. Počínaje .NET Framework 4,5 je shromažďování paměti serveru souběžné. Chcete-li použít nesouběžné uvolňování paměti serveru `<gcServer>` , nastavte `true` element na a [ \<gcConcurrent > element](gcconcurrent-element.md) na. `false`  
+> V .NET Framework 4 a starších verzích není souběžné uvolňování paměti k dispozici, když je povoleno uvolňování paměti serveru. Počínaje .NET Framework 4,5 je shromažďování paměti serveru souběžné. Chcete-li použít nesouběžné uvolňování paměti serveru, nastavte prvek `<gcServer>` na hodnotu `true` a [\<prvek > gcConcurrent](gcconcurrent-element.md) na `false`.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad povoluje uvolňování paměti serveru.  

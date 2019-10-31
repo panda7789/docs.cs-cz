@@ -8,49 +8,47 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2b996b09ed3973125d4d848d5e00c18ab02a6967
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85098a0d10b4c05de52cd33d30ec5c4f4bbc594d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908710"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140000"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potenciální nástrahy PLINQ
 
-V mnoha případech se může poskytnout PLINQ výrazné zlepšení výkonu přes sekvenčních LINQ to Objects dotazů. Paralelní provádění provádění dotazu však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní dotazy PLINQ.
+V mnoha případech může PLINQ poskytnout významné zlepšení výkonu při sekvenčních dotazech LINQ to Objects. Práce virtuálního provádění dotazů však zavádí složitost, která může vést k problémům, které se v sekvenčním kódu nevyskytují jako běžné nebo nejsou vůbec k dispozici. Toto téma uvádí některé postupy, které se vyhnete při psaní dotazů PLINQ.
 
-## <a name="do-not-assume-that-parallel-is-always-faster"></a>Nepředpokládejte, že paralelní je vždy rychlejší
+## <a name="do-not-assume-that-parallel-is-always-faster"></a>Nepředpokládat, že paralelní je vždycky rychlejší
 
-Někdy paralelizace způsobí, že PLINQ dotaz poběží pomaleji než jeho LINQ na ekvivalentní objekty. Základním pravidlem je, že jsou dotazy, které mají několik zdrojové elementy a rychlé uživatelské delegáty velmi nepravděpodobné, že by zrychlení. Ale vzhledem k tomu výkon ovlivňuje mnoho faktorů, doporučujeme měření skutečné výsledky, než se rozhodnete, jestli se má použít PLINQ. Další informace najdete v tématu [porozumění zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
+Paralelismus někdy způsobí, že se PLINQ dotaz spustí pomaleji, než je jeho ekvivalent LINQ to Objects. Základní pravidlo pro palec je, že dotazy, které mají málo zdrojových elementů a rychlé delegáty uživatele, jsou pravděpodobně zrychlení mnohem nepravděpodobné. Vzhledem k tomu, že je v výkonu mnoho faktorů, doporučujeme změřit skutečné výsledky před rozhodnutím, jestli chcete použít PLINQ. Další informace naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
-## <a name="avoid-writing-to-shared-memory-locations"></a>Vyhněte se zápis do umístění sdílené paměti
+## <a name="avoid-writing-to-shared-memory-locations"></a>Vyhněte se zápisu do sdílených umístění paměti
 
-V sekvenčním kódu není nic neobvyklého, čtení nebo zápis do statické proměnné nebo pole třídy. Pokaždé, když přistupuje více podprocesů tyto proměnné souběžně, existuje však velké objemy potenciální konflikty časování. I když zámky můžete použít k synchronizaci přístupu k proměnné, náklady na synchronizaci může snížit výkon. Proto doporučujeme vám vyhnout, nebo aspoň omezit přístup ke sdílenému stavu v dotazu PLINQ co největší míře.
+V sekvenčním kódu není běžné číst z nebo zapisovat do statických proměnných nebo polí třídy. Kdykoli však více vláken přistupuje k těmto proměnným současně, existuje velký potenciál pro konflikty časování. I když můžete použít zámky k synchronizaci přístupu k proměnné, náklady na synchronizaci můžou snížit výkon. Proto doporučujeme, abyste se vyhnuli nebo alespoň omezili přístup ke sdílenému stavu v dotazu PLINQ co nejvíce.
 
-## <a name="avoid-over-parallelization"></a>Vyhněte se nadbytečnému
+## <a name="avoid-over-parallelization"></a>Vyhnout se paralelnímu využití
 
-S použitím `AsParallel` operátoru, se vám účtovat režijní náklady na vytváření oddílů zdrojové kolekce a synchronizace pracovních vláken. Výhody paralelizace jsou dále omezeny počtem procesorů v počítači. Neexistuje žádné zrychlení k získané spuštěním více vláken výpočetní na právě jeden procesor. Proto musí být pozor, abyste nadbytečně dotazu.
+Pomocí operátoru `AsParallel` se účtují režijní náklady na rozdělení zdrojové kolekce a synchronizaci pracovních vláken. Výhody paralelismu jsou dále omezeny počtem procesorů v počítači. Neexistují žádné zrychlení, které by bylo možné vymezit spuštěním více výpočetních vláken vázaných na pouze jeden procesor. Proto musíte mít pozor, abyste paralelizovat dotaz.
 
-Nejběžnější scénář, ve které nadbytečnému může dojít, je ve vnořené dotazy, jak je znázorněno v následujícím fragmentu kódu.
+Nejběžnější scénář, ve kterém může dojít k paralelnímu navýšení, je ve vnořených dotazech, jak je znázorněno v následujícím fragmentu kódu.
 
 [!code-csharp[PLINQ#20](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#20)]
 [!code-vb[PLINQ#20](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#20)]
 
-V takovém případě je nejlepší paralelizovat pouze na vnější zdroj dat (zákazníci), pokud jedna nebo více z následujících podmínek:
+V takovém případě je nejlepší paralelizovat jenom vnější zdroj dat (Customers), pokud neplatí jedna nebo víc z těchto podmínek:
 
-- Zdroj dat vnitřní (zákazníka. Objednávky) je známo, že trvat velmi dlouho.
+- Vnitřní zdroj dat (zák. Objednávky) se označují jako velmi dlouhé.
 
-- Provádíte náročné výpočty na jednotlivé objednávky. (Operace je znázorněno v příkladu není nákladné.)
+- V každé objednávce provádíte nákladný výpočet. (Operace uvedená v příkladu není nákladná.)
 
-- Cílový systém jsou známy dostatek procesorů pro zpracování počet vláken, které budou vytvořeny paralelní provádění dotazu na `cust.Orders`.
+- Pro cílový systém je známo, že má dostatek procesorů pro zpracování počtu vláken, která budou vytvořena virtuálního dotazem na `cust.Orders`.
 
-Ve všech případech je nejlepší způsob, jak určit optimální tvar dotazu pro testování a měření. Další informace najdete v tématu [jak: Měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
+Ve všech případech je nejlepším způsobem, jak určit optimální obrazec dotazu, testování a měření. Další informace najdete v tématu [Postupy: měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
 
-## <a name="avoid-calls-to-non-thread-safe-methods"></a>Vyhněte se volání metody není bezpečné pro vlákna
+## <a name="avoid-calls-to-non-thread-safe-methods"></a>Nepoužívejte volání metod, které nejsou bezpečné pro přístup z více vláken
 
-Zápis do metody instance vláknově bezpečné PLINQ dotazu může vést k poškození dat, který může nebo nemusí pokračovat nezjištěné po ve svém programu. Může také vést k výjimkám. V následujícím příkladu by se pokoušet více vláken k volání `FileStream.Write` metoda současně, což není podporována třídou.
+Zápis na metody instancí bez bezpečného přístupu z více vláken může vést k poškození dat, které může nebo nemusí být v programu nedetekováno. Může také vést k výjimkám. V následujícím příkladu se více vláken pokusí zavolat metodu `FileStream.Write` současně, což není podporováno třídou.
 
 ```vb
 Dim fs As FileStream = File.OpenWrite(…)
@@ -62,34 +60,34 @@ FileStream fs = File.OpenWrite(...);
 a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));
 ```
 
-## <a name="limit-calls-to-thread-safe-methods"></a>Omezení volání metod bezpečným pro vlákno
+## <a name="limit-calls-to-thread-safe-methods"></a>Omezení volání metod bezpečných pro přístup z více vláken
 
-Většina statických metod v rozhraní .NET Framework jsou bezpečné pro vlákna a může být volána z více vláken současně. I v těchto případech se však zapojení synchronizace může vést k výrazné mohou zpomalit zpracování dotazu.
+Většina statických metod v .NET Framework je bezpečná pro přístup z více vláken a je možné ji volat z více vláken současně. Nicméně i v těchto případech může synchronizace vést k významnému zpomalení dotazu.
 
 > [!NOTE]
-> Můžete vyzkoušet to sami vložením volání některých <xref:System.Console.WriteLine%2A> v dotazech. I když tato metoda se používá v příkladech dokumentaci pro demonstrační účely, nepoužívejte ji v PLINQ dotazy.
+> Můžete to otestovat sami vložením některých volání do <xref:System.Console.WriteLine%2A> v dotazech. I když se tato metoda používá v příkladech dokumentace pro demonstrační účely, nepoužívejte ji v dotazech PLINQ.
 
-## <a name="avoid-unnecessary-ordering-operations"></a>Vyhněte se zbytečným operace řazení
+## <a name="avoid-unnecessary-ordering-operations"></a>Vyhnout se zbytečným operacím řazení
 
-Při PLINQ dotaz spuštěn paralelně, rozdělí zdrojovou sekvenci na oddíly, které mohou být provozována současně z více vláken. Ve výchozím nastavení, není předvídatelný pořadí, ve které se zpracovávají oddíly a jsou doručeny výsledky (s výjimkou operátory, jako například `OrderBy`). Můžete určit, aby PLINQ zachovávaní řazení jakékoli zdrojové sekvence, ale tato akce nemá negativní dopad na výkon. Osvědčeným postupem, kdykoli je to možné, je struktura dotazy tak, aby jejich nespoléhejte na zachování pořadí. Další informace najdete v tématu [zachování pořadí v PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).
+Když PLINQ spustí dotaz paralelně, rozdělí zdrojovou sekvenci na oddíly, které lze provozovat souběžně ve více vláknech. Ve výchozím nastavení je pořadí, ve kterém jsou oddíly zpracovávány, a výsledky jsou dodány (s výjimkou operátorů, jako je například `OrderBy`). Můžete určit, aby PLINQ zachoval řazení libovolné zdrojové sekvence, ale má negativní vliv na výkon. Nejlepší postup, kdykoli je to možné, je strukturování dotazů, které nespoléhají na zachování pořadí. Další informace naleznete v tématu [pořadí zachování v PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).
 
-## <a name="prefer-forall-to-foreach-when-it-is-possible"></a>V případě ForEach je možné raději ForAll
+## <a name="prefer-forall-to-foreach-when-it-is-possible"></a>Preferovat ForAll na ForEach, pokud je to možné
 
-I když PLINQ provede dotaz z více vláken, je-li využívají výsledky v `foreach` smyčky (`For Each` v jazyce Visual Basic), pak výsledky dotazu musí být sloučeny zpět do jednoho vlákna a sériově přistupuje enumerátor. V některých případech je to nevyhnutelné; však kdykoli je to možné, použijte `ForAll` metoda umožňuje každému vláknu vlastní výsledky, například výstup například zapsáním do kolekce bezpečné pro vlákna <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>.
+I když PLINQ spustí dotaz ve více vláknech, pokud použijete výsledky ve smyčce `foreach` (`For Each` ve Visual Basic), musí být výsledky dotazu sloučeny zpět do jednoho vlákna a budou se k němu přihlížet sériovým enumerátorem. V některých případech to není nevyhnutelné; kdykoli je to možné, použijte metodu `ForAll`, abyste každému vláknu umožnili výstup vlastních výsledků, například zapsáním do kolekce bezpečné pro přístup z více vláken, jako je například <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>.
 
-Stejný problém se vztahuje na <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> jinými slovy, `source.AsParallel().Where().ForAll(...)` by měl být důrazně upřednostňován do
+Stejný problém se týká <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> jinými slovy, `source.AsParallel().Where().ForAll(...)` by měl být důrazně upřednostňován na
 
 `Parallel.ForEach(source.AsParallel().Where(), ...)`.
 
-## <a name="be-aware-of-thread-affinity-issues"></a>Mějte na paměti problémů, spřažení vláken
+## <a name="be-aware-of-thread-affinity-issues"></a>Informace o problémech spřažení vláken
 
-Některé technologie, například interoperabilita modelů COM pro jedno vláknové objekty Apartment (STA) součásti Windows Forms a Windows Presentation Foundation (WPF), omezení vlákno vztahů, které vyžadují spuštění kódu na konkrétním vlákně. Například ve Windows Forms a WPF, ovládací prvek je přístupný pouze na vlákně, na kterém byla vytvořena. Při pokusu o přístup ke sdílenému stavu ovládacího prvku Windows Forms v PLINQ dotaz, je vyvolána výjimka, pokud používáte v ladicím programu. (Toto nastavení vypnete.) Ale pokud váš dotaz využívá ve vlákně uživatelského rozhraní, pak dostanete ovládacího prvku z `foreach` smyčku, která se zobrazí dotaz výsledky vzhledem k tomu, že kód je prováděn pouze jedno vlákno.
+Některé technologie, například interoperabilita modelu COM pro součásti s jedním vláknem (STA), model Windows Forms a Windows Presentation Foundation (WPF), ukládají omezení spřažení vláken, která vyžadují spouštění kódu v konkrétním vlákně. Například v model Windows Forms i WPF může být ovládací prvek k dispozici pouze ve vlákně, ve kterém byl vytvořen. Pokud se pokusíte o přístup ke sdílenému stavu ovládacího prvku model Windows Forms v PLINQ dotazu, je vyvolána výjimka, pokud je spuštěn v ladicím programu. (Toto nastavení se dá vypnout.) Nicméně pokud je váš dotaz použit ve vlákně uživatelského rozhraní, pak můžete získat přístup k ovládacímu prvku z `foreach`ové smyčky, která vytvoří výčet výsledků dotazu, protože tento kód se spouští pouze v jednom vlákně.
 
-## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nepředpokládejte, že iterace ForEach, pro a ForAll vždy spustit paralelně
+## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nepředpokládáme, že iterace ForEach, for a ForAll vždy provádějí paralelně
 
-Je důležité mít na paměti, že jednotlivé iterace v <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> nebo <xref:System.Linq.ParallelEnumerable.ForAll%2A> smyčky může, ale není nutné spustit paralelně. Proto byste se měli vyhnout psaní kódu, který správnost závisí na paralelní zpracování iterace nebo spuštění iterace v libovolném pořadí.
+Je důležité pamatovat na to, že jednotlivé iterace v <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> nebo <xref:System.Linq.ParallelEnumerable.ForAll%2A> smyčka nemusí být spouštěny paralelně. Proto byste se měli vyhnout psaní kódu, který závisí na správnosti paralelního provádění iterací nebo při provádění iterací v jakémkoli konkrétním pořadí.
 
-Například tento kód je pravděpodobně dojde k zablokování:
+Například tento kód může zablokovat:
 
 ```vb
 Dim mre = New ManualResetEventSlim()
@@ -121,9 +119,9 @@ Enumerable.Range(0, Environment.ProcessorCount * 100).AsParallel().ForAll((j) =>
 }); //deadlocks
 ```
 
-V tomto příkladu jednu iteraci nastaví událost a všech dalších iterací čekání na událost. Žádné čekající iterace můžete dokončit až do dokončení iterace nastavení události. Je však možné, že čekajících iterací blokovat všechna vlákna, které se používají ke spouštění paralelní smyčky před událostí iterace dostala příležitost k provedení. Výsledkem zablokování – událost iterace se nikdy neprovede a iterace čekání se nikdy probuzení.
+V tomto příkladu jedna iterace nastaví událost a všechny ostatní iterace na událost čekají. Žádná z čekacích iterací nemůže být dokončena, dokud se nedokončí iterace nastavení události. Je však možné, že čekající iterace zablokují všechna vlákna, která se používají ke spuštění paralelní smyčky, před tím, než bude iterace nastavení událostí vykonána. Výsledkem je zablokování – iterace nastavení události se nikdy nespustí a čekací iterace se nikdy neprobudí.
 
-Zejména jedné iterace paralelní smyčky by nikdy čekat na další iteraci smyčky pokroku. Pokud se rozhodne paralelní smyčky naplánování iterace sekvenčně, ale v opačném pořadí, dojde k zablokování.
+Konkrétně jedna iterace paralelní smyčky by nikdy neměla čekat na další iteraci smyčky, aby bylo možné postupovat. Pokud se paralelní smyčka rozhodne naplánovat iterace sekvenčně, ale v opačném pořadí, dojde k zablokování.
 
 ## <a name="see-also"></a>Viz také:
 

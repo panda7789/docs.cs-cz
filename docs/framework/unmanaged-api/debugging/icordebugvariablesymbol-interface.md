@@ -2,14 +2,12 @@
 title: ICorDebugVariableSymbol – rozhraní
 ms.date: 03/30/2017
 ms.assetid: 0e58b85e-69bd-41ff-bedb-8cdc8be6a7a2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3fb2538894184c19bc107ce52cbef3ac86a97345
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 25ffa55eeeb82d6feaf5696ea96dae81774e3d70
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967980"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121917"
 ---
 # <a name="icordebugvariablesymbol-interface"></a>ICorDebugVariableSymbol – rozhraní
 Načte informace o ladicím symbolu pro proměnnou.  
@@ -30,11 +28,11 @@ Načte informace o ladicím symbolu pro proměnnou.
 > Toto rozhraní je dostupné jenom pro .NET Native. Pokud implementujete Toto rozhraní pro ICorDebug scénáře mimo .NET Native, modul CLR (Common Language Runtime) bude toto rozhraní ignorovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

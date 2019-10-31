@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: cc7b0e5b-48c3-4509-8ebb-611ddb1f7ec2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4244ef04d6789b7c17ccc8330cb0c26a6c9f3866
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 295deeec2e8eb42ccaa4d0cfb8b08b32438d047c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765544"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120243"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface – metoda
-Načte modul CLR do aktuální proces a vrátí runtime ukazatele rozhraní, jako například [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md), a [imetadatadispenserex –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md).  
+Načte CLR do aktuálního procesu a vrátí ukazatele rozhraní Runtime, jako jsou [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)a [IMetaDataDispenserEx](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md).  
   
- Tato metoda nahrazuje všechny `CorBindTo`* funkce v [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) oddílu.  
+ Tato metoda nahrazuje všechny funkce `CorBindTo`* v části [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +38,33 @@ HRESULT GetInterface(
   
 ## <a name="parameters"></a>Parametry  
  `rclsid`  
- [in] Identifikátor CLSID rozhraní pro coclass.  
+ pro Rozhraní CLSID pro třídu typu coclass  
   
  `riid`  
- [in] Požadovaný identifikátor IID `rclsid` rozhraní.  
+ pro IID požadovaného `rclsid` rozhraní  
   
  `ppUnk`  
- [out] Ukazatel na rozhraní poslal dotaz.  
+ mimo Ukazatel na rozhraní dotazované přes dotaz.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`ppUnk` má hodnotu null.|  
-|E_OUTOFMEMORY|Nedostatek paměti je k dispozici pro zpracování požadavku.|  
-|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime je již vázán na starší verze 2 Aktivace zásady CLR verze.|  
+|E_POINTER|`ppUnk` je null.|  
+|E_OUTOFMEMORY|Pro zpracování požadavku není k dispozici dostatek paměti.|  
+|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime již byl svázán se staršími zásadami aktivace CLR verze 2.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda způsobí, že modul CLR do načtena, avšak nebyla inicializována.  
+ Tato metoda způsobí, že se CLR načte, ale neinicializuje se.  
   
  V následující tabulce jsou uvedeny podporované kombinace pro `rclsid` a `riid`.  
   
 |`rclsid`|`riid`|  
 |--------------|------------|  
-|CLSID_CorMetaDataDispenser|IID_IMetaDataDispenser IID_IMetaDataDispenserEx|  
-|CLSID_CorMetaDataDispenserRuntime|IID_IMetaDataDispenser IID_IMetaDataDispenserEx|  
+|CLSID_CorMetaDataDispenser|IID_IMetaDataDispenser, IID_IMetaDataDispenserEx|  
+|CLSID_CorMetaDataDispenserRuntime|IID_IMetaDataDispenser, IID_IMetaDataDispenserEx|  
 |CLSID_CorRuntimeHost|IID_ICorRuntimeHost|  
 |CLSID_CLRRuntimeHost|IID_ICLRRuntimeHost|  
 |CLSID_TypeNameFactory|IID_ITypeNameFactory|  
@@ -75,13 +73,13 @@ HRESULT GetInterface(
 |CLSID_CLRStrongName|IID_ICLRStrongName|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

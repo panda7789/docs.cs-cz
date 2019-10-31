@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c6cbbea-c27c-4695-bda3-17c1910d8ddb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3064a5793c6158ead85a9ff6d9b09f077d0bd603
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a7dae98d1f2dc2448bd3a5df2d6143b7be0bb734
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966242"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129262"
 ---
 # <a name="iclrgcmanagercollect-method"></a>ICLRGCManager::Collect – metoda
 Vynutí uvolňování paměti pro určenou generaci.  
@@ -43,7 +41,7 @@ HRESULT Collect (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Collect`úspěšně vráceno.|  
+|S_OK|`Collect` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -51,14 +49,14 @@ HRESULT Collect (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Collect` Metoda vynutí, aby systém uvolňování paměti CLR prováděl shromažďování bez ohledu na jeho aktuální stav.  
+ Metoda `Collect` vynutí, aby systém uvolňování paměti CLR prováděl shromažďování bez ohledu na jeho aktuální stav.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

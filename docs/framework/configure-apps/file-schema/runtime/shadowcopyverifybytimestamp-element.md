@@ -5,20 +5,18 @@ helpviewer_keywords:
 - <shadowCopyTimeStampVerification> element
 - shadowCopyTimeStampVerification element
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 79d44ff255b1fc12efc6e8488eeab231b9276b90
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 160f14c856735e1ceac8635506aea52454faea43
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252310"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115731"
 ---
-# <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp – element >
+# <a name="shadowcopyverifybytimestamp-element"></a>\<element > shadowCopyVerifyByTimestamp
 Určuje, zda stínové kopírování používá výchozí chování při spuštění, které bylo zavedeno ve .NET Framework 4, nebo se vrátí k chování při spuštění starších verzí .NET Framework.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<shadowCopyVerifyByTimestamp >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,11 +32,11 @@ Určuje, zda stínové kopírování používá výchozí chování při spušt�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda aplikační domény, které používají stínové kopírování, porovnávají časová razítka sestavení při spuštění, aby bylo možné určit, zda bylo sestavení Aktualizováno před stínovým kopírováním sestavení.|  
+|umožněn|Požadovaný atribut.<br /><br /> Určuje, zda aplikační domény, které používají stínové kopírování, porovnávají časová razítka sestavení při spuštění, aby bylo možné určit, zda bylo sestavení Aktualizováno před stínovým kopírováním sestavení.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |true|Při spuštění nástroje kopíruje pouze sestavení, která byla aktualizována od posledního zkopírování do adresáře stínové kopie. Toto je výchozí nastavení pro .NET Framework 4.|  
 |false|Vrátí se k chování při spuštění předchozích verzí .NET Framework, což bylo při spuštění zkopírovat všechny soubory.|  

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c2042d0936359a85d203375c42be0d8a096f004e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fc3f77adf33502bfbc3d65ff5131420093fbbec8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739759"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097938"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult – výčet
-Poskytuje podrobnosti o způsobu získání hodnoty ukazatel instrukce (IP).  
+Poskytuje podrobné informace o tom, jak byla získána hodnota ukazatele na instrukce (IP).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,24 +41,24 @@ typedef enum CorDebugMappingResult {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MAPPING_PROLOG`|Nativní kód je v prologu, takže IP má hodnotu 0.|  
-|`MAPPING_EPILOG`|Nativní kód epilogu, probíhá, tedy hodnota IP adresu poslední instrukce metody.|  
-|`MAPPING_NO_INFO`|Žádné informace o mapování je k dispozici pro metodu, aby IP adresa má hodnotu 0.|  
-|`MAPPING_UNMAPPED_ADDRESS`|Přestože jsou informace o mapování metody, aktuální adresu nelze mapovat na kód Microsoft intermediate language (MSIL). IP adresa hodnotu 0.|  
-|`MAPPING_EXACT`|Metoda mapuje přesně na kód jazyka MSIL nebo byl interpretován rámce, tak hodnota IP adresy je přesné.|  
-|`MAPPING_APPROXIMATE`|Metoda byl úspěšně namapován, ale hodnota IP adresa může být přibližné.|  
+|`MAPPING_PROLOG`|Nativní kód je v prologu, takže hodnota IP je 0.|  
+|`MAPPING_EPILOG`|Nativní kód je ve epilogu, takže hodnota IP je adresa poslední instrukce metody.|  
+|`MAPPING_NO_INFO`|Pro metodu nejsou k dispozici žádné informace o mapování, takže hodnota IP je 0.|  
+|`MAPPING_UNMAPPED_ADDRESS`|I když jsou pro metodu k dispozici informace o mapování, nemůže být aktuální adresa namapována na kód jazyka MSIL (Microsoft Intermediate Language). Hodnota IP je 0.|  
+|`MAPPING_EXACT`|Buď je metoda mapována přesně na kód jazyka MSIL, nebo byl rámec interpretován, takže hodnota IP je přesná.|  
+|`MAPPING_APPROXIMATE`|Metoda byla úspěšně namapována, ale hodnota IP adresy může být přibližná.|  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít [icordebugilframe::getip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) metodu k získání hodnoty ukazatele na instrukci.  
+ K získání hodnoty ukazatele na instrukci můžete použít metodu [ICorDebugILFrame:: getip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

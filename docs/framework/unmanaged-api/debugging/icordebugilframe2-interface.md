@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: f94b9d53-d8f8-4424-a95e-53a1bfd26e4a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d02dab01eca3bd4f8ce3ae7ace7f9d4be8233dca
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 08c2946a9bd6251f377ea594c0c3ca5d1bd98c67
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917006"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095095"
 ---
 # <a name="icordebugilframe2-interface"></a>ICorDebugILFrame2 – rozhraní
 
@@ -31,7 +29,7 @@ Logické rozšíření rozhraní ICorDebugILFrame
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|Získá objekt ICorDebugTypeEnum, který obsahuje <xref:System.Type> parametry v tomto snímku.|  
+|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|Získá objekt ICorDebugTypeEnum, který obsahuje parametry <xref:System.Type> v tomto snímku.|  
 |[RemapFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-remapfunction-method.md)|Přemapuje upravenou funkci zadáním nového posunu jazyka MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -40,11 +38,11 @@ Logické rozšíření rozhraní ICorDebugILFrame
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

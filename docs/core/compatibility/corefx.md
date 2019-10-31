@@ -2,14 +2,12 @@
 title: CoreFx zásadní změny – .NET Core
 description: Obsahuje seznam nejnovějších změn v rozhraní .NET CoreFx, knihovny základních tříd.
 ms.date: 09/20/2019
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7681dadbbbae737cb1cbc260613baea9d34527a8
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 04ae857b5f46748ad57c742b6ccf421f57bc3138
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002459"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093427"
 ---
 # <a name="corefx-breaking-changes"></a>CoreFx průlomové změny
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51d9f4a4-81a7-4527-8537-5212bdb05c70
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 54abcd357c6f26f54432b39bfcb4a0d63afabfe4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1b4741b71521ab91152ce71d5b1b4a4c3fbd3629
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738724"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73113759"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
-Získá velikost v bajtech, typu ukazatele, který používá cílového procesu. Tato metoda je volána službami common language runtime přístup k datům.  
+Získá velikost typu ukazatele, který cílový proces používá, v bajtech. Tato metoda je volána službou Common Language Runtime Data Access Services.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetPointerSize (
   
 ## <a name="parameters"></a>Parametry  
  `pointerSize`  
- [out] Ukazatel na celočíselnou hodnotu, která určuje velikost v bajtech, ukazatel na cílový proces.  
+ mimo Ukazatel na celočíselnou hodnotu, která určuje velikost ukazatele na cílovém procesu v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementováno tvůrci ladění aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

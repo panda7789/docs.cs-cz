@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: edaaed1d-0d26-40f0-83f1-48efc0ded1c6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6ebc885e000f902670dbf74d5ecc11fd956f8c81
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 28a750846407a2b035e42533765eb83a87bfce3c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798875"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104110"
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver – rozhraní
 Poskytuje [metodu ResolveTypeLib –](resolvetypelib-method.md), která řeší cestu k souboru knihovny typů.  
@@ -33,15 +31,15 @@ Poskytuje [metodu ResolveTypeLib –](resolvetypelib-method.md), která řeší 
 |[ResolveTypeLib – metoda](resolvetypelib-method.md)|Vyřeší jednoduchý název knihovny typů vrácením jeho plně kvalifikované cesty.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** TlbRef. idl, TlbRef. h  
+ **Hlavička:** TlbRef. idl, TlbRef. h  
   
- **Knihovna** TlbRef.lib  
+ **Knihovna:** TlbRef. lib  
   
  **Verze .NET Framework:** 4, 3,5, 3,0, 2,0  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pomocné funkce Tlbexp](index.md)
+- [Podpůrné funkce Tlbexp](index.md)
 - [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

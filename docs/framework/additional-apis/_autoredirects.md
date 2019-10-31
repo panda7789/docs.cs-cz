@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest._AutoRedirects Field
+title: HttpWebRequest. _AutoRedirects – pole
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2dde9cdeeca1cc8cca13322747d625b505e7f453
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 82acb409f09826d70f8f050c932ab4aebc4fd172
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301058"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120087"
 ---
-# <a name="httpwebrequestautoredirects-field"></a>HttpWebRequest. \_AutoRedirects pole
+# <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest.\_pole autoredirect
 
-`HttpWebRequest._AutoRedirects` je <xref:System.Int32> , který se vztahuje počet přesměrování provedené pro tento <xref:System.Net.HttpWebRequest>.
+`HttpWebRequest._AutoRedirects` je <xref:System.Int32>, který odráží počet přesměrování provedených pro tento <xref:System.Net.HttpWebRequest>.
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,14 +30,14 @@ private int _AutoRedirects
 ```
 
 > [!WARNING]
-> `HttpWebRequest._AutoRedirects` Pole je interní a není určena pro použití přímo v kódu.
+> Pole `HttpWebRequest._AutoRedirects` je interní a není určeno pro použití přímo v kódu.
 > 
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

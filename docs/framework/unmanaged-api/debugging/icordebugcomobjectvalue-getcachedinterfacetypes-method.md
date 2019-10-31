@@ -13,17 +13,15 @@ helpviewer_keywords:
 ms.assetid: d492284f-d3c5-4614-adb8-d718d5042500
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c7325e84d8fe4df9a31543426c6376d0941306fd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 199f58456e64ccf7ef771d42d5c7d64b189cb670
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748453"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125497"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacetypes-method"></a>ICorDebugComObjectValue::GetCachedInterfaceTypes – metoda
-Poskytuje enumerátor pro typy rozhraní, že byl přetypován na nebo použít jako aktuální objekt.  
+Poskytuje enumerátor pro typy rozhraní, na které byl aktuální objekt převeden nebo použit jako.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +33,21 @@ HRESULT GetCachedInterfaceTypes(
   
 ## <a name="parameters"></a>Parametry  
  `bIInspectableOnly`  
- [in] Hodnota, která určuje, zda metoda vrátí pouze rozhraní Windows Runtime (`IInspectable` rozhraní) nebo jen rozhraní modelu COM v mezipaměti obálka volatelná za běhu (RCW).  
+ pro Hodnota, která určuje, zda metoda vrátí pouze prostředí Windows Runtime rozhraní (`IInspectable` rozhraní) nebo všechna rozhraní COM uložená v mezipaměti pomocí obálky volání za běhu (RCW).  
   
  `ppInterfacesEnum`  
- [out] Ukazatel na adresu, která poskytuje přístup k objektům ICorDebugType, které představují typy z mezipaměti rozhraní čítače icordebugtypeenum – filtrovat podle `bIInspectableOnly`.  
+ mimo Ukazatel na adresu čítače výčtu ICorDebugTypeEnum, který poskytuje přístup k objektům ICorDebugType, které představují typy rozhraní uložené v mezipaměti filtrované podle `bIInspectableOnly`.  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

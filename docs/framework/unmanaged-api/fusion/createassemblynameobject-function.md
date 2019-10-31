@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 55c8b41e-fbe4-4ae0-aa29-68fbb2311691
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb53014a28fb291b8463535addfb61e62d32d7d6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 00345f6c95c67f0494aa721c662f56a9e98cdd7f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795351"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108704"
 ---
 # <a name="createassemblynameobject-function"></a>CreateAssemblyNameObject – funkce
 Získá ukazatel rozhraní na instanci [IAssemblyName](iassemblyname-interface.md) , která představuje jedinečnou identitu sestavení se zadaným názvem.  
@@ -41,23 +39,23 @@ HRESULT CreateAssemblyNameObject (
   
 ## <a name="parameters"></a>Parametry  
  `ppAssemblyNameObj`  
- mimo Vráceno `IAssemblyName`.  
+ mimo Vrácený `IAssemblyName`.  
   
  `szAssemblyName`  
- pro Název sestavení, pro které chcete vytvořit novou `IAssemblyName` instanci.  
+ pro Název sestavení, pro které chcete vytvořit novou instanci `IAssemblyName`.  
   
  `dwFlags`  
  pro Příznaky, které mají být předána konstruktoru objektu.  
   
  `pvReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být odkaz s hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

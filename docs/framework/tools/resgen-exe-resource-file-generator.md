@@ -15,14 +15,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f9b8b93fe2b15ca6b4544547f3934f51ffed4df
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 4605c7361705ba37091eb2e34d8425810854973e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774196"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104896"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
 Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření souborů prostředků](../resources/creating-resource-files-for-desktop-apps.md).)  
@@ -302,7 +300,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  *NázevTřídy*  
  Název třídy prostředku se silnými typy. Tento parametr by měl odpovídat názvu kořenového souboru .resources. Pokud například nástroj Resgen.exe vygeneruje soubor .resources pojmenovaný MyCompany.Libraries.Strings.resources, název třídy prostředků silného typu je Strings. Pokud je název *ClassName* vynechán, vygenerovaná třída je odvozena z kořenového názvu `outputFilename`. Pokud je vynecháno `outputFilename`, vygenerovaná třída je odvozena z kořenového názvu `inputFilename`.  
   
- *ClassName* nemůže obsahovat neplatné znaky, jako jsou například vložené mezery. Pokud *ClassName* obsahuje vložené mezery nebo pokud je ve výchozím nastavení vygenerována hodnota *ClassName* z *inputFilename*a *inputFilename* obsahuje vložené mezery, nástroj Resgen. exe nahradí všechny neplatné znaky podtržítkem (\_).  
+ *ClassName* nemůže obsahovat neplatné znaky, jako jsou například vložené mezery. Pokud *ClassName* obsahuje vložené mezery nebo pokud je ve výchozím nastavení vygenerována *ClassName* z *inputFilename*a *inputFilename* obsahuje vložené mezery, nástroj Resgen. exe nahradí všechny neplatné znaky podtržítkem (\_). .  
   
  *Bitmap*  
  Název souboru třídy.  
@@ -317,7 +315,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
   
 - Konstruktor bez parametrů, který lze použít k vytvoření instance třídy prostředku silného typu.  
   
-- @No__t_0 (C#) nebo `Shared` (Visual Basic) a vlastnost `ResourceManager` s oprávněními jen pro čtení, která vrací instanci <xref:System.Resources.ResourceManager>, která spravuje prostředek silného typu.  
+- `static` (C#) nebo `Shared` (Visual Basic) a vlastnost `ResourceManager` s oprávněními jen pro čtení, která vrací instanci <xref:System.Resources.ResourceManager>, která spravuje prostředek silného typu.  
   
 - Statická `Culture` vlastnost, která umožňuje nastavit jazykovou verzi použitou pro načtení prostředků. Ve výchozím nastavení je jeho hodnota `null`, což znamená, že se používá aktuální jazyková verze uživatelského rozhraní.  
   

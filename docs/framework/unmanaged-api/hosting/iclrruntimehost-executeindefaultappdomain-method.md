@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 30b5cf9a-a762-4bd4-be12-d6c1442b78b1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5b7540f166311bbc9e5efa21d136132cc72b7c12
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ed841d1b2ff346ebef668cbd96a58ddfe466b3b8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768735"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120437"
 ---
 # <a name="iclrruntimehostexecuteindefaultappdomain-method"></a>ICLRRuntimeHost::ExecuteInDefaultAppDomain – metoda
-Volá metodu zadané zadaného typu v zadaném spravovaná sestavení.  
+Volá zadanou metodu zadaného typu v zadaném spravovaném sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,48 +39,48 @@ HRESULT ExecuteInDefaultAppDomain (
   
 ## <a name="parameters"></a>Parametry  
  `pwzAssemblyPath`  
- [in] Cesta k <xref:System.Reflection.Assembly> , který definuje <xref:System.Type> jehož metoda má být vyvolána.  
+ pro Cesta k <xref:System.Reflection.Assembly> definující <xref:System.Type>, jejichž metoda má být vyvolána.  
   
  `pwzTypeName`  
- [in] Název <xref:System.Type> , který definuje metodu, který má být vyvolán.  
+ pro Název <xref:System.Type>, který definuje metodu, která má být vyvolána.  
   
  `pwzMethodName`  
- [in] Název metody, která se má vyvolat.  
+ pro Název metody, která se má vyvolat.  
   
  `pwzArgument`  
- [in] Parametr řetězec předat metodě.  
+ pro Řetězcový parametr, který se má předat metodě.  
   
  `pReturnValue`  
- [out] Celé číslo hodnoty vrácené volanou metodu.  
+ mimo Celočíselná hodnota vrácená vyvolanou metodou.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ExecuteInDefaultAppDomain` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`ExecuteInDefaultAppDomain` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Pokud metoda vrátí E_FAIL, seznam CRL už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, seznam CRL již nebude v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vyvolaná metoda musí mít následující podpis:  
+ Vyvolaná metoda musí mít následující signaturu:  
   
 ```cpp  
 static int pwzMethodName (String pwzArgument)  
 ```  
   
- kde `pwzMethodName` představuje název volanou metodu a `pwzArgument` představuje řetězcová hodnota předaná této metodě jako parametr. Pokud hodnota HRESULT je nastavena na hodnotu S_OK, `pReturnValue` je nastavena na celočíselnou hodnotu vrácenou příkazem volanou metodu. V opačném případě `pReturnValue` není nastaven.  
+ kde `pwzMethodName` představuje název vyvolané metody a `pwzArgument` představuje řetězcovou hodnotu předanou jako parametr této metodě. Pokud je hodnota HRESULT nastavena na S_OK, `pReturnValue` je nastavena na celočíselnou hodnotu vrácenou vyvolanou metodou. V opačném případě `pReturnValue` není nastavena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

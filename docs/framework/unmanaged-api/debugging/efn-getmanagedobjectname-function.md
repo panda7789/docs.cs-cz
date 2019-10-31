@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6e7c6bee-7ced-495f-bf6c-2a5f0c716f7e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d3490477f30cd1c0badaa9cfd71433a5bf9d7a99
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c7333f8f7b95655ac821e9a2977d5db3794486a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738992"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123007"
 ---
-# <a name="efngetmanagedobjectname-function"></a>\_EFN\_GetManagedObjectName Function
-Získá název typu pomocí ukazatele zadaný spravovaný objekt.  
+# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_funkce GetManagedObjectName
+Získá název typu pomocí zadaného ukazatele spravovaného objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT _EFN_GetManagedObjectName(
   
 ## <a name="parameters"></a>Parametry  
  `Client`  
- [in] Ukazatel na klientovi ladění.  
+ pro Ukazatel na ladicího klienta.  
   
  `objAddr`  
- [in] Ukazatel spravovaného objektu.  
+ pro Ukazatel spravovaného objektu.  
   
  szName  
- [out] Název typu.  
+ mimo Název typu.  
   
  `cbName`  
- [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.  
+ mimo Počet znaků, které jsou k dispozici v bufferu řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
+ Pokud ve vlákně, které je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** SOS_Stacktrace.h  
+ **Hlavička:** SOS_Stacktrace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

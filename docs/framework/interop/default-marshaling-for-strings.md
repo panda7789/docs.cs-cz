@@ -8,34 +8,32 @@ helpviewer_keywords:
 - strings, interop marshaling
 - interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d39d4dfd5413b95300b70f27437bd27ca2d67a20
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 49f2d871a42db484e20f0bfc35634a0e8b959c2e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452382"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123551"
 ---
 # <a name="default-marshaling-for-strings"></a>Výchozí zařazování pro řetězce
 
-Jak <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy mají podobné chování zařazování.
+Třídy <xref:System.String?displayProperty=nameWithType> i <xref:System.Text.StringBuilder?displayProperty=nameWithType> mají podobné chování při zařazování.
 
-Řetězce, které jsou zařazeny jako stylu modelu COM. `BSTR` typu nebo jako řetězec zakončený hodnotou null (pole znaků, které končí znakem null). Znaky v řetězci může být zařazována jako kódování Unicode (výchozí možnost v systémech Windows) nebo ANSI.
+Řetězce jsou zařazeny jako typ `BSTR` ve stylu COM nebo jako řetězec zakončený hodnotou null (pole znaků, které končí znakem null). Znaky v řetězci lze zařadit jako Unicode (výchozí v systémech Windows) nebo ANSI.
 
-## <a name="strings-used-in-interfaces"></a>Řetězce použité v rozhraní
+## <a name="strings-used-in-interfaces"></a>Řetězce používané v rozhraních
 
-V následující tabulce jsou uvedeny možnosti zařazování pro datový typ string při zařazení jako argument metody nespravovaného kódu. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazování řetězců v modelu COM rozhraní.
+V následující tabulce jsou uvedeny možnosti zařazování pro datový typ String při zařazení jako argument metody do nespravovaného kódu. Atribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> poskytuje několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazování řetězců do rozhraní COM.
 
-|Typ výčtu|Popis nespravované formátu|
+|Typ výčtu|Popis nespravovaného formátu|
 |----------------------|-------------------------------------|
-|`UnmanagedType.BStr` (výchozí)|COM – styl `BSTR` s předponou délku a znaky kódování Unicode.|
+|`UnmanagedType.BStr` (výchozí)|`BSTR` ve stylu COM s pevnou délkou a znaky Unicode.|
 |`UnmanagedType.LPStr`|Ukazatel na pole zakončené znakem null znaků ANSI.|
 |`UnmanagedType.LPWStr`|Ukazatel na pole zakončené znakem null znaků Unicode.|
 
-Tato tabulka platí pro <xref:System.String>. Pro <xref:System.Text.StringBuilder>, jsou povolené jediné možnosti `UnmanagedType.LPStr` a `UnmanagedType.LPWStr`.
+Tato tabulka se vztahuje na <xref:System.String>. Pro <xref:System.Text.StringBuilder>jsou jedinou povolenou možností `UnmanagedType.LPStr` a `UnmanagedType.LPWStr`.
 
-Následující příklad ukazuje deklarované v řetězci `IStringWorker` rozhraní.
+Následující příklad ukazuje řetězce deklarované v rozhraní `IStringWorker`.
 
 ```csharp
 public interface IStringWorker
@@ -64,7 +62,7 @@ Public Interface IStringWorker
 End Interface
 ```
 
-Následující příklad ukazuje odpovídající rozhraní je popsáno v knihovně typů.
+Následující příklad ukazuje odpovídající rozhraní popsané v knihovně typů.
 
 ```cpp
 interface IStringWorker : IDispatch
@@ -80,26 +78,26 @@ interface IStringWorker : IDispatch
 };
 ```
 
-## <a name="strings-used-in-platform-invoke"></a>Vyvolání řetězců použitých ve platformy
+## <a name="strings-used-in-platform-invoke"></a>Řetězce používané při vyvolání platformy
 
-Argumenty řetězce kopie, převod z formátu rozhraní .NET Framework (Unicode) do formátu nespravovaného platformu vyvolání platformy. Řetězce jsou neměnné a nejsou zkopírovány zpět z nespravované paměti pro spravované paměti při volání se vrátí.
+Vyvolání platformy kopíruje argumenty řetězce a převádí z formátu .NET Framework (Unicode) do nespravovaného formátu platformy. Řetězce jsou neměnné a nejsou zkopírovány zpět z nespravované paměti do spravované paměti, když se volání vrátí.
 
-V následující tabulce jsou uvedeny možnosti zařazování pro řetězce při zařazení jako volání funkce invoke argumentu metody platformy. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazování řetězců v kódu.
+V následující tabulce jsou uvedeny možnosti zařazování pro řetězce při zařazování jako argument metody volání platformy. Atribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> poskytuje několik hodnot <xref:System.Runtime.InteropServices.UnmanagedType> výčtu pro zařazování řetězců.
 
-|Typ výčtu|Popis nespravované formátu|
+|Typ výčtu|Popis nespravovaného formátu|
 |----------------------|-------------------------------------|
-|`UnmanagedType.AnsiBStr`|COM – styl `BSTR` s předponou délku a znaky ANSI.|
-|`UnmanagedType.BStr`|COM – styl `BSTR` s předponou délku a znaky kódování Unicode.|
+|`UnmanagedType.AnsiBStr`|`BSTR` ve stylu COM s pevnou délkou a znaky ANSI.|
+|`UnmanagedType.BStr`|`BSTR` ve stylu COM s pevnou délkou a znaky Unicode.|
 |`UnmanagedType.LPStr` (výchozí)|Ukazatel na pole zakončené znakem null znaků ANSI.|
-|`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislého na platformě.|
-|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null UTF-8 kódování znaků.|
+|`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislých na platformě.|
+|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null v kódování UTF-8.|
 |`UnmanagedType.LPWStr`|Ukazatel na pole zakončené znakem null znaků Unicode.|
-|`UnmanagedType.TBStr`|COM – styl `BSTR` s předponou délku a závislého na platformě znaků.|
-|`VBByRefStr`|Hodnota, která umožňuje Visual Basic .NET, chcete-li změnit řetězec v nespravovaných kódu a výsledky ve spravovaném kódu projeví. Tato hodnota je podporována pouze pro vyvolání platformy. Jedná se o výchozí hodnotu v jazyce Visual Basic pro `ByVal` řetězce.|
+|`UnmanagedType.TBStr`|`BSTR` ve stylu COM s pevnou délkou a znaky závislé na platformě.|
+|`VBByRefStr`|Hodnota, která umožňuje Visual Basic .NET změnit řetězec v nespravovaném kódu a výsledky se projeví ve spravovaném kódu. Tato hodnota je podporována pouze pro vyvolání platformy. Toto je výchozí hodnota v Visual Basic pro `ByVal` řetězce.|
 
-Tato tabulka platí pro <xref:System.String>. Pro <xref:System.Text.StringBuilder>, jsou povolené jediné možnosti `LPStr`, `LPTStr`, a `LPWStr`.
+Tato tabulka se vztahuje na <xref:System.String>. Pro <xref:System.Text.StringBuilder>jsou povolené jenom možnosti `LPStr`, `LPTStr`a `LPWStr`.
 
-Následující definice typu ukazuje správné použití `MarshalAsAttribute` voláními vyvolání platformy.
+Následující definice typu ukazuje správné použití `MarshalAsAttribute` pro volání vyvolání platformy.
 
 ```csharp
 class StringLibAPI
@@ -140,22 +138,22 @@ Class StringLibAPI
 End Class
 ```
 
-## <a name="strings-used-in-structures"></a>Řetězců použitých ve strukturách
+## <a name="strings-used-in-structures"></a>Řetězce používané ve strukturách
 
-Řetězce jsou platných členů struktur; ale <xref:System.Text.StringBuilder> vyrovnávací paměti nejsou platné ve strukturách. V následující tabulce jsou uvedeny možnosti zařazování pro <xref:System.String> datového typu, když typ je zařazen jako pole. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> k zařazování řetězců na pole hodnot výčtu.
+Řetězce jsou platné členy struktur. <xref:System.Text.StringBuilder> vyrovnávací paměti jsou však ve strukturách neplatné. V následující tabulce jsou uvedeny možnosti zařazování pro datový typ <xref:System.String>, když je typ zařazen jako pole. Atribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> poskytuje několik hodnot <xref:System.Runtime.InteropServices.UnmanagedType> výčtu pro zařazování řetězců do pole.
 
-|Typ výčtu|Popis nespravované formátu|
+|Typ výčtu|Popis nespravovaného formátu|
 |----------------------|-------------------------------------|
-|`UnmanagedType.BStr`|COM – styl `BSTR` s předponou délku a znaky kódování Unicode.|
+|`UnmanagedType.BStr`|`BSTR` ve stylu COM s pevnou délkou a znaky Unicode.|
 |`UnmanagedType.LPStr` (výchozí)|Ukazatel na pole zakončené znakem null znaků ANSI.|
-|`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislého na platformě.|
-|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null UTF-8 kódování znaků.|
+|`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislých na platformě.|
+|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null v kódování UTF-8.|
 |`UnmanagedType.LPWStr`|Ukazatel na pole zakončené znakem null znaků Unicode.|
-|`UnmanagedType.ByValTStr`|Pevné délky pole znaků; Typ pole je určeno znakovou sadu obsahující struktury.|
+|`UnmanagedType.ByValTStr`|Pole znaků pevné délky; Typ pole je určen znakovou sadou obsahující struktury.|
 
-`ByValTStr` Typ se používá pro vložených polí znaků pevné délky, které se zobrazují v rámci struktury. Jiné typy lze použít pro řetězec odkazů obsažených v rámci struktury, které obsahují ukazatele na řetězce.
+Typ `ByValTStr` se používá pro vložená pole znaků s pevnou délkou, která se zobrazují v rámci struktury. Další typy platí pro odkazy na řetězce obsažené ve strukturách, které obsahují ukazatele na řetězce.
 
-`CharSet` Argument <xref:System.Runtime.InteropServices.StructLayoutAttribute> , která je použita na obsahující struktura Určuje znak formátu řetězce ve strukturách. Následující příklad struktury obsahují odkazy na řetězec a vložené řetězců, jakož i ANSI, Unicode a závislého na platformě znaků. Reprezentace těchto struktur v knihovně typů je znázorněno v následujícím C++ kódu:
+Argument `CharSet` <xref:System.Runtime.InteropServices.StructLayoutAttribute>, který je použit na obsaženou strukturu, určuje formát znaků řetězců ve strukturách. Následující ukázkové struktury obsahují odkazy na řetězce a vložené řetězce a také ANSI, Unicode a znaky závislé na platformě. Reprezentace těchto struktur v knihovně typů je uvedena v následujícím C++ kódu:
 
 ```cpp
 struct StringInfoA
@@ -178,7 +176,7 @@ struct StringInfoT
 };
 ```
 
-Následující příklad ukazuje způsob použití <xref:System.Runtime.InteropServices.MarshalAsAttribute> k definování stejnou strukturu v různých formátech.
+Následující příklad ukazuje, jak použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> k definování stejné struktury v různých formátech.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -228,13 +226,13 @@ Structure StringInfoT
 End Structure
 ```
 
-## <a name="fixed-length-string-buffers"></a>Vyrovnávací paměti pevné délky řetězců
+## <a name="fixed-length-string-buffers"></a>Vyrovnávací paměti pro řetězce s pevnou délkou
 
-Za určitých okolností znaků pevné délky vyrovnávací paměti musí předávat do nespravovaného kódu na manipulovat. Jednoduše předáním řetězce nelze použít v tomto případě vzhledem k tomu, že volaný nelze změnit obsah předanou vyrovnávací paměť. I v případě, že řetězec je předána odkazem, neexistuje žádný způsob, jak inicializovat na danou velikost vyrovnávací paměti.
+V některých případech musí být před manipulací do nespravovaného kódu předána vyrovnávací paměť znaků s pevnou délkou. Pouhá předání řetězce v tomto případě nefunguje, protože volaný nemůže změnit obsah předané vyrovnávací paměti. I v případě, že je řetězec předán odkazem, neexistuje způsob, jak vyrovnávací paměť inicializovat na danou velikost.
 
-Řešením je předat <xref:System.Text.StringBuilder> vyrovnávací paměti jako argument místo <xref:System.String>. A `StringBuilder` lze přistoupit přes ukazatel a upravit volaným, pokud nepřekročí kapacitu `StringBuilder`. Můžete být navíc inicializované na pevnou délku. Například, pokud je inicializovat `StringBuilder` vyrovnávací paměť kapacitu `N`, aby zařazování odvozovalo poskytuje vyrovnávací paměť o velikosti (`N`+ 1) znaků. Účty + 1 pro skutečnost, že nespravovaný řetězec má ukončovací znak null při `StringBuilder` tak není.
+Řešením je předání <xref:System.Text.StringBuilder> vyrovnávací paměti jako argumentu namísto <xref:System.String>. `StringBuilder` lze odkázat a upravit volaným za předpokladu, že nepřekračuje kapacitu `StringBuilder`. Dá se taky inicializovat na pevnou délku. Například Pokud inicializujete vyrovnávací paměť `StringBuilder` do kapacity `N`, zařazovací modul poskytne velikost vyrovnávací paměti (`N`+ 1). Účty + 1 pro skutečnost, že nespravovaný řetězec má ukončovací znak null, když `StringBuilder` nepoužívá.
 
-Například Windows [ `GetWindowText` ](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) – funkce rozhraní API (definované v *winuser*) vyžaduje, aby volající předat do vyrovnávací paměti znaků pevné délky, ke kterému tato funkce zapíše text okna. `LpString` odkazuje na volající – přidělené vyrovnávací paměti o velikosti `nMaxCount`. Očekává se volající přidělení vyrovnávací paměti a nastavit `nMaxCount` argument velikost přidělené vyrovnávací paměti. Následující příklad ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v *winuser*.
+Například funkce rozhraní API pro Windows [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) (definovaná v *Winuser. h*) vyžaduje, aby volající předal vyrovnávací paměť znaků s pevnou délkou, do které funkce zapisuje text okna. `LpString` odkazuje na vyrovnávací paměť přidělenou volajícímu `nMaxCount`velikosti. Očekává se, že volající přidělí vyrovnávací paměť a nastaví argument `nMaxCount` na velikost přidělené vyrovnávací paměti. Následující příklad ukazuje deklaraci funkce `GetWindowText`, jak je definováno v *Winuser. h*.
 
 ```cpp
 int GetWindowText(
@@ -244,7 +242,7 @@ int GetWindowText(
 );
 ```
 
-A `StringBuilder` lze přistoupit přes ukazatel a upravit volaným, pokud nepřekročí kapacitu `StringBuilder`. Následující příklad kódu ukazuje, jak `StringBuilder` mohou být inicializovány na pevnou délku.
+`StringBuilder` lze odkázat a upravit volaným za předpokladu, že nepřekračuje kapacitu `StringBuilder`. Následující příklad kódu ukazuje, jak lze `StringBuilder` inicializovat na pevnou délku.
 
 ```csharp
 using System;

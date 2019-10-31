@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 722d0d74-e0df-491f-98c4-62d501dfaf6f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f2e53bfb46579cc51b7ad88ef7de2b9f8d2f9390
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 715ff5d4a06b53361d550f04e5154023d0b641bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758765"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095111"
 ---
 # <a name="icordebugilframe2enumeratetypeparameters-method"></a>ICorDebugILFrame2::EnumerateTypeParameters – metoda
-Získá icordebugtypeenum – objekt, který obsahuje <xref:System.Type> parametry v tomto snímku.  
+Získá objekt ICorDebugTypeEnum, který obsahuje parametry <xref:System.Type> v tomto snímku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT EnumerateTypeParameters (
   
 ## <a name="parameters"></a>Parametry  
  `ppTyParEnum`  
- Ukazatel na adresu objektu icordebugtypeenum – rozhraní, která umožňuje výčtu parametrů typu.  
+ Ukazatel na adresu objektu rozhraní ICorDebugTypeEnum, která umožňuje výčet parametrů typu.  
   
- Seznam parametrů typu zahrnují třídy parametry typu (pokud existuje) a parametry typu – metoda (je-li k dispozici).  
+ Seznam parametrů typu zahrnuje parametry typu třídy (pokud existují) následovaný parametry typu metody (pokud existují).  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [imetadataimport2::enumgenericparams –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-enumgenericparams-method.md) metodou ke zjištění, kolik parametry typu třídy a metody zadejte tento seznam obsahuje parametry.  
+ Použijte metodu [IMetaDataImport2:: EnumGenericParams –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-enumgenericparams-method.md) k určení, kolik parametrů typu třídy a parametrů typu metody tento seznam obsahuje.  
   
  Parametry typu nejsou vždy k dispozici.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

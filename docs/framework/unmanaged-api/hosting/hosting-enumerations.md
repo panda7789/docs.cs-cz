@@ -6,108 +6,106 @@ helpviewer_keywords:
 - enumerations [.NET Framework hosting]
 - hosting enumerations [.NET Framework]
 ms.assetid: e09131eb-1f7d-4f52-ae42-7393e9b62ef6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05fc295d394dca7a4f0edead64d326032958b070
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67a3617335db395b9d8f43c804c4eda65894723b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775178"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126994"
 ---
 # <a name="hosting-enumerations"></a>Výčty hostování
-Tato část popisuje nespravované výčty, které používá hostujícího rozhraní API.  
+Tato část popisuje nespravované výčty, které používá rozhraní API pro hostování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CLSID_RESOLUTION_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/clsid-resolution-flags-enumeration.md)  
- Obsahuje hodnoty, které označují, jak vyřešit common language runtime (CLR) `CLSID`.  
+ Obsahuje hodnoty, které určují, jak by měl modul CLR (Common Language Runtime) vyřešit `CLSID`.  
   
  [COR_GC_STAT_TYPES – výčet](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md)  
- Určuje statistiky, které mají být zaznamenány pro uvolnění paměti.  
+ Určuje statistiku, která má být zaznamenána pro uvolňování paměti.  
   
  [COR_GC_THREAD_STATS_TYPES – výčet](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-types-enumeration.md)  
- Určuje kolekci statistiky uvolňování paměti pro vlákno.  
+ Označuje statistiku uvolňování paměti pro vlákno.  
   
  [EApiCategories – výčet](../../../../docs/framework/unmanaged-api/hosting/eapicategories-enumeration.md)  
- Popisuje kategorie funkcí, které hostitele může blokovat spouštění v částečně důvěryhodným kódem.  
+ Popisuje kategorie schopností, které může hostitel zablokovat, aby běžel v částečně důvěryhodném kódu.  
   
  [EBindPolicyLevels – výčet](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md)  
- Poskytuje příznaky, které určují úroveň, kde nastavení nebo změna zásady sestavení.  
+ Poskytuje příznaky, které určují úroveň, na které se má použít nebo upravit zásady sestavení.  
   
  [ECLRAssemblyIdentityFlags – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md)  
- Určuje typ z identity sestavení.  
+ Určuje typ identity sestavení.  
   
  [EClrEvent – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md)  
- Popisuje události CLR, pro které hostitele může registrace zpětných volání.  
+ Popisuje události CLR, pro které může hostitel registrovat zpětná volání.  
   
  [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
- Popisuje sadu selhání, pro které hostitele může nastavit akce zásad.  
+ V této části najdete popis sady selhání, pro které může hostitel nastavit akce zásad.  
   
  [EClrOperation – výčet](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
- Popisuje sadu operací, u které můžete použít hostitele akce zásad.  
+ Popisuje sadu operací, pro které může hostitel použít akce zásad.  
   
  [EClrUnhandledException – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md)  
- Popisuje dostupné možnosti pro správu výjimek, které se neošetří v uživatelském kódu.  
+ Popisuje dostupné možnosti pro správu výjimek, které jsou v uživatelském kódu neošetřené.  
   
  [EContextType – výčet](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md)  
- Popisuje kontextu zabezpečení aktuálně spuštěné vlákno.  
+ Popisuje kontext zabezpečení aktuálně zpracovávaného vlákna.  
   
  [ECustomDumpFlavor – výčet](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md)  
- Obsahuje hodnoty, které označují, položky, které mají být zahrnuty podmnožinu haldu vlastní výpis paměti při hlášení chyby.  
+ Obsahuje hodnoty, které určují, které položky se mají zahrnout do vlastní podmnožiny výpisu haldy při vytváření sestav chyb.  
   
  [ECustomDumpItemKind – výčet](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)  
- Vyhrazeno pro budoucí rozšíření [customdumpitem – struktura](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) struktury.  
+ Vyhrazeno pro budoucí rozšíření struktury [struktury CustomDumpItem –](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) .  
   
  [EHostApplicationPolicy – výčet](../../../../docs/framework/unmanaged-api/hosting/ehostapplicationpolicy-enumeration.md)  
- Určuje, jak upravit [ihostassemblymanager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu. Tento výčet je zastaralý.  
+ Označuje způsob úpravy objektu rozhraní [rozhraní IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) . Tento výčet je zastaralý.  
   
  [EHostBindingPolicyModifyFlags – výčet](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md)  
- Umožňuje hostiteli, chcete-li určit typ přesměrování, které modul CLR má provést při použití změny zásad ze zdrojové sestavení do cílového sestavení.  
+ Umožňuje hostiteli zadat typ přesměrování, který má modul CLR provést při použití změn zásad ze zdrojového sestavení na cílové sestavení.  
   
  [EInitializeNewDomainFlags – výčet](../../../../docs/framework/unmanaged-api/hosting/einitializenewdomainflags-enumeration.md)  
- Umožňuje hostiteli modul runtime poskytnout informace o inicializaci domény aplikace.  
+ Povolí hostiteli poskytovat modul runtime s informacemi o inicializaci domény aplikace.  
   
  [EMemoryAvailable – výčet](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md)  
- Obsahuje hodnoty, které označují množství volné fyzické paměti v počítači.  
+ Obsahuje hodnoty, které udávají množství volné fyzické paměti v počítači.  
   
  [EMemoryCriticalLevel – výčet](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md)  
- Obsahuje hodnoty, které označují dopad selhání při přidělování paměti konkrétní se požaduje, ale není možné spokojeni.  
+ Obsahuje hodnoty, které indikují dopad selhání při požadavku na přidělení konkrétní paměti, ale nelze je splnit.  
   
  [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
- Popisuje akce zásad hostitele můžete nastavit pro operace popsal [eclroperation – výčet](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a selhání popsal [eclrfailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
+ Popisuje akce zásad, které může hostitel nastavit pro operace popsané ve [výčtu EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a chyby popsané ve [výčtu EClrFailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
   
  [ESymbolReadingPolicy – výčet](../../../../docs/framework/unmanaged-api/hosting/esymbolreadingpolicy-enumeration.md)  
- Obsahuje hodnoty, které nastavení zásad pro čtení souborů databáze (PDB) programu.  
+ Obsahuje hodnoty, které nastavují zásady pro soubory programu pro čtení databáze programu (PDB).  
   
  [ETaskType – výčet](../../../../docs/framework/unmanaged-api/hosting/etasktype-enumeration.md)  
- Obsahuje hodnoty, které označují typ reprezentovaný úkolu, který [iclrtask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo [ihosttask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) rozhraní.  
+ Obsahuje hodnoty, které označují druh úlohy reprezentované [rozhraním ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo rozhraním [rozhraní IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) .  
   
  [HOST_TYPE – výčet](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md)  
  Obsahuje hodnoty, které určují typ hostitele, který spouští aplikaci.  
   
  [MALLOC_TYPE – výčet](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md)  
- Obsahuje hodnoty, které určují vlastnosti paměti, které je právě přiděleno.  
+ Obsahuje hodnoty, které určují charakteristiky přidělené paměti.  
   
  [METAHOST_CONFIG_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md)  
- Popisuje možné příznaky vrácené v `pdwConfigFlags` parametr [iclrmetahostpolicy::getrequestedruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) metody.  
+ V této části najdete popis možných příznaků vrácených v parametru `pdwConfigFlags` metody [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) .  
   
  [METAHOST_POLICY_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)  
- Poskytuje zásady vazby, které jsou společné pro většinu hostitelská prostředí modulu runtime.  
+ Poskytuje zásady vytváření vazeb, které jsou společné pro většinu hostitelů modulu runtime.  
   
  [RUNTIME_INFO_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md)  
- Obsahuje hodnoty, které označují, jaké informace o modulu CLR by měla být vrácena.  
+ Obsahuje hodnoty, které určují, jaké informace o modulu CLR by měly být vráceny.  
   
  [StackOverflowType – výčet](../../../../docs/framework/unmanaged-api/hosting/stackoverflowtype-enumeration.md)  
- Obsahuje hodnoty, které označují základní příčiny událost přetečení zásobníku.  
+ Obsahuje hodnoty, které indikují základní příčinu události přetečení zásobníku.  
   
  [STARTUP_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md)  
- Obsahuje hodnoty, které označují chování při spuštění modulu CLR.  
+ Obsahuje hodnoty, které indikují chování při spuštění modulu CLR.  
   
  [ValidatorFlags – výčet](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md)  
- Obsahuje hodnoty, které označují typ ověřování, která má být provedena ve volání [metoda ověření](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md).  
+ Obsahuje hodnoty, které určují typ ověřování, který by měl být proveden ve volání [metody Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md).  
   
  [WAIT_OPTION – výčet](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md)  
- Určuje akci, kterou zabere hostitele, pokud operace požadoval bloky CLR.  
+ Určuje akci, kterou má hostitel provést, pokud operace vyžadovaná rozhraním CLR zablokuje.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  

@@ -7,22 +7,20 @@ helpviewer_keywords:
 - strong-named assemblies, loading into trusted application domains
 - <bypassTrustedAppStrongNames> element
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 35b4c6201b5181b8d7241906f60a731e4175d523
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 50e67e97d74b896a680cc18270d32aa7a8eb8035
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991228"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118178"
 ---
-# <a name="bypasstrustedappstrongnames-element"></a>\<bypassTrustedAppStrongNames> Element
+# <a name="bypasstrustedappstrongnames-element"></a>\<element > bypassTrustedAppStrongNames
 
-Určuje, zda se má obejít ověření silných názvů u sestavení s úplným vztahem důvěryhodnosti, která jsou <xref:System.AppDomain>načtena do úplného vztahu důvěryhodnosti.
+Určuje, zda se má obejít ověření silných názvů u sestavení s úplnou důvěryhodností, která jsou načtena do plně důvěryhodného <xref:System.AppDomain>.
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<bypassTrustedAppStrongNames>**
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<bypassTrustedAppStrongNames >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,10 +41,10 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
-|`true`|Signatury silného názvu v sestaveních s úplným vztahem důvěryhodnosti nejsou ověřovány, pokud jsou sestavení načtena do plně důvěryhodného vztahu důvěryhodnosti <xref:System.AppDomain>. Toto nastavení je výchozí.|
-|`false`|Signatury silného názvu v sestaveních s úplným vztahem důvěryhodnosti jsou ověřovány, když jsou sestavení <xref:System.AppDomain>načtena do plně důvěryhodného vztahu důvěryhodnosti. Podpis silného názvu je kontrolován pouze pro správnost signatury; Nejedná se o porovnání s jiným silným názvem pro porovnání.|
+|`true`|Signatury silného názvu v sestaveních s úplným vztahem důvěryhodnosti nejsou ověřovány, pokud jsou sestavení načtena do <xref:System.AppDomain>s plnou důvěryhodností. Toto nastavení je výchozí.|
+|`false`|Signatury silného názvu v sestaveních s úplným vztahem důvěryhodnosti jsou ověřovány, když jsou sestavení načtena do <xref:System.AppDomain>plné důvěryhodnosti. Podpis silného názvu je kontrolován pouze pro správnost signatury; Nejedná se o porovnání s jiným silným názvem pro porovnání.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -65,16 +63,16 @@ Funkce obcházení silného názvu nezpůsobí režii ověřování podpisů sil
 
 Funkce obcházení se vztahuje na jakékoli sestavení, které je podepsáno silným názvem a které má následující vlastnosti:
 
-- Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> legitimace (například má `MyComputer` legitimaci zóny).
+- Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> legitimace (například má `MyComputer` legitimace zóny).
 
 - Načteno do plně důvěryhodného <xref:System.AppDomain>.
 
-- Načteno z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastností. <xref:System.AppDomain>
+- Načteno z umístění pod vlastností <xref:System.AppDomainSetup.ApplicationBase%2A> této <xref:System.AppDomain>.
 
 - Nepodepsaná se zpožděním.
 
 > [!NOTE]
-> Pokud byla funkce obcházení vypnutá pro všechny aplikace v počítači pomocí klíče registru, nemá tento nastavení konfiguračního souboru žádný vliv. Další informace najdete v tématu [jak: Zakažte funkci](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md)obcházení silného názvu.
+> Pokud byla funkce obcházení vypnutá pro všechny aplikace v počítači pomocí klíče registru, nemá tento nastavení konfiguračního souboru žádný vliv. Další informace najdete v tématu [Postup: zákaz funkce obcházení silného názvu](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md).
 
 ## <a name="example"></a>Příklad
 
@@ -92,4 +90,4 @@ Následující příklad ukazuje, jak určit chování, které ověřuje signatu
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Postupy: Zakázat funkci obcházení silného názvu](../../../../standard/assembly/disable-strong-name-bypass-feature.md)
+- [Postupy: zákaz funkce obcházení silného názvu](../../../../standard/assembly/disable-strong-name-bypass-feature.md)

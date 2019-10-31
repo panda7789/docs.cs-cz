@@ -5,14 +5,12 @@ helpviewer_keywords:
 - supportPortability element
 - <supportPortability> element
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7a76c378038a19d3edb9fe0c5e61012cc854c1b7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 63c309a8a93c1d31ed8f73a495cf5154c3590d56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773933"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115658"
 ---
 # <a name="supportportability-element"></a>\<element > Značka supportPortability
 Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích .NET Framework tím, že zakáže výchozí chování, které zpracovává sestavení jako ekvivalent pro účely přenositelnosti aplikace.  

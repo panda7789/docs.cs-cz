@@ -8,27 +8,25 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to create a dynamic partitioner
 ms.assetid: c875ad12-a161-43e6-ad1c-3d6927c536a7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5719c6afc1c5efc6138f0a4931d1725a6f20909a
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 3970566b4e3f51ce538c328d4e69b20ec22ec09b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66424047"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091423"
 ---
 # <a name="how-to-implement-dynamic-partitions"></a>Postupy: Implementace dynamických oddílů
 
-Následující příklad ukazuje, jak implementovat vlastní <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> , který implementuje dynamické dělení na oddíly a je možné z určité přetížení <xref:System.Threading.Tasks.Parallel.ForEach%2A> a PLINQ.  
+Následující příklad ukazuje, jak implementovat vlastní <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType>, který implementuje dynamické dělení a lze jej použít z určitých přetížení <xref:System.Threading.Tasks.Parallel.ForEach%2A> a z PLINQ.  
   
 ## <a name="example"></a>Příklad
 
-Pokaždé, když volá oddílu <xref:System.Collections.IEnumerator.MoveNext%2A> v čítači výčtu, enumerátor obsahuje oddíl s elementem jeden seznam. V případě PLINQ a <xref:System.Threading.Tasks.Parallel.ForEach%2A>, je oddíl <xref:System.Threading.Tasks.Task> instance. Protože požadavky se dějí souběžně na několika vláknech, se synchronizuje přístup k aktuální index.  
+Pokaždé, když oddíl volá <xref:System.Collections.IEnumerator.MoveNext%2A> v enumerátoru, enumerátor poskytuje oddíl s jedním seznamem elementů. V případě PLINQ a <xref:System.Threading.Tasks.Parallel.ForEach%2A>je oddíl <xref:System.Threading.Tasks.Task> instance. Vzhledem k tomu, že žádosti jsou souběžně na více vláknech, je přístup k aktuálnímu indexu synchronizovaný.  
 
 [!code-csharp[TPL_Partitioners#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioner02.cs#OrderableListPartitioner)]
 [!code-vb[TPL_Partitioners#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_partitioners/vb/dynamicpartitioner.vb#04)]  
 
-Toto je příklad bloků dělení každý blok, který se skládá z jednoho prvku. Tím, že poskytuje další elementy v čase, můžete omezit kolize přes zámek a teoreticky dosáhnout vyššího výkonu. Ale v určitém okamžiku větší bloky vyžadovat další logiku vyrovnávání zatížení aby bylo možné udržovat zaneprázdněný všechna vlákna, dokud se provádí veškerou práci.  
+Toto je příklad dělení bloků dat s každým blokem, který se skládá z jednoho prvku. Poskytnutím více prvků v čase můžete snížit kolizí přes zámek a teoreticky dosáhnout rychlejšího výkonu. V některých případech ale větší počet bloků může vyžadovat další logiku vyrovnávání zatížení, aby všechna vlákna byla zaneprázdněná, dokud neproběhne veškerá práce.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,14 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, platform invoke
 - DLL functions
 ms.assetid: 113646de-7ea0-4f0e-8df0-c46dab3e8733
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b842f44711d38a996b9d710dbe8bd369d30c5443
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 14589544e05f6c59f4f58f7723fef40e75af9823
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051875"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123716"
 ---
 # <a name="calling-a-dll-function"></a>Volání funkce DLL
 I když volání nespravovaných knihoven DLL je téměř totožné s voláním jiného spravovaného kódu, existují rozdíly v tom, že funkce knihovny DLL se jeví jako nematoucí jako první. V této části najdete témata, která popisují některé neobvyklé problémy související s voláním.  

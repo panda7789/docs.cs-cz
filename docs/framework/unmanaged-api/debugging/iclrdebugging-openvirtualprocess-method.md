@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e8ab7c41-d508-4ed9-8a31-ead072b5a314
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4c460bc644017f32fdb96d35e5f42981ac09f825
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cd43dce995c2bc9a45a0c8134a91b20cb1dec26e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738380"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111431"
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess – metoda
-Získá icordebugprocess – rozhraní, která odpovídá common language runtime (CLR) modulu načtené v procesu.  
+Získá rozhraní ICorDebugProcess, které odpovídá modulu CLR (Common Language Runtime) načtenému v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,58 +41,58 @@ HRESULT OpenVirtualProcess(
   
 ## <a name="parameters"></a>Parametry  
  `moduleBaseAddress`  
- [in] Základní adresa modul v cílovém procesu. COR_E_NOT_CLR bude vrácen, pokud zadaný modul není modul CLR.  
+ pro Základní adresa modulu v cílovém procesu. COR_E_NOT_CLR se vrátí, pokud zadaný modul není modul CLR.  
   
  `pDataTarget`  
- [in] Abstrakce cílové data, která umožňuje spravovanému ladicímu programu na kontrolu stavu procesu. Ladicí program musí implementovat [icordebugdatatarget –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) rozhraní. Měli byste implementovat [iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) rozhraní pro zajištění podpory scénářů, kde není CLR, který je právě laděna nainstalovaný místně na počítači.  
+ pro Abstrakce cíle dat, která umožňuje spravovanému ladicímu programu zkontrolovat stav procesu. Ladicí program musí implementovat rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) . Rozhraní [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) byste měli implementovat pro podporu scénářů, ve kterých se modul CLR, který právě ladíte, nenainstaluje místně na počítači.  
   
  `pLibraryProvider`  
- [in] Rozhraní zpětného volání zprostředkovatele knihovny, které umožňuje knihovnám ladění specifickým pro verzi k vyhledání a načtení na požádání. Tento parametr je povinný, jenom Pokud `ppProcess` nebo `pFlags` není `null`.  
+ pro Rozhraní zpětného volání zprostředkovatele knihovny, které umožňuje umístění a načtení knihoven ladění specifických pro konkrétní verzi na vyžádání. Tento parametr je vyžadován pouze v případě, že `ppProcess` nebo `pFlags` není `null`.  
   
  `pMaxDebuggerSupportedVersion`  
- [in] Nejvyšší verze modulu CLR, který lze ladit tímto ladicím programem. By měl určit hlavní, vedlejší verzi a vytvářet verze z nejnovější verze modulu CLR, který podporuje tento ladicí program a nastavit číslo revize 65535 tak, aby vyhovovaly budoucí místní CLR servisní verze.  
+ pro Nejvyšší verze CLR, kterou tento ladicí program může ladit. Měli byste zadat hlavní, vedlejší a buildové verze z nejnovější verze CLR, kterou tento ladicí program podporuje, a nastavit číslo revize na 65535 pro budoucí místní verze údržby CLR.  
   
  `riidProcess`  
- [in] Icordebugprocess – rozhraní ID pro načtení. V současné době jsou pouze hodnoty IID_CORDEBUGPROCESS3 IID_CORDEBUGPROCESS2 a IID_CORDEBUGPROCESS.  
+ pro ID rozhraní ICorDebugProcess, které se má načíst V současné době jediné přijatelné hodnoty jsou IID_CORDEBUGPROCESS3, IID_CORDEBUGPROCESS2 a IID_CORDEBUGPROCESS.  
   
  `ppProcess`  
- [out] Ukazatel na rozhraní modelu COM, která je identifikovaná `riidProcess`.  
+ mimo Ukazatel na rozhraní COM identifikované `riidProcess`.  
   
  `pVersion`  
- [out v] Verze modulu CLR. Na vstupu, tato hodnota může být `null`. Můžete také ukázat [clr_debugging_version –](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-version-structure.md) struktury, v takovém případě struktura `wStructVersion` pole musí být inicializován na hodnotu 0 (nula).  
+ [in, out] Verze modulu CLR. U vstupu může být tato hodnota `null`. Může také ukazovat na strukturu [CLR_DEBUGGING_VERSION](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-version-structure.md) . v takovém případě musí být pole `wStructVersion` struktury inicializováno na hodnotu 0 (nula).  
   
- Na výstupu vráceného `CLR_DEBUGGING_VERSION` struktura se vyplní informace o verzi CLR.  
+ Ve výstupu se vrácená `CLR_DEBUGGING_VERSION` struktura vyplní informacemi o verzi pro modul CLR.  
   
  `pdwFlags`  
- [out] Informační příznaky o zadaného modulu runtime. Zobrazit [clr_debugging_process_flags –](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-process-flags-enumeration.md) tématu Popis příznaky.  
+ mimo Informační příznaky zadaného modulu runtime. Popis příznaků najdete v tématu [CLR_DEBUGGING_PROCESS_FLAGS](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-process-flags-enumeration.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`pDataTarget` je `null`.|  
-|CORDBG_E_LIBRARY_PROVIDER_ERROR|[Iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) zpětného volání vrátí chybu nebo neposkytuje platný popisovač.|  
-|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` neimplementuje rozhraní target požadovaná data pro tuto verzi modulu runtime.|  
-|CORDBG_E_NOT_CLR|Zadaný modul není modul CLR. Hodnota HRESULT je také vrácen, když modul CLR nelze zjistit, že paměť byla poškozena, modul není k dispozici nebo verze CLR je novější než verze překrytí.|  
-|CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Tuto verzi modulu runtime nepodporuje model ladění. V současné době nepodporuje model ladění CLR verze starší než .NET Framework 4. `pwszVersion` Výstupní parametr je stále nastaven na správnou hodnotu po této chybě.|  
-|CORDBG_E_UNSUPPORTED_FORWARD_COMPAT|Verzi modulu CLR je vyšší než verze, které se na podporu deklarací identity tímto ladicím programem. `pwszVersion` Výstupní parametr je stále nastaven na správnou hodnotu po této chybě.|  
-|E_NO_INTERFACE|`riidProcess` Rozhraní není k dispozici.|  
-|CORDBG_E_UNSUPPORTED_VERSION_STRUCT|`CLR_DEBUGGING_VERSION` Struktura nemá rozpoznaná hodnota pro `wStructVersion`. Jediná akceptovaná hodnota v tuto chvíli je 0.|  
+|CORDBG_E_LIBRARY_PROVIDER_ERROR|Zpětné volání [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) vrací chybu nebo neposkytuje platný popisovač.|  
+|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` neimplementuje požadovaná cílová rozhraní dat pro tuto verzi modulu runtime.|  
+|CORDBG_E_NOT_CLR|Uvedený modul není modul CLR. Tato hodnota HRESULT je vrácena také v případě, že modul CLR nelze zjistit, protože paměť je poškozena, modul není k dispozici nebo je verze CLR novější než verze Shim.|  
+|CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Tato verze modulu runtime nepodporuje tento ladicí model. Model ladění není aktuálně podporován verzemi CLR před .NET Framework 4. Výstupní parametr `pwszVersion` je po této chybě stále nastaven na správnou hodnotu.|  
+|CORDBG_E_UNSUPPORTED_FORWARD_COMPAT|Verze modulu CLR je vyšší než verze, které tento ladicí program vyžaduje pro podporu. Výstupní parametr `pwszVersion` je po této chybě stále nastaven na správnou hodnotu.|  
+|E_NO_INTERFACE|Rozhraní `riidProcess` není k dispozici.|  
+|CORDBG_E_UNSUPPORTED_VERSION_STRUCT|Struktura `CLR_DEBUGGING_VERSION` nemá rozpoznanou hodnotu pro `wStructVersion`. Jediná přijatá hodnota je v tomto okamžiku 0.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

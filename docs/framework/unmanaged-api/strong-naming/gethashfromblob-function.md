@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b712d862-f2d0-4b55-87d4-65bbeadef982
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 59b4df08157ce14a58393e54b671e8f41b8998ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d1027aea1d800bda1654b223fec992aa70efd4b7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799229"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140710"
 ---
 # <a name="gethashfromblob-function"></a>GetHashFromBlob – funkce
 
@@ -60,15 +58,15 @@ mimo Vrácená vyrovnávací paměť hash.
 pro Požadovaná maximální velikost `pbHash`.
 
 `pchHash`\
-mimo Velikost vracené `pbHash`velikosti (v bajtech)
+mimo Velikost vrácených `pbHash`v bajtech.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** StrongName. h
+**Hlavička:** StrongName. h
 
-**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
+**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 

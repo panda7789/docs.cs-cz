@@ -14,37 +14,35 @@ helpviewer_keywords:
 ms.assetid: aac8fcf9-ac09-437c-bd5c-2fda14ae1007
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5186df61eb82b29fcfa9776408498b748068e122
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a7267548a957d403cfe02aa3d800a410c14b82a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993475"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103421"
 ---
 # <a name="icorpublishprocessenum-interface"></a>ICorPublishProcessEnum – rozhraní
-Podtřída [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) rozhraní, které poskytuje metody, které procházejí kolekci [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objekty.  
+Podtřída rozhraní [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) , která poskytuje metody pro procházení kolekce objektů [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) .  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-next-method.md)|Získá zadaný počet `ICorPublishProcess` instancí z kolekce, spouští se na aktuální pozici.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-next-method.md)|Získá zadaný počet instancí `ICorPublishProcess` z kolekce počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorPublishProcessEnum` Rozhraní implementuje metodu rozhraní abstraktní [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
+ Rozhraní `ICorPublishProcessEnum` implementuje metody abstraktního rozhraní [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
   
- `ICorPublishProcessEnum` Vytvoří instanci [icorpublish::enumprocesses –](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) metody. Procházení kolekce `ICorPublishProcess` objekty je založená na filtru kritérií uvedených v době `ICorPublishProcessEnum` instance byla vytvořena.  
+ Instance `ICorPublishProcessEnum` je vytvořena metodou [ICorPublish –:: EnumProcesses –](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) . Průchod kolekce `ICorPublishProcess` objektů je založen na kritériích filtru uvedených v době, kdy byla vytvořena instance `ICorPublishProcessEnum`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

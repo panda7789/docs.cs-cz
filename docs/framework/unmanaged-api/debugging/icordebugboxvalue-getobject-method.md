@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3a867a5b-bf94-493f-a4f5-b28685cf5325
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 30038d383e78c23715b844df0bee7c1124885a69
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 475cc6c688262f318aa7f844b975ad69fa80bbe9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745218"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122825"
 ---
 # <a name="icordebugboxvaluegetobject-method"></a>ICorDebugBoxValue::GetObject – metoda
-Získá zabalené hodnoty.  
+Získá zabalenou hodnotu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetObject (
   
 ## <a name="parameters"></a>Parametry  
  `ppObject`  
- [out] Ukazatel na adresu objektu ICorDebugObjectValue představující zabalený hodnotu.  
+ mimo Ukazatel na adresu objektu ICorDebugObjectValue, který představuje zabalenou hodnotu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

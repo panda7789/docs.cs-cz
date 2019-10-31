@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: ee3f85d3-044e-46b8-945c-93ebfa5d9e91
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b9ea398c32762be31f93002533b15bcf3851b870
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3a33d25ee13e12a2612d0132da1dc84c24f2f95b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910235"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090543"
 ---
 # <a name="icordebugframeenum-interface"></a>ICorDebugFrameEnum – rozhraní
 
@@ -31,7 +29,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugFrame.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframeenum-next-method.md)|Získá zadaný počet `ICorDebugFrame` instancí z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframeenum-next-method.md)|Získá zadaný počet instancí `ICorDebugFrame` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -39,11 +37,11 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugFrame.
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

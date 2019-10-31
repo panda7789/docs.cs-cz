@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc437751-7093-44e2-bfdc-191d9ce3c192
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 99bd3e9ae1faec1b71933681fadf4816b4789c98
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e41bb5ca0fdd999692395239304f50a6f745a4f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952213"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088269"
 ---
 # <a name="icordebugarrayvalue-interface"></a>ICorDebugArrayValue – rozhraní
 
@@ -41,17 +39,17 @@ Podtřída ICorDebugHeapValue, která představuje jednorozměrné nebo multidim
 |[HasBaseIndicies – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-hasbaseindicies-method.md)|Určuje, zda pole obsahuje základní indexy.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugArrayValue`podporuje jak jednorozměrná, tak multidimenzionální pole.  
+ `ICorDebugArrayValue` podporuje jak jednorozměrná, tak multidimenzionální pole.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

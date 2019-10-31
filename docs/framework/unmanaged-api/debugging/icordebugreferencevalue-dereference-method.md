@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5ec8cf76-3deb-4ce6-9a49-77a4c35d80b9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f2ea7ebff122622a0db46160d23574619664f8ad
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6bb2a6b68a3c6e981a2d6c833d3f44d4c836bd23
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745018"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123998"
 ---
 # <a name="icordebugreferencevaluedereference-method"></a>ICorDebugReferenceValue::Dereference – metoda
-Získá objekt, na který odkazuje.  
+Načte objekt, na který je odkazováno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT Dereference (
   
 ## <a name="parameters"></a>Parametry  
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue, který představuje objekt, na kterou odkazuje tento objekt ICorDebugReferenceValue.  
+ mimo Ukazatel na adresu ICorDebugValue, která představuje objekt, na který odkazuje tento objekt ICorDebugReferenceValue.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugValue` Objektu je platná pouze tehdy, když svůj odkaz nebyl dosud bylo zakázáno.  
+ Objekt `ICorDebugValue` je platný pouze v případě, že jeho odkaz ještě není zakázán.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

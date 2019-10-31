@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f0643ba9e750e7c64d2dae8eb5744df7bc26931
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5a6e0b009674ff52595aaa0ae4a060f1cdfd1398
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737801"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089051"
 ---
 # <a name="icordebugappdomain2getfunctionpointertype-method"></a>ICorDebugAppDomain2::GetFunctionPointerType – metoda
-Získá ukazatel na funkci, která má daným podpisem.  
+Získá ukazatel na funkci, která má daný podpis.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetFunctionPointerType (
   
 ## <a name="parameters"></a>Parametry  
  `nTypeArgs`  
- [in] Počet argumentů typu pro funkci.  
+ pro Počet argumentů typu pro funkci  
   
  `ppTypeArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument typu funkce. Prvním prvkem je návratový typ; Každý z dalších prvků je typ parametru.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje argument typu funkce. První prvek je návratový typ; Každý z ostatních prvků je typ parametru.  
   
  `ppType`  
- [out] Ukazatel na adresu `ICorDebugType` objekt, který představuje ukazatel na funkci.  
+ mimo Ukazatel na adresu `ICorDebugType` objektu, který představuje ukazatel na funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50dbb9af-58a1-41f4-b56d-3da20011884f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b12ba5ad5c85643d1f4c91585cf7abca210d22bd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 52bfe669d3b078657916554255a11cecfc07d484
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752937"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085090"
 ---
 # <a name="icordebugevalgetresult-method"></a>ICorDebugEval::GetResult – metoda
-Získá výsledky vyhodnocení.  
+Získá výsledky tohoto vyhodnocení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetResult (
   
 ## <a name="parameters"></a>Parametry  
  `ppResult`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje výsledky hodnocení, pokud se obvykle dokončí hodnocení.  
+ mimo Ukazatel na adresu objektu ICorDebugValue, který představuje výsledky tohoto vyhodnocení, pokud se vyhodnocení dokončí normálně.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetResult` Metoda je platná, až po dokončení hodnocení.  
+ Metoda `GetResult` je platná až po dokončení vyhodnocení.  
   
- Pokud se hodnocení dokončí za normálních okolností `ppResult` určuje výsledky. Pokud je ukončena výjimku, výsledkem je výjimka vyvolána. Pokud je hodnocení pro nový objekt, výsledkem je odkaz na nový objekt.  
+ Pokud se vyhodnocení dokončí normálně, `ppResult` určí výsledky. Pokud se ukončí s výjimkou, výsledek je vyvolána výjimka. Pokud bylo vyhodnocení nového objektu, výsledkem je odkaz na nový objekt.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

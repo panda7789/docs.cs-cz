@@ -1,5 +1,5 @@
 ---
-title: Zmírnění Dotyková podpora na základě ukazatele a stylusu
+title: 'Zmírnění rizika: dotykové ovládání pomocí ukazatele a Podpora stylusu'
 ms.date: 04/07/2017
 helpviewer_keywords:
 - retargeting changes
@@ -7,24 +7,22 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 67e41450ed69d73a4b27b0aa37974ae01be69687
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 41a587b343e4774a27e9ddc39080de6939839d93
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779237"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126205"
 ---
-# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění Dotyková podpora na základě ukazatele a stylusu
+# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění rizika: dotykové ovládání pomocí ukazatele a Podpora stylusu
 
-Aplikace WPF, které cílí na .NET Framework 4,7 a jsou spuštěné v systémech Windows počínaje systémem Windows 10 Creators Update, mohou `WM_POINTER`povolit volitelnou sadu WPF Touch/stylusu.
+Aplikace WPF, které cílí na .NET Framework 4,7 a jsou spuštěné v systémech Windows počínaje systémem Windows 10 Creators Update, mohou povolit volitelnou sadu `WM_POINTER`WPF Touch/Stylus na bázi.
 
 ## <a name="impact"></a>Dopad
 
 Vývojáři, kteří explicitně nepovolili podporu dotykového ovládání a stylusu na základě ukazatele, by se v chování WPF Touch/Stylus nezměnily.
 
-Tady jsou uvedené aktuální známé problémy s volitelným `WM_POINTER`tónovým nebo stylusem stackem:
+Tady jsou uvedené aktuální známé problémy s volitelnou `WM_POINTER`dotykem nebo stylusem na bázi:
 
 - Žádná podpora pro psaní rukou v reálném čase.
 
@@ -52,7 +50,7 @@ Vývojáři, kteří chtějí tuto sadu povolit, mohou do souboru App. config ap
 </configuration>
 ```
 
-Odebráním této položky nebo nastavením její hodnoty `false` dojde k vypnutí tohoto volitelného zásobníku.
+Odebráním této položky nebo nastavením její hodnoty na `false` dojde k vypnutí tohoto volitelného zásobníku.
 
 ## <a name="see-also"></a>Viz také:
 

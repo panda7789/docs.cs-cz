@@ -1,18 +1,16 @@
 ---
-title: ICorDebugMutableDataTarget::ContinueStatusChanged Method
+title: 'ICorDebugMutableDataTarget:: ContinueStatusChanged – metoda'
 ms.date: 03/30/2017
 ms.assetid: 5a66d3f4-dd16-4d62-9dcc-0eab7041d894
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f43e98530fcd6d11b7c76295a92d42baceddcd6e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: abaf2d0542e16f526ecbe369370c31c225808f1f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764633"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139348"
 ---
-# <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a>ICorDebugMutableDataTarget::ContinueStatusChanged Method
-Změní stav pokračování pro zbývající ladění události u zadaného vlákna.  
+# <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a>ICorDebugMutableDataTarget:: ContinueStatusChanged – metoda
+Změní stav pokračování pro nedokončenou událost ladění v zadaném vlákně.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,22 +22,22 @@ HRESULT ContinueStatusChanged(
   
 ## <a name="parameters"></a>Parametry  
  `dwThreadId`  
- Identifikátor vlákna operačního systému definovaný.  
+ Identifikátor vlákna definovaného operačním systémem.  
   
  `continueStatus`  
- A [COREDB_CONTINUE_STATUS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) hodnotu, která představuje novou požadovaný stav pokračování.  
+ Hodnota [COREDB_CONTINUE_STATUS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) , která představuje nový požadovaný stav pokračování.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání ladicího programu `ContinueStatusChanged` metody volá metodu icordebug –, který vyžaduje aktuální ladicí událost zpracovávat tak, aby se potenciálně liší od způsobu, ve kterém je obvykle zpracovává. Například, pokud dojde k výjimce nezpracovaných a ladicí program vyžaduje operace, která by zrušit výjimku (například [icordebugilframe::setip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo `FuncEval`), toto rozhraní API slouží k vyžádání, že se výjimka bylo zrušeno.  
+ Ladicí program volá metodu `ContinueStatusChanged`, když volá metodu ICorDebug, která vyžaduje, aby byla aktuální událost ladění zpracována způsobem, který se může lišit od způsobu, jakým by byl normálně zpracován. Například pokud existuje nedokončená výjimka a ladicí program požaduje operaci, která by zrušila výjimku (například [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo `FuncEval`), toto rozhraní API se používá k vyžádání zrušení výjimky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

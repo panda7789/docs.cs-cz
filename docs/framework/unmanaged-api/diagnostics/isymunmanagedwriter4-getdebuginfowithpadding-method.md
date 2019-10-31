@@ -2,19 +2,17 @@
 title: ISymUnmanagedWriter4::GetDebugInfoWithPadding – metoda
 ms.date: 03/30/2017
 ms.assetid: 881e20ca-8131-4bd0-ba41-c2d6391b0fe2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 191aa16c285b3a28beed65004d65525c9214ec93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 274bf79175bda9e880b1ef3cf8f125a017ad0734
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650736"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121658"
 ---
 # <a name="isymunmanagedwriter4getdebuginfowithpadding-method"></a>ISymUnmanagedWriter4::GetDebugInfoWithPadding – metoda
-Funguje stejně jako [GetDebugInfo – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty doplněno nulami po ukončujícího znaku null na pevnou velikost, aby se data řetězce `MAX_PATH`. Odsazení je uveden pouze pokud je délka řetězec cesty, samotný menší než `MAX_PATH`.  
+Funguje stejně jako [Metoda GetDebugInfo –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty je doplněn nulami za ukončovacím znakem null, aby data řetězce měla pevnou velikost `MAX_PATH`. Odsazení je zadáno pouze v případě, že délka řetězce cesty je menší než `MAX_PATH`.  
   
- Díky tomu je snazší psát nástroje tento rozdíl PE soubory.  
+ To usnadňuje psaní nástrojů, které rozdílují soubory PE.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +33,7 @@ HRESULT GetDebugInfoWithPadding(    [in, out] IMAGE_DEBUG_DIRECTORY *pIDD,    [i
  Vrátí `HRESULT`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

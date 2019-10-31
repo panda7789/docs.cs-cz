@@ -6,12 +6,12 @@ helpviewer_keywords:
 - List Item control type
 - UI Automation, List Item control type
 ms.assetid: 34f533bf-fc14-4e78-8fee-fb7107345fab
-ms.openlocfilehash: 64431150969c25da9781871ad8dcd30e029cd62e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c2b1406519c80368cd00a888c541ec9abfce7faa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039439"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123085"
 ---
 # <a name="ui-automation-support-for-the-listitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ListItem
 > [!NOTE]
@@ -65,7 +65,7 @@ ms.locfileid: "73039439"
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závislosti|Pokud je možné položku manipulovat s zobrazením nebo skrytím informací, musí být tento vzor ovládacího prvku implementován.|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|Závislosti|Pokud je možné položku upravovat, je nutné tento vzor ovládacího prvku implementovat. Změny ovládacího prvku položka seznamu způsobí změny v hodnotách <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>a <xref:System.Windows.Automation.Provider.IValueProvider.Value%2A>.|  
 |<xref:System.Windows.Automation.Provider.IGridItemProvider>|Závislosti|Pokud je položka pro prostorovou navigaci v kontejneru seznamu podporována a kontejner je uspořádán do řádků a sloupců, je nutné implementovat vzor ovládacího prvku položky mřížky.|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Závislosti|Pokud má položka příkaz, který může být proveden, oddělený od výběru, musí být tento vzor implementován. Obvykle se jedná o akci spojenou s dvojitým kliknutím na ovládací prvek položky seznamu. Příklady by vyžadovaly spuštění dokumentu z [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)]nebo přehrávání hudebního souboru v systému Microsoft Windows Media Player.|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Závislosti|Pokud má položka příkaz, který může být proveden, oddělený od výběru, musí být tento vzor implementován. Obvykle se jedná o akci spojenou s dvojitým kliknutím na ovládací prvek položky seznamu. Příklady by vyžadovaly spuštění dokumentu z Průzkumníka Microsoft Windows nebo přehrávání hudebního souboru v systému Microsoft Windows Media Player.|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Požadované události automatizace uživatelského rozhraní  

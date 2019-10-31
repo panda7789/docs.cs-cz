@@ -7,21 +7,19 @@ helpviewer_keywords:
 - memory management [.NET Framework]
 - garbage collection [.NET Framework profiling]
 ms.assetid: fd0462f7-57ad-4858-bf62-958378873602
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f43f21fc5ac626eacb7778cce2926973d812852c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4b8d7fc0882e16643a7b46aafe3e00c70ca67ca
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938681"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140279"
 ---
-# <a name="memory-management-and-garbage-collection-in-net"></a>Správa paměti a systém kolekce paměti v rozhraní .NET
-Tato část dokumentace obsahuje informace o správě paměti v rozhraní .NET.  
+# <a name="memory-management-and-garbage-collection-in-net"></a>Správa paměti a uvolňování paměti v rozhraní .NET
+V této části dokumentace najdete informace o správě paměti v rozhraní .NET.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vymazání nespravovaných prostředků](../../../docs/standard/garbage-collection/unmanaged.md)  
- Popisuje, jak správně spravovat a vyčistit nespravované prostředky...  
+ Popisuje, jak správně spravovat a vyčistit nespravované prostředky.  
   
  [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)  
  Poskytuje informace o systému uvolňování paměti .NET.  

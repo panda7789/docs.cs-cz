@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: ec354fa1-1efd-41b0-bc43-b90597b6e253
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 91ab2f71e7fb74f8e0e517b566d46d61c316ebe2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 004e4f70e3385e7a71c356cce38e64d0253dcfa4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796835"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127124"
 ---
 # <a name="iappidauthority-interface"></a>IAppIdAuthority – rozhraní
 Poskytuje metody, které generují a porovnávají klíče pro identity a odkazy aplikací.  
@@ -34,23 +32,23 @@ Poskytuje metody, které generují a porovnávají klíče pro identity a odkazy
 |`IAppIdAuthority::AreReferencesEqual`|Získá hodnotu, která označuje, zda jsou dvě zadané instance [IReferenceAppId –](ireferenceappid-interface.md) stejné. Můžete předat hodnotu příznaku IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION, která ignoruje jejich příslušné informace o verzi.|  
 |`IAppIdAuthority::AreTextualDefinitionsEqual`|Získá hodnotu, která označuje, zda jsou dvě zadané definice řetězce stejné. Můžete předat hodnotu příznaku IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION, která ignoruje jejich příslušné informace o verzi.|  
 |`IAppIdAuthority::AreTextualReferencesEqual`|Získá hodnotu, která označuje, zda jsou dva zadané odkazy na řetězce stejné. Můžete předat hodnotu příznaku IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION, která ignoruje jejich příslušné informace o verzi.|  
-|`IAppIdAuthority::CreateDefinition`|Získá ukazatel rozhraní na nově vygenerovanou `IDefinitionAppId` instanci, která představuje sestavení v aktuálním oboru.|  
-|`IAppIdAuthority::CreateReference`|Získá ukazatel rozhraní na nově vytvořenou `IReferenceAppId` , která představuje sestavení v aktuálním oboru.|  
-|`IAppIdAuthority::DefinitionToText`|Načte verzi řetězce zadaného `IDefinitionAppId`pomocí zadaných hodnot příznaku.|  
-|`IAppIdAuthority::DoesDefinitionMatchReference`|Získá hodnotu, která označuje, zda zadané `IDefinitionAppId` a `IReferenceAppId` představující stejné sestavení.|  
+|`IAppIdAuthority::CreateDefinition`|Získá ukazatel rozhraní na nově generovanou instanci `IDefinitionAppId`, která představuje sestavení v aktuálním oboru.|  
+|`IAppIdAuthority::CreateReference`|Získá ukazatel rozhraní na nově vytvořenou `IReferenceAppId`, která představuje sestavení v aktuálním oboru.|  
+|`IAppIdAuthority::DefinitionToText`|Získá verzi řetězce zadaného `IDefinitionAppId`pomocí zadaných hodnot příznaku.|  
+|`IAppIdAuthority::DoesDefinitionMatchReference`|Získá hodnotu, která označuje, zda zadané `IDefinitionAppId` a `IReferenceAppId` představovat stejné sestavení.|  
 |`IAppIdAuthority::DoesTextualDefinitionMatchTextualReference`|Načte hodnotu, která označuje, jestli zadaný řetězec definice a referenční řetězec představuje stejné sestavení.|  
-|`IAppIdAuthority::GenerateDefinitionKey`|Získá klíč řetězce, který představuje zadanou `IDefinitionAppId` instanci.|  
-|`IAppIdAuthority::GenerateReferenceKey`|Získá klíč řetězce, který představuje zadanou `IReferenceAppId` instanci.|  
-|`IAppIdAuthority::HashDefinition`|Získá klíč hash pro zadanou `IDefinitionAppId` instanci.|  
-|`IAppIdAuthority::HashReference`|Získá klíč hash pro zadanou `IReferenceAppId` instanci.|  
-|`IAppIdAuthority::ReferenceToText`|Načte verzi řetězce zadaného `IReferenceAppId`pomocí zadaných hodnot příznaku.|  
-|`IAppIdAuthority::TextToDefinition`|Získá ukazatel rozhraní na `IDefinitionAppId` instanci, která představuje sestavení odkazované zadaným řetězcovým klíčem.|  
-|`IAppIdAuthority::TextToReference`|Získá ukazatel rozhraní na `IReferenceAppId` instanci, která představuje sestavení odkazované zadaným řetězcovým klíčem.|  
+|`IAppIdAuthority::GenerateDefinitionKey`|Získá klíč řetězce, který představuje zadanou instanci `IDefinitionAppId`.|  
+|`IAppIdAuthority::GenerateReferenceKey`|Získá klíč řetězce, který představuje zadanou instanci `IReferenceAppId`.|  
+|`IAppIdAuthority::HashDefinition`|Získá klíč hash pro zadanou instanci `IDefinitionAppId`.|  
+|`IAppIdAuthority::HashReference`|Získá klíč hash pro zadanou instanci `IReferenceAppId`.|  
+|`IAppIdAuthority::ReferenceToText`|Získá verzi řetězce zadaného `IReferenceAppId`pomocí zadaných hodnot příznaku.|  
+|`IAppIdAuthority::TextToDefinition`|Získá ukazatel rozhraní `IDefinitionAppId` instance, která představuje sestavení odkazované zadaným řetězcovým klíčem.|  
+|`IAppIdAuthority::TextToReference`|Získá ukazatel rozhraní `IReferenceAppId` instance, která představuje sestavení odkazované zadaným řetězcovým klíčem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Izolace. h  
+ **Hlavička:** Izolace. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 763f2375-efc6-4219-8806-a3b0567ef72b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b0c2e8e46c7bb3a5e693c9ea16e6c5a0722b1898
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: adde52dddb63b83dcd7ff10703a43928d9601c92
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799147"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140617"
 ---
 # <a name="strongnamecompareassemblies-function"></a>StrongNameCompareAssemblies – funkce
 Určuje, zda se dvě sestavení liší pouze signaturami silného názvu.  
@@ -48,28 +46,28 @@ BOOLEAN StrongNameCompareAssemblies (
  `pdwResult`  
  mimo Jedna z následujících hodnot:  
   
-- `SN_CMP_DIFFERENT`(0) – určuje, že sestavení obsahují jiná data.  
+- `SN_CMP_DIFFERENT` (0) – určuje, že sestavení obsahují odlišná data.  
   
-- `SN_CMP_IDENTICAL`(1) – určuje, že sestavení jsou přesně stejná, včetně jejich podpisů a kontrolního součtu.  
+- `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou přesně stejná, včetně jejich podpisů a kontrolního součtu.  
   
-- `SN_CMP_SIGONLY`(2) – určuje, že sestavení se liší pouze pomocí signatury a kontrolního součtu.  
+- `SN_CMP_SIGONLY` (2) – určuje, že se sestavení liší pouze pomocí signatury a kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Po úspěšném dokončení; v opačném případě. `false`  
+ `true` po úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="remarks"></a>Poznámky  
  Podpis silného názvu sestavení se skládá z textového názvu sestavení, verze, jazykové verze a tokenu veřejného klíče.  
   
- Pokud se `StrongNameCompareAssemblies` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
+ Pokud se funkce `StrongNameCompareAssemblies` nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="see-also"></a>Viz také:
 

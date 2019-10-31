@@ -14,14 +14,12 @@ helpviewer_keywords:
 - VerifyClientKey function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b674e959ab93cf76b84e2af41e875a50b7d115f4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0a0680651eb192e2798ede00048599c5130e63f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798187"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107362"
 ---
 # <a name="verifyclientkey-function"></a>VerifyClientKey – funkce
 Zajišťuje, aby měl klíč klienta správné zabezpečení.  
@@ -36,14 +34,14 @@ LONG VerifyClientKey();
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud je funkce úspěšná, vrácená hodnota je `ERROR_SUCCESS` (0).
+Pokud je funkce úspěšná, návratová hodnota je `ERROR_SUCCESS` (0).
 
 Pokud dojde k chybě funkce, vrácená hodnota je nenulový kód, který je definován v *Winerror. h*.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.def  
+ **Hlavička:** WMINet_Utils. def  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

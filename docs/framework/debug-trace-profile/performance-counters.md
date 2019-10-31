@@ -6,14 +6,12 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eafbd5b1dfa8eeee386cdcf49652aeeee9d635a8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 02163f923bc93a1cf377cc608b5f390472c60edd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052385"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121603"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
 V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [nástroji Sledování výkonu systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
@@ -119,10 +117,10 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |-------------------------|-----------------|  
 |**Počet bajtů ve všech haldách**|Zobrazuje součet čítače velikosti haldy **1**. generace, **velikosti haldy 2. generace**a **large object čítačů velikosti haldy** . Tento čítač označuje aktuální paměť přidělenou v bajtech pro haldy uvolňování paměti.|  
 |**Počet popisovačů GC**|Zobrazuje aktuální počet používaných obslužných rutin uvolňování paměti. Popisovače uvolňování paměti jsou popisovače pro prostředky externě pro modul CLR (Common Language Runtime) a spravované prostředí.|  
-|**Počet kolekcí 0. generace**|Zobrazuje počet uvolnění objektů generace 0 (tj. nejmladšího sourozence, naposledy přidělených objektů) od spuštění aplikace.<br /><br /> K uvolňování paměti generace 0 dochází, když volná paměť v generaci 0 nestačí pro splnění žádosti o přidělení. Tento čítač se zvyšuje na konci uvolňování paměti generace 0. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti generace vyšší (generace 1 nebo 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota **čítače\_ _global** není přesná a měla by být ignorována.|  
-|**Počet kolekcí 1. generace**|Zobrazuje počet uvolnění paměti objektů generace 1 od spuštění aplikace.<br /><br /> Čítač se zvyšuje na konci uvolňování paměti 1. generace. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti vyšší generace (generace 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota **čítače\_ _global** není přesná a měla by být ignorována.|  
-|**Počet kolekcí generace 2**|Zobrazuje počet uvolnění paměti objektů generace 2 od spuštění aplikace. Čítač se zvyšuje na konci uvolňování paměti 2. generace (označuje se také jako úplné uvolňování paměti).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota **čítače\_ _global** není přesná a měla by být ignorována.|  
-|**Počet vyvolaných GC**|Zobrazuje nejvyšší počet, kolikrát bylo uvolňování paměti provedeno z důvodu explicitního volání <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Je vhodné nechat systém uvolňování paměti, aby vypravil četnost jeho kolekcí.|  
+|**Počet kolekcí 0. generace**|Zobrazuje počet uvolnění objektů generace 0 (tj. nejmladšího sourozence, naposledy přidělených objektů) od spuštění aplikace.<br /><br /> K uvolňování paměti generace 0 dochází, když volná paměť v generaci 0 nestačí pro splnění žádosti o přidělení. Tento čítač se zvyšuje na konci uvolňování paměti generace 0. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti generace vyšší (generace 1 nebo 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
+|**Počet kolekcí 1. generace**|Zobrazuje počet uvolnění paměti objektů generace 1 od spuštění aplikace.<br /><br /> Čítač se zvyšuje na konci uvolňování paměti 1. generace. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti vyšší generace (generace 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
+|**Počet kolekcí generace 2**|Zobrazuje počet uvolnění paměti objektů generace 2 od spuštění aplikace. Čítač se zvyšuje na konci uvolňování paměti 2. generace (označuje se také jako úplné uvolňování paměti).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
+|**Počet vyvolaných GC**|Zobrazuje nejvyšší počet, kolikrát bylo provedeno uvolňování paměti z důvodu explicitního volání <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Je vhodné nechat systém uvolňování paměti, aby vypravil četnost jeho kolekcí.|  
 |**počet připnutých objektů**|Zobrazuje počet připnutých objektů zjištěných při posledním uvolňování paměti. Připnutý objekt je objekt, který systém uvolňování paměti nemůže přesunout do paměti. Tento čítač sleduje připnuté objekty pouze v haldách, které jsou shromažďovány z paměti. Například uvolňování paměti generace 0 způsobuje vyčíslení připnuté objekty pouze v haldě generace 0.|  
 |**Počet používaných bloků jímky**|Zobrazuje aktuální počet používaných synchronizačních bloků. Bloky synchronizace jsou datové struktury pro jednotlivé objekty přidělené pro ukládání informací o synchronizaci. Obsahují slabé odkazy na spravované objekty a musí být prohledávány systémem uvolňování paměti. Synchronizační bloky nejsou omezeny na ukládání informací o synchronizaci; můžou také ukládat definiční metadata COM. Tento čítač indikuje problémy s výkonem při velkém použití primitiv synchronizace.|  
 |**Celkový počet potvrzených bajtů**|Zobrazuje velikost virtuální paměti (v bajtech), která je aktuálně potvrzena systémem uvolňování paměti. Potvrzená paměť je fyzická paměť, pro kterou bylo vyhrazeno místo ve stránkovacím souboru na disku.|  
@@ -147,17 +145,17 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
 |Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
-|**Přijaté bajty**|Kumulativní celkový počet bajtů přijatých všemi <xref:System.Net.Sockets.Socket> objekty <xref:System.AppDomain> v době, kdy byl proces spuštěn. Toto číslo zahrnuje data a všechny informace o protokolu, které nejsou definovány protokolem TCP/IP.|  
-|**Odeslané bajty**|Kumulativní počet bajtů odeslaných všemi <xref:System.Net.Sockets.Socket> objekty <xref:System.AppDomain> v době, kdy byl proces spuštěn. Toto číslo zahrnuje data a všechny informace o protokolu, které nejsou definovány protokolem TCP/IP.|  
-|**Navázaná připojení**|Kumulativní celkový počet <xref:System.Net.Sockets.Socket> objektů pro sokety streamů, které byly někdy připojeny <xref:System.AppDomain> v době od spuštění procesu.|  
-|**Přijaté datagramy**|Kumulativní celkový počet paketů datagramů přijatých všemi <xref:System.Net.Sockets.Socket> objekty <xref:System.AppDomain> v době, kdy byl proces spuštěn.|  
-|**Odeslané datagramy**|Kumulativní celkový počet paketů datagramů odeslaných všemi <xref:System.Net.Sockets.Socket> objekty <xref:System.AppDomain> v době, kdy byl proces spuštěn.|  
-|**Průměrná doba života HttpWebRequest**|Průměrná doba dokončení všech <xref:System.Net.HttpWebRequest> objektů, které skončily v posledním intervalu <xref:System.AppDomain> v době od spuštění procesu.|  
-|**Průměrná doba čekání HttpWebRequest**|Průměrná doba čekání pro všechny <xref:System.Net.HttpWebRequest> objekty, které opustily frontu v posledním intervalu <xref:System.AppDomain> od spuštění procesu.|  
-|**HttpWebRequests vytvořená za sekundu**|Počet <xref:System.Net.HttpWebRequest> objektů vytvořených za sekundu <xref:System.AppDomain>v rámci.|  
-|**HttpWebRequests ve frontě za sekundu**|Počet <xref:System.Net.HttpWebRequest> objektů přidaných do fronty za sekundu <xref:System.AppDomain>v rámci.|  
-|**HttpWebRequests přerušeno za sekundu**|Počet <xref:System.Net.HttpWebRequest> objektů, ve kterých aplikace <xref:System.Net.HttpWebRequest.Abort%2A> volala <xref:System.AppDomain>metodu za sekundu v rámci.|  
-|**Neúspěšné HttpWebRequests/s**|Počet <xref:System.Net.HttpWebRequest> objektů, které přijaly stavový kód neúspěšné ze serveru za sekundu <xref:System.AppDomain>v rámci.|  
+|**Přijaté bajty**|Kumulativní celkový počet bajtů přijatých všemi <xref:System.Net.Sockets.Socket> objekty v rámci <xref:System.AppDomain> od spuštění procesu. Toto číslo zahrnuje data a všechny informace o protokolu, které nejsou definovány protokolem TCP/IP.|  
+|**Odeslané bajty**|Kumulativní počet bajtů odeslaných všemi <xref:System.Net.Sockets.Socket> objekty v rámci <xref:System.AppDomain> od spuštění procesu. Toto číslo zahrnuje data a všechny informace o protokolu, které nejsou definovány protokolem TCP/IP.|  
+|**Navázaná připojení**|Kumulativní celkový počet <xref:System.Net.Sockets.Socket> objektů pro sokety streamu, které byly někdy v rámci <xref:System.AppDomain> připojeny od spuštění procesu.|  
+|**Přijaté datagramy**|Kumulativní celkový počet paketů datagramů přijatých všemi <xref:System.Net.Sockets.Socket> objekty v rámci <xref:System.AppDomain> od spuštění procesu.|  
+|**Odeslané datagramy**|Kumulativní celkový počet paketů datagramů odeslaných všemi <xref:System.Net.Sockets.Socket> objekty v rámci <xref:System.AppDomain> od spuštění procesu.|  
+|**Průměrná doba života HttpWebRequest**|Průměrná doba dokončení všech <xref:System.Net.HttpWebRequest> objektů, které skončily v posledním intervalu v rámci <xref:System.AppDomain> od spuštění procesu.|  
+|**Průměrná doba čekání HttpWebRequest**|Průměrná doba čekání pro všechny <xref:System.Net.HttpWebRequest> objekty, které opustily frontu v posledním intervalu v rámci <xref:System.AppDomain> od spuštění procesu.|  
+|**HttpWebRequests vytvořená za sekundu**|Počet objektů <xref:System.Net.HttpWebRequest> vytvořených za sekundu v rámci <xref:System.AppDomain>.|  
+|**HttpWebRequests ve frontě za sekundu**|Počet <xref:System.Net.HttpWebRequest> objektů přidaných do fronty za sekundu v rámci <xref:System.AppDomain>.|  
+|**HttpWebRequests přerušeno za sekundu**|Počet objektů <xref:System.Net.HttpWebRequest>, ve kterých aplikace volala <xref:System.Net.HttpWebRequest.Abort%2A> metodou za sekundu v rámci <xref:System.AppDomain>.|  
+|**Neúspěšné HttpWebRequests/s**|Počet <xref:System.Net.HttpWebRequest> objektů, které v rámci <xref:System.AppDomain>přijaly stavový kód neúspěšné ze serveru za sekundu.|  
   
  Podporuje se několik tříd čítačů výkonu sítě:  
   
@@ -177,9 +175,9 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
 - **Odeslané datagramy**  
   
- Tyto čítače výkonu poskytují počty od spuštění procesu. Počty <xref:System.Net.Sockets.Socket> navázaných připojení zahrnují explicitní <xref:System.Net.Sockets.Socket> volání metody v rámci aplikace pro připojení soketu datového proudu, které bylo navázáno, a také interní volání prováděná <xref:System.Net.FtpWebRequest>jinými třídami (<xref:System.Net.HttpWebRequest>,, <xref:System.Net.WebClient>a například<xref:System.Net.Sockets.TcpClient>pro třídu<xref:System.Net.Sockets.Socket>  
+ Tyto čítače výkonu poskytují počty od spuštění procesu. Počty navázaných připojení <xref:System.Net.Sockets.Socket> zahrnují explicitní volání metod <xref:System.Net.Sockets.Socket> v rámci aplikace pro připojení soketu streamu, které bylo navázáno, i interní volání prováděná jinými třídami (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.WebClient>a <xref:System.Net.Sockets.TcpClient>například pro <xref:System.Net.Sockets.Socket> třídy  
   
- Počty **přijatých datagramů** a **odeslaných datagramů** zahrnují pakety datagramů odeslané nebo <xref:System.Net.Sockets.Socket> přijímané pomocí explicitní volání metody v rámci aplikace, stejně jako interní volání<xref:System.Net.Sockets.UdpClient>prováděná jinými třídami (například) do <xref:System.Net.Sockets.Socket>. Deník. Počty **přijatých datagramů** a **Odeslané datagramy** mohou být také použity k zajištění velmi hrubé míry, kolik bajtů bylo odesláno nebo přijato pomocí datagramů, za předpokladu, že je pro datagram k dispozici Průměrná velikost.  
+ Počty **přijatých datagramů** a **odeslaných datagramů** zahrnují pakety datagramů odeslané nebo přijaté pomocí explicitního volání metody <xref:System.Net.Sockets.Socket> v rámci aplikace a také interní volání prováděná jinými třídami (například<xref:System.Net.Sockets.UdpClient>) do <xref:System.Net.Sockets.Socket>. Deník. Počty **přijatých datagramů** a **Odeslané datagramy** mohou být také použity k zajištění velmi hrubé míry, kolik bajtů bylo odesláno nebo přijato pomocí datagramů, za předpokladu, že je pro datagram k dispozici Průměrná velikost.  
   
  Mezi čítače výkonu sítě pro data patří následující:  
   
@@ -189,7 +187,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
  Výše uvedené čítače poskytují počty bajtů od spuštění procesu.  
   
- Existují dvě počítadla doby trvání, která měří, jak dlouho <xref:System.Net.HttpWebRequest> trvalo, aby objekty prošly celým životním cyklem nebo pouze jeho součástí:  
+ Existují dvě počítadla doby trvání, která měří, jak dlouho trvalo, aby <xref:System.Net.HttpWebRequest> objekty prošly celým životním cyklem nebo pouze jeho součástí:  
   
 - **Průměrná doba života HttpWebRequest**  
   
@@ -197,11 +195,11 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
  V případě čítače **HttpWebRequest Average** = doba života většiny <xref:System.Net.HttpWebRequest> objektů vždy začíná časem, kdy je objekt vytvořen, až do doby, kdy je datový proud odpovědí uzavřen aplikací. Existují dva Neběžné případy:  
   
-- Pokud aplikace nikdy nevolá <xref:System.Net.HttpWebRequest.GetResponse%2A> metody nebo <xref:System.Net.HttpWebRequest.BeginGetResponse%2A> , <xref:System.Net.HttpWebRequest> pak je doba života objektu ignorována.  
+- Pokud aplikace nikdy nevolá metodu <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>, bude životnost objektu <xref:System.Net.HttpWebRequest> ignorována.  
   
-- Pokud objekt vyvolá při volání <xref:System.Net.HttpWebRequest.GetResponse%2A> metody nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A> , životnost končí, když je vyvolána výjimka. <xref:System.Net.WebException> <xref:System.Net.HttpWebRequest> Technicky, podkladový datový proud odpovědí je také uzavřen v tomto okamžiku (datový proud odpovědi vrácený uživateli je ve skutečnosti datový proud obsahující kopii datového proudu odpovědí).  
+- Pokud objekt <xref:System.Net.HttpWebRequest> vyvolá <xref:System.Net.WebException> při volání metody <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A>, životnost končí, když je vyvolána výjimka. Technicky, podkladový datový proud odpovědí je také uzavřen v tomto okamžiku (datový proud odpovědi vrácený uživateli je ve skutečnosti datový proud obsahující kopii datového proudu odpovědí).  
   
- Existují čtyři čítače, které sledují <xref:System.Net.HttpWebRequest> určité problémy s objekty za interval. Tyto čítače výkonu mohou pomoci vývojářům aplikací, správcům a pracovníkům podpory lépe pochopit <xref:System.Net.HttpWebRequest> , co dělají objekty. Mezi tyto čítače patří:  
+ Existují čtyři čítače, které sledují určité problémy <xref:System.Net.HttpWebRequest> objektů za interval. Tyto čítače výkonu mohou pomoci vývojářům aplikací, správcům a pracovníkům podpory lépe pochopit, co dělají <xref:System.Net.HttpWebRequest> objekty. Mezi tyto čítače patří:  
   
 - **HttpWebRequests vytvořená za sekundu**  
   
@@ -211,13 +209,13 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
 - **Neúspěšné HttpWebRequests/s**  
   
- U čítače **HttpWebRequests Aborted/s** se také počítají interní volání <xref:System.Net.HttpWebRequest.Abort%2A> . Tato interní volání jsou obvykle způsobena vypršením časového limitu, který aplikace může chtít změřit.  
+ U čítače **HttpWebRequests Abort/s** se také počítají interní volání <xref:System.Net.HttpWebRequest.Abort%2A>. Tato interní volání jsou obvykle způsobena vypršením časového limitu, který aplikace může chtít změřit.  
   
- Čítač **neúspěšných HttpWebRequests/s** obsahuje počet <xref:System.Net.HttpWebRequest> objektů, které přijaly stavový kód neúspěšné ze serveru za sekundu. To znamená, že stavový kód přijatý ze serveru HTTP na konci požadavku nebyl v rozsahu od 200 do 299. Stavové kódy, které jsou zpracovávány a mají za následek novou žádost (například řada stavových kódů 401 neautorizovaných, například), selže nebo selže v závislosti na výsledku opakování. Pokud se v aplikaci při pokusu o opakování zobrazí chyba, tento čítač se zvýší.  
+ Čítač **neúspěšných HttpWebRequests/s** obsahuje počet objektů <xref:System.Net.HttpWebRequest>, které ze serveru za sekundu přijaly stavový kód, který selhal. To znamená, že stavový kód přijatý ze serveru HTTP na konci požadavku nebyl v rozsahu od 200 do 299. Stavové kódy, které jsou zpracovávány a mají za následek novou žádost (například řada stavových kódů 401 neautorizovaných, například), selže nebo selže v závislosti na výsledku opakování. Pokud se v aplikaci při pokusu o opakování zobrazí chyba, tento čítač se zvýší.  
   
- K čítačům výkonu sítě lze přistupovat a <xref:System.Diagnostics.PerformanceCounter> spravovat pomocí tříd a souvisejících <xref:System.Diagnostics> v oboru názvů. Čítače výkonu sítě lze také zobrazit pomocí konzoly Sledování výkonu systému Windows.  
+ K čítačům výkonu sítě lze přistupovat a spravovat pomocí <xref:System.Diagnostics.PerformanceCounter> a souvisejících tříd v oboru názvů <xref:System.Diagnostics>. Čítače výkonu sítě lze také zobrazit pomocí konzoly Sledování výkonu systému Windows.  
   
- V konfiguračním souboru musí být povolené čítače výkonu sítě, které se mají použít. Všechny čítače výkonu sítě jsou povoleny nebo zakázány v jednom nastavení konfiguračního souboru. Nelze povolit nebo zakázat jednotlivé čítače výkonu sítě. Další informace naleznete v tématu [ \<performanceCounter > element (nastavení sítě)](../configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
+ V konfiguračním souboru musí být povolené čítače výkonu sítě, které se mají použít. Všechny čítače výkonu sítě jsou povoleny nebo zakázány v jednom nastavení konfiguračního souboru. Nelze povolit nebo zakázat jednotlivé čítače výkonu sítě. Další informace najdete v tématu [\<performanceCounter > elementu (nastavení sítě)](../configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
   
  Pokud jsou povolené síťové čítače, vytvoří a aktualizují se i globální čítače výkonu pro každou doménu. V případě zakázání aplikace nebude poskytovat žádná data čítače výkonu sítě.  
   
@@ -235,7 +233,7 @@ for (int i = 0; i < Array.Length; i++)
   
 - "Sítě .NET CLR" – původní čítače výkonu zavedené ve verzi .NET Framework 2 a podporované v .NET Framework verze 2 a novější.  
   
-- ".NET CLR Networking 4.0.0.0" – všechny výše uvedené čítače soketu a nové čítače výkonu podporované ve verzi .NET Framework 4 a novější. Tyto nové čítače poskytují informace o výkonu <xref:System.Net.HttpWebRequest> pro objekty.  
+- ".NET CLR Networking 4.0.0.0" – všechny výše uvedené čítače soketu a nové čítače výkonu podporované ve verzi .NET Framework 4 a novější. Tyto nové čítače poskytují informace o výkonu <xref:System.Net.HttpWebRequest> objektů.  
   
  Další informace o přístupu k čítačům výkonu a jejich správě v aplikaci najdete v tématu [čítače výkonu](performance-counters.md).  
   

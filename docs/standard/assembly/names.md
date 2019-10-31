@@ -5,17 +5,15 @@ helpviewer_keywords:
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 22e35450460436e164db922fce76a53c437f6bdf
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a35be7c2a2cb4b499496f526d263bb1825a3614b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835321"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107121"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
-Název sestavení je uložen v metadatech a má významný dopad na rozsah sestavení a použití aplikací. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název, jazykovou verzi, veřejný klíč a číslo verze sestavení. To se často označuje jako zobrazované jméno a pro načtená sestavení lze získat pomocí vlastnosti <xref:System.Reflection.Assembly.FullName%2A>.  
+Název sestavení je uložen v metadatech a má významný dopad na rozsah sestavení a použití aplikací. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název, jazykovou verzi, veřejný klíč a číslo verze sestavení. Tato možnost je často označována jako zobrazované jméno a pro načtená sestavení lze získat pomocí vlastnosti <xref:System.Reflection.Assembly.FullName%2A>.  
   
  Modul runtime používá tyto informace k vyhledání sestavení a jeho odlišení od ostatních sestavení se stejným názvem. Například sestavení se silným názvem s názvem `myTypes` může mít následující plně kvalifikovaný název:  
   
@@ -50,7 +48,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ## <a name="name-application-components"></a>Pojmenovat součásti aplikace  
  Modul runtime při určování identity sestavení nebere v úvahu název souboru. Identita sestavení, která se skládá z názvu sestavení, verze, jazykové verze a silného názvu, musí být pro modul runtime nejasná.  
   
- Například pokud máte sestavení s názvem *MyAssembly. exe* , které odkazuje na sestavení s názvem *MyAssembly. dll*, vazba proběhne správně, pokud spustíte *MyAssembly. exe*. Pokud však jiná aplikace provádí *MyAssembly. exe* pomocí metody <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, modul runtime určí, že `myAssembly` je již načteno, když *MyAssembly. exe* požaduje vazbu na `myAssembly`. V tomto případě není *MyAssembly. dll* nikdy načtena. Protože *MyAssembly. exe* neobsahuje požadovaný typ, dojde k <xref:System.TypeLoadException>.  
+ Například pokud máte sestavení s názvem *MyAssembly. exe* , které odkazuje na sestavení s názvem *MyAssembly. dll*, vazba proběhne správně, pokud spustíte *MyAssembly. exe*. Pokud však jiná aplikace provádí *MyAssembly. exe* pomocí metody <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, modul runtime určí, že `myAssembly` již načtena, když *MyAssembly. exe* požaduje vazbu na `myAssembly`. V tomto případě není *MyAssembly. dll* nikdy načtena. Protože *MyAssembly. exe* neobsahuje požadovaný typ, dojde k <xref:System.TypeLoadException>.  
   
  Chcete-li se tomuto problému vyhnout, ujistěte se, že sestavení, která tvoří vaši aplikaci, nemají stejný název sestavení nebo umísťují sestavení se stejným názvem do různých adresářů.  
   

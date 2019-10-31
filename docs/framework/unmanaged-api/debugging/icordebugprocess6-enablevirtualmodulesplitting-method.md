@@ -2,14 +2,12 @@
 title: ICorDebugProcess6::EnableVirtualModuleSplitting – metoda
 ms.date: 03/30/2017
 ms.assetid: e7733bd3-68da-47f9-82ef-477db5f2e32d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8bd06dd3f58a1f74fbdb5ec61c4896f5c1696856
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 32648f40046959ffd8676fe67a1e0a123b0e801f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931061"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123514"
 ---
 # <a name="icordebugprocess6enablevirtualmodulesplitting-method"></a>ICorDebugProcess6::EnableVirtualModuleSplitting – metoda
 Povolí nebo zakáže rozdělení virtuálního modulu.  
@@ -24,7 +22,7 @@ HRESULT EnableVirtualModuleSplitting(
   
 ## <a name="parameters"></a>Parametry  
  `enableSplitting`  
- `true`Chcete-li povolit rozdělení virtuálního modulu; `false` pro jeho zakázání.  
+ `true` Povolit rozdělení virtuálního modulu; `false` ji zakážete.  
   
 ## <a name="remarks"></a>Poznámky  
  Rozdělení virtuálního modulu způsobí, že [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozpoznává moduly, které byly sloučeny společně během procesu sestavení, a prezentuje je jako skupinu samostatných modulů, nikoli jenom jeden velký modul. Tím se změní chování různých [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metod popsaných níže.  
@@ -46,7 +44,7 @@ HRESULT EnableVirtualModuleSplitting(
  běžné moduly  
  Moduly, které nebyly sloučeny v době sestavení. Nejsou to žádné moduly kontejneru ani podmoduly.  
   
- Moduly a dílčí moduly kontejneru jsou reprezentovány objekty rozhraní ICorDebugModule. Chování rozhraní se ale v každém případě mírně liší, protože \<popisuje oddíl x-ref pro > oddíl.  
+ Moduly a dílčí moduly kontejneru jsou reprezentovány objekty rozhraní ICorDebugModule. Chování rozhraní se ale v každém případě mírně liší, protože popisuje \<x-ref na oddíl > oddíl.  
   
 ## <a name="modules-and-assemblies"></a>Moduly a sestavení  
  Sestavení s více moduly nejsou u scénářů sloučení sestavení podporována, takže existuje vztah 1:1 mezi modulem a sestavením. Každý objekt ICorDebugModule, bez ohledu na to, zda představuje modul kontejneru nebo dílčí modul, má odpovídající objekt ICorDebugAssembly. Metoda [ICorDebugModule:: GetAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) se převede z modulu na sestavení. Aby bylo možné namapovat druhý směr, metoda [ICorDebugAssembly:: EnumerateModules –](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md) vytvoří pouze jeden modul. Vzhledem k tomu, že sestavení a modul tvoří v tomto případě pevně spojenou dvojici, podmínky sestavení a modulu se stanou v podstatě zaměnitelné.  
@@ -64,7 +62,7 @@ HRESULT EnableVirtualModuleSplitting(
   
 - Metoda ICorDebugAssembly3. EnumerateContainedAssemblies – zobrazí dílčí moduly.  
   
-- Vrátí `S_FALSE`se Metoda ICorDebugAssembly3. GetContainerAssembly –.  
+- Metoda ICorDebugAssembly3. GetContainerAssembly – vrací `S_FALSE`.  
   
  Dílčí moduly mají následující chování a vlastnosti:  
   
@@ -78,7 +76,7 @@ HRESULT EnableVirtualModuleSplitting(
   
 - Metoda [ICorDebugModule:: GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) vrátí původní nesloučenou velikost obrázku.  
   
-- Vrátí `S_FALSE`se metoda ICorDebugModule3. EnumerateContainedAssemblies –.  
+- Metoda ICorDebugModule3. EnumerateContainedAssemblies – vrací `S_FALSE`.  
   
 - Metoda ICorDebugAssembly3. GetContainerAssembly – vrátí obsahující modul.  
   
@@ -101,14 +99,14 @@ HRESULT EnableVirtualModuleSplitting(
 |[ICorDebugClass:: GetModule](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getmodule-method.md)|Vrátí dílčí modul, ve kterém je tato třída původně definovaná.|Vrátí modul kontejneru, do kterého byla tato třída sloučena.|  
 |ICorDebugModuleDebugEvent:: GetModule|Vrátí modul kontejneru, který byl načten. Dílčím modulům nejsou předány události načtení bez ohledu na toto nastavení.|Vrátí modul kontejneru, který byl načten.|  
 |[ICorDebugAppDomain:: Enumerateassemblies –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-enumerateassemblies-method.md)|Vrátí seznam podsestav a běžných sestavení. nejsou součástí žádného sestavení kontejneru. **Poznámka:**  Pokud v žádném sestavení kontejneru chybí symboly, nebude vytvořena výčet žádného z jeho dílčích sestavení. Pokud některé běžné sestavení chybějící symboly, může nebo nemusí být výčtu.|Vrátí seznam sestavení kontejneru a běžná sestavení; žádná dílčí sestavení nejsou součástí. **Poznámka:**  Pokud některé běžné sestavení chybějící symboly, může nebo nemusí být výčtu.|  
-|[ICorDebugCode:: GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (při odkazování jenom na kód IL)|Vrátí IL, který by byl platný v imagi sestavení před sloučením. Konkrétně všechny vložené tokeny metadat budou mít správné tokeny TypeRef nebo MemberRef, pokud typy, na které se odkazuje, nejsou definovány ve virtuálním modulu obsahujícím IL. Tyto tokeny TypeRef a MemberRef lze vyhledat v objektu [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) pro odpovídající objekt Virtual ICorDebugModule.|Vrátí IL v imagi sestavení po sloučení.|  
+|[ICorDebugCode:: GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (při odkazování pouze na kód Il)|Vrátí IL, který by byl platný v imagi sestavení před sloučením. Konkrétně všechny vložené tokeny metadat budou mít správné tokeny TypeRef nebo MemberRef, pokud typy, na které se odkazuje, nejsou definovány ve virtuálním modulu obsahujícím IL. Tyto tokeny TypeRef a MemberRef lze vyhledat v objektu [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) pro odpovídající objekt Virtual ICorDebugModule.|Vrátí IL v imagi sestavení po sloučení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

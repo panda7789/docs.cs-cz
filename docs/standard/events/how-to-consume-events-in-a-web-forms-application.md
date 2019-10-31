@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zpracování událostí v aplikaci Web Forms'
+title: 'Postupy: Příjem událostí v aplikaci Web Forms'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,27 +12,25 @@ helpviewer_keywords:
 - events [.NET Framework], consuming
 - Web Forms, event handling
 ms.assetid: 73bf8638-c4ec-4069-b0bb-a1dc79b92e32
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dc1dee9377200e4c9fd575b8dcd00982db45f249
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f95fd0dcc12f2d4e47ee07e1e6bb15d91000f0f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908580"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124783"
 ---
-# <a name="how-to-consume-events-in-a-web-forms-application"></a>Postupy: Zpracování událostí v aplikaci Web Forms
-Běžný scénář v aplikace webových formulářů ASP.NET má naplnit webovou stránku s ovládacími prvky a pak provést konkrétní akce, podle kterého ovládacího prvku uživatel klikne. Například <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> ovládací prvek vyvolá událost, když uživatel klikne na webové stránce. Díky zpracování události, vaše aplikace může provádět příslušné aplikace logiky pro dané kliknutí na tlačítko.  
+# <a name="how-to-consume-events-in-a-web-forms-application"></a>Postupy: Příjem událostí v aplikaci Web Forms
+Běžným scénářem v aplikacích webových formulářů ASP.NET je naplnění webové stránky ovládacími prvky a provedení konkrétní akce na základě ovládacího prvku, na který uživatel klikne. Například ovládací prvek <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> vyvolá událost, když na ni uživatel klikne na webové stránce. Zpracováním události aplikace může pro toto kliknutí na tlačítko provést příslušnou logiku aplikace.  
   
 ### <a name="to-handle-a-button-click-event-on-a-webpage"></a>Zpracování události kliknutí na tlačítko na webové stránce  
   
-1. Vytvoření stránky s webovými formuláři ASP.NET (webová stránka), který má <xref:System.Web.UI.WebControls.Button> ovládacím prvkem `OnClick` hodnotu nastavte na název metody, která budou definovat v dalším kroku.  
+1. Vytvořte stránku webových formulářů ASP.NET (webová stránka), která má ovládací prvek <xref:System.Web.UI.WebControls.Button> s hodnotou `OnClick` nastavenou na název metody, kterou budete definovat v dalším kroku.  
   
     ```xml  
     <asp:Button ID="Button1" runat="server" Text="Click Me" OnClick="Button1_Click" />  
     ```  
   
-2. Definování obslužné rutiny události, která odpovídá <xref:System.Web.UI.WebControls.Button.Click> signatura delegáta události a, který má název definovaný pro `OnClick` hodnotu.  
+2. Definujte obslužnou rutinu události, která odpovídá signatuře delegáta události <xref:System.Web.UI.WebControls.Button.Click> a která má název, který jste definovali pro hodnotu `OnClick`.  
   
     ```csharp  
     protected void Button1_Click(object sender, EventArgs e)  
@@ -47,9 +45,9 @@ Běžný scénář v aplikace webových formulářů ASP.NET má naplnit webovou
     End Sub  
     ```  
   
-     <xref:System.Web.UI.WebControls.Button.Click> Událost používá <xref:System.EventHandler> třídy pro typ delegáta a <xref:System.EventArgs> třídu pro data události. Rámec stránky ASP.NET automaticky generuje kód, který vytvoří instanci <xref:System.EventHandler> a přidá tuto instanci delegáta k <xref:System.Web.UI.WebControls.Button.Click> událost <xref:System.Web.UI.WebControls.Button> instance.  
+     Událost <xref:System.Web.UI.WebControls.Button.Click> používá třídu <xref:System.EventHandler> pro typ delegáta a třídu <xref:System.EventArgs> pro data události. Rozhraní stránky ASP.NET automaticky generuje kód, který vytvoří instanci <xref:System.EventHandler> a přidá tuto instanci delegáta do události <xref:System.Web.UI.WebControls.Button.Click> instance <xref:System.Web.UI.WebControls.Button>.  
   
-3. V případě obslužné metody, která jste definovali v kroku 2, přidejte kód k provedení nějaké akce, které jsou potřeba při výskytu události.  
+3. V metodě obslužné rutiny události, kterou jste definovali v kroku 2, přidejte kód, který provede všechny akce, které jsou požadovány, když dojde k události.  
   
 ## <a name="see-also"></a>Viz také:
 

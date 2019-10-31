@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 206069c5-25cb-4794-9d69-67c5aa7ed0af
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a683f1531ed28fbd8ef085414bb7cb365762ffde
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3611684a17d51fc4fdba31dd4049540039b43e8b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738038"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110518"
 ---
 # <a name="icordebugappdomainenumeratebreakpoints-method"></a>ICorDebugAppDomain::EnumerateBreakpoints – metoda
-Získá enumerátor pro všechny zarážky aktivní v doméně aplikace.  
+Získá enumerátor pro všechny aktivní zarážky v doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT EnumerateBreakpoints (
   
 ## <a name="parameters"></a>Parametry  
  `ppBreakpoints`  
- [out] Ukazatel na adresu icordebugbreakpointenum – objekt, který je výčet všech aktivních zarážek v doméně aplikace.  
+ mimo Ukazatel na adresu objektu ICorDebugBreakpointEnum, který je enumerátorem všech aktivních zarážek v doméně aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Enumerátor zahrnují všechny typy zarážky, včetně zarážky funkcí a datové zarážky.  
+ Enumerátor zahrnuje všechny typy zarážek, včetně zarážek funkcí a datových zarážek.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

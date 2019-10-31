@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ee8d058-ffc8-4967-9133-a5adfef4e518
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3062e636921ea959716a500dae689fbe07915006
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40e64bdb35cff4e6ad6132c0806cfddd2767443c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759995"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122678"
 ---
 # <a name="icordebuginternalframe2getframeaddress-method"></a>ICorDebugInternalFrame2::GetFrameAddress – metoda
-Vrátí adresu vnitřní rámec zásobníku.  
+Vrátí adresu zásobníku interního rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,28 +33,28 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
   
 ## <a name="parameters"></a>Parametry  
  `pAddress`  
- [out] Ukazatel `CORDB_ADDRESS` pro vnitřní snímek.  
+ mimo Ukazatel na `CORDB_ADDRESS` pro vnitřní rámec.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Adresu vnitřní rámec byla úspěšně vrácena.|  
-|E_FAIL|Adresu vnitřní rámec nebylo možné vrátit.|  
+|S_OK|Adresa interního rámce byla úspěšně vrácena.|  
+|E_FAIL|Adresa interního rámce nemohla být vrácena.|  
 |E_INVALIDARG|`pAddress` je `null`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota vrácená v `pAddress` slouží k určení umístění vnitřní rámec vzhledem k jiné rámce v zásobníku. I v počítačích pro platformu IA-64 vnitřní rámec může fungovat pouze do zásobníku a neexistuje žádný odpovídající ukazatel záložního úložiště.  
+ Hodnota vrácená v `pAddress` lze použít k určení umístění vnitřního rámce relativně k ostatním snímkům v zásobníku. I na počítačích založených na platformě IA-64, interním rámcům v zásobníku a neexistuje žádný odpovídající ukazatel na záložní úložiště.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

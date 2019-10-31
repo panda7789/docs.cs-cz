@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: d5cf5056-da4d-4629-914d-afe42a5393df
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0a40436fcf1485c5d08d175b0396af2b6870c19a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 01c247f838f66d1a77831755126a5a1f56870c1e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917024"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095144"
 ---
 # <a name="icordebugilframe-interface"></a>ICorDebugILFrame – rozhraní
 
@@ -42,17 +40,17 @@ Představuje rámec zásobníku kódu jazyka MSIL (Microsoft Intermediate Langua
 |[SetIP – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md)|Nastaví ukazatel na instrukci na zadané místo posunutí v kódu jazyka MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugILFrame` Rozhraní je specializované rozhraní ICorDebugFrame. Používá se buď pro rámečky kódu MSIL, nebo pro zkompilované snímky JIT (just-in-time). Rámce zkompilované JIT implementují `ICorDebugILFrame` rozhraní i rozhraní ICorDebugNativeFrame.  
+ Rozhraní `ICorDebugILFrame` je specializované rozhraní ICorDebugFrame. Používá se buď pro rámečky kódu MSIL, nebo pro zkompilované snímky JIT (just-in-time). Rámce zkompilované JIT implementují rozhraní `ICorDebugILFrame` i rozhraní ICorDebugNativeFrame.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

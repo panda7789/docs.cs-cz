@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9659dd835bb60adf8471f73ed45b6588cf15126f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 01e1eafd9955a0876f77e34eb73c2a3fc6d815c2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752595"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139206"
 ---
 # <a name="logginglevelenum-enumeration"></a>LoggingLevelEnum – výčet
-Určuje úroveň závažnosti popisnou zprávou, která jsou zapsána do protokolu událostí při spravovaným vláknem se zaprotokoluje událost.  
+Označuje úroveň závažnosti popisné zprávy, která je zapsána do protokolu událostí, když spravované vlákno zaznamená událost.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,30 +49,30 @@ typedef enum LoggingLevelEnum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`LTraceLevel0`|Zpráva je úroveň trasování 0.|  
-|`LTraceLevel1`|Zpráva je 1 úroveň trasování.|  
+|`LTraceLevel1`|Zpráva je úroveň trasování 1.|  
 |`LTraceLevel2`|Zpráva je úroveň trasování 2.|  
-|`LTraceLevel3`|Úroveň trasování 3 je zpráva.|  
-|`LTraceLevel4`|Úroveň trasování 4 je zpráva.|  
-|`LStatusLevel0`|Zpráva je úroveň stav 0.|  
-|`LStatusLevel1`|Zpráva je stav úrovně 1.|  
-|`LStatusLevel2`|Zpráva je stav úrovně 2.|  
-|`LStatusLevel3`|Zpráva je stav úrovně 3.|  
-|`LStatusLevel4`|Úroveň stavu 4 je zpráva.|  
-|`LWarningLevel`|Zpráva je úroveň pro upozornění.|  
-|`LErrorLevel`|Zpráva je úrovně chyby.|  
-|`LPanicLevel`|Zpráva je tísňový úroveň.|  
+|`LTraceLevel3`|Zpráva je úroveň trasování 3.|  
+|`LTraceLevel4`|Zpráva je úroveň trasování 4.|  
+|`LStatusLevel0`|Zpráva je úroveň stavu 0.|  
+|`LStatusLevel1`|Zpráva je úroveň stavu 1.|  
+|`LStatusLevel2`|Zpráva je úroveň stavu 2.|  
+|`LStatusLevel3`|Zpráva je stavová úroveň 3.|  
+|`LStatusLevel4`|Zpráva je úroveň stavu 4.|  
+|`LWarningLevel`|Zpráva je úroveň upozornění.|  
+|`LErrorLevel`|Zpráva je úroveň chyby.|  
+|`LPanicLevel`|Zpráva je nenouzová úroveň.|  
   
 ## <a name="remarks"></a>Poznámky  
- Common language runtime (CLR) zavolá [icordebugmanagedcallback::logmessage –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md) metoda oznámit ladicího programu, že má spravovaným vláknem protokoluje událost. Modul CLR předá hodnotu `LoggingLevelEnum` výčet označující úroveň závažnosti zprávy, která spravované vlákno zapsáno do protokolu událostí.  
+ Modul CLR (Common Language Runtime) volá metodu [ICorDebugManagedCallback:: LogMessage –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md) , která oznamuje ladicímu programu, že spravované vlákno zaznamenalo událost. Modul CLR předá hodnotu výčtu `LoggingLevelEnum`, aby označoval úroveň závažnosti zprávy, kterou spravované vlákno zapsalo do protokolu událostí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

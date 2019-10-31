@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 300af43f-b3eb-4ce5-9ead-30dbfc5fbcc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d9c44420edfa4bd2d159f8044e72e5e913401f2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d0f3f6206a215b0296f6e183f48d69d8d979a02d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766330"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095825"
 ---
 # <a name="icordebugobjectvaluegetmanagedcopy-method"></a>ICorDebugObjectValue::GetManagedCopy – metoda
-`GetManagedCopy` je zastaralý. Nevolejte tuto metodu.  
+`GetManagedCopy` je zastaralá. Nevolejte tuto metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,6 +34,6 @@ HRESULT GetManagedCopy (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
 ## <a name="see-also"></a>Viz také:

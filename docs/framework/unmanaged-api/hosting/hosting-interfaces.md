@@ -6,33 +6,31 @@ helpviewer_keywords:
 - hosting interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], hosting
 ms.assetid: cc64cb05-38da-418e-815a-daac8e8e26e5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 46ff6032f2cdbd4a5f294198fe3bf71862c67528
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 43b401885bb4de69a06496874f11cec6cdf04b22
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490256"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126978"
 ---
 # <a name="hosting-interfaces"></a>Rozhraní hostování
-Tato část popisuje rozhraní, která nespravovaných hostitelů můžete použít k integraci common language runtime (CLR) do svých aplikací.  
+Tato část popisuje rozhraní, která nespravované hostitele můžou použít k integraci modulu CLR (Common Language Runtime) do svých aplikací.  
   
- Rozhraní hostování rozhraní .NET Framework verze 2.0 mají přednost před rozhraní .NET Framework verze 1.0 a 1.1. Existují významné rozdíly mezi těmito dvěma sadami rozhraní. Kombinování je může způsobit neočekávané chování a nedoporučuje se používat.  
+ Rozhraní pro hostování .NET Framework verze 2,0 nahrazují rozhraní .NET Framework verze 1,0 a 1,1. Existují významné rozdíly mezi dvěma sadami rozhraní. Jejich kombinování může způsobit neočekávané chování a nedoporučuje se.  
   
- Verze rozhraní .NET Framework 3.0 a 3.5 použít rozhraní hostování rozhraní .NET Framework verze 2.0 a ne provádět všechny funkce hostování.  
+ .NET Framework verze 3,0 a 3,5 používají rozhraní .NET Framework verze 2,0 pro hostování rozhraní a nezavádí žádné funkce hostování.  
   
- Rozhraní hostování rozhraní .NET Framework 4 mají přednost před rozhraní .NET Framework 2.0.
+ Rozhraní pro hostování .NET Framework 4 nahrazují rozhraní .NET Framework 2,0.
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Zastaralá rozhraní a třídy typu Coclass pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
- Popisuje hostitelské rozhraní zavedené v rozhraní .NET Framework verze 1.0 a 1.1.  
+ Popisuje rozhraní hostování zavedená v .NET Framework verzích 1,0 a 1,1.  
   
  [Rozhraní pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
- Popisuje hostitelské rozhraní zavedené v rozhraní .NET Framework verze 2.0.  
+ Popisuje rozhraní hostování zavedená ve verzi .NET Framework 2,0.  
   
  [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
- Popisuje hostitelské rozhraní zavedené v rozhraní .NET Framework 4.  
+ Popisuje rozhraní hostování zavedená v .NET Framework 4.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
@@ -45,4 +43,4 @@ Tato část popisuje rozhraní, která nespravovaných hostitelů můžete použ
   
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)  
   
- [Hostitelská prostředí modulu runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
+ [Hostitelé modulu runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))

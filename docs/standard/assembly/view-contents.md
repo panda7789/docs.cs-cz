@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení obsahu sestavení'
+title: 'Postupy: zobrazení obsahu sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -10,24 +10,22 @@ helpviewer_keywords:
 - MSIL
 - viewing MSIL information
 ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 40ed31bb2231775bb2b6eb24586e07c8b07a85bb
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0b5e306d55bf38c28e2a68172c2a035b56e8d0af
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053947"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140169"
 ---
-# <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
+# <a name="how-to-view-assembly-contents"></a>Postupy: zobrazení obsahu sestavení
 
 K zobrazení informací o jazyce MSIL (Microsoft Intermediate Language) v souboru můžete použít nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Pokud je testovaný soubor sestavení, mohou tyto informace obsahovat atributy sestavení a také odkazy na jiné moduly a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavením nebo součástí sestavení a zda má soubor odkazy na jiné moduly nebo sestavení.  
   
-Chcete-li zobrazit **obsah sestavení pomocí** \<programu *Ildasm. exe*, zadejte text *název sestavení*> na příkazovém řádku. Například následující příkaz zpětně přeloží sestavení *Hello. exe* .  
+Chcete-li zobrazit obsah sestavení pomocí programu *Ildasm. exe*, zadejte text **Ildasm** \<*název sestavení*> na příkazovém řádku. Například následující příkaz zpětně přeloží sestavení *Hello. exe* .  
 
 ```cmd
 ildasm Hello.exe  
@@ -108,19 +106,19 @@ Spuštěním příkazu *Ildasm. exe* v sestavení *Hello. exe* a dvojím kliknut
   
  Následující tabulka popisuje každou direktivu v manifestu sestavení sestavení *Hello. exe* používaného v příkladu.  
   
-|– Direktiva|Popis|  
+|Směrnici|Popis|  
 |---------------|-----------------|  
-|*název*  **\< externího sestavení. Assembly** **>**|Určuje jiné sestavení, které obsahuje položky, na které se odkazuje aktuální modul (v `mscorlib`tomto příkladu).|  
-|*token* **. \< PublicKeyToken** **>**|Určuje token skutečného klíče odkazovaného sestavení.|  
-|*číslo verze* **. ver \<** **>**|Určuje číslo verze odkazovaného sestavení.|  
-|*název sestavení* **. sestavení \<** **>**|Určuje název sestavení.|  
-|*hodnota Int32*  **\< algoritmu hash** **>**|Určuje použitý algoritmus hash.|  
-|*číslo verze* **. ver \<** **>**|Určuje číslo verze sestavení.|  
-|*název souboru* **. Module \<** **>**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá pouze z jednoho souboru.|  
-|**. hodnota \< subsystému** **>**|Určuje prostředí aplikace vyžadované pro program. V tomto příkladu hodnota 3 znamená, že se tento spustitelný soubor spustí z konzoly.|  
-|**.corflags**|Aktuálně rezervované pole v metadatech.|  
+|**. Assembly** *název sestavení* extern \< **>**|Určuje jiné sestavení, které obsahuje položky, na které se odkazuje aktuální modul (v tomto příkladu `mscorlib`).|  
+|**\<** *tokenu* . PublicKeyToken **>**|Určuje token skutečného klíče odkazovaného sestavení.|  
+|**. ver \<** *číslo verze* **>**|Určuje číslo verze odkazovaného sestavení.|  
+|*název sestavení* \<sestavení **>**|Určuje název sestavení.|  
+|**. hash algoritmus \<** *hodnotu Int32* **>**|Určuje použitý algoritmus hash.|  
+|**. ver \<** *číslo verze* **>**|Určuje číslo verze sestavení.|  
+|**. module \<** *název souboru* **>**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá pouze z jednoho souboru.|  
+|**hodnota \<. subsystému** **>**|Určuje prostředí aplikace vyžadované pro program. V tomto příkladu hodnota 3 znamená, že se tento spustitelný soubor spustí z konzoly.|  
+|**. corflags**|Aktuálně rezervované pole v metadatech.|  
   
- Manifest sestavení může obsahovat několik různých direktiv v závislosti na obsahu sestavení. Rozsáhlý seznam direktiv v manifestu sestavení naleznete v dokumentaci ECMA, obzvláště "partition II: Definice metadat a sémantika "a" partition III: Sada instrukcí CIL Dokumentace je k dispozici online. V [tématu C# ECMA and Common Language Infrastructure Standards](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a na [Standard ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu ECMA International.  
+ Manifest sestavení může obsahovat několik různých direktiv v závislosti na obsahu sestavení. Rozsáhlý seznam direktiv v manifestu sestavení naleznete v dokumentaci ECMA, zejména v oddílu oddíl II: definice metadat a sémantika a oddíl III: sada instrukcí CIL. Dokumentace je k dispozici online. V [tématu C# ECMA and Common Language Infrastructure Standards](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a na [Standard ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu ECMA International.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: aa26df07-e0a6-4608-bdef-d4afafec89aa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c488ca3a77f2c2b2a40c6143989cd86adf071787
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 418ebb51df3f2d86011ee2e77022c3ee5c7ac0b0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737428"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088233"
 ---
 # <a name="icordebugarrayvaluehasbaseindicies-method"></a>ICorDebugArrayValue::HasBaseIndicies – metoda
-Získá hodnotu, která určuje, zda dimenzí tohoto pole mají základní index nenulové.  
+Získá hodnotu, která označuje, zda jakékoli dimenze v tomto poli mají základní index nenulového typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT HasBaseIndicies (
   
 ## <a name="parameters"></a>Parametry  
  `pbHasBaseIndicies`  
- [out] Ukazatel na logickou hodnotu, která je `true` Pokud jeden nebo více dimenzí tohoto `ICorDebugArrayValue` objekt mít základní index nenulové; v opačném případě je logická hodnota `false`.  
+ mimo Ukazatel na logickou hodnotu, která je `true`, pokud jedna nebo více dimenzí tohoto objektu `ICorDebugArrayValue` mají základní index nenulového typu; v opačném případě je logická hodnota `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]

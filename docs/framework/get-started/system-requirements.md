@@ -10,14 +10,12 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6f867b53f168a394515a1b1eaa6575a72dfb8d91
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f2c22f13f74698b8cbd1474b331d65dcedfa4889
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052014"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114554"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework požadavky na systém
 
@@ -38,7 +36,7 @@ Informace o stažení a odkazy najdete v tématu [instalace .NET Framework pro v
 
 Informace o životním cyklu podpory verze .NET Framework najdete v tématu [životní cyklus podpora Microsoftu](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
 
-## <a name="hardware-requirements"></a>Hardwarové požadavky
+## <a name="hardware-requirements"></a>Požadavky na hardware
 
 |                          |        |
 | ------------------------ | ------ |
@@ -60,13 +58,13 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 | Windows 10 říjen 2018 – aktualizace | 32-bit a 64-bit | .NET Framework 4.7.2 | .NET Framework 4,8 |
 | Aktualizace Windows 10. dubna 2018 | 32-bit a 64-bit | .NET Framework 4.7.2 |.NET Framework 4,8|
 | Aktualizace Creators v systému Windows 10 | 32-bit a 64-bit | .NET Framework 4.7.1 | .NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
-| Windows 10 Creators Update | 32-bit a 64-bit | Rozhraní .NET framework 4.7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
-| Windows 10 Anniversary Update | 32-bit a 64-bit | .NET Framework 4.6.2 |Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8  |
+| Windows 10 Creators Update | 32-bit a 64-bit | .NET Framework 4,7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows 10 Anniversary Update | 32-bit a 64-bit | .NET Framework 4.6.2 |.NET Framework 4,7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8  |
 | Listopadová aktualizace pro Windows 10 | 32-bit a 64-bit | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
 | Windows 10 | 32-bit a 64-bit | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
-| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32 bitů, 64 bitů a ARM | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32 bitů, 64 bitů a ARM | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4,7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
 | [!INCLUDE[win8](../../../includes/win8-md.md)] | 32 bitů, 64 bitů a ARM | .NET Framework 4.5 | .NET Framework 4.5.1<br /><br />.NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1 |
-| Windows 7 SP1|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows 7 SP1|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4,7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
 | Windows Vista SP2|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
 | Windows XP |32-bit a 64-bit | -- | .NET Framework 4 |
 
@@ -86,19 +84,19 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 
 | Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovatelné samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows Server. 2019 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
+| Windows Server 2019 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
 | Windows Server verze 1809 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
 | Windows Server verze 1803 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
 | Windows Server verze 1709 | 64bitová | .NET Framework 4.7.1 | .NET Framework 4.7.2|
-| Windows Server 2016 | 64bitová | .NET Framework 4.6.2 | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
-| Windows Server 2012 R2 | 64bitová | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
-| Windows Server 2012 (64-bit Edition) | 64bitová| .NET Framework 4.5 | .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
-| Windows Server 2008 R2 SP1|64bitová | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2016 | 64bitová | .NET Framework 4.6.2 | .NET Framework 4,7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2012 R2 | 64bitová | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4,7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2012 (64-bit Edition) | 64bitová| .NET Framework 4.5 | .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4,7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2008 R2 SP1|64bitová | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4,7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
 | Windows Server 2008 SP2|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
 
  **Poznámky:**
 
-- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]zahrnuje .NET Framework 4,5, takže je nemusíte instalovat samostatně. [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] Podobně zahrnuje .NET Framework 4.5.1.
+- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] zahrnuje .NET Framework 4,5, takže je nemusíte instalovat samostatně. Podobně [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] zahrnuje .NET Framework 4.5.1.
 
 - .NET Framework má omezené podpory pro roli jádra serveru s Windows Serverem 2008 R2 SP1 nebo novějším. Seznam nepodporovaných rozhraní API najdete v tématu [funkce jádra serveru .NET](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) .
 

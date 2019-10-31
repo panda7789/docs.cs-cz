@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 35c2173e-3b0b-4b2a-950d-e0a01c6df052
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aeb4c9935d5e9e4063497dd56276edfe6e62752a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0ce822533b0699f3467dc08044aa4dab59285a77
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765584"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120317"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a>ICLRRuntimeInfo::GetDefaultStartupFlags – metoda
-Získá příznaky spuštění a konfiguračním souboru hostitele, který se použije ke spuštění modulu runtime.  
+Získá spouštěcí příznaky a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +36,32 @@ HRESULT GetDefaultStartupFlags(
   
 ## <a name="parameters"></a>Parametry  
  `pdwStartupFlags`  
- [out] Ukazatel na příznaky spuštění hostitele, které jsou aktuálně nastaveny.  
+ mimo Ukazatel na příznaky spouštění hostitele, které jsou aktuálně nastaveny.  
   
  `pwzHostConfigFile`  
- [out] Ukazatel na cestu k adresáři aktuálního konfiguračního souboru hostitele.  
+ mimo Ukazatel na cestu k adresáři aktuálního konfiguračního souboru hostitele.  
   
  `pcchHostConfigFile`  
- [out v] Na vstupní velikost `pwzHostConfigFile`předešli přetečení vyrovnávací paměti. Pokud `pwzHostConfigFile` je null, vrátí metoda požadovaná velikost `pwzHostConfigFile` pro předběžné přidělení.  
+ [in, out] V případě vstupu velikost `pwzHostConfigFile`, aby se předešlo přetečení vyrovnávací paměti. Pokud je `pwzHostConfigFile` null, metoda vrátí požadovanou velikost `pwzHostConfigFile` pro předběžné přidělení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vrátí výchozí hodnoty příznak (`STARTUP_CONCURRENT_GC` a `NULL`), nebo hodnoty poskytnuté předchozí volání [iclrruntimeinfo::setdefaultstartupflags – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-setdefaultstartupflags-method.md), nebo hodnoty nastavené podle těchto sloupců `CorBind*` metody, pokud jsou vázány na tento modul runtime.  
+ Tato metoda vrací výchozí hodnoty příznaků (`STARTUP_CONCURRENT_GC` a `NULL`) nebo hodnoty poskytnuté předchozím voláním [metody ICLRRuntimeInfo:: SetDefaultStartupFlags –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-setdefaultstartupflags-method.md)nebo hodnoty nastavené pomocí kterékoli metody `CorBind*`, pokud jsou svázány s tímto modulem runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

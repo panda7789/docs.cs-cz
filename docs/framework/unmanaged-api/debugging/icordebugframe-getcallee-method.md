@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 92d8136d-0436-4c7e-a6b2-80765f892a0d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 10a5247632f242a4b4e0d33cf7fa7233d1b1e13b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b83dec65e1dd4fc610be3190e8126e6d9d38a6e8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754197"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121226"
 ---
 # <a name="icordebugframegetcallee-method"></a>ICorDebugFrame::GetCallee – metoda
-Získá ukazatel na objekt ICorDebugFrame v aktuální řetězec, který volá tento rámec.  
+Získá ukazatel na objekt ICorDebugFrame v aktuálním řetězu, který tento rámec volal.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetCallee (
   
 ## <a name="parameters"></a>Parametry  
  `ppFrame`  
- [out] Ukazatel na adresu `ICorDebugFrame` objekt, který reprezentuje volané rámce. Tato hodnota je null, pokud volající snímek je vnitřní snímek aktuální řetězce.  
+ mimo Ukazatel na adresu `ICorDebugFrame`ho objektu, který představuje pojmenovaný rámec. Tato hodnota je null, pokud je volajícím snímkem vnitřní rámec aktuálního řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

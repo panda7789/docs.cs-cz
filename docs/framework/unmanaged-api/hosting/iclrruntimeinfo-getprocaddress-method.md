@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a7732bfc-689a-4926-88fd-4f81e6f9ed78
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c196eafbc2ff1d851471355a630b860c7c02ba1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cedda39aeebc62c6bf43f42ae2daf6f6f515fd27
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765537"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120277"
 ---
 # <a name="iclrruntimeinfogetprocaddress-method"></a>ICLRRuntimeInfo::GetProcAddress – metoda
-Získá adresu zadané funkce, která byla exportována z common language runtime (CLR) přidružené k tomuto rozhraní.  
+Získá adresu zadané funkce, která byla exportována z modulu CLR (Common Language Runtime) přidruženého k tomuto rozhraní.  
   
- Tato metoda nahrazuje [getrealprocaddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) funkce.  
+ Tato metoda nahrazuje funkci [GetRealProcAddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +37,31 @@ HRESULT GetProcAddress(
   
 ## <a name="parameters"></a>Parametry  
  `pszProcName`  
- [in] Název exportované funkce.  
+ pro Název exportované funkce  
   
  `ppProc`  
- [out] Adresu exportované funkce.  
+ mimo Adresa exportované funkce  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pszProcName` nebo `ppProc` má hodnotu null.|  
-|CLR_E_SHIM_RUNTIMEEXPORT|Zadaná funkce není exportované funkce.|  
+|E_POINTER|`pszProcName` nebo `ppProc` je null.|  
+|CLR_E_SHIM_RUNTIMEEXPORT|Zadaná funkce není exportovanou funkcí.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda způsobí, že modul CLR do načtena, avšak nebyla inicializována.  
+ Tato metoda způsobí, že se CLR načte, ale neinicializuje se.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,14 +2,12 @@
 title: ICorDebugDataTarget2::EnumerateThreadIDs – metoda
 ms.date: 03/30/2017
 ms.assetid: af02460f-2a45-496e-bc4e-a1ac4f80fe11
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1dc5f8b7fa308bdb0fb270c11e044244839a7b47
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b4510e6858045281a2a663095972b84c40df3a22
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910291"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122164"
 ---
 # <a name="icordebugdatatarget2enumeratethreadids-method"></a>ICorDebugDataTarget2::EnumerateThreadIDs – metoda
 Vrátí seznam identifikátorů aktivních vláken.  
@@ -29,7 +27,7 @@ HRESULT EnumerateThreadIDs(
  pro Maximální počet podprocesů, jejichž ID lze vrátit.  
   
  pcThreadIds  
- mimo Ukazatel na `ULONG32` , který označuje skutečný počet ID vláken zapsaných `pThreadIds` do pole.  
+ mimo Ukazatel na `ULONG32`, který označuje skutečný počet ID vláken zapsaných do pole `pThreadIds`.  
   
  pThreadIDs  
  Pole identifikátorů vláken.  
@@ -40,9 +38,9 @@ HRESULT EnumerateThreadIDs(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md). **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md). **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

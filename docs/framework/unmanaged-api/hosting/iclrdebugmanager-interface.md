@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: e835062c-c7d6-4945-8a44-2de7ebf3928e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5a408995793caf879f8d5624ab727102c4859195
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 008143c608cd19bee9dd115e97620906fb5b93b9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959612"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129410"
 ---
 # <a name="iclrdebugmanager-interface"></a>ICLRDebugManager – rozhraní
 Poskytuje metody, které umožňují hostiteli přidružit sadu úkolů s identifikátorem a popisným názvem.  
@@ -39,19 +37,19 @@ Poskytuje metody, které umožňují hostiteli přidružit sadu úkolů s identi
 |[SetSymbolReadingPolicy – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md)|Nastaví zásadu pro soubory databáze programu pro čtení. Tato zásada určuje, zda jsou do zásobníků volání zahrnuty informace o číslech řádků a souborech.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve scénářích ladění může hostitel chtít seskupit úkoly podle vlastní programovací logiky. Například seskupení umožní vývojářům zobrazit jenom úkoly požadované rozhraními API vývojářů místo zobrazení všech úloh spuštěných v procesu. `ICLRDebugManager`umožňuje hostiteli implementovat tento druh seskupení.  
+ Ve scénářích ladění může hostitel chtít seskupit úkoly podle vlastní programovací logiky. Například seskupení umožní vývojářům zobrazit jenom úkoly požadované rozhraními API vývojářů místo zobrazení všech úloh spuštěných v procesu. `ICLRDebugManager` umožňuje hostiteli implementovat tento druh seskupení.  
   
 > [!IMPORTANT]
-> Tři `ICLRDebugManager` metody `BeginConnection` ,a`EndConnection`,jsou závislé na sobě. `SetConnectionTasks` Musí být volány v daném pořadí, aby fungovaly podle očekávání.  
+> Tři `ICLRDebugManager` metody, `BeginConnection`, `SetConnectionTasks` a `EndConnection`, jsou závislé na sobě. Musí být volány v daném pořadí, aby fungovaly podle očekávání.  
   
  Seskupení a identifikátory a popisné názvy, které hostitel přiřadí seskupení, nemají žádný význam pro modul CLR (Common Language Runtime). Modul CLR pouze předává informace spolu s ladicím programem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -1,5 +1,5 @@
 ---
-title: Zpožděný podpis sestavení
+title: Opožděný podpis sestavení
 ms.date: 08/19/2019
 helpviewer_keywords:
 - deferring assembly signing
@@ -8,20 +8,18 @@ helpviewer_keywords:
 - strong-named assemblies, delaying assembly signing
 - partial assembly signing
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e7679520e246ab3eda03e6f0e0d092c7d09f1845
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 75c86c49f4d471452a7e8f56856d5437e84df307
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991321"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084341"
 ---
-# <a name="delay-sign-an-assembly"></a>Zpožděný podpis sestavení
+# <a name="delay-sign-an-assembly"></a>Opožděný podpis sestavení
 
 Organizace může mít pečlivě chráněný pár klíčů, ke kterým můžou vývojáři získat přístup denně. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezený jenom na pár jednotlivců. Při vývoji sestavení se silnými názvy obsahuje každé sestavení, které odkazuje na cílové sestavení se silným názvem, token veřejného klíče, který slouží k poskytnutí silného názvu cílového sestavení. K tomu je potřeba, aby byl během procesu vývoje dostupný veřejný klíč.
 
@@ -31,11 +29,11 @@ Zpožděné podepsání sestavení:
 
 1. Získejte veřejnou klíčovou část páru klíčů od organizace, která provede případné podepisování. Obvykle je tento klíč ve formě souboru *. snk* , který lze vytvořit pomocí [nástroje silného názvu (Sn. exe)](../../framework/tools/sn-exe-strong-name-tool.md) , který poskytuje Windows SDK.
 
-2. Opatřit zdrojový kód sestavení zadáním dvou vlastních atributů z <xref:System.Reflection>:
+2. Opatřit zdrojový kód pro sestavení pomocí dvou uživatelských atributů z <xref:System.Reflection>:
 
-   - <xref:System.Reflection.AssemblyKeyFileAttribute>, který předá název souboru obsahujícího veřejný klíč jako parametr konstruktoru.
+   - <xref:System.Reflection.AssemblyKeyFileAttribute>, která předá do svého konstruktoru název souboru obsahujícího veřejný klíč jako parametr.
 
-   - <xref:System.Reflection.AssemblyDelaySignAttribute>, což znamená, že je použito Zpožděné podepsání předáním **hodnoty true** jako parametru konstruktoru.
+   - <xref:System.Reflection.AssemblyDelaySignAttribute>, která označuje, že se opožděné podepisování používá předáním **hodnoty true** jako parametru konstruktoru.
 
    Příklad:
 
@@ -89,6 +87,6 @@ Zpožděné podepsání sestavení:
 ## <a name="see-also"></a>Viz také:
 
 - [Vytváření sestavení](create.md)
-- [Postupy: Vytvoření páru klíčů veřejného a soukromého](create-public-private-key-pair.md)
+- [Postupy: Vytvoření páru veřejného a soukromého klíče](create-public-private-key-pair.md)
 - [SN. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Program se sestaveními](program.md)

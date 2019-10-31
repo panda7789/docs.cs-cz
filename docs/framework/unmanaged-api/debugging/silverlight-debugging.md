@@ -5,54 +5,52 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 5e903e04-17d0-4014-ac9a-a43330ec8b1c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1d20bc002e52c3c6a42b45c0d1c5d559e65dc52c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7af03197a43976c47b7ddc30346d622e6b97207
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763660"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139138"
 ---
 # <a name="silverlight-debugging"></a>Ladění aplikací Silverlight
-Témata v této části popisují prostředí a rozhraní, které modul CLR (CLR) poskytuje pro podporu ladění aplikace programu Silverlight, které jsou spuštěny v operačním systému Windows nebo na platformě Macintosh.  
+Témata v této části popisují prostředí a rozhraní, které modul CLR (Common Language Runtime) poskytuje pro podporu ladění aplikací založených na programu Silverlight, které jsou spuštěny v operačním systému Windows nebo na platformě Macintosh.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [EnumerateCLRs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)  
- Poskytuje mechanismus pro vytvoření výčtu CLRs v procesu.  
+ Poskytuje mechanismus pro vytváření výčtu CLRs v procesu.  
   
  [CloseCLREnumeration – funkce](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md)  
- Zavře platné události pokračovat po spuštění CLR nachází v poli popisovačů vrácené [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)a uvolní paměť pro cestu pole popisovač a řetězce.  
+ Ukončí všechny platné události před spuštěním CLR, které se nacházejí v poli popisovačů vrácených [funkcí EnumerateCLRs –](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md), a uvolní paměť pro pole popisovače a cestu k řetězci.  
   
  [CreateCoreClrDebugTarget – funkce](../../../../docs/framework/unmanaged-api/debugging/createcoreclrdebugtarget-function.md)  
- Vytvoří připojení k vzdálené cílové pro výčet procesu a modulu runtime.  
+ Vytvoří připojení ke vzdálenému cíli pro proces a výčet za běhu.  
   
  [CreateCordbObject – funkce](../../../../docs/framework/unmanaged-api/debugging/createcordbobject-function.md)  
- Vytvoří rozhraní ladicího programu, který poskytuje funkce pro vytvoření instance spravované ladicí relace na vzdálený proces.  
+ Vytvoří rozhraní ladicího programu, které poskytuje funkce pro vytvoření instance spravované relace ladění na vzdáleném procesu.  
   
  [CreateVersionStringFromModule – funkce](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)  
  Vytvoří řetězec verze z cesty CLR v cílovém procesu.  
   
  [CreateDebuggingInterfaceFromVersion – funkce](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md)  
- Přijímá řetězec verze modulu CLR vrácená [createversionstringfrommodule – funkce](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)funkci a vrátí odpovídající rozhraní ladicího programu.  
+ Přijímá řetězec verze CLR vrácený funkcí [CreateVersionStringFromModule – funkce](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)a vrátí odpovídající rozhraní ladicího programu.  
   
  [CoreClrDebugProcInfo – struktura](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md)  
- Představuje proces, který běží na vzdáleném počítači.  
+ Představuje proces, který je spuštěn ve vzdáleném počítači.  
   
  [CoreClrDebugRuntimeInfo – struktura](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugruntimeinfo-structure.md)  
- Představuje instanci modulu CLR, který je načten v procesu ve vzdáleném počítači.  
+ Představuje instanci CLR, která je načtena v procesu ve vzdáleném počítači.  
   
  [GetStartupNotificationEvent – funkce](../../../../docs/framework/unmanaged-api/debugging/getstartupnotificationevent-function.md)  
- Vytvoří nebo otevře popisovač události, která bude být signalizován při libovolné CLR (CLR), který se načítá do zadaného cílového procesu.  
+ Vytvoří nebo otevře obslužnou rutinu události, která bude signalizována jakýmkoli modulem CLR (Common Language Runtime), který se načítá v zadaném cílovém procesu.  
   
  [ICoreClrDebugTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)  
- Vytvoří připojení k vzdálené cílové pro výčet procesu a modulu runtime.  
+ Vytvoří připojení ke vzdálenému cíli pro proces a výčet za běhu.  
   
  [InitDbgTransportManager – funkce](../../../../docs/framework/unmanaged-api/debugging/initdbgtransportmanager-function.md)  
- Inicializuje správce přenosu pro připojení k vzdálené cílové pro výčet procesu a modulu runtime.  
+ Inicializuje správce přenosu pro připojení ke vzdálenému cíli pro proces a výčet za běhu.  
   
  [ShutdownDbgTransportManager – funkce](../../../../docs/framework/unmanaged-api/debugging/shutdowndbgtransportmanager-function.md)  
- Správce přenosu pro připojení k vzdálené cílový počítač vypne.  
+ Ukončí Správce přenosů pro připojení ke vzdálenému cílovému počítači.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,86 +16,84 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1d0a0659c99a49770d0d08460026363ecef06654
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6570c6994c0f2e6571361c3eadc73b02a55f1584
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698955"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140583"
 ---
 # <a name="writing-custom-attributes"></a>Zápis vlastních atributů
-Návrh vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud jste obeznámeni s objektově orientované programování a vědět, jak do návrhu tříd, již máte většinu znalosti potřebné. Uživatelských atributů, které jsou v podstatě tradiční třídy, které jsou přímo nebo nepřímo odvozeny z <xref:System.Attribute?displayProperty=nameWithType>. Stejně jako tradiční třídy uživatelských atributů, které obsahují metody, které ukládají a načítají data.  
+Chcete-li navrhnout vlastní atributy, nemusíte vytvářet hlavní spoustu nových konceptů. Pokud jste obeznámeni s objektově orientovaným programováním a víte, jak navrhovat třídy, již máte většinu potřebných znalostí. Vlastní atributy jsou v podstatě tradiční třídy, které jsou odvozeny přímo nebo nepřímo z <xref:System.Attribute?displayProperty=nameWithType>. Stejně jako tradiční třídy obsahují vlastní atributy metody, které ukládají a načítají data.  
   
- Hlavní kroky správně návrh vlastního atributu třídy jsou následující:  
+ Hlavní kroky pro správné navrhování vlastních tříd atributů jsou následující:  
   
 - [Použití AttributeUsageAttribute](#applying-the-attributeusageattribute)  
   
 - [Deklarace třídy atributů](#declaring-the-attribute-class)  
   
-- [Deklarování konstruktorů](#declaring-constructors)  
+- [Deklarace konstruktorů](#declaring-constructors)  
   
-- [Deklarování vlastností](#declaring-properties)  
+- [Deklarace vlastností](#declaring-properties)  
   
- Tato část popisuje jednotlivé kroky a končí [příklad vlastního atributu](#custom-attribute-example).  
+ Tato část popisuje každý z těchto kroků a končí [příkladem vlastního atributu](#custom-attribute-example).  
   
 ## <a name="applying-the-attributeusageattribute"></a>Použití AttributeUsageAttribute  
- Vlastní atribut deklarace začíná <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>, která definuje některé klíčové vlastnosti třídy atributu. Můžete například určit, zda atribut může být zděděny jiné třídy nebo prvky, které atribut lze použít k určení. Následující fragment kódu ukazuje, jak používat <xref:System.AttributeUsageAttribute>.  
+ Deklarace vlastního atributu začíná na <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>, která definuje některé klíčové charakteristiky vaší třídy atributů. Můžete například určit, zda může být atribut děděn jinými třídami nebo určit, na které prvky lze atribut použít. Následující fragment kódu ukazuje, jak použít <xref:System.AttributeUsageAttribute>.  
   
  [!code-cpp[Conceptual.Attributes.Usage#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#5)]
  [!code-csharp[Conceptual.Attributes.Usage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#5)]
  [!code-vb[Conceptual.Attributes.Usage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#5)]  
   
- <xref:System.AttributeUsageAttribute> Má tři členy, které jsou důležité pro vytváření vlastních atributů: [AttributeTargets](#attributetargets-member), [zděděné](#inherited-property), a [AllowMultiple](#allowmultiple-property).  
+ <xref:System.AttributeUsageAttribute> má tři členy, které jsou důležité pro vytváření vlastních atributů: [AttributeTargets](#attributetargets-member), [Inherited](#inherited-property)a [AllowMultiple](#allowmultiple-property).  
   
-### <a name="attributetargets-member"></a>AttributeTargets – člen  
- V předchozím příkladu <xref:System.AttributeTargets.All?displayProperty=nameWithType> není zadána, která udává, že tento atribut lze použít na všechny prvky programu. Alternativně můžete zadat <xref:System.AttributeTargets.Class?displayProperty=nameWithType>, označující, že atribut lze použít pouze pro třídy, nebo <xref:System.AttributeTargets.Method?displayProperty=nameWithType>, označující, že atribut lze použít pouze pro metodu. Všechny prvky programu může být označený pro popis vlastní atribut tímto způsobem.  
+### <a name="attributetargets-member"></a>Člen AttributeTargets  
+ V předchozím příkladu je zadána <xref:System.AttributeTargets.All?displayProperty=nameWithType>, což značí, že tento atribut lze použít pro všechny prvky programu. Alternativně lze zadat <xref:System.AttributeTargets.Class?displayProperty=nameWithType>, což znamená, že váš atribut lze použít pouze pro třídu nebo <xref:System.AttributeTargets.Method?displayProperty=nameWithType>, což značí, že atribut lze použít pouze pro metodu. V tomto způsobu lze pomocí vlastního atributu označit všechny prvky programu jako popis.  
   
- Můžete také předat více <xref:System.AttributeTargets> hodnoty. Následující fragment kódu určuje, že vlastní atribut lze použít na libovolné třídy nebo metody.  
+ Můžete také předat více <xref:System.AttributeTargets> hodnot. Následující fragment kódu určuje, že vlastní atribut lze použít pro libovolnou třídu nebo metodu.  
   
  [!code-cpp[Conceptual.Attributes.Usage#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#6)]
  [!code-csharp[Conceptual.Attributes.Usage#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#6)]
  [!code-vb[Conceptual.Attributes.Usage#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#6)]  
   
 ### <a name="inherited-property"></a>Zděděná vlastnost  
- <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> Vlastnost určuje, zda atribut může dědit třídy, které jsou odvozeny z tříd, do kterých je použit atribut. Tato vlastnost má buď `true` (výchozí) nebo `false` příznak. V následujícím příkladu `MyAttribute` má výchozí <xref:System.AttributeUsageAttribute.Inherited%2A> hodnotu `true`, zatímco `YourAttribute` má <xref:System.AttributeUsageAttribute.Inherited%2A> hodnotu `false`.  
+ Vlastnost <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> označuje, zda lze atribut dědit pomocí tříd, které jsou odvozeny z tříd, pro které je použit atribut. Tato vlastnost přebírá buď `true` (výchozí), nebo příznak `false`. V následujícím příkladu má `MyAttribute` výchozí <xref:System.AttributeUsageAttribute.Inherited%2A> hodnotu `true`, zatímco `YourAttribute` má <xref:System.AttributeUsageAttribute.Inherited%2A> hodnotu `false`.  
   
  [!code-cpp[Conceptual.Attributes.Usage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#7)]
  [!code-csharp[Conceptual.Attributes.Usage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#7)]
  [!code-vb[Conceptual.Attributes.Usage#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#7)]  
   
- Dva atributy se následně použijí na metodu v základní třídě `MyClass`.  
+ Tyto dva atributy jsou následně aplikovány na metodu v základní třídě `MyClass`.  
   
  [!code-cpp[Conceptual.Attributes.Usage#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#9)]
  [!code-csharp[Conceptual.Attributes.Usage#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#9)]
  [!code-vb[Conceptual.Attributes.Usage#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#9)]  
   
- Nakonec třídy `YourClass` se dědí ze základní třídy `MyClass`. Metoda `MyMethod` ukazuje `MyAttribute`, ale ne `YourAttribute`.  
+ Nakonec `YourClass` třídy dědí ze `MyClass`základní třídy. Metoda `MyMethod` zobrazuje `MyAttribute`, ale ne `YourAttribute`.  
   
  [!code-cpp[Conceptual.Attributes.Usage#10](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#10)]
  [!code-csharp[Conceptual.Attributes.Usage#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#10)]
  [!code-vb[Conceptual.Attributes.Usage#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#10)]  
   
 ### <a name="allowmultiple-property"></a>AllowMultiple – vlastnost  
- <xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType> Vlastnost určuje, zda může existovat více instancí atributu na elementu. Pokud hodnotu `true`, je povoleno více instancí; Pokud nastavena na `false` (výchozí), je povolena pouze jedna instance.  
+ Vlastnost <xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType> určuje, zda více instancí atributu může existovat na elementu. Pokud je nastaveno na `true`, je povoleno více instancí; Pokud je nastavená na `false` (výchozí), je povolená jenom jedna instance.  
   
- V následujícím příkladu `MyAttribute` má výchozí <xref:System.AttributeUsageAttribute.AllowMultiple%2A> hodnotu `false`, zatímco `YourAttribute` má hodnotu `true`.  
+ V následujícím příkladu má `MyAttribute` výchozí hodnotu <xref:System.AttributeUsageAttribute.AllowMultiple%2A> `false`, zatímco `YourAttribute` má hodnotu `true`.  
   
  [!code-cpp[Conceptual.Attributes.Usage#11](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#11)]
  [!code-csharp[Conceptual.Attributes.Usage#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#11)]
  [!code-vb[Conceptual.Attributes.Usage#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#11)]  
   
- Při použití několika instancí těchto atributů, `MyAttribute` způsobí chybu kompilátoru. Následující příklad kódu ukazuje platné použití `YourAttribute` a neplatné použití `MyAttribute`.  
+ Při použití více instancí těchto atributů `MyAttribute` vytvoří chybu kompilátoru. Následující příklad kódu ukazuje platné použití `YourAttribute` a neplatné použití `MyAttribute`.  
   
  [!code-cpp[Conceptual.Attributes.Usage#13](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#13)]
  [!code-csharp[Conceptual.Attributes.Usage#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#13)]
  [!code-vb[Conceptual.Attributes.Usage#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#13)]  
   
- Pokud <xref:System.AttributeUsageAttribute.AllowMultiple%2A> vlastnost a <xref:System.AttributeUsageAttribute.Inherited%2A> nastavenou na `true`, třídu, která pochází z jiné třídy můžete dědit atribut a jiná instance stejné použije ve stejné třídě podřízené. Pokud <xref:System.AttributeUsageAttribute.AllowMultiple%2A> je nastavena na `false`, hodnoty atributů v nadřazené třídě budou přepsány instalací nových instancí stejný atribut v podřízené třídy.  
+ Je-li vlastnost <xref:System.AttributeUsageAttribute.AllowMultiple%2A> a vlastnost <xref:System.AttributeUsageAttribute.Inherited%2A> nastavena na `true`, třída, která je zděděna z jiné třídy, může dědit atribut a mít v rámci stejné podřízené třídy použitu jinou instanci stejného atributu. Pokud je <xref:System.AttributeUsageAttribute.AllowMultiple%2A> nastaveno na `false`, hodnoty všech atributů v nadřazené třídě budou přepsány novými instancemi stejného atributu v podřízené třídě.  
   
 ## <a name="declaring-the-attribute-class"></a>Deklarace třídy atributů  
- Po instalaci <xref:System.AttributeUsageAttribute>, můžete začít definovat, jaké jsou specifikace atributu. Deklarace třídy atributu vypadá podobně jako deklaraci tradiční třídy, jak je ukázáno v následujícím kódu.  
+ Po použití <xref:System.AttributeUsageAttribute>můžete začít definovat specifiky vlastního atributu. Deklarace třídy atributu vypadá podobně jako deklarace tradiční třídy, jak je znázorněno v následujícím kódu.  
   
  [!code-cpp[Conceptual.Attributes.Usage#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#14)]
  [!code-csharp[Conceptual.Attributes.Usage#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#14)]
@@ -103,50 +101,50 @@ Návrh vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud 
   
  Tato definice atributu demonstruje následující body:  
   
-- Třídy atributů musí být deklarována jako veřejné třídy.  
+- Třídy atributů musí být deklarovány jako veřejné třídy.  
   
-- Podle konvence, název třídy atributu končí slovem **atribut**. Přestože se nevyžaduje, doporučuje se tato konvence pro lepší čitelnost. Při použití atribut zahrnutí slovo atribut je volitelný.  
+- Podle konvence název třídy atributu končí **atributem**Word. I když se to nevyžaduje, doporučuje se tato konvence číst. Při použití atributu je zahrnutí atributu Word volitelné.  
   
 - Všechny třídy atributů musí dědit přímo nebo nepřímo z <xref:System.Attribute?displayProperty=nameWithType>.  
   
-- Microsoft Visual Basic, musí mít všechny vlastní třídy atributu <xref:System.AttributeUsageAttribute?displayProperty=nameWithType> atribut.  
+- V Microsoft Visual Basic musí mít všechny třídy vlastního atributu atribut <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>.  
   
-## <a name="declaring-constructors"></a>Deklarování konstruktorů  
- Atributy jsou inicializovány s konstruktory stejným způsobem jako tradiční třídy. Následující fragment kódu ukazuje typický konstruktor atributu. Tento veřejný konstruktor přijímá parametr a nastaví členskou proměnnou na hodnotu.  
+## <a name="declaring-constructors"></a>Deklarace konstruktorů  
+ Atributy jsou inicializovány s konstruktory stejným způsobem jako tradiční třídy. Následující fragment kódu ilustruje typický konstruktor atributu. Tento veřejný konstruktor přijímá parametr a nastavuje členskou proměnnou rovnající se její hodnotě.  
   
  [!code-cpp[Conceptual.Attributes.Usage#15](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#15)]
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- Můžete použít přetížení konstruktoru pro různé kombinace hodnot. Pokud můžete také definujte [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) pro vaši vlastní třídu atributu, můžete použít kombinaci pojmenované a poziční parametry, při inicializaci atributu. Obvykle definujete všechny požadované parametry jako poziční a všechny volitelné parametry jako s názvem. V takovém případě atribut nelze inicializovat bez povinný parametr. Všechny ostatní parametry jsou volitelné. Všimněte si, že v jazyce Visual Basic by neměly používat konstruktory pro třídy atributu ParamArray argument.  
+ Můžete přetížit konstruktor pro přizpůsobení různých kombinací hodnot. Pokud definujete také [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) pro vlastní třídu atributu, můžete při inicializaci atributu použít kombinaci pojmenovaných a pozičních parametrů. Obvykle definujete všechny požadované parametry jako poziční a všechny volitelné parametry jako pojmenované. V takovém případě nelze atribut inicializovat bez požadovaného parametru. Všechny ostatní parametry jsou volitelné. Všimněte si, že v Visual Basic konstruktory pro třídu atributu by neměly používat argument ParamArray.  
   
- Následující příklad kódu ukazuje, jak atribut, který se používá, že předchozí konstruktor lze použít pomocí povinných a volitelných parametrů. Předpokládá, že atribut má jeden povinný logickou hodnotu a vlastnost jeden volitelný řetězec.  
+ Následující příklad kódu ukazuje, jak atribut, který používá předchozí konstruktor, lze použít pomocí volitelných a vyžadovaných parametrů. Předpokládá, že atribut má jednu požadovanou logickou hodnotu a jednu volitelnou vlastnost řetězce.  
   
  [!code-cpp[Conceptual.Attributes.Usage#17](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#17)]
  [!code-csharp[Conceptual.Attributes.Usage#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#17)]
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
-## <a name="declaring-properties"></a>Deklarování vlastností  
- Pokud chcete definovat parametr s názvem nebo poskytují snadný způsob, jak vrátit hodnoty uložené ve vašem atributu, deklarujte [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Vlastnosti atributu by měl být deklarován jako veřejné entit s popisem datového typu, který bude vrácen. Definujte proměnné, která bude obsahovat hodnotu vlastnosti vaší a přidružte jej k **získat** a **nastavit** metody. Následující příklad kódu ukazuje, jak implementovat jednoduché vlastnosti v atributu.  
+## <a name="declaring-properties"></a>Deklarace vlastností  
+ Pokud chcete definovat pojmenovaný parametr nebo poskytnout snadný způsob, jak vrátit hodnoty uložené v atributu, deklarujte [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Vlastnosti atributu by měly být deklarovány jako veřejné entity s popisem datového typu, který bude vrácen. Definujte proměnnou, která bude obsahovat hodnotu vlastnosti a přidružte ji k metodám **Get** a **set** . Následující příklad kódu ukazuje, jak implementovat jednoduchou vlastnost v atributu.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]
  [!code-vb[Conceptual.Attributes.Usage#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#16)]  
   
 ## <a name="custom-attribute-example"></a>Příklad vlastního atributu  
- Tato část zahrnuje předchozí informace a ukazuje, jak navrhovat jednoduché atributy, které dokumenty informace o autorovi část kódu. Atribut v tomto příkladu obsahuje název a úroveň programátora, a určuje, zda kód revidovaný. Používá tři soukromé proměnné k ukládání skutečné hodnoty uložte. Každá proměnná je reprezentován veřejnou vlastnost, která získá a nastaví hodnoty. Nakonec je konstruktor definován s dvěma požadovanými parametry.  
+ Tato část obsahuje předchozí informace a ukazuje, jak navrhnout jednoduchý atribut, který dokumentuje informace o autorovi oddílu kódu. Atribut v tomto příkladu ukládá název a úroveň programátora a informaci o tom, zda byl kód zkontrolován. Používá tři soukromé proměnné pro uložení skutečných hodnot k uložení. Každá proměnná je reprezentovaná veřejnou vlastností, která získává a nastavuje hodnoty. Nakonec je definován konstruktor se dvěma požadovanými parametry.  
   
  [!code-cpp[Conceptual.Attributes.Usage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#4)]
  [!code-csharp[Conceptual.Attributes.Usage#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#4)]
  [!code-vb[Conceptual.Attributes.Usage#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#4)]  
   
- Můžete použít tento atribut, pomocí úplného názvu `DeveloperAttribute`, nebo pomocí zkrácený název `Developer`, v jednom z následujících způsobů.  
+ Tento atribut lze použít pomocí úplného názvu, `DeveloperAttribute`nebo pomocí zkráceného názvu `Developer`, jedním z následujících způsobů.  
   
  [!code-cpp[Conceptual.Attributes.Usage#12](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#12)]
  [!code-csharp[Conceptual.Attributes.Usage#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#12)]
  [!code-vb[Conceptual.Attributes.Usage#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#12)]  
   
- První příklad ukazuje, použije se pouze požadované pojmenované parametry, zatímco druhý příklad ukazuje atribut s povinných a volitelných parametrů.  
+ První příklad ukazuje atribut použit pouze s požadovanými pojmenovanými parametry, zatímco druhý příklad ukazuje atribut použit s požadovaným i nepovinnými parametry.  
   
 ## <a name="see-also"></a>Viz také:
 

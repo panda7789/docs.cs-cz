@@ -13,63 +13,61 @@ helpviewer_keywords:
 - converting numeric user input to number
 - numbers [.NET Framework], converting numeric user input to number
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5af942b5e7576c13ff7be8d11c0009fd0c4f7462
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 78ba284ad2e75b39c0fb1001b0f65b48c519dbb5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882472"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140109"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
-Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, můžete uživatele zadat číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku v téměř neomezené množství formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze uživatelský vstup, lze následně použít formátovací úmluvy určené národní prostředí a jazykovou verzi uživatele.  
+Vzhledem k tomu, že se webová stránka může zobrazit kdekoli na světě, můžou uživatelé zadávat číselná data do ovládacího prvku <xref:System.Web.UI.WebControls.TextBox> v téměř neomezeném počtu formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze vstupu uživatele můžete použít konvence formátování definované národním prostředím a jazykovou verzí uživatele.  
   
-### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a>Pro převod číselného vstupu z ovládacího prvku TextBox webové na číslo  
+### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a>Převod číselného vstupu z ovládacího prvku webový ovládací prvek TextBox na číslo  
   
-1. Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
+1. Určí, zda je vyplněno pole řetězců vrácené vlastností <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>. Pokud ne, pokračujte krokem 6.  
   
-2. Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
+2. Pokud je pole řetězců vrácené vlastností <xref:System.Web.HttpRequest.UserLanguages%2A> vyplněno, načte první prvek. První prvek označuje výchozí nebo preferovaný jazyk a oblast uživatele.  
   
-3. Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
+3. Vytvořte instanci objektu <xref:System.Globalization.CultureInfo>, který představuje upřednostňovanou jazykovou verzi uživatele voláním konstruktoru <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>.  
   
-4. Volání na buď `TryParse` nebo `Parse` metoda číselného typu, který chcete převést uživatelský vstup. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
+4. Zavolejte buď `TryParse`, nebo metodu `Parse` číselného typu, na který chcete převést vstup uživatele na. Použijte přetížení `TryParse` nebo `Parse` metody s parametrem `provider` a předejte jí jednu z následujících možností:  
   
-    - <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
+    - Objekt <xref:System.Globalization.CultureInfo> vytvořený v kroku 3.  
   
-    - <xref:System.Globalization.NumberFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.NumberFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
+    - Objekt <xref:System.Globalization.NumberFormatInfo>, který je vrácen vlastností <xref:System.Globalization.CultureInfo.NumberFormat%2A> objektu <xref:System.Globalization.CultureInfo> vytvořeného v kroku 3.  
   
-5. Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
+5. Pokud se převod nezdařil, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vráceného vlastností <xref:System.Web.HttpRequest.UserLanguages%2A>.  
   
-6. Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+6. Pokud převod stále selhává nebo pokud je pole řetězců vrácené vlastností <xref:System.Web.HttpRequest.UserLanguages%2A> prázdné, analyzujte řetězec pomocí invariantní jazykové verze, která je vrácena vlastností <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je na stránce dokončení kódu pro webový formulář s dotazem, aby uživatel zadal číselnou hodnotu ve <xref:System.Web.UI.WebControls.TextBox> řídit a převede na číslo. Toto číslo potom Dvojitá a zobrazit pomocí stejných pravidel formátování jako původní vstup.  
+ V následujícím příkladu je úplná Stránka s kódem na pozadí pro webový formulář, který vyzve uživatele k zadání číselné hodnoty v ovládacím prvku <xref:System.Web.UI.WebControls.TextBox> a převede ho na číslo. Toto číslo se pak zdvojnásobí a zobrazí se pomocí stejných pravidel formátování jako u původního vstupu.  
   
  [!code-csharp[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/cs/NumericUserInput1.aspx.cs#1)]
  [!code-vb[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/vb/NumericUserInput1.aspx.vb#1)]  
   
- <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> Vlastnost se naplní ze názvy jazykové verze, které jsou obsaženy v `Accept-Language` záhlaví zahrnutá v jednom požadavku HTTP. Ale ne všechny prohlížeče podporují `Accept-Language` záhlaví v jejich požadavky a uživatelé mohou také potlačit hlavičky úplně. Proto je důležité mít záložní jazykovou verzi, při analýze vstup uživatele. Záložní jazykovou verzi je obvykle invariantní jazykové verze vrácené <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Uživatelé mohou také poskytovat aplikaci Internet Explorer s názvy jazykovou verzi, zadejte do textového pole, která vytvoří možnost, že nemusí být platný název jazykové verze. Díky tomu je potřeba použít zpracování výjimek při vytváření instance <xref:System.Globalization.CultureInfo> objektu.  
+ Vlastnost <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> je naplněna z názvů jazykové verze, které jsou obsaženy v hlavičkách `Accept-Language` obsažených v požadavku HTTP. Některé prohlížeče ale ve svých žádostech neobsahují `Accept-Language` hlavičky a uživatelé můžou také úplně potlačit hlavičky. Díky tomu je důležité mít při analýze vstupu uživatele záložní jazykovou verzi. Záložní jazyková verze obvykle představuje invariantní jazykovou verzi vrácenou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Uživatelé také mohou poskytnout aplikaci Internet Explorer s názvy jazykové verze, které jsou zadané v textovém poli, což vytvoří možnost, že názvy jazykových verzí nemusí být platné. Díky tomu je důležité při vytváření instance objektu <xref:System.Globalization.CultureInfo> použít zpracování výjimek.  
   
- Při načítání z požadavku HTTP odeslané aplikací Internet Explorer, <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> pole se vyplní v pořadí podle priority uživatele. První prvek v poli obsahuje název oblasti primární jazykovou verzi uživatele. Pokud pole obsahuje jakékoli další položky, aplikace Internet Explorer je libovolně přiřadí specifikátor kvality, který je oddělen od názvu jazykové verze středníkem. Například záznam pro jazykovou verzi fr-FR může mít podobu `fr-FR;q=0.7`.  
+ Při načtení z požadavku HTTP odeslaného Internet Exploreru se pole <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní v pořadí podle preference uživatele. První prvek v poli obsahuje název primární jazykové verze nebo oblasti uživatele. Pokud pole obsahuje nějaké další položky, Internet Explorer jim přiřadí specifikátor kvality, který je oddělen středníkem od názvu jazykové verze. Například položka pro jazykovou verzi fr-FR může mít formu `fr-FR;q=0.7`.  
   
- Příklad volá <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktor s jeho `useUserOverride` parametr nastaven na `false` k vytvoření nového <xref:System.Globalization.CultureInfo> objektu. To zajišťuje, že pokud je název výchozí jazykové verze na serveru, název jazykové verze nové <xref:System.Globalization.CultureInfo> objekt vytvořený pomocí konstruktoru třídy obsahuje výchozí jazykové verze a neodráží všechna nastavení přepsat pomocí serveru  **Místní a jazykové nastavení** aplikace. Hodnoty z jakéhokoli přepsaného nastavení na serveru jsou pravděpodobně existuje v systému uživatele nebo se projevovat ve vstupu uživatele.  
+ V příkladu je volána konstruktor <xref:System.Globalization.CultureInfo.%23ctor%2A> s parametrem `useUserOverride` nastaveným na `false` pro vytvoření nového objektu <xref:System.Globalization.CultureInfo>. Tím je zajištěno, že pokud je název jazykové verze výchozí název jazykové verze na serveru, nový objekt <xref:System.Globalization.CultureInfo> vytvořený pomocí konstruktoru třídy obsahuje výchozí nastavení jazykové verze a neodráží žádná nastavení přepsaná pomocí **regionálního serveru a Aplikace možností jazyka** . Hodnoty z jakýchkoli přepsaných nastavení na serveru pravděpodobně neexistují v systému uživatele nebo se projeví ve vstupu uživatele.  
   
- Váš kód může volat buď `Parse` nebo `TryParse` metoda číselného typu, který se uživatelovo zadání se převedou na. Opakovaná volání metody analýzy může být vyžadováno pro jedinou operaci analýzy. V důsledku toho `TryParse` metoda je lepší, protože se vrací `false` Pokud operace analýzy nezdaří. Naproti tomu zpracování opakovaných výjimek, které mohou být vyvolány `Parse` metoda může být velmi náročné návrh ve webové aplikaci.  
+ Váš kód může zavolat buď `Parse`, nebo metodu `TryParse` číselného typu, na který bude vstup uživatele převeden. Pro jednu operaci analýzy může být vyžadováno opakované volání metody Parse. V důsledku toho je metoda `TryParse` lepší, protože vrátí `false`, pokud operace analýzy neproběhne úspěšně. Naproti tomu zpracování opakovaných výjimek, které mohou být vyvolány metodou `Parse`, může být velmi nákladným umístěním ve webové aplikaci.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li kód zkompilovat, zkopírujte jej do kódu stránky ASP.NET tak, aby ji nahradí všechny existující kód. Webová stránka ASP.NET by měl obsahovat následující prvky:  
+ Chcete-li zkompilovat kód, zkopírujte jej na stránku ASP.NET kódu na pozadí, aby nahradil veškerý stávající kód. Webová stránka ASP.NET by měla obsahovat následující ovládací prvky:  
   
-- A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
+- Ovládací prvek <xref:System.Web.UI.WebControls.Label>, na který není odkazováno v kódu. Vlastnost <xref:System.Web.UI.WebControls.TextBox.Text%2A> nastavte na hodnotu zadat číslo:.  
   
-- A <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `NumericString`.  
+- <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `NumericString`.  
   
-- A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
+- <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Vlastnost <xref:System.Web.UI.WebControls.Button.Text%2A> nastavte na "OK".  
   
- Změnit název třídy z `NumericUserInput` k názvu třídy, která je definována `Inherits` atribut stránky ASP.NET `Page` směrnice. Změňte název `NumericInput` odkaz na název definovaný podle objektu `id` atribut stránky ASP.NET `form` značky.  
+ Změňte název třídy z `NumericUserInput` na název třídy, která je definována atributem `Inherits` direktivy `Page` stránky ASP.NET. Změňte název odkazu na objekt `NumericInput` na název definovaný atributem `id` značky `form` stránky ASP.NET.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Chcete-li zabránit uživatelům ve vkládání skript do HTML streamu, uživatelský vstup by nikdy zopakuje přímo zpět v odpověď serveru. Místo toho by měla být zakódován pomocí <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> metody.  
+ Chcete-li zabránit uživateli v vkládání skriptu do datového proudu HTML, nesmí být vstup uživatele v reakci serveru nikdy vrácen přímo. Místo toho by měl být kódován pomocí metody <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

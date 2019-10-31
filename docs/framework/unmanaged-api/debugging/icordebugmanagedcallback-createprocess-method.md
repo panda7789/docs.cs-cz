@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e89d5ee-e4e3-4738-8302-0b7d1cf4846e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0eacb4b0a06fbe086935b59eba7d33135b6bef19
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d773368c85fd42fd169109cf1c7e6635705ebb7e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759707"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090231"
 ---
 # <a name="icordebugmanagedcallbackcreateprocess-method"></a>ICorDebugManagedCallback::CreateProcess – metoda
-Ladicí program upozorní, když proces byl připojen nebo první spuštění.  
+Upozorní ladicí program, když byl proces poprvé připojen nebo spuštěn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT CreateProcess (
   
 ## <a name="parameters"></a>Parametry  
  `pProcess`  
- [in] Ukazatel na objekt ICorDebugProcess, který představuje proces, který se má připojit nebo spustit.  
+ pro Ukazatel na objekt ICorDebugProcess, který představuje proces, který byl připojen nebo zahájen.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda není volána, dokud se inicializovat modul common language runtime. Většina [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody vrátí CORDBG_E_NOTREADY před `CreateProcess` zpětného volání.  
+ Tato metoda není volána, dokud není inicializován modul CLR (Common Language Runtime). Většina metod [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) vrátí CORDBG_E_NOTREADY před zpětným voláním `CreateProcess`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

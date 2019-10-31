@@ -6,453 +6,451 @@ helpviewer_keywords:
 - debugging interfaces [.NET Framework]
 - interfaces [.NET Framework debugging]
 ms.assetid: b6297c26-7624-4431-8af4-14112d07bcd5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ff589285d81a3febf887bba976b62a9ae4a573c8
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 07b39666637628102e9ffafd2c059ba0d4b51b92
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025943"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097194"
 ---
 # <a name="debugging-interfaces"></a>Debugging – rozhraní
 Tato část popisuje nespravovaná rozhraní, která zpracovávají ladění programu, který je spouštěn v modulu CLR.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ICLRDataEnumMemoryRegions Interface](iclrdataenummemoryregions-interface.md)\
+ \ [rozhraní ICLRDataEnumMemoryRegions –](iclrdataenummemoryregions-interface.md)
  Představuje způsob, jak vytvořit výčet oblastí paměti zadaných volajícími.  
   
- [ICLRDataEnumMemoryRegionsCallback Interface](iclrdataenummemoryregionscallback-interface.md)\
- Poskytuje metodu zpětného volání pro `EnumMemoryRegions` k poskytnutí zprávy ladicímu programu, výsledek pokusu o výčet určité oblasti paměti.  
+ \ [rozhraní ICLRDataEnumMemoryRegionsCallback –](iclrdataenummemoryregionscallback-interface.md)
+ Poskytuje metodu zpětného volání pro `EnumMemoryRegions` pro hlášení ladicímu programu, výsledek pokusu o vytvoření výčtu konkrétní oblasti paměti.  
   
- [Iclrdatatarget – rozhraní](iclrdatatarget-interface.md)\
+ \ [rozhraní ICLRDataTarget](iclrdatatarget-interface.md)
  Poskytuje metody pro interakci s cílovým procesem CLR.  
   
- [ICLRDataTarget2 Interface](iclrdatatarget2-interface.md)\
- Podtřída `ICLRDataTarget` vrstvou služeb přístupu k data, která se používá k manipulaci s oblastmi virtuální paměti v cílovém procesu.  
+ \ [rozhraní ICLRDataTarget2](iclrdatatarget2-interface.md)
+ Podtřída `ICLRDataTarget`, kterou vrstva služeb Data Access používá ke zpracování oblastí virtuální paměti v cílovém procesu.  
   
- [ICLRDataTarget3 Interface](iclrdatatarget3-interface.md)\
- Podtřída [iclrdatatarget2 –](iclrdatatarget2-interface.md) , která poskytuje přístup k informacím o výjimce.  
+ \ [rozhraní ICLRDataTarget3](iclrdatatarget3-interface.md)
+ Podtřída [ICLRDataTarget2](iclrdatatarget2-interface.md) , která poskytuje přístup k informacím o výjimce.  
   
- [Iclrdebugging – rozhraní](iclrdebugging-interface.md)\
+ \ [rozhraní ICLRDebugging](iclrdebugging-interface.md)
  Poskytuje metody, které zpracovávají načítání a uvolňování modulů pro ladění.  
   
- [Iclrdebugginglibraryprovider – rozhraní](iclrdebugginglibraryprovider-interface.md)\
- Zahrnuje [ProvideLibrary – metoda](iclrdebugginglibraryprovider-providelibrary-method.md) metodu, která získá rozhraní zpětného volání, které umožňuje knihovnám ladění specifickým pro verzi modulu runtime k vyhledání a načtení na požádání zprostředkovatele knihovny.  
+ \ [rozhraní ICLRDebuggingLibraryProvider](iclrdebugginglibraryprovider-interface.md)
+ Obsahuje metodu [metody ProvideLibrary –](iclrdebugginglibraryprovider-providelibrary-method.md) , která získá rozhraní zpětného volání zprostředkovatele knihovny, které umožňuje umístění a načtení knihoven ladění pro Common Language Runtime v konkrétní verzi.  
   
- [ICLRMetadataLocator Interface](iclrmetadatalocator-interface.md)\
+ \ [rozhraní ICLRMetadataLocator –](iclrmetadatalocator-interface.md)
  Rozhraní používané vrstvou služeb přístupu k datům k vyhledání metadat sestavení v cílovém procesu.  
   
- [Icordebug – rozhraní](icordebug-interface.md)\
+ \ [rozhraní ICorDebug](icordebug-interface.md)
  Poskytuje metody, které umožňují vývojářům ladit aplikace v prostředí CLR.  
   
- [ICorDebugAppDomain Interface](icordebugappdomain-interface.md)\
+ \ [rozhraní ICorDebugAppDomain](icordebugappdomain-interface.md)
  Poskytuje metody pro ladění domén aplikace.  
   
- [ICorDebugAppDomain2 Interface](icordebugappdomain2-interface.md)\
- Poskytuje metody pro práci s poli, ukazateli, ukazateli na funkci a typy ByRef. Toto rozhraní je rozšířením `ICorDebugAppDomain` rozhraní.  
+ \ [rozhraní ICorDebugAppDomain2](icordebugappdomain2-interface.md)
+ Poskytuje metody pro práci s poli, ukazateli, ukazateli na funkci a typy ByRef. Toto rozhraní je rozšířením rozhraní `ICorDebugAppDomain`.  
   
- [ICorDebugAppDomain3 Interface](icordebugappdomain3-interface.md)\
- Poskytuje metody pro práci s typy Windows Runtime v doméně aplikace. Toto rozhraní je rozšířením `ICorDebugAppDomain` a `ICorDebugAppDomain2` rozhraní.  
+ \ [rozhraní ICorDebugAppDomain3](icordebugappdomain3-interface.md)
+ Poskytuje metody pro práci s typy prostředí Windows Runtime v doméně aplikace. Toto rozhraní je rozšířením rozhraní `ICorDebugAppDomain` a `ICorDebugAppDomain2`.  
   
- [ICorDebugAppDomain4 Interface](icordebugappdomain4-interface.md)\
- Logicky rozšiřuje [ICorDebugAppDomain](icordebugappdomain-interface.md) získat objekt spravovaného z obálka volatelná aplikacemi COM rozhraní.  
+ \ [rozhraní ICorDebugAppDomain4](icordebugappdomain4-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugAppDomain](icordebugappdomain-interface.md) , aby získala spravovaný objekt z obálky s přípravnou modelem COM.  
   
- [ICorDebugAppDomainEnum Interface](icordebugappdomainenum-interface.md)\
- Poskytuje metodu, která vrací zadaný počet `ICorDebugAppDomain` hodnot počínaje na dalším místě ve výčtu.  
+ \ [rozhraní ICorDebugAppDomainEnum](icordebugappdomainenum-interface.md)
+ Poskytuje metodu, která vrací zadaný počet `ICorDebugAppDomain` hodnot od dalšího umístění ve výčtu.  
   
- [ICorDebugArrayValue Interface](icordebugarrayvalue-interface.md)\
- Podtřída `ICorDebugHeapValue` , která představuje jednorozměrné nebo vícedimenzionální pole.  
+ \ [rozhraní ICorDebugArrayValue](icordebugarrayvalue-interface.md)
+ Podtřída `ICorDebugHeapValue`, která představuje jednorozměrné nebo multidimenzionální pole.  
   
- [Icordebugassembly – rozhraní](icordebugassembly-interface.md)\
+ \ [rozhraní ICorDebugAssembly](icordebugassembly-interface.md)
  Představuje sestavení.  
   
- [Icordebugassembly2 – rozhraní](icordebugassembly2-interface.md)\
- Představuje sestavení. Toto rozhraní je rozšířením `ICorDebugAssembly` rozhraní.  
+ \ [rozhraní ICorDebugAssembly2](icordebugassembly2-interface.md)
+ Představuje sestavení. Toto rozhraní je rozšířením rozhraní `ICorDebugAssembly`.  
   
- [Icordebugassembly3 – rozhraní](icordebugassembly3-interface.md)\
- Logicky rozšiřuje [ICorDebugAssembly](icordebugassembly-interface.md) rozhraní k poskytování podpory pro sestavení kontejneru a jejich obsažené sestavení. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugAssembly3](icordebugassembly3-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugAssembly](icordebugassembly-interface.md) , aby poskytovala podporu pro sestavení kontejneru a jejich obsažená sestavení. **K dispozici pouze v .NET Native.**  
   
- [Icordebugassemblyenum – rozhraní](icordebugassemblyenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugAssembly` pole.  
+ \ [rozhraní ICorDebugAssemblyEnum](icordebugassemblyenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugAssembly` polí.  
   
- [Icordebugblockingobjectenum – rozhraní](icordebugblockingobjectenum-interface.md)\
- Poskytuje enumerátor pro seznam [CorDebugBlockingObject](cordebugblockingobject-structure.md) struktury.  
+ \ [rozhraní ICorDebugBlockingObjectEnum –](icordebugblockingobjectenum-interface.md)
+ Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](cordebugblockingobject-structure.md) .  
   
- [Icordebugboxvalue – rozhraní](icordebugboxvalue-interface.md)\
- Podtřída `ICorDebugHeapValue` představující objektu třídy zabalených hodnot.  
+ \ [rozhraní ICorDebugBoxValue](icordebugboxvalue-interface.md)
+ Podtřída `ICorDebugHeapValue`, která představuje zabalený objekt třídy hodnot.  
   
- [Icordebugbreakpoint – rozhraní](icordebugbreakpoint-interface.md)\
+ \ [rozhraní ICorDebugBreakpoint](icordebugbreakpoint-interface.md)
  Představuje zarážku ve funkci nebo bod sledování na hodnotě.  
   
- [Icordebugbreakpointenum – rozhraní](icordebugbreakpointenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugBreakpoint` pole.  
+ \ [rozhraní ICorDebugBreakpointEnum](icordebugbreakpointenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugBreakpoint` polí.  
   
- [Icordebugchain – rozhraní](icordebugchain-interface.md)\
+ \ [rozhraní ICorDebugChain](icordebugchain-interface.md)
  Představuje segment fyzického nebo logického zásobníku volání.  
   
- [Icordebugchainenum – rozhraní](icordebugchainenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugChain` pole.  
+ \ [rozhraní ICorDebugChainEnum](icordebugchainenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugChain` polí.  
   
- [Icordebugclass – rozhraní](icordebugclass-interface.md)\
+ \ [rozhraní ICorDebugClass](icordebugclass-interface.md)
  Představuje typ, který může být základní nebo komplexní (tj. definovaný uživatelem). Pokud je typ obecný, `ICorDebugClass` představuje obecný typ bez instancí.  
   
- [Icordebugclass2 – rozhraní](icordebugclass2-interface.md)\
+ \ [rozhraní ICorDebugClass2](icordebugclass2-interface.md)
  Představuje obecnou třídu nebo třídu s parametrem metody typu <xref:System.Type>. Toto rozhraní rozšiřuje `ICorDebugClass`.  
   
- [Icordebugcode – rozhraní](icordebugcode-interface1.md)\
+ \ [rozhraní ICorDebugCode](icordebugcode-interface1.md)
  Představuje segment kódu jazyka MSIL nebo nativního kódu.  
   
- [Icordebugcode2 – rozhraní](icordebugcode2-interface.md)\
- Poskytuje metody, které rozšiřují možnosti `ICorDebugCode`.  
+ \ [rozhraní ICorDebugCode2](icordebugcode2-interface.md)
+ Poskytuje metody, které rozšiřuje možnosti `ICorDebugCode`.  
   
- [Icordebugcode3 – rozhraní](icordebugcode3-interface.md)\
- Poskytuje metodu, která rozšiřuje [ICorDebugCode](icordebugcode-interface1.md) a [ICorDebugCode2](icordebugcode2-interface.md) zadání informací o spravované návratové hodnotě.  
+ \ [rozhraní ICorDebugCode3](icordebugcode3-interface.md)
+ Poskytuje metodu, která rozšiřuje [ICorDebugCode](icordebugcode-interface1.md) a [ICorDebugCode2](icordebugcode2-interface.md) a poskytuje informace o spravované návratové hodnotě.  
   
- [Icordebugcode4 – rozhraní](icordebugcode4-interface.md)\
- Poskytuje metodu, která umožňuje ladicí program, který výčet lokálních proměnných a argumentů funkce.  
+ \ [rozhraní ICorDebugCode4](icordebugcode4-interface.md)
+ Poskytuje metodu, která umožňuje ladicímu programu vytvořit výčet místních proměnných a argumentů ve funkci.  
   
- [Icordebugcodeenum – rozhraní](icordebugcodeenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugCode` pole.  
+ \ [rozhraní ICorDebugCodeEnum](icordebugcodeenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugCode` polí.  
   
- [ICorDebugComObjectValue Interface](icordebugcomobjectvalue-interface.md)\
+ \ [rozhraní ICorDebugComObjectValue](icordebugcomobjectvalue-interface.md)
  Poskytuje metody pro načtení objektů z mezipaměti rozhraní.  
   
- [ICorDebugContext Interface](icordebugcontext-interface.md)\
+ \ [rozhraní ICorDebugContext –](icordebugcontext-interface.md)
  Představuje objekt kontextu. Toto rozhraní zatím nebylo implementováno.  
   
- [Icordebugcontroller – rozhraní](icordebugcontroller-interface.md)\
- Představuje rozsah buď <xref:System.Diagnostics.Process> nebo <xref:System.AppDomain>, ve které provádění kódu lze ovládat kontext.  
+ \ [rozhraní ICorDebugController](icordebugcontroller-interface.md)
+ Představuje obor, buď <xref:System.Diagnostics.Process>, nebo <xref:System.AppDomain>, ve kterém lze ovládat kontext provádění kódu.  
   
- [Icordebugdatatarget – rozhraní](icordebugdatatarget-interface.md)\
+ \ [rozhraní ICorDebugDataTarget](icordebugdatatarget-interface.md)
  Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétnímu cílovému procesu.  
   
- [ICorDebugDataTarget2 Interface](icordebugdatatarget2-interface.md)\
- Logicky rozšiřuje [icordebugdatatarget –](icordebugdatatarget-interface.md) rozhraní. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugDataTarget2](icordebugdatatarget2-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) . **K dispozici pouze v .NET Native.**  
   
- [ICorDebugDataTarget3 Interface](icordebugdatatarget3-interface.md)\
- Logicky rozšiřuje [icordebugdatatarget –](icordebugdatatarget-interface.md) rozhraní pro zadání informací o načtené moduly. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugDataTarget3](icordebugdatatarget3-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) , aby poskytovala informace o načtených modulech. **K dispozici pouze v .NET Native.**  
   
- [Icordebugdebugevent – rozhraní](icordebugdebugevent-interface.md)\
- Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` výjimky ladění jsou odvozeny. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugDebugEvent](icordebugdebugevent-interface.md)
+ Definuje základní rozhraní, ze kterého jsou odvozeny všechny události `ICorDebug` ladění. **K dispozici pouze v .NET Native.**  
   
- [ICorDebugEditAndContinueErrorInfo Interface](icordebugeditandcontinueerrorinfo-interface.md)\
+ \ [rozhraní ICorDebugEditAndContinueErrorInfo](icordebugeditandcontinueerrorinfo-interface.md)
  Zastaralé. Toto rozhraní nepoužívejte.  
   
- [ICorDebugEditAndContinueSnapshot Interface](icordebugeditandcontinuesnapshot-interface.md)\
+ \ [rozhraní ICorDebugEditAndContinueSnapshot](icordebugeditandcontinuesnapshot-interface.md)
  Zastaralé. Toto rozhraní nepoužívejte.  
   
- [Icordebugenum – rozhraní](icordebugenum-interface1.md)\
+ \ [rozhraní ICorDebugEnum](icordebugenum-interface1.md)
  Slouží jako abstraktní základní rozhraní pro enumerátory ladění.  
   
- [Icordebugerrorinfoenum – rozhraní](icordebugerrorinfoenum-interface.md)\
+ \ [rozhraní ICorDebugErrorInfoEnum](icordebugerrorinfoenum-interface.md)
  Zastaralé. Toto rozhraní nepoužívejte.  
   
- [Icordebugeval – rozhraní](icordebugeval-interface.md)\
+ \ [rozhraní ICorDebugEval](icordebugeval-interface.md)
  Poskytuje metody povolující ladicímu programu spouštět kód v kontextu laděného kódu.  
   
- [Icordebugeval2 – rozhraní](icordebugeval2-interface.md)\
- Rozšiřuje `ICorDebugEval` k poskytování podpory pro obecné typy.  
+ \ [rozhraní ICorDebugEval2](icordebugeval2-interface.md)
+ Rozšiřuje `ICorDebugEval` pro zajištění podpory pro obecné typy.  
   
- [Icordebugexceptiondebugevent – rozhraní](icordebugexceptiondebugevent-interface.md)\
- Rozšiřuje [ICorDebugDebugEvent](icordebugdebugevent-interface.md) rozhraní pro podporu události výjimky. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugExceptionDebugEvent](icordebugexceptiondebugevent-interface.md)
+ Rozšiřuje rozhraní [ICorDebugDebugEvent](icordebugdebugevent-interface.md) pro podporu událostí výjimek. **K dispozici pouze v .NET Native.**  
   
- [Icordebugexceptionobjectcallstackenum – rozhraní](icordebugexceptionobjectcallstackenum-interface.md)\
+ \ [rozhraní ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md)
  Poskytuje enumerátor pro informace zásobníku volání, který je vložený v objektu výjimky.  
   
- [ICorDebugExceptionObjectValue Interface](icordebugexceptionobjectvalue-interface.md)\
- Rozšiřuje [ICorDebugObjectValue](icordebugobjectvalue-interface.md) rozhraní pro poskytnutí informací o trasování zásobníku z objektu spravované výjimky.  
+ \ [rozhraní ICorDebugExceptionObjectValue –](icordebugexceptionobjectvalue-interface.md)
+ Rozšiřuje rozhraní [ICorDebugObjectValue](icordebugobjectvalue-interface.md) pro poskytnutí informací o trasování zásobníku z objektu spravované výjimky.  
   
- [Icordebugframe – rozhraní](icordebugframe-interface.md)\
+ \ [rozhraní ICorDebugFrame](icordebugframe-interface.md)
  Představuje snímek aktuálního zásobníku.  
   
- [Icordebugframeenum – rozhraní](icordebugframeenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugFrame` pole.  
+ \ [rozhraní ICorDebugFrameEnum](icordebugframeenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugFrame` polí.  
   
- [Icordebugfunction – rozhraní](icordebugfunction-interface1.md)\
+ \ [rozhraní ICorDebugFunction](icordebugfunction-interface1.md)
  Představuje spravovanou funkci nebo metodu.  
   
- [Icordebugfunction2 – rozhraní](icordebugfunction2-interface.md)\
- Logicky rozšiřuje `ICorDebugFunction` a poskytuje podporu pro funkce pouze můj kód krokové ladění.  
+ \ [rozhraní ICorDebugFunction2](icordebugfunction2-interface.md)
+ Logicky rozšiřuje `ICorDebugFunction` a poskytuje podporu pro Pouze můj kód krokování prostřednictvím ladění.  
   
- [Icordebugfunction3 – rozhraní](icordebugfunction3-interface.md)\
- Logicky rozšiřuje [ICorDebugFunction](icordebugfunction-interface1.md) rozhraní pro žádost o ReJIT poskytují přístup ke kódu.  
+ \ [rozhraní ICorDebugFunction3](icordebugfunction3-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugFunction](icordebugfunction-interface1.md) a poskytuje přístup k kódu z požadavku ReJIT.  
   
- [Icordebugfunctionbreakpoint – rozhraní](icordebugfunctionbreakpoint-interface.md)\
- Rozšiřuje `ICorDebugBreakpoint` pro podporu zarážek v rámci funkcí.  
+ \ [rozhraní ICorDebugFunctionBreakpoint](icordebugfunctionbreakpoint-interface.md)
+ Rozšiřuje `ICorDebugBreakpoint` o podporu zarážek v rámci funkcí.  
   
- [Icordebuggcreferenceenum – rozhraní](icordebuggcreferenceenum-interface.md)\
+ \ [rozhraní ICorDebugGCReferenceEnum –](icordebuggcreferenceenum-interface.md)
  Poskytuje enumerátor pro objekty, které budou uvolněny z paměti.  
   
- [Icordebuggenericvalue – rozhraní](icordebuggenericvalue-interface.md)\
- Podtřída `ICorDebugValue` , která platí pro všechny hodnoty. Toto rozhraní poskytuje metody Get a Set pro hodnotu.  
+ \ [rozhraní ICorDebugGenericValue](icordebuggenericvalue-interface.md)
+ Podtřída `ICorDebugValue`, která se vztahuje na všechny hodnoty. Toto rozhraní poskytuje metody Get a Set pro hodnotu.  
   
- [Icordebugguidtotypeenum – rozhraní](icordebugguidtotypeenum-interface.md)\
- Poskytuje enumerátor pro objekt, který mapuje identifikátory GUID a odpovídající `ICorDebugType` objekty.  
+ \ [rozhraní ICorDebugGuidToTypeEnum –](icordebugguidtotypeenum-interface.md)
+ Poskytuje enumerátor pro objekt, který mapuje identifikátory GUID a odpovídající objekty `ICorDebugType`.  
   
- [Icordebughandlevalue – rozhraní](icordebughandlevalue-interface.md)\
- Podtřída `ICorDebugReferenceValue` , která představuje referenční hodnotu, do které ladicí program vytvořil popisovač pro uvolnění paměti.  
+ \ [rozhraní ICorDebugHandleValue](icordebughandlevalue-interface.md)
+ Podtřída `ICorDebugReferenceValue` reprezentující referenční hodnotu, do které ladicí program vytvořil popisovač pro uvolňování paměti.  
   
- [Icordebugheapenum – rozhraní](icordebugheapenum-interface.md)\
+ \ [rozhraní ICorDebugHeapEnum –](icordebugheapenum-interface.md)
  Poskytuje enumerátor pro objekty na spravované haldě.  
   
- [Icordebugheapsegmentenum – rozhraní](icordebugheapsegmentenum-interface.md)\
+ \ [rozhraní ICorDebugHeapSegmentEnum –](icordebugheapsegmentenum-interface.md)
  Poskytuje enumerátor pro oblasti paměti spravované haldy.  
   
- [Icordebugheapvalue – rozhraní](icordebugheapvalue-interface.md)\
- Podtřída `ICorDebugValue` , který představuje objekt, který byl shromážděn uvolňováním CLR.  
+ \ [rozhraní ICorDebugHeapValue](icordebugheapvalue-interface.md)
+ Podtřída `ICorDebugValue`, která představuje objekt, který byl shromážděn systémem uvolňování paměti CLR.  
   
- [ICorDebugHeapValue2 Interface](icordebugheapvalue2-interface1.md)\
- Rozšíření `ICorDebugHeapValue` , která poskytuje podporu pro popisovače modulu runtime.  
+ \ [rozhraní ICorDebugHeapValue2](icordebugheapvalue2-interface1.md)
+ Rozšíření `ICorDebugHeapValue`, které poskytuje podporu pro obslužné rutiny modulu runtime.  
   
- [ICorDebugHeapValue3 Interface](icordebugheapvalue3-interface.md)\
+ \ [rozhraní ICorDebugHeapValue3](icordebugheapvalue3-interface.md)
  Zpřístupní vlastnosti uzamčení sledování objektů.  
   
- [Icordebugilcode – rozhraní](icordebugilcode-interface.md)\
- Představuje segment kódu (IL intermediate language).  
+ \ [rozhraní ICorDebugILCode](icordebugilcode-interface.md)
+ Představuje segment kódu zprostředkujícího jazyka (IL).  
   
- [Icordebugilcode2 – rozhraní](icordebugilcode2-interface.md)\
- Logicky rozšiřuje [ICorDebugILCode](icordebugilcode-interface.md) rozhraní poskytuje metody, které vracejí token pro místní proměnné podpis funkce a, která mapují profiler instrumentované (IL intermediate language) kompenzuje původní metody IL posuny.  
+ \ [rozhraní ICorDebugILCode2](icordebugilcode2-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugILCode](icordebugilcode-interface.md) a poskytuje metody, které vracejí token pro místní proměnnou funkce a které mapují posuny instrumentované zprostředkujícího jazyka (IL) profileru na původní posunutí metody Il.  
   
- [Icordebugilframe – rozhraní](icordebugilframe-interface.md)\
+ \ [rozhraní ICorDebugILFrame](icordebugilframe-interface.md)
  Představuje rámec zásobníku kódu MSIL.  
   
- [Icordebugilframe2 – rozhraní](icordebugilframe2-interface.md)\
+ \ [rozhraní ICorDebugILFrame2](icordebugilframe2-interface.md)
  Logické rozšíření `ICorDebugILFrame`.  
   
- [Icordebugilframe3 – rozhraní](icordebugilframe3-interface.md)\
+ \ [rozhraní ICorDebugILFrame3](icordebugilframe3-interface.md)
  Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce.  
   
- [Icordebugilframe4 – rozhraní](icordebugilframe4-interface.md)\
- Poskytuje metody, které umožňují přístup k místní proměnné a kód v bloku zásobníku kódu (IL intermediate language). Parametr určuje, zda ladicí program má přístup k proměnné a kód přidaný v profileru ReJIT instrumentace.  
+ \ [rozhraní ICorDebugILFrame4](icordebugilframe4-interface.md)
+ Poskytuje metody, které umožňují přístup k místním proměnným a kódu v bloku rozhraní IL (Intermediate Language). Parametr určuje, jestli má ladicí program přístup k proměnným a kódu přidanému v profileru ReJIT instrumentace.  
   
- [ICorDebugInstanceFieldSymbol Interface](icordebuginstancefieldsymbol-interface.md)\
- Představuje informací symbolů ladění pro pole instance. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugInstanceFieldSymbol](icordebuginstancefieldsymbol-interface.md)
+ Představuje informace o symbolech ladění pro pole instance. **K dispozici pouze v .NET Native.**  
   
- [Icordebuginternalframe – rozhraní](icordebuginternalframe-interface.md)\
+ \ [rozhraní ICorDebugInternalFrame](icordebuginternalframe-interface.md)
  Určuje typy rámců pro ladicí program.  
   
- [Icordebuginternalframe2 – rozhraní](icordebuginternalframe2-interface.md)\
- Poskytuje informace o vnitřních rámcích, včetně adresy zásobníku a pozice ve vztahu k [ICorDebugFrame](icordebugframe-interface.md) objekty.  
+ \ [rozhraní ICorDebugInternalFrame2](icordebuginternalframe2-interface.md)
+ Obsahuje informace o vnitřních rámečcích, včetně adresy zásobníku a pozice ve vztahu k [ICorDebugFrame](icordebugframe-interface.md) objektům.  
   
- [Icordebugloadedmodule – rozhraní](icordebugloadedmodule-interface.md)\
- Poskytuje informace o u načteného modulu. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní metoda ICorDebugLoadedModule](icordebugloadedmodule-interface.md)
+ Poskytuje informace o načteném modulu. **K dispozici pouze v .NET Native.**  
   
- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)\
+ \ [rozhraní ICorDebugManagedCallback](icordebugmanagedcallback-interface.md)
  Poskytuje metody pro zpětná volání procesu ladicího programu.  
   
- [ICorDebugManagedCallback2 Interface](icordebugmanagedcallback2-interface.md)\
- Poskytuje metody pro podporu zpracování výjimek ladicího programu a spravované pomocníky ladění (MDA). `ICorDebugManagedCallback2` je logickým rozšířením `ICorDebugManagedCallback`.  
+ \ [rozhraní ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md)
+ Poskytuje metody pro podporu zpracování výjimek ladicího programu a spravované pomocníky ladění (MDA). `ICorDebugManagedCallback2` je logické rozšíření `ICorDebugManagedCallback`.  
   
- [ICorDebugManagedCallback3 Interface](icordebugmanagedcallback3-interface.md)\
+ \ [rozhraní ICorDebugManagedCallback3 –](icordebugmanagedcallback3-interface.md)
  Poskytuje metodu zpětného volání, která určuje, že povolené vlastní oznámení ladicího programu bylo vyvoláno.  
   
- [Icordebugmda – rozhraní](icordebugmda-interface.md)\
+ \ [rozhraní ICorDebugMDA](icordebugmda-interface.md)
  Představuje zprávu pomocníka spravovaného ladění (MDA).  
   
- [ICorDebugMemoryBuffer Interface](icordebugmemorybuffer-interface.md)\
- Představuje vyrovnávací paměť v paměti. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md)
+ Představuje vyrovnávací paměť v paměti. **K dispozici pouze v .NET Native.**  
   
- [Icordebugmergedassemblyrecord – rozhraní](icordebugmergedassemblyrecord-interface.md)\
- Poskytuje informace o sloučené sestavení. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugMergedAssemblyRecord](icordebugmergedassemblyrecord-interface.md)
+ Poskytuje informace o sloučeném sestavení. **K dispozici pouze v .NET Native.**  
   
- [ICorDebugMetaDataLocator Interface](icordebugmetadatalocator-interface.md)\
+ \ [rozhraní ICorDebugMetaDataLocator –](icordebugmetadatalocator-interface.md)
  Poskytuje informace metadat k ladicímu programu.  
   
- [ICorDebugModule Interface](icordebugmodule-interface.md)\
+ \ [rozhraní ICorDebugModule](icordebugmodule-interface.md)
  Představuje modul CLR, který je spustitelný soubor nebo dynamická knihovna (DLL).  
   
- [ICorDebugModule2 Interface](icordebugmodule2-interface.md)\
- Slouží jako logické rozšíření pro `ICorDebugModule`.  
+ \ [rozhraní ICorDebugModule2](icordebugmodule2-interface.md)
+ Slouží jako logické rozšíření `ICorDebugModule`.  
   
- [ICorDebugModule3 Interface](icordebugmodule3-interface.md)\
+ \ [rozhraní ICorDebugModule3](icordebugmodule3-interface.md)
  Vytvoří čtečku symbolů pro dynamický modul.  
   
- [ICorDebugModuleBreakpoint Interface](icordebugmodulebreakpoint-interface.md)\
- Rozšiřuje `ICorDebugBreakpoint` a zajistit tak přístup k určitým modulům.  
+ \ [rozhraní ICorDebugModuleBreakpoint](icordebugmodulebreakpoint-interface.md)
+ Rozšiřuje `ICorDebugBreakpoint` o poskytnutí přístupu ke konkrétním modulům.  
   
- [Icordebugmoduledebugevent – rozhraní](icordebugmoduledebugevent-interface.md)\
- Rozšiřuje [ICorDebugDebugEvent](icordebugdebugevent-interface.md) rozhraní pro podporu událostí na úrovni modulu. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugModuleDebugEvent](icordebugmoduledebugevent-interface.md)
+ Rozšiřuje rozhraní [ICorDebugDebugEvent](icordebugdebugevent-interface.md) pro podporu událostí na úrovni modulu. **K dispozici pouze v .NET Native.**  
   
- [Icordebugmoduleenum – rozhraní](icordebugmoduleenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugModule` pole.  
+ \ [rozhraní ICorDebugModuleEnum](icordebugmoduleenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugModule` polí.  
   
- [ICorDebugMutableDataTarget Interface](icordebugmutabledatatarget-interface.md)\
- Rozšiřuje [icordebugdatatarget –](icordebugdatatarget-interface.md) rozhraní pro podporu proměnlivé datové cíle.  
+ \ [rozhraní ICorDebugMutableDataTarget](icordebugmutabledatatarget-interface.md)
+ Rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) pro podporu proměnlivých datových cílů.  
   
- [Icordebugnativeframe – rozhraní](icordebugnativeframe-interface.md)\
- Specializovaná implementace `ICorDebugFrame` pro nativní snímky.  
+ \ [rozhraní ICorDebugNativeFrame](icordebugnativeframe-interface.md)
+ Specializovaná implementace `ICorDebugFrame` používaná pro nativní rámce.  
   
- [Icordebugnativeframe2 – rozhraní](icordebugnativeframe2-interface.md)\
+ \ [rozhraní ICorDebugNativeFrame2](icordebugnativeframe2-interface.md)
  Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.  
   
- [Icordebugobjectenum – rozhraní](icordebugobjectenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet polí objektů podle jejich relativních virtuálních adres (RVA).  
+ \ [rozhraní ICorDebugObjectEnum](icordebugobjectenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet polí objektů podle jejich relativních virtuálních adres (RVA).  
   
- [Icordebugobjectvalue – rozhraní](icordebugobjectvalue-interface.md)\
- Podtřída `ICorDebugValue` , která představuje hodnotu, která obsahuje objekt.  
+ \ [rozhraní ICorDebugObjectValue](icordebugobjectvalue-interface.md)
+ Podtřída `ICorDebugValue`, která představuje hodnotu, která obsahuje objekt.  
   
- [Icordebugobjectvalue2 – rozhraní](icordebugobjectvalue2-interface.md)\
+ \ [rozhraní ICorDebugObjectValue2](icordebugobjectvalue2-interface.md)
  Rozšiřuje `ICorDebugObjectValue` pro podporu dědičnosti a přepsání.  
   
- [Icordebugprocess – rozhraní](icordebugprocess-interface.md)\
+ \ [rozhraní ICorDebugProcess](icordebugprocess-interface.md)
  Představuje proces, který spouští spravovaný kód.  
   
- [Icordebugprocess2 – rozhraní](icordebugprocess2-interface1.md)\
+ \ [rozhraní ICorDebugProcess2](icordebugprocess2-interface1.md)
  Logické rozšíření `ICorDebugProcess`.  
   
- [Icordebugprocess3 – rozhraní](icordebugprocess3-interface.md)\
+ \ [rozhraní ICorDebugProcess3 –](icordebugprocess3-interface.md)
  Řídí vlastní oznámení ladicího programu.
 
- [ICorDebugProcess4 rozhraní](icordebugprocess4-interface.md)\
- Poskytuje podporu pro mimo proces řízení provádění.
+ \ [rozhraní ICorDebugProcess4](icordebugprocess4-interface.md)
+ Poskytuje podporu pro vzdálené řízení spouštění procesů.
   
- [Icordebugprocess5 – rozhraní](icordebugprocess5-interface.md)\
- Rozšiřuje [ICorDebugProcess](icordebugprocess-interface.md) rozhraní pro podporu přístupu ke spravované haldě, k poskytování informací o uvolnění paměti spravovaných objektů a určení, zda ladicí program načítá obrázky z aplikace v místním mezipaměti nativních bitových kopií.  
+ \ [rozhraní ICorDebugProcess5](icordebugprocess5-interface.md)
+ Rozšiřuje rozhraní [ICorDebugProcess](icordebugprocess-interface.md) pro podporu přístupu ke spravované haldě, k poskytnutí informací o uvolnění paměti spravovaných objektů a určení, zda ladicí program načítá obrázky z místní mezipaměti nativních bitových kopií aplikace.  
   
- [Icordebugprocess6 – rozhraní](icordebugprocess6-interface.md)\
- Logicky rozšiřuje [ICorDebugProcess](icordebugprocess-interface.md) rozhraní k povolení funkcí, jako je například dekódování spravované ladění události, které jsou zakódovány nativní výjimka ladění událostí a rozdělení virtuální modulu. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugProcess6](icordebugprocess6-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugProcess](icordebugprocess-interface.md) a povoluje funkce jako dekódování spravovaných událostí ladění, které jsou zakódované v nativních událostech ladění výjimek a rozdělování virtuálních modulů. **K dispozici pouze v .NET Native.**  
   
- [Icordebugprocess7 – rozhraní](icordebugprocess7-interface.md)\
- Poskytuje metodu, která nakonfiguruje ladicího programu pro zpracování aktualizace metadat v paměti v cílovém procesu.  
+ \ [rozhraní ICorDebugProcess7](icordebugprocess7-interface.md)
+ Poskytuje metodu, která konfiguruje ladicí program pro zpracování aktualizací metadat v paměti v cílovém procesu.  
   
- [Icordebugprocess8 – rozhraní](icordebugprocess8-interface.md)\
- Logicky rozšiřuje [ICorDebugProcess](icordebugprocess-interface.md) rozhraní pro povolení nebo zakázání určitých typů [icordebugmanagedcallback2 –](icordebugmanagedcallback2-interface.md) zpětných volání výjimky.  
+ \ [rozhraní ICorDebugProcess8](icordebugprocess8-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugProcess](icordebugprocess-interface.md) a povoluje nebo zakazuje určité typy zpětných volání výjimek [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .  
   
- [Icordebugprocessenum – rozhraní](icordebugprocessenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugProcess` pole.  
+ \ [rozhraní ICorDebugProcessEnum](icordebugprocessenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugProcess` polí.  
   
- [Icordebugreferencevalue – rozhraní](icordebugreferencevalue-interface.md)\
- Podtřída `ICorDebugValue` podporující referenční typy.  
+ \ [rozhraní ICorDebugReferenceValue](icordebugreferencevalue-interface.md)
+ Podtřída `ICorDebugValue`, která podporuje typy odkazů.  
   
- [Icordebugregisterset – rozhraní](icordebugregisterset-interface.md)\
+ \ [rozhraní ICorDebugRegisterSet](icordebugregisterset-interface.md)
  Představuje sadu registrů, které jsou k dispozici v počítači, který aktuálně spouští kód.  
   
- [Icordebugregisterset2 – rozhraní](icordebugregisterset2-interface.md)\
+ \ [rozhraní ICorDebugRegisterSet2](icordebugregisterset2-interface.md)
  Rozšiřuje možnosti `ICorDebugRegisterSet` pro hardwarové platformy, které mají více než 64 registrů.  
   
- [Icordebugremote – rozhraní](icordebugremote-interface.md)\
+ \ [rozhraní ICorDebugRemote](icordebugremote-interface.md)
  Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.  
   
- [Icordebugremotetarget – rozhraní](icordebugremotetarget-interface.md)\
+ \ [rozhraní ICorDebugRemoteTarget](icordebugremotetarget-interface.md)
  Poskytuje metody umožňující ladit aplikace programu Silverlight v prostředí CLR.  
   
- [ICorDebugRuntimeUnwindableFrame Interface](icordebugruntimeunwindableframe-interface.md)\
+ \ [rozhraní ICorDebugRuntimeUnwindableFrame –](icordebugruntimeunwindableframe-interface.md)
  Poskytuje podporu pro nespravované metody, které vyžadují modul CLR k uvolnění rámce.  
   
- [Icordebugstackwalk – rozhraní](icordebugstackwalk-interface.md)\
+ \ [rozhraní ICorDebugStackWalk](icordebugstackwalk-interface.md)
  Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku vlákna.  
   
- [Icordebugstaticfieldsymbol – rozhraní](icordebugstaticfieldsymbol-interface.md)\
- Představuje informací symbolů ladění pro statické pole. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugStaticFieldSymbol](icordebugstaticfieldsymbol-interface.md)
+ Představuje informace o symbolech ladění pro statické pole. **K dispozici pouze v .NET Native.**  
   
- [Icordebugstepper – rozhraní](icordebugstepper-interface.md)\
+ \ [rozhraní ICorDebugStepper](icordebugstepper-interface.md)
  Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího programu, slouží jako identifikátor mezi vydáním a dokončením příkazu a umožňuje krok zrušit.  
   
- [Icordebugstepper2 – rozhraní](icordebugstepper2-interface1.md)\
+ \ [rozhraní ICorDebugStepper2](icordebugstepper2-interface1.md)
  Poskytuje podporu ladění Pouze můj kód (JMC).  
   
- [Icordebugstepperenum – rozhraní](icordebugstepperenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugStepper` pole.  
+ \ [rozhraní ICorDebugStepperEnum](icordebugstepperenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugStepper` polí.  
   
- [ICorDebugStringValue Interface](icordebugstringvalue-interface.md)\
- Podtřída `ICorDebugHeapValue` aplikovaná na řetězcové hodnoty.  
+ \ [rozhraní ICorDebugStringValue](icordebugstringvalue-interface.md)
+ Podtřída `ICorDebugHeapValue`, která se vztahuje na řetězcové hodnoty.  
   
- [Icordebugsymbolprovider – rozhraní](icordebugsymbolprovider-interface.md)\
- Poskytuje metody, které slouží k načtení informací symbolů ladění. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugSymbolProvider](icordebugsymbolprovider-interface.md)
+ Poskytuje metody, které lze použít k načtení informací o symbolech ladění. **K dispozici pouze v .NET Native.**  
   
- [Icordebugsymbolprovider2 – rozhraní](icordebugsymbolprovider2-interface.md)\
- Logicky rozšiřuje [icordebugsymbolprovider –](icordebugsymbolprovider-interface.md) rozhraní pro načtení informací o symbolu další ladění. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugSymbolProvider2](icordebugsymbolprovider2-interface.md)
+ Logicky rozšiřuje rozhraní [ICorDebugSymbolProvider](icordebugsymbolprovider-interface.md) a načítá Další informace o symbolech ladění. **K dispozici pouze v .NET Native.**  
   
- [Icordebugthread – rozhraní](icordebugthread-interface.md)\
- Představuje vlákno v procesu. Životnost `ICorDebugThread` instance je stejná jako životnost vlákna, které představuje.  
+ \ [rozhraní ICorDebugThread](icordebugthread-interface.md)
+ Představuje vlákno v procesu. Doba životnosti `ICorDebugThread` instance je stejná jako životnost vlákna, které představuje.  
   
- [Icordebugthread2 – rozhraní](icordebugthread2-interface.md)\
- Slouží jako logické rozšíření pro `ICorDebugThread`.  
+ \ [rozhraní ICorDebugThread2](icordebugthread2-interface.md)
+ Slouží jako logické rozšíření `ICorDebugThread`.  
   
- [Icordebugthread3 – rozhraní](icordebugthread3-interface.md)\
- Poskytuje vstupní bod, který [ICorDebugStackWalk](icordebugstackwalk-interface.md) a odpovídající rozhraní.  
+ \ [rozhraní ICorDebugThread3](icordebugthread3-interface.md)
+ Poskytuje vstupní bod pro [ICorDebugStackWalk](icordebugstackwalk-interface.md) a odpovídající rozhraní.  
   
- [Icordebugthread4 – rozhraní](icordebugthread4-interface.md)\
+ \ [rozhraní ICorDebugThread4](icordebugthread4-interface.md)
  Poskytuje informace o blokování vlákna.  
   
- [Icordebugthreadenum – rozhraní](icordebugthreadenum-interface1.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugThread` pole.  
+ \ [rozhraní ICorDebugThreadEnum](icordebugthreadenum-interface1.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugThread` polí.  
   
- [Icordebugtype – rozhraní](icordebugtype-interface.md)\
+ \ [rozhraní ICorDebugType](icordebugtype-interface.md)
  Představuje typ, který může být základní nebo komplexní (tj. definovaný uživatelem). Pokud je typ obecný, `ICorDebugType` představuje obecný typ s instancemi.  
   
- [Icordebugtype2 – rozhraní](icordebugtype2-interface.md)\
- Rozšiřuje [ICorDebugType](icordebugtype-interface.md) rozhraní načtete identifikátor typu základního typu nebo komplexní typ (definovaný uživatelem).  
+ \ [rozhraní ICorDebugType2](icordebugtype2-interface.md)
+ Rozšiřuje rozhraní [ICorDebugType](icordebugtype-interface.md) , aby získal identifikátor typu základního typu nebo komplexního (uživatelsky definovaného) typu.  
   
- [Icordebugtypeenum – rozhraní](icordebugtypeenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugType` pole.  
+ \ [rozhraní ICorDebugTypeEnum](icordebugtypeenum-interface.md)
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugType` polí.  
   
- [ICorDebugUnmanagedCallback Interface](icordebugunmanagedcallback-interface.md)\
+ \ [rozhraní ICorDebugUnmanagedCallback –](icordebugunmanagedcallback-interface.md)
  Poskytuje oznámení nativních událostí, které přímo nesouvisejí s CLR.  
   
  [ICorDebugValue](icordebugvalue-interface.md)\
  Představuje hodnotu pro čtení nebo zápis v laděném procesu.  
   
  [ICorDebugValue2](icordebugvalue2-interface.md)\
- Rozšiřuje `ICorDebugValue` k poskytování podpory pro `ICorDebugType`.  
+ Rozšiřuje `ICorDebugValue` a poskytuje podporu pro `ICorDebugType`.  
   
- [Icordebugvalue3 – rozhraní](icordebugvalue3-interface.md)\
- Rozšiřuje rozhraní "ICorDebugValue" a "ICorDebugValue2" k poskytování podpory pro pole, která jsou větší než 2 GB.  
+ \ [rozhraní ICorDebugValue3 –](icordebugvalue3-interface.md)
+ Rozšiřuje rozhraní "ICorDebugValue" a "ICorDebugValue2" tak, aby poskytovala podporu pro pole, která jsou větší než 2 GB.  
   
  [ICorDebugValueBreakpoint](icordebugvaluebreakpoint-interface.md)\
- Rozšiřuje `ICorDebugBreakpoint` a zajistit tak přístup k určitým hodnotám.  
+ Rozšiřuje `ICorDebugBreakpoint` o poskytnutí přístupu k určitým hodnotám.  
   
- [Icordebugvalueenum –](icordebugvalueenum-interface.md)\
- Implementuje `ICorDebugEnum` metody a vytváří výčet `ICorDebugValue` pole.  
+ [ICorDebugValueEnum](icordebugvalueenum-interface.md)\
+ Implementuje metody `ICorDebugEnum` a vytvoří výčet `ICorDebugValue` polí.  
   
- [Icordebugvariablehome – rozhraní](icordebugvariablehome-interface.md)\
- Představuje místní proměnné nebo argumentu funkce.  
+ \ [rozhraní ICorDebugVariableHome](icordebugvariablehome-interface.md)
+ Představuje místní proměnnou nebo argument funkce.  
   
- [Icordebugvariablehomeenum – rozhraní](icordebugvariablehomeenum-interface.md)\
+ \ [rozhraní ICorDebugVariableHomeEnum](icordebugvariablehomeenum-interface.md)
  Poskytuje enumerátor pro místní proměnné a argumenty ve funkci.  
   
- [ICorDebugVariableSymbol Interface](icordebugvariablesymbol-interface.md)\
- Načte informace o symbolu ladění pro proměnnou. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugVariableSymbol](icordebugvariablesymbol-interface.md)
+ Načte informace o ladicím symbolu pro proměnnou. **K dispozici pouze v .NET Native.**  
   
- [Icordebugvirtualunwinder – rozhraní](icordebugvirtualunwinder-interface.md)\
- Poskytuje metody, které vám pomůžou odvíjení zásobníku. **K dispozici na pouze .NET Native.**  
+ \ [rozhraní ICorDebugVirtualUnwinder](icordebugvirtualunwinder-interface.md)
+ Poskytuje metody, které vám pomůžou při odvíjení zásobníku. **K dispozici pouze v .NET Native.**  
   
- [Icorpublish – rozhraní](icorpublish-interface.md)\
+ \ [rozhraní ICorPublish –](icorpublish-interface.md)
  Slouží jako obecné rozhraní pro procesy publikování.  
   
- [Icorpublishappdomain – rozhraní](icorpublishappdomain-interface.md)\
+ \ [rozhraní ICorPublishAppDomain](icorpublishappdomain-interface.md)
  Představuje a poskytuje informace o aplikační doméně.  
   
- [Icorpublishappdomainenum – rozhraní](icorpublishappdomainenum-interface.md)\
- Poskytuje metody, které procházejí kolekci `ICorPublishAppDomain` objekty, které momentálně existují v rámci procesu.  
+ \ [rozhraní ICorPublishAppDomainEnum –](icorpublishappdomainenum-interface.md)
+ Poskytuje metody, které procházejí kolekci `ICorPublishAppDomain` objektů, které aktuálně existují v rámci procesu.  
   
- [Icorpublishenum – rozhraní](icorpublishenum-interface.md)\
+ \ [rozhraní ICorPublishEnum](icorpublishenum-interface.md)
  Slouží jako abstraktní základ pro enumerátory publikování.  
   
- [Icorpublishprocess – rozhraní](icorpublishprocess-interface.md)\
+ \ [rozhraní ICorPublishProcess](icorpublishprocess-interface.md)
  Poskytuje metody, které přistupují k informacím o procesu.  
   
- [Icorpublishprocessenum – rozhraní](icorpublishprocessenum-interface.md)\
- Poskytuje metody, které procházejí kolekci `ICorPublishProcess` objekty.  
+ \ [rozhraní ICorPublishProcessEnum –](icorpublishprocessenum-interface.md)
+ Poskytuje metody, které procházejí kolekci `ICorPublishProcess` objektů.  
 
- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)\
+ \ [rozhraní ISOSDacInterface](isosdacinterface-interface.md)
  Poskytuje pomocné metody pro přístup k datům z `SOS`.
 
- [IXCLRDataMethodDefinition rozhraní](ixclrdatamethoddefinition-interface.md)\
+ \ [rozhraní IXCLRDataMethodDefinition](ixclrdatamethoddefinition-interface.md)
  Poskytuje metody pro dotazování na informace o definici metody.
  
- [IXCLRDataMethodInstance Interface](ixclrdatamethodinstance-interface.md)\
- Poskytuje metody pro dotazování na informace o metodu instance.
+ \ [rozhraní IXCLRDataMethodInstance](ixclrdatamethodinstance-interface.md)
+ Poskytuje metody pro dotazování na informace o instanci metody.
  
- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)\
- Poskytuje metody pro dotazování na informace o u načteného modulu.
+ \ [rozhraní IXCLRDataModule](ixclrdatamodule-interface.md)
+ Poskytuje metody pro dotazování na informace o načteném modulu.
  
- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)\
+ \ [rozhraní IXCLRDataProcess](ixclrdataprocess-interface.md)
  Poskytuje metody pro dotazování na informace o procesu.
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ladění tříd typu coclass](debugging-coclasses.md)\
- [Globální statické funkce ladění](debugging-global-static-functions.md)\
- [Výčty pro ladění](debugging-enumerations.md)\
- [Struktury pro ladění](debugging-structures.md)\
+ [Ladění globálních statických funkcí](debugging-global-static-functions.md)\
+ \ [výčtů ladění](debugging-enumerations.md)
+ \ [struktury ladění](debugging-structures.md)

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9afd0e04-a403-41e2-9528-a6dcbcdcbd4d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4ba981d86f90af449820ce13aa847169ca877429
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 89f45208550d49f214e763728ddc9eb1bfcd9800
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737770"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088977"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypes-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypes – metoda
-Získá enumerátor pro všechny typy v mezipaměti prostředí Windows Runtime.  
+Získá enumerátor pro všechny typy prostředí Windows Runtime v mezipaměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetCachedWinRTTypes (
   
 ## <a name="parameters"></a>Parametry  
  `ppGuidToTypeEnum`  
- [out] Ukazatel [icordebugguidtotypeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md) rozhraní objektu, který můžete zobrazit výčet spravované reprezentace typů prostředí Windows Runtime nyní načteny v doméně aplikace.  
+ mimo Ukazatel na objekt rozhraní [ICorDebugGuidToTypeEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md) , který může vyčíslit spravované reprezentace prostředí Windows runtimech typů, které jsou aktuálně načteny v doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** prostředí Windows Runtime  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06b1f7cc-acdf-47a6-9d53-d9dec2424152
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ee3a0c27d350dec8e9f3e9448174d978c7d50e81
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ad3a357a98cb5ed28a34e4076b5e145903ceaf91
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775690"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103502"
 ---
 # <a name="icorpublishprocessismanaged-method"></a>ICorPublishProcess::IsManaged – metoda
-Získá hodnotu určující, zda proces odkazuje toto [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) se ví, že máte spravovaného kódu.  
+Získá hodnotu, která označuje, zda se má proces, na který odkazuje tento [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) , známo, že má spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT IsManaged (
   
 ## <a name="parameters"></a>Parametry  
  `pbManaged`  
- [out] Ukazatel na logickou hodnotu, která určuje, zda má proces spravovaného kódu. Hodnota je `true` Pokud proces má spravovaného kódu; v opačném případě `false`.  
+ mimo Ukazatel na logickou hodnotu, která určuje, zda má proces spravovaný kód. Hodnota je `true`, pokud má proces spravovaný kód. v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Od aktuální verze `ICorPublishProcess` umožňuje přístup jenom k procesům, které mají spravovaného kódu, `IsManaged` vždy vrátí `true`.  
+ Vzhledem k tomu, že aktuální verze `ICorPublishProcess` umožňuje přístup pouze k procesům se spravovaným kódem, `IsManaged` vždy vrací `true`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,14 +4,12 @@ description: Tento článek shrnuje nové funkce a vylepšení, které najdete v
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
 ms.technology: dotnet-standard
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f69dfe77e5d485c4c7ffcbf2b98657eab87d452d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: ebf656c4a5499fff54cb5a70a93c4e8cc9c82d0a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775223"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101755"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Novinky v rozhraní .NET Standard
 

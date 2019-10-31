@@ -8,27 +8,27 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 94f7709f4bd273515d9fcdd727354ec579c46207
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a7147173dc9f132fa2dd14d20526d59927a183bd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927230"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115257"
 ---
-# <a name="section-element"></a>\<oddíl > element
+# <a name="section-element"></a>oddíl > elementu \<
 
 Obsahuje deklaraci konfiguračního oddílu.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> oddílu**
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<části >**
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> oddílu**
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**oddíly**](sectiongroup-element-for-configsections.md) >   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<části** >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,8 +43,8 @@ Obsahuje deklaraci konfiguračního oddílu.
 
 |           | Popis |
 | --------- | ----------- |
-| **name**  | Určuje název konfiguračního oddílu. |
-| **type**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
+| **Jméno**  | Určuje název konfiguračního oddílu. |
+| **textový**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
 
 ## <a name="optional-attributes"></a>Volitelné atributy
 
@@ -53,17 +53,17 @@ Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systé
 |                     | Popis |
 | ------------------- | ----------- |
 | **allowDefinition** | Určuje, v jakém konfiguračním souboru se dá oddíl použít. Použijte jednu z následujících hodnot:<br><br>**Všude**<br>Umožňuje použití oddílu v libovolném konfiguračním souboru. Toto nastavení je výchozí.<br>**MachineOnly**<br>Umožňuje použít oddíl pouze v konfiguračním souboru počítače (*Machine. config*).<br>**MachineToApplication**<br>Umožňuje použít oddíl v konfiguračním souboru počítače nebo v konfiguračním souboru aplikace. |
-| **allowLocation**   | Určuje, zda lze oddíl použít v rámci  **\<umístění >** elementu. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje použití oddílu v rámci  **\<umístění >** elementu. Toto nastavení je výchozí.<br>**false**<br>Nepovoluje použití oddílu v  **\<umístění >** elementu. |
+| **allowLocation**   | Určuje, zda lze oddíl použít v rámci **\<umístění >** elementu. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje použití oddílu v rámci **\<umístění >** elementu. Toto nastavení je výchozí.<br>**false**<br>Nepovoluje použití oddílu v **\<umístění >** elementu. |
 
 ## <a name="parent-elements"></a>Nadřazené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
-| [sectionGroup – element > element  **\<** ](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [ **\<sectionGroup** Objekt](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
 
 > [!NOTE]
-> **\<**  **\<**  **Oddíl>elementjepodřízeným\<** prvkem objektu configSections > nebo sectionGroup >, ale ne obojího.
+> **Oddíl\<** prvek je podřízeným prvkem buď **\<configSections >** nebo **\<sectionGroup** , ale ne obojího.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -71,7 +71,7 @@ Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systé
 
 ## <a name="remarks"></a>Poznámky
 
-Deklarace konfiguračního oddílu v podstatě definuje nový prvek konfiguračního souboru. Nový prvek obsahuje nastavení, která obslužná rutina konfiguračního oddílu (to znamená třída, která implementuje <xref:System.Configuration.IConfigurationSectionHandler> rozhraní) čte. Atributy a podřízené prvky oddílu, který definujete, závisí na obslužné rutině oddílu, kterou použijete ke čtení nastavení.
+Deklarace konfiguračního oddílu v podstatě definuje nový prvek konfiguračního souboru. Nový prvek obsahuje nastavení, která obslužná rutina konfiguračního oddílu (to znamená třída, která implementuje rozhraní <xref:System.Configuration.IConfigurationSectionHandler>) čte. Atributy a podřízené prvky oddílu, který definujete, závisí na obslužné rutině oddílu, kterou použijete ke čtení nastavení.
 
 Deklarace obslužné rutiny konfiguračního oddílu v souboru *Machine. config* umožňuje použít konfigurační oddíl v libovolném konfiguračním souboru aplikace v tomto počítači, pokud atribut **AllowDefinition** neurčuje jinak.
 

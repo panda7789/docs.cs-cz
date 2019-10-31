@@ -11,89 +11,87 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7f180e459764d6e8e4484072218f01c8bab8a3b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5815058898cac165e7a47d761ee86bb9c4cb940
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973456"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091594"
 ---
 # <a name="numerics-in-net"></a>Číslovky v technologii .NET
 
-.NET poskytuje celou řadu číselné celé číslo s plovoucí desetinnou čárkou primitiv, stejně jako <xref:System.Numerics.BigInteger?displayProperty=nameWithType>, což je celočíselný typ bez teoretické horní nebo dolní mez <xref:System.Numerics.Complex?displayProperty=nameWithType>, která představuje komplexní čísla a sadu typů v spodporouSIMD<xref:System.Numerics> oboru názvů.
+.NET poskytuje celou řadu číselná celá čísla a primitivních koncových bodů a také <xref:System.Numerics.BigInteger?displayProperty=nameWithType>, což je celočíselný typ bez teoretické horní ani dolní meze, <xref:System.Numerics.Complex?displayProperty=nameWithType>, která představuje komplexní čísla a sadu typů s povoleným SIMD v oboru názvů <xref:System.Numerics> .
   
 ## <a name="integer-types"></a>Celočíselné typy
 
-.NET podporuje jak znaménkem a bez znaménka 8, 16, 32 a 64bitové celočíselné typy, které jsou uvedeny v následující tabulce:
+Rozhraní .NET podporuje typy celého čísla se znaménkem a bez znaménka 8, 16, 32 a 64, které jsou uvedeny v následující tabulce:
   
-|Type|Signed/Unsigned|Velikost (v bajtech)|Minimální hodnota|Maximální hodnota|  
+|Typ|Signed/unsigned|Velikost (v bajtech)|Minimální hodnota|Maximální hodnota|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
-|<xref:System.Byte?displayProperty=nameWithType>|bez znaménka|1|0|255|  
-|<xref:System.Int16?displayProperty=nameWithType>|podepsané|2|-32,768|32,767|  
-|<xref:System.Int32?displayProperty=nameWithType>|podepsané|4|-2,147,483,648|2,147,483,647|  
-|<xref:System.Int64?displayProperty=nameWithType>|podepsané|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
-|<xref:System.SByte?displayProperty=nameWithType>|podepsané|1|-128|127|  
-|<xref:System.UInt16?displayProperty=nameWithType>|bez znaménka|2|0|65,535|  
-|<xref:System.UInt32?displayProperty=nameWithType>|bez znaménka|4|0|4,294,967,295|  
-|<xref:System.UInt64?displayProperty=nameWithType>|bez znaménka|8|0|18,446,744,073,709,551,615|  
+|<xref:System.Byte?displayProperty=nameWithType>|Celé|první|0,8|255|  
+|<xref:System.Int16?displayProperty=nameWithType>|Podpisy|odst|-32 768|32 767|  
+|<xref:System.Int32?displayProperty=nameWithType>|Podpisy|4|-2 147 483 648|2 147 483 647|  
+|<xref:System.Int64?displayProperty=nameWithType>|Podpisy|8|– 9223372036854775808|9 223 372 036 854 775 807|  
+|<xref:System.SByte?displayProperty=nameWithType>|Podpisy|první|-128|127|  
+|<xref:System.UInt16?displayProperty=nameWithType>|Celé|odst|0,8|65 535|  
+|<xref:System.UInt32?displayProperty=nameWithType>|Celé|4|0,8|4 294 967 295|  
+|<xref:System.UInt64?displayProperty=nameWithType>|Celé|8|0,8|18446744073709551615|  
   
-Každý typ celé číslo podporuje sadu standardních aritmetické operátory. <xref:System.Math?displayProperty=nameWithType> Třída poskytuje metody pro pestřejší škálu matematických funkcí.
+Každý typ Integer podporuje sadu standardních aritmetických operátorů. Třída <xref:System.Math?displayProperty=nameWithType> poskytuje metody pro širší sadu matematických funkcí.
 
-Jednotlivé bitů v celočíselnou hodnotou. můžete také pracovat s použitím <xref:System.BitConverter?displayProperty=nameWithType> třídy.  
+Můžete také pracovat s jednotlivými bity v celočíselné hodnotě pomocí třídy <xref:System.BitConverter?displayProperty=nameWithType>.  
 
 > [!NOTE]  
-> Celé číslo bez znaménka typy nejsou kompatibilní se Specifikací CLS. Další informace najdete v tématu [jazyková nezávislost a jazykově nezávislé komponenty](language-independence-and-language-independent-components.md).
+> Typy unsigned integer nejsou kompatibilní se specifikací CLS. Další informace najdete v tématu [nezávislost jazyka a jazykové komponenty nezávislé na jazyce](language-independence-and-language-independent-components.md).
 
 ## <a name="biginteger"></a>BigInteger
 
-<xref:System.Numerics.BigInteger?displayProperty=nameWithType> Struktura je neumlčitelným typem, který představuje celé libovolně velké, jehož hodnota teoreticky nemá žádné horní nebo dolní meze. Metody <xref:System.Numerics.BigInteger> typ úzce paralelní u jiné typy celých čísel.
+Struktura <xref:System.Numerics.BigInteger?displayProperty=nameWithType> je neměnný typ, který představuje libovolně velké celé číslo, jehož hodnota teoreticky nemá žádné horní ani dolní meze. Metody <xref:System.Numerics.BigInteger> typu úzce rovnoběžně s ostatními integrálními typy.
   
 ## <a name="floating-point-types"></a>Typy s plovoucí desetinnou čárkou
 
-.NET obsahuje tři primitivní typy s plovoucí čárkou, které jsou uvedeny v následující tabulce:
+Rozhraní .NET zahrnuje tři primitivní typy s plovoucí desetinnou čárkou, které jsou uvedeny v následující tabulce:
   
-|Type|Velikost (v bajtech)|Přibližný rozsah|Přesnost|  
+|Typ|Velikost (v bajtech)|Přibližný rozsah|Přesnost|  
 |----------|--------|---------------------|--------------------|  
-|<xref:System.Single?displayProperty=nameWithType>|4|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|  
-|<xref:System.Double?displayProperty=nameWithType>|8|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|~ 15-17 číslic|  
-|<xref:System.Decimal?displayProperty=nameWithType>|16|±1.0 x 10<sup>– 28</sup> k ±7.9228 x 10<sup>28</sup>|28 – 29 číslic|  
+|<xref:System.Single?displayProperty=nameWithType>|4|± 1,5 × 10<sup>− 45</sup> až ± 3,4 × 10<sup>38</sup>|~ 6-9 číslic|  
+|<xref:System.Double?displayProperty=nameWithType>|8|± 5,0 × 10<sup>− 324</sup> do ± 1,7 × 10<sup>308</sup>|~ 15-17 číslic|  
+|<xref:System.Decimal?displayProperty=nameWithType>|16bitovém|± 1,0 × 10<sup>– 28</sup> až 7,9228 × 10<sup>28</sup>|28-29 číslic|  
   
-Obě <xref:System.Single> a <xref:System.Double> typů podporuje speciální hodnot, které představují not a number a nekonečno. Například <xref:System.Double> typ poskytuje následující hodnoty: <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>, a <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. Můžete použít <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType>, a <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType> metody testování pro tyto speciální hodnoty.
+Typy <xref:System.Single> i <xref:System.Double> podporují speciální hodnoty, které nepředstavují nečíselné a nekonečno. Například typ <xref:System.Double> poskytuje následující hodnoty: <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>a <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. K otestování těchto speciálních hodnot můžete použít metody <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType>a <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType>.
 
-Každý typ s plovoucí desetinnou čárkou podporuje sadu standardních aritmetické operátory. <xref:System.Math?displayProperty=nameWithType> Třída poskytuje metody pro pestřejší škálu matematických funkcí. Zahrnuje .NET core 2.0 a novější <xref:System.MathF?displayProperty=nameWithType> třídu, která poskytuje metody, které přijímají argumenty <xref:System.Single> typu.
+Každý typ s plovoucí desetinnou čárkou podporuje sadu standardních aritmetických operátorů. Třída <xref:System.Math?displayProperty=nameWithType> poskytuje metody pro širší sadu matematických funkcí. .NET Core 2,0 a novější obsahuje třídu <xref:System.MathF?displayProperty=nameWithType>, která poskytuje metody, které přijímají argumenty typu <xref:System.Single>.
 
-Můžete také pracovat s jednotlivých bity v <xref:System.Double> a <xref:System.Single> hodnot pomocí <xref:System.BitConverter?displayProperty=nameWithType> třídy. <xref:System.Decimal?displayProperty=nameWithType> Struktura má své vlastní metody <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> a <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>, pro práci s desetinnou hodnotou jednotlivé služby bits, stejně jako vlastní sadu metod pro provádění některých dalších matematických operací.
+Můžete také pracovat s jednotlivými bity v <xref:System.Double> a <xref:System.Single> hodnoty pomocí třídy <xref:System.BitConverter?displayProperty=nameWithType>. <xref:System.Decimal?displayProperty=nameWithType> struktura má své vlastní metody, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> a <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>pro práci s jednotlivými bity desítkové hodnoty a také s vlastní sadou metod pro provádění některých dalších matematických operací.
   
-<xref:System.Double> a <xref:System.Single> typy mají být použita pro hodnoty, které jsou ze své podstaty nepřesný (například vzdálenost mezi dvěma hvězdičkami) a pro aplikace, ve kterých vysoký stupeň přesnost a malé zaokrouhlení chyby se nevyžaduje. Měli byste použít <xref:System.Decimal?displayProperty=nameWithType> typ pro případy, kdy větší přesnost je povinný a předešlo chybám při zaokrouhlování byste měli minimalizovat.
+Typy <xref:System.Double> a <xref:System.Single> jsou určeny k použití pro hodnoty, které jsou jejich povahou nepřesné (například vzdálenost mezi dvěma hvězdičkami) a pro aplikace, u kterých není potřeba vysoký stupeň přesnosti a menší chyba zaokrouhlení. <xref:System.Decimal?displayProperty=nameWithType> typ byste měli použít pro případy, kdy je potřeba větší přesnost a že se mají minimalizovat chyby při zaokrouhlování.
 
 > [!NOTE]
-> <xref:System.Decimal> Typ nemá eliminovat potřebu zaokrouhluje se směrem. Místo toho minimalizuje chyby vzniklé v důsledku zaokrouhlení.
+> Typ <xref:System.Decimal> neeliminuje nutnost zaokrouhlování. Místo toho minimalizuje chyby z důvodu zaokrouhlení.
   
 ## <a name="complex"></a>Komplexní
 
-<xref:System.Numerics.Complex?displayProperty=nameWithType> Struktura představuje komplexní čísla, tedy číslo s část reálné číslo a je součástí imaginary číslo. Podporuje standardní sadu aritmetický, porovnání, rovnosti, převod explicitní a implicitní operátory, jakož i matematické algebraických a trigonometrických metody.  
+Struktura <xref:System.Numerics.Complex?displayProperty=nameWithType> představuje komplexní číslo, tedy číslo s částí reálné číslo a imaginární číslo součásti. Podporuje standardní sadu aritmetických operátorů, porovnání, rovnosti, explicitního a implicitního převodu a také matematické, algebraických a trigonometrické metody.  
   
-## <a name="simd-enabled-types"></a>Typy s podporou SIMD
+## <a name="simd-enabled-types"></a>Typy s povolenou SIMD
 
-<xref:System.Numerics> Obor názvů obsahuje sadu typů podporou .NET SIMD. Operace SIMD (jeden více dat instrukce) může být paralelizována na úrovni hardwaru. Která se zvyšuje propustnost vektorizovaných výpočty, které jsou běžné v matematické, vědecká a grafické aplikace.
+Obor názvů <xref:System.Numerics> obsahuje sadu typů s podporou .NET SIMD. Operace SIMD (Single Instruction Multiple Data) se dají paralelně nacházet na úrovni hardwaru. To zvyšuje propustnost vektorových výpočtů, které jsou běžné v matematických, vědeckých a grafických aplikacích.
   
-Podporou .NET SIMD typy zahrnují následující:
+Mezi typy s podporou .NET SIMD patří následující:
 
-- <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3>, A <xref:System.Numerics.Vector4> typy, které představují vektorů s 2, 3 a 4 <xref:System.Single> hodnoty.
+- Typy <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3>a <xref:System.Numerics.Vector4>, které reprezentují vektory se 2, 3 a 4 hodnotami <xref:System.Single>.
 
-- Dva typy matice, <xref:System.Numerics.Matrix3x2>, která představuje matici 3 x 2, a <xref:System.Numerics.Matrix4x4>, která představuje matice 4 x 4.
+- Dva typy matric, <xref:System.Numerics.Matrix3x2>, které představují matici 3x2 a <xref:System.Numerics.Matrix4x4>, které představují matici 4x4.
 
-- <xref:System.Numerics.Plane> Typ, který představuje roviny v trojrozměrném prostoru.
+- Typ <xref:System.Numerics.Plane>, který představuje rovinu v trojrozměrném prostoru.
 
-- <xref:System.Numerics.Quaternion> Typ, který představuje vektor, který se používá ke kódování trojrozměrné rotace fyzické.
+- Typ <xref:System.Numerics.Quaternion>, který představuje vektor, který je použit ke kódování trojrozměrného fyzického otočení.
 
-- <xref:System.Numerics.Vector%601> Typ, který představuje vektor zadaný číselný typ a poskytuje širokou škálu operátory, které využívají samosprávné SIMD podpory. Počet <xref:System.Numerics.Vector%601> instance je pevně daná, ale její hodnota <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> závisí na procesoru počítače, na kterém je kód spuštěn.
+- Typ <xref:System.Numerics.Vector%601>, který představuje vektor zadaného číselného typu a poskytuje širokou škálu operátorů, které využívají podporu SIMD. Počet instancí <xref:System.Numerics.Vector%601> je pevný, ale její hodnota <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> závisí na procesoru počítače, na kterém je spuštěný kód.
   > [!NOTE]
-  > <xref:System.Numerics.Vector%601> Typ není součástí rozhraní .NET Framework. Je nutné nainstalovat [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors) balíčku NuGet získáte přístup k tomuto typu.
+  > Typ <xref:System.Numerics.Vector%601> není zahrnutý do .NET Framework. Aby bylo možné získat přístup k tomuto typu, je nutné nainstalovat balíček NuGet [System. Numerics. Vectors.](https://www.nuget.org/packages/System.Numerics.Vectors)
   
-Typy podporou SIMD jsou implementovány způsobem, že jde použít s SIMD nepodporujícím hardwaru nebo kompilátorů JIT. Abyste mohli využívat SIMD pokyny, 64bitové aplikace musí spustit modul runtime, který používá kompilátor komponentách RyuJIT, která je zahrnuta v .NET Core a .NET Framework 4.6 a novějším. Přidá podporu SIMD při cílení na 64bitové procesory.
+Typy s podporou SIMD jsou implementovány takovým způsobem, že je lze použít s neSIMD hardwarem nebo kompilátory JIT. Aby bylo možné využít SIMD instrukcí, musí být vaše 64 aplikace spuštěny modulem runtime, který používá kompilátor RyuJIT, který je součástí .NET Core a v .NET Framework 4,6 a novějších verzích. Přidá podporu SIMD, pokud cílíte na 64 procesorů.
 
 ## <a name="see-also"></a>Viz také:
 

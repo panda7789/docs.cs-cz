@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7c0af9e9-a73f-41aa-a685-b21c439e059d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 354e1b0dad942534068d5fb07071ed4ac695fb49
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: df2750f082ddc40bbeee121116c3e877d037da84
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764881"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140427"
 ---
 # <a name="icorpublishprocessgetdisplayname-method"></a>ICorPublishProcess::GetDisplayName – metoda
-Získá úplnou cestu ke spustitelnému souboru pro proces odkazuje toto [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
+Získá úplnou cestu ke spustitelnému souboru pro proces, na který odkazuje tento [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT GetDisplayName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost `szName` pole.  
+ pro Velikost pole `szName`.  
   
  `pcchName`  
- [out] Počet širokých znaků, které jsou vráceny v `szName` pole.  
+ mimo Počet velkých znaků vrácených v poli `szName`.  
   
  `szName`  
- [out] Pole pro uložení názvu, včetně úplné cesty ke spustitelnému souboru. Název je zakončený hodnotou null.  
+ mimo Pole, do kterého se má uložit název, včetně úplné cesty spustitelného souboru. Název je zakončený hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Datová vazba WPF s LINQ to XML
 ms.date: 10/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: c423ad9c8069b78b2e69a88d25d8e12bd3a3a1b7
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 53bc5e09d3c837b69c8f215b1b5c61d1b745f683
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920704"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139799"
 ---
 # <a name="overview-of-wpf-data-binding-with-linq-to-xml"></a>Přehled datové vazby WPF pomocí LINQ to XML
 
@@ -91,4 +91,4 @@ Chcete-li implementovat dynamickou vazbu WPF, budou dynamické vlastnosti použi
 - [Dynamické vlastnosti LINQ to XML](linq-to-xml-dynamic-properties.md)
 - [XAML ve WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf)
 - [Datová vazba (WPF)](/dotnet/framework/wpf/data/data-binding-wpf)
-- [Použití značek pracovního postupu](http://go.microsoft.com/fwlink/?LinkId=98685)
+- [Použití značek pracovního postupu](https://go.microsoft.com/fwlink/?LinkId=98685)

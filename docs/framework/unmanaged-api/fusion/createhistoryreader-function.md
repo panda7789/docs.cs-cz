@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66a89acf-8c32-44c0-8787-960c99c7b3ec
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2710d14d6e73879fd17a6b58659463ea205f2384
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 80979f0424469bb1d4771ad6507bb8c9d5364ab4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795375"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108612"
 ---
 # <a name="createhistoryreader-function"></a>CreateHistoryReader – funkce
 Vytvoří čtečku historie pro zadaný soubor.  
@@ -48,12 +46,12 @@ HRESULT CreateHistoryReader (
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Označuje, že metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|Označuje, `wzFilePath` že `ppHistoryReader` nebo jsou nastaveny na odkaz s hodnotou null.|  
+|E_INVALIDARG|Označuje, že `wzFilePath` nebo `ppHistoryReader` jsou nastaveny na odkaz s hodnotou null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Knihovna** Fusion.dll  
+ **Knihovna:** Fusion. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

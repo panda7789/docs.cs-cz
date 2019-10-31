@@ -17,17 +17,15 @@ helpviewer_keywords:
 ms.assetid: 316df866-442d-40cc-b049-45e8adcb65d1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 08f34822099468b8c52f1d7ea2c665205f1b6c01
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2579bed9ae432a2b9460c421c6ee5bdc40d1e149
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774428"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121837"
 ---
 # <a name="icoreclrdebugtargetenumruntimes-method"></a>ICoreClrDebugTarget::EnumRuntimes – metoda
-Vytvoří výčet common language runtime (CLRs) v zadané proces, který běží na vzdáleném počítači.  
+Vytvoří výčet modulu CLR (Common Language Runtime) (CLRs) v zadaném procesu, který je spuštěn ve vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,38 +39,38 @@ HRESULT EnumRuntimes (
   
 ## <a name="parameters"></a>Parametry  
  `dwInternalProcessID`  
- [in] Interní proces ID procesu, pro kterou chcete vytvořit výčet modulů runtime. Bude jím `m_dwInternalID` od odpovídajících [coreclrdebugprocinfo –](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md).  
+ pro Interní ID procesu, pro který chcete vytvořit výčet modulů runtime. Tato akce bude `m_dwInternalID`a z odpovídajících [coreclrdebugprocinfo –](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md).  
   
  `pcRuntimes`  
- [out] Počet modulů runtime, které jsou vráceny v `ppRuntimes`. Tato hodnota může být 0 (nula).  
+ mimo Počet běhu vrácených v `ppRuntimes`. Tato hodnota může být 0 (nula).  
   
  `ppRuntimes`  
- [out] Pole [coreclrdebugruntimeinfo –](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugruntimeinfo-structure.md) struktury, které představují modulů runtime načten v vzdálenému cílovému procesu.  
+ mimo Pole struktur [coreclrdebugruntimeinfo –](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugruntimeinfo-structure.md) , které reprezentují moduly runtime načtené ve vzdáleném cílovém procesu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěch.  
+ Nástup.  
   
  S_FALSE  
- `dwInternalProcessID` se neshoduje s jakýkoli proces, který běží na počítači, pravděpodobně protože proces byl ukončen. `pcRuntimes` a `ppRuntimes` bude mít hodnotu null.  
+ `dwInternalProcessID` neodpovídá žádnému procesu, který je spuštěn v počítači, pravděpodobně proto, že proces byl ukončen. `pcRuntimes` a `ppRuntimes` budou mít hodnotu null.  
   
  E_OUTOFMEMORY  
- Nepovedlo se přidělit dostatek paměti pro `ppRuntimes`.  
+ Nelze přidělit dostatek paměti pro `ppRuntimes`.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Jiné chyby.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Další chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte [icoreclrdebugtarget::freememory –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) metody.  
+ Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget:: FreeMemory –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1  
+ **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 

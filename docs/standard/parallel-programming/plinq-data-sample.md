@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 60693a6570eff6f9d4980d8f29f1385bc7462f08
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: b13a2608df486f1de42514d4f8eaac49f04d345e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353151"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140008"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
 Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které ji transformují na kolekce v paměti pro zákazníky, produkty, objednávky a podrobnosti objednávky. K dalšímu experimentování s PLINQ můžete vložit příklady kódu z některých dalších témat do kódu v tomto tématu a vyvolat ho z metody `Main`. Tato data můžete také použít s vlastními dotazy PLINQ.  

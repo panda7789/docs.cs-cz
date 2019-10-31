@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0d6a1cd9-370b-4462-adbf-e3980e897ea7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d17f51867b64780fca9b21c5f48c88db36343af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 51ee8b3631bffe9fd7fef4351e0aa67d1cbbe2c9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748781"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125390"
 ---
 # <a name="icordebugcontrollerhasqueuedcallbacks-method"></a>ICorDebugController::HasQueuedCallbacks – metoda
-Získá hodnotu určující, zda všechny spravované zpětná volání jsou právě ve frontě pro zadaný podproces.  
+Získá hodnotu, která označuje, zda jsou pro zadané vlákno aktuálně zařazena všechna spravovaná zpětná volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +36,25 @@ HRESULT HasQueuedCallbacks (
   
 ## <a name="parameters"></a>Parametry  
  `pThread`  
- [in] Ukazatel na objekt "ICorDebugThread", který představuje vlákno.  
+ pro Ukazatel na objekt "ICorDebugThread", který představuje vlákno.  
   
  `pbQueued`  
- [out] Ukazatel na hodnotu, která je `true` Pokud žádné spravované zpětná volání nejsou aktuálně ve frontě pro zadaný podproces; v opačném případě `false`.  
+ mimo Ukazatel na hodnotu, která je `true`, pokud jsou pro zadané vlákno aktuálně zařazena všechna spravovaná zpětná volání. v opačném případě `false`.  
   
- Pokud je zadána hodnota null pro `pThread` parametr `HasQueuedCallbacks` vrátí `true` Pokud aktuálně spravované zpětná volání zařazených do fronty pro jakékoli vlákno.  
+ Pokud je pro parametr `pThread` zadána hodnota null, `HasQueuedCallbacks` vrátí `true`, pokud jsou aktuálně spravovaná zpětná volání zařazena do fronty pro jakékoli vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Zpětná volání bude odbavované jeden po druhém, pokaždé, když [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volána. Ladicí program můžete zkontrolovat tento příznak, pokud chce sestavy více ladění události, které probíhají souběžně.  
+ Zpětná volání budou odeslána po jednom, pokaždé, když se zavolá [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) . Ladicí program může tento příznak kontrolovat, pokud chce ohlásit více událostí ladění, ke kterým dochází současně.  
   
- Při ladění událostí se zařadí do fronty, jsou již došlo, aby ladicí program musí vyprázdnit celá fronta opravdu o stavu laděného procesu. (Volání `ICorDebugController::Continue` k vyprázdnění fronty.) Například, pokud tato fronta obsahuje dvě ladění události na vlákně *X*, a ladicí program pozastaví vlákno *X* po první ladění události a poté zavolá `ICorDebugController::Continue`, druhá událost ladění pro vlákno *X* bude odeslána, i když je pozastavená vlákna.  
+ Když jsou události ladění zařazeny do fronty, již byly k dispozici, takže ladicí program musí celou frontu vyprázdnit, aby bylo zajištěno, že je stav laděného procesu. (Zavoláním `ICorDebugController::Continue` vyprázdní frontu.) Pokud například fronta obsahuje dvě události ladění ve vlákně *x*a ladicí program pozastaví vlákno *x* po první události ladění a poté zavolá `ICorDebugController::Continue`, bude druhá událost ladění pro vlákno *x* odeslána, i když podproces byl pozastaven.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

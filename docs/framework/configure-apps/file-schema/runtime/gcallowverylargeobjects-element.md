@@ -5,21 +5,19 @@ helpviewer_keywords:
 - gcAllowVeryLargeObjects element
 - <gcAllowVeryLargeObjects> element
 ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3f638a880aaa21bc41d2575f3609dabae158c1a0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b6230833808ec45d702502e36f929db4e03173e1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252571"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116795"
 ---
-# <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects> Element
+# <a name="gcallowverylargeobjects-element"></a>\<element > gcAllowVeryLargeObjects
 Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<gcAllowVeryLargeObjects>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcAllowVeryLargeObjects >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +37,7 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Pole o celkové velikosti větší než 2 GB nejsou povolena. Toto nastavení je výchozí.|  
 |`true`|Pole o celkové velikosti větší než 2 GB jsou povolena na 64bitových platformách.|  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetPropertyOrigin function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0c2d0f23f3dd2d52f73f09c32d4e3118a9ed5ea3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6cab3765f0359f5dd18831acaaa1aefce3fe1081
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798492"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101854"
 ---
 # <a name="getpropertyorigin-function"></a>Funkce GetPropertyOrigin
 
@@ -58,13 +56,13 @@ mimo Přijímá název třídy, která vlastní vlastnost.
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost nebyla nalezena. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -72,13 +70,13 @@ Tato funkce zalomí volání metody [IWbemclassObject:: GetPropertyOrigin](/wind
 
 Vzhledem k tomu, že třída může dědit vlastnosti z jedné nebo více základních tříd, vývojáři často chtějí určit vlastnost, ve které je daná metoda definována.
 
-Parametr nesmí ukazovat na platnou `BSTR` hodnotu před voláním funkce, protože se jedná o `out` parametr; po návratu funkce se tento ukazatel nevrátí. `pstrClassName`
+Parametr `pstrClassName` nesmí nasměrovat na platný `BSTR` před voláním funkce, protože se jedná o parametr `out`; Tento ukazatel se nevrátí po vrácení funkce.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

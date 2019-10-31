@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 11e18095-e444-47bc-aff6-b887ac5dc01e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f14d00f17a61576a50e26d3cbcf734a10ed3c03a
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 9d30c8fe71a0dfff7de9bb2f43b325cbb8016a23
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895015"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123042"
 ---
 # <a name="guid_managedname-attribute"></a>GUID_ManagedName – atribut
 Definuje vlastní atribut rozhraní, který určuje název spravovaného oboru názvů pro knihovnu modelu COM (Component Object Model).  
@@ -39,7 +37,7 @@ Definuje vlastní atribut rozhraní, který určuje název spravovaného oboru n
  Název spravovaného oboru názvů pro knihovnu.  
   
 ## <a name="definition"></a>Definice  
- `GUID_ManagedName`je definována v cor. h následujícím způsobem:  
+ `GUID_ManagedName` je definována v cor. h následujícím způsobem:  
   
 ```cpp
 // {0F21F359-AB84-41e8-9A78-36D110E6D2F9}  
@@ -49,12 +47,12 @@ EXTERN_GUID(GUID_ManagedName, 0xf21f359, 0xab84, 0x41e8, 0x9a, 0x78, 0x36, 0xd1,
 ## <a name="remarks"></a>Poznámky  
  Vlastní atribut rozhraní definuje metadata pro objekt v knihovně typů.  
   
- Použijte <xref:System.Runtime.InteropServices.ComTypes.ITypeInfo2.GetCustData%2A?displayProperty=nameWithType> nebo<xref:System.Runtime.InteropServices.ComTypes.ITypeLib2.GetCustData%2A?displayProperty=nameWithType> k načtení spravovaného názvu z atributu.  
+ K načtení spravovaného názvu z atributu použijte <xref:System.Runtime.InteropServices.ComTypes.ITypeInfo2.GetCustData%2A?displayProperty=nameWithType> nebo <xref:System.Runtime.InteropServices.ComTypes.ITypeLib2.GetCustData%2A?displayProperty=nameWithType>.  
   
  Další informace naleznete v tématu [atributy rozhraní](/cpp/windows/attributes/interface-attributes) v dokumentaci Visual C++ reference.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje definici knihovny pomocí `GUID_ManagedName` atributu.  
+ Následující příklad ukazuje definici knihovny pomocí atributu `GUID_ManagedName`.  
   
 ```idl
 [  
@@ -68,4 +66,4 @@ library Microsoft_VisualStudio_CommandBars
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlaviček** Cor. h
+ **Hlavička:** Cor. h

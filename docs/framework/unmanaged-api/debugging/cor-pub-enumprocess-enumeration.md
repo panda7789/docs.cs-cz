@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5d3ada6e-feea-47da-a7ed-b664107c137f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eab5fc13b74d8af4f0baaa3953c5c73ea255bfe6
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: f789105751ae2d498740ab60f326f9c0597483b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274023"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099201"
 ---
 # <a name="cor_pub_enumprocess-enumeration"></a>COR_PUB_ENUMPROCESS – výčet
 Určuje typ procesu, který se má vyčíslit.  
@@ -44,11 +42,11 @@ typedef enum {
  Aktuální verze nespravovaného ladicího rozhraní API vytváří výčet pouze spravovaných procesů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorPub. idl, CorPub. h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

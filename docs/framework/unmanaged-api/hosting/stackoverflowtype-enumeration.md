@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: dab648ad-972b-479c-b129-b4c1dcbd932e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 44d5b7fdb2908678671505649bb906c0c5f740e3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f09c6bb79d7bd28f4d8b74237b6f343a07b79062
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751130"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141480"
 ---
 # <a name="stackoverflowtype-enumeration"></a>StackOverflowType – výčet
-Obsahuje hodnoty, které označují základní příčiny událost přetečení zásobníku.  
+Obsahuje hodnoty, které indikují základní příčinu události přetečení zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SO_ClrEngine`|Prováděcí modul způsobila přetečení zásobníku.|  
-|`SO_Managed`|Spravovaný kód způsobila přetečení zásobníku.|  
-|`SO_Other`|Nespravovaný kód způsobila přetečení zásobníku.|  
+|`SO_ClrEngine`|Přetečení zásobníku bylo způsobené prováděcím modulem.|  
+|`SO_Managed`|Přetečení zásobníku bylo způsobeno spravovaným kódem.|  
+|`SO_Other`|Přetečení zásobníku bylo způsobeno nespravovaným kódem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tyto informace se předává k hostiteli volání [iactiononclrevent::ONEVENT –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) metody.  
+ Tyto informace jsou předány hostiteli prostřednictvím volání metody [IActionOnCLREvent –::](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

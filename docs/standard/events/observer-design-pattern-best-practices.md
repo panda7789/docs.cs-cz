@@ -6,52 +6,50 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], best practices
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c37480f18c100d66e78e851439bd15e2ecfdd381
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2da29e0baf429142707d0ddd39b1a11c13a17a90
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615197"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141535"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Doporučené postupy pro návrhový vzor Pozorovatel
-V rozhraní .NET Framework návrhový vzor pozorovatel implementované jako sada rozhraní. <xref:System.IObservable%601?displayProperty=nameWithType> Rozhraní představuje poskytovatele dat, který je také odpovídají za poskytování <xref:System.IDisposable> implementace, která umožňuje zrušit odběr oznámení pozorovatele. <xref:System.IObserver%601?displayProperty=nameWithType> Rozhraní představuje pozorovatele. Toto téma popisuje osvědčené postupy, které vývojáři by měly dodržovat při implementaci návrhový vzor pozorovatel pomocí těchto rozhraní.  
+V .NET Framework je vzor návrhu pozorovatele implementovaný jako sada rozhraní. Rozhraní <xref:System.IObservable%601?displayProperty=nameWithType> představuje poskytovatele dat, který je také zodpovědný za poskytování <xref:System.IDisposable> implementace, která umožňuje pozorovatelům zrušit odběr oznámení. Rozhraní <xref:System.IObserver%601?displayProperty=nameWithType> představuje pozorovatele. Toto téma popisuje osvědčené postupy, které by se měly vývojáři řídit při implementaci vzorového vzoru pozorovatele pomocí těchto rozhraní.  
   
 ## <a name="threading"></a>Dělení na vlákna  
- Obvykle zprostředkovatele implementuje <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> implementuje metodu tak, že přidáte konkrétní pozorovatel k odběrateli seznamu, která je reprezentována některý objekt kolekce a <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metoda odebráním konkrétní pozorovatel ze seznamu odběratele. Pozorovatel může volat tyto metody kdykoli. Kromě toho, protože kontrakt poskytovatele/pozorovatel neurčuje kdo zodpovídá za registraci po <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> metoda zpětného volání, zprostředkovatele a pozorovatel může i pokuste se odebrat stejného člena ze seznamu. Z důvodu tuto možnost jak <xref:System.IObservable%601.Subscribe%2A> a <xref:System.IDisposable.Dispose%2A> metody by měly být bezpečné pro vlákna. Obvykle to zahrnuje použití [souběžných kolekcích](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md) nebo zámek. Implementace, které nejsou bezpečné pro vlákna musí explicitně dokumentů, které nejsou.  
+ Poskytovatel obvykle implementuje metodu <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> přidáním konkrétního pozorovatele do seznamu odběratelů, který je reprezentován nějakým objektem kolekce, a implementuje metodu <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> odebráním konkrétního pozorovatele ze seznamu předplatitelů. Pozorovatel může tyto metody kdykoli zavolat. Vzhledem k tomu, že kontrakt poskytovatele/pozorovatele neurčí, kdo zodpovídá za zrušení odběru po <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> metody zpětného volání, může se stát, že se zprostředkovatel a pozorovatel pokusí odebrat stejného člena ze seznamu. Z důvodu této možnosti by měly být obě metody <xref:System.IObservable%601.Subscribe%2A> i <xref:System.IDisposable.Dispose%2A> bezpečné pro přístup z více vláken. Obvykle to zahrnuje použití [Souběžné kolekce](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md) nebo zámku. Implementace, které nejsou bezpečné pro přístup z více vláken, by měly explicitně zdokumentovat, že nejsou.  
   
- Žádné další záruky muset zadat ve vrstvě nad poskytovatele/pozorovatel kontraktu. Implementátory by měly volat jasně navýšení kapacity, při další požadavky, aby nedocházelo k záměně uživatele o smlouvě pozorovatel ukládají.  
+ Jakékoli další záruky musí být zadány ve vrstvě nad smlouvou poskytovatele/pozorovatele. Implementátori by se jasně museli volat při zavedení dalších požadavků, aby nedocházelo k záměně uživatele pozorovatele.  
   
 ## <a name="handling-exceptions"></a>Zpracování výjimek  
- Z důvodu volné párování mezi zprostředkovatele dat a pozorovatel výjimky v návrhovém vzoru pozorovatel mají být informativní. Tato akce ovlivní, jak poskytovatelů a pozorovatele zpracování výjimek v návrhovém vzoru pozorovatel.  
+ Z důvodu volného spojení mezi poskytovatelem dat a pozorovatelem mají výjimky v rámci vzoru pozorovatele informativní charakter. To má vliv na to, jak poskytovatelé a pozorovatelé zpracovávají výjimky v modelu návrhu pozorovatele.  
   
-### <a name="the-provider----calling-the-onerror-method"></a>Poskytovatel--Volání onerror – metoda  
- <xref:System.IObserver%601.OnError%2A> Metoda je určena jako informační zpráva pro pozorovatelé, podobně jako <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType> metody. Ale <xref:System.IObserver%601.OnNext%2A> metoda je navržené pro poskytování pozorovatel s aktuální nebo aktualizovaná data, zatímco <xref:System.IObserver%601.OnError%2A> metody slouží k označení, že je poskytovatel nemohl poskytnout platná data.  
+### <a name="the-provider----calling-the-onerror-method"></a>Zprostředkovatel – volání metody Error  
+ Metoda <xref:System.IObserver%601.OnError%2A> je určena jako informační zpráva pozorovatelům, podobně jako <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType> metoda. Metoda <xref:System.IObserver%601.OnNext%2A> je však navržena tak, aby poskytovala pozorovatele aktuálními nebo aktualizovanými daty, zatímco metoda <xref:System.IObserver%601.OnError%2A> je navržena tak, aby označovala, že zprostředkovatel nemůže poskytnout platná data.  
   
- Poskytovatel by měl postupujte podle těchto osvědčených postupů při zpracování výjimek a volání <xref:System.IObserver%601.OnError%2A> metody:  
+ Poskytovatel by měl dodržovat tyto osvědčené postupy při zpracování výjimek a volání metody <xref:System.IObserver%601.OnError%2A>:  
   
-- Zprostředkovatel musí zpracovávat své vlastní výjimky, pokud nemá žádné zvláštní požadavky.  
+- Poskytovatel musí zpracovat své vlastní výjimky, pokud má konkrétní požadavky.  
   
-- Poskytovatel by neměl neočekává ani nevyžaduje, pozorovatelé zpracování výjimek v konkrétním způsobem.  
+- Poskytovatel by neměl očekávat nebo vyžadovat, aby pozorovatelé zpracovávala výjimky jakýmkoli způsobem.  
   
-- Poskytovatel by měly volat <xref:System.IObserver%601.OnError%2A> metoda při zpracování výjimku, která ohrožuje schopnost poskytovat aktualizace. Informace o takové výjimky může být předán pozorovatele. V ostatních případech není nutné upozornit pozorovatelů výjimku.  
+- Poskytovatel by měl volat metodu <xref:System.IObserver%601.OnError%2A>, když zpracovává výjimku, která by ohrozila schopnost poskytovat aktualizace. Informace o takových výjimkách mohou být předány pozorovateli. V jiných případech není nutné upozorňovat pozorovatele na výjimku.  
   
- Po volání zprostředkovatele <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> metoda, měla by existovat žádná další upozornění a zprostředkovatele můžete zrušit jeho pozorovatelů. Ale pozorovatelů můžete také kdykoli sami, včetně před a po přijetí <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> oznámení. Návrhový vzor pozorovatel není určovat, zda zprostředkovatel nebo pozorovatel zodpovídá za registraci; Proto je možné, že oba může pokus o odhlášení odběru. Obvykle když pozorovatelů zrušení odběru, jsou odebrány z kolekce předplatitele. V aplikaci s jedním vláknem <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace se ujistěte, že je odkaz na objekt platný a že objekt je členem kolekce předplatitele před pokusem o jeho odstranění. Ve vícevláknových aplikacích kolekce bezpečné pro vlákna objektu, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> objektu, by měla sloužit.  
+ Jakmile zprostředkovatel zavolá metodu <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, neměla by existovat žádná další oznámení a poskytovatel může zrušit odběr svých pozorovatelů. Pozorovatelé ale můžou kdykoli zrušit odběr, včetně před i po obdržení <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> oznámení. Návrhový vzor pozorovatele neurčuje, jestli je poskytovatel nebo pozorovatel zodpovědný za zrušení odběru; Proto existuje možnost, že se může pokusit odhlásit odběr. Při zrušení odběru pozorovatelé se obvykle odeberou z kolekce předplatitelů. V aplikaci s jedním vláknem by implementace <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> měla zajistit, že odkaz na objekt je platný a že objekt je členem kolekce předplatitelů před pokusem o jeho odebrání. V aplikaci s více vlákny by se měl použít objekt kolekce bezpečný pro přístup z více vláken, například objekt <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>.  
   
-### <a name="the-observer----implementing-the-onerror-method"></a>Pozorovatel – Implementace onerror – metoda  
- Když pro pozorovatele, který obdrží oznámení o chybě od poskytovatele, pozorovatel měli považovat za výjimku informační a by neměl muset provádět žádnou konkrétní akci.  
+### <a name="the-observer----implementing-the-onerror-method"></a>Pozorovatel – Implementace metody Error  
+ Když pozorovatel obdrží oznámení o chybě od poskytovatele, pozorovatel by měl tuto výjimku považovat za informativní a neměl by se vyžadovat, aby provedl určitou akci.  
   
- Pozorovatel by měl dodržovat tyto osvědčené postupy při odpovídání na <xref:System.IObserver%601.OnError%2A> volání metody ze zprostředkovatele:  
+ Pozorovatel by měl dodržovat tyto osvědčené postupy při reagování na volání metody <xref:System.IObserver%601.OnError%2A> od poskytovatele:  
   
-- Pozorovatel by neměla vyvolávat výjimky z jeho implementací rozhraní, jako například <xref:System.IObserver%601.OnNext%2A> nebo <xref:System.IObserver%601.OnError%2A>. Pokud pozorovatel vyvolat výjimky, ho byste však očekávat tyto výjimky přejít neošetřená.  
+- Pozorovatel by neměl vyvolávat výjimky z jeho implementací rozhraní, například <xref:System.IObserver%601.OnNext%2A> nebo <xref:System.IObserver%601.OnError%2A>. Nicméně pokud pozorovatel vyvolá výjimky, by měl očekávat, že tyto výjimky jsou neošetřené.  
   
-- Pro zachování zásobník volání, pozorovatele, který chce throw <xref:System.Exception> objekt, který byl předán jeho <xref:System.IObserver%601.OnError%2A> metoda zalamován výjimky před vyvoláním ho. Standardní výjimka objektu by měla sloužit pro tento účel.  
+- Aby bylo možné zachovat zásobník volání, pozorovatel, který chce vyvolat objekt <xref:System.Exception>, který byl předán metodě <xref:System.IObserver%601.OnError%2A>, by měl před vyvoláním výjimky zabalit výjimku. Pro tento účel by měl být použit standardní objekt výjimky.  
   
-## <a name="additional-best-practices"></a>Další doporučené postupy  
- Pokus o zrušení registrace v <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> metoda může mít za následek odkaz s hodnotou null. Proto doporučujeme, abyste tento postup.  
+## <a name="additional-best-practices"></a>Další osvědčené postupy  
+ Pokus o zrušení registrace v metodě <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> může mít za následek odkaz s hodnotou null. Proto doporučujeme vyhnout se této praxi.  
   
- I když je možné se připojit k více poskytovatelů pozorovatele, je doporučený model pro připojení <xref:System.IObserver%601> instance má pouze jeden <xref:System.IObservable%601> instance.  
+ I když je možné připojit pozorovatele k více poskytovatelům, je doporučeným vzorem připojení instance <xref:System.IObserver%601> pouze k jedné instanci <xref:System.IObservable%601>.  
   
 ## <a name="see-also"></a>Viz také:
 

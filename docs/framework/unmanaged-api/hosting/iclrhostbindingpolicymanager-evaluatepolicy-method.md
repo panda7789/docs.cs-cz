@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3a3a9446-7a4e-4836-9b27-5c536c15993d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7d23b2371e7cc3c9d1e91af061c19b4fb0dbc69e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9600573a0a730cee10247d5644d587e75856cdd9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779695"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141188"
 ---
 # <a name="iclrhostbindingpolicymanagerevaluatepolicy-method"></a>ICLRHostBindingPolicyManager::EvaluatePolicy – metoda
-Vyhodnotí zásady vazeb jménem hostitele.  
+Vyhodnotí zásady vytváření vazeb jménem hostitele.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,47 +40,47 @@ HRESULT EvaluatePolicy (
   
 ## <a name="parameters"></a>Parametry  
  `pwzReferenceIdentity`  
- [in] Odkaz na sestavení před vyhodnocení zásad.  
+ pro Odkaz na sestavení před vyhodnocením zásad.  
   
  `pbApplicationPolicy`  
- [in] Ukazatel do vyrovnávací paměti, která obsahuje data zásad.  
+ pro Ukazatel na vyrovnávací paměť, která obsahuje data zásad.  
   
  `cbAppPolicySize`  
- [in] Velikost `pbApplicationPolicy` vyrovnávací paměti.  
+ pro Velikost vyrovnávací paměti `pbApplicationPolicy`.  
   
  `pwzPostPolicyReferenceIdentity`  
- [out] Odkaz na sestavení po skončení testování nová data zásad.  
+ mimo Odkaz na sestavení po vyhodnocení nových dat zásad  
   
  `pcchPostPolicyReferenceIdentity`  
- [out v] Ukazatel na velikost vyrovnávací paměti identity odkaz sestavení po skončení testování nová data zásad.  
+ [in, out] Ukazatel na velikost vyrovnávací paměti odkazu identity sestavení po vyhodnocení nových dat zásad.  
   
  `pdwPoliciesApplied`  
- [out] Ukazatel na logický OR kombinaci [ebindpolicylevels –](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md) hodnoty určující, které zásady byly použity.  
+ mimo Ukazatel na logickou nebo kombinaci hodnot [EBindPolicyLevels –](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md) , které označují, které zásady byly aplikovány.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Vyhodnocení bylo úspěšně dokončeno.|  
-|E_INVALIDARG|Buď `pwzReferenceIdentity` nebo `pbApplicationPolicy` je nulový odkaz.|  
-|ERROR_INSUFFICIENT_BUFFER|`cbAppPolicySize` je příliš malá.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|E_INVALIDARG|Buď `pwzReferenceIdentity` nebo `pbApplicationPolicy`, je odkaz s hodnotou null.|  
+|ERROR_INSUFFICIENT_BUFFER|`cbAppPolicySize` je příliš malý.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `EvaluatePolicy` Metoda umožňuje hostitele tak, aby ovlivňovala zásady vazby udržovat sestavení hostitele specifické požadavky na správu verzí. Samotný modul zásad zůstane uvnitř modulu CLR.  
+ Metoda `EvaluatePolicy` umožňuje hostiteli ovlivnit zásady vazeb pro zachování požadavků na správu verzí sestavení specifických pro hostitele. Samotný modul zásad zůstává v rámci CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

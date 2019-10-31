@@ -9,21 +9,19 @@ helpviewer_keywords:
 - container tags, <developmentMode> element
 - <developmentMode> element
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0253c3ced52b575097fe5d18abb8ce188c0164fb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 4a062da31740edb8f0c7a4f4db8b09800c687587
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252687"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117622"
 ---
-# <a name="developmentmode-element"></a>\<developmentMode – element >
+# <a name="developmentmode-element"></a>\<element > developmentMode
 Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<developmentMode>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<developmentMode >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +40,7 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
   
 ## <a name="developerinstallation-attribute"></a>developerInstallation – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |**true**|Vyhledá sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.|  
 |**false**|Nehledá sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH. Toto je výchozí nastavení.|  
@@ -75,4 +73,4 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Postupy: Hledání sestavení pomocí mechanismu DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)
+- [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)

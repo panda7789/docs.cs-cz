@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b9240712-829c-4c8d-9a09-a6e7aa63f63a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e66196e2bd2cb326ca3f5badc67bcf8d81e5fc3c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6c58a0726e0869178838999c6b000e0ad975f145
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799171"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140615"
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob – struktura
 Představuje v binárním formátu veřejný klíč páru veřejného a privátního klíče.  
@@ -41,20 +39,20 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SigAlgId`|Identifikátor algoritmu podpisu (typu `ALG_ID`, jak je definován v Wincrypt. h) veřejného klíče.|  
-|`HashAlgId`|Identifikátor algoritmu hash (typu `ALG_ID`, jak je definován v Wincrypt. h) veřejného klíče.|  
+|`SigAlgId`|Identifikátor algoritmu podpisu (typu `ALG_ID`, jak je definován v WinCrypt. h) veřejného klíče.|  
+|`HashAlgId`|Identifikátor algoritmu hash (typu `ALG_ID`, jak je definován v WinCrypt. h) veřejného klíče.|  
 |`cbPublicKey`|Délka klíče v bajtech|  
 |`PublicKey`|Bajtové pole s proměnlivou délkou, které obsahuje hodnotu klíče ve formátu vráceném rozhraním CryptoAPI.|  
   
 ## <a name="remarks"></a>Poznámky  
- Strukturu používá StrongNameGetPublicKey –, [StrongNameSignatureGeneration –](strongnamesignaturegeneration-function.md)a další funkce se silným názvem, které reprezentují veřejný klíč páru veřejného a privátního klíče. [](strongnamegetpublickey-function.md) `PublicKeyBlob`  
+ `PublicKeyBlob` struktura se používá v [StrongNameGetPublicKey –](strongnamegetpublickey-function.md), [StrongNameSignatureGeneration –](strongnamesignaturegeneration-function.md)a dalších funkcích se silným názvem, které reprezentují veřejný klíč páru veřejného a privátního klíče.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

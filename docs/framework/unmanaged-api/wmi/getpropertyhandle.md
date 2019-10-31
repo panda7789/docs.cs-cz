@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetPropertyHandle function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d72b0da43971a74a08a249b19dfc0d446eeb5e6a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5af003f0295e0b403727f9af6b03ab81c4b8bccb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798537"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101860"
 ---
 # <a name="getpropertyhandle-function"></a>Funkce GetPropertyHandle
 
@@ -62,12 +60,12 @@ mimo Ukazatel na celé číslo, které obsahuje popisovač vlastnosti.
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný název vlastnosti nebyl nalezen. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-|`WBEM_E_NOT_SUPPORTED` | 0x8004100c | Požadovaná vlastnost je typu `CIM_OBJECT` nebo. `CIM_ARRAY` |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_E_NOT_SUPPORTED` | 0x8004100c | Požadovaná vlastnost je typu `CIM_OBJECT` nebo `CIM_ARRAY`. |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -75,13 +73,13 @@ Tato funkce zalomí volání metody [IWbemclassObject:: GetPropertyHandle](/wind
 
 Tento popisovač můžete použít k identifikaci vlastností při použití metod [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) ke čtení nebo zápisu hodnot vlastností.
 
-Obslužné rutiny lze načíst pro vlastnosti všech datových typů, které `CIM_OBJECT` jsou `CIM_ARRAY`jiné než a. Vrácené obslužné rutiny fungují napříč všemi instancemi třídy.
+Obslužné rutiny lze načíst pro vlastnosti všech datových typů kromě `CIM_OBJECT` a `CIM_ARRAY`. Vrácené obslužné rutiny fungují napříč všemi instancemi třídy.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

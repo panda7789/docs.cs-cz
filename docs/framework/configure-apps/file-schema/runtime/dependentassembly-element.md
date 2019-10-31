@@ -9,22 +9,20 @@ helpviewer_keywords:
 - dependentAssembly element
 - <dependentAssembly> element
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3a0604161ed6e7c3ead4a2e518daebc8414689af
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 33309ed89b4d31580da5de3aeb38e9e1fd8ae4d0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252710"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117587"
 ---
-# <a name="dependentassembly-element"></a>\<dependentAssembly – > element
-Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé `dependentAssembly` sestavení použijte jeden prvek.  
+# <a name="dependentassembly-element"></a>\<– > elementu dependentAssembly
+Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé sestavení použijte jeden `dependentAssembly` element.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> dependentAssembly**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<dependentAssembly >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +41,7 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento prvek musí být zahrnut v každém `dependentAssembly` elementu.|  
+|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento prvek musí být zahrnut do každého prvku `dependentAssembly`.|  
 |`codeBase`|Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalován v počítači.|  
 |`bindingRedirect`|Přesměruje jednu verzi sestavení k jiné.|  
 |`publisherPolicy`|Určuje, zda modul runtime používá zásady vydavatele pro toto sestavení.|  

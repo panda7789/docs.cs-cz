@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a46925b3-3bf8-404f-9f30-a86ae41032c1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f50e5fcee3705e05aeed820cf736613c12b00e50
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e7821022e6966dbdea90d57b6899f09b2ed1964e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754868"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090525"
 ---
 # <a name="icordebugframegetfunctiontoken-method"></a>ICorDebugFrame::GetFunctionToken – metoda
-Získá token metadat pro funkci, která obsahuje kód spojený s rámce zásobníku.  
+Získá token metadat pro funkci, která obsahuje kód spojený s tímto rámcem zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetFunctionToken (
   
 ## <a name="parameters"></a>Parametry  
  `pToken`  
- [out] Ukazatel `mdMethodDef` token, který odkazuje na metadata pro funkci.  
+ mimo Ukazatel na token `mdMethodDef`, který odkazuje na metadata funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

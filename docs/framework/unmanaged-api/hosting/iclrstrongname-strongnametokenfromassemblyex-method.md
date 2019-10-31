@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 648ea90e-5e60-40a0-a56a-3e61bf2fba7c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9fbac8263944ff0d009fcc7c5f6aecdc7faed089
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 71fda266c22c4beb1e1f9c81c84d6c56a0a6110e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759185"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092575"
 ---
 # <a name="iclrstrongnamestrongnametokenfromassemblyex-method"></a>ICLRStrongName::StrongNameTokenFromAssemblyEx – metoda
-Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí představující token veřejného klíče.  
+Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí veřejný klíč, který token představuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +39,36 @@ HRESULT StrongNameTokenFromAssemblyEx (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [in] Cesta k souboru (PE portable executable) pro sestavení.  
+ pro Cesta k přenosnému spustitelnému souboru (PE) pro sestavení.  
   
  `ppbStrongNameToken`  
- [out] Token vrácený silného názvu.  
+ mimo Vrácený token silného názvu.  
   
  `pcbStrongNameToken`  
- [out] Velikost v bajtech, silný název tokenu.  
+ mimo Velikost tokenu silného názvu v bajtech.  
   
  `ppbPublicKeyBlob`  
- [out] Vrácené veřejný klíč.  
+ mimo Vrácený veřejný klíč.  
   
  `pcbPublicKeyBlob`  
- [out] Velikost v bajtech, veřejného klíče.  
+ mimo Velikost veřejného klíče v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Zkráceným tvarem veřejný klíč je token silného názvu. Token je hodnota hash 64-bit, který je vytvořen z veřejného klíče použitý k podepsání sestavení. Token, který je součástí silného názvu pro sestavení a může číst z metadat sestavení.  
+ Token silného názvu je zkrácenou formou veřejného klíče. Token je 64 hodnota hash, která je vytvořena z veřejného klíče použitého k podepsání sestavení. Token je součástí silného názvu sestavení a lze ho číst z metadat sestavení.  
   
- Poté, co načítání klíče a token, který je vytvořen, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.  
+ Po načtení klíče a vytvoření tokenu byste měli zavolat metodu [ICLRStrongName:: StrongNameFreeBuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) pro uvolnění přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

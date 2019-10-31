@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 5c66ac57-d751-4de5-af9f-26ceb949af8b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 81fcc99a739d5e673d1d01d5efb801ba4930bdee
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 426a8acf2e9319725cf592db00dc97c8960bca4f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752556"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139171"
 ---
-# <a name="pfnclrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance – ukazatel na funkci
+# <a name="pfn_clrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance – ukazatel na funkci
 Odkazuje na funkci, která vytvoří objekt rozhraní pro zadanou cílovou položku.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,25 +36,25 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
   
 ## <a name="parameters"></a>Parametry  
  `iid`  
- [in] Identifikátor rozhraní má být vytvořena.  
+ pro Identifikátor rozhraní, které má být vytvořena instance.  
   
  `target`  
- [in] Ukazatel na uživatelské implementované [iclrdatatarget –](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objekt, který představuje cílovou položku, pro který chcete vytvořit objekt rozhraní.  
+ pro Ukazatel na uživatelem implementovaný objekt [ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) , který představuje cílovou položku, pro kterou chcete vytvořit objekt rozhraní.  
   
  `iface`  
- [out] Ukazatel na adresu objektu vrácené rozhraní.  
+ mimo Ukazatel na adresu vráceného objektu rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRDataTarget` Objektu je implementováno tvůrci ladění aplikace. Implementace závisí na typu představované cílovou položku. Cílová položka může být proces, výpis paměti, vzdálený počítač a tak dále.  
+ Objekt `ICLRDataTarget` je implementován modulem pro ladění aplikace. Implementace závisí na typu reprezentované cílové položky. Cílová položka může být proces, výpis paměti, vzdálený počítač atd.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl  
+ **Hlavička:** ClrData. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

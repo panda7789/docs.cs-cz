@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b67ea03-d474-4605-acaa-57455790250c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b6d5ea24e40357205051188b68de8b973d2cec18
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3fd9efd3961be1d6e6e91b881327628c598e364e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748246"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092729"
 ---
 # <a name="iclrstrongnamegethashfromassemblyfile-method"></a>ICLRStrongName::GetHashFromAssemblyFile – metoda
-Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu.  
+Načte hodnotu hash zadaného souboru sestavení pomocí zadaného algoritmu hash.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT GetHashFromAssemblyFile (
   
 ## <a name="parameters"></a>Parametry  
  `szFilePath`  
- [in] Cesta k souboru, který má být mají hodnotu hash.  
+ pro Cesta k souboru, který se má vyhodnotit  
   
  `piHashAlg`  
- [out v] Konstanta, která určuje algoritmus hash. Použít nulu pro výchozí hashovací algoritmus.  
+ [in, out] Konstanta, která určuje algoritmus hash. Pro výchozí algoritmus hash použijte nulu.  
   
  `pbHash`  
- [out] Vrácená hodnota hash vyrovnávací paměti.  
+ mimo Vrácená vyrovnávací paměť hash.  
   
  `cchHash`  
- [in] Požadovaná maximální velikost `pbHash`.  
+ pro Požadovaná maximální velikost `pbHash`.  
   
  `pchHash`  
- [out] Velikost v bajtech, vrátil z `pbHash`.  
+ mimo Vrácená velikost (v bajtech) `pbHash`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

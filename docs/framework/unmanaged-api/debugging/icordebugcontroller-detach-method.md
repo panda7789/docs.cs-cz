@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06fae364-f2c6-4a50-aa7e-3da9f2684dc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f687e48413cb227ad715720e24bd645065309553
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b98077914d680c908587649fdd517aca9c8dcd40
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748840"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125431"
 ---
 # <a name="icordebugcontrollerdetach-method"></a>ICorDebugController::Detach – metoda
-Odpojí ladicí program z domény, procesu nebo aplikace.  
+Odpojí ladicí program od domény procesu nebo aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,17 +32,17 @@ HRESULT Detach ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Domény aplikace nebo proces pokračuje v provádění kódu za normálních okolností, ale "ICorDebugProcess" nebo "ICorDebugAppDomain" objekt již není platný a bude probíhat žádná další zpětná volání.  
+ Proces nebo aplikační doména pokračuje v normálním provádění, ale objekt "ICorDebugProcess" nebo "ICorDebugAppDomain" již není platný a žádné další zpětné volání nebudou provedeny.  
   
- V rozhraní .NET Framework verze 2.0 Pokud je povoleno ladění nespravovaného kódu, tato metoda selže z důvodu omezení operačního systému.  
+ Pokud je v .NET Framework verze 2,0, pokud je povoleno ladění nespravovaného kódu, nebude tato metoda v důsledku omezení operačního systému úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

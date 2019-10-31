@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 348c7c8c-8578-46ae-97cf-480d6015c3c6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c855d6f85c3cbfa6d81a1fbce3ef5b83abb3f583
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5ef100680328e9ad6261bb9188d7509efa9ab479
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795404"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108869"
 ---
 # <a name="createassemblycache-function"></a>CreateAssemblyCache – funkce
 Získá ukazatel na novou instanci [IAssemblyCache](iassemblycache-interface.md) , která představuje globální mezipaměť sestavení (GAC).  
@@ -39,17 +37,17 @@ HRESULT CreateAssemblyCache (
   
 ## <a name="parameters"></a>Parametry  
  `ppAsmCache`  
- mimo Vrácený `IAssemblyCache` ukazatel.  
+ mimo Vrácený ukazatel `IAssemblyCache`.  
   
  `dwReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `dwReserved`musí mít hodnotu 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwReserved` musí být 0 (nula).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

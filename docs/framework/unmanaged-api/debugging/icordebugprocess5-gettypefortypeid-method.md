@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0eed5a8-fa6d-4818-bd00-7babcea30325
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f37fab4d877ae804996f46290e3576cecc5a25ca
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 39f5c1813b08f4d72c610820b1434e29eb4aec8e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767611"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121278"
 ---
 # <a name="icordebugprocess5gettypefortypeid-method"></a>ICorDebugProcess5::GetTypeForTypeID – metoda
-Identifikátor typu převede na hodnotu ICorDebugType.  
+Převede identifikátor typu na hodnotu ICorDebugType.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT GetTypeForTypeID(
   
 ## <a name="parameters"></a>Parametry  
  `id`  
- [in] Identifikátor typu.  
+ pro Identifikátor typu.  
   
  `ppType`  
- [out] Ukazatel na adresu objektu ICorDebugType.  
+ mimo Ukazatel na adresu ICorDebugType objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- V některých případech může vrátit metody, které vracejí typu identifikátoru s hodnotou null `COR_TYPEID` hodnotu. Pokud tato hodnota je předán jako `id` argumentu `GetTypeForTypeID` selže a vrátí metoda `E_FAIL`.  
+ V některých případech metody, které vracejí identifikátor typu, mohou vracet hodnotu null `COR_TYPEID`. Pokud je tato hodnota předána jako argument `id`, metoda `GetTypeForTypeID` se nezdaří a vrátí `E_FAIL`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

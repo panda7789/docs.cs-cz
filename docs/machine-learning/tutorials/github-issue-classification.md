@@ -1,15 +1,15 @@
 ---
 title: 'Kurz: zařazení do kategorií – problémy s podporou – klasifikace s více třídami'
 description: Zjistěte, jak používat ML.NET ve scénáři klasifikace s více třídami ke klasifikaci problémů GitHubu, aby je bylo možné přiřadit k dané oblasti.
-ms.date: 09/30/2019
+ms.date: 10/30/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 7507463cfc5504182f028ab2ced9a03733c61f6d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1cd213653c23c4d713e03d53394885f1f3ebb6f5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774490"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094593"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Kurz: kategorizace problémů podpory pomocí klasifikace s více třídami s ML .NET
 
@@ -91,7 +91,7 @@ Odeberte existující definici třídy a přidejte následující kód, který m
 
 [!code-csharp[DeclareGlobalVariables](~/samples/machine-learning/tutorials/GitHubIssueClassification/GitHubIssueData.cs#DeclareTypes)]
 
-@No__t_0 je sloupec, který chcete předpovědět. Identifikované `Features` jsou vstupy, které modelu udělíte k předpovídání popisku.
+`label` je sloupec, který chcete předpovědět. Identifikované `Features` jsou vstupy, které modelu udělíte k předpovídání popisku.
 
 Pomocí [LoadColumnAttribute](xref:Microsoft.ML.Data.LoadColumnAttribute) určete indexy zdrojových sloupců v sadě dat.
 
@@ -272,13 +272,13 @@ Všimněte si použití metody [Transform ()](xref:Microsoft.ML.ITransformer.Tra
 
 Pro klasifikaci s více třídami jsou vyhodnocovány následující metriky:
 
-* Mikropřesnost – každá dvojice vzorových tříd přispívá stejně jako metrika přesnosti.  Má být mikropřesnost co nejblíže k 1.
+* Mikropřesnost – každá dvojice vzorových tříd přispívá stejně jako metrika přesnosti.  Chcete, aby byla mikropřesnost co nejblíže k jednomu.
 
-* Přesnost makra – každá třída přispívá stejně jako metrika přesnosti. Minoritní třídy mají stejnou váhu jako větší třídy. Chcete, aby byla přesnost makra co nejblíže k 1.
+* Přesnost makra – každá třída přispívá stejně jako metrika přesnosti. Minoritní třídy mají stejnou váhu jako větší třídy. Chcete, aby byla přesnost makra co nejblíže k jednomu.
 
 * Protokolová ztráta – viz [ztráta protokolu](../resources/glossary.md#log-loss). Chcete, aby byla ztráta protokolu co nejblíže k nule.
 
-* Omezení ztrát v protokolu – rozsahy od [-INF, 100], kde 100 je perfektní předpovědi a 0 označuje střední hodnotu předpovědi. Chcete omezit ztrátu protokolu tak, aby byla co nejblíže nule.
+* Omezení ztrát v protokolu – rozsahy od [-INF, 1,00], kde 1,00 je perfektní předpovědi a 0 označuje střední hodnotu předpovědi. Je třeba co nejblíže omezit ztrátu protokolu.
 
 ### <a name="displaying-the-metrics-for-model-validation"></a>Zobrazení metrik pro ověřování modelu
 

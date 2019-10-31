@@ -15,24 +15,22 @@ helpviewer_keywords:
 - String.ToUpper method
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 04601ac0e6b1bc3289be36ce3e1a144ce57ccefb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5289074724e3afd7356599738eeba648f25ca06
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683038"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120851"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Provádění změn velikosti písmen nezávisle na jazykové verzi
-<xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>, A <xref:System.Char.ToLower%2A?displayProperty=nameWithType> metody poskytují přetížení, která nepřijímá žádné parametry. Ve výchozím nastavení, tato přetížení bez parametrů, provést změny velikosti písmen podle hodnoty <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>. To vytváří malá a velká písmena výsledky, které se můžou lišit podle jazykové verze. Aby bylo jasné, zda chcete, aby změny velikosti písmen zohledňující jazykovou verzi nebo nezávislých na jazykové verzi, by měla použít přetížení z těchto metod, které vyžadují, abyste s ohledem `culture` parametru. Změny velikosti písmen zohledňující jazykovou verzi, zadejte `CultureInfo.CurrentCulture` pro `culture` parametru. Změny velikosti písmen nezávislých na jazykové verzi, zadejte `CultureInfo.InvariantCulture` pro `culture` parametru.  
+Metody <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>a <xref:System.Char.ToLower%2A?displayProperty=nameWithType> poskytují přetížení, která nepřijímají žádné parametry. Ve výchozím nastavení tato přetížení bez parametrů mění velikost písmen v závislosti na hodnotě <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>. Výsledkem je, že se rozlišují malá a velká písmena, která se mohou lišit podle jazykové verze. Chcete-li zrušit zaškrtnutí bez ohledu na to, zda mají být změny velikosti písmen závislé na jazykové verzi nebo nezávislé na jazykové verzi, měli byste použít přetížení těchto metod, které vyžadují explicitní určení `culture` parametr. Pro změny velikosti písmen závislé na jazykové verzi zadejte `CultureInfo.CurrentCulture` pro parametr `culture`. U změn velikosti písmen nezávisle na jazykové verzi zadejte `CultureInfo.InvariantCulture` pro parametr `culture`.  
   
- Řetězce jsou často, převedeny na standardní případ umožňující snadnější vyhledávání později. Použity tímto způsobem, je třeba zadat `CultureInfo.InvariantCulture` pro `culture` parametr, protože hodnota <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> by mohl změnit mezi časem, která se změnila tak a době vyhledávání.  
+ Řetězce jsou často převedeny na standardní případ, aby bylo možné později povolit snadnější vyhledávání. Pokud jsou řetězce použity tímto způsobem, je vhodné zadat `CultureInfo.InvariantCulture` pro parametr `culture`, protože hodnota <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> může být možné měnit mezi časem změny případu a časem, kdy k vyhledávání dojde.  
   
- Pokud je rozhodnutí o zabezpečení je založená na operaci změny velikosti písmen, operace by měla být nezávislá na jazykové verzi k zajištění, že výsledek není ovlivněn hodnotou z `CultureInfo.CurrentCulture`. Najdete v části "Řetězec porovnání, které používají aktuální jazykovou verzi" [osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md) najdete příklad, který ukazuje, jak operace s řetězci jazykovou verzi může způsobovat nekonzistentní výsledky.  
+ Je-li rozhodnutí o zabezpečení založeno na operaci změny velikosti písmen, operace by měla být nezávislá na jazykové verzi, aby se zajistilo, že výsledek není ovlivněn hodnotou `CultureInfo.CurrentCulture`. V části "porovnání řetězců, které používají aktuální jazykovou verzi" v článku [osvědčené postupy pro použití řetězců](../../../docs/standard/base-types/best-practices-strings.md) najdete příklad, který ukazuje, jak mohou operace s řetězci závislé na jazykové verzi způsobit nekonzistentní výsledky.  
   
-## <a name="using-the-stringtoupper-and-stringtolower-methods"></a>Pomocí String.ToUpper a String.ToLower – metody  
- Přehlednosti kódu doporučujeme použít vždy přetížení `String.ToUpper` a `String.ToLower` metody, které vám umožňují určit `culture` parametr explicitně. Například následující kód provede vyhledání identifikátoru. `key.ToLower` Operace zohledňující jazykovou verzi ve výchozím nastavení, ale toto chování není jasné z čtení kódu.  
+## <a name="using-the-stringtoupper-and-stringtolower-methods"></a>Použití metod String. ToUpper a String. ToLower  
+ Pro přehlednost kódu doporučujeme vždy použít přetížení `String.ToUpper` a `String.ToLower` metody, které umožňují explicitně zadat `culture` parametr. Například následující kód provádí vyhledávání identifikátorů. Ve výchozím nastavení je operace `key.ToLower` citlivá na jazykovou verzi, ale toto chování není jasné z čtení kódu.  
   
 ### <a name="example"></a>Příklad  
   
@@ -49,7 +47,7 @@ static object LookupKey(string key)
 }  
 ```  
   
- Pokud chcete, aby `key.ToLower` operace být nezávislá na jazykové verzi, měli byste změnit předchozí příklad následujícím způsobem, aby explicitně `CultureInfo.InvariantCulture` při změně velikosti písma.  
+ Pokud chcete, aby operace `key.ToLower` byla nezávislá na jazykové verzi, změňte předchozí příklad takto, aby při změně velikosti písmen explicitně používal `CultureInfo.InvariantCulture`.  
   
 ```vb  
 Shared Function LookupKey(key As String) As Object  
@@ -64,8 +62,8 @@ static object LookupKey(string key)
 }  
 ```  
   
-## <a name="using-the-chartoupper-and-chartolower-methods"></a>Char.ToUpper – a Char.ToLower – metody  
- I když `Char.ToUpper` a `Char.ToLower` metody mají stejné vlastnosti jako `String.ToUpper` a `String.ToLower` turečtina (Turecko) a Ázerbájdžánština (latinka, Ázerbájdžán) jsou metody, pouze jazykové verze, které tím ovlivníte. Jedná se o pouze dvě jazykových verzích s jedním znakem malých a velkých písmen rozdíly. Další informace o tomto jedinečný mapování velikosti písmen, naleznete v části "Malá a velká písmena" v <xref:System.String> třídě. Pro přehlednost kódu a dosahovat konzistentních výsledků, doporučujeme vždy použijte přetížení těchto metod, které umožňuje explicitně určit `culture` parametru.  
+## <a name="using-the-chartoupper-and-chartolower-methods"></a>Použití metod Char. ToUpper a Char. ToLower  
+ I když metody `Char.ToUpper` a `Char.ToLower` mají stejné vlastnosti jako `String.ToUpper` a `String.ToLower` metody, jsou tu ovlivněny pouze takové jazykové verze: Turečtina (Turecko) a Ázerbájdžánština (latinka, Ázerbájdžán). Toto jsou jediné dvě kultury s rozdíly v malých a velkých znacích. Další podrobnosti o tomto jedinečném mapování případu naleznete v části "velikost písmen" v tématu <xref:System.String> třídy. Pro přehlednost kódu a zajištění konzistentních výsledků doporučujeme vždy použít přetížení těchto metod, které vám umožní explicitně zadat `culture` parametr.  
   
 ## <a name="see-also"></a>Viz také:
 

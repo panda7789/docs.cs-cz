@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dfd4133f-a074-4db3-a7ee-4f250fe9ad3a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eb4e41f62f5f55969dadd47e80efc56e1c92c94f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cf8d6b7e45c0012d223173c85a92fac4fb044c6c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768263"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141410"
 ---
 # <a name="strongnamesignatureverificationex2-method"></a>StrongNameSignatureVerificationEx2 – metoda
-Ověří podpis sestavení se silným názvem a poskytuje mapování z klíče ECMA skutečné klíče.  
+Ověří podpis silně pojmenovaného sestavení a poskytuje mapování z klíče ECMA na skutečný klíč.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +38,31 @@ HRESULT StrongNameSignatureVerificationEx (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [in] Cesta k přenositelný spustitelný soubor (.exe nebo .dll) soubor pro sestavení, který se má ověřit.  
+ pro Cesta k přenositelnému spustitelnému souboru (. exe nebo. dll) pro sestavení, které má být ověřeno.  
   
  `fForceVerification`  
- [in] `true` provádět ověřování, i když je potřeba přepsat nastavení registru; v opačném případě `false`.  
+ [in] `true` provádět ověřování, i když je nutné přepsat nastavení registru. v opačném případě `false`.  
   
  `pbEcmaPublicKey`  
- [in] Ukazatel na mapování z veřejného klíče ECMA skutečné klíče používané pro ověřování.  
+ pro Ukazatel na mapování z veřejného klíče ECMA na skutečný klíč, který se používá k ověření.  
   
  `cbEcmaPublicKey`  
- [in] Délka skutečné ECMA veřejný klíč.  
+ pro Délka skutečného veřejného klíče ECMA  
   
  `pfWasVerified`  
- [out] `true` Pokud byl podpis silného názvu ověřené; v opačném případě `false`. Tento parametr je také nastavena na `false` Pokud bude ověření úspěšné z důvodu nastavení registru.  
+ [out] `true`, jestli se podpis silného názvu ověřil; v opačném případě `false`. Tento parametr je také nastaven na `false`, pokud bylo ověření úspěšné z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud bude ověření úspěšné; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda bylo ověření úspěšné; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

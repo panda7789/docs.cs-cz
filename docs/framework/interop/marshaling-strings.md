@@ -11,32 +11,30 @@ helpviewer_keywords:
 - marshaling, platform invoke
 - sample applications [.NET Framework], marshaling strings
 ms.assetid: e21b078b-70fb-4905-be26-c097ab2433ff
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab192f086e3e86a879d3478f2bf0d7084ae411b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88b6342038f99bf06fa2986c43f422e63cffd31e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642843"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124384"
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
-Zkopíruje řetězec parametrů, jejich konverze z formátu rozhraní .NET Framework (Unicode) na nespravované formátu (ANSI), v případě potřeby vyvolání platformy. Protože spravované řetězce jsou neměnné, vyvolání platformy nekopíruje je zpět z nespravované paměti pro spravované paměti při návratu funkce.  
+Vyvolání platformy kopíruje parametry řetězce a v případě potřeby je převádí z formátu .NET Framework (Unicode) do nespravovaného formátu (ANSI). Vzhledem k tomu, že spravované řetězce jsou neměnné, volání platformy je nekopíruje zpátky z nespravované paměti do spravované paměti, když funkce vrátí.  
   
- V následující tabulce jsou uvedeny možnosti zařazování pro řetězce, popisuje jejich využití a získáte odkaz na odpovídající vzorku rozhraní .NET Framework.  
+ Následující tabulka uvádí možnosti zařazování pro řetězce, popisuje jejich použití a poskytuje odkaz na odpovídající ukázku .NET Framework.  
   
 |String|Popis|Ukázka|  
 |------------|-----------------|------------|  
-|Podle hodnoty.|Předá řetězců jako parametry in.|[MsgBox](msgbox-sample.md)|  
-|Jako výsledek.|Vrátí hodnotu řetězce z nespravovaného kódu.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Podle odkazu.|Předá řetězců jako vstup a výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
-|Ve struktuře podle hodnoty.|Předá řetězce ve struktuře, která je parametr In.|[Struktury](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
-|Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře je vstupně-výstupní parametr. Nespravovaná funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem struktury.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře je vstupně-výstupní parametr. Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
-|Ve třídě podle hodnoty **(char\*)**.|Předá řetězce do třídy (třídy je vstupně-výstupní parametr). Nespravovaná funkce očekává ukazatel do vyrovnávací paměti pro znaky.|[OpenFileDlg](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
-|Ve třídě podle hodnoty **(char[])**.|Předá řetězce do třídy (třídy je vstupně-výstupní parametr). Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
-|Jako pole řetězců podle hodnoty.|Je vytvořeno pole řetězců, který je předán podle hodnoty.|[Pole](marshaling-different-types-of-arrays.md)|  
-|Jako pole struktury, které obsahují řetězce podle hodnoty.|Vytvoří pole struktur, které obsahují řetězce a pole je předán podle hodnoty.|[Pole](marshaling-different-types-of-arrays.md)|  
+|Podle hodnoty.|Předá řetězce jako v parametrech.|[MsgBox](msgbox-sample.md)|  
+|Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
+|Odkazem.|Předává řetězce jako vstupně-výstupní parametry pomocí <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
+|Ve struktuře podle hodnoty.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
+|Ve struktuře podle odkazu **(char\*)** .|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků a velikost vyrovnávací paměti je členem struktury.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
+|Ve struktuře podle odkazu **(Char [])** .|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Ve třídě podle hodnoty **(char\*)** .|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků.|[Openfiledlg –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
+|Ve třídě podle hodnoty **(Char [])** .|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Jako pole řetězců podle hodnoty.|Vytvoří pole řetězců, které je předáno hodnotou.|[Pole](marshaling-different-types-of-arrays.md)|  
+|Jako pole struktury, které obsahují řetězce podle hodnoty.|Vytvoří pole struktury obsahující řetězce a pole je předáno hodnotou.|[Pole](marshaling-different-types-of-arrays.md)|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -44,4 +42,4 @@ Zkopíruje řetězec parametrů, jejich konverze z formátu rozhraní .NET Frame
 - [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)
 - [Zařazování tříd, struktur a sjednocení](marshaling-classes-structures-and-unions.md)
 - [Zařazování různých typů polí](marshaling-different-types-of-arrays.md)
-- [Různé ukázky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
+- [Různé vzorky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))

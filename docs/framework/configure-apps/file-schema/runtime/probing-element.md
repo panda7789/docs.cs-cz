@@ -9,22 +9,20 @@ helpviewer_keywords:
 - container tags, <probing> element
 - probing element
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ae789e99a1306102c67f2252760e215989132406
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: e9e48ea97e1b70fef7fcc78a113e18c5fec23b7c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971629"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115854"
 ---
-# <a name="probing-element"></a>\<> element zjišťování
+# <a name="probing-element"></a>\<> elementu zjišťování
 Určuje základní podadresáře aplikace pro modul CLR (Common Language Runtime), který se má při načítání sestavení vyhledat.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zjišťování**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zjišťování >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

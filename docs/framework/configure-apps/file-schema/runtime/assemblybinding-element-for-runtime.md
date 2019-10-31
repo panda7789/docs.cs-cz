@@ -8,20 +8,18 @@ helpviewer_keywords:
 - assemblyBinding element
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 515261fe39676292ce50858f71b7da92287945d1
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c688353583f5e452950d63b7d02c48505b6ae999
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252803"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118136"
 ---
-# <a name="assemblybinding-element-for-runtime"></a>\<assemblyBinding element > pro \<modul runtime >
+# <a name="assemblybinding-element-for-runtime"></a>\<element > assemblyBinding pro \<runtime >
 Obsahuje informace o přesměrování verze sestavení a umístění sestavení.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<assemblyBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,16 +38,16 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**xmlns**|Požadovaný atribut.<br /><br /> Určuje obor názvů XML vyžadovaný pro vazbu sestavení. Jako hodnotu použijte řetězec "urn: schemas-microsoft-com: asm. v1".|  
-|**appliesTo**|Určuje verzi modulu runtime, pro kterou je přesměrování sestavení .NET Framework použito. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud ne **appliesTo** atribut zadán, **\<assemblyBinding>** element platí pro všechny verze rozhraní .NET Framework. Atribut **AppliesTo** byl představen v .NET Framework verze 1,1; ignoruje se .NET Framework verze 1,0. To znamená, že všechny **\<assemblyBinding>** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.|  
+|**appliesTo**|Určuje verzi modulu runtime, pro kterou je přesměrování sestavení .NET Framework použito. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud není zadán žádný atribut **AppliesTo** , **> prvek \<assemblyBinding** se vztahuje na všechny verze .NET Framework. Atribut **AppliesTo** byl představen v .NET Framework verze 1,1; ignoruje se .NET Framework verze 1,0. To znamená, že všechny **\<prvky > assemblyBinding** jsou použity při použití .NET Framework verze 1,0, a to i v případě, že je zadán atribut **AppliesTo** .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> dependentAssembly](dependentassembly-element.md)|Zapouzdřuje zásady vazeb a umístění sestavení pro sestavení. Pro každé sestavení použijte jednu  **\<značku > dependentAssembly** .|  
+|[\<dependentAssembly >](dependentassembly-element.md)|Zapouzdřuje zásady vazeb a umístění sestavení pro sestavení. Pro každé sestavení použijte jednu **\<ovou značku > dependentAssembly** .|  
 |[\<> zjišťování](probing-element.md)|Určuje podadresáře, které modul CLR (Common Language Runtime) hledá při načítání sestavení.|  
-|[\<publisherPolicy>](publisherpolicy-element.md)|Určuje, zda modul runtime používá zásady vydavatele.|  
-|[\<qualifyAssembly>](qualifyassembly-element.md)|Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.|  
+|[\<publisherPolicy >](publisherpolicy-element.md)|Určuje, zda modul runtime používá zásady vydavatele.|  
+|[\<qualifyAssembly >](qualifyassembly-element.md)|Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

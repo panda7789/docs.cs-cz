@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06e583d6-d88a-4ff5-bb95-5c48618a461c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6d78208c180638e9048ae39664b8ce8f57be90da
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8df4e1df7836f340bb04fc47d1ca55e0fb7c9f0e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745167"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122771"
 ---
 # <a name="icordebugbreakpointisactive-method"></a>ICorDebugBreakpoint::IsActive – metoda
-Získá hodnotu, která určuje, jestli to `ICorDebugBreakpoint` je aktivní.  
+Získá hodnotu, která označuje, zda je tato `ICorDebugBreakpoint` aktivní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT IsActive (
   
 ## <a name="parameters"></a>Parametry  
  `pbActive`  
- [out] `true` Pokud tato zarážka je aktivní, jinak `false`.  
+ [out] `true`, pokud je tato zarážka aktivní; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

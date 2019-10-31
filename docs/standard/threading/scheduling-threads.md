@@ -6,20 +6,18 @@ helpviewer_keywords:
 - threading [.NET Framework], scheduling
 - scheduling threads
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 502e118a67e157ce7756efdece866564fddc6ab7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: abcdf56b90513b937adefc38583e0312fec69785
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934300"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73106233"
 ---
 # <a name="scheduling-threads"></a>Plánování vláken
 
-Každé vlákno má priorita vlákna přiřazené. Vlákna vytvořená v rámci common language runtime jsou původně přiřazený prioritu <xref:System.Threading.ThreadPriority.Normal?displayProperty=nameWithType>. Vlákna vytvořená mimo modul runtime zachovat priorita, která měly před jejich spravované prostředí. Můžete získat nebo nastavit prioritu jakékoli vlákno s <xref:System.Threading.Thread.Priority?displayProperty=nameWithType> vlastnost.  
+Každé vlákno má přiřazenou prioritu vlákna. K vláknům vytvořeným v modulu CLR (Common Language Runtime) se zpočátku přiřadí priorita <xref:System.Threading.ThreadPriority.Normal?displayProperty=nameWithType>. Vlákna vytvořená mimo modul runtime uchovávají prioritu, kterou měly předtím, než se do spravovaného prostředí zadala. Můžete získat nebo nastavit prioritu libovolného vlákna s vlastností <xref:System.Threading.Thread.Priority?displayProperty=nameWithType>.  
   
- Vlákna jsou naplánovány k provedení na základě jejich priority. I když jsou vlákna provádění v modulu runtime, všechna vlákna jsou přiřazeny procesoru časových řezů v operačním systému. Podrobnosti o plánování algoritmus používaný k určení pořadí, ve kterém jsou spouštěny vlákna se liší podle každý operační systém. V některých operačních systémů vlákno s nejvyšší prioritou (tato vlákna, které mohou být provedeny) vždy je naplánováno spuštění první. Pokud více vláken se stejnou prioritou jsou k dispozici, Plánovač procházení vlákna důležitostí, poskytuje každé vlákno pevném časovém řezu v, který se má spustit. Za předpokladu, vlákno s vyšší prioritou je k dispozici ke spuštění, nižší priorita vlákna nelze získat ke spuštění. Pokud neexistují žádné další spustitelné vlákna daného důležitostí, Plánovač přesune na další nižší prioritu a naplánuje vláken v této prioritu pro spouštění. Pokud spustitelný přestane být vyšší priorita vlákna, dojde ke zrušení nižší priorita vlákna a vyšší priorita vlákna je povoleno spustit znovu. Nad všechny možnosti, které operačního systému můžete také nastavit priority vlákna dynamicky podle uživatelského rozhraní aplikace se přesune mezi popředí a pozadí. Použít jiný algoritmus plánování zvolit jiné operační systémy.  
+ Vlákna mají naplánované spouštění na základě jejich priority. I když jsou vlákna spouštěna v modulu runtime, jsou všechna vlákna přiřazena časová období procesoru operačním systémem. Podrobnosti o algoritmu plánování použitého k určení pořadí, ve kterém jsou vlákna spouštěny, se liší u jednotlivých operačních systémů. V některých operačních systémech je vlákno s nejvyšší prioritou (u těchto vláken, které lze spustit) vždy naplánováno na spuštění jako první. Pokud je k dispozici více vláken se stejnou prioritou, Plánovač cyklicky projde vlákna s touto prioritou, přičemž každé vlákno provede pevný časový úsek, ve kterém se má provést. Pokud je pro spuštění k dispozici vlákno s vyšší prioritou, nespustí se podprocesy s nižší prioritou. Pokud v dané prioritě neexistují žádná další spustitelný vlákna, Plánovač se přesune k další nižší prioritě a naplánuje vlákna v této prioritě pro provedení. Pokud se vlákno s vyšší prioritou změní na spustitelný, vlákno s nižší prioritou je přerušeno a vlákno s vyšší prioritou je povoleno znovu spustit. Nad všemi možnostmi může operační systém dynamicky upravovat priority vláken, protože uživatelské rozhraní aplikace je přesunuto mezi popředí a pozadí. Jiné operační systémy se můžou rozhodnout použít jiný algoritmus plánování.  
   
 ## <a name="see-also"></a>Viz také:
 

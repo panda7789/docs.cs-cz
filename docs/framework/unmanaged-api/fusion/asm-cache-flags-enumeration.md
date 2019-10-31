@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 82e9a7da-321b-48b8-b239-52eaffda6be8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0e3e9da3db71d3e24b2a60ff032a631680055b88
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 85ac976daec8fd76ee21012a30611235609f4b34
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795284"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109495"
 ---
 # <a name="asm_cache_flags-enumeration"></a>ASM_CACHE_FLAGS – výčet
 Určuje zdroj sestavení, který je reprezentován [IAssemblyCacheItem](iassemblycacheitem-interface.md) v globální mezipaměti sestavení (GAC).  
@@ -49,11 +47,11 @@ typedef enum {
 |`ASM_CACHE_ROOT_EX`|Označuje, že funkce [GetCachePath –](getcachepath-function.md) by měla vracet cestu k globální mezipaměti sestavení pro CLR verze 4. Smysluplný pouze v kontextu volání [GetCachePath –](getcachepath-function.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

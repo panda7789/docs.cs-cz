@@ -5,14 +5,12 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool
 - Winmdexp.exe
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0ce98912e579e0dd570822c1f7c2133bb05ed491
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 061baf262342034299c47c22b2f2691f3a61b958
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773970"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104220"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 Nástroj pro export metadat prostředí Windows Runtime (Winmdexp. exe) transformuje modul .NET Framework na soubor, který obsahuje prostředí Windows Runtime metadata. I když .NET Framework sestavení a prostředí Windows Runtime soubory metadat používají stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že .NET Framework sestavení nejsou automaticky použitelná jako prostředí Windows Runtime komponenty . Proces zapnutí modulu .NET Framework do prostředí Windows Runtime komponenty se označuje jako *Export*. V .NET Framework 4,5 a .NET Framework 4.5.1 výsledný soubor metadat Windows (. winmd) obsahuje metadata i implementaci.  
@@ -48,7 +46,7 @@ winmdexp [options] winmdmodule
 ## <a name="remarks"></a>Poznámky  
  Nástroj Winmdexp.exe není určen pro převod libovolného sestavení rozhraní .NET Framework na soubor .winmd. Vyžaduje modul kompilovaný s možností `/target:winmdobj` a platí další omezení. Nejdůležitější z těchto omezení je, že všechny typy, které jsou vystaveny na povrchu rozhraní API sestavení, musí být prostředí Windows Runtime typy. Další informace naleznete v části "deklarace typů v prostředí Windows Runtimech součástech" v článku [vytvoření prostředí Windows runtimech komponent v C# nástroji a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) na stránce Windows Dev Center.  
   
- Když napíšete [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci nebo komponentu prostředí Windows Runtime pomocí C# nástroje nebo Visual Basic, .NET Framework poskytuje podporu k vytváření dalších prostředí Windows runtimech přirozených způsobů programování. Tento článek je popsán v článku [.NET Framework podpoře aplikací pro Windows Store a prostředí Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). V procesu jsou některé běžně používané typy prostředí Windows Runtime namapovány na .NET Framework typy. Winmdexp. exe Tento proces vrátí a vytvoří plochu rozhraní API, která používá odpovídající typy prostředí Windows Runtime. Například typy, které jsou vytvořeny z mapování <xref:System.Collections.Generic.IList%601> rozhraní na typy, které jsou vytvořeny z rozhraní prostředí Windows Runtime[IVector \<T >](https://go.microsoft.com/fwlink/p/?LinkId=251132).  
+ Když napíšete [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci nebo komponentu prostředí Windows Runtime pomocí C# nástroje nebo Visual Basic, .NET Framework poskytuje podporu k vytváření dalších prostředí Windows runtimech přirozených způsobů programování. Tento článek je popsán v článku [.NET Framework podpoře aplikací pro Windows Store a prostředí Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). V procesu jsou některé běžně používané typy prostředí Windows Runtime namapovány na .NET Framework typy. Winmdexp. exe Tento proces vrátí a vytvoří plochu rozhraní API, která používá odpovídající typy prostředí Windows Runtime. Například typy, které jsou vytvořeny z mapování <xref:System.Collections.Generic.IList%601> rozhraní na typy, které jsou vytvořeny z rozhraní prostředí Windows Runtime[IVector\<t >](https://go.microsoft.com/fwlink/p/?LinkId=251132).  
   
 ## <a name="see-also"></a>Viz také:
 

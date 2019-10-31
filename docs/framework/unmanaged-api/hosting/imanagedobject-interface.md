@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1fbbf572-6d28-41a5-82fb-579ac90bfcf5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c90df6a8b6f25a93835981b1593a4b3d123cd168
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5dc1ad5bd98899f82e0b52345710c5ea3da864b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61943374"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103033"
 ---
 # <a name="imanagedobject-interface"></a>IManagedObject – rozhraní
 Poskytuje metody pro řízení spravovaného objektu.  
@@ -34,13 +32,13 @@ Poskytuje metody pro řízení spravovaného objektu.
 |[GetSerializedBuffer – metoda](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getserializedbuffer-method.md)|Získá řetězcovou reprezentaci tohoto spravovaného objektu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

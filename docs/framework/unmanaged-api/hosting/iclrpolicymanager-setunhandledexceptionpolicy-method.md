@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5268480e-280a-4931-b7a3-dc3ffdf7f78f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab00ccd85481f1c6d37e1132e0ecab5e0e86be90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7b6a4be94e526e7b464b336d221eff936808635a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768873"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120576"
 ---
 # <a name="iclrpolicymanagersetunhandledexceptionpolicy-method"></a>ICLRPolicyManager::SetUnhandledExceptionPolicy – metoda
-Určuje chování modulu common language runtime (CLR), když dojde k neošetřené výjimce.  
+Určuje chování modulu CLR (Common Language Runtime), pokud dojde k neošetřené výjimce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,30 +35,30 @@ HRESULT SetUnhandledExceptionPolicy (
   
 ## <a name="parameters"></a>Parametry  
  `policy`  
- [in] Jeden z [eclrunhandledexception –](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) hodnoty, která udává, zda je nastaven chování modulu CLR nebo hostitele.  
+ pro Jedna z hodnot [EClrUnhandledException –](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) , která označuje, zda je chování nastaveno modulem CLR nebo hostitelem.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetUnhandledExceptionPolicy` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`SetUnhandledExceptionPolicy` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení je poslední obslužnou rutinu pro všechny neošetřené výjimky modulu CLR a její výchozí chování je dovolí procesu. Hostitel toto chování můžete změnit tak, že nastavíte `policy` hodnota, která má eHostDeterminedPolicy. Tato hodnota umožňuje hostiteli implementovat vlastní výchozí chování, stejně jako u starších verzí modulu CLR.  
+ Ve výchozím nastavení je CLR koncovou obslužnou rutinou pro všechny neošetřené výjimky a jeho výchozím chováním je odtrhnout proces. Hostitel může toto chování změnit nastavením `policy` hodnoty na eHostDeterminedPolicy. Tato hodnota umožňuje hostiteli implementovat své vlastní výchozí chování, jako u starších verzí modulu CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

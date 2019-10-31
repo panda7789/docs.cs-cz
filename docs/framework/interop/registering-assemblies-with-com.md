@@ -7,45 +7,43 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6482d5fa046409d15913ea26300d298238750326
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9ff24a5705058d4e303b3b64b454ced8548053a4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648544"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73113811"
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
-Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. Abyste klientům modelu COM použít třídy rozhraní .NET Framework transparentně RegAsm.exe přidá informace o třídě do systémového registru. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
+Můžete spustit nástroj příkazového řádku nazvaný [Nástroj pro registraci sestavení (Regasm. exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití s modelem COM. Nástroj Regasm. exe přidává do systémového registru informace o třídě, takže klienti modelu COM mohou použít třídu .NET Framework transparentně. Třída <xref:System.Runtime.InteropServices.RegistrationServices> poskytuje ekvivalentní funkce.  
   
- Před aktivací klientů modelu COM, musí být spravované součásti zaregistrovaný v registru Windows. V následující tabulce jsou uvedeny klíče, které Regasm.exe obvykle přidá do registru Windows. (000000 určuje skutečnou hodnotu GUID).  
+ Spravovaná součást musí být registrována v registru systému Windows, aby ji bylo možné aktivovat z klienta modelu COM. V následující tabulce jsou uvedeny klíče, které nástroj Regasm. exe obvykle přidává do registru systému Windows. (000000 označuje skutečnou hodnotu GUID.)  
   
 |GUID|Popis|Klíč registru|  
 |----------|-----------------|------------------|  
-|IDENTIFIKÁTOR CLSID|Identifikátor třídy|HKEY_CLASSES_ROOT\CLSID\\{000…000}|  
-|IID|Identifikátor rozhraní|HKEY_CLASSES_ROOT\Interface\\{000…000}|  
-|LIBID|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000…000}|  
-|ProgID|Programový identifikátor|HKEY_CLASSES_ROOT\000…000|  
+|CLSID|Identifikátor třídy|HKEY_CLASSES_ROOT\CLSID\\{000... 10000|  
+|IDENTIFIKÁTOR|Identifikátor rozhraní|HKEY_CLASSES_ROOT\Interface\\{000... 10000|  
+|LIBID|Identifikátor knihovny|HKEY_CLASSES_ROOT\TypeLib\\{000... 10000|  
+|ProgID|Programový identifikátor|HKEY_CLASSES_ROOT\000... 10000|  
   
- V části HKCR\CLSID\\{0000... 0000} klíč, výchozí hodnota je nastavena na identifikátor ProgID, třídy a jsou přidány dva nové pojmenovaných hodnot, třídy a sestavení. Modul runtime přečte hodnotu sestavení z registru a předává je do překladače sestavení modulu runtime. Překladač sestavení se pokusí najít sestavení, na základě informací o sestavení, jako je například název a číslo verze. Sestavení pro sestavení překladač snaze o nalezení sestavení, musí být v jednom z následujících umístění:  
+ V rámci HKCR\CLSID\\{0000... 0000} klíč, výchozí hodnota je nastavená na ProgID třídy a přidají se dvě nové pojmenované hodnoty, třídy a sestavení. Modul runtime přečte hodnotu sestavení z registru a předá ho Překladači sestavení modulu runtime. Překladač sestavení se pokusí vyhledat sestavení na základě informací o sestavení, jako je název a číslo verze. Aby mohl překladač sestavení vyhledat sestavení, musí být sestavení v jednom z následujících umístění:  
   
-- Globální mezipaměti sestavení (musí být sestavení se silným názvem).  
+- Globální mezipaměť sestavení (musí být sestavení se silným názvem).  
   
-- V adresáři aplikace. Sestavení načtená z cesty aplikace jsou pouze přístupné z této aplikace.  
+- V adresáři aplikace. Sestavení načtená z cesty aplikace jsou přístupná pouze z této aplikace.  
   
-- Cestě soubor zadaný **/ codebase** možnost Regasm.exe.  
+- Společně s cestou k souboru zadaným pomocí možnosti **/codebase** pro Regasm. exe.  
   
- RegAsm.exe vytvoří také InProcServer32 klíče pod HKCR\CLSID\\{0000... 0000} klíč. Výchozí hodnota klíče je nastavena na název knihovny DLL, která inicializuje modul common language runtime (Mscoree.dll).  
+ Nástroj Regasm. exe také vytvoří klíč InProcServer32 v rámci HKCR\CLSID\\{0000... 0000} klíč. Výchozí hodnota pro klíč je nastavena na název knihovny DLL, která Inicializuje modul CLR (Common Language Runtime) (mscoree. dll).  
   
 ## <a name="examining-registry-entries"></a>Ověření položky registru  
- Komunikace s objekty COM poskytuje objekt pro vytváření implementaci standardní třída pro vytvoření instance libovolné třídy rozhraní .NET Framework. Klienti mohou volat **DllGetClassObject** na spravovanou knihovnu DLL k získání objektu pro vytváření tříd a vytvořit objekty, stejně jako jakoukoli jinou součástí modelu COM.  
+ Zprostředkovatel komunikace s objekty COM poskytuje standardní implementaci továrny tříd pro vytvoření instance libovolné .NET Framework třídy. Klienti mohou volat **DllGetClassObject** na spravované knihovně DLL pro získání objektu pro vytváření tříd a vytváření objektů stejně, jako by to byly s jinou komponentou modelu COM.  
   
- Pro `InprocServer32` podklíč, zobrazí se místo tradiční knihovně typů modelu COM k označení, zda modul common language runtime vytvoří spravovaný objekt odkaz na knihovny Mscoree.dll.  
+ Pro `InprocServer32` podklíč se zobrazí odkaz na Mscoree. dll namísto tradiční knihovny typů modelu COM k označení toho, že modul CLR (Common Language Runtime) vytvoří spravovaný objekt.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
-- [Postupy: Referenční typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
+- [Postupy: Odkazování na typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
 - [Volání objektu .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
 - [Nasazení aplikace pro přístup k modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

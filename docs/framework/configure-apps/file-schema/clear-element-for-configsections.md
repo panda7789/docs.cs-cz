@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c06fca8b83638fb47bedb21863cb9b200cd211f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a45572d0dcb2737558e11f5c38ac2ccc338c754a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927733"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119087"
 ---
-# <a name="clear-element-for-configsections"></a>\<Clear – element > \<pro configSections >
+# <a name="clear-element-for-configsections"></a>\<Clear > element pro \<configSections >
 
 Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
+[**konfigurační >\<** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,13 +34,13 @@ Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **name**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
+| **Jméno**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -48,13 +48,13 @@ Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
 ## <a name="remarks"></a>Poznámky
 
-**\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.
+Element **\<clear >** odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly definovány dříve v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfiguračního souboru.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak pomocí  **\<elementu Clear >** v konfiguračním souboru aplikace vymazat oddíly dříve definované v konfiguraci počítače. souborů.
+Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak použít **\<clear >** elementu v konfiguračním souboru aplikace pro vymazání oddílů dříve definovaných v konfiguračním souboru počítače.
 
-Následující kód konfiguračního souboru počítače deklaruje dva oddíly,  **\<sampleSection >** a  **\<> anotherSampleSection**, které jsou čteny před konfiguračním souborem aplikace:
+Následující kód konfiguračního souboru počítače deklaruje dva oddíly **\<sampleSection >** a **\<anotherSampleSection >** , které jsou čteny před konfiguračním souborem aplikace:
 
 ```xml
 <!-- Machine.config file -->
@@ -71,7 +71,7 @@ Následující kód konfiguračního souboru počítače deklaruje dva oddíly, 
 </configuration>
 ```
 
-Následující kód konfiguračního souboru aplikace vymaže všechny dříve deklarované oddíly. Aplikace nemůže použít nebo načíst nastavení v některé z oddílů, které byly deklarovány v konfiguračním souboru počítače. Může však použít nastavení z  **\<anotherSection >**  **\<** , protože se nachází po elementu Clear >.
+Následující kód konfiguračního souboru aplikace vymaže všechny dříve deklarované oddíly. Aplikace nemůže použít nebo načíst nastavení v některé z oddílů, které byly deklarovány v konfiguračním souboru počítače. Může však použít nastavení z **\<anotherSection >** , protože se nachází po **\<jasný >** element.
 
 ```xml
 <!-- Application configuration file -->

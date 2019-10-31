@@ -6,20 +6,18 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: db4380e97cf4d556248f42981b350160710f1dd8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 09045fb455a2163641d6f4af0ba07520ead59f1e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051822"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123490"
 ---
 # <a name="exposing-net-components-to-com"></a>Vystavení součástí .NET pro COM
 
 Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře. Tato část popisuje několik tipů pro psaní spravovaného kódu, který spolupracuje s klienty modelu COM:
 
-- [Kvalifikování typů .NET pro](../../standard/native-interop/qualify-net-types-for-interoperation.md)spoluprovozování.
+- [Kvalifikování typů .NET pro spoluprovozování](../../standard/native-interop/qualify-net-types-for-interoperation.md).
 
      Všechny spravované typy, metody, vlastnosti, pole a události, které chcete zveřejnit pro model COM, musí být veřejné. Typy musí mít veřejný konstruktor bez parametrů, který je jediným konstruktorem, který lze vyvolat pomocí modelu COM.
 
@@ -54,4 +52,4 @@ Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou 
 ## <a name="see-also"></a>Viz také:
 
 - [Spolupráce s nespravovaným kódem](index.md)
-- [Ukázka zprostředkovatele komunikace s objekty COM: Klient COM a Server .NET](com-interop-sample-com-client-and-net-server.md)
+- [Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET](com-interop-sample-com-client-and-net-server.md)

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8ecbb854-295c-4dd4-b9fc-01ebeac46e06
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a662185bb84e9a66573b43b26ffcd256ecb943f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4201fe23bf54388510088e21471edce91809e94c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69909855"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129790"
 ---
 # <a name="icordebugmda-interface"></a>ICorDebugMDA – rozhraní
 Představuje zprávu pomocníka spravovaného ladění (MDA).  
@@ -42,11 +40,11 @@ Představuje zprávu pomocníka spravovaného ladění (MDA).
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bfdc946b-8238-4eb9-8a85-884049fb0fd4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a637cebb9e1aef20c600353eb14fe900ad7513c7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 843399b7e3de522e2c4574963897430aa60a5a50
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754168"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114798"
 ---
 # <a name="icordebugframegetcaller-method"></a>ICorDebugFrame::GetCaller – metoda
-Získá ukazatel na objekt ICorDebugFrame v aktuální řetězec, který volá tento rámec.  
+Získá ukazatel na objekt ICorDebugFrame v aktuálním řetězci, který se nazývá tento rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetCaller (
   
 ## <a name="parameters"></a>Parametry  
  `ppFrame`  
- [out] Ukazatel na adresu `ICorDebugFrame` objekt představující rámec volání. Tato hodnota je null, pokud volaná rámec je příkaz nejkrajnější rámce v aktuálním řetězci.  
+ mimo Ukazatel na adresu `ICorDebugFrame`ho objektu, který představuje volající rámec. Tato hodnota je null, pokud pojmenovaný rámec je nejvzdálenějším snímkem v aktuálním řetězu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

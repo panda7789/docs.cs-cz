@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3f5c266-3fcc-4ad1-aaf5-4cdbe26304ad
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c5f38231eb6a5911527c21ee3304fc77cfcf8e90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 61aafb8dc99bb908fc603945ff6ea74054f812c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776517"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141416"
 ---
 # <a name="validatorflags-enumeration"></a>ValidatorFlags – výčet
-Obsahuje hodnoty, které označují typ ověřování, která má být provedena ve volání [iclrvalidator::Validate –](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) metody.  
+Obsahuje hodnoty, které určují typ ověřování, který by měl být proveden při volání metody [ICLRValidator:: Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,20 +40,20 @@ enum ValidatorFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`VALIDATOR_CHECK_ILONLY`|Určuje, zda by měl být ověřen pouze Microsoft intermediate language (MSIL) ve spustitelném souboru.|  
-|`VALIDATOR_CHECK_PEFORMAT_ONLY`|Určuje, zda by měl být ověřen pouze formát spustitelného souboru.|  
-|`VALIDATOR_EXTRA_VERBOSE`|Určuje, že všechny typy ověření, které provádí a reportovány.|  
-|`VALIDATOR_NOCHECK_PEFORMAT`|Určuje, že by neměla ověří Formát spustitelného souboru.|  
-|`VALIDATOR_SHOW_SOURCE_LINES`|Určuje, že chybových zpráv ověření by měl obsahovat řádky zdrojového kódu, které vyvolávají chyby ověření. Tato hodnota pole není platný v rozhraní .NET Framework verze 2.0.|  
+|`VALIDATOR_CHECK_ILONLY`|Určuje, že by měl být ověřený pouze kód jazyka MSIL (Microsoft Intermediate Language) ve spustitelném souboru.|  
+|`VALIDATOR_CHECK_PEFORMAT_ONLY`|Určuje, že by měl být ověřený jenom formát spustitelného souboru.|  
+|`VALIDATOR_EXTRA_VERBOSE`|Určuje, že by měly být provedeny a hlášeny všechny typy ověřování.|  
+|`VALIDATOR_NOCHECK_PEFORMAT`|Určuje, že by se neměl ověřit formát spustitelného souboru.|  
+|`VALIDATOR_SHOW_SOURCE_LINES`|Určuje, že zprávy o chybách ověřování by měly zahrnovat řádky zdrojového kódu, které vyvolávají chyby ověřování. Hodnota tohoto pole není platná v .NET Framework verze 2,0.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** IValidator.idl, IValidator.h  
+ **Hlavička:** IValidator. idl, IValidator. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

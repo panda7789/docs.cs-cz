@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ad37cd10-0339-4d08-9b0e-4b3428bb4dc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38e4bd55a52cdbb3c242b8c3e5ff21f970b93ac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0553d8b07e3a16dc31474b5470ba2dd8ba365cb2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765036"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140512"
 ---
 # <a name="icorpublishappdomainenumnext-method"></a>ICorPublishAppDomainEnum::Next – metoda
-Získá zadaný počet aplikačních doménách, které momentálně existují v procesu od aktuální pozice.  
+Načte zadaný počet aplikačních domén, které aktuálně existují v procesu, počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet prvků který se má načíst.  
+ pro Počet prvků, které mají být načteny.  
   
  `objects`  
- [out] Načte ukazatel na pole [icorpublishappdomain –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) objektů, z nichž každý představuje doménu aplikace.  
+ mimo Ukazatel na pole načtených objektů [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) , z nichž každý představuje doménu aplikace.  
   
  `pceltFetched`  
- [out] Ukazatel na počet skutečně vrácených domény aplikace. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených aplikačních domén. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

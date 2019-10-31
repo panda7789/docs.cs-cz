@@ -1,15 +1,14 @@
 ---
 title: Zahození – C# Průvodce
 description: Popisuje C#podporu pro zahození, které jsou nepřiřazené, hodíelné proměnné a způsoby, jak je možné je použít.
-author: rpetrusha
 ms.technology: csharp-fundamentals
 ms.date: 07/21/2017
-ms.openlocfilehash: 783266b6893a597d790af82db50b4f52a00ad0bf
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037349"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100642"
 ---
 # <a name="discards---c-guide"></a>Zahození – C# Průvodce
 

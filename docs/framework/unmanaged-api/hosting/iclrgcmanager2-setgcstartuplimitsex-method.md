@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6c3a08a9-5d65-48d4-8bbf-2a86ed7d356a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d881c71d4725e1a73d743aa098aecc053182947
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 77de550cd3fb614e03f8028707c3cbf914734910
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918611"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141085"
 ---
 # <a name="iclrgcmanager2setgcstartuplimitsex-method"></a>ICLRGCManager2::SetGCStartupLimitsEx – metoda
 Nastaví velikost segmentu uvolňování paměti a maximální velikost generace 0 systému uvolňování paměti.  
@@ -51,7 +49,7 @@ HRESULT SetGCStartupLimitsEx (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimitsEx`úspěšně vráceno.|  
+|S_OK|`SetGCStartupLimitsEx` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -59,16 +57,16 @@ HRESULT SetGCStartupLimitsEx (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, které `SetGCStartupLimitsEx` nastavíte, lze zadat pouze před spuštěním hostitele. Pozdější volání do `SetGCStartupLimitsEx` jsou ignorována.  
+ Hodnoty, které `SetGCStartupLimitsEx` sady lze zadat pouze před spuštěním hostitele. Pozdější volání `SetGCStartupLimitsEx` jsou ignorována.  
   
  Chcete-li nastavit parametr bez vlivu na druhý, zadejte 0 (nula) pro parametr, který nechcete změnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

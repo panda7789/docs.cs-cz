@@ -10,14 +10,12 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4f0828409a8c57baecf7c81fd7a4df6e7844c7ce
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9d5f8c80937c36e975d42d6efb0a83295cb28be9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044324"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104985"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
@@ -40,14 +38,14 @@ peverify filename [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/break=** *maxErrorCount*|Po *maxErrorCount* chybách zruší ověření.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
+|**/Break =** *maxErrorCount*|Po *maxErrorCount* chybách zruší ověření.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
 |**/clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD Val. koloběh**<br /> Cyklus ověření metadat<br /><br /> **MD Val. Pure**<br /> Čisté ověření metadat<br /><br /> **IL – ver. koloběh**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **IL – ver – čistá**<br /> Čisté ověřování MSIL<br /><br /> Časy **MD Val. Cycle** a **Il ver. Cycle** zahrnují dobu potřebnou k provedení nezbytných postupů spuštění a vypnutí. Časy **MD Val. Pure** a **Il verze Pure** odrážejí dobu potřebnou k provedení ověřování nebo ověření.|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/hresult**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
 |**/Ignore =** *Hex. Code* [, *Hex. Code*]|Ignoruje zadané kódy chyb.|  
 |**/Ignore = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
 |**/Il**|Provede kontroly ověřování bezpečnosti typů jazyka MSIL pro metody implementované v sestavení určeném parametrem *filename*. Nástroj vrátí podrobné popisy jednotlivých nalezených problémů, pokud nezadáte možnost **/quiet** .|  
-|**/md**|Provádí kontroly ověřování metadat u sestavení určeného parametrem *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
+|**/MD**|Provádí kontroly ověřování metadat u sestavení určeného parametrem *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
 |**/nologo**|Potlačí zobrazení informací o verzi a autorských právech produktu.|  
 |**/nosymbols**|V rozhraní .NET Framework verze 2.0 potlačí zobrazování čísel řádků z důvodu zpětné kompatibility.|  
 |**/quiet**|Nastaví tichý režim; potlačí výstup hlášení problémů ověření. Nástroj Peverify.exe stále hlásí, zda je soubor typově bezpečný, ale již nehlásí informace o problémech, které brání v ověření bezpečnosti typu.|  
@@ -63,7 +61,7 @@ peverify filename [options]
   
  Nástroj Peverify.exe provádí komplexní kontroly MSIL u platných metadat na základě analýzy datového toku a seznamu několika stovek pravidel. Podrobné informace o kontrolách, které nástroj PEverify. exe provádí, naleznete v části "specifikace ověření metadat" a "specifikace sady instrukcí jazyka MSIL" ve složce příručka pro vývojáře nástrojů v Windows SDK.  
   
- Všimněte si, že .NET Framework verze 2,0 nebo novější podporuje ověřitelné `byref` návraty zadané pomocí následujících instrukcí jazyka `dup`MSIL `ldsflda`: `ldflda`, `ldelema`, `call` , `unbox`a.  
+ Všimněte si, že .NET Framework verze 2,0 nebo novější podporuje ověřitelné `byref` vracené zpět pomocí následujících instrukcí jazyka MSIL: `dup`, `ldsflda`, `ldflda`, `ldelema`, `call` a `unbox`.  
   
 ## <a name="examples"></a>Příklady  
  Následující příkaz provede kontroly ověřování metadat a ověření bezpečnosti typů jazyka MSIL pro metody implementované v sestavení `myAssembly.exe`.  
@@ -101,7 +99,7 @@ Timing: Total run     320 msec
 peverify myAssembly.exe /break=100 /ignore=0x12345678,0xABCD1234  
 ```  
   
- Následující příkaz vytvoří stejný výsledek jako výše předchozí příklad, ale Určuje kódy chyb, které se mají v souboru `ignoreErrors.rsp`odpovědí ignorovat.  
+ Následující příkaz vytvoří stejný výsledek jako výše předchozí příklad, ale Určuje kódy chyb, které se mají v souboru odpovědí `ignoreErrors.rsp`ignorovat.  
   
 ```console  
 peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 10093e3d-26b6-4ad7-8ef3-bbf66243fc02
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9a1c0f7deb2ef24893530797b4507e2dcc540ad2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: adcfbf1207ad7895ab55f7e5cf9581905cb826bf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757047"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096111"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next – metoda
-Získá relativních virtuálních adres (RVA) zadané počty objektů z výčtu od aktuální pozice.  
+Načte relativní virtuální adresy (RVA) zadaného počtu objektů z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet objektů, které se mají načíst.  
+ pro Počet objektů, které mají být načteny.  
   
  `objects`  
- [out] Pole ukazatelů, každý z nich odkazuje na objekt CORDB_ADDRESS.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt CORDB_ADDRESS.  
   
  `pceltFetched`  
- [out] Ukazatel na počet skutečně vrácených objektů. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených objektů. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e2aae09-49cb-4fbd-81e5-e29cd864a88b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 550d25e995bdfe010fb1aa664a7c9882a775f4d5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 539fa612234c4cc37bed5a8fd4b1e727a35b1d6f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757169"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096395"
 ---
 # <a name="icordebugnativeframe2ischild-method"></a>ICorDebugNativeFrame2::IsChild – metoda
-Určuje, zda aktuální rámec je podřízený blok.  
+Určuje, zda je aktuální rámec podřízeným rámcem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +33,30 @@ HRESULT IsChild([out] BOOL * pIsChild);
   
 ## <a name="parameters"></a>Parametry  
  `pIsChild`  
- [out] Logická hodnota určující, zda je aktuální rámec podřízený blok.  
+ mimo Logická hodnota, která určuje, zda je aktuální rámec podřízeným rámcem.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Stav podřízeného byla úspěšně vrácena.|  
-|E_FAIL|Stav podřízeného nebylo možné vrátit.|  
-|E_INVALIDARG|`pIsChild` má hodnotu null.|  
+|S_OK|Stav podřízeného objektu byl úspěšně vrácen.|  
+|E_FAIL|Podřízený stav nelze vrátit.|  
+|E_INVALIDARG|`pIsChild` je null.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `IsChild` Vrátí metoda `true` Pokud orámovat objekt, na kterém je zavolat metodu je podřízeným prvkem jiného snímku. Pokud tomu tak, [ismatchingparentframe –](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md) metodu ke kontrole, zda blok je jeho nadřazeným prvkem.  
+ Metoda `IsChild` vrátí `true`, pokud objekt Frame, na kterém je volána metoda, je podřízenou položkou jiného rámce. Pokud se jedná o tento případ, použijte metodu [IsMatchingParentFrame –](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md) a ověřte, zda je rámec nadřazeným prvkem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

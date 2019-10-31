@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1844da85-c031-40bf-bea4-1a3d12a36c8c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bbde873481aea9de94862117a99079301965f33c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0fab64c31d4a73995c16d21767f4569f21c7df9a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970024"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126875"
 ---
 # <a name="iappdomainsetup-interface"></a>IAppDomainSetup – rozhraní
-Poskytne vlastnosti, které povolí hostitelské ke konfiguraci <xref:System.AppDomain?displayProperty=nameWithType> typ před voláním [icorruntimehost::createdomainex –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) metoda k jeho vytvoření.  
+Poskytne vlastnosti, které umožní hostiteli nakonfigurovat <xref:System.AppDomain?displayProperty=nameWithType> typ před voláním metody [ICorRuntimeHost:: CreateDomainEx –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) , aby ji bylo možné vytvořit.  
   
 ## <a name="properties"></a>Vlastnosti  
   
@@ -32,28 +30,28 @@ Poskytne vlastnosti, které povolí hostitelské ke konfiguraci <xref:System.App
 |--------------|-----------------|  
 |<xref:System.AppDomainSetup.ApplicationBase%2A>|Získá nebo nastaví název adresáře, který obsahuje aplikaci.|  
 |<xref:System.AppDomainSetup.ApplicationName%2A>|Získá nebo nastaví název aplikace.|  
-|<xref:System.AppDomainSetup.CachePath%2A>|Získá nebo nastaví název oblasti konkrétní aplikaci kde soubory jsou vytvořena stínová kopie.|  
+|<xref:System.AppDomainSetup.CachePath%2A>|Získá nebo nastaví název oblasti specifické pro aplikaci, ve které jsou soubory kopírovány stínové kopie.|  
 |<xref:System.AppDomainSetup.ConfigurationFile%2A>|Získá nebo nastaví název konfiguračního souboru pro aplikaci.|  
-|<xref:System.AppDomainSetup.DynamicBase%2A>|Získá nebo nastaví název adresáře, kde se ukládají a získávají dynamicky generované soubory.|  
-|<xref:System.AppDomainSetup.LicenseFile%2A>|Získá nebo nastaví cestu k souboru licencí, který je přidružený k této doméně.|  
-|<xref:System.AppDomainSetup.PrivateBinPath%2A>|Získá nebo nastaví seznam adresářů, v kombinaci s <xref:System.AppDomainSetup.ApplicationBase%2A> adresář pro sběr dat pro soukromá sestavení.|  
-|<xref:System.AppDomainSetup.PrivateBinPathProbe%2A>|Získá nebo nastaví řetězcovou hodnotu, která zahrnutí nebo vyloučení <xref:System.AppDomainSetup.ApplicationBase%2A> z cesty pro hledání pro aplikaci.|  
-|<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>|Získá nebo nastaví názvy adresářů, které obsahují sestavení bude vytvořena stínová kopie.|  
-|<xref:System.AppDomainSetup.ShadowCopyFiles%2A>|Získá nebo nastaví řetězec, který označuje, zda stínové kopírování sestavení je zapnout nebo vypnout. Platné hodnoty jsou "true" nebo "false".|  
+|<xref:System.AppDomainSetup.DynamicBase%2A>|Získá nebo nastaví název adresáře, kde jsou uloženy a otevřeny dynamicky generované soubory.|  
+|<xref:System.AppDomainSetup.LicenseFile%2A>|Získá nebo nastaví cestu k souboru s licencí, který je přidružený k této doméně.|  
+|<xref:System.AppDomainSetup.PrivateBinPath%2A>|Získá nebo nastaví seznam adresářů v kombinaci s <xref:System.AppDomainSetup.ApplicationBase%2A> adresářem pro testování privátních sestavení.|  
+|<xref:System.AppDomainSetup.PrivateBinPathProbe%2A>|Získává nebo nastavuje řetězcovou hodnotu, která zahrnuje nebo vylučuje <xref:System.AppDomainSetup.ApplicationBase%2A> z vyhledávací cesty pro aplikaci.|  
+|<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>|Získá nebo nastaví názvy adresářů, které obsahují sestavení pro vytváření stínových kopií.|  
+|<xref:System.AppDomainSetup.ShadowCopyFiles%2A>|Získá nebo nastaví řetězec, který označuje, zda je stínové kopírování zapnuto nebo vypnuto. Platné hodnoty jsou "true" nebo "false".|  
   
 ## <a name="remarks"></a>Poznámky  
- `IAppDomainSetup` Rozhraní odpovídá spravovanou <xref:System.IAppDomainSetup> rozhraní, které <xref:System.AppDomainSetup> typ implementuje. Zobrazit <xref:System.IAppDomainSetup?displayProperty=nameWithType> podrobný popis jeho vlastnosti.  
+ Rozhraní `IAppDomainSetup` odpovídá spravovanému rozhraní <xref:System.IAppDomainSetup>, které implementuje typ <xref:System.AppDomainSetup>. Podrobné popisy jeho vlastností najdete v tématu <xref:System.IAppDomainSetup?displayProperty=nameWithType>.  
   
- `IAppDomainSetup` představuje informace o vazbu sestavení lze přidat do <xref:System.AppDomain> instance před její vytvoření. Například můžete nastavit hostitele <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost vytvořit kořenový adresář, který modul CLR (CLR) sondy pro spravovaná sestavení.  
+ `IAppDomainSetup` představuje informace o vazbě sestavení, které lze přidat do instance <xref:System.AppDomain> před jejím vytvořením. Například hostitel může nastavit vlastnost <xref:System.AppDomainSetup.ApplicationBase%2A>, aby navázala kořenový adresář, který modul CLR (Common Language Runtime) pro spravovaná sestavení vyhledá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

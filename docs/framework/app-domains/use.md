@@ -6,14 +6,12 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 11774620dba03cc980ec3e2e2d3bd1a855dc6295
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d6bbc2648608e9542158e0f281984174447633a4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053046"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119728"
 ---
 # <a name="using-application-domains"></a>Používání domén aplikací
 
@@ -38,19 +36,19 @@ Popisuje, jak načíst informace o instalaci z domény aplikace.
 [Postupy: Načtení sestavení do domény aplikace](how-to-load-assemblies-into-an-application-domain.md)  
 Popisuje načtení sestavení do domény aplikace.  
   
-[Postupy: Získání informací o typu a členu ze sestavení](../reflection-and-codedom/get-type-member-information.md)  
+[Postupy: Získávání informací o typu a členu ze sestavení](../reflection-and-codedom/get-type-member-information.md)  
 Popisuje, jak načíst informace o sestavení.  
   
 [Stínové kopírování sestavení](shadow-copy-assemblies.md)  
 Popisuje, jak stínové kopírování umožňuje aktualizace sestavení, když jsou používány, a jak nakonfigurovat stínové kopírování.  
   
-[Postupy: Přijetí oznámení o první pravděpodobné výjimce](how-to-receive-first-chance-exception-notifications.md)  
+[Postupy: Přijímání oznámení o první odpovídající výjimce](how-to-receive-first-chance-exception-notifications.md)  
 Vysvětluje, jak můžete obdržet oznámení o vyvolání výjimky před tím, než modul CLR (Common Language Runtime) začne hledat obslužné rutiny výjimek.  
   
 [Řešení načítání sestavení](../../standard/assembly/resolve-loads.md)  
-Poskytuje pokyny k použití <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> události pro řešení selhání načtení sestavení.  
+Poskytuje pokyny k použití události <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> k vyřešení selhání načtení sestavení.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
 
 <xref:System.AppDomain>  
 Představuje doménu aplikace. Poskytuje metody pro vytváření a řízení domén aplikací.  

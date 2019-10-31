@@ -5,25 +5,23 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization primitives, SpinLock
 ms.assetid: f9af93bb-7a0d-4ba5-afe8-74f48b6b6958
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5bd2468c7b68a9c79e7418a32294676fb468e1a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eac9a1be38ea81e8ccee1d05d9061ceeb597627f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62015054"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73106173"
 ---
 # <a name="spinlock"></a>SpinLock
-<xref:System.Threading.SpinLock> Struktury je nižší úrovně, vyloučeného primitiv synchronizace, který otáčí během čekání na získání zámku. Na vícejádrových počítačích po očekávané době čekání bude krátký a pokud je minimální, kolize <xref:System.Threading.SpinLock> může mít lepší výkon než jiné druhy zámků. Doporučujeme však, že používáte <xref:System.Threading.SpinLock> pouze při zjišťování pomocí Profilování, která <xref:System.Threading.Monitor?displayProperty=nameWithType> metoda nebo <xref:System.Threading.Interlocked> metody jsou výrazně zpomalení výkonu aplikace.  
+Struktura <xref:System.Threading.SpinLock> je základní, vzájemně vyloučená synchronizační primitiva, která se při čekání na získání zámku. U vícejádrových počítačů, pokud se očekává, že čekací časy budou krátké a když je spory minimální, může <xref:System.Threading.SpinLock> provádět lepší fungování než jiné druhy zámků. Doporučujeme však použít <xref:System.Threading.SpinLock> pouze v případě, že určíte profilování, že metoda <xref:System.Threading.Monitor?displayProperty=nameWithType> nebo <xref:System.Threading.Interlocked> metody výrazně zpomaluje výkon programu.  
   
- <xref:System.Threading.SpinLock> může přinést časovém intervalu vlákna, i v případě, že nezískal ještě zámek. Dělá to aby se zabránilo inverzi priorita vlákna a umožňuje systému uvolňování paměti pokroku. Při použití <xref:System.Threading.SpinLock>, ujistěte se, že žádné vlákno může obsahovat zámek pro více než velmi krátké časové období, a že žádné vlákno může blokovat, když drží zámek.  
+ <xref:System.Threading.SpinLock> může vracet časové období vlákna i v případě, že ještě zámek nezískal. Dělá to tak, aby nedocházelo k inverze priority vlákna, a aby systém uvolňování paměti mohl provádět. Když použijete <xref:System.Threading.SpinLock>, zajistěte, aby žádné vlákno nemohlo uchovávat zámek více než velmi krátkého časového intervalu a aby se žádné vlákno neblokovalo při blokování zámku.  
   
- Protože SpinLock je typ hodnoty, musí explicitně předání odkazem. Pokud máte v úmyslu dvě kopie odkazovat na stejnou zámku.  
+ Vzhledem k tomu, že struktuře SpinLock je hodnotový typ, je nutné explicitně předat odkaz, pokud chcete, aby tyto dvě kopie odkazovaly na stejný zámek.  
   
- Další informace o tom, jak pomocí tohoto typu, najdete v části <xref:System.Threading.SpinLock?displayProperty=nameWithType>. Příklad najdete v tématu [jak: Použít SpinLock nízké úrovně synchronizace](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md).  
+ Další informace o tom, jak tento typ použít, naleznete v tématu <xref:System.Threading.SpinLock?displayProperty=nameWithType>. Příklad naleznete v tématu [How to: use struktuře SpinLock for the low-level Synchronization](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md).  
   
- <xref:System.Threading.SpinLock> podporuje *vlákno*-*sledování* režimu, můžete ve fázi vývoje, chcete-li sledovat vlákna, které drží zámek v určitém čase. Režimu sledování vláken je velmi užitečné pro ladění, ale doporučujeme vám, že vy ji vypnete ve vydané verzi programu protože to může snížit výkon. Další informace najdete v tématu [jak: Povolení režimu sledování vláken ve struktuře SpinLock](../../../docs/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock.md).  
+ <xref:System.Threading.SpinLock> podporuje režim *sledování*-*vláken* , který můžete použít během fáze vývoje, abyste mohli sledovat vlákno, které drží zámek v určitou dobu. Režim sledování vlákna je velmi užitečný pro ladění, ale doporučujeme, abyste ho ve verzi programu vypnuli, protože může zpomalit výkon. Další informace najdete v tématu [Postup: povolení režimu sledování vláken v struktuře SpinLock](../../../docs/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock.md).  
   
 ## <a name="see-also"></a>Viz také:
 

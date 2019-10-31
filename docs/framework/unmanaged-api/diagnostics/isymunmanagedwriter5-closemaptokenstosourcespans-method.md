@@ -2,17 +2,15 @@
 title: ISymUnmanagedWriter5::CloseMapTokensToSourceSpans – metoda
 ms.date: 03/30/2017
 ms.assetid: f8a0c0a2-a11d-436c-aa85-bc110215cfd6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6b3dea6b9710f1ee5ccf8c51261f59b2de026f5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 43c35596d31842b85bbdc96a63413a176a59a172
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962276"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121645"
 ---
 # <a name="isymunmanagedwriter5closemaptokenstosourcespans-method"></a>ISymUnmanagedWriter5::CloseMapTokensToSourceSpans – metoda
-Zavřete speciální vlastní datové části pro token zdroj zahrnovat informace o mapování. Po propojení se zavře, je možné přidat žádné další informace o mapování.  
+Zavřete část speciální vlastní data pro informace o mapování rozsahu z tokenu na zdroj. Po zavření nebudou moci být přidány žádné další informace o mapování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,7 +22,7 @@ HRESULT CloseMapTokensToSourceSpans();
  Vrátí `HRESULT`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

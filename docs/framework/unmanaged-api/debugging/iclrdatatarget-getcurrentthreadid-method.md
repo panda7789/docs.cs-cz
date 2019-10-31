@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc9a0a6c-d592-4fb7-86ed-62684da3b0e1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 45a409bda8861701e68d3ea1a956a4c35ce88ddd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ccb5cda11a2466496a4b3981e8185cbb7130f66f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738778"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122899"
 ---
 # <a name="iclrdatatargetgetcurrentthreadid-method"></a>ICLRDataTarget::GetCurrentThreadID – metoda
-Získá identifikátor operačního systému pro aktuální vlákno.  
+Načte identifikátor operačního systému pro aktuální vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetCurrentThreadID (
   
 ## <a name="parameters"></a>Parametry  
  `threadID`  
- [out] Ukazatel na operační systém identifikátor aktuálního vlákna pro cílový proces.  
+ mimo Ukazatel na identifikátor operačního systému aktuálního vlákna pro cílový proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud není žádná aktuální vlákno pro cílový proces `GetCurrentThreadID` metoda může selhat.  
+ Pokud neexistuje žádné aktuální vlákno pro cílový proces, může být metoda `GetCurrentThreadID` neúspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

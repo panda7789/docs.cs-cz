@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f6a449c8-a941-43ba-9a90-c98b29ae3c36
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8a5f0f767a7057064e285bf6ac9dcefc86eb9d79
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4dd9760c347bbc23f3e8225c1ff748c6b7b8bfe1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757200"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096529"
 ---
 # <a name="icordebugnativeframe2getstackparametersize-method"></a>ICorDebugNativeFrame2::GetStackParameterSize – metoda
-Vrátí celková velikost parametry do zásobníku na x86 operačních systémů.  
+Vrátí kumulativní velikost parametrů v zásobníku v operačních systémech x86.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,31 +33,31 @@ HRESULT GetStackParameterSize([out] ULONG32 * pSize)
   
 ## <a name="parameters"></a>Parametry  
  `pSize`  
- [out] Ukazatel na souhrnná velikost parametry do zásobníku.  
+ mimo Ukazatel na kumulativní velikost parametrů v zásobníku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Velikost zásobníku byla úspěšně vrácena.|  
-|S_FALSE|`GetStackParameterSize` byla volána na platformě x x86.|  
+|S_FALSE|`GetStackParameterSize` byla volána na platformě, která není x86.|  
 |E_FAIL|`The size of the parameters could not be returned`.|  
-|E_INVALIDARG|`pSize` Is `null`.|  
+|E_INVALIDARG|`pSize` je `null`.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) metody Neupravovat ukazatel zásobníku pro parametry, které jsou vloženy do zásobníku. Místo toho můžete použít hodnotu vrácenou příkazem `GetStackParameterSize` upravit ukazatel zásobníku naplnit nativní unwinder, který upravit parametry.  
+ Metody [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) neupravují ukazatel zásobníku pro parametry, které jsou vloženy do zásobníku. Místo toho můžete použít hodnotu vrácenou `GetStackParameterSize` k úpravě ukazatele zásobníku na počáteční hodnotu nativního unwind, který pro parametry upraví.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Zpracování chyb vstupně-výstupní operace v rozhraní .NET
+title: Zpracování vstupně-výstupních chyb v .NET
 ms.date: 08/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,44 +8,42 @@ dev_langs:
 helpviewer_keywords:
 - I/O, exception handling
 - I/O, errors
-author: rpetrusha
-ms.author: ronpet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d2ff4e69596e721f485d107317f261231615c5a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752344"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120745"
 ---
-# <a name="handling-io-errors-in-net"></a>Zpracování chyb vstupně-výstupní operace v rozhraní .NET
+# <a name="handling-io-errors-in-net"></a>Zpracování vstupně-výstupních chyb v .NET
 
-Kromě výjimky, které mohou být vyvolány v žádném volání metody (například <xref:System.OutOfMemoryException> systému je třeba zdůraznit, nebo s <xref:System.NullReferenceException> z důvodu chyby programátor), .NET metody systému souborů může vyvolat následující výjimky:
+Kromě výjimek, které mohou být vyvolány v jakémkoli volání metody (například <xref:System.OutOfMemoryException> při přízátěži systému nebo <xref:System.NullReferenceException> z důvodu chyby programátora), mohou metody systému souborů .NET vyvolat následující výjimky:
 
-- <xref:System.IO.IOException?displayProperty=nameWithType>, základní třída všech <xref:System.IO> typy výjimek. Je vyvolána výjimka, chyby, jehož návratové kódy z operačního systému není mapují přímo na jiný typ výjimky.
+- <xref:System.IO.IOException?displayProperty=nameWithType>, základní třída všech <xref:System.IO>ch typů výjimek. Je vyvolána pro chyby, jejichž návratové kódy z operačního systému nejsou přímo mapovány na žádný jiný typ výjimky.
 - <xref:System.IO.FileNotFoundException?displayProperty=nameWithType>.
 - <xref:System.IO.DirectoryNotFoundException?displayProperty=nameWithType>.
 - <xref:System.IO.DriveNotFoundException??displayProperty=nameWithType>.
 - <xref:System.IO.PathTooLongException?displayProperty=nameWithType>.
 - <xref:System.OperationCanceledException?displayProperty=nameWithType>.
 - <xref:System.UnauthorizedAccessException?displayProperty=nameWithType>.
-- <xref:System.ArgumentException?displayProperty=nameWithType>, která je vyvolána neplatná cesta znaků v rozhraní .NET Framework a .NET Core 2.0 a předchozí verze.
-- <xref:System.NotSupportedException?displayProperty=nameWithType>, která je vyvolána neplatná použití dvojteček v rozhraní .NET Framework.
-- <xref:System.Security.SecurityException?displayProperty=nameWithType>, která je vyvolána pro aplikace běžící v omezené vztahu důvěryhodnosti, které nemají potřebná oprávnění na rozhraní .NET Framework pouze. (Úplný vztah důvěryhodnosti je výchozí hodnota v rozhraní .NET Framework.)
+- <xref:System.ArgumentException?displayProperty=nameWithType>, která se vyvolala pro neplatné znaky cesty v .NET Framework a .NET Core 2,0 a předchozích verzích.
+- <xref:System.NotSupportedException?displayProperty=nameWithType>, která se vyvolala pro neplatná dvojtečka v .NET Framework.
+- <xref:System.Security.SecurityException?displayProperty=nameWithType>, která je vyvolána pro aplikace spuštěné v omezeném vztahu důvěryhodnosti, které nemají potřebná oprávnění pouze pro .NET Framework. (Ve výchozím nastavení je nastavená plná důvěryhodnost .NET Framework.)
 
-## <a name="mapping-error-codes-to-exceptions"></a>Mapování kódů chyb a výjimek
+## <a name="mapping-error-codes-to-exceptions"></a>Mapování kódů chyb na výjimky
 
-Protože systém souborů je prostředek operačního systému, vstupně-výstupní metody v .NET Core a .NET Framework obalují volání základního operačního systému. Když dojde k chybě vstupně-výstupní operace v kódu prováděném operačním systémem, operační systém vrátí informace o chybě metodě .NET vstupně-výstupních operací. Metoda pak přeloží informace o chybě, obvykle v podobě chybový kód, na typ .NET výjimky. Ve většině případů to dělá tak, že přímo překládá na jeho odpovídající typ výjimky; kód chyby: neprovede žádné speciální mapování chybu na základě kontextu volání metody.
+Vzhledem k tomu, že systém souborů je prostředkem operačního systému, vstupně-výstupní metody v rozhraní .NET Core a .NET Framework zabalit volání do základního operačního systému. Pokud dojde k vstupně-výstupní chybě v kódu spuštěném operačním systémem, operační systém vrátí informace o chybě metodě .NET I/O. Metoda pak přeloží informace o chybě, obvykle ve formě kódu chyby, do typu výjimky .NET. Ve většině případů to dělá přímo v překladu kódu chyby na odpovídající typ výjimky; neprovádí žádné speciální mapování chyb na základě kontextu volání metody.
 
-Například v operačním systému Windows, volání metody, která vrací kód chyby `ERROR_FILE_NOT_FOUND` (nebo 0x02) mapuje na <xref:System.IO.FileNotFoundException>a kód chyby `ERROR_PATH_NOT_FOUND` (nebo 0x03) se mapuje <xref:System.IO.DirectoryNotFoundException>.
+Například v operačním systému Windows, volání metody, které vrací chybový kód `ERROR_FILE_NOT_FOUND` (nebo 0x02), mapuje na <xref:System.IO.FileNotFoundException>a chybový kód `ERROR_PATH_NOT_FOUND` (nebo 0x03) se mapuje na <xref:System.IO.DirectoryNotFoundException>.
 
-Přesné podmínky, za kterých operační systém vrátí určité chybové kódy je však často nedokumentované nebo špatně dokument. V důsledku toho může dojít k neočekávaným výjimkám. Například vzhledem k tomu, že pracujete s adresáři, nikoli soubor, které by uživatel očekával poskytující neplatná cesta k adresáři na <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> vyvolá konstruktor <xref:System.IO.DirectoryNotFoundException>. Ale může také vyvolat <xref:System.IO.FileNotFoundException>.
+Přesné podmínky, za kterých operační systém vrátí konkrétní kódy chyb, ale často nedokumentují nebo špatně zdokumentují. Výsledkem je, že může dojít k neočekávaným výjimkám. Například vzhledem k tomu, že pracujete s adresářem namísto souboru, očekáváte, že zadáním neplatné cesty adresáře <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> konstruktoru vyvolá <xref:System.IO.DirectoryNotFoundException>. Může však také vyvolat <xref:System.IO.FileNotFoundException>.
 
-## <a name="exception-handling-in-io-operations"></a>Zpracování výjimek v vstupně-výstupních operací
+## <a name="exception-handling-in-io-operations"></a>Zpracování výjimek v vstupně-výstupních operacích
 
-Z důvodu této závislosti na operačním systému podmínky výjimek identické (například adresář nebyl nalezen chyba v našem příkladu) může vést k metodu vstupně-výstupních operací vyvolání některý celou třídu výjimky vstupně-výstupních operací. To znamená, že při volání rozhraní API pro vstupně-výstupních operací, váš kód by měla být připravena zpracovat většinu nebo všechny tyto výjimky, jak je znázorněno v následující tabulce:
+Vzhledem k tomu, že se jedná o závislé na operačním systému, může být výsledkem identické podmínky výjimky (například Chyba adresář nebyl nalezen v našem příkladu). To znamená, že při volání rozhraní API v/v by měl být váš kód připraven zpracovat většinu nebo všechny tyto výjimky, jak je znázorněno v následující tabulce:
 
 | Typ výjimky | .NET Core | .NET Framework |
 |---|---|---|
@@ -56,38 +54,38 @@ Z důvodu této závislosti na operačním systému podmínky výjimek identick�
 | <xref:System.IO.PathTooLongException> | Ano | Ano |
 | <xref:System.OperationCanceledException> | Ano | Ano |
 | <xref:System.UnauthorizedAccessException> | Ano | Ano |
-| <xref:System.ArgumentException> | .NET core 2.0 a starší| Ano |
+| <xref:System.ArgumentException> | .NET Core 2,0 a starší| Ano |
 | <xref:System.NotSupportedException> | Ne | Ano |
-| <xref:System.Security.SecurityException> | Ne | Pouze omezený vztah důvěryhodnosti |
+| <xref:System.Security.SecurityException> | Ne | Jenom omezená důvěra |
 
-## <a name="handling-ioexception"></a>IOException – zpracování
+## <a name="handling-ioexception"></a>Zpracování IOException
 
-Jako základní třída pro výjimky ve <xref:System.IO> obor názvů, <xref:System.IO.IOException> je také pro libovolný kód chyby, které nejsou namapované na typ předdefinovaná výjimka vyvolána. To znamená, že mohou být vyvolány ve všech vstupně-výstupní operace.
+Jako základní třída pro výjimky v oboru názvů <xref:System.IO> <xref:System.IO.IOException> je vyvolána také pro jakýkoliv kód chyby, který není namapován na předdefinovaný typ výjimky. To znamená, že může být vyvolána jakoukoli operací I/O.
 
 > [!IMPORTANT]
-> Protože <xref:System.IO.IOException> je základní třídou jiné typy výjimek v <xref:System.IO> obor názvů, můžete pracovat v `catch` blokovat po jsme zpracování I O souvisejícím s/výjimky.
+> Vzhledem k tomu, že <xref:System.IO.IOException> je základní třídou dalších typů výjimek v oboru názvů <xref:System.IO>, měli byste zpracovat `catch` blok po zpracování dalších výjimek souvisejících s vstupem/výstupem.
 
-Kromě toho počínaje .NET Core 2.1, ověřovacích kontrol správnosti cestu (například k zajištění, že neplatné znaky nejsou k dispozici v cestě) byly odebrány, a modul runtime vyvolá výjimku, mapovaná z kód chyby operačního systému místo z vlastního ověřovacího kódu. V tomto případě je pravděpodobně výjimka, která má být vyvolána <xref:System.IO.IOException>, i když může být vyvoláno také jakýkoli jiný typ výjimky.
+Kromě toho, počínaje rozhraním .NET Core 2,1, ověřování kontroluje správnost cesty (například pro zajištění, že nejsou v cestě k dispozici neplatné znaky) a modul runtime vyvolá výjimku namapovanou z kódu chyby operačního systému, a ne z vlastního ověřovacího kódu. Nejpravděpodobnější výjimka, která je vyvolána v tomto případě je <xref:System.IO.IOException>, i když jakýkoli jiný typ výjimky může být vyvolán také.
 
-Všimněte si, že v váš kód zpracování výjimek, vždy zpracovávejte <xref:System.IO.IOException> poslední. Jinak protože je základní třídy pro všechny ostatní výjimky vstupně-výstupních operací, nebude vyhodnocen bloky catch odvozených tříd.
+Všimněte si, že v kódu zpracování výjimek byste měli vždy zpracovávat <xref:System.IO.IOException> jako poslední. V opačném případě, protože se jedná o základní třídu všech ostatních výjimek v/v, nebudou vyhodnoceny bloky catch odvozených tříd.
 
-V případě třídy <xref:System.IO.IOException>, získáte další informace o chybě z [IOException.HResult](xref:System.Exception.HResult) vlastnost. Převede hodnotu HResult kódu chyby Win32, můžete odstranit horní 16 bitů 32bitová hodnota. V následující tabulce jsou uvedeny kódy chyb, které mohou být uzavřen do <xref:System.IO.IOException>.
+V případě <xref:System.IO.IOException>můžete získat další informace o chybě z vlastnosti [IOException. HRESULT](xref:System.Exception.HResult) . Chcete-li převést hodnotu HResult na kód chyby Win32, provedete horní 16 bitů hodnoty 32. V následující tabulce jsou uvedeny kódy chyb, které mohou být zabaleny do <xref:System.IO.IOException>.
 
-| Hodnota HResult | Konstanta | Popis |
+| HResult | Konstanta | Popis |
 | --- | --- | --- |
-| ERROR_SHARING_VIOLATION | 32 | Chybí název souboru nebo souboru nebo adresáře se používá. |
+| ERROR_SHARING_VIOLATION | 32 | Chybí název souboru, nebo je soubor nebo adresář používán. |
 | ERROR_FILE_EXISTS | 80 | Soubor již existuje. |
-| ERROR_INVALID_PARAMETER | 87 | Argument zadaný pro metodu je neplatný. |
+| ERROR_INVALID_PARAMETER | 87 | Argument dodaný metodě je neplatný. |
 | ERROR_ALREADY_EXISTS | 183 | Soubor nebo adresář již existuje. |
 
-Můžete zpracovat pomocí `When` klauzulí catch příkazu, jak ukazuje následující příklad.
+Můžete je zpracovat pomocí klauzule `When` v příkazu catch, jak ukazuje následující příklad.
 
 [!code-csharp[io-exception-handling](~/samples/snippets/standard/io/io-exceptions/cs/io-exceptions.cs)]
 [!code-vb[io-exception-handling](~/samples/snippets/standard/io/io-exceptions/vb/io-exceptions.vb)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Zpracování a vyvolání výjimek v rozhraní .NET](../exceptions/index.md)
+- [Zpracování a vyvolávání výjimek v rozhraní .NET](../exceptions/index.md)
 - [Zpracování výjimek (Task Parallel Library)](../parallel-programming/exception-handling-task-parallel-library.md)
-- [Doporučené postupy pro výjimky](../exceptions/best-practices-for-exceptions.md)
-- [Postup používání specifických výjimek v bloku catch](../exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)
+- [Osvědčené postupy pro výjimky](../exceptions/best-practices-for-exceptions.md)
+- [Používání specifických výjimek v bloku catch](../exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)

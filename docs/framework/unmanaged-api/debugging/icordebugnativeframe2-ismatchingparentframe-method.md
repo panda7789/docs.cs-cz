@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d2ca20db-df22-4528-a0dd-a09ea62c8998
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e215cf4f6d6c3cfde3fa723ecae67aa77e189917
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aa06b7db6b7371e66853ed242f5e118fb5e5ff0c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757055"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096204"
 ---
 # <a name="icordebugnativeframe2ismatchingparentframe-method"></a>ICorDebugNativeFrame2::IsMatchingParentFrame – metoda
-Určuje, zda zadaného rámce je nadřazeného člena aktuální rámec.  
+Určuje, zda je určený rámec nadřazeným prvkem aktuálního rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,33 +35,33 @@ HRESULT IsMatchingParentFrame([in] ICorDebugNativeFrame2
   
 ## <a name="parameters"></a>Parametry  
  `pPotentialParentFrame`  
- [in] Ukazatel na rámec objekt, který chcete vyhodnotit stav nadřazené.  
+ pro Ukazatel na objekt rámce, který chcete vyhodnotit pro nadřazený stav.  
   
  `pIsParent`  
- [out] `true` Pokud `pPotentialParentFrame` je nadřazeným prvkem aktuální rámec; v opačném případě `false`.  
+ [out] `true`, pokud je `pPotentialParentFrame` nadřazená aktuálnímu snímku; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Stav nadřazeného byla úspěšně vrácena.|  
-|E_FAIL|Stav nadřazeného nebylo možné vrátit.|  
-|E_INVALIDARG|`pPotentialParentFrame` nebo `pIsParent` má hodnotu null.|  
+|S_OK|Nadřazený stav byl úspěšně vrácen.|  
+|E_FAIL|Nadřazený stav nelze vrátit.|  
+|E_INVALIDARG|`pPotentialParentFrame` nebo `pIsParent` je null.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `IsMatchingParentFrame` Vrátí `true` Pokud orámovat objekt můžete předat metodě je nadřazeného člena orámovat objekt, na kterém byla volána metoda. Při volání metody na snímek, který není podřízeným prvkem zadaného rámce, vrátí chybu.  
+ `IsMatchingParentFrame` vrátí `true`, pokud je objekt Frame, který předáte metodě, nadřazený objektu rámce, na kterém byla metoda volána. Pokud voláte metodu na rámec, který není podřízenou položkou zadaného rámce, vrátí chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

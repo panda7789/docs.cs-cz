@@ -14,14 +14,12 @@ helpviewer_keywords:
 - WritePropertyValue function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3c42129835f9b30bed493a0992d49d7e2a458e2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f02fb3877d55e9f47384b281573202712c29c606
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798182"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107292"
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue – funkce
 Zapíše zadaný počet bajtů na vlastnost identifikovanou popisovačem vlastnosti.
@@ -61,24 +59,24 @@ mimo Ukazatel na pole bajtů, které obsahuje data.
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Došlo k neshodě typů. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalomí volání metody [IWbemclassObject:: WritePropertyValue](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-writepropertyvalue) .
 
-Tato funkce slouží k nastavení řetězce a všech ostatních`DWORD` `QWORD` neexistujících dat.
+Pomocí této funkce lze nastavit řetězec a všechna ostatní data, která nejsou`DWORD` nebo nejsou`QWORD`.
 
-Pro neřetězcové hodnoty `lNumBytes` vlastností musí být správná velikost dat zadaného typu vlastnosti. V případě hodnot `lNumBytes` řetězcových vlastností musí být délka zadaného řetězce v bajtech a samotný řetězec musí mít stejnou délku v bajtech a musí následovat po znaku pro ukončení hodnoty null.
+Pro neřetězcové hodnoty vlastností musí být `lNumBytes` správná velikost dat zadaného typu vlastnosti. U hodnot řetězcových vlastností musí být `lNumBytes` délka zadaného řetězce v bajtech a samotný řetězec musí mít stejnou délku v bajtech a musí následovat po znaku pro ukončení hodnoty null.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

@@ -10,22 +10,20 @@ helpviewer_keywords:
 - container tags, <publisherPolicy> element
 - <publisherPolicy> element
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cc206e584440778858e61fc0bab51fc8ffa2009a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 89fa8a991cc7d0352eb0a13cdfd3a6063ea468e7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252382"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115848"
 ---
-# <a name="publisherpolicy-element"></a>\<publisherPolicy – element >
+# <a name="publisherpolicy-element"></a>\<element > publisherPolicy
 Určuje, zda modul runtime používá zásady vydavatele.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<dependentAssembly >** ](dependentassembly-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<publisherPolicy >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,7 +43,7 @@ Určuje, zda modul runtime používá zásady vydavatele.
   
 ## <a name="apply-attribute"></a>použít atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`yes`|Použije zásady vydavatele. Toto je výchozí nastavení.|  
 |`no`|Nepoužívá zásadu vydavatele.|  
@@ -60,15 +58,15 @@ Určuje, zda modul runtime používá zásady vydavatele.
 |-------------|-----------------|  
 |`assemblyBinding`|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`dependentAssembly`|Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé `<dependentAssembly>` sestavení použijte jeden prvek.|  
+|`dependentAssembly`|Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé sestavení použijte jeden `<dependentAssembly>` element.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když dodavatel komponenty uvolní novou verzi sestavení, dodavatel může zahrnout zásadu vydavatele, aby aplikace, které používají starou verzi, teď používaly novou verzi. Chcete-li určit, zda má být pro konkrétní sestavení použita zásada vydavatele, vložte  **\<prvek publisherPolicy >** do  **\<prvku dependentAssembly >** .  
+ Když dodavatel komponenty uvolní novou verzi sestavení, dodavatel může zahrnout zásadu vydavatele, aby aplikace, které používají starou verzi, teď používaly novou verzi. Chcete-li určit, zda se má použít zásada vydavatele pro konkrétní sestavení, vložte **> prvek\<publisherPolicy** do **\<dependentAssembly >** .  
   
  Výchozí nastavení atributu **Apply** je **Ano**. Nastavení atributu **Apply** na hodnotu **ne** přepíše všechna předchozí nastavení **Ano** pro sestavení.  
   
- Aby aplikace explicitně ignorovala zásady vydavatele pomocí [ \<elementu publisherPolicy Apply = "No"/>](publisherpolicy-element.md) v konfiguračním souboru aplikace, vyžaduje oprávnění. Oprávnění je uděleno nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku <xref:System.Security.Permissions.SecurityPermission>na. Další informace naleznete v tématu [oprávnění zabezpečení přesměrování vazby sestavení](../../assembly-binding-redirection-security-permission.md).  
+ Aby aplikace explicitně ignorovala zásady vydavatele pomocí [\<publisherPolicy Apply = "No"/>](publisherpolicy-element.md) v konfiguračním souboru aplikace, vyžaduje oprávnění. Oprávnění je uděleno nastavením příznaku <xref:System.Security.Permissions.SecurityPermissionFlag> na <xref:System.Security.Permissions.SecurityPermission>. Další informace naleznete v tématu [oprávnění zabezpečení přesměrování vazby sestavení](../../assembly-binding-redirection-security-permission.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vypne zásady vydavatele pro sestavení `myAssembly`.  
