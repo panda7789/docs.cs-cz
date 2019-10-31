@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 826baa9b-9218-4736-a509-7ab193b125a0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 87e318c4f2367e8c66910978f4a9c89f36c95632
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36eeb7ed4f80979ef2edb930e65963a1db0c894f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766519"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134908"
 ---
-# <a name="igchostgetthreadstats-method"></a><span data-ttu-id="be9e6-102">IGCHost::GetThreadStats – metoda</span><span class="sxs-lookup"><span data-stu-id="be9e6-102">IGCHost::GetThreadStats Method</span></span>
-<span data-ttu-id="be9e6-103">Získá statistiku vlákno uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="be9e6-103">Gets the per-thread statistics for garbage collection.</span></span>  
+# <a name="igchostgetthreadstats-method"></a><span data-ttu-id="243ed-102">IGCHost::GetThreadStats – metoda</span><span class="sxs-lookup"><span data-stu-id="243ed-102">IGCHost::GetThreadStats Method</span></span>
+<span data-ttu-id="243ed-103">Načte statistiku jednotlivých vláken pro uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="243ed-103">Gets the per-thread statistics for garbage collection.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="be9e6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="be9e6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="243ed-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="243ed-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetThreadStats (  
@@ -36,22 +34,22 @@ HRESULT GetThreadStats (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="be9e6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="be9e6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="243ed-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="243ed-105">Parameters</span></span>  
  `pFiberCookie`  
- <span data-ttu-id="be9e6-106">[in] Ukazatel na soubor cookie fiber, který určuje vlákna, pro které se mají načíst statistiky.</span><span class="sxs-lookup"><span data-stu-id="be9e6-106">[in] A pointer to a fiber cookie that specifies the thread for which to retrieve the statistics.</span></span>  
+ <span data-ttu-id="243ed-106">pro Ukazatel na vláknový soubor cookie, který určuje vlákno, pro které chcete získat statistiku.</span><span class="sxs-lookup"><span data-stu-id="243ed-106">[in] A pointer to a fiber cookie that specifies the thread for which to retrieve the statistics.</span></span>  
   
  `pStats`  
- <span data-ttu-id="be9e6-107">[out v] Ukazatel [cor_gc_thread_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) strukturu, která obsahuje statistiku kolekce uvolnění paměti pro zadaný podproces.</span><span class="sxs-lookup"><span data-stu-id="be9e6-107">[in, out] A pointer to a [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) structure that contains the garbage collection statistics for the specified thread.</span></span>  
+ <span data-ttu-id="243ed-107">[in, out] Ukazatel na strukturu [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) , která obsahuje statistiku uvolňování paměti pro zadané vlákno.</span><span class="sxs-lookup"><span data-stu-id="243ed-107">[in, out] A pointer to a [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) structure that contains the garbage collection statistics for the specified thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="be9e6-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="be9e6-108">Requirements</span></span>  
- <span data-ttu-id="be9e6-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="be9e6-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="243ed-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="243ed-108">Requirements</span></span>  
+ <span data-ttu-id="243ed-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="243ed-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="be9e6-110">**Záhlaví:** GCHost.idl, GCHost.h</span><span class="sxs-lookup"><span data-stu-id="be9e6-110">**Header:** GCHost.idl, GCHost.h</span></span>  
+ <span data-ttu-id="243ed-110">**Hlavička:** GCHost. idl, GCHost. h</span><span class="sxs-lookup"><span data-stu-id="243ed-110">**Header:** GCHost.idl, GCHost.h</span></span>  
   
- <span data-ttu-id="be9e6-111">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="be9e6-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="243ed-111">**Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="243ed-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="be9e6-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="be9e6-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="243ed-112">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="243ed-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="be9e6-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="be9e6-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="243ed-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="243ed-113">See also</span></span>
 
-- [<span data-ttu-id="be9e6-114">IGCHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="be9e6-114">IGCHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [<span data-ttu-id="243ed-114">IGCHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="243ed-114">IGCHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 61f4e057a487462feb385ca0e3ca977fdd165f56
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9bcc03cc97a62b4c1cadacd7c0b2bc46b9fec470
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739093"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134132"
 ---
-# <a name="efngetmanagedexcepstack-function"></a><span data-ttu-id="fefcd-102">\_EFN\_GetManagedExcepStack Function</span><span class="sxs-lookup"><span data-stu-id="fefcd-102">\_EFN\_GetManagedExcepStack Function</span></span>
-<span data-ttu-id="fefcd-103">Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.</span><span class="sxs-lookup"><span data-stu-id="fefcd-103">Given a managed exception object address, returns a string version of the stack trace contained inside.</span></span>  
+# <a name="_efn_getmanagedexcepstack-function"></a><span data-ttu-id="6ea01-102">\_EFN\_funkce GetManagedExcepStack</span><span class="sxs-lookup"><span data-stu-id="6ea01-102">\_EFN\_GetManagedExcepStack Function</span></span>
+<span data-ttu-id="6ea01-103">Pokud je zadána adresa spravovaného objektu výjimky, vrátí verzi řetězce trasování zásobníku obsaženého v rámci.</span><span class="sxs-lookup"><span data-stu-id="6ea01-103">Given a managed exception object address, returns a string version of the stack trace contained inside.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fefcd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fefcd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6ea01-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6ea01-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT _EFN_GetManagedExcepStack(  
@@ -37,29 +35,29 @@ HRESULT _EFN_GetManagedExcepStack(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="fefcd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fefcd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="6ea01-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6ea01-105">Parameters</span></span>  
  `Client`  
- <span data-ttu-id="fefcd-106">[in] Klient, který se právě ladí.</span><span class="sxs-lookup"><span data-stu-id="fefcd-106">[in] The client being debugged.</span></span>  
+ <span data-ttu-id="6ea01-106">pro Probíhá ladění klienta.</span><span class="sxs-lookup"><span data-stu-id="6ea01-106">[in] The client being debugged.</span></span>  
   
  `StackObjAddr`  
- <span data-ttu-id="fefcd-107">[in] Ukazatel spravovaný objekt, odvozený z <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="fefcd-107">[in] A managed object pointer, derived from <xref:System.Exception>.</span></span>  
+ <span data-ttu-id="6ea01-107">pro Ukazatel spravovaného objektu odvozený z <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="6ea01-107">[in] A managed object pointer, derived from <xref:System.Exception>.</span></span>  
   
- <span data-ttu-id="fefcd-108">szStackString</span><span class="sxs-lookup"><span data-stu-id="fefcd-108">szStackString</span></span>  
- <span data-ttu-id="fefcd-109">[out] Vrácený řetězec.</span><span class="sxs-lookup"><span data-stu-id="fefcd-109">[out] The returned string.</span></span>  
+ <span data-ttu-id="6ea01-108">szStackString</span><span class="sxs-lookup"><span data-stu-id="6ea01-108">szStackString</span></span>  
+ <span data-ttu-id="6ea01-109">mimo Vrácený řetězec.</span><span class="sxs-lookup"><span data-stu-id="6ea01-109">[out] The returned string.</span></span>  
   
  `cbString`  
- <span data-ttu-id="fefcd-110">[out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.</span><span class="sxs-lookup"><span data-stu-id="fefcd-110">[out] The number of characters available in the string buffer.</span></span>  
+ <span data-ttu-id="6ea01-110">mimo Počet znaků, které jsou k dispozici v bufferu řetězce.</span><span class="sxs-lookup"><span data-stu-id="6ea01-110">[out] The number of characters available in the string buffer.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fefcd-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fefcd-111">Remarks</span></span>  
- <span data-ttu-id="fefcd-112">Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.</span><span class="sxs-lookup"><span data-stu-id="fefcd-112">If there is no managed code on the thread currently in context, the function returns HRESULT SOS_E_NOMANAGEDCODE with a facility value of 0xa0 and an error code of 0x1000.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6ea01-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6ea01-111">Remarks</span></span>  
+ <span data-ttu-id="6ea01-112">Pokud ve vlákně, které je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.</span><span class="sxs-lookup"><span data-stu-id="6ea01-112">If there is no managed code on the thread currently in context, the function returns HRESULT SOS_E_NOMANAGEDCODE with a facility value of 0xa0 and an error code of 0x1000.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fefcd-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fefcd-113">Requirements</span></span>  
- <span data-ttu-id="fefcd-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fefcd-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6ea01-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6ea01-113">Requirements</span></span>  
+ <span data-ttu-id="6ea01-114">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6ea01-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fefcd-115">**Záhlaví:** SOS_Stacktrace.h</span><span class="sxs-lookup"><span data-stu-id="fefcd-115">**Header:** SOS_Stacktrace.h</span></span>  
+ <span data-ttu-id="6ea01-115">**Hlavička:** SOS_Stacktrace. h</span><span class="sxs-lookup"><span data-stu-id="6ea01-115">**Header:** SOS_Stacktrace.h</span></span>  
   
- <span data-ttu-id="fefcd-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fefcd-116">**.NET Framework Version:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="6ea01-116">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6ea01-116">**.NET Framework Version:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fefcd-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fefcd-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6ea01-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6ea01-117">See also</span></span>
 
-- [<span data-ttu-id="fefcd-118">Globální statické funkce pro ladění</span><span class="sxs-lookup"><span data-stu-id="fefcd-118">Debugging Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [<span data-ttu-id="6ea01-118">Globální statické funkce pro ladění</span><span class="sxs-lookup"><span data-stu-id="6ea01-118">Debugging Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

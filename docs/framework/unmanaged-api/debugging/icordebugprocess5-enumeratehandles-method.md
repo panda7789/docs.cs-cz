@@ -15,53 +15,51 @@ helpviewer_keywords:
 ms.assetid: 7d7fa796-0dc6-4ee8-9d56-40166246d91d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 229717ba1d7f004dc1ed020eddb2929079aa9285
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0e68dba1f4d9ac5fa618aa842b823dcc046e70e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767576"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129679"
 ---
-# <a name="icordebugprocess5enumeratehandles-method"></a><span data-ttu-id="9ca1c-102">ICorDebugProcess5::EnumerateHandles – metoda</span><span class="sxs-lookup"><span data-stu-id="9ca1c-102">ICorDebugProcess5::EnumerateHandles Method</span></span>
-<span data-ttu-id="9ca1c-103">Získá enumerátor pro objekt popisovače procesu.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-103">Gets an enumerator for object handles in a process.</span></span>  
+# <a name="icordebugprocess5enumeratehandles-method"></a><span data-ttu-id="4dbe8-102">ICorDebugProcess5::EnumerateHandles – metoda</span><span class="sxs-lookup"><span data-stu-id="4dbe8-102">ICorDebugProcess5::EnumerateHandles Method</span></span>
+<span data-ttu-id="4dbe8-103">Získá enumerátor pro popisovače objektů v procesu.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-103">Gets an enumerator for object handles in a process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9ca1c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ca1c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4dbe8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4dbe8-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumerateHandles(     [in] CorGCReferenceType types,  
     [out] ICorDebugGCReferenceEnum **ppEnum);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9ca1c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9ca1c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4dbe8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4dbe8-105">Parameters</span></span>  
  `types`  
- <span data-ttu-id="9ca1c-106">[in] Bitová kombinace hodnot [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnoty, které určuje typ obslužné rutiny, které chcete zahrnout do kolekce.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-106">[in] A bitwise combination of [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) values that specifies the type of handles to include in the collection.</span></span>  
+ <span data-ttu-id="4dbe8-106">pro Bitová kombinace hodnot [CorGCReferenceType –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) , která určuje typ popisovačů, které mají být zahrnuty do kolekce.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-106">[in] A bitwise combination of [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) values that specifies the type of handles to include in the collection.</span></span>  
   
  `ppENum`  
- <span data-ttu-id="9ca1c-107">[out] Ukazatel na adresu [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , který je enumerátor pro objekty být uvolněna.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-107">[out] A pointer to the address of an [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) that is an enumerator for the objects to be garbage-collected.</span></span>  
+ <span data-ttu-id="4dbe8-107">mimo Ukazatel na adresu [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , která je enumerátorem pro objekty, které mají být shromážděny z paměti.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-107">[out] A pointer to the address of an [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) that is an enumerator for the objects to be garbage-collected.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="9ca1c-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9ca1c-108">Remarks</span></span>  
- <span data-ttu-id="9ca1c-109">`EnumerateHandles` je pomocná funkce, která podporuje kontrolu tabulku.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-109">`EnumerateHandles` is a helper function that supports inspection of the handle table.</span></span> <span data-ttu-id="9ca1c-110">Se podobá [icordebugprocess5::enumerategcreferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) metody, s výjimkou, že místo naplnění [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) kolekci všech objektů, aby byly uklizeny, ho zahrnuje pouze objekty, které mají obslužné rutiny z tabulky popisovače.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-110">It is similar to the [ICorDebugProcess5::EnumerateGCReferences](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) method, except that rather than populating an [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) collection with all objects to be garbage-collected, it includes only objects that have handles from the handle table.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4dbe8-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4dbe8-108">Remarks</span></span>  
+ <span data-ttu-id="4dbe8-109">`EnumerateHandles` je pomocná funkce, která podporuje kontrolu tabulky popisovačů.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-109">`EnumerateHandles` is a helper function that supports inspection of the handle table.</span></span> <span data-ttu-id="4dbe8-110">Je podobný jako metoda [ICorDebugProcess5:: EnumerateGCReferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) , s výjimkou toho, že místo naplnění kolekce [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) se všemi objekty, které mají být sbírány do paměti, zahrnují pouze objekty, které mají popisovače. Tabulka popisovačů.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-110">It is similar to the [ICorDebugProcess5::EnumerateGCReferences](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) method, except that rather than populating an [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) collection with all objects to be garbage-collected, it includes only objects that have handles from the handle table.</span></span>  
   
- <span data-ttu-id="9ca1c-111">`types` Parametr určuje typy popisovač chcete zahrnout do kolekce.</span><span class="sxs-lookup"><span data-stu-id="9ca1c-111">The `types` parameter specifies the handle types to include in the collection.</span></span> <span data-ttu-id="9ca1c-112">`types` může být kterýkoli z následujících tří členů [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) výčtu:</span><span class="sxs-lookup"><span data-stu-id="9ca1c-112">`types` can be any of the following three members of the [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) enumeration:</span></span>  
+ <span data-ttu-id="4dbe8-111">Parametr `types` určuje typy popisovačů, které se mají zahrnout do kolekce.</span><span class="sxs-lookup"><span data-stu-id="4dbe8-111">The `types` parameter specifies the handle types to include in the collection.</span></span> <span data-ttu-id="4dbe8-112">`types` může být kterýkoli z následujících tří členů výčtu [CorGCReferenceType –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) :</span><span class="sxs-lookup"><span data-stu-id="4dbe8-112">`types` can be any of the following three members of the [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) enumeration:</span></span>  
   
-- <span data-ttu-id="9ca1c-113">`CorHandleStrongOnly` (popisovače pouze odkazy na silné).</span><span class="sxs-lookup"><span data-stu-id="9ca1c-113">`CorHandleStrongOnly` (handles to strong references only).</span></span>  
+- <span data-ttu-id="4dbe8-113">`CorHandleStrongOnly` (zpracovává pouze silné odkazy).</span><span class="sxs-lookup"><span data-stu-id="4dbe8-113">`CorHandleStrongOnly` (handles to strong references only).</span></span>  
   
-- <span data-ttu-id="9ca1c-114">`CorHandleWeakOnly` (popisovače jenom slabé odkazy).</span><span class="sxs-lookup"><span data-stu-id="9ca1c-114">`CorHandleWeakOnly` (handles to weak references only).</span></span>  
+- <span data-ttu-id="4dbe8-114">`CorHandleWeakOnly` (zpracovává pouze slabé odkazy).</span><span class="sxs-lookup"><span data-stu-id="4dbe8-114">`CorHandleWeakOnly` (handles to weak references only).</span></span>  
   
-- <span data-ttu-id="9ca1c-115">`CorHandleAll` (všechny popisovače).</span><span class="sxs-lookup"><span data-stu-id="9ca1c-115">`CorHandleAll` (all handles).</span></span>  
+- <span data-ttu-id="4dbe8-115">`CorHandleAll` (všechny popisovače).</span><span class="sxs-lookup"><span data-stu-id="4dbe8-115">`CorHandleAll` (all handles).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9ca1c-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9ca1c-116">Requirements</span></span>  
- <span data-ttu-id="9ca1c-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9ca1c-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4dbe8-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4dbe8-116">Requirements</span></span>  
+ <span data-ttu-id="4dbe8-117">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4dbe8-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9ca1c-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="9ca1c-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="4dbe8-118">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="4dbe8-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="9ca1c-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9ca1c-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4dbe8-119">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="4dbe8-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="9ca1c-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ca1c-120">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="4dbe8-120">**Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4dbe8-120">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9ca1c-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ca1c-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4dbe8-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4dbe8-121">See also</span></span>
 
-- [<span data-ttu-id="9ca1c-122">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="9ca1c-122">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [<span data-ttu-id="9ca1c-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="9ca1c-123">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="4dbe8-122">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="4dbe8-122">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [<span data-ttu-id="4dbe8-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="4dbe8-123">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 9ee6e052-bef7-4350-9e4f-edfffd99ad6f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ba380babe1c84cca632babdd041b5e59ce575d23
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8bcb01f4a19e6043bd59fe6f1565cdf35ed1f77c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748764"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136729"
 ---
-# <a name="ihostmemorymanagercreatemalloc-method"></a><span data-ttu-id="af2a9-102">IHostMemoryManager::CreateMAlloc – metoda</span><span class="sxs-lookup"><span data-stu-id="af2a9-102">IHostMemoryManager::CreateMAlloc Method</span></span>
-<span data-ttu-id="af2a9-103">Získá ukazatel rozhraní k [ihostmalloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instanci, která slouží k podání žádostí o přidělení z haldy vytvořené hostitele.</span><span class="sxs-lookup"><span data-stu-id="af2a9-103">Gets an interface pointer to an [IHostMAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instance that is used to make allocation requests from a heap created by the host.</span></span>  
+# <a name="ihostmemorymanagercreatemalloc-method"></a><span data-ttu-id="897e8-102">IHostMemoryManager::CreateMAlloc – metoda</span><span class="sxs-lookup"><span data-stu-id="897e8-102">IHostMemoryManager::CreateMAlloc Method</span></span>
+<span data-ttu-id="897e8-103">Získá ukazatel rozhraní na instanci [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) , která se používá k provádění požadavků na přidělení z haldy vytvořené hostitelem.</span><span class="sxs-lookup"><span data-stu-id="897e8-103">Gets an interface pointer to an [IHostMAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instance that is used to make allocation requests from a heap created by the host.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="af2a9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af2a9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="897e8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="897e8-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateMalloc (  
@@ -36,38 +34,38 @@ HRESULT CreateMalloc (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="af2a9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="af2a9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="897e8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="897e8-105">Parameters</span></span>  
  `dwMallocType`  
- <span data-ttu-id="af2a9-106">[in] Kombinace [malloc_type –](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md) příznak, který určuje vlastnosti paměti, které je právě přiděleno.</span><span class="sxs-lookup"><span data-stu-id="af2a9-106">[in] A combination of [MALLOC_TYPE](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md) flags that specifies the characteristics of the memory that is being allocated.</span></span>  
+ <span data-ttu-id="897e8-106">pro Kombinace příznaků [MALLOC_TYPE](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md) , které určují charakteristiky přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="897e8-106">[in] A combination of [MALLOC_TYPE](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md) flags that specifies the characteristics of the memory that is being allocated.</span></span>  
   
  `ppMAlloc`  
- <span data-ttu-id="af2a9-107">[out] Ukazatel na adresu `IHostMAlloc` instance, které jsou poskytovány tímto hostitelem.</span><span class="sxs-lookup"><span data-stu-id="af2a9-107">[out] A pointer to the address of an `IHostMAlloc` instance provided by the host.</span></span>  
+ <span data-ttu-id="897e8-107">mimo Ukazatel na adresu `IHostMAlloc` instance poskytnuté hostitelem.</span><span class="sxs-lookup"><span data-stu-id="897e8-107">[out] A pointer to the address of an `IHostMAlloc` instance provided by the host.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="af2a9-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="af2a9-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="897e8-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="897e8-108">Return Value</span></span>  
   
-|<span data-ttu-id="af2a9-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="af2a9-109">HRESULT</span></span>|<span data-ttu-id="af2a9-110">Popis</span><span class="sxs-lookup"><span data-stu-id="af2a9-110">Description</span></span>|  
+|<span data-ttu-id="897e8-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="897e8-109">HRESULT</span></span>|<span data-ttu-id="897e8-110">Popis</span><span class="sxs-lookup"><span data-stu-id="897e8-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="af2a9-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="af2a9-111">S_OK</span></span>|<span data-ttu-id="af2a9-112">`CreateMAlloc` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="af2a9-112">`CreateMAlloc` returned successfully.</span></span>|  
-|<span data-ttu-id="af2a9-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="af2a9-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="af2a9-114">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="af2a9-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="af2a9-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="af2a9-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="af2a9-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="af2a9-116">The call timed out.</span></span>|  
-|<span data-ttu-id="af2a9-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="af2a9-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="af2a9-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="af2a9-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="af2a9-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="af2a9-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="af2a9-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="af2a9-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="af2a9-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="af2a9-121">E_FAIL</span></span>|<span data-ttu-id="af2a9-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="af2a9-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="af2a9-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="af2a9-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="af2a9-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="af2a9-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="af2a9-125">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="af2a9-125">E_OUTOFMEMORY</span></span>|<span data-ttu-id="af2a9-126">Není dostatek fyzické paměti nebyly k dispozici k dokončení požadavek na přidělení.</span><span class="sxs-lookup"><span data-stu-id="af2a9-126">Not enough physical memory was available to complete the allocation request.</span></span>|  
+|<span data-ttu-id="897e8-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="897e8-111">S_OK</span></span>|<span data-ttu-id="897e8-112">`CreateMAlloc` byla úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="897e8-112">`CreateMAlloc` returned successfully.</span></span>|  
+|<span data-ttu-id="897e8-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="897e8-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="897e8-114">Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="897e8-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="897e8-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="897e8-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="897e8-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="897e8-116">The call timed out.</span></span>|  
+|<span data-ttu-id="897e8-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="897e8-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="897e8-118">Volající nevlastní zámek.</span><span class="sxs-lookup"><span data-stu-id="897e8-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="897e8-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="897e8-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="897e8-120">Událost byla zrušena při čekání na blokované vlákno nebo vlákna.</span><span class="sxs-lookup"><span data-stu-id="897e8-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="897e8-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="897e8-121">E_FAIL</span></span>|<span data-ttu-id="897e8-122">Došlo k neznámé chybě závažnosti.</span><span class="sxs-lookup"><span data-stu-id="897e8-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="897e8-123">Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný.</span><span class="sxs-lookup"><span data-stu-id="897e8-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="897e8-124">Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="897e8-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="897e8-125">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="897e8-125">E_OUTOFMEMORY</span></span>|<span data-ttu-id="897e8-126">K dokončení žádosti o přidělení není k dispozici dostatek fyzické paměti.</span><span class="sxs-lookup"><span data-stu-id="897e8-126">Not enough physical memory was available to complete the allocation request.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="af2a9-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="af2a9-127">Remarks</span></span>  
- <span data-ttu-id="af2a9-128">`CreateMAlloc` Vrátí objekt, který umožňuje CLR k podání žádostí o přidělení přes hostitele namísto použití standardní funkce Win32.</span><span class="sxs-lookup"><span data-stu-id="af2a9-128">`CreateMAlloc` returns an object that allows the CLR to make allocation requests through the host instead of using the standard Win32 functions.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="897e8-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="897e8-127">Remarks</span></span>  
+ <span data-ttu-id="897e8-128">`CreateMAlloc` vrátí objekt, který umožňuje modulu CLR vytvářet požadavky na přidělení prostřednictvím hostitele namísto použití standardních funkcí Win32.</span><span class="sxs-lookup"><span data-stu-id="897e8-128">`CreateMAlloc` returns an object that allows the CLR to make allocation requests through the host instead of using the standard Win32 functions.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="af2a9-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="af2a9-129">Requirements</span></span>  
- <span data-ttu-id="af2a9-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="af2a9-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="897e8-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="897e8-129">Requirements</span></span>  
+ <span data-ttu-id="897e8-130">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="897e8-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="af2a9-131">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="af2a9-131">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="897e8-131">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="897e8-131">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="af2a9-132">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="af2a9-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="897e8-132">**Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="897e8-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="af2a9-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="af2a9-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="897e8-133">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="897e8-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="af2a9-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="af2a9-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="897e8-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="897e8-134">See also</span></span>
 
-- [<span data-ttu-id="af2a9-135">IHostMalloc – rozhraní</span><span class="sxs-lookup"><span data-stu-id="af2a9-135">IHostMalloc Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
-- [<span data-ttu-id="af2a9-136">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="af2a9-136">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [<span data-ttu-id="897e8-135">IHostMalloc – rozhraní</span><span class="sxs-lookup"><span data-stu-id="897e8-135">IHostMalloc Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
+- [<span data-ttu-id="897e8-136">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="897e8-136">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

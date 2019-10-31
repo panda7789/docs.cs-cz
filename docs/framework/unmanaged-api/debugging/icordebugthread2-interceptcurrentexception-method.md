@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 536d2357-1b97-49e0-a10c-c860aed74e6e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a59476728280e42f45c416b614e6a721efaf26c8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f3cf3db5df610e57a957147f0ab79121679e00b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765255"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138703"
 ---
-# <a name="icordebugthread2interceptcurrentexception-method"></a><span data-ttu-id="01e1a-102">ICorDebugThread2::InterceptCurrentException – metoda</span><span class="sxs-lookup"><span data-stu-id="01e1a-102">ICorDebugThread2::InterceptCurrentException Method</span></span>
-<span data-ttu-id="01e1a-103">Umožňuje ladicího programu a zachytit aktuální výjimku v tomto vlákně.</span><span class="sxs-lookup"><span data-stu-id="01e1a-103">Allows a debugger to intercept the current exception on this thread.</span></span>  
+# <a name="icordebugthread2interceptcurrentexception-method"></a><span data-ttu-id="b3793-102">ICorDebugThread2::InterceptCurrentException – metoda</span><span class="sxs-lookup"><span data-stu-id="b3793-102">ICorDebugThread2::InterceptCurrentException Method</span></span>
+<span data-ttu-id="b3793-103">Umožňuje ladicímu programu zachytit aktuální výjimku v tomto vlákně.</span><span class="sxs-lookup"><span data-stu-id="b3793-103">Allows a debugger to intercept the current exception on this thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="01e1a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="01e1a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b3793-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b3793-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT InterceptCurrentException (  
@@ -35,18 +33,18 @@ HRESULT InterceptCurrentException (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="01e1a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="01e1a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b3793-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b3793-105">Parameters</span></span>  
  `pFrame`  
- <span data-ttu-id="01e1a-106">[in] Ukazatel na ICorDebugFrame, představující aktivní blok zásobníku.</span><span class="sxs-lookup"><span data-stu-id="01e1a-106">[in] A pointer to an ICorDebugFrame that represents the active stack frame.</span></span>  
+ <span data-ttu-id="b3793-106">pro Ukazatel na ICorDebugFrame, který představuje aktivní rámec zásobníku.</span><span class="sxs-lookup"><span data-stu-id="b3793-106">[in] A pointer to an ICorDebugFrame that represents the active stack frame.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="01e1a-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="01e1a-107">Remarks</span></span>  
- <span data-ttu-id="01e1a-108">`InterceptCurrentException` Metodu lze volat mezi zpětného volání k výjimce ([icordebugmanagedcallback::Exception –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md) nebo [icordebugmanagedcallback2::Exception –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md)) a přidružené volání [Icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).</span><span class="sxs-lookup"><span data-stu-id="01e1a-108">The `InterceptCurrentException` method can be called between an exception callback ([ICorDebugManagedCallback::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md) or [ICorDebugManagedCallback2::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md)) and the associated call to [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b3793-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b3793-107">Remarks</span></span>  
+ <span data-ttu-id="b3793-108">Metodu `InterceptCurrentException` lze volat mezi zpětným voláním výjimky ([ICorDebugManagedCallback:: Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md) nebo [ICorDebugManagedCallback2:: Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md)) a přidruženým voláním [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).</span><span class="sxs-lookup"><span data-stu-id="b3793-108">The `InterceptCurrentException` method can be called between an exception callback ([ICorDebugManagedCallback::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md) or [ICorDebugManagedCallback2::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md)) and the associated call to [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="01e1a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="01e1a-109">Requirements</span></span>  
- <span data-ttu-id="01e1a-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01e1a-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b3793-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b3793-109">Requirements</span></span>  
+ <span data-ttu-id="b3793-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b3793-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="01e1a-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="01e1a-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b3793-111">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="b3793-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="01e1a-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="01e1a-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b3793-112">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="b3793-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="01e1a-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01e1a-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="b3793-113">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b3793-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

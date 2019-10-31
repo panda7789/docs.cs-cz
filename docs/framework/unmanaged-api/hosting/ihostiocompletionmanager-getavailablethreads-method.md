@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: bab363d1-b859-47a4-9884-5661c611cce7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4316412cec26ae5698918ff65b2da65de9f36ff2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2fa429979faa04518397cf58aaa62d3e45230a76
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779620"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133835"
 ---
-# <a name="ihostiocompletionmanagergetavailablethreads-method"></a><span data-ttu-id="2aa1c-102">IHostIoCompletionManager::GetAvailableThreads – metoda</span><span class="sxs-lookup"><span data-stu-id="2aa1c-102">IHostIoCompletionManager::GetAvailableThreads Method</span></span>
-<span data-ttu-id="2aa1c-103">Získá počet vláken dokončení vstupně-výstupních operací, z celkového počtu vláken spravovaný hostitelem, které momentálně nejsou požadavky obsluhy.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-103">Gets the number of I/O completion threads, of the total number of threads managed by the host, that are not currently servicing requests.</span></span>  
+# <a name="ihostiocompletionmanagergetavailablethreads-method"></a><span data-ttu-id="32e3a-102">IHostIoCompletionManager::GetAvailableThreads – metoda</span><span class="sxs-lookup"><span data-stu-id="32e3a-102">IHostIoCompletionManager::GetAvailableThreads Method</span></span>
+<span data-ttu-id="32e3a-103">Získá počet vláken dokončování v/v celkového počtu vláken spravovaných hostitelem, který aktuálně neobsluhuje požadavky.</span><span class="sxs-lookup"><span data-stu-id="32e3a-103">Gets the number of I/O completion threads, of the total number of threads managed by the host, that are not currently servicing requests.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2aa1c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2aa1c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="32e3a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32e3a-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetAvailableThreads (  
@@ -35,35 +33,35 @@ HRESULT GetAvailableThreads (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2aa1c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2aa1c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="32e3a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="32e3a-105">Parameters</span></span>  
  `pdwAvailableIoCompletionThreads`  
- <span data-ttu-id="2aa1c-106">[out] Ukazatel na počet vstupně-výstupních operací dokončení vlákna spravováno hostitele, které jsou aktuálně k dispozici žádosti o služby.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-106">[out] A pointer to the number of I/O completion threads managed by the host that are currently available to service requests.</span></span>  
+ <span data-ttu-id="32e3a-106">mimo Ukazatel na počet vstupně-výstupních vláken, která spravuje hostitel, kteří jsou aktuálně k dispozici pro žádosti o služby.</span><span class="sxs-lookup"><span data-stu-id="32e3a-106">[out] A pointer to the number of I/O completion threads managed by the host that are currently available to service requests.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2aa1c-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2aa1c-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="32e3a-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="32e3a-107">Return Value</span></span>  
   
-|<span data-ttu-id="2aa1c-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="2aa1c-108">HRESULT</span></span>|<span data-ttu-id="2aa1c-109">Popis</span><span class="sxs-lookup"><span data-stu-id="2aa1c-109">Description</span></span>|  
+|<span data-ttu-id="32e3a-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="32e3a-108">HRESULT</span></span>|<span data-ttu-id="32e3a-109">Popis</span><span class="sxs-lookup"><span data-stu-id="32e3a-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="2aa1c-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="2aa1c-110">S_OK</span></span>|<span data-ttu-id="2aa1c-111">`GetAvailableThreads` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-111">`GetAvailableThreads` returned successfully.</span></span>|  
-|<span data-ttu-id="2aa1c-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="2aa1c-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="2aa1c-113">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="2aa1c-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="2aa1c-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="2aa1c-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-115">The call timed out.</span></span>|  
-|<span data-ttu-id="2aa1c-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="2aa1c-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="2aa1c-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="2aa1c-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="2aa1c-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="2aa1c-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="2aa1c-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="2aa1c-120">E_FAIL</span></span>|<span data-ttu-id="2aa1c-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="2aa1c-122">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="2aa1c-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="2aa1c-124">E_NOTIMPL</span><span class="sxs-lookup"><span data-stu-id="2aa1c-124">E_NOTIMPL</span></span>|<span data-ttu-id="2aa1c-125">Hostitel neposkytuje implementaci `GetAvailableThreads`.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-125">The host does not provide an implementation of `GetAvailableThreads`.</span></span>|  
+|<span data-ttu-id="32e3a-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="32e3a-110">S_OK</span></span>|<span data-ttu-id="32e3a-111">`GetAvailableThreads` byla úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="32e3a-111">`GetAvailableThreads` returned successfully.</span></span>|  
+|<span data-ttu-id="32e3a-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="32e3a-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="32e3a-113">Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="32e3a-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="32e3a-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="32e3a-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="32e3a-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="32e3a-115">The call timed out.</span></span>|  
+|<span data-ttu-id="32e3a-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="32e3a-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="32e3a-117">Volající nevlastní zámek.</span><span class="sxs-lookup"><span data-stu-id="32e3a-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="32e3a-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="32e3a-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="32e3a-119">Událost byla zrušena při čekání na blokované vlákno nebo vlákna.</span><span class="sxs-lookup"><span data-stu-id="32e3a-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="32e3a-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="32e3a-120">E_FAIL</span></span>|<span data-ttu-id="32e3a-121">Došlo k neznámé chybě závažnosti.</span><span class="sxs-lookup"><span data-stu-id="32e3a-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="32e3a-122">Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný.</span><span class="sxs-lookup"><span data-stu-id="32e3a-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="32e3a-123">Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="32e3a-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="32e3a-124">E_NOTIMPL</span><span class="sxs-lookup"><span data-stu-id="32e3a-124">E_NOTIMPL</span></span>|<span data-ttu-id="32e3a-125">Hostitel neposkytuje implementaci `GetAvailableThreads`.</span><span class="sxs-lookup"><span data-stu-id="32e3a-125">The host does not provide an implementation of `GetAvailableThreads`.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="2aa1c-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2aa1c-126">Remarks</span></span>  
- <span data-ttu-id="2aa1c-127">Hostitel může být vhodné výhradní kontrolu nad velikost fondu vláken dokončení vstupně-výstupních operací, z důvodů, například provádění, výkon a škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-127">A host might want exclusive control over the size of the I/O completion thread pool, for reasons such as implementation, performance, or scalability.</span></span> <span data-ttu-id="2aa1c-128">Proto není nutné implementovat hostitele `GetAvailableThreads`.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-128">Therefore, the host is not required to implement `GetAvailableThreads`.</span></span> <span data-ttu-id="2aa1c-129">V takovém případě hostitele by měl vrátit E_NOTIMPL z této metody.</span><span class="sxs-lookup"><span data-stu-id="2aa1c-129">In this case, the host should return E_NOTIMPL from this method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="32e3a-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="32e3a-126">Remarks</span></span>  
+ <span data-ttu-id="32e3a-127">Hostitel může chtít exkluzivní kontrolu nad velikostí fondu vláken v/v dokončování z důvodů, jako je implementace, výkon nebo škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="32e3a-127">A host might want exclusive control over the size of the I/O completion thread pool, for reasons such as implementation, performance, or scalability.</span></span> <span data-ttu-id="32e3a-128">Proto není nutné, aby hostitel implementoval `GetAvailableThreads`.</span><span class="sxs-lookup"><span data-stu-id="32e3a-128">Therefore, the host is not required to implement `GetAvailableThreads`.</span></span> <span data-ttu-id="32e3a-129">V takovém případě by měl hostitel vrátit E_NOTIMPL z této metody.</span><span class="sxs-lookup"><span data-stu-id="32e3a-129">In this case, the host should return E_NOTIMPL from this method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2aa1c-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2aa1c-130">Requirements</span></span>  
- <span data-ttu-id="2aa1c-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2aa1c-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="32e3a-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="32e3a-130">Requirements</span></span>  
+ <span data-ttu-id="32e3a-131">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="32e3a-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2aa1c-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2aa1c-132">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="32e3a-132">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="32e3a-132">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="2aa1c-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2aa1c-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="32e3a-133">**Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="32e3a-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="2aa1c-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2aa1c-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="32e3a-134">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="32e3a-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2aa1c-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2aa1c-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="32e3a-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32e3a-135">See also</span></span>
 
-- [<span data-ttu-id="2aa1c-136">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2aa1c-136">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
-- [<span data-ttu-id="2aa1c-137">IHostIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2aa1c-137">IHostIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+- [<span data-ttu-id="32e3a-136">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32e3a-136">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+- [<span data-ttu-id="32e3a-137">IHostIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32e3a-137">IHostIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

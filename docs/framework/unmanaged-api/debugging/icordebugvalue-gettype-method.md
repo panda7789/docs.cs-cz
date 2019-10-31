@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 41e2d503-e1f1-407b-abe0-6a29adb3e0d1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c0dbdee35e6c73fbf2d73edd8a6c479e2f2882ea
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 284a74823b01305f8c6e025f70bb9209c8607b7b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764312"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137077"
 ---
-# <a name="icordebugvaluegettype-method"></a><span data-ttu-id="e2186-102">ICorDebugValue::GetType – metoda</span><span class="sxs-lookup"><span data-stu-id="e2186-102">ICorDebugValue::GetType Method</span></span>
-<span data-ttu-id="e2186-103">Získá základní typ tohoto objektu "ICorDebugValue".</span><span class="sxs-lookup"><span data-stu-id="e2186-103">Gets the primitive type of this "ICorDebugValue" object.</span></span>  
+# <a name="icordebugvaluegettype-method"></a><span data-ttu-id="256d9-102">ICorDebugValue::GetType – metoda</span><span class="sxs-lookup"><span data-stu-id="256d9-102">ICorDebugValue::GetType Method</span></span>
+<span data-ttu-id="256d9-103">Získá primitivní typ tohoto objektu "ICorDebugValue".</span><span class="sxs-lookup"><span data-stu-id="256d9-103">Gets the primitive type of this "ICorDebugValue" object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e2186-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e2186-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="256d9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="256d9-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetType (  
@@ -35,22 +33,22 @@ HRESULT GetType (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e2186-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e2186-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="256d9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="256d9-105">Parameters</span></span>  
  `pType`  
- <span data-ttu-id="e2186-106">[out] Ukazatel na hodnotu "Corelementtype –" výčtu, která určuje typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e2186-106">[out] A pointer to a value of the "CorElementType" enumeration that indicates the value's type.</span></span>  
+ <span data-ttu-id="256d9-106">mimo Ukazatel na hodnotu výčtu "CorElementType –", která označuje typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="256d9-106">[out] A pointer to a value of the "CorElementType" enumeration that indicates the value's type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e2186-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e2186-107">Remarks</span></span>  
- <span data-ttu-id="e2186-108">Pokud se objekt komplexního typu za běhu, tento typ se můžou zkoumat prostřednictvím odpovídající podtřídy třídy `ICorDebugValue` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="e2186-108">If the object is a complex run-time type, that type may be examined through the appropriate subclasses of the `ICorDebugValue` interface.</span></span> <span data-ttu-id="e2186-109">Například "ICorDebugObjectValue", která dědí z `ICorDebugValue`, představuje komplexního typu.</span><span class="sxs-lookup"><span data-stu-id="e2186-109">For example, "ICorDebugObjectValue", which inherits from `ICorDebugValue`, represents a complex type.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="256d9-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="256d9-107">Remarks</span></span>  
+ <span data-ttu-id="256d9-108">Pokud je objekt složitým typem běhu, lze tento typ prozkoumat pomocí příslušných podtříd `ICorDebugValue` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="256d9-108">If the object is a complex run-time type, that type may be examined through the appropriate subclasses of the `ICorDebugValue` interface.</span></span> <span data-ttu-id="256d9-109">Například "ICorDebugObjectValue", který dědí z `ICorDebugValue`představuje komplexní typ.</span><span class="sxs-lookup"><span data-stu-id="256d9-109">For example, "ICorDebugObjectValue", which inherits from `ICorDebugValue`, represents a complex type.</span></span>  
   
- <span data-ttu-id="e2186-110">`GetType` a [icordebugobjectvalue::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) každá z metod vrací informace o typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e2186-110">The `GetType` and [ICorDebugObjectValue::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) methods each return information about the type of a value.</span></span> <span data-ttu-id="e2186-111">Jsou obě nahrazeny obecných typů podporujících [icordebugvalue2::getexacttype –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="e2186-111">They are both superseded by the generics-aware [ICorDebugValue2::GetExactType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) method.</span></span>  
+ <span data-ttu-id="256d9-110">Metody `GetType` a [ICorDebugObjectValue:: GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) každou vrací informace o typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="256d9-110">The `GetType` and [ICorDebugObjectValue::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) methods each return information about the type of a value.</span></span> <span data-ttu-id="256d9-111">Jsou obě nahrazeny metodou [ICorDebugValue2:: GetExactType –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) , která se s ohledem na obecné typy nahrazují.</span><span class="sxs-lookup"><span data-stu-id="256d9-111">They are both superseded by the generics-aware [ICorDebugValue2::GetExactType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e2186-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e2186-112">Requirements</span></span>  
- <span data-ttu-id="e2186-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e2186-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="256d9-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="256d9-112">Requirements</span></span>  
+ <span data-ttu-id="256d9-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="256d9-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e2186-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e2186-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="256d9-114">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="256d9-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e2186-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e2186-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="256d9-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="256d9-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e2186-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e2186-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="256d9-116">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="256d9-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2186-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e2186-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="256d9-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="256d9-117">See also</span></span>

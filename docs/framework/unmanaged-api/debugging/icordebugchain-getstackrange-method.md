@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 554284e7-3f6c-4d40-8da5-1c9317fbd484
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8a6db1990df2ed6b29d548c147ed40b5bc98254d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d9430c5a1f37a0507b383ea5437f7d7fed706c43
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745691"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123866"
 ---
-# <a name="icordebugchaingetstackrange-method"></a><span data-ttu-id="778a4-102">ICorDebugChain::GetStackRange – metoda</span><span class="sxs-lookup"><span data-stu-id="778a4-102">ICorDebugChain::GetStackRange Method</span></span>
-<span data-ttu-id="778a4-103">Získá rozsah adres segmentu zásobníku pro tento řetězec.</span><span class="sxs-lookup"><span data-stu-id="778a4-103">Gets the address range of the stack segment for this chain.</span></span>  
+# <a name="icordebugchaingetstackrange-method"></a><span data-ttu-id="54660-102">ICorDebugChain::GetStackRange – metoda</span><span class="sxs-lookup"><span data-stu-id="54660-102">ICorDebugChain::GetStackRange Method</span></span>
+<span data-ttu-id="54660-103">Získá rozsah adres segmentu zásobníku pro tento řetěz.</span><span class="sxs-lookup"><span data-stu-id="54660-103">Gets the address range of the stack segment for this chain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="778a4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="778a4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="54660-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54660-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetStackRange (  
@@ -36,21 +34,21 @@ HRESULT GetStackRange (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="778a4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="778a4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="54660-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54660-105">Parameters</span></span>  
  `pStart`  
- <span data-ttu-id="778a4-106">[out] Ukazatel `CORDB_ADDRESS` hodnotu, která je počáteční adresu zásobníku segmentu.</span><span class="sxs-lookup"><span data-stu-id="778a4-106">[out] A pointer to a `CORDB_ADDRESS` value that is the starting address of the stack segment.</span></span>  
+ <span data-ttu-id="54660-106">mimo Ukazatel na hodnotu `CORDB_ADDRESS`, která je počáteční adresou segmentu zásobníku.</span><span class="sxs-lookup"><span data-stu-id="54660-106">[out] A pointer to a `CORDB_ADDRESS` value that is the starting address of the stack segment.</span></span>  
   
  `pEnd`  
- <span data-ttu-id="778a4-107">[out] Ukazatel `CORDB_ADDRESS` hodnotu, která je koncová adresa segment zásobníku.</span><span class="sxs-lookup"><span data-stu-id="778a4-107">[out] A pointer to a `CORDB_ADDRESS` value that is the ending address of the stack segment.</span></span>  
+ <span data-ttu-id="54660-107">mimo Ukazatel na hodnotu `CORDB_ADDRESS`, která je koncovou adresou segmentu zásobníku.</span><span class="sxs-lookup"><span data-stu-id="54660-107">[out] A pointer to a `CORDB_ADDRESS` value that is the ending address of the stack segment.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="778a4-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="778a4-108">Remarks</span></span>  
- <span data-ttu-id="778a4-109">Číselný rozsah má smysl pouze pro porovnání umístění rámce zásobníku.</span><span class="sxs-lookup"><span data-stu-id="778a4-109">The numeric range is meaningful only for comparison of stack frame locations.</span></span> <span data-ttu-id="778a4-110">Nemůžete nevyvozujte předpoklady o tom, co je ve skutečnosti uložené v zásobníku.</span><span class="sxs-lookup"><span data-stu-id="778a4-110">You cannot make any assumptions about what is actually stored on the stack.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="54660-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="54660-108">Remarks</span></span>  
+ <span data-ttu-id="54660-109">Číselný rozsah má smysl pouze pro porovnání umístění rámce zásobníku.</span><span class="sxs-lookup"><span data-stu-id="54660-109">The numeric range is meaningful only for comparison of stack frame locations.</span></span> <span data-ttu-id="54660-110">Nemůžete dělat žádné předpoklady o tom, co je ve skutečnosti uložené v zásobníku.</span><span class="sxs-lookup"><span data-stu-id="54660-110">You cannot make any assumptions about what is actually stored on the stack.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="778a4-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="778a4-111">Requirements</span></span>  
- <span data-ttu-id="778a4-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="778a4-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="54660-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54660-111">Requirements</span></span>  
+ <span data-ttu-id="54660-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="54660-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="778a4-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="778a4-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="54660-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="54660-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="778a4-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="778a4-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="54660-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="54660-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="778a4-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="778a4-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="54660-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="54660-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -15,32 +15,30 @@ helpviewer_keywords:
 ms.assetid: 0358b84a-4236-4c34-945b-4babff7df570
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d30b6cb083cc2f92bcbe089bf8e990fedd8e8f7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66ec64b1a855a3d31f14f3ef29dde0b82361f5d7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738093"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133986"
 ---
-# <a name="icordebugappdomainattach-method"></a><span data-ttu-id="b5c93-102">ICorDebugAppDomain::Attach – metoda</span><span class="sxs-lookup"><span data-stu-id="b5c93-102">ICorDebugAppDomain::Attach Method</span></span>
-<span data-ttu-id="b5c93-103">Ladicí program připojí k doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="b5c93-103">Attaches the debugger to the application domain.</span></span>  
+# <a name="icordebugappdomainattach-method"></a><span data-ttu-id="7fd0d-102">ICorDebugAppDomain::Attach – metoda</span><span class="sxs-lookup"><span data-stu-id="7fd0d-102">ICorDebugAppDomain::Attach Method</span></span>
+<span data-ttu-id="7fd0d-103">Připojí ladicí program k doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="7fd0d-103">Attaches the debugger to the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5c93-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5c93-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7fd0d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7fd0d-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Attach ();  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="b5c93-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b5c93-105">Remarks</span></span>  
- <span data-ttu-id="b5c93-106">Ladicí program musí být připojené k doméně aplikace přijímat události a chcete povolit ladění domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="b5c93-106">The debugger must be attached to the application domain to receive events and to enable debugging of the application domain.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7fd0d-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7fd0d-105">Remarks</span></span>  
+ <span data-ttu-id="7fd0d-106">Aby bylo možné přijímat události a povolit ladění aplikační domény, musí být ladicí program připojen k doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="7fd0d-106">The debugger must be attached to the application domain to receive events and to enable debugging of the application domain.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b5c93-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5c93-107">Requirements</span></span>  
- <span data-ttu-id="b5c93-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5c93-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7fd0d-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7fd0d-107">Requirements</span></span>  
+ <span data-ttu-id="7fd0d-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7fd0d-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b5c93-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b5c93-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="7fd0d-109">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="7fd0d-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b5c93-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b5c93-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7fd0d-110">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="7fd0d-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b5c93-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b5c93-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="7fd0d-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7fd0d-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

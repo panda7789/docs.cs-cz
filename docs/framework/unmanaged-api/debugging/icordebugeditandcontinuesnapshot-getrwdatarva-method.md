@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: 3e07b233-dd41-45ba-a4f9-662e4b006f1f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31ad3032b50298e08f349049adab8aa18a09f12e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7b8b685e520d19ef1ba6b8caea2f26625eeba323
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996073"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137484"
 ---
-# <a name="icordebugeditandcontinuesnapshotgetrwdatarva-method"></a><span data-ttu-id="56ef8-102">ICorDebugEditAndContinueSnapshot::GetRwDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="56ef8-102">ICorDebugEditAndContinueSnapshot::GetRwDataRVA Method</span></span>
-<span data-ttu-id="56ef8-103">`GetRwDataRVA` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="56ef8-103">`GetRwDataRVA` is obsolete.</span></span> <span data-ttu-id="56ef8-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="56ef8-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotgetrwdatarva-method"></a><span data-ttu-id="bba9b-102">ICorDebugEditAndContinueSnapshot::GetRwDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="bba9b-102">ICorDebugEditAndContinueSnapshot::GetRwDataRVA Method</span></span>
+<span data-ttu-id="bba9b-103">`GetRwDataRVA` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="bba9b-103">`GetRwDataRVA` is obsolete.</span></span> <span data-ttu-id="bba9b-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="bba9b-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="56ef8-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="56ef8-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bba9b-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bba9b-105">See also</span></span>
 
-- [<span data-ttu-id="56ef8-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="56ef8-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="bba9b-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="bba9b-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

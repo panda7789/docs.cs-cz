@@ -16,21 +16,19 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab4560774edce49341c86dd9446e38701db7fa62
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4eb878b61b72378bc6870af7f2cd09f0b6943b13
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769829"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136504"
 ---
-# <a name="destroyiceefilegen-function"></a><span data-ttu-id="a4232-102">DestroyICeeFileGen – funkce</span><span class="sxs-lookup"><span data-stu-id="a4232-102">DestroyICeeFileGen Function</span></span>
-<span data-ttu-id="a4232-103">Zničí [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="a4232-103">Destroys an [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) object.</span></span>  
+# <a name="destroyiceefilegen-function"></a><span data-ttu-id="075bc-102">DestroyICeeFileGen – funkce</span><span class="sxs-lookup"><span data-stu-id="075bc-102">DestroyICeeFileGen Function</span></span>
+<span data-ttu-id="075bc-103">Odstraní objekt [ICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) .</span><span class="sxs-lookup"><span data-stu-id="075bc-103">Destroys an [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) object.</span></span>  
   
- <span data-ttu-id="a4232-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="a4232-104">This function has been deprecated in the .NET Framework 4.</span></span>  
+ <span data-ttu-id="075bc-104">Tato funkce se už nepoužívá v .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="075bc-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a4232-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a4232-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="075bc-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="075bc-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT DestroyICeeFileGen (  
@@ -38,25 +36,25 @@ HRESULT DestroyICeeFileGen (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a4232-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a4232-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="075bc-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="075bc-106">Parameters</span></span>  
  `ceeFileGen`  
- <span data-ttu-id="a4232-107">[in] `ICeeFileGen` Objekt ke zničení.</span><span class="sxs-lookup"><span data-stu-id="a4232-107">[in] The `ICeeFileGen` object to destroy.</span></span>  
+ <span data-ttu-id="075bc-107">pro Objekt `ICeeFileGen`, který se má zničit.</span><span class="sxs-lookup"><span data-stu-id="075bc-107">[in] The `ICeeFileGen` object to destroy.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a4232-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a4232-108">Return Value</span></span>  
- <span data-ttu-id="a4232-109">Tato metoda vrací standardní kódy chyb COM.</span><span class="sxs-lookup"><span data-stu-id="a4232-109">This method returns standard COM error codes.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="075bc-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="075bc-108">Return Value</span></span>  
+ <span data-ttu-id="075bc-109">Tato metoda vrátí standardní kódy chyb modelu COM.</span><span class="sxs-lookup"><span data-stu-id="075bc-109">This method returns standard COM error codes.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a4232-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a4232-110">Remarks</span></span>  
- <span data-ttu-id="a4232-111">`DestroyICeeFileGen` Odstraní `ICeeFileGen` objekt vytvořený pomocí [createiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="a4232-111">`DestroyICeeFileGen` destroys the `ICeeFileGen` object created by the [CreateICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) function.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="075bc-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="075bc-110">Remarks</span></span>  
+ <span data-ttu-id="075bc-111">`DestroyICeeFileGen` zničí objekt `ICeeFileGen` vytvořený funkcí [CreateICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) .</span><span class="sxs-lookup"><span data-stu-id="075bc-111">`DestroyICeeFileGen` destroys the `ICeeFileGen` object created by the [CreateICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a4232-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a4232-112">Requirements</span></span>  
- <span data-ttu-id="a4232-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a4232-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="075bc-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="075bc-112">Requirements</span></span>  
+ <span data-ttu-id="075bc-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="075bc-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a4232-114">**Záhlaví:** ICeeFileGen.h</span><span class="sxs-lookup"><span data-stu-id="a4232-114">**Header:** ICeeFileGen.h</span></span>  
+ <span data-ttu-id="075bc-114">**Hlavička:** ICeeFileGen –. h</span><span class="sxs-lookup"><span data-stu-id="075bc-114">**Header:** ICeeFileGen.h</span></span>  
   
- <span data-ttu-id="a4232-115">**Knihovna:** MSCorPE.dll</span><span class="sxs-lookup"><span data-stu-id="a4232-115">**Library:** MSCorPE.dll</span></span>  
+ <span data-ttu-id="075bc-115">**Knihovna:** MSCorPE. dll</span><span class="sxs-lookup"><span data-stu-id="075bc-115">**Library:** MSCorPE.dll</span></span>  
   
- <span data-ttu-id="a4232-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a4232-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="075bc-116">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="075bc-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a4232-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a4232-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="075bc-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="075bc-117">See also</span></span>
 
-- [<span data-ttu-id="a4232-118">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="a4232-118">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="075bc-118">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="075bc-118">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

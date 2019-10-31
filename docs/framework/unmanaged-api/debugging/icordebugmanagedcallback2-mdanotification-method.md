@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 93f79627-bd31-4f4f-b95d-46a032a52fe4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4011932af6f4b058906c19566e4c1abe96b409db
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ab3819d5c33f090fda1ca9c3dccb5d08ab8f84cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762095"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131463"
 ---
-# <a name="icordebugmanagedcallback2mdanotification-method"></a><span data-ttu-id="a3676-102">ICorDebugManagedCallback2::MDANotification – metoda</span><span class="sxs-lookup"><span data-stu-id="a3676-102">ICorDebugManagedCallback2::MDANotification Method</span></span>
-<span data-ttu-id="a3676-103">Poskytuje oznámení, že spuštění kódu došlo k Pomocník spravovaného ladění (MDA) v aplikaci, která je právě laděna.</span><span class="sxs-lookup"><span data-stu-id="a3676-103">Provides notification that code execution has encountered a managed debugging assistant (MDA) in the application that is being debugged.</span></span>  
+# <a name="icordebugmanagedcallback2mdanotification-method"></a><span data-ttu-id="9c27b-102">ICorDebugManagedCallback2::MDANotification – metoda</span><span class="sxs-lookup"><span data-stu-id="9c27b-102">ICorDebugManagedCallback2::MDANotification Method</span></span>
+<span data-ttu-id="9c27b-103">Poskytuje oznámení o tom, že provádění kódu zjistilo v aplikaci, která je laděna, pomocníka spravovaného ladění (MDA).</span><span class="sxs-lookup"><span data-stu-id="9c27b-103">Provides notification that code execution has encountered a managed debugging assistant (MDA) in the application that is being debugged.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a3676-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a3676-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9c27b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c27b-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT MDANotification(  
@@ -37,42 +35,42 @@ HRESULT MDANotification(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a3676-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a3676-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9c27b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9c27b-105">Parameters</span></span>  
  `pController`  
- <span data-ttu-id="a3676-106">[in] Ukazatel na icordebugcontroller – rozhraní, která zveřejňuje proces nebo doménu aplikace, ve kterém MDA došlo.</span><span class="sxs-lookup"><span data-stu-id="a3676-106">[in] A pointer to an ICorDebugController interface that exposes the process or application domain in which the MDA occurred.</span></span>  
+ <span data-ttu-id="9c27b-106">pro Ukazatel na rozhraní ICorDebugController, které zpřístupňuje proces nebo doménu aplikace, ve které došlo k MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-106">[in] A pointer to an ICorDebugController interface that exposes the process or application domain in which the MDA occurred.</span></span>  
   
- <span data-ttu-id="a3676-107">Ladicí program by neměla provést nevyvozujte předpoklady o tom, jestli je kontroler proces nebo doménu aplikace, i když ho vždy dotazování rozhraní pro určení.</span><span class="sxs-lookup"><span data-stu-id="a3676-107">A debugger should not make any assumptions about whether the controller is a process or an application domain, although it can always query the interface to make a determination.</span></span>  
+ <span data-ttu-id="9c27b-107">Ladicí program by neměl dělat žádné předpoklady o tom, zda je kontroler nebo doména aplikace, i když se může vždy dotázat na rozhraní, aby bylo možné provést určení.</span><span class="sxs-lookup"><span data-stu-id="9c27b-107">A debugger should not make any assumptions about whether the controller is a process or an application domain, although it can always query the interface to make a determination.</span></span>  
   
  `pThread`  
- <span data-ttu-id="a3676-108">[in] Ukazatel na icordebugthread – rozhraní, která zveřejňuje spravované vlákno, na kterém došlo k události ladění.</span><span class="sxs-lookup"><span data-stu-id="a3676-108">[in] A pointer to an ICorDebugThread interface that exposes the managed thread on which the debug event occurred.</span></span>  
+ <span data-ttu-id="9c27b-108">pro Ukazatel na rozhraní ICorDebugThread, které zveřejňuje spravované vlákno, na kterém došlo k události ladění.</span><span class="sxs-lookup"><span data-stu-id="9c27b-108">[in] A pointer to an ICorDebugThread interface that exposes the managed thread on which the debug event occurred.</span></span>  
   
- <span data-ttu-id="a3676-109">Pokud MDA došlo k chybě na nespravované vlákna, hodnota `pThread` bude mít hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="a3676-109">If the MDA occurred on an unmanaged thread, the value of `pThread` will be null.</span></span>  
+ <span data-ttu-id="9c27b-109">Pokud k MDA došlo v nespravovaném vlákně, hodnota `pThread` bude null.</span><span class="sxs-lookup"><span data-stu-id="9c27b-109">If the MDA occurred on an unmanaged thread, the value of `pThread` will be null.</span></span>  
   
- <span data-ttu-id="a3676-110">ID vlákna operačního systému (OS) musí získat od samotného objektu MDA.</span><span class="sxs-lookup"><span data-stu-id="a3676-110">You must get the operating system (OS) thread ID from the MDA object itself.</span></span>  
+ <span data-ttu-id="9c27b-110">Musíte získat ID vlákna operačního systému (OS) z samotného objektu MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-110">You must get the operating system (OS) thread ID from the MDA object itself.</span></span>  
   
  `pMDA`  
- <span data-ttu-id="a3676-111">[in] Ukazatel [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) rozhraní, které zveřejňuje informace o MDA.</span><span class="sxs-lookup"><span data-stu-id="a3676-111">[in] A pointer to an [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) interface that exposes the MDA information.</span></span>  
+ <span data-ttu-id="9c27b-111">pro Ukazatel na rozhraní [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) , které zpřístupňuje informace MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-111">[in] A pointer to an [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) interface that exposes the MDA information.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a3676-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a3676-112">Remarks</span></span>  
- <span data-ttu-id="a3676-113">MDA heuristické upozornění a nevyžaduje žádnou akci explicitní ladicího programu s výjimkou volání [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pokračovat provádění aplikace, která je právě laděna.</span><span class="sxs-lookup"><span data-stu-id="a3676-113">An MDA is a heuristic warning and does not require any explicit debugger action except for calling [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) to resume execution of the application that is being debugged.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9c27b-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9c27b-112">Remarks</span></span>  
+ <span data-ttu-id="9c27b-113">MDA je heuristické upozornění a nevyžaduje žádnou explicitní akci ladicího programu s výjimkou volání [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pro pokračování v provádění aplikace, která se právě ladí.</span><span class="sxs-lookup"><span data-stu-id="9c27b-113">An MDA is a heuristic warning and does not require any explicit debugger action except for calling [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) to resume execution of the application that is being debugged.</span></span>  
   
- <span data-ttu-id="a3676-114">Modul CLR (CLR) můžete určit, které jsou vyvolávány mda a která data se v jakékoli dané MDA v libovolném bodě.</span><span class="sxs-lookup"><span data-stu-id="a3676-114">The common language runtime (CLR) can determine which MDAs are fired and which data is in any given MDA at any point.</span></span> <span data-ttu-id="a3676-115">Proto by neměl ladicí programy sestavení všechny funkce, které vyžadují specifické vzory MDA.</span><span class="sxs-lookup"><span data-stu-id="a3676-115">Therefore, debuggers should not build any functionality requiring specific MDA patterns.</span></span>  
+ <span data-ttu-id="9c27b-114">Modul CLR (Common Language Runtime) může určit, které MDA jsou vyvolány a která data jsou v jakémkoli okamžiku v daném bodě.</span><span class="sxs-lookup"><span data-stu-id="9c27b-114">The common language runtime (CLR) can determine which MDAs are fired and which data is in any given MDA at any point.</span></span> <span data-ttu-id="9c27b-115">Proto by ladicí program neměl vytvářet žádné funkce vyžadující konkrétní vzory MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-115">Therefore, debuggers should not build any functionality requiring specific MDA patterns.</span></span>  
   
- <span data-ttu-id="a3676-116">Mda mohou být zařazeny do fronty a krátce po narazí MDA aktivuje.</span><span class="sxs-lookup"><span data-stu-id="a3676-116">MDAs may be queued and fired shortly after the MDA is encountered.</span></span> <span data-ttu-id="a3676-117">Může k tomu dojít, pokud modul runtime musí čekat, dokud nedosáhne bod bezpečné pro aktivaci MDA, místo spouštění MDA, pokud se setká.</span><span class="sxs-lookup"><span data-stu-id="a3676-117">This could happen if the runtime needs to wait until it reaches a safe point for firing the MDA, instead of firing the MDA when it encounters it.</span></span> <span data-ttu-id="a3676-118">Také znamená, že modul runtime může vyvolat počet mda v jediné sady kontrolních zařazených do fronty zpětná volání (podobné události operace "připojit").</span><span class="sxs-lookup"><span data-stu-id="a3676-118">It also means that the runtime may fire a number of MDAs in a single set of queued callbacks (similar to an "attach" event operation).</span></span>  
+ <span data-ttu-id="9c27b-116">MDA se může zařadit do fronty a aktivovat krátce po zjištění MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-116">MDAs may be queued and fired shortly after the MDA is encountered.</span></span> <span data-ttu-id="9c27b-117">K tomu může dojít v případě, že modul runtime potřebuje počkat, dokud nedosáhne bezpečného bodu pro vypálení služby MDA, namísto toho, aby se při jeho výskytu neiniciovala operace MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-117">This could happen if the runtime needs to wait until it reaches a safe point for firing the MDA, instead of firing the MDA when it encounters it.</span></span> <span data-ttu-id="9c27b-118">Také to znamená, že modul runtime může v jedné sadě zpětných volání ve frontě aktivovat určitý počet MDA (podobně jako operace "připojit").</span><span class="sxs-lookup"><span data-stu-id="9c27b-118">It also means that the runtime may fire a number of MDAs in a single set of queued callbacks (similar to an "attach" event operation).</span></span>  
   
- <span data-ttu-id="a3676-119">Ladicí program by měla uvolnit odkaz na `ICorDebugMDA` instance ihned po vrácení z `MDANotification` zpětné volání, chcete-li povolit modul CLR recyklace paměti používané MDA.</span><span class="sxs-lookup"><span data-stu-id="a3676-119">A debugger should release the reference to an `ICorDebugMDA` instance immediately after returning from the `MDANotification` callback, to allow the CLR to recycle the memory consumed by an MDA.</span></span> <span data-ttu-id="a3676-120">Uvolnění instance může zvýšit výkon, pokud se ohlásí mnoho mda.</span><span class="sxs-lookup"><span data-stu-id="a3676-120">Releasing the instance may improve performance if many MDAs are firing.</span></span>  
+ <span data-ttu-id="9c27b-119">Ladicí program by měl vydat odkaz na instanci `ICorDebugMDA` hned po návratu z zpětného volání `MDANotification`, aby mohl modul CLR recyklovat paměť spotřebovaná pomocí MDA.</span><span class="sxs-lookup"><span data-stu-id="9c27b-119">A debugger should release the reference to an `ICorDebugMDA` instance immediately after returning from the `MDANotification` callback, to allow the CLR to recycle the memory consumed by an MDA.</span></span> <span data-ttu-id="9c27b-120">Uvolnění instance může zlepšit výkon, pokud se právě MDA spousta.</span><span class="sxs-lookup"><span data-stu-id="9c27b-120">Releasing the instance may improve performance if many MDAs are firing.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a3676-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a3676-121">Requirements</span></span>  
- <span data-ttu-id="a3676-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a3676-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9c27b-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9c27b-121">Requirements</span></span>  
+ <span data-ttu-id="9c27b-122">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9c27b-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a3676-123">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a3676-123">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="9c27b-123">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="9c27b-123">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a3676-124">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a3676-124">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="9c27b-124">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="9c27b-124">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a3676-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a3676-125">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="9c27b-125">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9c27b-125">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a3676-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a3676-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c27b-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c27b-126">See also</span></span>
 
-- [<span data-ttu-id="a3676-127">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="a3676-127">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="a3676-128">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a3676-128">ICorDebugManagedCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [<span data-ttu-id="a3676-129">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a3676-129">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [<span data-ttu-id="9c27b-127">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="9c27b-127">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="9c27b-128">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9c27b-128">ICorDebugManagedCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [<span data-ttu-id="9c27b-129">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9c27b-129">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

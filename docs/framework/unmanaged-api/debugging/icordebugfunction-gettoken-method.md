@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: c6bbf479-062e-48e9-9c70-0f92e293e36a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a4613e11896a34ed1a7fe91d4767fb38ac75aab8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4229d567fc4ced5e3b78b390ced29fb9ea60f93b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754514"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137845"
 ---
-# <a name="icordebugfunctiongettoken-method"></a><span data-ttu-id="5eefb-102">ICorDebugFunction::GetToken – metoda</span><span class="sxs-lookup"><span data-stu-id="5eefb-102">ICorDebugFunction::GetToken Method</span></span>
-<span data-ttu-id="5eefb-103">Získá token metadat pro tuto funkci.</span><span class="sxs-lookup"><span data-stu-id="5eefb-103">Gets the metadata token for this function.</span></span>  
+# <a name="icordebugfunctiongettoken-method"></a><span data-ttu-id="ad56a-102">ICorDebugFunction::GetToken – metoda</span><span class="sxs-lookup"><span data-stu-id="ad56a-102">ICorDebugFunction::GetToken Method</span></span>
+<span data-ttu-id="ad56a-103">Získá token metadat pro tuto funkci.</span><span class="sxs-lookup"><span data-stu-id="ad56a-103">Gets the metadata token for this function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5eefb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5eefb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ad56a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad56a-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetToken (  
@@ -35,15 +33,15 @@ HRESULT GetToken (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5eefb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5eefb-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ad56a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ad56a-105">Parameters</span></span>  
  `pMethodDef`  
- <span data-ttu-id="5eefb-106">[out] Ukazatel `mdMethodDef` token, který odkazuje na metadata pro tuto funkci.</span><span class="sxs-lookup"><span data-stu-id="5eefb-106">[out] A pointer to an `mdMethodDef` token that references the metadata for this function.</span></span>  
+ <span data-ttu-id="ad56a-106">mimo Ukazatel na token `mdMethodDef`, který odkazuje na metadata této funkce.</span><span class="sxs-lookup"><span data-stu-id="ad56a-106">[out] A pointer to an `mdMethodDef` token that references the metadata for this function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5eefb-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5eefb-107">Requirements</span></span>  
- <span data-ttu-id="5eefb-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5eefb-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ad56a-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ad56a-107">Requirements</span></span>  
+ <span data-ttu-id="ad56a-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ad56a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5eefb-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5eefb-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="ad56a-109">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="ad56a-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="5eefb-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5eefb-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="ad56a-110">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="ad56a-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="5eefb-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5eefb-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="ad56a-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ad56a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

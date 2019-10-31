@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: f3ed344b-0d3a-44e8-8000-2a97e0805a2c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5d4ab49aaccd77fac497bd86413915e82c99ed3e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d0b6960a24e246c7a538e8ffc59fa380a4b8e2a7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744903"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131373"
 ---
-# <a name="icordebugregisterset2getregistersavailable-method"></a><span data-ttu-id="83f39-102">ICorDebugRegisterSet2::GetRegistersAvailable – metoda</span><span class="sxs-lookup"><span data-stu-id="83f39-102">ICorDebugRegisterSet2::GetRegistersAvailable Method</span></span>
-<span data-ttu-id="83f39-103">Získá pole bajtů, která poskytuje rastrový obrázek do dostupných registrů.</span><span class="sxs-lookup"><span data-stu-id="83f39-103">Gets an array of bytes that provides a bitmap of the available registers.</span></span>  
+# <a name="icordebugregisterset2getregistersavailable-method"></a><span data-ttu-id="1065a-102">ICorDebugRegisterSet2::GetRegistersAvailable – metoda</span><span class="sxs-lookup"><span data-stu-id="1065a-102">ICorDebugRegisterSet2::GetRegistersAvailable Method</span></span>
+<span data-ttu-id="1065a-103">Získá pole bajtů, které poskytuje rastrový obrázek dostupných registrů.</span><span class="sxs-lookup"><span data-stu-id="1065a-103">Gets an array of bytes that provides a bitmap of the available registers.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="83f39-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83f39-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1065a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1065a-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetRegistersAvailable (  
@@ -36,34 +34,34 @@ HRESULT GetRegistersAvailable (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="83f39-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="83f39-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1065a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1065a-105">Parameters</span></span>  
  `numChunks`  
- <span data-ttu-id="83f39-106">[in] Velikost `availableRegChunks` pole.</span><span class="sxs-lookup"><span data-stu-id="83f39-106">[in] The size of the `availableRegChunks` array.</span></span>  
+ <span data-ttu-id="1065a-106">pro Velikost pole `availableRegChunks`.</span><span class="sxs-lookup"><span data-stu-id="1065a-106">[in] The size of the `availableRegChunks` array.</span></span>  
   
  `availableRegChunks`  
- <span data-ttu-id="83f39-107">[out] Pole bajtů, každý bit odpovídá registru.</span><span class="sxs-lookup"><span data-stu-id="83f39-107">[out] An array of bytes, each bit of which corresponds to a register.</span></span> <span data-ttu-id="83f39-108">Pokud je k dispozici registru, odpovídající bit do registru je nastavena.</span><span class="sxs-lookup"><span data-stu-id="83f39-108">If a register is available, the register's corresponding bit is set.</span></span>  
+ <span data-ttu-id="1065a-107">mimo Pole bajtů, každý bit, který odpovídá registru.</span><span class="sxs-lookup"><span data-stu-id="1065a-107">[out] An array of bytes, each bit of which corresponds to a register.</span></span> <span data-ttu-id="1065a-108">Pokud je k dispozici registr, je nastaven odpovídající bit registru.</span><span class="sxs-lookup"><span data-stu-id="1065a-108">If a register is available, the register's corresponding bit is set.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="83f39-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="83f39-109">Remarks</span></span>  
- <span data-ttu-id="83f39-110">Hodnoty cordebugregister – výčet zadejte registrů různých mikroprocesory.</span><span class="sxs-lookup"><span data-stu-id="83f39-110">The values of the CorDebugRegister enumeration specify the registers of different microprocessors.</span></span> <span data-ttu-id="83f39-111">Horní pět bitů jednotlivé hodnoty jsou index do `availableRegChunks` pole bajtů.</span><span class="sxs-lookup"><span data-stu-id="83f39-111">The upper five bits of each value are the index into the `availableRegChunks` array of bytes.</span></span> <span data-ttu-id="83f39-112">Nižší tři bity každé hodnoty identifikovat bitová pozice v rámci indexované bajtů.</span><span class="sxs-lookup"><span data-stu-id="83f39-112">The lower three bits of each value identify the bit position within the indexed byte.</span></span> <span data-ttu-id="83f39-113">Zadaný `CorDebugRegister` hodnota, která určuje konkrétní registru do registru pozice v maska je stanoven následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="83f39-113">Given a `CorDebugRegister` value that specifies a particular register, the register's position in the mask is determined as follows:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1065a-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1065a-109">Remarks</span></span>  
+ <span data-ttu-id="1065a-110">Hodnoty výčtu CorDebugRegister – určují Registry různých mikroprocesorů.</span><span class="sxs-lookup"><span data-stu-id="1065a-110">The values of the CorDebugRegister enumeration specify the registers of different microprocessors.</span></span> <span data-ttu-id="1065a-111">Horních pět bitů každé hodnoty je index v `availableRegChunks` poli bajtů.</span><span class="sxs-lookup"><span data-stu-id="1065a-111">The upper five bits of each value are the index into the `availableRegChunks` array of bytes.</span></span> <span data-ttu-id="1065a-112">Dolní tři bity každé hodnoty identifikují bitovou pozici v rámci indexovaných bajtů.</span><span class="sxs-lookup"><span data-stu-id="1065a-112">The lower three bits of each value identify the bit position within the indexed byte.</span></span> <span data-ttu-id="1065a-113">Vzhledem k hodnotě `CorDebugRegister`, která určuje konkrétní registr, je pozice registru v masce určena následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="1065a-113">Given a `CorDebugRegister` value that specifies a particular register, the register's position in the mask is determined as follows:</span></span>  
   
-1. <span data-ttu-id="83f39-114">Rozbalte potřebné pro přístup ke správné bajt v indexu `availableRegChunks` pole:</span><span class="sxs-lookup"><span data-stu-id="83f39-114">Extract the index needed to access the correct byte in the `availableRegChunks` array:</span></span>  
+1. <span data-ttu-id="1065a-114">Extrahujte index potřebný pro přístup ke správnému bajtu v `availableRegChunks` poli:</span><span class="sxs-lookup"><span data-stu-id="1065a-114">Extract the index needed to access the correct byte in the `availableRegChunks` array:</span></span>  
   
-     <span data-ttu-id="83f39-115">`CorDebugRegister` Hodnota >> 3</span><span class="sxs-lookup"><span data-stu-id="83f39-115">`CorDebugRegister` value >> 3</span></span>  
+     <span data-ttu-id="1065a-115">hodnota `CorDebugRegister` > > 3</span><span class="sxs-lookup"><span data-stu-id="1065a-115">`CorDebugRegister` value >> 3</span></span>  
   
-2. <span data-ttu-id="83f39-116">Extrahujte bitové pozice v indexovaných byte, kde bit nula je nejméně významných bitů:</span><span class="sxs-lookup"><span data-stu-id="83f39-116">Extract the bit position within the indexed byte, where bit zero is the least significant bit:</span></span>  
+2. <span data-ttu-id="1065a-116">Extrahuje bitovou pozici v indexovaném bajtu, kde hodnota bitu nula je nejméně významnou bitovou hodnotou:</span><span class="sxs-lookup"><span data-stu-id="1065a-116">Extract the bit position within the indexed byte, where bit zero is the least significant bit:</span></span>  
   
-     <span data-ttu-id="83f39-117">`CorDebugRegister` Hodnota & 7</span><span class="sxs-lookup"><span data-stu-id="83f39-117">`CorDebugRegister` value & 7</span></span>  
+     <span data-ttu-id="1065a-117">hodnota `CorDebugRegister` & 7</span><span class="sxs-lookup"><span data-stu-id="1065a-117">`CorDebugRegister` value & 7</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="83f39-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83f39-118">Requirements</span></span>  
- <span data-ttu-id="83f39-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83f39-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1065a-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1065a-118">Requirements</span></span>  
+ <span data-ttu-id="1065a-119">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1065a-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="83f39-120">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="83f39-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="1065a-120">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="1065a-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="83f39-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="83f39-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1065a-121">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="1065a-121">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="83f39-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="83f39-122">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1065a-122">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1065a-122">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83f39-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83f39-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1065a-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1065a-123">See also</span></span>
 
-- [<span data-ttu-id="83f39-124">ICorDebugRegisterSet2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="83f39-124">ICorDebugRegisterSet2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
-- [<span data-ttu-id="83f39-125">ICorDebugRegisterSet – rozhraní</span><span class="sxs-lookup"><span data-stu-id="83f39-125">ICorDebugRegisterSet Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [<span data-ttu-id="1065a-124">ICorDebugRegisterSet2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1065a-124">ICorDebugRegisterSet2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [<span data-ttu-id="1065a-125">ICorDebugRegisterSet – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1065a-125">ICorDebugRegisterSet Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)

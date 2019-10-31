@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: f9b0ff22-54db-45eb-9cc3-508000a3141d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b761d31e640063e11c1e549966bb372449fe743
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6e4f11de423d1ab6b66aca40e671607a383a4413
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762270"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136634"
 ---
-# <a name="icordebugmetadatalocatorgetmetadata-method"></a><span data-ttu-id="f69a2-102">ICorDebugMetaDataLocator::GetMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="f69a2-102">ICorDebugMetaDataLocator::GetMetaData Method</span></span>
-<span data-ttu-id="f69a2-103">Dotaz vrátí úplnou cestu k modulu, jehož metadat je potřeba k dokončení operace, které ladicí program požadovaný ladicí program.</span><span class="sxs-lookup"><span data-stu-id="f69a2-103">Asks the debugger to return the full path to a module whose metadata is needed to complete an operation the debugger requested.</span></span>  
+# <a name="icordebugmetadatalocatorgetmetadata-method"></a><span data-ttu-id="877a4-102">ICorDebugMetaDataLocator::GetMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="877a4-102">ICorDebugMetaDataLocator::GetMetaData Method</span></span>
+<span data-ttu-id="877a4-103">Požádá ladicí program, aby vrátil úplnou cestu k modulu, jehož metadata jsou potřeba k dokončení operace, kterou ladicí program požaduje.</span><span class="sxs-lookup"><span data-stu-id="877a4-103">Asks the debugger to return the full path to a module whose metadata is needed to complete an operation the debugger requested.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f69a2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f69a2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="877a4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="877a4-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetMetaData(  
@@ -41,51 +39,51 @@ HRESULT GetMetaData(
       );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f69a2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f69a2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="877a4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="877a4-105">Parameters</span></span>  
  `wszImagePath`  
- <span data-ttu-id="f69a2-106">[in] Řetězec zakončený hodnotou null, který představuje úplnou cestu k souboru.</span><span class="sxs-lookup"><span data-stu-id="f69a2-106">[in] A null-terminated string that represents the full path to the file.</span></span> <span data-ttu-id="f69a2-107">Pokud je úplná cesta není k dispozici, název a příponu souboru (*filename*. *rozšíření*).</span><span class="sxs-lookup"><span data-stu-id="f69a2-107">If the full path is not available, the name and extension of the file (*filename*.*extension*).</span></span>  
+ <span data-ttu-id="877a4-106">pro Řetězec zakončený hodnotou null, který představuje úplnou cestu k souboru.</span><span class="sxs-lookup"><span data-stu-id="877a4-106">[in] A null-terminated string that represents the full path to the file.</span></span> <span data-ttu-id="877a4-107">Pokud úplná cesta není k dispozici, název a Přípona souboru (*filename*. *rozšíření*).</span><span class="sxs-lookup"><span data-stu-id="877a4-107">If the full path is not available, the name and extension of the file (*filename*.*extension*).</span></span>  
   
  `dwImageTimeStamp`  
- <span data-ttu-id="f69a2-108">[in] Časové razítko ze záhlaví PE souboru obrázku.</span><span class="sxs-lookup"><span data-stu-id="f69a2-108">[in] The time stamp from the image's PE file headers.</span></span> <span data-ttu-id="f69a2-109">Tento parametr může potenciálně použít pro server symbolů ([SymSrv](/windows/desktop/debug/using-symsrv)) vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="f69a2-109">This parameter can potentially be used for a symbol server ([SymSrv](/windows/desktop/debug/using-symsrv)) lookup.</span></span>  
+ <span data-ttu-id="877a4-108">pro Časové razítko z hlaviček souboru v PE bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="877a4-108">[in] The time stamp from the image's PE file headers.</span></span> <span data-ttu-id="877a4-109">Tento parametr může být potenciálně použit pro vyhledávání serveru symbolů ([SymSrv](/windows/desktop/debug/using-symsrv)).</span><span class="sxs-lookup"><span data-stu-id="877a4-109">This parameter can potentially be used for a symbol server ([SymSrv](/windows/desktop/debug/using-symsrv)) lookup.</span></span>  
   
  `dwImageSize`  
- <span data-ttu-id="f69a2-110">[in] Velikost bitové kopie ze záhlaví PE souboru.</span><span class="sxs-lookup"><span data-stu-id="f69a2-110">[in] The image size from PE file headers.</span></span> <span data-ttu-id="f69a2-111">Tento parametr lze použít potenciálně pro vyhledávání SymSrv.</span><span class="sxs-lookup"><span data-stu-id="f69a2-111">This parameter can potentially be used for a SymSrv lookup.</span></span>  
+ <span data-ttu-id="877a4-110">pro Velikost obrázku z hlavičky souboru PE.</span><span class="sxs-lookup"><span data-stu-id="877a4-110">[in] The image size from PE file headers.</span></span> <span data-ttu-id="877a4-111">Tento parametr může být potenciálně použit pro SymSrv vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="877a4-111">This parameter can potentially be used for a SymSrv lookup.</span></span>  
   
  `cchPathBuffer`  
- <span data-ttu-id="f69a2-112">[in] Počet znak za `wszPathBuffer`.</span><span class="sxs-lookup"><span data-stu-id="f69a2-112">[in] The character count in `wszPathBuffer`.</span></span>  
+ <span data-ttu-id="877a4-112">pro Počet znaků v `wszPathBuffer`.</span><span class="sxs-lookup"><span data-stu-id="877a4-112">[in] The character count in `wszPathBuffer`.</span></span>  
   
  `pcchPathBuffer`  
- <span data-ttu-id="f69a2-113">[out] Počet `WCHAR`s zapsána do `wszPathBuffer`.</span><span class="sxs-lookup"><span data-stu-id="f69a2-113">[out] The count of `WCHAR`s written to `wszPathBuffer`.</span></span>  
+ <span data-ttu-id="877a4-113">mimo Počet `WCHAR`s zapsaných do `wszPathBuffer`</span><span class="sxs-lookup"><span data-stu-id="877a4-113">[out] The count of `WCHAR`s written to `wszPathBuffer`.</span></span>  
   
- <span data-ttu-id="f69a2-114">Pokud metoda vrátí E_NOT_SUFFICIENT_BUFFER, obsahuje počet `WCHAR`s potřebné k uložení této cesty.</span><span class="sxs-lookup"><span data-stu-id="f69a2-114">If the method returns E_NOT_SUFFICIENT_BUFFER, contains the count of `WCHAR`s needed to store the path.</span></span>  
+ <span data-ttu-id="877a4-114">Pokud metoda vrátí E_NOT_SUFFICIENT_BUFFER, obsahuje počet `WCHAR`s potřebný k uložení cesty.</span><span class="sxs-lookup"><span data-stu-id="877a4-114">If the method returns E_NOT_SUFFICIENT_BUFFER, contains the count of `WCHAR`s needed to store the path.</span></span>  
   
  `wszPathBuffer`  
- <span data-ttu-id="f69a2-115">[out] Ukazatel do vyrovnávací paměti, do které ladicí program se zkopírovat úplnou cestu souboru, který obsahuje požadovaná metadata.</span><span class="sxs-lookup"><span data-stu-id="f69a2-115">[out] Pointer to a buffer into which the debugger will copy the full path of the file that contains the requested metadata.</span></span>  
+ <span data-ttu-id="877a4-115">mimo Ukazatel na vyrovnávací paměť, do které bude ladicí program kopírovat úplnou cestu k souboru, který obsahuje požadovaná metadata.</span><span class="sxs-lookup"><span data-stu-id="877a4-115">[out] Pointer to a buffer into which the debugger will copy the full path of the file that contains the requested metadata.</span></span>  
   
- <span data-ttu-id="f69a2-116">`ofReadOnly` Příznak z [coropenflags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) výčet slouží k vyžádání přístup jen pro čtení metadat z tohoto souboru.</span><span class="sxs-lookup"><span data-stu-id="f69a2-116">The `ofReadOnly` flag from the [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) enumeration is used to request read-only access to the metadata in this file.</span></span>  
+ <span data-ttu-id="877a4-116">Příznak `ofReadOnly` z výčtu [CorOpenFlags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) se používá k vyžádání přístupu k metadatům v tomto souboru jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="877a4-116">The `ofReadOnly` flag from the [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) enumeration is used to request read-only access to the metadata in this file.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f69a2-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f69a2-117">Return Value</span></span>  
- <span data-ttu-id="f69a2-118">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="f69a2-118">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span> <span data-ttu-id="f69a2-119">Všechny ostatní HRESULT – selhání znamenat, že soubor není retrievable.</span><span class="sxs-lookup"><span data-stu-id="f69a2-119">All other failure HRESULTs indicate that the file is not retrievable.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="877a4-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="877a4-117">Return Value</span></span>  
+ <span data-ttu-id="877a4-118">Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.</span><span class="sxs-lookup"><span data-stu-id="877a4-118">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span> <span data-ttu-id="877a4-119">Všechny ostatní chyby HRESULT neznamenají, že soubor nelze načíst.</span><span class="sxs-lookup"><span data-stu-id="877a4-119">All other failure HRESULTs indicate that the file is not retrievable.</span></span>  
   
-|<span data-ttu-id="f69a2-120">HRESULT</span><span class="sxs-lookup"><span data-stu-id="f69a2-120">HRESULT</span></span>|<span data-ttu-id="f69a2-121">Popis</span><span class="sxs-lookup"><span data-stu-id="f69a2-121">Description</span></span>|  
+|<span data-ttu-id="877a4-120">HRESULT</span><span class="sxs-lookup"><span data-stu-id="877a4-120">HRESULT</span></span>|<span data-ttu-id="877a4-121">Popis</span><span class="sxs-lookup"><span data-stu-id="877a4-121">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="f69a2-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="f69a2-122">S_OK</span></span>|<span data-ttu-id="f69a2-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="f69a2-123">The method completed successfully.</span></span> <span data-ttu-id="f69a2-124">`wszPathBuffer` obsahuje úplnou cestu k souboru a je zakončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="f69a2-124">`wszPathBuffer` contains the full path to the file and is null-terminated.</span></span>|  
-|<span data-ttu-id="f69a2-125">E_NOT_SUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="f69a2-125">E_NOT_SUFFICIENT_BUFFER</span></span>|<span data-ttu-id="f69a2-126">Aktuální velikost `wszPathBuffer` není dostatečná k uložení úplnou cestu.</span><span class="sxs-lookup"><span data-stu-id="f69a2-126">The current size of `wszPathBuffer` is not sufficient to hold the full path.</span></span> <span data-ttu-id="f69a2-127">V takovém případě `pcchPathBuffer` obsahuje potřebný počet `WCHAR`s, včetně ukončujícího znaku null, a `GetMetaData` se volá jednou s velikost požadované vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="f69a2-127">In this case, `pcchPathBuffer` contains the needed count of `WCHAR`s, including the terminating null character, and `GetMetaData` is called a second time with the requested buffer size.</span></span>|  
+|<span data-ttu-id="877a4-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="877a4-122">S_OK</span></span>|<span data-ttu-id="877a4-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="877a4-123">The method completed successfully.</span></span> <span data-ttu-id="877a4-124">`wszPathBuffer` obsahuje úplnou cestu k souboru a je zakončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="877a4-124">`wszPathBuffer` contains the full path to the file and is null-terminated.</span></span>|  
+|<span data-ttu-id="877a4-125">E_NOT_SUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="877a4-125">E_NOT_SUFFICIENT_BUFFER</span></span>|<span data-ttu-id="877a4-126">Aktuální velikost `wszPathBuffer` není dostačující pro uložení úplné cesty.</span><span class="sxs-lookup"><span data-stu-id="877a4-126">The current size of `wszPathBuffer` is not sufficient to hold the full path.</span></span> <span data-ttu-id="877a4-127">V takovém případě `pcchPathBuffer` obsahuje potřebný počet `WCHAR`, včetně ukončujícího znaku null a `GetMetaData` je volána podruhé s požadovanou velikostí vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="877a4-127">In this case, `pcchPathBuffer` contains the needed count of `WCHAR`s, including the terminating null character, and `GetMetaData` is called a second time with the requested buffer size.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f69a2-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f69a2-128">Remarks</span></span>  
- <span data-ttu-id="f69a2-129">Pokud `wszImagePath` obsahuje úplnou cestu pro modul z výpis paměti, určuje cestu z počítače, kde byl výpis paměti shromážděn.</span><span class="sxs-lookup"><span data-stu-id="f69a2-129">If `wszImagePath` contains a full path for a module from a dump, it specifies the path from the computer where the dump was collected.</span></span> <span data-ttu-id="f69a2-130">Soubor neexistuje na tomto místě nebo nesprávný soubor se stejným názvem, mohou být uloženy v cestě.</span><span class="sxs-lookup"><span data-stu-id="f69a2-130">The file may not exist at this location, or an incorrect file with the same name may be stored on the path.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="877a4-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="877a4-128">Remarks</span></span>  
+ <span data-ttu-id="877a4-129">Pokud `wszImagePath` obsahuje úplnou cestu pro modul z výpisu paměti, určuje cestu z počítače, ve kterém byl výpis paměti shromážděn.</span><span class="sxs-lookup"><span data-stu-id="877a4-129">If `wszImagePath` contains a full path for a module from a dump, it specifies the path from the computer where the dump was collected.</span></span> <span data-ttu-id="877a4-130">Soubor pravděpodobně v tomto umístění neexistuje nebo v cestě je uložen nesprávný soubor se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="877a4-130">The file may not exist at this location, or an incorrect file with the same name may be stored on the path.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f69a2-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f69a2-131">Requirements</span></span>  
- <span data-ttu-id="f69a2-132">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f69a2-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="877a4-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="877a4-131">Requirements</span></span>  
+ <span data-ttu-id="877a4-132">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="877a4-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f69a2-133">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f69a2-133">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="877a4-133">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="877a4-133">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f69a2-134">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f69a2-134">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="877a4-134">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="877a4-134">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f69a2-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f69a2-135">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="877a4-135">**Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="877a4-135">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f69a2-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f69a2-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="877a4-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="877a4-136">See also</span></span>
 
-- [<span data-ttu-id="f69a2-137">ICorDebugThread4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f69a2-137">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [<span data-ttu-id="f69a2-138">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="f69a2-138">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="f69a2-139">Ladění</span><span class="sxs-lookup"><span data-stu-id="f69a2-139">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="877a4-137">ICorDebugThread4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="877a4-137">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
+- [<span data-ttu-id="877a4-138">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="877a4-138">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="877a4-139">Ladění</span><span class="sxs-lookup"><span data-stu-id="877a4-139">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -17,38 +17,36 @@ helpviewer_keywords:
 ms.assetid: 98f2a0db-a6ec-4f9b-861d-f82485237d08
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e0d61092621a55c49509c8c4e4c81f1d064e0fdb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6821aacb80726cf202c99428a401b53b5c6ee566
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774382"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121810"
 ---
-# <a name="icoreclrdebugtargetfreememory-method"></a><span data-ttu-id="83efd-102">ICoreClrDebugTarget::FreeMemory – metoda</span><span class="sxs-lookup"><span data-stu-id="83efd-102">ICoreClrDebugTarget::FreeMemory Method</span></span>
-<span data-ttu-id="83efd-103">Uvolní paměť přidělenou [icoreclrdebugtarget::enumprocesses –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) a [icoreclrdebugtarget::enumruntimes –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="83efd-103">Frees the memory allocated by the [ICoreClrDebugTarget::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) and [ICoreClrDebugTarget::EnumRuntimes](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) methods.</span></span>  
+# <a name="icoreclrdebugtargetfreememory-method"></a><span data-ttu-id="b0337-102">ICoreClrDebugTarget::FreeMemory – metoda</span><span class="sxs-lookup"><span data-stu-id="b0337-102">ICoreClrDebugTarget::FreeMemory Method</span></span>
+<span data-ttu-id="b0337-103">Uvolňuje paměť přidělená metodami [ICoreClrDebugTarget:: EnumProcesses –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) a [ICoreClrDebugTarget:: enumruntimes –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) .</span><span class="sxs-lookup"><span data-stu-id="b0337-103">Frees the memory allocated by the [ICoreClrDebugTarget::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) and [ICoreClrDebugTarget::EnumRuntimes](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) methods.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="83efd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83efd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b0337-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0337-104">Syntax</span></span>  
   
 ```cpp  
 void FreeMemory (  
      [in] void*pMemory);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="83efd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="83efd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b0337-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b0337-105">Parameters</span></span>  
  `pMemory`  
- <span data-ttu-id="83efd-106">[in] Ukazatele na pole, který je vrácený buď [icoreclrdebugtarget::enumprocesses –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) nebo [icoreclrdebugtarget::enumruntimes –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="83efd-106">[in] A pointer to the array that is returned by either the [ICoreClrDebugTarget::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) or the [ICoreClrDebugTarget::EnumRuntimes](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) method.</span></span>  
+ <span data-ttu-id="b0337-106">pro Ukazatel na pole, které je vráceno metodou [ICoreClrDebugTarget:: EnumProcesses –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) nebo [ICoreClrDebugTarget:: enumruntimes –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) .</span><span class="sxs-lookup"><span data-stu-id="b0337-106">[in] A pointer to the array that is returned by either the [ICoreClrDebugTarget::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md) or the [ICoreClrDebugTarget::EnumRuntimes](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="83efd-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83efd-107">Requirements</span></span>  
- <span data-ttu-id="83efd-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83efd-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b0337-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0337-107">Requirements</span></span>  
+ <span data-ttu-id="b0337-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b0337-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="83efd-109">**Záhlaví:** CoreClrRemoteDebuggingInterfaces.h</span><span class="sxs-lookup"><span data-stu-id="83efd-109">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
+ <span data-ttu-id="b0337-109">**Hlavička:** CoreClrRemoteDebuggingInterfaces. h</span><span class="sxs-lookup"><span data-stu-id="b0337-109">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
   
- <span data-ttu-id="83efd-110">**Library:** mscordbi_macx86.dll</span><span class="sxs-lookup"><span data-stu-id="83efd-110">**Library:** mscordbi_macx86.dll</span></span>  
+ <span data-ttu-id="b0337-110">**Knihovna:** mscordbi_macx86. dll</span><span class="sxs-lookup"><span data-stu-id="b0337-110">**Library:** mscordbi_macx86.dll</span></span>  
   
- <span data-ttu-id="83efd-111">**Verze rozhraní .NET framework:** 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="83efd-111">**.NET Framework Versions:** 3.5 SP1</span></span>  
+ <span data-ttu-id="b0337-111">**Verze .NET Framework:** 3,5 SP1</span><span class="sxs-lookup"><span data-stu-id="b0337-111">**.NET Framework Versions:** 3.5 SP1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83efd-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83efd-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b0337-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b0337-112">See also</span></span>
 
-- [<span data-ttu-id="83efd-113">ICoreClrDebugTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="83efd-113">ICoreClrDebugTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)
+- [<span data-ttu-id="b0337-113">ICoreClrDebugTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b0337-113">ICoreClrDebugTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)

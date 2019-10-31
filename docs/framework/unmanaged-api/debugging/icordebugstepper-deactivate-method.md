@@ -15,32 +15,30 @@ helpviewer_keywords:
 ms.assetid: 855f4199-b62d-40ce-998e-1eb4a1772142
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b577e915422814fbd0060fdda53b9e2bf7cd091a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1d75897e00c36bd5c484e837ee68e54443168e77
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760727"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131754"
 ---
-# <a name="icordebugstepperdeactivate-method"></a><span data-ttu-id="83e4e-102">ICorDebugStepper::Deactivate – metoda</span><span class="sxs-lookup"><span data-stu-id="83e4e-102">ICorDebugStepper::Deactivate Method</span></span>
-<span data-ttu-id="83e4e-103">Způsobí, že tento icordebugstepper – zrušení příkazu poslední krok, který obdržela.</span><span class="sxs-lookup"><span data-stu-id="83e4e-103">Causes this ICorDebugStepper to cancel the last step command that it received.</span></span>  
+# <a name="icordebugstepperdeactivate-method"></a><span data-ttu-id="6ad37-102">ICorDebugStepper::Deactivate – metoda</span><span class="sxs-lookup"><span data-stu-id="6ad37-102">ICorDebugStepper::Deactivate Method</span></span>
+<span data-ttu-id="6ad37-103">Způsobí, že tato ICorDebugStepper zruší příkaz posledního kroku, který přijal.</span><span class="sxs-lookup"><span data-stu-id="6ad37-103">Causes this ICorDebugStepper to cancel the last step command that it received.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="83e4e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83e4e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6ad37-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6ad37-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Deactivate ();  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="83e4e-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="83e4e-105">Remarks</span></span>  
- <span data-ttu-id="83e4e-106">Nový příkaz krokování vydávat po nedávno přijatého kroku příkaz byl zrušen.</span><span class="sxs-lookup"><span data-stu-id="83e4e-106">A new stepping command may be issued after the most recently received step command has been canceled.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6ad37-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6ad37-105">Remarks</span></span>  
+ <span data-ttu-id="6ad37-106">Nový příkaz pro krokování může být vydán po zrušení příkazu poslední přijatý krok.</span><span class="sxs-lookup"><span data-stu-id="6ad37-106">A new stepping command may be issued after the most recently received step command has been canceled.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="83e4e-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83e4e-107">Requirements</span></span>  
- <span data-ttu-id="83e4e-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83e4e-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6ad37-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6ad37-107">Requirements</span></span>  
+ <span data-ttu-id="6ad37-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6ad37-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="83e4e-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="83e4e-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="6ad37-109">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="6ad37-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="83e4e-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="83e4e-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="6ad37-110">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="6ad37-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="83e4e-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="83e4e-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="6ad37-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6ad37-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

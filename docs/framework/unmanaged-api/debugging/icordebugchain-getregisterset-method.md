@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: bc4288b6-3331-4ae3-990d-e1d6e62ecb67
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 89237c20cbb145d14b7afbda8c00eb14b441d0d4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d6ee36ac4d4510637e5f8240c3b8930a9bec7970
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745278"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123836"
 ---
-# <a name="icordebugchaingetregisterset-method"></a><span data-ttu-id="1920c-102">ICorDebugChain::GetRegisterSet – metoda</span><span class="sxs-lookup"><span data-stu-id="1920c-102">ICorDebugChain::GetRegisterSet Method</span></span>
-<span data-ttu-id="1920c-103">Získá do registru pro aktivní součástí tohoto řetězce.</span><span class="sxs-lookup"><span data-stu-id="1920c-103">Gets the register set for the active part of this chain.</span></span>  
+# <a name="icordebugchaingetregisterset-method"></a><span data-ttu-id="33bd1-102">ICorDebugChain::GetRegisterSet – metoda</span><span class="sxs-lookup"><span data-stu-id="33bd1-102">ICorDebugChain::GetRegisterSet Method</span></span>
+<span data-ttu-id="33bd1-103">Načte sadu registrů pro aktivní část tohoto řetězu.</span><span class="sxs-lookup"><span data-stu-id="33bd1-103">Gets the register set for the active part of this chain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1920c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1920c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="33bd1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="33bd1-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetRegisterSet (  
@@ -35,15 +33,15 @@ HRESULT GetRegisterSet (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1920c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1920c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="33bd1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="33bd1-105">Parameters</span></span>  
  `ppRegisters`  
- <span data-ttu-id="1920c-106">[out] Ukazatel na adresu [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) nastavit objekt, který reprezentuje do registru pro aktivní součástí tohoto řetězce.</span><span class="sxs-lookup"><span data-stu-id="1920c-106">[out] A pointer to the address of an [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) object that represents the register set for the active part of this chain.</span></span>  
+ <span data-ttu-id="33bd1-106">mimo Ukazatel na adresu objektu [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) , který představuje sadu registrů pro aktivní část tohoto řetězce.</span><span class="sxs-lookup"><span data-stu-id="33bd1-106">[out] A pointer to the address of an [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) object that represents the register set for the active part of this chain.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1920c-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1920c-107">Requirements</span></span>  
- <span data-ttu-id="1920c-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1920c-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="33bd1-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="33bd1-107">Requirements</span></span>  
+ <span data-ttu-id="33bd1-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="33bd1-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1920c-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="1920c-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="33bd1-109">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="33bd1-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="1920c-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1920c-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="33bd1-110">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="33bd1-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="1920c-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1920c-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="33bd1-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="33bd1-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
