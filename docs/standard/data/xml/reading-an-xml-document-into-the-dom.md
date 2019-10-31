@@ -6,29 +6,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a4fb291f-5630-49ba-a49a-5b66c3b71e49
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9031f5df0d0f48dc2844cdfd0654ee4ab876cc22
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e61a9ed1a1ccaa2f9f1543efa1d33c3fcf00061
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61759757"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130835"
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a>Načtení dokumentu XML do modelu DOM
-Informace o XML je načíst do paměti v různých formátech. Může být číst z řetězce, datového proudu, adresa URL, čtečky textu nebo třídu odvozenou z <xref:System.Xml.XmlReader>.  
+Informace XML jsou čteny do paměti z různých formátů. Lze ho číst z řetězce, datového proudu, adresy URL, čtečky textu nebo třídy odvozené z <xref:System.Xml.XmlReader>.  
   
- <xref:System.Xml.XmlDocument.Load%2A> Metoda přináší dokumentu do paměti a přetížil metody dostupné pro vzít data ze všech různých formátech. K dispozici je také <xref:System.Xml.XmlDocument.LoadXml%2A> metodu, která čte z řetězce XML.  
+ Metoda <xref:System.Xml.XmlDocument.Load%2A> přiřadí dokument do paměti a má přetížené metody, které jsou k dispozici pro převzetí dat z různých formátů. Existuje také metoda <xref:System.Xml.XmlDocument.LoadXml%2A>, která čte XML z řetězce.  
   
- Různé <xref:System.Xml.XmlDocument.Load%2A> metody vliv na uzly, na kterých jsou vytvořeny při načtení XML Document Object Model (DOM). V následující tabulce jsou uvedeny rozdíly mezi některé <xref:System.Xml.XmlDocument.Load%2A> metody a témata, která je řešit.  
+ Různé metody <xref:System.Xml.XmlDocument.Load%2A> ovlivňují, které uzly budou vytvořeny při načtení XML model DOM (Document Object Model) (DOM). V následující tabulce jsou uvedeny rozdíly mezi některými <xref:System.Xml.XmlDocument.Load%2A> metodami a tématy, která je řeší.  
   
-|Subject|Téma|  
+|Závislosti|Téma|  
 |-------------|-----------|  
-|Vytvoření prázdné znaky uzly|Objekt použitý k načtení modelu DOM má vliv na mezer a významných mezer uzly vygenerované v modelu DOM. Další informace najdete v tématu [mezer a významných mezer zpracování při načítání modelu DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).|  
-|Načítá se XML od konkrétní uzel nebo načítání celého dokumentu XML|Použití <xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> metoda data je možné načíst z určitého uzlu do modelu DOM. Další informace najdete v tématu [načtení dat z čtečky](../../../../docs/standard/data/xml/load-data-from-a-reader.md).|  
-|Ověřuje se XML jako jeho načtení|Načtení do modelu DOM data XML můžete ověřit, protože je načtena. To lze provést pomocí ověřování <xref:System.Xml.XmlReader>. Další informace o ověřování XML, protože je načtena, naleznete v tématu [ověřování dokumentu XML v modelu DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md).|  
+|Vytváření mezerových uzlů|Objekt použitý k načtení modelu DOM má vliv na prázdné místo a významné uzly prázdné místo vygenerované v modelu DOM. Další informace naleznete v tématu [mezera a významná manipulace s prázdným znakem při načítání modelu DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).|  
+|Načítání XML od určitého uzlu nebo načítání celého dokumentu XML|Použití dat metody <xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> lze načíst z konkrétního uzlu do modelu DOM. Další informace najdete v tématu [načtení dat z čtecího zařízení](../../../../docs/standard/data/xml/load-data-from-a-reader.md).|  
+|Ověřování XML při načtení|Data XML načtená do modelu DOM lze ověřit tak, jak jsou načtena. To se provádí pomocí ověřování <xref:System.Xml.XmlReader>. Další informace o ověřování XML při jeho načtení naleznete v tématu [ověření dokumentu XML v modelu DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md).|  
   
- Následující příklad ukazuje načítání s XML <xref:System.Xml.XmlDocument.LoadXml%2A> metoda a dat, následně uloženy do textového souboru s názvem `data.xml`.  
+ Následující příklad ukazuje XML načtený pomocí metody <xref:System.Xml.XmlDocument.LoadXml%2A> a data následně uložená do textového souboru s názvem `data.xml`.  
   
 ```vb  
 Imports System  

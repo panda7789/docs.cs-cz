@@ -8,14 +8,12 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5993cfdb0f50d8e474a4f18280d181d9ec2fdfa4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049658"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128379"
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
 
@@ -57,7 +55,7 @@ Ale .NET Native zahrnuje více než kompilaci do nativního kódu. Transformuje 
 |Knihovny|.NET Framework + prostředí Windows Runtime|Win32 + prostředí Windows Runtime|
 |Přepínač|Kompilátor pro optimalizaci UTC|Kompilátor pro optimalizaci UTC|
 |nainstalována|Soubory připravené ke spuštění|Hotové binární soubory připravené k běhu (ASM)|
-|Modul runtime|MRT. dll (minimální modul CLR Runtime)|CRT.dll (C Runtime)|
+|Modul runtime|MRT. dll (minimální modul CLR Runtime)|CRT. dll (běhové prostředí C)|
 
 Pro aplikace pro Windows pro Windows 10 nahrajete .NET Native binárních souborů kompilace kódu v balíčcích aplikací (soubory. appx) do Windows Storu.
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0500854e-2121-43d9-a028-64312da35258
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1e0217019aa9b8ff85716c62c27c0f4d5547074a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da35db8a943fda5fb3fbf4126684bb9cb7243001
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759790"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137428"
 ---
 # <a name="icordebugmanagedcallbackcontrolctrap-method"></a>ICorDebugManagedCallback::ControlCTrap – metoda
-Upozorní ladicí program, CTRL + C je zachycena v procesu, který je právě laděna.  
+Upozorní ladicí program, že kombinace kláves CTRL + C je zachycena v procesu, který je právě laděn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +35,26 @@ HRESULT ControlCTrap (
   
 ## <a name="parameters"></a>Parametry  
  `pProcess`  
- [in] Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém je kombinace kláves CTRL + C zachycena.  
+ pro Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém je nachycena kombinace kláves CTRL + C.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Ladicí program zpracuje depeše CTRL + C.|  
-|S_FALSE|Ladicí program nebude zpracovávat depeše CTRL + C.|  
+|S_OK|Ladicí program zpracuje soutisk v kombinaci kláves CTRL + C.|  
+|S_FALSE|Ladicí program nebude zpracovávat depeši CTRL + C.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pro toto zpětné volání se zastaví všechny domény aplikace uvnitř procesu.  
+ Všechny domény aplikace v rámci procesu jsou pro toto zpětné volání zastaveny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

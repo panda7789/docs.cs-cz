@@ -8,17 +8,15 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 35c7a18f-133a-4584-bd25-bb338568b0c6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96968956b513e1ae80a25f5fb4afea48bf888876
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 438af9f191f48a86207c3b343ba428eef2c1fabc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739262"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132206"
 ---
 # <a name="createdebugginginterfacefromversion-function-for-silverlight"></a>CreateDebuggingInterfaceFromVersion – funkce pro technologii Silverlight
-Přijímá běžné modulu CLR verze řetězec jazyka, který je vrácen z [createversionstringfrommodule – funkce](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)a vrátí odpovídající rozhraní ladicího programu (obvykle [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)).  
+Přijímá řetězec verze modulu CLR (Common Language Runtime), který je vrácen [funkcí CreateVersionStringFromModule –](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)a vrací odpovídající rozhraní ladicího programu (obvykle [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,35 +29,35 @@ HRESULT CreateDebuggingInterfaceFromVersion (
   
 ## <a name="parameters"></a>Parametry  
  `szDebuggeeVersion`  
- [in] Řetězec verze modulu CLR cílové laděného procesu, který je vrácený [createversionstringfrommodule – funkce](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md).  
+ pro Řetězec verze modulu CLR v cílovém laděného procesu, který je vrácen [funkcí CreateVersionStringFromModule –](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md).  
   
  `ppCordb`  
- [out] Ukazatel na ukazatel na objekt modelu COM (`IUnknown`). Tento objekt přetypovat [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) objektu před jeho vrácením.  
+ mimo Ukazatel na ukazatel na objekt modelu COM (`IUnknown`). Tento objekt bude převeden na objekt [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) před jeho vrácením.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- `ppCordb` odkazuje na platný objekt, který implementuje [icordebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozhraní.  
+ `ppCordb` odkazuje na platný objekt, který implementuje rozhraní [rozhraní ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) .  
   
  E_INVALIDARG  
- Buď `szDebuggeeVersion` nebo `ppCordb` má hodnotu null.  
+ Buď `szDebuggeeVersion`, nebo `ppCordb` je null.  
   
  CORDBG_E_DEBUG_COMPONENT_MISSING  
- Nelze najít komponentu, která je nezbytná pro ladění CLR. To znamená, že knihovna mscordbi.dll nebo mscordaccore.dll nebyl nalezen ve stejném adresáři jako cíl CoreCLR.dll.  
+ Nelze nalézt komponentu, která je nezbytná pro ladění CLR. To znamená, že soubor mscordbi. dll nebo mscordaccore. dll nebyl nalezen ve stejném adresáři jako cílový CoreCLR. dll.  
   
  CORDBG_E_INCOMPATIBLE_PROTOCOL  
- Knihovna mscordbi.dll nebo mscordaccore.dll není stejná verze jako cíl CoreCLR.dll.  
+ Mscordbi. dll nebo mscordaccore. dll není stejná jako verze cílového CoreCLR. dll.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Nejde vrátit [icordebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md).  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Nelze vrátit [rozhraní ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md).  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní, která je vrácena poskytuje funkce pro ladění spravovaného kódu, který je spuštěn modul CLR a připojení k modulu CLR v cílovém procesu.  
+ Rozhraní, které je vráceno, poskytuje zařízení pro připojení k CLR v cílovém procesu a ladění spravovaného kódu, který je spuštěn modul CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** dbgshim.h  
+ **Záhlaví:** dbgshim. h  
   
- **Knihovna:** dbgshim.dll  
+ **Knihovna:** dbgshim. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

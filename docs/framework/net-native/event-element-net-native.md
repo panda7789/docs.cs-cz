@@ -1,17 +1,15 @@
 ---
-title: <Event>– Element (.NET Native)
+title: <Event> – element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7fb0245c50677da0397ba9c4918f171dcb217ba6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6966caede63faafa718b760be879f6bc6cbd3ab9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049850"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128495"
 ---
-# <a name="event-element-net-native"></a>\<Element > události (.NET Native)
+# <a name="event-element-net-native"></a>\<element > události (.NET Native)
 Aplikuje zásadu reflexe modulu runtime na událost.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,15 +33,15 @@ Aplikuje zásadu reflexe modulu runtime na událost.
   
 ## <a name="name-attribute"></a>Atribut Name  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|*method_name*|Název události Typ události je definován nadřazeným [ \<typem >](type-element-net-native.md) nebo [ \<elementem > TypeInstantiation](typeinstantiation-element-net-native.md) .|  
+|*method_name*|Název události Typ události je definován nadřazeným [\<typem >](type-element-net-native.md) nebo [\<elementu > TypeInstantiation](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které se má použít pro tento typ zásad pro událost Možné hodnoty jsou `Auto`, `Excluded`, `Included`a. `Required` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít pro tento typ zásad pro událost Možné hodnoty jsou `Auto`, `Excluded`, `Included`a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -52,8 +50,8 @@ Aplikuje zásadu reflexe modulu runtime na událost.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zadejte >](type-element-net-native.md)|Aplikuje zásadu odrazu na typ a všechny jeho členy.|  
-|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ a všechny její členy.|  
+|[Typ\<](type-element-net-native.md)|Aplikuje zásadu odrazu na typ a všechny jeho členy.|  
+|[\<TypeInstantiation >](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud zásada události není explicitně definována, zdědí zásady modulu runtime svého nadřazeného prvku.  

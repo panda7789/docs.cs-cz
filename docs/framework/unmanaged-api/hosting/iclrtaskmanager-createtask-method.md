@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: eea570d9-2e53-4320-9ea0-eb777bf9dcf3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a89ea76d78431ae8833602588379d5150e473710
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fcb78dd5374ff97f23d7dfea63fe33fa96836958
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938307"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124534"
 ---
 # <a name="iclrtaskmanagercreatetask-method"></a>ICLRTaskManager::CreateTask – metoda
 Požadavky explicitně, aby modul CLR (Common Language Runtime) vytvořil nový úkol.  
@@ -52,19 +50,19 @@ HRESULT CreateTask (
 |E_OUTOFMEMORY|K přidělení požadovaného prostředku není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR vytvoří automaticky nový úkol po inicializaci, když uživatelský kód vytvoří vlákno pomocí typů v <xref:System.Threading> oboru názvů nebo při zvýšení velikosti fondu vláken. Také vytvoří úlohy, pokud nespravovaný kód provede volání spravované funkce.  
+ Modul CLR vytvoří automaticky nový úkol po inicializaci, když uživatelský kód vytvoří vlákno pomocí typů v oboru názvů <xref:System.Threading> nebo při zvýšení velikosti fondu vláken. Také vytvoří úlohy, pokud nespravovaný kód provede volání spravované funkce.  
   
- `CreateTask`umožňuje hostiteli vytvořit explicitní požadavek, který vytvoří nový úkol CLR. Například hostitel může vyvolat tuto metodu pro předinicializaci datových struktur.  
+ `CreateTask` umožňuje hostiteli vytvořit explicitní požadavek, který vytvoří nový úkol CLR. Například hostitel může vyvolat tuto metodu pro předinicializaci datových struktur.  
   
 > [!IMPORTANT]
 > Nový úkol se vrátí v pozastaveném stavu a zůstane pozastaven, dokud hostitel explicitně nevolá [IHostTask:: Start](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

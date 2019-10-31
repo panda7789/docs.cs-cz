@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72ea68b4-689f-4733-9416-9664b75e8892
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 46dab35c44e59a149822005575c83c13e9350455
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc5324683daa9a02a6a89b2a3fb57ee9fd5dbe72
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758548"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136952"
 ---
-# <a name="corexemain2-function"></a>_CorExeMain2 – funkce
-Spustí vstupní bod v zadané kódu mapované paměti. Tato funkce je volána zavaděčem operačního systému.  
+# <a name="_corexemain2-function"></a>_CorExeMain2 – funkce
+Provede vstupní bod v zadaném kódu mapované paměti. Tato funkce je volána zavaděčem operačního systému.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
   
 ## <a name="parameters"></a>Parametry  
  `pUnmappedPE`  
- [in] Ukazatel na kódu mapované paměti.  
+ pro Ukazatel na kód mapované paměti.  
   
  `cUnmappedPE`  
- [in] Počet prvků, které `pUnmappedPE` může obsahovat.  
+ pro Počet elementů, které `pUnmappedPE` může uchovávat.  
   
  `pImageNameIn`  
- [in] Ukazatel na název spustitelné bitové kopie.  
+ pro Ukazatel na název spustitelného obrázku.  
   
  `pLoadersFileName`  
- [in] Název souboru zavaděče.  
+ pro Název souboru zavaděče.  
   
  `pCmdLine`  
- [in] Parametry příkazového řádku, pokud existuje.  
+ pro Parametry příkazového řádku, pokud existují.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

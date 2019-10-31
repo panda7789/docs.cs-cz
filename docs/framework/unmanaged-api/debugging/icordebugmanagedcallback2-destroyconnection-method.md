@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cf7940e9-4558-4319-925c-09f6c98c8fcd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 350a3505345aa88d93f551309eb896ff52cc683d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a64df9f821021547efd08045e9f67fee25173e5a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761159"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137441"
 ---
 # <a name="icordebugmanagedcallback2destroyconnection-method"></a>ICorDebugManagedCallback2::DestroyConnection – metoda
-Upozorní ladicího programu, že zadané připojení se ukončilo.  
+Oznamuje ladicímu programu, že zadané připojení bylo ukončeno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT DestroyConnection (
   
 ## <a name="parameters"></a>Parametry  
  `pProcess`  
- [in] Ukazatel na objekt ICorDebugProcess, který reprezentuje proces obsahující připojení, které se zničil.  
+ pro Ukazatel na objekt ICorDebugProcess, který představuje proces obsahující připojení, které bylo zničeno.  
   
  `dwConnectionId`  
- [in] ID připojení, které se zničil.  
+ pro ID připojení, které bylo zničeno.  
   
 ## <a name="remarks"></a>Poznámky  
- A `DestroyConnection` zpětné volání bude vyvoláno, když volá hostitele [iclrdebugmanager::endconnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) v [API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
+ Pokud hostitel volá [ICLRDebugManager:: EndConnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) v [rozhraní API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md), bude vyvolána zpětná volání `DestroyConnection`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

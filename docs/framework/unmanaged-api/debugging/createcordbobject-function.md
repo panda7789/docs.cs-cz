@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: b259821d-4fa7-464d-85cf-304dfffc8089
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ab86277956469e558d20cea81174a7fdcc0020b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d21e0d3d0370ec7c1b223be29099f6b99822463b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739334"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132108"
 ---
 # <a name="createcordbobject-function"></a>CreateCordbObject – funkce
-Vytvoří rozhraní ladicího programu ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)), která poskytuje funkce pro vytvoření instance spravované ladicí relace na vzdálený proces.  
+Vytvoří rozhraní ladicího programu ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)), které poskytuje funkce pro vytvoření instance spravované relace ladění na vzdáleném procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,32 +37,32 @@ HRESULT CordbCreateObject (
   
 ## <a name="parameters"></a>Parametry  
  `iDebuggerVersion`  
- [in] Ladicí verze cílového procesu. Tento parametr musí být CorDebugVersion_2_0 pro vzdálené ladění.  
+ pro Verze ladicího programu cílového procesu. Tento parametr musí být CorDebugVersion_2_0 pro vzdálené ladění.  
   
  `ppCordb`  
- [out] Ukazatel na ukazatel na objekt, který bude převeden [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozhraní a vrátí.  
+ mimo Ukazatel na ukazatel na objekt, který bude převeden na rozhraní [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) a vráceno.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěšně bylo zjištěno číslo CLRs v procesu a odpovídající popisovač a pole cesty byly správně vyplněné.  
+ Počet CLRs v procesu byl úspěšně zjištěn a odpovídající pole popisovače a cesty byly správně vyplněny.  
   
  E_INVALIDARG  
- `ppCordb` má hodnotu null, nebo `iDebuggerVersion` není CorDebugVersion_2_0.  
+ `ppCordb` je null nebo `iDebuggerVersion` není CorDebugVersion_2_0.  
   
  E_OUTOFMEMORY  
- Nepovedlo se přidělit dostatek paměti pro `ppCordb`  
+ Nelze přidělit dostatek paměti pro `ppCordb`  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Jiné chyby.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Další chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozhraní, které se vrátí v `ppCordb` pro všechny spravované ladění služby je rozhraní pro ladění nejvyšší úrovně.  
+ Rozhraní [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) , které je vráceno v `ppCordb`, je rozhraní ladění nejvyšší úrovně pro všechny spravované služby ladění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

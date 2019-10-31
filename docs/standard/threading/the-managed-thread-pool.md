@@ -1,6 +1,6 @@
 ---
 title: Spravovaný fond vláken
-description: Další informace o fondu vláken .NET, která poskytuje pracovních vláken na pozadí
+description: Přečtěte si o fondu vláken .NET, který poskytuje pracovní vlákna na pozadí.
 ms.date: 08/02/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,81 +9,79 @@ helpviewer_keywords:
 - threading [.NET], thread pool
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f921f40bbc5a7b72341c3fb778dd69fcc7b918c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769132"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127527"
 ---
 # <a name="the-managed-thread-pool"></a>Spravovaný fond vláken
 
-<xref:System.Threading.ThreadPool?displayProperty=nameWithType> Třída poskytuje aplikaci fondu pracovních vláken, která jsou spravována systému, umožňuje soustředit se na aplikace úkoly spíše než vlákna správy. Pokud máte krátký úlohy, které vyžadují zpracování na pozadí, spravovaný fond vláken je snadný způsob, jak využít výhod více vláken. Použití fondu vláken je výrazně jednodušší v rozhraní Framework 4 a novější, protože můžete vytvořit <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty, které provádět asynchronní úlohy ve vlákně fondu vláken.  
+Třída <xref:System.Threading.ThreadPool?displayProperty=nameWithType> poskytuje aplikaci s fondem pracovních vláken spravovaných systémem, což vám umožňuje soustředit se na úlohy aplikace, nikoli na správu vláken. Pokud máte krátké úlohy, které vyžadují zpracování na pozadí, je spravovaný fond vláken jednoduchý způsob, jak využít více vláken. Použití fondu vláken je výrazně snazší v rozhraní Framework 4 a novějším, protože můžete vytvářet <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty, které provádějí asynchronní úlohy v vláknech fondu vláken.  
   
-.NET pomocí vláken fondu vláken pro celou řadu účelů, včetně [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md) činnost, dokončení asynchronních vstupně-výstupních operací, [časovače](timers.md) zpětná volání, zaregistrovaný počkejte operace, asynchronní metody použití delegátů, volá a <xref:System.Net?displayProperty=nameWithType> soketu připojení.  
+Rozhraní .NET používá vlákna fondu vláken pro mnoho účelů, včetně operací [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md) , dokončování asynchronního vstupu a výstupu, zpětných volání [časovačů](timers.md) , registrovaných operací čekání, volání asynchronní metody pomocí delegátů a <xref:System.Net?displayProperty=nameWithType>ho soketu. připojení.  
 
-## <a name="thread-pool-characteristics"></a>Vlastnosti fondu vláken
+## <a name="thread-pool-characteristics"></a>Charakteristiky fondu vláken
 
-Vláken fondu vláken se [pozadí](foreground-and-background-threads.md) vlákna. Každé vlákno používá výchozí velikost zásobníku, běží na výchozí prioritu a je v apartmentu s více vlákny. Po dokončení svých úkolů vláken ve fondu vláken se vrátí do fronty čekajících vláken. V tomto okamžiku můžete použít opakovaně. Použití umožňuje aplikacím, aby náklady na vytvoření nové vlákno pro každý úkol.
+Vlákna fondu vláken jsou vlákna na [pozadí](foreground-and-background-threads.md) . Každé vlákno používá výchozí velikost zásobníku, běží na výchozí prioritě a je v vícevláknovém objektu apartment. Jakmile vlákno ve fondu vláken dokončí svůj úkol, bude vrácen do fronty čekajících vláken. Od této chvíle se dá znovu použít. Toto opakované použití umožňuje aplikacím vyhnout se nákladům na vytvoření nového vlákna pro každý úkol.
   
-Existuje pouze jedno vlákno sdružení za procesu.  
+Každý proces má pouze jeden fond vláken.  
   
-### <a name="exceptions-in-thread-pool-threads"></a>Výjimky v vláken fondu vláken
+### <a name="exceptions-in-thread-pool-threads"></a>Výjimky v vláknech fondu vláken
 
-Proces ukončit neošetřenými výjimkami v vláken fondu vláken. Existují tři výjimkou tohoto pravidla:  
+Neošetřené výjimky v vláknech fondu vláken ukončí proces. Toto pravidlo obsahuje tři výjimky:  
   
-- A <xref:System.Threading.ThreadAbortException?displayProperty=nameWithType> je vyvolána ve vláknu fondu vláken, protože <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> byla volána.  
-- A <xref:System.AppDomainUnloadedException?displayProperty=nameWithType> je vyvolána ve vláknu fondu vláken, protože probíhá uvolnění domény aplikace.  
-- Modul common language runtime nebo hostitelský proces ukončí vlákno.  
+- <xref:System.Threading.ThreadAbortException?displayProperty=nameWithType> je vyvolána ve vlákně fondu vláken, protože byla volána <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.  
+- <xref:System.AppDomainUnloadedException?displayProperty=nameWithType> je vyvolána ve vlákně fondu vláken, protože byla uvolněna doména aplikace.  
+- Modul CLR (Common Language Runtime) nebo hostitelský proces ukončí vlákno.  
   
-Další informace najdete v tématu [výjimky ve spravovaných vláknech](exceptions-in-managed-threads.md).  
+Další informace naleznete v tématu [výjimky ve spravovaných vláknech](exceptions-in-managed-threads.md).  
   
 ### <a name="maximum-number-of-thread-pool-threads"></a>Maximální počet vláken fondu vláken
 
-Počet operací, které můžete ve frontě fondu vláken je omezen pouze dostupnou paměť. Fondu vláken však omezuje počet vláken, která může být současně aktivní v procesu. Pokud jsou všechny vláken fondu vláken zaneprázdněný, další pracovní položky se zařadí do fronty až do vlákna ke spuštění je k dispozici. Od verze rozhraní .NET Framework 4, výchozí velikost fondu vláken pro proces závisí na několika faktorech, jako je například velikost virtuálního adresového prostoru. Proces můžete volat <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> metodou ke zjištění počtu vláken.  
+Počet operací, které lze zařadit do fronty ve fondu vláken, je omezen pouze dostupnou pamětí. Fond vláken ale omezuje počet vláken, která může být současně aktivní v procesu. Pokud jsou všechny podprocesy fondu vláken zaneprázdněny, jsou další pracovní položky zařazeny do fronty, dokud nebudou vlákna provedena k dispozici. Počínaje .NET Framework 4 je výchozí velikost fondu vláken pro proces závislá na několika faktorech, například na velikosti virtuálního adresního prostoru. Proces může volat metodu <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> k určení počtu vláken.  
   
-Maximální počet vláken můžete řídit pomocí <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> metody.  
+Maximální počet vláken můžete řídit pomocí metod <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType>.  
 
 > [!NOTE]
-> Kód, který je hostitelem modulu common language runtime můžete nastavit pomocí velikosti [ `ICorThreadpool::CorSetMaxThreads` ](../../framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md) metody.  
+> Kód, který je hostitelem modulu CLR (Common Language Runtime), může nastavit velikost pomocí metody [`ICorThreadpool::CorSetMaxThreads`](../../framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md) .  
   
-### <a name="thread-pool-minimums"></a>Minimálních fondu vláken
+### <a name="thread-pool-minimums"></a>Minimum fondu vláken
 
-Fondu vláken poskytuje nové pracovní vlákna nebo vlákna dokončení vstupně-výstupních operací na vyžádání, dokud nedosáhne zadané minimum pro každou kategorii. Můžete použít <xref:System.Threading.ThreadPool.GetMinThreads%2A?displayProperty=nameWithType> metoda a získat tyto minimální hodnoty.  
+Fond vláken poskytuje nová pracovní vlákna nebo vstupně-výstupní vlákna na vyžádání, dokud nedosáhne zadaného minima pro každou kategorii. K získání těchto minimálních hodnot můžete použít metodu <xref:System.Threading.ThreadPool.GetMinThreads%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
-> Při nízké poptávce skutečný počet vláken fondu vláken může klesnou pod minimální hodnoty.  
+> Pokud je poptávka nízká, skutečný počet vláken fondu vláken může klesnout pod minimální hodnotu.  
   
-Po dosažení minimální fondu vláken můžete vytvořit další vlákna nebo počkejte na dokončení některých úkolů. Od verze rozhraní .NET Framework 4, fondu vláken vytvoří a odstraní pracovní vlákna k optimalizaci propustnosti, který je definován jako řadu úloh, které dokončí za časovou jednotku. Moc malý počet vláken nemusí optimální využívání dostupných prostředků, zkontrolujte, že příliš mnoho vláken může zlepšit kolize prostředků.  
+Po dosažení minima může fond vláken vytvořit další vlákna nebo počkat na dokončení některých úloh. Počínaje .NET Framework 4 vytvoří fond vláken a zničí pracovní vlákna, aby bylo možné optimalizovat propustnost, která je definována jako počet úloh, které jsou dokončeny na jednotku času. Příliš málo vláken nemusí mít optimální využití dostupných prostředků, zatímco příliš mnoho vláken může zvýšit spory prostředků.  
   
 > [!CAUTION]
-> Můžete použít <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> způsob zvýšení minimální počet nečinných vláken. Zbytečně zvýšení tyto hodnoty však může způsobit problémy s výkonem. Pokud ve stejnou dobu spuštění příliš mnoho úloh, všechny z nich může zobrazit pomalé. Ve většině případů fondu vláken se líp fungovat se vlastní algoritmus pro přidělování vlákna.  
+> Pomocí metody <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> lze zvýšit minimální počet nečinných vláken. Nicméně zbytečně rostoucí tyto hodnoty mohou způsobit problémy s výkonem. Pokud je spuštěno příliš mnoho úloh současně, je možné, že jsou všechny pravděpodobně pomalé. Ve většině případů bude fond vláken lépe fungovat s vlastním algoritmem pro přidělování vláken.  
 
 ## <a name="using-the-thread-pool"></a>Použití fondu vláken
 
-Od verze rozhraní .NET Framework 4, nejjednodušší způsob použití fondu vláken je použít [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md). Ve výchozím nastavení, jako jsou typy TPL <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> spouštění úloh pomocí vláken fondu vláken.
+Počínaje .NET Framework 4 je nejjednodušší způsob, jak použít fond vláken, použít [úlohu Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md). Ve výchozím nastavení typy TPL jako <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> používají vlákna fondu vláken ke spouštění úloh.
 
-Můžete použít také fondu vláken voláním <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> ze spravovaného kódu (nebo [ `ICorThreadpool::CorQueueUserWorkItem` ](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) z nespravovaného kódu) a předávání <xref:System.Threading.WaitCallback?displayProperty=nameWithType> delegovat představující metodu, která provede úkol.
+Fond vláken můžete použít také voláním <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> ze spravovaného kódu (nebo [`ICorThreadpool::CorQueueUserWorkItem`](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) z nespravovaného kódu) a předáním <xref:System.Threading.WaitCallback?displayProperty=nameWithType> delegáta představujícího metodu, která úlohu provádí.
 
-Jiný způsob použití fondu vláken je zařadit do fronty pracovních položek, které se vztahují k operace čekání pomocí <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> metoda a předávání <xref:System.Threading.WaitHandle?displayProperty=nameWithType> , při signalizován nebo vypršel časový limit, volá metodu reprezentovanou <xref:System.Threading.WaitOrTimerCallback?displayProperty=nameWithType> delegovat. Vláken fondu vláken se používají k vyvolání metody zpětného volání.  
+Dalším způsobem, jak použít fond vláken, je zařadit pracovní položky, které se vztahují k operaci čekání pomocí metody <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> a předat <xref:System.Threading.WaitHandle?displayProperty=nameWithType>, který při signalizaci nebo vypršení časového limitu volá metodu reprezentovanou <xref:System.Threading.WaitOrTimerCallback?displayProperty=nameWithType> delegátem. Vlákna fondu vláken se používají k vyvolání metod zpětného volání.  
 
-Příklady zkontrolujte na odkazovaných stránkách rozhraní API.
+Příklady najdete v odkazovaných stránkách rozhraní API.
   
-## <a name="skipping-security-checks"></a>Přeskočení kontroly zabezpečení
+## <a name="skipping-security-checks"></a>Přeskakuje se kontroly zabezpečení.
 
-Také poskytuje fondu vláken <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> metody. Tyto metody používáte pouze v případě, že jste si jisti, že je zásobníku volajícího, jež se žádné bezpečnostní kontroly během provádění úlohy ve frontě. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> i zachytit zásobníku volajícího, který je sloučen do zásobníku vláknu fondu vláken, když vlákno začne spustit úlohu. Pokud kontrola zabezpečení se požaduje, musí být kontrolované celý zásobník. I když je kontrola poskytuje zabezpečení, má také nákladů na výkon.  
+Fond vláken také poskytuje metody <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType>. Tyto metody použijte pouze v případě, že jste si jisti, že zásobník volajícího je nepodstatný pro žádné kontroly zabezpečení provedené během provádění úlohy ve frontě. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> zachytávání zásobníku volajícího, který je sloučen do zásobníku vlákna fondu vláken, když vlákno spustí úlohu. Je-li vyžadováno ověření zabezpečení, je nutné zkontrolovat celý zásobník. I když kontroly poskytují bezpečnost, má také náklady na výkon.  
 
-## <a name="when-not-to-use-thread-pool-threads"></a>Kdy nepoužívat vláken fondu vláken
+## <a name="when-not-to-use-thread-pool-threads"></a>Kdy nepoužívat vlákna fondu vláken
 
-Existuje několik scénářů, ve kterých je vhodná k vytváření a správě vlastních vláken namísto používání vláken fondu vláken:  
+Existuje několik scénářů, ve kterých je vhodné vytvořit a spravovat vlastní vlákna namísto použití vláken fondu vláken:  
   
-- Vyžadujete, aby vlákno na popředí.  
-- Vyžadujete, aby vlákno s konkrétní prioritou.  
-- Máte úkoly, které způsobí vlákna a blokovat dlouhou dobu. Fondu vláken má maximální počet vláken, takže Velký počet blokovaných vláken fondu vláken může zabránit úloh spouští.  
-- Je potřeba uvést vlákna do jednovláknový apartment. Všechny <xref:System.Threading.ThreadPool> jsou vlákna v apartmentu s více vlákny.  
-- Musíte mít stabilní identity přidružené vlákno nebo vlákno vyhradit pro úlohu.  
+- Vyžadujete vlákno na popředí.  
+- Vyžadujete, aby vlákno mělo určitou prioritu.  
+- Máte úkoly, které způsobují, že vlákno bude po dlouhou dobu blokováno. Fond vláken má maximální počet vláken, takže velký počet blokovaných vláken fondu vláken může bránit spuštění úloh.  
+- Vlákna je nutné umístit do jediného typu apartment. Všechna <xref:System.Threading.ThreadPool> vlákna jsou ve vícevláknovém objektu apartment.  
+- Je nutné mít k vláknu přidruženou stabilní identitu nebo vyhradit vlákno pro úlohu.  
   
 ## <a name="see-also"></a>Viz také:
 

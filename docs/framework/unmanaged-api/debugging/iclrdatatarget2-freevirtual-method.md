@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26fb69f8-1467-4711-bd24-cb117c63938f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6d51c445d6f375f805253b9f640ab61ab3dccc58
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c084a3fcbbc02504124a511c6e136be32f408d21
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738485"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73112328"
 ---
 # <a name="iclrdatatarget2freevirtual-method"></a>ICLRDataTarget2::FreeVirtual – metoda
-Je voláno common language runtime (CLR) data access services uvolněte paměť, která byla dříve přidělena v adresním prostoru cílového procesu.  
+Volána službami CLR (Common Language Runtime) pro přístup k datům k uvolnění paměti, která byla dříve přidělena v adresním prostoru cílového procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,27 +37,27 @@ HRESULT FreeVirtual(
   
 ## <a name="parameters"></a>Parametry  
  `addr`  
- [in] A `CLRDATA_ADDRESS` hodnotu, která určuje počáteční adresu paměti k uvolnění.  
+ pro Hodnota `CLRDATA_ADDRESS`, která určuje počáteční adresu paměti, která má být uvolněna.  
   
  `size`  
- [in] Velikost v bajtech, určený k uvolnění paměti.  
+ pro Velikost paměti, která se má uvolnit (v bajtech)  
   
  `typeFlags`  
- [in] Příznaky, které řídí uvolnění paměti. Zobrazit Win32 `VirtualFree` funkce.  
+ pro Příznaky, které řídí uvolnění paměti. Podívejte se na funkci Win32 `VirtualFree`.  
   
 ## <a name="remarks"></a>Poznámky  
- `FreeVirtual` Metody slouží jako logické obálku pro Win32 `VirtualFree` funkce.  
+ Metoda `FreeVirtual` slouží jako logická obálka funkce Win32 `VirtualFree`.  
   
- Tato metoda je implementováno tvůrci ladění aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -13,14 +13,12 @@ helpviewer_keywords:
 - SetAppDomainManagerType method, ICLRDomainManager interface [.NET Framework hosting]
 - ICLRDomainManager::SetAppDomainManagerType method [.NET Framework hosting]
 ms.assetid: ee91abb0-cb74-41dd-927b-e117fb8ffdf4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b142f1a05036eddf44c69d8b7da95091dc8f445
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5c61e2e1208cec0bda1492964a8d02bd71f5a1c6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963092"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129321"
 ---
 # <a name="iclrdomainmanagersetappdomainmanagertype-method"></a>ICLRDomainManager::SetAppDomainManagerType – metoda
 Určuje typ odvozený od <xref:System.AppDomainManager?displayProperty=nameWithType> třídy správce aplikační domény, který se použije k inicializaci výchozí domény aplikace.  
@@ -54,19 +52,19 @@ HRESULT SetAppDomainManagerType(
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="remarks"></a>Poznámky  
- V současné době je jediná definovaná hodnota `dwInitializeDomainFlags` pro `eInitializeNewDomainFlags_NoSecurityChanges`je, což znamená, že modul CLR (Common Language Runtime), který správce aplikační domény nemění nastavení zabezpečení <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> při provádění metody. To umožňuje, aby CLR optimalizuje načítání sestavení, která mají podmíněný <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut (APTCA). To může mít za následek výrazné zlepšení doby spuštění, pokud je přenosná uzávěra této sady sestavení velká.  
+ V současné době je jediná definovaná hodnota pro `dwInitializeDomainFlags` `eInitializeNewDomainFlags_NoSecurityChanges`, která určuje modul CLR (Common Language Runtime), který správce aplikační domény nemění nastavení zabezpečení během provádění metody <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType>. To umožňuje, aby CLR optimalizuje načítání sestavení, která mají atribut podmíněného <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA). To může mít za následek výrazné zlepšení doby spuštění, pokud je přenosná uzávěra této sady sestavení velká.  
   
 > [!IMPORTANT]
-> Pokud hostitel určí `eInitializeNewDomainFlags_NoSecurityChanges` pro správce aplikační domény <xref:System.InvalidOperationException> , je vyvolána, pokud je proveden libovolný pokus o změnu zabezpečení domény aplikace.  
+> Pokud hostitel určí `eInitializeNewDomainFlags_NoSecurityChanges` pro správce aplikačních domén, je vyvolána <xref:System.InvalidOperationException>, pokud se provede libovolný pokus o změnu zabezpečení domény aplikace.  
   
  Volání metody [ICLRControl:: SetAppDomainManagerType –](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)je ekvivalentní volání `ICLRDomainManager::SetAppDomainManagerType` s `eInitializeNewDomainFlags_None`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

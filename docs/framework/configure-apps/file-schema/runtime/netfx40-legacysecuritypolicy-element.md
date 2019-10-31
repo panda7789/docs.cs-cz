@@ -1,25 +1,23 @@
 ---
-title: <NetFx40_LegacySecurityPolicy> Element
+title: Element <NetFx40_LegacySecurityPolicy>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <NetFx40_LegacySecurityPolicy> element
 - NetFx40_LegacySecurityPolicy element
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2cd6f937811ae503dd4de7ff989510c4eb8b8933
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: d5192eb56bb8b640544bdc52a0bb9d8a5277efef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252449"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116256"
 ---
-# <a name="netfx40_legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
+# <a name="netfx40_legacysecuritypolicy-element"></a>\<element > NetFx40_LegacySecurityPolicy
 
 Určuje, zda modul runtime používá starší zásady zabezpečení přístupu kódu (CAS).
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_LegacySecurityPolicy >**  
 
 ## <a name="syntax"></a>Syntaxe
@@ -41,7 +39,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
 |`false`|Modul runtime nepoužívá starší zásady CAS. Toto nastavení je výchozí.|
 |`true`|Modul runtime používá starší zásady CAS.|
@@ -63,13 +61,13 @@ V .NET Framework verze 3,5 a starších verzích je zásada CAS vždy platná. V
 
 Zásada CAS je specifická pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích .NET Framework, je nutné přezadat v .NET Framework 4.
 
-Použití elementu na sestavení .NET Framework 4 nemá vliv na [Kód transparentní z zabezpečení](../../../misc/security-transparent-code.md); pravidla transparentnosti jsou stále používána. `<NetFx40_LegacySecurityPolicy>`
+Použití prvku `<NetFx40_LegacySecurityPolicy>` na sestavení .NET Framework 4 nemá vliv na [Kód transparentní z bezpečnostních kódů](../../../misc/security-transparent-code.md); pravidla transparentnosti se ještě použijí.
 
 > [!IMPORTANT]
-> Použití prvku může mít za následek výrazné snížení výkonu pro sestavení nativních imagí vytvořená [generátorem nativních bitových kopií (Ngen. exe)](../../../tools/ngen-exe-native-image-generator.md) , které nejsou nainstalované v [globální mezipaměti sestavení (GAC](../../../app-domains/gac.md)). `<NetFx40_LegacySecurityPolicy>` Snížení výkonu je způsobeno neschopností modulu runtime načíst sestavení jako nativní bitové kopie, pokud je atribut použit, což vede k tomu, že jsou načítána jako sestavení za běhu.
+> Použití prvku `<NetFx40_LegacySecurityPolicy>` může vést k výraznému snížení výkonu pro sestavení nativní bitové kopie vytvořené pomocí [generátoru nativních bitových kopií (Ngen. exe)](../../../tools/ngen-exe-native-image-generator.md) , které nejsou nainstalovány v [globální mezipaměti sestavení (GAC](../../../app-domains/gac.md)). Snížení výkonu je způsobeno neschopností modulu runtime načíst sestavení jako nativní bitové kopie, pokud je atribut použit, což vede k tomu, že jsou načítána jako sestavení za běhu.
 
 > [!NOTE]
-> Zadáte-li cílovou verzi .NET Framework, která je starší než .NET Framework 4 v nastavení projektu pro projekt aplikace Visual Studio, bude zásada CAS povolena, včetně všech vlastních zásad CAS, které jste zadali pro danou verzi. Nebudete však moci použít nové typy a členy .NET Framework 4. Můžete také zadat dřívější verzi .NET Framework pomocí [ \<prvku > supportedRuntime](../startup/supportedruntime-element.md) ve schématu nastavení spouštění v [konfiguračním souboru aplikace](../../index.md).
+> Zadáte-li cílovou verzi .NET Framework, která je starší než .NET Framework 4 v nastavení projektu pro projekt aplikace Visual Studio, bude zásada CAS povolena, včetně všech vlastních zásad CAS, které jste zadali pro danou verzi. Nebudete však moci použít nové typy a členy .NET Framework 4. V [konfiguračním souboru aplikace](../../index.md)můžete zadat také starší verzi .NET Framework pomocí [elementu\<supportedRuntime >](../startup/supportedruntime-element.md) ve schématu nastavení spouštění.
 
 > [!NOTE]
 > Syntaxe konfiguračního souboru rozlišuje velká a malá písmena. Měli byste použít syntaxi, jak je uvedeno v části syntaxe a příklady.

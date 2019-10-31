@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CreateInstanceEnumWmi function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b7709d9c50a494013ece2f91b3acc213278f0e57
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9ffa718be0e8b67471fdf8cb277df201388d2840
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798901"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130407"
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi – funkce
 
@@ -49,24 +47,24 @@ HRESULT CreateInstanceEnumWmi (
 ## <a name="parameters"></a>Parametry
 
 `strFilter`\
-pro Název třídy, pro kterou jsou požadovány instance. Tento parametr nemůže být `null`.
+pro Název třídy, pro kterou jsou požadovány instance. Tento parametr nelze `null`.
 
 `lFlags`\
 pro Kombinace příznaků, které mají vliv na chování této funkce. Následující hodnoty jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud je tato funkce nastavena, funkce načte změněné kvalifikátory uložené v lokalizovaném oboru názvů národního prostředí aktuálního připojení. <br/> Pokud není nastaveno, funkce načte pouze kvalifikátory uložené v bezprostředním oboru názvů. |
-| `WBEM_FLAG_DEEP` | 0 | Výčet obsahuje tuto a všechny podtřídy v hierarchii. |
-| `WBEM_FLAG_SHALLOW` | 1 | Výčet zahrnuje pouze čistě instance této třídy a vyloučí všechny instance podtříd, které poskytují vlastnosti, které se v této třídě nenašly. |
+| `WBEM_FLAG_DEEP` | 0,8 | Výčet obsahuje tuto a všechny podtřídy v hierarchii. |
+| `WBEM_FLAG_SHALLOW` | první | Výčet zahrnuje pouze čistě instance této třídy a vyloučí všechny instance podtříd, které poskytují vlastnosti, které se v této třídě nenašly. |
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí volání semisynchronní. |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Funkce vrátí enumerátor pouze s dopředné. Čítače pouze s dopředně jsou obvykle rychlejší a využívají méně paměti než konvenční enumerátory, ale neumožňují volání [klonování](clone.md). |
-| `WBEM_FLAG_BIDIRECTIONAL` | 0 | Rozhraní WMI uchovává ukazatele na objekty ve výčtu, dokud nebudou uvolněny. |
+| `WBEM_FLAG_BIDIRECTIONAL` | 0,8 | Rozhraní WMI uchovává ukazatele na objekty ve výčtu, dokud nebudou uvolněny. |
 
 Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD_ONLY` pro nejlepší výkon.
 
 `pCtx`\
-pro Obvykle je `null`tato hodnota. V opačném případě se jedná o ukazatel na instanci [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , kterou může použít poskytovatel, který poskytuje požadované instance.
+pro Tato hodnota je obvykle `null`. V opačném případě se jedná o ukazatel na instanci [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , kterou může použít poskytovatel, který poskytuje požadované instance.
 
 `ppEnum`\
 mimo Přijme ukazatel na enumerátor.
@@ -93,16 +91,16 @@ pro Název domény uživatele Další informace najdete v tématu funkce [Connec
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení instancí zadané třídy. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
-| `WBEM_E_INVALID_CLASS` | 0x80041010 | `strFilter`neexistuje. |
+| `WBEM_E_INVALID_CLASS` | 0x80041010 | `strFilter` neexistuje. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartována. Znovu zavolejte [ConnectServerWmi](connectserverwmi.md) . |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraním WMI se nezdařilo. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -114,9 +112,9 @@ Pokud volání funkce neproběhne úspěšně, můžete získat další informac
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

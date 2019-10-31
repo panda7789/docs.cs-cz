@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 445a9ee3-e050-4f3a-931a-96b0efb00110
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 94d8fbf4d93bbfbaaeb7c1268004aada22b9b7df
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3d6caa02333229bcd49f4c6ccf8b93265181a0b3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768922"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137083"
 ---
 # <a name="icordebugvaluegetsize-method"></a>ICorDebugValue::GetSize – metoda
-Získá velikost v bajtech tohoto objektu "ICorDebugValue".  
+Získá velikost objektu "ICorDebugValue" v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +35,21 @@ HRESULT GetSize (
   
 ## <a name="parameters"></a>Parametry  
  `pSize`  
- [out] Velikost v bajtech, tento objekt hodnotu.  
+ mimo Velikost objektu Value (v bajtech).  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud typ hodnoty je odkazový typ, vrátí tato metoda velikosti ukazatele, nikoli velikost objektu.  
+ Pokud je typ hodnoty odkazový typ, tato metoda vrátí velikost ukazatele místo velikosti objektu.  
   
- `ICorDebugValue::GetSize` Vrátí metoda `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Použití [icordebugvalue3::getsize64 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) metoda místo pro objekty, které jsou větší než 4 GB.  
+ Metoda `ICorDebugValue::GetSize` vrátí `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64 – bitové platformy. Použijte raději metodu [ICorDebugValue3 –:: GetSize64 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) pro objekty, které jsou větší než 4 GB.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

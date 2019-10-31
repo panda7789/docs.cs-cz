@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 30931874-4d0e-4df1-b3d1-e425b50655d1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9ab44ce8f51620d83084d1dd16e98b2b310feb76
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1759ee2ecf08322b745a4f80a62b24596c4504cb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968939"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123254"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim – funkce
 Načte zadanou verzi knihovny DLL, která je součástí .NET Framework Distribuovatelný balíček.  
@@ -45,7 +43,7 @@ HRESULT LoadLibraryShim (
  pro Řetězec zakončený nulou, který představuje název knihovny DLL, která má být načtena z knihovny .NET Framework.  
   
  `szVersion`  
- pro Řetězec zakončený nulou, který představuje verzi knihovny DLL, která má být načtena. Pokud `szVersion` je null, verze vybraná pro načtení je nejnovější verze zadané knihovny DLL, která je menší než verze 4. To znamená, že všechny verze, které se rovnají nebo jsou vyšší než verze `szVersion` 4, jsou ignorovány, pokud je hodnota null a není-li nainstalována žádná verze, která je nižší než verze 4, knihovna DLL se nepodařilo načíst. K tomu je potřeba zajistit, aby instalace .NET Framework 4 neovlivnila stávající aplikace nebo komponenty. Podívejte se na záznam [v rámci proc SxS a migrace rychlé zprovoznění](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
+ pro Řetězec zakončený nulou, který představuje verzi knihovny DLL, která má být načtena. Pokud je `szVersion` null, verze vybraná pro načtení je nejnovější verze zadané knihovny DLL, která je menší než verze 4. To znamená, že všechny verze, které jsou větší nebo rovny verzi 4, jsou ignorovány, pokud je `szVersion` null a není-li nainstalována žádná verze, která je nižší než verze 4, knihovna DLL se nemůže načíst. K tomu je potřeba zajistit, aby instalace .NET Framework 4 neovlivnila stávající aplikace nebo komponenty. Podívejte se na záznam [v rámci proc SxS a migrace rychlé zprovoznění](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
   
  `pvReserved`  
  Vyhrazeno pro budoucí použití.  
@@ -68,9 +66,9 @@ HRESULT LoadLibraryShim (
 > Počínaje verzí 2,0 .NET Framework, načtení souboru Fusion. dll způsobí načtení modulu CLR. Důvodem je, že funkce v Fusion. dll jsou nyní obálky, jejichž implementace jsou poskytovány modulem runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 89940711-98e7-4aa6-bffc-5e39e91e1b7d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 223989d883c421be228fb3d6a608643a5246c060
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1384acff4ea3d1aa820b065cd2c56f649f0cbdbb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763709"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127927"
 ---
 # <a name="icordebugmoduleisinmemory-method"></a>ICorDebugModule::IsInMemory – metoda
-Získá hodnotu, která označuje, zda tento modul existuje pouze v paměti.  
+Načte hodnotu, která označuje, jestli tento modul existuje jenom v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT IsInMemory(
   
 ## <a name="parameters"></a>Parametry  
  `pInMemory`  
- [out] `true` Pokud tento modul existuje pouze v paměti; v opačném případě `false`.  
+ [out] `true`, jestli tento modul existuje jenom v paměti; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR (CLR) podporuje načítání modulů z nezpracované datové proudy bajtů. Tyto moduly se nazývají *moduly v paměti* a neexistuje na disku.  
+ Modul CLR (Common Language Runtime) podporuje načítání modulů z nezpracovaných datových proudů bajtů. Tyto moduly se nazývají *moduly v paměti* a neexistují na disku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

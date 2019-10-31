@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d079131b-685b-4869-95be-826b88d28bd2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 90eb63b277f5c40053ecc3939890c87adc145251
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 88a007654646ba42ebcaf1b42e002282a1040c7f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738115"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134055"
 ---
 # <a name="icordebugsetmanagedhandler-method"></a>ICorDebug::SetManagedHandler – metoda
 Určuje objekt obslužné rutiny události pro spravované události.  
@@ -37,21 +35,21 @@ HRESULT SetManagedHandler (
   
 ## <a name="parameters"></a>Parametry  
  `pCallback`  
- [in] Ukazatel [icordebugmanagedcallback –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md) objekt, který je objekt obslužné rutiny události.  
+ pro Ukazatel na objekt [ICorDebugManagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md) , který je objektem obslužné rutiny události.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetManagedHandler` musí být volána v okamžiku vytvoření.  
+ `SetManagedHandler` musí být volána při vytváření.  
   
- Pokud `ICorDebugManagedCallback` implementace rozhraní dostatečné pro zpracování událostí ladění pro aplikace, která je právě laděna, neobsahuje `SetManagedHandler` vrací hodnotu HRESULT E_NOINTERFACE.  
+ Pokud implementace `ICorDebugManagedCallback` neobsahuje dostatečná rozhraní pro zpracování událostí ladění pro aplikaci, která je právě laděna, `SetManagedHandler` vrátí hodnotu HRESULT E_NOINTERFACE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

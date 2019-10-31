@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c2ea0bf215c0d2abfe9beb29d736f893073d3be8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc02f63808b1929b93777c8bbc67c47000b0b424
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739507"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132749"
 ---
 # <a name="cordebugunmappedstop-enumeration"></a>CorDebugUnmappedStop – výčet
-Určuje typ nenamapované kód, který můžete aktivovat zastavení provádění kódu pomocí krokovače.  
+Určuje typ nemapovaného kódu, který může aktivovat zastavení při provádění kódu stepper.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,25 +42,25 @@ typedef enum CorDebugUnmappedStop {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`STOP_NONE`|Není zastavit v libovolný typ nenamapované kódu.|  
-|`STOP_PROLOG`|Zastavte v kódu prologu.|  
-|`STOP_EPILOG`|Zastavení Kód epilogu.|  
-|`STOP_NO_MAPPING_INFO`|Zastavte v kódu, který neobsahuje žádné informace o mapování.|  
-|`STOP_OTHER_UNMAPPED`|Zastavte v nenamapované kódu, který se nevejde do kódu prologu, epilogu, ne informace mapování nebo nespravované kategorie.|  
-|`STOP_UNMANAGED`|Zastavte v nespravovaném kódu. Tato hodnota je platný pouze pro definiční ladění.|  
-|`STOP_ALL`|Zastavte ve všech typech nenamapované kódu.|  
+|`STOP_NONE`|Nezastaví žádný typ nemapovaného kódu.|  
+|`STOP_PROLOG`|Zastavit v kódu prologu.|  
+|`STOP_EPILOG`|Zastavit v kódu epilogu|  
+|`STOP_NO_MAPPING_INFO`|Zastavit v kódu, který nemá žádné informace o mapování.|  
+|`STOP_OTHER_UNMAPPED`|Zastavit v nemapovaném kódu, který se nevejde do prologu, epilogu, žádného mapování-informace nebo nespravované kategorie.|  
+|`STOP_UNMANAGED`|Zastavit v nespravovaném kódu Tato hodnota je platná pouze při ladění vzájemné spolupráce.|  
+|`STOP_ALL`|Zastavte všechny typy nemapovaného kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) metoda nastavit příznaky, které určují nenamapované kódu, ve kterém se zastaví krokovače.  
+ Použijte metodu [ICorDebugStepper:: SetUnmappedStopMask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) pro nastavení příznaků, které určují Nemapovaný kód, ve kterém se stepper zastaví.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

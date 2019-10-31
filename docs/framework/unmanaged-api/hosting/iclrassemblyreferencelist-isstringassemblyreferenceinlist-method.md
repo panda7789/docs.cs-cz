@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e6121cc3-2f11-42c7-bdae-47808581ff71
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4b2860e811a16406a71d7ab8df123f2b32aaf13e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4dc91723f009d46f9c57b1c99aa66ba7a1b127e4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773294"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126634"
 ---
 # <a name="iclrassemblyreferencelistisstringassemblyreferenceinlist-method"></a>ICLRAssemblyReferenceList::IsStringAssemblyReferenceInList – metoda
-Získá hodnotu určující, zda zadaný název odpovídá názvu sestavení v seznamu.  
+Získá hodnotu, která označuje, zda je zadaný název shodný s názvem sestavení v seznamu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +35,24 @@ HRESULT IsStringAssemblyReferenceInList (
   
 ## <a name="parameters"></a>Parametry  
  `pwzAssemblyName`  
- [in] Název sestavení, který chcete vyhledat.  
+ pro Název sestavení, které chcete vyhledat.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Řetězec se zobrazí v seznamu.|  
-|S_FALSE|Řetězec se nezobrazí v seznamu.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po vrácení metody E_FAIL, modul common language runtime už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|S_FALSE|Řetězec se v seznamu nezobrazí.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, modul Common Language Runtime již nebude v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 38c1940b-ada1-40ba-8295-4c0833744e1e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d0f601c4b454b55edc5fa25eb2ee33d491009b9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 43f86e704e4a52a702b8f563e3c613806eb061b5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760565"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137534"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step – metoda
-Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a volitelně do pokračujte v jedné krokování funkcí, které jsou volány vlákna.  
+Způsobí, že se toto ICorDebugStepper do jednoho kroku prostřednictvím jeho obsahujícího vlákna a volitelně také pro pokračování v jednoduchém prostředí prostřednictvím funkcí, které jsou volány ve vlákně.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT Step (
   
 ## <a name="parameters"></a>Parametry  
  `bStepIn`  
- [in] Nastavte na `true` krok do funkce, která je volána v rámci vlákna. Nastavte na `false` krok přes funkci.  
+ pro Nastavte na `true` pro krokování do funkce, která je volána v rámci vlákna. Nastavte na `false` pro krok nad funkcí.  
   
 ## <a name="remarks"></a>Poznámky  
- Krok dokončí, když modul common language runtime provádí další instrukci spravované v rámci této krokovač. Pokud `Step` se volalo krokovač, která není v spravovaného kódu, krok dokončí další instrukci spravovaný kód je spuštěn metodou vlákna.  
+ Krok se dokončí, když modul CLR (Common Language Runtime) provede další spravovanou instrukci v tomto stepper snímku. Pokud je `Step` volána na stepper, který není ve spravovaném kódu, krok bude dokončen, když vlákno provede další instrukci spravovaného kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

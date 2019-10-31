@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 205ca53b-e78e-49b2-9a46-2a7823e96b8c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4937c86be434ef5e97ec72763b7c53d5435bcaf4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9339bb974c261e62502c760dfaf45651573cbe1a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774022"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136378"
 ---
 # <a name="iclrruntimeinfoisloadable-method"></a>ICLRRuntimeInfo::IsLoadable – metoda
-Určuje, zda modul runtime spojený s tímto rozhraním je možné načíst do aktuální proces zohledněním jiné moduly runtime, který může být již načten do procesu.  
+Určuje, zda lze modul runtime spojený s tímto rozhraním načíst do aktuálního procesu, přičemž vezme v úvahu jiné moduly runtime, které mohou být do procesu již načteny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,29 +34,29 @@ HRESULT IsLoadable(
   
 ## <a name="parameters"></a>Parametry  
  `pbLoadable`  
- [out] `true` Pokud tento modul runtime může být načtena do aktuální proces; v opačném případě `false`.  
+ [out] `true`, jestli se tento modul runtime mohl načíst do aktuálního procesu. v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pbLoadable` má hodnotu null.|  
+|E_POINTER|`pbLoadable` je null.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud se jiný modul runtime je již načten do procesu a pro provádění vnitroprocesové vedle sebe, je možné načíst modul runtime spojený s tímto rozhraním `pbLoadable` vrátí `true`. Pokud dva moduly runtime nemůže spustit vedle sebe v procesu, `pbLoadable` vrátí `false`. Modul CLR verze 4 (CLR) můžete například spustit vedle sebe ve stejném procesu s CLR verze 2.0 nebo CLR verze 1.1. CLR verze 1.1 a 2.0 verze modulu CLR však nelze spustit vedle sebe v procesu.  
+ Pokud je již do procesu načten jiný modul runtime a modul runtime přidružený k tomuto rozhraní lze načíst pro vnitroprocesové souběžné spouštění, `pbLoadable` vrátí `true`. Pokud tyto dva moduly runtime nemohou běžet souběžně v rámci procesu, `pbLoadable` vrátí `false`. Například modul CLR (Common Language Runtime) verze 4 může běžet souběžně v rámci stejného procesu s CLR verze 2,0 nebo CLR verze 1,1. CLR verze 1,1 a CLR verze 2,0 však nemůže spustit souběžný proces souběžného zpracování.  
   
- Pokud nejsou načteny žádné moduly runtime do procesu, vrátí tato metoda vždy `true`.  
+ Pokud nejsou do procesu načteny žádné moduly runtime, tato metoda vždy vrátí `true`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

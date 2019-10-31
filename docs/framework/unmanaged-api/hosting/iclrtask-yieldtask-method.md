@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b8eb4095-3a8f-4be3-9446-63e9893dce7d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6fde9586c1b3736b5db2c4814058dd23713dd34d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 43f2048c8ab85fa7e94f73aad430400ad4c8352f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770332"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124584"
 ---
 # <a name="iclrtaskyieldtask-method"></a>ICLRTask::YieldTask – metoda
-Požadavky, že modul CLR (CLR) umístěny jste si poznamenali úkol, který aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance představuje a zpřístupnit času procesoru pro jiné úlohy.  
+Požadavky, které modul CLR (Common Language Runtime) vyhradí úlohu, kterou aktuální instance [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) představuje, a nastavte čas procesoru k dispozici pro jiné úkoly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +35,24 @@ HRESULT YieldTask ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`YieldTask` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`YieldTask` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volá hostitele `YieldTask` pro požadavky na prostředky procesoru u jiných úloh nebo procesů. Tato metoda je primárně určen pro umožnit dlouhotrvající kódu uvolňovat čas procesoru. Modul runtime pokusí vložit úkolu, který aktuální `ICLRTask` představuje instance ve stavu, kdy může přinést doba zpracování, ale je zaručeno úspěšné.  
+ Hostitel volá `YieldTask` k vyžádání prostředků procesoru pro jiné úkoly nebo procesy. Tato metoda je primárně určena pro použití dlouhotrvajícího kódu k poskytnutí času procesoru. Modul runtime se pokusí vložit úlohu, kterou aktuální `ICLRTask` instance představuje ve stavu, ve kterém může přinést čas zpracování, ale nezaručuje úspěch.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

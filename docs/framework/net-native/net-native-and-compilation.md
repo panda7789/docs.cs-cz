@@ -2,14 +2,12 @@
 title: .NET Native a kompilace
 ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a15d30ea4d6e0f4456460248e96428419117d85
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: cf5c9f05b2f2cb4ca15e4add5b53bc9bdca757a3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049443"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128249"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
 
@@ -44,7 +42,7 @@ Vstup pro .NET Native řetězec nástroje je aplikace pro Windows Store vytvoře
 
 V průběhu převodu aplikace z IL na nativní kód řetěz nástroje .NET Native provádí operace podobné následujícímu:
 
-- Pro určité cesty kódu nahrazuje kód, který spoléhá na reflexi a metadata se statickým nativním kódem. Například pokud typ hodnoty nepřepisuje <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metodu, výchozí test rovnosti používá reflexi k načtení <xref:System.Reflection.FieldInfo> objektů, které reprezentují pole hodnotového typu, a pak porovná hodnoty pole dvou instancí. Při kompilování do nativního kódu řetězec nástroje .NET Native nahradí kód reflexe a metadata statickým porovnáním hodnot polí.
+- Pro určité cesty kódu nahrazuje kód, který spoléhá na reflexi a metadata se statickým nativním kódem. Například pokud typ hodnoty nepřepisuje metodu <xref:System.ValueType.Equals%2A?displayProperty=nameWithType>, použije výchozí test rovnosti reflexe k načtení <xref:System.Reflection.FieldInfo> objektů, které reprezentují pole hodnotového typu, a pak porovná hodnoty pole dvou instancí. Při kompilování do nativního kódu řetězec nástroje .NET Native nahradí kód reflexe a metadata statickým porovnáním hodnot polí.
 
 - Pokud je to možné, pokusí se eliminovat všechna metadata.
 
@@ -60,9 +58,9 @@ V průběhu převodu aplikace z IL na nativní kód řetěz nástroje .NET Nativ
 
 Výsledná aplikace, která je vytvořena řetězcem nástroje .NET Native, je zapsána do adresáře s názvem ilc. out v adresáři pro ladění nebo vydání adresáře projektu. Skládá se z následujících souborů:
 
-- AppName >. exe, spustitelný soubor se zástupnými procedurami, který `Main` jednoduše přenáší řízení na speciální export v  *\<AppName >* . dll.  *\<*
+- *\<název_aplikace >* . exe, spustitelný soubor se zástupnými procedurami, který jednoduše přenáší řízení na speciální `Main` export do *\<AppName >* . dll.
 
-- AppName >. dll, knihovna dynamického propojení Windows, která obsahuje veškerý kód vaší aplikace, a kód z knihovny tříd .NET Framework a všechny knihovny třetích stran, na kterých máte závislost.  *\<*  Obsahuje také kód podpory, jako je třeba kód potřebný pro vzájemnou spolupráci s Windows a serializaci objektů ve vaší aplikaci.
+- *\<název_aplikace >* . dll, knihovnu dynamického propojení Windows, která obsahuje veškerý kód vaší aplikace, a kód z knihovny tříd .NET Framework a všechny knihovny třetích stran, na kterých máte závislost.  Obsahuje také kód podpory, jako je třeba kód potřebný pro vzájemnou spolupráci s Windows a serializaci objektů ve vaší aplikaci.
 
 - mrt100_app. dll, refaktored runtime, který poskytuje běhové služby, jako je uvolňování paměti.
 
@@ -70,7 +68,7 @@ Výsledná aplikace, která je vytvořena řetězcem nástroje .NET Native, je z
 
 - msvcr140_app. dll, Knihovna CRT (C run-time), kterou používá mrt100_app. dll. Obsahuje odkaz na rozhraní v balíčku.
 
-- mrt100.dll. Tato knihovna obsahuje funkce, které mohou zlepšit výkon souboru mrt100_app. dll, i když jeho absence nebrání v fungování mrt100_app. dll. Je načten z adresáře System32 na místním počítači, pokud je k dispozici.
+- mrt100. dll. Tato knihovna obsahuje funkce, které mohou zlepšit výkon souboru mrt100_app. dll, i když jeho absence nebrání v fungování mrt100_app. dll. Je načten z adresáře System32 na místním počítači, pokud je k dispozici.
 
 Vzhledem k tomu, že řetězec nástroje .NET Native propojuje implementační kód do vaší aplikace pouze v případě, že ví, že vaše aplikace skutečně vyvolá tento kód, nemusí být do vaší aplikace zahrnuty metadata nebo implementační kód vyžadovaný v následujících scénářích:
 

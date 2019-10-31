@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0f482454-8517-48de-ba7a-d7aedab13bb5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36afee8af3de046683c55215a677a529b0837c77
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: d33c8b31473e389e07fb24076dc32272e9dde387
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274257"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132390"
 ---
 # <a name="codechunkinfo-structure"></a>CodeChunkInfo – struktura
 
@@ -40,18 +38,18 @@ typedef struct _CodeChunkInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`startAddr`|`CORDB_ADDRESS` Hodnota, která určuje počáteční adresu bloku.|  
+|`startAddr`|Hodnota `CORDB_ADDRESS`, která určuje počáteční adresu bloku.|  
 |`length`|Velikost bloku (v bajtech).|  
   
 ## <a name="remarks"></a>Poznámky  
  Jediný blok kódu je oblast nativního kódu, který je součástí objektu kódu, jako je například funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl  
+ **Hlavička:** CorDebug. idl  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

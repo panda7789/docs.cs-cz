@@ -2,38 +2,36 @@
 title: Měření zlepšení spuštění pomocí .NET Native
 ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 74011a4c70cc8f7da3973698a43b1e97cffb9f9b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 771bf8deba8e851eadf356c647169a21428ddcff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927071"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128353"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
 .NET Native významně vylepšuje dobu spouštění aplikací. Toto vylepšení je zvláště patrné na přenosném zařízení s nízkou spotřebou a složitých aplikacích. Toto téma vám pomůže začít se základní instrumentací potřebnou k měření tohoto vylepšení při spouštění.  
   
  Aby se usnadnilo zkoumání výkonu, .NET Framework a Windows používají architekturu událostí nazvanou trasování událostí pro Windows (ETW), která umožňuje vaší aplikaci upozorňovat nástroje, když dojde k událostem. Pak můžete pomocí nástroje s názvem PerfView snadno zobrazit a analyzovat události ETW. V tomto tématu se dozvíte, jak:  
   
-- <xref:System.Diagnostics.Tracing.EventSource> Použijte třídu k vygenerování událostí.  
+- K vygenerování událostí použijte třídu <xref:System.Diagnostics.Tracing.EventSource>.  
   
 - Pomocí PerfView shromážděte tyto události.  
   
 - Tyto události můžete zobrazit pomocí PerfView.  
   
 ## <a name="using-eventsource-to-emit-events"></a>Použití EventSource k vygenerování událostí  
- <xref:System.Diagnostics.Tracing.EventSource>poskytuje základní třídu, ze které se má vytvořit vlastní zprostředkovatel událostí. Obecně vytvoříte podtřídu <xref:System.Diagnostics.Tracing.EventSource> a `Write*` zabalíte metody s vlastními metodami událostí. Vzor typu Singleton se obecně používá pro každý <xref:System.Diagnostics.Tracing.EventSource>z nich.  
+ <xref:System.Diagnostics.Tracing.EventSource> poskytuje základní třídu, ze které se má vytvořit vlastní zprostředkovatel událostí. Obecně vytvoříte podtřídu <xref:System.Diagnostics.Tracing.EventSource> a zabalíte `Write*` metody s vlastními metodami událostí. Vzor singleton se obecně používá pro každý <xref:System.Diagnostics.Tracing.EventSource>.  
   
  Například třída v následujícím příkladu může být použita k měření dvou charakteristik výkonu:  
   
-- Čas volání konstruktoru `App` třídy.  
+- Čas volání konstruktoru třídy `App`.  
   
-- Čas, kdy byl `MainPage` konstruktor volán.  
+- Čas volání konstruktoru `MainPage`.  
   
  [!code-csharp[ProjectN_ETW#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw1.cs#1)]  
   
- Tady si můžete všimnout několika věcí. Nejprve je vytvořen typ singleton v `AppEventSource.Log`. Tato instance se použije pro všechna protokolování. Druhý, každá metoda události má <xref:System.Diagnostics.Tracing.EventAttribute>. To pomáhá nástrojům přidružit index <xref:System.Diagnostics.Tracing.EventSource.WriteEvent%2A> metody k metodě, která byla `AppEventSource`volána.  
+ Tady si můžete všimnout několika věcí. Nejprve je v `AppEventSource.Log`vytvořen typ singleton. Tato instance se použije pro všechna protokolování. Druhý, každá metoda události má <xref:System.Diagnostics.Tracing.EventAttribute>. To pomáhá nástrojům přidružit index metody <xref:System.Diagnostics.Tracing.EventSource.WriteEvent%2A> k metodě, která byla volána v `AppEventSource`.  
   
  Všimněte si, že tyto události jsou čistě ilustrativní. Po těchto událostech se spustí většina kódu aplikace. Měli byste pochopit, které události v kódu odpovídají interakcím uživatelů, měřit je a zlepšovat tyto srovnávací testy. Události samy protokolují také jedinou instanci v čase. Pro každou operaci je často vhodné párovat události spuštění a zastavení. Při kontrole spuštění aplikace je počáteční událost obecně událost "proces/spuštění", kterou operační systém generuje.  
   
@@ -47,7 +45,7 @@ ms.locfileid: "70927071"
   
 - Až aplikace dokončí synchronizaci nových scénářů.  
   
- Instrumentace aplikace je jednoduchá: Stačí volat odpovídající metodu pro odvozenou třídu. Pomocí `AppEventSource` předchozího příkladu můžete instrumentovat aplikaci následujícím způsobem:  
+ Instrumentace aplikace je jednoduchá: stačí volat odpovídající metodu pro odvozenou třídu. Pomocí `AppEventSource` z předchozího příkladu můžete instrumentovat aplikaci následujícím způsobem:  
   
  [!code-csharp[ProjectN_ETW#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw2.cs#2)]  
   
@@ -71,7 +69,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
  Označuje, že chcete zjistit, kdy se proces spouští a zastavuje. Pro vaši aplikaci budete potřebovat událost proces/spuštění, aby bylo možné je odečíst od jiných časů události.  
   
  `-OnlyProviders:*MyCompany-MyApp`  
- Vypne ostatní poskytovatele, které PerfView ve výchozím nastavení zapne, a zapne poskytovatele spolecnosti-MyApp.  (Hvězdička indikuje, že se jedná <xref:System.Diagnostics.Tracing.EventSource>o.)  
+ Vypne ostatní poskytovatele, které PerfView ve výchozím nastavení zapne, a zapne poskytovatele spolecnosti-MyApp.  (Hvězdička indikuje, že se jedná o <xref:System.Diagnostics.Tracing.EventSource>.)  
   
  `collect outputFile`  
  Označuje, že chcete spustit shromažďování dat a uložit data do souboru Výstupní_soubor. ETL. zip.  

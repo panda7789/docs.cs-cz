@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 38e72a06-dbed-473b-a59b-7e0b3ea4f2af
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 76fc5f578e6da731ffd6406344d00cda8b57f493
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aec3c5f140df7eab10ea2bfa33634a4d853adcb0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772406"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134294"
 ---
 # <a name="ememoryavailable-enumeration"></a>EMemoryAvailable – výčet
-Obsahuje hodnoty, které označují množství volné fyzické paměti v počítači. Tyto hodnoty logicky mapování na události pro vysoké a nízké je paměť vrácena z `CreateMemoryResourceNotification` funkce v rozhraní Windows API.  
+Obsahuje hodnoty, které udávají množství volné fyzické paměti v počítači. Tyto hodnoty logicky mapují na události pro vysokou a nízkou paměť vrácenou funkcí `CreateMemoryResourceNotification` v rozhraní API systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eMemoryAvailableHigh`|Dostatek fyzické paměti je k dispozici.|  
-|`eMemoryAvailableLow`|Velmi malé fyzické paměti je k dispozici.|  
+|`eMemoryAvailableHigh`|K dispozici je dostatek fyzické paměti.|  
+|`eMemoryAvailableLow`|K dispozici je jen málo fyzické paměti.|  
 |`eMemoryAvailableNeutral`|Dostupná fyzická paměť je neutrální.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato hodnota je registrem hostitele tak, aby modul CLR (CLR) podle pomocí volání [iclrmemorynotificationcallback::onmemorynotification –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md) metody.  
+ Tato hodnota je předána hostitelem do modulu CLR (Common Language Runtime) pomocí volání metody [ICLRMemoryNotificationCallback –:: OnMemoryNotification –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

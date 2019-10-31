@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: fffe5616-0896-4426-ab5e-21869b514883
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: de37bb34aee9b6536ff892ac30855761bcc69445
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 78838e9002cb3f5263395af9de255c54de47b6ae
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963133"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134021"
 ---
 # <a name="icordebugterminate-method"></a>ICorDebug::Terminate – metoda
-`ICorDebug` Ukončí objekt.  
+Ukončí objekt `ICorDebug`.  
   
 > [!NOTE]
-> `Terminate`neměl by být volána, dokud nebylo přijato zpětné volání [ICorDebugManagedCallback:: ExitProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) pro všechny laděné procesy.  
+> `Terminate` by neměl být voláno, dokud nebylo přijato zpětné volání [ICorDebugManagedCallback:: ExitProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) pro všechny laděné procesy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT Terminate ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `Terminate`musí být volána, když `ICorDebug` objekt již není potřeba.  
+ `Terminate` musí být volána, pokud již není objekt `ICorDebug` potřeba.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

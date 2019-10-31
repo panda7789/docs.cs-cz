@@ -14,14 +14,12 @@ helpviewer_keywords:
 - BlessIWbemServices function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e00197b72ca7fc8941475ae51159351d53da12d3
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 946d29892052ea69c2a8a3bf11e7be7a1b2d7068
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855969"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138771"
 ---
 # <a name="blessiwbemservices-function"></a>Funkce BlessIWbemServices
 Určuje, zda přihlašovací údaje uživatele povolují přístup k zadané třídě [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) .   
@@ -50,7 +48,7 @@ pro Ukazatel na objekt [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-i
 pro Uživatelské jméno
 
 `strPassword`\
-pro Heslo přidružené `strUser`k.
+pro Heslo přidružené k `strUser`
 
 `strAuthority`\
 pro Název domény uživatele Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
@@ -65,19 +63,19 @@ pro Úroveň autorizace.
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *Winerror. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | Jeden nebo více argumentů je neplatných. |
-| `E_POINTER` | 0x80004003 | `pIWbemServices`je `null`. | 
+| `E_POINTER` | 0x80004003 | `pIWbemServices` je `null`. | 
 | `E_FAIL` | 0x80000008 | Došlo k neurčené chybě. |
 | `E_OUTOFMEMORY` | 0x80000002 | K provedení této operace je k dispozici dostatek paměti. | 
-| `S_OK` | 0 | Volání funkce bylo úspěšné. | 
+| `S_OK` | 0,8 | Volání funkce bylo úspěšné. | 
 
 ## <a name="requirements"></a>Požadavky  
 
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

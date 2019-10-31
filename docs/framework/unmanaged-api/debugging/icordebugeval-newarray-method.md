@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9597d05e46c2d41ab1f24a073c028561e944fb59
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ca0844e4d2b1cad65266d58c6cda74de203d1758
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753028"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137662"
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray – metoda
-Přidělí nové pole typu zadaného elementu a dimenze.  
+Přidělí nové pole zadaného typu a dimenzí prvku.  
   
- Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) místo.  
+ Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugEval2:: newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,28 +41,28 @@ HRESULT NewArray (
   
 ## <a name="parameters"></a>Parametry  
  `elementType`  
- [in] Hodnota corelementtype – výčet, který určuje typ prvku pole.  
+ pro Hodnota výčtu CorElementType –, která určuje typ prvku pole.  
   
  `pElementClass`  
- [in] Ukazatel na ICorDebugClass objekt, který určuje třídu elementu. Tato hodnota může mít hodnotu null, pokud typ prvku je primitivního typu.  
+ pro Ukazatel na objekt ICorDebugClass, který určuje třídu prvku. Tato hodnota může být null, pokud je typ prvku primitivní typ.  
   
  `rank`  
- [in] Počet rozměrů pole. V rozhraní .NET Framework 2.0 tato hodnota musí být 1.  
+ pro Počet rozměrů pole. V .NET Framework 2,0 musí být tato hodnota 1.  
   
  `dims`  
- [in] Velikost v bajtech každého rozměru pole.  
+ pro Velikost každého rozměru pole v bajtech.  
   
  `lowBounds`  
- [in] Volitelné. Dolní mez každé dimenze matice. Pokud je tato hodnota vynechána, předpokládá se pro jednotlivé rozměry dolní mez nula.  
+ pro Volitelné. Dolní mez každého rozměru pole. Pokud je tato hodnota vynechána, předpokládá se pro každou dimenzi spodní mez nula.  
   
 ## <a name="remarks"></a>Poznámky  
- Pole je vytvořen vždy v aplikační doméně, ve které vlákno právě probíhá.  
+ Pole je vždy vytvořeno v doméně aplikace, ve které je vlákno aktuálně prováděno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0
+ **Verze .NET Framework:** 1,1, 1,0

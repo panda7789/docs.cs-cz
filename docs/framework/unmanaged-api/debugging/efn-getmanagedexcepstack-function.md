@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 61f4e057a487462feb385ca0e3ca977fdd165f56
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9bcc03cc97a62b4c1cadacd7c0b2bc46b9fec470
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739093"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134132"
 ---
-# <a name="efngetmanagedexcepstack-function"></a>\_EFN\_GetManagedExcepStack Function
-Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.  
+# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_funkce GetManagedExcepStack
+Pokud je zadána adresa spravovaného objektu výjimky, vrátí verzi řetězce trasování zásobníku obsaženého v rámci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT _EFN_GetManagedExcepStack(
   
 ## <a name="parameters"></a>Parametry  
  `Client`  
- [in] Klient, který se právě ladí.  
+ pro Probíhá ladění klienta.  
   
  `StackObjAddr`  
- [in] Ukazatel spravovaný objekt, odvozený z <xref:System.Exception>.  
+ pro Ukazatel spravovaného objektu odvozený z <xref:System.Exception>.  
   
  szStackString  
- [out] Vrácený řetězec.  
+ mimo Vrácený řetězec.  
   
  `cbString`  
- [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.  
+ mimo Počet znaků, které jsou k dispozici v bufferu řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
+ Pokud ve vlákně, které je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** SOS_Stacktrace.h  
+ **Hlavička:** SOS_Stacktrace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

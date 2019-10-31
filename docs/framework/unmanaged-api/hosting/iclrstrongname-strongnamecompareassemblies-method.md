@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b1fb356c-72cf-4aa4-8376-f291a6d97c01
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 266e2d92ea3c21a9df28bda18a5d0f32e5a32090
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fdca03b781e07b709cbc54e673dbaa2a1130fbe3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748087"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135151"
 ---
 # <a name="iclrstrongnamestrongnamecompareassemblies-method"></a>ICLRStrongName::StrongNameCompareAssemblies – metoda
-Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem.  
+Určuje, zda se dvě sestavení liší pouze signaturami silného názvu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,34 +37,34 @@ HRESULT StrongNameCompareAssemblies (
   
 ## <a name="parameters"></a>Parametry  
  `wszAssembly1`  
- [in] Cesta k sestavení první.  
+ pro Cesta k prvnímu sestavení  
   
  `wszAssembly2`  
- [in] Cesta k druhé sestavení.  
+ pro Cesta k druhému sestavení  
   
  `pdwResult`  
- [out] Jeden z následujících hodnot:  
+ mimo Jedna z následujících hodnot:  
   
-- `SN_CMP_DIFFERENT` (0) – určuje, zda sestavení obsahovat různé datové.  
+- `SN_CMP_DIFFERENT` (0) – určuje, že sestavení obsahují odlišná data.  
   
-- `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
+- `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou přesně stejná, včetně jejich podpisů a kontrolního součtu.  
   
-- `SN_CMP_SIGONLY` (2) – určuje, že sestavení liší pouze v podpisu a kontrolního součtu.  
+- `SN_CMP_SIGONLY` (2) – určuje, že se sestavení liší pouze pomocí signatury a kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="remarks"></a>Poznámky  
- Podpis silného názvu sestavení se skládá z textový název sestavení, verzi, jazykovou verzi a token veřejného klíče.  
+ Podpis silného názvu sestavení se skládá z textového názvu sestavení, verze, jazykové verze a tokenu veřejného klíče.  
   
 ## <a name="see-also"></a>Viz také:
 

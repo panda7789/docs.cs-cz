@@ -7,14 +7,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], creating
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2dda45cca182d75bc77916cdf862ada9faead9ec
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 8a00784e6aa2d663c738339367b4076e79ed9c95
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973304"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122490"
 ---
 # <a name="create-assemblies"></a>Vytváření sestavení
 
@@ -50,7 +48,7 @@ Existují zvláštní předpoklady pro zpřístupnění sestavení společného 
 
 - [Program se sestaveními](program.md)
 - [Správa verzí sestavení](versioning.md)
-- [Postupy: Sestavení jednoho souboru sestavení](../../framework/app-domains/build-single-file-assembly.md)
-- [Postupy: Sestavení vícesouborového sestavení](../../framework/app-domains/build-multifile-assembly.md)
+- [Postupy: sestavení sestavení s jedním souborem](../../framework/app-domains/build-single-file-assembly.md)
+- [Postupy: sestavení vícesouborového sestavení](../../framework/app-domains/build-multifile-assembly.md)
 - [Způsob, jakým modul runtime vyhledává sestavení](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Vícesouborové sestavení](../../framework/app-domains/multifile-assemblies.md)

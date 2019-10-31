@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa227704-0ab1-4b08-aee2-1f439762162e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a984e8645bec0f58d8a31965b762e0a3a190ba59
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63275aaa7ed1f63c4f100845d2cbe9e93fcd0bcd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768015"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131246"
 ---
-# <a name="corgcthreadstatstypes-enumeration"></a>COR_GC_THREAD_STATS_TYPES – výčet
-Určuje kolekci statistiky uvolňování paměti pro vlákno.  
+# <a name="cor_gc_thread_stats_types-enumeration"></a>COR_GC_THREAD_STATS_TYPES – výčet
+Označuje statistiku uvolňování paměti pro vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,14 +36,14 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_GC_THREAD_HAS_PROMOTED_BYTES`|Vlákno má bajtů, které byly přesunuty v aktuální kolekci uvolňování paměti.|  
+|`COR_GC_THREAD_HAS_PROMOTED_BYTES`|Vlákno obsahuje bajty, které byly povýšeny v nejnovějším uvolňování paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

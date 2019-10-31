@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: db499637-7ba9-421e-b8b1-35856995e80b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a7f62385031967c164915fd31735a6d962f557fa
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: b27e7a2cdcbfc3a88a734230118d99c2dd5c700e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894984"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129540"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName – metoda
 Získá název souboru modulu.  
@@ -39,7 +37,7 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Parametry  
  `cchname`  
- pro Velikost `szName` pole.  
+ pro Velikost pole `szName`.  
   
  `pcchName`  
  pro Ukazatel na délku vráceného názvu.  
@@ -48,14 +46,14 @@ HRESULT GetName(
  mimo Pole, ve kterém je uložený vrácený název.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetName` Metoda vrátí hodnotu S_OK HRESULT, pokud se název souboru modulu shoduje s názvem na disku. `GetName`Vrátí S_FALSE HRESULT, pokud je název založen, například pro dynamický nebo modul v paměti.  
+ Metoda `GetName` vrátí hodnotu S_OK HRESULT, pokud se název souboru modulu shoduje s názvem na disku. `GetName` vrátí S_FALSE HRESULT, pokud je název založen, například pro dynamický nebo modul v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

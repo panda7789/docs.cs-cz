@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fe248069-b33c-48e1-a777-06ac9b239c54
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3d9dc94689083d79858319387747eb9dafe8b2f6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6c73afb00cbd104cff3d310d1369097b459c131e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739558"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133679"
 ---
 # <a name="cordebugstepreason-enumeration"></a>CorDebugStepReason – výčet
-Určuje výsledek jednotlivé kroky.  
+Označuje výsledek jednotlivého kroku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,22 +42,22 @@ typedef enum CorDebugStepReason {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`STEP_NORMAL`|Krokování dokončit za normálních okolností v rámci stejné funkce.|  
-|`STEP_RETURN`|Krokování pokračuje za normálních okolností se po vrácení funkce.|  
-|`STEP_CALL`|Krokování za normálních okolností pokračovat na začátku nově volané funkce.|  
-|`STEP_EXCEPTION_FILTER`|Byla generována výjimka a ovládací prvek předaný funkci filtru výjimky.|  
-|`STEP_EXCEPTION_HANDLER`|Byla generována výjimka a ovládací prvek předaný funkci obslužné rutiny výjimky.|  
-|`STEP_INTERCEPT`|Ovládací prvek byl předán zachycování.|  
-|`STEP_EXIT`|Vlákno se ukončil před krok byl dokončen.|  
+|`STEP_NORMAL`|Krokování je normálně dokončeno v rámci stejné funkce.|  
+|`STEP_RETURN`|Krokování se normálně dostálo po vrácení funkce.|  
+|`STEP_CALL`|Krokování obvykle probíhá na začátku nově volané funkce.|  
+|`STEP_EXCEPTION_FILTER`|Byla vygenerována výjimka a ovládací prvek byl předán filtru výjimky.|  
+|`STEP_EXCEPTION_HANDLER`|Byla vygenerována výjimka a ovládací prvek byl předán obslužné rutině výjimky.|  
+|`STEP_INTERCEPT`|Ovládací prvek byl předán do zachytávací.|  
+|`STEP_EXIT`|Vlákno bylo ukončeno před dokončením kroku.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

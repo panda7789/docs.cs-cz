@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 003bb138-7960-4291-ac88-0d87e470ff70
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bed3c461935c5a2bc912ed9ed16d147fddaf8a1a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d182476130e611e57df232c9652cda4bec002c31
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739650"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132773"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister – výčet
-Určuje registrů spojené s danou procesor architektury.  
+Určuje Registry přidružené k dané architektuře procesoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -118,96 +116,96 @@ typedef enum CorDebugRegister {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`REGISTER_INSTRUCTION_POINTER`|Ukazatele na instrukci zaregistrovat na jakýkoli procesor.|  
-|`REGISTER_STACK_POINTER`|Ukazatel zásobníku zaregistrovat na jakýkoli procesor.|  
-|`REGISTER_FRAME_POINTER`|Ukazatel na rámec zaregistrovat na jakýkoli procesor.|  
-|`REGISTER_X86_EIP`|Instrukce registr ukazatelů na x86 procesoru.|  
-|`REGISTER_X86_ESP`|Zásobník registr ukazatelů na x86 procesoru.|  
-|`REGISTER_X86_EBP`|Registr základního ukazatele na x86 procesoru.|  
-|`REGISTER_X86_EAX`|A data zaregistrujte na x86 procesoru.|  
-|`REGISTER_X86_ECX`|Registr dat C na x86 procesoru.|  
-|`REGISTER_X86_EDX`|D data registrovat x86 procesoru.|  
-|`REGISTER_X86_EBX`|Registr B dat na x86 procesoru.|  
-|`REGISTER_X86_ESI`|Registr indexu zdroje na x86 procesoru.|  
-|`REGISTER_X86_EDI`|Určení registr indexu na x86 procesoru.|  
-|`REGISTER_X86_FPSTACK_0`|Procesor registru 0 na s plovoucí desetinnou čárkou x86 (FP) zásobníku.|  
-|`REGISTER_X86_FPSTACK_1`|#1 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_2`|#2 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_3`|#3 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_4`|#4 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_5`|#5 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_6`|#6 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_X86_FPSTACK_7`|#7 zásobníku zaregistrovat na x86 FP procesoru.|  
-|`REGISTER_AMD64_RIP`|Ukazatele na instrukci zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RSP`|Ukazatel zásobníku zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RBP`|Registr základního ukazatele na procesor AMD64.|  
-|`REGISTER_AMD64_RAX`|A data zaregistrujte na procesor AMD64.|  
-|`REGISTER_AMD64_RCX`|C data zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RDX`|D data zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RBX`|B data zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RSI`|Index zdroje zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_RDI`|Cílový index zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R8`|Data #8 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R9`|Data #9 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R10`|Data #10 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R11`|Data #11 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R12`|Data #12 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R13`|Data #13 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R14`|Data #14 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_R15`|Data #15 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM0`|Multimediální #0 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM1`|Multimediální #1 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM2`|Multimediální #2 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM3`|Multimediální #3 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM4`|Multimediální #4 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM5`|Multimediální #5 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM6`|Multimediální #6 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM7`|Multimediální #7 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM8`|Multimediální #8 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM9`|Multimediální #9 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM10`|Multimediální #10 se zaregistrujte na procesor AMD64.|  
-|`REGISTER_AMD64_XMM11`|Multimediální #11 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM12`|Multimediální #12 se zaregistrujte na procesor AMD64.|  
-|`REGISTER_AMD64_XMM13`|Multimediální #13 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM14`|Multimediální #14 zaregistrovat na procesor AMD64.|  
-|`REGISTER_AMD64_XMM15`|Multimediální #15 zaregistrovat na procesor AMD64.|  
-|`REGISTER_IA64_BSP`|Ukazatel zásobníku zaregistrovat na procesor IA-64.|  
-|`REGISTER_IA64_R0`|Data #0 zaregistrovat na procesor IA-64.|  
-|`REGISTER_IA64_F0`|Data FP #0 zaregistrovat na procesor IA-64.|  
-|`REGISTER_ARM_PC`|Čítač programu registrace (R15) na procesoru ARM.|  
-|`REGISTER_ARM_SP`|Ukazatel zásobníku zaregistrovat na procesoru ARM (R13).|  
-|`REGISTER_ARM_R0`|Data zaregistrovat R0 na procesoru ARM.|  
-|`REGISTER_ARM_R1`|R1 registr dat na procesoru ARM.|  
-|`REGISTER_ARM_R2`|Data zaregistrovat R2 na procesoru ARM.|  
-|`REGISTER_ARM_R3`|Data zaregistrovat R3 na procesoru ARM.|  
-|`REGISTER_ARM_R4`|Zaregistrujte R4 na procesoru ARM.|  
-|`REGISTER_ARM_R5`|Zaregistrujte R5 na procesoru ARM.|  
-|`REGISTER_ARM_R6`|Zaregistrujte R6 na procesoru ARM.|  
-|`REGISTER_ARM_R7`|Zaregistrujte R7 (THUMB ukazatel na rámec) na procesoru ARM.|  
+|`REGISTER_INSTRUCTION_POINTER`|Registr ukazatele na instrukce pro libovolný procesor.|  
+|`REGISTER_STACK_POINTER`|Registr ukazatele zásobníku na jakémkoli procesoru.|  
+|`REGISTER_FRAME_POINTER`|Registr ukazatele na rámec u libovolného procesoru.|  
+|`REGISTER_X86_EIP`|Registr ukazatele na instrukce pro procesor x86.|  
+|`REGISTER_X86_ESP`|Registr ukazatele zásobníku v procesoru x86.|  
+|`REGISTER_X86_EBP`|Základní ukazatel se registruje v procesoru x86.|  
+|`REGISTER_X86_EAX`|Záznam dat v procesoru x86.|  
+|`REGISTER_X86_ECX`|Registr dat C v procesoru x86.|  
+|`REGISTER_X86_EDX`|Registr dat D v procesoru x86.|  
+|`REGISTER_X86_EBX`|Registr dat B v procesoru x86.|  
+|`REGISTER_X86_ESI`|Registr zdrojového indexu v procesoru x86.|  
+|`REGISTER_X86_EDI`|Registr cílového indexu v procesoru x86.|  
+|`REGISTER_X86_FPSTACK_0`|Registr zásobníku 0 v procesoru s plovoucí desetinnou čárkou (FP) x86.|  
+|`REGISTER_X86_FPSTACK_1`|#1 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_2`|#2 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_3`|#3 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_4`|#4 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_5`|#5 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_6`|#6 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_X86_FPSTACK_7`|#7 registr zásobníku na procesoru x86 FP.|  
+|`REGISTER_AMD64_RIP`|Registr ukazatele na instrukce pro procesor AMD64.|  
+|`REGISTER_AMD64_RSP`|Registr ukazatele zásobníku v procesoru AMD64.|  
+|`REGISTER_AMD64_RBP`|Základní ukazatel se registruje na procesoru AMD64.|  
+|`REGISTER_AMD64_RAX`|Záznam dat na procesoru AMD64.|  
+|`REGISTER_AMD64_RCX`|Registr dat C v procesoru AMD64.|  
+|`REGISTER_AMD64_RDX`|Registr dat D v procesoru AMD64.|  
+|`REGISTER_AMD64_RBX`|Registr dat B v procesoru AMD64.|  
+|`REGISTER_AMD64_RSI`|Registr zdrojového indexu v procesoru AMD64.|  
+|`REGISTER_AMD64_RDI`|Registr cílového indexu v procesoru AMD64.|  
+|`REGISTER_AMD64_R8`|#8 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R9`|#9 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R10`|#10 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R11`|#11 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R12`|#12 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R13`|#13 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R14`|#14 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_R15`|#15 registraci dat v procesoru AMD64.|  
+|`REGISTER_AMD64_XMM0`|Registr #0 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM1`|Registr #1 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM2`|Registr #2 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM3`|Registr #3 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM4`|Registr #4 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM5`|Registr #5 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM6`|Registr #6 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM7`|Registr #7 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM8`|Registr #8 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM9`|Registr #9 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM10`|Registr #10 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM11`|Registr #11 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM12`|Registr #12 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM13`|Registr #13 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM14`|Registr #14 multimédií na procesorech AMD64.|  
+|`REGISTER_AMD64_XMM15`|Registr #15 multimédií na procesorech AMD64.|  
+|`REGISTER_IA64_BSP`|Registr ukazatele zásobníku v procesoru IA-64.|  
+|`REGISTER_IA64_R0`|#0 registraci dat v procesoru IA-64.|  
+|`REGISTER_IA64_F0`|Registr dat #0 FP v procesoru IA-64.|  
+|`REGISTER_ARM_PC`|Registr čítače programu (R15) na procesoru ARM.|  
+|`REGISTER_ARM_SP`|Registr ukazatele zásobníku (R13) na procesoru ARM.|  
+|`REGISTER_ARM_R0`|R0 registru dat na procesor ARM.|  
+|`REGISTER_ARM_R1`|Registrace dat R1 v procesoru ARM.|  
+|`REGISTER_ARM_R2`|Data Registry R2 na procesoru ARM.|  
+|`REGISTER_ARM_R3`|Data Register R3 na procesoru ARM.|  
+|`REGISTER_ARM_R4`|Registrace R4 na procesoru ARM.|  
+|`REGISTER_ARM_R5`|Zaregistrujte R5 na procesor ARM.|  
+|`REGISTER_ARM_R6`|Zaregistrujte R6 na procesor ARM.|  
+|`REGISTER_ARM_R7`|Zaregistrujte R7 (ukazatel na rámec jezdce) na procesoru ARM.|  
 |`REGISTER_ARM_R8`|Zaregistrujte R8 na procesoru ARM.|  
-|`REGISTER_ARM_R9`|Zaregistrujte R9 na procesoru ARM.|  
-|`REGISTER_ARM_R10`|Zaregistrujte R10 na procesoru ARM.|  
-|`REGISTER_ARM_R11`|Ukazatele na rámce u procesoru ARM.|  
-|`REGISTER_ARM_R12`|Zaregistrujte r 12 na procesoru ARM.|  
-|`REGISTER_ARM_LR`|Odkaz na registraci (R14) na procesoru ARM.|  
+|`REGISTER_ARM_R9`|Zaregistrujte R9 na procesor ARM.|  
+|`REGISTER_ARM_R10`|Zaregistrujte R10 na procesor ARM.|  
+|`REGISTER_ARM_R11`|Ukazatel na rámec na procesoru ARM.|  
+|`REGISTER_ARM_R12`|Zaregistrujte R12 na procesor ARM.|  
+|`REGISTER_ARM_LR`|Registr odkazů (R14) na procesoru ARM.|  
   
 ## <a name="remarks"></a>Poznámky  
- Existují 128 pro obecné účely datových registrů a 128 s plovoucí desetinnou čárkou datových registrů na IA-64 procesorů, ale pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0` jsou k dispozici. Ostatní hodnoty můžou být stanoven následujícím způsobem:  
+ Pro procesor IA-64 jsou k dispozici 128 datových registrů pro obecné účely a 128 datových registrů s plovoucí desetinnou čárkou, ale jsou k dispozici pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0`. Ostatní hodnoty lze určit následujícím způsobem:  
   
-- Přidat registr číslo, které má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají registr #1 dat prostřednictvím #127 data registru na procesor IA-64.  
+- Přidejte číslo registru, které se má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají #1 registraci dat prostřednictvím #127 registru pro procesor IA-64.  
   
-- Přidat registr číslo, které má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají data registr FP #1 až #127 registr FP dat na procesor IA-64.  
+- Přidejte číslo registru, které se má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají registru #1 FP v rámci registru s daty #127 FP v procesoru IA-64.  
   
- Například pokud je třeba zadat registr #83 dat na procesor IA-64, použijte `REGISTER_IA64_R0` + 83.  
+ Pokud například potřebujete zadat #83 registru dat v procesoru IA-64, použijte `REGISTER_IA64_R0` + 83.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

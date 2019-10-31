@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2657d45d-26d2-4d0a-8473-32b652e3321d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb78026f875c18a557951108518c9280f5eb567d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cb807a6a344c49baeedfa88aef989a9cb2ec8a46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937683"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133921"
 ---
 # <a name="ihostgcmanagerthreadisblockingforsuspension-method"></a>IHostGCManager::ThreadIsBlockingForSuspension – metoda
 Upozorní hostitele, že vlákno, ze kterého bylo volání metody provedeno, bude zablokovat pro uvolnění paměti.  
@@ -37,7 +35,7 @@ HRESULT ThreadIsBlockingForSuspension ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ThreadIsBlockingForSuspension`úspěšně vráceno.|  
+|S_OK|`ThreadIsBlockingForSuspension` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -45,17 +43,17 @@ HRESULT ThreadIsBlockingForSuspension ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR obvykle volá `ThreadIsBlockForSuspension` metodu v přípravě na uvolňování paměti, aby hostitel měl možnost znovu naplánovat vlákno pro nespravované úlohy.  
+ CLR obvykle volá metodu `ThreadIsBlockForSuspension` v přípravě na uvolňování paměti, aby bylo možné hostiteli dát možnost znovu naplánovat vlákno pro nespravované úlohy.  
   
 > [!IMPORTANT]
 > Hostitel může znovu naplánovat úlohy až po volání `ThreadIsBlockingForSuspension`. Po volání za běhu [SuspensionStarting –](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionstarting-method.md)hostitel nesmí znovu naplánovat úlohu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

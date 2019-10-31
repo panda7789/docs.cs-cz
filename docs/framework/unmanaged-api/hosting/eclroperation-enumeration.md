@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5aef6808-5aac-4b2f-a2c7-fee1575c55ed
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 01b000ed3d75ddb6a7882cb8f03ff2cec64fb9fe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6becc44b061ff2baac63437b6a72375d1c3735b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767874"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131166"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation – výčet
-Popisuje sadu operací, u které můžete použít hostitele akce zásad.  
+Popisuje sadu operací, pro které může hostitel použít akce zásad.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,31 +42,31 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`OPR_AppDomainRudeUnload`|Hostitele můžete určit akce zásad, které mají být provedeny, když <xref:System.AppDomain> uvolnění způsobem řádné (pravidla).|  
-|`OPR_AppDomainUnload`|Hostitele můžete určit akce zásad, které mají být provedeny, když <xref:System.AppDomain> je uvolněna.|  
-|`OPR_FinalizerRun`|Hostitele můžete určit akce zásad, které mají být provedeny, když spuštění finalizační metody.|  
-|`OPR_ProcessExit`|Hostitele můžete určit akce zásad, které mají být provedeny při ukončení procesu.|  
-|`OPR_ThreadAbort`|Hostitele můžete určit akce zásad, které mají být provedeny, když je přerušeno vlákno.|  
-|`OPR_ThreadRudeAbortInCriticalRegion`|Hostitele můžete určit akce zásad, které mají být provedeny, když dojde k přerušení článku neslušní vlákna v důležité oblasti kódu.|  
-|`OPR_ThreadRudeAbortInNonCriticalRegion`|Hostitele můžete určit akce zásad má provést, když dojde k přerušení článku neslušní vlákna v méně důležité oblasti kódu.|  
+|`OPR_AppDomainRudeUnload`|Hostitel může určit akce zásad, které se mají provést, když se <xref:System.AppDomain> uvolní způsobem, který nefunguje (hrubé).|  
+|`OPR_AppDomainUnload`|Hostitel může určit akce zásad, které se mají provést, když se <xref:System.AppDomain> uvolní.|  
+|`OPR_FinalizerRun`|Hostitel může určit akce zásad, které se mají provést při spuštění finalizační metody.|  
+|`OPR_ProcessExit`|Hostitel může určit akce zásad, které mají být provedeny při ukončení procesu.|  
+|`OPR_ThreadAbort`|Hostitel může určit akce zásad, které se mají provést při přerušení vlákna.|  
+|`OPR_ThreadRudeAbortInCriticalRegion`|Hostitel může určit akce zásad, které mají být provedeny, když dojde k přerušení hrubé vlákna v kritické oblasti kódu.|  
+|`OPR_ThreadRudeAbortInNonCriticalRegion`|Hostitel může určit akce zásad, které se mají provést, když dojde k přerušení hrubé vlákna v nekritické oblasti kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Common language runtime (CLR) spolehlivost infrastructure rozlišuje mezi přeruší a prostředků, ke kterým dochází v důležité oblasti kódu a těch, ke kterým dochází v méně důležité oblasti kódu chyby v přidělení. Toto rozlišení je navržena k umožnění hostitelů nastavit různé zásady v závislosti na tom, kde dojde k chybě v kódu.  
+ Infrastruktura spolehlivosti modulu CLR (Common Language Runtime) rozlišuje mezi přerušeními a selháním přidělení prostředků, ke kterým dochází v kritických oblastech kódu a těch, ke kterým dochází v nekritických oblastech kódu. Toto rozlišení je navrženo tak, aby umožňovalo hostitelům nastavit různé zásady v závislosti na tom, kde v kódu dojde k selhání.  
   
- A *důležité oblasti kódu* je jakýkoli prostor, kde nemůže zaručit CLR dané přeruší úlohu nebo selhání žádost pro prostředky ovlivní pouze aktuální úloha dokončí. Například pokud úloha drží zámek a přijímá HRESULT označující selhání při vytváření požadavku přidělení paměti, je jednoduše k přerušení tento úkol zajistit stabilitu <xref:System.AppDomain>, protože <xref:System.AppDomain> může obsahovat jiné Čekání na zámek stejné úkoly. Pokud chcete opustit aktuální úloha může způsobit tyto úlohy přestane reagovat. V takovém případě hostitele musí být schopné uvolnit celý <xref:System.AppDomain> místo nestabilitu potenciální riziko.  
+ *Kritická oblast kódu* je jakékoli místo, kde CLR nemůže zaručit, že přerušení úlohy nebo selhání dokončení žádosti o prostředky ovlivní pouze aktuální úlohu. Například pokud úloha drží zámek a obdrží HRESULT, která indikuje selhání při vytváření žádosti o přidělení paměti, není nestačí jednoduše tuto úlohu přerušit, aby se zajistila stabilita <xref:System.AppDomain>, protože <xref:System.AppDomain> by mohla obsahovat další úlohy. čeká se na stejný zámek. Pokud chcete opustit aktuální úlohu, může to způsobit, že tyto další úlohy přestanou reagovat. V takovém případě hostitel potřebuje možnost uvolnit celé <xref:System.AppDomain> místo rizika nestability potenciálního potenciálu.  
   
- A *méně důležité oblasti kódu*, na druhé straně je oblast, ve kterém CLR může zaručit, že přerušení nebo selhání ovlivní pouze úlohy, na kterém dojde k chybě.  
+ *Nekritická oblast kódu*na druhé straně je oblast, kde CLR může zaručit, že přerušení nebo selhání ovlivní pouze úlohu, na které dojde k chybě.  
   
- CLR také rozlišuje mezi bezproblémové a jiné řádné přerušení (pravidla). Obecně platí normální nebo řádné přerušení snaží spustit před přerušením úlohy, zatímco hrubé přerušení nezaručuje tyto rutiny zpracování výjimek a finalizační metody.  
+ CLR také rozlišuje mezi řádnými a neřádnými (hrubé) přerušeními. Obecně platí, že normální nebo plynulé přerušení umožňuje spustit rutiny zpracování výjimek a finalizační metody před přerušením úlohy, zatímco hrubé přerušení neprovede žádné takové záruky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

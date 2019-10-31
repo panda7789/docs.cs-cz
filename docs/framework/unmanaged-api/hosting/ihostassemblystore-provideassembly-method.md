@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 625c3dd5-a3f0-442c-adde-310dadbb5054
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f5fab4ef0d67ab6b86510bd4b2f814d9456213fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a93d700c9c398076d87156cd2eb9c6d0d08cccfd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763990"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124489"
 ---
 # <a name="ihostassemblystoreprovideassembly-method"></a>IHostAssemblyStore::ProvideAssembly – metoda
-Získá odkaz na sestavení, které neodkazují [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který je vrácen z [ihostassemblymanager::getnonhoststoreassemblies –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-getnonhoststoreassemblies-method.md). Common language runtime (CLR) zavolá `ProvideAssembly` pro každé sestavení, které nejsou uvedené v seznamu.  
+Získá odkaz na sestavení, na které se neodkazuje [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který se vrací z [IHostAssemblyManager:: GetNonHostStoreAssemblies –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-getnonhoststoreassemblies-method.md). Modul CLR (Common Language Runtime) `ProvideAssembly` volá pro každé sestavení, které se nezobrazí v seznamu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,44 +39,44 @@ HRESULT ProvideAssembly (
   
 ## <a name="parameters"></a>Parametry  
  `pBindInfo`  
- [in] Ukazatel na [assemblybindinfo –](../../../../docs/framework/unmanaged-api/hosting/assemblybindinfo-structure.md) instanci, kterou hostitel používá k určení určité charakteristické vlastnosti vazby, včetně přítomnosti nebo nepřítomnosti všechny zásady správy verzí a sestavení, které svázat.  
+ pro Ukazatel na instanci [assemblybindinfo –](../../../../docs/framework/unmanaged-api/hosting/assemblybindinfo-structure.md) , kterou hostitel používá k určení určitých vlastností vazby, včetně přítomnosti nebo nepřítomnosti jakékoli zásady správy verzí a sestavení, ke kterému se má vytvořit vazba.  
   
  `pAssemblyId`  
- [out] Ukazatel na jedinečný identifikátor pro požadované sestavení pro tento `IStream`.  
+ mimo Ukazatel na jedinečný identifikátor pro požadované sestavení pro tento `IStream`.  
   
  `pHostContext`  
- [out] Ukazatel na konkrétního hostitele data, která se používá k určení důkazy požadovaná sestavení bez nutnosti platformu vyvolání volání. `pHostContext` odpovídá <xref:System.Reflection.Assembly.HostContext%2A> vlastnost spravovaného <xref:System.Reflection.Assembly> třídy.  
+ mimo Ukazatel na data specifická pro hostitele, která se používají k určení legitimace požadovaného sestavení bez nutnosti vyvolání volání platformy. `pHostContext` odpovídá vlastnosti <xref:System.Reflection.Assembly.HostContext%2A> spravované třídy <xref:System.Reflection.Assembly>.  
   
  `ppStmAssemblyImage`  
- [out] Ukazatel na adresu `IStream` , který obsahuje image (PE portable executable) načíst, nebo hodnota null, pokud sestavení nebylo nalezeno.  
+ mimo Ukazatel na adresu `IStream` obsahující přenosné spustitelné soubory (PE), které mají být načteny, nebo hodnotu null, pokud nebylo nalezeno sestavení.  
   
  `ppStmPDB`  
- [out] Ukazatel na adresu `IStream` , který obsahuje informace o ladění (PDB) programu, nebo hodnota null, pokud soubor PDB nebyl nalezen.  
+ mimo Ukazatel na adresu `IStream`, který obsahuje informace o ladění programu (PDB), nebo hodnotu null, pokud se nepovedlo najít soubor. pdb.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ProvideAssembly` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`ProvideAssembly` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|COR_E_FILENOTFOUND (0x80070002)|Požadované sestavení nebyla nalezena.|  
-|E_NOT_SUFFICIENT_BUFFER|Velikost vyrovnávací paměti určené `pAssemblyId` není dostatečně velký pro identifikátor, který chce vrátit hostitele.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|COR_E_FILENOTFOUND (0x80070002)|Požadované sestavení nebylo nalezeno.|  
+|E_NOT_SUFFICIENT_BUFFER|Velikost vyrovnávací paměti určená `pAssemblyId` není dostatečně velká pro uložení identifikátoru, který chce hostitel vrátit.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vrátí hodnotu identity pro `pAssemblyId` zadaná hostitelem. Identifikátory musí být jedinečné v rámci životního cyklu procesu. Modul CLR používá tuto hodnotu jako jedinečný identifikátor pro datový proud. Zkontroluje každou hodnotu s hodnotami pro `pAssemblyId` vrácený další volání `ProvideAssembly`. Pokud hostitel vrátí stejné `pAssemblyId` hodnota dalších `IStream`, CLR kontroluje, zda již byly namapovány obsah tohoto datového proudu. Pokud ano, načte modul runtime stávající bitovou místo mapování novou kopii.  
+ Hodnota identity vrácená pro `pAssemblyId` je určena hostitelem. Identifikátory musí být jedinečné v rámci životnosti procesu. CLR používá tuto hodnotu jako jedinečný identifikátor pro datový proud. Kontroluje každou hodnotu proti hodnotám `pAssemblyId` vrácených jinými voláními `ProvideAssembly`. Pokud hostitel vrátí stejnou `pAssemblyId` hodnotu pro jiný `IStream`, CLR zkontroluje, zda obsah tohoto datového proudu již byl namapován. Pokud ano, modul runtime načte existující kopii obrázku místo mapování nového.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

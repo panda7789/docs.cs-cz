@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c68375d-145d-46ef-a7c8-2dc4257472de
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 46ee21a9fd7b9267672a14107c1706af5d5cdcc5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 402a0e8808b51fd4c09b254114292d4c851b2760
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763571"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129513"
 ---
 # <a name="icordebugmodulegetsize-method"></a>ICorDebugModule::GetSize – metoda
-Získá velikost v bajtech, modulu.  
+Získá velikost modulu v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT GetSize(
   
 ## <a name="parameters"></a>Parametry  
  `pcBytes`  
- [out] Velikost modulu v bajtech.  
+ mimo Velikost modulu v bajtech.  
   
- Pokud modul byl vytvořen z native image generator (NGen.exe), bude velikost modulu nula.  
+ Pokud byl modul vytvořen z nativního generátoru bitových kopií (NGen. exe), bude mít velikost modulu hodnotu nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 415b3d34-8b35-4b60-a318-140646cc83f8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: da473ed176ab6c69ed974d5f28b22fc8eb30c6af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a845eed993914e02de34ec5c60ed232ccabc561e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762517"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133531"
 ---
 # <a name="icordebugthreadgetappdomain-method"></a>ICorDebugThread::GetAppDomain – metoda
-Získá ukazatel rozhraní aplikační doménu, ve kterém tento ICorDebugThread právě probíhá.  
+Získá ukazatel rozhraní na doménu aplikace, ve které je aktuálně prováděna tato ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetAppDomain (
   
 ## <a name="parameters"></a>Parametry  
  `ppAppDomain`  
- [out] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém je aktuálně spuštěno toto vlákno.  
+ mimo Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve které je aktuálně spuštěno toto vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

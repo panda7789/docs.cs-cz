@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2cee9108-a58d-48a8-b7d4-6beb6da3f4bb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b35c0b7028a07e6b760c0e3142995599f30c4c1e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 62f9c6d70b789b52dcfe667b581552bb190a0a1d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766227"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129747"
 ---
 # <a name="icordebugobjectvaluesetfrommanagedcopy-method"></a>ICorDebugObjectValue::SetFromManagedCopy – metoda
-`SetFromManagedCopy` je zastaralý. Nevolejte tuto metodu.  
+`SetFromManagedCopy` je zastaralá. Nevolejte tuto metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,6 +34,6 @@ HRESULT SetFromManagedCopy (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
 ## <a name="see-also"></a>Viz také:

@@ -13,17 +13,15 @@ helpviewer_keywords:
 - IsStarted method [.NET Framework hosting]
 - ICLRRuntimeInfo::IsStarted method [.NET Framework hosting]
 ms.assetid: ef6f2662-323b-4534-aa82-6d1afb7b9309
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5b064f0b1cec07f29058300041711285bde66697
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 34590744407b25d7d53c06c452fff5bac2a95246
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748398"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136387"
 ---
 # <a name="iclrruntimeinfoisstarted-method"></a>ICLRRuntimeInfo::IsStarted – metoda
-Označuje, zda modul runtime byl spuštěn (to znamená, zda [ICLRRuntimeHost::Start – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) byla volána a proběhlo úspěšně).  
+Určuje, zda byl modul runtime spuštěn (to znamená, zda byla volána [Metoda ICLRRuntimeHost:: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) a byla úspěšná).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +33,30 @@ HRESULT IsStarted(
   
 ## <a name="parameters"></a>Parametry  
  `pbStarted`  
- [out] `true` Pokud tento modul runtime je spuštěna; v opačném případě `false`.  
+ [out] `true`, pokud je spuštěn tento modul runtime; v opačném případě `false`.  
   
  `pdwStartupFlags`  
- [out] Vrátí příznaky, které byly použity při spuštění modulu runtime.  
+ mimo Vrátí příznaky, které byly použity ke spuštění modulu runtime.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_NOTIMPL|Společné jazykové verzi modulu runtime (CLR) je starší než verze modulu CLR v rozhraní .NET Framework 4.|  
+|E_NOTIMPL|Verze modulu CLR (Common Language Runtime) je starší než verze CLR v .NET Framework 4.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda nebude fungovat s CLR verze starší než verze modulu CLR v rozhraní .NET Framework 4.  
+ Tato metoda nefunguje s verzemi CLR staršími než verze CLR v .NET Framework 4.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

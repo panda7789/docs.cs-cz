@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d6036345-18a3-45c1-a302-b1c6f2dced9b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dbf12612bb432f8935d08bdeac0bbcb471c38c54
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 70ae72968c3411a6732b09c0afe3d82931410cb5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759636"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130803"
 ---
 # <a name="icordebugmanagedcallbackevalexception-method"></a>ICorDebugManagedCallback::EvalException – metoda
-Upozorní ladicího programu, že byl ukončen zkušební verzi s neošetřenou výjimkou.  
+Oznamuje ladicímu programu, že vyhodnocení skončilo neošetřenou výjimkou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT EvalException (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém byl ukončen hodnocení.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve které bylo vyhodnocení ukončeno.  
   
  `pThread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byl ukončen hodnocení.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, ve kterém bylo vyhodnocení ukončeno.  
   
  `pEval`  
- [in] Ukazatel na objekt icordebugeval –, který představuje kód, který provádí hodnocení.  
+ pro Ukazatel na objekt ICorDebugEval, který představuje kód, který provedl vyhodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

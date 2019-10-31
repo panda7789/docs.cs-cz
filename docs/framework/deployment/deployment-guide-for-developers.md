@@ -6,21 +6,19 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dbb196b5beb2fc04ff85f2924356699fd83f3ea6
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1f13053ea23e45b66b4767295af28a758f474ab5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833660"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121542"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
-Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.
+Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
 
 Odkazy ke stažení najdete v části [redistribuovatelné balíčky](#redistributable-packages). Distribuovatelné balíčky a jazykové sady můžete také stáhnout z těchto stránek služby Stažení softwaru společnosti Microsoft:
 
-- .NET Framework 4,8 pro všechny operační systémy ([Webová instalační služba](http://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
+- .NET Framework 4,8 pro všechny operační systémy ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
 
 - .NET Framework 4.7.2 pro všechny operační systémy ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=863265))
 
@@ -69,9 +67,9 @@ Až budete připraveni k publikování aplikace na webový server nebo jiné cen
 
 |Strategie nasazení pro vaši aplikaci|Dostupné metody nasazení|.NET Framework distribuovatelné pro použití|
 |--------------------------------------|----------------------------------|-------------------------------------------|
-|Instalace z webu|- [InstallAware](#installaware-deployment)<br />@no__t – 0[InstallShield](#installshield-deployment)<br />[Sada nástrojů WIX](#wix) -0 @no__t<br />[Ruční instalace](#installing_manually) - |[Webová instalační služba](#redistributable-packages)|
-|Nainstalovat z disku|- [InstallAware](#installaware-deployment)<br />@no__t – 0[InstallShield](#installshield-deployment)<br />[Sada nástrojů WIX](#wix) -0 @no__t<br />[Ruční instalace](#installing_manually) - |[Offline instalační program](#redistributable-packages)|
-|Instalace z místní sítě (pro podnikové aplikace)|@no__t – 0[ClickOnce](#clickonce-deployment)|Buď [webový instalační program](#redistributable-packages) (omezení viz [ClickOnce](#clickonce-deployment) ) nebo [instalační program v režimu offline](#redistributable-packages)|
+|Instalace z webu|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />[Sada nástrojů - WIX](#wix)<br />- [Ruční instalace](#installing_manually)|[Webová instalační služba](#redistributable-packages)|
+|Nainstalovat z disku|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />[Sada nástrojů - WIX](#wix)<br />- [Ruční instalace](#installing_manually)|[Offline instalační program](#redistributable-packages)|
+|Instalace z místní sítě (pro podnikové aplikace)|- [ClickOnce](#clickonce-deployment)|Buď [webový instalační program](#redistributable-packages) (omezení viz [ClickOnce](#clickonce-deployment) ) nebo [instalační program v režimu offline](#redistributable-packages)|
 
 ## <a name="redistributable-packages"></a>Distribuovatelné balíčky
 
@@ -83,12 +81,12 @@ Až budete připraveni k publikování aplikace na webový server nebo jiné cen
 |Vyžaduje se připojení k Internetu?|Ano|Ne|
 |Velikost stahování|Menší (zahrnuje instalační program jenom pro cílovou platformu) *|Větší|
 |Jazykové sady|Zahrnuté * *|Musí se [instalovat samostatně](#chain_langpack), pokud nepoužijete balíček, který cílí na všechny operační systémy.|
-|Metoda nasazení|Podporuje všechny metody:<br /><br />@no__t – 0[ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />@no__t – 0[InstallShield](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />[Ruční instalace](#installing_manually) - <br />Vlastní nastavení - [(zřetězení)](#chaining)|Podporuje všechny metody:<br /><br /> @no__t – 0[ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />@no__t – 0[InstallShield](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />[Ruční instalace](#installing_manually) - <br />Vlastní nastavení - [(zřetězení)](#chaining)|
+|Metoda nasazení|Podporuje všechny metody:<br /><br />- [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />[XML - Instalační služba systému Windows (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [vlastní nastavení (zřetězení)](#chaining)|Podporuje všechny metody:<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />[XML - Instalační služba systému Windows (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [vlastní nastavení (zřetězení)](#chaining)|
 |Umístění pro stažení pro nasazení ClickOnce|Stažení softwaru společnosti Microsoft:<br /><br /> - [.NET Framework 4,8](https://go.microsoft.com/fwlink/?LinkId=2085155) <br/> - [.NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262) <br/> - [.NET Framework 4.7.1](https://go.microsoft.com/fwlink/?LinkId=852092) <br/> - [.NET Framework 4,7](https://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](https://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4,6](https://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](https://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4,5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|Váš vlastní server nebo stažení softwaru společnosti Microsoft:<br /><br /> - [.NET Framework 4,8](https://go.microsoft.com/fwlink/?linkid=2088631)<br /> - [.NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863265)<br /> - [.NET Framework 4.7.1](https://go.microsoft.com/fwlink/?LinkId=852104)<br /> - [.NET Framework 4,7](https://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](https://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4,6](https://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](https://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4,5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|
 
 \* instalační program offline je větší, protože obsahuje komponenty pro všechny cílové platformy. Po dokončení instalace operační systém Windows ukládá pouze instalační službu, která byla použita. Pokud je po instalaci odstraněn instalační program v režimu offline, je místo na disku stejné jako používané webovým instalačním programem. Pokud nástroj, který použijete (například [InstallAware](#installaware-deployment) nebo [InstallShield](#installshield-deployment)) k vytvoření instalačního programu vaší aplikace, poskytuje složku instalačního souboru, která se odebere po instalaci, bude možné automaticky odstranit instalační program v režimu offline tím, že ho umístíte do instalačního programu. složky.
 
-\* @ no__t-1 Pokud používáte webový instalační program s vlastním nastavením, můžete použít výchozí nastavení jazyka na základě nastavení sady MUI (Multilingual User Interface) uživatele nebo zadat jinou jazykovou sadu pomocí možnosti `/LCID` na příkazovém řádku. Příklady najdete v části [řetězení pomocí výchozího uživatelského rozhraní .NET Framework](#chaining_default) .
+\*\* Pokud používáte webový instalátor s vlastním instalačním programem, můžete použít výchozí nastavení jazyka na základě nastavení sady MUI (Multilingual User Interface) uživatele nebo zadat jinou jazykovou sadu pomocí možnosti `/LCID` na příkazovém řádku. Příklady najdete v části [řetězení pomocí výchozího uživatelského rozhraní .NET Framework](#chaining_default) .
 
 ## <a name="deployment-methods"></a>Metody nasazení
 
@@ -208,13 +206,13 @@ Pokud je například spustitelný program contoso. exe a chcete tiše nainstalov
 
 K přizpůsobení instalace můžete použít další možnosti příkazového řádku. Příklad:
 
-- Pokud chcete uživatelům umožnit, aby zavřeli spuštěné aplikace .NET Framework pro minimalizaci restartování systému, nastavte pasivní režim a použijte možnost `/showrmui` následujícím způsobem:
+- Chcete-li uživatelům umožnit, aby zavřeli spuštěné aplikace .NET Framework pro minimalizaci restartování systému, nastavte pasivní režim a použijte možnost `/showrmui` následujícím způsobem:
 
     `dotNetFx45_Full_x86_x64.exe /norestart /passive /showrmui /ChainingPackage Contoso`
 
      Tento příkaz umožňuje správci restartování zobrazit okno se zprávou, které uživatelům umožňuje zavřít .NET Framework aplikace před instalací .NET Framework.
 
-- Pokud používáte webový instalační program, můžete zadat jazykovou sadu pomocí možnosti `/LCID`. Chcete-li například zřetězit webový instalátor .NET Framework 4,5 k instalačnímu programu společnosti Contoso a nainstalovat japonskou jazykovou sadu, přidejte do procesu instalace aplikace následující příkaz:
+- Pokud používáte webový instalační program, můžete k zadání jazykové sady použít možnost `/LCID`. Chcete-li například zřetězit webový instalátor .NET Framework 4,5 k instalačnímu programu společnosti Contoso a nainstalovat japonskou jazykovou sadu, přidejte do procesu instalace aplikace následující příkaz:
 
     `dotNetFx45_Full_setup.exe /q /norestart /ChainingPackage Contoso /LCID 1041`
 
@@ -254,7 +252,7 @@ Pokud máte vlastní instalační balíček, můžete chtít spustit tichou inst
 
 ### <a name="detecting-the-net-framework"></a>Zjišťování .NET Framework
 
-Instalační program .NET Framework zapisuje klíče registru po úspěšném dokončení instalace. Můžete otestovat, jestli je nainstalovaná .NET Framework 4,5 nebo novější, a to tak, že zkontrolujete složku `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` v registru pro hodnotu `DWORD` s názvem `Release`. (Všimněte si, že ".NET Framework Setup" nezačíná tečkou.) Existence tohoto klíče indikuje, že na tomto počítači je nainstalovaná .NET Framework 4,5 nebo novější verze. Hodnota `Release` označuje, která verze .NET Framework je nainstalována.
+Instalační program .NET Framework zapisuje klíče registru po úspěšném dokončení instalace. Můžete otestovat, jestli je nainstalovaná .NET Framework 4,5 nebo novější, a to tak, že zkontrolujete složku `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` v registru pro hodnotu `DWORD` s názvem `Release`. (Všimněte si, že ".NET Framework Setup" nezačíná tečkou.) Existence tohoto klíče indikuje, že na tomto počítači je nainstalovaná .NET Framework 4,5 nebo novější verze. Hodnota `Release` určuje, která verze .NET Framework je nainstalována.
 
 > [!IMPORTANT]
 > Při pokusu o zjištění, zda je k dispozici konkrétní verze, byste měli zjistit hodnotu, která je **větší nebo rovna** hodnotě klíčového slova verze.
@@ -279,12 +277,12 @@ Instalační program .NET Framework zapisuje klíče registru po úspěšném do
 |.NET Framework 4,6 nainstalované na všech jiných verzích operačních systémů než Windows 10|393297|
 |.NET Framework 4.5.2|379893|
 |.NET Framework 4.5.1 nainstalováno s [!INCLUDE[win81](../../../includes/win81-md.md)] nebo Windows Server 2012 R2|378675|
-|.NET Framework 4.5.1 nainstalován v [!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7|378758|
+|.NET Framework 4.5.1 nainstalované v [!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7|378758|
 |.NET Framework 4.5|378389|
 
 ### <a name="detecting-the-language-packs"></a>Zjišťují se jazykové sady.
 
-Můžete otestovat, jestli je konkrétní jazyková sada nainstalovaná, kontrolou složky HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full @ no__t-0*LCID* v registru pro hodnotu DWORD s názvem `Release`. (Všimněte si, že ".NET Framework Setup" nezačíná tečkou.) *LCID* Určuje identifikátor národního prostředí; Seznam těchto seznamů najdete v části [podporované jazyky](#supported-languages) .
+Můžete otestovat, jestli je konkrétní jazyková sada nainstalovaná, kontrolou složky HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\\*LCID* v registru pro hodnotu DWORD s názvem `Release`. (Všimněte si, že ".NET Framework Setup" nezačíná tečkou.) *LCID* Určuje identifikátor národního prostředí; Seznam těchto seznamů najdete v části [podporované jazyky](#supported-languages) .
 
 Chcete-li například zjistit, zda je nainstalována úplná japonská jazyková sada (LCID = 1041), načtěte z registru následující pojmenovanou hodnotu:
 
@@ -325,13 +323,13 @@ Pokud chcete zjistit, jestli je nainstalovaná konečná verze jazykové sady pr
 > [!IMPORTANT]
 > Jazykové sady neobsahují .NET Framework komponenty, které jsou nutné ke spuštění aplikace. před instalací jazykové sady je nutné nainstalovat .NET Framework pomocí webového nebo offline instalačního programu.
 
-Počínaje .NET Framework 4.5.1 mají názvy balíčků formu NDP < `version` >-KB < `number` >-x86-x64-povolit-< `culture` >. exe, kde `version` je číslo verze .NET Framework, `number` je článek znalostní báze Microsoft Knowledge Base. číslo a `culture` Určuje [zemi nebo oblast](#supported-languages). Příkladem jednoho z těchto balíčků je `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`. Názvy balíčků jsou uvedené v části [Distribuovatelný balíčky](#redistributable-packages) výše v tomto článku.
+Počínaje .NET Framework 4.5.1 mají názvy balíčků formu NDP <`version`>-KB <`number`>-x86-x64 – povolit – <`culture`>. exe, kde `version` je číslo verze .NET Framework, `number` je znalostní báze Microsoft Knowledge Base. číslo článku a `culture` Určuje [zemi nebo oblast](#supported-languages). Příkladem jednoho z těchto balíčků je `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`. Názvy balíčků jsou uvedené v části [Distribuovatelný balíčky](#redistributable-packages) výše v tomto článku.
 
 Chcete-li nainstalovat jazykovou sadu pomocí instalačního programu .NET Framework v režimu offline, musíte ji zřetězit k instalaci vaší aplikace. Pokud například chcete nasadit instalační program pro .NET Framework 4.5.1 offline pomocí japonské jazykové sady, použijte následující příkaz:
 
 `NDP451-KB2858728-x86-x64-AllOS-JPN.exe /q /norestart /ChainingPackage <ProductName>`
 
-Pokud používáte webovou Instalační službu, nemusíte zřetězit jazykové sady. Instalační program nainstaluje jazykovou sadu, která odpovídá nastavení MUI uživatele. Pokud chcete nainstalovat jiný jazyk, můžete použít možnost `/LCID` a zadat tak jazykovou sadu.
+Pokud používáte webovou Instalační službu, nemusíte zřetězit jazykové sady. Instalační program nainstaluje jazykovou sadu, která odpovídá nastavení MUI uživatele. Pokud chcete nainstalovat jiný jazyk, můžete použít možnost `/LCID` k určení jazykové sady.
 
 Úplný seznam možností příkazového řádku najdete v části [Možnosti příkazového řádku](#command-line-options) .
 
@@ -370,7 +368,7 @@ Podívejte se na následující obsah:
 
 ## <a name="uninstalling-the-net-framework"></a>Odinstalace .NET Framework
 
-Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)] můžete odinstalovat .NET Framework 4,5 nebo některou z jeho vydání bodů pomocí **Možnosti zapnout nebo vypnout funkce systému Windows** v Ovládacích panelech. Ve starších verzích Windows můžete odinstalovat .NET Framework 4,5 nebo některé z jeho vydání bodů pomocí ovládacího panelu **Přidat nebo odebrat programy** .
+Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)]můžete odinstalovat .NET Framework 4,5 nebo některou z jeho vydání bodů pomocí **Možnosti zapnout nebo vypnout funkce systému Windows** v Ovládacích panelech. Ve starších verzích Windows můžete odinstalovat .NET Framework 4,5 nebo některé z jeho vydání bodů pomocí ovládacího panelu **Přidat nebo odebrat programy** .
 
 > [!IMPORTANT]
 > V systémech Windows 7 a starších operačních systémech odinstalování .NET Framework 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 nebo 4,8 neobnoví .NET Framework 4,5 soubory a odinstaluje .NET Framework 4,5 neobnoví .NET Framework 4 soubory. Pokud se chcete vrátit na starší verzi, je nutné ji znovu nainstalovat a všechny její aktualizace.
@@ -385,7 +383,7 @@ V následující tabulce jsou uvedeny možnosti, které můžete zahrnout při z
 |------------|-----------------|
 |**/CEIPConsent**|Přepíše výchozí chování a pošle anonymní zpětnou vazbu Microsoftu, aby vylepšil budoucí prostředí nasazení. Tuto možnost lze použít pouze v případě, že instalační program vyzve k zadání souhlasu a pokud uživatel udělí oprávnění k odeslání anonymní zpětné vazby společnosti Microsoft.|
 |**/chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají společnosti Microsoft jako anonymní zpětná vazba, která pomáhá zlepšovat budoucí prostředí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "Lucerne Publishing"** . Příklad zřetězení balíčku najdete v tématu [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
-|**/LCID**  `LCID`<br /><br /> kde `LCID` určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykovou sadu určenou parametrem `LCID` a vynutí zobrazení zobrazeného uživatelského rozhraní v tomto jazyce, není-li nastaven tichý režim.<br /><br /> Pro webovou Instalační službu tento řetěz možností – nainstaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalačním programem.|
+|**/LCID**`LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykovou sadu určenou v `LCID` a vynutí zobrazení zobrazeného uživatelského rozhraní v tomto jazyce, není-li nastaven tichý režim.<br /><br /> Pro webovou Instalační službu tento řetěz možností – nainstaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalačním programem.|
 |**/log** `file` &#124; `folder`|Určuje umístění souboru protokolu. Výchozím nastavením je dočasná složka pro daný proces a výchozí název souboru je založen na balíčku. Je-li Přípona souboru. txt, je vytvořen textový protokol. Pokud zadáte jiné rozšíření nebo žádné rozšíření, vytvoří se protokol HTML.|
 |**/msioptions**|Určuje možnosti, které se mají předat pro položky. msi a. msp; například: `/msioptions "PROPERTY1='Value'"`.|
 |**/norestart**|Zabraňuje automatickému restartování instalačního programu. Použijete-li tuto možnost, musí zřetězená aplikace zachytit návratový kód a zpracovat restartování (viz část [získání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
@@ -403,7 +401,7 @@ V následující tabulce jsou uvedeny možnosti, které můžete zahrnout při z
 
 V následující tabulce jsou uvedeny .NET Framework jazykové sady, které jsou k dispozici pro .NET Framework 4,5 a jejich verze.
 
-|IDENTIFIKÁTORY|Jazyk – země/oblast|Jazykových|
+|IDENTIFIKÁTORY|Jazyk – země/oblast|jazykových|
 |----------|--------------------------------|-------------|
 |1025|Arabština – Saúdská Arábie|snížen|
 |1028|Čínština – tradiční|zh – Hant|

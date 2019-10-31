@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d231044e-2b53-4836-93f9-8117ff0e5c3a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ba0c2ea7733f098b7fac95f51b5eb16d083174e8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 302db0d029b3811d151473323a7a60bd16a00ec1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779375"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131236"
 ---
 # <a name="eclrunhandledexception-enumeration"></a>EClrUnhandledException – výčet
-Popisuje dostupné možnosti pro správu výjimek, které se neošetří v uživatelském kódu.  
+Popisuje dostupné možnosti pro správu výjimek, které jsou v uživatelském kódu neošetřené.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eRuntimeDeterminedPolicy`|Určuje, že dochází k výchozí chování. Proces iframeworkview.|  
-|`eHostDeterminedPolicy`|Určuje, že common language runtime (CLR) ignoruje neošetřené výjimky a tato funkce umožňuje hostiteli zjistit žádnou další akci.|  
+|`eRuntimeDeterminedPolicy`|Určuje, že dojde k výchozímu chování. Proces se odpojí.|  
+|`eHostDeterminedPolicy`|Určuje, že modul CLR (Common Language Runtime) ignoruje neošetřené výjimky a umožňuje hostiteli určit jakoukoli další akci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li určit, že modul CLR se chovají jako předchozí verze, použijte `eHostDeterminedPolicy` člena.  
+ Chcete-li určit, že se CLR chová jako starší verze, použijte člena `eHostDeterminedPolicy`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

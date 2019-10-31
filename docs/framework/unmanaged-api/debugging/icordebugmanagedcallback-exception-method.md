@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ab18a509-dff3-4930-b585-bd15e0414176
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e944a6debf790907b75760c8856ae3a365a84650
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: af2dab65629093401219f1016538b912bee4d067
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759618"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130816"
 ---
 # <a name="icordebugmanagedcallbackexception-method"></a>ICorDebugManagedCallback::Exception – metoda
-Upozorní ladicího programu, že byla vyvolána výjimka ze spravovaného kódu.  
+Oznamuje ladicímu programu, že byla vyvolána výjimka ze spravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +37,25 @@ HRESULT Exception (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém byla výjimka vydána.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve které byla vyvolána výjimka.  
   
  `pThread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byla výjimka vydána.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, ve kterém byla vyvolána výjimka.  
   
  `unhandled`  
- [in] Pokud je tato hodnota `false`, výjimky nebyl dosud byl zpracovaná aplikace; v opačném případě, výjimka neošetřená a bude ukončen proces.  
+ pro Pokud je tato hodnota `false`, výjimka ještě nebyla zpracována aplikací; v opačném případě je výjimka neošetřená a ukončí proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Specifické výjimky mohou být načteny z objektu vlákna.  
+ Konkrétní výjimku lze načíst z objektu vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

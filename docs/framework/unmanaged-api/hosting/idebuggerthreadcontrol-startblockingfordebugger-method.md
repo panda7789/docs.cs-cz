@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c8f11b4-35d3-4c39-9bbd-58b896ba5ba6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1cb314f2afce0cbbf1c5fb185f516a30ad8313af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 72f7bee79e74c69acff90861ceada8a91afe2157
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780509"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134919"
 ---
 # <a name="idebuggerthreadcontrolstartblockingfordebugger-method"></a>IDebuggerThreadControl::StartBlockingForDebugger – metoda
-Upozorňuje hostitele, spustí blokující všechna vlákna jsou ladění služby.  
+Upozorňuje hostitele, že se chystá služby ladění zahájit blokování všech vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT StartBlockingForDebugger (
   
 ## <a name="parameters"></a>Parametry  
  `dwUnused`  
- [in] Vyhrazeno pro budoucí použití.  
+ pro Vyhrazeno pro budoucí použití.  
   
 ## <a name="remarks"></a>Poznámky  
- `StartBlockingForDebugger` Metoda může být volána ve vlákně modulu runtime.  
+ Metoda `StartBlockingForDebugger` mohla být volána ve vlákně modulu runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

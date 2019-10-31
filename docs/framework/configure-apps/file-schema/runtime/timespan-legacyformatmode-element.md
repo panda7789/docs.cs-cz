@@ -8,21 +8,19 @@ helpviewer_keywords:
 - <TimeSpan_LegacyFormatMode> element
 - TimeSpan_LegacyFormatMode element
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 64bf667c5c9bc20db14f08f18fa6f4f84fa12a24
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c835e1bcef7bbfdc990c8db177eafed4ec6bb30c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252255"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115204"
 ---
-# <a name="timespan_legacyformatmode-element"></a>\<TimeSpan_LegacyFormatMode – element >
+# <a name="timespan_legacyformatmode-element"></a>\<element > TimeSpan_LegacyFormatMode
 
-Určuje, zda modul runtime zachovává starší chování při formátování operací <xref:System.TimeSpan?displayProperty=nameWithType> s hodnotami.
+Určuje, zda modul runtime zachovává starší chování při formátování operací s <xref:System.TimeSpan?displayProperty=nameWithType> hodnotami.
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<TimeSpan_LegacyFormatMode >**  
 
 ## <a name="syntax"></a>Syntaxe
@@ -40,11 +38,11 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá chování formátování starší <xref:System.TimeSpan?displayProperty=nameWithType> verze s hodnotami.|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá chování při formátování starší verze s <xref:System.TimeSpan?displayProperty=nameWithType>mi hodnotami.|
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
 |`false`|Modul runtime neobnovuje chování při formátování starší verze.|
 |`true`|Modul runtime obnoví chování formátování starší verze.|
@@ -62,15 +60,15 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-Počínaje .NET Framework 4 <xref:System.TimeSpan?displayProperty=nameWithType> struktura <xref:System.IFormattable> implementuje rozhraní a podporuje operace formátování pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy narazí na nepodporovaný specifikátor formátu nebo formátovací řetězec, vyvolá <xref:System.FormatException>.
+Počínaje .NET Framework 4 struktura <xref:System.TimeSpan?displayProperty=nameWithType> implementuje rozhraní <xref:System.IFormattable> a podporuje operace formátování pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy narazí na nepodporovaný specifikátor formátu nebo formátovací řetězec, vyvolá <xref:System.FormatException>.
 
-V předchozích verzích .NET Framework <xref:System.TimeSpan> struktura neimplementovala <xref:System.IFormattable> a nepodporovala řetězce formátu. Mnoho vývojářů však omylem nepředpokládalo <xref:System.TimeSpan> , že podporovaly sadu formátovacích řetězců a používají je ve [složených formátovacích operacích](../../../../standard/base-types/composite-formatting.md) s <xref:System.String.Format%2A?displayProperty=nameWithType>metodami, jako je například. V případě, že typ implementuje <xref:System.IFormattable> a podporuje řetězce formátu, volání metod formátování s nepodporovanými řetězci formátu obvykle <xref:System.FormatException>vyvolají. Protože <xref:System.TimeSpan> však neimplementoval <xref:System.IFormattable>, modul runtime ignoruje <xref:System.TimeSpan.ToString?displayProperty=nameWithType> řetězec formátu a místo toho se nazývá metoda. To znamená, že přestože formátovací řetězce neobsahovaly žádný vliv na operaci formátování, jejich přítomnost nezpůsobila <xref:System.FormatException>.
+V předchozích verzích .NET Framework <xref:System.TimeSpan> struktura neimplementovala <xref:System.IFormattable> a nepodporovala řetězce formátu. Mnoho vývojářů však omylem nepředpokládalo, že <xref:System.TimeSpan> podporovala sadu formátovacích řetězců a použila je ve [složených operacích formátování](../../../../standard/base-types/composite-formatting.md) s metodami, jako je <xref:System.String.Format%2A?displayProperty=nameWithType>. V případě, že typ implementuje <xref:System.IFormattable> a podporuje řetězce formátu, volání metod formátování s nepodporovanými řetězci formátu obvykle vyvolají <xref:System.FormatException>. Vzhledem k tomu, že <xref:System.TimeSpan> neimplementoval <xref:System.IFormattable>, modul runtime ignoruje řetězec formátu a místo toho volal metodu <xref:System.TimeSpan.ToString?displayProperty=nameWithType>. To znamená, že přestože formátovací řetězce neobsahovaly žádný vliv na operaci formátování, jejich přítomnost nemá za následek <xref:System.FormatException>.
 
-V případech, kdy starší verze kódu projde metodou složeného formátování a neplatným formátovacím řetězcem a tento kód nelze znovu zkompilovat, lze pomocí `<TimeSpan_LegacyFormatMode>` elementu obnovit starší verze <xref:System.TimeSpan> chování. Když `enabled` nastavíte atribut tohoto elementu na `true`, metoda složeného formátování <xref:System.TimeSpan.ToString?displayProperty=nameWithType> způsobí volání namísto <xref:System.TimeSpan.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>a <xref:System.FormatException> není vyvolána.
+V případech, kdy starší verze kódu projde metodou složeného formátování a neplatným formátovacím řetězcem, a tento kód nelze znovu zkompilovat, lze použít prvek `<TimeSpan_LegacyFormatMode>` k obnovení starších <xref:System.TimeSpan> chování. Nastavíte-li atribut `enabled` tohoto prvku na hodnotu `true`, výsledkem metody složeného formátování je volání <xref:System.TimeSpan.ToString?displayProperty=nameWithType> spíše než <xref:System.TimeSpan.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>a <xref:System.FormatException> není vyvolána.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad vytvoří instanci <xref:System.TimeSpan> objektu a pokusí se ho naformátovat <xref:System.String.Format%28System.String%2CSystem.Object%29?displayProperty=nameWithType> pomocí metody pomocí nepodporovaného standardního formátovacího řetězce.
+Následující příklad vytvoří instanci objektu <xref:System.TimeSpan> a pokusí se ho naformátovat pomocí metody <xref:System.String.Format%28System.String%2CSystem.Object%29?displayProperty=nameWithType> pomocí nepodporovaného standardního formátovacího řetězce.
 
 [!code-csharp[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/timespan.breakingchanges/cs/legacyformatmode1.cs#1)]
 [!code-vb[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/timespan.breakingchanges/vb/legacyformatmode1.vb#1)]

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_Delete function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4bc26a16650a5beecc17898e0421e79536713deb
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e7bedcb5c56f9976f8dfd2619081971075d0d809
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798335"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127299"
 ---
 # <a name="qualifierset_delete-function"></a>QualifierSet_Delete – funkce
 Odstraní zadaný kvalifikátor podle názvu.  
@@ -53,24 +51,24 @@ pro Název kvalifikátoru, který se má odstranit
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszName` Parametr není platný. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr `wszName` není platný. |
 |`WBEM_E_INVALID_OPERATION` | 0x80041016 | Odstranění tohoto kvalifikátoru je neplatné. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný kvalifikátor nebyl nalezen. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 | `WBEM_S_RESET_TO_DEFAULT` | 0x40002 | Místní přepsání bylo odstraněno a původní kvalifikátor z nadřazeného objektu má obnovený rozsah. |
 
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalomí volání metody [IWbemQualifierSet::D dstranit](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-delete) .
 
-Z důvodu pravidel šíření kvalifikátoru mohl být určitý kvalifikátor zděděný z jiného objektu a pouze přepsán v aktuální třídě nebo instanci. V tomto případě `QualifierSet_Delete` metoda obnoví kvalifikátor na původní zděděnou hodnotu. Funkce v tomto případě vrátí stavový kód `WBEM_S_RESET_TO_DEFAULT`.
+Z důvodu pravidel šíření kvalifikátoru mohl být určitý kvalifikátor zděděný z jiného objektu a pouze přepsán v aktuální třídě nebo instanci. V tomto případě metoda `QualifierSet_Delete` resetuje kvalifikátor na původní zděděnou hodnotu. Funkce v tomto případě vrátí stavový kód `WBEM_S_RESET_TO_DEFAULT`.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

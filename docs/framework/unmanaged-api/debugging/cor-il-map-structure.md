@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 534ebc17-963d-4b26-8375-8cd940281db3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5ae4c5743b01c4a9087323678d315473631cb32f
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: c37f039d9636854c464e7981693c573bd60deab9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274041"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132346"
 ---
 # <a name="cor_il_map-structure"></a>COR_IL_MAP – struktura
 Určuje změny relativního posunu funkce.  
@@ -42,10 +40,10 @@ typedef struct _COR_IL_MAP {
 |------------|-----------------|  
 |`oldOffset`|Starý posun jazyka MSIL (Microsoft Intermediate Language) vzhledem k začátku funkce.|  
 |`newOffset`|Nový posun MSIL vzhledem k začátku funkce.|  
-|`fAccurate`|`true`je-li mapování známo, že je přesné; v opačném případě. `false`|  
+|`fAccurate`|`true`, pokud je známé správné mapování; v opačném případě `false`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Formát mapy je následující: Ladicí program bude předpokládat, `oldOffset` že odkazuje na posun MSIL v rámci původního nezměněného kódu jazyka MSIL. `newOffset` Parametr odkazuje na odpovídající posun MSIL v rámci nového, instrumentované kódu.  
+ Formát mapy je následující: ladicí program předpokládá, že `oldOffset` odkazuje na posun MSIL v rámci původního neupraveného kódu jazyka MSIL. Parametr `newOffset` odkazuje na odpovídající posun MSIL v rámci nového, instrumentované kódu.  
   
  Aby krokování fungovalo správně, měli byste splnit následující požadavky:  
   
@@ -82,11 +80,11 @@ typedef struct _COR_IL_MAP {
 - Nový posun o hodnotě 20 nebo vyšší bude mapován na starý posun 9.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorProf. idl  
+ **Hlavička:** CorDebug. idl, CorProf. idl  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

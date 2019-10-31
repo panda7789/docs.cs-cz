@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 2709f18f-3eee-497f-bc33-3ab7a485599b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8edd2a42ed1b826e1b6ea09e92165bc9fa967a8b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 970468bc2f50144c62c6e3cbcf9c00c2027f7663
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760248"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138185"
 ---
 # <a name="fexecuteinappdomaincallback-function-pointer"></a>FExecuteInAppDomainCallback – ukazatel na funkci
-Odkazuje na funkci, která je volána modulem common language runtime (CLR) pro spuštění spravovaného kódu.  
+Odkazuje na funkci, která je volána modulem CLR (Common Language Runtime) ke spuštění spravovaného kódu.  
   
- Tento ukazatel na funkci se již nepoužívá v rozhraní .NET Framework 4.  
+ Tento ukazatel funkce je zastaralý v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +36,18 @@ typedef HRESULT (__stdcall *FExecuteInAppDomainCallback) (
   
 ## <a name="parameters"></a>Parametry  
  `cookie`  
- [in] Ukazatel na neprůhledné paměť přidělenou volajícímu, který obsahuje spravovaný kód, který se spustí.  
+ pro Ukazatel na neprůhlednou paměť přidělenou volajícímu, která obsahuje spravovaný kód, který má být proveden.  
   
- Přidělování a životnosti tato paměť se řídí volající (modulu CLR). Toto není spravované haldy paměti CLR.  
+ Přidělení a životnost této paměti jsou ovládány volajícím (to znamená CLR). Toto není spravovaná technologie CLR – paměť haldy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorWks.dll  
+ **Knihovna:** Knihovny Mscorwks. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

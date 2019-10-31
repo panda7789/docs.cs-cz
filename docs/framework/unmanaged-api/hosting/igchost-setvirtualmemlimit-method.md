@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7e7c2d0-e58c-4650-b40c-47b2be2cda45
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c43c2259d5b899f05e42437aa121dde57ce4b0c8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c060e4883335a8318970b5fbd74bf72c9e13f5bf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766481"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134866"
 ---
 # <a name="igchostsetvirtualmemlimit-method"></a>IGCHost::SetVirtualMemLimit – metoda
 Nastaví maximální velikost virtuální paměti modulu runtime.  
@@ -37,19 +35,19 @@ HRESULT SetVirtualMemLimit (
   
 ## <a name="parameters"></a>Parametry  
  `sztMaxVirtualMemMB`  
- [in] Maximální velikost v megabajtech, modul runtime virtuální paměti.  
+ pro Maximální velikost virtuální paměti modulu runtime v megabajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Maximální velikost virtuální paměti modulu runtime můžete změnit dynamicky.  
+ Maximální velikost virtuální paměti modulu runtime lze změnit dynamicky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

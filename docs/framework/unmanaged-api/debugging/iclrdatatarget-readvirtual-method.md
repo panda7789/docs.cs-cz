@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: da3769eb-1828-4aa1-b9ed-db4842136a43
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f7911d09c97c5401bff827ca5fb0a8766933778f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c26a2df3f73af5ebd1f8b735d7662bb23ba4228
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738668"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134165"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual – metoda
-Načte data z adresy zadaná virtuální paměti do zadané vyrovnávací paměti.  
+Načte data ze zadané adresy virtuální paměti do zadané vyrovnávací paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT ReadVirtual (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] CLRDATA_ADDRESS, která ukládá adresu virtuální paměti.  
+ pro CLRDATA_ADDRESS, který ukládá adresu virtuální paměti.  
   
  `buffer`  
- [out] Ukazatel do vyrovnávací paměti, která přijímá data.  
+ mimo Ukazatel na vyrovnávací paměť, která přijímá data.  
   
  `bytesRequested`  
- [in] Délka vyrovnávací paměti.  
+ pro Délka vyrovnávací paměti.  
   
  `bytesRead`  
- [out] Ukazatel na počet bajtů vrácených.  
+ mimo Ukazatel na počet vrácených bajtů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

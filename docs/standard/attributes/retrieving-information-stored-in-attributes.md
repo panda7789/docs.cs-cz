@@ -11,20 +11,18 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8873b4938f654213bd659631175ba4526a35dcc3
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: fe5bb95d5e1f90c0dafa30977d76ea1d62125c99
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957344"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130882"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Načítání informací uložených v atributech
-Načítání vlastního atributu je jednoduchý proces. Nejprve deklarujte instanci atributu, který chcete načíst. Pak použijte metodu <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pro inicializaci nového atributu na hodnotu atributu, který chcete načíst. Po inicializaci nového atributu jednoduše použijete jeho vlastnosti k získání hodnot.  
+Načítání vlastního atributu je jednoduchý proces. Nejprve deklarujte instanci atributu, který chcete načíst. Pak použijte metodu <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> k inicializaci nového atributu na hodnotu atributu, který chcete načíst. Po inicializaci nového atributu jednoduše použijete jeho vlastnosti k získání hodnot.  
   
 > [!IMPORTANT]
-> Toto téma popisuje, jak načíst atributy pro kód načtený do kontextu spuštění. Chcete-li načíst atributy pro kód načtený do kontextu pouze pro reflexi, je nutné použít třídu <xref:System.Reflection.CustomAttributeData>, jak je znázorněno v tématu [How to: Loading Assemblies into pouze reflexe Context](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+> Toto téma popisuje, jak načíst atributy pro kód načtený do kontextu spuštění. Chcete-li načíst atributy pro kód načtený do kontextu pouze pro reflexi, je nutné použít třídu <xref:System.Reflection.CustomAttributeData>, jak je znázorněno v tématu [How to: Loading Assemblies in a Only reflexe Context](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
  Tato část popisuje následující způsoby načtení atributů:  
   
@@ -50,7 +48,7 @@ The Level Attribute is: 42.
 The Reviewed Attribute is: True.  
 ```  
   
- Pokud atribut nebyl nalezen, metoda **GetCustomAttribute** inicializuje `MyAttribute` na hodnotu null. Tento příklad kontroluje `MyAttribute` pro takovou instanci a upozorní uživatele, pokud není nalezen žádný atribut. Pokud se `DeveloperAttribute` nenajde v oboru třídy, zobrazí se v konzole následující zpráva.  
+ Pokud atribut nebyl nalezen, metoda **GetCustomAttribute** inicializuje `MyAttribute` na hodnotu null. Tento příklad kontroluje `MyAttribute` pro takovou instanci a upozorní uživatele, pokud není nalezen žádný atribut. Pokud `DeveloperAttribute` nebyl nalezen v oboru třídy, zobrazí se následující zpráva do konzoly.  
   
 ```console  
 The attribute was not found.   
@@ -60,7 +58,7 @@ The attribute was not found.
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtosamescope"></a>   
 ## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a>Načítání více instancí atributu použitých pro stejný obor  
- V předchozím příkladu je třída, která se má zkontrolovat, a konkrétní atribut, který se má najít, předávají <xref:System.Attribute.GetCustomAttribute%2A>. Tento kód funguje dobře, pokud na úrovni třídy je použita pouze jedna instance atributu. Nicméně pokud je více instancí atributu použito na stejné úrovni třídy, metoda **GetCustomAttribute** nenačte všechny informace. V případech, kdy je v jednom oboru použito více instancí stejného atributu, lze použít <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> k umístění všech instancí atributu do pole. Například pokud jsou dvě instance `DeveloperAttribute` aplikovány na úrovni třídy stejné třídy, metoda `GetAttribute` může být upravena tak, aby zobrazovala informace nalezené v obou atributech. Nezapomeňte, že pokud chcete použít více atributů na stejné úrovni, musí být atribut definován s vlastností **AllowMultiple** nastavenou na **hodnotu true** v <xref:System.AttributeUsageAttribute>.  
+ V předchozím příkladu třída, která se má zkontrolovat, a konkrétní hledaný atribut jsou předány <xref:System.Attribute.GetCustomAttribute%2A>. Tento kód funguje dobře, pokud na úrovni třídy je použita pouze jedna instance atributu. Nicméně pokud je více instancí atributu použito na stejné úrovni třídy, metoda **GetCustomAttribute** nenačte všechny informace. V případech, kdy je v rámci stejného oboru použito více instancí stejného atributu, lze použít <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> k umístění všech instancí atributu do pole. Například pokud jsou dvě instance `DeveloperAttribute` použity na úrovni třídy stejné třídy, lze metodu `GetAttribute` upravit tak, aby zobrazovala informace nalezené v obou atributech. Nezapomeňte, že pokud chcete použít více atributů na stejné úrovni, musí být atribut definován s vlastností **AllowMultiple** nastavenou na **hodnotu true** v <xref:System.AttributeUsageAttribute>.  
   
  Následující příklad kódu ukazuje, jak použít metodu **GetCustomAttributes** k vytvoření pole, které odkazuje na všechny instance `DeveloperAttribute` v jakékoli dané třídě. Hodnoty všech atributů se pak zobrazí v konzole nástroje.  
   
@@ -80,9 +78,9 @@ The attribute was not found.
  [!code-csharp[Conceptual.Attributes.Usage#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#20)]
  [!code-vb[Conceptual.Attributes.Usage#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#20)]  
   
- Pokud nejsou nalezeny žádné instance `DeveloperAttribute` na úrovni metody nebo třídy, metoda `GetAttribute` upozorní uživatele, že nebyly nalezeny žádné atributy, a zobrazí název metody nebo třídy, která atribut neobsahuje. Pokud je nalezen atribut, pole `Name`, `Level` a `Reviewed` se zobrazí v konzole nástroje.  
+ Pokud nejsou nalezeny žádné instance `DeveloperAttribute` na úrovni metody nebo třídy, metoda `GetAttribute` uživatele upozorní, že nebyly nalezeny žádné atributy, a zobrazí název metody nebo třídy, která atribut neobsahuje. Pokud je nalezen atribut, pole `Name`, `Level`a `Reviewed` se zobrazí v konzole nástroje.  
   
- Pomocí členů třídy <xref:System.Type> můžete získat jednotlivé metody a členy v předané třídě. Tento příklad nejprve vyhledá objekt **typu** , aby získal informace o atributu pro úroveň třídy. Dále používá <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> k umístění instancí všech metod do pole objektů <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> pro načtení informací o atributu pro úroveň metody. Můžete také použít metodu <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> pro kontrolu atributů na úrovni vlastnosti nebo <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> pro kontrolu atributů na úrovni konstruktoru.  
+ Pomocí členů třídy <xref:System.Type> lze získat jednotlivé metody a členy v předané třídě. Tento příklad nejprve vyhledá objekt **typu** , aby získal informace o atributu pro úroveň třídy. Dále používá <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> k umístění instancí všech metod do pole objektů <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> pro načtení informací o atributu pro úroveň metody. Můžete také použít metodu <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> pro kontrolu atributů na úrovni vlastnosti nebo <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> pro kontrolu atributů na úrovni konstruktoru.  
   
 ## <a name="see-also"></a>Viz také:
 

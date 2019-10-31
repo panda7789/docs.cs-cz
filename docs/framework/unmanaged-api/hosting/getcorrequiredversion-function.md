@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 1588fe7b-c378-4f4b-9c4b-48647f1119cc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8597b68b75d2b5f77f68fc13c3fb78bfdae46178
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 661eb758e1651901bb56810640a68f0de0b4e851
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736288"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136482"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion – funkce
-Získá požadované common language runtime (CLR) číslo verze.  
+Získá požadované číslo verze modulu CLR (Common Language Runtime).  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT GetCORRequiredVersion (
   
 ## <a name="parameters"></a>Parametry  
  `pbuffer`  
- [out] Vyrovnávací paměti, který obsahuje řetězec, který určuje číslo verze.  
+ mimo Vyrovnávací paměť obsahující řetězec, který určuje číslo verze.  
   
  `cchBuffer`  
- [in] Velikost v bajtech, vyrovnávací paměti.  
+ pro Velikost vyrovnávací paměti v bajtech.  
   
  `dwLength`  
- [out] Počet bajtů vrácených ve vyrovnávací paměti.  
+ mimo Počet bajtů vrácených ve vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

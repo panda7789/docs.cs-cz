@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CloneEnumWbemClassObject function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1605314f94fd82d2a2cd7be105dde9e273f607bc
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9d2442161aaa83693a33f9efc230c09b8c4426e2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798694"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128724"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>Funkce CloneEnumWbemClassObject
 Vytvoří logickou kopii enumerátoru a uchová jeho aktuální pozici ve výčtu.
@@ -68,13 +66,13 @@ pro Heslo. Další informace najdete v tématu funkce [ConnectServerWmi](connect
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není k dispozici dostatek paměti. |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraním WMI se nezdařilo. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+| `WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -89,9 +87,9 @@ Pokud volání funkce neproběhne úspěšně, můžete získat další informac
 Příklad naleznete v tématu metoda [IEnumWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) .
 
 ## <a name="requirements"></a>Požadavky
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
- **Hlaviček** WMINet_Utils.idl
+ **Hlavička:** WMINet_Utils. idl
 
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

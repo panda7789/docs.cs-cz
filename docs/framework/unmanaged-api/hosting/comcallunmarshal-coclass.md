@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2adb5827-2268-4914-a1c6-f62b61880a45
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fde42e3ecfac81a168920bc152833be7ba72b995
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38f3140a181deae1a86569bfc2eb7cf3cd7d1991
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779080"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131931"
 ---
 # <a name="comcallunmarshal-coclass"></a>ComCallUnmarshal – třída typu coclass
-Poskytuje rozhraní pro správu zařazování ukazatele rozhraní.  
+Poskytuje rozhraní pro správu zařazování ukazatelů rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +36,16 @@ coclass ComCallUnmarshal {
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
-|`IMarshal`|Poskytuje metody pro vytváření, inicializace a správy proxy serveru v procesu klienta.|  
+|`IMarshal`|Poskytuje metody pro vytváření, inicializaci a správu proxy serveru v klientském procesu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

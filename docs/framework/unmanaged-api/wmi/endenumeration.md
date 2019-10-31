@@ -14,14 +14,12 @@ helpviewer_keywords:
 - EndEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0065dcd25430e102b965d5598c7e9a04c7857eb3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b9fd1f094c8fb56c94421a07437aa25a3549c487
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798810"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132048"
 ---
 # <a name="endenumeration-function"></a>Funkce EndEnumeration
 
@@ -50,22 +48,22 @@ pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbem
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalomí volání metody [IWbemclassObject:: funkce EndEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-Volání `EndEnumeration` funkce není vyžadováno, ale doporučuje se, protože uvolňuje prostředky přidružené k výčtu. Prostředky se ale oddělí automaticky při spuštění dalšího výčtu nebo uvolnění objektu.
+Volání funkce `EndEnumeration` není vyžadováno, ale doporučuje se, protože uvolňuje prostředky přidružené k výčtu. Prostředky se ale oddělí automaticky při spuštění dalšího výčtu nebo uvolnění objektu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

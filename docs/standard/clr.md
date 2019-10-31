@@ -1,5 +1,5 @@
 ---
-title: Přehled modelu Common Language Runtime (CLR) – .NET Framework
+title: Přehled modulu CLR (Common Language Runtime) – .NET Framework
 ms.date: 04/02/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -15,56 +15,54 @@ helpviewer_keywords:
 - source code execution
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
-author: rpetrusha
-ms.author: ronpet
 ms.custom: updateeachrelease
-ms.openlocfilehash: a1e1fd2b7843299fdd8fbd62dbfba6c62a7be50f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c866e3d1a4de31361843f5c071510fd18247cb39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645007"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132816"
 ---
-# <a name="common-language-runtime-clr-overview"></a>Přehled modelu Common Language Runtime (CLR)
+# <a name="common-language-runtime-clr-overview"></a>Modul CLR (Common Language Runtime) – přehled
 
-Rozhraní .NET Framework poskytuje běhové prostředí volá modul common language runtime, která spustí kód a poskytuje služby, které usnadňují proces vývoje.
+.NET Framework poskytuje běhové prostředí označované jako modul CLR (Common Language Runtime), který spouští kód a poskytuje služby, které usnadňují proces vývoje.
 
-Kompilátory a nástroje poskytují funkcionalitu modulu common language runtime a umožňují také napsat kód, které mají výhody z tohoto spravovaného prostředí pro spouštění. Kód, který vyvíjíte s kompilátorem jazyka, který se zaměřuje na modul runtime se nazývá spravovaný kód. výhody plynou z vlastností, jako je podpory mezi jazykové integrace, mezi jazykové zpracování vyjímek, vylepšené zabezpečení, správy verzí a nasazení, zjednodušený model pro interakci komponent, ladění a profilovací služby.
+Kompilátory a nástroje zpřístupňují funkce modulu CLR (Common Language Runtime) a umožňují psát kód, který je výhodou z tohoto spravovaného prováděcího prostředí. Kód, který vyvíjíte pomocí kompilátoru jazyka, který cílí na modul runtime, se nazývá spravovaný kód; využívá výhody funkcí, jako je například integrace mezi jazyky, zpracování výjimek v různých jazycích, vylepšené zabezpečení, Správa verzí a podpora nasazení, zjednodušený model pro interakci s komponentami a ladění a profilování služeb.
 
 > [!NOTE]
-> Kompilátory a nástroje jsou schopny vytvořit výstup, který modul common language runtime může použít, protože systém typů, formát metadat a prostředí runtime (systém virtuálního spuštění) jsou definovány veřejným standardem jazyka ECMA společné Specifikace infrastruktury. Další informace najdete v tématu [ECMA C# a společné jazykové infrastruktury specifikace](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).
+> Kompilátory a nástroje jsou schopny vytvářet výstupy, které může modul CLR (Common Language Runtime) spotřebovat, protože systém typů, formát metadat a běhové prostředí (virtuální spouštěcí systém) jsou definovány veřejným standardem, společný jazyk ECMA Specifikace infrastruktury Další informace naleznete v tématu [specifikace C# ECMA a Common Language Infrastructure](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).
 
-Pokud chcete povolit modul runtime k poskytování služeb pro spravovaný kód, musí kompilátory jazyka poskytl metadata popisující typy, členy a odkazy ve vašem kódu. Metadata jsou uložena s kódem; každý zaveditelný common language runtime přenosný spustitelný (PE) soubor obsahuje metadata. Modul runtime používá metadata k vyhledání a načtení tříd, rozmístění instancí v paměti, vyřešení vyvolávání metod, generování nativního kódu, vynutit zabezpečení a nastavení hranic kontextu za běhu.
+Aby modul runtime mohl poskytovat služby spravovanému kódu, musí kompilátory jazyka generovat metadata, která popisují typy, členy a odkazy v kódu. Metadata se ukládají s kódem; každý spustitelný společný spustitelný soubor PE (Common Language Runtime) obsahuje metadata. Modul runtime používá metadata k vyhledání a načtení tříd, rozmístění instancí v paměti, řešení vyvolání metod, generování nativního kódu, vymáhání zabezpečení a nastavování hranic kontextu v době běhu.
 
-Modul runtime automaticky zpracovává rozložení objektů a spravuje odkazy na objekty. uvolňuje je, když jsou již používány. Objekty, jejichž existence jsou spravovány tímto způsobem se nazývají spravovaná data. Uvolňování paměti eliminuje nevracení paměti, jakož i některé jiné běžné programovací chyby. Pokud váš kód řízen, můžete použít spravovaná data, nespravovaná data nebo spravovaných i nespravovaných dat ve vaší aplikaci rozhraní .NET Framework. Protože kompilátory jazyka poskytují jejich vlastní typy, jako jsou například primitivní typy pravděpodobně ne vždy znáte (nebo potřebovat znát) určuje, zda vaše data spravována.
+Modul runtime automaticky zpracovává rozložení objektů a spravuje odkazy na objekty a uvolňuje je, když již nejsou používány. Objekty, jejichž životnost se spravují tímto způsobem, se nazývají spravovaná data. Uvolňování paměti eliminuje nevracení paměti a také některé další běžné chyby programování. Pokud je váš kód spravovaný, můžete v aplikaci .NET Framework použít spravovaná data, nespravovaná data nebo spravovaná i nespravovaná data. Vzhledem k tomu, že kompilátory jazyka poskytují své vlastní typy, například primitivní typy, nesmíte vždy znát (nebo potřebujete znát), zda jsou vaše data spravována.
 
-Modul common language runtime usnadňuje návrh komponent a aplikací, jejichž objekty vzájemně komunikují napříč jazyky. Objekty, které jsou napsány v různých jazycích mohou komunikovat mezi sebou a jejich chování může být pevně integrováno. Můžete například definovat třídu a potom použít jiný jazyk k odvození třídy z té původní nebo zavolat metodu ve zdrojové třídě. Můžete také předat instanci třídy metodě třídy napsané v jiném jazyce. Tato integrace napříč jazyky je možné, protože kompilátory a nástroje, které se zaměřují na modul runtime použít obecný systém typů definované modulem runtime a řídí se pravidly modulu runtime pro definování nových typů, stejně jako pro vytváření, používání, uchovávání, a vázání typů.
+Modul CLR (Common Language Runtime) usnadňuje návrh komponent a aplikací, jejichž objekty vzájemně komunikují napříč jazyky. Objekty napsané v různých jazycích mohou vzájemně komunikovat a jejich chování může být pevně integrovaná. Můžete například definovat třídu a potom použít jiný jazyk k odvození třídy z původní třídy nebo volat metodu v původní třídě. Můžete také předat instanci třídy metodě třídy napsané v jiném jazyce. Tato integrace mezi jazyky je možná, protože kompilátory a nástroje jazyka, které cílí na modul runtime, používají společný systém typů definovaný modulem runtime a dodržují pravidla modulu runtime pro definování nových typů a také pro vytváření, používání, zachování a vazba na typy.
 
-Všechny spravované komponenty jako součást svých metadat nesou informaci o součástech a zdrojích, které byly vytvořeny. Modul runtime používá tyto informace k zajištění, že vaše komponenta nebo aplikace má specifikovány verze všeho, co potřebuje, díky tomu váš kód pravděpodobnost zhroucení z důvodu nesplnění nějaké závislosti. Registrační informace a stavová data jsou již uloženy v registru, ve kterém může být složité jejich zavedení a udržovat. Místo toho informace o vámi definovaných typech (a jejich závislostech) uložena s kódem jako metadata. Toto činí úkoly spojené s replikací a odebráním komponent mnohem méně komplikované.
+V rámci svých metadat všechny spravované součásti přenášejí informace o komponentách a prostředcích, na které byly vytvořeny. Modul runtime používá tyto informace k zajištění toho, že vaše komponenta nebo aplikace má specifikované verze všeho, co IT potřebuje, což způsobí, že váš kód bude méně pravděpodobný v důsledku nesplnění závislosti. Informace o registraci a stavová data se už neukládají v registru, kde se můžou obtížně nakládat a udržovat. Místo toho jsou informace o typech, které definujete (a jejich závislosti), uloženy spolu s kódem jako metadata, takže úkoly replikace komponent a odebírání jsou mnohem méně komplikované.
 
-Kompilátory a nástroje poskytují funkcionalitu modulu runtime takovým způsobem, který má být užitečný a intuitivní pro vývojáře. To znamená, že některé funkce modulu runtime může být více patrné v jednom prostředí než v jiném. Možnosti modulu runtime závisí na jaké kompilátory a nástroje jazyka použijete. Například pokud jste vývojář Visual Basic, můžete si všimnout, že se modul common language runtime jazyka Visual Basic má více objektově orientovaných vlastností než před. Modul runtime poskytuje následující výhody:
+Kompilátory a nástroje jazyka zpřístupňují funkcionalitu modulu runtime způsobem, který by měl být užitečný a intuitivní pro vývojáře. To znamená, že některé funkce modulu runtime mohou být více patrné v jednom prostředí než v jiném. Způsob, jakým se můžete setkat s modulem runtime, závisí na tom, jaké kompilátory jazyka nebo nástroje používáte. Například pokud jste vývojář Visual Basic, můžete si všimnout, že s modulem CLR (Common Language Runtime) má jazyk Visual Basic více funkcí orientovaných na objekty než předtím. Modul runtime poskytuje následující výhody:
 
 - Byl vylepšen výkon.
 
-- Schopnost snadno používat komponenty vyvinuté v jiných jazycích.
+- Možnost snadného používání komponent vyvinutých v jiných jazycích.
 
 - Rozšiřitelné typy poskytované knihovnou tříd.
 
-- Jazykové vlastnosti zahrnující například dědičnost, rozhraní a přetížení pro objektově orientované programování.
+- Jazykové funkce, jako je dědičnost, rozhraní a přetížení pro objektově orientované programování.
 
-- Podpora pro explicitní volné zřetězení umožňující vytváření vícevláknových a škálovatelných aplikací.
+- Podpora pro explicitní volné zřetězení, která umožňuje vytváření vícevláknových a škálovatelných aplikací.
 
-- Podpora pro strukturované zpracování výjimek.
+- Podpora strukturovaného zpracování výjimek.
 
-- Podpora pro vlastní atributy.
+- Podpora vlastních atributů.
 
-- Uvolnění paměti.
+- Uvolňování paměti.
 
-- Použití delegátů namísto ukazatelů funkcí pro zvýšení typové bezpečnosti a zabezpečení. Další informace o delegátech naleznete v tématu [obecný systém typů](../../docs/standard/base-types/common-type-system.md).
+- Použití delegátů namísto ukazatelů na funkce pro zvýšení bezpečnosti a zabezpečení typů. Další informace o delegátech naleznete v tématu [Common Type System](../../docs/standard/base-types/common-type-system.md).
 
-## <a name="clr-versions"></a>Verze modulu CLR
+## <a name="clr-versions"></a>Verze CLR
 
-Číslo verze rozhraní .NET Framework není nemusí nutně odpovídat číslu verze modulu CLR, které obsahuje. Následující tabulka ukazuje, jak souvisí čísla dvou verzí:
+Číslo verze .NET Framework nutně neodpovídá číslu verze CLR, který zahrnuje. Následující tabulka ukazuje, jakým způsobem korelují čísla těchto dvou verzí:
 
 |Verze rozhraní .NET Framework|Zahrnuje verzi CLR|
 |----------------------------|--------------------------|
@@ -74,19 +72,19 @@ Kompilátory a nástroje poskytují funkcionalitu modulu runtime takovým způso
 |3.0|2.0|
 |3.5|2.0|
 |4|4|
-|4.5 (včetně 4.5.1 a 4.5.2)|4|
-|4.6 (včetně 4.6.1 a 4.6.2)|4|
-|4.7 (včetně 4.7.1 a 4.7.2)|4|
-|4.8|4|
+|4,5 (včetně 4.5.1 a 4.5.2)|4|
+|4,6 (včetně 4.6.1 a 4.6.2)|4|
+|4,7 (včetně 4.7.1 a 4.7.2)|4|
+|4,8|4|
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Proces spravovaného spuštění](managed-execution-process.md)|Popisuje kroky potřebné k využití modulu common language runtime.|
-|[Automatická správa paměti](automatic-memory-management.md)|Popisuje, jak systému uvolňování paměti přiděluje a uvolňuje paměť.|
-|[Přehled rozhraní .NET Framework](../framework/get-started/overview.md)|Popisuje klíčové pojmy rozhraní .NET Framework, jako je obecný systém typů, vzájemná funkční spolupráce mezi jazyky, spravované spouštění, aplikační domény a sestavení.|
-|[Obecný systém typů](./base-types/common-type-system.md)|Popisuje, jak jsou typy deklarovány, používat a spravovány v modulu runtime kvůli podpoře mezi jazykové integrace.|
+|[Proces spravovaného spuštění](managed-execution-process.md)|Popisuje kroky potřebné k využití modulu CLR (Common Language Runtime).|
+|[Automatická správa paměti](automatic-memory-management.md)|Popisuje způsob, jakým systém uvolňování paměti přiděluje a uvolňuje paměť.|
+|[Přehled .NET Framework](../framework/get-started/overview.md)|Popisuje klíčové .NET Framework koncepty, jako je například společný systém typů, vzájemná funkční spolupráce mezi jazyky, spravované spouštění, aplikační domény a sestavení.|
+|[Obecný systém typů](./base-types/common-type-system.md)|Popisuje, jak jsou typy deklarovány, používány a spravovány v modulu runtime v rámci podpory integrace mezi jazyky.|
 
 ## <a name="see-also"></a>Viz také:
 

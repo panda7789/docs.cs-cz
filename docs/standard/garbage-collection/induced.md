@@ -5,36 +5,34 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 149597f0e34448d9c275a2cb8cd4ffc250bec619
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 604b49ef577a46204b523ebf5a8575a30b81635e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945373"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120923"
 ---
 # <a name="induced-collections"></a>Vyvolané kolekce
-Ve většině případů může systém uvolňování paměti určit nejvhodnější čas k provedení uvolnění paměti, které byste pak měli nechat běžet nezávisle. Existují výjimečné situace, kdy může vynucená kolekce zlepšit výkon vaší aplikace. V těchto případech můžete zahájit uvolnění pomocí <xref:System.GC.Collect%2A?displayProperty=nameWithType> metody pro vynucení uvolnění paměti.  
+Ve většině případů může systém uvolňování paměti určit nejvhodnější čas k provedení uvolnění paměti, které byste pak měli nechat běžet nezávisle. Existují vzácná situace, kdy může vynucená kolekce zlepšit výkon vaší aplikace. V těchto případech můžete vyvolat uvolňování paměti pomocí metody <xref:System.GC.Collect%2A?displayProperty=nameWithType> k vynucení uvolnění paměti.  
   
- Použití <xref:System.GC.Collect%2A?displayProperty=nameWithType> metodu, když dojde k výraznému snížení množství paměti používané v konkrétním bodě v kódu vaší aplikace. Například pokud vaše aplikace používá komplexní dialogové okno, které obsahuje několik ovládacích prvků, volání <xref:System.GC.Collect%2A> při ukončení dialogu může zlepšit výkon, protože okamžitě uvolní paměť používanou v dialogovém okně. Ujistěte se, že aplikace nevyvolá uvolnění paměti příliš často, protože pokud systému uvolňování paměti pokouší uvolnit objekty v neoptimálních časech, které může snížit výkon. Můžete zadat <xref:System.GCCollectionMode.Optimized?displayProperty=nameWithType> hodnotu výčtu pro <xref:System.GC.Collect%2A> metoda shromažďovat pouze v případě, že kolekce by kolekce byla produktivní, jak je popsáno v další části.  
+ Metodu <xref:System.GC.Collect%2A?displayProperty=nameWithType> použijte v případě, že dojde k výraznému snížení množství paměti, které se používá v určitém bodě kódu vaší aplikace. Například pokud vaše aplikace používá komplexní dialogové okno, které má několik ovládacích prvků, volání <xref:System.GC.Collect%2A> při zavření dialogového okna může zvýšit výkon tím, že okamžitě uvolní paměť využívanou dialogovým oknem. Ujistěte se, že aplikace neprovádí uvolňování paměti příliš často, protože může snížit výkon, pokud se systém uvolňování paměti snaží uvolnit objekty v neoptimálních časech. Můžete předat <xref:System.GCCollectionMode.Optimized?displayProperty=nameWithType> hodnotu výčtu do metody <xref:System.GC.Collect%2A>, která se má shromažďovat pouze v případě, že by kolekce byla produktivní, jak je popsáno v další části.  
   
-## <a name="gc-collection-mode"></a>Režim kolekce GC  
- Můžete použít jednu z <xref:System.GC.Collect%2A?displayProperty=nameWithType> přetížení metod, které zahrnuje <xref:System.GCCollectionMode> hodnota, která má specifikaci chování vynucené kolekce následujícím způsobem.  
+## <a name="gc-collection-mode"></a>Režim shromažďování GC  
+ Můžete použít jedno z přetížení metod <xref:System.GC.Collect%2A?displayProperty=nameWithType>, které obsahují <xref:System.GCCollectionMode> hodnotu k určení chování pro vynucenou kolekci následujícím způsobem.  
   
-|`GCCollectionMode` Hodnota|Popis|  
+|hodnota `GCCollectionMode`|Popis|  
 |------------------------------|-----------------|  
-|<xref:System.GCCollectionMode.Default>|Použije výchozí nastavení kolekce uvolnění paměti pro spuštěnou verzi rozhraní .NET.|  
-|<xref:System.GCCollectionMode.Forced>|Kolekce paměti vynutí okamžité. To je ekvivalentní volání <xref:System.GC.Collect?displayProperty=nameWithType> přetížení. Výsledkem je blokování celé kolekce všech generací.<br /><br /> Haldy velkých objektů můžete také zkomprimovat nastavením <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce?displayProperty=nameWithType> před vynuceným okamžité úplné blokující uvolňování paměti kolekci.|  
-|<xref:System.GCCollectionMode.Optimized>|Umožňuje uvolňování paměti určit, zda je aktuální čas optimální pro uvolnění objektů.<br /><br /> Uvolňování paměti může určit, že kolekce by nebyla dostatečně produktivní oprávněné, v takovém případě ji vrátí bez uvolní objektů.|  
+|<xref:System.GCCollectionMode.Default>|Používá výchozí nastavení uvolňování paměti pro běžící verzi rozhraní .NET.|  
+|<xref:System.GCCollectionMode.Forced>|Vynutí, aby se uvolňování paměti staly okamžitě. To je ekvivalentní volání přetížení <xref:System.GC.Collect?displayProperty=nameWithType>. Výsledkem je úplná blokující kolekce všech generací.<br /><br /> Můžete také zkomprimovat haldu velkých objektů nastavením vlastnosti <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> na <xref:System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce?displayProperty=nameWithType> před vynucením okamžitého úplného blokování uvolňování paměti.|  
+|<xref:System.GCCollectionMode.Optimized>|Umožňuje systému uvolňování paměti určit, zda je aktuální čas optimální pro uvolnění objektů.<br /><br /> Systém uvolňování paměti může určit, že kolekce nebude dostatečně produktivní, aby mohla být odůvodněná. v takovém případě se vrátí bez opětovného získání objektů.|  
   
 ## <a name="background-or-blocking-collections"></a>Pozadí nebo blokující kolekce  
- Můžete volat <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29?displayProperty=nameWithType> přetížení metody k určení, zda je blokována indukovaná kolekce blokování nebo ne. Provedený typ kolekce závisí na kombinaci metody `mode` a `blocking` parametry. `mode` je členem skupiny <xref:System.GCCollectionMode> výčtu, a `blocking` je <xref:System.Boolean> hodnotu. Následující tabulka shrnuje působení `mode` a `blocking` argumenty.  
+ Můžete volat přetížení metody <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29?displayProperty=nameWithType>, abyste určili, zda volaný kolekce blokuje nebo není. Typ provedené kolekce závisí na kombinaci parametrů `mode` a `blocking` metody. `mode` je členem výčtu <xref:System.GCCollectionMode> a `blocking` je <xref:System.Boolean> hodnota. Následující tabulka shrnuje interakci `mode` a `blocking`ch argumentů.  
   
 |`mode`|`blocking` = `true`|`blocking` = `false`|  
 |------------|--------------------------|---------------------------|  
-|<xref:System.GCCollectionMode.Forced> Nebo <xref:System.GCCollectionMode.Default>|Blokující kolekce se provádí co nejdříve. Pokud probíhá shromažďování pozadí a generování je 0 nebo 1, <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> metoda okamžitě spustí z blokující kolekce a vrátí po dokončení kolekce. Pokud probíhá shromažďování pozadí a `generation` parametr bude 2, metoda čeká na pozadí je dokončená, spustí blokující generaci 2 kolekce a vrátí.|Kolekce se provádí co nejdříve. <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> Metoda požaduje kolekci v pozadí, ale to není zaručeno, v závislosti na okolnostech mohou stále prováděny blokující kolekce. Pokud kolekce pozadí již probíhá, metoda vrátí hodnotu okamžitě.|  
-|<xref:System.GCCollectionMode.Optimized>|Blokující kolekce mohou být provedeny v závislosti na stavu systému uvolňování paměti a `generation` parametru. Uvolňování paměti se snaží poskytovat optimální výkon.|Kolekce mohou být provedeny v závislosti na stavu systému uvolňování paměti. <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> Metoda požaduje kolekci v pozadí, ale to není zaručeno, v závislosti na okolnostech mohou stále prováděny blokující kolekce. Uvolňování paměti se snaží poskytovat optimální výkon. Pokud kolekce pozadí již probíhá, metoda vrátí hodnotu okamžitě.|  
+|<xref:System.GCCollectionMode.Forced> nebo <xref:System.GCCollectionMode.Default>|Blokující kolekce se provádí co nejrychleji. Pokud probíhá shromažďování na pozadí a generace je 0 nebo 1, metoda <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> okamžitě spustí blokující kolekci a vrátí po dokončení kolekce. Pokud probíhá shromažďování na pozadí a parametr `generation` je 2, bude metoda čekat na dokončení kolekce na pozadí, spustí blokování blokující 2 kolekce a poté se vrátí.|Kolekce se provádí co nejrychleji. Metoda <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> požaduje kolekci na pozadí, ale není zaručena; v závislosti na okolnostech může být stále prováděna blokující kolekce. Pokud kolekce na pozadí již probíhá, metoda se vrátí okamžitě.|  
+|<xref:System.GCCollectionMode.Optimized>|Blokování kolekce může být provedeno v závislosti na stavu systému uvolňování paměti a parametru `generation`. Systém uvolňování paměti se pokusí poskytnout optimální výkon.|Kolekce může být provedena v závislosti na stavu systému uvolňování paměti. Metoda <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> požaduje kolekci na pozadí, ale není zaručena; v závislosti na okolnostech může být stále prováděna blokující kolekce. Systém uvolňování paměti se pokusí poskytnout optimální výkon. Pokud kolekce na pozadí již probíhá, metoda se vrátí okamžitě.|  
   
 ## <a name="see-also"></a>Viz také:
 

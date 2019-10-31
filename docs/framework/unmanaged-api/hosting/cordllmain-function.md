@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9a02a899fd6fbffd04ef25913adb6a65ade27177
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f60f159ab4770023cee7123b39109040243e1ccd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755656"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136969"
 ---
-# <a name="cordllmain-function"></a>\_CorDllMain Function
+# <a name="_cordllmain-function"></a>\_funkce CorDllMain
 
-Inicializuje modul CLR (CLR), vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení DLL a zahájí vykonávání.  
+Inicializuje modul CLR (Common Language Runtime), vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení knihovny DLL a zahájí provádění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +37,35 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
   
 ## <a name="parameters"></a>Parametry  
  `hInst`  
- [in] Popisovač instance načteného modulu.  
+ pro Obslužná rutina instance načteného modulu.  
   
  `dwReason`  
- [in] Označuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jeden z následujících hodnot: Knihovna DLL\_PROCESS_ATTACH, knihovny DLL\_vlákna\_připojit, knihovny DLL\_vlákna\_ATTACH nebo knihovny DLL\_procesu\_ODPOJIT. Popisy těchto hodnot, najdete v článku `DllMain` dokumentaci Platform SDK.  
+ pro Určuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jedna z následujících hodnot: DLL\_PROCESS_ATTACH, DLL\_vlákna\_připojit, DLL\_vlákna\_připojit nebo knihovny DLL\_proces\_odpojení. Popisy těchto hodnot naleznete v dokumentaci k `DllMain` v sadě SDK platformy.  
   
  `lpReserved`  
- [in] Nevyužité.  
+ pro Nepoužívané.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí `true` k dosažení úspěchu a `false` Pokud dojde k chybě.  
+ Tato metoda vrací `true` pro úspěch a `false`, pokud dojde k chybě.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je volána zavaděčem operačního systému pro sestavení knihovny DLL. Pro spustitelný soubor sestavení zavaděče volá [ \_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) namísto toho funkci.  
+ Tato funkce je volána zavaděčem operačního systému pro sestavení knihovny DLL. U spustitelných sestavení volá zavaděč místo toho funkci [\_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) .  
   
- Zavaděč operačního systému volá tuto metodu, bez ohledu na vstupní bod uvedený v souboru knihovny DLL.  
+ Zavaděč operačního systému volá tuto metodu bez ohledu na vstupní bod zadaný v souboru DLL.  
   
-`_CorDllMain` Funkce je volána přímo zavaděčem operačního systému.
+Funkce `_CorDllMain` je volána přímo zavaděčem operačního systému.
   
- Další informace naleznete v části poznámky v [ \_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
+ Další informace najdete v části poznámky v tématu [\_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) .  
   
 ## <a name="requirements"></a>Požadavky  
 
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

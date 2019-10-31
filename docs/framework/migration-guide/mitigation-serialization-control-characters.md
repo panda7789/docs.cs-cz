@@ -1,5 +1,5 @@
 ---
-title: Zmírnění Serializace řídicích znaků pomocí DataContractJsonSerializer
+title: 'Zmírnění rizika: serializace řídicích znaků pomocí DataContractJsonSerializer'
 ms.date: 04/07/2017
 helpviewer_keywords:
 - .NET Framework 4.7 retargeting changes
@@ -7,22 +7,20 @@ helpviewer_keywords:
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 12b26c8cc01b7af1c3b345d2f274a1d25a19d689
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5f8218d0f369f25b1add501fdc975d6dccfe90fa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789840"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126151"
 ---
-# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Zmírnění Serializace řídicích znaků pomocí DataContractJsonSerializer
+# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Zmírnění rizika: serializace řídicích znaků pomocí DataContractJsonSerializer
 
-Počínaje .NET Framework 4,7, způsob, jakým jsou řídicí znaky serializovány pomocí, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> se změnila tak, aby odpovídala ECMAScript V6 a V8. 
+Počínaje .NET Framework 4,7 se způsob, jakým jsou řídicí znaky serializovány pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> změněna tak, aby odpovídaly ECMAScript V6 a V8. 
  
 ## <a name="impact"></a>Dopad
 
-V rozhraní .NET Framework 4.6.2 a starších verzích nedošlo <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> k serializaci některých speciálních řídicích znaků, `\b`například, `\f`a `\t`, způsobem, který byl kompatibilní s normami ECMAScript V6 a V8.
+V rozhraní .NET Framework 4.6.2 a starších verzích <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> neserializovat některé speciální řídicí znaky, například `\b`, `\f`a `\t`, způsobem, který byl kompatibilní s normami ECMAScript V6 a V8.
 
 Pro aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4,7, je serializace těchto řídicích znaků kompatibilní s ECMAScript V6 a V8. Ovlivněna jsou následující rozhraní API:
 
@@ -32,7 +30,7 @@ Pro aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4,
 
 U aplikací, které cílí na verze .NET Framework počínaje .NET Framework 4,7, je toto chování ve výchozím nastavení povolené.
 
-Není-li toto chování žádoucí, můžete se odhlásit z této funkce přidáním následujícího řádku do `<runtime>` oddílu souboru App. config nebo Web. config:
+Není-li toto chování žádoucí, můžete se odhlásit z této funkce přidáním následujícího řádku do oddílu `<runtime>` souboru App. config nebo Web. config:
 
 ```xml
 <runtime>

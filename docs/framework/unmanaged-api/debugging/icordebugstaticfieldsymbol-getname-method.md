@@ -2,14 +2,12 @@
 title: 'ICorDebugStaticFieldSymbol:: GetName – Metoda'
 ms.date: 03/30/2017
 ms.assetid: e2be4af2-15d1-4e6a-8b68-1d78c93294a4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2187a205b41388d191ad4f06db6d6caa86971e13
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e961ae064bd5bb2c97175b4506ddd8c0f17d3b32
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913419"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131783"
 ---
 # <a name="icordebugstaticfieldsymbolgetname-method"></a>ICorDebugStaticFieldSymbol:: GetName – Metoda
 Získá název statického pole.  
@@ -26,10 +24,10 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- pro Počet znaků ve `szName` vyrovnávací paměti.  
+ pro Počet znaků ve vyrovnávací paměti `szName`.  
   
  `pcchName`  
- mimo Ukazatel na počet znaků skutečně zapsaných do `szName` vyrovnávací paměti.  
+ mimo Ukazatel na počet znaků skutečně zapsaných do vyrovnávací paměti `szName`.  
   
  `szName`  
  mimo Pole znaků, které ukládá vrácený název.  
@@ -40,11 +38,11 @@ HRESULT GetName(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5da07f99-6c70-46ec-b997-5ab6fb7106cd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5542cf5895bc60c5880f2f082a9c14d722e02478
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7a2288eb84bd51795995032954e41525c2ce605a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744920"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137729"
 ---
 # <a name="icordebugreferencevaluegetvalue-method"></a>ICorDebugReferenceValue::GetValue – metoda
 Získá aktuální adresu paměti odkazovaného objektu.  
@@ -37,13 +35,13 @@ HRESULT GetValue (
   
 ## <a name="parameters"></a>Parametry  
  `pValue`  
- [out] Ukazatel `CORDB_ADDRESS` hodnota, která určuje adresu objektu, na kterou odkazuje tento objekt ICorDebugReferenceValue.  
+ mimo Ukazatel na hodnotu `CORDB_ADDRESS`, která určuje adresu objektu, na který odkazuje tento objekt ICorDebugReferenceValue.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

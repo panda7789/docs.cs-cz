@@ -1,17 +1,15 @@
 ---
-title: 'Příklad: Zpracování výjimek při vázání dat'
+title: 'Příklad: zpracování výjimek při vázání dat'
 ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f7c40d1a179c29c3b92ca37848db6d1383e5d2d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 7ab5477257bd6d32d901ad01518f7a75081d2a10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049890"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128460"
 ---
-# <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
+# <a name="example-handling-exceptions-when-binding-data"></a>Příklad: zpracování výjimek při vázání dat
 > [!NOTE]
 > Toto téma se týká .NET Native Developer Preview, což je předběžná verze softwaru. Verzi Preview si můžete stáhnout z [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
   
@@ -39,7 +37,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="what-was-the-app-doing"></a>Jakou aplikaci dělá?  
- Na bázi zásobníku, snímky z <xref:Windows.UI.Xaml?displayProperty=nameWithType> oboru názvů označují, že modul vykreslování XAML byl spuštěn.   Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metody označuje vyhledávání na základě reflexe hodnoty vlastnosti u typu, jehož metadata byla odebrána.  
+ Na bázi zásobníku, snímky z oboru názvů <xref:Windows.UI.Xaml?displayProperty=nameWithType> označují, že modul vykreslování XAML byl spuštěn.   Použití metody <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> označuje vyhledávání hodnoty vlastnosti na základě reflexe u typu, jehož metadata byla odebrána.  
   
  Prvním krokem při poskytování direktivy metadata by bylo přidat `serialize` metadata pro typ tak, aby byly všechny vlastnosti dostupné:  
   
@@ -48,7 +46,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="is-this-an-isolated-case"></a>Jedná se o izolovaný případ?  
- V tomto scénáři, pokud datová vazba má neúplná metadata pro `ViewModel`jednu, může to být také pro ostatní.  Pokud je kód strukturovaný způsobem, že jsou všechny modely zobrazení aplikace v `App.ViewModels` oboru názvů, můžete použít obecnější direktivu modulu runtime:  
+ V tomto scénáři, pokud datová vazba má neúplná metadata pro jednu `ViewModel`, může to být také pro ostatní.  Pokud je kód strukturovaný způsobem, že jsou všechny modely zobrazení aplikace v oboru názvů `App.ViewModels`, můžete použít obecnější direktivu modulu runtime:  
   
 ```xml  
 <Namespace Name="App.ViewModels " Serialize="Required Public" />  
@@ -57,7 +55,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a>Je možné přepsat kód, aby nepoužíval reflexi?  
  Vzhledem k tomu, že vázání dat je náročné na reflexi, změna kódu tak, aby nedocházelo k neproveditelnému  
   
- Existují však způsoby, jak zadat `ViewModel` na stránku XAML, aby řetěz nástrojů mohl přidružit vazby vlastností ke správnému typu v době kompilace a zachovat metadata bez použití direktivy runtime.  Můžete například použít <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> atribut u vlastností. To způsobí, že kompilátor XAML vygeneruje požadované vyhledávací informace a vyhne se vyžadování direktivy modulu runtime ve výchozím souboru. Rd. XML.  
+ Existují však způsoby, jak zadat `ViewModel` na stránku XAML, aby řetěz nástrojů mohl přidružit vazby vlastností ke správnému typu v době kompilace a zachovat metadata bez použití direktivy runtime.  Můžete například použít atribut <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> u vlastností. To způsobí, že kompilátor XAML vygeneruje požadované vyhledávací informace a vyhne se vyžadování direktivy modulu runtime ve výchozím souboru. Rd. XML.  
   
 ## <a name="see-also"></a>Viz také:
 

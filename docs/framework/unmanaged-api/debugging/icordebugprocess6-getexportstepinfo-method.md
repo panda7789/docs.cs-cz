@@ -2,14 +2,12 @@
 title: ICorDebugProcess6::GetExportStepInfo – metoda
 ms.date: 03/30/2017
 ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 18af0dde2d1acc65003558a04789de027bb9209f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d92b05e3d84a230e87901378f34ed27ac38286b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967404"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123464"
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a>ICorDebugProcess6::GetExportStepInfo – metoda
 Poskytuje informace o exportovaných funkcích modulu runtime, které vám pomůžou krokovat se spravovaným kódem.  
@@ -39,7 +37,7 @@ HRESULT GetExportStepInfo(
 |Návratová hodnota|Popis|  
 |------------------|-----------------|  
 |`S_OK`|Volání metody bylo úspěšné.|  
-|`E_POINTER`|`pInvokeKind`nebo `pInvokePurpose` má **hodnotu null**.|  
+|`E_POINTER`|`pInvokeKind` nebo `pInvokePurpose` je **null**.|  
 |Jiné neúspěšné `HRESULT` hodnoty.|Podle potřeby.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -48,11 +46,11 @@ HRESULT GetExportStepInfo(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

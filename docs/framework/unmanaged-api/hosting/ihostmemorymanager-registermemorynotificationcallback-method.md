@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 65d301f6-4dbb-4b5f-8eff-82540e2b6465
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 34701642a9e76ec52141e00fe9dde92878faccd2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4400fab27ed82e540230ce4196844285e8e37d16
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945439"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128638"
 ---
 # <a name="ihostmemorymanagerregistermemorynotificationcallback-method"></a>IHostMemoryManager::RegisterMemoryNotificationCallback – metoda
 Registruje ukazatel na funkci zpětného volání, kterou hostitel vyvolá, aby upozornil na modul CLR (Common Language Runtime) aktuálního zatížení paměti v počítači.  
@@ -43,7 +41,7 @@ HRESULT RegisterMemoryNotificationCallback (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`RegisterMemoryNotificationCallback`úspěšně vráceno.|  
+|S_OK|`RegisterMemoryNotificationCallback` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -51,17 +49,17 @@ HRESULT RegisterMemoryNotificationCallback (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vzhledem k tomu, že `pCallback` `ICLRMemoryNotificationCallback` [](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md) rozhranídefinujepouzejednumetodu(ICLRMemoryNotificationCallback–::OnMemoryNotification–)aprotožejeukazatelnainstanciposkytovanoumodulem`ICLRMemoryNotificationCallback` CLR, registrace je efektivně pro funkce zpětného volání. Hostitel vyvolá `OnMemoryNotification` hlášení stavů paměti místo použití standardní funkce Win32 `CreateMemoryResourceNotification` . Další informace najdete v dokumentaci k platformě Windows.  
+ Vzhledem k tomu, že rozhraní `ICLRMemoryNotificationCallback` definuje pouze jednu metodu ([ICLRMemoryNotificationCallback –:: OnMemoryNotification –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)) a protože `pCallback` je ukazatel na instanci `ICLRMemoryNotificationCallback` POSKYTNUTou modulem CLR, registrace je pro zpětné volání efektivně. funkce. Hostitel vyvolá `OnMemoryNotification` pro hlášení stavů paměti, místo použití standardní funkce Win32 `CreateMemoryResourceNotification`. Další informace najdete v dokumentaci k platformě Windows.  
   
 > [!NOTE]
-> `OnMemoryNotification` Volání nikdy neblokuje. Vždycky se vrátí hned.  
+> Volání `OnMemoryNotification` nikdy neblokují. Vždycky se vrátí hned.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

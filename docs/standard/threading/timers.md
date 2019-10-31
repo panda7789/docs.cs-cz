@@ -1,6 +1,6 @@
 ---
 title: Časovače
-description: Zjistěte, jaké časovače .NET pro použití v prostředí s více vlákny.
+description: Zjistěte, jaké časovače rozhraní .NET se mají použít ve vícevláknovém prostředí.
 ms.date: 07/03/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,49 +12,48 @@ helpviewer_keywords:
 - timers, about timers
 ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
-ms.author: ronpet
-ms.openlocfilehash: 644ccf5951e9d2556fc697d2fd763f026fd0ebdb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d7d1fa13b02fe7425fa9b4cb81ba20297a23fe4b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672559"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128953"
 ---
 # <a name="timers"></a>Časovače
 
-.NET poskytuje dvě časovače pro použití v prostředí s více vlákny:
+.NET poskytuje dva časovače pro použití v prostředí s více vlákny:
 
-- <xref:System.Threading.Timer?displayProperty=nameWithType>, která spustí metodu zpětného volání jednoho na <xref:System.Threading.ThreadPool> vlákna v pravidelných intervalech.
-- <xref:System.Timers.Timer?displayProperty=nameWithType>, který ve výchozím nastavení vyvolá událost, na <xref:System.Threading.ThreadPool> vlákna v pravidelných intervalech.
+- <xref:System.Threading.Timer?displayProperty=nameWithType>, která spouští jednu metodu zpětného volání v <xref:System.Threading.ThreadPool> vlákně v pravidelných intervalech.
+- <xref:System.Timers.Timer?displayProperty=nameWithType>, který ve výchozím nastavení vyvolá událost v <xref:System.Threading.ThreadPool> vlákně v pravidelných intervalech.
 
 > [!NOTE]
-> Některé implementace .NET mohou zahrnovat další časovače:
+> Některé implementace rozhraní .NET můžou zahrnovat další časovače:
 >
-> - <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>: komponenty Windows Forms, který se aktivuje událost v pravidelných intervalech. Komponenta nemá žádné uživatelské rozhraní a je určená pro použití v prostředí s jedním vláknem.  
-> - <xref:System.Web.UI.Timer?displayProperty=nameWithType>: komponentu ASP.NET, která provede zpětné volání synchronní nebo asynchronní webové stránky v pravidelných intervalech.
-> - <xref:System.Windows.Threading.DispatcherTimer?displayProperty=nameWithType>: časovač, který je integrován do <xref:System.Windows.Threading.Dispatcher> fronty, která je zpracována v zadaném intervalu, času a na zadanou prioritou.
+> - <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>: model Windows Forms komponenta, která aktivuje událost v pravidelných intervalech. Komponenta nemá žádné uživatelské rozhraní a je určena pro použití v prostředí s jedním vláknem.  
+> - <xref:System.Web.UI.Timer?displayProperty=nameWithType>: komponenta ASP.NET, která provádí asynchronní nebo synchronní zpětné volání webové stránky v pravidelných intervalech.
+> - <xref:System.Windows.Threading.DispatcherTimer?displayProperty=nameWithType>: časovač, který je integrovaný do fronty <xref:System.Windows.Threading.Dispatcher>, která se zpracovává v zadaném časovém intervalu a v zadané prioritě.
 
-## <a name="the-systemthreadingtimer-class"></a>Třída System.Threading.Timer
+## <a name="the-systemthreadingtimer-class"></a>Třída System. Threading. Timer
 
-<xref:System.Threading.Timer?displayProperty=nameWithType> Třída umožňuje nepřetržitě volání delegáta v zadaných časových intervalech. Tato třída také můžete použít k naplánování jedním voláním metody delegáta v zadaném časovém intervalu. Delegát se spouští podle <xref:System.Threading.ThreadPool> vlákna.
+Třída <xref:System.Threading.Timer?displayProperty=nameWithType> umožňuje nepřetržitě volat delegáta v zadaných časových intervalech. Tuto třídu můžete použít také k naplánování jednoho volání delegáta v zadaném časovém intervalu. Delegát je spuštěn ve vlákně <xref:System.Threading.ThreadPool>.
 
-Při vytváření <xref:System.Threading.Timer?displayProperty=nameWithType> objektu, zadáte <xref:System.Threading.TimerCallback> delegáta, který definuje metodu zpětného volání, volitelné stavu objektu, který je předán do zpětného volání, dobu zpoždění před prvním vyvoláním služby zpětného volání a časový interval mezi vyvoláními zpětného volání. Chcete-li zrušit čekajícího časovače, zavolejte <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType> metody.
+Při vytváření objektu <xref:System.Threading.Timer?displayProperty=nameWithType> zadáte delegáta <xref:System.Threading.TimerCallback>, který definuje metodu zpětného volání, objekt volitelného stavu, který je předán zpětnému volání, čas zpoždění před prvním voláním zpětného volání a časový interval mezi vyvolání zpětného volání. Chcete-li zrušit probíhající časovač, zavolejte metodu <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType>.
 
-Následující příklad vytvoří časovač, který volá uvedený delegát poprvé po jedné sekundě (1000 milisekund) a nazve je každé dvě sekundy. Stav objektu v příkladu se používá ke zjištění počtu volání delegáta se nazývá. Časovač je zastaven, když je delegát byla volána alespoň 10krát.
+Následující příklad vytvoří časovač, který volá poskytnutého delegáta poprvé po jedné sekundě (1000 milisekund) a pak je zavolá každé dvě sekundy. Objekt State v příkladu slouží ke zjištění, kolikrát je volán delegát. Časovač se zastaví, pokud byl delegát volán nejméně desetkrát.
 
 [!code-cpp[System.Threading.Timer#2](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source2.cpp#2)]
 [!code-csharp[System.Threading.Timer#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source2.cs#2)]
 [!code-vb[System.Threading.Timer#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source2.vb#2)]
 
-Další informace a příklady najdete v tématu <xref:System.Threading.Timer?displayProperty=nameWithType>.
+Další informace a příklady naleznete v tématu <xref:System.Threading.Timer?displayProperty=nameWithType>.
 
-## <a name="the-systemtimerstimer-class"></a>Třída System.Timers.Timer
+## <a name="the-systemtimerstimer-class"></a>Třída System. Timers. Timer
 
-Další časovač, který lze použít v prostředí s více vlákny je <xref:System.Timers.Timer?displayProperty=nameWithType> ve výchozím nastavení vyvolá událost, na <xref:System.Threading.ThreadPool> vlákna.
+Další časovač, který lze použít v prostředí s více vlákny, je <xref:System.Timers.Timer?displayProperty=nameWithType>, že ve výchozím nastavení vyvolá událost ve <xref:System.Threading.ThreadPool> vlákně.
 
-Když vytvoříte <xref:System.Timers.Timer?displayProperty=nameWithType> objektu, můžete zadat časový interval, ve který se má použít <xref:System.Timers.Timer.Elapsed> událostí. Použití <xref:System.Timers.Timer.Enabled%2A> vlastnost umožňující označit, pokud by měla vyvolat časovač <xref:System.Timers.Timer.Elapsed> událostí. Pokud potřebujete <xref:System.Timers.Timer.Elapsed> událost vyvolána pouze jednou po uplynutí zadaného intervalu, nastavte <xref:System.Timers.Timer.AutoReset%2A> k `false`. Výchozí hodnota <xref:System.Timers.Timer.AutoReset%2A> vlastnost je `true`, to znamená, že <xref:System.Timers.Timer.Elapsed> událost se vyvolá, pravidelně v intervalu určeném v <xref:System.Timers.Timer.Interval%2A> vlastnost.
+Při vytváření objektu <xref:System.Timers.Timer?displayProperty=nameWithType> můžete zadat časový interval, ve kterém se má vyvolat událost <xref:System.Timers.Timer.Elapsed>. Vlastnost <xref:System.Timers.Timer.Enabled%2A> použijte k označení, zda má časovač vyvolat událost <xref:System.Timers.Timer.Elapsed>. Pokud potřebujete událost <xref:System.Timers.Timer.Elapsed> vyvolat pouze jednou po uplynutí zadaného intervalu, nastavte <xref:System.Timers.Timer.AutoReset%2A> na `false`. Výchozí hodnota vlastnosti <xref:System.Timers.Timer.AutoReset%2A> je `true`, což znamená, že se událost <xref:System.Timers.Timer.Elapsed> generuje pravidelně v intervalu definovaném vlastností <xref:System.Timers.Timer.Interval%2A>.
 
-Další informace a příklady najdete v tématu <xref:System.Timers.Timer?displayProperty=nameWithType>.
+Další informace a příklady naleznete v tématu <xref:System.Timers.Timer?displayProperty=nameWithType>.
   
 ## <a name="see-also"></a>Viz také:
 

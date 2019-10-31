@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fb8c14f7-d461-43d1-8b47-adb6723b9b93
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 198141545119976cb9107bc9c09b913572e266ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9a2f513d40d722f1b0aad823ac7c0d93bda5615f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781127"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123262"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo – struktura
-Poskytuje podrobnosti o `Event_MDAFired` událost, která se aktivuje vytvořením Pomocník spravovaného ladění (MDA).  
+Poskytuje podrobnosti o události `Event_MDAFired`, která aktivuje vytvoření pomocníka spravovaného ladění (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +37,28 @@ typedef struct _MDAInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`lpMDACaption`|Název aktuální MDA. Název popisuje typ selhání, které aktivuje `Event_MDAFired` událostí.|  
-|`lpMDAMessage`|Výstupní zprávy poskytnuté aktuální MDA.|  
+|`lpMDACaption`|Název aktuální aplikace MDA Nadpis popisuje druh selhání, které aktivovalo událost `Event_MDAFired`.|  
+|`lpMDAMessage`|Výstupní zpráva poskytnutá aktuálním modulem MDA.|  
   
 ## <a name="remarks"></a>Poznámky  
- Asistentů spravovaného ladění (mda) jsou pomůcky, které fungují ve spojení s common language runtime (CLR) k provádění úloh, jako je identifikace neplatné podmínky pro ladění v prováděcí modul runtime nebo vypsání Další informace o stavu modul. Mda generování zpráv XML o událostech, které jsou jinak obtížné zachytit. Jsou obzvláště užitečné pro ladění přechody mezi spravovaným a nespravovaným kódem.  
+ Asistenti spravovaného ladění (MDA) jsou pomocné pomůcky, které fungují ve spojení s modulem CLR (Common Language Runtime) k provádění úloh, jako je určení neplatných podmínek v modulu provádění modulu runtime nebo výpisu dalších informací o stavu jádra. MDA vygeneruje zprávy XML o událostech, které jsou jinak obtížné depeše. Jsou zvláště užitečné pro ladění přechodů mezi spravovaným a nespravovaným kódem.  
   
- Modul runtime provede následující kroky, když se aktivuje událost, která se aktivuje vytvořením MDA:  
+ Modul runtime provede následující kroky, pokud je vyvolána událost, která spustí vytvoření objektu MDA:  
   
-- Pokud nebyla zaregistrována hostitele [iactiononclrevent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) instance voláním [iclroneventmanager::registeractiononevent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) upozornit `Event_MDAFired` události, modul runtime bude pokračovat jeho výchozí chování bez hostitele.  
+- Pokud hostitel nezaregistroval instanci [IActionOnCLREvent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) voláním [ICLROnEventManager:: RegisterActionOnEvent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) , aby mohl být upozorněn na událost `Event_MDAFired`, modul runtime pokračuje s výchozím chováním, který nehostuje.  
   
-- Pokud hostitel je zaregistrovaná obslužná rutina pro tuto událost, zkontroluje modulu runtime, zda je připojen ladicí program k procesu. Pokud se jedná, modul runtime se dělí do ladicího programu. Pokud ladicí program bude pokračovat, volá do hostitele. Pokud je připojen ladicí program nebyl, modul runtime zavolá `IActionOnCLREvent::OnEvent` a předává ukazatel `MDAInfo` instance jako `data` parametr.  
+- Pokud hostitel zaregistroval obslužnou rutinu pro tuto událost, modul runtime zkontroluje, zda je k procesu připojen ladicí program. V takovém případě je modul runtime rozdělen do ladicího programu. V případě, že ladicí program pokračuje, volá do hostitele. Pokud není připojen žádný ladicí program, modul runtime zavolá `IActionOnCLREvent::OnEvent` a předá ukazatel na instanci `MDAInfo` jako parametr `data`.  
   
- K aktivaci mda a která vás upozorní, když MDA aktivováno, můžete zvolit hostitele. To dává možnost přepsat výchozí chování a na spravovaná vlákna, která vyvolala událost, chcete-li zabránit poškození stav procesu zrušení hostitele. Další informace o používání mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
+ Hostitel se může rozhodnout aktivovat MDA a upozornit na aktivaci služby MDA. Díky tomu může hostitel příležitost přepsat výchozí chování a přerušit spravované vlákno, které událost vyvolalo, aby nedošlo k poškození stavu procesu. Další informace o použití MDA najdete v tématu [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

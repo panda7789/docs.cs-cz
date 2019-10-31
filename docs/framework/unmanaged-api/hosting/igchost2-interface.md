@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: e5323fa4-18ac-424d-859d-a65a550d08d9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 21ce9cbd007858c0f39e12622eff819154ab83f0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 43c16415c91521194e0d88be84dd176c3fdadad1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928620"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134839"
 ---
 # <a name="igchost2-interface"></a>IGCHost2 – rozhraní
 Poskytuje metody pro získání informací o systému uvolňování paměti a pro řízení některých aspektů uvolňování paměti.  
@@ -33,14 +31,14 @@ Poskytuje metody pro získání informací o systému uvolňování paměti a pr
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetGCStartupLimitsEx – metoda](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md)|Nastaví velikost segmentu a maximální velikost pro generaci 0. Povoluje generaci 0 a velikosti segmentů větší `DWORD`než.|  
+|[SetGCStartupLimitsEx – metoda](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md)|Nastaví velikost segmentu a maximální velikost pro generaci 0. Povoluje generaci 0 a velikosti segmentů větší než `DWORD`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

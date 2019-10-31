@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bba941c2-1c57-46d3-bbf5-5fb92700c490
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e834042c5e00709fcb2198c1496a8a630841d069
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d78f81093e61c40eaec334f957d8583eeb593f5e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779542"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134808"
 ---
 # <a name="igchost2setgcstartuplimitsex-method"></a>IGCHost2::SetGCStartupLimitsEx – metoda
-Nastaví velikost segmentu a maximální velikost pro 0. generace.  
+Nastaví velikost segmentu a maximální velikost pro generaci 0.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT SetGCStartupLimitsEx (
   
 ## <a name="parameters"></a>Parametry  
  `SegmentSize`  
- [in] Velikost segmentu používá systém uvolňování paměti kolekce.  
+ pro Velikost segmentu používaného systémem uvolňování paměti.  
   
  `MaxGen0Size`  
- [in] Maximální velikost 0. generace.  
+ pro Maximální velikost pro generaci 0  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, které `SetGCStartupLimitsEx` sady se dá nastavit pouze před spuštěním hostitele. Tyto hodnoty není možné později změnit.  
+ Hodnoty, které `SetGCStartupLimitsEx` sady lze zadat pouze před spuštěním hostitele. Tyto hodnoty nelze později změnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

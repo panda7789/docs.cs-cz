@@ -6,14 +6,12 @@ helpviewer_keywords:
 - .NET Framework application compatibility
 - .NET Framework changes
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f547180995ec155f9121eeace109e7dfb07c7827
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cf0d556dd5df773958e24ff1efcefbc3d8a8d3a9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790123"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126334"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
@@ -24,11 +22,11 @@ Každá aplikace cílí na konkrétní verzi .NET Framework, kterou lze určit p
 
 - Definování cílové architektury v aplikaci Visual Studio.
 - Určení cílové architektury v souboru projektu.
-- Aplikuje <xref:System.Runtime.Versioning.TargetFrameworkAttribute> se na zdrojový kód.
+- Použití <xref:System.Runtime.Versioning.TargetFrameworkAttribute> ke zdrojovému kódu.
 
 Při spuštění v novější verzi, než je cílová, .NET Framework použije chování quirked k napodobování starší cílové verze. Jinými slovy, aplikace bude spuštěna v novější verzi rozhraní, ale funguje jako v případě, že běží na starší verzi. Mnohé z problémů s kompatibilitou mezi verzemi .NET Framework jsou zmírnit prostřednictvím tohoto modelu quirking. Verze .NET Framework, na kterou aplikace cílí, je určena cílovou verzí záznamu pro doménu aplikace, ve které kód běží. Všechna další sestavení načtená v této cílové doméně aplikace, která .NET Framework verzi. Například v případě spustitelného souboru je rozhraní, které cílí na spustitelný soubor, v režimu kompatibility všechna sestavení v dané doméně AppDomain budou spouštěna v.
 
-## <a name="runtime-changes"></a>Změny v modulu runtime
+## <a name="runtime-changes"></a>Změny modulu runtime
 
 Problémy za běhu jsou ty, které vznikají při umístění nového modulu runtime do počítače a spuštění stejných binárních souborů, ale je vidět jiné chování. Pokud byl binární soubor kompilován pro .NET Framework 4,0, bude spuštěn v režimu kompatibility .NET Framework 4,0 na 4,5 nebo novějších verzích. Mnohé změny, které ovlivňují 4,5, nebudou mít vliv na binární kompilováno pro 4,0. To je specifické pro doménu AppDomain a závisí na nastavení položky sestavení.
 
@@ -53,7 +51,7 @@ Každý problém zahrnuje následující informace:
     |Hlavní|Významná změna ovlivňující velký počet aplikací nebo vyžaduje značnou úpravu kódu.|
     |Vedlejší|Změna, která má vliv na malý počet aplikací nebo které vyžadují menší úpravu kódu.|
     |Okrajový případ|Změna ovlivňující aplikace v rámci velmi konkrétních neobvyklých scénářů.|
-    |Transparentní|Změna bez znatelného efektu pro vývojáře nebo uživatele aplikace.|
+    |transparentnost|Změna bez znatelného efektu pro vývojáře nebo uživatele aplikace.|
 
 - Verze označuje, kdy se změna v rozhraní zobrazí jako první. Některé změny jsou představeny v konkrétní verzi a vráceny v pozdější verzi. To je také uvedeno.
 

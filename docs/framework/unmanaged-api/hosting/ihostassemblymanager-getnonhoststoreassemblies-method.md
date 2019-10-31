@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ccd73963302ae99c7d5d1a7201bc77c4544363f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eb715e1a4f9a210a1440874a9a8cea2d85345d33
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937899"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124580"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies – metoda
 Získá ukazatel rozhraní na [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který představuje seznam sestavení, která hostitel očekává načtení modulu CLR (Common Language Runtime).  
@@ -37,19 +35,19 @@ HRESULT GetNonHostStoreAssemblies (
   
 ## <a name="parameters"></a>Parametry  
  `ppReferenceList`  
- mimo Ukazatel na adresu `ICLRAssemblyReferenceList` obsahující seznam odkazů na sestavení, která hostitel očekává načtení CLR.  
+ mimo Ukazatel na adresu `ICLRAssemblyReferenceList`, která obsahuje seznam odkazů na sestavení, která hostitel očekává načtení CLR.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetNonHostStoreAssemblies`úspěšně vráceno.|  
+|S_OK|`GetNonHostStoreAssemblies` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
 |HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Není k dispozici dostatek paměti pro vytvoření seznamu odkazů pro požadovaný `ICLRAssemblyReferenceList`počet.|  
+|E_OUTOFMEMORY|Není k dispozici dostatek paměti pro vytvoření seznamu odkazů pro požadovaný `ICLRAssemblyReferenceList`.|  
   
 ## <a name="remarks"></a>Poznámky  
  CLR vyřeší odkazy pomocí následující sady pokynů:  
@@ -62,17 +60,17 @@ HRESULT GetNonHostStoreAssemblies (
   
 - V opačném případě se modul CLR nemůže připojit k sestavení.  
   
- Pokud hostitel nastaví `ppReferenceList` hodnotu null, modul CLR nejprve testuje globální mezipaměť sestavení (GAC), `ProvideAssembly`zavolá a pak vyhledá základ aplikace, aby vyřešil odkaz na sestavení.  
+ Pokud se `ppReferenceList` hostitelů nastaví na hodnotu null, modul CLR nejprve testuje globální mezipaměť sestavení (GAC), zavolá `ProvideAssembly`a pak vyhledá základ aplikace, aby vyřešil odkaz na sestavení.  
   
 > [!NOTE]
-> Po inicializaci vyvolá `GetNonHostStoreAssemblies` CLR pouze jednou. Metoda není volána znovu.  
+> Po inicializaci CLR volá `GetNonHostStoreAssemblies` pouze jednou. Metoda není volána znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

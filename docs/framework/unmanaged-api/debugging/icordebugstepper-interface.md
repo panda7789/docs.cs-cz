@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: ed8364eb-f01b-46f6-b5e3-5dda9cae2dfe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c57b13b05522614ff066b93cb9f6a437cb340576
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3ca062231fd482c1f0d888935e882513461838ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962690"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137598"
 ---
 # <a name="icordebugstepper-interface"></a>ICorDebugStepper – rozhraní
 Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího programu, slouží jako identifikátor mezi vydáním a dokončením příkazu a umožňuje krok zrušit.  
@@ -30,17 +28,17 @@ Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího p
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Deactivate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md)|Způsobí zrušení příkazu posledního kroku, kterýpřijal.`ICorDebugStepper`|  
-|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-isactive-method.md)|Načte hodnotu, která označuje, zda `ICorDebugStepper` se aktuálně provádí krok.|  
+|[Deactivate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md)|Způsobí, že toto `ICorDebugStepper` zruší přijatý příkaz posledního kroku.|  
+|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-isactive-method.md)|Získá hodnotu, která označuje, zda tento `ICorDebugStepper` aktuálně provádí krok.|  
 |[SetInterceptMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md)|Nastaví hodnotu CorDebugIntercept –, která určuje typy kódu, na které se používá.|  
 |[SetRangeIL – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md)|Nastaví hodnotu, která označuje, zda volání [ICorDebugStepper:: StepRange –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) předávají hodnoty argumentu relativně k nativnímu kódu nebo kódu jazyka MSIL (Microsoft Intermediate Language) metody, která je laděna prostřednictvím.|  
 |[SetUnmappedStopMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md)|Nastaví hodnotu CorDebugUnmappedStop –, která určuje typ nemapovaného kódu, ve kterém se spuštění zastaví.|  
-|[Step – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md)|Způsobí, `ICorDebugStepper` že se jedná o krok do jednoho kroku prostřednictvím jeho nadřazeného vlákna a volitelně pro pokračování v jednoduchém provádění prostřednictvím funkcí, které jsou volány v rámci vlákna.|  
-|[StepOut – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-stepout-method.md)|Způsobí, `ICorDebugStepper` že se jedná o krok do jednoho kroku prostřednictvím obsahujícího vlákna a k dokončení, když aktuální rámec vrátí řízení volajícímu snímku.|  
-|[StepRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)|Způsobí, `ICorDebugStepper` že se jedná o krok do jednoho kroku prostřednictvím obsahujícího vlákna a vrátí se, když dosáhne kódu nad poslední z určených rozsahů.|  
+|[Step – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md)|Způsobí, že se toto `ICorDebugStepper` k jednomu kroku prostřednictvím jeho obsahujícího vlákna, a volitelně, aby bylo možné pokračovat v jednoduchém krokování prostřednictvím funkcí, které jsou volány ve vlákně.|  
+|[StepOut – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-stepout-method.md)|Způsobí, že se tato `ICorDebugStepper` k jednomu kroku prostřednictvím jeho obsahujícího vlákna a k dokončení, když aktuální rámec vrátí řízení volajícímu snímku.|  
+|[StepRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)|Způsobí, že se tato `ICorDebugStepper` k jednomu kroku prostřednictvím jeho obsahujícího vlákna a vrátí se, pokud dosáhne kódu za poslední z určených rozsahů.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugStepper` Rozhraní slouží k následujícím účelům:  
+ Rozhraní `ICorDebugStepper` slouží k následujícím účelům:  
   
 - Funguje jako identifikátor mezi příkazem kroku, který je vydán a dokončením tohoto příkazu.  
   
@@ -48,7 +46,7 @@ Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího p
   
 - Poskytuje způsob, jak předčasně zrušit operaci krokování.  
   
- Na vlákno může být více než jeden stepper. Například zarážka může být dosaženo při krokování nad funkcí a uživatel může chtít spustit novou operaci krokování uvnitř této funkce. Aby bylo možné určit, jak se má tato situace zvládnout, je k ladicí program. Ladicí program může chtít zrušit původní operaci krokování nebo vnořit tyto dvě operace. `ICorDebugStepper` Rozhraní podporuje obě volby.  
+ Na vlákno může být více než jeden stepper. Například zarážka může být dosaženo při krokování nad funkcí a uživatel může chtít spustit novou operaci krokování uvnitř této funkce. Aby bylo možné určit, jak se má tato situace zvládnout, je k ladicí program. Ladicí program může chtít zrušit původní operaci krokování nebo vnořit tyto dvě operace. Rozhraní `ICorDebugStepper` podporuje obě volby.  
   
  Stepper se může migrovat mezi vlákny, pokud modul CLR (Common Language Runtime) provede více vláken, zařaditelné volání.  
   
@@ -56,11 +54,11 @@ Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího p
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5d6220270634dd8e2d15787d717020b8f6f86bb9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8812a98b0f28dd1336903dc34682f638a291f53b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738325"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110998"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess – metoda
-Spustí proces a jeho primární vlákno pod kontrolu ladicího programu.  
+Spustí proces a jeho primární vlákno pod ovládacím prvkem ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,58 +46,58 @@ HRESULT CreateProcess (
   
 ## <a name="parameters"></a>Parametry  
  `lpApplicationName`  
- [in] Ukazatel na řetězec zakončený hodnotou null, který určuje modulu je spuštěn proces provést. Modul provádí v kontextu zabezpečení volajícího procesu.  
+ pro Ukazatel na řetězec zakončený hodnotou null, který určuje modul, který má být spuštěn spuštěným procesem. Modul je spuštěn v kontextu zabezpečení volajícího procesu.  
   
  `lpCommandLine`  
- [in] Ukazatel na řetězec zakončený hodnotou null, který určuje příkazový řádek, který se spustí proces spuštěný. Název aplikace (například "SomeApp.exe") musí být prvním argumentem.  
+ pro Ukazatel na řetězec zakončený hodnotou null, který určuje příkazový řádek, který má být spuštěn spuštěným procesem. Název aplikace (například "SomeApp. exe") musí být prvním argumentem.  
   
  `lpProcessAttributes`  
- [in] Ukazatel na Win32 `SECURITY_ATTRIBUTES` struktura, která určuje popisovač zabezpečení pro proces. Pokud `lpProcessAttributes` je null, proces získá výchozí popisovač zabezpečení.  
+ pro Ukazatel na strukturu `SECURITY_ATTRIBUTES` Win32, která určuje popisovač zabezpečení pro daný proces. Pokud je `lpProcessAttributes` null, proces Získá výchozí popisovač zabezpečení.  
   
  `lpThreadAttributes`  
- [in] Ukazatel na Win32 `SECURITY_ATTRIBUTES` struktura, která určuje popisovač zabezpečení pro primární vlákno tohoto procesu. Pokud `lpThreadAttributes` je null, vlákno získá výchozí popisovač zabezpečení.  
+ pro Ukazatel na strukturu `SECURITY_ATTRIBUTES` Win32, která určuje popisovač zabezpečení pro primární podproces procesu. Pokud je `lpThreadAttributes` null, vlákno získá výchozí popisovač zabezpečení.  
   
  `bInheritHandles`  
- [in] Nastavte na `true` k označení, že každý popisovač odvoditelný v volající proces zdědí spuštěný proces, nebo `false` k označení, že úchyty nedědí. Zděděné popisovače mají stejnou hodnotu a přístupová práva jako popisovače původní.  
+ pro Nastavte na `true` pro indikaci, že je každý dědičný popisovač v volajícím procesu zděděný spuštěným procesem, nebo `false` k označení, že popisovače nejsou děděny. Zděděné popisovače mají stejnou hodnotu a přístupová práva jako původní popisovače.  
   
  `dwCreationFlags`  
- [in] Bitová kombinace hodnot [příznaky vytvoření procesu Win32](https://go.microsoft.com/fwlink/?linkid=69981) , které řídí s prioritou a chování spuštěn proces.  
+ pro Bitová kombinace [příznaků vytvoření procesu Win32](https://go.microsoft.com/fwlink/?linkid=69981) , která řídí třídu priority a chování spuštěného procesu.  
   
  `lpEnvironment`  
- [in] Ukazatele na blok prostředí nového procesu.  
+ pro Ukazatel na blok prostředí pro nový proces.  
   
  `lpCurrentDirectory`  
- [in] Ukazatel na řetězec zakončený hodnotou null, který určuje úplnou cestu k adresáři aktuální proces. Pokud má parametr hodnotu null, nový proces bude mít stejný aktuální jednotku a adresář jako volající proces.  
+ pro Ukazatel na řetězec zakončený hodnotou null, který určuje úplnou cestu k aktuálnímu adresáři pro daný proces. Pokud má tento parametr hodnotu null, nový proces bude mít stejnou aktuální jednotku a adresář jako volající proces.  
   
  `lpStartupInfo`  
- [in] Ukazatel na Win32 `STARTUPINFOW` struktura, která určuje stanici oken stanici, desktopových, standardní obslužné rutiny a vzhled hlavního okna pro spuštěný proces.  
+ pro Ukazatel na strukturu `STARTUPINFOW` Win32, která určuje stanici okna, plochu, standardní popisovače a vzhled hlavního okna pro spuštěný proces.  
   
  `lpProcessInformation`  
- [in] Ukazatel na Win32 `PROCESS_INFORMATION` struktura, která určuje identifikační informace o procesu, která se má spustit.  
+ pro Ukazatel na strukturu `PROCESS_INFORMATION` Win32, která určuje identifikační informace o procesu, který se má spustit.  
   
  `debuggingFlags`  
- [in] Hodnota cordebugcreateprocessflags – výčet, který určuje možnosti ladění.  
+ pro Hodnota výčtu CorDebugCreateProcessFlags –, která určuje možnosti ladění.  
   
  `ppProcess`  
- [out] Ukazatel na adresu ICorDebugProcess objektu, který představuje proces.  
+ mimo Ukazatel na adresu objektu ICorDebugProcess, který představuje proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Parametry této metody jsou stejné jako u Win32 `CreateProcess` metody.  
+ Parametry této metody jsou stejné jako u metody Win32 `CreateProcess`.  
   
- Chcete-li povolit nespravované ladění ve smíšeném režimu, nastavte `dwCreationFlags` k DEBUG_PROCESS &#124; DEBUG_ONLY_THIS_PROCESS. Pokud chcete použít, pouze spravovaného ladění, nenastavujte tyto příznaky.  
+ Pokud chcete povolit nespravovaný ladění ve smíšeném režimu, nastavte `dwCreationFlags` &#124; na DEBUG_PROCESS DEBUG_ONLY_THIS_PROCESS. Pokud chcete použít pouze spravované ladění, nenastavujte tyto příznaky.  
   
- Pokud ladicí program a proces se ladí (připojený proces) sdílet pomocí jediné konzole, a pokud definiční ladění se používá, je možné pro připojený proces pro uložení konzoly zámky zastavení při ladění událostí. Ladicí program bude blokovat pak všechny pokusy o použití konzoly. Chcete-li tomuto problému vyhnout, nastavte příznak CREATE_NEW_CONSOLE `dwCreationFlags` parametru.  
+ Pokud se ladicí program a proces, který má být laděn (připojený proces) sdílí s jedinou konzolou, a pokud se používá spolupráce, je možné, že připojený proces bude blokovat zámky konzoly a zastaví se při události ladění. Ladicí program pak bude blokovat všechny pokusy o použití konzoly. Tomuto problému se vyhnete nastavením příznaku CREATE_NEW_CONSOLE v parametru `dwCreationFlags`.  
   
- Definiční ladění není podporováno na platformách Win9x a jiných x86, například platformu IA-64 a AMD64 podle platformy.  
+ Ladění spolupráce se nepodporuje na platformách, které nejsou založené na platformě IA-64 a platformě AMD64.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

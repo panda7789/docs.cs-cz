@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 41e2d503-e1f1-407b-abe0-6a29adb3e0d1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c0dbdee35e6c73fbf2d73edd8a6c479e2f2882ea
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 284a74823b01305f8c6e025f70bb9209c8607b7b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764312"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137077"
 ---
 # <a name="icordebugvaluegettype-method"></a>ICorDebugValue::GetType – metoda
-Získá základní typ tohoto objektu "ICorDebugValue".  
+Získá primitivní typ tohoto objektu "ICorDebugValue".  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT GetType (
   
 ## <a name="parameters"></a>Parametry  
  `pType`  
- [out] Ukazatel na hodnotu "Corelementtype –" výčtu, která určuje typ hodnoty.  
+ mimo Ukazatel na hodnotu výčtu "CorElementType –", která označuje typ hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud se objekt komplexního typu za běhu, tento typ se můžou zkoumat prostřednictvím odpovídající podtřídy třídy `ICorDebugValue` rozhraní. Například "ICorDebugObjectValue", která dědí z `ICorDebugValue`, představuje komplexního typu.  
+ Pokud je objekt složitým typem běhu, lze tento typ prozkoumat pomocí příslušných podtříd `ICorDebugValue` rozhraní. Například "ICorDebugObjectValue", který dědí z `ICorDebugValue`představuje komplexní typ.  
   
- `GetType` a [icordebugobjectvalue::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) každá z metod vrací informace o typu hodnoty. Jsou obě nahrazeny obecných typů podporujících [icordebugvalue2::getexacttype –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) metody.  
+ Metody `GetType` a [ICorDebugObjectValue:: GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) každou vrací informace o typu hodnoty. Jsou obě nahrazeny metodou [ICorDebugValue2:: GetExactType –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md) , která se s ohledem na obecné typy nahrazují.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

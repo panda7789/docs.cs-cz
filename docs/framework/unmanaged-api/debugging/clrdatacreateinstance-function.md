@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 440bad90-5a88-45e7-9157-4596801d8d19
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a5d44f9b5dc42147959d3f1d127a64d39258f515
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 71836108dbd0ce01a64b4d9ac773c28d385dfd7c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274266"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099679"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance – funkce
 Vytvoří objekt rozhraní pro zadanou cílovou položku.  
@@ -48,14 +46,14 @@ HRESULT CLRDataCreateInstance (
  mimo Ukazatel na adresu vráceného objektu rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRDataTarget` Objekt je implementován modulem pro ladění aplikace. Implementace závisí na typu reprezentované cílové položky. Cílová položka může být proces, výpis paměti, vzdálený počítač atd.  
+ Objekt `ICLRDataTarget` je implementován modulem pro ladění aplikace. Implementace závisí na typu reprezentované cílové položky. Cílová položka může být proces, výpis paměti, vzdálený počítač atd.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** ClrData. idl  
+ **Hlavička:** ClrData. idl  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

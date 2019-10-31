@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fe12194-4ef7-43c1-9570-ade35ccf127a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 547986633172d6f5e6549ad2048833dc9fb0cef3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cb966a918c63b4fbc00dcf52819b9384427dfdaa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763468"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129591"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a>ICorDebugModule::GetFunctionFromToken – metoda
-Získá funkce, která je určená tokenem metadat.  
+Získá funkci, která je určena tokenem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetFunctionFromToken(
   
 ## <a name="parameters"></a>Parametry  
  `methodDef`  
- [in] A `mdMethodDef` token metadat, který odkazuje na metadata funkce.  
+ pro Token metadat `mdMethodDef`, který odkazuje na metadata funkce.  
   
  `ppFunction`  
- [out] Ukazatel na adresu objektu rozhraní ICorDebugFunction, který představuje funkci.  
+ mimo Ukazatel na adresu objektu rozhraní ICorDebugFunction, který představuje funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetFunctionFromToken` Metoda vrací hodnotu HRESULT CORDBG_E_FUNCTION_NOT_IL, pokud hodnota předaná v `methodDef` neodkazuje na metodu Microsoft intermediate language (MSIL).  
+ Metoda `GetFunctionFromToken` vrátí CORDBG_E_FUNCTION_NOT_IL HRESULT, pokud hodnota předaná v `methodDef` neodkazuje na metodu jazyka MSIL (Microsoft Intermediate Language).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

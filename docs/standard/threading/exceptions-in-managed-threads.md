@@ -8,14 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 689ee44980a4a41b6d46ed9b68306c1b08c49586
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c3215fd42e8cf6d6427d23f94c14db4230ddd02
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960065"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138066"
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
 Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožňuje většině neošetřených výjimek v vláknech pokračovat přirozeně. Ve většině případů to znamená, že Neošetřená výjimka způsobí ukončení aplikace.  
@@ -25,9 +23,9 @@ Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožň
   
  Modul CLR (Common Language Runtime) poskytuje zastavení pro určité neošetřené výjimky, které se používají pro řízení toku programu:  
   
-- <xref:System.Threading.ThreadAbortException> Ve<xref:System.Threading.Thread.Abort%2A> vlákně je vyvolána výjimka, která byla volána.  
+- Ve vlákně je vyvolána <xref:System.Threading.ThreadAbortException>, protože byla volána <xref:System.Threading.Thread.Abort%2A>.  
   
-- <xref:System.AppDomainUnloadedException> Je vyvolána ve vlákně, protože doména aplikace, ve které je vlákno prováděno, je odpojena.  
+- Ve vlákně je vyvolána <xref:System.AppDomainUnloadedException>, protože doména aplikace, ve které je vlákno prováděno, je odpojena.  
   
 - Modul CLR (Common Language Runtime) nebo hostitelský proces ukončí vlákno vyvoláním vnitřní výjimky.  
   
@@ -49,7 +47,7 @@ Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožň
   
 - Ve vlákně fondu vláken neexistuje žádná taková věc jako Neošetřená výjimka. Když úloha vyvolá výjimku, kterou nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a potom vrátí vlákno do fondu vláken.  
   
-- Neexistuje žádná taková věc jako Neošetřená výjimka ve vlákně vytvořeném pomocí <xref:System.Threading.Thread.Start%2A> metody <xref:System.Threading.Thread> třídy. Když kód spuštěný v takovém vlákně vyvolá výjimku, kterou nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a poté řádně ukončí vlákno.  
+- Neexistuje žádná taková věc jako Neošetřená výjimka ve vlákně vytvořeném pomocí metody <xref:System.Threading.Thread.Start%2A> třídy <xref:System.Threading.Thread>. Když kód spuštěný v takovém vlákně vyvolá výjimku, kterou nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a poté řádně ukončí vlákno.  
   
 - Neexistuje žádná taková věc jako Neošetřená výjimka ve vlákně finalizační metody. Když finalizační metoda vyvolá výjimku, kterou nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a poté umožňuje finalizačnímu vláknu obnovit spuštěné finalizační metody.  
   
@@ -62,14 +60,14 @@ Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožň
   
 - Přestrukturuje kód, aby se vlákno po obdržení signálu řádně ukončilo.  
   
-- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> Použijte metodu k přerušení vlákna.  
+- K přerušení vlákna použijte metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.  
   
 - Pokud vlákno musí být zastaveno, aby bylo možné pokračovat v ukončení procesu, nastavte vlákno vlákno na pozadí tak, aby bylo při ukončení procesu automaticky ukončeno.  
   
  Ve všech případech by strategie měla postupovat podle pokynů pro návrh pro výjimky. Výjimky najdete v tématu [pokyny pro návrh](../../../docs/standard/design-guidelines/exceptions.md).  
   
 ### <a name="application-compatibility-flag"></a>Příznak kompatibility aplikace  
- Jako dočasná míra kompatibility můžou správci umístit příznak kompatibility do `<runtime>` části konfiguračního souboru aplikace. To způsobí, že se modul CLR (Common Language Runtime) vrátí k chování verzí 1,0 a 1,1.  
+ Jako dočasná míra kompatibility můžou správci umístit příznak kompatibility do oddílu `<runtime>` konfiguračního souboru aplikace. To způsobí, že se modul CLR (Common Language Runtime) vrátí k chování verzí 1,0 a 1,1.  
   
 ```xml  
 <legacyUnhandledExceptionPolicy enabled="1"/>  

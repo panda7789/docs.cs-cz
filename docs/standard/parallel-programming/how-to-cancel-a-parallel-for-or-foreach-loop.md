@@ -9,25 +9,23 @@ helpviewer_keywords:
 - parallel foreach loop, how to cancel
 - parallel for loops, how to cancel
 ms.assetid: 9d19b591-ea95-4418-8ea7-b6266af9905b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7cdb6e059fb1c7001bbe4da60e2936b1ad40cc1d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67f1f91f235cc88deaa97d412f368819ae0a8cda
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638889"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134235"
 ---
 # <a name="how-to-cancel-a-parallelfor-or-foreach-loop"></a>Postupy: Zrušení smyček Parallel.For nebo ForEach
-<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> metody podporují zrušení prostřednictvím použití tokenů zrušení. Další informace o zrušení obecné naleznete v tématu [zrušení](../../../docs/standard/threading/cancellation-in-managed-threads.md). V paralelních smyčkách, zadáte <xref:System.Threading.CancellationToken> v metodě <xref:System.Threading.Tasks.ParallelOptions> parametr a potom uzavřete paralelní volání do bloku try-catch.  
+Metody <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> podporují zrušení pomocí tokenů zrušení. Další informace o zrušení obecně naleznete v tématu [zrušení](../../../docs/standard/threading/cancellation-in-managed-threads.md). V paralelní smyčce zadáte <xref:System.Threading.CancellationToken> do metody v parametru <xref:System.Threading.Tasks.ParallelOptions> a pak uzavřete paralelní volání do bloku try-catch.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zrušit volání <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>. Můžete použít stejný přístup k <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> volání.  
+ Následující příklad ukazuje, jak zrušit volání <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>. Stejný přístup můžete použít pro volání <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>.  
   
  [!code-csharp[TPL_Parallel#29](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallel_cancel.cs#29)]
  [!code-vb[TPL_Parallel#29](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/cancelloop.vb#29)]  
   
- Pokud je token, který signalizuje zrušení stejný token, který je uveden v <xref:System.Threading.Tasks.ParallelOptions> instance, pak paralelní smyčky vyvolá jedinou <xref:System.OperationCanceledException> na zrušení. Pokud způsobí jiný token zrušení, vyvolá výjimku smyčky <xref:System.AggregateException> s <xref:System.OperationCanceledException> jako InnerException.  
+ Pokud token, který signalizuje zrušení, je stejný token, který je určen v instanci <xref:System.Threading.Tasks.ParallelOptions>, pak paralelní smyčka vyvolá jeden <xref:System.OperationCanceledException> při zrušení. Pokud nějaký jiný token způsobí zrušení, smyčka vyvolá <xref:System.AggregateException> s <xref:System.OperationCanceledException> jako InnerException.  
   
 ## <a name="see-also"></a>Viz také:
 

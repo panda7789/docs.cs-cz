@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1f5508e9ee41d8670b43d5b219846237e11fc8f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f197c8802bd9e55391b3e3e20c64398736070a16
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778144"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136339"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion – funkce
-Získá common language runtime (CLR) informace o verzi zadaného souboru pomocí zadané vyrovnávací paměti.  
+Získá informace o verzi modulu CLR (Common Language Runtime) zadaného souboru pomocí zadané vyrovnávací paměti.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,23 +39,23 @@ HRESULT GetFileVersion (
   
 ## <a name="parameters"></a>Parametry  
  `szFilename`  
- [in] Cesta souboru, který má být zkontrolován.  
+ pro Cesta k souboru, který se má prozkoumat  
   
  `szBuffer`  
- [out v] Vyrovnávací paměť přidělená pro informace o verzi, která je vrácena.  
+ [in, out] Vyrovnávací paměť přidělená pro vrácené informace o verzi.  
   
  `cchBuffer`  
- [in] Velikost v širokých znaků, z `szBuffer`.  
+ pro Velikost `szBuffer`v různých znacích.  
   
  `dwLength`  
- [out] Velikost v bajtech, vráceného `szBuffer`.  
+ mimo Velikost vrácených `szBuffer`v bajtech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

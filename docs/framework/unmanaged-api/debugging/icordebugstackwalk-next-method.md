@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 189c36be-028c-4fba-a002-5edfb8fcd07f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 82f6c96e64b1197b5762c0ad7dbed5458b5d71a3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8cebb66ecf298eaaca0e7af23a9b8c6a2932c23f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760895"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131817"
 ---
 # <a name="icordebugstackwalknext-method"></a>ICorDebugStackWalk::Next – metoda
-Přesune [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu do dalšího snímku.  
+Přesune objekt [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) k dalšímu snímku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,28 +32,28 @@ HRESULT Next();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Modul runtime úspěšně zachytila na další snímek (viz poznámky).|  
-|E_FAIL|`ICorDebugStackWalk` Objektu nelze advanced.|  
-|CORDBG_S_AT_END_OF_STACK|Byl dosažen konec zásobníku jako výsledek tohoto unwind.|  
-|CORDBG_E_PAST_END_OF_STACK|Už na konec zásobníku; ukazatel na rámec Proto je možný žádné další rámce.|  
+|S_OK|Modul runtime se úspěšně rozvedl do dalšího snímku (viz poznámky).|  
+|E_FAIL|Objekt `ICorDebugStackWalk` nelze Upřesnit.|  
+|CORDBG_S_AT_END_OF_STACK|Byl dosažen konec zásobníku v důsledku tohoto unwind.|  
+|CORDBG_E_PAST_END_OF_STACK|Ukazatel na rámec je již na konci zásobníku; Proto nelze mít k dispozici žádné další snímky.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `Next` Metody zálohy `ICorDebugStackWalk` objektu na volání rámec pouze v případě, že modul runtime může vrátit se zpět aktuální rámec. V opačném případě objekt přejde na další snímek, aby bylo možné vrátit se zpět modulu runtime.  
+ Metoda `Next` přesune objekt `ICorDebugStackWalk` do volajícího rámce pouze v případě, že modul runtime může unwind aktuální rámec. V opačném případě objekt přejde k dalšímu snímku, který může modul runtime vrátit zpět.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

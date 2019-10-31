@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9c9db3f3-26bf-4317-88de-5eb926a22a1d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9503e5aeeb1b59c8e62cab20736ea6ab7d5f629f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 91c1ea51969447861ff6d0956c5714baa0054450
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758915"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124673"
 ---
 # <a name="iclrtaskneedspriorityscheduling-method"></a>ICLRTask::NeedsPriorityScheduling – metoda
-Získá hodnotu určující, zda aktuální úloha, která je právě přepnutí, musí být označen jako s vysokou prioritou pro přeplánování.  
+Načte hodnotu, která indikuje, jestli aktuální úkol, který se má přepnout, musí být označený jako vysoká priorita pro přeplánování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,30 +35,30 @@ HRESULT NeedsPriorityScheduling (
   
 ## <a name="parameters"></a>Parametry  
  `pbNeedsPriorityRescheduling`  
- [out] `true`v případě, že hostitel má pokusit o plánovanou zkoušku Přeplánovat aktuální instance úlohy, co nejdříve; v opačném případě `false`.  
+ [out] `true`, pokud by se hostitel měl pokusit o opětovné naplánování aktuální instance úlohy, a to co nejdříve; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`NeedsPriorityRescheduling` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`NeedsPriorityRescheduling` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- V situacích, ve kterém je úkol blízko shromažďují systémem uvolňování, modul CLR, nastaví hodnotu `pbNeedsPriorityScheduling` k `true`, určující nástroje přeplánování s vysokou prioritou. To umožňuje hostiteli plánovanou zkoušku přeplánovat úloha rychle, a tím minimalizuje riziko zpožděním při uvolňování paměti a aktivace hostitele a modul runtime spolupracovat při zachování paměťových prostředků.  
+ V situacích, kdy je úloha blízko shromažďování systémem uvolňování paměti, CLR nastaví hodnotu `pbNeedsPriorityScheduling` na `true`a indikuje tak přeplánování s vysokou prioritou. Díky tomu může hostitel rychle naplánovat úlohu, což minimalizuje potenciální prodlevy v uvolňování paměti, a umožní hostiteli a modulu runtime spolupracovat při zachování prostředků paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

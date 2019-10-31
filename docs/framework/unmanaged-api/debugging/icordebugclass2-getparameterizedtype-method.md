@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 94b591c4-9302-4af2-a510-089496afb036
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1bfc503bfc2b278d7a7344b94cb089cd8e019890
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 64537ab97c1256cc6f963999b027bafc25cbbccb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747764"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125733"
 ---
 # <a name="icordebugclass2getparameterizedtype-method"></a>ICorDebugClass2::GetParameterizedType – metoda
-Získá deklarace typu pro tuto třídu.  
+Získá deklaraci typu pro tuto třídu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,34 +38,34 @@ HRESULT GetParameterizedType (
   
 ## <a name="parameters"></a>Parametry  
  `elementType`  
- [in] Hodnota corelementtype – výčet, který určuje typ elementu pro tuto třídu: Nastavte tuto hodnotu na typ ELEMENT_TYPE_VALUETYPE, který, pokud tento icordebugclass2 – představuje typ hodnoty. Pokud tuto hodnotu nastavit na za řetězcem ELEMENT_TYPE_CLASS `ICorDebugClass2` představuje komplexního typu.  
+ pro Hodnota výčtu CorElementType –, která určuje typ elementu pro tuto třídu: tuto hodnotu nastavte na ELEMENT_TYPE_VALUETYPE, pokud tento ICorDebugClass2 představuje typ hodnoty. Nastavte tuto hodnotu na ELEMENT_TYPE_CLASS, pokud tento `ICorDebugClass2` představuje komplexní typ.  
   
  `nTypeArgs`  
- [in] Počet parametrů typu, pokud typ není obecný. Počet parametrů typu (pokud existuje) musí odpovídat počtu požadovaného třídy.  
+ pro Počet parametrů typu, pokud je typ obecný. Počet parametrů typu (pokud existuje) musí odpovídat číslu požadovanému třídou.  
   
  `ppTypeArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který reprezentuje parametr typu. Pokud je třída neobecnou, je tato hodnota null.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje parametr typu. Pokud třída není obecná, tato hodnota je null.  
   
  `ppType`  
- [out] Ukazatel na adresu `ICorDebugType` objekt, který reprezentuje deklaraci typu. Tento objekt je ekvivalentní <xref:System.Type> objektu ve spravovaném kódu.  
+ mimo Ukazatel na adresu `ICorDebugType`ho objektu, který představuje deklaraci typu. Tento objekt je ekvivalentní objektu <xref:System.Type> ve spravovaném kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je třída neobecnou, to znamená, pokud nemá žádné parametry typu `GetParameterizedType` jednoduše načte běhový objekt type odpovídající třídu. `elementType` Parametr musí být nastavena na správný elementární typ pro třídu: Typ ELEMENT_TYPE_VALUETYPE, který pokud je hodnota typu; třída v opačném případě za řetězcem ELEMENT_TYPE_CLASS.  
+ Pokud třída není obecná, to znamená, pokud nemá žádné parametry typu, `GetParameterizedType` jednoduše načte objekt typu modulu runtime odpovídající třídě. Parametr `elementType` by měl být nastaven na správný typ elementu pro třídu: ELEMENT_TYPE_VALUETYPE, pokud je třída typem hodnoty; v opačném případě ELEMENT_TYPE_CLASS.  
   
- Pokud třída přijímá parametry typu (například `ArrayList<T>`), můžete použít `GetParameterizedType` k vytvoření objektu typu u typu tvořícího instanci jako `ArrayList<int>`.  
+ Pokud třída přijímá parametry typu (například `ArrayList<T>`), můžete použít `GetParameterizedType` k vytvoření objektu typu pro instanci typu, jako je například `ArrayList<int>`.  
   
 ## <a name="background-information"></a>Základní informace  
- V rozhraní .NET Framework verze 1.0 a 1.1 všechny typy v metadatech přímo mapovat na typ v běžící proces. Proto typ metadat a typ prostředí runtime došlo jednotné vyjádření v běžící proces. Jednoho obecného typu v metadatech však lze mapovat na mnoha různým konkretizacím typu v běžící proces. Například typ metadat `SortedList<K,V>` můžete namapovat na `SortedList<String, EmployeeRecord>`, `SortedList<Int32, String>`, `SortedList<String,Array<Int32>>`, a tak dále. Proto je třeba způsob, jak zpracovat vytvoření instance typu.  
+ V .NET Framework verzích 1,0 a 1,1 může být každý typ v metadatech přímo mapován na typ v běžícím procesu. Proto typ metadat a typ modulu runtime mají v běžícím procesu jednu reprezentaci. Jeden obecný typ v metadatech však lze namapovat na mnoho různých instancí typu v běžícím procesu. Například typ metadat `SortedList<K,V>` lze namapovat na `SortedList<String, EmployeeRecord>`, `SortedList<Int32, String>`, `SortedList<String,Array<Int32>>`a tak dále. Proto potřebujete způsob, jak zpracovat instanci typu.  
   
- Představuje rozhraní .NET Framework verze 2.0 `ICorDebugType` rozhraní. Pro obecný typ `ICorDebugClass` nebo `ICorDebugClass2` objekt představuje typ bez instancí (`SortedList<K,V>`) a `ICorDebugType` objekt představuje různé instance. Vzhledem `ICorDebugClass` nebo `ICorDebugClass2` objektu, můžete vytvořit `ICorDebugType` objekt pro všechny instance voláním `ICorDebugClass2::GetParameterizedType` metoda. Můžete taky vytvořit `ICorDebugType` objekt pro jednoduchý typ., jako je například Int32, nebo u jiného než obecného typu.  
+ .NET Framework verze 2,0 zavádí rozhraní `ICorDebugType`. Pro obecný typ objekt `ICorDebugClass` nebo `ICorDebugClass2` představuje neinstanciní typ (`SortedList<K,V>`) a objekt `ICorDebugType` představuje různé typy s vytvořenými instancemi. Pro objekt `ICorDebugClass` nebo `ICorDebugClass2` můžete vytvořit objekt `ICorDebugType` pro jakoukoliv instanci voláním metody `ICorDebugClass2::GetParameterizedType`. Můžete také vytvořit objekt `ICorDebugType` pro jednoduchý typ, jako je Int32 nebo pro neobecný typ.  
   
- Po zavedení služby `ICorDebugType` objekt reprezentující pojem run-time typu má zvlněný efekt v celém rozhraní API. Funkce, které dřív trval `ICorDebugClass` nebo `ICorDebugClass2` objektu nebo dokonce `CorElementType` hodnotu zobecněné provést `ICorDebugType` objektu.  
+ Zavedení objektu `ICorDebugType`, který představuje pojem běhu typu, má v rámci rozhraní API efekt Ripple. Funkce, které dříve trvaly objekt `ICorDebugClass` nebo `ICorDebugClass2` nebo i hodnota `CorElementType`, jsou zobecněny k převzetí objektu `ICorDebugType`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

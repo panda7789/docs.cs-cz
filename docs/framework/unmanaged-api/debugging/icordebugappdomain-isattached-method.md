@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: af0c67c7-f53e-47c9-b84b-be50bd04903e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a3f01edcd6ce1d16ab2c651a66d2fd9cd2eb0ba
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 30e0b0c4ed9bac4abd1dc185031e41c1e3ed014a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737819"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134664"
 ---
 # <a name="icordebugappdomainisattached-method"></a>ICorDebugAppDomain::IsAttached – metoda
-Získá hodnotu, která označuje, zda ladicí program je připojen k doméně aplikace.  
+Získá hodnotu, která označuje, zda je ladicí program připojen k doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT IsAttached (
   
 ## <a name="parameters"></a>Parametry  
  `pbAttached`  
- [out] `true` Pokud je ladicí program připojený do domény aplikace; v opačném případě `false`.  
+ [out] `true`, pokud je ladicí program připojen k doméně aplikace; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Icordebugcontroller – metody nelze použít, dokud ladicí program připojí k doméně aplikace.  
+ Metody ICorDebugController nelze použít, dokud se ladicí program nepřipojí k doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

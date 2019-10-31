@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2e6bbaea-79ba-448c-a0e3-7c90fc7c2939
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 87249dae0eff4ea4899a63c0d13e79c266df453a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d29576c6f073f1d0e8e0aea417fc38c09a8327c1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745003"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122749"
 ---
 # <a name="icordebugbreakpointenumnext-method"></a>ICorDebugBreakpointEnum::Next – metoda
-Získá zadaný počet instancí ICorDebugBreakpoint z výčtu od aktuální pozice.  
+Získá zadaný počet instancí ICorDebugBreakpoint z výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet `ICorDebugBreakpoint` instancí, který se má načíst.  
+ pro Počet instancí `ICorDebugBreakpoint`, které mají být načteny.  
   
  `breakpoints`  
- [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugBreakpoint` objekt, který představuje zarážku.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugBreakpoint`, který představuje zarážku.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugBreakpoint` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugBreakpoint`. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2ca8a7a2-7b54-4ba3-8e73-277c7df485f3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 26b3761ab49f36c5f687ff2c62882667e044d299
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8364d38f7ab81b73fd8b47d2251bc0ff1b2c71e8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774227"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138248"
 ---
 # <a name="ememorycriticallevel-enumeration"></a>EMemoryCriticalLevel – výčet
-Obsahuje hodnoty, které označují dopad selhání při přidělování paměti konkrétní se požaduje, ale není možné spokojeni.  
+Obsahuje hodnoty, které indikují dopad selhání při požadavku na přidělení konkrétní paměti, ale nelze je splnit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eAppDomainCritical`|Označuje, že je velmi důležité pro spuštění spravovaného kódu v doméně, která vyžaduje přidělování přidělení. Pokud nelze přidělit paměť, modul CLR nemůže zaručit, že doménu je stále možné použít. Hostitele Určuje, jaká akce se má provést při přidělení nedokáže splnit. To můžete dát pokyn modulu CLR pro přerušení `AppDomain` automaticky, nebo povolíte jeho běžela voláním metod na [iclrpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md).|  
-|`eProcessCritical`|Označuje, že přidělování je zásadní pro spuštění spravovaného kódu v procesu. Tato hodnota se používá během spouštění a při spuštění finalizační metody. Pokud nelze přidělit paměť, modul CLR nelze použít v procesu. Selhání přidělení paměti CLR efektivně zakázána. Všechny následné volání do CLR selhat s HOST_E_CLRNOTAVAILABLE.|  
-|`eTaskCritical`|Označuje, že je důležité pro spuštění úlohy, která vyžaduje přidělování přidělení. Pokud nelze přidělit paměť, CLR nemůže zaručit, že mohou být provedeny úlohy. V případě selhání, vydá modul CLR <xref:System.Threading.ThreadAbortException> ve vlákně systému fyzických operace.|  
+|`eAppDomainCritical`|Označuje, že přidělení je kritické pro spouštění spravovaného kódu v doméně, která požadovala přidělení. Pokud nelze přidělit paměť, CLR nemůže zaručit, že je doména stále použitelná. Hostitel rozhodne, jakou akci provést v případě, že přidělení nelze splnit. Může modulu CLR dát pokyn, aby `AppDomain` přerušit, nebo ho nechat běžet voláním metod v [ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md).|  
+|`eProcessCritical`|Označuje, že přidělení je kritické pro spuštění spravovaného kódu v procesu. Tato hodnota se používá při spuštění a při spuštění finalizační metody. Pokud nelze přidělit paměť, modul CLR nemůže v procesu pracovat. Pokud se přidělení nepovede, CLR je efektivně zakázaný. Všechna následující volání do CLR selžou s HOST_E_CLRNOTAVAILABLE.|  
+|`eTaskCritical`|Indikuje, že přidělení je důležité pro spuštění úlohy, která požadovala přidělení. Pokud nelze přidělit paměť, CLR nemůže zaručit, že úlohu lze provést. V případě selhání vyvolá CLR <xref:System.Threading.ThreadAbortException> ve vlákně fyzického operačního systému.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metody přidělení paměti definované v [ihostmemorymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md) a [ihostmalloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) rozhraní měl parametr tohoto typu. V závislosti na závažnosti k chybě, hostitele můžete rozhodnout, zda požadavek na přidělení selhala okamžitě, nebo počkejte, dokud je možné splnit.  
+ Metody přidělování paměti definované v rozhraních [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md) a [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) přebírají parametr tohoto typu. V závislosti na závažnosti selhání se hostitel může rozhodnout, jestli má požadavek na přidělení selhat okamžitě, nebo počkat, až bude možné ho splnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

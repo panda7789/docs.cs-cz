@@ -1,24 +1,22 @@
 ---
-title: Zmírnění Ověřování schématu XML
+title: 'Omezení rizik: Ověřování schématu XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d7f53a2e8684029c0d1329d29a88bd1788e62d43
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7feed7de4a6c76f5f2ba0e2ea1c532aad6bde4de
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789675"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126077"
 ---
-# <a name="mitigation-xml-schema-validation"></a>Zmírnění Ověřování schématu XML
+# <a name="mitigation-xml-schema-validation"></a>Omezení rizik: Ověřování schématu XML
 V .NET Framework 4,6 ověřování schématu XSD detekuje porušení omezení UNIQUE, pokud je použit složený klíč a jeden klíč je prázdný.  
   
 ## <a name="impact"></a>Dopad  
- Dopad této změny by měl být minimální: v závislosti na specifikaci schématu je očekávána chyba ověřování schématu, pokud `xsd:unique` je porušena použitím složené klíče s prázdným klíčem.  
+ Dopad této změny by měl být minimální: v závislosti na specifikaci schématu je očekávána chyba ověřování schématu, pokud je `xsd:unique` narušeno pomocí složeného klíče s prázdným klíčem.  
   
 ## <a name="mitigation"></a>Zmírnění  
  Zda je zjištěna chyba ověřování schématu, pokud je složený klíč s jedním prázdným klíčem konfigurovatelné funkce:  
@@ -27,12 +25,12 @@ V .NET Framework 4,6 ověřování schématu XSD detekuje porušení omezení UN
   
 - V aplikacích, které běží pod .NET Framework 4,6, ale cílí na .NET Framework 4.5.2 a starší verze, se ve výchozím nastavení nedetekuje chyba ověřování schématu. je však možné se k němu přihlásit, aby se zjistila chyba ověřování schématu.  
   
- Toto chování lze konfigurovat pomocí <xref:System.AppContext> třídy pro definování hodnoty `System.Xml.IgnoreEmptyKeySequences` přepínače. Vzhledem k tomu, že je `false` výchozí hodnota přepínače (prázdné klíčové sekvence nejsou ignorovány), aplikace, které cílí na .NET Framework 4,6, se mohou odhlásit z chování pomocí následujícího kódu pro nastavení hodnoty přepínače na: `true`  
+ Toto chování lze nakonfigurovat pomocí třídy <xref:System.AppContext> pro definování hodnoty přepínače `System.Xml.IgnoreEmptyKeySequences`. Vzhledem k tomu, že je výchozí hodnota přepínače `false` (prázdné sekvence klíčů nejsou ignorovány), aplikace, které cílí na .NET Framework 4,6, se mohou odhlásit z chování pomocí následujícího kódu, který nastaví hodnotu přepínače na `true`:  
   
  [!code-csharp[AppCompat.IgnoreEmptyKeySequences#1](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/cs/program.cs#1)]
  [!code-vb[AppCompat.IgnoreEmptyKeySequences#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/vb/module1.vb#1)]  
   
- U aplikací, které cílí na .NET Framework 4.5.2 a starší verze, protože je `true` výchozí hodnota přepínače (prázdné sekvence klíčů se ignorují), je možné zajistit, že složený klíč s prázdným klíčem vygeneruje chybu ověřování schématu pomocí Následující kód pro nastavení hodnoty přepínače na `false`.  
+ U aplikací, které cílí na .NET Framework 4.5.2 a starší verze, protože je výchozí hodnota přepínače `true` (prázdné klíčové sekvence jsou ignorovány), je možné zajistit, aby složený klíč s prázdným klíčem vygeneroval chybu ověřování schématu pomocí Následující kód nastaví hodnotu přepínače na `false`.  
   
  [!code-csharp[AppCompat.IgnoreEmptyKeySequences#2](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/cs/program.cs#2)]
  [!code-vb[AppCompat.IgnoreEmptyKeySequences#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/vb/module1.vb#2)]  

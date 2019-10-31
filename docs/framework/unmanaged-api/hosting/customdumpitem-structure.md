@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fd9085ff-7beb-4c38-97f0-037cd8ba4f65
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05f5d3fbe05ad1e97a1ae61ed0496f314c4ec5cd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae64edd8a3a628100d4c51d0b78be1bc8d49fc17
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765967"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138285"
 ---
 # <a name="customdumpitem-structure"></a>CustomDumpItem – struktura
-Popisuje položku, kterou chcete přidat do vlastní výpisu stavu systému v hlášení chyb.  
+Popisuje položku, která se má přidat do vlastního výpisu paměti při zasílání zpráv o chybách.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +39,20 @@ struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`itemKind`|[Ecustomdumpitemkind –](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) hodnotu, která určuje typ přidávané položky.|  
-|`pReserved`|Není v současné době nepoužívá. Všechny položky přidané do sjednocení nesmí být větší než velikost ukazatele. Pokud `struct` je potřeba, musí přidělit samostatně a přejděte na to.|  
+|`itemKind`|Hodnota [ECustomDumpItemKind –](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) , která určuje druh položky, která má být přidána.|  
+|`pReserved`|Aktuálně se nepoužívá. Všechny položky přidané do sjednocení nesmí být větší než velikost ukazatele. Pokud je vyžadován `struct`, je nutné jej přidělit samostatně a odkazovat na něj.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Iclrerrorreportingmanager::begincustomdump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) přebírá parametr typu `CustomDumpItem`.  
+ [ICLRErrorReportingManager:: BeginCustomDump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) přebírá parametr typu `CustomDumpItem`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

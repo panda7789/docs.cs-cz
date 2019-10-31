@@ -8,14 +8,12 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: d468325a-21c5-43ce-8567-84e342b22308
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aaf76d4c3d0f5fb59aeb35fae7a7020ee97b74d6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 3c5e803c874e1254510f75189846d7cb12cb1ee2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70776487"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132477"
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>Funkce CertTimestampAuthenticodeLicense
 Časová razítka licence XrML technologie Authenticode.  
@@ -38,13 +36,13 @@ HRESULT CertTimestampAuthenticodeLicense (
  pro Identifikátor URI serveru časového razítka.  
   
  `pTimestampSignatureBlob`  
- mimo Ukazatel na CRYPT_DATA_BLOB pro příjem signatury časového razítka kódovaného ve formátu base64. Je zodpovědností volajícího, `pTimestampSignatureBlob` aby `HepFree()` po použití zadarmo ->. `pbData` Podívejte se na strukturu [CRYPTOAPI_BLOB](/windows/win32/api/dpapi/ns-dpapi-crypt_integer_blob) .  
+ mimo Ukazatel na CRYPT_DATA_BLOB pro příjem signatury časového razítka kódovaného ve formátu base64. Je zodpovědností volajícího uvolnit `pTimestampSignatureBlob`->`pbData` se `HepFree()` po použití. Podívejte se na strukturu [CRYPTOAPI_BLOB](/windows/win32/api/dpapi/ns-dpapi-crypt_integer_blob) .  
   
 ## <a name="remarks"></a>Poznámky  
  Podpisem časového razítka je ve skutečnosti zpráva typu PKCS #7 SignedData, jejíž obsah je binární forma SignatureValue z podpisu licence. V podstatě to funguje jako počítadlo signatury licence.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
+ `S_OK`, zda je funkce úspěšná. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

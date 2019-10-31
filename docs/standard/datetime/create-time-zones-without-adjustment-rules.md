@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření časových pásem bez pravidel úpravy'
+title: 'Postupy: vytváření časových pásem bez pravidel úpravy'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +10,14 @@ helpviewer_keywords:
 - time zones [.NET Framework], creating
 - adjustment rule [.NET Framework]
 ms.assetid: a6af8647-7893-4f29-95a9-d94c65a6e8dd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 510112c8b19ec002d1dcf918eb983b55dee68fd0
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 344d8307318d5a2e50eddb39ef488cd8c5f2fdac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106659"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129110"
 ---
-# <a name="how-to-create-time-zones-without-adjustment-rules"></a>Postupy: Vytváření časových pásem bez pravidel úpravy
+# <a name="how-to-create-time-zones-without-adjustment-rules"></a>Postupy: vytváření časových pásem bez pravidel úpravy
 
 Přesné informace o časovém pásmu, které vyžaduje aplikace, nemusí být k dispozici v konkrétním systému z několika důvodů:
 
@@ -29,12 +27,12 @@ Přesné informace o časovém pásmu, které vyžaduje aplikace, nemusí být k
 
 - Časové pásmo existuje, ale nemá přesné informace o úpravách časového pásma pro konkrétní historické období.
 
-V těchto případech můžete zavolat <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metodu pro definování časového pásma vyžadovaného vaší aplikací. Pomocí přetížení této metody můžete vytvořit časové pásmo s pravidly úprav nebo bez nich. Pokud časové pásmo podporuje letní čas, můžete definovat úpravy s pravidly úpravy s pevnou nebo plovoucí. (Pro definice těchto podmínek si přečtěte část "Terminologie časových pásem" v tématu [Přehled časového pásma](../../../docs/standard/datetime/time-zone-overview.md).)
+V těchto případech můžete zavolat metodu <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> pro definování časového pásma vyžadovaného vaší aplikací. Pomocí přetížení této metody můžete vytvořit časové pásmo s pravidly úprav nebo bez nich. Pokud časové pásmo podporuje letní čas, můžete definovat úpravy s pravidly úpravy s pevnou nebo plovoucí. (Pro definice těchto podmínek si přečtěte část "Terminologie časových pásem" v tématu [Přehled časového pásma](../../../docs/standard/datetime/time-zone-overview.md).)
 
 > [!IMPORTANT]
-> Vlastní časová pásma vytvořená voláním <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody nejsou přidána do registru. Místo toho mohou být k dispozici pouze prostřednictvím odkazu objektu vráceného <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> voláním metody.
+> Vlastní časová pásma vytvořená voláním metody <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> nejsou přidána do registru. Místo toho mohou být k dispozici pouze prostřednictvím odkazu objektu vráceného voláním metody <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>.
 
-V tomto tématu se dozvíte, jak vytvořit časové pásmo bez pravidel úprav. Pokud chcete vytvořit časové pásmo, které podporuje pravidla úprav letního času, [Přečtěte si téma How to: Vytváření časových pásem s pravidly](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)úpravy
+V tomto tématu se dozvíte, jak vytvořit časové pásmo bez pravidel úprav. Chcete-li vytvořit časové pásmo, které podporuje pravidla úprav letního času, přečtěte si téma [Postup: vytváření časových pásem s pravidly úpravy](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).
 
 ### <a name="to-create-a-time-zone-without-adjustment-rules"></a>Vytvoření časového pásma bez pravidel úpravy
 
@@ -46,9 +44,9 @@ V tomto tématu se dozvíte, jak vytvořit časové pásmo bez pravidel úprav. 
 
 3. Pokud chcete použít jiný identifikátor než standardní název časového pásma, definujte identifikátor časového pásma.
 
-4. Vytvořte instanci objektu, který definuje posun časového pásma od času UTC. <xref:System.TimeSpan> Časová pásma s časy, které jsou pozdější než UTC, mají kladný posun. Časová pásma s časy, které jsou starší než UTC, mají záporný posun.
+4. Vytvořte instanci objektu <xref:System.TimeSpan> definující posun časového pásma od času UTC. Časová pásma s časy, které jsou pozdější než UTC, mají kladný posun. Časová pásma s časy, které jsou starší než UTC, mají záporný posun.
 
-5. <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> Zavolejte metodu pro vytvoření instance nového časového pásma.
+5. Pro vytvoření instance nového časového pásma volejte metodu <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
@@ -57,7 +55,7 @@ Následující příklad definuje vlastní časové pásmo pro Mawson, Antarktid
 [!code-csharp[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#1)]
 [!code-vb[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#1)]
 
-Řetězec přiřazený k <xref:System.TimeZoneInfo.DisplayName%2A> vlastnosti následuje po standardním formátu, ve kterém je posun časového pásma od času UTC následován popisným popisem časového pásma.
+Řetězec přiřazený k vlastnosti <xref:System.TimeZoneInfo.DisplayName%2A> následuje po standardním formátu, ve kterém je posun časového pásma od času UTC následován popisným popisem časového pásma.
 
 ## <a name="compiling-the-code"></a>Kompilování kódu
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cdeda721-b214-4503-a291-c70b68b5f36b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38542ec28cce9687dc3ed824f9d449f3070976da
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5e3619d12b9377a8482254703d3d97d0348a013b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737296"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127173"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName – metoda
-Získá název sestavení, která to `ICorDebugAssembly` instance představuje.  
+Získá název sestavení, které představuje tato `ICorDebugAssembly` instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT GetName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost `szName` pole.  
+ pro Velikost pole `szName`.  
   
  `pcchName`  
- [out] Ukazatel na celé číslo, které určuje skutečná délka názvu.  
+ mimo Ukazatel na celé číslo, které určuje skutečnou délku názvu.  
   
  `szName`  
- [out] Pole uchovávající název.  
+ mimo Pole, které ukládá název.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetName` Metoda vrátí úplnou cestu a název souboru sestavení.  
+ Metoda `GetName` vrátí úplnou cestu a název souboru sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

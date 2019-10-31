@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 505bba3bb5d08c13e29543c20df2daaebc863d12
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 77a0a8f58c11673a1958d837b4c3a21a05754c94
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768001"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138322"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime – funkce
-Načte modul CLR (CLR) do procesu pomocí informací o verzi uložených v souboru XML. Formát souboru XML je Modelováno podle konfiguračního souboru standardní aplikace. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).  
+Načte modul CLR (Common Language Runtime) do procesu pomocí informací o verzi uložených v souboru XML. Formát souboru XML je modelován po standardní konfigurační soubor aplikace. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4. Zobrazit [načítání modul CLR do procesu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
+ Tato funkce se už nepoužívá v .NET Framework 4. Viz [načtení modulu CLR (Common Language Runtime) do procesu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,29 +40,29 @@ HRESULT CorBindToCurrentRuntime (
   
 ## <a name="parameters"></a>Parametry  
  `pwszFileName`  
- [in] Název konfiguračního souboru aplikace, která určuje verzi modulu CLR pro načtení. Pokud název souboru není plně kvalifikovaná, předpokládá se, že se ve stejném adresáři jako spustitelný soubor uskutečněním hovoru.  
+ pro Název konfiguračního souboru aplikace, který určuje verzi modulu CLR, která má být načtena. Pokud název souboru není plně kvalifikovaný, předpokládá se, že se nachází ve stejném adresáři jako spustitelný soubor, který volání provádí.  
   
- Atribut verze je popsán verzi modulu runtime, který se má načíst [ \<requiredRuntime >](../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) element konfiguračního souboru.  
+ Verze modulu runtime, která má být načtena, je popsána atributem verze v [\<requiredRuntime >](../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) elementu konfiguračního souboru.  
   
- Pokud není zadaná žádná verze, nebo pokud `<requiredRuntime>` nebyl nalezen element, načíst nejnovější verzi modulu CLR, který je nainstalován na počítači.  
+ Pokud není zadána žádná verze nebo pokud `<requiredRuntime>` element nebyl nalezen, je načtena nejnovější verze CLR, která je nainstalována v počítači.  
   
  `rclsid`  
- [in] `CLSID` Třídy typu coclass, která implementuje [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní. Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID` třídy coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
- [in] `IID` Rozhraní, které jste požádali. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
+ pro `IID` rozhraní, které požadujete. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
   
  `ppv`  
- [out] Vrácený ukazatel rozhraní.  
+ mimo Vrácený ukazatel rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

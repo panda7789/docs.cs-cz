@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ec00bc21-117e-4acd-9301-2cfafd5be8d3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a6f0ed843f72d3f1e1575da15776a94a9097fd02
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38fe50f5a6608bb27d7a7818dee4784a7f8113ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771099"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133610"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains – metoda
-Získá enumerátor icordebugchainenum –, který obsahuje všechny řetězů zásobníku v tomto objektu ICorDebugThread ukazatel rozhraní.  
+Získá ukazatel rozhraní na enumerátor ICorDebugChainEnum, který obsahuje všechny řetězy zásobníku v tomto objektu ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +35,26 @@ HRESULT EnumerateChains (
   
 ## <a name="parameters"></a>Parametry  
  `ppChains`  
- [out] Ukazatel na adresu `ICorDebugChainEnum` zřetězí objekt, který umožňuje výčet všech zásobníku v tomto vláknu, začíná řetězec aktivní (to znamená, poslední).  
+ mimo Ukazatel na adresu `ICorDebugChainEnum` objektu, který umožňuje vyčíslení všech řetězů zásobníku v tomto vlákně počínaje aktivním řetězcem (to znamená nejnovější) řetěz.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetěz zásobníku představuje fyzické volání zásobníku pro vlákno. V následujících případech vytvoření hranice řetěz zásobníku:  
+ Řetěz zásobníku představuje fyzický zásobník volání pro vlákno. V následujících případech se vytvoří hranice řetězu zásobníku:  
   
-- Spravované na nespravované nebo nespravovaného do spravovaného přechodu.  
+- Přechod z spravovaného do nespravovaného nebo nespravovaného na nespravovaný.  
   
-- Přepnutí kontextu.  
+- Kontextový přepínač.  
   
-- A zneužití uživatelské vlákno ladicího programu.  
+- Napadení ladicího programu v uživatelském vlákně.  
   
- V jednoduchém případě pro vlákno, na kterém běží v rámci jednoho čistě spravovaném kódu bude existovat shoda mezi vlákny a řetězů zásobníku.  
+ V jednoduchém případě pro vlákno, které spouští čistě spravovaný kód v jednom kontextu, bude existovat korespondence 1:1 mezi vlákny a řetězy zásobníku.  
   
- Ladicí program může být vhodné ke změně uspořádání zásobníky fyzická volání všech vláken v logické zásobníky volání. To by vyžadovalo řazení řetězců všechna vlákna podle jejich vztahů volající/volaný a přerozdělit je.  
+ Ladicí program může chtít změnit uspořádání fyzických zásobníků volání všech vláken do logických zásobníků volání. To by mělo zahrnovat řazení všech zřetězení vláken podle jejich vztahů volající/volaný a jejich přeseskupování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

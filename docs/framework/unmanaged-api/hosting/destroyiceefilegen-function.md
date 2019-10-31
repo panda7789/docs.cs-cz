@@ -16,19 +16,17 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab4560774edce49341c86dd9446e38701db7fa62
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4eb878b61b72378bc6870af7f2cd09f0b6943b13
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769829"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136504"
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen – funkce
-Zničí [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
+Odstraní objekt [ICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) .  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT DestroyICeeFileGen (
   
 ## <a name="parameters"></a>Parametry  
  `ceeFileGen`  
- [in] `ICeeFileGen` Objekt ke zničení.  
+ pro Objekt `ICeeFileGen`, který se má zničit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb COM.  
+ Tato metoda vrátí standardní kódy chyb modelu COM.  
   
 ## <a name="remarks"></a>Poznámky  
- `DestroyICeeFileGen` Odstraní `ICeeFileGen` objekt vytvořený pomocí [createiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) funkce.  
+ `DestroyICeeFileGen` zničí objekt `ICeeFileGen` vytvořený funkcí [CreateICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ICeeFileGen.h  
+ **Hlavička:** ICeeFileGen –. h  
   
- **Knihovna:** MSCorPE.dll  
+ **Knihovna:** MSCorPE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

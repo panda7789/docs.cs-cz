@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 590647c5-499f-44c3-b56c-0e1945088d3a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab2a1c0c3f280f115a408adc81a46196eb5a804c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e30c3dada4466cabed40a63e1c98d1c27e33f011
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989141"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120697"
 ---
 # <a name="icordebugeditandcontinueerrorinfogettoken-method"></a>ICorDebugEditAndContinueErrorInfo::GetToken – metoda
-`GetToken` je zastaralý. Nevolejte tuto metodu.  
+`GetToken` je zastaralá. Nevolejte tuto metodu.  
   
 ## <a name="see-also"></a>Viz také:
 

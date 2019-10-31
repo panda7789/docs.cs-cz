@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8a570813-21be-407e-92a6-7ae8de3bc728
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6aeda4901551b7e79becff132e44382ed11b0d31
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4e75b8553ff33946654a6a3b6184f98049c6a6cb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773349"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126670"
 ---
 # <a name="iclrassemblyreferencelistisassemblyreferenceinlist-method"></a>ICLRAssemblyReferenceList::IsAssemblyReferenceInList – metoda
-Získá hodnotu určující, zda zadaný ukazatel odkazuje na sestavení v seznamu.  
+Získá hodnotu, která označuje, zda zadaný ukazatel odkazuje na sestavení v seznamu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +35,24 @@ HRESULT IsAssemblyReferenceInList (
   
 ## <a name="parameters"></a>Parametry  
  `pName`  
- [in] Ukazatel rozhraní k sestavení, pro který chcete vyhledat. Platné hodnoty jsou typu `IAssemblyName` nebo `IReferenceIdentity`.  
+ pro Ukazatel rozhraní na sestavení, které chcete vyhledat. Platné hodnoty jsou typu `IAssemblyName` nebo `IReferenceIdentity`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Řetězec se zobrazí v seznamu.|  
-|S_FALSE|Řetězec se nezobrazí v seznamu.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po vrácení metody E_FAIL, modul common language runtime už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|S_FALSE|Řetězec se v seznamu nezobrazí.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, modul Common Language Runtime již nebude v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

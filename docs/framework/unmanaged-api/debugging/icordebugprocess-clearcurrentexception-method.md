@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e02ee1a-e495-4578-bfb5-b946274bede7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ad7dd3ae0e547933fdf7d579116dccc62ae579c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 37a7d8fa4439d52db3cddfff22ac6580b19af58a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766144"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128917"
 ---
 # <a name="icordebugprocessclearcurrentexception-method"></a>ICorDebugProcess::ClearCurrentException – metoda
-Vymaže aktuální nespravované výjimky na dané vlákno.  
+Vymaže aktuální nespravovanou výjimku na daném vlákně.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,18 +33,18 @@ HRESULT ClearCurrentException([in] DWORD threadID);
   
 ## <a name="parameters"></a>Parametry  
  `threadID`  
- [in] ID vlákna, na kterém aktuální nespravované výjimky se vymažou.  
+ pro ID vlákna, na kterém bude vymazána aktuální nespravovanou výjimka.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání před voláním této metody [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) když vlákno ohlásil nespravované výjimky, které mají být ignorovány ladicím procesem. Tato akce vymaže nezpracovaných integrovaných (i b) i out-of-band (OOB) události v daném vláknu. Všechny OOB zarážky a krokování výjimky jsou automaticky vymazány.  
+ Před voláním metody [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) volejte tuto metodu, pokud vlákno oznámilo nespravovanou výjimku, kterou by měl ignorovat laděného procesu. Tím se v daném vláknu vymažou nedokončené události v pásmu (IB) i mimo pásmo (OOB). Všechny zarážky OOB a výjimky s jedním krokem se automaticky vymažou.  
   
- Použití [icordebugthread2::interceptcurrentexception –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md) zachytit aktuální výjimku ve vlákně spravovaných.  
+ K zachycení aktuální spravované výjimky ve vlákně použijte [ICorDebugThread2:: InterceptCurrentException –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

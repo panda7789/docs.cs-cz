@@ -2,14 +2,12 @@
 title: 'ICorDebugSymbolProvider:: Getmethodprops – – metoda'
 ms.date: 03/30/2017
 ms.assetid: 8f836b80-b7a5-460b-bf76-5f0e45652aea
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 95610bc527b8f5b90df906b6260eb636d61dbcd8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 811106216e1e454ddf342af1578f74c80ba2acc9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957309"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138833"
 ---
 # <a name="icordebugsymbolprovidergetmethodprops-method"></a>ICorDebugSymbolProvider:: Getmethodprops – – metoda
 Vrátí informace o vlastnostech metody, jako je token metadat metody a informace o jeho obecných parametrech, s ohledem na relativní virtuální adresu (RVA) v této metodě.  
@@ -38,26 +36,26 @@ HRESULT GetMethodProps(
  mimo Ukazatel na počet obecných parametrů přidružených k této metodě.  
   
  `cbSignature`  
- pro Velikost `signature` pole. Viz část poznámky.  
+ pro Velikost pole `signature`. Viz část poznámky.  
   
  `pcbSignature`  
- mimo Ukazatel na velikost vráceného `signature` pole.  
+ mimo Ukazatel na velikost vráceného pole `signature`.  
   
  `signature`  
  mimo Vyrovnávací paměť, která obsahuje token TypeSpec podpisy všech obecných parametrů.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete- `signature` li získat požadovanou velikost pole metody, `cbSignature` nastavte argument na hodnotu 0 a `signature` na **hodnotu null**. Když se metoda vrátí, `pcbSignature` bude obsahovat počet bajtů vyžadovaných `signature` pro pole.  
+ Chcete-li získat požadovanou velikost `signature` pole metody, nastavte argument `cbSignature` na hodnotu 0 a `signature` na **hodnotu null**. Když se metoda vrátí, `pcbSignature` bude obsahovat počet bajtů vyžadovaných pro pole `signature`.  
   
 > [!NOTE]
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

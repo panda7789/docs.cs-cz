@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5e1f2c47-81df-4530-826d-96489cd68719
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7c3ced50457519d62be44712386bdabce176c44e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e044b1a2ad777868e33cd64bc8d09a9b76d547aa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761313"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130670"
 ---
 # <a name="icordebugmanagedcallbackstepcomplete-method"></a>ICorDebugManagedCallback::StepComplete – metoda
-Upozorní ladicího programu, že se dokončil krok.  
+Oznamuje ladicímu programu, že byl krok dokončen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT StepComplete (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující vláken, ve kterém byla dokončena v kroku.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující vlákno, ve kterém byl krok dokončen.  
   
  `pThread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byla dokončena v kroku.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, ve kterém byl krok dokončen.  
   
  `pStepper`  
- [in] Ukazatel na objekt icordebugstepper –, který představuje krok ve spuštění kódu.  
+ pro Ukazatel na objekt ICorDebugStepper, který představuje krok ve spuštění kódu.  
   
  `reason`  
- [in] Hodnota cordebugstepreason – výčet, který určuje výsledek jednotlivé kroky.  
+ pro Hodnota výčtu CorDebugStepReason –, která označuje výsledek jednotlivého kroku.  
   
 ## <a name="remarks"></a>Poznámky  
- Krokovače můžou sloužit k dál, krokování v případě potřeby, pokud ladění je ukončen.  
+ Stepper může být použita k pokračování v procházení, pokud je to žádoucí, pokud ladění není ukončeno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

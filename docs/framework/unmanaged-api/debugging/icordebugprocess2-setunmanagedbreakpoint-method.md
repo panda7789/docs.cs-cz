@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93829d15-d942-4e2d-b7a4-dfc9d7fb96be
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f16a5d1bad80a5aad8573508aab5fbf98c8c2a03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ffab2762fd86e95c3272ca456039028e0897bc41
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736833"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137183"
 ---
 # <a name="icordebugprocess2setunmanagedbreakpoint-method"></a>ICorDebugProcess2::SetUnmanagedBreakpoint – metoda
-Nastaví nespravované zarážku posunem zadaným nativních bitových kopií.  
+Nastaví nespravovanou zarážku na zadaném posunu nativní bitové kopie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT SetUnmanagedBreakpoint (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] A `CORDB_ADDRESS` objekt, který určuje posun nativních bitových kopií.  
+ pro Objekt `CORDB_ADDRESS`, který určuje posunutí nativní bitové kopie.  
   
  `bufsize`  
- [in] Velikost v bajtech, nástroje `buffer` pole.  
+ pro Velikost pole `buffer` v bajtech  
   
  `buffer`  
- [out] Pole, která obsahuje operační kód, který se nahrazuje zarážku.  
+ mimo Pole, které obsahuje operační kód, který je nahrazen zarážkou.  
   
  `bufLen`  
- [out] Ukazatel na počet bajtů vrácených v `buffer` pole.  
+ mimo Ukazatel na počet bajtů vrácených v poli `buffer`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud nativních bitových kopií posun v rámci common language runtime (CLR), zarážka budou ignorovány. To umožňuje modulu CLR, aby odesílání out-of-band zarážky, pokud je nastavena zarážka ladicím programem.  
+ Pokud je posun nativní bitové kopie v rámci modulu CLR (Common Language Runtime), zarážka bude ignorována. To umožňuje modulu CLR zabránit odesílání zarážek mimo pásmo, pokud je zarážka nastavena v ladicím programu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

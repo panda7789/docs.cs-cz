@@ -2,14 +2,12 @@
 title: ICorDebugDataTarget2::CreateVirtualUnwinder – metoda
 ms.date: 03/30/2017
 ms.assetid: 354c8b4c-7d23-45c6-a7d7-3be4c2a5b772
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5445fb223e34aa82d4b93032bb059093978f6bd1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f9a9038bd0d268e09d8518fa50534a9959b456de
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910336"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122189"
 ---
 # <a name="icordebugdatatarget2createvirtualunwinder-method"></a>ICorDebugDataTarget2::CreateVirtualUnwinder – metoda
 Vytvoří novou odvinoutho zásobníku, který spustí odvinutí z počátečního kontextu (což není nutně listem vlákna).  
@@ -43,7 +41,7 @@ HRESULT CreateVirtualUnwinder(
  mimo Ukazatel na adresu objektu rozhraní ICorDebugVirtualUnwinder.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`v případě úspěchu. Jakýkoli jiný `HRESULT` indikuje selhání. Jakékoli selhání `HRESULT` přijaté službou mscordbi se považuje za závažné a způsobí, že [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
+ `S_OK`, pokud bylo úspěšné. Všechny ostatní `HRESULT` označují selhání. Jakákoli neúspěšná `HRESULT` přijatá nástrojem mscordbi se považuje za závažnou a způsobí, že metody [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -51,11 +49,11 @@ HRESULT CreateVirtualUnwinder(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

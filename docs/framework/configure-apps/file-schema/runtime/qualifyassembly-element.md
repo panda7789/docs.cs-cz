@@ -9,22 +9,20 @@ helpviewer_keywords:
 - <qualifyAssembly> element
 - qualifyAssembly element
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 581b19cf74dcb5c2d5c4a549847629503fe0b6ff
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 17cfe9fc39d65f146beef5d02c701f5e3e2fbbe1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252361"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115787"
 ---
-# <a name="qualifyassembly-element"></a>\<qualifyAssembly – element >
+# <a name="qualifyassembly-element"></a>\<element > qualifyAssembly
 Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<qualifyAssembly>**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<qualifyAssembly >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,12 +54,12 @@ Určuje úplný název sestavení, které by mělo být dynamicky načteno při 
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> Volání metody pomocí částečných názvů sestavení způsobí, že modul CLR (Common Language Runtime) hledá sestavení pouze v základním adresáři aplikace. Použijte **qualifyAssembly > element v konfiguračním souboru aplikace k poskytnutí úplných informací o sestavení (název, verze, token veřejného klíče a jazyková verze) a způsobí, že modul CLR (Common Language Runtime) vyhledá sestavení v \<** globální mezipaměť sestavení (GAC).  
+ Volání metody <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> s použitím částečných názvů sestavení způsobí, že modul CLR (Common Language Runtime) hledá sestavení pouze v základním adresáři aplikace. Pomocí elementu **\<qualifyAssembly >** v konfiguračním souboru aplikace poskytněte úplné informace o sestavení (název, verze, token veřejného klíče a jazykové verzi) a způsobí, že modul CLR (Common Language Runtime) vyhledá sestavení v globálním mezipaměť sestavení.  
   
- Atribut **FullName** musí zahrnovat čtyři pole identity sestavení: název, verze, token veřejného klíče a jazykovou verzi. Atribut **Partial** musí odkazovat na sestavení částečně. Je nutné zadat alespoň textový název sestavení (Nejběžnější případ), ale můžete také zahrnout verze, token veřejného klíče nebo jazykovou verzi (nebo libovolnou kombinaci čtyř, ale ne všech čtyř). Parametr **Partial** se musí shodovat s názvem zadaným ve vašem volání. Například nemůžete zadat `"math"` jako atribut **Partial** do konfiguračního souboru a volat `Assembly.Load("math, Version=3.3.3.3")` do kódu.  
+ Atribut **FullName** musí zahrnovat čtyři pole identity sestavení: název, verze, token veřejného klíče a jazykovou verzi. Atribut **Partial** musí odkazovat na sestavení částečně. Je nutné zadat alespoň textový název sestavení (Nejběžnější případ), ale můžete také zahrnout verze, token veřejného klíče nebo jazykovou verzi (nebo libovolnou kombinaci čtyř, ale ne všech čtyř). Parametr **Partial** se musí shodovat s názvem zadaným ve vašem volání. Například nemůžete zadat `"math"` jako atribut **částečného** atributu do konfiguračního souboru a volat `Assembly.Load("math, Version=3.3.3.3")` ve vašem kódu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad logicky přepíná volání `Assembly.Load("math")` do. `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`  
+ Následující příklad logicky zapne volání `Assembly.Load("math")` do `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`.  
   
 ```xml  
 <configuration>  

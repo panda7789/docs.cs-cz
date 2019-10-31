@@ -6,14 +6,12 @@ helpviewer_keywords:
 - fusion enumerations [.NET Framework]
 - enumerations [.NET Framework fusion]
 ms.assetid: 5817b4bc-b0ba-4b2f-a11c-a03dd8cb8f84
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e7670e19d764518cc8d88f702f169610b72642a9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9a030d1f0ec6cc4fd7ca526574caa4c281e2573e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795328"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108506"
 ---
 # <a name="fusion-enumerations"></a>Výčty fúzí
 Tato část popisuje nespravované výčty, které používá rozhraní API pro syntézu.  
@@ -35,7 +33,7 @@ Tato část popisuje nespravované výčty, které používá rozhraní API pro 
  Označuje ekvivalent dvou identit sestavení, jak je určeno funkcí [CompareAssemblyIdentity –](compareassemblyidentity-function.md) .  
   
  [CREATE_ASM_NAME_OBJ_FLAGS – výčet](create-asm-name-obj-flags-enumeration.md)  
- Určuje atributy objektu, je `IAssemblyName` -li vytvořen funkcí [CreateAssemblyNameObject –](createassemblynameobject-function.md) .  
+ Určuje atributy objektu `IAssemblyName`, když je vytvořen funkcí [CreateAssemblyNameObject –](createassemblynameobject-function.md) .  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro fúze](fusion-interfaces.md)  

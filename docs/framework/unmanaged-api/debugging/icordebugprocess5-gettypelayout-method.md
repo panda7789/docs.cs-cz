@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bd62f5d1-e874-41f1-81e5-a29a7572c15d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ee556f559a7dc4c271f110f7bba4c86b675c3511
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a348c3b2ad33a5d68b1bc46e9a284f2d2a9c7304
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736491"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121288"
 ---
 # <a name="icordebugprocess5gettypelayout-method"></a>ICorDebugProcess5::GetTypeLayout – metoda
-Získá informace o rozložení objektu v paměti podle jeho identifikátor typu.  
+Načte informace o rozložení objektu v paměti na základě jeho identifikátoru typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +33,22 @@ HRESULT GetTypeLayout(    [in] COR_TYPEID id,     [out] COR_TYPE_LAYOUT *pLayout
   
 ## <a name="parameters"></a>Parametry  
  `id`  
- [in] A [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) token, který určuje typ, jehož rozložení je žádoucí.  
+ pro Token [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) , který určuje typ, jehož rozložení se požaduje.  
   
  `pLayout`  
- [out] Ukazatel [cor_type_layout –](../../../../docs/framework/unmanaged-api/debugging/cor-type-layout-structure.md) strukturu, která obsahuje informace o rozložení objektu v paměti.  
+ mimo Ukazatel na strukturu [COR_TYPE_LAYOUT](../../../../docs/framework/unmanaged-api/debugging/cor-type-layout-structure.md) , která obsahuje informace o rozložení objektu v paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugProcess5::GetTypeLayout` Metoda poskytuje informace o objektu na základě jeho [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), která je vrácena řadou dalších [icordebugprocess5 –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md) metody. Poskytuje informace [cor_type_layout –](../../../../docs/framework/unmanaged-api/debugging/cor-type-layout-structure.md) struktura, která je vyplněn metodu.  
+ Metoda `ICorDebugProcess5::GetTypeLayout` poskytuje informace o objektu na základě jeho [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), který je vrácen řadou jiných metod [ICorDebugProcess5](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md) . Informace jsou poskytovány strukturou [COR_TYPE_LAYOUT](../../../../docs/framework/unmanaged-api/debugging/cor-type-layout-structure.md) , která je naplněná metodou.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

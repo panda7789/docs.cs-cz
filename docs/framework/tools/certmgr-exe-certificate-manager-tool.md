@@ -13,14 +13,12 @@ helpviewer_keywords:
 - CTLs
 - certificate revocation lists
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 716513bdcf3ac1b8a2b2b29b23a8dc25a86a0d1c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 06fe3a78d0b19720d4f83111980b88806312205f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044813"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129877"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -28,7 +26,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
  Správce certifikátů je automaticky nainstalován při instalaci sady Visual Studio. Chcete-li spustit nástroj, použijte [příkaz s výzvou](developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
-> Správce certifikátů (Certmgr.exe) je nástroj příkazového řádku, zatímco Certifikáty (Certmgr.msc) jsou modulem snap-in konzoly MMC (Microsoft Management Console). Vzhledem k tomu, že certmgr. msc se obvykle nachází v systémovém `certmgr` adresáři Windows, může se při zadávání do příkazového řádku načíst modul snap-in Certifikáty konzoly MMC i v případě, že jste otevřeli Developer Command Prompt pro Visual Studio. K tomuto případu může dojít, protože cesta k modulu snap-in předchází cestě nástroje Správce certifikátů v proměnné prostředí PATH. Setkáte-li se s tímto problémem, můžete zadáním cesty ke spustitelnému souboru spustit příkazy Certmgr.exe.  
+> Správce certifikátů (Certmgr.exe) je nástroj příkazového řádku, zatímco Certifikáty (Certmgr.msc) jsou modulem snap-in konzoly MMC (Microsoft Management Console). Vzhledem k tomu, že certmgr. msc se obvykle nachází v systémovém adresáři Windows, může se při zadání `certmgr` do příkazového řádku načíst modul snap-in Certifikáty konzoly MMC, i když jste otevřeli Developer Command Prompt pro Visual Studio. K tomuto případu může dojít, protože cesta k modulu snap-in předchází cestě nástroje Správce certifikátů v proměnné prostředí PATH. Setkáte-li se s tímto problémem, můžete zadáním cesty ke spustitelnému souboru spustit příkazy Certmgr.exe.  
   
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
@@ -48,7 +46,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*sourceStorename*|Úložiště certifikátů obsahuje aktuální certifikáty, soubory CTL nebo CRL, které lze přidat, odstranit, uložit nebo zobrazit. To může představovat soubor úložiště nebo systémové úložiště.|  
+|*Certifikátů*|Úložiště certifikátů obsahuje aktuální certifikáty, soubory CTL nebo CRL, které lze přidat, odstranit, uložit nebo zobrazit. To může představovat soubor úložiště nebo systémové úložiště.|  
 |*destinationStorename*|Výstupní úložiště certifikátů nebo soubor.|  
   
 |Možnost|Popis|  
@@ -59,16 +57,16 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 |**/CRL**|Přidá seznam CRL při použití s **/Add**. Odstraní seznamy odvolaných certifikátů při použití s **/del**. Při použití s **/Put**ukládá seznamy CRL. Zobrazí seznam CRL při použití bez možnosti **/Add**, **/del**nebo **/Put** .|  
 |**/CTL**|Přidá seznamy CTL při použití s **/Add**. Odstraní seznamy CTL při použití s **/del**. Při použití s **/Put**ukládá seznamy CTL. Zobrazí seznam CTL při použití bez možnosti **/Add**, **/del**nebo **/Put** .|  
 |**/del**|Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.|  
-|**/e** *encodingType*|Určuje typ kódování certifikátu. Výchozí hodnota je `X509_ASN_ENCODING`.|  
-|**/f** *dwFlags*|Určuje příznak pro otevření úložiště. Toto je parametr *dwFlags* předaný do **CertOpenStore**. Výchozí hodnota je CERT_SYSTEM_STORE_CURRENT_USER. Tato možnost je zvážena pouze v případě, že je použita možnost **/y** .|  
-|**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/n** .|Určuje obecný název certifikátu, který se má přidat, odstranit nebo uložit. Tuto možnost lze použít u certifikátů. Nelze ji použít u souborů CTL nebo u CRL.|  
+|**/E** *EncodingType*|Určuje typ kódování certifikátu. Výchozí hodnota je `X509_ASN_ENCODING`.|  
+|**/F** *dwFlags*|Určuje příznak pro otevření úložiště. Toto je parametr *dwFlags* předaný do **CertOpenStore**. Výchozí hodnota je CERT_SYSTEM_STORE_CURRENT_USER. Tato možnost je zvážena pouze v případě, že je použita možnost **/y** .|  
+|**/h**[**ELP**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/n**|Určuje obecný název certifikátu, který se má přidat, odstranit nebo uložit. Tuto možnost lze použít u certifikátů. Nelze ji použít u souborů CTL nebo u CRL.|  
 |**/Put**|Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů. Soubor je uložen ve formátu X.509. K uložení souboru ve formátu PKCS #7 můžete použít možnost **/7** s možností **/Put** . Pro možnost **/Put** musí následovat buď **/c**, **/CTL**nebo **/CRL**. Možnost **/All** nelze použít s **/Put**.|  
-|**/r** *umístění*|Určuje umístění registru v rámci systémového úložiště. Tato možnost je zvážena pouze v případě, že zadáte možnost **/s** . *umístění* musí být jedna z následujících:<br /><br /> -   `currentUser`označuje, že úložiště certifikátů je pod klíčem HKEY_CURRENT_USER. Toto nastavení je výchozí.<br />-   `localMachine`označuje, že úložiště certifikátů je pod klíčem HKEY_LOCAL_MACHINE.|  
-|**/s**|Určuje, že je úložiště certifikátů systémovým úložištěm. Pokud tuto možnost nezadáte, považuje se za úložiště za **StoreFile**.|  
+|**/r** *umístění*|Určuje umístění registru v rámci systémového úložiště. Tato možnost je zvážena pouze v případě, že zadáte možnost **/s** . *umístění* musí být jedna z následujících:<br /><br /> -   `currentUser` označuje, že se úložiště certifikátů nachází pod klíčem HKEY_CURRENT_USER. Toto nastavení je výchozí.<br />-   `localMachine` označuje, že se úložiště certifikátů nachází pod klíčem HKEY_LOCAL_MACHINE.|  
+|**parametr**|Určuje, že je úložiště certifikátů systémovým úložištěm. Pokud tuto možnost nezadáte, považuje se za úložiště za **StoreFile**.|  
 |**/SHA1** *sha1Hash*|Určuje hodnotu hash SHA1 certifikátu, souboru CTl nebo CRl, který se má přidat, odstranit nebo uložit.|  
 |**/v**|Určuje podrobný režim. Zobrazí detailní informace o certifikátech, souborech CTL a CRL. Tuto možnost nelze použít s možnostmi **/Add**, **/del**nebo **/Put** .|  
-|**/y** *poskytovatel*|Určuje název poskytovatele úložiště.|  
+|**/y** – *poskytovatel*|Určuje název poskytovatele úložiště.|  
 |**/7**|Ukládá cílové úložiště jako objekt PKCS #7.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
@@ -83,11 +81,11 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
   
 - Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů.  
   
- Certmgr. exe pracuje se dvěma typy úložišť certifikátů: **StoreFile** a systémové úložiště. Není nutné zadávat typ úložiště certifikátů. Certmgr.exe dokáže rozpoznat typ úložiště a vykonat příslušné operace.  
+ Certmgr. exe pracuje se dvěma typy úložišť certifikátů: **StoreFile** a System Store. Není nutné zadávat typ úložiště certifikátů. Certmgr.exe dokáže rozpoznat typ úložiště a vykonat příslušné operace.  
   
  Spuštěním nástroje Certmgr.exe bez určení jakýchkoli možností dojde ke spuštění modulu snap-in certmgr.msc, který obsahuje uživatelské rozhraní, které pomáhá s úlohami správy certifikátů, které jsou dostupné také z příkazového řádku. Uživatelské rozhraní poskytuje průvodce importováním, který zkopíruje certifikáty, soubory CTL a CRL z disku do úložiště certifikátů.  
   
- Názvy úložišť certifikátu x509 pro `sourceStorename` parametry a `destinationStorename` můžete najít zkompilováním a spuštěním následujícího kódu.  
+ Názvy úložišť certifikátu x509 pro `sourceStorename` a parametry `destinationStorename` můžete najít zkompilováním a spuštěním následujícího kódu.  
   
  [!code-csharp[Tools.CertMgr#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tools.certmgr/cs/storenames1.cs#1)]
  [!code-vb[Tools.CertMgr#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tools.certmgr/vb/storenames1.vb#1)]  
@@ -95,19 +93,19 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
  Další informace o certifikátech najdete v tématu [práce s certifikáty](../wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="examples"></a>Příklady  
- Následující příkaz zobrazí výchozí úložiště s názvem `my` s podrobným výstupem.  
+ Následující příkaz zobrazí výchozí systémové úložiště s názvem `my` s podrobným výstupem.  
   
 ```console  
 certmgr /v /s my  
 ```  
   
- Následující příkaz přidá všechny certifikáty do souboru s názvem `myFile.ext` do nového souboru s názvem. `newFile.ext`  
+ Následující příkaz přidá všechny certifikáty do souboru s názvem `myFile.ext` do nového souboru s názvem `newFile.ext`.  
   
 ```console  
 certmgr /add /all /c myFile.ext newFile.ext  
 ```  
   
- Následující příkaz přidá certifikát do souboru s názvem `testcert.cer` `my` do úložiště systému.  
+ Následující příkaz přidá certifikát do souboru s názvem `testcert.cer` do úložiště `my` systému.  
   
 ```console  
 certmgr /add /c testcert.cer /s my  
@@ -119,19 +117,19 @@ certmgr /add /c testcert.cer /s my
 certmgr /c /add TrustedCert.cer /s root  
 ```  
   
- Následující příkaz uloží certifikát s běžným názvem `myCert` `my` do systémového úložiště do souboru s názvem `newCert.cer`.  
+ Následující příkaz uloží certifikát s běžným názvem `myCert` v úložišti `my` systému do souboru s názvem `newCert.cer`.  
   
 ```console  
 certmgr /add /c /n myCert /s my newCert.cer  
 ```  
   
- Následující příkaz odstraní všechny seznamy CTL v `my` úložišti systému a uloží výsledné úložiště do souboru s názvem. `newStore.str`  
+ Následující příkaz odstraní všechny seznamy CTL v úložišti `my` systému a uloží výsledné úložiště do souboru s názvem `newStore.str`.  
   
 ```console  
 certmgr /del /all /ctl /s my newStore.str  
 ```  
   
- Následující příkaz uloží certifikát do `my` systémového úložiště v souboru. `newFile` Zobrazí se výzva k zadání čísla certifikátu z aplikace `my` do `newFile`umístění.  
+ Následující příkaz uloží certifikát do systémového úložiště `my` v souboru `newFile`. Zobrazí se výzva k zadání čísla certifikátu z `my` pro vložení do `newFile`.  
   
 ```console  
 certmgr /put /c /s my newFile  

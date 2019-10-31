@@ -14,20 +14,18 @@ helpviewer_keywords:
 ms.assetid: 90368606-506e-40df-be1f-8d595159203f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 44241d02051c9bd54f93a19fa6044e4973fdef9e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6914437b9b238c1d82cf4cc8a480a15dd8dda7ad
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950262"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126808"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen – třída
 Poskytuje funkce pro vytvoření nativního přenositelného spustitelného souboru (PE). Rozhraní bude obvykle použito kompilátory k vygenerování jejich zkompilovaného výstupního spustitelného souboru.  
   
 > [!NOTE]
-> `ICeeFileGen`podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
+> `ICeeFileGen` podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
   
  Toto rozhraní se už nepoužívá a v budoucí verzi se odebere.  
   
@@ -237,11 +235,11 @@ public:
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** ICeeFileGen.h  
+ **Hlavička:** ICeeFileGen –. h  
   
- **Verze .NET Framework:** 1.0  
+ **Verze .NET Framework:** 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

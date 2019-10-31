@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6fdfe33c5b488d8f464001a86233124d4e7df0ed
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b0fbc462283ef1577de8100e60fd09caa53db539
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779067"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131918"
 ---
-# <a name="corgcstattypes-enumeration"></a>COR_GC_STAT_TYPES – výčet
-Určuje statistiky, které mají být zaznamenány pro uvolnění paměti.  
+# <a name="cor_gc_stat_types-enumeration"></a>COR_GC_STAT_TYPES – výčet
+Určuje statistiku, která má být zaznamenána pro uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +34,21 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet Určuje, jaké statistické údaje ve [cor_gc_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) struktura se může nastavit [iclrgcmanager::getstats –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) metody.  
+ Tento výčet Určuje, které statistiky ve struktuře [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) mají být nastaveny metodou [ICLRGCManager:: getstatistics](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) .  
   
 ## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_GC_COUNTS`|Zaznamenává počet uvolnění paměti provést pro každé generaci.|  
-|`COR_GC_MEMORYUSAGE`|Zaznamenává využití a uvolňování paměti kolekce velikost Statistika paměti.|  
+|`COR_GC_COUNTS`|Zaznamenává počet uvolňování paměti provedených pro každou generaci.|  
+|`COR_GC_MEMORYUSAGE`|Zaznamenává využití paměti a statistiky velikosti uvolňování paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

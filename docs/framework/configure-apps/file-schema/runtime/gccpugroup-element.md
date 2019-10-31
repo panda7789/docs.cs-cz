@@ -5,22 +5,20 @@ helpviewer_keywords:
 - GCCpuGroup element
 - <GCCpuGroup> element
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9ff646f13c5619b0bfca1b61c86013a981c274e3
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 352890519c1a227d664d877c3123866e5e4e1657
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252566"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116834"
 ---
-# <a name="gccpugroup-element"></a>\<GCCpuGroup – element >
+# <a name="gccpugroup-element"></a>\<element > GCCpuGroup
 
 Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,7 +39,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
 |`false`|Uvolňování paměti nepodporuje více skupin PROCESORů. Toto nastavení je výchozí.|
 |`true`|Uvolňování paměti podporuje více skupin PROCESORů, pokud je povoleno shromažďování paměti serveru.|
@@ -59,10 +57,10 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je v počítači více skupin procesorů a uvolňování paměti serveru (viz [ \<gcServer >](gcserver-element.md) element), povolení tohoto elementu rozšiřuje uvolňování paměti napříč všemi skupinami CPU a při vytváření a zabere všechny jádra do účtu. vyvážení hald.
+Pokud je v počítači více skupin PROCESORů a uvolňování paměti serveru (viz [\<gcServer >](gcserver-element.md) element), povolení tohoto elementu rozšiřuje uvolňování paměti napříč všemi skupinami CPU a při vytváření a zabere všechny jádra do účtu. vyvážení hald.
 
 > [!NOTE]
-> Tento prvek se vztahuje pouze na vlákna uvolňování paměti. Chcete-li povolit modulu runtime pro distribuci uživatelských vláken napříč všemi skupinami procesorů, je [ \<](thread-useallcpugroups-element.md) nutné povolit také > element Thread_UseAllCpuGroups.
+> Tento prvek se vztahuje pouze na vlákna uvolňování paměti. Chcete-li modulu runtime povolit distribuci uživatelských vláken napříč všemi skupinami CPU, je nutné povolit také [\<prvek > Thread_UseAllCpuGroups](thread-useallcpugroups-element.md) .
 
 ## <a name="example"></a>Příklad
 

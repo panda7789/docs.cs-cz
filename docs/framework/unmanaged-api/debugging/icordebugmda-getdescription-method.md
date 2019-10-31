@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01d1b481-ca67-4712-8744-d342ec0df639
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: da57ecf0c153d902322798e1927c995a34cb93d2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bfe77982b88b2fc96dc2846b9db04df28bfc0c38
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761984"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131440"
 ---
 # <a name="icordebugmdagetdescription-method"></a>ICorDebugMDA::GetDescription – metoda
-Získá řetězec obsahující popis Pomocník spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Získá řetězec obsahující popis pomocníka spravovaného ladění (MDA) reprezentovaný [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT GetDescription (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost vyrovnávací paměti pro řetězec, ve kterém bude uložený popis.  
+ pro Velikost vyrovnávací paměti pro řetězce, která bude obsahovat popis.  
   
  `pcchName`  
- [out] Ukazatel na počet bajtů vrácených ve vyrovnávací paměti řetězce.  
+ mimo Ukazatel na počet bajtů vrácených v bufferu řetězce.  
   
  `szName`  
- [out] Vyrovnávací paměti řetězce obsahující popis MDA.  
+ mimo Vyrovnávací paměť řetězců obsahující popis MDA.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězec může být nulovou délku.  
+ Délka řetězce může být nulová.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

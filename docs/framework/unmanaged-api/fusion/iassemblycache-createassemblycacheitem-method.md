@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 017a7ba5-aaaf-44e2-9cbe-ceebef259df0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 215eb3a508a746230d36fdda3e8ba992287be62c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e3e50538bde8fe3509b49e3dbcb031875e6863e5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796825"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127122"
 ---
 # <a name="iassemblycachecreateassemblycacheitem-method"></a>IAssemblyCache::CreateAssemblyCacheItem – metoda
 Získá odkaz na nový objekt [IAssemblyCacheItem](iassemblycacheitem-interface.md) .  
@@ -47,18 +45,18 @@ HRESULT CreateAssemblyCacheItem (
 - IASSEMBLYCACHE_INSTALL_FLAG_FORCE_REFRESH (0x00000002)  
   
  `pvReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být odkaz s hodnotou null.  
   
  `ppAsmItem`  
- mimo Vrácený `IAssemblyCacheItem` ukazatel.  
+ mimo Vrácený ukazatel `IAssemblyCacheItem`.  
   
  `pszAssemblyName`  
- [in, volitelné] Nekanonické páry oddělené `name=value` čárkami.  
+ [in, volitelné] Nekanonické páry `name=value` oddělených čárkami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

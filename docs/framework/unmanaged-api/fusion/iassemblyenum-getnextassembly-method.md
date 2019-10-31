@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5d7a4ca2-5f46-4ef1-a9a2-257884e9dc11
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 73c531378355100fdfca264ea9f96ff4d7c7ceda
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ade404557d65fa073b6a0e66fe8234b41223ecde
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796688"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134439"
 ---
 # <a name="iassemblyenumgetnextassembly-method"></a>IAssemblyEnum::GetNextAssembly – metoda
 Získá ukazatel na další [IAssemblyName](iassemblyname-interface.md) obsažený v tomto objektu [IAssemblyEnum](iassemblyenum-interface.md) .  
@@ -39,18 +37,18 @@ HRESULT GetNextAssembly (
   
 ## <a name="parameters"></a>Parametry  
  `pvReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být odkaz s hodnotou null.  
   
  `ppName`  
- mimo Vrácený `IAssemblyName` ukazatel.  
+ mimo Vrácený ukazatel `IAssemblyName`.  
   
  `dwFlags`  
- pro Vyhrazeno pro budoucí rozšíření. `dwFlags`musí mít hodnotu 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwFlags` musí být 0 (nula).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

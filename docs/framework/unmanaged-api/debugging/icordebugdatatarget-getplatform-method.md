@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9ee96c9d-7a3d-4129-a6cc-7675c7f2dda4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1065c8d710ddbd6088ee0db694a43e098564e707
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5715f0634346dd0c6591cfe5687690aa0fba95f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750374"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125321"
 ---
 # <a name="icordebugdatatargetgetplatform-method"></a>ICorDebugDataTarget::GetPlatform – metoda
-Poskytuje informace o platformě, včetně architektury procesoru a operačního systému, na kterém je spuštěný Cílový proces.  
+Obsahuje informace o platformě, včetně architektury procesoru a operačního systému, na kterých je spuštěn cílový proces.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +33,27 @@ HRESULT GetPlatform([out] CorDebugPlatform * pTargetPlatform);
   
 ## <a name="parameters"></a>Parametry  
  `pTargetPlatform`  
- [out] Ukazatel [cordebugplatformenum –](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) výčet, který popisuje cílovou platformu.  
+ mimo Ukazatel na výčet [CorDebugPlatformEnum –](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) , který popisuje cílovou platformu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CorDebugPlatformEnum` Návratová hodnota výčtu je používán [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozhraní zjistěte podrobnosti cílového procesu, jako je například velikost ukazatele, rozložení prostoru adres, nastavení registru, formát instrukce, kontext rozložení a konvence volání.  
+ Návratovou hodnotu výčtu `CorDebugPlatformEnum` používá rozhraní [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) k určení podrobností o cílovém procesu, jako je jeho velikost ukazatele, rozložení adresního prostoru, sada registrů, formát instrukcí, rozložení kontextu a konvence volání.  
   
- `pTargetPlatform` Může hodnota odkazovat na platformu, která je emulovaných pro cílové místo určení skutečné hardwarové používá. Například by měl použít proces, který běží ve Windows v prostředí Windows (WOW) na 64-bit edition operačního systému Windows `CORDB_PLATFORM_WINDOWS_X86` hodnotu [cordebugplatformenum –](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) výčtu.  
+ Hodnota `pTargetPlatform` může odkazovat na platformu, která je emulovana pro cíl, a nikoli určit skutečný hardware, který se používá. Například proces, který je spuštěný v prostředí Windows on Windows (WOW), v 64ové edici operačního systému Windows by měl používat `CORDB_PLATFORM_WINDOWS_X86` hodnotu výčtu [CorDebugPlatformEnum –](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) .  
   
- Tato metoda musí být úspěšný. Pokud selže, nepoužitelný cílovou platformu. Metoda může selhat z následujících důvodů:  
+ Tato metoda musí být úspěšná. Pokud dojde k chybě, cílová platforma nebude použitelná. Tato metoda může selhat z následujících důvodů:  
   
-- Platforma, která je emulovaných pro cíl nepoužitelné.  
+- Platforma, která je emulovana pro cíl, je nepoužitelná.  
   
-- Skutečné hardwarové na cílové platformě není použitelná.  
+- Skutečný hardware na cílové platformě je nepoužitelný.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea38ae20-7e0a-427a-be77-d78fae719d82
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9ffddb8242b6627239a99bd9223b98762910b831
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20315dfc426b63f2d526f3481756e165b388b41e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753235"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137601"
 ---
 # <a name="icordebugeval2createvaluefortype-method"></a>ICorDebugEval2::CreateValueForType – metoda
-Získá ukazatel na novou ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
+Získá ukazatel na nový ICorDebugValue zadaného typu s počáteční hodnotou 0 nebo null.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +36,21 @@ HRESULT CreateValueForType (
   
 ## <a name="parameters"></a>Parametry  
  `pType`  
- [in] Ukazatel na objekt, který představuje typ ICorDebugType.  
+ pro Ukazatel na objekt ICorDebugType, který představuje typ.  
   
  `ppValue`  
- [out] Ukazatel na adresu `ICorDebugValue` objekt, který představuje hodnotu.  
+ mimo Ukazatel na adresu `ICorDebugValue`ho objektu, který představuje hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateValueForType` zobecňuje [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) , neboť umožňuje určit typ libovolného objektu, včetně vytvořený typy, jako `List<int>`. Jediným účelem: Tato metoda se má generovat hodnotu, která může být předán vyhodnocení funkce.  
+ `CreateValueForType` generalizace [ICorDebugEval:: CreateValue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) umožňuje určit libovolný typ objektu, včetně konstruovaných typů, jako je například `List<int>`. Jediným účelem této metody je generovat hodnotu, která může být předána vyhodnocení funkce.  
   
- Typ musí být třída nebo hodnotového typu. Tuto metodu nelze použít k vytvoření hodnoty pole nebo řetězec.  
+ Typ musí být typ třída nebo hodnota. Tuto metodu nelze použít k vytvoření hodnot pole nebo hodnot řetězců.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

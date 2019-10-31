@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a2995ff-5f02-4b49-84dc-3a5f9cfd7d55
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 09895294c4678cdb1dd033076cfb42853aa06b2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ae1aa6590366468166916e6a92d0b356eb37c27
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780503"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133144"
 ---
 # <a name="idebuggerthreadcontrolreleaseallruntimethreads-method"></a>IDebuggerThreadControl::ReleaseAllRuntimeThreads – metoda
-Upozorňuje hostitele, že ladění služby se chystáte uvolnit všechna vlákna, které jsou blokovány.  
+Upozorňuje hostitele, že se chystá ladicí služby uvolnit všechna blokovaná vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +32,16 @@ HRESULT ReleaseAllRuntimeThreads ( );
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `ReleaseAllRuntimeThreads` Ve vlákně modulu runtime nebude nikdy volána metoda. Pokud má hostitel modulu runtime vlákno blokované, to by měla uvolnit ji nyní.  
+ Metoda `ReleaseAllRuntimeThreads` nebude nikdy volána ve vlákně modulu runtime. Pokud má hostitel běhové vlákno, je třeba ho uvolnit hned.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

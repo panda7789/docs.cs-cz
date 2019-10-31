@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55e57640-b3d2-413d-b4f4-fbc27fb8e37c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c9d42c85502c12d4d77694626a533c69af97da67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87316b20c5835d9b887355a1f9374fa5f2156e5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750260"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122171"
 ---
 # <a name="icordebugdatatargetreadvirtual-method"></a>ICorDebugDataTarget::ReadVirtual – metoda
-Získá blok souvislé paměti začínající na zadané adrese a vrátí jej v poskytnutá vyrovnávací paměť.  
+Načte blok souvislé paměti začínající na zadané adrese a vrátí ji do zadané vyrovnávací paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT ReadVirtual(
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] Počáteční adresa požadované paměti.  
+ pro Počáteční adresa požadované paměti.  
   
  `pbuffer`  
- [out] Vyrovnávací paměť, kde budou uloženy paměti.  
+ mimo Vyrovnávací paměť, do které se uloží paměť.  
   
  `bytesRequested`  
- [in] Počet bajtů, které mají získat z cílové adresy.  
+ pro Počet bajtů, které mají být získány z cílové adresy.  
   
  `pBytesRead`  
- [out] Počet bajtů ke čtení ve skutečnosti z cílové adresy. To může být kratší než `bytesRequested`.  
+ mimo Počet bajtů skutečně přečtených z cílové adresy. To může být méně než `bytesRequested`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud lze číst prvního bajtu (na adrese zadaným počátečním), by měla vrátit volání úspěšné (pro podporu efektivního čtení datových struktur s popisující samy sebe délku, jako je řetězec zakončený null).  
+ Pokud je možné číst první bajt (na zadané počáteční adrese), volání by mělo vracet úspěch (pro podporu efektivního čtení datových struktur s délkou, jako jsou řetězce zakončené znakem null).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

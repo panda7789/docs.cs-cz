@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0192104-6073-4089-a4df-dc29ee033074
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3d080145ac63882e04412b44c34d040a75746243
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c8cfc9cdf6580a002f6ac15080012a9e8c63be20
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767524"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129652"
 ---
 # <a name="icordebugprocess5enumerateheap-method"></a>ICorDebugProcess5::EnumerateHeap – metoda
 Získá enumerátor pro objekty na spravované haldě.  
@@ -37,21 +35,21 @@ HRESULT EnumerateHeap(
   
 ## <a name="parameters"></a>Parametry  
  `ppObject`  
- [out] Ukazatel na adresu [icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) rozhraní objektu, který je enumerátor pro objekty, které jsou umístěny na spravované haldě.  
+ mimo Ukazatel na adresu objektu rozhraní [ICorDebugHeapEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) , který je enumerátorem pro objekty, které jsou umístěny na spravované haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním `ICorDebugProcess5::EnumerateHeap` metoda, měli byste zavolat [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metoda a zkoumat hodnoty `areGCStructuresValid` pole vráceného [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) Ujistěte se, že haldě uvolňování paměti v jejím aktuálním stavu vyčíslitelný objekt. Kromě toho `ICorDebugProcess5::EnumerateHeap` vrátí `E_FAIL` Pokud připojíte příliš brzy během životnosti procesu před paměť, pro je přidělena spravované haldě.  
+ Před voláním metody `ICorDebugProcess5::EnumerateHeap` byste měli zavolat metodu [ICorDebugProcess5:: GetGCHeapInformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) a zkontrolovat hodnotu pole `areGCStructuresValid` vráceného objektu [COR_HEAPINFO](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) , aby se zajistilo, že halda uvolňování paměti v jeho aktuální stav je vyčíslitelné. Kromě toho `ICorDebugProcess5::EnumerateHeap` vrátí `E_FAIL`, pokud se připojíte příliš brzy během životnosti procesu, než se přidělí paměť pro spravovanou haldu.  
   
- [Icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objektu rozhraní je standardní výčet odvozený od icordebugenum – rozhraní, která umožňuje vytvořit výčet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekty. Naplní tuto metodu [icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objektu kolekce s [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které poskytují informace o všech objektech. Kolekce může zahrnovat také [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které poskytují informace o objektech, které nejsou žádné kořenem objektu, ale nebyla ještě shromažďuje systému uvolňování paměti.  
+ Objekt rozhraní [ICorDebugHeapEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) je standardní enumerátor odvozený z rozhraní ICorDebugEnum, které umožňuje vytvořit výčet objektů [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) . Tato metoda naplní objekt kolekce [ICorDebugHeapEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) instancemi [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) , které poskytují informace o všech objektech. Kolekce může také zahrnovat instance [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) , které poskytují informace o objektech, které nejsou rootem žádného objektu, ale ještě nebyly shromážděny systémem uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

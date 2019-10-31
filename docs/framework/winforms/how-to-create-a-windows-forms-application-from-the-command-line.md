@@ -9,14 +9,12 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating basic form
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: da7fdab1cf67ffd47acb75533fcfdb89664c86d3
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: af1548602ece8ea0f5720a836ec05648854e198f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834812"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127250"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace model Windows Forms z příkazového řádku
 
@@ -26,7 +24,7 @@ Následující postupy popisují základní kroky, které je nutné provést, ch
   
 #### <a name="to-create-the-form"></a>Vytvoření formuláře  
   
-1. V prázdném souboru kódu zadejte následující příkaz `Imports` nebo `using`:  
+1. V prázdném souboru kódu zadejte následující `Imports` nebo `using` příkazy:  
   
      [!code-csharp[System.Windows.Forms.BasicForm#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.BasicForm#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#2)]  
@@ -45,9 +43,9 @@ Následující postupy popisují základní kroky, které je nutné provést, ch
   
 4. Přidejte do třídy metodu `Main`.
   
-    1. Použijte <xref:System.STAThreadAttribute> na metodu C# `Main`, abyste určili, že vaše aplikace model Windows Forms je objekt Apartment s jedním vláknem. (Atribut není v Visual Basic potřebný, protože aplikace Windows Forms vyvinuté pomocí Visual Basic ve výchozím nastavení používají model Apartment s jedním vláknem.)  
+    1. Použijte <xref:System.STAThreadAttribute> k metodě C# `Main` a určete tak, že aplikace pro model Windows Forms je objekt Apartment s jedním vláknem. (Atribut není v Visual Basic potřebný, protože aplikace Windows Forms vyvinuté pomocí Visual Basic ve výchozím nastavení používají model Apartment s jedním vláknem.)  
   
-    2. Chcete-li pro aplikaci použít styly operačního systému, zavolejte <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.  
+    2. Zavolejte <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> pro použití stylů operačního systému pro vaši aplikaci.  
   
     3. Vytvořte instanci formuláře a spusťte ji.  
   
@@ -76,9 +74,9 @@ Předchozí kroky postupu ukázaly, jak vytvořit základní formulář Windows,
   
 #### <a name="to-declare-a-button-control-and-handle-its-click-event"></a>Deklarace ovládacího prvku tlačítko a zpracování jeho události Click  
   
-1. Deklarujte ovládací prvek Button s názvem `button1`.  
+1. Deklarujte ovládací prvek tlačítko s názvem `button1`.  
   
-2. V konstruktoru vytvořte tlačítko a nastavte jeho vlastnosti <xref:System.Windows.Forms.Control.Size%2A>, <xref:System.Windows.Forms.Control.Location%2A> a <xref:System.Windows.Forms.Control.Text%2A>.  
+2. V konstruktoru vytvořte tlačítko a nastavte jeho <xref:System.Windows.Forms.Control.Size%2A>, vlastnosti <xref:System.Windows.Forms.Control.Location%2A> a <xref:System.Windows.Forms.Control.Text%2A>.  
   
 3. Přidejte tlačítko do formuláře.  
   

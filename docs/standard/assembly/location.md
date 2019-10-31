@@ -5,14 +5,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6427f7d005c43ef9e83387e865f71009b683a7c4
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: d44fb44db35b60f99583c20432c5998573298044
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973178"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107217"
 ---
 # <a name="assembly-location"></a>Umístění sestavení
 Umístění sestavení Určuje, zda se modul CLR (Common Language Runtime) může při odkazování najít a může také určit, zda může být sestavení sdíleno s jinými sestaveními. Sestavení můžete nasadit v následujících umístěních:  

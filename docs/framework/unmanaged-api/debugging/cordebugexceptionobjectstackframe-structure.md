@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 542cdd81-5ae7-4361-b0ef-1ae4775df258
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5cd2add7e96a8edaff8509563ae1846e80132001
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: faa2082d31c5fa47b87e2238017066b477fdc191
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740096"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132175"
 ---
 # <a name="cordebugexceptionobjectstackframe-structure"></a>CorDebugExceptionObjectStackFrame – struktura
-Představuje zásobník snímků informace z objektu výjimky.  
+Představuje informace o snímku zásobníku z objektu výjimky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,21 +40,21 @@ typedef struct CorDebugExceptionObjectStackFrame {
 |Člen|Popis|  
 |------------|-----------------|  
 |`pModule`|Ukazatel na objekt ICorDebugModule pro aktuální rámec.|  
-|`ip`|Hodnota ukazatele na instrukci (EIP nebo RIP) pro aktuální rámec.|  
+|`ip`|Hodnota ukazatele instrukce (EIP/RIP) pro aktuální rámec.|  
 |`methodDef`|Token metody pro aktuální rámec.|  
-|`isLastForeignExceptionFrame`|Hodnota, která určuje, zda rámec je příkaz posledního rámce cizí výjimky.|  
+|`isLastForeignExceptionFrame`|Hodnota, která označuje, zda je rámec posledním snímkem v cizí výjimce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volající musí uvolnit ukazatel na objekt ICorDebugModule, jakmile se už používá.  
+ Volající musí uvolnit ukazatel na objekt ICorDebugModule, jakmile se již nepoužívá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

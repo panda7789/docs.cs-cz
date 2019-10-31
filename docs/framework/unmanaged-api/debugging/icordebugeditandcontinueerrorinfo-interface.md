@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6ae0204c-6bb2-4bda-b13e-94507203bc68
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7f19b6107d6da19f9799655fa86fc58b95df330d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6d6a2bf006d5efdc862dc7d5800694709ea3d3e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996058"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120693"
 ---
 # <a name="icordebugeditandcontinueerrorinfo-interface"></a>ICorDebugEditAndContinueErrorInfo – rozhraní
-`ICorDebugEditAndContinueErrorInfo` je zastaralý. Toto rozhraní nepoužívejte.  
+`ICorDebugEditAndContinueErrorInfo` je zastaralá. Toto rozhraní nepoužívejte.  
   
 ## <a name="see-also"></a>Viz také:
 

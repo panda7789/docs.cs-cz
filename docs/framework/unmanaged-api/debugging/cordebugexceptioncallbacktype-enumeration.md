@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4d946ad4-3c19-42cb-bec9-8633325ba769
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b712ee0bb8e67f448b7ea2bee3c092367181abad
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c927dcde99f5217ee7c160359385e0b953034380
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740211"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132245"
 ---
 # <a name="cordebugexceptioncallbacktype-enumeration"></a>CorDebugExceptionCallbackType – výčet
-Určuje typ zpětné volání, které se provádí ze [icordebugmanagedcallback2::Exception –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) událostí.  
+Určuje typ zpětného volání, které je provedeno z události [ICorDebugManagedCallback2:: Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +39,19 @@ typedef enum CorDebugExceptionCallbackType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`DEBUG_EXCEPTION_FIRST_CHANCE`|Došlo k výjimce.|  
-|`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|Proces windup výjimka zadaný uživatelský kód.|  
-|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Proces windup výjimka nalezen `catch` blokovat v uživatelském kódu.|  
-|`DEBUG_EXCEPTION_UNHANDLED`|Tato výjimka není ošetřena.|  
+|`DEBUG_EXCEPTION_FIRST_CHANCE`|Vyvolala se výjimka.|  
+|`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|Výjimka windup zadává uživatelský kód.|  
+|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Proces windup výjimky nalezl v uživatelském kódu blok `catch`.|  
+|`DEBUG_EXCEPTION_UNHANDLED`|Výjimka nebyla zpracována.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

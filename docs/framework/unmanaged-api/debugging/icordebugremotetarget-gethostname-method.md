@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1c7276f7-7e54-470c-808c-e13745ac07a1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 43a502682e6ccfc36931970d0121f91529f51711
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a9a6ca9ae3cdb1c6a7398d08c9f99e3cde125cf6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744721"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131899"
 ---
 # <a name="icordebugremotetargetgethostname-method"></a>ICorDebugRemoteTarget::GetHostName – metoda
-Vrátí plně kvalifikovaný název domény nebo adresu IPv4 cílového počítače vzdáleného ladění. Protokol IPV6 není v tuto chvíli nepodporuje.  
+Vrátí plně kvalifikovaný název domény nebo IPv4 adresu cílového počítače vzdáleného ladění. Protokol IPV6 se v tuto chvíli nepodporuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,32 +37,32 @@ HRESULT GetHostName (
   
 ## <a name="parameters"></a>Parametry  
  `cchHostName`  
- [in] Velikost ve znacích, nástroje `szHostName` vyrovnávací paměti. Pokud tento parametr je 0 (nula), `szHostName` musí mít hodnotu null.  
+ pro Velikost vyrovnávací paměti `szHostName` v znacích. Pokud je tento parametr 0 (nula), `szHostName` musí mít hodnotu null.  
   
  `pcchHostName`  
- [out] Počet znaků, včetně null zakončení, v názvu hostitele nebo IP adresu. Tento parametr může mít hodnotu null.  
+ mimo Počet znaků, včetně ukončovacího znaku null, v názvu hostitele nebo IP adrese. Tento parametr může mít hodnotu null.  
   
  `szHostName`  
- [out] Vyrovnávací paměť, která obsahuje název hostitele nebo IP adresu.  
+ mimo Vyrovnávací paměť, která obsahuje název hostitele nebo IP adresu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Název hostitele nebo IP adresa byla úspěšně vrácena.  
+ Název hostitele nebo IP adresa se úspěšně vrátily.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
+ E_FAIL (nebo jiné návratové kódy E_)  
  Nelze vrátit název hostitele nebo IP adresu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladicího programu. Je nutné postupovat podle paradigmatu více volání: Při prvním volání volající předá hodnotu null pro obě `cchHostName` a `szHostName`, a `pcchHostName` vrátí velikost požadované vyrovnávací paměti. Při druhém volání je dříve vrácená velikost předána v `cchHostName`, a odpovídající velikosti vyrovnávací paměti je předáno `szHostName`.  
+ Tato metoda je implementována pomocí zapisovače ladicího programu. Musí následovat za vícenásobnými paradigma volání: při prvním volání volající předává hodnotu null do obou `cchHostName` i `szHostName`a `pcchHostName` vrací velikost požadované vyrovnávací paměti. Při druhém volání je výše vrácená velikost předána do `cchHostName`a v `szHostName`předává patřičnou velikost vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlavička:** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 3.5 SP1  
+ **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 

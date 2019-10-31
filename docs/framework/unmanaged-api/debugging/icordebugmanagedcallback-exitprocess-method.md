@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63a7d47a-0d54-4e29-9767-9f09feaa38b7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 04b8ac6751024e64cc866fce1cfe72fb42e41200
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4518637eb47acf416a02c045f8ca6f8a90167277
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760447"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130779"
 ---
 # <a name="icordebugmanagedcallbackexitprocess-method"></a>ICorDebugManagedCallback::ExitProcess – metoda
-Upozorní ladicího programu, že proces byl ukončen.  
+Oznamuje ladicímu programu, že došlo k ukončení procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +35,23 @@ HRESULT ExitProcess (
   
 ## <a name="parameters"></a>Parametry  
  `pProcess`  
- [in] Ukazatel na objekt ICorDebugProcess, který představuje proces.  
+ pro Ukazatel na objekt ICorDebugProcess, který představuje proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Nejde pokračovat od `ExitProcess` událostí. Tato událost může aktivovat asynchronně s ostatními událostmi během procesu se zdá být zastaven. Tato situace může nastat, pokud se proces ukončí při zastavení, obvykle kvůli některé externí platnost.  
+ Nemůžete pokračovat z `ExitProcess` události. Tato událost může být vyvolána asynchronně s ostatními událostmi, pokud se zdá, že se proces zastaví. Tato situace může nastat, pokud se proces ukončí během zastavení, obvykle kvůli nějakému externímu vynutitmu.  
   
- Pokud common language runtime (CLR) je již odesílání spravované zpětné volání, tato událost bude odložena až do po vrátila tohoto zpětného volání.  
+ Pokud již modul CLR (Common Language Runtime) odesílá spravované zpětné volání, bude tato událost zpožděna až po vrácení zpětného volání.  
   
- `ExitProcess` Událostí je jediná událost výstupu/uvolnění, která je zaručeně získat volat pro vypnutí.  
+ Událost `ExitProcess` je jediná událost ukončení/uvolnění, která zaručuje, že se má volat při vypnutí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

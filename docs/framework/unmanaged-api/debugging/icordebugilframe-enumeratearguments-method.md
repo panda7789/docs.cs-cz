@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00ac81e2-a774-422a-bd88-54a4b3c99f73
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 499f58cc0a3f2d1b3c159435ed7d9b523f25e29e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d74c5a6f966201c8ca9d2854de2e9986e7f1d0fa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757888"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131030"
 ---
 # <a name="icordebugilframeenumeratearguments-method"></a>ICorDebugILFrame::EnumerateArguments – metoda
 Získá enumerátor pro argumenty v tomto snímku.  
@@ -37,16 +35,16 @@ HRESULT EnumerateArguments (
   
 ## <a name="parameters"></a>Parametry  
  `ppValueEnum`  
- [out] Ukazatel na adresu icordebugvalueenum – objekt, který je enumerátor pro argumenty v tomto snímku.  
+ mimo Ukazatel na adresu objektu ICorDebugValueEnum, který je enumerátorem pro argumenty v tomto snímku.  
   
 ## <a name="remarks"></a>Poznámky  
- `EnumerateArguments` Získá enumerátor, který můžete zobrazit seznam dostupných v rámci volání, která je reprezentována tímto objektem ICorDebugILFrame argumenty. Obsahuje seznam argumentů, které jsou [vararg](/cpp/windows/vararg) (to znamená, proměnný počet argumentů) stejně jako argumenty, které nejsou `vararg`.  
+ `EnumerateArguments` získá enumerátor, který může vypsat argumenty, které jsou k dispozici v rámci volání, reprezentované tímto objektem ICorDebugILFrame. Seznam bude obsahovat argumenty, které jsou [vararg](/cpp/windows/vararg) (tj. proměnný počet argumentů), i argumenty, které nejsou `vararg`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

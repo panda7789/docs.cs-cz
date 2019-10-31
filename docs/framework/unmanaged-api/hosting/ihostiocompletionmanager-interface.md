@@ -14,45 +14,43 @@ helpviewer_keywords:
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3c3bebe8eabd4d5fd5faec21e0b0efc408353bc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 51d79c398c94ec355528140325da2c25422cbad9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796809"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133850"
 ---
 # <a name="ihostiocompletionmanager-interface"></a>IHostIoCompletionManager – rozhraní
-Poskytuje metody, které umožňují common language runtime (CLR) pro interakci s poskytované hostitelem portů dokončení vstupně-výstupních operací.  
+Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracovat s porty dokončovacího vstupu a výstupu poskytovanými hostitelem.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Bind – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md)|Vytvoří vazbu popisovač na port dokončení vstupně-výstupních operací.|  
-|[CloseIoCompletionPort – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-closeiocompletionport-method.md)|Zavře port, který byl vytvořen pomocí dřívějším volání `CreateIoCompletionPort`.|  
-|[CreateIoCompletionPort – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md)|Požadavky, že hostitele, vytvořte nový port dokončení vstupně-výstupních operací.|  
-|[GetAvailableThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getavailablethreads-method.md)|Získá počet podprocesů dokončení vstupně-výstupních operací, které nejsou aktuálně zpracování požadavků.|  
-|[GetHostOverlappedSize – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-gethostoverlappedsize-method.md)|Získá velikost vlastní data, která si klade za cíl hostitele pro připojení k vstupně-výstupní požadavky.|  
-|[GetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getmaxthreads-method.md)|Získá maximální počet vláken, která může přidělit hostitele služby vstupně-výstupní požadavky.|  
-|[GetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getminthreads-method.md)|Získá minimální počet vláken, která obsahuje hostitele služby vstupně-výstupní požadavky.|  
-|[InitializeHostOverlapped – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-initializehostoverlapped-method.md)|Poskytuje hostitele příležitost k inicializaci vlastních dat o požadavek na vstupně-výstupních operací.|  
-|[SetCLRIoCompletionManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|Poskytuje ukazatel rozhraní k hostiteli [iclriocompletionmanager –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implementován modulem CLR.|  
-|[SetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setmaxthreads-method.md)|Nastaví maximální počet vláken, která allots hostitele služby vstupně-výstupní požadavky.|  
-|[SetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setminthreads-method.md)|Nastaví minimální počet vláken, která by měla přidělit hostitele na dokončení vstupně-výstupních operací.|  
+|[Bind – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md)|Váže popisovač k portu pro dokončení I/O.|  
+|[CloseIoCompletionPort – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-closeiocompletionport-method.md)|Uzavře port, který byl vytvořen pomocí předchozího volání `CreateIoCompletionPort`.|  
+|[CreateIoCompletionPort – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md)|Požaduje, aby hostitel vytvořil nový port pro dokončení vstupu/výstupu.|  
+|[GetAvailableThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getavailablethreads-method.md)|Získá počet vláken dokončení v/v, která aktuálně nezpracovávají požadavky.|  
+|[GetHostOverlappedSize – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-gethostoverlappedsize-method.md)|Získá velikost libovolných vlastních dat, která hostitel chce připojit k vstupně-výstupním žádostem.|  
+|[GetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getmaxthreads-method.md)|Získá maximální počet vláken, která může hostitel Allot na požadavky na vstupně-výstupní operace služby.|  
+|[GetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-getminthreads-method.md)|Získá minimální počet vláken, která hostitel poskytuje pro vstupně-výstupní požadavky služby.|  
+|[InitializeHostOverlapped – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-initializehostoverlapped-method.md)|Poskytuje hostiteli možnost inicializovat jakákoli vlastní data týkající se vstupně-výstupních požadavků.|  
+|[SetCLRIoCompletionManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|Poskytuje hostitele s ukazatelem rozhraní na instanci [ICLRIoCompletionManager –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) implementované modulem CLR.|  
+|[SetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setmaxthreads-method.md)|Nastaví maximální počet vláken, která hostitel allots na požadavky na vstupně-výstupní operace služby.|  
+|[SetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setminthreads-method.md)|Nastaví minimální počet vláken, které by měl hostitel Allot na dokončení vstupu a výstupu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IHostIoCompletionManager` odpovídá `ICLRIoCompletionManager` rozhraní implementované CLR. CLR volá metody dané `IHostIoCompletionManager` zpracovává vytvořit vazbu na porty, které obsahuje hostitele a hostitele volá metody dané `ICLRIoCompletionManager` Oznámit dokončení vstupně-výstupní požadavky.  
+ `IHostIoCompletionManager` odpovídá rozhraní `ICLRIoCompletionManager` implementovanému modulem CLR. CLR volá metody `IHostIoCompletionManager` pro vázání popisovačů k portům, které poskytuje hostitel, a Hostitel volá metody `ICLRIoCompletionManager` k hlášení dokončení vstupně-výstupních požadavků.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

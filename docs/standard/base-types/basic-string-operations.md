@@ -1,50 +1,48 @@
 ---
 title: Základní operace s řetězci v .NET
-description: Přečtěte si o základních operací, které můžete provádět na řetězce.
+description: Seznamte se se základními operacemi, které můžete provádět na řetězcích.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - strings [.NET Framework], basic string operations
 - custom strings
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seadec18
-ms.openlocfilehash: 8621e79ad6e305f3859dc269965ecd216081f695
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 05cdf399e104fc9e528c954adb19634a5c136664
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936809"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132915"
 ---
 # <a name="basic-string-operations-in-net"></a>Základní operace s řetězci v .NET
-Aplikace často reagovat na uživatele pomocí zprávy založené na vstup uživatele. Není například neobvyklé webových stránek a reagovat na nově přihlášeného uživatele s specializované pozdrav, který obsahuje jméno uživatele. Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní. Tyto metody také umožňují provádět základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.  
+Aplikace často reagují na uživatele tím, že vytváří zprávy na základě vstupu uživatele. Nejedná se například o neobvyklou webovou lokalitu, aby reagovala na nově přihlášeného uživatele se specializovaným pozdravem, který obsahuje jméno uživatele. Několik metod v třídách <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> umožňuje dynamicky vytvářet vlastní řetězce pro zobrazení v uživatelském rozhraní. Tyto metody vám také pomůžou provést řadu základních operací s řetězci, jako je vytváření nových řetězců z polí bajtů, porovnávání hodnot řetězců a úprava stávajících řetězců.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytváření nových řetězců](../../../docs/standard/base-types/creating-new.md)  
- Popisuje základní způsoby k převedení objektů na řetězce a kombinování řetězců.  
+ Popisuje základní způsoby, jak převést objekty do řetězců a kombinovat řetězce.  
   
  [Ořezávání a odstraňování znaků](../../../docs/standard/base-types/trimming.md)  
- Popisuje, jak trim nebo odeberte znaky v řetězci.  
+ Popisuje, jak oříznout nebo odebrat znaky v řetězci.  
   
  [Doplňování řetězců](../../../docs/standard/base-types/padding.md)  
- Popisuje, jak vkládat znaky nebo prázdné mezery do řetězce.  
+ Popisuje, jak vložit znaky nebo prázdné mezery do řetězce.  
   
  [Porovnávání řetězců](../../../docs/standard/base-types/comparing.md)  
- Popisuje, jak porovnání obsahu dvou nebo více řetězců.  
+ Popisuje, jak porovnat obsah dvou nebo více řetězců.  
   
  [Změna velikosti písmen](../../../docs/standard/base-types/changing-case.md)  
  Popisuje, jak změnit velikost písmen znaků v řetězci.  
   
  [Používání třídy StringBuilder](../../../docs/standard/base-types/stringbuilder.md)  
- Popisuje, jak vytvářet a upravovat objekty dynamického řetězce <xref:System.Text.StringBuilder> třídy.  
+ Popisuje, jak vytvořit a upravit objekty dynamického řetězce pomocí třídy <xref:System.Text.StringBuilder>.  
   
- [Postupy: Manipulace s řetězci základní](../../../docs/standard/base-types/basic-manipulations.md)  
- Ukazuje použití základní operace s řetězci.  
+ [Postupy: Základní manipulace s řetězci](../../../docs/standard/base-types/basic-manipulations.md)  
+ Ukazuje použití základních operací s řetězci.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)  
- Popisuje, jak převést jednoho typu na jiný typ.  
+ Popisuje, jak převést jeden typ na jiný typ.  
   
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- Popisuje, jak pomocí specifikátorů formátu řetězce formátu.
+ Popisuje, jak formátovat řetězce pomocí specifikátorů formátu.

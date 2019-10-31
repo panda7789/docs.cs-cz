@@ -12,14 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], reflection-only loader context
 - reflection-only loader context
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8e22dcf7db5ec2c78a79e574604e0b39b4962727
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: cac6b3b3adf070ad6070e5c5941653f20dedd907
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971847"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130107"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
 
@@ -27,16 +25,16 @@ Kontext zatížení pouze pro reflexi umožňuje kontrolovat sestavení kompilov
 
 ## <a name="to-load-an-assembly-into-the-reflection-only-load-context"></a>Načtení sestavení do kontextu načtení pouze pro reflexi
 
-1. K načtení sestavení podle jeho zobrazovaného názvu použijte přetížení <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody,nebometodupronačtenísestavení,kterédanoucestuzadala.<xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> Pokud je sestavení binární image, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.
+1. Použijte přetížení metody <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> k načtení sestavení daného zobrazovaného názvu nebo metody <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> pro načtení sestavení, které danou cestu načetlo. Pokud je sestavení binární image, použijte přetížení metody <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29>.
 
     > [!NOTE]
     > Kontext pouze pro reflexi nelze použít pro načtení verze knihovny mscorlib. dll z verze .NET Framework kromě verze v kontextu spuštění.
 
-2. Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> metoda je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
+2. Pokud má sestavení závislosti, metoda <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
 
-3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnosti sestavení.
+3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí vlastnosti <xref:System.Reflection.Assembly.ReflectionOnly%2A> sestavení.
 
-4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí <xref:System.Reflection.CustomAttributeData> třídy, aby se zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
+4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí třídy <xref:System.Reflection.CustomAttributeData>, aby se zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení metody <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
 
     > [!NOTE]
     > Atributy použité pro sestavení nebo jejich obsah mohou být definovány v sestavení nebo mohou být definovány v jiném sestavení načteno do kontextu pouze pro reflexi. Neexistuje žádný způsob, jak sdělit předem, kde jsou definovány atributy.

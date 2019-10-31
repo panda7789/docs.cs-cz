@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationStarted Method
+title: ICorProfilerCallback8::D ynamicMethodJITCompilationStarted – metoda
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationStarted
@@ -8,19 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5a60f074ce0081df07a61d0b832d542c8873776f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1eaf29e1c93f352facde4af2ee57910783d82e5d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757979"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136467"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationStarted Method
-[Podporované v rozhraní .NET Framework 4.7 a novějších verzích]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::D ynamicMethodJITCompilationStarted – metoda
+[Podporováno v .NET Framework 4,7 a novějších verzích]  
   
-Profiler upozorní při každém spuštění kompilace JIT dynamické metody.  
+Upozorní profiler vždy při spuštění kompilace JIT dynamické metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,34 +33,34 @@ HRESULT DynamicMethodJITCompilationStarted(
   
 ## <a name="parameters"></a>Parametry  
 [in] `functionId`  
-Identifikátor funkce v paměti, pro které JIT kompilace spuštění.   
+Identifikátor funkce v paměti, pro kterou je spuštěná kompilace JIT.   
 
 [in] `fIsSafeToBlock`   
-`true` k označení, že blokování může způsobit, že modul runtime počká pro volajícího vlákna má vrátit z této zpětné volání; `false` k označení, že blokování nebude mít vliv na operace modulu runtime.  
+`true` k označení toho, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání; `false` k označení, že blokování nebude mít vliv na operaci modulu runtime.  
 
 [in] `pILHeader`    
-Ukazatel na první bajt záhlaví úrovně Důvěryhodnosti metody.   
+Ukazatel na první bajt hlavičky IL metody.   
 
 [in] `cbILHeader`    
-Počet bajtů v záhlaví úrovně Důvěryhodnosti. 
+Počet bajtů v hlavičce IL. 
 
 ## <a name="remarks"></a>Poznámky  
 
-Toto zpětné volání se aktivuje vždy, když je dynamická metoda kompilována JIT. To zahrnuje různé zástupné procedury IL a LCG metody. Jeho cílem je poskytnout dostatek informací k identifikaci metody kompilované pro uživatele autoři profileru.
+Toto zpětné volání se aktivuje pokaždé, když je dynamická metoda kompilována JIT. To zahrnuje různé zástupné procedury IL a LCG metody. Jeho cílem je poskytnout zapisovačům profileru dostatek informací pro identifikaci zkompilované metody uživatelům.
 
 > [!NOTE]
-> `functionId` hodnoty nelze přeložit na jejich tokeny metadat použít, protože dynamické metody mají žádná metadata.
+> hodnoty `functionId` nelze použít k překladu na jejich tokeny metadat, protože dynamické metody nemají žádná metadata.
 
-`pILHeader` Ukazatel je platný pouze během zpětného volání.
+Ukazatel `pILHeader` je platný pouze během zpětného volání.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

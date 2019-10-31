@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f24e1af9-c220-4f79-ae62-4153ec17ea81
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c24d6e9c42a091eafbe6d4bdee2bb4e055fd8852
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cff527aa7cde6a13667d47d030a0ef7db96ad5ba
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772031"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122334"
 ---
 # <a name="icordebugtypegetbase-method"></a>ICorDebugType::GetBase – metoda
-Získá ukazatel rozhraní k ICorDebugType, který představuje základní typ, pokud existuje, typu představovaného tímto rozhraním `ICorDebugType`.  
+Získá ukazatel rozhraní na ICorDebugType, který představuje základní typ, pokud existuje, typu reprezentovaného tímto `ICorDebugType`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetBase (
   
 ## <a name="parameters"></a>Parametry  
  `pBase`  
- [out] Ukazatel na adresu `ICorDebugType` objekt, který reprezentuje základního typu.  
+ mimo Ukazatel na adresu `ICorDebugType`ho objektu, který představuje základní typ.  
   
 ## <a name="remarks"></a>Poznámky  
- Základní typ pro typ hledání je užitečné implementovat běžné funkce ladicího programu, jako je například tisk si všechna pole objektu nebo její nadřazenou třídu.  
+ Vyhledávání základního typu pro typ je užitečné pro implementaci běžných funkcí ladicího programu, jako je například tisk všech polí objektu nebo jeho nadřazených tříd.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

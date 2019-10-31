@@ -8,21 +8,19 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8cbc904b56237d3c875566ee1276c121dae70c4c
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 1490171c4dd423baa3b6c5f5e00cf133c2584cae
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151745"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124398"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typ odkazu ve spravovaném kódu, který obsahuje jeden nebo více prvků stejného typu. I když pole jsou odkazové typy, jsou předány jako parametry do nespravovaných funkcí. Toto chování je nekonzistentní, protože spravovaná pole jsou předávána spravovaným objektům, což jsou vstupně-výstupní parametry. Další podrobnosti najdete v tématu [kopírování a připnutí](copying-and-pinning.md).  
   
  Následující tabulka uvádí možnosti zařazování pro pole a popisuje jejich použití.  
   
-|Array|Popis|  
+|skupin|Popis|  
 |-----------|-----------------|  
 |Celých čísel podle hodnoty.|Předá pole celých čísel jako parametr v parametru.|  
 |Celých čísel podle odkazu.|Předá pole celých čísel jako vstupně-výstupní parametr.|  
@@ -46,7 +44,7 @@ Pole je typ odkazu ve spravovaném kódu, který obsahuje jeden nebo více prvk�
   
 - Pole struktur s řetězci.  
   
- Pokud není pole explicitně zařazeno pomocí odkazu, výchozí chování zařadí pole jako parametr v parametru. Toto chování můžete změnit použitím <xref:System.Runtime.InteropServices.InAttribute> atributů a <xref:System.Runtime.InteropServices.OutAttribute> explicitně.  
+ Pokud není pole explicitně zařazeno pomocí odkazu, výchozí chování zařadí pole jako parametr v parametru. Toto chování můžete změnit použitím atributů <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> explicitně.  
   
  Ukázka pole používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:  
   
@@ -102,9 +100,9 @@ typedef struct _MYPERSON
 } MYPERSON;  
 ```  
   
- V této ukázce `MyPoint` struktury a `MyPerson` obsahují vložené typy. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Atribut je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.  
+ V této ukázce struktury `MyPoint` a `MyPerson` obsahují vložené typy. Atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.  
   
- Třída obsahuje sadu metod, které jsou `App` volány třídou. `NativeMethods` Konkrétní podrobnosti o předávání polí naleznete v komentářích v následující ukázce. Pole, které je odkazový typ, je ve výchozím nastavení předáno jako parametr in. Aby volající mohl přijímat výsledky, **atribut** InAttribute a **subattribute** musí být explicitně aplikovány na argument obsahující pole.  
+ Třída `NativeMethods` obsahuje sadu metod, které jsou volány třídou `App`. Konkrétní podrobnosti o předávání polí naleznete v komentářích v následující ukázce. Pole, které je odkazový typ, je ve výchozím nastavení předáno jako parametr in. Aby volající mohl přijímat výsledky, **atribut** InAttribute a **subattribute** musí být explicitně aplikovány na argument obsahující pole.  
   
 ### <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]

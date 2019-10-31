@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 84e1e605-37c1-49a5-8e12-35db85654622
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad62b267eb0c49ff8fbefeb45b523c21edc705fe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d38a59b23d47cbaf57dc21e121d56530a514d354
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766038"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128864"
 ---
 # <a name="icordebugprocessgethelperthreadid-method"></a>ICorDebugProcess::GetHelperThreadID – metoda
-Získá ID vlákna operačního systému (OS) interní pomocné vlákno ladicího programu.  
+Získá ID vlákna operačního systému (OS) vnitřního pomocného vlákna ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT GetHelperThreadID (
   
 ## <a name="parameters"></a>Parametry  
  `pThreadID`  
- [out] Ukazatel na operační systém vlákna ID interní pomocné vlákno ladicího programu.  
+ mimo Ukazatel na ID vlákna operačního systému interní pomocné vlákno ladicího programu.  
   
 ## <a name="remarks"></a>Poznámky  
- Při ladění spravované a nespravované, zodpovídá za ladicího programu k zajištění, že vlákno se zadaným ID zůstane spuštěný, pokud ho narazí na zarážku, umístí ladicím programem. Ladicí program může také chtít skrýt toto vlákno od uživatele. Pokud neexistuje žádný pomocné vlákno v procesu ještě, `GetHelperThreadID` metoda vrátí nulu v *`pThreadID`.  
+ Během spravovaného a nespravovaného ladění se jedná o zodpovědnost ladicího programu, aby se zajistilo, že vlákno se zadaným ID zůstává spuštěné, pokud narazí na zarážku umístěnou ladicím programem. Ladicí program může také skrýt toto vlákno od uživatele. Pokud v procesu ještě neexistuje žádný pomocný podproces, metoda `GetHelperThreadID` vrátí nulu ve *`pThreadID`.  
   
- ID vlákna pomocné vlákno nemůže mezipaměti, protože to může v průběhu času měnit. ID vlákna v každé události zastavení musíte znovu odeslán dotaz.  
+ Nemůžete ukládat do mezipaměti ID vlákna pomocných vláken, protože se může v průběhu času měnit. Při každé události zastavení musíte znovu zadat dotaz na ID vlákna.  
   
- ID vlákna pomocné vlákno ladicího programu bude správné na každý nespravované [icordebugmanagedcallback::CreateThread –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) událostí, což umožní ladicí program k určení ID vlákna z jeho pomocné vlákno a skryjte ji pro uživatele. Podproces, který je označen jako pomocné vlákno během nespravované `ICorDebugManagedCallback::CreateThread` událostí bude nespouštět spravovaného uživatelského kódu.  
+ ID vlákna pomocného vlákna ladicího programu bude v každé nespravované události [ICorDebugManagedCallback:: CreateThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) správné, což umožňuje ladicímu programu určit ID vlákna jeho pomocného vlákna a skrýt ho od uživatele. Vlákno, které je identifikováno jako pomocné vlákno během nespravované události `ICorDebugManagedCallback::CreateThread`, nikdy nespustí spravovaný kód uživatele.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl. CorDebug.h  
+ **Hlavička:** CorDebug. idl. CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -8,149 +8,147 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1f88308dcea250c02d9c6cd7f326570f8bc0133c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf8a1c028b7b987cb9a7340597087d799dfd4321
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630121"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123178"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
-V asynchronním programování, je běžné, že jedna asynchronní operace při dokončení vyvolá druhou operaci a předá jí data. Tradičně jsme udělali pokračování pomocí metody zpětného volání. V Task Parallel Library je stejná funkčnost zajištěna pomocí *pokračujících úloh*. Pokračující úloha (nazývaná také pouze pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se nazývá *předchůdce*, jakmile je předchůdce dokončen.  
+V asynchronním programování je běžné pro jednu asynchronní operaci po dokončení, k vyvolání druhé operace a předání dat do ní. Pokračování je tradičně prováděno pomocí metod zpětného volání. V knihovně Task Parallel Library jsou stejné funkce poskytovány *pokračujícími úkoly*. Pokračující úkol (označuje se také jako pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se označuje jako *předchůdce*po dokončení předchůdce.  
   
- Pokračování jsou relativně snadno použitelná, ale přesto jsou výkonnější a flexibilnější. Například můžete:  
+ Pokračování je poměrně snadné použít, ale jsou ale výkonné a flexibilní. Můžete například:  
   
-- Předejte data z předchůdce do pokračování.  
+- Předat data z předchůdce do pokračování.  
   
-- Určete přesné podmínky, za kterých bude vyvolána pokračování nebo není vyvolána.  
+- Určete přesné podmínky, za kterých bude pokračování vyvoláno nebo není vyvoláno.  
   
-- Zrušte pokračování před spuštěním nebo kooperativně za běhu.  
+- Zrušení pokračování buď před jeho spuštěním, nebo ve spolupráci s tím, jak běží.  
   
-- Poskytnout nápovědu, jak by měl být pokračování naplánováno.  
+- Poskytněte nápovědu, jak má být pokračování naplánováno.  
   
-- Vyvolejte ze stejného předchůdce více pokračování.  
+- Vyvolá několik pokračování ze stejného předchůdce.  
   
-- Vyvolejte jedno pokračování, až skončí všichni nebo jeden z více předchůdců.  
+- Vyvolat jedno pokračování, až se dokončí všechny nebo některé z více předchůdců.  
   
 - Zřetězit pokračování jedno po druhém do jakékoli libovolné délky.  
   
 - Použijte pokračování pro zpracování výjimek vyvolaných předchůdcem.  
   
-## <a name="about-continuations"></a>Informace o pokračování  
- Pokračování je úkol, který je vytvořen v <xref:System.Threading.Tasks.TaskStatus.WaitingForActivation> stavu. Je aktivována automaticky po dokončení jeho předchozí úlohy nebo úlohy. Volání <xref:System.Threading.Tasks.Task.Start%2A?displayProperty=nameWithType> na pokračování v uživatelském kódu vyvolá <xref:System.InvalidOperationException?displayProperty=nameWithType> výjimky.  
+## <a name="about-continuations"></a>O pokračování  
+ Pokračování je úkol, který je vytvořen ve stavu <xref:System.Threading.Tasks.TaskStatus.WaitingForActivation>. Aktivuje se automaticky po dokončení jeho předchozí úlohy nebo úkolů. Volání <xref:System.Threading.Tasks.Task.Start%2A?displayProperty=nameWithType> při pokračování v uživatelském kódu vyvolá výjimku <xref:System.InvalidOperationException?displayProperty=nameWithType>.  
   
- Pokračování je samo o sobě <xref:System.Threading.Tasks.Task> a neblokuje vlákno, na kterém je spuštěno. Volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda blokuje, dokud neskončí úloha pokračování.  
+ Pokračování je samo <xref:System.Threading.Tasks.Task> a neblokuje vlákno, ve kterém je spuštěno. Zavolejte metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> pro blokování, dokud neskončí pokračování úlohy.  
   
-## <a name="creating-a-continuation-for-a-single-antecedent"></a>Vytváření pro jeden předchůdce pokračování  
- Vytvořit pokračování, který se spustí po dokončení jeho předchůdce voláním <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> metody. Následující příklad zobrazuje základní vzor (pro přehlednost je vynecháno zpracování výjimek). Je spuštěn předchozí úlohy, `taskA`, která vrací <xref:System.DayOfWeek> objekt, který určuje název aktuální den v týdnu. Jakmile je předchůdce dokončen, úkol pokračování `continuation`, je předán předchůdce a zobrazí řetězec, který obsahuje výsledek. 
+## <a name="creating-a-continuation-for-a-single-antecedent"></a>Vytvoření pokračování pro jeden předchůdce  
+ Můžete vytvořit pokračování, které se provede po dokončení jeho předchůdce voláním metody <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Následující příklad znázorňuje základní vzorek (pro přehlednost, vynechává se zpracování výjimek). Spustí předchozí úlohu, `taskA`, která vrátí objekt <xref:System.DayOfWeek>, který označuje název aktuálního dne v týdnu. Po dokončení předchůdce se úkol pokračování, `continuation`, předává předchůdci a zobrazí řetězec, který obsahuje jeho výsledek. 
 
 > [!NOTE]
-> C# Zkontrolujte ukázky tohoto článku využívání `async` modifikátor `Main` metoda. Tato funkce je k dispozici v C# 7.1 a novější. Předchozí verze generovat [ `CS5001` ](../../csharp/misc/cs5001.md) při kompilaci ukázkový kód. Bude nutné nastavit jazykovou verzi na C# 7.1 nebo novější. Můžete zjistěte, jak nakonfigurovat jazykové verzi v následujícím článku na [konfigurace jazykovou verzi](../../csharp/language-reference/configure-language-version.md).
+> C# Ukázky v tomto článku využívají modifikátor `async` na metodě `Main`. Tato funkce je k dispozici v C# 7,1 a novějších verzích. Předchozí verze generují [`CS5001`](../../csharp/misc/cs5001.md) při kompilování tohoto ukázkového kódu. Je nutné nastavit jazykovou verzi na C# 7,1 nebo novější. Informace o tom, jak nakonfigurovat jazykovou verzi, najdete v článku o [konfiguraci jazykové verze](../../csharp/language-reference/configure-language-version.md).
   
  [!code-csharp[TPL_Continuations#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/simple1.cs#1)]
  [!code-vb[TPL_Continuations#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/simple1.vb#1)]  
   
 ## <a name="creating-a-continuation-for-multiple-antecedents"></a>Vytváření pokračování pro více předchůdců  
- Můžete také vytvořit pokračování, které se spustí po dokončení některých nebo všech skupiny úkolů. Provést pokračování po dokončení všechny předchozí úkoly, zavolejte statickou (`Shared` v jazyce Visual Basic) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metodu nebo instanci <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> metody. Provést pokračování, až všechny předchozí úkoly dokončí, zavolejte statickou (`Shared` v jazyce Visual Basic) <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metodu nebo instanci <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> metody.  
+ Můžete také vytvořit pokračování, které se spustí, když se dokončí kterákoli nebo celá skupina úkolů. Chcete-li provést pokračování po dokončení všech předchozích úloh, zavoláte metodu static (`Shared` in Visual Basic) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> nebo metodu instance <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>. Chcete-li provést pokračování po dokončení kteréhokoliv z předchozích úloh, zavoláte metodu static (`Shared` in Visual Basic) <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> nebo metodu instance <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType>.  
   
- Všimněte si, že se volá, aby <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> přetížení nedochází k blokování volajícího vlákna.  Však obvykle volat pouze na <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> metody pro načtení vráceného <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která blokování volajícího vlákna.  
+ Všimněte si, že volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> přetížení neblokují volající vlákno.  Nicméně obvykle zavoláte všechny metody, ale <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType>, abyste načetli vrácenou vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>, která zablokuje volající vlákno.  
   
- Následující příklad volá <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> metody k vytvoření pokračování úlohy, která odráží výsledky jeho 10 předchozí úlohy. Každé předchozí úlohy squares hodnotu indexu rozsahu od 1 do 10. Pokud předchůdců úspěšně dokončit (jejich <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> vlastnost <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>), <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost pokračování je pole <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> hodnoty vrácené každou předchůdce. V příkladu se přidají k výpočtu součet kvadratických hodnot pro všechna čísla v rozsahu od 1 do 10.  
+ V následujícím příkladu je volána metoda <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> pro vytvoření pokračování úlohy, která odráží výsledky jeho 10 předchozích úloh. Každý předchozí úkol napředá hodnotu indexu, která je v rozsahu od 1 do 10. Pokud se předchůdce úspěšně dokončí (vlastnost <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> je <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>), vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> pokračování je pole hodnot <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vrácených jednotlivými předchůdci. Tento příklad je přidá k výpočtu součtu čtverců pro všechna čísla od 1 do 10.  
   
  [!code-csharp[TPL_Continuations#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/whenall1.cs#5)]
  [!code-vb[TPL_Continuations#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/whenall1.vb#5)]  
   
 ## <a name="continuation-options"></a>Možnosti pokračování  
- Při vytváření pokračování jedné úlohy, můžete použít <xref:System.Threading.Tasks.Task.ContinueWith%2A> přetížení, které přijímá <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> hodnotu výčtu pro určení podmínek, za kterých pokračování spustí. Například můžete určit, že pokračování má spustit jenom v případě, že je předchůdce dokončen úspěšně, nebo pouze v případě, že dokončení v chybovém stavu. Pokud podmínka není splněna, kdy je předchůdce připraven k vyvolání pokračování, pokračování přechází přímo <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu a následně se nedá spustit.  
+ Když vytvoříte pokračování jedné úlohy, můžete použít <xref:System.Threading.Tasks.Task.ContinueWith%2A> přetížení, které přebírá hodnotu <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> výčtu k určení podmínek, za kterých se pokračování spustí. Můžete například určit, že pokračování bude spuštěno pouze v případě, že se předchůdce úspěšně dokončí, nebo pouze v případě, že se dokončí v chybovém stavu. Pokud podmínka není pravdivá, pokud je předchůdce připraven k vyvolání pokračování, pokračování přejde přímo do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> a následně nemůže být spuštěno.  
   
- Počet metod víceúlohového pokračování, jako jsou přetížení <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> metoda, také zahrnovat <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> parametr. Pouze podmnožinu všech <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> členy výčtu jsou platné, ale. Můžete zadat <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> hodnoty, které mají jejich protějšky v <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=nameWithType> výčtu, například <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskContinuationOptions.LongRunning?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness?displayProperty=nameWithType>. Pokud je zadána některá z `NotOn` nebo `OnlyOn` možnosti s víceúlohovým pokračováním <xref:System.ArgumentOutOfRangeException> v době běhu, bude vyvolána výjimka.  
+ Několik metod pokračování více úloh, jako je například přetížení metody <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>, zahrnuje také parametr <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType>. Platná je však pouze podmnožina všech členů výčtu <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType>. Můžete určit <xref:System.Threading.Tasks.TaskContinuationOptions?displayProperty=nameWithType> hodnoty, které mají protějšky ve výčtu <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=nameWithType>, například <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskContinuationOptions.LongRunning?displayProperty=nameWithType>a <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness?displayProperty=nameWithType>. Pokud zadáte některou z `NotOn` nebo `OnlyOn` možnosti s pokračováním více úloh, bude vyvolána výjimka <xref:System.ArgumentOutOfRangeException> v době běhu.  
   
- Další informace o možnosti pokračování úlohy, najdete v článku <xref:System.Threading.Tasks.TaskContinuationOptions> tématu.  
+ Další informace o možnostech pokračování úlohy najdete v tématu <xref:System.Threading.Tasks.TaskContinuationOptions>.  
   
-## <a name="passing-data-to-a-continuation"></a>Předávání údajů do pokračování  
- <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> Metoda předává reference na předchůdce uživatelskému delegátovi pokračování jako argument. Pokud je předchůdce <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> objekt a tato úloha spustila úspěšně dokončen, pak může pokračování přistupovat <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úlohy.  
+## <a name="passing-data-to-a-continuation"></a>Předávání dat do pokračování  
+ Metoda <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> předá odkaz na předchůdce jako argument pro uživatele pokračování. Pokud je předchůdce objekt <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> a úloha byla spuštěna až do dokončení, pokračování může získat přístup k vlastnosti <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> úlohy.  
   
- <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Vlastnost blokuje, dokud není úloha dokončena. Nicméně, pokud byla úloha zrušena nebo došlo k chybě, pokusu o přístup <xref:System.Threading.Tasks.Task%601.Result%2A> vyvolá vlastnost <xref:System.AggregateException> výjimky. Tento problém můžete vyhnout použitím <xref:System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion> možnosti, jak je znázorněno v následujícím příkladu.  
+ Vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> zablokuje, dokud se úloha nedokončí. Pokud se ale úloha zrušila nebo došlo k chybě, pokus o přístup k vlastnosti <xref:System.Threading.Tasks.Task%601.Result%2A> vyvolá výjimku <xref:System.AggregateException>. Tomuto problému se můžete vyhnout pomocí možnosti <xref:System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion>, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[TPL_Continuations#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result1.cs#2)]
  [!code-vb[TPL_Continuations#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result1.vb#2)]  
   
- Pokud chcete, aby pokračování spuštěno i v případě, že předchůdce nebyl spuštěn na úspěšné dokončení, musí se proti výjimce chránit. Jedním z přístupů je otestovat <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> pokus o přístup k vlastnosti předchozí a jenom <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost Pokud stav není <xref:System.Threading.Tasks.TaskStatus.Faulted> nebo <xref:System.Threading.Tasks.TaskStatus.Canceled>. Můžete také prozkoumat <xref:System.Threading.Tasks.Task.Exception%2A> vlastnosti předchůdce. Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md). Následující příklad upravuje předchozí příklad přístup předchůdce <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost pouze v případě, že má stav <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>.  
+ Pokud chcete pokračovat v běhu i v případě, že předchůdce nebyl úspěšně dokončen, je nutné před výjimkou provést ochranu. Jedním z přístupů je otestování vlastnosti <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> předchůdce a pokus o přístup k vlastnosti <xref:System.Threading.Tasks.Task%601.Result%2A> pouze v případě, že stav není <xref:System.Threading.Tasks.TaskStatus.Faulted> nebo <xref:System.Threading.Tasks.TaskStatus.Canceled>. Můžete také prostudovat vlastnost <xref:System.Threading.Tasks.Task.Exception%2A> předchůdce. Další informace naleznete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md). Následující příklad upravuje předchozí příklad pro přístup k vlastnosti <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> předchůdce pouze v případě, že je jeho stav <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>.  
   
  [!code-csharp[TPL_Continuations#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result2.cs#7)]
  [!code-vb[TPL_Continuations#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result2.vb#7)]  
   
 ## <a name="canceling-a-continuation"></a>Zrušení pokračování  
- <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> Pokračování je nastavena na <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> v následujících situacích:  
+ Vlastnost <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> pokračování je nastavena na <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> v následujících situacích:  
   
-- Vyvolá <xref:System.OperationCanceledException> výjimky v reakci na žádost o zrušení. Jako u každého úkolu, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považován za potvrzení kooperativního zrušení.  
+- Vyvolá výjimku <xref:System.OperationCanceledException> v reakci na žádost o zrušení. Stejně jako u jakékoli úlohy, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považována za potvrzení kooperativního zrušení.  
   
-- Pokračování je předán <xref:System.Threading.CancellationToken?displayProperty=nameWithType> jehož <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost `true`. V takovém případě pokračování nespustí a přechází do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
+- Pokračování je předáno <xref:System.Threading.CancellationToken?displayProperty=nameWithType>, jehož vlastnost <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> je `true`. V takovém případě se pokračování nespustí a přejde do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType>.  
   
-- Pokračování nikdy nespustí, protože podmínka nastavená jeho <xref:System.Threading.Tasks.TaskContinuationOptions> argument nebyl splněn. Například, pokud předchozí přejde do <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stavu, její pokračování, který byl předán <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> možnost se nespustí, ale nahradí <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu.  
+- Pokračování se nikdy nespustí, protože nebyla splněna podmínka nastavená argumentem <xref:System.Threading.Tasks.TaskContinuationOptions>. Například pokud předchůdce přejde do stavu <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType>, jeho pokračování, které bylo předáno <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> možnost, nebude spuštěno, ale převede do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled>.  
   
- Pokud úlohu a její pokračování představují dvě části stejné logické operace, můžete předat stejný token zrušení oběma úkolům, jak je znázorněno v následujícím příkladu. Zahrnuje předchůdce, který generuje seznam celých čísel, která jsou dělitelná 33, který předá do pokračování. Pokračování zase zobrazí v seznamu. Předchůdce a pokračování pozastavení pravidelně náhodných intervalech. Kromě toho <xref:System.Threading.Timer?displayProperty=nameWithType> objekt se používá ke spuštění `Elapsed` metoda po pěti sekundách časový limit. Tento příklad příkladu volá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu, která způsobí, že právě prováděnou úlohu k volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType> metody. Zda <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda se volá, když je předchůdce nebo jeho pokračování provádí závisí na době trvání náhodně generované pozastaví. Pokud je předchůdce zrušen, pokračování nespustí. Pokud není předchůdce zrušen, token je stále možné pro zrušení pokračování.  
+ Pokud úloha a její pokračování reprezentují dvě části stejné logické operace, můžete stejný token zrušení předat oběma úkolům, jak je znázorněno v následujícím příkladu. Skládá se z předchůdce, který generuje seznam celých čísel, která jsou dělitelná 33, která je předána pokračování. Pokračování zobrazí seznam. Předchůdce i pokračování v pravidelných intervalech se v náhodných intervalech pozastaví. Kromě toho se <xref:System.Threading.Timer?displayProperty=nameWithType> objekt používá ke spuštění metody `Elapsed` po pěti sekundách intervalu časového limitu. Tento příklad volá metodu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType>, která způsobuje, že aktuálně vykonávaná úloha volá metodu <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType>. Určuje, zda je volána metoda <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType>, když předchůdce nebo jeho pokračování provádí, závisí na době trvání náhodně generovaných pozastavení. Pokud je předchůdce zrušen, pokračování nebude zahájeno. Pokud předchůdce není zrušen, token lze nadále použít k zrušení pokračování.  
   
  [!code-csharp[TPL_Continuations#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/cancellation1.cs#3)]
  [!code-vb[TPL_Continuations#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/cancellation1.vb#3)]  
   
- Můžete také zabránit pokračování v provádění, zda je zrušen předchůdce bez poskytnutí pokračování token zrušení tak, že zadáte <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnCanceled?displayProperty=nameWithType> při vytváření pokračování možnost. Níže je jednoduchý příklad.  
+ Můžete také zabránit spuštění pokračování, pokud je jeho předchůdce zrušen bez zadání pokračování tokenu zrušení zadáním možnosti <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnCanceled?displayProperty=nameWithType> při vytváření pokračování. Následuje jednoduchý příklad.  
   
  [!code-csharp[TPL_Continuations#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/cancellation2.cs#8)]
  [!code-vb[TPL_Continuations#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/cancellation2.vb#8)]  
   
- Přechod pokračování do <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu, může ovlivnit pokračování, které následují, v závislosti na tom <xref:System.Threading.Tasks.TaskContinuationOptions> , které bylo zadáno pro tyto pokračování.  
+ Po pokračování přejde do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled>, může ovlivnit pokračování, která následují, v závislosti na <xref:System.Threading.Tasks.TaskContinuationOptions>, které byly pro tyto pokračování zadány.  
   
- Pokračování, které jsou odstraněny se nespustí.  
+ Pokračování, která jsou uvolněna, se nespustí.  
   
 ## <a name="continuations-and-child-tasks"></a>Pokračování a podřízené úlohy  
- Pokračování nespustí až do předchůdce a všechny jeho připojené podřízené úlohy dokončeny. Pokračování nečeká na dokončení odpojených podřízených úloh. Následující dva příklady ilustrují podřízených úloh, které jsou připojeny k a Odpojit z předchozí, která vytvoří pokračování. V následujícím příkladu se pokračování nespustí až po dokončení všech podřízených úloh a spuštění příkladu vytvoří více než jednou identické výstupu pokaždé, když. V příkladu spustí předchůdce voláním <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metody, protože ve výchozím nastavení <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metoda vytvoří nadřazenou úlohu, jejíž výchozí možnost vytváření úloh je <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType>.  
+ Pokračování není spuštěno, dokud předchůdce a všechny jeho připojené podřízené úlohy nebyly dokončeny. Pokračování nečeká na dokončení odpojených podřízených úloh. Následující dva příklady ilustrují podřízené úlohy, které jsou připojeny k a odpojeny od předchůdce, který vytváří pokračování. V následujícím příkladu se pokračování spustí až po dokončení všech podřízených úloh a spuštění příkladu několikrát vytvoří stejný výstup. V příkladu se spustí předchůdce voláním metody <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>, protože ve výchozím nastavení metoda <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> vytvoří nadřazenou úlohu, jejíž výchozí možnost vytvoření úlohy je <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType>.  
   
  [!code-csharp[TPL_Continuations#9](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/attached1.cs#9)]
  [!code-vb[TPL_Continuations#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/attached1.vb#9)]  
   
- Pokud podřízených úloh jsou odpojeny od předchůdce, ale pokračování spustí, jakmile je předchůdce byl ukončen, bez ohledu na stav podřízených úloh. V důsledku toho více běhů v následujícím příkladu může vytvořit výstup proměnné, na kterém závisí způsob zpracování každá podřízená úloha Plánovač úloh.  
+ Pokud se ale podřízené úlohy odpojí od předchůdce, pokračování se spustí hned po ukončení předchůdce, a to bez ohledu na stav podřízených úloh. V důsledku toho může více spuštění z následujícího příkladu vytvořit proměnnou výstup, který závisí na tom, jak Plánovač úloh zpracoval každou podřízenou úlohu.  
   
  [!code-csharp[TPL_Continuations#10](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/detached1.cs#10)]
  [!code-vb[TPL_Continuations#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/detached1.vb#10)]  
   
- Konečný stav předchozí úlohy závisí na konečném stavu všech připojených podřízených úloh. Stav odpojených podřízených úloh nemá vliv na nadřazený. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
+ Konečný stav předchozí úlohy závisí na konečném stavu všech připojených podřízených úloh. Stav odpojených podřízených úloh nemá vliv na nadřazenou položku. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
   
-## <a name="associating-state-with-continuations"></a>Přidružení stavu s pokračováními  
- Pokračování úlohy lze přidružit libovolný stav. <xref:System.Threading.Tasks.Task.ContinueWith%2A> Metoda poskytuje přetížené verze, která každá převezme <xref:System.Object> hodnotu, která představuje stav pokračování. Můžete později přístup k tomuto objektu stavu pomocí <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> vlastnost. Tento objekt stavu je `null` Pokud nezadáte hodnotu.  
+## <a name="associating-state-with-continuations"></a>Přidružení stavu k pokračováním  
+ Můžete přidružit libovolný stav pokračování úlohy. Metoda <xref:System.Threading.Tasks.Task.ContinueWith%2A> poskytuje přetížené verze, které každá z nich převezme hodnotu <xref:System.Object>, která představuje stav pokračování. Později můžete přistupovat k tomuto objektu stavu pomocí vlastnosti <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType>. Tento objekt stavu je `null`, pokud nezadáte hodnotu.  
   
- Stav pokračování je užitečný při převádění existujícího kódu, který se používá [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) pro používání TPL. V APM obvykle poskytnete stav objektů v **začít**_metoda_ metoda a později získáte přístup k tomuto stavu pomocí <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> vlastnost. S použitím <xref:System.Threading.Tasks.Task.ContinueWith%2A> metodu, můžete zachovat tento stav při převodu kódu, který používá APM pro použití TPL.  
+ Pokračování stavu je užitečné, pokud převedete existující kód, který používá [asynchronní programovací model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) pro použití rozhraní TPL. V APM obvykle poskytujete stav objektu v metodě **Begin**_metody_ a později získáte přístup k tomuto stavu pomocí vlastnosti <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType>. Pomocí metody <xref:System.Threading.Tasks.Task.ContinueWith%2A> můžete zachovat tento stav při převodu kódu, který používá APM k použití rozhraní TPL.  
   
- Stav pokračování může také být užitečné při práci s <xref:System.Threading.Tasks.Task> objektů v ladicím programu sady Visual Studio. Například v **paralelní úlohy** okně **úloh** sloupec zobrazuje řetězcovou reprezentaci objektu stav pro každý úkol. Další informace o **paralelní úlohy** okna, naleznete v tématu [Using the Tasks Window](/visualstudio/debugger/using-the-tasks-window).  
+ Stav pokračování může být užitečné také při práci s <xref:System.Threading.Tasks.Task> objekty v ladicím programu sady Visual Studio. Například v okně **Paralelní úlohy** zobrazuje sloupec **úkoly** řetězcovou reprezentaci objektu State pro každý úkol. Další informace o okně **Paralelní úlohy** najdete v tématu [použití okna úlohy](/visualstudio/debugger/using-the-tasks-window).  
   
- Následující příklad ukazuje způsob použití stavu pokračování. Vytvoří řetězec pokračujících úloh. Každá úloha obsahuje aktuální čas <xref:System.DateTime> objektu, pro `state` parametr <xref:System.Threading.Tasks.Task.ContinueWith%2A> metody. Každý <xref:System.DateTime> objekt představuje čas, kdy se vytvoří úkol pokračování. Každý úkol vytváří jako svůj výsledek a druhý <xref:System.DateTime> objekt, který představuje čas, kdy úloha dokončí. Po dokončení všech úkolů tento příklad zobrazuje čas vytvoření a čas, ve které každý pokračování neskončí úloha.  
+ Následující příklad ukazuje, jak použít stav pokračování. Vytvoří řetězec pokračujících úloh. Každý úkol poskytuje aktuální čas, objekt <xref:System.DateTime> pro parametr `state` metody <xref:System.Threading.Tasks.Task.ContinueWith%2A>. Každý objekt <xref:System.DateTime> představuje čas, kdy se vytvoří úkol pokračování. Každý úkol vytváří jako výsledek druhý objekt <xref:System.DateTime>, který představuje čas, kdy se úkol dokončí. Po dokončení všech úloh v tomto příkladu se zobrazí čas vytvoření a čas, kdy se Každá úloha pokračování dokončí.  
   
  [!code-csharp[TPL_ContinuationState#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuationstate/cs/continuationstate.cs#1)]
  [!code-vb[TPL_ContinuationState#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuationstate/vb/continuationstate.vb#1)]  
   
 ## <a name="handling-exceptions-thrown-from-continuations"></a>Zpracování výjimek vyvolaných z pokračování  
- Vztah předchůdce pokračování není vztah nadřízenosti a podřízenosti. Výjimky vyvolané pokračováním nejsou šířeny do předchůdce. Proto zpracujte výjimky vyvolané v pokračování stejně jako je v libovolné jiné úloze a následujícím způsobem:  
+ Vztah předchůdce-pokračování není relace typu nadřazený-podřízený. Výjimky vyvolané pokračováním nejsou šířeny do předchůdce. Proto zpracujte výjimky vyvolané pokračováním, protože byste je měli zpracovat v jakékoli jiné úloze, a to následujícím způsobem:  
   
-- Můžete použít <xref:System.Threading.Tasks.Task.Wait%2A>, <xref:System.Threading.Tasks.Task.WaitAll%2A>, nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> metody nebo jejich obecné protějšky pro čekání na pokračování. Můžete počkat předchůdce a jeho pokračování ve stejném `try` příkaz, jak je znázorněno v následujícím příkladu.  
+- Pro čekání na pokračování lze použít metodu <xref:System.Threading.Tasks.Task.Wait%2A>, <xref:System.Threading.Tasks.Task.WaitAll%2A>nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> nebo její obecné protějšky. Můžete počkat na předchůdce a jeho pokračování ve stejném příkazu `try`, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[TPL_Continuations#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception1.cs#6)]
      [!code-vb[TPL_Continuations#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception1.vb#6)]  
   
-- Pomocí druhého pokračování sledovat <xref:System.Threading.Tasks.Task.Exception%2A> vlastnosti prvního pokračování. V následujícím příkladu úlohu pokouší číst ze souboru neexistuje. Pokračování pak zobrazí informace o výjimce v předchozí úlohy.  
+- Druhé pokračování můžete použít ke sledování vlastnosti <xref:System.Threading.Tasks.Task.Exception%2A> prvního pokračování. V následujícím příkladu se úloha pokusí o čtení z neexistujícího souboru. Pokračování potom zobrazí informace o výjimce v předchozí úloze.  
   
      [!code-csharp[TPL_Continuations#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#4)]
      [!code-vb[TPL_Continuations#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#4)]  
   
-     Vzhledem k tomu, že byla spuštěna s <xref:System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted?displayProperty=nameWithType> možnost, že pokračování spustí pouze v případě, že dojde k výjimce v předchůdce, a proto by ji můžete předpokládat, že je předchůdce <xref:System.Threading.Tasks.Task.Exception%2A> jedná o vlastnost neumožňující `null`. Pokud pokračování spustí, zda je výjimka vyvolána v předchůdce, bude mít ke kontrole, jestli je předchůdce <xref:System.Threading.Tasks.Task.Exception%2A> jedná o vlastnost neumožňující `null` před pokusem o zpracování výjimky, jako následující fragment kódu ukazuje.  
+     Protože byl spuštěn s možností <xref:System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted?displayProperty=nameWithType>, pokračování se spustí pouze v případě, že v předchůdci dojde k výjimce, a proto může předpokládat, že vlastnost <xref:System.Threading.Tasks.Task.Exception%2A> předchůdce není `null`. Pokud se pokračování provede bez ohledu na to, zda je vyvolána výjimka v předchůdci, bude nutné ověřit, zda je před pokusem o zpracování výjimky ne`null`á vlastnost <xref:System.Threading.Tasks.Task.Exception%2A> předchůdce, jak ukazuje následující fragment kódu.  
   
      [!code-csharp[TPL_Continuations#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#11)]
      [!code-vb[TPL_Continuations#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#11)]  
   
-     Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+     Další informace naleznete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
   
-- Pokud je pokračování připojené podřízené úlohy, který byl vytvořen pomocí <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> možnost, výjimky se šířeny přes nadřízenou zpět do volajícího vlákna, stejně jako v případě v libovolného jiného připojeného podřízeného. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
+- Pokud je pokračování připojená podřízená úloha, která byla vytvořena pomocí možnosti <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType>, jejich výjimky budou rozšířeny nadřazeným objektem zpět do volajícího vlákna, jako je případ v jakémkoli jiném připojeném podřízeném prvku. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
   
 ## <a name="see-also"></a>Viz také:
 

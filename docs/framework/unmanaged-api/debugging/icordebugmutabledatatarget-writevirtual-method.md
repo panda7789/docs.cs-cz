@@ -1,18 +1,16 @@
 ---
-title: ICorDebugMutableDataTarget::WriteVirtual – metoda
+title: 'ICorDebugMutableDataTarget:: Writevirtual – – metoda'
 ms.date: 03/30/2017
 ms.assetid: 80833648-58a7-491a-8dc8-9a48e9bb3adc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d0a6a58a1a270cb67b75cf34ac5df8d45ccf307c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5947caa8dfb97574bb4b3c5634d962df153211c7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764575"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132683"
 ---
-# <a name="icordebugmutabledatatargetwritevirtual-method"></a>ICorDebugMutableDataTarget::WriteVirtual – metoda
-Zapíše paměti do adresového prostoru cílového procesu.  
+# <a name="icordebugmutabledatatargetwritevirtual-method"></a>ICorDebugMutableDataTarget:: Writevirtual – – metoda
+Zapíše paměť do cílového adresního prostoru procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,28 +23,28 @@ HRESULT WriteVirtual(
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [in] Adresa, ve kterém se má zapsat obsah `pBuffer`.  
+ pro Adresa, na které se má zapisovat obsah `pBuffer`.  
   
  `pBuffer`  
- [in] Ukazatel na bajtové pole obsahující bajty k zápisu.  
+ pro Ukazatel na pole bajtů obsahující bajty, které mají být zapsány.  
   
  `address`  
- [in] Počet bajtů v `pBuffer`.  
+ pro Počet bajtů v `pBuffer`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` na úspěch, nebo jakékoli jiné `HRESULT` při selhání.  
+ `S_OK` při úspěchu nebo jakékoli jiné `HRESULT` při selhání.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud nelze zapsány všechny bajty, beze změny všechny bajty v adresním prostoru cílového selže volání metody. (V opačném případě Cílem by být v nekonzistentním stavu, která provádí další ladění nespolehlivé.)  
+ Pokud nemůžete zapsat libovolné bajty, volání metody se nepovede bez změny jakýchkoli bajtů v cílovém adresním prostoru. (Jinak by byl cíl v nekonzistentním stavu, který umožňuje další ladění nespolehlivě.)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

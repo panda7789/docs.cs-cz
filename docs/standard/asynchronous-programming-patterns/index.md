@@ -6,14 +6,12 @@ helpviewer_keywords:
 - asynchronous design patterns, .NET
 - .NET Framework, asynchronous design patterns
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36798fabcd42cf7e04b0a6f288736503eecad88b
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: dfce69ee18b8346cd802b4934de63bf0a39c72f0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169128"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124258"
 ---
 # <a name="asynchronous-programming-patterns"></a>Vzorce asynchronního programování
 
@@ -21,13 +19,13 @@ ms.locfileid: "70169128"
 
 - **Asynchronní vzor založený na úlohách (klepněte)** , který používá jedinou metodu představující zahájení a dokončení asynchronní operace. Klepněte na zavedený .NET Framework 4. **Je to doporučený přístup k asynchronnímu programování v rozhraní .NET.** Klíčová slova [](../../csharp/language-reference/operators/await.md) [Async](../../csharp/language-reference/keywords/async.md) a await C# v a operátory [Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic přidat jazykovou podporu pro klepněte. Další informace najdete v tématu [asynchronní vzor založený na úlohách (klepněte)](task-based-asynchronous-pattern-tap.md).  
 
-- Asynchronní vzor založený na událostech **(EAP)** , což je starší model založený na událostech pro zajištění asynchronního chování. Vyžaduje metodu, která má `Async` příponu a jednu nebo více událostí, typy delegátů události a `EventArg`odvozené typy. Protokol EAP byl představený v .NET Framework 2,0. Už se nedoporučuje pro nový vývoj. Další informace najdete v tématu [asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md).  
+- Asynchronní vzor založený na událostech **(EAP)** , což je starší model založený na událostech pro zajištění asynchronního chování. Vyžaduje metodu, která má příponu `Async` a jednu nebo více událostí, typy delegátů obslužné rutiny události a typy odvozené od `EventArg`. Protokol EAP byl představený v .NET Framework 2,0. Už se nedoporučuje pro nový vývoj. Další informace najdete v tématu [asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md).  
 
-- Vzor **asynchronního programovacího modelu (APM)** (označuje <xref:System.IAsyncResult> se také jako vzor), což je starší <xref:System.IAsyncResult> model, který používá rozhraní k zajištění asynchronního chování. `Begin` V tomto vzoru vyžadují synchronní operace a `End` `BeginWrite` metody (například a `EndWrite` k implementaci asynchronní operace zápisu). Tento model se už nedoporučuje pro nový vývoj. Další informace najdete v tématu [asynchronní programovací model (APM)](asynchronous-programming-model-apm.md).  
+- Model **asynchronního programování (APM)** (označuje se také jako vzor <xref:System.IAsyncResult>), což je starší model, který používá rozhraní <xref:System.IAsyncResult> k zajištění asynchronního chování. V tomto vzoru vyžadují synchronní operace `Begin` a `End` metody (například `BeginWrite` a `EndWrite` k implementaci operace asynchronního zápisu). Tento model se už nedoporučuje pro nový vývoj. Další informace najdete v tématu [asynchronní programovací model (APM)](asynchronous-programming-model-apm.md).  
   
 ## <a name="comparison-of-patterns"></a>Porovnání vzorů
 
-Chcete-li rychle porovnat, jak tři vzory modelují asynchronní operace, zvažte `Read` metodu, která načte zadané množství dat do zadané vyrovnávací paměti počínaje zadaným posunem:  
+Chcete-li rychle porovnat, jak tři vzory modelují asynchronní operace, vezměte v úvahu `Read` metodu, která načte zadané množství dat do zadané vyrovnávací paměti počínaje zadaným posunem:  
   
 ```csharp  
 public class MyClass  
@@ -36,7 +34,7 @@ public class MyClass
 }  
 ```  
 
-Klepnutí na protějšek této metody vystaví následující jedinou `ReadAsync` metodu:  
+Klepnutím na protějšek této metody by se zveřejnila tato jediná `ReadAsync` metoda:  
   
 ```csharp
 public class MyClass  
@@ -55,7 +53,7 @@ public class MyClass
 }  
 ```  
   
-Protějšek APM by vystavoval `BeginRead` metody `EndRead` a:  
+Protějšek APM by vystavoval `BeginRead` a `EndRead` metody:  
   
 ```csharp  
 public class MyClass  

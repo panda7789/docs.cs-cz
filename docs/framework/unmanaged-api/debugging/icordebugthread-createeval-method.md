@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 36605067-33d3-4579-9c72-fb0e551ab0f1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 41bd4c0bb4e84b6d6f267e24808baafa57f71882
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c622e0eba27f501446d2b7d9d264ee0834e869c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771118"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133619"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval – metoda
-Vytvoří objekt icordebugeval –, který shromažďuje a zveřejňuje funkce tento ICorDebugThread.  
+Vytvoří objekt ICorDebugEval, který shromažďuje a zpřístupňuje funkce tohoto ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT CreateEval (
   
 ## <a name="parameters"></a>Parametry  
  `ppEval`  
- [out] Ukazatel na adresu `ICorDebugEval` objekt, který shromažďuje a zveřejňuje funkce pro toto vlákno.  
+ mimo Ukazatel na adresu `ICorDebugEval` objektu, který shromažďuje a zpřístupňuje funkce tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Objekt vyhodnocení zařadí nový řetězec ve vlákně než přistoupíte k jeho výpočtu. Přeruší se výpočet aktuálně se provést ve vlákně, dokud se nedokončí hodnocení.  
+ Objekt vyhodnocení před provedením výpočtu napředá do vlákna nový řetěz. Tím se přeruší výpočet, který se právě provádí ve vlákně, dokud se nedokončí vyhodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

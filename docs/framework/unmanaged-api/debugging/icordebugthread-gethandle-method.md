@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 172ef8c4-2ead-4cfc-bd2e-dee4fb7191cd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 54981be7104eb04ac6347ad13b61a69f40d4377c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 33219d9a67379244e23da49c13617a4c4a2fa66d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770626"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133455"
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle – metoda
-Získá aktuální popisovač pro aktivní část této ICorDebugThread.  
+Získá aktuální popisovač pro aktivní část tohoto ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetHandle (
   
 ## <a name="parameters"></a>Parametry  
  `phThreadHandle`  
- [out] Ukazatel na HTHREAD, který popisovač aktivní součást toto vlákno.  
+ mimo Ukazatel na HTHREAD, který je popisovačem aktivní části tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Popisovač můžou změnit, protože proces spustí a může lišit pro různé části vlákna.  
+ Popisovač se může změnit, protože se spustí proces a může se lišit pro různé části vlákna.  
   
- Tento popisovač vlastní rozhraní API pro ladění. Ladicí program by měl duplikovat před jeho použitím.  
+ Tento popisovač je vlastněn rozhraním API pro ladění. Ladicí program by ho měl před použitím duplikovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

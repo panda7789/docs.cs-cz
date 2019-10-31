@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a9e00b4f-b6d0-4257-bd88-4fe9af97b8fa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e61acbb15844c5ddfc8b7aa98c41bb18c6e9ade5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 81aef6beb9ee6d622519738d24fdd0a4d42a75b1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769756"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136553"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels – výčet
-Poskytuje příznaků, které určují úroveň, kde nastavení nebo změna zásady sestavení.  
+Poskytuje příznaky pro určení úrovně, na které se má použít nebo upravit zásady sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,26 +43,26 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ePolicyLevelAdmin`|Určuje, že je použita zásada na úrovni správce.|  
-|`ePolicyLevelApp`|Určuje, že je použita zásada na úrovni aplikace.|  
-|`ePolicyLevelHost`|Určuje, že je použita zásada na úrovni hostitele.|  
-|`ePolicyLevelNone`|Určuje příznaky žádná úroveň zásad.|  
-|`ePolicyLevelPublisher`|Určuje, že je použita zásada na úrovni vydavatele.|  
-|`ePolicyLevelRetargetable`|Určuje, že zásada by měla být použít proměnné na úrovni.|  
-|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementacemi sestavení rozhraní .NET Framework. Zobrazit [ \<supportPortability >](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) prvek souboru konfigurace.|  
-|`ePolicyUnifiedToCLR`|Určuje, že zásady by měl unified, který modulu common language runtime (CLR).|  
+|`ePolicyLevelAdmin`|Určuje, že zásada by se měla použít na úrovni správce.|  
+|`ePolicyLevelApp`|Určuje, že zásada by se měla použít na úrovni aplikace.|  
+|`ePolicyLevelHost`|Určuje, že zásada by se měla použít na úrovni hostitele.|  
+|`ePolicyLevelNone`|Neurčuje žádné příznaky na úrovni zásad.|  
+|`ePolicyLevelPublisher`|Určuje, že zásada by se měla použít na úrovni vydavatele.|  
+|`ePolicyLevelRetargetable`|Určuje, že zásada by se měla použít na proměnlivých úrovních.|  
+|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementacemi .NET Framework sestavení. Viz\<prvek konfiguračního souboru [> značka supportPortability](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) .|  
+|`ePolicyUnifiedToCLR`|Určuje, že zásady by měly být sjednoceny s modulem CLR (Common Language Runtime).|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet je předán do metody [iclrhostbindingpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) rozhraní a zadejte změny v zásadách aplikací.  
+ Tento výčet je předán metodám rozhraní [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) k určení změn v zásadách použití.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 632d4adc-dbc9-4ce8-9397-abc3285c1c69
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7e0e877402daf27c375aedddf8922e919a546ae5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae40d8adaae70ccff6e8058858a506267d58873f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781182"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133751"
 ---
 # <a name="modulebindinfo-structure"></a>ModuleBindInfo – struktura
-Poskytuje podrobné informace o odkazovaného modulu a sestavení, který jej obsahuje.  
+Obsahuje podrobné informace o odkazovaném modulu a sestavení, které ho obsahuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ typedef struct _ModuleBindInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dwAppDomainId`|Jedinečný identifikátor `IStream` , který je vrácen voláním [ihostassemblystore::providemodule –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md) metoda, ze kterého má být načten odkazovaného modulu.|  
-|`lpAssemblyIdentity`|Jedinečný identifikátor pro sestavení, které obsahuje odkazovaného modulu.|  
-|`lpModuleName`|Název odkazovaného modulu.|  
+|`dwAppDomainId`|Jedinečný identifikátor pro `IStream`, který je vrácen voláním metody [IHostAssemblyStore::P rovidemodule](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md) , ze které má být načten odkazovaný modul.|  
+|`lpAssemblyIdentity`|Jedinečný identifikátor pro sestavení, které obsahuje odkazovaný modul.|  
+|`lpModuleName`|Název odkazovaného modulu|  
   
 ## <a name="remarks"></a>Poznámky  
- `ModuleBindInfo` je předán jako parametr `IHostAssemblyStore::ProvideModule`. Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) metoda vrací výsledek, modul runtime používá identifikátoru k určení, zda obsah `IStream` byly namapovány. Pokud ano, načte modul runtime stávající kopie spíše než přemapování datového proudu. Modul runtime také používá tento identifikátor jako vyhledávací klíč pro datové proudy, které jsou vráceny z volání `IHostAssemblyStore::ProvideAssembly` metody. Proto identifikátoru musí být jedinečný pro modul požadavky i jako u žádosti o sestavení.  
+ `ModuleBindInfo` se předává jako parametr pro `IHostAssemblyStore::ProvideModule`. Hostitel dodá jedinečný identifikátor `dwAppDomainId` modulu CLR (Common Language Runtime). Po volání metody [IHostAssemblyStore::P rovideassembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) , modul runtime používá identifikátor k určení, zda byl obsah `IStream` namapován. V takovém případě modul runtime načte existující kopii místo přemapování datového proudu. Modul runtime používá tento identifikátor také jako vyhledávací klíč pro datové proudy, které jsou vráceny z volání metody `IHostAssemblyStore::ProvideAssembly`. Proto musí být identifikátor jedinečný pro požadavky modulů i pro požadavky na sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

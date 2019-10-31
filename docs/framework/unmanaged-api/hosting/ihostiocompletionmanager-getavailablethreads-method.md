@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bab363d1-b859-47a4-9884-5661c611cce7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4316412cec26ae5698918ff65b2da65de9f36ff2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2fa429979faa04518397cf58aaa62d3e45230a76
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779620"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133835"
 ---
 # <a name="ihostiocompletionmanagergetavailablethreads-method"></a>IHostIoCompletionManager::GetAvailableThreads – metoda
-Získá počet vláken dokončení vstupně-výstupních operací, z celkového počtu vláken spravovaný hostitelem, které momentálně nejsou požadavky obsluhy.  
+Získá počet vláken dokončování v/v celkového počtu vláken spravovaných hostitelem, který aktuálně neobsluhuje požadavky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,31 +35,31 @@ HRESULT GetAvailableThreads (
   
 ## <a name="parameters"></a>Parametry  
  `pdwAvailableIoCompletionThreads`  
- [out] Ukazatel na počet vstupně-výstupních operací dokončení vlákna spravováno hostitele, které jsou aktuálně k dispozici žádosti o služby.  
+ mimo Ukazatel na počet vstupně-výstupních vláken, která spravuje hostitel, kteří jsou aktuálně k dispozici pro žádosti o služby.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetAvailableThreads` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`GetAvailableThreads` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|Hostitel neposkytuje implementaci `GetAvailableThreads`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel může být vhodné výhradní kontrolu nad velikost fondu vláken dokončení vstupně-výstupních operací, z důvodů, například provádění, výkon a škálovatelnost. Proto není nutné implementovat hostitele `GetAvailableThreads`. V takovém případě hostitele by měl vrátit E_NOTIMPL z této metody.  
+ Hostitel může chtít exkluzivní kontrolu nad velikostí fondu vláken v/v dokončování z důvodů, jako je implementace, výkon nebo škálovatelnost. Proto není nutné, aby hostitel implementoval `GetAvailableThreads`. V takovém případě by měl hostitel vrátit E_NOTIMPL z této metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

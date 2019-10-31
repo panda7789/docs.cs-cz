@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7e1965917e8a1c5ae07cf119df3664b969a979be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a6d9708e7281a72c88ba28012006784f7b0ee9d9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969255"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124361"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost – funkce
 Umožňuje hostitelům načíst zadanou verzi modulu CLR (Common Language Runtime) do procesu.  
@@ -49,14 +47,14 @@ HRESULT CorBindToRuntimeHost (
   
  Číslo verze v .NET Framework se skládá ze čtyř částí oddělených tečkami: *hlavní_verze. podverze. sestavení. revize*. Řetězec předaný jako `pwszVersion` musí začínat znakem "v" následovaný prvními třemi částmi čísla verze (například "v 1.0.1529").  
   
- Některé verze modulu CLR jsou nainstalovány s příkazem zásad, který určuje kompatibilitu s předchozími verzemi modulu CLR. Ve výchozím nastavení překrytí po spuštění `pwszVersion` vyhodnocuje příkazy zásad a načte nejnovější verzi modulu runtime, která je kompatibilní s požadovanou verzí. Hostitel může vynutit překrytí a přeskočit vyhodnocení zásad a načíst přesnou verzi určenou `pwszVersion` v předáním hodnoty STARTUP_LOADER_SAFEMODE `startupFlags` pro parametr.  
+ Některé verze modulu CLR jsou nainstalovány s příkazem zásad, který určuje kompatibilitu s předchozími verzemi modulu CLR. Ve výchozím nastavení překrytí po spuštění vyhodnocuje `pwszVersion` proti příkazům zásad a načte nejnovější verzi modulu runtime, která je kompatibilní s požadovanou verzí. Hostitel může vynutit překrytí, aby přeskočil vyhodnocení zásad a načetlo přesnou verzi určenou v `pwszVersion` předáním hodnoty STARTUP_LOADER_SAFEMODE pro parametr `startupFlags`.  
   
- Pokud `pwszVersion` je`null,` Metoda nenačte žádnou verzi CLR. Místo toho vrátí CLR_E_SHIM_RUNTIMELOAD, což znamená, že se nepodařilo načíst modul runtime.  
+ Pokud je `pwszVersion` `null,` metoda nenačte žádnou verzi CLR. Místo toho vrátí CLR_E_SHIM_RUNTIMELOAD, což znamená, že se nepodařilo načíst modul runtime.  
   
  `pwszBuildFlavor`  
  pro Řetězec, který určuje, zda má být načten Server nebo pracovní stanice sestavení modulu CLR. Platné hodnoty jsou `svr` a `wks`. Sestavení serveru je optimalizované tak, aby využívalo více procesorů pro uvolňování paměti a aby bylo sestavení pracovní stanice optimalizované pro klientské aplikace běžící na počítači s jedním procesorem.  
   
- Pokud `pwszBuildFlavor` je nastaven na hodnotu null, je načteno sestavení pracovní stanice. Při spuštění v počítači s jedním procesorem je sestavení pracovní stanice vždy načteno i v případě `pwszBuildFlavor` , že je `svr`nastavena na. Pokud `pwszBuildFlavor` je však nastavena na `svr` a souběžné uvolňování paměti zadáno ( `startupFlags` viz popis parametru), je sestavení serveru načteno.  
+ Pokud je `pwszBuildFlavor` nastaveno na hodnotu null, je načteno sestavení pracovní stanice. Při spuštění v počítači s jedním procesorem je sestavení pracovní stanice vždy načteno, i když je `pwszBuildFlavor` nastaveno na `svr`. Pokud je však `pwszBuildFlavor` nastavena na `svr` a je-li zadáno souběžné uvolňování paměti (viz popis `startupFlags` parametr), je sestavení serveru načteno.  
   
 > [!NOTE]
 > Souběžné uvolňování paměti není podporováno v aplikacích spouštějících emulátor WOW64 x86 v 64 systémech, které implementují architekturu Intel Itanium (dříve nazývané IA-64). Další informace o používání WOW64 v systémech s 64 Windows najdete v tématu [spouštění 32 aplikací](/windows/desktop/WinProg64/running-32-bit-applications).  
@@ -68,23 +66,23 @@ HRESULT CorBindToRuntimeHost (
  pro Vyhrazeno pro budoucí rozšíření.  
   
  `startupFlags`  
- pro Sada příznaků, která řídí souběžné uvolňování paměti, doménový kód neutrální a chování `pwszVersion` parametru. Výchozí hodnota je jedna doména, pokud není nastaven žádný příznak. Seznam podporovaných hodnot naleznete v tématu [výčet STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
+ pro Sada příznaků, která řídí souběžné uvolňování paměti, doménový neutrální kód a chování parametru `pwszVersion`. Výchozí hodnota je jedna doména, pokud není nastaven žádný příznak. Seznam podporovaných hodnot naleznete v tématu [výčet STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
   
  `rclsid`  
- pro Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost.](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) `CLSID` Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID` třídy coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
- pro `IID` Rozhraní, které požadujete. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
+ pro `IID` rozhraní, které požadujete. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
   
  `ppv`  
  mimo Ukazatel rozhraní na verzi modulu runtime, který byl načten.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

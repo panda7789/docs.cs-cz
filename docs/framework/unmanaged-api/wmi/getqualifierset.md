@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetQualifierSet function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 845d5ea93a06859840c87c65b415ead0f846d538
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 489e240af3f26e82f2459ac4b4dbd944639f78fc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798461"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127436"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
 Načte kvalifikátor sady pro instanci třídy nebo definici třídy.
@@ -47,19 +45,19 @@ pro Tento parametr se nepoužívá.
 pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `ppQualSet`  
-mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům objektu třídy. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel zůstane beze změny. 
+mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům objektu třídy. `ppQualSet` nelze `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel zůstane beze změny. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je `null`. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
@@ -68,9 +66,9 @@ Tato funkce zalomí volání metody [IWbemclassObject:: GetQualifierSet](/window
 [Ukazatel IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit tyto kvalifikátory. Tyto přidané, upravené nebo odstraněné kvalifikátory platí pro celou instanci nebo definici třídy.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

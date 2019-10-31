@@ -8,27 +8,25 @@ dev_langs:
 helpviewer_keywords:
 - SpinWait, how to synchronize two-phase wait
 ms.assetid: b2ac4e4a-051a-4f65-b4b9-f8e103aff195
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 52b9164546d2061a65c79fb167b14543b0dae5a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5bac174660177fd47e1f345e64581e35ae4c0ffc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934404"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137939"
 ---
 # <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Postupy: Použití objektu SpinWait pro implementaci dvoufázové operace čekání
-Následující příklad ukazuje způsob použití <xref:System.Threading.SpinWait?displayProperty=nameWithType> objektu pro implementaci dvoufázové operace čekání. V první fázi synchronizační objekt `Latch`, otáčí pro několik cyklů při kontrole, jestli má zámek k dispozici. Ve druhé fázi, pokud zámek přestane být k dispozici pak bude `Wait` metoda vrátí bez použití <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> provádět jeho čekání; v opačném případě `Wait` provádí čekání.  
+Následující příklad ukazuje, jak použít objekt <xref:System.Threading.SpinWait?displayProperty=nameWithType> k implementaci dvoufázové operace čekání. V první fázi se objekt synchronizace, `Latch`, rozpíná několik cyklů, zatímco kontroluje, zda je zámek k dispozici. Pokud je zámek k dispozici ve druhé fázi, `Wait` metoda vrátí bez použití <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> k provedení čekání; v opačném případě `Wait` provede čekání.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje velmi základní implementaci zámek synchronizace primitivní. Tato struktura dat můžete použít při velmi krátké očekávané době čekání. V tomto příkladu je pouze pro demonstrační účely. Pokud vyžadujete funkce západkou typu ve svém programu, zvažte použití <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>.  
+ Tento příklad ukazuje velmi základní implementaci primitiva synchronizace západ. Tuto datovou strukturu můžete použít, pokud se očekává, že čekací časy budou velmi krátké. Tento příklad je určen pouze pro demonstrační účely. Pokud v programu požadujete funkce typu západ, zvažte použití <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>.  
   
  [!code-csharp[CDS_SpinWait#03](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinwait/cs/spinwait03.cs#03)]
  [!code-vb[CDS_SpinWait#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinwait/vb/spinwait2.vb#03)]  
   
- Používá zámek <xref:System.Threading.SpinWait> objektu, abyste mohli spustit na místě pouze až do příštího volání metody `SpinOnce` způsobí, že <xref:System.Threading.SpinWait> výnosu časovém intervalu vlákna. V tomto okamžiku západku způsobí, že vlastní přepnutí kontextu voláním <xref:System.Threading.WaitHandle.WaitOne%2A> na <xref:System.Threading.ManualResetEvent> a předávání do zbývající část hodnoty časového limitu.  
+ Západ používá objekt <xref:System.Threading.SpinWait> k rozmístění pouze do chvíle, kdy další volání `SpinOnce` způsobí, že <xref:System.Threading.SpinWait> zaznamená časový úsek vlákna. V tomto okamžiku západ vyvolá svůj vlastní kontextový přepínač voláním <xref:System.Threading.WaitHandle.WaitOne%2A> na <xref:System.Threading.ManualResetEvent> a předáním zbývající část hodnoty časového limitu.  
   
- Protokolování výstupu ukazuje, jak často se podařilo a zvyšuje výkon získání zámku bez použití Zámek <xref:System.Threading.ManualResetEvent>.  
+ Výstup protokolování ukazuje, jak často byla západ moci zvýšit výkon tím, že získá zámek bez použití <xref:System.Threading.ManualResetEvent>.  
   
 ## <a name="see-also"></a>Viz také:
 

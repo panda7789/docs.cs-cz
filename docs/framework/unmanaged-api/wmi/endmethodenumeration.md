@@ -14,14 +14,12 @@ helpviewer_keywords:
 - EndMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cdcf49bd748a423b1cebfba88644aa961f1c7b65
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 174cf76d4b0ddf07e67e02bff20a983dca08819a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799354"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132023"
 ---
 # <a name="endmethodenumeration-function"></a>Funkce EndMethodEnumeration
 Ukončí sekvenci výčtu spuštěnou voláním [funkce BeginMethodEnumeration](beginmethodenumeration.md).  
@@ -49,21 +47,21 @@ pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbem
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Došlo k vnitřní chybě. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalomí volání metody [IWbemclassObject:: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
 
-Volající zahájí sekvenci výčtu pomocí [funkce BeginMethodEnumeration](beginmethodenumeration.md)a poté zavolá [funkci NextMethod](nextmethod.md ), dokud se metoda nevrátí `WBEM_S_NO_MORE_DATA`. Volající volitelně dokončí sekvenci voláním `EndMethodEnumeration`. Volající může ukončit výčet na začátku voláním `EndMethodEnumeration` kdykoli.
+Volající zahájí sekvenci výčtu pomocí [funkce BeginMethodEnumeration](beginmethodenumeration.md)a poté zavolá [funkci NextMethod](nextmethod.md ), dokud metoda nevrátí `WBEM_S_NO_MORE_DATA`. Volající volitelně dokončí sekvenci voláním `EndMethodEnumeration`. Volající může ukončit výčet hned po volání `EndMethodEnumeration` kdykoli.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** WMINet_Utils.idl  
+ **Hlavička:** WMINet_Utils. idl  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

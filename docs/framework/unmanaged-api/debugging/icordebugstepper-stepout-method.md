@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: aae0f48c-4ede-4256-9251-a7fc85a229dc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36a33b74a692761d772a888ce918aa28a2d92678
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6c1d7db8aacaf81d47abd4a9cd972b44f56a3bb1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760553"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137512"
 ---
 # <a name="icordebugstepperstepout-method"></a>ICorDebugStepper::StepOut – metoda
-Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a dokončit, jakmile aktuální rámec vrátí řízení volající rámec.  
+Způsobí, že se toto ICorDebugStepper do jediného kroku prostřednictvím jeho obsahujícího vlákna a bude dokončeno, když aktuální rámec vrátí řízení volajícímu snímku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,17 +32,17 @@ HRESULT StepOut ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- A `StepOut` operace se dokončí po návratu obvykle aktuální rámec volání rámce.  
+ Operace `StepOut` se dokončí po běžném návratu z aktuálního rámce do volajícího rámce.  
   
- Pokud `StepOut` je volána, když v nespravovaném kódu, krok dokončí aktuální rámec návratu do spravovaného kódu, která ji zavolala.  
+ Pokud je zavolána `StepOut` v nespravovaném kódu, krok bude dokončen, když se aktuální rámec vrátí do spravovaného kódu, který jej volal.  
   
- V rozhraní .NET Framework verze 2.0, nepoužívejte `StepOut` s STOP_UNMANAGED příznak nastaven, protože se nezdaří. (Použití [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) nastavení příznaků pro krokování.) Spolupráce ladicí programy musí Krok ven do nativního kódu sami.  
+ V .NET Framework verze 2,0 nepoužívejte `StepOut` s nastaveným příznakem STOP_UNMANAGED, protože selže. (K nastavení příznaků pro krokování použijte [ICorDebugStepper:: SetUnmappedStopMask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) .) Ladicí program spolupráce musí Krokovat s nativním samotným kódem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

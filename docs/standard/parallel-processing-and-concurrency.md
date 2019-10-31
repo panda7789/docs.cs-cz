@@ -1,6 +1,6 @@
 ---
-title: Paralelní zpracování, souběžnost a asynchronní programování v rozhraní .NET
-description: Naučte se, aby vaše aplikace rychleji reagují a rychleji s využitím .NET funkce pro paralelní zpracování a asynchronní programování
+title: Paralelní zpracování, souběžnost a asynchronní programování v .NET
+description: Naučte se, jak zajistit větší reakce a rychlejší používání funkcí .NET pro paralelní zpracování a asynchronní programování.
 ms.date: 04/06/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,24 +8,22 @@ helpviewer_keywords:
 - concurrency [.NET]
 - asynchronous programming [.NET]
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 896b572ef6a9b285787c39a41c99c8f0209b28cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08a1b45759b1b78368f867161a13cf2af4db1a60
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973469"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123203"
 ---
-# <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>Paralelní zpracování, souběžnost a asynchronní programování v rozhraní .NET
-.NET poskytuje několik způsobů, jak pro vás bude psaní asynchronního kódu, aby vaše aplikace pohotovější uživateli a zapisovat paralelní kód, který používá více vláken, která se pro zajištění maximálního výkonu počítače uživatele.  
+# <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>Paralelní zpracování, souběžnost a asynchronní programování v .NET
+Rozhraní .NET poskytuje několik způsobů, jak můžete napsat asynchronní kód, aby vaše aplikace lépe reagovala na uživatele a psala paralelní kód, který používá více podprocesů provádění k maximalizaci výkonu počítače uživatele.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Asynchronní programování](../../docs/standard/async.md)  
- Popisuje mechanismy poskytované .NET asynchronní programování.  
+ Popisuje mechanismy pro asynchronní programování poskytované rozhraním .NET.  
   
  [Paralelní programování](../../docs/standard/parallel-programming/index.md)  
- Popisuje programovací model se založené na úlohách, který zjednodušuje vývoj paralelních aplikací, umožňuje psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken.  
+ Popisuje programovací model založený na úlohách, který zjednodušuje paralelní vývoj a umožňuje psát efektivní, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném idiom, aniž by bylo nutné pracovat přímo s vlákny nebo s fondem vláken.  
 
  [Dělení na vlákna](../../docs/standard/threading/index.md)  
- Popisuje základní souběžnosti a synchronizace mechanismy poskytované rozhraní .NET.  
+ Popisuje základní mechanismy souběžnosti a synchronizace, které poskytuje .NET.  

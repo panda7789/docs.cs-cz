@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4fde4cd0-f53e-4411-a2fe-fc5c54472f95
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38f98b971e430a2c35a4c484f4f9c4bf387c640c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a8856790b655f071df704879a247169f456ae2f5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798952"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130877"
 ---
 # <a name="strongnamesignaturesize-function"></a>StrongNameSignatureSize – funkce
-Vrátí velikost podpisu silného názvu. `StrongNameSignatureSize`je obvykle používán kompilátory k určení, kolik místa lze v souboru vyhradit při vytváření sestavení se zpožděným podpisem.  
+Vrátí velikost podpisu silného názvu. `StrongNameSignatureSize` obvykle používá kompilátory k určení, kolik místa lze v souboru vyhradit při vytváření sestavení se zpožděným podpisem.  
   
  Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameSignatureSize –](../hosting/iclrstrongname-strongnamesignaturesize-method.md) .  
   
@@ -43,23 +41,23 @@ BOOLEAN StrongNameSignatureSize (
  pro Struktura typu [PublicKeyBlob –](publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.  
   
  `cbPublicKeyBlob`  
- pro Velikost v bajtech `pbPublicKeyBlob`.  
+ pro Velikost `pbPublicKeyBlob`v bajtech.  
   
  `pcbSize`  
  pro Počet bajtů vyžadovaných k uložení podpisu silného názvu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Po úspěšném dokončení; v opačném případě. `false`  
+ `true` po úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud se `StrongNameSignatureSize` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
+ Pokud se funkce `StrongNameSignatureSize` nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

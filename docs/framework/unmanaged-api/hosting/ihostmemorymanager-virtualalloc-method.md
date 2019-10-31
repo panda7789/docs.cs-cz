@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4dff3646-a050-4bd9-ac31-fe307e8637ec
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9a0764cb212a95412a4dcf9455b7648ee863951e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dd588fa85ff8aaa396a8d0e52a738ada46c2a9b1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767675"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128616"
 ---
 # <a name="ihostmemorymanagervirtualalloc-method"></a>IHostMemoryManager::VirtualAlloc – metoda
-Slouží jako logické obálku pro odpovídající funkci Win32. Implementace Win32 `VirtualAlloc` rezervuje nebo potvrdí změny v oblasti stránek v virtuálního adresového prostoru volajícího procesu.  
+Slouží jako logická obálka odpovídající funkce Win32. Implementace Win32 `VirtualAlloc` rezervuje nebo potvrdí oblast stránek ve virtuálním adresním prostoru volajícího procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,48 +40,48 @@ HRESULT VirtualAlloc (
   
 ## <a name="parameters"></a>Parametry  
  `pAddress`  
- [in] Ukazatel na počáteční adresu oblasti, kterou chcete přidělit.  
+ pro Ukazatel na počáteční adresu oblasti, která se má přidělit  
   
  `dwSize`  
- [in] Velikost v bajtech, oblasti.  
+ pro Velikost oblasti v bajtech  
   
  `flAllocationType`  
- [in] Typ přidělení paměti.  
+ pro Typ přidělení paměti.  
   
  `flProtect`  
- [in] Ochrana paměti pro oblasti stránek, které mají být přiděleny.  
+ pro Ochrana paměti pro oblast stránek, která se má přidělit  
   
  `dwCriticalLevel`  
- [in] [Ememorycriticallevel –](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) hodnotu, která určuje dopad selhání přidělení.  
+ pro Hodnota [EMemoryCriticalLevel –](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) , která označuje dopad selhání přidělení.  
   
  `ppMem`  
- [out] Ukazatel na počáteční adresu přidělené paměti nebo hodnota null, pokud požadavek se nepodařilo vyřídit.  
+ mimo Ukazatel na počáteční adresu přidělené paměti nebo hodnotu null, pokud požadavek nebylo možné splnit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`VirtualAlloc` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`VirtualAlloc` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Nedostatek paměti nebyl k dispozici k dokončení žádosti o přidělení|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|K dokončení žádosti o přidělení není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rezervovat oblast v adresním prostoru procesu voláním `VirtualAlloc`. `pAddress` Parametr obsahuje počáteční adresu bloku paměti, který chcete. Tento parametr je obvykle nastavena na hodnotu null. Operační systém se zaznamenávají rozsahy adres zdarma, které jsou k dispozici pro váš proces. A `pAddress` hodnotu null nastaví systém pro rezervaci oblast, bez ohledu na to považuje za vhodné. Alternativně můžete zadat konkrétní počáteční adresu bloku paměti. V obou případech se výstupní parametr `ppMem` se vrátí jako ukazatel do přidělené paměti. Samotné funkce vrací hodnotu HRESULT.  
+ Oblast se vyhrazuje v adresním prostoru procesu voláním `VirtualAlloc`. Parametr `pAddress` obsahuje počáteční adresu bloku paměti, kterou chcete. Tento parametr je obvykle nastaven na hodnotu null. Operační systém uchovává záznam bezplatných rozsahů adres pro váš proces. Hodnota `pAddress` null dává systému pokyn, aby vyhradí oblast všude, kde se bude přizpůsobená. Alternativně můžete zadat konkrétní počáteční adresu pro blok paměti. V obou případech je výstupní parametr `ppMem` vrácen jako ukazatel na přidělenou paměť. Funkce sama vrací hodnotu HRESULT.  
   
- Win32 `VirtualAlloc` funkce nemá `ppMem` parametr a místo toho vrátí ukazatel do přidělené paměti. Další informace najdete v dokumentaci k platformě Windows.  
+ Funkce Win32 `VirtualAlloc` neobsahuje parametr `ppMem` a místo toho vrátí ukazatel na přidělenou paměť. Další informace najdete v dokumentaci k platformě Windows.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

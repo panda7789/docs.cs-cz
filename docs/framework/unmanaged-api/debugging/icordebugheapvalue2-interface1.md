@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 87360a52-90b1-4ada-80c0-589a556116d8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fa872453ed72a3095c135aa25e81284610ad2436
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ae788094def566b4dc3a17d0a08d657cc27468f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910209"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138377"
 ---
 # <a name="icordebugheapvalue2-interface"></a>ICorDebugHeapValue2 – rozhraní
 
@@ -31,7 +29,7 @@ Rozšíření ICorDebugHeapValue, které poskytuje podporu pro obslužné rutiny
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateHandle – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue2-createhandle-method.md)|Vytvoří popisovač zadaného typu pro tento `ICorDebugHeapValue2` objekt.|  
+|[CreateHandle – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue2-createhandle-method.md)|Vytvoří popisovač zadaného typu pro tento objekt `ICorDebugHeapValue2`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -39,11 +37,11 @@ Rozšíření ICorDebugHeapValue, které poskytuje podporu pro obslužné rutiny
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

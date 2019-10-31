@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 548828f8e9948e000a15fd19a4475ef715e110d8
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a3daf75417260d7e761da2e90c595471b2a4b2a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039468"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131517"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -56,7 +56,7 @@ ms.locfileid: "73039468"
 |<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.Provider.IDockProvider>|Používá se pro ovládací prvky, které mohou být ukotveny v Dock kontejneru. Například panely nástrojů nebo palety nástrojů.|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern>|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Používá se pro ovládací prvky, které se dají rozbalit nebo sbalit. Například položky nabídky v aplikaci, jako je například nabídka **soubor** .|  
 |<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Používá se pro ovládací prvky, které podporují funkce mřížky, jako je třeba určení velikosti a přesun do zadané buňky. Například zobrazení velkých ikon v Průzkumníkovi Windows nebo jednoduchých tabulkách bez hlaviček v [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)].|  
-|<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Používá se pro ovládací prvky, které obsahují buňky v Gridech. Jednotlivé buňky by měly podporovat vzor GridItem. Například každou buňku v zobrazení podrobností [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)].|  
+|<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Používá se pro ovládací prvky, které obsahují buňky v Gridech. Jednotlivé buňky by měly podporovat vzor GridItem. Například každá buňka v Průzkumníkovi Windows má podrobné zobrazení.|  
 |<xref:System.Windows.Automation.InvokePattern>|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Používá se pro ovládací prvky, které mohou být vyvolány, například tlačítko.|  
 |<xref:System.Windows.Automation.MultipleViewPattern>|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Používá se pro ovládací prvky, které mohou přepínat mezi různými reprezentacemi stejné sady informací, dat nebo podřízených objektů. Například ovládací prvek zobrazení seznamu, kde jsou data k dispozici v zobrazení Miniatura, dlaždice, ikona, seznam nebo zobrazení podrobností.|  
 |<xref:System.Windows.Automation.RangeValuePattern>|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Používá se pro ovládací prvky, které mají rozsah hodnot, které lze použít pro ovládací prvek. Například číselníkový ovládací prvek obsahující roky může mít rozmezí 1900 až 2010, zatímco další číselník, který prezentuje měsíce, by měl být v rozsahu od 1 do 12.|  
@@ -70,7 +70,7 @@ ms.locfileid: "73039468"
 |<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.Provider.IToggleProvider>|Používá se pro ovládací prvky, kde lze stav přepínat. Například zaškrtávací políčka a položky nabídky, které se mají kontrolovat.|  
 |<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.Provider.ITransformProvider>|Používá se pro ovládací prvky, které se dají změnit na velikost, přesunout a otočit. Typická použití pro vzor ovládacích prvků transformace jsou návrháři, formuláře, grafické editory a aplikace pro kreslení.|  
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|Umožňuje klientům získat nebo nastavit hodnotu u ovládacích prvků, které nepodporují rozsah hodnot. Například výběr data a času.|  
-|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní koncept operačního systému Microsoft Windows. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikace nejvyšší úrovně ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)]a tak dále), podřízená okna rozhraní MDI (Multiple Document Interface) a dialogová okna.|  
+|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní koncept operačního systému Microsoft Windows. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikace nejvyšší úrovně ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], Průzkumník Microsoft Windows atd.), podřízené okna rozhraní MDI (Multiple Document Interface) a dialogová okna.|  
   
 ## <a name="see-also"></a>Viz také:
 

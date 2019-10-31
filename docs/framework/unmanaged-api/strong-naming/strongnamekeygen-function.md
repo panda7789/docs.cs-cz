@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 883e413a-ad2f-4f7f-b1b9-aeb8fe5b65f8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f062f47790136e8cd39c6751b7c75eef660c2b9a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 79b2235e3645c89c2cd9ebcce079d5eb7efdd162
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799136"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128743"
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen – funkce
 Vytvoří nový pár veřejného a privátního klíče pro použití se silným názvem.  
@@ -41,12 +39,12 @@ BOOLEAN StrongNameKeyGen (
   
 ## <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- pro Požadovaný název kontejneru klíčů. `wszKeyContainer`aby bylo možné vytvořit dočasný název, musí být neprázdný řetězec nebo hodnota null.  
+ pro Požadovaný název kontejneru klíčů. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null, aby se vygeneroval dočasný název.  
   
  `dwFlags`  
  pro Určuje, jestli se má zaregistrovaný klíč ponechat. Podporovány jsou následující hodnoty:  
   
-- 0x00000000 – používá se `wszKeyContainer` , pokud je null k vygenerování dočasného názvu kontejneru klíčů.  
+- 0x00000000 – používá se, když `wszKeyContainer` má hodnotu null, aby vygenerovala dočasný název kontejneru klíčů.  
   
 - 0x00000001 (`SN_LEAVE_KEY`) – určuje, že klíč by měl zůstat registrovaný.  
   
@@ -54,22 +52,22 @@ BOOLEAN StrongNameKeyGen (
  mimo Vrácený pár veřejného a privátního klíče.  
   
  `pcbKeyBlob`  
- mimo Velikost v bajtech `ppbKeyBlob`.  
+ mimo Velikost `ppbKeyBlob`v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Po úspěšném dokončení; v opačném případě. `false`  
+ `true` po úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- `StrongNameKeyGen` Funkce vytvoří 1024 bitový klíč. Po načtení klíče byste měli zavolat funkci [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) a uvolnit tak přidělenou paměť.  
+ Funkce `StrongNameKeyGen` vytvoří 1024 bitový klíč. Po načtení klíče byste měli zavolat funkci [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) a uvolnit tak přidělenou paměť.  
   
- Pokud se `StrongNameKeyGen` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
+ Pokud se funkce `StrongNameKeyGen` nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** StrongName. h  
+ **Hlavička:** StrongName. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

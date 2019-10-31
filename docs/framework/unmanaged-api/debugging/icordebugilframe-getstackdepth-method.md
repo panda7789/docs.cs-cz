@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: da6a1123-871d-4492-9d35-3bdb49f94c93
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 16e06370af323a347ad33edf93c63d17eadf5f51
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ad0c93dfcb4dc630793a6735ab00de9da6166e9a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758527"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130970"
 ---
 # <a name="icordebugilframegetstackdepth-method"></a>ICorDebugILFrame::GetStackDepth – metoda
 Tato metoda není implementovaná.  
@@ -36,4 +34,4 @@ HRESULT GetStackDepth (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorDebug.idl, CorDebug.h
+ **Hlavička:** CorDebug. idl, CorDebug. h

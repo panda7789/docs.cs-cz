@@ -5,20 +5,18 @@ helpviewer_keywords:
 - COM,wrappers creating
 - COM,wrappers Visual Studio
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 56a88a5719fc5630baf2f31ee62fd463980661c2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 623df8aa86d25d9a57d3039bee01b0ee39d402a8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051809"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123943"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
 Obálky modelu COM (Component Object Model) můžete vytvořit pomocí funkcí sady Visual Studio 2005 nebo nástrojů .NET Framework nástroje Tlbimp. exe a Regasm. exe. Obě metody generují dva typy wrapperů COM:
 
-- Běhová obálka, která se má [volat](../../standard/native-interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
+- [Běhová obálka](../../standard/native-interop/runtime-callable-wrapper.md) , která se má volat z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
 
 - Obálka s možnostmi [modelu COM](../../standard/native-interop/com-callable-wrapper.md) s požadovaným nastavením registru pro spuštění spravovaného objektu v nativní aplikaci.
 
@@ -38,7 +36,7 @@ V aplikaci Visual Studio 2005 můžete přidat obálku COM jako odkaz na projekt
 
      V **Průzkumník řešení**si všimněte, že komponenta modelu COM je přidána do složky odkazy v projektu.
 
-Nyní můžete napsat kód pro přístup k objektu COM. Můžete začít deklarováním objektu, například pomocí `Imports` příkazu pro Visual Basic `Using` nebo příkazu pro. C#
+Nyní můžete napsat kód pro přístup k objektu COM. Můžete začít deklarováním objektu, například pomocí příkazu `Imports` pro Visual Basic nebo příkazu `Using` pro C#.
 
 > [!NOTE]
 > Pokud chcete programovat součásti systém Microsoft Office komponenty, nejprve nainstalujte [systém Microsoft Office primární spolupráce sestavení](https://go.microsoft.com/fwlink/?LinkId=50479) (PIA) z webu Microsoft Download Center. V kroku 4 vyberte nejnovější verzi knihovny objektů, kterou chcete použít pro požadovaný produkt Office, například **knihovnu objektů Microsoft Word 11,0**.  

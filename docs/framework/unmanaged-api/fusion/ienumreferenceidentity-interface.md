@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a17b3155-7216-4e16-8c9f-abce21f549e7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4c5d4bc1fa82f7623168050f4ee36f0ea3cd171e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1305b9ebe3cd87ba002ee87610ff309d015a44e6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796440"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131750"
 ---
 # <a name="ienumreferenceidentity-interface"></a>IEnumReferenceIdentity – rozhraní
 Slouží jako enumerátor pro kolekci `IReferenceIdentity` objektů.  
@@ -30,15 +28,15 @@ Slouží jako enumerátor pro kolekci `IReferenceIdentity` objektů.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IEnumReferenceIdentity::Clone`|Získá ukazatel rozhraní na nový `IEnumReferenceIdentity` , který obsahuje stejné členy jako to. `IEnumReferenceIdentity`|  
-|`IEnumReferenceIdentity::Next`|Získá zadaný počet `IReferenceIdentity` objektů od aktuální pozice.|  
+|`IEnumReferenceIdentity::Clone`|Získá ukazatel rozhraní na nový `IEnumReferenceIdentity`, který obsahuje stejné členy jako tento `IEnumReferenceIdentity`.|  
+|`IEnumReferenceIdentity::Next`|Získá zadaný počet `IReferenceIdentity` objektů, počínaje aktuální pozicí.|  
 |`IEnumReferenceIdentity::Reset`|Přesune ukazatel na instrukci na začátek tohoto `IEnumReferenceIdentity`.|  
 |`IEnumReferenceIdentity::Skip`|Přesune ukazatel na instrukci směrem nahoru o zadaný počet prvků od aktuální pozice.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Izolace. h  
+ **Hlavička:** Izolace. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

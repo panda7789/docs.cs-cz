@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Hodnoty data a doby odezvy'
+title: 'Postupy: Hodnoty data a času round-trip'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,80 +12,78 @@ helpviewer_keywords:
 - time [.NET Framework], round-trip values
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fc3393c27d2955528822c193c36a0f6d86f5c148
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 2e3a58ffe8332e0afec62461f6897d673e1da09f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663798"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132009"
 ---
-# <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a doby odezvy
+# <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 
-V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci jediný bod v čase. Toto téma ukazuje, jak uložit a obnovit <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnotu a hodnotu data a času s časem zóna informace tak, aby se obnovená hodnota identifikuje ve stejnou dobu jako uloženou hodnotu.
+V mnoha aplikacích je hodnota data a času určena k jednoznačné identifikaci určitého bodu v čase. V tomto tématu se dozvíte, jak uložit a obnovit <xref:System.DateTime> hodnotu, hodnotu <xref:System.DateTimeOffset> a hodnotu data a času s informacemi o časovém pásmu tak, aby obnovená hodnota označovala stejnou dobu jako uložená hodnota.
 
-### <a name="to-round-trip-a-datetime-value"></a>Operace round-trip pro hodnoty data a času
+### <a name="to-round-trip-a-datetime-value"></a>Postup při přenosu hodnoty DateTime
 
-1. Převést <xref:System.DateTime> hodnotu na řetězcové vyjádření pomocí volání <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> metoda se specifikátorem formátu "o".
+1. Převeďte hodnotu <xref:System.DateTime> na její řetězcové vyjádření voláním metody <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> se specifikátorem formátu "o".
 
-2. Uložit řetězcovou reprezentaci <xref:System.DateTime> hodnoty do souboru nebo ji předejte proces, aplikační domény nebo počítač hranice.
+2. Uložte řetězcovou reprezentaci hodnoty <xref:System.DateTime> do souboru nebo ji předejte v rámci procesu, domény aplikace nebo hranice počítače.
 
-3. Načíst řetězec, který představuje <xref:System.DateTime> hodnotu.
+3. Načte řetězec, který představuje hodnotu <xref:System.DateTime>.
 
-4. Volání <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType> a předáte <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType> jako hodnotu `styles` parametru.
+4. Zavolejte metodu <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType> a předejte <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType> jako hodnotu parametru `styles`.
 
-Následující příklad ukazuje, jak zpátečního převodu <xref:System.DateTime> hodnotu.
+Následující příklad ukazuje, jak se má odcyklovat <xref:System.DateTime> hodnota.
 
 [!code-csharp[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#1)]
 [!code-vb[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#1)]
 
-Když verzemi <xref:System.DateTime> hodnota, tento postup úspěšně zachová čas potřebný pro celou dobu místního a univerzálního. Například, pokud místní <xref:System.DateTime> hodnota je uložena v rámci systému v USA Tichomořském časovém pásmu a obnovení v rámci systému v USA Centrální standardního časového pásma, obnovené datum a čas, bude později než původní čas, která odráží časový rozdíl mezi dvěma časových pásem dvě hodiny. Tento postup však není nutně přesné pro tento parametr zadán časy. Všechny <xref:System.DateTime> hodnoty, jejichž <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTimeKind.Unspecified> zacházeno, jako kdyby byly místní čas. Pokud to není případ, <xref:System.DateTime> nebude úspěšně identifikovat správného bodu v čase. Alternativním řešením pro toto omezení je úzce spojte hodnoty data a času s časovým pásmem pro uložení a obnovení.
+Když se zaokrouhlí Trip hodnota <xref:System.DateTime>, tato technika úspěšně zachovává čas pro všechny místní a univerzální časy. Pokud je například hodnota místního <xref:System.DateTime> uložena v systému v oblasti USA (běžný tichomořské čas) a je obnovena v systému v centrálním časovém pásmu USA – střed, obnovené datum a čas budou dvě hodiny později než původní čas. , který odráží časový rozdíl mezi dvěma časovými pásmy. Tato technika ale není nutně přesná pro nespecifikovanou dobu. Všechny hodnoty <xref:System.DateTime>, jejichž vlastnost <xref:System.DateTime.Kind%2A> je <xref:System.DateTimeKind.Unspecified>, se považují za místní časy. Pokud se nejedná o tento případ, <xref:System.DateTime> nebude správně identifikovat správný bod v čase. Alternativním řešením pro toto omezení je, že je hodnota data a času pevně spojená s časovým pásmem pro operaci uložení a obnovení.
 
-### <a name="to-round-trip-a-datetimeoffset-value"></a>Operace round-trip pro hodnoty DateTimeOffset
+### <a name="to-round-trip-a-datetimeoffset-value"></a>Postup při operaci round-trip pro hodnotu DateTimeOffset
 
-1. Převést <xref:System.DateTimeOffset> hodnotu na řetězcové vyjádření pomocí volání <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> metoda se specifikátorem formátu "o".
+1. Převeďte hodnotu <xref:System.DateTimeOffset> na její řetězcové vyjádření voláním metody <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> se specifikátorem formátu "o".
 
-2. Uložit řetězcovou reprezentaci <xref:System.DateTimeOffset> hodnoty do souboru nebo ji předejte proces, aplikační domény nebo počítač hranice.
+2. Uložte řetězcovou reprezentaci hodnoty <xref:System.DateTimeOffset> do souboru nebo ji předejte v rámci procesu, domény aplikace nebo hranice počítače.
 
-3. Načíst řetězec, který představuje <xref:System.DateTimeOffset> hodnotu.
+3. Načte řetězec, který představuje hodnotu <xref:System.DateTimeOffset>.
 
-4. Volání <xref:System.DateTimeOffset.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType> a předáte <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType> jako hodnotu `styles` parametru.
+4. Zavolejte metodu <xref:System.DateTimeOffset.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType> a předejte <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType> jako hodnotu parametru `styles`.
 
-Následující příklad ukazuje, jak zpátečního převodu <xref:System.DateTimeOffset> hodnotu.
+Následující příklad ukazuje, jak se má odcyklovat <xref:System.DateTimeOffset> hodnota.
 
 [!code-csharp[Formatting.HowTo.RoundTrip#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#2)]
 [!code-vb[Formatting.HowTo.RoundTrip#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#2)]
 
-Tato technika vždy jednoznačně identifikuje <xref:System.DateTimeOffset> hodnotu jako jediný bod v čase. Hodnota pak může být převedena na koordinovaný univerzální čas (UTC) voláním <xref:System.DateTimeOffset.ToUniversalTime%2A?displayProperty=nameWithType> metody nebo ji lze převést na čas v určitém časovém pásmu voláním <xref:System.DateTimeOffset.ToOffset%2A?displayProperty=nameWithType> nebo <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> metoda. Hlavním omezením této techniky je toto datum a čas aritmetický, provést u <xref:System.DateTimeOffset> hodnotu, která představuje čas v určitém časovém pásmu, nemusí poskytovat přesné výsledky pro toto časové pásmo. Důvodem je, že když <xref:System.DateTimeOffset> je vytvořena instance hodnoty, je oddělen od svého časového pásma. Proto se pravidla úpravy časového pásma už lze při provádění výpočtů datum a čas. Tento problém můžete vyřešit tak, že definujete vlastní typ, který obsahuje datum a čas a jeho související časové pásmo.
+Tato technika vždy jednoznačně identifikuje <xref:System.DateTimeOffset> hodnotu jako jediný bod v čase. Hodnota pak může být převedena na koordinovaný světový čas (UTC) voláním metody <xref:System.DateTimeOffset.ToUniversalTime%2A?displayProperty=nameWithType>, nebo může být převedena na čas v konkrétním časovém pásmu voláním metody <xref:System.DateTimeOffset.ToOffset%2A?displayProperty=nameWithType> nebo <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType>. Hlavními omezeními této techniky je, že aritmetické operace s hodnotami data a času, pokud se provádí na <xref:System.DateTimeOffset> hodnotě, která představuje čas v konkrétním časovém pásmu, nemusí pro toto časové pásmo poskytovat přesné výsledky. Důvodem je to, že když se vytvoří instance <xref:System.DateTimeOffset>, odčlení se jeho časové pásmo. Proto pravidla úprav tohoto časového pásma již nelze použít při výpočtu data a času. Tento problém můžete obejít tak, že definujete vlastní typ, který obsahuje hodnotu data a času a jeho doprovodné časové pásmo.
 
-### <a name="to-round-trip-a-date-and-time-value-with-its-time-zone"></a>Operace round-trip pro hodnoty data a času s časovým pásmem
+### <a name="to-round-trip-a-date-and-time-value-with-its-time-zone"></a>Postup při přenosu hodnoty data a času v časovém pásmu
 
-1. Definujte třídu nebo strukturu s dvě pole. První pole je buď <xref:System.DateTime> nebo <xref:System.DateTimeOffset> objekt a druhá je <xref:System.TimeZoneInfo> objektu. V následujícím příkladu je jednoduchá verze takového typu.
+1. Definujte třídu nebo strukturu se dvěma poli. První pole je buď <xref:System.DateTime>, nebo objekt <xref:System.DateTimeOffset> a druhý je objekt <xref:System.TimeZoneInfo>. Následující příklad je jednoduchá verze takového typu.
 
     [!code-csharp[Formatting.HowTo.RoundTrip#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#3)]
     [!code-vb[Formatting.HowTo.RoundTrip#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#3)]
 
-2. Označte třídu <xref:System.SerializableAttribute> atribut.
+2. Označte třídu atributem <xref:System.SerializableAttribute>.
 
-3. Serializace pomocí objektu <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize%2A?displayProperty=nameWithType> metody.
+3. Serializovat objekt pomocí metody <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize%2A?displayProperty=nameWithType>.
 
-4. Obnovit objekt pomocí <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A> metody.
+4. Obnovte objekt pomocí metody <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>.
 
-5. Přetypování (v jazyce C#) nebo (v jazyce Visual Basic) deserializovaný objekt převést na objekt příslušného typu.
+5. Přetypování ( C#in) nebo převést (v Visual Basic) deserializovaný objekt na objekt příslušného typu.
 
-Následující příklad ukazuje, jak zpátečního převodu objektu, který ukládá informace data a času a časového pásma.
+Následující příklad ukazuje, jak operaci round-trip pro objekt, který ukládá informace o datu a čase i informace o časovém pásmu.
 
 [!code-csharp[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#4)]
 [!code-vb[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#4)]
 
-Tento postup by měl vždy odrážet správný bod čas i před a po jeho uložení a obnovení, zadaný, že implementace objektu kombinované data a času a časového pásma nepovoluje hodnotu data se synchronizované s Hodnota časové pásmo.
+Tato technika by měla vždy jednoznačně odrážet správný bod před i po uložení a obnovení, za předpokladu, že implementace kombinovaného objektu data a času a časového pásma neumožňuje, aby hodnota data nebyla synchronizovaná s hodnota časového pásma.
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
 Tyto příklady vyžadují:
 
-- Aby následující obory názvů je importovat s C# `using` příkazy nebo Visual Basic `Imports` příkazy:
+- Následující obory názvů se importují s C# příkazy `using` nebo Visual Basic `Imports` příkazy:
 
   - <xref:System> (C# pouze).
 
@@ -97,7 +95,7 @@ Tyto příklady vyžadují:
 
   - <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.
 
-- Každý příklad kódu, než `DateInTimeZone` třídy, by měl součástí třídy nebo modulu jazyka Visual Basic, zabalené v metodách a volat z `Main` metody.
+- Každý příklad kódu, kromě `DateInTimeZone` třídy, by měl být součástí třídy nebo Visual Basic modulu, zabalen do metod a volán z metody `Main`.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,19 +1,17 @@
 ---
-title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod Method
+title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
 ms.date: 03/30/2017
 ms.assetid: b933dfe6-7833-40cb-aad8-40842dc3034f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 870a71de2aee2e9b725749157791c49836c6ea00
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 103fe1b6845edfe0a364db979557db63511f6ee3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636890"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130376"
 ---
 # <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
 
-Vrátí enumerátor pro všechny metody, které jsou definovány v zadaném modulu NGen a vložené dané metody.
+Vrátí enumerátor pro všechny metody, které jsou definovány v daném modulu NGen a vloží danou metodu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,23 +28,23 @@ HRESULT EnumNgenModuleMethodsInliningThisMethod(
 ## <a name="parameters"></a>Parametry
 
 `inlinersModuleId`\
-[in] Identifikátor modulu technologie NGen.
+pro Identifikátor modulu NGen.
 
 `inlineeModuleId`\
-[in] Identifikátor modulu, který definuje `inlineeMethodId`. Další informace naleznete v části Poznámky.
+pro Identifikátor modulu, který definuje `inlineeMethodId`. Další informace naleznete v části Poznámky.
 
 `inlineeMethodId`\
-[in] Identifikátor je vložená metoda. Další informace naleznete v části Poznámky.
+pro Identifikátor vložené metody. Další informace naleznete v části Poznámky.
 
 `incompleteData`\
-[out] Příznak označující, zda `ppEnum` obsahuje všechny metody vkládání dané metody.  Další informace naleznete v části Poznámky.
+mimo Příznak, který označuje, zda `ppEnum` obsahuje všechny metody pro vkládání dané metody.  Další informace naleznete v části Poznámky.
 
 `ppEnum`\
-[out] Ukazatel na adresu enumerátor
+mimo Ukazatel na adresu čítače výčtu
 
 ## <a name="remarks"></a>Poznámky
 
-`inlineeModuleId` a `inlineeMethodId` společně tvoří úplný identifikátor pro metodu, která mohou být vložená. Předpokládejme například, modul `A` definuje metodu `Simple.Add`:
+`inlineeModuleId` a `inlineeMethodId` dohromady tvoří úplný identifikátor pro metodu, která může být vložena. Předpokládejme například, že modul `A` definuje metodu `Simple.Add`:
 
 ```csharp
 Simple.Add(int a, int b)
@@ -60,28 +58,28 @@ Fancy.AddTwice(int a, int b)
 { return Simple.Add(a,b) + Simple.Add(a,b); }
 ```
 
-Umožňuje taky se předpokládá, že `Fancy.AddTwice` inlines volání do `SimpleAdd`. Profiler může použít výčet najít všechny metody definované v modulu B které vložené `Simple.Add`, a výsledek by výčet `AddTwice`.  `inlineeModuleId` identifikátor modulu `A`, a `inlineeMethodId` je identifikátor `Simple.Add(int a, int b)`.
+Umožňuje také předpokládat, že `Fancy.AddTwice` zadává volání `SimpleAdd`. Profiler může tento enumerátor použít k vyhledání všech metod definovaných v modulu B, které obsahují vložené `Simple.Add`a výsledek by měl vytvořit výčet `AddTwice`.  `inlineeModuleId` je identifikátor `A`modulu a `inlineeMethodId` je identifikátor `Simple.Add(int a, int b)`.
 
-Pokud `incompleteData` platí za funkci vrací enumerátor neobsahuje všechny metody vkládání dané metody. K tomu může dojít v případě, že jedna nebo přímou nebo nepřímou závislostmi inliners modulu nebyly dosud načteny. Pokud profiler přesná data, je při další moduly se načítají, pokud možno na každého modulu zatížení opakovat později.
+Pokud `incompleteData` má hodnotu true poté, co funkce vrátí, enumerátor neobsahuje všechny metody pro vkládání dané metody. K tomu může dojít v případě, že není ještě načtena jedna nebo více přímých nebo nepřímých závislostí modulu inlinie. Pokud profiler potřebuje přesná data, zkuste to znovu později, až se načtou další moduly, nejlépe při každém načtení modulu.
 
-`EnumNgenModuleMethodsInliningThisMethod` Metodu je možné obejít omezení na vkládání pro ReJIT. ReJIT umožňuje profileru, změňte implementaci metody a pak vytvořte nový kód pro něj v reálném čase. Můžeme například změnit `Simple.Add` následujícím způsobem:
+Metodu `EnumNgenModuleMethodsInliningThisMethod` lze použít k obejít omezení pro vkládání pro ReJIT. ReJIT umožňuje profileru změnit implementaci metody a pak za běhu vytvořit nový kód. Například můžeme změnit `Simple.Add` následujícím způsobem:
 
 ```csharp
 Simple.Add(int a, int b)
 { return 42; }
 ```
 
-Ale protože `Fancy.AddTwice` má již vložených `Simple.Add`, nadále mají stejné chování jako předtím. Toto omezení obejít, volající musí vyhledat všechny metody ve všech modulech přímo tady `Simple.Add` a použít `ICorProfilerInfo5::RequestRejit` na každé z těchto metod. Pokud metody jsou znovu zkompilovány, mají nové chování `Simple.Add` místo staré chování.
+Vzhledem k tomu, že `Fancy.AddTwice` již byl vložen `Simple.Add`, bude nadále mít stejné chování jako předtím. Chcete-li toto omezení obejít, volající musí vyhledat všechny metody ve všech modulech, které jsou vloženy `Simple.Add` a použít `ICorProfilerInfo5::RequestRejit` na každou z těchto metod. Když jsou metody znovu zkompilovány, budou mít nové chování `Simple.Add` místo starého chování.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** CorProf.idl, CorProf.h
+**Hlavička:** CorProf. idl, CorProf. h
 
-**Knihovna:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: c568b737-fdb2-4816-accd-051f5ab760f1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 825840536968562a53d9e05b8a4628a1df79407d
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 217ca0a850926e5f697340cece264c6ed442a9bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700838"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125646"
 ---
 # <a name="icordebugcodegetfunction-method"></a>ICorDebugCode::GetFunction – metoda
 Získá "ICorDebugFunction" spojený s tímto "ICorDebugCode".  
@@ -40,7 +38,7 @@ HRESULT GetFunction (
  mimo Ukazatel na adresu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugCode` a `ICorDebugFunction` udržují relaci 1:1.  
+ `ICorDebugCode` a `ICorDebugFunction` udržují vztah 1:1.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

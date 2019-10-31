@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 93aeecb9-7fef-4545-8daf-f566dfc47084
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aabf3ac4e51280bd847d145e15ad804d514ede2c
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 0370c74bde9ca5bdbd0fd03515f4b174ddd0a39a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274007"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132321"
 ---
 # <a name="cor_segment-structure"></a>COR_SEGMENT – struktura
 Obsahuje informace o oblasti paměti ve spravované haldě.  
@@ -47,16 +45,16 @@ typedef struct _COR_SEGMENT {
 |`heap`|Číslo haldy, ve které se nachází oblast paměti. Další informace naleznete v části Poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_SEGMENTS` Struktura představuje oblast paměti ve spravované haldě.  `COR_SEGMENTS`objekty jsou členy objektu kolekce [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeapRegions –](icordebugprocess5-enumerateheapregions-method.md) .  
+ Struktura `COR_SEGMENTS` představuje oblast paměti ve spravované haldě.  objekty `COR_SEGMENTS` jsou členy objektu kolekce [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeapRegions –](icordebugprocess5-enumerateheapregions-method.md) .  
   
- `heap` Pole je číslo procesoru, které odpovídá vyhlášené haldě. Pro kolekce uvolnění paměti pracovní stanice je jeho hodnota vždycky nula, protože pracovní stanice mají jenom jednu haldu uvolňování paměti. Pro sběrače paměti serveru odpovídá jeho hodnota procesoru, ke kterému je halda připojena. Všimněte si, že může existovat více nebo méně hald uvolňování paměti, než kolik existuje skutečným procesorům z důvodu podrobností implementace uvolňování paměti.  
+ Pole `heap` je číslo procesoru, které odpovídá vyhlášené haldě. Pro kolekce uvolnění paměti pracovní stanice je jeho hodnota vždycky nula, protože pracovní stanice mají jenom jednu haldu uvolňování paměti. Pro sběrače paměti serveru odpovídá jeho hodnota procesoru, ke kterému je halda připojena. Všimněte si, že může existovat více nebo méně hald uvolňování paměti, než kolik existuje skutečným procesorům z důvodu podrobností implementace uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

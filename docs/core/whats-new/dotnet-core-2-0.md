@@ -1,15 +1,13 @@
 ---
 title: Co je nového v .NET Core 2.0
 description: Přečtěte si o nových funkcích, které najdete v .NET Core.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: c208f565bebedc06e244de1f6554129f21c77b8c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: fcac4255e7370f31ea6c26771fdd7d341bafe38b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849932"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100842"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 
@@ -30,13 +28,13 @@ V předchozích verzích .NET Core jste museli spustit příkaz [dotnet Restore]
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Automatické `dotnet restore` vyvolání `test` můžete také zakázat `--no-restore` předáním přepínače `new` `run` dopříkazů`build`,, `pack`,, a. `publish`
+Automatické vyvolání `dotnet restore` můžete také zakázat tak, že předáte přepínač `--no-restore` na `new`, `run`, `build`, `publish`, `pack`a `test`ch příkazů.
 
 ### <a name="retargeting-to-net-core-20"></a>Změna cílení na .NET Core 2,0
 
 Pokud je nainstalovaná sada .NET Core 2,0 SDK, projekty, jejichž cílem je .NET Core 1. x, se dají změnit na .NET Core 2,0.
 
-Chcete-li změnit cílení na .NET Core 2,0, upravte soubor projektu změnou hodnoty `<TargetFramework>` elementu (nebo prvku, `<TargetFrameworks>` Pokud máte více než jeden cíl v souboru projektu) od 1. x do 2,0:
+Chcete-li změnit cílení na .NET Core 2,0, upravte soubor projektu změnou hodnoty prvku `<TargetFramework>` (nebo prvku `<TargetFrameworks>`, pokud máte více než jeden cíl v souboru projektu) od 1. x do 2,0:
 
 ```xml
 <PropertyGroup>
@@ -74,7 +72,7 @@ Chcete-li například vytvořit Visual Basic aplikaci "Hello World", proveďte n
 
 1. Zadejte příkaz `dotnet new console -lang vb`.
 
-   Příkaz vytvoří soubor projektu s `.vbproj` příponou souboru společně se souborem zdrojového kódu Visual Basic s názvem *program. vb*. Tento soubor obsahuje zdrojový kód pro zápis řetězce "Hello World!". do okna konzoly.
+   Příkaz vytvoří soubor projektu s příponou `.vbproj` souboru společně se souborem zdrojového kódu Visual Basic s názvem *program. vb*. Tento soubor obsahuje zdrojový kód pro zápis řetězce "Hello World!". do okna konzoly.
 
 1. Zadejte příkaz `dotnet run`. [.NET Core CLI](../tools/index.md) automaticky zkompiluje a spustí aplikaci, která zobrazí zprávu "Hello World!". v okně konzoly.
 
@@ -82,7 +80,7 @@ Chcete-li například vytvořit Visual Basic aplikaci "Hello World", proveďte n
 
 .NET Core 2,0 podporuje C# 7,1, který přidává řadu nových funkcí, včetně:
 
-- Metodu, vstupní bod aplikace, lze označit pomocí klíčového slova [Async.](../../csharp/language-reference/keywords/async.md) `Main`
+- Metodu `Main`, vstupním bodem aplikace, lze označit pomocí klíčového slova [Async](../../csharp/language-reference/keywords/async.md) .
 - Odvoditelné názvy řazené kolekce členů.
 - Výchozí výrazy.
 
@@ -112,7 +110,7 @@ Můžete také vyvíjet aplikace, které se zaměřují na Linux jako jeden oper
 
 Knihovny tříd .NET Standard 2,0 také mohou odkazovat .NET Framework knihovny tříd za předpokladu, že volají rozhraní API, která jsou přítomna v .NET Standard 2,0. Nevyžadují se žádná opětovná kompilace knihoven .NET Framework.
 
-Seznam rozhraní API přidaných do .NET Standard od poslední verze .NET Standard 1,6 najdete v tématu [.NET Standard 2,0 vs. 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
+Seznam rozhraní API přidaných do .NET Standard od poslední verze .NET Standard 1,6 najdete v tématu [.NET Standard 2,0 vs. 1,6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
 ### <a name="expanded-surface-area"></a>Rozbalená oblast povrchu
 
@@ -132,7 +130,7 @@ Visual Studio 2017 verze 15,3 a v některých případech Visual Studio pro Mac 
 
 Pokud je nainstalovaná sada .NET Core 2,0 SDK, můžete změnit cílení na projekty .NET Core 1. x na rozhraní .NET Core 2,0 a .NET Standard 1. x .NET Standard 2,0.
 
-Chcete-li změnit cílení projektu v aplikaci Visual Studio, otevřete kartu **aplikace** v dialogovém okně Vlastnosti projektu a změňte **cílovou hodnotu rozhraní** **.net Core 2,0** nebo **.NET Standard 2,0**. Můžete ji také změnit kliknutím pravým tlačítkem myši na projekt a výběrem možnosti **Upravit \*soubor. csproj** . Další informace najdete v části [nástroje](#tooling) výše v tomto tématu.
+Chcete-li změnit cílení projektu v aplikaci Visual Studio, otevřete kartu **aplikace** v dialogovém okně Vlastnosti projektu a změňte **cílovou hodnotu rozhraní** **.net Core 2,0** nebo **.NET Standard 2,0**. Můžete ji také změnit kliknutím pravým tlačítkem myši na projekt a výběrem možnosti **upravit \*. csproj soubor** . Další informace najdete v části [nástroje](#tooling) výše v tomto tématu.
 
 ### <a name="live-unit-testing-support-for-net-core"></a>Podpora Live Unit Testing pro .NET Core
 
@@ -142,7 +140,7 @@ Další informace najdete v tématu [Live Unit Testing se sadou Visual Studio 20
 
 ### <a name="better-support-for-multiple-target-frameworks"></a>Lepší podpora pro více cílových rozhraní
 
-Pokud vytváříte projekt pro více cílových rozhraní, můžete nyní vybrat cílovou platformu z nabídky nejvyšší úrovně. Na následujícím obrázku je projekt nazvaný SCD1 Targeting 64-bit MacOS X 10,11 (`osx.10.11-x64`) a 64-bit Windows 10/Windows Server 2016 (`win10-x64`). Před výběrem tlačítka projekt můžete vybrat cílovou architekturu, a to v tomto případě pro spuštění sestavení ladění.
+Pokud vytváříte projekt pro více cílových rozhraní, můžete nyní vybrat cílovou platformu z nabídky nejvyšší úrovně. Na následujícím obrázku je projekt s názvem SCD1 Targeting 64-bit macOS X 10,11 (`osx.10.11-x64`) a 64-bit Windows 10/Windows Server 2016 (`win10-x64`). Před výběrem tlačítka projekt můžete vybrat cílovou architekturu, a to v tomto případě pro spuštění sestavení ladění.
 
 ![Snímek obrazovky znázorňující výběr cílového rozhraní při sestavování projektu](./media/dotnet-core-2-0/target-framework-selection.png)
 

@@ -12,19 +12,17 @@ api_type:
 ms.assetid: cf7a0e00-06ae-47a5-8037-598b26196802
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6e890629f307e3d3cff11dabdb2db90a5e88ece5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: df9859f33b4146486a046253cf4705cd19c66adf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995546"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131099"
 ---
 # <a name="icordebugilcodegetehclauses-method"></a>ICorDebugILCode::GetEHClauses – metoda
-[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
+[Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Vrací ukazatel na seznam klauzulí (EH), které jsou definovány pro tento (IL intermediate language) pro zpracování výjimek.  
+ Vrátí ukazatel na seznam klauzulí zpracování výjimek (EH), které jsou definovány pro tento převodní jazyk (IL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +35,25 @@ HRESULT GetEHClauses(
   
 ## <a name="parameters"></a>Parametry  
  `cClauses`  
- [in] Kapacita úložiště `clauses` pole. Další informace naleznete v části Poznámky.  
+ pro Kapacita úložiště pole `clauses`. Další informace naleznete v části Poznámky.  
   
  `pcClauses`  
- [out] Počet klauzule, které informace jsou zapsány do `clauses` pole.  
+ mimo Počet klauzulí, o které se zapisují informace do pole `clauses`.  
   
- Klauzule  
- [out] Pole [CorDebugEHClause](../../../../docs/framework/unmanaged-api/debugging/cordebugehclause-structure.md) objektů, které obsahují informace o definovaných pro tento IL klauzulím zpracování výjimek.  
+ platný  
+ mimo Pole objektů [CorDebugEHClause](../../../../docs/framework/unmanaged-api/debugging/cordebugehclause-structure.md) , které obsahují informace o klauzulích zpracování výjimek definovaných pro tento Il.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `cClauses` je 0 a `pcClauses` jinou hodnotu než**null**, `pcClauses` je nastavena na počet dostupných klauzulím zpracování výjimek. Pokud `cClauses` je nenulová, představuje kapacitu úložiště `clauses` pole. Po návratu metody `clauses` obsahuje určitý počet `cClauses` položky, a `pcClauses` je nastavena na počet aktuálně zapsaných do klauzule `clauses` pole.  
+ Pokud je `cClauses` 0 a `pcClauses` není**null**, `pcClauses` je nastaveno na počet dostupných klauzulí zpracování výjimek. Pokud `cClauses` není nula, představuje kapacitu úložiště `clauses` pole. Když metoda vrátí, `clauses` obsahuje maximálně `cClauses` položek a `pcClauses` je nastaveno na počet klauzulí vlastněných v poli `clauses`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

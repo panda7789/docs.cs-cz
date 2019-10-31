@@ -7,14 +7,12 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e6b6de8f0a178914c46ba5a65dfb56795cf23c71
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f0bd28823c5b8efc0b773ad588f2f232f8a41502
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046128"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130281"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
@@ -51,7 +49,7 @@ Podobně jako CLR, je DLR součástí .NET Framework a je k dispozici s instala�
 
 Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
 
-- IronPython. K dispozici jako open source software z webu [GitHubu](https://github.com/IronLanguages/ironpython2) .
+- Ironpythonu. K dispozici jako open source software z webu [GitHubu](https://github.com/IronLanguages/ironpython2) .
 
 - IronRuby. K dispozici jako open source software z webu [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) .
 
@@ -59,7 +57,7 @@ Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
  DLR poskytuje následující výhody.
 
 ### <a name="simplifies-porting-dynamic-languages-to-the-net-framework"></a>Zjednodušuje přenos do .NET Framework dynamické jazyky.
- DLR umožňuje jazykovým implementátorům vyhnout se vytváření lexikálních analyzátorů, analyzátorů, sémantických analyzátorů, generátorů kódu a dalších nástrojů, které tradičně musely vytvořit sami sebe. Chcete-li použít DLR, musí jazyk vytvořit *stromy výrazů*, které reprezentují kód na úrovni jazyka ve stromové struktuře, rutin pomocníka za běhu a volitelné dynamické objekty, které implementují <xref:System.Dynamic.IDynamicMetaObjectProvider> rozhraní. DLR a .NET Framework automatizují mnoho úloh analýzy kódu a generování kódu. Díky tomu můžou implementátori jazyků soustředit na jedinečné funkce jazyka.
+ DLR umožňuje jazykovým implementátorům vyhnout se vytváření lexikálních analyzátorů, analyzátorů, sémantických analyzátorů, generátorů kódu a dalších nástrojů, které tradičně musely vytvořit sami sebe. Chcete-li použít DLR, musí jazyk vytvořit *stromy výrazů*, které reprezentují kód na úrovni jazyka ve stromové struktuře, rutin pomocníka za běhu a volitelné dynamické objekty, které implementují rozhraní <xref:System.Dynamic.IDynamicMetaObjectProvider>. DLR a .NET Framework automatizují mnoho úloh analýzy kódu a generování kódu. Díky tomu můžou implementátori jazyků soustředit na jedinečné funkce jazyka.
 
 ### <a name="enables-dynamic-features-in-statically-typed-languages"></a>Povolí dynamické funkce ve staticky typovaném jazyce.
  Existující .NET Framework jazyky, jako C# jsou a Visual Basic, mohou vytvářet dynamické objekty a používat je společně se staticky typovými objekty. Například C# a Visual Basic mohou používat dynamické objekty pro HTML, model DOM (Document Object Model) (DOM) a reflexi rozhraní .NET.
@@ -82,9 +80,9 @@ Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
 
 - Stromy výrazů. DLR používá stromy výrazů, které reprezentují sémantiku jazyka. Pro účely tohoto účelu má DLR rozšířené stromy výrazů LINQ, aby zahrnovaly tok řízení, přiřazení a další uzly modelování jazyka. Další informace najdete v tématu [stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 
-- Volání do mezipaměti webu. *Web s dynamickým voláním* je místo v kódu, kde provádíte operaci jako `a + b` nebo `a.b()` na dynamických objektech. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy těchto objektů) a informace o operaci. Pokud taková operace byla provedena dříve, DLR načte všechny potřebné informace z mezipaměti pro rychlé odeslání.
+- Volání do mezipaměti webu. *Web s dynamickým voláním* je místo v kódu, kde provádíte operaci, jako je `a + b` nebo `a.b()` na dynamických objektech. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy těchto objektů) a informace o operaci. Pokud taková operace byla provedena dříve, DLR načte všechny potřebné informace z mezipaměti pro rychlé odeslání.
 
-- Interoperabilita dynamických objektů. DLR poskytuje sadu tříd a rozhraní, které představují dynamické objekty a operace a mohou být použity v modulech pro implementaci jazyka a autorech dynamických knihoven. Mezi tyto třídy a rozhraní <xref:System.Dynamic.IDynamicMetaObjectProvider>patří <xref:System.Dynamic.DynamicMetaObject> <xref:System.Dynamic.DynamicObject>,, a <xref:System.Dynamic.ExpandoObject>.
+- Interoperabilita dynamických objektů. DLR poskytuje sadu tříd a rozhraní, které představují dynamické objekty a operace a mohou být použity v modulech pro implementaci jazyka a autorech dynamických knihoven. Mezi tyto třídy a rozhraní patří <xref:System.Dynamic.IDynamicMetaObjectProvider>, <xref:System.Dynamic.DynamicMetaObject>, <xref:System.Dynamic.DynamicObject>a <xref:System.Dynamic.ExpandoObject>.
 
 DLR používá služby BIND v lokalitách volání ke komunikaci nejen s .NET Framework, ale s jinými infrastrukturami a službami, včetně Silverlight a COM. Pojiva zapouzdřuje sémantiku jazyka a určují, jak provádět operace v lokalitě volání pomocí stromů výrazů. To umožňuje dynamickým a staticky typovým jazykům, které používají DLR ke sdílení knihoven a získání přístupu ke všem technologiím, které DLR podporuje.
 
@@ -98,4 +96,4 @@ DLR používá služby BIND v lokalitách volání ke komunikaci nejen s .NET Fr
 - [Modul CLR (Common Language Runtime)](../../standard/clr.md)
 - [Stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md)
 - [Stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Návod: Vytváření a používání dynamických objektů](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+- [Návod: vytváření a používání dynamických objektů](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0339af16-ee1d-48ec-837d-a79d9a9c89f8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d70f7dd872cefbadce56c577ce2ecc9cbcb663b3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a2faf22b48dd0b809d6c3668a37f2119733a9b18
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765849"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129439"
 ---
 # <a name="ehostbindingpolicymodifyflags-enumeration"></a>EHostBindingPolicyModifyFlags – výčet
-Umožňuje hostiteli, chcete-li určit typ přesměrování, které modul CLR (CLR) má provést při použití změny zásad ze zdrojové sestavení do cílového sestavení.  
+Umožňuje hostiteli určit typ přesměrování, který modul CLR (Common Language Runtime) by měl provést při použití změn zásad ze zdrojového sestavení na cílové sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +39,22 @@ typedef enum _hostBindingPolicyModifyFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`HOST_BINDING_POLICY_MODIFY_CHAIN`|Určuje, že modul CLR bude zřetězit hodnoty zásad zdroje sestavení na ty z cílového sestavení.|  
+|`HOST_BINDING_POLICY_MODIFY_CHAIN`|Určuje, že CLR bude řetězit hodnoty zásad zdrojového sestavení do cílových sestavení.|  
 |`HOST_BINDING_POLICY_MODIFY_DEFAULT`|Určuje, že modul CLR provede výchozí akci.|  
-|`HOST_BINDING_POLICY_MODIFY_MAX`|Určuje, že modul CLR bude nastavena zásada má tyto hodnoty z cílového sestavení na maximální hodnoty.|  
-|`HOST_BINDING_POLICY_MODIFY_REMOVE`|Určuje, že modul CLR bude nahraďte hodnoty zásad z cílového sestavení u zdrojové sestavení.|  
+|`HOST_BINDING_POLICY_MODIFY_MAX`|Určuje, že CLR nastaví hodnoty zásad cílového sestavení na maximální hodnoty.|  
+|`HOST_BINDING_POLICY_MODIFY_REMOVE`|Určuje, že CLR nahradí hodnoty zásad cílového sestavení prvky zdrojového sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Iclrhostbindingpolicymanager::modifyapplicationpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) metoda přijímá parametr typu `EHostBindingPolicyModifyFlags`.  
+ Metoda [ICLRHostBindingPolicyManager:: ModifyApplicationPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) přebírá parametr typu `EHostBindingPolicyModifyFlags`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

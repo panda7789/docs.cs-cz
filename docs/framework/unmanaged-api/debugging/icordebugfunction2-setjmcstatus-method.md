@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22c27b01-2869-4214-b840-5921f7c874fc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 67959b2ebbfb62b47a1b2a770e278d043fc66d21
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 758364b2d63343e464b727d5a1c1817533a6acea
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754927"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137785"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a>ICorDebugFunction2::SetJMCStatus – metoda
-Označí funkci reprezentována tento icordebugfunction2 – pro volbu pouze vlastní kód krokování.  
+Označuje funkci představovanou tímto ICorDebugFunction2 pro Pouze můj kód krokování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +35,23 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Parametry  
  `bIsJustMyCode`  
- [in] Nastavte na `true` označit funkce jako uživatelského kódu; v opačném případě nastavte na `false`.  
+ pro Nastavte na `true` pro označení funkce jako uživatelského kódu; v opačném případě nastavte na `false`.  
   
 ## <a name="return-values"></a>Návratové hodnoty  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|Funkci byl úspěšně označen.|  
-|`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|Funkci nelze označit jako uživatelský kód, protože není možné ladit.|  
+|`S_OK`|Funkce byla úspěšně označena.|  
+|`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|Funkci nelze označit jako uživatelský kód, protože nemůže být Laděna.|  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce pouze můj kód krokovač přeskočí neuživatelský kód. Kód uživatele musí být podmnožinou laditelný kód.  
+ Pouze můj kód stepper přeskočí jiný než uživatelský kód. Uživatelský kód musí být podmnožinou laděného kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

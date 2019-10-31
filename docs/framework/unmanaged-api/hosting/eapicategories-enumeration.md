@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3c4a8a5a-8a46-4ac9-947f-4959bc9d6ac6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 41513d9b6f98743bfad95e4d9606cfb4927369e6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fd9409a5157e1013365c94f01631f130a76f54b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769788"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131215"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories – výčet
-Popisuje kategorie funkcí, které hostitele může blokovat spouštění v částečně důvěryhodným kódem.  
+Popisuje kategorie schopností, které může hostitel zablokovat, aby běžel v částečně důvěryhodném kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,31 +46,31 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eAll`|Určuje, že všechny spravované třídy a členy, které jsou zahrnuté do jiné `EApiCategories` pole zablokováno v částečně důvěryhodným kódem.|  
-|`eExternalProcessMgmt`|Určuje, že spravované třídy a členy, které umožňují vytváření, manipulaci a zničení procesů, externím zablokováno v částečně důvěryhodným kódem.|  
-|`eExternalThreading`|Určuje, že spravované třídy a členy, které umožňují vytváření, manipulaci a zničení externí vláken zablokováno v částečně důvěryhodným kódem.|  
-|`eMayLeakOnAbort`|Určuje, že spravované typy a členy, které může potenciálně způsobit únik paměti při přerušení zablokováno v částečně důvěryhodným kódem.|  
-|`eNoCategory`|Určuje, že žádný spravovaný kód kategorie zablokováno v částečně důvěryhodným kódem.|  
-|`eSecurityInfrastructure`|Určuje, že common language runtime (CLR) zabezpečení infrastructure být blokovány z používán částečně důvěryhodným kódem.|  
-|`eSelfAffectingProcessMgmt`|Určuje, že spravované třídy a členy, jejichž schopnosti může ovlivnit proces hostované zablokováno v částečně důvěryhodným kódem.|  
-|`eSelfAffectingThreading`|Určuje, že spravované třídy a členy, jejichž funkce může mít vliv na vlákna v procesu hostované zablokováno v částečně důvěryhodným kódem.|  
-|`eSharedState`|Určuje, že spravované třídy a členy, které zpřístupňují sdílený stav zablokováno v částečně důvěryhodným kódem.|  
-|`eSynchronization`|Určuje, že common language runtime třídy a členy, které umožňují uživatelský kód pro uložení zámky zablokováno v částečně důvěryhodným kódem.|  
-|`eUI`|Určuje, že spravovaných tříd a členů, která povolují nebo vyžadují zásahem ze strany zablokováno v částečně důvěryhodným kódem.|  
+|`eAll`|Určuje, že všechny spravované třídy a členy, které jsou pokryté jinými `EApiCategories` poli, se mají zablokovat spuštění v částečně důvěryhodném kódu.|  
+|`eExternalProcessMgmt`|Určuje, že spravované třídy a členy, které umožňují vytvoření, manipulaci a zničení externích procesů, se mají zablokovat spouštění v částečně důvěryhodném kódu.|  
+|`eExternalThreading`|Určuje, že spravované třídy a členy, které umožňují vytvoření, manipulaci a zničení externích vláken, budou zablokovány spuštění v částečně důvěryhodném kódu.|  
+|`eMayLeakOnAbort`|Určuje, že spravované typy a členy, které by mohly způsobit nevracení paměti při přerušení, se zablokují pro spuštění v částečně důvěryhodném kódu.|  
+|`eNoCategory`|Určuje, že žádné kategorie spravovaného kódu není možné zablokovat spuštění v částečně důvěryhodném kódu.|  
+|`eSecurityInfrastructure`|Určuje, že infrastruktura zabezpečení modulu CLR (Common Language Runtime) je zablokovaná pro použití částečně důvěryhodným kódem.|  
+|`eSelfAffectingProcessMgmt`|Určuje, že spravované třídy a členy, jejichž schopnosti mohou ovlivnit hostovaný proces, mají zablokovaný běh v částečně důvěryhodném kódu.|  
+|`eSelfAffectingThreading`|Určuje, že spravované třídy a členy, jejichž schopnosti mohou ovlivnit vlákna v hostovaném procesu, jsou zablokovány pro spuštění v částečně důvěryhodném kódu.|  
+|`eSharedState`|Určuje, že spravované třídy a členy, které zveřejňují sdílený stav, budou zablokovány spuštění v částečně důvěryhodném kódu.|  
+|`eSynchronization`|Určuje, že se mají blokované třídy a členy společného jazykového modulu runtime, které umožňují blokovat zámkům, blokovat spuštění v částečně důvěryhodném kódu.|  
+|`eUI`|Určuje, že spravované třídy a členy, které povolují nebo vyžadují lidskou interakci, se zablokují, aby se spustily v částečně důvěryhodném kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Iclrhostprotectionmanager::setprotectedcategories –](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) metoda přijímá parametr typu `EApiCategories`.  
+ Metoda [ICLRHostProtectionManager:: SetProtectedCategories –](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) přebírá parametr typu `EApiCategories`.  
   
- `EApiCategories` Výčet a `SetProtectedCategories` přímo souvisí s metoda na spravovanou <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> třídy. Spravovaná třída se používá s <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> výčtu, jehož hodnoty odpovídají přímo `EApiCategories` hodnoty k označení spravované typy a členy, které ukazují možnosti odpovídající kategorie popsal `EApiCategories`.  
+ Výčet `EApiCategories` a metoda `SetProtectedCategories` přímo souvisí se spravovanou třídou <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType>. Spravovaná třída se používá s výčtem <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>, jehož hodnoty odpovídají přímo `EApiCategories` hodnotám, pro označení spravovaných typů a členů, které zpřístupňují funkce odpovídající kategoriím popsaným `EApiCategories`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

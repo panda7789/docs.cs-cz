@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 16d695e8-975d-431b-8421-e9e6c3e3f476
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 06ce2da435df9458ca59d76fa426becbede2e619
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 48f1b485b6dfa8fd898f6ea00eee2d7b397deba6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959677"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131859"
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk – rozhraní
 Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku vlákna.  
@@ -30,10 +28,10 @@ Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku v
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Vrátí kontext pro aktuální rámec v `ICorDebugStackWalk` objektu.|  
-|[SetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Nastaví aktuální kontext objektu na platný kontext pro vlákno. `ICorDebugStackWalk`|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|`ICorDebugStackWalk` Přesune objekt k dalšímu snímku.|  
-|[GetFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Získá aktuální rámec v `ICorDebugStackWalk` objektu.|  
+|[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Vrátí kontext pro aktuální rámec v objektu `ICorDebugStackWalk`.|  
+|[SetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Nastaví aktuální kontext objektu `ICorDebugStackWalk` na platný kontext vlákna.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|Přesune objekt `ICorDebugStackWalk` k dalšímu snímku.|  
+|[GetFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Získá aktuální rámec v objektu `ICorDebugStackWalk`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -41,11 +39,11 @@ Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku v
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

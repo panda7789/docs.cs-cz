@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8c6d2089-4dbb-4715-b9e9-2a4491c8c9ce
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d438123dcefb901098954845596c210e5b76cea6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a0b70078dee88b270d8361aa9bddcb7d80df1db1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764103"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129474"
 ---
 # <a name="icordebugmodule2setjmcstatus-method"></a>ICorDebugModule2::SetJMCStatus – metoda
-Nastaví stav pouze můj kód (JMC) všech metod všechny třídy v tomto icordebugmodule2 – se zadanou hodnotou, s výjimkou těch, `pTokens` pole, které se nastaví na opačnou hodnotu.  
+Nastaví Pouze můj kód (JMC) pro všechny metody všech tříd v této ICorDebugModule2 na zadanou hodnotu, s výjimkou těch v poli `pTokens`, která nastavuje na opačnou hodnotu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Parametry  
  `bIsJustMycode`  
- [in] Nastavte na `true` Pokud bude ladění; v opačném případě je kód, nastavte na `false`.  
+ pro Nastavte na `true`, pokud se má ladit kód. v opačném případě nastavte na `false`.  
   
  `cTokens`  
- [in] Velikost `pTokens` pole.  
+ pro Velikost pole `pTokens`.  
   
  `pTokens`  
- [in] Pole `mdToken` hodnot, z nichž každý odkazuje na metodu, která budou mít stav JMC nastavena na!`bIsJustMycode`.  
+ pro Pole hodnot `mdToken`, z nichž každá odkazuje na metodu, která bude mít stav JMC nastaven na hodnotu!`bIsJustMycode`.  
   
 ## <a name="remarks"></a>Poznámky  
- JMC stav každé metody, ve stanoveném `pTokens` pole nastavena na opak `bIsJustMycode` hodnotu. Je nastaven stav všech metod v tomto modulu `bIsJustMycode` hodnotu.  
+ Stav JMC každé metody, která je určena v poli `pTokens`, je nastaven na opak hodnoty `bIsJustMycode`. Stav všech ostatních metod v tomto modulu je nastaven na hodnotu `bIsJustMycode`.  
   
- `SetJMCStatus` Metoda vymaže všechna předchozí nastavení JMC v tomto modulu.  
+ Metoda `SetJMCStatus` vymaže všechna předchozí nastavení JMC v tomto modulu.  
   
- `SetJMCStatus` Metoda vrátí hodnotu S_OK HRESULT, pokud všechny funkce byly úspěšně nastavené. Vrátí hodnotu HRESULT CORDBG_E_FUNCTION_NOT_DEBUGGABLE Pokud některé funkce, které jsou označeny `true` nejsou laditelný.  
+ Metoda `SetJMCStatus` vrací hodnotu S_OK HRESULT, pokud byly všechny funkce úspěšně nastaveny. Vrátí CORDBG_E_FUNCTION_NOT_DEBUGGABLE HRESULT, pokud některé funkce, které jsou označeny `true`, nelze ladit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

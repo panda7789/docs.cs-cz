@@ -2,14 +2,12 @@
 title: Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: adfc0ae6d9bdae333daacee525c7775acd5a8029
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f4c51dc269775d14d395cb464b3787cc987e086d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049142"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128131"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 
@@ -42,30 +40,30 @@ Kořenový element je element [direktivy](directives-element-net-native.md) . M�
 Pro referenční informace vyberte prvky z následující struktury nebo si prohlédněte [elementy direktivy modulu runtime](runtime-directive-elements.md). V následující hierarchii se tři tečky označí rekurzivní strukturu. Informace v závorkách označují, zda je tento prvek volitelný nebo vyžadovaný, a pokud je použit, kolik instancí (jedna nebo mnoho) je povoleno.
 
 [Direktivy](directives-element-net-native.md) [1:1] [aplikace](application-element-net-native.md) [0:1] [sestavení](assembly-element-net-native.md) [0: M] [obor názvů](namespace-element-net-native.md) [0: m]. . .
-[Typ](type-element-net-native.md) [0: M]. . .
+[Zadejte](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](namespace-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
-[Typ](type-element-net-native.md) [0: M]. . .
+[Obor názvů](namespace-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
+[Zadejte](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](type-element-net-native.md) [0: M] [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](type-element-net-native.md) [0: M]. . .
+[Typ](type-element-net-native.md) [0: m] [podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [typ](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: M] [Metoda](method-element-net-native.md) [0: M] [Parametr](parameter-element-net-native.md) [0: M] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](type-element-net-native.md) [0: M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: m] [Metoda](method-element-net-native.md) [0: M] [parametr](parameter-element-net-native.md) [0: m] [TypeParameter](typeparameter-element-net-native.md) [0: m] [GenericParameter](genericparameter-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) ( konstruované obecné metody) [0: M] [vlastnost](property-element-net-native.md) [[0: m] [](field-element-net-native.md) 0: m] [událost](event-element-net-native.md) [0: m] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: m] [typ](type-element-net-native.md) [0: m]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](method-element-net-native.md) [0: M] [Parametr](parameter-element-net-native.md) [0: M] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [Knihovna](library-element-net-native.md) [0: M] [Sestavení](assembly-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
-[Typ](type-element-net-native.md) [0: M]. . .
+[Metoda](method-element-net-native.md) [0: m] [parametr](parameter-element-net-native.md) [0: m] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: m] [Property](property-element-net-native.md) [0: M] [pole](field-element-net-native.md) [0: m] [událost](event-element-net-native.md) [0: m] [ Knihovna](library-element-net-native.md) [0: m] [sestavení](assembly-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
+[Zadejte](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](namespace-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
-[Typ](type-element-net-native.md) [0: M]. . .
+[Obor názvů](namespace-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
+[Zadejte](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](type-element-net-native.md) [0: M] [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](type-element-net-native.md) [0: M]. . .
+[Typ](type-element-net-native.md) [0: m] [podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [typ](type-element-net-native.md) [0: M]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: M] [Metoda](method-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](type-element-net-native.md) [0: M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: m] [Metoda](method-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (vytvořená obecná metoda) [0: m] [vlastnost](property-element-net-native.md) [0: m] [0: [m]](field-element-net-native.md) [Event](event-element-net-native.md) [0 : M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: m] [typ](type-element-net-native.md) [0: m]. . .
 [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](method-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M]
+[Metoda](method-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: m] [vlastnost](property-element-net-native.md) [0: M] [pole](field-element-net-native.md) [0: m] [událost](event-element-net-native.md) [0: m]
 
 Element [aplikace](application-element-net-native.md) nemůže mít žádné atributy, nebo může mít atributy zásad popsané v [části direktiva a zásady modulu runtime](#Directives).
 
-Element [knihovny](library-element-net-native.md) má jediný atribut `Name`,, který určuje název knihovny nebo sestavení bez přípony souboru. Například následující prvek [knihovny](library-element-net-native.md) se vztahuje na sestavení s názvem Extensions. dll.
+Element [knihovny](library-element-net-native.md) má jeden atribut `Name`, který určuje název knihovny nebo sestavení bez přípony souboru. Například následující prvek [knihovny](library-element-net-native.md) se vztahuje na sestavení s názvem Extensions. dll.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -100,27 +98,27 @@ Zásady, které může vyjádřit [aplikace](application-element-net-native.md),
 
 - `Serialize`. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a serializovat pomocí knihoven třetích stran, jako je například serializátor Newtonsoft JSON.
 
-- `DataContractSerializer`. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.
+- `DataContractSerializer`. Řídí zásady pro serializaci, která používá třídu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.
 
-- `DataContractJsonSerializer`. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používají třídu.
+- `DataContractJsonSerializer`. Řídí zásady pro serializaci JSON, které používají třídu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.
 
-- `XmlSerializer`. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.
+- `XmlSerializer`. Řídí zásady pro serializaci XML, které používají třídu <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>.
 
 - `MarshalObject`. Řídí zásady pro zařazování typů odkazů do WinRT a COM.
 
 - `MarshalDelegate`. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.
 
-- `MarshalStructure` . Řídí zásady pro zařazování struktur do nativního kódu.
+- `MarshalStructure`. Řídí zásady pro zařazování struktur do nativního kódu.
 
 Nastavení přidružená k těmto typům zásad jsou:
 
 - `All`. Povolte zásadu pro všechny typy a členy, které řetěz nástroje neodebere.
 
-- `Auto`. Použijte výchozí chování. (Není-li určena zásada, je rovnocenná nastavení `Auto` zásad, pokud tato zásada není přepsána, například nadřazeným prvkem.)
+- `Auto`. Použijte výchozí chování. (Není-li určena zásada, je ekvivalentní nastavení této zásady na `Auto`, pokud tato zásada není přepsána, například nadřazeným prvkem.)
 
 - `Excluded`. Zakáže zásady pro prvek programu.
 
-- `Public`. Povolte zásadu pro veřejné typy nebo členy, pokud řetěz nástrojů nezjistí, že je člen zbytečný a proto jej odebere. (V druhém případě je nutné použít `Required Public` , chcete-li zajistit, že je člen udržován a má možnosti reflexe.)
+- `Public`. Povolte zásadu pro veřejné typy nebo členy, pokud řetěz nástrojů nezjistí, že je člen zbytečný a proto jej odebere. (V druhém případě je nutné použít `Required Public` k zajištění toho, že člen je udržován a má možnosti reflexe.)
 
 - `PublicAndInternal`. Povolte zásady pro veřejné a interní typy nebo členy, pokud je řetěz nástrojů neodebere.
 
@@ -130,7 +128,7 @@ Nastavení přidružená k těmto typům zásad jsou:
 
 - `Required All`. Vyžaduje, aby řetězec nástroje zachoval všechny typy a členy bez ohledu na to, jestli se používají, a povolil pro ně zásady.
 
-Například následující direktivy modulu runtime definují zásadu pro všechny typy a členy v souboru DataClasses. dll sestavení. Umožňuje reflexi pro serializaci všech veřejných vlastností, umožňuje procházení pro všechny typy a členy typu, povoluje aktivaci pro všechny typy (z `Dynamic` důvodu atributu) a povoluje reflexi pro všechny veřejné typy a členy.
+Například následující direktivy modulu runtime definují zásadu pro všechny typy a členy v souboru DataClasses. dll sestavení. Umožňuje reflexi pro serializaci všech veřejných vlastností, umožňuje procházení pro všechny typy a členy typu, umožňuje aktivaci pro všechny typy (z důvodu `Dynamic` atributu) a povoluje reflexi pro všechny veřejné typy a členy.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -149,33 +147,33 @@ Například následující direktivy modulu runtime definují zásadu pro všech
 
 Prvky [Property](property-element-net-native.md) a [Field](field-element-net-native.md) podporují následující typy zásad:
 
-- `Browse`– Řídí dotazování pro informace o tomto členu, ale neumožňuje přístup k modulu runtime.
+- `Browse` – řídí dotazování pro informace o tomto členu, ale nepovoluje přístup za běhu.
 
-- `Dynamic`– Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování. Také ovládá dotazování na informace o nadřazeného typu.
+- `Dynamic` – řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování. Také ovládá dotazování na informace o nadřazeného typu.
 
-- `Serialize`– Řídí přístup k členu za běhu, aby se mohly instance typů serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor. Tuto zásadu lze použít na konstruktory, pole a vlastnosti.
+- `Serialize` – řídí přístup k členu za běhu, aby se mohly instance typů serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor. Tuto zásadu lze použít na konstruktory, pole a vlastnosti.
 
 [Metoda](method-element-net-native.md) a prvky [události](event-element-net-native.md) podporují následující typy zásad:
 
-- `Browse`– Řídí dotazování pro informace o tomto členu, ale nepovoluje přístup za běhu.
+- `Browse` – řídí dotazování pro informace o tomto členu, ale nepovoluje přístup za běhu.
 
-- `Dynamic`– Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování. Také ovládá dotazování na informace o nadřazeného typu.
+- `Dynamic` – řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování. Také ovládá dotazování na informace o nadřazeného typu.
 
  Nastavení přidružená k těmto typům zásad jsou:
 
-- `Auto`– Použije výchozí chování. (Není-li zadáno, zásada je ekvivalentní k nastavení této `Auto` zásady, pokud ji nepřepisuje.)
+- `Auto` – použije výchozí chování. (Pokud se nezadá zásada, bude se jednat o nastavení této zásady, aby se `Auto`, pokud je něco nepřepisuje.)
 
-- `Excluded`– Nikdy Nezahrnovat metadata pro člena.
+- `Excluded` – nikdy Nezahrnovat metadata pro člena.
 
-- `Included`– Povolí zásadu, pokud se ve výstupu nachází nadřazený typ.
+- `Included` – povolí zásadu, pokud se ve výstupu nachází nadřazený typ.
 
-- `Required`– Vyžaduje, aby řetěz nástrojů zachoval tento člen, i když se zdá být nepoužitý, a pro něj povolí zásady.
+- `Required` – vyžaduje, aby řetěz nástrojů zachoval tento člen, i když se zdá být nepoužitý, a pro něj povolí zásady.
 
 ## <a name="runtime-directives-file-semantics"></a>Sémantika souboru direktiv modulu runtime
 
-Zásady lze definovat současně pro elementy vyšší úrovně i na nižší úrovni. Například zásada může být definována pro sestavení a pro některé typy obsažené v tomto sestavení. Pokud není určitý element na nižší úrovni reprezentován, zdědí zásady jeho nadřazeného objektu. Například pokud `Assembly` je prvek přítomen, ale `Type` prvky nejsou, zásady zadané v `Assembly` elementu se vztahují na každý typ v sestavení. U stejného prvku programu lze také použít více prvků. Například samostatné prvky [sestavení](assembly-element-net-native.md) mohou definovat stejný prvek zásad pro stejné sestavení odlišně. V následujících částech se dozvíte, jak se v těchto případech vyřeší zásada pro konkrétní typ.
+Zásady lze definovat současně pro elementy vyšší úrovně i na nižší úrovni. Například zásada může být definována pro sestavení a pro některé typy obsažené v tomto sestavení. Pokud není určitý element na nižší úrovni reprezentován, zdědí zásady jeho nadřazeného objektu. Například pokud `Assembly` element je přítomen, ale `Type` prvky nejsou, zásada zadaná v prvku `Assembly` se vztahuje na každý typ v sestavení. U stejného prvku programu lze také použít více prvků. Například samostatné prvky [sestavení](assembly-element-net-native.md) mohou definovat stejný prvek zásad pro stejné sestavení odlišně. V následujících částech se dozvíte, jak se v těchto případech vyřeší zásada pro konkrétní typ.
 
-[Typ](type-element-net-native.md) nebo prvek [metody](method-element-net-native.md) obecného typu nebo metody aplikuje zásady na všechny instance, které nemají vlastní zásady. Například `Type` element, který určuje zásadu pro <xref:System.Collections.Generic.List%601> , platí pro všechny vytvořené instance tohoto obecného typu, pokud není přepsán pro konkrétní konstruovaný typ (například a `List<Int32>`) pomocí `TypeInstantiation` prvku. V opačném případě elementy definují zásady pro prvek program s názvem.
+[Typ](type-element-net-native.md) nebo prvek [metody](method-element-net-native.md) obecného typu nebo metody aplikuje zásady na všechny instance, které nemají vlastní zásady. Například element `Type`, který určuje zásadu pro <xref:System.Collections.Generic.List%601>, se vztahuje na všechny vytvořené instance tohoto obecného typu, pokud není přepsán pro konkrétní konstruovaný typ (například `List<Int32>`) pomocí elementu `TypeInstantiation`. V opačném případě elementy definují zásady pro prvek program s názvem.
 
 Pokud je prvek dvojznačný, modul hledá shody a pokud najde přesnou shodu, bude ho používat. Pokud najde více shod, dojde k upozornění nebo chybě.
 
@@ -183,15 +181,15 @@ Pokud je prvek dvojznačný, modul hledá shody a pokud najde přesnou shodu, bu
 
 Pokud se dva prvky v různých souborech běhových direktiv pokusí nastavit stejný typ zásad pro stejný prvek programu (například sestavení nebo typ) na jiné hodnoty, konflikt je vyřešen následujícím způsobem:
 
-1. Pokud je `Excluded` prvek přítomen, má přednost.
+1. Pokud `Excluded` element je přítomen, má přednost.
 
-2. `Required`má přednost `Required`před ne.
+2. `Required` má přednost před ne`Required`m.
 
-3. `All`má přednost `PublicAndInternal`před, která má `Public`přednost před.
+3. `All` má přednost před `PublicAndInternal`, která má přednost před `Public`.
 
-4. Jakékoli explicitní nastavení má přednost `Auto`před.
+4. Jakékoli explicitní nastavení má přednost před `Auto`.
 
-Například pokud jeden projekt obsahuje následující dva soubory běhových direktiv, zásada serializace pro DataClasses. dll je nastavena na `Required Public` hodnotu a. `All` V takovém případě by zásada serializace byla vyřešena `Required All`jako.
+Například pokud jeden projekt obsahuje následující dva soubory běhových direktiv, zásada serializace pro DataClasses. dll je nastavena na `Required Public` i `All`. V takovém případě by zásada serializace byla vyřešena jako `Required All`.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -219,9 +217,9 @@ Nicméně pokud se dvě direktivy v jednom souboru direktiv modulu runtime pokus
 
 ### <a name="if-child-and-parent-elements-apply-the-same-policy-type"></a>Pokud podřízené a nadřazené prvky použijí stejný typ zásad
 
-Podřízené prvky přepíšou své nadřazené prvky, včetně `Excluded` nastavení. Přepsání je hlavní důvod, který byste chtěli zadat `Auto`.
+Podřízené prvky přepíšou své nadřazené prvky, včetně nastavení `Excluded`. Přepsání je hlavní důvod, proč byste chtěli zadat `Auto`.
 
-V následujícím příkladu nastavení `DataClasses` zásad serializace pro všechno v, které není v `DataClasses.ViewModels` , by `Required Public`bylo a `All`všechno, co je v obou `DataClasses` i i `DataClasses.ViewModels` .
+V následujícím příkladu je nastavení zásad serializace pro vše v `DataClasses`, které není v `DataClasses.ViewModels`, `Required Public`a vše, co je v `DataClasses` i `DataClasses.ViewModels`, by `All`.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -238,7 +236,7 @@ V následujícím příkladu nastavení `DataClasses` zásad serializace pro vš
 
 ### <a name="if-open-generics-and-instantiated-elements-apply-the-same-policy-type"></a>Pokud jsou otevřené generické prvky a instance se stejnými typy, použijte stejný typ zásad
 
-`Dictionary<int,int>` V následujícím příkladu je `Browse` zásada přiřazena pouze v případě, že má modul jiný `Browse` důvod pro udělení zásad (což by jinak představovalo výchozí <xref:System.Collections.Generic.Dictionary%602> chování); každá jiná instance bude mít Členové, kteří budou procházet.
+V následujícím příkladu je `Dictionary<int,int>` přiřazena zásada `Browse` pouze v případě, že má motor jiný důvod k tomu, aby se mu přidělila zásada `Browse` (která by jinak představovala výchozí chování); všechny ostatní instance <xref:System.Collections.Generic.Dictionary%602> budou procházet všechny jeho členy.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -263,149 +261,149 @@ Každý typ zásad má jinou sadu pravidel, která určují, jak bude mít pří
 
 #### <a name="the-effect-of-browse-policy"></a>Účinek zásad procházení
 
-`Browse` Použití zásad na typ zahrnuje následující změny zásad:
+Použití zásad `Browse` na typ zahrnuje následující změny zásad:
 
-- Základní typ tohoto typu je označený `Browse` zásadou.
+- Základní typ tohoto typu je označený zásadou `Browse`.
 
-- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena `Browse` zásadou.
+- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena zásadou `Browse`.
 
-- Pokud je typ delegát, `Invoke` metoda na typu je označena `Dynamic` zásadou.
+- Pokud je typ delegát, je metoda `Invoke` v typu označena zásadou `Dynamic`.
 
-- Každé rozhraní typu je označeno `Browse` zásadou.
+- Každé rozhraní typu je označeno zásadou `Browse`.
 
-- Typ každého atributu použitého pro typ je označený `Browse` zásadou.
+- Typ každého atributu, který je použit pro typ, je označen zásadou `Browse`.
 
-- Pokud je typ obecný, je každý typ omezení označený `Browse` zásadou.
+- Pokud je typ obecný, je každý typ omezení označený zásadou `Browse`.
 
-- Pokud je typ obecný, typy, přes které je vytvořen typ, jsou označeny `Browse` zásadou.
+- Pokud je typ obecný, typy, jejichž instance jsou vytvořeny, jsou označeny zásadou `Browse`.
 
-`Browse` Použití zásad na metodu zahrnuje následující změny zásad:
+Použití zásad `Browse` pro metodu zahrnuje následující změny zásad:
 
-- Každý typ parametru metody je označený `Browse` zásadou.
+- Každý typ parametru metody je označený zásadou `Browse`.
 
-- Návratový typ metody je označený `Browse` zásadou.
+- Návratový typ metody je označený zásadou `Browse`.
 
-- Nadřazený typ metody je označený `Browse` zásadou.
+- Nadřazený typ metody je označený zásadou `Browse`.
 
-- Pokud je metoda instancí generické metody, je obecná metoda uninstance označena `Browse` zásadou.
+- Pokud je metoda instancí generické metody, je obecná metoda uninstance označena zásadou `Browse`.
 
-- Typ každého atributu, který je použit pro metodu, je označen `Browse` zásadou.
+- Typ každého atributu, který je použit pro metodu, je označen zásadou `Browse`.
 
-- Pokud je metoda obecná, je každý typ omezení označený `Browse` zásadou.
+- Pokud je metoda obecná, každý typ omezení je označený zásadou `Browse`.
 
-- Pokud je metoda obecná, typy, přes které je vytvořena instance metody, jsou označeny `Browse` zásadou.
+- Pokud je metoda obecná, typy, přes které je vytvořena instance metody, jsou označeny zásadou `Browse`.
 
-`Browse` Použití zásad u pole zahrnuje následující změny zásad:
+Použití zásad `Browse` u pole zahrnuje tyto změny zásad:
 
-- Typ každého atributu, který je použit pro pole, je označen `Browse` zásadami.
+- Typ každého atributu, který se používá pro pole, je označený zásadou `Browse`.
 
-- Typ pole je označený `Browse` zásadou.
+- Typ pole je označený zásadou `Browse`.
 
-- Typ, ke kterému pole patří, je označen `Browse` zásadou.
+- Typ, ke kterému pole patří, je označen zásadou `Browse`.
 
 #### <a name="the-effect-of-dynamic-policy"></a>Účinek dynamických zásad
 
-`Dynamic` Použití zásad na typ zahrnuje následující změny zásad:
+Použití zásad `Dynamic` na typ zahrnuje následující změny zásad:
 
-- Základní typ tohoto typu je označený `Dynamic` zásadou.
+- Základní typ tohoto typu je označený zásadou `Dynamic`.
 
-- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena `Dynamic` zásadou.
+- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena zásadou `Dynamic`.
 
-- Pokud typ je typ delegáta, `Invoke` metoda na typu je označena `Dynamic` zásadou.
+- Pokud typ je typ delegáta, metoda `Invoke` v typu je označená pomocí zásad `Dynamic`.
 
-- Každé rozhraní typu je označeno `Browse` zásadou.
+- Každé rozhraní typu je označeno zásadou `Browse`.
 
-- Typ každého atributu použitého pro typ je označený `Browse` zásadou.
+- Typ každého atributu, který je použit pro typ, je označen zásadou `Browse`.
 
-- Pokud je typ obecný, je každý typ omezení označený `Browse` zásadou.
+- Pokud je typ obecný, je každý typ omezení označený zásadou `Browse`.
 
-- Pokud je typ obecný, typy, přes které je vytvořen typ, jsou označeny `Browse` zásadou.
+- Pokud je typ obecný, typy, jejichž instance jsou vytvořeny, jsou označeny zásadou `Browse`.
 
-`Dynamic` Použití zásad na metodu zahrnuje následující změny zásad:
+Použití zásad `Dynamic` pro metodu zahrnuje následující změny zásad:
 
-- Každý typ parametru metody je označený `Browse` zásadou.
+- Každý typ parametru metody je označený zásadou `Browse`.
 
-- Návratový typ metody je označený `Dynamic` zásadou.
+- Návratový typ metody je označený zásadou `Dynamic`.
 
-- Nadřazený typ metody je označený `Dynamic` zásadou.
+- Nadřazený typ metody je označený zásadou `Dynamic`.
 
-- Pokud je metoda instancí generické metody, je obecná metoda uninstance označena `Browse` zásadou.
+- Pokud je metoda instancí generické metody, je obecná metoda uninstance označena zásadou `Browse`.
 
-- Typ každého atributu, který je použit pro metodu, je označen `Browse` zásadou.
+- Typ každého atributu, který je použit pro metodu, je označen zásadou `Browse`.
 
-- Pokud je metoda obecná, je každý typ omezení označený `Browse` zásadou.
+- Pokud je metoda obecná, každý typ omezení je označený zásadou `Browse`.
 
-- Pokud je metoda obecná, typy, přes které je vytvořena instance metody, jsou označeny `Browse` zásadou.
+- Pokud je metoda obecná, typy, přes které je vytvořena instance metody, jsou označeny zásadou `Browse`.
 
-- Metodu lze vyvolat pomocí `MethodInfo.Invoke`a vytvoření delegáta bude možné provést pomocí. <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=nameWithType>
+- Metodu lze vyvolat pomocí `MethodInfo.Invoke`a je možné vytvořit delegáta pomocí <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=nameWithType>.
 
-`Dynamic` Použití zásad u pole zahrnuje následující změny zásad:
+Použití zásad `Dynamic` u pole zahrnuje tyto změny zásad:
 
-- Typ každého atributu, který je použit pro pole, je označen `Browse` zásadami.
+- Typ každého atributu, který se používá pro pole, je označený zásadou `Browse`.
 
-- Typ pole je označený `Dynamic` zásadou.
+- Typ pole je označený zásadou `Dynamic`.
 
-- Typ, ke kterému pole patří, je označen `Dynamic` zásadou.
+- Typ, ke kterému pole patří, je označen zásadou `Dynamic`.
 
 #### <a name="the-effect-of-activation-policy"></a>Účinek zásad aktivace
 
 Použití zásad aktivace u typu zahrnuje následující změny zásad:
 
-- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena `Browse` zásadou.
+- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena zásadou `Browse`.
 
-- Pokud typ je typ delegáta, `Invoke` metoda na typu je označena `Dynamic` zásadou.
+- Pokud typ je typ delegáta, metoda `Invoke` v typu je označená pomocí zásad `Dynamic`.
 
-- Konstruktory typu jsou označeny `Activation` zásadou.
+- Konstruktory typu jsou označené zásadou `Activation`.
 
-`Activation` Použití zásad na metodu zahrnuje následující změnu zásad:
+Použití zásad `Activation` pro metodu zahrnuje následující změnu zásad:
 
-- Konstruktor může být vyvolán <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=nameWithType> metodami a. <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> Pro metody `Activation` má zásada vliv pouze na konstruktory.
+- Konstruktor může být vyvolán metodami <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=nameWithType> a <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>. Pro metody má zásada `Activation` vliv pouze na konstruktory.
 
-`Activation` Použití zásad na pole nemá žádný vliv.
+Použití zásad `Activation` pro pole nemá žádný vliv.
 
 #### <a name="the-effect-of-serialize-policy"></a>Účinek zásad serializace
 
-`Serialize` Zásady umožňují použití běžných serializátorů založených na reflexi. Vzhledem k tomu, že společnost Microsoft nezná přesné vzory přístupu k reflexi serializátorů od jiných společností než Microsoftu, tato zásada nemusí být zcela účinná.
+Zásady `Serialize` umožňují použití běžných serializátorů založených na reflexi. Vzhledem k tomu, že společnost Microsoft nezná přesné vzory přístupu k reflexi serializátorů od jiných společností než Microsoftu, tato zásada nemusí být zcela účinná.
 
-`Serialize` Použití zásad na typ zahrnuje následující změny zásad:
+Použití zásad `Serialize` na typ zahrnuje následující změny zásad:
 
-- Základní typ tohoto typu je označený `Serialize` zásadou.
+- Základní typ tohoto typu je označený zásadou `Serialize`.
 
-- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena `Browse` zásadou.
+- Pokud se jedná o instanci generického typu, je nevytvořená verze typu označena zásadou `Browse`.
 
-- Pokud typ je typ delegáta, `Invoke` metoda na typu je označena `Dynamic` zásadou.
+- Pokud typ je typ delegáta, metoda `Invoke` v typu je označená pomocí zásad `Dynamic`.
 
-- Pokud je typ výčet, pole typu je označeno `Serialize` zásadou.
+- Pokud je typ výčet, pole typu je označeno zásadou `Serialize`.
 
-- Pokud typ implementuje <xref:System.Collections.Generic.IEnumerable%601>, `T` je označen `Serialize` zásadou.
+- Pokud typ implementuje <xref:System.Collections.Generic.IEnumerable%601>, `T` je označen zásadou `Serialize`.
 
-- Pokud <xref:System.Collections.Generic.IEnumerable%601>je typ, <xref:System.Collections.Generic.ICollection%601> <xref:System.Collections.Generic.IReadOnlyList%601> ,,,nebo`T[]` , pak a<xref:System.Collections.Generic.List%601> označený zásadou.,nejsouvšakžádnéčlenytypurozhraníoznačenypomocí`Serialize` <xref:System.Collections.Generic.IList%601> <xref:System.Collections.Generic.IReadOnlyCollection%601> `Serialize`zásady.
+- Pokud je typ <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>nebo <xref:System.Collections.Generic.IReadOnlyList%601>, pak `T[]` a <xref:System.Collections.Generic.List%601> označené zásadou pro `Serialize`. nejsou ale žádné členy typu rozhraní označené zásadami pro `Serialize`.
 
-- Pokud je <xref:System.Collections.Generic.List%601>typ, žádné členy typu nejsou označeny `Serialize` zásadou.
+- Pokud je typ <xref:System.Collections.Generic.List%601>, žádné členy typu nejsou označeny zásadami `Serialize`.
 
-- Pokud je <xref:System.Collections.Generic.IDictionary%602>typ, <xref:System.Collections.Generic.Dictionary%602> je označen `Serialize` zásadou. ale žádné členy typu nejsou označeny `Serialize` zásadou.
+- Pokud je typ <xref:System.Collections.Generic.IDictionary%602>, <xref:System.Collections.Generic.Dictionary%602> je označený zásadou `Serialize`. ale žádní členové typu nejsou označeni pomocí zásad `Serialize`.
 
-- Pokud je <xref:System.Collections.Generic.Dictionary%602>typ, žádné členy typu nejsou označeny `Serialize` zásadou.
+- Pokud je typ <xref:System.Collections.Generic.Dictionary%602>, žádné členy typu nejsou označeny zásadami `Serialize`.
 
-- Pokud <xref:System.Collections.Generic.IDictionary%602>typ implementuje `TKey` a`TValue`jsou označeny zásadou.`Serialize`
+- Pokud typ implementuje <xref:System.Collections.Generic.IDictionary%602>, `TKey` a `TValue` jsou označeny zásadami `Serialize`.
 
-- Každý konstruktor, každý přistupující objekt vlastnosti a každé pole je označeno `Serialize` zásadou.
+- Každý konstruktor, každý přistupující objekt vlastnosti a každé pole je označeno zásadou `Serialize`.
 
-`Serialize` Použití zásad na metodu zahrnuje následující změny zásad:
+Použití zásad `Serialize` pro metodu zahrnuje následující změny zásad:
 
-- Nadřazený typ je označený `Serialize` zásadou.
+- Nadřazený typ je označený zásadou `Serialize`.
 
-- Návratový typ metody je označený `Serialize` zásadou.
+- Návratový typ metody je označený zásadou `Serialize`.
 
-`Serialize` Použití zásad u pole zahrnuje následující změny zásad:
+Použití zásad `Serialize` u pole zahrnuje tyto změny zásad:
 
-- Nadřazený typ je označený `Serialize` zásadou.
+- Nadřazený typ je označený zásadou `Serialize`.
 
-- Typ pole je označený `Serialize` zásadou.
+- Typ pole je označený zásadou `Serialize`.
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>Vliv zásad XmlSerializer, DataContractSerializer a DataContractJsonSerializer
 
-Na rozdíl od `Serialize` zásady, která je určena pro serializátory založené na reflexi <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>jsou použity <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> zásady, a pro povolení sady serializátorů, které jsou známy .NET Nativemu řetězu nástrojů. Tyto serializátory nejsou implementovány pomocí reflexe, ale sada typů, které lze serializovat za běhu, je určena podobným způsobem jako typy, které jsou reflektované.
+Na rozdíl od `Serialize` zásady, která je určena pro serializátory založené na reflexi, jsou použity zásady <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> k povolení sady serializátorů, které jsou známé jako řetězec nástroje .NET Native. Tyto serializátory nejsou implementovány pomocí reflexe, ale sada typů, které lze serializovat za běhu, je určena podobným způsobem jako typy, které jsou reflektované.
 
 Použití jedné z těchto zásad na typ umožňuje serializovat typ pomocí odpovídajícího serializátoru. Všechny typy, které může modul serializace staticky určit jako nutnost serializace, budou také serializovatelný.
 

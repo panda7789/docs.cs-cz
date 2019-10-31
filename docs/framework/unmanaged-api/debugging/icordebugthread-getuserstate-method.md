@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ae0cfd73-8ead-4d36-9310-dccaac9db0bd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f7d3325c8aee44849ff1fb7a6cc06a0ed7c2c6f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f3511ff5ee9b9221037c64a5e17d61f6bf52e5f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769099"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133417"
 ---
 # <a name="icordebugthreadgetuserstate-method"></a>ICorDebugThread::GetUserState – metoda
-Získá aktuální stav uživatele v této ICorDebugThread.  
+Načte aktuální stav uživatele tohoto ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetUserState (
   
 ## <a name="parameters"></a>Parametry  
  `pState`  
- [out] Ukazatel na bitové kombinace cordebuguserstate – výčet hodnot, které popisují aktuální stav uživatele z tohoto vlákna.  
+ mimo Ukazatel na bitovou kombinaci hodnot výčtu CorDebugUserState –, které popisují aktuální stav uživatele tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Stav uživatele vlákna je stav vlákna při kontrole programem, který je právě laděna. Vlákno může mít více sadu bitů stavu.  
+ Stav uživatele vlákna je stav vlákna, když je testován program, který je právě laděn. Vlákno může mít několik sad bitů stavu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

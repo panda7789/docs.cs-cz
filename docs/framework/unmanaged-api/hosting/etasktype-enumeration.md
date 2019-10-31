@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 73098077e3860d3f4a8a02921ecedf8dff24165b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc956827ad59fc655137e4147e6d98b6d097d470
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774058"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138191"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType – výčet
-Obsahuje hodnoty, které označují typ úlohy, která je reprezentována buď [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) rozhraní.  
+Obsahuje hodnoty, které určují typ úlohy, který je reprezentován buď [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo rozhraním [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,26 +46,26 @@ typedef enum ETaskType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`TT_ADUNLOAD`|Rozhraní představuje úlohu uvolňování domény aplikace.|  
-|`TT_DEBUGGERHELPER`|Rozhraní představuje pomocné rutiny úkol ladicího programu.|  
-|`TT_FINALIZER`|Rozhraní představuje úlohu finalizační metodu.|  
-|`TT_GC`|Rozhraní představuje úlohu uvolňování paměti kolekce.|  
-|`TT_THREADPOOL_GATE`|Rozhraní představuje úlohu vlákno brány.|  
-|`TT_THREADPOOL_IOCOMPLETION`|Rozhraní představuje úlohu vláken vstupně-výstupních operací nebo úkol vlákno port dokončení.|  
-|`TT_THREADPOOL_TIMER`|Rozhraní představuje úlohu časovače vláken.|  
-|`TT_THREADPOOL_WAIT`|Rozhraní představuje vlákno úkol čekání.|  
-|`TT_THREADPOOL_WORKER`|Rozhraní představuje úlohy vlákna pracovního procesu.|  
-|`TT_UNKNOWN`|Úloha neznámý.|  
-|`TT_USER`|Rozhraní představuje uživatelského úkolu.|  
+|`TT_ADUNLOAD`|Rozhraní představuje úlohu uvolnění domény aplikace.|  
+|`TT_DEBUGGERHELPER`|Rozhraní představuje úlohu pomocníka ladicího programu.|  
+|`TT_FINALIZER`|Rozhraní představuje úlohu finalizační metody.|  
+|`TT_GC`|Rozhraní představuje úlohu uvolňování paměti.|  
+|`TT_THREADPOOL_GATE`|Rozhraní představuje úlohu vlákna brány.|  
+|`TT_THREADPOOL_IOCOMPLETION`|Rozhraní představuje úlohu vstupně-výstupního vlákna nebo úlohu vlákna portu pro dokončení.|  
+|`TT_THREADPOOL_TIMER`|Rozhraní představuje úlohu vlákna časovače.|  
+|`TT_THREADPOOL_WAIT`|Rozhraní představuje úlohu vlákna čekání.|  
+|`TT_THREADPOOL_WORKER`|Rozhraní představuje úlohu pracovního vlákna.|  
+|`TT_UNKNOWN`|Úloha je neznámá.|  
+|`TT_USER`|Rozhraní představuje úkol uživatele.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

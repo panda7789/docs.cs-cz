@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 05558daa-39e2-4c38-aeaf-e2aec4a09468
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9bbc3379ff9523564f4eae7da96fca2247601fcd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d9f0eff35dbe0058398d2d1c851ef85effa9cd28
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765154"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122413"
 ---
 # <a name="icordebugthread4hadunhandledexception-method"></a>ICorDebugThread4::HadUnhandledException – metoda
-Určuje, zda vlákna někdy došlo k neošetřené výjimce.  
+Označuje, zda má vlákno někdy neošetřenou výjimku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +35,27 @@ HRESULT GetBlockingObjects (
   
 ## <a name="parameters"></a>Parametry  
  `ppBlockingObjectEnum`  
- [out] Ukazatel na adresu seřazený výčet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.  
+ mimo Ukazatel na adresu seřazeného výčtu struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Vlákna došlo k neošetřené výjimce od jeho vytvoření.|  
-|S_FALSE|Vlákna nikdy došlo k neošetřené výjimce.|  
+|S_OK|Vlákno mělo neošetřenou výjimku od jejího vytvoření.|  
+|S_FALSE|Vlákno nikdy nemá neošetřenou výjimku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda určuje, zda vlákna někdy došlo k neošetřené výjimce. Časem se aktivuje zpětného volání neošetřené výjimky nebo nativní připojit JIT je zahájeno, tato metoda je zaručeno, vrátí hodnotu S_OK. Neexistuje žádná záruka, který [ICorDebugThread.GetCurrentException](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getcurrentexception-method.md) metoda vrátí neošetřená výjimka; však bude, pokud proces nebyl dosud pokračuje po získání zpětné volání neošetřené výjimky nebo po nativní JIT připojení. Kromě toho je možné (ale nepravděpodobné) mít více než jedno vlákno s neošetřenou výjimkou v době nativní připojit JIT se aktivuje. V takovém případě neexistuje žádný způsob, jak určit výjimky aktivuje připojit JIT.  
+ Tato metoda označuje, zda vlákno má někdy neošetřenou výjimku. V době spuštění neošetřeného zpětného volání výjimky nebo při zahájení nativního připojení JIT je zaručeno, že tato metoda vrátí hodnotu S_OK. Není zaručeno, že metoda [ICorDebugThread. GetCurrentException –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getcurrentexception-method.md) vrátí neošetřenou výjimku; Nicméně pokud proces ještě nepokračoval po získání neošetřeného zpětného volání výjimky nebo po nativním připojení JIT. Kromě toho je možné (i když nepravděpodobné), aby měl více než jedno vlákno s neošetřenou výjimkou v době, kdy se spustí nativní JIT – připojit. V takovém případě neexistuje způsob, jak určit, která výjimka aktivovala připojení JIT.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

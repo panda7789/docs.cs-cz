@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4657443f-dd12-431b-a648-175c23f13c83
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 95a00e8646589e7897636c1698b7c2647cd233fd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d1b058aef66ed32c2cadcc3cfd72320dd8eb7729
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771799"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133594"
 ---
 # <a name="icordebugthreadcreatestepper-method"></a>ICorDebugThread::CreateStepper – metoda
-Icordebugstepper – objekt, který umožňuje procházení aktivní rámec tohoto ICorDebugThread vytvoří.  
+Vytvoří objekt ICorDebugStepper, který umožňuje krokování skrze aktivní rámec tohoto ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT CreateStepper (
   
 ## <a name="parameters"></a>Parametry  
  `ppStepper`  
- [out] Ukazatel na adresu `ICorDebugStepper` objekt, který umožňuje procházení aktivní rámec tohoto vlákna.  
+ mimo Ukazatel na adresu `ICorDebugStepper` objektu, který umožňuje krokování skrze aktivní rámec tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Nespravovaný kód může být aktivní rámec.  
+ Aktivní rámec může být nespravovaný kód.  
   
- `ICorDebugStepper` Rozhraní musíte použít k provedení skutečné krokování.  
+ K provedení samotného krokování je nutné použít rozhraní `ICorDebugStepper`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

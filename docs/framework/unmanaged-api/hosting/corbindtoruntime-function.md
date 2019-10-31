@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 799740aa-46ec-4532-95da-6444565b4971
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d8ed3a85d12d35bb4779297a7bbc94ce911accef
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d4b8bb7d5b3da15f665849c8d18c3a10dbe600b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767984"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138313"
 ---
 # <a name="corbindtoruntime-function"></a>CorBindToRuntime – funkce
-Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu.  
+Umožňuje nespravovaným hostitelům načíst modul CLR (Common Language Runtime) do procesu.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,57 +41,57 @@ HRESULT CorBindToRuntime (
   
 ## <a name="parameters"></a>Parametry  
  `pwszVersion`  
- [in] Řetězec, který popisuje verzi modulu CLR, která chcete načíst.  
+ pro Řetězec popisující verzi modulu CLR, kterou chcete načíst.  
   
- Číslo verze v rozhraní .NET Framework se skládá ze čtyř částí oddělených tečkami: *major.minor.build.revision*. Řetězec předaný jako `pwszVersion` musí začínat znakem "v" následovaný prvními třemi částmi čísla verze (například "v1.0.1529").  
+ Číslo verze v .NET Framework se skládá ze čtyř částí oddělených tečkami: *hlavní_verze. podverze. sestavení. revize*. Řetězec předaný jako `pwszVersion` musí začínat znakem "v" následovaný prvními třemi částmi čísla verze (například "v 1.0.1529").  
   
- Některé verze modulu CLR jsou nainstalovány s prohlášením o zásadách, které určuje kompatibilitu s předchozími verzemi modulu CLR. Ve výchozím nastavení překrytí spuštění vyhodnotí `pwszVersion` proti prohlášení zásad a načte nejnovější verze modulu runtime, který je kompatibilní s verzí, které jsou požadovány. Hostitel může donutit překrytí, aby přeskočilo hodnocení zásad a načetlo přesnou verzi zadané v `pwszVersion` předáním hodnoty z `STARTUP_LOADER_SAFEMODE` pro `flags` parametru, jak je popsáno níže.  
+ Některé verze modulu CLR jsou nainstalovány s příkazem zásad, který určuje kompatibilitu s předchozími verzemi modulu CLR. Ve výchozím nastavení překrytí po spuštění vyhodnocuje `pwszVersion` proti příkazům zásad a načte nejnovější verzi modulu runtime, která je kompatibilní s požadovanou verzí. Hostitel může vynutit překrytí, aby přeskočil vyhodnocení zásad a načetlo přesnou verzi určenou v `pwszVersion` předáním hodnoty `STARTUP_LOADER_SAFEMODE` parametru `flags`, jak je popsáno níže.  
   
- Pokud volající zadá hodnotu null pro `pwszVersion`, načíst nejnovější verzi modulu runtime. Předání hodnoty null poskytuje hostiteli žádnou kontrolu nad tím, které je načtená verze modulu runtime. Přestože tento přístup může být vhodné v některých scénářích, důrazně doporučujeme, aby hostitel zadat konkrétní verzi, kterou načíst.  
+ Pokud volající pro `pwszVersion`zadá hodnotu null, je načtena nejnovější verze modulu runtime. Předání hodnoty null dává hostiteli žádnou kontrolu nad tím, která verze modulu runtime je načtena. I když tento přístup může být v některých scénářích vhodný, důrazně doporučujeme, aby hostitel zadal konkrétní verzi, která se má načíst.  
   
  `pwszBuildFlavor`  
- [in] Řetězec, který určuje, jestli se má načíst server nebo pracovní stanice sestavení CLR. Platné hodnoty jsou `svr` a `wks`. Sestavení serveru je optimalizováno pro využití více procesorů pro uvolňování paměti kolekce a sestavení pracovní stanice je optimalizována pro klientské aplikace spuštěné v počítači s jedním procesorem.  
+ pro Řetězec, který určuje, zda má být načten Server nebo pracovní stanice sestavení modulu CLR. Platné hodnoty jsou `svr` a `wks`. Sestavení serveru je optimalizované tak, aby využívalo více procesorů pro uvolňování paměti a aby bylo sestavení pracovní stanice optimalizované pro klientské aplikace běžící na počítači s jedním procesorem.  
   
- Pokud `pwszBuildFlavor` je nastavena na hodnotu null, je načteno sestavení pracovní stanice. Při spuštění v počítači s jedním procesorem je sestavení pracovní stanice vždy načteno, i když `pwszBuildFlavor` je nastavena na `svr`. Ale pokud `pwszBuildFlavor` je nastavena na `svr` a souběžné uvolňování je vyznačeno (viz popis `flags` parametr), načte se sestavení serveru.  
+ Pokud je `pwszBuildFlavor` nastaveno na hodnotu null, je načteno sestavení pracovní stanice. Při spuštění v počítači s jedním procesorem je sestavení pracovní stanice vždy načteno, i když je `pwszBuildFlavor` nastaveno na `svr`. Pokud je však `pwszBuildFlavor` nastavena na `svr` a je-li zadáno souběžné uvolňování paměti (viz popis `flags` parametr), je sestavení serveru načteno.  
   
  `rclsid`  
- [in] `CLSID` Třídy typu coclass, která implementuje [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní. Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID` třídy coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
- [in] `IID` Požadovaná rozhraní z `rclsid`. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
+ pro `IID` z vyžádaného rozhraní z `rclsid`. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
   
  `ppv`  
- [out] Vrácený ukazatel rozhraní k `riid`.  
+ mimo Vrácený ukazatel rozhraní na `riid`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `pwszVersion` Určuje verzi modulu runtime, který neexistuje, `CorBindToRuntimeEx` vrátí CLR_E_SHIM_RUNTIMELOAD hodnotu HRESULT.  
+ Pokud `pwszVersion` určuje verzi modulu runtime, která neexistuje, `CorBindToRuntimeEx` vrátí hodnotu HRESULT CLR_E_SHIM_RUNTIMELOAD.  
   
-## <a name="execution-context-and-flow-of-windows-identity"></a>Kontext spuštění a tok Windows Identity  
- V modulu CLR verze 1 <xref:System.Security.Principal.WindowsIdentity> objektu není téct přes asynchronní body jako nová vlákna, fondy vláken nebo zpětná volání časovače. V modulu CLR verze 2.0 <xref:System.Threading.ExecutionContext> objekt zabalí některé informace o aktuálně spuštěné vlákno a toky ji napříč asynchronní čárky, ale ne přes hranice aplikačních domén. Podobně platí <xref:System.Security.Principal.WindowsIdentity> objekt také průchodu čárky asynchronní. Proto aktuální zosobnění ve vlákně, pokud existuje, toky příliš.  
+## <a name="execution-context-and-flow-of-windows-identity"></a>Kontext spuštění a tok identity Windows  
+ Ve verzi 1 modulu CLR objekt <xref:System.Security.Principal.WindowsIdentity> neprovádí tok mezi asynchronními body, jako jsou nová vlákna, fondy vláken nebo zpětná volání časovače. Ve verzi 2,0 CLR objekt <xref:System.Threading.ExecutionContext> zalomí některé informace o aktuálně zpracovávaném vlákně a natéká ho napříč jakýmkoli asynchronním bodem, ale ne napříč hranicemi aplikační domény. Podobně objekt <xref:System.Security.Principal.WindowsIdentity> také toků napříč jakýmkoli asynchronním bodem. Proto aktuální zosobnění ve vlákně, pokud nějaký existuje, je také toků.  
   
- Je možné změnit toku dvěma způsoby:  
+ Tok můžete změnit dvěma způsoby:  
   
-1. Úpravou <xref:System.Threading.ExecutionContext> nastavení potlačení toku na základě vlákno (najdete v článku <xref:System.Threading.ExecutionContext.SuppressFlow%2A>, <xref:System.Security.SecurityContext.SuppressFlow%2A>, a <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A> metody).  
+1. Změnou nastavení <xref:System.Threading.ExecutionContext> pro potlačení toku na základě jednotlivých vláken (viz metody <xref:System.Threading.ExecutionContext.SuppressFlow%2A>, <xref:System.Security.SecurityContext.SuppressFlow%2A>a <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A>).  
   
-2. Změnou výchozí režim procesu na režim kompatibility verze 1, kde <xref:System.Security.Principal.WindowsIdentity> objektu není téct přes asynchronní fázi bez ohledu na to <xref:System.Threading.ExecutionContext> nastavení pro aktuální vlákno. Jak změnit výchozí režim závisí na, jestli používat spravované spustitelný soubor nebo nespravovaných hostitelských rozhraní načíst modul CLR:  
+2. Změnou výchozího režimu procesu na režim kompatibility verze 1, kde objekt <xref:System.Security.Principal.WindowsIdentity> neprovádí tok napříč žádným asynchronním bodem bez ohledu na nastavení <xref:System.Threading.ExecutionContext> v aktuálním vlákně. Způsob změny výchozího režimu závisí na tom, zda používáte spravovaný spustitelný soubor nebo nespravované rozhraní hostování pro načtení modulu CLR:  
   
-    1. Pro spravované spustitelné soubory, je nutné nastavit `enabled` atribut [ \<legacyimpersonationpolicy – >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu `true`.  
+    1. U spravovaných spustitelných souborů je nutné nastavit atribut `enabled` elementu [\<legacyImpersonationPolicy >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) na `true`.  
   
-    2. Pro nespravovaná rozhraní pro hostování, nastavit `STARTUP_LEGACY_IMPERSONATION` příznak v `flags` parametru při volání `CorBindToRuntimeEx` funkce.  
+    2. U nespravovaných hostitelských rozhraní nastavte příznak `STARTUP_LEGACY_IMPERSONATION` v parametru `flags` při volání funkce `CorBindToRuntimeEx`.  
   
-     Režim kompatibility verze 1 platí pro celý proces a všech doménách aplikace v procesu.  
+     Režim kompatibility verze 1 se vztahuje na celý proces a na všechny domény aplikace v procesu.  
   
 ## <a name="remarks"></a>Poznámky  
- [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a `CorBindToRuntime` provádět stejnou operaci, ale `CorBindToRuntimeEx` funkce umožňuje nastavení příznaků, které určují chování modulu CLR.  
+ [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a `CorBindToRuntime` provádí stejnou operaci, ale funkce `CorBindToRuntimeEx` umožňuje nastavit příznaky pro určení chování modulu CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

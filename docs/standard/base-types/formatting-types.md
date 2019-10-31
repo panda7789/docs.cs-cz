@@ -25,14 +25,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e9d53e7a75463e481b667a7ad84b68cb225e7f7c
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: e362ad75fd9989cc87751286f83918d340a58820
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774325"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141481"
 ---
 # <a name="format-types-in-net"></a>Typy formátů v .NET
 
@@ -87,7 +85,7 @@ Každý typ, který je odvozen od <xref:System.Object?displayProperty=nameWithTy
 [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]
 
 > [!WARNING]
-> Počínaje [!INCLUDE[win81](../../../includes/win81-md.md)] prostředí Windows Runtime obsahuje rozhraní <xref:Windows.Foundation.IStringable> s jedinou metodou, [IStringable. ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Nicméně doporučujeme, aby spravované typy neimplementovaly rozhraní `IStringable`. Další informace naleznete v části "prostředí Windows Runtime a `IStringable` Interface" na referenční stránce <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
+> Počínaje [!INCLUDE[win81](../../../includes/win81-md.md)]prostředí Windows Runtime obsahuje rozhraní <xref:Windows.Foundation.IStringable> s jedinou metodou, [IStringable. ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Nicméně doporučujeme, aby spravované typy neimplementovaly rozhraní `IStringable`. Další informace naleznete v části "prostředí Windows Runtime a `IStringable` Interface" na referenční stránce <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
 
 Vzhledem k tomu, že všechny typy kromě rozhraní jsou odvozeny od <xref:System.Object>, tato funkce je automaticky poskytována vašim vlastním třídám nebo strukturám. Funkce nabízené výchozí `ToString` metodou je však omezená: i když identifikuje typ, nemůže poskytnout žádné informace o instanci typu. Chcete-li poskytnout řetězcovou reprezentaci objektu, který poskytuje informace o tomto objektu, je nutné přepsat metodu `ToString`.
 
@@ -211,7 +209,7 @@ I když standardní formátovací řetězce mohou obecně zpracovat většinu fo
 
 ### <a name="format-strings-and-net-types"></a>Řetězce formátu a typy .NET
 
-Všechny číselné typy (tj. <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, 0 a 1ch) a také 2 , 3, 4, 5 a všechny typy výčtu, podporují formátování pomocí formátovacích řetězců. Informace o konkrétních formátovacích řetězcích podporovaných jednotlivými typy naleznete v následujících tématech:
+Všechny číselné typy (tj. <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>a <xref:System.Numerics.BigInteger>ch) a také <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan>, <xref:System.Guid>a všechny typy výčtu, podporují formátování pomocí formátovacích řetězců. Informace o konkrétních formátovacích řetězcích podporovaných jednotlivými typy naleznete v následujících tématech:
 
 |Název|Definice|
 |-----------|----------------|
@@ -277,7 +275,7 @@ Následující příklad používá <xref:System.Globalization.NumberFormatInfo>
 
 ### <a name="culture-sensitive-formatting-of-date-and-time-values"></a>Formátování hodnot data a času zohledňující jazykovou verzi
 
-Ve výchozím nastavení je formátování hodnot data a času závislé na jazykové verzi. Pokud nezadáte jazykovou verzi při volání metody formátování, jsou použity konvence formátování aktuální jazykové verze vlákna. To je znázorněno v následujícím příkladu, který čtyřikrát změní aktuální jazykovou verzi vlákna a poté volá metodu <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>. V každém případě výsledný řetězec odráží konvence formátování aktuální jazykové verze. Důvodem je, že metody <xref:System.DateTime.ToString?displayProperty=nameWithType>, <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> a <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> zabalí volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metody.
+Ve výchozím nastavení je formátování hodnot data a času závislé na jazykové verzi. Pokud nezadáte jazykovou verzi při volání metody formátování, jsou použity konvence formátování aktuální jazykové verze vlákna. To je znázorněno v následujícím příkladu, který čtyřikrát změní aktuální jazykovou verzi vlákna a poté volá metodu <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>. V každém případě výsledný řetězec odráží konvence formátování aktuální jazykové verze. Důvodem je, že metody <xref:System.DateTime.ToString?displayProperty=nameWithType>, <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType>a <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> zabalí volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metody.
 
 [!code-csharp[Conceptual.Formatting.Overview#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/culturespecific1.cs#17)]
 [!code-vb[Conceptual.Formatting.Overview#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/culturespecific1.vb#17)]
@@ -344,7 +342,7 @@ Následující příklad poskytuje <xref:System.ICustomFormatter> implementaci s
 [!code-csharp[Conceptual.Formatting.Overview#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#15)]
 [!code-vb[Conceptual.Formatting.Overview#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#15)]
 
-Následující příklad používá třídu `ByteByByteFormatter` pro formátování celočíselných hodnot. Všimněte si, že metoda <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> je ve druhém volání metody <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> volána více než jednou a že výchozí zprostředkovatel <xref:System.Globalization.NumberFormatInfo> je použit ve třetí volání metody, protože. `ByteByByteFormatter.Format` Metoda nerozpozná formátovací řetězec "N0" a vrátí odkaz s hodnotou null (`Nothing` v Visual Basic).
+Následující příklad používá třídu `ByteByByteFormatter` pro formátování celočíselných hodnot. Všimněte si, že metoda <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> je ve druhém volání metody <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> volána více než jednou a že výchozí zprostředkovatel <xref:System.Globalization.NumberFormatInfo> je použit ve třetí volání metody, protože.`ByteByByteFormatter.Format` Metoda nerozpozná formátovací řetězec "N0" a vrátí odkaz s hodnotou null (`Nothing` v Visual Basic).
 
 [!code-csharp[Conceptual.Formatting.Overview#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#16)]
 [!code-vb[Conceptual.Formatting.Overview#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#16)]

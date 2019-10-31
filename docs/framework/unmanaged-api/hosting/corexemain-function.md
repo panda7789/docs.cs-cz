@@ -17,17 +17,15 @@ helpviewer_keywords:
 ms.assetid: 898f76e2-16f4-4a63-b7d9-dad2d3824d8a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f97e90e3953a01f07d77e604628fbdb79eb9efa0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8541e7761e2f8e1839d028fdaea3eb71307ba615
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779174"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131203"
 ---
-# <a name="corexemain-function"></a>_CorExeMain – funkce
-Inicializuje modul CLR (CLR), vyhledá spravovaný vstupní bod v záhlaví spustitelného sestavení modulu CLR a zahájí vykonávání.  
+# <a name="_corexemain-function"></a>_CorExeMain – funkce
+Inicializuje modul CLR (Common Language Runtime), vyhledá spravovaný vstupní bod v záhlaví modulu CLR spustitelného sestavení a zahájí provádění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +34,22 @@ __int32 STDMETHODCALLTYPE _CorExeMain ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je volána zavaděčem v procesů vytvořených ze spravovaných sestavení spustitelného souboru. Pro sestavení knihovny DLL, volání zavaděče [_cordllmain –](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) namísto toho funkci.  
+ Tato funkce je volána zavaděčem v procesech vytvořených ze spravovaných spustitelných sestavení. Pro sestavení knihoven DLL volá zavaděč funkci [_CorDllMain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) .  
   
- Zavaděč operačního systému volá tuto metodu, bez ohledu na vstupní bod uvedený v souboru bitové kopie.  
+ Zavaděč operačního systému volá tuto metodu bez ohledu na vstupní bod zadaný v souboru obrázku.  
   
- Ve Windows 98, Windows ME, Windows NT a Windows 2000 `_CorExeMain` funkce se volá nepřímo prostřednictvím opravy v zavaděči operačního systému. Ve všech ostatních verzích Windows je volána přímo zavaděčem operačního systému.  
+ V systémech Windows 98, Windows MILLENNIUM, Windows NT a Windows 2000 je funkce `_CorExeMain` volána nepřímo prostřednictvím opravy v zavaděči operačního systému. Ve všech ostatních verzích systému Windows je volána přímo zavaděčem operačního systému.  
   
- Další informace naleznete v části poznámky v [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
+ Další informace najdete v části poznámky v tématu [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

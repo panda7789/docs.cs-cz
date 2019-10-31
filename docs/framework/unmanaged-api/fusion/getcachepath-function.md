@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: d977ad29-6619-42e1-b0be-bc25ea950e80
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1c28f32a4b24393483241bd2d7d6f550b8b65ba
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 13e1468ef5a48f18910c1f8082cdd7c4849da14a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796905"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132697"
 ---
 # <a name="getcachepath-function"></a>GetCachePath – funkce
 Načte cestu k sestavení v mezipaměti pomocí zadaných příznaků.  
@@ -46,12 +44,12 @@ HRESULT GetCachePath (
  mimo Vrácený ukazatel na cestu.  
   
  `pcchPath`  
- [in, out] Požadovaná maximální délka `pwzCachePath`a po návratu, skutečná `pwzCachePath`délka.  
+ [in, out] Požadovaná maximální délka `pwzCachePath`a po návratu se jedná o skutečnou délku `pwzCachePath`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: e32fd546-7757-4681-be3d-658e93281e50
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 353898b72f41acd0c49a43ff05e54f61b99444c4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9e441d4da64e9704fbda2368d2b07289aaea610a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798991"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125199"
 ---
 # <a name="strongnamekeyinstall-function"></a>StrongNameKeyInstall – funkce
 
@@ -42,31 +40,31 @@ BOOLEAN StrongNameKeyInstall (
 ## <a name="parameters"></a>Parametry
 
 `wszKeyContainer`\
-pro Název kontejneru klíčů. `wszKeyContainer`musí být neprázdný řetězec.
+pro Název kontejneru klíčů. `wszKeyContainer` musí být neprázdný řetězec.
 
 `pbKeyBlob`\
 pro Dvojice binárních klíčů.
 
 `cbKeyBlob`\
-pro Velikost v bajtech `pbKeyBlob`.
+pro Velikost `pbKeyBlob`v bajtech.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-`true`Po úspěšném dokončení; v opačném případě. `false`
+`true` po úspěšném dokončení; v opačném případě `false`.
 
 ## <a name="remarks"></a>Poznámky
 
 Pomocí funkce [StrongNameKeyDelete –](strongnamekeydelete-function.md) odstraňte kontejner klíčů.
 
-Pokud se `StrongNameKeyInstall` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
+Pokud se funkce `StrongNameKeyInstall` nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** StrongName. h
+**Hlavička:** StrongName. h
 
-**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
+**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 

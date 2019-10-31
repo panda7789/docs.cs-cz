@@ -16,19 +16,17 @@ helpviewer_keywords:
 ms.assetid: e36e1fd8-8456-4359-bdc3-3ec1765f041f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96968de84182b74f7baa89d5dfc12a4797ade595
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: de27851b4afc3eccad46531848c68723bff346d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779225"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136821"
 ---
 # <a name="createiceefilegen-function"></a>CreateICeeFileGen – funkce
-Vytvoří [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
+Vytvoří objekt [ICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) .  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +38,24 @@ HRESULT CreateICeeFileGen (
   
 ## <a name="parameters"></a>Parametry  
  `ceeFileGen`  
- [out] Ukazatel na novou adresu `ICeeFileGen` objektu.  
+ mimo Ukazatel na adresu nového objektu `ICeeFileGen`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb COM.  
+ Tato metoda vrátí standardní kódy chyb modelu COM.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICeeFileGen` Objektu se používá k vytvoření common language runtime (CLR) souborů (PE portable executable).  
+ Objekt `ICeeFileGen` slouží k vytvoření přenosných spustitelných souborů (PE) pro modul CLR (Common Language Runtime).  
   
- Volání [destroyiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) funkce zrušení `ICeeFileGen` objekt po dokončení.  
+ Po dokončení volejte funkci [DestroyICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) pro zničení objektu `ICeeFileGen`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ICeeFileGen.h  
+ **Hlavička:** ICeeFileGen –. h  
   
- **Knihovna:** MSCorPE.dll  
+ **Knihovna:** MSCorPE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: 03a6facb-f12f-49be-9839-e73b9c791cd5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bc5099af23a2b706694bfcb655d295607c97ea8a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5714597b5e5ca2936aad53217ae934684e75585c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969269"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125740"
 ---
 # <a name="icordebugclass-interface"></a>ICorDebugClass – rozhraní
 
-Představuje typ, který může být základní nebo komplexní (tj. definovaný uživatelem). Pokud je typ obecný, představuje `ICorDebugClass` obecný typ bez instance.  
+Představuje typ, který může být základní nebo komplexní (tj. definovaný uživatelem). Pokud je typ obecný, `ICorDebugClass` představuje obecný typ bez instancí.  
   
 ## <a name="methods"></a>Metody  
   
@@ -33,22 +31,22 @@ Představuje typ, který může být základní nebo komplexní (tj. definovaný
 |------------|-----------------|  
 |[GetModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getmodule-method.md)|Získá modul, který definuje tuto třídu.|  
 |[GetStaticFieldValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md)|Získá hodnotu zadaného statického pole.|  
-|[GetToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-gettoken-method.md)|Získá token `TypeDef` metadat pro tuto třídu.|  
+|[GetToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-gettoken-method.md)|Získá token metadat `TypeDef` pro tuto třídu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugClass` Rozhraní představuje obecný typ uninstanceed. Rozhraní ICorDebugType představuje obecný typ s instancemi. Například `Hashtable<K, V>` by `Hashtable<Int32, String>` představovala `ICorDebugClass` ,`ICorDebugType`že by představoval.  
+ Rozhraní `ICorDebugClass` představuje obecný typ uninstanceed. Rozhraní ICorDebugType představuje obecný typ s instancemi. Například `Hashtable<K, V>` by představoval `ICorDebugClass`, zatímco `Hashtable<Int32, String>` by představoval `ICorDebugType`.  
   
- Neobecné typy jsou reprezentovány v `ICorDebugClass` a `ICorDebugType`. Druhé rozhraní bylo zavedeno ve verzi .NET Framework 2,0, aby bylo možné řešit instance typu.  
+ Neobecné typy jsou reprezentovány `ICorDebugClass` i `ICorDebugType`. Druhé rozhraní bylo zavedeno ve verzi .NET Framework 2,0, aby bylo možné řešit instance typu.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

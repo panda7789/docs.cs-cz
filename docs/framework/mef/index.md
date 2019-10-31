@@ -8,14 +8,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6fc66837dc31dc1697bcb4ad6dddfb57bfb99bd4
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: da73200513d451ee391fb6dd9c214a5b8ca771c6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68434085"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126338"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -71,13 +69,13 @@ Nejjednodušší způsob, jak zjistit, co může MEF udělat, je sestavení jedn
 > [!NOTE]
 > Účelem SimpleCalculator je předvedení konceptů a syntaxe MEF, místo aby nutně poskytovala reálný scénář pro použití. Mnohé z aplikací, které by mohly těžit z mocniny MEF, jsou složitější než SimpleCalculator. Další podrobné příklady najdete v [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef) na GitHubu.
 
-- Chcete-li začít, v aplikaci Visual Studio vytvořte nový projekt konzolové aplikace a `SimpleCalculator`pojmenujte jej.
+- Chcete-li začít, v aplikaci Visual Studio vytvořte nový projekt konzolové aplikace a pojmenujte jej `SimpleCalculator`.
 
 - Přidejte odkaz na sestavení System. ComponentModel. složení, kde se nachází rozhraní MEF.
 
-- Otevřete Module1. vb nebo program.cs a přidejte `Imports` nebo `using` příkazy pro System. ComponentModel. kompozici a System. ComponentModel. kompozice. Hosting. Tyto dva obory názvů obsahují typy MEF, které budete potřebovat pro vývoj rozšiřitelné aplikace.
+- Otevřete Module1. vb nebo Program.cs a přidejte `Imports` nebo `using` příkazy pro System. ComponentModel. kompozici a System. ComponentModel. kompozice. Hosting. Tyto dva obory názvů obsahují typy MEF, které budete potřebovat pro vývoj rozšiřitelné aplikace.
 
-- Pokud používáte Visual Basic, přidejte `Public` klíčové slovo na řádek, který deklaruje `Module1` modul.
+- Pokud používáte Visual Basic, přidejte klíčové slovo `Public` na řádek, který deklaruje modul `Module1`.
 
 <a name="composition_container_and_catalogs"></a>
 
@@ -85,9 +83,9 @@ Nejjednodušší způsob, jak zjistit, co může MEF udělat, je sestavení jedn
 
 Základem modelu složení MEF je *kontejner kompozice*, který obsahuje všechny dostupné součásti a provádí složení. Složení je porovnáním s importy a exporty. Nejběžnější typ kontejneru kompozice je <xref:System.ComponentModel.Composition.Hosting.CompositionContainer>a použijete ho pro SimpleCalculator.
 
-Pokud používáte Visual Basic, do Module1. vb přidejte veřejnou třídu s názvem `Program`.
+Pokud používáte Visual Basic, v Module1. vb přidejte veřejnou třídu s názvem `Program`.
 
-Přidejte následující řádek do `Program` třídy v Module1. vb nebo program.cs:
+Přidejte následující řádek do třídy `Program` v Module1. vb nebo Program.cs:
 
 ```vb
 Dim _container As CompositionContainer
@@ -99,7 +97,7 @@ private CompositionContainer _container;
 
 Aby bylo možné zjistit, jaké součásti jsou k dispozici, kontejnery kompozice využívají *katalog*. Catalog je objekt, který zpřístupňuje dostupné části z nějakého zdroje. MEF poskytuje katalogy pro zjišťování částí ze zadaného typu, sestavení nebo adresáře. Vývojáři aplikací můžou snadno vytvářet nové katalogy a zjišťovat části z jiných zdrojů, například webové služby.
 
-Do `Program` třídy přidejte následující konstruktor:
+Přidejte následující konstruktor do třídy `Program`:
 
 ```vb
 Public Sub New()
@@ -144,11 +142,11 @@ private Program()
 }
 ```
 
-Volání, které <xref:System.ComponentModel.Composition.AttributedModelServices.ComposeParts%2A> oznamuje kontejneru kompozice pro sestavení konkrétní sady částí, v tomto případě aktuální `Program`instance. V tuto chvíli se ale nic nestane, protože `Program` nemá žádné importy k vyplnění.
+Volání <xref:System.ComponentModel.Composition.AttributedModelServices.ComposeParts%2A> říká kontejneru kompozice, aby vytvářeal určitou sadu částí, v tomto případě aktuální instance `Program`. V tuto chvíli se ale nic nestane, protože `Program` nemá žádné importy k vyplnění.
 
 <a name="imports_and_exports_with_attributes"></a>
 ## <a name="imports-and-exports-with-attributes"></a>Import a export s atributy
- Nejdřív jste `Program` importovali kalkulačku. To umožňuje oddělení kalkulačky, jako je vstup z konzoly a výstup, který se bude `Program`týkat, z logiky kalkulačky.
+ Nejdřív máte `Program` importovat kalkulačku. To umožňuje oddělení jednotlivých uživatelských rozhraní, jako je například vstup z konzoly a výstup, který se bude přecházet do `Program`z logiky kalkulačky.
 
  Do `Program` třídy přidejte následující kód:
 
@@ -162,9 +160,9 @@ Public Property calculator As ICalculator
 public ICalculator calculator;
 ```
 
- Všimněte si, že deklarace `calculator` objektu není neobvyklé, ale je upravena <xref:System.ComponentModel.Composition.ImportAttribute> atributem. Tento atribut deklaruje něco pro import; To znamená, že bude modul sestavování vyplněn modulem složení, pokud je objekt sestaven.
+ Všimněte si, že deklarace objektu `calculator` není neobvyklé, ale je upravena atributem <xref:System.ComponentModel.Composition.ImportAttribute>. Tento atribut deklaruje něco pro import; To znamená, že bude modul sestavování vyplněn modulem složení, pokud je objekt sestaven.
 
- Každý import má *kontrakt*, který určuje, s jakými exporty bude odpovídat. Kontrakt může být explicitně zadaný řetězec nebo může být automaticky vygenerován pomocí MEF z daného typu, v tomto případě rozhraní `ICalculator`. Tento import bude plnit jakýkoli export deklarovaný s vyhovující smlouvou. Všimněte si, že zatímco typ `calculator` objektu je ve skutečnosti `ICalculator`, není to vyžadováno. Kontrakt je nezávislý na typu importovaného objektu. (V tomto případě můžete opustit `typeof(ICalculator)`. MEF bude automaticky předpokládat, že kontrakt bude založen na typu importu, pokud ho explicitně neurčíte.)
+ Každý import má *kontrakt*, který určuje, s jakými exporty bude odpovídat. Kontraktem může být explicitně zadaný řetězec nebo může být automaticky vygenerován pomocí MEF z daného typu, v tomto případě `ICalculator`rozhraní. Tento import bude plnit jakýkoli export deklarovaný s vyhovující smlouvou. Všimněte si, že pokud je typ objektu `calculator` ve skutečnosti `ICalculator`, není to nutné. Kontrakt je nezávislý na typu importovaného objektu. (V tomto případě můžete `typeof(ICalculator)`opustit. MEF bude automaticky předpokládat, že kontrakt bude založen na typu importu, pokud ho explicitně neurčíte.)
 
  Přidejte toto velmi jednoduché rozhraní do modulu nebo `SimpleCalculator` oboru názvů:
 
@@ -181,7 +179,7 @@ public interface ICalculator
 }
 ```
 
- Teď, když jste definovali `ICalculator`, potřebujete třídu, která ji implementuje. Přidejte následující třídu do modulu nebo `SimpleCalculator` oboru názvů:
+ Nyní, když jste definovali `ICalculator`, potřebujete třídu, která ji implementuje. Do modulu nebo `SimpleCalculator` oboru názvů přidejte následující třídu:
 
 ```vb
 <Export(GetType(ICalculator))>
@@ -201,9 +199,9 @@ class MySimpleCalculator : ICalculator
 
  Tady je export, který bude odpovídat importu v `Program`. Aby export odpovídal importu, musí mít export stejný kontrakt. Export v rámci smlouvy na základě `typeof(MySimpleCalculator)` by způsobil neshodu a import nebude vyplněn. kontrakt musí přesně odpovídat.
 
- Vzhledem k tomu, že kontejner kompozice bude naplněn všemi částmi dostupnými v `MySimpleCalculator` tomto sestavení, bude část k dispozici. Když konstruktor pro `Program` provede složení `Program` objektu, jeho import `MySimpleCalculator` se vyplní objektem, který se vytvoří pro tento účel.
+ Vzhledem k tomu, že kontejner skládání bude naplněn všemi částmi, které jsou k dispozici v tomto sestavení, bude k dispozici `MySimpleCalculator`á součást. Když konstruktor pro `Program` provádí kompozici objektu `Program`, jeho import bude vyplněn objektem `MySimpleCalculator`, který bude vytvořen pro tento účel.
 
- Vrstva uživatelského rozhraní (`Program`) nemusí znát žádné jiné. Z tohoto důvodu můžete v `Main` metodě vyplnit zbývající část logiky uživatelského rozhraní.
+ Vrstva uživatelského rozhraní (`Program`) nepotřebuje žádné další informace. Z tohoto důvodu můžete v metodě `Main` vyplnit zbývající část logiky uživatelského rozhraní.
 
  Do `Main` metody přidejte následující kód:
 
@@ -235,11 +233,11 @@ static void Main(string[] args)
 }
 ```
 
- Tento kód jednoduše přečte řádek vstupu a zavolá `Calculate` `ICalculator` funkci na výsledek, která se zapisuje zpátky do konzoly. To je veškerý kód, který potřebujete v `Program`. Veškerá zbývající část práce nastane v částech.
+ Tento kód jednoduše přečte řádek vstupu a zavolá funkci `Calculate` `ICalculator` ve výsledku, kterou zapisuje zpět do konzoly. To je veškerý kód, který potřebujete v `Program`. Veškerá zbývající část práce nastane v částech.
 
 <a name="further_imports_and_importmany"></a>
 ## <a name="further-imports-and-importmany"></a>Další import a ImportMany
- Aby SimpleCalculator bylo rozšiřitelné, musí importovat seznam operací. Obyčejný <xref:System.ComponentModel.Composition.ImportAttribute> atribut je vyplněn jedním a pouze jedním <xref:System.ComponentModel.Composition.ExportAttribute>. Pokud je k dispozici více než jeden, modul kompozice vytvoří chybu. Chcete-li vytvořit import, který může být vyplněn libovolným počtem exportů, můžete použít <xref:System.ComponentModel.Composition.ImportManyAttribute> atribut.
+ Aby SimpleCalculator bylo rozšiřitelné, musí importovat seznam operací. Obyčejný <xref:System.ComponentModel.Composition.ImportAttribute> atribut je vyplněn jedním a pouze jedním <xref:System.ComponentModel.Composition.ExportAttribute>. Pokud je k dispozici více než jeden, modul kompozice vytvoří chybu. Chcete-li vytvořit import, který může být vyplněn libovolným počtem exportů, můžete použít atribut <xref:System.ComponentModel.Composition.ImportManyAttribute>.
 
  Do `MySimpleCalculator` třídy přidejte následující vlastnost Operations:
 
@@ -253,7 +251,7 @@ Public Property operations As IEnumerable(Of Lazy(Of IOperation, IOperationData)
 IEnumerable<Lazy<IOperation, IOperationData>> operations;
 ```
 
- <xref:System.Lazy%602>je typ poskytnutý MEF pro uchování nepřímých odkazů na export. Zde, kromě exportovaných objektů, také získáte *metadata exportu*nebo informace, které popisují exportovaný objekt. Každý <xref:System.Lazy%602> `IOperationData` obsahuje objekt představující skutečnou operaci a objekt, který představuje jeho metadata. `IOperation`
+ <xref:System.Lazy%602> je typ poskytnutý rozhraním MEF pro uchování nepřímých odkazů na export. Zde, kromě exportovaných objektů, také získáte *metadata exportu*nebo informace, které popisují exportovaný objekt. Každý <xref:System.Lazy%602> obsahuje objekt `IOperation`, který představuje skutečnou operaci, a objekt `IOperationData`, který představuje jeho metadata.
 
  Do modulu nebo `SimpleCalculator` oboru názvů přidejte následující jednoduchá rozhraní:
 
@@ -279,7 +277,7 @@ public interface IOperationData
 }
 ```
 
- V tomto případě je metadata pro každou operaci symbol, který představuje tuto operaci, například +,-, * a tak dále. K zpřístupnění operace sčítání přidejte do modulu nebo `SimpleCalculator` oboru názvů následující třídu:
+ V tomto případě je metadata pro každou operaci symbol, který představuje tuto operaci, například +,-, * a tak dále. K zpřístupnění operace sčítání přidejte následující třídu do modulu nebo `SimpleCalculator` oboru názvů:
 
 ```vb
 <Export(GetType(IOperation))>
@@ -305,13 +303,13 @@ class Add: IOperation
 }
 ```
 
- <xref:System.ComponentModel.Composition.ExportAttribute> Atribut funguje jako dříve. <xref:System.ComponentModel.Composition.ExportMetadataAttribute> Atribut připojí metadata v podobě páru název-hodnota k tomuto exportu. I když `IOperation`Třídaimplementuje, třída, která implementuje `IOperationData` , není explicitně definována. `Add` Místo toho je třída implicitně vytvořena pomocí MEF s vlastnostmi na základě názvů poskytnutých metadat. (Toto je jeden z několika způsobů, jak získat přístup k metadatům v MEF.)
+ Atribut <xref:System.ComponentModel.Composition.ExportAttribute> funguje jako dříve. Atribut <xref:System.ComponentModel.Composition.ExportMetadataAttribute> připojí k tomuto exportu metadata ve formě páru název-hodnota. I když třída `Add` implementuje `IOperation`, třída, která implementuje `IOperationData`, není explicitně definována. Místo toho je třída implicitně vytvořena pomocí MEF s vlastnostmi na základě názvů poskytnutých metadat. (Toto je jeden z několika způsobů, jak získat přístup k metadatům v MEF.)
 
- Složení v rozhraní MEF je *rekurzivní*. Explicitně `Program` jste seřadíte objekt, který `ICalculator` importoval typ, který je vypnulý `MySimpleCalculator`, aby byl typu. `MySimpleCalculator`, následně importuje kolekci `IOperation` objektů a tento import bude vyplněn při vytvoření, ve stejnou `Program`dobu jako `MySimpleCalculator` při importu. `Add` Pokud třída deklarovala další import, je nutné ji vyplnit a tak dále. Všechny naimportované nevyplnit výsledky v důsledku chyby složení. (Je však možné deklarovat importy jako volitelné nebo přiřadit výchozí hodnoty.)
+ Složení v rozhraní MEF je *rekurzivní*. Objekt `Program`, který importoval `ICalculator`, který se vypnul jako typ `MySimpleCalculator`, se explicitně skládá. `MySimpleCalculator`pak naimportuje kolekci objektů `IOperation` a tento import bude vyplněn při vytváření `MySimpleCalculator`, a to ve stejnou dobu jako při importu `Program`. Pokud třída `Add` deklarovala další import, je nutné ji vyplnit a tak dále. Všechny naimportované nevyplnit výsledky v důsledku chyby složení. (Je však možné deklarovat importy jako volitelné nebo přiřadit výchozí hodnoty.)
 
 <a name="calculator_logic"></a>
 ## <a name="calculator-logic"></a>Logika kalkulačky
- Spolu s těmito částmi jsou všechny tyto součásti stále logikou kalkulačky. Do `MySimpleCalculator` třídy přidejte následující kód, který `Calculate` implementuje metodu:
+ Spolu s těmito částmi jsou všechny tyto součásti stále logikou kalkulačky. Přidejte následující kód do třídy `MySimpleCalculator` pro implementaci metody `Calculate`:
 
 ```vb
 Public Function Calculate(ByVal input As String) As String Implements ICalculator.Calculate
@@ -370,7 +368,7 @@ public String Calculate(String input)
 }
 ```
 
- Počáteční kroky analyzují vstupní řetězec na levý a pravý operand a znak operátoru. Ve smyčce je zkontrolován každý člen `operations` kolekce. `foreach` Tyto objekty jsou typu <xref:System.Lazy%602>a jejich hodnoty metadat a exportovaný objekt jsou k dispozici <xref:System.Lazy%602.Metadata%2A> s vlastností a <xref:System.Lazy%601.Value%2A> vlastností v uvedeném pořadí. V tomto případě, `Symbol` Pokud je zjištěna shoda vlastnosti `IOperationData` objektu `Operate` , kalkulačka `IOperation` volá metodu objektu a vrátí výsledek.
+ Počáteční kroky analyzují vstupní řetězec na levý a pravý operand a znak operátoru. Ve smyčce `foreach` je zkontrolován každý člen kolekce `operations`. Tyto objekty jsou typu <xref:System.Lazy%602>a jejich hodnoty metadat a exportovaných objektů jsou k dispozici s vlastností <xref:System.Lazy%602.Metadata%2A> a vlastností <xref:System.Lazy%601.Value%2A>. V tomto případě, pokud je vlastnost `Symbol` objektu `IOperationData` zjištěna jako shoda, vyvolá Kalkulačka metodu `Operate` objektu `IOperation` a vrátí výsledek.
 
  K dokončení kalkulačky je také potřeba pomocná metoda, která vrací pozici prvního nenumerického znaku v řetězci. Do `MySimpleCalculator` třídy přidejte následující pomocnou metodu:
 
@@ -394,11 +392,11 @@ private int FindFirstNonDigit(string s)
 }
 ```
 
- Nyní byste měli být schopni zkompilovat a spustit projekt. V Visual Basic nezapomeňte přidat `Public` klíčové slovo do. `Module1` V okně konzoly zadejte operaci sčítání, například "5 + 3", a kalkulačka vrátí výsledky. Jakýkoli jiný operátor má za následek, že operace nebyla nalezena! Zpráva.
+ Nyní byste měli být schopni zkompilovat a spustit projekt. V Visual Basic Ujistěte se, že jste přidali klíčové slovo `Public` do `Module1`. V okně konzoly zadejte operaci sčítání, například "5 + 3", a kalkulačka vrátí výsledky. Jakýkoli jiný operátor má za následek, že operace nebyla nalezena! Zpráva.
 
 <a name="extending_simplecalculator_using_a_new_class"></a>
 ## <a name="extending-simplecalculator-using-a-new-class"></a>Rozšíření SimpleCalculator pomocí nové třídy
- Teď, když Kalkulačka funguje, je přidání nové operace snadné. Přidejte následující třídu do modulu nebo `SimpleCalculator` oboru názvů:
+ Teď, když Kalkulačka funguje, je přidání nové operace snadné. Do modulu nebo `SimpleCalculator` oboru názvů přidejte následující třídu:
 
 ```vb
 <Export(GetType(IOperation))>
@@ -428,13 +426,13 @@ class Subtract : IOperation
 
 <a name="extending_simplecalculator_using_a_new_assembly"></a>
 ## <a name="extending-simplecalculator-using-a-new-assembly"></a>Rozšíření SimpleCalculator pomocí nového sestavení
- Přidávání tříd do zdrojového kódu je dostatečně snadné, ale rozhraní MEF poskytuje možnost podívat se mimo vlastní zdroj aplikace pro části. K tomu je nutné upravit SimpleCalculator pro hledání adresáře a také jeho vlastní sestavení, pro součásti přidáním <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>.
+ Přidávání tříd do zdrojového kódu je dostatečně snadné, ale rozhraní MEF poskytuje možnost podívat se mimo vlastní zdroj aplikace pro části. K tomu je nutné upravit SimpleCalculator pro hledání v adresáři, stejně jako jeho vlastní sestavení, pro části přidáním <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>.
 
- Přidejte nový adresář s názvem `Extensions` do projektu SimpleCalculator. Nezapomeňte ho přidat na úrovni projektu, a ne na úrovni řešení. Pak přidejte nový projekt knihovny tříd do řešení s názvem `ExtendedOperations`. Nový projekt se zkompiluje do samostatného sestavení.
+ Přidejte do projektu SimpleCalculator nový adresář s názvem `Extensions`. Nezapomeňte ho přidat na úrovni projektu, a ne na úrovni řešení. Pak přidejte nový projekt knihovny tříd do řešení s názvem `ExtendedOperations`. Nový projekt se zkompiluje do samostatného sestavení.
 
- Otevřete Návrhář vlastností projektu pro projekt ExtendedOperations a klikněte na kartu **kompilovat** nebo **sestavit** . Změňte **výstupní cestu sestavení** nebo **výstupní cestu** tak, aby odkazovaly na adresář rozšíření v adresáři projektu SimpleCalculator (.. \SimpleCalculator\Extensions\\).
+ Otevřete Návrhář vlastností projektu pro projekt ExtendedOperations a klikněte na kartu **kompilovat** nebo **sestavit** . Změňte **výstupní cestu sestavení** nebo **výstupní cestu** tak, aby odkazovaly na adresář rozšíření v projektu SimpleCalculator. Adresář (.. \SimpleCalculator\Extensions\\).
 
- V Module1. vb nebo program.cs přidejte do `Program` konstruktoru následující řádek:
+ V Module1. vb nebo Program.cs přidejte následující řádek do konstruktoru `Program`:
 
 ```vb
 catalog.Catalogs.Add(New DirectoryCatalog("C:\SimpleCalculator\SimpleCalculator\Extensions"))
@@ -444,9 +442,9 @@ catalog.Catalogs.Add(New DirectoryCatalog("C:\SimpleCalculator\SimpleCalculator\
 catalog.Catalogs.Add(new DirectoryCatalog("C:\\SimpleCalculator\\SimpleCalculator\\Extensions"));
 ```
 
- Nahraďte příklad cesty cestou k adresáři rozšíření. (Tato absolutní cesta je určena pouze pro účely ladění. V produkční aplikaci byste použili relativní cestu.) <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> Teď přidá všechny části, které se nacházejí v jakýchkoli sestaveních v adresáři rozšíření, do kontejneru kompozice.
+ Nahraďte příklad cesty cestou k adresáři rozšíření. (Tato absolutní cesta je určena pouze pro účely ladění. V produkční aplikaci byste použili relativní cestu.) <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> nyní přidá jakékoli části, které se nacházejí v jakýchkoli sestaveních v adresáři rozšíření, do kontejneru kompozice.
 
- V projektu ExtendedOperations přidejte odkazy na SimpleCalculator a System. ComponentModel. kompozici. V souboru třídy ExtendedOperations přidejte `Imports` `using` příkaz nebo pro System. ComponentModel. kompozici. V Visual Basic také přidejte `Imports` příkaz pro SimpleCalculator. Pak přidejte následující třídu do souboru třídy ExtendedOperations:
+ V projektu ExtendedOperations přidejte odkazy na SimpleCalculator a System. ComponentModel. kompozici. V souboru třídy ExtendedOperations přidejte `Imports` nebo příkaz `using` pro System. ComponentModel. kompozici. V Visual Basic také přidejte příkaz `Imports` pro SimpleCalculator. Pak přidejte následující třídu do souboru třídy ExtendedOperations:
 
 ```vb
 <Export(GetType(SimpleCalculator.IOperation))>
@@ -472,7 +470,7 @@ public class Mod : SimpleCalculator.IOperation
 }
 ```
 
- Všimněte si, že aby se kontrakt shodoval, <xref:System.ComponentModel.Composition.ExportAttribute> atribut musí mít stejný typ <xref:System.ComponentModel.Composition.ImportAttribute>jako.
+ Všimněte si, že aby se kontrakt shodoval, musí mít atribut <xref:System.ComponentModel.Composition.ExportAttribute> stejný typ jako <xref:System.ComponentModel.Composition.ImportAttribute>.
 
  Zkompilujte a spusťte projekt. Otestujte nové rozhraní mod (%) podnikatel.
 
@@ -492,4 +490,4 @@ public class Mod : SimpleCalculator.IOperation
 ## <a name="where-do-i-go-now"></a>Kde se mám hned vrátit?
  Úplný kód pro tento příklad si můžete stáhnout v [ukázce SimpleCalculator](https://code.msdn.microsoft.com/windowsdesktop/Simple-Calculator-MEF-1152654e).
 
- Další informace a příklady kódu naleznete v tématu [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). Seznam typů MEF naleznete v <xref:System.ComponentModel.Composition?displayProperty=nameWithType> oboru názvů.
+ Další informace a příklady kódu naleznete v tématu [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). Seznam typů MEF naleznete v oboru názvů <xref:System.ComponentModel.Composition?displayProperty=nameWithType>.

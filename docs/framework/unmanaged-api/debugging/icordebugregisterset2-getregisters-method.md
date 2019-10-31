@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dbc498a8-ba3f-42f2-bdd9-b623c77a1019
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3c1b90390689e709ee131935bd6417fa6b273eb2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8e5583acfe338c185200c0b8e41b7d6e051fa146
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769979"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131354"
 ---
 # <a name="icordebugregisterset2getregisters-method"></a>ICorDebugRegisterSet2::GetRegisters – metoda
-Získá hodnotu každý registr (pro platformu, na kterém právě spouští kód), který je určen podle daného bitové masky.  
+Získá hodnotu každého registru (pro platformu, na které je aktuálně spuštěn kód), který je určen pomocí dané bitové masky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,34 +38,34 @@ HRESULT GetRegisters (
   
 ## <a name="parameters"></a>Parametry  
  `maskCount`  
- [in] Velikost v bajtech, nástroje `mask` pole.  
+ pro Velikost pole `mask` v bajtech  
   
  `mask`  
- [in] Pole bajtů, každý bit odpovídá registru. Pokud bit na hodnotu 1, budou načteny hodnoty odpovídající registru.  
+ pro Pole bajtů, každý bit, který odpovídá registru. Pokud je bit 1, načte se odpovídající hodnota registru.  
   
  `regCount`  
- [in] Počet hodnot registru, který se má načíst.  
+ pro Počet hodnot registru, které mají být načteny.  
   
  `regBuffer`  
- [out] Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu z registru.  
+ mimo Pole objektů `CORDB_REGISTER`, z nichž každý přijímá hodnotu registru.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetRegisters` Metoda vrátí pole hodnot z registrů, která jsou určena pomocí masky. Pole neobsahuje hodnoty registrů, jejichž bitová maska není nastavena. Díky tomu se velikost `regBuffer` pole musí být stejná jako číslo od 1 masce. Pokud hodnota `regCount` je příliš malá pro počet registrů indikován maska hodnoty vyšší číslované registrů se zkrátí ze sady. Pokud `regCount` je příliš velká, nepoužívané `regBuffer` prvky bude bez úprav.  
+ Metoda `GetRegisters` vrací pole hodnot z registrů, které jsou určeny maskou. Pole neobsahuje hodnoty pro registry, jejichž bit maskování není nastaven. Proto musí být velikost pole `regBuffer` rovna počtu 1 v masce. Pokud je hodnota `regCount` příliš malá pro počet registrů, které jsou označeny maskou, hodnoty vyšších očíslovaných registrů se ze sady zkrátí. Pokud je `regCount` příliš velká, nepoužívané prvky `regBuffer` nebudou změněny.  
   
- Pokud není k dispozici registr je indikován maska, vrátí se neurčitá hodnota pro tento registr.  
+ Pokud je nedostupný registr označen maskou, bude pro tento registr vrácena neurčitá hodnota.  
   
- `ICorDebugRegisterSet2::GetRegisters` Metoda je nezbytná pro platformy, které mají více než 64 registrů. IA64 má například 128 registrů pro obecné účely a zaregistruje se 128 s plovoucí desetinnou čárkou, tak budete potřebovat víc než 64 bitů v bitové masce.  
+ Metoda `ICorDebugRegisterSet2::GetRegisters` je nezbytná pro platformy, které mají více než 64 registrů. Například IA64 má 128 registrů pro obecné účely a 128 registrů s plovoucí desetinnou čárkou, takže potřebujete více než 64-bitů v bitové masce.  
   
- Pokud nemáte více než 64 registrů, stejně jako v případě na platformách, například x86, `GetRegisters` metoda ve skutečnosti právě přeloží bajtů v `mask` do bajtového pole `ULONG64` a pak zavolá [icordebugregisterset –:: Getregisters –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregisters-method.md) metoda, která přijímá `ULONG64` masky.  
+ Pokud nemáte více než 64 registrů, stejně jako v případě platforem, jako je například x86, metoda `GetRegisters` ve skutečnosti pouze překládá bajty v poli `mask` bajtů do `ULONG64` a potom zavolá metodu [ICorDebugRegisterSet:: GetRegisters.](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregisters-method.md) , který přebírá `ULONG64` masku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

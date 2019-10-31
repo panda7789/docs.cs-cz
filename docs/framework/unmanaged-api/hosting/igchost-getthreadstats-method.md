@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 826baa9b-9218-4736-a509-7ab193b125a0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 87e318c4f2367e8c66910978f4a9c89f36c95632
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36eeb7ed4f80979ef2edb930e65963a1db0c894f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766519"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134908"
 ---
 # <a name="igchostgetthreadstats-method"></a>IGCHost::GetThreadStats – metoda
-Získá statistiku vlákno uvolňování paměti.  
+Načte statistiku jednotlivých vláken pro uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetThreadStats (
   
 ## <a name="parameters"></a>Parametry  
  `pFiberCookie`  
- [in] Ukazatel na soubor cookie fiber, který určuje vlákna, pro které se mají načíst statistiky.  
+ pro Ukazatel na vláknový soubor cookie, který určuje vlákno, pro které chcete získat statistiku.  
   
  `pStats`  
- [out v] Ukazatel [cor_gc_thread_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) strukturu, která obsahuje statistiku kolekce uvolnění paměti pro zadaný podproces.  
+ [in, out] Ukazatel na strukturu [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) , která obsahuje statistiku uvolňování paměti pro zadané vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlavička:** GCHost. idl, GCHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

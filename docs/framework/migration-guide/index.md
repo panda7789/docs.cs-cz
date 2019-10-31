@@ -1,37 +1,35 @@
 ---
-title: 'Příručka k migraci na rozhraní .NET Framework 4.8, 4.7, 4.6 a 4.5 '
+title: 'Průvodce migrací na .NET Framework 4,8, 4,7, 4,6 a 4,5 '
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 helpviewer_keywords:
 - .NET Framework, migrating applications to
 - migration, .NET Framework
 ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b1cda82125a2d4a6eb3102b01bea639a4f3e3df
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7401d7fed89d18aa0b05e1c95871e4a025705627
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636091"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126306"
 ---
-# <a name="migration-guide-to-the-net-framework-48-47-46-and-45"></a>Příručka k migraci na rozhraní .NET Framework 4.8, 4.7, 4.6 a 4.5
+# <a name="migration-guide-to-the-net-framework-48-47-46-and-45"></a>Průvodce migrací na .NET Framework 4,8, 4,7, 4,6 a 4,5
 
-Pokud jste aplikaci vytvořili pomocí starší verze rozhraní .NET Framework, můžete ho upgradovat obecně na rozhraní .NET Framework 4.5 a jeho verze (4.5.1 a 4.5.2), .NET Framework 4.6 a jeho vydání (4.6.1 a 4.6.2), .NET Framework 4.7 a jeho vydání) 4.7.1 a 4.7.2), nebo rozhraní .NET Framework 4.8 snadno. Otevřete svůj projekt v sadě Visual Studio. Pokud váš projekt byl vytvořen v dřívější verzi sady Visual Studio **kompatibilita projektu** automaticky otevře se dialogové okno. Další informace o upgradu projektu v sadě Visual Studio najdete v tématu [Port, migrace a Upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) a [Visual Studio. 2019 cílení na platformy a Kompatibilita](/visualstudio/releases/2019/compatibility).
+Pokud jste aplikaci vytvořili pomocí starší verze .NET Framework, můžete ji obecně upgradovat na .NET Framework 4,5 a jejich vydání (4.5.1 a 4.5.2), .NET Framework 4,6 a v jejích verzích (4.6.1 a 4.6.2), .NET Framework 4,7 a jejich verze v bodech ( 4.7.1 a 4.7.2) nebo je snadno .NET Framework 4,8. Otevřete projekt v aplikaci Visual Studio. Pokud byl projekt vytvořen v dřívější verzi sady Visual Studio, otevře se dialogové okno **Kompatibilita projektu** automaticky. Další informace o upgradu projektu v aplikaci Visual Studio naleznete v tématu [port, migrace a upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) a [cílení na platformu a kompatibilita platformy Visual Studio 2019](/visualstudio/releases/2019/compatibility).
 
- Nicméně některé změny v rozhraní .NET Framework vyžadují změny kódu. Můžete také využít výhod funkcí, které jsou nové v rozhraní .NET Framework 4.5 a jeho novější vydání, v rozhraní .NET Framework 4.6 a jeho novější vydání, v rozhraní .NET Framework 4.7 a jeho novější vydání nebo v rozhraní .NET Framework 4.8. Provedení těchto typů změn aplikace pro novou verzi rozhraní .NET Framework se obvykle označuje jako *migrace*. Pokud aplikace nemá být přenesena, můžete ji spustit v rozhraní .NET Framework 4.5 nebo novější verze bez opětovné kompilace.
+ Některé změny v .NET Framework však vyžadují změny kódu. Můžete také využít výhody funkcí, které jsou novinkou v .NET Framework 4,5 a jeho vydání, v .NET Framework 4,6 a v jeho vydáních, v .NET Framework 4,7 a v jeho vydaných verzích nebo v .NET Framework 4,8. Provedení těchto typů změn aplikace pro novou verzi .NET Framework se obvykle označuje jako *migrace*. Pokud vaše aplikace nemusí být migrována, můžete ji spustit v .NET Framework 4,5 nebo novější verzi bez jejich opětovné kompilace.
 
-## <a name="migration-resources"></a>Zdroje migrace
+## <a name="migration-resources"></a>Prostředky migrace
 
-Před migrací vaší aplikace z předchozích verzí rozhraní .NET Framework verze 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 nebo 4.8, přečtěte si následující dokumenty:
+Před migrací aplikace z dřívějších verzí .NET Framework na verzi 4,5, 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 nebo 4,8 se podívejte na následující dokumenty:
 
-- Zobrazit [verze a závislosti](versions-and-dependencies.md) pochopit verzi CLR v rámci každé verze rozhraní .NET Framework a kde naleznete pokyny pro úspěšné cílení na své aplikace.
+- Podívejte se na [verze a závislosti](versions-and-dependencies.md) , abyste pochopili verzi CLR založenou na jednotlivých verzích .NET Framework a zkontrolovali pokyny pro úspěšné cílení na vaše aplikace.
 
-- Kontrola [kompatibilita aplikací](application-compatibility.md) najdete informace o modulu runtime a změně cíle změn, které může mít vliv na vaše aplikace a způsob jejich zpracování.
+- Přečtěte si informace o [kompatibilitě aplikací](application-compatibility.md) a zjistěte, jak se týkají prostředí runtime a změny cíle, které by mohly ovlivnit vaši aplikaci a jak je zpracovat.
 
-- Kontrola [What's Obsolete in knihovny tříd](../whats-new/whats-obsolete.md) určit všechny typy nebo členy v kódu, které jsou již zastaralé a doporučené alternativy.
+- Přečtěte si, [co je zastaralé v knihovně tříd](../whats-new/whats-obsolete.md) a určete všechny typy nebo členy v kódu, které byly vytvořeny jako zastaralé, a Doporučené alternativy.
 
-- Zobrazit [novinky](../whats-new/index.md) popisy nových funkcí, které chcete přidat do vaší aplikace.
+- Popis nových funkcí, které můžete chtít přidat do vaší aplikace, najdete v tématu [novinky](../whats-new/index.md) .
 
 ## <a name="see-also"></a>Viz také:
 
@@ -39,9 +37,9 @@ Před migrací vaší aplikace z předchozích verzí rozhraní .NET Framework v
 - [Migrace z rozhraní .NET Framework 1.1](migrating-from-the-net-framework-1-1.md)
 - [Kompatibilita verzí](version-compatibility.md)
 - [Verze a závislosti](versions-and-dependencies.md)
-- [Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novější verze](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
 - [Co je nového](../whats-new/index.md)
 - [Zastaralé položky v knihovně tříd](../whats-new/whats-obsolete.md)
-- [Verze rozhraní .NET framework a informace o sestavení](https://go.microsoft.com/fwlink/?LinkId=201701)
-- [Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)
+- [Informace o verzi .NET Framework a sestavení](https://go.microsoft.com/fwlink/?LinkId=201701)
+- [Zásady životního cyklu podpory pro Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)
 - [Problémy s migrací rozhraní .NET Framework 4](net-framework-4-migration-issues.md)

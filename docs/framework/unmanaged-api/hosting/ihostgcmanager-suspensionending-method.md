@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8849a1db-17f0-44b7-880a-bd36d431eb91
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9f65f924b872195000f73bf29b267d1fc30b74f1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6ef04799c0062c40f1671cbe6d897a148e1b93bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937734"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130475"
 ---
 # <a name="ihostgcmanagersuspensionending-method"></a>IHostGCManager::SuspensionEnding – metoda
 Upozorňuje hostitele, že modul CLR (Common Language Runtime) obnovuje spouštění úloh na vláknech, které byly pozastaveny pro uvolňování paměti.  
@@ -43,7 +41,7 @@ HRESULT SuspensionEnding (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SuspensionEnding`úspěšně vráceno.|  
+|S_OK|`SuspensionEnding` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -51,17 +49,17 @@ HRESULT SuspensionEnding (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní CLR volá `SuspensionEnding` po provedení uvolňování paměti, aby informovalo hostitele, že vlákno pokračuje v provádění.  
+ Modul CLR volá `SuspensionEnding` poté, co provede uvolňování paměti, aby informoval hostitele, že vlákno pokračuje v provádění.  
   
 > [!IMPORTANT]
 > Neměňte plán vlákna, ze kterého byla volána metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

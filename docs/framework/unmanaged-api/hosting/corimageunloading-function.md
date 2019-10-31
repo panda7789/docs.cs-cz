@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: b4367214-6dac-4280-aa11-fd487ff30bc4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b488b6a887b0c66d8c17f8ea78f48f7d2ea31011
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 30e3a88140c8a438001e8428df4c5ee879c83376
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758406"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136912"
 ---
-# <a name="corimageunloading-function"></a>_CorImageUnloading – funkce
-Upozorní zavaděč na bitové kopie spravovaného modulu jsou uvolněna.  
+# <a name="_corimageunloading-function"></a>_CorImageUnloading – funkce
+Upozorní zavaděče na Nenačtené bitové kopie spravovaného modulu.  
   
- Tato funkce není implementována. Pokud je volána, vrátí E_NOTIMPL.  
+ Tato funkce není implementována. Při volání Vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +36,16 @@ STDAPI (VOID) _CorImageUnloading(
   
 ## <a name="parameters"></a>Parametry  
  `ImageBase`  
- [in] Ukazatel na počáteční umístění image uvolnit.  
+ pro Ukazatel na počáteční umístění obrázku, který má být uvolněn.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

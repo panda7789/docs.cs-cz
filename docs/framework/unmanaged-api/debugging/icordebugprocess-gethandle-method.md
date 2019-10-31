@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: e7d3ecf5-09d2-4d94-abb6-ff3483deebb6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 56f1dd892429724866182248b0c0413a7d2437cd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4061580d59b0cf2a6e6e481d5242005e9452caf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766070"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128876"
 ---
 # <a name="icordebugprocessgethandle-method"></a>ICorDebugProcess::GetHandle – metoda
 Získá popisovač procesu.  
@@ -35,16 +33,16 @@ HRESULT GetHandle([out] HPROCESS *phProcessHandle);
   
 ## <a name="parameters"></a>Parametry  
  `phProcessHandle`  
- [out] Ukazatel `HPROCESS` popisovač, který je k procesu.  
+ mimo Ukazatel na `HPROCESS`, který je popisovačem procesu.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlastníkem načíst popisovač je rozhraní pro ladění. Ladicí program by měl duplicitní popisovač před jeho použitím.  
+ Načtený popisovač je vlastněn rozhraním pro ladění. Ladicí program by měl před použitím Duplikovat popisovač.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

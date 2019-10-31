@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72dd76ba-239e-45ac-9ded-318fb07d6c6d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 404cd5513a1cbd353faed41030a80ec2abef235f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eaba6b2166a82cfe825ffb98db515e24d4656462
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774208"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138234"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction – výčet
-Popisuje akce zásad hostitele můžete nastavit pro operace popsal [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a selhání popsal [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
+Popisuje akce zásad, které může hostitel nastavit pro operace popsané v [EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a chyby popsané v [EClrFailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,28 +45,28 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eAbortThread`|Určuje, že modul CLR (CLR) by měl přerušit vlákno bez výpadku. Bezproblémové přerušení zahrnuje pokusy o spuštění všech `finally` blokuje všechny `catch` bloky týkající se přeruší vlákna a finalizační metody.|  
-|`eDisableRuntime`|Určuje, že modul CLR by měla zadat zakázaném stavu. Žádné další spravovaného kódu mohou být provedeny v procesu ovlivněná a jsou blokovaná vlákna vstupují do platformy CLR.|  
-|`eExitProcess`|Určuje, že modul CLR pokusit o řádné ukončení procesu, včetně spuštění finalizační metody a vyčištění a operace protokolování.|  
-|`eFastExitProcess`|Určuje, že modul CLR by měla opustí proces okamžitě, bez spuštění finalizační metody nebo vyčištění a operace protokolování. Nicméně je oznámení odeslané ladicímu programu.|  
-|`eNoAction`|Určuje, že by měla být provedena žádná akce.|  
-|`eRudeAbortThread`|Určuje, že modul CLR by měl provádět přerušení článku neslušní vlákna. Pouze ty `catch` a `finally` bloky označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute> provádějí.|  
-|`eRudeExitProcess`|Určuje, že modul CLR má ukončit proces bez spuštění finalizační metody nebo protokolování operations.|  
-|`eRudeUnloadAppDomain`|Určuje, že modul CLR by měl provádět článku neslušní uvolnění <xref:System.AppDomain>. Pouze finalizační metody označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute> provádějí. Podobně platí, všechna vlákna s tímto <xref:System.AppDomain> v jejich zásobníku přijímat `ThreadAbortException`, ale jenom na ty `catch` a `finally` bloky označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute> provádějí.|  
-|`eThrowException`|Určuje, že by měl vyvolána výjimka pro podmínku, třeba na více instancí z důvodu nedostatku paměti, přetečení vyrovnávací paměti a tak dále.|  
-|`eUnloadAppDomain`|Určuje, že <xref:System.AppDomain> by měla být uvolněna. Modul CLR se pokusí o spuštění finalizační metody.|  
+|`eAbortThread`|Určuje, že modul CLR (Common Language Runtime) by měl plynule přerušit vlákno. Bezproblémové přerušení zahrnuje pokusy o spuštění všech bloků `finally`, všechny `catch` bloky související s přerušením vlákna a finalizační metody.|  
+|`eDisableRuntime`|Určuje, že CLR by měl vstoupit do zakázaného stavu. V ovlivněném procesu nelze provádět žádné další spravované kódy a vlákna jsou blokována při zadávání CLR.|  
+|`eExitProcess`|Určuje, že se má modul CLR pokusit o řádné ukončení procesu, včetně spuštění finalizační metody a provádění operací vyčištění a protokolování.|  
+|`eFastExitProcess`|Určuje, že modul CLR má okamžitě ukončit proces, aniž by musel spouštět finalizační metody nebo provádět operace vyčištění a protokolování. Oznámení je však odesláno do ladicího programu.|  
+|`eNoAction`|Určuje, že by neměla být provedena žádná akce.|  
+|`eRudeAbortThread`|Určuje, že modul CLR má provést přerušení hrubé vlákna. Jsou spuštěny pouze ty `catch` a `finally` bloky označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute>.|  
+|`eRudeExitProcess`|Určuje, že modul CLR má ukončit proces bez spuštění finalizační metody nebo operací protokolování.|  
+|`eRudeUnloadAppDomain`|Určuje, že modul CLR má provést hrubé uvolnění <xref:System.AppDomain>. Jsou spuštěny pouze finalizační metody označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute>. Podobně všechny podprocesy s tímto <xref:System.AppDomain> v zásobníku obdrží `ThreadAbortException`, ale spustí se pouze ty `catch` a `finally` bloky označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute>.|  
+|`eThrowException`|Určuje, že by měla být vyvolána výjimka, která je vhodná pro podmínku, jako je například nedostatek paměti, přetečení vyrovnávací paměti a tak dále.|  
+|`eUnloadAppDomain`|Určuje, že se má <xref:System.AppDomain> uvolnit. Modul CLR se pokusí spustit finalizační metody.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel nastaví akce zásad voláním metod [iclrpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) rozhraní. Informace o článku neslušní a bezproblémové přeruší, najdete v článku [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) výčtu.  
+ Hostitel nastavuje akce zásad voláním metod rozhraní [ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) . Informace o hrubé a bezproblémovém přerušení najdete v tématu výčet [EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

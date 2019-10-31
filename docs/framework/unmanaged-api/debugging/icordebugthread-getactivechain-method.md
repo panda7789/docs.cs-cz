@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f50de1f7-40ef-4949-b542-1d9a61f7bfef
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 59328c8b7e86694610de20ade72a98a4280b439d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 99a617ef21ee3c3319b1ebe7d3ab8367659b6ef8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762628"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133546"
 ---
 # <a name="icordebugthreadgetactivechain-method"></a>ICorDebugThread::GetActiveChain – metoda
-Získá ukazatel rozhraní na tomto objektu icordebugthread – aktivní (nejnovější) řetěz zásobníku.  
+Získá ukazatel rozhraní na aktivní (nejnovější) řetěz zásobníku na tomto objektu ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetActiveChain (
   
 ## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresa icordebugchain – objekt, který představuje řetěz zásobníku.  
+ mimo Ukazatel na adresu objektu ICorDebugChain, který představuje řetěz zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- `ppChain` Parametr má hodnotu null, pokud žádné řetěz zásobníku není aktuálně aktivní.  
+ Parametr `ppChain` má hodnotu null, pokud není žádný řetěz zásobníku aktuálně aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

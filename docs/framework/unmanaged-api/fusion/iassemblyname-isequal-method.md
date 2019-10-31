@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6dfc220f-d0d4-45b3-bfce-5829f817766f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 926bdcee3a3c3974c8546f3a6dfe98f0b62c93c8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 23bc251053dd27a7c5accb48ab4759ecdb79fe09
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796567"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134309"
 ---
 # <a name="iassemblynameisequal-method"></a>IAssemblyName::IsEqual – metoda
-Určuje `IAssemblyName`, zda je zadaný objekt [IAssemblyName](iassemblyname-interface.md) na základě zadaných příznaků porovnávání stejný.  
+Určuje, zda je zadaný objekt [IAssemblyName](iassemblyname-interface.md) roven tomuto `IAssemblyName`na základě zadaných příznaků porovnávání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +36,15 @@ HRESULT IsEqual (
   
 ## <a name="parameters"></a>Parametry  
  `pName`  
- pro Objekt, na který se má `IAssemblyName`porovnat. `IAssemblyName`  
+ pro Objekt `IAssemblyName`, pro který chcete porovnat tento `IAssemblyName`.  
   
  `dwCmpFlags`  
  pro Bitová kombinace hodnot [ASM_CMP_FLAGS](asm-cmp-flags-enumeration.md) , které ovlivňují porovnání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze rozhraní .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

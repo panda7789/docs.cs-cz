@@ -7,51 +7,49 @@ helpviewer_keywords:
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: efbca8177c74fdee635b52294944df23e5aca24f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ad36789579b95e0129e402765194b9f5e45a4cc1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638781"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127507"
 ---
 # <a name="threads-and-threading"></a>Vlákna a dělení na vlákna
 
-Multithreading můžete zvýšit rychlost reakce aplikace a, pokud je aplikace spuštěná v systému s více procesory nebo s více jádry, zvýšit jeho propustnost.
+Multithreading umožňuje zvýšit rychlost odezvy vaší aplikace, a pokud vaše aplikace běží na víceprocesorovém nebo multi-core systému, zvyšte její propustnost.
 
 ## <a name="processes-and-threads"></a>Procesy a vlákna
 
-A *procesu* je prováděnému programu. Operační systém používá procesy pro oddělení aplikací, které se spouští. A *vlákno* je základní jednotkou, ke kterému operační systém přiděluje čas procesoru. Každé vlákno má [Priorita plánování](scheduling-threads.md) a udržuje sadu struktury systému použije k uložení kontext vlákna při pozastavení provádění vlákna. Kontext vlákna obsahuje všechny informace, které vlákno je potřeba bez problémů pokračovat v provádění, včetně sady registrech procesoru a zásobníku vlákna. V rámci procesu můžete spustit více vláken. Všechna vlákna procesu sdílet jeho virtuální adresní prostor. Vlákno můžete provést kteroukoli část kódu programu, včetně částí aktuálně prováděné jiné vlákno.
+*Proces* je spuštěný program. Operační systém používá procesy k oddělení spuštěných aplikací. *Vlákno* je základní jednotka, do které operační systém přiděluje čas procesoru. Každé vlákno má [prioritu plánování](scheduling-threads.md) a udržuje sadu struktur, kterou systém používá k uložení kontextu vlákna, když je spuštění vlákna pozastaveno. Kontext vlákna zahrnuje všechny informace, které vlákno potřebuje k bezproblémovému pokračování v provádění, včetně sady vláken a zásobníků procesoru. V kontextu procesu lze spustit více vláken. Všechna vlákna v procesu sdílejí svůj virtuální adresní prostor. Vlákno může spouštět libovolnou část kódu programu, včetně částí, které jsou aktuálně spouštěny jiným vláknem.
 
 > [!NOTE]
-> Rozhraní .NET Framework poskytuje způsob, jak izolovat aplikace v rámci procesu s použitím *aplikačních doménách*. (Aplikační domény nejsou k dispozici v rozhraní .NET Core.) Další informace najdete v tématu [domény aplikace a vlákna](../../framework/app-domains/application-domains.md#application-domains-and-threads) část [aplikačních doménách](../../framework/app-domains/application-domains.md) článku.
+> .NET Framework poskytuje způsob, jak izolovat aplikace v rámci procesu s použitím *domén aplikací*. (Domény aplikací nejsou k dispozici v rozhraní .NET Core.) Další informace naleznete v části [domény aplikace a vlákna](../../framework/app-domains/application-domains.md#application-domains-and-threads) v článku [domény aplikace](../../framework/app-domains/application-domains.md) .
 
-Ve výchozím nastavení, spuštění aplikace .NET s jedním vláknem, často označované jako *primární* vlákna. To však můžete vytvořit další vlákna ke spouštění kódu vytvořeného paralelně nebo současně primárnímu vláknu. Tato vlákna se často nazývají *pracovního procesu* vlákna.
+Ve výchozím nastavení je program .NET spuštěn s jedním vláknem, často se nazývá *primární* vlákno. Může však vytvořit další vlákna pro souběžné a souběžné spouštění kódu s primárním vláknem. Tato vlákna se často nazývají *pracovní* vlákna.
 
-## <a name="when-to-use-multiple-threads"></a>Použití více vláken
+## <a name="when-to-use-multiple-threads"></a>Kdy použít více vláken
 
-Zvýšit rychlost reakce aplikace a chcete využít výhod systému s více procesory nebo s více jádry chcete zvýšit propustnost aplikace, používejte více vláken.
+Můžete použít více vláken ke zvýšení rychlosti odezvy vaší aplikace a využít více procesorů nebo vícejádrových systémů ke zvýšení propustnosti aplikace.
 
-Vezměte v úvahu desktopová aplikace, ve kterém primární vlákno je zodpovědný za prvky uživatelského rozhraní a reaguje na akce uživatele. Použití pracovních vláken provádět časově náročná operace, které, v opačném případě by zabírat primární vlákno a ujistěte se, uživatelské rozhraní přestane reagovat. Také můžete použít jedno vyhrazené vlákno pro komunikace sítě nebo zařízení rychleji reagující na příchozí zprávy nebo události.
+Vezměte v úvahu desktopovou aplikaci, ve které je primární vlákno zodpovědné za prvky uživatelského rozhraní a reaguje na akce uživatele. Použijte pracovní vlákna k provádění časově náročných operací, které by jinak mohly zabírat primární vlákno a předávat uživatelské rozhraní bez odezvy. Můžete také použít vyhrazené vlákno pro komunikaci sítě nebo zařízení, aby bylo možné lépe reagovat na příchozí zprávy nebo události.
 
-Pokud váš program provádí operace, které lze provést paralelně, celková doba spuštění lze snížit pomocí provádí tyto operace v oddělených vláknech a spuštění programu v systému s více procesory nebo s více jádry. V systému, použití více vláken může zvýšit propustnost spolu s vyšší rychlost odezvy.
+Pokud program provádí operace, které lze provést paralelně, může být celková doba spuštění snížena provedením těchto operací v samostatných vláknech a spuštění programu na víceprocesorovém nebo multi-core systému. V takovém systému může použití multithreadingu zvýšit propustnost spolu se zvýšenou odezvou.
 
 ## <a name="how-to-use-multithreading-in-net"></a>Jak používat multithreading v .NET
 
-Od verze rozhraní .NET Framework 4, je doporučeným způsobem, jak používat multithreading používat [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md) a [paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md). Další informace najdete v tématu [paralelní programování](../parallel-programming/index.md).
+Počínaje .NET Framework 4 je doporučený způsob, jak využít multithreading, je použít [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md) a [Paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md). Další informace najdete v tématu [paralelní programování](../parallel-programming/index.md).
 
-TPL a PLINQ využívají <xref:System.Threading.ThreadPool> vlákna. <xref:System.Threading.ThreadPool?displayProperty=nameWithType> Třída poskytuje aplikace .NET pomocí fondu pracovních vláken. Můžete použít také vláken fondu vláken. Další informace najdete v tématu [spravovaný fond vláken](the-managed-thread-pool.md).
+TPL i PLINQ spoléhají na <xref:System.Threading.ThreadPool> vlákny. Třída <xref:System.Threading.ThreadPool?displayProperty=nameWithType> poskytuje aplikaci .NET s fondem pracovních vláken. Můžete také použít vlákna fondu vláken. Další informace najdete v tématu [spravovaný fond vláken](the-managed-thread-pool.md).
 
-V poslední, můžete použít <xref:System.Threading.Thread?displayProperty=nameWithType> třídu, která představuje spravované vlákno. Další informace najdete v tématu [použití vláken a dělení na vlákna](using-threads-and-threading.md).
+V posledních, můžete použít třídu <xref:System.Threading.Thread?displayProperty=nameWithType>, která představuje spravované vlákno. Další informace najdete v tématu [použití vláken a vláken](using-threads-and-threading.md).
 
-Více vláken může být nutné pro přístup ke sdíleným prostředkům. Mějte nepoškozeným stavu prostředku a nedošlo ke konfliktům časování, musíte synchronizovat vlákno přístup k němu. Můžete také chtít koordinovat interakce více vláken. .NET poskytuje celou řadu typů, které slouží k synchronizaci přístupu ke sdíleným prostředkům nebo koordinovat interakce vlákna. Další informace najdete v tématu [přehled primitiv synchronizace](overview-of-synchronization-primitives.md).
+Přístup ke sdílenému prostředku může vyžadovat více vláken. Aby byl prostředek v nepoškozeném stavu a nedocházelo ke konfliktům časování, musíte k němu synchronizovat přístup k vláknu. Také může být vhodné koordinovat interakci více vláken. Rozhraní .NET poskytuje rozsah typů, které můžete použít k synchronizaci přístupu ke sdílenému prostředku nebo k interakci s vlákny pro koordinaci. Další informace najdete v tématu [Přehled primitiv synchronizace](overview-of-synchronization-primitives.md).
 
-Zpracování výjimek ve vláknech. Neošetřené výjimky ve vláknech obecně ukončit proces. Další informace najdete v tématu [výjimky ve spravovaných vláknech](exceptions-in-managed-threads.md).
+Zpracovává výjimky v vláknech. Neošetřené výjimky v vláknech obvykle ukončí proces. Další informace naleznete v tématu [výjimky ve spravovaných vláknech](exceptions-in-managed-threads.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s vlákny funkce a objekty](threading-objects-and-features.md)
-- [Dělení na spravovaná vlákna osvědčené postupy](managed-threading-best-practices.md)
-- [Paralelní zpracování, souběžnost a asynchronní programování v rozhraní .NET](../parallel-processing-and-concurrency.md)
-- [Informace o procesech a vláknech](/windows/desktop/procthread/about-processes-and-threads)
+- [Dělení objektů a funkcí](threading-objects-and-features.md)
+- [Osvědčené postupy spravovaného vlákna](managed-threading-best-practices.md)
+- [Paralelní zpracování, souběžnost a asynchronní programování v .NET](../parallel-processing-and-concurrency.md)
+- [O procesech a vláknech](/windows/desktop/procthread/about-processes-and-threads)

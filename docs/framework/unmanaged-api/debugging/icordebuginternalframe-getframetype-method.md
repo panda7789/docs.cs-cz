@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: da278a29-dc2e-4bf7-96ce-801bdc4d7025
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2a5461cc6a78347cdbe0d0b13f8111cb24c11006
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b7a33fd6e2178e0e9188b81f516b231702fb6460
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760056"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122718"
 ---
 # <a name="icordebuginternalframegetframetype-method"></a>ICorDebugInternalFrame::GetFrameType – metoda
-Získá typ této vnitřní rámec.  
+Získá typ tohoto interního rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetFrameType (
   
 ## <a name="parameters"></a>Parametry  
  `pType`  
- [out] Ukazatel na hodnotu cordebuginternalframetype – výčet, který označuje typ vnitřní rámec představovaného tímto rozhraním `ICorDebugInternalFrame` objektu.  
+ mimo Ukazatel na hodnotu výčtu CorDebugInternalFrameType –, která určuje typ vnitřního rámce reprezentovaného tímto objektem `ICorDebugInternalFrame`.  
   
 ## <a name="remarks"></a>Poznámky  
- Typ vnitřní rámec již nikdy nebude STUBFRAME_NONE. Ladicí programy by měly řádně ignorovat nerozpoznaný snímek vnitřní typy.  
+ Interní typ rámce nikdy nebude STUBFRAME_NONE. Ladicí programy by měly korektně ignorovat nerozpoznané typy vnitřních rámců.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

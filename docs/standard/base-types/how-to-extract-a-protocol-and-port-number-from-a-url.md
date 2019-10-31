@@ -13,20 +13,18 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: ab7f62b3-6d2c-4efb-8ac6-28600df5fd5c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a08e97b02e2f60422132e97e2f3f7d4d2d5b8ec4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2704e3fb5ceb68609a475d52e11030177ad760b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860968"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138724"
 ---
 # <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a>Postupy: Extrahování protokolu a čísla portu z adresy URL
 Následující příklad extrahuje protokol a číslo portu z adresy URL.  
   
 ## <a name="example"></a>Příklad  
- V příkladu se používá <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda vrátí protokolu za nímž následuje dvojtečka, za nímž následuje číslo portu.  
+ V příkladu se pomocí metody <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> vrátí protokol následovaný dvojtečkou následovaným číslem portu.  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/Example.cs#1)]
  [!code-vb[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/Example.vb#1)]  
@@ -35,20 +33,20 @@ Následující příklad extrahuje protokol a číslo portu z adresy URL.
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`^`|Zahájí porovnávání na začátku řetězce.|  
-|`(?<proto>\w+)`|Porovná jeden nebo více znaků slova. Pojmenovat tuto skupinu `proto`.|  
-|`://`|Porovná dvojtečku následovanou dvěma lomítky.|  
-|`[^/]+?`|Porovná jeden nebo více výskytů (ale nejmenším) jakéhokoliv znaku jiného než lomítko.|  
-|`(?<port>:\d+)?`|Porovná žádný nebo jeden výskyt dvojtečku následovanou jeden nebo více znaků číslice. Pojmenovat tuto skupinu `port`.|  
-|`/`|Porovná znak lomítko.|  
+|`^`|Zahajte shodu na začátku řetězce.|  
+|`(?<proto>\w+)`|Porovná jeden nebo více znaků slova. Pojmenujte tuto skupinu `proto`.|  
+|`://`|Porovnává dvojtečku následovanou dvěma lomítky.|  
+|`[^/]+?`|Porovnává jeden nebo více výskytů (ale s co nejmenším možným) libovolného znaku jiného než znak lomítka.|  
+|`(?<port>:\d+)?`|Porovná žádný nebo jeden výskyt dvojtečky následovaný jedním nebo více znaky číslice. Pojmenujte tuto skupinu `port`.|  
+|`/`|Odpovídá znaku lomítka.|  
   
- <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> Metoda rozšiřuje `${proto}${port}` pořadí nahrazení, který zřetězí hodnoty ze dvou pojmenované skupiny zachycené ve vzoru regulárního výrazu. Je vhodné alternativou k explicitnímu zřetězení řetězců získaných z objektu kolekce vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost.  
+ Metoda <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> rozšíří sekvenci nahrazení `${proto}${port}`, která zřetězí hodnotu dvou pojmenovaných skupin zachycených ve vzorku regulárního výrazu. Je vhodná alternativa k explicitnímu zřetězení řetězců načtených z objektu kolekce vráceného vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>.  
   
- V příkladu se používá <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metodu se dvěma náhrady `${proto}` a `${port}`, aby zahrnoval zachycené skupiny ve výstupním řetězci. Zachycené skupiny můžete načíst z ke shodě <xref:System.Text.RegularExpressions.GroupCollection> objekt místo toho, jak ukazuje následující kód.  
+ V příkladu se používá metoda <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> se dvěma náhradami, `${proto}` a `${port}`, aby se do výstupního řetězce zahrnuly zachycené skupiny. Zachycené skupiny lze načíst z objektu <xref:System.Text.RegularExpressions.GroupCollection> shody, jak ukazuje následující kód.  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/example2.cs#2)]
  [!code-vb[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/example2.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)

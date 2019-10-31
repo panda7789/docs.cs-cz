@@ -9,18 +9,16 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d54f06c1fc774a2e73b3b99a7d5bb24dd8baf3f
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: c2f2484f37c0e99f45b3f10951540c2bb3a4cb8d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835266"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134178"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: zápis jednoduché smyčky Parallel. ForEach
 
-Tento příklad ukazuje, jak použít smyčku <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> pro povolení datové paralelismuy prostřednictvím libovolného zdroje dat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>.
+Tento příklad ukazuje, jak použít smyčku <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> k povolení datových paralelismu přes libovolný <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat.
 
 > [!NOTE]
 > Tato dokumentace používá lambda výrazy k definování delegátů v PLINQ. Pokud nejste obeznámeni s lambda výrazy v C# nebo Visual Basic, přečtěte si téma [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
@@ -32,16 +30,16 @@ V tomto příkladu se předpokládá, že máte ve složce *C:\Users\Public\Pict
 [!code-csharp[TPL_Parallel#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/simpleforeach.cs#03)]
 [!code-vb[TPL_Parallel#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/simpleforeach.vb#03)]
 
-Smyčka <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> funguje jako smyčka <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Smyčka rozdělí zdrojovou kolekci a naplánuje práci na více vláknech na základě prostředí systému. Čím více procesorů v systému, tím rychleji se spustí paralelní metoda. U některých zdrojových kolekcí může být sekvenční smyčka rychlejší v závislosti na velikosti zdroje a druhu práce, kterou smyčka provádí. Další informace o výkonu najdete v tématu [potenciální nástrah v datech a paralelismuch Tasks](potential-pitfalls-in-data-and-task-parallelism.md).
+<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>ová smyčka funguje jako smyčka <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Smyčka rozdělí zdrojovou kolekci a naplánuje práci na více vláknech na základě prostředí systému. Čím více procesorů v systému, tím rychleji se spustí paralelní metoda. U některých zdrojových kolekcí může být sekvenční smyčka rychlejší v závislosti na velikosti zdroje a druhu práce, kterou smyčka provádí. Další informace o výkonu najdete v tématu [potenciální nástrah v datech a paralelismuch Tasks](potential-pitfalls-in-data-and-task-parallelism.md).
 
 Další informace o paralelních smyčkách naleznete v tématu [How to: Write a Simple Parallel. for Loop](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md).
 
-Chcete-li použít <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> s neobecnou kolekcí, můžete použít metodu rozšíření <xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType> pro převod kolekce na obecnou kolekci, jak je znázorněno v následujícím příkladu:
+Chcete-li použít <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> s neobecnou kolekcí, můžete použít metodu rozšíření <xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType> k převedení kolekce do obecné kolekce, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[TPL_Parallel#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/nongeneric.cs#07)]
 [!code-vb[TPL_Parallel#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/nongeneric.vb#07)]
 
-K paralelizovat zpracování datových zdrojů <xref:System.Collections.Generic.IEnumerable%601> můžete také použít Paralelní LINQ (PLINQ). PLINQ umožňuje použít syntax deklarativního dotazu k vyjádření chování smyčky. Další informace naleznete v tématu [PARALLEL LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).
+Můžete také použít Paralelní LINQ (PLINQ) k paralelizovat zpracování zdrojů dat <xref:System.Collections.Generic.IEnumerable%601>. PLINQ umožňuje použít syntax deklarativního dotazu k vyjádření chování smyčky. Další informace naleznete v tématu [PARALLEL LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).
 
 ## <a name="compile-and-run-the-code"></a>Zkompilovat a spustit kód
 
@@ -51,7 +49,7 @@ V aplikaci Visual Studio jsou k dispozici C# šablony pro Visual Basic a konzolo
 
 Z příkazového řádku můžete použít rozhraní .NET Core a jeho nástroje CLI (například `dotnet new console` nebo `dotnet new console -lang vb`), nebo můžete vytvořit soubor a použít kompilátor příkazového řádku pro aplikaci .NET Framework.
 
-V případě projektu .NET Core musíte odkazovat na balíček NuGet **System. Drawing. Common** . V aplikaci Visual Studio použijte Správce balíčků NuGet k instalaci balíčku. Alternativně můžete do balíčku přidat odkaz na soubor @no__t -0. csproj nebo @no__t -1. vbproj:
+V případě projektu .NET Core musíte odkazovat na balíček NuGet **System. Drawing. Common** . V aplikaci Visual Studio použijte Správce balíčků NuGet k instalaci balíčku. Alternativně můžete do souboru \*. csproj nebo \*. vbproj přidat odkaz na balíček:
  
 ```xml
 <ItemGroup>

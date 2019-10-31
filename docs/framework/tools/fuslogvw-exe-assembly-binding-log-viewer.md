@@ -9,18 +9,16 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6077acab533ecb755ae42b7c4359a6c77ff33449
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2f0018dca6e5add2c5bc531103a4078307a8c8c6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044684"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129851"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 
-Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul CLR (Common Language Runtime) při hledání sestavení obvykle zobrazuje <xref:System.TypeLoadException> ve vaší aplikaci.
+Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul CLR (Common Language Runtime), který se nedaří najít sestavení, se obvykle zobrazuje jako <xref:System.TypeLoadException> ve vaší aplikaci.
 
 > [!IMPORTANT]
 > Nástroj fuslogvw.exe je nutné spustit s oprávněními správce.
@@ -42,7 +40,7 @@ Prohlížeč zobrazí záznam pro každou nezdařenou vazbu sestavení. Pro kaž
 2. Pokud chcete zobrazit chyby vazeb ve vlastním adresáři, který určíte, vyberte **vlastní** přepínač. Je nutné zadat vlastní umístění, kam má modul runtime ukládat protokoly, nastavením umístění vlastního protokolu v dialogovém okně **nastavení protokolu** na platný název adresáře. Tento adresář by měl být prázdný a měl by obsahovat pouze soubory, které generuje modul runtime. Pokud obsahuje spustitelný soubor, který generuje chybu do protokolu, tato chyba nebude protokolována, protože se nástroj pokusí vytvořit adresář se stejným názvem jako tento spustitelný soubor. Kromě toho se nezdaří pokus o spuštění spustitelného souboru z umístění protokolu.
 
     > [!NOTE]
-    > Výchozí umístění vazby je vhodnější než vlastní umístění vazby. Modul runtime ukládá výchozí umístění vazby do mezipaměti rozhraní wininet, a proto vazbu automaticky odstraní. Pokud určíte vlastní umístění vazby, zodpovídáte za její odstranění.
+    > Výchozí umístění vazby je vhodnější než vlastní umístění vazby. Modul runtime ukládá výchozí umístění vazby v mezipaměti WinInet a proto ho automaticky vyčistí. Pokud zadáte vlastní umístění vazby, zodpovídáte za jeho vyčištění.
 
 ### <a name="to-view-details-about-a-specific-failure"></a>Zobrazení podrobností o konkrétní chybě
 
@@ -209,7 +207,7 @@ Pomocí dialogového okna **nastavení protokolu** můžete provést následují
   Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.
 
 > [!IMPORTANT]
-> Když je sestavení načteno jako doménově neutrální, například nastavením <xref:System.AppDomainSetup.LoaderOptimization%2A> vlastnosti na <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> nebo <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, zapnutí protokolování může v některých případech způsobit nevracení paměti. K tomu může dojít, pokud je položka protokolu vytvořena při načtení doménově neutrálního modulu do domény aplikace a později, když je doména aplikace uvolněna. Položka protokolu nemusí být uvolněna až do ukončení procesu. Některé ladicí programy automaticky zapínají protokolování.
+> Když je sestavení načteno jako doménově neutrální, například nastavením vlastnosti <xref:System.AppDomainSetup.LoaderOptimization%2A> na <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> nebo <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, zapnutí protokolování může v některých případech způsobit nevracení paměti. K tomu může dojít, pokud je položka protokolu vytvořena při načtení doménově neutrálního modulu do domény aplikace a později, když je doména aplikace uvolněna. Položka protokolu nemusí být uvolněna až do ukončení procesu. Některé ladicí programy automaticky zapínají protokolování.
 
 #### <a name="to-enable-a-custom-log-path"></a>Povolení vlastní cesty protokolu
 
@@ -218,9 +216,9 @@ Pomocí dialogového okna **nastavení protokolu** můžete provést následují
 2. Zadejte cestu do textového pole **vlastní cesta protokolu** .
 
 > [!NOTE]
-> [Nástroj Assembly Binding Log Viewer (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení protokolu vazby. V důsledku příležitostného poškození mezipaměti IE může [Prohlížeč protokolu vazeb sestavení (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) někdy zastavit zobrazování nových protokolů vazby v okně zobrazení. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.
+> [Nástroj Assembly Binding Log Viewer (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení protokolu vazby. V důsledku příležitostného poškození mezipaměti IE může [Prohlížeč protokolu vazeb sestavení (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) někdy zastavit zobrazování nových protokolů vazby v okně zobrazení. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (K tomuto problému nedochází, pokud použijete vlastní cestu protokolu.)  Chcete-li opravit poškození a dovolit, aby fúze znovu zobrazovala protokoly vazby, vymažte mezipaměť IE odstraněním dočasných internetových souborů z dialogového okna Internet možnosti Internetu.
 >
-> Pokud vaše nespravovaná aplikace je hostitelem modulu CLR (Common `IHostAssemblyManager` Language `IHostAssemblyStore` Runtime) implementací rozhraní a, položky protokolu nelze ukládat do mezipaměti WinInet.  Chcete-li zobrazit položky protokolu pro vlastní hostitele implementující tato rozhraní, je nutné zadat alternativní cestu k protokolu.
+> Pokud vaše nespravovaná aplikace je hostitelem modulu CLR (Common Language Runtime) implementací rozhraní `IHostAssemblyManager` a `IHostAssemblyStore`, položky protokolu nelze ukládat do mezipaměti WinInet.  Chcete-li zobrazit položky protokolu pro vlastní hostitele implementující tato rozhraní, je nutné zadat alternativní cestu k protokolu.
 
 #### <a name="to-enable-logging-for-apps-running-in-the-windows-app-container"></a>Povolení protokolování pro aplikace spuštěné v kontejneru pro aplikace systému Windows
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f9f62b9-113a-4a98-8f9b-b593cef27b03
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0e5120b5fddf621d6f4c684c4c432fda4f5c0117
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e51ee2e4d44af547c82a21a782121976d07118c5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745253"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124720"
 ---
 # <a name="icordebugchaingetreason-method"></a>ICorDebugChain::GetReason – metoda
-Získá důvod genesis tento řetěz volání.  
+Získá důvod pro Genesis tohoto volajícího řetězu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetReason (
   
 ## <a name="parameters"></a>Parametry  
  `pReason`  
- [out] Ukazatel na hodnotu (bitová kombinace) cordebugchainreason – výčet, který označuje důvod genesis tento řetěz volání.  
+ mimo Ukazatel na hodnotu (Bitová kombinace) výčtu CorDebugChainReason –, která označuje důvod Genesis tohoto volajícího řetězu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -16,14 +16,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 09c54e58ef25afa28d2681719284c358d90bddc2
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 6866da283cc7cdd180aada252007d67bd72cd862
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969063"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124098"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>Balení .NET Framework sestavení pro model COM
 
@@ -61,7 +59,7 @@ Vývojáři modelu COM můžou těžit z následujících informací o spravovan
 
   Bez ohledu na to, jaký mechanismus zvolíte, jsou do generované knihovny typů zahrnuty pouze veřejné typy definované v sestavení, které zadáte.
 
-Pokyny najdete v tématu [postup: Vložte knihovny typů jako prostředky Win32 do. Aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))založené na síti.
+Pokyny najdete v tématu [Postup: vložení knihoven typů jako prostředků Win32 do. Aplikace založené na síti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 
@@ -73,9 +71,9 @@ Pokyny najdete v tématu [postup: Vložte knihovny typů jako prostředky Win32 
 
 ## <a name="typelibconverter-class"></a>TypeLibConverter – třída
 
-Třída, která je umístěna v oboru názvů **System. Runtime. Interop** , převede třídy a rozhraní obsažené v sestavení na knihovnu typů modelu COM. <xref:System.Runtime.InteropServices.TypeLibConverter> Toto rozhraní API vytváří stejné informace o typu jako Exportér knihovny typů, jak je popsáno v předchozí části.
+Třída <xref:System.Runtime.InteropServices.TypeLibConverter> umístěná v oboru názvů **System. Runtime. Interop** převede třídy a rozhraní obsažené v sestavení na knihovnu typů modelu COM. Toto rozhraní API vytváří stejné informace o typu jako Exportér knihovny typů, jak je popsáno v předchozí části.
 
-**Třída TypeLibConverter** implementuje rozhraní <xref:System.Runtime.InteropServices.ITypeLibConverter>.
+**Třída TypeLibConverter** implementuje <xref:System.Runtime.InteropServices.ITypeLibConverter>.
 
 <a name="cpconpackagingassemblyforcomanchor3"></a>
 
@@ -99,4 +97,4 @@ Třída, která je umístěna v oboru názvů **System. Runtime. Interop** , př
 - [Důležité informace o zabezpečení sestavení](../../standard/assembly/security-considerations.md)
 - [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Registrování sestav pomocí modelu COM](registering-assemblies-with-com.md)
-- [Postupy: Vložení knihoven typů jako prostředků Win32 do aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))
+- [Postupy: vkládání knihoven typů jako prostředků Win32 v aplikacích](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

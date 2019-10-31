@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4dc6c80d-b694-480b-a378-d5b18420ce17
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 45b6b8593331801dd237d0a730afbd5a6a714bbf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 786ff6895383fc18dcfedb26fab344f80f04c1df
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774178"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138209"
 ---
 # <a name="esymbolreadingpolicy-enumeration"></a>ESymbolReadingPolicy – výčet
-Obsahuje hodnoty, které nastavení zásad pro čtení souborů databáze (PDB) programu.  
+Obsahuje hodnoty, které nastavují zásady pro soubory programu pro čtení databáze programu (PDB).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +39,20 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`eSymbolReadingAlways`|Určuje, že ladicí program by měl vždy číst soubory PDB.|  
-|`eSymbolReadingFullTrustOnly`|Určuje, že by měl ladicí program číst pouze soubory PDB, které jsou spojeny s plnou důvěryhodností sestavení.|  
-|`eSymbolReadingNever`|Určuje, že ladicí program nikdy číst soubory PDB.|  
+|`eSymbolReadingFullTrustOnly`|Určuje, že ladicí program by měl číst pouze soubory PDB, které jsou přidruženy k sestavením s úplným vztahem důvěryhodnosti.|  
+|`eSymbolReadingNever`|Určuje, že ladicí program by neměl nikdy číst soubory PDB.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ESymbolReadingPolicy` Výčtu se používá s [iclrdebugmanager::setsymbolreadingpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) metody.  
+ `ESymbolReadingPolicy` výčet se používá s metodou [ICLRDebugManager:: SetSymbolReadingPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

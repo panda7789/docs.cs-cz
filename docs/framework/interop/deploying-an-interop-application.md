@@ -14,21 +14,19 @@ helpviewer_keywords:
 - signed assemblies
 - COM interop, exposing COM components
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 080ef48ade496a55f414b64158a40fe0e551c2aa
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 04f8e53220b2e0fa09735400ae84dcb8b1c3478a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567296"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123556"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Aplikace spolupráce obvykle obsahuje klientské sestavení .NET, jedno nebo více sestavení Interop představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM. Visual Studio a Windows SDK poskytují nástroje pro import a převod knihovny typů do definičního sestavení, jak je popsáno v tématu [Import knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Existují dva způsoby, jak nasadit aplikaci spolupráce:  
   
-- Pomocí vložených typů spolupráce: Počínaje .NET Framework 4 můžete instruovat kompilátor pro vložení informací o typu ze sestavení pro spolupráci do spustitelného souboru. Kompilátor vloží pouze informace o typu, které vaše aplikace používá. Sestavení vzájemné spolupráce není nutné nasazovat do aplikace. Toto je doporučený postup.  
+- Pomocí vložených typů spolupráce: počínaje .NET Framework 4 můžete instruovat kompilátor, aby vložil informace o typu ze sestavení pro spolupráci do spustitelného souboru. Kompilátor vloží pouze informace o typu, které vaše aplikace používá. Sestavení vzájemné spolupráce není nutné nasazovat do aplikace. Toto je doporučený postup.  
   
-- Nasazením definičních sestavení: Můžete vytvořit standardní odkaz na definiční sestavení. V takovém případě musí být definiční sestavení nasazeno s vaší aplikací. Pokud použijete tento postup a nepoužíváte privátní komponentu modelu COM, vždy se na primární definiční sestavení (PIA) publikované autorem komponenty modelu COM, kterou máte v úmyslu začlenit do spravovaného kódu, vždy odkázat. Další informace o vytváření a používání primárních sestavení vzájemné spolupráce naleznete v tématu [primární spolupracující sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
+- Nasazením definičních sestavení: můžete vytvořit standardní odkaz na definiční sestavení. V takovém případě musí být definiční sestavení nasazeno s vaší aplikací. Pokud použijete tento postup a nepoužíváte privátní komponentu modelu COM, vždy se na primární definiční sestavení (PIA) publikované autorem komponenty modelu COM, kterou máte v úmyslu začlenit do spravovaného kódu, vždy odkázat. Další informace o vytváření a používání primárních sestavení vzájemné spolupráce naleznete v tématu [primární spolupracující sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
  Pokud používáte vložené typy spolupráce, nasazení je jednoduché a jednoduché. Nemusíte nic dělat zvlášť. Zbývající část tohoto článku popisuje scénáře nasazení spolupracujících sestavení s vaší aplikací.  
   

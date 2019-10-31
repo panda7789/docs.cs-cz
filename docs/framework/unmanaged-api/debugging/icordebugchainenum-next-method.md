@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b791351-bcc5-4ddd-9cab-eff2f7dd5142
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b4e8b1a76bcc56424e61991d36c94c5f2dfab8aa
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3c11a0547ad5acc5613324d7e9d7439d44549dbc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745615"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125814"
 ---
 # <a name="icordebugchainenumnext-method"></a>ICorDebugChainEnum::Next – metoda
-Získá zadaný počet instancí icordebugchain – z výčtu od aktuální pozice.  
+Získá zadaný počet instancí ICorDebugChain z výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet `ICorDebugChain` instancí, který se má načíst.  
+ pro Počet instancí `ICorDebugChain`, které mají být načteny.  
   
  `chains`  
- [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugChain` objekt, který reprezentuje řetězce.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugChain`, který představuje řetězec.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugChain` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugChain`. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

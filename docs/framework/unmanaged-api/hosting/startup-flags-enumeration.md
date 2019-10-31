@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f39608b39be7d5c25b916fb20877aa73d6e5a8bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1799e0af91fa6074f174120b29e2302a27230c62
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916223"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141467"
 ---
 # <a name="startup_flags-enumeration"></a>STARTUP_FLAGS – výčet
 Obsahuje hodnoty, které označují chování při spuštění modulu CLR (Common Language Runtime). Ve výchozím nastavení je uvolňování paměti nesouběžné a pouze základní knihovna tříd je načtena do doménové neutrální oblasti.  
@@ -70,16 +68,16 @@ typedef enum {
 |`STARTUP_LEGACY_IMPERSONATION`|Určuje, že při výchozím nastavení by zosobnění nemělo v rámci asynchronních bodů přesměrovat.|  
 |`STARTUP_DISABLE_COMMITTHREADSTACK`|Určuje, že plný zásobník vláken by neměl být potvrzen při spuštění vlákna.|  
 |`STARTUP_ALWAYSFLOW_IMPERSONATION`|Určuje, že spravované zosobnění a zosobnění dosažené prostřednictvím vyvolání platformy budou procházet mezi asynchronními body. Ve výchozím nastavení budou v rámci asynchronních bodů zaplněny pouze spravované zosobnění.|  
-|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti bude používat méně potvrzené místo v případě nízké systémové paměti. Nahlédněte do části `gcTrimCommitOnLowMemory` [optimalizace pro sdílené webové hostování](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
+|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti bude používat méně potvrzené místo v případě nízké systémové paměti. Viz `gcTrimCommitOnLowMemory` v části [optimalizace pro sdílené webové hostování](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
 |`STARTUP_ETW`|Určuje, že pro události modulu CLR (Common Language Runtime) je povoleno trasování událostí pro Windows (ETW). Počínaje systémem Windows Vista je trasování událostí vždy povoleno, takže tento příznak nemá žádný vliv. Viz [řízení protokolování .NET Framework](../../../../docs/framework/performance/controlling-logging.md).|  
-|`STARTUP_ARM`|Určuje, zda je povoleno monitorování prostředků domény aplikace. Podívejte se <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> na vlastnost a [ \<> element appDomainResourceMonitoring](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
+|`STARTUP_ARM`|Určuje, zda je povoleno monitorování prostředků domény aplikace. Podívejte se na vlastnost <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> a [\<AppDomainResourceMonitoring prvek >](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7e42a928-5068-4ba6-b8c3-806551a01fa8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 72b95b634ffc352b7fad006e0ccd68e6e159dee9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9e90772ae8c3e6be5744fcccc9901123df871831
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779106"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131944"
 ---
 # <a name="coinitializeee-function"></a>CoInitializeEE – funkce
-Zajišťuje, že common language runtime prováděcí modul je načten do procesu. Tato funkce je zastaralé v rozhraní .NET Framework 4. Použití [ICLRRuntimeHost::Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) metoda místo.  
+Zajišťuje, aby byl spouštěcí modul společného jazykového modulu runtime načten do procesu. Tato funkce je zastaralá v .NET Framework 4. Místo toho použijte metodu [ICLRRuntimeHost:: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +35,28 @@ HRESULT CoInitializeEE (
   
 ## <a name="parameters"></a>Parametry  
  `fFlags`  
- [in] Jeden z [coinitiee –](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md) výčtu konstant.  
+ pro Jedna z konstant výčtu [COINITIEE –](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM, jak je definováno ve Winerror.h a hodnoty v následující tabulce.  
+ Tato metoda vrátí standardní kódy chyb modelu COM definované v WinError. h a hodnoty v následující tabulce.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
-|S_OK|Prováděcí modul byl úspěšně načten.|  
-|S_FALSE|Prováděcí modul je již načtena.|  
-|E_FAIL|Prováděcí modul nelze načíst.|  
+|S_OK|Spouštěcí modul byl úspěšně načten.|  
+|S_FALSE|Spouštěcí modul je již načten.|  
+|E_FAIL|Spouštěcí modul nelze načíst.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda načte prováděcího modulu, pokud nebyla dříve načtena.  
+ Tato metoda načte prováděcí modul, pokud nebyl dříve načten.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

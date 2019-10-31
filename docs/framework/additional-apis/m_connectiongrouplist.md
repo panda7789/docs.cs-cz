@@ -1,5 +1,5 @@
 ---
-title: ServicePoint.m_ConnectionGroupList Field
+title: ServicePoint. m_ConnectionGroupList – pole
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: df8afb59-f0f6-4ddc-b3c1-839b9fc601d8
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 85359492fbf06942a57c51142620cab015999b31
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 1991dae4d03f617857b860f920077531f7937bf1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300867"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120050"
 ---
-# <a name="servicepointmconnectiongrouplist-field"></a>ServicePoint.m\_ConnectionGroupList pole
+# <a name="servicepointm_connectiongrouplist-field"></a>ServicePoint. m\_pole ConnectionGroupList
 
-`ServicePoint.m_ConnectionGroupList` je <xref:System.Collections.Hashtable> skupin připojení jednotlivých uchovávající připojení <xref:System.Net.ServicePoint>na identifikátor URI.
+`ServicePoint.m_ConnectionGroupList` je <xref:System.Collections.Hashtable> skupin připojení, každé drží připojení k identifikátoru URI <xref:System.Net.ServicePoint>.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ private Hashtable m_ConnectionGroupList
 ```
 
 > [!WARNING]
-> `ServicePoint.m_ConnectionGroupList` Pole je privátní a není určena pro použití přímo v kódu.
+> Pole `ServicePoint.m_ConnectionGroupList` je soukromé a není určeno pro použití přímo v kódu.
 > 
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

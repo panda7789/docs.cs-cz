@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8bdd7f4c-19f2-4ede-875e-603773e8c128
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 21da325ee58df65ac449464f8292f2ba94d99338
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 47647bf0460507b4c88b47bf87bfcc3bf620aecc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943299"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137212"
 ---
 # <a name="icordebugprocess2getreferencevaluefromgchandle-method"></a>ICorDebugProcess2::GetReferenceValueFromGCHandle – metoda
 Získá ukazatel odkazu na zadaný spravovaný objekt, který má popisovač uvolňování paměti.  
@@ -38,7 +36,7 @@ HRESULT GetReferenceValueFromGCHandle (
   
 ## <a name="parameters"></a>Parametry  
  `handle`  
- pro Ukazatel na spravovaný objekt, který má popisovač uvolňování paměti. Tato hodnota je <xref:System.IntPtr> objekt, který lze načíst <xref:System.Runtime.InteropServices.GCHandle> z objektu pro spravovaný objekt.  
+ pro Ukazatel na spravovaný objekt, který má popisovač uvolňování paměti. Tato hodnota je objekt <xref:System.IntPtr> a lze ho načíst z <xref:System.Runtime.InteropServices.GCHandle> pro spravovaný objekt.  
   
  `pOutValue`  
  mimo Ukazatel na adresu objektu ICorDebugReferenceValue, který představuje odkaz na zadaný spravovaný objekt.  
@@ -49,13 +47,13 @@ HRESULT GetReferenceValueFromGCHandle (
  Vrácený odkaz se chová jako normální reference. Je zakázáno, pokud provádění kódu pokračuje po zarážce. Doba života cílového objektu není ovlivněna životností referenční hodnoty.  
   
 > [!NOTE]
-> `GetReferenceValueFromGCHandle` Metoda neověřuje popisovač. `GetReferenceValueFromGCHandle` Proto metoda může potenciálně poškodit ladicí program i kód, který je laděn, pokud je předán neplatný popisovač.  
+> Metoda `GetReferenceValueFromGCHandle` neověřuje popisovač. Proto metoda `GetReferenceValueFromGCHandle` může potenciálně poškodit ladicí program i kód, který je laděn, pokud je předán neplatný popisovač.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

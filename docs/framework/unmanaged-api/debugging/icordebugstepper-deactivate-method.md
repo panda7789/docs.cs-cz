@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 855f4199-b62d-40ce-998e-1eb4a1772142
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b577e915422814fbd0060fdda53b9e2bf7cd091a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1d75897e00c36bd5c484e837ee68e54443168e77
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760727"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131754"
 ---
 # <a name="icordebugstepperdeactivate-method"></a>ICorDebugStepper::Deactivate – metoda
-Způsobí, že tento icordebugstepper – zrušení příkazu poslední krok, který obdržela.  
+Způsobí, že tato ICorDebugStepper zruší příkaz posledního kroku, který přijal.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +32,13 @@ HRESULT Deactivate ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Nový příkaz krokování vydávat po nedávno přijatého kroku příkaz byl zrušen.  
+ Nový příkaz pro krokování může být vydán po zrušení příkazu poslední přijatý krok.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

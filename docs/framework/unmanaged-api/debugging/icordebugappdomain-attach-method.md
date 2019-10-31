@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0358b84a-4236-4c34-945b-4babff7df570
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d30b6cb083cc2f92bcbe089bf8e990fedd8e8f7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66ec64b1a855a3d31f14f3ef29dde0b82361f5d7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738093"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133986"
 ---
 # <a name="icordebugappdomainattach-method"></a>ICorDebugAppDomain::Attach – metoda
-Ladicí program připojí k doméně aplikace.  
+Připojí ladicí program k doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +32,13 @@ HRESULT Attach ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program musí být připojené k doméně aplikace přijímat události a chcete povolit ladění domény aplikace.  
+ Aby bylo možné přijímat události a povolit ladění aplikační domény, musí být ladicí program připojen k doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -17,14 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8c2ff5d8-8c04-4423-b1e1-e1c8764b36d3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5aa53d1c9d101544f532c51f43a8b47143117813
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 77cda2c3d30b5926da219a38b762295818ca54a1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988275"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121196"
 ---
 # <a name="icordebugcode3getreturnvalueliveoffset-method"></a>ICorDebugCode3::GetReturnValueLiveOffset – metoda
 U zadaného posunu IL Získá nativní posuny, kde by měla být umístěna zarážka, aby ladicí program mohl získat návratovou hodnotu z funkce.  
@@ -48,33 +46,33 @@ HRESULT GetReturnValueLiveOffset(
  Počet bajtů, které jsou k dispozici pro uložení `pOffsets`.  
   
  `pFetched`  
- Ukazatel na počet skutečně vrácených posunů. Obvykle je jeho hodnota 1, ale jedna instrukce Il může být mapována na více `CALL` instrukcí sestavení.  
+ Ukazatel na počet skutečně vrácených posunů. Obvykle je jeho hodnota 1, ale jedna instrukce IL může být mapována na více `CALL` instrukcí sestavení.  
   
  `pOffsets`  
- Pole nativních posunů. Obvykle obsahuje jeden posun, přestože jedna instrukce Il může být mapována na více `CALL` než více instrukcí sestavení. `pOffsets`  
+ Pole nativních posunů. `pOffsets` obvykle obsahuje jeden posun, i když jedna instrukce IL může být mapována na více mapování na více `CALL`ch instrukcí sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato metoda se používá společně s metodou [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) k získání návratové hodnoty metody, která vrací typ odkazu. Předání posunu IL k webu volání funkce této metodě vrátí jedno nebo více nativních posunů. Ladicí program pak může nastavit zarážky na těchto nativních posunech ve funkci. Když ladicí program narazí na jednu ze zarážek, můžete předat stejný posun IL, který jste předali do této metody, do metody [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) pro získání návratové hodnoty. Ladicí program by pak měl vymazat všechny zarážky, které nastavily.  
   
 > [!WARNING]
-> Metody a [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. `ICorDebugCode3::GetReturnValueLiveOffset` Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, <xref:System.ValueType>které jsou odvozeny z), nejsou podporovány.  
+> Metody `ICorDebugCode3::GetReturnValueLiveOffset` a [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, které jsou odvozeny z <xref:System.ValueType>) nejsou podporovány.  
   
  Funkce vrátí `HRESULT` hodnoty uvedené v následující tabulce.  
   
-|`HRESULT`osa|Popis|  
+|hodnota `HRESULT`|Popis|  
 |---------------------|-----------------|  
 |`S_OK`|Nástup.|  
-|`CORDBG_E_INVALID_OPCODE`|Daná lokalita posunu IL není instrukcí volání, nebo vrátí `void`funkce.|  
+|`CORDBG_E_INVALID_OPCODE`|Daná lokalita posunu IL není instrukcí volání, nebo funkce vrací `void`.|  
 |`CORDBG_E_UNSUPPORTED`|Daný posun IL je správného volání, ale návratový typ není podporován pro získání návratové hodnoty.|  
   
- Tato `ICorDebugCode3::GetReturnValueLiveOffset` metoda je k dispozici pouze v systémech založených na platformě x86 a amd64.  
+ Metoda `ICorDebugCode3::GetReturnValueLiveOffset` je k dispozici pouze v systémech založených na platformě x86 a AMD64.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   

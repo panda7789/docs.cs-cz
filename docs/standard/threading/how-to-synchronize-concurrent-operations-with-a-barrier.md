@@ -8,25 +8,23 @@ dev_langs:
 helpviewer_keywords:
 - Barrier, how to use
 ms.assetid: e1a253ff-e0fb-4df8-95ff-d01a90d4cb19
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 16dc60fa9cd8782efbe1b6028413138b5991839e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 33098878764c2f8a8c1f83a122028da40b984243
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62015158"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137965"
 ---
 # <a name="how-to-synchronize-concurrent-operations-with-a-barrier"></a>Postupy: Synchronizace souběh operací pomocí bariéry
-Následující příklad ukazuje, jak synchronizovat souběžné úkoly se <xref:System.Threading.Barrier>.  
+Následující příklad ukazuje, jak synchronizovat souběžné úkoly s <xref:System.Threading.Barrier>.  
   
 ## <a name="example"></a>Příklad  
- Účelem následující program se mají spočítat, kolik iterací (nebo fáze) jsou vyžadovaných pro dvěma vlákny na každé hledání své polovině řešení v stejné fázi pomocí algoritmu randomizing změnit pořadí slova. Po každé vlákno má které se náhodně pomíchají jeho slova, porovnává operaci po fázi barrier dva výsledky zobrazíte, pokud bylo ve správném pořadí slov vykresleno kompletní věta.  
+ Účelem následujícího programu je zjistit, kolik iterací (nebo fází) se vyžaduje pro dvě vlákna při hledání jejich poloviny řešení ve stejné fázi pomocí náhodného algoritmu k opakovanému rozmísení slov. Poté, co každé vlákno přeruší svá slova, porovná operace po fázi povýšení těchto dvou výsledků, aby bylo možné zjistit, zda byla úplná věta vykreslena ve správném textovém pořadí.  
   
  [!code-csharp[CDS_Barrier#01](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_barrier/cs/barrier.cs#01)]
  [!code-vb[CDS_Barrier#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_barrier/vb/barrier_vb.vb#01)]  
   
- A <xref:System.Threading.Barrier> je objekt, který brání jednotlivé úkoly v rámci paralelní operace pokračovat, dokud všechny úkoly nezobrazí odbourejte překážky bránící. To je užitečné, když paralelní operace probíhá ve fázích a jednotlivé fáze vyžaduje synchronizaci mezi úkoly. V tomto příkladu existují dvě fáze operace. Každý úkol v první fázi, vyplní její části vyrovnávací paměti s daty. Když každý úkol dokončí, naplnění jeho části, úloha signály barrier, která bude chtít pokračovat a potom počká. Když všechny úlohy mají signalizován bariéry, se odblokuje a spustí druhé fáze. Odbourejte překážky bránící je nezbytné, protože druhé fáze vyžaduje, aby každý úkol mají přístup ke všem datům generovaný do tohoto bodu. Bez bariéry může první úkoly k dokončení pokusí číst z vyrovnávací paměti, které nebyly byl vyplněn ještě další úkoly. Libovolný počet fází tímto způsobem můžete synchronizovat.  
+ <xref:System.Threading.Barrier> je objekt, který brání jednotlivým úlohám v paralelní operaci pokračovat, dokud všechny úlohy nedosáhnou bariéry. Je užitečné v případě, že dojde k paralelní operaci ve fázích a každá fáze vyžaduje synchronizaci mezi úlohami. V tomto příkladu existují dvě fáze operace. V první fázi každý úkol vyplní svou část vyrovnávací paměti daty. Když každý úkol dokončí vyplňování oddílu, úloha signalizuje bariéru, že je připravená k pokračování, a potom počká. Když všechny úlohy signalizují bariéru, odblokuje se a druhá fáze se spustí. Bariéra je nezbytná, protože druhá fáze vyžaduje, aby každý úkol měl přístup ke všem datům, která byla vygenerována do tohoto bodu. Bez bariéry se může první dokončený úkol pokusit přečíst z vyrovnávacích pamětí, které ještě nejsou vyplněné jinými úkoly. Tímto způsobem můžete synchronizovat libovolný počet fází.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,33 +8,31 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e536e61a8d812e442e1e54188c99d6a1d4586757
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4516c8f9673052b521c1f0f594978236fef1e0ec
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049723"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136454"
 ---
 # <a name="icorprofilercallback8-interface"></a>ICorProfilerCallback8 – rozhraní
-[Podporované v rozhraní .NET Framework 4.7 a novějších verzích]  
+[Podporováno v .NET Framework 4,7 a novějších verzích]  
 
- Podtřída [icorprofilercallback7 –](icorprofilercallback7-interface.md) , který poskytuje metody zpětného volání používané modulem common language runtime pro oznámení profileru, který je spuštěn a dokončení kompilace JIT dynamické metody. 
+ Podtřída [ICorProfilerCallback7](icorprofilercallback7-interface.md) , která poskytuje metody zpětného volání používané modulem CLR (Common Language Runtime) k informování profileru o zahájení a dokončení kompilace JIT dynamické metody. 
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[DynamicMethodJITCompilationStarted – metoda](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)|Oznámí profileru, byla spuštěna kompilace JIT dynamické metody.|  
-|[DynamicMethodJITCompilationFinished – metoda](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)|Upozornění profileru dokončení kompilace JIT dynamické metody.|  
+|[DynamicMethodJITCompilationStarted – metoda](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)|Upozorní profileru, že byla spuštěna kompilace JIT pro dynamickou metodu.|  
+|[DynamicMethodJITCompilationFinished – metoda](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)|Upozorní profileru, že byla dokončena kompilace dynamické metody JIT.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 

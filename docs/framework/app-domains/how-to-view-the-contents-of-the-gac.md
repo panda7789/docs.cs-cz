@@ -11,22 +11,20 @@ helpviewer_keywords:
 - list of assemblies in global assembly cache
 - Global Assembly Cache tool
 ms.assetid: c5f786a0-969b-4f14-9f02-e77c3384d9af
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c319c5f7c9bb808b2ce7ee10178722287e456339
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: b5d8b31e7eb23789878da620f3a4517056a1ee3e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486426"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119835"
 ---
-# <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: Zobrazení obsahu globální mezipaměti sestavení
+# <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: zobrazení obsahu globální mezipaměti sestavení
 
-Použití [nástroj globální mezipaměti sestavení (gacutil.exe)](../tools/gacutil-exe-gac-tool.md) k zobrazení obsahu globální mezipaměti sestavení (GAC).
+Pro zobrazení obsahu globální mezipaměti sestavení (GAC) použijte [Nástroj Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) .
 
-## <a name="view-the-assemblies-in-the-gac"></a>Zobrazení sestavení v GAC
+## <a name="view-the-assemblies-in-the-gac"></a>Zobrazit sestavení v globální mezipaměti sestavení (GAC)
 
-Chcete-li zobrazit seznam sestavení v globální mezipaměti sestavení, otevřete [Developer Command Prompt pro sadu Visual Studio](../tools/developer-command-prompt-for-vs.md)a potom zadejte následující příkaz:
+Chcete-li zobrazit seznam sestavení v globální mezipaměti sestavení (GAC), otevřete [Developer Command Prompt pro sadu Visual Studio](../tools/developer-command-prompt-for-vs.md)a potom zadejte následující příkaz:
 
 ```shell
 gacutil -l
@@ -39,7 +37,7 @@ gacutil /l
 ```
 
 > [!NOTE]
-> V dřívějších verzích rozhraní .NET Framework [Shfusion.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) rozšíření prostředí Windows umožňovalo zobrazení mezipaměti globálního sestavení v Průzkumníku souborů. Od verze rozhraní .NET Framework 4, je rozšíření Shfusion.dll zastaralé.
+> V dřívějších verzích .NET Framework bylo povoleno rozšíření prostředí systému Windows [Shfusion. dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) , které umožňuje zobrazit globální mezipaměť sestavení (GAC) v Průzkumníkovi souborů. Počínaje .NET Framework 4 Shfusion. dll je zastaralá.
 
 ## <a name="see-also"></a>Viz také:
 

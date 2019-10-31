@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1e172b14-ee22-4943-b3b8-3740e7bdcd2e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5d76fa4b2352da18b5ef0e547ebc4e2e99d980b8
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 4f6dbe8c17bd6a91078b87a87c1055fbf4977a88
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71273999"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132298"
 ---
 # <a name="cor_typeid-structure"></a>COR_TYPEID – struktura
 Obsahuje identifikátor typu.  
@@ -43,16 +41,16 @@ typedef struct COR_TYPEID{
 |`token2`|Druhý token.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_TYPEID` Struktura je vrácena řadou metod ladění, které poskytují informace o objektech, které mají být shromažďovány z paměti. Lze jej předat jako argument pro jiné metody ladění, které poskytují další informace o této položce. Například vytvořením výčtu objektu [ICorDebugHeapEnum –](icordebugheapenum-interface.md) můžete načíst jednotlivé objekty [COR_HEAPOBJECT](cor-heapobject-structure.md) , které reprezentují jednotlivé objekty ve spravované haldě. Pak můžete předat `COR_TYPEID` hodnotu `COR_HEAPOBJECT.type` z pole do metody [ICorDebugProcess5:: GetTypeForTypeID –](icordebugprocess5-gettypefortypeid-method.md) pro načtení objektu ICorDebugType, který poskytuje informace o typu objektu.  
+ Struktura `COR_TYPEID` je vrácena několika metodami ladění, které poskytují informace o objektech, které mají být sbírány do paměti. Lze jej předat jako argument pro jiné metody ladění, které poskytují další informace o této položce. Například vytvořením výčtu objektu [ICorDebugHeapEnum –](icordebugheapenum-interface.md) můžete načíst jednotlivé objekty [COR_HEAPOBJECT](cor-heapobject-structure.md) , které reprezentují jednotlivé objekty ve spravované haldě. Pak můžete předat `COR_TYPEID` hodnotu z pole `COR_HEAPOBJECT.type` do metody [ICorDebugProcess5:: GetTypeForTypeID –](icordebugprocess5-gettypefortypeid-method.md) pro načtení objektu ICorDebugType, který poskytuje informace o typu objektu.  
   
- `COR_TYPEID` Objekt by měl být neprůhledný. K jednotlivým polím by neměl být přistup nebo manipulace. Jeho jediným použitím je identifikátor, který je k dispozici jako `out` parametr ve volání metody a který může být následně předán jiným metodám k poskytnutí dalších informací.  
+ Objekt `COR_TYPEID` má být neprůhledný. K jednotlivým polím by neměl být přistup nebo manipulace. Jeho jediným použitím je identifikátor, který je k dispozici jako parametr `out` ve volání metody a který může být následně předán jiným metodám k poskytnutí dalších informací.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

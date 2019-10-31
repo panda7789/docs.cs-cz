@@ -2,14 +2,12 @@
 title: 'ICorDebugMergedAssemblyRecord:: getculture – metoda'
 ms.date: 03/30/2017
 ms.assetid: 030b2f8c-8c21-40b7-855d-3afa78975a17
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f0f3ecee5a003587771871a178356d6dbfd8a636
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f39a1f17c80d27a38c0f2a8a516405f72c79bbcf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936845"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131416"
 ---
 # <a name="icordebugmergedassemblyrecordgetculture-method"></a>ICorDebugMergedAssemblyRecord:: getculture – metoda
 Získá řetězec názvu jazykové verze sestavení.  
@@ -26,10 +24,10 @@ HRESULT GetCulture(
   
 ## <a name="parameters"></a>Parametry  
  `cchCulture`  
- pro Počet znaků ve `szCulture` vyrovnávací paměti.  
+ pro Počet znaků ve vyrovnávací paměti `szCulture`.  
   
  `pcchCulture`  
- mimo Počet znaků, které jsou `szCulture` ve skutečnosti zapsány do vyrovnávací paměti.  
+ mimo Počet znaků skutečně zapsaných do vyrovnávací paměti `szCulture`.  
   
  `szCulture`  
  mimo Pole znaků, které obsahuje název jazykové verze.  
@@ -41,11 +39,11 @@ HRESULT GetCulture(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 33a19f6e-1029-4d53-af64-19591c6e58ee
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5b8b871377db6da95a3d824461671241d7b163f5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 788ce2d47769caa72518e0357a0affdff5862699
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746265"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137288"
 ---
 # <a name="icordebugnativeframegetlocalmemoryregistervalue-method"></a>ICorDebugNativeFrame::GetLocalMemoryRegisterValue – metoda
-Získá hodnotu argumentu nebo místní proměnná, z nichž nízké word a vysokou word jsou uloženy v zadaný registr a umístění v paměti, v uvedeném pořadí, tato nativní rámce.  
+Získá hodnotu argumentu nebo místní proměnné, z nichž jsou v zadaném registru a umístění paměti pro tento nativní rámec uloženy malá slova a velká slova v uvedeném pořadí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +39,27 @@ HRESULT GetLocalMemoryRegisterValue (
   
 ## <a name="parameters"></a>Parametry  
  `highWordAddress`  
- [in] A `CORDB_ADDRESS` hodnota, která určuje umístění v paměti obsahují slovo vysoké hodnoty.  
+ pro Hodnota `CORDB_ADDRESS`, která určuje umístění paměti obsahující vysoké slovo hodnoty.  
   
  `lowWordRegister`  
- [in] Hodnota výčtu "cordebugregister –", který určuje do registru, které obsahují slovo nízké hodnoty.  
+ pro Hodnota výčtu "CorDebugRegister –", která určuje registr obsahující nedostatečné slovo hodnoty.  
   
  `cbSigBlob`  
- [in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.  
+ pro Celé číslo, které určuje velikost binárního podpisu metadat, na které odkazuje parametr `pvSigBlob`.  
   
  `pvSigBlob`  
- [in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.  
+ pro Hodnota `PCCOR_SIGNATURE`, která odkazuje na binární signaturu metadat typu hodnoty.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena v zadaném umístění registru a paměti.  
+ mimo Ukazatel na adresu objektu "ICorDebugValue" představující načtenou hodnotu, která je uložena v zadaném registru a umístění v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

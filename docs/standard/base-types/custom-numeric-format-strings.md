@@ -16,20 +16,18 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5cacccc182b3361ffd635f2b5f32ce8c17100d08
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: 72b60d0a91fda3e89448a19b506a6f8457835304
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133631"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124401"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní řetězec číselného formátu je libovolný formátovací řetězec, který není [standardním číselným formátovacím řetězcem](../../../docs/standard/base-types/standard-numeric-format-strings.md).
 
-Vlastní řetězce číselného formátu jsou podporovány některými přetíženími `ToString` metody pro všechny číselné typy. Například můžete zadat řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29> metody <xref:System.Int32> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> typu. Vlastní řetězce číselného formátu jsou podporovány také [funkcí složeného formátování](../../../docs/standard/base-types/composite-formatting.md)aplikace .NET, která je používána některými `Write` <xref:System.Console> a `WriteLine` <xref:System.String.Format%2A?displayProperty=nameWithType> metodami třídy a <xref:System.IO.StreamWriter> , metody a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metoda. Funkce [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) podporuje také vlastní řetězce číselného formátu.
+Vlastní řetězce číselného formátu jsou podporovány některými přetíženími metody `ToString` všech číselných typů. Například můžete zadat řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody typu <xref:System.Int32>. Vlastní řetězce číselného formátu jsou podporovány také [funkcí složeného formátování](../../../docs/standard/base-types/composite-formatting.md)aplikace .NET, která je používána některými `Write` a `WriteLine`mi metodami <xref:System.Console> a <xref:System.IO.StreamWriter>, metodou <xref:System.String.Format%2A?displayProperty=nameWithType> a metodou <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. Funkce [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) podporuje také vlastní řetězce číselného formátu.
 
 > [!TIP]
 > Můžete si stáhnout **formátovací nástroj**, aplikaci .net Core model Windows Forms, která umožňuje použití řetězců formátu na číselné hodnoty nebo hodnoty data a času a zobrazuje výsledný řetězec. Zdrojový kód je k dispozici pro [C#](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs) a [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb).
@@ -38,17 +36,17 @@ Vlastní řetězce číselného formátu jsou podporovány některými přetíž
 
 |Specifikátor formátu|Name|Popis|Příklady|
 |----------------------|----------|-----------------|--------------|
-|"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [Vlastní specifikátor "0"](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0,45678 ("0,00", en-US) – > 0,46<br /><br /> 0,45678 ("0,00", fr-FR)-> 0, 46|
-|"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že ve výsledném řetězci se nezobrazí žádná číslice, pokud je odpovídající číslice ve vstupním řetězci nevýznamná 0. Například 0003 ("# # # #")-> 3.<br /><br /> Další informace: [Vlastní specifikátor "#"](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0,45678 (#. # # ", en-US)->. 46<br /><br /> 0,45678 (#. # # ", fr-FR)->, 46|
-|"."|Desetinná tečka|Určuje umístění oddělovače desetinných míst ve výsledném řetězci.<br /><br /> Další informace: [Znak "." Vlastní specifikátor](#SpecifierPt).|0,45678 ("0,00", en-US) – > 0,46<br /><br /> 0,45678 ("0,00", fr-FR)-> 0, 46|
-|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: [Vlastní specifikátor ","](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 (# #, # ", en-US)-> 2 147 483 647<br /><br /> 2147483647 (# #, # ", ES-ES) – > 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 (#, #,, ", en-US)-> 2 147<br /><br /> 2147483647 (#, #,, ", ES-ES)-> 2,147|
-|"%"|Zástupný znak procent|Vynásobí číslo 100 a vloží do výsledného řetězce symbol procenta podle jazykové verze.<br /><br /> Další informace: [Vlastní specifikátor "%"](#SpecifierPct).|0,3697 ("% #0.00", en-US)->% 36,97<br /><br /> 0,3697 ("% #0 .00", El-GR)->% 36, 97<br /><br /> 0,3697 (# #. 0% ", en-US)-> 37,0%<br /><br /> 0,3697 ("# #. 0%", El-GR)-> 37, 0%|
-|"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: [Vlastní specifikátor "‰"](#SpecifierPerMille).|0,03697 ("#0.00‰", en-US)-> 36,97‰<br /><br /> 0,03697 ("#0 .00‰", ru-RU)-> 36, 97‰|
-|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: [Vlastní specifikátory "E" a "e"](#SpecifierExponent).|987654 ("#0.0e0")-> 98.8 E4<br /><br /> 1503,92311 ("0.0 # #e + 00")-> 1.504 e + 03<br /><br /> 1.8901385 e-16 ("0.0 e + 00")-> 1.9 e-16|
-|"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: [Řídicí znak\\""](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|
-|*řetězec "String*"<br /><br /> *řetězec "String*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [Literály znaků](#character-literals).|68 ("# ' stupňů '") – > 68 stupňů<br /><br /> 68 ("# ' stupňů '") – > 68 stupňů|
-|;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Oddělovač oddílu](#SectionSeparator)|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
-|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [Literály znaků](#character-literals).|68 ("# °") -> 68 °|
+|"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [vlastní specifikátor "0"](#Specifier0).|1234,5678 ("00000")-> 01235<br /><br /> 0,45678 ("0,00", en-US) – > 0,46<br /><br /> 0,45678 ("0,00", fr-FR)-> 0, 46|
+|"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že ve výsledném řetězci se nezobrazí žádná číslice, pokud je odpovídající číslice ve vstupním řetězci nevýznamná 0. Například 0003 ("# # # #")-> 3.<br /><br /> Další informace: [vlastní specifikátor "#"](#SpecifierD).|1234,5678 ("# # # # #")-> 1235<br /><br /> 0,45678 (#. # # ", en-US)->. 46<br /><br /> 0,45678 (#. # # ", fr-FR)->, 46|
+|"."|Desetinná tečka|Určuje umístění oddělovače desetinných míst ve výsledném řetězci.<br /><br /> Další informace: ["." Vlastní specifikátor](#SpecifierPt).|0,45678 ("0,00", en-US) – > 0,46<br /><br /> 0,45678 ("0,00", fr-FR)-> 0, 46|
+|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: [vlastní specifikátor ","](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 (# #, # ", en-US)-> 2 147 483 647<br /><br /> 2147483647 (# #, # ", ES-ES) – > 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 (#, #,, ", en-US)-> 2 147<br /><br /> 2147483647 (#, #,, ", ES-ES)-> 2,147|
+|"%"|Zástupný znak procent|Vynásobí číslo 100 a vloží do výsledného řetězce symbol procenta podle jazykové verze.<br /><br /> Další informace: [vlastní specifikátor "%"](#SpecifierPct).|0,3697 ("% #0.00", en-US)->% 36,97<br /><br /> 0,3697 ("% #0 .00", El-GR)-> %36, 97<br /><br /> 0,3697 (# #. 0% ", en-US)-> 37,0%<br /><br /> 0,3697 ("# #. 0%", El-GR)-> 37, 0%|
+|"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: [vlastní specifikátor "‰"](#SpecifierPerMille).|0,03697 ("#0.00‰", en-US)-> 36,97‰<br /><br /> 0,03697 ("#0 .00‰", ru-RU)-> 36, 97‰|
+|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: [vlastní specifikátory "E" a "e"](#SpecifierExponent).|987654 ("#0.0e0")-> 98.8 E4<br /><br /> 1503,92311 ("0.0 # #e + 00")-> 1.504 e + 03<br /><br /> 1.8901385 e-16 ("0.0 e + 00")-> 1.9 e-16|
+|"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: [řídicí znak "\\"](#SpecifierEscape).|987654 ("\\# # #00\\#") – > #987654 #|
+|*řetězec "String*"<br /><br /> *řetězec "String*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# ' stupňů '") – > 68 stupňů<br /><br /> 68 ("# ' stupňů '") – > 68 stupňů|
+|;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Oddělovač oddílu](#SectionSeparator)|12,345 ("#0 0 #;(#0.0 #);-\ 0-") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #);-\ 0-")->-0-<br /><br /> -12,345 ("#0 0 #;(#0.0 #);-\ 0-")-> (12,35)<br /><br /> 12,345 ("#0 0 #;(#0.0 #)") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #)") – > 0,0<br /><br /> -12,345 ("#0 0 #;(#0.0 #)")-> (12,35)|
+|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# °")-> 68 °|
 
 V následujících částech jsou uvedeny podrobné informace o jednotlivých vlastních specifikátorech číselného formátu.
 
@@ -100,7 +98,7 @@ Chcete-li vrátit výsledný řetězec, ve kterém jsou chybějící číslice n
 
 Specifikátor vlastního formátu "." vloží lokalizovaný oddělovač desetinných míst do výsledného řetězce. První tečka ve formátovacím řetězci určuje umístění oddělovače desetinných míst ve formátované hodnotě. Jakékoli další tečky jsou ignorovány.
 
-Znak, který se používá jako oddělovač desetinných míst ve výsledném řetězci, není vždy tečka; je určena <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastností <xref:System.Globalization.NumberFormatInfo> objektu, který ovládá formátování.
+Znak, který se používá jako oddělovač desetinných míst ve výsledném řetězci, není vždy tečka; je určena vlastností <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> objektu <xref:System.Globalization.NumberFormatInfo>, který ovládá formátování.
 
 Následující příklad používá specifikátor formátu "." pro určení umístění desetinné tečky v několika výsledných řetězcích.
 
@@ -116,11 +114,11 @@ Následující příklad používá specifikátor formátu "." pro určení umí
 
 Znak "," slouží jako oddělovač skupin a specifikátor číselného měřítka.
 
-- Oddělovač skupin: Je-li zadána jedna nebo více čárek mezi dvěma zástupnými symboly číslic (0 nebo #), které formátuje integrální číslice čísla, je mezi každou skupinou čísel v integrální části výstupu vložen znak oddělovače skupiny.
+- Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné znaky pro číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.
 
-  Vlastnosti <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> a <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> aktuálního<xref:System.Globalization.NumberFormatInfo> objektu určují znak používaný jako oddělovač číselné skupiny a velikost každé číselné skupiny. Pokud je například pro formátování čísla 1000 použit řetězec "#,#" a invariantní jazyková verze, zobrazí se výstup "1,000".
+  Vlastnosti <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> a <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> aktuálního objektu <xref:System.Globalization.NumberFormatInfo> určují znak používaný jako oddělovač skupin čísel a velikost každé číselné skupiny. Pokud je například pro formátování čísla 1000 použit řetězec "#,#" a invariantní jazyková verze, zobrazí se výstup "1,000".
 
-- Specifikátor číselného měřítka: Pokud je jednou nebo více čárkami zadáno okamžitě nalevo od explicitní nebo implicitní desetinné čárky, číslo, které má být formátováno, je děleno 1000 pro každou čárku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".
+- Specifikátor číselného měřítka: Pokud je zadána jedna nebo více čárek bezprostředně vlevo od explicitní nebo implicitní desetinné tečky, pak číslo, které má být formátováno, je vyděleno hodnotou 1000 pro každou tečku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".
 
 Můžete použít oddělovač skupin a specifikátory číselného měřítka ve stejném formátovacím řetězci. Pokud je pro formátování čísla jedna miliarda použit například řetězec "#,0,," a invariantní jazyková verze, zobrazí se výstup "1,000".
 
@@ -142,7 +140,7 @@ Následující příklad ukazuje použití čárky jako specifikátoru číseln�
 
 ## <a name="the--custom-specifier"></a>Vlastní specifikátor "%"
 
-Znak procent (%) ve formátovacím řetězci způsobí, že číslo bude vynásobené hodnotou 100 dříve, než je formátováno. Lokalizovaný symbol procenta je vložen do čísla na místo, kde se % vyskytuje ve formátovacím řetězci. Použitý znak procenta je definován <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> vlastností aktuálního <xref:System.Globalization.NumberFormatInfo> objektu.
+Znak procent (%) ve formátovacím řetězci způsobí, že číslo bude vynásobené hodnotou 100 dříve, než je formátováno. Lokalizovaný symbol procenta je vložen do čísla na místo, kde se % vyskytuje ve formátovacím řetězci. Použitý znak procenta je definován vlastností <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> aktuálního objektu <xref:System.Globalization.NumberFormatInfo>.
 
 Následující příklad definuje několik vlastních formátovacích řetězců, které obsahují vlastní specifikátor "%".
 
@@ -156,7 +154,7 @@ Následující příklad definuje několik vlastních formátovacích řetězců
 
 ## <a name="the--custom-specifier"></a>Vlastní specifikátor "‰"
 
-Znak promile (‰ nebo \u2030) ve formátovacím řetězci způsobí, že číslo se vynásobí hodnotou 1000 dříve, než je formátováno. Příslušný symbol promile je vložen do vráceného řetězce na místě, kde se zobrazí symbol ‰ ve formátovacím řetězci. Použitý znak na promile je definován <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> vlastností objektu, který poskytuje informace o formátování specifické pro jazykovou verzi.
+Znak promile (‰ nebo \u2030) ve formátovacím řetězci způsobí, že číslo se vynásobí hodnotou 1000 dříve, než je formátováno. Příslušný symbol promile je vložen do vráceného řetězce na místě, kde se zobrazí symbol ‰ ve formátovacím řetězci. Použitý znak na promile je definován vlastností <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> objektu, který poskytuje informace o formátování specifické pro jazykovou verzi.
 
 Následující příklad definuje vlastní formátovací řetězec, který obsahuje vlastní specifikátor "‰".
 
@@ -182,18 +180,18 @@ Následující příklad formátuje několik číselných hodnot pomocí specifi
 
 <a name="SpecifierEscape"></a>
 
-## <a name="the--escape-character"></a>Řídicí znak\\""
+## <a name="the--escape-character"></a>Řídicí znak "\\"
 
 Symboly "#", "0", ".", ",", "%" a "‰" jsou ve formátovacím řetězci interpretovány jako specifikátory formátu, nikoli jako literální znaky. V závislosti na jejich umístění ve vlastním formátovacím řetězci lze velké a malé písmeno "E" a také symboly + a - interpretovat jako specifikátory formátu.
 
 Chcete-li zamezit interpretaci znaku jako specifikátoru formátu, lze před znak vložit zpětné lomítko (\), což je řídicí znak. Řídicí znak označuje, že následující znak je literální znak, který by měl být zařazen do výsledného řetězce beze změny.
 
-Chcete-li do výsledného řetězce zahrnout zpětné lomítko, je nutné ho vytvořit pomocí jiného zpětného lomítka (`\\`).
+Chcete-li do výsledného řetězce zahrnout zpětné lomítko, je nutné jej řídicím znakem zakončit jiným zpětným lomítkem (`\\`).
 
 > [!NOTE]
 > Některé kompilátory, jako jsou například kompilátory jazyka C++ a jazyka C#, mohou také interpretovat jedno zpětné lomítko jako řídicí znak. Abyste se ujistili, zda je řetězec interpretován při formátování správně, můžete v jazyce C# použít literální řetězcový znak verbatim (znak @) před řetězcem, nebo v jazyce C# a C++ přidat další znak zpětného lomítka před každé zpětné lomítko. Následující příklad jazyka C# ukazuje oba přístupy.
 
-Následující příklad používá řídicí znak, aby zabránil tomu, aby operace formátování interpretoval znaky "#", "0" a "\\" jako buď řídicích znaků, nebo specifikátorů formátu. Příklady jazyka C# používají další zpětné lomítko k tomu, aby zpětné lomítko bylo interpretováno jako literální znak.
+Následující příklad používá řídicí znak, aby zabránil tomu, aby operace formátování interpretoval znaky "#", "0" a "\\" jako buď řídicí znaky nebo specifikátory formátu. Příklady jazyka C# používají další zpětné lomítko k tomu, aby zpětné lomítko bylo interpretováno jako literální znak.
 
 [!code-cpp[Formatting.Numeric.Custom#11](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/escape1.cpp#11)]
 [!code-csharp-interactive[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
@@ -227,7 +225,7 @@ Následující příklad používá specifikátor formátu ";" pro formátován�
 
 Specifikátory formátu, které se zobrazí ve vlastním řetězci číselného formátu, jsou vždy interpretovány jako znaky formátování a nikdy jako literální znaky. To zahrnuje následující znaky:
 
-- [0](#Specifier0)
+- [0,8](#Specifier0)
 - [\#](#SpecifierD)
 - [%](#SpecifierPct)
 - [‰](#SpecifierPerMille)
@@ -246,7 +244,7 @@ Následující příklad znázorňuje jedno společné použití literálních z
 
 Existují dva způsoby, jak označit, že znaky je třeba interpretovat jako literální znaky a nikoli jako znaky formátování, aby mohly být zahrnuty do výsledného řetězce nebo byly úspěšně analyzovány ve vstupním řetězci:
 
-- Pomocí uvozovacího znaku formátování. Další informace naleznete [\\v části "" řídicí znak](#SpecifierEscape).
+- Pomocí uvozovacího znaku formátování. Další informace najdete v tématu [řídicí znak "\\"](#SpecifierEscape).
 
 - Uzavřením celého literálového řetězce v apostrofech citace.
 
@@ -261,13 +259,13 @@ Následující příklad používá obě přístupy k zahrnutí rezervovaných z
 
 ### <a name="floating-point-infinities-and-nan"></a>Nekonečno a NaN s plovoucí desetinnou čárkou
 
-Bez ohledu na řetězec formátu, <xref:System.Single> Pokud je hodnota nebo <xref:System.Double> typu s plovoucí desetinnou čárkou kladné nekonečno, záporné nekonečno nebo není číslo (NaN), formátovaný řetězec je hodnota příslušné <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>hodnoty, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>nebo <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> vlastnost určená aktuálně použitelným <xref:System.Globalization.NumberFormatInfo> objektem.
+Bez ohledu na řetězec formátu, pokud je hodnota <xref:System.Single> nebo <xref:System.Double> typu s plovoucí desetinnou čárkou kladné nekonečno, záporné nekonečno nebo není číslo (NaN), formátovaný řetězec je hodnota příslušné <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>nebo <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> zadané vlastnosti. podle aktuálně použitelného objektu <xref:System.Globalization.NumberFormatInfo>.
 
 ### <a name="control-panel-settings"></a>Nastavení ovládacích panelů
 
-Nastavení v položce **místní a jazykové** nastavení v Ovládacích panelech ovlivní výsledný řetězec vytvořený při operaci formátování. Tato nastavení slouží k inicializaci <xref:System.Globalization.NumberFormatInfo> objektu přidruženého k aktuální jazykové verzi vlákna a aktuální jazyková verze vlákna poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
+Nastavení v položce **místní a jazykové** nastavení v Ovládacích panelech ovlivní výsledný řetězec vytvořený při operaci formátování. Tato nastavení slouží k inicializaci objektu <xref:System.Globalization.NumberFormatInfo> přidruženého k aktuální jazykové verzi vlákna a aktuální jazyková verze vlákna poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
 
-Kromě toho, pokud použijete <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor k vytvoření instance nového <xref:System.Globalization.CultureInfo> objektu, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, jakákoli vlastní nastavení, která byla vytvořena položkou **místní a jazykové nastavení** v Ovládacích panelech bude použito pro nový <xref:System.Globalization.CultureInfo> objekt. <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> Konstruktor můžete použít k <xref:System.Globalization.CultureInfo> vytvoření objektu, který nereflektuje vlastní nastavení systému.
+Kromě toho, pokud použijete konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> k vytvoření instance nového objektu <xref:System.Globalization.CultureInfo>, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, všechna přizpůsobení, která jsou vytvořena položkou **místní a jazykové nastavení** v Ovládacích panelech, budou použito pro nový objekt <xref:System.Globalization.CultureInfo>. Konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> lze použít k vytvoření objektu <xref:System.Globalization.CultureInfo>, který nereflektuje vlastní nastavení systému.
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>Zaokrouhlování a řetězce formátu s pevnou desetinnou čárkou
 
@@ -292,6 +290,6 @@ Následující příklad ukazuje dva vlastní číselné formátovací řetězce
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
 - [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Postupy: Doplnit číslo počátečními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Ukázka: nástroj formátování WinForms pro .NET CoreC#()](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

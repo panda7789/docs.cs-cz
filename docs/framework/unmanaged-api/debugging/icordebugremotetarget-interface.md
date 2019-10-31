@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: bd9936a6-cc24-4869-8761-0988664464e6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4e2e6a4624403dcab30bdb7b6d3af0226204cac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 97c4e6d3c9de7dcb8d399a956a4a58c49ca6e3b9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744642"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131876"
 ---
 # <a name="icordebugremotetarget-interface"></a>ICorDebugRemoteTarget – rozhraní
-Poskytuje metody, které umožňují vývojářům ladit aplikace programu Silverlight v prostředí common language runtime (CLR).  
+Poskytuje metody, které vývojářům umožňují ladit aplikace založené na programu Silverlight v prostředí modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,16 +46,16 @@ interface ICorDebugRemoteTarget  : IUnknown
 |[ICorDebugRemoteTarget::GetHostName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-gethostname-method.md)|Vrátí název hostitele nebo IP adresu vzdáleného počítače.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ladění ve smíšeném režimu (tj. spravovaný a nativní kód) není podporováno ve Windows 95, Windows 98 nebo Windows ME, nebo na platformách x x86 (například IA-64 a AMD64).  
+ Ladění ve smíšeném režimu (tj. spravovaný a nativní kód) není podporováno ve Windows 95, Windows 98 nebo Windows Millennium Edition ani na platformách jiných než x86 (například IA-64 a AMD64).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlavička:** CorDebug. idl  
   
- **Knihovna:** : CorGuids.lib  
+ **Knihovna:** : CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 3.5 SP1  
+ **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 

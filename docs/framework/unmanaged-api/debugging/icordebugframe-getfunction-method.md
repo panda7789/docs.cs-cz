@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 879d2311-0ff1-4616-a8b3-959ea5868b2e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f801dae69f16f2848b4ffa30f458c084fe9750a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 39175e338e4fd98dd4af1325138da732ed81c764
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754897"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137924"
 ---
 # <a name="icordebugframegetfunction-method"></a>ICorDebugFrame::GetFunction – metoda
-Získá funkce, která obsahuje kód spojený s rámce zásobníku.  
+Získá funkci, která obsahuje kód spojený s tímto rámcem zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetFunction (
   
 ## <a name="parameters"></a>Parametry  
  `ppFunction`  
- [out] Ukazatel na adresu ICorDebugFunction objekt, který představuje funkci obsahující kód spojený s rámce zásobníku.  
+ mimo Ukazatel na adresu objektu ICorDebugFunction, který představuje funkci obsahující kód spojený s tímto rámcem zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetFunction` Metoda může selhat, pokud rámec není přidružen k žádné konkrétní funkce.  
+ Metoda `GetFunction` může selhat, pokud rámec není přidružen k žádné konkrétní funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

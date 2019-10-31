@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3dcd16a7-dafc-4ca8-b5cd-20ffb37db91d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d30384ea8b9ff4eee41abd43ae39486f770039e7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 63fb505a92683fda21b6e71a6ca891ca35afba1d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041425"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136415"
 ---
 # <a name="getcorsystemdirectory-function"></a>GetCORSystemDirectory – funkce
 Vrátí instalační adresář modulu CLR (Common Language Runtime), který je načten do procesu. Instalační adresář je plně kvalifikovaný, například "c:\Windows\Microsoft.NET\Framework\v1.0.3705".  
@@ -44,7 +42,7 @@ HRESULT GetCORSystemDirectory (
  mimo Vyrovnávací paměť, ve které modul runtime vrátí řetězec, který obsahuje plně kvalifikovaný název instalačního adresáře pro modul runtime, který je načten do procesu. Pokud modul runtime ještě nebyl načten do procesu, vrátí funkce příslušné informace o adresáři pro nejnovější verzi modulu runtime nainstalovaného v počítači.  
   
  `cchBuffer`  
- pro Velikost v bajtech `pbuffer`.  
+ pro Velikost `pbuffer`v bajtech.  
   
  `dwLength`  
  mimo Počet znaků vrácených v `pbuffer`.  
@@ -55,11 +53,11 @@ HRESULT GetCORSystemDirectory (
 > Nepoužívejte tuto funkci v procesech, ve kterých je spuštěna verze 4 modulu CLR. Pokud je v počítači nainstalována starší verze modulu CLR, vrátí tato funkce instalační adresář pro danou verzi.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

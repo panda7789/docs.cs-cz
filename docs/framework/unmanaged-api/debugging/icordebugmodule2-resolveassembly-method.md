@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: ddf9085c-7161-44bd-9609-cd2732b9009f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd899422287d34407778f67e5b4dfd2f33ffd00c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0809a149a5a5a5e9adea059140d7b4b456337ef3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994822"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125308"
 ---
 # <a name="icordebugmodule2resolveassembly-method"></a>ICorDebugModule2::ResolveAssembly – metoda
 
-Přeloží sestavení odkazuje token Zadaná metadata.
+Přeloží sestavení, na které odkazuje zadaný token metadat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,21 +38,21 @@ HRESULT ResolveAssembly (
 ## <a name="parameters"></a>Parametry
 
 `tkAssemblyRef`\
-[in] `mdToken` Hodnotu, která odkazuje na sestavení.
+pro Hodnota `mdToken`, která odkazuje na sestavení.
 
 `ppAssembly`\
-[out] Ukazatel na adresu icordebugassembly – objekt, který představuje sestavení.
+mimo Ukazatel na adresu objektu ICorDebugAssembly, který představuje sestavení.
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud sestavení ještě není zaveden při `ResolveAssembly` nazývá HRESULT je vrácena hodnota CORDBG_E_CANNOT_RESOLVE_ASSEMBLY.
+Pokud sestavení již není načteno při volání `ResolveAssembly`, je vrácena hodnota HRESULT CORDBG_E_CANNOT_RESOLVE_ASSEMBLY.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** CorDebug.idl, CorDebug.h
+**Hlavička:** CorDebug. idl, CorDebug. h
 
-**Knihovna:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

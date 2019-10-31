@@ -5,24 +5,22 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7b15318ef38c407110c8d48d3e81977aa1b20df4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f74b75827770524299f9a25a5854503186139cb4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779470"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126298"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
 
-[!INCLUDE[win7](../../../includes/win7-md.md)]a novější verze operačního systému Windows nepodporují .NET Framework 1,1. V důsledku toho nebudou aplikace cílené na .NET Framework 1,1 běžet beze změny ve [!INCLUDE[win7](../../../includes/win7-md.md)] verzích operačního systému nebo novějších. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na .NET Framework 1,1 v rámci [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows. Další informace o .NET Framework 1,1 a [!INCLUDE[win8](../../../includes/win8-md.md)]najdete v tématu [spouštění aplikací .NET Framework 1,1 ve Windows 8 a novějších verzích](../install/run-net-framework-1-1-apps.md).
+[!INCLUDE[win7](../../../includes/win7-md.md)] a novější verze operačního systému Windows nepodporují .NET Framework 1,1. V důsledku toho nebudou aplikace cílené na .NET Framework 1,1 běžet bez úprav v [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějších verzích operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na .NET Framework 1,1 v části [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows. Další informace o .NET Framework 1,1 a [!INCLUDE[win8](../../../includes/win8-md.md)]najdete v tématu [spouštění aplikací .NET Framework 1,1 v systému Windows 8 a novějších verzích](../install/run-net-framework-1-1-apps.md).
 
 ## <a name="retargeting-or-recompiling"></a>Změna cílení nebo opětovné kompilace
 
-Existují dva způsoby, jak získat aplikaci, která byla zkompilována pomocí .NET Framework 1,1 pro spuštění v [!INCLUDE[win7](../../../includes/win7-md.md)] systému nebo novějším operačním systému Windows:
+Existují dva způsoby, jak získat aplikaci, která byla zkompilována pomocí .NET Framework 1,1 pro spuštění v [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějším operačním systému Windows:
 
-- Aplikaci můžete změnit tak, aby běžela v .NET Framework 4 a novějších verzích. Změna cíle vyžaduje přidání [ \<prvku supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) do konfiguračního souboru aplikace, který umožňuje jeho spuštění v .NET Framework 4 a novějších verzích. Takový konfigurační soubor má následující formát:
+- Aplikaci můžete změnit tak, aby běžela v .NET Framework 4 a novějších verzích. Změna cíle vyžaduje, abyste do konfiguračního souboru aplikace přidali [\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu, který umožňuje jeho spuštění v rámci .NET Framework 4 a novějších verzí. Takový konfigurační soubor má následující formát:
 
     ```xml
     <configuration>
@@ -44,7 +42,7 @@ Bez ohledu na to, zda přecílíte na aplikaci nebo je znovu zkompilujete, byste
 
 ## <a name="breaking-changes"></a>Nejnovější změny
 
-V případě, že dojde k zásadní změně v závislosti na konkrétní změně, může být alternativní řešení k dispozici pro přecílené a znovu kompilované aplikace. V některých případech můžete přidat podřízený element do [ \<modulu runtime >](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu konfiguračního souboru vaší aplikace k obnovení předchozího chování. Například následující konfigurační soubor obnoví řazení řetězců a chování porovnávání používané v .NET Framework 1,1 a lze je použít buď s cílovou nebo znovu zkompilovanou aplikací.
+V případě, že dojde k zásadní změně v závislosti na konkrétní změně, může být alternativní řešení k dispozici pro přecílené a znovu kompilované aplikace. V některých případech můžete přidat podřízený element do modulu [runtime\<](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu konfiguračního souboru vaší aplikace k obnovení předchozího chování. Například následující konfigurační soubor obnoví řazení řetězců a chování porovnávání používané v .NET Framework 1,1 a lze je použít buď s cílovou nebo znovu zkompilovanou aplikací.
 
 ```xml
 <configuration>

@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b68624b962ed610dbeecd3e4cead769ab1400f4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1571ff796a10c5ddcd85cc2ce130e62eab2ed8f2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739211"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132088"
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule – funkce
-Vytvoří řetězec verze z společná cesta modulu runtime (CLR) jazyka v cílovém procesu.  
+Vytvoří řetězec verze z cesty modulu CLR (Common Language Runtime) v cílovém procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,46 +41,46 @@ HRESULT CreateVersionStringFromModule (
   
 ## <a name="parameters"></a>Parametry  
  `pidDebuggee`  
- [in] Identifikátor procesu, ve které je cílem CLR načten.  
+ pro Identifikátor procesu, ve kterém je načten cílový modul CLR.  
   
  `szModuleName`  
- [in] Úplná nebo relativní cesta k cíli CLR, který je načten do procesu.  
+ pro Úplná nebo relativní cesta k cílovému modulu CLR, který je načten do procesu.  
   
  `pBuffer`  
- [out] Vrátí vyrovnávací paměť pro ukládání řetězce verze pro cíl CLR.  
+ mimo Návratová vyrovnávací paměť pro uložení řetězce verze pro cílový CLR.  
   
  `cchBuffer`  
- [in] Velikost `pBuffer`.  
+ pro Velikost `pBuffer`.  
   
  `pdwLength`  
- [out] Délka řetězce verze vrácené `pBuffer`.  
+ mimo Délka řetězce verze vráceného funkcí `pBuffer`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Řetězec verze pro cíl modulu CLR byla úspěšně vrácena v `pBuffer`.  
+ Řetězec verze pro cílový modul CLR byl úspěšně vrácen v `pBuffer`.  
   
  E_INVALIDARG  
- `szModuleName` je null nebo buď `pBuffer` nebo `cchBuffer` má hodnotu null. `pBuffer` a `cchBuffer` musí být null nebo jinou hodnotu než null.  
+ `szModuleName` je null nebo buď `pBuffer` nebo `cchBuffer`, má hodnotu null. `pBuffer` a `cchBuffer` musí mít hodnotu null nebo být prázdné.  
   
  HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)  
- `pdwLength` je větší než `cchBuffer`. Pokud jste u obou prošly hodnotu null, může dojít očekávaný výsledek `pBuffer` a `cchBuffer`, Power pivotu a dotazované nezbytné vyrovnávací paměť s použitím `pdwLength`.  
+ `pdwLength` je větší než `cchBuffer`. To může být očekávaný výsledek, pokud jste předali hodnotu null pro `pBuffer` i `cchBuffer`a dotazováni jste na potřebnou velikost vyrovnávací paměti pomocí `pdwLength`.  
   
  HRESULT_FROM_WIN32(ERROR_MOD_NOT_FOUND)  
- `szModuleName` neobsahuje cestu k platné CLR v cílovém procesu.  
+ `szModuleName` neobsahuje cestu k platnému modulu CLR v cílovém procesu.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- `pidDebuggee` neodkazuje na platný proces nebo jiné chyby.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ `pidDebuggee` neodkazuje na platný proces nebo jiné selhání.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce přijme procesu CLR, který je identifikován `pidDebuggee` a řetězec cesty, která je zadána `szModuleName`. Řetězec verze je vrácen ve vyrovnávací paměti, která `pBuffer` odkazuje na. Tento řetězec je neprůhledný funkce uživatele. To znamená, že neexistuje žádný vnitřní význam v samotný řetězec verze. Používá se pouze v rámci této funkce a [createdebugginginterfacefromversion – funkce](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
+ Tato funkce přijímá proces CLR identifikovaný `pidDebuggee` a cestu k řetězci, která je určena `szModuleName`. Řetězec verze je vrácen do vyrovnávací paměti, na kterou `pBuffer` odkazuje. Tento řetězec je neprůhledný pro uživatele funkce. To znamená, že v samotném řetězci verze není žádný vnitřní význam. Používá se výhradně v kontextu této funkce a [funkci CreateDebuggingInterfaceFromVersion –](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
   
- Tato funkce by měla být volána dvakrát. Při volání ji první, předat hodnotu null pro obě `pBuffer` a `cchBuffer`. Pokud to provedete, velikost vyrovnávací paměti pro `pBuffer` , vrátí se `pdwLength`. Můžete pak zavolejte funkci znovu a předejte vyrovnávací paměti v `pBuffer` a jeho velikost v `cchBuffer`.  
+ Tato funkce by měla být volána dvakrát. Při prvním volání předejte hodnotu null pro `pBuffer` i `cchBuffer`. Když to uděláte, v `pdwLength`se vrátí velikost vyrovnávací paměti nutné pro `pBuffer`. Potom můžete zavolat funkci podruhé a předat vyrovnávací paměť v `pBuffer` a její velikosti v `cchBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** dbgshim.h  
+ **Záhlaví:** dbgshim. h  
   
- **Knihovna:** dbgshim.dll  
+ **Knihovna:** dbgshim. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

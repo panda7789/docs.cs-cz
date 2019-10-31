@@ -8,14 +8,12 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a460ac730db85dfa8d4a8ee6949a168bc228193d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 70ed4176872e18ccafa00808630fcc51337b8479
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631309"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123215"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul CLR (Common Language Runtime) zpřístupňuje objekty COM prostřednictvím proxy s názvem obálka s voláním za běhu (RCW). I když se RCW jeví jako běžný objekt pro klienty rozhraní .NET, jeho primární funkce je zařazování volání mezi klientem rozhraní .NET a objektem COM.  
@@ -55,7 +53,7 @@ Následující obrázek znázorňuje proces pro přístup k objektům modelu COM
 |Rozhraní|Popis|  
 |---------------|-----------------|  
 |**IConnectionPoint** a **IConnectionPointContainer**|RCW převede objekty, které zpřístupňují styl události spojovacího bodu, na události založené na delegování.|  
-|**IDispatchEx –** (Jenom .NET Framework) |Pokud třída implementuje **IDispatchEx –** , RCW implementuje **IExpando**. Rozhraní **IDispatchEx –** je rozšíření rozhraní **IDispatch** , které na rozdíl od rozhraní **IDispatch**povoluje vyčíslení, sčítání, odstraňování a rozlišování velkých a malých písmen členů.|  
+|**IDispatchEx –** (pouze .NET Framework) |Pokud třída implementuje **IDispatchEx –** , RCW implementuje **IExpando**. Rozhraní **IDispatchEx –** je rozšíření rozhraní **IDispatch** , které na rozdíl od rozhraní **IDispatch**povoluje vyčíslení, sčítání, odstraňování a rozlišování velkých a malých písmen členů.|  
 |**IEnumVARIANT**|Povoluje, aby typy COM, které podporují výčty, byly zpracovány jako kolekce.|  
   
 ## <a name="see-also"></a>Viz také:

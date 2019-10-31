@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CompareTo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ec42dff333422e247a11b4a3a5b9aed9bd316fa
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0d210795016cd2e0179b902a224ca0c62f4ac01f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798774"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128697"
 ---
 # <a name="compareto-function"></a>Funkce CompareTo
 
@@ -52,31 +50,31 @@ pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbem
 pro Bitová kombinace příznaků, které určují vlastnosti objektu, které je třeba vzít v úvahu pro porovnání. Další informace najdete v části [poznámky](#remarks) .
 
 `pCompareTo`\
-pro Objekt pro porovnání. `pCompareTo`musí se jednat o platnou instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ; nemůže být `null`.
+pro Objekt pro porovnání. `pCompareTo` musí být platná instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ; nedá se `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |
-| `WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` bylo provedeno bez navýšení [`EndEnumeration`](endenumeration.md)volání. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+| `WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` bylo provedeno bez navýšení volání [`EndEnumeration`](endenumeration.md). |
+| `WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | Objekty jsou odlišné. |
-| `WBEM_S_SAME` | 0 | Objekty jsou stejné na základě příznaků porovnávání. |
+| `WBEM_S_SAME` | 0,8 | Objekty jsou stejné na základě příznaků porovnávání. |
 
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalomí volání metody [IWbemclassObject:: CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) .
 
-Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v souboru hlaviček *WbemCli. h* , nebo je můžete v kódu definovat jako konstanty. Můžete určit jednotlivé charakteristiky, které se týkají porovnání, zadáním bitové kombinace následujících příznaků:
+Příznaky, které mohou být předány jako argument `lEnumFlags`, jsou definovány v souboru hlaviček *WbemCli. h* , nebo je můžete v kódu definovat jako konstanty. Můžete určit jednotlivé charakteristiky, které se týkají porovnání, zadáním bitové kombinace následujících příznaků:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorujte zdroj (Server a obor názvů, ze kterého pochází). |
-| `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorovat všechny kvalifikátory (včetně **klíčového** a **dynamického**) |
+| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | odst | Ignorujte zdroj (Server a obor názvů, ze kterého pochází). |
+| `WBEM_FLAG_IGNORE_QUALIFIERS` | první | Ignorovat všechny kvalifikátory (včetně **klíčového** a **dynamického**) |
 | `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignoruje výchozí hodnoty vlastností. Tento příznak se vztahuje pouze na porovnání tříd. |
 | `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignorovat charakter kvalifikátoru. Tento příznak stále používá kvalifikátory, ale ignoruje rozdíly v charakteru, jako jsou pravidla šíření a omezení přepisování. |
 | `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignoruje velikost písmen v porovnání řetězcových hodnot. To platí pro řetězce a hodnoty kvalifikátoru. Porovnání názvů vlastností a kvalifikátorů je vždy rozlišovat velká a malá písmena bez ohledu na to, zda je tento příznak nastaven. |
@@ -84,15 +82,15 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definov�
 
 Můžete také zadat jeden složený příznak následujícím způsobem:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Zvažte všechny funkce v porovnání. |
+|`WBEM_COMPARISON_INCLUDE_ALL` | 0,8 | Zvažte všechny funkce v porovnání. |
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

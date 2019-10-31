@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d0f74593-9bb1-4a11-8096-e29734b20698
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 62965fa928522052b6885769e02c0211ca8d3fe0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 91c9a92d83312efcfd90a15aa0a60cccb6b44d7f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937933"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134741"
 ---
 # <a name="ihostassemblymanagergetassemblystore-method"></a>IHostAssemblyManager::GetAssemblyStore – metoda
 Získá ukazatel rozhraní na [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) , který představuje seznam sestavení načtených hostitelem.  
@@ -37,13 +35,13 @@ HRESULT GetAssemblyStore (
   
 ## <a name="parameters"></a>Parametry  
  `ppAssemblyStore`  
- mimo Ukazatel na `IHostAssemblyStore` funkci, nebo hodnota null, pokud hostitel neimplementuje `IHostAssemblyStore`.  
+ mimo Ukazatel funkce na instanci `IHostAssemblyStore` nebo hodnotu null, pokud hostitel neimplementuje `IHostAssemblyStore`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetAssemblyStore`úspěšně vráceno.|  
+|S_OK|`GetAssemblyStore` byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -52,17 +50,17 @@ HRESULT GetAssemblyStore (
 |E_NOINTERFACE|Hostitel neposkytuje implementaci `IHostAssemblyStore`.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IHostAssemblyStore`poskytuje metody, které umožňují hostiteli vytvořit vazby na sestavení a moduly nezávisle na modulu CLR. Hostitelé obvykle poskytují úložiště sestavení, aby bylo možné načíst sestavení z jiných formátů než do systému souborů.  
+ `IHostAssemblyStore` poskytuje metody, které umožňují hostiteli vytvořit vazby na sestavení a moduly nezávisle na modulu CLR. Hostitelé obvykle poskytují úložiště sestavení, aby bylo možné načíst sestavení z jiných formátů než do systému souborů.  
   
 > [!NOTE]
-> Pokud hostitel neimplementuje `IHostAssemblyStore`, `GetAssemblyStore` měla by vrátit hodnotu HRESULT E_NOINTERFACE a měla by být nastavena `ppAssemblyStore` na hodnotu null.  
+> Pokud hostitel neimplementuje `IHostAssemblyStore`, `GetAssemblyStore` by měla vracet hodnotu HRESULT E_NOINTERFACE a měla by být nastavena `ppAssemblyStore` na hodnotu null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** MSCorEE. h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

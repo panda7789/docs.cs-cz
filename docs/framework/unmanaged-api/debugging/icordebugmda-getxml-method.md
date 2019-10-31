@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 003a6546b3316f2a2a65bce4537c60dcf62b3197
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f80bdffbf5c0ba39980bd27c6e89a368547340c0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129812"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML – metoda
-Získá úplný datový proud XML spojené s Pomocník spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Získá úplný datový proud XML přidružený k Pomocníkovi spravovaného ladění (MDA) reprezentovanému pomocí [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT GetXML (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] Velikost `szName` pole.  
+ pro Velikost pole `szName`.  
   
  `pcchName`  
- [out] Ukazatel na délku datového proudu XML.  
+ mimo Ukazatel na délku datového proudu XML.  
   
  `szName`  
- [out] Pole pro uložení datový proud XML. Pole může být prázdný.  
+ mimo Pole, do kterého se má uložit datový proud XML. Pole může být prázdné.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetXML` Metoda může potenciálně ovlivnit výkon, v závislosti na velikosti související datový proud XML.  
+ Metoda `GetXML` může ovlivnit výkon v závislosti na velikosti přidruženého datového proudu XML.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

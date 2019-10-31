@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b12bfcd9-1e29-48bf-9a3d-44bfae5df5e8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8826644ae3bdfbef76e9143de5f8f449c1555095
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 70aaf32b9da751b49571ab98a95e432b7f84caa9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761212"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130639"
 ---
 # <a name="icordebugmanagedcallbackunloadmodule-method"></a>ICorDebugManagedCallback::UnloadModule – metoda
-Upozorní ladicího programu, že společný modul runtime jazyka (DLL) byla uvolněna.  
+Oznamuje ladicímu programu, že byl uvolněn modul common language runtime (DLL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT UnloadModule (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahoval modulu.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje aplikační doménu, která obsahuje modul.  
   
  `pModule`  
- [in] Ukazatel na objekt icordebugmodule –, který představuje modul.  
+ pro Ukazatel na objekt ICorDebugModule, který představuje modul.  
   
 ## <a name="remarks"></a>Poznámky  
- V modulu nesmí používat po tomto volání.  
+ Modul by neměl být použit po tomto volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

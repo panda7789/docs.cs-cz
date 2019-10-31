@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 66a59b18-ce9a-41f4-b23b-4dd6753d6d36
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 629a4850d47940633c8c69a7e464cfae315b3c56
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e2550320494b9ba43947c3176788042f5c2e6ad5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761245"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130621"
 ---
 # <a name="icordebugmanagedcallbackunloadclass-method"></a>ICorDebugManagedCallback::UnloadClass – metoda
-Upozorní ladicího programu, že třída uvolňován.  
+Oznamuje ladicímu programu, že je třída uvolňována.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT UnloadClass (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující třídu.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující třídu.  
   
  `c`  
- [in] Ukazatel na objekt ICorDebugClass, který představuje třídu.  
+ pro Ukazatel na objekt ICorDebugClass, který představuje třídu.  
   
 ## <a name="remarks"></a>Poznámky  
- Třídy neměly by být odkazovány po tomto volání.  
+ Po tomto volání by neměl být odkazováno na třídu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

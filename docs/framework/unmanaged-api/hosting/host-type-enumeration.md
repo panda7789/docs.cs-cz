@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 51f848be-84c5-4036-9839-c762c576bbf5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: caf76fa7962de9392b06591777ac862aa548d20d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc0cea10b4a209583fb7afb551a6b80d52ad7f62
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779553"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127031"
 ---
-# <a name="hosttype-enumeration"></a>HOST_TYPE – výčet
+# <a name="host_type-enumeration"></a>HOST_TYPE – výčet
 Obsahuje hodnoty, které určují typ hostitele, který spouští aplikaci.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,18 +38,18 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`HOST_TYPE_APPLAUNCH`|Spuštění aplikace z AppLaunch.exe.<br /><br /> Používejte tuto hodnotu pro částečně důvěryhodné aplikace.|  
-|`HOST_TYPE_CORFLAG`|Spusťte aplikaci přímo. To znamená spusťte aplikaci z vlastního souboru .exe.<br /><br /> Používejte tuto hodnotu pro plně důvěryhodné aplikace.|  
+|`HOST_TYPE_APPLAUNCH`|Spusťte aplikaci z souboru applaunch. exe.<br /><br /> Tuto hodnotu použijte pro částečně důvěryhodné aplikace.|  
+|`HOST_TYPE_CORFLAG`|Spusťte aplikaci přímo. To znamená, že aplikaci spustíte z vlastního souboru. exe.<br /><br /> Tuto hodnotu použijte pro plně důvěryhodné aplikace.|  
 |`HOST_TYPE_DEFAULT`|Stejné jako HOST_TYPE_APPLAUNCH.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

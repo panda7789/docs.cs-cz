@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: 1cf4ca8e-d9bb-4633-9adf-5e24315bf87a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dbcf6c842e7eee55609a9ea2a25cda4360f8dc95
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d52757f82a950c382c7c8f2162630eda7d7795e7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739288"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132096"
 ---
 # <a name="createcoreclrdebugtarget-function"></a>CreateCoreClrDebugTarget – funkce
-Vytvoří připojení k proxy ladicího programu, který běží na vzdáleném počítači a vrátí [icoreclrdebugtarget –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md) objekt, který můžete použít k dotazování, spuštěné procesy a načtené moduly runtime na vzdáleném počítači.  
+Vytvoří připojení k proxy serveru ladicího programu, který běží na vzdáleném počítači, a vrátí objekt [ICoreClrDebugTarget](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md) , který lze použít k dotazování na spuštěné procesy a načtených modulech runtime na vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +37,26 @@ HRESULT CreateCoreClrDebugTarget (
   
 ## <a name="parameters"></a>Parametry  
  `dwAddress`  
- [in] Adresa IPv4 vzdálené cílové počítače.  
+ pro Adresa IPv4 vzdáleného cílového počítače.  
   
  `ppTarget`  
- [out] Ukazatel na ukazatel [icoreclrdebugtarget –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md) objekt, který bude vytvořen.  
+ mimo Ukazatel na ukazatel na objekt [ICoreClrDebugTarget](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md) , který se vytvoří.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěšně bylo zjištěno číslo CLRs v procesu a odpovídající popisovač a pole cesty byly správně vyplněné.  
+ Počet CLRs v procesu byl úspěšně zjištěn a odpovídající pole popisovače a cesty byly správně vyplněny.  
   
  E_OUTOFMEMORY  
- Nepovedlo se přidělit dostatek paměti pro `ppTarget`.  
+ Nelze přidělit dostatek paměti pro `ppTarget`.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Jiné chyby.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Další chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3,5 SP1

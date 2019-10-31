@@ -8,23 +8,21 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to traverse a tree
 ms.assetid: 4265d169-6c69-4f36-b10d-b7ae7f72f4df
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8fd937d6ce2edf0c47fce78d48a90ec1aa409eef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b79337e6ee8057506ff87c696cecd6b038eeebfc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797146"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141639"
 ---
 # <a name="how-to-traverse-a-binary-tree-with-parallel-tasks"></a>Postupy: Procházení binárního stromu s paralelními úlohami
-Následující příklad ukazuje dva způsoby, ve kterých paralelní úlohy je možné procházet stromovou strukturu dat. Vytvoření vlastního stromu je ponechané jako cvičení.  
+Následující příklad ukazuje dva způsoby, jak lze použít paralelní úlohy pro procházení stromové struktury dat. Vytvoření samotného stromu je ponecháno jako cvičení.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[TPL#16](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#16)]
  [!code-vb[TPL#16](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/treewalk.vb#16)]  
   
- Dvě zobrazené metody jsou funkčně ekvivalentní. S použitím <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> metodu pro vytvoření a spuštění úloh, můžete získat popisovače z úloh, které můžete použít k čekání na úlohy a zpracování výjimek.  
+ Tyto dvě zobrazené metody jsou funkčně ekvivalentní. Pomocí metody <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> k vytvoření a spuštění úkolů získáte popisovač zpátky z úloh, které lze použít k čekání na úlohy a zpracování výjimek.  
   
 ## <a name="see-also"></a>Viz také:
 

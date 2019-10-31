@@ -2,14 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetStaticFieldSymbols – metoda'
 ms.date: 03/30/2017
 ms.assetid: b178367f-a6e4-413c-b06f-daf3804b456b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6bd3442adf58250a423438666ec1092bab61958b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8c4211a60786016e25cc3e3419804817b57ab64e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955538"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138807"
 ---
 # <a name="icordebugsymbolprovidergetstaticfieldsymbols-method"></a>ICorDebugSymbolProvider:: GetStaticFieldSymbols – metoda
 Získá symboly statického pole, které odpovídají token TypeSpec podpisu.  
@@ -28,10 +26,10 @@ HRESULT GetStaticFieldSymbols(
   
 ## <a name="parameters"></a>Parametry  
  `cbSignature`  
- pro Počet bajtů v `typeSig` poli.  
+ pro Počet bajtů v poli `typeSig`.  
   
  `typeSig`  
- pro Bajtové pole `typespec` obsahující podpis.  
+ pro Bajtové pole obsahující podpis `typespec`.  
   
  `cRequestedSymbols`  
  pro Počet požadovaných symbolů.  
@@ -48,11 +46,11 @@ HRESULT GetStaticFieldSymbols(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

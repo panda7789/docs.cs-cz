@@ -1,17 +1,15 @@
 ---
-title: Zmírnění Normalizace cest
+title: 'Zmírnění: normalizace cest'
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bc5ea69d80a225adfc2f409e8303ee1c241398db
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9ec34d8215c88329066b1cb86da018db82e16c5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779345"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126214"
 ---
-# <a name="mitigation-path-normalization"></a>Zmírnění Normalizace cest
+# <a name="mitigation-path-normalization"></a>Zmírnění: normalizace cest
 Počínaje aplikacemi cílíte na .NET Framework 4.6.2, normalizace cest v .NET Framework se změnila.  
   
 ## <a name="what-is-path-normalization"></a>Co je normalizace cest?  
@@ -32,7 +30,7 @@ Počínaje aplikacemi cílíte na .NET Framework 4.6.2, normalizace cest v .NET 
   
 - Normalizace už nezahrnuje oříznutí konce segmentů adresáře (například místa na konci názvu adresáře).  
   
-- Podpora syntaxe cesty zařízení v úplném vztahu důvěryhodnosti, `\\.\` včetně a, pro vstupně-výstupní rozhraní API souborů v knihovně Mscorlib `\\?\`. dll.  
+- Podpora syntaxe cesty zařízení v úplném vztahu důvěryhodnosti, včetně `\\.\` a, pro vstupně-výstupní rozhraní API souborů v knihovně Mscorlib. dll `\\?\`.  
   
 - Modul runtime neověřuje cestu k syntaxi zařízení.  
   
@@ -45,7 +43,7 @@ U aplikací, které cílí na .NET Framework 4.6.2 nebo novějším, jsou tyto z
 Aplikace, které cílí na .NET Framework 4.6.1 a starší verze, ale jsou spuštěné v .NET Framework 4.6.2 nebo novějším, tato změna neovlivní.  
   
 ## <a name="mitigation"></a>Zmírnění  
- Aplikace, které cílí na .NET Framework 4.6.2 nebo novější, si mohou tuto změnu odhlásit a použít starší normalizaci přidáním následujícího do [ \<části > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) v konfiguračním souboru aplikace:  
+ Aplikace, které cílí na .NET Framework 4.6.2 nebo novější, si mohou tuto změnu odhlásit a použít starší normalizaci přidáním následujícího do části [\<modulu runtime >](../configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:  
   
 ```xml  
 <runtime>  
@@ -53,7 +51,7 @@ Aplikace, které cílí na .NET Framework 4.6.1 a starší verze, ale jsou spuš
 </runtime>  
 ```  
   
-Aplikace, které cílí na .NET Framework 4.6.1 nebo starší, ale běží na .NET Framework 4.6.2 nebo novějším, můžou povolit normalizaci cest přidáním následujícího řádku do [ \<oddílu > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) v aplikaci. konfigurace souborů  
+Aplikace, které cílí na .NET Framework 4.6.1 nebo starší, ale běží na .NET Framework 4.6.2 nebo novějším, můžou povolit normalizaci cest přidáním následujícího řádku do části [> modulu runtime\<](../configure-apps/file-schema/runtime/runtime-element.md) souboru Application. Configuration:  
   
 ```xml  
 <runtime>  

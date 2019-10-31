@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5dc29663153f837b660262eae51b6f032617d027
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 906ca2540e421953b3ce39300aa7b2376f789929
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765066"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137104"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress – metoda
-Získá adresu tohoto objektu "ICorDebugValue", který se právě laděn.  
+Získá adresu tohoto objektu "ICorDebugValue", který je právě laděn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetAddress (
   
 ## <a name="parameters"></a>Parametry  
  `pAddress`  
- [out] Ukazatel `CORDB_ADDRESS` objekt, který určuje adresu tohoto objektu hodnotu.  
+ mimo Ukazatel na objekt `CORDB_ADDRESS`, který určuje adresu tohoto objektu hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je hodnota není k dispozici, vrátí se 0 (nula). To může nastat, pokud je hodnota aspoň částečně v registrech do nebo popisovač systému uvolňování paměti (`GCHandle`).  
+ Pokud je hodnota nedostupná, vrátí se 0 (nula). K tomu může dojít, pokud je hodnota nejméně částečně v registrech nebo uložená v popisovači systému uvolňování paměti (`GCHandle`).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

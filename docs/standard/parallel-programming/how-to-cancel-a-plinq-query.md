@@ -9,14 +9,12 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a90a41b1dc2e5d0b24d3d72b870891238809d75
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 272f25d62cb63c60209be3bc54dc5e76fb30df54
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046524"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134234"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Postupy: Zrušení dotazu PLINQ
 Následující příklady znázorňují dva způsoby, jak zrušit dotaz PLINQ. První příklad ukazuje, jak zrušit dotaz, který se skládá hlavně z procházení dat. Druhý příklad ukazuje, jak zrušit dotaz, který obsahuje uživatelskou funkci, která je výpočetně náročná.
@@ -31,13 +29,13 @@ Následující příklady znázorňují dva způsoby, jak zrušit dotaz PLINQ. P
 [!code-csharp[PLINQ#16](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#16)]
 [!code-vb[PLINQ#16](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#16)]
 
-Rozhraní PLINQ nezahrnuje jednu <xref:System.OperationCanceledException> hodnotu <xref:System.AggregateException?displayProperty=nameWithType>do. <xref:System.OperationCanceledException> musí být zpracována v samostatném bloku catch. Pokud jeden nebo více delegátů uživatele vyvolá OperationCanceledException (externalCT) (pomocí externí <xref:System.Threading.CancellationToken?displayProperty=nameWithType>), ale bez jiné výjimky a dotaz byl definován jako `AsParallel().WithCancellation(externalCT)`, pak PLINQ vydá jednu <xref:System.OperationCanceledException> (externalCT) místo <xref:System.AggregateException?displayProperty=nameWithType>. Nicméně pokud jeden uživatelský delegát vyvolá <xref:System.OperationCanceledException>výjimku a jiný delegát vyvolá jiný typ výjimky, pak obě výjimky budou zahrnuty <xref:System.AggregateException>do.
+Rozhraní PLINQ nezahrnuje jeden <xref:System.OperationCanceledException> do <xref:System.AggregateException?displayProperty=nameWithType>; <xref:System.OperationCanceledException> musí být zpracována v samostatném bloku catch. Pokud jeden nebo více delegátů uživatele vyvolá OperationCanceledException (externalCT) (pomocí externího <xref:System.Threading.CancellationToken?displayProperty=nameWithType>), ale žádná jiná výjimka a dotaz byl definován jako `AsParallel().WithCancellation(externalCT)`, pak PLINQ vydá jedinou <xref:System.OperationCanceledException> (externalCT) místo <xref:System.AggregateException?displayProperty=nameWithType>. Nicméně pokud jeden delegát uživatele vyvolá <xref:System.OperationCanceledException>a jiný delegát vyvolá jiný typ výjimky, pak obě výjimky budou zahrnuty do <xref:System.AggregateException>.
 
 Obecné pokyny týkající se zrušení jsou následující:
 
-1. Pokud provádíte zrušení delegování uživatelem, měli byste informovat o externích <xref:System.Threading.CancellationToken> událostech a vyvolat výjimku <xref:System.OperationCanceledException>(externalCT).
+1. Pokud provádíte zrušení delegáta uživatele, měli byste informovat o PLINQ <xref:System.Threading.CancellationToken> a vyvolat <xref:System.OperationCanceledException>(externalCT).
 
-2. Pokud dojde k zrušení a nejsou vyvolány žádné další výjimky, pak byste <xref:System.OperationCanceledException> měli zpracovat místo <xref:System.AggregateException>.
+2. Pokud dojde k zrušení a nejsou vyvolány žádné další výjimky, měli byste zpracovat <xref:System.OperationCanceledException> místo <xref:System.AggregateException>.
 
 ## <a name="example"></a>Příklad
 
@@ -46,7 +44,7 @@ Následující příklad ukazuje, jak zpracovat zrušení, když máte výpočet
 [!code-csharp[PLINQ#17](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#17)]
 [!code-vb[PLINQ#17](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#17)]
 
-Při zpracování zrušení v uživatelském kódu není nutné používat <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> v definici dotazu. Nicméně doporučujeme, abyste to provedli, <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> protože nemá žádný vliv na výkon dotazů a umožňuje, aby bylo zrušení zpracováno operátory dotazů a vaším uživatelským kódem.
+Při zpracování zrušení v uživatelském kódu není nutné používat <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> v definici dotazu. Nicméně doporučujeme, abyste to provedli, protože <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> nemá žádný vliv na výkon dotazů a umožňuje, aby se zrušení zpracovalo pomocí operátorů dotazů a uživatelského kódu.
 
 Aby se zajistila odezva systému, doporučujeme, abyste kontrolovali zrušení přibližně jednou za milisekundu. Nicméně jakékoli období až 10 milisekund se považuje za přijatelné. Tato frekvence by neměla mít negativní vliv na výkon vašeho kódu.
 

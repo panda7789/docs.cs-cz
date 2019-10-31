@@ -14,32 +14,30 @@ helpviewer_keywords:
 ms.assetid: 368881ab-c4ea-4731-bf22-c596aac7c66c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e2c3a3057003d0035bfcb096a94c84d610e3056f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf4fa9c5ec35391a0e772e25112f305bfa6e1564
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985505"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126892"
 ---
 # <a name="iappdomainbinding-interface"></a>IAppDomainBinding – rozhraní
-Poskytuje metodu, která je volána modulem common language runtime (CLR), která upozorní aplikaci hostitele Vytvoření domény aplikace.  
+Poskytuje metodu, která je volána modulem CLR (Common Language Runtime), aby upozornila hostitelskou aplikaci, že byla vytvořena doména aplikace.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[OnAppDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Volána modulem common language runtime (CLR), aby upozornil hostitele Vytvoření domény aplikace.|  
+|[OnAppDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Volána modulem CLR (Common Language Runtime) pro oznamování hostitele, že byla vytvořena doména aplikace.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 863fc8ce-9b8a-477e-8dd8-75c8544bb43a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fdbce5e61f2013513d2079b5a958270319d34857
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a8642235cda359b849c49a35ab565397402c37d2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763758"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130505"
 ---
 # <a name="ihostcrstsetspincount-method"></a>IHostCrst::SetSpinCount – metoda
-Nastaví počet typu číselník pro aktuální [ihostcrst –](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) instance.  
+Nastaví počet číselníků pro aktuální instanci [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,32 +35,32 @@ HRESULT SetSpinCount (
   
 ## <a name="parameters"></a>Parametry  
  `dwSpinCount`  
- [in] Nový počet typu číselník pro aktuální `IHostCrst` instance.  
+ pro Nový počet číselníků pro aktuální instanci `IHostCrst`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetSpinCount` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`SetSpinCount` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Na více procesorů systémech, pokud kritický oddíl reprezentována aktuální `IHostCrst` instance není k dispozici, volající vlákno přede `dwSpinCount` doby před voláním [ihostsemaphore::wait –](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md) na semaforu související s kritický oddíl. Pokud během operace typu číselník neuvolní kritický oddíl, volající vlákno se vyhnete operace čekání.  
+ V systémech s více procesory, pokud je kritická část reprezentovaná aktuální `IHostCrst` instance nedostupná, volání vlákna se `dwSpinCount` časy před voláním [IHostSemaphore:: Počkejte](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md) na semaforu přidruženého k důležité části. Pokud se kritická část uvolní během operace otáčení, volající vlákno se vyhne operaci čekání.  
   
- Použití `dwSpinCount` je stejný jako použití parametru se stejným názvem v Win32 `InitializeCriticalSectionAndSpinCount` funkce.  
+ Použití `dwSpinCount` je stejné jako použití parametru se stejným názvem ve funkci Win32 `InitializeCriticalSectionAndSpinCount`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a1ebfc69-46a6-4225-8788-b7cfb2f15e1d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b13fe65f892a222abb126aa9237b802507738b7f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a6f2f536d360ffe41caf2a96c8b051f9167343c2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771605"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138959"
 ---
 # <a name="icordebugstringvaluegetlength-method"></a>ICorDebugStringValue::GetLength – metoda
-Získá počet znaků v řetězci odkazuje tento icordebugstringvalue –.  
+Vrátí počet znaků v řetězci, na který odkazuje tento ICorDebugStringValue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetLength (
   
 ## <a name="parameters"></a>Parametry  
  `pcchString`  
- [out] Ukazatel na hodnotu, která určuje délku řetězce, které odkazuje tato `ICorDebugStringValue` objektu.  
+ mimo Ukazatel na hodnotu, která určuje délku řetězce, na který odkazuje tento `ICorDebugStringValue` objekt.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření instance objektu TimeZoneInfo'
+title: 'Postupy: vytvoření instance objektu TimeZoneInfo'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,42 +9,40 @@ helpviewer_keywords:
 - instantiating time zone objects
 - time zone objects [.NET Framework], instantiation
 ms.assetid: 8cb620e5-c6a6-4267-a52e-beeb73cd1a34
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8c8ff38325e26dd1bc946f6f12c365b6dea3e228
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5975270dd6a166bb625278a97f4c60851cbe7942
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669170"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122286"
 ---
-# <a name="how-to-instantiate-a-timezoneinfo-object"></a>Postupy: Vytvoření instance objektu TimeZoneInfo
+# <a name="how-to-instantiate-a-timezoneinfo-object"></a>Postupy: vytvoření instance objektu TimeZoneInfo
 
-Nejběžnější způsob vytvoření instance <xref:System.TimeZoneInfo> objekt je k načtení informací o něm z registru. Toto téma popisuje, jak vytvořit instanci <xref:System.TimeZoneInfo> objektu z místního systémového registru.
+Nejběžnější způsob, jak vytvořit instanci objektu <xref:System.TimeZoneInfo>, je načíst informace z registru. Toto téma popisuje, jak vytvořit instanci objektu <xref:System.TimeZoneInfo> z registru místního systému.
 
-### <a name="to-instantiate-a-timezoneinfo-object"></a>K vytvoření instance objektu TimeZoneInfo
+### <a name="to-instantiate-a-timezoneinfo-object"></a>Vytvoření instance objektu TimeZoneInfo
 
-1. Deklarace <xref:System.TimeZoneInfo> objektu.
+1. Deklarujte objekt <xref:System.TimeZoneInfo>.
 
-2. Volání `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A?displayProperty=nameWithType> metody.
+2. <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A?displayProperty=nameWithType> metodu zavolejte `static` (`Shared` in Visual Basic).
 
-3. Zpracování jakýchkoli výjimek metodou, zejména <xref:System.TimeZoneNotFoundException> , která je vyvolána, pokud časové pásmo není definovaná v registru.
+3. Zpracujte jakékoli výjimky vyvolané metodou, zejména <xref:System.TimeZoneNotFoundException>, která je vyvolána, pokud časové pásmo není definováno v registru.
 
 ## <a name="example"></a>Příklad
 
-Následující kód načte <xref:System.TimeZoneInfo> objekt, který představuje standardní východní časové pásmo a zobrazí východní běžný čas, který odpovídá na místní čas.
+Následující kód načte <xref:System.TimeZoneInfo> objekt, který představuje východní standardní časové pásmo a zobrazí východní standardní čas, který odpovídá místnímu času.
 
 [!code-csharp[System.TimeZone2.Concepts#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#5)]
 [!code-vb[System.TimeZone2.Concepts#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#5)]
 
-<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A?displayProperty=nameWithType> Jediný parametr metody je identifikátor v časovém pásmu, který chcete načíst, což odpovídá objektu <xref:System.TimeZoneInfo.Id%2A?displayProperty=nameWithType> vlastnost. Identifikátor časové pásmo je pole s klíčem, který jednoznačně identifikuje časové pásmo. Většina klíčů jsou poměrně krátké, identifikátor časové pásmo je poměrně dlouho. Ve většině případů, jeho hodnota odpovídá <xref:System.TimeZoneInfo.StandardName%2A> vlastnost <xref:System.TimeZoneInfo> objekt, který slouží k poskytnutí názvu časového pásma (běžný čas). Existují však výjimky. Vytvoření výčtu časových pásem, který je k dispozici ve vašem systému a Všimněte si identifikátory časových pásem přítomných na nich je nejlepší způsob, jak Ujistěte se, abyste zadali platný identifikátor. Pro ilustraci, naleznete v tématu [jak: Vytvoření výčtu časových pásem přítomných na počítači](../../../docs/standard/datetime/enumerate-time-zones.md). [Hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md) téma obsahuje také seznam identifikátorů vybranému časovému pásmu.
+Jediným parametrem metody <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A?displayProperty=nameWithType> je identifikátor časového pásma, které chcete načíst, což odpovídá vlastnosti objektu <xref:System.TimeZoneInfo.Id%2A?displayProperty=nameWithType>. Identifikátor časového pásma je klíčové pole, které jedinečně identifikuje časové pásmo. I když je většina klíčů relativně krátká, identifikátor časového pásma je relativně dlouhý. Ve většině případů jeho hodnota odpovídá vlastnosti <xref:System.TimeZoneInfo.StandardName%2A> objektu <xref:System.TimeZoneInfo>, který slouží k zadání názvu standardního času časového pásma. Existují však výjimky. Nejlepším způsobem, jak zajistit, aby byl zadán platný identifikátor, je vytvořit výčet časových pásem dostupných ve vašem systému a poznamenat si identifikátory časových pásem, které jsou v nich k dispozici. Ilustraci naleznete v tématu [How to: výčet časových pásem, které jsou k dispozici v počítači](../../../docs/standard/datetime/enumerate-time-zones.md). [Hledání časových pásem definovaných v místním systémovém](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md) tématu obsahuje také seznam vybraných identifikátorů časových pásem.
 
-Pokud se najde časové pásmo, metoda vrátí jeho <xref:System.TimeZoneInfo> objektu. Pokud se časové pásmo není nalezen, metoda vyvolá <xref:System.TimeZoneNotFoundException>. Pokud se nachází na časové pásmo, ale jeho data jsou poškozena nebo nekompletní, vyvolá metoda <xref:System.InvalidTimeZoneException>.
+Pokud je časové pásmo nalezeno, metoda vrátí svůj objekt <xref:System.TimeZoneInfo>. Pokud časové pásmo není nalezeno, vyvolá metoda <xref:System.TimeZoneNotFoundException>. Pokud je časové pásmo nalezeno, ale jeho data jsou poškozena nebo neúplná, vyvolá metoda <xref:System.InvalidTimeZoneException>.
 
-Pokud vaše aplikace závisí na časové pásmo, které musí být k dispozici, měli byste nejprve zavolat <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A> metody k získání informace o časovém pásmu z registru. Pokud selže volání metody obslužné rutině výjimek by měl pak vytvořit novou instanci třídy časové pásmo nebo jej znovu vytvořit pomocí deserializaci serializovaného <xref:System.TimeZoneInfo> objektu. Zobrazit [jak: Obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md) příklad.
+Pokud vaše aplikace spoléhá na časové pásmo, které musí být k dispozici, měli byste nejprve zavolat metodu <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A> pro načtení informací o časovém pásmu z registru. Pokud se volání metody nezdařilo, vaše obslužná rutina výjimky by pak měla vytvořit novou instanci časového pásma nebo ji znovu vytvořit pomocí deserializace serializovaného objektu <xref:System.TimeZoneInfo>. Příklad najdete v tématu [Postupy: Obnovení časových pásem z integrovaného prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md) .
 
 ## <a name="see-also"></a>Viz také:
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
 - [Hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
-- [Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md)
+- [Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md)

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ba08ffa-55a2-4662-9d6d-4738f1db60c9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d600b4687b86f5872f94a60ad3422be764cf5307
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d8bd6ab13fa408fd7390aaeb76baee274742f48
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747207"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137692"
 ---
 # <a name="icordebugregistersetgetregistersavailable-method"></a>ICorDebugRegisterSet::GetRegistersAvailable – metoda
-Získá o něco maskování určující, který registruje v tomto [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) jsou aktuálně k dispozici.  
+Načte bitovou masku, která označuje, které Registry v tomto [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) jsou aktuálně k dispozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +35,21 @@ HRESULT GetRegistersAvailable (
   
 ## <a name="parameters"></a>Parametry  
  `pAvailable`  
- [out] Bitová maska, která určuje, která registruje jsou aktuálně k dispozici.  
+ mimo Bitová maska, která označuje, které Registry jsou aktuálně k dispozici.  
   
 ## <a name="remarks"></a>Poznámky  
- Registru možná nebudou k dispozici, pokud jeho hodnotu nelze určit pro dané situaci.  
+ Registr může být nedostupný, pokud jeho hodnotu nelze určit pro danou situaci.  
   
- Vrácené maska obsahuje trochu pro každý registr (1 << registr indexu). Bitová hodnota je 1, pokud do registru je k dispozici, nebo 0, pokud není k dispozici.  
+ Vrácená maska obsahuje bit pro každý registr (1 < < indexu registru). Bitová hodnota je 1, pokud je registr k dispozici, nebo 0, pokud není k dispozici.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

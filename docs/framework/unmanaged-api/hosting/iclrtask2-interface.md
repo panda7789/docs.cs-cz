@@ -14,44 +14,42 @@ helpviewer_keywords:
 ms.assetid: b5a22ebc-0582-49de-91f9-97a3d9789290
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 518248651de6d8afdf25692c5f48da52b11eb0f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47c6dd9045636bcfbe07c909fec3fda515d28ee8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763396"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124528"
 ---
 # <a name="iclrtask2-interface"></a>ICLRTask2 – rozhraní
-Obsahuje všechny funkce, které jsou součástí [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) rozhraní; navíc poskytuje metody, které umožňují zrušení vláken k zpozdit u aktuálního vlákna.  
+Poskytuje všechny funkce rozhraní [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) ; Kromě toho poskytuje metody, které umožňují, aby bylo přerušení vlákna zpožděno v aktuálním vlákně.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[BeginPreventAsyncAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-beginpreventasyncabort-method.md)|Nové vlákno zpoždění přerušit požadavky pro aktuální vlákno.|  
-|[EndPreventAsyncAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-endpreventasyncabort-method.md)|Umožňuje nové nebo čekající vlákno přerušení požadavky na vlákno za následek přerušení v aktuálním vláknu.|  
+|[BeginPreventAsyncAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-beginpreventasyncabort-method.md)|Zpozdí žádosti o přerušení nového vlákna v aktuálním vlákně.|  
+|[EndPreventAsyncAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-endpreventasyncabort-method.md)|Umožňuje, aby nové nebo probíhající požadavky na přerušení vlákna byly výsledkem přerušení vlákna v aktuálním vlákně.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRTask2` Dědí rozhraní `ICLRTask` rozhraní a přidá metody, které umožňují hostitele tak, aby zpoždění přerušení vlákna, k ochraně oblasti kódu, který nesmí nezdaří. Volání `BeginPreventAsyncAbort` zvýší čítač přerušení podprocesu zpoždění pro aktuální vlákno a volání `EndPreventAsyncAbort` sníží ho. Volání `BeginPreventAsyncAbort` a `EndPreventAsyncAbort` mohou být vnořené. Čítač je větší než nula, jsou zpožděné přerušení vlákna pro aktuální vlákno.  
+ Rozhraní `ICLRTask2` dědí `ICLRTask` rozhraní a přidává metody, které umožní hostiteli zpozdit přerušení vlákna, aby chránila oblast kódu, která nesmí selhat. Volání `BeginPreventAsyncAbort` zvýší čítač zpožděného vlákna na přerušení pro aktuální vlákno a volání `EndPreventAsyncAbort` sníží. Volání `BeginPreventAsyncAbort` a `EndPreventAsyncAbort` mohou být vnořena. Dokud je čítač větší než nula, přerušení vlákna pro aktuální vlákno jsou zpožděna.  
   
- Pokud volání `BeginPreventAsyncAbort` a `EndPreventAsyncAbort` jsou nespárováno, je možné dosáhnout stavu, ve které vlákno nelze doručit přeruší aktuální vlákno.  
+ Pokud nejsou volání `BeginPreventAsyncAbort` a `EndPreventAsyncAbort` spárována, je možné spojit se stavem, ve kterém je přerušeno přerušení vlákna nelze doručit do aktuálního vlákna.  
   
- Prodleva není podporována pro vlákna je samotný přeruší.  
+ Zpoždění se nerespektuje pro vlákno, které se přerušuje.  
   
- Funkce, který je zveřejněný prostřednictvím této funkce se používá interně pro virtuální počítač (VM). Nesprávné použití těchto metod může způsobit neurčené chování ve virtuálním počítači. Například volání `EndPreventAsyncAbort` bez první volání `BeginPreventAsyncAbort` čítač by mohl nastavit na nulu, když virtuální počítač má dříve zvýší jeho. Podobně čítač interní nepovolenou přetečení. Pokud překročí limit integrální vzhledem k tomu, že je zvýšen o hostitele a virtuální počítač, výsledné chování není zadána.  
+ Funkce, která je vystavena touto funkcí, je interně používána virtuálním počítačem (VM). Zneužití těchto metod může způsobit nespecifikované chování virtuálního počítače. Například volání `EndPreventAsyncAbort` bez prvního volání `BeginPreventAsyncAbort` může nastavit čítač na hodnotu nula, pokud ho virtuální počítač dříve přizpůsobil. Podobně není u vnitřního čítače přetečení kontrolováno. Pokud překročí svůj integrální limit, protože se zvyšuje od hostitele i virtuálního počítače, výsledné chování není určeno.  
   
- Pro informace o členy zděděné z `ICLRTask` a o dalších použitích tohoto rozhraní, podívejte se [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) rozhraní.  
+ Informace o členech zděděných z `ICLRTask` a o ostatních použití tohoto rozhraní naleznete v tématu rozhraní [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

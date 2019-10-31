@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: cd8b9879-962a-4811-aa46-2e2b6bae0d84
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5274e70c5bead201beb158ee2895415d7ec9e53c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d52f9f0bc2ff27d7849a80a424714aa84d3688fe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779140"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136999"
 ---
-# <a name="clsidresolutionflags-enumeration"></a>CLSID_RESOLUTION_FLAGS – výčet
-Obsahuje hodnoty, které označují, jak vyřešit common language runtime (CLR) `CLSID`.  
+# <a name="clsid_resolution_flags-enumeration"></a>CLSID_RESOLUTION_FLAGS – výčet
+Obsahuje hodnoty, které určují, jak by měl modul CLR (Common Language Runtime) vyřešit `CLSID`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +37,15 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CLSID_RESOLUTION_DEFAULT`|Určuje výchozí chování.|  
-|`CLSID_RESOLUTION_REGISTERED`|Označuje, že modul runtime vyhledává registru a použije zásady překrytí.|  
+|`CLSID_RESOLUTION_DEFAULT`|Označuje výchozí chování.|  
+|`CLSID_RESOLUTION_REGISTERED`|Indikuje, že modul runtime vyhledává v registru a aplikuje zásady překrytí.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b47f1d61-c7dc-4196-b926-0b08c94f7041
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 25e40103a2925cbd2a181b8e39c3873e4d7c842c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 96dedcd27e87c5afc504e7840100eb121410675e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940049"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130758"
 ---
 # <a name="icordebugmanagedcallback-interface"></a>ICorDebugManagedCallback – rozhraní
 Poskytuje metody pro zpětná volání procesu ladicího programu.  
@@ -30,7 +28,7 @@ Poskytuje metody pro zpětná volání procesu ladicího programu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Break – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-break-method.md)|Upozorní ladicí program, když <xref:System.Reflection.Emit.OpCodes.Break> je proveden pokyn v datovém proudu kódu.|  
+|[Break – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-break-method.md)|Upozorní ladicí program, když se spustí instrukce <xref:System.Reflection.Emit.OpCodes.Break> v datovém proudu kódu.|  
 |[Breakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-breakpoint-method.md)|Upozorní ladicí program, když dojde k zarážce.|  
 |[BreakpointSetError – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-breakpointseterror-method.md)|Oznamuje ladicímu programu, že modul CLR (Common Language Runtime) nedokázal přesně navazovat zarážku, která byla nastavena předtím, než byla funkce kompilována za běhu (just-in-time).|  
 |[ControlCTrap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-controlctrap-method.md)|Oznamuje ladicímu programu, že kombinace kláves CTRL + C je zachycena v laděném procesu.|  
@@ -48,8 +46,8 @@ Poskytuje metody pro zpětná volání procesu ladicího programu.
 |[LoadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadassembly-method.md)|Oznamuje ladicímu programu, že bylo úspěšně načteno sestavení CLR.|  
 |[LoadClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md)|Oznamuje ladicímu programu, že byla načtena třída.|  
 |[LoadModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md)|Oznamuje ladicímu programu, že modul CLR byl úspěšně načten.|  
-|[LogMessage – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md)|Upozorní ladicí program, že vlákno spravované modulem CLR zavolalo metodu ve <xref:System.Diagnostics.EventLog> třídě k zaznamenání události.|  
-|[LogSwitch – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logswitch-method.md)|Oznamuje ladicímu programu, že spravované vlákno CLR volalo metodu ve <xref:System.Diagnostics.Switch> třídě k vytvoření, úpravě nebo odstranění přepínače ladění/trasování.|  
+|[LogMessage – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md)|Oznamuje ladicímu programu, že spravované vlákno CLR volalo metodu ve třídě <xref:System.Diagnostics.EventLog> k zaznamenání události.|  
+|[LogSwitch – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logswitch-method.md)|Oznamuje ladicímu programu, že spravované vlákno CLR volalo metodu ve třídě <xref:System.Diagnostics.Switch> k vytvoření, úpravě nebo odstranění přepínače ladění/trasování.|  
 |[NameChange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-namechange-method.md)|Oznamuje ladicímu programu, že došlo ke změně názvu domény aplikace nebo vlákna.|  
 |[StepComplete – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md)|Oznamuje ladicímu programu, že byl krok dokončen.|  
 |[UnloadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)|Oznamuje ladicímu programu, že bylo uvolněno sestavení CLR.|  
@@ -60,19 +58,19 @@ Poskytuje metody pro zpětná volání procesu ladicího programu.
 ## <a name="remarks"></a>Poznámky  
  Všechna zpětná volání jsou serializována, volána ve stejném vlákně a volána s procesem v synchronizovaném stavu.  
   
- Každé implementaci zpětného volání musí volat metodu [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , aby bylo možné pokračovat v provádění. Pokud `ICorDebugController::Continue` není volána před vrácením zpětného volání, proces zůstane zastaven a dokud `ICorDebugController::Continue` není voláno žádné další zpětné volání události, nebude provedena žádná další zpětná volání.  
+ Každé implementaci zpětného volání musí volat metodu [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , aby bylo možné pokračovat v provádění. Pokud `ICorDebugController::Continue` není volána před vrácením zpětného volání, proces zůstane zastaven a žádné další zpětné volání události nebude provedeno, dokud `ICorDebugController::Continue` není volána.  
   
- Ladicí program musí implementovat [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) , pokud ladí aplikace .NET Framework aplikací verze 2,0. Instance `ICorDebugManagedCallback` nebo`ICorDebugManagedCallback2` je předána jako objekt zpětného volání do [ICorDebug:: SetManagedHandler –](../../../../docs/framework/unmanaged-api/debugging/icordebug-setmanagedhandler-method.md).  
+ Ladicí program musí implementovat [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) , pokud ladí aplikace .NET Framework aplikací verze 2,0. Instance `ICorDebugManagedCallback` nebo `ICorDebugManagedCallback2` je předána jako objekt zpětného volání do [ICorDebug:: SetManagedHandler –](../../../../docs/framework/unmanaged-api/debugging/icordebug-setmanagedhandler-method.md).  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

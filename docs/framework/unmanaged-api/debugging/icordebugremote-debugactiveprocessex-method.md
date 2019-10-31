@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b0df5c5d-9a2e-47bf-894c-6f8a9fe24a1f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 13371d15c8b29f9ef93cc4af87acf85029404644
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 83cc4eadca7c337c06c5fbf9f0e74306c2b9cb99
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744765"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131278"
 ---
 # <a name="icordebugremotedebugactiveprocessex-method"></a>ICorDebugRemote::DebugActiveProcessEx – metoda
-Spustí nějaký proces ve vzdáleném počítači v ladicím programu.  
+Spustí proces na vzdáleném počítači v rámci ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,35 +38,35 @@ HRESULT DebugActiveProcessEx (
   
 ## <a name="parameters"></a>Parametry  
  `pRemoteTarget`  
- [in] Ukazatel [icordebugremotetarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Tento parametr slouží k určení počítače, na kterém je proces spuštěn.  
+ pro Ukazatel na [rozhraní ICorDebugRemoteTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Tento parametr slouží k určení počítače, na kterém je spuštěn proces.  
   
  `id`  
- [in] ID procesu, ke kterému je ladicí program připojit.  
+ pro ID procesu, ke kterému má být připojen ladicí program.  
   
  `win32Attach`  
- [in] `true` Pokud ladicí program by měl chovat jako ladicí program systému Win32 pro proces a odeslání nespravované zpětná volání; v opačném případě `false`.  
+ [in] `true`, jestli se má ladicí program chovat jako ladicí program Win32 pro proces a odeslání nespravovaných zpětných volání; v opačném případě `false`.  
   
  `ppProcess`  
- [out] Ukazatel na adresu "ICorDebugProcess" objekt, který představuje proces, ke kterému je připojen ladicí program.  
+ mimo Ukazatel na adresu objektu "ICorDebugProcess", který představuje proces, ke kterému byl připojen ladicí program.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěšně připojeno k procesu ve vzdáleném počítači.  
+ Úspěšně připojeno k procesu na vzdáleném počítači.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Nelze se připojit k procesu ve vzdáleném počítači.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Nelze se připojit k procesu na vzdáleném počítači.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladění ve smíšeném režimu není v Silverlightu podporovaný.  
+ Ladění ve smíšeném režimu není v Silverlightu podporované.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
+ **Verze .NET Framework:** 4,5, 4, 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 

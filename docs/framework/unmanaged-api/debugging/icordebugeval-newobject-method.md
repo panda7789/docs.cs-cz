@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: ce3025e8-defa-4c5e-8298-f49d71fa5736
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 362c01e0b08145919793cec011a856f0090e5c47
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 68a7e911c2bd1798ea8f34f6a6e24299fe68775d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752987"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137624"
 ---
 # <a name="icordebugevalnewobject-method"></a>ICorDebugEval::NewObject – metoda
-Přidělí novou instanci objektu a volá metodu zadaný konstruktor.  
+Přidělí novou instanci objektu a zavolá specifikovanou metodu konstruktoru.  
   
- Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.  
+ Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugEval2:: newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +39,22 @@ HRESULT NewObject (
   
 ## <a name="parameters"></a>Parametry  
  `pConstructor`  
- [in] Konstruktor, který má být volána.  
+ pro Konstruktor, který má být volán.  
   
  `nArgs`  
- [in] Velikost `ppArgs` pole.  
+ pro Velikost pole `ppArgs`.  
   
  `ppArgs`  
- [in] Pole objektů ICorDebugValue, z nichž každý představuje argument předaný do konstruktoru.  
+ pro Pole objektů ICorDebugValue, z nichž každý představuje argument, který má být předán konstruktoru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

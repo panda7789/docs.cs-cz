@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9395a8a0-ffb9-475f-8da6-890999ae4bb6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 94dfeaaa4ae917540c8030034959ad2f693bb025
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7bb52d499faa83bd05ac0e6c817582f229ae183c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699588"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133182"
 ---
 # <a name="idebuggerinfo-interface"></a>IDebuggerInfo – rozhraní
 Poskytuje metody pro získání informací o stavu služeb ladění.  
@@ -30,16 +28,16 @@ Poskytuje metody pro získání informací o stavu služeb ladění.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsDebuggerAttached – metoda](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-isdebuggerattached-method.md)|Získá hodnotu, která označuje, zda je spravovaný ladicí program připojen k tomuto procesu.|  
+|[IsDebuggerAttached – metoda](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-isdebuggerattached-method.md)|Získá hodnotu, která označuje, zda je k tomuto procesu připojen spravovaný ladicí program.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

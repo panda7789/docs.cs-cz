@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 56e718b4-fabd-418b-a5b3-3cc33c745683
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7649d91ca2b654952d1d5ab0d45f7903d3c46a32
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 867db3325f9b18b31f66429d01ea02be3603c0f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745538"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125765"
 ---
 # <a name="icordebugclassgetstaticfieldvalue-method"></a>ICorDebugClass::GetStaticFieldValue – metoda
-Získá hodnotu zadané statické pole.  
+Získá hodnotu zadaného statického pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +37,24 @@ HRESULT GetStaticFieldValue (
   
 ## <a name="parameters"></a>Parametry  
  `fieldDef`  
- [in] Pole `Def` token, který odkazuje na pole, která se má načíst.  
+ pro Pole `Def` token, který odkazuje na pole, které má být načteno.  
   
  `pFrame`  
- [in] Ukazatel na objekt ICorDebugFrame představující rámec, který se má použít k rozlišení mezi vlákno, místní nebo statistika domény aplikace.  
+ pro Ukazatel na objekt ICorDebugFrame, který představuje rámec, který má být použit k jednoznačnému rozlišení mezi statickými a doménovými doménami vlákna, kontextu nebo domény aplikace.  
   
- Pokud je statická pole relativní vzhledem k vlákno, kontext nebo doménu aplikace, rámce určí správnou hodnotu.  
+ Pokud je statické pole relativní vzhledem k vláknu, kontextu nebo doméně aplikace, bude rámec určovat správnou hodnotu.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu statické pole.  
+ mimo Ukazatel na adresu objektu ICorDebugValue, který představuje hodnotu statického pole.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro parametrizované typy statické pole hodnotu vzhledem ke konkrétní vytváření instancí. Proto pokud konstruktor třídy má parametry typu <xref:System.Type>, volání [icordebugtype::getstaticfieldvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md) místo `ICorDebugClass::GetStaticFieldValue`.  
+ U parametrizovaných typů je hodnota statického pole relativní vzhledem k konkrétní instanci. Proto pokud konstruktor třídy přebírá parametry typu <xref:System.Type>, zavolejte [ICorDebugType:: GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md) namísto `ICorDebugClass::GetStaticFieldValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

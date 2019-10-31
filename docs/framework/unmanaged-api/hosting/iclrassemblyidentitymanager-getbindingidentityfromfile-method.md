@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7797562d-7b4c-4bd9-8b93-f35e0e2869e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1aabc5783e66893d13aed60e04d7ea5f6547c68
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 19d6a76d62680be91a7b9721912ca528edde7511
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773566"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126758"
 ---
 # <a name="iclrassemblyidentitymanagergetbindingidentityfromfile-method"></a>ICLRAssemblyIdentityManager::GetBindingIdentityFromFile – metoda
-Získá identitu sestavení, vytvoření vazby mezi daty pro sestavení v zadané cesty k souboru.  
+Získá datovou vazbu identity sestavení pro sestavení v zadané cestě k souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +38,41 @@ HRESULT GetBindingIdentityFromFile(
   
 ## <a name="parameters"></a>Parametry  
  `pwzFilePath`  
- [in] Cesta k souboru, který má být vyhodnocen.  
+ pro Cesta k souboru, který má být vyhodnocen.  
   
  `dwFlags`  
- [in] Hodnota [eclrassemblyidentityflags –](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md) výčet, který určuje typ identity sestavení. K dispozici pro budoucí rozšíření. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je hodnota, která podporuje modul CLR (CLR) verze 2.0.  
+ pro Hodnota výčtu [ECLRAssemblyIdentityFlags –](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md) , která označuje typ identity sestavení. K dispozici pro budoucí rozšíření. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je jediná hodnota, kterou podporuje modul CLR (Common Language Runtime) verze 2,0.  
   
  `pwzBuffer`  
- [out] Vyrovnávací paměť obsahující data identit neprůhledné sestavení.  
+ mimo Vyrovnávací paměť obsahující data identity neprůhledných sestavení  
   
  `pcchBufferSize`  
- [out v] Ukazatel na velikost `pwzBuffer`.  
+ [in, out] Ukazatel na velikost `pwzBuffer`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Metoda vrátila úspěšně.|  
-|E_INVALIDARG|Zadané `pwzFilePath` má hodnotu null.|  
+|S_OK|Metoda byla úspěšně vrácena.|  
+|E_INVALIDARG|Poskytnutý `pwzFilePath` má hodnotu null.|  
 |ERROR_INSUFFICIENT_BUFFER|Velikost `pwzBuffer` je příliš malá.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `GetBindingIdentityFromFile` je obvykle volána dvakrát. První volání je zadán pro hodnotu null `pwzBuffer`, a metoda vrátí odpovídající velikost v `pcchBufferSize`. Druhém volání je zadán správně přidělené vyrovnávací paměti a vrátí metodu s daty skutečné velikosti paměti po dokončení.  
+ `GetBindingIdentityFromFile` se obvykle volá dvakrát. První volání dodá hodnotu null pro `pwzBuffer`a metoda vrátí odpovídající velikost v `pcchBufferSize`. Druhé volání dodá vhodně přidělenou vyrovnávací paměť a metoda se vrátí se skutečnými daty vyrovnávací paměti po dokončení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

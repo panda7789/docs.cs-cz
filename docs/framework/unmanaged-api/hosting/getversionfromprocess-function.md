@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a9f7f824-64a1-408d-8607-91c7f19d21fe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4015ecec38466650488a653641f5af93c4680f22
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 76c033b11f3212241827d74f4fe18ee881f20b64
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779585"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127040"
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess – funkce
-Získá číslo verze common language runtime (CLR), který je spojen s obslužnou rutinou určeného procesu.  
+Získá číslo verze modulu CLR (Common Language Runtime), který je spojen se zadaným popisovačem procesu.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,35 +40,35 @@ HRESULT GetVersionFromProcess (
   
 ## <a name="parameters"></a>Parametry  
  `hProcess`  
- [in] Popisovač procesu.  
+ pro Popisovač procesu.  
   
  `pVersion`  
- [out] Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení metody.  
+ mimo Vyrovnávací paměť, která obsahuje řetězec čísla verze po úspěšném dokončení metody.  
   
  `cchBuffer`  
- [in] Délka vyrovnávací paměti verze.  
+ pro Délka vyrovnávací paměti verze.  
   
  `pdwLength`  
- [out] Ukazatel na délku řetězce číslo verze.  
+ mimo Ukazatel na délku řetězce čísla verze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`pVersion` má hodnotu null a `cchBuffer` nemá hodnotu null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess` není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> Není načten modul CLR.|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` je null nebo je menší než délka řetězce verze.|  
+|E_INVALIDARG|`pVersion` je null a `cchBuffer` není null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess` není platným popisovačem procesu.<br /><br /> -nebo-<br /><br /> Modul CLR není zaveden.|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` je null nebo menší než délka řetězce verze.|  
 |E_NOTIMPL|Tato metoda není k dispozici v operačním systému Microsoft Windows 95, Microsoft Windows 98 nebo Microsoft Windows Millennium Edition.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

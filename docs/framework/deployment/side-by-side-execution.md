@@ -4,14 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 78cbb98d4fb3887b82b2432451c47ac64d96ab91
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5202e4c26220bc9ea08d6d941ee5a7821cbbdefd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052020"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122241"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Souběžné spouštění v .NET Framework
 
@@ -63,7 +61,7 @@ Hlavička přenositelného spustitelného souboru (PE) každé spravované aplik
   
 ### <a name="runtime-version-information-in-the-application-configuration-file"></a>Informace o verzi modulu runtime v konfiguračním souboru aplikace  
 
-Kromě informací v hlavičce souboru PE může být aplikace nasazena pomocí konfiguračního souboru aplikace, který poskytuje informace o verzi modulu runtime. Konfigurační soubor aplikace je soubor založený na jazyce XML, který je vytvořen vývojářem aplikace a který je dodáván s aplikací. [Element requiredRuntime > oddílu startup >, pokud se nachází v tomto souboru, určuje, které verze modulu runtime a které verze komponenty aplikace podporuje. \<](../configure-apps/file-schema/startup/requiredruntime-element.md) [ \<](../configure-apps/file-schema/startup/startup-element.md) Tento soubor můžete také použít při testování k otestování kompatibility aplikace s různými verzemi modulu runtime.  
+Kromě informací v hlavičce souboru PE může být aplikace nasazena pomocí konfiguračního souboru aplikace, který poskytuje informace o verzi modulu runtime. Konfigurační soubor aplikace je soubor založený na jazyce XML, který je vytvořen vývojářem aplikace a který je dodáván s aplikací. [Element\<requiredRuntime >](../configure-apps/file-schema/startup/requiredruntime-element.md) [oddílu\<startup >](../configure-apps/file-schema/startup/startup-element.md), pokud se nachází v tomto souboru, určuje, které verze modulu runtime a které verze komponenty aplikace podporuje. Tento soubor můžete také použít při testování k otestování kompatibility aplikace s různými verzemi modulu runtime.  
   
 Nespravovaný kód, včetně aplikací COM a COM+, může mít konfigurační soubory aplikace, které modul runtime používá pro interakci se spravovaným kódem. Konfigurační soubor aplikace má vliv na veškerý spravovaný kód, který aktivujete pomocí modelu COM. Soubor může určovat, které verze modulu runtime podporuje, i přesměrování sestavení. Ve výchozím nastavení používají spolupracující aplikace COM volání spravovaného kódu nejnovější verzi modulu runtime, který je v počítači nainstalován.  
   
@@ -83,7 +81,7 @@ Modul runtime používá konfigurační soubor aplikace a hlavičku přenositeln
   
 Pokud je přítomen konfigurační soubor aplikace, modul runtime určí vhodnou verzi modulu runtime, která se má načíst na základě výsledků následujícího procesu:  
   
-1. Modul runtime prověřuje [ \<element supportedRuntime > elementu](../configure-apps/file-schema/startup/supportedruntime-element.md) v konfiguračním souboru aplikace. Pokud je přítomna jedna nebo více podporovaných verzí modulu runtime, které jsou zadány v  **\<prvku supportedRuntime >** , modul runtime načte verzi modulu runtime určenou prvním  **\<prvkem supportedRuntime >** . Pokud tato verze není k dispozici, modul runtime prověřuje další  **\<prvek > supportedRuntime** a pokusí se načíst zadanou verzi modulu runtime. Pokud tato verze modulu runtime není k dispozici, jsou zkontrolovány další  **\<> supportedRuntime** prvky. Pokud není k dispozici žádná z podporovaných verzí modulu runtime, modul runtime nedokáže načíst verzi modulu runtime a zobrazí uživateli zprávu (viz krok 3).  
+1. Modul runtime prověřuje [\<prvek elementu > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md) v konfiguračním souboru aplikace. Pokud je přítomna jedna nebo více podporovaných verzí modulu runtime, které jsou zadány v prvku **\<supportedRuntime >** , modul runtime načte verzi modulu runtime určenou prvním **\<m prvku supportedRuntime >** . Pokud tato verze není k dispozici, modul runtime prověřuje další **\<prvek > supportedRuntime** a pokusí se načíst zadanou verzi modulu runtime. Pokud tato verze modulu runtime není k dispozici, jsou zkontrolovány další **\<prvky > supportedRuntime** . Pokud není k dispozici žádná z podporovaných verzí modulu runtime, modul runtime nedokáže načíst verzi modulu runtime a zobrazí uživateli zprávu (viz krok 3).  
   
 2. Modul runtime čte hlavičku souboru PE spustitelného souboru aplikace. Je-li verze modulu runtime určená hlavičkou souboru PE k dispozici, modul runtime tuto verzi načte. Pokud zadaná verze modulu runtime není k dispozici, modul runtime vyhledá verzi modulu runtime určenou společností Microsoft, aby byla kompatibilní s verzí modulu runtime v hlavičce PE. Pokud se tato verze nenajde, proces pokračuje krokem 3.  
   
@@ -99,7 +97,7 @@ Pokud je přítomen konfigurační soubor aplikace, modul runtime určí vhodnou
 
 Vzhledem k tomu, že se jedná o potenciální zdroj souběžných problémů, lze použít částečně kvalifikované odkazy na sestavení pouze k vytvoření vazby k sestavením v adresáři aplikace. Vyhněte se částečně kvalifikovaným odkazům na sestavení ve vašem kódu.  
   
-Chcete-li zmírnit částečně kvalifikované odkazy na sestavení v kódu, můžete použít [ \<prvek qualifyAssembly >](../configure-apps/file-schema/runtime/qualifyassembly-element.md) v konfiguračním souboru aplikace pro úplné určení částečně kvalifikovaných odkazů na sestavení, které se vyskytují v kódu. Pomocí elementu qualifyAssembly > můžete určit pouze pole, která nebyla nastavena v částečném odkazu.  **\<** Identita sestavení uvedená v atributu **FullName** musí obsahovat všechny informace potřebné k plnému kvalifikovanému názvu sestavení: název sestavení, veřejný klíč, jazyková verze a verze.  
+Chcete-li zmírnit částečně kvalifikované odkazy na sestavení v kódu, můžete použít [> prvek\<qualifyAssembly](../configure-apps/file-schema/runtime/qualifyassembly-element.md) v konfiguračním souboru aplikace k úplnému poskytnutí částečně kvalifikovaných odkazů na sestavení, ke kterým dochází v kódu. Pomocí elementu **\<qualifyAssembly >** zadejte pouze pole, která nebyla nastavena v částečném odkazu. Identita sestavení uvedená v atributu **FullName** musí obsahovat všechny informace potřebné k plnému kvalifikovanému názvu sestavení: název sestavení, veřejný klíč, jazyková verze a verze.  
   
  Následující příklad ukazuje položku konfiguračního souboru aplikace pro úplné zařazení sestavení s názvem `myAssembly`.  
   
@@ -113,7 +111,7 @@ publicKeyToken=...,
 </assemblyBinding>   
 ```  
   
- Při každém odkazu `myAssembly`na příkaz načtení sestavení způsobí tato nastavení konfiguračního souboru, aby modul runtime automaticky přeložil částečně `myAssembly` kvalifikovaný odkaz na plně kvalifikovaný odkaz. Například Assembly. Load ("myAssembly") se bude jednat o Assembly. Load ("myAssembly, Version = 1.0.0.0, publicKeyToken =..., Culture = neutral").  
+ Vždy, když příkaz Assembly Load odkazuje `myAssembly`, tato nastavení konfiguračního souboru způsobí, že modul runtime automaticky převede částečně kvalifikovaný `myAssembly` odkaz na plně kvalifikovaný odkaz. Například Assembly. Load ("myAssembly") se bude jednat o Assembly. Load ("myAssembly, Version = 1.0.0.0, publicKeyToken =..., Culture = neutral").  
   
 > [!NOTE]
 > Pomocí metody **LoadWithPartialName** můžete obejít omezení modulu CLR (Common Language Runtime), které zabrání načtení částečně odkazovaných sestavení z globální mezipaměti sestavení (GAC). Tato metoda by se měla používat jenom ve scénářích vzdálené komunikace, protože může snadno způsobovat problémy při souběžném spouštění.  
@@ -128,6 +126,6 @@ publicKeyToken=...,
 |[Sestavení v .NET](../../standard/assembly/index.md)|Poskytuje koncepční přehled sestavení.|  
 |[Aplikační domény](../app-domains/application-domains.md)|Poskytuje koncepční přehled domén aplikací.|  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
 
-[\<supportedRuntime – element >](../configure-apps/file-schema/startup/supportedruntime-element.md)
+[\<element > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md)

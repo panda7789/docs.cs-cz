@@ -10,18 +10,16 @@ api_type:
 ms.assetid: 1d4424ab-5143-4e50-a84a-ceeb4ddf3bba
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 676489880cb30ca540cb78d70797dbf4eedf7395
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 239e3a82df0e6010278669f9f429bfad0d163319
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739595"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133727"
 ---
 # <a name="cordebugstatechange-enumeration"></a>Výčet CorDebugStateChange
 
-Popisuje množství dat uložených v mezipaměti, který musí být odstraněn podle změn do procesu.
+Popisuje množství dat uložených v mezipaměti, které je nutné zahodit na základě změn procesu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,22 +35,22 @@ typedef enum CorDebugStateChange
 
 | Člen            | Popis                                                              |
 | ----------------- | ------------------------------------------------------------------------ |
-| `PROCESS_RUNNING` | Proces byl dosažen nový stav paměti prostřednictvím dopředné spuštění.            |
-| `FLUSH_ALL`       | Paměť procesu může být libovolně jiný než dříve. |
+| `PROCESS_RUNNING` | Proces dosáhl nového stavu paměti prostřednictvím dopředné spuštění.            |
+| `FLUSH_ALL`       | Paměť procesu může být libovolně jiná než dříve. |
 
 ## <a name="remarks"></a>Poznámky
 
- Členem `CorDebugStateChange` výčtu je zadaný jako argument při volání ladicího programu `ProcessStateChanged` metoda buď pomocí [ICorDebugProcess4::ProcessStateChanged](icordebugprocess4-processstatechanged-method.md) nebo [ICorDebugProcess6:: ProcessStateChanged](icordebugprocess6-processstatechanged-method.md)
+ Člen `CorDebugStateChange` výčtu je uveden jako argument, pokud ladicí program volá metodu `ProcessStateChanged` buď pomocí [ICorDebugProcess4::P rocessstatechanged](icordebugprocess4-processstatechanged-method.md) nebo [ICorDebugProcess6::P rocessstatechanged](icordebugprocess6-processstatechanged-method.md)
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
- **Záhlaví:** CorDebug.idl, CorDebug.h
+ **Hlavička:** CorDebug. idl, CorDebug. h
 
- **Knihovna:** CorGuids.lib
+ **Knihovna:** CorGuids. lib
 
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

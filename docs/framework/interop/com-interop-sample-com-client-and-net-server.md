@@ -1,5 +1,5 @@
 ---
-title: 'Ukázka zprostředkovatele s objekty COM: klient COM a server .NET'
+title: 'Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,16 +8,14 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 48bd536cedd6a9689cdb18cca457ff06473396b5
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a317d97219017e0ab14456a0ff74b7ae75e432c2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051869"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123711"
 ---
-# <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele s objekty COM: klient COM a server .NET
+# <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET
 Tato ukázka předvádí provedenou operaci [klienta modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [serveru .NET](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty hypotéky. V tomto příkladu klient vytvoří a zavolá instanci spravované `Loan` třídy, předá do instance čtyři argumenty (jedna z těchto čtyř se rovná nule) a zobrazí výpočty. V rámci této části se zobrazí příklady kódu z této ukázky.  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
@@ -88,7 +86,7 @@ int main(int argc, char* argv[])
 ```  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor2"></a>   
-## <a name="net-server"></a>.NET Server  
+## <a name="net-server"></a>Server .NET  
   
 ```vb  
 Imports System  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: bf84d0af-53e1-4c04-bc5b-7e5f81ba2cc2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1cfaf886d09d843f4dbf61af55a9388454b050ca
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d1d3a5eb6e0b24b40a35c13a99465dd3c7032a91
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957430"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138947"
 ---
 # <a name="icordebugstringvalue-interface"></a>ICorDebugStringValue – rozhraní
 Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.  
@@ -31,7 +29,7 @@ Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Vrátí počet znaků v řetězci, na který odkazuje tento `ICorDebugStringValue`.|  
-|[GetString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Získá řetězec, na který odkazuje `ICorDebugStringValue`tento.|  
+|[GetString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Získá řetězec, na který odkazuje tento `ICorDebugStringValue`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -39,11 +37,11 @@ Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

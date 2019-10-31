@@ -6,33 +6,31 @@ f1_keywords:
 helpviewer_keywords:
 - PrintPreviewDialog control (using designer), about PrintPreviewDialog
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dce6bf9cb9872183e60e6ccdf7eaf79b6630db51
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 670886956e1b348895862c117ccf9cf586bde8bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053699"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141221"
 ---
-# <a name="printpreviewdialog-control-overview-windows-forms"></a>Printpreviewdialog – Přehled ovládacího prvku (Windows Forms)
+# <a name="printpreviewdialog-control-overview-windows-forms"></a>Přehled ovládacího prvku PrintPreviewDialog – (model Windows Forms)
 
-Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek je předem nakonfigurované dialogovému oknu slouží k zobrazení jak [PrintDocument](printdocument-component-windows-forms.md) se zobrazí po vytištění. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, Přiblížit, zobrazení jedné nebo více stránek a zavření dialogového okna.
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> je předem nakonfigurovaný dialog, který slouží k zobrazení toho, jak se bude zobrazovat [PrintDocument](printdocument-component-windows-forms.md) po vytištění. Používejte ho v rámci aplikace pro Windows jako jednoduché řešení namísto konfigurace vlastního dialogového okna. Ovládací prvek obsahuje tlačítka pro tisk, přiblížení, zobrazení jedné nebo více stránek a zavření dialogového okna.
 
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody
 
-Klíčová vlastnost ovládacího prvku je <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A>, který nastaví dokumentu, který má být zobrazen. Dokument musí být <xref:System.Drawing.Printing.PrintDocument> objektu. Aby bylo možné zobrazit dialogové okno, je nutné volat jeho <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda. Vyhlazení může zvýšit zobrazí hladší text, ale také může být pomalejší; zobrazení Chcete-li použít, nastavte <xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A> vlastnost `true`.
+Vlastnost klíče ovládacího prvku je <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A>, ve kterém se nastaví náhled dokumentu. Dokument musí být objekt <xref:System.Drawing.Printing.PrintDocument>. Chcete-li zobrazit dialogové okno, je nutné zavolat jeho metodu <xref:System.Windows.Forms.Form.ShowDialog%2A>. Vyhlazení může text zobrazit hladší, ale může také zpomalit zobrazení. Pokud ho chcete použít, nastavte vlastnost <xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A> na `true`.
 
-Některé vlastnosti jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> , který <xref:System.Windows.Forms.PrintPreviewDialog> obsahuje. (Není potřeba tento <xref:System.Windows.Forms.PrintPreviewControl> pro formuláře; je automaticky obsažené v rámci <xref:System.Windows.Forms.PrintPreviewDialog> po přidání dialogového okna do formuláře.) Příkladem vlastnosti, které jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> jsou <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> a <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A> vlastnosti, které určují počet stránek zobrazených vodorovně a svisle na ovládacím prvku. Můžete přistupovat <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> vlastnost jako `PrintPreviewDialog1.PrintPreviewControl.Columns` v jazyce Visual Basic `printPreviewDialog1.PrintPreviewControl.Columns` ve Vizuálu C#, nebo `printPreviewDialog1->PrintPreviewControl->Columns` ve Vizuálu C++.
+Některé vlastnosti jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl>, které obsahuje <xref:System.Windows.Forms.PrintPreviewDialog>. (Tuto <xref:System.Windows.Forms.PrintPreviewControl> nemusíte přidávat do formuláře. je automaticky obsažena v <xref:System.Windows.Forms.PrintPreviewDialog> při přidávání dialogového okna do formuláře). Příklady vlastností, které jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl>, jsou vlastnosti <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> a <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A>, které určují počet stránek zobrazených vodorovně a svisle na ovládacím prvku. Vlastnost <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> můžete zpřístupnit jako `PrintPreviewDialog1.PrintPreviewControl.Columns` v Visual Basic, `printPreviewDialog1.PrintPreviewControl.Columns` v vizuálu C#nebo `printPreviewDialog1->PrintPreviewControl->Columns` ve vizuálu. C++
 
-## <a name="printpreviewdialog-performance"></a>Printpreviewdialog – výkon
+## <a name="printpreviewdialog-performance"></a>PrintPreviewDialog – výkon
 
-Za následujících podmínek <xref:System.Windows.Forms.PrintPreviewDialog> velmi pomalu se inicializuje ovládací prvek:
+V následujících podmínkách se ovládací prvek <xref:System.Windows.Forms.PrintPreviewDialog> inicializuje velmi pomalu:
 
-- Slouží k síťové tiskárně.
-- Předvolby uživatele pro tuto tiskárnu, jako je například duplexní nastavení, jsou změněny.
+- Použije se síťová tiskárna.
+- Uživatelské předvolby pro tuto tiskárnu, například duplexní nastavení, se upraví.
 
-Pro aplikace běžící na rozhraní .NET Framework 4.5.2, můžete přidat následující klíč \<appSettings > oddílu konfiguračního souboru pro zlepšení výkonu <xref:System.Windows.Forms.PrintPreviewDialog> řídit inicializace:
+Pro aplikace běžící v .NET Framework 4.5.2 můžete přidat následující klíč do části \<appSettings > konfiguračního souboru, aby se zlepšil výkon při inicializaci ovládacího prvku <xref:System.Windows.Forms.PrintPreviewDialog>:
 
 ```xml
 <appSettings>
@@ -40,9 +38,9 @@ Pro aplikace běžící na rozhraní .NET Framework 4.5.2, můžete přidat nás
 </appSettings>
 ```
 
-Pokud `EnablePrintPreviewOptimization` klíč nastavený na jakoukoli jinou hodnotu, nebo pokud není klíč přítomen, optimalizace se nepoužije.
+Pokud je klíč `EnablePrintPreviewOptimization` nastaven na jinou hodnotu, nebo pokud klíč není k dispozici, optimalizace se nepoužije.
 
-Pro aplikace běžící na rozhraní .NET Framework 4.6 nebo novější verze, můžete přidat následující přepínač tak, aby [ \<AppContextSwitchOverrides >](../../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ \<runtime >](../../configure-apps/file-schema/runtime/index.md) oddíl konfiguračního souboru aplikace:
+Pro aplikace spuštěné v .NET Framework 4,6 nebo novějších verzích můžete do elementu [\<AppContextSwitchOverrides >](../../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přidat následující přepínač v sekci [> modulu runtime\<](../../configure-apps/file-schema/runtime/index.md) v konfiguračním souboru aplikace:
 
 ```xml
 <runtime >
@@ -51,9 +49,9 @@ Pro aplikace běžící na rozhraní .NET Framework 4.6 nebo novější verze, m
 </runtime >
 ```
 
-Pokud není k dispozici přepínač nebo pokud je nastavena na jinou hodnotu, optimalizace se nepoužije.
+Pokud přepínač není přítomen nebo pokud je nastaven na jinou hodnotu, optimalizace se nepoužije.
 
-Pokud používáte <xref:System.Drawing.Printing.PrintDocument.QueryPageSettings> událostí k úpravě nastavení tiskárny, výkon <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek nezlepší i v případě, že je nastavena k přepnutí optimalizace konfigurace.
+Použijete-li událost <xref:System.Drawing.Printing.PrintDocument.QueryPageSettings> pro úpravu nastavení tiskárny, výkon ovládacího prvku <xref:System.Windows.Forms.PrintPreviewDialog> nebude vylepšen ani v případě, že je nastaven přepínač konfigurace optimalizace.
 
 ## <a name="see-also"></a>Viz také:
 

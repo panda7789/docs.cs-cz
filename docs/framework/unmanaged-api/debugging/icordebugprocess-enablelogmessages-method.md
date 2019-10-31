@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14a4e5a3-3eaf-4f53-9dd1-762726963a23
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b199d3226ec391fadc356b5efacdbf10a3e25adf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4134062be93a2fc5e76949d465a7b5822556b408
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766155"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128894"
 ---
 # <a name="icordebugprocessenablelogmessages-method"></a>ICorDebugProcess::EnableLogMessages – metoda
-Povolí nebo zakáže přenos zpráv protokolu v ladicím programu.  
+Povolí nebo zakáže přenos zpráv protokolu do ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +33,16 @@ HRESULT EnableLogMessages([in]BOOL fOnOff);
   
 ## <a name="parameters"></a>Parametry  
  `fOnOff`  
- [in] `true` umožňuje přenos zprávy protokolu. `false` zakáže přenosu.  
+ [in] `true` povoluje přenos zpráv protokolu; `false` zakáže přenos.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je platná jenom po [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) vyvolá zpětné volání.  
+ Tato metoda je platná pouze po výskytu zpětného volání [ICorDebugManagedCallback:: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

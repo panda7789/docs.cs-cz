@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: c35e2919-42c3-4ba0-ae28-443c35f66f93
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c7d9f5373f2b4ea216ca517813b1334b9f5c38a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 949d04fe8d9ce492fb320fb4732677ffb35302ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739967"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132830"
 ---
 # <a name="cordebugiltonativemappingtypes-enumeration"></a>CorDebugIlToNativeMappingTypes – výčet
-Označuje, zda určitý rozsah nativní pokyny, reprezentovaný instancí cor_debug_il_to_native_map – struktura odpovídá do oblasti zvláštní kód.  
+Označuje, zda konkrétní rozsah nativních instrukcí reprezentovaných instancí struktury COR_DEBUG_IL_TO_NATIVE_MAP odpovídá zvláštní oblasti kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,18 +38,18 @@ typedef enum CorDebugIlToNativeMappingTypes {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`NO_MAPPING`|Rozsah nativní pokyny neodpovídá žádné speciální kód oblasti.|  
-|`PROLOG`|Rozsah nativní pokyny odpovídá prologu.|  
-|`EPILOG`|Rozsah nativní pokyny odpovídá epilogu.|  
+|`NO_MAPPING`|Rozsah nativních instrukcí neodpovídá žádné zvláštní oblasti kódu.|  
+|`PROLOG`|Rozsah nativních instrukcí odpovídá prologu.|  
+|`EPILOG`|Rozsah nativních instrukcí odpovídá epilogu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

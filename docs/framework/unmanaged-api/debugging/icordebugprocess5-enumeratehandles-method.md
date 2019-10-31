@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7d7fa796-0dc6-4ee8-9d56-40166246d91d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 229717ba1d7f004dc1ed020eddb2929079aa9285
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0e68dba1f4d9ac5fa618aa842b823dcc046e70e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767576"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129679"
 ---
 # <a name="icordebugprocess5enumeratehandles-method"></a>ICorDebugProcess5::EnumerateHandles – metoda
-Získá enumerátor pro objekt popisovače procesu.  
+Získá enumerátor pro popisovače objektů v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,30 +34,30 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
   
 ## <a name="parameters"></a>Parametry  
  `types`  
- [in] Bitová kombinace hodnot [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnoty, které určuje typ obslužné rutiny, které chcete zahrnout do kolekce.  
+ pro Bitová kombinace hodnot [CorGCReferenceType –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) , která určuje typ popisovačů, které mají být zahrnuty do kolekce.  
   
  `ppENum`  
- [out] Ukazatel na adresu [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , který je enumerátor pro objekty být uvolněna.  
+ mimo Ukazatel na adresu [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , která je enumerátorem pro objekty, které mají být shromážděny z paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- `EnumerateHandles` je pomocná funkce, která podporuje kontrolu tabulku. Se podobá [icordebugprocess5::enumerategcreferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) metody, s výjimkou, že místo naplnění [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) kolekci všech objektů, aby byly uklizeny, ho zahrnuje pouze objekty, které mají obslužné rutiny z tabulky popisovače.  
+ `EnumerateHandles` je pomocná funkce, která podporuje kontrolu tabulky popisovačů. Je podobný jako metoda [ICorDebugProcess5:: EnumerateGCReferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) , s výjimkou toho, že místo naplnění kolekce [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) se všemi objekty, které mají být sbírány do paměti, zahrnují pouze objekty, které mají popisovače. Tabulka popisovačů.  
   
- `types` Parametr určuje typy popisovač chcete zahrnout do kolekce. `types` může být kterýkoli z následujících tří členů [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) výčtu:  
+ Parametr `types` určuje typy popisovačů, které se mají zahrnout do kolekce. `types` může být kterýkoli z následujících tří členů výčtu [CorGCReferenceType –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) :  
   
-- `CorHandleStrongOnly` (popisovače pouze odkazy na silné).  
+- `CorHandleStrongOnly` (zpracovává pouze silné odkazy).  
   
-- `CorHandleWeakOnly` (popisovače jenom slabé odkazy).  
+- `CorHandleWeakOnly` (zpracovává pouze slabé odkazy).  
   
 - `CorHandleAll` (všechny popisovače).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

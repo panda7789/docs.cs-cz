@@ -2,17 +2,15 @@
 title: ISymUnmanagedAsyncMethodPropertiesWriter – rozhraní
 ms.date: 03/30/2017
 ms.assetid: caa71820-8058-4b6a-93a2-25ee757d92d3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 82fcddd7a3f89a92cc79285930b30342333fbec2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db065357e22ac576600a3ca61dda0882b9206a86
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940098"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129152"
 ---
 # <a name="isymunmanagedasyncmethodpropertieswriter-interface"></a>ISymUnmanagedAsyncMethodPropertiesWriter – rozhraní
-Můžete zadat volitelný asynchronní informace metody pro každou metodu symbol. Vždy používejte otevřené metodou; To znamená, že mezi voláními [openmethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md) a [closemethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md).  
+Umožňuje definovat nepovinné informace o asynchronních metodách pro každý symbol metody. Vždy používat s otevřenou metodou; To znamená, že mezi voláními [metody OpenMethod –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md) a [metodou CloseMethod –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -21,16 +19,16 @@ Můžete zadat volitelný asynchronní informace metody pro každou metodu symbo
 ```  
   
 ## <a name="methods"></a>Metody  
- Toto rozhraní obsahuje následující dvě metody:  
+ Toto rozhraní obsahuje následující metody:  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[DefineAsyncStepInfo – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md)|Definujte skupinu asynchronního await operací v aktuální metodě.<br /><br /> Každý yield posun odpovídá návratový instrukce await, identifikace možných yield. Každý `breakpointMethod` / `breakpointOffset` pár identifikuje, kde asynchronní operace bude pokračovat, může být v jiné metody.|  
-|[DefineCatchHandlerILOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definecatchhandleriloffset-method.md)|Nastavuje posun pro obslužnou rutinu catch vygenerovaný kompilátorem, který obtéká asynchronní metody IL.<br /><br /> Posun IL generovaný catch používá ladicí program na zpracování bloku catch, jako by šlo neuživatelský kód, i v případě, že může dojít v metodě kód uživatele. Zejména je použít v odpovědi **CatchHandlerFound** události výjimky.|  
-|[DefineKickoffMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md)|Nastaví výchozí metodu, která zahájí asynchronní operace.|  
+|[DefineAsyncStepInfo – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md)|Definujte skupinu asynchronních operací await v aktuální metodě.<br /><br /> Každý posun výtěžnosti odpovídá instrukci vracené zpět, která identifikuje potenciální výtěžnost. Každý `breakpointMethod`/`breakpointOffset` páry identifikuje, kde bude asynchronní operace pokračovat; může se jednat o jinou metodu.|  
+|[DefineCatchHandlerILOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definecatchhandleriloffset-method.md)|Nastaví posun IL pro obslužnou rutinu catch generovaný kompilátorem, který zabalí asynchronní metodu.<br /><br /> Posunutí IL vygenerovaného catch je používáno ladicím programem pro zpracování tohoto zachycení, jako by šlo o neuživatelský kód, i když k tomu může dojít v metodě uživatelského kódu. Konkrétně se používá v reakci na událost **CatchHandlerFound** výjimky.|  
+|[DefineKickoffMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md)|Nastaví počáteční metodu, která inicializuje asynchronní operaci.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

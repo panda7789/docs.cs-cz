@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d9f16439-5a36-4474-8ffd-4f0b2c2bb686
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3cbecd5be9b1ac7c08e6970933a48eeb95f01a22
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eafae181c74d9f3842f7f0d547bcccbbb28c09e6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739389"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132125"
 ---
 # <a name="corgcreferencetype-enumeration"></a>CorGCReferenceType – výčet
-Identifikuje zdrojový objekt bude uvolněna.  
+Určuje zdroj objektu, který má být shromážděn do paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,35 +50,35 @@ typedef enum {
   
 |Název členu|Popis|  
 |-----------------|-----------------|  
-|`CorHandleStrong`|Popisovač silného odkazu z tabulky popisovač objektu.|  
-|`CorHandleStrongPinning`|Popisovač připnuté silného odkazu z tabulky popisovač objektu.|  
-|`CorHandleWeakShort`|Popisovač nestálý odkaz z tabulky popisovač objektu.|  
-|`CorHandleWeakRefCount`|Popisovač pro objekt slabé počítáním referencí z tabulky popisovač objektu.|  
-|`CorHandleStrongRefCount`|Popisovač pro objekt počítáním referencí z tabulky popisovač objektu.|  
-|`CorHandleStrongDependent`|Popisovač pro závislý objekt z tabulky popisovač objektu.|  
-|`CorHandleStrongAsyncPinned`|Asynchronní objekt připnuté z tabulky popisovač objektu.|  
-|`CorHandleStrongSizedByref`|Silný popisovač, který udržuje přibližné velikosti kolektivní ukončení všech objektů a objektů kořeny během uvolňování paměti kolekce.|  
-|`CorReferenceStack`|Odkaz ze spravované zásobníku.|  
-|`CorReferenceFinalizer`|Odkaz z fronta finalizační metody.|  
-|CorHandleStrongOnly|Vrátíte pouze silné odkazy z tabulky popisovače. Tato hodnota se používá [icordebugprocess5::enumeratehandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) pouze metody.|  
-|`CorHandleWeakOnly`|Vrátí jenom slabé odkazy z tabulky popisovače. Tato hodnota se používá [icordebugprocess5::enumeratehandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) pouze metody.|  
-|`CorHandleAll`|Vrátí všechny odkazy z tabulky popisovače. Tato hodnota se používá [icordebugprocess5::enumeratehandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) pouze metody.|  
+|`CorHandleStrong`|Popisovač na silný odkaz z tabulky popisovače objektu.|  
+|`CorHandleStrongPinning`|Popisovač připnutého silného odkazu z tabulky popisovače objektu.|  
+|`CorHandleWeakShort`|Popisovač na slabý odkaz z tabulky popisovače objektu.|  
+|`CorHandleWeakRefCount`|Popisovač slabého objektu s vypočítaným odkazem z tabulky popisovače objektu.|  
+|`CorHandleStrongRefCount`|Popisovač objektu počítaného odkazem z tabulky popisovače objektu.|  
+|`CorHandleStrongDependent`|Popisovač závislého objektu z tabulky popisovače objektu.|  
+|`CorHandleStrongAsyncPinned`|Asynchronní připnutý objekt z tabulky popisovače objektu.|  
+|`CorHandleStrongSizedByref`|Silný popisovač, který při uvolňování paměti udržuje přibližnou velikost souhrnu všech objektů a kořenových objektů.|  
+|`CorReferenceStack`|Odkaz ze spravovaného zásobníku.|  
+|`CorReferenceFinalizer`|Odkaz z fronty finalizační metody.|  
+|CorHandleStrongOnly|Vrátí pouze silné odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
+|`CorHandleWeakOnly`|Vrátí pouze slabé odkazy z tabulky popisovačů. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
+|`CorHandleAll`|Vrátí všechny odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
   
 ## <a name="remarks"></a>Poznámky  
- `CorGCReferenceType` Výčet je používán následujícím způsobem:  
+ `CorGCReferenceType` výčet se používá následujícím způsobem:  
   
-- Jako hodnotu `type` pole [cor_gc_reference –](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) strukturu, určuje zdroj odkazu nebo popisovač.  
+- Jako hodnota pole `type` struktury [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) označuje zdroj odkazu nebo popisovače.  
   
-- Jako `types` argument [icordebugprocess5::enumeratehandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) metody Určuje typy obslužné rutiny, které chcete zahrnout do výčtu.  
+- Jako argument `types` pro metodu [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) určuje typy popisovačů, které mají být zahrnuty do výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 31e53494-bcc9-4981-91a4-f7e0f02cad48
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e03e7a965bc923d91cb0c83a9ea8ea5899da63a9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c159a175ddd380015cc2dc21637c8b63fd3caea6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754667"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137897"
 ---
 # <a name="icordebugfunctiongetlocalvarsigtoken-method"></a>ICorDebugFunction::GetLocalVarSigToken – metoda
-Získá metadata pro místní proměnné podpis funkce, která je reprezentovaný touto instancí ICorDebugFunction token.  
+Získá token metadat pro místní proměnnou signaturu funkce, která je reprezentovaná touto instancí ICorDebugFunction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +35,13 @@ HRESULT GetLocalVarSigToken (
   
 ## <a name="parameters"></a>Parametry  
  `pmdSig`  
- [out] Ukazatel `mdSignature` token pro místní proměnné podpis této funkce nebo `mdSignatureNil`, pokud tato funkce nemá žádné místní proměnné.  
+ mimo Ukazatel na token `mdSignature` pro podpis místní proměnné této funkce nebo `mdSignatureNil`, pokud tato funkce nemá žádné místní proměnné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

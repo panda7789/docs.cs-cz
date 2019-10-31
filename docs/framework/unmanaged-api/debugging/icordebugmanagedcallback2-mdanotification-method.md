@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93f79627-bd31-4f4f-b95d-46a032a52fe4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4011932af6f4b058906c19566e4c1abe96b409db
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ab3819d5c33f090fda1ca9c3dccb5d08ab8f84cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762095"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131463"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification – metoda
-Poskytuje oznámení, že spuštění kódu došlo k Pomocník spravovaného ladění (MDA) v aplikaci, která je právě laděna.  
+Poskytuje oznámení o tom, že provádění kódu zjistilo v aplikaci, která je laděna, pomocníka spravovaného ladění (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,37 +37,37 @@ HRESULT MDANotification(
   
 ## <a name="parameters"></a>Parametry  
  `pController`  
- [in] Ukazatel na icordebugcontroller – rozhraní, která zveřejňuje proces nebo doménu aplikace, ve kterém MDA došlo.  
+ pro Ukazatel na rozhraní ICorDebugController, které zpřístupňuje proces nebo doménu aplikace, ve které došlo k MDA.  
   
- Ladicí program by neměla provést nevyvozujte předpoklady o tom, jestli je kontroler proces nebo doménu aplikace, i když ho vždy dotazování rozhraní pro určení.  
+ Ladicí program by neměl dělat žádné předpoklady o tom, zda je kontroler nebo doména aplikace, i když se může vždy dotázat na rozhraní, aby bylo možné provést určení.  
   
  `pThread`  
- [in] Ukazatel na icordebugthread – rozhraní, která zveřejňuje spravované vlákno, na kterém došlo k události ladění.  
+ pro Ukazatel na rozhraní ICorDebugThread, které zveřejňuje spravované vlákno, na kterém došlo k události ladění.  
   
- Pokud MDA došlo k chybě na nespravované vlákna, hodnota `pThread` bude mít hodnotu null.  
+ Pokud k MDA došlo v nespravovaném vlákně, hodnota `pThread` bude null.  
   
- ID vlákna operačního systému (OS) musí získat od samotného objektu MDA.  
+ Musíte získat ID vlákna operačního systému (OS) z samotného objektu MDA.  
   
  `pMDA`  
- [in] Ukazatel [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) rozhraní, které zveřejňuje informace o MDA.  
+ pro Ukazatel na rozhraní [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) , které zpřístupňuje informace MDA.  
   
 ## <a name="remarks"></a>Poznámky  
- MDA heuristické upozornění a nevyžaduje žádnou akci explicitní ladicího programu s výjimkou volání [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pokračovat provádění aplikace, která je právě laděna.  
+ MDA je heuristické upozornění a nevyžaduje žádnou explicitní akci ladicího programu s výjimkou volání [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pro pokračování v provádění aplikace, která se právě ladí.  
   
- Modul CLR (CLR) můžete určit, které jsou vyvolávány mda a která data se v jakékoli dané MDA v libovolném bodě. Proto by neměl ladicí programy sestavení všechny funkce, které vyžadují specifické vzory MDA.  
+ Modul CLR (Common Language Runtime) může určit, které MDA jsou vyvolány a která data jsou v jakémkoli okamžiku v daném bodě. Proto by ladicí program neměl vytvářet žádné funkce vyžadující konkrétní vzory MDA.  
   
- Mda mohou být zařazeny do fronty a krátce po narazí MDA aktivuje. Může k tomu dojít, pokud modul runtime musí čekat, dokud nedosáhne bod bezpečné pro aktivaci MDA, místo spouštění MDA, pokud se setká. Také znamená, že modul runtime může vyvolat počet mda v jediné sady kontrolních zařazených do fronty zpětná volání (podobné události operace "připojit").  
+ MDA se může zařadit do fronty a aktivovat krátce po zjištění MDA. K tomu může dojít v případě, že modul runtime potřebuje počkat, dokud nedosáhne bezpečného bodu pro vypálení služby MDA, namísto toho, aby se při jeho výskytu neiniciovala operace MDA. Také to znamená, že modul runtime může v jedné sadě zpětných volání ve frontě aktivovat určitý počet MDA (podobně jako operace "připojit").  
   
- Ladicí program by měla uvolnit odkaz na `ICorDebugMDA` instance ihned po vrácení z `MDANotification` zpětné volání, chcete-li povolit modul CLR recyklace paměti používané MDA. Uvolnění instance může zvýšit výkon, pokud se ohlásí mnoho mda.  
+ Ladicí program by měl vydat odkaz na instanci `ICorDebugMDA` hned po návratu z zpětného volání `MDANotification`, aby mohl modul CLR recyklovat paměť spotřebovaná pomocí MDA. Uvolnění instance může zlepšit výkon, pokud se právě MDA spousta.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

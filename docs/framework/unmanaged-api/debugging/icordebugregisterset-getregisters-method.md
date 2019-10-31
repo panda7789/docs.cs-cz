@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdf91864-48ea-4aa6-b70c-361b7a3184c7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: daee6c46c247bcd21073f779cada8c843947a949
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 112d530c765fc74ab4ea767cb3168977d1b45f47
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747247"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138365"
 ---
 # <a name="icordebugregistersetgetregisters-method"></a>ICorDebugRegisterSet::GetRegisters – metoda
-Získá hodnotu každý registr (na počítači, který aktuálně spouští kód), která je určená bitová maska.  
+Získá hodnotu každého registru (na počítači, který právě spouští kód), který je určen bitovou maskou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +38,27 @@ HRESULT GetRegisters (
   
 ## <a name="parameters"></a>Parametry  
  `mask`  
- [in] Bitová maska, která určuje, které registru jsou hodnoty, který se má načíst. Každý bit odpovídá registru. Pokud je o něco nastavená na jednu, načte do registru hodnota; v opačném případě se načíst hodnotu do registru.  
+ pro Bitová maska, která určuje, které hodnoty registru mají být načteny. Každý bit odpovídá registru. Pokud je bit nastavený na jeden, načte se hodnota registru. v opačném případě se hodnota registru nenačte.  
   
  `regCount`  
- [in] Počet hodnot registru, který se má načíst.  
+ pro Počet hodnot registru, které mají být načteny.  
   
  `regBuffer`  
- [out] Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu z registru.  
+ mimo Pole objektů `CORDB_REGISTER`, z nichž každý přijímá hodnotu registru.  
   
 ## <a name="remarks"></a>Poznámky  
- Velikost pole by měl být roven počtu bitů nastavena na jednu v bitové masce. `regCount` Parametr určuje počet prvků ve vyrovnávací paměti, která bude dostávat hodnot registru. Pokud `regCount` hodnota je příliš malý počet registrů indikován maska, vyšší číslované registrů se zkrátí ze sady. Pokud `regCount` hodnota je příliš velká, nepoužívané `regBuffer` prvky bude bez úprav.  
+ Velikost pole musí být rovna počtu bitů nastaveným na jednu v bitové masce. Parametr `regCount` určuje počet prvků ve vyrovnávací paměti, které budou přijímat hodnoty registru. Pokud je hodnota `regCount` příliš malá pro počet registrů, které jsou označeny maskou, budou z množiny zkráceny i tyto registry s vyšším číslem. Pokud je hodnota `regCount` příliš velká, nepoužívané prvky `regBuffer` nebudou změněny.  
   
- Pokud bit masky určuje registru, který je k dispozici, `GetRegisters` vrátí neurčitá hodnota pro tento registr.  
+ Pokud Bitová maska určuje registr, který není k dispozici, `GetRegisters` vrátí neurčitou hodnotu pro tento registr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

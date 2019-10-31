@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7137e3d1-1dad-48d8-8c37-16ac816534d3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e18097dd380ee354e5652886544d40da074f1230
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: db24228de7e8c98fd97f890b1e408515172299b3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747621"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125674"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode – metoda
-Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0. Použití [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) místo.  
+Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugCode2:: getcodechunks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT GetCode (
   
 ## <a name="parameters"></a>Parametry  
  `startOffset`  
- [in] Posun zahájení funkce.  
+ pro Posun začátku funkce  
   
  `endOffset`  
- [in] Posun od konce funkce.  
+ pro Posun konce funkce  
   
  `cBufferAlloc`  
- [in] Velikost `buffer` pole, do které bude vrácen kód.  
+ pro Velikost pole `buffer`, do něhož bude vrácen kód.  
   
  `buffer`  
- [out] Pole, do kterého bude vrácen kód.  
+ mimo Pole, do kterého bude vrácen kód.  
   
  `pcBufferSize`  
- [out] Počet bajtů vrácených.  
+ mimo Počet vrácených bajtů  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud funkce kód byl rozdělen do více bloků dat, jsou spojeny v pořadí podle zvýšení nativní posun. Instrukce hranice nekontrolují.  
+ Pokud byl kód funkce rozdělen do více bloků dat, jsou zřetězeny v pořadí, ve kterém se zvyšuje nativní posun. Nekontrolují se hranice instrukcí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

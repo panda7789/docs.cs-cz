@@ -2,14 +2,12 @@
 title: Informace o rozhraní API reflexe .NET Native
 ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9c1fbef46231fed3af0d335e9396b301fe503254
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 01678ea6230a53416f213730ae6bb66e6bc057f8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049383"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128221"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
 .NET Native obsahuje tři nové typy výjimek: [System. Runtime. CompilerServices. MissingInteropDataException](missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](missingmetadataexception-class-net-native.md)a [System. Reflection. MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md). Všimněte si následujících informací o všech třech typech výjimek:  
@@ -25,26 +23,26 @@ ms.locfileid: "71049383"
 - Metody [Poradce při potížích s MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) .  
   
 > [!NOTE]
-> Tento odkaz odkazuje na tři typy výjimek, které jsou jedinečné pro .NET Native. Referenční dokumentaci pro rozhraní API pro základní reflexi .NET Framework naleznete <xref:System.Reflection>v <xref:System.Reflection.Context> tématu <xref:System.Reflection.Emit> a v oborech názvů. Referenční dokumentaci k rozhraní API pro interoperabilitu .NET Framework Core najdete <xref:System.Runtime.InteropServices>v tématu.  
+> Tento odkaz odkazuje na tři typy výjimek, které jsou jedinečné pro .NET Native. Referenční dokumentaci pro rozhraní API pro základní reflexi .NET Framework najdete v tématu obory názvů <xref:System.Reflection>, <xref:System.Reflection.Context> a <xref:System.Reflection.Emit>. Referenční dokumentaci k rozhraní API pro interoperabilitu .NET Framework Core najdete v tématu <xref:System.Runtime.InteropServices>.  
   
 ## <a name="systemreflection-namespace"></a>Obor názvů System. Reflection  
- <xref:System.Reflection> Obor názvů obsahuje základní typy používané pro reflexi v .NET Framework. Pro .NET Native obsahuje také dva nové typy výjimek:  
+ Obor názvů <xref:System.Reflection> obsahuje základní typy používané pro reflexi v .NET Framework. Pro .NET Native obsahuje také dva nové typy výjimek:  
   
 |Třída|Popis|  
 |-----------|-----------------|  
 |[MissingMetadataException](missingmetadataexception-class-net-native.md)|Výjimka, která je vyvolána, když je použita reflexe k načtení metadat, která nejsou k dispozici.|  
 |[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)|Výjimka, která je vyvolána, když jsou k dispozici metadata pro typ nebo člen typu, ale jeho implementace byla odebrána.|  
   
- Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Reflection> referenční stránky v sadě .NET Framework dokumentace.  
+ Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Reflection> referenční stránky v sadě dokumentace .NET Framework.  
   
 ## <a name="systemruntimecompilerservices-namespace"></a>Obor názvů System. Runtime. CompilerServices  
- <xref:System.Runtime.CompilerServices> Obor názvů obsahuje typy určené pro uživatele v kompilátorech jazyka. Pro .NET Native obsahuje také nový typ výjimky:  
+ Obor názvů <xref:System.Runtime.CompilerServices> obsahuje typy navržené pro uživatele v kompilátorech jazyka. Pro .NET Native obsahuje také nový typ výjimky:  
   
 |Třída|Popis|  
 |-----------|-----------------|  
 |[MissingInteropDataException](missinginteropdataexception-class-net-native.md)|Výjimka, která je vyvolána při volání metody ručního zařazování, ale metadata pro typ nejsou nalezena statickou analýzou nebo v souboru direktiv modulu runtime.|  
   
- Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Runtime.CompilerServices> referenční stránky v sadě .NET Framework dokumentace.  
+ Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Runtime.CompilerServices> referenční stránky v sadě dokumentace .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 

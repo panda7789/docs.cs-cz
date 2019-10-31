@@ -1,5 +1,5 @@
 ---
-title: ConnectionGroup.m_ConnectionList pole
+title: Pole connectioncollection. m_ConnectionList
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 186083cf-8dff-4600-a2ab-6fed4b4de6af
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d06968c844dc9187b973af156a29ded9ba7cde66
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: a06e535c554f765161d619d97f2e70072fbd0d5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301396"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120008"
 ---
-# <a name="connectiongroupmconnectionlist-field"></a>ConnectionGroup.m\_ConnectionList pole
+# <a name="connectiongroupm_connectionlist-field"></a>Pole connectioncollection. m\_ConnectionList
 
-`ConnectionGroup.m_ConnectionList` je <xref:System.Collections.ArrayList> připojení objektů, které používají stejný identifikátor URI a sdílené složky na stejné hodnoty pro některé vlastnosti, jako jsou vypršení platnosti a ověřování.
+`ConnectionGroup.m_ConnectionList` je <xref:System.Collections.ArrayList> objektů připojení, které slouží stejnému identifikátoru URI a sdílejí stejné hodnoty pro některé další vlastnosti, jako je vypršení platnosti a ověřování.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ private ArrayList m_ConnectionList
 ```
 
 > [!WARNING]
-> `ConnectionGroup.m_ConnectionList` Pole je privátní a není určena pro použití přímo v kódu.
+> Pole `ConnectionGroup.m_ConnectionList` je soukromé a není určeno pro použití přímo v kódu.
 > 
-> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

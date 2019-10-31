@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 10/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a851bf3c405d15243bc1457b8c3dff815d072ebe
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 314b637b4a43725f6daeefa6097544567dcaabc2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180288"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124288"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -68,7 +68,7 @@ Každý řádek v datové sadě `taxi-fare-train.csv` obsahuje podrobnosti o ces
     - **payment_type:** Způsob platby (hotovost nebo platební karta) je funkce.
     - **fare_amount:** Celková částka taxislužby jízdné je štítek.
 
-@No__t-0 je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu udělíte pro předpověď `label`. V tomto případě se zbývající sloupce s výjimkou **trip_time_in_secs** používají jako funkce nebo vstupy pro předpověď množství tarifů.
+`label` je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu udělíte pro předpověď `label`. V tomto případě se zbývající sloupce s výjimkou **trip_time_in_secs** používají jako funkce nebo vstupy pro předpověď množství tarifů.
 
 ## <a name="choose-a-scenario"></a>Zvolit scénář
 
@@ -83,8 +83,8 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 
 1. V kroku dat nástroje Tvůrce modelů vyberte v rozevíracím seznamu zdroj dat *soubor* .
 1. Vyberte tlačítko vedle textového pole *Vybrat soubor* a pomocí Průzkumníka souborů Procházejte a vyberte soubor *taxi-Fare-test. csv* v *datovém* adresáři.
-1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte *fare_amount* a přejděte ke kroku výuka nástroje Tvůrce modelů.
-1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu sloupce *trip_time_in_secs* , aby se vyloučil jako funkce během školení.
+1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte *fare_amount* .
+1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu sloupce *trip_time_in_secs* , aby se vyloučil jako funkce během školení.  Přejděte do kroku výuka nástroje Tvůrce modelů.
 
 ## <a name="train-the-model"></a>Výuka modelu
 

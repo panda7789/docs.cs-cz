@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea574c84-c622-4589-9a14-b55771af5e06
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 114f4ff261d9612a81d17bf5b3df2f87323f77f2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2358cee1b3a9aa50fb1f0e61d558f164a39aa86c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764198"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137365"
 ---
 # <a name="icordebugmodule2setjitcompilerflags-method"></a>ICorDebugModule2::SetJITCompilerFlags – metoda
-Nastaví příznaky, které řídí tento icordebugmodule2 – kompilace just-in-time (JIT).  
+Nastaví příznaky, které řídí kompilaci JIT (just-in-time) tohoto ICorDebugModule2.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT SetJITCompilerFlags (
   
 ## <a name="parameters"></a>Parametry  
  `dwFlags`  
- [in] Bitová kombinace hodnot [cordebugjitcompilerflags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) hodnot výčtu.  
+ pro Bitová kombinace hodnot výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) .  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `dwFlags` hodnota není platná, `SetJITCompilerFlags` metoda se nezdaří.  
+ Pokud je hodnota `dwFlags` neplatná, metoda `SetJITCompilerFlags` se nezdaří.  
   
- `SetJITCompilerFlags` Metodu lze volat pouze v rámci [icordebugmanagedcallback::LoadModule –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md) zpětné volání pro tento modul. Pokusí se jeho po volání `ICorDebugManagedCallback::LoadModule` byla doručena zpětné volání se nezdaří.  
+ Metodu `SetJITCompilerFlags` lze volat pouze v rámci zpětného volání [ICorDebugManagedCallback:: LoadModule](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md) pro tento modul. Pokusí se ji zavolat po doručení `ICorDebugManagedCallback::LoadModule` zpětného volání se nezdaří.  
   
- Upravit a pokračovat není podporována na 64-bit nebo platformách Win9x. Proto při volání `SetJITCompilerFlags` metodu na některý z těchto dvou platforem s příznakem CORDEBUG_JIT_ENABLE_ENC nastavit `dwFlags`, `SetJITCompilerFlags` metoda a všechny metody konkrétní upravit a pokračovat, jako například [icordebugmodule2 –:: Applychanges –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-applychanges-method.md), se nezdaří.  
+ Příkaz Upravit a pokračovat není podporován na platformě 64 a systémy Win9x. Proto pokud zavoláte metodu `SetJITCompilerFlags` na některé z těchto dvou platforem s příznakem CORDEBUG_JIT_ENABLE_ENC nastaveným v `dwFlags`, metoda `SetJITCompilerFlags` a všechny metody specifické pro úpravy a pokračování, jako například [ICorDebugModule2:: ApplyChanges –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-applychanges-method.md), se nezdaří.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
