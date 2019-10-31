@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 4e2fd423-f643-4c27-ba5f-41b5ebc3b416
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9e9f627f1ba213f663f042d1107afd1eb05b56b0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 01c7cb2e4359a477c26f995602dbf29668e567c0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757861"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131011"
 ---
-# <a name="icordebugilframegetargument-method"></a><span data-ttu-id="b830b-102">ICorDebugILFrame::GetArgument – metoda</span><span class="sxs-lookup"><span data-stu-id="b830b-102">ICorDebugILFrame::GetArgument Method</span></span>
-<span data-ttu-id="b830b-103">Získá hodnotu zadaného argumentu v tento rámec zásobníku Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="b830b-103">Gets the value of the specified argument in this Microsoft intermediate language (MSIL) stack frame.</span></span>  
+# <a name="icordebugilframegetargument-method"></a><span data-ttu-id="c86c2-102">ICorDebugILFrame::GetArgument – metoda</span><span class="sxs-lookup"><span data-stu-id="c86c2-102">ICorDebugILFrame::GetArgument Method</span></span>
+<span data-ttu-id="c86c2-103">Získá hodnotu zadaného argumentu v rámci tohoto rámce zásobníku jazyka MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="c86c2-103">Gets the value of the specified argument in this Microsoft intermediate language (MSIL) stack frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b830b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b830b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c86c2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c86c2-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetArgument (  
@@ -36,21 +34,21 @@ HRESULT GetArgument (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b830b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b830b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c86c2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c86c2-105">Parameters</span></span>  
  `dwIndex`  
- <span data-ttu-id="b830b-106">[in] Index argumentu do tohoto rámce zásobníku jazyka MSIL.</span><span class="sxs-lookup"><span data-stu-id="b830b-106">[in] The index of the argument in this MSIL stack frame.</span></span>  
+ <span data-ttu-id="c86c2-106">pro Index argumentu v tomto snímku zásobníku MSIL.</span><span class="sxs-lookup"><span data-stu-id="c86c2-106">[in] The index of the argument in this MSIL stack frame.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="b830b-107">[out] Ukazatel na adresu ICorDebugValue objekt, který představuje načtené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="b830b-107">[out] A pointer to the address of an ICorDebugValue object that represents the retrieved value.</span></span>  
+ <span data-ttu-id="c86c2-107">mimo Ukazatel na adresu objektu ICorDebugValue, který představuje načtenou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="c86c2-107">[out] A pointer to the address of an ICorDebugValue object that represents the retrieved value.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b830b-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b830b-108">Remarks</span></span>  
- <span data-ttu-id="b830b-109">`GetArgument` Metodu je možné použít v rámci zásobníku jazyka MSIL nebo v rámci kompilované just-in-time (JIT).</span><span class="sxs-lookup"><span data-stu-id="b830b-109">The `GetArgument` method can be used either in an MSIL stack frame or in a just-in-time (JIT) compiled frame.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c86c2-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c86c2-108">Remarks</span></span>  
+ <span data-ttu-id="c86c2-109">Metodu `GetArgument` lze použít buď v rámci rámce zásobníku MSIL, nebo v kompilovaném snímku JIT (just-in-time).</span><span class="sxs-lookup"><span data-stu-id="c86c2-109">The `GetArgument` method can be used either in an MSIL stack frame or in a just-in-time (JIT) compiled frame.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b830b-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b830b-110">Requirements</span></span>  
- <span data-ttu-id="b830b-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b830b-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c86c2-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c86c2-110">Requirements</span></span>  
+ <span data-ttu-id="c86c2-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c86c2-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b830b-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b830b-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c86c2-112">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="c86c2-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b830b-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b830b-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c86c2-113">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="c86c2-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b830b-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b830b-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="c86c2-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c86c2-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

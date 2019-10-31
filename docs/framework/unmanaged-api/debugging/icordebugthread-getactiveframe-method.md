@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 8d6d3a1a-fef6-4f2f-a22c-3bdd30d70e07
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 390a2c64508bf407296d318a47bfd2972b7ef9d9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d623893bd77e46832b0bd823ed60c23e4eee29ba
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762559"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133543"
 ---
-# <a name="icordebugthreadgetactiveframe-method"></a><span data-ttu-id="a7a6b-102">ICorDebugThread::GetActiveFrame – metoda</span><span class="sxs-lookup"><span data-stu-id="a7a6b-102">ICorDebugThread::GetActiveFrame Method</span></span>
-<span data-ttu-id="a7a6b-103">Získá ukazatel rozhraní na tomto objektu ICorDebugThread na aktivní rámec (nejnovější).</span><span class="sxs-lookup"><span data-stu-id="a7a6b-103">Gets an interface pointer to the active (most recent) frame on this ICorDebugThread object.</span></span>  
+# <a name="icordebugthreadgetactiveframe-method"></a><span data-ttu-id="b7a91-102">ICorDebugThread::GetActiveFrame – metoda</span><span class="sxs-lookup"><span data-stu-id="b7a91-102">ICorDebugThread::GetActiveFrame Method</span></span>
+<span data-ttu-id="b7a91-103">Získá ukazatel rozhraní na aktivní (poslední) rámec na tomto objektu ICorDebugThread.</span><span class="sxs-lookup"><span data-stu-id="b7a91-103">Gets an interface pointer to the active (most recent) frame on this ICorDebugThread object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a7a6b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a7a6b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b7a91-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7a91-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetActiveFrame (  
@@ -35,18 +33,18 @@ HRESULT GetActiveFrame (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a7a6b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a7a6b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b7a91-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b7a91-105">Parameters</span></span>  
  `ppFrame`  
- <span data-ttu-id="a7a6b-106">[out] Ukazatel na adresu objektu icordebugframe – rozhraní, která představuje rámec.</span><span class="sxs-lookup"><span data-stu-id="a7a6b-106">[out] A pointer to the address of an ICorDebugFrame interface object that represents a frame.</span></span>  
+ <span data-ttu-id="b7a91-106">mimo Ukazatel na adresu objektu rozhraní ICorDebugFrame, který představuje rámec.</span><span class="sxs-lookup"><span data-stu-id="b7a91-106">[out] A pointer to the address of an ICorDebugFrame interface object that represents a frame.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a7a6b-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a7a6b-107">Remarks</span></span>  
- <span data-ttu-id="a7a6b-108">`ppFrame` Parametr má hodnotu null, pokud žádný snímek není aktuálně aktivní.</span><span class="sxs-lookup"><span data-stu-id="a7a6b-108">The `ppFrame` parameter is null if no frame is currently active.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b7a91-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b7a91-107">Remarks</span></span>  
+ <span data-ttu-id="b7a91-108">Parametr `ppFrame` má hodnotu null, pokud není aktuálně aktivní žádný rámec.</span><span class="sxs-lookup"><span data-stu-id="b7a91-108">The `ppFrame` parameter is null if no frame is currently active.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a7a6b-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a7a6b-109">Requirements</span></span>  
- <span data-ttu-id="a7a6b-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a7a6b-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b7a91-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b7a91-109">Requirements</span></span>  
+ <span data-ttu-id="b7a91-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b7a91-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a7a6b-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a7a6b-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b7a91-111">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="b7a91-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a7a6b-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a7a6b-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b7a91-112">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="b7a91-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a7a6b-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a7a6b-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="b7a91-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7a91-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
