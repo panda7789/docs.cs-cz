@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 003f6974-9727-4322-bed5-e330d1224d0b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9c3d4674280bf5aa459fec2b195c3164c75c6c3d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b44a71137e39130bb0fe4c303fdff62c76d38cbd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779623"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141008"
 ---
 # <a name="iclriocompletionmanageroncomplete-method"></a>ICLRIoCompletionManager::OnComplete – metoda
-Upozorní common language runtime (CLR) stavu požadavku vstupně-výstupní operace, která byla vytvořená pomocí volání [ihostiocompletionmanager::Bind –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) metody.  
+Upozorňuje modul CLR (Common Language Runtime) na stav vstupně-výstupních požadavků, který byl proveden pomocí volání metody [IHostIoCompletionManager:: bind](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,42 +37,42 @@ HRESULT OnComplete (
   
 ## <a name="parameters"></a>Parametry  
  `dwErrorCode`  
- [in] Hodnota HRESULT, která označuje stav operace připojení.  
+ pro Hodnota HRESULT, která indikuje stav operace vazby.  
   
-- S_OK označuje, že operace byla úspěšně dokončena.  
+- S_OK znamená, že operace byla úspěšně dokončena.  
   
-- HOST_E_INTERRUPTED označuje, že volání ukončeno před dokončením.  
+- HOST_E_INTERRUPTED označuje, že volání bylo ukončeno před dokončením.  
   
-- E_FAIL označuje, že došlo k neznámé, Neopravitelná, katastrofických selhání.  
+- E_FAIL označuje, že došlo k neznámé, neobnovitelné, závažné chybě.  
   
  `NumberOfBytesTransferred`  
- [in] Počet bajtů přenesených během zpracování požadavku vstupně-výstupních operací.  
+ pro Počet bajtů přenesených během zpracování vstupně-výstupních požadavků.  
   
  `pvOverlapped`  
- [in] Ukazatel `OVERLAPPED` struktura, která byla předána volání `IHostIoCompletionManager::Bind` metody.  
+ pro Ukazatel na strukturu `OVERLAPPED`, která byla předána volání metody `IHostIoCompletionManager::Bind`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`OnComplete` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`OnComplete` byla úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud hostitele implementuje abstrakci dokončení vstupně-výstupních operací, modul CLR provede vstupně-výstupní požadavky přes hostitele pomocí metod [ihostiocompletionmanager –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md). Hostitel pak zavolá `OnComplete` metoda upozornit běhové prostředí výsledky těchto požadavků.  
+ Pokud hostitel implementuje abstrakci dokončení vstupně-výstupních operací, CLR vytvoří požadavky na vstupně-výstupní operace prostřednictvím hostitele pomocí metod [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md). Hostitel pak zavolá metodu `OnComplete` a upozorní modul runtime na výsledek takových požadavků.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

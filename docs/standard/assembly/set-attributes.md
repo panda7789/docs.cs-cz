@@ -1,25 +1,23 @@
 ---
-title: Nastavit atributy sestavení
+title: Nastavování atributů sestavení
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], attributes
 - assembly binding, attributes
 - assembly manifest, attributes
 ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: d0809ec3da5a12abe950e63f9665037323a0ab39
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: fe003a6c74da59c1cb47a0f12a8597143916e320
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991670"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138645"
 ---
-# <a name="set-assembly-attributes"></a>Nastavit atributy sestavení
+# <a name="set-assembly-attributes"></a>Nastavování atributů sestavení
 
 Atributy sestavení jsou hodnoty, které poskytují informace o sestavení. Atributy jsou rozděleny do následujících sad informací:
 
@@ -41,7 +39,7 @@ Následující tabulka popisuje atributy Version a culture.
 |---------------------------------|-----------------|
 |<xref:System.Reflection.AssemblyCultureAttribute>|Výčtové pole označující jazykovou verzi, kterou sestavení podporuje. Sestavení může také určovat nezávislost jazykové verze, což značí, že obsahuje prostředky pro výchozí jazykovou verzi. **Poznámka:**  Modul runtime zpracovává všechna sestavení, která nemají atribut Culture nastaven na hodnotu null jako satelitní sestavení. Taková sestavení se vztahují na pravidla vazeb satelitního sestavení. Další informace najdete v tématu [jak modul runtime vyhledává sestavení](../../framework/deployment/how-the-runtime-locates-assemblies.md).|
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Hodnota, která nastavuje atributy sestavení, například zda lze sestavení spustit vedle sebe.|
-|<xref:System.Reflection.AssemblyVersionAttribute>|Číselná hodnota ve formátu *Hlavní*. *vedlejší*. *sestavení*. *Revize* (například 2.4.0.0). Modul CLR (Common Language Runtime) používá tuto hodnotu k provádění operací vazby v sestaveních se silným názvem. **Poznámka:**  <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> <xref:System.Reflection.AssemblyVersionAttribute> Pokud atribut není aplikován na sestavení, číslo verze určené atributem je používáno vlastnostmi, a. <xref:System.Reflection.AssemblyInformationalVersionAttribute>|
+|<xref:System.Reflection.AssemblyVersionAttribute>|Číselná hodnota ve formátu *Hlavní*. *vedlejší*. *sestavení*. *Revize* (například 2.4.0.0). Modul CLR (Common Language Runtime) používá tuto hodnotu k provádění operací vazby v sestaveních se silným názvem. **Poznámka:**  Pokud atribut <xref:System.Reflection.AssemblyInformationalVersionAttribute> není aplikován na sestavení, je číslo verze určené atributem <xref:System.Reflection.AssemblyVersionAttribute> používáno vlastnostmi <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType>, <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType>a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType>.|
 
 Následující příklad kódu ukazuje, jak použít atributy Version a Culture na sestavení.
 
@@ -75,7 +73,7 @@ Pomocí informativních atributů lze poskytnout další informace o společnost
 |<xref:System.Reflection.AssemblyCompanyAttribute>|Řetězcová hodnota, která určuje název společnosti.|
 |<xref:System.Reflection.AssemblyCopyrightAttribute>|Hodnota řetězce, která určuje informace o autorských právech.|
 |<xref:System.Reflection.AssemblyFileVersionAttribute>|Řetězcová hodnota, která určuje číslo verze souboru Win32. To je obvykle výchozí verze sestavení.|
-|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Řetězcová hodnota, která určuje informace o verzi používané modulem CLR (Common Language Runtime), jako je například úplné číslo verze produktu. **Poznámka:**  Pokud je tento atribut použit pro sestavení, řetězec, který určuje, lze získat za běhu pomocí <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> vlastnosti. Řetězec se používá také v cestě a klíči registru, které <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> poskytuje vlastnosti a. <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType>|
+|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Řetězcová hodnota, která určuje informace o verzi používané modulem CLR (Common Language Runtime), jako je například úplné číslo verze produktu. **Poznámka:**  Pokud je tento atribut použit pro sestavení, řetězec, který určuje, lze získat za běhu pomocí vlastnosti <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType>. Řetězec se používá také v cestě a klíči registru, které poskytuje <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> vlastností.|
 |<xref:System.Reflection.AssemblyProductAttribute>|Řetězcová hodnota, která určuje informace o produktu.|
 |<xref:System.Reflection.AssemblyTrademarkAttribute>|Řetězcová hodnota určující informace o ochranných známkách.|
 

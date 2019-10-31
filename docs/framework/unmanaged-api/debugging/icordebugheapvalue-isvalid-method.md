@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3ca3b86e90dcb76c1fece44cf2c5ed68e073d8e7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7edf0065fa7eb39dada167a682f2b634a438f1f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757217"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138401"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid – metoda
-Získá hodnotu určující, zda objekt reprezentovaný rozhraním tento ICorDebugHeapValue je platný.  
+Získá hodnotu, která označuje, zda je objekt reprezentovaný tímto ICorDebugHeapValue platný.  
   
- Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0.  
+ Tato metoda je zastaralá ve verzi .NET Framework 2,0.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +37,18 @@ HRESULT IsValid (
   
 ## <a name="parameters"></a>Parametry  
  `pbValid`  
- [out] Ukazatel na logickou hodnotu určující, zda je platný tuto hodnotu na haldě.  
+ mimo Ukazatel na logickou hodnotu, která označuje, zda je tato hodnota na haldě platná.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota není platná, pokud byl uvolněn systémem uvolňování.  
+ Hodnota je neplatná, pokud byla uvolněna systémem uvolňování paměti.  
   
- Tato metoda je zastaralá. V rozhraní .NET Framework 2.0, jsou všechny hodnoty platné až do [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volán, na kterém jsou neplatné hodnoty.  
+ Tato metoda je zastaralá. V .NET Framework 2,0 jsou všechny hodnoty platné, dokud je volána metoda [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , v níž je čas zrušení platnosti hodnot.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

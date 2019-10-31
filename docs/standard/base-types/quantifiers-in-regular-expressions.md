@@ -14,14 +14,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eddf605ab085aa39494bef0818ef51403cb032ef
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: a7a870ac32385bf5015f1a95c0246fed6a5c9c05
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988787"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084238"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků musí být přítomné ve vstupu pro nalezení shody.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -35,10 +33,10 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`{` *n* `,}`|`{` *n* `,}?`|Porovnává alespoň *n* krát.|  
 |`{` *n* `,` *m* `}`|`{` *n* `,` *m* `}?`|Porovnává od *n* do *m* krát.|  
   
- Množství `n` a`m` jsou celočíselné konstanty. Obvykle jsou kvantifikátory hladce; způsobují, že modul regulárních výrazů porovnává tolik výskytů určitých vzorů, jak je to možné. `?` Připojení znaku k kvantifikátoru je opožděné. způsobí, že modul regulárních výrazů bude odpovídat co nejmenšímu výskytu. Úplný popis rozdílu mezi hladce a opožděnými kvantifikátory naleznete v části hladce [a opožděné kvantifikátory](#Greedy) dále v tomto tématu.  
+ Množství `n` a `m` jsou konstanty typu Integer. Obvykle jsou kvantifikátory hladce; způsobují, že modul regulárních výrazů porovnává tolik výskytů určitých vzorů, jak je to možné. Připojení `?`ho znaku k kvantifikátoru je opožděné; způsobí, že se modul regulárních výrazů porovnává s počtem výskytů, jak je to možné. Úplný popis rozdílu mezi hladce a opožděnými kvantifikátory naleznete v části [hladce a opožděné kvantifikátory](#Greedy) dále v tomto tématu.  
   
 > [!IMPORTANT]
-> Vnořování kvantifikátorů (například jako vzor `(a*)*` regulárního výrazu) může zvýšit počet porovnání, které musí modul regulárních výrazů provádět, jako exponenciální funkci počtu znaků ve vstupním řetězci. Další informace o tomto chování a jejich řešeních najdete v tématu [zpětné navrácení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
+> Vnořování kvantifikátorů (například jako vzor regulárního výrazu `(a*)*`) může zvýšit počet porovnání, které musí modul regulárních výrazů provádět, jako exponenciální funkci počtu znaků ve vstupním řetězci. Další informace o tomto chování a jejich řešeních najdete v tématu [zpětné navrácení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
   
 ## <a name="regular-expression-quantifiers"></a>Kvantifikátory regulárního výrazu  
  V následujících částech jsou uvedeny kvantifikátory podporované regulárními výrazy .NET.  
@@ -47,9 +45,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 > Pokud jsou ve vzoru regulárního výrazu zjištěny znaky *, +,?, {a}, modul regulárních výrazů je interpretuje jako kvantifikátory nebo část konstrukcí kvantifikátoru, pokud nejsou zahrnuty ve [třídě znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Chcete-li je interpretovat jako literální znaky vně třídy znaků, je nutné je před pomocí zpětného lomítka řídicím znakem. Například řetězec `\*` ve vzoru regulárního výrazu je interpretován jako literální znak hvězdičky ("\*").  
   
 ### <a name="match-zero-or-more-times-"></a>Porovná nula nebo více časů: *  
- `*` Kvantifikátor odpovídá předchozímu prvku nula nebo vícekrát. Je ekvivalentní k `{0,}` kvantifikátoru. `*`je hladový kvantifikátor, jehož opožděný ekvivalent `*?`je.  
+ Kvantifikátor `*` odpovídá předchozímu prvku nula nebo vícekrát. Je ekvivalentní s kvantifikátorem `{0,}`. `*` je hladový kvantifikátor, jehož opožděný ekvivalent je `*?`.  
   
- Následující příklad ilustruje tento regulární výraz. Z devíti číslic ve vstupním řetězci, pět se shoduje se vzorem a čtyřmi `929`( `9219``95`,, `9919`a) ne.  
+ Následující příklad ilustruje tento regulární výraz. Z devíti číslic ve vstupním řetězci, pět odpovídá vzoru a čtyři (`95`, `929`, `9219`a `9919`).  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  
@@ -64,9 +62,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-one-or-more-times-"></a>Porovnává jednou nebo víckrát: +  
- `+` Kvantifikátor Porovná předchozí prvek jednou nebo vícekrát. Je ekvivalentní `{1,}`. `+`je hladový kvantifikátor, jehož opožděný ekvivalent `+?`je.  
+ Kvantifikátor `+` Porovná předchozí prvek jednou nebo vícekrát. Je ekvivalentní `{1,}`. `+` je hladový kvantifikátor, jehož opožděný ekvivalent je `+?`.  
   
- Například regulární výraz `\ban+\w*?\b` se pokusí vyhledat celá slova, která začínají písmenem `a` následovaným jednou nebo více instancemi písmena `n`. Následující příklad ilustruje tento regulární výraz. Regulární výraz odpovídá slovům `an`, `annual`, `announcement`a `antique`, a správně se neshodují `autumn` a `all`.  
+ Například regulární výraz `\ban+\w*?\b` se snaží vyhledat celá slova, která začínají písmenem `a` následovaný jednou nebo více instancemi písmena `n`. Následující příklad ilustruje tento regulární výraz. Regulární výraz odpovídá slovům `an`, `annual`, `announcement`a `antique`a správně nevyhovuje `autumn` a `all`.  
   
  [!code-csharp[RegularExpressions.Quantifiers#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#2)]
  [!code-vb[RegularExpressions.Quantifiers#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#2)]  
@@ -81,9 +79,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-zero-or-one-time-"></a>Odpovídá žádnému nebo jednomu času:?  
- `?` Kvantifikátor odpovídá předchozímu prvku nula nebo jednou. Je ekvivalentní `{0,1}`. `?`je hladový kvantifikátor, jehož opožděný ekvivalent `??`je.  
+ Kvantifikátor `?` odpovídá předchozímu prvku nula nebo jednou. Je ekvivalentní `{0,1}`. `?` je hladový kvantifikátor, jehož opožděný ekvivalent je `??`.  
   
- Například regulární výraz `\ban?\b` se pokusí vyhledat celá slova, která začínají písmenem `a` následovaným nulou nebo jednou instancí písmena `n`. Jinými slovy se pokusí porovnat slova `a` a. `an` Následující příklad ilustruje tento regulární výraz.  
+ Například regulární výraz `\ban?\b` se snaží vyhledat celá slova, která začínají písmenem `a` následovaný nulou nebo jednou instancí `n`ho písmene. Jinými slovy se pokusí vyhledat slova `a` a `an`. Následující příklad ilustruje tento regulární výraz.  
   
  [!code-csharp[RegularExpressions.Quantifiers#3](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#3)]
  [!code-vb[RegularExpressions.Quantifiers#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#3)]  
@@ -97,9 +95,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-exactly-n-times-n"></a>Porovná přesně n krát: {n}  
- *Kvantifikátor n* Porovná předchozí prvek přesně n krát, kde n je libovolné celé číslo. `{``}` `{`*n*`}?` `{`je hladový kvantifikátor, jehož opožděný ekvivalent je n.`}`  
+ Kvantifikátor`}` `{`*n* odpovídá předchozímu prvku přesně *n* krát, kde *n* je libovolné celé číslo. `{`*n*`}` je hladový kvantifikátor, jehož opožděný ekvivalent je `{`*n*`}?`.  
   
- Například regulární výraz `\b\d+\,\d{3}\b` se pokusí porovnat hranici slova následovaný jednou nebo více desítkovými číslicemi následovanými třemi desítkovými číslicemi, za kterými následuje hranice slova. Následující příklad ilustruje tento regulární výraz.  
+ Například regulární výraz `\b\d+\,\d{3}\b` se snaží porovnat hranici slova následovaný jednou nebo více desítkovými číslicemi následovanými třemi desítkovými číslicemi, za kterými následuje hranice slova. Následující příklad ilustruje tento regulární výraz.  
   
  [!code-csharp[RegularExpressions.Quantifiers#4](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#4)]
  [!code-vb[RegularExpressions.Quantifiers#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#4)]  
@@ -115,9 +113,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-at-least-n-times-n"></a>Porovnává alespoň n krát: {n,}  
- *Kvantifikátor n* Porovná předchozí prvek nejméně n krát, kde n je libovolné celé číslo. `{``,}` `{`*n*`,}?` `{`je hladový kvantifikátor, jehož opožděný ekvivalent je n.`,}`  
+ Kvantifikátor`,}` `{`*n* odpovídá předchozímu prvku nejméně *n* krát, kde *n* je libovolné celé číslo. `{`*n*`,}` je hladový kvantifikátor, jehož opožděný ekvivalent je `{`*n*`,}?`.  
   
- Například regulární výraz `\b\d{2,}\b\D+` se pokusí porovnat hranici slova následovaný alespoň dvěma číslicemi následovanými hranicí slova a znakem, který není číslice. Následující příklad ilustruje tento regulární výraz. Regulárnímu výrazu se nepodaří spárovat frázi `"7 days"` , protože obsahuje pouze jednu desítkovou číslici, ale úspěšně odpovídá frázím. `"10 weeks and 300 years"`  
+ Například regulární výraz `\b\d{2,}\b\D+` se snaží porovnat hranici slova následovaný alespoň dvěma číslicemi následovanými hranicí slova a znakem, který není číslice. Následující příklad ilustruje tento regulární výraz. Regulárnímu výrazu se nepodaří najít frázi `"7 days"`, protože obsahuje jenom jednu desítkovou číslici, ale úspěšně odpovídá frázím `"10 weeks and 300 years"`.  
   
  [!code-csharp[RegularExpressions.Quantifiers#5](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#5)]
  [!code-vb[RegularExpressions.Quantifiers#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#5)]  
@@ -132,17 +130,17 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\D+`|Porovnává alespoň jednu jinou než desítkovou číslici.|  
   
 ### <a name="match-between-n-and-m-times-nm"></a>Shoda mezi n a m časy: {n, m}  
- *Kvantifikátor n* m Porovná předchozí prvek nejméně n krát, ale ne více než m krát, kde n a m jsou celá čísla.`}` `,` `{` `{`*n* `{``,``}?` mjehladovýkvantifikátor,jehožopožděnýekvivalentjenm.`}` `,`  
+ Kvantifikátor `{`*n*`,`*m*`}` Porovná předchozí prvek nejméně *n* krát, ale ne více než *m* krát, kde *n* a *m* jsou celá čísla. `{`*n*`,`*m*`}` je hladový kvantifikátor, jehož opožděný ekvivalent je `{`*n*`,`*m*`}?`.  
   
- V následujícím příkladu regulární výraz `(00\s){2,4}` se pokusí porovnat dva a čtyři výskyty dvou číslic za nulu následovaných mezerou. Všimněte si, že poslední část vstupního řetězce obsahuje tento vzor pětkrát, ne jako maximum čtyři. Pouze počáteční část tohoto podřetězce (až do prostoru a páté dvojice nul) však odpovídá vzoru regulárního výrazu.  
+ V následujícím příkladu regulární výraz `(00\s){2,4}` se pokusí porovnat dva a čtyři výskyty dvou číslic s nulovým počtem následovaným mezerou. Všimněte si, že poslední část vstupního řetězce obsahuje tento vzor pětkrát, ne jako maximum čtyři. Pouze počáteční část tohoto podřetězce (až do prostoru a páté dvojice nul) však odpovídá vzoru regulárního výrazu.  
   
  [!code-csharp[RegularExpressions.Quantifiers#6](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#6)]
  [!code-vb[RegularExpressions.Quantifiers#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#6)]  
   
 ### <a name="match-zero-or-more-times-lazy-match-"></a>Porovná nula nebo více časů (opožděné porovnávání): *?  
- `*?` Kvantifikátor odpovídá předchozímu prvku nula nebo vícekrát, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `*`.  
+ Kvantifikátor `*?` odpovídá předchozímu prvku nula nebo vícekrát, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `*`.  
   
- V následujícím příkladu regulární výraz `\b\w*?oo\w*?\b` odpovídá všem slovům, která obsahují řetězec. `oo`  
+ V následujícím příkladu regulární výraz `\b\w*?oo\w*?\b` odpovídá všem slovům, která obsahují řetězec `oo`.  
   
  [!code-csharp[RegularExpressions.Quantifiers#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#7)]
  [!code-vb[RegularExpressions.Quantifiers#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#7)]  
@@ -158,7 +156,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Ukončí hranici slova.|  
   
 ### <a name="match-one-or-more-times-lazy-match-"></a>Odpovídá jednomu nebo více výskytům (opožděné porovnávání): +?  
- `+?` Kvantifikátor Porovná předchozí prvek jednou nebo vícekrát, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `+`.  
+ Kvantifikátor `+?` Porovná předchozí prvek jednou nebo vícekrát, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `+`.  
   
  Například regulární výraz `\b\w+?\b` odpovídá jednomu nebo více znakům odděleným ohraničením slova. Následující příklad ilustruje tento regulární výraz.  
   
@@ -166,7 +164,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
  [!code-vb[RegularExpressions.Quantifiers#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#8)]  
   
 ### <a name="match-zero-or-one-time-lazy-match-"></a>Odpovídá žádnému nebo jednomu času (opožděné porovnávání):??  
- `??` Kvantifikátor odpovídá předchozímu prvku nula nebo jednou, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `?`.  
+ Kvantifikátor `??` odpovídá předchozímu prvku nula nebo jednou, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `?`.  
   
  Například regulární výraz `^\s*(System.)??Console.Write(Line)??\(??` se pokusí porovnat řetězce "Console. Write" nebo "Console. WriteLine". Řetězec může obsahovat také "System." před "Console" a za ní může následovat levá závorka. Řetězec musí být na začátku řádku, i když může předcházet prázdné znaky. Následující příklad ilustruje tento regulární výraz.  
   
@@ -185,9 +183,9 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\(??`|Porovná žádný nebo jeden výskyt levé závorky.|  
   
 ### <a name="match-exactly-n-times-lazy-match-n"></a>Porovná přesně n krát (opožděná shoda): {n}?  
- `n`Kvantifikátorn Porovná předchozí prvek přesně krát, kde n je libovolné celé číslo. `{``}?` Je opožděným protějškem hladového kvantifikátoru `{` *n*`}`.  
+ Kvantifikátor`}?` `{`*n* odpovídá předchozímu prvku přesně `n` časy, kde *n* je libovolné celé číslo. Je opožděným protějškem hladového kvantifikátoru `{`*n*`}`.  
   
- V následujícím příkladu je regulární výraz `\b(\w{3,}?\.){2}?\w{3,}?\b` použit k identifikaci adresy webu. Všimněte si, že odpovídá "www.microsoft.com" a "msdn.microsoft.com", ale neodpovídá "mywebsite" nebo "mycompany.com".  
+ V následujícím příkladu regulární výraz `\b(\w{3,}?\.){2}?\w{3,}?\b` slouží k identifikaci adresy webu. Všimněte si, že odpovídá "www.microsoft.com" a "msdn.microsoft.com", ale neodpovídá "mywebsite" nebo "mycompany.com".  
   
  [!code-csharp[RegularExpressions.Quantifiers#10](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#10)]
  [!code-vb[RegularExpressions.Quantifiers#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#10)]  
@@ -202,14 +200,14 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`\b`|Ukončí porovnávání na hranici slova.|  
   
 ### <a name="match-at-least-n-times-lazy-match-n"></a>Porovnává alespoň n krát (opožděná shoda): {n,}?  
- `n`Kvantifikátorn Porovná předchozí prvek nejméně krát, kde n je libovolné celé číslo, ale co nejmenším možným způsobem. `{``,}?` Je opožděným protějškem hladového kvantifikátoru `{` *n*`,}`.  
+ Kvantifikátor`,}?` `{`*n* odpovídá předchozímu prvku alespoň `n` časy, kde *n* je libovolné celé číslo, ale co nejmenším možným způsobem. Je opožděným protějškem hladového kvantifikátoru `{`*n*`,}`.  
   
- Ukázku najdete v příkladu pro `{`kvantifikátor *n* `}?` v předchozí části. Regulární výraz v tomto příkladu používá `{`kvantifikátor *n* `,}` pro spárování řetězce, který má alespoň tři znaky následované tečkou.  
+ Obrázek najdete v příkladu pro kvantifikátor `{`*n*`}?` v předchozí části. Regulární výraz v tomto příkladu používá kvantifikátor `{`*n*`,}`, aby se shodoval s řetězcem, který má alespoň tři znaky následovaný tečkou.  
   
 ### <a name="match-between-n-and-m-times-lazy-match-nm"></a>Rozlišovat mezi n a m krátkou (opožděné porovnávání): {n, m}?  
- `{`Kvantifikátor *n* `n` m odpovídá předchozímu prvku mezi a`m` časy, kde n a m jsou celá čísla, ale s co nejmenším možným počtem opakování.`,``}?` Je opožděným protějškem hladového kvantifikátoru `{` *n*`,`*m*`}`.  
+ `{`*n*`,`*m*`}?` kvantifikátor se shoduje s předchozím prvkem mezi `n` a `m`mi časy, kde *n* a *m* jsou celá čísla, ale s co nejmenším možným počtem opakování. Je opožděným protějškem hladového kvantifikátoru `{`*n*`,`*m*`}`.  
   
- V následujícím příkladu regulární výraz `\b[A-Z](\w*?\s*?){1,10}[.!?]` odpovídá vět, které obsahují jedno a deset slov. Odpovídá všem větuem ve vstupním řetězci s výjimkou jedné věty, která obsahuje 18 slov.  
+ V následujícím příkladu regulární výraz `\b[A-Z](\w*?\s*?){1,10}[.!?]` odpovídá vět, které obsahují mezi jedním a deseti slovy. Odpovídá všem větuem ve vstupním řetězci s výjimkou jedné věty, která obsahuje 18 slov.  
   
  [!code-csharp[RegularExpressions.Quantifiers#12](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#12)]
  [!code-vb[RegularExpressions.Quantifiers#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#12)]  
@@ -236,14 +234,14 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
   
      Nehladý kvantifikátor se snaží porovnat element co nejmenším možným počtem opakování. Hladový kvantifikátor můžete převést na opožděný kvantifikátor pouhým přidáním `?`.  
   
- Vezměte v úvahu jednoduchý regulární výraz, který je určen k extrakci posledních čtyř číslic z řetězce čísel, jako je číslo platební karty. Verze regulárního výrazu, který používá `*` hladce kvantifikátor je. `\b.*([0-9]{4})\b` Nicméně pokud řetězec obsahuje dvě čísla, tento regulární výraz odpovídá posledním čtyřm číslicím druhé číslo, jak ukazuje následující příklad.  
+ Vezměte v úvahu jednoduchý regulární výraz, který je určen k extrakci posledních čtyř číslic z řetězce čísel, jako je číslo platební karty. Verze regulárního výrazu, který používá `*` hladový kvantifikátor, je `\b.*([0-9]{4})\b`. Nicméně pokud řetězec obsahuje dvě čísla, tento regulární výraz odpovídá posledním čtyřm číslicím druhé číslo, jak ukazuje následující příklad.  
   
  [!code-csharp[RegularExpressions.Quantifiers.Greedy#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers.Greedy/cs/Greedy.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers.Greedy#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers.Greedy/vb/Greedy.vb#1)]  
   
- Regulární výraz neshoduje s prvním číslem, protože `*` kvantifikátor se pokusí porovnat předchozí prvek v celém řetězci tolikrát, kolikrát je to možné, a tak najde shodu na konci řetězce.  
+ Regulárnímu výrazu se neshoduje s prvním číslem, protože kvantifikátor `*` se snaží vyhledat předchozí prvek tolikrát, kolikrát je to možné v celém řetězci, a tak najde shodu na konci řetězce.  
   
- Nejedná se o požadované chování. Místo toho můžete použít `*?`opožděný kvantifikátor k extrakci číslic z obou čísel, jak ukazuje následující příklad.  
+ Nejedná se o požadované chování. Místo toho můžete použít `*?`opožděný kvantifikátor pro extrakci číslic z obou čísel, jak ukazuje následující příklad.  
   
  [!code-csharp[RegularExpressions.Quantifiers.Greedy#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers.Greedy/cs/Greedy.cs#2)]
  [!code-vb[RegularExpressions.Quantifiers.Greedy#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers.Greedy/vb/Greedy.vb#2)]  
@@ -251,22 +249,22 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
  Ve většině případů regulární výrazy s hladkou a opožděným kvantifikátorem vracejí stejné shody. Nejčastěji vracejí různé výsledky při použití se metaznakem zástupného znaku (`.`), který odpovídá jakémukoli znaku.  
   
 ## <a name="quantifiers-and-empty-matches"></a>Kvantifikátory a prázdné shody  
- Kvantifikátory `*`, a `+` `{` *n* ma`}` jejich opožděné protějšky se nikdy neopakují po prázdné shodě, pokud byl nalezen minimální počet zachycení.`,` Toto pravidlo brání kvantifikátorům v zadávání nekonečných smyček u prázdných dílčích výrazů, pokud je maximální počet možných zachycení skupin nekonečný nebo je blízko nekonečné.  
+ Kvantifikátory `*`, `+`a `{`*n*`,`*m*`}` a jejich opožděné protějšky se nikdy neopakují po prázdné shodě, pokud byl nalezen minimální počet zachycení. Toto pravidlo brání kvantifikátorům v zadávání nekonečných smyček u prázdných dílčích výrazů, pokud je maximální počet možných zachycení skupin nekonečný nebo je blízko nekonečné.  
   
- Například následující kód ukazuje výsledek volání <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> metody se vzorem `(a?)*`regulárního výrazu, který odpovídá žádnému nebo jednomu znaku "a" nula nebo vícekrát. Všimněte si, že jedna zachytávající skupina zachycuje každou "a" <xref:System.String.Empty?displayProperty=nameWithType>, ale neexistuje žádná druhá prázdná shoda, protože první prázdná shoda způsobí, že kvantifikátor přestane opakovat.  
+ Například následující kód ukazuje výsledek volání metody <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> se vzorem regulárního výrazu `(a?)*`, který odpovídá žádnému nebo jednomu znaku "a" nula nebo vícekrát. Všimněte si, že jedna zachytávající skupina zachycuje každou "a", ale také <xref:System.String.Empty?displayProperty=nameWithType>, ale neexistuje žádná druhá prázdná shoda, protože první prázdná shoda způsobí, že kvantifikátor přestane opakovat.  
   
  [!code-csharp[RegularExpressions.Quantifiers.EmptyMatch#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/cs/emptymatch1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers.EmptyMatch#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/vb/emptymatch1.vb#1)]  
   
- Chcete-li zobrazit praktický rozdíl mezi zachytávající skupinou definující minimální a maximální počet zachycení a jednu, která definuje pevný počet zachycení, zvažte vzory `(a\1|(?(1)\1)){0,2}` regulárních výrazů a. `(a\1|(?(1)\1)){2}` Oba regulární výrazy se skládají z jedné zachytávající skupiny, která je definována tak, jak je uvedeno v následující tabulce.  
+ Chcete-li zobrazit praktický rozdíl mezi zachytávající skupinou definující minimální a maximální počet zachycení a jednu, která definuje pevný počet zachycení, zvažte vzory regulárních výrazů `(a\1|(?(1)\1)){0,2}` a `(a\1|(?(1)\1)){2}`. Oba regulární výrazy se skládají z jedné zachytávající skupiny, která je definována tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`(a\1`|Buď porovnává "a" spolu s hodnotou první zachycené skupiny...|  
-|<code>&#124;(?(1)</code>|… nebo testujte, zda byla definována první zachycená skupina. (Všimněte si, `(?(1)` že konstrukce nedefinuje zachytávající skupinu.)|  
+|<code>&#124;(?(1)</code>|... nebo testujte, zda byla definována první zachycená skupina. (Všimněte si, že `(?(1)` konstrukce nedefinuje zachytávající skupinu.)|  
 |`\1))`|Pokud existuje první zachycená skupina, odpovídá její hodnotě. Pokud skupina neexistuje, bude skupina odpovídat <xref:System.String.Empty?displayProperty=nameWithType>.|  
   
- První regulární výraz se pokusí porovnat tento vzor mezi nulou a dvakrát. druhý, přesně dvakrát. Vzhledem k tomu <xref:System.String.Empty?displayProperty=nameWithType>, že první vzor dosáhne svého minimálního počtu zachycení s jeho prvním zachycením, se nikdy neopakuje pokus `a\1`o porovnání `{0,2}` . kvantifikátor povoluje v poslední iteraci pouze prázdné shody. Naopak druhý regulární výraz odpovídá "a", protože vyhodnocuje `a\1` druhý čas. minimální počet iterací, 2, vynutí, aby se modul opakoval po prázdné shodě.  
+ První regulární výraz se pokusí porovnat tento vzor mezi nulou a dvakrát. druhý, přesně dvakrát. Vzhledem k tomu, že první model dosáhne svého minimálního počtu zachycení s prvním zachycením <xref:System.String.Empty?displayProperty=nameWithType>, nikdy se neopakuje, aby se pokusila porovnat `a\1`; kvantifikátor `{0,2}` povoluje v poslední iteraci pouze prázdné shody. Naopak druhý regulární výraz odpovídá "a", protože vyhodnocuje `a\1` podruhé. minimální počet iterací, 2, vynutí, aby se modul opakoval po prázdné shodě.  
   
  [!code-csharp[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/cs/emptymatch4.cs#2)]
  [!code-vb[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/vb/emptymatch4.vb#2)]  

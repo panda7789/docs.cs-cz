@@ -18,14 +18,12 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 352808e561a0f59d41f092eb7c70c40a591da5b6
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 1812235da6e6d02a97fe994568c5c26a3c7cde33
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846771"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126403"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: ověření, zda jsou řetězce v platném formátu e-mailu
 

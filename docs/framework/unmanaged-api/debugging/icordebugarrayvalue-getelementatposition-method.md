@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fd5eaa4-1997-4910-82f5-3887480db764
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4cfdaeb1bc298c10cbae01c946ffb867cef21d17
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 10584442d7e0bd61e6decaf2b494dfe39f339d6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737545"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088419"
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a>ICorDebugArrayValue::GetElementAtPosition – metoda
-Získá prvek na dané pozici, zpracuje pole jako pole s nulovým základem, jednorozměrné.  
+Získá prvek na dané pozici, což zpracuje pole jako jednorozměrné jednorozměrné pole s nulovým základem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetElementAtPosition (
   
 ## <a name="parameters"></a>Parametry  
  `nPosition`  
- [in] Pozice prvku, který se má načíst.  
+ pro Pozice prvku, který má být načten.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu elementu.  
+ mimo Ukazatel na adresu objektu ICorDebugValue, který představuje hodnotu prvku.  
   
 ## <a name="remarks"></a>Poznámky  
- Rozložení multidimenzionální pole se řídí styl C++ pole rozložení.  
+ Rozložení pole s více dimenzemi se řídí C++ stylem rozložení pole.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
