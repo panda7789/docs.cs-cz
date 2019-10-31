@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: dc9a0a6c-d592-4fb7-86ed-62684da3b0e1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 45a409bda8861701e68d3ea1a956a4c35ce88ddd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ccb5cda11a2466496a4b3981e8185cbb7130f66f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738778"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122899"
 ---
-# <a name="iclrdatatargetgetcurrentthreadid-method"></a><span data-ttu-id="c800a-102">ICLRDataTarget::GetCurrentThreadID – metoda</span><span class="sxs-lookup"><span data-stu-id="c800a-102">ICLRDataTarget::GetCurrentThreadID Method</span></span>
-<span data-ttu-id="c800a-103">Získá identifikátor operačního systému pro aktuální vlákno.</span><span class="sxs-lookup"><span data-stu-id="c800a-103">Gets the operating system identifier for the current thread.</span></span>  
+# <a name="iclrdatatargetgetcurrentthreadid-method"></a><span data-ttu-id="ecdbc-102">ICLRDataTarget::GetCurrentThreadID – metoda</span><span class="sxs-lookup"><span data-stu-id="ecdbc-102">ICLRDataTarget::GetCurrentThreadID Method</span></span>
+<span data-ttu-id="ecdbc-103">Načte identifikátor operačního systému pro aktuální vlákno.</span><span class="sxs-lookup"><span data-stu-id="ecdbc-103">Gets the operating system identifier for the current thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c800a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c800a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ecdbc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ecdbc-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCurrentThreadID (  
@@ -35,22 +33,22 @@ HRESULT GetCurrentThreadID (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c800a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c800a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ecdbc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ecdbc-105">Parameters</span></span>  
  `threadID`  
- <span data-ttu-id="c800a-106">[out] Ukazatel na operační systém identifikátor aktuálního vlákna pro cílový proces.</span><span class="sxs-lookup"><span data-stu-id="c800a-106">[out] A pointer to the operating system identifier of the current thread for the target process.</span></span>  
+ <span data-ttu-id="ecdbc-106">mimo Ukazatel na identifikátor operačního systému aktuálního vlákna pro cílový proces.</span><span class="sxs-lookup"><span data-stu-id="ecdbc-106">[out] A pointer to the operating system identifier of the current thread for the target process.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c800a-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c800a-107">Remarks</span></span>  
- <span data-ttu-id="c800a-108">Pokud není žádná aktuální vlákno pro cílový proces `GetCurrentThreadID` metoda může selhat.</span><span class="sxs-lookup"><span data-stu-id="c800a-108">If there is no current thread for the target process, the `GetCurrentThreadID` method may fail.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ecdbc-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ecdbc-107">Remarks</span></span>  
+ <span data-ttu-id="ecdbc-108">Pokud neexistuje žádné aktuální vlákno pro cílový proces, může být metoda `GetCurrentThreadID` neúspěšná.</span><span class="sxs-lookup"><span data-stu-id="ecdbc-108">If there is no current thread for the target process, the `GetCurrentThreadID` method may fail.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c800a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c800a-109">Requirements</span></span>  
- <span data-ttu-id="c800a-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c800a-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ecdbc-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ecdbc-109">Requirements</span></span>  
+ <span data-ttu-id="ecdbc-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ecdbc-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c800a-111">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="c800a-111">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="ecdbc-111">**Hlavička:** ClrData. idl, ClrData. h</span><span class="sxs-lookup"><span data-stu-id="ecdbc-111">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="c800a-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c800a-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="ecdbc-112">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="ecdbc-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c800a-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c800a-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ecdbc-113">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ecdbc-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c800a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c800a-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ecdbc-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ecdbc-114">See also</span></span>
 
-- [<span data-ttu-id="c800a-115">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c800a-115">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [<span data-ttu-id="ecdbc-115">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ecdbc-115">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

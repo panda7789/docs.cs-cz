@@ -7,61 +7,59 @@ helpviewer_keywords:
 - <enforceFIPSPolicy> element
 - Federal Information Processing Standards (FIPS)
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f90abf9f6c2bc0aed2cf01558b2c0cca4e967e81
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0d6dd291a24928487a040c0427f058dee80bf836
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252637"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117376"
 ---
-# <a name="enforcefipspolicy-element"></a><span data-ttu-id="7e97f-102">\<enforceFIPSPolicy – element ></span><span class="sxs-lookup"><span data-stu-id="7e97f-102">\<enforceFIPSPolicy> Element</span></span>
-<span data-ttu-id="7e97f-103">Určuje, jestli se má vymáhat požadavek na konfiguraci počítače, který kryptografické algoritmy musí dodržovat Standard FIPS (Federal Information Processing Standards).</span><span class="sxs-lookup"><span data-stu-id="7e97f-103">Specifies whether to enforce a computer configuration requirement that cryptographic algorithms must comply with the Federal Information Processing Standards (FIPS).</span></span>  
+# <a name="enforcefipspolicy-element"></a><span data-ttu-id="c5e0e-102">\<element > enforceFIPSPolicy</span><span class="sxs-lookup"><span data-stu-id="c5e0e-102">\<enforceFIPSPolicy> Element</span></span>
+<span data-ttu-id="c5e0e-103">Určuje, jestli se má vymáhat požadavek na konfiguraci počítače, který kryptografické algoritmy musí dodržovat Standard FIPS (Federal Information Processing Standards).</span><span class="sxs-lookup"><span data-stu-id="c5e0e-103">Specifies whether to enforce a computer configuration requirement that cryptographic algorithms must comply with the Federal Information Processing Standards (FIPS).</span></span>  
   
-<span data-ttu-id="7e97f-104">[ **\<> Konfigurace**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="7e97f-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="7e97f-105">&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)</span><span class="sxs-lookup"><span data-stu-id="7e97f-105">&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)</span></span>\
-<span data-ttu-id="7e97f-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<enforceFIPSPolicy>**</span><span class="sxs-lookup"><span data-stu-id="7e97f-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<enforceFIPSPolicy>**</span></span>  
+<span data-ttu-id="c5e0e-104">[ **\<configuration >** ](../configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="c5e0e-104">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="c5e0e-105">&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)</span><span class="sxs-lookup"><span data-stu-id="c5e0e-105">&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)</span></span>\
+<span data-ttu-id="c5e0e-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<enforceFIPSPolicy >**</span><span class="sxs-lookup"><span data-stu-id="c5e0e-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<enforceFIPSPolicy>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7e97f-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7e97f-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c5e0e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c5e0e-107">Syntax</span></span>  
   
 ```xml  
 <enforceFIPSPolicy enabled="true|false" />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7e97f-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7e97f-108">Attributes and Elements</span></span>  
- <span data-ttu-id="7e97f-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7e97f-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c5e0e-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="c5e0e-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="c5e0e-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7e97f-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="7e97f-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="c5e0e-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="c5e0e-110">Attributes</span></span>  
   
-|<span data-ttu-id="7e97f-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="7e97f-111">Attribute</span></span>|<span data-ttu-id="7e97f-112">Popis</span><span class="sxs-lookup"><span data-stu-id="7e97f-112">Description</span></span>|  
+|<span data-ttu-id="c5e0e-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="c5e0e-111">Attribute</span></span>|<span data-ttu-id="c5e0e-112">Popis</span><span class="sxs-lookup"><span data-stu-id="c5e0e-112">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="7e97f-113">enabled</span><span class="sxs-lookup"><span data-stu-id="7e97f-113">enabled</span></span>|<span data-ttu-id="7e97f-114">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="7e97f-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="7e97f-115">Určuje, jestli se má povolit vynucení požadavku na konfiguraci počítače, že kryptografické algoritmy musí být kompatibilní se standardem FIPS.</span><span class="sxs-lookup"><span data-stu-id="7e97f-115">Specifies whether to enable the enforcement of a computer configuration requirement that cryptographic algorithms must be compliant with FIPS.</span></span>|  
+|<span data-ttu-id="c5e0e-113">umožněn</span><span class="sxs-lookup"><span data-stu-id="c5e0e-113">enabled</span></span>|<span data-ttu-id="c5e0e-114">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="c5e0e-115">Určuje, jestli se má povolit vynucení požadavku na konfiguraci počítače, že kryptografické algoritmy musí být kompatibilní se standardem FIPS.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-115">Specifies whether to enable the enforcement of a computer configuration requirement that cryptographic algorithms must be compliant with FIPS.</span></span>|  
   
-## <a name="enabled-attribute"></a><span data-ttu-id="7e97f-116">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="7e97f-116">enabled Attribute</span></span>  
+## <a name="enabled-attribute"></a><span data-ttu-id="c5e0e-116">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="c5e0e-116">enabled Attribute</span></span>  
   
-|<span data-ttu-id="7e97f-117">Value</span><span class="sxs-lookup"><span data-stu-id="7e97f-117">Value</span></span>|<span data-ttu-id="7e97f-118">Popis</span><span class="sxs-lookup"><span data-stu-id="7e97f-118">Description</span></span>|  
+|<span data-ttu-id="c5e0e-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="c5e0e-117">Value</span></span>|<span data-ttu-id="c5e0e-118">Popis</span><span class="sxs-lookup"><span data-stu-id="c5e0e-118">Description</span></span>|  
 |-----------|-----------------|  
-|`true`|<span data-ttu-id="7e97f-119">Pokud je počítač nakonfigurován tak, aby vyžadoval kryptografické algoritmy kompatibilní se standardem FIPS, bude tento požadavek vynucen.</span><span class="sxs-lookup"><span data-stu-id="7e97f-119">If your computer is configured to require cryptographic algorithms to be FIPS compliant, that requirement is enforced.</span></span> <span data-ttu-id="7e97f-120">Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo `Create` metody této třídy vyvolávají výjimky při jejich spuštění na daném počítači.</span><span class="sxs-lookup"><span data-stu-id="7e97f-120">If a class implements an algorithm that is not compliant with FIPS, the constructors or `Create` methods for that class throw exceptions when they are run on that computer.</span></span> <span data-ttu-id="7e97f-121">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="7e97f-121">This is the default.</span></span>|  
-|`false`|<span data-ttu-id="7e97f-122">Kryptografické algoritmy, které aplikace používá, nemusí být kompatibilní se standardem FIPS bez ohledu na konfiguraci počítače.</span><span class="sxs-lookup"><span data-stu-id="7e97f-122">Cryptographic algorithms that are used by the application are not required to be compliant with FIPS, regardless of computer configuration.</span></span>|  
+|`true`|<span data-ttu-id="c5e0e-119">Pokud je počítač nakonfigurován tak, aby vyžadoval kryptografické algoritmy kompatibilní se standardem FIPS, bude tento požadavek vynucen.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-119">If your computer is configured to require cryptographic algorithms to be FIPS compliant, that requirement is enforced.</span></span> <span data-ttu-id="c5e0e-120">Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo metody `Create` pro tuto třídu vyvolávají výjimky při jejich spuštění na daném počítači.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-120">If a class implements an algorithm that is not compliant with FIPS, the constructors or `Create` methods for that class throw exceptions when they are run on that computer.</span></span> <span data-ttu-id="c5e0e-121">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-121">This is the default.</span></span>|  
+|`false`|<span data-ttu-id="c5e0e-122">Kryptografické algoritmy, které aplikace používá, nemusí být kompatibilní se standardem FIPS bez ohledu na konfiguraci počítače.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-122">Cryptographic algorithms that are used by the application are not required to be compliant with FIPS, regardless of computer configuration.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="7e97f-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7e97f-123">Child Elements</span></span>  
- <span data-ttu-id="7e97f-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="7e97f-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="c5e0e-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="c5e0e-123">Child Elements</span></span>  
+ <span data-ttu-id="c5e0e-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="c5e0e-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="7e97f-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7e97f-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="c5e0e-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="c5e0e-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="7e97f-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="7e97f-126">Element</span></span>|<span data-ttu-id="7e97f-127">Popis</span><span class="sxs-lookup"><span data-stu-id="7e97f-127">Description</span></span>|  
+|<span data-ttu-id="c5e0e-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="c5e0e-126">Element</span></span>|<span data-ttu-id="c5e0e-127">Popis</span><span class="sxs-lookup"><span data-stu-id="c5e0e-127">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="7e97f-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7e97f-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`runtime`|<span data-ttu-id="7e97f-129">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="7e97f-129">Contains information about assembly binding and garbage collection.</span></span>|  
+|`configuration`|<span data-ttu-id="c5e0e-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="c5e0e-129">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-129">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7e97f-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7e97f-130">Remarks</span></span>  
- <span data-ttu-id="7e97f-131">Počínaje .NET Framework 2,0 se vytváření tříd, které implementují kryptografické algoritmy, řídí konfigurací počítače.</span><span class="sxs-lookup"><span data-stu-id="7e97f-131">Starting with the .NET Framework 2.0, the creation of classes that implement cryptographic algorithms is controlled by the configuration of the computer.</span></span> <span data-ttu-id="7e97f-132">Pokud je počítač nakonfigurován tak, aby vyžadoval, aby algoritmy byly kompatibilní se standardem FIPS, a třída implementuje algoritmus, který není kompatibilní se standardem FIPS, jakýkoli pokus o vytvoření instance této třídy vyvolá výjimku.</span><span class="sxs-lookup"><span data-stu-id="7e97f-132">If the computer is configured to require algorithms to be compliant with FIPS, and a class implements an algorithm that is not compliant with FIPS, any attempt to create an instance of that class throws an exception.</span></span> <span data-ttu-id="7e97f-133">Konstruktory vyvolávají <xref:System.InvalidOperationException> výjimku a `Create` metody vyvolávají <xref:System.Reflection.TargetInvocationException> výjimku s vnitřní <xref:System.InvalidOperationException> výjimkou.</span><span class="sxs-lookup"><span data-stu-id="7e97f-133">Constructors throw an <xref:System.InvalidOperationException> exception, and `Create` methods throw a <xref:System.Reflection.TargetInvocationException> exception with an inner <xref:System.InvalidOperationException> exception.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c5e0e-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c5e0e-130">Remarks</span></span>  
+ <span data-ttu-id="c5e0e-131">Počínaje .NET Framework 2,0 se vytváření tříd, které implementují kryptografické algoritmy, řídí konfigurací počítače.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-131">Starting with the .NET Framework 2.0, the creation of classes that implement cryptographic algorithms is controlled by the configuration of the computer.</span></span> <span data-ttu-id="c5e0e-132">Pokud je počítač nakonfigurován tak, aby vyžadoval, aby algoritmy byly kompatibilní se standardem FIPS, a třída implementuje algoritmus, který není kompatibilní se standardem FIPS, jakýkoli pokus o vytvoření instance této třídy vyvolá výjimku.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-132">If the computer is configured to require algorithms to be compliant with FIPS, and a class implements an algorithm that is not compliant with FIPS, any attempt to create an instance of that class throws an exception.</span></span> <span data-ttu-id="c5e0e-133">Konstruktory vyvolávají výjimku <xref:System.InvalidOperationException> a metody `Create` vyvolávají výjimku <xref:System.Reflection.TargetInvocationException> s vnitřní výjimkou <xref:System.InvalidOperationException>.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-133">Constructors throw an <xref:System.InvalidOperationException> exception, and `Create` methods throw a <xref:System.Reflection.TargetInvocationException> exception with an inner <xref:System.InvalidOperationException> exception.</span></span>  
   
- <span data-ttu-id="7e97f-134">Pokud vaše aplikace běží na počítačích, jejichž konfigurace vyžaduje kompatibilitu se standardem FIPS, a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, můžete použít tento prvek v konfiguračním souboru, aby nedocházelo k tomu, že modul CLR (Common Language Runtime) z vynucování dodržování standardů FIPS.</span><span class="sxs-lookup"><span data-stu-id="7e97f-134">If your application runs on computers whose configurations require compliance with FIPS, and your application uses an algorithm that is not compliant with FIPS, you can use this element in your configuration file to prevent the common language runtime (CLR) from enforcing FIPS compliance.</span></span> <span data-ttu-id="7e97f-135">Tento prvek byl představen v aktualizaci Service Pack 1 pro .NET Framework 2,0.</span><span class="sxs-lookup"><span data-stu-id="7e97f-135">This element was introduced in the .NET Framework 2.0 Service Pack 1.</span></span>  
+ <span data-ttu-id="c5e0e-134">Pokud vaše aplikace běží na počítačích, jejichž konfigurace vyžaduje kompatibilitu se standardem FIPS, a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, můžete použít tento prvek v konfiguračním souboru, aby nedocházelo k tomu, že modul CLR (Common Language Runtime) z vynucování dodržování standardů FIPS.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-134">If your application runs on computers whose configurations require compliance with FIPS, and your application uses an algorithm that is not compliant with FIPS, you can use this element in your configuration file to prevent the common language runtime (CLR) from enforcing FIPS compliance.</span></span> <span data-ttu-id="c5e0e-135">Tento prvek byl představen v aktualizaci Service Pack 1 pro .NET Framework 2,0.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-135">This element was introduced in the .NET Framework 2.0 Service Pack 1.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7e97f-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="7e97f-136">Example</span></span>  
- <span data-ttu-id="7e97f-137">Následující příklad ukazuje, jak zabránit CLR v vynucování dodržování standardů FIPS.</span><span class="sxs-lookup"><span data-stu-id="7e97f-137">The following example shows how to prevent the CLR from enforcing FIPS compliance.</span></span>  
+## <a name="example"></a><span data-ttu-id="c5e0e-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="c5e0e-136">Example</span></span>  
+ <span data-ttu-id="c5e0e-137">Následující příklad ukazuje, jak zabránit CLR v vynucování dodržování standardů FIPS.</span><span class="sxs-lookup"><span data-stu-id="c5e0e-137">The following example shows how to prevent the CLR from enforcing FIPS compliance.</span></span>  
   
 ```xml  
 <configuration>  
@@ -71,8 +69,8 @@ ms.locfileid: "70252637"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7e97f-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7e97f-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c5e0e-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c5e0e-138">See also</span></span>
 
-- [<span data-ttu-id="7e97f-139">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="7e97f-139">Runtime Settings Schema</span></span>](index.md)
-- [<span data-ttu-id="7e97f-140">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="7e97f-140">Configuration File Schema</span></span>](../index.md)
-- [<span data-ttu-id="7e97f-141">Kryptografický model</span><span class="sxs-lookup"><span data-stu-id="7e97f-141">Cryptography Model</span></span>](../../../../standard/security/cryptography-model.md)
+- [<span data-ttu-id="c5e0e-139">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="c5e0e-139">Runtime Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="c5e0e-140">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="c5e0e-140">Configuration File Schema</span></span>](../index.md)
+- [<span data-ttu-id="c5e0e-141">Kryptografický model</span><span class="sxs-lookup"><span data-stu-id="c5e0e-141">Cryptography Model</span></span>](../../../../standard/security/cryptography-model.md)

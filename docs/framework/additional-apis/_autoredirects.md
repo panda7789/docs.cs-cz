@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest._AutoRedirects Field
+title: HttpWebRequest. _AutoRedirects – pole
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,34 +10,34 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2dde9cdeeca1cc8cca13322747d625b505e7f453
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 82acb409f09826d70f8f050c932ab4aebc4fd172
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301058"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120087"
 ---
-# <a name="httpwebrequestautoredirects-field"></a><span data-ttu-id="55015-102">HttpWebRequest. \_AutoRedirects pole</span><span class="sxs-lookup"><span data-stu-id="55015-102">HttpWebRequest.\_AutoRedirects Field</span></span>
+# <a name="httpwebrequest_autoredirects-field"></a><span data-ttu-id="bee82-102">HttpWebRequest.\_pole autoredirect</span><span class="sxs-lookup"><span data-stu-id="bee82-102">HttpWebRequest.\_AutoRedirects Field</span></span>
 
-<span data-ttu-id="55015-103">`HttpWebRequest._AutoRedirects` je <xref:System.Int32> , který se vztahuje počet přesměrování provedené pro tento <xref:System.Net.HttpWebRequest>.</span><span class="sxs-lookup"><span data-stu-id="55015-103">`HttpWebRequest._AutoRedirects` is an <xref:System.Int32> that reflects the number of redirects made for this <xref:System.Net.HttpWebRequest>.</span></span>
+<span data-ttu-id="bee82-103">`HttpWebRequest._AutoRedirects` je <xref:System.Int32>, který odráží počet přesměrování provedených pro tento <xref:System.Net.HttpWebRequest>.</span><span class="sxs-lookup"><span data-stu-id="bee82-103">`HttpWebRequest._AutoRedirects` is an <xref:System.Int32> that reflects the number of redirects made for this <xref:System.Net.HttpWebRequest>.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="55015-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="55015-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bee82-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bee82-104">Syntax</span></span>  
   
 ```csharp  
 private int _AutoRedirects
 ```
 
 > [!WARNING]
-> <span data-ttu-id="55015-105">`HttpWebRequest._AutoRedirects` Pole je interní a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="55015-105">The `HttpWebRequest._AutoRedirects` field is internal and is not meant to be used directly in your code.</span></span>
+> <span data-ttu-id="bee82-105">Pole `HttpWebRequest._AutoRedirects` je interní a není určeno pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="bee82-105">The `HttpWebRequest._AutoRedirects` field is internal and is not meant to be used directly in your code.</span></span>
 > 
-> <span data-ttu-id="55015-106">Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.</span><span class="sxs-lookup"><span data-stu-id="55015-106">Microsoft does not support the use of this field in a production application under any circumstance.</span></span>
+> <span data-ttu-id="bee82-106">Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.</span><span class="sxs-lookup"><span data-stu-id="bee82-106">Microsoft does not support the use of this field in a production application under any circumstance.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="55015-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="55015-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="bee82-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bee82-107">Requirements</span></span>
 
-<span data-ttu-id="55015-108">**Namespace:** <xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="55015-108">**Namespace:** <xref:System.Net></span></span>
+<span data-ttu-id="bee82-108">**Obor názvů:** <xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="bee82-108">**Namespace:** <xref:System.Net></span></span>
 
-<span data-ttu-id="55015-109">**Sestavení:** Systém (System.dll)</span><span class="sxs-lookup"><span data-stu-id="55015-109">**Assembly:** System (in System.dll)</span></span>
+<span data-ttu-id="bee82-109">**Sestavení:** Systém (v System. dll)</span><span class="sxs-lookup"><span data-stu-id="bee82-109">**Assembly:** System (in System.dll)</span></span>
 
-<span data-ttu-id="55015-110">**Verze rozhraní .NET framework:** Dostupné od verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="55015-110">**.NET Framework versions:** Available since 2.0.</span></span>
+<span data-ttu-id="bee82-110">**Verze .NET Framework:** K dispozici od verze 2,0.</span><span class="sxs-lookup"><span data-stu-id="bee82-110">**.NET Framework versions:** Available since 2.0.</span></span>

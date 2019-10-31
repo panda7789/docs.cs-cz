@@ -5,74 +5,72 @@ helpviewer_keywords:
 - <NetFx40_PInvokeStackResilience> element
 - NetFx40_PInvokeStackResilience element
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f4dffe5428ccb7541055fa4f3f335f57deaf2ec
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 86f50aafe0b21d5080288e09ac7118ca1e4c939a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252432"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116164"
 ---
-# <a name="netfx40_pinvokestackresilience-element"></a><span data-ttu-id="1a093-102">\<NetFx40_PInvokeStackResilience – element ></span><span class="sxs-lookup"><span data-stu-id="1a093-102">\<NetFx40_PInvokeStackResilience> Element</span></span>
+# <a name="netfx40_pinvokestackresilience-element"></a><span data-ttu-id="0d38f-102">\<element > NetFx40_PInvokeStackResilience</span><span class="sxs-lookup"><span data-stu-id="0d38f-102">\<NetFx40_PInvokeStackResilience> Element</span></span>
 
-<span data-ttu-id="1a093-103">Určuje, zda modul runtime automaticky opravuje nesprávné deklarace volání platformy za běhu, a to za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.</span><span class="sxs-lookup"><span data-stu-id="1a093-103">Specifies whether the runtime automatically fixes incorrect platform invoke declarations at run time, at the cost of slower transitions between managed and unmanaged code.</span></span>
+<span data-ttu-id="0d38f-103">Určuje, zda modul runtime automaticky opravuje nesprávné deklarace volání platformy za běhu, a to za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.</span><span class="sxs-lookup"><span data-stu-id="0d38f-103">Specifies whether the runtime automatically fixes incorrect platform invoke declarations at run time, at the cost of slower transitions between managed and unmanaged code.</span></span>
 
-<span data-ttu-id="1a093-104">[ **\<> Konfigurace**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="1a093-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="1a093-105">&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)</span><span class="sxs-lookup"><span data-stu-id="1a093-105">&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)</span></span>\
-<span data-ttu-id="1a093-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**</span><span class="sxs-lookup"><span data-stu-id="1a093-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<NetFx40_PInvokeStackResilience>**</span></span>  
+<span data-ttu-id="0d38f-104">[ **\<configuration >** ](../configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="0d38f-104">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="0d38f-105">&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)</span><span class="sxs-lookup"><span data-stu-id="0d38f-105">&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)</span></span>\
+<span data-ttu-id="0d38f-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**</span><span class="sxs-lookup"><span data-stu-id="0d38f-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<NetFx40_PInvokeStackResilience>**</span></span>  
 
-## <a name="syntax"></a><span data-ttu-id="1a093-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1a093-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0d38f-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0d38f-107">Syntax</span></span>
 
 ```xml
 <NetFx40_PInvokeStackResilience  enabled="1|0"/>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="1a093-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="1a093-108">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="0d38f-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="0d38f-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="1a093-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="1a093-109">The following sections describe attributes, child elements, and parent elements.</span></span>
+<span data-ttu-id="0d38f-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="0d38f-109">The following sections describe attributes, child elements, and parent elements.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="1a093-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="1a093-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="0d38f-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="0d38f-110">Attributes</span></span>
 
-|<span data-ttu-id="1a093-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="1a093-111">Attribute</span></span>|<span data-ttu-id="1a093-112">Popis</span><span class="sxs-lookup"><span data-stu-id="1a093-112">Description</span></span>|
+|<span data-ttu-id="0d38f-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="0d38f-111">Attribute</span></span>|<span data-ttu-id="0d38f-112">Popis</span><span class="sxs-lookup"><span data-stu-id="0d38f-112">Description</span></span>|
 |---------------|-----------------|
-|`enabled`|<span data-ttu-id="1a093-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="1a093-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="1a093-114">Určuje, zda modul runtime detekuje nesprávné deklarace vyvolání platformy a automaticky opraví zásobník v době běhu na 32 64bitových platformách.</span><span class="sxs-lookup"><span data-stu-id="1a093-114">Specifies whether the runtime detects incorrect platform invoke declarations and automatically fixes the stack at run time on 32-bit platforms.</span></span>|
+|`enabled`|<span data-ttu-id="0d38f-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="0d38f-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="0d38f-114">Určuje, zda modul runtime detekuje nesprávné deklarace vyvolání platformy a automaticky opraví zásobník v době běhu na 32 64bitových platformách.</span><span class="sxs-lookup"><span data-stu-id="0d38f-114">Specifies whether the runtime detects incorrect platform invoke declarations and automatically fixes the stack at run time on 32-bit platforms.</span></span>|
 
-## <a name="enabled-attribute"></a><span data-ttu-id="1a093-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="1a093-115">enabled Attribute</span></span>
+## <a name="enabled-attribute"></a><span data-ttu-id="0d38f-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="0d38f-115">enabled Attribute</span></span>
 
-|<span data-ttu-id="1a093-116">Value</span><span class="sxs-lookup"><span data-stu-id="1a093-116">Value</span></span>|<span data-ttu-id="1a093-117">Popis</span><span class="sxs-lookup"><span data-stu-id="1a093-117">Description</span></span>|
+|<span data-ttu-id="0d38f-116">Hodnota</span><span class="sxs-lookup"><span data-stu-id="0d38f-116">Value</span></span>|<span data-ttu-id="0d38f-117">Popis</span><span class="sxs-lookup"><span data-stu-id="0d38f-117">Description</span></span>|
 |-----------|-----------------|
-|`0`|<span data-ttu-id="1a093-118">Modul runtime používá rychlejší interop marshaling architekturu představenou v .NET Framework 4, která nedetekuje a neopravují nesprávné deklarace vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="1a093-118">The runtime uses the faster interop marshaling architecture introduced in the .NET Framework 4, which does not detect and fix incorrect platform invoke declarations.</span></span> <span data-ttu-id="1a093-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="1a093-119">This is the default.</span></span>|
-|`1`|<span data-ttu-id="1a093-120">Běhový modul používá pomalejší přechody, které zjišťují a opravují nesprávné deklarace vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="1a093-120">The runtime uses slower transitions that detect and fix incorrect platform invoke declarations.</span></span>|
+|`0`|<span data-ttu-id="0d38f-118">Modul runtime používá rychlejší interop marshaling architekturu představenou v .NET Framework 4, která nedetekuje a neopravují nesprávné deklarace vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="0d38f-118">The runtime uses the faster interop marshaling architecture introduced in the .NET Framework 4, which does not detect and fix incorrect platform invoke declarations.</span></span> <span data-ttu-id="0d38f-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="0d38f-119">This is the default.</span></span>|
+|`1`|<span data-ttu-id="0d38f-120">Běhový modul používá pomalejší přechody, které zjišťují a opravují nesprávné deklarace vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="0d38f-120">The runtime uses slower transitions that detect and fix incorrect platform invoke declarations.</span></span>|
 
-### <a name="child-elements"></a><span data-ttu-id="1a093-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="1a093-121">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="0d38f-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="0d38f-121">Child Elements</span></span>
 
-<span data-ttu-id="1a093-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="1a093-122">None.</span></span>
+<span data-ttu-id="0d38f-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="0d38f-122">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="1a093-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="1a093-123">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="0d38f-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="0d38f-123">Parent Elements</span></span>
 
-|<span data-ttu-id="1a093-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="1a093-124">Element</span></span>|<span data-ttu-id="1a093-125">Popis</span><span class="sxs-lookup"><span data-stu-id="1a093-125">Description</span></span>|
+|<span data-ttu-id="0d38f-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="0d38f-124">Element</span></span>|<span data-ttu-id="0d38f-125">Popis</span><span class="sxs-lookup"><span data-stu-id="0d38f-125">Description</span></span>|
 |-------------|-----------------|
-|`configuration`|<span data-ttu-id="1a093-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1a093-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|
-|`runtime`|<span data-ttu-id="1a093-127">Obsahuje informace o možnostech inicializace modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="1a093-127">Contains information about runtime initialization options.</span></span>|
+|`configuration`|<span data-ttu-id="0d38f-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0d38f-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|
+|`runtime`|<span data-ttu-id="0d38f-127">Obsahuje informace o možnostech inicializace modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="0d38f-127">Contains information about runtime initialization options.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="1a093-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1a093-128">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="0d38f-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0d38f-128">Remarks</span></span>
 
-<span data-ttu-id="1a093-129">Tento prvek umožňuje rychlejší obchodování interop marshaling pro odolnost za běhu proti nesprávným deklaracím vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="1a093-129">This element enables you to trade faster interop marshaling for run-time resilience against incorrect platform invoke declarations.</span></span>
+<span data-ttu-id="0d38f-129">Tento prvek umožňuje rychlejší obchodování interop marshaling pro odolnost za běhu proti nesprávným deklaracím vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="0d38f-129">This element enables you to trade faster interop marshaling for run-time resilience against incorrect platform invoke declarations.</span></span>
 
-<span data-ttu-id="1a093-130">Počínaje .NET Framework 4 nabízí zjednodušená interop marshaling architektura výrazné zlepšení výkonu pro přechody ze spravovaného kódu do nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="1a093-130">Starting with the .NET Framework 4, a streamlined interop marshaling architecture provides a significant performance improvement for transitions from managed code to unmanaged code.</span></span> <span data-ttu-id="1a093-131">V dřívějších verzích .NET Framework zařazovací vrstva zjistila nesprávnou deklaraci volání platformy na 32ch platformách a automaticky opravila zásobník.</span><span class="sxs-lookup"><span data-stu-id="1a093-131">In earlier versions of the .NET Framework, the marshaling layer detected incorrect platform invoke declarations on 32-bit platforms and automatically fixed the stack.</span></span> <span data-ttu-id="1a093-132">Nová architektura zařazování eliminuje tento krok.</span><span class="sxs-lookup"><span data-stu-id="1a093-132">The new marshaling architecture eliminates this step.</span></span> <span data-ttu-id="1a093-133">V důsledku toho jsou přechody velmi rychlé, ale nesprávná deklarace vyvolání platformy může způsobit selhání programu.</span><span class="sxs-lookup"><span data-stu-id="1a093-133">As a result, transitions are very fast, but an incorrect platform invoke declaration can cause a program failure.</span></span>
+<span data-ttu-id="0d38f-130">Počínaje .NET Framework 4 nabízí zjednodušená interop marshaling architektura výrazné zlepšení výkonu pro přechody ze spravovaného kódu do nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="0d38f-130">Starting with the .NET Framework 4, a streamlined interop marshaling architecture provides a significant performance improvement for transitions from managed code to unmanaged code.</span></span> <span data-ttu-id="0d38f-131">V dřívějších verzích .NET Framework zařazovací vrstva zjistila nesprávnou deklaraci volání platformy na 32ch platformách a automaticky opravila zásobník.</span><span class="sxs-lookup"><span data-stu-id="0d38f-131">In earlier versions of the .NET Framework, the marshaling layer detected incorrect platform invoke declarations on 32-bit platforms and automatically fixed the stack.</span></span> <span data-ttu-id="0d38f-132">Nová architektura zařazování eliminuje tento krok.</span><span class="sxs-lookup"><span data-stu-id="0d38f-132">The new marshaling architecture eliminates this step.</span></span> <span data-ttu-id="0d38f-133">V důsledku toho jsou přechody velmi rychlé, ale nesprávná deklarace vyvolání platformy může způsobit selhání programu.</span><span class="sxs-lookup"><span data-stu-id="0d38f-133">As a result, transitions are very fast, but an incorrect platform invoke declaration can cause a program failure.</span></span>
 
-<span data-ttu-id="1a093-134">Aby bylo možné během vývoje snadno detekovat nesprávné deklarace, Vylepšili jsme prostředí pro ladění sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1a093-134">To make it easy to detect incorrect declarations during development, the Visual Studio debugging experience has been improved.</span></span> <span data-ttu-id="1a093-135">Pomocník pro [pInvokeStackImbalance –](../../../debug-trace-profile/pinvokestackimbalance-mda.md) spravované ladění (MDA) vás upozorní na nesprávné deklarace vyvolání platformy, pokud je vaše aplikace spuštěná s připojeným ladicím programem.</span><span class="sxs-lookup"><span data-stu-id="1a093-135">The [pInvokeStackImbalance](../../../debug-trace-profile/pinvokestackimbalance-mda.md) managed debugging assistant (MDA) notifies you of incorrect platform invoke declarations when your application is running with the debugger attached.</span></span>
+<span data-ttu-id="0d38f-134">Aby bylo možné během vývoje snadno detekovat nesprávné deklarace, Vylepšili jsme prostředí pro ladění sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="0d38f-134">To make it easy to detect incorrect declarations during development, the Visual Studio debugging experience has been improved.</span></span> <span data-ttu-id="0d38f-135">Pomocník pro [pInvokeStackImbalance –](../../../debug-trace-profile/pinvokestackimbalance-mda.md) spravované ladění (MDA) vás upozorní na nesprávné deklarace vyvolání platformy, pokud je vaše aplikace spuštěná s připojeným ladicím programem.</span><span class="sxs-lookup"><span data-stu-id="0d38f-135">The [pInvokeStackImbalance](../../../debug-trace-profile/pinvokestackimbalance-mda.md) managed debugging assistant (MDA) notifies you of incorrect platform invoke declarations when your application is running with the debugger attached.</span></span>
 
-<span data-ttu-id="1a093-136">Pro řešení scénářů, kde vaše aplikace používá komponenty, které nemůžete znovu kompilovat a které mají nesprávné deklarace vyvolání platformy, lze `NetFx40_PInvokeStackResilience` použít prvek.</span><span class="sxs-lookup"><span data-stu-id="1a093-136">To address scenarios where your application uses components that you cannot recompile, and that have incorrect platform invoke declarations, you can use the `NetFx40_PInvokeStackResilience` element.</span></span> <span data-ttu-id="1a093-137">Přidání tohoto elementu do konfiguračního souboru aplikace pomocí `enabled="1"` výslovný do režimu kompatibility s chováním dřívějších verzí .NET Framework, za cenu pomalejších přechodů.</span><span class="sxs-lookup"><span data-stu-id="1a093-137">Adding this element to your application configuration file with `enabled="1"` opts into a compatibility mode with the behavior of earlier versions of the .NET Framework, at the cost of slower transitions.</span></span> <span data-ttu-id="1a093-138">Sestavení, která byla zkompilována v předchozích verzích .NET Framework, jsou automaticky přizpůsobena do tohoto režimu kompatibility a nepotřebují tento prvek.</span><span class="sxs-lookup"><span data-stu-id="1a093-138">Assemblies that have been compiled against earlier versions of the .NET Framework are automatically opted into this compatibility mode, and do not need this element.</span></span>
+<span data-ttu-id="0d38f-136">Pro řešení scénářů, kde vaše aplikace používá komponenty, které nemůžete znovu kompilovat a které mají nesprávné deklarace vyvolání platformy, lze použít prvek `NetFx40_PInvokeStackResilience`.</span><span class="sxs-lookup"><span data-stu-id="0d38f-136">To address scenarios where your application uses components that you cannot recompile, and that have incorrect platform invoke declarations, you can use the `NetFx40_PInvokeStackResilience` element.</span></span> <span data-ttu-id="0d38f-137">Přidání tohoto elementu do konfiguračního souboru aplikace pomocí `enabled="1"` výslovný do režimu kompatibility s chováním dřívějších verzí .NET Framework, za cenu pomalejších přechodů.</span><span class="sxs-lookup"><span data-stu-id="0d38f-137">Adding this element to your application configuration file with `enabled="1"` opts into a compatibility mode with the behavior of earlier versions of the .NET Framework, at the cost of slower transitions.</span></span> <span data-ttu-id="0d38f-138">Sestavení, která byla zkompilována v předchozích verzích .NET Framework, jsou automaticky přizpůsobena do tohoto režimu kompatibility a nepotřebují tento prvek.</span><span class="sxs-lookup"><span data-stu-id="0d38f-138">Assemblies that have been compiled against earlier versions of the .NET Framework are automatically opted into this compatibility mode, and do not need this element.</span></span>
 
-## <a name="configuration-file"></a><span data-ttu-id="1a093-139">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="1a093-139">Configuration File</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="0d38f-139">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="0d38f-139">Configuration File</span></span>
 
-<span data-ttu-id="1a093-140">Tento element lze použít pouze v konfiguračním souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="1a093-140">This element can be used only in the application configuration file.</span></span>
+<span data-ttu-id="0d38f-140">Tento element lze použít pouze v konfiguračním souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="0d38f-140">This element can be used only in the application configuration file.</span></span>
 
-## <a name="example"></a><span data-ttu-id="1a093-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="1a093-141">Example</span></span>
+## <a name="example"></a><span data-ttu-id="0d38f-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="0d38f-141">Example</span></span>
 
-<span data-ttu-id="1a093-142">Následující příklad ukazuje, jak se vyjádřit ke zvýšené odolnosti proti nesprávným deklaracím vyvolání platformy pro aplikaci, za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.</span><span class="sxs-lookup"><span data-stu-id="1a093-142">The following example shows how to opt into increased resilience against incorrect platform invoke declarations for an application, at the cost of slower transitions between managed and unmanaged code.</span></span>
+<span data-ttu-id="0d38f-142">Následující příklad ukazuje, jak se vyjádřit ke zvýšené odolnosti proti nesprávným deklaracím vyvolání platformy pro aplikaci, za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.</span><span class="sxs-lookup"><span data-stu-id="0d38f-142">The following example shows how to opt into increased resilience against incorrect platform invoke declarations for an application, at the cost of slower transitions between managed and unmanaged code.</span></span>
 
 ```xml
 <configuration>
@@ -82,8 +80,8 @@ ms.locfileid: "70252432"
 </configuration>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1a093-143">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a093-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0d38f-143">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0d38f-143">See also</span></span>
 
-- [<span data-ttu-id="1a093-144">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="1a093-144">Runtime Settings Schema</span></span>](index.md)
-- [<span data-ttu-id="1a093-145">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="1a093-145">Configuration File Schema</span></span>](../index.md)
-- [<span data-ttu-id="1a093-146">pInvokeStackImbalance</span><span class="sxs-lookup"><span data-stu-id="1a093-146">pInvokeStackImbalance</span></span>](../../../debug-trace-profile/pinvokestackimbalance-mda.md)
+- [<span data-ttu-id="0d38f-144">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="0d38f-144">Runtime Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="0d38f-145">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="0d38f-145">Configuration File Schema</span></span>](../index.md)
+- [<span data-ttu-id="0d38f-146">pInvokeStackImbalance</span><span class="sxs-lookup"><span data-stu-id="0d38f-146">pInvokeStackImbalance</span></span>](../../../debug-trace-profile/pinvokestackimbalance-mda.md)

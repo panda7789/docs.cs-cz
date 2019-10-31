@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: c96770b0-3e09-47bb-bd29-20353b043459
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0fc65f5b55082970a0cd59a6850aaaa6779d0821
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 002c6cccb3ddf29b831ba5e14baa5e51f1b82433
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766408"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095884"
 ---
-# <a name="icordebugobjectvaluegetfieldvalue-method"></a><span data-ttu-id="bc5f7-102">ICorDebugObjectValue::GetFieldValue – metoda</span><span class="sxs-lookup"><span data-stu-id="bc5f7-102">ICorDebugObjectValue::GetFieldValue Method</span></span>
-<span data-ttu-id="bc5f7-103">Získá hodnotu zadaného pole ze zadané třídy pro tuto hodnotu objektu.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-103">Gets the value of the specified field of the specified class for this object value.</span></span>  
+# <a name="icordebugobjectvaluegetfieldvalue-method"></a><span data-ttu-id="5c28c-102">ICorDebugObjectValue::GetFieldValue – metoda</span><span class="sxs-lookup"><span data-stu-id="5c28c-102">ICorDebugObjectValue::GetFieldValue Method</span></span>
+<span data-ttu-id="5c28c-103">Získá hodnotu zadaného pole zadané třídy pro tuto hodnotu objektu.</span><span class="sxs-lookup"><span data-stu-id="5c28c-103">Gets the value of the specified field of the specified class for this object value.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bc5f7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc5f7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5c28c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5c28c-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFieldValue (  
@@ -37,28 +35,28 @@ HRESULT GetFieldValue (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="bc5f7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bc5f7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5c28c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5c28c-105">Parameters</span></span>  
  `pClass`  
- <span data-ttu-id="bc5f7-106">[in] Ukazatel na objekt "ICorDebugClass", který představuje třídu, pro kterou má být získána hodnota pole.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-106">[in] A pointer to an "ICorDebugClass" object that represents the class for which to get the field value.</span></span>  
+ <span data-ttu-id="5c28c-106">pro Ukazatel na objekt "ICorDebugClass", který představuje třídu, pro kterou chcete získat hodnotu pole.</span><span class="sxs-lookup"><span data-stu-id="5c28c-106">[in] A pointer to an "ICorDebugClass" object that represents the class for which to get the field value.</span></span>  
   
  `fieldDef`  
- <span data-ttu-id="bc5f7-107">[in] `mdFieldDef` Token, který odkazuje na metadata popisující pole.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-107">[in] An `mdFieldDef` token that references the metadata describing the field.</span></span>  
+ <span data-ttu-id="5c28c-107">pro Token `mdFieldDef`, který odkazuje na metadata popisující pole.</span><span class="sxs-lookup"><span data-stu-id="5c28c-107">[in] An `mdFieldDef` token that references the metadata describing the field.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="bc5f7-108">[out] Ukazatel na objekt "ICorDebugValue", která představuje hodnotu zadaného pole.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-108">[out] A pointer to an "ICorDebugValue" object that represents the value of the specified field.</span></span>  
+ <span data-ttu-id="5c28c-108">mimo Ukazatel na objekt "ICorDebugValue", který představuje hodnotu zadaného pole.</span><span class="sxs-lookup"><span data-stu-id="5c28c-108">[out] A pointer to an "ICorDebugValue" object that represents the value of the specified field.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="bc5f7-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bc5f7-109">Remarks</span></span>  
- <span data-ttu-id="bc5f7-110">Třída zadaná v `pClass` parametr, musí být v hierarchii třídy hodnota objektu a pole této třídy musí být pole.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-110">The class, specified in the `pClass` parameter, must be in the hierarchy of the object value's class, and the field must be a field of that class.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5c28c-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5c28c-109">Remarks</span></span>  
+ <span data-ttu-id="5c28c-110">Třída zadaná v parametru `pClass` musí být v hierarchii třídy Value objektu a pole musí být pole této třídy.</span><span class="sxs-lookup"><span data-stu-id="5c28c-110">The class, specified in the `pClass` parameter, must be in the hierarchy of the object value's class, and the field must be a field of that class.</span></span>  
   
- <span data-ttu-id="bc5f7-111">`GetFieldValue` Metoda i tak proběhne úspěšně obecných objektů a obecné třídy.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-111">The `GetFieldValue` method will still succeed for generic objects and generic classes.</span></span> <span data-ttu-id="bc5f7-112">Například pokud MyDictionary\<V > dědí ze slovníku\<string, V >, a hodnota objekt je typu MyDictionary\<int32 >, předejte `ICorDebugClass` objekt slovníku\<K, V > bude úspěšně získat pole slovníku\<řetězec, int32 >.</span><span class="sxs-lookup"><span data-stu-id="bc5f7-112">For example, if MyDictionary\<V> inherits from Dictionary\<string,V>, and the object value is of type MyDictionary\<int32>, passing the `ICorDebugClass` object for Dictionary\<K,V> will successfully get a field of Dictionary\<string,int32>.</span></span>  
+ <span data-ttu-id="5c28c-111">Metoda `GetFieldValue` bude stále úspěšná pro obecné objekty a obecné třídy.</span><span class="sxs-lookup"><span data-stu-id="5c28c-111">The `GetFieldValue` method will still succeed for generic objects and generic classes.</span></span> <span data-ttu-id="5c28c-112">Například pokud MyDictionary\<V > dědí ze slovníku\<String, V > a hodnota objektu je typu MyDictionary\<Int32 >, předáním objektu `ICorDebugClass` pro slovník\<K, V > se úspěšně získá pole\<řetězec slovníku, Int32 >.</span><span class="sxs-lookup"><span data-stu-id="5c28c-112">For example, if MyDictionary\<V> inherits from Dictionary\<string,V>, and the object value is of type MyDictionary\<int32>, passing the `ICorDebugClass` object for Dictionary\<K,V> will successfully get a field of Dictionary\<string,int32>.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="bc5f7-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc5f7-113">Requirements</span></span>  
- <span data-ttu-id="bc5f7-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bc5f7-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5c28c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5c28c-113">Requirements</span></span>  
+ <span data-ttu-id="5c28c-114">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5c28c-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="bc5f7-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bc5f7-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="5c28c-115">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="5c28c-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="bc5f7-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bc5f7-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5c28c-116">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="5c28c-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="bc5f7-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bc5f7-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5c28c-117">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5c28c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bc5f7-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc5f7-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5c28c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5c28c-118">See also</span></span>

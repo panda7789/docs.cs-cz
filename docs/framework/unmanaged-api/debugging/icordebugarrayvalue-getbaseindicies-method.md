@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 868b339b-acdb-4fe0-91c7-b85f4fba99eb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4f4ecb700a19a4e06f9f0056881fe3cdb9753aae
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e103401b85626e53db53e1894c22b161774e5163
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737605"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088690"
 ---
-# <a name="icordebugarrayvaluegetbaseindicies-method"></a><span data-ttu-id="5dfda-102">ICorDebugArrayValue::GetBaseIndicies – metoda</span><span class="sxs-lookup"><span data-stu-id="5dfda-102">ICorDebugArrayValue::GetBaseIndicies Method</span></span>
-<span data-ttu-id="5dfda-103">Získá základní index každé dimenze v poli.</span><span class="sxs-lookup"><span data-stu-id="5dfda-103">Gets the base index of each dimension in the array.</span></span>  
+# <a name="icordebugarrayvaluegetbaseindicies-method"></a><span data-ttu-id="d1864-102">ICorDebugArrayValue::GetBaseIndicies – metoda</span><span class="sxs-lookup"><span data-stu-id="d1864-102">ICorDebugArrayValue::GetBaseIndicies Method</span></span>
+<span data-ttu-id="d1864-103">Získá základní index každé dimenze v poli.</span><span class="sxs-lookup"><span data-stu-id="d1864-103">Gets the base index of each dimension in the array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5dfda-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5dfda-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d1864-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d1864-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetBaseIndicies (  
@@ -37,18 +35,18 @@ HRESULT GetBaseIndicies (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5dfda-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5dfda-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d1864-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d1864-105">Parameters</span></span>  
  `cdim`  
- <span data-ttu-id="5dfda-106">[in] Počet dimenzí tohoto `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="5dfda-106">[in] The number of dimensions of this `ICorDebugArrayValue` object.</span></span> <span data-ttu-id="5dfda-107">Tato hodnota je také velikost `indicies` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="5dfda-107">This value is also the size of the `indicies` array because its size is equal to the number of dimensions of the `ICorDebugArrayValue` object.</span></span>  
+ <span data-ttu-id="d1864-106">pro Počet dimenzí tohoto objektu `ICorDebugArrayValue`.</span><span class="sxs-lookup"><span data-stu-id="d1864-106">[in] The number of dimensions of this `ICorDebugArrayValue` object.</span></span> <span data-ttu-id="d1864-107">Tato hodnota je také velikost pole `indicies`, protože jeho velikost je rovna počtu rozměrů `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="d1864-107">This value is also the size of the `indicies` array because its size is equal to the number of dimensions of the `ICorDebugArrayValue` object.</span></span>  
   
  `indicies`  
- <span data-ttu-id="5dfda-108">[out] Pole celých čísel, z nichž každý je základní index (to znamená, počáteční index) dimenzi tohoto objektu `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="5dfda-108">[out] An array of integers, each of which is the base index (that is, the starting index) of a dimension of this `ICorDebugArrayValue` object.</span></span>  
+ <span data-ttu-id="d1864-108">mimo Pole celých čísel, z nichž každý je základní index (tj. počáteční index) dimenze tohoto `ICorDebugArrayValue` objektu.</span><span class="sxs-lookup"><span data-stu-id="d1864-108">[out] An array of integers, each of which is the base index (that is, the starting index) of a dimension of this `ICorDebugArrayValue` object.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5dfda-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5dfda-109">Requirements</span></span>  
- <span data-ttu-id="5dfda-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5dfda-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d1864-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d1864-109">Requirements</span></span>  
+ <span data-ttu-id="d1864-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d1864-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5dfda-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5dfda-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="d1864-111">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="d1864-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="5dfda-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5dfda-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d1864-112">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="d1864-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="5dfda-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5dfda-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="d1864-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d1864-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

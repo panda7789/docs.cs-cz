@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 57163b0d-c8a7-44af-9078-e7a895d29f9a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 24bc096a0ba01c58aa963d69fa46a1d1bbe8be75
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6a7d9465a454175b58bb7b9566d31f3c65420610
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752901"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085060"
 ---
-# <a name="icordebugevalgetthread-method"></a><span data-ttu-id="2abb8-102">ICorDebugEval::GetThread – metoda</span><span class="sxs-lookup"><span data-stu-id="2abb8-102">ICorDebugEval::GetThread Method</span></span>
-<span data-ttu-id="2abb8-103">Získá vláken, ve kterém toto testování je provádění nebo se spustí.</span><span class="sxs-lookup"><span data-stu-id="2abb8-103">Gets the thread in which this evaluation is executing or will execute.</span></span>  
+# <a name="icordebugevalgetthread-method"></a><span data-ttu-id="f58d1-102">ICorDebugEval::GetThread – metoda</span><span class="sxs-lookup"><span data-stu-id="f58d1-102">ICorDebugEval::GetThread Method</span></span>
+<span data-ttu-id="f58d1-103">Získá vlákno, ve kterém se toto vyhodnocení provádí nebo spustí.</span><span class="sxs-lookup"><span data-stu-id="f58d1-103">Gets the thread in which this evaluation is executing or will execute.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2abb8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2abb8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f58d1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f58d1-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetThread (  
@@ -35,15 +33,15 @@ HRESULT GetThread (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2abb8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2abb8-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f58d1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f58d1-105">Parameters</span></span>  
  `ppThread`  
- <span data-ttu-id="2abb8-106">[out] Ukazatel na adresu icordebugthread – objekt, který představuje vlákno.</span><span class="sxs-lookup"><span data-stu-id="2abb8-106">[out] A pointer to the address of an ICorDebugThread object that represents the thread.</span></span>  
+ <span data-ttu-id="f58d1-106">mimo Ukazatel na adresu objektu ICorDebugThread, který představuje vlákno.</span><span class="sxs-lookup"><span data-stu-id="f58d1-106">[out] A pointer to the address of an ICorDebugThread object that represents the thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2abb8-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2abb8-107">Requirements</span></span>  
- <span data-ttu-id="2abb8-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2abb8-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f58d1-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f58d1-107">Requirements</span></span>  
+ <span data-ttu-id="f58d1-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f58d1-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2abb8-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2abb8-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f58d1-109">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="f58d1-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="2abb8-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2abb8-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f58d1-110">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="f58d1-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2abb8-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2abb8-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="f58d1-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f58d1-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0863f644-58e8-45a0-b0c3-a28e99b20938
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7a15e3ab0d50763ad53b1caa921035239868fec1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f5b413ffbbc8fccbea38f23d8c87d40e010dd37
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761230"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130619"
 ---
-# <a name="icordebugmanagedcallbackupdatemodulesymbols-method"></a><span data-ttu-id="ca254-102">ICorDebugManagedCallback::UpdateModuleSymbols – metoda</span><span class="sxs-lookup"><span data-stu-id="ca254-102">ICorDebugManagedCallback::UpdateModuleSymbols Method</span></span>
-<span data-ttu-id="ca254-103">Upozorní ladicího programu, že jste změnili symboly pro společný jazykový modul runtime.</span><span class="sxs-lookup"><span data-stu-id="ca254-103">Notifies the debugger that the symbols for a common language runtime module have changed.</span></span>  
+# <a name="icordebugmanagedcallbackupdatemodulesymbols-method"></a><span data-ttu-id="d8d2f-102">ICorDebugManagedCallback::UpdateModuleSymbols – metoda</span><span class="sxs-lookup"><span data-stu-id="d8d2f-102">ICorDebugManagedCallback::UpdateModuleSymbols Method</span></span>
+<span data-ttu-id="d8d2f-103">Oznamuje ladicímu programu, že se změnily symboly pro modul CLR (Common Language Runtime).</span><span class="sxs-lookup"><span data-stu-id="d8d2f-103">Notifies the debugger that the symbols for a common language runtime module have changed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ca254-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ca254-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d8d2f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d8d2f-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT UpdateModuleSymbols (  
@@ -37,32 +35,32 @@ HRESULT UpdateModuleSymbols (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ca254-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ca254-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d8d2f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d8d2f-105">Parameters</span></span>  
  `pAppDomain`  
- <span data-ttu-id="ca254-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující modul, ve kterém jste změnili symboly.</span><span class="sxs-lookup"><span data-stu-id="ca254-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain containing the module in which the symbols have changed.</span></span>  
+ <span data-ttu-id="d8d2f-106">pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující modul, ve kterém byly symboly změněny.</span><span class="sxs-lookup"><span data-stu-id="d8d2f-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain containing the module in which the symbols have changed.</span></span>  
   
  `pModule`  
- <span data-ttu-id="ca254-107">[in] Ukazatel na objekt icordebugmodule –, který představuje modul, ve kterém jste změnili symboly.</span><span class="sxs-lookup"><span data-stu-id="ca254-107">[in] A pointer to an ICorDebugModule object that represents the module in which the symbols have changed.</span></span>  
+ <span data-ttu-id="d8d2f-107">pro Ukazatel na objekt ICorDebugModule, který představuje modul, ve kterém byly symboly změněny.</span><span class="sxs-lookup"><span data-stu-id="d8d2f-107">[in] A pointer to an ICorDebugModule object that represents the module in which the symbols have changed.</span></span>  
   
  `pSymbolStream`  
- <span data-ttu-id="ca254-108">[in] Ukazatel na Win32 COM `IStream` objekt, který obsahuje upravený symboly.</span><span class="sxs-lookup"><span data-stu-id="ca254-108">[in] A pointer to a Win32 COM `IStream` object that contains the modified symbols.</span></span>  
+ <span data-ttu-id="d8d2f-108">pro Ukazatel na objekt Win32 COM `IStream`, který obsahuje upravené symboly.</span><span class="sxs-lookup"><span data-stu-id="d8d2f-108">[in] A pointer to a Win32 COM `IStream` object that contains the modified symbols.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ca254-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ca254-109">Remarks</span></span>  
- <span data-ttu-id="ca254-110">Tato metoda poskytuje příležitost k aktualizaci zobrazení ladicího programu modulu symbolů voláním [isymunmanagedreader::updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) nebo [isymunmanagedreader::replacesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).</span><span class="sxs-lookup"><span data-stu-id="ca254-110">This method provides an opportunity to update the debugger's view of a module's symbols by calling [ISymUnmanagedReader::UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) or [ISymUnmanagedReader::ReplaceSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d8d2f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d8d2f-109">Remarks</span></span>  
+ <span data-ttu-id="d8d2f-110">Tato metoda poskytuje možnost aktualizovat zobrazení symbolů modulu v ladicím programu voláním [ISymUnmanagedReader:: UpdateSymbolStore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) nebo [ISymUnmanagedReader:: ReplaceSymbolStore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).</span><span class="sxs-lookup"><span data-stu-id="d8d2f-110">This method provides an opportunity to update the debugger's view of a module's symbols by calling [ISymUnmanagedReader::UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) or [ISymUnmanagedReader::ReplaceSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).</span></span>  
   
- <span data-ttu-id="ca254-111">Toto zpětné volání může mít více než jednou stejného modulu.</span><span class="sxs-lookup"><span data-stu-id="ca254-111">This callback can occur multiple times for the same module.</span></span>  
+ <span data-ttu-id="d8d2f-111">Toto zpětné volání může být pro stejný modul provedeno několikrát.</span><span class="sxs-lookup"><span data-stu-id="d8d2f-111">This callback can occur multiple times for the same module.</span></span>  
   
- <span data-ttu-id="ca254-112">Ladicí program se pokuste vytvořit vazbu nevázaného zarážky úroveň zdroje.</span><span class="sxs-lookup"><span data-stu-id="ca254-112">A debugger should try to bind unbound source-level breakpoints.</span></span>  
+ <span data-ttu-id="d8d2f-112">Ladicí program by se měl pokoušet svázat zarážky na úrovni nevázaného zdroje.</span><span class="sxs-lookup"><span data-stu-id="d8d2f-112">A debugger should try to bind unbound source-level breakpoints.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ca254-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ca254-113">Requirements</span></span>  
- <span data-ttu-id="ca254-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ca254-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d8d2f-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d8d2f-113">Requirements</span></span>  
+ <span data-ttu-id="d8d2f-114">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d8d2f-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ca254-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ca254-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="d8d2f-115">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="d8d2f-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="ca254-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ca254-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d8d2f-116">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="d8d2f-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ca254-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ca254-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="d8d2f-117">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d8d2f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ca254-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ca254-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d8d2f-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d8d2f-118">See also</span></span>
 
-- [<span data-ttu-id="ca254-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ca254-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [<span data-ttu-id="d8d2f-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d8d2f-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

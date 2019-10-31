@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0a65e2a4-5bb6-496c-ae6f-40474426b5a6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8aeb6ed448539db2720fee0d42cfcc344fd3bbf7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da532ee1b5909a68bedbb9e6f6c96333e88002a8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762773"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109730"
 ---
-# <a name="icordebugmoduleenablejitdebugging-method"></a><span data-ttu-id="64522-102">ICorDebugModule::EnableJITDebugging – metoda</span><span class="sxs-lookup"><span data-stu-id="64522-102">ICorDebugModule::EnableJITDebugging Method</span></span>
-<span data-ttu-id="64522-103">Určuje, zda kompilátor just-in-time (JIT) uchovává informace o ladění pro metody v rámci tohoto modulu.</span><span class="sxs-lookup"><span data-stu-id="64522-103">Controls whether the just-in-time (JIT) compiler preserves debugging information for methods within this module.</span></span>  
+# <a name="icordebugmoduleenablejitdebugging-method"></a><span data-ttu-id="12284-102">ICorDebugModule::EnableJITDebugging – metoda</span><span class="sxs-lookup"><span data-stu-id="12284-102">ICorDebugModule::EnableJITDebugging Method</span></span>
+<span data-ttu-id="12284-103">Určuje, zda kompilátor JIT (just-in-time) zachovává ladicí informace pro metody v rámci tohoto modulu.</span><span class="sxs-lookup"><span data-stu-id="12284-103">Controls whether the just-in-time (JIT) compiler preserves debugging information for methods within this module.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="64522-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="64522-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="12284-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="12284-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnableJITDebugging(  
@@ -36,21 +34,21 @@ HRESULT EnableJITDebugging(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="64522-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="64522-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="12284-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="12284-105">Parameters</span></span>  
  `bTrackJITInfo`  
- <span data-ttu-id="64522-106">[in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro zachování informací o mapování mezi Microsoft intermediate language (MSIL) verze a verze zkompilovaný pomocí kompilátoru JIT jednotlivých metod v tomto modulu.</span><span class="sxs-lookup"><span data-stu-id="64522-106">[in] Set this value to `true` to enable the JIT compiler to preserve mapping information between the Microsoft intermediate language (MSIL) version and the JIT-compiled version of each method in this module.</span></span>  
+ <span data-ttu-id="12284-106">pro Nastavte tuto hodnotu na `true`, pokud chcete, aby kompilátor JIT zachoval informace o mapování mezi verzí jazyka MSIL (Microsoft Intermediate Language) a verzí kompilovánou JIT pro všechny metody v tomto modulu.</span><span class="sxs-lookup"><span data-stu-id="12284-106">[in] Set this value to `true` to enable the JIT compiler to preserve mapping information between the Microsoft intermediate language (MSIL) version and the JIT-compiled version of each method in this module.</span></span>  
   
  `bAllowJitOpts`  
- <span data-ttu-id="64522-107">[in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro generování kódu pomocí některé optimalizace JIT specifické pro ladění.</span><span class="sxs-lookup"><span data-stu-id="64522-107">[in] Set this value to `true` to enable the JIT compiler to generate code with certain JIT-specific optimizations for debugging.</span></span>  
+ <span data-ttu-id="12284-107">pro Nastavte tuto hodnotu na `true`, pokud chcete, aby kompilátor JIT vygeneroval kód s některými optimalizacemi specifickými pro JIT pro ladění.</span><span class="sxs-lookup"><span data-stu-id="12284-107">[in] Set this value to `true` to enable the JIT compiler to generate code with certain JIT-specific optimizations for debugging.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="64522-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="64522-108">Remarks</span></span>  
- <span data-ttu-id="64522-109">Ve výchozím nastavení pro všechny moduly, které jsou načteny, když je aktivní ladicí program je povoleno ladění JIT.</span><span class="sxs-lookup"><span data-stu-id="64522-109">JIT debugging is enabled by default for all modules that are loaded when the debugger is active.</span></span> <span data-ttu-id="64522-110">Programově povolení nebo zakázání nastavení přepíše globální nastavení.</span><span class="sxs-lookup"><span data-stu-id="64522-110">Programmatically enabling or disabling the settings overrides global settings.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="12284-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="12284-108">Remarks</span></span>  
+ <span data-ttu-id="12284-109">Ladění JIT je ve výchozím nastavení povoleno pro všechny moduly, které jsou načteny, když je ladicí program aktivní.</span><span class="sxs-lookup"><span data-stu-id="12284-109">JIT debugging is enabled by default for all modules that are loaded when the debugger is active.</span></span> <span data-ttu-id="12284-110">Programové povolení nebo zakázání nastavení přepisuje globální nastavení.</span><span class="sxs-lookup"><span data-stu-id="12284-110">Programmatically enabling or disabling the settings overrides global settings.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="64522-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="64522-111">Requirements</span></span>  
- <span data-ttu-id="64522-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="64522-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="12284-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="12284-111">Requirements</span></span>  
+ <span data-ttu-id="12284-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="12284-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="64522-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="64522-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="12284-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="12284-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="64522-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="64522-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="12284-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="12284-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="64522-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="64522-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="12284-115">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="12284-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

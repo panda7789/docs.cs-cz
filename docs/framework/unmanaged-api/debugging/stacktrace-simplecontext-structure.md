@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bc0fc18e31b89b22ffd30d99a8b079ed7b87fa1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1cd3c34fc292e4a050fa8a75078283e34425fc8f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752499"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139132"
 ---
-# <a name="stacktracesimplecontext-structure"></a><span data-ttu-id="49cd9-102">StackTrace_SimpleContext – struktura</span><span class="sxs-lookup"><span data-stu-id="49cd9-102">StackTrace_SimpleContext Structure</span></span>
-<span data-ttu-id="49cd9-103">Poskytuje jednoduchý kontext, který jde použít místo úplné `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="49cd9-103">Provides a simple context that can be used in place of a full `CONTEXT` structure.</span></span>  
+# <a name="stacktrace_simplecontext-structure"></a><span data-ttu-id="70dcb-102">StackTrace_SimpleContext – struktura</span><span class="sxs-lookup"><span data-stu-id="70dcb-102">StackTrace_SimpleContext Structure</span></span>
+<span data-ttu-id="70dcb-103">Poskytuje jednoduchý kontext, který lze použít místo úplné `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="70dcb-103">Provides a simple context that can be used in place of a full `CONTEXT` structure.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="49cd9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="49cd9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70dcb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70dcb-104">Syntax</span></span>  
   
 ```cpp  
 struct StackTrace_SimpleContext  
@@ -38,25 +36,25 @@ struct StackTrace_SimpleContext
 };  
 ```  
   
-## <a name="members"></a><span data-ttu-id="49cd9-105">Členové</span><span class="sxs-lookup"><span data-stu-id="49cd9-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="70dcb-105">Členové</span><span class="sxs-lookup"><span data-stu-id="70dcb-105">Members</span></span>  
   
-|<span data-ttu-id="49cd9-106">Člen</span><span class="sxs-lookup"><span data-stu-id="49cd9-106">Member</span></span>|<span data-ttu-id="49cd9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="49cd9-107">Description</span></span>|  
+|<span data-ttu-id="70dcb-106">Člen</span><span class="sxs-lookup"><span data-stu-id="70dcb-106">Member</span></span>|<span data-ttu-id="70dcb-107">Popis</span><span class="sxs-lookup"><span data-stu-id="70dcb-107">Description</span></span>|  
 |------------|-----------------|  
-|`StackOffset`|<span data-ttu-id="49cd9-108">Ukazatel zásobníku a ukazatel zásobníku enter (ESP) na x86 platformy.</span><span class="sxs-lookup"><span data-stu-id="49cd9-108">The stack pointer, or the enter stack pointer (ESP) on x86 platforms.</span></span>|  
-|`FrameOffset`|<span data-ttu-id="49cd9-109">Odsazení rámce nebo registru EBP na x86 platformy.</span><span class="sxs-lookup"><span data-stu-id="49cd9-109">The frame offset, or the EBP register on x86 platforms.</span></span>|  
-|`InstructionOffset`|<span data-ttu-id="49cd9-110">Ukazatele na instrukci nebo ukazatele na instrukci enter (EIP) na x86 platformy.</span><span class="sxs-lookup"><span data-stu-id="49cd9-110">The instruction pointer, or the enter instruction pointer (EIP) on x86 platforms.</span></span>|  
+|`StackOffset`|<span data-ttu-id="70dcb-108">Ukazatel zásobníku nebo ukazatel na vložení zásobníku (ESP) na platformách x86.</span><span class="sxs-lookup"><span data-stu-id="70dcb-108">The stack pointer, or the enter stack pointer (ESP) on x86 platforms.</span></span>|  
+|`FrameOffset`|<span data-ttu-id="70dcb-109">Posun snímku nebo EBP registr na platformách x86.</span><span class="sxs-lookup"><span data-stu-id="70dcb-109">The frame offset, or the EBP register on x86 platforms.</span></span>|  
+|`InstructionOffset`|<span data-ttu-id="70dcb-110">Ukazatel na instrukci nebo ukazatel na instrukci ENTER (EIP) na platformách x86.</span><span class="sxs-lookup"><span data-stu-id="70dcb-110">The instruction pointer, or the enter instruction pointer (EIP) on x86 platforms.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="49cd9-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="49cd9-111">Remarks</span></span>  
- <span data-ttu-id="49cd9-112">Protože funkce trasování zásobníku je obvykle potřeba vrátit pouze adresy, odsazení rámce a adresy zásobníku, můžete volitelně použít `SimpleContext` struktura místo velké `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="49cd9-112">Because stack trace functions typically need to return only the address, frame offset, and stack address, you can optionally use the `SimpleContext` structure instead of a large `CONTEXT` structure.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="70dcb-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="70dcb-111">Remarks</span></span>  
+ <span data-ttu-id="70dcb-112">Vzhledem k tomu, že funkce trasování zásobníku obvykle potřebují vracet pouze adresu, posun snímku a adresu zásobníku, můžete místo velké `CONTEXT` struktury použít `SimpleContext` strukturu.</span><span class="sxs-lookup"><span data-stu-id="70dcb-112">Because stack trace functions typically need to return only the address, frame offset, and stack address, you can optionally use the `SimpleContext` structure instead of a large `CONTEXT` structure.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="49cd9-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="49cd9-113">Requirements</span></span>  
- <span data-ttu-id="49cd9-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="49cd9-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70dcb-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70dcb-113">Requirements</span></span>  
+ <span data-ttu-id="70dcb-114">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70dcb-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="49cd9-115">**Záhlaví:** SOS_Stacktrace.h</span><span class="sxs-lookup"><span data-stu-id="49cd9-115">**Header:** SOS_Stacktrace.h</span></span>  
+ <span data-ttu-id="70dcb-115">**Hlavička:** SOS_Stacktrace. h</span><span class="sxs-lookup"><span data-stu-id="70dcb-115">**Header:** SOS_Stacktrace.h</span></span>  
   
- <span data-ttu-id="49cd9-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="49cd9-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="70dcb-116">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70dcb-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="49cd9-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="49cd9-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70dcb-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70dcb-117">See also</span></span>
 
-- [<span data-ttu-id="49cd9-118">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="49cd9-118">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [<span data-ttu-id="49cd9-119">Ladění</span><span class="sxs-lookup"><span data-stu-id="49cd9-119">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="70dcb-118">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="70dcb-118">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [<span data-ttu-id="70dcb-119">Ladění</span><span class="sxs-lookup"><span data-stu-id="70dcb-119">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

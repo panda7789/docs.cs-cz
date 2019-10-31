@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f0643ba9e750e7c64d2dae8eb5744df7bc26931
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5a6e0b009674ff52595aaa0ae4a060f1cdfd1398
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737801"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089051"
 ---
-# <a name="icordebugappdomain2getfunctionpointertype-method"></a><span data-ttu-id="793d1-102">ICorDebugAppDomain2::GetFunctionPointerType – metoda</span><span class="sxs-lookup"><span data-stu-id="793d1-102">ICorDebugAppDomain2::GetFunctionPointerType Method</span></span>
-<span data-ttu-id="793d1-103">Získá ukazatel na funkci, která má daným podpisem.</span><span class="sxs-lookup"><span data-stu-id="793d1-103">Gets a pointer to a function that has a given signature.</span></span>  
+# <a name="icordebugappdomain2getfunctionpointertype-method"></a><span data-ttu-id="b01f3-102">ICorDebugAppDomain2::GetFunctionPointerType – metoda</span><span class="sxs-lookup"><span data-stu-id="b01f3-102">ICorDebugAppDomain2::GetFunctionPointerType Method</span></span>
+<span data-ttu-id="b01f3-103">Získá ukazatel na funkci, která má daný podpis.</span><span class="sxs-lookup"><span data-stu-id="b01f3-103">Gets a pointer to a function that has a given signature.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="793d1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="793d1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b01f3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b01f3-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFunctionPointerType (  
@@ -37,21 +35,21 @@ HRESULT GetFunctionPointerType (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="793d1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="793d1-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b01f3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b01f3-105">Parameters</span></span>  
  `nTypeArgs`  
- <span data-ttu-id="793d1-106">[in] Počet argumentů typu pro funkci.</span><span class="sxs-lookup"><span data-stu-id="793d1-106">[in] The number of type arguments for the function.</span></span>  
+ <span data-ttu-id="b01f3-106">pro Počet argumentů typu pro funkci</span><span class="sxs-lookup"><span data-stu-id="b01f3-106">[in] The number of type arguments for the function.</span></span>  
   
  `ppTypeArgs`  
- <span data-ttu-id="793d1-107">[in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument typu funkce.</span><span class="sxs-lookup"><span data-stu-id="793d1-107">[in] An array of pointers, each of which points to an ICorDebugType object that represents a type argument of the function.</span></span> <span data-ttu-id="793d1-108">Prvním prvkem je návratový typ; Každý z dalších prvků je typ parametru.</span><span class="sxs-lookup"><span data-stu-id="793d1-108">The first element is the return type; each of the other elements is a parameter type.</span></span>  
+ <span data-ttu-id="b01f3-107">pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje argument typu funkce.</span><span class="sxs-lookup"><span data-stu-id="b01f3-107">[in] An array of pointers, each of which points to an ICorDebugType object that represents a type argument of the function.</span></span> <span data-ttu-id="b01f3-108">První prvek je návratový typ; Každý z ostatních prvků je typ parametru.</span><span class="sxs-lookup"><span data-stu-id="b01f3-108">The first element is the return type; each of the other elements is a parameter type.</span></span>  
   
  `ppType`  
- <span data-ttu-id="793d1-109">[out] Ukazatel na adresu `ICorDebugType` objekt, který představuje ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="793d1-109">[out] A pointer to the address of an `ICorDebugType` object that represents the pointer to the function.</span></span>  
+ <span data-ttu-id="b01f3-109">mimo Ukazatel na adresu `ICorDebugType` objektu, který představuje ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="b01f3-109">[out] A pointer to the address of an `ICorDebugType` object that represents the pointer to the function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="793d1-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="793d1-110">Requirements</span></span>  
- <span data-ttu-id="793d1-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="793d1-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b01f3-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b01f3-110">Requirements</span></span>  
+ <span data-ttu-id="b01f3-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b01f3-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="793d1-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="793d1-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b01f3-112">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="b01f3-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="793d1-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="793d1-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b01f3-113">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="b01f3-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="793d1-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="793d1-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="b01f3-114">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b01f3-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

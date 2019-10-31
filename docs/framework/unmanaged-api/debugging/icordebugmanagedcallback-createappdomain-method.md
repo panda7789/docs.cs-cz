@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 48d410d7-6749-4125-a8fd-f9562c7088e9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3958e62f23615d4c9038713bb973a6d16424f348
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fa829d0a08846287835d2ac66a461b4b9b27a09a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759722"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090234"
 ---
-# <a name="icordebugmanagedcallbackcreateappdomain-method"></a><span data-ttu-id="e2f13-102">ICorDebugManagedCallback::CreateAppDomain – metoda</span><span class="sxs-lookup"><span data-stu-id="e2f13-102">ICorDebugManagedCallback::CreateAppDomain Method</span></span>
-<span data-ttu-id="e2f13-103">Upozorní ladicího programu, že se vytvořila domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="e2f13-103">Notifies the debugger that an application domain has been created.</span></span>  
+# <a name="icordebugmanagedcallbackcreateappdomain-method"></a><span data-ttu-id="444d4-102">ICorDebugManagedCallback::CreateAppDomain – metoda</span><span class="sxs-lookup"><span data-stu-id="444d4-102">ICorDebugManagedCallback::CreateAppDomain Method</span></span>
+<span data-ttu-id="444d4-103">Oznamuje ladicímu programu, že byla vytvořena doména aplikace.</span><span class="sxs-lookup"><span data-stu-id="444d4-103">Notifies the debugger that an application domain has been created.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e2f13-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e2f13-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="444d4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="444d4-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateAppDomain (  
@@ -36,22 +34,22 @@ HRESULT CreateAppDomain (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e2f13-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e2f13-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="444d4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="444d4-105">Parameters</span></span>  
  `pProcess`  
- <span data-ttu-id="e2f13-106">[in] Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém byla vytvořena domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="e2f13-106">[in] A pointer to an ICorDebugProcess object that represents the process in which the application domain was created.</span></span>  
+ <span data-ttu-id="444d4-106">pro Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém byla vytvořena doména aplikace.</span><span class="sxs-lookup"><span data-stu-id="444d4-106">[in] A pointer to an ICorDebugProcess object that represents the process in which the application domain was created.</span></span>  
   
  `pAppDomain`  
- <span data-ttu-id="e2f13-107">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který byl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="e2f13-107">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that has been created.</span></span>  
+ <span data-ttu-id="444d4-107">pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, která byla vytvořena.</span><span class="sxs-lookup"><span data-stu-id="444d4-107">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that has been created.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e2f13-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e2f13-108">Requirements</span></span>  
- <span data-ttu-id="e2f13-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e2f13-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="444d4-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="444d4-108">Requirements</span></span>  
+ <span data-ttu-id="444d4-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="444d4-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e2f13-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e2f13-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="444d4-110">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="444d4-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e2f13-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e2f13-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="444d4-111">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="444d4-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e2f13-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e2f13-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="444d4-112">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="444d4-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2f13-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e2f13-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="444d4-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="444d4-113">See also</span></span>
 
-- [<span data-ttu-id="e2f13-114">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e2f13-114">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [<span data-ttu-id="444d4-114">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="444d4-114">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

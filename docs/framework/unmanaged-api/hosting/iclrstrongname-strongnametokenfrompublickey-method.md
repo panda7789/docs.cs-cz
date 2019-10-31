@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 7962ce88-7e86-4a6f-8298-621b01ffc3c2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17947526513bd1fbe3cb093e8ecaa7ed67983a7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f37cd6ef85985784303aeb976776b03fbc74dec3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759163"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092522"
 ---
-# <a name="iclrstrongnamestrongnametokenfrompublickey-method"></a><span data-ttu-id="9c131-102">ICLRStrongName::StrongNameTokenFromPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="9c131-102">ICLRStrongName::StrongNameTokenFromPublicKey Method</span></span>
-<span data-ttu-id="9c131-103">Získá token, který představuje veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="9c131-103">Gets a token that represents a public key.</span></span> <span data-ttu-id="9c131-104">Zkráceným tvarem veřejný klíč je token silného názvu.</span><span class="sxs-lookup"><span data-stu-id="9c131-104">A strong name token is the shortened form of a public key.</span></span>  
+# <a name="iclrstrongnamestrongnametokenfrompublickey-method"></a><span data-ttu-id="2bdeb-102">ICLRStrongName::StrongNameTokenFromPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="2bdeb-102">ICLRStrongName::StrongNameTokenFromPublicKey Method</span></span>
+<span data-ttu-id="2bdeb-103">Získá token, který představuje veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-103">Gets a token that represents a public key.</span></span> <span data-ttu-id="2bdeb-104">Token silného názvu je zkrácenou formou veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-104">A strong name token is the shortened form of a public key.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9c131-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c131-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2bdeb-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2bdeb-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT StrongNameTokenFromPublicKey (   
@@ -38,36 +36,36 @@ HRESULT StrongNameTokenFromPublicKey (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9c131-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="9c131-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2bdeb-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2bdeb-106">Parameters</span></span>  
  `pbPublicKeyBlob`  
- <span data-ttu-id="9c131-107">[in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="9c131-107">[in] A structure of type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.</span></span>  
+ <span data-ttu-id="2bdeb-107">pro Struktura typu [PublicKeyBlob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-107">[in] A structure of type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.</span></span>  
   
  `cbPublicKeyBlob`  
- <span data-ttu-id="9c131-108">[in] Velikost v bajtech, z `pbPublicKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="9c131-108">[in] The size, in bytes, of `pbPublicKeyBlob`.</span></span>  
+ <span data-ttu-id="2bdeb-108">pro Velikost `pbPublicKeyBlob`v bajtech.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-108">[in] The size, in bytes, of `pbPublicKeyBlob`.</span></span>  
   
  `ppbStrongNameToken`  
- <span data-ttu-id="9c131-109">[out] Silný název tokenu odpovídající klíči předaný `pbPublicKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="9c131-109">[out] The strong name token corresponding to the key passed in `pbPublicKeyBlob`.</span></span> <span data-ttu-id="9c131-110">Modul common language runtime přiděluje paměť ke vrácení tokenu.</span><span class="sxs-lookup"><span data-stu-id="9c131-110">The common language runtime allocates the memory in which to return the token.</span></span> <span data-ttu-id="9c131-111">Volající musí uvolnit tato paměť pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="9c131-111">The caller must free this memory by using the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method.</span></span>  
+ <span data-ttu-id="2bdeb-109">mimo Token silného názvu odpovídající klíči předanému `pbPublicKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-109">[out] The strong name token corresponding to the key passed in `pbPublicKeyBlob`.</span></span> <span data-ttu-id="2bdeb-110">Modul CLR (Common Language Runtime) přiděluje paměť, ve které má být token vrácen.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-110">The common language runtime allocates the memory in which to return the token.</span></span> <span data-ttu-id="2bdeb-111">Volající musí uvolnit tuto paměť pomocí metody [ICLRStrongName:: StrongNameFreeBuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) .</span><span class="sxs-lookup"><span data-stu-id="2bdeb-111">The caller must free this memory by using the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method.</span></span>  
   
  `pcbStrongNameToken`  
- <span data-ttu-id="9c131-112">[out] Velikost v bajtech, token vrácený silného názvu.</span><span class="sxs-lookup"><span data-stu-id="9c131-112">[out] The size, in bytes, of the returned strong name token.</span></span>  
+ <span data-ttu-id="2bdeb-112">mimo Velikost vráceného tokenu silného názvu (v bajtech)</span><span class="sxs-lookup"><span data-stu-id="2bdeb-112">[out] The size, in bytes, of the returned strong name token.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="9c131-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9c131-113">Return Value</span></span>  
- <span data-ttu-id="9c131-114">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="9c131-114">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="2bdeb-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2bdeb-113">Return Value</span></span>  
+ <span data-ttu-id="2bdeb-114">`S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).</span><span class="sxs-lookup"><span data-stu-id="2bdeb-114">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="9c131-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9c131-115">Remarks</span></span>  
- <span data-ttu-id="9c131-116">Token silného názvu je zkrácený tvar veřejný klíč, který se používá pro úsporu místa při ukládání informací o klíči v metadatech.</span><span class="sxs-lookup"><span data-stu-id="9c131-116">A strong name token is the shortened form of a public key that is used to save space when storing key information in metadata.</span></span> <span data-ttu-id="9c131-117">Konkrétně tokeny silným názvem se používají v odkazy na sestavení odkázat na závislého sestavení.</span><span class="sxs-lookup"><span data-stu-id="9c131-117">Specifically, strong name tokens are used in assembly references to refer to the dependent assembly.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2bdeb-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2bdeb-115">Remarks</span></span>  
+ <span data-ttu-id="2bdeb-116">Token silného názvu je zkráceným tvarem veřejného klíče, který se používá k ukládání místa při ukládání klíčových informací v metadatech.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-116">A strong name token is the shortened form of a public key that is used to save space when storing key information in metadata.</span></span> <span data-ttu-id="2bdeb-117">Konkrétně tokeny se silným názvem se používají v odkazech na sestavení pro odkazování na závislé sestavení.</span><span class="sxs-lookup"><span data-stu-id="2bdeb-117">Specifically, strong name tokens are used in assembly references to refer to the dependent assembly.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9c131-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9c131-118">Requirements</span></span>  
- <span data-ttu-id="9c131-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9c131-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2bdeb-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2bdeb-118">Requirements</span></span>  
+ <span data-ttu-id="2bdeb-119">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2bdeb-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9c131-120">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="9c131-120">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="2bdeb-120">**Hlavička:** MetaHost. h</span><span class="sxs-lookup"><span data-stu-id="2bdeb-120">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="9c131-121">**Knihovna:** Zahrnuté jako prostředek v mscoree.dll</span><span class="sxs-lookup"><span data-stu-id="9c131-121">**Library:** Included as a resource in mscoree.dll</span></span>  
+ <span data-ttu-id="2bdeb-121">**Knihovna:** Zahrnuto jako prostředek v knihovně Mscoree. dll</span><span class="sxs-lookup"><span data-stu-id="2bdeb-121">**Library:** Included as a resource in mscoree.dll</span></span>  
   
- <span data-ttu-id="9c131-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9c131-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="2bdeb-122">**Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2bdeb-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9c131-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c131-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2bdeb-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2bdeb-123">See also</span></span>
 
-- [<span data-ttu-id="9c131-124">StrongNameGetPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="9c131-124">StrongNameGetPublicKey Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
-- [<span data-ttu-id="9c131-125">PublicKeyBlob – struktura</span><span class="sxs-lookup"><span data-stu-id="9c131-125">PublicKeyBlob Structure</span></span>](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
-- [<span data-ttu-id="9c131-126">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9c131-126">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [<span data-ttu-id="2bdeb-124">StrongNameGetPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="2bdeb-124">StrongNameGetPublicKey Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
+- [<span data-ttu-id="2bdeb-125">PublicKeyBlob – struktura</span><span class="sxs-lookup"><span data-stu-id="2bdeb-125">PublicKeyBlob Structure</span></span>](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
+- [<span data-ttu-id="2bdeb-126">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2bdeb-126">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

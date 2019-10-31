@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 3153643e-cf5c-4b44-8e0e-c2b22cb08208
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad704ff1e38d59df9e26d34b6dc62c40522aa728
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b3778e12dd96d4f4653633252e13469601c4879d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753467"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139435"
 ---
-# <a name="ihostsyncmanagercreateautoevent-method"></a><span data-ttu-id="e514d-102">IHostSyncManager::CreateAutoEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="e514d-102">IHostSyncManager::CreateAutoEvent Method</span></span>
-<span data-ttu-id="e514d-103">Vytvoří objekt události automatického obnovení.</span><span class="sxs-lookup"><span data-stu-id="e514d-103">Creates an auto-reset event object.</span></span>  
+# <a name="ihostsyncmanagercreateautoevent-method"></a><span data-ttu-id="511b8-102">IHostSyncManager::CreateAutoEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="511b8-102">IHostSyncManager::CreateAutoEvent Method</span></span>
+<span data-ttu-id="511b8-103">Vytvoří objekt události automatického resetování.</span><span class="sxs-lookup"><span data-stu-id="511b8-103">Creates an auto-reset event object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e514d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e514d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="511b8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="511b8-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateAutoEvent (  
@@ -35,37 +33,37 @@ HRESULT CreateAutoEvent (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e514d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e514d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="511b8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="511b8-105">Parameters</span></span>  
  `ppEvent`  
- <span data-ttu-id="e514d-106">[out] Ukazatel na adresu [ihostautoevent –](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instanci implementovaného tímto hostitelem, nebo hodnotu null, pokud nelze vytvořit objekt události.</span><span class="sxs-lookup"><span data-stu-id="e514d-106">[out] A pointer to the address of an [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance implemented by the host, or null if the event object could not be created.</span></span>  
+ <span data-ttu-id="511b8-106">mimo Ukazatel na adresu instance [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) implementované hostitelem nebo hodnotu null, pokud objekt události nelze vytvořit.</span><span class="sxs-lookup"><span data-stu-id="511b8-106">[out] A pointer to the address of an [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance implemented by the host, or null if the event object could not be created.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e514d-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e514d-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="511b8-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="511b8-107">Return Value</span></span>  
   
-|<span data-ttu-id="e514d-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e514d-108">HRESULT</span></span>|<span data-ttu-id="e514d-109">Popis</span><span class="sxs-lookup"><span data-stu-id="e514d-109">Description</span></span>|  
+|<span data-ttu-id="511b8-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="511b8-108">HRESULT</span></span>|<span data-ttu-id="511b8-109">Popis</span><span class="sxs-lookup"><span data-stu-id="511b8-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="e514d-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="e514d-110">S_OK</span></span>|<span data-ttu-id="e514d-111">`CreateAutoEvent` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="e514d-111">`CreateAutoEvent` returned successfully.</span></span>|  
-|<span data-ttu-id="e514d-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="e514d-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="e514d-113">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="e514d-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="e514d-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="e514d-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="e514d-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="e514d-115">The call timed out.</span></span>|  
-|<span data-ttu-id="e514d-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="e514d-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="e514d-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="e514d-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="e514d-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="e514d-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="e514d-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="e514d-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="e514d-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="e514d-120">E_FAIL</span></span>|<span data-ttu-id="e514d-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="e514d-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="e514d-122">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="e514d-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="e514d-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="e514d-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="e514d-124">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="e514d-124">E_OUTOFMEMORY</span></span>|<span data-ttu-id="e514d-125">Nedostatek paměti nebyly k dispozici k vytvoření objektu požadovanou událost.</span><span class="sxs-lookup"><span data-stu-id="e514d-125">Not enough memory was available to create the requested event object.</span></span>|  
+|<span data-ttu-id="511b8-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="511b8-110">S_OK</span></span>|<span data-ttu-id="511b8-111">`CreateAutoEvent` byla úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="511b8-111">`CreateAutoEvent` returned successfully.</span></span>|  
+|<span data-ttu-id="511b8-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="511b8-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="511b8-113">Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="511b8-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="511b8-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="511b8-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="511b8-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="511b8-115">The call timed out.</span></span>|  
+|<span data-ttu-id="511b8-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="511b8-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="511b8-117">Volající nevlastní zámek.</span><span class="sxs-lookup"><span data-stu-id="511b8-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="511b8-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="511b8-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="511b8-119">Událost byla zrušena při čekání na blokované vlákno nebo vlákna.</span><span class="sxs-lookup"><span data-stu-id="511b8-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="511b8-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="511b8-120">E_FAIL</span></span>|<span data-ttu-id="511b8-121">Došlo k neznámé chybě závažnosti.</span><span class="sxs-lookup"><span data-stu-id="511b8-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="511b8-122">Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný.</span><span class="sxs-lookup"><span data-stu-id="511b8-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="511b8-123">Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="511b8-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="511b8-124">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="511b8-124">E_OUTOFMEMORY</span></span>|<span data-ttu-id="511b8-125">Pro vytvoření požadovaného objektu události není k dispozici dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="511b8-125">Not enough memory was available to create the requested event object.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e514d-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e514d-126">Remarks</span></span>  
- <span data-ttu-id="e514d-127">`CreateAutoEvent` Vytvoří objekt automatické událostí jehož stav se automaticky změní na nesignálového po vydala vlákno čekání.</span><span class="sxs-lookup"><span data-stu-id="e514d-127">`CreateAutoEvent` creates an auto-event object whose state is automatically changed to non-signaled after the waiting thread has been released.</span></span> <span data-ttu-id="e514d-128">Tato metoda zrcadlí Win32 `CreateEvent` funkci s hodnotou `false` zadaný pro `bManualReset` parametr</span><span class="sxs-lookup"><span data-stu-id="e514d-128">This method mirrors the Win32 `CreateEvent` function with a value of `false` specified for the `bManualReset` parameter</span></span>  
+## <a name="remarks"></a><span data-ttu-id="511b8-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="511b8-126">Remarks</span></span>  
+ <span data-ttu-id="511b8-127">`CreateAutoEvent` vytvoří objekt automatické události, jehož stav se automaticky změní na nesignální po uvolnění čekání.</span><span class="sxs-lookup"><span data-stu-id="511b8-127">`CreateAutoEvent` creates an auto-event object whose state is automatically changed to non-signaled after the waiting thread has been released.</span></span> <span data-ttu-id="511b8-128">Tato metoda zrcadlí funkci Win32 `CreateEvent` s hodnotou `false` zadanou pro parametr `bManualReset`.</span><span class="sxs-lookup"><span data-stu-id="511b8-128">This method mirrors the Win32 `CreateEvent` function with a value of `false` specified for the `bManualReset` parameter</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e514d-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e514d-129">Requirements</span></span>  
- <span data-ttu-id="e514d-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e514d-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="511b8-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="511b8-129">Requirements</span></span>  
+ <span data-ttu-id="511b8-130">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="511b8-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e514d-131">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e514d-131">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="511b8-131">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="511b8-131">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="e514d-132">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e514d-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="511b8-132">**Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="511b8-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e514d-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e514d-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="511b8-133">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="511b8-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e514d-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e514d-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="511b8-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="511b8-134">See also</span></span>
 
-- [<span data-ttu-id="e514d-135">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e514d-135">ICLRSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [<span data-ttu-id="e514d-136">IHostAutoEvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e514d-136">IHostAutoEvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [<span data-ttu-id="e514d-137">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e514d-137">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
-- [<span data-ttu-id="e514d-138">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e514d-138">IHostSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [<span data-ttu-id="511b8-135">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="511b8-135">ICLRSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
+- [<span data-ttu-id="511b8-136">IHostAutoEvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="511b8-136">IHostAutoEvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
+- [<span data-ttu-id="511b8-137">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="511b8-137">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [<span data-ttu-id="511b8-138">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="511b8-138">IHostSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
