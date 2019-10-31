@@ -15,23 +15,21 @@ helpviewer_keywords:
 ms.assetid: 52c543ab-9ef5-4ee7-b836-c0ffc35cd45b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9e6638f731b335ba7552379cdc77fa912a1def4d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20f2041599e85b8df20a7a9cf44680da9f17244e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748372"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73195933"
 ---
 # <a name="iclrruntimeinfoloaderrorstring-method"></a>ICLRRuntimeInfo::LoadErrorString – metoda
-Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
+Přeloží hodnotu HRESULT do příslušné chybové zprávy pro zadanou jazykovou verzi.  
   
  Tato metoda nahrazuje následující funkce:  
   
-- [LoadStringRC](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
+- [LoadStringRC –](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
   
-- [LoadStringRCEx](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
+- [LoadStringRCEx –](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,34 +43,34 @@ HRESULT LoadErrorString(
   
 ## <a name="parameters"></a>Parametry  
  `iResourceID`  
- [in] Hodnota HRESULT pro převod.  
+ pro Hodnota HRESULT pro překlad.  
   
  `pwzBuffer`  
- [out] Řetězec zprávy přidružené k dané HRESULT.  
+ mimo Řetězec zprávy přidružený k danému HRESULT.  
   
  `pcchBuffer`  
- [out v] Velikost `pwzbuffer` , aby přetečení vyrovnávací paměti. Pokud `pwzbuffer` má hodnotu null, `pcchBuffer` poskytuje očekávanou velikost `pwzbuffer` povolit předběžné přidělování.  
+ [in, out] Velikost `pwzbuffer`, aby se předešlo přetečení vyrovnávací paměti. Pokud je `pwzbuffer` null, `pcchBuffer` poskytuje očekávanou velikost `pwzbuffer` pro povolení předběžného přidělení.  
   
  `iLocaleID`  
- [in] Identifikátor jazykové verze. Pokud chcete použít výchozí jazykovou verzi, je nutné zadat -1.  
+ pro Identifikátor jazykové verze. Chcete-li použít výchozí jazykovou verzi, je nutné zadat-1.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pcchBuffer` má hodnotu null.|  
-|E_INVALIDARG|`pwzBuffer` má hodnotu null.|  
+|E_POINTER|`pcchBuffer` je null.|  
+|E_INVALIDARG|`pwzBuffer` je null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

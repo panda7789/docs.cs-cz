@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 21605b30867d7be0b906b431253c183e655bea82
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7b22bbf75b29fdffd9927110ebe5b4e5309cd778
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922485"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191834"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (C# možnosti kompilátoru)
 Možnost **-doc** slouží k umístění dokumentačních komentářů do souboru XML.  
@@ -41,9 +41,9 @@ Možnost **-doc** slouží k umístění dokumentačních komentářů do soubor
   
  Zdrojový soubor zdrojového kódu, který obsahuje Main, je nejprve výstup do XML.  
   
- Chcete-li použít vygenerovaný soubor. XML pro použití s funkcí [technologie IntelliSense](/visualstudio/ide/using-intellisense) , nechte název souboru. XML stejný jako sestavení, které chcete podporovat, a poté se ujistěte, že soubor. XML je ve stejném adresáři jako sestavení. Proto, pokud je odkazováno na sestavení v projektu sady Visual Studio, je také nalezen soubor. XML. Další informace najdete v tématu [poskytnutí komentářů k kódu](/visualstudio/ide/supplying-xml-code-comments) a další informace.  
+ Chcete-li použít vygenerovaný soubor. XML pro použití s funkcí [technologie IntelliSense](/visualstudio/ide/using-intellisense) , nechte název souboru. XML stejný jako sestavení, které chcete podporovat, a poté se ujistěte, že soubor. XML je ve stejném adresáři jako sestavení. Proto, pokud je odkazováno na sestavení v projektu sady Visual Studio, je také nalezen soubor. XML. Další informace najdete v tématu [poskytnutí komentářů k kódu](/visualstudio/ide/reference/generate-xml-documentation-comments) a další informace.  
   
- Pokud nezkompilujete s [-target: Module](./target-module-compiler-option.md), bude \<obsahovat sestavení\<>/Assembly je > značky, `file` které určují název souboru obsahujícího manifest sestavení pro výstupní soubor kompilace.  
+ Pokud nezkompilujete s [-target: Module](./target-module-compiler-option.md), `file` bude obsahovat \<sestavení >\<značky/Assembly je >, které určují název souboru obsahujícího manifest sestavení pro výstupní soubor kompilace.  
   
 > [!NOTE]
 > Možnost-doc se vztahuje na všechny vstupní soubory; nebo, pokud je nastavena v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentačními komentáři pro určitý soubor nebo oddíl kódu, použijte [#pragma upozornění](../preprocessor-directives/preprocessor-pragma-warning.md).  
@@ -58,7 +58,7 @@ Možnost **-doc** slouží k umístění dokumentačních komentářů do soubor
   
 3. Upravte vlastnost **souboru dokumentace XML** .  
   
- Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>v tématu.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

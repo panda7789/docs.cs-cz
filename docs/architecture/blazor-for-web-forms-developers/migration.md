@@ -4,12 +4,12 @@ description: Naučte se, jak získat přístup k migraci existující aplikace w
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: 1680c3ccd496029cbdefc38119cf89bae0a777a7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b6604e000eaf79bcd8da15d72a3d85713c620851
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087920"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191935"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET na Blazor
 
@@ -84,7 +84,7 @@ Projekt Blazor uvádí závislosti, které požadujete v rámci `<ItemGroup>` el
 </ItemGroup>
 ```
 
-Jeden balíček NuGet, který zjednodušuje životnost vývojářů webových formulářů, je [Sada Windows Compatibility Pack](/dotnet/core/porting/windows-compat-pack). I když je .NET Core pro různé platformy, některé funkce jsou dostupné jenom ve Windows. Funkce specifické pro systém Windows jsou k dispozici po instalaci sady Compatibility Pack. Příklady takových funkcí zahrnují Registry, rozhraní WMI a adresářové služby. Balíček přidává rozhraní API pro 20 000 a aktivuje spoustu služeb, se kterými už možná máte zkušenosti. Projekt eShop nevyžaduje sadu Compatibility Pack. Pokud však vaše projekty používají funkce specifické pro systém Windows, balíček usnadňuje migraci.
+Jeden balíček NuGet, který zjednodušuje životnost vývojářů webových formulářů, je [Sada Windows Compatibility Pack](../../core/porting/windows-compat-pack.md). I když je .NET Core pro různé platformy, některé funkce jsou dostupné jenom ve Windows. Funkce specifické pro systém Windows jsou k dispozici po instalaci sady Compatibility Pack. Příklady takových funkcí zahrnují Registry, rozhraní WMI a adresářové služby. Balíček přidává rozhraní API pro 20 000 a aktivuje spoustu služeb, se kterými už možná máte zkušenosti. Projekt eShop nevyžaduje sadu Compatibility Pack. Pokud však vaše projekty používají funkce specifické pro systém Windows, balíček usnadňuje migraci.
 
 ## <a name="enable-startup-process"></a>Povolit proces po spuštění
 

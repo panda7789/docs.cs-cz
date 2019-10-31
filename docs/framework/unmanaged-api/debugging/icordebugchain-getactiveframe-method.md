@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 36887017-670b-4f21-b406-8fab956f84a3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c79f3b3b976b83eb99f8aa26d38a1fe316de471a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 03cb1556ee971124ed4c591f38d9f892fc7df7b0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744994"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192143"
 ---
 # <a name="icordebugchaingetactiveframe-method"></a>ICorDebugChain::GetActiveFrame – metoda
-Získá aktivní (to znamená nejnovější) rámce v řetězu.  
+Získá aktivní (tj. poslední) rámec v řetězu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetActiveFrame (
   
 ## <a name="parameters"></a>Parametry  
  `ppFrame`  
- [out] Ukazatel na adresu objektu ICorDebugFrame představující aktivní (to znamená nejnovější) rámce v řetězu.  
+ mimo Ukazatel na adresu objektu ICorDebugFrame, který představuje aktivní (tj. poslední) rámec v řetězci.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je k dispozici žádné spravované zásobníku `ppFrame` je nastavena na hodnotu null.  
+ Pokud není k dispozici žádný spravovaný rámec zásobníku, je `ppFrame` nastavena na hodnotu null.  
   
- Pokud není k dispozici aktivní rámec, že volání bude úspěšné a `ppFrame` bude mít hodnotu null. Aktivní snímků nebudou k dispozici pro řetězce iniciované z důvodu CHAIN_ENTER_UNMANAGED a pro některé řetězce iniciované z důvodu CHAIN_CLASS_INIT. Zobrazit cordebugchainreason – výčet.  
+ Pokud aktivní rámec není k dispozici, bude volání úspěšné a `ppFrame` bude mít hodnotu null. Aktivní rámce nebudou k dispozici pro řetězy iniciované v důsledku CHAIN_ENTER_UNMANAGED a pro některé řetězy iniciované z CHAIN_CLASS_INIT. Podívejte se na výčet CorDebugChainReason –.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

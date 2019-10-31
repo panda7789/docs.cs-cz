@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0783c6ab80f3a07bd7b7e5a005444218c17e85fb
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 25615dd43f1ae4f56c7bced7f79a0612093a21fb
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035462"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191693"
 ---
 # <a name="contributing"></a>Zvaní
 
@@ -15,9 +15,9 @@ Děkujeme za váš zájem o přispívání do dokumentace k .NET.
 
 Dokument popisuje proces pro přispívání do článků a ukázek kódu, které jsou hostovány na [webu dokumentace rozhraní .NET](https://docs.microsoft.com/dotnet). Příspěvky můžou být jednoduché jako překlepné opravy nebo jako nové články.
 
+- [DOs a DON'Ts](#dos-and-donts)
 - [Proces pro přispívání](#process-for-contributing)
 - [C# Interaktivní prostředí](#the-c-interactive-experience)
-- [DOs a DON'Ts](#dos-and-donts)
 - [Licenční smlouva přispěvatele](#contributor-license-agreement)
 
 Toto úložiště obsahuje koncepční dokumentaci pro .NET. Kromě tohoto nástroje je web dokumentace .NET sestaven z více úložišť:
@@ -28,6 +28,24 @@ Toto úložiště obsahuje koncepční dokumentaci pro .NET. Kromě tohoto nást
     Problémy a úkoly pro toto úložiště jsou sledovány v příkazu [dotnet/dotnet-API-docs/problémy](https://github.com/dotnet/dotnet-api-docs/issues).
 - [Referenční informace k sadě .NET Compiler Platform SDK](https://github.com/dotnet/roslyn-api-docs)  
     Problémy a taks pro toto úložiště jsou sledovány v [dotnet/docs/problémech](https://github.com/dotnet/docs/issues).
+
+## <a name="dos-and-donts"></a>DOs a DON'Ts
+
+Následující seznam obsahuje pravidla pro GUID, která byste měli mít na paměti při přispívání do dokumentace rozhraní .NET:
+
+- **Nedělejte** si u velkých žádostí o přijetí změn. Místo toho nahlaste problém a začněte diskuzi, abychom mohli vyjádřit souhlas s orientací ještě před tím, než investovat velké množství času. Pro hromadné změny Přerušte práci na menší PR (až 100 souborů). Tato směrnice se důrazně doporučuje, pokud vaše žádost o přijetí změn nepostupuje podle následujících pokynů.
+- **Podívejte se** [na aktuální problémy](https://github.com/dotnet/docs/labels/up-for-grabs) , které jsou k dispozici pro návrhy na úlohy.
+- Pro každý úkol vytvořte jednu žádost o přijetí **změn** . PR, které zahrnují více nesouvisejících změn, je mnohem obtížnější kontrolovat. Tím se zpozdí recenze a sloučení pr. Tento návod se vztahuje i na recenze. nedoporučujeme navrhovat nesouvisející změny v recenzích. požádáme, aby kontroly komunity dodržovaly tyto zásady.
+- Zadejte jasný popis práce v žádosti o přijetí **změn** . Řekněte nám, co se změnilo a proč. Výchozí popis "Update article.md" není pro kontrolory užitečný.
+- **Neodesílat PR** jenom pro změny stylu bez předchozí diskuze. Tyto pry mají včas kontrolu nad přesností a jejich sloučení často způsobuje, že sloučení koliduje s jinými důležitými aktualizacemi. Pracujeme na tom, abychom s dodržováním konzistentního stylu, ale vyrovnáváme to, jak pracovat s dalšími úkoly. V případě, že provedeme hlavní aktualizace z jiných důvodů, se články přenesou do souladu se stylem. 
+- **Přečtěte si** článek [Průvodce stylem](./styleguide/template.md) a pokyny pro [hlasové a tónové](./styleguide/voice-tone.md) funkce. Nové přídavky by měly dodržovat tyto pokyny.
+- Než začnete pracovat na článcích **, vytvořte na** svém rozvětve samostatnou větev.
+- **Postupujte podle** [pracovního postupu Flow GitHub](https://guides.github.com/introduction/flow/).
+- **Udělejte to** na blogu (nebo cokoli) o příspěvcích, často!
+
+Tyto pokyny nám pomohou respektovat každý čas. Spousta lidí přispívá do těchto úložišť. Podle těchto pokynů usnadňujeme včas kontrolu a sloučení žádosti o přijetí změn. Tyto postupy minimalizují konflikty s PR od jiných členů komunity i z našeho týmu. Vzhledem k tomu, že PR, které tyto pokyny nedodržují, často způsobují další práci pro členy USA a komunity, mohou být tyto PR odmítnuty. Pokud chcete výjimku, Začněte vytvořením problému.
+
+> Poznámka: můžete si všimnout, že některá témata aktuálně nejsou v současné době podle všech uvedených pokynů a také v [Průvodci styly](./styleguide/template.md) . Pracujeme na dosažení konzistence v celé lokalitě.
 
 ## <a name="process-for-contributing"></a>Proces pro přispívání
 
@@ -135,19 +153,6 @@ C# Interaktivní prostředí mění způsob práce s ukázkami. Návštěvníci 
 
 - Články, ve kterých ukázka vygeneruje větší výstup by neměl obsahovat v komentářích. Po spuštění ukázkového kódu ho skryje.
 - Články, ve kterých Ukázka ukazuje téma, ale výstup není integrální pro porozumění. Například kód, který spouští dotaz LINQ pro vysvětlení syntaxe dotazu a následně zobrazuje každou položku v kolekci výstupu.
-
-## <a name="dos-and-donts"></a>DOs a DON'Ts
-
-Následující seznam obsahuje pravidla pro GUID, která byste měli mít na paměti při přispívání do dokumentace rozhraní .NET:
-
-- **Nedělejte** si u velkých žádostí o přijetí změn. Místo toho nahlaste problém a začněte diskuzi, abychom mohli vyjádřit souhlas s orientací ještě před tím, než investovat velké množství času. Pro hromadné změny Přerušte práci na menší PR (až 100 souborů).
-- **Přečtěte si** článek [Průvodce stylem](./styleguide/template.md) a pokyny pro [hlasové a tónové](./styleguide/voice-tone.md) funkce.
-- **Použijte soubor** [šablony](./styleguide/template.md) jako výchozí bod vaší práce.
-- Než začnete pracovat na článcích **, vytvořte na** svém rozvětve samostatnou větev.
-- **Postupujte podle** [pracovního postupu Flow GitHub](https://guides.github.com/introduction/flow/).
-- **Udělejte to** na blogu (nebo cokoli) o příspěvcích, často!
-
-> Poznámka: můžete si všimnout, že některá témata aktuálně nejsou v současné době podle všech uvedených pokynů a také v [Průvodci styly](./styleguide/template.md) . Pracujeme na dosažení konzistence v celé lokalitě.
 
 ## <a name="contributor-license-agreement"></a>Licenční smlouva přispěvatele
 

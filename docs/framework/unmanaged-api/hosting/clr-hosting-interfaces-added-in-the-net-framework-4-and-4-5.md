@@ -6,60 +6,58 @@ helpviewer_keywords:
 - .NET Framework 4, hosting interfaces
 - interfaces [.NET Framework hosting], version 4
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ea95789ea1623985a6a53fcf923b70d7df2ad460
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: aea88430d8f83234a1568bcaf433c2a75492e23a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170440"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73195915"
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>Rozhraní hostování CLR přidaná v rozhraní .NET Framework 4 a 4.5
-Tato část popisuje nespravovaná rozhraní hostitele můžete použít k integraci common language runtime (CLR) v rozhraní .NET Framework 4, .NET Framework 4.5 a novější verze do svých aplikací. Tato rozhraní poskytuje metody pro hostitele konfigurace a načtení modulu runtime do procesu.  
+Tato část popisuje rozhraní, která nespravované hostitele můžou použít k integraci modulu CLR (Common Language Runtime) v .NET Framework 4, .NET Framework 4,5 a novějších verzích do svých aplikací. Tato rozhraní poskytují metody pro hostitele ke konfiguraci a načtení modulu runtime do procesu.  
   
- Od verze rozhraní .NET Framework 4, všechny hostitelské rozhraní mají následující vlastnosti:  
+ Počínaje .NET Framework 4 mají všechna hostující rozhraní následující vlastnosti:  
   
-- Správa životního cyklu používají (`AddRef` a `Release`), zapouzdření (implicitní context) a `QueryInterface` z modelu COM.  
+- Používají správu životnosti (`AddRef` a `Release`), zapouzdření (implicitní kontext) a `QueryInterface` z modelu COM.  
   
-- Typy modelu COM, jako nepoužívají `BSTR`, `SAFEARRAY`, nebo `VARIANT`.  
+- Nepoužívají typy COM, jako `BSTR`, `SAFEARRAY`nebo `VARIANT`.  
   
-- Neexistují žádné modely objektu apartment, agregace nebo aktivace registru, použít [funkce CoCreateInstance](https://go.microsoft.com/fwlink/?LinkId=142894).  
+- Neexistují žádné modely Apartment, agregace ani aktivace registru, které používají [funkci CoCreateInstance](https://go.microsoft.com/fwlink/?LinkId=142894).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ICLRAppDomainResourceMonitor – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
- Poskytuje metody, které se kontrolovat využití procesoru a paměti doménu aplikace.  
+ Poskytuje metody, které kontrolují paměť a využití procesoru v doméně aplikace.  
   
  [ICLRDomainManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)  
- Umožňuje hostiteli určit, který se použije k inicializaci výchozí domény aplikace a k určení vlastností inicializace správce domény aplikace.  
+ Umožňuje hostiteli zadat správce aplikační domény, který se použije k inicializaci výchozí domény aplikace, a zadat vlastnosti inicializace.  
   
  [ICLRGCManager2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-interface.md)  
- Poskytuje [setgcstartuplimitsex –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) metodu, která umožňuje hostiteli nastavte velikost segmentu kolekce uvolnění paměti a maximální velikost 0. generace kolekce systému uvolňování paměti na hodnoty vyšší než `DWORD`.  
+ Poskytuje metodu [SetGCStartupLimitsEx –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) , která umožňuje hostiteli nastavit velikost segmentu uvolňování paměti a maximální velikost 0. generace systému uvolňování paměti na hodnoty větší než `DWORD`.  
   
  [ICLRMetaHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
- Poskytuje metody vrátit konkrétní verzi modulu CLR, seznam všech nainstalovaných CLRs, vypsat všechny moduly Runtime v procesu, vrátí rozhraní aktivace a zjistit verzi modulu CLR použitou ke kompilaci sestavení.  
+ Poskytuje metody, které vracejí konkrétní verzi CLR, vypíše všechny nainstalované CLRs, vypíše všechny vnitroprocesové moduly runtime, vrátí aktivační rozhraní a zjistí verzi CLR použitou pro zkompilování sestavení.  
   
  [ICLRMetaHostPolicy – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)  
- Poskytuje [getrequestedruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) metodu, která poskytuje rozhraní CLR na základě kritérií zásad, spravované sestavení, verzi a konfigurační soubor.  
+ Poskytuje metodu [GetRequestedRuntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) , která poskytuje rozhraní CLR na základě kritérií zásad, spravovaného sestavení, verze a konfiguračního souboru.  
   
  [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- Poskytuje metody, které vracejí informace o konkrétní modulu runtime, včetně verze, adresáře a načíst stav.  
+ Poskytuje metody, které vracejí informace o konkrétním modulu runtime, včetně verze, adresáře a stavu zatížení.  
   
  [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
- Poskytuje základní globální statické funkce pro podepisování sestavení se silnými názvy. Všechny [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) metody vrací standardní COM HRESULT.  
+ Poskytuje základní globální statické funkce pro podepisování sestavení se silnými názvy. Všechny metody [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) vrací standardní model COM HRESULTs.  
   
  [ICLRStrongName2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname2-interface.md)  
- Umožňuje vytvořit silné názvy pomocí algoritmu SHA-2 skupiny Hashovacích algoritmů zabezpečení (SHA-256, SHA-384 a SHA-512).  
+ Poskytuje možnost vytvářet silné názvy pomocí skupiny SHA-2 algoritmů Secure Hash (SHA-256, SHA-384 a SHA-512).  
   
  [ICLRTask2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-interface.md)  
- Obsahuje všechny funkce, které jsou součástí [iclrtask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md); navíc poskytuje metody, které umožňují zrušení vláken k zpozdit u aktuálního vlákna.  
+ Poskytuje všechny funkce [rozhraní ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md); Kromě toho poskytuje metody, které umožňují, aby bylo přerušení vlákna zpožděno v aktuálním vlákně.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Zastaralá rozhraní a třídy typu Coclass pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
- Popisuje rozhraní hostování, opatřeného rozhraní .NET Framework verze 1.0 a 1.1.  
+ Popisuje rozhraní hostování poskytovaná pomocí .NET Framework verze 1,0 a 1,1.  
   
  [Rozhraní pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
- Popisuje rozhraní hostování, opatřeného rozhraní .NET Framework verze 2.0, 3.0 a 3.5.  
+ Popisuje rozhraní hostování poskytovaná pomocí .NET Framework verze 2,0, 3,0 a 3,5.  
   
  [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)  
- Zavádí hostování v rozhraní .NET Framework.
+ Zavádí hostování v .NET Framework.

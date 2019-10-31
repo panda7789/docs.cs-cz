@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6fc01e98-c2e7-49de-ab9f-95937cc89017
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3f4cb71e5ac0afe19e865ffca6fe578ad08f3162
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8764a3d665c997460419561eb168f92ca769c30c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773865"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192115"
 ---
 # <a name="assemblybindinfo-structure"></a>AssemblyBindInfo – struktura
 Poskytuje podrobné informace o odkazovaném sestavení.  
@@ -41,22 +39,22 @@ typedef struct _AssemblyBindInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dwAppDomainId`|Jedinečný identifikátor `IStream` vrácený voláním [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md), ze které má odkazované sestavení má být načten.|  
+|`dwAppDomainId`|Jedinečný identifikátor `IStream` vrácen voláním [IHostAssemblyStore::P rovideassembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md), ze kterého má být načteno odkazované sestavení.|  
 |`lpReferencedIdentity`|Jedinečný identifikátor odkazovaného sestavení.|  
-|`lpPostPolicyIdentity`|Identifikátor odkazovaného sestavení po použití hodnoty zásad žádné vazby.|  
-|`ePolicyLevel`|Jeden z [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které označují, které zásady správy verzí, pokud existuje, bude použito k odkazovanému sestavení.|  
+|`lpPostPolicyIdentity`|Identifikátor odkazovaného sestavení po použití všech hodnot zásad vazby|  
+|`ePolicyLevel`|Jedna z hodnot [EPolicyAction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) určujících, které zásady správy verzí (pokud existují) by měly být aplikovány na odkazované sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání `IHostAssemblyStore::ProvideAssembly` vrátí, modul runtime používá identifikátoru k určení, zda obsah `IStream` nebyly namapovány. Pokud ano, načte modul runtime stávající kopie spíše než přemapování datového proudu. Modul runtime také používá tento identifikátor jako vyhledávací klíč pro datové proudy vrácené z volání [ihostassemblystore::providemodule –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md). Proto musí být identifikátor jedinečný modul požadavky a požadavky na sestavení.  
+ Hostitel dodá jedinečný identifikátor `dwAppDomainId` modulu CLR (Common Language Runtime). Po volání funkce `IHostAssemblyStore::ProvideAssembly` vrátí modul runtime identifikátor k určení, zda byl obsah `IStream` namapován. V takovém případě modul runtime načte existující kopii místo přemapování datového proudu. Modul runtime používá tento identifikátor také jako vyhledávací klíč pro proudy vracené z volání do [IHostAssemblyStore::P rovidemodule](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md). Proto musí být identifikátor jedinečný pro požadavky na modul a požadavky na sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

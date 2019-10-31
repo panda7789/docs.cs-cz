@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0b8ab4b-d7d2-4fa0-945f-3d2b87e7e991
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d11693473dc4ed4438bbcad7f95c1b20adc1062b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5a07550d44857526e8ab4ded9f1827ef12e3bba4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744968"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192139"
 ---
 # <a name="icordebugchaingetcaller-method"></a>ICorDebugChain::GetCaller – metoda
-Získá řetězec, který volá tento řetězec.  
+Získá řetězec, který se nazývá tento řetězec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetCaller (
   
 ## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresa icordebugchain – objekt, který představuje řetěz volání.  
+ mimo Ukazatel na adresu objektu ICorDebugChain, který představuje volající řetězec.  
   
- Pokud se tento řetězec byla volána samovolně (jako by tomu bylo-li tento řetězec nebo ladicí program inicializován zásobníku volání), `ppChain` bude mít hodnotu null.  
+ Pokud byl tento řetěz spontánním způsobem volán (jako by se jednalo o případ, kdy tento řetěz nebo ladicí program inicializoval zásobník volání), `ppChain` bude null.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání řetězce může být v jiném vlákně, pokud bylo volání zařazen napříč vlákny.  
+ Volající řetěz může být v jiném vlákně, pokud bylo volání zařazeno mezi vlákny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

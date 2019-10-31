@@ -1,98 +1,174 @@
 ---
 title: dotnet sln – příkaz
 description: Příkaz dotnet-sln nabízí pohodlný způsob přidávání, odebírání a vypsání projektů v souboru řešení.
-ms.date: 06/13/2018
-ms.openlocfilehash: 84508aaefff61b31e2965576ebc2daaae7331951
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 10/29/2019
+ms.openlocfilehash: 18702c7638798117bd04d5c6a829d64cc6bf18a8
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117583"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191817"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
+**Tento článek se týká: ✓** .NET Core 1. x SDK a novějších verzí
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
-`dotnet sln`– Upraví soubor řešení .NET Core.
+`dotnet sln` – upraví soubor řešení .NET Core.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet sln [<SOLUTION_NAME>] add <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] add <GLOBBING_PATTERN>
-dotnet sln [<SOLUTION_NAME>] remove <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] remove <GLOBBING_PATTERN>
-dotnet sln [<SOLUTION_NAME>] list
-dotnet sln [-h|--help]
+dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
 ```
 
 ## <a name="description"></a>Popis
 
-`dotnet sln` Příkaz nabízí pohodlný způsob, jak přidávat, odebírat a vypisovat projekty v souboru řešení.
+Příkaz `dotnet sln` poskytuje pohodlný způsob, jak přidávat, odebírat a vypisovat projekty v souboru řešení.
 
-Chcete-li `dotnet sln` použít příkaz, soubor řešení již musí existovat. Pokud ho potřebujete vytvořit, použijte příkaz [dotnet New](dotnet-new.md) , jako v následujícím příkladu:
+Chcete-li použít příkaz `dotnet sln`, soubor řešení již musí existovat. Pokud ho potřebujete vytvořit, použijte příkaz [dotnet New](dotnet-new.md) , jako v následujícím příkladu:
 
 ```dotnetcli
 dotnet new sln
 ```
 
-## <a name="commands"></a>Příkazy
-
-`add <PROJECT> ...`
-
-`add <GLOBBING_PATTERN>`
-
-Přidá do souboru řešení projekt nebo více projektů. [Vzory expanze názvů](https://en.wikipedia.org/wiki/Glob_(programming)) se podporují v terminálech založených na systému UNIX/Linux.
-
-`remove <PROJECT> ...`
-
-`remove <GLOBBING_PATTERN>`
-
-Odebere projekt nebo více projektů ze souboru řešení. [Vzory expanze názvů](https://en.wikipedia.org/wiki/Glob_(programming)) se podporují v terminálech založených na systému UNIX/Linux.
-
-`list`
-
-Zobrazí seznam všech projektů v souboru řešení.
-
 ## <a name="arguments"></a>Arguments
 
-`SOLUTION_NAME`
+- **`SOLUTION_FILE`**
 
-Soubor řešení, který se má použít Pokud není zadán, příkaz vyhledá v aktuálním adresáři. Pokud je v adresáři více souborů řešení, je nutné zadat jeden.
+  Soubor řešení, který se má použít. Pokud není zadán, příkaz vyhledá v aktuálním adresáři. Pokud je v adresáři více souborů řešení, je nutné zadat jeden.
 
 ## <a name="options"></a>Možnosti
 
-`-h|--help`
+- **`-h|--help`**
 
-Vypíše krátkou nápovědu k příkazu.
+  Vypíše krátkou nápovědu k příkazu.
+
+## <a name="commands"></a>Příkazy
+
+### `add`
+
+Přidá do souboru řešení projekt nebo více projektů.
+
+#### <a name="synopsis"></a>Stručný obsah
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH>
+dotnet sln add [-h|--help]
+```
+
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Soubor řešení, který se má použít. Pokud není zadán, příkaz vyhledá v aktuálním adresáři. Pokud je v adresáři více souborů řešení, je nutné zadat jeden.
+
+- **`PROJECT_PATH`**
+
+  Cesta k projektu, který se má přidat do řešení Přidejte více projektů přidáním jednoho po druhém oddělené mezery. Rozšíření [vzoru expanze názvů](https://en.wikipedia.org/wiki/Glob_(programming)) prostředí systému UNIX/Linux jsou zpracována správně pomocí příkazu `dotnet sln`.
+
+#### <a name="options"></a>Možnosti
+
+- **`-h|--help`**
+
+  Vypíše krátkou nápovědu k příkazu.
+
+- **`--in-root`**
+
+  Umístí projekty do kořenového adresáře řešení namísto vytvoření složky řešení. K dispozici od verze .NET Core 3,0 SDK.
+
+- **`-s|--solution-folder`**
+
+  Cílová cesta ke složce řešení, do které se mají přidat projekty K dispozici od verze .NET Core 3,0 SDK.
+
+### `remove`
+
+Odebere projekt nebo více projektů ze souboru řešení.
+
+#### <a name="synopsis"></a>Stručný obsah
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH>
+dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
+```
+
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Soubor řešení, který se má použít. Pokud není zadán, příkaz vyhledá v aktuálním adresáři. Pokud je v adresáři více souborů řešení, je nutné zadat jeden.
+
+- **`PROJECT_PATH`**
+
+  Cesta k projektu, který se má odebrat z řešení Odeberte více projektů přidáním jednoho po druhém odděleném mezerami. Rozšíření [vzoru expanze názvů](https://en.wikipedia.org/wiki/Glob_(programming)) prostředí systému UNIX/Linux jsou zpracována správně pomocí příkazu `dotnet sln`.
+
+#### <a name="options"></a>Možnosti
+
+- **`-h|--help`**
+
+  Vypíše krátkou nápovědu k příkazu.
+
+### `list`
+
+Zobrazí seznam všech projektů v souboru řešení.
+
+#### <a name="synopsis"></a>Stručný obsah
+
+```dotnetcli
+dotnet sln list [-h|--help]
+```
+  
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Soubor řešení, který se má použít. Pokud není zadán, příkaz vyhledá v aktuálním adresáři. Pokud je v adresáři více souborů řešení, je nutné zadat jeden.
+
+#### <a name="options"></a>Možnosti
+
+- **`-h|--help`**
+
+  Vypíše krátkou nápovědu k příkazu.
 
 ## <a name="examples"></a>Příklady
 
 Přidání C# projektu do řešení:
 
-`dotnet sln todo.sln add todo-app/todo-app.csproj`
+```dotnetcli
+dotnet sln todo.sln add todo-app/todo-app.csproj
+```
 
 Odebrání C# projektu z řešení:
 
-`dotnet sln todo.sln remove todo-app/todo-app.csproj`
+```dotnetcli
+dotnet sln todo.sln remove todo-app/todo-app.csproj
+```
 
 Přidání více C# projektů do řešení:
 
-`dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj`
+```dotnetcli
+dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+```
 
 Odebrání více C# projektů z řešení:
 
-`dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj`
+```dotnetcli
+dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
+```
 
-Přidání více C# projektů do řešení pomocí vzorového expanze názvů:
+Přidání více C# projektů do řešení pomocí vzoru expanze názvů (jenom UNIX/Linux):
 
-`dotnet sln todo.sln add **/*.csproj`
+```dotnetcli
+dotnet sln todo.sln add **/*.csproj
+```
 
-Odebrání více C# projektů z řešení pomocí vzoru expanze názvů:
+Odebrání více C# projektů z řešení pomocí vzoru expanze (pouze systém UNIX/Linux):
 
-`dotnet sln todo.sln remove **/*.csproj`
-
-> [!NOTE]
-> Expanze názvů není funkcí CLI, ale spíše funkcí příkazového prostředí. Aby bylo možné soubory úspěšně rozšířit, je nutné použít prostředí, které podporuje expanze názvů. Další informace o expanzi názvů naleznete v tématu [Wikipedii](https://en.wikipedia.org/wiki/Glob_(programming)).
+```dotnetcli
+dotnet sln todo.sln remove **/*.csproj
+```

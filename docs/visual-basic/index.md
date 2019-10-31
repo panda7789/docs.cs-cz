@@ -4,12 +4,12 @@ ms.date: 03/28/2018
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-ms.openlocfilehash: d874788830ad15325ad93858e48c16cce20056cb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: cb186e1c893e1c97c96f641edbdf1537a135bfcb
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581949"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191969"
 ---
 # <a name="visual-basic-guide"></a>Průvodce Visual Basicem
 
@@ -50,7 +50,7 @@ Pokud ještě nemáte Visual Basic, můžete si stáhnout bezplatnou verzi sady 
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [Začínáme s vývojem pomocí jazyka Visual C++](/visualstudio/ide/get-started-developing-with-visual-studio)  
+- [Začínáme s vývojem pomocí jazyka Visual C++](/visualstudio/ide/visual-studio-ide)  
   Obsahuje odkazy na témata, která vám pomůžou seznámit se základy sady Visual Studio.
 
 - [.NET API – prohlížeč](../../api/index.md)  

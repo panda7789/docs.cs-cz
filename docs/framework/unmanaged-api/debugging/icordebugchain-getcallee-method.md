@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 19560c79-abdc-4bdf-a5fe-eb362a59edc0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 79743b78ea3d19bab4756b580d2feddd07e0a23b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d28af09faae84b0482d438ae33f593f250490c1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744979"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73196329"
 ---
 # <a name="icordebugchaingetcallee-method"></a>ICorDebugChain::GetCallee – metoda
-Získá řetězec, který byl volán tento řetězec.  
+Získá řetězec, který byl volán tímto řetězem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetCallee (
   
 ## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresa icordebugchain – objekt, který představuje jen řetězce. Pokud se tento řetězec aktuálně spouští (to znamená, pokud se tento řetězec není čeká řetěz volané vrátit), `ppChain` bude mít hodnotu null.  
+ mimo Ukazatel na adresu objektu ICorDebugChain, který představuje pojmenovaný řetězec. Pokud je tento řetěz aktuálně prováděn (tj. Pokud tento řetěz nečeká na návrat z volaného řetězce), `ppChain` bude null.  
   
 ## <a name="remarks"></a>Poznámky  
- Tento řetězec bude čekat volané řetězu vrátit předtím, než ji pokračuje v provádění. Volané řetězci může být v jiném vlákně, v případě zařazené volání mezi vlákny.  
+ Tento řetěz počká, než se volaný řetězec vrátí, než obnoví provádění. Volaný řetěz může být v jiném vlákně v případě volání mezi vlákny zařazování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

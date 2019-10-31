@@ -1,15 +1,15 @@
 ---
 title: Přidat odkaz na webovou službu WCF
 description: Přehled nástroje Microsoft WCF Web Service Reference Provider, který přidává funkce pro projekty .NET Core a ASP.NET Core, podobně jako Přidat odkaz na službu pro .NET Framework projekty.
-author: mlacouture
-ms.date: 04/19/2018
+author: dasetser
+ms.date: 10/29/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 28eaae4a83d918f8a9e5376eb3c8d42843ffa027
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: feecf374e1af48f349495c13ea91b810c6b0a1c3
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773962"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191907"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použití nástroje poskytovatele referencí webové služby WCF
 
@@ -76,12 +76,16 @@ Během zobrazování průběhu nástroje:
 
 Po dokončení těchto procesů můžete vytvořit instanci vygenerovaného typu klienta WCF a vyvolat operace služby.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="see-also"></a>Viz také:
 
-### <a name="feedback--questions"></a>Názory & dotazů
+- [Začínáme s Windows Communication Foundation aplikacemi](../../framework/wcf/getting-started-tutorial.md)
+- [Služby Windows Communication Foundation Services a WCF Data Services v aplikaci Visual Studio](/visualstudio/data-tools/windows-communication-foundation-services-and-wcf-data-services-in-visual-studio)
+- [Funkce podporované WCF v .NET Core](https://github.com/dotnet/wcf/blob/master/release-notes/SupportedFeatures-v2.1.0.md)
 
-Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](https://github.com/dotnet/wcf/issues/new). V [ÚLOŽIŠTI WCF na GitHubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling)můžete také zkontrolovat všechny existující otázky nebo problémy.
+## <a name="feedback--questions"></a>Názory & dotazů
 
-### <a name="release-notes"></a>Zpráva k vydání verze
+Pokud máte nějaké dotazy nebo připomínky, ohlaste je na [komunitě vývojářů](https://developercommunity.visualstudio.com/) pomocí nástroje [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) .
+
+## <a name="release-notes"></a>Zpráva k vydání verze
 
 - Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) .

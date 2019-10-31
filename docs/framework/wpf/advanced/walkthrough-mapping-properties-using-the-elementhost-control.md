@@ -8,30 +8,30 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: 3c74878a91f89e14837b42a45a35ab35bcd5cf68
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7d1cf353f7e6c4b87c13598e7e6029960cd0f715
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650830"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197812"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
 
-Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> vlastnost mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti odpovídající vlastnosti na hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementu.
+V tomto návodu se dozvíte, jak použít vlastnost <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> k mapování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastností na odpovídající vlastnosti u hostovaného [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementu.
 
-Úlohy v tomto návodu zahrnují:
+Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytvoření projektu.
+- Vytváří se projekt.
 
 - Definování nového mapování vlastností.
 
-- Odebrání výchozí mapování vlastností.
+- Odebírá se výchozí mapování vlastností.
 
-- Rozšíření výchozí mapování vlastností.
+- Rozšíření výchozího mapování vlastností.
 
-Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [mapování vlastností použitím Ukázka ovládacího prvku ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
+Úplný výpis kódu úloh, které jsou znázorněny v tomto návodu, najdete v tématu [mapování vlastností pomocí ukázky ovládacího prvku ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
 
-Až budete hotovi, budete moci mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti k odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastností hostované elementu.
+Až budete hotovi, budete moci mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti na odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti v hostovaném elementu.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -43,9 +43,9 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ### <a name="to-create-the-project"></a>Vytvoření projektu
 
-1. Vytvoření **aplikace Windows Forms** projekt s názvem `PropertyMappingWithElementHost`.
+1. Vytvořte projekt **aplikace model Windows Forms** s názvem `PropertyMappingWithElementHost`.
 
-2. V **Průzkumníka řešení**, přidejte odkazy na následující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení.
+2. V **Průzkumník řešení**přidejte odkazy na následující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení.
 
     - PresentationCore
 
@@ -55,90 +55,90 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
     - WindowsFormsIntegration
 
-3. Zkopírujte následující kód do horní části `Form1` soubor kódu.
+3. Zkopírujte následující kód do horní části souboru kódu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#10](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#10)]
      [!code-vb[PropertyMappingWithElementHost#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#10)]
 
-4. Otevřít `Form1` v Návrháři formulářů Windows. Klikněte dvakrát na formuláři pro přidání obslužné rutiny události <xref:System.Windows.Forms.Form.Load> událostí.
+4. Otevřete `Form1` v Návrhář formulářů. Dvakrát klikněte na formulář a přidejte obslužnou rutinu události pro událost <xref:System.Windows.Forms.Form.Load>.
 
-5. Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)).
+5. Vraťte se do Návrhář formulářů a přidejte obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Resize> formuláře. Další informace naleznete v tématu [Postupy: vytváření obslužných rutin událostí pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)).
 
-6. Deklarovat <xref:System.Windows.Forms.Integration.ElementHost> pole `Form1` třídy.
+6. Deklaruje pole <xref:System.Windows.Forms.Integration.ElementHost> ve třídě `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#16](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#16)]
      [!code-vb[PropertyMappingWithElementHost#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#16)]
 
-## <a name="defining-new-property-mappings"></a>Definování nového mapování vlastností
+## <a name="defining-new-property-mappings"></a>Definování nových mapování vlastností
 
-<xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek obsahuje několik výchozích mapování vlastností. Přidat nové mapování vlastností pomocí volání <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> metodu <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>.
+Ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> poskytuje několik výchozích mapování vlastností. Přidáte nové mapování vlastností voláním metody <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> na <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>.
 
-### <a name="to-define-new-property-mappings"></a>Chcete-li definovat nové mapování vlastností
+### <a name="to-define-new-property-mappings"></a>Definování nových mapování vlastností
 
-1. Zkopírujte následující kód do definice pro `Form1` třídy.
+1. Zkopírujte následující kód do definice pro třídu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#12](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#12)]
      [!code-vb[PropertyMappingWithElementHost#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#12)]
 
-     `AddMarginMapping` Metoda přidá nové mapování <xref:System.Windows.Forms.Control.Margin%2A> vlastnost.
+     Metoda `AddMarginMapping` přidá nové mapování pro vlastnost <xref:System.Windows.Forms.Control.Margin%2A>.
 
-     `OnMarginChange` Metoda překládá <xref:System.Windows.Forms.Control.Margin%2A> vlastnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement.Margin%2A> vlastnost.
+     Metoda `OnMarginChange` překládá vlastnost <xref:System.Windows.Forms.Control.Margin%2A> na vlastnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement.Margin%2A>.
 
-2. Zkopírujte následující kód do definice pro `Form1` třídy.
+2. Zkopírujte následující kód do definice pro třídu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#14](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#14)]
      [!code-vb[PropertyMappingWithElementHost#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#14)]
 
-     `AddRegionMapping` Metoda přidá nové mapování <xref:System.Windows.Forms.Control.Region%2A> vlastnost.
+     Metoda `AddRegionMapping` přidá nové mapování pro vlastnost <xref:System.Windows.Forms.Control.Region%2A>.
 
-     `OnRegionChange` Metoda překládá <xref:System.Windows.Forms.Control.Region%2A> vlastnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.UIElement.Clip%2A> vlastnost.
+     Metoda `OnRegionChange` překládá vlastnost <xref:System.Windows.Forms.Control.Region%2A> na vlastnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.UIElement.Clip%2A>.
 
-     `Form1_Resize` Obsluhovala formuláře <xref:System.Windows.Forms.Control.Resize> události a velikosti oblast ořezu podle hostovaný prvek.
+     Metoda `Form1_Resize` zpracovává událost <xref:System.Windows.Forms.Control.Resize> formuláře a velikost oblasti oříznutí tak, aby odpovídala hostovanému elementu.
 
-## <a name="removing-a-default-property-mapping"></a>Odebrání výchozí mapování vlastností
+## <a name="removing-a-default-property-mapping"></a>Odebírá se výchozí mapování vlastností.
 
-Odeberte výchozí mapování vlastností pomocí volání <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> metodu <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>.
+Odeberte výchozí mapování vlastností voláním metody <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> na <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>.
 
-### <a name="to-remove-a-default-property-mapping"></a>Chcete-li odebrat výchozí mapování vlastností
+### <a name="to-remove-a-default-property-mapping"></a>Odebrání výchozího mapování vlastností
 
-- Zkopírujte následující kód do definice pro `Form1` třídy.
+- Zkopírujte následující kód do definice pro třídu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#13](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#13)]
      [!code-vb[PropertyMappingWithElementHost#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#13)]
 
-     `RemoveCursorMapping` Metoda odstraní výchozí mapování <xref:System.Windows.Forms.Control.Cursor%2A> vlastnost.
+     Metoda `RemoveCursorMapping` odstraní výchozí mapování pro vlastnost <xref:System.Windows.Forms.Control.Cursor%2A>.
 
-## <a name="extending-a-default-property-mapping"></a>Rozšíření výchozí mapování vlastností
+## <a name="extending-a-default-property-mapping"></a>Rozšíření výchozího mapování vlastností
 
-Můžete použít výchozí mapování vlastností a také rozšířit o vlastní mapování.
+Můžete použít výchozí mapování vlastností a také ho roztáhnout s vlastním mapováním.
 
-### <a name="to-extend-a-default-property-mapping"></a>Chcete-li rozšířit výchozí mapování vlastností
+### <a name="to-extend-a-default-property-mapping"></a>Postup při rozšiřování výchozího mapování vlastností
 
-- Zkopírujte následující kód do definice pro `Form1` třídy.
+- Zkopírujte následující kód do definice pro třídu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#15](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#15)]
      [!code-vb[PropertyMappingWithElementHost#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#15)]
 
-     `ExtendBackColorMapping` Metoda přidá převaděče vlastní vlastnost do existující <xref:System.Windows.Forms.Control.BackColor%2A> mapování vlastností.
+     Metoda `ExtendBackColorMapping` přidá do existujícího mapování vlastností <xref:System.Windows.Forms.Control.BackColor%2A> překladatele vlastní vlastnost.
 
-     `OnBackColorChange` Metoda přiřadí hostovaného ovládacího prvku konkrétní image <xref:System.Windows.Controls.Control.Background%2A> vlastnost. `OnBackColorChange` Metoda se volá, když se použije výchozí mapování vlastností.
+     Metoda `OnBackColorChange` přiřadí konkrétní obrázek k vlastnosti <xref:System.Windows.Controls.Control.Background%2A> hostovaného ovládacího prvku. Metoda `OnBackColorChange` je volána poté, co je použito výchozí mapování vlastností.
 
-## <a name="initialize-your-property-mappings"></a>Inicializovat mapování vlastností
+## <a name="initialize-your-property-mappings"></a>Inicializace mapování vlastností
 
-1. Zkopírujte následující kód do definice pro `Form1` třídy.
+1. Zkopírujte následující kód do definice pro třídu `Form1`.
 
      [!code-csharp[PropertyMappingWithElementHost#11](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#11)]
      [!code-vb[PropertyMappingWithElementHost#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#11)]
 
-     `Form1_Load` Metoda obslužné rutiny <xref:System.Windows.Forms.Form.Load> událostí a provádí následující inicializace.
+     Metoda `Form1_Load` zpracovává událost <xref:System.Windows.Forms.Form.Load> a provádí následující inicializaci.
 
-    - Vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> elementu.
+    - Vytvoří prvek <xref:System.Windows.Controls.Button> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
-    - Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
+    - Volá metody, které jste definovali dříve v návodu, aby se nastavilo mapování vlastností.
 
-    - Přiřadí počáteční hodnoty pro mapovanou vlastnosti.
+    - Přiřadí počáteční hodnoty k mapovaným vlastnostem.
 
-2. Stisknutím klávesy F5 sestavte a spusťte aplikaci.
+2. Stisknutím klávesy F5 Sestavte a spusťte aplikaci.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -146,5 +146,5 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

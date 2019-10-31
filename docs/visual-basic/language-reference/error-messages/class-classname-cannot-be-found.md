@@ -7,30 +7,30 @@ f1_keywords:
 helpviewer_keywords:
 - BC31098
 ms.assetid: 72528d02-77b7-4b4c-8b9e-d12f666f92ef
-ms.openlocfilehash: e1a33a56d196b2a8731f2ddb5c632b0de147db3e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec7ce5ddcfe647088393042dd2ada52d283535f7
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649917"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197539"
 ---
-# <a name="class-classname-cannot-be-found"></a>Třídy\<classname >' nebyl nalezen
-Třídy\<classname >' nebyl nalezen. Tento stav je zpravidla výsledkem neodpovídající 'Microsoft.VisualBasic.dll'.  
+# <a name="class-classname-cannot-be-found"></a>Třídu\<ClassName > nejde najít.
+Třídu\<ClassName > nebyla nalezena. Tento stav je obvykle výsledkem neshody "Microsoft. VisualBasic. dll".  
   
- Definovaný člen nebyl nalezen.  
+ Nelze nalézt definovaného člena.  
   
  **ID chyby:** BC31098  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Kompilovat program znovu, abyste viděli, pokud se chyba objeví znovu.  
+1. Zkompilujte program znovu, abyste viděli, jestli se chyba opakuje.  
   
-2. Pokud se chyba objeví znovu, uložte si práci a restartujte aplikaci Visual Studio.  
+2. Pokud se chyba opakuje, uložte práci a restartujte Visual Studio.  
   
-3. Pokud chyba potrvá, přeinstalujte Visual Basic.  
+3. Pokud chyba přetrvává, přeinstalujte Visual Basic.  
   
-4. Pokud chyba přetrvává po přeinstalaci, upozorní Microsoft Product Support Services.  
+4. Pokud potíže potrvají i po přeinstalaci, upozorněte služby Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

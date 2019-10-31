@@ -3,12 +3,12 @@ title: REST a gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od protokolu HTTP REST.
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: ba15bb1c5ee7c2cd48d75867512539190c80b0e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4baccccf12bcd76366a4a934bb39a41d76ac11e0
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094542"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191993"
 ---
 # <a name="rest-and-grpc"></a>REST a gRPC
 
@@ -52,7 +52,7 @@ Obrázek 4-21 ukazuje strukturu služby gRPC ve Visual Studiu 2019. Všimněte s
 
 **Obrázek 4-21**. projekt gRPC v aplikaci Visual Studio 2019
 
-## <a name="gprc-usage"></a>Využití gPRC
+## <a name="grpc-usage"></a>Využití gRPC
 
 gRPC je vhodný pro následující scénáře:
 

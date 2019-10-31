@@ -1,32 +1,32 @@
 ---
-title: Pokročilé technologie LINQ to XML programování (Visual Basic)
+title: Rozšířené programování LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 36018532-a55c-4538-8a27-98f475ea3415
-ms.openlocfilehash: f30f8f1c6dcdbabc1f32f4f7e216ce65a50396c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1ffed42036bd7398384717725328e19e6ac7812
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787202"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198280"
 ---
-# <a name="advanced-linq-to-xml-programming-visual-basic"></a>Pokročilé technologie LINQ to XML programování (Visual Basic)
-Tato část obsahuje informace, které budou pouze pro pokročilé vývojáře v určitých [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] scénáře.  
+# <a name="advanced-linq-to-xml-programming-visual-basic"></a>Rozšířené programování LINQ to XML (Visual Basic)
+Tato část poskytuje informace, které se budou uplatňovat jenom na pokročilé vývojáře v určitých [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]ch scénářích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Poznámky v LINQ to XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-annotations.md)|Popisuje postup přidání poznámek k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] uzly a atributy.|  
+|[Poznámky v LINQ to XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-annotations.md)|Popisuje, jak přidat poznámky k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] uzlů a atributů.|  
 |[Události LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-events.md)|Popisuje, jak napsat obslužné rutiny událostí pro události, ke kterým dochází při změně stromu XML.|  
-|[Programování s uzly (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-with-nodes.md)|Popisuje, jak k dotazování a manipulaci s uzlů na jemnější úrovni členitosti než elementů a atributů.|  
-|[Smíšený kód deklarativní nebo imperativní kód chyby (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md)|Popisuje problémy, které se zobrazí při kombinaci deklarativního kódu (dotazy) pomocí imperativního kódu (kód, který upraví stromu XML).|  
-|[Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)|Popisuje, jak streamování fragmentů XML ze <xref:System.Xml.XmlReader>. Tento postup můžete použít k řízení nároky na paměť pro vaše aplikace.|  
-|[Postupy: Provedení streamované transformace velkých dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md)|Popisuje, jak datový proud XML ze <xref:System.Xml.XmlReader>transformace fragmentu XML a pomocí výstupní datový proud stream <xref:System.Xml.Linq.XStreamingElement>.|  
-|[Postupy: Čtení a zápis kódovaného dokumentu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-read-and-write-an-encoded-document.md)|Popisuje, jak číst a zapisovat dokumenty XML kódované.|  
-|[Použití XSLT transformace stromu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/using-xslt-to-transform-an-xml-tree.md)|Popisuje, jak transformace stromu XML pomocí XSLT.|  
-|[Postupy: Použití anotací transformace stromů LINQ to XML ve stylu XSLT (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md)|Popisuje použití poznámek k usnadnění transformace stromu XML.|  
-|[Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)|Popisuje, jak serializace grafů objektů, které obsahují <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> objekty.|  
-|[Datová vazba WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml)|Popisuje způsob použití technologie LINQ to XML jako zdroj dat pro datové vazby v aplikacích Windows Presentation Foundation.|  
+|[Programování s uzly (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-with-nodes.md)|Popisuje, jak zadávat dotazy a manipulovat s uzly na jemnější úrovni členitosti než prvky a atributy.|  
+|[Smíšený deklarativní kód/chyby nepodmíněných kódů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md)|Popisuje problémy, které se zobrazí při kombinaci deklarativního kódu (dotazy) s imperativním kódem (kód, který upravuje strom XML).|  
+|[Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)|Popisuje způsob streamování fragmentů XML z <xref:System.Xml.XmlReader>. Tento postup můžete použít k řízení paměti aplikace.|  
+|[Postupy: provádění transformace streamování velkých dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md)|Popisuje, jak streamovat XML z <xref:System.Xml.XmlReader>, transformovat fragment XML a streamovat výstup pomocí <xref:System.Xml.Linq.XStreamingElement>.|  
+|[Postupy: čtení a zápis kódovaného dokumentu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-read-and-write-an-encoded-document.md)|Popisuje čtení a zápis dokumentů XML, které jsou zakódovány.|  
+|[Transformace stromu XML pomocí XSLT (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/using-xslt-to-transform-an-xml-tree.md)|Popisuje, jak transformovat strom XML pomocí XSLT.|  
+|[Postupy: použití poznámek k transformaci LINQ to XMLch stromů ve stylu XSLT (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md)|Popisuje, jak lze poznámky použít k usnadnění transformací stromu XML.|  
+|[Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)|Popisuje způsob serializace grafů objektů, které obsahují objekty <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument>.|  
+|[Datová vazba WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)|Popisuje, jak použít LINQ to XML jako zdroj dat pro datovou vazbu v aplikacích Windows Presentation Foundation.|  
   
 ## <a name="see-also"></a>Viz také:
 

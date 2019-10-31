@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 78a9bd2cf657376bbc324cdefd423b14a283f842
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 77db5201ab21dff1f04f76da5dd10d07aa377813
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104731"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191804"
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
@@ -23,7 +23,7 @@ C# Průvodce poskytuje mnoho zdrojů informací o daném C# jazyce. Tato lokalit
   - Začněte s [úvodními C# kurzy](tutorials/intro-to-csharp/index.md). Tyto kurzy vám umožní interaktivně prozkoumat C# jazyk v prohlížeči. Odtud můžete přejít k dalším [kurzům](tutorials/index.md). V těchto kurzech se dozvíte C# , jak vytvořit programy od začátku. Kurzy poskytují podrobný proces vytváření programů. Zobrazují jazykové koncepty a sestavování C# programů sami. Pokud raději přečtete informace o přehledu, zkuste [prohlídku C# jazyka](tour-of-csharp/index.md). Vysvětluje princip C# jazyka. Po přečtení budete mít základní porozumění jazyku a budete připraveni vyzkoušet si kurzy, nebo něco sami vytvořit.
 
 - Pro vývojáře, C#kteří jsou noví:
-  - Pokud jste vývoj dokončili ještě dřív, ale teprve začínáte C#, přečtěte si prohlídku tohoto [ C# jazyka](tour-of-csharp/index.md). Zabývá se základní syntaxí a strukturou pro jazyk a můžete použít prohlídku jazyka pro C# použití jiných jazyků, které jste použili. Můžete také procházet [kurzy](tutorials/index.md) a vyzkoušet základní C# programy.
+  - Pokud jste vývoj dokončili ještě dřív, ale teprve začínáte C#, přečtěte si [prohlídku tohoto C# jazyka](tour-of-csharp/index.md). Zabývá se základní syntaxí a strukturou pro jazyk a můžete použít prohlídku jazyka pro C# použití jiných jazyků, které jste použili. Můžete také procházet [kurzy](tutorials/index.md) a vyzkoušet základní C# programy.
 
 - Zkušení C# vývojáři:
   - Pokud jste se předtím C# používali, měli byste začít čtením toho, co je v nejnovější verzi jazyka. Nové funkce v aktuální verzi najdete [v C# části Co je nového](whats-new/index.md) .
@@ -66,6 +66,6 @@ C# Příručka obsahuje několik oddílů. Můžete si je přečíst v daném po
 
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s jazykem Visual C# a Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Začínáme pomocí vizuáluC#](/visualstudio/ide/quickstart-csharp-console)
 - [Průvodce technologií .NET](../standard/index.md)
-- [Ukázky C#](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)
+- [C#Vzory](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)

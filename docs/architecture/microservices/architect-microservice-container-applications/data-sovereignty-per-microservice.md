@@ -1,15 +1,15 @@
 ---
-title: Suverenita dat na mikroslužby
+title: Svrchovanost dat v jednotlivých mikroslužbách
 description: Suverenita dat na mikroslužby je jedním z klíčových bodů mikroslužeb. Každá mikroslužba musí být jediným vlastníkem své databáze a bude ji sdílet bez dalších. Všechny instance mikroslužeb se samozřejmě připojí ke stejné databázi s vysokou dostupností.
 ms.date: 09/20/2018
-ms.openlocfilehash: 3261446a84038b7b634242b0a0737472965168de
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: f606d6314f38bf3e2c163871af432806dddc7446
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834468"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191920"
 ---
-# <a name="data-sovereignty-per-microservice"></a>Suverenita dat na mikroslužby
+# <a name="data-sovereignty-per-microservice"></a>Svrchovanost dat v jednotlivých mikroslužbách
 
 Důležité pravidlo pro architekturu mikroslužeb je, že každá mikroslužba musí vlastnit svoje doménová data a logiku. Stejně jako plná aplikace vlastní svou logiku a data, takže musí každá mikroslužba vlastnit svou logiku a data v rámci autonomního životního cyklu s nezávislou nasazováním na mikroslužbu.
 
@@ -27,7 +27,9 @@ V tradičním přístupu existuje jedna databáze sdílená napříč všemi slu
 
 Aplikace monolitické, která obvykle používá jedinou relační databázi, má dvě důležité výhody: [transakční transakce](https://en.wikipedia.org/wiki/ACID) a jazyk SQL, jak pracují napříč všemi tabulkami a daty, které se vztahují k vaší aplikaci. Tento přístup poskytuje způsob, jak snadno napsat dotaz, který kombinuje data z více tabulek.
 
-Přístup k datům se ale při přesunu do architektury mikroslužeb bude mnohem složitější. I když mohou být v rámci mikroslužby nebo vázaného kontextu použity transakce s KYSELINou, data vlastněná pomocí jednotlivých mikroslužeb jsou pro danou mikroslužbu soukromá a dají se k ní přistupovat jenom prostřednictvím rozhraní API mikroslužeb. Zapouzdření dat zajišťuje, že mikroslužby budou volně propojeny a mohou se vyvíjet nezávisle na sobě. Pokud má více služeb přístup ke stejným datům, aktualizace schématu by vyžadovala koordinované aktualizace pro všechny služby. Tím by došlo k přerušení autonomie životního cyklu mikroslužeb. Ale distribuované datové struktury znamenají, že nemůžete vytvořit jedinou transakční transakci napříč mikroslužbami. To znamená, že je nutné použít konečnou konzistenci v případě, že obchodní proces zahrnuje více mikroslužeb. To je mnohem těžší implementovat než jednoduchá spojení SQL, protože nemůžete vytvářet omezení integrity ani používat distribuované transakce mezi samostatnými databázemi, jak vysvětlujeme později. Podobně mnoho dalších funkcí relační databáze není k dispozici napříč více mikroslužbami.
+Přístup k datům se ale při přesunu do architektury mikroslužeb bude mnohem složitější. I při použití transakcí kyseliny v rámci mikroslužby nebo vázaného kontextu je důležité vzít v úvahu, že data vlastněná jednotlivými mikroslužbami jsou pro tuto mikroslužbu soukromá a měla by k ní být přistupovaná synchronně prostřednictvím koncových bodů rozhraní API (REST, gRPC, Protokol SOAP atd.) nebo asynchronně prostřednictvím zasílání zpráv (AMQP nebo podobný).
+
+Zapouzdření dat zajišťuje, že mikroslužby budou volně propojeny a mohou se vyvíjet nezávisle na sobě. Pokud má více služeb přístup ke stejným datům, aktualizace schématu by vyžadovala koordinované aktualizace pro všechny služby. Tím by došlo k přerušení autonomie životního cyklu mikroslužeb. Ale distribuované datové struktury znamenají, že nemůžete vytvořit jedinou transakční transakci napříč mikroslužbami. To znamená, že je nutné použít konečnou konzistenci v případě, že obchodní proces zahrnuje více mikroslužeb. To je mnohem těžší implementovat než jednoduchá spojení SQL, protože nemůžete vytvářet omezení integrity ani používat distribuované transakce mezi samostatnými databázemi, jak vysvětlujeme později. Podobně mnoho dalších funkcí relační databáze není k dispozici napříč více mikroslužbami.
 
 Ještě víc, různé mikroslužby často používají různé *druhy* databází. Moderní aplikace ukládají a zpracovávají nejrůznější druhy dat a relační databáze nejsou vždycky nejlepší volbou. V některých případech použití může databáze NoSQL, jako je Azure CosmosDB nebo MongoDB, mít užitečnější datový model a nabízet lepší výkon a škálovatelnost než databáze SQL, jako je SQL Server nebo Azure SQL Database. V ostatních případech je relační databáze stále nejlepším řešením. Proto aplikace založené na mikroslužbách často používají kombinaci databází SQL a NoSQL, která se někdy nazývá přístup [trvalosti Polyglot](https://martinfowler.com/bliki/PolyglotPersistence.html) .
 
@@ -45,9 +47,9 @@ Je důležité zdůraznit, že definování služby pro každý ohraničený kon
 
 DDD výhody mikroslužeb tím, že získají reálné hranice ve formě distribuovaných mikroslužeb. Ale nápady, jako není sdílení modelu mezi mikroslužbami, je to, co v ohraničeném kontextu také potřebujete.
 
-### <a name="additional-resources"></a>Další zdroje informací:
+### <a name="additional-resources"></a>Další zdroje
 
-- **Chris Richardson. Vzor: databáze na službu** \
+- **Chris Richardson. Vzor: \ databáze na službu**
   <https://microservices.io/patterns/data/database-per-service.html>
 
 - **Martin Fowlera. BoundedContext** \
@@ -60,4 +62,5 @@ DDD výhody mikroslužeb tím, že získají reálné hranice ve formě distribu
   <https://www.infoq.com/articles/ddd-contextmapping>
 
 >[!div class="step-by-step"]
->[Předchozí](microservices-architecture.md)@no__t – 1 –[Další](logical-versus-physical-architecture.md)
+>[Předchozí](microservices-architecture.md)
+>[Další](logical-versus-physical-architecture.md)

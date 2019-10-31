@@ -2,12 +2,12 @@
 title: Zabezpečení aplikací ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 725ba568f3cd482991359237f4fc42b7da99bc0a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c99c56afca475caafe32cca3f50d074fb82e0e00
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795058"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196729"
 ---
 # <a name="securing-adonet-applications"></a>Zabezpečení aplikací ADO.NET
 Zápis zabezpečené aplikace ADO.NET zahrnuje víc než vyhnout se běžnému kódování nástrah, jako je třeba ověřování vstupu uživatele. Aplikace, která přistupuje k datům, má mnoho potenciálních bodů selhání, které může útočník zneužít k načítání citlivých dat, manipulaci s nimi nebo jejich zničení. Proto je důležité porozumět všem aspektům zabezpečení, a to od procesu modelování hrozeb během fáze návrhu vaší aplikace až po její případné nasazení a průběžnou údržbu.  
@@ -48,7 +48,7 @@ Zápis zabezpečené aplikace ADO.NET zahrnuje víc než vyhnout se běžnému k
  [Zdroje informací pro vytváření zabezpečených aplikací](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
  Obsahuje odkazy na témata týkající se vytváření zabezpečených aplikací.  
   
- [Bibliografie k zabezpečení](/visualstudio/ide/security-bibliography)  
+ [Bibliografie k zabezpečení](/visualstudio/ide/securing-applications)  
  Poskytuje odkazy na externí prostředky dostupné online a v tisku.  
   
 ## <a name="see-also"></a>Viz také:

@@ -2,20 +2,20 @@
 title: V umístění <location> došlo k interní chybě.
 ms.date: 07/20/2015
 ms.assetid: 0af78cbc-89ec-40ea-9dee-bac9f2cb7c1e
-ms.openlocfilehash: bcb83c684c54e7ccd5e3857a79d5c626fe7d3443
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a2b09a204ed7b67dcbad7816fdb3e12769a11bff
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622578"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197692"
 ---
-# <a name="internal-error-happened-at-location"></a>Došlo k vnitřní chybě v \<umístění >
-Došlo k vnitřní chybě. Řádek, ve kterém došlo k je obsažen v chybové zprávě.  
+# <a name="internal-error-happened-at-location"></a>Došlo k vnitřní chybě v umístění \<
+Došlo k vnitřní chybě. Řádek, ve kterém došlo k chybě, je obsažen v chybové zprávě.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Ujistěte se, že k této chybě negenerovaly `Error` příkazu nebo `Raise` metoda; Pokud nebyla, kontaktujte Microsoft Product Support Services hlášení podmínky, za kterých zprávy zobrazovaly.  
+- Ujistěte se, že tato chyba nebyla vygenerována příkazem `Error` nebo metodou `Raise`; Pokud tomu tak není, obraťte se na oddělení Microsoft Product Support Services, které oznamuje podmínky, za kterých se zobrazila zpráva.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základy ladicího programu](/visualstudio/debugger/debugger-basics)
+- [Základy ladicího programu](/visualstudio/debugger/debugger-feature-tour)
