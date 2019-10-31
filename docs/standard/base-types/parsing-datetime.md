@@ -1,6 +1,6 @@
 ---
-title: 'Postupy: převod řetězce na datum a čas'
-description: Další techniky k parsování řetězců, které představují data a časy, chcete-li vytvořit hodnotu DateTime z řetězce data a času.
+title: 'Postupy: převod řetězců na typ DateTime'
+description: Naučte se techniky analyzovat řetězce, které reprezentují data a časy pro vytvoření hodnoty DateTime z řetězce data a času.
 ms.date: 02/15/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,82 +14,80 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b4217221cc5199b9d8904be1ca3073878378b4e9
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 9957c38ad625a27395a3bcc3ddd9ce0b4797b93d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268182"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127606"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v .NET
 
-Analýza řetězců převést tak, aby <xref:System.DateTime> objekty je potřeba zadat informace o tom, jak jsou data a časy jsou reprezentovány jako text. Různé jazykové verze používají různé objednávek pro den, měsíc a rok. Reprezentace nějakou dobu 24 hodin, ostatní zadejte "Dop." a "Odp." Některé aplikace potřebují pouze datum. Ostatní potřebují jenom při spuštění. Ostatní stále potřebují zadejte datum a čas. Metody, které převod řetězců na <xref:System.DateTime> objekty umožňují poskytují podrobné informace o formátech očekáváte, že a prvky datum a čas potřeby vaší aplikace. Existují tři dílčí úkoly správně převádění textu do <xref:System.DateTime>:
+Analýza řetězců pro jejich převod na <xref:System.DateTime> objekty vyžaduje, abyste určili informace o tom, jak jsou data a časy reprezentované jako text. Různé jazykové verze používají různé objednávky pro den, měsíc a rok. Některá časová vyjádření používají 24hodinové hodiny, ostatní určují "AM" a "PM". Některé aplikace potřebují pouze datum. Ostatní potřebují jenom čas. Dál je potřeba zadat jak datum, tak i čas. Metody, které převádějí řetězce na <xref:System.DateTime> objekty, umožňují poskytovat podrobné informace o formátech, které očekáváte, a o prvcích data a času, které vaše aplikace potřebuje. Existují tři dílčí úkoly, které správně převádějí text na <xref:System.DateTime>:
 
-1. Je nutné zadat očekávanému formátu textu představující datum a čas.
-1. Můžete zadat jazykovou verzi pro formát Datum čas.
-1. Můžete zadat jak chybějící součásti v textu reprezentace nastavené datum a čas.
+1. Je nutné zadat očekávaný formát textu, který představuje datum a čas.
+1. Lze zadat jazykovou verzi pro formát data a času.
+1. Můžete určit, jak mají být chybějící komponenty v textové reprezentace nastaveny v poli Datum a čas.
 
-<xref:System.DateTime.Parse%2A> a <xref:System.DateTime.TryParse%2A> převádí mnoho běžných vyjádření data a času. <xref:System.DateTime.ParseExact%2A> a <xref:System.DateTime.TryParseExact%2A> metody převést řetězcovou reprezentaci, která odpovídají vzoru určenému řetězcem formátu data a času. (Naleznete v článcích na [řetězce formátu data a času](standard-date-and-time-format-strings.md) a [řetězce formátu vlastní data a času](custom-date-and-time-format-strings.md) podrobnosti.)
+Metody <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.TryParse%2A> převádějí mnoho běžných reprezentace data a času. Metody <xref:System.DateTime.ParseExact%2A> a <xref:System.DateTime.TryParseExact%2A> převádějí řetězcovou reprezentaci, která odpovídá vzoru určenému pomocí formátovacího řetězce data a času. (Podrobnosti najdete v článcích o [standardních formátovacích řetězcích data a času](standard-date-and-time-format-strings.md) a [vlastních formátovacích řetězcích data a času](custom-date-and-time-format-strings.md) .)
 
-Aktuální <xref:System.Globalization.DateTimeFormatInfo> objekt poskytuje větší kontrolu nad jak text by měl být interpretován jako datum a čas. Vlastnosti <xref:System.Globalization.DateTimeFormatInfo> popisují datum a čas oddělovače a názvy měsíců, dnů a větší počet období a formát pro označení "Dop." a "Odp.". Poskytuje aktuální jazykové verzi vlákna <xref:System.Globalization.DateTimeFormatInfo> , který představuje aktuální jazykovou verzi. Pokud chcete konkrétní jazykovou verzi nebo vlastní nastavení, zadejte <xref:System.IFormatProvider> parametr metody analýzy. Pro <xref:System.IFormatProvider> parametr, zadejte <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, nebo <xref:System.Globalization.DateTimeFormatInfo> objektu.
+Aktuální objekt <xref:System.Globalization.DateTimeFormatInfo> poskytuje větší kontrolu nad tím, jak by měl být text interpretován jako datum a čas. Vlastnosti <xref:System.Globalization.DateTimeFormatInfo> popisují oddělovače data a času a názvy měsíců, dnů a mazání a formát pro označení "AM" a "PM". Aktuální jazyková verze vlákna poskytuje <xref:System.Globalization.DateTimeFormatInfo>, která představuje aktuální jazykovou verzi. Chcete-li určit konkrétní jazykovou verzi nebo vlastní nastavení, zadejte parametr <xref:System.IFormatProvider> metody analýzy. Pro parametr <xref:System.IFormatProvider> zadejte objekt <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi, nebo objekt <xref:System.Globalization.DateTimeFormatInfo>.
 
-Text představující data nebo času můžou chybět některé informace. Data "12. březen" představuje do aktuálního roku Předpokládejme například, většina lidí. Podobně ". března 2018" představuje měsíc dne v roce 2018. Text, který často reprezentující čas provádí pouze zahrnují hodiny, minuty a označení dop. / odp.  Parsování metody zpracovávají chybějící informace s použitím rozumné výchozí hodnoty:
+Text, který představuje datum nebo čas, může chybět některé informace. Většina lidí například předpokládá, že datum "Březen 12" představuje aktuální rok. Podobně "březen 2018" představuje měsíc v březnu v roce 2018. Text, který představuje častou dobu, zahrnuje jenom hodiny, minuty a označení dopoledne/odpoledne.  Metody analýzy zpracovávají tyto chybějící informace pomocí přiměřených výchozích hodnot:
 
-- Když je k dispozici jenom čas, datum část použije aktuální datum.
-- Pokud je k dispozici pouze data, čas se předpokládá půlnoc.
-- Když rok není zadané v datum, použije se do aktuálního roku.
-- Když není zadaný den v měsíci, použije se první den v měsíci.
+- Pokud je k dispozici pouze čas, část data použije aktuální datum.
+- Pokud je k dispozici pouze datum, je časová část půlnoc.
+- Pokud rok není zadaný v datu, použije se aktuální rok.
+- Když není zadaný den v měsíci, použije se první měsíc v měsíci.
 
-Pokud se data nachází v řetězci, musí zahrnovat měsíc a den nebo rok. Pokud se nachází čas, musí zahrnovat do hodiny a minuty nebo označení dopoledne/odpoledne.
+Pokud se datum nachází v řetězci, musí obsahovat měsíc a jeden z dnů nebo roků. Pokud je k dispozici čas, musí zahrnovat hodinu a buď minuty, nebo označení dopoledne/odpoledne.
 
-Můžete zadat <xref:System.Globalization.DateTimeStyles.NoCurrentDateDefault> – konstanta přepsat toto výchozí nastavení. Při použití této konstanty, všechny chybějící rok, měsíc nebo jsou nastavena na hodnotu vlastnosti den `1`. [Poslední příklad](#styles-example) pomocí <xref:System.DateTime.Parse%2A> ukazuje toto chování.
+Můžete zadat <xref:System.Globalization.DateTimeStyles.NoCurrentDateDefault> konstantu pro přepsání těchto výchozích hodnot. Při použití této konstanty se všechny vlastnosti chybějícího roku, měsíce nebo dne nastaví na hodnotu `1`. [Poslední příklad](#styles-example) použití <xref:System.DateTime.Parse%2A> ukazuje toto chování.
 
-Kromě data a času může obsahovat řetězcovou reprezentaci data a času posun, která určuje, kolik času se liší od koordinovaného světového času (UTC). Například řetězec "2/14/2007 5:32:00 -7:00" definuje čas, který je sedm hodin dříve než čas UTC. Posun je z řetězcové reprezentace čas vynechán, analýza kódu vrátí <xref:System.DateTime> objekt s jeho <xref:System.DateTime.Kind%2A> nastavenou na <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>. Pokud je zadaný posun, analýze vrátí <xref:System.DateTime> objekt s jeho <xref:System.DateTime.Kind%2A> nastavenou na <xref:System.DateTimeKind.Local?displayProperty=nameWithType> a upravit její hodnotu na místní časové pásmo vašeho počítače. Toto chování lze upravit pomocí <xref:System.Globalization.DateTimeStyles> hodnotu s metoda analýzy.
+Kromě data a času může řetězcová reprezentace data a času zahrnovat posun, který indikuje, kolik času se liší od koordinovaného světového času (UTC). Například řetězec "2/14/2007 5:32:00 -7:00" definuje čas, který je sedm hodin starší než UTC. Pokud je posun vynechán z řetězcové reprezentace času, analýza vrátí objekt <xref:System.DateTime> s vlastností <xref:System.DateTime.Kind%2A> nastavenou na <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>. Je-li zadán posun, funkce Analýza vrátí objekt <xref:System.DateTime> s vlastností <xref:System.DateTime.Kind%2A> nastavenou na hodnotu <xref:System.DateTimeKind.Local?displayProperty=nameWithType> a jeho hodnotou se upraví na místní časové pásmo vašeho počítače. Toto chování můžete upravit pomocí <xref:System.Globalization.DateTimeStyles> hodnoty s metodou analýzy.
   
-Poskytovatele formátu se používá také k interpretaci nejednoznačný číselná data. To není jasné, které součásti data reprezentovaná tímto řetězcem "02/03/04" jsou měsíc, den a rok. Komponenty se interpretují podle pořadí podobné formáty kalendářního data v poskytovatele formátu.
+Zprostředkovatel formátu slouží také k interpretaci nejednoznačného číselného data. Není jasné, které součásti data reprezentované řetězcem "02/03/04" jsou měsíc, den a rok. Komponenty jsou interpretovány podle pořadí podobných formátů data ve zprostředkovateli formátu.
 
-## <a name="parse"></a>Analýzy
+## <a name="parse"></a>Analýza
 
-Následující příklad ukazuje použití <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> způsobů, jak převést `string` do <xref:System.DateTime>. Tento příklad používá jazykové verze přidružené k aktuální vlákno. Pokud <xref:System.Globalization.CultureInfo> přidružené k aktuální jazykové verze nelze parsovat vstupní řetězec <xref:System.FormatException> je vyvolána výjimka.
+Následující příklad ukazuje použití metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> k převedení `string` na <xref:System.DateTime>. V tomto příkladu se používá jazyková verze přidružená k aktuálnímu vláknu. Pokud <xref:System.Globalization.CultureInfo> přidružená k aktuální jazykové verzi nemůže analyzovat vstupní řetězec, je vyvolána <xref:System.FormatException>.
 
 > [!TIP]
-> Spustit všechny jazyka C# ukázky v tomto článku v prohlížeči. Stisknutím klávesy **spustit** tlačítko, abyste viděli výstup. Můžete také upravit, aby sami experimentovat.
+> Všechny C# ukázky v tomto článku se spouštějí v prohlížeči. Kliknutím na tlačítko **Spustit** zobrazíte výstup. Můžete je také upravit a experimentovat.
 
 > [!NOTE]
-> Tyto příklady jsou k dispozici v úložišti Githubu dokumentace pro obě [jazyka C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) a [VB](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo si můžete stáhnout jako zipfile pro projekt [jazyka C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
+> Tyto příklady jsou k dispozici v úložišti Docs na GitHubu pro i [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) [VB](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Můžete si také stáhnout projekt jako podřízený ZipFile pro [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]
 
-Můžete také explicitně definovat jazykovou verzi, jejíž úmluvy formátování se používají při analýze řetězce. Můžete určit jeden ze standardních <xref:System.Globalization.DateTimeFormatInfo> objektů vrácených podle <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost. Následující příklad používá k analýze německé řetězce do poskytovatele formátu <xref:System.DateTime>. Vytvoří <xref:System.Globalization.CultureInfo> představující `de-DE` jazykovou verzi. Že `CultureInfo` objekt zajistí úspěšné analýzy tento konkrétní řetězec. To vylučuje jakékoli nastavení <xref:System.Threading.Thread.CurrentCulture> z <xref:System.Threading.Thread.CurrentThread>.  
+Můžete také explicitně definovat jazykovou verzi, jejíž konvence formátování jsou používány při analýze řetězce. Zadejte jeden ze standardních <xref:System.Globalization.DateTimeFormatInfo> objektů vrácených vlastností <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>. Následující příklad používá poskytovatele formátu k analýze německého řetězce do <xref:System.DateTime>. Vytvoří <xref:System.Globalization.CultureInfo> reprezentující `de-DE`ou jazykovou verzi. To `CultureInfo` objekt zajišťuje úspěšnou analýzu tohoto konkrétního řetězce. To vylučuje jakékoliv nastavení <xref:System.Threading.Thread.CurrentCulture> <xref:System.Threading.Thread.CurrentThread>.  
   
 [!code-csharp[Parsing.DateAndTime#2](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#2)]
 [!code-vb[Parsing.DateAndTime#2](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#2)]
 
-Nicméně i když můžete použít přetížení <xref:System.DateTime.Parse%2A> metodu pro určení vlastních poskytovatelů formátu, metoda nepodporuje analýzu nestandardní formáty. Chcete-li analyzovat datum a čas vyjádřený nestandardní formát, použijte <xref:System.DateTime.ParseExact%2A> metoda místo.  
+Nicméně i když můžete použít přetížení metody <xref:System.DateTime.Parse%2A> k určení vlastních poskytovatelů formátu, metoda nepodporuje analýzu nestandardních formátů. Chcete-li analyzovat datum a čas vyjádřený v nestandardním formátu, použijte místo toho metodu <xref:System.DateTime.ParseExact%2A>.  
 
-<a name="styles-example"></a>V následujícím příkladu <xref:System.Globalization.DateTimeStyles> výčet k určení, že aktuální informace o datu a času nepřidávat <xref:System.DateTime> pro Nespecifikovaná pole.  
+<a name="styles-example"></a>Následující příklad používá výčet <xref:System.Globalization.DateTimeStyles> k určení, že informace o aktuálním datu a čase by neměly být přidány do <xref:System.DateTime> pro nespecifikovaná pole.  
 
 [!code-csharp[Parsing.DateAndTime#3](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#3)]
 [!code-vb[Parsing.DateAndTime#3](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#3)]
  
 ## <a name="parseexact"></a>ParseExact
 
-<xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> Metoda převede řetězec <xref:System.DateTime> objektu, pokud odpovídá jednomu ze vzorů zadaného řetězce. Když tato metoda předána řetězec, který není jedním z formuláře zadaný <xref:System.FormatException> je vyvolána výjimka. Můžete zadat jednu standardní datum a čas specifikátory formátu nebo kombinace specifikátorů vlastního formátu. Pomocí specifikátoru vlastního formátu, je možné, můžete vytvořit vlastní rozpoznávání řetězec. Informace o specifikátorech, najdete v tématech na [řetězce formátu data a času](standard-date-and-time-format-strings.md) a [řetězce formátu vlastní data a času](custom-date-and-time-format-strings.md).  
+Metoda <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> převede řetězec na objekt <xref:System.DateTime>, pokud odpovídá jedné ze zadaných vzorů řetězce. Když je do této metody předána řetězec, který není jedním z určených formulářů, je vyvolána <xref:System.FormatException>. Můžete zadat jeden ze specifikátorů standardního formátu data a času nebo kombinaci vlastního specifikátoru formátu. Pomocí specifikátorů vlastního formátu je možné vytvořit vlastní řetězec pro rozpoznávání. Vysvětlení specifikátorů naleznete v tématech o standardních formátovacích [řetězcích data a času](standard-date-and-time-format-strings.md) a [vlastních formátovacích řetězcích data a času](custom-date-and-time-format-strings.md).  
 
-V následujícím příkladu <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> metodě se předává objekt string analyzovat, za nímž následuje specifikátoru formátu, za nímž následuje <xref:System.Globalization.CultureInfo> objektu. To <xref:System.DateTime.ParseExact%2A> metoda analyzovat pouze řetězce, které mají tvar dlouhého data v `en-US` jazykovou verzi.  
+V následujícím příkladu je metoda <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> předána objektu řetězce k analýze následovaný specifikátorem formátu následovaným objektem <xref:System.Globalization.CultureInfo>. Tato metoda <xref:System.DateTime.ParseExact%2A> může analyzovat pouze řetězce, které následují po dlouhém vzoru data v `en-US` jazykové verzi.  
 
 [!code-csharp[Parsing.DateAndTime#4](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#4)]
 [!code-vb[Parsing.DateAndTime#4](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#4)]
 
-Každé přetížení <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.ParseExact%2A> metod má také <xref:System.IFormatProvider> parametr, který poskytuje informace specifické jazykové verze o formátování řetězce. To <xref:System.IFormatProvider> je objekt <xref:System.Globalization.CultureInfo> objekt, který reprezentuje standardní jazykové verze nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost.  <xref:System.DateTime.ParseExact%2A> také používá další řetězec nebo pole argument řetězce, který definuje jeden nebo více vlastní datum a čas formátů.  
+Každé přetížení <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.ParseExact%2A> metody má také parametr <xref:System.IFormatProvider>, který poskytuje informace specifické pro jazykovou verzi o formátování řetězce. Tento objekt <xref:System.IFormatProvider> je objekt <xref:System.Globalization.CultureInfo>, který představuje standardní jazykovou verzi nebo objekt <xref:System.Globalization.DateTimeFormatInfo>, který je vrácen vlastností <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>.  <xref:System.DateTime.ParseExact%2A> také používá další argument řetězce nebo pole řetězců, který definuje jeden nebo více vlastních formátů data a času.  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Analýza řetězců](parsing-strings.md)
 - [Typy formátování](formatting-types.md)
 - [Převod typů v rozhraní .NET](type-conversion.md)
-- [Formáty data a času](standard-date-and-time-format-strings.md)
-- [Řetězce formátu vlastní data a času](custom-date-and-time-format-strings.md)
+- [Standardní formáty data a času](standard-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)

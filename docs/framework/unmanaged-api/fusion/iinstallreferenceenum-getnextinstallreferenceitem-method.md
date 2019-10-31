@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce969c9d-6538-4c34-8784-148ffd99fe7a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 20e2bff4257df64f761fd8fff880643d4e786748
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0dad50f1acac38f8cdc505026e88d42882deb580
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796455"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131721"
 ---
 # <a name="iinstallreferenceenumgetnextinstallreferenceitem-method"></a>IInstallReferenceEnum::GetNextInstallReferenceItem – metoda
 Získá ukazatel na další objekt [IInstallReferenceItem –](iinstallreferenceitem-interface.md) obsažený v tomto objektu [IInstallReferenceEnum –](iinstallreferenceenum-interface.md) .  
@@ -39,18 +37,18 @@ HRESULT GetNextInstallReferenceItem (
   
 ## <a name="parameters"></a>Parametry  
  `ppRefItem`  
- mimo Vrácený `IInstallReferenceItem` ukazatel.  
+ mimo Vrácený ukazatel `IInstallReferenceItem`.  
   
  `dwFlags`  
- pro Vyhrazeno pro budoucí rozšíření. `dwFlags`musí mít hodnotu 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwFlags` musí být 0 (nula).  
   
  `pvReserved`  
- pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být odkaz s hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** Fusion. h  
+ **Hlavička:** Fusion. h  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: 7cfaee76-e284-4a66-a431-8e33f0f60038
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e5a3d06f72ed7163a414ef12e9bec650d8b20783
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 83afe121b6bf0de3c5542695e38b6605db7a8b6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774282"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121820"
 ---
 # <a name="icoreclrdebugtarget-interface"></a>ICoreClrDebugTarget – rozhraní
-Poskytuje metody, které řídí počty odkazů, výčet procesů a uvolňují paměť spojené s ladicím programem, který je připojen na vzdálené cílové Macintosh Silverlight.  
+Poskytuje metody, které řídí počty odkazů, vytváří výčet procesů a uvolňuje paměť přidruženou k ladicímu programu, který je připojen ke vzdálenému počítači se službou Silverlight.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,21 +51,21 @@ class ICoreClrDebugTarget {
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICoreClrDebugTarget::EnumProcesses – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md)|Vytváří výčet procesů, které běží na vzdáleném počítači.|  
-|[ICoreClrDebugTarget::EnumRuntimes – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md)|Vytvoří výčet common language runtime (CLRs) v zadané procesu ve vzdáleném počítači.|  
-|[ICoreClrDebugTarget::FreeMemory – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)|Uvolnění paměti, která je přidělena výčet metod této třídy.|  
+|[ICoreClrDebugTarget::EnumProcesses – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md)|Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.|  
+|[ICoreClrDebugTarget::EnumRuntimes – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md)|Vytvoří výčet modulu CLR (Common Language Runtime) (CLRs) v zadaném procesu na vzdáleném počítači.|  
+|[ICoreClrDebugTarget::FreeMemory – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)|Uvolní paměť, která je přidělena metodami výčtu v této třídě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce v současné době je podporována pouze pro ladění cíl aplikace založené na technologii Silverlight, která běží na vzdáleném počítači Macintosh.  
+ V současné době je tato funkce podporována pouze pro ladění cíle aplikace založeného na programu Silverlight, který je spuštěn ve vzdáleném počítači se systémem Macintosh.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1  
+ **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 

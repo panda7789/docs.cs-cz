@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0af312af-98e9-415e-b182-42e80a1aee51
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7cb58593a30b855c9fabf55a6ca0a50886dc371f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e1d63ab28276f69e5b3a762520db8f8300d05bc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779486"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134765"
 ---
 # <a name="igcthreadcontrolsuspensionstarting-method"></a>IGCThreadControl::SuspensionStarting – metoda
-Upozorňuje hostitele, že modul runtime zahajuje pozastavení vláken pro uvolnění paměti nebo jiných pozastavení.  
+Upozorňuje hostitele, že modul runtime zahajuje pozastavení vlákna pro uvolňování paměti nebo jiné pozastavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +32,16 @@ HRESULT SuspensionStarting ( );
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Nelze změnit plán žádného vlákna během `SuspensionStarting` zpětného volání.  
+ Během zpětného volání `SuspensionStarting` neplánujte žádná vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

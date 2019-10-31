@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ac59d27-783f-4a87-b7a8-baa3ccc54582
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d7432771a7d8eee9cea10f883dd3bd91f5ffb74
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a72eabb1b405c67f5603164e56a589a237603d2f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761386"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130698"
 ---
 # <a name="icordebugmanagedcallbacklogswitch-method"></a>ICorDebugManagedCallback::LogSwitch – metoda
-Ladicí program upozorní, že společným pojítkem language runtime (CLR) spravované volal metodu <xref:System.Diagnostics.Switch> třídy k vytvoření, úpravě nebo odstranění přepínače ladění a trasování.  
+Oznamuje ladicímu programu, že spravované vlákno modulu CLR (Common Language Runtime) volalo metodu ve třídě <xref:System.Diagnostics.Switch> k vytvoření, úpravě nebo odstranění přepínače ladění/trasování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT LogSwitch (
   
 ## <a name="parameters"></a>Parametry  
  `PAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující spravované vlákna, které vytvořili, změněn nebo odstraněn přepínač ladění a trasování.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující spravované vlákno, které vytvořil, upravil nebo odstranil přepínač ladění/trasování.  
   
  `pThread`  
- [in] Ukazatel na objekt ICorDebugThread, která představuje spravované vlákno.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje spravované vlákno.  
   
  `lLevel`  
- [in] Hodnota, která určuje úroveň závažnosti popisné zprávy, která byla zapsána do protokolu událostí.  
+ pro Hodnota, která určuje úroveň závažnosti popisné zprávy, která byla zapsána do protokolu událostí.  
   
  `ulReason`  
- [in] Hodnota [logswitchcallreason –](../../../../docs/framework/unmanaged-api/debugging/logswitchcallreason-enumeration.md) výčet, který označuje, operace provedené na přepínač ladění a trasování.  
+ pro Hodnota výčtu [LogSwitchCallReason –](../../../../docs/framework/unmanaged-api/debugging/logswitchcallreason-enumeration.md) , která označuje operaci prováděnou na přepínači ladění/trasování.  
   
  `pLogSwitchName`  
- [in] Ukazatel na název přepínače, ladění a trasování.  
+ pro Ukazatel na název přepínače ladění/trasování.  
   
  `pParentName`  
- [in] Ukazatel na název nadřazeného přepínače, ladění a trasování.  
+ pro Ukazatel na název nadřazeného přepínače ladění/trasování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

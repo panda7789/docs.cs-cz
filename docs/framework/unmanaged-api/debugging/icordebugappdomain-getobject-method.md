@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78232e6f-ae18-4cfa-a6cd-e79471cf9d76
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1201ac0dca9cbd48c24b2621eba079ae672fd310
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f2c881603cfa0e4b3d2dc8d1e996631b51d1e850
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737854"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134703"
 ---
 # <a name="icordebugappdomaingetobject-method"></a>ICorDebugAppDomain::GetObject – metoda
-Získá ukazatel rozhraní common language runtime (CLR) aplikační doménu.  
+Načte ukazatel rozhraní do aplikační domény modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetObject (
   
 ## <a name="parameters"></a>Parametry  
  `ppObject`  
- [out] Ukazatel na adresu objektu rozhraní ICorDebugValue, který představuje doménu aplikace modulu CLR.  
+ mimo Ukazatel na adresu objektu rozhraní ICorDebugValue, který představuje doménu aplikace CLR.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud spravované <xref:System.AppDomain?displayProperty=nameWithType> objekt nebyl byl vytvořen pro tuto doménu aplikace, vrátí metoda `S_FALSE` a umístí `NULL` v `*ppObject`.  
+ Pokud objekt spravovaného <xref:System.AppDomain?displayProperty=nameWithType> nebyl vytvořen pro tuto doménu aplikace, metoda vrátí `S_FALSE` a umístí `NULL` do `*ppObject`.  
   
 ## <a name="remarks"></a>Poznámky  
- Každá doména aplikace v procesu může mít spravované <xref:System.AppDomain?displayProperty=nameWithType> objektu v modulu runtime, který ho zastupuje. Tato funkce získá icordebugvalue – rozhraní objekt, který odpovídá této spravované <xref:System.AppDomain?displayProperty=nameWithType> objektu.  
+ Každá doména aplikace v procesu může mít spravovaný objekt <xref:System.AppDomain?displayProperty=nameWithType> v modulu runtime, který ho představuje. Tato funkce získá objekt rozhraní ICorDebugValue, který odpovídá tomuto spravovanému objektu <xref:System.AppDomain?displayProperty=nameWithType>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]

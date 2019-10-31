@@ -8,27 +8,25 @@ dev_langs:
 helpviewer_keywords:
 - cancellation, how to poll for requests
 ms.assetid: c7f2f022-d08e-4e00-b4eb-ae84844cb1bc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1794b47db87f636cc2ccdf2eecb9e7ca334ae659
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: df76674e3003bbb77ef062e90b1dc3283f681d35
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926019"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138027"
 ---
 # <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Postupy: Naslouchání požadavkům zrušení dotazováním
-Následující příklad ukazuje jeden ze způsobů, který uživatelský kód může dotazovat token zrušení v pravidelných intervalech, pokud chcete zobrazit, zda bylo vyžádáno zrušení z volajícího vlákna. V tomto příkladu <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typu, ale stejný vzor se vztahuje na asynchronní operace, které jsou vytvořené přímo nástrojem <xref:System.Threading.ThreadPool?displayProperty=nameWithType> typu nebo <xref:System.Threading.Thread?displayProperty=nameWithType> typu.  
+Následující příklad ukazuje jeden ze způsobů, jak může uživatelský kód dotazovat token zrušení v pravidelných intervalech, aby bylo možné zjistit, zda bylo zrušení požadováno z volajícího vlákna. V tomto příkladu se používá typ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, ale stejný vzor se vztahuje pouze na asynchronní operace vytvořené přímo pomocí <xref:System.Threading.ThreadPool?displayProperty=nameWithType> typu nebo typu <xref:System.Threading.Thread?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
- Dotazování vyžaduje určitý druh smyčky nebo rekurzivní kód, který může číst pravidelně hodnotu datový typ Boolean <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost. Pokud používáte <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typ a čekají na dokončení na volajícím vlákně úlohy, můžete použít <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metodu pro kontrolu vlastnosti a vyvolá výjimku. Tímto způsobem zajistíte, že je vyvolána správná výjimka v reakci na žádost. Pokud používáte <xref:System.Threading.Tasks.Task>, je lepší než vyvolávání ručně voláním této metody <xref:System.OperationCanceledException>. Pokud nemáte k vyvolání výjimky, pak stačí Zkontrolujte vlastnost a vrácení z metody, pokud je vlastnost `true`.  
+ Dotazování vyžaduje určitý typ smyčky nebo rekurzivního kódu, který může pravidelně číst hodnotu vlastnosti Boolean <xref:System.Threading.CancellationToken.IsCancellationRequested%2A>. Pokud používáte typ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a čekáte na dokončení úlohy ve volajícím vlákně, můžete použít metodu <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> a ověřit vlastnost a vyvolat výjimku. Pomocí této metody zajistíte, aby byla v reakci na požadavek vyvolána správná výjimka. Pokud používáte <xref:System.Threading.Tasks.Task>, pak volání této metody je lepší než ruční vyvolání <xref:System.OperationCanceledException>. Pokud nemusíte vyvolat výjimku, můžete pouze zaškrtnout vlastnost a vrátit se z metody, pokud je vlastnost `true`.  
   
  [!code-csharp[Cancellation#11](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#11)]
  [!code-vb[Cancellation#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex11.vb#11)]  
   
- Volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> je velmi rychlý a nezavádí významné režijní náklady v smyčky.  
+ Volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> je mimořádně rychlé a nezavádí v cyklech významnou režii.  
   
- Při volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, budete muset explicitně zkontrolovala <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnosti, pokud máte jinou práci v reakci na zrušení kromě vyvolat výjimku. V tomto příkladu vidíte, že kód ve skutečnosti přistupuje k vlastnosti dvakrát: jednou na explicitní přístupu a znovu <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody. Ale protože operace čtení <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost je pouze jeden těkavých instrukce na přístup pro čtení, double přístup není významné z hlediska výkonu. Je stále vhodnější pro volání metody spíše než ručně vyvolat <xref:System.OperationCanceledException>.  
+ Pokud voláte <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, stačí pouze explicitně zaškrtnout vlastnost <xref:System.Threading.CancellationToken.IsCancellationRequested%2A>, pokud máte jinou práci v reakci na zrušení Kromě vyvolání výjimky. V tomto příkladu vidíte, že kód ve skutečnosti přistupuje k vlastnosti dvakrát: jednou v explicitním přístupu a znovu v metodě <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>. Vzhledem k tomu, že operace čtení vlastnosti <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> zahrnuje pouze jednu nestálou instrukci čtení pro přístup, je přístup typu Double nevýznamný z hlediska výkonu. Je stále vhodné volat metodu místo ručního vyvolání <xref:System.OperationCanceledException>.  
   
 ## <a name="see-also"></a>Viz také:
 

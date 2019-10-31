@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1590febe-96c2-4046-97db-d81d81d67e01
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3695f150797e6a59a2fb1d58c99f233a35d687ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5cb95fb7cf70dbf7616e9bc59ebf44de090de883
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133434"
 ---
 # <a name="icordebugthreadgetobject-method"></a>ICorDebugThread::GetObject – metoda
-Získá ukazatel rozhraní k společným pojítkem language runtime (CLR).  
+Načte ukazatel rozhraní do vlákna modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetObject (
   
 ## <a name="parameters"></a>Parametry  
  `ppObject`  
- [out] Ukazatel na adresu objektu rozhraní ICorDebugValue, který představuje vlákna modulu CLR.  
+ mimo Ukazatel na adresu objektu rozhraní ICorDebugValue, který představuje vlákno CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

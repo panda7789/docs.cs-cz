@@ -15,14 +15,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a35f4ffa88211d914dbf84c87da49fafa89a929
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a4f4c0e1af379d31c5b478472780d5c7de813bf6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353892"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121937"
 ---
 # <a name="metadata-and-self-describing-components"></a>Metadata a komponenty popisující samy sebe
 
@@ -48,7 +46,7 @@ Součást softwaru (. exe nebo. dll), která byla napsána v jednom jazyce, nemo
 
   - Členové (metody, pole, vlastnosti, události, vnořené typy).
 
-- Atribut.
+- atribut.
 
   - Další popisné prvky, které upravují typy a členy.
 
@@ -64,7 +62,7 @@ Metadata jsou klíč pro jednodušší programovací model a eliminují potřebu
 
   Metadata poskytují všechny informace, které jsou požadovány pro zkompilovaný kód, k dědění třídy ze souboru PE napsaného v jiném jazyce. Můžete vytvořit instanci libovolné třídy napsané v jakémkoli spravovaném jazyce (libovolný jazyk, který cílí na modul CLR), aniž byste se museli starat o explicitní zařazování nebo použití vlastního kódu interoperability.
 
-- Atribut.
+- atribut.
 
   .NET Framework umožňuje deklarovat v kompilovaném souboru konkrétní druhy metadat označované jako atributy. Atributy lze najít v rámci .NET Framework a používají se k tomu, aby lépe napracovaly podrobnosti o tom, jak se program chová během běhu. Kromě toho můžete pomocí uživatelsky definovaných uživatelských atributů vygenerovat do souborů .NET Framework vlastní metadata. Další informace najdete v tématu [atributy](../../docs/standard/attributes/index.md).
 
@@ -86,7 +84,7 @@ Token metadat je číslo se čtyřmi bajty. Horní bajt označuje tabulku metada
 
 `0x06000004`
 
-Horní bajt (`0x06`) označuje, že se jedná o token **MethodDef** . Dolní tři bajty (`000004`) sdělují modulu CLR (Common Language Runtime), aby vypadal na čtvrtém řádku tabulky **MethodDef** pro informace, které popisují tuto definici metody.
+Horní Byte (`0x06`) označuje, že se jedná o token **MethodDef** . Dolní tři bajty (`000004`) sdělí modulu CLR (Common Language Runtime), aby vypadal na čtvrtém řádku tabulky **MethodDef** pro informace, které popisují tuto definici metody.
 
 ### <a name="metadata-within-a-pe-file"></a>Metadata v rámci souboru PE
 
@@ -100,7 +98,7 @@ Je-li program kompilován pro modul CLR (Common Language Runtime), je převeden 
 
 ## <a name="run-time-use-of-metadata"></a>Používání metadat v době běhu
 
-Chcete-li lépe pochopit metadata a její roli v modulu CLR (Common Language Runtime), může být užitečné vytvořit jednoduchý program a Ukázat, jak metadata ovlivňují dobu běhu. Následující příklad kódu ukazuje dvě metody uvnitř třídy s názvem `MyApp`. Metoda `Main` je vstupním bodem programu, zatímco metoda `Add` jednoduše vrátí součet dvou celočíselných argumentů.
+Chcete-li lépe pochopit metadata a její roli v modulu CLR (Common Language Runtime), může být užitečné vytvořit jednoduchý program a Ukázat, jak metadata ovlivňují dobu běhu. Následující příklad kódu ukazuje dvě metody uvnitř třídy s názvem `MyApp`. Metoda `Main` je vstupním bodem programu, zatímco metoda `Add` jednoduše vrací součet dvou celočíselných argumentů.
 
 ```vb
 Public Class MyApp
@@ -136,7 +134,7 @@ public class MyApp
 
 Když se kód spustí, modul runtime načte modul do paměti a požádá o metadata pro tuto třídu. Po načtení modul runtime provádí rozsáhlou analýzu datového proudu jazyka MSIL (Microsoft Intermediate Language), který je převede na rychlé instrukce nativního počítače. Modul runtime používá kompilátor JIT (just-in-time) k převedení instrukcí jazyka MSIL do nativního strojového kódu na jednu metodu v čase podle potřeby.
 
-Následující příklad ukazuje část MSIL vytvořenou z předchozí funkce `Main` předchozího kódu. Můžete zobrazit jazyk MSIL a metadata z libovolné .NET Framework aplikace pomocí [jazyka MSIL Disassembler (Ildasm. exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md).
+Následující příklad ukazuje část MSIL vytvořenou z funkce `Main` předchozího kódu. Můžete zobrazit jazyk MSIL a metadata z libovolné .NET Framework aplikace pomocí [jazyka MSIL Disassembler (Ildasm. exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md).
 
 ```console
 .entrypoint
@@ -155,15 +153,15 @@ IL_000c:  ldloc.1
 IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
 ```
 
-Kompilátor JIT přečte MSIL pro celou metodu, analyzuje ji důkladně a generuje efektivní nativní instrukce pro metodu. Při `IL_000d` se zjistil token metadat pro metodu `Add` (`/*` `06000003 */`) a modul runtime používá token ke konzultaci třetího řádku tabulky **MethodDef** .
+Kompilátor JIT přečte MSIL pro celou metodu, analyzuje ji důkladně a generuje efektivní nativní instrukce pro metodu. V `IL_000d`se zjistil token metadat pro metodu `Add` (`/*` `06000003 */`) a modul runtime používá token ke konzultaci třetího řádku tabulky **MethodDef** .
 
 Následující tabulka ukazuje část tabulky **MethodDef** , na kterou odkazuje token metadat, který popisuje metodu `Add`. I když v tomto sestavení existují jiné tabulky metadat a mají své vlastní jedinečné hodnoty, je diskutována pouze tato tabulka.
 
-|Řádek|Relativní virtuální adresa (RVA)|Příznaky ImplFlags|příznaky|Name<br /><br /> (Odkazuje na haldu řetězců.)|Podpis (odkazuje na haldu objektů BLOB.)|
+|řadě|Relativní virtuální adresa (RVA)|Příznaky ImplFlags|Příznaky|Name<br /><br /> (Odkazuje na haldu řetězců.)|Podpis (odkazuje na haldu objektů BLOB.)|
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|
-|1|0x00002050|KÓDU<br /><br /> Spravovaní|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> . ctor|. ctor (konstruktor)||
-|2|0x00002058|KÓDU<br /><br /> Spravovaní|Public<br /><br /> Static<br /><br /> ReuseSlot|Hlavní|Řetězec|
-|3|0x0000208c|KÓDU<br /><br /> Spravovaní|Public<br /><br /> Static<br /><br /> ReuseSlot|Přidat|int, int, int|
+|první|0x00002050|KÓDU<br /><br /> starosti|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> Znak<br /><br /> . ctor|. ctor (konstruktor)||
+|odst|0x00002058|KÓDU<br /><br /> starosti|Public<br /><br /> Static<br /><br /> ReuseSlot|Hlavní|String|
+|3|0x0000208c|KÓDU<br /><br /> starosti|Public<br /><br /> Static<br /><br /> ReuseSlot|Přidejte|int, int, int|
 
 Každý sloupec tabulky obsahuje důležité informace o vašem kódu. Sloupec **RVA** umožňuje modulu runtime vypočítat počáteční adresu paměti jazyka MSIL, která definuje tuto metodu. Sloupce **příznaky ImplFlags** a **Flags** obsahují vyčíslení, které popisují metodu (například zda je metoda veřejná nebo soukromá). Sloupec **název** indexuje název metody z haldy řetězce. Sloupec **Signatura** indexuje definici signatury metody v haldě objektů BLOB.
 

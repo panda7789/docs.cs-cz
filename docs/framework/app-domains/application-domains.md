@@ -12,14 +12,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0ce9d5f706a473d64e97fb02e0426060878d9c75
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834034"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119971"
 ---
 # <a name="application-domains"></a>Aplikační domény
 
@@ -64,15 +62,15 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
 - Pokud sestavení není načteno jako doménově neutrální, musí být kompilována JIT v každé doméně aplikace, ve které je načtena. Sestavení lze však uvolnit z procesu uvolněním všech domén aplikace, ve kterých je načtena.  
   
- Hostitel modulu runtime určuje, zda mají být sestavení načtena jako doménově neutrální při načtení modulu runtime do procesu. U spravovaných aplikací použijte atribut <xref:System.LoaderOptimizationAttribute> na metodu vstupního bodu pro proces a zadejte hodnotu z asociovaného výčtu <xref:System.LoaderOptimization>. U nespravovaných aplikací, které jsou hostiteli modulu CLR (Common Language Runtime), zadejte vhodný příznak při volání metody [CorBindToRuntimeEx – Function](../unmanaged-api/hosting/corbindtoruntimeex-function.md) .  
+ Hostitel modulu runtime určuje, zda mají být sestavení načtena jako doménově neutrální při načtení modulu runtime do procesu. U spravovaných aplikací použijte atribut <xref:System.LoaderOptimizationAttribute> pro metodu vstupního bodu pro proces a zadejte hodnotu z asociovaného výčtu <xref:System.LoaderOptimization>. U nespravovaných aplikací, které jsou hostiteli modulu CLR (Common Language Runtime), zadejte vhodný příznak při volání metody [CorBindToRuntimeEx – Function](../unmanaged-api/hosting/corbindtoruntimeex-function.md) .  
   
  Existují tři možnosti, jak načíst doménově neutrální sestavení:  
   
-- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> načte žádná sestavení jako doménově neutrální, s výjimkou mscorlib, která je vždy zavedena jako doménově neutrální. Toto nastavení se nazývá jediná doména, protože se běžně používá v případě, že je na hostiteli spuštěná jenom jedna aplikace v procesu.
+- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> nenačítá žádná sestavení jako doménově neutrální, s výjimkou mscorlib, která je vždy zavedena jako doménově neutrální. Toto nastavení se nazývá jediná doména, protože se běžně používá v případě, že je na hostiteli spuštěná jenom jedna aplikace v procesu.
 
 - <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> načte všechna sestavení jako doménově neutrální. Toto nastavení použijte v případě, že v procesu existuje více domén aplikace, z nichž každý spouští stejný kód.
 
-- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> načte sestavení se silným názvem jako doménově neutrální, pokud jsou a všechny jejich závislosti byly nainstalovány do globální mezipaměti sestavení (GAC). Další sestavení jsou načtena a kompilována JIT samostatně pro každou doménu aplikace, ve které jsou načtena, a proto mohou být z procesu uvolněna. Toto nastavení použijte při spuštění více než jedné aplikace v jednom procesu nebo v případě, že máte směs sestavení, která jsou sdílena mnoha doménami aplikace a sestaveními, které je potřeba z procesu uvolnit.
+- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> načte sestavení se silným názvem jako doménově neutrální, pokud jsou a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení (GAC). Další sestavení jsou načtena a kompilována JIT samostatně pro každou doménu aplikace, ve které jsou načtena, a proto mohou být z procesu uvolněna. Toto nastavení použijte při spuštění více než jedné aplikace v jednom procesu nebo v případě, že máte směs sestavení, která jsou sdílena mnoha doménami aplikace a sestaveními, které je potřeba z procesu uvolnit.
   
  Kód zkompilovaný JIT nelze sdílet pro sestavení načtená do kontextu load-from pomocí metody <xref:System.Reflection.Assembly.LoadFrom%2A> třídy <xref:System.Reflection.Assembly> nebo načtena z imagí pomocí přetížení metody <xref:System.Reflection.Assembly.Load%2A>, která určuje Bajtová pole.  
   
@@ -98,9 +96,9 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 
 ### <a name="application-domains-and-cultures"></a>Domény a jazykové verze aplikace
 
- Jazyková verze, která je reprezentována objektem <xref:System.Globalization.CultureInfo>, je přidružena k vláknům. Můžete získat jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> a můžete získat nebo nastavit jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí vlastnosti <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>. Pokud je jazyková verze, která je přidružena k vláknu, explicitně nastavena pomocí vlastnosti <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>, bude nadále přidružena k tomuto vláknu, pokud vlákno přechází hranice aplikační domény. V opačném případě je jazyková verze, která je přidružena k vláknu v daném čase, určena hodnotou vlastnosti <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> v doméně aplikace, ve které je vlákno spuštěno:  
+ Jazyková verze, která je reprezentována objektem <xref:System.Globalization.CultureInfo>, je přidružena k vláknům. Můžete získat jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, a můžete získat nebo nastavit jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí vlastnosti <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>. Pokud je jazyková verze, která je přidružena k vláknu, explicitně nastavena pomocí vlastnosti <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>, bude nadále přidružena k danému vláknu, pokud vlákno protíná hranice aplikační domény. V opačném případě je jazyková verze, která je přidružena k vláknu v daném čase, určena hodnotou vlastnosti <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> v doméně aplikace, ve které je vlákno spuštěno:  
   
-- Pokud hodnota vlastnosti není `null`, jazyková verze, která je vrácena vlastností, je přidružena k vláknu (a proto je vrácena vlastnostmi <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>).  
+- Pokud hodnota vlastnosti není `null`, jazyková verze, která je vrácena vlastností, je přidružena k vláknu (a tedy vráceny <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti).  
   
 - Pokud je hodnota vlastnosti `null`, je k vláknu přidružena aktuální jazyková verze systému.  
   
@@ -108,7 +106,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 
  Domény aplikace jsou obvykle vytvářeny a manipulují programově pomocí hostitelů modulu runtime. Někdy však může aplikace chtít pracovat i s doménami aplikace. Například program aplikace může načíst součást aplikace do domény, aby bylo možné uvolnit doménu (a komponentu) bez nutnosti zastavit celou aplikaci.  
   
- @No__t-0 je programové rozhraní k aplikačním doménám. Tato třída obsahuje metody pro vytváření a uvolňování domén, k vytvoření instancí typů v doménách a k registraci různých oznámení, jako je například uvolnění domény aplikace. V následující tabulce jsou uvedeny běžně používané metody <xref:System.AppDomain>.  
+ <xref:System.AppDomain> je programové rozhraní k aplikačním doménám. Tato třída obsahuje metody pro vytváření a uvolňování domén, k vytvoření instancí typů v doménách a k registraci různých oznámení, jako je například uvolnění domény aplikace. V následující tabulce jsou uvedeny běžně používané <xref:System.AppDomain> metody.  
   
 |AppDomain – metoda|Popis|  
 |----------------------|-----------------|  
@@ -149,7 +147,7 @@ COMPLUS_LoaderOptimization = 1
   
 ### <a name="code-example"></a>Příklad kódu
 
- Chcete-li vynutit, aby se všechna sestavení nenačítala jako doménově neutrální pro službu IISADMIN, je možné dosáhnout připojením `COMPLUS_LoaderOptimization=1` k vícehodnotové hodnotě prostředí v klíči HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN.  
+ Chcete-li vynutit, aby se všechna sestavení nenačítala jako doménově neutrální pro službu IISADMIN, je možné dosáhnout připojením `COMPLUS_LoaderOptimization=1` k hodnotě řetězce s více řetězci v HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN klíči prostředí.  
   
 ```env  
 Key = HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN  

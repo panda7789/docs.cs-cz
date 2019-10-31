@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4e2fd423-f643-4c27-ba5f-41b5ebc3b416
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9e9f627f1ba213f663f042d1107afd1eb05b56b0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 01c7cb2e4359a477c26f995602dbf29668e567c0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757861"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131011"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument – metoda
-Získá hodnotu zadaného argumentu v tento rámec zásobníku Microsoft intermediate language (MSIL).  
+Získá hodnotu zadaného argumentu v rámci tohoto rámce zásobníku jazyka MSIL (Microsoft Intermediate Language).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetArgument (
   
 ## <a name="parameters"></a>Parametry  
  `dwIndex`  
- [in] Index argumentu do tohoto rámce zásobníku jazyka MSIL.  
+ pro Index argumentu v tomto snímku zásobníku MSIL.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje načtené hodnoty.  
+ mimo Ukazatel na adresu objektu ICorDebugValue, který představuje načtenou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetArgument` Metodu je možné použít v rámci zásobníku jazyka MSIL nebo v rámci kompilované just-in-time (JIT).  
+ Metodu `GetArgument` lze použít buď v rámci rámce zásobníku MSIL, nebo v kompilovaném snímku JIT (just-in-time).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

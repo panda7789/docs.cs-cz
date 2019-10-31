@@ -2,14 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda'
 ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bf6e707b6176ccd205785aafa6c5a1adf0a3fc78
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3184ba116704df8945b53766e62435a4252eaa11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964666"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138937"
 ---
 # <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda
 Načte data ze sloučeného sestavení s ohledem na relativní virtuální adresu (RVA) ve sloučeném sestavení.  
@@ -40,11 +38,11 @@ HRESULT GetAssemblyImageBytes(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

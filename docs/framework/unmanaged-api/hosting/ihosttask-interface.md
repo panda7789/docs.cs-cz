@@ -14,40 +14,38 @@ helpviewer_keywords:
 ms.assetid: a71dbbd5-64b8-47eb-9f03-8e8c85fbe2bc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cb15da31d91565d49df83099045f742866eebcaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18dfee606f3d41229aa58a5b4bb9380b87c4efa5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992833"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121397"
 ---
 # <a name="ihosttask-interface"></a>IHostTask – rozhraní
-Poskytuje metody, které umožňují common language runtime (CLR) ke komunikaci s hostitelem ke správě úloh.  
+Poskytuje metody, které umožňují, aby modul CLR (Common Language Runtime) komunikoval s hostitelem a spravoval úlohy.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Alert – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md)|Požadavky, že hostitel probuzení úloh reprezentovaný aktuální `IHostTask` instance, tak můžete přeruší úlohu.|  
-|[GetPriority – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md)|Získá úroveň priority vlákna úloh reprezentovaný aktuální `IHostTask` instance.|  
-|[Join – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md)|Blokuje volající úlohou, dokud není úloha reprezentované aktuální `IHostTask` instance dokončení, o zadaný časový interval uplyne, nebo [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) je volána.|  
-|[SetCLRTask – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|Přidruží [iclrtask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance s aktuálním `IHostTask` instance.|  
-|[SetPriority – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setpriority-method.md)|Požadavky, že hostitel upravit priorita vlákna na úrovni úkolů reprezentované aktuální `IHostTask` instance.|  
-|[Start – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md)|Požadavky, že hostitel move – úloha reprezentované aktuální `IHostTask` instanci z režimu spánku za provozu stavu, ve kterém lze kód spustit.|  
+|[Alert – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md)|Vyžádá, aby hostitel probudil úlohu reprezentovanou aktuální instancí `IHostTask`, takže úkol může být přerušen.|  
+|[GetPriority – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md)|Získá úroveň priority vlákna úlohy reprezentované aktuální instancí `IHostTask`.|  
+|[Join – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md)|Zablokuje volající úlohu, dokud se nedokončí úkol, který je reprezentován aktuální `IHostTask` instance, zadaného časového intervalu vypršela nebo [IHostTask:: Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) je volána.|  
+|[SetCLRTask – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|Přidruží instanci [rozhraní ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) k aktuální instanci `IHostTask`.|  
+|[SetPriority – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setpriority-method.md)|Požaduje, aby hostitel upravil úroveň priority vlákna pro úlohu reprezentovanou aktuální instancí `IHostTask`.|  
+|[Start – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md)|Požaduje, aby hostitel přesunul úlohu představovanou aktuální `IHostTask` instance z pozastaveného stavu do aktivního stavu, ve kterém lze kód spustit.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá metody definované `IHostTask` spuštění úlohy, nastavit její prioritu vlákna úroveň, a tak dále.  
+ CLR volá metody definované `IHostTask` pro spuštění úlohy, nastavení úrovně priority vlákna a tak dále.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

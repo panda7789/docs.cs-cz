@@ -3,40 +3,38 @@ title: Přehled Modelu objektu schématu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 97e2e54c534b30c3c514c9102ded0050fc154b75
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3ebf0cd06ebea3092ef8aa42debe0afeac9be4f2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589792"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129151"
 ---
 # <a name="xml-schema-object-model-overview"></a>Přehled Modelu objektu schématu XML
-Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je plnohodnotné rozhraní API, která umožňuje vytvářet, upravovat a ověřit schémata prostřednictvím kódu programu. SOM funguje v dokumentech schémat XML. Podobně jako na způsob, jakým funguje Document Object Model (DOM) v dokumentech XML. Dokumentů schématu XML jsou platné soubory XML, které po načtení do SOM, významu o struktuře a platnosti jiných dokumentů XML, které odpovídají schématu.  
+Model objektu schématu (SOM) v Microsoft .NET Framework je bohatá rozhraní API, které umožňuje programově vytvářet, upravovat a ověřovat schémata. Model SOM pracuje na dokumentech schématu XML podobně jako model DOM (Document Object Model) (DOM) pracuje na dokumentech XML. Dokumenty schématu XML jsou platné soubory XML, které po načtení do modelu SOM přenesou význam pro strukturu a platnost dalších dokumentů XML, které odpovídají schématu.  
   
- Schéma je dokument XML, který definuje třídu dokumentů XML tak, že zadáte struktura nebo model dokumentů XML pro konkrétní schéma. Schéma určuje omezení u obsahu dokumentů XML a popisuje slovník (pravidla nebo gramatika), který je kompatibilní s dokumenty XML musí dodržovat, aby mohlo být považované za schématu platný s dané schéma. Ověření dokumentu XML je proces, který zajistí, že dokument odpovídá gramatiky určené schéma.  
+ Schéma je dokument XML, který definuje třídu dokumentů XML zadáním struktury nebo modelu dokumentů XML pro konkrétní schéma. Schéma určuje omezení obsahu dokumentů XML a popisuje slovní druh (pravidla nebo gramatika), které musí splňovat dokumenty XML, aby bylo možné považovat za schéma – platné s tímto konkrétním schématem. Ověření dokumentu XML je proces, který zajišťuje, že dokument bude v souladu s gramatikou určenou schématem.  
   
- Níže jsou způsoby SOM rozhraní API v rozhraní .NET Framework umožňuje vytvářet, upravovat a ověřit schémata.  
+ Níže jsou uvedené způsoby, kterými rozhraní API modelu SOM v .NET Framework umožňuje vytváření, úpravy a ověřování schémat.  
   
-- Načtení a uložení platná schémata do a ze souborů.  
+- Načtení a uložení platných schémat do souborů a ze souborů.  
   
-- Vytváření pomocí třídy silného typu schémata v paměti.  
+- Vytvářejte schémata v paměti pomocí tříd silného typu.  
   
-- Pracovat <xref:System.Xml.Schema.XmlSchemaSet> třída ukládat do mezipaměti, kompilaci a načíst schémata.  
+- Interakce s <xref:System.Xml.Schema.XmlSchemaSet> třídou pro ukládání, kompilování a načítání schémat.  
   
-- Pracovat <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy ověřit dokumenty instance XML pomocí schémat.  
+- Interakce s metodou <xref:System.Xml.XmlReader.Create%2A> třídy <xref:System.Xml.XmlReader> pro ověřování dokumentů instance XML proti schématům.  
   
-- Editory sestavení pro vytváření a Správa schémat.  
+- Editory sestavení pro vytváření a údržbu schémat.  
   
-- Dynamicky upravte schéma, které mohou být splněny a uloženy pro použití při ověřování instanci dokumentů XML.  
+- Dynamicky upravit schéma, které je možné vyhovět a uložit pro použití při ověřování dokumentů instance XML.  
   
 ## <a name="the-schema-object-model"></a>Model objektu schématu  
- SOM se skládá z rozsáhlou sadu tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> odpovídající elementy ve schématu XML obor názvů. Například `<xsd:schema>...</xsd:schema>` prvek mapuje na <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> třídy a všechny informace, které mohou být obsaženy v rámci `<xsd:schema/>` elementu lze znázornit pomocí <xref:System.Xml.Schema.XmlSchema> třídy. Podobně `<xsd:element>...</xsd:element>` a `<xsd:attribute>...</xsd:attribute>` mapování elementů na <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> a <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> třídy v uvedeném pořadí. Toto mapování pokračuje pro všechny prvky schématu XML, vytvoření modelu objektu schématu XML v <xref:System.Xml.Schema> obor názvů znázorněn v následujícím diagramu.  
+ SOM obsahuje rozsáhlou sadu tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType> odpovídající prvkům ve schématu XML. Například prvek `<xsd:schema>...</xsd:schema>` se mapuje na třídu <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> a všechny informace, které mohou být obsaženy v elementu `<xsd:schema/>` lze reprezentovat pomocí třídy <xref:System.Xml.Schema.XmlSchema>. Podobně se prvky `<xsd:element>...</xsd:element>` a `<xsd:attribute>...</xsd:attribute>` mapují na <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> a <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> třídy v uvedeném pořadí. Toto mapování pokračuje pro všechny prvky schématu XML vytvoření modelu objektu XML schématu v oboru názvů <xref:System.Xml.Schema> ilustrované v následujícím diagramu.  
   
- ![Objektový Model System.Xml.Schema](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
+ ![Model objektu System. XML. Schema](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
   
- Další informace o každé třídě <xref:System.Xml.Schema> obor názvů, najdete v článku <xref:System.Xml.Schema> oboru názvů v dokumentaci v knihovně tříd rozhraní .NET Framework.  
+ Další informace o jednotlivých třídách v oboru názvů <xref:System.Xml.Schema> naleznete v referenční dokumentaci k oboru názvů <xref:System.Xml.Schema> v knihovně tříd .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 

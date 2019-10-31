@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ca7723db-7c07-4cdd-bd92-fba34928b623
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: af933be9edc0d0fe7249f33800fe259ddc779aeb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 805f9a5d1f2590a06bfa929c152bdfd13900531a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738311"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134285"
 ---
 # <a name="icordebugcanlaunchorattach-method"></a>ICorDebug::CanLaunchOrAttach – metoda
-Vrátí hodnotu HRESULT, která určuje, zda je možné v rámci kontextu aktuální konfiguraci počítače a modul runtime spustí nový proces nebo připojení k zadané existující procesu.  
+Vrátí hodnotu HRESULT, která označuje, zda je možné spustit nový proces nebo připojit k zadanému existujícímu procesu v rámci kontextu aktuálního počítače a konfigurace modulu runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +36,13 @@ HRESULT CanLaunchOrAttach (
   
 ## <a name="parameters"></a>Parametry  
  `dwProcessId`  
- [in] ID existující proces.  
+ pro ID existujícího procesu.  
   
  `win32DebuggingEnabled`  
- [in] Předejte `true` Pokud plánujete spustit s povoleným laděním Win32, nebo se připojit s Win32 ladění povoleno; jinak předejte `false`.  
+ pro Předejte `true`, pokud máte v plánu spustit s povoleným laděním Win32 nebo připojit s povoleným laděním Win32. v opačném případě předejte `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK Pokud ladění služby určit, který spouští se nový proces nebo připojení k dané procesu je možné, uvedené informace o aktuální konfiguraci počítače a modulu runtime. Jsou možné hodnoty HRESULT:  
+ S_OK, pokud služba ladění určí, že spuštění nového procesu nebo připojení k danému procesu je možné, s ohledem na informace o aktuálním počítači a konfiguraci modulu runtime. Možné hodnoty HRESULT:  
   
 - S_OK  
   
@@ -55,18 +53,18 @@ HRESULT CanLaunchOrAttach (
 - CORDBG_E_KERNEL_DEBUGGER_ENABLED  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je pouze informační. Rozhraní nezastaví spouštění nebo připojení k procesu, bez ohledu na hodnotu vrácenou `CanLaunchOrAttach`.  
+ Tato metoda je čistě informativní. Rozhraní vám nezastaví spouštění ani připojování k procesu bez ohledu na hodnotu vrácenou `CanLaunchOrAttach`.  
   
- Pokud budete chtít spustit s povoleným laděním Win32 nebo připojení s povoleným laděním Win32, předejte `true` pro `win32DebuggingEnabled`. Vrácená hodnota HRESULT `CanLaunchOrAttach` mohou lišit, pokud použijete tuto možnost.  
+ Pokud máte v úmyslu spustit s povoleným laděním Win32 nebo připojit s povoleným laděním Win32, předejte `true` `win32DebuggingEnabled`. Hodnota HRESULT vrácená funkcí `CanLaunchOrAttach` se může lišit, pokud použijete tuto možnost.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

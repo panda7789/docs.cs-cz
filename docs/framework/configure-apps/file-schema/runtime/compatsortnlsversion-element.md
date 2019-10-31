@@ -8,21 +8,19 @@ helpviewer_keywords:
 - <CompatSortNLSVersion> element
 - CompatSortNLSVersion element
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 575d44ad9ecf445ba5d4b7fbe47032127ccb33ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f13265e2056c8eca62cd510154dd7c096eeabb00
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252737"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117684"
 ---
-# <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion – element >
+# <a name="compatsortnlsversion-element"></a>\<element > CompatSortNLSVersion
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<CompatSortNLSVersion>**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<CompatSortNLSVersion >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +40,7 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |4096|ID národního prostředí, které představuje alternativní pořadí řazení. V tomto případě 4096 představuje pořadí řazení .NET Framework 3,5 a starších verzí.|  
   
@@ -57,15 +55,15 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vzhledem k tomu, že porovnání řetězců, řazení a operace s <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> velkými a malými písmeny prováděné třídou v .NET Framework 4 odpovídají standardu Unicode 5,1, výsledky <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> metod <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> porovnání řetězců, jako jsou a se mohou lišit od předchozí verze .NET Framework. Pokud vaše aplikace závisí na starším chování, můžete obnovit pravidla porovnání a řazení řetězců používané v .NET Framework 3,5 a starších verzích zahrnutím `<CompatSortNLSVersion>` elementu do konfiguračního souboru aplikace.  
+ Vzhledem k tomu, že porovnání řetězců, řazení a operace s velkými a malými písmeny prováděné třídou <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> v .NET Framework 4 odpovídají standardu Unicode 5,1, výsledky metod porovnání řetězců, jako je <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType>, se mohou lišit od předchozích verzí .NET Framework. Pokud vaše aplikace závisí na starším chování, můžete obnovit pravidla porovnání a řazení řetězců používané v .NET Framework 3,5 a starších verzích zahrnutím prvku `<CompatSortNLSVersion>` do konfiguračního souboru aplikace.  
   
 > [!IMPORTANT]
 > Obnovení starších pravidel porovnání a řazení řetězců vyžaduje, aby v místním systému byla k dispozici dynamická knihovna sort00001000.dll.  
   
- Můžete také použít starší řazení řetězců a pravidla porovnávání v konkrétní aplikační doméně předáním řetězce "NetFx40_Legacy20SortingBehavior" do <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> metody při vytváření domény aplikace.  
+ Můžete také použít starší řazení řetězců a pravidla porovnávání v konkrétní aplikační doméně předáním řetězce "NetFx40_Legacy20SortingBehavior" do metody <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> při vytváření domény aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří instanci dvou <xref:System.String> objektů a <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> zavolá metodu pro jejich porovnání pomocí konvencí aktuální jazykové verze.  
+ Následující příklad vytvoří instanci dvou objektů <xref:System.String> a zavolá metodu <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> pro porovnání pomocí konvencí aktuální jazykové verze.  
   
  [!code-csharp[String.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/string.breakingchanges/cs/example1.cs#1)]
  [!code-vb[String.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/string.breakingchanges/vb/example1.vb#1)]  

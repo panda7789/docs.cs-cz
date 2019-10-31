@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6c399f37-1e38-4ca1-b70d-8ae41f7228b7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 40a6376d4f4ffd09743441df1965d0a0f0d969b9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d79b642735543ff84f6211fe5ca2e5b424be1f2e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103449"
 ---
 # <a name="icorpublishprocessenumnext-method"></a>ICorPublishProcessEnum::Next – metoda
-Získá zadaný počet procesů z kolekce, spouští se na aktuální pozici kurzoru.  
+Získá zadaný počet procesů z kolekce počínaje aktuální pozicí kurzoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet procesů, který se má načíst.  
+ pro Počet procesů, které mají být načteny.  
   
  `objects`  
- [out] Načte ukazatel na pole [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objektů, z nichž každý představuje proces.  
+ mimo Ukazatel na pole načtených objektů [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) , z nichž každý představuje proces.  
   
  `pceltFetched`  
- [out] Ukazatel na počet skutečně vrácených procesů. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
+ mimo Ukazatel na počet skutečně vrácených procesů. Tato hodnota může být null, pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

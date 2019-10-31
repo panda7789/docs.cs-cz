@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 32d54a5b-8ad3-405b-a1b9-0936a3b49d1e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c85040a31966a92ead6ca4786f62852f17923056
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 11acf997b2efd74bc8394d830f36d3acbd1eef56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736930"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137198"
 ---
 # <a name="icordebugprocess2getthreadfortaskid-method"></a>ICorDebugProcess2::GetThreadForTaskID – metoda
-Získá vlákno, na kterém je spuštěn úkol se zadaným identifikátorem.  
+Získá vlákno, ve kterém je spuštěn úkol se zadaným identifikátorem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetThreadForTaskID (
   
 ## <a name="parameters"></a>Parametry  
  `taskid`  
- [in] Identifikátor úkolu.  
+ pro Identifikátor úkolu  
   
  `ppThread`  
- [out] Ukazatel na adresu icordebugthread2 – objekt, který představuje vlákna, která se má načíst.  
+ mimo Ukazatel na adresu objektu ICorDebugThread2, který představuje vlákno, které má být načteno.  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitele můžete nastavit pomocí identifikátor úkolu [iclrtask::settaskidentifier –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md) metody.  
+ Hostitel může nastavit identifikátor úlohy pomocí metody [ICLRTask:: SetTaskIdentifier –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

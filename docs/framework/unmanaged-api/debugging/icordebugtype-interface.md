@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 94e02e31-67ea-4b00-8148-a46740a4571d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b830af5d59c0eb177d815451ecedbdc14121aaad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4f3f553ed5dc93433610365e0dae5bee54863de5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964758"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129631"
 ---
 # <a name="icordebugtype-interface"></a>ICorDebugType – rozhraní
 Představuje typ buď Basic, nebo Complex (tj. definovaný uživatelem). Pokud je typ obecný, `ICorDebugType` představuje obecný typ s instancemi.  
@@ -30,28 +28,28 @@ Představuje typ buď Basic, nebo Complex (tj. definovaný uživatelem). Pokud j
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-enumeratetypeparameters-method.md)|Získá ukazatel rozhraní na objekt ICorDebugTypeEnum, který odkazuje na obecné <xref:System.Type> parametry třídy, na kterou odkazuje. `ICorDebugType`|  
-|[GetBase – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getbase-method.md)|Získá ukazatel `ICorDebugType` rozhraní, který odkazuje na základní třídu třídy, na kterou odkazuje `ICorDebugType`, pokud existuje.|  
-|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md)|Získá ukazatel rozhraní na ICorDebugClass, který odkazuje na konstruktor typu this `ICorDebugType`.|  
-|[GetFirstTypeParameter – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getfirsttypeparameter-method.md)|Získá ukazatel `ICorDebugType` rozhraní, který odkazuje na první obecný <xref:System.Type> parametr pro konstruktor třídy, na kterou odkazuje tento `ICorDebugType`objekt.|  
+|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-enumeratetypeparameters-method.md)|Získá ukazatel rozhraní na ICorDebugTypeEnum, který odkazuje na Obecné parametry <xref:System.Type> třídy, na kterou odkazuje tento `ICorDebugType`.|  
+|[GetBase – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getbase-method.md)|Získá ukazatel rozhraní na `ICorDebugType`, který odkazuje na základní třídu třídy, na kterou odkazuje tento `ICorDebugType`, pokud jedna existuje.|  
+|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md)|Získá ukazatel rozhraní na ICorDebugClass, který odkazuje na typový konstruktor tohoto `ICorDebugType`.|  
+|[GetFirstTypeParameter – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getfirsttypeparameter-method.md)|Získá ukazatel rozhraní na `ICorDebugType`, který odkazuje na první obecný <xref:System.Type> parametr pro konstruktor třídy, na kterou odkazuje tento `ICorDebugType`.|  
 |[GetRank – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getrank-method.md)|Získá počet rozměrů v typu pole.|  
 |[GetStaticFieldValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md)|Získá ukazatel rozhraní na ICorDebugValue, který obsahuje hodnotu statického pole, na které odkazuje zadaný token pole v zadaném bloku zásobníku.|  
-|[GetType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md)|Získá hodnotu CorElementType –, která popisuje nativní typ modulu CLR (Common Language Runtime <xref:System.Type> ), na `ICorDebugType`který odkazuje.|  
+|[GetType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md)|Získá hodnotu CorElementType –, která popisuje nativní typ modulu CLR (Common Language Runtime <xref:System.Type>), na který odkazuje tento `ICorDebugType`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je typ obecný, `ICorDebugClass` představuje nevytvořený typ. `ICorDebugType` Rozhraní představuje instanci generického typu. Například zatřiďovací tabulka\<K, V > by měla být `ICorDebugClass`reprezentována, zatímco zatřiďovací tabulka\< `ICorDebugType`Int32, řetězec > by představoval.  
+ Pokud je typ obecný, `ICorDebugClass` představuje nevytvořený typ. Rozhraní `ICorDebugType` představuje instanci generického typu. Například hodnota hash\<K, V > by měla být reprezentována `ICorDebugClass`, zatímco zatřiďovací tabulka\<Int32, řetězec > by představovala `ICorDebugType`.  
   
- Neobecné typy jsou reprezentovány v `ICorDebugClass` a `ICorDebugType`. Druhé rozhraní bylo zavedeno ve verzi .NET Framework 2,0, aby bylo možné řešit instance typu.  
+ Neobecné typy jsou reprezentovány `ICorDebugClass` i `ICorDebugType`. Druhé rozhraní bylo zavedeno ve verzi .NET Framework 2,0, aby bylo možné řešit instance typu.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

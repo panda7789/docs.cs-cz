@@ -7,14 +7,12 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4908653b650f05bd25a7893d104040802f34d7e4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b4b78d377cf3ff2b43f7776567583c71c479054c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523820"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123958"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Postupy: Přidávání odkazů do knihoven typů
 Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vzájemné spolupráce obsahující metadata. Pokud je k dispozici primární sestavení vzájemné spolupráce, Visual Studio použije existující sestavení před generováním nového definičního sestavení.  

@@ -10,14 +10,12 @@ api_location:
 api_type:
 - COM
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 95b463b23c230d620d746e48da49d75238ef2cb7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ae51490be96f3eb6524831c93739c3befbc30b37
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955373"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132028"
 ---
 # <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
 [Podporováno v .NET Framework 4.6.1 a novějších verzích]  
@@ -44,7 +42,7 @@ HRESULT ReadInMemorySymbols(
  pro Posun v rámci proudu v paměti, ve kterém se mají začít číst bajty.  
   
  `pSymbolBytes`  
- mimo Ukazatel na vyrovnávací paměť, do které budou kopírována data. Velikost vyrovnávací paměti by `countSymbolBytes` měla být místo k dispozici.  
+ mimo Ukazatel na vyrovnávací paměť, do které budou kopírována data. Vyrovnávací paměť by měla mít `countSymbolBytes` dostupného místa.  
   
  `countSymbolBytes`  
  pro Počet bajtů, které mají být zkopírovány.  
@@ -53,22 +51,22 @@ HRESULT ReadInMemorySymbols(
  mimo Když metoda vrátí, obsahuje skutečný počet přečtených bajtů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`, pokud bylo přečteno nenulový počet bajtů.  
+ `S_OK`, pokud byl přečten nenulový počet bajtů.  
   
  `CORPROF_E_MODULE_IS_DYNAMIC`, pokud byl modul vytvořen pomocí <xref:System.Reflection.Emit>.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `ReadInMemorySymbols` se pokusí přečíst `countSymbolBytes` data začínající na posunu `symbolsReadOffset` v datovém proudu v paměti. Data se zkopírují do `pSymbolBytes`, což by mělo být `countSymbolBytes` dostupné místo.     `pCountSymbolsBytesRead`obsahuje skutečný počet přečtených bajtů, který může být menší, než `countSymbolBytes` je dosaženo konce datového proudu.  
+ Metoda `ReadInMemorySymbols` se pokusí přečíst `countSymbolBytes` dat počínaje posunem `symbolsReadOffset` v datovém proudu v paměti. Data se zkopírují do `pSymbolBytes`, u kterých se očekává `countSymbolBytes` dostupného místa.     `pCountSymbolsBytesRead` obsahuje skutečný počet přečtených bajtů, který může být menší než `countSymbolBytes`, pokud je dosaženo konce datového proudu.  
   
 > [!NOTE]
-> Aktuální implementace nepodporuje reflexe. Emit. Pokud byl modul vytvořen pomocí reflexe. Emit, vrátí `CORPROF_E_MODULE_IS_DYNAMIC`metoda.  
+> Aktuální implementace nepodporuje reflexe. Emit. Pokud byl modul vytvořen pomocí reflexe. Emit, metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   

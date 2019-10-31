@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa20ac3d-6f60-4aa2-91c5-f3a86f82eba8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ec9c4f3afb8f3b7e75e22874996d57d29ce8cf16
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: f37bf545553045b9737b7057feed78e1f06ace4d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274219"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099468"
 ---
 # <a name="cor_array_layout-structure"></a>COR_ARRAY_LAYOUT – struktura
 Poskytuje informace o rozložení objektu pole v paměti.  
@@ -55,16 +53,16 @@ typedef struct COR_ARRAY_LAYOUT {
 |`rankOffset`|Posun, ve kterém je začátek pořadí.|  
   
 ## <a name="remarks"></a>Poznámky  
- `rankSize` Pole určuje velikost rozměru v multidimenzionálním poli. Je přesně pro jednorozměrná pole.  
+ Pole `rankSize` určuje velikost rozměru v multidimenzionálním poli. Je přesně pro jednorozměrná pole.  
   
- Hodnota `numRanks` je 1 pro jednorozměrné pole a `N` pro `N` multidimenzionální pole dimenzí.  
+ Hodnota `numRanks` je 1 pro jednorozměrné pole a `N` v multidimenzionálním poli dimenzí `N`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

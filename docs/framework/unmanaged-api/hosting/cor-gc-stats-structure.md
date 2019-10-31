@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1085bec812d797d3fbe4ea63ef447d4c466149f2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 12c00ed009e0e57436a71aed256b07a58ba68a32
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965060"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138350"
 ---
 # <a name="cor_gc_stats-structure"></a>COR_GC_STATS – struktura
 Poskytuje statistiku o mechanizmu uvolňování paměti modulu CLR (Common Language Runtime).  
@@ -61,9 +59,9 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen1`|Velikost objektů povýšených od generace od generace do 2. generace v kilobajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICLRGCManager::](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) GetStats vyžaduje, `Flags` aby pole `COR_GC_STATS` struktury bylo nastavené na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) , aby se určilo, která Statistika se má nastavit.  
+ Metoda [ICLRGCManager:: GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) vyžaduje, aby pole `Flags` struktury `COR_GC_STATS` bylo nastaveno na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) , aby se určilo, která Statistika se má nastavit.  
   
- Následující tabulka mapuje statistiky poskytované touto strukturou na dvě hodnoty `COR_GC_COUNTS` výčtu COR_GC_STAT_TYPES a. [](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) `COR_GC_MEMORYUSAGE`  
+ Následující tabulka mapuje statistiky poskytované touto strukturou na dvě hodnoty výčtu [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) `COR_GC_COUNTS` a `COR_GC_MEMORYUSAGE`.  
   
 |Určeno COR_GC_COUNTS|Určeno COR_GC_MEMORYUSAGE|  
 |----------------------------------|---------------------------------------|  
@@ -78,11 +76,11 @@ pCLRGCManager->GetStats(&GCStats);
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** GCHost.idl  
+ **Hlavička:** GCHost. idl  
   
- **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

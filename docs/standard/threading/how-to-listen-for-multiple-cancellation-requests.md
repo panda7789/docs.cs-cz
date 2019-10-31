@@ -9,14 +9,12 @@ helpviewer_keywords:
 - cancellation tokens, joining
 - LinkedTokenSource, how to
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2684f0fd43f84573933fc0a7107ce4f9035bc092
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e35472040b6ee1263ebc4c4968fa1822045a2064
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913310"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138014"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>Postupy: Naslouchání více požadavkům zrušení
 Tento příklad ukazuje, jak naslouchat dvěma tokeny zrušení současně, abyste mohli zrušit operaci, pokud ji buď vyžádá.  
@@ -25,14 +23,14 @@ Tento příklad ukazuje, jak naslouchat dvěma tokeny zrušení současně, abys
 > Pokud je povolena vlastnost „Pouze vlastní kód“, zastaví se sada Visual Studio v některých případech na řádce, která výjimku vyvolá, a zobrazí chybovou zprávu s upozorněním, že „výjimka není zpracována uživatelským kódem“. Tato chyba je neškodná. Stiskem klávesy F5 můžete pokračovat a zobrazit chování zpracování výjimek, které je znázorněno v níže uvedených příkladech. Chcete-li aplikaci Visual Studio zabránit v přerušení první chyby, zrušte zaškrtnutí políčka Pouze můj kód v části **nástroje, možnosti, ladění, obecné**.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Threading.CancellationTokenSource.CreateLinkedTokenSource%2A> se metoda používá pro spojení dvou tokenů do jednoho tokenu. To umožňuje předat token do metod, které jako argument přebírají pouze jeden token zrušení. Příklad ukazuje běžný scénář, ve kterém metoda musí sledovat token předaný z vnějšku třídy a token vygenerovaný uvnitř třídy.  
+ V následujícím příkladu se k připojení dvou tokenů do jednoho tokenu používá metoda <xref:System.Threading.CancellationTokenSource.CreateLinkedTokenSource%2A>. To umožňuje předat token do metod, které jako argument přebírají pouze jeden token zrušení. Příklad ukazuje běžný scénář, ve kterém metoda musí sledovat token předaný z vnějšku třídy a token vygenerovaný uvnitř třídy.  
   
  [!code-csharp[Cancellation#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#13)]
  [!code-vb[Cancellation#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex13.vb#13)]  
   
- Když propojený token vyvolá <xref:System.OperationCanceledException>výjimku, token, který je předán do výjimky, je propojený token, nikoli buď tokeny předchůdce. Chcete-li zjistit, které z tokenů byly zrušeny, zkontrolujte stav tokenů předchůdce přímo.  
+ Když propojený token vyvolá <xref:System.OperationCanceledException>, token, který je předán do výjimky, je propojený token, nikoli buď tokeny předchůdce. Chcete-li zjistit, které z tokenů byly zrušeny, zkontrolujte stav tokenů předchůdce přímo.  
   
- V tomto příkladu <xref:System.AggregateException> by neměl být nikdy vyvolána, ale je zde zachycena z toho důvodu, že v reálných scénářích <xref:System.OperationCanceledException> jakékoli jiné výjimky kromě těch, které jsou vyvolány <xref:System.AggregateException>z delegáta úkolu, jsou zabaleny do.  
+ V tomto příkladu by <xref:System.AggregateException> neměl být nikdy vyvolán, ale je zde zachycena z toho důvodu, že v reálných scénářích jsou všechny ostatní výjimky kromě <xref:System.OperationCanceledException> vyvolané z delegáta úlohy zabaleny do <xref:System.AggregateException>.  
   
 ## <a name="see-also"></a>Viz také:
 

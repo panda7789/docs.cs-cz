@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 72f54a45-dbe6-4bb4-8c99-e879a27368e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2779cfaecfdd241b5317ac8b467222e045d48049
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b521c96d26202119dad6fedb61cbd9da8b3c2e52
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753317"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137628"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction – metoda
-Nastaví volání zadané ICorDebugFunction, které mohou být vnořené uvnitř třídy, jejíž konstruktor přijímá <xref:System.Type> parametry nebo může samotné trvat <xref:System.Type> parametry.  
+Nastaví volání na zadaný ICorDebugFunction, který může být vnořen do třídy, jejíž konstruktor přebírá parametry <xref:System.Type>, nebo může přebírat <xref:System.Type> parametry.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +39,32 @@ HRESULT CallParameterizedFunction (
   
 ## <a name="parameters"></a>Parametry  
  `pFunction`  
- [in] Ukazatel `ICorDebugFunction` objekt, který reprezentuje funkce, která se má volat.  
+ pro Ukazatel na objekt `ICorDebugFunction`, který představuje funkci, která má být volána.  
   
  `nTypeArgs`  
- [in] Počet argumentů, které provede funkci.  
+ pro Počet argumentů, které funkce trvá.  
   
  `ppTypeArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument funkce.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugType, který představuje argument funkce.  
   
  `nArgs`  
- [in] Ve funkci byl předán počet hodnot.  
+ pro Počet hodnot předaných ve funkci.  
   
  `ppArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který představuje hodnotu předaného argumentu funkce.  
+ pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugValue, který představuje hodnotu předanou v argumentu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `CallParameterizedFunction` je třeba [icordebugeval::CallFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) s tím rozdílem, že funkce mohou být uvnitř třídy s parametry typu, samotné trvat parametry typu, nebo obojí. Argumenty typu by se měly provádět první třídy a funkce.  
+ `CallParameterizedFunction` jako [ICorDebugEval:: CallFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) s tím rozdílem, že funkce může být uvnitř třídy s parametry typu, může sám převzít parametry typu nebo obojí. Argumenty typu by měly být zadány jako první pro třídu a potom pro funkci.  
   
- Pokud je funkce v různých aplikační domény, bude docházet k přechodu. Nicméně všechny argumenty typu a hodnoty musí být v cílové doméně aplikace.  
+ Pokud je funkce v jiné doméně aplikace, dojde k přechodu. Všechny argumenty Type a Value však musí být v cílové doméně aplikace.  
   
- Vyhodnocení funkce lze provést pouze v omezených scénářích. Pokud `CallParameterizedFunction` nebo `ICorDebugEval::CallFunction` selže, vrácená hodnota HRESULT označí nejobecnější důvod selhání.  
+ Vyhodnocení funkce se dá provádět jenom v omezených scénářích. Pokud `CallParameterizedFunction` nebo `ICorDebugEval::CallFunction` selže, vrátí vrácená hodnota HRESULT nejobecnější možný důvod selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

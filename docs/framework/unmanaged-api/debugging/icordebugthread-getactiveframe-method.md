@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8d6d3a1a-fef6-4f2f-a22c-3bdd30d70e07
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 390a2c64508bf407296d318a47bfd2972b7ef9d9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d623893bd77e46832b0bd823ed60c23e4eee29ba
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762559"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133543"
 ---
 # <a name="icordebugthreadgetactiveframe-method"></a>ICorDebugThread::GetActiveFrame – metoda
-Získá ukazatel rozhraní na tomto objektu ICorDebugThread na aktivní rámec (nejnovější).  
+Získá ukazatel rozhraní na aktivní (poslední) rámec na tomto objektu ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetActiveFrame (
   
 ## <a name="parameters"></a>Parametry  
  `ppFrame`  
- [out] Ukazatel na adresu objektu icordebugframe – rozhraní, která představuje rámec.  
+ mimo Ukazatel na adresu objektu rozhraní ICorDebugFrame, který představuje rámec.  
   
 ## <a name="remarks"></a>Poznámky  
- `ppFrame` Parametr má hodnotu null, pokud žádný snímek není aktuálně aktivní.  
+ Parametr `ppFrame` má hodnotu null, pokud není aktuálně aktivní žádný rámec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

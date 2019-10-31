@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6ff45fc-905d-4c6e-b00c-97c6c7c55d99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2a5b5eb587a4739cf3481c76ef73ebc62f0a9d20
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 553acc178bc5805b5afef5931fefc8ad74cbac39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748165"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135178"
 ---
 # <a name="iclrstrongnamegethashfromfilew-method"></a>ICLRStrongName::GetHashFromFileW – metoda
-Vygeneruje hodnotu hash přes obsah souboru určeného řetězce v kódování Unicode.  
+Vygeneruje hodnotu hash přes obsah souboru určeného řetězcem Unicode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +39,34 @@ HRESULT GetHashFromFileW (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [in] Kódování Unicode název souboru, který má hodnotu hash.  
+ pro Název Unicode souboru, na který se má vypočítat hodnota hash  
   
  `piHashAlg`  
- [out v] Algoritmus použitého při generování hodnoty hash. Platné algoritmy jsou těmi definovanými ve Win32 rozhraní CryptoAPI. Pokud `piHashAlg` je nastavena na hodnotu 0, výchozí algoritmus se používá CALG_SHA-1.  
+ [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Je-li `piHashAlg` nastavena na hodnotu 0, je použit výchozí algoritmus CALG_SHA-1.  
   
  `pbHash`  
- [out] Bajtové pole obsahující generované hodnoty hash.  
+ mimo Bajtové pole obsahující vygenerovanou hodnotu hash.  
   
  `cchHash`  
- [in] Maximální velikost vyrovnávací paměti, na které odkazuje `pbHash`.  
+ pro Maximální velikost vyrovnávací paměti, na kterou ukazuje `pbHash`.  
   
  `pchHash`  
- [out] Velikost v bajtech, z `pbHash`.  
+ mimo Velikost `pbHash`v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je stejné jako [iclrstrongname::gethashfromfile –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md) metody, s tím rozdílem, že specifikace název souboru je Unicode místo ANSI.  
+ Tato metoda je stejná jako metoda [ICLRStrongName:: GetHashFromFile –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md) s tím rozdílem, že specifikace názvu souboru je Unicode namísto ANSI.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

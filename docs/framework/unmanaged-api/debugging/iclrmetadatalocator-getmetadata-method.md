@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 235b93f4176858372a83331730ddea8b97179cc8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f28a4b4acd9d6050d33b9824aa49a9b9041b59b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738367"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111248"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata – metoda
-Volá se službami common language runtime (CLR) přístup k datům pro načtení metadat bitovou kopii.  
+Volá se službami CLR (Common Language Runtime) k načtení metadat obrázku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,43 +44,43 @@ HRESULT GetMetadata(
   
 ## <a name="parameters"></a>Parametry  
  `imagePath`  
- [in] Řetězec, který určuje cestu k souboru bitové kopie.  
+ pro Řetězec, který určuje cestu k souboru obrázku.  
   
  `imageTimestamp`  
- [in] Časové razítko souboru bitové kopie.  
+ pro Časové razítko souboru obrázku.  
   
  `imageSize`  
- [in] Velikost souboru obrázku.  
+ pro Velikost souboru obrázku  
   
  `mvid`  
- [in] Globálně jedinečný identifikátor používaného obrázku.  
+ pro Globálně jedinečný identifikátor obrázku.  
   
  `mdRva`  
- [in] Relativní virtuální adresu (RVA) metadat. Adresa je relativní vzhledem k základní adrese image.  
+ pro Relativní virtuální adresa (RVA) metadat. Adresa je relativní vzhledem k základní adrese obrázku.  
   
  `flags`  
- [in] Vyhrazeno pro budoucí použití.  
+ pro Vyhrazeno pro budoucí použití.  
   
  `bufferSize`  
- [in] Velikost vyrovnávací paměti, do které se má umístit metadata.  
+ pro Velikost vyrovnávací paměti, do které se mají umístit metadata  
   
  `buffer`  
- [out] Vyrovnávací paměť, ve které chcete umístit metadata.  
+ mimo Vyrovnávací paměť, do které se mají umístit metadata  
   
  `dataSize`  
- [out] Velikost metadat, která je vrácena.  
+ mimo Velikost vrácených metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementováno tvůrci ladění aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0ba8453-fa7e-4c14-93e5-335409cd4a47
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9ebdf0dd2457cd10e31ff71c32b1c09d0e014431
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae0c23e3d48df6add8951a6d90029185a99bb323
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765997"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128833"
 ---
 # <a name="icordebugprocessgetid-method"></a>ICorDebugProcess::GetID – metoda
 Získá ID operačního systému (OS) procesu.  
@@ -35,13 +33,13 @@ HRESULT GetID([out] DWORD *pdwProcessId);
   
 ## <a name="parameters"></a>Parametry  
  `pdwProcessId`  
- [out] Jedinečné ID procesu.  
+ mimo Jedinečné ID procesu  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

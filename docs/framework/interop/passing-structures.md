@@ -7,17 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - platform invoke, calling unmanaged functions
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eef52827bfe36977c9c4c844f4f431e7404adc97
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8fde48f0697d986c5fc7f6d7059b6b45a6af1488
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051669"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124983"
 ---
 # <a name="passing-structures"></a>Předávání struktur
-Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, členů struktur (uživatelsky definovaných typů v Visual Basic) nebo členů tříd, které jsou definovány ve spravovaném kódu. Při předávání struktur nebo tříd do nespravovaného kódu pomocí vyvolání platformy je nutné zadat další informace, chcete-li zachovat původní rozložení a zarovnání. Toto téma zavádí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který slouží k definování formátovaných typů. Pro spravované struktury a třídy můžete vybrat z několika předvídatelných chování rozložení dodaných výčtem **LayoutKind** .  
+Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, členů struktur (uživatelsky definovaných typů v Visual Basic) nebo členů tříd, které jsou definovány ve spravovaném kódu. Při předávání struktur nebo tříd do nespravovaného kódu pomocí vyvolání platformy je nutné zadat další informace, chcete-li zachovat původní rozložení a zarovnání. Toto téma zavádí atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute>, který slouží k definování formátovaných typů. Pro spravované struktury a třídy můžete vybrat z několika předvídatelných chování rozložení dodaných výčtem **LayoutKind** .  
   
  Střed k konceptům, které jsou uvedeny v tomto tématu, je důležitým rozdílem mezi strukturou a typy tříd. Struktury jsou typy hodnot a třídy jsou odkazové typy – třídy vždy poskytují alespoň jednu úroveň indirekce paměti (ukazatel na hodnotu). Tento rozdíl je důležitý, protože nespravované funkce často neodkazují na poptávku, jak je znázorněno v části signatury v prvním sloupci v následující tabulce. Deklarace spravované struktury a třídy ve zbývajících sloupcích ukazuje míru, do které můžete upravit úroveň dereference v deklaraci. Deklarace jsou k dispozici pro Visual Basic i C#pro vizuál.  
   
@@ -25,7 +23,7 @@ Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, člen
 |-------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|  
 |`DoWork(MyType x);`<br /><br /> Požaduje nulové úrovně dereference.|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> Přidává nulové úrovně dereference.|Nelze provést, protože již existuje jedna úroveň dereference.|  
 |`DoWork(MyType* x);`<br /><br /> Vyžaduje jednu úroveň dereference.|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> Přidá jednu úroveň dereference.|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> Přidává nulové úrovně dereference.|  
-|`DoWork(MyType** x);`<br /><br /> Požaduje dvě úrovně dereference.|Není možné, **protože ByRef** **ByRef** nebo `ref` `ref` nejde použít.|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> Přidá jednu úroveň dereference.|  
+|`DoWork(MyType** x);`<br /><br /> Požaduje dvě úrovně dereference.|Možnost **ByRef** **byref** nebo `ref` `ref` nelze použít.|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> Přidá jednu úroveň dereference.|  
   
  Tabulka popisuje následující pokyny pro deklarace volání platforem:  
   
@@ -36,7 +34,7 @@ Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, člen
 - Použijte třídu předanou odkazem, pokud nespravovaná funkce požaduje dvě úrovně dereference.  
   
 ## <a name="declaring-and-passing-structures"></a>Deklarace a předávání struktur  
- Následující příklad ukazuje, jak definovat `Point` struktury a `Rect` ve spravovaném kódu a předat typy jako parametr funkci **PtInRect** v souboru User32. dll. **PtInRect** má následující nespravovaný podpis:  
+ Následující příklad ukazuje, jak definovat `Point` a `Rect` struktury ve spravovaném kódu a předat typy jako parametr funkci **PtInRect** v souboru User32. dll. **PtInRect** má následující nespravovaný podpis:  
   
 ```cpp
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -90,7 +88,7 @@ internal static class NativeMethods
 ```  
   
 ## <a name="declaring-and-passing-classes"></a>Deklarace a předávání tříd  
- Můžete předat členy třídy do nespravované funkce knihovny DLL, pokud má třída pevné členské rozložení. Následující příklad ukazuje, jak předat členy `MySystemTime` třídy, které jsou definovány v sekvenčním pořadí, do **GetSystemTime** v souboru User32. dll. **GetSystemTime** má následující nespravovaný podpis:  
+ Můžete předat členy třídy do nespravované funkce knihovny DLL, pokud má třída pevné členské rozložení. Následující příklad ukazuje, jak předat členy třídy `MySystemTime`, které jsou definovány v sekvenčním pořadí, do **GetSystemTime** v souboru User32. dll. **GetSystemTime** má následující nespravovaný podpis:  
   
 ```cpp
 void GetSystemTime(SYSTEMTIME* SystemTime);  

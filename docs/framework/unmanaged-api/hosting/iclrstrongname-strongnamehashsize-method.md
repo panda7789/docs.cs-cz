@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a05ee56-08e4-4f3a-86a9-9b52083d5c0f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 058ff84ad9d56ce1ce2defd50c20ce50e1d791a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8db3b1854e334cef4d91d21eb5f666ba2e88fc2e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747931"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135066"
 ---
 # <a name="iclrstrongnamestrongnamehashsize-method"></a>ICLRStrongName::StrongNameHashSize – metoda
-Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.  
+Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí zadaného algoritmu hash.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT StrongNameHashSize (
   
 ## <a name="parameters"></a>Parametry  
  `ulHashAlg`  
- [in] Hashovací algoritmus, který slouží k výpočtu velikosti vyrovnávací paměti.  
+ pro Algoritmus hash používaný k výpočtu velikosti vyrovnávací paměti.  
   
  `pcbSize`  
- [out] Velikost vrácené vyrovnávací paměti v bajtech.  
+ mimo Vrácená velikost vyrovnávací paměti (v bajtech).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK`, zda byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

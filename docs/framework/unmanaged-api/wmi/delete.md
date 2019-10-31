@@ -14,14 +14,12 @@ helpviewer_keywords:
 - Delete function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a1bf9bd5d93d1affee649588138456269411d280
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6b8f287be831702dd31a8335f9b2f6447bcee540
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798666"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127667"
 ---
 # <a name="delete-function"></a>Funkce Delete
 
@@ -48,13 +46,13 @@ pro Tento parametr se nepoužívá.
 pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`\
-pro Název vlastnosti, která se má odstranit `wszName`musí být ukazatel na platný `LPCWSTR`.
+pro Název vlastnosti, která se má odstranit `wszName` musí být ukazatel na platný `LPCWSTR`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | Vlastnost nelze odstranit. |
@@ -63,7 +61,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlavi�
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není dostatek paměti. |
 | `WBEM_E_PROPAGATED_PROPERTY` | 0x8004101c | Vlastnost je zděděna ze základní třídy. |
 | `WBEM_E_SYSTEM_PROPERTY` | | Vlastnost je systémová vlastnost. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
 | `WBEM_E_RESET_TO_DEFAULT` | 0x80041030 | Funkce odstranila výchozí hodnotu přepisu pro aktuální třídu. Výchozí hodnota této vlastnosti v nadřazené třídě byla znovu aktivována. |
 
 ## <a name="remarks"></a>Poznámky
@@ -72,9 +70,9 @@ Tato funkce zalomí volání metody [IWbemclassObject::D dstranit](/windows/desk
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Hlaviček** WMINet_Utils.idl
+**Hlavička:** WMINet_Utils. idl
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření páru klíčů veřejného a soukromého'
+title: 'Postupy: Vytvoření páru veřejného a soukromého klíče'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - key pairs for strong-named assemblies
@@ -11,31 +11,29 @@ helpviewer_keywords:
 - .snk files
 - strong-named assemblies, key pairs
 ms.assetid: 05026813-f3bd-4d7c-9e0b-fc588eb3d114
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 62c38494e29541bd490d69ccc8de485217b9514a
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8a9845e3cd18ff86ec04216ad0e9c5606186b113
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991706"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122522"
 ---
-# <a name="how-to-create-a-public-private-key-pair"></a>Postupy: Vytvoření páru klíčů veřejného a soukromého
+# <a name="how-to-create-a-public-private-key-pair"></a>Postupy: Vytvoření páru veřejného a soukromého klíče
 
 Pro podepsání sestavení silným názvem musíte mít dvojici veřejného a privátního klíče. Tento pár veřejného a privátního kryptografického klíče se používá během kompilace k vytvoření sestavení se silným názvem. Můžete vytvořit pár klíčů pomocí [nástroje Strong Name (Sn. exe)](../../framework/tools/sn-exe-strong-name-tool.md). Soubory dvojice klíčů mají obvykle příponu *. snk* .
 
 > [!NOTE]
-> V aplikaci Visual Studio stránky C# vlastností projektu a Visual Basic obsahují kartu **podepisování** , která umožňuje vybrat existující soubory klíčů nebo vygenerovat nové soubory klíčů bez použití *sn. exe*. V vizuálu C++můžete zadat umístění existujícího souboru klíče na stránce **Upřesnit** vlastnost v oddílu **linker** v části **Vlastnosti konfigurace** okna **stránky vlastností** . Použití <xref:System.Reflection.AssemblyKeyFileAttribute> atributu k identifikaci párů klíčových souborů bylo od sady Visual Studio 2005 zastaralo.
+> V aplikaci Visual Studio stránky C# vlastností projektu a Visual Basic obsahují kartu **podepisování** , která umožňuje vybrat existující soubory klíčů nebo vygenerovat nové soubory klíčů bez použití *sn. exe*. V vizuálu C++můžete zadat umístění existujícího souboru klíče na stránce **Upřesnit** vlastnost v oddílu **linker** v části **Vlastnosti konfigurace** okna **stránky vlastností** . Použití atributu <xref:System.Reflection.AssemblyKeyFileAttribute> k identifikaci dvojic souborů klíčů bylo od verze sady Visual Studio 2005 zastaralo.
 
 ## <a name="create-a-key-pair"></a>Vytvoření páru klíčů
 
 Pokud chcete vytvořit pár klíčů, zadejte na příkazovém řádku tento příkaz:
 
-**sn – k** \< *název souboru*>
+**sn – k** \<*název souboru*>
 
 V tomto příkazu *název souboru* je název výstupního souboru obsahujícího dvojici klíčů.
 

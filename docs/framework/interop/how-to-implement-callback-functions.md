@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6eba8202f0284b7b1054585039f12da9364ca1e9
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 23355e16127b45c26a1d950c6a8b3cc27e265781
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051769"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123890"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
 Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vyvolání platformy, může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad používají funkci **EnumWindows** pro krokování seznamu oken a spravované funkce zpětného volání (pojmenované zpětné volání) k vytištění hodnoty popisovače okna.  
@@ -30,7 +28,7 @@ Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vy
   
      Jedno potvrzení, že tato funkce vyžaduje zpětné volání, je přítomnost argumentu **lpEnumFunc** . Je běžné, že je v názvu argumentů, které přebírají ukazatel na funkci zpětného volání, v kombinaci s příponou **Func** zobrazená předpona **LP** (dlouhý ukazatel). Dokumentaci k funkcím Win32 naleznete v sadě Microsoft Platform SDK.  
   
-2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta, který se nazývá `CallBack`, který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
+2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta s názvem `CallBack`, který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
   
      Funkce zpětného volání obecně vracejí nenulové hodnoty pro indikaci úspěšného a nulového označení selhání. Tento příklad explicitně nastaví návratovou hodnotu na **true** pro pokračování výčtu.  
   

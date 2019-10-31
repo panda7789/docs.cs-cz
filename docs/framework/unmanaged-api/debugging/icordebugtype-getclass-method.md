@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2644f48b-db3c-429f-ae62-76f1c98a1af5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bd68df77adafb8b21e7684b28fe978722ca37e16
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3a895f432ed640cc35a492df0c91cece34893062
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736789"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122369"
 ---
 # <a name="icordebugtypegetclass-method"></a>ICorDebugType::GetClass – metoda
-Získá ukazatel rozhraní k ICorDebugClass, který představuje obecný typ bez instancí.  
+Získá ukazatel rozhraní na ICorDebugClass, který představuje nevytvořený obecný typ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetClass (
   
 ## <a name="parameters"></a>Parametry  
  `ppClass`  
- [out] Ukazatel na adresu `ICorDebugClass` rozhraní, které představuje obecný typ bez instancí.  
+ mimo Ukazatel na adresu `ICorDebugClass` rozhraní, které představuje neinstanciující obecný typ.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetClass` může být volána pouze za určitých podmínek. Volání [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) před voláním `GetClass`. Pokud `ICorDebugType::GetType` vrací hodnotu corelementtype –, který je za řetězcem ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, `GetClass` zjistit nevytvořeným instancím typu pro obecný typ může být volána.  
+ `GetClass` lze volat pouze za určitých podmínek. Před voláním `GetClass`volejte [ICorDebugType:: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) . Pokud `ICorDebugType::GetType` vrátí hodnotu CorElementType –, která je ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, `GetClass` lze volat pro získání neinstanceho typu pro obecný typ.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

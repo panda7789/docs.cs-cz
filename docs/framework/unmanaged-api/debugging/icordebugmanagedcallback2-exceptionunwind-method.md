@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 875125185e9af74b85a833d04539403f81badf8f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fa317e1217ac0a9ca46bfeb312446534b1fca63a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761508"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131567"
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind – metoda
-Poskytuje stavu oznámení během procesu odvíjení výjimky.  
+Poskytuje oznámení o stavu během procesu odvíjení výjimky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,30 +38,30 @@ HRESULT ExceptionUnwind (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující vlákno, na kterém byla výjimka vydána.  
+ pro Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující vlákno, na kterém byla výjimka vyvolána.  
   
  `pThread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, na kterém byla výjimka vydána.  
+ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, na kterém byla vyvolána výjimka.  
   
  `dwEventType`  
- [in] Hodnota cordebugexceptionunwindcallbacktype – výčet, který určuje události, ke které je právě signalizována zpětného volání ve fázi unwind.  
+ pro Hodnota výčtu CorDebugExceptionUnwindCallbackType –, která určuje událost, která je signálem zpětného volání během fáze unwind.  
   
  `dwFlags`  
- [in] Hodnota [cordebugexceptionflags –](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) výčet, který určuje další informace o výjimce.  
+ pro Hodnota výčtu [CorDebugExceptionFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ExceptionUnwind` je volána v různých fázích v průběhu fáze unwind procesu zpracování výjimek. `ExceptionUnwind` lze volat vícekrát během odvíjení jednu výjimku.  
+ `ExceptionUnwind` je volána v různých bodech během fáze unwind v procesu zpracování výjimek. `ExceptionUnwind` lze volat více než jednou při odvíjení jedné výjimky.  
   
- Pokud `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, ukazatele na instrukci bude v rámci typu list vlákna, v okamžiku pořadí před (to může být několik pokyny před) instrukce, která vedla k výjimce.  
+ Pokud `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, bude ukazatel na instrukci v rámci koncového bodu vlákna před (to může být několik pokynů před) instrukcí, která vedla k výjimce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

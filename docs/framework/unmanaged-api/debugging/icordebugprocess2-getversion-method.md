@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: e11d5a75-61d9-4548-aedf-79c26079bd17
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 07f3be81431201a4bb6011ea9b8f973061d3d101
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5f618f6779f6931785bba18f70fb1ac9baf46753
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948864"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137196"
 ---
 # <a name="icordebugprocess2getversion-method"></a>ICorDebugProcess2::GetVersion – metoda
 
-Získá číslo verze common language runtime (CLR), na kterém běží v tomto procesu.
+Získá číslo verze modulu CLR (Common Language Runtime), který je spuštěn v tomto procesu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,18 +37,18 @@ HRESULT GetVersion (
 ## <a name="parameters"></a>Parametry
 
 `version`\
-[out] Ukazatel na cor_version – struktura, která ukládá číslo verze modulu runtime.
+mimo Ukazatel na strukturu COR_VERSION, která ukládá číslo verze modulu runtime.
 
 ## <a name="remarks"></a>Poznámky
 
-`GetVersion` Metoda vrátí kód chyby, pokud žádný modul runtime byl načten v procesu.
+Metoda `GetVersion` vrátí kód chyby, pokud nebyl v procesu načten modul runtime.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** CorDebug.idl, CorDebug.h
+**Hlavička:** CorDebug. idl, CorDebug. h
 
-**Knihovna:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: ced9c82e-d7b0-4806-a151-98b6611d3097
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05900f55885f8f3a4c470d6842c42d0fc3e0171e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5e2d68d1e2dcaa656df4e35b135eeaf522878c6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957445"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137132"
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3 – rozhraní
 Řídí vlastní oznámení ladicího programu.  
@@ -39,11 +37,11 @@ ms.locfileid: "69957445"
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorDebug. idl, CorDebug. h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

@@ -10,14 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d11567b3a5abca6e81ff0358295aa8516ef6443f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5ead3d1ac37b3c7ee50f18a81530720205678de2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969020"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121996"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a>Proces spravovaného spuštění zahrnuje následující kroky, které jsou podrobně popsány dále v tomto tématu:  
@@ -97,7 +95,7 @@ ms.locfileid: "70969020"
   
  Během provádění obdrží spravovaný kód služby, jako je například uvolňování paměti, zabezpečení, spolupráce s nespravovaným kódem, podpora ladění mezi jazyky, vylepšené nasazení a podpora správy verzí.  
   
- V operačním systému [!INCLUDE[winxp](../../includes/winxp-md.md)] a [!INCLUDE[windowsver](../../includes/windowsver-md.md)] společnosti Microsoft ověřuje zavaděč spravované moduly kontrolou bitu v hlavičce souboru COFF. Nastavený bit označuje spravovaný modul. Pokud zavaděč odhalí spravované moduly, načte soubor mscoree.dll a poté `_CorValidateImage` nebo `_CorImageUnloading` upozorní zavaděč ve chvíli, kdy jsou bitové kopie spravovaného modulu načteny nebo uvolněny. `_CorValidateImage`provede následující akce:  
+ V operačním systému [!INCLUDE[winxp](../../includes/winxp-md.md)] a [!INCLUDE[windowsver](../../includes/windowsver-md.md)] společnosti Microsoft ověřuje zavaděč spravované moduly kontrolou bitu v hlavičce souboru COFF. Nastavený bit označuje spravovaný modul. Pokud zavaděč odhalí spravované moduly, načte soubor mscoree.dll a poté `_CorValidateImage` nebo `_CorImageUnloading` upozorní zavaděč ve chvíli, kdy jsou bitové kopie spravovaného modulu načteny nebo uvolněny. `_CorValidateImage` provádí následující akce:  
   
 1. Zajistí, aby byl kód platným spravovaným kódem.  
   

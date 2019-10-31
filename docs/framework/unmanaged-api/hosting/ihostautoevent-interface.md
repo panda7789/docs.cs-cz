@@ -14,33 +14,31 @@ helpviewer_keywords:
 ms.assetid: 6c1d15c1-a80a-4ee9-b1e4-6e859db6575a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb5fea403f8210ea93d240aa3aabd4325524b987
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b191243ea03adcfecaadbd3a5871e1773b28bb1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599452"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124455"
 ---
 # <a name="ihostautoevent-interface"></a>IHostAutoEvent – rozhraní
-Poskytuje reprezentaci hostitele implementace události automatického obnovení.  
+Poskytuje reprezentaci implementace události automatického resetování hostitele.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Set – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Nastaví aktuální `IHostAutoEvent` instance do signalizovaného stavu.|  
-|[Wait – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Způsobí, že aktuální `IHostAutoEvent` instance počkat, až vlastní události nebo zadaného množství času po uplynutí předem.|  
+|[Set – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Nastaví aktuální instanci `IHostAutoEvent` na signálový stav.|  
+|[Wait – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Způsobí, že aktuální instance `IHostAutoEvent` počká, dokud událost nevlastníte, nebo dokud neuplyne zadaný čas.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

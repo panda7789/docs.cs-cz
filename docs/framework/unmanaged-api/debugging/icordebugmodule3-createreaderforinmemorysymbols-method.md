@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: af317171-d66d-4114-89eb-063554c74940
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 944e02fe83ba71b51ffb154748acff9c6dd662fe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2655151d34275b1b0fdc5d0903dd57fcea646014
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764021"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137307"
 ---
 # <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a>ICorDebugModule3::CreateReaderForInMemorySymbols – metoda
 Vytvoří čtečku symbolů ladění pro dynamický modul.  
@@ -37,39 +35,39 @@ HRESULT CreateReaderForInMemorySymbols (
   
 ## <a name="parameters"></a>Parametry  
  riid  
- [in] Identifikátor IID rozhraní COM se vraťte. Obvykle se jedná [isymunmanagedreader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).  
+ pro IID rozhraní modelu COM, které má být vráceno. Obvykle se jedná o [rozhraní ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).  
   
  ppObj  
- [out] Ukazatel na ukazatel na vrácené rozhraní.  
+ mimo Ukazatel na ukazatel na vrácené rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
  Čtecí modul se úspěšně vytvořil.  
   
  CORDBG_E_MODULE_LOADED_FROM_DISK  
- Modul není v paměti nebo dynamický modul.  
+ Modul není v paměti nebo dynamickém modulu.  
   
  CORDBG_E_SYMBOLS_NOT_AVAILABLE  
- Symboly nebyly poskytnuté aplikací nebo dosud nejsou k dispozici.  
+ Aplikace nedodala symboly nebo ještě nejsou k dispozici.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
+ E_FAIL (nebo jiné návratové kódy E_)  
  Nelze vytvořit čtecí modul.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda může také být použité k vytvoření objektu čtečky symbolů pro moduly (nedynamickou) v paměti, ale pouze po symboly jsou k dispozici nejprve (indikován [updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) zpětného volání).  
+ Tato metoda může být také použita k vytvoření objektu čtečky symbolů pro moduly v paměti (nedynamické), ale pouze po prvním zpřístupnění symbolů (označeno zpětným voláním [metody UpdateModuleSymbols –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) ).  
   
- Tato metoda vrací novou instanci čtečky pokaždé, když je volána (jako je [CComPtrBase::CoCreateInstance](/cpp/atl/reference/ccomptrbase-class#cocreateinstance)). Proto by měl ladicí program uložte do mezipaměti výsledek a požádat o novou instanci pouze v případě, že mohlo dojít ke změně podkladová data (to znamená, když [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) přijetí zpětné volání).  
+ Tato metoda vrací novou instanci čtenáře pokaždé, když je volána (například [CComPtrBase:: CoCreateInstance](/cpp/atl/reference/ccomptrbase-class#cocreateinstance)). Proto by měl ladicí program uložit výsledek do mezipaměti a požádat o novou instanci pouze v případě, že došlo ke změně podkladových dat (tj. při přijetí zpětného volání [metody LoadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) ).  
   
- Dynamické moduly nemají žádné symboly k dispozici, dokud se načetl první typ (jak je uvedeno ve [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) zpětného volání).  
+ Dynamické moduly nemají k dispozici žádné symboly, dokud není načten první typ (jak je uvedeno v zpětném volání [metody LoadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) ).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
+ **Verze .NET Framework:** 4,5, 4, 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 
