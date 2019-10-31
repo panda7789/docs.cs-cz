@@ -14,37 +14,35 @@ helpviewer_keywords:
 ms.assetid: 873639e2-4837-4568-83b3-4493e67e4174
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c98ece9d60571034f3298f15897b10c4d8fb06f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e980356ad592e137df7d08dadd77431b0e295380
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948548"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140999"
 ---
-# <a name="iclrmemorynotificationcallback-interface"></a><span data-ttu-id="98d9a-102">ICLRMemoryNotificationCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="98d9a-102">ICLRMemoryNotificationCallback Interface</span></span>
-<span data-ttu-id="98d9a-103">Umožňuje hostiteli podmínky přetížení paměti sestavy pomocí metodiky podobný Win32 `CreateMemoryResourceNotification` funkce.</span><span class="sxs-lookup"><span data-stu-id="98d9a-103">Allows the host to report memory pressure conditions using an approach similar to that of the Win32 `CreateMemoryResourceNotification` function.</span></span>  
+# <a name="iclrmemorynotificationcallback-interface"></a><span data-ttu-id="01468-102">ICLRMemoryNotificationCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="01468-102">ICLRMemoryNotificationCallback Interface</span></span>
+<span data-ttu-id="01468-103">Umožňuje hostiteli hlásit podmínky pro tlak paměti pomocí přístupu podobného funkci Win32 `CreateMemoryResourceNotification`.</span><span class="sxs-lookup"><span data-stu-id="01468-103">Allows the host to report memory pressure conditions using an approach similar to that of the Win32 `CreateMemoryResourceNotification` function.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="98d9a-104">Metody</span><span class="sxs-lookup"><span data-stu-id="98d9a-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="01468-104">Metody</span><span class="sxs-lookup"><span data-stu-id="01468-104">Methods</span></span>  
   
-|<span data-ttu-id="98d9a-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="98d9a-105">Method</span></span>|<span data-ttu-id="98d9a-106">Popis</span><span class="sxs-lookup"><span data-stu-id="98d9a-106">Description</span></span>|  
+|<span data-ttu-id="01468-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="01468-105">Method</span></span>|<span data-ttu-id="01468-106">Popis</span><span class="sxs-lookup"><span data-stu-id="01468-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="98d9a-107">OnMemoryNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="98d9a-107">OnMemoryNotification Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)|<span data-ttu-id="98d9a-108">Zatížení paměti v počítači upozorní common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="98d9a-108">Notifies the common language runtime (CLR) of the memory load on the computer.</span></span>|  
+|[<span data-ttu-id="01468-107">OnMemoryNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="01468-107">OnMemoryNotification Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)|<span data-ttu-id="01468-108">Upozorňuje modul CLR (Common Language Runtime) na zatížení paměti v počítači.</span><span class="sxs-lookup"><span data-stu-id="01468-108">Notifies the common language runtime (CLR) of the memory load on the computer.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="98d9a-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="98d9a-109">Remarks</span></span>  
- <span data-ttu-id="98d9a-110">Hostitel používá `ICLRMemoryNotificationCallback` rozhraní pro žádosti, že modul CLR uvolnění paměti prostředků.</span><span class="sxs-lookup"><span data-stu-id="98d9a-110">The host uses the `ICLRMemoryNotificationCallback` interface to request that the CLR free memory resources.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="01468-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="01468-109">Remarks</span></span>  
+ <span data-ttu-id="01468-110">Hostitel používá rozhraní `ICLRMemoryNotificationCallback` k vyžádání prostředků volné paměti CLR.</span><span class="sxs-lookup"><span data-stu-id="01468-110">The host uses the `ICLRMemoryNotificationCallback` interface to request that the CLR free memory resources.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="98d9a-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="98d9a-111">Requirements</span></span>  
- <span data-ttu-id="98d9a-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="98d9a-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="01468-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="01468-111">Requirements</span></span>  
+ <span data-ttu-id="01468-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01468-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="98d9a-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="98d9a-113">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="01468-113">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="01468-113">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="98d9a-114">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="98d9a-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="01468-114">**Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="01468-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="98d9a-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="98d9a-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="01468-115">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01468-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="98d9a-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="98d9a-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01468-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="01468-116">See also</span></span>
 
-- [<span data-ttu-id="98d9a-117">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="98d9a-117">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
-- [<span data-ttu-id="98d9a-118">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="98d9a-118">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="01468-117">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="01468-117">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [<span data-ttu-id="01468-118">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="01468-118">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

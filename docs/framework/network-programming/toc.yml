@@ -40,9 +40,6 @@
       items:
         - name: HTTP
           href: http.md
-          items:
-            - name: HttpListener
-              href: httplistener.md
         - name: 'Postupy: Přístup k vlastnostem specifickým pro HTTP'
           href: how-to-access-http-specific-properties.md
         - name: Správa připojení
