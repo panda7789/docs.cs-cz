@@ -7,56 +7,56 @@ f1_keywords:
 helpviewer_keywords:
 - BC31019
 ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
-ms.openlocfilehash: e0a00c4f57e45d65ff46fb9487a603a67d5a9e5c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 087735722fcd4dd789e25aacf6eeefffb490dac5
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620599"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198200"
 ---
-# <a name="unable-to-write-to-output-file-filename-error"></a>Nelze zapisovat do výstupního souboru '\<název souboru >': \<chyby >
-Došlo k potížím, vytváření souboru.  
+# <a name="unable-to-write-to-output-file-filename-error"></a>Do výstupního souboru\<filename > se nedá zapisovat: Chyba \<
+Při vytváření souboru došlo k potížím.  
   
- Výstupní soubor nelze otevřít pro zápis. Soubor (nebo na složku obsahující soubor) můžou být otevřené pro výhradní použití jiným procesem nebo je možné, že jeho nastaven atribut jen pro čtení.  
+ Výstupní soubor nelze otevřít pro zápis. Soubor (nebo složku obsahující soubor) může být otevřen pro výhradní použití jiným procesem nebo může mít nastaven atribut jen pro čtení.  
   
- Běžné situace, kde je soubor otevřený výhradně jsou:  
+ K běžným situacím, kdy se soubor otevírá výhradně, patří:  
   
-- Aplikace je již spuštěn a pomocí jeho soubory. Chcete-li tento problém vyřešit, ujistěte se, že aplikace není spuštěna.  
+- Aplikace už je spuštěná a používá její soubory. Chcete-li tento problém vyřešit, zajistěte, aby aplikace neběžela.  
   
-- Jiná aplikace má soubor otevřen. Chcete-li tento problém vyřešit, ujistěte se, že žádná jiná aplikace je přístup k souborům. Není vždy zřejmé aplikaci, pro kterou je přístupu k souborům; restartování počítače v takovém případě může být nejjednodušší způsob, jak aplikaci ukončit.  
+- Soubor otevřela jiná aplikace. Chcete-li tento problém vyřešit, ujistěte se, že k souborům nepřistupuje žádná jiná aplikace. Vždy není zřejmé, ke které aplikaci přistupuje vaše soubory; v takovém případě může být restartování počítače nejjednodušší způsob, jak aplikaci ukončit.  
   
- Pokud ani jeden z výstupních souborů projektu je označena jako jen pro čtení, tato výjimka bude vyvolána.  
+ Pokud je i jeden z výstupních souborů projektu označen jen pro čtení, bude vyvolána tato výjimka.  
   
  **ID chyby:** BC31019  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Kompilovat program znovu, abyste viděli, pokud se chyba objeví znovu.  
+1. Zkompilujte program znovu, abyste viděli, jestli se chyba opakuje.  
   
-2. Pokud chyba přetrvává, uložte si práci a restartujte aplikaci Visual Studio.  
+2. Pokud chyba přetrvává, uložte svou práci a restartujte aplikaci Visual Studio.  
   
 3. Pokud chyba přetrvává, restartujte počítač.  
   
-4. Pokud se chyba objeví znovu, přeinstalujte Visual Basic.  
+4. Pokud se chyba opakuje, přeinstalujte Visual Basic.  
   
-5. Pokud chyba přetrvává po přeinstalaci, upozorní Microsoft Product Support Services.  
+5. Pokud potíže potrvají i po přeinstalaci, upozorněte služby Microsoft Product Support Services.  
   
-### <a name="to-check-file-attributes-in-file-explorer"></a>Ke kontrole atributů souboru v Průzkumníku souborů  
+### <a name="to-check-file-attributes-in-file-explorer"></a>Postup při kontrole atributů souborů v Průzkumníkovi souborů  
   
-1. Otevřete složku, které vás zajímají.  
+1. Otevřete složku, do které vás zajímáte.  
   
-2. Klikněte na tlačítko **zobrazení** ikonu a zvolte **podrobnosti**.  
+2. Klikněte na ikonu **zobrazení** a vyberte **Podrobnosti**.  
   
-3. Klikněte pravým tlačítkem na záhlaví sloupce a vybrat **atributy** z rozevíracího seznamu.  
+3. Klikněte pravým tlačítkem myši na záhlaví sloupce a v rozevíracím seznamu vyberte možnost **atributy** .  
   
-### <a name="to-change-the-attributes-of-a-file-or-folder"></a>Chcete-li změnit atributy souboru nebo složky  
+### <a name="to-change-the-attributes-of-a-file-or-folder"></a>Změna atributů souboru nebo složky  
   
-1. V **Průzkumníka souborů**, klikněte pravým tlačítkem na soubor nebo složku a zvolte **vlastnosti**.  
+1. V **Průzkumníku souborů**klikněte pravým tlačítkem na soubor nebo složku a vyberte **vlastnosti**.  
   
-2. V **atributy** část **Obecné** kartu, zrušte **jen pro čtení** pole.  
+2. V části **atributy** na kartě **Obecné** zrušte zaškrtnutí políčka **jen pro čtení** .  
   
-3. Stisknutím klávesy **OK**.  
+3. Stiskněte **OK**.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

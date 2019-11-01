@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96fee259b31938ddec5820bc1b8d72a96b50c8d8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 80623bdec939b0ae5fc13008c1c4001c613ac435
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773880"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73195961"
 ---
 # <a name="bucketparameters-structure"></a>BucketParameters – struktura
-Ukládá název typu události a parametry pro aktuální výjimky, které je přidruženo k události.  
+Ukládá název typu události a parametry pro aktuální výjimku, která je přidružena k události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +38,16 @@ typedef struct _BucketParameters {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`fInited`|`true`, pokud zbytek tato struktura je platná. v opačném případě `false`.|  
-|`pszEventTypeName`|Název typu události.|  
-|`pszParams`|Pole řetězců, z nichž každý určuje parametr pro aktuální výjimky přidružené k události.|  
+|`fInited`|`true`, pokud je zbytek této struktury platný; v opačném případě `false`.|  
+|`pszEventTypeName`|Název typu události|  
+|`pszParams`|Pole řetězců, z nichž každý určuje parametr pro aktuální výjimku přidruženou k události.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.idl  
+ **Hlavička:** MSCorEE. idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

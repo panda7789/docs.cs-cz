@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ověření platnosti e-mailového formátu řetězců'
+title: Jak ověřit, jestli jsou řetězce v platném formátu e-mailu
 ms.date: 12/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: 1812235da6e6d02a97fe994568c5c26a3c7cde33
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c02fc215fa66951ae3333175191ab96a226a2afe
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126403"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197579"
 ---
-# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: ověření, zda jsou řetězce v platném formátu e-mailu
+# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Jak ověřit, jestli jsou řetězce v platném formátu e-mailu
 
 Následující příklad používá regulární výraz pro ověření, zda je řetězec v platném formátu e-mailu.
 
@@ -50,7 +50,7 @@ Všimněte si, že metoda `IsValidEmail` neprovádí ověřování pro ověřen�
 [!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
 [!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]
 
-V tomto příkladu je vzor regulárního výrazu ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][-a-z0-9]{0,22}[a-z0-9]))$`` interpretován tak, jak je znázorněno v následující legendě. Regulární výraz je kompilován pomocí příznaku <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.
+V tomto příkladu je vzor regulárního výrazu ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` interpretován tak, jak je znázorněno v následující legendě. Regulární výraz je kompilován pomocí příznaku <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.
 
 `^`vzoru: začátek porovnávání na začátku řetězce.
 
@@ -62,7 +62,7 @@ Vzor `|(([0-9a-z]`: Pokud první znak není znak uvozovek, odpovídá jakémukol
 
 Vzor `(\.(?!\.))`: Pokud je dalším znakem tečka, porovnává se s ním. Pokud se nejedná o tečku, hledejte dopředu na další znak a pokračujte v porovnávání. `(?!\.)` je negativní kontrolní výraz dopředného vyhledávání s nulovou šířkou, který brání v zobrazení dvou po sobě jdoucích teček v místní části e-mailové adresy.
 
-Vzor ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``: Pokud následující znak není tečka, odpovídá libovolnému znaku slova nebo jednomu z následujících znaků:-! # $% & ' * +/=? ^ '{}| ~
+Vzor ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``: Pokud následující znak není tečka, odpovídá libovolnému znaku slova nebo jednomu z následujících znaků:-! # $% & '\*+/=? ^\`{}| ~
 
 Vzor ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*``: odpovídá vzoru alternace (tečka následovaná netečkou nebo jedním z několika znaků) nula nebo vícekrát.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2439ea4e248c0db09d4e43acb33041644662be75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c65574878fdecd7dd56485e71d7c0917c6edccb
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649751"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198410"
 ---
 
-Každý – možnost kompilátoru je k dispozici ve dvou formách: **– možnost** a **/možnost**. V dokumentaci se zobrazují jenom-možnost formuláře. 
+Každá možnost kompilátoru je k dispozici ve dvou formách: **-Option** a **/Option**. V dokumentaci se zobrazí pouze formulář s možnostmi.
