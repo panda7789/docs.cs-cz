@@ -2,24 +2,24 @@
 title: Z důvodu interní chyby systému nelze získat názvy sériových portů.
 ms.date: 07/20/2015
 ms.assetid: 789a1e94-28c2-4c20-8ee4-ad65fea37812
-ms.openlocfilehash: 04841634938a1ccd6702fd1e3e14cf379f82875f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 963042f9f6cb3d0b19fbbc62b3f32e2522b7b0db
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936263"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197240"
 ---
 # <a name="unable-to-get-serial-port-names-because-of-an-internal-system-error"></a>Z důvodu interní chyby systému nelze získat názvy sériových portů.
-Vnitřní chyba došlo k chybě `My.Computer.Ports.SerialPortNames` vlastnost byla volána.  
+Při volání vlastnosti `My.Computer.Ports.SerialPortNames` došlo k vnitřní chybě.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zobrazit [základy ladicího programu](/visualstudio/debugger/debugger-basics) Další informace o odstraňování potíží.  
+1. Další informace o řešení potíží najdete v tématu [Základy ladicího programu](/visualstudio/debugger/debugger-basics) .  
   
-2. Všimněte si okolnosti, kdy došlo k chybě a volat Microsoft Product Support Services.  
+2. Poznamenejte si okolnosti, za kterých došlo k chybě, a obraťte se na službu Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Devices.Ports.SerialPortNames>
 - [Základy ladicího programu](/visualstudio/debugger/debugger-basics)
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

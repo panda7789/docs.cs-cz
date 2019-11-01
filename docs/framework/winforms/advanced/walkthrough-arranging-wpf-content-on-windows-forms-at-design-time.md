@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Uspořádání obsahu WPF v modelu Windows Forms během návrhu'
+title: 'Návod: Uspořádání obsahu WPF ve Windows Forms během návrhu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF user control [Windows Forms], hosting in a layout panel
@@ -12,14 +12,14 @@ ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 7858ffd708c78d6397d533f613ccc2ea78d6cbed
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 9062a3da9a6020762114702b6cce6b42414ab92d
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658525"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197457"
 ---
-# <a name="walkthrough-arrange-wpf-content-on-windows-forms-at-design-time"></a>Návod: Uspořádání obsahu WPF v model Windows Forms v době návrhu
+# <a name="walkthrough-arrange-wpf-content-on-windows-forms-at-design-time"></a>Návod: uspořádání obsahu WPF v model Windows Forms v době návrhu
 
 V tomto článku se dozvíte, jak používat funkce model Windows Forms rozložení, jako je například ukotvení a zarovnávacím čárám, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).
 
@@ -38,13 +38,13 @@ Otevřete Visual Studio a vytvořte nový projekt aplikace model Windows Forms v
 
 Po přidání ovládacího prvku WPF do projektu jej můžete uspořádat na formuláři.
 
-1. Přidejte do projektu nový <xref:System.Windows.Controls.UserControl> WPF. Použijte výchozí název pro typ ovládacího prvku, `UserControl1.xaml`. Další informace najdete v tématu [Návod: Vytváření nového obsahu WPF v model Windows Forms v době](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)návrhu.
+1. Přidejte do projektu novou <xref:System.Windows.Controls.UserControl> WPF. Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
 
-2. V zobrazení Návrh se ujistěte, že `UserControl1` je vybraná možnost.
+2. V zobrazení Návrh se ujistěte, že je vybrána možnost `UserControl1`.
 
-3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastností a <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
+3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
 
-4. Nastavte hodnotu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti na modrou.
+4. Nastavte hodnotu vlastnosti <xref:System.Windows.Controls.Control.Background%2A> na **modrou**.
 
 5. Sestavte projekt.
 
@@ -54,45 +54,45 @@ Ovládací prvky WPF lze v panelech rozložení použít stejným způsobem jako
 
 1. Otevřete `Form1` v Návrhář formulářů.
 
-2. V **sadě nástrojů**přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek do formuláře.
+2. V **sadě nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> do formuláře.
 
-3. Na panelu inteligentních značek ovládacíhoprvkuvyberteOdebratposlední<xref:System.Windows.Forms.TableLayoutPanel> řádek.
+3. Na panelu inteligentních značek ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> vyberte **Odebrat poslední řádek**.
 
-4. Změňte velikost <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na větší šířku a výšku.
+4. Změňte velikost ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> na větší šířku a výšku.
 
-5. V **sadě nástrojů**poklikejte na `UserControl1` `UserControl1` vytvoření instance v první buňce <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.
+5. V sadě **nástrojů**poklikejte na `UserControl1` pro vytvoření instance `UserControl1` v první buňce ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>.
 
-   Instance `UserControl1` je hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku s názvem `elementHost1`.
+   Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.
 
-6. Na **panelu nástrojů**dvakrát klikněte `UserControl1` pro vytvoření další instance v <xref:System.Windows.Forms.TableLayoutPanel> druhé buňce ovládacího prvku.
+6. V **sadě nástrojů**poklikejte na `UserControl1` pro vytvoření další instance v druhé buňce ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>.
 
 7. V okně **Osnova dokumentu** vyberte `tableLayoutPanel1`.
 
-8. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti na **10, 10, 10, 10**.
+8. V okně **vlastnosti** nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Padding%2A> na **10, 10, 10, 10**.
 
-   Oba <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky se změní tak, aby se vešly do nového rozložení.
+   Velikost obou <xref:System.Windows.Forms.Integration.ElementHost>ch ovládacích prvků se přizpůsobí novému rozložení.
 
 ## <a name="use-snaplines-to-align-wpf-controls"></a>Použití zarovnávacím čárám k zarovnání ovládacích prvků WPF
 
-Zarovnávacím čárám umožňuje snadné zarovnání ovládacích prvků na formuláři. Zarovnávacím čárám můžete použít i k zarovnání ovládacích prvků WPF. Další informace najdete v tématu [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)zarovnávacím čárám.
+Zarovnávacím čárám umožňuje snadné zarovnání ovládacích prvků na formuláři. Zarovnávacím čárám můžete použít i k zarovnání ovládacích prvků WPF. Další informace najdete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí zarovnávacím čárám](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).
 
-1. Z **panelu nástrojů**přetáhněte instanci `UserControl1` do formuláře a umístěte ji do prostoru pod <xref:System.Windows.Forms.TableLayoutPanel> ovládacím prvkem.
+1. Z **panelu nástrojů**přetáhněte instanci `UserControl1` do formuláře a umístěte ji do prostoru pod ovládacím prvkem <xref:System.Windows.Forms.TableLayoutPanel>.
 
-   Instance `UserControl1` je hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku s názvem `elementHost3`.
+   Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost3`.
 
-2. Pomocí zarovnávacím čárám zarovnejte levý okraj `elementHost3` s levým <xref:System.Windows.Forms.TableLayoutPanel> okrajem ovládacího prvku.
+2. Pomocí zarovnávacím čárám zarovnejte levý okraj `elementHost3` s levým okrajem ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>.
 
-3. Pomocí zarovnávacím čárám můžete nastavit `elementHost3` stejnou šířku <xref:System.Windows.Forms.TableLayoutPanel> jako ovládací prvek.
+3. Pomocí zarovnávacím čárám velikost `elementHost3` se stejnou šířkou jako <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek.
 
-4. Přejděte `elementHost3` k ovládacímu prvku, <xref:System.Windows.Forms.TableLayoutPanel> dokud se mezi ovládacími prvky snapline střed.
+4. Přesuňte `elementHost3` směrem k ovládacímu prvku <xref:System.Windows.Forms.TableLayoutPanel> dokud se mezi ovládacími prvky snapline střed.
 
 5. V okně **vlastnosti** nastavte hodnotu vlastnosti okraj na **20, 20, 20, 20**.
 
-6. Přesuňte se<xref:System.Windows.Forms.TableLayoutPanel> od ovládacího prvku jinam,dokudse`elementHost3` znovu snapline Center. Centrum snapline nyní indikuje okraj 20.
+6. Přesuňte `elementHost3` pryč od ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>, dokud se znovu neobjeví snapline Center. Centrum snapline nyní indikuje okraj 20.
 
-7. Přejděte `elementHost3` do pravého okraje, dokud jeho levý okraj není zarovnán s levým `elementHost1`okrajem.
+7. Přesune `elementHost3` doprava, dokud její levý okraj není zarovnán s levým okrajem `elementHost1`.
 
-8. Změní šířku `elementHost3` , dokud její pravý okraj není zarovnán s pravým `elementHost2`okrajem.
+8. Změní šířku `elementHost3`, dokud její pravý okraj není zarovnán s pravým okrajem `elementHost2`.
 
 ## <a name="anchor-and-dock-wpf-controls"></a>Ukotvení a ukotvení ovládacích prvků WPF
 
@@ -100,41 +100,41 @@ Ovládací prvek WPF hostovaný na formuláři má stejné chování při ukotve
 
 1. Vyberte `elementHost1`.
 
-2. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost na **horní, dolní, levou, pravou**.
+2. V okně **vlastnosti** nastavte vlastnost <xref:System.Windows.Forms.Control.Anchor%2A> na **nahoře, dole, vlevo, vpravo**.
 
-3. Změňte velikost <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na větší velikost.
+3. Změňte velikost ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> na větší velikost.
 
-   `elementHost1` Ovládací prvek mění velikost, aby bylo možné vyplnit buňku.
+   Ovládací prvek `elementHost1` mění velikost pro vyplnění buňky.
 
 4. Vyberte `elementHost2`.
 
-5. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti na <xref:System.Windows.Forms.DockStyle.Fill>.
+5. V okně **vlastnosti** nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> na <xref:System.Windows.Forms.DockStyle.Fill>.
 
-   `elementHost2` Ovládací prvek mění velikost, aby bylo možné vyplnit buňku.
+   Ovládací prvek `elementHost2` mění velikost pro vyplnění buňky.
 
-6. <xref:System.Windows.Forms.TableLayoutPanel> Vyberte ovládací prvek.
+6. Vyberte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel>.
 
-7. Nastavte hodnotu <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti na <xref:System.Windows.Forms.DockStyle.Top>.
+7. Nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> na <xref:System.Windows.Forms.DockStyle.Top>.
 
 8. Vyberte `elementHost3`.
 
-9. Nastavte hodnotu <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti na <xref:System.Windows.Forms.DockStyle.Fill>.
+9. Nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> na <xref:System.Windows.Forms.DockStyle.Fill>.
 
-   `elementHost3` Ovládací prvek mění velikost, aby vyplnil zbývající místo ve formuláři.
+   Ovládací prvek `elementHost3` mění velikost, aby vyplnil zbývající místo ve formuláři.
 
 10. Změňte velikost formuláře.
 
-    Všechny tři <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky mají patřičnou velikost.
+    Všechny tři <xref:System.Windows.Forms.Integration.ElementHost> řídí správné přizpůsobení velikosti.
 
-    Další informace najdete v tématu [jak: Podřízené ovládací prvky ukotvení a ukotvení v](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)ovládacím prvku TableLayoutPanel.
+    Další informace naleznete v tématu [Postupy: ukotvení a ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Postupy: Podřízené ovládací prvky ukotvení a ukotvení v ovládacím prvku TableLayoutPanel](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
-- [Postupy: Zarovnání ovládacího prvku na okraje formulářů v době návrhu](../controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
-- [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí zarovnávacím čárám](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
+- [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](../controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
+- [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
 - [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
 - [Používání ovládacích prvků WPF](using-wpf-controls.md)
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)

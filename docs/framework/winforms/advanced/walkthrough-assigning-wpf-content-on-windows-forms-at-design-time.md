@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Přiřazení obsahu WPF v modelu Windows Forms během návrhu'
+title: 'Návod: Přiřazování obsahu WPF ve Windows Forms během návrhu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF content [Windows Forms], assigning at design time
@@ -11,14 +11,14 @@ ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: bc5f5e2d8808c0a60df721bf2c0ed76b45ef49a0
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 0fc7cf40acb141d698f59a1b7fbe6c32269ea61d
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666250"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197437"
 ---
-# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>Návod: Přiřazení obsahu WPF na model Windows Forms v době návrhu
+# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>Návod: přiřazení obsahu WPF na model Windows Forms v době návrhu
 
 Tento článek ukazuje, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři. Můžete vybrat jakýkoli typ ovládacího prvku WPF, který je součástí projektu.
 
@@ -35,54 +35,54 @@ Otevřete Visual Studio a vytvořte nový projekt aplikace model Windows Forms v
 
 ## <a name="create-the-wpf-control-types"></a>Vytvoření typů ovládacích prvků WPF
 
-Po přidání typů ovládacích prvků WPF do projektu je můžete hostovat v různých <xref:System.Windows.Forms.Integration.ElementHost> ovládacích prvcích.
+Po přidání typů ovládacích prvků WPF do projektu je můžete hostovat v různých <xref:System.Windows.Forms.Integration.ElementHost>ch ovládacích prvcích.
 
-1. Přidejte do řešení nový <xref:System.Windows.Controls.UserControl> projekt WPF. Použijte výchozí název pro typ ovládacího prvku, `UserControl1.xaml`. Další informace najdete v tématu [Návod: Vytváření nového obsahu WPF v model Windows Forms v době](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)návrhu.
+1. Přidejte do řešení nový projekt WPF <xref:System.Windows.Controls.UserControl>. Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
 
-2. V zobrazení Návrh se ujistěte, že `UserControl1` je vybraná možnost.
+2. V zobrazení Návrh se ujistěte, že je vybrána možnost `UserControl1`.
 
-3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastností a <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
+3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
 
-4. Přidejte ovládací prvek <xref:System.Windows.Controls.UserControl> do a <xref:System.Windows.Controls.TextBox.Text%2A> nastavte hodnotu vlastnosti na **hostovaný obsah.** <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>
+4. Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah**.
 
-5. Přidejte do projektu druhý <xref:System.Windows.Controls.UserControl> WPF. Použijte výchozí název pro typ ovládacího prvku, `UserControl2.xaml`.
+5. Přidejte do projektu druhý <xref:System.Windows.Controls.UserControl> WPF. Použijte výchozí název pro typ ovládacího prvku `UserControl2.xaml`.
 
-6. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastností a <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
+6. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
 
-7. Přidejte ovládací prvek <xref:System.Windows.Controls.UserControl> do a <xref:System.Windows.Controls.TextBox.Text%2A> nastavte hodnotu vlastnosti na **hostovaný obsah 2.** <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>
+7. Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah 2**.
 
    > [!NOTE]
-   > Obecně byste měli hostovat propracovanější obsah WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> Ovládací prvek slouží pouze pro ilustrativní účely.
+   > Obecně byste měli hostovat propracovanější obsah WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> ovládací prvek slouží pouze pro ilustrativní účely.
 
 8. Sestavte projekt.
 
 ## <a name="select-wpf-controls"></a>Vybrat ovládací prvky WPF
 
-<xref:System.Windows.Forms.Integration.ElementHost> Ovládacímu prvku, který je již hostitelem obsahu, můžete přiřadit jiný obsah WPF.
+Můžete přiřadit jiný obsah WPF k ovládacímu prvku <xref:System.Windows.Forms.Integration.ElementHost>, který je již hostitelem obsahu.
 
 1. Otevřete `Form1` v Návrhář formulářů.
 
-2. Na **panelu nástrojů**poklikejte na `UserControl1` `UserControl1` vytvoření instance ve formuláři.
+2. Na **panelu nástrojů**dvakrát klikněte na `UserControl1`. tím se vytvoří instance `UserControl1` ve formuláři.
 
-   Instance `UserControl1` je hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku s názvem `elementHost1`.
+   Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.
 
-3. V panelu inteligentních značek pro `elementHost1`otevřete rozevírací seznam **Vybrat hostovaný obsah** .
+3. Na panelu inteligentních značek pro `elementHost1`otevřete rozevírací seznam **Vybrat hostovaný obsah** .
 
 4. V rozevíracím seznamu vyberte **UserControl2** .
 
-   Ovládací `elementHost1` prvek je nyní hostitelem instance `UserControl2` typu.
+   Ovládací prvek `elementHost1` nyní hostuje instanci typu `UserControl2`.
 
-5. V okně **vlastnosti** potvrďte, že <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> vlastnost je nastavená na **UserControl2**.
+5. V okně **vlastnosti** potvrďte, že vlastnost <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> je nastavena na hodnotu **UserControl2**.
 
-6. Ze **sady nástrojů**ve skupině **interoperability WPF** přetáhněte <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek do formuláře.
+6. Ze **sady nástrojů**ve skupině **interoperability WPF** přetáhněte ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> do formuláře.
 
    Výchozí název nového ovládacího prvku je `elementHost2`.
 
-7. V panelu inteligentních značek pro `elementHost2`otevřete rozevírací seznam **Vybrat hostovaný obsah** .
+7. Na panelu inteligentních značek pro `elementHost2`otevřete rozevírací seznam **Vybrat hostovaný obsah** .
 
 8. V rozevíracím seznamu vyberte **UserControl1** .
 
-9. Ovládací `elementHost2` prvek je nyní hostitelem instance `UserControl1` typu.
+9. Ovládací prvek `elementHost2` nyní hostuje instanci typu `UserControl1`.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -90,4 +90,4 @@ Po přidání typů ovládacích prvků WPF do projektu je můžete hostovat v r
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
 - [Používání ovládacích prvků WPF](using-wpf-controls.md)
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)

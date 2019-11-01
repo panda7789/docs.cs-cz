@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 43927be83b8b2a9163656f8d6d54c2cf83a23e28
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 43e9438ed2c1cd82bb4d89ff082545021b2d543e
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052643"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195352"
 ---
 # <a name="debugging-tracing-and-profiling"></a>Ladění, trasování a profilace
 Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí modulu runtime nakonfigurovány tak, aby umožňovaly ladicímu programu připojit se k aplikaci a aby bylo možné vytvořit symboly a mapy řádků, pokud je to možné, pro aplikaci a její odpovídající Microsoft Intermediate jazyk (MSIL). Po ladění spravované aplikace se dá profilovat, aby se zvýšil výkon. Profilování vyhodnocuje a popisuje řádky zdrojového kódu, které generují nejčastěji spouštěný kód, a dobu, po kterou je potřeba je spustit.  
   
- Aplikace .NET Framework lze snadno ladit pomocí sady Visual Studio, která zpracovává mnoho podrobností o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete kontrolovat a zlepšovat výkon aplikací .NET Framework pomocí tříd ladění v oboru názvů .NET Framework <xref:System.Diagnostics> . Tento obor názvů obsahuje <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.Debug> <xref:System.Diagnostics.TraceSource> třídy,<xref:System.Diagnostics.EventLog>a pro sledování toku spouštění a třídy <xref:System.Diagnostics.PerformanceCounter> ,aprokódprofilace.<xref:System.Diagnostics.Process>  
+ Aplikace .NET Framework lze snadno ladit pomocí sady Visual Studio, která zpracovává mnoho podrobností o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete kontrolovat a zlepšovat výkon aplikací .NET Framework pomocí tříd ladění v oboru názvů .NET Framework <xref:System.Diagnostics>. Tento obor názvů obsahuje třídy <xref:System.Diagnostics.Trace>, <xref:System.Diagnostics.Debug>a <xref:System.Diagnostics.TraceSource> pro trasování toku spouštění a třídy <xref:System.Diagnostics.Process>, <xref:System.Diagnostics.EventLog>a <xref:System.Diagnostics.PerformanceCounter> pro kód profilace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Povolení JIT – ladění Attach](enabling-jit-attach-debugging.md)  
@@ -47,7 +47,7 @@ Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí mo
  Popisuje čítače, které lze použít ke sledování výkonu aplikace.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ladění aplikací ASP.NET nebo ASP.NET Core v aplikaci Visual Studio](/visualstudio/debugger/debugging-aspnet-and-ajax-applications)  
+ [Ladění aplikací ASP.NET nebo ASP.NET Core v aplikaci Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
  Poskytuje předpoklady a pokyny pro ladění aplikace ASP.NET během vývoje nebo po nasazení.  
   
  [Průvodce vývojem](../development-guide.md)  

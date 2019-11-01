@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: bbf8a02096a4a654a041cfe17c760939fc17f2f5
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 4dcb357570cb6597fde86c9e8f2acb74364cfaa3
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394397"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198401"
 ---
-### <a name="session-state-obsolete-apis-removed"></a>Stav relace: odebrané zastaralé rozhraní API 
+### <a name="session-state-obsolete-apis-removed"></a>Stav relace: odebrané zastaralé rozhraní API
 
 Odebrala se zastaralá rozhraní API pro konfiguraci souborů cookie relací. Další informace najdete v tématu [ASPNET/oznámení # 257](https://github.com/aspnet/Announcements/issues/257).
 

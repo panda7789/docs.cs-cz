@@ -10,22 +10,22 @@ ms.assetid: e570375d-2a68-44ba-b4f7-c781af2d20e8
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: dfe5244e0c5b61fdf6d940dd16d8c280f013b12c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3d1887eb1161f714962c2c26d6fe618749b26c0f
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666184"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197475"
 ---
-# <a name="how-to-copy-and-paste-an-elementhost-control"></a>Postupy: Zkopírování a vložení ovládacího prvku ElementHost
+# <a name="how-to-copy-and-paste-an-elementhost-control"></a>Postupy: zkopírování a vložení ovládacího prvku ElementHost
 
 Tento postup ukazuje, jak zkopírovat ovládací prvek Windows Presentation Foundation (WPF) do formuláře Windows v aplikaci Visual Studio.
 
-1. V aplikaci Visual Studio přidejte nový WPF <xref:System.Windows.Controls.UserControl> do projektu model Windows Forms. Použijte výchozí název pro typ ovládacího prvku, `UserControl1.xaml`. Další informace najdete v tématu [Návod: Vytváření nového obsahu WPF v model Windows Forms v době](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)návrhu.
+1. V aplikaci Visual Studio přidejte novou <xref:System.Windows.Controls.UserControl> WPF do projektu model Windows Forms. Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
 
-2. V okně **vlastnosti** nastavte hodnotu vlastností <xref:System.Windows.FrameworkElement.Width%2A> `UserControl1` a <xref:System.Windows.FrameworkElement.Height%2A> na hodnotu **200**.
+2. V okně **vlastnosti** nastavte hodnotu vlastnosti <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> `UserControl1` na **200**.
 
-3. Nastavte hodnotu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti na modrou.
+3. Nastavte hodnotu vlastnosti <xref:System.Windows.Controls.Control.Background%2A> na **modrou**.
 
 4. Sestavte projekt.
 
@@ -33,13 +33,13 @@ Tento postup ukazuje, jak zkopírovat ovládací prvek Windows Presentation Foun
 
 6. Z **panelu nástrojů**přetáhněte instanci `UserControl1` do formuláře.
 
-   Instance `UserControl1` je hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku s názvem `elementHost1`.
+   Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.
 
-7. Když vyberete tuto možnost, zkopírujte ji do schránky stisknutím **kombinace kláves CTRL +** +**C.** `elementHost1`
+7. Pokud je vybrána možnost `elementHost1`, stiskněte klávesu **Ctrl**+**C** a zkopírujte ji do schránky.
 
-8. Stisknutím klávesy **CTRL**+**V** vložte zkopírovaný ovládací prvek do formuláře.
+8. Stisknutím **kombinace kláves Ctrl**+**V** vložte zkopírovaný ovládací prvek do formuláře.
 
-   Ve formuláři <xref:System.Windows.Forms.Integration.ElementHost> se vytvoří `elementHost2` nový ovládací prvek s názvem.
+   Ve formuláři se vytvoří nový ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost2`.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -47,4 +47,4 @@ Tento postup ukazuje, jak zkopírovat ovládací prvek Windows Presentation Foun
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
 - [Používání ovládacích prvků WPF](using-wpf-controls.md)
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)

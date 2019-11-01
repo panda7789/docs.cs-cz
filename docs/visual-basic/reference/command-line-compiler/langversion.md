@@ -6,12 +6,12 @@ helpviewer_keywords:
 - langversion compiler option [Visual Basic]
 - -langversion compiler option [Visual Basic]
 ms.assetid: 59b7b0c8-2dde-4e9b-94e7-0237f7e0bafb
-ms.openlocfilehash: 15f334f280c2aca83ba5b628a1137464c31c6282
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 5f59f1c4c269a52131a324bbd2bfbe817ab794a4
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005553"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197084"
 ---
 # <a name="-langversion-visual-basic"></a>-langversion – (Visual Basic)
 Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena v zadané Visual Basic jazykové verzi.  
@@ -35,7 +35,7 @@ Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena v zadané 
   
  Tuto možnost můžete použít při vývoji aplikací, které cílí na různé verze .NET Framework. Pokud například cílíte .NET Framework 3,5, můžete použít tuto možnost, abyste se ujistili, že nepoužíváte syntaxi z verze Language 10,0.  
   
- @No__t-0 můžete nastavit přímo pouze pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version).  
+ `-langversion` lze nastavit přímo pouze pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi .NET Framework](/visualstudio/ide/visual-studio-multi-targeting-overview).  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `sample.vb` pro Visual Basic 9,0.  
@@ -48,4 +48,4 @@ vbc -langversion:9.0 sample.vb
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version)
+- [Cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/visual-studio-multi-targeting-overview)

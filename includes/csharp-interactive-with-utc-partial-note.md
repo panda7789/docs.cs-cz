@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: f4ea5d52be1431a126f06ffdd2772fdaa0a1e02b
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 814372535f5c7a91f1df250404018228e4c4c812
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690601"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198409"
 ---
 
 > [!NOTE]
-> Některé příklady jazyka C# v tomto článku spustit [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) runner a playground vloženého kódu. Vyberte **spustit** tlačítko spustit příklad v interaktivním okně. Jakmile se při spuštění kódu, můžete upravit a spustit upravený kód tak, že vyberete **spustit** znovu. Upravené kód je buď spuštěn v interaktivním okně, nebo pokud kompilace se nezdaří, interaktivní okno zobrazuje všechny jazyka C# kompilátoru chybové zprávy. 
->  
-> [Místní časové pásmo](xref:System.TimeZoneInfo.Local) z [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) vložený kód spouštěče a playground je koordinovaný světový čas nebo čas UTC. To může mít vliv chování a výstup příklady znázorňující, <xref:System.DateTime>, <xref:System.DateTimeOffset>, a <xref:System.TimeZoneInfo> typů a jejich členy.
+> Některé C# příklady v tomto článku se spouštějí v [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline Code Runner a playground. Kliknutím na tlačítko **Spustit** spustíte příklad v interaktivním okně. Po spuštění kódu ho můžete upravit a spustit upravený kód tak, že znovu vyberete **Spustit** . Upravený kód buď běží v interaktivním okně, nebo, pokud se kompilace nezdařila, interaktivní C# okno zobrazí všechny chybové zprávy kompilátoru.
+>
+> [Místní časové pásmo](xref:System.TimeZoneInfo.Local) [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline Code Runner a Playground je KOORDINOVANÝ světový čas nebo UTC. To může mít vliv na chování a výstup příkladů, které ilustrují <xref:System.DateTime>, <xref:System.DateTimeOffset>a <xref:System.TimeZoneInfo> typy a jejich členy.

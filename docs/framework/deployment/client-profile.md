@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 25aa7b7c88047a95af3cd1d8f99d96771f252ef4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 72749f47d85c4ed910bf8bf925d14246dcb4244a
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052204"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195174"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 .NET Client Profile je podmnožinou .NET Framework, která byla poskytnuta s .NET Framework 4 a staršími verzemi a byla optimalizována pro klientské aplikace. .NET Framework je vývojová platforma pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spuštění spravované aplikace a knihovnu tříd .NET Framework. .NET Framework 4 a starší verze poskytují dvě možnosti nasazení: úplný .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
@@ -32,4 +32,4 @@ ms.locfileid: "71052204"
 - [Profil klienta .NET Framework (.NET Framework 4)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29)
 - [Přehled cílení na více verzí sady Visual Studio](/visualstudio/ide/visual-studio-multi-targeting-overview)
 - [Řešení potíží s cílením na rozhraní .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)
-- [Postupy: Cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)
+- [Postupy: Cílení na verzi rozhraní .NET Framework](/visualstudio/ide/visual-studio-multi-targeting-overview)

@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30145
 ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
-ms.openlocfilehash: 530aaee40be92bf72ee4b83b4141108e9b81c8a1
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5776755a57fbc2b0086b1c9b6cfbb2f2b7eb03fa
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968857"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197270"
 ---
-# <a name="unable-to-emit-assembly-error-message"></a>Nelze vygenerovat sestavení: \<chybová zpráva >
+# <a name="unable-to-emit-assembly-error-message"></a>Nelze vygenerovat sestavení: chybová zpráva \<
 
 Kompilátor Visual Basic volá linker sestavení (*Al. exe*, označovaný také jako ALink) pro generování sestavení s manifestem a linker hlásí chybu ve fázi emisí pro vytvoření sestavení.
 
@@ -61,7 +61,7 @@ Kompilátor Visual Basic volá linker sestavení (*Al. exe*, označovaný také 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)
+- [Al. exe](../../../framework/tools/al-exe-assembly-linker.md)
 - [Sn.exe (nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md)
-- [Postupy: Vytvoření páru klíčů veřejného a soukromého](../../../standard/assembly/create-public-private-key-pair.md)
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)
+- [Postupy: Vytvoření páru veřejného a soukromého klíče](../../../standard/assembly/create-public-private-key-pair.md)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

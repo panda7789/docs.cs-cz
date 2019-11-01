@@ -2,12 +2,12 @@
 title: Datová vazba WPF s LINQ to XML
 ms.date: 10/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: 53bc5e09d3c837b69c8f215b1b5c61d1b745f683
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 53aba3295b98ae4a476b321cb585e1bbbdd45dad
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139799"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197387"
 ---
 # <a name="overview-of-wpf-data-binding-with-linq-to-xml"></a>Přehled datové vazby WPF pomocí LINQ to XML
 
@@ -36,7 +36,7 @@ Datová vazba WPF umožňuje prvku uživatelského rozhraní přidružit jednu z
 |Zdroj vazby|Zdrojový objekt pro jednu nebo více hodnot, které jsou zadány do prvku uživatelského rozhraní pro prezentaci. WPF automaticky podporuje následující typy jako vazby zdrojů: objekty CLR, ADO.NET datové objekty, data XML (z XPath nebo LINQ to XML dotazů) nebo jiný <xref:System.Windows.DependencyObject>.|
 |Zdrojová cesta|Vlastnost zdroje vazby, která se překládá na hodnotu nebo sadu hodnot, které mají být vázány.|
 
-Vlastnost závislosti je koncept specifický pro WPF, který představuje dynamicky vypočítanou vlastnost prvku uživatelského rozhraní. Například vlastnosti závislosti mají často výchozí hodnoty nebo hodnoty, které jsou poskytovány nadřazeným prvkem. Tyto speciální vlastnosti jsou zajištěny instancemi třídy <xref:System.Windows.DependencyProperty> (a nikoli polí jako se standardními vlastnostmi). Další informace najdete v tématu [Přehled vlastností závislosti](/dotnet/framework/wpf/advanced/dependency-properties-overview).
+Vlastnost závislosti je koncept specifický pro WPF, který představuje dynamicky vypočítanou vlastnost prvku uživatelského rozhraní. Například vlastnosti závislosti mají často výchozí hodnoty nebo hodnoty, které jsou poskytovány nadřazeným prvkem. Tyto speciální vlastnosti jsou zajištěny instancemi třídy <xref:System.Windows.DependencyProperty> (a nikoli polí jako se standardními vlastnostmi). Další informace najdete v tématu [Přehled vlastností závislosti](../advanced/dependency-properties-overview.md).
 
 ### <a name="dynamic-data-binding-in-wpf"></a>Dynamická datová vazba v subsystému WPF
 
@@ -89,6 +89,6 @@ Chcete-li implementovat dynamickou vazbu WPF, budou dynamické vlastnosti použi
 
 - [Datová vazba WPF s LINQ to XML](wpf-data-binding-with-linq-to-xml-overview.md)
 - [Dynamické vlastnosti LINQ to XML](linq-to-xml-dynamic-properties.md)
-- [XAML ve WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf)
+- [XAML ve WPF](../advanced/xaml-in-wpf.md)
 - [Datová vazba (WPF)](/dotnet/framework/wpf/data/data-binding-wpf)
 - [Použití značek pracovního postupu](https://go.microsoft.com/fwlink/?LinkId=98685)

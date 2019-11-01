@@ -4,12 +4,12 @@ description: Doporučení osvědčených postupů pro silné pojmenovávání kn
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/16/2018
-ms.openlocfilehash: 3a623f65d95d776e45af245a1fe241cc5ee25b93
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 3e7cc9a3a1be05d8fcb02b34f7027126697d15d0
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968974"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196968"
 ---
 # <a name="strong-naming"></a>Vytváření silných názvů
 
@@ -53,7 +53,7 @@ Měli byste silně pojmenovat open source knihovny .NET. Silné pojmenování se
 
 > Veřejně dostupný klíč umožňuje vývojářům změnit a znovu zkompilovat zdrojový kód knihovny se stejným klíčem.
 > 
-> Silný klíč pro pojmenovávání by neměl být veřejný, pokud byl v minulosti použit k udělení zvláštních oprávnění ve [scénářích s částečnou důvěryhodností](/dotnet/framework/misc/using-libraries-from-partially-trusted-code). V opačném případě může dojít k ohrožení stávajících prostředí.
+> Silný klíč pro pojmenovávání by neměl být veřejný, pokud byl v minulosti použit k udělení zvláštních oprávnění ve [scénářích s částečnou důvěryhodností](../../framework/misc/using-libraries-from-partially-trusted-code.md). V opačném případě může dojít k ohrožení stávajících prostředí.
 
 > [!IMPORTANT]
 > Pokud je požadována identita vydavatele kódu, doporučujeme podepisování prostřednictvím [technologie Authenticode](/windows-hardware/drivers/install/authenticode) a [balíčku NuGet](/nuget/create-packages/sign-a-package) . Zabezpečení přístupu kódu (CAS) by nemělo být použito jako zmírnění zabezpečení.
@@ -66,10 +66,10 @@ Měli byste silně pojmenovat open source knihovny .NET. Silné pojmenování se
 
 > Úprava silného klíče pro pojmenování sestavení změní identitu sestavení a přeruší zkompilovaný kód, který ho používá. Další informace najdete v tématu [binární změny v binárním souboru](./breaking-changes.md#binary-breaking-change).
 
-**❌** Nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
+**❌** nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
 > Publikování dvou balíčků rozvětvení ekosystém pro vývojáře. Také Pokud aplikace skončí v závislosti na obou balíčcích, může vývojář zaznamenat konflikty názvů typů. V případě, že se týká .NET, jsou různými typy v různých sestaveních.
 
 >[!div class="step-by-step"]
->[Předchozí](cross-platform-targeting.md)Další
->[](nuget.md)
+>[Předchozí](cross-platform-targeting.md)
+>[Další](nuget.md)

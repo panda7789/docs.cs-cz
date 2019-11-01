@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type conversion [Visual Basic], string
 - regional options
 ms.assetid: c3a99596-f09a-44a5-81dd-1b89a094f1df
-ms.openlocfilehash: e1530c1772808249546b453294fc848c31c1e581
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 06dabbb5d5dfbfb545f01afb157fd532ca0551df
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582941"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197333"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Převody mezi řetězci a ostatními typy (Visual Basic)
 Číselnou, `Boolean` nebo hodnotu data a času můžete převést na `String`. Můžete také převést v opačném směru – od řetězcové hodnoty na číslo, `Boolean` nebo `Date` – za předpokladu, že obsah řetězce může být interpretován jako platná hodnota cílového datového typu. Pokud se nedaří, dojde k chybě za běhu.  
@@ -49,4 +49,4 @@ Str = "The total count is " & count
 - [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Představení mezinárodních aplikací založených na prostředí .NET Framework](/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+- [Vývoj globálních a lokalizovaných aplikací](/visualstudio/ide/globalizing-and-localizing-applications)

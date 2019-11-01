@@ -8,16 +8,16 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - arranging controls [WPF]
 ms.assetid: a1db8049-15c7-45d6-ae3d-36a6735cb848
-ms.openlocfilehash: 3a94ef65be99b01a9511f37872cbcacd6ec12264
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 484895db539b288bf388ff6c2ce3c29db55080b1
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179439"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197839"
 ---
 # <a name="walkthrough-arranging-windows-forms-controls-in-wpf"></a>Návod: Uspořádání ovládacích prvků Windows Forms v subsystému WPF
 
-V tomto návodu se dozvíte, jak pomocí funkcí rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uspořádat ovládací prvky [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] v hybridní aplikaci.
+V tomto návodu se dozvíte, jak používat funkce rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k uspořádání [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků v hybridní aplikaci.
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
@@ -38,7 +38,7 @@ V tomto návodu se dozvíte, jak pomocí funkcí rozložení [!INCLUDE[TLA2#tla_
 
 Úplný výpis kódu úloh, které jsou znázorněny v tomto návodu, naleznete v tématu [uspořádání model Windows Formsch ovládacích prvků v UKÁZCE WPF](https://go.microsoft.com/fwlink/?LinkID=159971).
 
-Až budete hotovi, budete obeznámeni s funkcemi rozložení @no__t 0 v aplikacích založených na @no__t -1.
+Až budete hotovi, budete obeznámeni s funkcemi [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] rozložení v aplikacích založených na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -58,19 +58,19 @@ Chcete-li vytvořit a nastavit projekt, postupujte podle následujících kroků
 
 3. Poklikejte na *MainWindow. XAML* a otevře se v zobrazení XAML.
 
-4. V elementu <xref:System.Windows.Window> přidejte následující mapování oboru názvů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+4. V elementu <xref:System.Windows.Window> přidejte následující mapování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] oboru názvů.
 
     ```xaml
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
     ```
 
-5. V elementu <xref:System.Windows.Controls.Grid> nastavte vlastnost <xref:System.Windows.Controls.Grid.ShowGridLines%2A> na hodnotu `true` a definujte pět řádků a tři sloupce.
+5. V prvku <xref:System.Windows.Controls.Grid> nastavte vlastnost <xref:System.Windows.Controls.Grid.ShowGridLines%2A> na hodnotu `true` a definujte pět řádků a tři sloupce.
 
      [!code-xaml[WpfLayoutHostingWfWithXaml#2](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#2)]
 
 ## <a name="using-default-layout-settings"></a>Použití výchozího nastavení rozložení
 
-Ve výchozím nastavení prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> zpracovává rozložení hostovaného ovládacího prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+Ve výchozím nastavení prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> zpracovává rozložení pro hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek.
 
 Chcete-li použít výchozí nastavení rozložení, postupujte podle následujících kroků:
 
@@ -78,7 +78,7 @@ Chcete-li použít výchozí nastavení rozložení, postupujte podle následuj�
 
      [!code-xaml[WpfLayoutHostingWfWithXaml#3](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#3)]
 
-2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. V <xref:System.Windows.Controls.Canvas> se zobrazí ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Button?displayProperty=nameWithType>. Hostovaný ovládací prvek má velikost na základě jeho obsahu a prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> má velikost pro přizpůsobení hostovaného ovládacího prvku.
+2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. V <xref:System.Windows.Controls.Canvas>se zobrazí ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Button?displayProperty=nameWithType>. Hostovaný ovládací prvek má velikost na základě jeho obsahu a prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> má velikost pro přizpůsobení hostovaného ovládacího prvku.
 
 ## <a name="sizing-to-content"></a>Změna velikosti obsahu
 
@@ -106,7 +106,7 @@ Chcete-li použít absolutní umístění, postupujte podle následujících kro
 
 ## <a name="specifying-size-explicitly"></a>Explicitní určení velikosti
 
-Můžete určit velikost elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost> pomocí vlastností <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>.
+Můžete určit velikost <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu pomocí vlastností <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>.
 
 Pokud chcete určit velikost explicitně, postupujte takto:
 
@@ -120,7 +120,7 @@ Pokud chcete určit velikost explicitně, postupujte takto:
 
 V hostovaném ovládacím prvku vždy nastavte vlastnosti související s rozložením pomocí vlastností elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Nastavení vlastností rozložení přímo v hostovaném ovládacím prvku bude vracet neočekávané výsledky.
 
- Nastavení vlastností souvisejících s rozložením v hostovaném ovládacím prvku v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemá žádný vliv.
+ Nastavení vlastností souvisejících s rozložením u hostovaného ovládacího prvku v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemá žádný vliv.
 
 Chcete-li zobrazit účinky nastavení vlastností u hostovaného ovládacího prvku, postupujte takto:
 
@@ -137,7 +137,7 @@ Chcete-li zobrazit účinky nastavení vlastností u hostovaného ovládacího p
 
 4. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci.
 
-5. Klikněte na tlačítko **klepnutím na tlačítko** . Obslužná rutina události `button1_Click` nastaví vlastnosti <xref:System.Windows.Forms.Control.Top%2A> a <xref:System.Windows.Forms.Control.Left%2A> v hostovaném ovládacím prvku. Tím dojde k přemístění hostovaného ovládacího prvku v rámci elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Hostitel udržuje stejnou oblast obrazovky, ale hostovaný ovládací prvek je oříznutý. Místo toho by měl hostovaný ovládací prvek vždy vyplnit @no__t element-0.
+5. Klikněte na tlačítko **klepnutím na tlačítko** . Obslužná rutina události `button1_Click` nastaví vlastnosti <xref:System.Windows.Forms.Control.Top%2A> a <xref:System.Windows.Forms.Control.Left%2A> v hostovaném ovládacím prvku. Tím dojde k přemístění hostovaného ovládacího prvku v rámci elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Hostitel udržuje stejnou oblast obrazovky, ale hostovaný ovládací prvek je oříznutý. Místo toho by měl hostovaný ovládací prvek vždy vyplnit <xref:System.Windows.Forms.Integration.WindowsFormsHost> element.
 
 ## <a name="understanding-z-order-limitations"></a>Porozumění omezením pořadí vykreslování
 
@@ -151,7 +151,7 @@ Viditelné prvky <xref:System.Windows.Forms.Integration.WindowsFormsHost> jsou v
 
 ## <a name="docking"></a>Ukotvení
 
-element <xref:System.Windows.Forms.Integration.WindowsFormsHost> podporuje ukotvení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Nastavte vlastnost <xref:System.Windows.Controls.DockPanel.Dock%2A> připojenou pro ukotvení hostovaného ovládacího prvku v elementu <xref:System.Windows.Controls.DockPanel>.
+element <xref:System.Windows.Forms.Integration.WindowsFormsHost> podporuje ukotvení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Nastavte vlastnost <xref:System.Windows.Controls.DockPanel.Dock%2A> připojeno k ukotvení hostovaného ovládacího prvku v <xref:System.Windows.Controls.DockPanel> elementu.
 
 Pro ukotvení hostovaného ovládacího prvku postupujte takto:
 
@@ -163,7 +163,7 @@ Pro ukotvení hostovaného ovládacího prvku postupujte takto:
 
 ## <a name="setting-visibility"></a>Nastavení viditelnosti
 
-Ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] můžete nastavit jako neviditelný nebo ho sbalit nastavením vlastnosti <xref:System.Windows.UIElement.Visibility%2A> na elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Když je ovládací prvek neviditelný, není zobrazený, ale zabírá prostor rozložení. Když je ovládací prvek sbalen, není zobrazen, ani nevyužívá prostor rozložení.
+Ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] můžete skrýt nebo ho sbalit nastavením vlastnosti <xref:System.Windows.UIElement.Visibility%2A> elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Když je ovládací prvek neviditelný, není zobrazený, ale zabírá prostor rozložení. Když je ovládací prvek sbalen, není zobrazen, ani nevyužívá prostor rozložení.
 
 Chcete-li nastavit viditelnost hostovaného ovládacího prvku, použijte následující postup:
 
@@ -192,11 +192,11 @@ Chcete-li hostovat ovládací prvek, který se nepřizpůsobuje, postupujte podl
 
      [!code-xaml[WpfLayoutHostingWfWithXaml#11](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#11)]
 
-2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> je zarovnán na střed řádku gridu, ale není roztažen tak, aby vyplnil dostupné místo. Pokud je okno dostatečně velké, může se zobrazit dva nebo více měsíců zobrazených v ovládacím prvku Hosted <xref:System.Windows.Forms.MonthCalendar>, ale jsou umístěny na střed na řádku. Modul rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vycentruje prvky, jejichž velikost nelze měnit, aby bylo možné vyplnit dostupný prostor.
+2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> je zarovnán na střed řádku gridu, ale není roztažen tak, aby vyplnil dostupné místo. Pokud je okno dostatečně velké, může se zobrazit dva nebo více měsíců zobrazených v ovládacím prvku Hosted <xref:System.Windows.Forms.MonthCalendar>, ale jsou umístěny na střed na řádku. Modul rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Centruje prvky, jejichž velikost nelze měnit, aby vyplnila dostupný prostor.
 
 ## <a name="scaling"></a>Změně
 
-Na rozdíl od prvků WPF, většina model Windows Formsch ovládacích prvků není nepřetržitě škálovatelná. Chcete-li zadat vlastní škálování, přepište metodu <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A?displayProperty=nameWithType>.
+Na rozdíl od prvků WPF, většina model Windows Formsch ovládacích prvků není nepřetržitě škálovatelná. Chcete-li zajistit vlastní škálování, přepište metodu <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A?displayProperty=nameWithType>.
 
 Chcete-li škálovat hostovaný ovládací prvek pomocí výchozího chování, postupujte následovně:
 
@@ -222,7 +222,7 @@ Pokud chcete zobrazit efekt otočení v hybridní aplikaci, postupujte podle tě
 
 ## <a name="setting-padding-and-margins"></a>Nastavení odsazení a okrajů
 
-Odsazení a okraje v rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se podobají odsazení a okrajům v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Jednoduše nastavte vlastnosti <xref:System.Windows.Controls.Control.Padding%2A> a <xref:System.Windows.FrameworkElement.Margin%2A> u prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>.
+Odsazení a okraje v rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou podobné odsazení a okraje v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Jednoduše nastavte <xref:System.Windows.Controls.Control.Padding%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Margin%2A> elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>.
 
 Chcete-li nastavit odsazení a okraje pro hostovaný ovládací prvek, postupujte podle následujících kroků:
 
@@ -231,11 +231,11 @@ Chcete-li nastavit odsazení a okraje pro hostovaný ovládací prvek, postupujt
      [!code-xaml[WpfLayoutHostingWfWithXaml#14](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#14)]
     [!code-xaml[WpfLayoutHostingWfWithXaml#15](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#15)]
 
-2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. Nastavení odsazení a okraj se aplikují na hostované ovládací prvky [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] stejným způsobem jako při použití v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+2. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. Nastavení odsazení a okraj se aplikují na ovládací prvky hostovaného [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] stejným způsobem jako při použití v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
 
 ## <a name="using-dynamic-layout-containers"></a>Použití kontejnerů dynamického rozložení
 
-[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] poskytuje dva kontejnery dynamického rozložení <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>. Tyto kontejnery můžete použít také v rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] poskytuje dva kontejnery dynamického rozložení, <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>. Tyto kontejnery můžete použít také v rozloženích [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 Chcete-li použít dynamický kontejner rozložení, použijte následující postup:
 
@@ -253,13 +253,13 @@ Chcete-li použít dynamický kontejner rozložení, použijte následující po
      [!code-csharp[WpfLayoutHostingWfWithXaml#104](~/samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml.cs#104)]
      [!code-vb[WpfLayoutHostingWfWithXaml#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml.vb#104)]
 
-4. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> vyplní <xref:System.Windows.Controls.DockPanel> a <xref:System.Windows.Forms.FlowLayoutPanel> uspořádá své podřízené ovládací prvky ve výchozím <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A>.
+4. Stisknutím klávesy <kbd>F5</kbd> Sestavte a spusťte aplikaci. <xref:System.Windows.Forms.Integration.WindowsFormsHost> element vyplní <xref:System.Windows.Controls.DockPanel>a <xref:System.Windows.Forms.FlowLayoutPanel> uspořádá jeho podřízené ovládací prvky ve výchozím <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A>.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Předpoklady rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md)
 - [Uspořádání ovládacích prvků model Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
 - [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)

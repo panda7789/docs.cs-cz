@@ -7,18 +7,18 @@ helpviewer_keywords:
 - localization [Windows Forms], bi-directional support in Windows
 - bi-directional language support [Windows Forms], Windows applications
 - Windows Forms, bi-directional support
-ms.openlocfilehash: 3bf90636bf1fc4b20b23c61fdd90033b3da35ddd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0b99dcdb9549a2319efe8a78eb4bca33f40f2cb0
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141194"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197489"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Pomocí sady Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (zprava doleva) jazyky, jako je arabština a hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a všechny ovládací prvky, se kterými můžete pracovat v těchto formulářích – to znamená všechny objekty v oboru názvů <xref:System.Windows.Forms.Control>.
 
 ## <a name="culture-support"></a>Podpora jazykové verze
- Jazyková verze a nastavení jazykové verze uživatelského rozhraní určují, jak aplikace funguje s daty, časy, měnou a dalšími informacemi. Podpora pro jazykovou verzi a jazykovou verzi uživatelského rozhraní je pro obousměrné jazyky stejná jako pro všechny ostatní jazyky. Další informace naleznete v tématu [třídy specifické pro jazykovou verzi pro globální formuláře Windows a webové formuláře](/visualstudio/ide/culture-specific-classes-for-global-windows-forms-and-web-forms).
+ Jazyková verze a nastavení jazykové verze uživatelského rozhraní určují, jak aplikace funguje s daty, časy, měnou a dalšími informacemi. Podpora pro jazykovou verzi a jazykovou verzi uživatelského rozhraní je pro obousměrné jazyky stejná jako pro všechny ostatní jazyky. Další informace naleznete v tématu [třídy specifické pro jazykovou verzi pro globální formuláře Windows a webové formuláře](/visualstudio/ide/globalizing-and-localizing-applications).
 
 ## <a name="righttoleft-and-righttoleftlayout-properties"></a>Vlastnosti RightToLeft a RightToLeftLayout
  Základní třída <xref:System.Windows.Forms.Control>, ze které jsou odvozeny formuláře, obsahuje vlastnost <xref:System.Windows.Forms.Control.RightToLeft%2A>, kterou lze nastavit pro změnu pořadí čtení formuláře a jeho ovládacích prvků. Pokud nastavíte vlastnost <xref:System.Windows.Forms.Control.RightToLeft%2A> formuláře, ve výchozím nastavení zdědí ovládací prvky ve formuláři toto nastavení. Vlastnost <xref:System.Windows.Forms.Control.RightToLeft%2A> však lze nastavit také jednotlivě u většiny ovládacích prvků. Viz také [Postupy: zobrazení textu zprava doleva v model Windows Forms pro globalizaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7d3337xw(v=vs.100)).

@@ -11,16 +11,16 @@ ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 3e2366513183337c3c5dd05ff45f8a6f724deaae
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0d7fb0d5a98400b3b3eb78e3b93b274e23119497
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988434"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197404"
 ---
 # <a name="windows-forms-designer-error-page"></a>Chybová stránka Návrhář formulářů
 
-Pokud se Návrhář formulářů nepovede načíst z důvodu chyby ve vašem kódu, v komponentě třetí strany nebo jinde, zobrazí se místo návrháře chybová stránka. Tato chybová stránka nemusí nutně znamenat chybu v návrháři. Chyba se může nacházet někde na stránce s kódem na pozadí, která \<je pojmenována na název-formuláře >. Designer.cs. Chyby se zobrazují v sbalitelných žlutých pruzích s odkazem na přechod na umístění chyby na znakové stránce.
+Pokud se Návrhář formulářů nepovede načíst z důvodu chyby ve vašem kódu, v komponentě třetí strany nebo jinde, zobrazí se místo návrháře chybová stránka. Tato chybová stránka nemusí nutně znamenat chybu v návrháři. Chyba se může nacházet někde na stránce s kódem na pozadí s názvem \<> název vaší společnosti. Designer.cs. Chyby se zobrazují v sbalitelných žlutých pruzích s odkazem na přechod na umístění chyby na znakové stránce.
 
 ![Chybová stránka Návrhář formulářů](media/windows-forms-designer-error-page-collapsed.png)
 
@@ -49,23 +49,23 @@ Kliknutím na **Prohledat diskuze na fórech MSDN pro příspěvky související
 
 V této části jsou uvedené některé chyby, se kterými se můžete setkat.
 
-### <a name="identifier-name-is-not-a-valid-identifier"></a>'\<název identifikátoru > ' není platný identifikátor.
+### <a name="identifier-name-is-not-a-valid-identifier"></a>název\<identifikátor > není platným identifikátorem.
 
 Tato chyba označuje, že pole, metoda, událost nebo objekt jsou nesprávně pojmenovány.
 
-### <a name="name-already-exists-in-project-name"></a>'\<název > ' již existuje v '\<název projektu > '
+### <a name="name-already-exists-in-project-name"></a>název\<> již v\<název projektu > existuje.
 
-Chybová zpráva:\<název > již\<v projektu název > existuje. Zadejte prosím jedinečný název. "
+Chybová zpráva:\<název > již v\<název projektu > existuje. Zadejte prosím jedinečný název. "
 
 Zadali jste název zděděného formuláře, který již v projektu existuje. Chcete-li tuto chybu opravit, udělte zděděnému formuláři jedinečný název.
 
-### <a name="toolbox-tab-name-is-not-a-toolbox-category"></a>'\<Název karty panelu nástrojů > ' není kategorie panelu nástrojů
+### <a name="toolbox-tab-name-is-not-a-toolbox-category"></a>'\<> název karty nástrojů ' není kategorie panelu nástrojů
 
 Návrhář třetí strany se pokusil o přístup k kartě na panelu nástrojů, který neexistuje. Obraťte se na dodavatele součásti.
 
 ### <a name="a-requested-language-parser-is-not-installed"></a>Požadovaný analyzátor jazyka není nainstalován
 
-Chybová zpráva: Není nainstalován požadovaný analyzátor jazyka. Název analyzátoru jazyka je{0}.
+Chybová zpráva: není nainstalován požadovaný analyzátor jazyka. Název analyzátoru jazyka je '{0}'.
 
 Aplikace Visual Studio se pokusila načíst návrháře, který je zaregistrován pro typ souboru, ale nebyl nalezen. Příčinou je pravděpodobně chyba, ke které došlo při instalaci. Obraťte se na dodavatele jazyka, který používáte k opravě.
 
@@ -73,39 +73,39 @@ Aplikace Visual Studio se pokusila načíst návrháře, který je zaregistrová
 
 Jedná se o problém se součástí třetí strany. Obraťte se na dodavatele součásti.
 
-### <a name="an-exception-occurred-while-trying-to-create-an-instance-of-object-name"></a>Při pokusu o vytvoření instance '\<Object Name > ' došlo k výjimce.
+### <a name="an-exception-occurred-while-trying-to-create-an-instance-of-object-name"></a>Došlo k výjimce při pokusu o vytvoření instance\<název objektu >.
 
-Chybová zpráva: "Při pokusu o vytvoření instance\<názvu objektu > došlo k výjimce. Výjimka byla "\<řetězec\>výjimky".
+Chybová zpráva: došlo k výjimce při pokusu o vytvoření instance\<ho objektu název >. Výjimka byla "\<\>řetězec výjimky".
 
 Návrhář třetí strany požadoval, aby aplikace Visual Studio vytvořila objekt, ale objekt vyvolal chybu. Obraťte se na dodavatele součásti.
 
-### <a name="another-editor-has-document-name-open-in-an-incompatible-mode"></a>Jiný editor má '\<název dokumentu > ' otevřený v nekompatibilním režimu
+### <a name="another-editor-has-document-name-open-in-an-incompatible-mode"></a>Pro jiný Editor je\<název dokumentu > otevřen v nekompatibilním režimu.
 
-Chybová zpráva: "Jiný editor má '\<název dokumentu > ' otevřený v nekompatibilním režimu. Zavřete prosím Editor a zkuste tuto operaci znovu. "
+Chybová zpráva: "jiný editor má\<název dokumentu > otevřené v nekompatibilním režimu. Zavřete prosím Editor a zkuste tuto operaci znovu. "
 
 K této chybě dojde, pokud se pokusíte otevřít soubor, který je již otevřen v jiném editoru. Zobrazí se editor, který již soubor otevřel. Pokud chcete tuto chybu opravit, zavřete Editor, který má soubor otevřený, a zkuste to znovu.
 
-### <a name="another-editor-has-made-changes-to-document-name"></a>Jiný Editor provedl změny v '\<> názvu dokumentu '
+### <a name="another-editor-has-made-changes-to-document-name"></a>Jiný Editor provedl změny\<název dokumentu >
 
 Zavřete a znovu otevřete návrháře, aby se změny projevily. Aplikace Visual Studio obvykle po provedení změn automaticky znovu načte návrháře. Ostatní návrháři, jako jsou například Návrháři součástí třetích stran, pravděpodobně nepodporují chování při opětovném načtení. V tomto případě vás Visual Studio vyzve k zavření a opětovnému otevření návrháře ručně.
 
 ### <a name="another-editor-has-the-file-open-in-an-incompatible-mode"></a>Jiný editor má soubor otevřený v nekompatibilním režimu
 
-Chybová zpráva: "Jiný editor má soubor otevřený v nekompatibilním režimu. Zavřete prosím Editor a zkuste tuto operaci znovu. "
+Chybová zpráva: "jiný editor má otevřený soubor v nekompatibilním režimu. Zavřete prosím Editor a zkuste tuto operaci znovu. "
 
-Tato zpráva je podobná "jinému editoru\<je název dokumentu > otevřen v nekompatibilním režimu", ale Visual Studio nemůže určit název souboru. Pokud chcete tuto chybu opravit, zavřete Editor, který má soubor otevřený, a zkuste to znovu.
+Tato zpráva je podobná jako "jiný editor má\<název dokumentu > otevřené v nekompatibilním režimu", ale Visual Studio nemůže určit název souboru. Pokud chcete tuto chybu opravit, zavřete Editor, který má soubor otevřený, a zkuste to znovu.
 
-### <a name="array-rank-rank-in-array-is-too-high"></a>\<Rozměr pole pořadí v poli > je příliš vysoký.
+### <a name="array-rank-rank-in-array-is-too-high"></a>Rozměr pole\<Rank v Array > je moc vysoké.
 
 Visual Studio podporuje pouze pole s jednou dimenzí v bloku kódu, který je analyzován návrhářem. Multidimenzionální pole jsou platná mimo tuto oblast.
 
-### <a name="assembly-assembly-name-could-not-be-opened"></a>Sestavení '\<Assembly Name > ' se nepodařilo otevřít.
+### <a name="assembly-assembly-name-could-not-be-opened"></a>Sestavení\<název sestavení > nelze otevřít.
 
-Chybová zpráva: \<Název sestavení Assembly > nelze otevřít. Ověřte, zda soubor stále existuje. "
+Chybová zpráva: sestavení\<název sestavení > nelze otevřít. Ověřte, zda soubor stále existuje. "
 
 Tato chybová zpráva nastane, když se pokusíte otevřít soubor, který nebylo možné otevřít. Ověřte, zda soubor existuje a je platným sestavením.
 
-### <a name="bad-element-type-this-serializer-expects-an-element-of-type-type-name"></a>Chybný typ prvku Tento serializátor očekává element typu\<type name >.
+### <a name="bad-element-type-this-serializer-expects-an-element-of-type-type-name"></a>Chybný typ prvku Tento serializátor očekává element typu\<název typu >.
 
 Jedná se o problém se součástí třetí strany. Obraťte se na dodavatele součásti.
 
@@ -113,7 +113,7 @@ Jedná se o problém se součástí třetí strany. Obraťte se na dodavatele so
 
 Sada Visual Studio provedla volání sady nástrojů, která nebyla k dispozici. Pokud se zobrazí tato chyba, pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="cannot-bind-an-event-handler-to-the-event-name-event-because-it-is-read-only"></a>Nelze vytvořit vazby obslužné rutiny události k\<události > název události, protože je jen pro čtení.
+### <a name="cannot-bind-an-event-handler-to-the-event-name-event-because-it-is-read-only"></a>Nelze vytvořit vazby obslužné rutiny události k události\<název události >, protože je jen pro čtení.
 
 K této chybě nejčastěji dochází, když se pokusíte připojit událost k ovládacímu prvku, který je zděděn ze základní třídy. Pokud je členská proměnná ovládacího prvku soukromá, Visual Studio nemůže připojit událost k metodě. Soukromým zděděným ovládacím prvkům nelze s nimi navázat další události.
 
@@ -121,51 +121,51 @@ K této chybě nejčastěji dochází, když se pokusíte připojit událost k o
 
 Aplikace Visual Studio se pokusila přidat obslužnou rutinu události do součásti, která nemá členskou proměnnou v návrháři. Obraťte se na dodavatele součásti.
 
-### <a name="cannot-name-the-object-name-because-it-is-already-named-name"></a>Nelze pojmenovat objekt '\<Name > ', protože je již nazván '\<Name > '
+### <a name="cannot-name-the-object-name-because-it-is-already-named-name"></a>Nejde pojmenovat objekt\<název >, protože už má název\<název >.
 
 Toto je vnitřní chyba serializátoru sady Visual Studio. Indikuje, že se serializátor pokusil pojmenovat objekt dvakrát, což není podporováno. Pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="cannot-remove-or-destroy-inherited-component-component-name"></a>Zděděnou součást\<názvu součásti > nelze odstranit ani zničit.
+### <a name="cannot-remove-or-destroy-inherited-component-component-name"></a>Zděděnou součást\<název součásti nelze odebrat ani zničit >
 
 Zděděné ovládací prvky jsou pod vlastnictvím své třídy dědění. Změny zděděného ovládacího prvku musí být provedeny ve třídě, ze které ovládací prvek pochází. Proto jej nelze přejmenovat ani zničit.
 
-### <a name="category-toolbox-tab-name-does-not-have-a-tool-for-class-class-name"></a>Kategorie '\<název karty panelu nástrojů > ' neobsahuje Nástroj pro třídu '\<název třídy > '
+### <a name="category-toolbox-tab-name-does-not-have-a-tool-for-class-class-name"></a>Kategorie\<> názvu karty nástrojů neobsahuje Nástroj pro třídu\<název třídy >
 
 Návrhář se pokusil o odkaz na třídu na konkrétní kartě panelu nástrojů, ale Třída neexistuje. Obraťte se na dodavatele součásti.
 
-### <a name="class-class-name-has-no-matching-constructor"></a>Třída název\<třídy > nemá žádný vyhovující konstruktor.
+### <a name="class-class-name-has-no-matching-constructor"></a>Třída\<název třídy > nemá žádný vyhovující konstruktor.
 
 Návrhář třetí strany požádal aplikaci Visual Studio, aby vytvořila objekt s konkrétními parametry v konstruktoru, který neexistuje. Obraťte se na dodavatele součásti.
 
-### <a name="code-generation-for-property-property-name-failed"></a>Generování kódu pro\<vlastnost názvu vlastnosti > se nezdařilo.
+### <a name="code-generation-for-property-property-name-failed"></a>Generování kódu pro vlastnost\<název vlastnosti > se nezdařilo.
 
 Toto je obecná obálka pro chybu. Řetězec chyby, který doprovází tuto zprávu, bude obsahovat další podrobnosti o chybové zprávě a odkazy na konkrétnější téma nápovědy. Chcete-li tuto chybu opravit, vyřešte chybu uvedenou v chybové zprávě připojené k této chybě.
 
-### <a name="component-component-name-did-not-call-containeradd-in-its-constructor"></a>Součást s názvem součásti > nevolala ve svém konstruktoru Container. Add ().\<
+### <a name="component-component-name-did-not-call-containeradd-in-its-constructor"></a>Součást\<název komponenty > nevolala kontejner. Add () ve svém konstruktoru.
 
 Jedná se o chybu v komponentě, kterou jste právě načetli nebo umístili do formuláře. Označuje, že součást nebyla přidána k ovládacímu prvku kontejneru (ať už je to jiný ovládací prvek nebo formulář). Návrhář bude nadále fungovat, ale v době běhu mohou nastat problémy s komponentou.
 
-Chcete-li chybu opravit, obraťte se na dodavatele součásti. Nebo, pokud se jedná o komponentu, kterou jste vytvořili, `IContainer.Add` zavolejte metodu v konstruktoru komponenty.
+Chcete-li chybu opravit, obraťte se na dodavatele součásti. Nebo, pokud se jedná o komponentu, kterou jste vytvořili, zavolejte metodu `IContainer.Add` v konstruktoru komponenty.
 
 ### <a name="component-name-cannot-be-empty"></a>Název součásti nesmí být prázdný
 
 Tato chyba nastane, když se pokusíte přejmenovat komponentu na prázdnou hodnotu.
 
-### <a name="could-not-access-the-variable-variable-name-because-it-has-not-been-initialized-yet"></a>Nepovedlo se získat přístup\<k proměnné s názvem proměnné >, protože ještě není inicializovaný.
+### <a name="could-not-access-the-variable-variable-name-because-it-has-not-been-initialized-yet"></a>Nelze získat přístup k proměnné\<název proměnné >, protože dosud nebyla inicializována.
 
 K této chybě může dojít z důvodu dvou scénářů. Dodavatel komponent třetí strany má problém s ovládacím prvkem nebo součástí, které byly distribuovány, nebo vytvořeným kódem je rekurzivní závislosti mezi komponentami.
 
 Chcete-li tuto chybu opravit, ujistěte se, že váš kód nemá rekurzivní závislost. Pokud je takovým problémům zdarma, poznamenejte si přesný text chybové zprávy a obraťte se na dodavatele součásti.
 
-### <a name="could-not-find-type-type-name"></a>Nejde najít typ\<type name >.
+### <a name="could-not-find-type-type-name"></a>Nejde najít typ\<název typu >.
 
-Chybová zpráva: Nepovedlo se najít typ\<název typu >. Ujistěte se, že je odkazováno na sestavení, které obsahuje tento typ. Pokud je tento typ součástí projektu vývoje, ujistěte se, že projekt byl úspěšně sestaven. "
+Chybová zpráva: Nepodařilo se najít typ\<název typu >. Ujistěte se, že je odkazováno na sestavení, které obsahuje tento typ. Pokud je tento typ součástí projektu vývoje, ujistěte se, že projekt byl úspěšně sestaven. "
 
 K této chybě došlo, protože nebyl nalezen odkaz. Ujistěte se, že je odkazován typ uvedený v chybové zprávě a že existují také odkazy na všechna sestavení, která typ vyžaduje. Často se jedná o problém, že ovládací prvek v řešení nebyl sestaven. Sestavení vytvoříte tak, že v nabídce **sestavení** vyberete **Sestavit řešení** . V opačném případě, pokud je ovládací prvek již sestaven, přidejte odkaz ručně z místní nabídky na **odkazech** nebo ve složce **závislosti** v Průzkumník řešení.
 
-### <a name="could-not-load-type-type-name"></a>Typ\<typu Name > nelze načíst.
+### <a name="could-not-load-type-type-name"></a>Typ\<název typu > nelze načíst.
 
-Chybová zpráva: Nepovedlo se načíst typ\<název typu >. Ujistěte se prosím, že se do odkazů projektu přidalo sestavení obsahující tento typ. "
+Chybová zpráva: typ\<název typu > nelze načíst. Ujistěte se prosím, že se do odkazů projektu přidalo sestavení obsahující tento typ. "
 
 V aplikaci Visual Studio došlo k pokusu o navázání metody zpracování událostí a pro tuto metodu nebyl nalezen jeden nebo více typů parametrů. To je obvykle způsobeno chybějícím odkazem. Chcete-li tuto chybu opravit, přidejte odkaz obsahující typ do projektu a akci opakujte.
 
@@ -173,15 +173,15 @@ V aplikaci Visual Studio došlo k pokusu o navázání metody zpracování udál
 
 Šablony pro zděděné formuláře v aplikaci Visual Studio nejsou k dispozici. Pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="delegate-class-class-name-has-no-invoke-method-is-this-class-a-delegate"></a>Třída delegáta\<' název třídy > ' neobsahuje metodu Invoke. Je tato třída delegátem?
+### <a name="delegate-class-class-name-has-no-invoke-method-is-this-class-a-delegate"></a>Třída Delegate\<název třídy > neobsahuje žádnou metodu Invoke. Je tato třída delegátem?
 
 Aplikace Visual Studio se pokusila vytvořit obslužnou rutinu události, ale v typu události je něco špatného. K tomu může dojít, pokud byla událost vytvořena nekompatibilním jazykem, který není kompatibilní se specifikací CLS. Obraťte se na dodavatele součásti.
 
-### <a name="duplicate-declaration-of-member-member-name"></a>Duplicitní deklarace členu\<Name >
+### <a name="duplicate-declaration-of-member-member-name"></a>Duplicitní deklarace člena\<název člena >
 
-K této chybě dojde, protože členská proměnná byla deklarována dvakrát (například dva ovládací prvky s `Button1` názvem jsou deklarovány v kódu). Názvy musí být v děděných formulářích jedinečné. Názvy se navíc nesmí lišit pouze v případě malých a velkých písmen.
+K této chybě dojde, protože členská proměnná byla deklarována dvakrát (například dva ovládací prvky s názvem `Button1` jsou deklarovány v kódu). Názvy musí být v děděných formulářích jedinečné. Názvy se navíc nesmí lišit pouze v případě malých a velkých písmen.
 
-### <a name="error-reading-resources-from-the-resource-file-for-the-culture-culture-name"></a>Došlo k chybě při čtení prostředků ze souboru prostředků pro jazykovou verzi Culture s\<názvem >.
+### <a name="error-reading-resources-from-the-resource-file-for-the-culture-culture-name"></a>Při čtení prostředků ze souboru prostředků jazykové verze\<název jazykové verze > došlo k chybě.
 
 K této chybě může dojít, pokud je v projektu chybný soubor. resx.
 
@@ -191,7 +191,7 @@ Oprava této chyby:
 2. Načtěte soubor. resx v editoru XML tak, že kliknete pravým tlačítkem na soubor. resx a kliknete na **otevřít**.
 3. Pokud chcete chyby vyřešit, upravte soubor. resx ručně.
 
-### <a name="error-reading-resources-from-the-resource-file-for-the-default-culture-culture-name"></a>Při čtení prostředků ze souboru prostředků pro výchozí jazykovou\<verzi názvu jazykové verze > došlo k chybě.
+### <a name="error-reading-resources-from-the-resource-file-for-the-default-culture-culture-name"></a>Při čtení prostředků ze souboru prostředků pro výchozí jazykovou verzi\<název jazykové verze > došlo k chybě.
 
 K této chybě může dojít, pokud je v projektu chybný soubor. resx pro výchozí jazykovou verzi.
 
@@ -201,37 +201,37 @@ Oprava této chyby:
 2. Načtěte soubor. resx v editoru XML tak, že kliknete pravým tlačítkem na soubor. resx a kliknete na **otevřít**.
 3. Pokud chcete chyby vyřešit, upravte soubor. resx ručně.
 
-### <a name="failed-to-parse-method-method-name"></a>Nepovedlo se analyzovat\<metodu s názvem metody >.
+### <a name="failed-to-parse-method-method-name"></a>Nepodařilo se analyzovat metodu\<název metody >.
 
-Chybová zpráva: "Nepovedlo se analyzovat\<metodu s názvem metody >. Analyzátor ohlásil následující chybu: '\<Error String > '. Podívejte se prosím na Seznam úkolů potenciální chyby. "
+Chybová zpráva: Nepodařilo se analyzovat metodu\<název metody >. Analyzátor ohlásil následující chybu: '\<řetězec chyby > '. Podívejte se prosím na Seznam úkolů potenciální chyby. "
 
 Jedná se o obecnou chybovou zprávu pro problémy, které vznikají při analýze. Tyto chyby jsou často způsobeny syntaktickými chybami. Konkrétní zprávy týkající se chyby najdete v Seznam úkolů.
 
-### <a name="invalid-component-name-component-name"></a>Neplatný název součásti:\<název součásti >
+### <a name="invalid-component-name-component-name"></a>Neplatný název součásti: název\<komponenty >
 
 Pokusili jste se přejmenovat komponentu na neplatnou hodnotu pro daný jazyk. Chcete-li tuto chybu opravit, pojmenujte komponentu tak, aby splňovala pravidla pojmenování pro daný jazyk.
 
-### <a name="the-type-class-name-is-made-of-several-partial-classes-in-the-same-file"></a>Typ "\<název třídy >" je tvořen několika částečnými třídami ve stejném souboru
+### <a name="the-type-class-name-is-made-of-several-partial-classes-in-the-same-file"></a>Typ\<název třídy > se skládá z několika částečných tříd ve stejném souboru.
 
-Při definování třídy ve více souborech pomocí klíčového slova [Partial](/dotnet/csharp/language-reference/keywords/partial-type) lze v každém souboru mít pouze jednu částečnou definici.
+Při definování třídy ve více souborech pomocí klíčového slova [Partial](../../../csharp/language-reference/keywords/partial-type.md) lze v každém souboru mít pouze jednu částečnou definici.
 
 Chcete-li tuto chybu opravit, odeberte všechny kromě jedné z částečných definic vaší třídy ze souboru.
 
-### <a name="the-assembly-assembly-name-could-not-be-found"></a>Sestavení '\<Assembly Name > ' nebylo nalezeno.
+### <a name="the-assembly-assembly-name-could-not-be-found"></a>Sestavení\<název sestavení > nebylo nalezeno.
 
-Chybová zpráva: Sestavení s\<názvem sestavení > nebylo nalezeno. Ujistěte se, že je odkazováno na sestavení. Pokud je sestavení součástí aktuálního vývojového projektu, ujistěte se, že projekt byl sestaven. "
+Chybová zpráva: Nepodařilo se najít sestavení\<název sestavení >. Ujistěte se, že je odkazováno na sestavení. Pokud je sestavení součástí aktuálního vývojového projektu, ujistěte se, že projekt byl sestaven. "
 
-Tato chyba je podobná typu\<typ název typu > nelze nalézt, ale k této chybě obvykle dochází z důvodu atributu metadata. Chcete-li tuto chybu opravit, ověřte, zda jsou odkazována všechna sestavení používaná atributy.
+Tato chyba je podobná typu "typ\<název typu > nebyl nalezen", ale k této chybě obvykle dochází z důvodu atributu metadata. Chcete-li tuto chybu opravit, ověřte, zda jsou odkazována všechna sestavení používaná atributy.
 
-### <a name="the-assembly-name-assembly-name-is-invalid"></a>Název sestavení s názvem\<sestavení > není platný.
+### <a name="the-assembly-name-assembly-name-is-invalid"></a>Název sestavení\<název sestavení > je neplatný.
 
 Komponenta požádala o konkrétní sestavení, ale název poskytnutý součástí není platný název sestavení. Obraťte se na dodavatele součásti.
 
-### <a name="the-base-class-class-name-cannot-be-designed"></a>Základní třídu\<názvu Class > nelze navrhnout.
+### <a name="the-base-class-class-name-cannot-be-designed"></a>Nelze navrhnout základní třídu\<název třídy >.
 
 Aplikace Visual Studio načetla třídu, ale třídu nelze navrhnout, protože Implementátor třídy neposkytl návrháře. Pokud třída podporuje návrháře, ujistěte se, že nejsou k dispozici žádné problémy, které by způsobily problémy s jejich zobrazením v návrháři, například chyby kompilátoru. Také se ujistěte, že jsou všechny odkazy na třídu správné a že jsou správně zadány názvy všech tříd. V opačném případě, pokud není třída navržená, upravte ji v zobrazení kódu.
 
-### <a name="the-base-class-class-name-could-not-be-loaded"></a>Základní třídu\<název třídy > nelze načíst.
+### <a name="the-base-class-class-name-could-not-be-loaded"></a>Nelze načíst základní třídu\<název třídy >.
 
 Na třídu není odkazováno v projektu, takže je Visual Studio nemůže načíst. Chcete-li opravit tuto chybu, přidejte odkaz na třídu v projektu a zavřete a znovu otevřete okno Návrhář formulářů.
 
@@ -243,7 +243,7 @@ Návrhář pro tento ovládací prvek nebo součást nepodporuje stejné typy ja
 
 Zdrojový kód, který vytváří uživatel, má název třídy, který není platný pro používaný jazyk. Chcete-li tuto chybu opravit, pojmenujte třídu tak, aby splňovala jazykové požadavky.
 
-### <a name="the-component-cannot-be-added-because-it-contains-a-circular-reference-to-reference-name"></a>Komponentu nejde přidat, protože obsahuje cyklický odkaz na\<název odkazu >.
+### <a name="the-component-cannot-be-added-because-it-contains-a-circular-reference-to-reference-name"></a>Komponentu nelze přidat, protože obsahuje cyklický odkaz na název\<odkazu >
 
 Nelze přidat ovládací prvek nebo komponentu do sebe samé. Další situací, kdy k tomu může dojít, je v případě, že existuje kód v metodě InitializeComponent formuláře (například Form1), která vytvoří jinou instanci Form1.
 
@@ -255,13 +255,13 @@ K této chybě dojde, pokud je soubor v editoru označen jako jen pro čtení. Z
 
 K této chybě dochází, když Visual Studio nemůže najít základní třídu, která splňuje požadavky návrháře. Formuláře a ovládací prvky musí být odvozeny ze základní třídy, která podporuje návrháře. Pokud jste odvozeni z zděděného formuláře nebo ovládacího prvku, zajistěte, aby byl projekt sestaven.
 
-### <a name="the-designer-for-base-class-class-name-is-not-installed"></a>Není nainstalovaný Návrhář pro základní třídu\<název třídy >.
+### <a name="the-designer-for-base-class-class-name-is-not-installed"></a>Návrhář pro základní třídu\<název třídy > není nainstalován.
 
 Aplikaci Visual Studio se nepodařilo načíst návrháře pro třídu. Pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="the-designer-must-create-an-instance-of-type-type-name-but-it-cant-because-the-type-is-declared-as-abstract"></a>Návrhář musí vytvořit instanci typu "\<název typu >", ale nelze jej, protože typ je deklarován jako abstraktní.
+### <a name="the-designer-must-create-an-instance-of-type-type-name-but-it-cant-because-the-type-is-declared-as-abstract"></a>Návrhář musí vytvořit instanci typu\<název typu >, není to ale, protože typ je deklarovaný jako abstraktní.
 
-K této chybě došlo, protože základní třída objektu předaná do návrháře je [abstraktní](/dotnet/csharp/language-reference/keywords/abstract), což není povoleno.
+K této chybě došlo, protože základní třída objektu předaná do návrháře je [abstraktní](../../../csharp/language-reference/keywords/abstract.md), což není povoleno.
 
 ### <a name="the-file-could-not-be-loaded-in-the-designer"></a>Soubor nelze načíst do návrháře
 
@@ -269,25 +269,25 @@ Základní třída tohoto souboru nepodporuje žádné návrháře. Alternativn�
 
 ### <a name="the-language-for-this-file-does-not-support-the-necessary-code-parsing-and-generation-services"></a>Jazyk tohoto souboru nepodporuje nezbytné služby analýzy a vytváření kódu
 
-Chybová zpráva: "Jazyk tohoto souboru nepodporuje nezbytné služby pro analýzu a generování kódu. Ujistěte se prosím, že soubor, který otevíráte, je členem projektu a pak zkuste soubor otevřít znovu. "
+Chybová zpráva: "jazyk pro tento soubor nepodporuje nezbytné služby pro analýzu a generování kódu. Ujistěte se prosím, že soubor, který otevíráte, je členem projektu a pak zkuste soubor otevřít znovu. "
 
 Tato chyba je pravděpodobně způsobena otevřením souboru, který je v projektu, který nepodporuje návrháře.
 
-### <a name="the-language-parser-class-class-name-is-not-implemented-properly"></a>Třída analyzátoru jazyka '\<název třídy > ' není správně implementována
+### <a name="the-language-parser-class-class-name-is-not-implemented-properly"></a>Třída analyzátoru jazyka '\<název třídy > ' není správně implementována.
 
-Chybová zpráva: "Třída analyzátoru jazyka"\<název třídy ">" není správně implementována. Obraťte se na dodavatele s aktualizovaným modulem analyzátoru. "
+Chybová zpráva: třída analyzátoru jazyka '\<název třídy > ' není správně implementována. Obraťte se na dodavatele s aktualizovaným modulem analyzátoru. "
 
 Používaný jazyk zaregistroval třídu návrháře, která není odvozena od správné základní třídy. Obraťte se na dodavatele jazyka, který používáte.
 
-### <a name="the-name-name-is-already-used-by-another-object"></a>Název Name >\<už používá jiný objekt.
+### <a name="the-name-name-is-already-used-by-another-object"></a>Název\<název > už používá jiný objekt.
 
 Toto je vnitřní chyba serializátoru sady Visual Studio. Pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="the-object-object-name-does-not-implement-the-icomponent-interface"></a>Objekt '\<název objektu > ' neimplementuje rozhraní IComponent.
+### <a name="the-object-object-name-does-not-implement-the-icomponent-interface"></a>Objekt\<název objektu > neimplementuje rozhraní IComponent.
 
-Aplikace Visual Studio se pokusila o vytvoření komponenty, ale objekt, který vytvořil, <xref:System.ComponentModel.IComponent> neimplementuje rozhraní. Pro opravu se obraťte na dodavatele součásti.
+Aplikace Visual Studio se pokusila o vytvoření komponenty, ale objekt, který vytvořil, neimplementuje rozhraní <xref:System.ComponentModel.IComponent>. Pro opravu se obraťte na dodavatele součásti.
 
-### <a name="the-object-object-name-returned-null-for-the-property-property-name-but-this-is-not-allowed"></a>Objekt '\<název objektu > ' vrátil hodnotu null pro vlastnost '\<název vlastnosti > ', ale tato hodnota není povolena.
+### <a name="the-object-object-name-returned-null-for-the-property-property-name-but-this-is-not-allowed"></a>Objekt\<název objektu > vrátil hodnotu null pro vlastnost\<název vlastnosti >, ale to není povoleno.
 
 Existují některé vlastnosti rozhraní .NET, které by měly vždy vracet objekt. Například **ovládací prvky** kolekce formuláře by měly vždy vracet objekt, i když v něm nejsou žádné ovládací prvky.
 
@@ -297,19 +297,19 @@ Chcete-li tuto chybu opravit, ujistěte se, že vlastnost zadaná v této chybě
 
 Datový objekt nabízený serializátorem není instancí typu, která odpovídá aktuálně používanému serializátoru. Obraťte se na dodavatele součásti.
 
-### <a name="the-service-service-name-is-required-but-could-not-be-located"></a>Služba > název\<služby je povinná, ale nedala se najít.
+### <a name="the-service-service-name-is-required-but-could-not-be-located"></a>Služba\<název služby > je povinná, ale nedá se najít.
 
-Chybová zpráva: Je vyžadován název služby > Service, ale nebyl nalezen.\< Může se jednat o problém s instalací sady Visual Studio. "
+Chybová zpráva: vyžaduje se název služby\<Service >, ale nepovedlo se ho najít. Může se jednat o problém s instalací sady Visual Studio. "
 
 Služba vyžadovaná v rámci sady Visual Studio není k dispozici. Pokud jste se pokoušeli načíst projekt, který nepodporuje tohoto návrháře, použijte Editor kódu k provedení změn, které požadujete. Jinak, pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="the-service-instance-must-derive-from-or-implement-interface-name"></a>Instance služby musí být odvozená od rozhraní s\<názvem > a implementovat ho.
+### <a name="the-service-instance-must-derive-from-or-implement-interface-name"></a>Instance služby musí být odvozena z nebo implementovat název rozhraní\<
 
 Tato chyba označuje, že komponenta nebo Návrhář komponent volala metodu **AddService** , která vyžaduje rozhraní a objekt, ale zadaný objekt neimplementuje zadané rozhraní. Obraťte se na dodavatele součásti.
 
 ### <a name="the-text-in-the-code-window-could-not-be-modified"></a>Text v okně kódu nelze upravit
 
-Chybová zpráva: "Text v okně kódu nebylo možné změnit. Ověřte, že soubor není jen pro čtení a že je na disku dostatek místa. "
+Chybová zpráva: text v okně Code nelze upravit. Ověřte, že soubor není jen pro čtení a že je na disku dostatek místa. "
 
 K této chybě dochází, pokud Visual Studio nemůže upravit soubor z důvodu problémů s místem na disku nebo paměti nebo je soubor označený jen pro čtení.
 
@@ -317,21 +317,21 @@ K této chybě dochází, pokud Visual Studio nemůže upravit soubor z důvodu 
 
 Pokud se zobrazí tato chyba, pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="the-toolbox-item-for-component-name-could-not-be-retrieved-from-the-toolbox"></a>Z panelu nástrojů nelze načíst\<položku sady nástrojů pro název součásti >.
+### <a name="the-toolbox-item-for-component-name-could-not-be-retrieved-from-the-toolbox"></a>Položku sady nástrojů pro název součásti\<> nelze načíst ze sady nástrojů.
 
-Chybová zpráva: Položku sady nástrojů pro\<název součásti > nelze načíst ze sady nástrojů. Ujistěte se, že sestavení, které obsahuje položku sady nástrojů, je správně nainstalováno. Položka sady nástrojů vyvolala následující chybu \<: řetězec chyby >. "
+Chybová zpráva: z panelu nástrojů nelze načíst položku Sada nástrojů pro\<název komponenty >. Ujistěte se, že sestavení, které obsahuje položku sady nástrojů, je správně nainstalováno. Položka sady nástrojů vyvolala následující chybu: \<řetězec chyby >. "
 
 V dané součásti došlo k výjimce při jejím použití v aplikaci Visual Studio. Obraťte se na dodavatele součásti.
 
-### <a name="the-toolbox-item-for-toolbox-item-name-could-not-be-retrieved-from-the-toolbox"></a>Položku sady nástrojů pro\<položku název položky sady nástrojů > nelze načíst ze sady nástrojů.
+### <a name="the-toolbox-item-for-toolbox-item-name-could-not-be-retrieved-from-the-toolbox"></a>Z panelu nástrojů nelze načíst položku sady nástrojů pro název položky\<sady nástrojů >.
 
-Chybová zpráva: Položku panelu nástrojů pro\<položku název položky sady nástrojů > nelze načíst ze sady nástrojů. Zkuste položku odebrat ze sady nástrojů a přidat ji zpátky. "
+Chybová zpráva: z panelu nástrojů nelze načíst položku Sada nástrojů pro\<název položky sady nástrojů >. Zkuste položku odebrat ze sady nástrojů a přidat ji zpátky. "
 
 K této chybě dojde, pokud jsou data v rámci položky sady nástrojů poškozena nebo se změnila verze součásti. Zkuste položku odebrat ze sady nástrojů a znovu ji přidat.
 
-### <a name="the-type-type-name-could-not-be-found"></a>Typ typu "\<> názvu" nebyl nalezen.
+### <a name="the-type-type-name-could-not-be-found"></a>Typ\<název typu > nebyl nalezen.
 
-Chybová zpráva: \<Typ typu Name > nebyl nalezen. Ujistěte se, že je odkazováno na sestavení, které obsahuje daný typ. Pokud je sestavení součástí aktuálního vývojového projektu, ujistěte se, že projekt byl sestaven. "
+Chybová zpráva: typ\<název typu > nebyl nalezen. Ujistěte se, že je odkazováno na sestavení, které obsahuje daný typ. Pokud je sestavení součástí aktuálního vývojového projektu, ujistěte se, že projekt byl sestaven. "
 
 Při načítání návrháře se nepodařilo najít typ v aplikaci Visual Studio. Ujistěte se, že je odkazováno na sestavení, které obsahuje daný typ. Pokud je sestavení součástí aktuálního vývojového projektu, ujistěte se, že projekt byl sestaven.
 
@@ -339,21 +339,21 @@ Při načítání návrháře se nepodařilo najít typ v aplikaci Visual Studio
 
 Aplikace Visual Studio se pokusila získat přístup k požadovaným prostředkům z chybného vlákna. Tato chyba se zobrazí, pokud kód použitý k vytvoření návrháře se nazývá služba překladu typu z jiného vlákna než z hlavního vlákna aplikace. Chcete-li tuto chybu opravit, zavolejte službu ze správného vlákna nebo se obraťte na dodavatele součásti.
 
-### <a name="the-variable-variable-name-is-either-undeclared-or-was-never-assigned"></a>Proměnná '\<název proměnné > ' je buď nedeklarovaná, nebo nebyla nikdy přiřazena.
+### <a name="the-variable-variable-name-is-either-undeclared-or-was-never-assigned"></a>Proměnná\<název proměnné > se buď nedeklarovala, nebo se nikdy nepřiřadila.
 
 Zdrojový kód obsahuje odkaz na proměnnou, jako je například **Button1**, která není deklarována nebo přiřazena. Pokud se proměnná nepřiřadila, zobrazí se tato zpráva jako upozornění, nikoli chyba.
 
-### <a name="there-is-already-a-command-handler-for-the-menu-command-menu-command-name"></a>Již existuje obslužná rutina příkazu pro příkaz nabídky ' název\<příkazu nabídky ' > '
+### <a name="there-is-already-a-command-handler-for-the-menu-command-menu-command-name"></a>K dispozici je již obslužná rutina příkazu pro příkaz nabídky '\<název příkazu nabídky > '
 
 K této chybě dojde, pokud návrhář třetí strany přidá příkaz, který již má obslužnou rutinu do tabulky příkazů. Obraťte se na dodavatele součásti.
 
-### <a name="there-is-already-a-component-named-component-name"></a>Komponenta s názvem "\<název součásti >" již existuje.
+### <a name="there-is-already-a-component-named-component-name"></a>Součást s názvem '\<název komponenty > ' již existuje.
 
-Chybová zpráva: "Již existuje součást s názvem"\<název součásti > ". Komponenty musí mít jedinečné názvy a názvy nesmí rozlišovat velká a malá písmena. Název také nemůže být v konfliktu s názvem žádné součásti ve zděděné třídě. "
+Chybová zpráva: již existuje součást s názvem\<název komponenty >. Komponenty musí mít jedinečné názvy a názvy nesmí rozlišovat velká a malá písmena. Název také nemůže být v konfliktu s názvem žádné součásti ve zděděné třídě. "
 
 Tato chybová zpráva nastane, pokud došlo ke změně názvu komponenty v okno Vlastnosti. Chcete-li opravit tuto chybu, zajistěte, aby všechny názvy součástí byly jedinečné, nerozlišují velká a malá písmena a nekolidují s názvy všech komponent ve zděděných třídách.
 
-### <a name="there-is-already-a-toolbox-item-creator-registered-for-the-format-format-name"></a>Pro formát\<Format Name > už je registrovaný tvůrce položky sady nástrojů.
+### <a name="there-is-already-a-toolbox-item-creator-registered-for-the-format-format-name"></a>Pro formát\<název formátu > byl již zaregistrován tvůrce položky sady nástrojů.
 
 Komponenta třetí strany provedla zpětné volání položky na kartě panelu nástrojů, ale položka již obsahuje zpětné volání. Obraťte se na dodavatele součásti.
 
@@ -361,29 +361,29 @@ Komponenta třetí strany provedla zpětné volání položky na kartě panelu n
 
 Tato zpráva je podobná "jazyku pro tento soubor nepodporuje nezbytné služby pro analýzu a generování kódu", ale tato zpráva zahrnuje interní problém s registrací. Pokud se zobrazí tato chyba, pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="type-type-name-does-not-have-a-constructor-with-parameters-of-types-parameter-type-names"></a>\<Typ\<typu Typenemákonstruktorsparametrytypůnázev\>typu parametru >.
+### <a name="type-type-name-does-not-have-a-constructor-with-parameters-of-types-parameter-type-names"></a>Typ\<název typu\>neobsahuje konstruktor s parametry typů\<názvy typů parametrů >.
 
-Visual Studio nemohlo najít [konstruktor](/dotnet/csharp/programming-guide/classes-and-structs/constructors) , který má odpovídající parametry. To může být výsledkem poskytnutí konstruktoru s jinými typy, než které jsou požadovány. Například konstruktor **Point** může mít dvě celá čísla. Pokud jste zadali float, tato chyba je vyvolána.
+Visual Studio nemohlo najít [konstruktor](../../../csharp/programming-guide/classes-and-structs/constructors.md) , který má odpovídající parametry. To může být výsledkem poskytnutí konstruktoru s jinými typy, než které jsou požadovány. Například konstruktor **Point** může mít dvě celá čísla. Pokud jste zadali float, tato chyba je vyvolána.
 
 Chcete-li tuto chybu opravit, použijte jiný konstruktor nebo explicitně přetypujte typy parametrů tak, aby odpovídaly hodnotám poskytnutým konstruktorem.
 
-### <a name="unable-to-add-reference-reference-name-to-the-current-application"></a>Do aktuální aplikace se nedá\<přidat odkaz > odkazu.
+### <a name="unable-to-add-reference-reference-name-to-the-current-application"></a>Do aktuální aplikace se nedá přidat odkaz\<referenční název >.
 
-Chybová zpráva: "Nepovedlo se přidat\<odkaz na název odkazu > do aktuální aplikace. Ověřte, že na jinou verzi\<> odkaz na název se už neodkazuje.
+Chybová zpráva: "do aktuální aplikace nelze přidat odkaz\<odkaz na název >. Ověřte, že se na jinou verzi\<odkaz na název > ještě neodkazuje.
 
 Visual Studio nemůže přidat odkaz. Tuto chybu opravíte tak, že zkontrolujete, že na jinou verzi odkazu ještě není odkazováno.
 
 ### <a name="unable-to-check-out-the-current-file"></a>Nelze rezervovat aktuální soubor
 
-Chybová zpráva: "Nepovedlo se rezervovat aktuální soubor. Soubor může být zamčený nebo může být nutné soubor rezervovat ručně. "
+Chybová zpráva: "nelze rezervovat aktuální soubor. Soubor může být zamčený nebo může být nutné soubor rezervovat ručně. "
 
 Tato chyba nastane, když změníte soubor, který je aktuálně vrácen se změnami do správy zdrojového kódu. Visual Studio obvykle prezentuje dialogové okno registrace souborů, takže uživatel může soubor rezervovat. Tentokrát se soubor nerezervoval, možná kvůli konfliktu sloučení během rezervace. Pokud chcete tuto chybu opravit, ujistěte se, že soubor není uzamčený, a zkuste soubor rezervovat ručně.
 
-### <a name="unable-to-find-page-named-options-dialog-box-tab-name"></a>Nelze najít stránku s názvem '\<karta dialogového okna Možnosti název > '
+### <a name="unable-to-find-page-named-options-dialog-box-tab-name"></a>Nebyla nalezena Stránka s názvem '\<možnosti dialogového okna název karty > '
 
 Tato chyba nastane, když Návrhář komponent požaduje přístup k stránce z dialogového okna Možnosti pomocí názvu, který neexistuje. Obraťte se na dodavatele součásti.
 
-### <a name="unable-to-find-property-property-name-on-page-options-dialog-box-tab-name"></a>Nelze najít vlastnost '\<název vlastnosti > ' na stránce '\<karta dialogového okna Možnosti název > '
+### <a name="unable-to-find-property-property-name-on-page-options-dialog-box-tab-name"></a>Nelze najít vlastnost\<název vlastnosti > na kartě dialogového okna Možnosti\<název >
 
 Tato chyba nastane, když Návrhář komponent vyžaduje přístup k určité hodnotě na stránce v dialogovém okně Možnosti, ale tato hodnota neexistuje. Obraťte se na dodavatele součásti.
 
@@ -391,17 +391,17 @@ Tato chyba nastane, když Návrhář komponent vyžaduje přístup k určité ho
 
 Aplikace Visual Studio načetla třídu, ale návrháře pro tuto třídu nelze načíst. Visual Studio vyžaduje, aby návrháři používali první třídu v souboru. Chcete-li tuto chybu opravit, přesuňte kód třídy tak, aby byl první třídou v souboru, a poté znovu načtěte návrháře.
 
-### <a name="visual-studio-cannot-save-or-load-instances-of-the-type-type-name"></a>Visual Studio nemůže uložit nebo načíst instance typu\<type name >.
+### <a name="visual-studio-cannot-save-or-load-instances-of-the-type-type-name"></a>Visual Studio nemůže uložit nebo načíst instance typu\<název typu >.
 
 Jedná se o problém se součástí třetí strany. Obraťte se na dodavatele součásti.
 
-### <a name="visual-studio-is-unable-to-open-document-name-in-design-view"></a>Visual Studio nemůže otevřít\<dokument s názvem > v zobrazení Návrh
+### <a name="visual-studio-is-unable-to-open-document-name-in-design-view"></a>Visual Studio nemůže otevřít\<název dokumentu > v zobrazení Návrh
 
-Chybová zpráva: Visual Studio nemůže v zobrazení Návrh otevřít\<dokument s názvem >. Pro tento typ souboru není nainstalován žádný analyzátor. "
+Chybová zpráva: aplikace Visual Studio nemůže otevřít\<název dokumentu > v zobrazení Návrh. Pro tento typ souboru není nainstalován žádný analyzátor. "
 
 Tato chyba označuje, že jazyk projektu nepodporuje návrháře a nastane při pokusu o otevření souboru v dialogovém okně otevřít soubor nebo z Průzkumník řešení. Místo toho upravte soubor v zobrazení kódu.
 
-### <a name="visual-studio-was-unable-to-find-a-designer-for-classes-of-type-type-name"></a>Visual Studio nemohlo najít návrháře pro třídy typu\<type name >.
+### <a name="visual-studio-was-unable-to-find-a-designer-for-classes-of-type-type-name"></a>Visual Studio nemohlo najít návrháře pro třídy typu\<název typu >.
 
 Aplikace Visual Studio načetla třídu, ale třídu nelze navrhnout. Místo toho upravte třídu v zobrazení kódu tak, že kliknete pravým tlačítkem na třídu a zvolíte **Zobrazit kód**.
 

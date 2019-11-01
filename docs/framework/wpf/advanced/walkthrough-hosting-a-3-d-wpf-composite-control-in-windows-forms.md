@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms'
+title: 'Návod: Hostování kompozitního ovládacího prvku 3D WPF v rozhraní Windows Forms'
 ms.date: 08/18/2018
 dev_langs:
 - csharp
@@ -8,22 +8,22 @@ helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 - composite controls [WPF], hosting WPF in
 ms.assetid: 486369a9-606a-4a3b-b086-a06f2119c7b0
-ms.openlocfilehash: a35f2b4062edb18914c55046a69dcd9b8825d778
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 748ab027fa8206c163578c89b94460665563cbce
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353851"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197864"
 ---
-# <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms
+# <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku 3D WPF v rozhraní Windows Forms
 
-Tento návod ukazuje, jak lze vytvořit složený ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a hostovat ho v ovládacích prvcích a formulářích [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] pomocí ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>.
+Tento návod ukazuje, jak lze vytvořit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složený ovládací prvek a hostovat ho v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvcích a formulářích pomocí ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>.
 
-V tomto návodu implementujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>, který obsahuje dva podřízené ovládací prvky. @No__t-0 zobrazí trojrozměrné (3D) kužel. Vykreslování 3D objektů je mnohem snazší s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] než s [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Proto má smysl hostovat třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> k vytváření 3D grafiky v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+V tomto návodu implementujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>, které obsahují dva podřízené ovládací prvky. <xref:System.Windows.Controls.UserControl> zobrazí trojrozměrné (3D) kužel. Vykreslování 3D objektů je mnohem snazší s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] než s [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Proto má smysl hostovat třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> a vytvořit v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]3D grafiku.
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytváří se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
+- Vytváření <xref:System.Windows.Controls.UserControl>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 - Vytváří se projekt hostitele model Windows Forms.
 
@@ -46,7 +46,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
      [!code-xaml[HostingWpfUserControlInWf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]
 
-     Tento kód definuje <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType>, který obsahuje dva podřízené ovládací prvky. První podřízený ovládací prvek je ovládací prvek @no__t 0; druhým je ovládací prvek <xref:System.Windows.Controls.Viewport3D>, který zobrazuje prostorový kuželový.
+     Tento kód definuje <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType>, která obsahuje dva podřízené ovládací prvky. Prvním podřízeným ovládacím prvkem je ovládací prvek <xref:System.Windows.Controls.Label?displayProperty=nameWithType>; druhým je <xref:System.Windows.Controls.Viewport3D> ovládací prvek, který zobrazuje prostorový kuželový.
 
 <a name="To_Create_the_Windows_Forms_Host_Project"></a>
 ## <a name="create-the-host-project"></a>Vytvořit hostitelský projekt
@@ -63,7 +63,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
     - WindowsBase
 
-4. Přidejte odkaz na projekt `HostingWpfUserControlInWf`.
+4. Přidejte odkaz na `HostingWpfUserControlInWf` projekt.
 
 5. V Průzkumník řešení nastavte projekt `WpfUserControlHost` na spouštěný projekt.
 
@@ -74,11 +74,11 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 2. V okno Vlastnosti klikněte na položku **události**a potom poklikejte na událost <xref:System.Windows.Forms.Form.Load> a vytvořte obslužnou rutinu události.
 
-     Editor kódu se otevře nově vygenerované obslužné rutiny události `Form1_Load`.
+     Editor kódu se otevře v nově vygenerované obslužné rutině `Form1_Load` události.
 
 3. Nahraďte kód v Form1.cs následujícím kódem.
 
-     Obslužná rutina události `Form1_Load` vytvoří instanci `UserControl1` a přidá tovární kolekci podřízených ovládacích prvků <xref:System.Windows.Forms.Integration.ElementHost>. Ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> se přidá do kolekce podřízených ovládacích prvků formuláře.
+     Obslužná rutina události `Form1_Load` vytvoří instanci `UserControl1` a přidá tovární kolekci podřízených ovládacích prvků <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku. <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek je přidán do kolekce podřízených ovládacích prvků formuláře.
 
      [!code-csharp[HostingWpfUserControlInWf#10](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/WpfUserControlHost/Form1.cs#10)]
      [!code-vb[HostingWpfUserControlInWf#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWpfUserControlInWf/VisualBasic/WpfUserControlHost/Form1.vb#10)]
@@ -89,7 +89,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování složeného ovládacího prvku WPF v model Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
-- [Návod: Hostování model Windows Forms složeného ovládacího prvku v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
+- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Hostování složeného ovládacího prvku WPF v model Windows Forms Sample](https://go.microsoft.com/fwlink/?LinkID=160001)

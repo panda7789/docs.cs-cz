@@ -10,12 +10,12 @@ helpviewer_keywords:
 - reserved words, Visual Basic keywords
 - Visual Basic, keywords
 ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
-ms.openlocfilehash: 66eb6984bb6bb93dc7015a9da8c3099637bc2722
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 08444d757ed4186494100e54415e504c1ef117ce
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039401"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197519"
 ---
 # <a name="keywords-visual-basic"></a>Klíčová slova (Visual Basic)
 
@@ -53,37 +53,39 @@ Následující klíčová slova jsou *vyhrazena*, což znamená, že je nelze po
 |[IsNot](../operators/isnot-operator.md)|[Aplikaci](../queries/let-clause.md)|[Knihovna](../statements/declare-statement.md)|[Jako](../operators/like-operator.md)|  
 |[Dlouhou](../data-types/long-data-type.md)|[Procházet](../statements/do-loop-statement.md)|[Pamatovat](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)|[Střední](../operators/mod-operator.md)|  
 |[Modul](../modifiers/module-keyword.md)|[Příkaz Module](../statements/module-statement.md)|[MustInherit](../modifiers/mustinherit.md)|[MustOverride](../modifiers/mustoverride.md)|  
-|[MyBase](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[MyClass](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[Hosting](../statements/namespace-statement.md)|[Narrowing](../modifiers/narrowing.md)|  
-|[Nové omezení](../statements/type-list.md)|[Operátor New](../operators/new-operator.md)|[Next](../statements/for-next-statement.md)|[Další (v pokračování)](../statements/resume-statement.md)|  
-|[Mění](../operators/not-operator.md)|[Nothing](../nothing.md)|[NotInheritable](../modifiers/notinheritable.md)|[NotOverridable](../modifiers/notoverridable.md)|  
-|[Předmětů](../data-types/object-data-type.md)|[Tohoto](../statements/of-clause.md)|[Pnete](../../../visual-basic/misc/on.md)|[Podnikatel](../statements/operator-statement.md)|  
-|[Nastavení](../statements/option-keyword-statement.md)|[Optional](../modifiers/optional.md)|[Ani](../operators/or-operator.md)|[OrElse](../operators/orelse-operator.md)|  
-|[Out (generický modifikátor)](../modifiers/out-generic-modifier.md)|[Overloads](../modifiers/overloads.md)|[Overridable](../modifiers/overridable.md)|[Overrides](../modifiers/overrides.md)|  
-|[ParamArray](../modifiers/paramarray.md)|[Partial](../modifiers/partial.md)|[Private](../modifiers/private.md)|[Majetek](../statements/property-statement.md)|  
-|[Protected](../modifiers/protected.md)|[Public](../modifiers/public.md)|[RaiseEvent](../statements/raiseevent-statement.md)|[ReadOnly](../modifiers/readonly.md)|  
-|[ReDim](../statements/redim-statement.md)|[VĚCNÝ](../statements/rem-statement.md)|[RemoveHandler](../statements/removehandler-statement.md)|[Resume](../statements/resume-statement.md)|  
-|[Vrátit](../statements/return-statement.md)|[SByte](../data-types/sbyte-data-type.md)|[Výběr](../statements/select-case-statement.md)|[Stanovenými](../statements/set-statement.md)|  
-|[Shadows](../modifiers/shadows.md)|[Shared](../modifiers/shared.md)|[Dostatečná](../data-types/short-data-type.md)|[Konkrétní](../data-types/single-data-type.md)|  
-|[Static](../modifiers/static.md)|[Step](../statements/for-next-statement.md)|[Stop](../statements/stop-statement.md)|[Řetězec](../data-types/string-data-type.md)|  
-|[Omezení struktury](../statements/type-list.md)|[Příkaz Structure](../statements/structure-statement.md)|[Jednotk](../statements/sub-statement.md)|[SyncLock](../statements/synclock-statement.md)|  
-|[Stisknutím](../statements/then-statement.md)|[Throw](../statements/throw-statement.md)|[Schopn](../statements/for-next-statement.md)|[Podmínka](../data-types/boolean-data-type.md)|  
-|[Zkuste](../statements/try-catch-finally-statement.md)|[TryCast](../operators/trycast-operator.md)|[TypeOf... Dojde](../operators/typeof-operator.md)|[UInteger –](../data-types/uinteger-data-type.md)|  
-|[ULong](../data-types/ulong-data-type.md)|[UShort](../data-types/ushort-data-type.md)|[Použití](../statements/using-statement.md)|`Variant`|  
-|`Wend`|[Kdy](../statements/try-catch-finally-statement.md)|[While](../statements/while-end-while-statement.md)|[Widening](../modifiers/widening.md)|  
-|[Řetězce](../statements/with-end-with-statement.md)|[WithEvents](../modifiers/withevents.md)|[WriteOnly](../modifiers/writeonly.md)|[XOR](../operators/xor-operator.md)|  
-|[#Const](../directives/const-directive.md)|[#Else](../directives/if-then-else-directives.md)|[#ElseIf](../directives/if-then-else-directives.md)|[#End](../directives/if-then-else-directives.md)|  
-|[#If](../directives/if-then-else-directives.md)|[=](../operators/assignment-operator.md)|[&](../operators/concatenation-operator.md)|[&=](../operators/and-assignment-operator.md)|  
-|[*](../operators/multiplication-operator.md)|[*=](../operators/multiplication-assignment-operator.md)|[/](../operators/floating-point-division-operator.md)|[/=](../operators/floating-point-division-assignment-operator.md)|  
-|[\\](../operators/integer-division-operator.md)|[\\=](../operators/integer-division-assignment-operator.md)|[^](../operators/exponentiation-operator.md)|[^=](../operators/exponentiation-assignment-operator.md)|  
-|[+](../operators/addition-operator.md)|[+=](../operators/addition-assignment-operator.md)|[-](../operators/subtraction-operator.md)|[-=](../operators/subtraction-assignment-operator.md)|  
-|[Operátor >>](../operators/right-shift-operator.md)|[Operátor >>=](../operators/right-shift-assignment-operator.md)|[<<](../operators/left-shift-operator.md)|[<\<=](../operators/left-shift-assignment-operator.md)|  
-  
+|[MyBase](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[MyClass](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[NameOf](../operators/nameof.md)|[Hosting](../statements/namespace-statement.md)|
+|[Narrowing](../modifiers/narrowing.md)|[Nové omezení](../statements/type-list.md)|[Operátor New](../operators/new-operator.md)|[Next](../statements/for-next-statement.md)|
+|[Další (v pokračování)](../statements/resume-statement.md)|[Mění](../operators/not-operator.md)|[Nothing](../nothing.md)|[NotInheritable](../modifiers/notinheritable.md)|
+|[NotOverridable](../modifiers/notoverridable.md)|[Předmětů](../data-types/object-data-type.md)|[Tohoto](../statements/of-clause.md)|[Pnete](../../../visual-basic/misc/on.md)|
+|[Podnikatel](../statements/operator-statement.md)|[Nastavení](../statements/option-keyword-statement.md)|[Optional](../modifiers/optional.md)|[Ani](../operators/or-operator.md)|
+|[OrElse](../operators/orelse-operator.md)|[Out (generický modifikátor)](../modifiers/out-generic-modifier.md)|[Overloads](../modifiers/overloads.md)|[Overridable](../modifiers/overridable.md)|
+|[Overrides](../modifiers/overrides.md)|[ParamArray](../modifiers/paramarray.md)|[Partial](../modifiers/partial.md)|[Private](../modifiers/private.md)|
+|[Majetek](../statements/property-statement.md)|[Protected](../modifiers/protected.md)|[Public](../modifiers/public.md)|[RaiseEvent](../statements/raiseevent-statement.md)|
+|[ReadOnly](../modifiers/readonly.md)|[ReDim](../statements/redim-statement.md)|[VĚCNÝ](../statements/rem-statement.md)|[RemoveHandler](../statements/removehandler-statement.md)|
+|[Resume](../statements/resume-statement.md)|[Vrátit](../statements/return-statement.md)|[SByte](../data-types/sbyte-data-type.md)|[Výběr](../statements/select-case-statement.md)|
+[Stanovenými](../statements/set-statement.md)|[Shadows](../modifiers/shadows.md)|[Shared](../modifiers/shared.md)|[Dostatečná](../data-types/short-data-type.md)|
+|[Konkrétní](../data-types/single-data-type.md)|[Static](../modifiers/static.md)|[Step](../statements/for-next-statement.md)|[Stop](../statements/stop-statement.md)|
+|[Řetězec](../data-types/string-data-type.md)|[Omezení struktury](../statements/type-list.md)|[Příkaz Structure](../statements/structure-statement.md)|[Jednotk](../statements/sub-statement.md)|
+|[SyncLock](../statements/synclock-statement.md)|[Stisknutím](../statements/then-statement.md)|[Throw](../statements/throw-statement.md)|[Schopn](../statements/for-next-statement.md)|
+|[Podmínka](../data-types/boolean-data-type.md)|[Zkuste](../statements/try-catch-finally-statement.md)|[TryCast](../operators/trycast-operator.md)|[TypeOf... Dojde](../operators/typeof-operator.md)|
+|[UInteger –](../data-types/uinteger-data-type.md)|[ULong](../data-types/ulong-data-type.md)|[UShort](../data-types/ushort-data-type.md)|[Použití](../statements/using-statement.md)|
+|`Variant`|`Wend`|[Kdy](../statements/try-catch-finally-statement.md)|[While](../statements/while-end-while-statement.md)|
+[Widening](../modifiers/widening.md)|[Řetězce](../statements/with-end-with-statement.md)|[WithEvents](../modifiers/withevents.md)|[WriteOnly](../modifiers/writeonly.md)|
+[XOR](../operators/xor-operator.md)|[#Const](../directives/const-directive.md)|[#Else](../directives/if-then-else-directives.md)|[#ElseIf](../directives/if-then-else-directives.md)|
+|[#End](../directives/if-then-else-directives.md)|[#If](../directives/if-then-else-directives.md)|[=](../operators/assignment-operator.md)|[&](../operators/concatenation-operator.md)|
+|[&=](../operators/and-assignment-operator.md)|[*](../operators/multiplication-operator.md)|[*=](../operators/multiplication-assignment-operator.md)|[/](../operators/floating-point-division-operator.md)|
+[/=](../operators/floating-point-division-assignment-operator.md)|[\\](../operators/integer-division-operator.md)|[\\=](../operators/integer-division-assignment-operator.md)|[^](../operators/exponentiation-operator.md)|
+|[^=](../operators/exponentiation-assignment-operator.md)|[+](../operators/addition-operator.md)|[+=](../operators/addition-assignment-operator.md)|[-](../operators/subtraction-operator.md)|
+|[-=](../operators/subtraction-assignment-operator.md)|[Operátor >>](../operators/right-shift-operator.md)|[Operátor >>=](../operators/right-shift-assignment-operator.md)|[<<](../operators/left-shift-operator.md)|
+|[<\<=](../operators/left-shift-assignment-operator.md)|
+
 > [!NOTE]
-> `EndIf`, `GoSub`, `Variant`a `Wend` se uchovávají jako vyhrazená klíčová slova, i když se už nepoužívají v Visual Basic. Význam klíčového slova `Let` se změnil. `Let` se nyní používá v dotazech LINQ. Další informace naleznete v [klauzuli let](../queries/let-clause.md).  
-  
-## <a name="unreserved-keywords"></a>Nerezervovaná klíčová slova  
- Následující klíčová slova nejsou vyhrazena, což znamená, že je můžete použít jako názvy pro vaše programovací prvky. To se ale nedoporučuje, protože to může způsobit, že se váš kód těžko čte a může vést k drobným chybám, které se můžou obtížně najít.  
-  
+> `EndIf`, `GoSub`, `Variant`a `Wend` se uchovávají jako vyhrazená klíčová slova, i když se už nepoužívají v Visual Basic. Význam klíčového slova `Let` se změnil. `Let` se nyní používá v dotazech LINQ. Další informace naleznete v [klauzuli let](../queries/let-clause.md).
+
+## <a name="unreserved-keywords"></a>Nerezervovaná klíčová slova
+
+Následující klíčová slova nejsou vyhrazena, což znamená, že je můžete použít jako názvy pro vaše programovací prvky. To se ale nedoporučuje, protože to může způsobit, že se váš kód těžko čte a může vést k drobným chybám, které se můžou obtížně najít.
+
 |||||  
 |---|---|---|---|  
 |[Souhrnné](../queries/aggregate-clause.md)|[ANSI](../modifiers/ansi.md)|[Assembly](../modifiers/assembly.md)|[Async](../modifiers/async.md)|  
@@ -118,7 +120,7 @@ Následující klíčová slova jsou *vyhrazena*, což znamená, že je nelze po
 |[Souhrn operátorů](operators-summary.md)|Vypisuje výrazy přiřazení a porovnání a další operátory.|  
 |[Souhrn registru](registry-summary.md)|Seznam funkcí, které se používají ke čtení, ukládání a odstraňování nastavení programu.|  
 |[Souhrn manipulace s řetězci](string-manipulation-summary.md)|Obsahuje seznam funkcí, které se používají k manipulaci s řetězci.|  
-  
+
 ## <a name="see-also"></a>Viz také:
 
 - [Členové knihovny modulu runtime jazyka Visual Basic](../runtime-library-members.md)

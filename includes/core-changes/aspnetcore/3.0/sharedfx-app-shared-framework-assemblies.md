@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: a4bf8cff59ffe01b7465e227c0b1d1e7d93f16e7
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8344fdedcff34f102b73f977b688abc15563bd4c
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394408"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198408"
 ---
 ### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Sdílené rozhraní: sestavení byla z Microsoft. AspNetCore. app odebrána.
 
-Počínaje ASP.NET Core 3,0 obsahuje ASP.NET Core Shared Framework (`Microsoft.AspNetCore.App`) pouze sestavení First stran, která jsou plně vyvinutá, podporovaná a obsluhovaná společností Microsoft. 
+Počínaje ASP.NET Core 3,0 obsahuje ASP.NET Core Shared Framework (`Microsoft.AspNetCore.App`) pouze sestavení First stran, která jsou plně vyvinutá, podporovaná a obsluhovaná společností Microsoft.
 
 #### <a name="change-description"></a>Změnit popis
 

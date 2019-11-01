@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 32c7f4e9e4736145f9275b74f34c04404e7c770a
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 771238c53dc97f4cf4068968f3c68500ba9f87da
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394277"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198404"
 ---
 ### <a name="caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package"></a>Ukládání do mezipaměti: Microsoft. Extensions. Caching. SqlServer používá nový balíček SqlClient.
 
@@ -28,7 +28,7 @@ Balíček `Microsoft.Extensions.Caching.SqlServer` použil balíček `System.Dat
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Zákazníci by se neměli muset starat o tuto zásadní změnu, pokud nepoužívali typy vrácené balíčkem `Microsoft.Extensions.Caching.SqlServer` a přetypování do `System.Data.SqlClient` typů. Pokud někdo například přetypování `DbConnection` na [starý typ SqlConnection](xref:System.Data.SqlClient.SqlConnection), museli byste přetypování změnit na nový typ `Microsoft.Data.SqlClient.SqlConnection`. 
+Zákazníci by se neměli muset starat o tuto zásadní změnu, pokud nepoužívali typy vrácené balíčkem `Microsoft.Extensions.Caching.SqlServer` a přetypování do `System.Data.SqlClient` typů. Pokud někdo například přetypování `DbConnection` na [starý typ SqlConnection](xref:System.Data.SqlClient.SqlConnection), museli byste přetypování změnit na nový typ `Microsoft.Data.SqlClient.SqlConnection`.
 
 #### <a name="category"></a>Kategorie
 

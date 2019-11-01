@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30655
 ms.assetid: 756db378-e758-48a9-88ff-496bc55bc0b6
-ms.openlocfilehash: ef1fd4fa94d2fe225077d8b7ed0e04fa29843e7d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1abb420c997afbc69a652502801d91043eb48757
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622633"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197254"
 ---
-# <a name="unable-to-find-required-file-filename"></a>Nepovedlo se najít požadovaný soubor '\<název souboru >.
+# <a name="unable-to-find-required-file-filename"></a>Nepovedlo se najít požadovaný soubor\<filename >.
 Soubor, který vyžaduje Visual Studio, chybí nebo je poškozen.  
   
  **ID chyby:** BC30655  
@@ -25,4 +25,4 @@ Soubor, který vyžaduje Visual Studio, chybí nebo je poškozen.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

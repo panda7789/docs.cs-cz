@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: e339767b981cea80b1b804db7360961dc42f2102
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 748b5ea2b14abe2da0b84430461eb68a70ae268d
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126312"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195218"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 
@@ -95,7 +95,7 @@ Tyto hodnoty můžete použít následujícím způsobem:
 
 - Chcete-li zjistit, zda je v konkrétní verzi operačního systému Windows nainstalována konkrétní verze .NET Framework, proveďte test, zda je hodnota DWORD **verze** *shodná s* hodnotou uvedenou v tabulce. Chcete-li například zjistit, zda je v systému Windows 10 .NET Framework 4,6, proveďte test na hodnotu **verze** , která se *rovná* 393295.
 
-- Chcete-li zjistit, zda je k dispozici minimální verze .NET Framework, použijte pro tuto verzi **hodnotu DWORD s nižší verzí.** Například pokud vaše aplikace běží pod .NET Framework 4,6 nebo novější verzí, otestujte hodnotu DWORD **verze** , která je *větší nebo rovna* 393295. Tabulku, která obsahuje **pouze minimální hodnotu DWORD verze pro** každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
+- Chcete-li zjistit, zda je k dispozici minimální verze .NET Framework, použijte pro tuto verzi **hodnotu DWORD s nižší verzí.** Například pokud vaše aplikace běží pod .NET Framework 4,8 nebo novější verzí, otestujte hodnotu DWORD **verze** , která je *větší nebo rovna* 528040. Tabulku, která obsahuje **pouze minimální hodnotu DWORD verze pro** každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
 
 - Chcete-li otestovat více verzí, začněte testováním na hodnotu, která je *větší nebo rovna* menší hodnotě DWORD pro nejnovější verzi .NET Framework, a pak porovnejte hodnotu s menší hodnotou DWORD pro každou následnou dřívější verzi. Například pokud vaše aplikace vyžaduje .NET Framework 4,7 nebo novější a chcete určit konkrétní verzi .NET Framework přítomná, začněte testováním hodnoty DWORD **verze** , která je *větší nebo rovna* 461808 (menší hodnota DWORD hodnota pro .NET Framework 4.7.2). Pak porovnejte hodnotu DWORD **verze** s menší hodnotou pro každou pozdější .NET Framework verzi. Tabulku, která obsahuje **pouze minimální hodnotu DWORD verze pro** každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
 

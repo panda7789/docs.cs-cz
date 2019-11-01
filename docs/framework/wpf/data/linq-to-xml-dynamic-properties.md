@@ -2,12 +2,12 @@
 title: Odkaz na dynamické vlastnosti LINQ to XML
 ms.date: 10/22/2019
 ms.topic: reference
-ms.openlocfilehash: ca3684716f9b562d0e6a006c26730a1d1a28f8b1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 48b51e92eb78786b2cc189e3e7daa00875b41585
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920928"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197049"
 ---
 # <a name="linq-to-xml-dynamic-properties"></a>Dynamické vlastnosti LINQ to XML
 
@@ -21,7 +21,7 @@ V souvislosti s jejich vyřešenými hodnotami jsou dynamické vlastnosti v tét
 
 - Indexované hodnoty, jako jsou vlastnosti [prvků](elements-xelement-dynamic-property.md) a [následníků](descendants-xelement-dynamic-property.md) <xref:System.Xml.Linq.XElement>, které se překládají na typ indexeru. Aby byly typy indexerů přeloženy na požadovanou hodnotu nebo kolekci, je nutné předat rozšířený parametr názvu.
 
-Všechny dynamické vlastnosti, které vracejí indexovanou hodnotu typu <xref:System.Collections.Generic.IEnumerable%601> použít odložené provádění. Další informace o odloženém spuštění najdete v tématu [Úvod do dotazů LINQC#()](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
+Všechny dynamické vlastnosti, které vracejí indexovanou hodnotu typu <xref:System.Collections.Generic.IEnumerable%601> použít odložené provádění. Další informace o odloženém spuštění najdete v tématu [Úvod do dotazů LINQC#()](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
 ## <a name="reference"></a>Odkaz
 
@@ -33,4 +33,4 @@ Všechny dynamické vlastnosti, které vracejí indexovanou hodnotu typu <xref:S
 
 - [Datová vazba WPF s LINQ to XML](wpf-data-binding-with-linq-to-xml-overview.md)
 - [Datová vazba WPF s LINQ to XML – přehled](wpf-data-binding-with-linq-to-xml-overview.md)
-- [Úvod do dotazů LINQ (C#)](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries)
+- [Úvod do dotazů LINQ (C#)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)
