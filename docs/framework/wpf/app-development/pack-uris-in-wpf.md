@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 59c72d9ae12a014a8c47cb3b2852b337b173446c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: efaf55220a41526b8952f01b8225f8336a4e8657
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72580621"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459666"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
@@ -188,7 +188,7 @@ Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2
 
 Soubory XAML, které jsou konfigurovány jako MSBuild `Page` položky, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho mohou být MSBuild `Page` položky identifikovány pomocí identifikátorů URI Pack pro soubory prostředků.
 
-Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně nakonfigurované jako MSBuild `Page` položky, mají jako svůj kořenový prvek jednu z následujících hodnot:
+Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně nakonfigurované jako MSBuild`Page` položky, mají jako svůj kořenový prvek jednu z následujících hodnot:
 
 - <xref:System.Windows.Window?displayProperty=nameWithType>
 
@@ -265,7 +265,7 @@ Aby bylo možné určit typ souboru, na který odkazuje identifikátor URI balí
 
 Rozlišení identifikátoru URI se nevztahuje na identifikátory URI, které odkazují na následující:
 
-- Soubory obsahu v odkazovaných sestaveních: tyto typy souborů nejsou [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporovány.
+- Soubory obsahu v odkazovaných sestaveních: tyto typy souborů nejsou [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporovány.
 
 - Vložené soubory v odkazovaných sestaveních: identifikátory URI, které je identifikují, jsou jedinečné, protože zahrnují název odkazovaného sestavení a příponu `;component`.
 
@@ -397,7 +397,7 @@ Tabulka 4: identifikátory URI relativních balíčků v kódu
 
 ### <a name="common-pack-uri-scenarios"></a>Scénáře identifikátoru URI pro Common Pack
 
-V předchozích částech byly popsány postupy sestavení identifikátorů URI pro identifikaci prostředků, obsahu a umístění původních souborů. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] jsou tyto konstrukce používány různými způsoby a následující oddíly obsahují několik běžných použití.
+V předchozích částech byly popsány postupy sestavení identifikátorů URI pro identifikaci prostředků, obsahu a umístění původních souborů. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]jsou tyto konstrukce používány různými způsoby a následující oddíly obsahují několik běžných použití.
 
 <a name="Specifying_the_UI_to_Show_when_an_Application_Starts"></a>
 
@@ -407,11 +407,11 @@ V předchozích částech byly popsány postupy sestavení identifikátorů URI 
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
-Samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] mohou také určit stránku jako počáteční uživatelské rozhraní, jak je znázorněno v následujícím příkladu.
+Samostatné aplikace a aplikace prohlížeče XAML (XBAP) mohou také určit stránku jako počáteční uživatelské rozhraní, jak je znázorněno v následujícím příkladu.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-Pokud je aplikace samostatnou aplikací a je určena Stránka s <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. V případě [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] se stránka zobrazuje v prohlížeči hostitele.
+Pokud je aplikace samostatnou aplikací a je určena Stránka s <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. Pro XBAP se stránka zobrazuje v prohlížeči hostitele.
 
 <a name="Navigating_to_a_Page"></a>
 
@@ -423,7 +423,7 @@ Následující příklad ukazuje, jak přejít na stránku.
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml2)]
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml3)]
 
-Další informace o různých způsobech navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] najdete v tématu [Přehled navigace](navigation-overview.md).
+Další informace o různých způsobech navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]najdete v tématu [Přehled navigace](navigation-overview.md).
 
 <a name="Specifying_a_Window_Icon"></a>
 
@@ -457,7 +457,7 @@ Slovníky prostředků (<xref:System.Windows.ResourceDictionary>) lze použít k
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
-Přehled motivů v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [stylování a šablonování](../controls/styling-and-templating.md).
+Přehled motivů v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 ## <a name="see-also"></a>Viz také:
 

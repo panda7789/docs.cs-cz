@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [WPF], validation of binding
 - binding [WPF], validation of
 ms.assetid: eb98b33d-9866-49ae-b981-bc5ff20d607a
-ms.openlocfilehash: 7a1a8df78a785066992472c7de37f958ae3467f1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 245b05d9cfa7ca66dec310bd9a5291def0101d19
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920159"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459105"
 ---
 # <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření připojení
 
@@ -41,9 +41,9 @@ Jak je znázorněno v následujícím příkladu, <xref:System.Windows.Controls.
 
 Úplný příklad najdete v tématu [Ukázka ověření vazby](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/BindValidation).
   
-Pamatujte, že pokud neposkytnete vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A>, zobrazí se výchozí šablona chyby, která uživateli poskytne vizuální zpětnou vazbu, když dojde k chybě ověření. Další informace najdete v tématu věnovaném ověření dat v [přehledu datových vazeb](data-binding-overview.md) . [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány během aktualizace vlastnosti zdroje vazby. Další informace najdete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.
+Pamatujte, že pokud neposkytnete vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A>, zobrazí se výchozí šablona chyby, která uživateli poskytne vizuální zpětnou vazbu, když dojde k chybě ověření. Další informace najdete v tématu věnovaném ověření dat v [přehledu datových vazeb](../../../desktop-wpf/data/data-binding-overview.md) . [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány během aktualizace vlastnosti zdroje vazby. Další informace najdete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled datových vazeb](data-binding-overview.md)
+- [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
 - [Témata s postupy](data-binding-how-to-topics.md)

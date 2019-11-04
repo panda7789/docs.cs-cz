@@ -8,15 +8,15 @@ helpviewer_keywords:
 - serialization [WPF]
 - tree [WPF]
 ms.assetid: 8f57e879-180b-421f-b3d0-ac007ff2ce80
-ms.openlocfilehash: 4c178213e08add247311f0b71517ed292bd6658a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afddaab6a7f5e9ef445da48d013ace59b84611cd
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962433"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460471"
 ---
 # <a name="element-tree-and-serialization"></a>Strom prvku a serializace
-Programovací prvky WPF často existovat v nějaké podobě stromu vztah mezi sebou. Aplikace, které vytvořili uživatelského rozhraní v XAML může být například conceptualized jako stromu objektů. Strom prvku je možné dále rozdělit do dvou diskrétních, ale někdy paralelní stromů: Logická stromová struktura a vizuálního stromu. Serializace v subsystému WPF zahrnuje ukládání stavu z těchto dvou stromy a také stav aplikace a zápis do souboru, potenciálně jako XAML.  
+Programovací prvky WPF často existují v některém tvaru relace stromu mezi sebou. Například uživatelské rozhraní aplikace vytvořené v jazyce XAML lze koncepčně rozvažovat za strom objektů. Strom elementů lze dále rozdělit do dvou diskrétních, ale v některých případech paralelních stromů: logického stromu a vizuálního stromu. Serializace v jazyce WPF zahrnuje uložení stavu těchto dvou stromů a také stavu aplikace a zápis do souboru, potenciálně jako XAML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Stromy v subsystému WPF](trees-in-wpf.md)  
@@ -39,5 +39,5 @@ Programovací prvky WPF často existovat v nějaké podobě stromu vztah mezi se
   [Události](events-wpf.md)  
   [Vstup](input-wpf.md)  
   [Prostředky](resources-wpf.md)  
-  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [Model vláken](threading-model.md)

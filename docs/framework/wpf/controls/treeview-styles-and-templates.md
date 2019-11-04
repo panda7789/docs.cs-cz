@@ -9,68 +9,68 @@ helpviewer_keywords:
 - styles [WPF], TreeView
 - TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-ms.openlocfilehash: 01841bb828594dd4cac0c179d70495fe392c8de5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6dbe54324a5ad5e2f85719d819c035abfd644b1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761296"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460182"
 ---
 # <a name="treeview-styles-and-templates"></a>TreeView – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TreeView> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.TreeView>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
 ## <a name="treeview-parts"></a>Části prvku TreeView  
- <xref:System.Windows.Controls.TreeView> Ovládací prvek nemá žádné pojmenované součásti.  
+ Ovládací prvek <xref:System.Windows.Controls.TreeView> neobsahuje žádné pojmenované části.  
   
- Při vytváření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.TreeView>, šablona může obsahovat <xref:System.Windows.Controls.ItemsPresenter> v rámci <xref:System.Windows.Controls.ScrollViewer>. ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazuje každou položku v <xref:System.Windows.Controls.TreeView>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v ovládacím prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není za přímé podřízeného člena <xref:System.Windows.Controls.ScrollViewer>, je třeba zadat <xref:System.Windows.Controls.ItemsPresenter> názvu, `ItemsPresenter`.  
+ Když vytvoříte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.TreeView>, šablona může v <xref:System.Windows.Controls.ScrollViewer>obsahovat <xref:System.Windows.Controls.ItemsPresenter>. (<xref:System.Windows.Controls.ItemsPresenter> zobrazuje každou položku v <xref:System.Windows.Controls.TreeView>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v rámci ovládacího prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není přímým podřízeným <xref:System.Windows.Controls.ScrollViewer>, je nutné zadat <xref:System.Windows.Controls.ItemsPresenter> název `ItemsPresenter`.  
   
-## <a name="treeview-states"></a>TreeView – stavy  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.TreeView> ovládacího prvku.  
+## <a name="treeview-states"></a>Stavy TreeView  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.TreeView>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="treeviewitem-parts"></a>Části položky TreeViewItem  
- V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku.  
+## <a name="treeviewitem-parts"></a>TreeViewItem části  
+ V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.TreeViewItem>.  
   
-|Část|Type|Popis|  
+|Částí|Typ|Popis|  
 |----------|----------|-----------------|  
-|PART_Header|<xref:System.Windows.FrameworkElement>|Vizuální prvek, který obsahuje tento obsah záhlaví <xref:System.Windows.Controls.TreeView> ovládacího prvku.|  
+|PART_Header|<xref:System.Windows.FrameworkElement>|Prvek vizuálu, který obsahuje daný obsah záhlaví ovládacího prvku <xref:System.Windows.Controls.TreeView>.|  
   
-## <a name="treeviewitem-states"></a>Stavy položky TreeViewItem  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku.  
+## <a name="treeviewitem-states"></a>TreeViewItem stavy  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.TreeViewItem>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad <xref:System.Windows.Controls.TreeViewItem>.|  
-|Zakázáno|CommonStates|<xref:System.Windows.Controls.TreeViewItem> Je zakázaná.|  
-|Fokus|FocusStates|<xref:System.Windows.Controls.TreeViewItem> Má fokus.|  
-|Bez fokusu|FocusStates|<xref:System.Windows.Controls.TreeViewItem> Nemá fokus.|  
-|Rozbalení|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> Rozbalení ovládacího prvku.|  
-|Sbalení|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> Je sbalen ovládací prvek.|  
-|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> Má položky.|  
-|NoItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> Nemá žádné položky.|  
-|Vybráno|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> Zaškrtnuto.|  
-|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> Je zaškrtnuto, ale není aktivní.|  
-|Nevybrané|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> Není vybraná.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Běžnou|CommonStates|Výchozí stav.|  
+|MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.TreeViewItem>.|  
+|Zabezpečen|CommonStates|<xref:System.Windows.Controls.TreeViewItem> je zakázaný.|  
+|Zaměřil|FocusStates|<xref:System.Windows.Controls.TreeViewItem> má fokus.|  
+|Bez fokusu|FocusStates|<xref:System.Windows.Controls.TreeViewItem> nemá fokus.|  
+|Rozbalil|ExpansionStates|Ovládací prvek <xref:System.Windows.Controls.TreeViewItem> je rozbalený.|  
+|Sbalený|ExpansionStates|Ovládací prvek <xref:System.Windows.Controls.TreeViewItem> je sbalený.|  
+|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> obsahuje položky.|  
+|Žádné položky|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> nemá položky.|  
+|Vyberte|SelectionStates|Je vybrána <xref:System.Windows.Controls.TreeViewItem>.|  
+|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> je vybrán, ale není aktivní.|  
+|Nevybrané|SelectionStates|Není vybrána <xref:System.Windows.Controls.TreeViewItem>.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="treeview-controltemplate-example"></a>Příklad šablony ControlTemplate prvku TreeView  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.TreeView> ovládacího prvku a jeho přidružené typy.  
+## <a name="treeview-controltemplate-example"></a>Příklad ControlTemplate prvku TreeView  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.TreeView> a jeho přidružené typy.  
   
  [!code-xaml[ControlTemplateExamples#TreeView](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
   
- V předchozím příkladu používá jeden nebo více z následujících prostředků.  
+ Předchozí příklad používá jeden nebo více následujících zdrojů.  
   
  [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -78,5 +78,5 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TreeView>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

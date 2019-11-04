@@ -1,16 +1,13 @@
 ---
 title: 'Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů'
 ms.date: 03/30/2017
-dev_langs:
-- csharp
-- vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: b3ba21234af9555a4e40a0b587ac21473cff8761
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 4dc5648d748372828c5b9a36441bfb02eef045e1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834841"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460873"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů
 
@@ -18,7 +15,7 @@ Toto téma popisuje, jak nakonfigurovat funkci úložiště instance pracovního
 
 Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [Konfigurace trvalosti aplikace App Fabric](https://go.microsoft.com/fwlink/?LinkId=201204).
 
-Před použitím funkce úložiště instance pracovního postupu SQL vytvořte databázi, kterou funkce používá k zachování instancí pracovního postupu. Program pro nastavení [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] kopíruje soubory skriptu SQL přidružené k funkci úložiště instancí pracovního postupu SQL do složky%WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN. Tyto soubory skriptu spusťte v databázi SQL Server 2005 nebo SQL Server 2008, kterou chcete, aby úložiště instancí pracovních postupů SQL použilo k zachování instancí pracovního postupu. Nejprve spusťte soubor SqlWorkflowInstanceStoreSchema. SQL a potom spusťte soubor SqlWorkflowInstanceStoreLogic. SQL.
+Před použitím funkce úložiště instance pracovního postupu SQL vytvořte databázi, kterou funkce používá k zachování instancí pracovního postupu. Program pro nastavení [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] kopíruje soubory skriptu SQL přidružené k funkci úložiště instancí pracovních postupů SQL do složky%WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN. Tyto soubory skriptu spusťte v databázi SQL Server 2005 nebo SQL Server 2008, kterou chcete, aby úložiště instancí pracovních postupů SQL použilo k zachování instancí pracovního postupu. Nejprve spusťte soubor SqlWorkflowInstanceStoreSchema. SQL a potom spusťte soubor SqlWorkflowInstanceStoreLogic. SQL.
 
 > [!NOTE]
 > Chcete-li vyčistit databázi trvalosti, aby měla novou databázi, spusťte skripty v%WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN v uvedeném pořadí.
@@ -35,7 +32,7 @@ Následující části popisují, jak povolit trvalost pro pracovní postupy a s
 
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>Povolení trvalosti pro samoobslužné pracovní postupy, které používají WorkflowApplication
 
-Můžete povolit trvalost pro pracovní postupy v místním prostředí, které používají <xref:System.Activities.WorkflowApplication> programově pomocí objektového modelu <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>. Následující postup obsahuje kroky.
+Trvalost můžete povolit pro pracovní postupy v místním prostředí, které používají <xref:System.Activities.WorkflowApplication> programově pomocí modelu <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> objektů. Následující postup obsahuje kroky.
 
 #### <a name="to-enable-persistence-for-self-hosted-workflows"></a>Postup povolení trvalosti pro pracovní postupy v místním prostředí
 
@@ -47,7 +44,7 @@ Můžete povolit trvalost pro pracovní postupy v místním prostředí, které 
     using System.Activities.DurableInstancing;
     ```
 
-3. Vytvořte <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> a přiřaďte ji k <xref:System.Activities.WorkflowApplication.InstanceStore%2A> <xref:System.Activities.WorkflowApplication>, jak je znázorněno v následujícím příkladu kódu.
+3. Vytvořte <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> a přiřaďte ji <xref:System.Activities.WorkflowApplication.InstanceStore%2A> <xref:System.Activities.WorkflowApplication>, jak je znázorněno v následujícím příkladu kódu.
 
     ```csharp
     SqlWorkflowInstanceStore store =
@@ -62,7 +59,7 @@ Můžete povolit trvalost pro pracovní postupy v místním prostředí, které 
    > [!NOTE]
    > V závislosti na vaší edici SQL Server se název serveru připojovacího řetězce může lišit.
 
-4. Vyvolejte metodu <xref:System.Activities.WorkflowApplication.Persist%2A> u objektu <xref:System.Activities.WorkflowApplication> k uchování pracovního postupu nebo metody @no__t 2 pro zachování a uvolnění pracovního postupu. Můžete také zpracovat událost <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> vyvolanou objektem <xref:System.Activities.WorkflowApplication> a vrátit odpovídající člen (<xref:System.Activities.PersistableIdleAction.Persist> nebo <xref:System.Activities.PersistableIdleAction.Unload>) do <xref:System.Activities.PersistableIdleAction>.
+4. Vyvolejte metodu <xref:System.Activities.WorkflowApplication.Persist%2A> v objektu <xref:System.Activities.WorkflowApplication> pro zachování pracovního postupu, nebo <xref:System.Activities.WorkflowApplication.Unload%2A> metodu pro zachování a uvolnění pracovního postupu. Můžete také zpracovat událost <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> vyvolanou objektem <xref:System.Activities.WorkflowApplication> a vrátit odpovídající člen (<xref:System.Activities.PersistableIdleAction.Persist> nebo <xref:System.Activities.PersistableIdleAction.Unload>) <xref:System.Activities.PersistableIdleAction>.
 
    ```csharp
    wfApp.PersistableIdle = delegate(WorkflowApplicationIdleEventArgs e)
@@ -76,7 +73,7 @@ Můžete povolit trvalost pro pracovní postupy v místním prostředí, které 
 
 ## <a name="enabling-persistence-for-self-hosted-workflow-services-that-use-the-workflowservicehost"></a>Povolení trvalosti pro samoobslužné služby pracovních postupů, které používají hostitele
 
-Můžete povolit trvalost pro samoobslužné služby pracovních postupů, které používají <xref:System.ServiceModel.WorkflowServiceHost> programově pomocí třídy <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> nebo třídy <xref:System.ServiceModel.Activities.WorkflowServiceHost.DurableInstancingOptions%2A>.
+Můžete povolit trvalost pro samoobslužné služby pracovních postupů, které používají <xref:System.ServiceModel.WorkflowServiceHost> programově pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> třídy nebo třídy <xref:System.ServiceModel.Activities.WorkflowServiceHost.DurableInstancingOptions%2A>.
 
 ### <a name="using-the-sqlworkflowinstancestorebehavior-class"></a>Použití třídy SqlWorkflowInstanceStoreBehavior
 
@@ -119,7 +116,7 @@ Následující postup obsahuje kroky pro použití třídy <xref:System.ServiceM
 
 ### <a name="using-the-durableinstancingoptions-property"></a>Použití vlastnosti DurableInstancingOptions
 
-Je-li použita `SqlWorkflowInstanceStoreBehavior`, je `DurableInstancingOptions.InstanceStore` na `WorkflowServiceHost` nastaveno na objekt `SqlWorkflowInstanceStore` vytvořený pomocí hodnot konfigurace. Můžete to samé provést programově a nastavit vlastnost <xref:System.ServiceModel.Activities.WorkflowServiceHost.DurableInstancingOptions%2A> `WorkflowServiceHost` bez použití třídy `SqlWorkflowInstanceStoreBehavior`, jak je znázorněno v následujícím příkladu kódu.
+Při použití `SqlWorkflowInstanceStoreBehavior` je `DurableInstancingOptions.InstanceStore` na `WorkflowServiceHost` nastavena na objekt `SqlWorkflowInstanceStore` vytvořený pomocí hodnot konfigurace. Můžete to samé provést programově pro nastavení vlastnosti <xref:System.ServiceModel.Activities.WorkflowServiceHost.DurableInstancingOptions%2A> `WorkflowServiceHost` bez použití třídy `SqlWorkflowInstanceStoreBehavior`, jak je znázorněno v následujícím příkladu kódu.
 
 ```csharp
 workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObject;
@@ -129,7 +126,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 Můžete povolit trvalost pro samoobslužné služby nebo aktivační službu procesů systému Windows (WAS) – hostované služby pracovního postupu pomocí konfiguračního souboru. Služba pracovního postupu, která je hostovaná, používá službu WorkflowServiceHost jako samoobslužné služby pracovních postupů.
 
-@No__t-0, což je chování služby, které umožňuje pohodlně měnit vlastnosti [úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md) prostřednictvím konfigurace XML. U hostovaných služeb pracovních postupů použijte soubor Web. config. Následující příklad konfigurace ukazuje, jak nakonfigurovat úložiště instance pracovního postupu SQL pomocí prvku chování `sqlWorkflowInstanceStore` v konfiguračním souboru.
+`SqlWorkflowInstanceStoreBehavior`, což je chování služby, které umožňuje pohodlně měnit vlastnosti [úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md) prostřednictvím konfigurace XML. U hostovaných služeb pracovních postupů použijte soubor Web. config. Následující příklad konfigurace ukazuje, jak nakonfigurovat úložiště instance pracovního postupu SQL pomocí elementu `sqlWorkflowInstanceStore` chování v konfiguračním souboru.
 
 ```xml
 <serviceBehaviors>
@@ -140,16 +137,15 @@ Můžete povolit trvalost pro samoobslužné služby nebo aktivační službu pr
                     instanceCompletionAction="DeleteAll | DeleteNothing"
                     instanceLockedExceptionAction="NoRetry | BasicRetry |AggressiveRetry"
                     hostLockRenewalPeriod="00:00:30"
-                    runnableInstancesDetectionPeriod="00:00:05">
+                    runnableInstancesDetectionPeriod="00:00:05" />
 
-        <sqlWorkflowInstanceStore/>
     </behavior>
 </serviceBehaviors>
 ```
 
-Pokud nenastavíte hodnoty pro `connectionString` nebo vlastnost `connectionStringName`, použije úložiště instance pracovního postupu SQL výchozí pojmenovaný připojovací řetězec `DefaultSqlWorkflowInstanceStoreConnectionString`.
+Pokud nenastavíte hodnoty pro `connectionString` nebo vlastnost `connectionStringName`, úložiště instance pracovního postupu SQL použije výchozí pojmenovaný připojovací řetězec `DefaultSqlWorkflowInstanceStoreConnectionString`.
 
-Je-li použita `SqlWorkflowInstanceStoreBehavior`, je `DurableInstancingOptions.InstanceStore` na `WorkflowServiceHost` nastaveno na objekt `SqlWorkflowInstanceStore` vytvořený pomocí hodnot konfigurace. To samé můžete provést programově, pokud chcete použít `SqlWorkflowInstanceStore` s `WorkflowServiceHost` bez použití prvku chování služby.
+Při použití `SqlWorkflowInstanceStoreBehavior` je `DurableInstancingOptions.InstanceStore` na `WorkflowServiceHost` nastavena na objekt `SqlWorkflowInstanceStore` vytvořený pomocí hodnot konfigurace. Můžete to samé provést programově a použít `SqlWorkflowInstanceStore` s `WorkflowServiceHost` bez použití prvku chování služby.
 
 ```csharp
 workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObject;
@@ -162,7 +158,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 Instalace [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] přidá do souboru Machine. config následující prvky týkající se funkce úložiště instance pracovního postupu SQL:
 
-- Přidá do souboru Machine. config následující element rozšíření chování, abyste mohli nakonfigurovat trvalost pro vaše služby pomocí prvku chování služby > @no__t 0sqlWorkflowInstanceStore v konfiguračním souboru.
+- Přidá do souboru Machine. config následující prvek rozšíření chování, aby bylo možné v konfiguračním souboru použít prvek chování služby \<sqlWorkflowInstanceStore > a nakonfigurovat trvalost pro vaše služby.
 
     ```xml
     <configuration>
@@ -172,6 +168,6 @@ Instalace [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-m
                     <add name="sqlWorkflowInstanceStore" type="System.Activities.DurableInstancing.SqlWorkflowInstanceStoreElement, System.Activities.DurableInstancing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
                 </behaviorExtensions>
             </extensions>
-        <system.serviceModel>
-    <configuration>
+        </system.serviceModel>
+    </configuration>
     ```

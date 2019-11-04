@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 5a5c4c62799e1d2c190c2f7eaab12fff31e457ab
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: 619dc101cd8851cee24651b7e3098ae12ef46259
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425273"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459766"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 
@@ -742,7 +742,7 @@ Stejně jako <xref:System.Windows.Controls.Frame>, přechod na HTML pomocí <xre
 
 ### <a name="navigating-to-custom-objects"></a>Navigace na vlastní objekty
 
-Pokud máte data uložená jako vlastní objekty, jedním ze způsobů, jak tato data zobrazit, je vytvoření <xref:System.Windows.Controls.Page> s obsahem, který je vázán na tyto objekty (viz [Přehled datové vazby](../data/data-binding-overview.md)). Pokud nepotřebujete pro zobrazení objektů režii vytváření celé stránky, můžete místo toho přejít přímo na ně.
+Pokud máte data uložená jako vlastní objekty, jedním ze způsobů, jak tato data zobrazit, je vytvoření <xref:System.Windows.Controls.Page> s obsahem, který je vázán na tyto objekty (viz [Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md)). Pokud nepotřebujete pro zobrazení objektů režii vytváření celé stránky, můžete místo toho přejít přímo na ně.
 
 Vezměte v úvahu třídu `Person`, která je implementována v následujícím kódu.
 

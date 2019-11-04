@@ -14,15 +14,15 @@ helpviewer_keywords:
 - TargetType attribute [XAML Services]
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
-ms.openlocfilehash: bf62987c61c1d4f6aefce515f79e997b41272b56
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df0b3fe53cb8f284fc6e2d79a9b2cea86318d701
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622965"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459914"
 ---
 # <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
-CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný typ XAML.  
+Dodává objekt CLR <xref:System.Type>, který je základním typem pro zadaný typ XAML.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -40,48 +40,48 @@ CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný ty
   
 |||  
 |-|-|  
-|`prefix`|Volitelné. Předpona, která mapuje jiné než výchozí obor názvů XAML. Zadání předpony není často nutné. Viz poznámky.|  
-|`typeNameValue`|Povinný parametr. Název typu, který je možné přeložit na aktuální výchozí XAML obor názvů; nebo zadaného mapování předpony Pokud `prefix` pochází.|  
+|`prefix`|Volitelné. Předpona, která mapuje nevýchozí obor názvů XAML. Zadání předpony není často nutné. Viz poznámky.|  
+|`typeNameValue`|Požadováno. Název typu, který lze přeložit na aktuální výchozí obor názvů XAML; nebo zadanou mapovanou předponu, pokud je dodána `prefix`.|  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Type` Podobné funkce, která se má rozšíření značek `typeof()` operátor v jazyce C# nebo `GetType` operátor v aplikaci Microsoft Visual Basicu.  
+ `x:Type` rozšíření značek má podobnou funkci operátoru `typeof()` v C# nebo operátoru `GetType` v Microsoft Visual Basic.  
   
- `x:Type` – Rozšíření značek poskytuje chování převod z řetězce pro vlastnosti, které přijmout typ <xref:System.Type>. Vstup je typu XAML. Vztah mezi XAML typ vstupu a výstupu CLR <xref:System.Type> , který se nachází výstup <xref:System.Type> je <xref:System.Xaml.XamlType.UnderlyingType%2A> vstupu <xref:System.Xaml.XamlType>, po vyhledání nezbytné <xref:System.Xaml.XamlType> na základě kontext schématu XAML a <xref:System.Windows.Markup.IXamlTypeResolver>service poskytuje kontext.  
+ Rozšíření `x:Type` značek poskytuje chování převodu z řetězce pro vlastnosti, které přebírají typ <xref:System.Type>. Vstup je typ XAML. Vztah mezi vstupním typem XAML a výstupním CLR <xref:System.Type> je, že výstupní <xref:System.Type> je <xref:System.Xaml.XamlType.UnderlyingType%2A> vstupního <xref:System.Xaml.XamlType>po vyhledání potřebných <xref:System.Xaml.XamlType> na základě kontextu schématu XAML a <xref:System.Windows.Markup.IXamlTypeResolver> služby, kterou poskytuje kontext.  
   
- V rozhraní .NET Framework XAML Services zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.TypeExtension> třídy.  
+ V .NET Framework služby XAML je zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.TypeExtension> třídou.  
   
- Implementace konkrétní verzi rozhraní framework, některé vlastnosti, která trvat <xref:System.Type> jako hodnotu můžete přijmout přímo název typu (řetězcové hodnoty typ `Name`). Implementace toto chování je však komplexní scénáře. Příklady najdete v části "Poznámky k použití WPF", který následuje.  
+ V konkrétních implementacích rozhraní některé vlastnosti, které přijímají <xref:System.Type> jako hodnotu, mohou přijmout název typu přímo (Řetězcová hodnota typu `Name`). Nicméně implementace tohoto chování je složitý scénář. Příklady najdete v části "poznámky k použití WPF", které následují.  
   
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Řetězec s tokenem uvedený za `x:Type` řetězec identifikátoru je přiřazen jako <xref:System.Windows.Markup.TypeExtension.TypeName%2A> hodnoty základního <xref:System.Windows.Markup.TypeExtension> rozšíření třídy. V části výchozí kontext schématu XAML pro rozhraní .NET Framework XAML Services, která je založena na typy CLR, hodnota tohoto atributu je buď <xref:System.Reflection.MemberInfo.Name%2A> požadovaného typu, nebo, který obsahuje <xref:System.Reflection.MemberInfo.Name%2A> předchází předponu pro obor názvů XAML jiné než výchozí mapování.  
+ Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce poskytnutý po řetězci `x:Type` identifikátoru je přiřazen jako hodnota <xref:System.Windows.Markup.TypeExtension.TypeName%2A> základní třídy rozšíření <xref:System.Windows.Markup.TypeExtension>. V rámci výchozího kontextu schématu XAML pro .NET Framework služby XAML, která je založena na typech CLR, je hodnota tohoto atributu buď <xref:System.Reflection.MemberInfo.Name%2A> požadovaného typu, nebo obsahuje, který <xref:System.Reflection.MemberInfo.Name%2A> předchází předponu pro mapování oboru názvů jazyka XAML, který není výchozí.  
   
- `x:Type` – Rozšíření značek lze použít v syntaxi elementu objektu. V takovém případě zadáte hodnotu <xref:System.Windows.Markup.TypeExtension.TypeName%2A> vlastnost je potřeba správně inicializovat rozšíření.  
+ Rozšíření značek `x:Type` lze použít v syntaxi elementu Object. V takovém případě je nutné zadat hodnotu vlastnosti <xref:System.Windows.Markup.TypeExtension.TypeName%2A> pro správnou inicializaci rozšíření.  
   
- `x:Type` – Rozšíření značek můžete také použít jako atribut podrobné; však není typické použití: `<object property="{x:Type TypeName=typeNameValue}" .../>`  
+ Rozšíření značek `x:Type` lze také použít jako atribut verbose; Toto použití však není typické: `<object property="{x:Type TypeName=typeNameValue}" .../>`  
   
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
   
-### <a name="default-xaml-namespace-and-type-mapping"></a>Výchozí Namespace XAML a mapování typu  
- Výchozí obor názvů XAML pro programování WPF obsahuje většinu typů XAML, které potřebujete pro typické scénáře XAML; Při odkazování na hodnoty typu XAML proto můžete vyhnout často předpony. Můžete potřebovat k mapování předpony, pokud odkazujete na typ z vlastních sestavení nebo pro typy, které existují v WPF sestavení, ale jsou z oboru názvů CLR, který nebyl namapován na výchozí obor názvů XAML. Další informace o předpon oborů názvů XAML a mapování oborů názvů CLR naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+### <a name="default-xaml-namespace-and-type-mapping"></a>Výchozí obor názvů jazyka XAML a mapování typů  
+ Výchozí obor názvů XAML pro programování WPF obsahuje většinu typů XAML, které potřebujete pro typické scénáře XAML. Proto lze při odkazování na hodnoty typu XAML často vyhýbat předpony. Je možné, že budete muset namapovat předponu, pokud odkazujete na typ z vlastního sestavení nebo pro typy, které existují v sestavení WPF, ale jsou z oboru názvů CLR, který nebyl namapován na výchozí obor názvů jazyka XAML. Další informace o předponách, oborech názvů XAML a mapování oborů názvů CLR naleznete v tématu [obory názvů XAML a mapování oboru názvů pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
-### <a name="type-properties-that-support-typename-as-string"></a>Zadejte vlastnosti této podpory Typename jako String  
- WPF podporuje techniky, které umožňují určující hodnotu některé vlastnosti typu <xref:System.Type> bez nutnosti `x:Type` použití rozšíření značky. Místo toho můžete zadat hodnotu jako řetězec, který označuje typ. Příklady jsou <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType> a <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>. Podpora pro toto chování není k dispozici prostřednictvím převaděče typů a rozšíření značek. Místo toho jde odložení chování implementované pomocí <xref:System.Windows.FrameworkElementFactory>.  
+### <a name="type-properties-that-support-typename-as-string"></a>Vlastnosti typu, které podporují TypeName jako řetězec  
+ WPF podporuje techniky, které umožňují zadat hodnotu některých vlastností typu <xref:System.Type> bez nutnosti použití rozšíření značek `x:Type`. Místo toho můžete zadat hodnotu jako řetězec, který bude název typu. Příklady jsou <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType> a <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>. Podpora pro toto chování není poskytována pomocí převaděčů typu nebo rozšíření značek. Místo toho se jedná o chování při odložení implementovaného prostřednictvím <xref:System.Windows.FrameworkElementFactory>.  
   
- Technologie Silverlight podporuje podobné konvence. Ve skutečnosti Silverlight aktuálně nepodporuje `{x:Type}` v jeho podporu jazyka XAML a nepřijímá `{x:Type}` použití mimo několik okolností, které jsou určené pro podporu migrace WPF Silverlight XAML. Proto je integrovaná do všech vyhodnocení nativních vlastností Silverlight chování typename jako řetězec kde <xref:System.Type> je hodnota.  
+ Silverlight podporuje podobnou konvenci. Program Silverlight v současné době nepodporuje `{x:Type}` v jeho podpoře jazyka XAML a nepřijímá `{x:Type}` použití mimo několik okolností, které jsou určeny k podpoře migrace XAML v technologii WPF-Silverlight. Proto je chování TypeName-As-String vestavěné pro všechna vyhodnocení nativních vlastností Silverlightu, kde <xref:System.Type> je hodnota.  
   
 ## <a name="xaml-2009"></a>XAML 2009  
- XAML 2009 poskytuje další podporu pro obecné typy a upravuje chování funkce `x:TypeArguments` a `x:Type` pro tuto funkci podporují.  
+ XAML 2009 poskytuje další podporu pro obecné typy a upravuje chování funkcí `x:TypeArguments` a `x:Type` k poskytnutí této podpory.  
   
-- `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecné objektu může být u jiných elementů než kořenovém adresáři. Další informace najdete v části "XAML 2009" v [x: TypeArguments – direktiva](x-typearguments-directive.md).  
+- `x:TypeArguments` a přidružený prvek objektu pro instanci generického objektu může být na jiných prvcích než kořen. Další informace naleznete v části "XAML 2009" [direktivy x:TypeArguments –](x-typearguments-directive.md).  
   
-- XAML 2009 podporuje syntaxi pro zadání omezení obecného typu v kódu. To může využívat `x:TypeArguments`, `x:Type`, nebo dvě funkce v kombinaci.  
+- XAML 2009 podporuje syntaxi pro určení omezení obecného typu v označení. To lze použít `x:TypeArguments`, `x:Type`nebo pomocí dvou funkcí v kombinaci.  
   
-- Implementaci WPF XAML při zpracování XAML 2009, pro zatížení také přidá tuto funkci pro implicitní typ chování převod vlastnosti na určité rozhraní, které používají typ <xref:System.Type>.  
+- Implementace XAML jazyka WPF při zpracování XAML 2009 pro načtení také přidá tuto možnost do chování implicitního převodu typu pro určité vlastnosti rozhraní, které používají typ <xref:System.Type>.  
   
- V WPF můžete použít funkce XAML 2009, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
+ V WPF můžete použít funkce XAML 2009, ale pouze pro volný kód XAML (XAML, který není zkompilován jako kód). XAML kompilovaný kód XAML pro WPF a formát BAML jazyka XAML aktuálně nepodporují klíčová slova a funkce XAML 2009.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Style>
 - [Styly a šablony](../wpf/controls/styling-and-templating.md)
-- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)
 - [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)

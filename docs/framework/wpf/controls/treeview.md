@@ -8,19 +8,19 @@ helpviewer_keywords:
 - controls [WPF], TreeView
 - hierarchical structure [WPF], TreeView control
 ms.assetid: 805c235c-0a0e-4e34-8d96-9dc3865cf2df
-ms.openlocfilehash: b353b413f7486990b6dd8ae5126809b27590ae3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb8d77bd3df848e6e9ed186cc621c02d36842175
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761333"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458287"
 ---
 # <a name="treeview"></a>TreeView
-<xref:System.Windows.Controls.TreeView> Ovládací prvek zobrazí informace v hierarchické struktuře s použitím sbalitelné uzly.  
+Ovládací prvek <xref:System.Windows.Controls.TreeView> zobrazuje informace v hierarchické struktuře pomocí sbalitelných uzlů.  
   
- Na následujícím obrázku je příklad <xref:System.Windows.Controls.TreeView> ovládací prvek, který má vnořené <xref:System.Windows.Controls.TreeViewItem> ovládacích prvků:  
+ Následující obrázek je příkladem <xref:System.Windows.Controls.TreeView> ovládacího prvku, který má vnořené <xref:System.Windows.Controls.TreeViewItem> ovládací prvky:  
   
- ![Obrázek, který znázorňuje vnořené položky TreeViewItem ovládací prvky.](./media/treeview/nested-treeviewitem-controls.jpg)  
+ ![Ilustrace zobrazující vnořené ovládací prvky TreeViewItem.](./media/treeview/nested-treeviewitem-controls.jpg)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [TreeView – přehled](treeview-overview.md)  
@@ -31,5 +31,5 @@ ms.locfileid: "61761333"
   <xref:System.Windows.Controls.TreeViewItem>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled datových vazeb](../data/data-binding-overview.md)  
+ [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)  
   [Přehled datových šablon](../data/data-templating-overview.md)

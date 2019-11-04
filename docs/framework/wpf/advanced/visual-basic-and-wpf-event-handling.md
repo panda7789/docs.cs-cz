@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic [WPF], event handlers
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
-ms.openlocfilehash: 12ced911c6fded5dd9016ea377a3a4518c9c2ee1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 9a3d579019db4d2b59a0252dbe63b4a6a0468849
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920343"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458297"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Zpracování událostí v jazyku Visual Basic a WPF
 Pro jazyk Microsoft Visual Basic .NET konkrétně můžete použít klíčové slovo `Handles` pro konkrétní jazyk k přidružení obslužných rutin událostí k instancím namísto připojení obslužných rutin událostí k atributům nebo použití metody <xref:System.Windows.UIElement.AddHandler%2A>. Nicméně metoda `Handles` pro připojování obslužných rutin k instancím má určitá omezení, protože syntaxe `Handles` nepodporuje některé ze specifických funkcí směrovaných událostí systému [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -47,4 +47,4 @@ Pro jazyk Microsoft Visual Basic .NET konkrétně můžete použít klíčové s
 - <xref:System.Windows.UIElement.AddHandler%2A>
 - [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

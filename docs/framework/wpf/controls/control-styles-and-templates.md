@@ -10,28 +10,28 @@ helpviewer_keywords:
 - states [WPF]
 - templates [WPF]
 ms.assetid: c19049bb-5ceb-492d-afd2-751dca0ed8e3
-ms.openlocfilehash: c5c33327c5a80a4e275d1eaa505c1d20d3d7ba4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c6d6b7beba03aaa5c978b5cb72c09ce625e0d7e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62017654"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460408"
 ---
 # <a name="control-styles-and-templates"></a>Styly a šablony ovládacích prvků
-Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Windows.Controls.ControlTemplate> vizuálním stromu ovládacího prvku, který obsahuje. Úpravou můžete změnit strukturu a vzhled ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuálním stromu ovládacího prvku je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku na jeho nové a kompletní <xref:System.Windows.Controls.ControlTemplate>.  
+Ovládací prvky v Windows Presentation Foundation (WPF) mají <xref:System.Windows.Controls.ControlTemplate>, které obsahují vizuální strom tohoto ovládacího prvku. Změnou <xref:System.Windows.Controls.ControlTemplate> tohoto ovládacího prvku můžete změnit strukturu a vzhled ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálního stromu ovládacího prvku; Chcete-li změnit vizuální strom ovládacího prvku, je nutné nastavit vlastnost <xref:System.Windows.Controls.Control.Template%2A> ovládacího prvku na jeho nový a kompletní <xref:System.Windows.Controls.ControlTemplate>.  
   
- Klasické pracovní plochy motivy určit, které slovník prostředků se používá. Slovníky prostředků pro klasické pracovní plochy motivy, získáte [výchozí motivy WPF](https://go.microsoft.com/fwlink/?LinkID=158252).  
+ Pomocí motivů plochy zjistíte, který slovník prostředků se používá. Chcete-li získat slovníky prostředků pro motivy plochy, přečtěte si téma [výchozí motivy WPF](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
- Následující tabulka popisuje názvy souboru slovníku prostředků a jejich odpovídající motivy klasické pracovní plochy.  
+ Následující tabulka obsahuje popis názvů souborů slovníku prostředků a jejich odpovídajících motivů pro plochu.  
   
 |Soubor motivu|Motiv plochy|  
 |----------------|-------------------|  
-|Classic.XAML|Windows klasickému (z Windows 95, Windows 98 a Windows 2000) v operačním systému Windows XP...|  
-|Luna.NormalColor.xaml|Modrý motiv Windows XP.|  
-|Luna.Homestead.xaml|Olivově motiv Windows XP.|  
-|Luna.Metallic.xaml|Stříbrným motiv Windows XP.|  
-|Royale.NormalColor.xaml|Výchozí motiv operačního systému Windows XP Media Center Edition.|  
-|Aero.NormalColor.xaml|Výchozí motiv operačního systému Windows Vista.|  
+|Classic. XAML|Klasický systém Windows se hledá v operačním systému Windows XP (ze systému Windows 95, Windows 98 a Windows 2000).|  
+|Luna. NormalColor. XAML|Výchozí modrý motiv v systému Windows XP.|  
+|Luna. Homestead. XAML|Motiv olivového oleje v systému Windows XP.|  
+|Luna. metal. XAML|Motiv stříbrného systému Windows XP.|  
+|Royale. NormalColor. XAML|Výchozí motiv v operačním systému Windows XP Media Center Edition.|  
+|Aero. NormalColor. XAML|Výchozí motiv v operačním systému Windows Vista.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Styly a šablony tlačítek](button-styles-and-templates.md)  
@@ -50,18 +50,18 @@ Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Wind
  [ListView – styly a šablony](listview-styles-and-templates.md)  
  [Styly a šablony nabídky](menu-styles-and-templates.md)  
  [NavigationWindow – styly a šablony](navigationwindow-styles-and-templates.md)  
- [PasswordBox – styly a šablony](passwordbox-styles-and-templates.md)  
+ [PasswordBox styly a šablony](passwordbox-styles-and-templates.md)  
  [ProgressBar – styly a šablony](progressbar-styles-and-templates.md)  
  [RadioButton – styly a šablony](radiobutton-styles-and-templates.md)  
- [RepeatButton – styly a šablony](repeatbutton-styles-and-templates.md)  
+ [RepeatButton styly a šablony](repeatbutton-styles-and-templates.md)  
  [ScrollBar – styly a šablony](scrollbar-styles-and-templates.md)  
  [ScrollViewer – styly a šablony](scrollviewer-styles-and-templates.md)  
  [Styly a šablony posuvníku](slider-styles-and-templates.md)  
  [StatusBar – styly a šablony](statusbar-styles-and-templates.md)  
  [TabControl – styly a šablony](tabcontrol-styles-and-templates.md)  
  [TextBox – styly a šablony](textbox-styles-and-templates.md)  
- [Jezdec – Styly a šablony](thumb-styles-and-templates.md)  
- [ToggleButton – styly a šablony](togglebutton-styles-and-templates.md)  
+ [Styly a šablony pro palec](thumb-styles-and-templates.md)  
+ [ToggleButton styly a šablony](togglebutton-styles-and-templates.md)  
  [ToolBar – styly a šablony](toolbar-styles-and-templates.md)  
  [ToolTip – styly a šablony](tooltip-styles-and-templates.md)  
  [TreeView – styly a šablony](treeview-styles-and-templates.md)  
@@ -75,4 +75,4 @@ Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Wind
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled vytváření ovládacích prvků](control-authoring-overview.md)  
   
- [Styly a šablony](styling-and-templating.md)
+ [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

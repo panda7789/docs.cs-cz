@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití slovníku prostředků v rozsahu aplikace'
+title: 'Postupy: Použití slovníku zdrojů rozsahu aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,41 +9,41 @@ helpviewer_keywords:
 - resource dictionaries [WPF], application-scope
 - application-scope resource dictionaries
 ms.assetid: 53857682-bd2c-4f2c-8f25-1307d0b451a2
-ms.openlocfilehash: 589e28b3c05496e3fc17055b98240e389faed068
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5bfb3ed0304598a5acf4b7682bf4a4169c5153d1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007484"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459794"
 ---
-# <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku prostředků v rozsahu aplikace
-Tento příklad ukazuje, jak definovat a použití slovníku zdrojů rozsahu aplikace vlastní.  
+# <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku zdrojů rozsahu aplikace
+Tento příklad ukazuje, jak definovat a používat vlastní slovník prostředků v rozsahu aplikace.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Application> vystavuje úložiště oboru aplikace za sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení <xref:System.Windows.Application.Resources%2A> vlastnost je inicializována s instancí <xref:System.Windows.ResourceDictionary> typu. Použít tuto instanci při získání a nastavení vlastností pro rozsah aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [jak: Získání a nastavení prostředek oboru aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348547(v=vs.100)).
+ <xref:System.Windows.Application> zpřístupňuje úložiště rozsahu aplikace pro sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení je vlastnost <xref:System.Windows.Application.Resources%2A> inicializována s instancí typu <xref:System.Windows.ResourceDictionary>. Tuto instanci použijete při získávání a nastavování vlastností rozsahu aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [Postupy: získání a nastavení prostředku rozsahu aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348547(v=vs.100)).
   
- Pokud máte různé prostředky, které jste nastavili pomocí <xref:System.Windows.Application.Resources%2A>, místo toho můžete vlastní prostředek slovníku k ukládání těchto prostředků a nastavte <xref:System.Windows.Application.Resources%2A> s ním místo. Následuje ukázka, jak deklarovat pomocí XAML slovník vlastních prostředků.
+ Pokud máte více prostředků, které jste nastavili pomocí <xref:System.Windows.Application.Resources%2A>, můžete místo toho použít vlastní slovník prostředků k uložení těchto prostředků a nastavit <xref:System.Windows.Application.Resources%2A>. Následující příklad ukazuje, jak deklarovat vlastní slovník prostředků pomocí jazyka XAML.
   
  [!code-xaml[HOWTOResourceDictionaries#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MyResourceDictionary.xaml#1)]  
   
- Vzájemná záměna slovníky prostředků pro celý pomocí <xref:System.Windows.Application.Resources%2A> umožňují podporovat oboru aplikace motivy, ve kterém je každý motiv zapouzdřena objektem slovník jeden prostředek. Následující příklad ukazuje, jak nastavit <xref:System.Windows.ResourceDictionary>.  
+ Výměna celého slovníku prostředků pomocí <xref:System.Windows.Application.Resources%2A> umožňuje podporu motivů rozsahu aplikace, kde je každý motiv zapouzdřený pomocí jediného slovníku prostředků. Následující příklad ukazuje, jak nastavit <xref:System.Windows.ResourceDictionary>.  
   
  [!code-xaml[HOWTOResourceDictionaries#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/App.xaml#2)]  
   
- Následující ukazuje, jak získat zdrojů rozsahu aplikace ze slovníku prostředků, které jsou vystavené <xref:System.Windows.Application.Resources%2A> v XAML.  
+ Následující příklad ukazuje, jak můžete získat prostředky aplikačního rozsahu ze slovníku prostředků, který je vystavený <xref:System.Windows.Application.Resources%2A> v jazyce XAML.  
   
  [!code-xaml[HOWTOResourceDictionaries#4](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MainWindow.xaml#4)]  
   
- Následuje ukázka, jak můžete také získat prostředky v kódu.  
+ Následující příklad ukazuje, jak lze získat prostředky v kódu.  
   
  [!code-csharp[HOWTOResourceDictionaries#3](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MainWindow.xaml.cs#3)]
  [!code-vb[HOWTOResourceDictionaries#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HowToResourceDictionaries/VB/MainWindow.xaml.vb#3)]  
   
- Existují dva aspekty při používání <xref:System.Windows.Application.Resources%2A>. První, slovníku *klíč* je objekt, takže je nutné použít přesně stejnou instanci objektu při i nastavení a získání hodnoty vlastnosti. (Všimněte si, že klíč je při použití řetězce malá a velká písmena.) Druhý, slovníku *hodnotu* je objekt, takže budete muset převést hodnotu na požadovaný typ. při získávání hodnoty vlastnosti.  
+ Při použití <xref:System.Windows.Application.Resources%2A>je třeba provést dva důvody. Nejprve *klíč* slovníku je objekt, takže je nutné použít naprosto stejnou instanci objektu, pokud nastavení a získání hodnoty vlastnosti. (Upozorňujeme, že při použití řetězce se v klíči rozlišují velká a malá písmena.) Za druhé je *hodnota* slovníku objekt, takže při získávání hodnoty vlastnosti bude nutné převést hodnotu na požadovaný typ.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.ResourceDictionary>
 - <xref:System.Windows.Application.Resources%2A>
-- [Prostředky XAML](../advanced/xaml-resources.md)
+- [Prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [Slovníky sloučených prostředků](../advanced/merged-resource-dictionaries.md)

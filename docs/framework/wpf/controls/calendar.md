@@ -5,53 +5,53 @@ helpviewer_keywords:
 - controls [WPF], Calendar
 - Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
-ms.openlocfilehash: 9a64c6cd6fc1cc53383f2617f7a7a78959e87c4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e99a716e7ca8f7b2c9ed11543f37e0b8cb7422a6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053575"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460818"
 ---
 # <a name="calendar"></a>Kalendář
 Kalendář umožňuje uživateli vybrat datum pomocí vizuálního zobrazení kalendáře.  
   
- A <xref:System.Windows.Controls.Calendar> ovládací prvek můžete použít samostatně nebo jako součást rozevíracího seznamu <xref:System.Windows.Controls.DatePicker> ovládacího prvku. Další informace naleznete v tématu <xref:System.Windows.Controls.DatePicker>.  
+ Ovládací prvek <xref:System.Windows.Controls.Calendar> lze použít samostatně nebo jako rozevírací část <xref:System.Windows.Controls.DatePicker> ovládacího prvku. Další informace najdete v tématu <xref:System.Windows.Controls.DatePicker>.  
   
- Následující obrázek ukazuje dva <xref:System.Windows.Controls.Calendar> ovládací prvky s výběry a přerušení spojení data a jedna bez ní.  
+ Následující ilustrace znázorňuje dva ovládací prvky <xref:System.Windows.Controls.Calendar>, jeden s výběry a nedostupnosti data a jedna bez.  
   
- ![Ovládací prvky v kalendáři](./media/ndp-calendarcontrols.png "NDP_CalendarControls")  
+ ![Ovládací prvky kalendáře](./media/ndp-calendarcontrols.png "NDP_CalendarControls")  
 Ovládací prvky kalendáře  
   
- Následující tabulka obsahuje informace o úlohách, které jsou obvykle přidruženy k <xref:System.Windows.Controls.Calendar>.  
+ Následující tabulka poskytuje informace o úlohách, které jsou obvykle spojeny s <xref:System.Windows.Controls.Calendar>.  
   
 |Úloha|Implementace|  
 |----------|--------------------|  
-|Zadejte data, která nelze vybrat.|Použití <xref:System.Windows.Controls.Calendar.BlackoutDates%2A> vlastnost.|  
-|Máte <xref:System.Windows.Controls.Calendar> zobrazení za měsíc, celý rok nebo deset let.|Nastavte <xref:System.Windows.Controls.Calendar.DisplayMode%2A> vlastnost na měsíc, rok nebo deset let.|  
-|Zadejte, jestli může uživatel vybrat datum, rozsah kalendářních dat nebo více rozsahy kalendářních dat.|Použití <xref:System.Windows.Controls.Calendar.SelectionMode%2A>.|  
-|Zadejte rozsah dat, která <xref:System.Windows.Controls.Calendar> zobrazí.|Použití <xref:System.Windows.Controls.Calendar.DisplayDateStart%2A> a <xref:System.Windows.Controls.Calendar.DisplayDateEnd%2A> vlastnosti.|  
-|Určete, jestli aktuální datum je zvýrazněn.|Použití <xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> vlastnost. Ve výchozím nastavení <xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> je `true`.|  
-|Změnit velikost <xref:System.Windows.Controls.Calendar>.|Použití <xref:System.Windows.Controls.Viewbox> nebo nastavit <xref:System.Windows.FrameworkElement.LayoutTransform%2A> vlastnost <xref:System.Windows.Media.ScaleTransform>. Poznámka: Pokud nastavíte <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti <xref:System.Windows.Controls.Calendar>, skutečné kalendáře nedojde ke změně jeho velikosti.|  
+|Zadejte data, která nelze vybrat.|Použijte vlastnost <xref:System.Windows.Controls.Calendar.BlackoutDates%2A>.|  
+|Zobrazí <xref:System.Windows.Controls.Calendar> měsíc, celý rok nebo desetiletí.|Vlastnost <xref:System.Windows.Controls.Calendar.DisplayMode%2A> nastavte na month, Year nebo desetiletí.|  
+|Určete, zda může uživatel vybrat datum, rozsah kalendářních dat nebo více rozsahů dat.|Použijte <xref:System.Windows.Controls.Calendar.SelectionMode%2A>.|  
+|Zadejte rozsah dat, který <xref:System.Windows.Controls.Calendar> zobrazit.|Použijte vlastnosti <xref:System.Windows.Controls.Calendar.DisplayDateStart%2A> a <xref:System.Windows.Controls.Calendar.DisplayDateEnd%2A>.|  
+|Určuje, zda je zvýrazněno aktuální datum.|Použijte vlastnost <xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A>. Ve výchozím nastavení je <xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> `true`.|  
+|Změňte velikost <xref:System.Windows.Controls.Calendar>.|Použijte <xref:System.Windows.Controls.Viewbox> nebo nastavte vlastnost <xref:System.Windows.FrameworkElement.LayoutTransform%2A> na <xref:System.Windows.Media.ScaleTransform>. Všimněte si, že pokud nastavíte <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> <xref:System.Windows.Controls.Calendar>, skutečný kalendář nemění jeho velikost.|  
   
- <xref:System.Windows.Controls.Calendar> Řízení poskytuje základní navigaci pomocí klávesnice nebo myši. Následující tabulka shrnuje navigaci pomocí klávesnice.  
+ Ovládací prvek <xref:System.Windows.Controls.Calendar> poskytuje základní navigaci pomocí myši nebo klávesnice. Následující tabulka shrnuje navigaci na klávesnici.  
   
 |Kombinace kláves|<xref:System.Windows.Controls.Calendar.DisplayMode%2A>|Akce|  
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|------------|  
-|ŠIPKA|<xref:System.Windows.Controls.CalendarMode.Month>|Změny <xref:System.Windows.Controls.Calendar.SelectedDate%2A> vlastnost Pokud <xref:System.Windows.Controls.Calendar.SelectionMode%2A> vlastnost není nastavena na <xref:System.Windows.Controls.CalendarSelectionMode.None>.|  
-|ŠIPKA|<xref:System.Windows.Controls.CalendarMode.Year>|Změní z měsíce <xref:System.Windows.Controls.Calendar.DisplayDate%2A> vlastnost. Všimněte si, <xref:System.Windows.Controls.Calendar.SelectedDate%2A> nezmění.|  
-|ŠIPKA|<xref:System.Windows.Controls.CalendarMode.Decade>|Rok se změní <xref:System.Windows.Controls.Calendar.DisplayDate%2A>. Všimněte si, <xref:System.Windows.Controls.Calendar.SelectedDate%2A> nezmění.|  
-|SHIFT + ŠIPKA|<xref:System.Windows.Controls.CalendarMode.Month>|Pokud <xref:System.Windows.Controls.Calendar.SelectionMode%2A> není nastavená na <xref:System.Windows.Controls.CalendarSelectionMode.SingleDate> nebo <xref:System.Windows.Controls.CalendarSelectionMode.None>, rozšiřuje škálu vybraná data.|  
-|DOMOVSKÁ STRÁNKA|<xref:System.Windows.Controls.CalendarMode.Month>|Změny <xref:System.Windows.Controls.Calendar.SelectedDate%2A> k prvnímu dni aktuálního měsíce.|  
-|DOMOVSKÁ STRÁNKA|<xref:System.Windows.Controls.CalendarMode.Year>|Změní z měsíce <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na první měsíc v roce. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
-|DOMOVSKÁ STRÁNKA|<xref:System.Windows.Controls.CalendarMode.Decade>|Rok se změní <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na první rok deset let. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
-|END|<xref:System.Windows.Controls.CalendarMode.Month>|Změny <xref:System.Windows.Controls.Calendar.SelectedDate%2A> na poslední den v aktuálním měsíci.|  
-|END|<xref:System.Windows.Controls.CalendarMode.Year>|Změní z měsíce <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na poslední měsíc v roce. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
-|END|<xref:System.Windows.Controls.CalendarMode.Decade>|Rok se změní <xref:System.Windows.Controls.Calendar.DisplayDate%2A> s tím loňským desetiletí. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
-|CTRL + ŠIPKA NAHORU|Jakýkoli|Přepne na další větší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Decade>, žádná akce.|  
-|CTRL + ŠIPKA DOLŮ|Jakýkoli|Přepne na další menší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Month>, žádná akce.|  
-|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> Nebo <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
+|ŠIPKU|<xref:System.Windows.Controls.CalendarMode.Month>|Změní vlastnost <xref:System.Windows.Controls.Calendar.SelectedDate%2A>, pokud vlastnost <xref:System.Windows.Controls.Calendar.SelectionMode%2A> není nastavena na <xref:System.Windows.Controls.CalendarSelectionMode.None>.|  
+|ŠIPKU|<xref:System.Windows.Controls.CalendarMode.Year>|Změní měsíc vlastnosti <xref:System.Windows.Controls.Calendar.DisplayDate%2A>. Všimněte si, že se <xref:System.Windows.Controls.Calendar.SelectedDate%2A> nemění.|  
+|ŠIPKU|<xref:System.Windows.Controls.CalendarMode.Decade>|Změní rok <xref:System.Windows.Controls.Calendar.DisplayDate%2A>. Všimněte si, že se <xref:System.Windows.Controls.Calendar.SelectedDate%2A> nemění.|  
+|SHIFT + ŠIPKA|<xref:System.Windows.Controls.CalendarMode.Month>|Pokud <xref:System.Windows.Controls.Calendar.SelectionMode%2A> není nastavená na <xref:System.Windows.Controls.CalendarSelectionMode.SingleDate> nebo <xref:System.Windows.Controls.CalendarSelectionMode.None>, rozšiřuje rozsah vybraných dat.|  
+|DOMOVSKÉ|<xref:System.Windows.Controls.CalendarMode.Month>|Změní <xref:System.Windows.Controls.Calendar.SelectedDate%2A> na první den aktuálního měsíce.|  
+|DOMOVSKÉ|<xref:System.Windows.Controls.CalendarMode.Year>|Změní měsíc <xref:System.Windows.Controls.Calendar.DisplayDate%2A> do prvního měsíce roku. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> se nemění.|  
+|DOMOVSKÉ|<xref:System.Windows.Controls.CalendarMode.Decade>|Změní rok <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na první rok desetiletí. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> se nemění.|  
+|END|<xref:System.Windows.Controls.CalendarMode.Month>|Změní <xref:System.Windows.Controls.Calendar.SelectedDate%2A> na poslední den aktuálního měsíce.|  
+|END|<xref:System.Windows.Controls.CalendarMode.Year>|Změní měsíc <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na poslední měsíc v roce. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> se nemění.|  
+|END|<xref:System.Windows.Controls.CalendarMode.Decade>|Změní rok <xref:System.Windows.Controls.Calendar.DisplayDate%2A> na poslední rok desetiletí. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> se nemění.|  
+|CTRL + ŠIPKA NAHORU|Jakýmikoli|Přepne na další větší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud je již <xref:System.Windows.Controls.Calendar.DisplayMode%2A> <xref:System.Windows.Controls.CalendarMode.Decade>, žádná akce.|  
+|CTRL + ŠIPKA DOLŮ|Jakýmikoli|Přepne na další menší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud je již <xref:System.Windows.Controls.Calendar.DisplayMode%2A> <xref:System.Windows.Controls.CalendarMode.Month>, žádná akce.|  
+|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> nebo <xref:System.Windows.Controls.CalendarMode.Decade>|Přepne <xref:System.Windows.Controls.Calendar.DisplayMode%2A> do <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentované položkou s fokusem.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvky](index.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

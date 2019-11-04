@@ -15,19 +15,19 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], debugging
 - design-time debugging
 ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 824d8a7de8e9e37899cb84d6cee9621f84a5bc65
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: a8572c1e70e36faf3a179de7a69e88e9cf1e781b
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015700"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460614"
 ---
-# <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>Návod: Ladit vlastní ovládací prvky model Windows Forms v době návrhu
+# <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>Návod: ladění vlastních ovládacích prvků model Windows Forms v době návrhu
 
-Při vytváření vlastního ovládacího prvku často zjistíte, že je nutné ladit jeho chování při návrhu. To platí hlavně v případě, že vytváříte vlastního návrháře vlastního ovládacího prvku. Podrobnosti najdete v tématu [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí](creating-a-wf-control-design-time-features.md)Visual Studio pro dobu návrhu.
+Při vytváření vlastního ovládacího prvku často zjistíte, že je nutné ladit jeho chování při návrhu. To platí hlavně v případě, že vytváříte vlastního návrháře vlastního ovládacího prvku. Podrobnosti najdete v tématu [Návod: vytváření model Windows Forms ovládacího prvku, který využívá výhod funkcí Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md).
 
 Pomocí sady Visual Studio můžete ladit vlastní ovládací prvky stejně, jako byste provedete ladění jakékoli jiné .NET Framework třídy. Rozdíl je, že budete ladit samostatnou instanci aplikace Visual Studio, která spouští kód vlastního ovládacího prvku.
 
@@ -47,7 +47,7 @@ V aplikaci Visual Studio vytvořte projekt aplikace pro systém Windows a pojmen
 
 4. Sestavte řešení.
 
-## <a name="checkpoint"></a>CheckPoint
+## <a name="checkpoint"></a>Kontrolní bod
 
 V tomto okamžiku budete moci zobrazit vlastní ovládací prvek v sadě **nástrojů**.
 
@@ -101,7 +101,7 @@ Chcete-li ladit chování vlastního ovládacího prvku v době návrhu, umíst�
 
 2. V **sadě nástrojů**otevřete kartu **součásti DebugControlLibrary** a přetáhněte instanci **DebugControl** do formuláře.
 
-3. V okně **vlastnosti** vyhledejte vlastnívlastnost.`DemoString` Všimněte si, že můžete změnit její hodnotu stejně jako jakoukoli jinou vlastnost. Všimněte si také, že `DemoString` Pokud je vybrána vlastnost, řetězec popisu vlastnosti se zobrazí v dolní části okna **vlastnosti** .
+3. V okně **vlastnosti** vyhledejte vlastní vlastnost `DemoString`. Všimněte si, že můžete změnit její hodnotu stejně jako jakoukoli jinou vlastnost. Všimněte si také, že pokud je vybrána vlastnost `DemoString`, zobrazí se v dolní části okna **vlastností** řetězec popisu vlastnosti.
 
 ## <a name="set-up-the-project-for-design-time-debugging"></a>Nastavení projektu pro ladění v době návrhu
 
@@ -111,7 +111,7 @@ Chcete-li ladit chování vlastního ovládacího prvku v době návrhu, budete 
 
 2. V seznamu vlastností **DebugControlLibrary** vyberte kartu **ladění** .
 
-     V části **spouštěcí akce** vyberte **spustit externí program**. Budete ladit samostatnou instanci sady Visual Studio, takže kliknutím na tlačítko se třemi![tečkami (...) v okno Vlastnosti sady Visual Studio](./media/visual-studio-ellipsis-button.png)) můžete procházet prostředí IDE sady Visual Studio. Název spustitelného souboru je **devenv. exe**a pokud jste nainstalovali do výchozího umístění, jeho cesta je *% ProgramFiles (x86)% \ Microsoft Visual Studio\2019\\\<Edition > \Common7\IDE*.
+     V části **spouštěcí akce** vyberte **spustit externí program**. Budete ladit samostatnou instanci aplikace Visual Studio, proto klikněte na tlačítko se třemi tečkami (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio](./media/visual-studio-ellipsis-button.png)) a vyhledejte integrované vývojové prostředí (IDE) sady Visual Studio. Název spustitelného souboru je **devenv. exe**a pokud jste nainstalovali do výchozího umístění, jeho cesta je *% ProgramFiles (x86)% \ Microsoft Visual Studio\2019\\\<Edition > \Common7\IDE*.
 
 3. Kliknutím na **tlačítko OK** zavřete dialogové okno.
 
@@ -121,7 +121,7 @@ Chcete-li ladit chování vlastního ovládacího prvku v době návrhu, budete 
 
 Nyní jste připraveni ladit vlastní ovládací prvek při spuštění v režimu návrhu. Když spustíte relaci ladění, vytvoří se nová instance aplikace Visual Studio, kterou použijete k načtení řešení "DebuggingExample". Když otevřete Form1 v **Návrháři formulářů**, vytvoří se instance vlastního ovládacího prvku a spustí se.
 
-1. Otevřete zdrojový soubor **DebugControl** v **editoru kódu** a umístěte `Set` zarážku na přistupující objekt `DemoString` vlastnosti.
+1. Otevřete zdrojový soubor **DebugControl** v **editoru kódu** a umístěte zarážku na přistupující objekt `Set` vlastnosti `DemoString`.
 
 2. Stisknutím klávesy **F5** spusťte relaci ladění. Vytvoří se nová instance sady Visual Studio. Mezi instancemi můžete rozlišovat dvěma způsoby:
 
@@ -135,20 +135,20 @@ Nyní jste připraveni ladit vlastní ovládací prvek při spuštění v režim
 
 4. Otevřete Form1 v **Návrháři formulářů** a vyberte ovládací prvek **DebugControl** .
 
-5. Změňte hodnotu `DemoString` vlastnosti. Když změníte změnu, instance ladění sady Visual Studio získá fokus a spuštění se zastaví na zarážce. Přístup k jednotlivým krokům můžete procházet prostřednictvím přistupujícího objektu vlastnosti stejně jako jakýkoli jiný kód.
+5. Změňte hodnotu vlastnosti `DemoString`. Když změníte změnu, instance ladění sady Visual Studio získá fokus a spuštění se zastaví na zarážce. Přístup k jednotlivým krokům můžete procházet prostřednictvím přistupujícího objektu vlastnosti stejně jako jakýkoli jiný kód.
 
 6. Chcete-li zastavit ladění, ukončete hostovanou instanci sady Visual Studio nebo vyberte tlačítko **Zastavit ladění** v instanci ladění.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Nyní, když můžete ladit vlastní ovládací prvky v době návrhu, existuje mnoho možností pro rozšíření interakce ovládacího prvku pomocí integrovaného vývojového prostředí (IDE) sady Visual Studio.
 
-- Můžete použít <xref:System.ComponentModel.Component.DesignMode%2A> vlastnost <xref:System.ComponentModel.Component> třídy k zápisu kódu, který bude proveden pouze v době návrhu. Podrobnosti najdete v tématu <xref:System.ComponentModel.Component.DesignMode%2A>.
+- Můžete použít vlastnost <xref:System.ComponentModel.Component.DesignMode%2A> třídy <xref:System.ComponentModel.Component> k zápisu kódu, který bude proveden pouze v době návrhu. Podrobnosti najdete v tématu <xref:System.ComponentModel.Component.DesignMode%2A>.
 
-- Existuje několik atributů, které lze použít pro vlastnosti ovládacího prvku pro manipulaci s interakcí vlastního ovládacího prvku s návrhářem. Tyto atributy můžete najít v <xref:System.ComponentModel?displayProperty=nameWithType> oboru názvů.
+- Existuje několik atributů, které lze použít pro vlastnosti ovládacího prvku pro manipulaci s interakcí vlastního ovládacího prvku s návrhářem. Tyto atributy můžete najít v oboru názvů <xref:System.ComponentModel?displayProperty=nameWithType>.
 
-- Můžete napsat vlastní Návrhář pro vlastní ovládací prvek. Díky tomu máte plnou kontrolu nad prostředím pro návrh pomocí rozšiřitelné infrastruktury návrháře zveřejněné v rámci sady Visual Studio. Podrobnosti najdete v tématu [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí](creating-a-wf-control-design-time-features.md)Visual Studio pro dobu návrhu.
+- Můžete napsat vlastní Návrhář pro vlastní ovládací prvek. Díky tomu máte plnou kontrolu nad prostředím pro návrh pomocí rozšiřitelné infrastruktury návrháře zveřejněné v rámci sady Visual Studio. Podrobnosti najdete v tématu [Návod: vytváření model Windows Forms ovládacího prvku, který využívá výhod funkcí Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)
+- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)

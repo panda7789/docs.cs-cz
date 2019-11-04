@@ -9,15 +9,15 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: a72b2886c63a80a4887aa16fc6a952fa837a800f
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: d8fdeec8784c9a44c9b272a0a5a8b9c56ace5230
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991435"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458827"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
-Určuje, [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] které předpony oboru názvů, které se vyskytují v souboru označení, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může procesor ignorovat. Atribut podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí. `mc:Ignorable`  
+Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů, které se vyskytly v souboru označení, může být ignorována [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]m procesorem. Atribut `mc:Ignorable` podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí.  
   
 ## <a name="xaml-attribute-usage-single-prefix"></a>Použití atributu XAML (jedna předpona)  
   
@@ -48,26 +48,26 @@ Určuje, [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] k
 |-|-|  
 |*ignorablePrefix, ignorablePrefix1 atd.*|Libovolný platný řetězec předpony podle specifikace XML 1,0.|  
 |*ignorableUri*|Libovolný platný identifikátor URI pro určení oboru názvů podle specifikace XML 1,0.|  
-|*ThisElementCanBeIgnored*|Element, který může být ignorován [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implementacemi procesoru, pokud nelze přeložit nadřízený typ.|  
+|*ThisElementCanBeIgnored*|Element, který může být ignorován pomocí implementace [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] procesoru, pokud nelze přeložit nadřízený typ.|  
   
 ## <a name="remarks"></a>Poznámky  
- Předpona [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `http://schemas.openxmlformats.org/markup-compatibility/2006`oborunázvůje doporučená konvence předpony, která se použije při mapování oboru názvů kompatibility. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] `mc`  
+ Předpona oboru názvů `mc` [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] je doporučená konvence předpony, která se má použít při mapování `http://schemas.openxmlformats.org/markup-compatibility/2006`oboru názvů kompatibility [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- Prvky nebo atributy, u kterých je předpona části názvu elementu identifikována `mc:Ignorable` jako nevyvolává chyby při zpracování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesorem. Pokud tento atribut nelze přeložit na nadřízený typ nebo konstruktor programování, je tento prvek ignorován. Upozorňujeme však, že ignorované prvky mohou stále generovat další chyby analýzy pro další požadavky na prvky, které jsou vedlejšími účinky tohoto prvku nezpracovávány. Například určitý model obsahu elementu může vyžadovat přesně jeden podřízený element, ale pokud zadaný podřízený element byl v `mc:Ignorable` předponě a zadaný podřízený element nelze přeložit na typ, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pak procesor může vyvolá chybu.  
+ Prvky nebo atributy, kde předpona v názvu elementu je identifikována jako `mc:Ignorable` nevyvolává chyby při zpracování procesorem [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Pokud tento atribut nelze přeložit na nadřízený typ nebo konstruktor programování, je tento prvek ignorován. Upozorňujeme však, že ignorované prvky mohou stále generovat další chyby analýzy pro další požadavky na prvky, které jsou vedlejšími účinky tohoto prvku nezpracovávány. Například určitý model obsahu elementu může vyžadovat přesně jeden podřízený element, ale pokud byl zadaný podřízený element v předponě `mc:Ignorable` a zadaný podřízený element nelze přeložit na typ, pak procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může vyvolat chybu.  
   
- `mc:Ignorable`vztahuje se pouze na mapování oboru názvů na řetězce identifikátorů. `mc:Ignorable`neplatí pro mapování oboru názvů na sestavení, která určují obor názvů CLR a sestavení (nebo výchozí hodnotu pro aktuální spustitelný soubor jako sestavení).  
+ `mc:Ignorable` se vztahuje pouze na mapování oboru názvů na řetězce identifikátorů. `mc:Ignorable` se nevztahuje na mapování oboru názvů na sestavení, která určují obor názvů CLR a sestavení (nebo výchozí hodnotu pro aktuální spustitelný soubor jako sestavení).  
   
- Pokud implementujete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, implementace procesoru nesmí vyvolat analýzu nebo zpracování chyb v rozlišení typu pro libovolný element nebo atribut, který je kvalifikován předponou, která je identifikována jako `mc:Ignorable`. Ale vaše implementace procesoru stále může vyvolávat výjimky, které jsou druhotným výsledkem selhání elementu, který se nedaří načíst nebo zpracovat, jako je například příklad prvku s jedním podřízeným objektem uvedeným dříve.  
+ Pokud implementujete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, vaše implementace procesoru nesmí vyvolávat analýzu nebo zpracování chyb na rozlišení typu pro libovolný element nebo atribut, který je kvalifikován předponou identifikovanou jako `mc:Ignorable`. Ale vaše implementace procesoru stále může vyvolávat výjimky, které jsou druhotným výsledkem selhání elementu, který se nedaří načíst nebo zpracovat, jako je například příklad prvku s jedním podřízeným objektem uvedeným dříve.  
   
- Ve výchozím nastavení [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] bude procesor ignorovat obsah v rámci ignorovaného prvku. Můžete však zadat další atribut, [MC: ProcessContent atribut](mc-processcontent-attribute.md), aby bylo možné pokračovat ve zpracování obsahu v rámci ignorovaného prvku následujícím dostupným nadřazeným elementem.  
+ Ve výchozím nastavení bude procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ignorovat obsah v rámci ignorovaného prvku. Můžete však zadat další atribut, [MC: ProcessContent atribut](mc-processcontent-attribute.md), aby bylo možné pokračovat ve zpracování obsahu v rámci ignorovaného prvku následujícím dostupným nadřazeným elementem.  
   
- V atributu lze zadat více předpon, přičemž jako oddělovač použijte jeden nebo více prázdných znaků, například: `mc:Ignorable="ignore1 ignore2"`.  
+ V atributu lze zadat více předpon s použitím jednoho nebo více prázdných znaků jako oddělovače, například: `mc:Ignorable="ignore1 ignore2"`.  
 
- `http://schemas.openxmlformats.org/markup-compatibility/2006` Obor názvů definuje jiné elementy a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
+ Obor názvů `http://schemas.openxmlformats.org/markup-compatibility/2006` definuje další prvky a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Markup.XamlReader>
 - [PresentationOptions:Freeze – atribut](presentationoptions-freeze-attribute.md)
-- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
