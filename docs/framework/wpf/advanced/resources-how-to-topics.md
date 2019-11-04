@@ -7,25 +7,25 @@ helpviewer_keywords:
 - reusing resources [WPF]
 - 'resources [WPF], '
 ms.assetid: 9f986a6d-7cc8-45ac-bb0f-43177a57649d
-ms.openlocfilehash: 8ad776b8ed18d74a6804b0efd8853c7af6efee0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 568ff84c6de2d80527921fe6f3179e6bb123f72f
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053480"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458715"
 ---
-# <a name="resources-how-to-topics"></a><span data-ttu-id="4b6d9-102">Postupy: Témata zdrojů</span><span class="sxs-lookup"><span data-stu-id="4b6d9-102">Resources How-to Topics</span></span>
-<span data-ttu-id="4b6d9-103">Témata v této části popisují způsob použití prostředků Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="4b6d9-103">The topics in this section describe how to use Windows Presentation Foundation (WPF) resources.</span></span>  
+# <a name="resources-how-to-topics"></a><span data-ttu-id="4977a-102">Postupy: Témata zdrojů</span><span class="sxs-lookup"><span data-stu-id="4977a-102">Resources How-to Topics</span></span>
+<span data-ttu-id="4977a-103">Témata v této části popisují, jak používat prostředky Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="4977a-103">The topics in this section describe how to use Windows Presentation Foundation (WPF) resources.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4b6d9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4b6d9-104">In This Section</span></span>  
- [<span data-ttu-id="4b6d9-105">Definice a odkaz prostředku</span><span class="sxs-lookup"><span data-stu-id="4b6d9-105">Define and Reference a Resource</span></span>](how-to-define-and-reference-a-resource.md)  
- [<span data-ttu-id="4b6d9-106">Použití prostředků aplikace</span><span class="sxs-lookup"><span data-stu-id="4b6d9-106">Use Application Resources</span></span>](how-to-use-application-resources.md)  
- [<span data-ttu-id="4b6d9-107">Používání třídy SystemFonts</span><span class="sxs-lookup"><span data-stu-id="4b6d9-107">Use SystemFonts</span></span>](how-to-use-systemfonts.md)  
- [<span data-ttu-id="4b6d9-108">Použití klíčů systémových písem</span><span class="sxs-lookup"><span data-stu-id="4b6d9-108">Use System Fonts Keys</span></span>](how-to-use-system-fonts-keys.md)  
- [<span data-ttu-id="4b6d9-109">Používání třídy SystemParameters</span><span class="sxs-lookup"><span data-stu-id="4b6d9-109">Use SystemParameters</span></span>](how-to-use-systemparameters.md)  
- [<span data-ttu-id="4b6d9-110">Použití klíčů systémových parametrů</span><span class="sxs-lookup"><span data-stu-id="4b6d9-110">Use System Parameters Keys</span></span>](how-to-use-system-parameters-keys.md)  
+## <a name="in-this-section"></a><span data-ttu-id="4977a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4977a-104">In This Section</span></span>  
+ [<span data-ttu-id="4977a-105">Definice a odkaz prostředku</span><span class="sxs-lookup"><span data-stu-id="4977a-105">Define and Reference a Resource</span></span>](how-to-define-and-reference-a-resource.md)  
+ [<span data-ttu-id="4977a-106">Použití prostředků aplikace</span><span class="sxs-lookup"><span data-stu-id="4977a-106">Use Application Resources</span></span>](how-to-use-application-resources.md)  
+ [<span data-ttu-id="4977a-107">Používání třídy SystemFonts</span><span class="sxs-lookup"><span data-stu-id="4977a-107">Use SystemFonts</span></span>](how-to-use-systemfonts.md)  
+ [<span data-ttu-id="4977a-108">Použití klíčů systémových písem</span><span class="sxs-lookup"><span data-stu-id="4977a-108">Use System Fonts Keys</span></span>](how-to-use-system-fonts-keys.md)  
+ [<span data-ttu-id="4977a-109">Používání třídy SystemParameters</span><span class="sxs-lookup"><span data-stu-id="4977a-109">Use SystemParameters</span></span>](how-to-use-systemparameters.md)  
+ [<span data-ttu-id="4977a-110">Použití klíčů systémových parametrů</span><span class="sxs-lookup"><span data-stu-id="4977a-110">Use System Parameters Keys</span></span>](how-to-use-system-parameters-keys.md)  
   
-## <a name="reference"></a><span data-ttu-id="4b6d9-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4b6d9-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="4977a-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4977a-111">Reference</span></span>  
  <xref:System.Windows.FrameworkTemplate.Resources%2A>  
   
  <xref:System.Windows.SystemColors>  
@@ -34,5 +34,5 @@ ms.locfileid: "62053480"
   
  <xref:System.Windows.SystemFonts>  
   
-## <a name="related-sections"></a><span data-ttu-id="4b6d9-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4b6d9-112">Related Sections</span></span>  
- [<span data-ttu-id="4b6d9-113">Prostředky XAML</span><span class="sxs-lookup"><span data-stu-id="4b6d9-113">XAML Resources</span></span>](xaml-resources.md)
+## <a name="related-sections"></a><span data-ttu-id="4977a-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4977a-112">Related Sections</span></span>  
+ [<span data-ttu-id="4977a-113">Prostředky XAML</span><span class="sxs-lookup"><span data-stu-id="4977a-113">XAML Resources</span></span>](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
