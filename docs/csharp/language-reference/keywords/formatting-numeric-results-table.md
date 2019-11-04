@@ -1,60 +1,60 @@
 ---
-title: Tabulka formátování číselných výsledků – C# odkaz
+title: Formátování číselných výsledků tabulky C# – referenční informace
 ms.custom: seodec18
-description: Další informace o řetězcích standardního číselného formátu jazyka C#
+description: Informace o C# standardních řetězcích číselného formátu
 ms.date: 09/20/2018
 helpviewer_keywords:
 - formatting [C#]
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: 0f2b5bc54a0e9055d64a95dc229eaadf66687b43
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 2cba5e704787ae6368b2543c985babf2fde3b4dd
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66421966"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422745"
 ---
-# <a name="formatting-numeric-results-table-c-reference"></a>Tabulka formátování číselných výsledků (referenční dokumentace jazyka C#)
+# <a name="formatting-numeric-results-table-c-reference"></a>Tabulka formátování číselných výsledkůC# (referenční)
 
-Následující tabulka uvádí podporované specifikátorů pro formátování číselných výsledků. Formátovaný výsledek v posledním sloupci odpovídá "en US" <xref:System.Globalization.CultureInfo>.
+V následující tabulce jsou uvedeny podporované specifikátory formátu pro formátování číselných výsledků. Formátovaný výsledek v posledním sloupci odpovídá <xref:System.Globalization.CultureInfo>"en-US".
 
 |Specifikátor formátu|Popis|Příklady|Výsledek|  
 |----------------------|-----------------|--------------|------------|  
-|C nebo c|Měna|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|$2.50<br /><br /> ($2.50)|  
+|C nebo c|Měna|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|$2,50<br /><br /> ($2,50)|  
 |D nebo d|Desetinné číslo|`string s = $"{25:D5}";`|00025|  
-|E nebo e|Exponenciální|`string s = $"{250000:E2}";`|2.50E + 005|  
-|F nebo f|Pevná desetinná čárka|`string s = $"{2.5:F2}";`<br /><br /> `string s = $"{2.5:F0}";`|2.50<br /><br /> 3|  
-|G nebo g|Obecné|`string s = $"{2.5:G}";`|2.5|  
-|N nebo n|Numeric|`string s = $"{2500000:N}";`|2,500,000.00|  
-|P nebo p|Procento|`string s = $"{0.25:P}";`|25.00%|  
-|R nebo r|Zpáteční převod|`string s = $"{2.5:R}";`|2.5|  
-|X or x|Šestnáctková hodnota|`string s = $"{250:X}";`<br /><br /> `string s = $"{0xffff:X}";`|FA<br /><br /> FFFF|  
+|E nebo e|Exponenciální|`string s = $"{250000:E2}";`|2.50 e + 005|  
+|F nebo f|Pevná desetinná čárka|`string s = $"{2.5:F2}";`<br /><br /> `string s = $"{2.5:F0}";`|2,50<br /><br /> 3|  
+|G nebo g|Obecné|`string s = $"{2.5:G}";`|2,5|  
+|N nebo n|číselné|`string s = $"{2500000:N}";`|2 500 000,00|  
+|P nebo p|Procento|`string s = $"{0.25:P}";`|25,00%|  
+|R nebo r|Zpáteční převod|`string s = $"{2.5:R}";`|2,5|  
+|X nebo x|Šestnáctková hodnota|`string s = $"{250:X}";`<br /><br /> `string s = $"{0xffff:X}";`|POLOŽEK<br /><br /> FFFF|  
 
 ## <a name="remarks"></a>Poznámky
 
-Použití specifikátoru formátu pro vytvoření řetězce formátu. Formátovací řetězec má následující formát: `Axx`, kde
+Použijete specifikátor formátu pro vytvoření formátovacího řetězce. Formátovací řetězec má následující tvar: `Axx`, kde
 
-- `A` je specifikátor formátu, který určuje typ formátování použité pro číselné hodnoty.
-- `xx` je specifikátor přesnosti, který ovlivňuje počet číslic v formátovaný výstup. Hodnota rozsahy specifikátor přesnosti od 0 do 99.
+- `A` je specifikátor formátu, který řídí typ formátování použité pro číselnou hodnotu.
+- `xx` je specifikátor přesnosti, který má vliv na počet číslic ve formátovaných výstupech. Hodnota specifikátoru přesnosti rozsahu od 0 do 99.
 
-Desetinné číslo ("D" nebo "d") a šestnáctková ("X" nebo "x") formátu specifikátory jsou podporována pouze pro integrální typy. Operace round-trip specifikátor formátu ("R" nebo "r") je podporován pouze pro <xref:System.Single>, <xref:System.Double>, a <xref:System.Numerics.BigInteger> typy.
+Specifikátory desítkového formátu ("D" nebo "d") a šestnáctkové hodnoty ("X" nebo "x") jsou podporovány pouze pro integrální typy. Specifikátor formátu Round-Trip ("R" nebo "r") je podporován pouze pro typy <xref:System.Single>, <xref:System.Double>a <xref:System.Numerics.BigInteger>.
 
-Řetězce standardního číselného formátu jsou podporovány:
+Standardní řetězce číselného formátu jsou podporovány v:
 
-- Některá přetížení `ToString` metoda všechny číselné typy. Například můžete zadat číselný formátovací řetězec <xref:System.Int32.ToString%28System.String%29?displayProperty=nameWithType> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metody.
+- Některá přetížení metody `ToString` pro všechny číselné typy. Můžete například zadejte řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29?displayProperty=nameWithType> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metody.
 
-- .NET [funkci složeného formátování](../../../standard/base-types/composite-formatting.md), která je podporována <xref:System.String.Format%2A?displayProperty=nameWithType> metody, například.
+- [Funkce složeného formátování](../../../standard/base-types/composite-formatting.md).NET, která je podporována metodou <xref:System.String.Format%2A?displayProperty=nameWithType>, například.
 
 - [Interpolované řetězce](../tokens/interpolated.md).
 
-Další informace najdete v tématu [Standard Numeric Format Strings](../../../standard/base-types/standard-numeric-format-strings.md).
+Další informace naleznete v tématu [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Typy formátování](../../../standard/base-types/formatting-types.md)
 - [Složené formátování](../../../standard/base-types/composite-formatting.md)
 - [Interpolace řetězců](../tokens/interpolated.md)
-- [string](string.md)
+- [string](../builtin-types/reference-types.md)

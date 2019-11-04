@@ -9,19 +9,19 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: 25b686e654c5d6bb44a56b96cbf4045d14e95b62
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 5eb9313003f767daf64a5b5c4f229c6c58a018ec
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392428"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423238"
 ---
 # <a name="c-programming-guide"></a>C#Průvodce programováním
 V této části najdete podrobné informace o C# funkcích a funkcích jazyka Key, C# které jsou přístupné prostřednictvím .NET Framework.  
   
  Většina této části předpokládá, že už znáte informace o C# a obecných konceptech programování. Pokud jste zcela začátečníki s programováním nebo s C#, můžete chtít navštívit kurz [Úvod do C# kurzů](../tutorials/intro-to-csharp/index.md) nebo [.NET v prohlížeči](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), kde není nutné žádné předchozí znalosti programování.  
   
- Informace o konkrétních klíčových slovech, operátorech a direktivách preprocesoru naleznete v tématu [ C# reference](../language-reference/index.md). Informace o specifikaci C# jazyka najdete v tématu [ C# specifikace jazyka](../language-reference/language-specification/index.md).  
+ Informace o konkrétních klíčových slovech, operátorech a direktivách preprocesoru naleznete v tématu [ C# reference](../language-reference/index.md). Informace o specifikaci C# jazyka najdete v tématu [ C# specifikace jazyka](/dotnet/csharp/language-reference/language-specification/introduction).  
   
 ## <a name="program-sections"></a>Oddíly programu
 
@@ -40,7 +40,7 @@ V této části najdete podrobné informace o C# funkcích a funkcích jazyka Ke
 
  [Výčtové typy](./enumeration-types.md)  
   
- [Delegáti](./delegates/index.md)  
+ [Delegáty](./delegates/index.md)  
  
  [Pole](./arrays/index.md)  
   
@@ -56,7 +56,7 @@ V této části najdete podrobné informace o C# funkcích a funkcích jazyka Ke
   
  [Iterátory](./concepts/iterators.md)
   
- [Výrazy dotazů LINQ](./linq-query-expressions/index.md)  
+ [Výrazy dotazů LINQ](../linq/index.md)  
   
  [Výrazy lambda](./statements-expressions-operators/lambda-expressions.md)  
   

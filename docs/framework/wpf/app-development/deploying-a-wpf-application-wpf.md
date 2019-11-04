@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: daa69997f70c22a97482fd7e63d42506e7051732
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
-ms.translationtype: MT
+ms.openlocfilehash: ff6e76838ef2e3826c5b3dbeb44c748682902591
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291296"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421076"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky na nasazení každého typu aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -21,7 +21,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 - Nasazení XCopy.  
   
-- nasazení [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)].  
+- Nasazení Instalační služba systému Windows.  
   
 - Nasazení ClickOnce.  
   
@@ -39,15 +39,15 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Windows_Installer"></a>   
 ### <a name="windows-installer"></a>Instalační služba systému Windows  
- @no__t – 0 umožňuje zabalit aplikace jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho je [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] nainstalovaný se systémem Windows a umožňuje integraci s plochou, nabídkou Start a ovládacími panely programu.  
+ Instalační služba systému Windows umožňuje, aby se aplikace zabalí jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho je Instalační služba systému Windows nainstalován se systémem Windows a umožňuje integraci s plochou, v nabídce Start a na ovládacím panelu programy.  
   
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje vybavení pro zajištění aktuálnosti nainstalovaných aplikací z hlediska správy verzí.  
+ Instalační služba systému Windows zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje vybavení pro zajištění aktuálnosti nainstalovaných aplikací z hlediska správy verzí.  
   
  Další informace o Instalační služba systému Windows najdete v tématu [nasazení Instalační služba systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- ClickOnce umožňuje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I když ClickOnce nepodporuje celou škálu funkcí klienta, které @no__t -0 aplikace, podporují podmnožinu, která zahrnuje následující:  
+ ClickOnce umožňuje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I když ClickOnce nepodporuje celou škálu funkcí klienta, které aplikace Instalační služba systému Windows instalovat, podporuje podmnožinu, která zahrnuje následující:  
   
 - Integrace pomocí nabídky Start a ovládacích panelů programy.  
   
@@ -63,31 +63,31 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Deploying_WPF_Applications"></a>   
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
- Možnosti nasazení aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] závisí na typu aplikace. Z perspektivy nasazení má [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tři významné typy aplikací:  
+ Možnosti nasazení pro aplikaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] závisí na typu aplikace. Z perspektivy nasazení má [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tři významné typy aplikací:  
   
 - Samostatné aplikace.  
   
-- Pouze s označením aplikace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace pouze s označením.  
   
-- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
+- Aplikace prohlížeče XAML (XBAP)  
   
 <a name="Deploying_Standalone_Applications"></a>   
 ### <a name="deploying-standalone-applications"></a>Nasazení samostatných aplikací  
- Samostatné aplikace jsou nasazeny buď pomocí ClickOnce, nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro samostatné aplikace, které jsou nasazené pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], se automaticky udělí úplný vztah důvěryhodnosti. Samostatným aplikacím, které jsou nasazeny pomocí technologie ClickOnce, se automaticky neudělí úplný vztah důvěryhodnosti. Místo toho ClickOnce zobrazí dialogové okno upozornění zabezpečení, které uživatelé musí přijmout před instalací samostatné aplikace. V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
+ Samostatné aplikace jsou nasazeny buď pomocí ClickOnce, nebo Instalační služba systému Windows. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. K samostatným aplikacím, které jsou nasazeny pomocí Instalační služba systému Windows, se automaticky udělí úplný vztah důvěryhodnosti. Samostatným aplikacím, které jsou nasazeny pomocí technologie ClickOnce, se automaticky neudělí úplný vztah důvěryhodnosti. Místo toho ClickOnce zobrazí dialogové okno upozornění zabezpečení, které uživatelé musí přijmout před instalací samostatné aplikace. V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
   
 <a name="Deploying_Markup_Only_XAML_Applications"></a>   
 ### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
- Pouze označení @no__t – 0 stránky jsou obvykle publikovány na webové servery, jako jsou stránky HTML, a lze je zobrazit pomocí aplikace Internet Explorer. Pouze označení @no__t – 0 stránky spouštěné v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internet. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
+ Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou obvykle publikovány na webové servery, například HTML stránky a lze je zobrazit pomocí aplikace Internet Explorer. Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
   
- Další informace o zabezpečení pro aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] najdete v tématu [zabezpečení](../security-wpf.md).  
+ Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace najdete v tématu [zabezpečení](../security-wpf.md).  
   
- Pomocí příkazu XCopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] lze do místního systému souborů nainstalovat pouze @no__t – 0 stránek. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
+ Do místního systému souborů lze pomocí příkazu XCopy nebo Instalační služba systému Windows nainstalovat pouze stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
   
  Další informace o XAML naleznete v tématu [XAML Overview (WPF)](../advanced/xaml-overview-wpf.md).  
   
 <a name="Deploying_XAML_Browser_Applications"></a>   
 ### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikací prohlížeče XAML  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou kompilované aplikace, které vyžadují nasazení následujících tří souborů:  
+ XBAP jsou zkompilované aplikace, které vyžadují nasazení následujících tří souborů:  
   
 - *ApplicationName*. exe: spustitelný soubor aplikace sestavení.  
   
@@ -98,17 +98,17 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
 > [!NOTE]
 > Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
- Tyto soubory jsou vytvářeny, když je sestavena [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Další informace najdete v tématu [Postup: vytvoření nového projektu aplikace WPF Browser](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Například stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou obvykle publikovány na webový server a zobrazovány pomocí aplikace Internet Explorer.  
+ Tyto soubory jsou vytvářeny, když je vytvořena XBAP. Další informace najdete v tématu [Postup: vytvoření nového projektu aplikace WPF Browser](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Podobně jako stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze pro označení jsou aplikace XBAP obvykle publikovány na webovém serveru a zobrazovány pomocí aplikace Internet Explorer.  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] lze nasadit do klientů pomocí kterékoli z technik nasazení. Technologie ClickOnce se však doporučuje, protože poskytuje následující možnosti:  
+ Aplikace XBAP lze nasadit do klientů pomocí kterékoli z technik nasazení. Technologie ClickOnce se však doporučuje, protože poskytuje následující možnosti:  
   
 1. Automatické aktualizace, když je publikována nová verze.  
   
-2. Oprávnění ke zvýšení oprávnění pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] běžící s úplným vztahem důvěryhodnosti.  
+2. Oprávnění ke zvýšení oprávnění pro aplikaci XBAP běžící s úplným vztahem důvěryhodnosti.  
   
  Ve výchozím nastavení ClickOnce publikuje soubory aplikace s příponou. deploy. Může to být problematické, ale je možné ho zakázat. Další informace najdete v tématu [problémy s konfigurací serveru a klienta v nasazeních ClickOnce](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
   
- Další informace o nasazení [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] naleznete v tématu [Přehled aplikací WPF XAML browser](wpf-xaml-browser-applications-overview.md).  
+ Další informace o nasazení aplikací prohlížeče XAML (XBAP) naleznete v tématu [Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  

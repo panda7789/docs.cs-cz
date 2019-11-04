@@ -6,15 +6,15 @@ helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 31ab511bf88bfbc2134029564ecbf70aa75119d7
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3c6f29ead76f2e835d78a15d782e1aaca28942c8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659852"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423268"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>Obecní delegáti (Průvodce programováním v C#)
-[Delegát](../../language-reference/keywords/delegate.md) může definovat své vlastní parametry typu. Kód, který odkazuje na obecného delegáta, může zadat argument typu pro vytvoření uzavřeného konstruovaného typu, stejně jako při vytváření instancí obecné třídy nebo volání obecné metody, jak je znázorněno v následujícím příkladu:  
+[Delegát](../../language-reference/builtin-types/reference-types.md) může definovat své vlastní parametry typu. Kód, který odkazuje na obecného delegáta, může zadat argument typu pro vytvoření uzavřeného konstruovaného typu, stejně jako při vytváření instancí obecné třídy nebo volání obecné metody, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideGenerics#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#36)]  
   
@@ -30,7 +30,7 @@ ms.locfileid: "69659852"
   
  [!code-csharp[csProgGuideGenerics#39](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#39)]  
   
- Obecné Delegáti jsou zvláště užitečné při definování událostí na základě typického vzoru návrhu, protože argument odesílatele může být silného typu a již není nutné jej přetypování <xref:System.Object>na a z.  
+ Obecné Delegáti jsou zvláště užitečné při definování událostí na základě typického vzoru návrhu, protože argument odesílatele může být silného typu a již nesmí být přetypování na <xref:System.Object>.  
   
  [!code-csharp[csProgGuideGenerics#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#40)]  
   
@@ -42,5 +42,5 @@ ms.locfileid: "69659852"
 - [Obecné metody](./generic-methods.md)
 - [Obecné třídy](./generic-classes.md)
 - [Obecná rozhraní](./generic-interfaces.md)
-- [Delegáti](../delegates/index.md)
+- [Delegáty](../delegates/index.md)
 - [Obecné typy](../../../standard/generics/index.md)

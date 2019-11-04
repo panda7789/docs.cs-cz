@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 712e1644ea21e500265bc2a9bf9b4df9d20450a6
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: dcbf1073c12650101efdcf6022db0b29ace2eb3f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037786"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420762"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -245,7 +245,7 @@ dotnet new winforms
 
 Visual Studio 2019 přidává **nové šablony projektů** pro .net Core 3,0 model Windows Forms a WPF.
 
-Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../porting/wpf.md) and [port model Windows Forms Projects](../porting/winforms.md).
+Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../../desktop-wpf/migration/convert-project-from-net-framework.md) and [port model Windows Forms Projects](../porting/winforms.md).
 
 #### <a name="winforms-high-dpi"></a>Vysoké rozlišení DPI pro WinForms
 

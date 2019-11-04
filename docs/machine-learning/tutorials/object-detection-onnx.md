@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6d13e7e4788dfd2bad6fd26015d76342b38f1142
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1364b6a1cf6d424975828185a50175b2763c6516
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774453"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420028"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -45,7 +45,7 @@ Tato ukázka vytvoří konzolovou aplikaci .NET Core, která detekuje objekty v 
 
 Detekce objektu je problém počítačové vize. V úzce souvisejícím s klasifikací imagí provádí detekce objektů klasifikaci obrázků v podrobnějším měřítku. Detekce objektů vyhledává _a_ kategorizuje entity v rámci imagí. Použijte detekci objektů, pokud obrázky obsahují více objektů různých typů.
 
-![Souběžné obrázky znázorňující klasifikaci obrázku psa na levé straně a klasifikace objektů skupiny v rámci psa se zobrazí vpravo.](./media/object-detection-onnx/img-classification-obj-detection.PNG)
+![Snímky obrazovky zobrazující klasifikaci obrázku versus klasifikaci objektů](./media/object-detection-onnx/img-classification-obj-detection.png)
 
 Mezi případy použití při detekci objektu patří:
 
@@ -66,7 +66,7 @@ Existují různé typy sítí neuronové, nejběžnější jsou vícevrstvé Per
 
 Detekce objektu je úloha zpracování obrázku. Proto se většina modelů hloubkového učení, které jsou vyškolené k vyřešení tohoto problému, DNN. Model použitý v tomto kurzu je malý model YOLOv2, což je kompaktnější verze modelu YOLOv2 popsané v dokumentu: ["YOLO9000: lepší, rychlejší, silnější" podle Redmon a Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Drobný YOLOv2 je vyškolená pro datovou sadu Pascal a skládá se z 15 vrstev, které mohou odhadnout 20 různých tříd objektů. Vzhledem k tomu, že malá YOLOv2 je Zhuštěná verze původního modelu YOLOv2, je mezi rychlostí a přesností provedeno kompromis. Různé vrstvy, které tvoří model, lze vizuálně vymezit pomocí nástrojů, jako je Netron. Kontrola modelu by způsobila mapování propojení mezi všemi vrstvami tvořící neuronové síť, kde každá z vrstev obsahuje název vrstvy spolu s rozměry příslušného vstupu/výstupu. Datové struktury používané k popisu vstupů a výstupů modelu jsou známé jako modely. Křížové procesory si můžete představit jako kontejnery, které ukládají data v N-dimenzích. V případě malých YOLOv2 je název vstupní vrstvy `image` a očekává tensor dimenzí `3 x 416 x 416`. Název výstupní vrstvy je `grid` a generuje výstupní tensor dimenzí `125 x 13 x 13`.
 
-![Vstupní vrstva je rozdělená na skryté vrstvy a pak na výstupní vrstvu.](./media/object-detection-onnx/netron-model-map.png)
+![Vstupní vrstva je rozdělená na skryté vrstvy a pak na výstupní vrstvu.](./media/object-detection-onnx/netron-model-map-layers.png)
 
 YOLO model přebírá image `3(RGB) x 416px x 416px`. Model provede tento vstup a předá jej prostřednictvím různých vrstev a vytvoří výstup. Výstup rozdělí vstupní obrázek do mřížky `13 x 13`, přičemž každou buňku v mřížce tvoří hodnoty `125`.
 
@@ -74,11 +74,11 @@ YOLO model přebírá image `3(RGB) x 416px x 416px`. Model provede tento vstup 
 
 Open neuronové Network Exchange (ONNX) je open source formát pro modely AI. ONNX podporuje interoperabilitu mezi platformami. To znamená, že můžete model vytvořit v jedné z mnoha oblíbených rozhraní pro strojové učení, jako je PyTorch, převést ho do formátu ONNX a spotřebovat model ONNX v jiném rozhraní jako ML.NET. Další informace najdete na [webu ONNX](https://onnx.ai/).
 
-![ONNX podporované formáty, které se importují do ONNX, a pak se používají jinými formáty podporovanými ONNX](./media/object-detection-onnx/onnx-frameworks.png)
+![Diagram používaných formátů podporuje ONNX.](./media/object-detection-onnx/onyx-supported-formats.png)
 
 Předem vyškolený neYOLOv2 model je uložený ve formátu ONNX, serializovaná reprezentace vrstev a zjištěné vzory těchto vrstev. V ML.NET se spolupráce s ONNX dosahuje pomocí balíčků NuGet [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) a [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) . Balíček [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) obsahuje řadu transformací, které přijímají obrázek a zakódují je do numerických hodnot, které lze použít jako vstup do předpovědi nebo školicího kanálu. Balíček [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) využívá modul runtime ONNX k načtení modelu ONNX a používá ho k tomu, aby předpovědi na základě poskytnutého vstupu.
 
-![Tok dat ONNX souboru do modulu runtime ONNX a nakonec do C# aplikace](./media/object-detection-onnx/onnx-ml-net-integration.png)
+![Tok dat souboru ONNX do modulu runtime ONNX.](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
 ## <a name="set-up-the-net-core-project"></a>Nastavení projektu .NET Core
 
@@ -703,7 +703,7 @@ person and its Confidence score: 0.5551759
 
 Chcete-li zobrazit obrázky s ohraničujícími poli, přejděte do adresáře `assets/images/output/`. Níže je ukázka z jedné ze zpracovaných imagí.
 
-![Ukázka zpracovaného obrázku dinning místnosti](./media/object-detection-onnx/image3.jpg)
+![Ukázka zpracovaného obrázku dinning místnosti](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
 Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení pro detekci objektů opětovným použitím předem připraveného modelu `ONNX` v ML.NET.
 

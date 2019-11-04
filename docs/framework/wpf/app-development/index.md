@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 85218bd4b6e900bd4508a5c90132419a07846f2c
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: ce37eecf7edf2adcc4f56af27a5c658400f7abba
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920204"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420640"
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a>Windows Presentation Foundation (WPF) je prezentační rozhraní, které lze použít k vývoji následujících typů aplikací:  
   
 - Samostatné aplikace (tradiční styly aplikací pro Windows postavené jako spustitelná sestavení, která jsou nainstalovaná a spouštěná z klientského počítače).  
   
-- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (aplikace tvořené navigačními stránkami, které jsou sestaveny jako spustitelná sestavení a hostovány webovými prohlížeči, jako je například Microsoft Internet Explorer nebo Mozilla Firefox).  
+- Aplikace prohlížeče XAML (XBAP) (aplikace tvořené navigačními stránkami, které jsou sestaveny jako spustitelná sestavení a hostovány webovými prohlížeči, jako je například Microsoft Internet Explorer nebo Mozilla Firefox).  
   
 - Vlastní knihovny ovládacích prvků (nespustitelná sestavení obsahující opakovaně použitelné ovládací prvky).  
   
@@ -46,7 +46,7 @@ ms.locfileid: "72920204"
   
 - Správa systému Windows v samostatných aplikacích.  
   
-- Sledování navigace v [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]a samostatné aplikace s navigačními okny a snímky.  
+- Sledování navigace v aplikacích prohlížeče XAML (XBAP) a samostatné aplikace s navigačními okny a snímky.  
   
  Tyto možnosti jsou implementovány třídou <xref:System.Windows.Application>, kterou přidáte do aplikací pomocí *definice aplikace*.  
   
@@ -86,15 +86,15 @@ ms.locfileid: "72920204"
   
 - Samostatné stránky, které jsou hostovány ve webovém prohlížeči.  
   
-- Stránky zkompilované do [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], která je hostována ve webovém prohlížeči.  
+- Stránky zkompilované do XBAP, která je hostována ve webovém prohlížeči.  
   
 - Stránky zkompilované do samostatné aplikace a hostované v navigačním okně (<xref:System.Windows.Navigation.NavigationWindow>).  
   
-- Stránky hostované snímkem (<xref:System.Windows.Controls.Frame>), které mohou být hostovány na samostatné stránce nebo na stránce zkompilované do [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] nebo samostatné aplikace.  
+- Stránky hostované snímkem (<xref:System.Windows.Controls.Frame>), které mohou být hostovány na samostatné stránce nebo na stránce zkompilované do aplikace XBAP nebo samostatné aplikace.  
   
  Pro usnadnění navigace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implementuje následující:  
   
-- <xref:System.Windows.Navigation.NavigationService>sdílený navigační modul pro zpracování žádostí o navigaci, které jsou používány <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] k podpoře navigace uvnitř aplikace.  
+- <xref:System.Windows.Navigation.NavigationService>sdílený navigační modul pro zpracování žádostí o navigaci, které jsou používány <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>a XBAP k podpoře navigace uvnitř aplikace.  
   
 - Navigační metody pro zahájení navigace  
   
@@ -108,7 +108,7 @@ ms.locfileid: "72920204"
   
 <a name="Hosting"></a>   
 ## <a name="hosting"></a>Hostování  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] lze hostovat v aplikaci Microsoft Internet Explorer nebo Firefox. Každý model hostování má vlastní sadu důležitých informací a omezení, které jsou pokryty v [hostování](hosting-wpf-applications.md).  
+ Aplikace XBAP je možné hostovat v aplikacích Microsoft Internet Explorer a Firefox. Každý model hostování má vlastní sadu důležitých informací a omezení, které jsou pokryty v [hostování](hosting-wpf-applications.md).  
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Sestavení a nasazení  
@@ -124,7 +124,7 @@ ms.locfileid: "72920204"
 |[Přehled správy aplikací](application-management-overview.md)|Poskytuje přehled <xref:System.Windows.Application> třídy, včetně správy životního cyklu aplikací, Windows, prostředků aplikací a navigace.|  
 |[Windows ve WPF](windows-in-wpf-applications.md)|Obsahuje podrobnosti o správě oken ve vaší aplikaci, včetně způsobu použití <xref:System.Windows.Window> třídy a dialogových oken.|  
 |[Přehled navigace](navigation-overview.md)|Poskytuje přehled o správě navigace mezi stránkami aplikace.|  
-|[Hostování](hosting-wpf-applications.md)|Poskytuje přehled [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].|  
+|[Hostování](hosting-wpf-applications.md)|Poskytuje přehled aplikací prohlížeče XAML (XBAP).|  
 |[Sestavení a nasazení](building-and-deploying-wpf-applications.md)|Popisuje, jak sestavit a nasadit vaši aplikaci WPF.|  
 |[Úvod k použití WPF v sadě Visual Studio](../getting-started/introduction-to-wpf-in-vs.md)|Popisuje hlavní funkce WPF.|  
 |[Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)|Návod, který ukazuje, jak vytvořit aplikaci WPF pomocí navigace na stránce, rozložení, ovládacích prvků, obrázků, stylů a vazeb.|

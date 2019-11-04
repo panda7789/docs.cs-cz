@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 2f9d1c7835c95c904104a165a556b8d527343c30
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.openlocfilehash: 4e3e8bc0868c23aca90fa4baec738347db59c6f2
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197773"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425348"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -1691,7 +1691,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   Výchozí hodnota je 60 sekund. Je-li hodnota `value` nastavená na hodnotu 0, žádosti mimo pořadí jsou okamžitě odmítnuty s chybou text, který vypadá takto:
 
-  ```
+  ```console
   Operation 'Request3|{http://tempuri.org/}IService' on service instance with identifier '2b0667b6-09c8-4093-9d02-f6c67d534292' cannot be performed at this time. Please ensure that the operations are performed in the correct order and that the binding in use provides ordered delivery guarantees.
   ```
 

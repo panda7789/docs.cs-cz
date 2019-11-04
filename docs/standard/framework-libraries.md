@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: 56d795d309aec98d43bfba506cbc4e862f13cc68
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9c0b5a07277de6e87e2692ebb7c4f73c03702801
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131553"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424961"
 ---
 # <a name="framework-libraries"></a>Knihovny architektury
 
@@ -26,7 +26,7 @@ BCL poskytuje nejvíc základních typů a funkcí nástroje a jsou základem v�
 
 Rozhraní .NET zahrnuje sadu primitivních typů, které se používají (do různých stupňů) ve všech programech. Tyto typy obsahují data, jako jsou čísla, řetězce, bajty a libovolné objekty. C# Jazyk obsahuje klíčová slova pro tyto typy. Ukázková sada těchto typů je uvedena níže, se shodnými C# klíčovými slovy.
 
-* <xref:System.Object?displayProperty=nameWithType> ([Object](../csharp/language-reference/keywords/object.md)) – nejvyšší základní třída v systému typů CLR. Je kořen hierarchie typů.
+* <xref:System.Object?displayProperty=nameWithType> ([Object](../csharp/language-reference/builtin-types/reference-types.md#the-object-type)) – nejvyšší základní třída v systému typů CLR. Je kořen hierarchie typů.
 * <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – 16bajtový typ signed integer. Nepodepsaný <xref:System.UInt16> také existuje.
 * <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ signed integer se znaménkem 32. Neexistuje i typ [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) s nepodepsaným znaménkem.
 * <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – 32 typ s plovoucí desetinnou čárkou.
@@ -34,7 +34,7 @@ Rozhraní .NET zahrnuje sadu primitivních typů, které se používají (do rů
 * <xref:System.Byte?displayProperty=nameWithType> ([Byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – 8bitové celé číslo bez znaménka představující bajt paměti.
 * <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)) – typ boolean reprezentující `true` nebo `false`.
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)) – 16bitový číselný typ, který představuje znak Unicode.
-* <xref:System.String?displayProperty=nameWithType> ([String](../csharp/language-reference/keywords/string.md)) – představuje řadu znaků. Liší se od `char[]`, ale umožňuje indexování do jednotlivých individuálních `char` v `string`.
+* <xref:System.String?displayProperty=nameWithType> ([String](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) – představuje řadu znaků. Liší se od `char[]`, ale umožňuje indexování do jednotlivých individuálních `char` v `string`.
 
 ## <a name="data-structures"></a>Datové struktury
 

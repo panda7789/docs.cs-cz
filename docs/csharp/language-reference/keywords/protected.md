@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: a0420dd10d81c4ae893ab0447244a611091ed7b0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f54c3f36e5aeb428815d1c49cd797e559d156ea7
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69601970"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422568"
 ---
 # <a name="protected-c-reference"></a>protected (Referenční dokumentace jazyka C#)
 
-`protected` Klíčové slovo je modifikátor přístupu ke členu.
+Klíčové slovo `protected` je modifikátor přístupu ke členu.
 
- > Tato stránka se `protected` zabývá přístupem. Klíčové slovo je také součástí [`protected internal`](protected-internal.md) modifikátorů a [`private protected`](private-protected.md) přístupu. `protected`
+ > Tato stránka pokrývá přístup `protected`. Klíčové slovo `protected` je také součástí [`protected internal`](protected-internal.md) a [`private protected`](private-protected.md) modifikátory přístupu.
 
 Chráněný člen je přístupný v rámci své třídy a odvozené instance třídy.
 
@@ -37,11 +37,11 @@ Příkaz `a.x = 10` vygeneruje chybu, protože je vytvořena v rámci statické 
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu je třída `DerivedPoint` odvozena z. `Point` Proto máte přístup k chráněným členům základní třídy přímo z odvozené třídy.
+V tomto příkladu je třída `DerivedPoint` odvozena od `Point`. Proto máte přístup k chráněným členům základní třídy přímo z odvozené třídy.
 
 [!code-csharp[csrefKeywordsModifiers#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#12)]  
 
-Pokud změníte úrovně přístupu u `x` a `y` na [Private](private.md), kompilátor vydá chybové zprávy:
+Pokud změníte úrovně přístupu `x` a `y` na [soukromou](private.md), kompilátor vydá chybové zprávy:
 
 `'Point.y' is inaccessible due to its protection level.`
 
@@ -49,7 +49,7 @@ Pokud změníte úrovně přístupu u `x` a `y` na [Private](private.md), kompil
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#  
 
-Další informace najdete v tématu [deklarované](~/_csharplang/spec/basic-concepts.md#declared-accessibility) přístupnosti ve [ C# specifikaci jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [deklarované přístupnosti](~/_csharplang/spec/basic-concepts.md#declared-accessibility) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -58,7 +58,7 @@ Další informace najdete v tématu [deklarované](~/_csharplang/spec/basic-conc
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)

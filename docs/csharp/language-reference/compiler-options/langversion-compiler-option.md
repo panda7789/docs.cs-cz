@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 81cf336f94815dd3f2c88995eb34ae03b8220097
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 9588ec73250e8745426f6f6020c8d555a174d627
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179924"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422962"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion – (C# možnosti kompilátoru)
 
@@ -68,7 +68,7 @@ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v 
 |Version|Propojit|Popis|
 |-------|----|-----------|
 |C#7,0 a novější||momentálně není k dispozici|
-|C#6,0|[Propojit](../language-specification/index.md)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
+|C#6,0|[Propojit](/dotnet/csharp/language-reference/language-specification/introduction)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
 |C#5,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)|Standard ECMA-334 5. edice|
 |C#3,0|[Stáhnout dokument](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|C#Specifikace jazyka verze 3,0: Microsoft Corporation|
 |C#2,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%204th%20edition%20June%202006.pdf)|Standard ECMA – 334 4. edice|

@@ -1,64 +1,66 @@
 ---
 title: Kurzy k jazyku C#
-description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
+description: Prozkoumejte C# tyto kurzy a Naučte se C# sestavovat C# programy a naučit se funkce jazyka.
 ms.date: 10/25/2018
-ms.openlocfilehash: c2dd00505afbf4d8bc3f213a2f87751fe452f253
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 3f3ca31c0fdeb5d7c60b25c4b45399569cc919b4
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557172"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417102"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
-Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Kurzech a další pokročilé kurzy vám pomohou při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
+Vítá vás C# kurzy. Ty začínají interaktivními lekcemi, které můžete spustit v prohlížeči. Pozdější kurzy a pokročilejší kurzy vám pomůžou při práci s nástroji pro vývoj v .NET C# a vytváření programů na vašem počítači.
 
-## <a name="introduction-to-c-interactive-tutorials"></a>Úvod do C# interaktivní kurzy
+## <a name="introduction-to-c-interactive-tutorials"></a>Úvod k C# interaktivním kurzům
 
-První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
+Pokud chcete spustit průzkum ve formátu videa, [ C# série videí 101](https://aka.ms/dotnet3-csharp) poskytuje Úvod do. C# Dozvíte se o konceptech, které můžete prozkoumat v těchto kurzech.
+
+První lekce vysvětlují C# koncepty s použitím malých fragmentů kódu. Naučíte se základy C# syntaxe a práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to vše interaktivní a vy budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo C# jazyka.
 
 ## <a name="hello-worldintro-to-csharphello-worldyml"></a>[Hello World](intro-to-csharp/hello-world.yml)
 
-V [Hello world](intro-to-csharp/hello-world.yml) kurzu vytvoříte nejzákladnější C# programu. Prozkoumáte `string` typu a postupu při práci s textem.
+V kurzu [Hello World](intro-to-csharp/hello-world.yml) vytvoříte nejzákladnější C# program. Prozkoumáte typ `string` a budete pracovat s textem.
 
 ## <a name="numbers-in-cintro-to-csharpnumbers-in-csharpyml"></a>[Čísla v jazyce C#](intro-to-csharp/numbers-in-csharp.yml)
 
-V [čísla ve C# ](intro-to-csharp/numbers-in-csharp.yml) kurzu se dozvíte, jak počítače ukládána čísla a jak provádět výpočty s rozdílné číselné typy. Dozvíte se základy zaokrouhlení a provádění matematických výpočtů pomocí C#. Tento kurz je také k dispozici [spouštět místně na svém počítači](intro-to-csharp/numbers-in-csharp-local.md).
+V části [čísla v C# ](intro-to-csharp/numbers-in-csharp.yml) kurzu se dozvíte, jak počítače ukládají čísla a jak provádět výpočty s různými číselnými typy. Naučíte se základy zaokrouhlování a postup, jak provádět matematické výpočty pomocí C#. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](intro-to-csharp/numbers-in-csharp-local.md).
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](intro-to-csharp/hello-world.yml) lekce.
+V tomto kurzu se předpokládá, že jste dokončili lekci [Hello World](intro-to-csharp/hello-world.yml) .
 
 ## <a name="branches-and-loopsintro-to-csharpbranches-and-loopsyml"></a>[Větve a smyčky](intro-to-csharp/branches-and-loops.yml)
 
-[Větve a smyčky](intro-to-csharp/branches-and-loops.yml) kurzu se naučíte se základy výběru různé cesty spuštění kódu na základě hodnot, které jsou uložené v proměnné. Se dozvíte základní informace o toku řízení, která je základem jak programy rozhodování a zvolte různé akce. Tento kurz je také k dispozici [spouštět místně na svém počítači](intro-to-csharp/branches-and-loops-local.md).
+Kurz [větvení a cyklů](intro-to-csharp/branches-and-loops.yml) učí základy výběru různých cest ke spuštění kódu na základě hodnot uložených v proměnných. Naučíte se základy řízení toku, což je základem způsobu, jakým programy provádí rozhodnutí a výběr různých akcí. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](intro-to-csharp/branches-and-loops-local.md).
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](intro-to-csharp/hello-world.yml) a [čísla ve C# ](intro-to-csharp/numbers-in-csharp.yml) lekce.
+V tomto kurzu se předpokládá, že jste [v C# ](intro-to-csharp/numbers-in-csharp.yml) lekci dokončili text [Hello World](intro-to-csharp/hello-world.yml) a čísla.
 
-## <a name="list-collectionintro-to-csharplist-collectionyml"></a>[Kolekce seznamu](intro-to-csharp/list-collection.yml)
+## <a name="list-collectionintro-to-csharplist-collectionyml"></a>[Kolekce seznamů](intro-to-csharp/list-collection.yml)
 
-[Seznamu kolekce](intro-to-csharp/list-collection.yml) lekce will vám typu kolekce, která ukládá data sekvencí. Budete se dozvíte, jak přidávat a odebírat položky, vyhledejte položky a řazení seznamu. Prozkoumáte různé druhy seznamů. Tento kurz je také k dispozici [spouštět místně na svém počítači](intro-to-csharp/arrays-and-collections.md).
+V lekci [kolekce seznamu](intro-to-csharp/list-collection.yml) získáte prohlídku typu kolekce, ve kterém jsou uloženy sekvence dat. Naučíte se, jak přidávat a odebírat položky, Hledat položky a třídit seznamy. Budete zkoumat různé druhy seznamů. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](intro-to-csharp/arrays-and-collections.md).
 
-Tento kurz předpokládá, že dokončení lekce uvedené výše.
+V tomto kurzu se předpokládá, že jste dokončili výše uvedené lekce.
 
-## <a name="introduction-to-c----work-locallyintro-to-csharplocal-environmentmd"></a>[Úvod do C# – místní práci](intro-to-csharp/local-environment.md)
+## <a name="introduction-to-c----work-locallyintro-to-csharplocal-environmentmd"></a>[Úvod do C# místní práce](intro-to-csharp/local-environment.md)
 
-Úvodní kurzy následující Hello World lekci jsou k dispozici ve vlastním místním vývojovém prostředí. Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Existují odkazy můžete nastavení prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
+Všechny úvodní kurzy po Hello World lekci jsou k dispozici ve vašem vlastním místním vývojovém prostředí. Na konci každého kurzu se rozhodnete, jestli chcete pokračovat v další lekci online nebo na vašem počítači. K dispozici jsou odkazy, které vám pomůžou nastavit prostředí a pokračovat v dalším kurzu na vašem počítači.
 
-## <a name="explore-new-features-in-c"></a>Prozkoumání nových funkcí v jazyce C\#
+## <a name="explore-new-features-in-c"></a>Prozkoumejte nové funkce v jazyce C\#
 
-* [Vyzkoušejte si nové funkce v C# 6 interaktivně](exploration/csharp-6.yml): Seznamte se s funkcemi přidá [ C# 6](../whats-new/csharp-6.md) interaktivně v prohlížeči.
-* [Interpolace řetězců](string-interpolation.md): ukazuje, jak pomocí interpolace řetězců můžete vytvořit formátovaných řetězců v C#.
-* [Typy s možnou hodnotou Null odkazů](nullable-reference-types.md): Popisuje způsob použití typů s povolenou hodnotou Null odkazu k vyjádření vašich představ pro odkazy s hodnotou null.
-* [Aktualizovat projekt pro použití s možnou hodnotou NULL referenční typy](upgrade-to-nullable-references.md): ukazuje techniky pro upgrade existující projekt, aby použití typů s povolenou hodnotou Null odkazu.
-* [Rozšíření možností dat pomocí porovnávání vzorů](pattern-matching.md): ukazuje, jak použít porovnávání vzorů pro rozšíření typů nad rámec svých základních funkcí.
-* [Práce s data sekvencí pomocí indexů a rozsahy adres](ranges-indexes.md): Ukazuje novou pohodlné syntaxe pro přístup k jednotlivé prvky nebo rozsahy sekvenční datového kontejneru.
+* [Vyzkoušejte si nové funkce C# v 6 interaktivně](exploration/csharp-6.yml): Prozkoumejte funkce přidané v [ C# 6](../whats-new/csharp-6.md) v interaktivním prostředí v prohlížeči.
+* [Interpolace řetězců](string-interpolation.md): ukazuje, jak použít interpolaci řetězců k vytvoření formátovaných řetězců C#v.
+* [Typy odkazů s možnou hodnotou null](nullable-reference-types.md): ukazuje, jak použít typy odkazů s možnou hodnotou null k vyjádření záměru pro odkazy s hodnotou null
+* [Aktualizujte projekt tak, aby používal typy odkazů s možnou hodnotou null](upgrade-to-nullable-references.md): demonstruje techniky pro upgrade existujícího projektu, aby bylo možné používat odkazy s možnou hodnotou null.
+* [Rozšiřování možností dat pomocí porovnávání vzorů](pattern-matching.md): ukazuje, jak použít porovnávání vzorů k rozšiřování typů nad rámec jejich základních funkcí.
+* [Práce s sekvencemi dat pomocí indexů a rozsahů](ranges-indexes.md): ukazuje novou pohodlný Syntax pro přístup k jednotlivým prvkům nebo rozsahům sekvenčního datového kontejneru.
 
 ## <a name="general-tutorials"></a>Obecné kurzy
 
-V následujících kurzech umožňují vytvářet C# programy pomocí [.NET Core](../../core/index.md):
+Následující kurzy umožňují sestavovat C# programy pomocí [.NET Core](../../core/index.md):
 
-* [Konzolové aplikace](console-teleprompter.md): ukazuje vstupně-výstupní operace konzoly, struktura konzolovou aplikaci a základní informace o úkolově orientovanou asynchronní programovací model.
-* [Klient REST](console-webapiclient.md): ukazuje webové komunikace, serializaci JSON a objektově orientovaných vlastností v C# jazyka.
-* [Dědičnost v C# a .NET](inheritance.md): ukazuje dědičnosti v C#, včetně využití čipu TPM dědičnosti, chcete-li definovat základních tříd, abstraktní základní třídy a odvozené třídy.
-* [Práce s jazykem LINQ](working-with-linq.md): ukazuje mnoho funkcí LINQ a prvky jazyka, které ho podporují.
-* [Pomocí atributů](attributes.md): ukazuje, jak vytvořit a použít atributy v C#.
-* [Interpolace řetězců](exploration/interpolated-strings.yml) kurzu se dozvíte, jak vložit hodnot do řetězce. Dozvíte se víc o vytvoření interpolovaného řetězce s vloženými C# výrazy a tom, jak řídit vzhled textu výrazu výsledků ve výsledném řetězci. Tento kurz je také k dispozici [spouštět místně na svém počítači](exploration/interpolated-strings-local.md).
+* [Konzolová aplikace](console-teleprompter.md): ukazuje v/v konzoly, strukturu konzolové aplikace a základy asynchronního programovacího modelu založeného na úlohách.
+* [Klient REST](console-webapiclient.md): ukazuje webovou komunikaci, serializaci JSON a objektově orientované funkce v C# jazyce.
+* [Dědičnost v C# rozhraních a .NET](inheritance.md): ukazuje C#dědičnost v, včetně použití dědičnosti k definování základních tříd, abstraktních základních tříd a odvozených tříd.
+* [Práce s LINQ](working-with-linq.md): ukazuje mnoho funkcí jazyka LINQ a prvky jazyka, které ho podporují.
+* [Použití atributů](attributes.md): ukazuje, jak vytvořit a používat atributy v C#.
+* Kurz pro [interpolaci řetězců](exploration/interpolated-strings.yml) vám ukáže, jak vkládat hodnoty do řetězce. Naučíte se, jak vytvořit interpolované řetězce s vloženými C# výrazy a jak ovládat vzhled textu ve výrazu ve výsledném řetězci. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](exploration/interpolated-strings-local.md).
