@@ -1,26 +1,26 @@
 ---
-title: Hodnota možnosti
-description: Další informace o F# možnost Hodnota typu, který je struktura verzi typu možnosti.
+title: Možnosti pro hodnoty
+description: Přečtěte si F# o typu možnosti hodnoty, což je verze struktury typu možnosti.
 ms.date: 02/06/2019
-ms.openlocfilehash: e1036c83189c853b3704d94ca245e4818acc98c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4dc3f7217943345b7aaf1165fd648ab2e01bd727
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982576"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424023"
 ---
-# <a name="value-options"></a><span data-ttu-id="7f7df-103">Hodnota možnosti</span><span class="sxs-lookup"><span data-stu-id="7f7df-103">Value Options</span></span>
+# <a name="value-options"></a><span data-ttu-id="a5a15-103">Možnosti pro hodnoty</span><span class="sxs-lookup"><span data-stu-id="a5a15-103">Value Options</span></span>
 
-<span data-ttu-id="7f7df-104">Typ hodnoty možnosti v F# se používá při uložení těchto dvou okolností:</span><span class="sxs-lookup"><span data-stu-id="7f7df-104">The Value Option type in F# is used when the following two circumstances hold:</span></span>
+<span data-ttu-id="a5a15-104">Hodnota možnosti typ v se F# používá v případě, že jsou uloženy následující dvě okolnosti:</span><span class="sxs-lookup"><span data-stu-id="a5a15-104">The Value Option type in F# is used when the following two circumstances hold:</span></span>
 
-1. <span data-ttu-id="7f7df-105">Scénář je vhodný pro [ F# možnost](options.md).</span><span class="sxs-lookup"><span data-stu-id="7f7df-105">A scenario is appropriate for an [F# Option](options.md).</span></span>
-2. <span data-ttu-id="7f7df-106">Pomocí struktury zvyšuje výkon ve vašem scénáři.</span><span class="sxs-lookup"><span data-stu-id="7f7df-106">Using a struct provides a performance benefit in your scenario.</span></span>
+1. <span data-ttu-id="a5a15-105">Scénář je vhodný pro [ F# možnost](options.md).</span><span class="sxs-lookup"><span data-stu-id="a5a15-105">A scenario is appropriate for an [F# Option](options.md).</span></span>
+2. <span data-ttu-id="a5a15-106">Použití struktury poskytuje ve vašem scénáři výhodu výkonu.</span><span class="sxs-lookup"><span data-stu-id="a5a15-106">Using a struct provides a performance benefit in your scenario.</span></span>
 
-<span data-ttu-id="7f7df-107">Ne všechny scénáře náročné na výkon se "Vyřešeno" použití struktur.</span><span class="sxs-lookup"><span data-stu-id="7f7df-107">Not all performance-sensitive scenarios are "solved" by using structs.</span></span> <span data-ttu-id="7f7df-108">Je nutné zvážit další náklady na kopírování při jejich používání místo typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="7f7df-108">You must consider the additional cost of copying when using them instead of reference types.</span></span> <span data-ttu-id="7f7df-109">Však velké F# programy běžně vytváření instancí mnoho doplňkové typy, které budou plout prostřednictvím horké cesty a v takovém případě může často struktury přinést lepší celkový výkon během životního cyklu aplikace.</span><span class="sxs-lookup"><span data-stu-id="7f7df-109">However, large F# programs commonly instantiate many optional types that flow through hot paths, and in such cases, structs can often yield better overall performance over the lifetime of a program.</span></span>
+<span data-ttu-id="a5a15-107">Ne všechny scénáře citlivé na výkon jsou "vyřešené" pomocí struktur.</span><span class="sxs-lookup"><span data-stu-id="a5a15-107">Not all performance-sensitive scenarios are "solved" by using structs.</span></span> <span data-ttu-id="a5a15-108">Je nutné vzít v úvahu další náklady na kopírování při jejich použití namísto odkazových typů.</span><span class="sxs-lookup"><span data-stu-id="a5a15-108">You must consider the additional cost of copying when using them instead of reference types.</span></span> <span data-ttu-id="a5a15-109">Velké F# programy však obvykle vytvářejí mnoho volitelných typů, které jsou přenášeny prostřednictvím aktivních cest, a v takových případech mohou struktury často vracet lepší celkový výkon po celou dobu životnosti programu.</span><span class="sxs-lookup"><span data-stu-id="a5a15-109">However, large F# programs commonly instantiate many optional types that flow through hot paths, and in such cases, structs can often yield better overall performance over the lifetime of a program.</span></span>
 
-## <a name="definition"></a><span data-ttu-id="7f7df-110">Definice</span><span class="sxs-lookup"><span data-stu-id="7f7df-110">Definition</span></span>
+## <a name="definition"></a><span data-ttu-id="a5a15-110">Definice</span><span class="sxs-lookup"><span data-stu-id="a5a15-110">Definition</span></span>
 
-<span data-ttu-id="7f7df-111">Možnost Hodnota je definována jako [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions) , který je podobný typ odkazu možnost.</span><span class="sxs-lookup"><span data-stu-id="7f7df-111">Value Option is defined as a [struct discriminated union](discriminated-unions.md#struct-discriminated-unions) that is similar to the reference option type.</span></span> <span data-ttu-id="7f7df-112">Jeho definice můžete chápat takto:</span><span class="sxs-lookup"><span data-stu-id="7f7df-112">Its definition can be thought of this way:</span></span>
+<span data-ttu-id="a5a15-111">Možnost hodnoty je definována jako [rozlišené sjednocení struktury](discriminated-unions.md#struct-discriminated-unions) , které se podobá typu možnosti odkazu.</span><span class="sxs-lookup"><span data-stu-id="a5a15-111">Value Option is defined as a [struct discriminated union](discriminated-unions.md#struct-discriminated-unions) that is similar to the reference option type.</span></span> <span data-ttu-id="a5a15-112">Její definice se dá představit tímto způsobem:</span><span class="sxs-lookup"><span data-stu-id="a5a15-112">Its definition can be thought of this way:</span></span>
 
 ```fsharp
 [<StructuralEquality; StructuralComparison>]
@@ -30,11 +30,11 @@ type ValueOption<'T> =
     | ValueSome of 'T
 ```
 
-<span data-ttu-id="7f7df-113">Možnost hodnota odpovídá strukturální rovnost a porovnání.</span><span class="sxs-lookup"><span data-stu-id="7f7df-113">Value Option conforms to structural equality and comparison.</span></span> <span data-ttu-id="7f7df-114">Hlavní rozdíl je, že kompilovaný název, název typu a velikosti písmen názvů ukazují, že se jedná o typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="7f7df-114">The main difference is that the compiled name, type name, and case names all indicate that it is a value type.</span></span>
+<span data-ttu-id="a5a15-113">Hodnota možnosti odpovídá strukturální rovnosti a porovnávání.</span><span class="sxs-lookup"><span data-stu-id="a5a15-113">Value Option conforms to structural equality and comparison.</span></span> <span data-ttu-id="a5a15-114">Hlavní rozdíl je v tom, že zkompilovaný název, název typu a názvy všech písmen označují, že se jedná o typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a5a15-114">The main difference is that the compiled name, type name, and case names all indicate that it is a value type.</span></span>
 
-## <a name="using-value-options"></a><span data-ttu-id="7f7df-115">Pomocí možnosti hodnoty</span><span class="sxs-lookup"><span data-stu-id="7f7df-115">Using Value Options</span></span>
+## <a name="using-value-options"></a><span data-ttu-id="a5a15-115">Použití možností hodnot</span><span class="sxs-lookup"><span data-stu-id="a5a15-115">Using Value Options</span></span>
 
-<span data-ttu-id="7f7df-116">Stejně jako se používají hodnotu možnosti [možnosti](options.md).</span><span class="sxs-lookup"><span data-stu-id="7f7df-116">Value Options are used just like [Options](options.md).</span></span> <span data-ttu-id="7f7df-117">`ValueSome` slouží k označení, že hodnota je k dispozici, a `ValueNone` se používá, když hodnota není k dispozici:</span><span class="sxs-lookup"><span data-stu-id="7f7df-117">`ValueSome` is used to indicate that a value is present, and `ValueNone` is used when a value is not present:</span></span>
+<span data-ttu-id="a5a15-116">Možnosti hodnoty se používají stejně jako [Možnosti](options.md).</span><span class="sxs-lookup"><span data-stu-id="a5a15-116">Value Options are used just like [Options](options.md).</span></span> <span data-ttu-id="a5a15-117">`ValueSome` slouží k označení toho, že hodnota je přítomna a `ValueNone` se používá, když hodnota není k dispozici:</span><span class="sxs-lookup"><span data-stu-id="a5a15-117">`ValueSome` is used to indicate that a value is present, and `ValueNone` is used when a value is not present:</span></span>
 
 ```fsharp
 let tryParseDateTime (s: string) =
@@ -55,24 +55,24 @@ match (result1, result2) with
 | ValueNone, ValueNone -> printfn "None of them are dates!"
 ```
 
-<span data-ttu-id="7f7df-118">Stejně jako u [možnosti](options.md), zásady vytváření názvů pro funkce, která vrátí `ValueOption` je prefix `try`.</span><span class="sxs-lookup"><span data-stu-id="7f7df-118">As with [Options](options.md), the naming convention for a function that returns `ValueOption` is to prefix it with `try`.</span></span>
+<span data-ttu-id="a5a15-118">Podobně jako u [možností](options.md)jsou zásady vytváření názvů pro funkci, která vrací `ValueOption`, předponou `try`.</span><span class="sxs-lookup"><span data-stu-id="a5a15-118">As with [Options](options.md), the naming convention for a function that returns `ValueOption` is to prefix it with `try`.</span></span>
 
-## <a name="value-option-properties-and-methods"></a><span data-ttu-id="7f7df-119">Hodnota možnosti vlastnosti a metody</span><span class="sxs-lookup"><span data-stu-id="7f7df-119">Value Option properties and methods</span></span>
+## <a name="value-option-properties-and-methods"></a><span data-ttu-id="a5a15-119">Vlastnosti a metody možností hodnoty</span><span class="sxs-lookup"><span data-stu-id="a5a15-119">Value Option properties and methods</span></span>
 
-<span data-ttu-id="7f7df-120">V tuto chvíli je jednu vlastnost s možností hodnota: `Value`.</span><span class="sxs-lookup"><span data-stu-id="7f7df-120">There is one property for Value Options at this time: `Value`.</span></span> <span data-ttu-id="7f7df-121"><xref:System.InvalidOperationException> Je vyvolána, pokud žádná hodnota není k dispozici, když se tato vlastnost vyvolá.</span><span class="sxs-lookup"><span data-stu-id="7f7df-121">An <xref:System.InvalidOperationException> is raised if no value is present when this property is invoked.</span></span>
+<span data-ttu-id="a5a15-120">V tuto chvíli existuje jedna vlastnost pro hodnoty možností: `Value`.</span><span class="sxs-lookup"><span data-stu-id="a5a15-120">There is one property for Value Options at this time: `Value`.</span></span> <span data-ttu-id="a5a15-121"><xref:System.InvalidOperationException> je vyvolána, pokud je při vyvolání této vlastnosti zobrazena žádná hodnota.</span><span class="sxs-lookup"><span data-stu-id="a5a15-121">An <xref:System.InvalidOperationException> is raised if no value is present when this property is invoked.</span></span>
 
-## <a name="value-option-functions"></a><span data-ttu-id="7f7df-122">Hodnota možnosti funkce</span><span class="sxs-lookup"><span data-stu-id="7f7df-122">Value Option functions</span></span>
+## <a name="value-option-functions"></a><span data-ttu-id="a5a15-122">Hodnoty možností funkcí</span><span class="sxs-lookup"><span data-stu-id="a5a15-122">Value Option functions</span></span>
 
-<span data-ttu-id="7f7df-123">Aktuálně nejsou k dispozici jednu funkci modulu mez pro hodnotu možnosti, `defaultValueArg`:</span><span class="sxs-lookup"><span data-stu-id="7f7df-123">There is currently one module-bound function for Value Options, `defaultValueArg`:</span></span>
+<span data-ttu-id="a5a15-123">V současné době je k dispozici jedna funkce vázaná na modul pro hodnoty možností `defaultValueArg`:</span><span class="sxs-lookup"><span data-stu-id="a5a15-123">There is currently one module-bound function for Value Options, `defaultValueArg`:</span></span>
 
 ```fsharp
-val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T 
+val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T
 ```
 
-<span data-ttu-id="7f7df-124">Stejně jako u `defaultArg` funkci `defaultValueArg` vrátí zdrojovou hodnotu danou hodnotu možnosti, pokud existuje; jinak vrátí zadanou výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="7f7df-124">As with the `defaultArg` function, `defaultValueArg` returns the underlying value of the given Value Option if it exists; otherwise, it returns the specified default value.</span></span>
+<span data-ttu-id="a5a15-124">Stejně jako u funkce `defaultArg` `defaultValueArg` vrátí podkladovou hodnotu dané hodnoty, pokud existuje; v opačném případě vrátí zadanou výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="a5a15-124">As with the `defaultArg` function, `defaultValueArg` returns the underlying value of the given Value Option if it exists; otherwise, it returns the specified default value.</span></span>
 
-<span data-ttu-id="7f7df-125">V tuto chvíli neexistují žádné další funkce vázané na modulu hodnotu možnosti.</span><span class="sxs-lookup"><span data-stu-id="7f7df-125">At this time, there are no other module-bound functions for Value Options.</span></span>
+<span data-ttu-id="a5a15-125">V tuto chvíli nejsou k dispozici žádné další funkce vázané na modul pro možnosti hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a5a15-125">At this time, there are no other module-bound functions for Value Options.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7f7df-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7f7df-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a5a15-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a5a15-126">See also</span></span>
 
-- [<span data-ttu-id="7f7df-127">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7f7df-127">Options</span></span>](options.md)
+- [<span data-ttu-id="a5a15-127">Možnosti</span><span class="sxs-lookup"><span data-stu-id="a5a15-127">Options</span></span>](options.md)

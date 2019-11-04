@@ -8,86 +8,86 @@ helpviewer_keywords:
 - Windows Forms, content assignments
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 0fc7cf40acb141d698f59a1b7fbe6c32269ea61d
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 0c1e0c91b7ab8bded677a86b597b02b9cb442d98
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197437"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460669"
 ---
-# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a><span data-ttu-id="bb9f1-102">Návod: přiřazení obsahu WPF na model Windows Forms v době návrhu</span><span class="sxs-lookup"><span data-stu-id="bb9f1-102">Walkthrough: Assign WPF content on Windows Forms at design time</span></span>
+# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a><span data-ttu-id="6a468-102">Návod: přiřazení obsahu WPF na model Windows Forms v době návrhu</span><span class="sxs-lookup"><span data-stu-id="6a468-102">Walkthrough: Assign WPF content on Windows Forms at design time</span></span>
 
-<span data-ttu-id="bb9f1-103">Tento článek ukazuje, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-103">This article show you how to select the Windows Presentation Foundation (WPF) control types you want to display on your form.</span></span> <span data-ttu-id="bb9f1-104">Můžete vybrat jakýkoli typ ovládacího prvku WPF, který je součástí projektu.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-104">You can select any WPF control types which are included in your project.</span></span>
+<span data-ttu-id="6a468-103">Tento článek ukazuje, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="6a468-103">This article show you how to select the Windows Presentation Foundation (WPF) control types you want to display on your form.</span></span> <span data-ttu-id="6a468-104">Můžete vybrat jakýkoli typ ovládacího prvku WPF, který je součástí projektu.</span><span class="sxs-lookup"><span data-stu-id="6a468-104">You can select any WPF control types which are included in your project.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="bb9f1-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bb9f1-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="6a468-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6a468-105">Prerequisites</span></span>
 
-<span data-ttu-id="bb9f1-106">K dokončení tohoto Názorného postupu potřebujete Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-106">You need Visual Studio to complete this walkthrough.</span></span>
+<span data-ttu-id="6a468-106">K dokončení tohoto Názorného postupu potřebujete Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="6a468-106">You need Visual Studio to complete this walkthrough.</span></span>
 
-## <a name="create-the-project"></a><span data-ttu-id="bb9f1-107">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="bb9f1-107">Create the project</span></span>
+## <a name="create-the-project"></a><span data-ttu-id="6a468-107">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="6a468-107">Create the project</span></span>
 
-<span data-ttu-id="bb9f1-108">Otevřete Visual Studio a vytvořte nový projekt aplikace model Windows Forms v Visual Basic nebo vizuálu C# s názvem `SelectingWpfContent`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-108">Open Visual Studio and create a new Windows Forms Application project in Visual Basic or Visual C# named `SelectingWpfContent`.</span></span>
+<span data-ttu-id="6a468-108">Otevřete Visual Studio a vytvořte nový projekt aplikace model Windows Forms v Visual Basic nebo vizuálu C# s názvem `SelectingWpfContent`.</span><span class="sxs-lookup"><span data-stu-id="6a468-108">Open Visual Studio and create a new Windows Forms Application project in Visual Basic or Visual C# named `SelectingWpfContent`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="bb9f1-109">Při hostování obsahu WPF jsou podporovány C# pouze projekty a Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-109">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>
+> <span data-ttu-id="6a468-109">Při hostování obsahu WPF jsou podporovány C# pouze projekty a Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="6a468-109">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>
 
-## <a name="create-the-wpf-control-types"></a><span data-ttu-id="bb9f1-110">Vytvoření typů ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="bb9f1-110">Create the WPF control types</span></span>
+## <a name="create-the-wpf-control-types"></a><span data-ttu-id="6a468-110">Vytvoření typů ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="6a468-110">Create the WPF control types</span></span>
 
-<span data-ttu-id="bb9f1-111">Po přidání typů ovládacích prvků WPF do projektu je můžete hostovat v různých <xref:System.Windows.Forms.Integration.ElementHost>ch ovládacích prvcích.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-111">After you add WPF control types to the project, you can host them in different <xref:System.Windows.Forms.Integration.ElementHost> controls.</span></span>
+<span data-ttu-id="6a468-111">Po přidání typů ovládacích prvků WPF do projektu je můžete hostovat v různých <xref:System.Windows.Forms.Integration.ElementHost>ch ovládacích prvcích.</span><span class="sxs-lookup"><span data-stu-id="6a468-111">After you add WPF control types to the project, you can host them in different <xref:System.Windows.Forms.Integration.ElementHost> controls.</span></span>
 
-1. <span data-ttu-id="bb9f1-112">Přidejte do řešení nový projekt WPF <xref:System.Windows.Controls.UserControl>.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-112">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="bb9f1-113">Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-113">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="bb9f1-114">Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="bb9f1-114">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>
+1. <span data-ttu-id="6a468-112">Přidejte do řešení nový projekt WPF <xref:System.Windows.Controls.UserControl>.</span><span class="sxs-lookup"><span data-stu-id="6a468-112">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="6a468-113">Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`.</span><span class="sxs-lookup"><span data-stu-id="6a468-113">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="6a468-114">Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="6a468-114">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>
 
-2. <span data-ttu-id="bb9f1-115">V zobrazení Návrh se ujistěte, že je vybrána možnost `UserControl1`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-115">In Design view, make sure that `UserControl1` is selected.</span></span>
+2. <span data-ttu-id="6a468-115">V zobrazení Návrh se ujistěte, že je vybrána možnost `UserControl1`.</span><span class="sxs-lookup"><span data-stu-id="6a468-115">In Design view, make sure that `UserControl1` is selected.</span></span>
 
-3. <span data-ttu-id="bb9f1-116">V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-116">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to **200**.</span></span>
+3. <span data-ttu-id="6a468-116">V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.</span><span class="sxs-lookup"><span data-stu-id="6a468-116">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to **200**.</span></span>
 
-4. <span data-ttu-id="bb9f1-117">Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah**.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-117">Add a <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.TextBox.Text%2A> property to **Hosted Content**.</span></span>
+4. <span data-ttu-id="6a468-117">Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah**.</span><span class="sxs-lookup"><span data-stu-id="6a468-117">Add a <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.TextBox.Text%2A> property to **Hosted Content**.</span></span>
 
-5. <span data-ttu-id="bb9f1-118">Přidejte do projektu druhý <xref:System.Windows.Controls.UserControl> WPF.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-118">Add a second WPF <xref:System.Windows.Controls.UserControl> to the project.</span></span> <span data-ttu-id="bb9f1-119">Použijte výchozí název pro typ ovládacího prvku `UserControl2.xaml`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-119">Use the default name for the control type, `UserControl2.xaml`.</span></span>
+5. <span data-ttu-id="6a468-118">Přidejte do projektu druhý <xref:System.Windows.Controls.UserControl> WPF.</span><span class="sxs-lookup"><span data-stu-id="6a468-118">Add a second WPF <xref:System.Windows.Controls.UserControl> to the project.</span></span> <span data-ttu-id="6a468-119">Použijte výchozí název pro typ ovládacího prvku `UserControl2.xaml`.</span><span class="sxs-lookup"><span data-stu-id="6a468-119">Use the default name for the control type, `UserControl2.xaml`.</span></span>
 
-6. <span data-ttu-id="bb9f1-120">V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-120">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to **200**.</span></span>
+6. <span data-ttu-id="6a468-120">V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.</span><span class="sxs-lookup"><span data-stu-id="6a468-120">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to **200**.</span></span>
 
-7. <span data-ttu-id="bb9f1-121">Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah 2**.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-121">Add a <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.TextBox.Text%2A> property to **Hosted Content 2**.</span></span>
+7. <span data-ttu-id="6a468-121">Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.TextBox.Text%2A> na **hostovaný obsah 2**.</span><span class="sxs-lookup"><span data-stu-id="6a468-121">Add a <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.TextBox.Text%2A> property to **Hosted Content 2**.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="bb9f1-122">Obecně byste měli hostovat propracovanější obsah WPF.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-122">In general, you should host more sophisticated WPF content.</span></span> <span data-ttu-id="bb9f1-123"><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> ovládací prvek slouží pouze pro ilustrativní účely.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-123">The <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control is used here for illustrative purposes only.</span></span>
+   > <span data-ttu-id="6a468-122">Obecně byste měli hostovat propracovanější obsah WPF.</span><span class="sxs-lookup"><span data-stu-id="6a468-122">In general, you should host more sophisticated WPF content.</span></span> <span data-ttu-id="6a468-123"><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> ovládací prvek slouží pouze pro ilustrativní účely.</span><span class="sxs-lookup"><span data-stu-id="6a468-123">The <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> control is used here for illustrative purposes only.</span></span>
 
-8. <span data-ttu-id="bb9f1-124">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-124">Build the project.</span></span>
+8. <span data-ttu-id="6a468-124">Sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="6a468-124">Build the project.</span></span>
 
-## <a name="select-wpf-controls"></a><span data-ttu-id="bb9f1-125">Vybrat ovládací prvky WPF</span><span class="sxs-lookup"><span data-stu-id="bb9f1-125">Select WPF controls</span></span>
+## <a name="select-wpf-controls"></a><span data-ttu-id="6a468-125">Vybrat ovládací prvky WPF</span><span class="sxs-lookup"><span data-stu-id="6a468-125">Select WPF controls</span></span>
 
-<span data-ttu-id="bb9f1-126">Můžete přiřadit jiný obsah WPF k ovládacímu prvku <xref:System.Windows.Forms.Integration.ElementHost>, který je již hostitelem obsahu.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-126">You can assign different WPF content to an <xref:System.Windows.Forms.Integration.ElementHost> control, which is already hosting content.</span></span>
+<span data-ttu-id="6a468-126">Můžete přiřadit jiný obsah WPF k ovládacímu prvku <xref:System.Windows.Forms.Integration.ElementHost>, který je již hostitelem obsahu.</span><span class="sxs-lookup"><span data-stu-id="6a468-126">You can assign different WPF content to an <xref:System.Windows.Forms.Integration.ElementHost> control, which is already hosting content.</span></span>
 
-1. <span data-ttu-id="bb9f1-127">Otevřete `Form1` v Návrhář formulářů.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-127">Open `Form1` in the Windows Forms Designer.</span></span>
+1. <span data-ttu-id="6a468-127">Otevřete `Form1` v Návrhář formulářů.</span><span class="sxs-lookup"><span data-stu-id="6a468-127">Open `Form1` in the Windows Forms Designer.</span></span>
 
-2. <span data-ttu-id="bb9f1-128">Na **panelu nástrojů**dvakrát klikněte na `UserControl1`. tím se vytvoří instance `UserControl1` ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-128">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` on the form.</span></span>
+2. <span data-ttu-id="6a468-128">Na **panelu nástrojů**dvakrát klikněte na `UserControl1`. tím se vytvoří instance `UserControl1` ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="6a468-128">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` on the form.</span></span>
 
-   <span data-ttu-id="bb9f1-129">Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-129">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>
+   <span data-ttu-id="6a468-129">Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.</span><span class="sxs-lookup"><span data-stu-id="6a468-129">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>
 
-3. <span data-ttu-id="bb9f1-130">Na panelu inteligentních značek pro `elementHost1`otevřete rozevírací seznam **Vybrat hostovaný obsah** .</span><span class="sxs-lookup"><span data-stu-id="bb9f1-130">In the smart tag panel for `elementHost1`, open the **Select Hosted Content** drop-down list.</span></span>
+3. <span data-ttu-id="6a468-130">Na panelu inteligentních značek pro `elementHost1`otevřete rozevírací seznam **Vybrat hostovaný obsah** .</span><span class="sxs-lookup"><span data-stu-id="6a468-130">In the smart tag panel for `elementHost1`, open the **Select Hosted Content** drop-down list.</span></span>
 
-4. <span data-ttu-id="bb9f1-131">V rozevíracím seznamu vyberte **UserControl2** .</span><span class="sxs-lookup"><span data-stu-id="bb9f1-131">Select **UserControl2** from the drop-down list box.</span></span>
+4. <span data-ttu-id="6a468-131">V rozevíracím seznamu vyberte **UserControl2** .</span><span class="sxs-lookup"><span data-stu-id="6a468-131">Select **UserControl2** from the drop-down list box.</span></span>
 
-   <span data-ttu-id="bb9f1-132">Ovládací prvek `elementHost1` nyní hostuje instanci typu `UserControl2`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-132">The `elementHost1` control now hosts an instance of the `UserControl2` type.</span></span>
+   <span data-ttu-id="6a468-132">Ovládací prvek `elementHost1` nyní hostuje instanci typu `UserControl2`.</span><span class="sxs-lookup"><span data-stu-id="6a468-132">The `elementHost1` control now hosts an instance of the `UserControl2` type.</span></span>
 
-5. <span data-ttu-id="bb9f1-133">V okně **vlastnosti** potvrďte, že vlastnost <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> je nastavena na hodnotu **UserControl2**.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-133">In the **Properties** window, confirm that the <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> property is set to **UserControl2**.</span></span>
+5. <span data-ttu-id="6a468-133">V okně **vlastnosti** potvrďte, že vlastnost <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> je nastavena na hodnotu **UserControl2**.</span><span class="sxs-lookup"><span data-stu-id="6a468-133">In the **Properties** window, confirm that the <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> property is set to **UserControl2**.</span></span>
 
-6. <span data-ttu-id="bb9f1-134">Ze **sady nástrojů**ve skupině **interoperability WPF** přetáhněte ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> do formuláře.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-134">From the **Toolbox**, in the **WPF Interoperability** group, drag an <xref:System.Windows.Forms.Integration.ElementHost> control onto the form.</span></span>
+6. <span data-ttu-id="6a468-134">Ze **sady nástrojů**ve skupině **interoperability WPF** přetáhněte ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> do formuláře.</span><span class="sxs-lookup"><span data-stu-id="6a468-134">From the **Toolbox**, in the **WPF Interoperability** group, drag an <xref:System.Windows.Forms.Integration.ElementHost> control onto the form.</span></span>
 
-   <span data-ttu-id="bb9f1-135">Výchozí název nového ovládacího prvku je `elementHost2`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-135">The default name for the new control is `elementHost2`.</span></span>
+   <span data-ttu-id="6a468-135">Výchozí název nového ovládacího prvku je `elementHost2`.</span><span class="sxs-lookup"><span data-stu-id="6a468-135">The default name for the new control is `elementHost2`.</span></span>
 
-7. <span data-ttu-id="bb9f1-136">Na panelu inteligentních značek pro `elementHost2`otevřete rozevírací seznam **Vybrat hostovaný obsah** .</span><span class="sxs-lookup"><span data-stu-id="bb9f1-136">In the smart tag panel for `elementHost2`, open the **Select Hosted Content** drop-down list.</span></span>
+7. <span data-ttu-id="6a468-136">Na panelu inteligentních značek pro `elementHost2`otevřete rozevírací seznam **Vybrat hostovaný obsah** .</span><span class="sxs-lookup"><span data-stu-id="6a468-136">In the smart tag panel for `elementHost2`, open the **Select Hosted Content** drop-down list.</span></span>
 
-8. <span data-ttu-id="bb9f1-137">V rozevíracím seznamu vyberte **UserControl1** .</span><span class="sxs-lookup"><span data-stu-id="bb9f1-137">Select **UserControl1** from the drop-down list.</span></span>
+8. <span data-ttu-id="6a468-137">V rozevíracím seznamu vyberte **UserControl1** .</span><span class="sxs-lookup"><span data-stu-id="6a468-137">Select **UserControl1** from the drop-down list.</span></span>
 
-9. <span data-ttu-id="bb9f1-138">Ovládací prvek `elementHost2` nyní hostuje instanci typu `UserControl1`.</span><span class="sxs-lookup"><span data-stu-id="bb9f1-138">The `elementHost2` control now hosts an instance of the `UserControl1` type.</span></span>
+9. <span data-ttu-id="6a468-138">Ovládací prvek `elementHost2` nyní hostuje instanci typu `UserControl1`.</span><span class="sxs-lookup"><span data-stu-id="6a468-138">The `elementHost2` control now hosts an instance of the `UserControl1` type.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="bb9f1-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bb9f1-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6a468-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6a468-139">See also</span></span>
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [<span data-ttu-id="bb9f1-140">Migrace a interoperabilita</span><span class="sxs-lookup"><span data-stu-id="bb9f1-140">Migration and Interoperability</span></span>](../../wpf/advanced/migration-and-interoperability.md)
-- [<span data-ttu-id="bb9f1-141">Používání ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="bb9f1-141">Using WPF Controls</span></span>](using-wpf-controls.md)
-- [<span data-ttu-id="bb9f1-142">Návrh kódu XAML v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bb9f1-142">Design XAML in Visual Studio</span></span>](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
+- [<span data-ttu-id="6a468-140">Migrace a interoperabilita</span><span class="sxs-lookup"><span data-stu-id="6a468-140">Migration and Interoperability</span></span>](../../wpf/advanced/migration-and-interoperability.md)
+- [<span data-ttu-id="6a468-141">Používání ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="6a468-141">Using WPF Controls</span></span>](using-wpf-controls.md)
+- [<span data-ttu-id="6a468-142">Návrh kódu XAML v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="6a468-142">Design XAML in Visual Studio</span></span>](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
