@@ -605,6 +605,8 @@
               href: language-reference/operators/like-operator.md
             - name: Mod – operátor
               href: language-reference/operators/mod-operator.md
+            - name: Operátor NameOf
+              href: language-reference/operators/nameof.md
             - name: Operátor new
               href: language-reference/operators/new-operator.md
             - name: Not – operátor
