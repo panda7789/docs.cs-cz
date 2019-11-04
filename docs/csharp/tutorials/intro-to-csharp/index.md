@@ -3,24 +3,26 @@ title: Úvod k C# interaktivním kurzům
 description: Naučte C# se v prohlížeči a začněte s vlastním vývojovým prostředím.
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 1712e32175a95373ca85464bbdebed9ef99fb375
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 564af21fb0f9b6cf8b5c3591ff5622278a8cbb22
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850763"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423106"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
-Vítáme vás u kurzu Úvod do C#. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči.
+Vítejte v úvodu k C# kurzům. Ty začínají interaktivními lekcemi, které můžete spustit v prohlížeči. Před zahájením těchto interaktivních C# lekcí se můžete seznámit se základy z [ C# řady videí 101](https://aka.ms/dotnet3-csharp) .
 
-První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
+> [!VIDEO https://channel9.msdn.com/Series/CSharp-101/What-is-C/player]
+
+První lekce vysvětlují C# koncepty s použitím malých fragmentů kódu. Naučíte se základy C# syntaxe a práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to vše interaktivní a vy budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo C# jazyka.
 
 Všechny úvodní kurzy po Hello World lekci jsou k dispozici v online prostředí prohlížeče nebo [ve vašem místním vývojovém prostředí](local-environment.md). Na konci každého kurzu se rozhodnete, jestli chcete pokračovat v další lekci online nebo na vašem počítači. K dispozici jsou odkazy, které vám pomůžou nastavit prostředí a pokračovat v dalším kurzu na vašem počítači.
 
 ## <a name="hello-worldhello-worldyml"></a>[Hello World](hello-world.yml)
 
-V kurzu [Hello World](hello-world.yml) vytvoříte nejzákladnější C# program. Budete zkoumat `string` typ a postup práce s textem.
+V kurzu [Hello World](hello-world.yml) vytvoříte nejzákladnější C# program. Prozkoumáte typ `string` a budete pracovat s textem.
 
 ## <a name="numbers-in-cnumbers-in-csharpyml"></a>[Čísla v jazyce C#](numbers-in-csharp.yml)
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: e1daf9efd59b89d5d5be5f51cf9ac5e00750dda3
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 319f8b8c0225c7730112b1db073884b391945ac8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919730"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421089"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 
@@ -171,21 +171,21 @@ Doplňky často poskytují více uživatelských rozhraní pro zobrazení hostit
 
 ## <a name="add-ins-and-xaml-browser-applications"></a>Doplňky a aplikace prohlížeče XAML
 
-V níže uvedených příkladech byla hostitelská aplikace nainstalována samostatnou aplikací. Ale [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] můžou taky hostovat doplňky, i když s následujícími dodatečnými požadavky na sestavení a implementaci:
+V níže uvedených příkladech byla hostitelská aplikace nainstalována samostatnou aplikací. Aplikace prohlížeče XAML (XBAP) ale můžou také hostovat doplňky, i když s následujícími dodatečnými požadavky na sestavení a implementaci:
 
-- Manifest [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] aplikace musí být nakonfigurován speciálně ke stažení kanálu (složky a sestavení) a sestavení doplňku v mezipaměti aplikace ClickOnce na klientském počítači ve stejné složce jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
+- Manifest aplikace XBAP musí být nakonfigurován speciálně ke stažení kanálu (složky a sestavení) a sestavení doplňku v mezipaměti aplikace ClickOnce na klientském počítači ve stejné složce jako XBAP.
 
-- [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] kód pro zjišťování a načítání doplňků musí použít mezipaměť aplikace ClickOnce pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] jako kanál a umístění doplňku.
+- Kód XBAP, který se má objevit a načíst doplňky, musí používat mezipaměť aplikace ClickOnce pro XBAP jako kanál a umístění doplňku.
 
-- [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] musí načíst doplněk do speciálního kontextu zabezpečení, pokud doplněk odkazuje na volné soubory nacházející se v lokalitě původu; Když je hostovaná pomocí [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], můžou doplňky odkazovat jenom na volné soubory, které se nacházejí na hostitelském serveru aplikace, který je počátkem.
+- XBAP musí načíst doplněk do speciálního kontextu zabezpečení, pokud doplněk odkazuje na volné soubory nacházející se na webu původu; Když aplikace XBAP hostuje, můžou doplňky odkazovat jenom na volné soubory, které se nacházejí na lokalitě hostitelské aplikace.
 
 Tyto úlohy jsou podrobně popsány v následujících pododdílech.
 
 ### <a name="configuring-the-pipeline-and-add-in-for-clickonce-deployment"></a>Konfigurace kanálu a doplňku pro nasazení ClickOnce
 
-[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] se stáhnou do bezpečné složky v mezipaměti nasazení ClickOnce a spustí se z ní. Aby bylo možné [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] hostovat doplněk, musí být kanál a sestavení doplňku staženy také do složky Safe. Chcete-li to dosáhnout, je nutné nakonfigurovat manifest aplikace tak, aby zahrnoval sestavení kanálu i doplňku pro stažení. To se v aplikaci Visual Studio dá nejlépe dělat, i když musí být kanál a sestavení doplňku v kořenové složce hostitelského [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu, aby mohla aplikace Visual Studio detekovat sestavení kanálu.
+Aplikace XBAP jsou staženy do a spouštěny z bezpečné složky v mezipaměti nasazení ClickOnce. Aby mohla aplikace XBAP hostovat doplněk, musí být kanál a sestavení doplňku staženy také do složky Safe. Chcete-li to dosáhnout, je nutné nakonfigurovat manifest aplikace tak, aby zahrnoval sestavení kanálu i doplňku pro stažení. To se v aplikaci Visual Studio dá nejlépe dělat, i když musí být kanál a sestavení doplňku v kořenové složce projektu XBAP hostitele, aby mohla aplikace Visual Studio detekovat sestavení kanálu.
 
-V důsledku toho je prvním krokem sestavení kanálu a sestavení doplňku v kořenu [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu nastavením výstupu sestavení pro každé sestavení kanálu a sestavením sestavení doplňku. V následující tabulce jsou uvedeny výstupní cesty sestavení pro projekty sestavení kanálu a projekt sestavení doplňku, které jsou ve stejném řešení a kořenové složce jako hostitelský [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projekt.
+V důsledku toho je prvním krokem sestavení kanálu a sestavení doplňku do kořenového projektu XBAP nastavením výstupu sestavení pro každé sestavení kanálu a sestavením sestavení doplňku. V následující tabulce jsou uvedeny výstupní cesty sestavení pro projekty sestavení kanálu a projekt sestavení doplňku, které jsou ve stejném řešení a kořenové složce jako projekt aplikace XBAP pro hostování.
 
 Tabulka 1: sestavení výstupních cest pro sestavení kanálu, která jsou hostována v XBAP
 
@@ -197,21 +197,21 @@ Tabulka 1: sestavení výstupních cest pro sestavení kanálu, která jsou host
 |Adaptér na straně hostitele|`..\HostXBAP\HostSideAdapters\`|
 |Doplněk|`..\HostXBAP\AddIns\WPFAddIn1`|
 
-Dalším krokem je zadání sestavení kanálu a sestavení doplňku jako souborů obsahu [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] v aplikaci Visual Studio pomocí následujícího postupu:
+Dalším krokem je zadání sestavení kanálu a sestavení doplňku jako souborů obsahu XBAP v aplikaci Visual Studio pomocí následujícího postupu:
 
 1. Zahrnutí sestavení kanálu a doplňku v projektu kliknutím pravým tlačítkem myši na jednotlivé složky kanálů v Průzkumník řešení a zvolením možnosti **zahrnout do projektu**.
 
 2. Nastavení **Akce sestavení** každého sestavení kanálu a sestavení doplňku k **obsahu** z okna **vlastnosti** .
 
-Posledním krokem je nakonfigurovat manifest aplikace tak, aby zahrnoval soubory sestavení kanálu a soubor sestavení doplňku pro stažení. Soubory by se měly nacházet ve složkách v kořenu složky v mezipaměti ClickOnce, kterou aplikace [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] zabírá. Konfiguraci lze dosáhnout v aplikaci Visual Studio pomocí následujícího postupu:
+Posledním krokem je nakonfigurovat manifest aplikace tak, aby zahrnoval soubory sestavení kanálu a soubor sestavení doplňku pro stažení. Soubory by se měly nacházet ve složkách v kořenu složky v mezipaměti ClickOnce, kterou aplikace XBAP zabírá. Konfiguraci lze dosáhnout v aplikaci Visual Studio pomocí následujícího postupu:
 
-1. Klikněte pravým tlačítkem na projekt [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], klikněte na **vlastnosti**, klikněte na **publikovat**a pak klikněte na tlačítko **soubory aplikace** .
+1. Klikněte pravým tlačítkem myši na projekt XBAP, klikněte na **vlastnosti**, klikněte na **publikovat**a pak klikněte na tlačítko **soubory aplikace** .
 
 2. V dialogovém okně **soubory aplikace** nastavte **stav publikování** každého kanálu a knihovny DLL doplňku, aby **zahrnovaly (auto)** , a nastavte **skupinu stažení** pro každý kanál a knihovnu DLL doplňku na **(povinné)** .
 
 ### <a name="using-the-pipeline-and-add-in-from-the-application-base"></a>Použití kanálu a doplňku z základu aplikace
 
-Pokud je kanál a doplněk nakonfigurován pro nasazení ClickOnce, jsou staženy do stejné složky mezipaměti ClickOnce jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Chcete-li použít kanál a doplněk z [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], kód [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je musí získat od základu aplikace. Různé typy a členové modelu doplňku .NET Framework pro použití kanálů a doplňků poskytují speciální podporu pro tento scénář. Za prvé je cesta identifikována hodnotou <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase> výčtu. Tuto hodnotu použijete s přetíženími relevantních členů doplňku pro použití kanálů, které zahrnují následující:
+Když je kanál a doplněk nakonfigurovaný pro nasazení ClickOnce, stáhnou se do stejné složky mezipaměti ClickOnce jako XBAP. Chcete-li použít kanál a doplněk z aplikace XBAP, je nutné, aby se kód XBAP dostal z základu aplikace. Různé typy a členové modelu doplňku .NET Framework pro použití kanálů a doplňků poskytují speciální podporu pro tento scénář. Za prvé je cesta identifikována hodnotou <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase> výčtu. Tuto hodnotu použijete s přetíženími relevantních členů doplňku pro použití kanálů, které zahrnují následující:
 
 - <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>
 

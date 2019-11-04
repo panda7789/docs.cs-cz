@@ -1,69 +1,69 @@
 ---
 title: Úvod do funkčního programování v F#
-description: Seznamte se se základy funkčního programování v F#.
+description: Seznamte se se základy funkčního programování F#v nástroji.
 ms.date: 10/29/2018
-ms.openlocfilehash: 84022e58c0f17b9e9875402c653c31e494e940da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e1a0edc61dbe13012c48e166d490e22ebc70d6a0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772785"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424700"
 ---
 # <a name="introduction-to-functional-programming-in-f"></a>Úvod do funkčního programování v F\#
 
-Funkční programování je styl programování, které klade důraz na použití funkcí a neměnnými daty. Je zadaný funkční programování kombinaci funkční programování je pomocí statické typy, například s F#. Obecně tyto koncepty jsou zvýrazněny do funkčního programování:
+Funkční programování je styl programování, který zdůrazňuje použití funkcí a neměnných dat. Typované funkční programování je v případě, že je funkční programování kombinováno se statickými F#typy, například s. Obecně platí, že následující pojmy jsou zvýrazněny v části funkční programování:
 
-* Funkce jako primární konstrukce, které používáte
+* Funguje jako primární konstrukce, které používáte.
 * Výrazy místo příkazů
-* Neměnné hodnoty v proměnné
-* Deklarativní programování přes imperativní programování
+* Neměnné hodnoty nad proměnnými
+* Deklarativní programování v rámci imperativního programování
 
-V celé této sérii prozkoumáte koncepty a vzory v funkční programování pomocí F#. Cestou se dozvíte některé F# příliš.
+V celé této sérii budete zkoumat koncepty a vzory v rámci funkčního F#programování pomocí. V takovém případě se naučíte F# také.
 
 ## <a name="terminology"></a>Terminologie
 
-Funkční programování, jako jsou jiné programovací modely obsahuje slovník, který bude časem nutné další informace. Tady jsou některé běžné podmínky zobrazí celou dobu:
+Funkční programování, podobně jako jiné programovací paradigma, je dodáváno se slovníkem, který budete nakonec potřebovat vědět. Tady jsou některé běžné výrazy, které se zobrazí po celou dobu:
 
-* **Funkce** – funkce je konstrukce, která vytvoří výstup, když vstup. Více formálně ho _mapuje_ položky z jednoho nastavena na jinou sadu. Tato formalism je zrušeno do konkrétní mnoha způsoby, zvláště při použití funkce, které pracují na kolekce dat. Je nejvíce základní (a důležité) koncept v funkčního programování. 
-* **Výraz** -výrazu je konstrukce v kódu, který vytváří hodnotu. V F#, tato hodnota musí být svázán nebo explicitně ignorovány. Výraz lze snadno nahradit volání funkce.
-* **Čistota** -čistoty je vlastnost funkce tak, že vrácená hodnota je vždy stejný pro stejné argumenty a že jeho vyhodnocení nemá žádné vedlejší účinky. Čistě funkci zcela závisí na jeho argumenty.
-* **Referenční transparentnosti** – referenční transparentnosti je vlastnost výrazů tak, že se dá nahradit výrazem jejich výstup bez ovlivnění chování programu.
-* **Neměnnost** -neměnnosti znamená, že hodnota nemůže být změněna na místě. To je rozdíl od proměnné, které můžete změnit na místě.
+* **Funkce** – funkce je konstrukce, která při zadání vstupu vytvoří výstup. V tuto dobu _namapuje_ položku z jedné sady na jinou sadu. Tento formální způsob se přenese do konkrétního množství způsobů, zejména při použití funkcí, které pracují s kolekcemi dat. Je to nejzákladnější koncept (a důležité) v rámci funkčního programování.
+* **Expression** – výraz je konstruktor v kódu, který vytváří hodnotu. V F#nástroji musí být tato hodnota svázaná nebo explicitně ignorována. Výraz může být triviálním nahrazen voláním funkce.
+* **Čistota** -čistota je vlastnost funkce tak, že vrácená hodnota je vždy stejná pro stejné argumenty a že její vyhodnocení nemá žádné vedlejší účinky. Funkce Pure závisí výhradně na svých argumentech.
+* **Referenční** transparentnost – referenční transparentnost je vlastnost výrazů, jako je například, že mohou být nahrazeny jejich výstupem, aniž by to ovlivnilo chování programu.
+* **Neměnnosti** -neměnnosti znamená, že hodnotu nelze změnit na místě. To je v kontrastu s proměnnými, které se mohou změnit na místě.
 
 ## <a name="examples"></a>Příklady
 
-Následující příklady ukazují těmito základními koncepty.
+Následující příklady znázorňují tyto základní koncepty.
 
 ### <a name="functions"></a>Funkce
 
-Nejvíce běžné a základní konstrukcí funkčního programování je funkce. Tady je jednoduchou funkci, která se přičte 1 k celým číslem:
+Nejběžnější a základní konstrukce v funkčním programování je funkce. Tady je jednoduchá funkce, která přidá 1 k celému číslu:
 
 ```fsharp
 let addOne x = x + 1
 ```
 
-Typ podpisu je následujícím způsobem:
+Jeho signatura typu je následující:
 
 ```fsharp
 val addOne: x:int -> int
 ```
 
-Podpis může číst jako "`addOne` přijímá `int` s názvem `x` a vytvoří `int`". Více formálně `addOne` je _mapování_ hodnotu ze sady celých čísel na sadu celých čísel. `->` Token označuje, že toto mapování. V F#, obvykle můžete se podívat na podpis funkce získali povědomí o co to dělá.
+Podpis lze číst jako, "`addOne` přijímá `int` s názvem `x` a vytvoří `int`". `addOne` je _mapována_ hodnota ze sady celých čísel na sadu celých čísel. Token `->` znamená toto mapování. V F#nástroji se můžete obvykle podívat na signaturu funkce, abyste získali představu o tom, co dělá.
 
-Ano, proč je podpis důležité? V typu funkčního programování, implementace funkce je často méně důležitá než podpis skutečný typ! Fakt, který `addOne` přidá hodnoty 1 na celé číslo je zajímavé za běhu, ale jsou při sestavování programu, skutečnost, že přijímá a vrací `int` je co informuje o tom, jak bude ve skutečnosti používat tuto funkci. Kromě toho po použití této funkce správně (s ohledem na její typ podpis), diagnostice potíží lze provést pouze v těle `addOne` funkce. Toto je tak za zadaný funkčního programování.
+Proč je podpis důležitý? V psaní funkčního programování je implementace funkce často méně důležitá než skutečný podpis typu! Skutečnost, že `addOne` přidá hodnotu 1 k celému číslu, je zajímavá za běhu, ale při sestavování programu je fakt, že přijímá a vrací `int` je to, co informuje o tom, jak tuto funkci skutečně používáte. Navíc po správném použití této funkce (s ohledem na signaturu jejího typu) je možné diagnostikovat jakékoli problémy pouze v těle funkce `addOne`. Jedná se o podněty za psaní funkčního programování.
 
 ### <a name="expressions"></a>Výrazy
 
-Výrazy jsou konstrukce, která se vyhodnotí na hodnotu. Na rozdíl od příkazů, které provádějí akci, výrazy můžete představit provést akci, která poskytuje vrátit hodnotu. Výrazy se téměř vždy používají ve prospěch příkazy do funkčního programování.
+Výrazy jsou konstrukce, které se vyhodnotí na hodnotu. Na rozdíl od příkazů, které provádějí akci, lze výrazy považovat za provedení akce, která vrací hodnotu. Výrazy se téměř vždycky používají ve prospěch příkazů ve funkčním programování.
 
-Zvažte předchozí funkci `addOne`. Tělo `addOne` je výraz:
+Zvažte předchozí funkci `addOne`. Text `addOne` je výraz:
 
 ```fsharp
 // 'x + 1' is an expression!
 let addOne x = x + 1
 ```
 
-Výsledek tohoto výrazu, který definuje typ výsledku `addOne` funkce. Například výraz, který tvoří tuto funkci, můžete ho změnit na jiný typ, například `string`:
+Jedná se o výsledek tohoto výrazu, který definuje typ výsledku funkce `addOne`. Například výraz, který tvoří tuto funkci, může být změněn na jiný typ, například `string`:
 
 ```fsharp
 let addOne x = x.ToString() + "1"
@@ -75,9 +75,9 @@ Signatura funkce je teď:
 val addOne: x:'a -> string
 ```
 
-Od libovolného typu v F# může mít `ToString()` volá v něm typ `x` byl proveden obecný (volá [Automatická generalizace](../language-reference/generics/automatic-generalization.md)), a výsledný typ je `string`.
+Vzhledem k tomu, F# že kterýkoli typ v může mít `ToString()` volána, byl typ `x` vytvořen jako obecný (tzv. [Automatická generalizace](../language-reference/generics/automatic-generalization.md)) a výsledný typ je `string`.
 
-Výrazy nejsou právě těla funkce. Můžete použít výrazy, které vytvoří hodnotu, kterou můžete použít na jiném místě. Běžný je `if`:
+Výrazy nejsou jenom orgány funkcí. Můžete mít výrazy, které vytvoří hodnotu, kterou použijete jinde. Jednou z nich je `if`:
 
 ```fsharp
 // Checks if 'x' is odd by using the mod operator
@@ -93,24 +93,24 @@ let addOneIfOdd input =
     result
 ```
 
-`if` Výraz vytvoří hodnotu s názvem `result`. Všimněte si, že by mohla vynechat `result` úplně, aby `if` výraz text z `addOneIfOdd` funkce. Nejdůležitější informace o výrazech je, že vytvářejí hodnotu.
+Výraz `if` vytvoří hodnotu nazvanou `result`. Všimněte si, že můžete `result` zcela vynechat, což `if` výrazu `addOneIfOdd` funkce. Klíčovým aspektem pro zapamatování výrazů je, že vytvoří hodnotu.
 
-Je speciální typ `unit`, který se používá při není nutné nic vrátit. Představte si třeba tato jednoduchá funkce:
+Existuje speciální typ, `unit`, který se používá v případě, že není nic vráceno. Zvažte například tuto jednoduchou funkci:
 
 ```fsharp
 let printString (str: string) =
     printfn "String is: %s" str
 ```
 
-Podpis vypadá takto:
+Signatura vypadá takto:
 
 ```fsharp
 val printString: str:string -> unit
 ```
 
-`unit` Označuje, že neexistuje žádná skutečná hodnota se vrací. To je užitečné, když máte rutinu, která musí "pracovní" bez ohledu na žádnou hodnotu vrátit jako výsledek, které pracují s.
+Typ `unit` označuje, že není vrácena žádná skutečná hodnota. To je užitečné, když máte rutinu, která musí "dělat práci" Navzdory tomu, že nevrátí hodnotu, která by se měla vrátit jako výsledek této práce.
 
-Toto je sharp oproti imperativní programování, kde ekvivalent `if` konstrukce je příkaz a vytváření hodnoty se často provádí pomocí mutace proměnné. Například v C#, kód může být napsán takto:
+To je prudký kontrast vůči imperativnímu programování, kde ekvivalentní `if` konstrukce je příkaz a vytváření hodnot se často provádí s použitím obdobných proměnných. Například v C#nástroji může být kód napsán takto:
 
 ```csharp
 bool IsOdd(int x) => x % 2 != 0;
@@ -128,22 +128,22 @@ int AddOneIfOdd(int input)
 }
 ```
 
-Je vhodné poznamenat, že C# a podpora jiných jazyků C-style [Ternární výraz](../../csharp/language-reference/operators/conditional-operator.md), což umožňuje založené na výrazu podmíněné programování.
+Je vhodné poznamenat, C# že a jiné jazyky ve stylu jazyka C podporují [výraz Ternární](../../csharp/language-reference/operators/conditional-operator.md), který umožňuje podmíněné programování založené na výrazu.
 
-Funkční programování v zřídka dochází k mutovat hodnoty s příkazy. I když některé funkční jazyky podporují příkazy a mutace, není běžné použití těchto konceptů v funkčního programování.
+V funkčním programování je zřídka možné hodnoty pomocí příkazů. I když některé funkční jazyky podporují příkazy a mutace, není běžné používat tyto koncepty v funkčním programování.
 
-### <a name="pure-functions"></a>Čistě funkce
+### <a name="pure-functions"></a>Čisté funkce
 
-Dříve jsme už zmínili, čistě funkce jsou funkce:
+Jak už jsme uvedli, funkce Pure jsou funkce, které:
 
-* Vždy vyhodnoťte na stejnou hodnotu pro stejný vstup.
-* Mít žádné vedlejší účinky.
+* Vždy se vyhodnotí na stejnou hodnotu pro stejný vstup.
+* Nemají žádné vedlejší účinky.
 
-Je vhodné si můžete představit matematické funkce v tomto kontextu. Funkce v matematice, záviset pouze na jejich argumenty a nemá žádné vedlejší účinky. V matematické funkce `f(x) = x + 1`, hodnota `f(x)` závisí jenom na základě hodnoty `x`. Čistě funkce do funkčního programování se stejným způsobem.
+Je vhodné si v tomto kontextu představit matematické funkce. V matematice jsou funkce závislé jenom na jejich argumentech a nemají žádné vedlejší účinky. V matematické funkci `f(x) = x + 1`, hodnota `f(x)` závisí pouze na hodnotě `x`. Čisté funkce v funkčním programování jsou stejné jako.
 
-Při zápisu čistě funkce, funkce musí záviset pouze na jeho argumenty a nebude provádět žádnou akci, která má za následek vedlejší účinek.
+Při psaní čistě funkce musí být funkce závislá pouze na jejích argumentech a nesmí provádět žádnou akci, která má za následek vedlejší efekt.
 
-Tady je příklad-čistě funkce, protože závisí na globální, proměnlivý stav:
+Tady je příklad nečisté funkce, protože závisí na globálním, proměnlivém stavu:
 
 ```fsharp
 let mutable value = 1
@@ -151,58 +151,58 @@ let mutable value = 1
 let addOneToValue x = x + value
 ```
 
-`addOneToValue` Funkce je jasně znečištěná, protože `value` lze změnit kdykoli mít jinou hodnotu než 1. V závislosti na globální hodnoty tohoto vzoru je třeba se vyhnout do funkčního programování.
+Funkce `addOneToValue` je jasně nečistá, protože `value` možné kdykoli změnit tak, aby měla jinou hodnotu než 1. Tento model v závislosti na globální hodnotě se vyhne v funkčním programování.
 
-Tady je další příklad – čistě funkce, protože vykonává vedlejší účinek:
+Tady je další příklad nečisté funkce, protože provádí vedlejší efekt:
 
 ```fsharp
-let addOneToValue x = 
+let addOneToValue x =
     printfn "x is %d" x
     x + 1
 ```
 
-I když tato funkce není závislý na globální hodnoty, zapíše hodnoty `x` do výstupu programu. I když není nic špatného ze své podstaty s tím, znamená, že funkce není čistě. Pokud jiné části programu, závisí na něco mimo programu, jako je například výstupní vyrovnávací paměť následným voláním této funkce může ovlivnit další část programu.
+I když tato funkce není závislá na globální hodnotě, zapíše hodnotu `x` do výstupu programu. I když se to nestane nepodstatným chybou, znamená to, že funkce není čistá. Pokud jiná část programu závisí na něčem externím programu, jako je výstupní vyrovnávací paměť, pak volání této funkce může ovlivnit tuto jinou část programu.
 
-Odebírá `printfn` příkaz díky funkci čistě:
+Odebrání příkazu `printfn` provede čistou funkci:
 
 ```fsharp
 let addOneToValue x = x + 1
 ```
 
-I když tato funkce není ze své podstaty _lepší_ než předchozí verze s `printfn` příkazu, to zaručit, že všechny této funkce je vrátit hodnotu. Libovolný počet volání této funkce vytvoří stejný výsledek: vyvolá pouze hodnotu. Předvídatelnost Dal čistoty je něco, co se snažte se o funkční mnoho programátorů.
+I když tato funkce není ve své podstatě _lepší_ než předchozí verze s příkazem `printfn`, zaručuje, že všechny této funkce vrátí hodnotu. Voláním této funkce libovolným počtem opakování vznikne stejný výsledek: pouze vytvoří hodnotu. Předvídatelnost vydaná pomocí čistoty je mnoho funkčních programátorů, které se snaží.
 
-### <a name="immutability"></a>Neměnnost
+### <a name="immutability"></a>Neměnnosti
 
-Nakonec jednou z nejvíce základní koncepty typu funkční programování je neměnnosti. V F#, všechny hodnoty jsou neměnné ve výchozím nastavení. To znamená, že pokud je explicitně označit jako mutable nemohou být místně měněna.
+Nakonec jedna z nejdůležitějších konceptů typovaného programování je neměnnosti. Ve F#výchozím nastavení jsou všechny hodnoty neměnné. To znamená, že nemohou být umístěny místně, pokud je explicitně neoznačíte jako proměnlivé.
 
-V praxi práce s hodnotami neměnné znamená, že změníte svůj přístup k programování z "Budu muset něco změnit" k "budu potřebovat k vytvoření nové hodnoty".
+V praxi pracujete s neproměnlivými hodnotami, protože měníte přístup k programování z, "Potřebuji změnit něco", na "Potřebuji vytvořit novou hodnotu".
 
-Například přidáním 1 na hodnotu znamená, že vytváří novou hodnotu, nikoli mutace stávající:
+Například přidání hodnoty 1 k hodnotě znamená vytvoření nové hodnoty, která nezpůsobuje existující hodnotu:
 
 ```fsharp
 let value = 1
 let secondValue = value + 1
 ```
 
-V F#, následující kód provede **není** mutovat `value` funkce; místo toho provádí kontrolu rovnosti:
+V F#, následující kód **není** obdobou funkce `value`; místo toho provede kontrolu rovnosti:
 
 ```fsharp
 let value = 1
 value = value + 1 // Produces a 'bool' value!
 ```
 
-Některé funkční programovací jazyky nepodporují mutace vůbec. V F#, DPM ji podporuje, ale není výchozí chování pro hodnoty.
+Některé funkční programovací jazyky nepodporují mutace vůbec. V F#je podporováno, ale není to výchozí chování pro hodnoty.
 
-Tento koncept se rozšiřuje i dál datové struktury. Funkční programování v neměnných datové struktury, jako je sad (a mnoho dalších) mají jinou implementaci než může být zpočátku očekávat. Entity typu přidání položky do sady nedojde ke změně sady, vytváří _nové_ nastavit s přidanou hodnotou. Pod pokličkou to často provádí různé datová struktura, která umožňuje efektivní sledování hodnotu tak, aby odpovídající znázornění dat mohou být zadány ve výsledku.
+Tento koncept rozšiřuje ještě více datových struktur. V funkčním programování mají neměnné datové struktury, jako jsou například sady (a mnoho dalších) odlišnou implementaci, než na začátku očekávat. V koncepčních případech, například když přidáte položku do sady, se nezmění sada, vytvoří _novou_ sadu s přidanou hodnotou. V rámci pokrývá to často používá jiná datová struktura, která umožňuje efektivně sledovat hodnotu tak, aby se v důsledku mohla předávat odpovídající reprezentace dat.
 
-Tento styl práci s hodnotami a datové struktury je důležité, jak přistupovat ke všem jakoukoli operaci, která upravuje něco, jako kdyby vytvoří novou verzi celou věc nepropojili nutí. To umožňuje například rovnosti a srovnání být konzistentní vzhledem k aplikacím ve svých programech.
+Tento styl práce s hodnotami a datovými strukturami je kritický, protože se vynutí, aby se pocházela s jakoukoli operací, jako kdyby vytvořila novou verzi této věci. To umožňuje, aby byly v aplikacích konzistentní, jako je rovnost a srovnatelnost.
 
 ## <a name="next-steps"></a>Další kroky
 
-V další části se bude vztahovat důkladně funkce zkoumání různých způsobů, jak lze využít v funkčního programování.
+V další části najdete funkce, které prozkoumejte různé způsoby, jak je můžete používat při funkčním programování.
 
-[Funkce první třídy](first-class-functions.md) zkoumá funkce hluboko, zobrazuje, jak je lze využít v různých kontextech.
+[Funkce první třídy](first-class-functions.md) zkoumá funkce a ukazuje, jak je lze použít v různých kontextech.
 
 ## <a name="further-reading"></a>Další čtení
 
-[Uvažujete funkčně](https://fsharpforfunandprofit.com/posts/thinking-functionally-intro/) series je další informace o funkční programování s dalším skvělým zdrojem F#. Popisuje základní informace o funkční programování tak pragmatický a snadné čtení pomocí F# funkce pro objasnění konceptů.
+[Funkce přemýšlení](https://fsharpforfunandprofit.com/posts/thinking-functionally-intro/) je dalším skvělým zdrojem informací o funkčním programování s F#. Zabývá se základy funkčního programování v rámci náročného a snadno čitelného způsobu použití F# funkcí k ilustraci konceptů.

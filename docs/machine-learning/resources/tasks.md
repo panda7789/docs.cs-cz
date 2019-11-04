@@ -4,16 +4,16 @@ description: Prozkoumejte různé úlohy strojového učení a související úl
 ms.custom: seodec18
 ms.date: 04/23/2019
 author: natke
-ms.openlocfilehash: bcd967c11156ca9b837631560e78722b13fc7ae0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d19593358361c9c8d3657053e766ec4a2c1ec163
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630053"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424220"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 
-Při sestavování modelu strojového učení nejdřív musíte definovat, co se vám doufá že k dosažení vašich dat. Díky tomu můžete zvolit správnou úlohu strojového učení pro vaši situaci. V následujícím seznamu jsou popsány různé úlohy strojového učení, ze kterých si můžete vybrat, a některé běžné případy použití.
+Při sestavování modelu strojového učení nejdřív musíte definovat, co se vám doufá že k dosažení vašich dat. Díky tomu můžete zvolit správnou úlohu strojového učení pro vaši situaci. V následujícím seznamu jsou popsány různé úlohy strojového učení, ze kterých si můžete vybrat, a některé běžné případy použití. Další informace o výběru úlohy, která je vhodná pro váš scénář, najdete v tématu [algoritmy](../how-to-choose-an-ml-net-algorithm.md).
 
 Jakmile se rozhodnete, který úkol pro váš scénář funguje, musíte zvolit nejlepší algoritmus pro vyučování modelu. Dostupné algoritmy jsou uvedené v části pro každý úkol.
 
@@ -21,10 +21,10 @@ Jakmile se rozhodnete, který úkol pro váš scénář funguje, musíte zvolit 
 
 Úkol [strojového učení pod dohledem](glossary.md#supervised-machine-learning) , který se používá k předpovídání dvou tříd (kategorií), do kterých patří instance dat. Vstup klasifikačního algoritmu je sada popisných příkladů, kde je každý popisek celé číslo 0 nebo 1. Výstup binárního klasifikačního algoritmu je klasifikátor, který můžete použít k předpovědi třídy nových neoznačených instancí. Mezi příklady scénářů binární klasifikace patří:
 
-* [Princip mínění komentářů](../tutorials/sentiment-analysis.md) na Twitteru jako "kladné" nebo "záporné".
+* [Princip mínění komentářů na Twitteru](../tutorials/sentiment-analysis.md) jako "kladné" nebo "záporné".
 * Diagnostikuje, jestli má pacient určitou chorobu nebo ne.
 * Rozhodování o označení e-mailu jako "spam" nebo ne.
-* Určení, jestli fotografie obsahuje pes nebo ovoce
+* Určení, jestli fotka obsahuje určitou položku, například pes nebo ovoce.
 
 Další informace najdete v článku o [binární klasifikaci](https://en.wikipedia.org/wiki/Binary_classification) v Wikipedii.
 
@@ -50,9 +50,9 @@ Model binární klasifikace můžete proškolit pomocí těchto algoritmů:
 Pro dosažení nejlepších výsledků s binární klasifikací musí být školicí data vyvážená (tj. stejná čísla kladných a záporných školicích dat). Před školením by měly být zpracovány chybějící hodnoty.
 
 Data sloupce vstupního popisku musí být <xref:System.Boolean>.
-Data ve sloupci vstupní funkce musí být vektorem <xref:System.Single>pevné velikosti.
+Data ve sloupci vstupní funkce musí být vektorem s pevnou velikostí <xref:System.Single>.
 
-Tato školitele vypíše následující sloupce:
+Výstup učitelů má následující sloupce:
 
 | Název výstupního sloupce | Typ sloupce | Popis|
 | -- | -- | -- |
@@ -67,7 +67,7 @@ Tato školitele vypíše následující sloupce:
 * Pochopíte recenze filmů jako "pozitivní", "neutrální" nebo "negativní".
 * Kategorizace hodnocení hotelu jako "umístění", "cena", "čistota" atd.
 
-Další informace naleznete v článku o [](https://en.wikipedia.org/wiki/Multiclass_classification) třídě s více třídami na Wikipedii.
+Další informace naleznete v článku o třídě s více [třídami](https://en.wikipedia.org/wiki/Multiclass_classification) na Wikipedii.
 
 >[!NOTE]
 >Jedna sada vs všechno upgraduje libovolný [postup binární klasifikace](#binary-classification) , aby fungovala u datových sad s více třídami. Další informace o [Wikipedii] (https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest).
@@ -87,16 +87,16 @@ Model klasifikace s více třídami můžete proškolit pomocí následujících
 ### <a name="multiclass-classification-inputs-and-outputs"></a>Vstupy a výstupy s více třídami klasifikace
 
 Data sloupce vstupního popisku musí být typu [Key](xref:Microsoft.ML.Data.KeyDataViewType) .
-Sloupec funkce musí být vektorem <xref:System.Single>pevné velikosti.
+Sloupec funkce musí být vektorem pevné velikosti <xref:System.Single>.
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
-| `Score` | Vektor<xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
+| `Score` | Vektor <xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
 | `PredictedLabel` | typ [klíče](xref:Microsoft.ML.Data.KeyDataViewType) | Index předpokládaného popisku. Pokud je jeho hodnota, vlastní popisek bude i-th kategorie v typu vstupního popisku s hodnotou klíče. |
 
-## <a name="regression"></a>Regrese
+## <a name="regression"></a>Nevýhody
 
 Úkol [strojového učení pod dohledem](glossary.md#supervised-machine-learning) , který se používá k předpovědi hodnoty popisku ze sady souvisejících funkcí. Popisek může být jakékoli reálné hodnoty a nepochází z konečné sady hodnot jako v rámci úloh klasifikace. Regresní algoritmy modelují závislost popisku na jeho souvisejících funkcích, aby určili, jak se popisek změní, protože hodnoty funkcí se mění. Vstup regresního algoritmu je sada příkladů s popisky známých hodnot. Výstupem regresního algoritmu je funkce, kterou můžete použít k předpovědi hodnoty popisku pro všechny nové sady vstupních funkcí. Mezi příklady scénářů regrese patří:
 
@@ -124,13 +124,13 @@ Data sloupce vstupního popisku musí být <xref:System.Single>.
 
 Školitel pro tento úkol má následující výstup:
 
-| Název výstupu | type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Nezpracované skóre, které model předpovídá |
 
 ## <a name="clustering"></a>Clustering
 
-Úkol [strojového učení](glossary.md#unsupervised-machine-learning) , který není pod dohledem, který se používá k seskupení instancí dat do clusterů, které obsahují podobné charakteristiky. Clustering lze také použít k identifikaci relací v datové sadě, které nemůžete logicky odvodit pomocí procházení nebo jednoduchého sledování. Vstupy a výstupy algoritmu clusteringu závisí na zvolené metodologii. Můžete provést distribuci, těžiště, připojení nebo přístup na základě hustoty. ML.NET aktuálně podporuje přístup založený na těžiště pomocí K-znamená clustering. Mezi příklady scénářů clusteringu patří:
+Úkol [strojového učení, který není pod dohledem](glossary.md#unsupervised-machine-learning) , který se používá k seskupení instancí dat do clusterů, které obsahují podobné charakteristiky. Clustering lze také použít k identifikaci relací v datové sadě, které nemůžete logicky odvodit pomocí procházení nebo jednoduchého sledování. Vstupy a výstupy algoritmu clusteringu závisí na zvolené metodologii. Můžete provést distribuci, těžiště, připojení nebo přístup na základě hustoty. ML.NET aktuálně podporuje přístup založený na těžiště pomocí K-znamená clustering. Mezi příklady scénářů clusteringu patří:
 
 * Porozumění segmentům hostů v hotelovém typu na základě zvyklostí a vlastností možností hotelu.
 * Identifikujte segmenty zákazníků a demografické údaje, které vám pomůžou vytvářet cílené reklamní kampaně.
@@ -148,9 +148,9 @@ Data funkcí input musí být <xref:System.Single>. Nejsou nutné žádné popis
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
-| `Score` | vektor<xref:System.Single> | Vzdálenosti daného datového bodu ke všem clusterům ' centriods |
+| `Score` | vektor <xref:System.Single> | Vzdálenosti daného datového bodu ke všem clusterům ' centriods |
 | `PredictedLabel` | typ [klíče](xref:Microsoft.ML.Data.KeyDataViewType) | Index nejbližšího clusteru předpokládaný modelem. |
 
 ## <a name="anomaly-detection"></a>Detekce anomálií
@@ -176,17 +176,17 @@ Model detekce anomálií můžete vyškolit pomocí následujícího algoritmu:
 
 ### <a name="anomaly-detection-inputs-and-outputs"></a>Vstupy a výstupy detekce anomálií
 
-Vstupní funkce musí být vektorem <xref:System.Single>pevné velikosti.
+Vstupní funkce musí být vektor <xref:System.Single>pevné velikosti.
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Nezáporné, neohraničené skóre, které bylo vypočítáno modelem detekce anomálií |
 
 ## <a name="ranking"></a>Pořadí
 
-Úkol hodnocení sestaví seřazení ze sady popisných příkladů. Tato ukázková sada se skládá ze skupin instancí, jejichž skóre se dá vyhodnotit pomocí daných kritérií. Popisky hodnocení jsou pro každou instanci {0, 1, 2, 3, 4}.  Klasifikátor je vyškolen pro řazení nových skupin instancí s neznámým skóre pro každou instanci. Seznámení s ML.NETm řazením počítačů se seznámili podle [hodnocení](https://en.wikipedia.org/wiki/Learning_to_rank) .
+Úkol hodnocení sestaví seřazení ze sady popisných příkladů. Tato ukázková sada se skládá ze skupin instancí, jejichž skóre se dá vyhodnotit pomocí daných kritérií. Popisky hodnocení jsou pro každou instanci {0, 1, 2, 3, 4}.  Klasifikátor je vyškolen pro řazení nových skupin instancí s neznámým skóre pro každou instanci. Seznámení s ML.NETm řazením [počítačů se seznámili podle hodnocení](https://en.wikipedia.org/wiki/Learning_to_rank) .
 
 ### <a name="ranking-training-algorithms"></a>Hodnocení školicích algoritmů
 
@@ -197,17 +197,17 @@ Model hodnocení můžete proškolit s následujícími algoritmy:
 
 ### <a name="ranking-input-and-outputs"></a>Řazení vstupů a výstupů
 
-Vstupní datový typ popisku musí být typ [Key](xref:Microsoft.ML.Data.KeyDataViewType) nebo <xref:System.Single>. Hodnota popisku určuje relevanci, kde vyšší hodnoty označují vyšší relevanci. Pokud je popisek typem [klíče](xref:Microsoft.ML.Data.KeyDataViewType) , pak je index klíče hodnota významnosti, kde nejmenší index je nejméně relevantní. Pokud je popisek a <xref:System.Single>, větší hodnota znamená vyšší relevance.
+Vstupní datový typ popisku musí být typ [Key](xref:Microsoft.ML.Data.KeyDataViewType) nebo <xref:System.Single>. Hodnota popisku určuje relevanci, kde vyšší hodnoty označují vyšší relevanci. Pokud je popisek typem [klíče](xref:Microsoft.ML.Data.KeyDataViewType) , pak je index klíče hodnota významnosti, kde nejmenší index je nejméně relevantní. Pokud je popisek <xref:System.Single>, větší hodnoty znamenají vyšší relevance.
 
-Data funkce musí být vektorem <xref:System.Single> pevné velikosti a sloupec vstupní řádky musí být typu [Key](xref:Microsoft.ML.Data.KeyDataViewType) .
+Data funkce musí být vektorem pevné velikosti <xref:System.Single> a sloupec vstupní skupiny řádků musí být typ [Key](xref:Microsoft.ML.Data.KeyDataViewType) .
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Neohraničené skóre, které bylo vypočítáno modelem k určení předpovědi |
 
-## <a name="recommendation"></a>Doporučení
+## <a name="recommendation"></a>Základě
 
 Úkol doporučení umožňuje vytvořit seznam doporučených produktů nebo služeb. ML.NET používá pro doporučení algoritmus pro [filtrování](https://en.wikipedia.org/wiki/Collaborative_filtering) a vytváření [matic (MF)](https://en.wikipedia.org/wiki/Matrix_factorization_%28recommender_systems%29), pokud máte historická data hodnocení produktu ve vašem katalogu. Máte například historická data o hodnocení filmu pro vaše uživatele a chcete doporučit další filmy, které se budou pravděpodobně sledovat.
 

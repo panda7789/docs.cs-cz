@@ -1,25 +1,25 @@
 ---
-title: privátní, chráněné – C# odkaz
+title: soukromý chráněný – C# odkaz
 ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: c739dd0b5a5457a66c11962ed86bcd2ffbf811ab
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: dfb2e754d81116012b9fc3f8fd4f6fe1ad0daef1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661677"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422623"
 ---
-# <a name="private-protected-c-reference"></a>Private protected (referenční dokumentace jazyka C#)
+# <a name="private-protected-c-reference"></a>Private ProtectedC# (Referenční dokumentace)
 
-`private protected` – Kombinace klíčových slov je modifikátor přístupu členu. Privátní chráněný člen je přístupný pro typy odvozené od obsahující třídy, ale pouze v rámci jeho obsahujícího sestavení. Porovnání `private protected` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](accessibility-levels.md).
+Kombinací klíčového slova `private protected` je modifikátor přístupu ke členu. Soukromý chráněný člen je přístupný z typů odvozených z obsahující třídy, ale pouze v rámci nadřazeného sestavení. Porovnání `private protected` s dalšími modifikátory přístupu najdete v tématu [úrovně usnadnění](accessibility-levels.md).
 
 > [!NOTE]
-> `private protected` Modifikátor přístupu je platný v jazyce C# verze 7.2 nebo novější.
+> Modifikátor přístupu `private protected` je platný ve C# verzi 7,2 a novější.
 
 ## <a name="example"></a>Příklad
 
-Privátní chráněného člena základní třídy je přístupný z odvozených typů v sestavení obsahující pouze v případě, statický typ proměnné je typ odvozené třídy. Představte si třeba následující segment kódu:  
+Soukromý chráněný člen základní třídy je přístupný z odvozených typů v jeho obsahujícím sestavení pouze v případě, že statický typ proměnné je odvozený typ třídy. Zvažte například následující segment kódu:  
 
 ```csharp
 // Assembly1.cs  
@@ -60,10 +60,10 @@ class DerivedClass2 : BaseClass
 ```
 
 Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`.
-První soubor obsahuje veřejnou základní třídu, `BaseClass`a typ odvozený z ní, `DerivedClass1`. `BaseClass` vlastní privátní chráněný člen `myValue`, což `DerivedClass1` pokusí o přístup k dvěma způsoby. První pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě. Nicméně pokus o jeho použití jako zděděného člena v `DerivedClass1` proběhne úspěšně.
-V souboru druhý pokus o přístup k `myValue` jako zděděný člen `DerivedClass2` dojde k chybě, protože byl přístupný pouze odvozenými typy v Assembly1.
+První soubor obsahuje veřejnou základní třídu, `BaseClass`a typ odvozený z něj, `DerivedClass1`. `BaseClass` vlastní soukromý chráněný člen, `myValue`, který `DerivedClass1` se snaží získat přístup dvěma způsoby. První pokus o přístup k `myValue` prostřednictvím instance `BaseClass` vytvoří chybu. Ale pokus o použití jako zděděného člena v `DerivedClass1` úspěšný bude.
+Ve druhém souboru se pokus o přístup k `myValue` jako zděděný člen `DerivedClass2` vytvoří chyba, protože je přístupná pouze pro odvozené typy v Assembly1.
 
-Členy struktury nemůžou být `private protected` protože struktury nelze dědit.  
+Členy struktury nelze `private protected`, protože strukturu nelze zdědit.  
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -71,13 +71,13 @@ V souboru druhý pokus o přístup k `myValue` jako zděděný člen `DerivedCla
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Zajištění zabezpečení pro klíčových slov internal virtual](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Problémy se zabezpečením pro interní virtuální klíčová slova](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

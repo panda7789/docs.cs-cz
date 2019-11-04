@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 51dcf5cd85913f0e69ea51dff5101426cc57390f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2d960a43f7934e262fa0e19abfea0209aa4e9ff0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774466"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425254"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Kurz: vytvoření doporučení pro film pomocí Matrix factorizaton s ML.NET
 
@@ -73,17 +73,17 @@ Existuje několik způsobů, jak získat přístup k problémům s doporučením
 
 2. V Průzkumník řešení klikněte pravým tlačítkem na každý ze \* souborů. csv a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-   ![kopírovat, pokud je novější ve VS](./media/movie-recommendation/copytoout.gif)
+   ![GIF uživatele, který vybírá kopii, pokud je novější v VS.](./media/movie-recommendation/copy-to-output-if-newer.gif)
 
 ## <a name="load-your-data"></a>Načtení dat
 
 Prvním krokem v procesu ML.NET je příprava a načtení modelu školení a testování dat.
 
-Data hodnocení doporučení jsou rozdělená na `Train` a `Test` datové sady. Data `Train` se používají k přizpůsobení modelu. @No__t_0ová data se používají k zajištění předpovědi s vámi vyškolený model a vyhodnocení výkonu modelu. Je běžné mít 80/20 rozdělení s `Train` a `Test` data.
+Data hodnocení doporučení jsou rozdělená na `Train` a `Test` datové sady. Data `Train` se používají k přizpůsobení modelu. `Test`ová data se používají k zajištění předpovědi s vámi vyškolený model a vyhodnocení výkonu modelu. Je běžné mít 80/20 rozdělení s `Train` a `Test` data.
 
 Níže je zobrazená ukázka dat z vašich \* souborů. CSV:
 
-![Náhled dat](./media/movie-recommendation/csv-dataset-preview.png)
+![Snímek obrazovky s náhledem datové sady CVS](./media/movie-recommendation/csv-file-dataset-preview.png)
 
 V \* soubory. csv existují čtyři sloupce:
 
@@ -171,11 +171,11 @@ Existují tři hlavní koncepty v ML.NET: [data](../resources/glossary.md#data),
 
 Školicí algoritmy Machine Learning vyžadují data v určitém formátu. `Transformers` slouží k transformaci tabulkových dat do kompatibilního formátu.
 
-![Obrázek transformátoru](./media/movie-recommendation/transformer.png)
+![Diagram toku dat transformátoru](./media/movie-recommendation/data-transformer-transformed.png)
 
-@No__t_0 vytvoříte v ML.NET vytvořením `Estimators`. `Estimators` přebírat data a vracet `Transformers`.
+`Transformers` vytvoříte v ML.NET vytvořením `Estimators`. `Estimators` přebírat data a vracet `Transformers`.
 
-![Obrázek Estimator](./media/movie-recommendation/estimator.png)
+![Diagram toku dat Estimator](./media/movie-recommendation/data-estimator-transformer.png)
 
 Příkladem `Estimator` je algoritmus školení doporučení, který budete používat pro školení modelu.
 
@@ -220,7 +220,7 @@ Například pokud uživatel 1 a uživatel 2 znamená filmy podobně, je pravděp
 | Uživatel 1 | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film |
 | Uživatel 2 | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film | Nesledováno – doporučit video |
 
-@No__t_0 Trainer má několik [možností](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options), které si můžete přečíst v části s [parametry algoritmu](#algorithm-hyperparameters) níže.
+`Matrix Factorization` Trainer má několik [možností](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options), které si můžete přečíst v části s [parametry algoritmu](#algorithm-hyperparameters) níže.
 
 Přizpůsobit model na `Train`á data a vrátit vyškolený model přidáním následujícího jako další řádek kódu v metodě `BuildAndTrainModel()`:
 
@@ -297,7 +297,7 @@ RSquared: 0.412556298844873
 
 V tomto výstupu existují 20 iterací. V každé iteraci se míra chyb zmenší a konverguje blíž a blíže k hodnotě 0.
 
-@No__t_0 (RMS nebo RMSE) slouží k měření rozdílů mezi předpovězenými hodnotami modelu a datovou datovou sadou pozorovaných hodnot. Technicky je to druhá odmocnina průměru průměrných čtverců chyb. Čím nižší je, tím lepší je model.
+`root of mean squared error` (RMS nebo RMSE) slouží k měření rozdílů mezi předpovězenými hodnotami modelu a datovou datovou sadou pozorovaných hodnot. Technicky je to druhá odmocnina průměru průměrných čtverců chyb. Čím nižší je, tím lepší je model.
 
 `R Squared` určuje, jak dobře data vyhovují modelu. Rozsah od 0 do 1. Hodnota 0 znamená, že data jsou náhodná nebo jinak nelze přizpůsobit modelu. Hodnota 1 znamená, že model přesně odpovídá datům. Požadujete, aby se skóre `R Squared` co nejblíže k 1.
 
