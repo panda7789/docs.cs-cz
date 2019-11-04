@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 547ecd9ff823f61bf3995c02959235b65a4a3979
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a6c0ac86689c5d095fc077beb39d6281f77aab24
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606141"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422945"
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
-`abstract` Modifikátor označuje, že upravená věc má chybějící nebo nekompletní implementaci. Modifikátor abstract lze použít se třídami, metodami, vlastnostmi, indexery a událostmi. `abstract` Použijte modifikátor v deklaraci třídy k označení, že třída je určena pouze pro základní třídu jiných tříd, nikoli na vlastní instanci. Členy označené jako abstraktní musí být implementovány neabstraktními třídami odvozenými z abstraktní třídy.
+Modifikátor `abstract` označuje, že upravená věc má chybějící nebo nekompletní implementaci. Modifikátor abstract lze použít se třídami, metodami, vlastnostmi, indexery a událostmi. Použijte modifikátor `abstract` v deklaraci třídy k označení toho, že třída je určena pouze pro základní třídu jiných tříd, nikoli na vlastní instanci. Členy označené jako abstraktní musí být implementovány neabstraktními třídami odvozenými z abstraktní třídy.
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu třída `Square` musí poskytovat implementaci, `GetArea` protože je odvozena z `Shape`:  
+ V tomto příkladu musí třída `Square` poskytovat implementaci `GetArea`, protože je odvozena z `Shape`:  
   
  [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
   
@@ -29,11 +29,11 @@ ms.locfileid: "69606141"
   
 - Abstraktní třída může obsahovat abstraktní metody a přistupující objekty.  
   
-- Není možné změnit abstraktní třídu s zapečetěným modifikátorem, [](./sealed.md) protože dva modifikátory mají opačné významy. Modifikátor zabraňuje dědění třídy `abstract` a modifikátor vyžaduje dědění třídy. `sealed`  
+- Není možné změnit abstraktní třídu s [zapečetěným](./sealed.md) modifikátorem, protože dva modifikátory mají opačné významy. Modifikátor `sealed` zabraňuje dědění třídy a modifikátor `abstract` vyžaduje dědění třídy.  
   
 - Neabstraktní třída odvozená z abstraktní třídy musí zahrnovat skutečné implementace všech zděděných abstraktních metod a přístupových objektů.  
   
- `abstract` Použijte modifikátor v deklaraci metody nebo vlastnosti, abyste označili, že metoda nebo vlastnost neobsahuje implementaci.  
+ Použijte modifikátor `abstract` v deklaraci metody nebo vlastnosti, abyste označili, že metoda nebo vlastnost neobsahuje implementaci.  
   
  Abstraktní metody mají následující funkce:  
   
@@ -47,13 +47,13 @@ ms.locfileid: "69606141"
     public abstract void MyMethod();  
     ```  
   
-     Implementace je poskytována přepsáním metody [](./override.md), která je členem neabstraktní třídy.  
+     Implementace je poskytována [přepsáním](./override.md)metody, která je členem neabstraktní třídy.  
   
-- Použití statických nebo [virtuálních](./virtual.md) modifikátorů [](./static.md) v deklaraci abstraktní metody je chyba.  
+- Použití [statických](./static.md) nebo [virtuálních](./virtual.md) modifikátorů v deklaraci abstraktní metody je chyba.  
   
  Abstraktní vlastnosti se chovají jako abstraktní metody, s výjimkou rozdílů v deklaraci a syntaxi vyvolání.  
   
-- Použití `abstract` modifikátoru na statické vlastnosti je chybné.  
+- Použití modifikátoru `abstract` pro statickou vlastnost je chybné.  
   
 - Abstraktní zděděná vlastnost může být přepsána v odvozené třídě zahrnutím deklarace vlastnosti, která používá modifikátor [přepsání](./override.md) .  
   
@@ -66,7 +66,7 @@ ms.locfileid: "69606141"
 [!code-csharp[csrefKeywordsModifiers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#2)]
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu je třída `DerivedClass` odvozena z abstraktní třídy. `BaseClass` Abstraktní třída obsahuje abstraktní metodu, `AbstractMethod`a dvě abstraktní `X` vlastnosti a `Y`.  
+ V tomto příkladu je třída `DerivedClass` odvozena od `BaseClass`abstraktní třídy. Abstraktní třída obsahuje abstraktní metodu, `AbstractMethod`a dvě abstraktní vlastnosti, `X` a `Y`.  
   
 [!code-csharp[csrefKeywordsModifiers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#3)]
   
@@ -85,7 +85,7 @@ Zobrazí se chyba oznamující, že kompilátor nemůže vytvořit instanci abst
 
 - [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Modifikátory](./modifiers.md)
+- [Modifikátory](index.md)
 - [virtual](./virtual.md)
 - [override](./override.md)
 - [Klíčová slova jazyka C#](./index.md)

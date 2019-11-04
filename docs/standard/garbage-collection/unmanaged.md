@@ -12,12 +12,12 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-ms.openlocfilehash: 04bed819b472abe23ae6a9e89de149e715272505
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e05cfb949ee3f206f212ca7015f3ff4c22cd2a12
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141361"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423040"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Vymazání nespravovaných prostředků
 
@@ -25,7 +25,7 @@ Pro většinu objektů, které vaše aplikace vytvoří, můžete spoléhat na. 
 
 Pokud vaše typy používají nespravované prostředky, měli byste provést následující úkony:
 
-- Implementujte [vzor Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md). K tomu je potřeba, abyste zajistili <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci, která umožňuje deterministické vydání nespravovaných prostředků. Příjemce vašeho typu volá <xref:System.IDisposable.Dispose%2A>, když objekt (a prostředky, které používá) už není potřeba. Metoda <xref:System.IDisposable.Dispose%2A> hned uvolní nespravované prostředky.
+- Implementujte [vzor Dispose](implementing-dispose.md). K tomu je potřeba, abyste zajistili <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci, která umožňuje deterministické vydání nespravovaných prostředků. Příjemce vašeho typu volá <xref:System.IDisposable.Dispose%2A>, když objekt (a prostředky, které používá) už není potřeba. Metoda <xref:System.IDisposable.Dispose%2A> hned uvolní nespravované prostředky.
 
 - Poskytněte nespravované prostředky, které mají být vydány v případě, že příjemce vašeho typu zapomene volat <xref:System.IDisposable.Dispose%2A>. Toto lze provést dvěma způsoby:
 
@@ -39,7 +39,7 @@ Příjemci vašeho typu pak mohou volat vaši <xref:System.IDisposable.Dispose%2
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Implementace metody Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) Popisuje, jak implementovat [vzor Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md) pro uvolnění nespravovaných prostředků.
+[Implementace metody Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) Popisuje, jak implementovat [vzor Dispose](implementing-dispose.md) pro uvolnění nespravovaných prostředků.
 
 [Použití objektů, které implementují IDisposable](../../../docs/standard/garbage-collection/using-objects.md) Popisuje způsob, jakým uživatelé typu zajišťují, aby byla volána jeho <xref:System.IDisposable.Dispose%2A> implementace. K tomu doporučujeme použít C# příkaz `using` nebo příkaz Visual Basic `Using`.
 

@@ -9,40 +9,40 @@ helpviewer_keywords:
 - filtering data in views [WPF]
 - data binding [WPF], filtering data in views
 ms.assetid: c76e8606-4cc4-45a8-9110-e2ec66dc6afd
-ms.openlocfilehash: a31c07e6be26f67cc29813a14745ecf4a83ab98a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea49897ca5e9cb6b639cf7d98ff05bd287c51761
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61931506"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453480"
 ---
 # <a name="how-to-filter-data-in-a-view"></a>Postupy: Filtrování dat v zobrazení
 Tento příklad ukazuje, jak filtrovat data v zobrazení.  
   
 ## <a name="example"></a>Příklad  
- Chcete-li vytvořit filtr, definujte metodu, která poskytuje logiku filtrování. Metoda se používá jako zpětné volání a přijímá parametr typu `object`. Následující metoda vrátí všechny `Order` objekty s `filled` nastavenou na hodnotu "Ne" odfiltrováním zbývající objekty.  
+ Chcete-li vytvořit filtr, definujte metodu, která poskytuje logiku filtrování. Metoda se používá jako zpětné volání a přijímá parametr typu `object`. Následující metoda vrátí všechny objekty `Order` s vlastností `filled` nastavenou na hodnotu Ne, vyfiltruje zbytek objektů.  
   
  [!code-csharp[SortFilter#2](~/samples/snippets/csharp/VS_Snippets_Wpf/SortFilter/CSharp/Page1.xaml.cs#2)]
  [!code-vb[SortFilter#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SortFilter/VisualBasic/Page1.xaml.vb#2)]  
   
- Pak můžete použít filtr, jak je znázorněno v následujícím příkladu. V tomto příkladu `myCollectionView` je <xref:System.Windows.Data.ListCollectionView> objektu.  
+ Pak můžete použít filtr, jak je znázorněno v následujícím příkladu. V tomto příkladu je `myCollectionView` objektem <xref:System.Windows.Data.ListCollectionView>.  
   
  [!code-csharp[SortFilter#Filter](~/samples/snippets/csharp/VS_Snippets_Wpf/SortFilter/CSharp/Page1.xaml.cs#filter)]
  [!code-vb[SortFilter#Filter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SortFilter/VisualBasic/Page1.xaml.vb#filter)]  
   
- Pokud chcete vrátit zpět, filtrování, můžete nastavit <xref:System.Windows.Data.CollectionView.Filter%2A> vlastnost `null`:  
+ Chcete-li zrušit filtrování, můžete nastavit vlastnost <xref:System.Windows.Data.CollectionView.Filter%2A> na hodnotu `null`:  
   
  [!code-csharp[SortFilter#Unfilter](~/samples/snippets/csharp/VS_Snippets_Wpf/SortFilter/CSharp/Page1.xaml.cs#unfilter)]
  [!code-vb[SortFilter#Unfilter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SortFilter/VisualBasic/Page1.xaml.vb#unfilter)]  
   
- Informace o tom, jak vytvořit nebo získat zobrazení najdete v tématu [získat výchozí zobrazení datové kolekce](how-to-get-the-default-view-of-a-data-collection.md). Kompletní příklad naleznete v tématu [řazení a filtrování položek v zobrazení ukázce](https://go.microsoft.com/fwlink/?LinkID=160040).  
+ Informace o tom, jak vytvořit nebo získat zobrazení, najdete v tématu [získání výchozího zobrazení sběru dat](how-to-get-the-default-view-of-a-data-collection.md). Úplný příklad najdete v tématu [řazení a filtrování položek v ukázce zobrazení](https://go.microsoft.com/fwlink/?LinkID=160040).  
   
- Pokud váš objekt zobrazení pochází z <xref:System.Windows.Data.CollectionViewSource> objektu, použití filtrování logiky tak, že nastavíte obslužná rutina události <xref:System.Windows.Data.CollectionViewSource.Filter> událostí. V následujícím příkladu `listingDataView` je instance <xref:System.Windows.Data.CollectionViewSource>.  
+ Pokud objekt zobrazení pochází z <xref:System.Windows.Data.CollectionViewSource> objektu, použijete logiku filtrování nastavením obslužné rutiny události pro událost <xref:System.Windows.Data.CollectionViewSource.Filter>. V následujícím příkladu je `listingDataView` instance <xref:System.Windows.Data.CollectionViewSource>.  
   
  [!code-csharp[DataBindingLab#10](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#10)]
  [!code-vb[DataBindingLab#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#10)]  
   
- Následující příklad zobrazuje provádění v příkladu `ShowOnlyBargainsFilter` filtr obslužné rutiny události. Tato obslužná rutina události používá <xref:System.Windows.Data.FilterEventArgs.Accepted%2A> vlastnost odfiltrovat `AuctionItem` objekty, které mají `CurrentPrice` 25 USD nebo vyšší.  
+ Následující příklad ukazuje implementaci obslužné rutiny události Filter `ShowOnlyBargainsFilter`. Tato obslužná rutina události používá vlastnost <xref:System.Windows.Data.FilterEventArgs.Accepted%2A> k vyfiltrování `AuctionItem` objektů, které mají `CurrentPrice` $25 nebo vyšší.  
   
  [!code-csharp[DataBindingLab#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
  [!code-vb[DataBindingLab#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
@@ -51,6 +51,6 @@ Tento příklad ukazuje, jak filtrovat data v zobrazení.
 
 - <xref:System.Windows.Data.CollectionView.CanFilter%2A>
 - <xref:System.Windows.Data.BindingListCollectionView.CustomFilter%2A>
-- [Přehled datových vazeb](data-binding-overview.md)
+- [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
 - [Řazení dat v zobrazení](how-to-sort-data-in-a-view.md)
 - [Témata s postupy](data-binding-how-to-topics.md)

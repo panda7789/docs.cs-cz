@@ -6,12 +6,12 @@ helpviewer_keywords:
 - JIT compilation, 64-bit
 - RyuJIT compiler
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
-ms.openlocfilehash: cad61bd86080fc21f0a47ef92b1908d6e7588a23
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dd8c2c6b3cfa919970f68f2faae2044568f6c9ac
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126243"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457914"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Zmírnění: nový 64 kompilátor JIT
 Počínaje .NET Framework 4,6 obsahuje modul runtime nový 64 kompilátor JIT pro kompilaci za běhu. Tato změna nemá vliv na kompilaci s 32 kompilátorem JIT.  
@@ -69,5 +69,5 @@ Počínaje .NET Framework 4,6 obsahuje modul runtime nový 64 kompilátor JIT pr
   
 ## <a name="see-also"></a>Viz také:
 
-- [Změny v modulu runtime](runtime-changes-in-the-net-framework-4-6.md)
+- [Kompatibilita aplikací](application-compatibility.md)
 - [\<element > useLegacyJit](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

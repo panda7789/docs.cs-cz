@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Deklarace, vytvoření instance a použití průvodce C# programováním delegátů'
+title: 'Postupy: deklarování, vytváření instancí a používání průvodce C# programováním delegátů'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: 565ae2a6c42de57570f564edc9d0bde5cab8efa8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: bd3d80023f6cb382f057e976dba01daf5e28db50
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590625"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423325"
 ---
-# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postupy: Deklarace, vytvoření instance a použití delegáta (C# Průvodce programováním)
+# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postupy: Deklarování, vytváření instancí a použití delegáta (Průvodce programováním v C#)
 V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideDelegates#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#13)]  
@@ -23,7 +23,7 @@ V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno 
   
  [!code-csharp[csProgGuideDelegates#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#32)]  
   
- V C# 2,0 a novějších je také možné použít anonymní metodu k deklaraci a inicializaci delegáta, [](../../language-reference/keywords/delegate.md)jak je znázorněno v následujícím příkladu.  
+ V C# 2,0 a novějších je také možné použít anonymní metodu k deklaraci a inicializaci [delegáta](../../language-reference/builtin-types/reference-types.md), jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideDelegates#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#15)]  
   
@@ -33,7 +33,7 @@ V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno 
   
  Další informace naleznete v tématu [lambda výrazy](../statements-expressions-operators/lambda-expressions.md).  
   
- Následující příklad znázorňuje deklarování, vytváření instancí a použití delegáta. `BookDB` Třída zapouzdřuje databázi Bookstore, která udržuje databázi knih. Zpřístupňuje metodu, `ProcessPaperbackBooks`která najde všechny tištěné verze knihy v databázi a zavolá delegáta pro každý z nich. Typ, který se používá, se `ProcessBookDelegate`nazývá. `delegate` `Test` Třída používá tuto třídu k tisku názvů a průměrné ceny tištěné verze knih.  
+ Následující příklad znázorňuje deklarování, vytváření instancí a použití delegáta. Třída `BookDB` zapouzdřuje databázi Bookstore, která udržuje databázi knih. Zpřístupňuje metodu, `ProcessPaperbackBooks`, která najde všechny knihy tištěné verze v databázi a zavolá delegáta pro každý z nich. Typ `delegate`, který se používá, má název `ProcessBookDelegate`. Třída `Test` používá tuto třídu k tisku názvů a průměrné ceny tištěné verzech knih.  
   
  Použití delegátů podporuje dobré oddělení funkcí mezi databází Bookstore a klientským kódem. Kód klienta nemá žádné znalosti o tom, jak jsou knihy uložené, nebo jak kód Bookstore najde tištěné verze knihy. Kód Bookstore nemá žádné znalosti o tom, jaké zpracování se provádí na tištěné verzech knihách, jakmile je najde.  
   
@@ -52,15 +52,15 @@ V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno 
   
 - Vytvoření instance delegáta.  
   
-     Po deklarování typu delegáta musí být objekt delegáta vytvořen a přidružen k určité metodě. V předchozím příkladu je třeba předat `PrintTitle` metodu `ProcessPaperbackBooks` metodě jako v následujícím příkladu:  
+     Po deklarování typu delegáta musí být objekt delegáta vytvořen a přidružen k určité metodě. V předchozím příkladu předáte metodu `PrintTitle` metodě `ProcessPaperbackBooks`, jako v následujícím příkladu:  
   
      [!code-csharp[csProgGuideDelegates#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#17)]  
   
-     Tím se vytvoří nový objekt delegáta přidružený ke [statické](../../language-reference/keywords/static.md) metodě `Test.PrintTitle`. Podobně není statická metoda `AddBookToTotal` objektu `totaller` předána jako v následujícím příkladu:  
+     Tím se vytvoří nový objekt delegáta přidružený ke [statické](../../language-reference/keywords/static.md) metodě `Test.PrintTitle`. Podobně nestatická metoda `AddBookToTotal` na `totaller` objektu je předána jako v následujícím příkladu:  
   
      [!code-csharp[csProgGuideDelegates#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#18)]  
   
-     V obou případech je `ProcessPaperbackBooks` metodě předán nový objekt delegát.  
+     V obou případech je do metody `ProcessPaperbackBooks` předán nový objekt delegát.  
   
      Po vytvoření delegáta metoda je přidružena bez jakýchkoli změn; objekty delegáta jsou neměnné.  
   
@@ -70,10 +70,10 @@ V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno 
   
      [!code-csharp[csProgGuideDelegates#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#19)]  
   
-     Delegát může být buď volán synchronně, jako v tomto příkladu, nebo asynchronně pomocí `BeginInvoke` metod a. `EndInvoke`  
+     Delegát může být buď volán synchronně, jako v tomto příkladu, nebo asynchronně pomocí `BeginInvoke` a `EndInvoke`ch metod.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Události](../events/index.md)
-- [Delegáti](./index.md)
+- [Delegáty](./index.md)

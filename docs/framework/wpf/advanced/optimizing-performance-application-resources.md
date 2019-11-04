@@ -9,22 +9,22 @@ helpviewer_keywords:
 - brushes [WPF], performance
 - sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-ms.openlocfilehash: 759d02afe1934d2ace4ed226d5d911db2d676d98
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 59b124c28ade0a6c5119b651ff935d460bf4516d
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005038"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458569"
 ---
 # <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
-@no__t – 0 umožňuje sdílení prostředků aplikace, aby bylo možné podporovat konzistentní vzhled nebo chování napříč podobnými elementy typu. Toto téma nabízí několik doporučení v této oblasti, které vám pomůžou zlepšit výkon aplikací.  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje sdílení prostředků aplikace, aby bylo možné podporovat konzistentní vzhled nebo chování napříč podobnými elementy typu. Toto téma nabízí několik doporučení v této oblasti, které vám pomůžou zlepšit výkon aplikací.  
   
- Další informace o prostředcích najdete v tématu věnovaném [prostředkům XAML](xaml-resources.md).  
+ Další informace o prostředcích najdete v tématu věnovaném [prostředkům XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
 ## <a name="sharing-resources"></a>Sdílení prostředků  
  Pokud vaše aplikace používá vlastní ovládací prvky a definuje prostředky v <xref:System.Windows.ResourceDictionary> (nebo uzlu prostředků XAML), doporučuje se, abyste buď definovali prostředky na úrovni objektu <xref:System.Windows.Application> nebo <xref:System.Windows.Window>, nebo je definovali ve výchozím motivu pro vlastní ovládací prvky. Definování prostředků ve vlastním ovládacím prvku <xref:System.Windows.ResourceDictionary> nepředstavuje dopad na výkon pro každou instanci daného ovládacího prvku. Pokud máte například operace štětce náročné na výkon definované jako součást definice prostředků vlastního ovládacího prvku a mnoha instancí vlastního ovládacího prvku, bude pracovní sada aplikace významně zvýšena.  
   
- K ilustraci tohoto bodu Vezměte v úvahu následující skutečnosti. Řekněme, že vyvíjíte karetní hru pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pro většinu karetních her budete potřebovat 52 karet s 52 různými ploškami. Rozhodnete se implementovat vlastní ovládací prvek karty a v prostředcích vlastního ovládacího prvku karty definujete 52 štětců (které představují plošku na kartě). Ve vaší hlavní aplikaci jste zpočátku vytvořili 52 instancí tohoto vlastního ovládacího prvku karty. Každá instance vlastního ovládacího prvku karta generuje 52 instancí objektů @no__t 0, což vám poskytne celkem 52 * 52 objektů <xref:System.Windows.Media.Brush> ve vaší aplikaci. Přesunutím štětců mimo prostředky vlastního ovládacího prvku karty na úroveň objektu <xref:System.Windows.Application> nebo <xref:System.Windows.Window> nebo jejich definováním ve výchozím motivu vlastního ovládacího prvku zmenšíte pracovní sadu aplikace, protože nyní sdílíte 52 štětce z 52 instance ovládacího prvku karta  
+ K ilustraci tohoto bodu Vezměte v úvahu následující skutečnosti. Řekněme, že vyvíjíte karetní hru pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pro většinu karetních her budete potřebovat 52 karet s 52 různými ploškami. Rozhodnete se implementovat vlastní ovládací prvek karty a v prostředcích vlastního ovládacího prvku karty definujete 52 štětců (které představují plošku na kartě). Ve vaší hlavní aplikaci jste zpočátku vytvořili 52 instancí tohoto vlastního ovládacího prvku karty. Každá instance vlastního ovládacího prvku karta generuje 52 instancí objektů <xref:System.Windows.Media.Brush>, což vám poskytne celkem 52 * 52 <xref:System.Windows.Media.Brush> objektů v aplikaci. Přesunutím štětců mimo prostředky vlastního ovládacího prvku karty na úroveň objektu <xref:System.Windows.Application> nebo <xref:System.Windows.Window> nebo jejich definováním ve výchozím motivu vlastního ovládacího prvku zmenšíte pracovní sadu aplikace, protože nyní sdílíte 52 štětce z 52 instance ovládacího prvku karta  
   
 ## <a name="sharing-a-brush-without-copying"></a>Sdílení štětce bez kopírování  
  Pokud máte více elementů, které používají stejný objekt <xref:System.Windows.Media.Brush>, definujte štětce jako prostředek a odkazujte na něj namísto definování štětce vloženého do XAML. Tato metoda vytvoří jednu instanci a znovu ji použije, zatímco při definování štětců v jazyce XAML se vytvoří nová instance pro každý prvek.  

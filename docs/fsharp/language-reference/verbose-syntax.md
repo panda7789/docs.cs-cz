@@ -2,20 +2,20 @@
 title: Podrobná syntaxe
 description: Přečtěte si rozdíl mezi podrobnými a nezjednodušenou F# syntaxí v programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: d2459da60bba5d88bd23615c8bf09ba64f7c22c4
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 575585b201acc1366980cfc5cf523c4117259084
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214033"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421182"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
-K dispozici jsou dvě formy syntaxe pro mnoho konstrukcí v F# jazyce: *verbose syntaxe* a *prostá syntaxe*. Podrobná syntaxe není tak, jak se běžně používá, ale má výhodu, že je méně citlivá na odsazení. Zjednodušená syntaxe je kratší a používá odsazení k signalizaci začátku a konce konstrukcí, spíše než další klíčová slova jako `begin`, `end`, `in`a tak dále. Výchozí syntaxí je zjednodušená syntaxe. Toto téma popisuje syntaxi pro F# konstrukce, pokud není povolena zjednodušená syntaxe. Podrobná syntaxe je vždy povolena, takže i v případě, že povolíte zjednodušenou syntaxi, můžete pro některé konstrukty stále používat syntaxi verbose. Pomocí `#light "off"` direktivy můžete zakázat zjednodušenou syntaxi.
+K dispozici jsou dvě formy syntaxe pro mnoho konstrukcí v F# jazyce: *verbose syntaxe* a *prostá syntaxe*. Podrobná syntaxe není tak, jak se běžně používá, ale má výhodu, že je méně citlivá na odsazení. Zjednodušená syntaxe je kratší a používá odsazení k signalizaci začátku a konce konstrukcí, spíše než další klíčová slova, jako je `begin`, `end`, `in`a tak dále. Výchozí syntaxí je zjednodušená syntaxe. Toto téma popisuje syntaxi pro F# konstrukce, pokud není povolena zjednodušená syntaxe. Podrobná syntaxe je vždy povolena, takže i v případě, že povolíte zjednodušenou syntaxi, můžete pro některé konstrukty stále používat syntaxi verbose. Pomocí direktivy `#light "off"` můžete zakázat zjednodušenou syntaxi.
 
 ## <a name="table-of-constructs"></a>Tabulka konstrukcí
 
-Následující tabulka uvádí zjednodušenou a podrobnou syntaxi pro F# jazykové konstrukce v kontextech, kde existuje rozdíl mezi dvěma formuláři. V této tabulce jsou uvedené lomené&lt;závorky (&gt;) ohraničující uživatelsky zadané prvky syntaxe. Podrobnější informace o syntaxi používané v rámci těchto konstrukcí naleznete v dokumentaci k jednotlivým jazykovým konstrukcím.
+Následující tabulka uvádí zjednodušenou a podrobnou syntaxi pro F# jazykové konstrukce v kontextech, kde existuje rozdíl mezi dvěma formuláři. V této tabulce jsou lomené závorky (&lt;&gt;) ohraničující uživatelsky zadané prvky syntaxe. Podrobnější informace o syntaxi používané v rámci těchto konstrukcí naleznete v dokumentaci k jednotlivým jazykovým konstrukcím.
 
 <table>
 <tr>
@@ -164,7 +164,7 @@ in
 
 </td>
 </tr>
-<tr><td>record
+<tr><td>Zapisovací
 </td><td>
 
 ```fsharp
@@ -354,4 +354,4 @@ module <module-name> =
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Direktivy kompilátoru](compiler-directives.md)
-- [Pravidla formátování kódu](code-formatting-guidelines.md)
+- [Pravidla formátování kódu](../style-guide/formatting.md)

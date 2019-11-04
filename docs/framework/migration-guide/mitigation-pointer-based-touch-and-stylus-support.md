@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-ms.openlocfilehash: 41a587b343e4774a27e9ddc39080de6939839d93
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6b3e8068be2f5ed82c483b760fe100ea0a751588
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126205"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457858"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění rizika: dotykové ovládání pomocí ukazatele a Podpora stylusu
 
@@ -54,4 +54,4 @@ Odebráním této položky nebo nastavením její hodnoty na `false` dojde k vyp
 
 ## <a name="see-also"></a>Viz také:
 
-- [Změna cílení změn v .NET Framework 4,7](retargeting-changes-in-the-net-framework-4-7.md)
+- [Kompatibilita aplikací](application-compatibility.md)

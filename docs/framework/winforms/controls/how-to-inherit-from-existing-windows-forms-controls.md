@@ -8,19 +8,19 @@ helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - custom controls [Windows Forms], inheritance
 ms.assetid: 1e1fc8ea-c615-4cf0-a356-16d6df7444ab
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: fcf95e08296f5a8ec5a386ac614482c034e72c8b
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 063f5bb87b6348ee83573cf1506c9fabdaf651ee
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373240"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460566"
 ---
 # <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění ze stávajících ovládacích prvků Windows Forms
 
-Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit ovládací prvek odvozený z existujícího ovládacího prvku prostřednictvím dědičnosti. Při dědění z existujícího ovládacího prvku zdědíte všechny funkce a vizuální vlastnosti daného ovládacího prvku. Například pokud jste vytvořili ovládací prvek, který zdědil z <xref:System.Windows.Forms.Button>, váš nový ovládací prvek by vypadal a fungoval přesně jako standardní <xref:System.Windows.Forms.Button> ovládací prvek. Můžete následně roztáhnout nebo změnit funkce nového ovládacího prvku prostřednictvím implementace vlastních metod a vlastností. V některých ovládacích prvcích můžete také změnit vizuální vzhled zděděného ovládacího prvku přepsáním jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metody.
+Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit ovládací prvek odvozený z existujícího ovládacího prvku prostřednictvím dědičnosti. Při dědění z existujícího ovládacího prvku zdědíte všechny funkce a vizuální vlastnosti daného ovládacího prvku. Například pokud jste vytvořili ovládací prvek, který zdědil z <xref:System.Windows.Forms.Button>, bude nový ovládací prvek vypadat a fungovat přesně jako standardní ovládací prvek <xref:System.Windows.Forms.Button>. Můžete následně roztáhnout nebo změnit funkce nového ovládacího prvku prostřednictvím implementace vlastních metod a vlastností. V některých ovládacích prvcích můžete také změnit vizuální vzhled zděděného ovládacího prvku přepsáním jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metody.
 
 ## <a name="to-create-an-inherited-control"></a>Vytvoření zděděného ovládacího prvku
 
@@ -28,7 +28,7 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
 
 1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    Zobrazí se dialogové okno **Přidat novou položku**.
+    Zobrazí se dialogové okno **Přidat novou položku** .
 
 1. V dialogovém okně **Přidat novou položku** dvakrát klikněte na možnost **vlastní ovládací prvek**.
 
@@ -39,7 +39,7 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
     - Visual Basic, v horní části **Průzkumník řešení**klikněte na možnost **Zobrazit všechny soubory**. Rozbalte CustomControl1. vb a potom v editoru kódu otevřete CustomControl1. Designer. vb.
     - C#Otevřete CustomControl1.cs v editoru kódu.
 
-1. Vyhledejte deklaraci třídy, ze <xref:System.Windows.Forms.Control>které dědí.
+1. Vyhledejte deklaraci třídy, která dědí z <xref:System.Windows.Forms.Control>.
 
 1. Změňte základní třídu na ovládací prvek, ze kterého chcete dědit.
 
@@ -58,10 +58,10 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
 
 1. Implementujte všechny vlastní metody nebo vlastnosti, které bude váš ovládací prvek obsahovat.
 
-1. Chcete-li upravit grafický vzhled ovládacího prvku, přepište <xref:System.Windows.Forms.Control.OnPaint%2A> metodu.
+1. Chcete-li upravit grafický vzhled ovládacího prvku, přepište metodu <xref:System.Windows.Forms.Control.OnPaint%2A>.
 
     > [!NOTE]
-    > Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> nebude umožňovat úpravu vzhledu všech ovládacích prvků. Tyto ovládací prvky, které mají všechny kresby provedené systémem Windows (například <xref:System.Windows.Forms.TextBox>), nikdy nevolají svou <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, a proto nikdy nepoužijí vlastní kód. Chcete-li zjistit, zda <xref:System.Windows.Forms.Control.OnPaint%2A> je metoda k dispozici, přečtěte si dokumentaci k příslušnému ovládacímu prvku, který chcete upravit. Seznam všech ovládacích prvků Windows Form naleznete v tématu [ovládací prvky pro použití v model Windows Forms](controls-to-use-on-windows-forms.md). Pokud ovládací prvek není <xref:System.Windows.Forms.Control.OnPaint%2A> uveden jako metoda člena, nelze změnit jeho vzhled přepsáním této metody. Další informace o vlastním Malování naleznete v tématu [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md).
+    > Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> neumožní měnit vzhled všech ovládacích prvků. Tyto ovládací prvky, které mají všechny kresby provedené systémem Windows (například <xref:System.Windows.Forms.TextBox>), nikdy nevolají svou <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, a proto nikdy nepoužijí vlastní kód. Chcete-li zjistit, zda je k dispozici metoda <xref:System.Windows.Forms.Control.OnPaint%2A>, přečtěte si dokumentaci k příslušnému ovládacímu prvku, který chcete upravit. Seznam všech ovládacích prvků Windows Form naleznete v tématu [ovládací prvky pro použití v model Windows Forms](controls-to-use-on-windows-forms.md). Pokud ovládací prvek nemá <xref:System.Windows.Forms.Control.OnPaint%2A> uveden jako metoda člena, nelze změnit jeho vzhled přepsáním této metody. Další informace o vlastním Malování naleznete v tématu [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md).
 
     ```vb
     Protected Overrides Sub OnPaint(ByVal e As _
@@ -88,8 +88,8 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
 ## <a name="see-also"></a>Viz také:
 
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Zdědit z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)
-- [Postupy: Zdědit z třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
-- [Návod: Dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Návod: dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

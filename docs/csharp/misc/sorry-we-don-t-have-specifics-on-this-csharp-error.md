@@ -677,12 +677,12 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: 68ea00c6f5f97e61adaeb53aed8464cf874814e7
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: bc19224f980091e6046494fd4d708af2b03041da
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196225"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419704"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-c-error"></a>Omlouváme se, ale k téhle chybě C# nemáme podrobnosti.
 
@@ -695,7 +695,7 @@ Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Může
 Poskytuje web QA pro otázky týkající se vizuálu C#a problémů s nimi.  
 
  Viz také:  
- [Další zdroje informací pro C# vizuální programátory](../getting-started/additional-resources.md)  
+ [Další zdroje informací pro C# vizuální programátory](../getting-started/index.md)  
   
 ## <a name="see-also"></a>Viz také:
 

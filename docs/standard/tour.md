@@ -1,19 +1,19 @@
 ---
-title: Prohlídka .NET
+title: Prohlídka technologie .NET
 description: Průvodce se všemi výraznými funkcemi .NET.
 author: cartermp
 ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: a83253e37d3afde9ed8266ec1195c9726f6462cc
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 8a2904d02b34058a87a77bbedbed3ccba4c80c58
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291589"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421574"
 ---
-# <a name="tour-of-net"></a>Prohlídka .NET
+# <a name="tour-of-net"></a>Prohlídka technologie .NET
 
 .NET je vývojová platforma pro obecné účely. Má několik klíčových funkcí, jako je podpora pro více programovacích jazyků, asynchronní a souběžné programovací modely a nativní interoperabilitu, která umožňuje široké spektrum scénářů napříč různými platformami.
 
@@ -37,7 +37,7 @@ Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic (
 
 ## <a name="automatic-memory-management"></a>Automatická správa paměti
 
-Rozhraní .NET používá [uvolňování paměti (GC)](garbagecollection/index.md) k zajištění automatické správy paměti pro programy. GC funguje při opožděném přístupu ke správě paměti a předchází propustnosti aplikace okamžitému shromažďování paměti. Další informace o uvolňování paměti .NET najdete v tématu [základní informace o uvolňování paměti (GC)](garbagecollection/fundamentals.md).
+Rozhraní .NET používá [uvolňování paměti (GC)](garbage-collection/index.md) k zajištění automatické správy paměti pro programy. GC funguje při opožděném přístupu ke správě paměti a předchází propustnosti aplikace okamžitému shromažďování paměti. Další informace o uvolňování paměti .NET najdete v tématu [základní informace o uvolňování paměti (GC)](garbage-collection/fundamentals.md).
 
 Paměť přidělují následující dva řádky:
 
@@ -55,7 +55,7 @@ V následujícím příkladu modul runtime vyvolá výjimku `InvalidIndexExcepti
 
 Některé objekty odkazují na *nespravované prostředky*. Nespravované prostředky jsou prostředky, které nejsou automaticky spravovány modulem runtime .NET. Například popisovač souboru je nespravovaný prostředek. Objekt <xref:System.IO.FileStream> je spravovaný objekt, ale odkazuje na popisovač souboru, který je nespravovaný. Až budete hotovi s používáním <xref:System.IO.FileStream>, musíte vydávat popisovač souboru.
 
-V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte metodu @no__t 0 objektu, která zodpovídá za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz `using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
+V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte <xref:System.IDisposable.Dispose> metodu objektu, která je zodpovědná za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz `using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
@@ -71,7 +71,7 @@ Další podrobnosti najdete v následujících tématech:
 
 Objekt je instance konkrétního typu. Jediné operace, které jsou povoleny pro daný objekt, jsou typu. Typ `Dog` může mít metody `Jump` a `WagTail`, ale ne metodu `SumTotal`. Program volá pouze metody patřící k danému typu. Všechna ostatní volání mají za následek chybu při kompilaci nebo výjimku za běhu (v případě použití dynamických funkcí nebo `object`).
 
-Jazyky .NET jsou objektově orientované s hierarchiemi základních a odvozených tříd. Modul runtime .NET povoluje pouze přetypování a volání objektů, které odpovídají hierarchii objektů. Pamatujte, že každý typ definovaný v jakémkoli jazyce .NET je odvozen ze základního typu @no__t 0.
+Jazyky .NET jsou objektově orientované s hierarchiemi základních a odvozených tříd. Modul runtime .NET povoluje pouze přetypování a volání objektů, které odpovídají hierarchii objektů. Pamatujte, že každý typ definovaný v jakémkoli jazyce .NET je odvozen ze základního typu <xref:System.Object>.
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L19-L23)]
 
@@ -85,7 +85,7 @@ C#, VB a F# podpora *odvození místního typu*. Odvození typu znamená, že ko
 
 F#má ještě další možnosti odvození typu, než odvození typu místní metody, které najdete C# v a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
 
-## <a name="delegates-and-lambdas"></a>Delegáti a výrazy lambda
+## <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
 Delegát je reprezentován signaturou metody. Jakékoli metody s tímto podpisem mohou být přiřazeny delegátovi a provedeny při vyvolání delegáta.
 
@@ -99,7 +99,7 @@ Obecné typy umožňují programátorům zavést *parametr typu* při navrhován
 
 Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem pro typ, jako je například typ `List`, který má být obecný, by musel pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými drobnými chybami za běhu. Nejustrm z nich je, když datová struktura obsahuje, například celá čísla i řetězce a `InvalidCastException` je vyvolána při práci se členy seznamu.
 
-Následující příklad ukazuje základní program spuštěný s použitím instance <xref:System.Collections.Generic.List%601> typů:
+Následující příklad ukazuje základní program spuštěný pomocí instance <xref:System.Collections.Generic.List%601>ch typů:
 
 [!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
 
@@ -111,7 +111,7 @@ Asynchronní programování je první třídou konceptu v rámci .NET s asynchro
 
 Chcete-li získat další informace o asynchronním programování v rozhraní .NET, začněte s asynchronním tématem s [přehledem](async.md) .
 
-## <a name="language-integrated-query-linq"></a>Jazykově integrovaný dotaz (LINQ)
+## <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
 LINQ je výkonná sada funkcí pro C# a VB, která umožňuje psaní jednoduchého deklarativního kódu pro práci na datech. Data mohou být v mnoha formách (například objekty v paměti, databáze SQL nebo dokumentu XML), ale kód jazyka LINQ, který zapisujete, se obvykle neliší od zdroje dat.
 
@@ -127,7 +127,7 @@ Většina podpory interoperability (a tudíž Xamarin) pro jazyk Java a cíl-C j
 
 Další informace o nativní interoperabilitě najdete v článku věnovaném [nativní interoperabilitě](native-interop/index.md) .
 
-## <a name="unsafe-code"></a>Nezabezpečený kód
+## <a name="unsafe-code"></a>Nebezpečný kód
 
 V závislosti na jazykové podpoře vám modul CLR umožní přístup k nativní paměti a provádění aritmetického ukazatele prostřednictvím kódu `unsafe`. Tyto operace jsou potřeba pro určité algoritmy a interoperabilitu systému. I když je efektivní použití nebezpečného kódu doporučeno, pokud není nutné pro interoperabilitu se systémovými rozhraními API nebo implementaci nejúčinnějšího algoritmu. Nezabezpečený kód nesmí provádět stejný způsob v různých prostředích a také ztratí výhody uvolňování paměti a bezpečnosti typů. Doporučuje se co nejvíc a centralizace nezabezpečeného kódu a testování kódu.
 

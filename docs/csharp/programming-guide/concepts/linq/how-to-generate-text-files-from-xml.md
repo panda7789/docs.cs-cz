@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Vygenerovat textové soubory z XMLC#()'
+title: 'Postupy: generování textových souborů z formátu XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9ad283f7-7cac-42ff-bf32-92aa866e6883
-ms.openlocfilehash: 76fcca69236ef97374855ebbb19259aa5e119ea0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8e36bbda60bea207707dcf869afc059e645ec8ad
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253584"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418307"
 ---
-# <a name="how-to-generate-text-files-from-xml-c"></a>Postupy: Vygenerovat textové soubory z XMLC#()
+# <a name="how-to-generate-text-files-from-xml-c"></a>Postupy: generování textových souborů z formátu XML (C#)
 Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.  
   
 ## <a name="example"></a>Příklad  
- C# Verze v tomto příkladu používá syntaxi metody a `Aggregate` operátor k vygenerování souboru CSV z dokumentu XML v jednom výrazu. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](./query-syntax-and-method-syntax-in-linq.md).  
+ C# Verze v tomto příkladu používá syntaxi metody a operátor `Aggregate` k vygenerování souboru CSV z dokumentu XML v jednom výrazu. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](./query-syntax-and-method-syntax-in-linq.md).  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement custOrd = XElement.Load("CustomersOrders.xml");  
@@ -55,4 +55,4 @@ LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,Sa
   
 ## <a name="see-also"></a>Viz také:
 
-- [Projekce a transformace (LINQ to XML) (C#)](./projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (C#)](how-to-work-with-dictionaries-using-linq-to-xml.md)

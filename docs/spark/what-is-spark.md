@@ -4,20 +4,20 @@ description: Přečtěte si o scénářích Apache Spark a velkých objemů dat.
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 187a37897c23809d91820bd79b476e775fb5b99b
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 653f355d09a045feabb3dee0f5737cb691cf2dc4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583487"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458177"
 ---
 # <a name="what-is-apache-spark"></a>Co je Apache Spark?
 
-[Apache Spark](https://spark.apache.org/) je open source platforma pro paralelní zpracování, která podporuje zpracování v paměti pro zvýšení výkonu aplikací, které analyzují velké objemy dat. Řešení pro velké objemy dat jsou navržená tak, aby data, která jsou pro tradiční databáze moc velká nebo složitá. Spark zpracovává velké objemy dat v paměti, což je mnohem rychlejší než v případě alternativ na disku. 
+[Apache Spark](https://spark.apache.org/) je open source platforma pro paralelní zpracování, která podporuje zpracování v paměti pro zvýšení výkonu aplikací, které analyzují velké objemy dat. Řešení pro velké objemy dat jsou navržená tak, aby data, která jsou pro tradiční databáze moc velká nebo složitá. Spark zpracovává velké objemy dat v paměti, což je mnohem rychlejší než v případě alternativ na disku.
 
 ## <a name="common-big-data-scenarios"></a>Běžné scénáře s velkými objemy dat
 
-Pokud potřebujete ukládat a zpracovávat velké objemy dat, transformovat nestrukturovaná data nebo zpracovávat streamovaná data, můžete zvážit architekturu velkých objemů dat. Spark je univerzální distribuovaný modul pro zpracování, který se dá použít pro několik scénářů velkých objemů dat. 
+Pokud potřebujete ukládat a zpracovávat velké objemy dat, transformovat nestrukturovaná data nebo zpracovávat streamovaná data, můžete zvážit architekturu velkých objemů dat. Spark je univerzální distribuovaný modul pro zpracování, který se dá použít pro několik scénářů velkých objemů dat.
 
 ### <a name="extract-transform-and-load-etl"></a>Extrakce, transformace a načítání (ETL)
 
@@ -33,7 +33,7 @@ Pokud potřebujete ukládat a zpracovávat velké objemy dat, transformovat nest
 
 ### <a name="real-time-data-stream-processing"></a>Zpracování datových proudů v reálném čase
 
-Streamování dat nebo dat v reálném čase jsou data v pohybu. V některých příkladech streamování dat jsou telemetrie ze zařízení IoT, Weblogs a stránkách. Data v reálném čase lze zpracovat za účelem poskytnutí užitečných informací, jako jsou geoprostorové analýzy, vzdálené monitorování a detekce anomálií. Stejně jako u relačních dat můžete filtrovat, agregovat a připravit streamovaná data, než data přesunete do výstupní jímky. Apache Spark podporuje [zpracování datových proudů v reálném čase](/azure/architecture/data-guide/big-data/real-time-processing) prostřednictvím [streamování Sparku](https://spark.apache.org/streaming/). 
+Streamování dat nebo dat v reálném čase jsou data v pohybu. V některých příkladech streamování dat jsou telemetrie ze zařízení IoT, Weblogs a stránkách. Data v reálném čase lze zpracovat za účelem poskytnutí užitečných informací, jako jsou geoprostorové analýzy, vzdálené monitorování a detekce anomálií. Stejně jako u relačních dat můžete filtrovat, agregovat a připravit streamovaná data, než data přesunete do výstupní jímky. Apache Spark podporuje [zpracování datových proudů v reálném čase](/azure/architecture/data-guide/big-data/real-time-processing) prostřednictvím [streamování Sparku](https://spark.apache.org/streaming/).
 
 ### <a name="batch-processing"></a>Dávkové zpracování
 

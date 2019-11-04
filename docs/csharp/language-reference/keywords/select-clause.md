@@ -1,5 +1,5 @@
 ---
-title: Select – klauzule - C# odkaz
+title: vybrat klauzuli – C# odkaz
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,41 +9,41 @@ helpviewer_keywords:
 - select keyword [C#]
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
-ms.openlocfilehash: 3ba52fccc0521df1a0bb5b6177575dc5d2152248
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f1bfbeccaf6c3916a591f6447760fa01c3f8a3b6
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633810"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422355"
 ---
 # <a name="select-clause-c-reference"></a>select – klauzule (Referenční dokumentace jazyka C#)
 
-Ve výrazu dotazu `select` klauzule určuje typ hodnoty, které se budou vytvářet při spuštění dotazu. Výsledkem je založeno na vyhodnocení všechny předchozí klauzule a na všechny výrazy v `select` klauzule samotný. Buď musí končit výrazu dotazu `select` klauzule nebo [skupiny](group-clause.md) klauzuli.
+Ve výrazu dotazu určuje klauzule `select` typ hodnot, které budou vytvořeny při spuštění dotazu. Výsledek vychází z vyhodnocení všech předchozích klauzulí a na jakékoli výrazy v klauzuli `select` samotné. Výraz dotazu musí být ukončen buď klauzulí `select`, nebo klauzulí [Group](group-clause.md) .
 
-Následující příklad ukazuje jednoduchý `select` klauzule ve výrazu dotazu.
+Následující příklad ukazuje jednoduchou klauzuli `select` ve výrazu dotazu.
 
 [!code-csharp[cscsrefQueryKeywords#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Select.cs#8)]  
 
-Typ pořadí vytvářených `select` klauzule určuje typ proměnné dotazu `queryHighScores`. V nejjednodušším případě `select` klauzule právě Určuje proměnnou rozsahu. To způsobí, že vrácená sekvence má obsahovat prvky stejného typu jako zdroj dat. Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](../../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md). Ale `select` klauzule také poskytuje výkonný mechanismus pro transformaci (nebo *projekci*) zdroje dat do nové typy. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](../../programming-guide/concepts/linq/data-transformations-with-linq.md).
+Typ sekvence, která je vytvořena klauzulí `select`, určuje typ proměnné dotazu `queryHighScores`. V nejjednodušším případě klauzule `select` pouze určuje proměnnou rozsahu. To způsobí, že vrácená sekvence bude obsahovat prvky stejného typu jako zdroj dat. Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](../../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md). Klauzule `select` však také poskytuje výkonný mechanizmus pro transformaci (nebo *projekci*) zdrojových dat do nových typů. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](../../programming-guide/concepts/linq/data-transformations-with-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje různé formuláře, který `select` klauzule může trvat. V obou dotazech, mějte na paměti o vztah mezi `select` klauzule a typ *proměnné dotazu* (`studentQuery1`, `studentQuery2`, a tak dále).
+Následující příklad ukazuje všechny různé formuláře, které může klauzule `select` trvat. V každém dotazu si poznamenejte vztah mezi klauzulí `select` a typem *proměnné dotazu* (`studentQuery1`, `studentQuery2`a tak dále).
 
 [!code-csharp[cscsrefQueryKeywords#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Select.cs#9)]
 
-Jak je znázorněno v `studentQuery8` v předchozím příkladu, můžete někdy chtít prvky vrácená sekvence má obsahovat pouze podmnožinu vlastností zdrojové elementy. Udržováním vrácené posloupnosti co nejmenší může snížit požadavky na paměť a zvýšit rychlost provádění dotazu. Můžete to udělat tak, že vytvoříte anonymního typu v `select` klauzule a pomocí inicializátoru objektu inicializovat s odpovídající vlastností ze zdrojového elementu. Příklad toho, jak to provést, najdete v části [inicializátory objektu a kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md).
+Jak ukazuje `studentQuery8` v předchozím příkladu, někdy můžete chtít, aby prvky vrácené sekvence obsahovaly pouze podmnožinu vlastností zdrojových elementů. Udržováním vrácené sekvence co nejmenší je možné snížit nároky na paměť a zvýšit rychlost provádění dotazu. To lze provést tak, že vytvoříte anonymní typ v klauzuli `select` a pomocí inicializátoru objektu jej inicializujete s příslušnými vlastnostmi ze zdrojového elementu. Příklad, jak to provést, naleznete v tématu [Inicializátory objektů a kolekcí](../../programming-guide/classes-and-structs/object-and-collection-initializers.md).
 
 ## <a name="remarks"></a>Poznámky
 
-V době kompilace `select` přeložen na volání metody <xref:System.Linq.Enumerable.Select%2A> standardní operátor dotazu.
+V době kompilace je klauzule `select` přeložena do volání metody standardní operátor dotazu <xref:System.Linq.Enumerable.Select%2A>.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Klíčová slova dotazu (LINQ)](query-keywords.md)
 - [from – klauzule](from-clause.md)
-- [partial (metoda) (referenční dokumentace jazyka C#)](partial-method.md)
+- [Partial (metoda) (C# Referenční dokumentace)](partial-method.md)
 - [Anonymní typy](../../programming-guide/classes-and-structs/anonymous-types.md)
-- [LINQ – výrazy dotazů](../../programming-guide/linq-query-expressions/index.md)
-- [Začínáme s dotazy LINQ v jazyce C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [LINQ v jazyce C#](../../linq/index.md)
+- [Začínáme s dotazy LINQ v jazyce C#](/dotnet/csharp/programming-guide/concepts/linq/)

@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 0eea5a40ae4643c7447e2f7281dc8b0db609ca79
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a1ff1ba4d5e855e0ac36b99b0c9d63adfaaaac1e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117952"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454932"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-amazon-emr-spark"></a>Nasazení .NET pro Apache Spark aplikaci do Amazon EMR Spark
 
@@ -37,9 +37,9 @@ Než začnete, udělejte toto:
 
 1. Vyberte verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) Linux netcoreapp, která se má nasadit na váš cluster.
 
-   Pokud například chcete `.NET for Apache Spark v0.1.0` použít `netcoreapp2.1`, Stáhněte si soubor [Microsoft. spark. work. netcoreapp 2.1. Linux-x64-0.1.0. tar. gz](https://github.com/dotnet/spark/releases/download/v0.1.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.1.0.tar.gz).
+   Pokud například chcete `.NET for Apache Spark v0.1.0` pomocí `netcoreapp2.1`, Stáhněte si soubor [Microsoft. spark. work. netcoreapp 2.1. Linux-x64-0.1.0. tar. gz](https://github.com/dotnet/spark/releases/download/v0.1.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.1.0.tar.gz).
 
-2. Nahrajte `Microsoft.Spark.Worker.<release>.tar.gz` a [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do distribuovaného systému souborů (např. S3), ke kterému má váš cluster přístup.
+2. Nahrajte `Microsoft.Spark.Worker.<release>.tar.gz` a [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) se do distribuovaného systému souborů (např. S3), ke kterému má váš cluster přístup.
 
 ## <a name="prepare-your-net-for-apache-spark-app"></a>Příprava rozhraní .NET pro aplikaci Apache Spark
 
@@ -53,9 +53,9 @@ Než začnete, udělejte toto:
    dotnet publish -c Release -f netcoreapp2.1 -r ubuntu.16.04-x64
    ```
 
-3. Vytvořte `<your app>.zip` pro publikované soubory.
+3. Vyprodukuje pro publikované soubory `<your app>.zip`.
 
-   Spusťte následující příkaz na platformě Linux pomocí `zip`příkazu.
+   Spusťte následující příkaz na platformě Linux pomocí `zip`.
 
    ```bash
    zip -r <your app>.zip .
@@ -63,7 +63,7 @@ Než začnete, udělejte toto:
 
 4. Nahrajte následující položky do distribuovaného systému souborů (například S3), ke kterému má váš cluster přístup:
 
-   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Tento JAR je součástí balíčku NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) a je umístěný ve výstupním adresáři sestavení vaší aplikace.
+   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Tento JAR je součástí balíčku NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) a je umístěn v adresáři výstupu sestavení vaší aplikace.
    * `<your app>.zip`
    * Soubory (jako jsou soubory závislosti nebo společná data dostupná pro každého pracovního procesu) nebo sestavení (například knihovny DLL, které obsahují uživatelem definované funkce nebo knihovny, na kterých je vaše aplikace závislá), aby se umístily do pracovního adresáře každého prováděcího modulu.
 
@@ -71,14 +71,14 @@ Než začnete, udělejte toto:
 
 [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html) je spravovaná platforma clusteru, která usnadňuje spouštění rozsáhlých datových ARCHITEKTUR na AWS.
 
-> [!NOTE] 
+> [!NOTE]
 > Amazon EMR Spark je založený na systému Linux. Proto pokud vás zajímá nasazení aplikace do Amazon EMR Spark, ujistěte se, že je vaše aplikace .NET Standard kompatibilní a že ke kompilaci vaší aplikace použijete [kompilátor .NET Core](https://dotnet.microsoft.com/download) .
 
 ### <a name="deploy-microsoftsparkworker"></a>Nasazení Microsoft. spark. Worker
 
 Tento krok se vyžaduje jenom při vytváření clusteru.
 
-Spustí `install-worker.sh` se během vytváření clusteru pomocí [spouštěcích akcí](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html).
+Spuštění `install-worker.sh` při vytváření clusteru pomocí [spouštěcích akcí](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html).
 
 Spusťte následující příkaz na platformě Linux pomocí rozhraní příkazového řádku AWS.
 
@@ -102,7 +102,7 @@ Existují dva způsoby, jak aplikaci spustit v Amazon EMR Spark: Spark-Submit a 
 
 Pomocí příkazu [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applications.html) můžete odesílat .NET pro úlohy Apache Spark do Amazon EMR Spark.
 
-1. `ssh`do jednoho z uzlů v clusteru.
+1. `ssh` do jednoho z uzlů v clusteru.
 
 2. Spusťte `spark-submit`.
 

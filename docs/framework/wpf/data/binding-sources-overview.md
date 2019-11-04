@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: cf5873cdf137573826d5361d077e0534e8cba1f0
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 5d0d28213ed8b4a0d464793aeba6823db2405bbe
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920291"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459013"
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáváte data. Toto téma popisuje typy objektů, které lze použít jako zdroj vazby.
@@ -54,7 +54,7 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
 ## <a name="using-entire-objects-as-a-binding-source"></a>Použití celých objektů jako zdroje vazby
  Můžete použít celý objekt jako zdroj vazby. Zdroj vazby můžete zadat pomocí <xref:System.Windows.Data.Binding.Source%2A> nebo vlastnosti <xref:System.Windows.FrameworkElement.DataContext%2A> a pak zadat prázdnou deklaraci vazby: `{Binding}`. Scénáře, ve kterých je to užitečné, zahrnují vazbu na objekty, které jsou typu String, vazba na objekty s více vlastnostmi, které vás zajímají, nebo vázání na objekty kolekce. Příklad vazby na celý objekt kolekce najdete v tématu [použití vzoru hlavní-podrobnosti s hierarchickými daty](how-to-use-the-master-detail-pattern-with-hierarchical-data.md).
 
- Všimněte si, že možná budete muset použít vlastní logiku, aby data byla smysluplná na vlastnost cíle vazby. Vlastní logika může být ve formě vlastního převaděče (pokud převod výchozího typu neexistuje) nebo <xref:System.Windows.DataTemplate>. Další informace o převaděčích naleznete v části převod dat v tématu [Přehled datových vazeb](data-binding-overview.md). Další informace o datových šablonách najdete v tématu [Přehled šablonování dat](data-templating-overview.md).
+ Všimněte si, že možná budete muset použít vlastní logiku, aby data byla smysluplná na vlastnost cíle vazby. Vlastní logika může být ve formě vlastního převaděče (pokud převod výchozího typu neexistuje) nebo <xref:System.Windows.DataTemplate>. Další informace o převaděčích naleznete v části převod dat v tématu [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md). Další informace o datových šablonách najdete v tématu [Přehled šablonování dat](data-templating-overview.md).
 
 <a name="collections"></a>
 ## <a name="using-collection-objects-as-a-binding-source"></a>Použití objektů kolekce jako zdroje vazby
@@ -64,7 +64,7 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
 
  Třída <xref:System.Collections.ObjectModel.ObservableCollection%601> je vestavěnou implementací kolekce dat, která zpřístupňuje rozhraní <xref:System.Collections.Specialized.INotifyCollectionChanged>. Jednotlivé datové objekty v kolekci musí splňovat požadavky popsané v předchozích částech. Příklad najdete v tématu [Vytvoření a vytvoření vazby na kolekci ObservableCollection](how-to-create-and-bind-to-an-observablecollection.md). Před implementací vlastní kolekce zvažte použití <xref:System.Collections.ObjectModel.ObservableCollection%601> nebo jedné z existujících tříd kolekce, jako je <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>a <xref:System.ComponentModel.BindingList%601>, mezi mnoho dalších.
 
- WPF se nikdy neváže přímo ke kolekci. Pokud zadáte kolekci jako zdroj vazby, WPF se ve skutečnosti připojí k výchozímu zobrazení kolekce. Informace o výchozích zobrazeních najdete v tématu [Přehled datových vazeb](data-binding-overview.md).
+ WPF se nikdy neváže přímo ke kolekci. Pokud zadáte kolekci jako zdroj vazby, WPF se ve skutečnosti připojí k výchozímu zobrazení kolekce. Informace o výchozích zobrazeních najdete v tématu [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).
 
  Pokud máte pokročilý scénář a chcete implementovat vlastní kolekci, zvažte použití <xref:System.Collections.IList> rozhraní. <xref:System.Collections.IList> poskytuje neobecnou kolekci objektů, které mohou být jednotlivě dostupné pomocí indexu, což může zlepšit výkon.
 
@@ -97,6 +97,6 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
 - <xref:System.Windows.Data.ObjectDataProvider>
 - <xref:System.Windows.Data.XmlDataProvider>
 - [Určení zdroje vazby](how-to-specify-the-binding-source.md)
-- [Přehled datových vazeb](data-binding-overview.md)
+- [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
 - [Přehled datové vazby WPF s LINQ to XML](wpf-data-binding-with-linq-to-xml-overview.md)
 - [Optimalizace výkonu datových vazeb](../advanced/optimizing-performance-data-binding.md)

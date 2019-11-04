@@ -2,19 +2,19 @@
 title: Nástroj ServiceModel Registration (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: 519f303507ed873266cc05a7556073887b66ba6f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: aa9fc1b2338007db240fb10a9af35754107b07d0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923032"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424878"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Nástroj ServiceModel Registration (ServiceModelReg.exe)
 Tento nástroj příkazového řádku poskytuje možnost spravovat registraci komponent WCF a WF na jednom počítači. Za normálních okolností byste neměli tento nástroj používat, protože komponenty technologie WCF a WF se nakonfigurují po instalaci. Pokud ale máte problémy s aktivací služby, můžete se pokusit zaregistrovat komponenty pomocí tohoto nástroje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]  
 ```  
   
@@ -24,7 +24,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation \  
   
 > [!NOTE]
-> [!INCLUDE[wv](../../../includes/wv-md.md)]Když je nástroj pro registraci ServiceModel spuštěný, dialogové okno **funkce systému Windows** nemusí odrážet, že je zapnutá možnost **Windows Communication Foundation aktivace protokolem HTTP** pod **Microsoft .NET Framework 3,0** . K dialogovému oknu **funkcí Windows** se dostanete tak, že kliknete na **Start**, pak na **Spustit** a pak zadáte **optionalfeatures**.  
+> Pokud je nástroj pro registraci ServiceModel spuštěný na [!INCLUDE[wv](../../../includes/wv-md.md)], dialogové okno **funkce systému Windows** nemusí odrážet možnost **Windows Communication Foundation aktivace protokolem HTTP** v rámci **Microsoft .NET Framework 3,0** je zapnutá. K dialogovému oknu **funkcí Windows** se dostanete tak, že kliknete na **Start**, pak na **Spustit** a pak zadáte **optionalfeatures**.  
   
  V následujících tabulkách jsou popsány možnosti, které lze použít s ServiceModelReg. exe.  
   
@@ -42,11 +42,11 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 |`-?`|Zobrazí text v nápovědě.|  
   
 ## <a name="fixing-the-fileloadexception-error"></a>Oprava chyby FileLoadException  
- Pokud jste na svém počítači nainstalovali předchozí verze služby WCF, může se při spuštění `FileLoadFoundException` nástroje ServiceModelReg k registraci nové instalace zobrazit chyba. K tomu může dojít i v případě, že jste ručně odebrali soubory z předchozí instalace, ale ponechali jste nastavení Machine. config beze změny.  
+ Pokud jste na svém počítači nainstalovali předchozí verze služby WCF, může se při spuštění nástroje ServiceModelReg k registraci nové instalace zobrazit chyba `FileLoadFoundException`. K tomu může dojít i v případě, že jste ručně odebrali soubory z předchozí instalace, ale ponechali jste nastavení Machine. config beze změny.  
   
  Chybová zpráva se podobá následujícímu.  
   
-```  
+```console  
 Error: System.IO.FileLoadException: Could not load file or assembly 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)  
 File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'  
 ```  
@@ -55,13 +55,13 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
   
  ServiceModelReg. exe nemůže vyčistit předchozí položky verze, ani nemůže registrovat nové položky verze. Jediným alternativním řešením je ruční úprava souboru Machine. config. Tento soubor najdete v následujícím umístění.  
   
-```  
+```console  
 %windir%\Microsoft.NET\Framework\v2.0.50727\config\machine.config   
 ```  
   
  Pokud používáte WCF na 64m počítači, měli byste také upravit stejný soubor v tomto umístění.  
   
-```  
+```console  
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   
 ```  
   
@@ -70,7 +70,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
 ## <a name="examples"></a>Příklady  
  Následující příklady ukazují, jak používat nejběžnější možnosti nástroje ServiceModelReg. exe.  
   
-```  
+```console  
 ServiceModelReg.exe -ia  
   Installs all components  
 ServiceModelReg.exe -i -c:httpnamespace -c:etw  

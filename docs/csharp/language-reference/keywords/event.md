@@ -10,18 +10,18 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 4149663422908069b5b65ed3c32ccc6dbdfd7729
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a6a62881f7205891bafe039a42da44eb8f8d03c0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605811"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422832"
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
-`event` Klíčové slovo slouží k deklaraci události ve třídě vydavatele.  
+Klíčové slovo `event` slouží k deklaraci události ve třídě vydavatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřízený typ delegátu. Pro kompletní příklad kódu, který také ukazuje, jak použít typ obecného <xref:System.EventHandler%601> delegáta a jak se přihlásit k odběru události a vytvořit metodu obslužné rutiny události, [naleznete v tématu How to: Publikujte události, které jsou v](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)souladu s pokyny pro .NET Framework.  
+ Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřízený typ delegátu. Pro kompletní příklad kódu, který také ukazuje, jak použít obecný <xref:System.EventHandler%601> typ delegáta a jak se přihlásit k odběru události a vytvořit metodu obslužné rutiny události, naleznete v tématu [How to: Publishing Events Event, které odpovídají pokynům .NET Framework](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
   
  [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
   
@@ -37,11 +37,11 @@ ms.locfileid: "69605811"
 |[static](./static.md)|Zpřístupňuje událost volajícím kdykoli, i když žádná instance třídy neexistuje.|[Statické třídy a jejich členové](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|  
 |[virtual](./virtual.md)|Umožňuje odvozeným třídám přepsat chování události pomocí klíčového slova [override](./override.md) .|[Dědičnost](../../programming-guide/classes-and-structs/inheritance.md)|  
 |[sealed](./sealed.md)|Určuje, že pro odvozené třídy už není virtuální.||  
-|[abstract](./abstract.md)|Kompilátor negeneruje bloky pro přístup `add` k `remove` událostem a proto odvozené třídy musí poskytovat svou vlastní implementaci.||  
+|[abstract](./abstract.md)|Kompilátor nevygeneruje bloky přistupujícího objektu události `add` a `remove` a proto odvozené třídy musí poskytovat svou vlastní implementaci.||  
   
  Událost může být deklarována jako statická událost pomocí klíčového slova [static](./static.md) . Tím se událost zpřístupní volajícím kdykoli, i když žádná instance třídy neexistuje. Další informace naleznete v tématu [statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
- Událost může být označena jako virtuální událost pomocí klíčového slova [Virtual](./virtual.md) . To umožňuje odvozeným třídám přepsat chování události pomocí klíčového slova [override](./override.md) . Další informace najdete v tématu [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md). Událost přepsání virtuální události může být také zapečetěna [](./sealed.md), což určuje, že pro odvozené třídy již není virtuální. Nakonec může být událost deklarovaná jako [abstraktní](./abstract.md), což znamená, že kompilátor negeneruje `add` bloky přistupujícího objektu a `remove` události. Proto odvozené třídy musí poskytovat svou vlastní implementaci.  
+ Událost může být označena jako virtuální událost pomocí klíčového slova [Virtual](./virtual.md) . To umožňuje odvozeným třídám přepsat chování události pomocí klíčového slova [override](./override.md) . Další informace najdete v tématu [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md). Událost přepsání virtuální události může být také [zapečetěna](./sealed.md), což určuje, že pro odvozené třídy již není virtuální. Nakonec může být událost deklarována jako [abstraktní](./abstract.md), což znamená, že kompilátor nebude generovat `add` a `remove` přístupových bloků událostí. Proto odvozené třídy musí poskytovat svou vlastní implementaci.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -53,5 +53,5 @@ ms.locfileid: "69605811"
 - [Klíčová slova jazyka C#](./index.md)
 - [add](./add.md)
 - [remove](./remove.md)
-- [Modifikátory](./modifiers.md)
-- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+- [Modifikátory](index.md)
+- [Postupy: kombinování delegátů (vícesměrové Delegáti)](../../programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

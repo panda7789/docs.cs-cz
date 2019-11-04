@@ -1,20 +1,20 @@
 ---
-title: Delegáti s pojmenovanými vs. Anonymní metody – C# Průvodce programováním
+title: Delegáti s pojmenovanými vs. C# anonymními metodami – programový průvodce
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 9df143fb183ef2fc7e951b2cee47d18ce4b11942
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 50df0e9c42d366c9c79dde3b0d34f85b8e552a45
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590645"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418034"
 ---
-# <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenovanými vs. Anonymní metody (Průvodce programováním v C#)
-[Delegát](../../language-reference/keywords/delegate.md) může být spojen s pojmenovanou metodou. Při vytváření instance delegáta pomocí pojmenované metody je metoda předána jako parametr, například:  
+# <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenovanými vs. anonymními metodami (Průvodce programováním v C#)
+[Delegát](../../language-reference/builtin-types/reference-types.md) může být spojen s pojmenovanou metodou. Při vytváření instance delegáta pomocí pojmenované metody je metoda předána jako parametr, například:  
   
  [!code-csharp[csProgGuideDelegates#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#1)]  
   
@@ -28,7 +28,7 @@ ms.locfileid: "69590645"
  I když delegát může použít [výstupní](../../language-reference/keywords/out-parameter-modifier.md) parametr, nedoporučujeme ho používat s delegáty událostí vícesměrového vysílání, protože nemůžete zjistit, který delegát se bude volat.  
   
 ## <a name="example-1"></a>Příklad 1  
- Následuje jednoduchý příklad deklarace a použití delegáta. Všimněte si, že delegát, `Del`i přidružená `MultiplyNumbers`metoda mají stejnou signaturu.  
+ Následuje jednoduchý příklad deklarace a použití delegáta. Všimněte si, že delegát, `Del`a přidružená metoda, `MultiplyNumbers`, mají stejnou signaturu.  
   
  [!code-csharp[csProgGuideDelegates#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#2)]  
   
@@ -40,6 +40,6 @@ ms.locfileid: "69590645"
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [Delegáti](./index.md)
-- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](./how-to-combine-delegates-multicast-delegates.md)
+- [Delegáty](./index.md)
+- [Postupy: kombinování delegátů (vícesměrové Delegáti)](./how-to-combine-delegates-multicast-delegates.md)
 - [Události](../events/index.md)

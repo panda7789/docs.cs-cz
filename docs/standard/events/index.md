@@ -14,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: 67cba143957b50e8e8d7fa68e62b52775ca2f144
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a53a8123db64948503bd6d2da9a27fc414dc1e1f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131623"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423528"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a vyvolávání událostí
 
@@ -50,7 +50,7 @@ Rozhraní .NET poskytuje <xref:System.EventHandler> a <xref:System.EventHandler%
   
 Delegáti jsou [vícesměrové vysílání](xref:System.MulticastDelegate), což znamená, že mohou obsahovat odkazy na více než jednu metodu zpracování událostí. Podrobnosti najdete na stránce s referenčními informacemi pro <xref:System.Delegate>. Delegáti poskytují flexibilitu a jemně odstupňovaný ovládací prvek pro zpracování událostí. Delegát funguje jako dispečer události pro třídu, která vyvolává událost tím, že udržuje seznam registrovaných obslužných rutin událostí pro událost.  
   
-U scénářů, kde Delegáti <xref:System.EventHandler> a <xref:System.EventHandler%601> nefungují, můžete definovat delegáta. Scénáře, které vyžadují, abyste definovali delegáta, jsou velmi vzácné, například když musíte pracovat s kódem, který nerozpozná obecné typy. Označíte delegáta pomocí C# klíčového slova [`delegate`](../../csharp/language-reference/keywords/delegate.md) a Visual Basic [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) v deklaraci. Následující příklad ukazuje, jak deklarovat delegáta s názvem `ThresholdReachedEventHandler`.  
+U scénářů, kde Delegáti <xref:System.EventHandler> a <xref:System.EventHandler%601> nefungují, můžete definovat delegáta. Scénáře, které vyžadují, abyste definovali delegáta, jsou velmi vzácné, například když musíte pracovat s kódem, který nerozpozná obecné typy. Označíte delegáta pomocí C# klíčového slova [`delegate`](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) a Visual Basic [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) v deklaraci. Následující příklad ukazuje, jak deklarovat delegáta s názvem `ThresholdReachedEventHandler`.  
   
 [!code-csharp[EventsOverview#4](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
 [!code-vb[EventsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  

@@ -3,12 +3,12 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 11463f7d47c5fb5b71bd16d73039b22e4a6ca43e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 490f001d4ed648d6621f8ec059201830acb90af0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039642"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423088"
 ---
 # <a name="the-history-of-c"></a>Historie\# jazyka C
 
@@ -104,7 +104,7 @@ C#verze 4,0, vydaná se sadou Visual Studio 2010, by měla obtížný čas na p�
 
 Další verze zavedla zajímavé nové funkce:
 
-- [Dynamická vazba](../language-reference/keywords/dynamic.md)
+- [Dynamická vazba](../language-reference/builtin-types/reference-types.md)
 - [Pojmenované/nepovinné argumenty](../programming-guide/classes-and-structs/named-and-optional-arguments.md)
 - [Obecné kovariantní a kontravariantní](../../standard/generics/covariance-and-contravariance.md)
 - [Vložené typy spolupráce](../../framework/interop/type-equivalence-and-embedded-interop-types.md)

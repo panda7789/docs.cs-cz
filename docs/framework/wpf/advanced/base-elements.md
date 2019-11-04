@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 55034aa5-3c1d-442a-8293-f4692d8ea6ae
-ms.openlocfilehash: a1f7105ee6590314eb2ebbfa52b511f55f83dc05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0d3c5198c6c4146cf92201b08781041043c4a72
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926408"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453593"
 ---
 # <a name="base-elements"></a>Základní elementy
-Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace podstatné procento běžné funkce element, která je dostupná v programování ve WPF. Tyto čtyři třídy jsou uvedené v této sadě SDK jako základní prvek třídy.  
+Čtyři klíčové třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>a <xref:System.Windows.FrameworkContentElement>– implementují podstatné procento běžných funkcí prvků, které jsou k dispozici v programování WPF. Tyto čtyři třídy jsou odkazovány v této sadě SDK jako základní třídy prvků.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled základních elementů](base-elements-overview.md)  
@@ -39,5 +39,5 @@ ms.locfileid: "61926408"
   [Události](events-wpf.md)  
   [Vstup](input-wpf.md)  
   [Prostředky](resources-wpf.md)  
-  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [Model vláken](threading-model.md)

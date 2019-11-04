@@ -5,16 +5,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: d6e3667861c2b1ac9a84ca7b4e2cabb5784d793d
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 413d3ee6323aa601df84c0f402aaea7567a61e76
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970047"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422277"
 ---
 # <a name="using-directive-c-reference"></a>using – direktiva (C# Referenční dokumentace)
 
-`using` Direktiva má tři použití:
+Direktiva `using` má tři použití:
 
 - Aby bylo možné povolit použití typů v oboru názvů, takže nemusíte kvalifikovat použití typu v tomto oboru názvů:
 
@@ -36,7 +36,7 @@ ms.locfileid: "70970047"
     using Project = PC.MyCompany.Project;
     ```
 
-Klíčové slovo slouží také k vytváření *příkazů using*, které vám pomůžou zajistit <xref:System.IDisposable> , aby objekty, jako jsou soubory a písma, byly zpracovávány správně. `using` Další informace najdete v tématu [použití příkazu Using](using-statement.md) .
+Klíčové slovo `using` slouží také k vytváření *příkazů using*, které umožňují zajistit správné zpracování objektů <xref:System.IDisposable>, jako jsou soubory a písma. Další informace najdete v tématu [použití příkazu Using](using-statement.md) .
 
 ## <a name="using-static-type"></a>Použití statického typu
 
@@ -56,43 +56,43 @@ class Program
 
 ## <a name="remarks"></a>Poznámky
 
-Rozsah `using` direktivy je omezen na soubor, ve kterém se zobrazí.
+Rozsah direktivy `using` je omezený na soubor, ve kterém se zobrazí.
 
-Tato `using` direktiva se může zobrazit:
+Může se zobrazit direktiva `using`:
 
 - Na začátku souboru zdrojového kódu před libovolným oborem názvů nebo definicí typu.
 - V jakémkoli oboru názvů, ale před libovolným oborem názvů nebo typy deklarovanými v tomto oboru názvů.
 
 V opačném případě se generuje chyba kompilátoru [CS1529](../../misc/cs1529.md) .
 
-Vytvořte direktivu `using` alias pro snadnější zařazení identifikátoru do oboru názvů nebo typu. V jakékoli `using` direktivě musí být plně kvalifikovaný obor názvů nebo typ použit bez ohledu na `using` direktivy, které jsou před ním. V `using` deklaraci `using` direktivy nelze použít žádný alias. Například následující příkaz vygeneruje chybu kompilátoru:
+Vytvořte direktivu `using` alias, aby bylo snazší kvalifikovat identifikátor oboru názvů nebo typu. V jakékoli `using` direktivě musí být plně kvalifikovaný obor názvů nebo typ použit bez ohledu na direktivy `using`, které jsou před ním. V deklaraci direktivy `using` nelze použít žádný alias `using`. Například následující příkaz vygeneruje chybu kompilátoru:
 
 ```csharp
 using s = System.Text;
 using s.RegularExpressions;
 ```
 
-`using` Vytvořte direktivu pro použití typů v oboru názvů bez nutnosti zadat obor názvů. `using` Direktiva neposkytuje přístup k žádným oborům názvů, které jsou vnořené v oboru názvů, který zadáte.
+Vytvořte direktivu `using` pro použití typů v oboru názvů bez nutnosti zadat obor názvů. Direktiva `using` neposkytuje přístup k žádným oborům názvů, které jsou vnořené v oboru názvů, který zadáte.
 
 Obory názvů přicházejí ve dvou kategoriích: definované uživatelem a systémem. Uživatelsky definované obory názvů jsou obory názvů definované ve vašem kódu. Seznam oborů názvů definovaných systémem naleznete v tématu [.NET API Browser](../../../../api/index.md).
 
 ## <a name="example-1"></a>Příklad 1
 
-Následující příklad ukazuje, jak definovat a použít `using` alias pro obor názvů:
+Následující příklad ukazuje, jak definovat a použít alias `using` pro obor názvů:
 
 [!code-csharp[csrefKeywordsNamespace#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace2.cs#8)]
 
-Direktiva using alias nemůže mít otevřený obecný typ na pravé straně. Například nemůžete vytvořit alias s aliasem pro `List<T>`, ale můžete ho vytvořit `List<int>`pro.
+Direktiva using alias nemůže mít otevřený obecný typ na pravé straně. Například nemůžete vytvořit alias alias pro `List<T>`, ale můžete ho vytvořit pro `List<int>`.
 
 ## <a name="example-2"></a>Příklad 2
 
-Následující příklad ukazuje, jak definovat `using` direktivu `using` a alias pro třídu:
+Následující příklad ukazuje, jak definovat direktivu `using` a alias `using` pro třídu:
 
 [!code-csharp[csrefKeywordsNamespace#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace2.cs#9)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [direktivy using](~/_csharplang/spec/namespaces.md#using-directives) ve [ C# specifikaci jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [direktivy using](~/_csharplang/spec/namespaces.md#using-directives) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

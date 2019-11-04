@@ -1,5 +1,5 @@
 ---
-title: zapečetěné modifikátor - C# odkaz
+title: zapečetěný modifikátor C# – referenční informace
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,61 +8,61 @@ f1_keywords:
 helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
-ms.openlocfilehash: 7b9551fe892b0335fb445ab9edce4facca0badbe
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 84f838645bed6facc8b59ebf596d16373a9c6f86
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833351"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422377"
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 
-Při použití na třídu, `sealed` modifikátor zabrání ostatním třídám z něj dědí. V následujícím příkladu třída `B` dědí z třídy `A`, ale žádná třída může dědit z třídy `B`.
+Při použití na třídu brání modifikátoru `sealed`, aby z něho dědily jiné třídy. V následujícím příkladu třída `B` dědí z třídy `A`, ale žádná třída nemůže dědit ze třídy `B`.
 
 ```csharp
 class A {}
 sealed class B : A {}
 ```
 
-Můžete také použít `sealed` modifikátor na metodu nebo vlastnost, která přepíše virtuální metody nebo vlastnosti v základní třídě. To umožňuje povolit třídy, které jsou odvozeny z vaší třídy a zabránili jejich přepsání konkrétní virtuální metody nebo vlastnosti.
+Můžete také použít modifikátor `sealed` pro metodu nebo vlastnost, která přepisuje virtuální metodu nebo vlastnost v základní třídě. To umožňuje, aby třídy byly odvozeny z vaší třídy a aby se zabránilo přepsání specifických virtuálních metod nebo vlastností.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `Z` dědí z `Y` ale `Z` nemůže přepsat virtuální funkci `F` , která je deklarována v `X` a uzavřené v `Y`.
+V následujícím příkladu `Z` dědí z `Y`, ale `Z` nemůže přepsat virtuální funkci `F`, která je deklarována v `X` a zapečetěná v `Y`.
 
 [!code-csharp[csrefKeywordsModifiers#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#16)]
 
-Při definování nové metody nebo vlastnosti ve třídě, můžete zabránit odvozená třídy přepsání není deklarací je jako [virtuální](virtual.md).
+Při definování nových metod nebo vlastností ve třídě můžete zabránit odvození tříd z jejich přepsání jejich jejich deklarováním jako [Virtual](virtual.md).
 
-Jedná se o chybu používat [abstraktní](abstract.md) modifikátor zapečetěnou třídu, protože abstraktní třídy musí být zděděny třídu, která poskytuje implementaci abstraktní metody nebo vlastnosti.
+Použití modifikátoru [abstract](abstract.md) s zapečetěnou třídou je chybné, protože abstraktní třída musí být zděděna třídou, která poskytuje implementaci abstraktních metod nebo vlastností.
 
-Při použití na metodu nebo vlastnost, `sealed` modifikátor musí být vždy použit s [přepsat](override.md).
+Při použití na metodu nebo vlastnost musí být modifikátor `sealed` vždy použit s [přepsáním](override.md).
 
-Protože struktury jsou implicitně zapečetěná, nelze dědit.
+Protože jsou struktury implicitně zapečetěné, nedají se dědit.
 
-Další informace najdete v tématu [dědičnosti](../../programming-guide/classes-and-structs/inheritance.md).
+Další informace najdete v tématu [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md).
 
-Další příklady najdete v tématu [abstraktní a zapečetěné třídy a členové](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).
+Další příklady naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[csrefKeywordsModifiers#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#17)]
 
-V předchozím příkladu můžete vyzkoušet dědit od zapečetěné třídy pomocí následujícího příkazu:
+V předchozím příkladu se můžete pokusit dědit z zapečetěné třídy pomocí následujícího příkazu:
 
 `class MyDerivedC: SealedClass {}   // Error`
 
-Výsledek se zobrazí chybová zpráva:
+Výsledkem je chybová zpráva:
 
 `'MyDerivedC': cannot derive from sealed type 'SealedClass'`
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud chcete zjistit, jestli se má zapečetit třídy, metody nebo vlastnosti, obecně byste měli zvážit následující dva body:
+Chcete-li určit, zda má být třída, metoda nebo vlastnost zapečetěna, je třeba vzít v úvahu následující dva body:
 
-- Potenciálních výhod, že odvozené třídy mohou získat prostřednictvím možnost přizpůsobit si své třídy.
+- Potenciální výhody, které odvozují třídy, mohou získat možnost přizpůsobení vaší třídy.
 
-- Potenciál odvozené třídy může změnit tříd takovým způsobem, že by už nebude fungovat správně nebo jako očekává.
+- Potenciál, který odvozují třídy, může upravit vaše třídy takovým způsobem, že by již nepracovaly správně nebo podle očekávání.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -70,12 +70,12 @@ Pokud chcete zjistit, jestli se má zapečetit třídy, metody nebo vlastnosti, 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Statické třídy a jejich členové](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Abstraktní a uzavřené třídy a jejich členové](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
 - [Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [override](override.md)
 - [virtual](virtual.md)

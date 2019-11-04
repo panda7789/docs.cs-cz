@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/02/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: dfc66bd2bdc69d1236a635b30697bc1cd607821c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 93dbc711e38c17c2f502c4d04239d037ff015059
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120773"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425189"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
@@ -49,7 +49,7 @@ Pokud vás zajímá některé z hlavních konceptů .NET, prostudujte si:
 * [Architektonické součásti technologie .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Nativní interoperabilita](native-interop/index.md)
-* [Uvolňování paměti](garbagecollection/index.md)
+* [Uvolňování paměti](garbage-collection/index.md)
 * [Základní typy v .NET](base-types/index.md)
 * [Kolekce](collections/index.md)
 * [Data, časy a časová pásma](datetime/index.md)

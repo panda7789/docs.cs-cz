@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 2a3e7f02ee9d210acae881edd170edbced82dab6
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 940d21bdd90d4594a39edc20283ca6a45ccf81fe
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353748"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422199"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
@@ -26,13 +26,13 @@ Existují dva druhy typů hodnot:
 
 ## <a name="main-features-of-value-types"></a>Hlavní funkce typů hodnot
 
-Proměnná typu hodnoty obsahuje hodnotu typu. Například proměnná `int` typu může obsahovat hodnotu `42`. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označovanou také jako objekt. Pokud přiřadíte novou hodnotu proměnné typu hodnoty, je tato hodnota zkopírována. Pokud přiřadíte novou hodnotu proměnné typu odkazu, je odkaz zkopírován, nikoli samotný objekt.
+Proměnná typu hodnoty obsahuje hodnotu typu. Například proměnná typu `int` může obsahovat hodnotu `42`. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označovanou také jako objekt. Pokud přiřadíte novou hodnotu proměnné typu hodnoty, je tato hodnota zkopírována. Pokud přiřadíte novou hodnotu proměnné typu odkazu, je odkaz zkopírován, nikoli samotný objekt.
 
 Všechny typy hodnot jsou implicitně odvozeny z <xref:System.ValueType?displayProperty=nameWithType>.
 
 Na rozdíl od typů odkazů nemůžete odvodit nový typ z hodnotového typu. Nicméně, podobně jako typy odkazů, struktury mohou implementovat rozhraní.
 
-Proměnné typu hodnoty nemůžou `null` být ve výchozím nastavení. Proměnné odpovídajícího [typu hodnoty s možnou hodnotou null](../../programming-guide/nullable-types/index.md) ale mohou být `null`.
+Proměnné typu hodnoty nemohou být ve výchozím nastavení `null`. Proměnné odpovídající [typy hodnot s možnou hodnotou null](../../programming-guide/nullable-types/index.md) ale mohou být `null`.
 
 Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializuje výchozí hodnotu tohoto typu. Informace o výchozích hodnotách hodnotových typů najdete v [tabulce s výchozími hodnotami](default-values-table.md).
 
@@ -44,17 +44,17 @@ Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializ
 - [Typy s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
 - [bool](bool.md)
 
-Jednoduché typy jsou identifikovány pomocí klíčových slov, ale tato klíčová slova jsou jednoduše aliasy pro předdefinované <xref:System> typy struktury v oboru názvů. Například [int](../builtin-types/integral-numeric-types.md) je alias <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů najdete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
+Jednoduché typy jsou identifikovány pomocí klíčových slov, ale tato klíčová slova jsou jednoduše aliasy pro předdefinované typy struktury v oboru názvů <xref:System>. Například [int](../builtin-types/integral-numeric-types.md) je alias <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů najdete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
 
 Jednoduché typy se liší od jiných typů struktury v tom, že umožňují určité další operace:
 
-- Jednoduché typy lze inicializovat pomocí literálů. Například je literál `'A'` `char` `int`typu, který je literálem typu. `2001`
+- Jednoduché typy lze inicializovat pomocí literálů. Například `'A'` je literál typu `char` a `2001` je literál typu `int`.
 
 - Můžete deklarovat konstanty jednoduchých typů pomocí klíčového slova [const](const.md) . Není možné mít konstanty jiných typů struktury.
 
 - Výrazy konstant, jejichž operandy jsou všechny jednoduché konstanty typu, jsou vyhodnocovány v době kompilace.
 
-Další informace naleznete v části [jednoduché typy](~/_csharplang/spec/types.md#simple-types) [ C# specifikace jazyka](../language-specification/index.md).
+Další informace naleznete v části [jednoduché typy](~/_csharplang/spec/types.md#simple-types) [ C# specifikace jazyka](/dotnet/csharp/language-reference/language-specification/introduction).
 
 ## <a name="initializing-value-types"></a>Inicializace typů hodnot
 
@@ -88,9 +88,9 @@ ani
 int myInt = 0;
 ```
 
-Použití operátoru [New](../operators/new-operator.md) volá konstruktor bez parametrů konkrétního typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřadí hodnotu `0` k. `myInt` Další informace o hodnotách, které jsou přiřazeny voláním konstruktorů bez parametrů, naleznete v [tabulce Default Values](default-values-table.md).
+Použití operátoru [New](../operators/new-operator.md) volá konstruktor bez parametrů konkrétního typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřadil hodnotu `0` k `myInt`. Další informace o hodnotách, které jsou přiřazeny voláním konstruktorů bez parametrů, naleznete v [tabulce Default Values](default-values-table.md).
 
-S uživatelsky definovanými typy použijte [Nový](../operators/new-operator.md) k vyvolání konstruktoru bez parametrů. Například následující příkaz vyvolá konstruktor `Point` bez parametrů struktury:
+S uživatelsky definovanými typy použijte [Nový](../operators/new-operator.md) k vyvolání konstruktoru bez parametrů. Například následující příkaz vyvolá konstruktor bez parametrů `Point` struktury:
 
 ```csharp
 var p = new Point(); // Invoke parameterless constructor for the struct.
@@ -98,7 +98,7 @@ var p = new Point(); // Invoke parameterless constructor for the struct.
 
 Po tomto volání se struktura považuje za jednoznačně přiřazenou; To znamená, že všichni její členové jsou inicializováni na jejich výchozí hodnoty.
 
-Další informace o `new` operátoru naleznete v tématu [New](../operators/new-operator.md).
+Další informace o operátoru `new` naleznete v tématu [New](../operators/new-operator.md).
 
 Informace o formátování výstupu číselných typů najdete v tématu [formátování tabulky číselných výsledků](formatting-numeric-results-table.md).
 
@@ -107,6 +107,6 @@ Informace o formátování výstupu číselných typů najdete v tématu [formá
 - [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Typy](types.md)
+- [Typy](/dotnet/csharp/language-reference/keywords)
 - [Typy odkazů](reference-types.md)
 - [Typy hodnot s možnou hodnotou null](../../programming-guide/nullable-types/index.md)

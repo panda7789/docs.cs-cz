@@ -2,189 +2,189 @@
 title: Protokoly zabezpečení verze 1.0
 ms.date: 03/30/2017
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
-ms.openlocfilehash: 71855b73bb08d5edef05747dcff9e1ac04fb951f
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: e22150d21638cffdf804008c32285f900bb1e263
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425102"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459040"
 ---
 # <a name="security-protocols-version-10"></a>Protokoly zabezpečení verze 1.0
-Protokoly webových služeb zabezpečení poskytují webové služby bezpečnostní mechanismy, které pokrývají všechny stávající Podnikové zasílání zpráv požadavků na zabezpečení. Tato část popisuje podrobnosti Windows Communication Foundation (WCF) verze 1.0 (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následujících webových služeb.  
+Protokoly specifikace Web Services Security poskytují mechanismy zabezpečení webových služeb, které pokrývají všechny stávající požadavky na zabezpečení podnikových zpráv. Tato část popisuje podrobnosti o Windows Communication Foundation (WCF) verze 1,0 (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro následující protokoly zabezpečení webových služeb.  
   
-|Specifikace/dokumentu|Odkaz|  
+|Specifikace/dokument|Propojit|  
 |-|-|  
-|WSS: Zabezpečení zpráv SOAP 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf>|
-|WSS: Token uživatelského jména profilu 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
-|WSS: X509 token profilu 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf>|
-|WSS: SAML 1.1 Token profilu 1.0|<https://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf>|
-|WSS: Zabezpečení zpráv SOAP 1.1|<https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf>|
-|Doplněk WSS uživatelské jméno Token Profile 1.1|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
-|WSS: X.509 Token Profile 1.1|<https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf>|
-|WSS: Token protokolu Kerberos Profile 1.1|<https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf>|
-|WSS: SAML 1.1 Token Profile 1.1|<https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf>|
-|WS-Secure Conversation|<http://specs.xmlsoap.org/ws/2005/02/sc/WS-SecureConversation.pdf>|
-|WS-Trust|<http://specs.xmlsoap.org/ws/2005/02/trust/ws-trust.pdf>|
-|Poznámka: aplikace:<br /><br /> Pomocí WS-Trust pro TLS Handshake|K publikování|  
-|Poznámka: aplikace:<br /><br /> Pomocí WS-Trust pro SPNEGO|K publikování|  
-|Poznámka: aplikace:<br /><br /> Webové služby adresování Reference koncového bodu a Identity|K publikování|  
-|WS-SecurityPolicy 1.1<br /><br /> (2005/07)|<http://specs.xmlsoap.org/ws/2005/07/securitypolicy/ws-securitypolicy.pdf><br /><br /> ve znění [chyby](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html) odeslané do technického výboru OASIS WS-SX |  
+|WSS: zabezpečení zpráv SOAP 1,0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf>|
+|WSS: Profil tokenu uživatelského jména 1,0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
+|WSS: Profil tokenu x509 1,0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf>|
+|WSS: Profil tokenu SAML 1,1 1,0|<https://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf>|
+|WSS: zabezpečení zpráv SOAP 1,1|<https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf>|
+|Token uživatelského jména WSS – profil 1,1|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
+|WSS: X. 509 – profil tokenu 1,1|<https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf>|
+|WSS: Profil tokenu protokolu Kerberos 1,1|<https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf>|
+|WSS: Profil tokenu SAML 1,1 1,1|<https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf>|
+|Konverzace WS-Secure|<https://specs.xmlsoap.org/ws/2005/02/sc/WS-SecureConversation.pdf>|
+|WS-Trust|<https://specs.xmlsoap.org/ws/2005/02/trust/ws-trust.pdf>|
+|Poznámka k aplikaci:<br /><br /> Použití WS-Trust pro handshake TLS|K publikování|  
+|Poznámka k aplikaci:<br /><br /> Používání WS-Trust pro SPNEGO|K publikování|  
+|Poznámka k aplikaci:<br /><br /> Odkazy a identita koncových bodů adresování webových služeb|K publikování|  
+|WS-SecurityPolicy 1,1<br /><br /> (2005/07)|<https://specs.xmlsoap.org/ws/2005/07/securitypolicy/ws-securitypolicy.pdf><br /><br /> Jak bylo upraveno službou [Seznam chyb](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html) odeslané technickému výboru Oasis ws-sx |  
   
- WCF, verze 1, poskytuje 17 režimy ověřování, které můžete použít jako základ pro konfigurace zabezpečení webové služby. Každý režim je optimalizovaný pro sadu běžných požadavků na nasazení, jako například:  
+ Služba WCF verze 1 poskytuje 17 režimů ověřování, které lze použít jako základ pro konfiguraci zabezpečení webových služeb. Jednotlivé režimy jsou optimalizované pro společnou sadu požadavků na nasazení, jako například:  
   
-- Pověření pro ověření klienta a služby.  
+- Pověření používaná k ověřování klienta a služby.  
   
-- Zpráva nebo přenos mechanismy ochrany zabezpečení.  
+- Mechanismy ochrany zabezpečení zpráv nebo přenosů.  
   
-- Vzorky serveru exchange zprávu.  
+- Vzory výměny zpráv.  
   
-|Režim ověřování|Ověření klienta|Ověřování serveru|Režim|  
+|Režim ověřování|Ověřování klienta|Ověřování serveru|Režim|  
 |-------------------------|---------------------------|---------------------------|----------|  
-|UserNameOverTransport|Uživatelské jméno/heslo|X509|Přenos|  
-|CertificateOverTransport|X509|X509|Přenos|  
-|KerberosOverTransport|Windows|X509|Přenos|  
-|IssuedTokenOverTransport|Federované|X509|Přenos|  
-|SspiNegotiatedOverTransport|Windows Sspi Negotiated|Windows Sspi Negotiated|Přenos|  
-|AnonymousForCertificate|Žádné|X509|Message|  
-|UserNameForCertificate|Uživatelské jméno/heslo|X509|Message|  
-|MutualCertificate|X509|X509|Message|  
-|MutualCertificateDuplex|X509|X509|Message|  
-|IssuedTokenForCertificate|Federované|X509|Message|  
-|Protokol Kerberos|Windows|Windows|Message|  
-|Třídy IssuedToken|Federované|Federované|Message|  
-|SspiNegotiated|Windows Sspi Negotiated|Windows Sspi Negotiated|Message|  
-|AnonymousForSslNegotiated|Žádné|X509, TLS-Nego|Message|  
-|UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Message|  
-|MutualSslNegotiated|X509|X509, TLS-Nego|Message|  
-|IssuedTokenForSslNegotiated|Federované|X509, TLS-Nego|Message|  
+|UserNameOverTransport|Uživatelské jméno a heslo|X509|Přepravu|  
+|CertificateOverTransport|X509|X509|Přepravu|  
+|KerberosOverTransport|Windows|X509|Přepravu|  
+|IssuedTokenOverTransport|Federované|X509|Přepravu|  
+|SspiNegotiatedOverTransport|Vyjednávání SSPI systému Windows|Vyjednávání SSPI systému Windows|Přepravu|  
+|AnonymousForCertificate|Žádné|X509|Zpráva|  
+|UserNameForCertificate|Uživatelské jméno a heslo|X509|Zpráva|  
+|MutualCertificate|X509|X509|Zpráva|  
+|MutualCertificateDuplex|X509|X509|Zpráva|  
+|IssuedTokenForCertificate|Federované|X509|Zpráva|  
+|Sdílené|Windows|Windows|Zpráva|  
+|Třídy IssuedToken|Federované|Federované|Zpráva|  
+|SspiNegotiated|Vyjednávání SSPI systému Windows|Vyjednávání SSPI systému Windows|Zpráva|  
+|AnonymousForSslNegotiated|Žádné|X509, TLS-NEGO|Zpráva|  
+|UserNameForSslNegotiated|Uživatelské jméno a heslo|X509, TLS-NEGO|Zpráva|  
+|MutualSslNegotiated|X509|X509, TLS-NEGO|Zpráva|  
+|IssuedTokenForSslNegotiated|Federované|X509, TLS-NEGO|Zpráva|  
   
- Pomocí těchto režimů ověřování koncových bodů můžete vyjádřit svoje požadavky na zabezpečení pomocí WS-SecurityPolicy (WS-SP). Tento dokument popisuje strukturu záhlaví zabezpečení a zprávy infrastruktury pro oba režimy ověřování a poskytuje příklady zásad a zprávy.  
+ Koncové body využívající takové režimy ověřování mohou vyjádřit požadavky na zabezpečení pomocí WS-SecurityPolicy (WS-SP). Tento dokument popisuje strukturu záhlaví zabezpečení a zpráv infrastruktury pro každý režim ověřování a poskytuje příklady zásad a zpráv.  
   
- WCF využívá WS-SecureConversation zajištění zabezpečených relací podpory k ochraně výměny více zpráv mezi aplikacemi.  Podrobnosti o implementaci najdete v článku "Zabezpečené relace" níže.  
+ WCF využívá WS-SecureConversation k poskytování zabezpečených relací, které umožňují chránit výměny více zpráv mezi aplikacemi.  Podrobnosti o implementaci najdete níže v části "zabezpečené relace".  
   
- Kromě režimů ověřování WCF obsahuje nastavení, které řídí běžné mechanismy ochrany, které se vztahují na většinu režimy ověřování na základě zabezpečení zpráv, například: pořadí podpisu a operace šifrování, algoritmus sad, odvození klíče a potvrzení podpisu.  
+ Kromě režimů ověřování nabízí WCF nastavení pro řízení běžných mechanismů ochrany, které se vztahují na většinu režimů ověřování založených na zabezpečení zpráv, například: pořadí podpisů a operací šifrování, sady algoritmů, odvození klíče. a potvrzení podpisu.  
   
  V tomto dokumentu se používají následující předpony a obory názvů.  
   
-|Předpona|Obor názvů|  
+|směr|Obor názvů|  
 |------------|---------------|  
-|s|<https://www.w3.org/2003/05/soap-envelope/>|
-|sp|<http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/>|
-|a|<https://www.w3.org/2005/08/addressing>|  
-|wsse|DEFINUJE – IDENTIFIKÁTOR URI OASIS WSS 1.0|  
-|wsse11|DEFINUJE – IDENTIFIKÁTOR URI OASIS WSS 1.1|  
-|wsu|Definuje – nástroj URI OASIS WSS 1.0|  
-|ds|Definuje – identifikátor URI XMLDSig W3C|  
-|WST|Definuje – WS-Trust 2005/02 identifikátoru URI|  
-|wssc|Definuje – WS-SecureConversation 2005/02 identifikátoru URI|  
-|wsaw|Definuje – obor názvů WS-Addressing zásad|  
-|wsp|<http://schemas.xmlsoap.org/ws/2004/09/policy>|  
+|s|<http://www.w3.org/2003/05/soap-envelope/>|
+|SP|<http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/>|
+|Určitého|<http://www.w3.org/2005/08/addressing>|  
+|wsse|TBD – OASIS WSS 1,0 URI|  
+|wsse11|TBD – OASIS WSS 1,1 URI|  
+|wsu|TBD – identifikátor URI nástroje OASIS WSS 1,0|  
+|služby|TBD – XMLDSig URI W3C|  
+|WST|TBD – WS-Trust 2005/02 URI|  
+|wssc|TBD – WS-SecureConversation 2005/02 URI|  
+|wsaw|TBD – obor názvů zásad WS-Addressing|  
+|WSP|<http://schemas.xmlsoap.org/ws/2004/09/policy>|  
 |mssp|<http://schemas.xmlsoap.org/ws/2005/07/securitypolicy>|
   
-## <a name="1-token-profiles"></a>1. Token profily  
- Webové služby zabezpečení specifikace představují přihlašovací údaje jako tokeny zabezpečení. WCF podporuje následující typy tokenů:  
+## <a name="1-token-profiles"></a>1. profily tokenů  
+ Specifikace specifikace Web Services Security reprezentují přihlašovací údaje jako tokeny zabezpečení. WCF podporuje následující typy tokenů:  
   
-### <a name="11-usernametoken"></a>1.1 UsernameToken  
- WCF následující UsernameToken10 a UsernameToken11 profily s následujícími omezeními:  
+### <a name="11-usernametoken"></a>1,1 UsernameToken  
+ WCF sleduje profily UsernameToken10 a UsernameToken11 s následujícími omezeními:  
   
- Atribut R1101 PasswordType UsernameToken\Password elementu musí být vynechána, nebo mít hodnotu #PasswordText (výchozí).  
+ Atribut R1101 PasswordType elementu UsernameToken\Password musí být buď vynechán, nebo musí mít hodnotu #PasswordText (výchozí).  
   
- Jeden můžete implementovat #PasswordDigest pomocí rozšíření. Bylo zjištěno, že byl #PasswordDigest často zaměněny být dostatečně zabezpečené heslo ochranný mechanismus. Ale #PasswordDigest nemůže sloužit jako náhradu šifrování UsernameToken. Hlavním cílem #PasswordDigest je ochrana proti opakované útoky. V režimech ověřování WCF přehrajte útoku, které jsou pomocí podpisy zpráv zmírnit hrozby.  
+ Jeden může implementovat #PasswordDigest s využitím rozšiřitelnosti. Zjistilo se, že #PasswordDigest bylo často zaměněno jako zabezpečený dostatečný mechanismus ochrany heslem. #PasswordDigest ale nemůžou sloužit jako náhrada za šifrování UsernameToken. Primárním cílem #PasswordDigest je ochrana před útoky přes opakované přehrání. V režimech ověřování WCF se hrozby útoku na opakování sníží pomocí podpisů zpráv.  
   
- B1102 WCF nikdy vysílá Nonce and Created dílčím prvkům UsernameToken.  
+ B1102 WCF nikdy negeneruje hodnoty nonce a vytvořil dílčí prvky pro UsernameToken.  
   
- Tyto prvky jsou určeny ke zjišťování opětovného přehrání. WCF použije podpisy zpráv.  
+ Tyto dílčí prvky jsou určeny k detekci opětovného přehrání. WCF místo toho používá podpisy zpráv.  
   
- OASIS WSS protokolu SOAP zprávy zabezpečení UsernameToken Profile 1.1 (UsernameToken11) zavedla odvození klíče z funkce hesla.  
+ OASIS WSS protokolu SOAP Message Security UsernameToken Profile 1,1 (UsernameToken11) zavedla odvození klíče z funkce Password.  
   
- Heslo B1103 UsernameToken nesmí se používat pro odvození klíče a proto pro kryptografické operace.  
+ Heslo B1103 UsernameToken nesmí být použito pro odvození klíče, a proto pro kryptografické operace.  
   
- Důvody: hesla se obecně považují za příliš slabé má být použit pro kryptografické operace.  
+ Odůvodnění: hesla se obecně považují za příliš slabá, aby je bylo možné použít pro kryptografické operace.  
   
-### <a name="12-x509-token"></a>1.2 x 509 Token  
- WCF podporuje certifikáty na X509v3 jako typ přihlašovacích údajů a následuje X509TokenProfile1.0 a X509TokenProfile1.1 s následujícími omezeními:  
+### <a name="12-x509-token"></a>Token x509 1,2  
+ WCF podporuje certifikáty X509v3 jako typ přihlašovacích údajů a sleduje X509TokenProfile 1.0 a X509TokenProfile 1.1 s následujícími omezeními:  
   
- Obsahuje certifikát X509v3 musí mít atribut R1201 The ValueType elementu BinarySecurityToken X509v3 # hodnotu.  
+ R1201 atribut ValueType elementu BinarySecurityToken musí mít hodnotu #X509v3, pokud obsahuje certifikát X509v3.  
   
- Doplněk WSS X509 Token profilu 1.0 a 1.1 definovat také #X509PKIPathv1 a PKCS7 # jako typy hodnot. WCF nepodporuje tyto typy.  
+ Definice tokenu WSS x509 1,0 a 1,1 také #X509PKIPathv1 a #PKCS7 jako typy hodnot. WCF tyto typy nepodporuje.  
   
- R1202 Pokud rozšíření identifikátor klíče SubjectKeyIdentifier (subjektu) se nachází v x X509 wsse:KeyIdentifier certifikát, by měl být použit pro externí odkazy do tokenu, s typ hodnoty jako #X509SubjectKeyIdentifier a jeho obsah s kódováním base64 hodnotu atributu rozšíření identifikátor klíče subjektu certifikátu.  
+ R1202 Pokud je v certifikátu x509 k dispozici rozšíření SubjectKeyIdentifier (SKI), wsse: identifikátor klíče by měl být použit pro externí odkazy na token, s atributem ValueType jako #X509SubjectKeyIdentifier a jeho obsahem jako hodnota v kódování Base64 rozšíření LYŽAŘSKÉho certifikátu.  
   
- Odkazy na identifikátor klíče subjektu jsou široce implementovat a ověřené na typ vysoce interoperabilní externího odkazu.  
+ Odkazy na SKI jsou široce implementovány a ověřeny jako vysoce interoperabilní externí typ odkazu.  
   
- R1203 Externího odkazu na X509 ds:X509IssuerSerial zabezpečení tokenu by neměl používat.  
+ R1203 externí odkaz na token zabezpečení x509 by neměl používat DS: X509IssuerSerial.  
   
- Pokud X509TokenProfile1.1 R1204 se používá, externího odkazu na X509 Token zabezpečení by MĚL používat kryptografický otisk zavedené 1.1 WS-Security.  
+ R1204 Pokud se používá X509TokenProfile 1.1, externí odkaz na token zabezpečení x509 by měl používat kryptografický otisk, který zavádí WS-Security 1,1.  
   
- WCF podporuje X509IssuerSerial. Nicméně existují problémy s interoperabilitou s X509IssuerSerial: WCF používá řetězec k porovnání dvou hodnot X509IssuerSerial. Proto pokud jeden změní pořadí součástí v názvu subjektu a odesílá do služby WCF odkaz na certifikát, je nemusejí být nalezeny.  
+ WCF podporuje X509IssuerSerial. Existují však problémy interoperability s X509IssuerSerial: WCF používá řetězec k porovnání dvou hodnot X509IssuerSerial. Proto pokud jedna změna pořadí součástí názvu subjektu a odesílá do služby WCF odkaz na certifikát, nemusí být nalezena.  
   
-### <a name="13-kerberos-token"></a>1.3 Token protokolu Kerberos  
- WCF podporuje KerberosTokenProfile1.1 za účelem ověření Windows s následujícími omezeními:  
+### <a name="13-kerberos-token"></a>Token protokolu Kerberos 1,3  
+ WCF podporuje KerberosTokenProfile 1.1 pro účely ověřování systému Windows s těmito omezeními:  
   
- R1301 A protokolu Kerberos Token musí mít hodnotu GSS zabalené AP_REQ v4 protokolu Kerberos, jak jsou definovány v GSS_API a specifikaci protokolu Kerberos a musí mít atribut ValueType s GSS_Kerberosv5_AP_REQ # hodnotu.  
+ R1301 token protokolu Kerberos musí mít hodnotu zabaleného protokolu Kerberos v4 AP_REQ, jak je definováno v GSS_API a specifikace protokolu Kerberos, a musí mít atribut ValueType s hodnotou #GSS_Kerberosv5_AP_REQ.  
   
- Použití WCF GSS zabalené AP protokolu Kerberos-REQ, není úplné Asie a Tichomoří – požadavků Toto je z bezpečnostních důvodů.  
+ WCF používá zabalené ověřování pomocí služby GSS AP-REQ, nikoli úplného přístupového bodu-REQ. To je nejlepší postup zabezpečení.  
   
-### <a name="14-saml-v11-token"></a>1.4 Token SAML verze 1.1  
- WCF podporuje tokenu SAML WSS profily 1.0 a 1.1 pro tokeny SAML verze 1.1. Je možné provádět další verze tokenu SAML formátů.  
+### <a name="14-saml-v11-token"></a>Token SAML v 1.1 1,4  
+ WCF podporuje pro tokeny SAML v 1.1 profily tokenů SAML v WSS 1,0 a 1,1. Je možné implementovat jiné verze formátů tokenů SAML.  
   
-### <a name="15-security-context-token"></a>1.5 Token kontextu zabezpečení  
- WCF podporuje zabezpečení kontextu Token (SCT) počínaje WS-SecureConversation. SCT se používá k reprezentování kontextu zabezpečení podle SecureConversation stejně jako binární vyjednávání protokoly TLS a SSPI, je popsáno níže.  
+### <a name="15-security-context-token"></a>Token kontextu zabezpečení 1,5  
+ Služba WCF podporuje token kontextu zabezpečení (SCT) představený v WS-SecureConversation. SCT se používá k reprezentaci kontextu zabezpečení vytvořeného v SecureConversation a také binárních protokolů pro vyjednávání TLS a SSPI popsaných níže.  
   
-## <a name="2-common-message-security-parameters"></a>2. Společné parametry zabezpečení zpráv  
+## <a name="2-common-message-security-parameters"></a>2. běžné parametry zabezpečení zpráv  
   
-### <a name="21-timestamp"></a>2.1 časové razítko  
- Přítomnost časového razítka je řízen pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. WCF vždy serializuje wsse:TimeStamp s wsse: vytvořené a wsse: vypršení platnosti pole. Wsse:TimeStamp je vždy podepisován při podepisování se používá.  
+### <a name="21-timestamp"></a>Časové razítko 2,1  
+ Přítomnost časového razítka je řízena pomocí vlastnosti <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> třídy <xref:System.ServiceModel.Channels.SecurityBindingElement>. WCF vždycky serializace wsse: TimeStamp pomocí polí wsse: created a wsse: Expires. Wsse: časové razítko je vždy podepsáno při použití podepisování.  
   
-### <a name="22-protection-order"></a>2.2 pořadí ochrany  
- WCF podporuje pořadí ochrany zprávy "Znaménko před šifrování" a "Šifrovat před znak" (1.1 zásada zabezpečení). "Podepsat před šifrovat" se doporučuje důvodů včetně: zprávy chráněné pomocí šifrování před jsou otevřené vůči útokům podpis nahrazení, pokud se používá mechanismus SignatureConfirmation 1.1 WS-Security, a díky podpis přes zašifrovaný obsah auditování obtížnější.  
+### <a name="22-protection-order"></a>2,2. pořadí ochrany  
+ WCF podporuje pořadí zpráv před zašifrováním a před podepsáním (zásady zabezpečení 1,1). Doporučení "před šifrováním" se doporučují z důvodů, mezi které patří: zprávy chráněné šifrováním před tím, než se přihlásí k zástupným útokům, pokud se nepoužije mechanismus WS-Security 1,1 SignatureConfirmation a signatura přešifrovaného obsahu vytvoří auditování je obtížnější.  
   
-### <a name="23-signature-protection"></a>2.3 podpis ochrany  
- Šifrovat před znak se používá, se doporučuje pro ochranu podpis prevenci proti útokům hrubou silou pro opakovaně uhodnout šifrovaný obsah nebo podpisový klíč (zejména při vlastní token se používá s slabé materiál klíče).  
+### <a name="23-signature-protection"></a>2,3 signatura ochrany  
+ Při šifrování před použitím podpisu se doporučuje chránit signaturu, aby nedocházelo k útokům hrubou silou za účelem odhadování šifrovaného obsahu nebo podpisového klíče (zejména pokud se vlastní token používá se slabým materiálem klíče).  
   
-### <a name="24-algorithm-suite"></a>2.4 sada algoritmů  
- WCF podporuje všechny sady algoritmus uvedený v 1.1 zásady zabezpečení.  
+### <a name="24-algorithm-suite"></a>Sada algoritmů 2,4  
+ WCF podporuje všechny sady algoritmů uvedené v zásadách zabezpečení 1,1.  
   
-### <a name="25-key-derivation"></a>2.5 odvození klíče  
- WCF používá "Odvození klíče pro symetrické klíče", jak je popsáno v WS-SecureConversation.  
+### <a name="25-key-derivation"></a>2,5 odvození klíče  
+ WCF používá odvození klíče pro symetrické klíče, jak je popsáno v tématu WS-SecureConversation.  
   
-### <a name="26-signature-confirmation"></a>2.6 potvrzení podpisu  
- Jako ochranu před útoky man střední k ochraně sadu podpisy může být potvrzení podpisu.  
+### <a name="26-signature-confirmation"></a>2,6 potvrzení podpisu  
+ Potvrzení podpisu může být ochrany proti útokům ze střední osoby na ochranu sady podpisů.  
   
-### <a name="27-security-header-layout"></a>2.7 rozložení záhlaví zabezpečení  
- Oba režimy ověřování popisuje rozložení záhlaví zabezpečení. Prvky v záhlaví zabezpečení jsou částečně seřazených. K definování pořadí podřízené prvky záhlaví zabezpečení, WS-Security Policy definuje následující režimy rozložení záhlaví zabezpečení:  
+### <a name="27-security-header-layout"></a>2,7 rozvržení záhlaví zabezpečení  
+ Každý režim ověřování popisuje určité rozložení pro záhlaví zabezpečení. Prvky v záhlaví zabezpečení jsou částečně seřazené. Pro definování pořadí podřízených prvků záhlaví zabezpečení definuje zásada WS-Security následující režimy rozvržení záhlaví zabezpečení:  
   
 |||  
 |-|-|  
-|Striktní|Položky se přidají do následující záhlaví zabezpečení, že pravidla číselného rozložení popsané v zásadách zabezpečení části 7.7.1 podle obecné zásady "deklarovat před použitím".|  
-|Lax|Položky jsou přidány do záhlaví zabezpečení v libovolném pořadí, který odpovídá skupině WSS: Zabezpečení zpráv SOAP.|  
-|LaxTimestampFirst|Stejné jako Lax s tím rozdílem, že první položku v záhlaví zabezpečení musí být wsse:Timestamp|  
-|LaxTimestampLast|Stejné jako lax s tím rozdílem, že poslední položka v záhlaví zabezpečení musí být wsse:Timestamp|  
+|Zásadní|Položky jsou přidány do záhlaví zabezpečení podle pravidel číslovaného rozložení, které jsou popsány v části zásady zabezpečení 7.7.1, podle obecné zásady deklarace před použitím.|  
+|LAX|Položky jsou přidány do záhlaví zabezpečení v libovolném pořadí, které odpovídá WSS: zabezpečení zpráv SOAP.|  
+|LaxTimestampFirst|Stejné jako LAX s tím rozdílem, že první položka v záhlaví zabezpečení musí být wsse: Timestamp|  
+|LaxTimestampLast|Stejné jako LAX s tím rozdílem, že poslední položka v záhlaví zabezpečení musí být wsse: Timestamp|  
   
- WCF podporuje všechny čtyři režimy pro rozložení záhlaví zabezpečení. Příklady strukturu a zpráva záhlaví zabezpečení pro režimy ověřování níže podle režimu "Strict".  
+ WCF podporuje všechny čtyři režimy pro rozložení záhlaví zabezpečení. Struktura záhlaví zabezpečení a příklady zpráv pro režimy ověřování níže následují po "striktním" režimu.  
   
-## <a name="2-common-message-security-parameters"></a>2. Společné parametry zabezpečení zpráv  
- Tato část poskytuje příklad zásady pro oba režimy ověřování spolu s příklady znázorňující struktura záhlaví zabezpečení zpráv mezi klientem a službou.  
+## <a name="2-common-message-security-parameters"></a>2. běžné parametry zabezpečení zpráv  
+ V této části najdete příklady zásad pro jednotlivé režimy ověřování spolu s příklady zobrazení struktury záhlaví zabezpečení ve zprávách vyměňovaných klientem a službou.  
   
-### <a name="61-transport-protection"></a>6.1 přenosu ochrany  
- Poskytuje pět režimy ověřování, které používají k ochraně zprávy; zabezpečeného přenosu WCF UserNameOverTransport CertificateOverTransport, KerberosOverTransport, IssuedTokenOverTransport a SspiNegotiatedOverTransport.  
+### <a name="61-transport-protection"></a>6,1 Transport Protection  
+ WCF nabízí pět režimů ověřování, které používají k ochraně zpráv zabezpečený přenos. UserNameOverTransport, CertificateOverTransport, KerberosOverTransport, IssuedTokenOverTransport a SspiNegotiatedOverTransport.  
   
- Tyto režimy ověřování jsou vytvářeny pomocí vazby přenosu je popsáno v SecurityPolicy. Režim ověřování UsernameToken pro UserNameOverTransport je podepsaný token. Token se zobrazí jako podepsaný token potvrzující pro jiné režimy ověřování. Příloha C.1.2 a C.1.3 SecurityPolicy popisují podrobně rozložení záhlaví zabezpečení. Následující příklad záhlaví zabezpečení zobrazit striktní rozložení pro režim daného ověřování.  
+ Tyto režimy ověřování jsou vytvořeny pomocí přenosové vazby popsané v části SecurityPolicy. Pro režim ověřování UserNameOverTransport je UsernameToken podepsaný podpůrný token. Pro jiné režimy ověřování se token zobrazí jako podepsaný token. Příloha C. 1.2 a C. 1.3 programu SecurityPolicy popisují podrobné rozložení záhlaví zabezpečení. Následující příklady hlaviček zabezpečení znázorňují striktní rozložení pro daný režim ověřování.  
   
- Hodnota vlastnosti "Odvozené klíče" pro tokeny ve všech případech je "false".  
+ Hodnota vlastnosti "odvozené klíče" pro tokeny ve všech případech je "false".  
   
- Hodnoty různé vlastnosti objektu vazby přenosu jsou následující:  
+ Hodnoty různých vlastností transportní vazby jsou následující:  
   
  Časové razítko: true  
   
- Rozložení záhlaví zabezpečení: Striktní  
+ Rozložení záhlaví zabezpečení: striktní  
   
  Sada algoritmů: Basic256  
   
 #### <a name="611-usernameovertransport"></a>6.1.1 UsernameOverTransport  
- S tímto režimem ověřování klient se ověří pomocí uživatelského jména Token, který se zobrazí ve vrstvě protokolu SOAP jako podepsaný podpůrný token, který je vždy odesílat iniciátor příjemce. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Vazba použitá je vazby přenosu.  
+ V tomto režimu ověřování se klient ověřuje pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token, který se vždy odesílá z iniciátoru příjemci. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Použitá vazba je přenosová vazba.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='UsernameOverTransport_policy' >  
@@ -256,7 +256,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -267,9 +267,9 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 ```  
   
 #### <a name="612-certificateovertransport"></a>6.1.2 CertificateOverTransport  
- S tímto režimem ověřování, které klient se ověří pomocí certifikát X.509 certifikátu, která se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token, který je vždy odesílat iniciátor příjemce. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Vazba použitá je vazby přenosu.  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako připravující token, který se vždycky odesílá z iniciátoru příjemci. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Použitá vazba je přenosová vazba.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='CertificateOverTransport_policy' >  
@@ -349,7 +349,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <o:Security>  
@@ -360,9 +360,9 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 ```  
   
 #### <a name="613-issuedtokenovertransport"></a>6.1.3 IssuedTokenOverTransport  
- Tento režim ověřování klienta ověření ke službě, jako například, ale spíše uvede tokenem vydaným službou tokenů zabezpečení služby (STS) a ukáže znalost sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token, který je vždy odesílat iniciátor příjemce. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Vazba je vazby přenosu.  
+ V tomto režimu ověřování klient neověřuje službu, například, ale prezentuje token vydaný službou tokenu zabezpečení (STS) a prokáže znalosti sdíleného klíče. Vydaný token se zobrazí ve vrstvě SOAP jako průkazní token, který je vždycky odesílán od iniciátoru příjemci. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Vazba je přenosová vazba.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='IssuedTokenOverTransport_policy' >  
@@ -446,7 +446,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -457,9 +457,9 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 ```  
   
 #### <a name="614-kerberosovertransport"></a>6.1.4 KerberosOverTransport  
- S tímto režimem ověřování klienta ověřuje ke službě pomocí lístek protokolu Kerberos. Token protokolu Kerberos se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Vazba je vazby přenosu.  
+ V tomto režimu ověřování klient ověřuje službu pomocí lístku Kerberos. Token protokolu Kerberos se zobrazí ve vrstvě SOAP jako token podporující potvrzení. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Vazba je přenosová vazba.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='KerberosOverTransport_policy' >  
@@ -538,7 +538,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -549,9 +549,9 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 ```  
   
 #### <a name="615-sspinegotiatedovertransport"></a>6.1.5 SspiNegotiatedOverTransport  
- S tímto režimem vyjednávání protokolu slouží k provádění ověření klienta a serveru. Protokol Kerberos se používá v případě je to možné, jinak NTLM. Výsledný SCT se zobrazí ve vrstvě protokolu SOAP jako podporujícími podpůrný token, který je vždy odesílat iniciátoru příjemce. Služba je kromě ověřit na transportní vrstvě pomocí certifikátu X.509. Vazba použitá je vazby přenosu. "SPNEGO" (vyjednávání) popisuje, jak WCF SSPI binární vyjednávání službou pomocí protokolu WS-Trust. Příklady záhlaví zabezpečení v této části jsou po SCT se vytvořilo pomocí metody handshake SPNEGO.  
+ V tomto režimu se k ověřování klienta a serveru používá protokol vyjednávání. Kerberos se používá, pokud je to možné, jinak NTLM. Výsledný SCT se zobrazí ve vrstvě SOAP jako průkazní token, který je vždy odeslán od iniciátoru příjemci. Služba se navíc ověřuje na transportní vrstvě pomocí certifikátu X. 509. Použitá vazba je přenosová vazba. "SPNEGO" (vyjednávání) popisuje, jak WCF používá protokol binárního vyjednávání SSPI s WS-Trust. Příklady hlaviček zabezpečení v této části jsou po navázání SCT prostřednictvím metody handshake SPNEGO.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='SspiNegotiatedOverTransport_policy' >  
@@ -611,7 +611,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 ```  
   
 ### <a name="security-header-examples"></a>Příklady záhlaví zabezpečení  
- Jakmile Token kontextu zabezpečení se naváže prostřednictvím metody handshake SPNEGO pomocí binární vyjednávání WS-Trust, zprávy aplikace mít záhlaví zabezpečení s následující strukturou.  
+ Jakmile je token kontextu zabezpečení vytvořen pomocí SPNEGO handshake pomocí binárního vyjednávání WS-Trust, budou zprávy aplikace obsahovat záhlaví zabezpečení s následující strukturou.  
   
  Request  
   
@@ -629,7 +629,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -639,27 +639,27 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 </wsse:Security>  
 ```  
   
-### <a name="62-using-x509-certificates-for-service-authentication"></a>6.2 pomocí certifikátů X.509 pro ověřování služby  
- Tato část popisuje následující režimy ověřování: MutualCertificate WSS1.0, vzájemné CertificateDuplex, MutualCertificate WSS1.1, AnonymousForCertificate, UserNameForCertificate a IssuedTokenForCertificate.  
+### <a name="62-using-x509-certificates-for-service-authentication"></a>6,2 použití certifikátů X. 509 pro ověřování služby  
+ Tato část popisuje následující režimy ověřování: MutualCertificate WSS 1.0, vzájemné CertificateDuplex, MutualCertificate WSS 1.1, AnonymousForCertificate, UserNameForCertificate a IssuedTokenForCertificate.  
   
-#### <a name="621-mutualcertificate-wss10"></a>6.2.1 MutualCertificate WSS1.0  
- S tímto režimem ověřování, které klient se ověří pomocí certifikát X.509 certifikátu, která se zobrazí ve vrstvě protokolu SOAP jako iniciátor token. Služba je také ověřit pomocí certifikátu X.509.  
+#### <a name="621-mutualcertificate-wss10"></a>6.2.1 MutualCertificate WSS 1.0  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token iniciátoru. Služba je také ověřena pomocí certifikátu X. 509.  
   
- Vazba použitá je asymetrický vazbu s použitím následujících hodnot vlastností:  
+ Použitá vazba je asymetrická vazba s následujícími hodnotami vlastností:  
   
- Iniciátor Token: certifikát X.509 klienta, se režim zahrnutí nastavený na .../IncludeToken/AlwaysToRecipient  
+ Token iniciátoru: certifikát X. 509 klienta s režimem zahrnutí nastaveným na. ../IncludeToken/AlwaysToRecipient  
   
- Příjemce Token: Nastavení certifikátu X.509 serveru, se režim zahrnutí .../IncludeToken/Never  
+ Token příjemce: je nastavený certifikát X. 509 serveru s režimem zahrnutí. ../IncludeToken/Never  
   
- Token ochrany: False  
+ Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='MutualCertificate_WSS10_policy' >  
@@ -744,7 +744,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -787,7 +787,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -806,24 +806,24 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
-#### <a name="622-mutualcertificateduplex"></a>6.2.2 MutualCertificateDuplex  
- S tímto režimem ověřování, které klient se ověří pomocí certifikát X.509 certifikátu, která se zobrazí ve vrstvě protokolu SOAP jako iniciátor token. Služba je také ověřit pomocí certifikátu X.509.  
+#### <a name="622-mutualcertificateduplex"></a>MutualCertificateDuplex 6.2.2  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token iniciátoru. Služba je také ověřena pomocí certifikátu X. 509.  
   
- Vazba použitá je asymetrický vazbu s použitím následujících hodnot vlastností:  
+ Použitá vazba je asymetrická vazba s následujícími hodnotami vlastností:  
   
- Iniciátor Token: Klienta X509 certifikát, zahrnutí režim je nastaven na .../IncludeToken/AlwaysToRecipient  
+ Token iniciátoru: certifikát x509 klienta, režim zahrnutí je nastaven na. ../IncludeToken/AlwaysToRecipient  
   
- Příjemce Token: X509 serveru certifikát, zahrnutí režim je nastaven na .../IncludeToken/AlwaysToInitiator  
+ Token příjemce: certifikát x509 serveru, režim zahrnutí je nastaven na. ../IncludeToken/AlwaysToInitiator.  
   
- Token ochrany: False  
+ Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='MutualCertificateDuplex_policy' >  
@@ -931,27 +931,27 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
-#### <a name="623-using-symmetricbinding-with-x509-service-authentication"></a>6.2.3 pomocí ověřování služby X.509 SymmetricBinding  
- "WSS10" poskytuje omezenou podporu pro scénáře s X509 tokeny. Například neexistoval způsob, jak zajistit ochranu podpis a šifrování zpráv pomocí pouze služby X509 tokenu. "WSS11" zavedené využití EncryptedKey jako symetrický token. Nyní dočasný klíč šifrována pro certifikát X.509 služby může být použita pro ochranu zprávy požadavků a odpovědí. Tento model použijte režimů ověřování je popsáno v části 6.4 níže.  
+#### <a name="623-using-symmetricbinding-with-x509-service-authentication"></a>6.2.3 s použitím SymmetricBinding s ověřováním služby X. 509  
+ "WSS10" poskytl omezená podpora pro scénáře s tokeny x509. Například neexistuje způsob, jak poskytnout podpisovou a šifrovací ochranu pro zprávy pomocí tokenu x509 služby. "WSS11" zavedlo použití EncryptedKey jako symetrického tokenu. Nyní může být pro ochranu požadavků a odpovědí použit dočasný klíč zašifrovaný pro certifikát X. 509 služby. Tento model se používá v režimech ověřování popsaných v části 6,4.  
   
- Popisuje tento model SymmetricBinding pomocí služby WS-SecurityPolicy X509 token jako token ochrany.  
+ WS-SecurityPolicy popisuje tento vzor pomocí SymmetricBinding s tokenem x509 Service jako tokenem ochrany.  
   
- Režimy ověřování AnonymousForCertificate UsernameForCertificate, MutualCertificate WSS11 a IssuedTokenForCertificate všechny používat podobné instance systému sp:SymmetricBinding s použitím následujících hodnot vlastností:  
+ Režimy ověřování AnonymousForCertificate, UsernameForCertificate, MutualCertificate WSS11 a IssuedTokenForCertificate všechny používají podobné instance SP: SymmetricBinding s následujícími hodnotami vlastností:  
   
- Token ochrany: X509 serveru certifikát, zahrnutí režim je nastaven na .../IncludeToken/Never  
-Token ochrany: False  
+ Token ochrany: certifikát x509 serveru, režim zahrnutí je nastaven na. ../IncludeToken/Never  
+Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Výše uvedené režimů ověřování se liší jenom tak podpůrných tokenů, které používají. AnonymousForCertificate nemá žádné podpůrných tokenů, MutualCertificate WSS 1.1 má klienta X509 certifikátu jako podporujících podpůrnými tokeny, UserNameForCertificate má Token uživatelské jméno jako podepsaný podpůrný token a IssuedTokenForCertificate vydaný token má jako potvrzující podpůrný token.  
+ Výše uvedené režimy ověřování se liší pouze podpůrnými tokeny, které používají. AnonymousForCertificate nemá žádné podpůrné tokeny, MutualCertificate WSS 1,1 má certifikát x509 klienta jako přihlášené tokeny pro podporu, UserNameForCertificate má token UserName jako podepsaný podpůrný token a IssuedTokenForCertificate má vydaný token jako token podporující potvrzení.  
   
- Zásada  
+ politických  
   
- Symetrický vazby  
+ Symetrická vazba  
   
 ```xml  
 <wsp:Policy wsu:Id='SymmetricCert_policy' >  
@@ -1011,11 +1011,11 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 ```  
   
 #### <a name="624-anonymousforcertificate"></a>6.2.4 AnonymousForCertificate  
- Klient se tento režim ověřování je anonymní a ověření služby pomocí certifikátu X.509. Vazba použitá je instancí symetrický vazbu, jak je popsáno v 6.4.2.  
+ V tomto režimu ověřování je klient anonymní a služba se ověřuje pomocí certifikátu X. 509. Použitá vazba je instancí symetrických vazeb, jak je popsáno v 6.4.2.  
   
- Zásada  
+ politických  
   
- Viz "Zásady" v 6.2.3 výše pro podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v části "zásady" v 6.2.3 výše.  
   
 ### <a name="security-header-examples-signbeforeencrypt-encryptsignature"></a>Příklady záhlaví zabezpečení: SignBeforeEncrypt, EncryptSignature  
  Request  
@@ -1043,7 +1043,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1094,7 +1094,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1118,13 +1118,13 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 ```  
   
 #### <a name="625-usernameforcertificate"></a>6.2.5 UserNameForCertificate  
- S tímto režimem ověřování klienta ověřuje služby pomocí uživatelského jména Token, který se zobrazí ve vrstvě protokolu SOAP jako podepsaný podpůrný token. Služba se ověřuje klienta pomocí certifikátu X.509. Vazba použitá je symetrický vazby s tokenem ochrany se klíč generované klientem zašifrován pomocí veřejného klíče služby.  
+ V tomto režimu ověřování klient ověřuje službu pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token. Služba se ověřuje pro klienta pomocí certifikátu X. 509. Použitá vazba je symetrická vazba s tokenem ochrany, který je klíčem generovaným klientem, zašifrovaný pomocí veřejného klíče služby.  
   
- Zásada  
+ politických  
   
- Viz "Zásady" v 6.2.3 výše pro podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v části "zásady" v 6.2.3 výše.  
   
- Podepsaný podpůrný Token  
+ Podepsaný podpůrný token  
   
 ```xml  
 <sp:SignedSupportingTokens>  
@@ -1167,7 +1167,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1218,7 +1218,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1240,14 +1240,14 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
-#### <a name="626-mutualcertificate-wss-11"></a>6.2.6 MutualCertificate (WSS 1.1)  
- S tímto režimem ověřování, které klient se ověří pomocí certifikát X.509 certifikátu, která se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token. Služba je také ověřit pomocí certifikátu X.509. Vazba použitá je symetrický vazby s tokenem ochrany se klíč generované klientem zašifrován pomocí veřejného klíče služby.  
+#### <a name="626-mutualcertificate-wss-11"></a>6.2.6 MutualCertificate (WSS 1,1)  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token podporující potvrzení. Služba je také ověřena pomocí certifikátu X. 509. Použitá vazba je symetrická vazba s tokenem ochrany, který je klíčem generovaným klientem, zašifrovaný pomocí veřejného klíče služby.  
   
- Zásada  
+ politických  
   
- Viz zásady v 6.2.3 pro podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v tématu věnovaném zásadám 6.2.3.  
   
- Potvrdit podporu Token  
+ Schvaluje se podpůrný token.  
   
 ```xml  
 <sp:EndorsingSupportingTokens>  
@@ -1294,7 +1294,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1357,7 +1357,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1385,13 +1385,13 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
 ```  
   
 #### <a name="627-issuedtokenforcertificate"></a>6.2.7 IssuedTokenForCertificate  
- Pomocí tohoto ověřování režimu, který jako takové, ale místo toho se klient neověřuje ke službě, uvede tokenem vydaným službou STS a ukáže znalost sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token. Služba se ověřuje klienta pomocí certifikátu X.509. Vazba použitá je symetrický vazby s tokenem ochrany se klíč generované klientem zašifrován pomocí veřejného klíče služby.  
+ V tomto režimu ověřování klient neověřuje službu, jako je, ale místo toho prezentuje token vydaný službou STS a prokáže znalosti sdíleného klíče. Vydaný token se zobrazí ve vrstvě SOAP jako token podporující potvrzení. Služba se ověřuje pro klienta pomocí certifikátu X. 509. Použitá vazba je symetrická vazba s tokenem ochrany, který je klíčem generovaným klientem, zašifrovaný pomocí veřejného klíče služby.  
   
- Zásada  
+ politických  
   
- Viz zásady v 6.2.3 nad podrobnosti vazby  
+ Podrobnosti o vazbě najdete v tématu zásady v 6.2.3 výše.  
   
- Potvrdit podporu Token  
+ Schvaluje se podpůrný token.  
   
 ```xml  
 <sp:EndorsingSupportingTokens>  
@@ -1446,7 +1446,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1509,7 +1509,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1533,19 +1533,19 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
-## <a name="63-kerberos"></a>6.3 protokolu Kerberos  
- S tímto režimem ověřování klienta ověřuje ke službě pomocí lístek protokolu Kerberos. Tento lístek stejné také poskytuje ověřování serveru. Vazba použitá je symetrický vazby s následujícími vlastnostmi;  
+## <a name="63-kerberos"></a>protokol Kerberos 6,3  
+ V tomto režimu ověřování klient ověřuje službu pomocí lístku Kerberos. Stejný lístek taky zajišťuje ověřování serveru. Použitá vazba je symetrická vazba s následujícími vlastnostmi;  
   
- Token ochrany: Lístek protokolu Kerberos, zahrnutí režim je nastaven na .../IncludeToken/Once  
-Token ochrany: False  
+ Token ochrany: lístek protokolu Kerberos, režim zahrnutí je nastaven na. ../IncludeToken/Once  
+Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='Kerberos_policy' >  
@@ -1625,7 +1625,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -1656,7 +1656,7 @@ TBD
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1664,19 +1664,19 @@ TBD
 </wsse:Security>  
 ```  
   
-#### <a name="64-issuedtoken"></a>6.4 třídy IssuedToken  
- Tento režim ověřování, které klient neověřuje ke službě v důsledku toho spíše klienta uvede u tokenu vydaného službou STS a ukáže znalost sdílený klíč. Služba není ověřen klientovi jako takové, místo toho šifruje Služba tokenů zabezpečení sdílený klíč jako součást vydaný token tak, aby pouze službu může dešifrovat klíč. Vazba použitá se jako symetrický vazby s následujícími vlastnostmi;  
+#### <a name="64-issuedtoken"></a>6,4 třídy IssuedToken  
+ V tomto režimu ověřování klient neověřuje službu, takže klient prezentuje token vydaný službou STS a prokáže znalost sdíleného klíče. Služba není ověřena klientovi, jako by se místo toho služba STS zašifroval sdílený klíč jako součást vydaného tokenu, aby se klíč dešifroval jenom službou. Použitá vazba je jako symetrická vazba s následujícími vlastnostmi;  
   
- Token ochrany: .../IncludeToken/AlwaysToRecipient vydaný Token, je nastaven režim zahrnutí  
-Token ochrany: False  
+ Token ochrany: vydaný token, režim zahrnutí je nastaven na. ../IncludeToken/AlwaysToRecipient  
+Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='CustomBinding_ISimple3_policy' >  
@@ -1761,7 +1761,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -1809,7 +1809,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -1831,22 +1831,22 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
-### <a name="65-using-sslnegotiated-for-service-authentication"></a>6.5 pomocí SslNegotiated pro ověřování služby  
- Tato část popisuje skupinu režimy ověřování, které používají symetrický vazbu s tokenem ochrany se kontext zabezpečení Token za WS-SecureConversation (WS-SC), jehož hodnota klíče se vyjedná spuštěním protokol TLS přes WS-Trust (WS-T) RVNÍ / RSTR zprávy. Podrobnosti o implementaci metody handshake TLS pomocí WS-Trust jsou popsány v TLSNEGO. Tady v příkladech zpráva budeme předpokládat, že je prostřednictvím ověřování metodou handshake už navázalo SCT s objekt context přidružený zabezpečení.  
+### <a name="65-using-sslnegotiated-for-service-authentication"></a>6,5 použití SslNegotiated pro ověřování služby  
+ Tato část popisuje skupinu režimů ověřování, které používají symetrickou vazbu s tokenem ochrany, který je tokenem kontextu zabezpečení na WS-SecureConversation (WS-SC), jehož hodnota klíče je vyjednáno spuštěním protokolu TLS prostřednictvím WS-Trust (WS-T) RST/ RSTR zprávy. Podrobnosti implementace TLS handshake pomocí WS-Trust jsou popsány v tématu TLSNEGO. V příkladech zprávy budeme předpokládat, že SCT s přidruženým kontextem zabezpečení je již vytvořen pomocí metody handshake.  
   
- Vazba použitá je symetrický vazby s následujícími vlastnostmi;  
+ Použitá vazba je symetrická vazba s následujícími vlastnostmi;  
   
- Token ochrany: SslContextToken, zahrnutí režim je nastaven na .../IncludeToken/Never  
-Token ochrany: False  
+ Token ochrany: SslContextToken, režim zahrnutí je nastaven na. ../IncludeToken/Never  
+Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
-#### <a name="651-policy-for-sslnegotiated-service-authentication"></a>6.5.1 zásady ověřování SslNegotiated služba  
- Zásady pro všechny režimy ověřování v této části jsou podobné a liší jenom konkrétních podepsaných podpory nebo podporujících tokeny používané.  
+#### <a name="651-policy-for-sslnegotiated-service-authentication"></a>zásady 6.5.1 pro ověřování služby SslNegotiated  
+ Zásady pro všechny režimy ověřování v této části jsou podobné a liší se pouze konkrétními podepsanými podpůrnými nebo schválenými tokeny.  
   
 ```xml  
 <wsp:Policy wsu:Id='SslNegotiated_policy' >  
@@ -1902,11 +1902,11 @@ Token ochrany: False
 ```  
   
 #### <a name="652-anonymousforsslnegotiated"></a>6.5.2 AnonymousForSslNegotiated  
- Klient se tento režim ověřování je anonymní a ověření služby pomocí certifikátu X.509. Vazba použitá je instance symetrický vazby, jak je popsáno v bodu 6.5.1 výše.  
+ V tomto režimu ověřování je klient anonymní a služba se ověřuje pomocí certifikátu X. 509. Použitá vazba je instance symetrického vazby, jak je popsáno v 6.5.1 výše.  
   
- Zásada  
+ politických  
   
- V bodu 6.5.1 nad vazby podrobnosti naleznete v tématu zásady.  
+ Podrobnosti o vazbách najdete v tématu zásady v 6.5.1 výše.  
   
 ### <a name="security-header-examples-signbeforeencrypt-encryptsignature"></a>Příklady záhlaví zabezpečení: SignBeforeEncrypt, EncryptSignature  
  Request  
@@ -1934,7 +1934,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -1982,7 +1982,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -2005,13 +2005,13 @@ Token ochrany: False
 ```  
   
 #### <a name="653-usernameforsslnegotiated"></a>6.5.3 UserNameForSslNegotiated  
- Pomocí tohoto ověřování režimu, který se klient ověřuje pomocí Token uživatelského jména, které se zobrazí ve vrstvě protokolu SOAP jako podepsaný podpůrný token. Služba je ověřený pomocí certifikátu X.509. Vazba použitá je instancí symetrický vazbu, jak je popsáno v bodu 6.5.1.  
+ V tomto režimu ověřování se klient ověřuje pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token. Služba se ověřuje pomocí certifikátu X. 509. Použitá vazba je instancí symetrických vazeb, jak je popsáno v 6.5.1.  
   
- Zásada  
+ politických  
   
- V části bodu 6.5.1 výše uvedené podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v části 6.5.1 výše.  
   
- Podepsaný podpůrný Token  
+ Podepsaný podpůrný token  
   
 ```xml  
 <sp:SignedSupportingTokens>  
@@ -2054,7 +2054,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -2105,7 +2105,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -2128,13 +2128,13 @@ Token ochrany: False
 ```  
   
 #### <a name="654-issuedtokenforsslnegotiated"></a>6.5.4 IssuedTokenForSslNegotiated  
- Pomocí tohoto ověřování režimu, který jako takové, ale místo toho se klient neověřuje ke službě, uvede u tokenu vydaného službou STS a ukáže znalost sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token. Služba je ověřený pomocí certifikátu X.509. Vazba použitá je instance symetrický vazby, jak je popsáno v bodu 6.5.1 výše.  
+ V tomto režimu ověřování klient neověřuje službu, jako by ale místo toho prezentuje token vydaný službou STS a prokáže znalosti sdíleného klíče. Vydaný token se zobrazí ve vrstvě SOAP jako token podporující potvrzení. Služba se ověřuje pomocí certifikátu X. 509. Použitá vazba je instance symetrického vazby, jak je popsáno v 6.5.1 výše.  
   
- Zásada  
+ politických  
   
- V části bodu 6.5.1 výše uvedené podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v části 6.5.1 výše.  
   
- Potvrdit podporu Token  
+ Schvaluje se podpůrný token.  
   
 ```xml  
 <sp:EndorsingSupportingTokens>  
@@ -2189,7 +2189,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -2252,7 +2252,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -2277,13 +2277,13 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 ```  
   
 #### <a name="655-mutualsslnegotiated"></a>6.5.5 MutualSslNegotiated  
- S tímto režimem ověřování ověření klienta a služby pomocí certifikátů X.509. Vazba použitá je instance symetrický vazby, jak je popsáno v bodu 6.5.1 výše.  
+ V tomto režimu ověřování se klient a služba ověřují pomocí certifikátů X. 509. Použitá vazba je instance symetrického vazby, jak je popsáno v 6.5.1 výše.  
   
- Zásada  
+ politických  
   
- V části bodu 6.5.1 výše uvedené podrobnosti o vazbě  
+ Podrobnosti o vazbě najdete v části 6.5.1 výše.  
   
- Potvrdit podporu Token  
+ Schvaluje se podpůrný token.  
   
 ```xml  
 <sp:EndorsingSupportingTokens>  
@@ -2324,7 +2324,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -2372,7 +2372,7 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -2394,19 +2394,19 @@ http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey
 </wsse:Security>  
 ```  
   
-### <a name="66-sspinegotiated"></a>6.6 SspiNegotiated  
- S tímto režimem ověřování protokolu vyjednávání slouží k provádění ověření klienta a serveru. Protokol Kerberos se používá v případě je to možné, jinak NTLM. Vazba použitá je symetrický vazby s následujícími vlastnostmi;  
+### <a name="66-sspinegotiated"></a>6,6 SspiNegotiated  
+ V tomto režimu ověřování se k ověřování klienta a serveru používá protokol vyjednávání. Kerberos se používá, pokud je to možné, jinak NTLM. Použitá vazba je symetrická vazba s následujícími vlastnostmi;  
   
- Token ochrany: SpnegoContextToken, zahrnutí režim je nastaven na .../IncludeToken/AlwaysToRecipient  
-Token ochrany: False  
+ Token ochrany: SpnegoContextToken, režim zahrnutí je nastaven na. ../IncludeToken/AlwaysToRecipient  
+Ochrana tokenů: false  
   
- Celý záhlaví a text podpisů: Pravda  
+ Celé záhlaví a podpisy textu: pravda  
   
  Pořadí ochrany: SignBeforeEncrypt  
   
- Šifrování podpis: Pravda  
+ Šifrovat podpis: true  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='CustomBinding_ISimple13_policy' >  
@@ -2485,7 +2485,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -2533,7 +2533,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  
@@ -2555,10 +2555,10 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
-### <a name="67-secureconversation"></a>6.7 SecureConversation  
- Vazba použitá je symetrický vazby s tokenem ochrany se SCT za WS-SecureConversation (WS-SC). SCT vyjedná použití (WS-Trust) WS-Trust a WS-SecureConversation (WS-SC) podle vnořená vazba, která sama o sobě symetrický vazbu, která pomocí protokolu vyjednávání. Vyjednávání protokolu se použití protokolu Kerberos a prováděl ověřování klienta a serveru Pokud je to možné. Pokud se nedá použít protokol Kerberos, ji budou přejdou na NTLM.  
+### <a name="67-secureconversation"></a>6,7 SecureConversation  
+ Použitá vazba je symetrická vazba s tokenem ochrany, která je SCT na WS-SecureConversation (WS-SC). SCT se vyjednávat pomocí WS-Trust (WS-Trust) nebo WS-SecureConversation (WS-SC) podle vnořené vazby, která je sám symetrickou vazbou, která používá protokol pro vyjednávání. Protokol vyjednávání bude používat protokol Kerberos k ověřování klienta a serveru, pokud je to možné. Pokud se protokol Kerberos nedá použít, přepne se na NTLM.  
   
- Zásada  
+ politických  
   
 ```xml  
 <wsp:Policy wsu:Id='SecureConversation_policy' >  
@@ -2695,7 +2695,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security s:mustUnderstand="1">  
@@ -2743,7 +2743,7 @@ Token ochrany: False
 </wsse:Security>  
 ```  
   
- Odpověď  
+ Základě  
   
 ```xml  
 <wsse:Security>  

@@ -4,12 +4,12 @@ description: Přečtěte si o typu struktury a způsobu jejich vytváření.
 ms.date: 10/12/2016
 ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: a7cdd84677cb84038aae89da9774c6e365275963
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 10971dc1a0b2c9d64ac8766734b3f6f630aa3ccf
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039732"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423108"
 ---
 # <a name="structs"></a>Struktury
 
@@ -71,5 +71,5 @@ Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/n
 
 ## <a name="see-also"></a>Viz také:
 
-- [Třídy](classes.md)
+- [Třídy](programming-guide/classes-and-structs/classes.md)
 - [Základní typy](basic-types.md)

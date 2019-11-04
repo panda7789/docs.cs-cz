@@ -1,5 +1,5 @@
 ---
-title: volatile – C# odkaz
+title: volatile C# – odkaz
 ms.custom: seodec18
 ms.date: 10/24/2018
 f1_keywords:
@@ -8,41 +8,41 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: 7200432780cb5a65bc5420b41c5dbd2e27a2c01f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e72173ba1b91f03ccb1c15ca6451ac997666bc7f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633111"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422132"
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 
-`volatile` – Klíčové slovo určuje, že pole může být upraveno ve víc vláknech, které jsou spuštěny ve stejnou dobu. Kompilátor, systém modulu runtime a dokonce i hardware mohou změnit uspořádání operací čtení a zápisu do umístění v paměti z důvodů výkonu. Pole, které jsou deklarovány `volatile` se nevztahují tato optimalizace. Přidávání `volatile` modifikátor zajistí, že všechna vlákna budou sledovat volatile zápisy provádí ostatní vlákna v pořadí, ve kterém byly provedeny. Není zaručeno jeden celkový řazení volatile zápisů pohledu ze všech vláken, která.
+Klíčové slovo `volatile` označuje, že pole může být upraveno více vlákny, které jsou spuštěny ve stejnou dobu. Kompilátor, systém modulu runtime a i hardware mohou změnit uspořádání čtení a zápisů do umístění paměti z důvodů výkonu. Pro pole, která jsou deklarována `volatile`, se tyto optimalizace nevztahují. Přidání modifikátoru `volatile` zajistí, že všechna vlákna budou sledovat nestálá zápisy provedené jakýmkoli jiným vláknem v pořadí, ve kterém byly provedeny. Neexistuje žádná záruka na jedno celkové řazení stálých zápisů, které se zobrazuje ze všech vláken provádění.
 
-`volatile` – Klíčové slovo lze použít u polí těchto typů:
+Klíčové slovo `volatile` lze použít pro pole těchto typů:
 
-- Typy odkazů.
-- Typy ukazatelů (v nezabezpečeném kontextu.). Všimněte si, že i když se ukazatel sám, může být typu volatile, objekt, který odkazuje na nelze. Jinými slovy nelze deklarovat "ukazatel na volatile."
-- Jednoduché typy, jako `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `char`, `float`, a `bool`.
-- `enum` Typ s jedním z následujících základních typů: `byte`, `sbyte`, `short`, `ushort`, `int`, nebo `uint`.
-- Parametry obecného typu známé jako referenční typy.
+- Odkazové typy.
+- Typy ukazatelů (v nezabezpečeném kontextu). Všimněte si, že i když samotný ukazatel může být volatile, objekt, na který odkazuje, nemůže být. Jinými slovy, nelze deklarovat "ukazatel na volatili".
+- Jednoduché typy jako `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `char`, `float`a `bool`.
+- `enum` typ s jedním z následujících základních typů: `byte`, `sbyte`, `short`, `ushort`, `int`nebo `uint`.
+- Parametry obecného typu označují, že se jedná o odkazové typy.
 - <xref:System.IntPtr> a <xref:System.UIntPtr>.
 
-Jiné typy, včetně `double` a `long`, nemohou být označeny `volatile` protože čtení a zápis do polí těchto typů nelze zaručit bylo atomické. Chcete-li chránit vícevláknový přístup k těmto typům pole, použijte <xref:System.Threading.Interlocked> členy třídy nebo chránit pomocí přístupu [ `lock` ](lock-statement.md) příkazu.
+Jiné typy, včetně `double` a `long`, nelze označit jako `volatile`, protože čtení a zápisy do polí těchto typů nelze zaručit jako atomické. Chcete-li chránit více vlákenně přístup k těmto typům polí, použijte členy třídy <xref:System.Threading.Interlocked> nebo chraňte přístup pomocí příkazu [`lock`](lock-statement.md) .
 
-`volatile` – Klíčové slovo lze použít pouze pro pole `class` nebo `struct`. Místní proměnné nelze použít deklaraci `volatile`.
+Klíčové slovo `volatile` lze použít pouze u polí `class` nebo `struct`. Místní proměnné nelze deklarovat `volatile`.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak deklarovat proměnnou veřejné pole jako `volatile`.
+Následující příklad ukazuje, jak deklarovat veřejnou proměnnou pole jako `volatile`.
 
 [!code-csharp[declareVolatile](~/samples/snippets/csharp/language-reference/keywords/volatile/Program.cs#Declaration)]
 
-Následující příklad ukazuje, jak můžete vytvořit a používá ke zpracování paralelní s ním primární vlákno pomocné nebo pracovní vlákno. Další informace o multithreading, viz [dělení na spravovaná vlákna](../../../standard/threading/index.md).
+Následující příklad ukazuje, jak lze vytvořit pomocné nebo pracovní vlákno, a použít jej k paralelnímu zpracování s primárním vláknem. Další informace o multithreading najdete v tématu [spravovaná vlákna](../../../standard/threading/index.md).
 
 [!code-csharp[declareVolatile](~/samples/snippets/csharp/language-reference/keywords/volatile/Program.cs#Volatile)]
 
-S `volatile` modifikátor přidána do deklarace `_shouldStop` na místě, vždy dosáhnete stejných výsledků (podobně jako výňatek je znázorněno v předchozím kódu). Ale bez tento modifikátor `_shouldStop` člen, nepředvídatelné chování. `DoWork` Metoda může optimalizovat přístup ke členu, což vede k zastaralých dat pro čtení. Vzhledem k povaze vícevláknového programování je počet zastaralých čtení nepředvídatelné. Během různých spuštění programu se poněkud liší výsledkům.
+S modifikátorem `volatile` přidaným do deklarace `_shouldStop`, vždy získáte stejné výsledky (podobně jako v výňatku zobrazeném v předchozím kódu). Nicméně bez tohoto modifikátoru u `_shouldStop` člena není chování předvídatelné. Metoda `DoWork` může optimalizovat přístup členů, což má za následek čtení zastaralých dat. Vzhledem k povaze programování s více vlákny je počet zastaralých čtení nepředvídatelný. Různá spuštění programu budou mít trochu odlišné výsledky.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -50,10 +50,10 @@ S `volatile` modifikátor přidána do deklarace `_shouldStop` na místě, vždy
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#Specifikace jazyka: volatile – klíčové slovo](../../../../_csharplang/spec/classes.md#volatile-fields)
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#specifikace jazyka: klíčové slovo volatile](../../../../_csharplang/spec/classes.md#volatile-fields)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Modifikátory](modifiers.md)
-- [Příkaz Lock](lock-statement.md)
+- [Modifikátory](index.md)
+- [příkaz Lock](lock-statement.md)
 - <xref:System.Threading.Interlocked>

@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 73627455b1f4460edfe165126a388e961e98921f
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 89a78e9e423ab4cce9fd3627ec433072ade238dc
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353126"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419869"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 
@@ -24,7 +24,7 @@ První příklad přidruží tlačítko **Zrušit** k jedné úloze stažení. P
 
 ### <a name="downloading-the-example"></a>Stažení příkladu
 
-Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
 1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
 
@@ -48,7 +48,7 @@ Pokud chcete sestavit příklad sami, postupujte podle pokynů v části "staže
 
 Pak přidejte následující změny do souboru MainWindow. XAML. vb daného projektu.
 
-1. Deklarujte proměnnou `CancellationTokenSource` `cts`, která je v oboru pro všechny metody, které k ní přistupují.
+1. Deklarujte `CancellationTokenSource` proměnnou `cts`, která je v oboru pro všechny metody, které k ní přistupují.
 
     ```vb
     Class MainWindow
@@ -57,7 +57,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
         Dim cts As CancellationTokenSource
     ```
 
-2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá metodu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> k oznamování `cts`, když si uživatel vyžádá zrušení.
+2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá metodu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> k upozorňování `cts`, když si uživatel vyžádá zrušení.
 
     ```vb
     ' ***Add an event handler for the Cancel button.
@@ -71,14 +71,14 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
 
 3. Proveďte následující změny v obslužné rutině události pro tlačítko **Start** `startButton_Click`.
 
-    - Vytvoří instanci `CancellationTokenSource` `cts`.
+    - Vytvořte instanci `CancellationTokenSource``cts`.
 
       ```vb
       ' ***Instantiate the CancellationTokenSource.
       cts = New CancellationTokenSource()
       ```
 
-    - V volání `AccessTheWebAsync`, který stáhne obsah zadaného webu, odešlete vlastnost <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> `cts` jako argument. Vlastnost `Token` šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
+    - V volání `AccessTheWebAsync`, které stahuje obsah zadaného webu, odešlete vlastnost <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> `cts` jako argument. Vlastnost `Token` šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
 
       ```vb
       Try
@@ -86,7 +86,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
           Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)
 
           resultsTextBox.Text &=
-              String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)
+              vbCrLf & $"Length of the downloaded string: {contentLength}." & vbCrLf
 
           ' *** If cancellation is requested, an OperationCanceledException results.
       Catch ex As OperationCanceledException
@@ -97,7 +97,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
       End Try
       ```
 
-4. V `AccessTheWebAsync` použijte k stažení obsahu webové stránky přetížení <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> metody `GetAsync` v typu <xref:System.Net.Http.HttpClient>. Předejte `ct`, parametr <xref:System.Threading.CancellationToken> `AccessTheWebAsync`, jako druhý argument. Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
+4. V `AccessTheWebAsync`použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení metody `GetAsync` v <xref:System.Net.Http.HttpClient> typu ke stažení obsahu webu. Předat `ct`<xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync`, jako druhý argument. Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
 
     Následující kód ukazuje změny v `AccessTheWebAsync`.
 
@@ -107,8 +107,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
 
         Dim client As HttpClient = New HttpClient()
 
-        resultsTextBox.Text &=
-            String.Format(vbCrLf & "Ready to download." & vbCrLf)
+        resultsTextBox.Text &= vbCrLf & "Ready to download." & vbCrLf
 
         ' You might need to slow things down to have a chance to cancel.
         Await Task.Delay(250)
@@ -145,7 +144,7 @@ Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho �
 
 ### <a name="downloading-the-example"></a>Stažení příkladu
 
-Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
 1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
 
@@ -192,7 +191,7 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     Dim urlList As List(Of String) = SetUpURLList()
     ```
 
-3. Přidejte následující smyčku do `AccessTheWebAsync` ke zpracování každé webové adresy v seznamu.
+3. Přidejte následující smyčku v `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.
 
     ```vb
     ' ***Add a loop to process the list of web addresses.
@@ -206,17 +205,17 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
         Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()
 
         resultsTextBox.Text &=
-            String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)
+            vbCrLf & $"Length of the downloaded string: {urlContents.Length}." & vbCrLf
     Next
     ```
 
-4. Vzhledem k tomu, že `AccessTheWebAsync` zobrazuje délky, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
+4. Vzhledem k tomu, že `AccessTheWebAsync` zobrazuje délku, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
 
     ```vb
     Async Function AccessTheWebAsync(ct As CancellationToken) As Task
     ```
 
-    Zavolejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.
+    Volejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.
 
     ```vb
     Await AccessTheWebAsync(cts.Token)
@@ -256,9 +255,9 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
 
 ## <a name="BKMK_CompleteExamples"></a>Kompletní příklady
 
-Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že je nutné přidat odkaz <xref:System.Net.Http>pro.
+Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že je nutné přidat odkaz na <xref:System.Net.Http>.
 
-Projekty si můžete stáhnout z ukázky [Async: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+Projekty si můžete stáhnout z [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ### <a name="cancel-a-task-example"></a>Příklad zrušení úlohy
 
@@ -287,7 +286,7 @@ Class MainWindow
             Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)
 
             resultsTextBox.Text &=
-                String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)
+                vbCrLf & $"Length of the downloaded string: {contentLength}." & vbCrLf
 
             ' *** If cancellation is requested, an OperationCanceledException results.
         Catch ex As OperationCanceledException
@@ -315,7 +314,7 @@ Class MainWindow
         Dim client As HttpClient = New HttpClient()
 
         resultsTextBox.Text &=
-            String.Format(vbCrLf & "Ready to download." & vbCrLf)
+            vbCrLf & "Ready to download." & vbCrLf
 
         ' You might need to slow things down to have a chance to cancel.
         Await Task.Delay(250)
@@ -413,7 +412,7 @@ Class MainWindow
             Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()
 
             resultsTextBox.Text &=
-                String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)
+                vbCrLf & $"Length of the downloaded string: {urlContents.Length}." & vbCrLf
         Next
     End Function
 
@@ -470,4 +469,4 @@ End Class
 - <xref:System.Threading.CancellationToken>
 - [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
 - [Vyladění aplikace v asynchronním prostředí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Asynchronní Ukázka: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

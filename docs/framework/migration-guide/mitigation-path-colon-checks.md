@@ -2,12 +2,12 @@
 title: 'Zmírnění rizika: kontroly středních cest'
 ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-ms.openlocfilehash: ee71f6ef1e70509e772aee2cc75d00c33122a92e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e88643fea3bd507289436f41880a2de34117884f
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126222"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457906"
 ---
 # <a name="mitigation-path-colon-checks"></a>Zmírnění rizika: kontroly středních cest
 Počínaje aplikacemi, které cílí na .NET Framework 4.6.2, byl proveden určitý počet změn pro podporu dříve nepodporovaných cest (z hlediska délky i formátu). Konkrétně jsou zkontrolovány správné syntaxe oddělovače jednotek (dvojtečka).  
@@ -32,4 +32,4 @@ Počínaje aplikacemi, které cílí na .NET Framework 4.6.2, byl proveden urči
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6-2.md)
+- [Kompatibilita aplikací](application-compatibility.md)

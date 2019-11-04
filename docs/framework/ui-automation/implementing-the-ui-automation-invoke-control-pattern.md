@@ -6,52 +6,52 @@ helpviewer_keywords:
 - control patterns, Invoke
 - Invoke control pattern
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
-ms.openlocfilehash: e9815e4c2c0740f213632681200e48c8e4786657
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 616bbab4d659cf00b1f730492e73ad6b847e3926
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043396"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457998"
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
 
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.
+> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
 
-Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IInvokeProvider>implementaci, včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.
+This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IInvokeProvider>, including information about events and properties. Links to additional references are listed at the end of the topic.
 
-Vzor <xref:System.Windows.Automation.InvokePattern> ovládacího prvku se používá k podpoře ovládacích prvků, které neudržují stav při aktivaci, ale spíše iniciuje nebo provádí jednu nejednoznačnou akci. Ovládací prvky, které udržují stav, jako jsou zaškrtávací políčka a přepínače, musí místo <xref:System.Windows.Automation.Provider.IToggleProvider> toho <xref:System.Windows.Automation.Provider.ISelectionItemProvider> implementovat a v uvedeném pořadí. Příklady ovládacích prvků, které implementují vzor ovládacího prvku Invoke, najdete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).
+The <xref:System.Windows.Automation.InvokePattern> control pattern is used to support controls that do not maintain state when activated but rather initiate or perform a single, unambiguous action. Controls that do maintain state, such as check boxes and radio buttons, must instead implement <xref:System.Windows.Automation.Provider.IToggleProvider> and <xref:System.Windows.Automation.Provider.ISelectionItemProvider> respectively. For examples of controls that implement the Invoke control pattern, see [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).
 
 <a name="Implementation_Guidelines_and_Conventions"></a>
 
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace
+## <a name="implementation-guidelines-and-conventions"></a>Implementation Guidelines and Conventions
 
-Při implementaci vzoru ovládacího prvku Invoke si všimněte následujících pokynů a konvencí:
+When implementing the Invoke control pattern, note the following guidelines and conventions:
 
-- Ovládací prvky <xref:System.Windows.Automation.Provider.IInvokeProvider> implementují, pokud se stejné chování nezveřejňuje prostřednictvím jiného poskytovatele vzoru prvku. Například pokud <xref:System.Windows.Automation.InvokePattern.Invoke%2A> metoda na ovládacím prvku provede stejnou akci <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> jako metoda nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> , ovládací prvek by neměl být implementován <xref:System.Windows.Automation.Provider.IInvokeProvider>.
+- Controls implement <xref:System.Windows.Automation.Provider.IInvokeProvider> if the same behavior is not exposed through another control pattern provider. For example, if the <xref:System.Windows.Automation.InvokePattern.Invoke%2A> method on a control performs the same action as the <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> method, the control should not implement <xref:System.Windows.Automation.Provider.IInvokeProvider>.
 
-- Vyvolání ovládacího prvku je obecně prováděno kliknutím nebo poklikáním nebo stisknutím klávesy ENTER, předdefinovanou klávesovou zkratkou nebo jinou kombinací kláves.
+- Invoking a control is generally performed by clicking or double-clicking or pressing ENTER, a predefined keyboard shortcut, or some alternate combination of keystrokes.
 
-- <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>je vyvolána na ovládacím prvku, který byl aktivován (jako odpověď na ovládací prvek, který provádí přidruženou akci). Pokud je to možné, událost by měla být vyvolána poté, co ovládací prvek dokončí akci a vrátí se bez blokování. Vyvolaná událost by měla být vyvolána před obsluhou žádosti o vyvolání v následujících scénářích:
+- <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> is raised on a control that has been activated (as a response to a control carrying out its associated action). If possible, the event should be raised after the control has completed the action and returned without blocking. The Invoked event should be raised before servicing the Invoke request in the following scenarios:
 
-  - Není možné nebo je praktické počkat na dokončení akce.
+  - It is not possible or practical to wait until the action is complete.
 
-  - Akce vyžaduje zásah uživatele.
+  - The action requires user interaction.
 
-  - Akce je časově náročná a způsobí, že volající klient bude po významné době blokovat.
+  - The action is time-consuming and will cause the calling client to block for a significant amount of time.
 
-- Pokud vyvolání ovládacího prvku má významné vedlejší účinky, tyto vedlejší účinky by měly být vystaveny prostřednictvím <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText%2A> vlastnosti. Například, i když <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> není přidružen k výběru, může způsobit, <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> že se vybere jiný ovládací prvek.
+- Pokud vyvolání ovládacího prvku má významné vedlejší účinky, tyto vedlejší účinky by měly být zpřístupněny prostřednictvím vlastnosti <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText%2A>. Například, i když <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> není přidružená k výběru, <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> může způsobit, že se vybere jiný ovládací prvek.
 
-- Efekty najetí myší (nebo myš) obecně nepředstavují vyvolanou událost. Nicméně ovládací prvky, které provádějí akci (na rozdíl od toho, že způsobují vizuální efekt), by měly podporovat <xref:System.Windows.Automation.InvokePattern> vzor ovládacího prvku.
+- Efekty najetí myší (nebo myš) obecně nepředstavují vyvolanou událost. Nicméně ovládací prvky, které provádějí akci (na rozdíl od toho, že způsobují vizuální efekt), by měly podporovat vzor ovládacího prvku <xref:System.Windows.Automation.InvokePattern>.
 
 > [!NOTE]
 > Tato implementace je považována za problém s přístupností, pokud lze ovládací prvek vyvolat pouze v důsledku vedlejšího efektu souvisejícího s myší.
 
-- Vyvolání ovládacího prvku se liší od výběru položky. V závislosti na ovládacím prvku ale volání může způsobit, že se položka vybere jako vedlejší efekt. Například vyvolání [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] položky seznamu dokumentů ve složce Dokumenty vybere položku a otevře dokument.
+- Vyvolání ovládacího prvku se liší od výběru položky. V závislosti na ovládacím prvku ale volání může způsobit, že se položka vybere jako vedlejší efekt. Například vyvolání položky v seznamu dokumentů aplikace Microsoft Word ve složce Dokumenty vybere položku a otevře dokument.
 
-- Element může z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu zmizet ihned po jeho vyvolání. Žádost o informace z prvku poskytnutého zpětným voláním události může být způsobena selháním. Doporučené řešení je předběžné načítání informací uložených v mezipaměti.
+- Element může zmizet z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu hned po jeho vyvolání. Žádost o informace z prvku poskytnutého zpětným voláním události může být způsobena selháním. Doporučené řešení je předběžné načítání informací uložených v mezipaměti.
 
-- Ovládací prvky mohou implementovat více vzorů ovládacích prvků. Například ovládací prvek Barva výplně na [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] panelu nástrojů implementuje <xref:System.Windows.Automation.InvokePattern> vzory i <xref:System.Windows.Automation.ExpandCollapsePattern> ovládací prvky. <xref:System.Windows.Automation.ExpandCollapsePattern>zpřístupní nabídku a <xref:System.Windows.Automation.InvokePattern> vyplní aktivní výběr zvolenou barvou.
+- Ovládací prvky mohou implementovat více vzorů ovládacích prvků. Například ovládací prvek Barva výplně na panelu nástrojů aplikace Microsoft Excel implementuje jak <xref:System.Windows.Automation.InvokePattern>, tak <xref:System.Windows.Automation.ExpandCollapsePattern> vzory ovládacích prvků. <xref:System.Windows.Automation.ExpandCollapsePattern> zpřístupňuje nabídku a <xref:System.Windows.Automation.InvokePattern> vyplní aktivní výběr zvolenou barvou.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 
@@ -61,7 +61,7 @@ Pro implementaci <xref:System.Windows.Automation.Provider.IInvokeProvider>jsou v
 
 |Vyžadovaná členové|Typ člena|Poznámky|
 |----------------------|-----------------|-----------|
-|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|– metoda|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>je asynchronní volání a musí ihned vracet bez blokování.<br /><br /> Toto chování je zvláště důležité pro ovládací prvky, které přímo nebo nepřímo spouštějí modální dialog při vyvolání. Jakýkoli klient automatizace uživatelského rozhraní, který událost vybere, zůstane blokovaný, dokud se modální dialogové okno nezavře.|
+|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|– metoda|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> je asynchronní volání a musí ihned vracet bez blokování.<br /><br /> Toto chování je zvláště důležité pro ovládací prvky, které přímo nebo nepřímo spouštějí modální dialog při vyvolání. Jakýkoli klient automatizace uživatelského rozhraní, který událost vybere, zůstane blokovaný, dokud se modální dialogové okno nezavře.|
 
 <a name="Exceptions"></a>
 

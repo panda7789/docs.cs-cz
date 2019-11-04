@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 1f13053ea23e45b66b4767295af28a758f474ab5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3e87ba8c9442c4bba24e4e569cd20bdbdc76f6ec
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121542"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457990"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -168,7 +168,7 @@ V aplikaci Visual Studio vyberte nasazení InstallShield a přidejte závislost 
 
 ### <a name="windows-installer-xml-wix-deployment"></a>Nasazení Instalační služba systému Windows XML (WiX)
 
-Sada nástrojů Instalační služba systému Windows XML (WiX) vytváří instalační balíčky Windows ze zdrojového kódu XML. WiX podporuje prostředí příkazového řádku, které lze integrovat do procesů sestavení pro sestavení instalačních balíčků MSI a MSM. Pomocí WiX můžete [určit .NET Framework jako předpoklad](http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html), nebo [vytvořit řetěz](http://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) , který plně řídí možnosti nasazení .NET Framework. Další informace o WiX najdete na webu sady [nástrojů pro instalační služba systému Windows XML (WiX)](http://wixtoolset.org/) .
+Sada nástrojů Instalační služba systému Windows XML (WiX) vytváří instalační balíčky Windows ze zdrojového kódu XML. WiX podporuje prostředí příkazového řádku, které lze integrovat do procesů sestavení pro sestavení instalačních balíčků MSI a MSM. Pomocí WiX můžete [určit .NET Framework jako předpoklad](https://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html), nebo [vytvořit řetěz](https://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) , který plně řídí možnosti nasazení .NET Framework. Další informace o WiX najdete na webu sady [nástrojů pro instalační služba systému Windows XML (WiX)](https://wixtoolset.org/) .
 
 <a name="installing_manually"></a>
 

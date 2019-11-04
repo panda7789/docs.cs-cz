@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 27001d1697def083580ecdc742b4b8db924545aa
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 42e1814af38fa442255f6da79fb4862ce3d0f361
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589416"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423209"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
  Konvence kódování slouží k následujícím účelům:  
@@ -75,7 +75,7 @@ ms.locfileid: "69589416"
   
      [!code-csharp[csProgGuideCodingConventions#6](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#6)]  
   
-- Pro připojení řetězců ve smyčkách, zejména při práci s velkým množstvím textu, použijte <xref:System.Text.StringBuilder> objekt.  
+- Pro připojení řetězců ve smyčce, zejména při práci s velkým množstvím textu, použijte objekt <xref:System.Text.StringBuilder>.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
   
@@ -93,21 +93,21 @@ ms.locfileid: "69589416"
   
      [!code-csharp[csProgGuideCodingConventions#10](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#10)]  
   
-- Nepoužívejte místo dynamického použití. [](../../language-reference/keywords/dynamic.md) `var`  
+- Vyhněte se použití `var` místo [dynamického](../../language-reference/builtin-types/reference-types.md).  
   
 - Pomocí implicitního zápisu určete typ proměnné smyčky v [pro smyčky for](../../language-reference/keywords/for.md) a [foreach](../../language-reference/keywords/foreach-in.md) .  
   
-     Následující příklad používá implicitní zadání v `for` příkazu.  
+     Následující příklad používá implicitní zadání v příkazu `for`.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
   
-     Následující příklad používá implicitní zadání v `foreach` příkazu.  
+     Následující příklad používá implicitní zadání v příkazu `foreach`.  
   
      [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]  
   
 ### <a name="unsigned-data-type"></a>Nepodepsaný datový typ  
   
-- Obecně použijte `int` místo typů bez znaménka. Použití `int` je běžné v celém C#a při použití `int`nástroje je snazší pracovat s ostatními knihovnami.  
+- Obecně použijte `int` spíše než typy bez znaménka. Použití `int` je běžné v celém C#a při použití `int`je snazší pracovat s ostatními knihovnami.  
   
 ### <a name="arrays"></a>Pole  
   
@@ -129,13 +129,13 @@ ms.locfileid: "69589416"
   
      [!code-csharp[csProgGuideCodingConventions#16](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#16)]  
   
-- Zjednodušte svůj kód pomocí C# [příkazu Using](../../language-reference/keywords/using-statement.md). Máte-li příkaz [try-finally](../../language-reference/keywords/try-finally.md) , ve kterém jediný kód v `finally` bloku je voláním <xref:System.IDisposable.Dispose%2A> metody, použijte `using` místo toho příkaz.  
+- Zjednodušte svůj kód pomocí C# [příkazu Using](../../language-reference/keywords/using-statement.md). Pokud máte příkaz [try-finally](../../language-reference/keywords/try-finally.md) , ve kterém jediný kód v bloku `finally` je voláním metody <xref:System.IDisposable.Dispose%2A>, použijte místo toho příkaz `using`.  
   
      [!code-csharp[csProgGuideCodingConventions#17](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#17)]  
   
 ### <a name="-and-124124-operators"></a>& & a &#124; &#124; operátory  
   
-- Aby nedocházelo k výjimkám a zvýšili výkon pomocí přeskočení [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) zbytečných [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) porovnání [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) , použijte [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) místo a namísto toho, abyste provedli porovnání, jak je znázorněno v následujícím příkladu.  
+- Aby nedocházelo k výjimkám a zvýšili výkon přeskočením zbytečných porovnání, použijte [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) namísto [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) místo [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při porovnávání, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   
@@ -163,11 +163,11 @@ ms.locfileid: "69589416"
   
 ### <a name="static-members"></a>Statické členy  
   
-- Volání [statických](../../language-reference/keywords/static.md) členů pomocí názvu třídy: *ClassName. StaticMember*. Tento postup usnadňuje čitelnost kódu tím, že provádí jasné zrušení statického přístupu.  Nekvalifikovat statický člen definovaný v základní třídě s názvem odvozené třídy.  Při kompilaci kódu je čitelnost kódu zavádějící a kód může být v budoucnu přerušen, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
+- Volejte [statické](../../language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName. StaticMember*. Tento postup usnadňuje čitelnost kódu tím, že provádí jasné zrušení statického přístupu.  Nekvalifikovat statický člen definovaný v základní třídě s názvem odvozené třídy.  Při kompilaci kódu je čitelnost kódu zavádějící a kód může být v budoucnu přerušen, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
   
 ### <a name="linq-queries"></a>Dotazy LINQ  
   
-- Pro proměnné dotazů použijte smysluplné názvy. Následující příklad používá `seattleCustomers` pro zákazníky, kteří se nacházejí v Seattlu.  
+- Pro proměnné dotazů použijte smysluplné názvy. Následující příklad používá `seattleCustomers` pro zákazníky nacházející se v Seattlu.  
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
@@ -175,7 +175,7 @@ ms.locfileid: "69589416"
   
      [!code-csharp[csProgGuideCodingConventions#26](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#26)]  
   
-- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Například pokud váš dotaz vrátí název zákazníka a `Name` ID distributora, místo jejich odeslání jako a `ID` ve výsledku, `Name` přejmenujte je tak, aby se vyjasnilo jako jméno zákazníka, a `ID` je ID distributora.  
+- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Pokud například váš dotaz vrátí název zákazníka a ID distributora, nemusíte je opustit jako `Name` a `ID` ve výsledku, přejmenujte je, aby se vyjasnilo, že `Name` je název zákazníka, a `ID` je ID distributora.  
   
      [!code-csharp[csProgGuideCodingConventions#27](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#27)]  
   
@@ -189,7 +189,7 @@ ms.locfileid: "69589416"
   
      [!code-csharp[csProgGuideCodingConventions#29](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#29)]  
   
-- Pro přístup `from` k vnitřním kolekcím použijte místo klauzule [Join](../../language-reference/keywords/join-clause.md) více klauzulí. Například kolekce `Student` objektů může obsahovat kolekci hodnocení testů. Při spuštění následujícího dotazu vrátí všechny skóre, které je více než 90, spolu s posledním názvem studenta, který skóre přijal.  
+- Pro přístup k vnitřním kolekcím použijte místo klauzule [Join](../../language-reference/keywords/join-clause.md) více klauzulí `from`. Například kolekce objektů `Student` může obsahovat kolekci hodnocení testů. Při spuštění následujícího dotazu vrátí všechny skóre, které je více než 90, spolu s posledním názvem studenta, který skóre přijal.  
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   

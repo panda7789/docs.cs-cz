@@ -2,19 +2,19 @@
 title: Sekvence
 description: Naučte se používat F# sekvence, když máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků.
 ms.date: 02/19/2019
-ms.openlocfilehash: 63e878c2c11db25a08d449070ab779a6e6a2c2eb
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 76aeeb8b89ed8146ee1b7f909af6bf0764fcc55d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216768"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424984"
 ---
 # <a name="sequences"></a>Sekvence
 
 > [!NOTE]
 > Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
 
-*Sekvence* je logická řada prvků všech jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může poskytovat lepší výkon než seznam v situacích, kdy nejsou použity všechny prvky. Sekvence jsou reprezentovány `seq<'T>` typem, který je aliasem pro `System.Collections.Generic.IEnumerable`. Proto může být jakýkoli typ .NET Framework, `System.IEnumerable` který implementuje, použit jako sekvence. [Modul SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) poskytuje podporu pro manipulace zahrnující sekvence.
+*Sekvence* je logická řada prvků všech jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může poskytovat lepší výkon než seznam v situacích, kdy nejsou použity všechny prvky. Sekvence jsou reprezentovány typem `seq<'T>`, který je aliasem pro `System.Collections.Generic.IEnumerable`. Proto může být jakýkoli typ .NET Framework, který implementuje `System.IEnumerable`, použit jako sekvence. [Modul SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) poskytuje podporu pro manipulace zahrnující sekvence.
 
 ## <a name="sequence-expressions"></a>Výrazy sekvence
 
@@ -22,13 +22,13 @@ ms.locfileid: "71216768"
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1502.fs)]
 
-Výrazy sekvence jsou tvořeny F# výrazy, které vytvářejí hodnoty sekvence. Mohou použít `yield` klíčové slovo k získání hodnot, které se stanou součástí sekvence.
+Výrazy sekvence jsou tvořeny F# výrazy, které vytvářejí hodnoty sekvence. Mohou použít klíčové slovo `yield` k tvorbě hodnot, které se stanou součástí sekvence.
 
 Následuje příklad.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1503.fs)]
 
-`->` Místo použijte operátor. v takovém `do` případě můžete klíčové slovo vynechat, jak je znázorněno v následujícím příkladu. `yield`
+Místo `yield`můžete použít operátor `->`, v takovém případě můžete vynechat klíčové slovo `do`, jak je znázorněno v následujícím příkladu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1504.fs)]
 
@@ -36,7 +36,7 @@ Následující kód vygeneruje seznam dvojic souřadnic spolu s indexem do pole,
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1505.fs)]
 
-`if` Výraz použitý v sekvenci je filtr. Chcete-li například vygenerovat sekvenci pouze číselných apostrofů za předpokladu, že `isprime` máte funkci `int -> bool`typu, sestavte sekvenci následujícím způsobem.
+Výraz `if` použitý v sekvenci je filtr. Chcete-li například vygenerovat sekvenci pouze apostrofů, za předpokladu, že máte funkci `isprime` typu `int -> bool`, sestavte sekvenci následujícím způsobem.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1506.fs)]
 
@@ -50,11 +50,11 @@ První příklad používá výraz sekvence, který obsahuje iteraci, filtr a v�
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1507.fs)]
 
-Následující kód používá `yield` k vytvoření násobení tabulky, která se skládá z řazených kolekcí členů tří prvků, z nichž každý obsahuje dva faktory a produkt.
+Následující kód používá `yield` k vytvoření násobení tabulky, která se skládá z řazených kolekcí členů tří prvků, každý skládající se ze dvou faktorů a produktu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1508.fs)]
 
-Následující příklad ukazuje použití `yield!` pro kombinování jednotlivých sekvencí do jediné konečné sekvence. V tomto případě jsou sekvence pro každý podstrom v binárním stromu zřetězeny rekurzivní funkcí a vytvoří finální sekvenci.
+Následující příklad ukazuje použití `yield!` ke kombinování jednotlivých sekvencí do jediné konečné sekvence. V tomto případě jsou sekvence pro každý podstrom v binárním stromu zřetězeny rekurzivní funkcí a vytvoří finální sekvenci.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1509.fs)]
 
@@ -62,7 +62,7 @@ Následující příklad ukazuje použití `yield!` pro kombinování jednotliv�
 
 Sekvence podporují mnoho stejných funkcí jako [seznamy](lists.md). Sekvence také podporují operace, jako je seskupování a počítání, pomocí funkcí pro generování klíčů. Sekvence také podporují více různorodých funkcí pro extrakci dílčích sekvencí.
 
-Mnoho datových typů, například seznamy, pole, sady a mapy, jsou implicitně sekvencované, protože se jedná o vyčíslitelné kolekce. Funkce, která přebírá sekvenci jako argument funguje s libovolnými běžnými F# datovými typy, kromě jakéhokoli .NET Framework datový typ, který implementuje `System.Collections.Generic.IEnumerable<'T>`. Naproti tomu funkci, která přebírá seznam jako argument, který může přijímat jenom seznamy. Typ `seq<'T>` je zkratka typu pro `IEnumerable<'T>`. To znamená, že každý typ, který implementuje `System.Collections.Generic.IEnumerable<'T>`obecné, včetně polí, seznamů, sad a map v F#a také většiny .NET Framework typy kolekcí, `seq` je kompatibilní s typem a lze jej použít všude, kde je očekávána sekvence. .
+Mnoho datových typů, například seznamy, pole, sady a mapy, jsou implicitně sekvencované, protože se jedná o vyčíslitelné kolekce. Funkce, která přebírá sekvenci jako argument funguje s některým z běžných F# datových typů, kromě libovolných .NET Framework dat, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Naproti tomu funkci, která přebírá seznam jako argument, který může přijímat jenom seznamy. Typ `seq<'T>` je zkratka typu pro `IEnumerable<'T>`. To znamená, že každý typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, které zahrnuje pole, seznamy, sady a mapy v F#a také většinu .NET Framework typů kolekcí, je kompatibilní s typem `seq` a lze jej použít všude, kde je očekávána sekvence.
 
 ## <a name="module-functions"></a>Funkce modulu
 
@@ -90,7 +90,7 @@ Pomocí funkcí [Seq. ofArray –](https://msdn.microsoft.com/library/299cd4d9-b
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet11.fs)]
 
-Pomocí [Seq. cast](https://msdn.microsoft.com/library/1d087db3-a8b2-41dd-8ddc-227544529334)můžete vytvořit sekvenci ze slabě typované kolekce, jako jsou například definované v `System.Collections`. Tyto slabě typové kolekce mají typ `System.Object` prvku a jsou vyčísleny pomocí neobecného `System.Collections.Generic.IEnumerable&#96;1` typu. Následující kód ilustruje použití `Seq.cast` pro `System.Collections.ArrayList` převod na sekvenci.
+Pomocí [Seq. cast](https://msdn.microsoft.com/library/1d087db3-a8b2-41dd-8ddc-227544529334)můžete vytvořit sekvenci ze slabě typované kolekce, jako jsou například definované v `System.Collections`. Tyto slabě typové kolekce mají typ elementu `System.Object` a jsou vyčísleny pomocí neobecného `System.Collections.Generic.IEnumerable&#96;1`ho typu. Následující kód ilustruje použití `Seq.cast` k převedení `System.Collections.ArrayList` do sekvence.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet12.fs)]
 
@@ -98,7 +98,7 @@ Můžete definovat nekonečné sekvence pomocí funkce [Seq. initInfinite –](h
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet13.fs)]
 
-[Seq. unskládání](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje sekvenci z funkce výpočtu, která přebírá stav a transformuje ho za účelem vytvoření každého následného prvku v sekvenci. Stav je pouze hodnota, která se používá k výpočtu každého prvku a může se změnit při výpočtu každého prvku. Druhý argument na `Seq.unfold` je počáteční hodnota, která se používá ke spuštění sekvence. `Seq.unfold`používá typ možnosti pro stav, který umožňuje ukončit sekvenci vrácením `None` hodnoty. Následující kód ukazuje dva příklady sekvencí `seq1` a `fib`, `unfold` které jsou generovány operací. První, `seq1`, je pouze jednoduchá sekvence s čísly až 20. Druhý `fib` používá`unfold` k výpočtu sekvence Fibonacci. Vzhledem k tomu, že každý prvek v sekvenci Fibonacci je součtem předchozích dvou čísel Fibonacci, hodnota stavu je řazená kolekce členů, která se skládá z předchozích dvou čísel v sekvenci. Počáteční hodnota je `(1,1)`první dvě čísla v sekvenci.
+[Seq. unskládání](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje sekvenci z funkce výpočtu, která přebírá stav a transformuje ho za účelem vytvoření každého následného prvku v sekvenci. Stav je pouze hodnota, která se používá k výpočtu každého prvku a může se změnit při výpočtu každého prvku. Druhý argument pro `Seq.unfold` je počáteční hodnota, která se používá ke spuštění sekvence. `Seq.unfold` používá typ možnosti pro stav, který umožňuje ukončit sekvenci vrácením `None` hodnoty. Následující kód ukazuje dva příklady sekvencí, `seq1` a `fib`, které jsou generovány operací `unfold`. První, `seq1`, je pouze jednoduchá sekvence s čísly až 20. Druhý `fib`používá `unfold` k výpočtu sekvence Fibonacci. Vzhledem k tomu, že každý prvek v sekvenci Fibonacci je součtem předchozích dvou čísel Fibonacci, hodnota stavu je řazená kolekce členů, která se skládá z předchozích dvou čísel v sekvenci. Počáteční hodnota je `(1,1)`, první dvě čísla v sekvenci.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet14.fs)]
 
@@ -120,38 +120,38 @@ Následující kód je příklad, který používá mnoho funkcí modulu Sequenc
 
 ## <a name="searching-and-finding-elements"></a>Hledání a hledání elementů
 
-Funkce podpory sekvencí dostupné v seznamech: [Seq. Exists](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq. exists2 –](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq. Find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq. findIndex –](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [Seq. vyskl](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq. tryFind –](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47)a [Seq. tryFindIndex –](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Verze těchto funkcí, které jsou k dispozici pro sekvence, vyhodnocují sekvenci pouze do hledaného prvku. Příklady najdete v tématu [seznam](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
+Sekvence podporují funkce, které jsou k dispozici v seznamech: [Seq. Exists](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq. exists2 –](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq. Find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq. findIndex –](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [Seq. vyskl](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq. tryFind –](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47)a [Seq. tryFindIndex –](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Verze těchto funkcí, které jsou k dispozici pro sekvence, vyhodnocují sekvenci pouze do hledaného prvku. Příklady najdete v tématu [seznam](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
 
 ## <a name="obtaining-subsequences"></a>Získání dílčích sekvencí
 
 Příkazy [Seq. Filter](https://msdn.microsoft.com/library/7f2e9850-a660-460c-9831-3bbff5613770) a [Seq. Choose](https://msdn.microsoft.com/library/63b83b06-4b24-4239-bf69-a2c12d891395) se podobají odpovídajícím funkcím, které jsou k dispozici pro seznamy, s výjimkou toho, že filtrování a výběr se neprojeví, dokud se prvky sekvence nevyhodnotí.
 
-[Seq. oříznutí](https://msdn.microsoft.com/library/1892dfeb-308e-45e2-857a-3c3405d02244) vytvoří sekvenci z jiné sekvence, ale omezí sekvenci na zadaný počet prvků. [Seq. pořídit](https://msdn.microsoft.com/library/6e75f701-640b-4c4a-9d63-4313fc090596) vytvoří novou sekvenci, která bude obsahovat pouze zadaný počet prvků od začátku sekvence. Pokud je v sekvenci méně prvků, než je určeno pro provedení, `Seq.take` `System.InvalidOperationException`vyvolá výjimku. Rozdíl mezi `Seq.take` a `Seq.truncate` je, že `Seq.truncate` nevytvoří chybu, pokud je počet prvků menší než zadané číslo.
+[Seq. oříznutí](https://msdn.microsoft.com/library/1892dfeb-308e-45e2-857a-3c3405d02244) vytvoří sekvenci z jiné sekvence, ale omezí sekvenci na zadaný počet prvků. [Seq. pořídit](https://msdn.microsoft.com/library/6e75f701-640b-4c4a-9d63-4313fc090596) vytvoří novou sekvenci, která bude obsahovat pouze zadaný počet prvků od začátku sekvence. Pokud je v sekvenci méně prvků, než je určeno pro provedení, `Seq.take` vyvolá `System.InvalidOperationException`. Rozdíl mezi `Seq.take` a `Seq.truncate` je, že `Seq.truncate` nevytvoří chybu, pokud je počet prvků menší než zadané číslo.
 
-Následující kód ukazuje chování a rozdíly mezi `Seq.truncate` a. `Seq.take`
+Následující kód ukazuje chování a rozdíly mezi `Seq.truncate` a `Seq.take`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet16.fs)]
 
 Výstup, před výskytem chyby, je následující.
 
 ```console
-1 4 9 16 25 
-1 4 9 16 25 36 49 64 81 100 
-1 4 9 16 25 
+1 4 9 16 25
+1 4 9 16 25 36 49 64 81 100
+1 4 9 16 25
 1 4 9 16 25 36 49 64 81 100
 ```
 
-Pomocí [Seq. TakeWhile –](https://msdn.microsoft.com/library/19eea4ce-66e0-4353-b015-72eb03421d92)lze zadat funkci predikátu (logická funkce) a vytvořit sekvenci z jiné sekvence, která je tvořena těmito prvky původní sekvence, pro kterou je `true`predikát, ale zastavit před prvním prvkem. pro který se predikát vrátí `false`. [Seq. Skip](https://msdn.microsoft.com/library/b4eb3f08-8594-4d17-8180-852c6c688bf1) vrátí sekvenci, která přeskočí zadaný počet prvních prvků v jiné sekvenci a vrátí zbývající prvky. [Seq. SkipWhile –](https://msdn.microsoft.com/library/fb729021-2a3c-430f-83c3-0b37526f1a16) vrací sekvenci, která přeskočí první prvky jiné sekvence, pokud predikát vrátí `true`, a vrátí zbývající prvky počínaje prvním prvkem, pro který se predikát vrátí. `false` .
+Pomocí [Seq. TakeWhile –](https://msdn.microsoft.com/library/19eea4ce-66e0-4353-b015-72eb03421d92)lze zadat funkci predikátu (logická funkce) a vytvořit sekvenci z jiné sekvence, která je tvořena těmito prvky původní sekvence, pro kterou je predikát `true`, ale zastavit před prvním prvkem pro který predikát vrací `false`. [Seq. Skip](https://msdn.microsoft.com/library/b4eb3f08-8594-4d17-8180-852c6c688bf1) vrátí sekvenci, která přeskočí zadaný počet prvních prvků v jiné sekvenci a vrátí zbývající prvky. [Seq. SkipWhile –](https://msdn.microsoft.com/library/fb729021-2a3c-430f-83c3-0b37526f1a16) vrací sekvenci, která přeskočí první prvky jiné sekvence, pokud predikát vrátí `true`a vrátí zbývající prvky počínaje prvním prvkem, pro který predikát vrátí `false`.
 
-Následující příklad kódu ilustruje chování a rozdíly mezi `Seq.takeWhile`, `Seq.skip` `Seq.skipWhile`a.
+Následující příklad kódu ilustruje chování a rozdíly mezi `Seq.takeWhile`, `Seq.skip`a `Seq.skipWhile`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet17.fs)]
 
 Výstup je následující.
 
 ```console
-1 4 9 
-36 49 64 81 100 
+1 4 9
+36 49 64 81 100
 16 25 36 49 64 81 100
 ```
 
@@ -161,9 +161,9 @@ Výstup je následující.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet18.fs)]
 
-[Seq. Window](https://msdn.microsoft.com/library/8b565b8f-d645-4dba-be22-099075fe4744) se podobá `Seq.pairwise`, s tím rozdílem, že namísto vytváření posloupnosti řazených kolekcí členů vytvoří sekvenci polí, které obsahují kopie sousedících prvků ( *okno*) z sekvence. Zadejte počet sousedících prvků, které mají být v každém poli.
+[Seq. windowed](https://msdn.microsoft.com/library/8b565b8f-d645-4dba-be22-099075fe4744) je like `Seq.pairwise`, s výjimkou, že namísto vytváření posloupnosti řazených kolekcí členů vytvoří sekvenci polí, které obsahují kopie sousedících prvků ( *okno*) z sekvence. Zadejte počet sousedících prvků, které mají být v každém poli.
 
-Následující příklad kódu ukazuje použití `Seq.windowed`. V tomto případě počet prvků v okně je 3. Příklad používá `printSeq`, který je definován v předchozím příkladu kódu.
+Následující příklad kódu ukazuje použití `Seq.windowed`. V tomto případě počet prvků v okně je 3. V příkladu se používá `printSeq`, který je definován v předchozím příkladu kódu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet180.fs)]
 
@@ -172,12 +172,12 @@ Výstup je následující.
 Počáteční sekvence:
 
 ```console
-1.0 1.5 2.0 1.5 1.0 1.5 
+1.0 1.5 2.0 1.5 1.0 1.5
 
-Windows of length 3: 
-[|1.0; 1.5; 2.0|] [|1.5; 2.0; 1.5|] [|2.0; 1.5; 1.0|] [|1.5; 1.0; 1.5|] 
+Windows of length 3:
+[|1.0; 1.5; 2.0|] [|1.5; 2.0; 1.5|] [|2.0; 1.5; 1.0|] [|1.5; 1.0; 1.5|]
 
-Moving average: 
+Moving average:
 1.5 1.666666667 1.5 1.333333333
 ```
 
@@ -197,7 +197,7 @@ Následující kód ukazuje použití `Seq.compareWith`.
 
 V předchozím kódu je vypočítán a zkontrolován pouze první prvek a výsledkem je-1.
 
-[Seq. CountBy –](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f) přebírá funkci, která generuje hodnotu nazvanou *klíč* pro každý prvek. Klíč je vygenerován pro každý prvek voláním této funkce na každý prvek. `Seq.countBy`pak vrátí sekvenci, která obsahuje hodnoty klíče, a počet prvků, které vygenerovaly jednotlivé hodnoty klíče.
+[Seq. CountBy –](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f) přebírá funkci, která generuje hodnotu nazvanou *klíč* pro každý prvek. Klíč je vygenerován pro každý prvek voláním této funkce na každý prvek. `Seq.countBy` pak vrátí sekvenci, která obsahuje hodnoty klíče, a počet prvků, které vygenerovaly jednotlivé hodnoty klíče.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet201.fs)]
 
@@ -209,9 +209,9 @@ Výstup je následující.
 
 Předchozí výstup ukazuje, že byly 34 prvky původní sekvence, které vytvořily hodnoty klíče 1, 33 hodnoty, které vytvořily klíč 2, a 33 hodnoty, které vytvořily klíč 0.
 
-Prvky sekvence lze seskupit voláním [Seq. GroupBy](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd). `Seq.groupBy`provede sekvenci a funkci, která generuje klíč z prvku. Funkce je spuštěna u každého prvku sekvence. `Seq.groupBy`vrací sekvenci řazených kolekcí členů, kde první prvek každé řazené kolekce členů je klíč a druhá je sekvence prvků, které tvoří tento klíč.
+Prvky sekvence lze seskupit voláním [Seq. GroupBy](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd). `Seq.groupBy` přebírá sekvenci a funkci, která generuje klíč z prvku. Funkce je spuštěna u každého prvku sekvence. `Seq.groupBy` vrací sekvenci řazených kolekcí členů, kde první prvek každé řazené kolekce členů je klíč a druhá je sekvence prvků, které tvoří tento klíč.
 
-Následující příklad kódu ukazuje použití `Seq.groupBy` pro rozdělení posloupnosti čísel od 1 do 100 do tří skupin, které mají jedinečné klíčové hodnoty 0, 1 a 2.
+Následující příklad kódu ukazuje použití `Seq.groupBy` pro rozdělení posloupnosti čísel od 1 do 100 do tří skupin, které mají jedinečné hodnoty klíče 0, 1 a 2.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet202.fs)]
 
@@ -223,21 +223,21 @@ Výstup je následující.
 
 Můžete vytvořit sekvenci, která eliminuje duplicitní prvky voláním [Seq. DISTINCT](https://msdn.microsoft.com/library/99d01014-7e0e-4e7b-9d0a-41a61d93f401). Případně můžete použít [Seq. distinctBy –](https://msdn.microsoft.com/library/9293293b-9420-49c8-848f-401a9cd49b75), který převezme funkci generování klíčů, která má být volána u každého prvku. Výsledná sekvence obsahuje prvky původní sekvence, které mají jedinečné klíče; později prvky, které vytvoří duplicitní klíč k dřívějšímu prvku, jsou zahozeny.
 
-Následující příklad kódu ukazuje použití `Seq.distinct`. `Seq.distinct`je znázorněno vygenerováním sekvencí, které představují binární čísla, a následným zobrazením, že jediné samostatné prvky jsou 0 a 1.
+Následující příklad kódu ukazuje použití `Seq.distinct`. `Seq.distinct` je znázorněno vygenerováním sekvencí, které představují binární čísla, a následným zobrazením, že jediné samostatné prvky jsou 0 a 1.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet22.fs)]
 
-Následující kód ukazuje `Seq.distinctBy` , že začíná sekvencí, která obsahuje záporné a kladné číslo a pomocí funkce absolutní hodnoty jako funkce pro generování klíčů. V výsledné sekvenci chybí všechna kladná čísla, která odpovídají záporným číslům v sekvenci, protože záporná čísla se objeví dříve v sekvenci, a proto jsou vybrána místo kladného čísla, která mají stejnou absolutní hodnotu. hodnota nebo klíč.
+Následující kód demonstruje `Seq.distinctBy` pomocí sekvence, která obsahuje záporné a kladné číslo a pomocí funkce absolutní hodnoty jako funkce pro generování klíčů. V výsledné sekvenci chybí všechna kladná čísla, která odpovídají záporným číslům v sekvenci, protože záporná čísla se objeví dříve v sekvenci, a proto jsou vybrána místo kladného čísla, která mají stejnou absolutní hodnotu. hodnota nebo klíč.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet23.fs)]
 
 ## <a name="readonly-and-cached-sequences"></a>Jen pro čtení a posloupnosti v mezipaměti
 
-[Seq. ReadOnly](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7) vytvoří kopii sekvence jen pro čtení. `Seq.readonly`je užitečné v případě, že máte kolekci pro čtení i zápis, jako je například pole, a nechcete změnit původní kolekci. Tato funkce se dá použít k zachování zapouzdření dat. V následujícím příkladu kódu je vytvořen typ, který obsahuje pole. Vlastnost zpřístupňuje pole, ale místo vrácení pole vrátí sekvenci, která je vytvořena z pole pomocí `Seq.readonly`.
+[Seq. ReadOnly](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7) vytvoří kopii sekvence jen pro čtení. `Seq.readonly` je užitečné v případě, že máte kolekci pro čtení i zápis, jako je například pole, a nechcete změnit původní kolekci. Tato funkce se dá použít k zachování zapouzdření dat. V následujícím příkladu kódu je vytvořen typ, který obsahuje pole. Vlastnost zpřístupňuje pole, ale místo vrácení pole vrátí sekvenci, která je vytvořena z pole pomocí `Seq.readonly`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet24.fs)]
 
-[Seq. cache](https://msdn.microsoft.com/library/d197f9cc-08bf-4986-9869-246e72ca73f0) vytvoří uloženou verzi sekvence. Použijte `Seq.cache` k zamezení opětovného vyhodnocení sekvence, nebo pokud máte více vláken, která používají sekvenci, musíte se ujistit, že každý prvek bude pracovat pouze v jednom okamžiku. Máte-li sekvenci, která je používána více vlákny, můžete mít jedno vlákno, které vytvoří výčet a vypočítá hodnoty pro původní sekvenci a zbývající vlákna mohou použít sekvenci uloženou v mezipaměti.
+[Seq. cache](https://msdn.microsoft.com/library/d197f9cc-08bf-4986-9869-246e72ca73f0) vytvoří uloženou verzi sekvence. Použijte `Seq.cache`, abyste zabránili opakovanému vyhodnocení sekvence nebo pokud máte více vláken, která používají sekvenci, ale je nutné se ujistit, že každý prvek bude pracovat pouze v jednom okamžiku. Máte-li sekvenci, která je používána více vlákny, můžete mít jedno vlákno, které vytvoří výčet a vypočítá hodnoty pro původní sekvenci a zbývající vlákna mohou použít sekvenci uloženou v mezipaměti.
 
 ## <a name="performing-computations-on-sequences"></a>Provádění výpočtů na sekvencích
 

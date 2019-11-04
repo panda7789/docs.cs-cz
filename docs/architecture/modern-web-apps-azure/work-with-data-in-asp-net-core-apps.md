@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 9d9e75767f5ed5010f618d5dbe1e58fe79454597
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: ff517aef93acf8c3a241c8fd8f240f7018467793
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117298"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419969"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -37,7 +37,7 @@ dotnet add package Microsoft.EntityFrameworkCore.InMemory
 
 ### <a name="the-dbcontext"></a>DbContext
 
-Chcete-li pracovat s EF Core, potřebujete podtřídu <xref:Microsoft.EntityFrameworkCore.DbContext>třídy. Tato třída uchovává vlastnosti představující kolekce entit, se kterými bude aplikace pracovat. Ukázka eShopOnWeb zahrnuje CatalogContext s kolekcemi pro položky, značky a typy:
+Chcete-li pracovat s EF Core, potřebujete podtřídu <xref:Microsoft.EntityFrameworkCore.DbContext>. Tato třída uchovává vlastnosti představující kolekce entit, se kterými bude aplikace pracovat. Ukázka eShopOnWeb zahrnuje CatalogContext s kolekcemi pro položky, značky a typy:
 
 ```csharp
 public class CatalogContext : DbContext
@@ -55,7 +55,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext. Všimněte si, že pokud máte ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jeden, musíte použít typ Generic DbContextOptions\<T > a předat do svého typu DbContext jako obecný parametr.
+Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext. Všimněte si, že pokud máte ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jednu, musíte použít > typu Generic DbContextOptions\<T a předat jako obecný parametr typ DbContext.
 
 ### <a name="configuring-ef-core"></a>Konfigurace EF Core
 
@@ -93,7 +93,7 @@ var brandItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Ve výše uvedeném příkladu je důležité přidat volání do ToListAsync, aby se dotaz spustil okamžitě. V opačném případě příkaz přiřadí rozhraní\<IQueryable SelectListItem > k brandItems, které nebude provedeno, dokud není vyhodnoceno. Existují specialisté a nevýhody vrácení výsledků IQueryable z metod. Umožňuje, aby byl dotaz EF Core dále upravován, ale může také vést k chybám, ke kterým dochází pouze za běhu, pokud jsou do dotazu přidány operace, které EF Core nelze přeložit. Obecně je bezpečnější předat jakékoli filtry do metody, která provádí přístup k datům, a vrátit zpět kolekci v paměti (například seznam\<T >) jako výsledek.
+Ve výše uvedeném příkladu je důležité přidat volání do ToListAsync, aby se dotaz spustil okamžitě. V opačném případě příkaz přiřadí rozhraní IQueryable\<SelectListItem > k brandItems, které nebude provedeno, dokud není vyhodnocena. Existují specialisté a nevýhody vrácení výsledků IQueryable z metod. Umožňuje, aby byl dotaz EF Core dále upravován, ale může také vést k chybám, ke kterým dochází pouze za běhu, pokud jsou do dotazu přidány operace, které EF Core nelze přeložit. Obecně je bezpečnější předat jakékoli filtry do metody, která provádí přístup k datům, a vrátit zpět kolekci v paměti (například seznam\<T >) jako výsledek.
 
 EF Core sleduje změny entit, které načítá z Persistence. Chcete-li uložit změny ve sledované entitě, stačí zavolat metodu SaveChanges na DbContext, čímž se zajistí, že se jedná o stejnou instanci DbContext, která byla použita k načtení entity. Přidávání a odebírání entit je přímo provedeno na příslušné vlastnosti Negenerickými a volání metody SaveChanges ke spuštění databázových příkazů. Následující příklad ukazuje přidávání, aktualizování a odebírání entit z Persistence.
 
@@ -127,7 +127,7 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Můžete zahrnout více relací a můžete také zahrnout dílčí relace pomocí ThenInclude. EF Core spustí jeden dotaz, který načte výslednou sadu entit. Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". – řetězec oddělený řetězcem `.Include()` metody rozšíření, například:
+Můžete zahrnout více relací a můžete také zahrnout dílčí relace pomocí ThenInclude. EF Core spustí jeden dotaz, který načte výslednou sadu entit. Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". -řetězec oddělený řetězcem metody rozšíření `.Include()`, například:
 
 ```csharp
     .Include(“Items.Products”)
@@ -180,7 +180,7 @@ public class Basket : BaseEntity
 }
 ```
 
-Všimněte si, že tento typ entity nevystavuje `ICollection` veřejnou `List` vlastnost nebo `IReadOnlyCollection` , ale místo toho zveřejňuje typ, který zabalí základní typ seznamu. Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:
+Všimněte si, že tento typ entity nevystavuje vlastnost Public `List` nebo `ICollection`, ale místo toho zpřístupňuje typ `IReadOnlyCollection`, který zabalí základní typ seznamu. Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:
 
 ```csharp
 private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
@@ -200,7 +200,7 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-V tomto příkladu `ShipToAddress` je vlastnost typu `Address`. `Address`je objekt hodnoty s několika vlastnostmi, jako jsou `Street` a `City`. EF Core provede mapování `Order` objektu na jeho tabulku s jedním sloupcem `Address` na vlastnost a prefixuje název každého sloupce s názvem vlastnosti. V tomto příkladu `Order` tabulka by obsahovala sloupce `ShipToAddress_Street` jako a `ShipToAddress_City`.
+V tomto příkladu je vlastnost `ShipToAddress` typu `Address`. `Address` je objekt hodnoty s několika vlastnostmi, například `Street` a `City`. EF Core mapuje objekt `Order` na jeho tabulku s jedním sloupcem na `Address` vlastnost, přičemž prefixuje název každého sloupce s názvem vlastnosti. V tomto příkladu by tabulka `Order` zahrnovala sloupce jako `ShipToAddress_Street` a `ShipToAddress_City`.
 
 [EF Core 2,2 zavádí podporu pro kolekce vlastněných entit](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
 
@@ -240,7 +240,7 @@ Když jsou v EF Core připojení povolené opakované pokusy, každá operace, k
 
 Nicméně pokud váš kód inicializuje transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba považovat za jednotku. vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání. Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásad) a zahrnete do něj několik DbContexts, zobrazí se výjimka podobná následující.
 
-System.InvalidOperationException: Nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
+System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
 
 Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Následující kód ukazuje, jak implementovat tento přístup:
 
@@ -267,13 +267,13 @@ await strategy.ExecuteAsync(async () =>
 });
 ```
 
-První DbContext je \_catalogContext a druhý DbContext je \_v rámci objektu integrationEventLogService. Nakonec se akce potvrzení provede více DbContexts a použije se strategie provádění EF.
+První DbContext je \_catalogContext a druhá DbContext je v objektu \_integrationEventLogService. Nakonec se akce potvrzení provede více DbContexts a použije se strategie provádění EF.
 
 > ### <a name="references--entity-framework-core"></a>Odkazy – Entity Framework Core
 >
 > - **EF Core docs**  
 >   <https://docs.microsoft.com/ef/>
-> - **EF Core: Související data**  
+> - **EF Core: související data**  
 >   <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **Vyhněte se entitám opožděného načítání v aplikacích ASPNET**  
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
@@ -342,20 +342,20 @@ Je možné, že databáze NoSQL ukládá více verzí objektů, ale některé pe
 
 Databáze NoSQL obvykle vynutily [kyselinu](https://en.wikipedia.org/wiki/ACID), což znamená, že výhody výkonu i škálovatelnosti oproti relačním databázím. Jsou vhodné pro extrémně velké datové sady a objekty, které nejsou vhodné pro úložiště v normalizovaných strukturách tabulek. Neexistuje žádný důvod, proč jediná aplikace nemůže využívat relační i NoSQL databáze, a to s využitím každého z nich, kde se nejlépe hodí.
 
-## <a name="azure-documentdb"></a>DocumentDB Azure
+## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Azure DocumentDB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu. DocumentDB je postavená na zajištění rychlého a předvídatelného výkonu, vysoké dostupnosti, elastického škálování a globální distribuce. I když se jedná o databázi NoSQL, můžou vývojáři používat pro data JSON bohatou a známou schopnost dotazů SQL. Všechny prostředky v DocumentDB se ukládají jako dokumenty JSON. Prostředky se spravují jako _položky_, což jsou dokumenty obsahující metadata a _kanály_, které jsou kolekcemi položek. Obrázek 8-2 ukazuje vztah mezi různými DocumentDB prostředky.
+Azure Cosmos DB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu. Azure Cosmos DB je postavená na zajištění rychlého a předvídatelného výkonu, vysoké dostupnosti, elastického škálování a globální distribuce. I když se jedná o databázi NoSQL, můžou vývojáři používat pro data JSON bohatou a známou schopnost dotazů SQL. Všechny prostředky v Azure Cosmos DB jsou uloženy jako dokumenty JSON. Prostředky se spravují jako _položky_, což jsou dokumenty obsahující metadata a _kanály_, které jsou kolekcemi položek. Obrázek 8-2 ukazuje vztah mezi různými prostředky Azure Cosmos DB.
 
-![Hierarchický vztah mezi prostředky v DocumentDB, databázi NoSQL JSON](./media/image8-2.png)
+![Hierarchický vztah mezi prostředky v Azure Cosmos DB databáze JSON NoSQL](./media/image8-2.png)
 
-**Obrázek 8-2.** Organizace prostředků DocumentDB
+**Obrázek 8-2.** Azure Cosmos DB organizace prostředků.
 
-Dotazovací jazyk DocumentDB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON. Jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává hlubokou integraci objektu JavaScriptu, polí, konstrukce objektu a vyvolání funkce.
+Dotazovací jazyk Azure Cosmos DB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON. Jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává hlubokou integraci objektu JavaScriptu, polí, konstrukce objektu a vyvolání funkce.
 
-**Odkazy – DocumentDB**
+**Odkazy – Azure Cosmos DB**
 
-- Úvod do DocumentDB  
-  <https://docs.microsoft.com/azure/documentdb/documentdb-introduction>
+- Azure Cosmos DB Úvod  
+  <https://docs.microsoft.com/azure/cosmos-db/introduction>
 
 ## <a name="other-persistence-options"></a>Další možnosti trvalosti
 
@@ -439,7 +439,6 @@ public class CachedCatalogService : ICatalogService
     private readonly CatalogService _catalogService;
     private static readonly string _brandsKey = "brands";
     private static readonly string _typesKey = "types";
-    private static readonly string _itemsKeyTemplate = "items-{0}-{1}-{2}-{3}";
     private static readonly TimeSpan _defaultCacheDuration = TimeSpan.FromSeconds(30);
     public CachedCatalogService(IMemoryCache cache,
     CatalogService catalogService)
@@ -459,7 +458,7 @@ public class CachedCatalogService : ICatalogService
 
     public async Task<Catalog> GetCatalogItems(int pageIndex, int itemsPage, int? brandID, int? typeId)
     {
-        string cacheKey = String.Format(_itemsKeyTemplate, pageIndex, itemsPage, brandID, typeId);
+        string cacheKey = $"items-{pageIndex}-{itemsPage}-{brandID}-{typeId}";
         return await _cache.GetOrCreateAsync(cacheKey, async entry =>
         {
             entry.SlidingExpiration = _defaultCacheDuration;
@@ -513,5 +512,5 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 Ukládání do mezipaměti může výrazně zlepšit výkon webových stránek, které opakovaně vyžádají stejné hodnoty z databáze. Nezapomeňte změřit přístup k datům a výkon stránky před použitím ukládání do mezipaměti a použít ukládání do mezipaměti jenom v případě, že je potřeba zlepšení. Ukládání do mezipaměti spotřebovává prostředky paměti webového serveru a zvyšuje složitost aplikace, takže je důležité, abyste s touto technikou nemuseli předčasně optimalizovat.
 
 >[!div class="step-by-step"]
->[Předchozí](develop-asp-net-core-mvc-apps.md)Další
->[](test-asp-net-core-mvc-apps.md)
+>[Předchozí](develop-asp-net-core-mvc-apps.md)
+>[Další](test-asp-net-core-mvc-apps.md)

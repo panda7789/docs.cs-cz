@@ -4,12 +4,12 @@ description: Další informace o základních typech (čísel, řetězců a obje
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: f984321ab01fc4b5ddd92a20b178748de50246da
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 7a75ad5080cd2646070447cbc3dcc46b8c73dd65
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037673"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420703"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnné a hodnoty
 
@@ -66,7 +66,7 @@ Typ lze deklarovat s jedním nebo více *parametry typu* , které slouží jako 
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
-Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](language-reference/keywords/object.md). Třídy obecné kolekce se nazývají *kolekce se silnými typy* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `strings` v části předchozí příklad. Další informace najdete v tématu [Obecné typy](programming-guide/generics/index.md).
+Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](language-reference/builtin-types/reference-types.md#the-object-type). Třídy obecné kolekce se nazývají *kolekce se silnými typy* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `strings` v části předchozí příklad. Další informace najdete v tématu [Obecné typy](programming-guide/generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>Implicitní typy, anonymní typy a typy řazené kolekce členů
 
@@ -82,9 +82,9 @@ Je důležité porozumět dvěma základním bodům o typu systému v .NET Frame
   
 - Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32> (klíčové slovo:`int`), jsou odvozeny z jednoho základního typu, kterýC# je<xref:System.Object>(klíčové slovo:`object`). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../standard/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](programming-guide/classes-and-structs/inheritance.md).  
   
-- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET Framework a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou **struktury**. Další informace o typech hodnot naleznete v tématu [struktury](structs.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
+- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET Framework a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou **struktury**. Další informace o typech hodnot naleznete v tématu [struktury](structs.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](programming-guide/classes-and-structs/classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Struktury](structs.md)
-- [Třídy](classes.md)
+- [Třídy](programming-guide/classes-and-structs/classes.md)

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - text content [WPF], setting
 - TextBox control [WPF], setting text content
 ms.assetid: bcd25fc7-a52f-4453-b802-2c8d2b335ab8
-ms.openlocfilehash: 2e2bc70b108991fd4e3c138bfac5bff942173e33
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 9b16f2d99295a28725255361b0be3ef7f4245fd2
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856108"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459299"
 ---
 # <a name="how-to-set-the-text-content-of-a-textbox-control"></a>Postupy: Nastavení obsahu textu ovládacího prvku TextBox
 
-Tento příklad ukazuje, jak použít <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost k nastavení počátečního textového obsahu <xref:System.Windows.Controls.TextBox> ovládacího prvku.
+Tento příklad ukazuje, jak použít vlastnost <xref:System.Windows.Controls.TextBox.Text%2A> k nastavení počátečního textového obsahu <xref:System.Windows.Controls.TextBox> ovládacího prvku.
 
 > [!NOTE]
-> <xref:System.Windows.Controls.TextBox> <xref:System.Windows.Markup.ContentPropertyAttribute> <xref:System.Windows.Controls.TextBox.Text%2A> <xref:System.Windows.Controls.TextBox> Přestože verze příkladu by mohla `<TextBox.Text>` používat značky kolem textu každého tlačítka, není nutné, protože atribut aplikuje na vlastnost. [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] . Další informace naleznete v tématu [Přehled XAML (WPF)](../advanced/xaml-overview-wpf.md).
+> I když [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] verze příkladu může použít značky `<TextBox.Text>` kolem textu <xref:System.Windows.Controls.TextBox> obsahu jednotlivých tlačítek, není nutné, protože <xref:System.Windows.Controls.TextBox> použije atribut <xref:System.Windows.Markup.ContentPropertyAttribute> na vlastnost <xref:System.Windows.Controls.TextBox.Text%2A>. Další informace naleznete v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).
 
 ## <a name="example"></a>Příklad
 

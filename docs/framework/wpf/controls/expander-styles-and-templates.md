@@ -9,49 +9,49 @@ helpviewer_keywords:
 - states [WPF], Expander
 - parts [WPF], Expander
 ms.assetid: da2e5a1c-5230-4c21-98a5-59c7895facd7
-ms.openlocfilehash: c5f805c251d3f6b256035e568798cd6d252ea9a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26989474f264161be12bcc14fed614fdc7f775b6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911728"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460328"
 ---
 # <a name="expander-styles-and-templates"></a>Styly a šablony rozšíření
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Expander> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Expander>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="expander-parts"></a>Rozšíření částí  
- <xref:System.Windows.Controls.Expander> Ovládací prvek nemá žádné pojmenované součásti.  
+## <a name="expander-parts"></a>Části rozšíření  
+ Ovládací prvek <xref:System.Windows.Controls.Expander> neobsahuje žádné pojmenované části.  
   
 ## <a name="expander-states"></a>Stavy rozšíření  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Expander> ovládacího prvku.  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Expander>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|  
-|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
-|Fokus|FocusStates|Ovládací prvek má fokus.|  
+|Běžnou|CommonStates|Výchozí stav.|  
+|MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
+|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|  
+|Zaměřil|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
-|Rozbalení|ExpansionStates|Ovládací prvek je rozbalený.|  
-|Sbalení|ExpansionStates|Ovládací prvek není rozbalen.|  
-|ExpandDown|ExpandDirectionStates|Rozšíří ovládací prvek dolů.|  
-|ExpandUp|ExpandDirectionStates|Rozšíří ovládací prvek nahoru.|  
-|ExpandLeft|ExpandDirectionStates|Ovládací prvek vlevo rozšíří.|  
-|ExpandRight|ExpandDirectionStates|Ovládací prvek rozšíří vpravo.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Rozbalil|ExpansionStates|Ovládací prvek je rozbalený.|  
+|Sbalený|ExpansionStates|Ovládací prvek není rozbalen.|  
+|ExpandDown|ExpandDirectionStates|Ovládací prvek se rozbalí dolů.|  
+|ExpandUp|ExpandDirectionStates|Ovládací prvek se rozšíří nahoru.|  
+|ExpandLeft|ExpandDirectionStates|Ovládací prvek se rozšíří doleva.|  
+|ExpandRight|ExpandDirectionStates|Ovládací prvek se rozšíří doprava.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="expander-controltemplate-example"></a>Příklad šablony ControlTemplate rozšíření  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Expander> ovládacího prvku.  
+## <a name="expander-controltemplate-example"></a>Příklad rozšíření ControlTemplate  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.Expander>.  
   
  [!code-xaml[ControlTemplateExamples#Expander](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/expander.xaml#expander)]  
   
- V předchozím příkladu používá jeden nebo více z následujících prostředků.  
+ Předchozí příklad používá jeden nebo více následujících zdrojů.  
   
  [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -59,5 +59,5 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Expander>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

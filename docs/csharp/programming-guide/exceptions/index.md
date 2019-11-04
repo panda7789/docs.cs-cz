@@ -7,18 +7,18 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 1442daf646a29c3822d06d0b649f462b37523fe2
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 3506406a441cb2028c00d5b8ed87b57cc6dff38b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002111"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423258"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 
 Funkce C# zpracování výjimek jazyka vám pomůžou pracovat s případnými neočekávanými nebo mimořádnými situacemi, ke kterým dochází při spuštění programu. Zpracování výjimek používá klíčová slova `try`, `catch` a `finally` k vyzkoušení akcí, které nemusí být úspěšné, ke zpracování selhání, pokud se rozhodnete, že je to vhodné, a k vyčištění prostředků poté. Výjimky mohou být generovány modulem CLR (Common Language Runtime), .NET Framework nebo jinými knihovnami třetích stran nebo pomocí kódu aplikace. Výjimky jsou vytvářeny pomocí klíčového slova `throw`.
 
-V mnoha případech může být výjimka vyvolána metodou, kterou váš kód volá přímo, ale jinou metodou v zásobníku volání. Pokud k tomu dojde, modul CLR zruší zásobník zpět a hledá metodu s blokem `catch` pro konkrétní typ výjimky a spustí první takový blok `catch`, který nalezne. Pokud v zásobníku volání nenajde žádný odpovídající @no__t blok-0, proces se ukončí a zobrazí se uživateli zpráva.
+V mnoha případech může být výjimka vyvolána metodou, kterou váš kód volá přímo, ale jinou metodou v zásobníku volání. Pokud k tomu dojde, modul CLR zruší zásobník zpět a hledá metodu s blokem `catch` pro konkrétní typ výjimky a spustí první takový blok `catch`, který nalezne. Pokud nenajde žádný odpovídající `catch` blok kdekoli v zásobníku volání, ukončí proces a zobrazí uživateli zprávu.
 
 V tomto příkladu metoda Testuje dělení nulou a zachytí chybu. Bez zpracování výjimek by tento program byl ukončen s **DivideByZeroException** chybou.
 
@@ -53,7 +53,7 @@ Další informace o zpracování výjimek a výjimek naleznete v následujícíc
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
-Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

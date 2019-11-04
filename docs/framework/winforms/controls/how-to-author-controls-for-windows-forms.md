@@ -6,17 +6,17 @@ helpviewer_keywords:
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 45a6ae68102204ad8506027065c2676e02fdd7a3
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 3776e47191d9b10431acbb9a2a7257996e531ba8
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015921"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459422"
 ---
-# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro model Windows Forms
+# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: vytváření ovládacích prvků pro model Windows Forms
 
 Ovládací prvek představuje grafické propojení mezi uživatelem a programem. Ovládací prvek může poskytovat nebo zpracovávat data, přijímat vstup uživatele, reagovat na události nebo provádět libovolný počet dalších funkcí, které spojují uživatele a aplikaci. Vzhledem k tomu, že ovládací prvek je v podstatě komponenta s grafickým rozhraním, může obsluhovat jakoukoli funkci, kterou komponenta dělá, a poskytnout interakci s uživatelem. Ovládací prvky jsou vytvořeny pro poskytování konkrétních účelů a ovládací prvky pro vytváření obsahu jsou pouze další úlohy programování. V takovém případě následující kroky reprezentují přehled procesu vytváření ovládacích prvků. Odkazy poskytují další informace o jednotlivých krocích.
 
@@ -40,9 +40,9 @@ Ovládací prvek představuje grafické propojení mezi uživatelem a programem.
 
 5. Pokud pro svůj ovládací prvek potřebujete vlastní malování, přidejte pro něj kód. Podrobnosti najdete v tématu [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md).
 
-6. Pokud váš ovládací prvek dědí <xref:System.Windows.Forms.UserControl>z, můžete otestovat jeho chování za běhu sestavením projektu ovládacího prvku a jeho spuštěním v **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
+6. Pokud váš ovládací prvek dědí z <xref:System.Windows.Forms.UserControl>, můžete otestovat jeho chování za běhu sestavením projektu ovládacího prvku a jeho spuštěním v **kontejneru testu UserControl**. Další informace naleznete v tématu [How to: test runtime Behavior prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).
 
-7. Můžete také otestovat a ladit ovládací prvek vytvořením nového projektu, jako je například aplikace systému Windows, a umístěním do kontejneru. Tento proces je znázorněný v rámci [návodu: Vytváření složeného ovládacího](walkthrough-authoring-a-composite-control-with-visual-csharp.md)prvku.
+7. Můžete také otestovat a ladit ovládací prvek vytvořením nového projektu, jako je například aplikace systému Windows, a umístěním do kontejneru. Tento proces je znázorněn jako součást [návodu: vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md).
 
 8. Když přidáte jednotlivé funkce, přidejte do projektu testů funkce pro uplatnění nových funkcí.
 
@@ -52,8 +52,8 @@ Ovládací prvek představuje grafické propojení mezi uživatelem a programem.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Zdědit z třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Postupy: Zdědit z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)
-- [Postupy: Zdědit z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
-- [Postupy: Testování chování prvku UserControl v době běhu](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Postupy: Otestování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

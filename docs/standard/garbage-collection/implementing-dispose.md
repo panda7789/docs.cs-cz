@@ -9,18 +9,18 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 8a29584dd5ed47ad1e8a336a7283cba9271f3abd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 95726d4bfae6da43cd845d461caf8f1848d774f1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121214"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424333"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
 Implementujete metodu <xref:System.IDisposable.Dispose%2A> pro uvolnění nespravovaných prostředků používaných vaší aplikací. Systém uvolňování paměti .NET nepřiřazuje ani neuvolní nespravovanou paměť.  
   
-Vzor pro likvidaci objektu, na který se říká [vzor Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md), ukládá pořadí životnosti objektu. Vzor Dispose se používá pouze pro objekty, které mají přístup k nespravovaným prostředkům, jako jsou popisovače souboru a popisovače kanálu, popisovače registru, popisovače čekání nebo ukazatele na blok nespravované paměti. Důvodem je skutečnost, že systém uvolňování paměti je velmi efektivní při zpětném získávání nepoužitých spravovaných objektů, nedokáže však získat zpět nespravované objekty.  
+Vzor pro likvidaci objektu, na který se říká [vzor Dispose](implementing-dispose.md), ukládá pořadí životnosti objektu. Vzor Dispose se používá pouze pro objekty, které mají přístup k nespravovaným prostředkům, jako jsou popisovače souboru a popisovače kanálu, popisovače registru, popisovače čekání nebo ukazatele na blok nespravované paměti. Důvodem je skutečnost, že systém uvolňování paměti je velmi efektivní při zpětném získávání nepoužitých spravovaných objektů, nedokáže však získat zpět nespravované objekty.  
   
 Vzor Dispose má dvě varianty:  
   
@@ -167,4 +167,4 @@ Následující příklad znázorňuje vzor Dispose pro odvozenou třídu, `Dispo
 - <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>
 - <xref:System.Object.Finalize%2A?displayProperty=nameWithType>
 - [Postupy: Definice a používání tříd a struktur (C++/CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli)
-- [Vzor pro metodu Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md)
+- [Vzor pro metodu Dispose](implementing-dispose.md)
