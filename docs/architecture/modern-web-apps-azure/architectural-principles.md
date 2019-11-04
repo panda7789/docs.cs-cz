@@ -4,17 +4,17 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 91bb3be207c9919eb7eb0119e96e76aae94858be
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 656c92c417283366e4bb757489c189ecbc0ea815
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373757"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416690"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
 > "Pokud si tvůrci vytvořili budovy způsob, jakým programátoři zapsali programy, pak první Woodpecker, která byla vytvořena společně, by Civilization zničit."  
-> _\-Gerald Weinberg_
+> _\- Gerald Weinberg_
 
 Měli byste vytvářet architekta a navrhovat softwarová řešení s ohledem na udržovatelnost. Zásady uvedené v této části vám pomohou při rozhodování o architektuře, které budou mít za následek čisté a udržovatelnější aplikace. Obecně platí, že tyto zásady vám pomohou sestavovat aplikace z diskrétních komponent, které nejsou pevně spojené s ostatními částmi aplikace, ale budou komunikovat přes explicitní rozhraní nebo systémy zasílání zpráv.
 
@@ -75,7 +75,7 @@ Místo duplikace logiky je zapouzdřovat v programovacím konstruktoru. Tuto kon
 
 ### <a name="persistence-ignorance"></a>Ignorování trvalosti
 
-**Ignorování trvalosti** (PI) odkazuje na typy, které je třeba zachovat, ale jejichž kód není ovlivněn volbou technologie trvalosti. Tyto typy v rozhraní .NET jsou někdy označovány jako prosté staré objekty CLR (POCOs), protože nejsou nutné dědit z konkrétní základní třídy nebo implementovat konkrétní rozhraní. Ignorování trvalosti je užitečné, protože umožňuje, aby byl stejný obchodní model trvalý více způsoby, a nabízí tak aplikaci větší flexibilitu. Volby trvalosti se můžou v průběhu času měnit, od jedné databázové technologie až po jinou, ale kromě toho, že je aplikace spuštěná (třeba pomocí služby Redis Cache nebo Azure DocumentDb kromě relační databáze).
+**Ignorování trvalosti** (pi) odkazuje na typy, které je nutné zachovat, ale jejichž kód není ovlivněn volbou technologie trvalosti. Tyto typy v rozhraní .NET jsou někdy označovány jako prosté staré objekty CLR (POCOs), protože nejsou nutné dědit z konkrétní základní třídy nebo implementovat konkrétní rozhraní. Ignorování trvalosti je užitečné, protože umožňuje, aby byl stejný obchodní model trvalý více způsoby, a nabízí tak aplikaci větší flexibilitu. Volby trvalosti se můžou v průběhu času měnit, od jedné databázové technologie až po jinou, ale kromě toho, že se aplikace začala používat (třeba pomocí Redis Cache nebo Azure Cosmos DB kromě relační databáze).
 
 Mezi příklady porušení tohoto principu patří:
 
@@ -101,9 +101,9 @@ Minimálně jednotlivé webové aplikace by měly být zaměřené na vlastní o
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- [Vzory návrhu JAVA: Bezpečné](https://java-design-patterns.com/principles/)
+- [Vzory návrhu JAVA: principy](https://java-design-patterns.com/principles/)
 - [Ohraničený kontext](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
->[Předchozí](choose-between-traditional-web-and-single-page-apps.md)Další
->[](common-web-application-architectures.md)
+>[Předchozí](choose-between-traditional-web-and-single-page-apps.md)
+>[Další](common-web-application-architectures.md)

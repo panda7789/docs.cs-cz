@@ -6,12 +6,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: 17c384ec327d4a80ed614dce6254baa5bfb2e960
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 5559acd162b26a94b009ec21691d1501c90db290
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597308"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419532"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 
@@ -19,7 +19,7 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  [!code-csharp[csProgGuideArrays#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#4)]  
   
- Toto pole obsahuje prvky z `array[0]` do. `array[4]` Operátor [New](../../language-reference/operators/new-operator.md) slouží k vytvoření pole a inicializaci prvků pole na jejich výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
+ Toto pole obsahuje prvky z `array[0]` k `array[4]`. Operátor [New](../../language-reference/operators/new-operator.md) slouží k vytvoření pole a inicializaci prvků pole na jejich výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
   
  Pole, které ukládá prvky řetězce, lze deklarovat stejným způsobem. Příklad:  
   
@@ -41,7 +41,7 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  [!code-csharp[csProgGuideArrays#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#8)]  
   
- Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít `new` operátor při přiřazení pole k této proměnné. Příklad:  
+ Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít operátor `new`, když přiřadíte pole k této proměnné. Příklad:  
   
  [!code-csharp[csProgGuideArrays#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#9)]  
   
@@ -53,9 +53,9 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  [!code-csharp[csProgGuideArrays#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#10)]  
   
- Výsledek tohoto příkazu závisí na tom, zda `SomeType` je typ hodnoty nebo typ odkazu. Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType`. Pokud `SomeType` je odkazový typ, příkaz vytvoří pole 10 prvků, z nichž každá je inicializována na odkaz s hodnotou null.  
+ Výsledek tohoto příkazu závisí na tom, zda `SomeType` typ hodnoty nebo typ odkazu. Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType`. Pokud je `SomeType` odkazový typ, příkaz vytvoří pole 10 prvků, z nichž každá je inicializována na odkaz s hodnotou null.  
   
- Další informace o typech hodnot a odkazových typech naleznete v tématu [typy](../../language-reference/keywords/types.md).  
+ Další informace o typech hodnot a odkazových typech naleznete v tématu [typy](/dotnet/csharp/language-reference/keywords).  
   
 ## <a name="see-also"></a>Viz také:
 

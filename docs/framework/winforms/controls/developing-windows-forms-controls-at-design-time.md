@@ -9,15 +9,15 @@ helpviewer_keywords:
 - user controls [Windows Forms]
 - custom controls [Windows Forms]
 ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 1eebca72b8c564e6d846eba69b6b59139754738e
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: f6afb13a01075d3aa2d101100a0c3bfe31c6ee29
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015983"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460079"
 ---
 # <a name="develop-windows-forms-controls-at-design-time"></a>Vývoj ovládacích prvků model Windows Forms v době návrhu
 
@@ -30,49 +30,49 @@ Chcete-li vytvořit vlastní ovládací prvky pro použití ve webových formul�
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Návod: Vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)\
+[Návod: vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)\
 Ukazuje, jak vytvořit jednoduchý složený ovládací prvek v C#.
 
-[Návod: Dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
+[Návod: dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
 Ukazuje, jak vytvořit jednoduchý ovládací prvek model Windows Forms pomocí dědičnosti C#v.
 
-[Návod: Provádění běžných úloh pomocí inteligentních značek v ovládacích prvcích model Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)\
+[Návod: provádění běžných úloh pomocí inteligentních značek v ovládacích prvcích model Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)\
 Ukazuje, jak používat funkci inteligentních značek na ovládacím prvku model Windows Forms.
 
-[Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)\
-Ukazuje, jak použít <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content?displayProperty=nameWithType> atribut k serializaci kolekce.
+[Návod: serializace kolekcí standardních typů pomocí\ DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)
+Ukazuje, jak použít atribut <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content?displayProperty=nameWithType> k serializaci kolekce.
 
-[Návod: Ladění vlastních ovládacích prvků model Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)\
+[Návod: ladění vlastních ovládacích prvků model Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)\
 Ukazuje, jak ladit chování ovládacího prvku model Windows Forms při návrhu.
 
-[Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)\
+[Návod: vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)\
 Ukazuje, jak úzce integrovat složený ovládací prvek do návrhového prostředí.
 
-[Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)\
+[Postupy: vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)\
 Poskytuje přehled důležitých informací pro implementaci ovládacího prvku model Windows Forms.
 
-[Postupy: Vytváření složených ovládacích prvků](how-to-author-composite-controls.md)\
+[Postupy: vytváření složených ovládacích prvků](how-to-author-composite-controls.md)\
 Ukazuje, jak vytvořit ovládací prvek děděním ze složeného ovládacího prvku.
 
-[Postupy: Zdědit z třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)\
+[Postupy: dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)\
 Poskytuje přehled postupu pro vytvoření složeného ovládacího prvku.
 
-[Postupy: Zdědit z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)\
-Ukazuje, jak vytvořit rozšířený ovládací prvek děděním z <xref:System.Windows.Forms.Button> třídy ovládacího prvku.
+[Postupy: dědění z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)\
+Ukazuje, jak vytvořit rozšířený ovládací prvek děděním z třídy ovládacího prvku <xref:System.Windows.Forms.Button>.
 
-[Postupy: Zdědit z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)\
+[Postupy: dědění z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)\
 Poskytuje přehled o vytvoření rozšířeného ovládacího prvku.
 
-[Postupy: Zarovnání ovládacího prvku na okraje formulářů v době návrhu](how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)\
-Ukazuje, jak použít <xref:System.Windows.Forms.Control.Dock%2A> vlastnost k zarovnání ovládacího prvku na okraj formuláře, který zabírá.
+[Postupy: zarovnání ovládacího prvku na okraje formulářů v době návrhu](how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)\
+Ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Control.Dock%2A> k zarovnání ovládacího prvku na okraj formuláře, který zabírá.
 
-[Postupy: Zobrazení ovládacího prvku v dialogovém okně zvolit položky sady nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)\
+[Postupy: zobrazení ovládacího prvku v dialogovém okně zvolit položky sady nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)\
 Ukazuje postup instalace ovládacího prvku tak, aby se zobrazil v dialogovém okně **přizpůsobení sady nástrojů** .
 
-[Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](how-to-provide-a-toolbox-bitmap-for-a-control.md)\
-Ukazuje, jak použít, <xref:System.Drawing.ToolboxBitmapAttribute> Chcete-li zobrazit ikonu vedle vlastního ovládacího prvku v sadě **nástrojů**.
+[Postupy: poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](how-to-provide-a-toolbox-bitmap-for-a-control.md)\
+Ukazuje, jak použít <xref:System.Drawing.ToolboxBitmapAttribute> k zobrazení ikony vedle vlastního ovládacího prvku v sadě **nástrojů**.
 
-[Postupy: Testování chování prvku UserControl v době běhu](how-to-test-the-run-time-behavior-of-a-usercontrol.md)\
+[Postupy: testování chování prvku UserControl v době běhu](how-to-test-the-run-time-behavior-of-a-usercontrol.md)\
 Ukazuje, jak použít **kontejner testu UserControl** k otestování chování složeného ovládacího prvku.
 
 [Chyby v době návrhu v Návrhář formulářů](design-time-errors-in-the-windows-forms-designer.md)\
@@ -81,7 +81,7 @@ Vysvětluje význam a použití Seznam chyb v době návrhu, která se zobrazí 
 [Řešení potíží s řízením a vytvářením komponent](troubleshooting-control-and-component-authoring.md)\
 Ukazuje, jak diagnostikovat a opravovat běžné problémy, ke kterým může dojít při vytváření vlastní komponenty nebo ovládacího prvku.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Odkaz
 
 - <xref:System.Windows.Forms.Control?displayProperty=nameWithType>
 
@@ -89,11 +89,11 @@ Ukazuje, jak diagnostikovat a opravovat běžné problémy, ke kterým může do
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Vývoj vlastních ovládacích prvků model Windows Forms s .NET Framework](developing-custom-windows-forms-controls.md)\
+[Vývoj vlastních model Windows Formsových ovládacích prvků pomocí .NET Framework](developing-custom-windows-forms-controls.md)\
 Popisuje, jak vytvořit vlastní ovládací prvky pomocí .NET Framework.
 
-[Jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md)\
+[Jazyková nezávislost a součásti nezávislé na jazyce](../../../standard/language-independence-and-language-independent-components.md)\
 Zavádí modul CLR (Common Language Runtime), který je navržen tak, aby zjednodušil vytváření a používání komponent. Důležitým aspektem tohoto zjednodušení je Rozšířená interoperabilita mezi součástmi napsanými pomocí různých programovacích jazyků. Specifikace CLS (Common Language Specification) umožňuje vytvářet nástroje a komponenty, které pracují s více programovacími jazyky.
 
-[Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)\
+[Návod: automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)\
 Popisuje, jak povolit zobrazení vaší komponenty nebo ovládacího prvku v dialogovém okně **přizpůsobit sadu nástrojů** .

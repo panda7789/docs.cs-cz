@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje aplikací Dockeru
 description: Pochopte podrobnosti pracovního postupu pro vývoj aplikací založených na Docker. Zahajte krok za krokem a získejte do některých podrobností, abyste mohli optimalizovat fázemi a skončit s zjednodušeným pracovním postupem, který je dostupný při používání sady Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: cd599753a5e89504f11226e89837df7665bca641
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8a4d87d84ca59304266a52b0a977f878189108f0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771490"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417254"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -117,7 +117,7 @@ V souboru Dockerfile můžete určit další nastavení konfigurace v závislost
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Vytváření imagí Docker pro aplikace .NET Core** \
-  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](../../../core/docker/building-net-docker-images.md)
+  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
 
 - **Sestavte si vlastní image**. V oficiální dokumentaci k Docker. \
   <https://docs.docker.com/engine/tutorials/dockerimages/>

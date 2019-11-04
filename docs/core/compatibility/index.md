@@ -2,12 +2,12 @@
 title: Vyhodnotit přerušující změny – .NET Core
 description: Přečtěte si o způsobech, kterými se .NET Core snaží zachovat kompatibilitu pro vývojáře napříč verzemi .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: 4c3f051bf37ea4753d916ee22fedf97a9bad5892
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a4a1b5c4e81cec783248c6110b0af9844eb3f4af
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089348"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416684"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Vyhodnotit poslední změny v .NET Core
 
@@ -139,7 +139,7 @@ Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina 
 
   To se považuje za porušení dvou důvodů:
   
-  - Dojde k přerušení scénářů s pozdní vazbou, jako je funkce pozdní vazby [](../../csharp/language-reference/keywords/dynamic.md) v Visual Basic C#a dynamické v.
+  - Dojde k přerušení scénářů s pozdní vazbou, jako je funkce pozdní vazby [](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) v Visual Basic C#a dynamické v.
   
   - Pokud vývojáři používají [pojmenované argumenty](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments), dojde k přerušení [kompatibility zdrojů](categories.md#source-compatibility) .
 

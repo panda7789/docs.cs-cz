@@ -2,12 +2,12 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 712ae4c9b4cf577ab728e4b78582445070e08049
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 23d73a26bbe0e711bb3a081994826e06634c4bac
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595291"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418697"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 
@@ -19,10 +19,10 @@ Kolekce poskytují pružnější způsob práce se skupinami objektů. Na rozdí
 
 Kolekce je třída, takže před přidáním prvků do této kolekce je nutné deklarovat instanci třídy.
 
-Pokud kolekce obsahuje prvky pouze jednoho typu dat, můžete použít jednu ze tříd v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Obecná kolekce vynutila bezpečnost typů, takže do ní nelze přidat žádný jiný datový typ. Při načítání prvku z obecné kolekce není nutné určit jeho datový typ nebo ho převést.
+Pokud kolekce obsahuje prvky pouze jednoho typu dat, můžete použít jednu ze tříd v oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType>. Obecná kolekce vynutila bezpečnost typů, takže do ní nelze přidat žádný jiný datový typ. Při načítání prvku z obecné kolekce není nutné určit jeho datový typ nebo ho převést.
 
 > [!NOTE]
-> Příklady v tomto tématu zahrnují direktivy [using](../../language-reference/keywords/using-directive.md) pro `System.Collections.Generic` obory názvů a `System.Linq` .
+> Příklady v tomto tématu zahrnují direktivy [using](../../language-reference/keywords/using-directive.md) pro obory názvů `System.Collections.Generic` a `System.Linq`.
 
  **V tomto tématu**
 
@@ -87,9 +87,9 @@ foreach (var salmon in salmons)
 // Output: chinook coho pink sockeye
 ```
 
-Můžete použít příkaz [for](../../language-reference/keywords/for.md) namísto `foreach` příkazu pro iteraci v kolekci. Toho dosáhnete přístupem k prvkům kolekce na pozici indexu. Index prvků začíná na 0 a končí v počtu elementů minus 1.
+K iteraci v kolekci můžete použít příkaz [for](../../language-reference/keywords/for.md) namísto příkazu `foreach`. Toho dosáhnete přístupem k prvkům kolekce na pozici indexu. Index prvků začíná na 0 a končí v počtu elementů minus 1.
 
-Následující příklad provede iteraci prvků kolekce pomocí `for` `foreach`místo.
+Následující příklad provede iteraci prvků kolekce pomocí `for` místo `foreach`.
 
 ```csharp
 // Create a list of strings by using a
@@ -122,7 +122,7 @@ foreach (var salmon in salmons)
 // Output: chinook pink sockeye
 ```
 
-Následující příklad odstraní prvky z obecného seznamu. Místo příkazu se používá příkaz for, který iteruje v sestupném pořadí. [](../../language-reference/keywords/for.md) `foreach` Důvodem je <xref:System.Collections.Generic.List%601.RemoveAt%2A> , že metoda způsobí, že prvky po odebraném prvku mají nižší hodnotu indexu.
+Následující příklad odstraní prvky z obecného seznamu. Místo příkazu `foreach` se používá příkaz [for](../../language-reference/keywords/for.md) , který iteruje v sestupném pořadí. Důvodem je, že metoda <xref:System.Collections.Generic.List%601.RemoveAt%2A> způsobí, že prvky po odebraném prvku mají nižší hodnotu indexu.
 
 ```csharp
 var numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -146,7 +146,7 @@ numbers.ForEach(
 // Output: 0 2 4 6 8
 ```
 
-Pro typ prvků v <xref:System.Collections.Generic.List%601>, můžete také definovat vlastní třídu. V následujícím příkladu `Galaxy` třída, která je použita <xref:System.Collections.Generic.List%601> v, je definována v kódu.
+Pro typ prvků v <xref:System.Collections.Generic.List%601>můžete také definovat vlastní třídu. V následujícím příkladu je třída `Galaxy` používaná <xref:System.Collections.Generic.List%601> definována v kódu.
 
 ```csharp
 private static void IterateThroughList()
@@ -196,16 +196,16 @@ Některé společné třídy kolekcí jsou popsány v této části:
 
 ### <a name="systemcollectionsgeneric-classes"></a>Třídy System.Collections.Generic
 
-Můžete vytvořit obecnou kolekci pomocí jedné ze tříd v <xref:System.Collections.Generic> oboru názvů. Obecná kolekce je užitečná, pokud má každá položka v kolekci stejný datový typ. Obecná kolekce vynutila silné typování tím, že umožňuje přidat pouze požadovaný datový typ.
+Můžete vytvořit obecnou kolekci pomocí jedné ze tříd v oboru názvů <xref:System.Collections.Generic>. Obecná kolekce je užitečná, pokud má každá položka v kolekci stejný datový typ. Obecná kolekce vynutila silné typování tím, že umožňuje přidat pouze požadovaný datový typ.
 
-V následující tabulce jsou uvedeny některé z často používaných tříd <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů:
+V následující tabulce jsou uvedeny některé z často používaných tříd oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType>:
 
 |Třída|Popis|
 |---|---|
 |<xref:System.Collections.Generic.Dictionary%602>|Představuje kolekci párů klíč/hodnota, které jsou uspořádány na základě klíče.|
 |<xref:System.Collections.Generic.List%601>|Představuje seznam objektů, které mohou být k dispozici v indexu. Poskytuje metody pro hledání, řazení a úpravy seznamů.|
 |<xref:System.Collections.Generic.Queue%601>|Představuje kolekci objektů first in, First out (FIFO).|
-|<xref:System.Collections.Generic.SortedList%602>|Představuje kolekci párů klíč/hodnota, které jsou seřazeny podle klíče na základě přidružené <xref:System.Collections.Generic.IComparer%601> implementace.|
+|<xref:System.Collections.Generic.SortedList%602>|Představuje kolekci párů klíč/hodnota, které jsou řazeny podle klíče na základě příslušné implementace <xref:System.Collections.Generic.IComparer%601>.|
 |<xref:System.Collections.Generic.Stack%601>|Představuje kolekci objektů Last in, First out (LIFO).|
 
 Další informace naleznete v tématu [běžně používané typy kolekcí](../../../standard/collections/commonly-used-collection-types.md), [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)a <xref:System.Collections.Generic>.
@@ -214,21 +214,21 @@ Další informace naleznete v tématu [běžně používané typy kolekcí](../.
 
 ### <a name="systemcollectionsconcurrent-classes"></a>Třídy System.Collections.Concurrent
 
-V .NET Framework 4 nebo novějších kolekce v <xref:System.Collections.Concurrent> oboru názvů poskytují efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken.
+V .NET Framework 4 nebo novějších představují kolekce v oboru názvů <xref:System.Collections.Concurrent> efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken.
 
-Třídy v <xref:System.Collections.Concurrent> oboru názvů by měly být použity namísto odpovídajících typů <xref:System.Collections.Generic?displayProperty=nameWithType> v oborech názvů a <xref:System.Collections?displayProperty=nameWithType> pokaždé, když více vláken přistupuje souběžně k kolekci. Další informace najdete v tématu [kolekce bezpečné](../../../standard/collections/thread-safe/index.md) pro přístup z <xref:System.Collections.Concurrent>více vláken a.
+Třídy v oboru názvů <xref:System.Collections.Concurrent> by měly být použity namísto odpovídajících typů v oborech názvů <xref:System.Collections.Generic?displayProperty=nameWithType> a <xref:System.Collections?displayProperty=nameWithType> vždy, když je souběžně přistupováno k kolekci více vláken. Další informace najdete v tématu kolekce a <xref:System.Collections.Concurrent>bezpečné pro přístup z [více vláken](../../../standard/collections/thread-safe/index.md) .
 
-Některé třídy, které jsou <xref:System.Collections.Concurrent> součástí oboru <xref:System.Collections.Concurrent.BlockingCollection%601>názvů, <xref:System.Collections.Concurrent.ConcurrentQueue%601>jsou, <xref:System.Collections.Concurrent.ConcurrentStack%601> <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, a.
+Některé třídy, které jsou zahrnuté v oboru názvů <xref:System.Collections.Concurrent>, jsou <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>a <xref:System.Collections.Concurrent.ConcurrentStack%601>.
 
 <a name="BKMK_Collections"></a>
 
 ### <a name="systemcollections-classes"></a>Třídy System. Collections
 
-Třídy v <xref:System.Collections?displayProperty=nameWithType> oboru názvů neukládají prvky jako specificky typové objekty, ale jako objekty typu `Object`.
+Třídy v oboru názvů <xref:System.Collections?displayProperty=nameWithType> neukládají prvky jako objekty, které jsou specificky typované, ale jako objekty typu `Object`.
 
-Kdykoli je to možné, použijte obecné kolekce v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů <xref:System.Collections.Concurrent> nebo obor názvů namísto starších typů v `System.Collections` oboru názvů.
+Kdykoli je to možné, měli byste použít obecné kolekce v oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType> nebo obor názvů <xref:System.Collections.Concurrent> namísto starších typů v oboru názvů `System.Collections`.
 
-Následující tabulka uvádí některé často používané třídy v `System.Collections` oboru názvů:
+Následující tabulka uvádí některé často používané třídy v oboru názvů `System.Collections`:
 
 |Třída|Popis|
 |---|---|
@@ -237,15 +237,15 @@ Následující tabulka uvádí některé často používané třídy v `System.C
 |<xref:System.Collections.Queue>|Představuje kolekci objektů first in, First out (FIFO).|
 |<xref:System.Collections.Stack>|Představuje kolekci objektů Last in, First out (LIFO).|
 
-<xref:System.Collections.Specialized> Obor názvů poskytuje specializované třídy kolekcí se silnými typy, jako jsou jenom řetězcové kolekce a propojené seznamy a hybridní slovníky.
+Obor názvů <xref:System.Collections.Specialized> poskytuje specializované třídy kolekcí se silnými typy, jako jsou jenom řetězcové kolekce a propojené seznamy a hybridní slovníky.
 
 <a name="BKMK_KeyValuePairs"></a>
 
 ## <a name="implementing-a-collection-of-keyvalue-pairs"></a>Implementace kolekce párů klíč/hodnota
 
-<xref:System.Collections.Generic.Dictionary%602> Obecná kolekce umožňuje přístup k prvkům v kolekci pomocí klíče každého prvku. Každé přidání do slovníku se skládá z hodnoty a jejího přidruženého klíče. Načítání hodnoty pomocí klíče je rychlé, protože `Dictionary` třída je implementována jako zatřiďovací tabulka.
+Obecná kolekce <xref:System.Collections.Generic.Dictionary%602> umožňuje přístup k prvkům v kolekci pomocí klíče každého prvku. Každé přidání do slovníku se skládá z hodnoty a jejího přidruženého klíče. Načítání hodnoty pomocí klíče je rychlé, protože třída `Dictionary` je implementována jako zatřiďovací tabulka.
 
-Následující příklad vytvoří `Dictionary` kolekci a iteruje prostřednictvím slovníku `foreach` pomocí příkazu.
+Následující příklad vytvoří kolekci `Dictionary` a provede iteraci pomocí příkazu `foreach`.
 
 ```csharp
 private static void IterateThruDictionary()
@@ -294,7 +294,7 @@ public class Element
 }
 ```
 
-Chcete-li místo toho použít inicializátor kolekce k `Dictionary` sestavení kolekce, můžete `BuildDictionary` nahradit metody a `AddToDictionary` následující metodou.
+Chcete-li místo toho použít inicializátor kolekce k sestavení kolekce `Dictionary`, můžete nahradit metody `BuildDictionary` a `AddToDictionary` následující metodou.
 
 ```csharp
 private static Dictionary<string, Element> BuildDictionary2()
@@ -313,7 +313,7 @@ private static Dictionary<string, Element> BuildDictionary2()
 }
 ```
 
-Následující příklad používá <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> metodu <xref:System.Collections.Generic.Dictionary%602.Item%2A> a vlastnost `Dictionary` pro rychlé vyhledání položky podle klíče. Vlastnost umožňuje přístup k položce `elements` v kolekci pomocí `elements[symbol]` v. C# `Item`
+Následující příklad používá metodu <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> a vlastnost <xref:System.Collections.Generic.Dictionary%602.Item%2A> `Dictionary` pro rychlé vyhledání položky podle klíče. Vlastnost `Item` umožňuje přístup k položce v kolekci `elements` pomocí `elements[symbol]` v C#.
 
 ```csharp
 private static void FindInDictionary(string symbol)
@@ -332,7 +332,7 @@ private static void FindInDictionary(string symbol)
 }
 ```
 
-Následující příklad místo toho používá metodu <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> pro rychlé vyhledání položky podle klíče.
+Následující příklad místo toho používá metodu <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> k rychlému vyhledání položky podle klíče.
 
 ```csharp
 private static void FindInDictionary2(string symbol)
@@ -351,7 +351,7 @@ private static void FindInDictionary2(string symbol)
 
 ## <a name="using-linq-to-access-a-collection"></a>Přístup ke kolekci pomocí jazyka LINQ
 
-LINQ (jazykově integrovaný dotaz) lze použít pro přístup ke kolekcím. Dotazy LINQ poskytují možnosti filtrování, řazení a seskupování. Další informace naleznete v tématu [Začínáme s LINQ v C# ](./linq/getting-started-with-linq.md).
+LINQ (jazykově integrovaný dotaz) lze použít pro přístup ke kolekcím. Dotazy LINQ poskytují možnosti filtrování, řazení a seskupování. Další informace naleznete v tématu [Začínáme s LINQ v C# ](/dotnet/csharp/programming-guide/concepts/linq/).
 
 Následující příklad spustí dotaz LINQ na obecné `List`. Dotaz LINQ vrátí jinou kolekci, která obsahuje výsledky.
 
@@ -400,11 +400,11 @@ public class Element
 
 ## <a name="sorting-a-collection"></a>Řazení kolekce
 
-Následující příklad znázorňuje postup pro řazení kolekce. Příklad řadí instance `Car` třídy, které jsou uloženy <xref:System.Collections.Generic.List%601>v. Třída implementuje rozhraní, které vyžaduje implementaci metody. <xref:System.IComparable%601.CompareTo%2A> `Car` <xref:System.IComparable%601>
+Následující příklad znázorňuje postup pro řazení kolekce. Příklad řadí instance `Car` třídy, které jsou uloženy v <xref:System.Collections.Generic.List%601>. Třída `Car` implementuje rozhraní <xref:System.IComparable%601>, které vyžaduje, aby byla metoda <xref:System.IComparable%601.CompareTo%2A> implementovaná.
 
-Každé volání <xref:System.IComparable%601.CompareTo%2A> metody provede jedno porovnání, které se používá k řazení. Uživatelsky psaný kód v `CompareTo` metodě vrátí hodnotu pro každé porovnání aktuálního objektu s jiným objektem. Vrácená hodnota je menší než nula, pokud je aktuální objekt menší než druhý objekt, větší než nula, pokud je aktuální objekt větší než druhý objekt a nula, pokud jsou stejné. To umožňuje definovat v kódu kritéria pro větší než, menší než a rovno.
+Každé volání metody <xref:System.IComparable%601.CompareTo%2A> provede jedno porovnání, které se používá k řazení. Uživatelsky psaný kód v metodě `CompareTo` vrátí hodnotu pro každé porovnání aktuálního objektu s jiným objektem. Vrácená hodnota je menší než nula, pokud je aktuální objekt menší než druhý objekt, větší než nula, pokud je aktuální objekt větší než druhý objekt a nula, pokud jsou stejné. To umožňuje definovat v kódu kritéria pro větší než, menší než a rovno.
 
-`ListCars` V metodě `cars.Sort()` příkaz seřadí seznam. Toto <xref:System.Collections.Generic.List%601.Sort%2A> volání metody metody <xref:System.Collections.Generic.List%601> způsobí, že `CompareTo` `Car` Metoda`List`bude automaticky volána pro objekty v.
+V metodě `ListCars` seřadí příkaz `cars.Sort()` seznam. Toto volání metody <xref:System.Collections.Generic.List%601.Sort%2A> <xref:System.Collections.Generic.List%601> způsobí, že metoda `CompareTo` bude automaticky volána pro objekty `Car` v `List`.
 
 ```csharp
 private static void ListCars()
@@ -480,13 +480,13 @@ public class Car : IComparable<Car>
 
 ## <a name="defining-a-custom-collection"></a>Definice vlastní kolekce
 
-Kolekci můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo. <xref:System.Collections.IEnumerable>
+Můžete definovat kolekci implementací rozhraní <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable>.
 
 I když můžete definovat vlastní kolekci, je obvykle vhodnější použít kolekce, které jsou součástí .NET Framework, které jsou popsány v části [druhy kolekcí](#BKMK_KindsOfCollections) výše v tomto tématu.
 
-Následující příklad definuje vlastní třídu kolekce s názvem `AllColors`. Tato třída implementuje <xref:System.Collections.IEnumerable> rozhraní, které vyžaduje <xref:System.Collections.IEnumerable.GetEnumerator%2A> implementaci metody.
+Následující příklad definuje vlastní třídu kolekce s názvem `AllColors`. Tato třída implementuje rozhraní <xref:System.Collections.IEnumerable>, které vyžaduje implementaci <xref:System.Collections.IEnumerable.GetEnumerator%2A> metody.
 
-Metoda vrátí instanci `ColorEnumerator`třídy. `GetEnumerator` `ColorEnumerator`implementuje rozhraní, které vyžaduje <xref:System.Collections.IEnumerator.Current%2A> , aby byla implementována <xref:System.Collections.IEnumerator.MoveNext%2A> vlastnost, metoda <xref:System.Collections.IEnumerator.Reset%2A> a metoda. <xref:System.Collections.IEnumerator>
+Metoda `GetEnumerator` vrací instanci `ColorEnumerator` třídy. `ColorEnumerator` implementuje rozhraní <xref:System.Collections.IEnumerator>, které vyžaduje, aby byla implementována vlastnost <xref:System.Collections.IEnumerator.Current%2A>, <xref:System.Collections.IEnumerator.MoveNext%2A> metoda a <xref:System.Collections.IEnumerator.Reset%2A> metoda.
 
 ```csharp
 private static void ListColors()
@@ -563,13 +563,13 @@ public class Color
 
 ## <a name="iterators"></a>Iterátory
 
-*Iterátor* se používá k provedení vlastní iterace v kolekci. Iterátor může být metoda nebo `get` přistupující objekt. Iterátor používá příkaz [yield return](../../language-reference/keywords/yield.md) k vrácení každého prvku kolekce po jednom.
+*Iterátor* se používá k provedení vlastní iterace v kolekci. Iterátor může být metoda nebo přistupující objekt `get`. Iterátor používá příkaz [yield return](../../language-reference/keywords/yield.md) k vrácení každého prvku kolekce po jednom.
 
-Zavoláte iterátor pomocí příkazu [foreach](../../language-reference/keywords/foreach-in.md) . Každá iterace `foreach` smyčky volá iterátor. Při dosažení `yield return` příkazu v iterátoru je vrácen výraz a aktuální umístění v kódu je uchováno. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.
+Zavoláte iterátor pomocí příkazu [foreach](../../language-reference/keywords/foreach-in.md) . Každá iterace `foreach` smyčky volá iterátor. Když je v iterátoru dosaženo příkazu `yield return`, je vrácen výraz a aktuální umístění v kódu je uchováno. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.
 
 Další informace najdete v tématu [iterátory (C#)](./iterators.md).
 
-Následující příklad používá metodu iterátoru. Metoda iterátoru obsahuje `yield return` příkaz, který je uvnitř smyčky [for](../../language-reference/keywords/for.md) . V metodě Každá iterace `foreach` těla příkazu vytvoří volání metody iterátoru, která pokračuje k dalšímu `yield return` příkazu. `ListEvenNumbers`
+Následující příklad používá metodu iterátoru. Metoda iterátoru má příkaz `yield return`, který se nachází uvnitř smyčky [for](../../language-reference/keywords/for.md) . V metodě `ListEvenNumbers` Každá iterace těla příkazu `foreach` vytvoří volání metody iterátoru, která pokračuje k dalšímu příkazu `yield return`.
 
 ```csharp
 private static void ListEvenNumbers()

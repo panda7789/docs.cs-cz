@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: 9aba83bd3e05e3f390b3d1553bd7974c64c41037
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 180de3f571426441155a19b98ab750fcdbb3888e
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321336"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420662"
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, co dělají klientské aplikace, jak konfigurovat, vytvářet a používat klienta Windows Communication Foundation (WCF) a jak zabezpečit klientské aplikace.  
@@ -43,7 +43,7 @@ Tato část popisuje, co dělají klientské aplikace, jak konfigurovat, vytvá�
 ## <a name="obtain-the-service-contract-bindings-and-addresses"></a>Získání kontraktu služby, vazeb a adres  
  Služba WCF, služby a klienti modelují kontrakty pomocí spravovaných atributů, rozhraní a metod. Chcete-li se připojit ke službě v klientské aplikaci, je třeba získat informace o typu pro kontrakt služby. Obvykle to provedete pomocí nástroje pro dodávání [metadat (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md), který stáhne metadata ze služby, převede ji na spravovaný soubor zdrojového kódu v jazyce podle vašeho výběru a vytvoří konfigurační soubor klientské aplikace. který můžete použít ke konfiguraci objektu klienta WCF. Například pokud chcete vytvořit objekt klienta WCF k vyvolání `MyCalculatorService` a víte, že metadata pro tuto službu jsou publikována v `http://computerName/MyCalculatorService/Service.svc?wsdl`, pak následující příklad kódu ukazuje, jak použít Svcutil. exe k získání souboru `ClientCode.vb` obsahujícího službu. kontrakt ve spravovaném kódu.  
   
-```  
+```console  
 svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/MyCalculatorService/Service.svc?wsdl  
 ```  
   
@@ -57,7 +57,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  Můžete také použít objekty kanálu klienta WCF pro připojení ke službám a jejich používání. Podrobnosti najdete v tématu [Architektura klienta WCF](./feature-details/client-architecture.md).  
   
 #### <a name="creating-a-new-wcf-object"></a>Vytvoření nového objektu WCF  
- Pro ilustraci použití třídy <xref:System.ServiceModel.ClientBase%601> předpokládáme, že následující jednoduchý kontrakt služby byl vygenerován z aplikace služby.  
+ Pro ilustraci použití <xref:System.ServiceModel.ClientBase%601> třídy předpokládáme, že následující jednoduchý kontrakt služby byl vygenerován z aplikace služby.  
   
 > [!NOTE]
 > Pokud používáte aplikaci Visual Studio k vytvoření klienta služby WCF, objekty jsou automaticky načteny do prohlížeče objektů při přidání odkazu na službu do projektu.  
@@ -79,7 +79,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- Tento konfigurační soubor určuje cílový koncový bod v elementu `<client>`. Další informace o použití více cílových koncových bodů naleznete v tématu <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> nebo konstruktory <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType>.  
+ Tento konfigurační soubor určuje cílový koncový bod v elementu `<client>`. Další informace o použití více cílových koncových bodů naleznete v <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> nebo konstruktorech <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType>.  
   
 ## <a name="calling-operations"></a>Operace volání  
  Jakmile vytvoříte a nakonfigurujete objekt klienta, vytvořte blok try/catch, operace volání stejným způsobem, jako kdyby byl objekt místní, a zavřete objekt klienta WCF. Když klientská aplikace volá první operaci, služba WCF automaticky otevře příslušný kanál a podkladový kanál se zavře, když se objekt recykluje. (Nebo můžete také explicitně otevřít a zavřít kanál před nebo po volání jiných operací.)  
@@ -132,7 +132,7 @@ End Interface
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
 ## <a name="handling-errors"></a>Zpracování chyb  
- Výjimky mohou nastat v klientské aplikaci při otevírání základního kanálu klienta (ať už explicitně nebo automaticky voláním operace), pomocí objektu klienta nebo kanálu pro volání operací nebo při zavírání podkladového klientského kanálu. Doporučuje se přinejmenším to, aby aplikace čekaly na možné @no__t 0 a <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> Kromě jakýchkoli objektů <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> vyvolaných v důsledku chyb protokolu SOAP vrácených operacemi. Chyby protokolu SOAP zadané v kontraktu operace jsou vyvolány klientským aplikacím jako <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>, kde parametr typu je detailní typ chyby protokolu SOAP. Další informace o manipulaci s chybovými stavy v klientské aplikaci najdete v tématu [odesílání a příjem chyb](sending-and-receiving-faults.md). Kompletní vzorek ukazuje, jak zpracovávat chyby v klientovi, najdete v tématu [očekávané výjimky](./samples/expected-exceptions.md).  
+ Výjimky mohou nastat v klientské aplikaci při otevírání základního kanálu klienta (ať už explicitně nebo automaticky voláním operace), pomocí objektu klienta nebo kanálu pro volání operací nebo při zavírání podkladového klientského kanálu. Doporučuje se přinejmenším to, aby aplikace čekaly na možné <xref:System.TimeoutException?displayProperty=nameWithType> a <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> výjimky kromě jakýchkoli objektů <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> vyvolaných v důsledku chyb protokolu SOAP vrácených operacemi. Chyby protokolu SOAP zadané v kontraktu operace jsou vyvolány klientským aplikacím jako <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>, kde parametr typu je detailní typ chyby protokolu SOAP. Další informace o manipulaci s chybovými stavy v klientské aplikaci najdete v tématu [odesílání a příjem chyb](sending-and-receiving-faults.md). Kompletní vzorek ukazuje, jak zpracovávat chyby v klientovi, najdete v tématu [očekávané výjimky](./samples/expected-exceptions.md).  
   
 ## <a name="configuring-and-securing-clients"></a>Konfigurace a zabezpečení klientů  
  Konfigurace klienta začíná načtením informací cílového koncového bodu pro objekt klienta nebo kanálu, obvykle z konfiguračního souboru, i když můžete tyto informace programově načíst pomocí konstruktorů a vlastností klienta. Další konfigurační kroky jsou ale potřeba k tomu, aby se povolilo určité chování klienta a mnoho scénářů zabezpečení.  
@@ -169,7 +169,7 @@ End Interface
  Způsob volání operací je zcela až ke klientskému vývojáři. Důvodem je, že zprávy, které tvoří operaci, lze namapovat na synchronní nebo asynchronní metody, pokud jsou vyjádřeny ve spravovaném kódu. Proto pokud chcete vytvořit klienta, který volá operace asynchronně, můžete použít Svcutil. exe ke generování asynchronního kódu klienta pomocí možnosti `/async`. Další informace najdete v tématu [Postupy: asynchronní volání operací služby](./feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
 ## <a name="calling-services-using-wcf-client-channels"></a>Volání služeb pomocí kanálů klientů WCF  
- Typy klientů WCF rozšiřuje <xref:System.ServiceModel.ClientBase%601>, které jsou odvozeny z rozhraní <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType>, aby vystavily příslušný systém kanálu. Služby můžete vyvolat pomocí cílové kontraktu služby s třídou <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Podrobnosti najdete v tématu [Architektura klienta WCF](./feature-details/client-architecture.md).  
+ Typy klientů WCF rozšiřuje <xref:System.ServiceModel.ClientBase%601>, které jsou odvozeny z rozhraní <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> a zpřístupňují základní systém kanálu. Služby můžete vyvolat pomocí cílové kontraktu služby s třídou <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Podrobnosti najdete v tématu [Architektura klienta WCF](./feature-details/client-architecture.md).  
   
 ## <a name="see-also"></a>Viz také:
 

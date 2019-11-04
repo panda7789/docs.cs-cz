@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: a5ccd0e9e0e3e5bedad06a619be115c362b38e0d
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 5c5586c2ee41b12e9b5706603b4c2f62207566ed
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392152"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417723"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -64,7 +64,7 @@ Další informace naleznete v tématu [přetypování a převody typu](./casting
 
 ## <a name="built-in-types"></a>Předdefinované typy
 
-C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celých čísel, hodnot s plovoucí desetinnou čárkou, logických výrazů, textových znaků, desetinných hodnot a dalších typů dat. Existují také předdefinované typy `string` a `object`. Jsou k dispozici pro použití v jakémkoli C# programu. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro předdefinované typy](../../language-reference/keywords/built-in-types-table.md).
+C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celých čísel, hodnot s plovoucí desetinnou čárkou, logických výrazů, textových znaků, desetinných hodnot a dalších typů dat. K dispozici jsou také předdefinované `string` a `object` typy. Jsou k dispozici pro použití v jakémkoli C# programu. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro předdefinované typy](../../language-reference/keywords/built-in-types-table.md).
 
 ## <a name="custom-types"></a>Vlastní typy
 
@@ -74,7 +74,7 @@ Použijete konstrukce [struct](../../language-reference/keywords/struct.md), [Cl
 
 Je důležité porozumět dvěma základním bodům o systému typů v .NET:
 
-- Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je například @no__t-C# 0 (klíčové slovo: [int](../../language-reference/builtin-types/integral-numeric-types.md)), jsou odvozeny z jednoho základního typu, který je @no__tC# -3 (klíčové slovo: [Object](../../language-reference/keywords/object.md)). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../../../standard/base-types/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](../classes-and-structs/inheritance.md).
+- Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32?displayProperty=nameWithType> (klíčové slovo: [int](../../language-reference/builtin-types/integral-numeric-types.md)), jsou odvozeny z jednoho základního typu, kterýC# je <xref:System.Object?displayProperty=nameWithType> (klíčové slovo: [Object](../../language-reference/builtin-types/reference-types.md)). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../../../standard/base-types/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](../classes-and-structs/inheritance.md).
 
 - Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](../../language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí klíčového slova [Class](../../language-reference/keywords/class.md) , jsou odkazové typy. Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 
@@ -89,7 +89,7 @@ Následující obrázek znázorňuje typy hodnot a typy odkazů v CTS:
 
 ### <a name="value-types"></a>Typy hodnot
 
-Typy hodnot jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType>, která je odvozena z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType> mají zvláštní chování v modulu CLR. Proměnné typu hodnoty přímo obsahují jejich hodnoty, což znamená, že je paměť přidělena vloženému v jakémkoli kontextu, kdy je proměnná deklarována. Neexistuje žádné samostatné přidělení haldy nebo režie uvolňování paměti pro proměnné typu hodnoty.
+Typy hodnot jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType>, které jsou odvozeny z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny od <xref:System.ValueType?displayProperty=nameWithType> mají zvláštní chování v modulu CLR. Proměnné typu hodnoty přímo obsahují jejich hodnoty, což znamená, že je paměť přidělena vloženému v jakémkoli kontextu, kdy je proměnná deklarována. Neexistuje žádné samostatné přidělení haldy nebo režie uvolňování paměti pro proměnné typu hodnoty.
 
 Existují dvě kategorie typů hodnot: [struct](../../language-reference/keywords/struct.md) a [Enum](../../language-reference/keywords/enum.md).
 
@@ -108,7 +108,7 @@ int i = 5;
 char c = 'Z';
 ```
 
-Typy hodnot jsou *zapečetěné*, což znamená, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType> a nemůžete definovat strukturu, která by dědila z jakékoli uživatelsky definované třídy nebo struktury, protože struktura může dědit jenom z <xref:System.ValueType?displayProperty=nameWithType>. Struktura však může implementovat jedno nebo více rozhraní. Typ struktury můžete přetypovat na libovolný typ rozhraní, který implementuje; To způsobí, že operace *zabalení* zabalí strukturu uvnitř objektu typu reference na spravované haldě. K operacím zabalení dojde, když předáte typ hodnoty metodě, která přebírá hodnotu typu <xref:System.Object?displayProperty=nameWithType> nebo libovolný typ rozhraní jako vstupní parametr. Další informace naleznete v tématu [zabalení a rozbalení](./boxing-and-unboxing.md).
+Typy hodnot jsou *zapečetěné*, což znamená, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType>a nemůžete definovat strukturu, která by dědila z jakékoli uživatelsky definované třídy nebo struktury, protože struktura může dědit pouze z <xref:System.ValueType?displayProperty=nameWithType>. Struktura však může implementovat jedno nebo více rozhraní. Typ struktury můžete přetypovat na libovolný typ rozhraní, který implementuje; To způsobí, že operace *zabalení* zabalí strukturu uvnitř objektu typu reference na spravované haldě. K operacím zabalení dojde, když předáte typ hodnoty metodě, která přijímá <xref:System.Object?displayProperty=nameWithType> nebo libovolný typ rozhraní jako vstupní parametr. Další informace naleznete v tématu [zabalení a rozbalení](./boxing-and-unboxing.md).
 
 Klíčové slovo [struct](../../language-reference/keywords/struct.md) můžete použít k vytvoření vlastních typů hodnot. Struktura se obvykle používá jako kontejner pro malou sadu souvisejících proměnných, jak je znázorněno v následujícím příkladu:
 
@@ -120,13 +120,13 @@ Druhá kategorie typů hodnot je [Enum](../../language-reference/keywords/enum.m
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
-Konstanta `System.IO.FileMode.Create` má hodnotu 2. Název je však mnohem smysluplnější pro lidi, kteří čtou zdrojový kód, a z tohoto důvodu je lepší používat výčty namísto konstantních literálových čísel. Další informace naleznete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.
+`System.IO.FileMode.Create` konstanta má hodnotu 2. Název je však mnohem smysluplnější pro lidi, kteří čtou zdrojový kód, a z tohoto důvodu je lepší používat výčty namísto konstantních literálových čísel. Další informace najdete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
-Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, který dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která platí pro struktury, platí také pro výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../enumeration-types.md).
+Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, které dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která platí pro struktury, platí také pro výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../enumeration-types.md).
 
-### <a name="reference-types"></a>Typy odkazů
+### <a name="reference-types"></a>Odkazové typy
 
-Typ, který je definován jako [Třída](../../language-reference/keywords/class.md), [delegát](../../language-reference/keywords/delegate.md), pole nebo [rozhraní](../../language-reference/keywords/interface.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte objekt pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřaďte objekt, který byl vytvořen jinde pomocí `new`, jak je znázorněno v Následující příklad:
+Typ, který je definován jako [Třída](../../language-reference/keywords/class.md), [delegát](../../language-reference/builtin-types/reference-types.md), pole nebo [rozhraní](../../language-reference/keywords/interface.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte objekt pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřaďte objekt, který byl vytvořen jinde pomocí `new`, jak je znázorněno v Následující příklad:
 
 ```csharp
 MyClass mc = new MyClass();
@@ -141,7 +141,7 @@ IMyInterface iface = new MyClass();
 
 Při vytvoření objektu je paměť přidělena spravované haldě a proměnná obsahuje pouze odkaz na umístění objektu. Typy na spravované haldě vyžadují režii při jejich přidělování a v případě, že jsou uvolněny automatickou funkcí správy paměti modulu CLR, která se označuje jako *uvolňování*paměti. Uvolňování paměti je ale také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti najdete v tématu [Automatická správa paměti](../../../standard/automatic-memory-management.md).
 
-Všechna pole jsou odkazové typy, a to i v případě, že jejich prvky jsou typy hodnot. Pole jsou implicitně odvozena z třídy @no__t 0, ale deklarujete je a použijete s zjednodušenou syntaxí, která C#je poskytována, jak je znázorněno v následujícím příkladu:
+Všechna pole jsou odkazové typy, a to i v případě, že jejich prvky jsou typy hodnot. Pole jsou implicitně odvozena od třídy <xref:System.Array?displayProperty=nameWithType>, ale deklarujete je a použijete s zjednodušenou syntaxí, C#která je poskytována, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideTypes#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#45)]
 
@@ -166,7 +166,7 @@ stringList.Add("String example");
 stringList.Add(4);
 ```
 
-Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/keywords/object.md). Třídy obecné kolekce se nazývají *silně typové kolekce* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `stringList` v předchozí příklad. Další informace najdete v tématu [Obecné typy](../generics/index.md).
+Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/builtin-types/reference-types.md). Třídy obecné kolekce se nazývají *kolekce se silnými typy* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `stringList` v části předchozí příklad. Další informace najdete v tématu [Obecné typy](../generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Implicitní typy, anonymní typy a typy hodnot s možnou hodnotou null
 
@@ -174,7 +174,7 @@ Jak bylo uvedeno dříve, můžete implicitně napsat místní proměnnou (ale n
 
 V některých případech je nevhodné vytvořit pojmenovaný typ pro jednoduché sady souvisejících hodnot, které nechcete ukládat nebo předávat mimo hranice metody. Pro tento účel můžete vytvořit *anonymní typy* . Další informace najdete v tématu [anonymní typy](../classes-and-structs/anonymous-types.md).
 
-Typy běžných hodnot nemohou mít hodnotu [null](../../language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že za typ připojíte `?`. Například `int?` je typ `int`, který může mít také hodnotu [null](../../language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601?displayProperty=nameWithType>. Typy hodnot s možnou hodnotou null jsou obzvláště užitečné, Pokud předáváte data do a z databází, ve kterých mohou být číselné hodnoty null. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](../nullable-types/index.md).
+Typy běžných hodnot nemohou mít hodnotu [null](../../language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](../../language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601?displayProperty=nameWithType>. Typy hodnot s možnou hodnotou null jsou obzvláště užitečné, Pokud předáváte data do a z databází, ve kterých mohou být číselné hodnoty null. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](../nullable-types/index.md).
 
 ## <a name="related-sections"></a>Související oddíly
 

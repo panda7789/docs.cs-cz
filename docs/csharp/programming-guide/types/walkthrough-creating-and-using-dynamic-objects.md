@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytváření a používání dynamických objektů (C# a Visual Basic)'
+title: 'Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)'
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,28 +9,28 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-ms.openlocfilehash: a4cb85eb94584cff20c9ff26b4aa6bacee4f9883
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: aa902ffaf93c8e1f273ed476dc7d413bcfce914c
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252971"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417579"
 ---
-# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Návod: Vytváření a používání dynamických objektů (C# a Visual Basic)
+# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)
 
-Dynamické objekty zveřejňují členy, jako jsou vlastnosti a metody v době běhu, místo v době kompilace. To umožňuje vytvářet objekty pro práci se strukturami, které neodpovídají statickému typu nebo formátu. Například můžete použít dynamický objekt pro odkaz na model DOM (Document Object Model) HTML (DOM), který může obsahovat libovolnou kombinaci platných elementů a atributů HTML značek. Vzhledem k tomu, že každý dokument HTML je jedinečný, jsou členy pro konkrétní dokument HTML určeny za běhu. Společná metoda, která odkazuje na atribut prvku jazyka HTML, je předání názvu atributu `GetProperty` metodě elementu. Chcete-li `id` odkazovat na atribut elementu `<div id="Div1">`HTML, nejprve `<div>` Získejte odkaz na prvek a pak použijte `divElement.GetProperty("id")`. Použijete-li dynamický objekt, můžete odkazovat na `id` atribut jako. `divElement.id`  
+Dynamické objekty zveřejňují členy, jako jsou vlastnosti a metody v době běhu, místo v době kompilace. To umožňuje vytvářet objekty pro práci se strukturami, které neodpovídají statickému typu nebo formátu. Například můžete použít dynamický objekt pro odkaz na model DOM (Document Object Model) HTML (DOM), který může obsahovat libovolnou kombinaci platných elementů a atributů HTML značek. Vzhledem k tomu, že každý dokument HTML je jedinečný, jsou členy pro konkrétní dokument HTML určeny za běhu. Společná metoda, která odkazuje na atribut prvku jazyka HTML, je předat název atributu metodě `GetProperty` elementu. Chcete-li odkazovat na atribut `id` elementu HTML `<div id="Div1">`, nejprve získejte odkaz na prvek `<div>` a pak použijte `divElement.GetProperty("id")`. Použijete-li dynamický objekt, můžete odkazovat na atribut `id` jako `divElement.id`.  
   
  Dynamické objekty také poskytují pohodlný přístup k dynamickým jazykům, jako jsou Ironpythonu a IronRuby. Můžete použít dynamický objekt pro odkazování na dynamický skript, který je interpretován v době běhu.  
   
- Můžete odkazovat na dynamický objekt pomocí pozdní vazby. V C#můžete zadat typ objektu s pozdní vazbou jako `dynamic`. V Visual Basic zadáte typ pozdní vázaného objektu jako `Object`. Další informace najdete v tématu [Dynamická](../../language-reference/keywords/dynamic.md) a [časná a pozdní vazba](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).  
+ Můžete odkazovat na dynamický objekt pomocí pozdní vazby. V C#zadejte typ objektu s pozdní vazbou jako `dynamic`. V Visual Basic zadáte typ pozdní vázaného objektu jako `Object`. Další informace najdete v tématu [Dynamická](../../language-reference/builtin-types/reference-types.md) a [časná a pozdní vazba](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).  
   
- Vlastní dynamické objekty lze vytvořit pomocí tříd v <xref:System.Dynamic?displayProperty=nameWithType> oboru názvů. Můžete například vytvořit <xref:System.Dynamic.ExpandoObject> a zadat členy daného objektu v době běhu. Můžete také vytvořit vlastní typ, který dědí <xref:System.Dynamic.DynamicObject> třídu. Pak můžete přepsat členy <xref:System.Dynamic.DynamicObject> třídy, aby poskytovaly dynamické funkce modulu runtime.  
+ Vlastní dynamické objekty lze vytvořit pomocí tříd v oboru názvů <xref:System.Dynamic?displayProperty=nameWithType>. Můžete například vytvořit <xref:System.Dynamic.ExpandoObject> a určit členy daného objektu v době běhu. Můžete také vytvořit vlastní typ, který dědí třídu <xref:System.Dynamic.DynamicObject>. Pak můžete přepsat členy třídy <xref:System.Dynamic.DynamicObject>, aby poskytovaly dynamické funkce modulu runtime.  
   
  V tomto návodu budete provádět následující úlohy:  
   
 - Vytvořte vlastní objekt, který dynamicky zveřejňuje obsah textového souboru jako vlastnosti objektu.  
   
-- Vytvořte projekt, který používá `IronPython` knihovnu.  
+- Vytvořte projekt, který používá knihovnu `IronPython`.  
   
 ## <a name="prerequisites"></a>Požadavky  
 
@@ -40,7 +40,7 @@ K dokončení tohoto Názorného postupu potřebujete [ironpythonu](https://iron
   
 ## <a name="creating-a-custom-dynamic-object"></a>Vytvoření vlastního dynamického objektu
 
-První projekt, který vytvoříte v tomto návodu, definuje vlastní dynamický objekt, který vyhledá obsah textového souboru. Text, který se má hledat, je určený názvem dynamické vlastnosti. Například pokud volání Určuje `dynamicFile.Sample`kód, dynamická třída vrátí obecný seznam řetězců, které obsahují všechny řádky ze souboru, který začíná "Sample". Při hledání se nerozlišují malá a velká písmena. Dynamická třída také podporuje dva nepovinné argumenty. První argument je hodnota výčtu možnosti vyhledávání, která určuje, že Dynamická třída by měla vyhledat shody na začátku řádku, na konci řádku nebo kdekoli na řádku. Druhý argument určuje, že Dynamická třída by měla před vyhledáváním oříznout úvodní a koncové mezery z každého řádku. Například pokud volání Určuje `dynamicFile.Sample(StringSearchOption.Contains)`kód, dynamická třída vyhledá "Sample" kdekoli na řádku. Pokud volání Určuje `dynamicFile.Sample(StringSearchOption.StartsWith, false)`kód, dynamická třída vyhledá "Sample" na začátku každého řádku a neodstraní úvodní a koncové mezery. Výchozím chováním dynamické třídy je vyhledat shodu na začátku každého řádku a odebrat úvodní a koncové mezery.  
+První projekt, který vytvoříte v tomto návodu, definuje vlastní dynamický objekt, který vyhledá obsah textového souboru. Text, který se má hledat, je určený názvem dynamické vlastnosti. Například pokud volání kódu určuje `dynamicFile.Sample`, dynamická třída vrátí obecný seznam řetězců, které obsahují všechny řádky ze souboru, který začíná "Sample". Při hledání se nerozlišují malá a velká písmena. Dynamická třída také podporuje dva nepovinné argumenty. První argument je hodnota výčtu možnosti vyhledávání, která určuje, že Dynamická třída by měla vyhledat shody na začátku řádku, na konci řádku nebo kdekoli na řádku. Druhý argument určuje, že Dynamická třída by měla před vyhledáváním oříznout úvodní a koncové mezery z každého řádku. Například pokud volání kódu určuje `dynamicFile.Sample(StringSearchOption.Contains)`, dynamická třída vyhledá "Sample" kdekoli na řádku. Pokud volání Code určuje `dynamicFile.Sample(StringSearchOption.StartsWith, false)`, dynamická třída vyhledá "Sample" na začátku každého řádku a neodstraní úvodní a koncové mezery. Výchozím chováním dynamické třídy je vyhledat shodu na začátku každého řádku a odebrat úvodní a koncové mezery.  
   
 ### <a name="to-create-a-custom-dynamic-class"></a>Vytvoření vlastní dynamické třídy  
   
@@ -52,7 +52,7 @@ První projekt, který vytvoříte v tomto návodu, definuje vlastní dynamický
   
 4. Klikněte pravým tlačítkem na projekt DynamicSample a přejděte na **Přidat**a pak klikněte na **Třída**. Do pole **název** zadejte `ReadOnlyFile`a pak klikněte na **OK**. Přidá se nový soubor, který obsahuje třídu ReadOnlyFile.  
   
-5. V horní části souboru ReadOnlyFile.cs nebo ReadOnlyFile. vb přidejte následující kód pro import <xref:System.IO?displayProperty=nameWithType> oboru názvů a. <xref:System.Dynamic?displayProperty=nameWithType>  
+5. V horní části souboru ReadOnlyFile.cs nebo ReadOnlyFile. vb přidejte následující kód, který importuje obory názvů <xref:System.IO?displayProperty=nameWithType> a <xref:System.Dynamic?displayProperty=nameWithType>.  
 
     [!code-csharp[VbDynamicWalkthrough#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#1)]
     [!code-vb[VbDynamicWalkthrough#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#1)]  
@@ -62,29 +62,29 @@ První projekt, který vytvoříte v tomto návodu, definuje vlastní dynamický
     [!code-csharp[VbDynamicWalkthrough#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#2)]
     [!code-vb[VbDynamicWalkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#2)]
   
-7. Aktualizujte příkaz Class tak, aby `DynamicObject` dědil třídu, jak je znázorněno v následujícím příkladu kódu.  
+7. Aktualizujte příkaz Class tak, aby dědil třídu `DynamicObject`, jak je znázorněno v následujícím příkladu kódu.  
   
     [!code-csharp[VbDynamicWalkthrough#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#3)]
     [!code-vb[VbDynamicWalkthrough#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#3)]
 
-8. Přidejte následující kód do `ReadOnlyFile` třídy pro definování soukromého pole pro cestu k souboru a konstruktor `ReadOnlyFile` pro třídu.  
+8. Přidejte následující kód do třídy `ReadOnlyFile` pro definování soukromého pole pro cestu k souboru a konstruktor pro třídu `ReadOnlyFile`.  
   
     [!code-csharp[VbDynamicWalkthrough#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#4)]
     [!code-vb[VbDynamicWalkthrough#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#4)]
   
-9. Do třídy přidejte `GetPropertyValue`následujícímetodu `ReadOnlyFile` . `GetPropertyValue` Metoda přijímá jako vstup kritéria hledání a vrací řádky z textového souboru, které odpovídají kritériím vyhledávání. Dynamické metody poskytované `ReadOnlyFile` třídou `GetPropertyValue` volají metodu pro načtení příslušných výsledků.  
+9. Do `ReadOnlyFile` třídy přidejte následující metodu `GetPropertyValue`. Metoda `GetPropertyValue` přijímá jako vstup kritéria hledání a vrací řádky z textového souboru, které odpovídají kritériím vyhledávání. Dynamické metody, které poskytuje třída `ReadOnlyFile`, volají metodu `GetPropertyValue` k načtení příslušných výsledků.  
   
     [!code-csharp[VbDynamicWalkthrough#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#5)]
     [!code-vb[VbDynamicWalkthrough#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#5)]  
   
-10. Po metodě přidejte následující kód pro <xref:System.Dynamic.DynamicObject.TryGetMember%2A> přepsání metody <xref:System.Dynamic.DynamicObject> třídy. `GetPropertyValue` <xref:System.Dynamic.DynamicObject.TryGetMember%2A> Metoda je volána, když je požadován člen dynamické třídy a nejsou zadány žádné argumenty. Argument obsahuje informace o odkazovaném členu `result` a argument odkazuje na výsledek vrácený pro zadaného člena. `binder` Metoda vrátí logickou hodnotu, která vrátí `true` , zda požadovaný člen existuje; v opačném případě vrátí `false`. <xref:System.Dynamic.DynamicObject.TryGetMember%2A>  
+10. Po `GetPropertyValue` metody přidejte následující kód pro přepsání metody <xref:System.Dynamic.DynamicObject.TryGetMember%2A> třídy <xref:System.Dynamic.DynamicObject>. Metoda <xref:System.Dynamic.DynamicObject.TryGetMember%2A> je volána, když je požadován člen dynamické třídy a nejsou zadány žádné argumenty. Argument `binder` obsahuje informace o odkazovaném členu a argument `result` odkazuje na výsledek vráceného pro zadaného člena. Metoda <xref:System.Dynamic.DynamicObject.TryGetMember%2A> vrací logickou hodnotu, která vrátí `true`, pokud požadovaný člen existuje; v opačném případě vrátí `false`.  
   
     [!code-csharp[VbDynamicWalkthrough#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#6)]
     [!code-vb[VbDynamicWalkthrough#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#6)]
   
-11. Po metodě přidejte následující kód pro <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> přepsání metody <xref:System.Dynamic.DynamicObject> třídy. `TryGetMember` Metoda <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> je volána, když je požadován člen dynamické třídy s argumenty. Argument obsahuje informace o odkazovaném členu `result` a argument odkazuje na výsledek vrácený pro zadaného člena. `binder` `args` Argument obsahuje pole argumentů, které jsou předány členu. Metoda vrátí logickou hodnotu, která vrátí `true` , zda požadovaný člen existuje; v opačném případě vrátí `false`. <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A>  
+11. Po `TryGetMember` metody přidejte následující kód pro přepsání metody <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> třídy <xref:System.Dynamic.DynamicObject>. Metoda <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> se volá, když se na argumentu žádá člen dynamické třídy. Argument `binder` obsahuje informace o odkazovaném členu a argument `result` odkazuje na výsledek vráceného pro zadaného člena. Argument `args` obsahuje pole argumentů, které jsou předány členu. Metoda <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> vrací logickou hodnotu, která vrátí `true`, pokud požadovaný člen existuje; v opačném případě vrátí `false`.  
   
-    Vlastní verze `TryInvokeMember` metody očekává, že první argument bude hodnota `StringSearchOption` z výčtu, který jste definovali v předchozím kroku. `TryInvokeMember` Metoda očekává, že druhý argument bude logická hodnota. Pokud jsou jeden nebo oba argumenty platné hodnoty, jsou předány `GetPropertyValue` metodě pro načtení výsledků.  
+    Vlastní verze `TryInvokeMember` metoda očekává, že první argument bude hodnota z výčtu `StringSearchOption`, který jste definovali v předchozím kroku. Metoda `TryInvokeMember` očekává, že druhý argument bude logická hodnota. Pokud jsou jeden nebo oba argumenty platné hodnoty, jsou předány metodě `GetPropertyValue` pro načtení výsledků.  
   
     [!code-csharp[VbDynamicWalkthrough#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/readonlyfile.cs#7)]
     [!code-vb[VbDynamicWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/readonlyfile.vb#7)]
@@ -118,7 +118,7 @@ První projekt, který vytvoříte v tomto návodu, definuje vlastní dynamický
   
 1. V **Průzkumník řešení**dvakrát klikněte na soubor Module1. vb, pokud používáte Visual Basic nebo soubor program.cs, pokud používáte vizuál C#.  
   
-2. Do hlavní procedury přidejte následující kód, který vytvoří instanci `ReadOnlyFile` třídy pro soubor TextFile1. txt. Kód používá pozdní vazbu k volání dynamických členů a načítají řádky textu, které obsahují řetězec "Customer".  
+2. Do hlavní procedury přidejte následující kód, který vytvoří instanci třídy `ReadOnlyFile` pro soubor TextFile1. txt. Kód používá pozdní vazbu k volání dynamických členů a načítají řádky textu, které obsahují řetězec "Customer".  
   
      [!code-csharp[VbDynamicWalkthrough#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthrough/cs/program.cs#8)]
      [!code-vb[VbDynamicWalkthrough#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthrough/vb/module1.vb#8)]
@@ -131,27 +131,27 @@ Následující projekt, který vytvoříte v tomto návodu, přistupuje k knihov
   
 ### <a name="to-create-a-custom-dynamic-class"></a>Vytvoření vlastní dynamické třídy
   
-1. V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.  
+1. V aplikaci Visual Studio v nabídce **soubor** přejděte na možnost **Nový** a poté klikněte na položku **projekt**.  
   
 2. V dialogovém okně **Nový projekt** v podokně **typy projektů** se ujistěte, že je vybrána možnost **Windows** . V podokně **šablony** vyberte **Konzolová aplikace** . Do pole **název** zadejte `DynamicIronPythonSample`a pak klikněte na **OK**. Vytvoří se nový projekt.  
   
-3. Pokud používáte Visual Basic, klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na **vlastnosti**. Klikněte na kartu **odkazy** . Klikněte na tlačítko **Přidat**. C#Pokud používáte vizuál, klikněte v **Průzkumník řešení**pravým tlačítkem myši na složku **odkazy** a pak klikněte na **Přidat odkaz**.  
+3. Pokud používáte Visual Basic, klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na **vlastnosti**. Klikněte na kartu **odkazy** . klikněte na tlačítko **Přidat** . C#Pokud používáte vizuál, klikněte v **Průzkumník řešení**pravým tlačítkem myši na složku **odkazy** a pak klikněte na **Přidat odkaz**.  
   
-4. Na kartě **Procházet** přejděte do složky, ve které jsou nainstalované knihovny ironpythonu. Například C:\Program Files\IronPython 2,6 pro .NET 4,0. Vyberte knihovny **ironpythonu. dll**, **ironpythonu. Modules. dll**, **Microsoft. Scripting. dll**a **Microsoft. Dynamic. dll** . Klikněte na **OK**.  
+4. Na kartě **Procházet** přejděte do složky, ve které jsou nainstalované knihovny ironpythonu. Například C:\Program Files\IronPython 2,6 pro .NET 4,0. Vyberte knihovny **ironpythonu. dll**, **ironpythonu. Modules. dll**, **Microsoft. Scripting. dll**a **Microsoft. Dynamic. dll** . Klikněte na tlačítko **OK**.  
   
 5. Pokud používáte Visual Basic, upravte soubor Module1. vb. Pokud používáte vizuál C#, upravte soubor program.cs.  
   
-6. V horní části souboru přidejte následující kód pro import `Microsoft.Scripting.Hosting` oborů názvů a `IronPython.Hosting` z knihoven ironpythonu.  
+6. V horní části souboru přidejte následující kód, který importuje `Microsoft.Scripting.Hosting` a `IronPython.Hosting` obory názvů z knihoven Ironpythonu.  
   
     [!code-csharp[VbDynamicWalkthroughIronPython#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/cs/program.cs#1)]
     [!code-vb[VbDynamicWalkthroughIronPython#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/vb/module1.vb#1)]
   
-7. Do metody Main přidejte následující kód k vytvoření nového `Microsoft.Scripting.Hosting.ScriptRuntime` objektu pro hostování knihoven ironpythonu. `ScriptRuntime` Objekt načte modul Random.py knihovny ironpythonu.  
+7. Do metody Main přidejte následující kód, který vytvoří nový objekt `Microsoft.Scripting.Hosting.ScriptRuntime` pro hostování knihoven Ironpythonu. Objekt `ScriptRuntime` načte modul random.py knihovny Ironpythonu.  
   
      [!code-csharp[VbDynamicWalkthroughIronPython#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/cs/program.cs#2)]
      [!code-vb[VbDynamicWalkthroughIronPython#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/vb/module1.vb#2)]
   
-8. Poté, co kód načte modul random.py, přidejte následující kód pro vytvoření pole celých čísel. Pole je předáno `shuffle` metodě modulu Random.py, který náhodně seřadí hodnoty v poli.  
+8. Poté, co kód načte modul random.py, přidejte následující kód pro vytvoření pole celých čísel. Pole je předáno metodě `shuffle` modulu random.py, která náhodně seřadí hodnoty v poli.  
   
      [!code-csharp[VbDynamicWalkthroughIronPython#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/cs/program.cs#3)]
      [!code-vb[VbDynamicWalkthroughIronPython#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbdynamicwalkthroughironpython/vb/module1.vb#3)]
@@ -164,5 +164,5 @@ Následující projekt, který vytvoříte v tomto návodu, přistupuje k knihov
 - <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>
 - [Použití typu dynamic](./using-type-dynamic.md)
 - [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [dynamic](../../language-reference/keywords/dynamic.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Implementace dynamických rozhraní (ke stažení PDF z webu Microsoft TechNet)](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)

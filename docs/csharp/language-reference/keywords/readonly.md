@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 8ecf399e48da12a9dee19bb217b8668c6a53d3ad
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 30419200cfce785d7fcbbf59650241580a1f0ce4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191867"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454960"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
@@ -33,7 +33,7 @@ Klíčové slovo `readonly` je modifikátor, který lze použít ve čtyřech ko
 - V [definici člena`readonly`](#readonly-member-examples)`readonly` označuje, že člen `struct` není obdobou vnitřního stavu struktury.
 - V [`ref readonly` metoda vrátí](#ref-readonly-return-example)modifikátor `readonly`, že metoda vrátí odkaz a zápisy nejsou pro tento odkaz povoleny.
 
-Do C# 7,2 se přidaly kontexty `readonly sturct` a `ref readonly`. členy `readonly` struktury byly přidány v C# 8,0.
+Do C# 7,2 se přidaly kontexty `readonly struct` a `ref readonly`. členy `readonly` struktury byly přidány v C# 8,0.
 
 ## <a name="readonly-field-example"></a>Příklad pole jen pro čtení
 
@@ -161,6 +161,6 @@ Můžete si také prohlédnout návrhy specifikace jazyka:
 - [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [const](const.md)
 - [Pole](../../programming-guide/classes-and-structs/fields.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 53c3ac6e4fa6313488c47d851e0897bd512521b7
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 2df3492274c2abceebf1d37b87be9cc9bb455b5f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596284"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419169"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
@@ -30,14 +30,14 @@ Je žádoucí rozdělit definici třídy na několik situací:
 
   [!code-csharp[csProgGuideObjects#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#26)]
 
-`partial` Klíčové slovo označuje, že v oboru názvů lze definovat jiné části třídy, struktury nebo rozhraní. Všechny části musí používat `partial` klíčové slovo. Všechny části musí být k dispozici v době kompilace, aby bylo možné vytvořit konečný typ. Všechny části musí mít stejnou přístupnost, například `public`, `private`a tak dále.
+Klíčové slovo `partial` označuje, že v oboru názvů lze definovat jiné části třídy, struktury nebo rozhraní. Všechny části musí používat klíčové slovo `partial`. Všechny části musí být k dispozici v době kompilace, aby bylo možné vytvořit konečný typ. Všechny části musí mít stejnou přístupnost, například `public`, `private`a tak dále.
 
 Je-li kterákoli část deklarována jako abstraktní, pak je celý typ považován za abstraktní. Je-li kterákoli část deklarována jako zapečetěná, je celý typ považován za zapečetěný. Pokud jakákoli část deklaruje základní typ, pak celý typ zdědí tuto třídu.
 
 Všechny části, které určují základní třídu, musí souhlasit, ale části, které vynechávají základní třídu, stále zdědí základní typ. Části mohou určovat odlišná základní rozhraní a konečný typ implementuje všechna rozhraní uvedená všemi částečnými deklaracemi. Všechny členy třídy, struktury nebo rozhraní deklarované v částečné definici jsou k dispozici pro všechny ostatní části. Konečný typ je kombinace všech částí v době kompilace.
 
 > [!NOTE]
-> `partial` Modifikátor není k dispozici pro deklarace delegáta nebo výčtu.
+> Modifikátor `partial` není k dispozici pro deklarace delegáta nebo výčtu.
 
 Následující příklad ukazuje, že vnořené typy mohou být částečné, i když typ, který je vnořen do, není částečně sám.
 
@@ -79,7 +79,7 @@ Při práci s definicemi částečné třídy je potřeba provést několik prav
 
   [!code-csharp[csProgGuideObjects#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#20)]
 
-- Modifikátor se může objevit pouze bezprostředně před klíčovými `class`slovy `struct`, nebo `interface`. `partial`
+- Modifikátor `partial` se může objevit jenom bezprostředně před klíčovými slovy `class`, `struct`nebo `interface`.
 
 - Vnořené částečné typy jsou povoleny v definicích částečného typu, jak je znázorněno v následujícím příkladu:
 
@@ -115,7 +115,7 @@ Další informace najdete v tématu [omezení parametrů typu](../generics/const
 
 ### <a name="description"></a>Popis
 
-V následujícím příkladu jsou pole a konstruktor třídy `Coords`deklarovány v jedné definici částečné třídy a `PrintCoords`člen je deklarován v jiné definici částečné třídy.
+V následujícím příkladu jsou pole a konstruktor třídy, `Coords`deklarovány v rámci jedné definice částečné třídy a člen, `PrintCoords`, je deklarován v jiné definici částečné třídy.
 
 ### <a name="code"></a>Kód
 
@@ -152,7 +152,7 @@ partial void onNameChanged()
 }
 ```
 
-- Deklarace částečné metody musí začínat částečným [](../../language-reference/keywords/partial-type.md) klíčovým slovem kontextové a metoda musí vracet [typ void](../../language-reference/keywords/void.md).
+- Deklarace částečné metody musí začínat [částečným](../../language-reference/keywords/partial-type.md) klíčovým slovem kontextové a metoda musí vracet [typ void](../../language-reference/keywords/void.md).
 
 - Částečné metody mohou mít [v](../../language-reference/keywords/in-parameter-modifier.md) parametrech nebo [ref](../../language-reference/keywords/ref.md) , ale ne [výstupní](../../language-reference/keywords/out-parameter-modifier.md) parametry.
 
@@ -164,11 +164,11 @@ partial void onNameChanged()
 
 - Částečné metody mohou být obecné. Omezení jsou uvedena v deklaraci částečné deklarace metody a mohou být volitelně opakována při implementaci jednoho z nich. Parametry a názvy parametrů typu nemusí být stejné v implementaci deklarace jako v rámci definujícího.
 
-- Můžete vytvořit delegáta [](../../language-reference/keywords/delegate.md) částečné metody, která je definována a implementována, ale nikoli částečnou metodu, která byla definována pouze.
+- Můžete vytvořit [delegáta](../../language-reference/builtin-types/reference-types.md) částečné metody, která je definována a implementována, ale nikoli částečnou metodu, která byla definována pouze.
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
-Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

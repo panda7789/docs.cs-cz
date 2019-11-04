@@ -4,16 +4,13 @@ description: Sestavte aplikaci .NET Core, která volá členy jiné knihovny tř
 author: BillWagner
 ms.author: wiwagn
 ms.date: 06/05/2018
-dev_langs:
-- csharp
-- vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 31a9183f541afa5365862b1e89704354cf7bd527
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: cfceb7ba384a28a09f172032f6edb6f5e495e9c0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969300"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420899"
 ---
 # <a name="consume-a-net-standard-library-in-visual-studio-2017"></a>Využití knihovny .NET Standard v sadě Visual Studio 2017
 
@@ -31,7 +28,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-1. Otevřete řešení, které jste vytvořili v tématu [sestavení C# knihovny tříd pomocí .NET Core v aplikaci Visual Studio 2017.](./library-with-visual-studio.md) `ClassLibraryProjects` V **Průzkumník řešení**klikněte pravým tlačítkem na řešení **ClassLibraryProjects** a v místní nabídce vyberte **Přidat** > **Nový projekt** .
+1. Otevřete řešení `ClassLibraryProjects`, které jste vytvořili v tématu [sestavování knihovny C# tříd pomocí .NET Core v aplikaci Visual Studio 2017](./library-with-visual-studio.md) . V **Průzkumník řešení**klikněte pravým tlačítkem na řešení **ClassLibraryProjects** a v místní nabídce vyberte **Přidat** > **Nový projekt** .
 
 1. V dialogovém okně **Přidat nový projekt** rozbalte uzel  **C# vizuál** a vyberte uzel **.NET Core** následovaný šablonou projektu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte "prezentuje" a klikněte na tlačítko **OK** .
 
@@ -41,7 +38,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
    ![Místní nabídka projektu sady Visual Studio pro nastavení spouštěného projektu –C#](./media/consuming-library-with-visual-studio/set-startup-project-context-menu.png)
 
-1. Zpočátku váš projekt nemá přístup k vaší knihovně tříd. Chcete-li, aby mohla volat metody ve vaší knihovně tříd, vytvořte odkaz na knihovnu tříd. V **Průzkumník řešení**klikněte pravým tlačítkem myši `ShowCase` na uzel **závislosti** projektu a vyberte možnost **Přidat odkaz**.
+1. Zpočátku váš projekt nemá přístup k vaší knihovně tříd. Chcete-li, aby mohla volat metody ve vaší knihovně tříd, vytvořte odkaz na knihovnu tříd. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **závislosti** projektu `ShowCase` a vyberte možnost **Přidat odkaz**.
 
    ![Místní nabídka pro přidání odkazu na projekt sady Visual Studio –C#](./media/consuming-library-with-visual-studio/add-reference-context-menu.png)
 
@@ -53,7 +50,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
    [!CODE-csharp[UsingClassLib#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/showcase.cs)]
 
-   Kód používá `row` proměnnou k udržování počtu řádků dat zapsaných do okna konzoly. Vždy, když je číslo větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
+   Kód používá proměnnou `row` k udržení počtu řádků dat zapsaných do okna konzoly. Vždy, když je číslo větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
 
    Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu ENTER bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
 
@@ -63,7 +60,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 
-1. Otevřete řešení, které jste vytvořili v tématu [sestavení knihovny tříd pomocí Visual Basic a .NET Core v aplikaci Visual Studio 2017.](vb-library-with-visual-studio.md) `ClassLibraryProjects` V **Průzkumník řešení**klikněte pravým tlačítkem na řešení **ClassLibraryProjects** a v místní nabídce vyberte **Přidat** > **Nový projekt** .
+1. Otevřete řešení `ClassLibraryProjects`, které jste vytvořili v tématu [sestavování knihovny tříd pomocí Visual Basic a .NET Core v aplikaci Visual Studio 2017](vb-library-with-visual-studio.md) . V **Průzkumník řešení**klikněte pravým tlačítkem na řešení **ClassLibraryProjects** a v místní nabídce vyberte **Přidat** > **Nový projekt** .
 
 1. V dialogovém okně **Přidat nový projekt** rozbalte uzel **Visual Basic** a vyberte uzel **.NET Core** následovaný šablonou projektu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte "prezentuje" a klikněte na tlačítko **OK** .
 
@@ -73,7 +70,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
    ![Místní nabídka projektu sady Visual Studio pro nastavení spouštěného projektu-Visual Basic](./media/consuming-library-with-visual-studio/set-startup-project-context-menu.png)
 
-1. Zpočátku váš projekt nemá přístup k vaší knihovně tříd. Chcete-li, aby mohla volat metody ve vaší knihovně tříd, vytvořte odkaz na knihovnu tříd. V **Průzkumník řešení**klikněte pravým tlačítkem myši `ShowCase` na uzel **závislosti** projektu a vyberte možnost **Přidat odkaz**.
+1. Zpočátku váš projekt nemá přístup k vaší knihovně tříd. Chcete-li, aby mohla volat metody ve vaší knihovně tříd, vytvořte odkaz na knihovnu tříd. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **závislosti** projektu `ShowCase` a vyberte možnost **Přidat odkaz**.
 
    ![Místní nabídka pro přidání odkazu na projekt sady Visual Studio – Visual Basic](./media/consuming-library-with-visual-studio/add-reference-context-menu.png)
 
@@ -85,7 +82,7 @@ Stejně jako v případě, že jste zahrnuli jednotkové testy do stejného ře�
 
     [!CODE-vb[UsingClassLib#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/showcase.vb)]
 
-   Kód používá `row` proměnnou k udržování počtu řádků dat zapsaných do okna konzoly. Vždy, když je číslo větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
+   Kód používá proměnnou `row` k udržení počtu řádků dat zapsaných do okna konzoly. Vždy, když je číslo větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
 
    Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu ENTER bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
 
@@ -99,13 +96,13 @@ Můžete ladit a publikovat aplikaci, která používá tuto knihovnu, podle kro
 
 ## <a name="distributing-the-library-in-a-nuget-package"></a>Distribuce knihovny do balíčku NuGet
 
-Vaše knihovna tříd může být široce dostupná, když ji publikujete jako balíček NuGet. Visual Studio nepodporuje vytváření balíčků NuGet. Pokud ho chcete vytvořit, použijte [ `dotnet` nástroj příkazového řádku](../tools/dotnet.md):
+Vaše knihovna tříd může být široce dostupná, když ji publikujete jako balíček NuGet. Visual Studio nepodporuje vytváření balíčků NuGet. Pokud ho chcete vytvořit, použijte [Nástroj příkazového řádku`dotnet`](../tools/dotnet.md):
 
-1. Otevřete okno konzoly. Například v textovém poli **Zobrazit vše** v hlavním panelu systému Windows zadejte `Command Prompt` (nebo `cmd` pro krátkou hodnotu) a otevřete okno konzoly, a to tak, že vyberete aplikaci pro stolní počítače nebo stisknete klávesu ENTER, pokud je vybraná ve vyhledávání. důsledk.
+1. Otevřete okno konzoly. Například v textovém poli **Zobrazit vše** na hlavním panelu systému Windows zadejte `Command Prompt` (nebo `cmd` pro krátké) a otevřete okno konzoly tak **, že vyberete aplikaci pro stolní počítače** nebo stisknete klávesu ENTER, pokud je ve výsledcích hledání vybrána možnost spustit.
 
 1. Přejděte do adresáře projektu knihovny. Pokud jste nenakonfigurovali typické umístění souboru, je to v adresáři *Documents\Visual Studio 2017 \ Projects\ClassLibraryProjects\StringLibrary* . Adresář obsahuje zdrojový kód a soubor projektu *StringLibrary. csproj*.
 
-1. Vydejte příkaz `dotnet pack --no-build`. Nástroj vygeneruje balíček s příponou *. nupkg.* `dotnet`
+1. Vydejte `dotnet pack --no-build`příkazu. Nástroj `dotnet` vygeneruje balíček s příponou *. nupkg* .
 
    > [!TIP]
    > Pokud adresář, který obsahuje *dotnet. exe* , není ve vaší cestě, můžete najít jeho umístění zadáním `where dotnet.exe` v okně konzoly.

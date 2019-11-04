@@ -7,31 +7,31 @@ helpviewer_keywords:
 - .NET application deployment [WPF], deploying with Firefox add-ons
 - .NET Framework Assistant for Firefox
 ms.assetid: 2403403b-9b14-48e9-b70d-fa288a3c9081
-ms.openlocfilehash: 39f4548bfe9e505c1369a0de8262560070fd6221
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 6e8a333fc84eb85b7a312cb87207ebc235fbfe9f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833917"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424561"
 ---
 # <a name="firefox-add-ons-to-support-net-application-deployment"></a>Doplňky Firefox pro podporu nasazení .NET aplikací
-Povolit Windows Presentation Foundation (WPF) modul plugin pro Firefox a rozhraní .NET Framework Pomocníka pro Firefox [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../../includes/tlasharptla-winfxwebappsharpplural-md.md)], dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a aplikací ClickOnce pro práci s prohlížeči Mozilla Firefox.  
+Modul plug-in Windows Presentation Foundation (WPF) pro Firefox a pomocníka .NET Framework pro prohlížeč Firefox povoluje aplikace prohlížeče XAML (XBAP), volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a aplikace ClickOnce pro práci s prohlížečem Mozilla Firefox.  
   
-## <a name="wpf-plug-in-for-firefox"></a>Modul plugin WPF pro Firefox  
- Umožňuje modulu Plugin WPF pro Firefox [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů přejde a spusťte na nejvyšší úrovni nebo v elementu IFRAME HTML v prohlížeči Firefox. [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Je [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci, která můžete publikovat na webový server a spouští v rámci podporovaných prohlížečích. Přijít o provedené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor pouze pro XAML, který je možné přejde a zobrazí v podporovaných prohlížečích, podobně jako soubor XML.  
+## <a name="wpf-plug-in-for-firefox"></a>Modul plug-in WPF pro Firefox  
+ Modul plug-in WPF pro Firefox umožňuje XBAP a volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které se mají přejít na nejvyšší úroveň nebo v prvku HTML IFRAME v prohlížeči Firefox. XBAP je [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, která se dá publikovat na webovém serveru a spustit v podporovaných prohlížečích. Volný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor pouze v jazyce XAML, který lze přejít na a zobrazit v podporovaných prohlížečích, podobně jako soubor XML.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Modul plugin pro Firefox je nainstalován v rozhraní .NET Framework 3.5. Windows 7 zahrnuje rozhraní .NET Framework 3.5, ale nezahrnuje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] modul plugin pro Firefox. Nelze nainstalovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] modul plugin pro Firefox ve Windows 7.  
+ Modul plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro Firefox se instaluje s .NET Framework 3,5. Okno 7 obsahuje .NET Framework 3,5, ale neobsahuje modul plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro Firefox. Nemůžete nainstalovat modul plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro Firefox ve Windows 7.  
   
- Rozhraní .NET Framework 4 neobsahuje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] modul plugin pro Firefox. Pokud jsou nainstalovány rozhraní .NET Framework 3.5 a rozhraní .NET Framework 4, modulu Plugin WPF pro Firefox nainstalované v rozhraní .NET Framework 3.5. Proto bude stále spuštěn aplikací rozhraní .NET Framework 4 vzhledem k tomu, že hostitel WPF se načtou správnou verzi rozhraní framework. Další informace najdete v tématu [hostitel WPF (PresentationHost.exe)](wpf-host-presentationhost-exe.md).  
+ .NET Framework 4 neobsahují modul plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro Firefox. Pokud však jsou nainstalovány .NET Framework 3,5 i .NET Framework 4, modul plug-in WPF pro Firefox je nainstalován s .NET Framework 3,5. Proto budou aplikace .NET Framework 4 stále spuštěny, protože hostitel WPF načte správnou verzi rozhraní. Další informace najdete v tématu [hostitel WPF (PresentationHost. exe)](wpf-host-presentationhost-exe.md).  
   
 ## <a name="net-framework-assistant-for-firefox"></a>.NET Framework – pomocník pro Firefox  
- Rozhraní .NET Framework Pomocník pro Firefox umožňuje samostatných aplikací ClickOnce pro spuštění z prohlížeče Firefox. Rozhraní .NET Framework Pomocníka pro Firefox funkce stejně jako v případě, že je nainstalována před a po prohlížeče Firefox. Když se spustí prohlížeč Firefox a nainstalovat rozhraní .NET Framework 3.5 SP1, Firefox vyhledá a nainstaluje rozhraní .NET Framework Pomocník pro Firefox. Uživatelé můžou konfigurovat rozhraní .NET Framework Pomocník pro Firefox provést následující kroky:  
+ Pomocník pro .NET Framework pro Firefox umožňuje spouštět samostatné aplikace ClickOnce z prohlížeče Firefox. Pomocník pro .NET Framework pro Firefox funguje identicky, když je nainstalován před a po prohlížeči Firefox. Když se spustí prohlížeč Firefox a nainstalují se .NET Framework 3,5 SP1, aplikace Firefox najde a nainstaluje pomocníka .NET Framework pro Firefox. Uživatelé můžou nakonfigurovat pomocníka .NET Framework pro Firefox, aby provede následující:  
   
-- Dotázat se před spuštěním aplikace ClickOnce.  
+- Před spuštěním aplikace ClickOnce se zobrazí výzva.  
   
-- Sestavy všech nainstalovaných verzí rozhraní .NET Framework nebo jenom na nejnovější verzi.  
+- Ohlaste všechny nainstalované verze .NET Framework nebo jenom nejnovější verzi.  
   
- Rozhraní .NET Framework Pomocník pro Firefox je součástí rozhraní .NET Framework 3.5 SP1. Informace o odebrání rozhraní .NET Framework Pomocník pro Firefox, naleznete v tématu [odebrání rozhraní .NET Framework Pomocník pro Firefox](https://go.microsoft.com/fwlink/?LinkId=177944).  
+ Pomocník pro .NET Framework pro Firefox je součástí .NET Framework 3,5 SP1. Informace o odebrání pomocníka .NET Framework pro Firefox najdete v tématu [Odebrání pomocníka .NET Framework pro prohlížeč Firefox](https://go.microsoft.com/fwlink/?LinkId=177944).  
   
 ## <a name="see-also"></a>Viz také:
 

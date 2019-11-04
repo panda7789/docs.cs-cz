@@ -15,17 +15,17 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: c3ec6ca6feba975517a9f982bb58e4b061516a61
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 907c1f02e07c60ac38c8e09e94fc96ae2573e97c
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962806"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455313"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
-<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení nemůžou skriptovací jazyky HTML a na straně klienta přistupovat k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
+<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení nemůžou skriptovací jazyky HTML a na straně klienta přistupovat k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. Aby tato omezení vynutila, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spoléhá jak na zabezpečení přístupu kódu (CAS), tak i na ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]poskytuje širokou škálu podpory, aby bylo zajištěno, že je možné v částečném vztahu důvěryhodnosti a společně s certifikačními autoritami používat co nejvíc funkcí, a navíc poskytuje další podporu pro programování s částečným vztahem důvěryhodnosti.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytuje širokou škálu podpory, aby bylo zajištěno, že je možné v částečném vztahu důvěryhodnosti a společně s certifikačními autoritami používat co nejvíc funkcí, a poskytuje další podporu pro programování s částečným vztahem důvěryhodnosti.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -39,7 +39,7 @@ ms.locfileid: "69962806"
 ## <a name="wpf-feature-partial-trust-support"></a>Podpora částečné důvěryhodnosti funkcí WPF  
  V následující tabulce jsou uvedeny nejdůležitější funkce Windows Presentation Foundation (WPF), které se bezpečně používají v rámci omezení sady oprávnění zóny Internet.  
   
- Tabulka 1: Funkce WPF, které jsou v částečném vztahu důvěryhodnosti bezpečné  
+ Tabulka 1: funkce WPF, které jsou v částečném vztahu důvěryhodnosti bezpečné  
   
 |Oblast funkcí|Funkce|  
 |------------------|-------------|  
@@ -50,25 +50,25 @@ ms.locfileid: "69962806"
 |Úprava|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Podpora schránky ve formátu prostého textu a rukopisu<br /><br /> Vložení iniciované uživatelem<br /><br /> Kopírování vybraného obsahu|  
 |Ovládací prvky|Obecné ovládací prvky|  
   
- Tato tabulka obsahuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce na nejvyšší úrovni. Pro podrobnější informace Windows SDK dokumentuje oprávnění, která jsou vyžadována každým členem v [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Kromě toho následující funkce obsahují podrobnější informace týkající se provádění částečné důvěryhodnosti, včetně zvláštních otázek.  
+ Tato tabulka obsahuje přehled funkcí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] na nejvyšší úrovni. Podrobnější informace Windows SDK dokumentují oprávnění, která jsou vyžadována každým členem v [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Kromě toho následující funkce obsahují podrobnější informace týkající se provádění částečné důvěryhodnosti, včetně zvláštních otázek.  
   
-- [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)](viz [XAML Overview (WPF)](./advanced/xaml-overview-wpf.md)).  
+- [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] (viz [XAML – přehled (WPF)](../../desktop-wpf/fundamentals/xaml.md)).  
   
-- Automaticky otevíraná okna ( <xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType>viz).  
+- Automaticky otevíraná okna (viz <xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType>).  
   
 - Přetažení (viz [Přehled](./advanced/drag-and-drop-overview.md)přetažení).  
   
-- Schránka ( <xref:System.Windows.Clipboard?displayProperty=nameWithType>viz).  
+- Schránka (viz <xref:System.Windows.Clipboard?displayProperty=nameWithType>).  
   
 - Imaging (viz <xref:System.Windows.Controls.Image?displayProperty=nameWithType>).  
   
-- Serializace ( <xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>viz <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>,).  
+- Serializace (viz <xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>, <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>).  
   
 - Dialogové okno otevřít soubor (viz <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>).  
   
- V následující tabulce [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] jsou uvedené funkce, které není bezpečné spouštět v rámci omezení sady oprávnění zóny Internetu.  
+ Následující tabulka obsahuje přehled funkcí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], které není bezpečné spouštět v rámci omezení sady oprávnění zóny Internet.  
   
- Tabulka 2: Funkce WPF, které nejsou bezpečné v částečném vztahu důvěryhodnosti  
+ Tabulka 2: funkce WPF, které nejsou v částečném vztahu důvěryhodnosti bezpečné  
   
 |Oblast funkcí|Funkce|  
 |------------------|-------------|  
@@ -78,9 +78,9 @@ ms.locfileid: "69962806"
   
 <a name="Partial_Trust_Programming"></a>   
 ## <a name="partial-trust-programming"></a>Programování s částečným vztahem důvěryhodnosti  
- V [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] případě aplikací má kód, který překračuje výchozí sadu oprávnění, jiné chování v závislosti na zóně zabezpečení. V některých případech se uživateli při pokusu o instalaci zobrazí upozornění. Uživatel může zvolit pokračování nebo instalaci zrušit. Následující tabulka popisuje chování aplikace pro každou zónu zabezpečení a to, co je třeba udělat, aby aplikace přijímala úplný vztah důvěryhodnosti.  
+ Pro aplikace XBAP má kód, který překračuje výchozí sadu oprávnění, různé chování v závislosti na zóně zabezpečení. V některých případech se uživateli při pokusu o instalaci zobrazí upozornění. Uživatel může zvolit pokračování nebo instalaci zrušit. Následující tabulka popisuje chování aplikace pro každou zónu zabezpečení a to, co je třeba udělat, aby aplikace přijímala úplný vztah důvěryhodnosti.  
   
-|Zóna zabezpečení|Chování|Získání úplné důvěryhodnosti|  
+|Zóna zabezpečení|Předvídatelně|Získání úplné důvěryhodnosti|  
 |-------------------|--------------|------------------------|  
 |Místní počítač|Automatický úplný vztah důvěryhodnosti|Není nutné provádět žádnou akci.|  
 |Intranetové a důvěryhodné weby|Dotázat se na úplný vztah důvěryhodnosti|Přihlaste se k aplikaci XBAP pomocí certifikátu, aby se uživateli zobrazila výzva ke zdroji v příkazovém řádku.|  
@@ -89,18 +89,18 @@ ms.locfileid: "69962806"
 > [!NOTE]
 > Chování popsané v předchozí tabulce je pro úplný vztah důvěryhodnosti aplikace XBAP, který nedodržuje model důvěryhodného nasazení ClickOnce.  
   
- Obecně platí, že kód, který může překročit povolená oprávnění, bude pravděpodobně běžný kód, který je sdílen mezi samostatnou aplikací a aplikacemi hostovanými v prohlížeči. CAS a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] nabízí několik postupů pro správu tohoto scénáře.  
+ Obecně platí, že kód, který může překročit povolená oprávnění, bude pravděpodobně běžný kód, který je sdílen mezi samostatnou aplikací a aplikacemi hostovanými v prohlížeči. CAS a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] nabízejí několik postupů pro správu tohoto scénáře.  
   
 <a name="Detecting_Permissions_using_CAS"></a>   
 ### <a name="detecting-permissions-using-cas"></a>Zjišťování oprávnění pomocí certifikačních autorit  
- V některých situacích je možné, aby sdílený kód v sestavení knihovny používaly obě samostatné aplikace i [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]. V těchto případech může kód provádět funkce, které by mohly vyžadovat více oprávnění, než povoluje sada oprávnění udělená aplikaci. Vaše aplikace může určit, jestli má určité oprávnění, pomocí Microsoft .NET Framework Security. Konkrétně může otestovat, zda má konkrétní oprávnění voláním <xref:System.Security.CodeAccessPermission.Demand%2A> metody na instanci požadovaného oprávnění. To je znázorněno v následujícím příkladu, který obsahuje kód, který se dotazuje na to, jestli má možnost Uložit soubor na místní disk:  
+ V některých situacích je možné, aby sdílený kód v sestavení knihovny používaly samostatné aplikace i XBAP. V těchto případech může kód provádět funkce, které by mohly vyžadovat více oprávnění, než povoluje sada oprávnění udělená aplikaci. Vaše aplikace může určit, jestli má určité oprávnění, pomocí Microsoft .NET Framework Security. Konkrétně může otestovat, zda má konkrétní oprávnění voláním metody <xref:System.Security.CodeAccessPermission.Demand%2A> v instanci požadovaného oprávnění. To je znázorněno v následujícím příkladu, který obsahuje kód, který se dotazuje na to, jestli má možnost Uložit soubor na místní disk:  
   
  [!code-csharp[PartialTrustSecurityOverviewSnippets#DetectPermsCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/CSharp/FileHandling.cs#detectpermscode1)]
  [!code-vb[PartialTrustSecurityOverviewSnippets#DetectPermsCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/VisualBasic/FileHandling.vb#detectpermscode1)]  
 [!code-csharp[PartialTrustSecurityOverviewSnippets#DetectPermsCODE2](~/samples/snippets/csharp/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/CSharp/FileHandling.cs#detectpermscode2)]
 [!code-vb[PartialTrustSecurityOverviewSnippets#DetectPermsCODE2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/VisualBasic/FileHandling.vb#detectpermscode2)]  
   
- Pokud aplikace nemá požadované oprávnění, volání metody <xref:System.Security.CodeAccessPermission.Demand%2A> vyvolá výjimku zabezpečení. V opačném případě bylo uděleno oprávnění. `IsPermissionGranted`Zapouzdřuje toto chování a `true` vrátí `false` nebo podle potřeby vrátí.  
+ Pokud aplikace nemá požadované oprávnění, volání <xref:System.Security.CodeAccessPermission.Demand%2A> vyvolá výjimku zabezpečení. V opačném případě bylo uděleno oprávnění. `IsPermissionGranted` zapouzdřuje toto chování a v případě potřeby vrátí `true` nebo `false`.  
   
 <a name="Graceful_Degradation_of_Functionality"></a>   
 ### <a name="graceful-degradation-of-functionality"></a>Řádné snížení funkčnosti  
@@ -113,24 +113,24 @@ ms.locfileid: "69962806"
   
  V mnoha případech byste měli být schopni najít alternativu s částečným vztahem důvěryhodnosti.  
   
- V kontrolovaném prostředí, jako je intranet, mohou být vlastní spravovaná rozhraní nainstalována v rámci klientské základny do globální mezipaměti sestavení (GAC). Tyto knihovny mohou spouštět kód, který vyžaduje úplný vztah důvěryhodnosti a na základě aplikací, které jsou povoleny pouze s částečným <xref:System.Security.AllowPartiallyTrustedCallersAttribute> vztahem důvěryhodnosti (Další informace [](security-wpf.md) naleznete v tématu Security and [WPF Security strategie-Platform Security](wpf-security-strategy-platform-security.md)).  
+ V kontrolovaném prostředí, jako je intranet, mohou být vlastní spravovaná rozhraní nainstalována v rámci klientské základny do globální mezipaměti sestavení (GAC). Tyto knihovny mohou spustit kód, který vyžaduje úplný vztah důvěryhodnosti a na odkaz z aplikací, které jsou povoleny pouze s částečným vztahem důvěryhodnosti pomocí <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (Další informace naleznete [v tématu Security](security-wpf.md) and [WPF Security strategie-Platform Security](wpf-security-strategy-platform-security.md)).  
   
 <a name="Browser_Host_Detection"></a>   
 ### <a name="browser-host-detection"></a>Detekce hostitele v prohlížeči  
- Použití CAS ke kontrole oprávnění je vhodná technika, pokud potřebujete kontrolovat jednotlivá oprávnění. I když tato technika závisí na zachycení výjimek jako součásti normálního zpracování, což se obecně nedoporučuje a může mít problémy s výkonem. Místo toho, pokud [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] vaše aplikace běží v karanténě zóny Internet Zone, můžete <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType> použít vlastnost, která vrací hodnotu true pro [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)].  
+ Použití CAS ke kontrole oprávnění je vhodná technika, pokud potřebujete kontrolovat jednotlivá oprávnění. I když tato technika závisí na zachycení výjimek jako součásti normálního zpracování, což se obecně nedoporučuje a může mít problémy s výkonem. Místo toho, pokud se vaše aplikace prohlížeče XAML (XBAP) spouští pouze v izolovaném prostoru (sandboxu) internetové zóny, můžete použít vlastnost <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType>, která vrací hodnotu true pro aplikace prohlížeče XAML (XBAP).  
   
 > [!NOTE]
-> <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A>rozlišuje pouze to, jestli aplikace běží v prohlížeči, a ne na které sadě oprávnění aplikace běží.  
+> <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A> pouze rozlišuje, zda je aplikace spuštěna v prohlížeči, nikoli na kterou sadu oprávnění aplikace běží.  
   
 <a name="Managing_Permissions"></a>   
 ## <a name="managing-permissions"></a>Správa oprávnění  
- Ve výchozím nastavení [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] běží s částečnou důvěryhodností (výchozí sada oprávnění zóny Internet). V závislosti na požadavcích aplikace je však možné změnit sadu oprávnění z výchozí hodnoty. Například pokud [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] se spustí z místního intranetu, může využít vyšší sadu oprávnění, která je uvedená v následující tabulce.  
+ Ve výchozím nastavení se aplikace XBAP spouští s částečnou důvěryhodností (výchozí sada oprávnění zóny Internet). V závislosti na požadavcích aplikace je však možné změnit sadu oprávnění z výchozí hodnoty. Například pokud se aplikace XBAP spustí z místního intranetu, může využít vyšší sadu oprávnění, která je uvedená v následující tabulce.  
   
  Tabulka 3: LocalIntranet a Internetová oprávnění  
   
 |Oprávnění|Atribut|LocalIntranet|Internet|  
 |----------------|---------------|-------------------|--------------|  
-|DNS|Přístup k serverům DNS|Ano|Ne|  
+|NÁZV|Přístup k serverům DNS|Ano|Ne|  
 |Proměnné prostředí|Číst|Ano|Ne|  
 |Dialogy souborů|Otevřít|Ano|Ano|  
 |Dialogy souborů|Neomezený|Ano|Ne|  
@@ -159,7 +159,7 @@ ms.locfileid: "69962806"
   
 - [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
   
- [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] Pokud vyžadujete úplný vztah důvěryhodnosti, můžete ke zvýšení požadovaných oprávnění použít stejné nástroje. I když [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] bude k instalaci a spuštění z místního počítače, intranetu nebo z adresy URL, která je uvedena v seznamu důvěryhodných nebo povolených lokalit prohlížeče, obdrží jenom úplný vztah důvěryhodnosti. Pokud je aplikace nainstalována z intranetu nebo z důvěryhodného webu, bude uživatel dostávat standardní výzvu ClickOnce s upozorněním na oprávnění vyšší úrovně. Uživatel může zvolit pokračování nebo instalaci zrušit.  
+ Pokud vaše XBAP vyžaduje úplný vztah důvěryhodnosti, můžete ke zvýšení požadovaných oprávnění použít stejné nástroje. I když XBAP dostane úplný vztah důvěryhodnosti pouze v případě, že je nainstalován a spuštěn z místního počítače, intranetu nebo z adresy URL, která je uvedena v seznamu důvěryhodných nebo povolených webů prohlížeče. Pokud je aplikace nainstalována z intranetu nebo z důvěryhodného webu, bude uživatel dostávat standardní výzvu ClickOnce s upozorněním na oprávnění vyšší úrovně. Uživatel může zvolit pokračování nebo instalaci zrušit.  
   
  Alternativně můžete použít model důvěryhodných nasazení ClickOnce pro nasazení s úplným vztahem důvěryhodnosti z jakékoli zóny zabezpečení. Další informace najdete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [zabezpečení](security-wpf.md).  
   

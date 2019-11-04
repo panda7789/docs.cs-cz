@@ -6,24 +6,24 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: af0d8eeb36e023b4d38f9ad5831de3d392a487fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 180a4942dd4b701b56fe4788d5f8cd8607faaedd
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922548"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459260"
 ---
-# <a name="datetimeserialization-element"></a>\<dateTimeSerialization > – Element
+# <a name="datetimeserialization-element"></a>\<element > dateTimeSerialization
 Určuje režim serializace <xref:System.DateTime> objekty.  
   
- \<Konfigurace >  
+ Konfigurace \<  
 \<dateTimeSerialization >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <dateTimeSerialization  
-    mode = "Roundtrip" | "Local"  
+    mode = "Roundtrip|Local"  
 />  
 ```  
   
@@ -34,7 +34,7 @@ Určuje režim serializace <xref:System.DateTime> objekty.
   
 |Atributy|Popis|  
 |----------------|-----------------|  
-|`mode`|Volitelné. Určuje režim serializace. Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty. Výchozí hodnota je **umožňujícím zpětnou transformaci**.|  
+|`mode`|Volitelné. Určuje režim serializace. Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty. Výchozí hodnota je **zpáteční**.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,9 +46,9 @@ Určuje režim serializace <xref:System.DateTime> objekty.
 |System.XML.Serialization|Element nejvyšší úrovně pro řízení serializace XML.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve verzích 1.0 a 1.1, 2.0 a novějších verzích rozhraní .NET Framework, když je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty jsou vždy formátována jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Tuto vlastnost nastavte na **místní** k zajištění kompatibility se staršími verzemi rozhraní .NET Framework.  
+ Ve verzích 1,0, 1,1, 2,0 a novějších .NET Framework platí, že pokud je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty se vždycky naformátují jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Nastavte tuto vlastnost na **místní** , aby se zajistila kompatibilita se staršími verzemi .NET Framework.  
   
- Ve verzi 2.0 a novějších verzích rozhraní .NET Framework, které mají tato vlastnost nastavena na **umožňujícím zpětnou transformaci**, <xref:System.DateTime> objekty jsou prověřit, abyste zjistili, jestli jsou v místním, UTC nebo nespecifikované časového pásma. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
+ Ve verzi 2,0 a novějších .NET Framework, které mají tuto vlastnost nastavenou na hodnotu **zpětného převodu**, se <xref:System.DateTime> objekty zkontrolují za účelem zjištění, zda jsou v místním, UTC nebo neurčeném časovém pásmu. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,6 +56,6 @@ Určuje režim serializace <xref:System.DateTime> objekty.
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<element > schemaImporterExtensions](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+- [\<přidat > element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<element System. XML. Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)

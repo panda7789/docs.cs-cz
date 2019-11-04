@@ -7,12 +7,12 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 9b6592405d3047c8663b48137aa5b1f0eb14bdb4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f2135c6c3649ba2fc87e3b49770439688a58269b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924108"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418058"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
 Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů dotazů LINQ.  
@@ -20,28 +20,28 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
 ## <a name="create-a-c-project"></a>Vytvoření projektu v jazyce C#  
   
 > [!NOTE]
-> Následující pokyny jsou pro Visual Studio. Pokud používáte jiné vývojové prostředí, vytvořte projekt konzoly s odkazem na System. Core. dll a `using` direktivou <xref:System.Linq?displayProperty=nameWithType> pro obor názvů.  
+> Následující pokyny jsou pro Visual Studio. Pokud používáte jiné vývojové prostředí, vytvořte projekt konzoly s odkazem na System. Core. dll a direktivu `using` pro obor názvů <xref:System.Linq?displayProperty=nameWithType>.  
   
 #### <a name="to-create-a-project-in-visual-studio"></a>Vytvoření projektu v aplikaci Visual Studio  
   
 1. Spusťte Visual Studio.  
   
-2. V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
+2. Na panelu nabídek vyberte položku **soubor**, **Nový**, **projekt**.  
   
-     **Nový projekt** zobrazí se dialogové okno.  
+     Otevře se dialogové okno **Nový projekt** .  
   
-3. Rozbalte položku **nainstalované**, rozbalte **šablony**, rozbalte položku **C#vizuál**a pak zvolte možnost konzolová **aplikace**.  
+3. Rozbalte položku **nainstalované**, rozbalte **šablony**, rozbalte položku **vizuál C#** a pak zvolte možnost **Konzolová aplikace**.  
   
 4. Do textového pole **název** zadejte jiný název nebo přijměte výchozí název a pak klikněte na tlačítko **OK** .  
   
      Nový projekt se zobrazí v **Průzkumník řešení**.  
   
-5. Všimněte si, že váš projekt má odkaz na System. Core. dll a `using` direktivu <xref:System.Linq?displayProperty=nameWithType> pro obor názvů.  
+5. Všimněte si, že váš projekt má odkaz na System. Core. dll a direktivu `using` pro obor názvů <xref:System.Linq?displayProperty=nameWithType>.  
   
 ## <a name="create-an-in-memory-data-source"></a>Vytvoření zdroje dat v paměti  
- Zdroj dat pro dotazy je jednoduchý seznam `Student` objektů. Každý `Student` záznam má křestní jméno, příjmení a pole celých čísel, která představují jejich skóre testů ve třídě. Zkopírujte tento kód do vašeho projektu. Všimněte si následujících vlastností:  
+ Zdrojem dat pro dotazy je jednoduchý seznam `Student` objektů. Každý `Student` záznam má křestní jméno, příjmení a pole celých čísel, která představují jejich skóre testů ve třídě. Zkopírujte tento kód do projektu. Všimněte si následujících vlastností:  
   
-- `Student` Třída se skládá z automaticky implementovaných vlastností.  
+- Třída `Student` se skládá z automaticky implementovaných vlastností.  
   
 - Každý student v seznamu se inicializuje s inicializátorem objektu.  
   
@@ -51,21 +51,21 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
-- Přidejte třídu a inicializovaný seznam studentů `Program` do třídy v projektu. `Student`  
+- Přidejte třídu `Student` a inicializovaný seznam studentů do třídy `Program` ve vašem projektu.  
   
      [!code-csharp[CsLinqGettingStarted#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#11)]  
   
 #### <a name="to-add-a-new-student-to-the-students-list"></a>Přidání nového objektu Student do seznamu Students  
   
-1. Přidejte nový `Student` `Students` do seznamu a použijte název a hodnocení podle vašeho výběru. Zkuste zadat všechny informace o novém studentovi, aby se lépe dozvěděla syntaxe inicializátoru objektu.  
+1. Přidejte nový `Student` do seznamu `Students` a použijte název a hodnocení podle vašeho výběru. Zkuste zadat všechny informace o novém studentovi, aby se lépe dozvěděla syntaxe inicializátoru objektu.  
   
 ## <a name="create-the-query"></a>Vytvoření dotazu  
   
 #### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu  
   
-- V `Main` metodě aplikace vytvořte jednoduchý dotaz, který při jeho spuštění vytvoří seznam všech studentů, jejichž skóre na prvním testu bylo větší než 90. Všimněte si, že vzhledem `Student` k tomu, že je vybrán celý objekt, je `IEnumerable<Student>`typ dotazu. I když kód může také použít implicitní zadání pomocí klíčového slova [var](../../../language-reference/keywords/var.md) , explicitní psaní se používá k jasné ilustraci výsledků. (Další informace o `var`naleznete v tématu [implicitně typované lokální proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).)  
+- V metodě `Main` aplikace vytvořte jednoduchý dotaz, který při spuštění vytvoří seznam všech studentů, jejichž skóre prvního testu bylo větší než 90. Všimněte si, že vzhledem k tomu, že je vybrán celý objekt `Student`, je typ dotazu `IEnumerable<Student>`. I když kód může také použít implicitní zadání pomocí klíčového slova [var](../../../language-reference/keywords/var.md) , explicitní psaní se používá k jasné ilustraci výsledků. (Další informace o `var`naleznete v tématu [implicitně typované lokální proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).)  
   
-     Všimněte si také, že proměnná `student`rozsahu dotazu slouží jako odkaz na každý `Student` zdroj a poskytuje pro každý objekt přístup pro členy.  
+     Všimněte si také, že proměnná rozsahu dotazu `student`, slouží jako odkaz na každý `Student` ve zdroji a poskytuje pro každý objekt přístup pro členy.  
   
  [!code-csharp[CsLINQGettingStarted#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#12)]  
   
@@ -73,11 +73,11 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-execute-the-query"></a>Provedení dotazu  
   
-1. Nyní zapište `foreach` smyčku, která způsobí, že se dotaz spustí. Všimněte si následujícího kódu:  
+1. Nyní zapište smyčku `foreach`, která způsobí, že se dotaz spustí. Všimněte si následujícího kódu:  
   
-    - Každý prvek v vrácené sekvenci je k dispozici prostřednictvím proměnné iterace `foreach` ve smyčce.  
+    - Každý prvek v vrácené sekvenci je k dispozici prostřednictvím proměnné iterace ve smyčce `foreach`.  
   
-    - Typ této proměnné je `Student`a typ proměnné dotazu je kompatibilní,. `IEnumerable<Student>`  
+    - Typ této proměnné je `Student`a typ proměnné dotazu je kompatibilní, `IEnumerable<Student>`.  
   
 2. Po přidání tohoto kódu Sestavte a spusťte aplikaci, abyste viděli výsledky v okně **konzoly** .  
   
@@ -85,7 +85,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-add-another-filter-condition"></a>Přidání další podmínky filtru  
   
-1. Můžete zkombinovat více logických podmínek `where` v klauzuli, aby bylo možné dále upřesnit dotaz. Následující kód přidá podmínku, takže dotaz vrátí takové studenty, jejichž první skóre bylo nad 90 a jejichž poslední skóre bylo menší než 80. `where` Klauzule by měla vypadat podobně jako následující kód.  
+1. Můžete zkombinovat více logických podmínek v klauzuli `where`, aby bylo možné dále upřesnit dotaz. Následující kód přidá podmínku, takže dotaz vrátí takové studenty, jejichž první skóre bylo nad 90 a jejichž poslední skóre bylo menší než 80. Klauzule `where` by se měla podobat následujícímu kódu.  
   
     ```csharp
     where student.Scores[0] > 90 && student.Scores[3] < 80  
@@ -97,19 +97,19 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-order-the-results"></a>Řazení výsledků  
   
-1. Vyhledávání výsledků bude snazší, pokud jsou v nějakém typu pořadí. Vrácenou sekvenci můžete seřadit podle libovolného dostupného pole ve zdrojových prvcích. Například následující `orderby` klauzule seřadí výsledky v abecedním pořadí od A do Z podle příjmení každého studenta. Přidejte do dotazu `orderby` následující klauzuli, a to hned `where` za příkazem a před `select` příkazem:  
+1. Vyhledávání výsledků bude snazší, pokud jsou v nějakém typu pořadí. Vrácenou sekvenci můžete seřadit podle libovolného dostupného pole ve zdrojových prvcích. Například následující klauzule `orderby` seřadí výsledky v abecedním pořadí od A do Z v závislosti na posledním názvu každého studenta. Přidejte následující klauzuli `orderby` do dotazu, hned za příkaz `where` a před příkaz `select`:  
   
     ```csharp
     orderby student.Last ascending  
     ```  
   
-2. Nyní změňte `orderby` klauzuli tak, aby odpovídala výsledkům v obráceném pořadí podle skóre prvního testu od nejvyššího skóre po nejnižší skóre.  
+2. Nyní změňte klauzuli `orderby` tak, aby odpovídala výsledkům v obráceném pořadí podle skóre prvního testu, od nejvyššího skóre až po nejnižší skóre.  
   
     ```csharp
     orderby student.Scores[0] descending  
     ```  
   
-3. Změňte řetězec `WriteLine` formátu tak, abyste viděli skóre:  
+3. Změňte řetězec formátu `WriteLine`, abyste viděli skóre:  
   
     ```csharp
     Console.WriteLine("{0}, {1} {2}", student.Last, student.First, student.Scores[0]);  
@@ -123,7 +123,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
      [!code-csharp[CsLINQGettingStarted#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#14)]  
   
-2. Všimněte si, že typ dotazu byl nyní změněn. Nyní vytváří sekvenci skupin, které mají `char` typ jako klíč, a `Student` posloupnost objektů. Vzhledem k tomu, že se typ dotazu změnil, následující kód změní `foreach` smyčku spouštění také:  
+2. Všimněte si, že typ dotazu byl nyní změněn. Nyní vytváří sekvenci skupin, které mají typ `char` jako klíč, a sekvenci objektů `Student`. Vzhledem k tomu, že se typ dotazu změnil, následující kód změní také smyčku spuštění `foreach`:  
   
      [!code-csharp[CsLINQGettingStarted#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#15)]  
   
@@ -133,7 +133,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-make-the-variables-implicitly-typed"></a>Převedení proměnných na implicitně typované proměnné  
   
-1. Explicitní kódování `IEnumerables` `IGroupings` se může rychle stát zdlouhavě. Stejný dotaz a `foreach` smyčku můžete napsat mnohem přesněji pomocí `var`. `var` Klíčové slovo nemění typy vašich objektů; pouze instruuje kompilátor, aby odvodí typy. Změňte typ `studentQuery` proměnné a proměnnou `group` iterace na `var` a znovu spusťte dotaz. Všimněte si, že ve `foreach` vnitřní smyčce je proměnná iterace stále zadána jako `Student`a dotaz funguje stejně jako předtím. `var` Změňte proměnnou `s` iterace na a spusťte dotaz znovu. Vidíte, že se vám přesně vrátí stejné výsledky.  
+1. Explicitní kódování `IEnumerables` `IGroupings` se může rychle stát zdlouhavě. Stejný dotaz a `foreach`ovou smyčku můžete napsat mnohem pohodlně pomocí `var`. Klíčové slovo `var` nemění typy vašich objektů; pouze instruuje kompilátor, aby odvodí typy. Změňte typ `studentQuery` a proměnnou iterace `group` na `var` a znovu spusťte dotaz. Všimněte si, že ve vnitřní `foreach` smyčce je proměnná iterace zapsána jako `Student`a dotaz funguje stejně jako dřív. Změňte `s` proměnnou iterace na `var` a spusťte dotaz znovu. Vidíte, že se vám přesně vrátí stejné výsledky.  
   
      [!code-csharp[CsLINQGettingStarted#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#16)]  
   
@@ -141,7 +141,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-order-the-groups-by-their-key-value"></a>Seřazení skupin podle hodnoty jejich klíče  
   
-1. Když spustíte předchozí dotaz, zjistíte, že skupiny nejsou v abecedním pořadí. Chcete-li toto změnit, je nutné `orderby` zadat klauzuli `group` za klauzulí. Chcete-li však `orderby` použít klauzuli, nejprve potřebujete identifikátor, který slouží jako odkaz na skupiny vytvořené `group` klauzulí. Identifikátor můžete zadat pomocí `into` klíčového slova následujícím způsobem:  
+1. Když spustíte předchozí dotaz, zjistíte, že skupiny nejsou v abecedním pořadí. Chcete-li toto změnit, je nutné zadat klauzuli `orderby` za klauzulí `group`. Chcete-li však použít klauzuli `orderby`, nejprve potřebujete identifikátor, který slouží jako odkaz na skupiny vytvořené klauzulí `group`. Identifikátor zadáte pomocí klíčového slova `into` následujícím způsobem:  
   
      [!code-csharp[csLINQGettingStarted#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#17)]  
   
@@ -149,7 +149,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-introduce-an-identifier-by-using-let"></a>Zavedení identifikátoru s použitím klíčového slova let  
   
-1. `let` Klíčové slovo lze použít k zavedení identifikátoru pro jakýkoli výsledek výrazu ve výrazu dotazu. Tento identifikátor může být pohodlí, jak je uvedeno v následujícím příkladu, nebo může zvýšit výkon tím, že uloží výsledky výrazu tak, aby se nemusela vypočítat víckrát.  
+1. Klíčové slovo `let` lze použít k představení identifikátoru pro jakýkoli výsledek výrazu ve výrazu dotazu. Tento identifikátor může být pohodlí, jak je uvedeno v následujícím příkladu, nebo může zvýšit výkon tím, že uloží výsledky výrazu tak, aby se nemusela vypočítat víckrát.  
   
      [!code-csharp[csLINQGettingStarted#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#18)]  
   
@@ -157,17 +157,17 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
   
 #### <a name="to-use-method-syntax-in-a-query-expression"></a>Použití syntaxe využívající metody ve výrazu dotazu  
   
-1. Jak je popsáno v syntaxi [dotazu a syntaxe metody v LINQ](./query-syntax-and-method-syntax-in-linq.md), některé operace dotazu lze vyjádřit pouze pomocí syntaxe metody. Následující kód vypočítá celkové skóre pro každý `Student` ze zdrojových sekvencí a potom `Average()` zavolá metodu pro výsledky tohoto dotazu pro výpočet průměrného skóre třídy.
+1. Jak je popsáno v syntaxi [dotazu a syntaxe metody v LINQ](./query-syntax-and-method-syntax-in-linq.md), některé operace dotazu lze vyjádřit pouze pomocí syntaxe metody. Následující kód vypočítá celkové skóre pro každý `Student` ve zdrojové sekvenci a poté zavolá metodu `Average()` ve výsledcích tohoto dotazu pro výpočet průměrného skóre třídy.
   
      [!code-csharp[csLINQGettingStarted#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#19)]  
   
 #### <a name="to-transform-or-project-in-the-select-clause"></a>Transformace nebo projekce v klauzuli select  
   
-1. Je velmi běžné, že dotaz vytvoří sekvenci, jejíž prvky se liší od prvků ve zdrojových sekvencích. Odstraňte nebo zakomentujte předchozí dotaz a smyčku spuštění a nahraďte ji následujícím kódem. Všimněte si, že dotaz vrátí sekvenci řetězců (ne `Students`) a tento fakt se projeví `foreach` ve smyčce.  
+1. Je velmi běžné, že dotaz vytvoří sekvenci, jejíž prvky se liší od prvků ve zdrojových sekvencích. Odstraňte nebo zakomentujte předchozí dotaz a smyčku spuštění a nahraďte ji následujícím kódem. Všimněte si, že dotaz vrátí sekvenci řetězců (není `Students`) a tento fakt se projeví ve `foreach` smyčce.  
   
      [!code-csharp[csLINQGettingStarted#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#20)]  
   
-2. Kód uvedený výše v tomto návodu uvádí, že průměrné skóre třídy je přibližně 334. Chcete-li vytvořit sekvenci `Students` , jejichž celkové skóre je větší než průměr třídy, společně s jejich `Student ID`pomocí, můžete v `select` příkazu použít anonymní typ:  
+2. Kód uvedený výše v tomto návodu uvádí, že průměrné skóre třídy je přibližně 334. Chcete-li vytvořit sekvenci `Students`, jejichž celkové skóre je větší než průměr třídy, spolu s jejich `Student ID`, můžete v příkazu `select` použít anonymní typ:  
   
      [!code-csharp[csLINQGettingStarted#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#21)]  
   
@@ -185,4 +185,4 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
 ## <a name="see-also"></a>Viz také:
 
 - [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)
-- [Výrazy dotazů LINQ](../../linq-query-expressions/index.md)
+- [Výrazy dotazů LINQ](../../../linq/index.md)

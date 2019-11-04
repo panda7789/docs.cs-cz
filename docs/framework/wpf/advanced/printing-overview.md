@@ -15,43 +15,43 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: b6de7aab77c168f353b39b44853fc224cbf0244d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0758a537ee457a8fe5a778e2a2c24a8ba13c263b
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254080"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460871"
 ---
 # <a name="printing-overview"></a>Přehled tisku
-S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]nástroje jsou některé z těchto vylepšení systému pro tisk k dispozici také [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vývojářům, kteří vytvářejí aplikace a vývojáře pomocí nespravovaného kódu. Základem této nové funkce je nový formát souboru XPS (XML Paper Specification) a cesta k tisku XPS.  
+S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]jsou některá z těchto vylepšení systému pro tisk také k dispozici vývojářům, kteří vytvářejí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáři pomocí nespravovaného kódu. Základem této nové funkce je nový formát souboru XPS (XML Paper Specification) a cesta k tisku XPS.  
   
  Toto téma obsahuje následující části.  
   
 <a name="introduction_to_XPS"></a>   
 ## <a name="about-xps"></a>O formátu XPS  
- XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Jedná se o otevřený formát dokumentu, který [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]používá konvence Open balení (OPC) a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
+ XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Je to otevřený formát dokumentu, který používá [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)], konvence OPC (Open balení) a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
   
- Několik technik tisku obsahu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] založeného na XPS je znázorněné v [programovém tisku souborů XPS](how-to-programmatically-print-xps-files.md). Může být užitečné, aby na tyto ukázky odkazovala během revize obsahu obsaženého v tomto tématu. (Vývojáři nespravovaného kódu by si měli prohlédnout dokumentaci k [funkci MXDC_ESCAPE](/windows/desktop/printdocs/mxdc-escape). Model Windows Forms vývojáři musí používat rozhraní API v <xref:System.Drawing.Printing> oboru názvů, který nepodporuje úplnou tiskovou cestu XPS, ale podporuje hybridní cestu k tisku pomocí formátu GDI. Viz **Architektura tisk cesty** níže.)  
+ Několik technik tisku obsahu založeného na formátu XPS pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je znázorněno v [programovém tisku souborů XPS](how-to-programmatically-print-xps-files.md). Může být užitečné, aby na tyto ukázky odkazovala během revize obsahu obsaženého v tomto tématu. (Vývojáři nespravovaného kódu by si měli prohlédnout dokumentaci k [funkci MXDC_ESCAPE](/windows/desktop/printdocs/mxdc-escape). Model Windows Forms vývojáři musí používat rozhraní API v oboru názvů <xref:System.Drawing.Printing>, který nepodporuje úplnou cestu k tisku v rámci XPS, ale podporuje hybridní cestu k tisku typu GDI. Viz **Architektura tisk cesty** níže.)  
   
 <a name="XPS_print_path_intro"></a>   
 ## <a name="xps-print-path"></a>Cesta tisku XPS  
  Cesta tisku XPS (XML Paper Specification) je nová funkce systému Windows, která mění definici způsobu zpracování tisku v aplikacích systému Windows. Vzhledem k tomu, že XPS může nahradit jazyk prezentace dokumentu (jako je RTF), formát zařazování tisku (například WMF) a jazyk popisu stránky (například PCL nebo PostScript); Nová cesta tisku uchovává formát XPS z publikace aplikace do konečného zpracování v ovladači tiskárny nebo zařízení.  
   
- Tisková cesta XPS je postavená na modelu XPSDrv (XPS Printer Driver Model), který poskytuje několik výhod pro vývojáře [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] , jako je tisk, vylepšená podpora barev a výrazně vyšší výkon tisku. (Další informace o XPSDrv najdete v [dokumentaci k sadě Windows Driver Kit](/windows-hardware/drivers/).)  
+ Cesta k tisku ve formátu XPS je postavená na modelu XPSDrv (XPS Printer Driver Model), který poskytuje několik výhod pro vývojáře, jako je například "co vidíte" (WYSIWYG), vylepšená podpora barev a výrazně Vylepšený výkon tisku. (Další informace o XPSDrv najdete v [dokumentaci k sadě Windows Driver Kit](/windows-hardware/drivers/).)  
   
  Operace zařazování tisku pro dokumenty XPS je v podstatě stejná jako v předchozích verzích Windows. Kromě existující cesty pro tisk v rozhraní GDI se ale vylepšila podpora cesty k tisku XPS. Nová cesta pro tisk nativně spotřebovává soubor zařazování XPS. I když budou ovladače tiskáren v uživatelském režimu napsané pro předchozí verze Windows i nadále fungovat, vyžaduje se ovladač tiskárny XPS (XPSDrv), aby bylo možné použít tiskovou cestu XPS.  
   
  Výhody tiskové cesty XPS jsou významné a zahrnují:  
   
-- [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)]Podpora tisku  
+- Podpora tisku v režimu WYSIWYG  
   
 - Nativní podpora pokročilých barevných profilů, mezi které patří 32 bitů na kanál (bitů), CMYK, pojmenované barvy, n-tiskové a nativní podpora transparentnosti a přechodů.  
   
-- Vylepšený výkon tisku pro .NET Framework [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] i aplikace založené na systému.  
+- Vylepšený výkon tisku pro aplikace .NET Framework i [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)].  
   
 - Standardní formát XPS v oboru.  
   
- Pro základní scénáře tisku je k dispozici jednoduché a intuitivní rozhraní API s jedním vstupním bodem pro uživatelské rozhraní, konfiguraci a odeslání úlohy. V případě pokročilých scénářů je další podpora přidána [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] k přizpůsobení (nebo [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vůbec ne všem), synchronnímu nebo asynchronnímu tisku a možnostem dávkového tisku. Obě možnosti poskytují podporu tisku v režimu úplného nebo částečného vztahu důvěryhodnosti.  
+ Pro základní scénáře tisku je k dispozici jednoduché a intuitivní rozhraní API s jedním vstupním bodem pro uživatelské rozhraní, konfiguraci a odeslání úlohy. V případě pokročilých scénářů je přidána další podpora pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] přizpůsobení (nebo žádné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vůbec), synchronní nebo asynchronní tisk a možnosti dávkového tisku. Obě možnosti poskytují podporu tisku v režimu úplného nebo částečného vztahu důvěryhodnosti.  
   
  XPS je navržený s ohledem na rozšiřitelnost. Pomocí architektury rozšiřitelnosti můžete funkce a možnosti Přidat do XPS modulárním způsobem. Mezi funkce rozšíření patří:  
   
@@ -60,34 +60,34 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
 - Kanál rozšiřitelného filtru. Kanál filtru XPS tiskárny (XPSDrv) byl navržen tak, aby umožňoval přímý i škálovatelný tisk dokumentů XPS. Další informace najdete v tématu [ovladače tiskáren XPSDrv](/windows-hardware/drivers/print/xpsdrv-printer-drivers). 
   
 ### <a name="print-path-architecture"></a>Architektura cesty tisku  
- I [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] když aplikace .NET Framework podporují [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] XPS a model Windows Forms aplikace používají k převodu formátu XPS pro ovladač tiskárny XPS Formát GDI (XPSDrv). Tyto aplikace nejsou nutné k použití tiskové cesty XPS a můžou dál používat tisk založený na rozšířených metasouborech (EMF). Většina funkcí a vylepšení XPS je ale dostupná jenom pro aplikace, které cílí na tiskovou cestu XPS.  
+ I když aplikace [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] i .NET Framework podporují XPS, [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a model Windows Forms aplikace k vytvoření obsahu XPS pro ovladač tiskáren XPS (XPSDrv) používá rozhraní GDI pro převod na formát XPS. Tyto aplikace nejsou nutné k použití tiskové cesty XPS a můžou dál používat tisk založený na rozšířených metasouborech (EMF). Většina funkcí a vylepšení XPS je ale dostupná jenom pro aplikace, které cílí na tiskovou cestu XPS.  
   
- Aby bylo možné povolit používání tiskáren [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] založených na XPSDrv a aplikací model Windows Forms, ovladač tiskárny XPS (XPSDrv) podporuje převod GDI na formát XPS. Model XPSDrv také poskytuje převaděč pro formát XPS do formátu GDI, [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] takže aplikace mohou tisknout dokumenty XPS. Pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace se převod formátu XPS na formát GDI provádí automaticky <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> pomocí metod <xref:System.Windows.Xps.XpsDocumentWriter> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> třídy vždy, když cílová tisková fronta operace zápisu nemá ovladač XPSDrv. (Model Windows Forms aplikace nemůžou tisknout dokumenty XPS.)  
+ Pokud chcete povolit používání tiskáren založených na XPSDrv [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a model Windows Formsch aplikací, ovladač tiskárny XPS (XPSDrv) podporuje převod GDI na formát XPS. Model XPSDrv také poskytuje převaděč pro formát XPS do formátu GDI, takže [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace mohou tisknout dokumenty XPS. Pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace je převod formátu XPS na formát GDI proveden automaticky pomocí metod <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> třídy <xref:System.Windows.Xps.XpsDocumentWriter> vždy, když cílová tisková fronta operace zápisu nemá ovladač XPSDrv. (Model Windows Forms aplikace nemůžou tisknout dokumenty XPS.)  
   
  Následující obrázek znázorňuje podsystém tisku a definuje části poskytované společností Microsoft a části definované výrobci softwaru a hardwaru:  
   
  ![Snímek obrazovky ukazuje tiskový systém XPS.](./media/printing-overview/xml-paper-specification-print-system.png)  
   
 ### <a name="basic-xps-printing"></a>Základní tisk XPS  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]definuje základní i pokročilé rozhraní API. Pro aplikace, které nevyžadují rozsáhlé přizpůsobení tisku nebo přístup k kompletní sadě funkcí XPS, je k dispozici podpora základní tiskárny. Základní podpora tisku je dostupná prostřednictvím ovládacího prvku tiskového dialogu, který vyžaduje minimální konfiguraci a funkce [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], které jsou známé. K dispozici je mnoho funkcí XPS pomocí tohoto zjednodušeného tiskového modelu.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] definuje základní i pokročilé rozhraní API. Pro aplikace, které nevyžadují rozsáhlé přizpůsobení tisku nebo přístup k kompletní sadě funkcí XPS, je k dispozici podpora základní tiskárny. Základní podpora tisku se zveřejňuje prostřednictvím ovládacího prvku tiskového dialogu, který vyžaduje minimální konfiguraci a nabízí známý [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. K dispozici je mnoho funkcí XPS pomocí tohoto zjednodušeného tiskového modelu.  
   
 #### <a name="printdialog"></a>PrintDialog  
- Ovládací prvek poskytuje jeden vstupní bod pro [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]odesílání, konfiguraci a odeslání úlohy ve formátu XPS. <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> Informace o vytvoření instance a použití ovládacího prvku naleznete v tématu [vyvolání dialogového okna pro tisk](how-to-invoke-a-print-dialog.md).  
+ Ovládací prvek <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> poskytuje jeden vstupní bod pro [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], konfiguraci a odeslání úlohy ve formátu XPS. Informace o vytvoření instance a použití ovládacího prvku naleznete v tématu [vyvolání dialogového okna pro tisk](how-to-invoke-a-print-dialog.md).  
   
 ### <a name="advanced-xps-printing"></a>Pokročilý tisk do XPS  
- Pro přístup k kompletní sadě funkcí XPS se musí použít pokročilé rozhraní API pro tisk. Několik relevantních rozhraní API je podrobněji popsáno níže. Úplný seznam rozhraní API pro tisk ve formátu XPS najdete v odkazech <xref:System.Printing> na <xref:System.Windows.Xps> obor názvů a.  
+ Pro přístup k kompletní sadě funkcí XPS se musí použít pokročilé rozhraní API pro tisk. Několik relevantních rozhraní API je podrobněji popsáno níže. Úplný seznam rozhraní API pro tisk ve formátu XPS najdete v odkazech na obor názvů <xref:System.Windows.Xps> a <xref:System.Printing>.  
   
 #### <a name="printticket-and-printcapabilities"></a>PrintTicket a PrintCapabilities  
- Třídy <xref:System.Printing.PrintTicket> a<xref:System.Printing.PrintCapabilities> jsou základem pokročilých funkcí XPS. Oba typy objektů jsou formátované [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] struktury funkcí orientovaných na tisk, jako jsou kolace, oboustranný tisk, sešívání atd. Tyto struktury jsou definovány schématem tisku. A <xref:System.Printing.PrintTicket> dává pokyn k tomu, jak zpracovat tiskovou úlohu. <xref:System.Printing.PrintCapabilities> Třída definuje možnosti tiskárny. Díky dotazování na možnosti tiskárny <xref:System.Printing.PrintTicket> je možné vytvořit, který plně využívá podporované funkce tiskárny. Podobně je možné vyhnout se nepodporovaným funkcím.  
+ Třídy <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintCapabilities> jsou základem pokročilých funkcí XPS. Oba typy objektů jsou [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] formátované struktury funkcí orientovaných na tisk, jako jsou kolace, oboustranný tisk, sešívání atd. Tyto struktury jsou definovány schématem tisku. <xref:System.Printing.PrintTicket> instruuje tiskárnu, jak zpracovat tiskovou úlohu. Třída <xref:System.Printing.PrintCapabilities> definuje možnosti tiskárny. Díky dotazování na možnosti tiskárny je možné vytvořit <xref:System.Printing.PrintTicket>, která plně využívá podporované funkce tiskárny. Podobně je možné vyhnout se nepodporovaným funkcím.  
   
- Následující příklad ukazuje, jak zadat dotaz na <xref:System.Printing.PrintCapabilities> tiskárnu a <xref:System.Printing.PrintTicket> vytvořit pomocí kódu.  
+ Následující příklad ukazuje, jak zadat dotaz na <xref:System.Printing.PrintCapabilities> tiskárny a vytvořit <xref:System.Printing.PrintTicket> pomocí kódu.  
   
  [!code-cpp[xpscreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
  [!code-csharp[xpscreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
  [!code-vb[xpscreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
   
 #### <a name="printserver-and-printqueue"></a>Tiskový_server a tisková fronta  
- Třída představuje tiskový server sítě <xref:System.Printing.PrintQueue> a třída představuje tiskárnu a výstupní frontu úloh, která je k ní přidružená. <xref:System.Printing.PrintServer> Tato rozhraní API dohromady umožňují pokročilou správu tiskových úloh serveru. A <xref:System.Printing.PrintServer>, nebo jedna z jeho odvozených tříd, se používá ke <xref:System.Printing.PrintQueue>správě. <xref:System.Printing.PrintQueue.AddJob%2A> Metoda slouží k vložení nové tiskové úlohy do fronty.  
+ Třída <xref:System.Printing.PrintServer> představuje tiskový server sítě a třída <xref:System.Printing.PrintQueue> představuje tiskárnu a výstupní frontu úloh, která je k ní přidružená. Tato rozhraní API dohromady umožňují pokročilou správu tiskových úloh serveru. Pro správu <xref:System.Printing.PrintQueue>se používá <xref:System.Printing.PrintServer>nebo jedna z jeho odvozených tříd. Metoda <xref:System.Printing.PrintQueue.AddJob%2A> slouží k vložení nové tiskové úlohy do fronty.  
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Printing.LocalPrintServer> a přistupovat ke svému výchozímu <xref:System.Printing.PrintQueue> pomocí kódu.  
   
@@ -95,18 +95,18 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
  [!code-vb[xpsprint#PrintQueueSnip](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#printqueuesnip)]  
   
 #### <a name="xpsdocumentwriter"></a>XpsDocumentWriter  
- Spolu s <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> mnoha metodami <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a se používá k zápisu dokumentů XPS do <xref:System.Printing.PrintQueue>. <xref:System.Windows.Xps.XpsDocumentWriter> Například <xref:System.Windows.Xps.XpsDocumentWriter.Write%28System.Windows.Documents.FixedPage%2CSystem.Printing.PrintTicket%29> metoda se používá pro výstup dokumentu XPS a <xref:System.Printing.PrintTicket> synchronně. Metoda se používá pro výstup dokumentu XPS a <xref:System.Printing.PrintTicket> asynchronně. <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%28System.Windows.Documents.FixedDocument%2CSystem.Printing.PrintTicket%29>  
+ <xref:System.Windows.Xps.XpsDocumentWriter>s mnoha metodami <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> se používá k zápisu dokumentů XPS do <xref:System.Printing.PrintQueue>. Například metoda <xref:System.Windows.Xps.XpsDocumentWriter.Write%28System.Windows.Documents.FixedPage%2CSystem.Printing.PrintTicket%29> se používá pro výstup dokumentu XPS a <xref:System.Printing.PrintTicket> synchronně. Metoda <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%28System.Windows.Documents.FixedDocument%2CSystem.Printing.PrintTicket%29> se používá pro výstup dokumentu XPS a <xref:System.Printing.PrintTicket> asynchronně.  
   
- Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Xps.XpsDocumentWriter> kód pomocí kódu.  
+ Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Xps.XpsDocumentWriter> pomocí kódu.  
   
  [!code-csharp[XpsPrint#PrintQueueSnip](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#printqueuesnip)]
  [!code-vb[XpsPrint#PrintQueueSnip](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#printqueuesnip)]  
   
- <xref:System.Printing.PrintQueue.AddJob%2A> Metody také poskytují způsoby tisku. Viz [programové tisk souborů XPS](how-to-programmatically-print-xps-files.md). , kde najdete podrobnosti.  
+ Metody <xref:System.Printing.PrintQueue.AddJob%2A> také poskytují způsoby tisku. Viz [programové tisk souborů XPS](how-to-programmatically-print-xps-files.md). , kde najdete podrobnosti.  
   
 <a name="GDI_Print_Path_intro"></a>   
 ## <a name="gdi-print-path"></a>Cesta pro tisk GDI  
- I [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] když aplikace nativně podporují tiskovou [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] cestu XPS a aplikace model Windows Forms mohou také využívat některé funkce XPS. Ovladač tiskárny XPS (XPSDrv) může převést výstup založený na GDI na formát XPS. V případě pokročilých scénářů se vlastní konverze obsahu podporuje pomocí [převaděče dokumentů Microsoft XPS (MXDC)](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-). Podobně aplikace mohou také výstup do cesty pro tisk GDI voláním jedné <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> z metod <xref:System.Windows.Xps.XpsDocumentWriter> třídy nebo <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> a určením, že XpsDrv tiskárna jako cílovou tiskovou frontu. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]  
+ I když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace nativně podporují tiskovou cestu XPS, [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a model Windows Forms aplikace můžou využívat i některé funkce XPS. Ovladač tiskárny XPS (XPSDrv) může převést výstup založený na GDI na formát XPS. V případě pokročilých scénářů se vlastní konverze obsahu podporuje pomocí [převaděče dokumentů Microsoft XPS (MXDC)](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-). Podobně [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace mohou také výstup do cesty pro tisk GDI voláním jedné z metod <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> nebo <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> třídy <xref:System.Windows.Xps.XpsDocumentWriter> a určením XpsDrv tiskárny jako cílové tiskové fronty.  
 
 U aplikací, které nevyžadují funkce a podporu XPS, zůstane aktuální cesta tisku GDI beze změny.  
   

@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: ed8771a4d79b45d8fad0e5309c886c2e00402ec7
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331990"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416717"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení hostování Azure pro ASP.NET Core Web Apps
 
@@ -76,7 +76,7 @@ V případě, že se některé větší aplikace rozdělují na vlastní menší
 
 [Další informace o vzorech návrhu, které je potřeba vzít v úvahu při sestavování systémů založených na mikroslužbách](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
 
-### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
+### <a name="azure-kubernetes-service"></a>Služba Azure Kubernetes
 
 Azure Kubernetes Service (AKS) spravuje hostované prostředí Kubernetes, díky čemuž je rychlé a snadné nasazení a Správa kontejnerových aplikací bez znalosti orchestrace kontejnerů. Také eliminuje zatížení průběžných operací a údržby díky zřizování, upgradování a škálování prostředků na vyžádání bez nutnosti přepínat aplikace do offline režimu.
 
@@ -102,13 +102,13 @@ Azure Dev Spaces:
 
 [Další informace o Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
 
-### <a name="azure-virtual-machines"></a>Azure Virtual Machines
+### <a name="azure-virtual-machines"></a>Virtual Machines Azure
 
 Pokud máte existující aplikaci, která by vyžadovala významné změny pro spuštění v App Service, můžete zvolit Virtual Machines, aby bylo možné zjednodušit migraci do cloudu. Správná konfigurace, zabezpečení a údržba virtuálních počítačů ale vyžaduje mnohem více času a odbornost IT v porovnání s Azure App Service. Pokud zvažujete Virtual Machines Azure, ujistěte se, že jste přihlédli k probíhajícímu úsilí údržby potřebnému k opravě, aktualizaci a správě prostředí virtuálních počítačů. Azure Virtual Machines je infrastruktura jako služba (IaaS), zatímco App Service je PaaS. Měli byste taky zvážit, jestli nasazování aplikace jako kontejneru Windows do Web App for Containers může být možnost životaschopná pro váš scénář.
 
 ## <a name="logical-processes"></a>Logické procesy
 
-Jednotlivé logické procesy, které je možné oddělit od zbytku aplikace, je možné nasadit nezávisle na Azure Functions způsobem bez serveru. Azure Functions vám umožňuje napsat kód, který potřebujete pro daný problém, aniž byste se museli starat o aplikaci nebo infrastrukturu, kterou by mohli spustit. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C @ no__t-0, F @ no__t-1, Node. js, Pythonu a PHP, což vám umožní vybrat pro daný úkol nejúčinnější jazyk. Podobně jako u většiny cloudových řešení platíte jenom za využité množství času a můžete Azure Functions důvěřovat, abyste mohli škálovat podle potřeby.
+Jednotlivé logické procesy, které je možné oddělit od zbytku aplikace, je možné nasadit nezávisle na Azure Functions způsobem bez serveru. Azure Functions vám umožňuje napsat kód, který potřebujete pro daný problém, aniž byste se museli starat o aplikaci nebo infrastrukturu, kterou by mohli spustit. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C\#, F\#, Node. js, Pythonu a PHP, což vám umožní vybrat si pro daný úkol nejvíc produktivní jazyk. Podobně jako u většiny cloudových řešení platíte jenom za využité množství času a můžete Azure Functions důvěřovat, abyste mohli škálovat podle potřeby.
 
 ## <a name="data"></a>Data
 
@@ -116,7 +116,7 @@ Azure nabízí širokou škálu možností úložiště dat, takže vaše aplika
 
 V případě transakčních, relačních dat je nejlepší volbou Azure SQL Database. Pro vysoce výkonná data pro čtení, která jsou převážně pro čtení, je Redis mezipaměť zajištěná Azure SQL Database dobrým řešením.
 
-Nestrukturovaná data JSON můžete ukládat různými způsoby, od SQL Database sloupců po objekty blob nebo tabulek v Azure Storage až po DocumentDB. Z toho DocumentDB nabízí nejlepší funkce pro dotazování a je doporučenou možností pro velký počet dokumentů založených na JSON, které musí podporovat dotazování.
+Nestrukturovaná data JSON můžete ukládat různými způsoby, od SQL Database sloupců až po objekty blob nebo tabulky v Azure Storage Azure Cosmos DB. Z těchto důvodů Azure Cosmos DB nabízí nejlepší funkce pro dotazování a je doporučenou možností pro velký počet dokumentů založených na JSON, které musí podporovat dotazování.
 
 Přechodná data založená na příkazech nebo událostech sloužících k orchestraci chování aplikace mohou používat fronty Azure Service Bus nebo Azure Storage. Azure Storage sběrnice nabízí větší flexibilitu a je doporučenou službou pro netriviální zasílání zpráv v rámci aplikací a mezi nimi.
 

@@ -9,16 +9,16 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: 8cc1d1461a33ab94f8ae399d6ff40f26eaf7f74a
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: d1e30162cbce65193783d2fb0607900f209cc648
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039454"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422689"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 
-`namespace` Klíčové slovo slouží k deklaraci oboru, který obsahuje sadu souvisejících objektů. Obor názvů můžete použít k uspořádání prvků kódu a k vytvoření globálně jedinečných typů.
+Klíčové slovo `namespace` slouží k deklaraci oboru, který obsahuje sadu souvisejících objektů. Obor názvů můžete použít k uspořádání prvků kódu a k vytvoření globálně jedinečných typů.
 
 [!code-csharp[csrefKeywordsNamespace#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#1)]
 
@@ -36,13 +36,13 @@ V rámci oboru názvů můžete deklarovat nula nebo více následujících typ�
 
 - [enum](enum.md)
 
-- [delegate](delegate.md)
+- [delegate](../builtin-types/reference-types.md)
 
 Bez ohledu na to, jestli explicitně deklarujete obor C# názvů ve zdrojovém souboru, kompilátor přidá výchozí obor názvů. Tento nepojmenovaný obor názvů, který se někdy označuje jako globální obor názvů, se nachází v každém souboru. Libovolný identifikátor v globálním oboru názvů je k dispozici pro použití v pojmenovaném oboru názvů.
 
 Obory názvů mají implicitně veřejný přístup a nelze je upravovat. Diskuzi o modifikátorech přístupu, které můžete přiřadit k prvkům v oboru názvů, najdete v tématu [modifikátory přístupu](access-modifiers.md).
 
-Je možné definovat obor názvů ve dvou nebo více deklaracích. Například následující příklad definuje dvě třídy jako součást `MyCompany` oboru názvů:
+Je možné definovat obor názvů ve dvou nebo více deklaracích. Například následující příklad definuje dvě třídy jako součást oboru názvů `MyCompany`:
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
@@ -62,5 +62,5 @@ Další informace najdete v části [obory názvů](~/_csharplang/spec/namespace
 - [Klíčová slova jazyka C#](index.md)
 - [using](using-directive.md)
 - [Použití static](using-static.md)
-- [Kvalifikátor aliasu oboru názvů`::`](../operators/namespace-alias-qualifier.md)
+- [`::` kvalifikátoru aliasu oboru názvů](../operators/namespace-alias-qualifier.md)
 - [Obory názvů](../../programming-guide/namespaces/index.md)

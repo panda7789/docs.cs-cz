@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: aef64f538aecb0fc5dadec850020d7c01d02ccbd
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 248f0410aa8fc7c4aa92b844bda19f51fcf09c6d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523548"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417598"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu Dynamic (C# Průvodce programováním)
 
@@ -76,7 +76,7 @@ Mnoho metod modelu COM umožňuje variace typů argumentů a návratového typu 
 
 |Název|Popis|
 |-----------|-----------------|
-|[dynamic](../../language-reference/keywords/dynamic.md)|Popisuje použití klíčového slova `dynamic`.|
+|[dynamic](../../language-reference/builtin-types/reference-types.md)|Popisuje použití klíčového slova `dynamic`.|
 |[Přehled DLR (Dynamic Language Runtime)](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Poskytuje přehled o DLR, což je běhové prostředí, které přidává sadu služeb pro dynamické jazyky do modulu CLR (Common Language Runtime).|
 |[Návod: vytváření a používání dynamických objektů](walkthrough-creating-and-using-dynamic-objects.md)|Poskytuje podrobné pokyny pro vytvoření vlastního dynamického objektu a pro vytvoření projektu, který přistupuje k knihovně `IronPython`.|
 |[Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenované a nepovinné argumenty, typ `dynamic` a další vylepšení, která usnadňují přístup k objektům rozhraní Office API.|

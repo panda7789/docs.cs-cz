@@ -5,12 +5,12 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: db42ba4916aad739bd2c9d8b547f16022fce44bd
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 043b9b85633e81670783e7870f1be7726ab07e81
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104938"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454618"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core, kterou chcete použít.
 
@@ -23,14 +23,14 @@ Výběr verze nastane:
 
 - Při spuštění příkazu sady SDK [používá sada SDK nejnovější nainstalovanou verzi](#the-sdk-uses-the-latest-installed-version).
 - Když sestavíte sestavení, [monikery cílového rozhraní definují rozhraní API doby sestavení](#target-framework-monikers-define-build-time-apis).
-- Když spustíte aplikaci .NET Core, předají se [závislé aplikace cílové architektury na více systémů](#framework-dependent-apps-roll-forward).
+- Když spustíte aplikaci .NET Core, [předají se závislé aplikace cílové architektury na více systémů](#framework-dependent-apps-roll-forward).
 - Když publikujete samostatnou aplikaci, [samostatná nasazení zahrnují vybraný modul runtime](#self-contained-deployments-include-the-selected-runtime).
 
 Zbytek tohoto dokumentu prověřuje tyto čtyři scénáře.
 
 ## <a name="the-sdk-uses-the-latest-installed-version"></a>Sada SDK používá nejnovější nainstalovanou verzi.
 
-Příkazy sady SDK `dotnet new` zahrnují `dotnet run`a. .NET Core CLI musí zvolit verzi sady SDK pro každý `dotnet` příkaz. Ve výchozím nastavení používá nejnovější sadu SDK nainstalovanou na počítači, a to i v případě, že:
+Příkazy sady SDK zahrnují `dotnet new` a `dotnet run`. .NET Core CLI musí zvolit verzi sady SDK pro každý příkaz `dotnet`. Ve výchozím nastavení používá nejnovější sadu SDK nainstalovanou na počítači, a to i v případě, že:
 
 - Projekt cílí na starší verzi modulu runtime .NET Core.
 - Nejnovější verze .NET Core SDK je verze Preview.
@@ -39,7 +39,7 @@ Můžete využít výhod nejnovějších funkcí sady SDK a vylepšení při zam
 
 Ve výjimečných případech možná budete muset použít starší verzi sady SDK. Tuto verzi zadáte v [ *globálním souboru. JSON* ](../tools/global-json.md). Zásada použít nejnovější znamená, že k určení .NET Core SDK verze starší než nejnovější nainstalovaná verze použijete jenom *Global. JSON* .
 
-soubor *Global. JSON* lze umístit kdekoli v hierarchii souborů. Rozhraní příkazového řádku vyhledá v prvním *globálním formátu JSON* směrem nahoru z adresáře projektu. Můžete určit, na které projekty se má daný soubor *Global. JSON* vztahovat na místo v systému souborů. Rozhraní .NET CLI vyhledává soubor *Global. JSON* iterativním procházením cesty směrem nahoru od aktuálního pracovního adresáře. První nalezený soubor *Global. JSON* určuje použitou verzi. Pokud je tato verze nainstalovaná, použije se tato verze. Pokud se sada SDK zadaná v *globálním formátu JSON* nenajde, rozhraní .NET CLI se vrátí na nejnovější NAINSTALOVANOU sadu SDK. Funkce přeposlání je stejná jako výchozí chování, pokud se nenajde soubor *Global. JSON* .
+soubor *Global. JSON* lze umístit kdekoli v hierarchii souborů. Rozhraní příkazového řádku vyhledá v prvním *globálním formátu JSON* směrem nahoru z adresáře projektu. Můžete určit, na které projekty se má daný soubor *Global. JSON* vztahovat na místo v systému souborů. Rozhraní .NET CLI vyhledává soubor *Global. JSON* iterativním procházením cesty směrem nahoru od aktuálního pracovního adresáře. První nalezený soubor *Global. JSON* určuje použitou verzi. Pokud je nainstalována tato verze sady SDK, je použita tato verze. Pokud se sada SDK zadaná v *globálním formátu. JSON* nenajde, rozhraní .NET CLI použije [pravidla pro porovnání](../tools/global-json.md#matching-rules) , aby vybralo kompatibilní sadu SDK, nebo se nepovede, pokud se nenajde žádná.
 
 Následující příklad ukazuje syntaxi *Global. JSON* :
 
@@ -53,37 +53,37 @@ Následující příklad ukazuje syntaxi *Global. JSON* :
 
 Postup pro výběr verze sady SDK:
 
-1. `dotnet`vyhledává soubor *Global. JSON* iterativním zpětným procházením cesty směrem nahoru od aktuálního pracovního adresáře.
-1. `dotnet`používá sadu SDK zadanou v prvním *globálním. JSON* , kterou jsme našli.
-1. `dotnet`používá nejnovější nainstalovanou sadu SDK, pokud nebyl nalezen žádný *globální. JSON* .
+1. `dotnet` vyhledává soubor *Global. JSON* iterativním zpětným přechodem na cestu směrem nahoru od aktuálního pracovního adresáře.
+1. `dotnet` používá sadu SDK zadanou v prvním *globálním. JSON* , který se našel.
+1. `dotnet` používá nejnovější nainstalovanou sadu SDK, pokud nebyl nalezen žádný *globální. JSON* .
 
 Další informace o výběru verze sady SDK najdete v části [pravidla pro porovnání](../tools/global-json.md#matching-rules) článku v tématu *Global. JSON*.
 
 ## <a name="target-framework-monikers-define-build-time-apis"></a>Monikery cílového rozhraní definují rozhraní API pro čas sestavení
 
-Projekt sestavíte proti rozhraním API definovaným v **monikeru cílového rozhraní** (TFM). V souboru projektu zadáte [cílovou architekturu](../../standard/frameworks.md) . `TargetFramework` Nastavte prvek v souboru projektu, jak je znázorněno v následujícím příkladu:
+Projekt sestavíte proti rozhraním API definovaným v **monikeru cílového rozhraní** (TFM). V souboru projektu zadáte [cílovou architekturu](../../standard/frameworks.md) . Nastavte prvek `TargetFramework` v souboru projektu, jak je znázorněno v následujícím příkladu:
 
 ``` xml
 <TargetFramework>netcoreapp2.0</TargetFramework>
 ```
 
-Projekt můžete sestavit na více TFM. Nastavení více cílových rozhraní je pro knihovny běžnější, ale lze je provádět i s aplikacemi. Zadejte `TargetFrameworks` vlastnost ( `TargetFramework`plural). Cílové rozhraní jsou odděleny středníkem, jak je znázorněno v následujícím příkladu:
+Projekt můžete sestavit na více TFM. Nastavení více cílových rozhraní je pro knihovny běžnější, ale lze je provádět i s aplikacemi. Určíte vlastnost `TargetFrameworks` (plural `TargetFramework`). Cílové rozhraní jsou odděleny středníkem, jak je znázorněno v následujícím příkladu:
 
 ``` xml
 <TargetFrameworks>netcoreapp2.0;net47</TargetFrameworks>
 ```
 
-Daná sada SDK podporuje pevnou sadu rozhraní omezené do cílové architektury modulu runtime, se kterým se dodává. Například sada .NET Core 2,0 SDK obsahuje modul runtime .NET Core 2,0, což je implementace `netcoreapp2.0` cílové architektury. Sada SDK .NET Core 2,0 podporuje `netcoreapp1.0`, `netcoreapp1.1`, a `netcoreapp2.0` nikoli `netcoreapp2.1` (nebo vyšší). Nainstalujete sadu SDK .NET Core 2,1 k sestavení pro `netcoreapp2.1`.
+Daná sada SDK podporuje pevnou sadu rozhraní omezené do cílové architektury modulu runtime, se kterým se dodává. Například sada .NET Core 2,0 SDK obsahuje modul runtime .NET Core 2,0, což je implementace `netcoreapp2.0` Target Framework. Sada .NET Core 2,0 SDK podporuje `netcoreapp1.0`, `netcoreapp1.1`a `netcoreapp2.0` ale nikoli `netcoreapp2.1` (nebo vyšší). Nainstalujete sadu .NET Core 2,1 SDK pro sestavení pro `netcoreapp2.1`.
 
 .NET Standard cílové architektury jsou také omezené do cílové architektury modulu runtime, se kterým sada SDK dodává. Sada .NET Core 2,0 SDK je omezené na `netstandard2.0`.
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikace závislé na architektuře – předávají změny
 
-Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md)nástrojem, z [**nasazení závislého**](../deploying/index.md#framework-dependent-deployments-fdd) na rozhraní [`dotnet myapp.dll`](../tools/dotnet.md#description)s nástrojem nebo `myapp.exe`z [**spustitelného souboru závislého**](../deploying/index.md#framework-dependent-executables-fde) na rozhraní `dotnet` , je spustitelný soubor **hostitelem** pro aplikaci.
+Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md), z [**nasazení závislého na rozhraní**](../deploying/index.md#framework-dependent-deployments-fdd) s [`dotnet myapp.dll`](../tools/dotnet.md#description)nebo ze [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#framework-dependent-executables-fde) s `myapp.exe`, je spustitelný soubor `dotnet` **hostitelem** . pro aplikaci.
 
-Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Například pokud jste zadali `netcoreapp2.0` v souboru projektu a `2.0.4` je nainstalován nejnovější modul runtime `2.0.4` .NET, je použit modul runtime.
+Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Pokud jste například zadali `netcoreapp2.0` v souboru projektu a `2.0.4` je nejnovějším nainstalovaným modulem runtime .NET, je použita `2.0.4` modul runtime.
 
-Pokud se nenajde `2.0.*` žádná přijatelná verze, použije se `2.*` nová verze. Pokud jste například zadali `netcoreapp2.0` a pouze `2.1.0` nainstalovali, aplikace se spustí pomocí `2.1.0` modulu runtime. Toto chování se označuje jako "dílčí verze – přeposílání". Nižší verze se taky nepovažují za. Pokud není nainstalován žádný přijatelný modul runtime, aplikace se nespustí.
+Pokud se nenajde žádná přijatelná verze `2.0.*`, použije se nová verze `2.*`. Pokud jste například zadali `netcoreapp2.0` a nainstalujete pouze `2.1.0`, aplikace bude spuštěna pomocí modulu runtime `2.1.0`. Toto chování se označuje jako "dílčí verze – přeposílání". Nižší verze se taky nepovažují za. Pokud není nainstalován žádný přijatelný modul runtime, aplikace se nespustí.
 
 Několik příkladů použití ukazuje chování, pokud cílíte na 2,0:
 
@@ -104,9 +104,9 @@ Je možné, že se 2.0.5 a 2.2.2 chovají jinak, zejména u scénářů, jako je
 
 Aplikaci můžete publikovat jako [**samostatně uzavřenou distribuci**](../deploying/index.md#self-contained-deployments-scd). Tento přístup naváže modul runtime a knihovny .NET Core s vaší aplikací. Samostatně obsažená nasazení nemají závislost na běhových prostředích. K výběru verze modulu runtime dojde v době publikování, nikoli v době běhu.
 
-Proces publikování vybere nejnovější verzi opravy dané rodiny modulu runtime. Například `dotnet publish` vybere .NET Core 2.0.4, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 2,0. Cílová architektura (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalená spolu s aplikací.
+Proces publikování vybere nejnovější verzi opravy dané rodiny modulu runtime. `dotnet publish` například vybere možnost .NET Core 2.0.4, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 2,0. Cílová architektura (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalená spolu s aplikací.
 
-Jedná se o chybu, pokud není splněna minimální verze určená pro aplikaci. `dotnet publish`váže se k nejnovější verzi opravy modulu runtime (v rámci dané hlavní skupiny. podverze). `dotnet publish`nepodporují sémantiku `dotnet run`předávaného při přeposílání. Další informace o opravách a samostatných nasazeních najdete v článku o [výběru oprav pro modul runtime](../deploying/runtime-patch-selection.md) v tématu nasazení aplikací .NET Core.
+Jedná se o chybu, pokud není splněna minimální verze určená pro aplikaci. `dotnet publish` váže k nejnovější verzi opravy modulu runtime (v rámci dané hlavní skupiny. podverze). `dotnet publish` nepodporuje sémantiku přeposílání `dotnet run`. Další informace o opravách a samostatných nasazeních najdete v článku o [výběru oprav pro modul runtime](../deploying/runtime-patch-selection.md) v tématu nasazení aplikací .NET Core.
 
 Samostatně obsažená nasazení mohou vyžadovat konkrétní verzi opravy. Můžete přepsat minimální verzi opravy modulu runtime (na vyšší nebo nižší verze) v souboru projektu, jak je znázorněno v následujícím příkladu:
 
@@ -114,4 +114,4 @@ Samostatně obsažená nasazení mohou vyžadovat konkrétní verzi opravy. Mů�
 <RuntimeFrameworkVersion>2.0.4</RuntimeFrameworkVersion>
 ```
 
-`RuntimeFrameworkVersion` Element přepíše výchozí zásadu verze. Pro samostatně obsažená nasazení `RuntimeFrameworkVersion` určuje aplikace *přesnou* verzi rozhraní Runtime. U aplikací závislých na `RuntimeFrameworkVersion` rozhraní určuje *minimální* požadovanou verzi rozhraní Runtime.
+Element `RuntimeFrameworkVersion` přepisuje výchozí zásadu verze. Pro samostatně zahrnutá nasazení `RuntimeFrameworkVersion` Určuje *přesnou* verzi rozhraní Runtime. Pro aplikace závislé na rozhraní `RuntimeFrameworkVersion` Určuje *minimální* požadovanou verzi rozhraní Runtime.

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 7b22bbf75b29fdffd9927110ebe5b4e5309cd778
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 01ea71f3de9e30abe25184e38a59f3707b54bd5a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191834"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422976"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (C# možnosti kompilátoru)
 Možnost **-doc** slouží k umístění dokumentačních komentářů do souboru XML.  
@@ -35,7 +35,7 @@ Možnost **-doc** slouží k umístění dokumentačních komentářů do soubor
 ## <a name="remarks"></a>Poznámky  
  V souborech zdrojového kódu lze do souboru XML zpracovat a přidat dokumentační komentáře, které předcházejí následujícímu:  
   
-- Takové uživatelsky definované typy jako [Třída](../keywords/class.md), [delegát](../keywords/delegate.md)nebo [rozhraní](../keywords/interface.md)  
+- Takové uživatelsky definované typy jako [Třída](../keywords/class.md), [delegát](../builtin-types/reference-types.md#the-delegate-type)nebo [rozhraní](../keywords/interface.md)  
   
 - Tito členové jako pole, [událost](../keywords/event.md), [vlastnost](../../programming-guide/classes-and-structs/using-properties.md)nebo metoda  
   

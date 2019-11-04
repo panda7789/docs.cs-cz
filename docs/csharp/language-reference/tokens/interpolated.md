@@ -11,12 +11,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: 5f0388d90119455833eb6dba6ac808cdc8517865
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cda8582da9ca8262ec2ce6bcfbb76e2e2f5f6006
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101660"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421847"
 ---
 # <a name="---string-interpolation-c-reference"></a>$-Řetězcová interpolaceC# (Referenční dokumentace)
 
@@ -58,7 +58,7 @@ Následující příklad ukazuje, jak zahrnout složenou závorku ve výsledném
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Interpolované doslovné řetězce začíná znakem `$` následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../keywords/string.md) a [doslovného identifikátoru](verbatim.md) .
+Interpolované doslovné řetězce začíná znakem `$` následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../builtin-types/reference-types.md) a [doslovného identifikátoru](verbatim.md) .
 
 > [!NOTE]
 > Počínaje C# 8,0 můžete použít tokeny`$`a`@`v libovolném pořadí: `$@"..."`i`@$"..."`jsou platné interpolované řetězce. V dřívějších C# verzích musí být token `$` uveden před tokenem `@`.

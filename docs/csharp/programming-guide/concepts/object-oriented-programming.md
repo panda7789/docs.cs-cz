@@ -2,12 +2,12 @@
 title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 50b38833582ebe46836ccfab4e1ebeb98b53a96e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 121d2e43f6896179756067e661be6d7960a1ee64
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659867"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418049"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -53,7 +53,7 @@ Tato část popisuje následující koncepty:
 
 - [Obecné typy](#Generics)
 
-- [Delegáti](#Delegates)
+- [Delegáty](#Delegates)
 
 ## <a name="Classes"></a>Třídy a objekty
 
@@ -129,7 +129,7 @@ class SampleClass
 }
 ```
 
-Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V C#nástroji můžete vynechat `get` metodu nebo `set` metody vlastnosti. Automaticky implementované vlastnosti ale nemůžou být jen pro čtení nebo jen pro zápis.
+Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V C#nástroji můžete vynechat metodu vlastnosti `get` nebo `set`. Automaticky implementované vlastnosti ale nemůžou být jen pro čtení nebo jen pro zápis.
 
 Další informace naleznete v tématu:
 
@@ -170,7 +170,7 @@ Další informace naleznete v tématu:
 
 - [Rozšiřující metody](../classes-and-structs/extension-methods.md)
 
-#### <a name="Constructors"></a> Konstruktory
+#### <a name="Constructors"></a>Konstruktory
 
 Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu. Konstruktory obvykle inicializují datové členy nového objektu. Konstruktor lze spustit pouze jednou při vytvoření třídy. Kromě toho kód v konstruktoru se vždy spouští před jakýmkoli jiným kódem ve třídě. Můžete však vytvořit více přetížení konstruktoru stejným způsobem jako u jakékoli jiné metody.
 
@@ -190,7 +190,7 @@ Další informace naleznete v tématu:
 
 [Konstruktory](../classes-and-structs/constructors.md).
 
-#### <a name="Finalizers"></a> Finalizační metody
+#### <a name="Finalizers"></a>Finalizační metody
 
 Finalizační metody slouží k destrukci instancí tříd. V .NET Framework systém uvolňování paměti automaticky spravuje přidělování a uvolňování paměti pro spravované objekty ve vaší aplikaci. Nicméně stále budete potřebovat finalizační metody k vyčištění všech nespravovaných prostředků, které vaše aplikace vytvoří. Pro třídu může existovat pouze jeden finalizační metoda.
 
@@ -198,13 +198,13 @@ Další informace o finalizační a uvolňování paměti v .NET Framework nalez
 
 #### <a name="Events"></a>Událost
 
-Události umožňují třídě nebo objektu upozornit jiné třídy nebo objekty, když dojde k nějakému zájmu. Třída, která odesílá (nebo vyvolává) událost, se nazývá *Vydavatel* a třídy, které přijmou (nebo zpracovávají) událost se nazývají předplatitelé. Další informace o událostech, jak jsou vyvolány a zpracovávány, naleznete v tématu [events](../../../standard/events/index.md).
+Události umožňují třídě nebo objektu upozornit jiné třídy nebo objekty, když dojde k nějakému zájmu. Třída, která odesílá (nebo vyvolává) událost, se nazývá *Vydavatel* a třídy, které přijmou (nebo zpracovávají) událost se nazývají *předplatitelé*. Další informace o událostech, jak jsou vyvolány a zpracovávány, naleznete v tématu [events](../../../standard/events/index.md).
 
 - Chcete-li deklarovat událost ve třídě, použijte klíčové slovo [Event](../../language-reference/keywords/event.md) .
 
 - Chcete-li vyvolat událost, vyvolejte delegáta události.
 
-- Chcete-li se přihlásit k odběru události `+=` , použijte operátor; Chcete-li zrušit odběr události, `-=` použijte operátor.
+- K přihlášení k odběru události použijte operátor `+=`; Chcete-li zrušit odběr události, použijte operátor `-=`.
 
 #### <a name="NestedClasses"></a>Vnořené třídy
 
@@ -309,11 +309,11 @@ var sampleObject =
     new { FirstProperty = "A", SecondProperty = "B" };
 ```
 
-Další informace naleznete v tématu: [Anonymní typy](../classes-and-structs/anonymous-types.md).
+Další informace najdete v tématech: [anonymní typy](../classes-and-structs/anonymous-types.md).
 
 ## <a name="Inheritance"></a>Dědičnost
 
-Dědičnost umožňuje vytvořit novou třídu, která znovu používá, rozšiřuje a upravuje chování, které je definováno v jiné třídě. Třída, jejíž členové jsou zděděni, se nazývají *základní třídu*a třída, která dědí tyto členy, se nazývá *odvozená třída*. Nicméně všechny třídy v C# implicitně dědí z <xref:System.Object> třídy, která podporuje hierarchii tříd .NET a poskytuje služby nižší úrovně pro všechny třídy.
+Dědičnost umožňuje vytvořit novou třídu, která znovu používá, rozšiřuje a upravuje chování, které je definováno v jiné třídě. Třída, jejíž členové jsou zděděni, se nazývají *základní třídu*a třída, která dědí tyto členy, se nazývá *odvozená třída*. Nicméně všechny třídy v C# implicitně dědí z třídy <xref:System.Object>, která podporuje hierarchii tříd .NET a poskytuje služby nižší úrovně pro všechny třídy.
 
 > [!NOTE]
 > C#nepodporuje vícenásobnou dědičnost. To znamená, že můžete zadat pouze jednu základní třídu pro odvozenou třídu.
@@ -448,9 +448,9 @@ class SampleClass
 
 Další informace naleznete v tématu:
 
-- [Delegáti](../delegates/index.md)
+- [Delegáty](../delegates/index.md)
 
-- [delegate](../../language-reference/keywords/delegate.md)
+- [delegate](../../language-reference/builtin-types/reference-types.md)
 
 ## <a name="see-also"></a>Viz také:
 

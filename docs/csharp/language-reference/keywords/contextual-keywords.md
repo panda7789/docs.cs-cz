@@ -5,12 +5,12 @@ ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: d16d8fee58f4480bc83da884caf0ff15981b09af
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 9197ebb1fa48011c60a6d224497e57a604870fc3
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168617"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422872"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ Kontextové klíčové slovo se používá k poskytnutí konkrétního významu 
 |[add](./add.md)|Definuje vlastní přistupující událost, která je vyvolána, když se kód klienta přihlašuje k odběru události.|  
 |[async](./async.md)|Označuje, že upravená metoda, výraz lambda nebo anonymní metoda jsou asynchronní.|  
 |[await](../operators/await.md)|Pozastaví asynchronní metodu, dokud není dokončen očekávaný úkol.|  
-|[dynamic](./dynamic.md)|Definuje odkazový typ, který umožňuje operace obejít kontrolu typu při kompilaci.|  
+|[dynamic](../builtin-types/reference-types.md)|Definuje odkazový typ, který umožňuje operace obejít kontrolu typu při kompilaci.|  
 |[get](./get.md)|Definuje metodu přistupujícího objektu pro vlastnost nebo indexer.|  
 |[global](../operators/namespace-alias-qualifier.md)|Alias globálního oboru názvů, který je jinak nepojmenovaný.|  
 |[partial](./partial-type.md)|Definuje částečné třídy, struktury a rozhraní v rámci stejné kompilační jednotky.|  
@@ -29,7 +29,7 @@ Kontextové klíčové slovo se používá k poskytnutí konkrétního významu 
 |[set](./set.md)|Definuje metodu přistupujícího objektu pro vlastnost nebo indexer.|  
 |[value](./value.md)|Slouží k nastavení přístupových objektů a k přidávání nebo odebírání obslužných rutin událostí.|  
 |[var](./var.md)|Povoluje typ proměnné deklarované v rozsahu metody, který má kompilátor určit.|  
-|[Kdy](when.md)|Určuje podmínku filtru pro `catch` blok `case` nebo popisek `switch` příkazu.|
+|[Kdy](when.md)|Určuje podmínku filtru pro `catch` blok nebo `case` Popisek příkazu `switch`.|
 |[,](./where-generic-type-constraint.md)|Přidá omezení do Obecné deklarace. (Viz také [WHERE](./where-clause.md)).|  
 |[yield](./yield.md)|Používá se v bloku iterátoru k vrácení hodnoty objektu enumerátoru nebo k signalizaci konce iterace.|  
   

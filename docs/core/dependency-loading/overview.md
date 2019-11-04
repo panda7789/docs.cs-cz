@@ -5,16 +5,16 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: 0388bd1fa29ce1caad93c917503dac9eed8974e1
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f6b5fc1f92171b61dcab162b782ca7212c602d76
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926397"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416669"
 ---
 # <a name="dependency-loading-in-net-core"></a>Načítání závislostí v .NET Core
 
-Každá aplikace .NET Core má závislosti. I jednoduchá `hello world` aplikace má závislosti na částech knihoven tříd .NET Core.
+Každá aplikace .NET Core má závislosti. I jednoduchá aplikace `hello world` má závislosti na částech knihoven tříd .NET Core.
 
 Porozumění logice načítání výchozích sestavení .NET Core vám může pomáhat pochopit a ladit běžné problémy s nasazením.
 
@@ -22,7 +22,7 @@ V některých aplikacích se závislosti dynamicky určují za běhu. V těchto 
 
 ## <a name="understanding-assemblyloadcontext"></a>Vysvětlení používání třídy AssemblyLoadContext
 
-<xref:System.Runtime.Loader.AssemblyLoadContext> Rozhraní API je centrální pro návrh načítání .NET Core. Článek [Princip porozumění AssemblyLoadContext](understanding-assemblyloadcontext.md) poskytuje koncepční přehled návrhu.
+Rozhraní API pro <xref:System.Runtime.Loader.AssemblyLoadContext> je centrální pro návrh načítání .NET Core. Článek [Princip porozumění AssemblyLoadContext](understanding-assemblyloadcontext.md) poskytuje koncepční přehled návrhu.
 
 ## <a name="loading-details"></a>Podrobné informace o načítání
 
@@ -39,4 +39,4 @@ Kurz [Vytvoření aplikace .NET Core s moduly plug-in](../tutorials/creating-app
 
 ## <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
 
-Podrobný kurz, [Jak používat a ladit nevytížení sestavení v článku .NET Core](../../standard/assembly/unloadability-howto.md) , je podrobný postup. Ukazuje, jak načíst aplikaci .NET Core, provést a poté ji uvolnit. Článek také poskytuje tipy pro ladění.
+Podrobný kurz, [Jak používat a ladit nevytížení sestavení v článku .NET Core](../../standard/assembly/unloadability.md) , je podrobný postup. Ukazuje, jak načíst aplikaci .NET Core, provést a poté ji uvolnit. Článek také poskytuje tipy pro ladění.

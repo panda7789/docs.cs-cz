@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
-ms.openlocfilehash: 1cb6af4b43e04b231feca2f996eca0f8dc60da6c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7e38181440dec17206563aeddc809810f5155b14
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589365"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417735"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 C#programy se mohou skládat z jednoho nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy jako třídy, struktury, rozhraní, výčty a delegáty, kromě jiných oborů názvů. Níže je uveden seznam C# programu, který obsahuje všechny tyto prvky.  
@@ -28,11 +28,11 @@ C#programy se mohou skládat z jednoho nebo více souborů. Každý soubor můž
   
 - [Rozhraní](../interfaces/index.md)  
   
-- [Delegáti](../delegates/index.md)  
+- [Delegáty](../delegates/index.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [základní koncepty](~/_csharplang/spec/basic-concepts.md) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [základní koncepty](~/_csharplang/spec/basic-concepts.md) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 

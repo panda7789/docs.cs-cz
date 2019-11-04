@@ -2,12 +2,12 @@
 title: Zabezpečení zprávy pomocí služby Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 039ec21296392321fec40df2cae7383ccb3be6ea
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d27ee01636e37ac8f09c4f7dc497f14bfac1b0f1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039345"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424124"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpečení zprávy pomocí služby Řízení front zpráv
 Tato ukázka předvádí, jak implementovat aplikaci, která používá WS-Security s ověřováním certifikátů X. 509 v3 pro klienta, a vyžaduje ověření serveru pomocí certifikátu X. 509 v3 serveru přes službu MSMQ. Zabezpečení zpráv je někdy žádoucí, aby zprávy v úložišti služby MSMQ zůstaly šifrované a aplikace může provádět vlastní ověřování zprávy.
@@ -28,9 +28,9 @@ Tato ukázka předvádí, jak implementovat aplikaci, která používá WS-Secur
 
     4. Zaškrtněte políčko **transakční** .
 
-    5. Jako `ServiceModelSamplesTransacted` název nové fronty zadejte.
+    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.
 
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 
@@ -55,21 +55,21 @@ Tato ukázka předvádí, jak implementovat aplikaci, která používá WS-Secur
   
 3. Zkopírujte soubory klientských programů do adresáře klienta v klientském počítači. Zkopírujte také do klienta soubory Setup. bat, Cleanup. bat a ImportServiceCert. bat.  
   
-4. Na serveru spusťte `setup.bat service`. Při `setup.bat` spuštění`service` s argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
+4. Na serveru spusťte `setup.bat service`. Spuštění `setup.bat` s argumentem `service` vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
   
-5. Upravte Service. exe. config služby, aby odrážela nový název certifikátu (v `findValue` atributu [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), který je stejný jako plně kvalifikovaný název domény počítače.  
+5. Upravte Service. exe. config služby, aby odrážela nový název certifikátu (v atributu `findValue` v [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), který je stejný jako plně kvalifikovaný název domény počítače.  
   
 6. Zkopírujte soubor Service. cer z adresáře služby do adresáře klienta v klientském počítači.  
   
-7. Na straně klienta spusťte `setup.bat client`. Při `setup.bat` spuštění`client` s argumentem se vytvoří klientský certifikát s názvem Client.com a exportuje se klientský certifikát do souboru s názvem Client. cer.  
+7. Na straně klienta spusťte `setup.bat client`. Spuštění `setup.bat` s argumentem `client` vytvoří klientský certifikát s názvem client.com a vyexportuje klientský certifikát do souboru s názvem Client. cer.  
   
-8. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. Provedete to tak, že nahradíte localhost názvem domény na plně kvalifikovaném názvu domény serveru.  Také je nutné změnit název certifikátu služby tak, aby byl stejný jako plně kvalifikovaný název domény počítače služby ( `findValue` v atributu `defaultCertificate` v elementu `serviceCertificate` v části `clientCredentials`).  
+8. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. Provedete to tak, že nahradíte localhost názvem domény na plně kvalifikovaném názvu domény serveru.  Také je nutné změnit název certifikátu služby tak, aby byl stejný jako plně kvalifikovaný název domény počítače služby (v atributu `findValue` v prvku `defaultCertificate` `serviceCertificate` v části `clientCredentials`).  
   
 9. Zkopírujte soubor Client. cer z adresáře klienta do adresáře služby na serveru.  
   
 10. Na straně klienta spusťte `ImportServiceCert.bat`. Tím se certifikát služby importuje ze souboru Service. cer do úložiště CurrentUser-TrustedPeople.  
   
-11. Na tomto serveru `ImportClientCert.bat`tento příkaz importuje klientský certifikát ze souboru Client. cer do úložiště LocalMachine-TrustedPeople.  
+11. Na serveru spusťte `ImportClientCert.bat`, naimportuje klientský certifikát ze souboru Client. cer do úložiště LocalMachine-TrustedPeople.  
   
 12. Na počítači služby spusťte z příkazového řádku Service. exe.  
   
@@ -80,7 +80,7 @@ Tato ukázka předvádí, jak implementovat aplikaci, která používá WS-Secur
 - Po dokončení ukázky spusťte na složce Samples Cleanup. bat.  
   
     > [!NOTE]
-    > Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+    > Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
 ## <a name="requirements"></a>Požadavky
  Tato ukázka vyžaduje, aby byla služba MSMQ nainstalovaná a spuštěná.
@@ -167,7 +167,7 @@ public interface IOrderProcessor
 
  Všimněte si, že režim zabezpečení je nastavený na Message a ClientCredentialType je nastavené na certifikát.
 
- Konfigurace služby zahrnuje chování služby, které určuje přihlašovací údaje služby, které se používají, když klient ověřuje službu. Název subjektu certifikátu serveru je zadán v `findValue` atributu [ \<ServiceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).
+ Konfigurace služby zahrnuje chování služby, které určuje přihlašovací údaje služby, které se používají, když klient ověřuje službu. Název subjektu certifikátu serveru je zadaný v atributu `findValue` [\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -271,7 +271,7 @@ public class OrderProcessorService : IOrderProcessor
 
  Při spuštění zobrazí kód služby identifikaci klienta. Následuje ukázkový výstup z kódu služby:
 
-```
+```console
 The service is ready.
 Press <ENTER> to terminate service.
 
@@ -289,7 +289,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 
 - Vytváří se klientský certifikát.
 
-     Následující řádek v dávkovém souboru vytvoří klientský certifikát. Zadaný název klienta se používá v názvu subjektu vytvořeného certifikátu. Certifikát je uložený v `My` úložišti `CurrentUser` v umístění úložiště.
+     Následující řádek v dávkovém souboru vytvoří klientský certifikát. Zadaný název klienta se používá v názvu subjektu vytvořeného certifikátu. Certifikát je uložený ve službě `My` Store v umístění úložiště `CurrentUser`.
 
     ```bat
     echo ************
@@ -300,7 +300,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 
 - Probíhá instalace klientského certifikátu do důvěryhodného úložiště certifikátů serveru.
 
-     Následující řádek v dávkovém souboru zkopíruje klientský certifikát do úložiště TrustedPeople serveru, aby server mohl učinit příslušná rozhodnutí týkající se vztahu důvěryhodnosti nebo bez vztahu důvěryhodnosti. Aby byl certifikát nainstalovaný v úložišti TrustedPeople důvěryhodný službou Windows Communication Foundation (WCF), musí být režim ověřování klientského certifikátu nastaven na `PeerOrChainTrust` hodnotu nebo. `PeerTrust` V předchozí ukázce konfigurace služby se dozvíte, jak to lze provést pomocí konfiguračního souboru.
+     Následující řádek v dávkovém souboru zkopíruje klientský certifikát do úložiště TrustedPeople serveru, aby server mohl učinit příslušná rozhodnutí týkající se vztahu důvěryhodnosti nebo bez vztahu důvěryhodnosti. Aby byl certifikát nainstalovaný v úložišti TrustedPeople důvěryhodný službou Windows Communication Foundation (WCF), musí být režim ověřování klientského certifikátu nastaven na hodnotu `PeerOrChainTrust` nebo `PeerTrust`. V předchozí ukázce konfigurace služby se dozvíte, jak to lze provést pomocí konfiguračního souboru.
 
     ```bat
     echo ************
@@ -323,24 +323,24 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
-     Proměnná% Název_serveru% Určuje název serveru. Certifikát je uložený v úložišti LocalMachine. Pokud je instalační dávkový soubor spuštěn s argumentem služby (například, `setup.bat service`),% název_serveru% obsahuje plně kvalifikovaný název domény počítače. V opačném případě se použije jako localhost
+     Proměnná% Název_serveru% Určuje název serveru. Certifikát je uložený v úložišti LocalMachine. Pokud je instalační dávkový soubor spuštěn s argumentem služby (například `setup.bat service`),% název_serveru% obsahuje plně kvalifikovaný název domény počítače. V opačném případě se použije jako localhost
 
 - Instalace certifikátu serveru do důvěryhodného úložiště certifikátů klienta.
 
      Následující řádek zkopíruje certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty vygenerované pomocí nástroje MakeCert. exe nejsou implicitně důvěryhodné klientským systémem. Pokud už máte certifikát, který je rootem v důvěryhodném kořenovém certifikátu klienta – například certifikát vydaný společností Microsoft – tento krok naplnění úložiště certifikátů klienta s certifikátem serveru není vyžadován.
 
-    ```
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
     > [!NOTE]
-    > Pokud používáte jinou než U. S. Anglická edice Microsoft Windows je potřeba upravit soubor Setup. bat a nahradit název účtu NT AUTHORITY\NETWORK SERVICE svým regionálním ekvivalentem.
+    > Pokud používáte sadu Microsoft Windows, která není v jazykové verzi, musíte upravit soubor Setup. bat a nahradit název účtu NT AUTHORITY\NETWORK SERVICE svým regionálním ekvivalentem.
 
 > [!IMPORTANT]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  

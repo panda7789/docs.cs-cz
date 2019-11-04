@@ -1,17 +1,17 @@
 ---
 title: Výsledky
-description: Další informace o použití F# "Výsledek" typ, který usnadňuje psaní kódu chyby proti chybám.
+description: Naučte se používat F# typ Result, který vám umožní napsat kód odolný proti chybám.
 ms.date: 04/24/2017
-ms.openlocfilehash: 36f60df8a2991c1d318e4921af6c9e89a0156918
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645326"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424853"
 ---
 # <a name="results"></a>Výsledky
 
-Počínaje F# 4.1, je `Result<'T,'TFailure>` typ, který můžete použít k zápisu chybové proti chybám kódu, který se může skládat.
+Počínaje F# 4,1 je k dispozici typ `Result<'T,'TFailure>`, který můžete použít pro zápis kódu odolného vůči chybám, který se může skládat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -20,20 +20,20 @@ Počínaje F# 4.1, je `Result<'T,'TFailure>` typ, který můžete použít k zá
 [<StructuralEquality; StructuralComparison>]
 [<CompiledName("FSharpResult`2")>]
 [<Struct>]
-type Result<'T,'TError> = 
-    | Ok of ResultValue:'T 
+type Result<'T,'TError> =
+    | Ok of ResultValue:'T
     | Error of ErrorValue:'TError
 ```
 
 ## <a name="remarks"></a>Poznámky
 
-Všimněte si, že je typ výsledku [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions), které je jiné funkce zavedena v F# 4.1.  Strukturální rovnost sémantika tady.
+Všimněte si, že typ výsledku je [struktura s rozlišeným sjednocením](discriminated-unions.md#struct-discriminated-unions), což je další funkce F# představená v 4,1.  Tady se vztahují strukturální sémantiky rovnosti.
 
-`Result` Typ se obvykle používá v monadic zpracování chyb, které se často označuje jako [železniční objektově orientovaného programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci F# komunity.  Následující příklad jednoduchého dotazu ukazuje tento přístup.
+Typ `Result` se obvykle používá při zpracování chyb monadic, což je často označováno jako [programování orientované na železnici](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci F# komunity.  Tento přístup ukazuje následující triviální příklad.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
-type Request = 
+type Request =
     { Name: string
       Email: string }
 
@@ -57,11 +57,11 @@ let validateEmail req =
     | _ -> Ok req
 
 let validateRequest reqResult =
-    reqResult 
+    reqResult
     |> Result.bind validateName
     |> Result.bind validateEmail
 
-let test() = 
+let test() =
     // Now, create a Request and pattern match on the result.
     let req1 = { Name = "Phillip"; Email = "phillip@contoso.biz" }
     let res1 = validateRequest (Ok req1)
@@ -80,7 +80,7 @@ let test() =
 test()
 ```
 
-Jak vidíte, je poměrně snadné pro zřetězení různé funkce ověřování, pokud vynutíte, aby všechna vrácení `Result`.  To vám umožňuje rozdělit funkce, jako jsou to na malé části, které jsou složení, podle potřeby je možné.  To má také přidanou hodnotou *vynucování* použití [porovnávání vzorů](pattern-matching.md) na konci kruhové ověřování, což na oplátku vynucuje vyšší stupeň správnosti programu.
+Jak vidíte, je poměrně snadné zřetězit různé funkce ověřování, pokud je vynutíte, aby vracely `Result`.  To umožňuje přerušit funkčnost, jako je to v malých částech, které jsou sestavené tak, jak je potřebujete.  To má také přidanou hodnotu *vynucení* použití [porovnávání se vzorem](pattern-matching.md) na konci kulatého obhodnocení, které v nástroji vynucuje vyšší stupeň správnosti programu.
 
 ## <a name="see-also"></a>Viz také:
 

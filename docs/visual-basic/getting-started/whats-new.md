@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 2798c436ddfabc8fedf1f2c36c25e8ee2651b476
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 1efcee0ac3bdba1b7e1379a0ac072ea714add756
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191990"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423908"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -212,7 +212,7 @@ Můžete získat Nekvalifikovaný název řetězce typu nebo člena pro použit�
 
 [Interpolace řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 
-Výrazy interpolace řetězce lze použít k sestavení řetězců.  Výraz interpolující řetězcové řetězce vypadá jako řetězec šablony, který obsahuje výrazy.  Interpolovaná řetězcová řetězec je snazší pochopit s ohledem na argumenty, než je [složené formátování](../../standard/base-types/composite-format.md).
+Výrazy interpolace řetězce lze použít k sestavení řetězců.  Výraz interpolující řetězcové řetězce vypadá jako řetězec šablony, který obsahuje výrazy.  Interpolovaná řetězcová řetězec je snazší pochopit s ohledem na argumenty, než je [složené formátování](../../standard/base-types/composite-formatting.md).
 
 [Přístup k podmíněnému přístupu a indexování člena s hodnotou null](../language-reference/operators/null-conditional-operators.md)
 

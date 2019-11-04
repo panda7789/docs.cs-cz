@@ -7,22 +7,22 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
 author: KrzysztofCwalina
-ms.openlocfilehash: d0b16530863b009010383c8739c9512738dfdffd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1fa45c2934ec1c8358bd024af7a05877d183b945
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026468"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421364"
 ---
 # <a name="common-design-patterns"></a>Obecné vzory návrhu
-Existuje mnoho knih softwaru vzorců, vzor jazyky a antipatternů, které řeší velmi široký předmětem vzory. Proto tato kapitola obsahuje pokyny a informace související s velmi omezenou sadu vzorů, které se často používají v návrhu rozhraní API .NET Framework.  
+K dispozici je mnoho knih o vzorech softwaru, jazycích vzorů a antipatternech, které řeší velmi široké téma vzorů. Proto tato kapitola poskytuje pokyny a diskuzi týkající se velmi omezené sady vzorů, které se často používají v návrhu .NET Framework rozhraní API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vlastnosti závislosti](../../../docs/standard/design-guidelines/dependency-properties.md)  
- [Vzor pro metodu Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md)  
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ [Vzor pro metodu Dispose](../garbage-collection/implementing-dispose.md)  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, 2](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) . až na úrovni Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Filtrování dat (C#)
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: 17d3a65b6042c9679a263eff0048f5360c4aa546
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: eb448c1c2ea6d9b3fcf0120043cafebc01cd3805
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594391"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418477"
 ---
 # <a name="filtering-data-c"></a>Filtrování dat (C#)
 Filtrování odkazuje na operaci omezení sady výsledků tak, aby obsahovala pouze prvky, které odpovídají zadané podmínce. Označuje se také jako výběr.  
@@ -22,11 +22,11 @@ Filtrování odkazuje na operaci omezení sady výsledků tak, aby obsahovala po
   
 |Název metody|Popis|C#Syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Only|Vybere hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|Only|Vybere hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
 |Where|Vybere hodnoty, které jsou založeny na funkci predikátu.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
- V následujícím příkladu je použita `where` klauzule pro filtrování z pole, které mají konkrétní délku.  
+ V následujícím příkladu je použita klauzule `where` pro filtrování z pole, které mají konkrétní délku.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -50,7 +50,7 @@ foreach (string str in query)
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
 - [where – klauzule](../../../language-reference/keywords/where-clause.md)
-- [Postupy: Dynamické určování filtrů predikátů za běhu](../../linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)
-- [Postupy: Dotazování na metadata sestavení s reflexí (LINQC#) ()](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [Postupy: Řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Postupy: Dynamické určování filtrů predikátů za běhu](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
+- [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ)C#()](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Postupy: dotazování na soubory se zadaným atributem nebo názvem (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

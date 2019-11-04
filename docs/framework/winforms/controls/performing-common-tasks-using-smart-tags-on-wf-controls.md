@@ -6,17 +6,17 @@ helpviewer_keywords:
 - smart tags
 - designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 34c14c0afd9632b06947fd72e46ddbda070cfb0f
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 07fb43a711ae8b1e2e375b17b136c07f35b1cf39
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015767"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459571"
 ---
-# <a name="walkthrough-perform-common-tasks-using-smart-tags"></a>Návod: Provádění běžných úloh pomocí inteligentních značek
+# <a name="walkthrough-perform-common-tasks-using-smart-tags"></a>Návod: provádění běžných úloh pomocí inteligentních značek
 
 Když vytváříte formuláře a ovládací prvky pro vaši model Windows Forms aplikaci, budete opakovaně provádět spoustu úloh. Toto jsou některé běžně prováděné úkoly, které se vám budou nacházet:
 
@@ -24,7 +24,7 @@ Když vytváříte formuláře a ovládací prvky pro vaši model Windows Forms 
 
 - Ukotvení ovládacího prvku k nadřazenému objektu.
 
-- Změna orientace <xref:System.Windows.Forms.SplitContainer> ovládacího prvku.
+- Změna orientace ovládacího prvku <xref:System.Windows.Forms.SplitContainer>.
 
 K urychlení vývoje nabízí mnoho ovládacích prvků inteligentní značky, které jsou kontextové nabídky, které umožňují provádět běžné úkoly, jako jsou v jednom gestu v době návrhu. Tyto úlohy se nazývají *operace inteligentních značek*.
 
@@ -42,17 +42,17 @@ Prvním krokem je vytvoření projektu a nastavení formuláře.
 
 Inteligentní značky jsou vždy k dispozici v době návrhu u ovládacích prvků, které je nabízejí.
 
-1. Přetáhněte z panelu nástrojů do formuláře. <xref:System.Windows.Forms.TabControl> Poznamenejte si glyf inteligentních značek![(glyf](./media/vs-winformsmttagglyph.gif)inteligentních značek), který se zobrazí <xref:System.Windows.Forms.TabControl>na straně.
+1. Přetáhněte <xref:System.Windows.Forms.TabControl> ze **sady nástrojů** do formuláře. Poznamenejte si glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif)), který se zobrazí na straně <xref:System.Windows.Forms.TabControl>.
 
-2. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat kartu** . Všimněte si, že je do okna <xref:System.Windows.Forms.TabControl>přidána nová stránka karty.
+2. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat kartu** . Všimněte si, že se do <xref:System.Windows.Forms.TabControl>přidá nová stránka karty.
 
-3. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
+3. Přetáhněte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> z **panelu nástrojů** do formuláře.
 
-4. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat sloupec** . Všimněte si, že je do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku přidán nový sloupec.
+4. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat sloupec** . Všimněte si, že je do ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> přidán nový sloupec.
 
-5. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.SplitContainer>
+5. Přetáhněte ovládací prvek <xref:System.Windows.Forms.SplitContainer> z **panelu nástrojů** do formuláře.
 
-6. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **orientace vodorovné příčky** . Všimněte si <xref:System.Windows.Forms.SplitContainer> , že příčka ovládacího prvku je nyní orientována vodorovně.
+6. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **orientace vodorovné příčky** . Všimněte si, že příčka ovládacího prvku <xref:System.Windows.Forms.SplitContainer> je nyní orientována vodorovně.
 
 ## <a name="see-also"></a>Viz také:
 

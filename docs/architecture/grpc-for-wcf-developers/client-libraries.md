@@ -3,16 +3,16 @@ title: Vytváření klientských knihoven gRPC – gRPC pro vývojáře WCF
 description: Diskuze za sdílené klientské knihovny/balíčky pro služby gRPC Services.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 12c628d2b58199a8103c60aa123bb75a34e0797d
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b403e7e1638496947ac7f6fc976cbeab2f435bbf
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846703"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419925"
 ---
 # <a name="create-grpc-client-libraries"></a>Vytváření klientských knihoven gRPC
 
-Není nutné distribuovat klientské knihovny pro aplikaci gPRC. Můžete vytvořit sdílenou knihovnu `.proto` souborů v rámci vaší organizace a jiné týmy můžou tyto soubory použít k vygenerování kódu klienta ve svých vlastních projektech. Pokud ale máte soukromé úložiště NuGet a spousta dalších týmů používá .NET Core, vytváření a publikování balíčků NuGet klienta jako součást projektu služby může být dobrým způsobem, jak sdílet a propagovat vaši službu.
+Není nutné distribuovat klientské knihovny pro aplikaci gRPC. Můžete vytvořit sdílenou knihovnu `.proto` souborů v rámci vaší organizace a jiné týmy můžou tyto soubory použít k vygenerování kódu klienta ve svých vlastních projektech. Pokud ale máte soukromé úložiště NuGet a spousta dalších týmů používá .NET Core, vytváření a publikování balíčků NuGet klienta jako součást projektu služby může být dobrým způsobem, jak sdílet a propagovat vaši službu.
 
 Jednou z výhod distribuce klientské knihovny je, že můžete vylepšit vygenerované třídy gRPC a Protobuf s využitím užitečných metod a vlastností "pohodlí". V klientském kódu, jako na serveru, jsou všechny třídy deklarovány jako `partial` tak, aby je bylo možné roztáhnout bez úprav generovaného kódu. To znamená, že je snadné přidat konstruktory, metody, počítané vlastnosti a další základní typy.
 
@@ -23,7 +23,7 @@ V prostředí s více platformami, kde různé týmy často používají různé
 
 ## <a name="useful-extensions"></a>Užitečná rozšíření
 
-V rozhraní .NET existují dvě běžně používaná rozhraní pro práci s datovými proudy objektů: <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IObservable%601>. Počínaje .NET Core 3,0 a C# 8,0 je k dispozici<xref:System.Collections.Generic.IAsyncEnumerable%601>rozhraní pro asynchronní zpracování datových proudů a syntaxi`await foreach`pro použití rozhraní. V této části najdete opakovaně použitelný kód pro použití těchto rozhraní pro gRPC streamy.
+V rozhraní .NET existují dvě běžně používaná rozhraní pro práci s datovými proudy objektů: <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IObservable%601>. Počínaje .NET Core 3,0 a C# 8,0 je k dispozici <xref:System.Collections.Generic.IAsyncEnumerable%601> rozhraní pro asynchronní zpracování datových proudů a syntaxi `await foreach` pro použití rozhraní. V této části najdete opakovaně použitelný kód pro použití těchto rozhraní pro gRPC streamy.
 
 S klientskými knihovnami .NET Core gRPC existuje metoda rozšíření `ReadAllAsync` pro `IAsyncStreamReader<T>`, která vytvoří `IAsyncEnumerable<T>`. Pro vývojáře, kteří používají reaktivní programování, může to vypadat stejně jako metoda rozšíření pro vytváření `IObservable<T>`.
 

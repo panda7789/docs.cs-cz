@@ -2,12 +2,12 @@
 title: Asynchronní komunikace založená na zprávách
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Asynchronní komunikace založená na zprávách je zásadní pojem architektury mikroslužeb, protože je to nejlepší způsob, jak uchovávat mikroslužby nezávisle na sobě a zároveň je synchronizovat.
 ms.date: 09/20/2018
-ms.openlocfilehash: c362bdaf41fee5ee20516b89b8bec12d6c0557cf
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 84eaf70178cce91a86dae8a55badb0b4ddd6a7c1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522754"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454230"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -77,7 +77,7 @@ Při implementaci architektury založené na událostech napříč více mikrosl
 
 - Použití úplného vzoru pro [zdroje událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing) .
 
-- Použití [vzoru pošty k odeslání](http://www.kamilgrzybek.com/design/the-outbox-pattern/): transakční tabulka databáze jako fronta zpráv, která bude základem pro komponentu Event-Creator, která by vytvořila událost a publikuje ji.
+- Použití [vzoru pošty k odeslání](https://www.kamilgrzybek.com/design/the-outbox-pattern/): transakční tabulka databáze jako fronta zpráv, která bude základem pro komponentu Event-Creator, která by vytvořila událost a publikuje ji.
 
 Další témata, která je potřeba vzít v úvahu při použití asynchronní komunikace, jsou idempotence zprávy a odstranění duplicitních zpráv. Tato témata jsou popsaná v části [implementace komunikace založené na událostech mezi mikroslužby (události integrace)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) dále v této příručce.
 
@@ -86,7 +86,7 @@ Další témata, která je potřeba vzít v úvahu při použití asynchronní k
 - **Zasílání zpráv řízených událostmi** \
   <https://soapatterns.org/design_patterns/event_driven_messaging>
 
-- @No__t **kanálu pro publikování a odběr**– 1
+-  \ **kanálu pro publikování a odběr**
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
 - **UDI Dahan. Vyjasněné CQRS** \
@@ -98,7 +98,7 @@ Další témata, která je potřeba vzít v úvahu při použití asynchronní k
 - **Komunikace mezi ohraničenými kontexty** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- Konečná **konzistence**@no__t – 1
+- Konečné \ **konzistence**
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
 - **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocení spojovacího** \

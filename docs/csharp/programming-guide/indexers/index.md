@@ -8,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: f0df3170289d780852ee14232e92c3b71412c548
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 02dc8c21b86438c801fb151d9f02a223b60d6197
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392376"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423236"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -34,7 +34,7 @@ Je běžné, že přistupující objekt get nebo set indexeru se skládá z jedn
 
 Všimněte si, že `=>` zavádí tělo výrazu a nepoužívá se klíčové slovo `get`. 
 
-Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako členy Expression-těle. V takovém případě musí být použita klíčová slova `get` a `set`. Příklad:
+Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako členy Expression-těle. V takovém případě je nutné použít jak klíčová slova `get`, tak `set`. Příklad:
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
@@ -46,7 +46,7 @@ Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako 
   
 - Klíčové slovo [This](../../language-reference/keywords/this.md) slouží k definování indexeru.  
   
-- Klíčové slovo [Value](../../language-reference/keywords/value.md) slouží k definování hodnoty, kterou přiřazuje indexer `set`.  
+- Klíčové slovo [Value](../../language-reference/keywords/value.md) slouží k definování hodnoty, kterou přiřazuje služba `set` indexer.  
   
 - Indexery nemusí být indexovány pomocí celočíselné hodnoty; je zde postup, jak definovat konkrétní vyhledávací mechanismus.  
   
@@ -66,7 +66,7 @@ Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako 
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [indexery](~/_csharplang/spec/classes.md#indexers) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [indexery](~/_csharplang/spec/classes.md#indexers) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 

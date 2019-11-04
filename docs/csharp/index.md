@@ -8,18 +8,20 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 77db5201ab21dff1f04f76da5dd10d07aa377813
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: a7ddaac56177d13248caf6559221fff26d2d2c00
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191804"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416725"
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
 C# Průvodce poskytuje mnoho zdrojů informací o daném C# jazyce. Tato lokalita má mnoho různých cílových skupin. V závislosti na vašich zkušenostech s programováním nebo s C# jazykem a .NET můžete chtít prozkoumat různé části tohoto průvodce.
 
 - Pro branding – nové vývojáře:
+  - Podívejte se na [ C# řadu videí 101](https://aka.ms/dotnet3-csharp). Poskytuje Úvod do důležitých konceptů, které prozkoumáte v těchto kurzech.
+
   - Začněte s [úvodními C# kurzy](tutorials/intro-to-csharp/index.md). Tyto kurzy vám umožní interaktivně prozkoumat C# jazyk v prohlížeči. Odtud můžete přejít k dalším [kurzům](tutorials/index.md). V těchto kurzech se dozvíte C# , jak vytvořit programy od začátku. Kurzy poskytují podrobný proces vytváření programů. Zobrazují jazykové koncepty a sestavování C# programů sami. Pokud raději přečtete informace o přehledu, zkuste [prohlídku C# jazyka](tour-of-csharp/index.md). Vysvětluje princip C# jazyka. Po přečtení budete mít základní porozumění jazyku a budete připraveni vyzkoušet si kurzy, nebo něco sami vytvořit.
 
 - Pro vývojáře, C#kteří jsou noví:
@@ -61,7 +63,7 @@ C# Příručka obsahuje několik oddílů. Můžete si je přečíst v daném po
 - [Referenční dokumentace jazyka](language-reference/index.md)
   - Tato část obsahuje referenční materiál v C# jazyce. Tento materiál vám pomůže pochopit syntaxi a sémantiku C#. Obsahuje také referenční materiál pro typy, operátory, atributy, direktivy preprocesoru, přepínače kompilátoru, chyby kompilátoru a upozornění kompilátoru.
 
-- [C#Specifikace jazyka](./language-reference/language-specification/index.md)
+- [C#Specifikace jazyka](/dotnet/csharp/language-reference/language-specification/introduction)
   - Odkazuje na nejnovější verze specifikace C# jazyka.
 
 ## <a name="see-also"></a>Viz také:

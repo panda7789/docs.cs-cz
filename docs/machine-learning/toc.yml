@@ -39,14 +39,16 @@
           href: tutorials/object-detection-onnx.md
         - name: Klasifikace mínění pomocí TensorFlow (klasifikace textu)
           href: tutorials/text-classification-tf.md
-    - name: Nástroje
+    - name: Model Builder a rozhraní příkazového řádku
       items:
-        - name: Předpovídání cen pomocí nástroje Model Builder
+        - name: Předpovídání cen (Model Builder a regrese)
           href: tutorials/predict-prices-with-model-builder.md
         - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
           href: tutorials/mlnet-cli.md
-        - name: Analýza mínění pomocí Model Builderu a Razor Pages
+        - name: Analýza mínění v Razor Pages (Model Builder a binární klasifikace)
           href: tutorials/sentiment-analysis-model-builder.md
+        - name: Kategorizace porušení stavu (Model Builder a vícetřídová klasifikace)
+          href: tutorials/health-violation-classification-model-builder.md
     - name: Infer.NET
       items:
         - name: Pravděpodobnostní programování s Infer.NET

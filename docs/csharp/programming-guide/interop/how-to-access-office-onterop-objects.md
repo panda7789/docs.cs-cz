@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: f0b763ad6b65c74b8c406fe006ef4036e70a99d4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b6e45858b64ea1bf87ca0e73001a5cf07ddfd58b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523561"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417705"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům Interop Office pomocí vizuálních C# funkcíC# (Průvodce programováním)
 
@@ -91,7 +91,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#13)]
 
-     Starší verze nástroje C# vyžadují explicitní přetypování pro tyto operace, protože `ExcelApp.Columns[1]` vrací `Object` a `AutoFit` je <xref:Microsoft.Office.Interop.Excel.Range> metoda aplikace Excel. Následující řádky ukazují přetypování.
+     Starší verze nástroje C# vyžadují explicitní přetypování pro tyto operace, protože `ExcelApp.Columns[1]` vrací `Object`a `AutoFit` je <xref:Microsoft.Office.Interop.Excel.Range> metoda aplikace Excel. Následující řádky ukazují přetypování.
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
@@ -141,7 +141,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      Kromě toho programování je snazší, protože typy, které jsou požadovány a vraceny metodou COM, mohou být reprezentovány pomocí typu `dynamic` namísto `Object`. Proměnné, které mají typ `dynamic`, nejsou vyhodnocovány až do doby běhu, což eliminuje nutnost explicitního přetypování. Další informace naleznete v tématu [použití typu Dynamic](../types/using-type-dynamic.md).
 
-     Ve C# 4 je vkládání informací o typu namísto použití PIA nastaveno jako výchozí chování. Z důvodu tohoto výchozího nastavení je několik z předchozích příkladů zjednodušeno, protože explicitní přetypování není vyžadováno. Například deklarace `worksheet` v `DisplayInExcel` je zapsána jako `Excel._Worksheet workSheet = excelApp.ActiveSheet` spíše než `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Volání `AutoFit` ve stejné metodě také vyžadují explicitní přetypování bez výchozí hodnoty, protože `ExcelApp.Columns[1]` vrací `Object` a `AutoFit` je metoda aplikace Excel. Následující kód ukazuje přetypování.
+     Ve C# 4 je vkládání informací o typu namísto použití PIA nastaveno jako výchozí chování. Z důvodu tohoto výchozího nastavení je několik z předchozích příkladů zjednodušeno, protože explicitní přetypování není vyžadováno. Například deklarace `worksheet` v `DisplayInExcel` je zapsána jako `Excel._Worksheet workSheet = excelApp.ActiveSheet` spíše než `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Volání `AutoFit` ve stejné metodě také vyžadují explicitní přetypování bez výchozí hodnoty, protože `ExcelApp.Columns[1]` vrací `Object`a `AutoFit` je metoda aplikace Excel. Následující kód ukazuje přetypování.
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
@@ -176,7 +176,7 @@ Následující kód ukazuje kompletní příklad.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Type.Missing?displayProperty=nameWithType>
-- [dynamic](../../language-reference/keywords/dynamic.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md)
 - [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
