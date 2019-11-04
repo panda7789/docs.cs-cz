@@ -118,7 +118,7 @@
                   href: how-to-extract-a-protocol-and-port-number-from-a-url.md
                 - name: 'Postupy: Odstranění neplatných znaků z řetězce'
                   href: how-to-strip-invalid-characters-from-a-string.md
-                - name: 'Postupy: Ověření platnosti e-mailového formátu řetězců'
+                - name: Ověření platnosti e-mailového formátu řetězců
                   href: how-to-verify-that-strings-are-in-valid-email-format.md
         - name: Kódování znaků v rozhraní .NET
           href: character-encoding.md
