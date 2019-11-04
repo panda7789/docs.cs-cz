@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: df9c66d47d1f5e345858ae08b3d926d0e938a255
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 04001f88e0f59fd4eb3ca84d846456be7740737e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038324"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460481"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli znát při psaní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v oboru názvů <xref:System.Globalization>.
@@ -149,7 +149,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ### <a name="localizable-user-interface"></a>Lokalizovatelné uživatelské rozhraní
  aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používají [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] k definování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] umožňuje vývojářům určit hierarchii objektů se sadou vlastností a logiky. Primárním použitím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je vývoj [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, ale lze jej použít k určení hierarchie všech objektů modulu CLR (Common Language Runtime). Většina vývojářů používá [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] k určení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aplikace a používání programovacího jazyka, jako je C# například reakce na interakci s uživatelem.
 
- Z pohledu prostředku je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor navržený tak, aby popsal [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] závislý na jazyce, je element prostředku, takže jeho konečný distribuční formát musí být Lokalizovatelný, aby podporoval mezinárodní jazyky. Vzhledem k tomu, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ch aplikací obsahuje bloky kódu k provedení. Další informace naleznete v tématu [Přehled XAML (WPF)](xaml-overview-wpf.md). Kód je odstraněn a zkompilován do různých binárních souborů, pokud je soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] do formátu BAML jazyka XAML. Formulář BAML souborů XAML, obrázků a dalších typů spravovaných objektů prostředků jsou vloženy do satelitního sestavení prostředků, které lze lokalizovat do jiných jazyků, nebo do hlavního sestavení, pokud není nutná lokalizace.
+ Z pohledu prostředku je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor navržený tak, aby popsal [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] závislý na jazyce, je element prostředku, takže jeho konečný distribuční formát musí být Lokalizovatelný, aby podporoval mezinárodní jazyky. Vzhledem k tomu, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ch aplikací obsahuje bloky kódu k provedení. Další informace naleznete v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md). Kód je odstraněn a zkompilován do různých binárních souborů, pokud je soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] do formátu BAML jazyka XAML. Formulář BAML souborů XAML, obrázků a dalších typů spravovaných objektů prostředků jsou vloženy do satelitního sestavení prostředků, které lze lokalizovat do jiných jazyků, nebo do hlavního sestavení, pokud není nutná lokalizace.
 
 > [!NOTE]
 > [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny prostředky CLR [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)], včetně tabulek řetězců, obrázků a tak dále.

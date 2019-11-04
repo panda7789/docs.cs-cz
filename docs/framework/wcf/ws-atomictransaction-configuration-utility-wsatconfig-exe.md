@@ -2,19 +2,19 @@
 title: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 ms.date: 03/30/2017
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
-ms.openlocfilehash: 5333c9c5caad502ce925fe4a45a039c553812ba6
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 161ac59e64e1a933049ed36ebb7140901686929c
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320203"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425259"
 ---
 # <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a>Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 Konfigurační nástroj WS-AtomicTransaction se používá ke konfiguraci základních nastavení podpory WS-AtomicTransaction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 wsatConfig [Options]  
 ```  
   
@@ -42,7 +42,7 @@ wsatConfig [Options]
 |-Port: \<portNum >|Nastaví port HTTPS pro WS-AtomicTransaction.<br /><br /> Pokud jste už před spuštěním tohoto nástroje povolili bránu firewall, port se automaticky zaregistruje v seznamu výjimek. Pokud před spuštěním tohoto nástroje není brána firewall vypnutá, není pro bránu firewall nakonfigurované žádné další.<br /><br /> Pokud povolíte bránu firewall po konfiguraci WS-AT, budete muset znovu spustit tento nástroj a zadejte číslo portu pomocí tohoto parametru. Pokud bránu firewall po konfiguraci zakážete, bude WS-AT nadále fungovat bez dalšího vstupu.|  
 |-Timeout: \<sec >|Určuje výchozí časový limit v sekundách. Platné hodnoty jsou od 1 do 3600.|  
 |-traceActivity: \<enable&#124;zakázat >|Povoluje nebo zakazuje trasování událostí aktivity.|  
-|-traceLevel: @no__t-nepostradatelné&#124;informace&#124;o&#124; upozorněních&#124;chyby&#124;&#124;0Off vše >}|Určuje úroveň trasování.|  
+|-traceLevel:\<nepostradatelné&#124;informace&#124;o&#124; upozorněních&#124;kritické pro&#124;chybu&#124;vše >}|Určuje úroveň trasování.|  
 |-tracePII: \<enable&#124;zakázat >|Povoluje nebo zakazuje trasování informací, které mohou vést k identifikaci osob.|  
 |-traceProp: \<enable&#124;zakázat >|Povoluje nebo zakazuje trasování událostí šíření.|  
 |-restart|Restartuje MSDTC, aby se změny aktivovaly hned. Pokud tento parametr nezadáte, změny se projeví při restartování služby MSDTC.|  

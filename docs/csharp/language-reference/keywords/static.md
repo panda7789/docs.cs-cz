@@ -1,5 +1,5 @@
 ---
-title: statický modifikátor - C# odkaz
+title: statický modifikátor – C# referenční informace
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: b288e57d9241e294a0fa18edafe72eec675327a7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: cbd0f6b4ef7976ccc2da2a735ccbba2bf23177e4
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633191"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422335"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
 
-Použití `static` modifikátor deklarovat statický člen, který patří do samotného typu, nikoli s určitým objektem. `static` Modifikátor lze použít s třídami, pole, metody, vlastnosti, operátory, události a konstruktory, ale nelze použít s indexery, finalizační metody nebo jiné typy než třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
+Použijte modifikátor `static` k deklaraci statického člena, který patří do samotného typu, nikoli na konkrétní objekt. Modifikátor `static` lze použít s třídami, poli, metodami, vlastnostmi, operátory, událostmi a konstruktory, ale nelze jej použít s indexery, finalizačními metodami nebo jinými typy než třídy. Další informace naleznete v tématu [statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
 
 ## <a name="example"></a>Příklad
 
@@ -25,40 +25,40 @@ Následující třída je deklarována jako `static` a obsahuje pouze `static` m
 
 [!code-csharp[csrefKeywordsModifiers#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#18)]
 
-Deklarace konstanty nebo typu je implicitně statický člen.
+Deklarace konstanty nebo typu je implicitně statickým členem.
 
-Statický člen se nedá odkazovat prostřednictvím instance. Místo toho se odkazuje pomocí názvu typu. Představte si třeba následující třídy:
+Na statický člen se nedá odkazovat prostřednictvím instance. Místo toho je odkazováno prostřednictvím názvu typu. Zvažte například následující třídu:
 
 [!code-csharp[csrefKeywordsModifiers#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#19)]
 
-Odkazovat na statického člena `x`, použijte plně kvalifikovaný název `MyBaseC.MyStruct.x`, pokud člen není přístupný ze stejného oboru:
+Chcete-li odkazovat na statický členský `x`, použijte plně kvalifikovaný název, `MyBaseC.MyStruct.x`, pokud je člen přístupný ze stejného rozsahu:
 
 ```csharp
 Console.WriteLine(MyBaseC.MyStruct.x);
 ```
 
-Zatímco instance třídy obsahuje kopii všechna pole instancí třídy, je jenom jednu kopii každého statické pole.
+I když instance třídy obsahuje samostatnou kopii všech polí instance třídy, je k dispozici pouze jedna kopie každého statického pole.
 
-Není možné použít [to](this.md) odkazovat statické metody nebo přistupující objekty vlastnosti.
+[Tuto](this.md) možnost nelze použít pro odkazování statických metod nebo přístupových objektů vlastností.
 
-Pokud `static` – klíčové slovo je aplikován na třídu, musí být statické členy třídy.
+Pokud je klíčové slovo `static` použito pro třídu, všechny členy třídy musí být statické.
 
-Statické třídy a třídy mohou mít statické konstruktory. Statické konstruktory jsou volány v určitém okamžiku mezi při spuštění programu a je vytvořena instance třídy.
+Třídy a statické třídy mohou mít statické konstruktory. Statické konstruktory jsou volány v určitém bodě mezi okamžikem spuštění programu a instance třídy.
 
 > [!NOTE]
-> `static` – Klíčové slovo má omezenější použití než v jazyce C++. Porovnat s klíčovým slovem C++, naleznete v tématu [třídy úložiště (C++)](/cpp/cpp/storage-classes-cpp#static).
+> Klíčové slovo `static` má více omezeného použití než C++v. Pro porovnání s C++ klíčovým slovem, viz [třídyC++úložiště ()](/cpp/cpp/storage-classes-cpp#static).
 
-Abychom si předvedli statické členy, vezměte v úvahu třídu, která představuje zaměstnance společnosti. Předpokládejme, že třída obsahuje metody pro počet zaměstnanců a pole pro uložení tohoto čísla zaměstnanců. Metody a pole nepatří do jakékoli instance zaměstnance. Místo toho patří do třídy společnosti. Proto by měly být deklarovány jako statické členy třídy.
+Chcete-li předvést statické členy, zvažte třídu, která představuje zaměstnance společnosti. Předpokládat, že třída obsahuje metodu pro počítání zaměstnanců a pole pro uložení počtu zaměstnanců. Jak metoda, tak pole nepatří žádnému zaměstnanci instance. Místo toho patří do třídy Company. Proto by měly být deklarovány jako statické členy třídy.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad načte název a ID nového zaměstnance, zvýší čítač zaměstnance jednou a zobrazí informace o nových zaměstnanců a nový počet zaměstnanců. Pro zjednodušení tento program přečte aktuální počet zaměstnanců z klávesnice. V reálné aplikaci by měli číst tyto informace ze souboru.
+Tento příklad přečte jméno a ID nového zaměstnance, zvýší čítač zaměstnanců o jednu a zobrazí informace o novém zaměstnanci a novém počtu zaměstnanců. Pro zjednodušení tento program přečte aktuální počet zaměstnanců z klávesnice. V reálné aplikaci by měly být tyto informace čteny ze souboru.
 
 [!code-csharp[csrefKeywordsModifiers#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#20)]  
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje, že i když inicializujete statické pole pomocí jiné statické pole ještě nebyla deklarována, budou výsledky nedefinované dokud explicitně přiřadit hodnotu statické pole.
+Tento příklad ukazuje, že i když můžete inicializovat statické pole pomocí jiného statického pole, které dosud nebylo deklarováno, výsledky budou nedefinovány, dokud explicitně nepřiřadíte hodnotu do statického pole.
 
 [!code-csharp[csrefKeywordsModifiers#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#21)]  
 
@@ -68,8 +68,8 @@ Tento příklad ukazuje, že i když inicializujete statické pole pomocí jiné
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [Statické třídy a jejich členové](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: 5a2813b81490e7c2fcf1abcf5fd36ca89d9d7929
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 285a5f10e2394fcb001a652fad66e8128b9fbc1a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933860"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424617"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Pole parametrů (Visual Basic)
 Obvykle nemůžete volat proceduru s více argumenty, než určuje deklarace procedury. Pokud potřebujete nekonečný počet argumentů, můžete deklarovat *pole parametrů*, které umožňuje proceduře přijmout pole hodnot pro parametr. Při definování procedury není nutné znát počet prvků v poli parametrů. Velikost pole je určena jednotlivě každým voláním procedury.  
@@ -34,19 +34,19 @@ Obvykle nemůžete volat proceduru s více argumenty, než určuje deklarace pro
 ## <a name="calling-a-paramarray"></a>Volání ParamArray  
  Když zavoláte proceduru, která definuje pole parametrů, můžete dodat argument jedním z následujících způsobů:  
   
-- Nothing – argument [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) můžete vynechat. V tomto případě je do procedury předáno prázdné pole. Pomocí stejného efektu můžete také předat klíčové slovo [Nothing](../../../../visual-basic/language-reference/nothing.md) .  
+- Nothing – argument [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) můžete vynechat. V tomto případě je do procedury předáno prázdné pole. Pokud explicitně předáte klíčové slovo [Nothing](../../../../visual-basic/language-reference/nothing.md) , je do procedury předáno pole s hodnotou null a výsledkem volání NullReferenceException je, že volaná procedura tuto podmínku nekontroluje.
   
 - Seznam libovolného počtu argumentů oddělených čárkami. Datový typ každého argumentu musí být implicitně převoditelné na `ParamArray` typ elementu.  
   
 - Pole se stejným typem prvku jako typ elementu pole parametru.  
   
- Ve všech případech kód v proceduře zpracovává pole parametrů jako jednorozměrné pole s prvky stejného datového typu jako `ParamArray` datový typ.  
+ Ve všech případech kód v proceduře zpracovává pole parametrů jako jednorozměrné pole s prvky stejného datového typu jako datový typ `ParamArray`.  
   
 > [!IMPORTANT]
 > Kdykoli budete pracovat s polem, které může být neomezeně velké, existuje riziko, že dojde k přeběhu některé interní kapacity vaší aplikace. Pokud přijmete pole parametrů, měli byste otestovat velikost pole, do kterého se předává volající kód. Pokud je pro vaši aplikaci moc velká, proveďte příslušné kroky. Další informace naleznete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je definována a volána funkce `calcSum`. Modifikátor pro parametr `args` umožňuje funkci přijmout proměnlivý počet argumentů. `ParamArray`  
+ Následující příklad definuje a volá funkci `calcSum`. Modifikátor `ParamArray` pro parametr `args` umožňuje funkci přijmout proměnný počet argumentů.  
   
  [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: a3daf75417260d7e761da2e90c595471b2a4b2a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: acb10df0da97954f4c2f7451d75d2f3042938e48
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131517"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458091"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -55,7 +55,7 @@ ms.locfileid: "73131517"
 |---------------------------|------------------------|-----------------|  
 |<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.Provider.IDockProvider>|Používá se pro ovládací prvky, které mohou být ukotveny v Dock kontejneru. Například panely nástrojů nebo palety nástrojů.|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern>|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Používá se pro ovládací prvky, které se dají rozbalit nebo sbalit. Například položky nabídky v aplikaci, jako je například nabídka **soubor** .|  
-|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Používá se pro ovládací prvky, které podporují funkce mřížky, jako je třeba určení velikosti a přesun do zadané buňky. Například zobrazení velkých ikon v Průzkumníkovi Windows nebo jednoduchých tabulkách bez hlaviček v [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)].|  
+|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Používá se pro ovládací prvky, které podporují funkce mřížky, jako je třeba určení velikosti a přesun do zadané buňky. Například zobrazení velkých ikon v Průzkumníkovi Windows nebo jednoduchých tabulkách bez záhlaví v Microsoft Wordu.|  
 |<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Používá se pro ovládací prvky, které obsahují buňky v Gridech. Jednotlivé buňky by měly podporovat vzor GridItem. Například každá buňka v Průzkumníkovi Windows má podrobné zobrazení.|  
 |<xref:System.Windows.Automation.InvokePattern>|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Používá se pro ovládací prvky, které mohou být vyvolány, například tlačítko.|  
 |<xref:System.Windows.Automation.MultipleViewPattern>|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Používá se pro ovládací prvky, které mohou přepínat mezi různými reprezentacemi stejné sady informací, dat nebo podřízených objektů. Například ovládací prvek zobrazení seznamu, kde jsou data k dispozici v zobrazení Miniatura, dlaždice, ikona, seznam nebo zobrazení podrobností.|  
@@ -64,13 +64,13 @@ ms.locfileid: "73131517"
 |<xref:System.Windows.Automation.ScrollItemPattern>|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|Používá se pro ovládací prvky, které mají jednotlivé položky v seznamu, který se posouvá. Například ovládací prvek seznamu, který má jednotlivé položky v rolovacím seznamu, jako je například ovládací prvek pole se seznamem.|  
 |<xref:System.Windows.Automation.SelectionPattern>|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Používá se pro ovládací prvky kontejneru výběru. Například seznam polí a polí se seznamem.|  
 |<xref:System.Windows.Automation.SelectionItemPattern>|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Používá se pro jednotlivé položky v ovládacích prvcích kontejneru výběru, jako jsou seznamy a pole se seznamem.|  
-|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Používá se pro ovládací prvky, které mají tabulku a informace záhlaví. Například [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] listy.|  
+|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Používá se pro ovládací prvky, které mají tabulku a informace záhlaví. Například listy aplikace Microsoft Excel.|  
 |<xref:System.Windows.Automation.TableItemPattern>|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Používá se pro položky v tabulce.|  
 |<xref:System.Windows.Automation.TextPattern>|<xref:System.Windows.Automation.Provider.ITextProvider>|Používá se pro úpravy ovládacích prvků a dokumentů, které zpřístupňují textové informace.|  
 |<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.Provider.IToggleProvider>|Používá se pro ovládací prvky, kde lze stav přepínat. Například zaškrtávací políčka a položky nabídky, které se mají kontrolovat.|  
 |<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.Provider.ITransformProvider>|Používá se pro ovládací prvky, které se dají změnit na velikost, přesunout a otočit. Typická použití pro vzor ovládacích prvků transformace jsou návrháři, formuláře, grafické editory a aplikace pro kreslení.|  
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|Umožňuje klientům získat nebo nastavit hodnotu u ovládacích prvků, které nepodporují rozsah hodnot. Například výběr data a času.|  
-|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní koncept operačního systému Microsoft Windows. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikace nejvyšší úrovně ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], Průzkumník Microsoft Windows atd.), podřízené okna rozhraní MDI (Multiple Document Interface) a dialogová okna.|  
+|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní koncept operačního systému Microsoft Windows. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikací nejvyšší úrovně (například Microsoft Word, Průzkumník Microsoft Windows atd.), podřízená okna rozhraní MDI (Multiple Document Interface) a dialogová okna.|  
   
 ## <a name="see-also"></a>Viz také:
 

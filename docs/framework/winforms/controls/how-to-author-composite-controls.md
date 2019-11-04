@@ -7,17 +7,17 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 08cb07ceebf08b3096415f9b7370e2d955152cb6
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 42ea424507b89576df8099fd4849dd2665135a55
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015924"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459435"
 ---
-# <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
+# <a name="how-to-author-composite-controls"></a>Postupy: vytváření složených ovládacích prvků
 
 Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je vytvořit jako součást projektu desktopové aplikace systému Windows a použít ji pouze pro formuláře v projektu. Nebo je můžete vytvořit v projektu knihovny ovládacích prvků systému Windows, zkompilovat projekt do sestavení a použít ovládací prvky v jiných projektech. Z nich můžete dokonce dědit a použít dědění vizuálu k jejich rychlému přizpůsobení pro zvláštní účely.
 
@@ -37,11 +37,11 @@ Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je v
 
 7. Zavřete návrháře složeného ovládacího prvku a uložte soubor po zobrazení výzvy.
 
-8. Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.
+8. V nabídce **sestavení** klikněte na **Sestavit řešení**.
 
      Aby se v **sadě nástrojů**zobrazovaly vlastní ovládací prvky, musí být projekt sestaven.
 
-9. Použijte kartu **DemoControlHost** sady **nástrojů** k přidání instancí ovládacího prvku do `Form1`.
+9. Pomocí karty **DemoControlHost** sady **nástrojů** přidejte instance ovládacího prvku do `Form1`.
 
 ## <a name="to-author-a-control-class-library"></a>Chcete-li vytvořit knihovnu tříd ovládacích prvků
 
@@ -51,7 +51,7 @@ Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je v
 
 2. Přidejte ovládací prvky a kód, jak je popsáno výše v postupu.
 
-3. Vyberte ovládací prvek, který nechcete dědit třídy, a nastavte vlastnost modifikátory tohoto ovládacího prvku na hodnotu **Private**.
+3. Vyberte ovládací prvek, který nechcete dědit třídy, a nastavte vlastnost **modifikátory** tohoto ovládacího prvku na hodnotu **Private**.
 
 4. Sestavení knihovny DLL.
 
@@ -63,7 +63,7 @@ Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je v
 
 3. Vyberte kartu **projekty** a dvakrát klikněte na projekt knihovny ovládacích prvků.
 
-4. Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.
+4. V nabídce **sestavení** klikněte na **Sestavit řešení**.
 
 5. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt knihovny ovládacích prvků a v místní nabídce vyberte možnost **Přidat novou položku** .
 
@@ -75,12 +75,12 @@ Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je v
 
 8. Otevřete vizuálního návrháře pro nový ovládací prvek a přidejte další ovládací prvky prvku.
 
-     Můžete vidět ovládací prvky prvku, které byly zděděny ze složeného ovládacího prvku v knihovně DLL, a můžete změnit vlastnosti ovládacích prvků, jejichž Modifikátory vlastnost je **Veřejná**. Nemůžete změnit vlastnosti ovládacího prvku, jehož vlastnost modifikátory je **soukromá**.
+     Můžete vidět ovládací prvky prvku, které byly zděděny ze složeného ovládacího prvku v knihovně DLL, a můžete změnit vlastnosti ovládacích prvků, jejichž **modifikátory** vlastnost je **Veřejná**. Nemůžete změnit vlastnosti ovládacího prvku, jehož vlastnost **modifikátory** je **soukromá**.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
-- [Návod: Dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Návod: vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Návod: dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 - [Doporučení ohledně typu ovládacího prvku](control-type-recommendations.md)
-- [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

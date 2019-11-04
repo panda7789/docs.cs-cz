@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: e1d87920f64242379d1931a424aa38b676dc5ef5
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c7d9eeceaba2ed8b624d3001dae86868ef626c08
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039450"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458112"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
@@ -40,7 +40,7 @@ ms.locfileid: "73039450"
   
 <a name="uiautomation_with_variable_patterns"></a>   
 ## <a name="controls-with-variable-patterns"></a>Ovládací prvky se vzory proměnných  
- Některé typy ovládacích prvků podporují různé vzory v závislosti na jejich stavu nebo způsobu, jakým je ovládací prvek používán. Příklady ovládacích prvků, které mohou mít proměnlivé vzorce, jsou zobrazení seznamu (miniatury, dlaždice, ikony, seznam, podrobnosti), [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] grafy (výsečový, řádek, pruh, hodnota buňky se vzorcem), [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]oblasti dokumentu (normální, webové rozložení, osnova, rozložení tisku, náhled tisku) a Microsoft Windows Media Player skiny.  
+ Některé typy ovládacích prvků podporují různé vzory v závislosti na jejich stavu nebo způsobu, jakým je ovládací prvek používán. Příklady ovládacích prvků, které mohou mít variabilní vzorce, jsou zobrazení seznamu (miniatury, dlaždice, ikony, seznam, podrobnosti), grafy aplikace Microsoft Excel (výsečový, řádek, pruh, hodnota buňky se vzorcem), oblast dokumentu aplikace Microsoft Word (normální, webové rozložení, osnova, rozložení tisku, tisk Preview) a Microsoft Windows Media Player skiny.  
   
  Ovládací prvky implementující vlastní typy ovládacích prvků mohou mít libovolnou sadu vzorů ovládacích prvků, které jsou nutné pro reprezentaci jejich funkcí.  
   

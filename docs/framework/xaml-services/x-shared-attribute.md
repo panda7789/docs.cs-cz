@@ -6,15 +6,15 @@ helpviewer_keywords:
 - x:Shared attribute [XAML Services]
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
-ms.openlocfilehash: 0e9003f22c488ec35f7cc9c7be7f72c7fb8241df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c820a9b1d9708e24b1460378199a6addc1e20899
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622765"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459924"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
-Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, takže požadavky s atributy prostředku vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
+Když se nastaví na `false`, upraví chování při načítání prostředků WPF tak, aby požadavky na prostředek s atributem vytvořily novou instanci pro každý požadavek místo sdílení stejné instance pro všechny požadavky.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -25,32 +25,32 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Shared` je mapován na obor názvů XAML jazyka XAML a je rozpoznán jako platný prvek jazyka XAML tak, že rozhraní .NET Framework XAML Services a jeho čtenáři XAML. Ale stanovených možnosti `x:Shared` jsou pouze relevantní pro aplikace WPF a pro analyzátor identifikátoru WPF XAML. V WPF `x:Shared` slouží pouze jako atribut při použití na objekt, který existuje v rámci WPF <xref:System.Windows.ResourceDictionary>. Další využití nevyvolají výjimky analýzy nebo jiné chyby, ale nemají žádný účinek.  
+ `x:Shared` je mapován na obor názvů XAML jazyka XAML a je rozpoznán jako platný prvek jazyka XAML pomocí .NET Framework služeb XAML a jeho čtenářů XAML. Nicméně uvedené možnosti `x:Shared` jsou relevantní pouze pro aplikace WPF a pro analyzátor XAML WPF. V prostředí WPF je `x:Shared` užitečné pouze jako atribut, je-li použit pro objekt, který existuje v rámci <xref:System.Windows.ResourceDictionary>WPF. Další použití nevyvolává výjimky analýzy ani jiné chyby, ale nemají žádný vliv.  
   
- Význam `x:Shared` není podle specifikace jazyka XAML. Jiné implementace XAML, jako jsou ty, které staví na rozhraní .NET Framework XAML Services, nemusí být nutně podporu sdílení prostředků. Tato implementace XAML může poskytují podobné chování v rámci podpory, který se používá také `x:Shared` hodnoty.  
+ Význam `x:Shared` není zadán ve specifikaci jazyka XAML. Další implementace jazyka XAML, jako jsou například ty, které se sestavují na .NET Framework XAML Services, nutně neposkytují podporu pro sdílení prostředků. Taková implementace XAML by mohla poskytnout podobné chování v rozhraní podpory, které také používá `x:Shared` hodnoty.  
   
- V WPF, výchozí `x:Shared` podmínku u prostředků je `true`. Tento stav znamená, že každá žádost o daný prostředek vždycky vrátí stejnou instanci.  
+ V WPF je výchozí podmínkou `x:Shared` pro prostředky `true`. Tato podmínka znamená, že všechny dané žádosti o prostředky vždycky vrátí stejnou instanci.  
   
- Úpravy objektu, která je vrácena prostřednictvím prostředku rozhraní API, jako například <xref:System.Windows.FrameworkElement.FindResource%2A>, nebo úprava objektu přímo v rámci <xref:System.Windows.ResourceDictionary>, původní prostředek se změní. Odkazy na tento prostředek byl dynamický prostředek odkazy, získejte příjemci tento prostředek změněných prostředků.  
+ Změna objektu, který je vrácen prostřednictvím rozhraní API prostředků, jako je například <xref:System.Windows.FrameworkElement.FindResource%2A>nebo úprava objektu přímo v rámci <xref:System.Windows.ResourceDictionary>, změní původní prostředek. Pokud byly odkazy na tento prostředek odkazy na dynamické prostředky, získají uživatelé tohoto prostředku změněný prostředek.  
   
- Pokud nebyly odkazy na prostředek odkazy na statické prostředky, se změní na prostředek po [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] doba zpracování nejsou relevantní. Další informace o statických a odkazy na dynamické prostředky, najdete v části [prostředky XAML](../wpf/advanced/xaml-resources.md).  
+ Pokud byly odkazy na prostředek odkazy na statické prostředky, změny prostředku po [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] době zpracování nebudou důležité. Další informace o statických a dynamických odkazech na prostředky naleznete v tématu [prostředky XAML](../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
- Explicitní určení `x:Shared="true"` zřídka probíhá, protože to je již výchozí. Neexistuje žádné přímé kódu ekvivalentní `x:Shared` ve WPF objektu modelu; lze zadat pouze v XAML využití a je potřeba zpracovat výchozí chování WPF nebo zprostředkující proudu uzlu XAML v cestě zatížení Pokud zpracovány pomocí rozhraní .NET Framework XAML Se rvices a jeho čtenáři XAML.  
+ Explicitní určení `x:Shared="true"` je jenom zřídka, protože to je už výchozí. Neexistuje žádný přímý ekvivalent kódu pro `x:Shared` v objektovém modelu WPF; dá se zadat jenom v použití XAML a musí se zpracovat buď pomocí výchozího chování WPF, nebo v zprostředkujícím datovém proudu uzlu XAML v cestě zatížení, pokud se zpracovává pomocí .NET Framework služby XAML a jejich čtecích zařízení XAML.  
   
- Scénáře pro `x:Shared="false"` je, pokud definujete <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy jako prostředek a zaveďte elementu resource v obsahu modelu. `x:Shared="false"` Umožňuje prostředek element zavést více než jednou ve stejné kolekci (například <xref:System.Windows.Controls.UIElementCollection>). Bez `x:Shared="false"` to je neplatný, protože kolekce vynutí jedinečnost jeho obsah. Ale `x:Shared="false"` chování vytvoří jiná instance stejné prostředků místo vrácení stejnou instanci.  
+ Scénář pro `x:Shared="false"` je při definování <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy jako prostředku a poté zavedete prostředek elementu do modelu obsahu. `x:Shared="false"` umožňuje, aby prostředek elementu byl ve stejné kolekci vícekrát zavedený (například <xref:System.Windows.Controls.UIElementCollection>). Bez `x:Shared="false"` to je neplatné, protože kolekce vynutila jedinečnost jejího obsahu. Chování `x:Shared="false"` však vytvoří jinou identickou instanci prostředku místo vrácení stejné instance.  
   
- Další možností pro `x:Shared="false"` je, pokud používáte <xref:System.Windows.Freezable> prostředků pro hodnot animace, ale chcete upravit prostředek na základě za animace.  
+ Dalším scénářem pro `x:Shared="false"` je použití prostředku <xref:System.Windows.Freezable> pro hodnoty animace, ale chcete upravit prostředek na základě animace.  
   
- Zpracování řetězce `false` nerozlišuje malá a velká písmena.  
+ Zpracování řetězce `false` nerozlišuje velká a malá písmena.  
   
- V WPF `x:Shared` platí pouze za následujících podmínek:  
+ V WPF je `x:Shared` platný pouze za následujících podmínek:  
   
-- <xref:System.Windows.ResourceDictionary> , Který obsahuje položky s `x:Shared` musí být zkompilovány. <xref:System.Windows.ResourceDictionary> Nemůže být v rámci volný XAML nebo použít motivy.  
+- <xref:System.Windows.ResourceDictionary> obsahující položky `x:Shared` musí být zkompilovány. <xref:System.Windows.ResourceDictionary> nemůže být ve volném XAML nebo použit pro motivy.  
   
-- <xref:System.Windows.ResourceDictionary> , Který obsahuje položky nesmí být vnořen v rámci jiného <xref:System.Windows.ResourceDictionary>. Například nemůžete použít `x:Shared` pro položky v <xref:System.Windows.ResourceDictionary> , který je v rámci <xref:System.Windows.Style> , který je již <xref:System.Windows.ResourceDictionary> položky.  
+- <xref:System.Windows.ResourceDictionary> obsahující položky nesmí být vnořené v jiném <xref:System.Windows.ResourceDictionary>. Například nemůžete použít `x:Shared` pro položky v <xref:System.Windows.ResourceDictionary>, které se nachází v <xref:System.Windows.Style>, která již <xref:System.Windows.ResourceDictionary> položka.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](../wpf/advanced/xaml-resources.md)
+- [Prostředky XAML](../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [Základní elementy](../wpf/advanced/base-elements.md)

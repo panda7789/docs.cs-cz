@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: a0792beca358de52a24bd9bb0dd48a20c175f8ff
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 6738b9e66c1223ea4ec50c070a421d119fd30bc4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920188"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458694"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 
@@ -92,7 +92,7 @@ Nyní na těchto tlačítkách nastavíme některé vlastnosti, které řídí v
 
      ![Tlačítka s šířkou 90 a okrajem 10](./media/custom-button-animatedbutton-2.gif "custom_button_AnimatedButton_2")
 
-     K dispozici je mnohem více, co můžete dělat se styly, včetně nejrůznějších způsobů, jak vyladit objekty, které jsou cílené, určením složitých hodnot vlastností a dokonce i pomocí stylů jako vstup pro jiné styly. Další informace najdete v tématu [stylování a šablonování](styling-and-templating.md).
+     K dispozici je mnohem více, co můžete dělat se styly, včetně nejrůznějších způsobů, jak vyladit objekty, které jsou cílené, určením složitých hodnot vlastností a dokonce i pomocí stylů jako vstup pro jiné styly. Další informace najdete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 3. **Nastavte hodnotu vlastnosti Style na prostředek:** Prostředky umožňují jednoduchý způsob opakovaného použití běžně definovaných objektů a hodnot. To je užitečné hlavně při definování složitých hodnot pomocí prostředků, aby se váš kód podrobněji vytvářely. Přidejte do souboru App. XAML následující zvýrazněný kód.
 
@@ -439,7 +439,7 @@ Snadný způsob, jak přidat interaktivitu (přetažení myší, ponechání my�
 ## <a name="see-also"></a>Viz také:
 
 - [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přehled animace](../graphics-multimedia/animation-overview.md)
 - [Přehled malování plnými barvami a přechody](../graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
 - [Přehled efektů bitmap](../graphics-multimedia/bitmap-effects-overview.md)

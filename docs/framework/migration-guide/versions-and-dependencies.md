@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: e2b039ba9f8183de481db09c028f8c3672f43c36
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b852fbd09376995692e19d944619307d9c1057bd
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085361"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458051"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  

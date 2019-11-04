@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-ms.openlocfilehash: 7feed7de4a6c76f5f2ba0e2ea1c532aad6bde4de
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 99cc1eae08697909d89e5c1e46cd604c7da543bc
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126077"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457749"
 ---
 # <a name="mitigation-xml-schema-validation"></a>Omezení rizik: Ověřování schématu XML
 V .NET Framework 4,6 ověřování schématu XSD detekuje porušení omezení UNIQUE, pokud je použit složený klíč a jeden klíč je prázdný.  
@@ -37,4 +37,4 @@ V .NET Framework 4,6 ověřování schématu XSD detekuje porušení omezení UN
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6.md)
+- [Kompatibilita aplikací](application-compatibility.md)

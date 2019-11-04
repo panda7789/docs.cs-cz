@@ -9,12 +9,12 @@ helpviewer_keywords:
 - implementing add-in pipeline segments [WPF]
 - add-in [WPF], returns a UI
 ms.assetid: 57f274b7-4c66-4b72-92eb-81939a393776
-ms.openlocfilehash: e32987355a6c7ad32b5e0e8522dc4daa63783fdd
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: d799c91b9abdf7882a0fcd3f0b656eac553b188c
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291244"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460155"
 ---
 # <a name="how-to-create-an-add-in-that-returns-a-ui"></a>Postupy: Vytvoření doplňku, který vrací uživatelské rozhraní
 Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentation Foundation (WPF) do samostatné aplikace hostitele WPF.  
@@ -25,7 +25,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentat
   
  Tento příklad zvýrazní rozšíření WPF pro .NET Framework Model doplňku, který umožňuje tento scénář, a předpokládá následující:  
   
-- Znalost .NET Frameworkho modelu doplňku, včetně kanálu, doplňku a vývoje hostitele. Pokud tyto koncepty neznáte, přečtěte si téma [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)). Kurz, který ukazuje implementaci kanálu, doplňku a hostitelské aplikace, najdete v tématu [Návod: vytváření rozšiřitelné aplikace](../../add-ins/walkthrough-create-extensible-app.md).  
+- Znalost .NET Frameworkho modelu doplňku, včetně kanálu, doplňku a vývoje hostitele. Pokud tyto koncepty neznáte, přečtěte si téma [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)). Kurz, který ukazuje implementaci kanálu, doplňku a hostitelské aplikace, najdete v tématu [Návod: vytváření rozšiřitelné aplikace](/previous-versions/dotnet/netframework-4.0/bb788290(v%3dvs.100)).  
   
 - Znalosti rozšíření WPF pro .NET Framework Model doplňku, který najdete tady: [Přehled doplňků WPF](wpf-add-ins-overview.md)  
   
@@ -48,7 +48,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentat
   
 <a name="AddInSideAdapter"></a>   
 ## <a name="implementing-the-add-in-side-adapter-pipeline-segment"></a>Implementace segmentu kanálu adaptéru na straně doplňku  
- Metoda kontraktu vrátí <xref:System.AddIn.Contract.INativeHandleContract>, ale doplněk vrátí <xref:System.Windows.FrameworkElement> (jak je uvedeno v zobrazení doplňku). V důsledku toho musí být <xref:System.Windows.FrameworkElement> převedena na <xref:System.AddIn.Contract.INativeHandleContract> před překročením hranice izolace. Tuto práci provádí adaptér doplňku na straně aplikace voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, jak je znázorněno v následujícím kódu.  
+ Metoda kontraktu vrátí <xref:System.AddIn.Contract.INativeHandleContract>, ale doplněk vrátí <xref:System.Windows.FrameworkElement> (jak je uvedeno v zobrazení doplňku). V důsledku toho musí být <xref:System.Windows.FrameworkElement> převedena na <xref:System.AddIn.Contract.INativeHandleContract> před překročením hranice izolace. Tato práce se provádí pomocí adaptéru doplňku na straně voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#AddInSideAdapterCode](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.cs#addinsideadaptercode)]
  [!code-vb[SimpleAddInReturnsAUISample#AddInSideAdapterCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.vb#addinsideadaptercode)]  

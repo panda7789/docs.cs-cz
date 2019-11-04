@@ -4,16 +4,16 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2cb91032e0ce1d320b266772e8f9f1431df4a298
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 3604aff5d1f138071c941ea85546af03185d722d
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960957"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460716"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Kurz: nasazení aplikace .NET pro Apache Spark do Azure HDInsight
 
-V tomto kurzu se naučíte, jak nasadit aplikaci .NET pro Apache Spark do cloudu prostřednictvím clusteru Azure HDInsight. HDInsight usnadňuje vytvoření a konfiguraci clusteru Spark v Azure, protože Clustery Spark v HDInsight jsou kompatibilní s Azure Storage a Azure Data Lake Storage. 
+V tomto kurzu se naučíte, jak nasadit aplikaci .NET pro Apache Spark do cloudu prostřednictvím clusteru Azure HDInsight. HDInsight usnadňuje vytvoření a konfiguraci clusteru Spark v Azure, protože Clustery Spark v HDInsight jsou kompatibilní s Azure Storage a Azure Data Lake Storage.
 
 V tomto kurzu se naučíte:
 
@@ -46,7 +46,7 @@ Než začnete, proveďte následující úlohy:
 
 ## <a name="create-an-hdinsight-cluster"></a>Vytvoření clusteru HDInsight
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Fakturace za clustery HDInsight se účtuje poměrně po minutách, a to i v případě, že je nepoužíváte. Po dokončení používání clusteru nezapomeňte tento cluster odstranit. Další informace najdete v části [vyčištění prostředků](#clean-up-resources) v tomto kurzu.
 
 1. Navštivte [Azure Portal](https://portal.azure.com).
@@ -82,7 +82,7 @@ Než začnete, proveďte následující úlohy:
 
 ## <a name="publish-your-app"></a>Publikování aplikace
 
-V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apache Spark – Začínáme během 10 minut](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) , což vašemu clusteru Spark poskytne přístup ke všem souborům, které potřebuje ke spuštění vaší aplikace. 
+V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apache Spark – Začínáme během 10 minut](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) , což vašemu clusteru Spark poskytne přístup ke všem souborům, které potřebuje ke spuštění vaší aplikace.
 
 1. Pro publikování *mySparkApp*spusťte následující příkazy:
 
@@ -90,7 +90,7 @@ V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apac
 
    ```console
    cd mySparkApp
-   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x6
+   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
    ```
 
    **V systému Linux:**
@@ -114,7 +114,7 @@ V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apac
 
 ## <a name="upload-files-to-azure"></a>Nahrání souborů do Azure
 
-Dále pomocí Průzkumník služby Azure Storage nahrajte do kontejneru objektů blob, který jste zvolili pro úložiště clusteru, následující pět souborů: 
+Dále pomocí Průzkumník služby Azure Storage nahrajte do kontejneru objektů blob, který jste zvolili pro úložiště clusteru, následující pět souborů:
 
 * Microsoft. spark. Worker
 * install-worker.sh
@@ -128,7 +128,7 @@ Dále pomocí Průzkumník služby Azure Storage nahrajte do kontejneru objektů
 
    ![Nahrání souborů do Průzkumník služby Azure Storage](./media/hdinsight-deployment/upload-files-to-storage.png)
 
-3. *Install-Worker.sh* je skript, který umožňuje zkopírovat rozhraní .net pro Apache Spark závislé soubory do uzlů clusteru. 
+3. *Install-Worker.sh* je skript, který umožňuje zkopírovat rozhraní .net pro Apache Spark závislé soubory do uzlů clusteru.
 
    Vytvořte nový soubor s názvem **install-Worker.sh** v místním počítači a vložte [obsah Install-Worker.sh](https://raw.githubusercontent.com/dotnet/spark/master/deployment/install-worker.sh) umístěný na GitHubu. Pak nahrajte *install-Worker.sh* do kontejneru objektů BLOB.
 
@@ -142,7 +142,7 @@ Dále pomocí Průzkumník služby Azure Storage nahrajte do kontejneru objektů
 
 ## <a name="run-the-hdinsight-script-action"></a>Spusťte akci skriptu HDInsight.
 
-Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install-Worker.sh** v clusteru. 
+Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install-Worker.sh** v clusteru.
 
 1. V Azure Portal přejděte do clusteru HDInsight Spark a pak vyberte **akce skriptu**.
 
@@ -154,7 +154,7 @@ Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install
    | Name | Instalace pracovního procesu|
    | Identifikátor URI skriptu bash |https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh </br> Pokud chcete tento identifikátor URI potvrdit, klikněte pravým tlačítkem na install-worker.sh v Průzkumník služby Azure Storage a vyberte vlastnosti. |
    | Typ (typy) uzlů| Zaměstnanec|
-   | Parametry | Azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin 
+   | Parametry | Azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 
 3. Vyberte **vytvořit** a odešlete skript.
 

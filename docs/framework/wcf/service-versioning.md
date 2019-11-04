@@ -2,12 +2,12 @@
 title: Verze služby
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-ms.openlocfilehash: 68c41f2c349dbceb318976ee26db58fd00dae872
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3f9fd87eacf67a1b23568dcf87df086e935879ba
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321488"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423689"
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně delší dobu během své životnosti, služeb (a koncových bodů, které zveřejňuje) může být potřeba změnit z nejrůznějších důvodů, jako jsou třeba změny obchodních potřeb, požadavky na informační technologie nebo jiné adresy Chyba. Každá změna zavádí novou verzi služby. Toto téma vysvětluje, jak zvážit správu verzí v Windows Communication Foundation (WCF).  
@@ -77,7 +77,7 @@ Po počátečním nasazení a potenciálně delší dobu během své životnosti
 ### <a name="round-trips-of-unknown-data"></a>Zpáteční cesty neznámých dat  
  V některých scénářích je potřeba "zpáteční trip" neznámá data, která pocházejí od členů přidaných v nové verzi. Například služba "versionNew" odesílá data s některými nově přidanými členy do klienta "versionOld". Klient při zpracování zprávy ignoruje nově přidané členy, ale znovu odešle stejná data, včetně nově přidaných členů, zpátky do služby versionNew. Typický scénář pro toto je aktualizace dat, kde se data načítají ze služby, která se změnila a vrátí.  
   
- Chcete-li pro určitý typ povolit funkci Round-Trip, musí typ implementovat rozhraní <xref:System.Runtime.Serialization.IExtensibleDataObject>. Rozhraní obsahuje jednu vlastnost <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A>, která vrací typ <xref:System.Runtime.Serialization.ExtensionDataObject>. Vlastnost se používá k uložení jakýchkoli dat z budoucích verzí kontraktu dat, který není aktuální verzí znám. Tato data jsou neprůhledná pro klienta, ale při serializaci instance se obsah vlastnosti <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> zapisuje se zbytkem dat členů kontraktu dat.  
+ Chcete-li pro určitý typ povolit funkci Round-Trip, musí typ implementovat rozhraní <xref:System.Runtime.Serialization.IExtensibleDataObject>. Rozhraní obsahuje jednu vlastnost, <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A>, která vrací typ <xref:System.Runtime.Serialization.ExtensionDataObject>. Vlastnost se používá k uložení jakýchkoli dat z budoucích verzí kontraktu dat, který není aktuální verzí znám. Tato data jsou neprůhledná pro klienta, ale při serializaci instance se obsah vlastnosti <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> zapisuje se zbytkem dat členů kontraktu dat.  
   
  Doporučuje se, aby všechny typy implementovaly toto rozhraní tak, aby vyhovovalo novým a neznámým budoucím členům.  
   
@@ -88,7 +88,7 @@ Po počátečním nasazení a potenciálně delší dobu během své životnosti
  Stejné zásady správy verzí platí při použití třídy <xref:System.Xml.Serialization.XmlSerializer>. Když je potřeba striktní Správa verzí, považovat kontrakty dat za neměnné a vytvoří nové kontrakty dat s jedinečnými a kvalifikovanými názvy pro nové verze. Pokud jste si jisti, že je možné použít správu verzí Lax, můžete přidat nové serializovatelné členy v nových verzích, ale ne měnit nebo odebírat stávající členy.  
   
 > [!NOTE]
-> @No__t-0 používá atributy <xref:System.Xml.Serialization.XmlAnyElementAttribute> a <xref:System.Xml.Serialization.XmlAnyAttributeAttribute> k podpoře Trip neznámých dat.  
+> <xref:System.Xml.Serialization.XmlSerializer> používá atributy <xref:System.Xml.Serialization.XmlAnyElementAttribute> a <xref:System.Xml.Serialization.XmlAnyAttributeAttribute> k podpoře Trip neznámých dat.  
   
 ## <a name="message-contract-versioning"></a>Správa verzí kontraktů zpráv  
  Pokyny pro správu verzí kontraktů zpráv jsou velmi podobné kontraktům s daty správy verzí. Pokud je potřeba striktní Správa verzí, neměli byste měnit text zprávy, ale místo toho můžete vytvořit nový kontrakt zprávy s jedinečným kvalifikovaným názvem. Pokud víte, že můžete použít správu verzí Lax, můžete přidat nové části těla zprávy, ale nemůžete je změnit nebo odebrat. Tento návod platí pro smlouvy se zabalením a zabaleného hlášení.  
@@ -130,9 +130,9 @@ Po počátečním nasazení a potenciálně delší dobu během své životnosti
 ## <a name="appendix"></a>Obsažen  
  Obecné pokyny k vytváření verzí kontraktů dat v případě, že je potřeba striktní Správa verzí, je zacházet s tím, že se kontrakty dat při nutnosti změny nemění a vytvářejí nové. Pro každou novou kontrakt dat je třeba vytvořit novou třídu, proto je třeba zajistit, aby se zabránilo nutnosti přecházet existující kód, který byl napsán z hlediska staré třídy kontraktu dat, a přepsat jej z hlediska nové třídy kontraktu dat.  
   
- Jedním z těchto mechanismů je použití rozhraní k definování členů jednotlivých kontraktů dat a zápis interního implementačního kódu z podmínek rozhraní, nikoli tříd kontraktů dat, které implementují rozhraní. Následující kód pro verzi 1 služby zobrazuje rozhraní @no__t 0 a `PurchaseOrderV1`:  
+ Jedním z těchto mechanismů je použití rozhraní k definování členů jednotlivých kontraktů dat a zápis interního implementačního kódu z podmínek rozhraní, nikoli tříd kontraktů dat, které implementují rozhraní. Následující kód pro verzi 1 služby zobrazuje rozhraní `IPurchaseOrderV1` a `PurchaseOrderV1`:  
   
-```  
+```csharp  
 public interface IPurchaseOrderV1  
 {  
     string OrderId { get; set; }  
@@ -151,9 +151,9 @@ public class PurchaseOrderV1 : IPurchaseOrderV1
 }  
 ```  
   
- Zatímco operace kontraktu služby by byly napsány `PurchaseOrderV1`, skutečná obchodní logika by byla v souladu s `IPurchaseOrderV1`. Potom ve verzi 2 by existovalo nové rozhraní @no__t 0 a nová třída `PurchaseOrderV2`, jak je znázorněno v následujícím kódu:  
+ Zatímco operace kontraktu služby by byly napsány `PurchaseOrderV1`, skutečná obchodní logika by byla v souladu s `IPurchaseOrderV1`. Pak, ve verzi 2, by bylo nové rozhraní `IPurchaseOrderV2` a nová `PurchaseOrderV2` třída, jak je znázorněno v následujícím kódu:  
   
-```  
+```csharp
 public interface IPurchaseOrderV2  
 {  
     DateTime OrderDate { get; set; }  

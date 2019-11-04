@@ -6,12 +6,12 @@ helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: 1f8ae023c414f8762139b194a9a8274218d0b5aa
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: 837be04208d438f15b4cc7c7124a47ef6c038cb2
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419374"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455437"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Inicializátory objektu a kolekce (Průvodce programováním v C#)
 
@@ -103,7 +103,7 @@ Následující inicializátor kolekce používá Inicializátory objektů k inic
   
 [!code-csharp[DictionaryInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryIndexerInitializer)]  
 
-Předchozí ukázka vygeneruje kód, který volá <xref:System.Collections.Generic.Dictionary%602.Item(%600)> pro nastavení hodnot. Počínaje C# 6 můžete inicializovat slovníky a další asociativní kontejnery pomocí následující syntaxe. Všimněte si, že místo syntaxe indexeru, pomocí závorek a přiřazení, používá objekt s více hodnotami:
+Předchozí ukázka vygeneruje kód, který volá <xref:System.Collections.Generic.Dictionary%602.Item(%600)> pro nastavení hodnot. Do C# 6 můžete pomocí následující syntaxe inicializovat slovníky a další asociativní kontejnery. Všimněte si, že místo syntaxe indexeru, pomocí závorek a přiřazení, používá objekt s více hodnotami:
 
 [!code-csharp[DictionaryAddInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryAddInitializer)]  
 

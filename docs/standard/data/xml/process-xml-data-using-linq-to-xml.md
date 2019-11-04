@@ -5,27 +5,27 @@ ms.technology: dotnet-standard
 ms.assetid: 059d6b9d-63f7-4011-9ba8-8406f0bbae7d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1554c3e2b13dd0ea0d64ccd7e7caee0a1e0dd3f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4e8e4a826fda20a39576ca78259bb7b389bbf75
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949679"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424448"
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>Zpracování dat XML pomocí LINQ to XML
-Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro zpracování dat XML. Technologie LINQ to XML umožňuje vývojářům provádění všeho byste očekávali s daty XML: dotazování, úpravy, vytváření, ukládání a serializace XML dokumentů. Skutečné výhody spadat do dotazu a vytvoření možnosti.  
+LINQ to XML je nový model ve .NET Framework verze 3,5 pro zpracování dat XML. LINQ to XML umožňuje vývojářům dělat vše, co by očekávalo s daty XML: dotazování, úpravy, vytváření, ukládání a serializace dokumentů XML. Skutečné výhody se nacházejí v dotazech a možnosti vytváření.  
   
- Dotazy v technologii LINQ to XML jsou stručné a expresivní pomocí syntaxe podobné SQL než XPath nebo výraz XQuery. Vzhledem k tomu, že výsledky dotazu může být vrácen jako kolekce elementů nebo atributů a může sloužit jako parametry pro objekty XElement, stromů XML je možné snadno transformovat z jednoho obrazce na jiný.  
+ Dotazy v LINQ to XML jsou stručné a výrazné pomocí syntaxe, která se podobá jazyku SQL, než XPath nebo XQuery. Vzhledem k tomu, že výsledky dotazu mohou být vráceny jako kolekce prvků nebo atributů a lze je použít jako parametry pro objekty XElement, mohou být stromy XML snadno transformované z jednoho obrazce na jiný.  
   
- Technologie LINQ to XML využívá technologii (LINQ) language-integrated query v rozhraní .NET Framework verze 3.5. LINQ rozšiřuje syntaxi jazyka C# a Visual Basic a poskytuje výkonné funkce dotazů, které je možné rozšířit na potenciálně jakéhokoli datového úložiště.  
+ LINQ to XML využívá technologii LINQ (Language-Integrated Query) v .NET Framework verze 3,5. LINQ rozšiřuje jazykovou syntaxi C# a Visual Basic poskytuje výkonné možnosti dotazování, které lze rozšířit na potenciálně libovolné úložiště dat.  
   
- Podrobnou diskuzi o jeho použití, naleznete v tématu [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Přehled rozhraní LINQ, naleznete v tématu [Language-Integrated Query (LINQ) - C# ](../../../csharp/programming-guide/concepts/linq/index.md) nebo [Language-Integrated Query (LINQ) - jazyka Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md).  
+ Podrobné informace o jeho použití najdete v tématu [LINQ to XMLC#()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Přehled rozhraní LINQ Framework naleznete v tématu [Language-Integrated Query (LINQ) C# ](../../../csharp/programming-guide/concepts/linq/index.md) nebo [LINQ (Language-Integrated Query)-Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq>
 - <xref:System.Linq>
-- [Technologie LINQ to XML versus DOM (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [Technologie LINQ to XML versus Modelu DOM (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [Technologie LINQ to XML versus Jiné technologie XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
-- [Technologie LINQ to XML versus Jiné technologie XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML vs. DOM (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
+- [LINQ to XML vs. DOM (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
+- [LINQ to XML vs. další technologie XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML vs. další technologie XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 11e48c54ba82b51268b34d6db01d2f9d4ae61ad7
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: d4a2562324259bda0bab523849449d584736b2ae
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523570"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423187"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 
@@ -114,13 +114,13 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]
 
-     Tyto doplňky ukazují další funkci v C#systému: zpracovávání `Object` hodnot vrácených hostiteli com, jako je například sada Office, jako kdyby byly typu [dynamické](../../language-reference/keywords/dynamic.md). K tomu dochází automaticky při **Vložení typů spolupráce** do výchozí hodnoty, `True` nebo ekvivalentní, pokud je na sestavení odkazováno pomocí možnosti kompilátoru [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Typ `dynamic` umožňuje pozdní vazbu, která je již k dispozici v Visual Basic a zabraňuje explicitnímu přetypování vyžadovanému v C# 3,0 a starších verzích jazyka.
+     Tyto doplňky ukazují další funkci v C#systému: zpracovávání `Object` hodnot vrácených hostiteli com, jako je například sada Office, jako kdyby byly typu [dynamické](../../language-reference/builtin-types/reference-types.md). K tomu dochází automaticky při **Vložení typů spolupráce** do výchozí hodnoty, `True` nebo ekvivalentní, pokud je na sestavení odkazováno pomocí možnosti kompilátoru [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Typ `dynamic` umožňuje pozdní vazbu, která je již k dispozici v Visual Basic a zabraňuje explicitnímu přetypování vyžadovanému v C# 3,0 a starších verzích jazyka.
 
-     Například `excelApp.Columns[1]` vrátí `Object` a `AutoFit` je metoda [rozsahu](<xref:Microsoft.Office.Interop.Excel.Range>) aplikace Excel. Bez `dynamic` je nutné přetypování objektu vráceného `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.
+     Například `excelApp.Columns[1]` vrátí `Object`a `AutoFit` je metoda [rozsahu](<xref:Microsoft.Office.Interop.Excel.Range>) aplikace Excel. Bez `dynamic`je nutné přetypování objektu vráceného `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.
 
      [!code-csharp[csOfficeWalkthrough#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#8)]
 
-     Další informace o vkládání typů spolupráce naleznete v tématu procedury "Vyhledání odkazu PIA" a "obnovení závislosti PIA" dále v tomto tématu. Další informace o `dynamic` naleznete v tématu [dynamické](../../language-reference/keywords/dynamic.md) nebo [použití typu Dynamic](../types/using-type-dynamic.md).
+     Další informace o vkládání typů spolupráce naleznete v tématu procedury "Vyhledání odkazu PIA" a "obnovení závislosti PIA" dále v tomto tématu. Další informace o `dynamic` naleznete v tématu [dynamické](../../language-reference/builtin-types/reference-types.md) nebo [použití typu Dynamic](../types/using-type-dynamic.md).
 
 ### <a name="to-invoke-displayinexcel"></a>Pro vyvolání DisplayInExcel
 
@@ -199,7 +199,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 - [Předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
 - [Pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md)
 - [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [dynamic](../../language-reference/keywords/dynamic.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Výrazy lambda (C#)](../statements-expressions-operators/lambda-expressions.md)

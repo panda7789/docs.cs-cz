@@ -2,18 +2,18 @@
 title: Funkce
 description: Přečtěte si o F# funkcích v F# tématu a o tom, jak podporují běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6f65ce692169b71abe8d2eff7ef07b66975d478b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c6b8307f51ffcdc77fe4352b2305fca1f247ccbb
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630701"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423956"
 ---
 # <a name="functions"></a>Funkce
 
 Funkce jsou základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích má F# funkce název, může mít parametry a přebírat argumenty a má tělo. F#také podporuje konstrukce funkčního programování, jako je zpracování funkcí jako hodnot, použití nepojmenovaných funkcí ve výrazech, složení funkcí pro vytváření nových funkcí, funkcí curryfikované a implicitní definice funkcí pomocí možností částečného. použití argumentů funkce.
 
-Funkce definujete pomocí `let` klíčového slova, nebo pokud je funkce rekurzivní `let rec` , kombinace klíčového slova.
+Funkce definujete pomocí klíčového slova `let`, nebo pokud je funkce rekurzivní, kombinace klíčového slova `let rec`.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,11 +34,11 @@ Jednoduchá definice funkce se podobá následující:
 let f x = x + 1
 ```
 
-V předchozím příkladu je název `f`funkce, argument je `x`, který má typ `int`, tělo `x + 1`funkce a návratová hodnota je typu `int`.
+V předchozím příkladu je název funkce `f`, argument je `x`, který má typ `int`, tělo funkce `x + 1`a návratová hodnota je typu `int`.
 
-Funkce mohou být označeny `inline`. Další informace o `inline`naleznete v tématu inline [Functions](../functions/inline-functions.md).
+Funkce mohou být označeny `inline`. Informace o `inline`naleznete v tématu [inline Functions](../functions/inline-functions.md).
 
-## <a name="scope"></a>Scope
+## <a name="scope"></a>Rozsah
 
 Na jakékoli úrovni oboru jiné než obor modulu není k dispozici chyba pro opakované použití hodnoty nebo názvu funkce. Pokud použijete název znovu, název deklarovaný později vystínuje dříve deklarovaný název. Nicméně v oboru nejvyšší úrovně v modulu musí být názvy jedinečné. Například následující kód vyvolá chybu, když se zobrazí v oboru modulu, ale ne, pokud se zobrazí uvnitř funkce:
 
@@ -56,7 +56,7 @@ Názvy parametrů jsou uvedeny za názvem funkce. Můžete určit typ pro parame
 let f (x : int) = x + 1
 ```
 
-Pokud zadáte typ, následuje za názvem parametru a je oddělen od názvu dvojtečkou. Pokud vynecháte typ pro parametr, typ parametru je odvozen kompilátorem. Například v následující definici funkce je argument `x` odvozen jako typ `int` , protože 1 je typu `int`.
+Pokud zadáte typ, následuje za názvem parametru a je oddělen od názvu dvojtečkou. Pokud vynecháte typ pro parametr, typ parametru je odvozen kompilátorem. Například v následující definici funkce je argument `x` odvozený tak, aby byl typu `int`, protože 1 je typ `int`.
 
 ```fsharp
 let f x = x + 1
@@ -76,11 +76,11 @@ Tělo funkce může obsahovat definice místních proměnných a funkcí. Tyto p
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet103.fs)]
 
-Další informace najdete v tématu [pokyny pro formátování kódu](../code-formatting-guidelines.md) a podrobnou [syntaxi](../verbose-syntax.md).
+Další informace najdete v tématu [pokyny pro formátování kódu](../../style-guide/formatting.md) a [podrobnou syntaxi](../verbose-syntax.md).
 
 ## <a name="return-values"></a>Návratové hodnoty
 
-Kompilátor používá konečný výraz v těle funkce k určení návratové hodnoty a typu. Kompilátor může odvodit typ finálního výrazu z předchozích výrazů. Ve funkci `cylinderVolume`, která `pi` je uvedena v předchozí části, je typ typu určen z typu literálu `3.14159` , který má být `float`. Kompilátor používá typ `pi` k určení typu výrazu `h * pi * r * r` , který má být `float`. Proto je `float`celkový návratový typ funkce.
+Kompilátor používá konečný výraz v těle funkce k určení návratové hodnoty a typu. Kompilátor může odvodit typ finálního výrazu z předchozích výrazů. V `cylinderVolume`funkce uvedené v předchozí části je typ `pi` určen z typu `3.14159` literálu, který má být `float`. Kompilátor používá typ `pi` k určení typu výrazu `h * pi * r * r` `float`. Proto je celkový návratový typ funkce `float`.
 
 Chcete-li zadat návratovou hodnotu explicitně, napište kód následujícím způsobem:
 
@@ -124,13 +124,13 @@ V F#platí, že všechny funkce jsou považovány za hodnoty; ve skutečnosti js
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet109.fs)]
 
-Zadejte typ hodnoty funkce pomocí `->` tokenu. Na levé straně tohoto tokenu je typ argumentu a na pravé straně je návratová hodnota. V předchozím příkladu `apply1` je funkce, která přebírá funkci `transform` jako argument, kde `transform` je funkce, která přebírá celé číslo a vrací jiné celé číslo. Následující kód ukazuje, jak použít `apply1`:
+Zadejte typ hodnoty funkce pomocí tokenu `->`. Na levé straně tohoto tokenu je typ argumentu a na pravé straně je návratová hodnota. V předchozím příkladu je `apply1` funkce, která přebírá funkci `transform` jako argument, kde `transform` je funkce, která přebírá celé číslo a vrací jiné celé číslo. Následující kód ukazuje, jak použít `apply1`:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet110.fs)]
 
-Hodnota `result` bude 101 až po spuštění předchozího kódu.
+Hodnota `result` bude 101 po spuštění předchozího kódu.
 
-Více argumentů je odděleno pomocí následných `->` tokenů, jak je znázorněno v následujícím příkladu:
+Více argumentů je odděleno pomocí `->` tokeny po sobě, jak je znázorněno v následujícím příkladu:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet111.fs)]
 
@@ -142,7 +142,7 @@ Výsledek je 200.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-Lambda výrazy definujete pomocí `fun` klíčového slova. Výraz lambda se podobá definici funkce, s tím rozdílem, že `=` místo tokenu `->` se token používá k oddělení seznamu argumentů od těla funkce. Stejně jako v definici regulární funkce lze typy argumentů odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozený od typu posledního výrazu v těle. Další informace naleznete v tématu [lambda Expressions: `fun` Klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md).
+Lambda výrazy definujete pomocí klíčového slova `fun`. Výraz lambda se podobá definici funkce, s tím rozdílem, že místo tokenu `=` je `->` tokenu použit k oddělení seznamu argumentů od těla funkce. Stejně jako v definici regulární funkce lze typy argumentů odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozený od typu posledního výrazu v těle. Další informace naleznete v tématu [výrazy lambda: klíčové slovo `fun`](../functions/lambda-expressions-the-fun-keyword.md).
 
 ## <a name="function-composition-and-pipelining"></a>Skládání a paralelní zpracování funkcí
 

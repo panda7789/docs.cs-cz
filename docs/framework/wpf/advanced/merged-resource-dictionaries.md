@@ -5,12 +5,12 @@ helpviewer_keywords:
 - merged resource dictionaries [WPF]
 - dictionaries [WPF], merged resources
 ms.assetid: d159531f-05d4-49fd-b951-c332de51e5bc
-ms.openlocfilehash: ff6720a4f0e99e8274a608b4177044451d8c828d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6647e52ef8477221dd5849a19809a34fb06189a6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582475"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455416"
 ---
 # <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 prostředky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporují funkci sloučeného slovníku prostředků. Tato funkce poskytuje způsob, jak definovat část prostředků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace mimo kompilovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace. Prostředky je pak možné sdílet mezi aplikacemi a jsou taky pohodlnější izolované pro lokalizaci.  
@@ -20,7 +20,7 @@ prostředky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-wincli
   
  [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]  
   
- Všimněte si, že <xref:System.Windows.ResourceDictionary> element nemá [direktivu x:Key –](../../xaml-services/x-key-directive.md), která je obecně nutná pro všechny položky v kolekci prostředků. Ale další odkaz <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> je zvláštní případ vyhrazený pro tento scénář sloučeného slovníku prostředků. @No__t_0, který zavádí sloučený slovník prostředků, nemůže mít [direktivu x:Key –](../../xaml-services/x-key-directive.md). Každý <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> obvykle určuje atribut <xref:System.Windows.ResourceDictionary.Source%2A>. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měla být identifikátor URI (Uniform Resource Identifier), který se překládá na umístění souboru prostředků, který se má sloučit. Cíl tohoto identifikátoru URI musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
+ Všimněte si, že <xref:System.Windows.ResourceDictionary> element nemá [direktivu x:Key –](../../xaml-services/x-key-directive.md), která je obecně nutná pro všechny položky v kolekci prostředků. Ale další odkaz <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> je zvláštní případ vyhrazený pro tento scénář sloučeného slovníku prostředků. <xref:System.Windows.ResourceDictionary>, který zavádí sloučený slovník prostředků, nemůže mít [direktivu x:Key –](../../xaml-services/x-key-directive.md). Každý <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> obvykle určuje atribut <xref:System.Windows.ResourceDictionary.Source%2A>. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měla být identifikátor URI (Uniform Resource Identifier), který se překládá na umístění souboru prostředků, který se má sloučit. Cíl tohoto identifikátoru URI musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
   
 > [!NOTE]
 > Je možné definovat prostředky v rámci <xref:System.Windows.ResourceDictionary>, který je zadaný jako sloučený slovník, a to buď jako alternativu k určení <xref:System.Windows.ResourceDictionary.Source%2A>, nebo kromě jakýchkoli prostředků, které jsou zahrnuté ze zadaného zdroje. Nejedná se však o běžný scénář. hlavním scénářem pro sloučené slovníky je sloučení prostředků z umístění externích souborů. Chcete-li určit prostředky v rámci značky stránky, je obvykle třeba je definovat v hlavním <xref:System.Windows.ResourceDictionary> a nikoli ve sloučených slovnících.  
@@ -54,6 +54,6 @@ prostředky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-wincli
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](xaml-resources.md)
+- [Prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [Prostředky a kód](resources-and-code.md)
 - [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)

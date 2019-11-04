@@ -8,30 +8,30 @@ helpviewer_keywords:
 - examples [Windows Forms], metafiles
 - metafiles [Windows Forms], displaying
 ms.assetid: 60af1714-f148-4d85-a739-0557965ffa73
-ms.openlocfilehash: 39b7251b2789c7410e1d59b4aa7990a2f73055fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6c17e0b2d023ccf80b0d32301b7ee6765edcae9f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61723223"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424827"
 ---
 # <a name="how-to-load-and-display-metafiles"></a>Postupy: Zavedení a zobrazení metasouborů
-<xref:System.Drawing.Imaging.Metafile> Třída, která dědí z <xref:System.Drawing.Image> třídy, poskytuje metody pro nahrávání, zobrazování a zkoumání vektorové obrázky.  
+Třída <xref:System.Drawing.Imaging.Metafile>, která dědí z třídy <xref:System.Drawing.Image>, poskytuje metody pro zaznamenávání, zobrazování a zkoumání vektorových imagí.  
   
 ## <a name="example"></a>Příklad  
- K zobrazení bitovou kopii vektoru (metafile) na obrazovce, je nutné <xref:System.Drawing.Imaging.Metafile> objektu a <xref:System.Drawing.Graphics> objektu. Předat název souboru (nebo datový proud) <xref:System.Drawing.Imaging.Metafile> konstruktoru. Po vytvoření <xref:System.Drawing.Imaging.Metafile> objektu, který předat <xref:System.Drawing.Imaging.Metafile> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
+ Chcete-li na obrazovce zobrazit vektorový obraz (metasoubor), budete potřebovat objekt <xref:System.Drawing.Imaging.Metafile> a objekt <xref:System.Drawing.Graphics>. Předat název souboru (nebo datového proudu) konstruktoru <xref:System.Drawing.Imaging.Metafile>. Po vytvoření objektu <xref:System.Drawing.Imaging.Metafile> předejte objekt <xref:System.Drawing.Imaging.Metafile> do metody <xref:System.Drawing.Graphics.DrawImage%2A> objektu <xref:System.Drawing.Graphics>.  
   
- V příkladu se vytvoří <xref:System.Drawing.Imaging.Metafile> objekt ze souboru EMF (rozšířený metasoubor) a potom nakreslí obrázek s jeho levého horního rohu na (60, 10).  
+ V příkladu se vytvoří objekt <xref:System.Drawing.Imaging.Metafile> ze souboru EMF (Enhanced Metafile) a pak se obrázek vykreslí pomocí levého horního rohu v (60, 10).  
   
- Následující obrázek znázorňuje tento metasoubor vykreslen v zadaném umístění.  
+ Následující ilustrace znázorňuje metasoubor nakreslený v zadaném umístění.  
   
- ![Obrázek pozice](./media/imageposition2.png "imageposition2")  
+ ![Snímek obrazovky znázorňující umístění obrázku](./media/how-to-load-and-display-metafiles/metafile-drawn-specified-location.png "imageposition2")  
   
  [!code-csharp[System.Drawing.WorkingWithImages#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.WorkingWithImages#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ Předchozí příklad je navržen pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr obslužné rutiny události <xref:System.Windows.Forms.Control.Paint>.  
   
 ## <a name="see-also"></a>Viz také:
 

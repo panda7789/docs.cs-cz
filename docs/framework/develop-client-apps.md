@@ -13,23 +13,23 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: b9d9efb62e0c6bc0925662bc9424065922a1534c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5cf10a4d50aec561fea4f8537098345f8e03a26a
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051987"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457972"
 ---
-# <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací pomocí .NET Framework
+# <a name="develop-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací pomocí .NET Framework
 
-Existuje několik způsobů, jak pomocí .NET Framework vyvíjet aplikace pro systém Windows. Můžete použít kterýkoli z těchto nástrojů a platforem: 
+Existuje několik způsobů, jak pomocí .NET Framework vyvíjet aplikace pro systém Windows. Můžete použít kterýkoli z těchto nástrojů a platforem:
 
 - [Univerzální platforma Windows (UPW)](https://developer.microsoft.com/windows/apps)
 - [Windows Presentation Foundation (WPF)](./wpf/index.md)
 - [Windows Forms](./winforms/index.md)
 
 Tato část obsahuje témata, která popisují, jak vytvářet aplikace pro systém Windows pomocí Windows Presentation Foundation nebo pomocí model Windows Forms. Můžete ale také vytvořit webové aplikace pomocí .NET Framework a klientských aplikací pro počítače nebo zařízení, které zpřístupníte prostřednictvím Microsoft Store.
- 
+
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Windows Presentation Foundation](./wpf/index.md)  
@@ -37,9 +37,6 @@ Poskytuje informace o vývoji aplikací pomocí WPF.
 
 [Windows Forms](./winforms/index.md)  
 Poskytuje informace o vývoji aplikací pomocí model Windows Forms.
-
-[Technologie CCT (Common Client Technologies)](./common-client-technologies/index.md)  
-Poskytuje informace o dalších technologiích, které lze použít při vývoji klientských aplikací.
 
 ## <a name="related-sections"></a>Související oddíly
 

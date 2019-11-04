@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: 4a0b15ded5050833d4e87a30b977139834b624d4
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 39124b03b21fe1bc2a5dce3d8fb90ff372ab4853
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197931"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458930"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohatou prostředí pro vytváření aplikací. Pokud ale v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu máte významnou investici, může být efektivnější rozlišit vaši stávající aplikaci [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] místo toho, aby se přepsala od začátku. Běžným scénářem je, že chcete vložit jeden nebo více ovládacích prvků implementovaných pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace model Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v tématu [Control Customizing](../controls/control-customization.md).  
@@ -87,7 +87,7 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 #### <a name="styling-the-ui-elements"></a>Určení stylu prvků uživatelského rozhraní  
  Mnohé prvky formuláře pro zadávání dat mají podobný vzhled, což znamená, že mají stejné nastavení pro několik jejich vlastností. Místo nastavování atributů každého elementu samostatně, předchozí XAML používá <xref:System.Windows.Style> prvky pro definování standardních nastavení vlastností pro třídy prvků. Tento přístup omezuje složitost ovládacího prvku a umožňuje změnit vzhled více prvků prostřednictvím atributu s jedním stylem.  
   
- Prvky <xref:System.Windows.Style> jsou obsaženy ve vlastnosti <xref:System.Windows.FrameworkElement.Resources%2A> elementu <xref:System.Windows.Controls.Grid>, takže je lze použít pro všechny prvky v ovládacím prvku. Pokud je styl pojmenován, můžete jej použít na prvek přidáním prvku <xref:System.Windows.Style> nastaveného na název stylu. Styly, které nejsou pojmenované, se stanou výchozím stylem pro element. Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stylů naleznete v tématu [stylování and šablonování](../controls/styling-and-templating.md).  
+ Prvky <xref:System.Windows.Style> jsou obsaženy ve vlastnosti <xref:System.Windows.FrameworkElement.Resources%2A> elementu <xref:System.Windows.Controls.Grid>, takže je lze použít pro všechny prvky v ovládacím prvku. Pokud je styl pojmenován, můžete jej použít na prvek přidáním prvku <xref:System.Windows.Style> nastaveného na název stylu. Styly, které nejsou pojmenované, se stanou výchozím stylem pro element. Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stylů naleznete v tématu [stylování and šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).  
   
  Následující kód XAML ukazuje prvky <xref:System.Windows.Style> pro složený ovládací prvek. Chcete-li zjistit, jak jsou styly použity pro prvky, viz předchozí XAML. Například poslední <xref:System.Windows.Controls.TextBlock> prvek má styl `inlineText` a poslední <xref:System.Windows.Controls.TextBox> element používá výchozí styl.  
   

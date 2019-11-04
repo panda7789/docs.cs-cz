@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: fba640ab71459407bfc7a62908021e509346c363
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: fe7704b9366bf46f0c9965f78ce441000ead6334
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197362"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460791"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 
@@ -183,7 +183,7 @@ Následující příklad používá vazbu k tomu, aby provede stejnou věc.
 
 [!code-xaml[UserControlNumericUpDown#Binding](~/samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml#binding)]
 
-Další informace o datové vazbě najdete v tématu [Přehled datových vazeb](../data/data-binding-overview.md).
+Další informace o datové vazbě najdete v tématu [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).
 
 ### <a name="design-for-designers"></a>Návrh pro návrháře
 

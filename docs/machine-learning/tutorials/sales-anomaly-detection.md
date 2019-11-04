@@ -4,12 +4,12 @@ description: Naučte se, jak vytvořit aplikaci pro detekci anomálií pro prode
 ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ed4c24fac2348c021982ad593417b33d50347dd1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 37c6b99fbd7db63c19201e0c6dce9b2b6d9f1932
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774443"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423620"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Kurz: zjištění anomálií v prodeji produktů pomocí ML.NET
 
@@ -99,7 +99,7 @@ Přidejte do projektu novou třídu:
 5. Vytvořte dvě globální pole, která budou uchovávat nedávno staženou cestu k souboru datové sady a uloženou cestu k souboru modelu:
 
     * `_dataPath` má cestu k datové sadě, která se používá ke výukě modelu.
-    * `_docsize` má počet záznamů v souboru DataSet. K výpočtu `pvalueHistoryLength` použijete `_docSize`.
+    * `_docsize` má počet záznamů v souboru DataSet. K výpočtu `pvalueHistoryLength`použijete `_docSize`.
 
 6. Přidejte následující kód na řádek vpravo nad `Main` metodou pro určení těchto cest:
 
@@ -127,7 +127,7 @@ Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.ID
 
 Detekce anomálií označuje neočekávané nebo neobvyklé události nebo chování. Dává v tom, kde hledat problémy a pomáhá zodpovědět otázku "je to divné?".
 
-![Je toto divné](./media/sales-anomaly-detection/anomalydetection.png)
+![Příklad detekce anomálií "je tímto divné".](./media/sales-anomaly-detection/time-series-anomaly-detection.png)
 
 Detekce anomálií je proces zjišťování nezaložených dat časových řad. body v dané vstupní časové řadě, kde chování není očekávané, nebo "divné".
 
@@ -152,7 +152,7 @@ Budete analyzovat stejná prodejní data produktu za účelem detekce Špičk a 
 
 Cílem detekce špičky je identifikovat náhlé ještě dočasné shluky, které se významně liší od většiny hodnot dat časových řad. Je důležité detekovat tyto podezřelé výjimečné položky, události nebo pozorování včas, aby byly minimalizovány. K detekci nejrůznějších anomálií, jako jsou výpadky, internetoví útoky nebo virové webovému obsahu, se dá použít následující přístup. Následující obrázek je příkladem špičky v datové sadě časových řad:
 
-![SpikeDetection](./media/sales-anomaly-detection/SpikeDetection.png)
+![Snímek obrazovky, který zobrazuje dvě detekce špičky.](./media/sales-anomaly-detection/two-spike-detections.png)
 
 ### <a name="add-the-createemptydataview-method"></a>Přidání metody CreateEmptyDataView ()
 
@@ -160,7 +160,7 @@ Přidejte následující metodu pro `Program.cs`:
 
 [!code-csharp[CreateEmptyDataView](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEmptyDataView)]
 
-@No__t_0 vytvoří prázdný objekt zobrazení dat se správným schématem, který se použije jako vstup do metody `IEstimator.Fit()`.
+`CreateEmptyDataView()` vytvoří prázdný objekt zobrazení dat se správným schématem, který se použije jako vstup do metody `IEstimator.Fit()`.
 
 ### <a name="create-the-detectspike-method"></a>Vytvoření metody DetectSpike ()
 
@@ -266,7 +266,7 @@ Alert   Score   P-Value
 
 `Change points` jsou trvalé změny v průběhu distribuce hodnot datového proudu událostí, jako jsou například změny úrovně a trendy. Tyto trvalé změny jsou poslední mnohem delší než `spikes` a můžou označovat závažné události. `Change points` nejsou obvykle viditelné pro holé oči, ale lze je zjistit ve vašich datech pomocí přístupů, jako je například v následující metodě.  Následující obrázek je příkladem detekce bodu změny:
 
-![ChangePointDetection](./media/sales-anomaly-detection/ChangePointDetection.png)
+![Snímek obrazovky, který ukazuje detekci bodu změny.](./media/sales-anomaly-detection/change-point-detection.png)
 
 ### <a name="create-the-detectchangepoint-method"></a>Vytvoření metody DetectChangepoint ()
 

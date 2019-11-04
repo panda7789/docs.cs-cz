@@ -8,15 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - ascending keyword [C#]
 ms.assetid: 57fbb619-8187-481c-b68e-3a91996fde69
-ms.openlocfilehash: 479e15b8c1103ea1e5fdd803812944d25d965a81
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f0b183f9e7cf0997947e5a8cdd73fb90fd7e44ea
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602342"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422923"
 ---
 # <a name="ascending-c-reference"></a>ascending (Referenční dokumentace jazyka C#)
-Klíčové slovo kontextové se používá v [klauzuli OrderBy](./orderby-clause.md) ve výrazech dotazu k určení, že pořadí řazení je od nejmenších po největší. `ascending` Vzhledem `ascending` k tomu, že je výchozí pořadí řazení, nemusíte ho zadávat.  
+Klíčové slovo `ascending` se používá v [klauzuli OrderBy](./orderby-clause.md) ve výrazech dotazu k určení, že pořadí řazení je od nejmenších po největší. Vzhledem k tomu, že výchozí pořadí řazení je `ascending`, nemusíte ho zadávat.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje použití `ascending` v [klauzuli OrderBy](./orderby-clause.md).  
@@ -26,5 +26,5 @@ Klíčové slovo kontextové se používá v [klauzuli OrderBy](./orderby-clause
 ## <a name="see-also"></a>Viz také:
 
 - [C#Odkaz](../index.md)
-- [Výrazy dotazů LINQ](../../programming-guide/linq-query-expressions/index.md)
+- [LINQ v jazyce C#](../../linq/index.md)
 - [descending](./descending.md)

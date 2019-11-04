@@ -1,27 +1,27 @@
 ---
 title: Použití metod Close a Abort k uvolnění prostředků klienta WCF
-description: Dispose může selhat a vyvolání výjimky, pokud se nezdaří v síti. To může způsobit nežádoucí chování. Místo toho použijte zavřít a přerušení k uvolnění prostředků klienta, když k chybě sítě.
+description: Dispose může selhat a vyvolat výjimky, pokud dojde k selhání sítě. To může způsobit nežádoucí chování. Místo toho použijte příkaz Zavřít a přerušit k uvolnění prostředků klienta, pokud se síť nezdařila.
 ms.date: 11/12/2018
 ms.assetid: aff82a8d-933d-4bdc-b0c2-c2f7527204fb
-ms.openlocfilehash: 58f828d9cd85806f5f04c349a7de18828ab5f6f2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afb52e89c5f159e7866ebc8f30fcfae7dd5be93a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007570"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424178"
 ---
-# <a name="close-and-abort-release-resources-safely-when-network-connections-have-dropped"></a>Zavřít a přerušení uvolnění prostředků bezpečně vynechali síťová připojení
+# <a name="close-and-abort-release-resources-safely-when-network-connections-have-dropped"></a>V případě, že jsou síťová připojení vyřazena, uzavřete a přerušit uvolnění prostředků
 
-Tento příklad ukazuje použití `Close` a `Abort` metody pro vyčištění prostředků při použití typu klienta. `using` Příkaz způsobí, že výjimky při připojení k síti není robustní. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).
+Tato ukázka demonstruje použití metod `Close` a `Abort` k vyčištění prostředků při použití typového klienta. Příkaz `using` způsobuje výjimky v případě nerobustního síťového připojení. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).
 
 > [!NOTE]
-> Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
-Tento příklad ukazuje dvě běžné problémy, ke kterým dochází při použití jazyka C# "" příkaz s typem klienty, stejně jako kód, který správně vyčištění po výjimkách.
+Tato ukázka ukazuje dva běžné problémy, ke kterým dochází při použití příkazu C# "using" se zadanými klienty, jakož i kódu, který správně čistí po výjimkách.
 
-Příkaz "using" C# výsledkem volání `Dispose`(). To je stejný jako `Close`(), což může vyvolat výjimky, když dojde k chybě sítě. Protože volání `Dispose`() se implicitně odehrává na pravou složenou závorku "pomocí" bloku, tento zdroj výjimky je pravděpodobně přejít unnoticed i uživatelé psaní kódu a čtení kódu. Reprezentuje možným zdrojem chyby aplikace.
+C# Příkaz using má za následek volání `Dispose`(). To je stejné jako `Close`(), což může vyvolat výjimky při výskytu chyby sítě. Vzhledem k tomu, že volání `Dispose`() probíhá implicitně na pravé závorce bloku "using", tento zdroj výjimek je pravděpodobně neupozorněn na uživatele, kteří píší kód a čtou kód. To představuje potenciální zdroj chyb aplikace.
 
-Prvním problémem, ukazuje `DemonstrateProblemUsingCanThrow` metoda, je, že pravou složenou závorku výjimku a kód po pravé složené závorce nespustí:
+První problém, znázorněný v metodě `DemonstrateProblemUsingCanThrow`, je, že pravá složená závorka vyvolá výjimku a kód po pravé složené závorce nespustí:
 
 ```csharp
 using (CalculatorClient client = new CalculatorClient())
@@ -31,9 +31,9 @@ using (CalculatorClient client = new CalculatorClient())
 Console.WriteLine("Hope this code wasn't important, because it might not happen.");
 ```
 
-I když nic uvnitř using blokovat útoky DoS vyvolá výjimku nebo uvnitř using všechny výjimky jsou zachyceny bloku, `Console.WriteLine` nemusí dojít, protože implicitní `Dispose`volání () na pravé složené závorce může vyvolat výjimku.
+I v případě, že nic uvnitř bloku using vyvolá výjimku nebo jsou zachyceny všechny výjimky uvnitř bloku using, `Console.WriteLine` pravděpodobně neproběhne, protože volání implicitního `Dispose`() na pravé závorce může vyvolat výjimku.
 
-Druhý problém ukazuje `DemonstrateProblemUsingCanThrowAndMask` metoda, je jiný nepřímo pravou složenou závorku, došlo k výjimce:
+Druhý problém, znázorněný v metodě `DemonstrateProblemUsingCanThrowAndMask`, je další příčinou pravé složené závorky, která vyvolává výjimku:
 
 ```csharp
 using (CalculatorClient client = new CalculatorClient())
@@ -44,9 +44,9 @@ using (CalculatorClient client = new CalculatorClient())
 } // <-- this line might throw an exception.
 ```
 
-Protože `Dispose`() nastane uvnitř bloku "klíčové slovo finally" `ApplicationException` nikdy se neprohlédlo mimo using blokovat, pokud `Dispose`() se nezdaří. Pokud kód mimo musí vědět o tom, kdy `ApplicationException` dojde, "using" konstruktoru může způsobit problémy pomocí jejich maskování této výjimky.
+Vzhledem k tomu, že se `Dispose`() nachází uvnitř bloku "finally", `ApplicationException` se nikdy nezobrazuje vně bloku using, pokud `Dispose`() dojde k chybě. Pokud kód mimo musí znát, kdy k `ApplicationException` dojde, může konstrukce "using" způsobit problémy pomocí maskování této výjimky.
 
-Nakonec vzorek ukazuje, jak vyčistit správně při výskytu výjimek v `DemonstrateCleanupWithExceptions`. Tento mechanismus využívá bloku try/catch k nahlášení chyb a volání `Abort`. Zobrazit [očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázka podrobné informace o zachycení výjimky z volání klienta.
+Nakonec Ukázka ukazuje, jak správně vyčistit při výskytu výjimek v `DemonstrateCleanupWithExceptions`. K nahlášení chyb a volání `Abort`se používá blok try/catch. Další podrobnosti o zachycování výjimek od klientských volání najdete v ukázce [očekávaných výjimek](../../../../docs/framework/wcf/samples/expected-exceptions.md) .
 
 ```csharp
 try
@@ -73,15 +73,15 @@ catch (Exception e)
 ```
 
 > [!NOTE]
-> Použití příkazu a hostitel služby: Samoobslužné hostování aplikací v mnoha trochu více než hostování služby a ServiceHost.Close zřídka vyvolá výjimku, takže tyto aplikace můžete bezpečně použít na pomocí příkazu s hostitele ServiceHost. Však být vědomi, že může vyvolat ServiceHost.Close `CommunicationException`, takže pokud vaše aplikace bude pokračovat až po zavření hostitele ServiceHost, měli byste se vyhnout pomocí příkazu a postupujte podle vzoru předem.
+> Příkaz using a Třída ServiceHost: mnoho aplikací pro samoobslužné hostování má málo větší počet než hostitel a služba a třídu ServiceHost. zavření zřídka vyvolá výjimku, takže takové aplikace mohou bezpečně používat příkaz using s použitím třídy ServiceHost. Upozorňujeme však, že Třída ServiceHost. Close může vyvolat `CommunicationException`, takže pokud vaše aplikace po zavření hostitele ServiceHost pokračuje, měli byste se vyhnout příkazu Using a postupovat podle výše uvedeného vzoru.
 
-Při spuštění ukázky operace odpovědi a výjimky jsou zobrazeny v okně konzoly klienta.
+Při spuštění ukázky se v okně konzoly klienta zobrazí odezvy operace a výjimky.
 
-Klient proces spouští tři scénáře, každý z které pokusy o volání `Divide`. První scénář ukazuje kód přeskočeno z důvodu výjimky z `Dispose`(). Druhý scénář ukazuje důležité výjimku z důvodu výjimky z maskovaného `Dispose`(). Třetí scénář ukazuje správné vyčištění.
+Proces klienta spouští tři scénáře, z nichž každý se pokusí volat `Divide`. První scénář ukazuje přeskočení kódu z důvodu výjimky z `Dispose`(). Druhý scénář ukazuje, že důležitá výjimka je maskována z důvodu výjimky z `Dispose`(). Třetí scénář demonstruje správné vyčištění.
 
-Očekávaný výstup z procesu klienta je:
+Očekávaný výstup z klientského procesu je:
 
-```
+```console
 =
 = Demonstrating problem:  closing brace of using statement can throw.
 =
@@ -103,19 +103,19 @@ Got System.ServiceModel.CommunicationException from Divide.
 Press <ENTER> to terminate client.
 ```
 
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\UsingUsing`

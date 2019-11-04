@@ -2,19 +2,19 @@
 title: Operace join (C#)
 ms.date: 07/20/2015
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-ms.openlocfilehash: 95661e2d0d7f4f0e75c1fa1b10e1f322923189b1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 456894dd07f512d7e694ad0056b1e861dc3012c5
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592078"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423382"
 ---
 # <a name="join-operations-c"></a>Operace join (C#)
 *Spojení* dvou zdrojů dat je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat.  
   
  Spojování je důležitou operací v dotazech, které cílí na zdroje dat, u kterých vzájemně vztazích nemůžete přímo následovat. V objektově orientovaném programování může to znamenat korelaci mezi objekty, které nejsou modelovány, jako je například zpětný směr jednosměrné relace. Příkladem jednosměrného vztahu je třída zákazníka, která má vlastnost typu City, ale třída City nemá vlastnost, která je kolekcí zákaznických objektů. Pokud máte seznam objektů City a chcete najít všechny zákazníky v jednotlivých městech, můžete je najít pomocí operace JOIN.  
   
- Metody join, které jsou k dispozici v <xref:System.Linq.Enumerable.Join%2A> rozhraní <xref:System.Linq.Enumerable.GroupJoin%2A>LINQ Framework, jsou a. Tyto metody provádějí equijoins nebo spojení, které odpovídají dvěma zdrojům dat na základě rovnosti jejich klíčů. (Pro porovnání jazyk Transact-SQL podporuje operátory JOIN jiné než Equals, například operátor "menší než".) V terminologii <xref:System.Linq.Enumerable.Join%2A> relačních databází implementuje interní spojení typ spojení, ve kterém jsou vráceny pouze objekty, které mají shodu v jiné sadě dat. Tato <xref:System.Linq.Enumerable.GroupJoin%2A> metoda nemá žádný přímý ekvivalent v rámci podmínek relační databáze, ale implementuje nadmnožinu vnitřních spojení a levé vnější spojení. Levé vnější spojení je spojení, které vrátí každý prvek prvního (levého) zdroje dat, a to i v případě, že nemá žádné korelační prvky v jiném zdroji dat.  
+ Metody join poskytované v rozhraní LINQ Framework jsou <xref:System.Linq.Enumerable.Join%2A> a <xref:System.Linq.Enumerable.GroupJoin%2A>. Tyto metody provádějí equijoins nebo spojení, které odpovídají dvěma zdrojům dat na základě rovnosti jejich klíčů. (Pro porovnání jazyk Transact-SQL podporuje operátory JOIN jiné než Equals, například operátor "menší než".) V rámci podmínek relační databáze <xref:System.Linq.Enumerable.Join%2A> implementuje vnitřní spojení, což je typ spojení, ve kterém jsou vráceny pouze objekty, které mají shodu v jiné sadě dat. Metoda <xref:System.Linq.Enumerable.GroupJoin%2A> nemá žádný přímý ekvivalent v rámci podmínek relační databáze, ale implementuje nadmnožinu vnitřních spojení a levé vnější spojení. Levé vnější spojení je spojení, které vrátí každý prvek prvního (levého) zdroje dat, a to i v případě, že nemá žádné korelační prvky v jiném zdroji dat.  
   
  Následující ilustrace znázorňuje koncepční zobrazení dvou sad a prvků v rámci těchto sad, které jsou zahrnuty buď pomocí vnitřního spojení, nebo levého vnějšího spojení.  
   
@@ -34,11 +34,11 @@ ms.locfileid: "69592078"
 - [Anonymní typy](../../classes-and-structs/anonymous-types.md)
 - [Formulování spojení a dotazů napříč produkty](../../../../framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)
 - [join – klauzule](../../../language-reference/keywords/join-clause.md)
-- [Postupy: Připojit pomocí složených klíčů](../../linq-query-expressions/how-to-join-by-using-composite-keys.md)
-- [Postupy: Spojení obsahu z nepodobných souborů (LINQ)C#()](./how-to-join-content-from-dissimilar-files-linq.md)
-- [Postupy: Seřazení výsledků klauzule JOIN](../../linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)
-- [Postupy: Provádět vlastní operace spojení](../../linq-query-expressions/how-to-perform-custom-join-operations.md)
-- [Postupy: Provedení seskupených spojení](../../linq-query-expressions/how-to-perform-grouped-joins.md)
-- [Postupy: Provést vnitřní spojení](../../linq-query-expressions/how-to-perform-inner-joins.md)
-- [Postupy: Provést levá vnější spojení](../../linq-query-expressions/how-to-perform-left-outer-joins.md)
-- [Postupy: Naplnit kolekce objektů z více zdrojů (LINQ)C#()](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Postupy: spojení pomocí složených klíčů](../../../linq/join-by-using-composite-keys.md)
+- [Postupy: spojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
+- [Postupy: řazení výsledků klauzule JOIN](../../../linq/order-the-results-of-a-join-clause.md)
+- [Postupy: provádění vlastních operací spojení](../../../linq/perform-custom-join-operations.md)
+- [Postupy: provádění seskupených spojení](../../../linq/perform-grouped-joins.md)
+- [Postupy: provádění vnitřních spojení](../../../linq/perform-inner-joins.md)
+- [Postupy: provedení levých vnějších spojení](../../../linq/perform-left-outer-joins.md)
+- [Postupy: naplnění kolekcí objektů z více zdrojů (LINQ)C#()](./how-to-populate-object-collections-from-multiple-sources-linq.md)

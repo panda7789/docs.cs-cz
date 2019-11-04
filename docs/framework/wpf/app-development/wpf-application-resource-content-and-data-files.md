@@ -17,12 +17,12 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 6b1a78ec56032d84d9699c2ecda89308779ee2da
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: a31dc2c5431c8201607462e8bdef4b8bae0fb41d
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421139"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460911"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují data, která nejsou spustitelná, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuky. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se otáčí kolem konkrétní sady typů datových souborů aplikace, včetně:  
@@ -52,7 +52,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 - Váš datový soubor aplikace musí být Lokalizovatelný (viz [Přehled globalizace a lokalizace WPF](../advanced/wpf-globalization-and-localization-overview.md)).  
   
 > [!NOTE]
-> Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v tématu [prostředky XAML](../advanced/xaml-resources.md) a liší se od vložených nebo propojených prostředků popsaných v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
+> Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md) a liší se od vložených nebo propojených prostředků popsaných v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
   
 ### <a name="configuring-resource-files"></a>Konfigurace souborů prostředků  
  V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]soubor prostředků je soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  

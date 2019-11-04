@@ -7,12 +7,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: ba4df55c3359e2a81eef0b4947a744d80ed49497
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a718a85ed42c4f8081348de20a195899f3c18c0a
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040590"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458116"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "73040590"
   
  Tento přehled popisuje, jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zpřístupňuje vložené objekty nebo podřízené prvky v rámci textového dokumentu nebo kontejneru.  
   
- V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vložený objekt je libovolný prvek, který má netextové hranice; například obrázek, hypertextový odkaz, tabulka nebo typ dokumentu, jako je například [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] tabulka nebo soubor Microsoft Windows Media. To se liší od standardní definice, kde je prvek vytvořen v jedné aplikaci a vloženě nebo propojen v rámci jiného. Určuje, zda lze objekt upravovat v rámci jeho původní aplikace, je podstatný v kontextu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vložený objekt je libovolný prvek, který má netextové hranice; například obrázek, hypertextový odkaz, tabulka nebo typ dokumentu, jako je například tabulka aplikace Microsoft Excel nebo soubor Microsoft Windows Media. To se liší od standardní definice, kde je prvek vytvořen v jedné aplikaci a vloženě nebo propojen v rámci jiného. Určuje, zda lze objekt upravovat v rámci jeho původní aplikace, je podstatný v kontextu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Embedded_Objects_and_the_UI_Automation_Tree"></a>   
 ## <a name="embedded-objects-and-the-ui-automation-tree"></a>Vložené objekty a strom automatizace uživatelského rozhraní  

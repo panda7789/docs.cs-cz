@@ -7,15 +7,15 @@ helpviewer_keywords:
 - xml:space attribute [XAML Services]
 - white-space processing [XAML Services]
 ms.assetid: 5e1814f0-5b30-43d5-8c88-dede335a89d7
-ms.openlocfilehash: d15bab1ad9234959048fa7b7c3fa2bbbeca5fe6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8f860f5ee42b5c1df43c4ec2b1003408bc1c0d8e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938720"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458802"
 ---
 # <a name="xmlspace-handling-in-xaml"></a>Práce s atributem xml:space v jazyce XAML
-`xml:space` Atribut je atribut definice XML, který deklaruje chování operací zpracování prázdných znaků v rámci elementu objektu. Toto chování platí pro veškerý obsah (vnitřní text) obsažené v rámci elementu kde `xml:space` je deklarován a také rozsahy pro podřízené prvky.  
+Atribut `xml:space` je atribut definovaný v jazyce XML, který deklaruje významné chování zpracování bílého místa v rámci elementu objektu. Toto chování je relevantní pro veškerý obsah (vnitřní text) obsažený v elementu, kde je `xml:space` deklarována, a také obory pro podřízené prvky.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -23,24 +23,24 @@ ms.locfileid: "61938720"
 <object xml:space="preserve" />  
 ```  
   
- \- nebo –  
+ \- nebo-  
   
 ```xaml  
 <object xml:space="default" />  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Definice `xml:space` atribut v XAML, včetně jeho dvě možné hodnoty pochází z `xml:space` definované jako "speciální atribut" specifikaci W3C pro XML.  
+ Definice atributu `xml:space` v jazyce XAML, včetně jeho dvou možných hodnot, je odvozena od `xml:space` definována jako "speciální atribut" specifikacemi W3C Specification for XML.  
   
- Výchozí hodnota `xml:space` atribut je hodnota literálu `"default"`. Pro hodnotu `"default"`, nebo pokud `xml:space` není vůbec, uvedené chování významné parsování prázdné místo je výchozí zpracování, jak je definováno v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
+ Výchozí hodnota atributu `xml:space` je hodnota literálu `"default"`. V případě hodnoty `"default"`, nebo pokud `xml:space` není uvedena vůbec, je chování významné analýzy bílého místa výchozím zpracováním, jak je definováno v tématu [zpracování prázdných míst v jazyce XAML](whitespace-processing-in-xaml.md).  
   
- Chcete-li zachovat mezer v obsahu elementu objektu, zadejte `xml:space="preserve"` u tohoto elementu objektu.  
+ Chcete-li zachovat prázdné znaky v obsahu elementu objektu, zadejte `xml:space="preserve"` na tento prvek objektu.  
   
- V části většiny interpretace `xml:space` efekty atribut a hodnota atributu oborem pro podřízené prvky.  
+ V rámci většiny výkladů jsou účinky atributů `xml:space` a hodnota atributu vymezeny na podřízené prvky.  
   
- Úplné informace o – zpracování mezerových znaků v XAML najdete v části [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
+ Úplné informace o zpracování bílého místa v jazyce XAML naleznete v tématu [prázdné místo zpracování v jazyce XAML](whitespace-processing-in-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md)
-- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Zpracování prázdných míst v jazyce XAML](whitespace-processing-in-xaml.md)
+- [Přehled XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

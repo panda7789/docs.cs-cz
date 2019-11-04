@@ -4,29 +4,29 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Profile binding
 ms.assetid: 22d85b19-0135-4141-9179-a0e9c343ad73
-ms.openlocfilehash: 7751e40762a99711302681f28a88d451087e4980
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5a2d190fe7dfd5305b47da0e6e67de822cfd695b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044509"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424463"
 ---
 # <a name="wshttpbinding"></a>WSHttpBinding
-Tato ukázka předvádí, jak implementovat typickou službu a typický klient pomocí Windows Communication Foundation (WCF). Tato ukázka se skládá z programu klientské konzoly (Client. exe) a knihovny služeb hostované službou Internetová informační služba (IIS). Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován `ICalculator` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). Klient provádí synchronní požadavky na určitou matematickou operaci a služba odpovídá výsledku. Aktivita klienta se zobrazí v okně konzoly.  
+Tato ukázka předvádí, jak implementovat typickou službu a typický klient pomocí Windows Communication Foundation (WCF). Tato ukázka se skládá z programu klientské konzoly (Client. exe) a knihovny služeb hostované službou Internetová informační služba (IIS). Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). Klient provádí synchronní požadavky na určitou matematickou operaci a služba odpovídá výsledku. Aktivita klienta se zobrazí v okně konzoly.  
   
 > [!IMPORTANT]
 > Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\wsHttp`  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tato ukázka zveřejňuje `ICalculator` kontrakt [ \<pomocí > WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). Konfigurace této vazby byla rozšířena v souboru Web. config.  
+ Tato ukázka zveřejňuje kontrakt `ICalculator` pomocí [\<WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). Konfigurace této vazby byla rozšířena v souboru Web. config.  
   
 ```xml
 <bindings>  
@@ -60,15 +60,15 @@ Tato ukázka předvádí, jak implementovat typickou službu a typický klient p
 </bindings>  
 ```  
   
- Na základním `binding` prvku `maxReceivedMessageSize` hodnota vám umožní nakonfigurovat maximální velikost příchozí zprávy (v bajtech). `hostNameComparisonMode` Hodnota umožňuje nakonfigurovat, jestli se má název hostitele považovat za při demultiplexování zprávy službě. `messageEncoding` Hodnota umožňuje nakonfigurovat, zda má být pro zprávy použit text nebo kódování MTOM. `textEncoding` Hodnota umožňuje nakonfigurovat kódování znaků pro zprávy. `bypassProxyOnLocal` Hodnota umožňuje nakonfigurovat, jestli se má používat proxy server HTTP pro místní komunikaci. `transactionFlow` Hodnota určuje, zda je aktuální transakce předávána (Pokud je operace konfigurovaná pro tok transakce).  
+ Na základním `binding` element `maxReceivedMessageSize` hodnota umožňuje nakonfigurovat maximální velikost příchozí zprávy (v bajtech). Hodnota `hostNameComparisonMode` umožňuje nakonfigurovat, jestli se má název hostitele při demultiplexování zprávy považovat za nevyhovující. Hodnota `messageEncoding` umožňuje nakonfigurovat, zda má být pro zprávy použit text nebo kódování MTOM. Hodnota `textEncoding` umožňuje nakonfigurovat kódování znaků pro zprávy. Hodnota `bypassProxyOnLocal` umožňuje nakonfigurovat, jestli se má používat proxy server HTTP pro místní komunikaci. Hodnota `transactionFlow` konfiguruje, zda je aktuální transakce předávána (Pokud je operace konfigurovaná pro tok transakce).  
   
- V elementu [> ReliableSessionjepovolenálogickáhodnota,kteráurčuje,jestlijsoupovolenéspolehlivérelace.\<](../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md) `ordered` Hodnota určuje, zda je zachováváno řazení zpráv. Hodnota `inactivityTimeout` určuje, jak dlouho může být relace nečinná, než bude chyba.  
+ U prvku [\<reliableSession >](../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md) určuje povolená logická hodnota, zda jsou povoleny spolehlivé relace. Hodnota `ordered` konfiguruje, zda je řazení zpráv zachováno. Hodnota `inactivityTimeout` konfiguruje, jak dlouho může být relace nečinná, než bude chyba.  
   
- V [> zabezpečení hodnota určuje, který režim zabezpečení má být použit. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) `mode` V této ukázce se používá zabezpečení zpráv. to je důvod, proč [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) [ \<je > zprávy](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) zadán v > zabezpečení.  
+ V [> zabezpečení\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)nakonfiguruje `mode` hodnota, který režim zabezpečení má být použit. V této ukázce se používá zabezpečení zpráv. to je důvod, proč je [\<zpráva](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) zadaná v [\<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md).  
   
  Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
-```  
+```console  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  
@@ -81,12 +81,12 @@ Press <ENTER> to terminate client.
   
 1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
-    ```  
+    ```console
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
 2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

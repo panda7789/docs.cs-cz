@@ -2,12 +2,12 @@
 title: Konfigurace sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 889efc804bb45b384dfde5b4deb520a81d1e5486
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 25edef2edc23a3823a892c64809df21f333478db
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353051"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458898"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Konfigurace sledování pracovního postupu
 
@@ -15,15 +15,15 @@ Pracovní postup může být proveden třemi způsoby:
 
 - Hostovaná v <xref:System.ServiceModel.Activities.WorkflowServiceHost>
 
-- Provedeno jako <xref:System.Activities.WorkflowApplication>
+- Spuštěno jako <xref:System.Activities.WorkflowApplication>
 
 - Provedeno přímo pomocí <xref:System.Activities.WorkflowInvoker>
 
-V závislosti na možnosti hostování pracovního postupu lze sledování účastníka přidat prostřednictvím kódu nebo prostřednictvím konfiguračního souboru. Toto téma popisuje, jak je sledování nakonfigurováno přidáním účastníka sledování do <xref:System.Activities.WorkflowApplication> a do <xref:System.ServiceModel.Activities.WorkflowServiceHost> a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.
+V závislosti na možnosti hostování pracovního postupu lze sledování účastníka přidat prostřednictvím kódu nebo prostřednictvím konfiguračního souboru. Toto téma popisuje, jak je sledování nakonfigurováno přidáním účastníka sledování do <xref:System.Activities.WorkflowApplication> a do <xref:System.ServiceModel.Activities.WorkflowServiceHost>a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.
 
 ## <a name="configuring-workflow-application-tracking"></a>Konfigurace sledování aplikace pracovního postupu
 
-Pracovní postup lze spustit pomocí třídy <xref:System.Activities.WorkflowApplication>. Toto téma ukazuje, jak je nakonfigurováno sledování pro aplikaci pracovního postupu [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] přidáním účastníka sledování do hostitele pracovního postupu <xref:System.Activities.WorkflowApplication>. V takovém případě pracovní postup běží jako aplikace pracovního postupu. Můžete nakonfigurovat aplikaci pracovního postupu prostřednictvím kódu (nikoli pomocí konfiguračního souboru), což je samostatný soubor. exe s použitím třídy <xref:System.Activities.WorkflowApplication>. Účastník sledování se přidá jako rozšíření instance <xref:System.Activities.WorkflowApplication>. To se provádí přidáním <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci WorkflowApplication.
+Pracovní postup lze spustit pomocí <xref:System.Activities.WorkflowApplication> třídy. V tomto tématu se dozvíte, jak je sledování nakonfigurované pro [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] aplikace pracovního postupu, a to přidáním účastníka sledování do hostitele pracovního postupu <xref:System.Activities.WorkflowApplication>. V takovém případě pracovní postup běží jako aplikace pracovního postupu. Můžete nakonfigurovat aplikaci pracovního postupu prostřednictvím kódu (nikoli pomocí konfiguračního souboru), což je samostatný soubor. exe s použitím třídy <xref:System.Activities.WorkflowApplication>. Účastník sledování je přidán jako rozšíření instance <xref:System.Activities.WorkflowApplication>. To se provádí přidáním <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci WorkflowApplication.
 
 U aplikace pracovního postupu můžete přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant>, jak je znázorněno v následujícím kódu.
 
@@ -50,9 +50,9 @@ instance.Extensions.Add(trackingParticipant);
 
 ### <a name="configuring-workflow-service-tracking"></a>Konfigurace sledování služby pracovního postupu
 
-Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní .NET ServiceHost pro službu založenou na pracovních postupech. V této části se dozvíte, jak nakonfigurovat sledování pro službu pracovního postupu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] běžící v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním konkrétního chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.
+Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní ServiceHost .NET pro službu založenou na pracovních postupech. V této části se dozvíte, jak nakonfigurovat sledování pro službu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Workflow Service spuštěnou v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním konkrétního chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.
 
-U služby pracovního postupu hostovaného v <xref:System.ServiceModel.WorkflowServiceHost> můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí > elementu < `behavior` v konfiguračním souboru, jak je znázorněno v následujícím příkladu.
+Pro službu pracovního postupu, která je hostována v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> elementu v konfiguračním souboru, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <behaviors>
@@ -61,10 +61,10 @@ U služby pracovního postupu hostovaného v <xref:System.ServiceModel.WorkflowS
           <etwTracking profileName="Sample Tracking Profile" />
         </behavior>
    </serviceBehaviors>
-<behaviors>
+</behaviors>
 ```
 
-Alternativně můžete pro službu pracovního postupu, která je hostovaná v <xref:System.ServiceModel.WorkflowServiceHost>, přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant> prostřednictvím kódu. Chcete-li přidat vlastního účastníka sledování, vytvořte nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost>, jak je znázorněno v následujícím příkladu kódu.
+Alternativně můžete pro službu pracovního postupu hostované v <xref:System.ServiceModel.WorkflowServiceHost>přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant> prostřednictvím kódu. Chcete-li přidat vlastního účastníka sledování, vytvořte nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost>, jak je znázorněno v následujícím příkladu kódu.
 
 > [!NOTE]
 > Chcete-li zobrazit vzorový kód, který ukazuje, jak vytvořit vlastní prvek chování, který přidá vlastního účastníka sledování, přečtěte si ukázky [sledování](./samples/tracking.md) .
@@ -138,7 +138,7 @@ if (null != workflowServiceHost)
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>Konfigurace sledování pomocí WorkflowInvoker
 
-Ke konfiguraci sledování pracovního postupu spuštěného pomocí <xref:System.Activities.WorkflowInvoker> přidejte zprostředkovatele sledování jako rozšíření do instance <xref:System.Activities.WorkflowInvoker>. Následující příklad kódu je z vlastní ukázky [sledování](./samples/custom-tracking.md) .
+Ke konfiguraci sledování pracovního postupu spuštěného pomocí <xref:System.Activities.WorkflowInvoker>přidejte zprostředkovatele sledování jako rozšíření do instance <xref:System.Activities.WorkflowInvoker>. Následující příklad kódu je z vlastní ukázky [sledování](./samples/custom-tracking.md) .
 
 ```csharp
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
@@ -196,7 +196,7 @@ Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte 
     </system.serviceModel>
     ```
 
-2. Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework @ no__t-0 @ no__t-1latest verze [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] > \Microsoft.Windows.ApplicationServer.Applications.man do dočasného umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
+2. Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework\\\<nejnovější verzi [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man na dočasné umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
 
 3. Změňte identifikátor GUID v souboru manifestu na nový identifikátor GUID.
 

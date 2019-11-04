@@ -9,123 +9,123 @@ helpviewer_keywords:
 - Calendar [WPF], styles and templates
 - ControlTemplate [WPF], Calendar
 ms.assetid: f4fcf046-7a8f-41b8-b5a8-534b64e0345c
-ms.openlocfilehash: 18bef548b11f1a680c1361027b86f6952bedaad0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49d9ced42572ac06a4ff824ec41a59c14497d215
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912441"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460935"
 ---
 # <a name="calendar-styles-and-templates"></a>Styly a šablony kalendáře
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Calendar> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Calendar>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
 ## <a name="calendar-parts"></a>Části kalendáře  
- V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Calendar> ovládacího prvku.  
+ V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.Calendar>.  
   
-|Část|Type|Popis|  
+|Částí|Typ|Popis|  
 |-|-|-|  
-|PART_CalendarItem|<xref:System.Windows.Controls.Primitives.CalendarItem>|Aktuálně zobrazený měsíc nebo rok v <xref:System.Windows.Controls.Calendar>.|  
-|PART_Root|<xref:System.Windows.Controls.Panel>|Na panelu, který obsahuje <xref:System.Windows.Controls.Primitives.CalendarItem>.|  
+|PART_CalendarItem|<xref:System.Windows.Controls.Primitives.CalendarItem>|Aktuálně zobrazený měsíc nebo rok na <xref:System.Windows.Controls.Calendar>.|  
+|PART_Root|<xref:System.Windows.Controls.Panel>|Panel, který obsahuje <xref:System.Windows.Controls.Primitives.CalendarItem>.|  
   
-## <a name="calendar-states"></a>Stavy kalendáře  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Calendar> ovládacího prvku.  
+## <a name="calendar-states"></a>Kalendářní stavy  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Calendar>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="calendaritem-parts"></a>CalendarItem částí  
- V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Primitives.CalendarItem> ovládacího prvku.  
+## <a name="calendaritem-parts"></a>CalendarItem části  
+ V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.Primitives.CalendarItem>.  
   
-|Část|Type|Popis|  
+|Částí|Typ|Popis|  
 |-|-|-|  
-|PART_Root|<xref:System.Windows.FrameworkElement>|Kořenový adresář ovládacího prvku.|  
-|PART_PreviousButton|<xref:System.Windows.Controls.Button>|Tlačítko, které při kliknutí se zobrazí na předchozí stránku kalendáře.|  
-|PART_NextButton|<xref:System.Windows.Controls.Button>|Tlačítko, které při kliknutí zobrazí další stránky v kalendáři.|  
-|PART_HeaderButton|<xref:System.Windows.Controls.Button>|Tlačítko, které umožňuje přepínání mezi režimem měsíc, rok režimu a režimu deset let.|  
-|PART_MonthView|<xref:System.Windows.Controls.Grid>|Hostuje obsah v režimu měsíc.|  
-|PART_YearView|<xref:System.Windows.Controls.Grid>|Hostuje obsah v režimu rok nebo deset let.|  
-|PART_DisabledVisual|<xref:System.Windows.FrameworkElement>|Překrytí pro zakázaném stavu.|  
-|DayTitleTemplate|<xref:System.Windows.DataTemplate>|<xref:System.Windows.DataTemplate> , Který popisuje vizuální struktury.|  
+|PART_Root|<xref:System.Windows.FrameworkElement>|Kořen ovládacího prvku|  
+|PART_PreviousButton|<xref:System.Windows.Controls.Button>|Tlačítko, které zobrazí předchozí stránku v kalendáři po kliknutí.|  
+|PART_NextButton|<xref:System.Windows.Controls.Button>|Tlačítko, které zobrazí další stránku v kalendáři po kliknutí.|  
+|PART_HeaderButton|<xref:System.Windows.Controls.Button>|Tlačítko, které umožňuje přepínání mezi režimem měsíce, rokem a režimem dekády.|  
+|PART_MonthView|<xref:System.Windows.Controls.Grid>|Obsah se hostuje v režimu měsíce.|  
+|PART_YearView|<xref:System.Windows.Controls.Grid>|Obsah se hostuje v režimu rok nebo desetiletí.|  
+|PART_DisabledVisual|<xref:System.Windows.FrameworkElement>|Překryv pro zakázaný stav.|  
+|DayTitleTemplate|<xref:System.Windows.DataTemplate>|<xref:System.Windows.DataTemplate> popisující vizuální strukturu.|  
   
-## <a name="calendaritem-states"></a>Stavy CalendarItem  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Primitives.CalendarItem> ovládacího prvku.  
+## <a name="calendaritem-states"></a>CalendarItem stavy  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Primitives.CalendarItem>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Normální stavu|CommonStates|Ve výchozím stavu.|  
-|Stav vypnuto|CommonStates|Stav kalendáře při <xref:System.Windows.UIElement.IsEnabled%2A> vlastnost `false`.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Normální stav|CommonStates|Výchozí stav.|  
+|Zakázaný stav|CommonStates|Stav kalendáře, pokud je vlastnost <xref:System.Windows.UIElement.IsEnabled%2A> `false`.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="calendardaybutton-parts"></a>CalendarDayButton částí  
- <xref:System.Windows.Controls.Primitives.CalendarDayButton> Ovládací prvek nemá žádné pojmenované součásti.  
+## <a name="calendardaybutton-parts"></a>CalendarDayButton části  
+ Ovládací prvek <xref:System.Windows.Controls.Primitives.CalendarDayButton> neobsahuje žádné pojmenované části.  
   
-## <a name="calendardaybutton-states"></a>Stavy CalendarDayButton  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Primitives.CalendarDayButton> ovládacího prvku.  
+## <a name="calendardaybutton-states"></a>CalendarDayButton stavy  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Primitives.CalendarDayButton>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Normální|CommonStates|Ve výchozím stavu.|  
-|Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> Je zakázaná.|  
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
-|Stisknutí|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> Stisknutí.|  
-|Vybráno|SelectionStates|Výběru tlačítka.|  
-|Nevybrané|SelectionStates|Tlačítko není vybrané.|  
+|Běžnou|CommonStates|Výchozí stav.|  
+|Zabezpečen|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> je zakázaný.|  
+|MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
+|Stisknete|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
+|Vyberte|SelectionStates|Je vybráno tlačítko.|  
+|Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
-|Fokus|FocusStates|Tlačítko má fokus.|  
+|Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
-|Aktivní|ActiveStates|Tlačítko je aktivní.|  
-|Neaktivní|ActiveStates|Je tlačítko neaktivní.|  
-|RegularDay|DayStates|Nepředstavuje tlačítko <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
-|Dnes|DayStates|Představuje tlačítko <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
-|NormalDay|BlackoutDayStates|Tlačítko představuje den, který je možné vybrat.|  
+|Aktivně|ActiveStates|Tlačítko je aktivní.|  
+|Termín|ActiveStates|Tlačítko je neaktivní.|  
+|RegularDay|DayStates|Tlačítko nepředstavuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
+|Si|DayStates|Tlačítko představuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
+|NormalDay|BlackoutDayStates|Tlačítko představuje den, který lze vybrat.|  
 |BlackoutDay|BlackoutDayStates|Tlačítko představuje den, který nelze vybrat.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="calendarbutton-parts"></a>CalendarButton částí  
- <xref:System.Windows.Controls.Primitives.CalendarButton> Ovládací prvek nemá žádné pojmenované součásti.  
+## <a name="calendarbutton-parts"></a>CalendarButton části  
+ Ovládací prvek <xref:System.Windows.Controls.Primitives.CalendarButton> neobsahuje žádné pojmenované části.  
   
-## <a name="calendarbutton-states"></a>Stavy CalendarButton  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Primitives.CalendarButton> ovládacího prvku.  
+## <a name="calendarbutton-states"></a>CalendarButton stavy  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Primitives.CalendarButton>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Normální|CommonStates|Ve výchozím stavu.|  
-|Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> Je zakázaná.|  
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
-|Stisknutí|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> Stisknutí.|  
-|Vybráno|SelectionStates|Výběru tlačítka.|  
-|Nevybrané|SelectionStates|Tlačítko není vybrané.|  
+|Běžnou|CommonStates|Výchozí stav.|  
+|Zabezpečen|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> je zakázaný.|  
+|MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
+|Stisknete|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
+|Vyberte|SelectionStates|Je vybráno tlačítko.|  
+|Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
-|Fokus|FocusStates|Tlačítko má fokus.|  
+|Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
-|Aktivní|ActiveStates|Tlačítko je aktivní.|  
-|Neaktivní|ActiveStates|Je tlačítko neaktivní.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Aktivně|ActiveStates|Tlačítko je aktivní.|  
+|Termín|ActiveStates|Tlačítko je neaktivní.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
-## <a name="calendar-controltemplate-example"></a>Příklad šablony ControlTemplate kalendáře  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Calendar> ovládacího prvku a přidružené typy.  
+## <a name="calendar-controltemplate-example"></a>Příklad kalendáře ControlTemplate  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.Calendar> a přidružené typy.  
   
  [!code-xaml[ControlTemplateExamples#Calendar](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/calendar.xaml#calendar)]  
   
- V předchozím příkladu používá jeden nebo více z následujících prostředků.  
+ Předchozí příklad používá jeden nebo více následujících zdrojů.  
   
  [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -133,5 +133,5 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Calendar>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

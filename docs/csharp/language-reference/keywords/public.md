@@ -1,5 +1,5 @@
 ---
-title: Public – klíčové slovo - C# odkaz
+title: klíčové slovo Public C# – reference
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: a68cbf3af2568cd3c197eaece9e2d5a25cdb4a6a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: dfb6e341ea0740225d7600f07af2813d39141b45
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633703"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422560"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
 
-`public` – Klíčové slovo je modifikátor přístupu pro typy a členy typu. Veřejný přístup je nejvíce omezující úroveň přístupu. Neexistují žádná omezení na přístup k veřejným členům, jako v následujícím příkladu:
+Klíčové slovo `public` je modifikátor přístupu pro typy a členy typů. Veřejný přístup je nejpřísnější úroveň přístupu. Pro přístup k veřejným členům neexistují žádná omezení, jako v tomto příkladu:
 
 ```csharp
 class SampleClass
@@ -26,31 +26,31 @@ class SampleClass
 }
 ```
 
-Zobrazit [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md) a [úrovní přístupu](accessibility-levels.md) Další informace.
+Další informace najdete v tématu [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md) a [úrovně přístupnosti](accessibility-levels.md) .
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu se deklarovat dvě třídy, `PointTest` a `MainClass`. Veřejné členy `x` a `y` z `PointTest` přistupují přímo z `MainClass`.
+V následujícím příkladu jsou deklarovány dvě třídy, `PointTest` a `MainClass`. Veřejné členy `x` a `y` `PointTest` jsou přístupné přímo ze `MainClass`.
 
 [!code-csharp[csrefKeywordsModifiers#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#13)]
 
-Pokud změníte `public` úroveň přístupu k [privátní](private.md) nebo [chráněné](protected.md), zobrazí se chybová zpráva:
+Pokud změníte úroveň přístupu `public` na [soukromou](private.md) nebo [chráněnou](protected.md), zobrazí se chybová zpráva:
 
-"PointTest.y" je vzhledem k úrovni ochrany nepřístupný.
+' PointTest. y ' je z důvodu úrovně ochrany nedostupné.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#  
 
-Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [deklarované přístupnosti](~/_csharplang/spec/basic-concepts.md#declared-accessibility) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
-- [Modifikátory](modifiers.md)
+- [Modifikátory](index.md)
 - [private](private.md)
 - [protected](protected.md)
 - [internal](internal.md)

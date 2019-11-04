@@ -4,12 +4,12 @@ description: Přečtěte si o třídách v .NET Framework, které podporují del
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 7aca2d3ba7aefd103ac927a6ce905938262ae39c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f4635ff623feec9407021792cabd1677184b4d34
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037454"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420368"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System. Delegate a klíčové slovo `delegate`
 
@@ -32,7 +32,7 @@ Pojďme dál používat metodu list. Sort () jako náš příklad. Prvním kroke
 public delegate int Comparison<in T>(T left, T right);
 ```
 
-Kompilátor vygeneruje třídu odvozenou z `System.Delegate`, která odpovídá použitému podpisu (v tomto případě metoda, která vrací celé číslo a má dva argumenty). Typ delegáta je `Comparison`. Typ delegáta `Comparison` je obecný typ. Podrobnosti o obecných typech najdete [tady](generics.md).
+Kompilátor vygeneruje třídu odvozenou z `System.Delegate`, která odpovídá použitému podpisu (v tomto případě metoda, která vrací celé číslo a má dva argumenty). Typ delegáta je `Comparison`. Typ delegáta `Comparison` je obecný typ. Podrobnosti o obecných typech najdete [tady](programming-guide/generics/index.md).
 
 Všimněte si, že se syntaxe může zobrazit, jako by deklaruje proměnnou, ale ve skutečnosti deklaruje *typ*. Můžete definovat typy delegátů uvnitř tříd, přímo v oborech názvů nebo dokonce v globálním oboru názvů.
 

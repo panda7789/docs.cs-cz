@@ -2,14 +2,14 @@
 title: Migrace aplikace pro Windows Store do .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 7eea089ef9b492e156758d170394b17d74a60a64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1942574e832ca7593d91c71370cc0af0c3051617
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128313"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455608"
 ---
-# <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
+# <a name="migrate-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store na .NET Native
 
 .NET Native poskytuje statickou kompilaci aplikací ve Windows Storu nebo v počítači vývojáře. To se liší od dynamické kompilace provedené pro aplikace pro Windows Store pomocí kompilátoru JIT (just-in-time) nebo [generátoru nativních imagí (Ngen. exe)](../tools/ngen-exe-native-image-generator.md) na zařízení. Navzdory rozdílům se .NET Native snaží udržet kompatibilitu s [rozhraním .NET pro aplikace pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). Ve většině případů fungují i v případě, že funkce pro .NET pro aplikace pro Windows Store funguje i .NET Native.  V některých případech ale může dojít ke změnám chování. Tento dokument popisuje tyto rozdíly mezi standardním rozhraním .NET pro aplikace pro Windows Store a .NET Native v následujících oblastech:
 
@@ -53,7 +53,7 @@ ms.locfileid: "73128313"
 
 Datová vazba například vyžaduje, aby aplikace mohla mapovat názvy vlastností na funkce. V rozhraní .NET pro aplikace pro Windows Store modul CLR (Common Language Runtime) automaticky používá reflexi k poskytnutí této možnosti pro spravované typy a veřejně dostupné nativní typy. V .NET Native kompilátor automaticky obsahuje metadata pro typy, na které svážete data.
 
-Kompilátor .NET Native může také zpracovávat běžně používané obecné typy, například <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602>, které fungují bez vyžadování jakýchkoli pomocných parametrů nebo direktiv. [Dynamické](../../csharp/language-reference/keywords/dynamic.md) klíčové slovo je podporováno i v určitých omezeních.
+Kompilátor .NET Native může také zpracovávat běžně používané obecné typy, například <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602>, které fungují bez vyžadování jakýchkoli pomocných parametrů nebo direktiv. [Dynamické](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) klíčové slovo je podporováno i v určitých omezeních.
 
 > [!NOTE]
 > Všechny cesty dynamického kódu by měly být důkladně testovány při přenosu vaší aplikace do .NET Native.

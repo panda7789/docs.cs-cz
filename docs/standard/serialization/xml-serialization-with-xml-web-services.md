@@ -17,21 +17,21 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: 79cc53be0f099151db1b64190c844b1d57205a44
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8e4e848cb37ac1b2d147b570d98777a7beaf1bb
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018061"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460250"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
-Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML generovaných webové služby XML, můžete použít atributy uvedené v obou [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) k třídy, vrácené hodnoty, parametry a pole souboru použitý k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, naleznete v tématu [XML webové služby pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
+Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru sloužící k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Literál a kódovaného stylů  
- XML generovaných webové služby XML mohou být formátována v jednu ze dvou způsobů, buď literál nebo kódovat, jak je vysvětleno v [přizpůsobení formátování zprávy protokolu SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou určeny k řízení literálu styl XML. Atributy uvedené v [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) řídit kódovaného stylu. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
+ KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
   
 ### <a name="example-of-using-both-styles"></a>Příklad použití obou stylů  
- Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. V `Order` třídy, <xref:System.Xml.Serialization.XmlTypeAttribute> a <xref:System.Xml.Serialization.SoapTypeAttribute> oba atributy jsou použity k `OrderID` pole a oba atributy mají jejich `ElementName` vlastnost nastavena na různé hodnoty.  
+ Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. Ve třídě `Order` se <xref:System.Xml.Serialization.XmlTypeAttribute> a atributy <xref:System.Xml.Serialization.SoapTypeAttribute> aplikují na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  
   
  Chcete-li spustit příklad, vložte kód do soubor s příponou .asmx a umístění souboru do virtuálního adresáře spravované Internet Information Services (IIS). Z prohlížeče, HTML, jako je například Internet Explorer zadejte název počítače, virtuální adresář a soubor.  
   
@@ -232,21 +232,22 @@ public class Order {
   
  Výsledky používání `XmlTypeAttribute` a `SoapTypeAttribute` si můžete prohlédnout při kontrole popisu služby, jak je znázorněno v následujícím příkladu kódu.  
   
-```xml  
-    <s:element name="BookOrderForm" type="s0:BigBookService" />   
-- <s:complexType name="BigBookService">  
-- <s:sequence>  
-    <s:element minOccurs="0" maxOccurs="1" name="LiteralOrderID" type="s:string" />   
-    </s:sequence>  
-  
-- <s:schema targetNamespace="http://tempuri.org/encodedTypes">  
-- <s:complexType name="SoapBookService">  
-- <s:sequence>  
-    <s:element minOccurs="1" maxOccurs="1" name="EncodedOrderID" type="s:string" />   
-    </s:sequence>  
-    </s:complexType>  
-    </s:schema>  
-```  
+```xml
+<s:element name="BookOrderForm" type="s0:BigBookService" />
+<s:complexType name="BigBookService">
+  <s:sequence>
+    <s:element minOccurs="0" maxOccurs="1" name="LiteralOrderID" type="s:string" />
+  </s:sequence>
+
+  <s:schema targetNamespace="http://tempuri.org/encodedTypes">
+    <s:complexType name="SoapBookService">
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="EncodedOrderID" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:schema>
+</s:complexType>
+```
   
  Vliv `XmlRootAttribute` můžete také prohlédnout ve výsledcích HTTP GET a POST protokolu HTTP následujícím způsobem.  
   
@@ -259,10 +260,10 @@ public class Order {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
-- [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
-- [Postupy: Přepsat kódovaný protokol SOAP serializace XML](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)
+- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)
+- [Představení serializace XML](introducing-xml-serialization.md)
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

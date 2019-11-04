@@ -6,12 +6,12 @@ helpviewer_keywords:
 - buttons [WPF]
 - animation [WPF], buttons [WPF]
 ms.assetid: e9532c72-460f-4898-9332-613fa21d746a
-ms.openlocfilehash: bf75677ee6a6a607a8779edf5af5e63f5c92b230
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: a3990a7dc446c264e0865e15dadcdaf3ba0a0ff6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920165"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460061"
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>Návod: Vytvoření tlačítka s vlastní animací
 Jak je název navržený, Windows Presentation Foundation (WPF) je skvělé, aby pro zákazníky prováděla bohatou prezentační prostředí. Tyto návody ukazují, jak přizpůsobit vzhled a chování tlačítka (včetně animací). Toto vlastní nastavení se provádí pomocí stylu a šablony, takže toto vlastní tlačítko lze snadno použít pro všechna tlačítka v aplikaci. Následující ilustrace znázorňuje přizpůsobené tlačítko, které vytvoříte.
@@ -26,7 +26,7 @@ Jak je název navržený, Windows Presentation Foundation (WPF) je skvělé, aby
  [Vytvoření tlačítka pomocí XAML](walkthrough-create-a-button-by-using-xaml.md) Ukazuje, jak vytvořit tlačítka s vlastním chováním pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a sady Visual Studio.
 
 ## <a name="related-sections"></a>Související oddíly
- [Styly a šablonování](styling-and-templating.md) Popisuje, jak lze pomocí stylů a šablon určit vzhled a chování ovládacích prvků.
+ [Styly a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md) Popisuje, jak lze pomocí stylů a šablon určit vzhled a chování ovládacích prvků.
 
  [Přehled animace](../graphics-multimedia/animation-overview.md) Popisuje, jak lze objekty animovat pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] animace a systém časování.
 

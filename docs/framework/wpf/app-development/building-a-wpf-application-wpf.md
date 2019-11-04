@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: cac7a7552d1a24480d614b7b90fdd8cf0ef8a3e8
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 04183b2404d26c783e14dc6f4cb4141bab0d7621
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197789"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424438"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 
@@ -136,13 +136,13 @@ Základní krok kompilace zahrnuje kompilaci souborů kódu. Toto je orchestrace
 
 Po dokončení procesu sestavení po přípravě všech sestavení aplikace a souborů obsahu jsou vytvořeny manifesty ClickOnce pro aplikaci.
 
-Soubor manifestu nasazení popisuje model nasazení: aktuální verze, chování aktualizace a identitu vydavatele spolu s digitálním podpisem. Tento manifest je určený k vytváření správců, kteří zpracovávají nasazení. Přípona souboru je. XBAP (pro [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]) a aplikace pro nainstalované aplikace. Předchozí je vypsána vlastností projektu `HostInBrowser` a v důsledku toho manifest identifikuje aplikaci jako hostovanou v prohlížeči.
+Soubor manifestu nasazení popisuje model nasazení: aktuální verze, chování aktualizace a identitu vydavatele spolu s digitálním podpisem. Tento manifest je určený k vytváření správců, kteří zpracovávají nasazení. Přípona souboru je. XBAP (pro aplikace prohlížeče XAML (XBAP)) a aplikace pro nainstalované aplikace. Předchozí je vypsána vlastností projektu `HostInBrowser` a v důsledku toho manifest identifikuje aplikaci jako hostovanou v prohlížeči.
 
 Manifest aplikace (soubor. exe. manifest) popisuje sestavení aplikace a závislé knihovny a seznam oprávnění vyžadovaných aplikací. Tento soubor má být vytvořen vývojářem aplikace. Aby bylo možné spustit aplikaci ClickOnce, uživatel otevře soubor manifestu nasazení aplikace.
 
-Tyto soubory manifestu jsou vždy vytvořeny pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. U nainstalovaných aplikací nejsou vytvořeny, pokud není vlastnost `GenerateManifests` zadána v souboru projektu s hodnotou `true`.
+Tyto soubory manifestu jsou vždy vytvořeny pro XBAP. U nainstalovaných aplikací nejsou vytvořeny, pokud není vlastnost `GenerateManifests` zadána v souboru projektu s hodnotou `true`.
 
-[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] získat dvě další oprávnění nad rámec těchto oprávnění přiřazených k běžným aplikacím Internet Zone: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] systém sestavení deklaruje tato oprávnění v manifestu aplikace.
+Aplikace XBAP získají dvě další oprávnění nad rámec těchto oprávnění přiřazených k běžným aplikacím Internet Zone: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] systém sestavení deklaruje tato oprávnění v manifestu aplikace.
 
 <a name="Incremental_Build_Support"></a>
 

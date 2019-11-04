@@ -7,18 +7,18 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-ms.openlocfilehash: 4724e6264c0108924629055525e46d84e86a6e6c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 98c7022eab9153808d47d7da69c23349032165c3
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953420"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460848"
 ---
 # <a name="optimizing-wpf-application-performance"></a>Optimalizace výkonu aplikace WPF
-Tato část je určena jako reference pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojáře aplikací, kteří hledají způsoby, jak vylepšit výkon svých aplikací. Pokud jste vývojář, který je od Microsoftu .NET Framework a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], měli byste se nejdřív seznámit s oběma platformami. Tato část předpokládá praktickou znalost obou a je určena pro programátory, kteří již znají dostatek, aby mohli své aplikace začít používat.  
+Tato část je určena jako reference pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářů aplikací, kteří hledají způsoby, jak vylepšit výkon svých aplikací. Pokud jste vývojář, který je od Microsoftu .NET Framework a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nový, měli byste se nejdřív seznámit s oběma platformami. Tato část předpokládá praktickou znalost obou a je určena pro programátory, kteří již znají dostatek, aby mohli své aplikace začít používat.  
   
 > [!NOTE]
-> Údaje o výkonu uvedené v této části jsou založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacích, které běží na počítači 2,8 GHz s 512 paměti RAM a na grafické kartě ATI Radeon 9700.  
+> Údaje o výkonu uvedené v této části jsou založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacích běžících na počítači 2,8 GHz s 512 paměti RAM a na grafické kartě ATI Radeon 9700.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Plánování výkonu aplikace](planning-for-application-performance.md)  
@@ -59,7 +59,7 @@ Tato část je určena jako reference pro [!INCLUDE[TLA#tla_winclient](../../../
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Kreslení formátovaného textu](drawing-formatted-text.md)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
-- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
 - [Přehled navigace](../app-development/navigation-overview.md)
 - [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)
 - [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

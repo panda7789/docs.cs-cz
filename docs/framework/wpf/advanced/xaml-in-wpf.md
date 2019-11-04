@@ -7,16 +7,16 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: 33b40ddbb0c959332f7d95ffa0f1633b910bcb33
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: cea6809ebf9a4ae516d59bd99bf8126d2e874788
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672013"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459564"
 ---
 # <a name="xaml-in-wpf"></a>XAML ve WPF
 
-[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]je jazyk značek pro deklarativní programování aplikací. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]implementuje implementaci procesoru XAML a poskytuje podporu jazyka XAML. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Typy jsou implementovány tak, aby mohly poskytnout požadovaný typ pro reprezentaci jazyka XAML. Obecně lze vytvořit většinu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní aplikace v kódu XAML.  
+[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] je jazyk značek pro deklarativní programování aplikací. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implementuje implementaci procesoru XAML a poskytuje podporu jazyka XAML. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy jsou implementovány tak, aby mohly poskytnout požadovaný typ pro reprezentaci jazyka XAML. Obecně můžete vytvořit většinu uživatelského rozhraní aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v kódu XAML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
@@ -31,9 +31,9 @@ ms.locfileid: "68672013"
 [Zpracování prázdných míst v jazyce XAML](../../xaml-services/whitespace-processing-in-xaml.md)  
 [TypeConverters a XAML](typeconverters-and-xaml.md)  
 [Znakové entity XML a jazyk XAML](../../xaml-services/xml-character-entities-and-xaml.md)  
-[Obor názvů XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)  
+[Jazykové funkce oboru názvů jazyka XAML (x:)](../../xaml-services/xaml-namespace-x-language-features.md)  
 [Rozšíření WPF XAML](wpf-xaml-extensions.md)  
-[Kompatibilita značek (MC:) Jazykové funkce](markup-compatibility-mc-language-features.md)  
+[Jazykové funkce kompatibility značek (mc:)](markup-compatibility-mc-language-features.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
 
@@ -44,5 +44,5 @@ ms.locfileid: "68672013"
 [Události](events-wpf.md)  
 [Vstup](input-wpf.md)  
 [Prostředky](resources-wpf.md)  
-[Styly a šablony](../controls/styling-and-templating.md)  
+[Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
 [Model vláken](threading-model.md)

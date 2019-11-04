@@ -4,12 +4,12 @@ description: Přečtěte si o rozhraní .NET pro Apache Spark, bezplatném, open
 author: mamccrea
 ms.topic: overview
 ms.date: 10/15/2019
-ms.openlocfilehash: c31b50a20ac08bcde077e1e85ee915435a99fc28
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 12fccd478cedaccf455043feb3afa7b12221bf0e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395848"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458200"
 ---
 # <a name="what-is-net-for-apache-spark"></a>Co je .NET for Apache Spark?
 
@@ -19,10 +19,10 @@ ms.locfileid: "72395848"
 
 .NET for Apache Spark umožňuje vývojářům využít prostředí .NET nebo základy kódu, aby se mohli zúčastnit celosvětovosti analýz velkých objemů dat. .NET for Apache Spark poskytuje rozhraní API pro vysoké výkon pro použití C# Sparku z a F#. Pomocí C# a F#můžete získat přístup k:
 
-* Datový rámec a SparkSQL pro práci se strukturovanými daty
-* Strukturované streamování Sparku pro práci s datovými proudy
+* Dataframe a SparkSQL pro práci se strukturovanými daty.
+* Strukturované streamování Sparku pro práci s datovými proudy.
 * Spark SQL pro zápis dotazů pomocí syntaxe SQL
-* Integrace služby Machine Learning pro rychlejší školení a předpovědi (tj. použití .NET pro Apache Spark společně s [ml.NET](http://dot.net/ml))
+* Integrace služby Machine Learning pro rychlejší školení a předpovědi (to znamená, že rozhraní .NET pro Apache Spark společně s [ml.NET](https://dot.net/ml)).
 
 Rozhraní .NET pro Apache Spark je kompatibilní s .NET Standard, formální specifikace rozhraní .NET API, která jsou společná pro implementace v rozhraní .NET. To znamená, že můžete použít rozhraní .NET pro Apache Spark kdekoli napíšete kód .NET, který vám umožní znovu použít všechny znalosti, dovednosti, kód a knihovny, které už máte jako vývojář rozhraní .NET.
 
@@ -33,13 +33,13 @@ Rozhraní .NET pro Apache Spark běží na systémech Windows, Linux a macOS pom
 Vazba C#/ F# jazyk na Spark je zapsána na nové vrstvě interoperability Spark, která nabízí snadnější rozšiřitelnost. Tato nová vrstva interoperability Spark byla napsaná pomocí osvědčených postupů pro jazykové rozšíření a optimalizuje pro interoperabilitu a výkon. Dlouhodobá tato rozšiřitelnost se dá použít k přidání podpory pro jiné jazyky ve Sparku.
 
 > [!div class="mx-imgBorder"]
-> @no__t – 0.NET pro Apache Spark architektury @ no__t-1
+> ![rozhraní .NET pro architekturu Apache Spark](media/dotnet-spark-architecture.png)
 
 Informace o podpoře spolupráce pro jazykové rozšíření Spark z návrhu najdete v [části](https://issues.apache.org/jira/browse/SPARK-26257).
 
 ## <a name="net-for-apache-spark-performance"></a>.NET pro Apache Spark výkon
 
-V porovnání s Pythonem a Scala pomocí [srovnávacího testu TPC-H](http://www.tpc.org/tpch/)využije .net pro Apache Spark ve většině případů dobře a je dvojnásobější, než Python, pokud je důležitý výkon funkce definovaný uživatelem. Pro zlepšení výkonu a srovnávací testy výkonu probíhá nepřetržité úsilí. 
+V porovnání s Pythonem a Scala pomocí [srovnávacího testu TPC-H](http://www.tpc.org/tpch/)využije .net pro Apache Spark ve většině případů dobře a je dvojnásobější, než Python, pokud je důležitý výkon funkce definovaný uživatelem. Pro zlepšení výkonu a srovnávací testy výkonu probíhá nepřetržité úsilí.
 
 Pokud chcete vlastní srovnávací testy, přečtěte si srovnávací testy dostupné v [rozhraní .NET pro Apache Spark GitHub](https://github.com/dotnet/spark/tree/master/benchmark).
 

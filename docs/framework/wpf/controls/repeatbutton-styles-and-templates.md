@@ -9,48 +9,48 @@ helpviewer_keywords:
 - ControlTemplate [WPF], RepeatButton
 - states [WPF], RepeatButton
 ms.assetid: fd340743-f44f-4990-9077-085301469670
-ms.openlocfilehash: 86f212326bc707e4b07b8cab8d9a95d4f6ef8920
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c6a8ad0a954d244fb693e25965ab52dda114068
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053311"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459845"
 ---
 # <a name="repeatbutton-styles-and-templates"></a>RepeatButton – styly a šablony
 
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.RepeatButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 
-## <a name="repeatbutton-parts"></a>RepeatButton částí
+## <a name="repeatbutton-parts"></a>RepeatButton části
 
-<xref:System.Windows.Controls.Primitives.RepeatButton> Ovládací prvek nemá žádné pojmenované součásti.
+Ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton> neobsahuje žádné pojmenované části.
 
 ## <a name="repeatbutton-states"></a>RepeatButton stavy
 
-V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Primitives.RepeatButton> ovládacího prvku.
+V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton>.
 
-|Název vizuálního stavu|Název VisualStateGroup|Popis|
+|Název VisualState|Název VisualStateGroup|Popis|
 |-|-|-|
-|Normální|CommonStates|Ve výchozím stavu.|
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|
-|Stisknutí|CommonStates|Stisknutí ovládacího prvku.|
-|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|
-|Fokus|FocusStates|Ovládací prvek má fokus.|
+|Běžnou|CommonStates|Výchozí stav.|
+|MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|
+|Stisknete|CommonStates|Ovládací prvek se stiskne.|
+|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|
+|Zaměřil|FocusStates|Ovládací prvek má fokus.|
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|
 
-## <a name="repeatbutton-controltemplate-example"></a>Příklad RepeatButton ControlTemplate
+## <a name="repeatbutton-controltemplate-example"></a>RepeatButton ControlTemplate – příklad
 
-Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Primitives.RepeatButton> ovládacího prvku.
+Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton>.
 
 [!code-xaml[ControlTemplateExamples#RepeatButton](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/scrollbar.xaml#repeatbutton)]
 
-V předchozím příkladu používá jeden nebo více z následujících prostředků.
+Předchozí příklad používá jeden nebo více následujících zdrojů.
 
 [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]
 
-Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).
+Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).
 
 ## <a name="see-also"></a>Viz také:
 
@@ -58,5 +58,5 @@ V předchozím příkladu používá jeden nebo více z následujících prostř
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

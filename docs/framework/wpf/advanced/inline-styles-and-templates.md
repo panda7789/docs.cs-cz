@@ -7,35 +7,35 @@ helpviewer_keywords:
 - templates [WPF], inline
 - inline styles [WPF]
 ms.assetid: 69a1a3f9-acb5-4e2c-9c43-2e376c055ac4
-ms.openlocfilehash: b566e157e2d4a9e9be21a678541bf5d5341a898c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b88ef444283f4e1e85009c59b39f3cc41965d300
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051005"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460002"
 ---
 # <a name="inline-styles-and-templates"></a>Vložené styly a šablony
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Style> objekty a objekty šablony (<xref:System.Windows.FrameworkTemplate> podtřídy) jako způsob, jak definovat vzhled elementu v prostředky, takže je možné použít víc než jednou. Z tohoto důvodu atributů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která přijímá typy <xref:System.Windows.Style> a <xref:System.Windows.FrameworkTemplate> téměř vždy ujistěte se, odkazy na prostředky na stávající – styly a šablony spíše než definovat nové značky vložené.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje objekty <xref:System.Windows.Style> a objekty šablon (<xref:System.Windows.FrameworkTemplate> podtříd) jako způsob, jak definovat vizuální vzhled prvku v prostředcích, aby je bylo možné použít několikrát. Z tohoto důvodu atributy v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], které přebírají typy <xref:System.Windows.Style> a <xref:System.Windows.FrameworkTemplate> téměř vždy provádějí odkazy na existující styly a šablony namísto definování nových vložených.  
   
-## <a name="limitations-of-inline-styles-and-templates"></a>Omezení vložené styly a šablony  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], styl a šablony vlastnosti lze nastavit technicky v jednom ze dvou způsobů. Syntaxe atributu slouží k odkazování styl, který byl definován v rámci prostředku, třeba `<` *objekt*`Style="{StaticResource`*myResourceKey*`}" .../>`. Nebo syntax prvku vlastnosti můžete použít k definování vložených styl, například:  
+## <a name="limitations-of-inline-styles-and-templates"></a>Omezení vložených stylů a šablon  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]lze vlastnosti stylu a šablony technicky nastavit jedním ze dvou způsobů. Můžete použít syntaxi atributu pro odkazování na styl, který byl definován v rámci prostředku, například `<`*objekt*`Style="{StaticResource`*myResourceKey*`}" .../>`. Nebo můžete použít syntaxi elementu vlastnosti k definování vloženého stylu pro instanci:  
   
- `<` *objekt* `>`  
+ *objekt* `<` `>`  
   
- `<` *objekt* `.Style>`  
+ *objekt* `<` `.Style>`  
   
- `<` `Style`  `.../>`  
+ `<` `Style``.../>`  
   
- `</` *objekt* `.Style>`  
+ *objekt* `</` `.Style>`  
   
- `</` *objekt* `>`  
+ *objekt* `</` `>`  
   
- Použití atributu je mnohem častější. Styl, který je definována vložením a není definováno v prostředků nutně působí na nadřazeného elementu a nejde znovu použít, stejně snadno, protože nemá klíč prostředku. Obecně definován prostředek stylu je univerzální a užitečné a další podle obecného [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] programovací model Princip oddělení logiku programu v kódu z návrhu v kódu.  
+ Použití atributů je mnohem běžnější. Styl, který je definován jako vložený a není definován v prostředcích, je nutně vymezen pouze na obsahující prvek a nelze jej znovu použít stejně snadno, protože nemá žádný klíč prostředku. Obecně platí, že uživatelsky definované styly jsou všestrannější a užitečnější a je více v souladu s obecným principem [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] programovacího modelu oddělení logiky programu v kódu z návrhu v označení.  
   
- Obvykle neexistuje žádný důvod nastavit styl nebo šablona vložené, i v případě, že chcete použít tento styl nebo šablona v dané oblasti. Většinu prvků, které mohou provádět styl nebo šablona také podporují vlastnost obsahu a obsahu modelu. Pokud používáte pouze libovolné Logická stromová struktura jednou vytvořit pomocí stylu nebo šablony, by bylo ještě jednodušší právě vyplníte vlastnost tohoto obsahu ekvivalentní podřízené elementy v kódu s přímým přístupem. To by úplně obejít mechanismy věnovaný stylu a šablon.  
+ Obvykle neexistuje důvod k nastavení vloženého stylu nebo šablony, a to i v případě, že v tomto umístění chcete použít pouze tento styl nebo šablonu. Většina prvků, které mohou mít styl nebo šablonu, také podporují vlastnost obsahu a obsahový model. Pokud používáte pouze jakýkoli logický strom, který vytvoříte pomocí stylů nebo šablonování jednou, bylo by ještě snazší vyplnit tuto vlastnost obsahu ekvivalentními podřízenými elementy v přímém kódu. To by mělo zcela obejít mechanismy stylu a šablony.  
   
- Styly a šablony existují také jiné syntaxe ve – rozšíření značek, které vracejí objekt povolené. Dva taková rozšíření, kterých je možné scénáře zahrnují [TemplateBinding](templatebinding-markup-extension.md) a <xref:System.Windows.Data.Binding>.  
+ Jiné syntaxe, které jsou povoleny rozšířeními značek, které vracejí objekt, jsou také možné pro styly a šablony. Mezi dvě taková rozšíření, která mají možné scénáře, patří [TemplateBinding](templatebinding-markup-extension.md) a <xref:System.Windows.Data.Binding>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Styly a šablony](../controls/styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

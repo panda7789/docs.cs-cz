@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 7e29b724259604a6ee09dff9cf9133b1739eb9ad
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: 908c3fb0baacc7fd75dae875e9a9d49a08fe5401
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424784"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459723"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit <xref:System.AppDomain> s částečným vztahem důvěryhodnosti pomocí modelu .NET Framework doplňku. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -279,4 +279,4 @@ ms.locfileid: "73424784"
 - [Postupy zabezpečení pro aplikace a vzory a postupy](https://go.microsoft.com/fwlink/?LinkId=117426)
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
-- [Přehled XAML (WPF)](./advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

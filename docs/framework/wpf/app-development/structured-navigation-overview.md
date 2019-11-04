@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 76330c1228b1f55a5dbaf58a1acd231a391d550c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 09c3c57f3ac1009416a5c67b37c035fe30cd5b5e
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72580517"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425330"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 
-Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame> nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá ze stránek, které mohou být identifikovány pomocí identifikátorů URI (Uniform Resource Identifier) a přechází na ně pomocí hypertextových odkazů. Struktura stránek a způsoby, kterými se dají přejít, jak jsou definované hypertextovými odkazy, se označují jako navigační topologie. Taková topologie vyhovuje nejrůznějším typům aplikací, zejména k procházení dokumentů. Pro takové aplikace může uživatel přecházet z jedné stránky na jinou stránku, aniž by museli mít žádné informace o druhé straně.
+Obsah, který lze hostovat pomocí aplikace prohlížeče XAML (XBAP), <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá ze stránek, které mohou být identifikovány pomocí identifikátorů URI (Uniform Resource Identifier) a přechází na ně pomocí hypertextových odkazů. Struktura stránek a způsoby, kterými se dají přejít, jak jsou definované hypertextovými odkazy, se označují jako navigační topologie. Taková topologie vyhovuje nejrůznějším typům aplikací, zejména k procházení dokumentů. Pro takové aplikace může uživatel přecházet z jedné stránky na jinou stránku, aniž by museli mít žádné informace o druhé straně.
 
 Jiné typy aplikací však mají stránky, které potřebují znát, pokud byly přecházení mezi nimi. Představte si například aplikaci lidských zdrojů, která má jednu stránku k vypsání všech zaměstnanců v organizaci – na stránce "vypsat zaměstnance". Tato stránka může také uživatelům dovolit přidat nového zaměstnance kliknutím na hypertextový odkaz. Po kliknutí na stránku přejdete na stránku přidat zaměstnance, kde zjistíte podrobnosti o novém zaměstnanci a vrátíte je na stránku "seznam zaměstnanců". vytvoří se nový zaměstnanec a seznam se aktualizuje. Tento styl navigace je podobný volání metody pro provedení nějakého zpracování a vrácení hodnoty, která se označuje jako strukturované programování. V takovém případě se tento styl navigace označuje jako *strukturovaná navigace*.
 
@@ -135,7 +135,7 @@ Na volanou stránku není nutné předávat parametry. Místo toho můžete prov
 
   - Načte a použije parametry uložené v <xref:System.Windows.Application.Properties%2A>.
 
-Ale jak vidíte za chvíli, budete potřebovat použít kód pro vytvoření instance a přejít na volanou stránku, kde můžete shromažďovat data vrácená volanou stránkou. Z tohoto důvodu musí být <xref:System.Windows.Navigation.PageFunction%601> udržována v neaktivním stavu. v opačném případě při příštím přechodu na <xref:System.Windows.Navigation.PageFunction%601> [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvoří instance <xref:System.Windows.Navigation.PageFunction%601> pomocí konstruktoru bez parametrů.
+Ale jak vidíte za chvíli, budete potřebovat použít kód pro vytvoření instance a přejít na volanou stránku, kde můžete shromažďovat data vrácená volanou stránkou. Z tohoto důvodu musí být <xref:System.Windows.Navigation.PageFunction%601> udržována v neaktivním stavu. v opačném případě při příštím přechodu na <xref:System.Windows.Navigation.PageFunction%601>[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvoří instance <xref:System.Windows.Navigation.PageFunction%601> pomocí konstruktoru bez parametrů.
 
 Před vrácením volané stránky však musí vracet data, která lze načíst volající stránkou.
 

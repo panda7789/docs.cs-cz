@@ -5,33 +5,33 @@ ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 585a6e568bde6e6eca15477eaa10b5c91c91c5a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fc7def48bff71935fce7c6ed914ad20c66e5182
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61958909"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425169"
 ---
 # <a name="xml-processing-options"></a>Možnosti zpracování XML
-Najdete v následujících tabulkách seznam technologie Microsoftu, které lze použít ke zpracování dat XML.  
+V následujících tabulkách najdete seznam technologií Microsoftu, které můžete použít ke zpracování dat XML.  
   
-## <a name="net-framework-options"></a>Možnosti rozhraní .NET framework  
+## <a name="net-framework-options"></a>Možnosti .NET Framework  
   
-|**Možnost**|**Typ zpracování**|**Popis**|  
+|**Nastavení**|**Typ zpracování**|**Popis**|  
 |----------------|-------------------------|---------------------|  
-|[Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) <br/> [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) <br />(<xref:System.Xml.Linq> oboru názvů)|V paměti|-Založené na technologii .NET Framework Language-Integrated Query (LINQ).<br />-Poskytuje práce s dotazy, který je podobný SQL pro objekty, relačních dat a XML data.<br />-Poskytuje funkce pro vytváření a transformace intuitivní dokumentu.<br />– Tuto možnost použijte, pokud píšete nový kód.|  
-|<xref:System.Xml.XmlReader?displayProperty=nameWithType>|Na základě Stream|-Zajišťuje rychlá, bez mezipaměti, dopředné přístup k datům XML.<br />– Můžete vytvořit objekty pomocí <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> metoda a určit sadu funkcí pro povolení objektu pomocí <xref:System.Xml.XmlReaderSettings> třídy.|  
-|<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|Na základě Stream|-Poskytuje rychlá, bez mezipaměti, dopředné způsob, jak vygenerovat XML data.<br />– Můžete vytvořit objekty pomocí <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metoda a určit sadu funkcí pro povolení objektu pomocí <xref:System.Xml.XmlWriterSettings> třídy.|  
-|<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|V paměti|-Implementuje [W3C Document Object Model (DOM) úrovně 1 jádro](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) a [modelu DOM úroveň 2 jádra](https://www.w3.org/TR/DOM-Level-2-Core/) doporučení.<br />– Můžete vytvořit, vložit, odstranit a upravit uzly pomocí metod a vlastností na základě známých modelu DOM.<br />– Tuto možnost použijte, pokud upravujete stávající kód, který využívá W3C modelu DOM.|  
-|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|V paměti|-Nabízí několik možností úprav a možností navigace pomocí modelu kurzoru.<br />– XML dokumenty mohou být obsaženy v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.<br />-Poskytuje vynikající výkon pro zpracování XML jen pro čtení.<br />– Tuto možnost použijte, pokud upravujete stávající kód s dotazy XPath nebo transformace XSLT.|  
-|<xref:System.Xml.Xsl.XslCompiledTransform>|V paměti|-Poskytuje možnosti pro transformaci dat XML pomocí transformace XSL.<br />– [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md) umožňuje odkazujete předem zkompilovat transformace ve vaší aplikaci.|  
+|[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) <br/> [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) <br />(<xref:System.Xml.Linq> obor názvů)|V paměti|– Založený na technologii LINQ (.NET Framework Language-Integrated Query).<br />– Poskytuje možnosti dotazů, které jsou podobné SQL pro objekty, relační data a data XML.<br />– Poskytuje intuitivní možnosti vytváření a transformace dokumentů.<br />– Tuto možnost použijte, pokud píšete nový kód.|  
+|<xref:System.Xml.XmlReader?displayProperty=nameWithType>|Založené na streamu|– Poskytuje rychlý a neuložený soubor, který je pouze pro přístup k datům XML.<br />– Objekty lze vytvořit pomocí metody <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> a zadat sadu funkcí, které mají být povoleny u objektu pomocí <xref:System.Xml.XmlReaderSettings> třídy.|  
+|<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|Založené na streamu|– Poskytuje rychlý, neuložený obsah do mezipaměti, jenom pro generování dat XML.<br />– Objekty lze vytvořit pomocí metody <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> a zadat sadu funkcí, které mají být povoleny u objektu pomocí <xref:System.Xml.XmlWriterSettings> třídy.|  
+|<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|V paměti|– Implementuje základní doporučení na [úrovni W3C model DOM (Document Object Model) (DOM) 1 Core](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) a [DOM úrovně 2](https://www.w3.org/TR/DOM-Level-2-Core/) .<br />– Můžete vytvářet, vkládat, odebírat a upravovat uzly pomocí metod a vlastností založených na známém modelu DOM.<br />– Tuto možnost použijte, pokud upravujete existující kód, který využívá W3C DOM.|  
+|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|V paměti|– Nabízí několik možností úprav a možností navigace pomocí modelu kurzoru.<br />– Dokumenty XML mohou být obsaženy v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>.<br />– Poskytuje vynikající výkon pro zpracování XML jen pro čtení.<br />– Tuto možnost použijte, pokud upravujete existující kód pomocí dotazů XPath nebo transformací XSLT.|  
+|<xref:System.Xml.Xsl.XslCompiledTransform>|V paměti|– Poskytuje možnosti pro transformaci dat XML pomocí transformací XSL.<br />– [Kompilátor XSLT (xsltc. exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md) umožňuje odkazovat předem zkompilované transformace ve vaší aplikaci.|  
   
-## <a name="win32-and-com-based-options"></a>Win32 a možnosti založené na modelu COM  
+## <a name="win32-and-com-based-options"></a>Možnosti založené na Win32 a COM  
   
-|**Možnost**|**Popis**|  
+|**Nastavení**|**Popis**|  
 |----------------|---------------------|  
-|[XmlLite](https://docs.microsoft.com/previous-versions/windows/desktop/ms752872(v=vs.85))|-Rychlé a zabezpečené, bez ukládání do mezipaměti, dopředné analyzátoru XML, který vám pomůže vytvářet výkonné při XML aplikace.<br />– Funguje v libovolném jazyce, který můžete použít dynamické knihovny (DLL); Doporučujeme, abyste pomocí jazyka C++.|  
-|[MSXML](https://docs.microsoft.com/previous-versions/windows/desktop/ms763742(v=vs.85))|-Založené na modelu COM. technologii ke zpracování jazyka XML, který je součástí operačního systému Windows.<br />-Poskytuje nativní implementaci modelu DOM s podporou jazyka XPath a XSLT.<br />-Obsahuje SAX2 Analyzátor založený na událostech.|  
+|[Analyzátor](https://docs.microsoft.com/previous-versions/windows/desktop/ms752872(v=vs.85))|– Rychlý, zabezpečený, neukládání do mezipaměti, jenom dopředný analyzátor XML, který vám pomůže vytvářet vysoce výkonné aplikace XML.<br />– Funguje s jakýmkoli jazykem, který může používat knihovny DLL (Dynamic Link Library); Doporučujeme použít C++.|  
+|[SLUŽBU](https://docs.microsoft.com/previous-versions/windows/desktop/ms763742(v=vs.85))|– Technologie založená na modelu COM pro zpracování kódu XML, který je součástí operačního systému Windows.<br />-Poskytuje nativní implementaci modelu DOM s podporou XPath a XSLT.<br />-Obsahuje analyzátor založený na událostech SAX2.|  
   
 ## <a name="see-also"></a>Viz také:
 

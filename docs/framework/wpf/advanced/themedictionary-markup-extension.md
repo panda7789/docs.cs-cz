@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ThemeDictionary markup extension [WPF]
 - XAML [WPF], ThemeDictionary markup extension
 ms.assetid: aa75e10b-13dd-4989-972d-51bab63a05e2
-ms.openlocfilehash: 471b444b66c5e8173542ab1e27cb1233bfde133f
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ab38c2c885e230183852fff895e0a8a8f1d7a666
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582320"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459485"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary – rozšíření značek
 Poskytuje způsob, jak vlastní autoři ovládacích prvků nebo aplikace, které integrují ovládací prvky třetích stran pro načtení slovníků prostředků specifických pro motiv pro použití při stylování ovládacího prvku.  
@@ -45,7 +45,7 @@ Poskytuje způsob, jak vlastní autoři ovládacích prvků nebo aplikace, kter�
   
  Pomocí tohoto rozšíření můžete zadat jediné sestavení pouze pro prostředky, které obsahuje některé styly, které se použijí, když se v systému uživatele použije motiv Windows Aero, ostatní styly, jenom když je motiv Luna aktivní a tak dále. Když použijete toto rozšíření, obsah slovníku prostředků specifický pro ovládací prvek se dá v případě potřeby automaticky zrušit a znovu načíst, aby byl pro jiný motiv specifický.  
   
- @No__t_0 řetězec (<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> hodnota vlastnosti) tvoří základ konvence pojmenování, která určuje, který slovník se použije pro konkrétní motiv. Logika <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> pro `ThemeDictionary` dokončí konvenci vygenerováním identifikátoru URI (Uniform Resource Identifier), který odkazuje na konkrétní variantu slovníku motivů, jak je obsaženo v předkompilovaném sestavení prostředků. Popis této konvence nebo interakce motivů s obecným stylem řízení a stylem stránky nebo aplikace jako konceptu se zde nepokrývá. Základní scénář použití `ThemeDictionary` je zadání vlastnosti <xref:System.Windows.ResourceDictionary.Source%2A> `ResourceDictionary` deklarované na úrovni aplikace. Pokud zadáte identifikátor URI pro sestavení prostřednictvím rozšíření `ThemeDictionary`, nikoli jako přímý identifikátor URI, logika rozšíření poskytne neplatnou logiku, která se použije vždy, když se změní motiv systému.  
+ `assemblyUri` řetězec (<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> hodnota vlastnosti) tvoří základ konvence pojmenování, která určuje, který slovník se použije pro konkrétní motiv. Logika <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> pro `ThemeDictionary` dokončí konvenci vygenerováním identifikátoru URI (Uniform Resource Identifier), který odkazuje na konkrétní variantu slovníku motivů, jak je obsaženo v předkompilovaném sestavení prostředků. Popis této konvence nebo interakce motivů s obecným stylem řízení a stylem stránky nebo aplikace jako konceptu se zde nepokrývá. Základní scénář použití `ThemeDictionary` je zadání vlastnosti <xref:System.Windows.ResourceDictionary.Source%2A> `ResourceDictionary` deklarované na úrovni aplikace. Pokud zadáte identifikátor URI pro sestavení prostřednictvím rozšíření `ThemeDictionary`, nikoli jako přímý identifikátor URI, logika rozšíření poskytne neplatnou logiku, která se použije vždy, když se změní motiv systému.  
   
  Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce poskytnutý po řetězci `ThemeDictionary` identifikátoru je přiřazen jako hodnota <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> základní třídy rozšíření <xref:System.Windows.ThemeDictionaryExtension>.  
   
@@ -66,6 +66,6 @@ Poskytuje způsob, jak vlastní autoři ovládacích prvků nebo aplikace, kter�
 ## <a name="see-also"></a>Viz také:
 
 - [Styly a šablony](../controls/styling-and-templating.md)
-- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
 - [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)

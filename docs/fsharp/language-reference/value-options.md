@@ -1,26 +1,26 @@
 ---
-title: Hodnota možnosti
-description: Další informace o F# možnost Hodnota typu, který je struktura verzi typu možnosti.
+title: Možnosti pro hodnoty
+description: Přečtěte si F# o typu možnosti hodnoty, což je verze struktury typu možnosti.
 ms.date: 02/06/2019
-ms.openlocfilehash: e1036c83189c853b3704d94ca245e4818acc98c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4dc3f7217943345b7aaf1165fd648ab2e01bd727
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982576"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424023"
 ---
-# <a name="value-options"></a>Hodnota možnosti
+# <a name="value-options"></a>Možnosti pro hodnoty
 
-Typ hodnoty možnosti v F# se používá při uložení těchto dvou okolností:
+Hodnota možnosti typ v se F# používá v případě, že jsou uloženy následující dvě okolnosti:
 
 1. Scénář je vhodný pro [ F# možnost](options.md).
-2. Pomocí struktury zvyšuje výkon ve vašem scénáři.
+2. Použití struktury poskytuje ve vašem scénáři výhodu výkonu.
 
-Ne všechny scénáře náročné na výkon se "Vyřešeno" použití struktur. Je nutné zvážit další náklady na kopírování při jejich používání místo typy odkazů. Však velké F# programy běžně vytváření instancí mnoho doplňkové typy, které budou plout prostřednictvím horké cesty a v takovém případě může často struktury přinést lepší celkový výkon během životního cyklu aplikace.
+Ne všechny scénáře citlivé na výkon jsou "vyřešené" pomocí struktur. Je nutné vzít v úvahu další náklady na kopírování při jejich použití namísto odkazových typů. Velké F# programy však obvykle vytvářejí mnoho volitelných typů, které jsou přenášeny prostřednictvím aktivních cest, a v takových případech mohou struktury často vracet lepší celkový výkon po celou dobu životnosti programu.
 
 ## <a name="definition"></a>Definice
 
-Možnost Hodnota je definována jako [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions) , který je podobný typ odkazu možnost. Jeho definice můžete chápat takto:
+Možnost hodnoty je definována jako [rozlišené sjednocení struktury](discriminated-unions.md#struct-discriminated-unions) , které se podobá typu možnosti odkazu. Její definice se dá představit tímto způsobem:
 
 ```fsharp
 [<StructuralEquality; StructuralComparison>]
@@ -30,11 +30,11 @@ type ValueOption<'T> =
     | ValueSome of 'T
 ```
 
-Možnost hodnota odpovídá strukturální rovnost a porovnání. Hlavní rozdíl je, že kompilovaný název, název typu a velikosti písmen názvů ukazují, že se jedná o typ hodnoty.
+Hodnota možnosti odpovídá strukturální rovnosti a porovnávání. Hlavní rozdíl je v tom, že zkompilovaný název, název typu a názvy všech písmen označují, že se jedná o typ hodnoty.
 
-## <a name="using-value-options"></a>Pomocí možnosti hodnoty
+## <a name="using-value-options"></a>Použití možností hodnot
 
-Stejně jako se používají hodnotu možnosti [možnosti](options.md). `ValueSome` slouží k označení, že hodnota je k dispozici, a `ValueNone` se používá, když hodnota není k dispozici:
+Možnosti hodnoty se používají stejně jako [Možnosti](options.md). `ValueSome` slouží k označení toho, že hodnota je přítomna a `ValueNone` se používá, když hodnota není k dispozici:
 
 ```fsharp
 let tryParseDateTime (s: string) =
@@ -55,23 +55,23 @@ match (result1, result2) with
 | ValueNone, ValueNone -> printfn "None of them are dates!"
 ```
 
-Stejně jako u [možnosti](options.md), zásady vytváření názvů pro funkce, která vrátí `ValueOption` je prefix `try`.
+Podobně jako u [možností](options.md)jsou zásady vytváření názvů pro funkci, která vrací `ValueOption`, předponou `try`.
 
-## <a name="value-option-properties-and-methods"></a>Hodnota možnosti vlastnosti a metody
+## <a name="value-option-properties-and-methods"></a>Vlastnosti a metody možností hodnoty
 
-V tuto chvíli je jednu vlastnost s možností hodnota: `Value`. <xref:System.InvalidOperationException> Je vyvolána, pokud žádná hodnota není k dispozici, když se tato vlastnost vyvolá.
+V tuto chvíli existuje jedna vlastnost pro hodnoty možností: `Value`. <xref:System.InvalidOperationException> je vyvolána, pokud je při vyvolání této vlastnosti zobrazena žádná hodnota.
 
-## <a name="value-option-functions"></a>Hodnota možnosti funkce
+## <a name="value-option-functions"></a>Hodnoty možností funkcí
 
-Aktuálně nejsou k dispozici jednu funkci modulu mez pro hodnotu možnosti, `defaultValueArg`:
+V současné době je k dispozici jedna funkce vázaná na modul pro hodnoty možností `defaultValueArg`:
 
 ```fsharp
-val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T 
+val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T
 ```
 
-Stejně jako u `defaultArg` funkci `defaultValueArg` vrátí zdrojovou hodnotu danou hodnotu možnosti, pokud existuje; jinak vrátí zadanou výchozí hodnotu.
+Stejně jako u funkce `defaultArg` `defaultValueArg` vrátí podkladovou hodnotu dané hodnoty, pokud existuje; v opačném případě vrátí zadanou výchozí hodnotu.
 
-V tuto chvíli neexistují žádné další funkce vázané na modulu hodnotu možnosti.
+V tuto chvíli nejsou k dispozici žádné další funkce vázané na modul pro možnosti hodnoty.
 
 ## <a name="see-also"></a>Viz také:
 

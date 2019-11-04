@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 9efd7a7581a1e8bd2cb5f544edd1b4c965aa1866
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 54b5f97aca131f52b9b5d9f54d7fa5ec00ba3d5b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395945"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423679"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. Pipelines v .NET
 
@@ -91,7 +91,7 @@ V první smyčce:
 
 * je volána hodnota <xref:System.IO.Pipelines.PipeWriter.GetMemory(System.Int32)?displayProperty=nameWithType> pro získání paměti ze základního zapisovače.
 * je volána hodnota <xref:System.IO.Pipelines.PipeWriter.Advance(System.Int32)?displayProperty=nameWithType>, která sděluje `PipeWriter`, kolik dat bylo zapsáno do vyrovnávací paměti.
-* je volána hodnota <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>, aby data byla k dispozici pro `PipeReader`.
+* k zpřístupnění dat pro `PipeReader`je volána <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>.
 
 Ve druhé smyčce `PipeReader` spotřebovává vyrovnávací paměti napsané `PipeWriter`. Vyrovnávací paměti přicházejí ze soketu. Volání `PipeReader.ReadAsync`:
 
@@ -150,7 +150,7 @@ Typicky při použití `async` a `await` se asynchronní kód obnoví buď na <x
 
 Při provádění vstupně-výstupních operací je důležité mít detailní kontrolu nad tím, kde se vstupně-výstupní operace provádí. Tento ovládací prvek umožňuje efektivní využití mezipamětí CPU. Efektivní ukládání do mezipaměti je klíčové pro vysoce výkonné aplikace, jako jsou webové servery. <xref:System.IO.Pipelines.PipeScheduler> poskytuje kontrolu nad tím, kde se spouštějí asynchronní zpětná volání. Ve výchozím nastavení:
 
-* Aktuální @no__t – 0 se používá.
+* Používá se aktuální <xref:System.Threading.SynchronizationContext>.
 * Pokud není `SynchronizationContext`, používá fond vláken ke spouštění zpětných volání.
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/Program.cs?name=snippet)]
@@ -163,7 +163,7 @@ Opakované použití objektu `Pipe` je často efektivní. Chcete-li obnovit kan�
 
 ## <a name="pipereader"></a>PipeReader
 
-<xref:System.IO.Pipelines.PipeReader> spravuje paměť jménem volajícího. Po volání <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType> **vždy** volejte <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType>. To umožňuje `PipeReader` ví, kdy se volající provede s pamětí, aby se mohl sledovat. @No__t-0 vracený z `PipeReader.ReadAsync` je platný pouze do chvíle, kdy volání `PipeReader.AdvanceTo`. Po volání `PipeReader.AdvanceTo` není povoleno použít `ReadOnlySequence<byte>`.
+<xref:System.IO.Pipelines.PipeReader> spravuje paměť jménem volajícího. Po volání <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType>**vždy** volat <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType>. To umožňuje `PipeReader` ví, kdy se volající provede s pamětí, aby se mohl sledovat. `ReadOnlySequence<byte>` vrácená z `PipeReader.ReadAsync` je platná pouze do chvíle, kdy volání `PipeReader.AdvanceTo`. Po volání `PipeReader.AdvanceTo` není povoleno použít `ReadOnlySequence<byte>`.
 
 `PipeReader.AdvanceTo` přebírá dva argumenty <xref:System.SequencePosition>:
 
@@ -239,7 +239,7 @@ Následující kód přečte všechny zprávy z `PipeReader` a volá `ProcessMes
 
 ❌ **ztráta dat**
 
-@No__t-0 může vracet konečný segment dat, když je `IsCompleted` nastaveno na `true`. Tato data nebudou čtena před ukončením smyčky pro čtení. výsledkem bude ztráta dat.
+`ReadResult` může vrátit konečný segment dat, když je `IsCompleted` nastaven na `true`. Tato data nebudou čtena před ukončením smyčky pro čtení. výsledkem bude ztráta dat.
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
@@ -265,7 +265,7 @@ Tady je další část kódu se stejným problémem. Před zaškrtnutím `ReadRe
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
-@no__t – 0 **neočekávané zablokování**
+**neočekávané Zablokování** ❌
 
 Nepodmíněné volání `PipeReader.AdvanceTo` s `buffer.End` v pozici `examined` může způsobit zablokování při analýze jedné zprávy. Další volání `PipeReader.AdvanceTo` se vrátí do:
 
@@ -291,7 +291,7 @@ V následujících podmínkách uchovává následující kód ukládání do vy
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
-@no__t – 0 **poškození paměti**
+**poškození ❌ paměti**
 
 Při psaní pomocníků, které čtou vyrovnávací paměť, je nutné před voláním `Advance` zkopírovat všechny vrácené datové části. Následující příklad vrátí paměť, kterou `Pipe` zahodila, a může ji znovu použít pro další operaci (čtení/zápis).
 
@@ -305,15 +305,15 @@ Při psaní pomocníků, které čtou vyrovnávací paměť, je nutné před vol
 
 ## <a name="pipewriter"></a>PipeWriter
 
-@No__t-0 spravuje vyrovnávací paměti pro psaní jménem volajícího. `PipeWriter` implementuje [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter%601). `IBufferWriter<byte>` umožňuje získat přístup k vyrovnávací paměti, aby bylo možné provádět zápisy bez dalších kopií vyrovnávací paměti.
+<xref:System.IO.Pipelines.PipeWriter> spravuje vyrovnávací paměti pro psaní jménem volajícího. `PipeWriter` implementuje [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter%601). `IBufferWriter<byte>` umožňuje získat přístup k vyrovnávací paměti, aby bylo možné provádět zápisy bez dalších kopií vyrovnávací paměti.
 
 [!code-csharp[MyPipeWriter](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet)]
 
 Předchozí kód:
 
-* Vyžádá vyrovnávací paměť o velikosti alespoň 5 bajtů z `PipeWriter` pomocí <xref:System.IO.Pipelines.PipeWriter.GetSpan%2A>.
-* Zapíše bajty pro řetězec ASCII `"Hello"` do vráceného `Span<byte>`.
-* Volá <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pro indikaci, kolik bajtů bylo zapsáno do vyrovnávací paměti.
+* Vyžádá vyrovnávací paměť o velikosti alespoň 5 bajtů z `PipeWriter` pomocí <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A>.
+* Zapisuje bajty pro řetězec ASCII `"Hello"` do vráceného `Memory<byte>`.
+* Volá <xref:System.IO.Pipelines.PipeWriter.Advance%2A> k určení, kolik bajtů bylo zapsáno do vyrovnávací paměti.
 * Vyprázdní `PipeWriter`, což pošle bajty na příslušné zařízení.
 
 Předchozí metoda zápisu používá vyrovnávací paměti poskytované `PipeWriter`. Případně <xref:System.IO.Pipelines.PipeWriter.WriteAsync%2A?displayProperty=nameWithType>:
@@ -333,16 +333,16 @@ Předchozí metoda zápisu používá vyrovnávací paměti poskytované `PipeWr
 
 * <xref:System.IO.Pipelines.PipeWriter.GetSpan%2A> a <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A> vrátí vyrovnávací paměť s minimální požadovanou velikostí paměti. **Neberete** přesnou velikost vyrovnávací paměti.
 * Není nijak zaručeno, že po sobě jdoucí volání budou vracet stejnou vyrovnávací paměť nebo vyrovnávací paměť se stejnou velikostí.
-* Po volání <xref:System.IO.Pipelines.PipeWriter.Advance%2A> se musí požadovat nová vyrovnávací paměť, aby bylo možné pokračovat v zápisu dalších dat. Dřív získaná vyrovnávací paměť se nedá zapsat do.
+* Po volání <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pro pokračování v zápisu dalších dat je nutné požádat o novou vyrovnávací paměť. Dřív získaná vyrovnávací paměť se nedá zapsat do.
 * Volání `GetMemory` nebo `GetSpan`, zatímco existuje neúplné volání `FlushAsync` není bezpečné.
 * Volání `Complete` nebo `CompleteAsync`, zatímco existují nevyprázdněná data, mohou způsobit poškození paměti.
 
 ## <a name="iduplexpipe"></a>IDuplexPipe
 
-@No__t-0 je kontrakt pro typy, které podporují čtení i zápis. Například síťové připojení by představovalo `IDuplexPipe`.
+<xref:System.IO.Pipelines.IDuplexPipe> je kontrakt pro typy, které podporují čtení i zápis. Například síťové připojení by představovalo `IDuplexPipe`.
 
  Na rozdíl od `Pipe`, který obsahuje `PipeReader` a `PipeWriter`, `IDuplexPipe` představuje jednu stranu úplného duplexního připojení. To znamená, že obsah zapsaný do `PipeWriter` nebude načten z `PipeReader`.
 
 ## <a name="streams"></a>Datové proudy
 
-Při čtení nebo zápisu dat datového proudu obvykle čtete data pomocí rušení serializátoru a zapisují data pomocí serializátoru. Většina těchto rozhraní API pro čtení a zápis datového proudu má parametr `Stream`. Pro snazší integraci s těmito stávajícími rozhraními API `PipeReader` a `PipeWriter` zveřejňujte <xref:System.IO.Pipelines.PipeReader.AsStream%2A>.  <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> vrátí implementaci `Stream` kolem `PipeReader` nebo `PipeWriter`.
+Při čtení nebo zápisu dat datového proudu obvykle čtete data pomocí rušení serializátoru a zapisují data pomocí serializátoru. Většina těchto rozhraní API pro čtení a zápis datového proudu má parametr `Stream`. Pro snazší integraci s těmito stávajícími rozhraními API `PipeReader` a `PipeWriter` vystavovat <xref:System.IO.Pipelines.PipeReader.AsStream%2A>.  <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> vrací implementaci `Stream` kolem `PipeReader` nebo `PipeWriter`.

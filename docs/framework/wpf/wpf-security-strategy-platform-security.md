@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 7559c7ec9aef8f95336d53e62ca9bf5861a9b22f
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9c237c06de1388de4c1fe6a6edb3fb5b52522d1f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040728"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424632"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují tak, aby poskytovaly [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silný a odolný model zabezpečení, který se pokusí vyhnout se jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -70,7 +70,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
 ### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezených práv pro aplikace hostované v prohlížeči  
  Aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] hostované v prohlížeči se spouštějí v izolovaném prostoru (sandboxu) internetové zóny. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] integrace s aplikací Microsoft Internet Explorer rozšiřuje tuto ochranu o další podporu.  
   
- Vzhledem k tomu, že [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] jsou všeobecně v izolovaném prostoru nastavením oprávnění zóny Internet, odebrání těchto oprávnění neškodí [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] z hlediska kompatibility. Místo toho je vytvořena další vrstva důkladné obrany; Pokud aplikace izolovaného prostoru (sandbox) může zneužít jiné vrstvy a převzít proces, bude mít stále omezená oprávnění.  
+ Vzhledem k tomu, že aplikace prohlížeče XAML (XBAP) jsou obecně izolované nastavením oprávnění zóny Internet, odebrání těchto oprávnění nepoškozuje aplikace prohlížeče XAML (XBAP) z hlediska kompatibility. Místo toho je vytvořena další vrstva důkladné obrany; Pokud aplikace izolovaného prostoru (sandbox) může zneužít jiné vrstvy a převzít proces, bude mít stále omezená oprávnění.  
   
  Viz [použití účtu uživatele s nejnižšími oprávněními](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29).  
   
@@ -166,7 +166,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
  Všimněte si, že .NET Framework povoluje, aby důvěryhodný kód rozšířil izolovanou prostorovou mezipaměť internetové zóny XBAP tím, že umožňuje vývojářům psát spravovaná sestavení označená pomocí <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasazená do globální mezipaměti sestavení (GAC) uživatele. Označení sestavení pomocí APTCA je vysoce citlivá operace zabezpečení, protože umožňuje jakémukoli volání tohoto sestavení, včetně škodlivého kódu z Internetu. Při tomto postupu se musí použít extrémní opatrnost a osvědčené postupy. aby se uživatelé museli nainstalovat, musí si vybrat, aby tento software důvěřoval.  
   
 ## <a name="microsoft-internet-explorer-security"></a>Zabezpečení aplikace Microsoft Internet Explorer  
- Kromě snížení zabezpečení a zjednodušení konfigurace zabezpečení Microsoft Internet Explorer 6 (SP2) obsahuje několik funkcí, které zlepšují zabezpečení, které zvyšují zabezpečení pro uživatele [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
+ Kromě snížení zabezpečení a zjednodušení konfigurace zabezpečení Microsoft Internet Explorer 6 (SP2) obsahuje několik funkcí, které vylepšení zabezpečení zvyšují zabezpečení pro uživatele aplikací prohlížeče XAML (XBAP). Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
   
  Před IE6 SP2 můžou uživatelé podléhat některé z následujících možností:  
   
@@ -182,7 +182,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Pro **otevření**/**uložení** výzev zabezpečení se použije také stejná logika pro zahájení uživatelem. Dialogová okna pro instalaci ActiveX jsou v informačním pruhu vždy zachycena, pokud nepředstavuje upgrade z dříve nainstalovaného ovládacího prvku. Tyto míry se kombinují, aby uživatelům poskytovaly bezpečnější a lépe řízené uživatelské prostředí, protože jsou chráněné před lokalitami, které jim umožňují nainstalovat nežádoucí nebo škodlivý software.  
   
- Tyto funkce také chrání zákazníky, kteří používají aplikaci IE6 SP2 k procházení webů, které jim umožňují stahovat a instalovat aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. To je důležité kvůli tomu, že aplikace IE6 SP2 nabízí lepší uživatelské prostředí, které uživatelům omezuje možnost instalovat škodlivé nebo Devious aplikace bez ohledu na to, jaká technologie se použila k jejich sestavování, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] se k těmto ochranám přidávají pomocí ClickOnce, aby se usnadnilo stahování svých aplikací přes Internet. Vzhledem k tomu, že se [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] spustí v izolovaném prostoru zabezpečení Internetové zóny, můžou se snadno spustit. Na druhé straně samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro tyto aplikace ClickOnce zobrazí dialogové okno zabezpečení během procesu spuštění, aby upozornilo na použití dalších požadavků na zabezpečení aplikace. To ale musí být iniciované uživatelem, bude se řídit také logikou iniciované uživatelem a můžete ho zrušit.  
+ Tyto funkce také chrání zákazníky, kteří používají aplikaci IE6 SP2 k procházení webů, které jim umožňují stahovat a instalovat aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. To je důležité kvůli tomu, že aplikace IE6 SP2 nabízí lepší uživatelské prostředí, které uživatelům omezuje možnost instalovat škodlivé nebo Devious aplikace bez ohledu na to, jaká technologie se použila k jejich sestavování, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] se k těmto ochranám přidávají pomocí ClickOnce, aby se usnadnilo stahování svých aplikací přes Internet. Vzhledem k tomu, že aplikace prohlížeče XAML (XBAP) se provádějí v izolovaném prostoru zabezpečení Internetové zóny, můžou se snadno spustit. Na druhé straně samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro tyto aplikace ClickOnce zobrazí dialogové okno zabezpečení během procesu spuštění, aby upozornilo na použití dalších požadavků na zabezpečení aplikace. To ale musí být iniciované uživatelem, bude se řídit také logikou iniciované uživatelem a můžete ho zrušit.  
   
  Internet Explorer 7 zahrnuje a rozšiřuje možnosti zabezpečení aplikace IE6 SP2 jako součást trvalého závazku na zabezpečení.  
   

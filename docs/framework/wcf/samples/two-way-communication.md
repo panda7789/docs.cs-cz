@@ -2,15 +2,15 @@
 title: Obousměrná komunikace
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 379197ee3dc041351f0b13ad1e336824a0f411ed
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 7bc513d270a860c104255ac5df6f6d890f6b2b0d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038710"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424212"
 ---
 # <a name="two-way-communication"></a>Obousměrná komunikace
-Tato ukázka předvádí, jak provést transakční obousměrnou komunikaci přes službu MSMQ ve frontě. Tato ukázka používá `netMsmqBinding` vazbu. V tomto případě je tato služba samoobslužná Konzolová aplikace, která umožňuje sledovat službu přijímající zprávy ve frontě.  
+Tato ukázka předvádí, jak provést transakční obousměrnou komunikaci přes službu MSMQ ve frontě. V této ukázce se používá vazba `netMsmqBinding`. V tomto případě je tato služba samoobslužná Konzolová aplikace, která umožňuje sledovat službu přijímající zprávy ve frontě.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
@@ -21,7 +21,7 @@ Tato ukázka předvádí, jak provést transakční obousměrnou komunikaci pře
   
  Tato ukázka předvádí obousměrnou komunikaci pomocí front. Klient odesílá nákupní objednávky do fronty z rozsahu transakce. Služba obdrží objednávky, zpracuje objednávku a pak zavolá zpět klienta se stavem pořadí z fronty v rámci rozsahu transakce. Aby se usnadnila obousměrná komunikace klienta a služby, používají fronty k zařazování nákupních objednávek a stavu objednávek.  
   
- Kontrakt `IOrderProcessor` služby definuje jednosměrné operace služby, které vyhovují používání služby Řízení front zpráv. Operace služby zahrnuje koncový bod odpovědi, který se použije k odeslání stavu objednávky na. Koncový bod odpovědi je identifikátor URI fronty, který odesílá stav objednávky zpátky klientovi. Aplikace pro zpracování objednávek tuto smlouvu implementuje.  
+ Kontrakt služby `IOrderProcessor` definuje jednosměrné operace služby, které vyhovují používání služby Řízení front zpráv. Operace služby zahrnuje koncový bod odpovědi, který se použije k odeslání stavu objednávky na. Koncový bod odpovědi je identifikátor URI fronty, který odesílá stav objednávky zpátky klientovi. Aplikace pro zpracování objednávek tuto smlouvu implementuje.  
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -44,7 +44,7 @@ public interface IOrderStatus
 }  
 ```
 
- Operace služby zpracuje odeslanou nákupní objednávku. <xref:System.ServiceModel.OperationBehaviorAttribute> Se použije na operaci služby a určí automatické zařazení v transakci, která se používá k přijetí zprávy z fronty a automatickému dokončení transakcí při dokončení operace služby. `Orders` Třída zapouzdřuje funkce zpracování objednávek. V tomto případě přidá nákupní objednávku do slovníku. Transakce, ve které je zapsána operace služby, je k dispozici pro `Orders` operace ve třídě.  
+ Operace služby zpracuje odeslanou nákupní objednávku. <xref:System.ServiceModel.OperationBehaviorAttribute> se použije na operaci služby a určí se automatické zařazení v transakci, která se používá k přijetí zprávy z fronty a automatickému dokončení transakcí při dokončení operace služby. Třída `Orders` zapouzdřuje funkce zpracování objednávek. V tomto případě přidá nákupní objednávku do slovníku. Transakce, ve které je zapsána operace služby v nástroji, je k dispozici pro operace ve třídě `Orders`.  
   
  Operace služby kromě zpracování odeslané nákupní objednávky odpoví zpátky na klienta ve stavu objednávky.  
 
@@ -143,7 +143,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
 }  
 ```
 
- Klientský kód implementuje `IOrderStatus` kontrakt pro příjem stavu objednávky ze služby. V tomto případě vytiskne stav objednávky.  
+ Klientský kód implementuje kontrakt `IOrderStatus` pro příjem stavu objednávky ze služby. V tomto případě vytiskne stav objednávky.  
 
 ```csharp
 [ServiceBehavior]  
@@ -159,7 +159,7 @@ public class OrderStatusService : IOrderStatus
 }  
 ```
 
- V `Main` metodě je vytvořena fronta stavů pořadí. Konfigurace klienta zahrnuje pořadí konfigurace stavové služby pro hostování služby stavu objednávky, jak je znázorněno v následující ukázkové konfiguraci.  
+ Fronta stavů pořadí je vytvořena v metodě `Main`. Konfigurace klienta zahrnuje pořadí konfigurace stavové služby pro hostování služby stavu objednávky, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <appSettings>  
@@ -194,7 +194,7 @@ public class OrderStatusService : IOrderStatus
   
  Služba zobrazí informace o objednávce nákupu a indikuje, že posílá zpět stav objednávky do fronty stavu objednávky.  
   
-```  
+```console  
 The service is ready.  
 Press <ENTER> to terminate service.  
   
@@ -211,7 +211,7 @@ Sending back order status information
   
  Klient zobrazí informace o stavu objednávky odesílané službou.  
   
-```  
+```console  
 Press <ENTER> to terminate client.  
 Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending  
 ```  
@@ -220,18 +220,18 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
     > Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit názvy koncových bodů v konfiguraci klienta tak, aby odpovídaly kódu klienta.  
   
- Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding>je zapnuto zabezpečení přenosu. Existují <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> dvě důležité vlastnosti zabezpečení přenosu ve službě MSMQ a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` ve výchozím nastavení je režim ověřování nastaven na `Windows` hodnotu a úroveň ochrany je nastavena na `Sign`hodnotu. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
+ Ve výchozím nastavení je u <xref:System.ServiceModel.NetMsmqBinding>povolena možnost zabezpečení přenosu. Existují dvě důležité vlastnosti zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Spuštění ukázky na počítači připojeném k pracovní skupině nebo bez integrace služby Active Directory  
   
-1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak `None` , jak je znázorněno v následující ukázkové konfiguraci:  
+1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany na `None`, jak je znázorněno v následující ukázkové konfiguraci:  
   
     ```xml  
     <configuration>  
@@ -310,7 +310,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
     </configuration>  
     ```  
   
-3. Služba pro tuto ukázku vytvoří vazbu v `OrderProcessorService`. Přidejte řádek kódu po vytvoření instance vazby pro nastavení režimu `None`zabezpečení na.  
+3. Služba pro tuto ukázku vytvoří vazbu v `OrderProcessorService`. Po vytvoření instance vazby přidejte řádek kódu, který nastaví režim zabezpečení na `None`.  
   
     ```csharp
     NetMsmqBinding msmqCallbackBinding = new NetMsmqBinding();  
@@ -320,13 +320,13 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 4. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.  
   
     > [!NOTE]
-    > Nastavení `security mode` <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>na `None`jeekvivalentní s nastavením nebo`Message` zabezpečením na`None`. <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>  
+    > Nastavení `security mode` na `None` je ekvivalentem nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> nebo `Message` zabezpečení na `None`.  
   
 > [!IMPORTANT]
 > Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  

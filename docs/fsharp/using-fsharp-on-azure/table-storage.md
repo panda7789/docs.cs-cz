@@ -3,14 +3,14 @@ title: Začínáme se službou Azure Table Storage s využitím F#
 description: Ukládání strukturovaných dat v cloudu pomocí služby Azure Table Storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: 30ffd5f099dbb8efbf57104a2ade6c26304b7cee
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 6833e2264f7543f50b94892b6980140e4bf1cdd1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395198"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424599"
 ---
-# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s úložištěm Azure Table a Azure Cosmos DB rozhraní API pro tabulky s použitím F @ no__t-0
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table Storage a Azure Cosmos DB rozhraní API pro tabulky pomocí F\#
 
 Azure Table Storage je služba, která ukládá strukturovaná NoSQL data v cloudu. Table Storage je úložiště klíčů/atributů s návrhem bez schématu. Vzhledem k tomu, že je tabulka úložiště bez schématu, je snadné přizpůsobit data, jak jsou potřeby vaší aplikace vyvíjet. Přístup k datům je rychlý a nákladově efektivní pro všechny typy aplikací. Služba Table Storage je obvykle výrazně nižší, než tradiční SQL pro podobné objemy dat.
 
@@ -54,7 +54,7 @@ Pokud se připojujete k Azure Storage Table service, budete pro tento kurz potř
 
 ### <a name="get-your-azure-cosmos-db-connection-string"></a>Získání připojovacího řetězce Azure Cosmos DB
 
-Pokud se připojujete k Azure Cosmos DB, budete pro tento kurz potřebovat připojovací řetězec. Připojovací řetězec můžete zkopírovat z Azure Portal. V Azure Portal v účtu Cosmos DB přejděte na **nastavení** > **připojovací řetězec**a kliknutím na tlačítko **Kopírovat** zkopírujte primární připojovací řetězec. 
+Pokud se připojujete k Azure Cosmos DB, budete pro tento kurz potřebovat připojovací řetězec. Připojovací řetězec můžete zkopírovat z Azure Portal. V Azure Portal v účtu Cosmos DB přejděte na **nastavení** > **připojovací řetězec**a kliknutím na tlačítko **Kopírovat** zkopírujte primární připojovací řetězec.
 
 V tomto kurzu do skriptu zadejte připojovací řetězec, podobně jako v následujícím příkladu:
 
@@ -92,7 +92,7 @@ Tento příklad ukazuje, jak vytvořit tabulku, pokud ještě neexistuje:
 
 ### <a name="add-an-entity-to-a-table"></a>Přidání entity do tabulky
 
-Entita musí mít typ, který dědí z `TableEntity`. @No__t-0 můžete roztáhnout jakýmkoli způsobem, ale váš typ *musí* mít konstruktor bez parametrů. V tabulce Azure jsou uloženy pouze vlastnosti `get` i `set`.
+Entita musí mít typ, který dědí z `TableEntity`. `TableEntity` můžete roztáhnout jakýmkoli způsobem, ale váš typ *musí* mít konstruktor bez parametrů. V tabulce Azure jsou uloženy pouze vlastnosti `get` i `set`.
 
 Klíč oddílu a řádku entity jednoznačně identifikují entitu v tabulce. Na entity se stejným klíčem oddílu se dá zadávat dotaz rychleji než u různých klíčů oddílů, ale pomocí různých klíčů oddílu můžete dosáhnout větší škálovatelnosti paralelních operací.
 

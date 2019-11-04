@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], Label
 - Label control [WPF]
 ms.assetid: 241c1ce2-60f8-4613-a0ec-9b9bb25fb6af
-ms.openlocfilehash: 131eb251493b77f13b5dc59a3a03504be8868e8a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73f36325a2621cc834e1bef8d2060dec1a8c133d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052050"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423778"
 ---
 # <a name="label"></a>Popisek
-<xref:System.Windows.Controls.Label> ovládací prvky obvykle poskytují informace [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  V minulosti <xref:System.Windows.Controls.Label> má obsahuje pouze text, ale protože <xref:System.Windows.Controls.Label> , který je součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Controls.ContentControl>, může obsahovat text nebo <xref:System.Windows.UIElement>.  
+<xref:System.Windows.Controls.Label> ovládací prvky obvykle poskytují informace v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  Historicky <xref:System.Windows.Controls.Label> obsahoval pouze text, ale vzhledem k tomu, že <xref:System.Windows.Controls.Label>, která je dodávána s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], je <xref:System.Windows.Controls.ContentControl>, může obsahovat buď text nebo <xref:System.Windows.UIElement>.  
   
- A <xref:System.Windows.Controls.Label> podporuje funkční a vizuální přístupové klíče. To se často používá umožňující rychlé klávesnici přístup k ovládacím prvkům <xref:System.Windows.Controls.TextBox>. Přiřazení <xref:System.Windows.Controls.Label> k <xref:System.Windows.Controls.Control>, nastavte <xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType> vlastnosti do ovládacího prvku, který by měl vrátit fokus, když uživatel stiskne klávesu přístup.  
+ <xref:System.Windows.Controls.Label> poskytuje jak funkční, tak vizuální podporu přístupových klíčů. Často se používá k umožnění rychlého přístupu na klávesnici k ovládacím prvkům, jako je <xref:System.Windows.Controls.TextBox>. Chcete-li přiřadit <xref:System.Windows.Controls.Label> k <xref:System.Windows.Controls.Control>, nastavte vlastnost <xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType> na ovládací prvek, který by měl mít fokus, když uživatel stiskne přístupový klíč.  
   
- Následující obrázek znázorňuje <xref:System.Windows.Controls.Label> "motivy, které cílí <xref:System.Windows.Controls.ComboBox>.  Když uživatel stiskne, <xref:System.Windows.Controls.ComboBox> získá fokus.  Další informace najdete v tématu [jak: Nastavte vlastnost Target tohoto popisku](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752101(v=vs.90)).  
+ Následující obrázek ukazuje <xref:System.Windows.Controls.Label> "motivy", které cílí na <xref:System.Windows.Controls.ComboBox>.  Když uživatel stiskne, <xref:System.Windows.Controls.ComboBox> dostane fokus.  Další informace najdete v tématu [Postup: nastavení vlastnosti target popisku](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752101(v=vs.90)).  
   
- ![Zobrazení vlastností zobrazuje s popiskem podle využití](./media/labeledby.JPG "LabeledBy")  
+ ![Snímek obrazovky s dialogovým oknem vlastností zobrazení zobrazeným podle popisu použití](./media/label/display-properties-labeled-by.png "LabeledBy")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Vytvoření ovládacího prvku obsahujícího přístupový klíč a zalamování textu](how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md)  
+ [Postupy: vytvoření ovládacího prvku, který má přístupový klíč a zalamování textu](how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Label>

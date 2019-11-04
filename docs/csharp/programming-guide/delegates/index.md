@@ -6,15 +6,15 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 80878ec1a592a368db246fc294ebc42556874832
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a0c5592f2f4cca8173f9b777f2c3f14fe468feac
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921929"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423309"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegáti (Průvodce programováním v C#)
-[Delegát](../../language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
+[Delegát](../../language-reference/builtin-types/reference-types.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
   
  Delegáty se používají pro předávání metod jako argumentů jiným metodám. Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Můžete vytvořit vlastní metodu a konkrétní třída, jako je ovládací prvek Windows, může volat vaši metodu, pokud dojde k určité události. Následující příklad znázorňuje deklaraci delegátu.  
   
@@ -48,22 +48,22 @@ ms.locfileid: "69921929"
   
 - [Kdy použít delegáty namísto rozhraní (C# Průvodce programováním)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
-- [Delegáti s pojmenovanými vs. anonymními metodami](./delegates-with-named-vs-anonymous-methods.md)  
+- [Delegáti s pojmenovanými vs. anonymními metodami](./delegates-with-named-vs-anonymous-methods.md)  
   
 - [Použití odchylek v delegátech](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](./how-to-combine-delegates-multicast-delegates.md)  
+- [Postupy: kombinování delegátů (vícesměrové Delegáti)](./how-to-combine-delegates-multicast-delegates.md)  
   
-- [Postupy: Deklarace, vytvoření instance a použití delegáta](./how-to-declare-instantiate-and-use-a-delegate.md)  
+- [Postupy: Deklarování, vytváření instancí a použití delegáta](./how-to-declare-instantiate-and-use-a-delegate.md)  
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace naleznete v tématu [Delegáti](~/_csharplang/spec/delegates.md) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [Delegáti](~/_csharplang/spec/delegates.md) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3,0 kuchařka, třetí vydání: Více než 250 řešení pro C# 3,0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+ [Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3,0 kuchařka, třetí vydání: více než 250 řešení pro C# 3,0 programátorů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
- [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) [ve C# studiu 3,0: Hlavní základy C# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
+ [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) ve [studiu C# 3,0: hlavní základy pro C# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,16 +3,16 @@ title: Začínáme se službou Azure File Storage s využitím F#
 description: Ukládejte data souborů v cloudu pomocí služby Azure File Storage a připojte svoji cloudovou sdílenou složku z virtuálního počítače Azure (VM) nebo z místní aplikace s Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: a0e3cab56ba0f3db27335822616b4976a5d9de62
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9c25ab930abcbe7b358ae63c709aba4e97aed3be
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630497"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423866"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Začínáme se službou Azure File Storage s využitím F\#
 
-Azure File Storage je služba, která nabízí sdílené složky v cloudu pomocí standardního [protokolu SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Podporují se SMB 2.1 i SMB 3.0. S Azure File Storage můžete rychle a bez nákladných přepisů migrovat starší aplikace, které spoléhají na sdílené složky, do Azure. Aplikace běžící v cloudových službách nebo virtuálních počítačích Azure nebo spuštěné z lokálních klientů můžou připojit sdílenou složku v cloudu stejným způsobem, jako desktopová aplikace připojí typickou sdílenou složku SMB. Potom může sdílenou složku File Storage připojit a používat libovolný počet aplikací.
+Azure File Storage je služba, která nabízí sdílené složky v cloudu pomocí standardního [protokolu SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Podporovány jsou protokoly SMB 2,1 a SMB 3,0. Pomocí služby Azure File Storage můžete migrovat starší aplikace, které spoléhají na sdílené složky do Azure, rychle a bez nákladných přepisů. Aplikace spuštěné ve virtuálních počítačích Azure nebo cloudových službách nebo z místních klientů můžou připojit sdílenou složku v cloudu, stejně jako desktopová aplikace připojí typickou sdílenou složku SMB. Libovolný počet komponent aplikace pak může současně připojit a přistupovat ke sdílenému úložišti souborů.
 
 Koncepční přehled služby File Storage najdete v [příručce .NET pro File Storage](/azure/storage/storage-dotnet-how-to-use-files).
 
@@ -23,13 +23,13 @@ Pro tento účet budete taky potřebovat přístupový klíč k úložišti.
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skriptu a spuštění F# Interactive
 
-Ukázky v tomto článku se dají použít buď v F# aplikaci, nebo ve F# skriptu. Chcete-li F# vytvořit skript, vytvořte soubor s `.fsx` příponou, například `files.fsx`ve F# vývojovém prostředí.
+Ukázky v tomto článku se dají použít buď v F# aplikaci, nebo ve F# skriptu. Chcete-li F# vytvořit skript, vytvořte soubor s příponou `.fsx`, například `files.fsx`ve vašem F# vývojovém prostředí.
 
-V dalším kroku pomocí [Správce balíčků](package-management.md) , jako je [paket](https://fsprojects.github.io/Paket/) nebo `WindowsAzure.Storage` [NuGet](https://www.nuget.org/) , nainstalujte `#r` balíček a odkazujte `WindowsAzure.Storage.dll` ve svém skriptu pomocí direktivy.
+V dalším kroku pomocí [Správce balíčků](package-management.md) , jako je [paket](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) , nainstalujte balíček `WindowsAzure.Storage` a odkaz `WindowsAzure.Storage.dll` ve svém skriptu pomocí direktivy `#r`.
 
 ### <a name="add-namespace-declarations"></a>Přidat deklarace oboru názvů
 
-Na začátek `open` `files.fsx` souboru přidejte následující příkazy:
+Do horní části `files.fsx` souboru přidejte následující příkazy `open`:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L1-L5)]
 
@@ -41,25 +41,25 @@ V tomto kurzu do skriptu zadáte svůj připojovací řetězec, například:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L11-L11)]
 
-To však nedoporučujeme pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
+To však **nedoporučujeme** pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy buďte opatrní, abyste chránili klíč účtu úložiště. Vyhněte se distribuci jiným uživatelům, pevným kódováním nebo uložením v souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
 
 Pro reálné aplikace je nejlepší způsob, jak udržovat připojovací řetězec úložiště, v konfiguračním souboru. Chcete-li načíst připojovací řetězec z konfiguračního souboru, můžete to provést:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L13-L15)]
 
-Použití Azure Configuration Manager je volitelné. Můžete také použít rozhraní API, jako je `ConfigurationManager` typ .NET Framework.
+Použití Azure Configuration Manager je volitelné. Můžete také použít rozhraní API, jako je .NET Framework typ `ConfigurationManager`.
 
-### <a name="parse-the-connection-string"></a>Analýza připojovacího řetězce
+### <a name="parse-the-connection-string"></a>Analyzovat připojovací řetězec
 
 K analýze připojovacího řetězce použijte:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L21-L22)]
 
-Vrátí se `CloudStorageAccount`.
+Tato akce vrátí `CloudStorageAccount`.
 
 ### <a name="create-the-file-service-client"></a>Vytvoření klienta souborové služby
 
-`CloudFileClient` Typ umožňuje programové použití souborů uložených v úložišti souborů. Tady je jeden ze způsobů, jak vytvořit klienta služby:
+Typ `CloudFileClient` umožňuje programově používat soubory uložené v úložišti souborů. Tady je jeden ze způsobů, jak vytvořit klienta služby:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L28-L28)]
 
@@ -91,7 +91,7 @@ Zde si můžete stáhnout soubor, který jste právě vytvořili, a připojit ob
 
 ### <a name="set-the-maximum-size-for-a-file-share"></a>Nastavení maximální velikosti sdílené složky
 
-Níže uvedený příklad ukazuje, jak kontrolovat aktuální využití sdílené složky a jak nastavit kvótu pro sdílenou složku. `FetchAttributes`se musí volat `Properties`, aby se naplnila sdílená složka a `SetProperties` rozšířily se místní změny do služby Azure File Storage.
+Níže uvedený příklad ukazuje, jak kontrolovat aktuální využití sdílené složky a jak nastavit kvótu pro sdílenou složku. aby bylo možné naplnit `Properties`sdílené složky a `SetProperties` rozšířit místní změny do služby Azure File Storage, je třeba volat `FetchAttributes`.
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L62-L72)]
 
@@ -131,7 +131,7 @@ Metriky pro službu File Storage můžete povolit na webu [Azure Portal](https:/
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L126-L140)]
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Další informace o službě Azure File Storage najdete v těchto odkazech.
 
@@ -146,14 +146,14 @@ Další informace o službě Azure File Storage najdete v těchto odkazech.
 - [Jak používat AzCopy s Microsoft Azure Storage](/azure/storage/storage-use-azcopy)
 - [Použití rozhraní příkazového řádku Azure s Azure Storage](/azure/storage/storage-azure-cli#create-and-manage-file-shares)
 
-### <a name="reference"></a>Reference
+### <a name="reference"></a>Odkaz
 
-- [Klientská knihovna Storage pro .NET – referenční informace](https://msdn.microsoft.com/library/azure/mt347887.aspx)
+- [Klientská knihovna pro úložiště – referenční informace pro .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx)
 - [Odkaz na REST API souborové služby](/rest/api/storageservices/fileservices/File-Service-REST-API)
 
 ### <a name="blog-posts"></a>Příspěvky na blogu
 
 - [Služba Azure File Storage je teď všeobecně dostupná.](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-- [V rámci Azure File Storage](https://azure.microsoft.com/blog/inside-azure-file-storage/) 
+- [V rámci Azure File Storage](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 - [Představení Microsoft Azure souborové služby](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/12/introducing-microsoft-azure-file-service/)
 - [Trvalé připojení k souborům Microsoft Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/26/persisting-connections-to-microsoft-azure-files/)

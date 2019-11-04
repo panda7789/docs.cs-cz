@@ -9,39 +9,39 @@ helpviewer_keywords:
 - Window [WPF], styles and templates
 - states [WPF], Window
 ms.assetid: 2dfdf025-347b-4342-bf28-95206c273f35
-ms.openlocfilehash: ebd21829591b8fefe87aeba0b86280f18eff4f06
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 48fe5887ebad86efad1b1aae39ba03a26fda3bd8
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62023829"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460014"
 ---
 # <a name="window-styles-and-templates"></a>Styly a šablony oken
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Window> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Window>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="window-parts"></a>Součásti okna  
- <xref:System.Windows.Window> Ovládací prvek nemá žádné pojmenované součásti.  
+## <a name="window-parts"></a>Části okna  
+ Ovládací prvek <xref:System.Windows.Window> neobsahuje žádné pojmenované části.  
   
-## <a name="window-states"></a>Okno stavy  
- V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Window> ovládacího prvku.  
+## <a name="window-states"></a>Stavy oken  
+ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Window>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
 ## <a name="window-controltemplate-example"></a>Příklad okna ControlTemplate  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Window> ovládacího prvku.  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Window>.  
   
  [!code-xaml[ControlTemplateExamples#Window](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/window.xaml#window)]  
   
- <xref:System.Windows.Controls.ControlTemplate> Používá jeden nebo více z následujících prostředků.  
+ <xref:System.Windows.Controls.ControlTemplate> používá jeden nebo více následujících prostředků.  
   
  [!code-xaml[ControlTemplateExamples#ResizeGrip](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/resizegrip.xaml#resizegrip)]  
 [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -49,5 +49,5 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Window> ovládací
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

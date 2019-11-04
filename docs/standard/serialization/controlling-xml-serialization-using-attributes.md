@@ -15,21 +15,21 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 54660244c1b3cca8cb75539edbe23628b370afd5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e089924900196ae369de1becfe3d0b8f0a00b79c
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934494"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459284"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
-Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytváření alternativní datový proud XML, naleznete v tématu [jak: Určení alternativního názvu elementu pro XML Stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytvoření alternativního datového proudu XML naleznete v tématu [How to: zadejte název alternativního prvku pro datový proud XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Pokud XML generované musí odpovídat část 5 World Wide Web Consortium (W3C) dokumentu s názvem [jednoduchý objekt přístup protokolu (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributy, že ovládací prvek kódovaný SOAP Serializace](attributes-that-control-encoded-soap-serialization.md).
+> Pokud XML vygenerované musí odpovídat části 5 dokumentu konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributech, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).
 
-Ve výchozím nastavení je název elementu XML určen název třída nebo člen. Jednoduchá třída s názvem `Book`, pole s názvem `ISBN` způsobí značku element XML \<ISBN >, jak je znázorněno v následujícím příkladu.
+Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě s názvem `Book`, pole s názvem `ISBN` vytvoří značku XML elementu \<ISBN >, jak je znázorněno v následujícím příkladu.
 
 ```vb
 Public Class Book
@@ -66,11 +66,11 @@ public class TaxRates {
 }
 ```
 
-Další informace o atributech najdete v tématu [atributy](../../../docs/standard/attributes/index.md). Seznam atributů řídících serializaci XML, naleznete v tématu [atributy, které ovládací prvek XML serializace](attributes-that-control-xml-serialization.md).
+Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializace XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
 
 ## <a name="controlling-array-serialization"></a>Řízení serializace pole
 
-<xref:System.Xml.Serialization.XmlArrayAttribute> a <xref:System.Xml.Serialization.XmlArrayItemAttribute> atributy jsou určeny k řízení serializace pole. Pomocí těchto atributů, můžete řídit název elementu, obor názvů a datový typ schématu XML (XSD) (jak jsou definovány v dokumentu W3c [www.w3.org] s názvem "XML schématu část 2: "Datové typy"). Můžete také určit typy, které mohou být zahrnuty do pole.
+<xref:System.Xml.Serialization.XmlArrayAttribute> a <xref:System.Xml.Serialization.XmlArrayItemAttribute> atributy jsou určeny k řízení serializace pole. Pomocí těchto atributů, můžete upravit název elementu, obor názvů a datový typ schématu XML (XSD) (jak jsou definovány v dokumentu W3c [www.w3.org] s názvem "XML schématu část 2: datové typy"). Můžete také určit typy, které mohou být zahrnuty do pole.
 
 <xref:System.Xml.Serialization.XmlArrayAttribute> Určí vlastnosti nadřazeného elementu XML, když je serializována pole. Například ve výchozím nastavení, serializací pole níže bude mít za následek element XML s názvem `Employees`. `Employees` Element bude obsahovat několik elementů s názvem po typ pole `Employee`.
 
@@ -202,7 +202,7 @@ Serializovanou instanci může vypadat takto.
     <Employee xsi:type = "Manager">
         <Name>Ann</Name>
         <Level>3</Level>
-    <Employee>
+    </Employee>
 </Employees>
 </Group>
 ```
@@ -241,7 +241,7 @@ Serializovanou instanci může vypadat takto.
 </Group>
 ```
 
-Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další podrobnosti o používání nástroje najdete v tématu [nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Při použití žádný atribut na pole, schéma popisuje element následujícím způsobem.
+Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další informace o použití tohoto nástroje naleznete v tématu [Nástroj definice schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Pokud není použit žádný atribut na pole, schéma popisuje prvek následujícím způsobem.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -321,6 +321,6 @@ Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializ
 - [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [Příklady serializace XML](examples-of-xml-serialization.md)
-- [Postupy: Určení alternativního názvu elementu pro Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)
