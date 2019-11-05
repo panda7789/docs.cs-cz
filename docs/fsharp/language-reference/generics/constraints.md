@@ -2,12 +2,12 @@
 title: Omezení
 description: Přečtěte F# si o omezeních, která se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkci.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9912ba63138d893a7c616661dd2b1cbdbe51916c
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 70a8bec1ad67d7e814cb7a96b1876bb22399c5e7
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736794"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425019"
 ---
 # <a name="constraints"></a>Omezení
 
@@ -25,17 +25,17 @@ Existuje několik různých omezení, která lze použít pro omezení typů, kt
 
 |Jedinečn|Syntaxe|Popis|
 |----------|------|-----------|
-|Omezení typu|*typ-parametr* : &gt; *typ*|Poskytnutý typ musí být roven nebo odvozen od zadaného typu, nebo, pokud je typ rozhraní, poskytnutý typ musí implementovat rozhraní.|
+|Omezení typu|*typ-parametr* :&gt; *typ*|Poskytnutý typ musí být roven nebo odvozen od zadaného typu, nebo, pokud je typ rozhraní, poskytnutý typ musí implementovat rozhraní.|
 |Omezení hodnoty null|*parametr typu* : null|Poskytnutý typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů rozhraní .NET, F# ale ne seznam, řazené kolekce členů, funkce, třídy, záznam nebo sjednocení.|
 |Explicitní omezení členů|[(]*typ-parametr* [nebo... nebo *parametr typu*)]: (*Member-Signature*)|Aspoň jeden z poskytnutých argumentů typu musí mít člena, který má zadaný podpis. není určeno pro běžné použití. Členy musí být buď explicitně definovány pro typ nebo část rozšíření implicitního typu, aby byly platnými cíli pro explicitní omezení členů.|
 |Omezení konstruktoru|*parametr typu* : (New: unit-&gt; ' a)|Poskytnutý typ musí mít konstruktor bez parametrů.|
 |Omezení typu hodnoty|: struct|Poskytnutý typ musí být typ hodnoty .NET.|
 |Omezení typu odkazu|: not struct|Poskytnutý typ musí být typ odkazu .NET.|
-|Omezení typu výčtu|: enum @ no__t-0*podkladového typu*&gt;|Poskytnutý typ musí být Výčtový typ, který má zadaný základní typ. není určeno pro běžné použití.|
-|Omezení delegování|: Delegate @ no__t-0*řazené kolekce členů – typ parametru*, *návratový typ*&gt;|Poskytnutý typ musí být delegovaný typ, který má zadané argumenty a návratovou hodnotu. není určeno pro běžné použití.|
+|Omezení typu výčtu|: enum&lt;*podkladového typu*&gt;|Poskytnutý typ musí být Výčtový typ, který má zadaný základní typ. není určeno pro běžné použití.|
+|Omezení delegování|: Delegate&lt;*řazené kolekce členů-typ parametru*, *návratový typ*&gt;|Poskytnutý typ musí být delegovaný typ, který má zadané argumenty a návratovou hodnotu. není určeno pro běžné použití.|
 |Omezení porovnání|: porovnání|Poskytnutý typ musí podporovat porovnání.|
 |Omezení rovnosti|: rovnost|Poskytnutý typ musí podporovat rovnost.|
-|Nespravované omezení|: nespravované|Poskytnutý typ musí být nespravovaný typ. Nespravované typy jsou buď některé primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, 0, 1, 2 nebo 3), výčtové typy, 4 nebo neobecné. struktura, jejíž pole jsou všechny nespravované typy.|
+|Nespravované omezení|: nespravované|Poskytnutý typ musí být nespravovaný typ. Nespravované typy jsou buď určité primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`nebo `decimal`), výčtové typy, `nativeptr<_>`nebo neobecnou strukturu, jejíž pole jsou všechny nespravované typy.|
 
 Je nutné přidat omezení, pokud váš kód musí používat funkci, která je k dispozici pro typ omezení, ale ne pro obecné typy. Například pokud použijete omezení typu k určení typu třídy, můžete použít libovolnou z metod této třídy v obecné funkci nebo typu.
 
@@ -53,7 +53,7 @@ type Class1<'T when 'T :> System.Exception> =
 class end
 
 // Interface Type Constraint
-type Class2<'T when 'T :> System.IComparable> = 
+type Class2<'T when 'T :> System.IComparable> =
 class end
 
 // Null constraint
@@ -111,7 +111,7 @@ type Class14<'T,'U when 'T : equality and 'U : equality> =
 class end
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - [Obecné typy](index.md)
-- [Jednotlivým](constraints.md)
+- [Omezení](constraints.md)
