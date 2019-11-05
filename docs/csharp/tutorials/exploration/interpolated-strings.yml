@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 460accc4f0877265a5a3d72ad3272502da9e5119
-  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+  ms.openlocfilehash: c3c4927a4afbf69f2101aa2596389e6f94cea243
+  ms.sourcegitcommit: 4aeac5d588ded58246f58030919e56b70a7674e4
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72774035"
+  ms.lasthandoff: 10/27/2019
+  ms.locfileid: "72966969"
 items:
 - durationInMinutes: 2
   content: >
@@ -58,7 +58,7 @@ items:
     V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného. Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale. Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.
 
 
-    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci členů](../../tuples.md) , která má `Name`, `Price` a členy `perPackage`. V interaktivním okně spusťte následující kód:
+    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci členů](../../tuples.md) , která má `Name`, `Price`a členy `perPackage`. V interaktivním okně spusťte následující kód:
 
 
     ```csharp
@@ -157,7 +157,7 @@ items:
 
     > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >-
-    Dokončili jste Interaktivní kurz o interpolaci řetězce. Kliknutím na níže uvedený odkaz **kolekce C# ** můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
+    Dokončili jste Interaktivní kurz o interpolaci řetězce. Můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na svém počítači a zachovat kódování.
 
 
     Další informace naleznete v tématu [interpolace řetězce](../../language-reference/tokens/interpolated.md).
