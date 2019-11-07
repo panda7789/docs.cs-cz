@@ -2,22 +2,22 @@
 title: Co je Docker?
 description: Podrobnější informace najdete v tématu o tom, jak vám to může porozumět.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7fd3c599afda2d59e0d56756bd61495f2d0370a0
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8636ae3b1ad32158e10ce2aa58423f9c9824d8c0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770719"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738151"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
 [Docker](https://www.docker.com/) je [Open source projekt](https://github.com/docker/docker) pro automatizaci nasazení aplikací jako přenosných a vlastních kontejnerů, které mohou běžet v cloudu nebo místně. Docker je také [Společnost](https://www.docker.com/) , která propaguje a vyvíjí tuto technologii a pracuje ve spolupráci s dodavateli cloudů, Linux a Windows, včetně Microsoftu.
 
-![Kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure.](./media/image2.png)
+![Diagram znázorňující, že mohou být spuštěny kontejnery Docker na místě.](./media/what-is-docker/docker-containers-run-anywhere.png)
 
 **Obrázek 1-2**. Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.
 
-Kontejnery imagí Docker mohou běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
+Jak je znázorněno na výše uvedeném diagramu, kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure. Kontejnery imagí Docker mohou také běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
 
 Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na Macu, používají hostitele Docker se systémem Linux a mohou vytvářet pouze image pro kontejnery Linux. (Vývojáři pracující na Macu můžou upravovat kód nebo spouštět rozhraní příkazového řádku Docker (CLI) z macOS, ale v tomto zápisu se kontejnery nespouštějí přímo v macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
 
@@ -35,9 +35,11 @@ Obrázky pro tyto kontejnery jsou vytvořeny a fungují stejným způsobem. Rozd
 
 Obrázek 1-3 ukazuje porovnání mezi virtuálními počítači a kontejnery Docker.
 
-![Pro virtuální počítače jsou na hostitelském serveru tři základní vrstvy, od dolní části: infrastruktura, hostitelský operační systém a hypervisor a na všech virtuálních počítačích, které mají vlastní operační systém a všechny potřebné knihovny. Na druhé straně má hostitelský server pouze infrastrukturu a operační systém a nad ním modul kontejnerů, který udržuje kontejner izolovaný, ale sdílí základní služby operačního systému.](./media/image3.png)
+![Diagram znázorňující porovnání prostředí virtuálních počítačů a kontejnerů.](./media/what-is-docker/comparison-vms-docker-conatiners.png)
 
 **Obrázek 1-3**. Porovnání tradičních virtuálních počítačů s kontejnery Docker
+
+Jak je znázorněno na výše uvedeném diagramu, jsou pro virtuální počítače tři základní vrstvy na hostitelském serveru. Od dolní části: infrastruktura, hostitelský operační systém a hypervisor. Na všech těchto počítačích má každý virtuální počítač vlastní operační systém a všechny potřebné knihovny. Na druhé straně má hostitelský server jenom infrastrukturu a operační systém. Nad tím modul kontejnerů udržuje izolované kontejnery, ale umožňuje jim sdílet jediné základní služby operačního systému.
 
 Vzhledem k tomu, že kontejnery vyžadují mnohem méně prostředků (například nepotřebují úplný operační systém), je snadné je snadno nasadit a začít rychle. To vám umožní mít vyšší hustotu, což znamená, že můžete spouštět další služby na stejné hardwarové jednotce a snížit tak náklady.
 

@@ -1,14 +1,14 @@
 ---
 title: ASP.NET Core gRPC pro vývojáře WCF – gRPC pro vývojáře WCF
-description: BUDE URČENO K ZÁPISU
+description: Úvod k vytváření gRPC Services v ASP.NET Core 3,0 pro vývojáře WCF
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6a5b4f6d0b47a272f7a753e22bfd61b06202944a
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: b89f5974dd18e7005c6479c5b9eead039364e654
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919380"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738070"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pro vývojáře WCF
 
@@ -50,23 +50,15 @@ Editory
 
 ## <a name="introduction"></a>Úvod
 
-TODO
-
-## <a name="purpose"></a>Účel
-
-TODO
+gRPC je moderní architektura pro vytváření síťových služeb a distribuovaných aplikací. Představte si výkon vazeb NetTCP WCF s interoperabilitou pro různé platformy protokolu SOAP. gRPC vytváří na HTTP/2 a protokol pro kódování zpráv Protobuf pro zajištění vysokého výkonu a komunikace s malou šířkou pásma mezi aplikacemi a službami. Podporuje generování kódu serveru a klienta napříč nejoblíbenějšími programovacími jazyky a platformami, včetně .NET, Java, Pythonu, Node. js, C++ a dalších. Díky špičkové podpoře pro gRPC v ASP.NET Core 3,0 společně s existujícími nástroji gRPC a knihovnami pro .NET 4. x si myslíme, že se jedná o skvělou alternativu ke službě WCF pro vývojové týmy, které chtějí přijmout .NET Core ve svých organizacích.
 
 ## <a name="who-should-use-this-guide"></a>Kdo by měl používat tuto příručku
 
-**AKTUALIZOVAT**
-
-Cílovou skupinou pro tento průvodce jsou vývojáři WCF, vedoucí vývoje a architekti, kteří mají zájem o migraci řešení WCF na .NET Framework 4 a starším ASP.NET Core 3,0 pomocí služeb gRPC Services.
+Tato příručka je určená pro vývojáře, kteří pracují v .NET Framework nebo .NET Core, kteří dříve používali WCF a kteří chtějí migrovat své aplikace do moderního prostředí RPC pro .NET Core 3,0 a novější verze. Průvodce může být také obecně používán pro vývojáře, kteří upgradují nebo berou v úvahách o upgradu na rozhraní .NET Core 3,0, kteří chtějí používat integrované nástroje gRPC.
 
 ## <a name="how-you-can-use-this-guide"></a>Jak můžete použít tuto příručku
 
-**AKTUALIZOVAT**
-
-Toto je krátký úvod k sestavování služeb gRPC v ASP.NET Core 3,0 s konkrétní referencí na WCF jako podobnou platformou. Vysvětluje principy gRPC, vztahující se k jednotlivým konceptům ekvivalentních funkcí WCF a poskytuje pokyny pro migraci existující aplikace WCF na gRPC. Je to také užitečné pro vývojáře, kteří mají zkušenosti s WCF a chtějí se naučit gRPC vytvářet nové služby. Ukázkovou aplikaci lze použít jako šablonu nebo odkaz pro vlastní projekty a vy můžete kopírovat a znovu použít kód z knihy nebo jejích ukázek.
+Toto je krátký úvod k sestavování služeb gRPC v ASP.NET Core 3,0 s konkrétní referencí na WCF jako podobnou platformou. Vysvětluje principy gRPC, vztahující se k jednotlivým konceptům ekvivalentních funkcí WCF a poskytuje pokyny pro migraci existující aplikace WCF na gRPC. Je to také užitečné pro vývojáře, kteří mají zkušenosti s WCF a chtějí se naučit gRPC vytvářet nové služby. Ukázkové aplikace lze použít jako šablonu nebo odkaz pro vlastní projekty a vy můžete kopírovat a znovu použít kód z knihy nebo jejích ukázek.
 
 Nebojte se této příručky s vaším týmem, abyste se ujistili, že se tyto otázky a příležitosti budou porozumět běžným způsobem. Díky tomu, že všichni pracují se společnou sadou terminologie a základními principy, pomáhají zajistit konzistentní používání vzorů a postupů architektury.
 

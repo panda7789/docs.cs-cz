@@ -2,12 +2,12 @@
 title: Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte koncept seedwork jako výchozí bod pro zahájení implementace pro doménový model orientovaný na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 87cbc5ce96b66a9ac3e1c2bfc8c863d1b20714db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f53988b92a05fb54f3f05d9f463450d1a11a0843
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093806"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737213"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 
@@ -15,7 +15,9 @@ Složka řešení obsahuje složku *SeedWork* . Tato složka obsahuje vlastní z
 
 Obrázek 7-12 ukazuje třídy, které tvoří seedwork doménového modelu při řazení mikroslužby. Má několik vlastních základních tříd, jako je entita, ValueObject a výčet, a navíc několik rozhraní. Tato rozhraní (IRepository a IUnitOfWork) informují vrstvu infrastruktury o tom, co je potřeba implementovat. Tato rozhraní se používají také prostřednictvím injektáže závislosti z aplikační vrstvy.
 
-![Podrobný obsah složky SeedWork obsahující základní třídy a rozhraní: Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs a ValueObject.cs](./media/image13.PNG)
+:::image type="complex" source="./media/seedwork-domain-model-base-classes-interfaces/vs-solution-seedwork-classes.png" alt-text="Snímek obrazovky tříd obsažených ve složce SeedWork":::
+Podrobný obsah složky SeedWork obsahující základní třídy a rozhraní: Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs a ValueObject.cs.
+:::image-end:::
 
 **Obrázek 7-12**. Ukázková sada základních tříd a rozhraní doménové modelu seedwork
 

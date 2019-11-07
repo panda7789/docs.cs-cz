@@ -2,12 +2,12 @@
 title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte RabbitMQ k implementaci zasílání zpráv služby Event Bus pro integrační události pro vývojová nebo testovací prostředí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 7d51054d444ce1e35fabab94cc803e74dbd96f19
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 211348caec3c101435fcdd99bd96fd8e17a6456b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089733"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739506"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
@@ -17,11 +17,11 @@ Jedna z vlastních implementací do sběrnice Event v eShopOnContainers je v pod
 
 Implementace sběrnice událostí s RabbitMQ umožňuje mikroslužbám přihlašovat se k odběru událostí, publikovat události a přijímat události, jak je znázorněno na obrázku 6-21.
 
-![RabbitMQ funguje jako prostředník mezi vydavatelem zprávy a předplatiteli za účelem zpracování distribuce.](./media/image22.png)
+![Diagram znázorňující RabbitMQ mezi odesílatelem zprávy a příjemcem zprávy](./media/rabbitmq-event-bus-development-test-environment/rabbitmq-implementation.png)
 
 **Obrázek 6-21.** RabbitMQ implementace sběrnice událostí
 
-V kódu třída EventBusRabbitMQ implementuje obecné rozhraní IEventBus. Tato možnost je založena na injektáže závislosti, takže se můžete z této verze pro vývoj a testování vyměnit na produkční verzi.
+RabbitMQ funguje jako prostředník mezi vydavatelem zprávy a předplatiteli za účelem zpracování distribuce. V kódu třída EventBusRabbitMQ implementuje obecné rozhraní IEventBus. Tato možnost je založena na injektáže závislosti, takže se můžete z této verze pro vývoj a testování vyměnit na produkční verzi.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable

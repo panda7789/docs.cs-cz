@@ -2,12 +2,12 @@
 title: Návrh mikroslužby orientované na DDD
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s návrhem mikroslužeb a vrstev jejich aplikací orientovaných na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 303f8909d12dddef93b20604a00b9ea8e8493ee5
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c5ac55978ca979a3ae055d9b0cd2d3c6b3187b4e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295992"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739933"
 ---
 # <a name="design-a-ddd-oriented-microservice"></a>Návrh mikroslužby orientované na DDD
 
@@ -37,13 +37,13 @@ Při řešení složitosti je důležité mít doménový model řízený agrego
 
 Obrázek 7-5 ukazuje, jak se v aplikaci eShopOnContainers implementuje vrstvený návrh.
 
-![Tři vrstvy ve mikroslužbě DDD, jako je objednávání. Každá vrstva je projekt VS: Aplikační vrstva seřazení. API, vrstva domény se seřazením. doména a vrstva infrastruktury se seřazením. infrastruktura.](./media/image6.png)
+![Diagram znázorňující vrstvy v mikroslužbě návrhu založené na doméně](./media/ddd-oriented-microservice/domain-driven-design-microservice.png)
 
 **Obrázek 7-5**. DDD vrstev v eShopOnContainersu pro řazení mikroslužeb
 
-Chcete navrhnout systém tak, aby každá vrstva komunikovala pouze s některými jinými vrstvami. To může být snazší vyhovět, pokud jsou vrstvy implementovány jako jiné knihovny tříd, protože můžete jasně určit, jaké závislosti jsou nastaveny mezi knihovnami. Například vrstva doménového modelu by neměla mít závislost na žádné jiné vrstvě (třídy doménového modelu by měly být prosté staré objekty CLR nebo [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object), třídy). Jak je znázorněno na obrázku 7-6, **seřazení** knihovny vrstev domény má závislosti pouze na knihovnách .NET Core nebo balíčcích NuGet, ale ne na žádné jiné vlastní knihovně, jako je například knihovna dat nebo knihovna trvalosti.
+Tři vrstvy ve mikroslužbě DDD, jako je objednávání. Každá vrstva je projekt VS: aplikační vrstva se seřazením. API, vrstva domény se seřazením. doména a vrstva infrastruktury se seřazením. Infrastructure. Chcete navrhnout systém tak, aby každá vrstva komunikovala pouze s některými jinými vrstvami. To může být snazší vyhovět, pokud jsou vrstvy implementovány jako jiné knihovny tříd, protože můžete jasně určit, jaké závislosti jsou nastaveny mezi knihovnami. Například vrstva doménového modelu by neměla mít závislost na žádné jiné vrstvě (třídy doménového modelu by měly být prosté staré objekty CLR nebo [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object), třídy). Jak je znázorněno na obrázku 7-6, **seřazení** knihovny vrstev domény má závislosti pouze na knihovnách .NET Core nebo balíčcích NuGet, ale ne na žádné jiné vlastní knihovně, jako je například knihovna dat nebo knihovna trvalosti.
 
-![Průzkumník řešení zobrazení řazení. závislosti domén, které ukazují, závisí pouze na knihovnách .NET Core.](./media/image7.png)
+![Snímek obrazovky s řazením a závislostmi domén.](./media/ddd-oriented-microservice/ordering-domain-dependencies.png)
 
 **Obrázek 7-6**. Vrstvy implementované jako knihovny umožňují lepší kontrolu závislostí mezi vrstvami.
 
@@ -51,7 +51,7 @@ Chcete navrhnout systém tak, aby každá vrstva komunikovala pouze s některým
 
 Vynikající [návrh založený na doméně](https://domainlanguage.com/ddd/) Eric Evans uvádí následující informace o vrstvě doménového modelu a vrstvě aplikace.
 
-**Vrstva doménového modelu**: Zodpovídá za reprezentaci konceptů podnikání, informací o obchodní situaci a obchodních pravidel. Stav, který odráží provozní situaci, se řídí a používá, i když jsou technické podrobnosti o jejich uložení delegovány na infrastrukturu. Tato vrstva je srdcem podnikového softwaru.
+**Vrstva doménového modelu**: zodpovídá za znázornění konceptů podnikání, informací o obchodní situaci a obchodních pravidel. Stav, který odráží provozní situaci, se řídí a používá, i když jsou technické podrobnosti o jejich uložení delegovány na infrastrukturu. Tato vrstva je srdcem podnikového softwaru.
 
 Vrstva doménového modelu je místo, kde se vyjadřuje podnikání. Při implementaci vrstvy modelu domény mikroslužeb v rozhraní .NET je tato vrstva kódována jako knihovna tříd s entitami domény, které zachycují chování dat a chování (metody s logikou).
 
@@ -85,23 +85,23 @@ V souladu se zásadami pro [ignorování trvalého přetrvávání](https://devi
 
 Proto by vaše vrstvy nebo knihovny tříd a projekty měly nakonec záviset na vaší vrstvě doménového modelu (knihovny), nikoli naopak, jak je znázorněno na obrázku 7-7.
 
-![Závislosti v rámci služby na DDD závisí na doméně a infrastruktuře a infrastruktura závisí na doméně, ale doména není závislá na žádné vrstvě.](./media/image8.png)
+![Diagram znázorňující závislosti, které existují mezi DDD vrstva služby](./media/ddd-oriented-microservice/ddd-service-layer-dependencies.png)
 
 **Obrázek 7-7**. Závislosti mezi vrstvami v DDD
 
-Tento návrh vrstvy by měl být nezávislý na každé mikroslužbě. Jak bylo uvedeno dříve, můžete implementovat nejvíc komplexní mikroslužby za vzory DDD, zatímco při jednodušším způsobu implementace jednodušších mikroslužeb založených na datech (jednoduchá CRUD v jedné vrstvě).
+Závislosti v rámci služby na DDD závisí na doméně a infrastruktuře a infrastruktura závisí na doméně, ale doména není závislá na žádné vrstvě. Tento návrh vrstvy by měl být nezávislý na každé mikroslužbě. Jak bylo uvedeno dříve, můžete implementovat nejvíc komplexní mikroslužby za vzory DDD, zatímco při jednodušším způsobu implementace jednodušších mikroslužeb založených na datech (jednoduchá CRUD v jedné vrstvě).
 
 #### <a name="additional-resources"></a>Další zdroje
 
 - **DevIQ. Princip ignorování trvalosti** \
   <https://deviq.com/persistence-ignorance/>
 
-- **Oren Eini. Ignorování infrastruktury** \
+- **Oren Eini. \ ignorování infrastruktury**
   <https://ayende.com/blog/3137/infrastructure-ignorance>
 
 - **Angel Lopez. Vrstvená architektura v návrhu založeném na doméně** \
   <https://ajlopez.wordpress.com/2008/09/12/layered-architecture-in-domain-driven-design/>
 
 >[!div class="step-by-step"]
->[Předchozí](cqrs-microservice-reads.md)Další
->[](microservice-domain-model.md)
+>[Předchozí](cqrs-microservice-reads.md)
+>[Další](microservice-domain-model.md)

@@ -2,22 +2,22 @@
 title: Co je Docker?
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Co je Docker?
 ms.date: 08/31/2018
-ms.openlocfilehash: 6fb08157a78bfaee48e0bf919fc5942eadf0f287
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 215d756c631440c99a3a8ad8128ec61fef3bc26d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771349"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740078"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
 [Docker](https://www.docker.com/) je [Open source projekt](https://github.com/docker/docker) pro automatizaci nasazení aplikací jako přenosných a vlastních kontejnerů, které mohou běžet v cloudu nebo místně. Docker je také [Společnost](https://www.docker.com/) , která propaguje a vyvíjí tuto technologii a pracuje ve spolupráci s dodavateli cloudů, Linux a Windows, včetně Microsoftu.
 
-![Kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure.](./media/image2.png)
+![Diagram znázorňující, že mohou být spuštěny kontejnery Docker na místě.](./media/docker-defined/docker-containers-run-anywhere.png)
 
-**Obrázek 2-2**. Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.
+**Obrázek 2-2**. Docker nasadí kontejnery ve všech vrstvách hybridního cloudu.
 
-Kontejnery imagí Docker mohou běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
+Kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure. Kontejnery imagí Docker mohou běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
 
 Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na Macu, používají hostitele Docker, který je založený na systému Linux, a mohou vytvářet bitové kopie pouze pro kontejnery Linux. (Vývojáři pracující na Macu můžou upravovat kód nebo spouštět Docker CLI z macOS, ale v době psaní tohoto zápisu se kontejnery nespouštějí přímo v macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
 
@@ -37,10 +37,12 @@ Obrázek 2-3 ukazuje porovnání mezi virtuálními počítači a kontejnery Doc
 
 | Virtual Machines | Kontejnery Docker |
 | -----------------| ------------------|
-|![Pro virtuální počítače jsou na hostitelském serveru tři základní vrstvy, od dolní části: infrastruktura, hostitelský operační systém a hypervisor a na všech virtuálních počítačích, které mají vlastní operační systém a všechny potřebné knihovny.](./media/image3.png)|![V případě Docker má hostitelský server pouze infrastrukturu a operační systém a nad ním modul kontejnerů, který uchovává kontejner izolovaný, ale sdílí základní služby operačního systému.](./media/image4.png)|
+|![Diagram znázorňující hardwarový nebo softwarový zásobník tradičního virtuálního počítače](./media/docker-defined/virtual-machine-hardware-software.png)|![Diagram znázorňující hardware/softwarový zásobník kontejnerů Docker.](./media/docker-defined/docker-container-hardware-software.png)|
 |Virtuální počítače zahrnují aplikaci, požadované knihovny, binární soubory a úplný hostovaný operační systém. Úplná virtualizace vyžaduje více prostředků než containering. | Kontejnery zahrnují aplikaci a všechny její závislosti. Sdílí ale jádro operačního systému s jinými kontejnery spuštěnými jako izolované procesy v prostoru uživatele v hostitelském operačním systému. (Kromě kontejnerů technologie Hyper-V, kde se každý kontejner spouští ve speciálním virtuálním počítači na kontejner.) |
 
 **Obrázek 2-3**. Porovnání tradičních virtuálních počítačů s kontejnery Docker
+
+Pro virtuální počítače jsou na hostitelském serveru tři základní vrstvy, od dolní části: infrastruktura, hostitelský operační systém a hypervisor a na všech virtuálních počítačích, které mají vlastní operační systém a všechny potřebné knihovny. V případě Docker má hostitelský server jenom infrastrukturu a operační systém a nad ním kontejnerový modul, který udržuje kontejner izolovaný, ale sdílí základní služby operačního systému.
 
 Vzhledem k tomu, že kontejnery vyžadují mnohem méně prostředků (například nepotřebují úplný operační systém), je snadné je snadno nasadit a začít rychle. To vám umožní mít vyšší hustotu, což znamená, že můžete spouštět další služby na stejné hardwarové jednotce a snížit tak náklady.
 

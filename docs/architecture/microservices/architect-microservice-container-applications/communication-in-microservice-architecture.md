@@ -2,12 +2,12 @@
 title: Komunikace v architektuře mikroslužeb
 description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami a porozumět vlivům synchronních a asynchronních způsobů.
 ms.date: 09/20/2018
-ms.openlocfilehash: 25d99d3d9b00b8c20c5ded6d8b40c77fcbe0eb46
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: add1ff74bee456e0fa7f2fb54d2cf4e536402db4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295566"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738024"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
@@ -17,7 +17,7 @@ Neexistuje žádné řešení, ale několik. Jedno řešení zahrnuje izolaci po
 
 Aplikace založené na mikroslužbách je distribuovaný systém běžící na více procesech nebo službách, obvykle i na různých serverech nebo hostitelích. Každá instance služby je obvykle proces. Proto musí služby komunikovat pomocí Meziprocesového komunikačního protokolu, jako je HTTP, AMQP nebo binární protokol jako TCP, v závislosti na povaze jednotlivých služeb.
 
-Komunita mikroslužeb podporuje filozofie[inteligentních koncových bodů a Dumb kanálů](https://simplicable.com/new/smart-endpoints-and-dumb-pipes). Tento heslo doporučuje návrh, který je mezi mikroslužbami co nejoddělený a co možno soudržný v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Nicméně mikroslužby, které sestaví koncovou aplikaci, se obvykle jednoduše choreographed pomocí komunikace REST namísto složitých protokolů, jako jsou WS-\* a flexibilní komunikace řízená událostmi místo centralizovaného. Orchestrace obchodních procesů.
+Komunita mikroslužeb podporuje filozofie[inteligentních koncových bodů a Dumb kanálů](https://simplicable.com/new/smart-endpoints-and-dumb-pipes). Tento heslo doporučuje návrh, který je mezi mikroslužbami co nejoddělený a co možno soudržný v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Mikroslužby, které sestaví koncovou aplikaci, se obvykle jednoduše choreographed pomocí komunikace REST namísto složitých protokolů, jako je WS-\* a flexibilní komunikace řízená událostmi místo centralizovaného. Orchestrace obchodních procesů.
 
 Mezi tyto dva běžně používané protokoly patří požadavek HTTP/odpověď s rozhraními API prostředků (při dotazování většiny všech) a odlehčené asynchronní zasílání zpráv při komunikaci s aktualizacemi napříč více mikroslužbami. Tyto informace jsou podrobněji vysvětleny v následujících částech.
 
@@ -51,9 +51,11 @@ Kromě toho je třeba mít závislosti HTTP mezi mikroslužbami, například př
 
 Čím více přidáváte synchronní závislosti mezi mikroslužbami, jako jsou požadavky na dotazy, tím horší je celková doba odezvy pro klientské aplikace.
 
-![V případě synchronní komunikace je mezi mikroslužbami při obsluze žádosti klienta vytvořen řetěz požadavků. Toto je anti-vzor. U mikroslužeb asynchronní komunikace se používají asynchronní zprávy nebo cyklické dotazování http ke komunikaci s dalšími mikroslužbami, ale žádost klienta se poskytuje hned.](./media/image15.png)
+![Diagram znázorňující tři typy komunikace napříč mikroslužbami.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
 
 **Obrázek 4-15**. Anti-vzory a vzory komunikace mezi mikroslužbami
+
+Jak je znázorněno na výše uvedeném diagramu, v části synchronní komunikace je mezi mikroslužbami při obsluze žádosti klienta vytvořeno zřetězení požadavků. Toto je anti-vzor. U mikroslužeb asynchronní komunikace se používají asynchronní zprávy nebo cyklické dotazování http ke komunikaci s dalšími mikroslužbami, ale žádost klienta se poskytuje hned.
 
 Pokud vaše mikroslužba potřebuje vyvolat další akci v jiné mikroslužbě (Pokud je to možné), neprovede tuto akci synchronně a jako součást původní žádosti mikroslužeb a operace odpovědi. Místo toho se provede asynchronně (pomocí asynchronního zasílání zpráv nebo událostí integrace, front atd.). Ale co nejvíc Nevolejte akci synchronně jako součást původní synchronní operace synchronního požadavku a odpovědi.
 
@@ -75,7 +77,7 @@ K dispozici je také více formátů zpráv, jako JSON nebo XML, nebo i binárn�
 
 Když klient používá komunikaci typu požadavek/odpověď, pošle požadavek službě, služba zpracuje požadavek a pošle zpět odpověď. Komunikace mezi požadavkem a odpovědí je obzvláště vhodná pro dotazování dat v UŽIVATELSKÉM rozhraní (živé uživatelské rozhraní) v reálném čase z klientských aplikací. V architektuře mikroslužeb proto pravděpodobně použijete tento komunikační mechanismus pro většinu dotazů, jak je znázorněno na obrázku 4-16.
 
-![Pokud klient odešle požadavek do brány rozhraní API, můžete použít komunikaci mezi požadavky a odpověďmi na dotazy. za předpokladu, že se odpověď z mikroslužeb dostanou příliš krátkou dobu.](./media/image16.png)
+![Diagram znázorňující komunikace požadavků a odpovědí pro živé dotazy a aktualizace](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
 
 **Obrázek 4-16**. Komunikace pomocí požadavků a odpovědí HTTP (synchronní nebo asynchronní)
 
@@ -87,7 +89,7 @@ K dispozici je další hodnota při používání služby HTTP REST jako jazyk d
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowlera. Richardson model** splatnosti popis modelu REST. \
+- **Martin Fowlera. Richardson model splatnosti** popis modelu REST. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>
 
 - **Swagger** Oficiální lokalita. \
@@ -99,12 +101,12 @@ Další možností (obvykle pro jiné účely než REST) je komunikace v reáln�
 
 Jak ukazuje obrázek 4-17, komunikace HTTP v reálném čase znamená, že serverový kód přenáší obsah do připojených klientů, protože data budou k dispozici, místo toho, aby server čekal na vyžádání nových dat klientem.
 
-![Signaler je dobrým způsobem, jak zajistit komunikaci v reálném čase pro doručování obsahu klientům ze serveru back-end.](./media/image17.png)
+![Diagram znázorňující práci na vyžádání a na základě signálu v reálném čase.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
 
 **Obrázek 4-17**. Komunikace mezi asynchronními zprávami 1:1 v reálném čase
 
-Vzhledem k tomu, že komunikace probíhá v reálném čase, aplikace klienta zobrazuje změny téměř okamžitě. To se obvykle řídí protokolem, jako jsou WebSockets, a to s využitím mnoha připojení WebSockets (jedna na každého klienta). Typickým příkladem je, že služba komunikuje se změnou skóre sportovní hry na mnoho klientských webových aplikací současně.
+Signaler je dobrým způsobem, jak zajistit komunikaci v reálném čase pro doručování obsahu klientům ze serveru back-end. Vzhledem k tomu, že komunikace probíhá v reálném čase, aplikace klienta zobrazuje změny téměř okamžitě. To se obvykle řídí protokolem, jako jsou WebSockets, a to s využitím mnoha připojení WebSockets (jedna na každého klienta). Typickým příkladem je, že služba komunikuje se změnou skóre sportovní hry na mnoho klientských webových aplikací současně.
 
 >[!div class="step-by-step"]
->[Předchozí](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)Další
->[](asynchronous-message-based-communication.md)
+>[Předchozí](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+>[Další](asynchronous-message-based-communication.md)

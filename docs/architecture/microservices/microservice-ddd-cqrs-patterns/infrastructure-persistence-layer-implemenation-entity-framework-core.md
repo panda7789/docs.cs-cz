@@ -2,12 +2,12 @@
 title: Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte podrobnosti implementace vrstvy trvalé infrastruktury pomocí Entity Framework Core.
 ms.date: 10/08/2018
-ms.openlocfilehash: 7e3480999b115ac13f8d7ebcaed826b407aa7637
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b70ede6b47cbf990d0435aef841416c68f6439b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295902"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737909"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvy trvalosti infrastruktury s Entity Framework Core
 
@@ -29,7 +29,7 @@ Vzhledem k tomu, že Úvod do EF Core je již k dispozici v dokumentaci společn
 - **Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio** \
   [https://docs.microsoft.com/aspnet/core/data/ef-mvc/](/aspnet/core/data/ef-mvc/)
 
-- **DbContext – třída** \
+-  \ **třídy DbContext**
   [https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext](xref:Microsoft.EntityFrameworkCore.DbContext)
 
 - **Compare EF Core & EF6. x** \
@@ -43,9 +43,9 @@ V případě vzorů na DDD byste měli zapouzdřit chování domény a pravidla 
 
 Vzhledem k tomu, že EF Core 1,1 pro splnění těchto DDD požadavků, můžete místo veřejných vlastností použít ve svých entitách prostá pole. Pokud nechcete, aby pole entity bylo externě přístupné, můžete namísto vlastnosti vytvořit pouze atribut nebo pole. Lze také použít metody setter pro soukromé vlastnosti.
 
-Podobným způsobem teď můžete mít k kolekcím přístup jen pro čtení pomocí veřejné vlastnosti zadané jako `IReadOnlyCollection<T>`, která je zajištěná členem soukromého pole pro kolekci ( `List<T>`jako) ve vaší entitě, která spoléhá na EF pro trvalost. Předchozí verze Entity Framework vyžadovaly podporu `ICollection<T>`vlastností kolekce, což znamenalo, že každý vývojář používající nadřazenou třídu entity může přidat nebo odebrat položky prostřednictvím svých kolekcí vlastností. Tato možnost by byla v porovnání s doporučenými vzory v DDD.
+Podobným způsobem teď můžete mít k kolekcím přístup jen pro čtení pomocí veřejné vlastnosti zadané jako `IReadOnlyCollection<T>`, která je zajištěná soukromým členem pole pro kolekci (například `List<T>`) ve vaší entitě, která spoléhá na EF pro trvalost. Předchozí verze Entity Framework požadované vlastnosti kolekce pro podporu `ICollection<T>`, což znamená, že každý vývojář, který používá nadřazenou třídu entity, by mohl přidat nebo odebrat položky prostřednictvím kolekce vlastností. Tato možnost by byla v porovnání s doporučenými vzory v DDD.
 
-Můžete použít soukromou kolekci při vystavení objektu jen `IReadOnlyCollection<T>` pro čtení, jak je znázorněno v následujícím příkladu kódu:
+Můžete použít soukromou kolekci a vystavit objekt `IReadOnlyCollection<T>` jen pro čtení, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class Order : Entity
@@ -78,9 +78,9 @@ public class Order : Entity
 }
 ```
 
-Všimněte si, `OrderItems` že vlastnost je přístupná jen pro čtení pomocí. `IReadOnlyCollection<OrderItem>` Tento typ je jen pro čtení, takže je chráněný před běžnými externími aktualizacemi.
+Všimněte si, že vlastnost `OrderItems` je k dispozici pouze pro čtení pomocí `IReadOnlyCollection<OrderItem>`. Tento typ je jen pro čtení, takže je chráněný před běžnými externími aktualizacemi.
 
-EF Core poskytuje způsob mapování doménového modelu na fyzickou databázi bez "kontaminujících" doménového modelu. Je to čistě POCO kód .NET, protože akce mapování je implementovaná v perzistentní vrstvě. V této akci mapování je nutné nakonfigurovat mapování polí na databázi. V následujícím `OnModelCreating` příkladu metody z `OrderEntityTypeConfiguration` `OrderingContext` a třídy volá volání, aby `SetPropertyAccessMode` EF Core přístup `OrderItems` k vlastnosti prostřednictvím jejího pole.
+EF Core poskytuje způsob mapování doménového modelu na fyzickou databázi bez "kontaminujících" doménového modelu. Je to čistě POCO kód .NET, protože akce mapování je implementovaná v perzistentní vrstvě. V této akci mapování je nutné nakonfigurovat mapování polí na databázi. V následujícím příkladu metody `OnModelCreating` z `OrderingContext` a třídy `OrderEntityTypeConfiguration` volá volání `SetPropertyAccessMode` pokyn EF Core k přístupu k vlastnosti `OrderItems` prostřednictvím příslušného pole.
 
 ```csharp
 // At OrderingContext.cs from eShopOnContainers
@@ -110,7 +110,7 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 }
 ```
 
-Pokud použijete pole místo vlastností, `OrderItem` entita se uchová stejně, jako by `List<OrderItem>` měla vlastnost. Nicméně zpřístupňuje jeden přistupující objekt, `AddOrderItem` metodu pro přidání nových položek do objednávky. Výsledkem je, že chování a data jsou vzájemně propojeny a budou konzistentní v jakémkoli kódu aplikace, který používá doménový model.
+Použijete-li místo vlastností pole, `OrderItem` entita je trvale stejně, jako by měla vlastnost `List<OrderItem>`. Ale zpřístupňuje jeden přistupující objekt, metodu `AddOrderItem` pro přidání nových položek do objednávky. Výsledkem je, že chování a data jsou vzájemně propojeny a budou konzistentní v jakémkoli kódu aplikace, který používá doménový model.
 
 ## <a name="implement-custom-repositories-with-entity-framework-core"></a>Implementace vlastních úložišť pomocí Entity Framework Core
 
@@ -156,7 +156,7 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
 
 Všimněte si, že rozhraní IBuyerRepository přichází z vrstvy modelu domény jako kontrakt. Implementace úložiště se ale provádí na vrstvě trvalosti a infrastruktury.
 
-EF DbContext dochází prostřednictvím konstruktoru prostřednictvím injektáže závislosti. V kontejneru IOC je sdílená mezi několika úložištěmi v rámci stejného oboru požadavku HTTP, a to díky`ServiceLifetime.Scoped`výchozímu života () v kontejneru (dá se taky explicitně `services.AddDbContext<>`nastavit pomocí).
+EF DbContext dochází prostřednictvím konstruktoru prostřednictvím injektáže závislosti. V kontejneru IoC je sdílená mezi několika úložištěmi v rámci stejného oboru požadavku HTTP, a to v případě, že se jedná o výchozí dobu života (`ServiceLifetime.Scoped`) v kontejneru (dá se taky explicitně nastavit pomocí `services.AddDbContext<>`).
 
 ### <a name="methods-to-implement-in-a-repository-updates-or-transactions-versus-queries"></a>Metody pro implementaci v úložišti (aktualizace nebo transakce oproti dotazům)
 
@@ -174,11 +174,11 @@ Implementace vlastních úložišť ale poskytuje několik výhod při implement
 
 Na obrázku 7-18 vidíte rozdíly mezi nepoužíváním úložišť (přímo pomocí DbContext EF) a s využitím úložišť, která usnadňují navýšení těchto úložišť.
 
-![Porovnání pomocí vlastního úložiště a jednoduchého DbContext: vlastní úložiště přidá vrstvu abstrakce, která se dá použít ke snadnému testování pomocí napodobení úložiště.](./media/image19.png)
+![Diagram znázorňující komponenty a tok dat v těchto dvou úložištích.](./media/infrastructure-persistence-layer-implemenation-entity-framework-core/custom-repo-versus-db-context.png)
 
 **Obrázek 7-18**. Použití vlastních úložišť oproti jednoduchému DbContext
 
-Při napodobování je k dispozici více alternativ. Mohli byste napodobovat jenom úložiště nebo byste mohli napodobovat celou pracovní jednotku. Obvykle je napodobení pouze úložišť dostatečně a složitost pro abstrakci a navýšení celé pracovní jednotky většinou není potřeba.
+Obrázek 7-18 ukazuje, že při použití vlastního úložiště se přidá vrstva abstrakce, která se dá použít ke snadnému testování pomocí napodobení úložiště. Při napodobování je k dispozici více alternativ. Mohli byste napodobovat jenom úložiště nebo byste mohli napodobovat celou pracovní jednotku. Obvykle je napodobení pouze úložišť dostatečně a složitost pro abstrakci a navýšení celé pracovní jednotky většinou není potřeba.
 
 Později, když se zaměříme na aplikační vrstvu, uvidíte, jak funguje vkládání závislostí v ASP.NET Core a jak je implementováno při použití úložišť.
 
@@ -188,9 +188,9 @@ Pokud jste používali DbContext přímo, museli byste ji napředt nebo spustit 
 
 ## <a name="ef-dbcontext-and-iunitofwork-instance-lifetime-in-your-ioc-container"></a>Životnost instance EF DbContext a IUnitOfWork ve vašem kontejneru IoC
 
-Objekt (vystavený `IUnitOfWork` jako objekt) by měl být sdílen mezi více úložišť v rámci stejného oboru požadavku HTTP. `DbContext` Jedná se například o hodnotu true, pokud se prováděná operace musí zabývat více agregacemi, nebo jednoduše, protože používáte více instancí úložiště. Je také důležité uvést, že `IUnitOfWork` rozhraní je součástí vaší doménové vrstvy, nikoli typu EF Core.
+Objekt `DbContext` (vystavený jako objekt `IUnitOfWork`) by měl být sdílen mezi více úložišť v rámci stejného oboru požadavku HTTP. Jedná se například o hodnotu true, pokud se prováděná operace musí zabývat více agregacemi, nebo jednoduše, protože používáte více instancí úložiště. Je také důležité uvést, že rozhraní `IUnitOfWork` je součástí vaší doménové vrstvy, nikoli typu EF Core.
 
-Aby to bylo možné, musí mít instance `DbContext` objektu nastavenou dobu platnosti služby na ServiceLifetime. scoped. Toto je výchozí doba života při registraci `DbContext` `services.AddDbContext` v v kontejneru IOC z metody `Startup.cs` ConfigureServices souboru v projektu webového rozhraní API ASP.NET Core. Následující kód to znázorňuje.
+Aby to bylo možné, instance `DbContext` objektu musí mít nastavenou dobu platnosti služby na ServiceLifetime. scoped. Toto je výchozí doba života při registraci `DbContext` s `services.AddDbContext` ve vašem kontejneru IoC z metody ConfigureServices souboru `Startup.cs` ve vašem projektu webového rozhraní API ASP.NET Core. Následující kód to znázorňuje.
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -235,7 +235,7 @@ Všimněte si, že použití životnosti singleton pro úložiště může způs
 - **Implementace vzorového úložiště a pracovní jednotky v aplikaci ASP.NET MVC** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
-- **Jonathana Allen. Strategie implementace pro model úložiště s Entity Framework, Dapperem a řetězem** \
+- **Jonathana Allen. Strategie implementace pro vzor úložiště s Entity Framework, Dapperem a řetěz** \
   <https://www.infoq.com/articles/repository-implementation-strategies>
 
 - **Cesar de la Torre. Porovnávání ASP.NET Corech životností kontejnerových služeb s Autofac IoC instancemi kontejnerů** \
@@ -245,7 +245,7 @@ Všimněte si, že použití životnosti singleton pro úložiště může způs
 
 Mapování tabulek identifikuje tabulková data, která mají být dotazována a uložena do databáze. Dříve jste viděli, jak můžete použít doménové entity (například doménu produktu nebo objednávky) k vygenerování souvisejícího schématu databáze. EF je silně navržený kolem konceptu *konvencí*. Otázky adres, jako je například "jaký bude název tabulky?" nebo "jaká vlastnost je primární klíč?" Konvence jsou obvykle založené na konvenčních názvech, například je typický pro primární klíč jako vlastnost, která končí ID.
 
-Podle konvence se Každá entita nastaví tak, aby se namapovala na tabulku se stejným názvem, `DbSet<TEntity>` jako má vlastnost, která zpřístupňuje entitu v odvozeném kontextu. Pokud pro `DbSet<TEntity>` danou entitu není zadána žádná hodnota, použije se název třídy.
+Podle konvence se Každá entita nastaví tak, aby se namapovala na tabulku se stejným názvem, jako má vlastnost `DbSet<TEntity>`, která zpřístupňuje entitu v odvozeném kontextu. Pokud není pro danou entitu zadána žádná `DbSet<TEntity>` hodnota, použije se název třídy.
 
 ### <a name="data-annotations-versus-fluent-api"></a>Datové poznámky versus rozhraní API Fluent
 
@@ -339,7 +339,7 @@ EF Core podporuje [Hilo](https://stackoverflow.com/questions/282099/whats-the-hi
 
 Pomocí této funkce, která je dostupná od EF Core 1,1, můžete přímo namapovat sloupce na pole. Je možné, že ve třídě entity nebudete moci používat vlastnosti a pouze mapovat sloupce z tabulky na pole. Běžně se používá pro všechny interní stavy, které nemusejí být k dispozici mimo entitu.
 
-Můžete to provést s jedním polem nebo také s kolekcemi, jako je `List<>` pole. Tento bod byl zmíněn dříve, když jsme probrali modelování tříd doménového modelu, ale tady vidíte, jak se toto mapování provádí `PropertyAccessMode.Field` s konfigurací zvýrazněnou v předchozím kódu.
+Můžete to provést pomocí jednoduchých polí nebo také s kolekcemi, jako je pole `List<>`. Tento bod byl zmíněn dříve, když jsme probrali modelování tříd doménového modelu, ale tady vidíte, jak se toto mapování provádí s `PropertyAccessMode.Field` konfigurací zvýrazněnou v předchozím kódu.
 
 ### <a name="use-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>Použití vlastností stínu v EF Core skryté na úrovni infrastruktury
 
@@ -449,13 +449,13 @@ I když nedoporučujeme vracet IQueryable z úložiště, je zcela dobré je v �
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Mapování tabulek** \
+- **Mapování tabulky** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)
 
-- **Pomocí HiLo vygenerujte klíče s Entity Framework Core** \
+- **Použití Hilo k vygenerování klíčů pomocí Entity Framework Core** \
   <https://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/>
 
-- **Zálohovaná pole** \
+-  \ **zálohovaných polí**
   [https://docs.microsoft.com/ef/core/modeling/backing-field](/ef/core/modeling/backing-field)
 
 - **Steve Smith. Zapouzdřené kolekce v Entity Framework Core** \
@@ -468,5 +468,5 @@ I když nedoporučujeme vracet IQueryable z úložiště, je zcela dobré je v �
   <https://deviq.com/specification-pattern/>
 
 > [!div class="step-by-step"]
-> [Předchozí](infrastructure-persistence-layer-design.md)Další
-> [](nosql-database-persistence-infrastructure.md)
+> [Předchozí](infrastructure-persistence-layer-design.md)
+> [Další](nosql-database-persistence-infrastructure.md)

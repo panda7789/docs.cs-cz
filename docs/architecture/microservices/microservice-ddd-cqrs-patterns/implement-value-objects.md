@@ -2,12 +2,12 @@
 title: Implementace objektů hodnot
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace a možnosti pro implementaci objektů hodnot pomocí nových funkcí Entity Framework.
 ms.date: 10/08/2018
-ms.openlocfilehash: b2f7b0f36fea25c25edd47731d9387810bd2b44d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2608517c4006f5e8da1d31b2c337d8ddd3ddd542
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295924"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739865"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -17,11 +17,11 @@ Objekt hodnoty může odkazovat na jiné entity. Například v aplikaci, která 
 
 Obrázek 7-13 ukazuje objekt hodnoty adresy v rámci agregace pořadí.
 
-![Hodnota adresy – objekt uvnitř agregace Order.](./media/image14.png)
+![Diagram znázorňující hodnotu adresa – objekt uvnitř agregace objednávky](./media/implement-value-objects/value-object-within-aggregate.png)
 
 **Obrázek 7-13**. Hodnota objektu adresy v rámci agregace objednávky
 
-Jak je znázorněno na obrázku 7-13, entita se obvykle skládá z více atributů. `Order` Entita může být například modelována jako entita s identitou a složená interně ze sady atributů, jako je například ČísloObjednávky, DatumObjednávky, OrderItems atd. Ale adresa, která je prostě složitou hodnotu složenou ze země/oblasti, ulice, města atd. a nemá v této doméně žádnou identitu, musí být modelována a zpracována jako objekt hodnoty.
+Jak je znázorněno na obrázku 7-13, entita se obvykle skládá z více atributů. Například entita `Order` může být modelována jako entita s identitou a složená interně ze sady atributů, jako je například ČísloObjednávky, DatumObjednávky, OrderItems atd. Ale adresa, která je prostě složitou hodnotu složenou ze země/oblasti, ulice, města atd. a nemá v této doméně žádnou identitu, musí být modelována a zpracována jako objekt hodnoty.
 
 ## <a name="important-characteristics-of-value-objects"></a>Důležité vlastnosti objektů hodnot
 
@@ -224,11 +224,11 @@ public void Configure(EntityTypeBuilder<Order> orderConfiguration)
 }
 ```
 
-V předchozím kódu `orderConfiguration.OwnsOne(o => o.Address)` metoda určuje `Address` , že vlastnost je vlastněná entitou `Order` typu.
+V předchozím kódu metoda `orderConfiguration.OwnsOne(o => o.Address)` určuje, že vlastnost `Address` je vlastněnou entitou typu `Order`.
 
-Ve výchozím nastavení EF Core konvence pojmenují sloupce databáze pro vlastnosti typu vlastněné entity jako `EntityProperty_OwnedEntityProperty`. Proto se vnitřní vlastnosti `Address` nástroje zobrazí `Orders` v `Address_City` tabulce s názvy `Address_Street`(a tak dále pro `State` `Country` a `ZipCode`).
+Ve výchozím nastavení EF Core konvence pojmenují sloupce databáze pro vlastnosti typu vlastněné entity jako `EntityProperty_OwnedEntityProperty`. Proto se vnitřní vlastnosti `Address` zobrazí v tabulce `Orders` s názvy `Address_Street``Address_City` (atd. `State``Country` a `ZipCode`).
 
-K přejmenování těchto sloupců `Property().HasColumnName()` můžete připojit metodu Fluent. V případě `Address` veřejné vlastnosti by mapování vypadalo takto:
+K přejmenování těchto sloupců můžete připojit metodu `Property().HasColumnName()` Fluent. V případě, kdy `Address` je veřejná vlastnost, by mapování vypadalo takto:
 
 ```csharp
 orderConfiguration.OwnsOne(p => p.Address)
@@ -238,7 +238,7 @@ orderConfiguration.OwnsOne(p => p.Address)
                             .Property(p=>p.City).HasColumnName("ShippingCity");
 ```
 
-Je možné řetězit `OwnsOne` metodu v mapování Fluent. `OrderDetails` V následujícím hypotetickém příkladu vlastní `BillingAddress` a `ShippingAddress`, které jsou oba `Address` typy. Pak `OrderDetails` vlastní`Order` typ.
+Je možné zřetězit metodu `OwnsOne` v mapování Fluent. V následujícím hypotetickém příkladu `OrderDetails` vlastní `BillingAddress` a `ShippingAddress`, které jsou oba `Address` typy. Pak `OrderDetails` vlastní `Order` typ.
 
 ```csharp
 orderConfiguration.OwnsOne(p => p.OrderDetails, cb =>
@@ -285,11 +285,11 @@ public class Address
 
 - Načítání Eager se provádí automaticky na vlastněných typech, tj. není nutné volat include () na dotaz.
 
-- Lze nakonfigurovat s vlastníkem \[\]atributu EF Core 2,1
+- Dá se nakonfigurovat s atributem \[vlastní\], od EF Core 2,1
 
 #### <a name="owned-entities-limitations"></a>Omezení entit vlastněných entitami:
 
-- Nemůžete vytvořit negenerickými\<T\> vlastněné typu (podle návrhu).
+- Nemůžete vytvořit\> Negenerickými\<T vlastněných typu (podle návrhu).
 
 - Nelze volat ModelBuilder. entity\<T\>() na vlastněných typech (aktuálně podle návrhu).
 
@@ -307,10 +307,10 @@ public class Address
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowlera. Vzor ValueObject** \
+- **Martin Fowlera. \ vzor ValueObject**
   <https://martinfowler.com/bliki/ValueObject.html>
 
-- **Eric Evans. Návrh založený na doméně: Boj proti složitosti softwaru.** (Kniha; obsahuje diskuzi o objektech hodnot) \
+- **Eric Evans. Návrh založený na doméně: řešení složitosti na srdce softwaru.** (Kniha; obsahuje diskuzi o objektech hodnot) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 - **Vaughn Vernon. Implementace návrhu založeného na doméně.** (Kniha; obsahuje diskuzi o objektech hodnot) \
@@ -329,5 +329,5 @@ public class Address
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs>
 
 > [!div class="step-by-step"]
-> [Předchozí](seedwork-domain-model-base-classes-interfaces.md)Další
-> [](enumeration-classes-over-enum-types.md)
+> [Předchozí](seedwork-domain-model-base-classes-interfaces.md)
+> [Další](enumeration-classes-over-enum-types.md)

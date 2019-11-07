@@ -2,12 +2,12 @@
 title: Použití databází NoSQL jako infrastruktury trvalosti
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení použití databází NoSql obecně a Azure Cosmos DB zejména jako možnosti implementace trvalého využití.
 ms.date: 10/08/2018
-ms.openlocfilehash: b184586dede6331e0babfa976c6fd641933d018e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 44fc2fa01e2d19efed7314f421a682c0a635a9f6
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089873"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737439"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
@@ -54,7 +54,7 @@ Například následující kód JSON je ukázková implementace agregační obje
 
 [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuci na klíč](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [Elastické škálování propustnosti a úložiště](https://docs.microsoft.com/azure/cosmos-db/partition-data) po celém světě, latence v řádu milisekund na 99 percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)a zaručené vysoké množství. dostupnost, která je zajištěná [špičkovým slaem](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) , aniž by bylo nutné se zabývat správou schémat a indexů. Je to více modelů a podporuje modely dokumentů, klíčových hodnot, grafů a sloupcových dat.
 
-![Azure Cosmos DB je globálně distribuovaná databáze s nízkou latencí, ke které je možné přistupovat pomocí čtyř protokolů rozhraní API. ](./media/image19.1.png)
+![Diagram znázorňující Azure Cosmos DB globální distribuce.](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
 **Obrázek 7-19**. Azure Cosmos DB globální distribuce
 
@@ -132,7 +132,7 @@ Ideální a pružně nasazené řešení pro vývoj/testování je schopnost nas
 
 Cosmos DB databáze podporují rozhraní API MongoDB pro .NET a také nativní MongoDB síťový protokol. To znamená, že aplikace napsaná pro MongoDB nyní může komunikovat s Cosmos DB a používat Cosmos DB databáze namísto MongoDB databází, jak je znázorněno na obrázku 7-20.
 
-![Cosmos DB podporuje rozhraní MongoDB API pro přenosový protokol .NET a MongoDB, můžete snadno přepínat z MongoDb na Cosmos DB.](./media/image19.2.png)
+![Diagram znázorňující, že Cosmos DB podporuje síťový protokol .NET a MongoDB.](./media/nosql-database-persistence-infrastructure/mongodb-api-wire-protocol.png)
 
 **Obrázek 7-20**. Přístup k Azure Cosmos DB pomocí rozhraní API a protokolu MongoDB
 
@@ -140,7 +140,7 @@ To je velice pohodlný přístup k ověření konceptů v prostředích Docker s
 
 Jak je znázorněno na následujícím obrázku, používá rozhraní API MongoDB, eShopOnContainers podporuje MongoDB Linux a kontejnery Windows pro místní vývojové prostředí, ale pak můžete přejít na škálovatelné cloudové řešení PaaS jako Azure Cosmos DB tím, že jednoduše [změníte MongoDB připojovací řetězec, který odkazuje na Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
 
-![Mikroslužba umístění v eShopOnContainers se implementuje pomocí MongoDB, ale dá se přepnout na Cosmos DB tím, že pouze změníte připojovací řetězec.](./media/image20-bis.png)
+![Diagram znázorňující, že mikroslužba umístění v eShopOnContainers může používat databázi Cosmos DB nebo Mongo DB.](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
 **Obrázek 7-21**. eShopOnContainers s využitím kontejnerů MongoDB pro vývoj-ENV nebo Azure Cosmos DB pro produkci
 
@@ -166,7 +166,7 @@ V podstatě je to jenom právní omezení, které uvádí, že byste neměli vž
 
 Rozhraní MongoDB API pro .NET je založené na balíčcích NuGet, které musíte přidat do projektů, jako je například v projektu umístění. API na následujícím obrázku.
 
-![Zobrazení Průzkumník řešení znázorňující závislosti v balíčcích NuGet MongoDB.](./media/image21-bis.png)
+![Snímek obrazovky se závislostmi v balíčcích NuGet MongoDB](./media/nosql-database-persistence-infrastructure/mongodb-api-nuget-packages.png)
 
 **Obrázek 7-22**. Odkazy na balíčky NuGet rozhraní MongoDB API v projektu .NET Core
 

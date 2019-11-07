@@ -2,12 +2,12 @@
 title: Implementace vzoru pro přerušení okruhu
 description: Naučte se implementovat vzor pro přerušení okruhu jako doplňkový systém pro opakované pokusy http.
 ms.date: 10/16/2018
-ms.openlocfilehash: a1a24094ae98d8c767ccf692fe8ded6e28d47854
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 00ca39b4b6fac37ff60adf128c3f4e22c5fc14e2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094119"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732852"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace systému jističe
 
@@ -94,7 +94,7 @@ Například po spuštění aplikace můžete povolit middleware pomocí následu
 
 Potom můžete stav ověřit pomocí `http://localhost:5103/failing`identifikátoru URI, jak je znázorněno na obrázku 8-5.
 
-![Zobrazení prohlížeče výsledku z kontroly stavu neúspěšné simulace middlewaru](./media/image4.png)
+![Snímek obrazovky s kontrolou stavu selhání simulace middlewaru.](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
 
 **Obrázek 8-5**. Kontroluje se stav neúspěšného middlewaru ASP.NET pro selhání – v tomto případě je zakázaný.
 
@@ -134,7 +134,7 @@ public class CartController : Controller
 
 Tady je souhrn. Zásada opakování se několikrát pokusí vytvořit požadavek HTTP a získá chyby protokolu HTTP. Pokud počet opakování dosáhne maximálního počtu nastaveného pro zásadu pro dělení na okruhy (v tomto případě 5), aplikace vyvolá výjimku BrokenCircuitException. Výsledkem je Popisná zpráva, jak je znázorněno na obrázku 8-6.
 
-![Zobrazení prohlížeče webové aplikace MVC znázorňující zprávu "nefunkční služba košíku", která se aktivuje zásadami pro přerušení okruhů](./media/image5.png)
+![Snímek webové aplikace MVC s chybou nefungující služby koše](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 
 **Obrázek 8-6**. Přepínací modul okruhů vrátil chybu do uživatelského rozhraní.
 

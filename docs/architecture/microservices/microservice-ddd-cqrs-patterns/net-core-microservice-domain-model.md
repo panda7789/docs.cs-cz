@@ -2,22 +2,24 @@
 title: Implementace doménového modelu mikroslužby pomocí .NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace o implementaci doménového modelu orientovaného na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: b2ad62c2a16dd3993b9624ec14f0070e934ac2de
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: be8dc9339f5815139616e9785b5b3e3e5931b57e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296756"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737267"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace modelu domény mikroslužeb pomocí .NET Core
 
-V předchozí části byly vysvětleny základní principy návrhu a vzory pro návrh doménového modelu. Nyní je čas prozkoumat možné způsoby implementace doménového modelu pomocí .NET Core (prostý kód C\# ) a EF Core. Všimněte si, že váš doménový model se skládá jednoduše z vašeho kódu. Bude mít pouze požadavky na model EF Core, ale ne skutečné závislosti na EF. Neměli byste mít pevné závislosti nebo odkazy na EF Core nebo jiné ORM ve vašem doménovém modelu.
+V předchozí části byly vysvětleny základní principy návrhu a vzory pro návrh doménového modelu. Nyní je čas prozkoumat možné způsoby implementace doménového modelu pomocí .NET Core (prostý kód v jazyce C\#) a EF Core. Všimněte si, že váš doménový model se skládá jednoduše z vašeho kódu. Bude mít pouze požadavky na model EF Core, ale ne skutečné závislosti na EF. Neměli byste mít pevné závislosti nebo odkazy na EF Core nebo jiné ORM ve vašem doménovém modelu.
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Struktura doménového modelu ve vlastní knihovně .NET Standard
 
 Organizace, která se používá pro referenční aplikaci eShopOnContainers, ukazuje model DDD pro aplikaci. Může se stát, že jiná organizace bude jasně informovat o tom, jaké možnosti návrhu aplikace udělaly. Jak vidíte na obrázku 7-10, v modelu domény řazení existují dvě agregace, pořadí agregace a agregace nákupčího. Každá agregace je skupina doménových entit a hodnotových objektů, i když můžete mít agregaci tvořenou jedinou doménovou entitou (agregovanou kořenovou nebo kořenovou entitou).
 
-![Průzkumník řešení zobrazení pro projekt objednávání. Domain, ve kterém je zobrazená složka AggregatesModel obsahující složky BuyerAggregate a OrderAggregate, každou z nich obsahující třídy entit, hodnotové soubory a tak dále. ](./media/image11.png)
+:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Snímek projektu objednávky. Domain v Průzkumník řešení.":::
+Průzkumník řešení zobrazení pro projekt objednávání. Domain, ve kterém je zobrazená složka AggregatesModel obsahující složky BuyerAggregate a OrderAggregate, každou z nich obsahující třídy entit, hodnotové soubory a tak dále.
+:::image-end:::
 
 **Obrázek 7-10**. Struktura doménového modelu pro řazení mikroslužby v eShopOnContainers
 
@@ -31,7 +33,9 @@ Agregace odkazuje na cluster objektů domény seskupených dohromady, aby odpov�
 
 Transakční konzistence znamená, že agregace je zaručená tak, aby byla na konci obchodní akce konzistentní a aktuální. Například pořadí agregace z eShopOnContainersho doménového modelu pro řazení mikroslužeb se skládá jak je znázorněno na obrázku 7-11.
 
-![Podrobné zobrazení složky OrderAggregate: Address.cs je objekt hodnoty, IOrderRepository je rozhraní úložiště, Order.cs je agregovaným kořenem, OrderItem.cs je podřízenou entitou a OrderStatus.cs je třída výčtu.](./media/image12.png)
+:::image type="complex" source="./media/net-core-microservice-domain-model/vs-solution-explorer-order-aggregate.png" alt-text="Snímek obrazovky se složkou OrderAggregate a jejími třídami":::
+Podrobné zobrazení složky OrderAggregate: Address.cs je objekt hodnoty, IOrderRepository je rozhraní úložiště, Order.cs je agregovaným kořenem, OrderItem.cs je podřízenou entitou a OrderStatus.cs je třída výčtu.
+:::image-end:::
 
 **Obrázek 7-11**. Pořadí agregace v řešení Visual Studio
 
@@ -91,7 +95,7 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-Je důležité si uvědomit, že se jedná o entitu domény implementovanou jako třídu POCO. Nemá žádnou přímou závislost na Entity Framework Core ani žádné jiné architektury infrastruktury. Tato implementace je tak, jak by měla být umístěná v\# DDD, jenom v kódu C implementace doménového modelu.
+Je důležité si uvědomit, že se jedná o entitu domény implementovanou jako třídu POCO. Nemá žádnou přímou závislost na Entity Framework Core ani žádné jiné architektury infrastruktury. Tato implementace je tak, jak by měla být v DDD, jenom C\# kód implementující doménový model.
 
 Kromě toho třída je upravena s rozhraním s názvem IAggregateRoot. Toto rozhraní je prázdné rozhraní, někdy označované jako *rozhraní značky*, které se používá pouze k označení toho, že tato třída entity je také agregovaným kořenem.
 
@@ -162,19 +166,19 @@ Pokud používáte EF Core 1,0 nebo novější, v rámci DbContext potřebujete 
 
 S funkcí v EF Core 1,1 nebo novějším pro mapování sloupců na pole je také možné nepoužívat vlastnosti. Místo toho můžete mapovat sloupce z tabulky na pole. Běžným případem použití pro toto je soukromá pole pro vnitřní stav, ke kterému nemusíte přicházet z oblasti mimo entitu.
 
-Například v předchozím příkladu kódu OrderAggregate existuje několik privátních polí, jako je `_paymentMethodId` pole, které nemají žádnou související vlastnost pro metodu setter nebo getter. Toto pole je také možné vypočítat v obchodní logice objednávky a použít je v metodách objednávky, ale je potřeba je zachovat i v databázi. Takže v EF Core (od verze 1.1) existuje způsob, jak namapovat pole bez související vlastnosti na sloupec v databázi. To je také vysvětleno v části [vrstva infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) tohoto průvodce.
+Například v předchozím příkladu kódu OrderAggregate je k dispozici několik privátních polí, například pole `_paymentMethodId`, které nemá žádnou související vlastnost pro metodu setter nebo getter. Toto pole je také možné vypočítat v obchodní logice objednávky a použít je v metodách objednávky, ale je potřeba je zachovat i v databázi. Takže v EF Core (od verze 1.1) existuje způsob, jak namapovat pole bez související vlastnosti na sloupec v databázi. To je také vysvětleno v části [vrstva infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) tohoto průvodce.
 
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Vaughn Vernon. Modelování agreguje pomocí DDD a Entity Framework.** Všimněte si, že to *není* Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
-- **Julie Lerman. Datové body – kódování pro návrh založený na doméně: Tipy pro vývojáři zaměřená na data** \
+- **Julie Lerman. Datové body – kódování pro návrh založený na doméně: Tipy pro vývojáři, která se zaměřuje na data** \
   <https://msdn.microsoft.com/magazine/dn342868.aspx>
 
-- **Udi Dahan. Jak vytvořit plně zapouzdřené doménové modely** \
+- **UDI Dahan. Vytvoření plně zapouzdřených doménových modelů** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 > [!div class="step-by-step"]
-> [Předchozí](microservice-domain-model.md)Další
-> [](seedwork-domain-model-base-classes-interfaces.md)
+> [Předchozí](microservice-domain-model.md)
+> [Další](seedwork-domain-model-base-classes-interfaces.md)

@@ -2,12 +2,12 @@
 title: Úvod ke kontejnerům a Dockeru
 description: Získejte přehled o hlavních výhodách používání Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: a03c67ed4fbc55c84e69fba5b7978863c8305e00
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295670"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738132"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod do kontejnerů a Docker
 
@@ -19,7 +19,7 @@ Kontejnery také vzájemně izolují aplikace na sdíleném operačním systému
 
 Každý kontejner může spustit celou webovou aplikaci nebo službu, jak je znázorněno na obrázku 1-1. V tomto příkladu je hostitelem Docker hostitel kontejneru a app1, app2, Svc1 a Svc2 jsou kontejnerové aplikace nebo služby.
 
-![Dvě aplikace a dvě služby běžící v operačním systému ve virtuálním počítači nebo fyzickém serveru](./media/image1.png)
+![Diagram znázorňující čtyři kontejnery běžící na virtuálním počítači nebo na serveru.](./media/index/multiple-containers-single-host.png)
 
 **Obrázek 1-1**. Více kontejnerů spuštěných v hostiteli kontejneru
 

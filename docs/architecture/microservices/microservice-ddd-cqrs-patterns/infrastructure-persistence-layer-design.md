@@ -2,16 +2,16 @@
 title: Návrh vrstvy trvalosti infrastruktury
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte vzor úložiště v návrhu vrstvy trvalosti infrastruktury.
 ms.date: 10/08/2018
-ms.openlocfilehash: 76f545403a1b595ce7a541a96d212b9406d89c10
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f1c5df1cc5672760374610a416ae22b45cd76c25
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295908"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737940"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Návrh vrstvy trvalosti infrastruktury
 
-Komponenty Trvalost dat poskytují přístup k datům hostovaným v rámci hranic mikroslužby (tj. databáze mikroslužeb). Obsahují skutečnou implementaci komponent, jako jsou úložiště a [jednotky pracovních](https://martinfowler.com/eaaCatalog/unitOfWork.html) tříd, jako jsou například objekty EF (Custom Entity Framework) <xref:Microsoft.EntityFrameworkCore.DbContext> . EF DbContext implementuje jak úložiště, tak i pracovní jednotky.
+Komponenty Trvalost dat poskytují přístup k datům hostovaným v rámci hranic mikroslužby (tj. databáze mikroslužeb). Obsahují skutečnou implementaci komponent, jako jsou úložiště a [jednotky pracovních](https://martinfowler.com/eaaCatalog/unitOfWork.html) tříd, jako jsou například vlastní Entity Framework (EF) <xref:Microsoft.EntityFrameworkCore.DbContext> objekty. EF DbContext implementuje jak úložiště, tak i pracovní jednotky.
 
 ## <a name="the-repository-pattern"></a>Vzor úložiště
 
@@ -33,13 +33,15 @@ Pokud uživatel provede změny, data, která mají být aktualizována, pocháze
 
 Je důležité se znovu zdůraznit, že byste měli definovat jenom jedno úložiště pro každý agregovaný kořen, jak je znázorněno na obrázku 7-17. Aby bylo možné dosáhnout cíle agregovaného kořene pro zachování transakční konzistence mezi všemi objekty v rámci agregace, neměli byste nikdy vytvořit úložiště pro každou tabulku v databázi.
 
-![Vztahy mezi doménami a vrstvami infrastruktury: Agregace nákupčího závisí na IBuyerRepository a pořadí agregace závisí na rozhraních IOrderRepository. Tato rozhraní se implementují v infrastruktuře infrastruktury odpovídajícími úložišti, která jsou závislá na UnitOfWork, a tady se taky implementuje. přistupující k tabulkám v datové vrstvě.](./media/image18.png)
+![Diagram znázorňující vztahy domény a jiné infrastruktury](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
 
 **Obrázek 7-17**. Vztah mezi úložišti, agregacemi a databázovými tabulkami
 
+Výše uvedený diagram znázorňuje vztahy mezi doménami a vrstvami infrastruktury: agregace kupující závisí na IBuyerRepository a pořadí agregace závisí na rozhraních IOrderRepository, tato rozhraní se implementují ve vrstvě infrastruktury. v odpovídajících úložištích, které jsou závislé na UnitOfWork, se také implementují, které přistupují k tabulkám v datové vrstvě.
+
 ### <a name="enforce-one-aggregate-root-per-repository"></a>Vysazení jednoho agregovaného kořene na úložiště
 
-To může být užitečné pro implementaci návrhu úložiště takovým způsobem, že vynutilo pravidlo, že by měli mít úložiště jenom agregované kořeny. Můžete vytvořit obecný nebo základní typ úložiště, který omezuje typ entit, se kterými pracuje, aby bylo zajištěno, že mají `IAggregateRoot` rozhraní značek.
+To může být užitečné pro implementaci návrhu úložiště takovým způsobem, že vynutilo pravidlo, že by měli mít úložiště jenom agregované kořeny. Můžete vytvořit obecný nebo základní typ úložiště, který omezuje typ entit, se kterými pracuje, aby bylo zajištěno, že mají rozhraní `IAggregateRoot` značky.
 
 Proto každá třída úložiště implementovaná na infrastruktuře infrastruktury implementuje svůj vlastní kontrakt nebo rozhraní, jak je znázorněno v následujícím kódu:
 
@@ -86,7 +88,7 @@ V souvislosti s oddělením potíží s testováním jednotek vaše logika fungu
 
 ### <a name="the-difference-between-the-repository-pattern-and-the-legacy-data-access-class-dal-class-pattern"></a>Rozdíl mezi vzorem úložiště a vzorem třídy pro přístup k datům starší verze (třída DAL)
 
-Objekt pro přístup k datům přímo provádí operace přístupu k datům a trvalých operací proti úložišti. Úložiště označí data operacemi, které chcete provést, v paměti objektu Working Object (jako v EF při použití <xref:Microsoft.EntityFrameworkCore.DbContext> třídy), ale tyto aktualizace nejsou okamžitě provedeny v databázi.
+Objekt pro přístup k datům přímo provádí operace přístupu k datům a trvalých operací proti úložišti. Úložiště označí data operacemi, které chcete provést, v paměti objektu pracovní jednotky (jako v EF při použití třídy <xref:Microsoft.EntityFrameworkCore.DbContext>), ale tyto aktualizace nejsou okamžitě provedeny do databáze.
 
 Pracovní jednotka je označována jako jediná transakce, která zahrnuje několik operací vložení, aktualizace nebo odstranění. V jednoduchých případech to znamená, že pro konkrétní akci uživatele, jako je například registrace na webu, jsou všechny operace vložení, aktualizace a odstranění zpracovávány v rámci jedné transakce. To je efektivnější než zpracování více transakcí databáze chattier způsobem.
 
@@ -108,16 +110,16 @@ Například Jimmy Bogard při poskytování přímé zpětné vazby k této př�
 
 ### <a name="repository-pattern"></a>Vzor úložiště
 
-- **Vzor úložiště** \
+-  \ **vzoru úložiště**
   <https://deviq.com/repository-pattern/>
 
 - **Edward Hieatt a Rob mě. Vzor úložiště** \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
-- **Vzor úložiště** \
+-  \ **vzoru úložiště**
   <https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)>
 
-- **Eric Evans. Návrh založený na doméně: Boj proti složitosti softwaru.** (Kniha; zahrnuje diskusi ke vzoru úložiště) \
+- **Eric Evans. Návrh založený na doméně: řešení složitosti na srdce softwaru.** (Kniha; zahrnuje diskusi ke vzoru úložiště) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="unit-of-work-pattern"></a>Vzor pracovní jednotky
@@ -129,5 +131,5 @@ Například Jimmy Bogard při poskytování přímé zpětné vazby k této př�
   <https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
 >[!div class="step-by-step"]
->[Předchozí](domain-events-design-implementation.md)Další
->[](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[Předchozí](domain-events-design-implementation.md)
+>[Další](infrastructure-persistence-layer-implemenation-entity-framework-core.md)

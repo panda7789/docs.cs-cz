@@ -2,12 +2,12 @@
 title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Získejte informace o tom, jak Microsoft nabízí podporu životního cyklu aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 1829ce1051f091065f543a6cadcf5d179a284834
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9c8c0f5688bf226351abfc7bf52d4ace05f8c6d8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094455"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738086"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Seznámení s platformou a nástroji Microsoftu pro kontejnery aplikací
 
@@ -15,7 +15,9 @@ ms.locfileid: "73094455"
 
 Obrázek 3-1 ukazuje hlavní pilíře v životním cyklu aplikací Docker klasifikovaných podle typu práce, kterou doručí více týmů (vývoj aplikací, procesy infrastruktury DevOps a správa IT a operace). V podniku obvykle jsou profily "osoby" zodpovědné za jednotlivé oblasti jiné. Takže jsou jejich dovednosti.
 
-![Nástroje společnosti Microsoft. Pro úlohy pro vývoj/navrhování: modul Docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Pro úlohy sestavení/testování/expedice: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Pro úlohy spustit/monitor/spravovat: Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, dalších orchestrers.](./media/image1.png)
+:::image type="complex" source="./media/index/microsoft-tools-contanerized-docker-app.png" alt-text="Diagram znázorňující nástroje Microsoftu potřebné k údržbě aplikací Docker":::
+Nástroje společnosti Microsoft. Pro úlohy pro vývoj/navrhování: modul Docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Pro úlohy sestavení/testování/expedice: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Pro úlohy spustit/monitor/spravovat: Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, dalších orchestrers.
+:::image-end:::
 
 **Obrázek 3-1.** Hlavní pilíře v životním cyklu pro kontejnerové aplikace Docker s platformou a nástroji Microsoftu
 

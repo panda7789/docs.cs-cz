@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro aplikaci s více kontejnery pomocí Docker-Compose. yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: 938a9aa192f82628051bd7dc065f661f510ba544
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 02db27feb1320d8b9c6823b8f9ef51c2ddf9791c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416705"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737084"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -177,9 +177,15 @@ Můžete použít jeden soubor Docker-Compose. yml jako v zjednodušených pří
 
 Ve výchozím nastavení čte čtení dva soubory, Docker-Compose. yml a nepovinný soubor Docker-Compose. override. yml. Jak je znázorněno na obrázku 6-11, pokud používáte aplikaci Visual Studio a povolíte podporu Docker, sada Visual Studio také vytvoří další soubor Docker-Compose. vs. Debug. g. yml pro ladění aplikace. můžete se podívat na tento soubor ve složce obj\\Docker\\ se do hlavní složky řešení.
 
-![Docker – vytváření struktury souborů projektu:. dockerignore pro ignorování souborů; Docker-Compose. yml pro vytváření mikroslužeb; Docker-Compose. override. yml pro konfiguraci prostředí mikroslužeb.](./media/image12.png)
+![Snímek obrazovky se soubory v projektu Docker pro sestavení.](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
 
 **Obrázek 6-11**. soubory Docker – sestavení v aplikaci Visual Studio 2017
+
+**Docker – sestavení** struktury souborů projektu:
+
+* *. dockerignore* – používá se k ignorování souborů
+* *Docker-Compose. yml* – slouží k vytváření mikroslužeb
+* *Docker-Compose. override. yml* – používá se ke konfiguraci prostředí mikroslužeb.
 
 Soubory Docker můžete upravit pomocí libovolného editoru, například Visual Studio Code nebo subvápna, a aplikaci spustit pomocí příkazu Docker-sestavit.
 
@@ -191,11 +197,11 @@ Soubor Docker-Compose. override. yml, jak je navržen názvem, obsahuje nastaven
 
 Typický případ použití je při definování více souborů pro vytváření, aby bylo možné cílit na více prostředí, jako je výroba, příprava, CI nebo vývoj. Pro podporu těchto rozdílů můžete svou konfiguraci vytváření rozdělit do několika souborů, jak je znázorněno na obrázku 6-12.
 
-![Můžete zkombinovat více souborů Docker-Compose*. fml pro zpracování různých prostředí.](./media/image13.png)
+![Diagram tří souborů Docker-skládání nastavených na přepsání základního souboru](./media/multi-container-applications-docker-compose/multiple-docker-compose-files-override-base.png)
 
 **Obrázek 6-12**. Více souborů Docker – skládáním hodnot do základního souboru Docker-Compose. yml
 
-Začnete se základním souborem Docker-Compose. yml. Tento základní soubor musí obsahovat základní nebo statické nastavení konfigurace, které se v závislosti na prostředí nemění. EShopOnContainers má například následující soubor Docker-Compose. yml (zjednodušený s méně službami) jako základní soubor.
+Můžete zkombinovat více souborů Docker-Compose*. yml pro zpracování různých prostředí. Začnete se základním souborem Docker-Compose. yml. Tento základní soubor musí obsahovat základní nebo statické nastavení konfigurace, které se v závislosti na prostředí nemění. EShopOnContainers má například následující soubor Docker-Compose. yml (zjednodušený s méně službami) jako základní soubor.
 
 ```yml
 #docker-compose.yml (Base)

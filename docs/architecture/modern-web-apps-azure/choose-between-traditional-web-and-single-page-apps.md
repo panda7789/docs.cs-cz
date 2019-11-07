@@ -4,17 +4,17 @@ description: Naučte se při sestavování webových aplikací zvolit mezi tradi
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: d68c167dce791a31eeb5ca5729b50ec22c64f9b0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9ede64249705aba3f22a9663b8a258e41f030aca
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296402"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739452"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními Web Apps a jednostránkové aplikacemi
 
-> "Zákon na Atwoodem: Všechny aplikace, které lze zapsat v JavaScriptu, budou nakonec napsány v JavaScriptu. "  
-> _\-Jan Atwoodem_
+> "Zákonem o atwoodemi: Jakákoliv aplikace, kterou lze zapsat do JavaScriptu, bude nakonec napsána v JavaScriptu."  
+> _\- Jan Atwoodem_
 
 Existují dva obecné přístupy k sestavování webových aplikací Dnes: tradiční webové aplikace, které provádějí většinu aplikační logiky na serveru a jednostránkové aplikace (jednostránkové), které provádějí většinu logiky uživatelského rozhraní ve webovém prohlížeči. komunikace s webovým serverem primárně využívá webová rozhraní API. K dispozici je také hybridní přístup, nejjednodušší je hostovat jeden nebo více propracovaných podaplikací, které jsou v rámci větší tradiční webové aplikace.
 
@@ -40,7 +40,7 @@ Vylepšení uživatelského prostředí, které je možné použít modelem SPA,
 
 ## <a name="blazor"></a>Blazor
 
-ASP.NET Core 3,0 zavádí nový model pro vytváření bohatých, interaktivních a sestavitelního uživatelského rozhraní s názvem Blazor. Blazor na straně serveru umožňuje vývojářům vytvořit uživatelské rozhraní se syntaxí Razor na serveru a pro doručení tohoto kódu do prohlížeče a spustit na straně klienta pomocí knihovny JavaScriptu s názvem WebAssembly. ASP.NET Core 3,0 je stále ve vývoji, ale měli byste očekávat, že v aktualizaci 3,0 pro tuto elektronickou knihu získáte další informace o této technologii. Další informace o Blazor najdete v tématu Začínáme [s Blazor](https://blazor.net/docs/get-started.html).
+ASP.NET Core 3,0 zavádí nový model pro vytváření bohatých, interaktivních a sestavitelního uživatelského rozhraní s názvem Blazor. Blazor na straně serveru umožňuje vývojářům vytvořit uživatelské rozhraní se syntaxí Razor na serveru a pro tento kód pro doručení do prohlížeče a spuštění na straně klienta pomocí webového [sestavení](https://webassembly.org/). ASP.NET Core 3,0 je stále ve vývoji, ale měli byste očekávat, že v aktualizaci 3,0 pro tuto elektronickou knihu získáte další informace o této technologii. Další informace o Blazor najdete v tématu Začínáme [s Blazor](https://blazor.net/docs/get-started.html).
 
 ## <a name="when-to-choose-traditional-web-apps"></a>Kdy zvolit tradiční webové aplikace
 
@@ -89,11 +89,11 @@ Následující rozhodovací tabulka shrnuje některé základní faktory, které
 
 | **Jednotek**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** |
 | ---------------------------------------------------- | ----------------------- | --------------------------- |
-| Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Poskytuje**             | **Požadováno**                |
-| Podpora prohlížečů bez skriptování                   | **Podporuje se**           | **Nepodporováno**           |
-| Minimální chování aplikace na straně klienta             | **Well-Suited**         | **Přehnaně důkladné**                |
-| Bohatě komplexní požadavky na uživatelské rozhraní            | **Limitovan**             | **Well-Suited**             |
+| Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Poskytuje**             | **Požadovanou**                |
+| Podpora prohlížečů bez skriptování                   | **Doložen**           | **Nepodporováno**           |
+| Minimální chování aplikace na straně klienta             | **Dobře hodící se**         | **Přehnaně důkladné**                |
+| Bohatě komplexní požadavky na uživatelské rozhraní            | **Limitovan**             | **Dobře hodící se**             |
 
 >[!div class="step-by-step"]
->[Předchozí](modern-web-applications-characteristics.md)Další
->[](architectural-principles.md)
+>[Předchozí](modern-web-applications-characteristics.md)
+>[Další](architectural-principles.md)

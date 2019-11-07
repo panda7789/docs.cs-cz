@@ -2,12 +2,12 @@
 title: Události domény. návrh a implementace
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte podrobné zobrazení událostí domény, klíčový koncept k navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: eea72633d3460f51821e8a939b14acff2f17965c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f0dbd6b0e70d825122d319611a327438df065588
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093957"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739883"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -47,11 +47,11 @@ Proto rozhraní sběrnice událostí potřebuje určitou infrastrukturu, která 
 
 Pokud provádění příkazu, který souvisí s jednou agregací instance, vyžaduje, aby byla na jednom nebo více dalších agregacích spuštěna další pravidla domény, měli byste navrhnout a implementovat tyto vedlejší účinky, které budou aktivovány událostmi domény. Jak je znázorněno na obrázku 7-14 a jako jeden z nejdůležitějších případů použití by měla být k šíření změn stavu mezi několika agregacemi v rámci stejného doménového modelu používána doménová událost.
 
-![Konzistence mezi agregacemi se dosahuje doménovými událostmi. agregační pořadí odesílá událost OrderStarted domény, která je zpracována za účelem aktualizace agregace nákupčího. ](./media/image15.png)
+![Diagram znázorňující událost v doméně, která řídí data pro agregaci nákupčího.](./media/domain-events-design-implementation/domain-model-ordering-microservice.png)
 
 **Obrázek 7-14**. Události domény pro vymáhání konzistence mezi několika agregacemi v rámci stejné domény
 
-Když uživatel zahájí objednávku, v rámci tohoto obrázku spustí aktivační událost OrderStarted v závislosti na původních informacích o uživateli z mikroslužby pro identitu (s informacemi, které jsou k dispozici v příkazu CreateOrder). Událost domény je generována agregací pořadí, když je vytvořena na prvním místě.
+Obrázek 7-14 ukazuje, jak je dosaženo konzistence mezi agregacemi v doménových událostech. Když uživatel zahájí objednávku, objednávka Aggregate odešle událost `OrderStarted` domény. Událost OrderStarted domény je zpracována agregací Buyercollection za účelem vytvoření objektu Buyer v mikroslužbě řazení na základě původních informací o uživateli z mikroslužby identity (s informacemi, které jsou k dispozici v příkazu CreateOrder).
 
 Alternativně můžete mít agregovaný kořenový adresář pro události vyvolané členy svých agregací (podřízené entity). Například každá podřízená entita OrderItem může vyvolat událost, pokud je cena položky vyšší než konkrétní hodnota nebo když je hodnota položky produktu příliš vysoká. Agregovaný kořen může následně přijímat tyto události a provádět globální výpočet nebo agregaci.
 
@@ -78,11 +78,11 @@ Na druhé straně, pokud používáte události domény, můžete vytvořit jemn
 
 Jak je znázorněno na obrázku 7-15 od stejné domény, můžete zpracovávat více akcí souvisejících s ostatními agregacemi v doméně nebo dalšími akcemi aplikace, které potřebujete provést v rámci mikroslužeb, které se připojují k integračním událostem a sběrnici událostí.
 
-![Může existovat několik obslužných rutin pro stejnou událost domény v aplikační vrstvě, jedna obslužná rutina může vyhodnotit konzistenci mezi agregacemi a jiná obslužná rutina může publikovat událost integrace, aby s ní mohli ostatní mikroslužby pracovat.](./media/image16.png)
+![Diagram znázorňující událost domény, která předává data do několika obslužných rutin událostí.](./media/domain-events-design-implementation/aggregate-domain-event-handlers.png)
 
 **Obrázek 7-15**. Zpracování více akcí na doménu
 
-Obslužné rutiny událostí jsou obvykle umístěny v aplikační vrstvě, protože budete používat objekty infrastruktury jako úložiště nebo aplikační rozhraní API pro chování mikroslužeb. V takovém smyslu jsou obslužné rutiny událostí podobné obslužným rutinám příkazů, takže obě jsou součástí aplikační vrstvy. Důležitým rozdílem je, že by se měl příkaz zpracovat jen jednou. Událost domény může být zpracována nula nebo *n* krát, protože může být přijata více přijímači nebo obslužnými rutinami událostí s jiným účelem pro každou obslužnou rutinu.
+Může existovat několik obslužných rutin pro stejnou událost domény v aplikační vrstvě, jedna obslužná rutina může vyhodnotit konzistenci mezi agregacemi a jiná obslužná rutina může publikovat událost integrace, aby s ní mohli ostatní mikroslužby pracovat. Obslužné rutiny událostí jsou obvykle umístěny v aplikační vrstvě, protože budete používat objekty infrastruktury jako úložiště nebo aplikační rozhraní API pro chování mikroslužeb. V takovém smyslu jsou obslužné rutiny událostí podobné obslužným rutinám příkazů, takže obě jsou součástí aplikační vrstvy. Důležitým rozdílem je, že by se měl příkaz zpracovat jen jednou. Událost domény může být zpracována nula nebo *n* krát, protože může být přijata více přijímači nebo obslužnými rutinami událostí s jiným účelem pro každou obslužnou rutinu.
 
 Otevřený počet obslužných rutin na jednu doménu umožňuje přidat libovolný počet pravidel domény podle potřeby, aniž by to ovlivnilo aktuální kód. Například implementace následujícího obchodního pravidla může být stejně snadné jako přidání několika obslužných rutin událostí (nebo dokonce jenom jednoho):
 
@@ -244,7 +244,7 @@ Jedním z přístupů je skutečný systém zasílání zpráv nebo dokonce i sb
 
 Další způsob, jak mapovat události na více obslužných rutin událostí, je použití registračních typů v kontejneru IoC, takže můžete dynamicky odvodit, kam se mají události odesílat. Jinými slovy, potřebujete zjistit, jaké obslužné rutiny události potřebují získat konkrétní událost. Obrázek 7-16 ukazuje zjednodušený přístup k tomuto přístupu.
 
-![Vložení závislostí lze použít k přidružení událostí k obslužným rutinám událostí, který je přístupem používaným v MediatR.](./media/image17.png)
+![Diagram znázorňující dispečera událostí domény odesílající události do příslušných obslužných rutin.](./media/domain-events-design-implementation/domain-event-dispatcher.png)
 
 **Obrázek 7-16**. Dispečer událostí domény pomocí IoC
 

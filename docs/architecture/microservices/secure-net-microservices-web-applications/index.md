@@ -4,12 +4,12 @@ description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získej
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: f405b4199e8239e86c4799a649c3d87811d99828
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: b25f02140915ce87c5c478d8a8a5fe28ba7693b3
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798852"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736943"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
@@ -21,15 +21,17 @@ Pro prostředky a rozhraní API, které služba publikovala, je často potřeba 
 
 Ve scénářích mikroslužeb se ověřování obvykle zpracovává centrálně. Pokud používáte bránu API, je brána vhodná pro ověření, jak je znázorněno na obrázku 9-1. Pokud použijete tento přístup, ujistěte se, že k jednotlivým mikroslužbám nejde získat přímý přístup (bez brány API), pokud se neuskuteční další zabezpečení pro ověřování zpráv bez ohledu na to, jestli pocházejí z brány nebo ne.
 
-![Když brána API vycentralizaci ověřování, přidá informace o uživateli při předávání požadavků mikroslužbám.](./media/image1.png)
+![Diagram znázorňující, jak mobilní aplikace klienta komunikuje s back-endu.](./media/index/api-gateway-centralized-authentication.png)
 
 **Obrázek 9-1**. Centralizované ověřování pomocí brány rozhraní API
 
-Pokud se k službám dají získat přístup přímo, můžete k ověřování uživatelů použít ověřovací službu, jako je Azure Active Directory nebo vyhrazená mikroslužba ověřování, která funguje jako služba tokenů zabezpečení (STS). Rozhodnutí o důvěryhodnosti se sdílí mezi službami s tokeny zabezpečení nebo soubory cookie. (Tyto tokeny je možné v případě potřeby sdílet mezi ASP.NET Core aplikacemi, a to implementací [sdílení souborů cookie](/aspnet/core/security/cookie-sharing).) Tento model je znázorněn na obrázku 9-2.
+Když brána API vycentralizaci ověřování, přidá informace o uživateli při předávání požadavků mikroslužbám. Pokud se k službám dají získat přístup přímo, můžete k ověřování uživatelů použít ověřovací službu, jako je Azure Active Directory nebo vyhrazená mikroslužba ověřování, která funguje jako služba tokenů zabezpečení (STS). Rozhodnutí o důvěryhodnosti se sdílí mezi službami s tokeny zabezpečení nebo soubory cookie. (Tyto tokeny je možné v případě potřeby sdílet mezi ASP.NET Core aplikacemi, a to implementací [sdílení souborů cookie](/aspnet/core/security/cookie-sharing).) Tento model je znázorněn na obrázku 9-2.
 
-![Pokud jsou mikroslužby k dispozici přímo, důvěřuje, která zahrnuje ověřování a autorizaci, je zpracována tokenem zabezpečení vydaným pomocí vyhrazené mikroslužby, která je sdílena mezi mikroslužbami.](./media/image2.png)
+![Diagram znázorňující ověřování prostřednictvím back-endovéch mikroslužeb.](./media/index/identity-microservice-authentication.png)
 
 **Obrázek 9-2**. Ověřování pomocí mikroslužby identity; vztah důvěryhodnosti se sdílí pomocí autorizačního tokenu.
+
+Pokud jsou mikroslužby k dispozici přímo, důvěřuje, která zahrnuje ověřování a autorizaci, je zpracována tokenem zabezpečení vydaným pomocí vyhrazené mikroslužby, která je sdílena mezi mikroslužbami.
 
 ### <a name="authenticate-with-aspnet-core-identity"></a>Ověřování pomocí ASP.NET Core identity
 
@@ -121,7 +123,7 @@ else
 
 Pokud zvolíte možnost ověřování **individuálního uživatelského účtu** při vytváření projektu webové aplikace ASP.NET code v aplikaci Visual Studio, veškerý kód nezbytný pro přihlášení k externímu poskytovateli je již v projektu obsažen, jak je znázorněno na obrázku 9-3.
 
-![Dialog pro novou ASP.NET Core webovou aplikaci zvýrazněním tlačítka pro změnu ověřování.](./media/image3.png)
+![Snímek obrazovky dialogového okna Nový ASP.NET Core webové aplikace](./media/index/select-external-authentication-option.png)
 
 **Obrázek 9-3**. Výběr možnosti pro použití externího ověřování při vytváření projektu webové aplikace
 

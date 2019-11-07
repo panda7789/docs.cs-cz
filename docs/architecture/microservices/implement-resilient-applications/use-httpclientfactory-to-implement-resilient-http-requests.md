@@ -2,12 +2,12 @@
 title: Použití HttpClientFactory k implementaci odolných požadavků HTTP
 description: Naučte se používat HttpClientFactory, která je k dispozici od .NET Core 2,1, pro vytváření instancí `HttpClient`, což usnadňuje jejich použití ve svých aplikacích.
 ms.date: 08/08/2019
-ms.openlocfilehash: e32ffdd43ce8968ef9a0694873870b61510d7300
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9eff4a01361b3dc6f7471bc012c945d048b9a276
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094002"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737744"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavků HTTP
 
@@ -56,11 +56,13 @@ Co je to "Typový klient"? Je to jen `HttpClient`, která je nakonfigurovaná p�
 
 Následující diagram znázorňuje, jak se používají typové klienty s `HttpClientFactory`:
 
-![ClientService vynuťte u (používaný řadičem nebo klientským kódem) používá HttpClient vytvořené registrovaným IHttpClientFactory. Tato továrna přiřadí HttpClient a HttpMessageHandler z fondu, který spravuje. HttpClient se dá nakonfigurovat pomocí zásad Polly při registraci IHttpClientFactory v kontejneru DI pomocí metody rozšíření AddHttpClient.](./media/image3.5.png)
+![Diagram znázorňující, jak se používají typové klienty s HttpClientFactory](./media/use-httpclientfactory-to-implement-resilient-http-requests/client-application-code.png)
 
 **Obrázek 8-4**. Použití HttpClientFactory se zadanými klientskými třídami.
 
-Nejdřív instalační program `HttpClientFactory` ve vaší aplikaci tím, že nainstaluje balíček NuGet `Microsoft.Extensions.Http`, který obsahuje metodu rozšíření `AddHttpClient()` pro `IServiceCollection`. Tato metoda rozšíření registruje `DefaultHttpClientFactory` pro použití jako typ singleton pro `IHttpClientFactory` rozhraní. Definuje přechodnou konfiguraci `HttpMessageHandlerBuilder`. Tato obslužná rutina zprávy (objekt `HttpMessageHandler`), která je pořízená z fondu, se používá `HttpClient` vrácená z továrny.
+Na výše uvedeném obrázku ClientService vynuťte u (používaný řadičem nebo klientským kódem) používá `HttpClient` vytvořené pomocí registrované `IHttpClientFactory`. Tato továrna přiřadí `HttpClient` `HttpMessageHandler` z fondu, který spravuje. `HttpClient` lze nakonfigurovat pomocí zásad Polly při registraci `IHttpClientFactory` v kontejneru DI pomocí metody rozšíření `AddHttpClient`.
+
+Pokud chcete nakonfigurovat výše uvedenou strukturu, přidejte `HttpClientFactory` do své aplikace tak, že nainstalujete balíček NuGet `Microsoft.Extensions.Http`, který obsahuje metodu rozšíření `AddHttpClient()` pro `IServiceCollection`. Tato metoda rozšíření registruje `DefaultHttpClientFactory` pro použití jako typ singleton pro `IHttpClientFactory` rozhraní. Definuje přechodnou konfiguraci `HttpMessageHandlerBuilder`. Tato obslužná rutina zprávy (objekt `HttpMessageHandler`), která je pořízená z fondu, se používá `HttpClient` vrácená z továrny.
 
 V dalším kódu vidíte, jak `AddHttpClient()` lze použít k registraci typových klientů (agentů služeb), kteří potřebují používat `HttpClient`.
 

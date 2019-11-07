@@ -2,12 +2,12 @@
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
 ms.date: 10/08/2018
-ms.openlocfilehash: c73823a0449fdf81ba3d886efdef540bd1aa6121
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 08cb409b06a54c6b30afa393a817e14bd64fbcbf
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454846"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737513"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -17,7 +17,9 @@ Jak bylo zmíněno dříve, aplikační vrstvu lze implementovat jako součást 
 
 Například kód aplikační vrstvy řazení mikroslužba je implementován přímo jako součást projektu **objednávání. API** (ASP.NET Core projekt webového rozhraní API), jak je znázorněno na obrázku 7-23.
 
-![Průzkumník řešení zobrazení pořadí. rozhraní API mikroslužby, které zobrazuje podsložky ve složce aplikace: chování, příkazy, DomainEventHandlers, IntegrationEvents, modely, dotazy a ověřování.](./media/image20.png)
+:::image type="complex" source="./media/microservice-application-layer-implementation-web-api/ordering-api-microservice.png" alt-text="Snímek obrazovky objednávání. rozhraní API mikroslužeb v Průzkumník řešení.":::
+Průzkumník řešení zobrazení pořadí. rozhraní API mikroslužby, které zobrazuje podsložky ve složce aplikace: chování, příkazy, DomainEventHandlers, IntegrationEvents, modely, dotazy a ověřování.
+:::image-end:::
 
 **Obrázek 7-23**. Aplikační vrstva v projektu objednávání. API ASP.NET Core Web API
 
@@ -181,9 +183,11 @@ Vzor příkazu je vnitřně spojen se vzorem CQRS, který byl představen dřív
 
 Jak je znázorněno na obrázku 7-24, je vzor založený na přijímání příkazů ze strany klienta, jejich zpracování na základě pravidel doménové struktury a nakonec trvalého uchování stavů transakcemi.
 
-![Zobrazení vysoké úrovně na straně zápisu v CQRS: aplikace uživatelského rozhraní odesílá příkaz prostřednictvím rozhraní API, které se dostane k CommandHandler –, který závisí na doménovém modelu a infrastruktuře pro aktualizaci databáze.](./media/image21.png)
+![Diagram znázorňující tok dat vysoké úrovně od klienta k databázi.](./media/microservice-application-layer-implementation-web-api/high-level-writes-side.png)
 
 **Obrázek 7-24**. Pohled na vysoké úrovni příkazů nebo "na straně transakčního" ve vzoru CQRS
+
+Obrázek 7-24 ukazuje, že aplikace uživatelského rozhraní odesílá příkaz prostřednictvím rozhraní API, které se dostane k `CommandHandler`, která závisí na doménovém modelu a infrastruktuře, k aktualizaci databáze.
 
 ### <a name="the-command-class"></a>Třída příkazu
 
@@ -423,9 +427,11 @@ Další dvě hlavní možnosti, které jsou doporučenými možnostmi, jsou:
 
 Jak je znázorněno na obrázku 7-25, CQRS přístup k používání inteligentního modulu pro směrování, podobně jako sběrnice v paměti, která je dostatečně inteligentní pro přesměrování na správnou obslužnou rutinu příkazů na základě typu příkazu nebo DTO, který je právě přijímán. Jednoduché šipky mezi komponentami znázorňují závislosti mezi objekty (v mnoha případech vložené přes DI) se souvisejícími interakcemi.
 
-![Přiblíží se k předchozímu obrázku: řadič ASP.NET Core odesílá příkaz do kanálu příkazů MediatR, aby se dostal k příslušné obslužné rutině.](./media/image22.png)
+![Diagram znázorňující podrobnější tok dat od klienta k databázi.](./media/microservice-application-layer-implementation-web-api/mediator-cqrs-microservice.png)
 
 **Obrázek 7-25**. Použití vzoru prostředníka v procesu v jedné mikroslužbě CQRS
+
+Výše uvedený diagram znázorňuje přiblížení z image 7-24: řadič ASP.NET Core odesílá příkaz do kanálu příkazů MediatR, aby se dostal k příslušné obslužné rutině.
 
 Důvodem použití vzorového principu je to, že v podnikových aplikacích můžou požadavky na zpracování dosáhnout složitosti. Chcete být schopni přidat otevřený počet vzájemně se podobných otázek, jako je protokolování, ověření, audit a zabezpečení. V těchto případech můžete spoléhat na kanál prostředníka (viz [vzor zprostředkovatelů](https://en.wikipedia.org/wiki/Mediator_pattern)) a poskytnout tak prostředky pro tato dodatečná chování nebo problémy při průřezu.
 
@@ -439,11 +445,11 @@ Například v eShopOnContainers objednávání mikroslužby jsme implementovali 
 
 Další možností je použít asynchronní zprávy založené na zprostředkovatelích nebo frontách zpráv, jak je znázorněno na obrázku 7-26. Tato možnost může být také kombinována s komponentou prostředníka před obslužnou rutinou příkazu.
 
-![Kanál příkazu může být také zpracován frontou zpráv vysoké dostupnosti pro doručení příkazů příslušné obslužné rutině.](./media/image23.png)
+![Diagram znázorňující tok dat pomocí fronty zpráv HA](./media/microservice-application-layer-implementation-web-api/add-ha-message-queue.png)
 
 **Obrázek 7-26**. Použití front zpráv (mimo procesy a komunikace mezi procesy) pomocí příkazů CQRS
 
-Použití front zpráv k přijetí příkazů může dále zkomplikovat kanál příkazu, protože pravděpodobně budete muset kanál rozdělit do dvou procesů, které jsou připojeny prostřednictvím externí fronty zpráv. Stále byste měli použít, pokud potřebujete mít lepší škálovatelnost a výkon na základě asynchronního zasílání zpráv. Vezměte v úvahu, že v případě obrázku 7-26 tento kontroler pouze odešle příkaz do fronty a vrátí. Potom obslužné rutiny příkazu zpracovávají zprávy vlastním tempem. To je skvělé výhody front: fronta zpráv může fungovat jako vyrovnávací paměť v případech, kdy je potřeba škálovatelnost technologie Hyper-v případě potřeby, jako jsou například akcie nebo jakýkoli jiný scénář s velkým objemem příchozích dat.
+Kanál příkazu může být také zpracován frontou zpráv vysoké dostupnosti pro doručení příkazů příslušné obslužné rutině. Použití front zpráv k přijetí příkazů může dále zkomplikovat kanál příkazu, protože pravděpodobně budete muset kanál rozdělit do dvou procesů, které jsou připojeny prostřednictvím externí fronty zpráv. Stále byste měli použít, pokud potřebujete mít lepší škálovatelnost a výkon na základě asynchronního zasílání zpráv. Vezměte v úvahu, že v případě obrázku 7-26 tento kontroler pouze odešle příkaz do fronty a vrátí. Potom obslužné rutiny příkazu zpracovávají zprávy vlastním tempem. To je skvělé výhody front: fronta zpráv může fungovat jako vyrovnávací paměť v případech, kdy je potřeba škálovatelnost technologie Hyper-v případě potřeby, jako jsou například akcie nebo jakýkoli jiný scénář s velkým objemem příchozích dat.
 
 Z důvodu asynchronního povaze front zpráv je však nutné zjistit, jak komunikovat s klientskou aplikací o úspěšnosti nebo selhání procesu příkazu. Jako pravidlo byste nikdy neměli používat příkazy "Fire and zapomenout". Každá obchodní aplikace potřebuje zjistit, jestli byl příkaz úspěšně zpracován, nebo alespoň ověřený a přijatý.
 

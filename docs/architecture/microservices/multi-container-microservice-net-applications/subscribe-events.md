@@ -2,12 +2,12 @@
 title: Přihlášení k odběru událostí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s podrobnostmi o publikování a předplatném integračních událostí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 208b0f27aa1e6ceb6686e9e846b6e31d9f1c74df
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c607f8b980f7dffacf3564688c6c9bb498264d96
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035642"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737061"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -139,7 +139,7 @@ Při implementaci kroků publikování událostí máte tyto možnosti:
 
 Obrázek 6-22 ukazuje architekturu pro první z těchto přístupů.
 
-![Jeden z přístupů ke zpracování nedělitelnost při publikování událostí: použijte jednu transakci k potvrzení události do tabulky protokolu událostí a pak další transakci, která se má publikovat (používá se v eShopOnContainers).](./media/image23.png)
+![Diagram nedělitelnost při publikování bez pracovního mikroslužby.](./media/subscribe-events/atomicity-publish-event-bus.png)
 
 **Obrázek 6-22**. Nedělitelnost při publikování událostí do sběrnice událostí
 
@@ -147,7 +147,7 @@ Při přístupu na obrázku 6-22 chybí další mikroslužba pracovního procesu
 
 O druhém přístupu: použijte tabulku EventLog jako frontu a vždy použijte k publikování těchto zpráv pracovní mikroslužbu. V takovém případě se jedná o proces, který je znázorněn na obrázku 6-23. Zobrazí se další mikroslužba a tabulka je jediným zdrojem při publikování událostí.
 
-![Další způsob, jak ošetřit nedělitelnost: publikovat do tabulky protokolu událostí a pak mít další mikroslužbu (pracovníka na pozadí), která tuto událost publikuje.](./media/image24.png)
+![Diagram nedělitelnost při publikování pomocí mikroslužby pracovního procesu](./media/subscribe-events/atomicity-publish-worker-microservice.png)
 
 **Obrázek 6-23**. Nedělitelnost při publikování událostí do sběrnice událostí pomocí mikroslužby pracovního procesu
 
@@ -279,7 +279,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 Obslužná rutina události musí ověřit, zda produkt existuje v žádné z instancí koše. Také aktualizuje cenu položky pro každou související položku řádku košíku. Nakonec se vytvoří výstraha, která uživateli zobrazí informace o změně ceny, jak je znázorněno na obrázku 6-24.
 
-![Zobrazení prohlížeče oznámení o změně procesu na uživatelském košíku.](./media/image25.png)
+![Snímek obrazovky prohlížeče znázorňujícího oznámení o změně ceny na uživatelském košíku](./media/subscribe-events/display-item-price-change.png)
 
 **Obrázek 6-24**. Zobrazení změny ceny položky v košíku, jak se sdělují událostmi integrace
 

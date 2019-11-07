@@ -2,12 +2,12 @@
 title: Návrh aplikace orientované na mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s výhodami a downsides aplikací orientovaných na mikroslužby, abyste mohli vzít v úvahu své rozhodnutí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 1c2fe341c62111e915df35aab818b8a980004834
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a783d582f39d25be0123f410553a54af970a4f67
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772064"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739536"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
 
@@ -65,9 +65,11 @@ Takže se můžete soustředit na architekturu a technologie a nemusíte se zaj�
 
 Aplikace se skládá z několika subsystémů, včetně několika front-endu uživatelského rozhraní úložiště (webová aplikace a nativní mobilní aplikace), spolu s back-endové mikroslužby a kontejnery pro všechny požadované operace na straně serveru s několika branami rozhraní API, jako je konsolidované vstupní body do interních mikroslužeb. Obrázek 6-1 ukazuje architekturu referenční aplikace.
 
-![Mobilní a SPA klienti komunikují s koncovými body brány rozhraní API, které pak komunikují s mikroslužbami. Tradiční webový klient komunikuje s mikroslužbou MVC, která komunikuje s mikroslužbami](./media/image1.png)
+![Diagram klientských aplikací využívajících eShopOnContainers v jednom hostiteli Docker.](./media/microservice-application-design/eshoponcontainers-reference-application-architecture.png)
 
 **Obrázek 6-1**. Architektura referenčních aplikací eShopOnContainers pro vývojové prostředí
+
+Na výše uvedeném diagramu vidíte, že mobilní a SPA klienti komunikují s koncovými body brány rozhraní API, které pak komunikují s mikroslužbami. Tradiční webové klienty komunikují s mikroslužbou MVC, která komunikuje s mikroslužbami prostřednictvím brány rozhraní API.
 
 **Hostitelské prostředí**. Na obrázku 6-1 vidíte několik kontejnerů nasazených v rámci jednoho hostitele Docker. To by znamenalo, že při nasazování do jednoho hostitele Docker s příkazem Docker-sestavit. Pokud ale používáte cluster Orchestrator nebo kontejnerů, každý kontejner může běžet na jiném hostiteli (uzlu) a kterýkoli uzel může spustit libovolný počet kontejnerů, jak jsme už zjistili v části architektura.
 
@@ -140,7 +142,7 @@ Jak je uvedeno v části architektura, při navrhování a sestavování komplex
 
 Externí architektura je architektura mikroslužeb, která se skládá z několika služeb, podle principů popsaných v části architektura této příručky. V závislosti na povaze jednotlivých mikroslužeb a nezávisle na architektuře mikroslužeb na vysoké úrovni se ale jedná o běžné a občas vhodné mít různé interní architektury, z nichž každá vychází z různých vzorů pro různé mikroslužeb. Mikroslužby můžou dokonce používat různé technologie a programovací jazyky. Obrázek 6-2 znázorňuje tuto různorodost.
 
-![Rozdíl mezi externí architekturou: vzory mikroslužeb, brány API, odolná komunikace, pub/sub atd. a interní architektura: řízené daty/CRUD, DDD vzory, vkládání závislostí, vícenásobné knihovny atd.](./media/image2.png)
+![Diagram porovnání vzorů externích a interních architektur](./media/microservice-application-design/external-versus-internal-architecture.png)
 
 **Obrázek 6-2**. Externí versus interní architektura a návrh
 
@@ -170,11 +172,11 @@ Můžete také vytvářet mikroslužby s mnoha technologiemi a jazyky, jako jsou
 
 Důležitým bodem je, že žádný konkrétní model ani styl architektury ani žádná konkrétní technologie nejsou pro všechny situace správné. Obrázek 6-3 ukazuje některé přístupy a technologie (i když nejsou v žádné konkrétní objednávce), které by mohly být použity v různých mikroslužbách.
 
-![Multi-architektonické vzory a Polyglot mikroslužby znamená, že můžete kombinovat a používat jazyky a technologie pro potřeby jednotlivých mikroslužeb a pořád je vzájemně komunikovat.](./media/image3.png)
+![Diagram znázorňující 12 komplexní mikroslužby v architektuře Polyglot World.](./media/microservice-application-design/multi-architectural-patterns-polyglot-microservices.png)
 
 **Obrázek 6-3**. Modely s více architekturami a Polyglot mikroslužby na světě
 
-Jak je znázorněno na obrázku 6-3, můžete v aplikacích složených z mnoha mikroslužeb (ohraničených kontextů v terminologii návrhu založené na doméně nebo jednoduše "subsystémy" jako autonomní mikroslužby) implementovat jednotlivé mikroslužby jiným způsobem. Každá z nich může mít jiný model architektury a používat různé jazyky a databáze v závislosti na povaze aplikace, obchodních požadavcích a prioritách. V některých případech mohou být mikroslužby podobné. Ale to není obvykle případ, protože hranice kontextu a požadavky každého subsystému jsou obvykle odlišné.
+Multi-architektonické vzory a Polyglot mikroslužby znamená, že můžete kombinovat a používat jazyky a technologie pro potřeby jednotlivých mikroslužeb a pořád je vzájemně komunikovat. Jak je znázorněno na obrázku 6-3, můžete v aplikacích složených z mnoha mikroslužeb (ohraničených kontextů v terminologii návrhu založené na doméně nebo jednoduše "subsystémy" jako autonomní mikroslužby) implementovat jednotlivé mikroslužby jiným způsobem. Každá z nich může mít jiný model architektury a používat různé jazyky a databáze v závislosti na povaze aplikace, obchodních požadavcích a prioritách. V některých případech mohou být mikroslužby podobné. Ale to není obvykle případ, protože hranice kontextu a požadavky každého subsystému jsou obvykle odlišné.
 
 Například pro jednoduchou aplikaci údržby CRUD nemusí mít smysl navrhovat a implementovat vzory DDD. Ale pro vaši základní doménu nebo základní firmu možná budete muset použít pokročilejší vzory pro řešení složitých obchodních pravidel s neustále se měnícími obchodními pravidly.
 

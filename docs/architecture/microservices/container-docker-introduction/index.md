@@ -2,12 +2,12 @@
 title: Úvod ke kontejnerům a Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Úvod do kontejnerů a Docker
 ms.date: 08/31/2018
-ms.openlocfilehash: cb6244939f6ae89ba1dc824b55a21d1e010cef5e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 364cbc0ba8149be1873df628a1ca243f420e7d0b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296157"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740070"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod ke kontejnerům a Dockeru
 
@@ -19,7 +19,7 @@ Kontejnery také vzájemně izolují aplikace na sdíleném operačním systému
 
 Každý kontejner může spustit celou webovou aplikaci nebo službu, jak je znázorněno na obrázku 2-1. V tomto příkladu je hostitelem Docker hostitel kontejneru a app1, app2, svc 1 a svc 2 jsou kontejnery aplikace nebo služby.
 
-![Dvě aplikace a dvě služby běžící v operačním systému ve virtuálním počítači nebo fyzickém serveru](./media/image1.png)
+![Diagram znázorňující čtyři kontejnery běžící na virtuálním počítači nebo na serveru.](./media/index/multiple-containers-single-host.png)
 
 **Obrázek 2-1**. Více kontejnerů spuštěných v hostiteli kontejneru
 
@@ -28,5 +28,5 @@ Další výhodou kontejneru je škálovatelnost. Horizontální navýšení kapa
 V krátkém případě kontejnery nabízejí výhody izolace, přenositelnosti, flexibility, škálovatelnosti a řízení napříč celým pracovním postupem životního cyklu aplikace. Nejdůležitější výhodou je izolace prostředí, která je součástí vývoje a operace.
 
 >[!div class="step-by-step"]
->[Předchozí](../index.md)Další
->[](docker-defined.md)
+>[Předchozí](../index.md)
+>[Další](docker-defined.md)

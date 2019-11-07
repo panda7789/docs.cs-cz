@@ -2,12 +2,12 @@
 title: Monitorování stavu
 description: Prozkoumejte jeden ze způsobů implementace monitorování stavu.
 ms.date: 01/07/2019
-ms.openlocfilehash: 2d43efa7b6cfb855a033ee4d766c64c2472ceb36
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1d63e04bbea95fcf0a9f9d3b50aef0e7d4a830e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094070"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732883"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -123,7 +123,7 @@ Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/X
 
 Například v `Catalog.API` mikroslužeb byly přidány následující balíčky NuGet:
 
-![Zobrazení Průzkumníka řešení projektu Catalog. API, kde se odkazuje na balíčky NuGet AspNetCore. Diagnostics. HealthChecks](./media/image6.png)
+![Snímek obrazovky s balíčky NuGet AspNetCore. Diagnostics. HealthChecks](./media/monitor-app-health/aspnet-core-diagnostics-health-checks.png)
 
 **Obrázek 8-7**. Vlastní kontroly stavu implementované v katalogu. API pomocí AspNetCore. Diagnostics. HealthChecks
 
@@ -191,7 +191,7 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
 
 Pokud jste nakonfigurovali kontroly stavu, jak je popsáno v tomto článku, a máte mikroslužbu spuštěnou v Docker, můžete přímo z prohlížeče zkontrolovat, jestli je v pořádku. Musíte publikovat port kontejneru v hostiteli Docker, abyste mohli ke kontejneru přistupovat prostřednictvím IP adresy externího hostitele Docker nebo prostřednictvím `localhost`, jak ukazuje obrázek 8-8.
 
-![Zobrazení prohlížeče odpovědi JSON vrácené kontrolou stavu](./media/image7.png)
+![Snímek obrazovky s odpovědí JSON vrácenou kontrolou stavu](./media/monitor-app-health/health-check-json-response.png)
 
 **Obrázek 8-8**. Kontrola stavu jedné služby z prohlížeče
 
@@ -205,7 +205,7 @@ Ukázka eShopOnContainers obsahuje webovou stránku, která zobrazuje ukázkové
 
 Naštěstí [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) také poskytuje balíček NuGet [AspNetCore. HealthChecks. UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) , který se dá použít k zobrazení výsledků kontroly stavu z konfigurovaných identifikátorů URI.
 
-![Zobrazení prohlížeče aplikace stavu weba zobrazuje stav všech mikroslužeb od eShopOnContainers](./media/image8.png)
+![Snímek obrazovky eShopOnContainers stavu uživatelského rozhraní kontroly stavu.](./media/monitor-app-health/health-check-status-ui.png)
 
 **Obrázek 8-9**. Ukázka sestavy kontroly stavu v eShopOnContainers
 

@@ -2,14 +2,14 @@
 title: Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: 5f44029a214cf1f366fc787e27a9ac34599c4dca
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: e6fae8140b55cb0308dca9f4b77e961501b41f8f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373975"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739392"
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro Cloud: zapojení přechodných selhání do cloudu
 
 Odolnost proti chybám je schopnost zotavení po selháních a nadále fungovat. Odolnost proti chybám nebrání, ale přijímá skutečnost, že dojde k selhání, a pak na ně reagovat způsobem, který brání výpadkům nebo ztrátě dat. Cílem odolnosti proti chybám je vrátit aplikaci do plně funkčního stavu po selhání.
 
@@ -27,7 +27,7 @@ Podobný scénář může nastat v aplikaci, která používá služby HTTP. Sí
 
 Odolná aplikace jako ta, která je znázorněna na obrázku 4-9, by měla implementovat techniky, jako je "opakování s exponenciálním omezení rychlosti", aby aplikace mohla mít možnost zpracovávat přechodné chyby v prostředcích. V aplikacích byste také měli použít "okruhy okruhů". Přepínací modul okruhů zastaví aplikaci, aby se pokusil o přístup k prostředku, když je skutečně dlouhodobá chyba. Když použijete přerušení obvodu, aplikace zabrání tomu, aby provoking odepření služby.
 
-![Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu](./media/image9.png)
+![Diagram částečných selhání zpracovávaných opakovanými pokusy pomocí exponenciálního omezení rychlostiu.](./media/build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud/retry-partial-failures.png)
 
 **Obrázek 4-9.** Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu
 
@@ -58,5 +58,5 @@ Další informace o implementaci strategií pro zpracování částečných chyb
     https://github.com/App-vNext/Polly
 
 >[!div class="step-by-step"]
->[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)Další
->[](modernize-your-apps-with-monitoring-and-telemetry.md)
+>[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+>[Další](modernize-your-apps-with-monitoring-and-telemetry.md)

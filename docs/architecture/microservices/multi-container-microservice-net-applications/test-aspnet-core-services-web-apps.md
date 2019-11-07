@@ -2,12 +2,12 @@
 title: Testování služeb a webových aplikací ASP.NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET Core služeb a webových aplikací v kontejnerech.
 ms.date: 10/02/2018
-ms.openlocfilehash: 278d12b8215195351673a41149db5af6fcecddfb
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 324b71d830bca43be71e8847fe2dd1b8b1593556
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772019"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739470"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 
@@ -144,7 +144,7 @@ Testy referenční aplikace (eShopOnContainers) se nedávno změnily a teď exis
 
 Test jednotek a integračních testů na mikroslužbu je obsažen v testovací složce v každé mikroslužbě a aplikaci. testy zatížení jsou obsaženy ve složce test ve složce řešení, jak je znázorněno na obrázku 6-25.
 
-![Struktura testů v eShopOnContainers: Každá služba má složku "test", která obsahuje jednotky a funkční testy. Ve složce řešení "test" jsou funkční testy pro nejrůznější aplikace a zátěžový test.](./media/image42.png)
+![Snímek obrazovky VS ukazující některé z testovacích projektů v řešení](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
 **Obrázek 6-25**. Struktura testovacích složek v eShopOnContainers
 

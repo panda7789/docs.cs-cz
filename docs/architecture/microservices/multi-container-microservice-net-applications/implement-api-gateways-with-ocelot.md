@@ -2,12 +2,12 @@
 title: Implementace bran rozhraní API s Ocelotem
 description: Naučte se implementovat brány API pomocí Ocelot a jak používat Ocelot v prostředí založeném na kontejnerech.
 ms.date: 10/02/2018
-ms.openlocfilehash: cb452c330712ecf536cdf09f41fdbf828a4e9314
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 6c576a17d784777557bfb8bd99438eb111e8ec2e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771173"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737657"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace bran API pomocí Ocelot
 
@@ -22,7 +22,7 @@ Referenční aplikace [eShopOnContainers](https://github.com/dotnet-architecture
 
 Následující diagram architektury ukazuje, jak jsou brány rozhraní API implementované pomocí Ocelot v eShopOnContainers.
 
-![Diagram architektury eShopOnContainers znázorňující klientské aplikace, mikroslužby a brány rozhraní API mezi](./media/image28.png)
+![Diagram znázorňující architekturu eShopOnContainers](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture.png)
 
 **Obrázek 6-28**. Architektura eShopOnContainers s bránami API
 
@@ -46,7 +46,7 @@ Jako Key poznatkem pro mnoho středních a velkých aplikací je použití před
 
 Například eShopOnContainers má kolem šesti interních typů mikroslužeb, které je třeba publikovat prostřednictvím bran rozhraní API, jak je znázorněno na následujícím obrázku.
 
-![Pomocí brány API se publikují jenom košíky, katalogy, umístění, marketing, objednávky a platební služby.](./media/image29.png)
+![Snímek obrazovky se složkou služby zobrazující její podsložky](./media/implement-api-gateways-with-ocelot/eshoponcontainers-microservice-folders.png)
 
 **Obrázek 6-29**. Složky mikroslužeb v řešení eShopOnContainers v aplikaci Visual Studio
 
@@ -54,7 +54,7 @@ O službě identit, v návrhu, který je z hlediska směrování brány rozhran�
 
 Všechny tyto služby se v současnosti implementují jako ASP.NET Core služby webového rozhraní API, jak je můžete říct od kódu. Pojďme se zaměřit na jednu z mikroslužeb, jako je kód mikroslužby katalogu.
 
-![Zobrazení Průzkumníka řešení projektu Catalog. API](./media/image30.png)
+![Snímek obrazovky Průzkumník řešení zobrazující obsah projektu Catalog. API](./media/implement-api-gateways-with-ocelot/catalog-api-microservice-folders.png)
 
 **Obrázek 6-30**. Ukázka mikroslužby webového rozhraní API (služba katalogu mikroslužeb)
 
@@ -130,7 +130,7 @@ Tento příkaz spustí pouze závislosti kontejneru služby Catalog. API a závi
 
 Pak můžete přímo získat přístup ke mikroslužbám katalogu a pomocí uživatelského rozhraní Swagger získat přístup k jeho metodám přímo prostřednictvím tohoto "externího" portu, v tomto případě `http://localhost:5101/swagger`:
 
-![Zobrazení prohlížeče stáří uživatelského rozhraní Swagger pro REST API katalogu. API](./media/image31.png)
+![Snímek obrazovky uživatelského rozhraní Swagger zobrazující REST API katalogu. API](./media/implement-api-gateways-with-ocelot/test-catalog-microservice.png)
 
 **Obrázek 6-31**. Testování mikroslužby katalogu pomocí uživatelského rozhraní Swagger
 
@@ -152,7 +152,7 @@ Install-Package Ocelot
 
 V eShopOnContainers je jeho implementace brány API jednoduchý ASP.NET Core projekt webhosta a middleware Ocelot zpracovává všechny funkce brány API, jak je znázorněno na následujícím obrázku:
 
-![Průzkumník řešení zobrazení projektu brány rozhraní API Ocelot](./media/image32.png)
+![Snímek obrazovky Průzkumník řešení zobrazující projekt brány API Ocelot](./media/implement-api-gateways-with-ocelot/ocelotapigw-base-project.png)
 
 **Obrázek 6-32**. Projekt OcelotApiGw Base v eShopOnContainers
 
@@ -266,7 +266,7 @@ DownstreamPathTemplate, schéma a DownstreamHostAndPorts vytvoří interní adre
 
 Port je interní port používaný službou. Při použití kontejnerů se port zadal na jeho souboru Dockerfile.
 
-@No__t_0 je název služby, který závisí na překladu názvu služby, který používáte. Při použití Docker-skládání jsou názvy služeb poskytovány hostitelem Docker, který používá názvy služeb, které jsou k dispozici v souborech Docker-pro vytváření. Pokud používáte Orchestrator jako Kubernetes nebo Service Fabric, měl by tento název přeložit DNS nebo překlad IP adres, který poskytuje každý Orchestrator.
+`Host` je název služby, který závisí na překladu názvu služby, který používáte. Při použití Docker-skládání jsou názvy služeb poskytovány hostitelem Docker, který používá názvy služeb, které jsou k dispozici v souborech Docker-pro vytváření. Pokud používáte Orchestrator jako Kubernetes nebo Service Fabric, měl by tento název přeložit DNS nebo překlad IP adres, který poskytuje každý Orchestrator.
 
 DownstreamHostAndPorts je pole, které obsahuje hostitele a port jakékoli služby pro příjem dat, na kterou chcete předávané požadavky. Obvykle bude obsahovat pouze jednu položku, někdy ale můžete chtít vyrovnávat zatížení požadavků na služby pro příjem dat a Ocelot umožňuje přidat více než jednu položku a pak vybrat nástroj pro vyrovnávání zatížení. Pokud ale používáte Azure a jakýkoli Orchestrator, je pravděpodobně lepší vyrovnávat zatížení s infrastrukturou Cloud a Orchestrator.
 
@@ -280,7 +280,7 @@ Jak je zavedené v sekcích architektury a návrhu, pokud opravdu chcete mít au
 
 V eShopOnContainers používáme jednu Image kontejneru Docker s bránou rozhraní Ocelot API, ale za běhu vytvoříme pro každý typ rozhraní API – Gateway nebo BFF různé služby a kontejnery, a to tak, že zadáte jiný soubor Configuration. JSON, který bude používat svazek Docker pro pro každou službu získáte přístup k jiné složce počítače.
 
-![Pro všechny čtyři brány API se používá jedna image Docker pro bránu API Ocelot.](./media/image33.png)
+![Diagram jedné image Docker Ocelot brány pro všechny brány API](./media/implement-api-gateways-with-ocelot/reusing-single-ocelot-docker-image.png)
 
 **Obrázek 6-33**. Opětovné použití jedné image Docker Ocelot napříč více typy brány rozhraní API
 
@@ -354,7 +354,7 @@ webmarketingapigw:
 
 Z důvodu tohoto předchozího kódu, jak je znázorněno v Průzkumníkovi aplikace Visual Studio níže, je jediným souborem potřebným k definování každé konkrétní brány rozhraní API pro obchodní/BFF jenom soubor Configuration. JSON, protože čtyři brány rozhraní API jsou založené na stejné imagi Docker.
 
-![Jediný rozdíl mezi všemi branami rozhraní API je soubor Configuration. JSON na každém z nich.](./media/image34.png)
+![Snímek obrazovky zobrazující všechny brány rozhraní API se soubory Configuration. JSON.](./media/implement-api-gateways-with-ocelot/ocelot-configuration-files.png)
 
 **Obrázek 6-34**. Jediným souborem potřebným k definování každého rozhraní API Gateway/BFF s Ocelot je konfigurační soubor.
 
@@ -364,13 +364,13 @@ Když teď spustíte eShopOnContainers s branami rozhraní API (standardně ve v
 
 Když například navštívíte nadřazený URL `http://localhost:5202/api/v1/c/catalog/items/2/` obsluhované bránou webshoppingapigw API, získáte stejný výsledek z interní adresy URL pro příjem dat `http://catalog.api/api/v1/2` v rámci hostitele Docker, jako v následujícím prohlížeči.
 
-![Zobrazení prohlížeče odpovědi z katalogu. API přes bránu API](./media/image35.png)
+![Snímek obrazovky prohlížeče znázorňující odpověď procházející rozhraním API Gateway](./media/implement-api-gateways-with-ocelot/access-microservice-through-url.png)
 
 **Obrázek 6-35**. Přístup k mikroslužbám prostřednictvím adresy URL poskytované bránou API
 
 Z důvodu testování nebo ladění, pokud jste chtěli získat přímý přístup ke kontejneru Docker katalogu (jenom ve vývojovém prostředí) bez předávání bránou API, protože Catalog. API je interní překlad DNS na hostitele Docker (služba zjišťování, které zpracovává služba Docker – název služby: jediným způsobem, jak přímo přistupovat ke kontejneru, je externí port publikovaný v Docker-Compose. override. yml, který je k dispozici pouze pro vývojové testy, například `http://localhost:5101/api/v1/Catalog/items/1` v následujícím prohlížeči.
 
-![Zobrazení prohlížeče odpovědi z katalogu. API, které se bude nacházelo přímo do katalogu. API, které je identické s rozhraním API Gateway.](./media/image36.png)
+![Snímek obrazovky prohlížeče ukazující přímou odpověď na katalog. API](./media/implement-api-gateways-with-ocelot/direct-access-microservice-testing.png)
 
 **Obrázek 6-36**. Přímý přístup k mikroslužbám pro účely testování
 
@@ -384,13 +384,13 @@ V souladu s tímto přístupem je diagram kompozice brány API ve skutečnosti t
 
 V následujícím diagramu můžete také vidět, jak služby Agregátoru fungují s jejich souvisejícími bránami API.
 
-![eShopOnContainers architektura, která zobrazuje agregátorové služby.](./media/image37.png)
+![Diagram architektury eShopOnContainers znázorňující služby Agregátoru](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture-aggregator-services.png)
 
 **Obrázek 6-37**. Architektura eShopOnContainers s agregátor Services
 
 Další přiblížení: v obchodní oblasti "nakupování" na následujícím obrázku vidíte, že upovídanost mezi klientskými aplikacemi a mikroslužbami se při používání Agregátoru v bránách rozhraní API zkrátí.
 
-![přiblížit eShopOnContainers architekturu, zobrazuje agregátorové služby, které "sestaví" odpověď ", která" spojuje "odezvu z několika mikroslužeb, aby snížila upovídanost koncového klienta.](./media/image38.png)
+![Diagram znázorňující přiblížení architektury eShopOnContainers](./media/implement-api-gateways-with-ocelot/zoom-in-vision-aggregator-services.png)
 
 **Obrázek 6-38**. Přiblížení ve výhledu Agregátorových služeb
 
@@ -404,17 +404,17 @@ V bráně rozhraní Ocelot API můžete službu ověřování, jako je ASP.NET C
 
 Vzhledem k tomu, že eShopOnContainers používá více bran rozhraní API s hranicemi založenými na BFF a obchodních oblastech, služba identity/auth nepochází z bran rozhraní API, jak je zvýrazněna žlutě v následujícím diagramu.
 
-![Diagram architektury eShopOnContainers znázorňující mikroslužbu identity pod bránou API.](./media/image39.png)
+![Diagram znázorňující mikroslužbu identity pod bránou API](./media/implement-api-gateways-with-ocelot/eshoponcontainers-identity-service-position.png)
 
 **Obrázek 6-39**. Pozice služby identity v eShopOnContainers
 
 Ocelot však podporuje i podřízení identity/auth mikroslužby v rámci hranice brány rozhraní API, jako v tomto jiném diagramu.
 
-![Ověřování pomocí mikroslužby identity pod bránou API (AG): 1) AG vyžádá ověřovací token od mikroslužby identity, 2) mikroslužba identity Toke do AG, 3-4) požadavky AG z mikroslužeb pomocí ověřovacího tokenu.](./media/image40.png)
+![Diagram znázorňující ověřování v bráně Ocelot API](./media/implement-api-gateways-with-ocelot/ocelot-authentication.png)
 
 **Obrázek 6-40**. Ověřování v Ocelot
 
-Vzhledem k tomu, že aplikace eShopOnContainers rozdělila bránu API na více BFF (back-end pro front-end) a brány rozhraní API obchodních oblastí, měla by být další možnost vytvoření další brány rozhraní API pro různé průřezy. Tato volba by byla poctivá v komplexnější architektuře založené na mikroslužbách s více aspekty, které se na mikroslužby týkají. Vzhledem k tomu, že v eShopOnContainers existuje pouze jeden problém pro průřez, bylo rozhodnuto pouze zpracovat službu zabezpečení ze sféry brány rozhraní API, a to z důvodu zjednodušení.
+Jak ukazuje předchozí diagram, když je mikroslužba identity pod bránou API (AG): 1) AG vyžádá ověřovací token od mikroslužby identity, 2) mikroslužba identity vrátí token do AG, 3-4) žádosti AG z mikroslužeb pomocí ověřovacího tokenu. Vzhledem k tomu, že aplikace eShopOnContainers rozdělila bránu API na více BFF (back-end pro front-end) a brány rozhraní API obchodních oblastí, měla by být další možnost vytvoření další brány rozhraní API pro různé průřezy. Tato volba by byla poctivá v komplexnější architektuře založené na mikroslužbách s více aspekty, které se na mikroslužby týkají. Vzhledem k tomu, že v eShopOnContainers existuje pouze jeden problém pro průřez, bylo rozhodnuto pouze zpracovat službu zabezpečení ze sféry brány rozhraní API, a to z důvodu zjednodušení.
 
 V každém případě platí, že pokud je aplikace zabezpečená na úrovni brány rozhraní API, při pokusu o použití zabezpečené mikroslužby se nejdřív navštíví modul ověřování brány API Ocelot. Ta přesměruje požadavek HTTP na návštěvu identity nebo auth mikroslužeb, aby získal přístupový token, takže můžete přejít k chráněným službám pomocí access_token.
 
@@ -540,11 +540,11 @@ Příchozí přenos dat se ale právě přesměrovává na požadavky HTTP, ale 
 
 Mít v Kubernetes před webovými aplikacemi úroveň příchozího Nginxu a několik bran Ocelot API/BFF je ideální architekturou, jak je znázorněno v následujícím diagramu.
 
-![Kubernetes příchozí připojení funguje jako reverzní proxy server pro veškerý provoz do aplikace, včetně webových aplikací, které jsou obvykle mimo rozsah brány rozhraní API.](./media/image41.png)
+![Diagram znázorňující, jak úroveň příchozího připadá do prostředí AKS.](./media/implement-api-gateways-with-ocelot/eshoponcontainer-ingress-tier.png)
 
 **Obrázek 6-41**. Úroveň příchozího přenosu v eShopOnContainers při nasazení do Kubernetes
 
-Když nasadíte eShopOnContainers do Kubernetes, zveřejňuje se v podstatě jenom pár služeb nebo koncových _bodů, a_to v podstatě následující seznam přípon v adresách URL:
+Kubernetes příchozí připojení funguje jako reverzní proxy server pro veškerý provoz do aplikace, včetně webových aplikací, které jsou obvykle mimo rozsah brány rozhraní API. Když nasadíte eShopOnContainers do Kubernetes, zveřejňuje se v podstatě jenom pár služeb nebo koncových _bodů, a_to v podstatě následující seznam přípon v adresách URL:
 
 - `/` webové aplikace SPA klienta
 - `/webmvc` webové aplikace MVC klienta
