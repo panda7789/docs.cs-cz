@@ -7,6 +7,8 @@
           href: system-text-json-overview.md
         - name: Postup serializace a deserializace JSON
           href: system-text-json-how-to.md
+        - name: Postup zápisu vlastních převaděčů
+          href: system-text-json-converters-how-to.md
     - name: Binární serializace
       href: binary-serialization.md
       items:

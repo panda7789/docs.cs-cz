@@ -1,68 +1,66 @@
 - name: Sestavení v .NET
   href: index.md
+- name: Obsah sestavení
+  href: contents.md
+- name: Manifest
+  href: manifest.md
+- name: Důležité informace o zabezpečení
+  href: security-considerations.md
+- name: Správa verzí
+  href: versioning.md
+- name: Souběžné spouštění
+  href: side-by-side-execution.md
+- name: Formát souborů sestavení
+  href: file-format.md
+- name: Možnost uvolnění v .NET Core
+  href: unloadability.md
+- name: Referenční sestavení
+  href: reference-assemblies.md
+- name: Řešení zavedení sestavení
+  href: resolve-loads.md
+- name: Vytváření sestavení
+  href: create.md
+- name: Názvy sestavení
+  href: names.md
+- name: Vyhledání plně kvalifikovaného názvu sestavení
+  href: find-fully-qualified-name.md
+- name: Umístění sestavení
+  href: location.md
+- name: Nastavování atributů sestavení
+  href: set-attributes.md
+- name: Sestavení se silným názvem
   items:
-    - name: Obsah sestavení
-      href: contents.md
-    - name: Manifest sestavení
-      href: manifest.md
-    - name: Sestavení se silným názvem
+    - name: Přehled
       href: strong-named.md
-    - name: Důležité informace o zabezpečení sestavení
-      href: security-considerations.md
-    - name: Správa verzí sestavení
-      href: versioning.md
-    - name: Sestavení a souběžné spouštění
-      href: side-by-side-execution.md
-    - name: Formát souborů sestavení
-      href: file-format.md
-    - name: 'Postupy: Použití a ladění funkce uvolnění sestavení v .NET Core'
-      href: unloadability.md
-    - name: Referenční sestavení
-      href: reference-assemblies.md
-    - name: Řešení zavedení sestavení
-      href: resolve-loads.md
-    - name: Programování se sestaveními
-      href: program.md
-      items:
-        - name: Vytváření sestavení
-          href: create.md
-        - name: Názvy sestavení
-          href: names.md
-        - name: 'Postupy: Vyhledání plně kvalifikovaného názvu sestavení'
-          href: find-fully-qualified-name.md
-        - name: Umístění sestavení
-          href: location.md
-        - name: Nastavování atributů sestavení
-          href: set-attributes.md
-        - name: Vytváření a používání sestavení se silným názvem
-          href: create-use-strong-named.md
-          items:
-            - name: 'Postupy: Vytvoření páru veřejného a privátního klíče'
-              href: create-public-private-key-pair.md
-            - name: 'Postupy: Podepsání sestavení silným názvem'
-              href: sign-strong-name.md
-            - name: Vylepšené silné názvy
-              href: enhanced-strong-naming.md
-            - name: 'Postupy: Odkazování na sestavení se silným názvem'
-              href: reference-strong-named.md
-            - name: 'Postupy: Zakázání funkce obejití silného názvu'
-              href: disable-strong-name-bypass-feature.md
-        - name: Opožděný podpis sestavení
-          href: delay-sign.md
-        - name: 'Postupy: Zobrazení obsahu sestavení'
-          href: view-contents.md
-        - name: Předávání typů v modulu CLR (Common Language Runtime)
-          href: type-forwarding.md
-        - name: Přátelská sestavení
-          href: friend.md
-          items:
-            - name: 'Postupy: Vytváření nepodepsaných přátelských sestavení'
-              href: create-unsigned-friend.md
-            - name: 'Postupy: Vytváření podepsaných přátelských sestavení'
-              href: create-signed-friend.md
-        - name: 'Postupy: Určení, zda je soubor sestavení'
-          href: identify.md
-        - name: 'Postupy: Zavedení a uvolnění sestavení'
-          href: load-unload.md
-        - name: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio'
-          href: embed-types-visual-studio.md
+    - name: Vytváření a používání sestavení se silným názvem
+      href: create-use-strong-named.md
+    - name: Vytvoření páru veřejného a privátního klíče
+      href: create-public-private-key-pair.md
+    - name: Podepsání sestavení silným názvem
+      href: sign-strong-name.md
+    - name: Vylepšené silné názvy
+      href: enhanced-strong-naming.md
+    - name: Odkazování na sestavení se silným názvem
+      href: reference-strong-named.md
+    - name: Zakázání obejití silného názvu
+      href: disable-strong-name-bypass-feature.md
+- name: Opožděný podpis sestavení
+  href: delay-sign.md
+- name: Zobrazení obsahu sestavení
+  href: view-contents.md
+- name: Předávání typů v modul CLR (Common Language Runtime)
+  href: type-forwarding.md
+- name: Přátelská sestavení
+  items:
+    - name: Přehled
+      href: friend.md
+    - name: Vytváření nepodepsaných přátelských sestavení
+      href: create-unsigned-friend.md
+    - name: Vytváření podepsaných přátelských sestavení
+      href: create-signed-friend.md
+- name: 'Určení, zda je soubor sestavení'
+  href: identify.md
+- name: Zavedení a uvolnění sestavení
+  href: load-unload.md
+- name: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio'
+  href: embed-types-visual-studio.md
