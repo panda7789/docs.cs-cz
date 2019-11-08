@@ -2,25 +2,22 @@
 title: CoreFx zásadní změny – .NET Core
 description: Obsahuje seznam nejnovějších změn v rozhraní .NET CoreFx, knihovny základních tříd.
 ms.date: 09/20/2019
-ms.openlocfilehash: 04ae857b5f46748ad57c742b6ccf421f57bc3138
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 028a5c1059a855d1de644dde9fd9ad5f85f47ffe
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093427"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739789"
 ---
-# <a name="corefx-breaking-changes"></a><span data-ttu-id="c21a5-103">CoreFx průlomové změny</span><span class="sxs-lookup"><span data-stu-id="c21a5-103">CoreFx breaking changes</span></span>
+# <a name="corefx-breaking-changes"></a><span data-ttu-id="c2a90-103">CoreFx průlomové změny</span><span class="sxs-lookup"><span data-stu-id="c2a90-103">CoreFx breaking changes</span></span>
 
-> [!IMPORTANT]
-> <span data-ttu-id="c21a5-104">Tento článek je v rámci konstrukce.</span><span class="sxs-lookup"><span data-stu-id="c21a5-104">This article is under construction.</span></span> <span data-ttu-id="c21a5-105">Nejedná se o úplný seznam nejnovějších změn .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c21a5-105">This is not a complete list of .NET Core breaking changes.</span></span> <span data-ttu-id="c21a5-106">Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) .</span><span class="sxs-lookup"><span data-stu-id="c21a5-106">For more information on .NET Core breaking changes, you can examine individual [breaking changes issues](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) in the dotnet/docs repository on GitHub.</span></span>
+<span data-ttu-id="c2a90-104">Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c2a90-104">The following is a list of CoreFx breaking changes by .NET Core version.</span></span> <span data-ttu-id="c2a90-105">CoreFx poskytuje primitivní a další obecné typy používané .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c2a90-105">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
 
-<span data-ttu-id="c21a5-107">Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c21a5-107">The following is a list of CoreFx breaking changes by .NET Core version.</span></span> <span data-ttu-id="c21a5-108">CoreFx poskytuje primitivní a další obecné typy používané .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c21a5-108">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
-
-## <a name="net-core-30-preview-7"></a><span data-ttu-id="c21a5-109">.NET Core 3,0 Preview 7</span><span class="sxs-lookup"><span data-stu-id="c21a5-109">.NET Core 3.0 Preview 7</span></span>
+## <a name="net-core-30-preview-7"></a><span data-ttu-id="c2a90-106">.NET Core 3,0 Preview 7</span><span class="sxs-lookup"><span data-stu-id="c2a90-106">.NET Core 3.0 Preview 7</span></span>
 
 [!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/jsonelement-api-changes.md)]
 
-## <a name="net-core-30-preview-8"></a><span data-ttu-id="c21a5-110">.NET Core 3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="c21a5-110">.NET Core 3.0 Preview 8</span></span>
+## <a name="net-core-30-preview-8"></a><span data-ttu-id="c2a90-107">.NET Core 3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="c2a90-107">.NET Core 3.0 Preview 8</span></span>
 
 [!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/change-in-null-in-utf8jsonwriter.md)]
 
@@ -32,11 +29,11 @@ ms.locfileid: "73093427"
 
 [!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/jsonfactoryconverter-createconverter.md)]
 
-## <a name="net-core-30-preview-9"></a><span data-ttu-id="c21a5-111">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="c21a5-111">.NET Core 3.0 Preview 9</span></span>
+## <a name="net-core-30-preview-9"></a><span data-ttu-id="c2a90-108">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="c2a90-108">.NET Core 3.0 Preview 9</span></span>
 
 [!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/serializer-throws-notsupportedexception.md)]
 
-## <a name="net-core-30"></a><span data-ttu-id="c21a5-112">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="c21a5-112">.NET Core 3.0</span></span>
+## <a name="net-core-30"></a><span data-ttu-id="c2a90-109">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="c2a90-109">.NET Core 3.0</span></span>
 
 [!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/version-information-changes.md)]
 
