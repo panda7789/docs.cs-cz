@@ -1,15 +1,15 @@
 ---
 title: Začínáme s .NET pro Apache Spark
 description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows.
-ms.date: 06/27/2019
+ms.date: 11/04/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 19efc8412d834d73069c61e1cc1ccd9e5eb8593b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1b736e078eea40e399882c0df020062b6aa758ad
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774366"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740524"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
@@ -20,104 +20,192 @@ V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
 > * Příprava prostředí Windows pro rozhraní .NET pro Apache Spark
-> * Stáhnout **Microsoft. spark. Worker**
-> * Sestavení a spuštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
+> * Zápis prvního rozhraní .NET pro Apache Spark aplikaci
+> * Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
 
 ## <a name="prepare-your-environment"></a>Příprava prostředí
 
-Než začnete, ujistěte se, že na příkazovém řádku můžete spustit `dotnet`, `java`, `mvn`, `spark-shell`. Pokud je vaše prostředí už připravené, můžete přejít k další části. Pokud nemůžete spustit žádný nebo žádný z těchto příkazů, postupujte podle následujících kroků.
+Než začnete psát aplikaci, je potřeba nastavit některé požadované součásti. Pokud v prostředí příkazového řádku můžete spustit `dotnet`, `java`, `mvn``spark-shell`, je vaše prostředí už připravené a můžete přejít k další části. Pokud nemůžete spustit žádný z příkazů nebo všechny, proveďte následující kroky.
 
-1. Stáhněte a nainstalujte [sadu .NET Core 2.1 x SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1). Instalace sady SDK přidá do cesty `dotnet` sada nástrojů. K ověření instalace použijte příkaz prostředí PowerShell `dotnet --version`.
+### <a name="1-install-net"></a>1. instalace .NET
 
-2. Nainstalujte [Visual studio 2017](https://www.visualstudio.com/downloads/) nebo [Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/) s nejnovějšími aktualizacemi. Můžete použít komunita, Professional nebo Enterprise. Verze Community je zdarma.
+Chcete-li začít sestavovat aplikace .NET, je nutné stáhnout a nainstalovat sadu .NET SDK (Software Development Kit).
 
-   Během instalace vyberte následující úlohy:
-      * Vývoj pro desktopy .NET
-          * Všechny požadované součásti
-          * Vývojové nástroje .NET Framework 4.6.1
-      * Vývoj pro různé platformy .NET Core
-          * Všechny požadované součásti
+Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Instalace sady SDK přidá do cesty `dotnet` sada nástrojů. 
 
-3. Nainstalujte [Java 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+Po instalaci .NET Core SDK otevřete nový příkazový řádek a spusťte `dotnet`.
 
-    * Vyberte odpovídající verzi pro váš operační systém. Vyberte například **JDK-8u201-Windows-x64. exe** pro počítač se systémem Windows x64.
-    * K ověření instalace použijte příkaz prostředí PowerShell `java -version`.
+Pokud se příkaz spustí a vytiskne informace o použití dotnet, může přejít k dalšímu kroku. Pokud se zobrazí chyba `'dotnet' is not recognized as an internal or external command`, před spuštěním příkazu se ujistěte, že jste otevřeli **Nový** příkazový řádek. 
 
-4. Nainstalujte [Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi).
-    * Stáhněte si [Apache Maven 3.6.2](http://mirror.metrocast.net/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.zip).
-    * Extrahuje do místního adresáře. Například `c:\bin\apache-maven-3.6.2\`.
-    * Přidejte Apache Maven do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml). Pokud jste extrahovali `c:\bin\apache-maven-3.6.2\`, měli byste do cesty přidat `c:\bin\apache-maven-3.6.2\bin`.
-    * K ověření instalace použijte příkaz prostředí PowerShell `mvn -version`.
+### <a name="2-install-java"></a>2. instalace Java
 
-5. Nainstalujte [Apache Spark 2.3 +](https://spark.apache.org/downloads.html). Apache Spark 2.4 + se nepodporuje.
-    * Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a extrahujte ji do místní složky pomocí nástroje, jako je [7-zip](https://www.7-zip.org/) nebo [WinZip](https://www.winzip.com/). Můžete ho například extrahovat do `c:\bin\spark-2.3.2-bin-hadoop2.7\`.
-    * Přidejte Apache Spark do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml). Pokud jste extrahovali do `c:\bin\spark-2.3.2-bin-hadoop2.7\`, přidali byste do cesty `c:\bin\spark-2.3.2-bin-hadoop2.7\bin`.
-    * Přidejte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) nazvanou `SPARK_HOME`. Pokud jste extrahovali do `C:\bin\spark-2.3.2-bin-hadoop2.7\`, pro **hodnotu proměnné**použijte `C:\bin\spark-2.3.2-bin-hadoop2.7\`.
-    * Ověřte, že z příkazového řádku můžete spustit `spark-shell`.
+Nainstalujte [Java 8,1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-6. Nastavte [WinUtils](https://github.com/steveloughran/winutils).
-    * Stáhněte si binární soubor **winutils. exe** z [úložiště winutils](https://github.com/steveloughran/winutils). Vyberte verzi Hadoop, se kterou byla distribuce Sparku zkompilována. Například můžete použít **Hadoop-2.7.1** pro **Spark 2.3.2**. Na konci názvu instalační složky Sparku se používá Poznámka k verzi systému Hadoop.
-    * Uložte binární soubor **winutils. exe** do adresáře podle vašeho výběru. Například `c:\hadoop\bin`.
-    * Nastavte `HADOOP_HOME` pro reflektování adresáře pomocí **winutils. exe** bez `bin`. Například `c:\hadoop`.
-    * Nastavte proměnnou prostředí PATH tak, aby zahrnovala `%HADOOP_HOME%\bin`.
+Vyberte odpovídající verzi pro váš operační systém. Vyberte například **JDK-8u201-Windows-x64. exe** pro počítač se systémem Windows x64. Pak pomocí příkazového `java` Ověřte instalaci.
+   
+![Stažení Java](https://dotnet.microsoft.com/static/images/java-jdk-downloads-windows.png?v=6BbJHoNyDO-PyYVciImr5wzh2AW_YHNcyb3p093AwPA)
 
-Než přejdete k další části, můžete před přechodem na další část spustit `dotnet`, `java`, `mvn`, `spark-shell` z příkazového řádku.
+### <a name="3-install-7-zip"></a>3. instalace 7 – zip
 
-## <a name="download-the-microsoftsparkworker-release"></a>Stažení verze Microsoft. spark. Worker
+Apache Spark se stáhl jako komprimovaný soubor. tgz. K extrakci souboru použijte program pro extrakci, například 7 – zip.
 
-1. Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) ze stránky rozhraní .net pro Apache Spark verze GitHubu do svého místního počítače. Můžete ho třeba stáhnout do cesty `c:\bin\Microsoft.Spark.Worker\`.
+* Navštivte [soubory ke stažení pro 7 – zip](https://www.7-zip.org/).
+* V první tabulce na stránce vyberte 32 stažení x86 nebo 64-bit x64, v závislosti na vašem operačním systému.
+* Po dokončení stahování spusťte instalační program.
+   
+![Stažení 7Zip](https://dotnet.microsoft.com/static/images/7-zip-downloads.png?v=W6qWtFC1tTMKv3YGXz7lBa9F3M22uWyTvkMmunyroNk)
 
-2. Vytvořte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) nazvanou `DOTNET_WORKER_DIR` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali **Microsoft. spark. Worker**. Například `c:\bin\Microsoft.Spark.Worker`.
+### <a name="4-install-apache-spark"></a>4. instalace Apache Spark
 
-## <a name="clone-the-net-for-apache-spark-github-repo"></a>Klonovat rozhraní .NET pro Apache Spark úložiště GitHub
+[Stáhněte a nainstalujte Apache Spark](https://spark.apache.org/downloads.html). Bude nutné vybrat z verze 2,3. * nebo 2.4.0, 2.4.1, 2.4.3 nebo 2.4.4 (rozhraní .NET pro Apache Spark není kompatibilní s jinými verzemi Apache Spark).  
 
-K naklonování rozhraní .NET pro Apache Spark úložiště do počítače použijte následující příkaz [GitBash](https://gitforwindows.org/) .
+Příkazy použité v následujících krocích předpokládají, že jste [stáhli a nainstalovali Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz). Pokud chcete použít jinou verzi, nahraďte hodnotu **2.4.1** příslušným číslem verze. Pak extrahujte soubor **. tar** a Apache Spark soubory.
 
-```bash
-git clone https://github.com/dotnet/spark.git c:\github\dotnet-spark
+Extrahování vnořeného souboru **. tar** :
+
+* Vyhledejte soubor **Spark-2.4.1-bin-Hadoop 2.7. tgz** , který jste si stáhli.
+* Klikněte pravým tlačítkem na soubor a vyberte **7-zip-> extrakci**.
+* **Spark-2.4.1-bin-Hadoop 2.7. tar** se vytvoří společně s souborem **. tgz** , který jste stáhli.
+
+Extrahování Apache Spark souborů:
+
+* Klikněte pravým tlačítkem na **Spark-2.4.1-bin-Hadoop 2.7. tar** a vyberte **7-zip-> extrahování souborů...**
+* Do pole **extrahovat do** zadejte **C:\Bin** .
+* Zrušte zaškrtnutí políčka pod polem **extrahovat do** .
+* Vyberte **OK**.
+* Soubory Apache Spark jsou extrahovány do C:\bin\spark-2.4.1-bin-hadoop2.7\
+      
+![Instalace Sparku](https://dotnet.microsoft.com/static/images/spark-extract-with-7-zip.png?v=YvjUv54LIxI9FbALPC3h8zSQdyMtK2-NKbFOliG-f8M)
+    
+Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark:
+
+```console
+setx HADOOP_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
+setx SPARK_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 ```
+
+Jakmile nainstalujete vše a nastavíte proměnné prostředí, otevřete **Nový** příkazový řádek a spusťte následující příkaz:
+
+`%SPARK_HOME%\bin\spark-submit --version`
+
+Pokud se příkaz spustí a zobrazí informace o verzi, můžete přejít k dalšímu kroku.
+
+Pokud se zobrazí chyba `'spark-submit' is not recognized as an internal or external command`, ujistěte se, že jste otevřeli **Nový** příkazový řádek.
+
+### <a name="5-install-net-for-apache-spark"></a>5. Nainstalujte rozhraní .NET pro Apache Spark
+
+Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub. Například pokud jste na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 2.1](https://github.com/dotnet/spark/releases/download/v0.5.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).
+
+Extrakce Microsoft. spark. Worker:
+
+* Vyhledejte soubor **Microsoft. spark. work. netcoreapp 2.1. Win-x64-0.6.0. zip** , který jste stáhli.
+* Klikněte pravým tlačítkem a vyberte **7-zip-> extrahování souborů...** .
+* Do pole **extrahovat do** zadejte **C:\Bin** .
+* Zrušte zaškrtnutí políčka pod polem **extrahovat do** .
+* Vyberte **OK**.
+  
+![Instalace .NET Spark](https://dotnet.microsoft.com/static/images/dotnet-for-spark-extract-with-7-zip.png?v=jwCyum9mL0mGIi4V5zC7yuvLfcj1_nL-QFFD8TClhZk)
+
+### <a name="6-install-winutils"></a>6. instalace WinUtils
+
+Rozhraní .NET pro Apache Spark vyžaduje, aby se WinUtils nainstalovaly společně s Apache Spark. [Stáhněte si winutils. exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe). Pak zkopírujte WinUtils do **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.
+
+> [!NOTE]
+> Pokud používáte jinou verzi systému Hadoop, která je Poznáma na konci názvu instalační složky Sparku, [Vyberte verzi WinUtils](https://github.com/steveloughran/winutils) , která je kompatibilní s vaší verzí Hadoop. 
+
+### <a name="7-set-dotnet_worker_dir-and-check-dependencies"></a>7. Nastavte DOTNET_WORKER_DIR a ověřte závislosti.
+
+Spuštěním následujícího příkazu nastavte proměnnou prostředí `DOTNET_WORKER_DIR`, kterou aplikace .NET používá k vyhledání rozhraní .NET pro Apache Spark:
+
+`setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker-0.6.0"`
+
+Nakonec před přechodem na další oddíl dvakrát ověřte, že je možné spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku.
 
 ## <a name="write-a-net-for-apache-spark-app"></a>Zápis rozhraní .NET pro aplikaci Apache Spark
 
-1. Otevřete **Visual Studio** a přejděte na **soubor > vytvořit nový projekt > Konzolová aplikace (.NET Core)** . Pojmenujte aplikaci **HelloSpark**.
+### <a name="1-create-a-console-app"></a>1. vytvoření konzolové aplikace
 
-2. Nainstalujte [balíček NuGet Microsoft. Spark](https://www.nuget.org/profiles/spark). Další informace o instalaci balíčků NuGet najdete v tématu [různé způsoby instalace balíčku NuGet](https://docs.microsoft.com/nuget/consume-packages/ways-to-install-a-package).
+Na příkazovém řádku spusťte následující příkazy k vytvoření nové konzolové aplikace:
 
-3. V **Průzkumník řešení**otevřete **program.cs** a napište následující C# kód:
+```console
+dotnet new console -o mySparkApp
+cd mySparkApp
+```
 
-   ```csharp
-     var spark = SparkSession.Builder().GetOrCreate();
-     var df = spark.Read().Json("people.json");
-     df.Show();
-   ```
+Příkaz `dotnet` vytvoří pro vás `new`ou aplikaci typu `console`. Parametr `-o` vytvoří adresář s názvem *mySparkApp* , kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd mySparkApp` změní adresář na adresář aplikace, který jste právě vytvořili.
 
-4. Sestavte řešení.
+### <a name="2-install-nuget-package"></a>2. instalace balíčku NuGet
+
+Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark. Na příkazovém řádku spusťte následující příkaz:
+
+`dotnet add package Microsoft.Spark --version 0.6.0`
+
+### <a name="3-code-your-app"></a>3. kódování aplikace
+
+Otevřete *program.cs* v Visual Studio Code nebo libovolný textový editor a nahraďte celý kód následujícím kódem:
+
+```csharp
+using Microsoft.Spark.Sql;
+
+namespace MySparkApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create a Spark session.
+            var spark = SparkSession
+                .Builder()
+                .AppName("word_count_sample")
+                .GetOrCreate();
+
+            // Create initial DataFrame.
+            DataFrame dataFrame = spark.Read().Text("input.txt");
+
+            // Count words.
+            var words = dataFrame
+                .Select(Functions.Split(Functions.Col("value"), " ").Alias("words"))
+                .Select(Functions.Explode(Functions.Col("words"))
+                .Alias("word"))
+                .GroupBy("word")
+                .Count()
+                .OrderBy(Functions.Col("count").Desc());
+
+            // Show results.
+            words.Show();
+
+            // Stop Spark session.
+            spark.Stop();
+        }
+    }
+}
+```
+
+### <a name="4-add-data-file"></a>4. Přidejte datový soubor.
+
+Vaše aplikace zpracovává soubor obsahující řádky textu. Vytvořte ve svém adresáři *mySparkApp* soubor *input. txt* s následujícím textem:
+
+```text
+Hello World
+This .NET app uses .NET for Apache Spark
+This .NET app counts words with Apache Spark
+```
 
 ## <a name="run-your-net-for-apache-spark-app"></a>Spuštění aplikace .NET pro Apache Spark
 
-1. Otevřete **PowerShell** a změňte adresář na složku, ve které je uložená vaše aplikace.
+1. Spuštěním následujícího příkazu sestavte aplikaci:
 
-   ```powershell
-   cd <your-app-output-directory>
+   ```dotnetcli
+   dotnet build
    ```
 
-2. Vytvořte soubor s názvem **lidi. JSON** s následujícím obsahem:
-
-   ```json
-   {"name":"Michael"}
-   {"name":"Andy", "age":30}
-   {"name":"Justin", "age":19}
-   ```
-
-3. Ke spuštění aplikace použijte následující příkaz prostředí PowerShell:
+2. Spuštěním následujícího příkazu odešlete aplikaci, která se má spustit na Apache Spark:
 
    ```powershell
-    spark-submit `
-    --class org.apache.spark.deploy.dotnet.DotnetRunner `
-    --master local `
-    microsoft-spark-2.4.x-<version>.jar `
-    dotnet HelloSpark.dll
-    ```
+   %SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local bin\Debug\netcoreapp3.0\microsoft-spark-2.4.x-0.6.0.jar dotnet bin\Debug\netcoreapp3.0\mySparkApp.dll
+   ```
+
+3. Po spuštění aplikace se do konzoly zapíše data počtu slov ve *vstupním souboru. txt* .
 
 Blahopřejeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.
 
@@ -127,8 +215,10 @@ V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > * Příprava prostředí Windows pro rozhraní .NET pro Apache Spark
-> * Stáhnout **Microsoft. spark. Worker**
-> * Sestavení a spuštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
+> * Zápis prvního rozhraní .NET pro Apache Spark aplikaci
+> * Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
+
+Pokud se chcete podívat na video s vysvětlením výše uvedených kroků, Zarezervujte si [řadu videí .NET pro Apache Spark 101](https://channel9.msdn.com/Series/NET-for-Apache-Spark-101/Run-Your-First-NET-for-Apache-Spark-App).
 
 Další informace najdete na stránce prostředky.
 > [!div class="nextstepaction"]
