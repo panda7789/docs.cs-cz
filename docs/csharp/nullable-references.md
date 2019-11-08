@@ -3,12 +3,12 @@ title: Odkazové typy s možnou hodnotou null
 description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8,0. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
 ms.technology: csharp-null-safety
 ms.date: 02/19/2019
-ms.openlocfilehash: e20ea6efa389ba1aa0d8432a408c0b2a06a61c30
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ded7234ecb746ba03ba59505b7189272886f1cbf
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039770"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737834"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -28,7 +28,7 @@ Tato nová funkce poskytuje významné výhody pro zpracování referenčních p
 
 S přidáním odkazových typů s možnou hodnotou null můžete deklarovat svůj záměr zřetelněji. Hodnota `null` představuje správný způsob, jak vyjádřit, že proměnná neodkazuje na hodnotu. Tuto funkci nepoužívejte k odebrání všech hodnot `null` z kódu. Místo toho byste měli deklarovat svůj záměr kompilátoru a dalším vývojářům, kteří si přečtou váš kód. Tím, že deklarujete svůj záměr, kompilátor vás informuje při psaní kódu, který není v souladu s tímto záměrem.
 
-**Typ odkazu s možnou hodnotou null** je zaznamenán pomocí stejné syntaxe jako [typy hodnot s možnou hodnotou null](programming-guide/nullable-types/index.md): `?` je připojen k typu proměnné. Například následující deklarace proměnné představuje řetězcovou proměnnou s možnou hodnotou null `name`:
+**Typ odkazu s možnou hodnotou null** je zaznamenán pomocí stejné syntaxe jako [typy hodnot s možnou hodnotou null](language-reference/builtin-types/nullable-value-types.md): `?` je připojen k typu proměnné. Například následující deklarace proměnné představuje řetězcovou proměnnou s možnou hodnotou null `name`:
 
 ```csharp
 string? name;

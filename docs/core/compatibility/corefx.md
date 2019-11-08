@@ -2,17 +2,14 @@
 title: CoreFx zásadní změny – .NET Core
 description: Obsahuje seznam nejnovějších změn v rozhraní .NET CoreFx, knihovny základních tříd.
 ms.date: 09/20/2019
-ms.openlocfilehash: 04ae857b5f46748ad57c742b6ccf421f57bc3138
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 028a5c1059a855d1de644dde9fd9ad5f85f47ffe
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093427"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739789"
 ---
 # <a name="corefx-breaking-changes"></a>CoreFx průlomové změny
-
-> [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) .
 
 Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core. CoreFx poskytuje primitivní a další obecné typy používané .NET Core.
 

@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: d7fca40caaeb83152b8ae5260bf918981362d2c3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 4ce9227839a610308071c36185b63db8b1ee86ed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522798"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739297"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -153,7 +153,7 @@ atribut `IncludeAssets` určuje, které prostředky patřící k balíčku urče
 
 atribut `ExcludeAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by neměly být spotřebovány.
 
-atribut `PrivateAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. @No__t_0, `Build` a `ContentFiles` assety jsou ve výchozím nastavení privátní, pokud tento atribut není k dispozici.
+atribut `PrivateAssets` určuje, které prostředky patřící k balíčku určenému parametrem `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. `Analyzers`, `Build` a `ContentFiles` assety jsou ve výchozím nastavení privátní, pokud tento atribut není k dispozici.
 
 > [!NOTE]
 > `PrivateAssets` je ekvivalentní prvku *Project. json*/*xproj* `SuppressParent`.
@@ -222,6 +222,31 @@ Následující příklad určuje pouze zálohy pro cíl `netcoreapp2.1`:
     $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
 </PackageTargetFallback >
 ```
+
+## <a name="build-events"></a>Události sestavení
+
+Způsob, jakým se změnily události před sestavením a po sestavení, jsou uvedeny v souboru projektu. Vlastnosti PreBuildEvent a PostBuildEvent nejsou doporučovány ve formátu projektu ve stylu sady SDK, protože makra jako $ (ProjectDir) nejsou vyřešena. Například následující kód již není podporován:
+
+```xml
+<PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)PreBuildEvent.bat" "$(ProjectDir)..\" "$(ProjectDir)" "$(TargetDir)" />
+</PropertyGroup>
+```
+
+V projektech se styly sady SDK použijte cíl MSBuild s názvem `PreBuild` nebo `PostBuild` a nastavte vlastnost `BeforeTargets` pro `PreBuild` nebo vlastnost `AfterTargets` pro `PostBuild`. Pro předchozí příklad použijte následující kód:
+
+```xml
+<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(ProjectDir)PreBuildEvent.bat&quot; &quot;$(ProjectDir)..\&quot; &quot;$(ProjectDir)&quot; &quot;$(TargetDir)&quot;" />
+</Target>
+
+<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+   <Exec Command="echo Output written to $(TargetDir)" />
+</Target>
+```
+
+> [!NOTE]
+>Můžete použít libovolný název pro cíle nástroje MSBuild, ale rozhraní IDE sady Visual Studio rozpozná `PreBuild` a `PostBuild` cíle, proto doporučujeme použít tyto názvy, abyste mohli upravovat příkazy v integrovaném vývojovém prostředí sady Visual Studio. 
 
 ## <a name="nuget-metadata-properties"></a>Vlastnosti metadat NuGet
 

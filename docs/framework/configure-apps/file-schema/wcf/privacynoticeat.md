@@ -2,21 +2,21 @@
 title: <privacyNoticeAt>
 ms.date: 03/30/2017
 ms.assetid: 4cc96942-4eb9-4241-b2fd-45aa239915e8
-ms.openlocfilehash: 624b52c0618362f48063c8f7e7c53c5a68d7de8f
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 2ff70d3a8636970434582e417e4549ab6b433fc1
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400032"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738761"
 ---
-# <a name="privacynoticeat"></a>\<privacyNoticeAt>
-Představuje prvek konfigurace, který určuje oznámení o ochraně osobních údajů `wsFederationHttp` používané ve vazbě.  
+# <a name="privacynoticeat"></a>\<privacyNoticeAt >
+Představuje prvek konfigurace, který určuje oznámení o ochraně osobních údajů používané při `wsFederationHttp` vazbách.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<privacyNotice >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,7 +26,7 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
                version="Integer" />
 ```  
   
-## <a name="type"></a>type  
+## <a name="type"></a>Typ  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -46,7 +46,7 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
+|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,4 +56,4 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding>](custombinding.md)
+- [\<customBinding >](custombinding.md)

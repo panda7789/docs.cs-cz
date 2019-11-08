@@ -3,12 +3,12 @@ title: Čísla v C# úvodu k C# kurzu
 description: Naučte C# se prozkoumat číselné typy, jejich vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: b392682a245101e37a182cb92d36ccb1dd34b13e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a06bc57e5c979b62e19407747cb2c8a2447ca114
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039692"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739136"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipulace s čísly integrálních a plovoucích bodů v jazyce C \#
 
@@ -18,7 +18,11 @@ V tomto kurzu se očekává, že máte počítač, který můžete použít pro 
 
 ## <a name="explore-integer-math"></a>Prozkoumat celočíselné matematické
 
-Vytvořte adresář s názvem *Numbers – rychlý Start*. Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n NumbersInCSharp -o .`.
+Vytvořte adresář s názvem *Numbers – rychlý Start*. Zajistěte, aby byl aktuální adresář, a spusťte následující příkaz:
+
+```dotnetcli
+dotnet new console -n NumbersInCSharp -o .
+```
 
 Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte `Console.WriteLine("Hello World!");` řádku následujícím způsobem:
 

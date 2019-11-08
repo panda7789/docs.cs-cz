@@ -6,21 +6,21 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: 76438b85a12d75efa0fc106a645fb592b3205fad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a5b49e2a1f7536fb9d8e8f4dbfc53494dcd1f1ac
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960973"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740766"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
-Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribuována pomocí [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Ukázková písma podporují rozšířené funkce OpenType, které můžou používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
+Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribuována s Windows SDK. Ukázková písma podporují rozšířené funkce OpenType, které mohou používat aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
 
 <a name="overview"></a>   
 ## <a name="fonts-in-the-opentype-font-pack"></a>Písma v sadě Font Pack OpenType  
- Poskytuje sadu ukázkových písem OpenType, která můžete použít při vytváření [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Ukázková písma se dodávají v rámci licence od společnosti Ascend Corporation. Tato písma implementují pouze podmnožinu celkových funkcí definovaných ve formátu OpenType. V následující tabulce jsou uvedeny názvy ukázkových písem OpenType.  
+ Windows SDK poskytuje sadu ukázkových písem OpenType, které můžete použít při vytváření aplikací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Ukázková písma se dodávají v rámci licence od společnosti Ascend Corporation. Tato písma implementují pouze podmnožinu celkových funkcí definovaných ve formátu OpenType. V následující tabulce jsou uvedeny názvy ukázkových písem OpenType.  
   
-|**Název**|**File**|  
+|**Jméno**|**Souborů**|  
 |--------------|--------------|  
 |Kootenay|Kooten.ttf|  
 |Lindsey|Linds.ttf|  
@@ -44,7 +44,7 @@ Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribu
 ## <a name="installing-the-fonts"></a>Instalace písem  
  Máte možnost nainstalovat ukázková písma OpenType do výchozího adresáře písem systému Windows **\WINDOWS\Fonts**. K instalaci písem použijte ovládací panel písma. Jakmile jsou tato písma ve vašem počítači, jsou přístupná pro všechny aplikace, které odkazují na výchozí písma Windows. Můžete zobrazit reprezentativní sadu znaků v různých velikostech písem tak, že kliknete na soubor písma. Následující snímek obrazovky ukazuje soubor písma Lindsey Linds. ttf.  
   
- ![Písmo OpenType &#40;&#41; písma Lindsey](./media/typographyinwpf-04.png "TypographyInWPF_04")  
+ ![Písmo OpenType &#40;písma Lindsey&#41;](./media/typographyinwpf-04.png "TypographyInWPF_04")  
 Zobrazení písma Lindsey  
   
 <a name="using_the_fonts"></a>   

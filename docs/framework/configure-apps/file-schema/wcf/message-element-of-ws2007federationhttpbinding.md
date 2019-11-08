@@ -1,24 +1,24 @@
 ---
-title: <message>prvek elementu<ws2007FederationHttpBinding>
+title: <message> element <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: b1128bda6068a1fe3d8f5bb5ac29cc349f023b5b
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: dde763687dbc62d6fb342a21a4c614208f28d7e8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397853"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738994"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<> prvku \<zprávy > WS2007FederationHttpBinding
-Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<> elementu \<ws2007FederationHttpBinding >
+Definuje nastavení pro zabezpečení na úrovni zprávy [\<ws2007FederationHttpBinding >](ws2007federationhttpbinding.md) elementu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007FederationHttpBinding >** ](ws2007federationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-element-of-ws2007federationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-element-of-ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zpráva >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -87,14 +87,14 @@ Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007F
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`algorithmSuite`|Volitelný parametr. Nastaví algoritmy šifrování, podpisu a zabalení klíčů. Algoritmy a velikosti klíčů jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídou. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty jsou uvedené v následující tabulce. Výchozí hodnota je Basic256.|  
+|`algorithmSuite`|Volitelné. Nastaví algoritmy šifrování, podpisu a zabalení klíčů. Algoritmy a velikosti klíčů jsou určeny třídou <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty jsou uvedené v následující tabulce. Výchozí hodnota je Basic256.|  
 |`issuedKeyType`|Určuje typ klíče, který se má vystavit. Platné hodnoty jsou následující:<br /><br /> - SymmetricKey<br />– PublicKey<br />- BearerKey<br /><br /> Výchozí hodnota je SymmetricKey. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
 |`issuedTokenType`|Identifikátor URI, který určuje typ tokenu, který se má vystavit. Výchozí hodnota je `null`.|  
 |`negotiateServiceCredential`|Hodnota, která určuje, zda má být pověření služby vyměněno jako součást vyjednávání nebo je k dispozici mimo IP síť. Výchozí hodnota je `true`, což znamená, že se pověření služby vyjednávat.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Basic128|Pro zabalení klíče použijte šifrování Aes128, SHA1 pro Digest zpráv a RSA-výplně OAEP-mgf1p.|  
 |Basic192|Pro zabalení klíče použijte šifrování Aes192, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
@@ -117,16 +117,16 @@ Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007F
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
-|[\<issuer>](issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
-|[\<issuerMetadata>](issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
-|[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
+|[\<claimTypeRequirements >](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
+|[Vystavitel \<](issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
+|[\<issuerMetadata >](issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
+|[\<tokenRequestParameters >](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[> zabezpečení \<](security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -138,4 +138,4 @@ Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007F
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

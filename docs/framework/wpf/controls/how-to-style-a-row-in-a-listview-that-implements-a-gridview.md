@@ -6,12 +6,12 @@ helpviewer_keywords:
 - styling rows in ListViews implementing GridViews [WPF]
 - ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
-ms.openlocfilehash: 150988aab368e3ffef0107d29bea5ebc53163946
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ce79899d5c8e825ecb39e14ae8af4e0c33f13db3
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459320"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733544"
 ---
 # <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a>Postupy: Nastavení stylu řádku v zobrazení ListView s implementací GridView
 Tento příklad ukazuje, jak styl řádku v ovládacím prvku <xref:System.Windows.Controls.ListView>, který implementuje režim <xref:System.Windows.Controls.GridView><xref:System.Windows.Controls.ListView.View%2A>.  
@@ -19,7 +19,7 @@ Tento příklad ukazuje, jak styl řádku v ovládacím prvku <xref:System.Windo
 ## <a name="example"></a>Příklad  
  Můžete nastavit styl řádku v ovládacím prvku <xref:System.Windows.Controls.ListView> nastavením <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> na ovládacím prvku <xref:System.Windows.Controls.ListView>. Nastavte styl pro položky, které jsou reprezentovány jako <xref:System.Windows.Controls.ListViewItem> objekty. <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> odkazuje na objekty <xref:System.Windows.Controls.ControlTemplate>, které se používají k zobrazení obsahu řádku.  
   
- Kompletní ukázka, z níž jsou extrahovány následující příklady, zobrazuje kolekci informací o skladbách, které jsou uloženy v databázi [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Každá skladba v databázi má pole hodnocení a hodnota tohoto pole určuje, jak se má zobrazit řádek informací o skladbě.  
+ Kompletní ukázka, z níž jsou extrahovány následující příklady, zobrazuje kolekci informací o skladbách, které jsou uloženy v databázi XML. Každá skladba v databázi má pole hodnocení a hodnota tohoto pole určuje, jak se má zobrazit řádek informací o skladbě.  
   
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> pro objekty <xref:System.Windows.Controls.ListViewItem>, které reprezentují skladby v kolekci song. <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> odkazuje na <xref:System.Windows.Controls.ControlTemplate> objektů, které určují, jak se má zobrazit řádek informací o skladbě.  
   

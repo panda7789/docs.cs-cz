@@ -5,12 +5,12 @@ ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 648aaaa86cf2d6bd2de989739694ba188c4bbc04
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 47a339de60301e01b52a4b8a3a85945624daf940
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73041019"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733201"
 ---
 # <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio
 
@@ -34,7 +34,7 @@ V tomto návodu:
 
 ## <a name="conditions-and-limitations"></a>Podmínky a omezení
 
-Můžete vložit informace o typu ze sestavení za následujících podmínek: 
+Můžete vložit informace o typu ze sestavení za následujících podmínek:
 
 - Sestavení zveřejňuje alespoň jedno veřejné rozhraní.
 - Vložená rozhraní jsou opatřená pomocí atributů `ComImport` a atributy `Guid` s jedinečnými identifikátory GUID.
@@ -321,5 +321,4 @@ Přejít do umístění výstupní složky sestavení a spustit *TypeEquivalence
 - [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
 - [C#Průvodce programováním](../../csharp/programming-guide/index.md)
 - [Koncepty programování (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
-- [Program se sestaveními](program.md)
 - [Sestavení v .NET](index.md)

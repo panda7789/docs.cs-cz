@@ -2,23 +2,23 @@
 title: <transport> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
-ms.openlocfilehash: 4ea60ccaba58bc0b3fa8f2263295bf1413d25e89
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 0cd20c607b0c4ddd3ecfd806d38ba63b4a5c5a25
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399271"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732759"
 ---
-# <a name="transport-of-ws2007httpbinding"></a>\<> přenosu > \<WS2007HttpBinding
+# <a name="transport-of-ws2007httpbinding"></a>> \<přenosů \<ws2007HttpBinding >
 Definuje nastavení ověřování pro přenos HTTP.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007HttpBinding >** ](ws2007httpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-ws2007httpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> přenosu**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-ws2007httpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<transport >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,7 +28,7 @@ Definuje nastavení ověřování pro přenos HTTP.
            realm="string" />
 ```  
   
-## <a name="type"></a>type  
+## <a name="type"></a>Typ  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -44,22 +44,22 @@ Definuje nastavení ověřování pro přenos HTTP.
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Zabezpečení je zakázané.|  
 |Základní|Používá základní ověřování.|  
-|Otisk|Používá ověřování hodnotou hash.|  
+|otisk|Používá ověřování hodnotou hash.|  
 |NTLM|Používá ověřování NTLM jako zálohu v doméně systému Windows.|  
 |Windows|Používá integrované ověřování systému Windows.|  
 |Certifikát|Pomocí certifikátů X. 509 ověří klienta.|  
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Zabezpečení je zakázané.|  
 |Základní|Používá základní ověřování.|  
-|Otisk|Používá ověřování hodnotou hash.|  
+|otisk|Používá ověřování hodnotou hash.|  
 |NTLM|Používá protokol NTLM jako zálohu s doménou systému Windows.|  
 |Windows|Používá integrované ověřování systému Windows.|  
 |Certifikát|Pomocí certifikátů X. 509 ověří klienta.|  
@@ -71,7 +71,7 @@ Definuje nastavení ověřování pro přenos HTTP.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-of-ws2007httpbinding.md)|Představuje možnosti [ \<zabezpečení elementu WS2007HttpBinding >](ws2007httpbinding.md) .|  
+|[> zabezpečení \<](security-of-ws2007httpbinding.md)|Představuje možnosti zabezpečení [\<ws2007HttpBinding >](ws2007httpbinding.md) elementu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -83,4 +83,4 @@ Definuje nastavení ověřování pro přenos HTTP.
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

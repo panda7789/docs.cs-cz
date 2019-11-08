@@ -2,12 +2,12 @@
 title: association end
 ms.date: 03/30/2017
 ms.assetid: 2c345213-0296-4d90-ac6d-cef179798a75
-ms.openlocfilehash: 33cc2e10d9b72ef7f5f024905938c41fcc4a9755
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 489802ca18708e076c0cd5dd380ad1361916ad5f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785044"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732356"
 ---
 # <a name="association-end"></a>association end
 *Zakončení přidružení* identifikuje [typ entity](entity-type.md) na jednom konci [přidružení](association-type.md) a počet instancí typu entity, které mohou existovat na konci přidružení. Zakončení přidružení jsou definována jako součást přidružení; přidružení musí mít přesně dvě zakončení přidružení. [Navigační vlastnosti](navigation-property.md) umožňují navigaci z jednoho zakončení přidružení k druhému.  
@@ -26,11 +26,11 @@ ms.locfileid: "70785044"
 - Informace o operacích, které jsou prováděny na konci přidružení, jako je například kaskáda při odstranění. Volitelné  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje koncepční model se dvěma přidruženími: `PublishedBy` a. `WrittenBy` Přidružení `PublishedBy` jsouzakončenápro`Publisher` přidružení jsou typy entit a.`Book` Násobnost elementu `Publisher` end je jedna (1) a násobnost elementu `Book` end je mnoho (\*), což znamená, že vydavatel zveřejňuje mnoho knih a kniha je publikována jedním vydavatelem.  
+ Následující diagram znázorňuje koncepční model se dvěma přidruženími: `PublishedBy` a `WrittenBy`. Zakončení přidružení pro `PublishedBy` přidružení jsou typy entit `Book` a `Publisher`. Násobnost `Publisher` end je jedna (1) a násobnost `Book` end je mnoho (\*), což znamená, že vydavatel zveřejňuje mnoho knih a kniha je publikována jedním vydavatelem.  
   
  ![Vzorový model se třemi typy entit](./media/association-end/example-model-three-entity-types.gif)  
   
- ADO.NET Entity Framework používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje `PublishedBy` přidružení zobrazené v diagramu výše. Všimněte si, že typ, název a násobnost každého elementu end přidružení jsou určeny atributy XML (v `Type` `Role` `Multiplicity` uvedeném pořadí). Volitelné informace o operacích provedených na konci jsou uvedeny v elementu XML ( `OnDelete` element). V tomto případě platí, že pokud je Vydavatel odstraněn, jsou všechny přidružené knihy.  
+ ADO.NET Entity Framework používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)(konceptuální schéma Definition Language). Následující CSDL definuje přidružení `PublishedBy` zobrazené v diagramu výše. Všimněte si, že typ, název a násobnost každého elementu end přidružení jsou určeny atributy XML (`Type`, `Role`a `Multiplicity` atributů v uvedeném pořadí). Volitelné informace o operacích provedených na konci jsou zadány v elementu XML (`OnDelete` element). V tomto případě platí, že pokud je Vydavatel odstraněn, jsou všechny přidružené knihy.  
   
  [!code-xml[EDM_Example_Model#AssociationEnd](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books3.edmx#associationend)]  
   

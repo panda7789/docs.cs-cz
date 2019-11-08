@@ -1,5 +1,5 @@
 ---
-title: Shromáždění rukopisu v aplikacích WPF
+title: Shromažďování rukopisu v aplikacích WPF
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -13,80 +13,80 @@ helpviewer_keywords:
 - properties [WPF], DefaultDrawingAttributes
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-ms.openlocfilehash: d2178a4cbf888baaf0ae84b03b3d463b0de658b1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8109e0d6a746d6ca23c25643c510014c1a1e656c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645739"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740875"
 ---
-# <a name="collect-ink"></a>Shromáždění inkoustu
+# <a name="collect-ink"></a>Shromáždit rukopis
 
-[Windows Presentation Foundation](../index.md) platformy shromažďuje digitálních inkoust jeho funkce v rámci jádra. Toto téma popisuje metody pro kolekci rukopis ve Windows Presentation Foundation (WPF).
+Platforma [Windows Presentation Foundation](../index.md) shromažďuje digitální inkoust jako základní součást jeho funkcí. Toto téma popisuje metody pro kolekci rukopisu v Windows Presentation Foundation (WPF).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Pokud chcete použít v následujících příkladech, je třeba nejprve nainstalovat Visual Studio a [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)]. Musíte taky vědět, jak pro psaní aplikací pro WPF. Další informace o zahájení práce s WPF naleznete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
+Chcete-li použít následující příklady, je nutné nejprve nainstalovat aplikaci Visual Studio a Windows SDK. Měli byste také pochopit, jak psát aplikace pro WPF. Další informace o tom, jak začít používat WPF, najdete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="use-the-inkcanvas-element"></a>Použít inkcanvas – Element
+## <a name="use-the-inkcanvas-element"></a>Použití elementu InkCanvas
 
-<xref:System.Windows.Controls.InkCanvas?displayProperty=fullName> Element poskytuje nejjednodušší způsob, jak shromažďovat rukopisu v subsystému WPF. Použití <xref:System.Windows.Controls.InkCanvas> – element pro příjem a zobrazení vstupu rukopisu. Běžně vstupu inkoustu pomocí pera, která komunikuje s digitizéru k vytvoření inkoustových tahů. Kromě toho je možné místo stylus myši. Vytvořený tahy jsou reprezentovány ve formě <xref:System.Windows.Ink.Stroke> objekty a jejich lze ovládat jak prostřednictvím kódu programu a uživatelem vstup. <xref:System.Windows.Controls.InkCanvas> Umožňuje uživatelům vybrat, upravit nebo odstranit existující <xref:System.Windows.Ink.Stroke>.
+Element <xref:System.Windows.Controls.InkCanvas?displayProperty=fullName> poskytuje nejjednodušší způsob, jak v WPF shromažďovat rukopis. Použijte prvek <xref:System.Windows.Controls.InkCanvas> pro příjem a zobrazení vstupu rukopisu. Obvykle zadáváte inkoust pomocí stylusu, který komunikuje s digitizérem, aby vytvořil tahy perem. Kromě toho lze použít myš místo stylusu. Vytvořené tahy jsou reprezentovány jako <xref:System.Windows.Ink.Stroke> objekty a lze je manipulovat programově i uživatelským vstupem. <xref:System.Windows.Controls.InkCanvas> umožňuje uživatelům vybrat, upravit nebo odstranit existující <xref:System.Windows.Ink.Stroke>.
 
-Pomocí XAML můžete nastavit kolekce inkoustů stejně snadno, jako přidávání **InkCanvas** element vaše stromové struktury. Následující příklad přidá <xref:System.Windows.Controls.InkCanvas> do projektu WPF výchozí vytvořeného v sadě Visual Studio:
+Pomocí jazyka XAML můžete nastavit kolekci rukopisu jako snadnou přidáním prvku **InkCanvas** do stromu. Následující příklad přidá <xref:System.Windows.Controls.InkCanvas> do výchozího projektu WPF vytvořeného v aplikaci Visual Studio:
 
 [!code-xaml[DigitalInkTopics#6](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#6)]
 
-**InkCanvas** element může také obsahovat podřízené prvky, což umožňuje přidat poznámky funkce inkoustu na téměř libovolný typ elementu XAML. Například pro přidání možností rukopisu do textu elementu, stačí udělat podřízeným z <xref:System.Windows.Controls.InkCanvas>:
+Element **InkCanvas** může také obsahovat podřízené prvky, což umožňuje přidat možnosti rukopisné poznámky pro téměř jakýkoli typ elementu XAML. Chcete-li například přidat možnosti psaní do textového prvku, stačí vytvořit podřízený objekt <xref:System.Windows.Controls.InkCanvas>:
 
 [!code-xaml[DigitalInkTopics#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#5)]
 
-Přidání podpory pro označení image s rukopisem je stejně jednoduché:
+Přidání podpory pro označení obrázku pomocí rukopisu je stejně snadné:
 
 [!code-xaml[DigitalInkTopics#7](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#7)]
 
-### <a name="inkcollection-modes"></a>Režimy InkCollection
+### <a name="inkcollection-modes"></a>InkCollection režimy
 
-<xref:System.Windows.Controls.InkCanvas> Poskytuje podporu pro různé vstupní režimy prostřednictvím jeho <xref:System.Windows.Controls.InkCanvas.EditingMode%2A> vlastnost.
+<xref:System.Windows.Controls.InkCanvas> poskytuje podporu pro různé vstupní režimy prostřednictvím její vlastnosti <xref:System.Windows.Controls.InkCanvas.EditingMode%2A>.
 
-### <a name="manipulate-ink"></a>Zpracování inkoustu
+### <a name="manipulate-ink"></a>Manipulace s inkoustem
 
-<xref:System.Windows.Controls.InkCanvas> Poskytuje podporu pro mnoho inkoustu operace úprav. Například <xref:System.Windows.Controls.InkCanvas> vymazat podporuje back sady pera a bez dalšího kódu, je potřeba přidat funkce do elementu.
+<xref:System.Windows.Controls.InkCanvas> poskytuje podporu pro mnoho operací úpravy rukopisu. Například <xref:System.Windows.Controls.InkCanvas> podporuje mazání zezadu a k přidání funkce do prvku není potřeba žádný další kód.
 
 #### <a name="selection"></a>Výběr
 
-Nastavení režimu výběru je stejně jednoduché jako nastavení <xref:System.Windows.Controls.InkCanvasEditingMode> vlastnost **vyberte**.
+Nastavení režimu výběru je jednoduché, protože nastavení vlastnosti <xref:System.Windows.Controls.InkCanvasEditingMode> na hodnotu **Vybrat**.
 
-Následující kód nastaví režim úprav podle hodnoty <xref:System.Windows.Forms.CheckBox>:
+Následující kód nastaví režim úprav na základě hodnoty <xref:System.Windows.Forms.CheckBox>:
 
 [!code-csharp[DigitalInkTopics#8](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml.cs#8)]
 [!code-vb[DigitalInkTopics#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window1.xaml.vb#8)]
 
 #### <a name="drawingattributes"></a>DrawingAttributes
 
-Použití <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> vlastnost změnit vzhled inkoustových tahů. Například <xref:System.Windows.Ink.DrawingAttributes.Color%2A> členem <xref:System.Windows.Ink.DrawingAttributes> nastavuje barvu vygenerované <xref:System.Windows.Ink.Stroke>.
+Chcete-li změnit vzhled tahů perem, použijte vlastnost <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>. Například člen <xref:System.Windows.Ink.DrawingAttributes.Color%2A> <xref:System.Windows.Ink.DrawingAttributes> nastavuje barvu vykresleného <xref:System.Windows.Ink.Stroke>.
 
-Následující příklad změní barvu vybraných tahů na červený:
+Následující příklad změní barvu vybraných tahů na červenou:
 
 [!code-csharp[DigitalInkTopics#9](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml.cs#9)]
 [!code-vb[DigitalInkTopics#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window1.xaml.vb#9)]
 
 ### <a name="defaultdrawingattributes"></a>DefaultDrawingAttributes
 
-<xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> Poskytuje přístup k vlastnosti, jako je výšku, šířku a barvu tahů bude vytvořena ve vlastnosti <xref:System.Windows.Controls.InkCanvas>. Po změně <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>, všechny budoucí tahy do <xref:System.Windows.Controls.InkCanvas> jsou generovány s novými hodnotami vlastností.
+Vlastnost <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> poskytuje přístup k vlastnostem, jako je výška, Šířka a barva tahů, které mají být vytvořeny v <xref:System.Windows.Controls.InkCanvas>. Po změně <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>jsou všechny budoucí tahy zadané do <xref:System.Windows.Controls.InkCanvas> vykresleny s novými hodnotami vlastností.
 
-Spolu s prováděním změn <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> v souboru kódu na pozadí, můžete použít syntaxe XAML pro určení <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> vlastnosti.
+Kromě změny <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> v souboru kódu na pozadí lze použít syntaxi XAML pro určení <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>ch vlastností.
 
-Následující příklad ukazuje, jak nastavit <xref:System.Windows.Ink.DrawingAttributes.Color%2A> vlastnost. Chcete-li tento kód použít, vytvořte nový projekt WPF s názvem "HelloInkCanvas" v sadě Visual Studio. Nahraďte kód v *souboru MainWindow.xaml* souboru následujícím kódem:
+Další příklad ukazuje, jak nastavit vlastnost <xref:System.Windows.Ink.DrawingAttributes.Color%2A>. Chcete-li použít tento kód, vytvořte nový projekt WPF nazvaný "HelloInkCanvas" v aplikaci Visual Studio. Nahraďte kód v souboru *MainWindow. XAML* následujícím kódem:
 
 [!code-xaml[HelloInkCanvas#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml#1)]
 
-Pak přidejte do souboru uvnitř třídy hlavního okna MainWindow kódu obslužné rutiny událostí následující tlačítka:
+Dále přidejte následující obslužné rutiny událostí tlačítka do souboru kódu na pozadí uvnitř třídy MainWindow:
 
 [!code-csharp[HelloInkCanvas#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml.cs#2)]
 
-Po zkopírování tento kód, stiskněte klávesu **F5** v sadě Visual Studio ke spuštění programu v ladicím programu.
+Po zkopírování tohoto kódu stiskněte klávesu **F5** v aplikaci Visual Studio a spusťte program v ladicím programu.
 
-Všimněte si, že jak <xref:System.Windows.Controls.StackPanel> umístí tlačítka v horní části <xref:System.Windows.Controls.InkCanvas>. Pokud se pokusíte rukopisu v horní části na tlačítka, <xref:System.Windows.Controls.InkCanvas> shromažďuje a vykreslí rukopis za tlačítka. Důvodem je, že tlačítka jsou na stejné úrovni <xref:System.Windows.Controls.InkCanvas> na rozdíl od podřízené položky. Tlačítka jsou také, výše v pořadí vykreslování, takže se vykreslí rukopis za nimi stojí.
+Všimněte si, jak <xref:System.Windows.Controls.StackPanel> umístí tlačítka nad <xref:System.Windows.Controls.InkCanvas>. Pokud se pokusíte použít rukopis v horní části tlačítek, <xref:System.Windows.Controls.InkCanvas> shromažďuje a vykresluje rukopis za tlačítky. Důvodem je to, že tlačítka jsou na stejné <xref:System.Windows.Controls.InkCanvas> na rozdíl od podřízených. Tlačítka jsou také vyšší v pořadí vykreslování, takže rukopis je vykreslen za sebou.
 
 ## <a name="see-also"></a>Viz také:
 

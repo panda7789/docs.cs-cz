@@ -2,17 +2,14 @@
 title: Kryptografie – průlomové změny – .NET Core
 description: Vypíše zásadní změny týkající se kryptografie v .NET Core.
 ms.date: 09/20/2019
-ms.openlocfilehash: ce6739c57df801ef6ae3ab35e31bba6ad4055caa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 628162eb391c27b810e9db0a869896eb8443a06f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093081"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739733"
 ---
 # <a name="cryptography-breaking-changes"></a>Kryptografie – průlomové změny
-
-> [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) . 
 
 Následující seznam uvádí zásadní změny týkající se kryptografie podle verze .NET Core.
 

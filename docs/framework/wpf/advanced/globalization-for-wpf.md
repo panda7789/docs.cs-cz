@@ -7,19 +7,19 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 04001f88e0f59fd4eb3ca84d846456be7740737e
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1d6430ba5969d8a05db47baf9521d2409e596c23
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460481"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740869"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli znát při psaní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v oboru názvů <xref:System.Globalization>.
 
 <a name="xaml_globalization"></a>
 ## <a name="xaml-globalization"></a>Globalizace XAML
- Jazyk Extensible Application Markup Language (XAML) (XAML) je založen na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] a využívá podporu globalizace definovanou ve specifikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Následující části popisují některé [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] funkce, o kterých byste měli vědět.
+ Jazyk Extensible Application Markup Language (XAML) (XAML) je založen na XML a využívá podporu globalizace definovanou ve specifikaci XML. Následující části popisují některé [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] funkce, o kterých byste měli vědět.
 
 <a name="char_reference"></a>
 ### <a name="character-references"></a>Odkazy na znaky
@@ -45,7 +45,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 <a name="lang_attrib"></a>
 ### <a name="language-attribute"></a>Atribut Language
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) pro reprezentaci atributu Language elementu.  Chcete-li využít výhod třídy <xref:System.Globalization.CultureInfo>, hodnota atributu Language musí být jedním z názvů jazykové verze předdefinovaných <xref:System.Globalization.CultureInfo>. [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) je dědičná ve stromové struktuře elementů (podle pravidel XML, ne nutně z důvodu dědičnosti vlastností závislosti) a její výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazen.
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) pro reprezentaci atributu Language elementu.  Chcete-li využít výhod <xref:System.Globalization.CultureInfo> třídy, musí být hodnotou atributu Language hodnota jeden z názvů jazykové verze předdefinované <xref:System.Globalization.CultureInfo>. [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) je dědičná ve stromové struktuře elementů (podle pravidel XML, ne nutně z důvodu dědičnosti vlastností závislosti) a její výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazen.
 
  Atribut Language je velmi užitečný pro určení dialektů. Francouzština má například jinou kontrolu pravopisu, slovníku a výslovnost ve Francii, v Quebec, Belgii a Švýcarsku. Také čínské, japonské a korejské body kódu pro sdílení v kódování Unicode, ale grafické tvary se liší a používají zcela jiná písma.
 
@@ -143,7 +143,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 <a name="mui"></a>
 ### <a name="multilingual-user-interface"></a>Vícejazyčné uživatelské rozhraní
- Vícejazyčná uživatelská rozhraní (MUI) je podpora Microsoftu pro přepínání uživatelská rozhraní z jednoho jazyka na jiný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Resource Loader využívá správce prostředků [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]k podpoře vyhledávání a záložních prostředků. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.
+ Vícejazyčná uživatelská rozhraní (MUI) je podpora Microsoftu pro přepínání uživatelská rozhraní z jednoho jazyka na jiný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  Nástroj [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Resource Loader využívá správce prostředků rozhraní pro podporu vyhledávání a záložních prostředků. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálního vlákna.
 
 <a name="localizable_ui"></a>
 ### <a name="localizable-user-interface"></a>Lokalizovatelné uživatelské rozhraní
@@ -152,7 +152,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
  Z pohledu prostředku je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor navržený tak, aby popsal [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] závislý na jazyce, je element prostředku, takže jeho konečný distribuční formát musí být Lokalizovatelný, aby podporoval mezinárodní jazyky. Vzhledem k tomu, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ch aplikací obsahuje bloky kódu k provedení. Další informace naleznete v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md). Kód je odstraněn a zkompilován do různých binárních souborů, pokud je soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] do formátu BAML jazyka XAML. Formulář BAML souborů XAML, obrázků a dalších typů spravovaných objektů prostředků jsou vloženy do satelitního sestavení prostředků, které lze lokalizovat do jiných jazyků, nebo do hlavního sestavení, pokud není nutná lokalizace.
 
 > [!NOTE]
-> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny prostředky CLR [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)], včetně tabulek řetězců, obrázků a tak dále.
+> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny prostředky FrameworkCLR, včetně tabulek řetězců, obrázků a tak dále.
 
 <a name="building_localizable_apps"></a>
 ### <a name="building-localizable-applications"></a>Vytváření lokalizovatelných aplikací
@@ -171,7 +171,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ## <a name="using-clickonce-with-localized-applications"></a>Použití ClickOnce s lokalizovanými aplikacemi
  ClickOnce je nová technologie nasazení model Windows Forms, která bude dodávána se sadou Visual Studio 2005. Umožňuje instalaci aplikace a upgrade webových aplikací. Je-li aplikace nasazená s ClickOnce lokalizována, lze ji zobrazit pouze v lokalizované jazykové verzi. Například pokud je nasazená aplikace lokalizovaná do japonské verze, může se zobrazit jenom v japonštině Microsoft Windows, která není v anglické verzi Windows. To představuje problém, protože se jedná o běžný scénář pro použití anglické verze systému Windows pro japonské uživatele.
 
- Řešením tohoto problému je nastavení atributu pro záložní použití neutrálního jazyka. Vývojář aplikace může volitelně odebrat prostředky z hlavního sestavení a určit, že prostředky lze nalézt v satelitním sestavení odpovídajícím konkrétní jazykové verzi. Pro řízení tohoto procesu použijte <xref:System.Resources.NeutralResourcesLanguageAttribute>. Konstruktor třídy <xref:System.Resources.NeutralResourcesLanguageAttribute> má dva signatury, jeden, který přebírá parametr <xref:System.Resources.UltimateResourceFallbackLocation> pro určení umístění, kde by <xref:System.Resources.ResourceManager> mělo extrahovat záložní prostředky: hlavní sestavení nebo satelitní sestavení. Následující příklad ukazuje, jak použít atribut. V případě konečného záložního umístění kód způsobí, <xref:System.Resources.ResourceManager> vyhledat prostředky v podadresáři "de" adresáře aktuálně spuštěného sestavení.
+ Řešením tohoto problému je nastavení atributu pro záložní použití neutrálního jazyka. Vývojář aplikace může volitelně odebrat prostředky z hlavního sestavení a určit, že prostředky lze nalézt v satelitním sestavení odpovídajícím konkrétní jazykové verzi. Pro řízení tohoto procesu použijte <xref:System.Resources.NeutralResourcesLanguageAttribute>. Konstruktor třídy <xref:System.Resources.NeutralResourcesLanguageAttribute> má dva signatury, jeden, který přebírá <xref:System.Resources.UltimateResourceFallbackLocation> parametr, k určení umístění, kde by měla <xref:System.Resources.ResourceManager> extrahovat záložní prostředky: hlavní sestavení nebo satelitní sestavení. Následující příklad ukazuje, jak použít atribut. V případě konečného záložního umístění kód způsobí, že <xref:System.Resources.ResourceManager> Hledat prostředky v podadresáři "de" v adresáři aktuálně spuštěného sestavení.
 
 ```csharp
 [assembly: NeutralResourcesLanguageAttribute(

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-ms.openlocfilehash: d088342a08076c69b34f6c3d39dce076cb3890d4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 377ee76e7e3537e9cae010189306611a503acbed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460045"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740635"
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
 Model dat šablonování WPF poskytuje skvělou flexibilitu pro definování prezentace vašich dat. Ovládací prvky WPF mají integrovanou funkcionalitu, která podporuje přizpůsobení prezentace dat. Toto téma ukazuje, jak definovat <xref:System.Windows.DataTemplate> a potom zavádí další funkce šablonování dat, jako je například výběr šablon založených na vlastní logice a podpora zobrazení hierarchických dat.  
@@ -54,7 +54,7 @@ Model dat šablonování WPF poskytuje skvělou flexibilitu pro definování pre
   
  ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig2.png "DataTemplatingIntro_fig2")  
   
- To však omezuje a neflexibilní. Pokud vytváříte vazbu na data [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], nebudete moci přepsat `ToString`.  
+ To však omezuje a neflexibilní. Pokud vytváříte vazbu na data XML, nebudete moci přepsat `ToString`.  
   
 <a name="defining_simple_datatemplate"></a>   
 ### <a name="defining-a-simple-datatemplate"></a>Definování jednoduché šablony DataTemplate  
@@ -62,7 +62,7 @@ Model dat šablonování WPF poskytuje skvělou flexibilitu pro definování pre
   
  [!code-xaml[DataTemplatingIntro_snip#Inline](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#inline)]  
   
- Podkladová data pro příklady v tomto tématu jsou kolekce objektů CLR. Pokud vytváříte vazbu na data [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], základní koncepty jsou stejné, ale je to mírně syntaktický rozdíl. Například namísto `Path=TaskName`byste měli nastavit <xref:System.Windows.Data.Binding.XPath%2A> na `@TaskName` (Pokud `TaskName` je atribut uzlu [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]).  
+ Podkladová data pro příklady v tomto tématu jsou kolekce objektů CLR. Pokud vytváříte vazbu na data XML, základní koncepty jsou stejné, ale je to mírně syntaktický rozdíl. Například namísto `Path=TaskName`byste měli nastavit <xref:System.Windows.Data.Binding.XPath%2A> na `@TaskName` (Pokud `TaskName` je atribut vašeho uzlu XML).  
   
  Teď náš <xref:System.Windows.Controls.ListBox> vypadá takto:  
   

@@ -2,23 +2,23 @@
 title: <security> z <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: dc41f6f7-cabc-4a64-9fa0-ceabf861b348
-ms.openlocfilehash: 890cee3271c410a921b3a88f78d0705ba8718252
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 97c52fa4f062ed0c65d5b1a8ca47a1439ab04cf5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399848"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736489"
 ---
-# <a name="security-of-nethttpbinding"></a>\<> zabezpečení > \<NetHttpBinding
+# <a name="security-of-nethttpbinding"></a>> \<zabezpečení \<netHttpBinding >
 
-Definuje možnosti [ \<zabezpečení NetHttpBinding >](nethttpbinding.md).
+Definuje možnosti zabezpečení [\<netHttpBinding >](nethttpbinding.md).
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,15 +40,15 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|režim|Volitelný parametr. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.BasicHttpSecurityMode>.|
+|režim|Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.BasicHttpSecurityMode>.|
 
 ## <a name="mode-attribute"></a>mode – atribut
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
 |Žádné|– Zprávy nejsou během přenosu zabezpečeny.|
 |Přepravu|Zabezpečení je zajištěno pomocí přenosu HTTPS. Zprávy SOAP jsou zabezpečeny pomocí protokolu HTTPS. Služba se ověřuje pro klienta pomocí certifikátu X. 509 služby. Klient se ověřuje pomocí dodaného ClientCredentialType.|
-|Message|Zabezpečení je k dispozici pomocí protokolu SOAP Message Security. Ve výchozím nastavení je text zašifrovaný a podepsaný. Pro tuto vazbu systému vyžaduje, aby byl certifikát serveru poskytnutý klientovi mimo IP síť. Tato vazba je `ClientCredentialType` `Certificate`platná pouze pro tuto vazbu.|
+|Zpráva|Zabezpečení je k dispozici pomocí protokolu SOAP Message Security. Ve výchozím nastavení je text zašifrovaný a podepsaný. Pro tuto vazbu systému vyžaduje, aby byl certifikát serveru poskytnutý klientovi mimo IP síť. Jediná platná `ClientCredentialType` pro tuto vazbu je `Certificate`.|
 |TransportWithMessageCredential|Zabezpečení přenosu zajišťuje integrita, důvěrnost a ověřování serveru. Ověřování klientů je zajištěno prostřednictvím zabezpečení zpráv SOAP. Tento režim je vhodný v případě, že se uživatel ověřuje pomocí uživatelského jména a hesla a existuje stávající nasazení HTTP pro zabezpečení přenosu zpráv.|
 |TransportCredentialOnly|Tento režim neposkytuje integritu a důvěrnost zpráv. Poskytuje ověřování klientů založené na protokolu HTTP. Tento režim by se měl používat opatrně. Měl by se používat v prostředích, kde je zabezpečení přenosu poskytované jiným způsobem (například IPSec) a infrastrukturou WCF poskytuje jenom ověřování klientů.|
 
@@ -56,14 +56,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<> přenosu](transport-of-nethttpbinding.md)|Definuje nastavení zabezpečení přenosu pro základní službu HTTP. Tento prvek odpovídá <xref:System.ServiceModel.HttpTransportSecurity>.|
-|[\<> zprávy](message-of-nethttpbinding.md)|Definuje nastavení zabezpečení zpráv pro základní službu HTTP. Tento prvek odpovídá <xref:System.ServiceModel.BasicHttpMessageSecurity>.|
+|[> přenos \<](transport-of-nethttpbinding.md)|Definuje nastavení zabezpečení přenosu pro základní službu HTTP. Tento prvek odpovídá <xref:System.ServiceModel.HttpTransportSecurity>.|
+|[> \<zprávy](message-of-nethttpbinding.md)|Definuje nastavení zabezpečení zpráv pro základní službu HTTP. Tento prvek odpovídá <xref:System.ServiceModel.BasicHttpMessageSecurity>.|
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
 |Prvek|Popis|
 |-------------|-----------------|
-|vazba|[ Prvek\<vazby > BasicHttpBinding](basichttpbinding.md).|
+|vazba|Prvek vazby [\<basicHttpBinding >](basichttpbinding.md).|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -78,4 +78,4 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

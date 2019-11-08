@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 7c0168d5ca8b1d3bda709f934e454b2603d37b71
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b60f2871062a12d3bee91a9c6d9883222b3034f4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039884"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733577"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundation Imaging. WPF Imaging umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
@@ -165,7 +165,7 @@ Různá nastavení Stretch
 ## <a name="image-metadata"></a>Metadata image  
  Některé soubory obrázků obsahují metadata, která popisují obsah nebo vlastnosti souboru. Většina digitálních fotoaparátů například vytváří image obsahující metadata o typu a modelu kamery používané k zachycení bitové kopie. Každý formát obrázku zpracovává metadata jinak, ale zobrazovací aplikace WPF poskytuje jednotný způsob ukládání a načítání metadat pro každý podporovaný formát obrázku.  
   
- Přístup k metadatům poskytuje vlastnost <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> objektu <xref:System.Windows.Media.Imaging.BitmapSource>. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vrátí objekt <xref:System.Windows.Media.Imaging.BitmapMetadata>, který obsahuje všechna metadata obsažená v obrázku. Tato data můžou být v jednom schématu metadat nebo v kombinaci různých schémat. WPF Imaging podporuje následující schémata metadat obrázku: soubor s možností nasazení obrazu (EXIF), tEXt (textová data PNG), adresář souboru obrázku (IFD), mezinárodní klávesová Rada (IPTC) a [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)].  
+ Přístup k metadatům poskytuje vlastnost <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> objektu <xref:System.Windows.Media.Imaging.BitmapSource>. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vrátí objekt <xref:System.Windows.Media.Imaging.BitmapMetadata>, který obsahuje všechna metadata obsažená v obrázku. Tato data můžou být v jednom schématu metadat nebo v kombinaci různých schémat. WPF Imaging podporuje následující schémata metadat obrázku: soubor s možností nasazení obrazu (EXIF), tEXt (textová data PNG), adresář souboru obrázku (IFD), mezinárodní klávesová Rada (IPTC) a Extensible Metadata Platform (XMP).  
   
  Pro zjednodušení procesu čtení metadat <xref:System.Windows.Media.Imaging.BitmapMetadata> k dispozici několik pojmenovaných vlastností, které mohou být snadno dostupné, například <xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>, <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>a <xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>. Mnohé z těchto pojmenovaných vlastností lze také použít k zápisu metadat. Další podpora pro čtení metadat je poskytována čtečkou dotazů metadat. Metoda <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> slouží k načtení čtečky dotazů metadat zadáním řetězcového dotazu, jako je například *"/app1/EXIF/"* . V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> slouží k získání textu uloženého v umístění *"/text/Description"* .  
   

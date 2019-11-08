@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: ef25123ed53ecf3e03e4f4c969bed2ef570591ad
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 22544b3bf2acf6e397f2ad5ae3de576bf491bd2b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459025"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740739"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je navržená tak, aby ukládala vývojáře z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.  
@@ -49,7 +49,7 @@ ms.locfileid: "73459025"
   
  Pokud [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]může změnit pouze jedno vlákno, jak se budou vlákna na pozadí pracovat s uživatelem? Vlákno na pozadí může položit [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vláknu za účelem provedení operace za jeho jménem. Provede to registrací pracovní položky pomocí <xref:System.Windows.Threading.Dispatcher> [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Třída <xref:System.Windows.Threading.Dispatcher> poskytuje dvě metody pro registraci pracovních položek: <xref:System.Windows.Threading.Dispatcher.Invoke%2A> a <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>. Obě metody naplánují delegáta pro spuštění. <xref:System.Windows.Threading.Dispatcher.Invoke%2A> je synchronní volání – to znamená, že se nevrátí, dokud vlákno [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] skutečně nedokončí provádění delegáta. <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> je asynchronní a vrátí se hned.  
   
- <xref:System.Windows.Threading.Dispatcher> řadí prvky ve své frontě podle priority. Při přidávání elementu do fronty <xref:System.Windows.Threading.Dispatcher> lze zadat deset úrovní. Tyto priority se udržují v <xref:System.Windows.Threading.DispatcherPriority> výčtu. Podrobné informace o úrovních <xref:System.Windows.Threading.DispatcherPriority> najdete v dokumentaci k [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)].  
+ <xref:System.Windows.Threading.Dispatcher> řadí prvky ve své frontě podle priority. Při přidávání elementu do fronty <xref:System.Windows.Threading.Dispatcher> lze zadat deset úrovní. Tyto priority se udržují v <xref:System.Windows.Threading.DispatcherPriority> výčtu. Podrobné informace o úrovních <xref:System.Windows.Threading.DispatcherPriority> najdete v dokumentaci k Windows SDK.  
   
 <a name="samples"></a>   
 ## <a name="threads-in-action-the-samples"></a>Vlákna v akci: ukázky  

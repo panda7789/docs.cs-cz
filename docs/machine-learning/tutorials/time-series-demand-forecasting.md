@@ -1,17 +1,17 @@
 ---
 title: 'Kurz: odhad poptávky po absolvování kol – časové řady'
 description: V tomto kurzu se dozvíte, jak předpovědět poptávku za službu pronájmu kol pomocí analýzy univariate časových řad a ML.NET.
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: f30aac5f8467c2410e9008bafea3cf35af3f4e2a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e913c27c3501c4c553d7d62f948de31abb3d6f49
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425637"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740535"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: odhadování poptávky po nájemce kol s využitím analýzy časových řad a ML.NET
 
@@ -26,9 +26,6 @@ V tomto kurzu se naučíte:
 > * Vyhodnotit model prognózy
 > * Uložení modelu prognózy
 > * Použití modelu prognózy
-
-> [!NOTE]
-> V tomto kurzu se používá verze Preview sady DatabaseLoader.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -49,13 +46,13 @@ Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http:/
 ## <a name="create-console-application"></a>Vytvořit konzolovou aplikaci
 
 1. Vytvořte novou  **C# konzolovou aplikaci .NET Core** nazvanou "BikeDemandForecasting".
-1. Balíček NuGet pro instalaci verze **Microsoft.ml** **1.4.0-preview2**
+1. Balíček NuGet pro instalaci **Microsoft.ml** verze **1.4.0**
     1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
     1. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu **Procházet** a vyhledejte **Microsoft.ml**.
     1. Zaškrtněte políčko **zahrnout předběžné verze** .
     1. Vyberte tlačítko **instalovat** .
     1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro přijetí licence vyberte tlačítko **přijmout** .
-    1. Opakujte tento postup pro **System. data. SqlClient** verze **4.7.0**, **Microsoft. ml. experimentální** verze **0.16.0-preview2**a **Microsoft. ml. časové řady** Version **1.4.0-preview2**.
+    1. Opakujte tyto kroky pro **System. data. SqlClient** verze **4.7.0** a **Microsoft. ml. časové řady** verze **1.4.0**.
 
 ### <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 

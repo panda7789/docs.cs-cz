@@ -2,23 +2,23 @@
 title: <transport> z <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
-ms.openlocfilehash: 6ea0b1e374659bbbbb2f47630c009f823ccd4de9
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: d40178e59b89c2912123e1927e9e960f6d880871
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399330"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735959"
 ---
-# <a name="transport-of-netnamedpipebinding"></a>\<transport> of \<netNamedPipeBinding>
+# <a name="transport-of-netnamedpipebinding"></a>> \<přenosů \<netNamedPipeBinding >
 Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netNamedPipeBinding >** ](netnamedpipebinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-netnamedpipebinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> přenosu**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-netnamedpipebinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<transport >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Platné|Definuje úroveň ochrany pojmenovaného kanálu. Podepisování zpráv snižuje riziko manipulace třetí strany při přenosu zprávy. Šifrování poskytuje během přenosu soukromí na úrovni dat. Platné hodnoty jsou následující:<br /><br /> NTato Žádná ochrana.<br />Osobě Zprávy jsou podepsány.<br />EncryptAndSign Zprávy jsou zašifrovány a podepsány.<br /><br /> Výchozí hodnota je EncryptAndSign.|  
+|Platné|Definuje úroveň ochrany pojmenovaného kanálu. Podepisování zpráv snižuje riziko manipulace třetí strany při přenosu zprávy. Šifrování poskytuje během přenosu soukromí na úrovni dat. Platné hodnoty jsou následující:<br /><br /> -None: bez ochrany.<br />-Sign: zprávy jsou podepsané.<br />-EncryptAndSign: zprávy jsou šifrované a podepsané.<br /><br /> Výchozí hodnota je EncryptAndSign.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,7 +48,7 @@ Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-of-netnamedpipebinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[> zabezpečení \<](security-of-netnamedpipebinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -60,4 +60,4 @@ Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

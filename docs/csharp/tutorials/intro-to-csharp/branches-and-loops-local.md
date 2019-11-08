@@ -3,12 +3,12 @@ title: Větve a smyčky – Úvod k C# kurzu
 description: V tomto kurzu o větvích a smyčkách napíšete C# kód pro zkoumání syntaxe jazyka, která podporuje podmíněné větve a smyčky k opakovanému spouštění příkazů.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: a0701a63d6c3aece6bac4263cbcf8a682a623cf7
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 44b634e3c2120116ee7fd66770398a6b66c8ed8c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834115"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739122"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další informace o podmíněné logice s příkazy větví a smyček
 
@@ -18,9 +18,15 @@ V tomto kurzu se očekává, že máte počítač, který můžete použít pro 
 
 ## <a name="make-decisions-using-the-if-statement"></a>Rozhodování pomocí příkazu `if`
 
-Vytvořte adresář s názvem *větve – kurz*. Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n BranchesAndLoops -o .`. Tento příkaz vytvoří novou konzolovou aplikaci .NET Core v aktuálním adresáři.
+Vytvořte adresář s názvem *větve – kurz*. Zajistěte, aby byl aktuální adresář, a spusťte následující příkaz:
 
-Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte řádek `Console.WriteLine("Hello World!");` následujícím kódem:
+```dotnetcli
+dotnet new console -n BranchesAndLoops -o .
+```
+
+Tento příkaz vytvoří novou konzolovou aplikaci .NET Core v aktuálním adresáři.
+
+Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte `Console.WriteLine("Hello World!");` řádku následujícím kódem:
 
 ```csharp
 int a = 5;
@@ -59,7 +65,7 @@ else
     Console.WriteLine("The answer is not greater than 10");
 ```
 
-Příkaz následující za klíčovým slovem `else` se spustí pouze v případě, že podmínka, která je testována, je `false`. Kombinování `if` a `else` s logickými podmínkami poskytuje veškerou sílu, kterou potřebujete ke zpracování podmínky `true` a `false`.
+Příkaz následující za klíčovým slovem `else` se spustí pouze v případě, že podmínka, která je testována, je `false`. Kombinování `if` a `else` s logickými podmínkami poskytuje veškerou sílu, kterou potřebujete ke zpracování `true` i podmínky `false`.
 
 > [!IMPORTANT]
 > Odsazení pod příkazy `if` a `else` je pro lidské čtecí zařízení.
@@ -84,7 +90,7 @@ else
 > [!TIP]
 > Ve zbývající části tohoto kurzu obsahuje ukázka kódu všechny složené závorky, a to po přijatých postupech.
 
-Můžete testovat složitější podmínky. Do své metody `Main` přidejte následující kód za dosud napsaný kód:
+Můžete testovat složitější podmínky. Přidejte následující kód do metody `Main` za kód, který jste doposud napsali:
 
 ```csharp
 int c = 4;
@@ -102,9 +108,9 @@ else
 
 Testy symbolů `==` pro *rovnost*. Použití `==` rozlišuje test pro rovnost z přiřazení, které jste viděli v `a = 5`.
 
-@No__t-0 představuje "a". To znamená, že obě podmínky musí mít hodnotu true, aby se příkaz spustil ve větvi true.  Tyto příklady také ukazují, že můžete mít v každé podmíněnou větev více příkazů, za předpokladu, že je uzavíráte do `{` a `}`.
+`&&` představuje "a". To znamená, že obě podmínky musí mít hodnotu true, aby se příkaz spustil ve větvi true.  Tyto příklady také ukazují, že můžete mít v každé podmíněnou větev více příkazů, za předpokladu, že je uzavíráte do `{` a `}`.
 
-@No__t-0 můžete také použít k reprezentaci "nebo". Po tom, co jste napsali, přidejte následující kód:
+Můžete také použít `||` k reprezentaci "nebo". Po tom, co jste napsali, přidejte následující kód:
 
 ```csharp
 if ((a + b + c > 10) || (a == b))
@@ -121,7 +127,7 @@ else
 
 Upravte hodnoty `a`, `b` a `c` a přepínejte mezi `&&` a `||`. Získáte lepší znalosti o tom, jak operátory `&&` a `||` fungují.
 
-Dokončili jste první krok. Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `ExploreIf` a zapište novou metodu `Main`, která volá `ExploreIf`. Až budete hotovi, váš kód by měl vypadat takto:
+Dokončili jste první krok. Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `ExploreIf` a zapište novou `Main` metodu, která volá `ExploreIf`. Až budete hotovi, váš kód by měl vypadat takto:
 
 ```csharp
 using System;
@@ -181,7 +187,7 @@ Odkomentujte volání `ExploreIf()`. Výsledkem je, že při práci v této čá
 //ExploreIf();
 ```
 
-@No__t-0 spustí **Komentář** v C#. Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód. Kompilátor negeneruje žádný spustitelný kód z komentářů.
+`//` spustí **Komentář** v C#. Komentáře jsou libovolný text, který chcete zachovat ve zdrojovém kódu, ale ne spustit jako kód. Kompilátor negeneruje žádný spustitelný kód z komentářů.
 
 ## <a name="use-loops-to-repeat-operations"></a>Opakování operací pomocí smyček
 
@@ -198,10 +204,10 @@ while (counter < 10)
 
 Příkaz `while` zkontroluje podmínku a spustí blok příkazu nebo příkazu za `while`. Opakovaně kontroluje podmínku a spouští tyto příkazy, dokud podmínka nevrátí hodnotu false.
 
-V tomto příkladu je druhý operátor New. @No__t-0 za proměnnou `counter` je operátorem **přírůstku** . Přičte 1 k hodnotě `counter` a uloží tuto hodnotu do proměnné `counter`.
+V tomto příkladu je druhý operátor New. `++` za proměnnou `counter` je operátor **přírůstku** . Přičte 1 k hodnotě `counter` a uloží tuto hodnotu do proměnné `counter`.
 
 > [!IMPORTANT]
-> Ujistěte se, že se při provádění kódu změní podmínka smyčky `while` na hodnotu false. V opačném případě vytvoříte **nekonečnou smyčku** , ve které program nikdy nekončí. To není v této ukázce znázorněno, protože je nutné vynutit ukončení programu pomocí **kombinace kláves CTRL-C** nebo jiným způsobem.
+> Ujistěte se, že se podmínka `while` smyčky při spuštění kódu změní na false. V opačném případě vytvoříte **nekonečnou smyčku** , ve které program nikdy nekončí. To není v této ukázce znázorněno, protože je nutné vynutit ukončení programu pomocí **kombinace kláves CTRL-C** nebo jiným způsobem.
 
 Smyčka `while` testuje podmínku před spuštěním kódu za `while`. Smyčka `do`... `while` spustí nejprve kód a poté zkontroluje podmínku. Cyklus do while je zobrazen v následujícím kódu:
 
@@ -214,7 +220,7 @@ do
 } while (counter < 10);
 ```
 
-Tato smyčka `do` a předchozí smyčka `while` vytvoří stejný výstup.
+Tato `do` smyčka a předchozí smyčka `while` vytvoří stejný výstup.
 
 ## <a name="work-with-the-for-loop"></a>Práce s cyklem for
 
@@ -229,11 +235,11 @@ for (int index = 0; index < 10; index++)
 
 To funguje stejně jako smyčka `while` a smyčka `do`, kterou jste už použili. Příkaz `for` má tři části, které řídí, jak funguje.
 
-První část je **pro inicializátor**: `int index = 0;` deklaruje, že `index` je proměnná smyčky, a nastaví její počáteční hodnotu na `0`.
+První část je **pro inicializátor inicializátoru**: `int index = 0;` deklaruje, že `index` je proměnná smyčky, a nastaví její počáteční hodnotu na `0`.
 
-Střední část je **pro podmínku**: `index < 10` deklaruje, že se tato smyčka `for` bude nadále spouštět, dokud hodnota čítače není menší než 10.
+Střední část je **pro podmínku**: `index < 10` deklaruje, že se tato `for`á smyčka bude nadále spouštět, dokud hodnota čítače není menší než 10.
 
-Poslední část je **for iterátor**: `index++` určuje, jak se má změnit proměnná smyčky po provedení bloku následujícího po příkazu `for`. V tomto případě určuje, že `index` by se měla při každém spuštění bloku zvyšovat o 1.
+Poslední část je **for iterátor**: `index++` určuje, jak se má změnit proměnná smyčky po provedení bloku po příkazu `for`. Zde je uvedeno, že `index` by měly být při každém spuštění bloku zvětšeny o 1.
 
 Vyzkoušejte si je sami. Vyzkoušejte následující:
 
@@ -246,7 +252,7 @@ Až to budete mít, pojďme přejít k tomu, abyste si sami napsali kód, abyste
 
 Teď, když jste viděli příkaz `if` a konstrukce smyček v C# jazyce, se podívejte, jestli můžete napsat C# kód, abyste našli součet všech celých čísel od 1 do 20, která jsou dělitelná 3.  Tady je několik tipů:
 
-- Operátor `%` poskytuje zbývající část operace dělení.
+- Operátor `%` poskytuje zbytek operace dělení.
 - Příkaz `if` poskytuje podmínku pro zjištění, zda číslo by mělo být součástí součtu.
 - Cyklus `for` vám může pomáhat opakovat řadu kroků pro všechna čísla od 1 do 20.
 

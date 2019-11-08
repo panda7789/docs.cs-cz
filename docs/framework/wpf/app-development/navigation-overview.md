@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 619dc101cd8851cee24651b7e3098ae12ef46259
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a0916a2957eab6ae340fe914395eda44860da3b7
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459766"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733735"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 
@@ -85,7 +85,7 @@ Pomocí <xref:System.Windows.Controls.Page>lze deklarativně implementovat strá
 
 [!code-xaml[NavigationOverviewSnippets#Page1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page1.xaml#page1xaml)]
 
-<xref:System.Windows.Controls.Page>, která je implementována v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky, má `Page` jako svůj kořenový prvek a vyžaduje deklaraci oboru názvů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. Element `Page` obsahuje obsah, na který chcete přejít a zobrazit. Obsah můžete přidat nastavením prvku vlastnosti `Page.Content`, jak je znázorněno v následujícím kódu.
+<xref:System.Windows.Controls.Page>, která je implementována v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky, má `Page` jako svůj kořenový prvek a vyžaduje deklaraci oboru názvů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]XML. Element `Page` obsahuje obsah, na který chcete přejít a zobrazit. Obsah můžete přidat nastavením prvku vlastnosti `Page.Content`, jak je znázorněno v následujícím kódu.
 
 [!code-xaml[NavigationOverviewSnippets#Page2XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page2.xaml#page2xaml)]
 
@@ -106,7 +106,7 @@ V tomto případě je `Page.Content` automaticky nastaveno s podřízenými prvk
 
 Chcete-li, aby soubor značek a soubor s kódem na pozadí pracovaly společně, je vyžadována následující konfigurace:
 
-- V kódu musí prvek `Page` zahrnovat atribut `x:Class`. Když je aplikace sestavena, existence `x:Class` v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří třídu `partial` odvozenou od <xref:System.Windows.Controls.Page> a má název, který je určen atributem `x:Class`. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů pro schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). Vygenerovaná třída `partial` implementuje `InitializeComponent`, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.
+- V kódu musí prvek `Page` zahrnovat atribut `x:Class`. Když je aplikace sestavena, existence `x:Class` v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří třídu `partial` odvozenou od <xref:System.Windows.Controls.Page> a má název, který je určen atributem `x:Class`. To vyžaduje přidání deklarace oboru názvů XML pro schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). Vygenerovaná třída `partial` implementuje `InitializeComponent`, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.
 
 - V kódu na pozadí třída musí být třída `partial` se stejným názvem, která je určena atributem `x:Class` v kódu a musí odvozovat z <xref:System.Windows.Controls.Page>. To umožňuje, aby soubor s kódem na pozadí byl přidružen ke třídě `partial`, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).
 

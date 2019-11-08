@@ -6,12 +6,12 @@ helpviewer_keywords:
 - limitations of XamlWriter.Save
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-ms.openlocfilehash: 0416b92a6264e6a8261355197b4ab2fa61f80ef2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 5b9141d5df40d74c4682f418a8fb089fddcfcaa9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582597"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740750"
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Omezení serializace XamlWriter.Save
 Rozhraní API <xref:System.Windows.Markup.XamlWriter.Save%2A> lze použít k serializaci obsahu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Existují však významná omezení přesně toho, co je serializováno. Tato omezení a některé obecné otázky jsou popsány v tomto tématu.  
@@ -30,7 +30,7 @@ Rozhraní API <xref:System.Windows.Markup.XamlWriter.Save%2A> lze použít k ser
   
 <a name="Event_Handling_is_Not_Preserved"></a>   
 ## <a name="event-handling-is-not-preserved"></a>Zpracování událostí není zachováno.  
- Pokud jsou obslužné rutiny událostí přidávané prostřednictvím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] serializovány, nejsou zachovány. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] bez kódu na pozadí (a také bez souvisejícího mechanismu x:Code) nemá žádný způsob serializace běhové procesní logiky. Protože serializace je samostatně obsažena a omezena na logický strom, neexistuje žádné zařízení pro ukládání obslužných rutin událostí. V důsledku toho jsou z výstupního [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] odebrány atributy obslužné rutiny události, samotný atribut a řetězcová hodnota, která má název obslužné rutiny.  
+ Pokud jsou obslužné rutiny událostí přidávané prostřednictvím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] serializovány, nejsou zachovány. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] bez kódu na pozadí (a také bez souvisejícího mechanismu x:Code) nemá žádný způsob serializace běhové procesní logiky. Protože serializace je samostatně obsažena a omezena na logický strom, neexistuje žádné zařízení pro ukládání obslužných rutin událostí. V důsledku toho jsou z výstupního [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]odebrány atributy obslužné rutiny události, samotný atribut a řetězcová hodnota, která má název obslužné rutiny.  
   
 <a name="Realistic_Scenarios_for_Use_of_XAMLWriter_Save"></a>   
 ## <a name="realistic-scenarios-for-use-of-xamlwritersave"></a>Reálné scénáře pro použití XAMLWriter. Save  
@@ -40,4 +40,4 @@ Rozhraní API <xref:System.Windows.Markup.XamlWriter.Save%2A> lze použít k ser
   
 - Rich Text a flow Documents: text a všechny formátování elementů a element v něm obsažené jsou zachovány ve výstupu. To může být užitečné pro mechanismy, které mají přibližnou funkčnost schránky.  
   
-- Zachování dat obchodních objektů: Pokud máte uložená data ve vlastních prvcích, jako je například [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data, pokud vaše obchodní objekty následují základní [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pravidla, jako je například poskytování vlastních konstruktorů a převod hodnot vlastností podle odkazu, tyto firmy objekty mohou být perpetuated prostřednictvím serializace.
+- Zachování dat obchodních objektů: Pokud máte uložená data ve vlastních prvcích, jako jsou data XML, tak dlouho, jak vaše obchodní objekty následují základní pravidla [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], jako je poskytování vlastních konstruktorů a převod hodnot vlastností podle odkazu, tyto firmy objekty mohou být perpetuated prostřednictvím serializace.

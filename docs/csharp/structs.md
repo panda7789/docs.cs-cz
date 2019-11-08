@@ -4,12 +4,12 @@ description: Přečtěte si o typu struktury a způsobu jejich vytváření.
 ms.date: 10/12/2016
 ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: 10971dc1a0b2c9d64ac8766734b3f6f630aa3ccf
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 39bf44dc187fbbc7aac71a1d5c5f3a4d7f446eb8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423108"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739177"
 ---
 # <a name="structs"></a>Struktury
 
@@ -53,21 +53,9 @@ Struktury sdílejí většinu stejné syntaxe jako třídy, i když jsou struktu
   
 - Struktura může implementovat rozhraní.
 
-## <a name="literal-values"></a>Hodnoty literálu
-
-V C#rozhraní hodnoty literálu obdrží typ z kompilátoru. Můžete určit, jak se má číselný literál zadat připojením písmene ke konci čísla. Například chcete-li určit, že hodnota 4,56 by měla být považována za float, přidejte "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí `double` typ literálu. Další informace o tom, které typy lze zadat s příponami písmen, naleznete v tématu referenční stránky pro jednotlivé typy v [hodnotových typech](./language-reference/keywords/value-types.md).  
-  
-Vzhledem k tomu, že jsou zadány literály a všechny typy jsou odvozeny od <xref:System.Object>, můžete napsat a zkompilovat kód, například následující:  
-  
-[!code-csharp[Literal Values](../../samples/snippets/csharp/concepts/structs/literals.cs)]
-
-Poslední dva příklady ukazují jazykové funkce představené v C# 7,0. První umožňuje použití znaku podtržítka jako *oddělovače číslic* v rámci numerických literálů. Můžete je umístit tam, kde chcete, aby se zlepšila čitelnost mezi číslicemi. Nemají na hodnotu žádný vliv.
-
-Druhý ukazuje *binární literály*, které umožňují zadat bitové vzory přímo místo použití šestnáctkového zápisu.
-
 ## <a name="nullable-value-types"></a>Typy hodnot s povolenou hodnotou Null
 
-Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](./language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601>. Typy hodnot s možnou hodnotou null jsou zvláště užitečné při předávání dat do a z databází, ve kterých mohou být číselné hodnoty null nebo nedefinovány. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](programming-guide/nullable-types/index.md).
+Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](./language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601>. Typy hodnot s možnou hodnotou null jsou zvláště užitečné při předávání dat do a z databází, ve kterých mohou být číselné hodnoty null nebo nedefinovány. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](language-reference/builtin-types/nullable-value-types.md).
 
 ## <a name="see-also"></a>Viz také:
 

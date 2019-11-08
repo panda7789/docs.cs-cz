@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data binding [WPF], Master-Detail data paradigm
 - Master-Detail data paradigm
 ms.assetid: 11429b9e-058d-4084-bfb6-2cf209c8ddf7
-ms.openlocfilehash: 2e7d9ceed3ab8385f07d87ecdb92c0a99d410b40
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e4183ddc3868a1568662853b46e05348df129092
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459078"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733478"
 ---
 # <a name="how-to-use-the-master-detail-pattern-with-hierarchical-data"></a>Postupy: Použití vzoru seznam-podrobnosti s hierarchickými daty
 Tento příklad ukazuje, jak implementovat scénář hlavní-podrobnosti.  
@@ -31,7 +31,7 @@ Tento příklad ukazuje, jak implementovat scénář hlavní-podrobnosti.
   
 2. Vlastnost <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> musíte nastavit na `true` na ovládací prvky <xref:System.Windows.Controls.ListBox>, na kterých sledujete výběr. Nastavení této vlastnosti zajistí, že se vybraná položka vždycky nastaví jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně, pokud <xref:System.Windows.Controls.ListBox> získá data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a měnu.  
   
- Technika je mírně odlišná, pokud používáte [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Příklad naleznete v tématu [použití vzoru hlavní-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md).  
+ Technika je mírně odlišná, pokud používáte data XML. Příklad naleznete v tématu [použití vzoru hlavní-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md).  
   
 ## <a name="see-also"></a>Viz také:
 

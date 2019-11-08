@@ -2,43 +2,43 @@
 title: Navigační vlastnost – ADO.NET
 ms.date: 03/30/2017
 ms.assetid: d0bf1a6a-1d84-484c-b7c3-b410fd8dc0b1
-ms.openlocfilehash: b57ecf9329aa9ea8afc07507613c9e3961bfd0a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afb2043abf70fa92ea7cdf8d1e8246d5cdfdba74
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772258"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738384"
 ---
 # <a name="navigation-property"></a>Navigační vlastnost
 
-A *navigační vlastnost* vlastnost je volitelná na [typ entity](entity-type.md) , který umožňuje navigace z jednoho [end](association-end.md) z [přidružení](association-type.md) do druhém konci. Na rozdíl od jiných [vlastnosti](property.md), navigačních vlastností není vázané na data.
+*Navigační vlastnost* je volitelnou vlastností u [typu entity](entity-type.md) , která umožňuje navigaci od jednoho [konce](association-end.md) [přidružení](association-type.md) k druhému konci. Na rozdíl od jiných [vlastností](property.md)navigační vlastnosti neobsahují data.
 
-Definice vlastnosti navigace zahrnuje následující položky:
+Definice navigační vlastnosti zahrnuje následující:
 
-- Název. (Povinné)
+- Název. Požadovanou
 
-- Přidružení, na kterou se přejde. (Povinné)
+- Přidružení, které naviguje. Požadovanou
 
-- Elementy end přidružení, na kterou se přejde. (Povinné)
+- Konec přidružení, které naviguje. Požadovanou
 
-Všimněte si, že jsou volitelné na oba typy entit na konci asociace navigační vlastnosti. Pokud definujete navigační vlastnost jednoho typu entity na konci asociace, není nutné definovat vlastnost navigace typu entity na druhém konci přidružení.
+Všimněte si, že navigační vlastnosti jsou volitelné na obou typech entit na konci přidružení. Definujete-li vlastnost navigace na jednom typu entity na konci přidružení, nemusíte definovat vlastnost navigace na typu entity na druhém konci přidružení.
 
-Datový typ vlastnosti navigace závisí [násobnost](association-end-multiplicity.md) jeho vzdáleného [end přidružení](association-end.md). Předpokládejme například, vlastnost navigace, `OrdersNavProp`, existuje na `Customer` typu entity a přejde na více přidružení mezi `Customer` a `Order`. Protože ukončení vzdálené přidružení pro navigační vlastnost má násobnost mnoha (\*), jeho datový typ je kolekce (z `Order`). Podobně, pokud vlastnost navigace, `CustomerNavProp`, existuje na `Order` typ entity, jeho datový typ by `Customer`, protože vzdáleným koncem násobnost je jedna (1).
+Datový typ vlastnosti navigace je určen [násobností](association-end-multiplicity.md) jeho vzdáleného [zakončení přidružení](association-end.md). Předpokládejme například, že navigační vlastnost, `OrdersNavProp`, existuje v `Customer` typu entity a přechází mezi `Customer` a `Order`přidružení 1:1. Vzhledem k tomu, že vzdálené zakončení přidružení pro navigační vlastnost má násobnost mnoho (\*), je jeho datovým typem kolekce (z `Order`). Podobně platí, že pokud v `Order` typu entity `CustomerNavProp`existuje vlastnost navigace, její datový typ by byl `Customer`, protože násobnost vzdáleného elementu end je jedna (1).
 
 ## <a name="example"></a>Příklad
 
-Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`. Vlastnosti navigace `Publisher` a `Authors`, jsou definovány na typ entity adresáře. Navigační vlastnost `Books` je definována obě vydavatele typu entity a `Author` typ entity.
+Následující diagram znázorňuje koncepční model se třemi typy entit: `Book`, `Publisher`a `Author`. Navigační vlastnosti, `Publisher` a `Authors`, jsou definovány pro typ entity Book. Navigační vlastnost `Books` je definována jak pro typ entity Vydavatel, tak pro typ entity `Author`.
 
- ![Diagram znázorňující konceptuálního modelu s tři typy entit.](./media/navigation-property/conceptual-model-entity-types-associations.gif)  
+ ![Diagram znázorňující koncepční model se třemi typy entit.](./media/navigation-property/conceptual-model-entity-types-associations.gif)  
 
-[ADO.NET Entity Framework](./ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](./ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `Book` typ entity, které jsou zobrazeny ve výše uvedeném diagramu:
+[ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)(konceptuální schéma Definition Language). Následující CSDL definuje typ entity `Book` zobrazený v diagramu výše:
 
 [!code-xml[EDM_Example_Model#EntityExample](~/samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]
 
-Všimněte si, že atributy ve formátu XML se používají ke komunikaci informace potřebné k definování navigační vlastnost: Atribut `Name` obsahuje název vlastnosti, `Relationship` obsahuje název přidružení se odkazuje, a `FromRole` a `ToRole` obsahovat elementy end přidružení.
+Všimněte si, že atributy XML slouží ke sdělování informací nezbytných pro definování navigační vlastnosti: atribut `Name` obsahuje název vlastnosti `Relationship` obsahuje název přidaného přidružení a `FromRole` a `ToRole` obsahovat. konec přidružení.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
 - [Model EDM (Entity Data Model)](entity-data-model.md)
-- [Relace, navigačních vlastností a cizí klíče](/ef/ef6/fundamentals/relationships)
+- [Relace, navigační vlastnosti a cizí klíče](/ef/ef6/fundamentals/relationships)

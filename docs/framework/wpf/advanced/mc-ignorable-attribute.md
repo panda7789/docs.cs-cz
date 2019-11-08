@@ -9,15 +9,15 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: d8fdeec8784c9a44c9b272a0a5a8b9c56ace5230
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e14ab0ebc7d44e2792307b16c7c0581ff7a71bc6
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458827"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740822"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
-Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů, které se vyskytly v souboru označení, může být ignorována [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]m procesorem. Atribut `mc:Ignorable` podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí.  
+Určuje, které předpony oboru názvů XML zjištěné v souboru značek mohou být [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesorem ignorovány. Atribut `mc:Ignorable` podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí.  
   
 ## <a name="xaml-attribute-usage-single-prefix"></a>Použití atributu XAML (jedna předpona)  
   
@@ -51,7 +51,7 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
 |*ThisElementCanBeIgnored*|Element, který může být ignorován pomocí implementace [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] procesoru, pokud nelze přeložit nadřízený typ.|  
   
 ## <a name="remarks"></a>Poznámky  
- Předpona oboru názvů `mc` [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] je doporučená konvence předpony, která se má použít při mapování `http://schemas.openxmlformats.org/markup-compatibility/2006`oboru názvů kompatibility [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ Předpona oboru názvů `mc` XML je doporučená konvence předpony, která se má použít při mapování `http://schemas.openxmlformats.org/markup-compatibility/2006`oboru názvů kompatibility [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  Prvky nebo atributy, kde předpona v názvu elementu je identifikována jako `mc:Ignorable` nevyvolává chyby při zpracování procesorem [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Pokud tento atribut nelze přeložit na nadřízený typ nebo konstruktor programování, je tento prvek ignorován. Upozorňujeme však, že ignorované prvky mohou stále generovat další chyby analýzy pro další požadavky na prvky, které jsou vedlejšími účinky tohoto prvku nezpracovávány. Například určitý model obsahu elementu může vyžadovat přesně jeden podřízený element, ale pokud byl zadaný podřízený element v předponě `mc:Ignorable` a zadaný podřízený element nelze přeložit na typ, pak procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může vyvolat chybu.  
   

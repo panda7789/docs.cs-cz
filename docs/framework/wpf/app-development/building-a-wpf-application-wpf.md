@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 04183b2404d26c783e14dc6f4cb4141bab0d7621
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bf673195f06475daf8341fd17cd701b84a970b39
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424438"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740663"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 
@@ -46,7 +46,7 @@ Před sestavením nástroj MSBuild určí umístění důležitých nástrojů a
 
 - .NET Framework.
 
-- Adresáře [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)].
+- Adresáře Windows SDK.
 
 - Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] referenčních sestavení.
 
@@ -64,7 +64,7 @@ Proces sestavení vyhledá a vytvoří vazby sestavení potřebných k sestaven�
 
 ### <a name="markup-compilationpass-1"></a>Kompilace značek – Pass 1
 
-V tomto kroku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory analyzovány a kompilovány tak, že modul runtime nestráví analýzu času [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] a ověřováním hodnot vlastností. Kompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je předem vydaný, takže při spuštění by měl být v době běhu mnohem rychlejší než načtení souboru [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
+V tomto kroku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory analyzovány a kompilovány tak, aby modul runtime nestrávil čas analýzy XML a ověřování hodnot vlastností. Kompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je předem vydaný, takže při spuštění by měl být v době běhu mnohem rychlejší než načtení souboru [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 Během tohoto kroku probíhají následující aktivity pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor, který je `Page` položkou sestavení:
 

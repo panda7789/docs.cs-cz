@@ -1,18 +1,18 @@
 ---
-title: Upgradovat rozhraní API s atributy pro definování očekávání null
-description: Tento článek vysvětluje podněty a techniky pro přidání popisných atributů k popisu nulového stavu argumentů a vrácených hodnot z rozhraní API.
+title: Upgradujte rozhraní API pro typy odkazů s možnou hodnotou null s atributy, které definují očekávání pro hodnoty null.
+description: Naučte se používat popisné atributy AllowNull má, DisallowNull, MaybeNull, NotNull a další k úplnému popisu stavu null vašich rozhraní API.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: 102598843b091ea25e6456aeedcccf43f056250d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 64dcc70565de0c3094ef1c10866aafce9e18a5c9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039372"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737880"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
-Přidání [odkazových typů s možnou hodnotou null](nullable-references.md) znamená, že můžete deklarovat, zda je hodnota `null` pro každou proměnnou povolená nebo očekávaná. Poskytuje skvělé prostředí při psaní kódu. Zobrazí se upozornění, pokud může být proměnná bez hodnoty null nastavena na `null`. Zobrazí se upozornění, pokud u proměnné s možnou hodnotou null není zkontrolována hodnota null před tím, než ji zrušíte. Aktualizace knihoven může chvíli trvat, ale výnosy je. Další informace, které do kompilátoru zadáte, *Pokud* je hodnota `null` povolená nebo zakázaná, budou se lépe zobrazovat uživatelé vašeho rozhraní API. Pojďme začít se známým příkladem. Představte si, že knihovna má následující rozhraní API k načtení řetězce prostředků:
+Přidání [odkazových typů s možnou hodnotou null](nullable-references.md) znamená, že můžete deklarovat, zda je hodnota `null` pro každou proměnnou povolená nebo očekávaná. Kromě toho můžete použít několik atributů: `AllowNull`, `DisallowNull`, `MaybeNull`, `NotNull`, `NotNullWhen`, `MaybeNullWhen`a `NotNullWhenNotNull` k úplnému popisu stavů null argumentů a vrácených hodnot. Poskytuje skvělé prostředí při psaní kódu. Zobrazí se upozornění, pokud může být proměnná bez hodnoty null nastavena na `null`. Zobrazí se upozornění, pokud u proměnné s možnou hodnotou null není zkontrolována hodnota null před tím, než ji zrušíte. Aktualizace knihoven může chvíli trvat, ale výnosy je. Další informace, které do kompilátoru zadáte, *Pokud* je hodnota `null` povolená nebo zakázaná, budou se lépe zobrazovat uživatelé vašeho rozhraní API. Pojďme začít se známým příkladem. Představte si, že knihovna má následující rozhraní API k načtení řetězce prostředků:
 
 ```csharp
 bool TryGetMessage(string key, out string message)

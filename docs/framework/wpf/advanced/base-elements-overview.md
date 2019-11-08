@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
-ms.openlocfilehash: 6f8542be5a84a4b8b4cabf594c32d6fdfd3757d2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 823c81bf6b21b88d719503387a68ce6e7d643d61
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453764"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740913"
 ---
 # <a name="base-elements-overview"></a>Přehled základních elementů
-Vysoké procento tříd v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou odvozeny ze čtyř tříd, které se běžně označují v dokumentaci [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] jako základní třídy prvků. Tyto třídy jsou <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>a <xref:System.Windows.FrameworkContentElement>. Třída <xref:System.Windows.DependencyObject> také souvisí, protože se jedná o společnou základní třídu obou <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>  
+Vysoké procento tříd v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou odvozeny ze čtyř tříd, které se běžně označují v dokumentaci k sadě SDK jako základní třídy prvků. Tyto třídy jsou <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>a <xref:System.Windows.FrameworkContentElement>. Třída <xref:System.Windows.DependencyObject> také souvisí, protože se jedná o společnou základní třídu obou <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>  
 
 <a name="base_apis"></a>   
 ## <a name="base-element-apis-in-wpf-classes"></a>Rozhraní API základních prvků v třídách WPF  

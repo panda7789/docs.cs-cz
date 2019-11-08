@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 8c650ceab57a46cb6dd396111e7a93163a62299f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 87d5ff67a9e95c5ec5385802d09d667ee8b6e0f9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424945"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740687"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytují vlastní okna pomocí <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před tím, než se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
@@ -88,7 +88,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  Chcete-li povolit společné fungování souboru značek [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a souboru s kódem na pozadí, jsou vyžadovány následující:  
   
-- V kódu `Window` element musí zahrnovat atribut `x:Class`. Když je aplikace sestavena, existence `x:Class` v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří třídu `partial`, která je odvozena z <xref:System.Windows.Window> a má název, který je určen atributem `x:Class`. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů pro schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). Vygenerovaná `partial` třída implementuje metodu `InitializeComponent`, která je volána k zaregistrování událostí a nastavení vlastností, které jsou implementovány v označení.  
+- V kódu `Window` element musí zahrnovat atribut `x:Class`. Když je aplikace sestavena, existence `x:Class` v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří třídu `partial`, která je odvozena z <xref:System.Windows.Window> a má název, který je určen atributem `x:Class`. To vyžaduje přidání deklarace oboru názvů XML pro schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). Vygenerovaná `partial` třída implementuje metodu `InitializeComponent`, která je volána k zaregistrování událostí a nastavení vlastností, které jsou implementovány v označení.  
   
 - V kódu na pozadí třída musí být `partial` třídy se stejným názvem, který je určen atributem `x:Class` v kódu a musí odvozovat z <xref:System.Windows.Window>. To umožňuje, aby soubor s kódem na pozadí byl přidružen ke třídě `partial`, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).  
   

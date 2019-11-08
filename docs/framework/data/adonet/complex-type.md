@@ -2,12 +2,12 @@
 title: complex type
 ms.date: 03/30/2017
 ms.assetid: 63efbd23-11d4-4871-bc88-ad01b9837553
-ms.openlocfilehash: 0d9b8efd08cc0dfba5b26a70773b614b0d63d74f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e21ca90a7be8f2bd9be9483c66a1e95e6ba1bee2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786757"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738545"
 ---
 # <a name="complex-type"></a>complex type
 *Komplexní typ* je šablona pro definování bohatě strukturovaných vlastností na [typech entit](entity-type.md) nebo na jiných komplexních typech. Každá šablona obsahuje následující:  
@@ -29,11 +29,11 @@ ms.locfileid: "70786757"
 - Komplexní typy se nemůžou účastnit [přidružení](association-type.md). Ani konec přidružení může být komplexní typ, a proto nelze definovat [vlastnosti navigace](navigation-property.md) pro komplexní typy.  
   
 ## <a name="example"></a>Příklad  
- [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje komplexní typ, adresu `StreetAddress`s vlastnostmi `City` `StateOrProvince` `Country`primitivního typu,,, a `PostalCode`.  
+ [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)(konceptuální schéma Definition Language). Následující CSDL definuje komplexní typ, adresu s vlastnostmi primitivního typu `StreetAddress`, `City`, `StateOrProvince`, `Country`a `PostalCode`.  
   
  [!code-xml[EDM_Example_Model#ComplexTypeExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books2.edmx#complextypeexample)]  
   
- Chcete-li definovat komplexní `Address` typ (výše) jako vlastnost typu entity, je nutné deklarovat typ vlastnosti v definici typu entity. Následující CSDL deklaruje `Address` vlastnost jako komplexní typ pro typ entity (Publisher):  
+ Chcete-li definovat komplexní typ `Address` (výše) jako vlastnost v typu entity, je nutné deklarovat typ vlastnosti v definici typu entity. Následující CSDL deklaruje vlastnost `Address` jako komplexní typ pro typ entity (vydavatel):  
   
  [!code-xml[EDM_Example_Model#EntityWithComplexType](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books3.edmx#entitywithcomplextype)]  
   

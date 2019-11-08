@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: aa535c36b578e000ae6ddd7534838b07b0a5d756
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 10bd924664a469be26174fadf3892ee56aa33856
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459999"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740639"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
@@ -52,7 +52,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
 #### <a name="members-of-types-and-class-inheritance"></a>Členové typů a dědičnosti tříd  
  Vlastnosti a události zobrazené jako členové XAML typu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou často děděny ze základních typů. Zvažte například tento příklad: `<Button Background="Blue" .../>`. Vlastnost <xref:System.Windows.Controls.Control.Background%2A> není bezprostředně Deklarovaná vlastnost na třídě <xref:System.Windows.Controls.Button>, pokud byste se chtěli podívat na definici třídy, výsledky reflexe nebo dokumentaci. Místo toho je <xref:System.Windows.Controls.Control.Background%2A> děděn ze základní <xref:System.Windows.Controls.Control> třídy.  
   
- Chování dědičnosti třídy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvků XAML je významné odchod z interpretace kódu XML vynutilého schématu. Dědičnost tříd může být složitá, zejména v případě, že mezilehlé základní třídy jsou abstraktní nebo když jsou zapojená rozhraní. To je jeden z důvodů, proč sada prvků XAML a jejich přípustných atributů je obtížné reprezentovat přesně a kompletně pomocí typů schémat, které se obvykle používají pro [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] programování, jako je například DTD nebo Formát XSD. Dalším důvodem je, že rozšiřitelnost a funkce mapování typů samotného jazyka XAML vylučuje úplnost jakékoli pevně reprezentace přípustných typů a členů.  
+ Chování dědičnosti třídy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvků XAML je významné odchod z interpretace kódu XML vynutilého schématu. Dědičnost tříd může být složitá, zejména v případě, že mezilehlé základní třídy jsou abstraktní nebo když jsou zapojená rozhraní. To je jeden z důvodů, proč sada prvků XAML a jejich přípustných atributů je obtížné reprezentovat přesně a kompletně pomocí typů schémat, které se obvykle používají pro programování XML, jako je například DTD nebo Formát XSD. Dalším důvodem je, že rozšiřitelnost a funkce mapování typů samotného jazyka XAML vylučuje úplnost jakékoli pevně reprezentace přípustných typů a členů.  
   
 <a name="object_element_syntax"></a>   
 ## <a name="object-element-syntax"></a>Syntaxe elementů objektu  

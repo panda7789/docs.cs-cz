@@ -2,12 +2,12 @@
 title: Přetypování (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: c16270babe4daa8e703b24b27211c6fd6f53677d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b7778d6a2e0b0dd15b2911f2d1cee36208e13328
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039920"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738513"
 ---
 # <a name="cast-entity-sql"></a>Přetypování (Entity SQL)
 Převede výraz jednoho datového typu na jiný.  
@@ -23,7 +23,7 @@ CAST ( expression AS data_type )
  Libovolný platný výraz, který lze převést na `data_type`.  
   
  `data_type`  
- Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. Použitá `data_type` závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](csdl-specification.md). Pokud je dotaz spuštěn s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
+ Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. Použitá `data_type` závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec). Pokud je dotaz spuštěn s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrací stejnou hodnotu jako `data_type`.  

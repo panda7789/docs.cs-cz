@@ -2,17 +2,14 @@
 title: Kryptografie – průlomové změny, verze 2,2 až 3,0 – .NET Core
 description: Uvádí přerušující změny z verze 2,2 na verzi 3,0 rozhraní .NET Core, ASP.NET Core a EF Core.
 ms.date: 09/10/2019
-ms.openlocfilehash: ba330bdef4be8cfe0e74f5645adaf66b2e0051ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8b2894e6988c0b475e45c6d5602a7f54943f3ed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089585"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739431"
 ---
 # <a name="breaking-changes-for-migration-from-version-22-to-30"></a>Narušení změn migrace z verze 2,2 na 3,0
-
-> [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) . 
 
 Pokud migrujete z verze 2,2 na verzi 3,0 rozhraní .NET Core, ASP.NET Core nebo EF Core, přečtěte si následující témata, kde najdete zásadní změny, které by mohly mít vliv na vaši aplikaci:
 

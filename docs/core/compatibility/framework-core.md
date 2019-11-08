@@ -2,17 +2,14 @@
 title: Přerušující se změny, .NET Framework .NET Core 3,0 – .NET Core
 description: Obsahuje seznam nejnovějších změn z .NET Framework .NET Core 3,0 pro model Windows Forms a Windows Presentation Foundation.
 ms.date: 09/10/2019
-ms.openlocfilehash: a374e35192c7aad07e986e0e0b75039642744edc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 80c93dd7a8715a9bcc6d81605ffe5af4b0461257
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089564"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739439"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core-30"></a>Zásadní změny migrace z .NET Framework do .NET Core 3,0
-
-> [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) . 
 
 Pokud migrujete model Windows Forms nebo Windows Presentation Foundation aplikaci z .NET Framework na .NET Core 3,0, přečtěte si následující témata, kde najdete zásadní změny, které můžou mít vliv na vaši aplikaci:
 

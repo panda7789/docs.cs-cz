@@ -2,12 +2,12 @@
 title: Vyhodnotit přerušující změny – .NET Core
 description: Přečtěte si o způsobech, kterými se .NET Core snaží zachovat kompatibilitu pro vývojáře napříč verzemi .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: a4a1b5c4e81cec783248c6110b0af9844eb3f4af
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: f4e18a17f58452c9325f36390626ae690f5ed777
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416684"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739345"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Vyhodnotit poslední změny v .NET Core
 
@@ -52,7 +52,7 @@ Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina 
 - **✔️ Změna typu [struktury](../../csharp/language-reference/keywords/struct.md) na typ `readonly struct`**
 
   Všimněte si, že změna typu `readonly struct` na typ `struct` není povolená.
-  
+
 - **✔️ přidání klíčového slova [sealed](../../csharp/language-reference/keywords/sealed.md) nebo [abstract](../../csharp/language-reference/keywords/abstract.md) do typu, *Pokud nejsou k dispozici žádné (* veřejné nebo chráněné) konstruktory**
 
 - **✔️ rozšíření viditelnosti typu**
@@ -138,9 +138,9 @@ Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina 
 - **❌ Přejmenování parametru (včetně změny jeho velikosti)**
 
   To se považuje za porušení dvou důvodů:
-  
+
   - Dojde k přerušení scénářů s pozdní vazbou, jako je funkce pozdní vazby [](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) v Visual Basic C#a dynamické v.
-  
+
   - Pokud vývojáři používají [pojmenované argumenty](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments), dojde k přerušení [kompatibility zdrojů](categories.md#source-compatibility) .
 
 - **❌ změna ze `ref` návratové hodnoty na `ref readonly` návratovou hodnotu**
@@ -153,9 +153,9 @@ Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina 
 
   I když se tato často nejedná o zásadní změnu C# , protože kompilátor chce vygenerovat instrukce [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) Intermediate Language (IL) pro volání nevirtuálních metod (`callvirt` provádí kontrolu hodnot null, zatímco normální volání ne), toto chování není inproměnná z několika důvodů:
   - C#není jediným jazykem, který cílí na .NET.
-  
+
   - C# Kompilátor stále častěji snaží optimalizovat `callvirt` na normální volání, kdykoli je cílová metoda nevirtuální a pravděpodobně není null (například metoda, ke které se přistupoval prostřednictvím [operátoru rozšíření?. null](../../csharp/language-reference/operators/member-access-operators.md#null-conditional-operators--and-)).
-  
+
   Vytvořením metody Virtual by kód příjemce často ukončil volání, které není prakticky.
 
 - **❌ přidání klíčového slova [Virtual](../../csharp/language-reference/keywords/virtual.md) do člena**

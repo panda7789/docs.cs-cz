@@ -2,22 +2,22 @@
 title: <security> z <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
-ms.openlocfilehash: 6c07d1ca18837f66548411262b84b9a326f5ec4a
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: ea029444cee331a235c7a2fc140b4321d7530063
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399735"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736325"
 ---
-# <a name="security-of-wsfederationhttpbinding"></a>\<security> of \<wsFederationHttpBinding>
-Definuje nastavení [ \<zabezpečení WSFederationHttpBinding >](wsfederationhttpbinding.md).  
+# <a name="security-of-wsfederationhttpbinding"></a>> \<zabezpečení \<wsFederationHttpBinding >
+Definuje nastavení zabezpečení [\<wsFederationHttpBinding >](wsfederationhttpbinding.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -86,27 +86,27 @@ Definuje nastavení [ \<zabezpečení WSFederationHttpBinding >](wsfederationhtt
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Režim|Volitelný parametr. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
+|Režim|Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
   
-## <a name="mode-attribute"></a>Mode – atribut  
+## <a name="mode-attribute"></a>mode – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Zpráva SOAP není během přenosu zabezpečená.|  
-|Message|Integrita, důvěrnost, ověřování serveru a ověřování klientů jsou k dispozici pomocí protokolu SOAP Message Security. Ve výchozím nastavení je text zašifrovaný a podepsaný. Služba musí být nakonfigurovaná s certifikátem. Ověřování klientů vychází z tokenu vystaveného klientovi tokenem zabezpečení.|  
+|Zpráva|Integrita, důvěrnost, ověřování serveru a ověřování klientů jsou k dispozici pomocí protokolu SOAP Message Security. Ve výchozím nastavení je text zašifrovaný a podepsaný. Služba musí být nakonfigurovaná s certifikátem. Ověřování klientů vychází z tokenu vystaveného klientovi tokenem zabezpečení.|  
 |TransportWithMessageCredential|Integrita, důvěrnost a ověřování serveru poskytuje protokol HTTPS. Služba musí být nakonfigurovaná s certifikátem. Ověřování klientů je zajištěno prostřednictvím zabezpečení zpráv SOAP a je založeno na tokenu vydanému klientovi pomocí služby tokenů zabezpečení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zprávy](message-element-of-wsfederationhttpbinding.md)|Definuje nastavení pro zabezpečení na úrovni zprávy. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
+|[> \<zprávy](message-element-of-wsfederationhttpbinding.md)|Definuje nastavení pro zabezpečení na úrovni zprávy. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby wsDualHttpBinding >](wsdualhttpbinding.md).|  
+|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby [\<wsDualHttpBinding >](wsdualhttpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -120,4 +120,4 @@ Definuje nastavení [ \<zabezpečení WSFederationHttpBinding >](wsfederationhtt
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

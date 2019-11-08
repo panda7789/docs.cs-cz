@@ -2,23 +2,23 @@
 title: <message> z <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9def5a35-475d-40d6-b716-ccdbd93863c7
-ms.openlocfilehash: 793e0541b1714d2afaafc634a9e9435e5243fa19
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 62b1793d18ddc8edc1f55b02137c4e0a9f7327d2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397838"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738956"
 ---
-# <a name="message-of-nethttpbinding"></a>\<> zpráv > \<NetHttpBinding
-Definuje nastavení pro zabezpečení [ \<NetHttpBinding >](nethttpbinding.md)na úrovni zprávy.  
+# <a name="message-of-nethttpbinding"></a>\<> zprávy \<netHttpBinding >
+Definuje nastavení pro zabezpečení [\<netHttpBinding >](nethttpbinding.md)na úrovni zprávy.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zpráva >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ Definuje nastavení pro zabezpečení [ \<NetHttpBinding >](nethttpbinding.md)na
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|UserName|– Vyžaduje, aby byl klient ověřený pro server s přihlašovacími údaji uživatele. Toto pověření je nutné zadat pomocí <`clientCredentials`> elementu.<br />-WCF nepodporuje odeslání výtahu hesla ani odvození klíčů pomocí hesel a použití takových klíčů pro zabezpečení zpráv. Proto WCF vynutilo zabezpečení přenosu při použití přihlašovacích údajů uživatelského jména. V `basicHttpBinding`případě nástroje to vyžaduje vytvoření kanálu SSL.|  
-|Certifikát|Vyžaduje, aby byl klient ověřený na serveru pomocí certifikátu. Přihlašovací údaje klienta v tomto případě je nutné zadat pomocí <`clientCredentials`> a <`clientCertificate`>. Kromě toho je nutné při použití režimu zabezpečení zpráv zřídit klienta s certifikátem služby. Pověření služby v tomto případě je nutné zadat pomocí <xref:System.ServiceModel.Description.ClientCredentials> elementu Class nebo `ClientCredentials` Behavior a zadáním certifikátu služby pomocí \<elementu serviceCertificate > třídy ServiceCredentials.|  
+|UserName|– Vyžaduje, aby byl klient ověřený pro server s přihlašovacími údaji uživatele. Toto pověření je nutné zadat pomocí elementu <`clientCredentials`>.<br />-WCF nepodporuje odeslání výtahu hesla ani odvození klíčů pomocí hesel a použití takových klíčů pro zabezpečení zpráv. Proto WCF vynutilo zabezpečení přenosu při použití přihlašovacích údajů uživatelského jména. Pro `basicHttpBinding`to vyžaduje vytvoření kanálu SSL.|  
+|Certifikát|Vyžaduje, aby byl klient ověřený na serveru pomocí certifikátu. Přihlašovací údaje klienta v tomto případě je nutné zadat pomocí <`clientCredentials`> a <`clientCertificate`>. Kromě toho je nutné při použití režimu zabezpečení zpráv zřídit klienta s certifikátem služby. Pověření služby v tomto případě je nutné zadat pomocí elementu <xref:System.ServiceModel.Description.ClientCredentials> třídy nebo `ClientCredentials` prvku chování a zadáním certifikátu služby pomocí elementu \<serviceCertificate > prvku serviceCredentials.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,10 +51,10 @@ Definuje nastavení pro zabezpečení [ \<NetHttpBinding >](nethttpbinding.md)na
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|<`security`> element <`netHttpBinding`>|Definuje možnosti zabezpečení pro prvek <`netHttpBinding`>.|  
+|<`security`> elementu <`netHttpBinding`>|Definuje možnosti zabezpečení pro prvek <`netHttpBinding`>.|  
   
 ## <a name="example"></a>Příklad  
- Tato ukázka předvádí, jak implementovat aplikaci, která používá zabezpečení basicHttpBinding a Message. V následujícím příkladu konfigurace služby určuje definice koncového bodu basicHttpBinding a odkazuje na konfiguraci vazby s názvem `Binding1`. Certifikát, který služba používá ke vzájemnému ověření pro klienta, je nastaven v `behaviors` části konfiguračního souboru `serviceCredentials` pod prvkem. Režim ověřování, který se vztahuje na certifikát, který klient používá k ověření ve službě, je také nastaven v `behaviors` části `clientCertificate` pod prvkem.  
+ Tato ukázka předvádí, jak implementovat aplikaci, která používá zabezpečení basicHttpBinding a Message. V následujícím příkladu konfigurace služby určuje definice koncového bodu basicHttpBinding a odkazuje na konfiguraci vazby s názvem `Binding1`. Certifikát, který služba používá ke vzájemnému ověření pro klienta, je nastaven v oddílu `behaviors` konfiguračního souboru v rámci `serviceCredentials` elementu. Režim ověřování, který se vztahuje na certifikát, který klient používá k ověření ve službě, je také nastaven v sekci `behaviors` pod prvkem `clientCertificate`.  
   
  V konfiguračním souboru klienta jsou zadány stejné podrobnosti o vazbě a zabezpečení.  
   
@@ -126,4 +126,4 @@ Definuje nastavení pro zabezpečení [ \<NetHttpBinding >](nethttpbinding.md)na
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

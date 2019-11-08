@@ -2,22 +2,22 @@
 title: <security> z <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: e4f10ab994429c6cbb690caef38114b8340e6839
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 2268bf48a2b86c3b3b25db006e6f8f55ea33af73
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399870"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738692"
 ---
-# <a name="security-of-msmqintegrationbinding"></a>\<> zabezpečení > \<MsmqIntegrationBinding
+# <a name="security-of-msmqintegrationbinding"></a>> \<zabezpečení \<msmqIntegrationBinding >
 Definuje nastavení zabezpečení přenosu pro integrační kanál služby Řízení front zpráv (MSMQ).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<msmqIntegrationBinding >** ](msmqintegrationbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,19 +44,19 @@ Definuje nastavení zabezpečení přenosu pro integrační kanál služby Říz
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje typ zabezpečení, který řídí integritu, důvěrnost a ověřování pomocí integračního kanálu služby Řízení front zpráv. Platné hodnoty jsou následující:<br /><br /> NTato Tím se zakáže zabezpečení.<br />Přepravu Přenos nabízí ochranu a ověřování. To platí pro zabezpečení zpráv mezi dvěma správci fronty. Mezi aplikací a správcem front se nenabízí žádné zabezpečení. Stávající aplikace služby MSMQ jsou funkčně ekvivalentní s tímto typem režimu zabezpečení.<br /><br /> Výchozí hodnota je `Transport`. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>.|  
+|režim|Určuje typ zabezpečení, který řídí integritu, důvěrnost a ověřování pomocí integračního kanálu služby Řízení front zpráv. Platné hodnoty jsou následující:<br /><br /> -None: zakáže zabezpečení.<br />-Transport: služba Transport nabízí ochranu a ověřování. To platí pro zabezpečení zpráv mezi dvěma správci fronty. Mezi aplikací a správcem front se nenabízí žádné zabezpečení. Stávající aplikace služby MSMQ jsou funkčně ekvivalentní s tímto typem režimu zabezpečení.<br /><br /> Výchozí hodnota je `Transport`. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> přenosu](transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos Integration služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[> přenos \<](transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos Integration služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|[ Prvek\<vazby > MsmqIntegrationBinding](msmqintegrationbinding.md).|  
+|[vazba \<](bindings.md)|Prvek vazby [\<msmqIntegrationBinding >](msmqintegrationbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -69,5 +69,5 @@ Definuje nastavení zabezpečení přenosu pro integrační kanál služby Říz
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
-- [\<msmqIntegrationBinding>](msmqintegrationbinding.md)
+- [vazba \<](bindings.md)
+- [\<msmqIntegrationBinding >](msmqintegrationbinding.md)

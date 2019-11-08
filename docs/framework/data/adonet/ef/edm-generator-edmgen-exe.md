@@ -2,12 +2,12 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: e8bf82933d19c6b7e9ec90f70bfa990e0d08847c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 858525a81e7779e7631ee8ac959110ba946cf652
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040006"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738529"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 
@@ -45,9 +45,9 @@ Při použití nástroje EdmGen. exe je nutné zadat jeden z následujících re
 
 |Možnost|Popis|
 |------------|-----------------|
-|řetězec\<`/p[roject]:`|Určuje název projektu, který se má použít. Název projektu je použit jako výchozí pro nastavení oboru názvů, název modelu a mapování souborů, název zdrojového souboru objektu a název zdrojového souboru generování zobrazení. Název kontejneru entit je nastaven na \<>m kontextu projektu.|
-|řetězec\<`/prov[ider]:`|Název poskytovatele dat .NET Framework, který se má použít k vygenerování souboru modelu úložiště (. ssdl). Výchozím poskytovatelem je .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|
-|připojovací řetězec\<`/c[onnectionstring]:`|Určuje řetězec, který se používá pro připojení ke zdroji dat.|
+|řetězec \<`/p[roject]:`|Určuje název projektu, který se má použít. Název projektu je použit jako výchozí pro nastavení oboru názvů, název modelu a mapování souborů, název zdrojového souboru objektu a název zdrojového souboru generování zobrazení. Název kontejneru entit je nastaven na \<>m kontextu projektu.|
+|řetězec \<`/prov[ider]:`|Název poskytovatele dat .NET Framework, který se má použít k vygenerování souboru modelu úložiště (. ssdl). Výchozím poskytovatelem je .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|
+|připojovací řetězec \<`/c[onnectionstring]:`|Určuje řetězec, který se používá pro připojení ke zdroji dat.|
 |soubor\<`/incsdl:`|Určuje soubor. csdl nebo adresář, kde jsou umístěny soubory. csdl. Tento argument lze zadat vícekrát, aby bylo možné zadat několik adresářů nebo souborů. csdl. Určení více adresářů může být užitečné pro vygenerování tříd (`/mode:EntityClassGeneration`) nebo zobrazení (`/mode:ViewGeneration`), když je koncepční model rozdělen mezi několik souborů. To může být užitečné také v případě, že chcete ověřit více modelů (`/mode:ValidateArtifacts`).|
 |soubor\<`/refcsdl:`|Určuje další soubor. csdl nebo soubory, které se používají k překladu všech odkazů ve zdrojovém souboru. csdl. (Zdrojový soubor. csdl je soubor určený možností `/incsdl`). Soubor `/refcsdl` obsahuje typy, na kterých je zdrojový soubor. csdl závislý. Tento argument lze zadat vícekrát.|
 |soubor\<`/inmsl:`|Určuje soubor. MSL nebo adresář, kde jsou umístěny soubory. MSL. Tento argument lze zadat vícekrát, aby bylo možné zadat několik adresářů nebo souborů. MSL. Určení více adresářů může být užitečné pro generování zobrazení (`/mode:ViewGeneration`), když je koncepční model rozdělen mezi několik souborů. To může být užitečné také v případě, že chcete ověřit více modelů (`/mode:ValidateArtifacts`).|
@@ -78,4 +78,4 @@ Při použití nástroje EdmGen. exe je nutné zadat jeden z následujících re
 
 - [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
 - [Model EDM (Entity Data Model)](../entity-data-model.md)
-- [Specifikace CSDL, SSDL a MSL](./language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Specifikace CSDL, SSDL a MSL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)

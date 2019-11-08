@@ -2,23 +2,23 @@
 title: <transport> z <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 49462e0a-66e1-463f-b3e1-c83a441673c6
-ms.openlocfilehash: 41f11be9b4ae8f7a7535c9766965de8575cff784
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 4ef08ad73a03dea21d27217364a7bacb46a3848e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399314"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735930"
 ---
-# <a name="transport-of-nettcpbinding"></a>\<> přenosu > \<NetTcpBinding
-Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakonfigurovaný s [ \<> NetTcpBinding](nettcpbinding.md).  
+# <a name="transport-of-nettcpbinding"></a>> \<přenosů \<netTcpBinding >
+Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakonfigurovaný pomocí [\<netTcpBinding >](nettcpbinding.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netTcpBinding >** ](nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> přenosu**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-nettcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<transport >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,14 +47,14 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|clientCredentialType|Volitelný parametr. Určuje typ přihlašovacích údajů, které se mají použít při ověřování klientů pomocí zabezpečení přenosu.<br /><br /> – Výchozí hodnota je `Windows`.<br />– Tento atribut je typu <xref:System.ServiceModel.TcpClientCredentialType>.|  
-|Platné|Volitelný parametr. Definuje zabezpečení na úrovni přenosu protokolu TCP. Podepisování zpráv snižuje riziko manipulace třetí strany při přenosu zprávy. Šifrování poskytuje během přenosu soukromí na úrovni dat.<br /><br /> Výchozí hodnota je `EncryptAndSign`.|  
-|sslProtocols|Hodnota příznaku výčtu SslProtocols určující, která určuje, které SslProtocols určující jsou podporovány. Výchozí hodnota je TLS&#124;Tls11&#124;Tls12.|  
-|Nastavením PolicyEnforcement|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> se má vyhovět.<br /><br /> 1.  Nikdy – zásada se nikdy vynutila (Rozšířená ochrana je zakázaná).<br />2.  WhenSupported – zásada se vynutila jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Always – zásada se vždycky vynutila. Nepůjde ověřit klienty, kteří nepodporují rozšířenou ochranu.|  
+|clientCredentialType|Volitelné. Určuje typ přihlašovacích údajů, které se mají použít při ověřování klientů pomocí zabezpečení přenosu.<br /><br /> -Výchozí hodnota je `Windows`.<br />– Tento atribut je typu <xref:System.ServiceModel.TcpClientCredentialType>.|  
+|Platné|Volitelné. Definuje zabezpečení na úrovni přenosu protokolu TCP. Podepisování zpráv snižuje riziko manipulace třetí strany při přenosu zprávy. Šifrování poskytuje během přenosu soukromí na úrovni dat.<br /><br /> Výchozí hodnota je `EncryptAndSign`.|  
+|SslProtocols určující|Hodnota příznaku výčtu SslProtocols určující, která určuje, které SslProtocols určující jsou podporovány. Výchozí hodnota je TLS&#124;Tls11&#124;Tls12.|  
+|Nastavením PolicyEnforcement|Tento výčet Určuje, kdy se má vyhovět <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>.<br /><br /> 1. nikdy – zásada se nikdy vynutila (Rozšířená ochrana je zakázaná).<br />2. WhenSupported – zásada se vynutila jenom v případě, že klient podporuje rozšířenou ochranu.<br />3. Always – zásada se vždycky vynutila. Nepůjde ověřit klienty, kteří nepodporují rozšířenou ochranu.|  
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Klient je anonymní. K tomu je potřeba certifikát pro službu.|  
 |Windows|Určuje ověřování systému Windows klienta pomocí vyjednávání SP (vyjednávání protokolu Kerberos).|  
@@ -62,7 +62,7 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 ## <a name="protectionlevel-attribute"></a>protectionLevel – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Žádná ochrana.|  
 |Osobě|Zprávy jsou podepsány.|  
@@ -75,7 +75,7 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-of-nettcpbinding.md)|Určuje možnosti [ \<zabezpečení NetTcpBinding >](nettcpbinding.md).|  
+|[> zabezpečení \<](security-of-nettcpbinding.md)|Určuje možnosti zabezpečení [\<netTcpBinding >](nettcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Zabezpečení přenosu použijte pro zajištění integrity a důvěrnosti zprávy SOAP a pro vzájemné ověřování. Pokud je ve vazbě vybraný tento režim zabezpečení, zásobník kanálů se nakonfiguruje pomocí zabezpečeného přenosu a zprávy protokolu SOAP se zabezpečují pomocí zabezpečení přenosu, jako je Windows (Negotiate) nebo SSL přes TCP.  
@@ -90,4 +90,4 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

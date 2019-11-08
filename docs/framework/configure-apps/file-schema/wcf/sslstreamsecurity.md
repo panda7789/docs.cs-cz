@@ -2,21 +2,21 @@
 title: <sslStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 430a378b-a742-4858-8a12-9f9b235fd627
-ms.openlocfilehash: 9b7092878c604142c29dcd8d27e3c458d203f9fa
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: c5c7ec2b18143ff4d71540a60e24b8225ca4db16
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399521"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738589"
 ---
-# <a name="sslstreamsecurity"></a>\<sslStreamSecurity>
+# <a name="sslstreamsecurity"></a>\<sslStreamSecurity >
 Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomocí datového proudu SSL.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<sslStreamSecurity >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,7 +34,7 @@ Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomoc�
 |Atribut|Popis|  
 |---------------|-----------------|  
 |requireClientCertificate|Logická hodnota určující, zda je klientský certifikát pro tuto vazbu vyžadován. Výchozí hodnota je `false`.|  
-|sslProtocols|Hodnota příznaku výčtu SslProtocols určující, která určuje, které SslProtocols určující jsou podporovány. Výchozí hodnota je SSL3&#124;TLS&#124;Tls11&#124;Tls12.|  
+|SslProtocols určující|Hodnota příznaku výčtu SslProtocols určující, která určuje, které SslProtocols určující jsou podporovány. Výchozí hodnota je SSL3&#124;TLS&#124;Tls11&#124;Tls12.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,7 +43,7 @@ Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomoc�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
+|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -53,4 +53,4 @@ Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomoc�
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding>](custombinding.md)
+- [\<customBinding >](custombinding.md)

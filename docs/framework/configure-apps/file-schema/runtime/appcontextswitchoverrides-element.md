@@ -8,12 +8,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: feb84fb3d8836168035ef8eed31728c6a0d00cba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 881b9fedfaa42ffb402e226a6b271f47feb20617
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73118288"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736807"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<element > AppContextSwitchOverrides
 Definuje jeden nebo více přepínačů používaných <xref:System.AppContext> třídou pro poskytnutí mechanismu odhlášení pro nové funkce.  
@@ -92,7 +92,7 @@ Definuje jeden nebo více přepínačů používaných <xref:System.AppContext> 
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseECMAScriptV6EscapeControlCharacter` |Určuje, zda [DataContractJsonSerializer](xref:System.Runtime.Serialization.Json.DataContractJsonSerializer) serializovat některé řídicí znaky v závislosti na standardech rozhraní ECMAScript V6 a V8. Další informace naleznete v tématu [zmírnění rizika: serializace řídicích znaků pomocí DataContractJsonSerializer](../../../migration-guide/mitigation-serialization-control-characters.md)| .NET Framework 4,7 |
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseTimeZoneInfo`|Určuje, zda <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více úprav nebo pouze jednu úpravu pro časové pásmo. Pokud `true`, používá typ <xref:System.TimeZoneInfo> k serializaci a deserializaci dat data a času; v opačném případě používá typ <xref:System.TimeZone>, který nepodporuje více pravidel úprav.|.NET Framework 4.6.2|
 |`Switch.System.Runtime.Serialization.UseNewMaxArraySize`|Určuje, zda <xref:System.Runtime.Serialization.ObjectManager?displayProperty=nameWithType> používá větší velikost pole při serializaci objektu a deserializaci. Nastavte tento přepínač na `true` pro zlepšení výkonu serializace a deserializace rozsáhlých grafů objektů podle typů, jako je například <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. |.NET Framework 4.7.2|
-|`Switch.System.Security.ClaimsIdentity.`<br/>`SetActorAsReferenceWhenCopyingClaimsIdentity`|Určuje, zda konstruktor <xref:System.Security.Claims.ClaimsIdentity.%23ctor%28System.Security.Principal.IIdentity%29?displayProperty=nameWithType> nastaví vlastnost nového objektu <xref:System.Security.Claims.ClaimsIdentity.Actor%2A?displayProperty=nameWithType> s existujícím odkazem na objekt. Další informace naleznete v tématu [zmírňující rizika: konstruktor hodnota ClaimsIdentity](../../../migration-guide/mitigation-claimsidentity-constructor.md).|.NET Framework 4.6.2|  
+|`Switch.System.Security.ClaimsIdentity.`<br/>`SetActorAsReferenceWhenCopyingClaimsIdentity`|Určuje, zda konstruktor <xref:System.Security.Claims.ClaimsIdentity.%23ctor%28System.Security.Principal.IIdentity%29?displayProperty=nameWithType> nastaví vlastnost nového objektu <xref:System.Security.Claims.ClaimsIdentity.Actor%2A?displayProperty=nameWithType> s existujícím odkazem na objekt. Další informace naleznete v tématu [zmírňující rizika: konstruktor hodnota ClaimsIdentity](../../../migration-guide/retargeting/4.6.1-4.6.2.md).|.NET Framework 4.6.2|  
 |`Switch.System.Security.Cryptography.`<br/>`AesCryptoServiceProvider.DontCorrectlyResetDecryptor`|Určuje, zda pokus o opakované použití <xref:System.Security.Cryptography.AesCryptoServiceProvider> dešifrer vyvolá <xref:System.Security.Cryptography.CryptographicException>. Další informace najdete v tématu [dešifrovací modul AesCryptoServiceProvider, který poskytuje opakovaně použitelnou transformaci](../../../migration-guide/retargeting/4.6.1-4.6.2.md#aescryptoserviceprovider-decryptor-provides-a-reusable-transform).|.NET Framework 4.6.2|
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|Určuje, zda je hodnota vlastnosti [CspParameters. ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle) typu [IntPtr](xref:System.IntPtr) , která představuje umístění paměti popisovače okna nebo zda se jedná o popisovač okna (HWND). Další informace najdete v tématu [zmírnění rizika: CspParameters. ParentWindowHandle očekává HWND](../../../migration-guide/retargeting/4.6.2-4.7.md#cspparametersparentwindowhandle-now-expects-hwnd-value). |.NET Framework 4,7|   
 |`Switch.System.Security.Cryptography.`<br/>`UseLegacyFipsThrow`|Určuje, zda použití spravovaných kryptografických tříd v režimu FIPS vyvolá <xref:System.Security.Cryptography.CryptographicException> (`true`) nebo spoléhá na implementaci systémových knihoven (`false`).|.NET Framework 4,8|

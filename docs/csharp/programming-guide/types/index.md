@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 5c5586c2ee41b12e9b5706603b4c2f62207566ed
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7d101e72a94ec1fecf44d4c883efb4f74e6d1d88
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417723"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739211"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -174,7 +174,7 @@ Jak bylo uvedeno dříve, můžete implicitně napsat místní proměnnou (ale n
 
 V některých případech je nevhodné vytvořit pojmenovaný typ pro jednoduché sady souvisejících hodnot, které nechcete ukládat nebo předávat mimo hranice metody. Pro tento účel můžete vytvořit *anonymní typy* . Další informace najdete v tématu [anonymní typy](../classes-and-structs/anonymous-types.md).
 
-Typy běžných hodnot nemohou mít hodnotu [null](../../language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](../../language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601?displayProperty=nameWithType>. Typy hodnot s možnou hodnotou null jsou obzvláště užitečné, Pokud předáváte data do a z databází, ve kterých mohou být číselné hodnoty null. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](../nullable-types/index.md).
+Typy běžných hodnot nemohou mít hodnotu [null](../../language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](../../language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601?displayProperty=nameWithType>. Typy hodnot s možnou hodnotou null jsou obzvláště užitečné, Pokud předáváte data do a z databází, ve kterých mohou být číselné hodnoty null. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](../../language-reference/builtin-types/nullable-value-types.md).
 
 ## <a name="related-sections"></a>Související oddíly
 

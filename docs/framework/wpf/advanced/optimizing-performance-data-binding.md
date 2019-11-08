@@ -5,15 +5,15 @@ helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-ms.openlocfilehash: 31fdc3c31c8792fea5f3e71dedb7370ebd63c98e
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 9b302be3ed9f01ccd27470063f49966dc7d74708
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458544"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740795"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimalizace výkonu: Datová vazba
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty. Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů CLR a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty. Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů CLR a XML.  
   
  Toto téma poskytuje doporučení týkající se výkonu datových vazeb.  
 
@@ -69,7 +69,7 @@ ms.locfileid: "73458544"
   
 <a name="Do_not_Convert_CLR_objects_to_Xml_Just_For_Data_Binding"></a>   
 ## <a name="do-not-convert-clr-objects-to-xml-just-for-data-binding"></a>Neprovádějte převod objektů CLR do XML pouze pro datovou vazbu.  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje vytvořit datovou vazby k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu. datová vazba k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu je však pomalejší než vazba dat na objekty CLR. Neprovádějte převod dat objektu CLR do formátu XML, je-li jediným účelem vytváření datových vazeb.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje vytvořit datovou vazby k obsahu XML; vazba dat na obsah XML je však pomalejší než vázání dat na objekty CLR. Neprovádějte převod dat objektu CLR do formátu XML, je-li jediným účelem vytváření datových vazeb.  
   
 ## <a name="see-also"></a>Viz také:
 

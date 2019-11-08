@@ -3,19 +3,19 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 490f001d4ed648d6621f8ec059201830acb90af0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 83934d9c8194d5109cea0e847d287c01c32a2955
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423088"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739101"
 ---
 # <a name="the-history-of-c"></a>Historie\# jazyka C
 
 Tento článek poskytuje historii všech hlavních vydání C# jazyka. Tým C# pokračuje v inovacích a přidává nové funkce. Podrobný stav funkcí jazyka, včetně funkcí, které se považují za nadcházející verze, najdete [v úložišti dotnet/Roslyn](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) na GitHubu.
 
 > [!IMPORTANT]
-> C# Jazyk spoléhá na typy a metody v tom, co C# specifikace definuje jako *standardní knihovnu* pro některé funkce. Platforma .NET poskytuje tyto typy a metody v několika balíčcích. Jedním z příkladů je zpracování výjimek. Je zkontrolován každý příkaz `throw` nebo výraz, aby se zajistilo, že vyvolaný objekt je odvozen z <xref:System.Exception>. Podobně je zkontrolováno každé `catch`, aby byl zachycený typ odvozen od <xref:System.Exception>. Každá verze může přidat nové požadavky. Pokud chcete používat nejnovější funkce jazyka ve starších prostředích, budete možná muset nainstalovat konkrétní knihovny. Tyto závislosti jsou zdokumentovány na stránce pro každou konkrétní verzi. Můžete si přečíst další informace o [relacích mezi jazykem a knihovnou](relationships-between-language-and-library.md) pro pozadí na této závislosti.
+> C# Jazyk spoléhá na typy a metody v tom, co C# specifikace definuje jako *standardní knihovnu* pro některé funkce. Platforma .NET poskytuje tyto typy a metody v několika balíčcích. Jedním z příkladů je zpracování výjimek. Je zkontrolován každý příkaz `throw` nebo výraz, aby se zajistilo, že vyvolaný objekt je odvozen z <xref:System.Exception>. Podobně je kontrolována každá `catch`, aby se zajistilo, že typ, který je zachycen, je odvozen od <xref:System.Exception>. Každá verze může přidat nové požadavky. Pokud chcete používat nejnovější funkce jazyka ve starších prostředích, budete možná muset nainstalovat konkrétní knihovny. Tyto závislosti jsou zdokumentovány na stránce pro každou konkrétní verzi. Můžete si přečíst další informace o [relacích mezi jazykem a knihovnou](relationships-between-language-and-library.md) pro pozadí na této závislosti.
 
 Nástroje C# pro sestavení považují nejnovější jazykovou verzi za výchozí verzi. V dalších článcích v této části můžou být vydávané body mezi hlavními vydáními, které jsou podrobně popsané. Chcete-li používat nejnovější funkce v bodu vydání, je nutné [nakonfigurovat verzi jazyka kompilátoru](../language-reference/configure-language-version.md) a vybrat verzi. Od C# 7,0 se vydává tři body:
 
@@ -57,7 +57,7 @@ Teď začít s zajímavou možností. Pojďme se podívat na některé hlavní f
 - [Obecné typy](../programming-guide/generics/index.md)
 - [Částečné typy](../programming-guide/classes-and-structs/partial-classes-and-methods.md#partial-classes)
 - [Anonymní metody](../language-reference/operators/delegate-operator.md)
-- [Typy hodnot s možnou hodnotou null](../programming-guide/nullable-types/index.md)
+- [Typy hodnot s možnou hodnotou null](../language-reference/builtin-types/nullable-value-types.md)
 - [Iterátory](../programming-guide/concepts/iterators.md)
 - [Kovariance a kontravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 
@@ -70,9 +70,9 @@ Další C# funkce 2,0 přidávané funkcím do existujících funkcí:
 
 I C# když mohly být spuštěny jako jazyk orientovaný na obecné objekty (ó) C# , verze 2,0 se změnila v Pospěšte si. Po tom, co s nimi mají své nožky, se dostaly po některých vážných problémech pro vývojáře. A zavedly se za ně významnou cestou.
 
-S obecnými typy a metody mohou pracovat s libovolným typem, přičemž stále zachovává bezpečnost typů. Například při použití <xref:System.Collections.Generic.List%601> můžete mít `List<string>` nebo `List<int>` a provádět operace bezpečného typu u těchto řetězců nebo celých čísel při iteracích. Použití generických typů je lepší než vytvoření `ListInt`, které je odvozeno od `ArrayList` nebo přetypování z `Object` pro každou operaci.
+S obecnými typy a metody mohou pracovat s libovolným typem, přičemž stále zachovává bezpečnost typů. Například při použití <xref:System.Collections.Generic.List%601> můžete mít `List<string>` nebo `List<int>` a provádět operace bezpečného typu u těchto řetězců nebo celých čísel při iteracích. Použití generických typů je lepší než vytvoření `ListInt`, které je odvozeno z `ArrayList` nebo přetypování z `Object` pro každou operaci.
 
-C#verze 2,0 přenesla iterátory. Pro stručné vložení iterátorů vám umožní prošetřit všechny položky v `List` (nebo jiných výčtových typech) pomocí smyčky `foreach`. Máte iterátory jako součást jazyka, ve kterém je první třída výrazně rozšířená čitelnost jazyka a možnosti lidí o kódu.
+C#verze 2,0 přenesla iterátory. Pro stručné vložení iterátorů vám umožní prošetřit všechny položky v `List` (nebo jiných vyčíslitelné typy) pomocí smyčky `foreach`. Máte iterátory jako součást jazyka, ve kterém je první třída výrazně rozšířená čitelnost jazyka a možnosti lidí o kódu.
 
 A pořád i C# nadále hraje bitovou kopii, která je zachytávání pomocí Java. Java již vydala verze, které obsahovaly generické typy a iterátory. Ale ty by se brzy změnily, protože jazyky se nadále rozvíjejí.
 
@@ -111,7 +111,7 @@ Další verze zavedla zajímavé nové funkce:
 
 Vložené typy spolupráce zmírnily bolesti nasazení. Obecná kovariance a kontravariance poskytují více možností, jak používat obecné typy, ale jedná se o trochu akademickou a pravděpodobně nejvíc vážíme architekturou a autory knihovny. Pojmenované a volitelné parametry umožňují eliminovat mnoho přetížení metod a poskytovat pohodlí. Ale žádná z těchto funkcí se přesně nemění.
 
-Hlavní funkcí bylo zavedení klíčového slova `dynamic`. Klíčové slovo `dynamic` představené C# do verze 4,0 možnost přepsat kompilátor při psaní při kompilaci. Pomocí klíčového slova Dynamic můžete vytvořit konstrukce podobné dynamickým typovým jazykům, jako je JavaScript. Můžete vytvořit `dynamic x = "a string"` a potom do něj přidat šest, a to tak, že ho zachováte až do modulu runtime, abyste mohli řadit, co by mělo probíhat v dalším.
+Hlavní funkcí bylo zavedení klíčového slova `dynamic`. Klíčové slovo `dynamic` představené C# do verze 4,0 možnost přepsat kompilátor při psaní při kompilaci. Pomocí klíčového slova Dynamic můžete vytvořit konstrukce podobné dynamickým typovým jazykům, jako je JavaScript. Můžete vytvořit `dynamic x = "a string"` a potom do něj přidat šest, a to tak, že ho zachováte do modulu runtime, abyste mohli řadit, co by mělo probíhat v dalším kroku.
 
 Dynamická vazba poskytuje potenciál pro chyby, ale také skvělou sílu v rámci jazyka.
 

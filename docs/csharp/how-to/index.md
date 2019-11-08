@@ -2,12 +2,12 @@
 title: Články (C# průvodce)
 description: Kolekce rychlých tipů a krátkých a podrobných ukázek kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: f764bd0183e3881bfb81ebda7d3c7dd49a4cbdde
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 855ea90d22174c2b7c0b53a526c47a5edbe5496d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591611"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736885"
 ---
 # <a name="how-to-c"></a>Postupy (C#)
 
@@ -21,7 +21,7 @@ K dispozici jsou několik tipů a rad, C# které představují běžné postupy 
 - [Přečtěte si o rozdílech mezi předáním struktury a třídy metodě](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
 - [Použijte přetížení operátoru](../language-reference/operators/operator-overloading.md).
 - [Implementujte a zavolejte vlastní metodu rozšíření](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
-- I C# programátoři mohou chtít [ `My` použít obor názvů z VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
+- I C# programátoři mohou chtít [použít `My` obor názvů z VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
 - [Vytvořte novou metodu pro `enum` typ pomocí rozšiřujících metod](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ### <a name="class-and-struct-members"></a>Členové třídy a struktury
@@ -31,7 +31,7 @@ Vytvoříte třídy a struktury pro implementaci programu. Tyto techniky se bě�
 - [Deklarovat automaticky implementované vlastnosti](../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md).
 - [Deklarovat a používat vlastnosti pro čtení a zápis](../programming-guide/classes-and-structs/how-to-declare-and-use-read-write-properties.md).
 - [Definovat konstanty](../programming-guide/classes-and-structs/how-to-define-constants.md).
-- [Přepsáním metody poskytněte výstup řetězce. `ToString` ](../programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)
+- [Přepište metodu `ToString` pro poskytnutí výstupu řetězce](../programming-guide/classes-and-structs/how-to-override-the-tostring-method.md).
 - [Definujte abstraktní vlastnosti](../programming-guide/classes-and-structs/how-to-define-abstract-properties.md).
 - [Použití funkcí dokumentace XML k dokumentaci kódu](../programming-guide/xmldoc/how-to-use-the-xml-documentation-features.md).
 - [Explicitně implementujte členy rozhraní](../programming-guide/interfaces/how-to-explicitly-implement-interface-members.md) , aby se vaše veřejné rozhraní zachovalo jako stručné.
@@ -50,7 +50,7 @@ Tyto články vám pomůžou pracovat s kolekcemi dat.
 - [Porovnejte řetězce](compare-strings.md).
 - [Upravte obsah řetězce](modify-string-contents.md).
 - [Určí, zda řetězec představuje číslo](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
-- [ Použijte`String.Split` k oddělení řetězců](parse-strings-using-split.md).
+- [K oddělení řetězců použijte `String.Split`](parse-strings-using-split.md).
 - [Kombinovat více řetězců do jednoho](concatenate-multiple-strings.md).
 - [Hledání textu v řetězci](search-strings.md).
 
@@ -60,13 +60,13 @@ Možná budete muset převést objekt na jiný typ.
 
 - [Určí, zda řetězec představuje číslo](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
 - [Převod mezi řetězci, které reprezentují hexadecimální čísla a číslo](../programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md).
-- [Převést řetězec na `DateTime` ](../../standard/base-types/parsing-datetime.md).
+- [Převést řetězec na `DateTime`](../../standard/base-types/parsing-datetime.md).
 - [Převést pole bajtů na typ int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Převede řetězec na číslo](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
-- [Použijte porovnávání vzorů, `as` operátory `is` a pro bezpečné přetypování na jiný typ](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
+- [Použijte porovnávání vzorů, operátory `as` a `is` bezpečně přetypování na jiný typ](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Definujte vlastní převody typů](../language-reference/operators/user-defined-conversion-operators.md).
-- [Určí, zda typ představuje typ hodnoty s možnou hodnotou null](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
-- [Převod mezi typy hodnot s možnou hodnotou null a hodnotami, které](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type)neumožňují hodnotu null
+- [Určí, zda typ představuje typ hodnoty s možnou hodnotou null](../language-reference/builtin-types/nullable-value-types.md#how-to-identify-a-nullable-value-type).
+- [Převod mezi typy hodnot s možnou hodnotou null a hodnotami, které](../language-reference/builtin-types/nullable-value-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type)neumožňují hodnotu null
 
 ## <a name="equality-and-ordering-comparisons"></a>Porovnání rovnosti a řazení
 
@@ -79,8 +79,8 @@ Můžete vytvořit typy, které definují vlastní pravidla pro rovnost, nebo de
 
 Programy .NET hlásí, že metody neúspěšně dokončily svou práci vyvoláním výjimek. V těchto článcích se naučíte pracovat s výjimkami.
 
-- [Zpracování výjimek pomocí `try` a `catch` ](../programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md).
-- [Vyčistěte `finally` prostředky pomocí klauzulí](../programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md).
+- [Zpracování výjimek pomocí `try` a `catch`](../programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md).
+- [Vyčistěte prostředky pomocí klauzulí `finally`](../programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md).
 - [Obnovte z výjimek (Common Language Specification) bez specifikace CLS](../programming-guide/exceptions/how-to-catch-a-non-cls-exception.md).
 
 ## <a name="delegates-and-events"></a>Delegáti a události
@@ -104,7 +104,7 @@ LINQ umožňuje napsat kód pro dotazování libovolného zdroje dat, který pod
 
 - [Dotaz na kolekci](../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
 - [Použití výrazů lambda v dotazu](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md).
-- [ Používejte`var` ve výrazech dotazů](../programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
+- [Ve výrazech dotazů použijte `var`](../programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 - [Vrátí podmnožinu vlastností elementu z dotazu](../programming-guide/classes-and-structs/how-to-return-subsets-of-element-properties-in-a-query.md).
 - [Zápis dotazů se složitým filtrováním](../programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md)
 - [Seřadit prvky zdroje dat](../programming-guide/concepts/linq/how-to-sort-elements.md).
@@ -121,12 +121,12 @@ LINQ umožňuje napsat kód pro dotazování libovolného zdroje dat, který pod
 
 Moderní programy často využívají asynchronní operace. Tyto články vám pomůžou se naučit používat tyto techniky.
 
-- [Zvyšte výkon asynchronního `System.Threading.Tasks.Task.WhenAll`výkonu pomocí nástroje ](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
-- [Paralelní provádění více webových `async` požadavků pomocí a. `await` ](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Vylepšete asynchronní výkon pomocí `System.Threading.Tasks.Task.WhenAll`](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+- [Paralelní provádění více webových požadavků pomocí `async` a `await`](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
 - [Použijte fond vláken](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool).
 
 ## <a name="command-line-args-to-your-program"></a>Argumenty příkazového řádku pro program
 
 C# Programy mají obvykle argumenty příkazového řádku. Tyto články vás seznámí s přístupem k argumentům příkazového řádku a jejich zpracování.
 
-- [Načte všechny argumenty příkazového řádku `for`pomocí příkazu ](../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md).
+- [Načte všechny argumenty příkazového řádku pomocí `for`](../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md).

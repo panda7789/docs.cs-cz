@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: 5eb9313003f767daf64a5b5c4f229c6c58a018ec
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c9d879d1760f543d5a4722977d4dee8bca856016
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423238"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739190"
 ---
 # <a name="c-programming-guide"></a>C#Průvodce programováním
+
 V této části najdete podrobné informace o C# funkcích a funkcích jazyka Key, C# které jsou přístupné prostřednictvím .NET Framework.  
   
  Většina této části předpokládá, že už znáte informace o C# a obecných konceptech programování. Pokud jste zcela začátečníki s programováním nebo s C#, můžete chtít navštívit kurz [Úvod do C# kurzů](../tutorials/intro-to-csharp/index.md) nebo [.NET v prohlížeči](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), kde není nutné žádné předchozí znalosti programování.  
@@ -28,8 +29,9 @@ V této části najdete podrobné informace o C# funkcích a funkcích jazyka Ke
 [V programu v jazyce C#](./inside-a-program/index.md)  
   
 [Argumenty Main() a příkazového řádku](./main-and-command-args/index.md)  
- 
-## <a name="language-sections"></a>Jazykové části  
+
+## <a name="language-sections"></a>Jazykové části
+
 [Příkazy, výrazy a operátory](./statements-expressions-operators/index.md)  
 
  [Typy](./types/index.md)  
@@ -41,7 +43,7 @@ V této části najdete podrobné informace o C# funkcích a funkcích jazyka Ke
  [Výčtové typy](./enumeration-types.md)  
   
  [Delegáty](./delegates/index.md)  
- 
+
  [Pole](./arrays/index.md)  
   
  [Řetězce](./strings/index.md)  
@@ -62,13 +64,12 @@ V této části najdete podrobné informace o C# funkcích a funkcích jazyka Ke
   
  [Obory názvů](./namespaces/index.md)  
   
- [Typy hodnot s možnou hodnotou null](./nullable-types/index.md)  
-  
  [Nebezpečný kód a ukazatele](./unsafe-code-pointers/index.md)  
   
  [Dokumentační komentáře XML](./xmldoc/index.md)  
   
-## <a name="platform-sections"></a>Oddíly platformy  
+## <a name="platform-sections"></a>Oddíly platformy
+
  [Aplikační domény](../../framework/app-domains/application-domains.md)  
   
  [Sestavení v .NET](../../standard/assembly/index.md)  

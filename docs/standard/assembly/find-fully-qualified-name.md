@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 49d6d6cf5c138df671d061beb23cb57bcb0667b5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bf24db03ca1dc4fbf3041f5e83d740029d87928f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140302"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740495"
 ---
 # <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Postupy: hledání plně kvalifikovaného názvu sestavení
 
@@ -126,4 +126,3 @@ End Class
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)
 - [Globální mezipaměť sestavení](../../framework/app-domains/gac.md)
 - [Způsob, jakým modul runtime vyhledává sestavení](../../framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Program se sestaveními](program.md)

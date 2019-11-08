@@ -5,12 +5,12 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: b2530793bfe1a158a0df1c34b2768e0c7ca351f3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f9176e61915b6c5cc05f120eade69a6d19cc4e6a
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459360"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740779"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 
@@ -32,7 +32,7 @@ Některé vlastnosti stylu a šablony, například <xref:System.Windows.Setter.P
 
 Datová vazba je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, která umožňuje vytvořit vazbu na cílovou hodnotu libovolné vlastnosti závislosti. Zdroj takové datové vazby ale nemusí být vlastností závislosti; může to být libovolný typ vlastnosti, který rozpozná příslušný zprostředkovatel dat. Cesty vlastností jsou obzvláště používány pro <xref:System.Windows.Data.ObjectDataProvider>, které slouží k získání vazeb zdrojů z objektů CLR (Common Language Runtime) a jejich vlastností.
 
-Všimněte si, že datová vazba na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] nepoužívá <xref:System.Windows.PropertyPath>, protože v <xref:System.Windows.Data.Binding>nepoužívá <xref:System.Windows.Data.Binding.Path%2A>. Místo toho použijete <xref:System.Windows.Data.Binding.XPath%2A> a zadáte platnou syntaxi XPath do [!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)] dat. <xref:System.Windows.Data.Binding.XPath%2A> je také zadáno jako řetězec, ale zde není dokumentováno. viz [vazba na data XML pomocí dotazů XmlDataProvider a XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).
+Všimněte si, že datová vazba na XML nepoužívá <xref:System.Windows.PropertyPath>, protože nepoužívá <xref:System.Windows.Data.Binding.Path%2A> v <xref:System.Windows.Data.Binding>. Místo toho použijete <xref:System.Windows.Data.Binding.XPath%2A> a zadáte platnou syntaxi XPath do XML model DOM (Document Object Model) (DOM) dat. <xref:System.Windows.Data.Binding.XPath%2A> je také zadáno jako řetězec, ale zde není dokumentováno. viz [vazba na data XML pomocí dotazů XmlDataProvider a XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).
 
 Klíč k porozumění cestám vlastností v datové vazbě je, že je možné cílit na vazbu na individuální hodnotu vlastnosti, nebo můžete vytvořit vazbu k cílovým vlastnostem, které přebírají seznamy nebo kolekce. Pokud vytváříte vazbu kolekcí, například, pokud je instance <xref:System.Windows.Controls.ListBox>, která se rozbalí v závislosti na tom, kolik datových položek je v kolekci, měla by vaše cesta vlastnosti odkazovat na objekt kolekce, nikoli na jednotlivé položky kolekce. Modul datových vazeb se bude shodovat s kolekcí použitou jako zdroj dat pro typ cíle vazby automaticky, což má za následek chování, jako je například naplnění <xref:System.Windows.Controls.ListBox> s polem Items.
 
@@ -76,7 +76,7 @@ V případě potřeby můžete zadat typ indexu. Podrobnosti o tomto aspektu ces
 <object property="(ownerType.propertyName)" .../>
 ```
 
-Kulaté závorky označují, že tato vlastnost v <xref:System.Windows.PropertyPath> by měla být vytvořená pomocí částečné kvalifikace. Může použít obor názvů XML k nalezení typu s odpovídajícím mapováním. `ownerType` prohledává typy, ke kterým má procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přístup, prostřednictvím deklarací <xref:System.Windows.Markup.XmlnsDefinitionAttribute> v každém sestavení. Většina aplikací má výchozí obor názvů XML mapovaný na obor názvů [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)], takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů.  `propertyName` musí vyhodnotit jako název vlastnosti existující v `ownerType`. Tato syntaxe se obecně používá v jednom z následujících případů:
+Kulaté závorky označují, že tato vlastnost v <xref:System.Windows.PropertyPath> by měla být vytvořená pomocí částečné kvalifikace. Může použít obor názvů XML k nalezení typu s odpovídajícím mapováním. `ownerType` prohledává typy, ke kterým má procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přístup, prostřednictvím deklarací <xref:System.Windows.Markup.XmlnsDefinitionAttribute> v každém sestavení. Většina aplikací má výchozí obor názvů XML mapovaný na obor názvů `http://schemas.microsoft.com/winfx/2006/xaml/presentation`, takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů.  `propertyName` musí vyhodnotit jako název vlastnosti existující v `ownerType`. Tato syntaxe se obecně používá v jednom z následujících případů:
 
 - Cesta je určena v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], která se nachází ve stylu nebo šabloně, která nemá zadaný cílový typ. Kvalifikované použití není obecně platné pro jiné případy než to, protože v nestylových případech nezpůsobuje, že vlastnost existuje v instanci, nikoli v typu.
 
@@ -97,7 +97,7 @@ Pro použití jako cíle scénáře je vlastnost zadaná jako `propertyName` mus
 V této syntaxi je použit k navigaci v rámci objektu hierarchického zdroje dat a je podporováno více kroků do hierarchie s následnými/znaky. Zdrojové účty pro procházení pro aktuální pozici ukazatele záznamu, která je určena synchronizací dat s uživatelským rozhraním jeho zobrazení. Podrobnosti o vazbě s objekty hierarchických zdrojů dat a koncept aktuálního ukazatele záznamu v datové vazbě najdete v tématu [použití vzoru hlavní-podrobnosti s hierarchickými daty](../data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) nebo [přehledem datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).
 
 > [!NOTE]
-> Tato syntaxe je napodobná [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)]. Výraz true [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)] pro vazbu na zdroj dat [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] se nepoužívá jako hodnota <xref:System.Windows.Data.Binding.Path%2A> a místo toho by se měl použít pro vzájemně se vylučující <xref:System.Windows.Data.Binding.XPath%2A> vlastnost.
+> Tato syntaxe je napodobná XPath. Skutečný výraz XPath pro vazbu na zdroj dat XML se nepoužívá jako hodnota <xref:System.Windows.Data.Binding.Path%2A> a místo toho by se měl použít pro vzájemně se vylučující <xref:System.Windows.Data.Binding.XPath%2A> vlastnost.
 
 ### <a name="collection-views"></a>Zobrazení kolekcí
 
@@ -204,7 +204,7 @@ Například vlastnost <xref:System.Windows.Controls.Panel.Background%2A> <xref:S
 <animation Storyboard.TargetProperty="(ownerType.propertyName)" .../>
 ```
 
-Kulaté závorky označují, že tato vlastnost v <xref:System.Windows.PropertyPath> by měla být vytvořená pomocí částečné kvalifikace. K nalezení typu může použít obor názvů XML. `ownerType` prohledává typy, ke kterým má procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přístup, prostřednictvím deklarací <xref:System.Windows.Markup.XmlnsDefinitionAttribute> v každém sestavení. Většina aplikací má výchozí obor názvů XML mapovaný na obor názvů [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)], takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů. `propertyName` musí vyhodnotit jako název vlastnosti existující v `ownerType`. Vlastnost zadaná jako `propertyName` musí být <xref:System.Windows.DependencyProperty>. (Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené vlastnosti jsou implementovány jako vlastnosti závislostí, proto se tento problém týká pouze vlastních připojených vlastností.)
+Kulaté závorky označují, že tato vlastnost v <xref:System.Windows.PropertyPath> by měla být vytvořená pomocí částečné kvalifikace. K nalezení typu může použít obor názvů XML. `ownerType` prohledává typy, ke kterým má procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přístup, prostřednictvím deklarací <xref:System.Windows.Markup.XmlnsDefinitionAttribute> v každém sestavení. Většina aplikací má výchozí obor názvů XML mapovaný na obor názvů `http://schemas.microsoft.com/winfx/2006/xaml/presentation`, takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů. `propertyName` musí vyhodnotit jako název vlastnosti existující v `ownerType`. Vlastnost zadaná jako `propertyName` musí být <xref:System.Windows.DependencyProperty>. (Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené vlastnosti jsou implementovány jako vlastnosti závislostí, proto se tento problém týká pouze vlastních připojených vlastností.)
 
 <a name="indexanim"></a>
 

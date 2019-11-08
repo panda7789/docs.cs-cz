@@ -5,32 +5,18 @@ helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: d3966ff15e06baf293ea02dad031bd5849b4a20f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 889e63feb71682065641fcdc56ada017dcf6c58c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126049"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735130"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET Framework 4
 
-Toto téma popisuje problémy při migraci mezi .NET Framework verze 3,5 Service Pack 1 a .NET Framework verze 4, včetně oprav, dodržování předpisů a zabezpečení standardů a změn na základě zpětné vazby od zákazníků. Většina těchto změn nevyžaduje žádné programové změny v aplikacích. Pro ty, které mohou zahrnovat změny, se podívejte na sloupec doporučené změny v tabulce.
+Toto téma popisuje problémy při migraci mezi .NET Framework verze 3,5 Service Pack 1 a .NET Framework verze 4, včetně oprav, dodržování předpisů a zabezpečení standardů a změn na základě zpětné vazby od zákazníků. Většina těchto změn nevyžaduje žádné programové změny v aplikacích. Pro ty, které mohou zahrnovat změny, se podívejte na sloupec doporučené změny v tabulce. Významné změny jsou rozdělené podle oblasti, například ASP.NET a Windows Presentation Foundation (WPF).
 
-Toto téma popisuje důležité změny v následujících oblastech:
-
-- [ASP.NET a Web](#aspnet-and-web)
-
-- [Jádro](#core)
-
-- [Data](#data)
-
-- [Windows Communication Foundation (WCF)](#windows-communication-foundation-wcf)
-
-- [Windows Presentation Foundation (WPF)](#windows-presentation-foundation-wpf)
-
-- [XML](#xml)
-
-Podrobné informace o problémech v tomto tématu najdete v [Průvodci migrací na .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
+Podrobný přehled problémů v tomto tématu najdete v [Průvodci migrací na .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
 
 Informace o nových funkcích najdete v článku [novinky v .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868%28v=vs.100%29).
 

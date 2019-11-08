@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 02a70e65cd53a8998395987770cd32efc82293d0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2ec979240b8fead10522817b77eef23e29409411
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459608"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740688"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje, jak s nimi pracují. Popisuje také některé z možností provedených architekty [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -42,7 +42,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Existují dva základní koncepty, které je potřeba pochopit při diskuzi o souběžnosti v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] – Spřažení dispečera a vlákna.  
   
- Během fáze návrhu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]byl cíl přesunut do jediného podprocesu provádění, ale nejedná se o nevlákenný model "spřažené". Spřažení vlákna se stane, když komponenta používá identitu vykonávajícího vlákna k uložení určitého typu stavu. Nejběžnějším formulářem je použití úložiště thread local Store (TLS) k uložení stavu. Spřažení vlákna vyžaduje, aby jednotlivé logické vlákno provádění bylo vlastněné pouze jedním fyzickým vláknem v operačním systému, což může být náročné na paměť. V tomto konci byl model vláken WPF udržován v synchronizaci s existujícím modelem vláken User32 s jedním vláknovým spuštěním s spřažením vlákna. Hlavním důvodem pro tuto spolupráci byla interoperabilita – systémy, jako je [!INCLUDE[TLA2#tla_ole2.0](../../../../includes/tla2sharptla-ole2-0-md.md)], schránka a Internet Explorer, vyžadují spuštění s jedním vláknem (STA).  
+ Během fáze návrhu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]byl cíl přesunut do jediného podprocesu provádění, ale nejedná se o nevlákenný model "spřažené". Spřažení vlákna se stane, když komponenta používá identitu vykonávajícího vlákna k uložení určitého typu stavu. Nejběžnějším formulářem je použití úložiště thread local Store (TLS) k uložení stavu. Spřažení vlákna vyžaduje, aby jednotlivé logické vlákno provádění bylo vlastněné pouze jedním fyzickým vláknem v operačním systému, což může být náročné na paměť. V tomto konci byl model vláken WPF udržován v synchronizaci s existujícím modelem vláken User32 s jedním vláknovým spuštěním s spřažením vlákna. Hlavním důvodem pro tuto spolupráci byla interoperabilita – systémy, jako je například technologie OLE 2,0, schránka a aplikace Internet Explorer, vyžadují spuštění s jedním vláknem (STA).  
   
  Vzhledem k tom, že máte objekty s vlákny STA, potřebujete způsob, jak komunikovat mezi vlákny a ověřit, zda jste ve správném vlákně. V této části je role dispečera. Dispečer je základní systém odesílání zpráv s více frontami s více prioritami. Příklady zpráv zahrnují nezpracovaná vstupní oznámení (přesunutí myši), funkce architektury (rozložení) nebo uživatelské příkazy (spustit tuto metodu). Odvozením z <xref:System.Windows.Threading.DispatcherObject>vytvoříte objekt CLR, který má chování STA, a bude předána ukazatel na dispečera v okamžiku vytvoření.  
   

@@ -2,22 +2,22 @@
 title: <security> z <netPeerBinding>
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
-ms.openlocfilehash: 88aa2898472c20c9e52cfd5830c0e41e8ea9ba21
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 3d1ac85073c44f683fe0c054737c5ec7ed1cbf52
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399806"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738658"
 ---
-# <a name="security-of-netpeerbinding"></a>\<> zabezpečení > \<netPeerBinding
-Definuje nastavení [ \<zabezpečení NetPeerTcpBinding >](netpeertcpbinding.md), včetně typu použitého ověřování a zabezpečení používaného pro přenos zpráv.  
+# <a name="security-of-netpeerbinding"></a>> \<zabezpečení \<netPeerBinding >
+Definuje nastavení zabezpečení [\<netPeerTcpBinding >](netpeertcpbinding.md), včetně typu použitého ověřování a zabezpečení používaného pro přenos zpráv.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ Definuje nastavení [ \<zabezpečení NetPeerTcpBinding >](netpeertcpbinding.md)
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Volitelný parametr. Určuje typ zabezpečení, který používají partneři nakonfigurované s touto vazbou. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
+|režim|Volitelné. Určuje typ zabezpečení, který používají partneři nakonfigurované s touto vazbou. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
   
 ## <a name="mode-attribute"></a>mode – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|Message|Zabezpečení SOAP zajišťuje ověřování, integritu a důvěrnost.|  
+|Zpráva|Zabezpečení SOAP zajišťuje ověřování, integritu a důvěrnost.|  
 |Žádné|Zabezpečení je zakázané.|  
 |Přepravu|Zabezpečení je k dispozici pomocí protokolu HTTPS.|  
 |TransportWithMessageCredential|Protokol HTTPS zajišťuje ověřování a důvěrnost. Zprávy SOAP poskytují bohatě typy přihlašovacích údajů.|  
@@ -53,13 +53,13 @@ Definuje nastavení [ \<zabezpečení NetPeerTcpBinding >](netpeertcpbinding.md)
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> přenosu](transport-of-netpeertcpbinding.md)|Definuje typ přenosu pro zabezpečené zprávy odesílané partnerskými uzly nakonfigurovanými pomocí této vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
+|[> přenos \<](transport-of-netpeertcpbinding.md)|Definuje typ přenosu pro zabezpečené zprávy odesílané partnerskými uzly nakonfigurovanými pomocí této vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby NetPeerTcpBinding >](netpeertcpbinding.md).|  
+|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby [\<netPeerTcpBinding >](netpeertcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Zabezpečení může být specifické pro zprávy nebo pro přenos.  
@@ -75,4 +75,4 @@ Definuje nastavení [ \<zabezpečení NetPeerTcpBinding >](netpeertcpbinding.md)
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

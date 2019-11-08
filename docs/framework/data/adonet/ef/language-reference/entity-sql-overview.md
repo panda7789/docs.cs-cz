@@ -2,21 +2,21 @@
 title: Přehled Entity SQL
 ms.date: 03/30/2017
 ms.assetid: f0bb8120-e709-40a3-ac1e-5520dc47477d
-ms.openlocfilehash: 8f40a34f361669d2b8d89b63b3187cae6bf705d2
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e0f154ab2d9db1a1fdbaba8c72bc7e43ad71ee0b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854486"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738485"
 ---
 # <a name="entity-sql-overview"></a>Přehled Entity SQL
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]je jazyk podobný SQL, který umožňuje dotazování konceptuálních modelů v Entity Framework. Koncepční modely reprezentují data jako entity a vztahy [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a umožňují dotazování těchto entit a vztahů ve formátu, který je známý pro uživatele, kteří použili SQL.  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] je jazyk podobný SQL, který umožňuje dotazování konceptuálních modelů v Entity Framework. Koncepční modely reprezentují data jako entity a vztahy a [!INCLUDE[esql](../../../../../../includes/esql-md.md)] umožňují dotazovat se na tyto entity a vztahy ve formátu, který je známý pro uživatele, kteří použili SQL.  
       
- Entity Framework spolupracuje s poskytovateli dat specifických pro úložiště k překladu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] obecných do dotazů specifických pro úložiště. Zprostředkovatel EntityClient poskytuje způsob, jak spustit [!INCLUDE[esql](../../../../../../includes/esql-md.md)] příkaz pro model entity a vracet bohatě formátované typy dat, včetně skalárních výsledků, sad výsledků a grafů objektů. Při vytváření <xref:System.Data.EntityClient.EntityCommand> objektů můžete zadat název uložené procedury nebo text dotazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] přiřazením řetězce dotazu k jeho <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> vlastnosti. Zpřístupňuje výsledky provádění s <xref:System.Data.EntityClient.EntityCommand> modelem EDM. <xref:System.Data.EntityClient.EntityDataReader> Chcete-li spustit příkaz, který <xref:System.Data.EntityClient.EntityDataReader>vrátí, <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>zavolejte.  
+ Entity Framework spolupracuje s poskytovateli dat specifických pro úložiště k překladu obecných [!INCLUDE[esql](../../../../../../includes/esql-md.md)] do dotazů specifických pro úložiště. Zprostředkovatel EntityClient poskytuje způsob, jak spustit příkaz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pro model entity a vracet bohatě formátované typy dat, včetně skalárních výsledků, sad výsledků a grafů objektů. Při vytváření objektů <xref:System.Data.EntityClient.EntityCommand> můžete zadat název uložené procedury nebo text dotazu přiřazením [!INCLUDE[esql](../../../../../../includes/esql-md.md)] řetězce dotazu k vlastnosti <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType>. <xref:System.Data.EntityClient.EntityDataReader> zpřístupňuje výsledky spuštění <xref:System.Data.EntityClient.EntityCommand> s modelem EDM. Chcete-li spustit příkaz, který vrací <xref:System.Data.EntityClient.EntityDataReader>, zavolejte <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>.  
   
- Kromě poskytovatele EntityClient vám Entity Framework umožňuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] spouštět dotazy na koncepční model a vracet data jako objekty CLR se silným typem, které jsou instancemi typů entit. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).  
+ Kromě poskytovatele EntityClient vám Entity Framework umožňuje používat [!INCLUDE[esql](../../../../../../includes/esql-md.md)] k provádění dotazů na koncepčním modelu a vracet data jako objekty CLR se silným typem, které jsou instancemi typů entit. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).  
   
- Tato část obsahuje koncepční informace o [!INCLUDE[esql](../../../../../../includes/esql-md.md)]nástroji.  
+ Tato část obsahuje koncepční informace o [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Jak se Entity SQL liší od Transact-SQL](how-entity-sql-differs-from-transact-sql.md)  
@@ -65,4 +65,4 @@ ms.locfileid: "70854486"
 
 - [Reference k Entity SQL](entity-sql-reference.md)
 - [Jazyk Entity SQL](entity-sql-language.md)
-- [Specifikace CSDL, SSDL a MSL](csdl-ssdl-and-msl-specifications.md)
+- [Specifikace CSDL, SSDL a MSL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)

@@ -2,22 +2,22 @@
 title: Přerušující kategorie změn – .NET Core
 description: Přečtěte si o způsobech, kterými jsou zásadní změny zařazené do kategorií v .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 058f2c2cdeed1e3e984f1de8ab493971d3937876
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 68bc51b6662de070ef901b73fb75ff3aced95726
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089446"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739361"
 ---
 # <a name="breaking-change-categories"></a>Kategorie změn způsobujících chyby
 
-*Kompatibilita* odkazuje na schopnost zkompilovat nebo spustit kód ve verzi implementace rozhraní .NET, která je jiná než ta, se kterou byl kód původně vyvinut. Konkrétní změna může mít vliv na kompatibilitu šesti různými způsoby. [Jednotlivé druhy změn, které jsou zváženy při hodnocení kompatibility](index.md) , spadají do prvních pěti kategorií. 
+*Kompatibilita* odkazuje na schopnost zkompilovat nebo spustit kód ve verzi implementace rozhraní .NET, která je jiná než ta, se kterou byl kód původně vyvinut. Konkrétní změna může mít vliv na kompatibilitu šesti různými způsoby. [Jednotlivé druhy změn, které jsou zváženy při hodnocení kompatibility](index.md) , spadají do prvních pěti kategorií.
 
 ## <a name="behavioral-change"></a>Změna chování
 
 Změna chování představuje změnu chování člena. Změna může být externě viditelná (například metoda může vyvolat jinou výjimku), nebo může představovat změněnou implementaci (například změnu způsobu, jakým se počítá návratová hodnota, přidání nebo odebrání volání vnitřní metody nebo dokonce i výrazné zlepšení výkonu.
 
-Pokud jsou změny chování externě viditelné a upravují veřejné kontrakty typu, je možné je snadno vyhodnotit, protože mají vliv na binární kompatibilitu. Změny implementace jsou mnohem obtížně vyhodnoceny. v závislosti na povaze změny a četnosti a vzorcích použití rozhraní API může být dopad změny v rozsahu od závažných až po neškodného.  
+Pokud jsou změny chování externě viditelné a upravují veřejné kontrakty typu, je možné je snadno vyhodnotit, protože mají vliv na binární kompatibilitu. Změny implementace jsou mnohem obtížně vyhodnoceny. v závislosti na povaze změny a četnosti a vzorcích použití rozhraní API může být dopad změny v rozsahu od závažných až po neškodného.
 
 ## <a name="binary-compatibility"></a>Binární kompatibilita
 
@@ -25,7 +25,7 @@ Binární kompatibilita odkazuje na schopnost příjemce rozhraní API používa
 
 ## <a name="source-compatibility"></a>Kompatibilita zdrojů
 
- Kompatibilita zdrojů odkazuje na schopnost stávajících uživatelů rozhraní API znovu kompilovat v novější verzi bez jakýchkoli změn ve zdroji. Ke *zdroji nekompatibilní změny* dochází, když příjemce potřebuje upravit zdrojový kód, aby se vytvořil úspěšně na novější verzi rozhraní API.
+Kompatibilita zdrojů odkazuje na schopnost stávajících uživatelů rozhraní API znovu kompilovat v novější verzi bez jakýchkoli změn ve zdroji. Ke *zdroji nekompatibilní změny* dochází, když příjemce potřebuje upravit zdrojový kód, aby se vytvořil úspěšně na novější verzi rozhraní API.
 
 ## <a name="design-time-compatibility"></a>Kompatibilita při návrhu
 
@@ -39,9 +39,9 @@ Změny, které mají vliv na zpětnou kompatibilitu, se důrazně nedoporučují
 
 ## <a name="forward-compatibility"></a>Dopředná kompatibilita
 
-Dopředná kompatibilita odkazuje na schopnost existujícímu příjemci rozhraní API běžet na starší verzi a zároveň se projeví stejné chování. Pokud se příjemce nedokáže při spuštění na starší verzi rozhraní API spustit nebo se nechová jinak, rozhraní API je *předáno nekompatibilní*. 
+Dopředná kompatibilita odkazuje na schopnost existujícímu příjemci rozhraní API běžet na starší verzi a zároveň se projeví stejné chování. Pokud se příjemce nedokáže při spuštění na starší verzi rozhraní API spustit nebo se nechová jinak, rozhraní API je *předáno nekompatibilní*.
 
-Udržování dopředné kompatibility prakticky vylučuje jakékoli změny nebo doplňky z verze na verzi, protože tyto změny brání příjemci, který cílí na novější verzi, ze spuštěné v dřívější verzi. Vývojáři očekávají, že příjemce, který spoléhá na novější rozhraní API, nemusí správně fungovat proti staršímu rozhraní API. 
+Udržování dopředné kompatibility prakticky vylučuje jakékoli změny nebo doplňky z verze na verzi, protože tyto změny brání příjemci, který cílí na novější verzi, ze spuštěné v dřívější verzi. Vývojáři očekávají, že příjemce, který spoléhá na novější rozhraní API, nemusí správně fungovat proti staršímu rozhraní API.
 
 Udržování dopředné kompatibility není cílem rozhraní .NET Core.
 

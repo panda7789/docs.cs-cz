@@ -2,22 +2,22 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: fb974492dee6b2a4244cedc06e3f5e40334dd02a
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 0dc667f392595d895bd4f2773ab69777d7369446
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399986"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738737"
 ---
-# <a name="resolver"></a>\<> překladače
+# <a name="resolver"></a>\<překladač >
 Určuje rovnocenný překladač, který se používá k překladu ID partnerské sítě na sadu adres partnerských uzlů, které představují několik uzlů, které se účastní sítě.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> překladače**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<překladač >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ Určuje rovnocenný překladač, který se používá k překladu ID partnerské
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<headers>](headers.md)|Určuje nastavení pro službu Custom peer resolver Service.|  
+|[\<hlaviček >](headers.md)|Určuje nastavení pro službu Custom peer resolver Service.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby NetPeerTcpBinding >](netpeertcpbinding.md).|  
+|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby [\<netPeerTcpBinding >](netpeertcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Překladač názvů partnerů je služba zjišťování, kterou používají rovnocenné kanály k nalezení partnerských uzlů, které se účastní sdílené sítě. Používá se také k registraci uzlu se sdílenou sítí, mechanizmus, který je partnerský uzel známý a dostupný z partnerské sítě. Další informace o překladačích peer-to najdete v tématu věnovaném [překladačům](../../../wcf/feature-details/peer-resolvers.md)peer.  

@@ -1,24 +1,24 @@
 ---
-title: <message>prvek elementu<wsFederationHttpBinding>
+title: <message> element <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9d710389-d9d8-4454-9bf2-da4ccda31cec
-ms.openlocfilehash: e26e1f94fb38e0654fd0bc9f06c6096a488bccfe
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 8e0903dd1313e68e2de65730e129079199ebe2f2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400283"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738984"
 ---
-# <a name="message-element-of-wsfederationhttpbinding"></a>\<> prvku \<zprávy > WSFederationHttpBinding
-Definuje nastavení pro zabezpečení [ \<](wsfederationhttpbinding.md)na úrovni zpráv > WSFederationHttpBinding.  
+# <a name="message-element-of-wsfederationhttpbinding"></a>\<> elementu \<wsFederationHttpBinding >
+Definuje nastavení pro zabezpečení na úrovni zpráv [\<WSFederationHttpBinding](wsfederationhttpbinding.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zpráva >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -94,7 +94,7 @@ Definuje nastavení pro zabezpečení [ \<](wsfederationhttpbinding.md)na úrovn
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Basic128|Pro zabalení klíče použijte šifrování Basic128, SHA1 pro Digest zpráv a RSA-výplně OAEP-mgf1p.|  
 |Basic192|Pro zabalení klíče použijte šifrování Basic192, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
@@ -117,16 +117,16 @@ Definuje nastavení pro zabezpečení [ \<](wsfederationhttpbinding.md)na úrovn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
+|[\<claimTypeRequirements >](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
 |issuer|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
 |issuerMetadata|Určuje adresu koncového bodu vystavitele.|  
-|[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
+|[\<tokenRequestParameters >](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[> zabezpečení \<](security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -138,4 +138,4 @@ Definuje nastavení pro zabezpečení [ \<](wsfederationhttpbinding.md)na úrovn
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

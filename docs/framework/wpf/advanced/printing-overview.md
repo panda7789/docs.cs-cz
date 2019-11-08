@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: 0758a537ee457a8fe5a778e2a2c24a8ba13c263b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d578b9834ca39a33e284d3066eef85890c224a2f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460871"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740807"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]jsou některá z těchto vylepšení systému pro tisk také k dispozici vývojářům, kteří vytvářejí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáři pomocí nespravovaného kódu. Základem této nové funkce je nový formát souboru XPS (XML Paper Specification) a cesta k tisku XPS.  
@@ -29,7 +29,7 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
   
 <a name="introduction_to_XPS"></a>   
 ## <a name="about-xps"></a>O formátu XPS  
- XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Je to otevřený formát dokumentu, který používá [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)], konvence OPC (Open balení) a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
+ XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Jedná se o otevřený formát dokumentu, který používá XML, konvence pro otevření balíčku (OPC) a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
   
  Několik technik tisku obsahu založeného na formátu XPS pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je znázorněno v [programovém tisku souborů XPS](how-to-programmatically-print-xps-files.md). Může být užitečné, aby na tyto ukázky odkazovala během revize obsahu obsaženého v tomto tématu. (Vývojáři nespravovaného kódu by si měli prohlédnout dokumentaci k [funkci MXDC_ESCAPE](/windows/desktop/printdocs/mxdc-escape). Model Windows Forms vývojáři musí používat rozhraní API v oboru názvů <xref:System.Drawing.Printing>, který nepodporuje úplnou cestu k tisku v rámci XPS, ale podporuje hybridní cestu k tisku typu GDI. Viz **Architektura tisk cesty** níže.)  
   
@@ -78,7 +78,7 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
  Pro přístup k kompletní sadě funkcí XPS se musí použít pokročilé rozhraní API pro tisk. Několik relevantních rozhraní API je podrobněji popsáno níže. Úplný seznam rozhraní API pro tisk ve formátu XPS najdete v odkazech na obor názvů <xref:System.Windows.Xps> a <xref:System.Printing>.  
   
 #### <a name="printticket-and-printcapabilities"></a>PrintTicket a PrintCapabilities  
- Třídy <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintCapabilities> jsou základem pokročilých funkcí XPS. Oba typy objektů jsou [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] formátované struktury funkcí orientovaných na tisk, jako jsou kolace, oboustranný tisk, sešívání atd. Tyto struktury jsou definovány schématem tisku. <xref:System.Printing.PrintTicket> instruuje tiskárnu, jak zpracovat tiskovou úlohu. Třída <xref:System.Printing.PrintCapabilities> definuje možnosti tiskárny. Díky dotazování na možnosti tiskárny je možné vytvořit <xref:System.Printing.PrintTicket>, která plně využívá podporované funkce tiskárny. Podobně je možné vyhnout se nepodporovaným funkcím.  
+ Třídy <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintCapabilities> jsou základem pokročilých funkcí XPS. Oba typy objektů jsou XML formátované struktury funkcí orientovaných na tisk, jako jsou kolace, oboustranný tisk, sešívání atd. Tyto struktury jsou definovány schématem tisku. <xref:System.Printing.PrintTicket> instruuje tiskárnu, jak zpracovat tiskovou úlohu. Třída <xref:System.Printing.PrintCapabilities> definuje možnosti tiskárny. Díky dotazování na možnosti tiskárny je možné vytvořit <xref:System.Printing.PrintTicket>, která plně využívá podporované funkce tiskárny. Podobně je možné vyhnout se nepodporovaným funkcím.  
   
  Následující příklad ukazuje, jak zadat dotaz na <xref:System.Printing.PrintCapabilities> tiskárny a vytvořit <xref:System.Printing.PrintTicket> pomocí kódu.  
   

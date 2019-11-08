@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 2abe89abf1ab246464c8f7a7ca7c87295b0b3946
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 178145b06cb937fb677b8454357bed774ed3003b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458974"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740845"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a>Toto téma vysvětluje, jak může pracovní postup [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností ovlivnit hodnotu vlastnosti závislosti a popisuje prioritu, podle které se aspekty systému vlastností vztahují na platnou hodnotu vlastnosti.  
@@ -109,7 +109,7 @@ ms.locfileid: "73458974"
   
 <a name="animations"></a>   
 ## <a name="coercion-animations-and-base-value"></a>Konverze, animace a základní hodnota  
- Na základě hodnoty, která je v rámci této [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]termínem "základní hodnota", je vynucená a animace. Základní hodnota je, takže jakákoli hodnota je určena pomocí hodnocení nahoru v položkách až do dosažení položky 2.  
+ Na základě hodnoty, která je v rámci této sady SDK termínem "základní hodnota", je vynucení a animace obojí. Základní hodnota je, takže jakákoli hodnota je určena pomocí hodnocení nahoru v položkách až do dosažení položky 2.  
   
  V případě animace může mít základní hodnota efekt na animovanou hodnotu, pokud tato animace neurčuje pro určité chování obě "od" i "do", nebo pokud se animace záměrně po dokončení vrátí k základní hodnotě. Chcete-li se podívat v praxi, spusťte [ukázku hodnot cíle animace z, do a podle animace](https://go.microsoft.com/fwlink/?LinkID=159988). Zkuste nastavit místní hodnoty výšky obdélníku v příkladu tak, aby se počáteční místní hodnota v animaci lišila od libovolné "od". Všimněte si, že animace začínají hned za použití hodnot "od" a po spuštění nahradí základní hodnotu. Animace může určit, že se má vrátit k hodnotě nalezené před animací po jejím dokončení zadáním stop <xref:System.Windows.Media.Animation.FillBehavior>. Následně se pro stanovení základní hodnoty použije normální priorita.  
   

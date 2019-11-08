@@ -1,24 +1,24 @@
 ---
-title: <message>prvek elementu<netTcpBinding>
+title: <message> element <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-ms.openlocfilehash: 0cf4f66df43070cc90443e3a640915df46a5cccd
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 76c4a0a30b637bc168855b091029a959b858401e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400297"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739008"
 ---
-# <a name="message-element-of-nettcpbinding"></a>\<> prvku \<zprávy > NetTcpBinding
-Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakonfigurovaný s [ \<> NetTcpBinding](nettcpbinding.md).  
+# <a name="message-element-of-nettcpbinding"></a>\<> elementu \<netTcpBinding >
+Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakonfigurovaný pomocí [\<netTcpBinding >](nettcpbinding.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netTcpBinding >** ](nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-nettcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zpráva >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,12 +34,12 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`algorithmSuite`|Nastaví šifrování zpráv a algoritmy pro zabalení klíčů. Algoritmy a velikosti klíčů jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídou. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty jsou uvedeny v následující tabulce. Výchozí hodnota je `Basic256`.<br /><br /> Pokud vazba služby určuje `algorithmSuite` hodnotu, která není shodná s výchozí hodnotou, a vygenerujete konfigurační soubor pomocí Svcutil. exe, není správně vygenerována a je nutné ručně upravit konfigurační soubor pro nastavení tohoto atributu na hodnotu požadovaná hodnota.|  
+|`algorithmSuite`|Nastaví šifrování zpráv a algoritmy pro zabalení klíčů. Algoritmy a velikosti klíčů jsou určeny třídou <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty jsou uvedeny v následující tabulce. Výchozí hodnota je `Basic256`.<br /><br /> Pokud vazba služby určuje `algorithmSuite` hodnotu, která není shodná s výchozí hodnotou, a vygenerujete konfigurační soubor pomocí nástroje Svcutil. exe, není generována správně a je nutné ručně upravit konfigurační soubor pro nastavení tohoto atributu na požadovaný osa.|  
 |`clientCredentialType`|Určuje typ přihlašovacích údajů, které se mají použít při ověřování klientů pomocí zabezpečení založeného na zprávách. Možné hodnoty jsou uvedeny v následující tabulce. Výchozí hodnota je `UserName`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Basic128|Pro zabalení klíče použijte šifrování Aes128, SHA1 pro Digest zpráv a RSA-výplně OAEP-mgf1p.|  
 |Basic192|Pro zabalení klíče použijte šifrování Aes192, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
@@ -60,12 +60,12 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Díky tomu může služba spolupracovat s anonymními klienty. Ve službě to znamená, že služba nevyžaduje žádná pověření klienta. V klientovi to znamená, že klient neposkytuje žádné přihlašovací údaje klienta.|  
 |Windows|Povoluje, aby Exchange SOAP byly pod ověřeným kontextem pověření systému Windows.|  
-|UserName|Umožňuje službě, aby vyžadovala ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odeslání Digest hesla ani odvození klíčů pomocí hesla a použití takových klíčů pro zabezpečení zpráv. Technologie WCF proto vynutila, že při použití přihlašovacích údajů uživatelského jména je přenos zabezpečený. Tento režim přihlašovacích údajů má za následek vzájemně ovladatelné nebo neinteroperabilní vyjednávání založené na `negotiateServiceCredential` atributu.|  
-|Certifikát|Umožňuje službě, aby vyžadovala ověření klienta pomocí certifikátu. Pokud je použit režim zabezpečení zprávy a `negotiateServiceCredential` atribut je nastaven na `false`hodnotu, musí být klient zřízen s certifikátem služby.|  
+|UserName|Umožňuje službě, aby vyžadovala ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odeslání Digest hesla ani odvození klíčů pomocí hesla a použití takových klíčů pro zabezpečení zpráv. Technologie WCF proto vynutila, že při použití přihlašovacích údajů uživatelského jména je přenos zabezpečený. Tento režim přihlašovacích údajů má za následek vzájemně ovladatelné nebo neinteroperabilní vyjednávání založené na atributu `negotiateServiceCredential`.|  
+|Certifikát|Umožňuje službě, aby vyžadovala ověření klienta pomocí certifikátu. Pokud je použit režim zabezpečení zprávy a atribut `negotiateServiceCredential` je nastaven na `false`, klient musí být zřízen s certifikátem služby.|  
 |Třídy IssuedToken|Určuje vlastní token, který je obvykle vydaný službou tokenu zabezpečení (STS).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -75,7 +75,7 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> zabezpečení](security-of-nettcpbinding.md)|Definuje možnosti zabezpečení pro <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.|  
+|[> zabezpečení \<](security-of-nettcpbinding.md)|Definuje možnosti zabezpečení pro <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zpráva používá zabezpečení na úrovni zprávy pro integritu a důvěrnost zprávy SOAP a pro vzájemné ověřování partnerských partnerů. Pokud je tento režim zabezpečení vybraný u vazby, nakonfiguruje se zásobník kanálů s prvky vazby zabezpečení zprávy a zprávy protokolu SOAP se zabezpečují v souladu s normami WS-Security *.  
@@ -90,4 +90,4 @@ Definuje typ požadavků zabezpečení na úrovni zprávy pro koncový bod nakon
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<> vazby](../../../misc/binding.md)
+- [vazba \<](bindings.md)

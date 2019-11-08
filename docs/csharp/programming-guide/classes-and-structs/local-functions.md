@@ -4,12 +4,12 @@ ms.custom: seodec18
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 7b6b46a33430a4a58c78245a0ab3bed1e0fbcd9c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 24b7d6f98e331110ddcd971d0d0b21003dbe023d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455384"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736852"
 ---
 # <a name="local-functions-c-programming-guide"></a>Místní funkce (C# Průvodce programováním)
 
@@ -43,11 +43,10 @@ Místní funkce můžou používat modifikátory [Async](../../language-referenc
 
 Všimněte si, že všechny místní proměnné, které jsou definovány v nadřazeném členu, včetně jeho parametrů metody, jsou přístupné v místní funkci. 
 
-Na rozdíl od definice metody nemůže definice lokální funkce obsahovat následující prvky:
+Na rozdíl od definice metody nemůže definice lokální funkce zahrnovat modifikátor přístupu ke členu. Vzhledem k tomu, že jsou všechny místní funkce soukromé, včetně modifikátoru přístupu, jako je například klíčové slovo `private`, vygeneruje chybu kompilátoru CS0106, modifikátor Private není pro tuto položku platný.
 
-- Modifikátor přístupu ke členu Vzhledem k tomu, že jsou všechny místní funkce soukromé, včetně modifikátoru přístupu, jako je například klíčové slovo `private`, vygeneruje chybu kompilátoru CS0106, modifikátor Private není pro tuto položku platný.
- 
-- Klíčové slovo [static](../../language-reference/keywords/static.md) . Zahrnutí klíčového slova `static` generuje chybu kompilátoru CS0106, modifikátor "static" není pro tuto položku platný. "
+> [!NOTE]
+> Před C# 8,0 nemohou místní funkce obsahovat modifikátor `static`. Zahrnutí klíčového slova `static` generuje chybu kompilátoru CS0106, modifikátor "static" není pro tuto položku platný. "
 
 Kromě toho nelze atributy použít pro místní funkci nebo její parametry a parametry typu. 
  

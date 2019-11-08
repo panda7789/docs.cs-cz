@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 6e5501b152c4662f1456786ba51fd3f25923b34c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: d803bd053acd876b3a38cfc52eb29818219e9423
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040547"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739582"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -39,7 +39,7 @@ Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaný
 |Rozhraní API zprostředkovatele (UIAutomationProvider. dll a UIAutomationTypes. dll)|Sada definic rozhraní, které jsou implementovány zprostředkovateli automatizace uživatelského rozhraní, objekty, které poskytují informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky a reagují na programové vstupy.|  
 |Rozhraní API klienta (UIAutomationClient. dll a UIAutomationTypes. dll)|Sada typů pro spravovaný kód, která umožňuje klientským aplikacím automatizace uživatelského rozhraní získat informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a odeslání vstupu ovládacím prvkům.|  
 |UiAutomationCore. dll|Podkladový kód (někdy označovaný jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jádro), který zpracovává komunikaci mezi poskytovateli a klienty.|  
-|UIAutomationClientsideProviders. dll|Sada zprostředkovatelů automatizace uživatelského rozhraní pro standardní starší ovládací prvky. (ovládací prvky [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] mají nativní podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].) Tato podpora je automaticky dostupná pro klientské aplikace.|  
+|UIAutomationClientsideProviders. dll|Sada zprostředkovatelů automatizace uživatelského rozhraní pro standardní starší ovládací prvky. (ovládací prvky[!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] mají nativní podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].) Tato podpora je automaticky dostupná pro klientské aplikace.|  
   
  Z pohledu vývojáře softwaru existují dva způsoby použití [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]: k vytvoření podpory vlastních ovládacích prvků (pomocí rozhraní API zprostředkovatele) a k vytváření aplikací, které používají [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core ke komunikaci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky (pomocí rozhraní API klienta). V závislosti na vašem výběru byste se měli podívat na různé části dokumentace. V následujících částech se dozvíte víc o konceptech a získáte praktické znalosti s postupy.  
   
@@ -72,7 +72,7 @@ Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaný
 > [!NOTE]
 > Mezi typy ovládacích prvků a vzory ovládacích prvků neexistuje žádná korespondence 1:1. Vzor ovládacího prvku může být podporován více typy ovládacích prvků a ovládací prvek může podporovat více vzorů ovládacích prvků, z nichž každý zveřejňuje různé aspekty jeho chování. Například pole se seznamem má alespoň dva vzory ovládacích prvků: jeden, který představuje jeho schopnost rozbalit a sbalit a druhý, který představuje mechanismus výběru. Konkrétní informace najdete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-types.md).  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] také poskytuje informace klientským aplikacím prostřednictvím událostí. Na rozdíl od [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)]události [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nejsou založené na mechanismu vysílání. klienti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se registrují pro konkrétní oznámení událostí a můžou požádat o konkrétní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti a informace o vzoru ovládacího prvku budou předány do obslužných rutin událostí. Kromě toho událost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahuje odkaz na element, který ji vyvolal. Poskytovatelé můžou zvýšit výkon tím, že vyberou události selektivně v závislosti na tom, jestli některý z klientů naslouchá.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] také poskytuje informace klientským aplikacím prostřednictvím událostí. Na rozdíl od WinEvents nejsou události [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] založené na mechanizmu všesměrového vysílání. klienti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se registrují pro konkrétní oznámení událostí a můžou požádat o konkrétní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti a informace o vzoru ovládacího prvku budou předány do obslužných rutin událostí. Kromě toho událost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahuje odkaz na element, který ji vyvolal. Poskytovatelé můžou zvýšit výkon tím, že vyberou události selektivně v závislosti na tom, jestli některý z klientů naslouchá.  
   
 ## <a name="see-also"></a>Viz také:
 

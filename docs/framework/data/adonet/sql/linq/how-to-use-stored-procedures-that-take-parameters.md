@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-ms.openlocfilehash: e9d77cd1dc82e1b103c5f0d9f3f447ed105acaec
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: faf4ea9c52b91c3fc0f2f775e7bd5dfe039c53a8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003243"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738109"
 ---
 # <a name="how-to-use-stored-procedures-that-take-parameters"></a>Postupy: použití uložených procedur, které přijímají parametry
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje výstupní parametry na referenční parametry a pro typy hodnot deklaruje parametr jako Nullable.  
@@ -43,5 +43,5 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
 
 - [Uložené procedury](stored-procedures.md)
 - [Stažení ukázkových databází](downloading-sample-databases.md)
-- [Použití typů hodnot s možnou hodnotou null](../../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)
-- [Typy hodnot s povolenou hodnotou Null](../../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+- [Typy hodnot s možnou hodnotou null (C#)](../../../../../csharp/language-reference/builtin-types/nullable-value-types.md)
+- [Typy hodnot s možnou hodnotou null (Visual Basic)](../../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

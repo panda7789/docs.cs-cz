@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 6c06e18f7869f1b1041c4d5fb1608a87f2902d7b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8f381a06aa916be378052d00f0d65f37ef910433
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460572"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740659"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Toto téma dále vysvětluje přítomnost a účel dvou mapování oboru názvů XAML, jak se často nacházejí v kořenové značce souboru XAML WPF. Popisuje také, jak vydávat podobná mapování pro použití elementů, které jsou definovány ve vlastním kódu, a/nebo v samostatných sestaveních.  
@@ -39,7 +39,7 @@ Toto téma dále vysvětluje přítomnost a účel dvou mapování oboru názvů
   
  Vztah mezi těmito deklaracemi je, že mapování předpon `x:` podporuje vnitřní objekty, které jsou součástí definice jazyka XAML, a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je jedna implementace, která používá XAML jako jazyk a definuje slovní seznam svých objektů pro XAML. Vzhledem k tomu, že použití slovníku WPF bude mnohem běžnější než použití vnitřních objektů XAML, je slovník WPF namapovaný jako výchozí.  
   
- Konvence prefixu `x:` pro mapování podpory vnitřních kódů jazyka XAML je následována šablonami projektu, ukázkovým kódem a dokumentací funkcí jazyka v rámci této [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML definuje mnoho běžně používaných funkcí, které jsou nezbytné i pro základní aplikace WPF. Chcete-li například připojit jakýkoliv kód na pozadí k souboru XAML prostřednictvím částečné třídy, je nutné tuto třídu pojmenovat jako atribut `x:Class` v kořenovém elementu příslušného souboru XAML. Nebo jakýkoli element definovaný na stránce XAML, ke které chcete přistupovat jako prostředek s klíčem, by měl mít atribut `x:Key` nastaven na daném elementu. Další informace o těchto a dalších aspektech jazyka XAML naleznete v tématu detailed [XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) nebo [syntaxe jazyka XAML](xaml-syntax-in-detail.md).  
+ Konvence prefixu `x:` pro mapování podpory vnitřních kódů jazyka XAML je následována šablonami projektu, ukázkovým kódem a dokumentaci k funkcím jazyka v této sadě SDK. Obor názvů XAML definuje mnoho běžně používaných funkcí, které jsou nezbytné i pro základní aplikace WPF. Chcete-li například připojit jakýkoliv kód na pozadí k souboru XAML prostřednictvím částečné třídy, je nutné tuto třídu pojmenovat jako atribut `x:Class` v kořenovém elementu příslušného souboru XAML. Nebo jakýkoli element definovaný na stránce XAML, ke které chcete přistupovat jako prostředek s klíčem, by měl mít atribut `x:Key` nastaven na daném elementu. Další informace o těchto a dalších aspektech jazyka XAML naleznete v tématu detailed [XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) nebo [syntaxe jazyka XAML](xaml-syntax-in-detail.md).  
   
 <a name="Mapping_To_Custom_Classes_and_Assemblies"></a>   
 ## <a name="mapping-to-custom-classes-and-assemblies"></a>Mapování na vlastní třídy a sestavení  
@@ -105,7 +105,7 @@ End Namespace
   
 <a name="Mapping_CLR_Namespaces_to_XML_Namespaces_in_an"></a>   
 ## <a name="mapping-clr-namespaces-to-xml-namespaces-in-an-assembly"></a>Mapování oborů názvů CLR na obory názvů XML v sestavení  
- WPF definuje atribut CLR, který používají procesory XAML za účelem mapování více oborů názvů CLR na jeden obor názvů XAML. Tento atribut, <xref:System.Windows.Markup.XmlnsDefinitionAttribute>, je umístěn na úrovni sestavení ve zdrojovém kódu, který vytváří sestavení. Zdrojový kód sestavení WPF používá tento atribut k mapování různých běžných oborů názvů, například <xref:System.Windows> a <xref:System.Windows.Controls>, na obor názvů [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)].  
+ WPF definuje atribut CLR, který používají procesory XAML za účelem mapování více oborů názvů CLR na jeden obor názvů XAML. Tento atribut, <xref:System.Windows.Markup.XmlnsDefinitionAttribute>, je umístěn na úrovni sestavení ve zdrojovém kódu, který vytváří sestavení. Zdrojový kód sestavení WPF používá tento atribut k mapování různých běžných oborů názvů, například <xref:System.Windows> a <xref:System.Windows.Controls>, na obor názvů `http://schemas.microsoft.com/winfx/2006/xaml/presentation`.  
   
  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> přebírá dva parametry: název oboru názvů XML/XAML a název oboru názvů CLR. Pro mapování více oborů názvů CLR na stejný obor názvů XML může existovat více než jeden <xref:System.Windows.Markup.XmlnsDefinitionAttribute>. Po namapování můžou být členové těchto oborů názvů odkazováni bez plné kvalifikace, pokud je to žádoucí, poskytnutím odpovídajícího `using`ho příkazu na stránce s kódem na pozadí částečné třídy. Další podrobnosti najdete v tématu <xref:System.Windows.Markup.XmlnsDefinitionAttribute>.  
   

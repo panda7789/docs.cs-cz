@@ -2,12 +2,12 @@
 title: Návratové hodnoty ref a lokální hodnoty REFC# (Průvodce)
 description: Naučte se definovat a používat místní hodnoty Return a ref ref.
 ms.date: 04/04/2018
-ms.openlocfilehash: 99e0f9d995cf3bf5c0486415b6f2d578147d3c7f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7ade422b5b3805ef2e1f487252a98fb85cdfe70c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114477"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736815"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Návratové hodnoty podle odkazu a lokální proměnné podle odkazu
 
@@ -25,7 +25,7 @@ Existují určitá omezení pro výraz, který metoda může vracet jako návrat
 
 - Návratovou hodnotou nemůže být literální `null`. Vrácení `null` generuje chybu kompilátoru CS8156; "výraz nelze v tomto kontextu použít, protože jej nelze vrátit odkazem."
 
-   Metoda s návratovým odkazem může vracet alias k proměnné, jejíž hodnota je aktuálně hodnotou null (bez instancí) nebo [typ hodnoty s možnou hodnotou null](../nullable-types/index.md) pro typ hodnoty.
+   Metoda s návratovým odkazem může vracet alias k proměnné, jejíž hodnota je aktuálně hodnotou null (bez instancí) nebo [typ hodnoty s možnou hodnotou null](../../language-reference/builtin-types/nullable-value-types.md) pro typ hodnoty.
 
 - Návratovou hodnotou nemůže být konstanta, člen výčtu, návratová hodnota po hodnotě z vlastnosti nebo metoda `class` nebo `struct`. Porušení tohoto pravidla generuje chybu kompilátoru CS8156. výraz nemůže být v tomto kontextu použit, protože jej nelze vrátit odkazem.
 

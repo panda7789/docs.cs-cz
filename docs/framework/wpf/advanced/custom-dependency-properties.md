@@ -14,12 +14,12 @@ helpviewer_keywords:
 - wrappers [WPF], implementing
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-ms.openlocfilehash: 00596911cf603ae9615eb64d0aedefe90c2520bc
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8e3ac7207a5ef05b94e97f005ecd17d5078669a4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458988"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740883"
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 
@@ -35,7 +35,7 @@ V tomto tématu se předpokládá, že rozumíte vlastnostem závislosti z persp
 
 ## <a name="what-is-a-dependency-property"></a>Co je vlastnost závislosti?
 
-Můžete povolit, co by jinak bylo vlastnost modulu CLR (Common Language Runtime) pro podporu stylů, datových vazeb, dědičnosti, animací a výchozích hodnot, a to implementací jako vlastnosti závislosti. Vlastnosti závislostí jsou vlastnosti, které jsou zaregistrovány v systému vlastností [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zavoláním metody <xref:System.Windows.DependencyProperty.Register%2A> (nebo <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>) a, které jsou vyvolány polem identifikátoru <xref:System.Windows.DependencyProperty>. Vlastnosti závislostí lze použít pouze <xref:System.Windows.DependencyObject> typy, ale <xref:System.Windows.DependencyObject> je poměrně vysoké v hierarchii tříd [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], takže většina tříd, které jsou k dispozici v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], mohou podporovat vlastnosti závislostí. Další informace o vlastnostech závislosti a některých terminologii a konvencích používaných k jejich popisu v tomto [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]najdete v tématu [Přehled vlastností závislostí](dependency-properties-overview.md).
+Můžete povolit, co by jinak bylo vlastnost modulu CLR (Common Language Runtime) pro podporu stylů, datových vazeb, dědičnosti, animací a výchozích hodnot, a to implementací jako vlastnosti závislosti. Vlastnosti závislostí jsou vlastnosti, které jsou zaregistrovány v systému vlastností [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zavoláním metody <xref:System.Windows.DependencyProperty.Register%2A> (nebo <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>) a, které jsou vyvolány polem identifikátoru <xref:System.Windows.DependencyProperty>. Vlastnosti závislostí lze použít pouze <xref:System.Windows.DependencyObject> typy, ale <xref:System.Windows.DependencyObject> je poměrně vysoké v hierarchii tříd [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], takže většina tříd, které jsou k dispozici v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], mohou podporovat vlastnosti závislostí. Další informace o vlastnostech závislosti a některých terminologii a konvencích používaných k jejich popisu v této sadě SDK najdete v tématu [Přehled vlastností závislostí](dependency-properties-overview.md).
 
 <a name="example_dp"></a>
 

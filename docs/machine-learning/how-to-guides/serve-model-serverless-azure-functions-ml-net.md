@@ -1,23 +1,23 @@
 ---
 title: Nasazení modelu do Azure Functions
 description: Obsluha modelu ML.NET mínění Analysis Machine Learning pro předpověď přes Internet pomocí Azure Functions
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: bd08982e96f39a9685ddabc090ac3bc5c7855022
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5ef6331950845b2900e33b2c51c308644ba17fd6
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424336"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733349"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
 Naučte se, jak nasadit předem vyškolený model ML.NET Machine Learning pro předpovědi přes protokol HTTP prostřednictvím prostředí bez serveru Azure Functions.
 
 > [!NOTE]
-> rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
+> Tato ukázka spustí verzi Preview služby `PredictionEnginePool`.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -46,11 +46,11 @@ Tato ukázka je  **C# triggerem http Azure Functions aplikaci** , která použí
 
     V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft. Azure. Functions. Extensions**, vyberte tento balíček v seznamu a klikněte na tlačítko **nainstalovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 
-1. Nainstalujte **balíček NuGet Microsoft.Extensions.ml** verze **1.3.1**:
+1. Nainstalujte **balíček NuGet Microsoft.Extensions.ml** verze **0.15.1**:
 
     V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft.Extensions.ml**, vyberte tento balíček v seznamu a klikněte na tlačítko **nainstalovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 
-1. Nainstalujte **balíček NuGet Microsoft. NET. SDK. Functions** verze 1.0.28 +:
+1. Nainstalujte **balíček NuGet Microsoft. NET. SDK. Functions** verze **1.0.28 +** :
 
     V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu nainstalované, vyhledejte **Microsoft. NET. SDK. Functions**, vyberte tento balíček v seznamu, vyberte v rozevírací nabídce verze možnost **1.0.28 nebo novější** a klikněte na tlačítko **aktualizovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 

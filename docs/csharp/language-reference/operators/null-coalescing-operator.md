@@ -11,12 +11,12 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 5262aa70bb5ec2f03dda9425194b89ec1e809d76
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2bd6fe3d2d283e64eebc2251416fa5234e30bdad
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038962"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739657"
 ---
 # <a name="-and--operators-c-reference"></a>?? a?? = – operátoryC# (Reference)
 
@@ -28,7 +28,7 @@ K dispozici v 8,0 a novějších operátor přiřazení s nulovou hodnotou`??=`p
 
 Levý operand operátoru `??=` musí být proměnná, [vlastnost](../../programming-guide/classes-and-structs/properties.md)nebo element [indexeru](../../programming-guide/indexers/index.md) .
 
-V C# 7,3 a starších verzích musí být typ levého operandu operátoru`??`buď odkazový typ, nebo [typ hodnoty s možnou hodnotou null](../../programming-guide/nullable-types/index.md). Počínaje C# 8,0 je tento požadavek nahrazen následujícím: typ levého operandu operátorů`??`a`??=`nesmí být typ hodnoty, která není null. Konkrétně počínaje C# 8,0 můžete použít operátory slučování s hodnotou null s neomezenými parametry typu:
+V C# 7,3 a starších verzích musí být typ levého operandu operátoru `??` buď [odkazový typ](../keywords/reference-types.md) , nebo [typ hodnoty s možnou hodnotou null](../builtin-types/nullable-value-types.md). Počínaje C# 8,0 je tento požadavek nahrazen následujícím: typ levého operandu operátorů`??`a`??=`nesmí být typ hodnoty, která není null. Konkrétně počínaje C# 8,0 můžete použít operátory slučování s hodnotou null s neomezenými parametry typu:
 
 [!code-csharp[unconstrained type parameter](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#UnconstrainedType)]
 
@@ -54,7 +54,7 @@ Operátory `??` a `??=` mohou být užitečné v následujících situacích:
 
   [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
 
-- Když pracujete s [typy hodnot s možnou hodnotou null](../../programming-guide/nullable-types/index.md) a potřebujete zadat hodnotu základního typu hodnoty, použijte operátor `??` k určení hodnoty, která se má zadat pro případ, že hodnota typu s možnou hodnotou null je `null`:
+- Když pracujete s [typy hodnot s možnou hodnotou null](../builtin-types/nullable-value-types.md) a potřebujete zadat hodnotu základního typu hodnoty, použijte operátor `??` k určení hodnoty, která se má zadat pro případ, že hodnota typu s možnou hodnotou null je `null`:
 
   [!code-csharp-interactive[with nullable types](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullableTypes)]
 

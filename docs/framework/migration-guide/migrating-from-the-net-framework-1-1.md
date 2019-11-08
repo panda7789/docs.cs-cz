@@ -5,22 +5,22 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: f74b75827770524299f9a25a5854503186139cb4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a553d24a12b7ea227325a76d255e2ad53ada716f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126298"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739623"
 ---
-# <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
+# <a name="migrate-from-the-net-framework-11"></a>Migrace z .NET Framework 1,1
 
-[!INCLUDE[win7](../../../includes/win7-md.md)] a novější verze operačního systému Windows nepodporují .NET Framework 1,1. V důsledku toho nebudou aplikace cílené na .NET Framework 1,1 běžet bez úprav v [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějších verzích operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na .NET Framework 1,1 v části [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows. Další informace o .NET Framework 1,1 a [!INCLUDE[win8](../../../includes/win8-md.md)]najdete v tématu [spouštění aplikací .NET Framework 1,1 v systému Windows 8 a novějších verzích](../install/run-net-framework-1-1-apps.md).
+Windows 7 a novější verze operačního systému Windows nepodporují .NET Framework 1,1. V důsledku toho nebudou aplikace cílené na .NET Framework 1,1 běžet beze změny ve verzích operačního systému Windows 7 nebo novějších. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na .NET Framework 1,1 v systému Windows 7 a novějších verzích operačního systému Windows. Další informace o .NET Framework 1,1 a Windows 8 najdete v tématu [spuštění aplikací .NET Framework 1,1 ve Windows 8 a novějších verzích](../install/run-net-framework-1-1-apps.md).
 
-## <a name="retargeting-or-recompiling"></a>Změna cílení nebo opětovné kompilace
+## <a name="retarget-or-recompile"></a>Změnit cílení nebo překompilovat
 
-Existují dva způsoby, jak získat aplikaci, která byla zkompilována pomocí .NET Framework 1,1 pro spuštění v [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějším operačním systému Windows:
+Existují dva způsoby, jak získat aplikaci, která byla zkompilována pomocí .NET Framework 1,1 pro spuštění v systému Windows 7 nebo novějším operačním systému Windows:
 
-- Aplikaci můžete změnit tak, aby běžela v .NET Framework 4 a novějších verzích. Změna cíle vyžaduje, abyste do konfiguračního souboru aplikace přidali [\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu, který umožňuje jeho spuštění v rámci .NET Framework 4 a novějších verzí. Takový konfigurační soubor má následující formát:
+- Změnit cíl aplikace tak, aby běžela v .NET Framework 4 a novějších verzích. Změna cíle vyžaduje, abyste do konfiguračního souboru aplikace přidali [\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu, který umožňuje jeho spuštění v rámci .NET Framework 4 a novějších verzí. Takový konfigurační soubor má následující formát:
 
     ```xml
     <configuration>
@@ -30,7 +30,7 @@ Existují dva způsoby, jak získat aplikaci, která byla zkompilována pomocí 
     </configuration>
     ```
 
-- Aplikaci můžete znovu zkompilovat s kompilátorem, který cílí na .NET Framework 4 nebo novější verzi. Pokud jste původně použili sadu Visual Studio 2003 k vývoji a kompilování řešení, můžete otevřít řešení v aplikaci Visual Studio 2010 (a případně i novějších verzích) a použít dialogové okno **Kompatibilita projektu** k převedení řešení a souborů projektu z formáty používané v rámci sady Visual Studio 2003 ve formátu Microsoft Build Engine (MSBuild).
+- Zkompilujte aplikaci znovu s kompilátorem, který cílí na .NET Framework 4 nebo novější verzi. Pokud jste původně použili sadu Visual Studio 2003 k vývoji a kompilování řešení, můžete otevřít řešení v aplikaci Visual Studio 2010 (a případně i novějších verzích) a použít dialogové okno **Kompatibilita projektu** k převedení řešení a souborů projektu z formáty používané v rámci sady Visual Studio 2003 ve formátu Microsoft Build Engine (MSBuild).
 
 Bez ohledu na to, zda upřednostňujete překompilování nebo změnu cílení aplikace, je nutné určit, zda je aplikace ovlivněna jakýmikoli změnami zavedenými v pozdějších verzích .NET Framework. Tyto změny jsou dvou typů:
 
@@ -40,7 +40,7 @@ Bez ohledu na to, zda upřednostňujete překompilování nebo změnu cílení a
 
 Bez ohledu na to, zda přecílíte na aplikaci nebo je znovu zkompilujete, byste měli zkontrolovat zásadní změny i zastaralé typy a členy pro každou verzi .NET Framework, která byla vydaná po .NET Framework 1,1.
 
-## <a name="breaking-changes"></a>Nejnovější změny
+## <a name="breaking-changes"></a>Změny způsobující chyby
 
 V případě, že dojde k zásadní změně v závislosti na konkrétní změně, může být alternativní řešení k dispozici pro přecílené a znovu kompilované aplikace. V některých případech můžete přidat podřízený element do modulu [runtime\<](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu konfiguračního souboru vaší aplikace k obnovení předchozího chování. Například následující konfigurační soubor obnoví řazení řetězců a chování porovnávání používané v .NET Framework 1,1 a lze je použít buď s cílovou nebo znovu zkompilovanou aplikací.
 

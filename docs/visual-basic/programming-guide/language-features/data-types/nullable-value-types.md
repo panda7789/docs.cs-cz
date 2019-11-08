@@ -10,30 +10,30 @@ helpviewer_keywords:
 - nullable types [Visual Basic]
 - data types [Visual Basic], nullable
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
-ms.openlocfilehash: 072496a560775a8f79274f1d44dd389d6ed5b40d
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 1fb8f8d1657b8eab6b15858c2a6607cbde82e542
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351765"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732934"
 ---
 # <a name="nullable-value-types-visual-basic"></a>Typy hodnot s povolenou hodnotou Null (Visual Basic)
 
 Někdy pracujete s typem hodnoty, který nemá v určitých případech definovanou hodnotu. Například pole v databázi může být nutné rozlišovat mezi přiřazením přiřazené hodnoty, která je smysluplná a nemá přiřazenou hodnotu. Typy hodnot lze rozšířit tak, aby převzaly jejich normální hodnoty nebo hodnotu null. Takové rozšíření se nazývá typ s *možnou hodnotou null*.
 
-Každý typ s možnou hodnotou null je vytvořen z obecné struktury <xref:System.Nullable%601>. Vezměte v úvahu databázi, která sleduje aktivity související s prací. Následující příklad vytvoří hodnotu null typu `Boolean` a deklaruje proměnnou daného typu. Deklaraci můžete zapsat třemi způsoby:
+Každý typ s možnou hodnotou null je vytvořen z obecné struktury <xref:System.Nullable%601>. Vezměte v úvahu databázi, která sleduje aktivity související s prací. Následující příklad vytvoří `Boolean` typ s možnou hodnotou null a deklaruje proměnnou daného typu. Deklaraci můžete zapsat třemi způsoby:
 
 [!code-vb[VbVbalrNullableValue#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#1)]
 
-Proměnná `ridesBusToWork` může obsahovat hodnotu `True`, hodnotu `False` nebo vůbec žádnou hodnotu. Počáteční výchozí hodnota není vůbec žádná hodnota, což by v tomto případě mohlo znamenat, že pro tuto osobu ještě nebyly získány informace. Naproti tomu `False` znamená, že informace byly získány a osoba nepracovala sběrnici, aby fungovala.
+Proměnná `ridesBusToWork` může obsahovat hodnotu `True`, hodnotu `False`nebo žádnou hodnotu. Počáteční výchozí hodnota není vůbec žádná hodnota, což by v tomto případě mohlo znamenat, že pro tuto osobu ještě nebyly získány informace. Na rozdíl od `False` může znamenat, že byly informace získány a osoba nepracovala sběrnici k fungování.
 
-Můžete deklarovat proměnné a vlastnosti s typy s možnou hodnotou null a můžete deklarovat pole s prvky typu s možnou hodnotou null. Můžete deklarovat procedury s typy s možnou hodnotou null jako parametry a můžete vrátit typ s možnou hodnotou null z procedury `Function`.
+Můžete deklarovat proměnné a vlastnosti s typy s možnou hodnotou null a můžete deklarovat pole s prvky typu s možnou hodnotou null. Můžete deklarovat procedury s typy s možnou hodnotou null jako parametry a můžete z `Function` procedury vrátit typ s možnou hodnotou null.
 
-Typ s možnou hodnotou null nelze vytvořit v typu odkazu, jako je pole, `String` nebo třída. Nadřízený typ musí být hodnotový typ. Další informace naleznete v tématu [typy hodnot a typy odkazů](value-types-and-reference-types.md).
+Typ s možnou hodnotou null nelze vytvořit v typu odkazu, jako je pole, `String`nebo třída. Nadřízený typ musí být hodnotový typ. Další informace naleznete v tématu [typy hodnot a typy odkazů](value-types-and-reference-types.md).
 
 ## <a name="using-a-nullable-type-variable"></a>Použití proměnné typu s možnou hodnotou null
 
-Nejdůležitějšími členy typu s možnou hodnotou null jsou vlastnosti <xref:System.Nullable%601.HasValue%2A> a <xref:System.Nullable%601.Value%2A>. Pro proměnnou typu s možnou hodnotou null <xref:System.Nullable%601.HasValue%2A> oznamuje, zda proměnná obsahuje definovanou hodnotu. Pokud je <xref:System.Nullable%601.HasValue%2A> `True`, můžete si přečíst hodnotu z <xref:System.Nullable%601.Value%2A>. Všimněte si, že <xref:System.Nullable%601.HasValue%2A> i <xref:System.Nullable%601.Value%2A> jsou vlastnosti `ReadOnly`.
+Nejdůležitějšími členy typu s možnou hodnotou null jsou jeho <xref:System.Nullable%601.HasValue%2A> a vlastnosti <xref:System.Nullable%601.Value%2A>. Pro proměnnou typu s možnou hodnotou null <xref:System.Nullable%601.HasValue%2A> oznamuje, zda proměnná obsahuje definovanou hodnotu. Pokud je <xref:System.Nullable%601.HasValue%2A> `True`, můžete si přečíst hodnotu z <xref:System.Nullable%601.Value%2A>. Všimněte si, že <xref:System.Nullable%601.HasValue%2A> i <xref:System.Nullable%601.Value%2A> jsou `ReadOnly` vlastnosti.
 
 ### <a name="default-values"></a>Výchozí hodnoty
 
@@ -49,24 +49,24 @@ Hodnotu můžete v proměnné nebo vlastnosti typu s možnou hodnotou null uklá
 
 [!code-vb[VbVbalrNullableValue#3](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#3)]
 
-Pokud proměnná nebo vlastnost typu s možnou hodnotou null obsahuje definovanou hodnotu, můžete to způsobit, že se vrátí do svého počátečního stavu, který nemá přiřazenou hodnotu. Provedete to tak, že nastavíte proměnnou nebo vlastnost na `Nothing`, jak ukazuje následující příklad.
+Pokud proměnná nebo vlastnost typu s možnou hodnotou null obsahuje definovanou hodnotu, můžete to způsobit, že se vrátí do svého počátečního stavu, který nemá přiřazenou hodnotu. To provedete tak, že nastavíte proměnnou nebo vlastnost na `Nothing`, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrNullableValue#4](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#4)]
 
 > [!NOTE]
-> I když můžete přiřadit `Nothing` proměnné typu s možnou hodnotou null, nemůžete ji otestovat pro `Nothing` pomocí znaménka rovná se. Porovnání, které používá znaménko rovná se, `someVar = Nothing`, vždy vyhodnocuje jako `Nothing`. Vlastnost <xref:System.Nullable%601.HasValue%2A> proměnné lze otestovat pro `False` nebo test pomocí operátoru `Is` nebo `IsNot`.
+> I když můžete přiřadit `Nothing` k proměnné typu s možnou hodnotou null, nemůžete ji otestovat pro `Nothing` pomocí znaménka rovná se. Porovnání, které používá rovnítko, `someVar = Nothing`, se vždy vyhodnocuje jako `Nothing`. Můžete otestovat vlastnost <xref:System.Nullable%601.HasValue%2A> proměnné pro `False`nebo otestovat pomocí operátoru `Is` nebo `IsNot`.
 
 ### <a name="retrieving-values"></a>Načítání hodnot
 
-Chcete-li načíst hodnotu proměnné typu s možnou hodnotou null, měli byste nejprve otestovat jeho vlastnost <xref:System.Nullable%601.HasValue%2A> a potvrdit, že má hodnotu. Pokud se pokusíte načíst hodnotu, když <xref:System.Nullable%601.HasValue%2A> je `False`, Visual Basic vyvolá výjimku <xref:System.InvalidOperationException>. Následující příklad ukazuje doporučený způsob, jak číst proměnnou `numberOfChildren` předchozích příkladů.
+Chcete-li načíst hodnotu proměnné typu s možnou hodnotou null, měli byste nejprve otestovat jeho vlastnost <xref:System.Nullable%601.HasValue%2A> a potvrdit, že má hodnotu. Pokud se pokusíte přečíst hodnotu, když je <xref:System.Nullable%601.HasValue%2A> `False`, Visual Basic vyvolá výjimku <xref:System.InvalidOperationException>. Následující příklad ukazuje doporučený způsob, jak číst proměnnou `numberOfChildren` předchozích příkladech.
 
 [!code-vb[VbVbalrNullableValue#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#5)]
 
 ## <a name="comparing-nullable-types"></a>Porovnání typů s možnou hodnotou null
 
-Pokud jsou v logických výrazech použity proměnné s hodnotou null `Boolean`, výsledek může být `True`, `False` nebo `Nothing`. Následuje tabulka pravdy pro `And` a `Or`. Vzhledem k tomu, že `b1` a `b2` nyní mají tři možné hodnoty, jsou vyhodnoceny devět kombinací.
+Pokud jsou v logických výrazech použity `Boolean` proměnné s hodnotou null, může být výsledek `True`, `False`nebo `Nothing`. Následuje tabulka pravdy pro `And` a `Or`. Vzhledem k tomu, že `b1` a `b2` nyní mají tři možné hodnoty, existují devět kombinací pro vyhodnocení.
 
-|b1|b2|B1 a B2|B1 nebo B2|
+|B1|B2|B1 a B2|B1 nebo B2|
 |--------|--------|---------------|--------------|
 |`Nothing`|`Nothing`|`Nothing`|`Nothing`|
 |`Nothing`|`True`|`Nothing`|`True`|
@@ -78,22 +78,22 @@ Pokud jsou v logických výrazech použity proměnné s hodnotou null `Boolean`,
 |`False`|`True`|`False`|`True`|
 |`False`|`False`|`False`|`False`|
 
-Pokud je hodnota logické proměnné nebo výrazu `Nothing`, není to ani `true` ani `false`. Vezměte v úvahu následující příklad.
+Pokud je hodnota logické proměnné nebo výrazu `Nothing`, není `true` ani `false`. Vezměte v úvahu následující příklad.
 
 [!code-vb[VbVbalrNullableValue#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#6)]
 
-V tomto příkladu je `b1 And b2` vyhodnocena jako `Nothing`. V důsledku toho klauzule `Else` se spustí v každém příkazu `If` a výstup je následující:
+V tomto příkladu se `b1 And b2` vyhodnocuje jako `Nothing`. V důsledku toho je klauzule `Else` spuštěna v každém příkazu `If` a výstup je následující:
 
 `Expression is not true`
 
 `Expression is not false`
 
 > [!NOTE]
-> `AndAlso` a `OrElse`, které používají testování na základě krátkého okruhu, musí při prvním vyhodnocení na `Nothing` vyhodnotit jejich druhý operand.
+> `AndAlso` a `OrElse`, které používají testování po krátkém okruhu, musí při prvním vyhodnocení na `Nothing`vyhodnotit jejich druhý operand.
 
 ## <a name="propagation"></a>Šíření
 
-V případě, že jeden nebo oba operandy aritmetické operace, porovnání, posunu nebo typu může mít hodnotu null, výsledek operace je také možnou hodnotou null. Pokud mají oba operandy hodnoty, které nejsou `Nothing`, operace se provádí na podkladových hodnotách operandů, jako by nebyl typ s možnou hodnotou null. V následujícím příkladu jsou proměnné `compare1` a `sum1` implicitně typované. Pokud ponecháte ukazatel myši nad nimi, uvidíte, že kompilátor odvodí u obou z nich typy s možnou hodnotou null.
+V případě, že jeden nebo oba operandy aritmetické operace, porovnání, posunu nebo typu může mít hodnotu null, výsledek operace je také možnou hodnotou null. Pokud mají oba operandy hodnoty, které nejsou `Nothing`, operace se provádí na podkladových hodnotách operandů, jako by nebyl typ s možnou hodnotou null. V následujícím příkladu jsou proměnné `compare1` a `sum1` implicitně typové. Pokud ponecháte ukazatel myši nad nimi, uvidíte, že kompilátor odvodí u obou z nich typy s možnou hodnotou null.
 
 [!code-vb[VbVbalrNullableValue#7](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#7)]
 
@@ -117,4 +117,4 @@ Databáze je jedním z nejdůležitějších míst pro použití typů s možnou
 - [Odvození místního typu](../variables/local-type-inference.md)
 - [Operátor Is](../../../language-reference/operators/is-operator.md)
 - [Operátor IsNot](../../../language-reference/operators/isnot-operator.md)
-- [Použití typů s možnouC#hodnotou null ()](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)
+- [Typy hodnot s možnou hodnotou null (C#)](../../../../csharp/language-reference/builtin-types/nullable-value-types.md)

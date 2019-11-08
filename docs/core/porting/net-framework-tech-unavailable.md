@@ -3,16 +3,16 @@ title: Technologie .NET Framework nedostupné v .NET Core
 description: Přečtěte si o .NET Framework technologiích, které nejsou k dispozici v .NET Core
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: e5626d7b3e402848e2e84c49d4e98e109f62982d
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 47f93268c44682afeba87cde17fe9c39811b37bf
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846814"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739713"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie .NET Framework nedostupné v .NET Core
 
-K dispozici je několik technologií pro .NET Framework knihovny, které se nedají používat s .NET Core, jako jsou AppDomains, Vzdálená komunikace, zabezpečení přístupu kódu (CAS) a transparentnost zabezpečení. Pokud se vaše knihovny spoléhají na jednu nebo více těchto technologií, vezměte v úvahu alternativní přístupy uvedené níže. Další informace o kompatibilitě rozhraní API najdete v článku o [nejnovějších změnách .NET Core](../compatibility/breaking-changes.md) .
+K dispozici je několik technologií .NET Frameworkch knihoven, které se nedají používat s .NET Core, jako jsou AppDomains, Vzdálená komunikace, zabezpečení přístupu kódu (CAS), transparentnost zabezpečení a System. EnterpriseServices. Pokud se vaše knihovny spoléhají na jednu nebo více těchto technologií, vezměte v úvahu alternativní přístupy uvedené níže. Další informace o kompatibilitě rozhraní API najdete v článku o [nejnovějších změnách .NET Core](../compatibility/breaking-changes.md) .
 
 Vzhledem k tomu, že rozhraní API nebo technologie není aktuálně implementováno, neznamená, že je záměrně Nepodporovaná. Nejdřív byste měli hledat v úložištích GitHub pro .NET Core, aby bylo možné zjistit, jestli se k určitému problému setkáte podle návrhu, ale pokud tento indikátor nemůžete najít, dejte prosím problém v [úložišti dotnet/corefx](https://github.com/dotnet/corefx/issues) na GitHubu a požádejte ho o konkrétní rozhraní API a technik. [Požadavky na porty](https://github.com/dotnet/corefx/labels/port-to-core) jsou označené `port-to-core` popisku.
 

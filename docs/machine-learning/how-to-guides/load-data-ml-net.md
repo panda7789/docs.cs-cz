@@ -1,16 +1,16 @@
 ---
 title: Načtení dat ze souborů a jiných zdrojů
 description: V tomto postupu se dozvíte, jak načíst data pro zpracování a školení do ML.NET. Data se původně ukládají do souborů nebo jiných zdrojů dat, jako jsou databáze, JSON, XML nebo kolekce v paměti.
-ms.date: 09/11/2019
+ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 82a4d19a6296faa6d195e301016b1bf97d483a2c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 07b3e7f5302a03f5fa4c936679c8a3c00d19a7b0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040806"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740547"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a jiných zdrojů
 
@@ -107,10 +107,10 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 
 ## <a name="load-data-from-a-relational-database"></a>Načtení dat z relační databáze
 
-> [!NOTE]
-> DatabaseLoader je aktuálně ve verzi Preview. Dá se použít na základě odkazů na balíčky NuGet [Microsoft. ml. experimentální](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) a [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) .
-
 ML.NET podporuje načítání dat z nejrůznějších relačních databází, které podporuje [`System.Data`](xref:System.Data) , které zahrnují SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, pokrok, IBM DB2 a mnoho dalších.
+
+> [!NOTE]
+> Pokud chcete použít `DatabaseLoader`, odkazujte na balíček NuGet [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) .
 
 Pro databázi s tabulkou s názvem `House` a následujícím schématem:
 
