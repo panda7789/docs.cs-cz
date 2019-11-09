@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 43646db564ae31d26fe59e1ad7392e51d2d4e953
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "68676802"
 ---
 # <a name="azure-serverless-platform"></a>Platforma bez serveru Azure
@@ -22,5 +22,5 @@ Můžete také použít Application Insights platformu bez serveru pro zachytáv
 Tato kapitola rozděluje základy jednotlivých komponent.
 
 >[!div class="step-by-step"]
->[Předchozí](serverless-design-examples.md)Další
->[](azure-functions.md)
+>[Předchozí](serverless-design-examples.md)
+>[Další](azure-functions.md)

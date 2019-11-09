@@ -3,15 +3,15 @@ title: Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 ms.date: 04/29/2018
 ms.openlocfilehash: 3b6ae1ced9c4e01f5ab400e2575947a396064ebd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "68676907"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 
-Azure Container Instances hlavní pozice hodnoty znamená, že můžete do ní hned nasadit kontejnery a nemusíte ho udržovat, nemusíte upgradovat/opravovat základní operační systémy nebo virtuální počítače, které jsou transparentní a stačí nasadit kontejnery do prostředí, které je připraveno k použití.
+Azure Container Instances hlavní pozice hodnoty znamená, že můžete k němu nasazovat kontejnery a nemusíte ho udržovat, nemusíte upgradovat/opravovat základní operační systémy nebo virtuální počítače, které jsou transparentní a Vy jenom nasadíte kontejnery do prostředí připravené k použití.
 
 Důvody a scénáře, kdy byste chtěli použít ACI, jsou podobné hlavním scénářům při použití virtuálních počítačů Azure s kontejnery, a to v podstatě hlavní scénáře použití Azure Container Instances:
 
@@ -35,5 +35,5 @@ Hlavní výhody Azure Container Instances (ACI) jsou:
 V krátkém ACI můžete rychle vyvíjet aplikace bez nutnosti spravovat virtuální počítače nebo se seznámit s novými nástroji. Je to jenom vaše aplikace v kontejneru spuštěná v cloudu.
 
 > [!div class="step-by-step"]
-> [Předchozí](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)Další
-> [](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+> [Předchozí](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
+> [Další](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

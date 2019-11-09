@@ -5,10 +5,10 @@ author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
 ms.openlocfilehash: 2bd81c29e727254af6c8ecf39ee4bfef1f39d009
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "72522634"
 ---
 # <a name="orchestration-patterns"></a>Vzory orchestrace
@@ -103,7 +103,7 @@ Pomocí preferovaného klienta HTTP se dá k identifikátoru URI v statusQueryGe
 
 Jak proces pokračuje, změní se odpověď na stav buď na **neúspěšnou** , nebo na **dokončeno**. Po úspěšném dokončení bude vlastnost **Output** v datové části obsahovat všechna vrácená data.
 
-## <a name="monitoring"></a>Sledovaný
+## <a name="monitoring"></a>sledovaný
 
 V případě jednoduchých opakujících se úloh Azure Functions poskytuje `TimerTrigger`, která se dají naplánovat na základě výrazu CRON. Časovač funguje dobře pro jednoduché krátkodobé úlohy, ale může se jednat o scénáře, kde je potřeba pružnější plánování. Tento scénář je, když vám může pomáhat model monitorování a Durable Functions.
 

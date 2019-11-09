@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 7ece3d30209713d42ee44ef9c1be1cf0fe82464a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "68676751"
 ---
 # <a name="azure-logic-apps"></a>Azure Logic Apps
@@ -25,7 +25,7 @@ Stejně jako u Azure Functions jste v triggeru aktivovali pracovní postupy apli
 
 ![Aktivační události Logic Apps](./media/logic-app-triggers.png)
 
-Po aktivaci aplikace můžete použít vizuálního návrháře k sestavení kroků, smyček, podmínek a akcí. K dispozici jsou všechna data ingestovaná v předchozím kroku, abyste je mohli použít v následujících krocích. Následující pracovní postup načte adresy URL z databáze CosmosDB. Najde ty, které `t.co` hostuje, a pak je vyhledá na Twitteru. Pokud najde odpovídající tweety, aktualizuje dokumenty se souvisejícím tweety voláním funkce.
+Po aktivaci aplikace můžete použít vizuálního návrháře k sestavení kroků, smyček, podmínek a akcí. K dispozici jsou všechna data ingestovaná v předchozím kroku, abyste je mohli použít v následujících krocích. Následující pracovní postup načte adresy URL z databáze CosmosDB. Nalezne ty s hostitelem `t.co` pak je vyhledá na Twitteru. Pokud najde odpovídající tweety, aktualizuje dokumenty se souvisejícím tweety voláním funkce.
 
 ![Pracovní postup aplikace logiky](./media/logic-app-workflow.png)
 
@@ -34,5 +34,5 @@ Po aktivaci aplikace můžete použít vizuálního návrháře k sestavení kro
 Další informace najdete v tématu [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps).
 
 >[!div class="step-by-step"]
->[Předchozí](application-insights.md)Další
->[](event-grid.md)
+>[Předchozí](application-insights.md)
+>[Další](event-grid.md)

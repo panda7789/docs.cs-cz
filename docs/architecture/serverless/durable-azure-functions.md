@@ -5,10 +5,10 @@ author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
 ms.openlocfilehash: 2c0ad086640409ac187c3aa882add4d6b39b6ff9
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "72522860"
 ---
 # <a name="durable-azure-functions"></a>Odolné funkce Azure
@@ -77,7 +77,7 @@ Dokončená `Task<string>` z `StartNewAsync` by měla obsahovat jedinečné ID i
 
 Funkce aktivity jsou diskrétní operace, které se skládají společně v rámci orchestrace k vytvoření pracovního postupu. Tady je místo, kde se bude provádět většina skutečných prací. Představují obchodní logiku, dlouho běžící procesy a skládanky na větší řešení.
 
-@No__t_0 slouží k přidání poznámky k parametru funkce typu `DurableActivityContext`. Použití poznámky informuje modul runtime o tom, že funkce je určena pro použití jako funkce aktivity. Vstupní hodnoty funkcí aktivity jsou načteny pomocí metody `GetInput<T>` parametru `DurableActivityContext`.
+`ActivityTriggerAttribute` slouží k přidání poznámky k parametru funkce typu `DurableActivityContext`. Použití poznámky informuje modul runtime o tom, že funkce je určena pro použití jako funkce aktivity. Vstupní hodnoty funkcí aktivity jsou načteny pomocí metody `GetInput<T>` parametru `DurableActivityContext`.
 
 Podobně jako funkce orchestrace, návratové typy funkcí aktivity musí být void, Task nebo serializovatelný hodnota JSON.
 

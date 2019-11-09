@@ -3,10 +3,10 @@ title: Kdy neprovádět nasazení do kontejnerů Windows
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit do kontejnerů Windows
 ms.date: 04/28/2018
 ms.openlocfilehash: 65e793b846b495e9a1be6db9ddfa38bbf0d49445
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "68676913"
 ---
 # <a name="when-not-to-deploy-to-windows-containers"></a>Kdy neprovádět nasazení do kontejnerů Windows
@@ -42,5 +42,5 @@ Další nepodporované scénáře a požadavky od komunity najdete v tématu Fó
     <https://azure.microsoft.com/overview/containers/>
 
 > [!div class="step-by-step"]
-> [Předchozí](deploy-existing-net-apps-as-windows-containers.md)Další
-> [](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)
+> [Předchozí](deploy-existing-net-apps-as-windows-containers.md)
+> [Další](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)
