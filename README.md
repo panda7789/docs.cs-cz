@@ -22,7 +22,7 @@ Pro přispívání v [projektech pro přispěvatele komunit .NET](https://github
 
 Pokud máte zájem o pomoc s migrací stávajícího kódu, který cílí na .NET Framework z [Galerie kódu](https://code.msdn.microsoft.com) na aplikace .NET Core uložené v našem [úložišti ukázek](https://github.com/dotnet/samples) a stáhnout z [prohlížeče ukázek](https://docs.microsoft.com/samples/browse), přečtěte si téma [Galerie kódu. projekt migrace](https://github.com/dotnet/docs/projects/88) . 
 
-Předpokládáme, že se tato dokumentace používá i pro [Xamarin](https://docs.microsoft.com/xamarin), [mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) a [Unity](https://docs.unity3d.com/Manual/index.html) .
+Předpokládáme, že se tato dokumentace používá i pro [Xamarin](https://docs.microsoft.com/xamarin), [mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) a [Unity](https://docs.unity3d.com/Manual/index.html).
 
 Tento projekt přijal kód chování definovaný přispěvatelem Covenant k objasnění očekávaného chování v naší komunitě.
 Další informace najdete v tématu [pravidla chování .NET Foundation](https://dotnetfoundation.org/code-of-conduct).
