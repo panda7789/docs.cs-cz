@@ -11,11 +11,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183782"
 ---
-# <a name="state-management"></a><span data-ttu-id="c670a-103">Správa stavu</span><span class="sxs-lookup"><span data-stu-id="c670a-103">State management</span></span>
+# <a name="state-management"></a><span data-ttu-id="9a530-103">Správa stavu</span><span class="sxs-lookup"><span data-stu-id="9a530-103">State management</span></span>
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-<span data-ttu-id="c670a-104">*Tento obsah už brzy bude.*</span><span class="sxs-lookup"><span data-stu-id="c670a-104">*This content is coming soon.*</span></span>
+<span data-ttu-id="9a530-104">*Tento obsah už brzy bude.*</span><span class="sxs-lookup"><span data-stu-id="9a530-104">*This content is coming soon.*</span></span>
 
 <!--
 - View state
@@ -25,6 +25,6 @@ ms.locfileid: "71183782"
 -->
 
 >[!div class="step-by-step"]
-><span data-ttu-id="c670a-105">[Předchozí](pages-routing-layouts.md)
->[Další](forms-validation.md)</span><span class="sxs-lookup"><span data-stu-id="c670a-105">[Previous](pages-routing-layouts.md)
+><span data-ttu-id="9a530-105">[Předchozí](pages-routing-layouts.md)
+>[Další](forms-validation.md)</span><span class="sxs-lookup"><span data-stu-id="9a530-105">[Previous](pages-routing-layouts.md)
 [Next](forms-validation.md)</span></span>

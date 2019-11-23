@@ -11,13 +11,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183978"
 ---
-# <a name="app-startup"></a><span data-ttu-id="73f9a-103">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="73f9a-103">App startup</span></span>
+# <a name="app-startup"></a><span data-ttu-id="68183-103">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="68183-103">App startup</span></span>
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-<span data-ttu-id="73f9a-104">*Tento obsah už brzy bude.*</span><span class="sxs-lookup"><span data-stu-id="73f9a-104">*This content is coming soon.*</span></span>
+<span data-ttu-id="68183-104">*Tento obsah už brzy bude.*</span><span class="sxs-lookup"><span data-stu-id="68183-104">*This content is coming soon.*</span></span>
 
 >[!div class="step-by-step"]
-><span data-ttu-id="73f9a-105">[Předchozí](project-structure.md)
->[Další](components.md)</span><span class="sxs-lookup"><span data-stu-id="73f9a-105">[Previous](project-structure.md)
+><span data-ttu-id="68183-105">[Předchozí](project-structure.md)
+>[Další](components.md)</span><span class="sxs-lookup"><span data-stu-id="68183-105">[Previous](project-structure.md)
 [Next](components.md)</span></span>
