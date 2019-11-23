@@ -1,5 +1,5 @@
 ---
-title: Xor – operátor (Visual Basic)
+title: Xor – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Xor
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - Xor keyword [Visual Basic]
 - bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-ms.openlocfilehash: d82018a3018e2cf4362b9904ed127c20f56f6f0c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
-ms.translationtype: HT
+ms.openlocfilehash: c5c7ec87bc173f724f8c670395bc3b0458444df6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701275"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335402"
 ---
 # <a name="xor-operator-visual-basic"></a>Xor – operátor (Visual Basic)
-Provede logické vyloučení dvou `Boolean` výrazů nebo bitové vyloučení dvou numerických výrazů.  
+Performs a logical exclusion on two `Boolean` expressions, or a bitwise exclusion on two numeric expressions.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ result = expression1 Xor expression2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Jakákoli `Boolean` nebo číselná proměnná. Pro logické porovnání je `result` logické vyloučení (exkluzivní logická disjunkce) dvou hodnot `Boolean`. U bitových operací je `result` číselná hodnota, která představuje bitové vyloučení (exkluzivní bitovou disjunkci) dvou číselných bitových vzorů.  
+ Požadováno. Any `Boolean` or numeric variable. For Boolean comparison, `result` is the logical exclusion (exclusive logical disjunction) of two `Boolean` values. For bitwise operations, `result` is a numeric value that represents the bitwise exclusion (exclusive bitwise disjunction) of two numeric bit patterns.  
   
  `expression1`  
- Požadováno. Libovolný `Boolean` nebo číselný výraz.  
+ Požadováno. Any `Boolean` or numeric expression.  
   
  `expression2`  
- Požadováno. Libovolný `Boolean` nebo číselný výraz.  
+ Požadováno. Any `Boolean` or numeric expression.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro účely logického porovnání je `result` `True`, pokud je přesně jedna z `expression1` a `expression2` vyhodnocena jako `True`. To znamená, že pokud a pouze pokud `expression1` a `expression2` vyhodnoceny na opak `Boolean` hodnoty. Následující tabulka ukazuje, jak je určena `result`.  
+ For Boolean comparison, `result` is `True` if and only if exactly one of `expression1` and `expression2` evaluates to `True`. That is, if and only if `expression1` and `expression2` evaluate to opposite `Boolean` values. The following table illustrates how `result` is determined.  
   
-|Pokud je `expression1`|A `expression2` je|Hodnota `result` je|  
+|If `expression1` is|And `expression2` is|The value of `result` is|  
 |-------------------------|--------------------------|------------------------------|  
 |`True`|`True`|`False`|  
 |`True`|`False`|`True`|  
@@ -51,11 +51,11 @@ result = expression1 Xor expression2
 |`False`|`False`|`False`|  
   
 > [!NOTE]
-> V porovnání s logickou hodnotou operátor `Xor` vždy vyhodnocuje oba výrazy, které by mohly zahrnovat volání procedur. Neexistují žádné krátkodobé protějšky, které by bylo možné `Xor`, protože výsledek vždy závisí na obou operandech. Pro logické operátory *krátkodobého okruhu* , viz [operátor AndAlso –](../../../visual-basic/language-reference/operators/andalso-operator.md) a [operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md).  
+> In a Boolean comparison, the `Xor` operator always evaluates both expressions, which could include making procedure calls. There is no short-circuiting counterpart to `Xor`, because the result always depends on both operands. For *short-circuiting* logical operators, see [AndAlso Operator](../../../visual-basic/language-reference/operators/andalso-operator.md) and [OrElse Operator](../../../visual-basic/language-reference/operators/orelse-operator.md).  
   
- U bitových operací operátor `Xor` provádí bitové porovnání identicky umístěných bitů ve dvou numerických výrazech a nastavuje odpovídající bit v `result` podle následující tabulky.  
+ For bitwise operations, the `Xor` operator performs a bitwise comparison of identically positioned bits in two numeric expressions and sets the corresponding bit in `result` according to the following table.  
   
-|Pokud je bit v `expression1`|A bit ve `expression2` je|Bit ve `result` je|  
+|If bit in `expression1` is|And bit in `expression2` is|The bit in `result` is|  
 |--------------------------------|---------------------------------|----------------------------|  
 |1|1|0|  
 |1|0|1|  
@@ -63,35 +63,35 @@ result = expression1 Xor expression2
 |0|0|0|  
   
 > [!NOTE]
-> Vzhledem k tomu, že logické a bitové operátory mají nižší prioritu než jiné aritmetické a relační operátory, měly by být všechny bitové operace uzavřeny v závorkách, aby bylo zajištěno přesné provedení.  
+> Since the logical and bitwise operators have a lower precedence than other arithmetic and relational operators, any bitwise operations should be enclosed in parentheses to ensure accurate execution.  
   
- Například 5 `Xor` 3 je 6. Chcete-li zjistit, proč je to tak, převeďte 5 a 3 na jejich binární reprezentace, 101 a 011. Pak pomocí předchozí tabulky určete, že 101 XOR 011 je 110, což je binární reprezentace desítkového čísla 6.  
+ For example, 5 `Xor` 3 is 6. To see why this is so, convert 5 and 3 to their binary representations, 101 and 011. Then use the previous table to determine that 101 Xor 011 is 110, which is the binary representation of the decimal number 6.  
   
 ## <a name="data-types"></a>Datové typy  
- Pokud se operandy skládají z jednoho `Boolean` výrazu a jednoho číselného výrazu, Visual Basic převede výraz `Boolean` na číselnou hodnotu (– 1 pro `True` a 0 pro `False`) a provede bitovou operaci.  
+ If the operands consist of one `Boolean` expression and one numeric expression, Visual Basic converts the `Boolean` expression to a numeric value (–1 for `True` and 0 for `False`) and performs a bitwise operation.  
   
- Pro porovnání `Boolean` je datový typ výsledku `Boolean`. Pro bitové porovnání je datový typ výsledku číselný typ, který je vhodný pro datové typy `expression1` a `expression2`. Podívejte se na tabulku "relačních a bitových porovnání" v [datových typech výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ For a `Boolean` comparison, the data type of the result is `Boolean`. For a bitwise comparison, the result data type is a numeric type appropriate for the data types of `expression1` and `expression2`. See the "Relational and Bitwise Comparisons" table in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
 ## <a name="overloading"></a>Přetížení  
- Operátor `Xor` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor v takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The `Xor` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, make sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `Xor` k provedení logického vyloučení (exkluzivní logická disjunkce) na dvou výrazech. Výsledkem je `Boolean` hodnota, která představuje, zda je právě jeden z výrazů `True`.  
+ The following example uses the `Xor` operator to perform logical exclusion (exclusive logical disjunction) on two expressions. The result is a `Boolean` value that represents whether exactly one of the expressions is `True`.  
   
  [!code-vb[VbVbalrOperators#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#40)]  
   
- Předchozí příklad vytvoří výsledky `False`, `True`a `False`v uvedeném pořadí.  
+ The previous example produces results of `False`, `True`, and `False`, respectively.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `Xor` k provedení logického vyloučení (exkluzivní logická disjunkce) na jednotlivých bitech dvou číselných výrazů. Bit ve vzorci výsledků je nastaven, pokud je přesně jeden z odpovídajících bitů v operandech nastaven na hodnotu 1.  
+ The following example uses the `Xor` operator to perform logical exclusion (exclusive logical disjunction) on the individual bits of two numeric expressions. The bit in the result pattern is set if exactly one of the corresponding bits in the operands is set to 1.  
   
  [!code-vb[VbVbalrOperators#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#41)]  
   
- Předchozí příklad vytvoří výsledky 2, 12 a 14 v uvedeném pořadí.  
+ The previous example produces results of 2, 12, and 14, respectively.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Logical/Bitwise Operators (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Logické a bitové operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

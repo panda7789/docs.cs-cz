@@ -1,29 +1,29 @@
 ---
-title: Atomované XName a objekty XNamespace (LINQ to XML) (Visual Basic)
+title: Atomizované objekty XName a XNamespace (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 21ee7585-7df9-40b4-8c76-a12bb5f29bb3
-ms.openlocfilehash: ae6d21c21aac4455e7932015c131fb4295673056
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
-ms.translationtype: HT
+ms.openlocfilehash: 0ffed5d00364f6614b439480607ed521f52754ec
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351839"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345729"
 ---
-# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Atomované XName a objekty XNamespace (LINQ to XML) (Visual Basic)
+# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Atomized XName and XNamespace Objects (LINQ to XML) (Visual Basic)
 
-objekty <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> jsou *atomické*; To znamená, že pokud obsahují stejný kvalifikovaný název, odkazují na stejný objekt. To má vliv na výkon pro dotazy: Když porovnáte dva atomické názvy pro rovnost, má základní zprostředkující jazyk pouze určit, zda dva odkazy odkazují na stejný objekt. Podkladový kód nemusí provádět porovnávání řetězců, což by mohlo být časově náročné.
+<xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> objects are *atomized*; that is, if they contain the same qualified name, they refer to the same object. This yields performance benefits for queries: When you compare two atomized names for equality, the underlying intermediate language only has to determine whether the two references point to the same object. The underlying code does not have to do string comparisons, which would be time consuming.
 
-## <a name="atomization-semantics"></a>Sémantika atoming
+## <a name="atomization-semantics"></a>Atomization Semantics
 
-Atoming znamená, že pokud dva <xref:System.Xml.Linq.XName> objekty mají stejný místní název a jsou ve stejném oboru názvů, sdílejí stejnou instanci. Stejným způsobem, pokud mají dva <xref:System.Xml.Linq.XNamespace> objekty stejný identifikátor URI oboru názvů, sdílejí stejnou instanci.
+Atomization means that if two <xref:System.Xml.Linq.XName> objects have the same local name, and they are in the same namespace, they share the same instance. In the same way, if two <xref:System.Xml.Linq.XNamespace> objects have the same namespace URI, they share the same instance.
 
-Pro třídu, která povoluje atomované objekty, konstruktor třídy musí být privátní, nikoli Public. Důvodem je, že pokud byl konstruktor veřejný, mohli byste vytvořit neatomické objekty. Třídy <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> implementují implicitní operátor převodu pro převod řetězce na <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>. Tímto způsobem získáte instanci těchto objektů. Nelze získat instanci pomocí konstruktoru, protože konstruktor je nepřístupný.
+For a class to enable atomized objects, the constructor for the class must be private, not public. This is because if the constructor were public, you could create a non-atomized object. The <xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> classes implement an implicit conversion operator to convert a string into an <xref:System.Xml.Linq.XName> or <xref:System.Xml.Linq.XNamespace>. This is how you get an instance of these objects. You cannot get an instance by using a constructor, because the constructor is inaccessible.
 
-<xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> také implementují operátory rovnosti a nerovnosti, aby bylo možné určit, zda jsou dva porovnávané objekty odkazy na stejnou instanci.
+<xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> also implement the equality and inequality operators, to determine whether the two objects being compared are references to the same instance.
 
 ## <a name="example"></a>Příklad
 
-Následující kód vytvoří některé objekty <xref:System.Xml.Linq.XElement> a demonstruje, že stejné názvy sdílejí stejnou instanci.
+The following code creates some <xref:System.Xml.Linq.XElement> objects and demonstrates that identical names share the same instance.
 
 ```vb
 Dim r1 As New XElement("Root", "data1")
@@ -44,16 +44,16 @@ Else
 End If
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 r1 and r2 have names that refer to the same instance.
 The name of r1 and the name in 'n' refer to the same instance.
 ```
 
-Jak bylo zmíněno dříve, výhodou pro objekty atoming je, že když použijete jednu z metod osy, které přijímají <xref:System.Xml.Linq.XName> jako parametr, metoda Axis má pouze určit, že dva názvy odkazují na stejnou instanci, aby vybrala požadované prvky.
+As mentioned earlier, the benefit of atomized objects is that when you use one of the axis methods that take an <xref:System.Xml.Linq.XName> as a parameter, the axis method only has to determine that two names reference the same instance to select the desired elements.
 
-Následující příklad předává <xref:System.Xml.Linq.XName> do volání metody <xref:System.Xml.Linq.XContainer.Descendants%2A>, která má vyšší výkon, protože se jedná o model atoming.
+The following example passes an <xref:System.Xml.Linq.XName> to the <xref:System.Xml.Linq.XContainer.Descendants%2A> method call, which then has better performance because of the atomization pattern.
 
 ```vb
 Dim root As New XElement("Root", New XElement("C1", 1), New XElement("Z1", New XElement("C1", 2), New XElement("C1", 1)))
@@ -65,7 +65,7 @@ For Each z As var In query
 Next
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```xml
 <C1>1</C1>
@@ -74,4 +74,4 @@ Tento příklad vytvoří následující výstup:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Výkon (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [Performance (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)

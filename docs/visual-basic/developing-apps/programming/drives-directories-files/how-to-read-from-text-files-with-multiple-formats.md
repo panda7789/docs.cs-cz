@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: čtení z textových souborů s více formáty v Visual Basic'
+title: 'How to: Read from text files with multiple formats'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, reading from a file
@@ -11,20 +11,20 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
-ms.openlocfilehash: dc726f7648c1c0a564594331023f03d20569d766
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
-ms.translationtype: HT
+ms.openlocfilehash: b36c781d5f8333749d346bb8f19540f0d1bd1692
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736826"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74334575"
 ---
-# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a>Postupy: čtení ze souborů Fext s více formáty v Visual Basic
+# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a>How to: Read from fext files with multiple formats in Visual Basic
 
-Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou protokoly. Můžete zpracovat soubor s více formáty pomocí metody `PeekChars` k určení formátu každého řádku při analýze souboru.
+The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object provides a way to easily and efficiently parse structured text files, such as logs. You can process a file with multiple formats by using the `PeekChars` method to determine the format of each line as you parse through the file.
   
-### <a name="to-parse-a-text-file-with-multiple-formats"></a>Postup analýzy textového souboru s více formáty
+### <a name="to-parse-a-text-file-with-multiple-formats"></a>To parse a text file with multiple formats
 
-1. Do projektu přidejte textový soubor s názvem *Testfile. txt* . Do textového souboru přidejte následující obsah:
+1. Add a text file named *testfile.txt* to your project. Add the following content to the text file:
 
     ```text
     Err  1001 Cannot access resource.
@@ -35,37 +35,37 @@ Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> poskytuje způsob, ja
     Acc  10/04/2009User2      Standard user.
     ```
 
-2. Definujte očekávaný formát a formát použitý při hlášení chyby. Poslední položka v každém poli je-1, proto se předpokládá, že poslední pole má proměnlivou šířku. K tomu dochází, když je poslední položka v poli menší nebo rovna 0.
+2. Define the expected format and the format used when an error is reported. The last entry in each array is -1, therefore the last field is assumed to be of variable width. This occurs when the last entry in the array is less than or equal to 0.
 
      [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]
 
-3. Vytvořte nový objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> a definujte šířku a formát.
+3. Create a new <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object, defining the width and format.
 
      [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]
 
-4. Procházejte řádky smyčkou a před čtením proveďte testování formátu.
+4. Loop through the rows, testing for format before reading.
 
      [!code-vb[VbFileIORead#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#6)]
 
-5. Zapište do konzoly chyby.
+5. Write errors to the console.
 
      [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]
 
 ## <a name="example"></a>Příklad
 
-Následuje kompletní příklad, který čte ze souboru `testfile.txt`:
+The following is the complete example that reads from the file `testfile.txt`:
 
  [!code-vb[VbFileIORead#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#8)]
 
-## <a name="robust-programming"></a>Robustní programování
+## <a name="robust-programming"></a>Robust programming
 
 Následující podmínky mohou způsobit výjimku:  
   
-- Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva výjimky Určuje řádek, který způsobil výjimku, zatímco vlastnost <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> je přiřazena k textu obsaženému na řádku.
-- Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).
-- Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).
-- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).
-- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).
+- A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.
+- The specified file does not exist (<xref:System.IO.FileNotFoundException>).
+- A partial-trust situation in which the user does not have sufficient permissions to access the file. (<xref:System.Security.SecurityException>).
+- The path is too long (<xref:System.IO.PathTooLongException>).
+- The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: zachycení chyb při analýze (Visual Basic)'
+title: 'How to: Catch Parsing Errors'
 ms.date: 07/20/2015
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-ms.openlocfilehash: a0c0749e8bc6d3fb1a71595778bfc5effaaf8533
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
-ms.translationtype: HT
+ms.openlocfilehash: 14c4f76c5f10616f9346084cda276e2862b2b41d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71352939"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353347"
 ---
-# <a name="how-to-catch-parsing-errors-visual-basic"></a>Postupy: zachycení chyb při analýze (Visual Basic)
-V tomto tématu se dozvíte, jak zjistit chybně vytvořený nebo neplatný kód XML.  
+# <a name="how-to-catch-parsing-errors-visual-basic"></a>How to: Catch Parsing Errors (Visual Basic)
+This topic shows how to detect badly formed or invalid XML.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se implementuje pomocí <xref:System.Xml.XmlReader>. Pokud je do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]předán chybně vytvořený nebo neplatný kód XML, podkladová třída <xref:System.Xml.XmlReader> vyvolá výjimku. Různé metody, které analyzují kód XML, jako je například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, nezachycují výjimku. výjimku lze následně zachytit ve vaší aplikaci.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] is implemented using <xref:System.Xml.XmlReader>. If badly formed or invalid XML is passed to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], the underlying <xref:System.Xml.XmlReader> class will throw an exception. The various methods that parse XML, such as <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, do not catch the exception; the exception can then be caught by your application.  
   
- Všimněte si, že pokud používáte literály XML, nemůžete získat chyby analýzy. Kompilátor Visual Basic zachytí chyby nesprávně vytvořeného nebo neplatného kódu XML.  
+ Note that you cannot get parse errors if you use XML literals. The Visual Basic compiler will catch errors of badly formed or invalid XML.  
   
 ## <a name="example"></a>Příklad  
- Následující kód se pokusí analyzovat neplatný kód XML:  
+ The following code tries to parse invalid XML:  
   
 ```vb  
 Try  
@@ -33,14 +33,14 @@ Catch e As System.Xml.XmlException
 End Try  
 ```  
   
- Při spuštění tohoto kódu vyvolá následující výjimku:  
+ When you run this code, it throws the following exception:  
   
 ```console  
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
- Informace o výjimkách, které lze očekávat <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>a <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> metody, naleznete v dokumentaci <xref:System.Xml.XmlReader>.  
+ For information about the exceptions that you can expect the <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, and <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> methods to throw, see the <xref:System.Xml.XmlReader> documentation.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
