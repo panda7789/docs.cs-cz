@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: ukládání asymetrických klíčů v kontejneru klíčů'
+title: 'Postupy: Uložení asymetrického klíče v kontejneru klíčů'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -24,12 +24,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/12/2019
 ms.locfileid: "72291639"
 ---
-# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: ukládání asymetrických klíčů v kontejneru klíčů
-Asymetrické privátní klíče by nikdy neměly být uložené v místním počítači do doslovného znění ani do prostého textu. Pokud potřebujete uložit privátní klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy kontejnerů klíčů RSA na úrovni počítače a na úrovni uživatele](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).  
+# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Uložení asymetrického klíče v kontejneru klíčů
+Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit soukromý klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy kontejnerů klíčů RSA na úrovni počítače a na úrovni uživatele](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).  
   
 ### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a>Vytvoření asymetrického klíče a jeho uložení do kontejneru klíčů  
   
-1. Vytvořte novou instanci třídy <xref:System.Security.Cryptography.CspParameters> a předejte název, který chcete volat kontejner klíčů, do pole <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType>.  
+1. Vytvořte novou instanci třídy <xref:System.Security.Cryptography.CspParameters> a předejte název, který chcete volat kontejner klíče, do pole <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType>.  
   
 2. Vytvořte novou instanci třídy, která je odvozena z třídy <xref:System.Security.Cryptography.AsymmetricAlgorithm> (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předejte dříve vytvořený objekt **CspParameters** konstruktoru.  
   
@@ -37,16 +37,16 @@ Asymetrické privátní klíče by nikdy neměly být uložené v místním poč
   
 1. Vytvořte novou instanci třídy **CspParameters** a předejte název, který chcete zavolat kontejneru klíčů do pole **CspParameters. ContainerName** .  
   
-2. Vytvoří novou instanci třídy, která je odvozena z třídy **AsymmetricAlgorithm** (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předá dříve vytvořený objekt **CspParameters** do konstruktoru. .  
+2. Vytvořte novou instanci třídy, která je odvozena z třídy **AsymmetricAlgorithm** (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předejte dříve vytvořený objekt **CspParameters** do konstruktoru.  
   
 3. Nastavte vlastnost **PersistKeyInCsp** třídy, která je odvozena z **AsymmetricAlgorithm** na **false** (**false** v Visual Basic).  
   
 4. Zavolejte metodu **clear** třídy, která je odvozena z **AsymmetricAlgorithm**. Tato metoda uvolní všechny prostředky třídy a vymaže kontejner klíčů.  
   
-## <a name="example"></a>Příklad:  
+## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit asymetrický klíč, uložit ho do kontejneru klíčů, načíst klíč později a odstranit klíč z kontejneru.  
   
- Všimněte si, že kód v metodě `GenKey_SaveInContainer` a v metodě `GetKeyFromContainer` je podobný.  Když zadáte název kontejneru klíčů pro objekt @no__t 0 a předáte ho do objektu <xref:System.Security.Cryptography.AsymmetricAlgorithm> s vlastností <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> nebo vlastností <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> nastavenou na hodnotu true, dojde k následujícímu:  Pokud kontejner klíčů se zadaným názvem neexistuje, vytvoří se a klíč se uloží.  Pokud existuje kontejner klíčů se zadaným názvem, klíč v kontejneru se automaticky načte do aktuálního objektu <xref:System.Security.Cryptography.AsymmetricAlgorithm>.  Proto kód v metodě `GenKey_SaveInContainer` uchovává klíč, protože je spuštěn jako první, zatímco kód v metodě `GetKeyFromContainer` načte klíč, protože se spustí sekunda.  
+ Všimněte si, že kód v metodě `GenKey_SaveInContainer` a metodě `GetKeyFromContainer` je podobný.  Když zadáte název kontejneru klíčů pro objekt <xref:System.Security.Cryptography.CspParameters> a předáte ho do objektu <xref:System.Security.Cryptography.AsymmetricAlgorithm> s vlastností <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> nebo <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> nastavenou na hodnotu true, dojde k následujícímu.  Pokud kontejner klíčů se zadaným názvem neexistuje, vytvoří se a klíč se uloží.  Pokud existuje kontejner klíčů se zadaným názvem, klíč v kontejneru se automaticky načte do aktuálního objektu <xref:System.Security.Cryptography.AsymmetricAlgorithm>.  Proto kód v metodě `GenKey_SaveInContainer` přetrvává klíč, protože je spuštěn jako první, zatímco kód v metodě `GetKeyFromContainer` načte klíč, protože je spuštěn sekunda.  
   
 ```vb  
 Imports System  
@@ -223,7 +223,7 @@ Key added to container:
 Key deleted.  
 ```  
   
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
 - [Šifrování dat](../../../docs/standard/security/encrypting-data.md)

@@ -31,7 +31,7 @@ V této části jsou uvedeny pojmy a definice, se kterými byste se měli sezná
 
 **Registr**: služba, která poskytuje přístup k úložištím. Výchozím registrem pro většinu veřejných imagí je [Docker Hub](https://hub.docker.com/) (vlastněné Docker jako organizace). Registr obvykle obsahuje úložiště z více týmů. Společnosti mají často privátní registry pro ukládání a správu imagí, které vytvořili. Azure Container Registry je další příklad.
 
-**Vícestránkový obrázek**: pro více architektur je funkce, která zjednodušuje výběr příslušné image. podle platformy, kde je Docker spuštěný, například když souboru Dockerfile požaduje základní image **z MCR.Microsoft.com/dotnet/Core/SDK:2.2** z registru, který ve skutečnosti získá **2,2-SDK-nanoserver-1709**, **2,2-SDK-nanoserver-1803**, **2,2-SDK-nanoserver-1809** nebo **2,2-SDK-Stretch**, v závislosti na operačním systému a verzi, kde je Docker spuštěný. .
+**Vícestránkový obrázek**: pro více architektur je funkce, která zjednodušuje výběr příslušné image. podle platformy, kde je Docker spuštěný, například když souboru Dockerfile požaduje základní image **z MCR.Microsoft.com/dotnet/Core/SDK:2.2** z registru, který ve skutečnosti získá **2,2-SDK-nanoserver-1709**, **2,2-SDK-nanoserver-1803**, **2,2-SDK-nanoserver-1809** nebo **2,2-SDK-Stretch**, v závislosti na operačním systému a verzi, kde je Docker spuštěný.
 
 **Docker Hub**: veřejný registr pro nahrání obrázků a práci s nimi. Docker Hub poskytuje hostování imagí Docker, veřejné nebo privátní Registry, triggery sestavení a Webhooky a integraci s GitHubem a Bitbucket.
 

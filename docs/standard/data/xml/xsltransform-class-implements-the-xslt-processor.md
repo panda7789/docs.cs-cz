@@ -18,9 +18,9 @@ ms.locfileid: "71956854"
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>Třída XslTransform implementuje procesor XSLT
 
 > [!NOTE]
-> Třída <xref:System.Xml.Xsl.XslTransform> je v .NET Framework 2,0 zastaralá. Transformace XSLT (Extensible Stylesheet Language) můžete použít k transformaci XSLT pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform>. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .
+> Třída <xref:System.Xml.Xsl.XslTransform> je v .NET Framework 2,0 zastaralá. Pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> můžete provádět transformace XSLT (Extensible Stylesheet Language). Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .
 
-Třída <xref:System.Xml.Xsl.XslTransform> je procesor XSLT implementující doporučení jazyka XSL (XSLT) verze 1,0. Metoda <xref:System.Xml.Xsl.XslTransform.Load%2A> vyhledá a přečte šablony stylů a metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> transformuje daný zdrojový dokument. Jakékoli úložiště, které implementuje rozhraní <xref:System.Xml.XPath.IXPathNavigable>, lze použít jako zdrojový dokument pro <xref:System.Xml.Xsl.XslTransform>. .NET Framework aktuálně implementuje rozhraní <xref:System.Xml.XPath.IXPathNavigable> na <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument> a <xref:System.Xml.XPath.XPathDocument>, takže všechny tyto hodnoty lze použít jako vstupní zdrojový dokument pro transformaci.
+Třída <xref:System.Xml.Xsl.XslTransform> je procesor XSLT implementující doporučení XSL transformace (XSLT) verze 1,0. Metoda <xref:System.Xml.Xsl.XslTransform.Load%2A> vyhledá a přečte šablony stylů a metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> transformuje daný zdrojový dokument. Jakékoli úložiště, které implementuje rozhraní <xref:System.Xml.XPath.IXPathNavigable>, lze použít jako zdrojový dokument pro <xref:System.Xml.Xsl.XslTransform>. .NET Framework aktuálně implementuje rozhraní <xref:System.Xml.XPath.IXPathNavigable> na <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>, takže všechny tyto hodnoty lze použít jako vstupní zdrojový dokument pro transformaci.
 
 Objekt <xref:System.Xml.Xsl.XslTransform> v .NET Framework podporuje pouze specifikaci XSLT 1,0, která je definována s následujícím oborem názvů:
 
@@ -32,11 +32,11 @@ Objekt <xref:System.Xml.Xsl.XslTransform> v .NET Framework podporuje pouze speci
 
 - Objekt
 
-- Objekt
+- XmlReader
 
 - Řetězec představující adresu URL
 
-Pro každou z výše uvedených tříd Input existuje odlišná metoda @no__t 0. Některé metody přebírají kombinaci jedné z těchto tříd a třídu <xref:System.Xml.XmlResolver> jako argumenty. @No__t-0 vyhledá prostředky, na které odkazuje `<xsl:import>` nebo `<xsl:include>`, které se nachází v šabloně stylů. Následující metody přebírají jako vstup řetězec, <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XPath.XPathNavigator>.
+Pro každou z výše uvedených tříd Input existuje odlišná <xref:System.Xml.Xsl.XslTransform.Load%2A> metoda. Některé metody přebírají kombinaci jedné z těchto tříd a třídu <xref:System.Xml.XmlResolver> jako argumenty. <xref:System.Xml.XmlResolver> vyhledá prostředky, na které odkazuje `<xsl:import>` nebo `<xsl:include>` nalezené v šabloně stylů. Následující metody přebírají jako vstup řetězec, <xref:System.Xml.XmlReader>nebo <xref:System.Xml.XPath.XPathNavigator>.
 
 ```vb
 Overloads Public Sub Load(String)
@@ -70,11 +70,11 @@ Overloads Public Sub Load(XPathNavigator, XmlResolver, Evidence)
 public void Load(XPathNavigator, XmlResolver, Evidence);
 ```
 
-Většina výše uvedených metod <xref:System.Xml.Xsl.XslTransform.Load%2A> vezme jako parametr <xref:System.Xml.XmlResolver>. @No__t-0 slouží k načtení šablony stylů a všech šablon stylů, na které odkazuje element xsl: Import a xsl: include.
+Většina výše uvedených metod <xref:System.Xml.Xsl.XslTransform.Load%2A> převezme <xref:System.Xml.XmlResolver> jako parametr. <xref:System.Xml.XmlResolver> slouží k načtení šablony stylů a všech šablon stylů, na které se odkazuje v elementech xsl: Import a xsl: include.
 
-Většina metod <xref:System.Xml.Xsl.XslTransform.Load%2A> také převezme legitimaci jako parametr. Parametr legitimace je <xref:System.Security.Policy.Evidence>, která je přidružena k šabloně stylů. Úroveň zabezpečení šablon stylů má vliv na úroveň zabezpečení všech dalších prostředků, na které odkazuje, jako je například skript, který obsahuje, všechny funkce `document()`, které používá, a všechny objekty rozšíření používané <xref:System.Xml.Xsl.XsltArgumentList>.
+Většina metod <xref:System.Xml.Xsl.XslTransform.Load%2A> také převezme legitimaci jako parametr. Parametr legitimace je <xref:System.Security.Policy.Evidence>, která je přidružena k šabloně stylů. Úroveň zabezpečení šablon stylů má vliv na úroveň zabezpečení všech dalších prostředků, na které odkazuje, jako je například skript, který obsahuje, všechny `document()` funkce, které používá, a všechny objekty rozšíření používané <xref:System.Xml.Xsl.XsltArgumentList>.
 
-Pokud je šablona stylů načtena pomocí metody <xref:System.Xml.Xsl.XslTransform.Load%2A>, která obsahuje parametr URL a není zadán žádný důkaz, legitimace v šabloně stylů se vypočítá kombinací dané adresy URL k jejímu webu a zóně.
+Pokud je šablona stylů načtena pomocí <xref:System.Xml.Xsl.XslTransform.Load%2A> metoda, která obsahuje parametr adresy URL a nejsou k dispozici žádné legitimace, je vypočítán důkaz pro šablonu stylů kombinací dané adresy URL k jejímu webu a zóně.
 
 Pokud nejsou zadány žádné identifikátory URI ani legitimace, pak je sada legitimace pro šablonu stylů plně důvěryhodná. Nečtěte šablony stylů z nedůvěryhodných zdrojů nebo přidejte nedůvěryhodné objekty rozšíření do <xref:System.Xml.Xsl.XsltArgumentList>.
 
@@ -82,7 +82,7 @@ Další informace o úrovních a důkazech zabezpečení a o tom, jak ovlivňuj�
 
 Informace o úrovních zabezpečení a legitimaci a o tom, jak ovlivňují funkci `document()`, naleznete v tématu [řešení externích šablon stylů XSLT a dokumentů](../../../../docs/standard/data/xml/resolving-external-xslt-style-sheets-and-documents.md).
 
-Šablonu stylů lze zadat s počtem vstupních parametrů. Šablona stylů může také volat funkce objektů rozšíření. Parametry a objekty rozšíření jsou dodány do předlohy stylů pomocí třídy <xref:System.Xml.Xsl.XsltArgumentList>. Další informace o <xref:System.Xml.Xsl.XsltArgumentList> najdete v části <xref:System.Xml.Xsl.XsltArgumentList>.
+Šablonu stylů lze zadat s počtem vstupních parametrů. Šablona stylů může také volat funkce objektů rozšíření. Parametry a objekty rozšíření jsou dodány do předlohy stylů pomocí třídy <xref:System.Xml.Xsl.XsltArgumentList>. Další informace o <xref:System.Xml.Xsl.XsltArgumentList>najdete v tématu <xref:System.Xml.Xsl.XsltArgumentList>.
 
 ## <a name="recommended-secure-use-of-xsltransform-class"></a>Doporučené zabezpečené použití třídy XslTransform
 
@@ -110,9 +110,9 @@ Oprávnění zabezpečení pro šablonu stylů závisí na poskytnutých důkaze
 
 - Šablona stylů XSLT pochází z vnějšího zdroje. Původ zdroje není známý.
 
-  - Nastavte legitimaci na `null`. Bloky skriptu nejsou zpracovány, funkce XSLT `document()` není podporována a objekty privilegovaného rozšíření nejsou povoleny.
+  - Nastavte legitimaci na `null`. Bloky skriptu nejsou zpracovány, funkce `document()` XSLT není podporována a objekty privilegovaného rozšíření nejsou povoleny.
 
-    Kromě toho můžete také nastavit parametr `resolver` na `null` tím zajistíte, že prvky `xsl:import` a `xsl:include` nebudou zpracovány.
+    Kromě toho můžete také nastavit parametr `resolver` pro `null` tím zajistíte, že `xsl:import` a `xsl:include` prvky nebudou zpracovány.
 
 - Šablona stylů XSLT pochází z vnějšího zdroje. Původ zdroje není známý, ale vyžadujete podporu skriptů.
 
@@ -120,7 +120,7 @@ Oprávnění zabezpečení pro šablonu stylů závisí na poskytnutých důkaze
 
 ## <a name="transformation-of-xml-data"></a>Transformace dat XML
 
-Po načtení šablon stylů se transformace spustí voláním jedné z metod <xref:System.Xml.Xsl.XslTransform.Transform%2A> a zadáním vstupního zdrojového dokumentu. Metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> je přetížena, aby poskytovala různé výstupy transformace. Transformace může mít za následek následující formáty výstupu:
+Po načtení šablon stylů se transformace spustí voláním jedné z <xref:System.Xml.Xsl.XslTransform.Transform%2A> metod a zadáním vstupního zdrojového dokumentu. Metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> je přetížena, aby poskytovala různé výstupy transformace. Transformace může mít za následek následující formáty výstupu:
 
 - <xref:System.Xml.XmlReader>
 
@@ -132,7 +132,7 @@ Po načtení šablon stylů se transformace spustí voláním jedné z metod <xr
 
 - Adresa URL řetězce souboru
 
-V tomto posledním formátu adresa URL řetězce poskytuje často používaný scénář pro transformaci vstupního dokumentu umístěného v adrese URL a zápis dokumentu do výstupní adresy URL. Tato metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> je pohodlnější způsob, jak načíst dokument XML ze souboru, provést transformaci XSLT a zapsat výstup do souboru. Tím zabráníte tomu, abyste vytvořili a načetli vstupní zdrojový dokument a potom zapsali do datového proudu souboru. Následující ukázka kódu ukazuje toto použití metody <xref:System.Xml.Xsl.XslTransform.Transform%2A> pomocí adresy URL řetězce jako vstupu a výstupu:
+V tomto posledním formátu adresa URL řetězce poskytuje často používaný scénář pro transformaci vstupního dokumentu umístěného v adrese URL a zápis dokumentu do výstupní adresy URL. Tato <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je pohodlnější způsob, jak načíst dokument XML ze souboru, provést transformaci XSLT a zapsat výstup do souboru. Tím zabráníte tomu, abyste vytvořili a načetli vstupní zdrojový dokument a potom zapsali do datového proudu souboru. Následující ukázka kódu ukazuje toto použití metody <xref:System.Xml.Xsl.XslTransform.Transform%2A> s použitím adresy URL řetězce jako vstupu a výstupu:
 
 ```vb
 Dim xsltransform As XslTransform = New XslTransform()
@@ -148,7 +148,7 @@ xsltransform.Transform("MyDocument.xml", "TransformResult.xml", null);
 
 ## <a name="transforming-a-section-of-an-xml-document"></a>Transformace oddílu dokumentu XML
 
-Transformace se vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment stromu výsledků, je nutné vytvořit <xref:System.Xml.XmlDocument> obsahující pouze fragment stromu výsledek a předat <xref:System.Xml.XmlDocument> metodě <xref:System.Xml.Xsl.XslTransform.Transform%2A>. Následující příklad provede transformaci fragmentu stromu výsledek.
+Transformace se vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment stromu výsledků, je nutné vytvořit <xref:System.Xml.XmlDocument> obsahující pouze fragment stromu výsledek a předat tento <xref:System.Xml.XmlDocument> metodě <xref:System.Xml.Xsl.XslTransform.Transform%2A>. Následující příklad provede transformaci fragmentu stromu výsledek.
 
 ```vb
 Dim xslt As New XslTransform()
@@ -180,7 +180,7 @@ Console.WriteLine("Passing " + tmpDoc.OuterXml + " to print_root.xsl");
 xslt.Transform(tmpDoc, null, Console.Out, null);
 ```
 
-V tomto příkladu se jako vstup používá soubory Library. XML a print_root. XSL a v konzole se vytvoří výstup následujícího:
+V příkladu se jako vstup používá soubor Library. XML a print_root. XSL a v konzole se vytvoří výstup následujícího:
 
 ```console
 Passing <book genre="novel" ISBN="1-861001-57-5"><title>Pride And Prejudice</title></book> to print_root.xsl
@@ -235,7 +235,7 @@ V následující tabulce jsou uvedeny zastaralé a nové metody pro metodu <xref
 |Void Transform (vstup IXPathNavigable, argumenty třída XsltArgumentList, výstup datového proudu)|Void Transform (vstup IXPathNavigable, třída XsltArgumentList argumenty, výstup datového proudu, překladač objekt XmlResolver)|
 |Void – transformace (vstup řetězce, výstup řetězce);|Void – transformace (vstup řetězce, výstup řetězce, překladač objekt XmlResolver);|
 
-Vlastnost <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> je zastaralá v .NET Framework verze 1,1. Místo toho použijte nové přetížení <xref:System.Xml.Xsl.XslTransform.Transform%2A>, které přebírají objekt <xref:System.Xml.XmlResolver>.
+Vlastnost <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> je zastaralá v .NET Framework verze 1,1. Místo toho použijte nová přetížení <xref:System.Xml.Xsl.XslTransform.Transform%2A>, která přijímají objekt <xref:System.Xml.XmlResolver>.
 
 ## <a name="see-also"></a>Viz také:
 

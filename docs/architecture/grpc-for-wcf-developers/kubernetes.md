@@ -1,14 +1,13 @@
 ---
 title: Kubernetes-gRPC pro vývojáře WCF
 description: Spuštění ASP.NET Core gRPC Services v clusteru Kubernetes.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 819c761a7a55485612b7fb0c8b392971751d8724
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 503b582ae9fdcf8c72c87558de3a8ddd898489aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846640"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967572"
 ---
 # <a name="kubernetes"></a>Kubernetes
 
@@ -26,7 +25,7 @@ Tato kapitola podrobně popisuje, jak nasadit službu ASP.NET Core gRPC a webovo
 
 ## <a name="kubernetes-terminology"></a>Terminologie Kubernetes
 
-Kubernetes používá *konfiguraci požadovaného stavu*: rozhraní API se používá k popisu objektů, jako jsou *lusky*, *nasazení* a *služby*, a *Řídicí rovina* se stará o implementaci požadovaného stavu napříč všemi *uzly.* v *clusteru*. Cluster Kubernetes má *Hlavní* uzel, který spouští *rozhraní Kubernetes API*, které se dá komunikovat prostřednictvím kódu programu nebo pomocí nástroje `kubectl`ho příkazového řádku. `kubectl` může vytvářet a spravovat objekty pomocí argumentů příkazového řádku, ale nejlépe funguje s YAML soubory, které obsahují data deklarace pro objekty Kubernetes.
+Kubernetes používá *konfiguraci požadovaného stavu*: rozhraní API se používá k popisu objektů, jako jsou *lusky*, *nasazení* a *služby*, a *Řídicí rovina* se stará o implementaci požadovaného stavu napříč všemi *uzly* v *clusteru*. Cluster Kubernetes má *Hlavní* uzel, který spouští *rozhraní Kubernetes API*, které se dá komunikovat prostřednictvím kódu programu nebo pomocí nástroje `kubectl`ho příkazového řádku. `kubectl` může vytvářet a spravovat objekty pomocí argumentů příkazového řádku, ale nejlépe funguje s YAML soubory, které obsahují data deklarace pro objekty Kubernetes.
 
 ### <a name="kubernetes-yaml-files"></a>Soubory Kubernetes YAML
 
@@ -39,7 +38,7 @@ metadata:
   # Object properties
 ```
 
-Vlastnost `apiVersion` slouží k určení verze (a rozhraní API), pro který je soubor určen. Vlastnost `kind` určuje druh objektu, který představuje YAML. Vlastnost `metadata` obsahuje vlastnosti objektu, například `name`, `namespace` nebo `labels`.
+Vlastnost `apiVersion` slouží k určení verze (a rozhraní API), pro který je soubor určen. Vlastnost `kind` určuje druh objektu, který představuje YAML. Vlastnost `metadata` obsahuje vlastnosti objektu, například `name`, `namespace`nebo `labels`.
 
 Většina souborů YAML Kubernetes bude také obsahovat oddíl `spec`, který popisuje prostředky a konfiguraci potřebné k vytvoření objektu.
 
@@ -59,7 +58,7 @@ Nasazení jsou *popsány stavové* objekty pro lusky. Pokud vytvoříte v příp
 
 Lusky, služby a nasazení představují jenom tři základní typy objektů. Existují spousty dalších typů objektů, které jsou spravovány clusterem Kubernetes. Další informace najdete v dokumentaci k [konceptům Kubernetes](https://kubernetes.io/docs/concepts/) .
 
-### <a name="namespaces"></a>Jmenné prostory
+### <a name="namespaces"></a>Obory názvů
 
 Clustery Kubernetes jsou navržené tak, aby se škálovat na stovky nebo tisíce uzlů a spouštěly podobné počty služeb. Aby nedocházelo ke konfliktům mezi názvy objektů, používají se obory názvů k seskupení objektů dohromady jako součást větších aplikací. Vlastní služby Kubernetes běží v oboru názvů `default`. Všechny uživatelské objekty by měly být vytvořeny ve vlastních oborech názvů, aby se předešlo potenciálním konfliktům s výchozími objekty nebo jinými klienty v clusteru.
 
@@ -121,7 +120,7 @@ stocks            Active   2m53s
 
 #### <a name="the-stockdata-deployment"></a>Nasazení StockData
 
-Část nasazení poskytuje `spec` samotného nasazení, včetně počtu požadovaných replik a `template` objektů pod, které se mají vytvořit a spravovat nasazením. Všimněte si, že objekty nasazení jsou spravovány pomocí rozhraní `apps` API, jak je uvedeno v `apiVersion` a nikoli v hlavním rozhraní Kubernetes API.
+Část nasazení poskytuje `spec` samotného nasazení, včetně počtu požadovaných replik a `template` objektů pod, které se mají vytvořit a spravovat nasazením. Všimněte si, že objekty nasazení jsou spravovány pomocí rozhraní `apps` API, jak je uvedeno v `apiVersion`a nikoli v hlavním rozhraní Kubernetes API.
 
 ```yaml
 apiVersion: apps/v1
@@ -182,7 +181,7 @@ spec:
     run: stockdata
 ```
 
-Specifikace služby používá vlastnost `selector` ke spárování se spuštěným `Pods` v tomto případě hledá lusky pomocí popisku `run: stockdata`. Zadané `port` v porovnávacích Luskech jsou publikovány pomocí pojmenované služby. Jiné lusky spuštěné v oboru názvů `stocks` mají přístup k HTTP na této službě pomocí `http://stockdata` jako adresy. Lusky běžící v jiných oborech názvů můžou používat `http://stockdata.stocks` název hostitele. Přístup ke službě mezi obory názvů můžete řídit pomocí [zásad sítě](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+Specifikace služby používá vlastnost `selector` ke spárování se spuštěným `Pods`v tomto případě hledá lusky pomocí popisku `run: stockdata`. Zadané `port` v porovnávacích Luskech jsou publikovány pomocí pojmenované služby. Jiné lusky spuštěné v oboru názvů `stocks` mají přístup k HTTP na této službě pomocí `http://stockdata` jako adresy. Lusky běžící v jiných oborech názvů můžou používat `http://stockdata.stocks` název hostitele. Přístup ke službě mezi obory názvů můžete řídit pomocí [zásad sítě](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 #### <a name="deploy-the-stockdata-application"></a>Nasazení aplikace StockData
 

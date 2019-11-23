@@ -20,5 +20,5 @@ Kontejnery Docker jsou užitečné (ale nevyžadují se) pro tradiční architek
 Na konci dne jsou řešení clusteringu kontejneru užitečná pro tradiční architekturu SOA i pro pokročilejší architekturu mikroslužeb, ve které každá mikroslužba vlastní svůj datový model. A díky více databázím můžete také škálovat datovou vrstvu místo práce s monolitické databázemi sdílenými službami SOA. Diskuze o rozdělení dat je ale čistě o architektuře a návrhu.
 
 >[!div class="step-by-step"]
->[Předchozí](state-and-data-in-docker-applications.md)Další
->[](orchestrate-high-scalability-availability.md)
+>[Předchozí](state-and-data-in-docker-applications.md)
+>[Další](orchestrate-high-scalability-availability.md)

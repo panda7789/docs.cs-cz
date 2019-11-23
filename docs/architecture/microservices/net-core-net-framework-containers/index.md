@@ -14,5 +14,5 @@ ms.locfileid: "70849270"
 Existují dvě podporované architektury pro vytváření kontejnerových aplikací Docker na straně serveru pomocí .NET: [.NET Framework a .NET Core](https://dotnet.microsoft.com/download). Sdílejí mnoho komponent platformy .NET a můžete sdílet kód mezi dvěma. Mezi nimi ale existují zásadní rozdíly a používané rozhraní bude záviset na tom, co chcete provést. V této části najdete pokyny, kdy zvolit jednotlivé architektury.
 
 >[!div class="step-by-step"]
->[Předchozí](../container-docker-introduction/docker-containers-images-registries.md)Další
->[](general-guidance.md)
+>[Předchozí](../container-docker-introduction/docker-containers-images-registries.md)
+>[Další](general-guidance.md)

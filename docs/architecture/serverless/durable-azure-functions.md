@@ -47,7 +47,7 @@ public static async Task<HttpResponseMessage> Run(
 
 Poznámka k funkci s OrchestrationTriggerAttribute ve Azure Functions označuje, že funguje jako funkce nástroje Orchestrator. Zodpovídá za správu různých aktivit, které tvoří stavový pracovní postup.
 
-Funkce Orchestrator nemohou používat jiné vazby než OrchestrationTriggerAttribute. Tento atribut lze použít pouze s typem parametru DurableOrchestrationContext. Žádné jiné vstupy nelze použít, protože deserializace vstupů v signatuře funkce není podporována. Chcete-li získat vstupy poskytované klientem Orchestration, je nutné použít metodu GetInput \<T \>.
+Funkce Orchestrator nemohou používat jiné vazby než OrchestrationTriggerAttribute. Tento atribut lze použít pouze s typem parametru DurableOrchestrationContext. Žádné jiné vstupy nelze použít, protože deserializace vstupů v signatuře funkce není podporována. Chcete-li získat vstupy poskytované klientem Orchestration, je nutné použít metodu GetInput\<T\>.
 
 Návratové typy funkcí orchestrace musí být také typu void, Task nebo serializovatelného hodnoty JSON.
 

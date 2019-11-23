@@ -9,10 +9,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72002799"
 ---
-# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: generování objektového modelu v Visual Basic nebo C @ no__t-0
-V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je objektový model vlastního programovacího jazyka namapován na relační databázi. K dispozici jsou dva nástroje pro automatické generování Visual Basic C# nebo modelu z metadat existující databáze.  
+# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: generování objektového modelu v Visual Basic nebo C\#
+V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objektový model vlastního programovacího jazyka je namapován na relační databázi. K dispozici jsou dva nástroje pro automatické generování Visual Basic C# nebo modelu z metadat existující databáze.  
   
-- Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů k vygenerování objektového modelu. Návrhář O/R poskytuje bohatě uživatelské rozhraní, které vám umožňuje vygenerovat objektový model [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Další informace najdete v tématu [technologie LINQ to SQL Tools v aplikaci Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).
+- Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů k vygenerování objektového modelu. Návrhář O/R poskytuje bohatě uživatelské rozhraní, které vám umožňuje vygenerovat model [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektů. Další informace najdete v tématu [technologie LINQ to SQL Tools v aplikaci Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).
   
 - Nástroj příkazového řádku SQLMetal. Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   

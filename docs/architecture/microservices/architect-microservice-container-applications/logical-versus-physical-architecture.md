@@ -1,5 +1,5 @@
 ---
-title: Logická architektura versus fyzická architektura
+title: Logická architektura vs. fyzická architektura
 description: Pochopení rozdílů mezi logickými a fyzickými architekturami.
 ms.date: 09/20/2018
 ms.openlocfilehash: 8d1bfca190eb9b18d46625fa4afdec963eb07054
@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71834405"
 ---
-# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
+# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura vs. fyzická architektura
 
 To je užitečné v tomto okamžiku k zastavení a projednání rozdílu mezi logickou architekturou a fyzickou architekturou a jak to platí pro návrh aplikací založených na mikroslužbách.
 
 Aby bylo možné začít vytvářet mikroslužby, nevyžadují používání žádné konkrétní technologie. Například kontejnery Docker nejsou povinné pro vytvoření architektury založené na mikroslužbách. Tyto mikroslužby můžou být taky spuštěné jako jednoduché procesy. Mikroslužby jsou logickou architekturou.
 
-Kromě toho, i když by mohla být mikroslužba fyzicky implementována jako jediná služba, proces nebo kontejner (z důvodu jednoduchosti, což je postup, který je povedený v počáteční verzi [eShopOnContainers](https://aka.ms/MicroservicesArchitecture)), tato parita v rámci obchodních mikroslužeb a fyzická služba nebo kontejner nemusí nutně vyžadovat ve všech případech, když vytváříte rozsáhlou a složitou aplikaci složenou z mnoha desítek nebo i stovek služeb.
+Kromě toho, i když by mohla být mikroslužba fyzicky implementována jako jediná služba, proces nebo kontejner (z důvodu jednoduchosti, který je v počáteční verzi [eShopOnContainers](https://aka.ms/MicroservicesArchitecture)), tato parita mezi firemními mikroslužbami a fyzickými službami nebo kontejnery nemusí nutně vyžadovat ve všech případech, pokud sestavíte rozsáhlou a složitou aplikaci složenou z mnoha desítek nebo i stovek služeb.
 
 Tady je rozdíl mezi logickou architekturou aplikace a fyzickou architekturou. Logická architektura a logické hranice systému nemusí nutně namapovat 1:1 na fyzickou nebo nasazenou architekturu. K tomu může dojít, ale často ne.
 
@@ -34,4 +34,5 @@ Služby v příkladu sdílejí stejný datový model, protože služba webového
 V krátkém případě se logická architektura mikroslužeb vždy nemusí shodovat s architekturou fyzického nasazení. V této příručce se pokaždé, když uvádíme mikroslužbu, rozumíme obchodní nebo logické mikroslužby, která může být namapována na jednu nebo více (fyzických) služeb. Ve většině případů to bude jediná služba, ale může to být víc.
 
 >[!div class="step-by-step"]
->[Předchozí](data-sovereignty-per-microservice.md)@no__t – 1 –[Další](distributed-data-management.md)
+>[Předchozí](data-sovereignty-per-microservice.md)
+>[Další](distributed-data-management.md)

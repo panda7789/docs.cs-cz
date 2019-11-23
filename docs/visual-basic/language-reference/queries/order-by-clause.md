@@ -1,5 +1,5 @@
 ---
-title: Order By – klauzule (Visual Basic)
+title: Order By – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.QueryOrderBy
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Order By clause [Visual Basic]
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
-ms.openlocfilehash: f8ee46b12e84f99629c3a92057fc3a7bb8a3c2e8
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: a7104e3dd82ff2dde2911861ce98a7367faf3b25
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004952"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350415"
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By – klauzule (Visual Basic)
-Určuje pořadí řazení pro výsledek dotazu.  
+Specifies the sort order for a query result.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,31 +28,31 @@ Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]
   
 ## <a name="parts"></a>Součásti  
  `orderExp1`  
- Požadováno. Jedno nebo více polí z aktuálního výsledku dotazu, které identifikují způsob řazení vrácených hodnot. Názvy polí musí být odděleny čárkami (,). Každé pole můžete identifikovat ve vzestupném nebo sestupném pořadí pomocí klíčových slov `Ascending` nebo `Descending`. Pokud není zadané žádné klíčové slovo `Ascending` nebo `Descending`, výchozí pořadí řazení je vzestupné. V poli pořadí řazení se předává přednost zleva doprava.  
+ Požadováno. One or more fields from the current query result that identify how to order the returned values. The field names must be separated by commas (,). You can identify each field as sorted in ascending or descending order by using the `Ascending` or `Descending` keywords. If no `Ascending` or `Descending` keyword is specified, the default sort order is ascending. The sort order fields are given precedence from left to right.  
   
 ## <a name="remarks"></a>Poznámky  
- K řazení výsledků dotazu můžete použít klauzuli `Order By`. Klauzule `Order By` může řadit výsledek jenom na základě proměnné rozsahu pro aktuální obor. Například klauzule `Select` zavádí nový obor ve výrazu dotazu s novými proměnnými iterace pro tento obor. Proměnné rozsahu definované před klauzulí `Select` v dotazu nejsou k dispozici po klauzuli `Select`. Proto pokud chcete výsledky seřadit podle pole, které není k dispozici v klauzuli `Select`, je nutné před klauzulí `Select` Vložit klauzuli `Order By`. Příkladem toho, kdy byste to museli udělat, je, že chcete dotaz seřadit podle polí, která se nevrací jako součást výsledku.  
+ You can use the `Order By` clause to sort the results of a query. The `Order By` clause can only sort a result based on the range variable for the current scope. For example, the `Select` clause introduces a new scope in a query expression with new iteration variables for that scope. Range variables defined before a `Select` clause in a query are not available after the `Select` clause. Therefore, if you want to order your results by a field that is not available in the `Select` clause, you must put the `Order By` clause before the `Select` clause. One example of when you would have to do this is when you want to sort your query by fields that are not returned as part of the result.  
   
- Vzestupné a sestupné řazení pro pole je určeno implementací rozhraní @no__t 0 pro datový typ pole. Pokud datový typ neimplementuje rozhraní <xref:System.IComparable>, pořadí řazení se ignoruje.  
+ Ascending and descending order for a field is determined by the implementation of the <xref:System.IComparable> interface for the data type of the field. If the data type does not implement the <xref:System.IComparable> interface, the sort order is ignored.  
   
 ## <a name="example"></a>Příklad  
- Následující výraz dotazu používá klauzuli `From` k deklaraci proměnné rozsahu `book` pro kolekci `books`. Klauzule `Order By` seřadí výsledek dotazu podle ceny ve vzestupném pořadí (výchozí nastavení). Knihy se stejnou cenou jsou seřazené podle názvu ve vzestupném pořadí. Klauzule `Select` vybere vlastnosti `Title` a `Price` jako hodnoty vrácené dotazem.  
+ The following query expression uses a `From` clause to declare a range variable `book` for the `books` collection. The `Order By` clause sorts the query result by price in ascending order (the default). Books with the same price are sorted by title in ascending order. The `Select` clause selects the `Title` and `Price` properties as the values returned by the query.  
   
  [!code-vb[VbSimpleQuerySamples#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#24)]  
   
 ## <a name="example"></a>Příklad  
- Následující výraz dotazu používá klauzuli `Order By` pro řazení výsledků dotazu podle ceny v sestupném pořadí. Knihy se stejnou cenou jsou seřazené podle názvu ve vzestupném pořadí.  
+ The following query expression uses the `Order By` clause to sort the query result by price in descending order. Books with the same price are sorted by title in ascending order.  
   
  [!code-vb[VbSimpleQuerySamples#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#25)]  
   
 ## <a name="example"></a>Příklad  
- Následující výraz dotazu používá klauzuli @no__t 0 pro výběr názvu knihy, ceny, data publikování a autora. Pak naplní pole `Title`, `Price`, `PublishDate` a `Author` proměnné rozsahu pro nový obor. Klauzule `Order By` seřadí novou proměnnou rozsahu podle jména autora, názvu knihy a ceny. Jednotlivé sloupce jsou seřazené ve výchozím pořadí (vzestupně).  
+ The following query expression uses a `Select` clause to select the book title, price, publish date, and author. It then populates the `Title`, `Price`, `PublishDate`, and `Author` fields of the range variable for the new scope. The `Order By` clause orders the new range variable by author name, book title, and then price. Each column is sorted in the default order (ascending).  
   
  [!code-vb[VbSimpleQuerySamples#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#26)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

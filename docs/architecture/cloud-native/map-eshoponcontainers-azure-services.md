@@ -17,7 +17,8 @@ I když to není nutné, Azure je vhodný pro podporu eShopOnContainers, protož
 
 Architektura aplikace se zobrazuje na obrázku 2-5. Na levé straně jsou klientské aplikace rozdělené na mobilní, tradiční web a charakter SPA (Web Single Page Application). Na pravé straně jsou serverové komponenty, které tvoří systém, z nichž každý je možné hostovat v kontejnerech Docker a clusterech Kubernetes. Tradiční webová aplikace se používá v aplikaci ASP.NET Core MVC zobrazené žlutě. Tato aplikace a mobilní a webové aplikace SPA komunikují s jednotlivými mikroslužbami přes jednu nebo více bran rozhraní API. Brány rozhraní API se řídí vzorem "back-endy pro front-endy" (BFF), což znamená, že každá brána je navržená tak, aby podporovala daného klienta front-endu. Jednotlivé mikroslužby jsou uvedeny napravo od bran rozhraní API a zahrnují obchodní logiku i určitý druh trvalého úložiště. Různé služby využívají SQL Server databáze, instance mezipaměti Redis a úložiště MongoDB/CosmosDB. Úplně vpravo je systémová sběrnice událostí, která se používá ke komunikaci mezi mikroslužbami.
 
-![eShopOnContainers architektura @ no__t-1**obrázek 2-5**. Architektura eShopOnContainers
+![architektury eShopOnContainers](./media/eshoponcontainers-architecture.png)
+**obrázek 2-5**. Architektura eShopOnContainers
 
 Komponenty na straně serveru této architektury jsou snadno namapovány na služby Azure.
 
@@ -63,7 +64,7 @@ Aplikace používá události ke komunikaci mezi různými službami. Tato funkc
 
 Po nasazení do produkčního prostředí by aplikace eShopOnContainers mohla využívat několik služeb Azure, které jsou k dispozici pro zlepšení jeho odolnosti. Aplikace zveřejňuje kontroly stavu, které je možné integrovat s Application Insights, aby poskytovala sestavy a výstrahy na základě dostupnosti aplikace. Prostředky Azure také poskytují diagnostické protokoly, které se dají použít k identifikaci a opravě chyb a problémů s výkonem. Protokoly prostředků poskytují podrobné informace o tom, kdy a jak aplikace používá různé prostředky Azure. V [kapitole 6](resiliency.md)se dozvíte víc o funkcích odolnosti nativního cloudu.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Architektura eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
 - [Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)

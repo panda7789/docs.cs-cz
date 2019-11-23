@@ -28,9 +28,9 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
  Zabezpečení zpráv WCF přidává záhlaví zabezpečení do zprávy WCF, která se integruje s existujícími infrastrukturami zabezpečení, jako je certifikát nebo protokol Kerberos.  
   
 ## <a name="message-credential-type"></a>Typ přihlašovacích údajů zprávy  
- Pomocí zabezpečení zpráv můžou služby a klienti zadat přihlašovací údaje pro jiné ověřování. Zabezpečení zpráv můžete vybrat nastavením režimu @no__t 0 na hodnotu `Message` nebo `Both` (to znamená zabezpečení přenosu i zabezpečení zpráv).  
+ Pomocí zabezpečení zpráv můžou služby a klienti zadat přihlašovací údaje pro jiné ověřování. Můžete vybrat zabezpečení zprávy nastavením režimu <xref:System.ServiceModel.NetMsmqBinding.Security%2A> na `Message` nebo `Both` (to znamená zabezpečení přenosu i zabezpečení zpráv).  
   
- Služba může pomocí vlastnosti <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> kontrolovat přihlašovací údaje používané k ověřování klienta. Tato možnost se dá použít taky k dalším kontrolám autorizace, které služba zvolí k implementaci.  
+ Služba může pomocí vlastnosti <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> zkontrolovat přihlašovací údaje používané k ověřování klienta. Tato možnost se dá použít taky k dalším kontrolám autorizace, které služba zvolí k implementaci.  
   
  V této části jsou vysvětleny různé typy přihlašovacích údajů a jejich použití s frontami.  
   

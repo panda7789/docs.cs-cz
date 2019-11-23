@@ -1,14 +1,13 @@
 ---
 title: Výčty Protobuf – gRPC pro vývojáře WCF
 description: Naučte se deklarovat a používat výčty v Protobuf.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: f18196f54caba824d7101782a88cf3bf699560d5
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 4ea4d03bede2a9ebfd1f2c3ee56f299e918800e9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846345"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971578"
 ---
 # <a name="protobuf-enumerations"></a>Výčty protobuf
 
@@ -39,7 +38,7 @@ public enum AccountStatus
 }
 ```
 
-Definice výčtu Protobuf **musí** mít jako první pole nulovou konstantu. Jako v C#můžete deklarovat více polí se stejnou hodnotou, ale tuto možnost musíte explicitně povolit pomocí možnosti`allow_alias`ve výčtu:
+Definice výčtu Protobuf **musí** mít jako první pole nulovou konstantu. Jako v C#můžete deklarovat více polí se stejnou hodnotou, ale tuto možnost musíte explicitně povolit pomocí možnosti `allow_alias` ve výčtu:
 
 ```protobuf
 enum AccountStatus {

@@ -11,10 +11,10 @@ ms.locfileid: "70295293"
 ---
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Navrhování a vývoj kontejnerových aplikací pomocí Docker a Microsoft Azure
 
-*Vidění Navrhněte a vývoj škálovatelných řešení s využitím Docker.*
+*Vize: návrh a vývoj škálovatelných řešení s použitím Docker*
 
 *K dispozici je mnoho skvělých případů použití pro kontejnery, nejen pro architektury orientované na mikroslužby, ale také když jednoduše používáte běžné služby nebo webové aplikace a chcete snížit tření mezi vývojovým a provozním prostředím. nasazení.*
 
 >[!div class="step-by-step"]
->[Předchozí](../Microsoft-platform-tools-containerized-apps/index.md)Další
->[](design-docker-applications.md)
+>[Předchozí](../Microsoft-platform-tools-containerized-apps/index.md)
+>[Další](design-docker-applications.md)

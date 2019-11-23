@@ -17,7 +17,7 @@ ms.locfileid: "73037967"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny .NET Standard pomocí platformy .NET Core v sadě Visual Studio 2017
 
-V [sestavách knihovny .NET standard C# s a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení knihovny .NET Standard s Visual Basic a .NET core v aplikaci Visual Studio 2017](vb-library-with-visual-studio.md)jste vytvořili jednoduchou knihovnu tříd, která přidá do @no__t_ metodu rozšíření. Třída 3_ Nyní vytvoříte test jednotky, abyste se ujistili, že funguje podle očekávání. Projekt testování částí přidáte do řešení, které jste vytvořili v předchozím článku.
+V [sestavách knihovny .NET standard C# s a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení knihovny .NET Standard s Visual Basic a .NET core v aplikaci Visual Studio 2017](vb-library-with-visual-studio.md)jste vytvořili jednoduchou knihovnu tříd, která přidá metodu rozšíření do třídy <xref:System.String>. Nyní vytvoříte test jednotky, abyste se ujistili, že funguje podle očekávání. Projekt testování částí přidáte do řešení, které jste vytvořili v předchozím článku.
 
 ## <a name="creating-a-unit-test-project"></a>Vytvoření projektu testu jednotek
 
@@ -52,7 +52,7 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
    ![Kontextová nabídka závislostí StringLibraryTest-C#](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Klikněte na tlačítko **OK** . Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
+1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Vyberte tlačítko **OK**. Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
 
    ![Dialogová okna pro přidání odkazu na projekt v aplikaci Visual Studio](./media/testing-library-with-visual-studio/project-reference-manager.png)
 
@@ -83,7 +83,7 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
    ![Kontextová nabídka závislostí StringLibraryTest](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Klikněte na tlačítko **OK** . Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
+1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na sestavení `StringLibrary` umožňuje kompilátoru najít metody **StringLibrary** . Vyberte tlačítko **OK**. Tím se přidá odkaz na váš projekt knihovny tříd, `StringLibrary`.
 
    ![Dialogová okna pro přidání odkazu na projekt v aplikaci Visual Studio – Visual Basic](./media/testing-library-with-visual-studio/project-reference-manager.png)
 
@@ -118,7 +118,7 @@ Postup vytvoření testovacích metod:
 
    [!code-csharp[Test#1](~/samples/snippets/csharp/getting_started/with_visual_studio_2017/testlib1.cs)]
 
-   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice EM (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (U + 0433) v cyrilici.
+   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (u + 0433).
 
 1. Na řádku nabídek vyberte **soubor** > **Uložit UnitTest1.cs jako**. V dialogovém okně **Uložit soubor jako** vyberte šipku vedle tlačítka **Uložit** a vyberte **Uložit s kódováním**.
 
@@ -130,7 +130,7 @@ Postup vytvoření testovacích metod:
 
     [!code-vb[Test#1](~/samples/snippets/core/tutorials/vb-library-with-visual-studio/testlib.vb)]
 
-   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice EM (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (U + 0433) v cyrilici.
+   Všimněte si, že váš test velkých písmen v metodě `TestStartsWithUpper` obsahuje řecké velké písmeno alfa (U + 0391) a velké písmeno cyrilice (U + 041C) a test malých písmen v metodě `TestDoesNotStartWithUpper` obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (u + 0433).
 
 1. Na panelu nabídek vyberte **soubor** > **Uložit UnitTest1. vb jako**. V dialogovém okně **Uložit soubor jako** vyberte šipku vedle tlačítka **Uložit** a vyberte **Uložit s kódováním**.
 

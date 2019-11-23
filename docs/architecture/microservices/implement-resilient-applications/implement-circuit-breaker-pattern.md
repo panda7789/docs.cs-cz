@@ -142,7 +142,7 @@ Můžete implementovat jinou logiku pro otevření nebo přerušení okruhu. Neb
 
 Nakonec je další možností pro `CircuitBreakerPolicy` použít `Isolate` (které vynutí otevření a blokování otevřeného okruhu) a `Reset` (které se znovu zavřou). Ty je možné použít k vytvoření koncového bodu HTTP nástroje, který vyvolá izolaci a resetování přímo na zásadě.  Takový koncový bod HTTP by se taky mohl použít, vhodně zabezpečený v produkčním prostředí pro dočasný izolaci systému pro příjem dat, třeba když ho chcete upgradovat. Nebo může obcházet okruh ručně, aby se chránil systém pro příjem dat, u kterého se domníváte, že se jedná o poruchu.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - \ **vzoru pro přerušení okruhu**
   [https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker](/azure/architecture/patterns/circuit-breaker)

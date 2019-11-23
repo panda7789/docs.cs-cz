@@ -19,7 +19,7 @@ Provede funkci absolutní hodnoty.
 
 **Argumenty**
 
-`expression`: `Int32`, `Int64`, `Double` nebo `Decimal`.
+`expression`: `Int32`, `Int64`, `Double`nebo `Decimal`.
 
 **Návratová hodnota**
 
@@ -35,11 +35,11 @@ Vrátí hodnotu Arkus kosinus určeného výrazu.
 
 **Argumenty**
 
-`expression`: A `Double`.
+`expression`: `Double`.
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -51,11 +51,11 @@ Vrátí hodnotu Arkus sinus určeného výrazu.
 
 **Argumenty**
 
-`expression`: A `Double`.
+`expression`: `Double`.
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -67,11 +67,11 @@ Vrací hodnotu arkustangens zadaného číselného výrazu.
 
 **Argumenty**
 
-`expression`: A `Double`.
+`expression`: `Double`.
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -83,11 +83,11 @@ Vrátí úhel v radiánech, jejichž tangens je mezi dvěma zadanými číselný
 
 **Argumenty**
 
-`expression`: A `Double`.
+`expression`: `Double`.
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -99,11 +99,11 @@ Převede zadaný výraz na nejmenší celé číslo, které je větší než neb
 
 **Argumenty**
 
-`expression`: `Int32`, `Int64`, `Double` nebo `Decimal`.
+`expression`: `Int32`, `Int64`, `Double`nebo `Decimal`.
 
 **Návratová hodnota**
 
-@No__t-0, `Int64`, `Double` nebo `Decimal`.
+`Int32`, `Int64`, `Double`nebo `Decimal`.
 
 **Příklad** 
 
@@ -115,11 +115,11 @@ Vypočítá trigonometrický kosinus zadaného úhlu v radiánech.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
@@ -131,11 +131,11 @@ Vypočítá trigonometrický kotangens zadaného úhlu v radiánech.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
@@ -147,11 +147,11 @@ Vrátí odpovídající úhel ve stupních.
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double` nebo `Decimal`. 
+`expression`: `Int32`, `Int64`, `Double`nebo `Decimal`. 
 
 **Návratová hodnota** 
 
-@No__t-0, `Int64`, `Double` nebo `Decimal`. 
+`Int32`, `Int64`, `Double`nebo `Decimal`. 
 
 **Příklad** 
 
@@ -163,11 +163,11 @@ Vypočítá exponenciální hodnotu zadaného číselného výrazu.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** `SqlServer.EXP(1)`
 
@@ -177,11 +177,11 @@ Převede zadaný výraz na největší celé číslo menší nebo rovno.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
@@ -193,11 +193,11 @@ Vypočítá přirozený logaritmus zadaného výrazu `float`.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
@@ -209,29 +209,29 @@ Vrátí logaritmus se základem 10 zadaného výrazu `Double`.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
 `SqlServer.LOG10(100)`
 
-## <a name="pi"></a>PI ()
+## <a name="pi"></a>PI()
 
 Vrací konstantní hodnotu hodnoty PI jako `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 
 `SqlServer.PI()`
 
-## <a name="powernumeric_expression-power_expression"></a>NAPÁJENÍ (numeric_expression, power_expression)
+## <a name="powernumeric_expression-power_expression"></a>NAPÁJENÍ (numeric_expression power_expression)
 
 Vypočítá hodnotu zadaného výrazu na zadanou mocninu.
 
@@ -239,12 +239,12 @@ Vypočítá hodnotu zadaného výrazu na zadanou mocninu.
 
 |  |  |
 |--|--|
-|`numeric_expression`| @No__t-0, `Int64`, `Double` nebo `Decimal`.|
-|`power_expression`| @No__t-0, který představuje mocninu pro vyvolání `numeric_expression`.| 
+|`numeric_expression`| `Int32`, `Int64`, `Double`nebo `Decimal`.|
+|`power_expression`| `Double`, který představuje mocninu, pro kterou chcete `numeric_expression`vyvolat.| 
 
 **Návratová hodnota** 
 
-Hodnota zadaného `numeric_expression` se zadaným `power_expression`. 
+Hodnota zadaného `numeric_expression` zadaná `power_expression`. 
 
 **Příklad** 
 
@@ -256,11 +256,11 @@ Převede stupně na radiány.
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double` nebo `Decimal`. 
+`expression`: `Int32`, `Int64`, `Double`nebo `Decimal`. 
 
 **Návratová hodnota** 
 
-@No__t-0, `Int64`, `Double` nebo `Decimal`. 
+`Int32`, `Int64`, `Double`nebo `Decimal`. 
 
 **Příklad** 
 
@@ -276,7 +276,7 @@ Hodnota počáteční hodnoty jako `Int32`. Pokud není zadaná počáteční ho
 
 **Návratová hodnota** 
 
-Hodnota náhodného @no__t 0 od 0 do 1. 
+Hodnota náhodného `Double` od 0 do 1. 
 
 **Příklad** 
 
@@ -290,13 +290,13 @@ Vrátí číselný výraz zaokrouhlený na zadanou délku nebo přesnost.
 
 |  |  |
 |--|--|
-|`numeric_expression`| @No__t-0, `Int64`, `Double` nebo `Decimal`. 
-|`length`| @No__t-0, který představuje přesnost, na kterou má být zaokrouhlena `numeric_expression`. Když je `length` kladné číslo, `numeric_expression` se zaokrouhluje na počet desetinných míst určených `length`. Pokud je `length` záporné číslo, `numeric_expression` se zaokrouhluje na levou stranu desetinné čárky, jak je určeno `length`.|
-|`function` | Volitelné. @No__t-0, který představuje typ operace, která má být provedena. Pokud je funkce vynechána nebo má hodnotu 0 (výchozí), `numeric_expression` se zaokrouhlí. Při zadání jiné hodnoty než 0 se zkrátí `numeric_expression`. |
+|`numeric_expression`| `Int32`, `Int64`, `Double`nebo `Decimal`. 
+|`length`| `Int32` reprezentující přesnost, na kterou má být `numeric_expression` zaokrouhlen. Když je `length` kladné číslo, `numeric_expression` se zaokrouhluje na počet desetinných míst určených `length`. Když je `length` záporné číslo, `numeric_expression` se zaokrouhluje na levou stranu desetinné čárky, jak je určeno `length`.|
+|`function` | Volitelné. `Int32`, který představuje typ operace, která má být provedena. Pokud je funkce vynechána nebo má hodnotu 0 (výchozí), `numeric_expression` je zaokrouhlena. Pokud je zadána jiná hodnota než 0, `numeric_expression` je zkrácena. |
 
 **Návratová hodnota** 
 
-Hodnota zadaného `numeric_expression` se zadaným `power_expression`.
+Hodnota zadaného `numeric_expression` zadaná `power_expression`.
 
 **Příklad** 
 
@@ -308,11 +308,11 @@ Vrátí kladné znaménko (+ 1), nula (0) nebo negativní (-1) znak zadaného v�
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double` nebo `Decimal` 
+`expression`: `Int32`, `Int64`, `Double`nebo `Decimal` 
 
 **Návratová hodnota** 
 
-@No__t-0, `Int64`, `Double` nebo `Decimal`. 
+`Int32`, `Int64`, `Double`nebo `Decimal`. 
 
 **Příklad** 
 
@@ -324,11 +324,11 @@ Vypočítá trigonometrický sinus zadaného úhlu v radiánech a vrátí výraz
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** `SqlServer.SIN(20)`
 
@@ -338,11 +338,11 @@ Vrátí druhou odmocninu určeného výrazu.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** `SqlServer.SQRT(3600)`
 
@@ -352,11 +352,11 @@ Vrátí čtverci určeného výrazu.
 
 **Argumenty** 
 
-`expression`: A `Double`. 
+`expression`: `Double`. 
 
 **Návratová hodnota** 
 
-@No__t-0. 
+A `Double`. 
 
 **Příklad** 
 

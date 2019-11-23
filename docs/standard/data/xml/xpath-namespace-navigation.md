@@ -13,16 +13,16 @@ ms.lasthandoff: 10/04/2019
 ms.locfileid: "71957003"
 ---
 # <a name="xpath-namespace-navigation"></a>Navigace oboru názvů XPath
-Chcete-li používat dotazy XPath s dokumenty XML, je nutné správně adresovat obory názvů XML a prvky obsažené v oborech názvů. Obory názvů zabraňují nejednoznačnosti, ke kterým může dojít, když se názvy používají ve více než jednom kontextu. například název `ID` může odkazovat na více než jeden identifikátor přidružený k různým prvkům dokumentu XML. Syntaxe oboru názvů určuje identifikátory URI, názvy a předpony, které odlišují prvky dokumentu XML.  
+Chcete-li používat dotazy XPath s dokumenty XML, je nutné správně adresovat obory názvů XML a prvky obsažené v oborech názvů. Obory názvů zabraňují nejednoznačnosti, ke kterým může dojít, když se názvy používají ve více než jednom kontextu. název `ID` například může odkazovat na více než jeden identifikátor přidružený k různým prvkům dokumentu XML. Syntaxe oboru názvů určuje identifikátory URI, názvy a předpony, které odlišují prvky dokumentu XML.  
   
- Příklad v tomto tématu ukazuje použití předpon v navigaci dokumentu XML s <xref:System.Xml.XPath.XPathNavigator>. Další informace o oborech názvů a syntaxi naleznete v tématu [soubory XML: porozumění oborům názvů XML](https://docs.microsoft.com/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
+ Příklad v tomto tématu ukazuje použití prefixů při navigaci dokumentu XML pomocí <xref:System.Xml.XPath.XPathNavigator>. Další informace o oborech názvů a syntaxi naleznete v tématu [soubory XML: porozumění oborům názvů XML](https://docs.microsoft.com/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
   
 ## <a name="namespace-declarations"></a>Deklarace oboru názvů  
  Deklarace oboru názvů umožňují, aby prvky dokumentu XML byly rozlišené a adresovatelné při použití instance <xref:System.Xml.XPath.XPathNavigator>. Předpony oboru názvů poskytují stručnou syntaxi pro adresování oborů názvů.  
   
- Předpony jsou definovány ve formě: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` v této syntaxi je prefixem "`e`" zkratka pro formální identifikátor URI oboru názvů. Element `Body` můžete identifikovat jako člen oboru názvů `Envelope` pomocí syntaxe: `e:Body`.  
+ Předpony jsou definovány ve formě: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` v této syntaxi je prefixem "`e`" zkratka pro formální identifikátor URI oboru názvů. Element `Body` můžete identifikovat jako člena `Envelope` oboru názvů pomocí syntaxe: `e:Body`.  
   
- Následující dokument XML bude v navigačním příkladu v následující části odkazován jako `response.xml`.  
+ Následující dokument XML bude odkazován jako `response.xml` v navigačním příkladu v následující části.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -38,7 +38,7 @@ Chcete-li používat dotazy XPath s dokumenty XML, je nutné správně adresovat
 ```  
   
 ## <a name="navigation-by-namespace-prefix"></a>Navigace podle předpony oboru názvů  
- Kód v této části používá @no__t objekty-0 a <xref:System.Xml.XmlNamespaceManager> k výběru prvku `Search` z dokumentu XML v předchozí části. Dotaz `xpath` zahrnuje předpony oboru názvů pro každý prvek v cestě. Určení přesné identity oborů názvů, které obsahují jednotlivé prvky, zajišťuje správné procházení prvku `Search` metodou <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>.  
+ Kód v této části používá <xref:System.Xml.XPath.XPathNavigator> a <xref:System.Xml.XmlNamespaceManager> objektů k výběru prvku `Search` z dokumentu XML v předchozí části. Dotaz `xpath` zahrnuje předpony oboru názvů u každého elementu v cestě. Určení přesné identity oborů názvů, které obsahují jednotlivé prvky, zajišťuje správné procházení prvku `Search` metodou <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>.  
   
 ```csharp  
 using (XmlReader reader = XmlReader.Create("response.xml"))  
@@ -62,7 +62,7 @@ using (XmlReader reader = XmlReader.Create("response.xml"))
 }  
 ```  
   
- Přesnost plně kvalifikovaného oboru názvů a názvů je větší než pohodlí. Trochu experimentování s definicí dokumentu a kódem v předchozích příkladech ověří, zda navigace bez úplných názvů prvků vyvolá výjimky. Například definice elementu: `<Search xmlns="http://schemas.microsoft.com/v1/Search">` a dotaz: řetězec `xpath = "/s:Envelope/s:Body/Search";` bez předpony oboru názvů na elementu `Search` vrátí `null` namísto prvku `Search`.  
+ Přesnost plně kvalifikovaného oboru názvů a názvů je větší než pohodlí. Trochu experimentování s definicí dokumentu a kódem v předchozích příkladech ověří, zda navigace bez úplných názvů prvků vyvolá výjimky. Například definice elementu: `<Search xmlns="http://schemas.microsoft.com/v1/Search">`a Query: řetězec `xpath = "/s:Envelope/s:Body/Search";` bez předpony oboru názvů na `Search` elementu vrací `null` namísto `Search` elementu.  
   
 ## <a name="see-also"></a>Viz také:
 

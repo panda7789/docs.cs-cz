@@ -52,7 +52,7 @@ Například následující kód JSON je ukázková implementace agregační obje
 
 ## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Úvod do Azure Cosmos DB a nativní rozhraní API Cosmos DB
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuci na klíč](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [Elastické škálování propustnosti a úložiště](https://docs.microsoft.com/azure/cosmos-db/partition-data) po celém světě, latence v řádu milisekund na 99 percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)a zaručené vysoké množství. dostupnost, která je zajištěná [špičkovým slaem](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) , aniž by bylo nutné se zabývat správou schémat a indexů. Je to více modelů a podporuje modely dokumentů, klíčových hodnot, grafů a sloupcových dat.
+[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuci na klíč](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [Elastické škálování propustnosti a úložiště](https://docs.microsoft.com/azure/cosmos-db/partition-data) po celém světě, latenci v řádu milisekund na 99 percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)a zaručenou vysokou dostupnost, která je zajištěna [špičkovou slaou v oboru](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf), aniž by vyžadovala zapojení správy schémat a indexů. Zahrnuje více modelů a podporuje modely dokumentů, klíčových hodnot, grafů a sloupcových dat.
 
 ![Diagram znázorňující Azure Cosmos DB globální distribuce.](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
@@ -138,7 +138,7 @@ Cosmos DB databáze podporují rozhraní API MongoDB pro .NET a také nativní M
 
 To je velice pohodlný přístup k ověření konceptů v prostředích Docker s kontejnery Linux, protože [Image Docker MongoDB](https://hub.docker.com/r/_/mongo/) je vícestránkový obrázek, který podporuje kontejnery Docker Linux a Docker Windows Containers.
 
-Jak je znázorněno na následujícím obrázku, používá rozhraní API MongoDB, eShopOnContainers podporuje MongoDB Linux a kontejnery Windows pro místní vývojové prostředí, ale pak můžete přejít na škálovatelné cloudové řešení PaaS jako Azure Cosmos DB tím, že jednoduše [změníte MongoDB připojovací řetězec, který odkazuje na Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Jak je znázorněno na následujícím obrázku, používá rozhraní API MongoDB, eShopOnContainers podporuje MongoDB Linux a kontejnery Windows pro místní vývojové prostředí, ale pak můžete přejít na škálovatelné cloudové řešení PaaS jako Azure Cosmos DB, a to jednoduše [změnou připojovacího řetězce MongoDB tak, aby odkazoval na Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
 
 ![Diagram znázorňující, že mikroslužba umístění v eShopOnContainers může používat databázi Cosmos DB nebo Mongo DB.](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
@@ -299,9 +299,9 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-Měli byste odkomentovat řádek ESHOP_AZURE_COSMOSDB a aktualizovat ho pomocí připojovacího řetězce Azure Cosmos DB získaného z Azure Portal, jak je vysvětleno v tématu [připojení aplikace MongoDB k Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Odkomentujte ESHOP_AZURE_COSMOSDB řádek a aktualizujte ho pomocí připojovacího řetězce Azure Cosmos DB získaného z Azure Portal, jak je vysvětleno v tématu [připojení aplikace v MongoDB k Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
 
-Pokud je globální proměnná `ESHOP_AZURE_COSMOSDB` prázdná, což znamená, že je zakomentována v souboru `.env`, pak kontejner používá výchozí připojovací řetězec MongoDB odkazující na místní kontejner MongoDB nasazený v eShopOnContainers, který má název `nosql.data` a byl definováno v souboru Docker-skládání, jak je znázorněno v následujícím kódu. yml.
+Pokud je globální proměnná `ESHOP_AZURE_COSMOSDB` prázdná, což znamená, že je zakomentována v souboru `.env`, pak kontejner používá výchozí připojovací řetězec MongoDB odkazující na místní kontejner MongoDB nasazený v eShopOnContainers, který má název `nosql.data` a byl definován v souboru Docker-skládání, jak je znázorněno v následujícím kódu. yml.
 
 ``` yml
 # docker-compose.yml
@@ -312,7 +312,7 @@ services:
     image: mongo
 ```
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Modelování dat dokumentů pro databáze NoSQL** \
   <https://docs.microsoft.com/azure/cosmos-db/modeling-data>

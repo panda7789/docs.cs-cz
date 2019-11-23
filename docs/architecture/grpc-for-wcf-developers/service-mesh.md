@@ -1,14 +1,13 @@
 ---
 title: Sítě – gRPC pro vývojáře WCF
 description: Použití sítě k směrování a vyrovnání požadavků na služby gRPC Services v clusteru Kubernetes.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6bdfa57ba47ba0105092d1c140705599b7023c78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d20275082973f30bddbb342da90454401d4f019b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73090177"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966971"
 ---
 # <a name="service-meshes"></a>Sítě – sítě
 
@@ -17,8 +16,8 @@ Síť je součást infrastruktury, která přebírá řízení žádostí o slu�
 - Zjišťování služby
 - Vyrovnávání zatížení
 - Odolnost proti chybám
-- Šifr
-- Sledovaný
+- Šifrování
+- Monitorování
 
 Sítě Kubernetes fungují přidáním dalšího kontejneru, který se označuje jako *proxy vozíku*, do každého pod tím, co je zahrnuto do sítě. Proxy přebírá všechny příchozí a odchozí síťové požadavky, což umožňuje, aby konfigurace a Správa síťových aspektů byly oddělené od kontejnerů aplikací a v mnoha případech bez nutnosti provádět změny kódu aplikace.
 

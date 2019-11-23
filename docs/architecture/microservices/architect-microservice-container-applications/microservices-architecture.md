@@ -41,22 +41,23 @@ V následujícím seznamu jsou důležité aspekty, jak umožnit v přechodu do 
 
 Z těchto kroků se v této příručce vztahují nebo zavádějí jenom první tři. Poslední dva body, které se vztahují k životnímu cyklu aplikace, jsou pokryty dodatečným [životním cyklem aplikace Docker s využitím Microsoft Platform a nástrojů](https://aka.ms/dockerlifecycleebook) .
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Označte Russinovich. Mikroslužby: aplikace s otáčkami, které využívají cloud** \
+- **Označte Russinovich. Mikroslužby: aplikace s revoluce, kterou Cloud \ využívá**
   <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
-- **Martin Fowlera. Mikroslužby** \
+- **Martin Fowlera. \ mikroslužeb**
   <https://www.martinfowler.com/articles/microservices.html>
 
-- **Martin Fowlera. Požadavky na mikroslužbu** \
+- **Martin Fowlera. Předpoklady pro mikroslužby** \
   <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
-- **Jimmy Nilsson. Cloud computingu bloků dat** \
+- **Jimmy Nilsson. \ cloud computingu bloků dat**
   <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
 - **Cesar de la Torre. Kontejnerový životní cyklus aplikace Docker s platformou a nástroji Microsoftu** (elektronická kniha ke stažení) \
   <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]
->[Předchozí](service-oriented-architecture.md)@no__t – 1 –[Další](data-sovereignty-per-microservice.md)
+>[Předchozí](service-oriented-architecture.md)
+>[Další](data-sovereignty-per-microservice.md)

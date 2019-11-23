@@ -60,7 +60,7 @@ public static bool ProcessPayment([ActivityTrigger] DurableActivityContext conte
 
 V některých případech mohou pracovní postupy obsahovat aktivity, které mohou trvat poměrně dlouhou dobu. Představte si proces, který zahájí zálohování mediálních souborů do úložiště objektů BLOB. V závislosti na velikosti a množství mediálních souborů může tento proces zálohování trvat i hodiny.
 
-V tomto scénáři se můžete podívat na `DurableOrchestrationClient` možnost kontrolovat stav spuštěného pracovního postupu. Při použití `HttpTrigger` ke spuštění pracovního postupu lze metodu `CreateCheckStatusResponse` použít k vrácení instance `HttpResponseMessage`. Tato odpověď poskytuje klientovi identifikátor URI v datové části, který lze použít ke kontrole stavu spuštěného procesu.
+V tomto scénáři se můžete podívat na `DurableOrchestrationClient`možnost kontrolovat stav spuštěného pracovního postupu. Při použití `HttpTrigger` ke spuštění pracovního postupu lze metodu `CreateCheckStatusResponse` použít k vrácení instance `HttpResponseMessage`. Tato odpověď poskytuje klientovi identifikátor URI v datové části, který lze použít ke kontrole stavu spuštěného procesu.
 
 ```csharp
 [FunctionName("OrderWorkflow")]
@@ -103,7 +103,7 @@ Pomocí preferovaného klienta HTTP se dá k identifikátoru URI v statusQueryGe
 
 Jak proces pokračuje, změní se odpověď na stav buď na **neúspěšnou** , nebo na **dokončeno**. Po úspěšném dokončení bude vlastnost **Output** v datové části obsahovat všechna vrácená data.
 
-## <a name="monitoring"></a>sledovaný
+## <a name="monitoring"></a>Monitorování
 
 V případě jednoduchých opakujících se úloh Azure Functions poskytuje `TimerTrigger`, která se dají naplánovat na základě výrazu CRON. Časovač funguje dobře pro jednoduché krátkodobé úlohy, ale může se jednat o scénáře, kde je potřeba pružnější plánování. Tento scénář je, když vám může pomáhat model monitorování a Durable Functions.
 
@@ -149,7 +149,7 @@ public static async Task CheckStockPrice([OrchestrationTrigger] DurableOrchestra
 }
 ```
 
-Metoda `CreateTimer` `DurableOrchestrationContext` nastaví plán pro další vyvolání smyčky, aby kontroloval změny cen akcií. `DurableOrchestrationContext` má také vlastnost `CurrentUtcDateTime` k získání aktuální hodnoty DateTime ve standardu UTC. Je lepší použít tuto vlastnost místo `DateTime.UtcNow`, protože je snadno napodobná pro testování.
+Metoda `CreateTimer` `DurableOrchestrationContext`nastaví plán pro další vyvolání smyčky, aby kontroloval změny cen akcií. `DurableOrchestrationContext` má také vlastnost `CurrentUtcDateTime` k získání aktuální hodnoty DateTime ve standardu UTC. Je lepší použít tuto vlastnost místo `DateTime.UtcNow`, protože je snadno napodobná pro testování.
 
 ## <a name="recommended-resources"></a>Doporučené prostředky
 

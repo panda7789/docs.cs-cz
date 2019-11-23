@@ -28,7 +28,7 @@ FUNCTION function-name
         }   
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `function-name`  
  Název funkce  
   
@@ -36,18 +36,18 @@ FUNCTION function-name
  Název parametru ve funkci.  
   
  `function_expression`  
- Platný výraz Entity SQL, který je funkcí. Příkaz ve funkci může působit na parametry `parameter_name` předané do funkce.  
+ Platný výraz Entity SQL, který je funkcí. Příkaz ve funkci může působit na `parameter_name` parametrů předaných funkci.  
   
  `data_type`  
  Název podporovaného typu.  
   
- KOLEKCE (< type_definition @ no__t-0)  
+ KOLEKCE (< type_definition`>`)  
  Výraz, který vrací kolekci podporovaných typů, řádků nebo odkazů.  
   
  REF **(** `data_type` **)**  
  Výraz, který vrací odkaz na typ entity.  
   
- ŘÁDEK **(** `row_expression` **)**  
+ ROW **(** `row_expression` **)**  
  Výraz, který vrací anonymní, strukturální záznamy typu z jedné nebo více hodnot. Další informace najdete v části [řádek](row-entity-sql.md).  
   
 ## <a name="remarks"></a>Poznámky  
@@ -71,7 +71,7 @@ FUNCTION function-name
  [!code-sql[DP EntityServices Concepts#FUNCTION1](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function1)]  
   
 ## <a name="example"></a>Příklad  
- Následující Entity SQL příkaz definuje funkci `StringReturnsCollection`, která přebírá kolekce řetězců k filtrování vrácených kontaktů.  
+ Následující Entity SQL příkaz definuje funkci `StringReturnsCollection`, která přebírá kolekci řetězců k filtrování vrácených kontaktů.  
   
  [!code-sql[DP EntityServices Concepts#FUNCTION2](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function2)]  
   

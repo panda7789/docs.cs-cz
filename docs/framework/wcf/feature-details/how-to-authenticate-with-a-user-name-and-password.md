@@ -21,7 +21,7 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
 
 ## <a name="to-configure-a-wcf-service-to-authenticate-using-windows-domain-username-and-password"></a>Konfigurace služby WCF pro ověřování pomocí uživatelského jména a hesla v doméně Windows
 
-1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding>, nastavte režim zabezpečení vazby na <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, nastavte `ClientCredentialType` vazby na <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType> a přidejte koncový bod služby s použitím nakonfigurované vazby na hostitele služby, jak je znázorněno v následujícím kódu. :
+1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding>, nastavte režim zabezpečení vazby na <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, nastavte `ClientCredentialType` vazby na <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>a přidejte koncový bod služby s použitím nakonfigurované vazby na hostitele služby, jak je znázorněno v následujícím kódu:
 
     ```csharp
     // ...
@@ -93,4 +93,4 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
 - <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A>
 - [Zabezpečení přenosu pomocí základního ověřování](transport-security-with-basic-authentication.md)
 - [Zabezpečení distribuované aplikace](distributed-application-security.md)
-- [@no__t – 1wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md)
+- [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md)

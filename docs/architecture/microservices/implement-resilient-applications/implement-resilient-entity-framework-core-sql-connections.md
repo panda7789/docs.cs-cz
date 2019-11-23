@@ -49,7 +49,7 @@ Pokud se pokusíte provést tuto transakci při použití strategie provádění
 
 > System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
 
-Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Například následující kód ukazuje, jak je implementován v eShopOnContainers pomocí dvou více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a následném uložení ProductPriceChangedIntegrationEvent objekt, který potřebuje použít jiný DbContext.
+Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Například následující kód ukazuje, jak je implementován v eShopOnContainers pomocí dvou více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a následném uložení objektu ProductPriceChangedIntegrationEvent, který potřebuje použít jiný DbContext.
 
 ```csharp
 public async Task<IActionResult> UpdateProduct(
@@ -144,7 +144,7 @@ public class ResilientTransaction
 }
 ```
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Odolnost připojení a zachycení příkazů pomocí EF v aplikaci ASP.NET MVC** \
   [https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)

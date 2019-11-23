@@ -16,13 +16,13 @@ ms.locfileid: "72321176"
 ---
 # <a name="xml-comment-exception-must-have-a-cref-attribute"></a>Výjimka komentáře XML musí mít atribut 'cref'.
 
-Značka > \<exception poskytuje způsob, jak zdokumentovat výjimky, které mohou být vyvolány metodou. Požadovaný atribut `cref` určuje název členu, který je kontrolován generátorem dokumentace. Pokud člen existuje, je přeložen na kanonický název elementu v souboru dokumentace.
+Značka > \<výjimka poskytuje způsob, jak zdokumentovat výjimky, které mohou být vyvolány metodou. Požadovaný atribut `cref` Určuje název členu, který je kontrolován generátorem dokumentace. Pokud člen existuje, je přeložen na kanonický název elementu v souboru dokumentace.
 
 **ID chyby:** BC42319
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-Přidejte atribut `cref` pro výjimku následujícím způsobem:
+Přidejte atribut `cref` k výjimce následujícím způsobem:
 
 ```xml
 <exception cref="member">description</exception>
@@ -30,6 +30,6 @@ Přidejte atribut `cref` pro výjimku následujícím způsobem:
 
 ## <a name="see-also"></a>Viz také:
 
-- [@no__t – 1exception >](../../../visual-basic/language-reference/xmldoc/exception.md)
+- [\<exception>](../../../visual-basic/language-reference/xmldoc/exception.md)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

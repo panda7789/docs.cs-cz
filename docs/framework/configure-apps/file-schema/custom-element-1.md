@@ -20,7 +20,7 @@ ms.locfileid: "73118839"
 Definuje nastavení v oddílu vlastní konfigurace, která je definována \<sekcí > element a používá třídu <xref:System.Configuration.SingleTagSectionHandler>.
 
 [**konfigurační >\<** ](configuration-element.md)   
-&nbsp;&nbsp; *\<sectiongroup >*
+&nbsp;&nbsp; *\<sectionName>*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,7 +36,7 @@ Atributy a hodnoty atributů jsou definované uživatelem.
 
 |     | Popis |
 | --- | ----------- |
-| [**Konfigurace \<** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**Konfigurace \<>** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -44,7 +44,7 @@ Atributy a hodnoty atributů jsou definované uživatelem.
 
 ## <a name="remarks"></a>Poznámky
 
-Element **\<** je vlastní element definovaný [ **\<oddílem >** ](section-element.md) značky v\<m prvku [ **> configSections**](configsections-element-for-configuration.md) . Konfigurační systém vrátí objekt <xref:System.Collections.IDictionary> při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
+Element **\<>** je vlastní element definovaný [ **\<oddílem >** ](section-element.md) značky v\<m prvku [ **> configSections**](configsections-element-for-configuration.md) . Konfigurační systém vrátí objekt <xref:System.Collections.IDictionary> při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 

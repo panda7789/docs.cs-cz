@@ -137,7 +137,7 @@ public interface IRepository<T> where T : IAggregateRoot
 }
 ```
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Martin Fowlera. Rozhraní oddělené.** \
   <https://www.martinfowler.com/eaaCatalog/separatedInterface.html>

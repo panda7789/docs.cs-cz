@@ -49,7 +49,7 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
 ## <a name="target-environment"></a>Cílové prostředí  
  Při implementaci metody TAP můžete určit, kde dochází k asynchronnímu spouštění. Úlohy můžete spouštět ve fondu vláken, implementovat je pomocí asynchronního I/O (bez vázání na vlákno pro většinu spuštění operace), spustit je na konkrétním vlákně (například vlákně UI) nebo použít libovolný počet potenciálních kontextů. Metoda klepnutí může dokonce mít nic ke spuštění a může vrátit <xref:System.Threading.Tasks.Task>, která představuje výskyt podmínky jinde v systému (například úkol, který představuje data přicházející do struktury dat zařazené do fronty).
  
- Volající metody klepnutí může blokovat čekání na provedení metody klepnutí synchronním čekáním na výsledný úkol nebo může spustit další (pokračování) kód po dokončení asynchronní operace. Tvůrce kódu pokračování má kontrolu nad tím, kde se spustí kód. Kód pro pokračování můžete vytvořit buď explicitně, prostřednictvím metod <xref:System.Threading.Tasks.Task> třídy (například <xref:System.Threading.Tasks.Task.ContinueWith%2A>) nebo implicitně pomocí jazykové podpory založené na pokračováních (například `await` v C#`Await` Visual Basic @no__t _5_ v F#).  
+ Volající metody klepnutí může blokovat čekání na provedení metody klepnutí synchronním čekáním na výsledný úkol nebo může spustit další (pokračování) kód po dokončení asynchronní operace. Tvůrce kódu pokračování má kontrolu nad tím, kde se spustí kód. Kód pro pokračování můžete vytvořit buď explicitně, prostřednictvím metod <xref:System.Threading.Tasks.Task> třídy (například <xref:System.Threading.Tasks.Task.ContinueWith%2A>) nebo implicitně pomocí jazykové podpory založené na pokračováních (například `await` v C#`Await` Visual Basic `AwaitValue` v F#).  
   
 ## <a name="task-status"></a>Stav úlohy  
  Třída <xref:System.Threading.Tasks.Task> poskytuje životní cyklus pro asynchronní operace a tento cyklus je reprezentován výčtem <xref:System.Threading.Tasks.TaskStatus>. Pro podporu rohových případů typů, které jsou odvozeny z <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601>a pro podporu oddělení konstrukce od plánování, třída <xref:System.Threading.Tasks.Task> zpřístupňuje metodu <xref:System.Threading.Tasks.Task.Start%2A>. Úlohy, které jsou vytvořeny pomocí veřejných <xref:System.Threading.Tasks.Task> konstruktory, jsou označovány jako *studené úlohy*, protože začínají jejich životní cyklus v neplánovaném <xref:System.Threading.Tasks.TaskStatus.Created> stavu a jsou plánovány pouze v případě, že je na těchto instancích volána <xref:System.Threading.Tasks.Task.Start%2A>. 
@@ -185,9 +185,9 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
  Pokud očekáváte, že každé použití metody TAP bude podporovat zrušení nebo průběh, můžete vynechat přetížení, které nepřijímá odpovídající parametr.  
   
- Pokud se rozhodnete vystavit více přetížení, aby bylo zrušení nebo průběh volitelné, přetížení, která nepodporují zrušení nebo průběh, by se měla chovat, jako by předala <xref:System.Threading.CancellationToken.None%2A> pro zrušení nebo `null` pro průběh přetížení, které podporuje jsou.  
+ Pokud se rozhodnete vystavit více přetížení, aby bylo zrušení nebo průběh volitelné, přetížení, která nepodporují zrušení nebo průběh, by se měla chovat, jako by byla předána <xref:System.Threading.CancellationToken.None%2A> pro zrušení nebo `null` pro průběh přetížení, který je podporuje.  
   
-## <a name="related-topics"></a>Související témata  
+## <a name="related-topics"></a>Příbuzná témata  
   
 |Název|Popis|  
 |-----------|-----------------|  

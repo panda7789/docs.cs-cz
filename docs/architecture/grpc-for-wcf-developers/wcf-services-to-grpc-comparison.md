@@ -1,14 +1,13 @@
 ---
 title: Porovnání WCF s gRPC-gRPC pro vývojáře WCF
 description: Porovnání rozhraní WCF a gRPC pro vytváření distribuovaných aplikací.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 5ab1380d4ded52abff08c35c430adf2f3ed7c58b
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 312492dcce4bdef61feff0bf924c6df287b9c676
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846068"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966956"
 ---
 # <a name="comparing-wcf-to-grpc"></a>Porovnávání WCF s gRPC
 

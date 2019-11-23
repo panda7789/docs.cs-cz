@@ -20,5 +20,5 @@ Pro návrh a nasazení aplikace založené na mikroslužbách je to dost nároč
 Mnohé jednotlivé komponenty vaší aplikace by měly také zahrnovat funkce monitorování stavu. Podle pokynů v této kapitole můžete vytvořit aplikaci, která může hladce fungovat navzdory přechodnému výpadku nebo normálním hiccups, ke kterým dochází ve složitých i cloudových nasazeních.
 
 >[!div class="step-by-step"]
->[Předchozí](../microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md)Další
->[](handle-partial-failure.md)
+>[Předchozí](../microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md)
+>[Další](handle-partial-failure.md)

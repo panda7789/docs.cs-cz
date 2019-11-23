@@ -58,7 +58,7 @@ Podrobnější porovnání najdete v tématu [porovnání služeb zasílání zp
 Pomocí Event Grid můžete využít výhod následujících záruk výkonu:
 
 - Koncová druhá sekunda v 99 percentilu.
-- 99,99% dostupnost.
+- 99,99 % dostupnost.
 - 10 000 000 událostí za sekundu na oblast
 - 100 000 000 předplatných na oblast
 - 50 – latence MS Publisher
@@ -95,18 +95,18 @@ Hlavní výhodou použití Event Grid jsou automatické zprávy vytvořené v Az
 | Předplatné Azure | Microsoft. Resources. ResourceWriteSuccess | Vyvolá se, když je operace vytvoření nebo aktualizace prostředku úspěšná. |
 | | Microsoft. Resources. ResourceWriteFailure | Vyvolá se v případě, že dojde k chybě operace vytvoření nebo aktualizace prostředku. |
 | | Microsoft. Resources. ResourceWriteCancel | Vyvolá se při zrušení operace vytvoření nebo aktualizace prostředku. |
-|  | Microsoft. Resources. ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
+|  | Microsoft.Resources.ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
 |  | Microsoft. Resources. ResourceDeleteFailure | Vyvolá se v případě, že dojde k chybě operace odstranění prostředku. |
 | | Microsoft. Resources. ResourceDeleteCancel | Vyvolá se při zrušení operace odstranění prostředku. Tato událost nastane, když se zruší nasazení šablony. |
-| Blob Storage | Microsoft. Storage. BlobCreated | Vyvolá se při vytvoření objektu BLOB. |
-| | Microsoft. Storage. BlobDeleted | Vyvolá se při odstranění objektu BLOB. |
-| Centra událostí | Microsoft. EventHub. CaptureFileCreated | Je aktivována při vytvoření sběrného souboru.
-| IoT Hub | Microsoft. Devices. DeviceCreated | Publikováno, když je zařízení zaregistrované do služby IoT Hub. |
-| | Microsoft. Devices. DeviceDeleted | Publikováno při odstranění zařízení ze služby IoT Hub. |
+| Blob Storage | Microsoft.Storage.BlobCreated | Vyvolá se při vytvoření objektu BLOB. |
+| | Microsoft.Storage.BlobDeleted | Vyvolá se při odstranění objektu BLOB. |
+| Event Hubs | Microsoft.EventHub.CaptureFileCreated | Je aktivována při vytvoření sběrného souboru.
+| IoT Hub | Microsoft.Devices.DeviceCreated | Publikováno, když je zařízení zaregistrované do služby IoT Hub. |
+| | Microsoft.Devices.DeviceDeleted | Publikováno při odstranění zařízení ze služby IoT Hub. |
 | Skupiny prostředků | Microsoft. Resources. ResourceWriteSuccess | Vyvolá se, když je operace vytvoření nebo aktualizace prostředku úspěšná. |
 | | Microsoft. Resources. ResourceWriteFailure | Vyvolá se v případě, že dojde k chybě operace vytvoření nebo aktualizace prostředku. |
 | | Microsoft. Resources. ResourceWriteCancel | Vyvolá se při zrušení operace vytvoření nebo aktualizace prostředku. |
-| | Microsoft. Resources. ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
+| | Microsoft.Resources.ResourceDeleteSuccess | Vyvolá se, když je operace odstranění prostředku úspěšná. |
 | | Microsoft. Resources. ResourceDeleteFailure | Vyvolá se v případě, že dojde k chybě operace odstranění prostředku. |
 | | Microsoft. Resources. ResourceDeleteCancel | Vyvolá se při zrušení operace odstranění prostředku. Tato událost nastane, když se zruší nasazení šablony. |
 
@@ -126,12 +126,12 @@ V této kapitole jste se dozvěděli o platformě bez serveru Azure, která se s
 - [Azure: přeneste svou aplikaci do cloudu pomocí Azure Functions bez serveru](https://channel9.msdn.com/events/Connect/2017/E102)
 - [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
 - [Azure Event Grid schéma událostí](https://docs.microsoft.com/azure/event-grid/event-schema)
-- [Event Hubs Azure](https://docs.microsoft.com/azure/event-hubs)
+- [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs)
 - [Dokumentace k Azure Functions](https://docs.microsoft.com/azure/azure-functions)
 - [Azure Functions triggery a koncepty vazeb](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)
 - [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
 - [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
-- [Table Storage Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
+- [Azure Table Storage](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
 - [Porovnání funkcí 1. x a 2. x](https://docs.microsoft.com/azure/azure-functions/functions-versions)
 - [Připojení k místním zdrojům dat s místní bránou dat Azure](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
 - [Vytvoření první funkce v Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)

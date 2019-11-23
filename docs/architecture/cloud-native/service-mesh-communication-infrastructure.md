@@ -52,7 +52,7 @@ Speciální důraz byl na spravované služby Azure, které můžou přispět k 
 
 Dál jsme přešli na distribuovaná data v systémech nativních pro Cloud a na výhody a výzvy, které prezentují.
 
-### <a name="references"></a>Odkazy
+### <a name="references"></a>Reference
 
 - [Mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 

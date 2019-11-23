@@ -20,12 +20,12 @@ MULTISET ( expression [{, expression }] )
 { expression [{, expression }] }  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `expression`  
  Libovolný platný seznam hodnot.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Kolekce typu MULTISET @ no__t-0T >.  
+ Kolekce typu MULTISET\<T >.  
   
 ## <a name="remarks"></a>Poznámky  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje tři druhy konstruktorů: konstruktory řádků, konstruktory objektů a konstruktory multiset (nebo Collection). Další informace naleznete v tématu [sestavování typů](constructing-types-entity-sql.md).  

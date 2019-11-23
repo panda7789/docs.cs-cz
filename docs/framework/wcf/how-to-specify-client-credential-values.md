@@ -22,9 +22,9 @@ Pomocí Windows Communication Foundation (WCF) může služba určit, jak bude k
 
 2. Otevřete konfigurační soubor XML. Použijete-li nástroj Svcutil. exe, výchozí název souboru je Output. config.
 
-3. Vyhledejte **> prvek \<security** s atributem **Mode** ( **\<security mode =** `MessageOrTransport` **>** , kde `MessageOrTransport` je nastaveno na jeden z režimů zabezpečení.
+3. Vyhledejte prvek **> zabezpečení\<** s atributem **Mode** ( **\<Security Mode =** `MessageOrTransport` **>** , kde `MessageOrTransport` je nastaven na jeden z režimů zabezpečení.
 
-4. Najděte podřízený element, který odpovídá hodnotě Mode. Například pokud je režim nastaven na **zprávy**, vyhledejte **> prvek \<message** obsažený v elementu **> \<security** .
+4. Najděte podřízený element, který odpovídá hodnotě Mode. Například pokud je režim nastaven na **zprávy**, najděte **\<>** prvek obsažený v elementu **\<zabezpečení >** .
 
 5. Poznamenejte si hodnotu přiřazenou atributu **ClientCredentialType** . Skutečná hodnota závisí na použitém režimu, přenosu nebo zprávě.
 
@@ -58,13 +58,13 @@ Tento příklad nastaví režim zabezpečení na transportní režim a nastaví 
 
 ### <a name="to-specify-the-client-credential-value-on-the-client-in-configuration"></a>Určení hodnoty přihlašovacích údajů klienta v konfiguraci klienta
 
-1. Přidejte prvek [\<behavior >](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) do prvku [> \<behaviors](../configure-apps/file-schema/wcf/behaviors.md) .
+1. Přidejte [\<chování >](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) elementu do [\<chování >](../configure-apps/file-schema/wcf/behaviors.md) elementu.
 
-2. Přidejte prvek [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) do prvku [> \<behaviors](../configure-apps/file-schema/wcf/behaviors.md) . Nezapomeňte nastavit požadovaný atribut `name` na odpovídající hodnotu.
+2. Přidejte [\<prvek > ClientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) do [\<chování >](../configure-apps/file-schema/wcf/behaviors.md) elementu. Nezapomeňte nastavit atribut Required `name` na odpovídající hodnotu.
 
-3. Přidejte prvek [\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) do prvku [> \<clientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) .
+3. Do [\<> prvku ClientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) přidejte [\<> elementu ClientCertificate](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) .
 
-4. Nastavte následující atributy na příslušné hodnoty: `storeLocation`, `storeName`, `x509FindType` a `findValue`, jak je znázorněno v následujícím kódu. Další informace o certifikátech najdete v tématu [práce s certifikáty](./feature-details/working-with-certificates.md).
+4. Nastavte následující atributy na příslušné hodnoty: `storeLocation`, `storeName`, `x509FindType`a `findValue`, jak je znázorněno v následujícím kódu. Další informace o certifikátech najdete v tématu [práce s certifikáty](./feature-details/working-with-certificates.md).
 
     ```xml
     <behaviors>
@@ -81,7 +81,7 @@ Tento příklad nastaví režim zabezpečení na transportní režim a nastaví 
     </behaviors>
     ```
 
-5. Při konfiguraci klienta Určete chování nastavením atributu `behaviorConfiguration` prvku `<endpoint>`, jak je znázorněno v následujícím kódu. Element Endpoint je podřízeným prvkem prvku [\<client >](../configure-apps/file-schema/wcf/client.md) . Také zadejte název konfigurace vazby nastavením atributu `bindingConfiguration` na vazbu pro klienta. Pokud používáte generovaný konfigurační soubor, automaticky se vygeneruje název vazby. V tomto příkladu je název `"tcpBindingWithCredential"`.
+5. Při konfiguraci klienta Určete chování nastavením atributu `behaviorConfiguration` `<endpoint>` elementu, jak je znázorněno v následujícím kódu. Element Endpoint je podřízeným prvkem [\<> elementu klienta](../configure-apps/file-schema/wcf/client.md) . Také zadejte název konfigurace vazby nastavením atributu `bindingConfiguration` na vazbu pro klienta. Pokud používáte generovaný konfigurační soubor, automaticky se vygeneruje název vazby. V tomto příkladu je název `"tcpBindingWithCredential"`.
 
     ```xml
     <client>
@@ -105,10 +105,10 @@ Tento příklad nastaví režim zabezpečení na transportní režim a nastaví 
 - [Nástroj metadat modelu služby (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Práce s certifikáty](./feature-details/working-with-certificates.md)
 - [Postupy: Vytvoření klienta](how-to-create-a-wcf-client.md)
-- [@no__t – 1netTcpBinding >](../configure-apps/file-schema/wcf/nettcpbinding.md)
-- [@no__t – 1security >](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
-- [@no__t – 1message >](../configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
-- [@no__t – 1behavior >](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
-- [@no__t – 1behaviors >](../configure-apps/file-schema/wcf/behaviors.md)
-- [@no__t – 1clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)
-- [@no__t – 1clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md)
+- [\<netTcpBinding>](../configure-apps/file-schema/wcf/nettcpbinding.md)
+- [> zabezpečení \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [> \<zprávy](../configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
+- [chování \<>](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
+- [chování \<>](../configure-apps/file-schema/wcf/behaviors.md)
+- [\<clientCertificate>](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)
+- [\<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md)

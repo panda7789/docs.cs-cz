@@ -1,14 +1,13 @@
 ---
 title: Typy RPC-gRPC pro vývojáře WCF
 description: Kontrola typů vzdáleného volání procedur podporovaného službou WCF a jejich ekvivalenty v gRPC
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: ce5bf03b01dff3f7bb201ff08c9065abc2e58360
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 64375236da17c0aedbafe1cb441e72a144203358
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846230"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967274"
 ---
 # <a name="types-of-rpc"></a>Typy RPC
 
@@ -62,7 +61,7 @@ Jak vidíte, implementace gRPC unární metody služby RPC je velmi podobná imp
 
 ## <a name="wcf-duplex-one-way-to-client"></a>Obousměrný a jednosměrný klient služby WCF
 
-Aplikace WCF (s určitými vazbami) mohou vytvořit trvalé připojení mezi klientem a serverem a server může asynchronně odeslat data klientovi, dokud nebude připojení ukončeno, pomocí *rozhraní zpětného volání* , které je zadáno v <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> majetek.
+Aplikace WCF (s určitými vazbami) mohou vytvořit trvalé připojení mezi klientem a serverem a server může asynchronně odeslat data klientovi, dokud nebude připojení ukončeno, pomocí *rozhraní zpětného volání* , které je zadáno ve vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>.
 
 služby gRPC Services poskytují podobné funkce jako datové proudy zpráv. Datové proudy se nemapují *přesně* na duplexní služby WCF v souvislosti s implementací, ale je možné dosáhnout stejných výsledků.
 
@@ -126,7 +125,7 @@ Ve službě WCF je třída [ServiceContract](xref:System.ServiceModel.ServiceCon
 
 WCF poskytuje jednosměrné operace (označené `[OperationContract(IsOneWay = true)]`), které vracejí potvrzení specifické pro přenos. metody služby gRPC vždycky vrátí odpověď, i když je prázdná, a klient by měl vždycky očekávat tuto odpověď. Pro zasílání zpráv ve stylu "požár a zapomenuté zprávy" v gRPC můžete vytvořit službu streamování klientů.
 
-### <a name="thing_logproto"></a>thing_log.
+### <a name="thing_logproto"></a>thing_log. proto
 
 ```protobuf
 service ThingLog {

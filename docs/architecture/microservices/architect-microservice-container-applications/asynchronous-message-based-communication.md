@@ -59,7 +59,7 @@ Důležité je, že budete chtít komunikovat s více mikroslužbami, které se 
 
 V asynchronní komunikaci založené na událostech jedna mikroslužba publikuje události do sběrnice událostí a spousta mikroslužeb se může přihlásit k odběru, aby se k ní mohl dostat oznámení a reagovat na ně. Vaše implementace určí, který protokol bude použit pro komunikaci založenou na událostech. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) může pomáhat dosáhnout spolehlivé komunikace ve frontě.
 
-Pokud používáte sběrnici událostí, možná budete chtít použít úroveň abstrakce (například rozhraní sběrnice událostí) založenou na související implementaci ve třídách s kódem pomocí rozhraní API od zprostředkovatele zpráv, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo Service Bus, jako je [Azure Service Bus s tématy. ](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternativně můžete chtít použít vyšší úroveň služby Service Bus, jako je NServiceBus, MassTransit nebo jasnější, aby vyjadřují Vaši sběrnici událostí a systém pro publikování a odběr.
+Při použití sběrnice událostí můžete chtít použít úroveň abstrakce (například rozhraní sběrnice událostí) založenou na související implementaci ve třídách s kódem pomocí rozhraní API od zprostředkovatele zpráv, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo Service Bus, jako je [Azure Service Bus s tématy](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternativně můžete chtít použít vyšší úroveň služby Service Bus, jako je NServiceBus, MassTransit nebo jasnější, aby vyjadřují Vaši sběrnici událostí a systém pro publikování a odběr.
 
 ## <a name="a-note-about-messaging-technologies-for-production-systems"></a>Poznámka o technologiích zasílání zpráv pro produkční systémy
 
@@ -81,15 +81,15 @@ Při implementaci architektury založené na událostech napříč více mikrosl
 
 Další témata, která je potřeba vzít v úvahu při použití asynchronní komunikace, jsou idempotence zprávy a odstranění duplicitních zpráv. Tato témata jsou popsaná v části [implementace komunikace založené na událostech mezi mikroslužby (události integrace)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) dále v této příručce.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Zasílání zpráv řízených událostmi** \
+-  \ **zpráv řízených událostmi**
   <https://soapatterns.org/design_patterns/event_driven_messaging>
 
 -  \ **kanálu pro publikování a odběr**
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **UDI Dahan. Vyjasněné CQRS** \
+- **UDI Dahan. Vyjasněné \ CQRS**
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 - **CQRS (Command and Query Responsibility segregation) (CQRS)**  \
@@ -101,7 +101,7 @@ Další témata, která je potřeba vzít v úvahu při použití asynchronní k
 - Konečné \ **konzistence**
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocení spojovacího** \
+- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocování \ spojovacích zařízení**
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]

@@ -17,15 +17,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697895"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>@no__t – element > 0remove pro BypassList (nastavení sítě)
+# <a name="remove-element-for-bypasslist-network-settings"></a>\<odebrat element > pro BypassList (nastavení sítě)
 
 Odebere IP adresu nebo název DNS ze seznamu obcházení proxy serveru.
 
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<remove >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<BypassList >** ](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -47,7 +47,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené elementy
 
-Žádné
+Žádné.
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
@@ -59,7 +59,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 Element `remove` odstraní regulární výrazy popisující IP adresy nebo názvy serverů DNS ze seznamu adres, které obcházejí proxy server. Adresy byly definovány dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.
 
-Hodnota atributu `address` by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.
+Hodnota atributu `address` musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.
 
 Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).
 

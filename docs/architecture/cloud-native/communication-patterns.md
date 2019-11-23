@@ -44,7 +44,7 @@ I když poskytují spoustu výhod, mikroslužby nejsou bezplatné na oběd. Vol�
 
 - Šifrování a dešifrování zpráv bude důležité.
 
-Mikroslužby [Book .NET: Architektura pro kontejnerové aplikace](https://docs.microsoft.com/dotnet/standard/microservices-architecture/).NET, která je dostupná zdarma od Microsoftu, poskytuje podrobné pokrytí způsobů komunikace pro aplikace mikroslužeb. V této kapitole poskytujeme podrobný přehled těchto vzorů spolu s možnostmi implementace dostupnými v cloudu Azure.
+Mikroslužby Book [.NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/standard/microservices-architecture/), která je dostupná zdarma od Microsoftu, poskytuje podrobné pokrytí způsobů komunikace pro aplikace mikroslužeb. V této kapitole poskytujeme podrobný přehled těchto vzorů spolu s možnostmi implementace dostupnými v cloudu Azure.
 
 V této kapitole budeme řešit komunikaci mezi front-end aplikacemi a back-endové mikroslužbami. Pak se podíváme na back-endové mikroslužby, které navzájem komunikují. Prozkoumáme komunikační technologii gRPC a. Nakonec podíváme se na nové inovativní způsoby komunikace pomocí technologie sítě služby. Ukážeme vám také, jak Cloud Azure poskytuje různé druhy *služeb* , které umožňují podporovat komunikaci v cloudu.
 

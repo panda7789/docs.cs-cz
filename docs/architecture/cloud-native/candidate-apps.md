@@ -3,18 +3,18 @@ title: Kandidátské aplikace pro cloudové nativní
 description: Seznamte se s typy aplikací, které využívají nativní přístup z cloudu.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 127dca45ce8a5e025ca7511e6513afffe64e592d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 328af4081d830cf1a7959a37c2155090ec4da3ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087681"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968299"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Kandidátské aplikace pro cloudové nativní
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Podívejte se na aplikace v portfoliu. Kolik z nich splňuje podmínky pro nativní cloudovou architekturu? Vše z nich? Možná nějaké?
+Podívejte se na aplikace v portfoliu. Kolik z nich splňuje podmínky pro nativní cloudovou architekturu? Všechny? Možná nějaké?
 
 Když použijete analýzu nákladů a přínosů, je velmi pravděpodobné, že nebudete mít k dispozici Hefty cenové značky, která se vyžaduje pro cloudovou nativní podporu. Náklady na cloudový Native by daleko překročily obchodní hodnotu aplikace.
 
@@ -70,7 +70,7 @@ V této kapitole jsme představili výpočetní prostředí pro Cloud. Poskytli 
 
 V úvodu na pozadí jsme teď podrobněi mnohem podrobnější pohled na Cloud Native.
 
-### <a name="references"></a>Odkazy
+### <a name="references"></a>Reference
 
 - [Cloud Native Computing Foundation](https://www.cncf.io/)
 
@@ -89,8 +89,6 @@ V úvodu na pozadí jsme teď podrobněi mnohem podrobnější pohled na Cloud N
 - [Jak Netflix nasazuje kód](https://www.infoq.com/news/2013/06/netflix/)
 
 - [Přetížení ovládacího prvku pro škálování mikroslužeb WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf)
-
-- [Případová studie RayGun](https://raygun.com/case-study/ovation)
 
 >[!div class="step-by-step"]
 >[Předchozí](definition.md)

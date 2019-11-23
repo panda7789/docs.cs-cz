@@ -17,14 +17,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699615"
 ---
-# <a name="add-element-for-bypasslist-network-settings"></a>@no__t – element > 0add pro BypassList (nastavení sítě)
+# <a name="add-element-for-bypasslist-network-settings"></a>\<přidat > element pro BypassList (nastavení sítě)
 Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<add >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<BypassList >** ](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,10 +41,10 @@ Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**adresáře**|Regulární výraz popisující IP adresu nebo název DNS.|  
+|**address**|Regulární výraz popisující IP adresu nebo název DNS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -55,9 +55,9 @@ Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.
 ## <a name="remarks"></a>Poznámky  
  Element `add` vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS na seznam adres, které obcházejí proxy server.  
   
- Hodnota atributu `address` by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
+ Hodnota atributu `address` musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
   
- Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] + @no__t -0.contoso\\.com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] + @no__t -0.contoso\\.com $".  
+ Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] +\\. contoso\\. com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] +\\. contoso\\. com $".  
   
  Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).  
   

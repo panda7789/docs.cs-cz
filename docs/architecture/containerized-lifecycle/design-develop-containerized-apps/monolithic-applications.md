@@ -49,19 +49,19 @@ Můžete nasadit více virtuálních počítačů jako hostitele Docker a spusti
 
 Nasazení hostitelů můžete spravovat pomocí tradičních technik nasazení.
 
-Kontejnery Docker můžete spravovat z příkazového řádku pomocí příkazů jako `docker run` a `docker-compose up` a můžete je také automatizovat v kanálech pro průběžné doručování (CD) a nasazovat je do hostitelů Docker z Azure DevOps Services.
+Kontejnery Docker můžete spravovat z příkazového řádku pomocí příkazů, jako jsou `docker run` a `docker-compose up`, a můžete je také automatizovat v kanálech pro průběžné doručování (CD) a nasazovat je do hostitelů Docker z Azure DevOps Services.
 
 ## <a name="monolithic-application-deployed-as-a-container"></a>Aplikace monolitické nasazená jako kontejner
 
 Existují výhody použití kontejnerů ke správě nasazení monolitické. Škálování instancí kontejnerů je mnohem rychlejší a jednodušší než nasazení dalších virtuálních počítačů.
 
-Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Kontejnery Docker obvykle začínají během sekund a urychlují uvádění. Vysunutí kontejneru Docker je stejně snadné jako vyvolání příkazu `docker stop`, obvykle se dokončuje za méně než sekundu.
+Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Kontejnery Docker obvykle začínají během sekund a urychlují uvádění. Odložení kontejneru Docker je stejně snadné jako vyvolání příkazu `docker stop`, obvykle dokončení za méně než sekundy.
 
 Vzhledem k tomu, že kontejnery jsou z vlastního podstaty neměnné, nemusíte se o poškozených virtuálních počítačích starat, protože se pro určitou konkrétní konfiguraci nebo soubory, které jsou ponechány na disku, zazapomněl skript pro aktualizaci
 
 I když aplikace monolitické můžou využívat Docker, zajímáme jenom tipy k výhodám. Větší výhody správy kontejnerů přináší nasazení s orchestrací kontejnerů, které spravují různé instance a životní cyklus každé instance kontejneru. Rozdělení aplikace monolitické do subsystémů, které je možné škálovat, vyvíjet a nasadit samostatně, je vstupním bodem ve sféře mikroslužeb.
 
-Další informace o tom, jak namonolitické aplikace pomocí kontejnerů a jak modernizovat vaše aplikace, si můžete přečíst v této další příručce k Microsoftu, [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](../../modernize-with-azure-containers/index.md). které můžete také stáhnout jako PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Další informace o tom, jak namonolitické aplikace pomocí kontejnerů a jak modernizovat vaše aplikace, si můžete přečíst v této další příručce k Microsoftu, [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](../../modernize-with-azure-containers/index.md), které můžete také stáhnout jako PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
 
 ## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publikování jedné aplikace kontejneru Docker pro Azure App Service
 

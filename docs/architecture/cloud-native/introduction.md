@@ -38,9 +38,9 @@ Blahopřejeme!  Právě jste vytvořili aplikaci monolitické.
 
 Ne vše je chybné. Monolitů nabízí několik různých výhod. Například jsou jednoduché...
 
-- sestavení
+- Sestavení
 - test
-- Nasazení
+- nasazení
 - Poradce
 - měřítko
 

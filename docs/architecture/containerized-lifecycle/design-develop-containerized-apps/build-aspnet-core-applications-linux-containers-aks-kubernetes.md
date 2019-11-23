@@ -33,7 +33,7 @@ V tomto příkladu se používá jednoduchý projekt založený na šabloně web
 
 **Obrázek 4-36**. Vytváření ASP.NET Core aplikace
 
-Chcete-li vytvořit ukázkový projekt v aplikaci Visual Studio, vyberte **soubor** > **Nový** > **projekt**, v levém podokně vyberte typy **webových** projektů a potom **ASP.NET Core webové aplikace**.
+Chcete-li vytvořit ukázkový projekt v aplikaci Visual Studio, vyberte **soubor** > **Nový** > **projekt**, v levém podokně vyberte typy **webových** projektů a **ASP.NET Core webové aplikace**.
 
 Visual Studio obsahuje šablony pro webové projekty. V našem příkladu vyberte **rozhraní API** a vytvořte aplikaci webového rozhraní api pro ASP.NET.
 
@@ -43,11 +43,11 @@ Ověřte, že jste vybrali ASP.NET Core 2,2 jako rozhraní. .NET Core 2,2 je sou
 
 **Obrázek 4-37**. Výběr typu projektu ASP.NET CORE 2,2 a webového rozhraní API
 
-Pokud máte předchozí verzi rozhraní .NET Core, můžete si stáhnout a nainstalovat verzi 2,2 z <https://dotnet.microsoft.com/download>.
+Pokud máte předchozí verzi .NET Core, můžete si stáhnout a nainstalovat verzi 2,2 z <https://dotnet.microsoft.com/download>.
 
-Můžete přidat podporu Docker při vytváření projektu nebo následně, abyste mohli projekt kdykoli "ukotvovat". Chcete-li přidat podporu Docker po vytvoření projektu, klikněte pravým tlačítkem myši na uzel projektu v Průzkumník řešení a v místní nabídce vyberte **Přidat** > **podporu Docker** .
+Můžete přidat podporu Docker při vytváření projektu nebo následně, abyste mohli projekt kdykoli "ukotvovat". Chcete-li přidat podporu Docker po vytvoření projektu, klikněte pravým tlačítkem myši na uzel projektu v Průzkumník řešení a v místní nabídce vyberte **Přidat** **podporu > Docker** .
 
-![Možnost místní nabídky pro přidání podpory Docker do existujícího projektu: Klikněte pravým tlačítkem (na projekt) > přidat podporu pro > Docker.](media/add-docker-support-to-project.png)
+![Možnost místní nabídky pro přidání podpory Docker do existujícího projektu: klikněte pravým tlačítkem (na projekt) > přidat podporu > Docker.](media/add-docker-support-to-project.png)
 
 **Obrázek 4-38**. Přidání podpory Docker do existujícího projektu
 
@@ -63,13 +63,13 @@ Jak vidíte, integrace mezi Visual Studio 2017 a Docker je zcela zaměřená na 
 
 Nyní můžete spustit aplikaci pomocí klávesy **F5** nebo pomocí tlačítka **Přehrát** .
 
-Po spuštění projektu můžete zobrazit seznam imagí pomocí `docker images` příkazu. Měli byste vidět `mssampleapplication` image vytvořenou automatickým nasazením našeho projektu pomocí sady Visual Studio 2017.
+Po spuštění projektu můžete zobrazit seznam imagí pomocí příkazu `docker images`. Měli byste vidět `mssampleapplication` image vytvořenou automatickým nasazením našeho projektu pomocí sady Visual Studio 2017.
 
 ```console
 docker images
 ```
 
-![Výstup konzoly z příkazu Docker images zobrazuje seznam s: Úložiště, značka, ID obrázku, Vytvořeno (datum) a velikost.](media/docker-images-command.png)
+![Výstup konzoly z příkazu Docker images zobrazuje seznam s: úložiště, značka, ID obrázku, Vytvořeno (datum) a velikost.](media/docker-images-command.png)
 
 **Obrázek 4-40**. Zobrazení imagí Docker
 
@@ -85,13 +85,13 @@ Nyní vytvoříme bitovou kopii v režimu **vydání** (připraveno pro produkč
 
 **Obrázek 4-41**. Výběr režimu vydání
 
-Pokud příkaz provedete, zobrazí se oba vytvořené bitové kopie, jeden pro `debug` a druhý pro `release` režim. `docker image`
+Pokud spustíte příkaz `docker image`, zobrazí se oba vytvořené bitové kopie, jeden pro `debug` a druhý pro `release` režim.
 
 ### <a name="create-a-new-tag-for-the-image"></a>Vytvořit novou značku pro obrázek
 
-Každá image kontejneru musí být označena `loginServer` názvem registru. Tato značka se používá pro směrování při vkládání imagí kontejneru do registru imagí.
+Každá image kontejneru musí být označena názvem `loginServer` registru. Tato značka se používá pro směrování při vkládání imagí kontejneru do registru imagí.
 
-`loginServer` Název můžete zobrazit z Azure Portal a přebírat informace z Azure Container Registry
+Název `loginServer` můžete zobrazit z Azure Portal a přebírat informace z Azure Container Registry
 
 ![V prohlížeči se zobrazí název služby Azure Container Registry v pravém horním rohu.](media/loginServer-name.png)
 
@@ -115,7 +115,7 @@ Nyní můžete označit Image pomocí nejnovější bitové kopie (obrázek verz
 docker tag mssampleaksapplication:latest mssampleacr.azurecr.io/mssampleaksapplication:v1
 ```
 
-Po spuštění `docker tag` příkazu vypište obrázky `docker images` pomocí příkazu a měli byste vidět obrázek s novou značkou.
+Po spuštění příkazu `docker tag` zobrazte seznam imagí pomocí příkazu `docker images` a měli byste vidět obrázek s novou značkou.
 
 ![Výstup konzoly z příkazu Docker images](media/tagged-docker-images-list.png)
 
@@ -182,7 +182,7 @@ spec:
 ```
 
 > [!NOTE]
-> Další informace o nasazení pomocí Kubernetes najdete v tématech:<https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
+> Další informace o nasazení pomocí Kubernetes najdete v tématu: <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
 
 Teď jste skoro připraveni nasadit pomocí **Kubectl**, ale nejdřív musíte získat přihlašovací údaje do clusteru AKS pomocí tohoto příkazu:
 
@@ -190,11 +190,11 @@ Teď jste skoro připraveni nasadit pomocí **Kubectl**, ale nejdřív musíte z
 az aks get-credentials --resource-group MSSampleResourceGroupAKS --name mssampleclusterk801
 ```
 
-![Výstup z konzoly z výše uvedeného příkazu: Sloučí se MSSampleK8Cluster jako aktuální kontext v/root/.Kube/config.](media/getting-aks-credentials.png)
+![Výstup z konzoly z výše uvedeného příkazu: sloučený MSSampleK8Cluster jako aktuální kontext v/root/.Kube/config](media/getting-aks-credentials.png)
 
 **Obrázek 4-47**. získávání přihlašovacích údajů
 
-Pak pomocí `kubectl create` příkazu spusťte nasazení.
+Pak pomocí příkazu `kubectl create` spusťte nasazení.
 
 ```console
 kubectl create -f mssample-deploy.yml
@@ -210,7 +210,7 @@ Až se nasazení dokončí, můžete ke konzole Kubernetes přistupovat pomocí 
 az aks browse --resource-group MSSampleResourceGroupAKS --name mssampleclusterk801
 ```
 
-A přistupuje k adrese `http://127.0.0.1:8001`URL.
+A přístup k adrese URL `http://127.0.0.1:8001`.
 
 ![Zobrazení prohlížeče řídicího panelu Kubernetes zobrazující nasazení, lusky, sady replik a služby.](media/kubernetes-cluster-information.png)
 
@@ -222,5 +222,5 @@ Nyní máte aplikaci nasazenou v Azure, pomocí kontejneru Linux a clusteru AKS 
 > V této příručce najdete informace o tom, jak vytvořit cluster AKS pro tuto ukázku v oddílu [**nasazení do služby Azure Kubernetes Service (AKS)** ](deploy-azure-kubernetes-service.md) .
 
 >[!div class="step-by-step"]
->[Předchozí](set-up-windows-containers-with-powershell.md)Další
->[](../docker-devops-workflow/index.md)
+>[Předchozí](set-up-windows-containers-with-powershell.md)
+>[Další](../docker-devops-workflow/index.md)

@@ -27,7 +27,7 @@ Moderní cloudová řešení identit obvykle využívají přístupové tokeny, 
 
 Služba STS obvykle zodpovídá jenom za ověřování objektu zabezpečení. Určení jejich úrovně přístupu k prostředkům je ponecháno i v ostatních částech aplikace.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Platforma Microsoft identity](https://docs.microsoft.com/azure/active-directory/develop/)
 

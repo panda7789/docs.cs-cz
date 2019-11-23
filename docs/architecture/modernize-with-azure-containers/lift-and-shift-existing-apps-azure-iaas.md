@@ -79,7 +79,7 @@ Obrázek 2-3 ukazuje spuštění několika migrací virtuálních počítačů p
 
 **Obrázek 2-3.** Umístění aplikací připravených pro cloudovou infrastrukturu
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Azure Migrate datový list**
 

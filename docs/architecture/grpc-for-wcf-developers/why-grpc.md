@@ -1,14 +1,13 @@
 ---
 title: Proč se gRPC doporučuje pro vývojáře WCF – gRPC pro vývojáře WCF
 description: Diskuzi o tom, proč se gRPC hodí pro vývojáře WCF, kteří chtějí migrovat na moderní architektury a platformy.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: f96e9a059dc9f12a13c9eb5bb7184ee75d602458
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: da712e1ceee92f0a1a2661252dcda602f5dde9a0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846072"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966945"
 ---
 # <a name="why-grpc-is-recommended-for-wcf-developers"></a>Proč se pro vývojáře WCF doporučuje gRPC
 
@@ -26,7 +25,7 @@ Další důvody, proč gRPC představuje více než další řešení:
 
 Jak už bylo popsáno, použití HTTP/2 místo HTTP/1.1 odstraní požadavek na zprávy čitelné pro čtení a místo toho používá menší rychlejší binární protokol. To je efektivnější pro počítače k analýze. HTTP/2 podporuje také multiplexování požadavků přes jedno připojení, které umožňuje posílání odpovědí ihned po jejich dokončení, aniž by bylo nutné čekat ve frontě (problém v HTTP/1.1 se označuje jako "blokování na začátku řádku"). Při použití gRPC je potřeba mít méně prostředků, díky čemuž je vhodné řešení používat pro mobilní zařízení a pomalejší sítě.
 
-### <a name="interoperability"></a>Interoperabilita
+### <a name="interoperability"></a>Vzájemná funkční spolupráce
 
 K dispozici jsou nástroje a knihovny gRPC pro všechny hlavní programovací jazyky a platformy, včetně .NET, Java, Python, C++cestách, Node. js, SWIFT, DART, Ruby a php. Díky ukládání binárních přenosů do vyrovnávací paměti protokolů a efektivní generování kódu pro každou platformu můžou vývojáři vytvářet výkonné aplikace a pořád využívat plnou podporu pro víc platforem.
 

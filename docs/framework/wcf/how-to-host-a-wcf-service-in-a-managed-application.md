@@ -14,7 +14,7 @@ ms.locfileid: "72320981"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>Postupy: hostování služby WCF ve spravované aplikaci
 
-Chcete-li hostovat službu uvnitř spravované aplikace, vložte kód pro službu do spravovaného kódu aplikace, Definujte koncový bod pro službu buď imperativně v kódu, deklarativně prostřednictvím konfigurace, nebo pomocí výchozích koncových bodů, a pak vytvořte instance <xref:System.ServiceModel.ServiceHost>.
+Chcete-li hostovat službu uvnitř spravované aplikace, vložte kód pro službu do spravovaného kódu aplikace, Definujte koncový bod pro službu buď imperativně v kódu, deklarativně prostřednictvím konfigurace, nebo pomocí výchozích koncových bodů, a pak vytvořte instanci <xref:System.ServiceModel.ServiceHost>.
 
 Chcete-li zahájit přijímání zpráv, zavolejte <xref:System.ServiceModel.ICommunicationObject.Open%2A> na <xref:System.ServiceModel.ServiceHost>. Tím se vytvoří a otevře se naslouchací proces pro službu. Hostování služby tímto způsobem se často označuje jako "samoobslužné hostování", protože spravovaná aplikace provádí hostující práci sama. Chcete-li službu zavřít, zavolejte <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.ServiceHost>.
 
@@ -28,11 +28,11 @@ Následující postup ukazuje, jak implementovat samoobslužnou službu v konzol
 
 1. Vytvořit novou konzolovou aplikaci:
 
-   1. Otevřete Visual Studio a v nabídce **soubor** vyberte **Nový** **projekt**  > .
+   1. Otevřete Visual Studio a v nabídce **soubor** vyberte **Nový** > **projekt** .
 
    2. V seznamu **Nainstalované šablony** vyberte možnost **Visual C#**  nebo **Visual Basic**a pak vyberte možnost **desktopová plocha systému Windows**.
 
-   3. Vyberte šablonu **Konzolová aplikace** . Do pole **název** zadejte `SelfHost` a pak zvolte **OK**.
+   3. Vyberte šablonu **Konzolová aplikace** . Do pole **název** zadejte `SelfHost` a klikněte na **tlačítko OK**.
 
 2. V **Průzkumník řešení** klikněte pravým tlačítkem na **SelfHost** a vyberte **Přidat odkaz**. Na kartě **.NET** vyberte **System. ServiceModel** a pak zvolte **OK**.
 
@@ -52,12 +52,12 @@ Následující postup ukazuje, jak implementovat samoobslužnou službu v konzol
     > [!NOTE]
     > Další informace o tom, jak definovat a implementovat rozhraní služby, naleznete v tématu [How to: define](how-to-define-a-wcf-service-contract.md) a Service kontrakt a [How to: Implement kontraktu služby](how-to-implement-a-wcf-contract.md).
 
-5. V horní části metody @no__t 0 vytvořte instanci třídy <xref:System.Uri> se základní adresou pro službu.
+5. V horní části metody `Main` vytvořte instanci <xref:System.Uri> třídy se základní adresou pro službu.
 
      [!code-csharp[CFX_SelfHost4#3](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#3)]
      [!code-vb[CFX_SelfHost4#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#3)]
 
-6. Vytvořte instanci třídy <xref:System.ServiceModel.ServiceHost> a předejte <xref:System.Type> reprezentující typ služby a základní adresu identifikátoru URI (Uniform Resource Identifier) na <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29>. Povolte publikování metadat a potom zavolejte metodu <xref:System.ServiceModel.ICommunicationObject.Open%2A> na <xref:System.ServiceModel.ServiceHost> pro inicializaci služby a připravte ji na příjem zpráv.
+6. Vytvořte instanci třídy <xref:System.ServiceModel.ServiceHost> a předejte <xref:System.Type>, která představuje typ služby a základní adresu identifikátoru URI (Uniform Resource Identifier) na <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29>. Povolte publikování metadat a potom zavolejte metodu <xref:System.ServiceModel.ICommunicationObject.Open%2A> v <xref:System.ServiceModel.ServiceHost> k inicializaci služby a připravte ji na příjem zpráv.
 
      [!code-csharp[CFX_SelfHost4#4](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#4)]
      [!code-vb[CFX_SelfHost4#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#4)]
@@ -65,11 +65,11 @@ Následující postup ukazuje, jak implementovat samoobslužnou službu v konzol
     > [!NOTE]
     > Tento příklad používá výchozí koncové body a pro tuto službu není vyžadován žádný konfigurační soubor. Pokud nejsou nakonfigurovány žádné koncové body, modul runtime vytvoří jeden koncový bod pro každou základní adresu pro každý kontrakt služby implementovaný službou. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).
 
-7. Pro sestavení řešení stiskněte **Ctrl**+**SHIFT**+**B** .
+7. Pro sestavení řešení stiskněte **kombinaci kláves Ctrl**+**SHIFT**+**B** .
 
 ## <a name="test-the-service"></a>Testování služby
 
-1. Stisknutím **kombinace kláves Ctrl**+**F5** službu spusťte.
+1. Stisknutím klávesy **Ctrl**+**F5** službu spusťte.
 
 2. Otevřete **testovacího klienta WCF**.
 
@@ -89,7 +89,7 @@ Následující postup ukazuje, jak implementovat samoobslužnou službu v konzol
 
 ## <a name="example"></a>Příklad
 
-Následující příklad vytvoří objekt <xref:System.ServiceModel.ServiceHost> pro hostování služby typu `HelloWorldService` a potom zavolá metodu <xref:System.ServiceModel.ICommunicationObject.Open%2A> na <xref:System.ServiceModel.ServiceHost>. V kódu je uvedena základní adresa, publikování metadat je povoleno a jsou použity výchozí koncové body.
+Následující příklad vytvoří objekt <xref:System.ServiceModel.ServiceHost> pro hostování služby typu `HelloWorldService`a poté zavolá metodu <xref:System.ServiceModel.ICommunicationObject.Open%2A> na <xref:System.ServiceModel.ServiceHost>. V kódu je uvedena základní adresa, publikování metadat je povoleno a jsou použity výchozí koncové body.
 
 [!code-csharp[CFX_SelfHost4#5](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#5)]
 [!code-vb[CFX_SelfHost4#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#5)]

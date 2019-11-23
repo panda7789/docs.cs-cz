@@ -57,13 +57,13 @@ Pro zpracování požadavků rozhraní API se dají použít koncové body bez s
 
 ![Webové rozhraní API bez serveru](./media/serverless-web-api.png)
 
-## <a name="data-pipeline"></a>Datový kanál
+## <a name="data-pipeline"></a>Data Pipeline
 
 Funkce bez serveru se dají použít k usnadnění datového kanálu. V tomto příkladu soubor aktivuje funkci pro překlad dat ze souboru CSV na řádky dat v tabulce. Uspořádaná tabulka umožňuje řídicímu panelu Power BI prezentovat analýzy koncovému uživateli.
 
 ![Datový kanál bez serveru](./media/serverless-data-pipeline.png)
 
-## <a name="stream-processing"></a>Zpracování datových proudů
+## <a name="stream-processing"></a>Zpracování streamů
 
 Zařízení a senzory často generují proudy dat, která se musí zpracovat v reálném čase. Existuje řada technologií, které mohou zachytit zprávy a datové proudy ze [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) a [IoT Hub](https://docs.microsoft.com/azure/iot-hub) na [Service Bus](https://docs.microsoft.com/azure/service-bus). Bez ohledu na přenos není server bez serveru ideálním mechanismem pro zpracování zpráv a datových proudů, jak jsou součástí. Bez serveru se dá rychle škálovat, aby se splnila poptávka s velkými objemy dat. Kód bez serveru může použít obchodní logiku k analýze dat a výstupu ve strukturovaném formátu pro akce a analýzy.
 
@@ -78,7 +78,7 @@ Brána API poskytuje pro klienty jediný bod zadávání a pak inteligentně sm�
 ## <a name="recommended-resources"></a>Doporučené prostředky
 
 - [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-- [IoT Hub Azure](https://docs.microsoft.com/azure/iot-hub)
+- [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub)
 - [Výzvy a řešení správy distribuovaných dat](../microservices/architect-microservice-container-applications/distributed-data-management.md)
 - [Navrhování mikroslužeb: identifikace hranic mikroslužeb](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
 - [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
@@ -86,7 +86,7 @@ Brána API poskytuje pro klienty jediný bod zadávání a pak inteligentně sm�
 - [Implementace vzoru Circuit Breaker](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
 - [IoT Hub](https://docs.microsoft.com/azure/iot-hub)
 - [Service Bus](https://docs.microsoft.com/azure/service-bus)
-- [Práce s podporou kanálu změn v Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
+- [Práce s změnu podpora kanálu ve službě Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
 
 >[!div class="step-by-step"]
 >[Předchozí](serverless-architecture-considerations.md)

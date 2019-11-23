@@ -1,14 +1,13 @@
 ---
 title: Docker – gRPC pro vývojáře WCF
 description: Vytváření imagí Docker pro aplikace ASP.NET Core gRPC
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: cc369da9494ade532187dfc8d19a94a3a037ebab
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: a5aceb4b5270cb828965e990a62db4147012adff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846676"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967844"
 ---
 # <a name="docker"></a>Docker
 
@@ -18,7 +17,7 @@ Tato část se zabývá vytvářením imagí Docker pro aplikace ASP.NET Core gR
 
 Microsoft poskytuje řadu základních imagí pro sestavování a spouštění aplikací .NET Core. Chcete-li vytvořit bitovou kopii ASP.NET Core 3,0, jsou použity dvě základní bitové kopie: image sady SDK pro sestavení a publikování aplikace a bitovou kopii modulu runtime pro nasazení.
 
-| Image | Popis |
+| Obrázek | Popis |
 | ----- | ----------- |
 | [mcr.microsoft.com/dotnet/core/sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) | Pro sestavování aplikací pomocí `docker build`. Nedá se použít v produkčním prostředí. |
 | [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) | Obsahuje závislosti modulu runtime a ASP.NET Core. Pro produkční prostředí. |
@@ -30,7 +29,7 @@ Pro každý obrázek jsou k dispozici čtyři varianty založené na různých d
 | 3,0 – Buster, 3,0 | Debian 10 | Výchozí obrázek, pokud není zadána varianta operačního systému. |
 | 3,0 – Alpine | Alpine 3,9 | Obrázky Alpine Base jsou mnohem menší než Debian nebo Ubuntu. |
 | 3,0 – disco | Ubuntu 19,04 | |
-| 3,0 – Bionic | Ubuntu 18,04 | |
+| 3,0 – Bionic | Ubuntu 18.04 | |
 
 Základní image Alpine je okolo 100 MB, v porovnání s 200 MB pro Image Debian a Ubuntu, ale některé softwarové balíčky nebo knihovny nemusí být k dispozici ve správě balíčků Alpine. Pokud si nejste jistí, která image se má použít, je nejlepší vytvořit výchozí Debian, pokud nemáte přesvědčivou potřebu použít jiný distribuce.
 
@@ -117,7 +116,7 @@ docker build --tag stockdata .
 
 Nematoucí název `--tag` příznakem (který může být zkrácen na `-t`) určuje celý název obrázku, *včetně* skutečné značky, je-li tento parametr zadán. `.` na konci určuje *kontext* , ve kterém se bude sestavení spouštět; aktuální pracovní adresář pro příkazy `COPY` v souboru Dockerfile.
 
-Máte-li v rámci jednoho řešení více aplikací, můžete souboru Dockerfile pro každou aplikaci ve vlastní složce vedle `.csproj` souboru, ale přesto byste měli spustit příkaz `docker build` ze základního adresáře, aby bylo zajištěno, že řešení a všechny projekty jsou zkopírovány do obrázku. Pomocí příznaku `--file` (nebo `-f`) můžete zadat souboru Dockerfile pod aktuálním adresářem.
+Pokud máte více aplikací v rámci jednoho řešení, můžete souboru Dockerfile pro každou aplikaci ve vlastní složce vedle souboru `.csproj`, ale přesto byste měli spustit `docker build` příkaz ze základního adresáře, aby bylo zajištěno, že řešení a všechny projekty budou zkopírovány do obrázku. Pomocí příznaku `--file` (nebo `-f`) můžete zadat souboru Dockerfile pod aktuálním adresářem.
 
 ```console
 docker build --tag stockdata --file src/StockData/Dockerfile .

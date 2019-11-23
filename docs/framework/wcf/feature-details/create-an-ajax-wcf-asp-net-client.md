@@ -15,11 +15,11 @@ V tomto tématu se dozvíte, jak pomocí sady Visual Studio vytvořit službu WC
 
 ## <a name="create-an-aspnet-web-app"></a>Vytvoření webové aplikace v ASP.NET
 
-1. Otevřete Visual Studio.
+1. Otevřít Visual Studio.
 
-1. V nabídce **soubor** vyberte **Nový** **projekt**  > .
+1. V nabídce **soubor** vyberte **Nový** > **projekt** .
 
-1. V dialogovém okně **Nový projekt** rozbalte položku **nainstalovaná** > **Webová** kategorie**C#Visual** >  a pak vyberte **ASP.NET webová aplikace (.NET Framework)** .
+1. V dialogovém okně **Nový projekt** rozbalte položku **nainstalovaná** > **Visual C#**  > **Webová** kategorie a pak vyberte **ASP.NET webová aplikace (.NET Framework)** .
 
 1. Pojmenujte projekt **SandwichServices** a klikněte na **OK**.
 
@@ -29,15 +29,15 @@ V tomto tématu se dozvíte, jak pomocí sady Visual Studio vytvořit službu WC
 
 ## <a name="add-a-web-form"></a>Přidat webový formulář
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt SandwichServices a vyberte **přidat** **novou položku** > .
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt SandwichServices a vyberte **Přidat** > **Nová položka**.
 
-1. V dialogovém okně **Přidat novou položku** rozbalte položku **nainstalovaná** > **Webová** kategorie**C#Visual** >  a pak vyberte šablonu **webového formuláře** .
+1. V dialogovém okně **Přidat novou položku** rozbalte položku **nainstalovaná** > **Visual C#**  > **webové** kategorie a pak vyberte šablonu **webového formuláře** .
 
 1. Přijměte výchozí název (**WebForm1**) a pak vyberte **Přidat**.
 
    *WebForm1. aspx* se otevře v zobrazení **zdroje** .
 
-1. Do značek **> @no__t 1Body** přidejte následující kód:
+1. Do **\<těla >** značky přidejte následující kód:
 
    ```html
    <input type="button" value="Price of 3 sandwiches" onclick="Calculate()"/>
@@ -47,9 +47,9 @@ V tomto tématu se dozvíte, jak pomocí sady Visual Studio vytvořit službu WC
 
 ## <a name="create-an-ajax-enabled-wcf-service"></a>Vytvoření služby WCF s povoleným AJAX
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt SandwichServices a vyberte **přidat** **novou položku** > .
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt SandwichServices a vyberte **Přidat** > **Nová položka**.
 
-1. V dialogovém okně **Přidat novou položku** rozbalte položku **nainstalovaná** > **Webová** kategorie**Visual C#**  >  a vyberte šablonu **Služba WCF (s podporou jazyka AJAX)** .
+1. V dialogovém okně **Přidat novou položku** rozbalte položku **nainstalovaná** > **Visual C#**  > **Web** a potom vyberte šablonu **služby WCF (s podporou jazyka AJAX)** .
 
    ![Šablona položky služby WCF (s podporou jazyka AJAX) v aplikaci Visual Studio](./media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
 
@@ -75,7 +75,7 @@ V tomto tématu se dozvíte, jak pomocí sady Visual Studio vytvořit službu WC
 
 3. Rozbalte uzel **rozšíření AJAX** a přetáhněte objekt **ScriptManager** do formuláře.
 
-4. Zpět v zobrazení **zdroje** přidejte následující kód mezi značkami **\<ScriptManager >** a určete cestu ke službě WCF:
+4. Zpět v zobrazení **zdroje** přidejte následující kód mezi **\<značky > ScriptManager** k určení cesty ke službě WCF:
 
     ```xml
     <Services>
@@ -102,7 +102,7 @@ V tomto tématu se dozvíte, jak pomocí sady Visual Studio vytvořit službu WC
 
    Tento kód volá metodu CostService pro výpočet ceny pro tři Sandwichovy a pak výsledek zobrazí v rozpětí s názvem **additionResult**.
 
-## <a name="run-the-program"></a>Spustit program
+## <a name="run-the-program"></a>Spuštění programu
 
 Ujistěte se, že má *WebForm1. aspx* fokus a pak stiskněte tlačítko **Start** pro spuštění webového klienta. Tlačítko má zelený trojúhelník a říká něco jako **IIS Express (Microsoft Edge)** . Případně můžete stisknout klávesu <kbd>F5</kbd>. Kliknutím na tlačítko **cena za 3 sandwichovys** vygenerujete očekávaný výstup "3,75".
 

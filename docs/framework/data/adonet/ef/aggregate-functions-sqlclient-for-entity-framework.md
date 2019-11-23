@@ -20,11 +20,11 @@ Vrátí průměr hodnot v kolekci. Hodnoty null jsou ignorovány.
 
 **Argumenty**
 
-@No__t-0, `Int64`, `Double` a `Decimal`.
+`Int32`, `Int64`, `Double`a `Decimal`.
 
 **Návratová hodnota**
 
-Typ `expression`.
+Typ připojení `expression`.
 
 **Příklad**
 
@@ -40,7 +40,7 @@ Typ `expression`.
  
  **Návratová hodnota**
  
- @No__t-0.
+ `Int32`.
  
  **Příklad**
  
@@ -52,7 +52,7 @@ Vrátí počet položek v kolekci jako `Int32`.
 
 **Argumenty**
 
-Kolekce @ no__t-0T >, kde T je jeden z následujících typů:
+Kolekce\<T >, kde T je jeden z následujících typů:
 
 |   |   |   |   |
 |---|---|---|---|
@@ -61,7 +61,7 @@ Kolekce @ no__t-0T >, kde T je jeden z následujících typů:
 
 **Návratová hodnota**
 
-@No__t-0.
+`Int32`.
 
 **Příklad**
 
@@ -82,7 +82,7 @@ Vrátí počet položek v kolekci jako `bigint`.
 
 **Návratová hodnota**
 
-@No__t-0.
+`Int64`.
 
 **Příklad**
 
@@ -103,7 +103,7 @@ Kolekce (T), kde T je jeden z následujících typů:
 
 **Návratová hodnota**
 
-Typ `expression`.
+Typ připojení `expression`.
 
 **Příklad**
 
@@ -124,7 +124,7 @@ Kolekce (T), kde T je jeden z následujících typů:
 
 **Návratová hodnota**
 
-Typ `expression`.
+Typ připojení `expression`.
 
 **Příklad**
 
@@ -140,7 +140,7 @@ Kolekce (`Double`).
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -156,7 +156,7 @@ Kolekce (`Double`).
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -172,7 +172,7 @@ Kolekce (T), kde T je jeden z následujících typů: `Int32`, `Int64`, `Double`
 
 **Návratová hodnota**
 
-Typ `expression`.
+Typ připojení `expression`.
 
 **Příklad**
 
@@ -188,7 +188,7 @@ Kolekce (`Double`).
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 
@@ -204,7 +204,7 @@ Kolekce (`Double`).
 
 **Návratová hodnota**
 
-@No__t-0.
+A `Double`.
 
 **Příklad**
 

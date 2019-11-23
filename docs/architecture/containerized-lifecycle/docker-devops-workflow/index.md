@@ -32,5 +32,5 @@ Složitost vývoje kontejnerů aplikací se v závislosti na složitosti podniku
 - Organizace můžou snadno zřizovat kontejnery Docker z privátních imagí uložených v Azure Container Registry spolu se všemi závislostmi na komponentách Azure (data, PaaS atd.) pomocí Azure Resource Manager šablon s nástroji, které už jsou pohodlné.
 
 >[!div class="step-by-step"]
->[Předchozí](../design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md)Další
->[](docker-application-outer-loop-devops-workflow.md)
+>[Předchozí](../design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md)
+>[Další](docker-application-outer-loop-devops-workflow.md)

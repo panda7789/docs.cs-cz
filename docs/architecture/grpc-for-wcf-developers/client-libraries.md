@@ -1,14 +1,13 @@
 ---
 title: Vytváření klientských knihoven gRPC – gRPC pro vývojáře WCF
 description: Diskuze za sdílené klientské knihovny/balíčky pro služby gRPC Services.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: b403e7e1638496947ac7f6fc976cbeab2f435bbf
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2135fe8b24a2311a31cb2bed191d290b1112bc66
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419925"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967873"
 ---
 # <a name="create-grpc-client-libraries"></a>Vytváření klientských knihoven gRPC
 
@@ -19,7 +18,7 @@ Jednou z výhod distribuce klientské knihovny je, že můžete vylepšit vygene
 > [!CAUTION]
 > **Neměli byste používat vlastní** kód pro poskytování základních funkcí, protože by to znamenalo, že by byla funkce omezena na týmy .NET pomocí sdílené knihovny, a ne pro týmy, které používají jiné jazyky nebo platformy, jako je Python nebo Java.
 
-V prostředí s více platformami, kde různé týmy často používají různé programovací jazyky a architektury nebo kde je vaše rozhraní API externě přístupné, stačí sdílet `.proto` soubory, aby vývojáři mohli vygenerovat své vlastní klienty, je nejlepším způsobem, jak zajistit, aby přístup ke službě gRPC může získat i tolik týmů.
+V prostředí s více platformami, kde různé týmy často používají různé programovací jazyky a rozhraní nebo kde je vaše rozhraní API externě přístupné, stačí, když `.proto` soubory sdílíte, aby vývojáři mohli vygenerovat své vlastní klienty, je nejlepším způsobem, jak zajistit, aby bylo možné získat přístup ke službě gRPC, abyste měli k dispozici co nejvíc týmů.
 
 ## <a name="useful-extensions"></a>Užitečná rozšíření
 

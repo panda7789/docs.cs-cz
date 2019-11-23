@@ -69,7 +69,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Obejití zásad vydavatele
- V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Chcete-li obejít zásadu vydavatele, přidejte prvek [\<publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) do prvku [> \<dependentAssembly](./file-schema/runtime/dependentassembly-element.md) v konfiguračním souboru aplikace a nastavte atribut **Apply** na hodnotu **No**, který přepíše libovolný předchozí nastavení **Ano** .
+ V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Pokud chcete obejít zásadu vydavatele, přidejte\<element [> publisherPolicy](./file-schema/runtime/publisherpolicy-element.md) do [\<dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) elementu v konfiguračním souboru aplikace a nastavte atribut **Apply** na hodnotu **No**, který přepíše všechna předchozí nastavení **Ano** .
 
  `<publisherPolicy apply="no" />`
 
@@ -81,9 +81,9 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 
 <a name="BKMK_Specifyingassemblybindinginconfigurationfiles"></a>
 ## <a name="specifying-assembly-binding-in-configuration-files"></a>Určení vazby sestavení v konfiguračních souborech
- Použijete stejný formát XML k určení přesměrování vazby, pokud je v konfiguračním souboru aplikace, konfiguračním souboru počítače nebo souboru zásad vydavatele. Pro přesměrování jedné verze sestavení na jiný použijte prvek [\<bindingRedirect >](./file-schema/runtime/bindingredirect-element.md) . Atribut **OldVersion** může určit jednu verzi sestavení nebo rozsah verzí. Atribut `newVersion` by měl určovat jednu verzi.  Například `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` určuje, že modul runtime by měl používat 2.0.0.0 verze namísto verzí sestavení mezi 1.1.0.0 a 1.2.0.0.
+ Použijete stejný formát XML k určení přesměrování vazby, pokud je v konfiguračním souboru aplikace, konfiguračním souboru počítače nebo souboru zásad vydavatele. Chcete-li přesměrovat jednu verzi sestavení na jinou, použijte prvek [\<bindingRedirect >](./file-schema/runtime/bindingredirect-element.md) . Atribut **OldVersion** může určit jednu verzi sestavení nebo rozsah verzí. Atribut `newVersion` by měl určovat jednu verzi.  Například `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` určuje, že modul runtime by měl používat 2.0.0.0 verze namísto verzí sestavení mezi 1.1.0.0 a 1.2.0.0.
 
- Následující příklad kódu ukazuje řadu scénářů přesměrování vazby. Příklad určuje přesměrování pro rozsah verzí `myAssembly` a jedno přesměrování vazby pro `mySecondAssembly`. V příkladu se také určuje, že soubor zásad vydavatele nepřepisuje přesměrování vazby pro `myThirdAssembly`.
+ Následující příklad kódu ukazuje řadu scénářů přesměrování vazby. Příklad určuje přesměrování pro rozsah verzí pro `myAssembly`a jedno přesměrování vazby pro `mySecondAssembly`. V tomto příkladu se také určuje, že soubor zásad vydavatele nepřepisuje přesměrování vazby pro `myThirdAssembly`.
 
  Chcete-li vytvořit vazby sestavení, je nutné zadat řetězec "urn: schemas-microsoft-com: asm. v1" s atributem **xmlns** ve značce [\<assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
 
@@ -119,7 +119,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 ```
 
 ### <a name="limiting-assembly--bindings-to-a-specific-version"></a>Omezení vazeb sestavení na konkrétní verzi
- Pro přesměrování odkazů na vazby sestavení na konkrétní verzi .NET Framework můžete použít atribut **AppliesTo** v [\<assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) elementu v konfiguračním souboru aplikace. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud není zadán žádný atribut **AppliesTo** , [> prvek \<assemblyBinding](./file-schema/runtime/assemblybinding-element-for-runtime.md) se vztahuje na všechny verze .NET Framework.
+ Pomocí atributu **AppliesTo** v [\<assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) elementu v konfiguračním souboru aplikace můžete přesměrovat odkazy vazby sestavení na konkrétní verzi .NET Framework. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud ne **appliesTo** atribut zadán, [\<assemblyBinding>](./file-schema/runtime/assemblybinding-element-for-runtime.md) element platí pro všechny verze rozhraní .NET Framework.
 
  Například pro přesměrování vazby sestavení pro sestavení .NET Framework 3,5 byste měli do konfiguračního souboru aplikace zahrnout následující kód XML.
 
@@ -155,7 +155,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md)
-- [@no__t – element > 1bindingRedirect](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> Element](./file-schema/runtime/bindingredirect-element.md)
 - [Bezpečnostní oprávnění k přesměrování vazby sestavení](assembly-binding-redirection-security-permission.md)
 - [Sestavení v .NET](../../standard/assembly/index.md)
 - [Programování se sestaveními](../../standard/assembly/program.md)

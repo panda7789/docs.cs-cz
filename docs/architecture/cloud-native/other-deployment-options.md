@@ -41,7 +41,7 @@ Jakmile se nasazení dokončí, najděte nově nasazenou IP adresu kontejneru a 
 
 Azure Container Instances nabízí nejrychlejší a nejjednodušší způsob spouštění kontejneru v Azure. Není nutné konfigurovat službu App Service ani produkt Orchestrator ani řešit virtuální počítače. Z důvodu zjednodušení by se však ACI měl primárně použít pro účely testování. Pokud vaše aplikace vyžaduje automatickou škálovatelnost, je pro hostování vaší aplikace k dispozici více kontejnerů, které jsou nakonfigurovány tak, aby spolupracovaly, případně i jakékoli další komplexní funkce.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Azure Container Instances docs](https://docs.microsoft.com/azure/container-instances/)
 - [Nasadit instanci kontejneru z ACR](https://docs.microsoft.com/azure/container-instances/container-instances-using-azure-container-registry#deploy-with-azure-portal)

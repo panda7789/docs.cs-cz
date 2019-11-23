@@ -33,17 +33,17 @@ Podle plných principů budou vaše třídy pravděpodobně přirozeně malé, d
 
 Mělo by to mít další průvodce, aby se podrobně kryl. Proto tato příručka vyžaduje, abyste měli jenom minimální znalosti těchto témat.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **SOLID Základní principy OOP** \
+- **Solid: základní principy OOP** \
   <https://deviq.com/solid/>
 
-- **Inverze řídicích kontejnerů a vzor vložení závislostí** \
+- **Inverze řídicích kontejnerů a vzor pro vkládání závislostí** \
   <https://martinfowler.com/articles/injection.html>
 
-- **Steve Smith. Nové je připevnit** \
+- **Steve Smith. Nové je připevňování** \
   <https://ardalis.com/new-is-glue>
 
 > [!div class="step-by-step"]
-> [Předchozí](nosql-database-persistence-infrastructure.md)Další
-> [](microservice-application-layer-implementation-web-api.md)
+> [Předchozí](nosql-database-persistence-infrastructure.md)
+> [Další](microservice-application-layer-implementation-web-api.md)

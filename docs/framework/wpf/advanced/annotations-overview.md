@@ -19,7 +19,7 @@ ms.locfileid: "72004045"
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámek nebo komentářů k dokumentům je taková maloobchodech aktivita, kterou pro udělení máme skoro. Tyto poznámky nebo komentáře jsou "poznámky", které přidáváme do dokumentu k označení informací, nebo k zdůraznění položek, které vás zajímají za účelem pozdějšího odkazu. I když píšete poznámky k tištěným dokumentům snadno a maloobchodech, možnost přidávat osobní komentáře k elektronickým dokumentům je obvykle velmi omezená, pokud je k dispozici vůbec.  
   
- Toto téma posuzuje několik běžných typů poznámek, konkrétně rychlé poznámky a světla, a ukazuje, jak rozhraní Microsoft anotace usnadňuje tyto typy poznámek v aplikacích prostřednictvím Windows Presentation Foundation (WPF ) ovládací prvky zobrazení dokumentu.  @no__t – 0 ovládací prvky, které podporují poznámky, zahrnují <xref:System.Windows.Controls.FlowDocumentReader> a <xref:System.Windows.Controls.FlowDocumentScrollViewer>, a také ovládací prvky odvozené od <xref:System.Windows.Controls.Primitives.DocumentViewerBase>, například <xref:System.Windows.Controls.DocumentViewer> a <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
+ Toto téma posuzuje několik běžných typů poznámek, konkrétně rychlé poznámky a světla, a ukazuje, jak rozhraní Microsoft anotace usnadňuje tyto typy poznámek v aplikacích prostřednictvím Windows Presentation Foundation (WPF ) ovládací prvky zobrazení dokumentu.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ovládacího prvku pro zobrazení dokumentu, který podporuje poznámky, zahrnuje <xref:System.Windows.Controls.FlowDocumentReader> a <xref:System.Windows.Controls.FlowDocumentScrollViewer>a také ovládací prvky odvozené od <xref:System.Windows.Controls.Primitives.DocumentViewerBase>, jako je <xref:System.Windows.Controls.DocumentViewer> a <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
 
 <a name="caf1_type_stickynotes"></a>   
 ## <a name="sticky-notes"></a>Rychlé poznámky  
@@ -36,13 +36,13 @@ Zápis poznámek nebo komentářů k dokumentům je taková maloobchodech aktivi
   
 <a name="caf1_type_callouts"></a>   
 ## <a name="highlights"></a>Růžov  
- Lidé používají kreativní metody k upoutání pozornosti na zajímavé položky, když označí dokument papíru, jako je například podtržení, zvýraznění, směřující slova ve větě nebo kreslení značek nebo zápisů na okraji.  Zvýrazněné poznámky v rozhraní Microsoft anotace poskytují podobnou funkci pro označení informací zobrazených v ovládacích prvcích zobrazení dokumentů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+ Lidé používají kreativní metody k upoutání pozornosti na zajímavé položky, když označí dokument papíru, jako je například podtržení, zvýraznění, směřující slova ve větě nebo kreslení značek nebo zápisů na okraji.  Zvýrazněné poznámky v rozhraní Microsoft anotace poskytují podobnou funkci pro označení informací zobrazených v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ovládacích prvcích zobrazení dokumentu.  
   
  Následující ilustrace znázorňuje příklad poznámky zvýraznění.  
   
- ![Zvýraznit anotaci](./media/caf-callouts.png "CAF_Callouts")  
+ ![Zvýraznit](./media/caf-callouts.png "CAF_Callouts") poznámek  
   
- Uživatelé obvykle vytvářejí poznámky tak, že nejprve vyberou nějaký text nebo položku zájmu a potom kliknutím pravým tlačítkem zobrazí @no__t možnosti poznámky.  Následující příklad ukazuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít k deklaraci <xref:System.Windows.Controls.ContextMenu> s směrovanými příkazy, ke kterým mají uživatelé přístup k vytváření a správě poznámek.  
+ Uživatelé obvykle vytvářejí poznámky tak, že nejprve vyberou nějaký text nebo položku zájmu a potom kliknutím pravým tlačítkem zobrazí <xref:System.Windows.Controls.ContextMenu> možností poznámek.  Následující příklad ukazuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít k deklaraci <xref:System.Windows.Controls.ContextMenu> s směrovanými příkazy, ke kterým mají uživatelé přístup, aby mohli vytvářet a spravovat poznámky.  
   
  [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
   

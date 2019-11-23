@@ -37,7 +37,7 @@ Mnohé společnosti využívají spoustu pedagogů a přiřazují velké rozpoč
 
 Bez serveru se používají jednotlivé krátkodobé běžící funkce, které jsou volány v reakci na určitou aktivační událost. Díky tomu jsou ideální pro zpracování úloh na pozadí.
 
-Aplikace může například potřebovat poslat e-mail jako součást zpracování žádosti. Místo odeslání e-mailu v rámci zpracování webové žádosti by se podrobnosti o e-mailu daly umístit do fronty a tato zpráva se dá použít k výběru zprávy a odeslání e-mailu. Celá řada různých částí aplikace nebo dokonce mnoho aplikací může využít stejnou funkci Azure, která poskytuje lepší výkon a škálovatelnost pro aplikace a používá [Vyrovnávání zatížení založené na frontě](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) , aby nedocházelo k kritickým bodům souvisejícím s posílání e-mailů.
+Aplikace může například potřebovat poslat e-mail jako součást zpracování žádosti. Místo odeslání e-mailu v rámci zpracování webové žádosti by se podrobnosti o e-mailu daly umístit do fronty a tato zpráva se dá použít k výběru zprávy a odeslání e-mailu. Celá řada různých částí aplikace nebo dokonce mnoho aplikací může využít stejnou funkci Azure, která poskytuje lepší výkon a škálovatelnost pro aplikace a používá [Vyrovnávání zatížení založené na frontě](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) , aby nedocházelo k problémům při posílání e-mailů.
 
 I když je [vzor vydavatele/předplatitele](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) mezi aplikacemi a Azure Functions nejběžnějším vzorem, je možné použít i jiné vzory. Azure Functions můžou aktivovat jiné události, jako jsou třeba změny v Azure Blob Storage. Aplikace, která podporuje nahrávání imagí, by mohla mít zodpovědnost za vytváření miniatur nebo změnu velikosti nahraných obrázků na konzistentní rozměry nebo pro optimalizaci velikosti obrázků. Všechny tyto funkce mohou být aktivovány přímo vložením do Azure Blob Storage, zachovává složitost a zatížení samotné aplikace.
 
@@ -56,7 +56,7 @@ Měli byste se také obvykle vyhnout serveru bez serveru pro dlouhotrvající ú
 
 A konečně využití bez serveru pro určité úkoly v rámci aplikace přináší složitost. Je často vhodné architektovat aplikaci v modulárním, volně připojeném způsobem, a pak zjistit, jestli jsou výhody serveru nevýhodné, aby se zajistila další složitost. Mnohé menší aplikace budou v jednom monolitické nasazení dokonale fungovat, aniž by to vyžadovalo architekturu distribuované aplikace bez serveru.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Principy studeného startu bez serveru](https://azure.microsoft.com/blog/understanding-serverless-cold-start/)
 - [Předem zahřívání Azure Functions instance](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances)

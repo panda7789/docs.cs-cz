@@ -15,14 +15,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699758"
 ---
-# <a name="cryptoclasses-element"></a>@no__t – element > 0cryptoClasses
-Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v prvku [\<nameEntry >](nameentry-element.md) .  
+# <a name="cryptoclasses-element"></a>\<element > cryptoClasses
+Obsahuje seznam tříd kryptografie, které mají mapování na popisný název v prvku [\<nameEntry >](nameentry-element.md) .  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<cryptoClasses >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<cryptoClasses >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ Obsahuje seznam kryptografických tříd, které mají mapování na popisný n�
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1cryptoClass >](cryptoclass-element.md)|Obsahuje třídu kryptografie, která má mapování na popisný název v prvku **\<nameEntry >** .|  
+|[\<cryptoClass>](cryptoclass-element.md)|Obsahuje třídu kryptografie, která má mapování na popisný název v prvku **\<nameEntry >** .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -50,10 +50,10 @@ Obsahuje seznam kryptografických tříd, které mají mapování na popisný n�
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení kryptografie.|  
 |`cryptoNameMapping`|Obsahuje mapování tříd na popisné názvy.|  
-|`mscorlib`|Obsahuje prvek `cryptographySettings`.|  
+|`mscorlib`|Obsahuje element `cryptographySettings`.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít prvek **> \<cryptoClass** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pro vrácení objektu `MyCryptoRSAClass`.  
+ Následující příklad ukazuje, jak použít **\<cryptoClass >** elementu k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" do metody <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> k vrácení objektu `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  
@@ -82,5 +82,5 @@ Obsahuje seznam kryptografických tříd, které mají mapování na popisný n�
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
-- [System. Security. Cryptography. objektu CryptoConfig. CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
+- [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)

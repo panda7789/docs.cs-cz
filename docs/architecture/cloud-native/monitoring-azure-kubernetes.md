@@ -1,6 +1,6 @@
 ---
-title: Monitorování ve službě Azure Kubernetes Services
-description: Monitorování ve službě Azure Kubernetes Services
+title: Monitorování ve službě Azure Kubernetes Service
+description: Monitorování ve službě Azure Kubernetes Service
 ms.date: 09/23/2019
 ms.openlocfilehash: 71192601eac2169db188b25da3dc91b71b860903
 ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71184986"
 ---
-# <a name="monitoring-in-azure-kubernetes-services"></a>Monitorování ve službě Azure Kubernetes Services
+# <a name="monitoring-in-azure-kubernetes-services"></a>Monitorování ve službě Azure Kubernetes Service
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -28,15 +28,15 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 Tím se do clusteru nainstaluje Elasticsearch a do něj budou odesílány všechny protokoly clusteru.
 
-![Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které se ingestují z](./media/kibana-dashboard.png)
-Kubernetes**obrázku 7-6**. Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které jsou ingestované z Kubernetes
+![příklad řídicího panelu Kibana ukazující výsledky dotazu na protokoly ingestované z Kubernetes](./media/kibana-dashboard.png)
+**obrázek 7-6**. Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které jsou ingestované z Kubernetes
 
 ## <a name="azure-container-monitoring"></a>Monitorování kontejnerů Azure
 
 Azure Container monitor podporuje využívání protokolů nejenom Kubernetes, ale také z jiných modulů orchestrace, jako jsou DC/OS, Docker Swarm a Red Hat OpenShift.
 
-![Využívání protokolů z různých kontejnerů](./media/containers-diagram.png)
-**Obrázek 7-7**.  Využívání protokolů z různých kontejnerů
+![využívání protokolů z různých kontejnerů](./media/containers-diagram.png)
+**obrázek 7-7**.  Využívání protokolů z různých kontejnerů
 
 Informace o protokolu a metrikě se shromažďují nejen z kontejnerů spuštěných v clusteru, ale také z hostitelů clusteru. Umožňuje korelační informace protokolu z obou dvou, což znamená, že je mnohem jednodušší sledovat chybu.
 
@@ -44,8 +44,8 @@ Instalace sběračů protokolů se liší v clusterech se [systémy Windows](htt
 
 Bez ohledu na to, který Orchestrator nebo operační systém spouští démon Azure Monitor, jsou informace protokolu předávány stejným Azure Monitor nástrojům, se kterými se uživatelé znají. Tím se zajistí paralelní prostředí v prostředích, která jsou kombinací různých zdrojů protokolů, jako je hybridní Kubernetes nebo Azure Functions prostředí.
 
-![Vzorový řídicí panel, který zobrazuje informace o protokolování a metrikách z řady spuštěných kontejnerů. **Obrázek 7-8**. ](./media/containers-dashboard.png)
- Vzorový řídicí panel, který zobrazuje informace o protokolování a metrikách z řady spuštěných kontejnerů.
+![ukázkový řídicí panel, který zobrazuje informace o protokolování a metrikě z řady spuštěných kontejnerů.](./media/containers-dashboard.png)
+**obrázek 7-8**. Vzorový řídicí panel, který zobrazuje informace o protokolování a metrikách z řady spuštěných kontejnerů.
 
 ## <a name="logfinalize"></a>Log. Finalize ()
 

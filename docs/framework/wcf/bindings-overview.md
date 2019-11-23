@@ -45,7 +45,7 @@ Vazby jsou objekty, které slouží k zadání podrobností o komunikaci, které
  Úplný seznam s popisy všech vazeb poskytovaných službou WCF najdete v tématu [vazby poskytované systémem](system-provided-bindings.md).  
   
 ## <a name="using-your-own-bindings"></a>Používání vlastních vazeb  
- Pokud žádná z obsažených vazeb poskytnutých systémem nemá správnou kombinaci funkcí, které vyžaduje aplikace služby, můžete vytvořit vlastní vazbu. To můžete provést dvěma způsoby. Můžete buď vytvořit novou vazbu z již existujících elementů vazby pomocí objektu @no__t 0, nebo můžete vytvořit zcela definovanou vazbu odvozenou od vazby <xref:System.ServiceModel.Channels.Binding>. Další informace o vytváření vlastních vazeb pomocí těchto dvou přístupů najdete v tématech [vlastní vazby](./extending/custom-bindings.md) a [vytváření uživatelsky definovaných vazeb](./extending/creating-user-defined-bindings.md).  
+ Pokud žádná z obsažených vazeb poskytnutých systémem nemá správnou kombinaci funkcí, které vyžaduje aplikace služby, můžete vytvořit vlastní vazbu. To můžete provést dvěma způsoby. Můžete buď vytvořit novou vazbu z již existujících elementů vazby pomocí objektu <xref:System.ServiceModel.Channels.CustomBinding>, nebo můžete vytvořit plně definovanou vazbu odvozenou z vazby <xref:System.ServiceModel.Channels.Binding>. Další informace o vytváření vlastních vazeb pomocí těchto dvou přístupů najdete v tématech [vlastní vazby](./extending/custom-bindings.md) a [vytváření uživatelsky definovaných vazeb](./extending/creating-user-defined-bindings.md).  
   
 ## <a name="using-bindings"></a>Použití vazeb  
  Použití vazeb zahrnuje dva základní kroky:  

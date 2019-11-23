@@ -20,5 +20,5 @@ V modelu kontejneru představuje kontejner jeden proces. Definováním kontejner
 Můžete najít scénář, ve kterém chcete, aby více procesů běželo v jednom kontejneru. V jakémkoli dokumentu architektury není nikdy "nikdy", ani není vždy vždy "Always". Pro scénáře, které vyžadují více procesů, je běžným vzorem použití [správce](http://supervisord.org/).
 
 >[!div class="step-by-step"]
->[Předchozí](design-docker-applications.md)Další
->[](monolithic-applications.md)
+>[Předchozí](design-docker-applications.md)
+>[Další](monolithic-applications.md)

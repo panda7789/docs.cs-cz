@@ -10,7 +10,7 @@ ms.lasthandoff: 09/17/2019
 ms.locfileid: "71047605"
 ---
 # <a name="network-programming-samples"></a>Ukázky programování sítě
-Tato část obsahuje popisy a odkazy na ukázky síťového programování ke stažení, které používají třídy <xref:System.Net>v <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> , a související obory názvů. 
+Tato část obsahuje popisy a odkazy na ukázky síťového programování ke stažení, které používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets>a souvisejících oborech názvů. 
   
 > [!NOTE]
 > Všechny ukázky jsou k dispozici ve [Stažení ukázek sady .NET Framework SDK 2,0](https://www.microsoft.com/download/confirmation.aspx?id=22181), které byly vydány pro .NET Framework 2,0 a mohou být datovány.
@@ -25,8 +25,8 @@ Tato část obsahuje popisy a odkazy na ukázky síťového programování ke st
  [Ukázka technologie HttpListener](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/y7cbb2y2(v=vs.85))  
  Ukazuje, jak zpracovat požadavky HTTP v rámci aplikace.  
  
- [Ukázka hostitelské aplikace HttpListener ASPX](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/dd767375(v%3dvs.90))   
- Ukazuje, jak používat funkce <xref:System.Net.HttpListener?displayProperty=nameWithType> třídy k vytvoření serveru http, který směruje volání do hostované aplikace ASP.NET.
+   [ukázkových hostitelských aplikací HTTPLISTENER aspx](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/dd767375(v%3dvs.90))  
+ Ukazuje, jak používat funkce třídy <xref:System.Net.HttpListener?displayProperty=nameWithType> k vytvoření serveru HTTP, který směruje volání do hostované aplikace ASP.NET.
   
  [Ukázka technologie poštovního modul](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/whw7xbk2(v=vs.85))  
  Ukazuje, jak odeslat e-mailové zprávy z klientské aplikace.  
@@ -52,7 +52,7 @@ Tato část obsahuje popisy a odkazy na ukázky síťového programování ke st
  [Ukázka technologie FTP Exploreru](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms233623(v=vs.85))  
  Ukazuje, jak zobrazit seznam obsahu serveru FTP.  
 
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  <xref:System.Net>  
   
  <xref:System.Net.NetworkInformation>  

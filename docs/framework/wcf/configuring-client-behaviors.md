@@ -43,14 +43,14 @@ Windows Communication Foundation (WCF) konfiguruje chování dvěma způsoby: bu
 ```  
   
 ## <a name="using-behaviors-programmatically"></a>Programové použití chování  
- Chování můžete také nakonfigurovat nebo vložit programově tak, že před otevřením klienta vyhledáte @no__t příslušnou vlastnost-0 objektu klienta služby Windows Communication Foundation (WCF) nebo objektu factory kanálu klienta.  
+ Chování můžete také nakonfigurovat nebo vložit programově tak, že před otevřením klienta vyhledáte příslušnou vlastnost `Behaviors` objektu klienta služby Windows Communication Foundation (WCF) nebo objektu factory kanálu klienta.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak programově vložit chování přístupem k vlastnosti <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> u <xref:System.ServiceModel.Description.ServiceEndpoint> vráceného z vlastnosti <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> před vytvořením objektu kanálu.  
+ Následující příklad kódu ukazuje, jak programově vložit chování přístupem k vlastnosti <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> v <xref:System.ServiceModel.Description.ServiceEndpoint> vrácené vlastností <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> před vytvořením objektu kanálu.  
   
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
  [!code-vb[ChannelFactoryBehaviors#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [@no__t – 1behaviors >](../configure-apps/file-schema/wcf/behaviors.md)
+- [chování \<>](../configure-apps/file-schema/wcf/behaviors.md)

@@ -38,4 +38,4 @@ Vzdálené ladění programovací model Windows Workflow Foundation (WF) funguje
 
 ## <a name="extending-the-workflow-debugging-service"></a>Rozšíření služby ladění pracovního postupu
 
-Služba pracovního postupu pro pracovní postup je teď veřejná a dá se použít k vytvoření vlastních aplikací, jako je monitorování, simulace a ladění v novém hostovaném návrháři. Další informace najdete v článku o @no__t 0.
+Služba pracovního postupu pro pracovní postup je teď veřejná a dá se použít k vytvoření vlastních aplikací, jako je monitorování, simulace a ladění v novém hostovaném návrháři. Další informace najdete v článku o <xref:System.Activities.Presentation.Debug.DebuggerService>.

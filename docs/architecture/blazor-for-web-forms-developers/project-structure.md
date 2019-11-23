@@ -59,7 +59,7 @@ Soubor projektu pro aplikaci WebAssembly v Blazor se trochu zabývají. (přesn�
 
 Blazor .NET Standard cíle projektů WebAssembly místo .NET Core, protože běží v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Rozhraní .NET nemůžete nainstalovat do webového prohlížeče, jako je to možné na serveru nebo v počítači pro vývojáře. V důsledku toho projekt odkazuje na rozhraní Blazor pomocí jednotlivých odkazů na balíčky.
 
-Porovnáním, výchozí projekt webových formulářů ASP.NET obsahuje téměř 300 řádků XML v souboru *. csproj* , přičemž většina z nich explicitně uvádí různé soubory kódu a obsahu v projektu. Mnohé z zjednodušení v projektech .NET Core a .NET Standard pocházejí z výchozích cílů a vlastností importovaných odkazem na sadu `Microsoft.NET.Sdk.Web` SDK, která se často označuje jako pouhá webová sada SDK. Webová sada SDK obsahuje zástupné znaky a další pohodlí, které zjednodušují zahrnutí kódu a souborů obsahu v projektu. Soubory není nutné explicitně vypisovat. Při cílení na .NET Core webová sada SDK také přidá odkazy na rozhraní do sdílených rozhraní .NET Core i ASP.NET Core. Rozhraní jsou viditelná v uzlu **závislosti**  > **Frameworks** v okně **Průzkumník řešení** . Sdílené architektury jsou kolekce sestavení, která byla nainstalována na počítači při instalaci rozhraní .NET Core.
+Porovnáním, výchozí projekt webových formulářů ASP.NET obsahuje téměř 300 řádků XML v souboru *. csproj* , přičemž většina z nich explicitně uvádí různé soubory kódu a obsahu v projektu. Mnohé z zjednodušení v projektech .NET Core a .NET Standard pocházejí z výchozích cílů a vlastností importovaných odkazem na sadu `Microsoft.NET.Sdk.Web` SDK, která se často označuje jako pouhá webová sada SDK. Webová sada SDK obsahuje zástupné znaky a další pohodlí, které zjednodušují zahrnutí kódu a souborů obsahu v projektu. Soubory není nutné explicitně vypisovat. Při cílení na .NET Core webová sada SDK také přidá odkazy na rozhraní do sdílených rozhraní .NET Core i ASP.NET Core. Rozhraní jsou viditelná v uzlu **závislosti** > **Frameworks** v okně **Průzkumník řešení** . Sdílené architektury jsou kolekce sestavení, která byla nainstalována na počítači při instalaci rozhraní .NET Core.
 
 I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné v projektech .NET Core. Většina závislostí projektu se zpracovává jako odkazy na balíčky NuGet. V projektech .NET Core musíte odkazovat jenom na závislosti balíčků nejvyšší úrovně. Přenosné závislosti jsou zahrnuty automaticky. Namísto použití souboru *Packages. config* , který se běžně nachází v projektech webových formulářů ASP.NET, na referenční balíčky, se odkazy na balíčky přidávají do souboru projektu pomocí elementu `<PackageReference>`.
 
@@ -123,7 +123,7 @@ Většina souborů v projektech Blazor je soubory *. Razor* . Razor je šablonov
 
 Každý soubor komponenty Razor je zkompilován do třídy .NET při sestavení projektu. Vygenerovaná třída zachytí stav komponenty, logiku vykreslování, metody životního cyklu, obslužné rutiny události a další logiku. Podíváme se na vytváření komponent v části [sestavování opakovaně použitelných komponent uživatelského rozhraní pomocí oddílu Blazor](./components.md) .
 
-Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují sadu direktiv Razor pro import do jiných souborů *. Razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports. Razor* je konvenční způsob, jak přidat příkazy `using` pro běžně používané obory názvů:
+Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují sadu direktiv Razor pro import do jiných souborů *. Razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports. Razor* je obvyklým způsobem, jak přidat `using` příkazy pro běžně používané obory názvů:
 
 ```razor
 @using System.Net.Http
@@ -170,7 +170,7 @@ V aplikaci Blazor Server je v souboru *_Host. cshtml* definovaná stránka hosti
 |`RenderMode.ServerPrerendered`|První předvykreslování a potom vykreslené interaktivně|
 |`RenderMode.Static`           |Vykresleno jako statický obsah|
 
-Odkaz na skript *_framework/blazor. Server. js* vytvoří připojení v reálném čase se serverem a pak bude pracovat se všemi interakcemi uživatelů a AKTUALIZACEMI uživatelského rozhraní.
+Odkaz na skript *_framework/blazor.Server.js* vytváří připojení v reálném čase se serverem a pak se zabývá všemi interakcemi uživatelů a AKTUALIZACEMI uživatelského rozhraní.
 
 ```razor
 @page "/"
@@ -247,7 +247,7 @@ Chcete-li spustit aplikaci WebAssembly v Blazor, vyberte jeden z následujícíc
 - Spusťte klientský projekt přímo pomocí vývojového serveru.
 - Spusťte serverový projekt při hostování aplikace pomocí ASP.NET Core.
 
-Blazor aplikace WebAssembly nepodporují ladění pomocí sady Visual Studio. Pokud chcete aplikaci spustit, použijte místo `F5` `Ctrl+F5`. Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete v tématu [ladění ASP.NET Core Blazor](/aspnet/core/blazor/debug) .
+Blazor aplikace WebAssembly nepodporují ladění pomocí sady Visual Studio. Pokud chcete aplikaci spustit, použijte místo `F5``Ctrl+F5`. Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete v tématu [ladění ASP.NET Core Blazor](/aspnet/core/blazor/debug) .
 
 >[!div class="step-by-step"]
 >[Předchozí](hosting-models.md)

@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 9bc97efdda44ca4dfa4a583c32e9e55c9502d975
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6096bd3aa35a27c97862089d09d537bdc5b1fff0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089685"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971531"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
@@ -285,12 +285,16 @@ Tento funkční test vykonává úplný ASP.NET Core zásobník aplikací MVC/Ra
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>Odkazy – test ASP.NET Core aplikace MVC
 >
-> - **Testování v ASP.NET Core**  
+> - **Testování v ASP.NET Core** \
 >   <https://docs.microsoft.com/aspnet/core/testing/>
-> - **Konvence pojmenování testů jednotek**  
+> -  \ **konvence pojmenování testování částí**
 >   <https://ardalis.com/unit-test-naming-convention>
-> - **EF Core testování**  
+> - **Testování EF Core** \
 >   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
+> - **Integrační testy v ASP.NET Core** \
+>   <https://docs.microsoft.com/aspnet/core/test/integration-tests>
+> - **ASP.NET Community rychlou schůzku – 15. května 2018 – testování MVC s Javier C. Nelson** – video na YouTube \
+>   <https://www.youtube.com/watch?v=wtOE-xmFJkw&list=PL1rZQsJPBU2StolNg0aqvQswETPcYnNKL&index=5>
 
 >[!div class="step-by-step"]
 >[Předchozí](work-with-data-in-asp-net-core-apps.md)

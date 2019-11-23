@@ -10,26 +10,26 @@ ms.lasthandoff: 10/12/2019
 ms.locfileid: "72291538"
 ---
 # <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu
-Tato ukázka předvádí, jak vytvořit zásobník kanálů vlastním způsobem implementací <xref:System.ServiceModel.ServiceHostBase> přímo a postupem vytvoření vlastního dispečera kanálu v prostředí webového hostitele. Dispečer kanálu komunikuje s <xref:System.ServiceModel.Channels.IChannelListener>, aby přijímal kanály a načítají zprávy ze zásobníku kanálů. Tato ukázka také obsahuje základní ukázku, která ukazuje, jak vytvořit zásobník kanálu v prostředí webového hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
+Tato ukázka předvádí, jak vytvořit zásobník kanálu vlastním způsobem implementací <xref:System.ServiceModel.ServiceHostBase> přímo a vytvořením vlastního dispečera kanálu v prostředí webového hostitele. Dispečer kanálu komunikuje s <xref:System.ServiceModel.Channels.IChannelListener>, aby přijímal kanály a načítají zprávy ze zásobníku kanálů. Tato ukázka také obsahuje základní ukázku, která ukazuje, jak vytvořit zásobník kanálu v prostředí webového hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
   
 ## <a name="custom-servicehostbase"></a>Vlastní objektu ServiceHostBase  
- Tato ukázka implementuje základní typ <xref:System.ServiceModel.ServiceHostBase> namísto <xref:System.ServiceModel.ServiceHost> k demonstrování, jak nahradit implementaci zásobníku Windows Communication Foundation (WCF) vlastní vrstvou zpracování zpráv nad zásobníkem kanálu. Přepíšete virtuální metodu <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> na naslouchací procesy kanálu a na dispečeru kanálu.  
+ Tato ukázka implementuje základní typ <xref:System.ServiceModel.ServiceHostBase> namísto <xref:System.ServiceModel.ServiceHost> demonstruje, jak nahradit implementaci zásobníku Windows Communication Foundation (WCF) vlastní vrstvou zpracování zpráv nad zásobníkem kanálu. Přepíšete virtuální metodu <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> k sestavení naslouchacího procesu kanálu a dispečeru kanálu.  
   
- K implementaci služby hostované na webu, Získejte rozšíření služby <xref:System.ServiceModel.Activation.VirtualPathExtension> z kolekce <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> a přidejte je do <xref:System.ServiceModel.Channels.BindingParameterCollection>, aby transportní vrstva věděla, jak nakonfigurovat naslouchací proces kanálu na základě nastavení hostitelského prostředí, to znamená Internetu. Nastavení/Windows (WAS) služby WAS (Information Services) pro aktivační službu procesů (IIS).  
+ K implementaci služby hostované na webu, Získejte rozšíření služby <xref:System.ServiceModel.Activation.VirtualPathExtension> z kolekce <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> a přidejte ho do <xref:System.ServiceModel.Channels.BindingParameterCollection>, aby transportní vrstva věděla, jak nakonfigurovat naslouchací proces kanálu na základě nastavení hostitelského prostředí, to znamená Internetová informační služba (IIS)/Windows Process Activation Service (WAS).  
   
 ## <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu  
- Dispečer vlastního kanálu rozšiřuje typ <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase>. Tento typ implementuje logiku programování vrstvy kanálu. V této ukázce se pro vzor výměny zpráv požadavek-odpověď podporuje jenom <xref:System.ServiceModel.Channels.IReplyChannel>, ale vlastní dispečer kanálu se dá snadno rozšířit na jiné typy kanálů.  
+ Dispečer vlastního kanálu rozšiřuje typ <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase>. Tento typ implementuje logiku programování vrstvy kanálu. V této ukázce je pro vzor výměny zpráv požadavek-odpověď podporován pouze <xref:System.ServiceModel.Channels.IReplyChannel>, ale vlastní dispečer kanálu lze snadno rozšířit na jiné typy kanálů.  
   
  Dispečer nejprve otevře naslouchací proces kanálu a pak přijme kanál odpovědí s jedním prvkem. S kanálem začíná odesílat zprávy (požadavky) v nekonečné smyčce. Pro každý požadavek vytvoří zprávu s odpovědí a pošle ji zpět klientovi.  
   
 ## <a name="creating-a-response-message"></a>Vytvoření zprávy s odpovědí  
- Zpracování zprávy je implementováno v typu `MyServiceManager`. V metodě `HandleRequest` je nejprve zaškrtnuto záhlaví `Action` zprávy, aby bylo možné zjistit, zda je požadavek podporován. Předdefinovaná akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována tak, aby poskytovala filtrování zpráv. To je podobné jako koncept kontraktu služby v implementaci WCF <xref:System.ServiceModel.ServiceHost>.  
+ Zpracování zprávy je implementováno v typu `MyServiceManager`. V metodě `HandleRequest` se nejprve kontroluje `Action` záhlaví zprávy, aby se zobrazila informace o tom, jestli je požadavek podporovaný. Předdefinovaná akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována tak, aby poskytovala filtrování zpráv. To je podobné jako koncept kontraktu služby v implementaci <xref:System.ServiceModel.ServiceHost>WCF.  
   
- Pro správný případ akce SOAP načte ukázka požadovaná data zprávy a vygeneruje odpovídající odpověď na žádost podobnou tomu, co se zobrazuje v případě @no__t 0.  
+ Pro správný případ akce SOAP načte ukázka požadovaná data zprávy a vygeneruje odpovídající odpověď na žádost podobnou tomu, co se zobrazuje v případě <xref:System.ServiceModel.ServiceHost>.  
   
  Operaci HTTP-GET jste speciálně vystavili tak, že vrátíte vlastní zprávu HTML, v tomto případě to znamená, že můžete procházet službu z prohlížeče a zjistit, zda je správně zkompilována. Pokud akce SOAP neodpovídá, odešlete chybovou zprávu, která indikuje, že žádost není podporována.  
   
- Klient této ukázky je normální klient služby WCF, který nepředpokládá žádnou ze služeb. Proto je tato služba speciálně navržená tak, aby odpovídala tomu, co obdržíte od normální implementace WCF @ no__t-0. V důsledku toho se na straně klienta vyžaduje jenom kontrakt služby.  
+ Klient této ukázky je normální klient služby WCF, který nepředpokládá žádnou ze služeb. Proto je tato služba speciálně navržená tak, aby odpovídala tomu, co obdržíte z běžné implementace<xref:System.ServiceModel.ServiceHost> WCF. V důsledku toho se na straně klienta vyžaduje jenom kontrakt služby.  
   
 ## <a name="using-the-sample"></a>Použití ukázky  
  Spuštění klientské aplikace přímo vytvoří následující výstup.  
@@ -51,6 +51,6 @@ Server replied: You said: Howdy. Message id: 5
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pro stažení ukázek Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\CustomChannelDispatcher`

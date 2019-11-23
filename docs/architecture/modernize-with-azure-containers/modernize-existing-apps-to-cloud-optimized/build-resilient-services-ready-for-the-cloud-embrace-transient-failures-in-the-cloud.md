@@ -39,7 +39,7 @@ Při implementaci opakování protokolu HTTP a přepínacích cyklů okruhu je d
 
 Další informace o implementaci strategií pro zpracování částečných chyb v cloudu najdete v následujících odkazech.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Implementace odolné komunikace pro zpracování částečného selhání**
 

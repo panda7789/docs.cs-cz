@@ -22,7 +22,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) probíh�
 
 Každý koncový bod obsahuje adresu, která indikuje, kde najít koncový bod, vazbu, která určuje, jak klient může komunikovat s koncovým bodem, a kontrakt, který identifikuje dostupné metody.
 
-- **Adresa**. Adresa jednoznačně identifikuje koncový bod a oznamuje potenciálním příjemcům, kde se služba nachází. Je reprezentovaná v objektovém modelu WCF adresou @no__t 0, která obsahuje identifikátor URI (Uniform Resource Identifier) a vlastnosti adresy, které obsahují identitu, některé prvky WSDL (Web Services Description Language) a kolekci volitelných hlaviček. Volitelná záhlaví poskytují dodatečné podrobné informace o adresách, které umožňují identifikovat nebo komunikovat s koncovým bodem. Další informace najdete v tématu [určení adresy koncového bodu](specifying-an-endpoint-address.md).
+- **Adresa**. Adresa jednoznačně identifikuje koncový bod a oznamuje potenciálním příjemcům, kde se služba nachází. Je reprezentovaná v objektovém modelu WCF pomocí <xref:System.ServiceModel.EndpointAddress> adresy, která obsahuje identifikátor URI (Uniform Resource Identifier) a vlastnosti adresy, které obsahují identitu, některé prvky WSDL (Web Services Description Language) a kolekci volitelných hlaviček. Volitelná záhlaví poskytují dodatečné podrobné informace o adresách, které umožňují identifikovat nebo komunikovat s koncovým bodem. Další informace najdete v tématu [určení adresy koncového bodu](specifying-an-endpoint-address.md).
 
 - **Vazba**. Vazba určuje, jak komunikovat s koncovým bodem. Tato vazba určuje, jak koncový bod komunikuje s celým světem, včetně přenosového protokolu, který se má použít (například TCP nebo HTTP), který kódování má být použito pro zprávy (například text nebo binární), a které požadavky na zabezpečení jsou nezbytné (pro Příklad: SSL (Secure Sockets Layer) [SSL] nebo zabezpečení zpráv SOAP). Další informace najdete v tématu [použití vazeb ke konfiguraci služeb a klientů](using-bindings-to-configure-services-and-clients.md).
 
@@ -31,19 +31,19 @@ Každý koncový bod obsahuje adresu, která indikuje, kde najít koncový bod, 
 Koncový bod pro službu lze zadat buď imperativně pomocí kódu, nebo deklarativně prostřednictvím konfigurace. Pokud nejsou zadány žádné koncové body, modul runtime poskytuje výchozí koncové body přidáním jednoho výchozího koncového bodu pro každou základní adresu pro každý kontrakt služby implementovaný službou. Definování koncových bodů v kódu obvykle není praktické, protože vazby a adresy nasazené služby se obvykle liší od těch, které se použily při vývoji služby. Obecně je praktické definovat koncové body služby pomocí konfigurace namísto kódu. Zachování vazby a adresování informací z kódu umožňuje jejich změnu bez nutnosti opětovné kompilace a opětovného nasazení aplikace.
 
 > [!NOTE]
-> Při přidávání koncového bodu služby, který provádí zosobnění, je nutné buď použít jednu z metod @no__t 0, nebo metodu <xref:System.ServiceModel.Description.ContractDescription.GetContract%28System.Type%2CSystem.Type%29> pro správné načtení kontraktu do nového objektu <xref:System.ServiceModel.Description.ServiceDescription>.
+> Při přidávání koncového bodu služby, který provádí zosobnění, je nutné buď použít jednu z <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metod, nebo metodu <xref:System.ServiceModel.Description.ContractDescription.GetContract%28System.Type%2CSystem.Type%29> pro správné načtení kontraktu do nového objektu <xref:System.ServiceModel.Description.ServiceDescription>.
 
 ## <a name="defining-endpoints-in-code"></a>Definování koncových bodů v kódu
 
 Následující příklad ukazuje, jak zadat koncový bod v kódu s následujícím:
 
-- Definujte kontrakt pro typ služby `IEcho`, který přijímá jméno a ozvěnu od někoho s odpovědí Hello \<Name >!.
+- Definujte kontrakt pro `IEcho` typ služby, který přijímá jméno a odpověď uživatele s odpovědí "Hello \<Name >!".
 
 - Implementujte službu `Echo` typu definovaného smlouvou `IEcho`.
 
-- Zadejte adresu koncového bodu `http://localhost:8000/Echo` pro službu.
+- Zadejte adresu koncového bodu `http://localhost:8000/Echo` služby.
 
-- Nakonfigurujte službu `Echo` pomocí vazby <xref:System.ServiceModel.WSHttpBinding>.
+- Nakonfigurujte službu `Echo` pomocí <xref:System.ServiceModel.WSHttpBinding> vazby.
 
 ```csharp
 namespace Echo
@@ -125,9 +125,9 @@ serviceHost.Open()
 > Hostitel služby se vytvoří se základní adresou a potom zbytek adresy, která je relativní vzhledem k základní adrese, je zadána jako součást koncového bodu. Tento oddíl adresy umožňuje lépe definovat více koncových bodů pro služby na hostiteli.
 
 > [!NOTE]
-> Vlastnosti <xref:System.ServiceModel.Description.ServiceDescription> v aplikaci služby se nesmí upravovat za metodou <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> v <xref:System.ServiceModel.ServiceHostBase>. Někteří členové, například vlastnost <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> a metody `AddServiceEndpoint` v <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.ServiceHost>, vyvolávají výjimku, pokud byla změněna v minulosti. Jiné vám umožní je upravovat, ale výsledek není definován.
+> Vlastnosti <xref:System.ServiceModel.Description.ServiceDescription> v aplikaci služby se nesmí upravovat za metodou <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> na <xref:System.ServiceModel.ServiceHostBase>. Někteří členové, jako je například vlastnost <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> a `AddServiceEndpoint` metody v <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.ServiceHost>, vyvolávají výjimku, pokud byla změněna za daný bod. Jiné vám umožní je upravovat, ale výsledek není definován.
 >
-> Podobně na straně klienta nesmí být hodnoty <xref:System.ServiceModel.Description.ServiceEndpoint> měněny po volání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> na <xref:System.ServiceModel.ChannelFactory>. Vlastnost <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vyvolá výjimku, pokud byla změněna za tento bod. Ostatní hodnoty popisů klienta lze upravovat bez chyb, ale výsledek není definován.
+> Podobně na straně klienta nesmí být hodnoty <xref:System.ServiceModel.Description.ServiceEndpoint> po volání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> na <xref:System.ServiceModel.ChannelFactory>upravovat. Vlastnost <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vyvolá výjimku, pokud byla změněna za chvíli. Ostatní hodnoty popisů klienta lze upravovat bez chyb, ale výsledek není definován.
 >
 > Bez ohledu na to, jestli pro službu nebo klienta, se doporučuje změnit popis před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>.
 
@@ -136,7 +136,7 @@ serviceHost.Open()
 Při vytváření aplikace často chcete odložit rozhodnutí správci, který aplikaci nasazuje. Například neexistuje žádný způsob, jak si předem zjistit, co bude adresa služby (identifikátor URI). Místo hardwarového zakódování adresy je vhodnější dát správcům po vytvoření služby. Tato flexibilita je zajištěna prostřednictvím konfigurace. Podrobnosti najdete v tématu [Konfigurace služeb](configuring-services.md).
 
 > [!NOTE]
-> K rychlému vytvoření konfiguračních souborů použijte [Nástroj Svcutil. exe](servicemodel-metadata-utility-tool-svcutil-exe.md) s názvem `/config:`*filename*`[,`*filename*`]`.
+> K rychlému vytvoření konfiguračních souborů použijte nástroj pro tvorbu [metadat (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) s *názvem `/config:`filename*`[,`*filename*`]` přepínač.
 
 ## <a name="using-default-endpoints"></a>Používání výchozích koncových bodů
 
@@ -201,7 +201,7 @@ Dim echoUri As Uri = New Uri("http://localhost:8000/")
 serviceHost.Open()
 ```
 
- Pokud jsou koncové body explicitně poskytnuty, lze výchozí koncové body přidat voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).
+ Pokud jsou zadány koncové body explicitně, lze výchozí koncové body přidat voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).
 
 ## <a name="see-also"></a>Viz také:
 

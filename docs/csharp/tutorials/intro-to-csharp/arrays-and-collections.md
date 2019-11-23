@@ -12,7 +12,7 @@ ms.locfileid: "71834150"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Naučte se spravovat kolekce dat pomocí obecného typu seznamu.
 
-Tento úvodní kurz poskytuje Úvod k C# jazyku a základům třídy <xref:System.Collections.Generic.List%601>.
+Tento úvodní kurz poskytuje Úvod k C# jazyku a základům <xref:System.Collections.Generic.List%601> třídy.
 
 V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS. Rychlý přehled příkazů, které budete používat, se [seznámí s vývojářskými nástroji](local-environment.md)a odkazy na další podrobnosti.
 
@@ -46,7 +46,7 @@ Nahraďte `<name>` vaším jménem. Uložte *program.cs*. V okně konzoly zadejt
 
 Právě jste vytvořili seznam řetězců, Přidali jste do tohoto seznamu tři názvy a vytiskli názvy všech velkých písmen. Pomocí konceptů, které jste se naučili v předchozích kurzech, Projděte seznam.
 
-Kód pro zobrazení názvů využívá funkci [interpolace řetězce](../../language-reference/tokens/interpolated.md) .  Pokud předcházíte `string` s znakem `$`, můžete vložit C# kód do deklarace řetězce. Skutečný řetězec nahradí tento C# kód hodnotou, kterou generuje. V tomto příkladu nahrazuje `{name.ToUpper()}` s každým názvem převedenými na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A>.
+Kód pro zobrazení názvů využívá funkci [interpolace řetězce](../../language-reference/tokens/interpolated.md) .  Pokud předcházíte `string` znakem `$`, můžete vložit C# kód do deklarace řetězce. Skutečný řetězec nahradí tento C# kód hodnotou, kterou generuje. V tomto příkladu nahrazuje `{name.ToUpper()}` s každým názvem převedenými na velká písmena, protože jste volali metodu <xref:System.String.ToUpper%2A>.
 
 Pojďme si to prozkoumat.
 
@@ -54,7 +54,7 @@ Pojďme si to prozkoumat.
 
 Kolekce, kterou jste vytvořili, používá typ <xref:System.Collections.Generic.List%601>. Tento typ ukládá sekvence prvků. Zadejte typ prvků mezi lomenými závorkami.
 
-Jedním z důležitých aspektů tohoto typu <xref:System.Collections.Generic.List%601> je to, že se může zvětšovat nebo zmenšovat, což umožňuje přidat nebo odebrat prvky. Přidejte tento kód před uzavírací `}` v metodě `Main`:
+Jedním z důležitých aspektů tohoto typu <xref:System.Collections.Generic.List%601> je, že se dá zvětšit nebo zmenšit a povolit přidávání nebo odebírání prvků. Přidejte tento kód před uzavírací `}` v metodě `Main`:
 
 ```csharp
 Console.WriteLine();
@@ -67,9 +67,9 @@ foreach (var name in names)
 }
 ```
 
-Přidali jste dva další názvy na konec seznamu. Také jste odebrali i jednu z nich. Uložte soubor a zadejte `dotnet run` a zkuste to znovu.
+Přidali jste dva další názvy na konec seznamu. Také jste odebrali i jednu z nich. Uložte soubor a zadejte `dotnet run`, abyste ho mohli vyzkoušet.
 
-@No__t-0 umožňuje odkazovat také na jednotlivé položky podle **indexu** . Index můžete umístit mezi `[` a tokeny `]` za názvem seznamu. C#pro první index používá hodnotu 0. Přidejte tento kód přímo pod kód, který jste právě přidali, a vyzkoušejte ho:
+<xref:System.Collections.Generic.List%601> slouží také k odkazování na jednotlivé položky podle **indexu** . Index mezi `[` a `]` tokeny umístíte podle názvu seznamu. C#pro první index používá hodnotu 0. Přidejte tento kód přímo pod kód, který jste právě přidali, a vyzkoušejte ho:
 
 ```csharp
 Console.WriteLine($"My name is {names[0]}");
@@ -82,11 +82,11 @@ Nemůžete získat přístup k indexu za konec seznamu. Mějte na paměti, že i
 Console.WriteLine($"The list has {names.Count} people in it");
  ```
 
-Uložte soubor a zadejte `dotnet run`, aby se zobrazily výsledky.
+Uložte soubor a zadejte `dotnet run` znovu pro zobrazení výsledků.
 
 ## <a name="search-and-sort-lists"></a>Hledání a řazení seznamů
 
-Naše ukázky používají relativně malé seznamy, ale vaše aplikace často můžou vytvářet seznamy s mnoha více prvky, někdy se číslování v tisících. Chcete-li najít prvky v těchto větších kolekcích, je nutné hledat v seznamu různé položky. Metoda <xref:System.Collections.Generic.List%601.IndexOf%2A> hledá položku a vrátí index položky. Přidejte tento kód do dolní části vaší metody `Main`:
+Naše ukázky používají relativně malé seznamy, ale vaše aplikace často můžou vytvářet seznamy s mnoha více prvky, někdy se číslování v tisících. Chcete-li najít prvky v těchto větších kolekcích, je nutné hledat v seznamu různé položky. Metoda <xref:System.Collections.Generic.List%601.IndexOf%2A> vyhledá položku a vrátí index položky. Přidejte tento kód do dolní části `Main` metody:
 
 ```csharp
 var index = names.IndexOf("Felipe");
@@ -111,7 +111,7 @@ else
 }
 ```
 
-Položky v seznamu lze seřadit také. Metoda <xref:System.Collections.Generic.List%601.Sort%2A> seřadí všechny položky v seznamu v normálním pořadí (abecedně v případě řetězců). Přidejte tento kód do dolní části našeho `Main` metody:
+Položky v seznamu lze seřadit také. Metoda <xref:System.Collections.Generic.List%601.Sort%2A> seřadí všechny položky v seznamu v normálním pořadí (abecedně v případě řetězců). Přidejte tento kód do dolní části naší `Main` metody:
 
 ```csharp
 names.Sort();
@@ -123,7 +123,7 @@ foreach (var name in names)
 
 Uložte soubor a zadejte `dotnet run` a vyzkoušejte si tuto nejnovější verzi.
 
-Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `WorkingWithStrings` a zapište novou metodu `Main`, která volá `WorkingWithStrings`. Až budete hotovi, váš kód by měl vypadat takto:
+Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `WorkingWithStrings` a zapište novou `Main` metodu, která volá `WorkingWithStrings`. Až budete hotovi, váš kód by měl vypadat takto:
 
 ```csharp
 using System;
@@ -178,9 +178,9 @@ namespace list_tutorial
 
 ## <a name="lists-of-other-types"></a>Seznamy dalších typů
 
-V seznamu zatím jste používali typ `string`. Pojďme udělat <xref:System.Collections.Generic.List%601> s použitím jiného typu. Pojďme sestavit sadu čísel.
+V seznamu zatím jste používali `string` typ. Pojďme udělat <xref:System.Collections.Generic.List%601> s použitím jiného typu. Pojďme sestavit sadu čísel.
 
-Do dolní části nové metody @no__t 0 přidejte následující:
+Do dolní části nové `Main` metody přidejte následující:
 
 ```csharp
 var fibonacciNumbers = new List<int> {1, 1};
@@ -198,10 +198,10 @@ foreach (var item in fibonacciNumbers)
     Console.WriteLine(item);
 ```
 
-Uložte soubor a zadejte `dotnet run`, aby se zobrazily výsledky.
+Uložte soubor a zadejte `dotnet run` pro zobrazení výsledků.
 
 > [!TIP]
-> Pokud se chcete soustředit jenom na tuto část, můžete komentovat kód, který volá `WorkingWithStrings();`. Stačí vložit dva znaky `/` před volání jako toto: `// WorkingWithStrings();`.
+> Chcete-li se soustředit jenom na tuto část, můžete komentovat kód, který volá `WorkingWithStrings();`. Stačí vložit dva `/` znaky před volání jako toto: `// WorkingWithStrings();`.
 
 ## <a name="challenge"></a>Výzev
 

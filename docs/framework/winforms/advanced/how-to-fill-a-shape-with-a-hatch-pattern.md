@@ -20,7 +20,7 @@ ms.locfileid: "72320057"
 Vzor šrafování se skládá ze dvou barev: jednoho pro pozadí a jeden pro čáry, které tvoří vzorek na pozadí. Chcete-li vyplnit uzavřený tvar pomocí vzoru šrafování, použijte objekt <xref:System.Drawing.Drawing2D.HatchBrush>. Následující příklad ukazuje, jak vyplnit elipsu vzorem šrafování:  
   
 ## <a name="example"></a>Příklad  
- Konstruktor <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> přijímá tři argumenty: styl šrafování, barva šrafované čáry a barvu pozadí. Argument stylu šrafování může být libovolná hodnota z výčtu <xref:System.Drawing.Drawing2D.HatchStyle>. Výčet <xref:System.Drawing.Drawing2D.HatchStyle> obsahuje více než 50 prvků; v následujícím seznamu jsou uvedeny některé z těchto prvků:  
+ Konstruktor <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> přebírá tři argumenty: styl šrafování, barva šrafované čáry a barva pozadí. Argument stylu šrafování může být libovolná hodnota z výčtu <xref:System.Drawing.Drawing2D.HatchStyle>. Výčet <xref:System.Drawing.Drawing2D.HatchStyle> obsahuje více než 50 prvků; v následujícím seznamu jsou uvedeny některé z těchto prvků:  
   
 - <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>  
   
@@ -42,7 +42,7 @@ Vzor šrafování se skládá ze dvou barev: jednoho pro pozadí a jeden pro č�
  [!code-vb[System.Drawing.UsingABrush#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Předchozí příklad je určený pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> @ no__t-1, což je parametr obslužné rutiny události <xref:System.Windows.Forms.Control.Paint>.  
+ Předchozí příklad je navržen pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr obslužné rutiny události <xref:System.Windows.Forms.Control.Paint>.  
   
 ## <a name="see-also"></a>Viz také:
 

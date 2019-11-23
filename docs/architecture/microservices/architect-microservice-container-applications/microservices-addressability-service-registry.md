@@ -17,17 +17,17 @@ Každá mikroslužba má jedinečný název (URL), který se používá k překl
 
 V některých prostředích pro nasazení mikroslužeb (označovaných jako clustery, které se mají pokrýt v pozdější části), je zjišťování služeb integrované. Například Azure Container Service s prostředím Kubernetes (AKS) může zpracovávat registraci a zrušení registrace instance služby. Také spouští proxy na každém hostiteli clusteru, který hraje roli směrovače zjišťování na straně serveru.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Chris Richardson. Vzorku Registr služby** \
+- **Chris Richardson. Vzor: \ registru služby**
   <https://microservices.io/patterns/service-registry.html>
 
-- **Auth0. Registr služby** \
+- **Auth0. \ registru služby**
   <https://auth0.com/blog/an-introduction-to-microservices-part-3-the-service-registry/>
 
-- **Gabrielem Schenker. Zjišťování služby** \
+- **Gabrielem Schenker. \ zjišťování služby**
   <https://lostechies.com/gabrielschenker/2016/01/27/service-discovery/>
 
 >[!div class="step-by-step"]
->[Předchozí](maintain-microservice-apis.md)Další
->[](microservice-based-composite-ui-shape-layout.md)
+>[Předchozí](maintain-microservice-apis.md)
+>[Další](microservice-based-composite-ui-shape-layout.md)

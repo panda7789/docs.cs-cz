@@ -25,7 +25,7 @@ Předchozí balíčky a moduly npm budou později odebrány v rozhraní .NET 5.
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
@@ -39,7 +39,7 @@ V balíčku NuGet [Microsoft. AspNetCore. SpaServices. Extensions](https://www.n
 
 ASP.NET Core podporuje integraci s různými architekturami jednostránkové aplikace (SPA), včetně úhlů, reakce a reakce na Redux. Zpočátku se integrace s těmito rozhraními provedla s ASP.NET Core specifickými komponentami, které zpracovávají scénáře jako předběžné vykreslování na straně serveru a integraci s nástrojem Webpack. V době, kdy došlo k úpravě, se oborové standardy změnily. Každé rozhraní zabezpečeného ověřování hesla uvolnilo vlastní standardní rozhraní příkazového řádku. Například úhlové CLI a vytvořit reakci-aplikace.
 
-Po vydání ASP.NET Core 2,1 do května 2018 tým odpověděl na změnu v normách. Byl poskytnut novější a jednodušší způsob, jak integrovat s vlastními sady nástrojů architekturou SPA. Nový integrační mechanismus existuje v balíčku `Microsoft.AspNetCore.SpaServices.Extensions` a zůstává základem úhlů a reakci šablon projektů od ASP.NET Core 2,1.
+Po vydání ASP.NET Core 2,1 do května 2018 tým odpověděl na změnu v normách. Byl poskytnut novější a jednodušší způsob, jak integrovat s vlastními sady nástrojů architekturou SPA. Nový integrační mechanismus existuje v balíčku `Microsoft.AspNetCore.SpaServices.Extensions` a zůstává základem úhlů a Reagujecích šablon projektů od ASP.NET Core 2,1.
 
 Pro objasnění, že starší součásti specifické pro ASP.NET Core jsou důležité a nedoporučuje se:
 
@@ -53,7 +53,7 @@ Pokud tyto balíčky používáte, aktualizujte aplikace tak, aby používaly ty
 - V balíčku `Microsoft.AspNetCore.SpaServices.Extensions`.
 - Poskytované rozhraními zabezpečeného hesla, které používáte
 
-Pokud chcete povolit funkce, jako je například předběžné vykreslení na straně serveru a Hot Module reload, přečtěte si dokumentaci pro odpovídající architekturu SPA. Funkce v @no__t- *0 není zastaralá* a bude nadále podporována.
+Pokud chcete povolit funkce, jako je například předběžné vykreslení na straně serveru a Hot Module reload, přečtěte si dokumentaci pro odpovídající architekturu SPA. Funkce v *`Microsoft.AspNetCore.SpaServices.Extensions` není zastaralá* a bude nadále podporována.
 
 #### <a name="category"></a>Kategorie
 

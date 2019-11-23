@@ -1,14 +1,13 @@
 ---
 title: Migrace služby Request-Reply WCF do gRPC-gRPC pro vývojáře WCF
 description: Naučte se migrovat jednoduchou službu Request-Reply z WCF na gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 12e042e8e7e3683cc4da1fedce2482e7199b04a7
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: f0b20e7b374438f90d83aebc6035a4e4dd94ae18
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846612"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971789"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>Migrace služby požadavek-odpověď WCF na gRPC unární RPC
 
@@ -30,7 +29,7 @@ public interface IPortfolioService
 }
 ```
 
-`Portfolio` model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), včetně seznamu objektů`PortfolioItem`. Tyto modely jsou definovány v projektu `TraderSys.PortfolioData` společně s třídou úložiště, která představuje abstrakci přístupu k datům.
+`Portfolio` model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), včetně seznamu objektů `PortfolioItem`. Tyto modely jsou definovány v projektu `TraderSys.PortfolioData` společně s třídou úložiště, která představuje abstrakci přístupu k datům.
 
 ```csharp
 [DataContract]
@@ -281,7 +280,7 @@ public override Task<GetResponse> Get(GetRequest request, ServerCallContext cont
 }
 ```
 
-Prvním problémem je, že `request.TraderId` je řetězec a služba vyžaduje `Guid`. I když je očekávaný formát pro řetězec `UUID`, kód musí zabývat se možností, že volající odeslal neplatnou hodnotu a správně reagovat. Služba může s chybami reagovat vyvoláním `RpcException` a pomocí standardního stavového kódu `InvalidArgument` tento problém vyjádřit.
+Prvním problémem je, že `request.TraderId` je řetězec a služba vyžaduje `Guid`. I když je očekávaný formát pro řetězec `UUID`, kód musí zabývat se možností, že volající odeslal neplatnou hodnotu a správně reagovat. Služba může s chybami reagovat vyvoláním `RpcException`a pomocí standardního stavového kódu `InvalidArgument` tento problém vyjádřit.
 
 ```csharp
 public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -348,7 +347,7 @@ namespace TraderSys.Portfolios.Protos
 ```
 
 > [!NOTE]
-> Můžete použít knihovnu, jako je například [automapper](https://automapper.org/) , pro zpracování tohoto převodu z interních tříd modelu na Protobuf typy, pokud nakonfigurujete převody typu nižší úrovně jako `string` / `Guid` nebo `decimal` / `double` a mapování seznamu.
+> Můžete použít knihovnu, jako je například [automapper](https://automapper.org/) , pro zpracování tohoto převodu z interních tříd modelu na Protobuf typy, pokud nakonfigurujete převody typu nižší úrovně jako `string`/`Guid` nebo `decimal`/`double` a mapování seznamu.
 
 S kódem převodu na místě může být implementace metody `Get` dokončena.
 
@@ -409,7 +408,7 @@ Přejděte k souboru `portfolios.proto` v projektu `TraderSys.Portfolios`, ponec
 > [!TIP]
 > Všimněte si, že toto dialogové okno také poskytuje pole Adresa URL. Pokud vaše organizace udržuje adresář `.proto`ch souborů, který je přístupný pro web, můžete vytvořit klienty pouze nastavením této adresy URL.
 
-Při použití funkce **Přidat připojenou službu** sady Visual Studio je soubor `portfolios.proto` přidán do projektu knihovny tříd jako *propojený soubor*namísto zkopírování, takže změny souboru v projektu služby budou automaticky použity v klientovi. projektem. Element `<Protobuf>` v souboru `csproj` vypadá takto:
+Při použití funkce **Přidat připojenou službu** sady Visual Studio je soubor `portfolios.proto` přidán do projektu knihovny tříd jako *propojený soubor*namísto zkopírování, takže změny souboru v projektu služby budou automaticky použity v klientském projektu. Element `<Protobuf>` v souboru `csproj` vypadá takto:
 
 ```xml
 <Protobuf Include="..\TraderSys.Portfolios\Protos\portfolios.proto" GrpcServices="Client">

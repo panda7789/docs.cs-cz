@@ -13,7 +13,7 @@ helpviewer_keywords:
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
 ms.openlocfilehash: dc726f7648c1c0a564594331023f03d20569d766
 ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/02/2019
 ms.locfileid: "71736826"
@@ -39,7 +39,7 @@ Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> poskytuje způsob, ja
 
      [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]
 
-3. Vytvořte nový objekt @no__t 0 a definujte šířku a formát.
+3. Vytvořte nový objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> a definujte šířku a formát.
 
      [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]
 
@@ -51,7 +51,7 @@ Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> poskytuje způsob, ja
 
      [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]
 
-## <a name="example"></a>Příklad:
+## <a name="example"></a>Příklad
 
 Následuje kompletní příklad, který čte ze souboru `testfile.txt`:
 
@@ -61,13 +61,13 @@ Následuje kompletní příklad, který čte ze souboru `testfile.txt`:
 
 Následující podmínky mohou způsobit výjimku:  
   
-- Řádek nelze analyzovat v zadaném formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce Určuje řádek, který způsobil výjimku, zatímco vlastnost <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> je přiřazena k textu obsaženému na řádku.
+- Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva výjimky Určuje řádek, který způsobil výjimku, zatímco vlastnost <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> je přiřazena k textu obsaženému na řádku.
 - Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).
 - Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).
 - Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).
 - Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.PeekChars%2A>
@@ -75,6 +75,6 @@ Následující podmínky mohou způsobit výjimku:
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.EndOfData%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.TextFieldType%2A>
-- [Postupy: čtení z textových souborů s hodnotami oddělenými čárkou](how-to-read-from-comma-delimited-text-files.md)
-- [Postupy: čtení z textových souborů s pevnou šířkou](how-to-read-from-fixed-width-text-files.md)
+- [Postupy: Čtení z textových souborů s oddělovačem čárkou](how-to-read-from-comma-delimited-text-files.md)
+- [Postupy: Čtení z textových souborů s pevnou šířkou](how-to-read-from-fixed-width-text-files.md)
 - [Analýza textových souborů pomocí objektu TextFieldParser](parsing-text-files-with-the-textfieldparser-object.md)

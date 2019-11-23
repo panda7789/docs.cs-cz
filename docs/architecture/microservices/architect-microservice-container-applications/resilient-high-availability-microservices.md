@@ -54,7 +54,7 @@ Složité problémy zobrazené na obrázku 4-22 jsou velmi obtížně řešeny u
 
 Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické kontroly, které každý z nich nabízí, se liší v funkcích a stavu zralosti, někdy v závislosti na platformě operačního systému, jak je vysvětleno v další části.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Dvanáct-Factor App. XI. Protokoly: zpracování protokolů jako datových proudů událostí** \
   <https://12factor.net/logs>

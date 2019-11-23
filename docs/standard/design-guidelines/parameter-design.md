@@ -22,7 +22,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  **✓ DO** používat alespoň odvozený typ parametru, který poskytuje funkci vyžadovanou člena.  
   
- Předpokládejme například, že chcete navrhnout metodu, která vytvoří výčet kolekce a vytiskne každou položku do konzoly. Taková metoda by měla jako parametr přebírat <xref:System.Collections.IEnumerable>, ne <xref:System.Collections.ArrayList> nebo <xref:System.Collections.IList>, například.  
+ Předpokládejme například, že chcete navrhnout metodu, která vytvoří výčet kolekce a vytiskne každou položku do konzoly. Taková metoda by měla přijmout <xref:System.Collections.IEnumerable> jako parametr, ne <xref:System.Collections.ArrayList> nebo <xref:System.Collections.IList>, například.  
   
  **X DO NOT** používat vyhrazené parametry.  
   
@@ -34,7 +34,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  **✓ DO** umístit všechny `out` všechny hodnoty ve-následující parametry a `ref` parametry (s výjimkou pole parametrů), i když je výsledkem nekonzistence v parametru řazení mezi přetížení (najdete v části [člena Přetížení](../../../docs/standard/design-guidelines/member-overloading.md)).  
   
- Parametry `out` se dají zobrazit jako nadbytečné návratové hodnoty a jejich seskupení usnadňuje pochopení signatury metody.  
+ Parametry `out` lze zobrazit jako nadbytečné návratové hodnoty a jejich seskupení usnadňuje pochopení signatury metody.  
   
  **✓ DO** být konzistentní názvy parametrů při přepisování členy nebo implementace členů rozhraní.  
   
@@ -50,7 +50,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
  **✓ CONSIDER** pomocí logických výrazů pro konstruktor parametry, které jsou hodnoty skutečně dvou stavů a jednoduše slouží k inicializaci logická hodnota vlastnosti.  
   
 ### <a name="validating-arguments"></a>Ověřují se argumenty  
- **✓ DO** ověřte argumenty předaný veřejný, chráněný nebo – explicitně implementovaná členy. Pokud se ověření nepovede, vyvolejte <xref:System.ArgumentException?displayProperty=nameWithType> nebo jednu z jejích podtříd.  
+ **✓ DO** ověřte argumenty předaný veřejný, chráněný nebo – explicitně implementovaná členy. Pokud se ověření nepovede, vyvolejte <xref:System.ArgumentException?displayProperty=nameWithType>nebo jednu z jejích podtříd.  
   
  Všimněte si, že skutečné ověření nemusí nutně probíhat ve veřejném nebo chráněném členu. Může dojít na nižší úrovni v některé soukromé nebo interní rutině. Hlavním bodem je, že celá oblast Surface, která je vystavena koncovým uživatelům, kontroluje argumenty.  
   
@@ -71,13 +71,13 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako jsou například C#, VB.NET a C++, jsou ve výchozím nastavení k předávání parametrů podle hodnoty.  
   
- Pokud je předán argument pomocí parametru `ref`, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. parametry `Ref` lze použít k tomu, aby člen mohl upravovat argumenty předané volajícím.  
+ Pokud je předán argument pomocí parametru `ref`, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. parametry `Ref` lze použít k umožnění člena upravovat argumenty předané volajícím.  
   
  parametry `Out` se podobají parametrům `ref` s malým rozdílem. Parametr je zpočátku považován za nepřiřazený a nemůže být načten v těle členu před tím, než se mu přiřadí nějaká hodnota. Parametr musí být také přiřazen určitou hodnotu před tím, než se člen vrátí.  
   
  **X AVOID** pomocí `out` nebo `ref` parametry.  
   
- Použití parametrů `out` nebo `ref` vyžaduje zkušenosti s ukazateli, porozumění způsobu, jakým se liší typy hodnot a typy odkazů, a metody zpracování s více návratových hodnot. Také rozdíl mezi `out` parametry a `ref` není široce srozumitelný. Architektura architekt návrhu pro obecnou cílovou skupinu by neměla očekávat, že uživatelé budou hlavní pracovat s parametry `out` nebo `ref`.  
+ Použití parametrů `out` nebo `ref` vyžaduje zkušenosti s ukazateli, porozumění způsobu, jakým se liší typy hodnot a referenční typy, a metody zpracování s více návratových hodnot. Rozdíl mezi parametry `out` a `ref` navíc není široce srozumitelný. Architektura architekt návrhu pro obecnou cílovou skupinu by neměla očekávat, že uživatelé budou hlavní pracovat s parametry `out` nebo `ref`.  
   
  **X DO NOT** předat odkazové typy odkazem.  
   
@@ -92,7 +92,7 @@ public class String {
 }  
 ```  
   
- Uživatel pak může zavolat metodu <xref:System.String.Format%2A?displayProperty=nameWithType> následujícím způsobem:  
+ Uživatel pak může zavolat metodu <xref:System.String.Format%2A?displayProperty=nameWithType>, a to následujícím způsobem:  
   
  `String.Format("File {0} not found in {1}",new object[]{filename,directory});`  
   
@@ -138,7 +138,7 @@ public class String {
   
  **X DO NOT** použít `varargs` metody, které jsou známé jako se třemi tečkami.  
   
- Některé jazyky CLR, například C++, podporují alternativní konvenci pro předávání seznamů parametrů proměnných s názvem metody `varargs`. Konvence by se neměla používat v rozhraních, protože není kompatibilní se specifikací CLS.  
+ Některé jazyky CLR, například C++, podporují alternativní konvenci pro předávání seznamů parametrů proměnných s názvem `varargs` metody. Konvence by se neměla používat v rozhraních, protože není kompatibilní se specifikací CLS.  
   
 ### <a name="pointer-parameters"></a>Parametry ukazatele  
  Obecně platí, že by ukazatelé neměl být uveden v oblasti veřejného povrchu dobře navržené architektury spravovaného kódu. Ve většině případů by měly být ukazatele zapouzdřeny. V některých případech se ale vyžaduje, aby se v případě interoperability a používání ukazatelů v takových případech používaly příslušné ukazatele.  
@@ -151,9 +151,9 @@ public class String {
   
  Například není nutné předávat počáteční index, protože k dosažení stejného výsledku lze použít jednoduchou aritmetickou akci s ukazatelem.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- @no__t – 0Reprinted podle oprávnění Pearsonova vzdělávání, Inc. v [Framework pokyny pro návrh: Konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice @ no__t-0 od Krzysztof Cwalina a Brad Abrams, Publikováno od 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series. *  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

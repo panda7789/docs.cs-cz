@@ -35,7 +35,7 @@ Případy nepodporované v kontejnerech Windows, od května 2018:
 
 Další nepodporované scénáře a požadavky od komunity najdete v tématu Fórum UserVoice pro kontejnery Windows: <https://windowsserver.uservoice.com/forums/304624-containers>.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Virtuální počítače a kontejnery v Azure**
 

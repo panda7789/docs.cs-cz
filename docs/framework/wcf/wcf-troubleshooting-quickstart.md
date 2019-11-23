@@ -27,7 +27,7 @@ Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v pr
   
 5. [Moje služba a klient fungují skvěle, ale nemůžu je nechat fungovat, když je klient v jiném počítači? Co se děje?](#BKMK_q4)  
   
-6. [Když vyvolám FaultException @ no__t-> 1Exception, kde typ je výjimka, vždycky na klientovi získáme obecný typ FaultException, nikoli obecný typ. Co se děje?](#BKMK_q5)  
+6. [Když vyvolám výjimku FaultException\<> kde typ je výjimka, vždy na klientovi získáme obecný typ FaultException, nikoli obecný typ. Co se děje?](#BKMK_q5)  
   
 7. [Vypadá to, že se operace jednosměrového a odpovědi vrátí přibližně stejnou rychlost, když odpověď neobsahuje žádná data. Co se děje?](#BKMK_q6)  
   
@@ -51,17 +51,17 @@ Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v pr
   
 <a name="BKMK_q1"></a>   
 ## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>V případě, že je můj klient v době, kdy se po prvním požadavku nečinný, se někdy na druhou žádost dostanou MessageSecurityException –. Co se děje?  
- Druhá žádost může selhat hlavně ze dvou důvodů: (1) vypršel časový limit relace nebo (2) webový server, který je hostitelem služby, se recykluje. V prvním případě je relace platná až do vypršení časového limitu služby. Pokud služba neobdrží požadavek od klienta v časovém intervalu určeném vazbou služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončí relaci zabezpečení. Následné zprávy klienta mají za následek <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit zabezpečenou relaci se službou pro odesílání budoucích zpráv nebo použití tokenu kontextového kontextu zabezpečení. Tokeny kontextového kontextu zabezpečení také umožňují zabezpečenou relaci překonání webového serveru, který se recykluje. Další informace o použití stavových tokenů zabezpečeného kontextu v zabezpečené relaci naleznete v tématu [How to: Create a Security Context token for the Secure Session](./feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Můžete také zakázat zabezpečené relace. Při použití vazby [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) můžete nastavit vlastnost `establishSecurityContext` na `false` pro zákaz zabezpečených relací. Chcete-li zakázat zabezpečené relace pro jiné vazby, je nutné vytvořit vlastní vazbu. Podrobnosti o vytvoření vlastní vazby naleznete v tématu [How to: Create a Custom Binding using the SecurityBindingElement](./feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některou z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
+ Druhá žádost může selhat hlavně ze dvou důvodů: (1) vypršel časový limit relace nebo (2) webový server, který je hostitelem služby, se recykluje. V prvním případě je relace platná až do vypršení časového limitu služby. Pokud služba neobdrží požadavek od klienta v časovém intervalu určeném vazbou služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončí relaci zabezpečení. Následné zprávy klienta mají za následek <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit zabezpečenou relaci se službou pro odesílání budoucích zpráv nebo použití tokenu kontextového kontextu zabezpečení. Tokeny kontextového kontextu zabezpečení také umožňují zabezpečenou relaci překonání webového serveru, který se recykluje. Další informace o použití stavových tokenů zabezpečeného kontextu v zabezpečené relaci naleznete v tématu [How to: Create a Security Context token for the Secure Session](./feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Můžete také zakázat zabezpečené relace. Při použití vazby [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) můžete nastavit vlastnost `establishSecurityContext` na `false` pro zakázání zabezpečených relací. Chcete-li zakázat zabezpečené relace pro jiné vazby, je nutné vytvořit vlastní vazbu. Podrobnosti o vytvoření vlastní vazby naleznete v tématu [How to: Create a Custom Binding using the SecurityBindingElement](./feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některou z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
   
 <a name="BKMK_q2"></a>   
 ## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>Moje služba začne odmítat nové klienty po tom, co s nimi pracuje 10 klientů. Co se děje?  
- Ve výchozím nastavení můžou služby mít jenom 10 souběžných relací. Proto pokud vazby služby používají relace, akceptuje nová připojení klientů, dokud nedosáhne tohoto čísla, a poté odmítne nová připojení klientů, dokud nebude ukončena jedna z aktuálních relací. Více klientů můžete podporovat několika různými způsoby. Pokud vaše služba nevyžaduje relace, nepoužívejte vazbu s relacemi. (Další informace najdete v tématu [použití relací](using-sessions.md).) Další možností je zvýšit limit relace tak, že změníte hodnotu vlastnosti <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> na číslo odpovídající vaší situaci.  
+ Ve výchozím nastavení můžou služby mít jenom 10 souběžných relací. Proto pokud vazby služby používají relace, akceptuje nová připojení klientů, dokud nedosáhne tohoto čísla, a poté odmítne nová připojení klientů, dokud nebude ukončena jedna z aktuálních relací. Více klientů můžete podporovat několika různými způsoby. Pokud vaše služba nevyžaduje relace, nepoužívejte vazbu s relacemi. (Další informace najdete v tématu [použití relací](using-sessions.md).) Další možností je zvýšit limit relace změnou hodnoty vlastnosti <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> na číslo odpovídající vaší situaci.  
   
 <a name="BKMK_q3"></a>   
 ## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a>Můžu konfiguraci služby načíst z jiného místa než do konfiguračního souboru aplikace WCF?  
  Ano, ale je nutné vytvořit vlastní třídu <xref:System.ServiceModel.ServiceHost>, která přepíše metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A>. Uvnitř této metody můžete zavolat základ pro načtení konfigurace (Pokud chcete načíst i standardní informace o konfiguraci), ale můžete také zcela nahradit systém načítání konfigurace. Všimněte si, že pokud chcete načíst konfiguraci z konfiguračního souboru, který se liší od konfiguračního souboru aplikace, musíte konfigurační soubor analyzovat sami a načíst konfiguraci.  
   
- Následující příklad kódu ukazuje, jak přepsat metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> a přímo nakonfigurovat koncový bod.  
+ Následující příklad kódu ukazuje, jak přepsat metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> a jak přímo nakonfigurovat koncový bod.  
   
 ```csharp
 public class MyServiceHost : ServiceHost  
@@ -141,16 +141,16 @@ public class MyServiceHost : ServiceHost
 - [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86946)  
   
 <a name="BKMK_q5"></a>   
-## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>Když vyvolám FaultException @ no__t-> 0Exception, kde typ je výjimka, vždycky na klientovi získáme obecný typ FaultException, nikoli obecný typ. Co se děje?  
+## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>Když vyvolám výjimku FaultException\<> kde typ je výjimka, vždy na klientovi získáme obecný typ FaultException, nikoli obecný typ. Co se děje?  
  Důrazně doporučujeme vytvořit vlastní chybový datový typ a deklarovat ho jako typ podrobností ve smlouvě o selhání. Důvodem je použití typů výjimek poskytovaných systémem:  
   
 - Vytvoří závislost typu, která odebere jednu z největších silných aplikací orientovaných na služby.  
   
-- Nemůže záviset na výjimce při serializaci standardním způsobem. Některé – například <xref:System.Security.SecurityException> – nemusí být serializovatelný vůbec.  
+- Nemůže záviset na výjimce při serializaci standardním způsobem. Některé – například <xref:System.Security.SecurityException>– nemusí být serializovatelný vůbec.  
   
 - Zveřejňuje podrobnosti interní implementace klientům. Další informace najdete v tématu [určení a zpracování chyb v kontraktech a službách](specifying-and-handling-faults-in-contracts-and-services.md).  
   
- Pokud však ladíte aplikaci, můžete serializovat informace o výjimce a vrátit ji klientovi pomocí třídy <xref:System.ServiceModel.Description.ServiceDebugBehavior>.  
+ Pokud však ladíte aplikaci, můžete serializovat informace o výjimce a vrátit ji do klienta pomocí <xref:System.ServiceModel.Description.ServiceDebugBehavior> třídy.  
   
 <a name="BKMK_q6"></a>   
 ## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>Vypadá to, že se operace jednosměrového a odpovědi vrátí přibližně stejnou rychlost, když odpověď neobsahuje žádná data. Co se děje?  
@@ -158,7 +158,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q77"></a>   
 ## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>Používám certifikát X. 509 s mojí službou a získám System. Security. Cryptography. CryptographicException –. Co se děje?  
- K tomu obvykle dochází po změně uživatelského účtu, pod kterým běží pracovní proces služby IIS. Například v [!INCLUDE[wxp](../../../includes/wxp-md.md)] změníte výchozí uživatelský účet, který spustí program Aspnet_wp. exe v rámci z ASPNET na vlastní uživatelský účet, může se zobrazit tato chyba. Pokud používáte privátní klíč, bude mít proces, který ho používá, oprávnění pro přístup k souboru, který tento klíč ukládá.  
+ K tomu obvykle dochází po změně uživatelského účtu, pod kterým běží pracovní proces služby IIS. Například pokud změníte výchozí uživatelský účet, který používá soubor Aspnet_wp. exe v části z ASPNET na vlastní uživatelský účet, může se tato chyba zobrazit v [!INCLUDE[wxp](../../../includes/wxp-md.md)]. Pokud používáte privátní klíč, bude mít proces, který ho používá, oprávnění pro přístup k souboru, který tento klíč ukládá.  
   
  V takovém případě je nutné udělit účtu procesu oprávnění ke čtení pro soubor, který obsahuje privátní klíč. Pokud například pracovní proces služby IIS běží pod účtem Bob, budete muset uživateli udělit přístup pro čtení k souboru, který obsahuje soukromý klíč.  
   
@@ -166,11 +166,11 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q88"></a>   
 ## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>Změnil (a) jsem první parametr operace z velkých písmen na malá. Nyní můj klient vyvolá výjimku. Co se děje?  
- Hodnota názvů parametrů v signatuře operace je součástí kontraktu a rozlišuje velká a malá písmena. Použijte atribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType>, pokud potřebujete rozlišovat mezi názvem místního parametru a metadaty, které popisují operaci pro klientské aplikace.  
+ Hodnota názvů parametrů v signatuře operace je součástí kontraktu a rozlišuje velká a malá písmena. Atribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> použijte v případě, že potřebujete rozlišovat mezi názvem místního parametru a metadaty, které popisují operaci pro klientské aplikace.  
   
 <a name="BKMK_q99"></a>   
 ## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>Používám jeden z mých nástrojů pro trasování a zobrazí se EndpointNotFoundException. Co se děje?  
- Pokud používáte trasovací nástroj, který není systémem poskytnutý mechanizmus trasování WCF a obdržíte <xref:System.ServiceModel.EndpointNotFoundException>, který indikuje, že došlo k neshodě filtru adres, je nutné použít třídu <xref:System.ServiceModel.Description.ClientViaBehavior> k nasměrování zpráv do trasovacího nástroje a mít nástroj přesměruje tyto zprávy na adresu služby. Třída <xref:System.ServiceModel.Description.ClientViaBehavior> změní hlavičku adresování `Via` tak, aby určovala další síťovou adresu nezávisle na konečném přijímači, kterou označuje hlavička adresování `To`. V takovém případě ale neměňte adresu koncového bodu, která se používá k navázání hodnoty `To`.  
+ Pokud používáte trasovací nástroj, který není systémem poskytnutý mechanismus trasování WCF a obdržíte <xref:System.ServiceModel.EndpointNotFoundException>, který indikuje, že došlo ke neshodě filtru adres, je nutné použít třídu <xref:System.ServiceModel.Description.ClientViaBehavior> k nasměrování zpráv do trasovacího nástroje a nechat nástroj přesměrovat tyto zprávy na adresu služby. Třída <xref:System.ServiceModel.Description.ClientViaBehavior> mění hlavičku adresování `Via`, aby určovala další síťovou adresu nezávisle na konečném přijímači, kterou uvádí hlavička `To` adresování. V takovém případě ale neměňte adresu koncového bodu, která se používá k navázání `To` hodnoty.  
   
  Následující příklad kódu ukazuje příklad konfiguračního souboru klienta.  
   
@@ -194,7 +194,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q10"></a>   
 ## <a name="what-is-the-base-address-how-does-it-relate-to-an-endpoint-address"></a>Jaká je základní adresa? Jak se vztahuje na adresu koncového bodu?  
- Základní adresa je kořenová adresa pro třídu <xref:System.ServiceModel.ServiceHost>. Ve výchozím nastavení platí, že pokud do konfigurace služby přidáte třídu <xref:System.ServiceModel.Description.ServiceMetadataBehavior>, v části Web Services Description Language (WSDL) pro všechny koncové body, které hostitel publikuje, se načtou z základní adresy HTTP a taky jakákoli relativní adresa poskytnutá chování metadat, plus "? WSDL ". Pokud jste obeznámeni s ASP.NET a službou IIS, základní adresa je ekvivalentní virtuálnímu adresáři.  
+ Základní adresa je kořenová adresa pro třídu <xref:System.ServiceModel.ServiceHost>. Ve výchozím nastavení platí, že pokud do konfigurace služby přidáte třídu <xref:System.ServiceModel.Description.ServiceMetadataBehavior>, jazyk WSDL (Web Services Description Language) pro všechny koncové body, který hostitel publikuje, se načte z základní adresy HTTP a veškerá relativní adresa poskytnutá chování metadat a také "? WSDL". Pokud jste obeznámeni s ASP.NET a službou IIS, základní adresa je ekvivalentní virtuálnímu adresáři.  
   
 ## <a name="sharing-a-port-between-a-service-endpoint-and-a-mex-endpoint-using-the-nettcpbinding"></a>Sdílení portu mezi koncovým bodem služby a koncovým bodem MEX pomocí NetTcpBinding  
  Pokud zadáte základní adresu pro službu jako NET. TCP://MyServer: 8080/Mojesluzba a přidejte následující koncové body:  
@@ -237,7 +237,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BK_MK99"></a>   
 ## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání webové aplikace HTTP WCF z aplikace WCF SOAP služba vrátí následující chybu: metoda 405 není povolena.  
- Volání webové aplikace HTTP WCF (služba, která používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) ze služby WCF může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1 [System. ServiceModel. ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď: (405) není Povoleno. Tato výjimka je způsobena tím, že WCF přepíše odchozí <xref:System.ServiceModel.OperationContext> s příchozím <xref:System.ServiceModel.OperationContext>. Chcete-li tento problém vyřešit, vytvořte v rámci operace služby HTTP webu WCF <xref:System.ServiceModel.OperationContextScope>. Příklad:  
+ Volání webové aplikace HTTP služby WCF (služba, která používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) ze služby WCF může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1 [System. ServiceModel. ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď: (405) metoda není povolena. Tato výjimka je způsobena tím, že služba WCF přepíše odchozí <xref:System.ServiceModel.OperationContext> s příchozím <xref:System.ServiceModel.OperationContext>. Chcete-li tento problém vyřešit, vytvořte <xref:System.ServiceModel.OperationContextScope> v rámci operace služby HTTP webu WCF. Příklad:  
   
 ```csharp
 public string Echo(string input)  

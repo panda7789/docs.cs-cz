@@ -106,7 +106,7 @@ Například Jimmy Bogard při poskytování přímé zpětné vazby k této př�
 
 Úložiště můžou být užitečná, ale pro návrh DDD nejsou kritická, a to tak, jak jsou agregovaným vzorem a bohatým doménovým modelem. Proto použijte vzor úložiště, a to podle potřeby. V takovém případě budete používat model úložiště vždy, když použijete EF Core i když v tomto případě úložiště pokrývá celý mikroslužbu nebo ohraničený kontext.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 ### <a name="repository-pattern"></a>Vzor úložiště
 

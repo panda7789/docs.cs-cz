@@ -18,24 +18,24 @@ Příklad deklaruje třídu s názvem `Stack` v oboru názvů s názvem `Acme.Co
 
 [!code-csharp[Stack](../../../samples/snippets/csharp/tour/program-structure/program.cs#L1-L34)]
 
-Plně kvalifikovaný název této třídy je `Acme.Collections.Stack`. Třída obsahuje několik členů: pole s názvem `top`, dvě metody nazvané `Push` a `Pop` a vnořená třída s názvem `Entry`. Třída `Entry` dále obsahuje tři členy: pole s názvem `next`, pole s názvem `data` a konstruktor. Za předpokladu, že zdrojový kód příkladu je uložen v souboru `acme.cs`, příkazový řádek
+Plně kvalifikovaný název této třídy je `Acme.Collections.Stack`. Třída obsahuje několik členů: pole s názvem `top`, dvě metody pojmenované `Push` a `Pop`a vnořená třída s názvem `Entry`. Třída `Entry` dále obsahuje tři členy: pole s názvem `next`, pole s názvem `data`a konstruktor. Za předpokladu, že zdrojový kód příkladu je uložen v souboru `acme.cs`, příkazového řádku
 
 ```console
 csc /t:library acme.cs
 ```
 
-zkompiluje příklad jako knihovnu (kód bez vstupního bodu `Main`) a vytvoří sestavení s názvem `acme.dll`.
+zkompiluje příklad jako knihovnu (kód bez `Main` vstupní bod) a vytvoří sestavení s názvem `acme.dll`.
 
 > [!IMPORTANT]
-> Výše uvedené příklady používají jako kompilátor příkazového řádku C# `csc`. Tento kompilátor je spustitelný soubor systému Windows. Chcete- C# li používat na jiných platformách, měli byste použít nástroje pro .NET Core. Ekosystém .NET Core používá ke správě sestavení příkazového řádku @no__t 0 CLI. To zahrnuje správu závislostí a vyvolávání C# kompilátoru. Úplný popis těchto nástrojů na platformách, které podporuje .NET Core, najdete v [tomto kurzu](../../core/tutorials/using-with-xplat-cli.md) .
+> Výše uvedené příklady používají `csc` jako kompilátor příkazového C# řádku. Tento kompilátor je spustitelný soubor systému Windows. Chcete- C# li používat na jiných platformách, měli byste použít nástroje pro .NET Core. Ekosystém .NET Core používá `dotnet` CLI ke správě sestavení příkazového řádku. To zahrnuje správu závislostí a vyvolávání C# kompilátoru. Úplný popis těchto nástrojů na platformách, které podporuje .NET Core, najdete v [tomto kurzu](../../core/tutorials/using-with-xplat-cli.md) .
 
 Sestavení obsahují spustitelný kód ve formě instrukcí pro převodní jazyk (IL) a symbolické informace ve formě metadat. Před provedením je kód IL v sestavení automaticky převeden na kód specifický pro procesor pomocí kompilátoru JIT (just-in-time) modulu CLR (Common Language Runtime) .NET.
 
-Vzhledem k tomu, že sestavení je samo-popisující jednotku funkcí obsahující kód i metadata, není nutné, aby byly direktivy `#include` a hlavičkové C#soubory v. Veřejné typy a členy, které jsou obsaženy v konkrétním sestavení, jsou v C# programu k dispozici jednoduše odkazem na toto sestavení při kompilování programu. Například tento program používá třídu `Acme.Collections.Stack` ze sestavení `acme.dll`:
+Vzhledem k tomu, že sestavení je samo-popisující jednotku funkcí obsahující kód i metadata, není nutné `#include` direktiv a hlavičkových souborů v C#. Veřejné typy a členy, které jsou obsaženy v konkrétním sestavení, jsou v C# programu k dispozici jednoduše odkazem na toto sestavení při kompilování programu. Například tento program používá třídu `Acme.Collections.Stack` ze sestavení `acme.dll`:
 
 [!code-csharp[UsingStack](../../../samples/snippets/csharp/tour/program-structure/Program.cs#L38-L52)]
 
-Pokud je program uložen v souboru `example.cs`, pokud je kompilována `example.cs`, může být sestavení Acme. dll odkazováno pomocí možnosti kompilátoru '/r:
+Pokud je program uložen v souboru `example.cs`, když je `example.cs` kompilováno, může být sestavení Acme. dll odkazováno pomocí možnosti kompilátoru '/r:
 
 ```console
 csc /r:acme.dll example.cs

@@ -13,7 +13,7 @@ ms.locfileid: "70295778"
 
 Na obrázku 5-12 se můžete podívat na celý scénář DevOps, který pokrývá správu kódu, kompilaci kódu, buildy Docker images, Docker images push do registru Docker a nakonec nasazení do clusteru Kubernetes v Azure.
 
-![Pracovního postupu Spustí se ve vývojovém počítači. Nahrávání do úložiště spustí úlohu sestavení/CI s použitím vlastní image, která se načte do registru Docker, a pak ji pomocí úlohy CD/nasazení vyřadí do AKS.](media/docker-workflow-ci-cd-aks.png)
+![Pracovní postup: spustí se ve vývojovém počítači. Nahrávání do úložiště spustí úlohu sestavení/CI s použitím vlastní image, která se načte do registru Docker, a pak ji pomocí úlohy CD/nasazení vyřadí do AKS.](media/docker-workflow-ci-cd-aks.png)
 
 **Obrázek 5-12**. Scénář CI/CD vytváření imagí Docker a nasazení do clusteru Kubernetes v Azure
 
@@ -37,5 +37,5 @@ Druhou fází je vytvořit kanál nasazení nebo vydání. V Azure DevOps Servic
 ><https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
 >[!div class="step-by-step"]
->[Předchozí](docker-application-outer-loop-devops-workflow.md)Další
->[](../run-manage-monitor-docker-environments/index.md)
+>[Předchozí](docker-application-outer-loop-devops-workflow.md)
+>[Další](../run-manage-monitor-docker-environments/index.md)

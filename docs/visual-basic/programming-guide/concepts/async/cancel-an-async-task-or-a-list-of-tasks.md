@@ -1,54 +1,54 @@
 ---
-title: Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
+title: Zrušení asynchronní úlohy nebo seznamu úloh
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 89a78e9e423ab4cce9fd3627ec433072ade238dc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2956582cd0c8e044fcd37ffab13686489a7c854c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419869"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347970"
 ---
-# <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
+# <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Cancel an Async Task or a List of Tasks (Visual Basic)
 
-Můžete nastavit tlačítko, které můžete použít k zrušení asynchronní aplikace, pokud nechcete čekat na jeho dokončení. Podle příkladů v tomto tématu můžete přidat tlačítko zrušení do aplikace, která stáhne obsah jednoho webu nebo seznamu webů.
+You can set up a button that you can use to cancel an async application if you don't want to wait for it to finish. By following the examples in this topic, you can add a cancellation button to an application that downloads the contents of one website or a list of websites.
 
-V příkladech se používá uživatelské rozhraní, které vám popíše, jak [vyladit asynchronní aplikaci (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) .
+The examples use the UI that [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) describes.
 
 > [!NOTE]
-> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
+> To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.
 
-## <a name="BKMK_CancelaTask"></a>Zrušení úlohy
+## <a name="BKMK_CancelaTask"></a> Cancel a Task
 
-První příklad přidruží tlačítko **Zrušit** k jedné úloze stažení. Pokud zvolíte tlačítko, zatímco aplikace stahuje obsah, stahování se zruší.
+The first example associates the **Cancel** button with a single download task. If you choose the button while the application is downloading content, the download is canceled.
 
 ### <a name="downloading-the-example"></a>Stažení příkladu
 
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.
 
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
+1. Decompress the file that you downloaded, and then start Visual Studio.
 
-2. Na panelu nabídek vyberte možnosti **soubor**, **otevřít**, **projekt/řešení**.
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningVB.
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.
 
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelATask** a pak zvolte **nastavit jako projekt po spuštění**.
+4. In **Solution Explorer**, open the shortcut menu for the **CancelATask** project, and then choose **Set as StartUp Project**.
 
-5. Kliknutím na klávesu F5 spusťte projekt.
+5. Choose the F5 key to run the project.
 
-     Vyberte klávesy CTRL + F5 pro spuštění projektu bez ladění.
+     Choose the Ctrl+F5 keys to run the project without debugging it.
 
- Pokud nechcete stáhnout projekt, můžete zkontrolovat soubory MainWindow. XAML. vb na konci tohoto tématu.
+ If you don't want to download the project, you can review the MainWindow.xaml.vb files at the end of this topic.
 
-### <a name="building-the-example"></a>Vytvoření příkladu
+### <a name="building-the-example"></a>Building the Example
 
-Následující změny přidají tlačítko **Storno** do aplikace, která stáhne Web. Pokud nechcete stáhnout nebo sestavit příklad, můžete si prohlédnout konečný produkt v části "kompletní příklady" na konci tohoto tématu. Hvězdičky označují změny v kódu.
+The following changes add a **Cancel** button to an application that downloads a website. If you don't want to download or build the example, you can review the final product in the "Complete Examples" section at the end of this topic. Asterisks mark the changes in the code.
 
-Pokud chcete sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt** vyberte **StarterCode** namísto **CancelATask**.
+To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **StarterCode** as the **StartUp Project** instead of **CancelATask**.
 
-Pak přidejte následující změny do souboru MainWindow. XAML. vb daného projektu.
+Then add the following changes to the MainWindow.xaml.vb file of that project.
 
-1. Deklarujte `CancellationTokenSource` proměnnou `cts`, která je v oboru pro všechny metody, které k ní přistupují.
+1. Declare a `CancellationTokenSource` variable, `cts`, that’s in scope for all methods that access it.
 
     ```vb
     Class MainWindow
@@ -57,7 +57,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
         Dim cts As CancellationTokenSource
     ```
 
-2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá metodu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> k upozorňování `cts`, když si uživatel vyžádá zrušení.
+2. Add the following event handler for the **Cancel** button. The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.
 
     ```vb
     ' ***Add an event handler for the Cancel button.
@@ -69,16 +69,16 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
     End Sub
     ```
 
-3. Proveďte následující změny v obslužné rutině události pro tlačítko **Start** `startButton_Click`.
+3. Make the following changes in the event handler for the **Start** button, `startButton_Click`.
 
-    - Vytvořte instanci `CancellationTokenSource``cts`.
+    - Instantiate the `CancellationTokenSource`, `cts`.
 
       ```vb
       ' ***Instantiate the CancellationTokenSource.
       cts = New CancellationTokenSource()
       ```
 
-    - V volání `AccessTheWebAsync`, které stahuje obsah zadaného webu, odešlete vlastnost <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> `cts` jako argument. Vlastnost `Token` šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
+    - In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument. The `Token` property propagates the message if cancellation is requested. Add a catch block that displays a message if the user chooses to cancel the download operation. The following code shows the changes.
 
       ```vb
       Try
@@ -97,9 +97,9 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
       End Try
       ```
 
-4. V `AccessTheWebAsync`použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení metody `GetAsync` v <xref:System.Net.Http.HttpClient> typu ke stažení obsahu webu. Předat `ct`<xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync`, jako druhý argument. Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
+4. In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website. Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument. The token carries the message if the user chooses the **Cancel** button.
 
-    Následující kód ukazuje změny v `AccessTheWebAsync`.
+    The following code shows the changes in `AccessTheWebAsync`.
 
     ```vb
     ' ***Provide a parameter for the CancellationToken.
@@ -124,47 +124,47 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
     End Function
     ```
 
-5. Pokud program nezrušíte, vytvoří se následující výstup:
+5. If you don’t cancel the program, it produces the following output:
 
     ```console
     Ready to download.
     Length of the downloaded string: 158125.
     ```
 
-    Pokud zvolíte tlačítko **Storno** před tím, než program dokončí stahování obsahu, program vytvoří následující výstup:
+    If you choose the **Cancel** button before the program finishes downloading the content, the program produces the following output:
 
     ```console
     Ready to download.
     Download canceled.
     ```
 
-## <a name="BKMK_CancelaListofTasks"></a>Zrušení seznamu úloh
+## <a name="BKMK_CancelaListofTasks"></a> Cancel a List of Tasks
 
-Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho úloh přiřazením stejné instance `CancellationTokenSource` k jednotlivým úlohám. Pokud zvolíte tlačítko **Zrušit** , zrušíte tím všechny úlohy, které ještě nebyly dokončeny.
+You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task. If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.
 
 ### <a name="downloading-the-example"></a>Stažení příkladu
 
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.
 
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
+1. Decompress the file that you downloaded, and then start Visual Studio.
 
-2. Na panelu nabídek vyberte možnosti **soubor**, **otevřít**, **projekt/řešení**.
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningVB.
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.
 
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAListOfTasks** a pak zvolte **nastavit jako projekt po spuštění**.
+4. In **Solution Explorer**, open the shortcut menu for the **CancelAListOfTasks** project, and then choose **Set as StartUp Project**.
 
-5. Kliknutím na klávesu F5 spusťte projekt.
+5. Choose the F5 key to run the project.
 
-     Vyberte klávesy CTRL + F5 pro spuštění projektu bez ladění.
+     Choose the Ctrl+F5 keys to run the project without debugging it.
 
- Pokud nechcete stáhnout projekt, můžete zkontrolovat soubory MainWindow. XAML. vb na konci tohoto tématu.
+ If you don't want to download the project, you can review the MainWindow.xaml.vb files at the end of this topic.
 
-### <a name="building-the-example"></a>Vytvoření příkladu
+### <a name="building-the-example"></a>Building the Example
 
-Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelATask** . Do tohoto projektu přidejte následující změny. Hvězdičky označují změny v programu.
+To extend the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelATask** as the **StartUp Project**. Add the following changes to that project. Asterisks mark the changes in the program.
 
-1. Přidejte metodu pro vytvoření seznamu webových adres.
+1. Add a method to create a list of web addresses.
 
     ```vb
     ' ***Add a method that creates a list of web addresses.
@@ -184,14 +184,14 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     End Function
     ```
 
-2. Volejte metodu v `AccessTheWebAsync`.
+2. Call the method in `AccessTheWebAsync`.
 
     ```vb
     ' ***Call SetUpURLList to make a list of web addresses.
     Dim urlList As List(Of String) = SetUpURLList()
     ```
 
-3. Přidejte následující smyčku v `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.
+3. Add the following loop in `AccessTheWebAsync` to process each web address in the list.
 
     ```vb
     ' ***Add a loop to process the list of web addresses.
@@ -209,19 +209,19 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     Next
     ```
 
-4. Vzhledem k tomu, že `AccessTheWebAsync` zobrazuje délku, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
+4. Because `AccessTheWebAsync` displays the lengths, the method doesn't need to return anything. Remove the return statement, and change the return type of the method to <xref:System.Threading.Tasks.Task> instead of <xref:System.Threading.Tasks.Task%601>.
 
     ```vb
     Async Function AccessTheWebAsync(ct As CancellationToken) As Task
     ```
 
-    Volejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.
+    Call the method from `startButton_Click` by using a statement instead of an expression.
 
     ```vb
     Await AccessTheWebAsync(cts.Token)
     ```
 
-5. Pokud program nezrušíte, vytvoří se následující výstup:
+5. If you don’t cancel the program, it produces the following output:
 
     ```console
     Length of the downloaded string: 35939.
@@ -241,7 +241,7 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     Downloads complete.
     ```
 
-    Pokud zvolíte tlačítko **Zrušit** před dokončením stahování, bude výstup obsahovat délky stahování, která byla dokončena před zrušením.
+    If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.
 
     ```console
     Length of the downloaded string: 35939.
@@ -253,15 +253,15 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     Downloads canceled.
     ```
 
-## <a name="BKMK_CompleteExamples"></a>Kompletní příklady
+## <a name="BKMK_CompleteExamples"></a> Complete Examples
 
-Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že je nutné přidat odkaz na <xref:System.Net.Http>.
+The following sections contain the code for each of the previous examples. Notice that you must add a reference for <xref:System.Net.Http>.
 
-Projekty si můžete stáhnout z [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
+You can download the projects from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ### <a name="cancel-a-task-example"></a>Příklad zrušení úlohy
 
-Následující kód je úplný soubor MainWindow. XAML. vb pro příklad, který zruší jeden úkol.
+The following code is the complete MainWindow.xaml.vb file for the example that cancels a single task.
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -346,7 +346,7 @@ End Class
 
 ### <a name="cancel-a-list-of-tasks-example"></a>Příklad zrušení seznamu úloh
 
-Následující kód je úplný soubor MainWindow. XAML. vb pro příklad, který zruší seznam úkolů.
+The following code is the complete MainWindow.xaml.vb file for the example that cancels a list of tasks.
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -467,6 +467,6 @@ End Class
 
 - <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Vyladění aplikace v asynchronním prostředí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
+- [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

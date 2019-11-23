@@ -21,7 +21,7 @@ Publikování služby WCF podporuje publikování služeb WCF vytvořených ze s
 
 - Knihovna služby syndikace.
 
-Tyto šablony služby můžete najít kliknutím na **soubor** > **Nový projekt** > [**Visual Basic** nebo **Visual C#** ] > **WCF**. Pro jiné šablony WCF v tomto umístění (včetně aplikace služby pracovního postupu WCF a aplikace služby WCF) můžete publikovat pomocí [publikování jedním kliknutím pro webové aplikace](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110)).
+Tyto šablony služby můžete najít výběrem možnosti **soubor** > **Nový projekt** > [**Visual Basic** nebo **Visual C#** ] > **WCF**. Pro jiné šablony WCF v tomto umístění (včetně aplikace služby pracovního postupu WCF a aplikace služby WCF) můžete publikovat pomocí [publikování jedním kliknutím pro webové aplikace](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110)).
 
 Službu lze publikovat do následujících cílových umístění.
 
@@ -37,17 +37,17 @@ Provedením následujících kroků nasaďte implementaci služby:
 
 1. Otevřete Visual Studio se zvýšenými oprávněními (klikněte pravým tlačítkem na spustitelný soubor a vyberte **Spustit jako správce** a otevřete ho).  Pokud používáte službu IIS 7,0 nebo novější, ujistěte se, že máte nainstalovanou součást "kompatibilita konfigurace metabáze služby IIS a IIS6 Configuration" pomocí příkazu "zapnout nebo vypnout funkce systému Windows" v Ovládacích panelech.
 
-2. Otevřete projekt služby, v hlavní nabídce vyberte **Build** > **publikovat \<Project název >** nebo klikněte pravým tlačítkem na projekt v **Průzkumník řešení** a klikněte na **publikovat**.
+2. Otevřete projekt služby, v hlavní nabídce vyberte **Build** > **Publish \<> název projektu** , nebo klikněte pravým tlačítkem myši na projekt v **Průzkumník řešení** a klikněte na **publikovat**.
 
 3. Zobrazí se okno **publikovat** . Klikněte na **...** . tlačítko pro určení cílového umístění, do kterého má být služba nasazena. Můžete vybrat možnost nasazení aplikace do místní služby IIS, systému souborů nebo serveru FTP. Pokud nasazujete aplikaci do místní služby IIS, můžete vybrat svůj web a vytvořit svou webovou aplikaci kliknutím na ikonu **vytvořit novou webovou aplikaci** v pravém horním rohu.
 
 4. Po kliknutí na **publikovat** v hlavním okně aplikace Visual Studio nasadí aplikaci do zadaného cílového umístění a zkopíruje soubory Web. config,. svc a Assembly do cílového adresáře. . Název. svc bude "ProjectName. ServiceName. svc". Po úspěšném publikování služby můžete najít hotlink v okně výstupu sady Visual Studio, které vypadá podobně jako "připojení k `http://localhost/WebApplicationFolderName...`". Můžete stisknout klávesu CTRL a kliknout na odkaz pro otevření stránky prohlížeče v rámci sady Visual Studio a zobrazení struktury adresáře služby.
 
-     Pokud nemůžete přejít na web, může to být způsobeno tím, že prohlížeč adresářů není ve službě IIS povolen. Pokud ho chcete povolit, postupujte podle tipů v části Co je možné vyzkoušet. Případně můžete přímo zadat `http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc` a zobrazit tak stránku služby.
+     Pokud nemůžete přejít na web, může to být způsobeno tím, že prohlížeč adresářů není ve službě IIS povolen. Pokud ho chcete povolit, postupujte podle tipů v části Co je možné vyzkoušet. Případně můžete přímo zadat `http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc` k zobrazení stránky služby.
 
 **Publikování** můžete použít k určení, zda chcete zkopírovat sestavení, konfiguraci a soubor. svc pro všechny služby definované v projektu do cílového umístění a přepsat stávající soubory v cílovém umístění.
 
-Pokud se rozhodnete nasadit aplikaci do místní služby IIS, může dojít k chybám souvisejícím s nastavením služby IIS. Ujistěte se prosím, že je služba IIS správně nainstalovaná. Do adresního řádku prohlížeče můžete zadat `http://localhost` a ověřit, jestli se zobrazí výchozí stránka IIS. V některých případech mohou být problémy také způsobeny nesprávným registrací ASP.NET nebo WCF ve službě IIS. Můžete otevřít Developer Command Prompt pro Visual Studio a spuštěním příkazu `aspnet_regiis.exe -ir` opravit problémy s registrací ASP.NET nebo spuštěním příkazu `ServiceModelReg.exe –ia` opravit problémy s registrací WCF.
+Pokud se rozhodnete nasadit aplikaci do místní služby IIS, může dojít k chybám souvisejícím s nastavením služby IIS. Ujistěte se prosím, že je služba IIS správně nainstalovaná. Do adresního řádku prohlížeče můžete zadat `http://localhost` a ověřit, jestli se zobrazí výchozí stránka IIS. V některých případech mohou být problémy také způsobeny nesprávným registrací ASP.NET nebo WCF ve službě IIS. Můžete otevřít Developer Command Prompt pro Visual Studio a spuštěním příkazu `aspnet_regiis.exe -ir` opravit problémy s registrací ASP.NET nebo spustit příkaz `ServiceModelReg.exe –ia` pro opravu potíží s registrací WCF.
 
 ## <a name="files-generated-for-publishing"></a>Soubory vygenerované pro publikování
  Předtím, než může být knihovna služby WCF hostitelem webu, jsou generovány následující soubory nástroje: soubory sestavení, soubor Web. config a soubor. svc. Všechny soubory jsou zkopírovány do cílového umístění. Služba je pak publikovaná.
@@ -56,7 +56,7 @@ Pokud se rozhodnete nasadit aplikaci do místní služby IIS, může dojít k ch
  Při publikování služby WCF pomocí tohoto nástroje je služba automaticky sestavena a soubory sestavení jsou po sestavení generovány v projektu služby.
 
 ### <a name="svc-file"></a>. Soubor SVC
- Operace publikování vygeneruje soubor *. svc pro každou službu WCF, zda soubor existuje, nebo ne, aby se zajistila platnost verze. Existují dva různé druhy souborů svc: jeden pro knihovnu služby WCF a knihovnu služby syndikace a druhý pro knihovnu služby pracovního postupu stavového a stavového stroje. Vygenerovaný @no__t soubor -0. svc je zkopírován do kořenové složky v cílovém umístění.
+ Operace publikování vygeneruje soubor *. svc pro každou službu WCF, zda soubor existuje, nebo ne, aby se zajistila platnost verze. Existují dva různé druhy souborů svc: jeden pro knihovnu služby WCF a knihovnu služby syndikace a druhý pro knihovnu služby pracovního postupu stavového a stavového stroje. Vygenerovaný soubor \*. svc je zkopírován do kořenové složky v cílovém umístění.
 
 ### <a name="webconfig-file"></a>Soubor Web. config
  Pokaždé, když je projekt služby publikován do konkrétního cílového umístění, vytvoří se soubor Web. config.
@@ -65,7 +65,7 @@ Pokud se rozhodnete nasadit aplikaci do místní služby IIS, může dojít k ch
 
 - Základní adresa je vyloučena.
 
-- Nastavení v elementu `<diagnostics>` jsou vyloučena, aby se zachovala nastavení trasování cílové platformy.
+- Nastavení v elementu `<diagnostics>` jsou vyloučena, aby zachovala nastavení trasování cílové platformy.
 
 ## <a name="publishing-wcf-services-with-non-http-bindings-to-iis"></a>Publikování služeb WCF s vazbami jiného typu než HTTP do služby IIS
  Pokud používáte službu IIS 7.0 nebo novější, můžete publikovat služby WCF s vazbami jiného typu než HTTP do služby IIS. Musíte provést některé předběžné konfigurace. Další informace najdete v tématech o [hostování v aktivační službě procesů systému Windows](./feature-details/hosting-in-windows-process-activation-service.md).

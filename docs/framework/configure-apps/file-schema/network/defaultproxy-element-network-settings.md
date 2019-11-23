@@ -15,12 +15,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71698211"
 ---
-# <a name="defaultproxy-element-network-settings"></a>@no__t – element > 0defaultProxy (nastavení sítě)
+# <a name="defaultproxy-element-network-settings"></a>\<element > defaultProxy (nastavení sítě)
 Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<defaultProxy >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultProxy >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,7 +50,7 @@ Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
 |[module](module-element-network-settings.md)|Přidá do aplikace nový modul proxy.|  
-|[soubory](proxy-element-network-settings.md)|Definuje proxy server.|  
+|[proxy](proxy-element-network-settings.md)|Definuje proxy server.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -61,7 +61,7 @@ Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).
 ## <a name="remarks"></a>Poznámky  
  Pokud je Element defaultProxy prázdný, použije se nastavení proxy z Internet Exploreru. Toto chování se liší od verze 1,1 .NET Framework.  
   
- Výjimka je vyvolána, pokud prvek [modulu](module-element-network-settings.md) určuje typ, který není veřejný, typ není odvozen od třídy <xref:System.Net.IWebProxy>, došlo k výjimce z konstruktoru bez parametrů tohoto objektu, nebo došlo k výjimce při načítání výchozí proxy server zadaný systémem. Vlastnost <xref:System.Exception.InnerException%2A> ve výjimce by měla obsahovat další informace o hlavní příčině chyby.  
+ Výjimka je vyvolána, pokud prvek [modulu](module-element-network-settings.md) určuje typ, který není veřejný, typ není odvozen od třídy <xref:System.Net.IWebProxy>, došlo k výjimce z konstruktoru bez parametrů, nebo při načítání výchozího serveru proxy zadaného systémem došlo k výjimce. Vlastnost <xref:System.Exception.InnerException%2A> výjimky by měla obsahovat další informace o hlavní příčině chyby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

@@ -13,7 +13,7 @@ ms.locfileid: "71353867"
 
 Oficiální image rozhraní .NET Docker jsou image Docker vytvořené a optimalizované Microsoftem. Jsou veřejně dostupné v úložištích Microsoftu v [Docker Hub](https://hub.docker.com/u/microsoft/). Každé úložiště může obsahovat několik imagí v závislosti na verzích .NET a v závislosti na operačním systému a verzích (Linux Debian, Linux Alpine, Windows nano Server, Windows Server Core atd.).
 
-Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí <https://hub.docker.com/_/microsoft-dotnet-core/>.NET Core:.
+Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí .NET Core: <https://hub.docker.com/_/microsoft-dotnet-core/>.
 
 Většina úložišť imagí poskytuje rozsáhlé označování, které vám pomůžou vybrat nejen konkrétní verzi architektury, ale také zvolit operační systém (Linux distribuce nebo Windows verze).
 
@@ -35,7 +35,7 @@ Proč je tento typ image sestavení důležitý? Tuto image nebudete nasazovat d
 
 ### <a name="in-production"></a>V produkčním prostředí
 
-Důležité informace o tom, jak rychle můžete nasadit a spustit kontejnery založené na provozní imagi .NET Core, najdete v tématu o produkčním prostředí. Proto je bitová kopie pouze za běhu založená na *MCR.Microsoft.com/dotnet/Core/ASPNET:2.2* malá, aby mohla rychle cestovat přes síť z registru Docker do hostitelů Docker. Obsah je připravený ke spuštění, což umožňuje nejrychlejší čas od spuštění kontejneru až po zpracování výsledků. V modelu Docker není nutné provádět kompilaci z kódu jazyka C\# , protože při použití kontejneru sestavení je k dispozici při spuštění příkazu dotnet Build nebo dotnet Publish.
+Důležité informace o tom, jak rychle můžete nasadit a spustit kontejnery založené na provozní imagi .NET Core, najdete v tématu o produkčním prostředí. Proto je bitová kopie pouze za běhu založená na *MCR.Microsoft.com/dotnet/Core/ASPNET:2.2* malá, aby mohla rychle cestovat přes síť z registru Docker do hostitelů Docker. Obsah je připravený ke spuštění, což umožňuje nejrychlejší čas od spuštění kontejneru až po zpracování výsledků. V modelu Docker není nutné provádět kompilaci z kódu jazyka C\#, protože při použití kontejneru sestavení je při spuštění sestavení dotnet nebo dotnet publish použito.
 
 V této optimalizované imagi vložíte jenom binární soubory a další obsah potřebný ke spuštění aplikace. Například obsah vytvořený pomocí dotnet publish obsahuje pouze kompilované binární soubory .NET, obrázky,. js a. CSS. V průběhu času se zobrazí obrázky, které obsahují zpracovaných kompilátorem JIT (kompilace z IL do nativní, ke které dochází v době běhu) balíčků.
 
@@ -43,7 +43,7 @@ I když existuje více verzí rozhraní .NET Core a ASP.NET Core imagí, všechn
 
 Když prozkoumáte úložiště imagí .NET v Docker Hub, zjistíte více verzí imagí klasifikovaných nebo označených pomocí značek. Tyto značky vám pomůžou určit, která z nich se má použít, v závislosti na verzi, kterou potřebujete, třeba v následující tabulce:
 
-| Image | Komentáře |
+| Obrázek | Komentáře |
 |-------|----------|
 | mcr.microsoft.com/dotnet/core/aspnet:**2,2** | ASP.NET Core, pouze s modulem runtime a optimalizace ASP.NET Core v systémech Linux a Windows (více archů) |
 | mcr.microsoft.com/dotnet/core/sdk:**2,2** | Rozhraní .NET Core se zahrnutými sadami SDK v systému Linux a Windows (vícenásobný arch) |

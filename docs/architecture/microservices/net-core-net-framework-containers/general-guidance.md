@@ -35,7 +35,7 @@ Pro svou kontejnerovou aplikaci Docker Server byste měli použít .NET Framewor
 
 Použití .NET Framework v Docker může zlepšit vaše prostředí nasazení díky minimalizaci problémů s nasazením. Tento [scénář "zvednutí a posunutí"](https://aka.ms/liftandshiftwithcontainersebook) je důležitý pro uzavření starší verze aplikací, které byly původně vyvinuty s tradičním .NET Framework, jako jsou ASP.NET WebForms, MVC Web Apps nebo WCF (Windows Communication Foundation) služby.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Elektronická kniha: modernizovat stávající aplikace .NET Framework s kontejnery Azure a Windows**  
     https://aka.ms/liftandshiftwithcontainersebook

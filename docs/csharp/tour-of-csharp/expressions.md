@@ -12,16 +12,16 @@ ms.locfileid: "72395678"
 ---
 # <a name="expressions"></a>Výrazy
 
-*Výrazy* jsou vytvořené z *operandů* a *operátorů*. Operátory výrazu označují, které operace se mají použít u operandů. Mezi příklady operátorů patří `+`, `-`, `*`, `/` a `new`. Příklady operandů zahrnují literály, pole, místní proměnné a výrazy.
+*Výrazy* jsou vytvořené z *operandů* a *operátorů*. Operátory výrazu označují, které operace se mají použít u operandů. Příklady operátorů zahrnují `+`, `-`, `*`, `/`a `new`. Příklady operandů zahrnují literály, pole, místní proměnné a výrazy.
 
 Pokud výraz obsahuje více operátorů, *Priorita* operátorů řídí pořadí, ve kterém jsou jednotlivé operátory vyhodnocovány. Například výraz `x + y * z` je vyhodnocen jako `x + (y * z)`, protože operátor `*` má vyšší prioritu než operátor `+`.
 
 Když dojde k operandu mezi dvěma operátory se stejnou prioritou, *asociativita* operátor řídí pořadí, ve kterém jsou operace prováděny:
 
-* S výjimkou operátorů přiřazení a slučování s hodnotou null jsou všechny binární operátory *asociativní*, což znamená, že operace jsou prováděny zleva doprava. Například `x + y + z` se vyhodnotí jako `(x + y) + z`.
-* Operátory přiřazení @no__t operátory null-0 a `??=` a podmíněný operátor `?:` jsou *asociativní zprava*, což znamená, že operace jsou prováděny zprava doleva. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
+* S výjimkou operátorů přiřazení a slučování s hodnotou null jsou všechny binární operátory *asociativní*, což znamená, že operace jsou prováděny zleva doprava. Například `x + y + z` je vyhodnocen jako `(x + y) + z`.
+* Operátory přiřazení, `??` a `??=` operátory pro sloučení s hodnotou null a podmíněný operátor `?:` jsou *asociativní zprava*, což znamená, že operace jsou prováděny zprava doleva. Například `x = y = z` je vyhodnocen jako `x = (y = z)`.
 
-Priority a asociativita lze ovládat pomocí závorek. Například `x + y * z` nejprve vynásobí `y` hodnotou `z` a následně výsledek přidá do `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a pak výsledek vynásobí `z`.
+Priority a asociativita lze ovládat pomocí závorek. Například `x + y * z` nejprve vynásobí `y` `z` a pak výsledek přidá do `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a pak výsledek vynásobí `z`.
 
 Většina operátorů může být [*přetížená*](../language-reference/operators/operator-overloading.md). Přetížení operátoru umožňuje zadat uživatelsky definované implementace operátorů pro operace, u nichž jeden nebo oba operandy jsou uživatelsky definovaný typ třídy nebo struktury.
 

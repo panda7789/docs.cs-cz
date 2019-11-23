@@ -1,5 +1,5 @@
 ---
-title: Kombinování kontejnerů a přístupů bez serveru
+title: Kombinování kontejnerů a bezserverových přístupů
 description: Kombinování kontejnerů a Kubernetes s přístupy bez serveru
 ms.date: 06/30/2019
 ms.openlocfilehash: 58aff43adbdd2e629370cc685f32c7b61c25f85e
@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183432"
 ---
-# <a name="combining-containers-and-serverless-approaches"></a>Kombinování kontejnerů a přístupů bez serveru
+# <a name="combining-containers-and-serverless-approaches"></a>Kombinování kontejnerů a bezserverových přístupů
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -37,13 +37,13 @@ Vyberte, který modul runtime pracovního procesu chcete, z následujících mo�
 - `node` (JavaScript)
 - `python`
 
-Když je projekt vytvořen, bude obsahovat souboru Dockerfile. Nyní můžete funkci vytvořit a otestovat místně. Sestavte a spusťte pomocí `docker build` příkazů `docker run` a. Podrobný postup, jak začít sestavovat Azure Functions s podporou Docker, najdete v kurzu [Vytvoření funkce na platformě Linux s využitím vlastního obrázku](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .
+Když je projekt vytvořen, bude obsahovat souboru Dockerfile. Nyní můžete funkci vytvořit a otestovat místně. Sestavte a spusťte pomocí příkazů `docker build` a `docker run`. Podrobný postup, jak začít sestavovat Azure Functions s podporou Docker, najdete v kurzu [Vytvoření funkce na platformě Linux s využitím vlastního obrázku](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>Jak kombinovat bez serveru a Kubernetes pomocí KEDA
 
 Služba Azure Functions se automaticky škáluje tak, aby splňovala požadavky na základě frekvence událostí, které cílí na danou funkci. Navíc můžete využít Kubernetes k hostování vašich funkcí a používat automatické škálování založené na událostech založených na Kubernetes nebo KEDA. Když se nevyskytnou žádné události, KEDA může škálovat až na 0 instancí a pak v reakci na události může škálovat počet kontejnerů tak, aby splnily požadavky pomocí vodorovného automatického škálování pod. [Přečtěte si další informace o škálování Azure Functions pomocí keda](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda).
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Spuštění Azure Functions v kontejneru Docker](https://markheath.net/post/azure-functions-docker)
 - [Vytvoření funkce na platformě Linux pomocí vlastní image](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image)

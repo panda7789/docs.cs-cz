@@ -17,14 +17,14 @@ V aplikacích Windows Communication Foundation (WCF) může být operace služby
   
 ### <a name="implement-a-service-operation-asynchronously"></a>Asynchronní implementace operace služby  
   
-1. V kontraktu služby deklarujte dvojici asynchronních metod podle pokynů pro asynchronní návrh .NET. Metoda `Begin` přebírá parametr, objekt zpětného volání a objekt stavu a vrací <xref:System.IAsyncResult?displayProperty=nameWithType> a odpovídající metodu `End`, která přebírá <xref:System.IAsyncResult?displayProperty=nameWithType> a vrací vrácenou hodnotu. Další informace o asynchronních voláních naleznete v tématu [asynchronní programování vzory návrhu](https://go.microsoft.com/fwlink/?LinkId=248221).  
+1. V kontraktu služby deklarujte dvojici asynchronních metod podle pokynů pro asynchronní návrh .NET. Metoda `Begin` přebírá parametr, objekt zpětného volání a objekt stavu a vrací <xref:System.IAsyncResult?displayProperty=nameWithType> a odpovídající `End` metoda, která přebírá <xref:System.IAsyncResult?displayProperty=nameWithType> a vrací vrácenou hodnotu. Další informace o asynchronních voláních naleznete v tématu [asynchronní programování vzory návrhu](https://go.microsoft.com/fwlink/?LinkId=248221).  
   
-2. Označte metodu `Begin` páru asynchronních metod s atributem <xref:System.ServiceModel.OperationContractAttribute?displayProperty=nameWithType> a nastavte vlastnost <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A?displayProperty=nameWithType> na `true`. Například následující kód provádí kroky 1 a 2.  
+2. Označte metodu `Begin` dvojice asynchronních metod s atributem <xref:System.ServiceModel.OperationContractAttribute?displayProperty=nameWithType> a nastavte vlastnost <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A?displayProperty=nameWithType> na `true`. Například následující kód provádí kroky 1 a 2.  
   
      [!code-csharp[C_SyncAsyncClient#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#6)]
      [!code-vb[C_SyncAsyncClient#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#6)]  
   
-3. Implementujte dvojici metod `Begin/End` ve třídě služby podle pokynů pro asynchronní návrh. Například následující příklad kódu ukazuje implementaci, ve které je řetězec zapsán do konzoly v částech `Begin` a `End` v rámci asynchronní operace služby a návratovou hodnotou operace `End` je vrácena klientovi. Úplný příklad kódu naleznete v části příklad.  
+3. Implementujte dvojici metod `Begin/End` ve vaší třídě služby podle pokynů pro asynchronní návrh. Například následující příklad kódu ukazuje implementaci, ve které je řetězec zapsán do konzoly v `Begin` i `End` částech asynchronní operace služby a návratovou hodnotou operace `End` je vrácena klientovi. Úplný příklad kódu naleznete v části příklad.  
   
      [!code-csharp[C_SyncAsyncClient#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#3)]
      [!code-vb[C_SyncAsyncClient#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#3)]  
@@ -34,11 +34,11 @@ V aplikacích Windows Communication Foundation (WCF) může být operace služby
   
 1. Rozhraní kontraktu služby s:  
   
-    1. Synchronní operace @no__t 0.  
+    1. Synchronní operace `SampleMethod`.  
   
     2. Asynchronní operace `BeginSampleMethod`.  
   
-    3. Asynchronní dvojice operací `BeginServiceAsyncMethod` @ no__t-1 @ no__t-2.  
+    3. Asynchronní `BeginServiceAsyncMethod`/dvojici operací `EndServiceAsyncMethod`.  
   
 2. Implementace služby pomocí objektu <xref:System.IAsyncResult?displayProperty=nameWithType>.  
   

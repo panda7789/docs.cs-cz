@@ -46,7 +46,7 @@ Třetí aplikace je 3 vrstva, která se skládá z aplikace typu klient-server a
 
 Všechny tyto aplikace jsou dostupné v [úložišti GitHub eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing).
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
 Hlavním cílem tohoto návodu je jednoduše seznámit se s těmito aplikacemi a s jejich kódem a konfigurací. Aplikace můžete nakonfigurovat tak, aby vygenerovaly a používaly přípravou data bez použití databáze SQL pro účely testování. Tato volitelná konfigurace je založena na injektáže závislosti v odděleném způsobu.
 
@@ -87,9 +87,9 @@ Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
 Pomocí kontejnerů Windows můžete zlepšit nasazení stávajících aplikací .NET, jako jsou ty, které jsou založené na MVC, webových formulářích nebo WCF, do produkčních, vývojových a testovacích prostředí.
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
-Cílem tohoto návodu je zobrazit několik možností pro uzavření existující aplikace .NET Framework. Můžeš:
+Cílem tohoto návodu je zobrazit několik možností pro uzavření existující aplikace .NET Framework. Můžete:
 
 - Kontejnerizace aplikaci pomocí [nástrojů sady Visual studio 2017 pro Docker](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (visual Studio 2017 nebo novější verze).
 
@@ -138,7 +138,7 @@ Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
 Nasazení na hostitele Docker na virtuálním počítači s Windows serverem 2016 (VM) v Azure umožňuje rychle nastavit vývojové a testovací a přípravná prostředí. Poskytuje také běžné místo pro testery nebo obchodní uživatele k ověření aplikace. Virtuální počítače můžou být taky platná provozní prostředí infrastruktury jako služby (IaaS).
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
 Cílem tohoto návodu je ukázat vám několik alternativ, které máte, když nasadíte kontejnery Windows do virtuálních počítačů Azure, které jsou založené na Windows serveru 2016 nebo novějších verzích.
 
@@ -192,7 +192,7 @@ Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
 [Azure Container Instances (ACI)](https://docs.microsoft.com/azure/container-instances/) je nejrychlejší způsob, jak mít kontejnery pro vývoj/testování a přípravu, kde můžete nasazovat jednotlivé instance kontejnerů.
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
 V tomto návodu se dozvíte o hlavních scénářích při nasazování kontejnerů Windows do Azure Container Instances (ACI) a o tom, jak můžete nasadit eShopModernizing aplikace do ACI.
 
@@ -206,7 +206,7 @@ Existují varianty, jak nasadit aplikace eShopModernizing do ACI, jako je nasaze
 
 Azure Container Instances usnadňuje vytváření a správu kontejnerů Docker v Azure, aniž byste museli zřizovat virtuální počítače nebo přidělovat službu vyšší úrovně. Pomocí ACI můžete přímo nasadit kontejner Windows v Azure a zveřejnit ho na internetu s plně kvalifikovaným názvem domény (FQDN) v řádu sekund (za předpokladu, že máte připravenou image kontejneru Windows v registru Docker, jako je Docker Hub nebo Azure Container. Registr).
 
-### <a name="considerations"></a>Odůvodněn
+### <a name="considerations"></a>Požadavky
 
 Nasazení kontejnerů Windows s úplnými .NET Framework/ASP.NET nebo SQL Server do Azure Container Instances (ACI) není poměrně stejně rychlé jako nasazení na obvyklého hostitele Docker (jako Windows Server 2016 s kontejnery Windows), protože Dock image musí být stažená (získaná z registru Docker) pokaždé a velikost Image kontejneru SQL (15,1 GB) a image kontejneru ASP.NET (13,9 GB) jsou výrazně velké. je však mnohem levnější než udržování vlastního hostitele Docker (trvalé online prostředí. Server 2016 s virtuálními počítači kontejnerů Windows v Azure) nezmiňujte celou službu Orchestrator jako Kubernetes v Azure (AKS), která je na druhé straně skvělou volbou pro produkční nasazení.
 
@@ -230,7 +230,7 @@ Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
 Aplikace, která je založená na kontejnerech Windows, bude rychle potřebovat používání platforem, takže se ještě od virtuálních počítačů s IaaS přesouvá ještě dál. To je nutné, aby bylo možné snadno dosáhnout vysoké škálovatelnosti a lepšího automatizované škálovatelnosti a významně zlepšovat automatizované nasazení a správu verzí. Tyto cíle můžete dosáhnout pomocí nástroje Orchestrator [Kubernetes](https://kubernetes.io/), který je k dispozici ve [službě Azure Container Services](https://azure.microsoft.com/services/container-service/).
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
 Cílem tohoto návodu je zjistit, jak nasadit aplikaci založenou na kontejnerech Windows do Kubernetes (označované také jako *K8s*) v Azure Container Service. Nasazení na Kubernetes od začátku je proces se dvěma kroky:
 
@@ -290,7 +290,7 @@ Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub: <https://git
 
 Jednoduchou kontejnerovou aplikaci pomocí kontejnerů Windows lze snadno nasadit do Azure App Service pro kontejnery. Toto je doporučený postup pro většinu aplikací založených na kontejnerech Windows.
 
-### <a name="goals"></a>Hlavních
+### <a name="goals"></a>Cíle
 
 Cílem tohoto návodu je zjistit, jak nasadit aplikaci založenou na kontejnerech Windows pro Azure App Service pro kontejnery z registru (Docker Hub nebo Azure Container Registry).
 

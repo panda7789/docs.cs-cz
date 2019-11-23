@@ -56,7 +56,7 @@ ms.locfileid: "73459444"
   
  Můžete také použít styl pouze na určité ovládací prvky určitého typu přiřazením klíče ke stylu a zadáním tohoto klíče do vlastnosti `Style` ovládacího prvku.  Další informace o stylech naleznete v tématu [stylování and šablonování](styling-and-templating.md).  
   
-### <a name="creating-a-controltemplate"></a>Vytvoření ControlTemplate  
+### <a name="creating-a-controltemplate"></a>Vytvoření objektu ControlTemplate  
  <xref:System.Windows.Style> umožňuje nastavit vlastnosti pro více ovládacích prvků najednou, ale někdy můžete chtít přizpůsobit vzhled <xref:System.Windows.Controls.Control> nad rámec toho, co můžete vytvořit <xref:System.Windows.Style>. Třídy, které dědí z třídy <xref:System.Windows.Controls.Control> mají <xref:System.Windows.Controls.ControlTemplate>, který definuje strukturu a vzhled <xref:System.Windows.Controls.Control>. Vlastnost <xref:System.Windows.Controls.Control.Template%2A> <xref:System.Windows.Controls.Control> je veřejná, takže můžete předat <xref:System.Windows.Controls.Control> <xref:System.Windows.Controls.ControlTemplate>, který je jiný než výchozí. Můžete často zadat novou <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Control> namísto dědění ovládacího prvku pro přizpůsobení vzhledu <xref:System.Windows.Controls.Control>.  
   
  Vezměte v úvahu velmi běžný ovládací prvek <xref:System.Windows.Controls.Button>.  Hlavním chováním <xref:System.Windows.Controls.Button> je umožnit aplikaci provést nějakou akci, když na ni uživatel klikne.  Ve výchozím nastavení se <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zobrazí jako vystouplý obdélník.  Při vývoji aplikace můžete chtít využít výhod chování <xref:System.Windows.Controls.Button>– to znamená tím, že se postará událost kliknutí na tlačítko, ale můžete změnit vzhled tlačítka nad rámec toho, co můžete udělat změnou vlastností tlačítka.  V takovém případě můžete vytvořit novou <xref:System.Windows.Controls.ControlTemplate>.  
@@ -104,7 +104,7 @@ ms.locfileid: "73459444"
 - [Knihovna ovládacích prvků](control-library.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Vstup](../advanced/input-wpf.md)
+- [Input](../advanced/input-wpf.md) (Vstup)
 - [Povolení příkazu](../advanced/how-to-enable-a-command.md)
 - [Návod: Vytvoření tlačítka s vlastní animací](walkthroughs-create-a-custom-animated-button.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

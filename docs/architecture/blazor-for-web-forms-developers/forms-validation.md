@@ -125,7 +125,7 @@ Následující komponenta ukazuje vytvoření formuláře v Blazor na základě 
 
 Po odeslání formuláře se data vázaná na model neuložila do žádného úložiště dat, jako je databáze. V aplikaci WebAssembly v Blazor musí být data odeslána na server. Například pomocí požadavku HTTP POST. V aplikaci Blazor serveru se data na serveru již nacházejí, ale musí být trvalá. Manipulace s přístupem k datům v aplikacích Blazor je předmětem části [řešení problémů s daty](data.md) .
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 Další informace o [formulářích a ověřování](/aspnet/core/blazor/forms-validation) v aplikacích Blazor najdete v dokumentaci k Blazor.
 

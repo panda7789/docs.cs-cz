@@ -118,9 +118,9 @@ Azure API Management může vystavovat back-endové služby, které jsou hostova
 Azure API Management je k dispozici ve [čtyřech různých úrovních](https://azure.microsoft.com/pricing/details/api-management/):
 
 - Vývojář
-- Základní
+- Basic
 - Standardní
-- Nárok
+- Premium
 
 Úroveň pro vývojáře je určena pro úlohy, které nejsou v produkčním prostředí, a vyhodnocení. Ostatní úrovně nabízejí postupně větší možnosti napájení, funkcí a vyšších smluv o úrovni služeb (SLA). Úroveň Premium poskytuje podporu [Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) a [více oblastí](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region). Všechny úrovně mají pevnou cenu za hodinu.
 

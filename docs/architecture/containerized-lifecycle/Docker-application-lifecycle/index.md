@@ -14,5 +14,5 @@ ms.locfileid: "70295364"
 *Životní cyklus kontejnerových aplikací je cesta, která začíná vývojářem. Vývojář se rozhodne implementovat kontejnery a Docker, protože eliminuje tření v nasazeních a IT operacích, což v konečném případě pomáhá všem uživatelům pružnější, větší produktivitu a rychlejší.*
 
 >[!div class="step-by-step"]
->[Předchozí](../docker-containers-images-and-registries.md)Další
->[](containers-foundation-for-devops-collaboration.md)
+>[Předchozí](../docker-containers-images-and-registries.md)
+>[Další](containers-foundation-for-devops-collaboration.md)

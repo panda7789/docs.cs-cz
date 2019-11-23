@@ -47,7 +47,7 @@ Je důležité zdůraznit, že definování služby pro každý ohraničený kon
 
 DDD výhody mikroslužeb tím, že získají reálné hranice ve formě distribuovaných mikroslužeb. Ale nápady, jako není sdílení modelu mezi mikroslužbami, je to, co v ohraničeném kontextu také potřebujete.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Chris Richardson. Vzor: \ databáze na službu**
   <https://microservices.io/patterns/data/database-per-service.html>

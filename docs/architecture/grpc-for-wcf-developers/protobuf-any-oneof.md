@@ -1,14 +1,13 @@
 ---
 title: Protobuf jakákoli pole a oneof pro typy variant – gRPC pro vývojáře WCF
 description: Naučte se používat libovolný typ a klíčové slovo oneof k reprezentaci typů objektů variant ve zprávách.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 10f55288eb4a6aa603228da5b4850317d6bde614
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: af3ba22c238aa80a8c6119f62d5d8914770cad68
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846383"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971620"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf všechna pole a oneof pro typy variant
 
@@ -16,7 +15,7 @@ Manipulace s dynamickými typy vlastností (to znamená, vlastnosti typu `object
 
 Protobuf poskytuje dvě jednodušší možnosti pro práci s hodnotami, které mohou být více než jedním typem. Typ `Any` může představovat libovolný známý typ zprávy Protobuf, zatímco klíčové slovo `oneof` umožňuje určit, že v dané zprávě lze nastavit pouze jeden z rozsahů polí.
 
-## <a name="any"></a>Jakýmikoli
+## <a name="any"></a>Vše
 
 `Any` je jedním z "dobře známých typů" Protobuf: kolekce užitečných a opakovaně použitelných typů zpráv s implementacemi ve všech podporovaných jazycích. Chcete-li použít typ `Any`, je nutné naimportovat definici `google/protobuf/any.proto`.
 
@@ -39,7 +38,7 @@ message ChangeNotification {
 }
 ```
 
-V C# kódu poskytuje třída`Any`metody pro nastavení pole, extrakci zprávy a kontrolu typu.
+V C# kódu poskytuje třída `Any` metody pro nastavení pole, extrakci zprávy a kontrolu typu.
 
 ```csharp
 public void FormatChangeNotification(ChangeNotification change)

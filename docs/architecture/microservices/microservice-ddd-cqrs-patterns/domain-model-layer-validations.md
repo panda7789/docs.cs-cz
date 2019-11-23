@@ -53,15 +53,15 @@ Podobný přístup lze použít v konstruktoru entity, vyvolává výjimku, aby 
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Použití atributů ověřování v modelu na základě datových poznámek
 
-Datové poznámky, jako jsou povinné nebo MaxLength atributy, lze použít ke konfiguraci EF Core vlastností pole databáze, jak je vysvětleno podrobněji v sekci [mapování tabulky](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping) , ale [již nefungují pro ověřování entit v EF Core](https://github.com/aspnet/EntityFrameworkCore/issues/3680) (ani to nedělá). <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType> metoda), protože to udělalo od EF 4. x v .NET Framework.
+Poznámky k datům, jako jsou povinné nebo MaxLength atributy, lze použít ke konfiguraci EF Core vlastností pole databáze, jak je vysvětleno podrobněji v sekci [mapování tabulky](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping) , ale [již nefungují pro ověřování entit v EF Core](https://github.com/aspnet/EntityFrameworkCore/issues/3680) (ani metoda <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), protože od EF 4. x v .NET Framework byly provedeny.
 
-Datové poznámky a <xref:System.ComponentModel.DataAnnotations.IValidatableObject> rozhraní lze i nadále použít k ověřování modelu při vytváření vazby modelu, před vyvoláním akcí kontroleru jako obvykle, ale tento model má být ViewModel nebo DTO, což je MVC nebo rozhraní API, které není doménovým modelem. týkat.
+Datové poznámky a <xref:System.ComponentModel.DataAnnotations.IValidatableObject> rozhraní lze i nadále použít k ověřování modelu během vytváření modelů, před tím, než se akce kontroleru vystaví jako obvykle, ale tento model má být ViewModel nebo DTO, což je MVC nebo rozhraní API, které se netýká doménového modelu.
 
-V případě, že se v koncepčním rozdílu vyjasní, `IValidatableObject` můžete i nadále používat datové poznámky a v třídě entit pro ověřování, pokud vaše akce obdrží parametr objektu třídy entity, což se nedoporučuje. V takovém případě se k ověření dojde při vytváření vazby, těsně před vyvoláním akce a můžete zaškrtnout vlastnost ModelState. IsValid kontroleru a ověřit výsledek, ale pak se znovu stane na řadiči, nikoli před uchováním objektu entity v DbContext, stejně jako od EF 4. x.
+V případě, že jsou základní rozdíly jasné, můžete i nadále používat datové poznámky a `IValidatableObject` v třídě entit pro ověřování, pokud vaše akce obdrží parametr objektu třídy entity, který se nedoporučuje. V takovém případě se k ověření dojde při vytváření vazby, těsně před vyvoláním akce a můžete zaškrtnout vlastnost ModelState. IsValid kontroleru a ověřit výsledek, ale pak se znovu stane na řadiči, nikoli před uchováním objektu entity v DbContext, stejně jako od EF 4. x.
 
-Můžete přesto implementovat vlastní ověřování v třídě entity pomocí datových poznámek a `IValidatableObject.Validate` metody přepsáním metody SaveChanges DbContext.
+Můžete přesto implementovat vlastní ověřování v třídě entity pomocí datových poznámek a metody `IValidatableObject.Validate`, a to přepsáním metody SaveChanges pro DbContext.
 
-Můžete si prohlédnout ukázkovou implementaci pro ověřování `IValidatableObject` entit v [tomto komentáři na GitHubu](https://github.com/aspnet/EntityFrameworkCore/issues/3680#issuecomment-155502539). Tato ukázka neprovádí ověřování na základě atributů, ale měla by být snadno implementovaná pomocí reflexe ve stejném přepsání.
+Můžete si prohlédnout ukázkovou implementaci pro ověřování entit `IValidatableObject` v [tomto komentáři na GitHubu](https://github.com/aspnet/EntityFrameworkCore/issues/3680#issuecomment-155502539). Tato ukázka neprovádí ověřování na základě atributů, ale měla by být snadno implementovaná pomocí reflexe ve stejném přepsání.
 
 Z bodu DDD se však model domény nejlépe udržuje s využitím výjimek v metodách chování vaší entity nebo implementací specifikací a vzorců oznámení k vynucujení ověřovacích pravidel.
 
@@ -83,29 +83,29 @@ Zvažte také dvoustupňové ověřování. Použijte ověřování na úrovni p
 
 Při ověřování pomocí datových poznámek například neduplikujete definici ověřování. Spuštění, ale může být na straně serveru i na straně klienta v případě DTO (příkazy a ViewModels).
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Rachel Appel. Seznámení s ověřováním modelu ve ASP.NET Core MVC** \
   <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 
-- **Rick Anderson. Přidání ověřování** \
+- **Rick Anderson. Přidávání \ ověřování**
   <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
 - **Martin Fowlera. Nahrazení výjimek při vygenerování oznámení v ověřováních** \
   <https://martinfowler.com/articles/replaceThrowWithNotification.html>
 
-- **Specifikace a vzory oznámení** \
+-  \ **specifikace a vzor oznámení**
   <https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns>
 
 - **Lev Gorodinski. Ověřování v návrhu založeném na doméně (DDD)**  \
   <http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/>
 
-- **Konektor Colin. Ověřování doménového modelu** \
+- **Konektor Colin. \ ověření doménového modelu**
   <https://colinjack.blogspot.com/2008/03/domain-model-validation.html>
 
 - **Jimmy Bogard. Ověření v DDD World** \
   <https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/>
 
 > [!div class="step-by-step"]
-> [Předchozí](enumeration-classes-over-enum-types.md)Další
-> [](client-side-validation.md)
+> [Předchozí](enumeration-classes-over-enum-types.md)
+> [Další](client-side-validation.md)

@@ -35,10 +35,11 @@ Logická služba "objednávání" zahrnuje databázi řazení, která může bý
 
 Aplikační vrstva může být samotné webové rozhraní API. Důležitý aspekt návrhu je, že mikroslužba rozdělila dotazy a ViewModels (datové modely, zejména vytvořené pro klientské aplikace) z příkazů, doménového modelu a transakcí, které následují po vzoru CQRS. Tento přístup uchovává dotazy nezávislé na omezeních a omezeních, které pocházejí ze vzorů DDD, které dávají smysl jenom pro transakce a aktualizace, jak je vysvětleno v dalších částech.
 
-## <a name="additional-resources"></a>Další zdroje informací:
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Greg Young. Správa verzí v systému ve zdroji událostí** (bezplatné čtení elektronické knihy online) \
    <https://leanpub.com/esversioning/read>
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)@no__t – 1 –[Další](eshoponcontainers-cqrs-ddd-microservice.md)
+>[Předchozí](index.md)
+>[Další](eshoponcontainers-cqrs-ddd-microservice.md)

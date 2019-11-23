@@ -23,9 +23,9 @@ ms.locfileid: "71696731"
 ---
 # <a name="how-to-explicitly-throw-exceptions"></a>Postup explicitního vyvolání výjimek
 
-Výjimku můžete explicitně vyvolat pomocí C# [`throw`](../../csharp/language-reference/keywords/throw.md) nebo příkazu Visual Basic [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) . Zachycenou výjimku můžete také vyvolat znovu pomocí příkazu `throw`. Je vhodné postupovat při kódování pro přidání informací do výjimky, která se znovu vyvolala k poskytnutí dalších informací při ladění.
+Výjimku lze explicitně vyvolat pomocí C# [`throw`](../../csharp/language-reference/keywords/throw.md) nebo příkazu Visual Basic [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) . Zachycenou výjimku můžete také vyvolat znovu pomocí příkazu `throw`. Je vhodné postupovat při kódování pro přidání informací do výjimky, která se znovu vyvolala k poskytnutí dalších informací při ladění.
 
-Následující příklad kódu používá blok `try` @ no__t-1 @ no__t-2 k zachycení možné <xref:System.IO.FileNotFoundException>. Po bloku `try` je blok `catch`, který zachytává <xref:System.IO.FileNotFoundException> a zapisuje zprávu do konzoly, pokud datový soubor nebyl nalezen. Další příkaz je příkaz `throw`, který vyvolá novou <xref:System.IO.FileNotFoundException> a do výjimky přidá textové informace.
+Následující příklad kódu používá `try`/`catch` blok k zachycení možného <xref:System.IO.FileNotFoundException>. Následující blok `try` je `catch` blok, který zachytává <xref:System.IO.FileNotFoundException> a zapisuje zprávu do konzoly, pokud datový soubor nebyl nalezen. Další příkaz je příkaz `throw`, který vyvolá nový <xref:System.IO.FileNotFoundException> a přidá do výjimky textové informace.
 
 [!code-csharp[Exception.Throwing#1](~/samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
 [!code-vb[Exception.Throwing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  

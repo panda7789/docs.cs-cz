@@ -136,11 +136,11 @@ Servery bez serveru se nejčastěji projednávají v kontextu COMPUTE, ale můž
 
 K dispozici je široké spektrum dostupných možností architektury, včetně hybridního přístupu. Bez serveru se zjednodušuje přístup, Správa a náklady na funkce aplikací na úkor řízení a přenositelnosti. Mnoho platforem bez serveru ale zveřejňuje konfiguraci, která vám pomůžou řešení ladit. Dobré postupy programování můžou také vést k většímu přenositelnému kódu a menšímu zamykání platforem bez serveru. Následující tabulka ilustruje přístup architektury vedle sebe. Vyberte možnost bez serveru v závislosti na potřebách škálování, bez ohledu na to, jestli chcete modul runtime spravovat a jak dobře můžete úlohy rozdělit do malých součástí. Seznámíte se s potenciálními výzvami bez serveru a dalšími rozhodovacími body v další kapitole.
 
-|         |IaaS     |PaaS     |vnitřního|Bez serveru|
+|         |IaaS     |PaaS     |Kontejner|Bez serveru|
 |---------|---------|---------|---------|----------|
-|**Kapacity**|SÍŤ       |instance |Aplikace      |Funkce  |
-|**Abstrahuje**|Hardware|Platforma|Hostitel operačního systému|Modul runtime   |
-|**Jednotce** |SÍŤ       |Project  |Image    |Kód      |
+|**Kapacity**|Virtuální počítač       |instance |Aplikace      |Funkce  |
+|**Abstrahuje**|Hardware|Platforma|Hostitel operačního systému|Runtime   |
+|**Jednotce** |Virtuální počítač       |Project  |Obrázek    |Kód      |
 |**Doba platnosti**|Měsíci|Dny do měsíců|Počet minut do dnů|Milisekundy na minuty|
 |**Zodpovědní**|Aplikace, závislosti, modul runtime a operační systém|Aplikace a závislosti|Aplikace, závislosti a modul runtime|Funkce
 
@@ -156,7 +156,7 @@ Další kapitola se soustředí na architekturu bez serveru, případy použití
 
 - [Průvodce architekturou aplikací Azure](https://docs.microsoft.com/azure/architecture/guide/)
 - [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
-- [SQL Azure](https://docs.microsoft.com/azure/sql-database)
+- [Azure SQL](https://docs.microsoft.com/azure/sql-database)
 - [N-vrstvý model architektury](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
 - [Kubernetes v Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
 - [Mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)

@@ -28,5 +28,5 @@ Pokud se proces nezdařil, kontejner skončí a nástroj Orchestrator převezme.
 Můžete najít scénář, ve kterém chcete, aby více procesů běželo v jednom kontejneru. V tomto scénáři, protože může existovat pouze jeden vstupní bod pro každý kontejner, můžete spustit skript v rámci kontejneru, který v případě potřeby spustí tolik programů. Můžete například použít [správce](http://supervisord.org/) nebo podobný nástroj k tomu, abyste se mohli postarat o spuštění více procesů uvnitř jednoho kontejneru. I když ale můžete najít architektury, které obsahují více procesů na kontejner, tento přístup není velmi běžný.
 
 >[!div class="step-by-step"]
->[Předchozí](../net-core-net-framework-containers/official-net-docker-images.md)Další
->[](containerize-monolithic-applications.md)
+>[Předchozí](../net-core-net-framework-containers/official-net-docker-images.md)
+>[Další](containerize-monolithic-applications.md)

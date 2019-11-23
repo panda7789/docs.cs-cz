@@ -10,7 +10,7 @@ ms.lasthandoff: 10/03/2019
 ms.locfileid: "71833877"
 ---
 # <a name="entity-sql-quick-reference"></a>Stručné reference k Entity SQL
-V tomto tématu najdete stručný přehled dotazů [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.  
+V tomto tématu najdete stručný přehled [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazů. Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.  
   
 ## <a name="literals"></a>Literály  
   
@@ -31,7 +31,7 @@ V tomto tématu najdete stručný přehled dotazů [!INCLUDE[esql](../../../../.
 |-----------|  
 |Dobrý den|  
   
-### <a name="datetime"></a>DateTime  
+### <a name="datetime"></a>Datum a čas  
  V literálech DateTime jsou části data a času povinné. Neexistují žádné výchozí hodnoty.  
   
  Příklad:  
@@ -48,7 +48,7 @@ DATETIME '2006-12-25 01:01'
 |-----------|  
 |12/25/2006 1:01:00 DOP.|  
   
-### <a name="integer"></a>Integer  
+### <a name="integer"></a>Celé číslo  
  Celočíselné literály můžou být typu Int32 (123), UInt32 (123U), Int64 (123L) a UInt64 (123UL).  
   
  Příklad:  
@@ -62,12 +62,12 @@ DATETIME '2006-12-25 01:01'
   
 |Hodnota|  
 |-----------|  
-|první|  
-|odst|  
+|1|  
+|2|  
 |3|  
   
-### <a name="other"></a>Ostatní  
- Jiné literály podporované [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou GUID, binary, float, Double, Decimal a `null`. Literály null v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou považovány za kompatibilní s každým jiným typem v koncepčním modelu.  
+### <a name="other"></a>Další  
+ Další literály podporované [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou GUID, binary, float, Double, Decimal a `null`. Literály null v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou považovány za kompatibilní s každým jiným typem v koncepčním modelu.  
   
 ## <a name="type-constructors"></a>Konstruktory typů  
   
@@ -83,11 +83,11 @@ SELECT VALUE row (product.ProductID AS ProductID, product.Name
   
  Výstup:  
   
-|ProductID|Name|  
+|ProductID|Název|  
 |---------------|----------|  
-|první|Přizpůsobitelná rasy|  
+|1|Přizpůsobitelná rasy|  
 |879|Stojan kol pro všechny účely|  
-|712|Zakončení loga AWC|  
+|712|AWC Logo Cap|  
 |...|...|  
   
 ### <a name="multiset"></a>MULTISET  
@@ -103,9 +103,9 @@ SELECT VALUE product FROM AdventureWorksEntities.Product AS product WHERE produc
   
  Výstup:  
   
-|ProductID|Name|ProductNumber|...|  
+|ProductID|Název|ProductNumber|…|  
 |---------------|----------|-------------------|-------|  
-|842|Touring – Panniers, velký|PA – T100|...|  
+|842|Touring – Panniers, velký|PA-T100|…|  
   
 ### <a name="object"></a>Objekt  
  [Konstruktor pojmenovaného typu](named-type-constructor-entity-sql.md) konstrukce (pojmenované) uživatelsky definované objekty, například `person("abc", 12)`.  
@@ -123,11 +123,11 @@ AS o
   
 |SalesOrderDetailID|CarrierTrackingNumber|OrderQty|ProductID|...|  
 |------------------------|---------------------------|--------------|---------------|---------|  
-|první|4911-403C-98|první|776|...|  
-|odst|4911-403C-98|3|777|...|  
+|1|4911-403C-98|1|776|...|  
+|2|4911-403C-98|3|777|...|  
 |...|...|...|...|...|  
   
-## <a name="references"></a>Odkazy  
+## <a name="references"></a>Reference  
   
 ### <a name="ref"></a>REF  
  [Odkaz vytvoří odkaz](ref-entity-sql.md) na instanci typu entity. Následující dotaz například vrátí odkazy na každou entitu objednávky v sadě entit Orders:  
@@ -140,8 +140,8 @@ SELECT REF(o) AS OrderID FROM Orders AS o
   
 |Hodnota|  
 |-----------|  
-|první|  
-|odst|  
+|1|  
+|2|  
 |3|  
 |...|  
   
@@ -160,7 +160,7 @@ SELECT VALUE REF(p).Name FROM
 |-----------|  
 |Přizpůsobitelná rasy|  
 |Stojan kol pro všechny účely|  
-|Zakončení loga AWC|  
+|AWC Logo Cap|  
 |...|  
   
 ### <a name="deref"></a>DEREF  
@@ -179,7 +179,7 @@ SELECT VALUE DEREF(REF(p)).Name FROM
 |-----------|  
 |Přizpůsobitelná rasy|  
 |Stojan kol pro všechny účely|  
-|Zakončení loga AWC|  
+|AWC Logo Cap|  
 |...|  
   
 ### <a name="createref-and-key"></a>CREATEREF A KLÍČ  
@@ -203,8 +203,8 @@ SELECT VALUE Key(CreateRef(AdventureWorksEntities.Product, row(p.ProductID)))
   
 ## <a name="functions"></a>Funkce  
   
-### <a name="canonical"></a>Interpret  
- Obor názvů pro [kanonické funkce](canonical-functions.md) je EDM, jako v `Edm.Length("string")`. Není nutné zadávat obor názvů, pokud není importován jiný obor názvů, který obsahuje funkci se stejným názvem jako kanonická funkce. Pokud mají dva obory názvů stejnou funkci, měl by uživatel určit celé jméno.  
+### <a name="canonical"></a>Canonical  
+ Obor názvů pro [kanonické funkce](canonical-functions.md) je EDM, jak je uvedeno v `Edm.Length("string")`. Není nutné zadávat obor názvů, pokud není importován jiný obor názvů, který obsahuje funkci se stejným názvem jako kanonická funkce. Pokud mají dva obory názvů stejnou funkci, měl by uživatel určit celé jméno.  
   
  Příklad:  
   
@@ -237,11 +237,11 @@ SELECT SqlServer.LEN(c.EmailAddress) AS EmailLen FROM
   
 |EmailLen|  
 |--------------|  
-|dlouhý|  
-|dlouhý|  
+|27|  
+|27|  
 |26|  
   
-## <a name="namespaces"></a>Jmenné prostory  
+## <a name="namespaces"></a>Obory názvů  
  [Použití](using-entity-sql.md) určuje obory názvů použité ve výrazu dotazu.  
   
  Příklad:  
@@ -268,11 +268,11 @@ SELECT c.ContactID as ID, c.LastName AS Name FROM
   
  Výstup:  
   
-|ID|Name|  
+|ID|Název|  
 |--------|----------|  
-|10pruhový|Adina|  
-|odst|Agcaoili|  
-|12,5|Aguilar|  
+|10|Adina|  
+|11|Agcaoili|  
+|12|Aguilar|  
   
 ## <a name="grouping"></a>Seskupování  
  [Seskupení podle](group-by-entity-sql.md) určuje skupiny, do kterých se mají umístit objekty vrácené výrazem dotazu ([Select](select-entity-sql.md)).  
@@ -294,7 +294,7 @@ SELECT VALUE name FROM AdventureWorksEntities.Product AS P
 |...|  
   
 ## <a name="navigation"></a>Navigace  
- Operátor navigace mezi relacemi umožňuje procházet relaci z jedné entity (od konce) do jiné (do konce). [Navigace](navigate-entity-sql.md) přebírá typ vztahu kvalifikovaný jako \<namespace >. název typu \<relationship >. Funkce Navigate vrátí ref @ no__t-0T >, pokud mohutnost pro končí 1. Pokud mohutnost do konce má hodnotu n, vrátí se < kolekce ref @ no__t-0T > >.  
+ Operátor navigace mezi relacemi umožňuje procházet relaci z jedné entity (od konce) do jiné (do konce). [Navigace](navigate-entity-sql.md) bere typ vztahu kvalifikovaný jako \<obor názvů >.\<název typu vztahu >. Funkce Navigate vrátí odkaz\<T >, pokud mohutnost má končit 1. Pokud mohutnost koncového parametru má hodnotu n, bude vrácena kolekce < ref\<T > >.  
   
  Příklad:  
   
@@ -308,8 +308,8 @@ SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM
   
 |AddressID|  
 |---------------|  
-|první|  
-|odst|  
+|1|  
+|2|  
 |3|  
 |...|  
   
@@ -326,25 +326,25 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product AS p
   
  Výstup:  
   
-|Name|  
+|Název|  
 |----------|  
 |Přizpůsobitelná rasy|  
 |Stojan kol pro všechny účely|  
-|Zakončení loga AWC|  
+|AWC Logo Cap|  
 |...|  
   
-### <a name="select"></a>SELECT  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje také konstruktor Row pro vytvoření libovolných řádků. Vyberte možnost přebírá jeden nebo více prvků v projekci a výsledkem je datový záznam s poli, například: `SELECT a, b, c`.  
+### <a name="select"></a>VYBRAT  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také poskytuje konstruktor Row pro sestavování libovolných řádků. Vyberte možnost přebírá jeden nebo více prvků v projekci a výsledkem je datový záznam s poli, například: `SELECT a, b, c`.  
   
  Příklad:  
   
  Jako výstup p vyberte p.Name, p. ProductID z AdventureWorksEntities. Product:  
   
-|Name|ProductID|  
+|Název|ProductID|  
 |----------|---------------|  
-|Přizpůsobitelná rasy|první|  
+|Přizpůsobitelná rasy|1|  
 |Stojan kol pro všechny účely|879|  
-|Zakončení loga AWC|712|  
+|AWC Logo Cap|712|  
 |...|...|  
   
 ## <a name="case-expression"></a>VÝRAZ CASE  
@@ -360,7 +360,7 @@ CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END
   
 |Hodnota|  
 |-----------|  
-|PODMÍNKA|  
+|PRAVDA|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::D ynamicMethodJITCompilationStarted – metoda
+title: ICorProfilerCallback8::DynamicMethodJITCompilationStarted Method
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationStarted
@@ -15,7 +15,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73136467"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::D ynamicMethodJITCompilationStarted – metoda
+# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationStarted Method
 [Podporováno v .NET Framework 4,7 a novějších verzích]  
   
 Upozorní profiler vždy při spuštění kompilace JIT dynamické metody.  

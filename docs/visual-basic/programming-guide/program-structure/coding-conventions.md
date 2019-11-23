@@ -8,7 +8,7 @@ helpviewer_keywords:
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
 ms.openlocfilehash: 18c309e22cccfa5d835394996fc6974d95825b65
 ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72003122"
@@ -28,7 +28,7 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
 - Informace o pokynech pro pojmenování najdete v tématu [pokyny pro pojmenování](../../../standard/design-guidelines/naming-guidelines.md) .  
   
-- Nepoužívejte "my" nebo "my" jako součást názvu proměnné. Tento postup vytváří nejasnost s objekty @no__t 0.  
+- Nepoužívejte "my" nebo "my" jako součást názvu proměnné. Tento postup vytváří nejasnost s objekty `My`.  
   
 - Nemusíte měnit názvy objektů v automaticky generovaném kódu, aby se vešly podle pokynů.  
   
@@ -67,7 +67,7 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
 ## <a name="program-structure"></a>Struktura programu  
   
-- Pokud použijete metodu `Main`, použijte výchozí konstrukci pro nové konzolové aplikace a použijte `My` pro argumenty příkazového řádku.  
+- Při použití metody `Main` použijte výchozí konstrukci pro nové konzolové aplikace a použijte `My` pro argumenty příkazového řádku.  
   
      [!code-vb[VbVbalrGuidelines#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#3)]  
   
@@ -129,7 +129,7 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
  Nepoužívejte `On Error Goto`.  
   
 ### <a name="use-the-isnot-keyword"></a>Použití klíčového slova IsNot  
- Místo `Not...Is Nothing` použijte klíčové slovo `IsNot`.  
+ Místo `Not...Is Nothing`použijte klíčové slovo `IsNot`.  
   
 ### <a name="new-keyword"></a>New – klíčové slovo  
   
@@ -147,11 +147,11 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
 ### <a name="event-handling"></a>Zpracování událostí  
   
-- Místo `AddHandler` použijte `Handles`:  
+- Místo `AddHandler`použít `Handles`:  
   
      [!code-vb[VbVbalrGuidelines#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#24)]  
   
-- Použijte `AddressOf` a nevytvářejte instanci delegáta explicitně:  
+- Použijte `AddressOf`a nevytvářejte instanci delegáta explicitně:  
   
      [!code-vb[VbVbalrGuidelines#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#25)]  
   
@@ -159,10 +159,10 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
-- Neověřuje, zda je událost `Nothing` (null) před zavoláním metody `RaiseEvent`. `RaiseEvent` kontroluje, zda `Nothing` před tím, než vyvolá událost.  
+- Neověřuje, zda je událost `Nothing` (null) před zavoláním metody `RaiseEvent`. `RaiseEvent` vyhledá `Nothing` předtím, než událost vyvolá.  
   
 ### <a name="using-shared-members"></a>Použití sdílených členů  
- Volejte `Shared` členů pomocí názvu třídy, nikoli z proměnné instance.  
+ Volejte `Shared` členy pomocí názvu třídy, nikoli z proměnné instance.  
   
 ### <a name="use-xml-literals"></a>Použití literálů XML  
  Literály XML zjednodušují nejběžnější úlohy, které se vyskytnou při práci s XML (například načtení, dotazování a transformace). Při vývoji s jazykem XML postupujte podle těchto pokynů:  
@@ -173,7 +173,7 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
 - Použijte Vlastnosti osy XML pro přístup k prvkům a atributům v dokumentu XML.  
   
-- Vložené výrazy použijte k zahrnutí hodnot a k vytvoření XML z existujících hodnot namísto použití volání rozhraní API, jako je například metoda `Add`:  
+- Vložené výrazy použijte k zahrnutí hodnot a k vytvoření XML z existujících hodnot namísto použití volání rozhraní API, jako je `Add` metoda:  
   
      [!code-vb[VbVbalrGuidelines#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#27)]  
   
@@ -187,7 +187,7 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
      [!code-vb[VbVbalrGuidelines#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#29)]  
   
-- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Například pokud váš dotaz vrátí název zákazníka a ID objednávky, přejmenujte ho místo toho, aby byla ponechána jako `Name` a `ID` ve výsledku:  
+- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Například pokud váš dotaz vrátí název zákazníka a ID objednávky, přejmenujte ho místo jejich ponechání jako `Name` a `ID` ve výsledku:  
   
      [!code-vb[VbVbalrGuidelines#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#30)]  
   
@@ -199,11 +199,11 @@ Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v
   
      [!code-vb[VbVbalrGuidelines#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#32)]  
   
-- Použijte klauzule `Where` před jinými klauzulemi dotazu tak, aby pozdější klauzule dotazu pracovaly na filtrované sadě dat:  
+- Klauzule `Where` použijte před ostatními klauzulemi dotazu tak, aby pozdější klauzule dotazu pracovaly na filtrované sadě dat:  
   
      [!code-vb[VbVbalrGuidelines#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#33)]  
   
-- Pomocí klauzule `Join` explicitně definujte operaci spojení namísto použití klauzule `Where` pro implicitní definování operace spojení:  
+- Použijte klauzuli `Join` k explicitnímu definování operace spojení namísto použití klauzule `Where` k implicitnímu definování operace spojení:  
   
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   

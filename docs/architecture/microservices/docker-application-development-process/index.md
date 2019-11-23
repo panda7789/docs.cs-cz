@@ -21,13 +21,13 @@ Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému
 
 **Visual Studio (pro Windows).** Při vývoji aplikací využívajících Docker se sadou Visual Studio se doporučuje použít Visual Studio 2017 verze 15,7 nebo novější, která je dodávána s nástroji pro Docker, který je už integrovaný. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat vaše aplikace přímo v cílovém prostředí Docker. Stisknutím klávesy F5 můžete spustit a ladit aplikaci (jeden kontejner nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5 upravit a aktualizovat aplikaci, aniž by bylo nutné znovu sestavit kontejner. Toto je nejvýkonnější volba pro vývoj aplikací využívajících Docker.
 
-**Visual Studio pro Mac.** Je to prostředí IDE, vývoj Xamarin Studio spuštěný v macOS a podporuje Docker od Mid-2017. To by mělo být Upřednostňovaná volba pro vývojáře pracující v počítačích Mac, kteří chtějí také používat výkonné integrované vývojové prostředí (IDE).
+**Visual Studio for Mac.** Je to prostředí IDE, vývoj Xamarin Studio spuštěný v macOS a podporuje Docker od Mid-2017. To by mělo být Upřednostňovaná volba pro vývojáře pracující v počítačích Mac, kteří chtějí také používat výkonné integrované vývojové prostředí (IDE).
 
 **Visual Studio Code a Docker CLI**. Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje libovolný jazyk vývoje, můžete použít Microsoft Visual Studio kód (VS Code) a Docker CLI. Toto je přístup pro vývoj pro různé platformy pro Mac, Linux a Windows. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například IntelliSense pro úlohy fázemi a zástupce pro spouštění příkazů Docker z editoru.
 
 Když nainstalujete [Docker Desktop Community Edition (CE)](https://hub.docker.com/search/?type=edition&offering=community), můžete k sestavování aplikací pro Windows i Linux použít jedno rozhraní Docker CLI.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Visual Studio**. Oficiální lokalita. \
   [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
@@ -43,7 +43,7 @@ Když nainstalujete [Docker Desktop Community Edition (CE)](https://hub.docker.c
 
 ## <a name="net-languages-and-frameworks-for-docker-containers"></a>Jazyky a rozhraní .NET pro kontejnery Docker
 
-Jak je uvedeno v předchozích částech tohoto průvodce, můžete použít .NET Framework, .NET Core nebo open source projekt mono při vývoji aplikací .NET s podporou kontejneru. V závislosti na tom, které rozhraní .NET Framework se používá, můžete vyvíjet v prostředí C \#, F \# nebo Visual Basic. Další podrobnosti o about.NET jazycích najdete v blogovém příspěvku [o strategii jazyka .NET](https://devblogs.microsoft.com/dotnet/the-net-language-strategy/).
+Jak je uvedeno v předchozích částech tohoto průvodce, můžete použít .NET Framework, .NET Core nebo open source projekt mono při vývoji aplikací .NET s podporou kontejneru. V závislosti na tom, které rozhraní .NET Framework se používá, můžete vyvíjet v prostředí C\#, F\#nebo Visual Basic. Další podrobnosti o about.NET jazycích najdete v blogovém příspěvku [o strategii jazyka .NET](https://devblogs.microsoft.com/dotnet/the-net-language-strategy/).
 
 >[!div class="step-by-step"]
 >[Předchozí](../architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md)

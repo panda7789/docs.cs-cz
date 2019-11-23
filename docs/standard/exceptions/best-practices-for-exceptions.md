@@ -22,13 +22,13 @@ Za účelem zamezení pádu aplikace zpracovává dobře navržená aplikace vý
 
 ## <a name="use-trycatchfinally-blocks-to-recover-from-errors-or-release-resources"></a>Pro zotavení z chyb nebo uvolnění prostředků použijte bloky try/catch/finally.
 
-Použijte `try` @ no__t-1 @ no__t-2 bloků kolem kódu, který může potenciálně generovat výjimku ***a*** váš kód může z této výjimky obnovit. V blocích `catch` vždy seřazení výjimek z největší odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Další odvozené výjimky nejsou zpracovány klauzulí catch, která předchází klauzuli catch pro základní třídu výjimky. Když se váš kód nemůže zotavit z výjimky, nezachyťte tuto výjimku. Pokud je to možné, povolte metody další v zásobníku volání pro obnovení.
+Použijte `try`/`catch` blocích kolem kódu, který může potenciálně generovat výjimku ***a*** váš kód může z této výjimky obnovit. V `catch`ch blocích vždy seřazení výjimek z největší odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Další odvozené výjimky nejsou zpracovány klauzulí catch, která předchází klauzuli catch pro základní třídu výjimky. Když se váš kód nemůže zotavit z výjimky, nezachyťte tuto výjimku. Pokud je to možné, povolte metody další v zásobníku volání pro obnovení.
 
-Vyčistěte prostředky přidělené buď pomocí příkazů `using`, nebo bloků `finally`. Preferovat `using` příkazy k automatickému vyčištění prostředků, když jsou vyvolány výjimky. Pomocí bloků `finally` vyčistěte prostředky, které neimplementují <xref:System.IDisposable>. Kód v klauzuli `finally` je téměř vždy spouštěn i v případě, že jsou výjimky vyvolány.
+Vyčistěte prostředky přidělené buď pomocí příkazů `using`, nebo `finally` bloky. Preferovat `using` příkazy k automatickému vyčištění prostředků, když jsou vyvolány výjimky. Pomocí `finally`ch bloků vyčistěte prostředky, které neimplementují <xref:System.IDisposable>. Kód v klauzuli `finally` je téměř vždy spouštěn i v případě, že jsou výjimky vyvolány.
 
 ## <a name="handle-common-conditions-without-throwing-exceptions"></a>Zpracování běžných podmínek bez vyvolání výjimek
 
-Pro podmínky, které se pravděpodobně vyskytují, ale mohou aktivovat výjimku, zvažte jejich zpracování způsobem, který se vyhne výjimce. Například pokud se pokusíte zavřít připojení, které je již uzavřeno, získáte `InvalidOperationException`. Tomu můžete zabránit pomocí příkazu `if` ke kontrole stavu připojení před pokusem o jeho zavření.
+Pro podmínky, které se pravděpodobně vyskytují, ale mohou aktivovat výjimku, zvažte jejich zpracování způsobem, který se vyhne výjimce. Například pokud se pokusíte zavřít připojení, které je již uzavřeno, získáte `InvalidOperationException`. Tomu můžete zabránit pomocí příkazu `if` ke kontrole stavu připojení před tím, než se pokusíte ho zavřít.
 
 [!code-cpp[Conceptual.Exception.Handling#2](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#2)]
 [!code-csharp[Conceptual.Exception.Handling#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#2)]
@@ -48,7 +48,7 @@ Metoda, kterou zvolíte, závisí na tom, jak často očekáváte, že k událos
 
 ## <a name="design-classes-so-that-exceptions-can-be-avoided"></a>Třídy návrhu tak, aby bylo možné vyhnout se výjimkám
 
-Třída může poskytovat metody nebo vlastnosti, které umožňují vyhnout se volání, které by aktivovalo výjimku. Například třída <xref:System.IO.FileStream> poskytuje metody, které vám pomůžou určit, jestli bylo dosaženo konce souboru. Ty lze použít k zamezení výjimky, která je vyvolána, pokud přečtení za koncem souboru. Následující příklad ukazuje, jak číst na konec souboru bez vyvolání výjimky.
+Třída může poskytovat metody nebo vlastnosti, které umožňují vyhnout se volání, které by aktivovalo výjimku. Například třída <xref:System.IO.FileStream> poskytuje metody, které vám pomůžou určit, zda bylo dosaženo konce souboru. Ty lze použít k zamezení výjimky, která je vyvolána, pokud přečtení za koncem souboru. Následující příklad ukazuje, jak číst na konec souboru bez vyvolání výjimky.
 
 [!code-cpp[Conceptual.Exception.Handling#5](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#5)]
 [!code-csharp[Conceptual.Exception.Handling#5](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
@@ -56,7 +56,7 @@ Třída může poskytovat metody nebo vlastnosti, které umožňují vyhnout se 
 
 Dalším způsobem, jak se vyhnout výjimkám, je vrátit hodnotu null (nebo výchozí) pro extrémně běžné chybové případy namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad na výkon aplikace.
 
-Pro typy hodnot bez ohledu na to, jestli se má jako indikátor chyby použít `Nullable<T>` nebo výchozí, je třeba zvážit konkrétní aplikaci. Pomocí `Nullable<Guid>` se `default` stal `null` namísto `Guid.Empty`. V některých případech může přidání `Nullable<T>` usnadnit jeho zrušení, pokud je hodnota přítomna nebo chybí. Jinak přidání `Nullable<T>` může vytvořit další případy, které nepotřebují, a sloužit pouze k vytváření potenciálních zdrojů chyb. 
+Pro typy hodnot bez ohledu na to, jestli se má jako indikátor chyby použít `Nullable<T>` nebo výchozí, je něco, co je potřeba zvážit pro vaši konkrétní aplikaci. Když použijete `Nullable<Guid>`, `default` se `null` místo `Guid.Empty`. V některých případech může přidání `Nullable<T>` usnadnit jeho vymazání, pokud je hodnota přítomna nebo chybí. Jinak přidávání `Nullable<T>` může vytvořit další případy, které kontrolují, že nepotřebujete, a sloužit pouze k vytváření potenciálních zdrojů chyb. 
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení kódu chyby
 
@@ -66,11 +66,11 @@ Výjimky zajišťují, že chyby nejdou nekontrolují, protože volání kódu n
 
 Zaveďte novou třídu výjimky pouze v případě, že není použita předdefinovaná. Příklad:
 
-- Vyvolejte výjimku <xref:System.InvalidOperationException>, pokud sada vlastností nebo volání metody není vhodná pro daný aktuální stav objektu.
+- Vyvolat výjimku <xref:System.InvalidOperationException>, pokud sada vlastností nebo volání metody není vhodná pro daný aktuální stav objektu.
 
 - Vyvolejte výjimku <xref:System.ArgumentException> nebo jednu z předdefinovaných tříd, které jsou odvozeny z <xref:System.ArgumentException>, pokud jsou předány neplatné parametry.
 
-## <a name="end-exception-class-names-with-the-word-exception"></a>Ukončit názvy tříd výjimek pomocí slova `Exception`
+## <a name="end-exception-class-names-with-the-word-exception"></a>Ukončete názvy tříd výjimek pomocí `Exception` slov
 
 Pokud je nezbytná vlastní výjimka, pojmenujte ji odpovídajícím způsobem a odvodit ji od třídy <xref:System.Exception>. Příklad:
 
@@ -82,11 +82,11 @@ Pokud je nezbytná vlastní výjimka, pojmenujte ji odpovídajícím způsobem a
 
 Při vytváření vlastních tříd výjimek použijte alespoň tři společné konstruktory: konstruktor bez parametrů, konstruktor, který přijímá zprávu řetězce, a konstruktor, který přijímá zprávu řetězce a vnitřní výjimku.
 
-- @no__t – 0, který používá výchozí hodnoty.
+- <xref:System.Exception.%23ctor>, která používá výchozí hodnoty.
 
-- <xref:System.Exception.%23ctor%28System.String%29>, který přijímá řetězcovou zprávu.
+- <xref:System.Exception.%23ctor%28System.String%29>, která přijímá řetězcovou zprávu.
 
-- <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, který přijímá řetězcovou zprávu a vnitřní výjimku.
+- <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, která přijímá řetězcovou zprávu a vnitřní výjimku.
 
 Příklad naleznete v tématu [How to: Create User-Defined Exceptions](how-to-create-user-defined-exceptions.md).
 
@@ -98,7 +98,7 @@ Například u implementací rozhraní .NET, které podporují aplikační domén
 
 - Sestavení umístěte do společného základu cesty aplikace sdíleného oběma doménami aplikace.
 
-    \- nebo-
+    \- nebo –
 
 - Pokud domény nesdílejí společný základ cesty aplikace, podepište sestavení obsahující informace o výjimce silným názvem a nasaďte sestavení do globální mezipaměti sestavení (GAC).
 
@@ -108,12 +108,12 @@ Pište jasné věty a zahrňte koncovou interpunkci. Každá věta v řetězci p
 
 ## <a name="include-a-localized-string-message-in-every-exception"></a>Zahrnout do každé výjimky lokalizovanou zprávu řetězce
 
-Chybová zpráva, kterou uživatel vidí, je odvozena z vlastnosti @no__t 0 výjimky, která byla vyvolána, a nikoli z názvu třídy Exception. Obvykle přiřadíte hodnotu vlastnosti <xref:System.Exception.Message?displayProperty=nameWithType> předáním řetězce zprávy do argumentu `message` [konstruktoru výjimky](xref:System.Exception.%23ctor%2A).
+Chybová zpráva, kterou uživatel vidí, je odvozena z vlastnosti <xref:System.Exception.Message?displayProperty=nameWithType> výjimky, která byla vyvolána, a nikoli z názvu třídy Exception. Obvykle přiřadíte hodnotu vlastnosti <xref:System.Exception.Message?displayProperty=nameWithType> předáním řetězce zprávy do argumentu `message` [konstruktoru třídy Exception](xref:System.Exception.%23ctor%2A).
 
 Pro lokalizované aplikace byste měli poskytnout lokalizovaný řetězec zprávy pro všechny výjimky, které může vaše aplikace vyvolat. Soubory prostředků můžete použít k poskytnutí lokalizovaných chybových zpráv. Informace o lokalizaci aplikací a načítání lokalizovaných řetězců naleznete v následujících článcích:
 
 - [Postupy: vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek](how-to-create-localized-exception-messages.md)
-- [Prostředky v desktopových aplikacích](../../framework/resources/index.md) 
+- [Prostředky v aplikacích klasické pracovní plochy](../../framework/resources/index.md) 
 - <xref:System.Resources.ResourceManager?displayProperty=nameWithType>
 
 ## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>V možnosti vlastní výjimky zadejte podle potřeby další vlastnosti.

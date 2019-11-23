@@ -32,7 +32,7 @@ Pojďme začít s přezkoumáním funkcí a požadavků aplikace. Aplikace eShop
 - Upravit nebo odebrat položky z koše
 - Registr
 - Registrace účtu
-- Přihlásit se
+- Přihlášení
 - Odhlásit se
 - Revidovat objednávky
 

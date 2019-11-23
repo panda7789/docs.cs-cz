@@ -95,7 +95,7 @@ Když publikujete integrační události prostřednictvím distribuovaného syst
 
 V podstatě používáte mikroslužby k vytváření škálovatelných systémů s vysokou dostupností. Poněkud větší věta znamená, že nemůžete sestavit (distribuovanou) databázi (nebo mikroslužbu, která vlastní svůj model), která je trvale dostupná, silně konzistentní *a* odolná vůči jakémukoli oddílu. Musíte zvolit dvě z těchto tří vlastností.
 
-V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste zdůraznit silnou konzistenci. Proto ve většině moderních aplikací založených na mikroslužbách nechcete při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) na základě Windows DTC (DISTRIBUTED Transaction Coordinator) (DTC) obvykle používat distribuované transakce v rámci zasílání zpráv. pomocí [služby MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
+V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste zdůraznit silnou konzistenci. Ve většině moderních aplikací založených na mikroslužbách většinou nechcete v zasílání zpráv používat distribuované transakce, jako při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) na základě Windows DTC (DISTRIBUTED Transaction Coordinator) (DTC) pomocí [služby MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
 Pojďme se vrátit k původnímu problému a jeho příkladu. Pokud služba po aktualizaci databáze dojde k chybě (v tomto případě je to hned za řádkem kódu s \_m kontextem. SaveChangesAsync ()), ale před publikováním události integrace, by celkový systém mohl být nekonzistentní. To může být důležité pro podnikání v závislosti na konkrétní obchodní operaci, se kterou se chystáte pracovat.
 
@@ -107,7 +107,7 @@ Jak bylo zmíněno dříve v části architektura, můžete mít několik přís
 
 - Pomocí [vzoru pošty k odeslání](https://www.kamilgrzybek.com/design/the-outbox-pattern/). Toto je transakční tabulka pro uložení integračních událostí (rozšíření místní transakce).
 
-V tomto scénáři je jedním z nejlepších přístupů použití vzoru úplných událostí (ES), pokud *to není nejlepší* . V mnoha scénářích aplikací ale nemusí být možné implementovat úplný systém ES. ES znamená ukládání pouze doménových událostí do transakční databáze místo ukládání aktuálních dat o stavu. Ukládání pouze událostí v doméně může mít skvělé výhody, jako je třeba historie vašeho systému a možnost zjistit stav systému v minulosti. Implementace celého systému ES ale vyžaduje, abyste převedli své architekty na většinu systému a předvedli spoustu dalších složitých a požadavků. Například byste chtěli použít databázi specifickou pro daný původ události, jako je například [úložiště událostí](https://eventstore.org/), nebo databáze orientovaný na dokument, například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělý přístup k tomuto problému, ale ne nejjednodušší řešení, pokud už neznáte jeho původ.
+V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikací ale nemusí být možné implementovat úplný systém ES. ES znamená ukládání pouze doménových událostí do transakční databáze místo ukládání aktuálních dat o stavu. Ukládání pouze událostí v doméně může mít skvělé výhody, jako je třeba historie vašeho systému a možnost zjistit stav systému v minulosti. Implementace celého systému ES ale vyžaduje, abyste převedli své architekty na většinu systému a předvedli spoustu dalších složitých a požadavků. Například byste chtěli použít databázi specifickou pro daný původ události, jako je například [úložiště událostí](https://eventstore.org/), nebo databáze orientovaný na dokument, například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělý přístup k tomuto problému, ale ne nejjednodušší řešení, pokud už neznáte jeho původ.
 
 Možnost použít dolování protokolu transakcí zpočátku vypadá velmi transparentně. Chcete-li však použít tento přístup, musí být mikroslužba spojena s protokolem transakcí RDBMS, jako je například protokol transakcí SQL Server. To pravděpodobně není žádoucí. Další nevýhodou je, že aktualizace nízké úrovně zaznamenané v protokolu transakcí nemusí být na stejné úrovni jako vaše integrační události vysoké úrovně. V takovém případě může být proces zpětného strojírenství těchto operací s protokolem transakcí obtížné.
 
@@ -299,7 +299,7 @@ Je vhodné mít nějaký druh identity na událost, abyste mohli vytvořit logik
 
 Některé zpracování zpráv je ze své podstaty idempotentní. Například pokud systém vygeneruje miniatury obrázků, může to být bez ohledu na to, kolikrát je zpracována zpráva o vygenerované miniatuře; Výsledkem je, že jsou vygenerovány miniatury a jsou vždy stejné. Na druhé straně operace, jako je například volání brány pro platby za účelem účtování platební karty, nemusí být idempotentní vůbec. V těchto případech je potřeba zajistit, aby zpracování zprávy bylo ve více časech.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Respektování zprávy idempotence**  
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591565(v=pandp.10)#honoring-message-idempotency>
@@ -316,19 +316,19 @@ Jedním ze způsobů, jak zajistit, že událost je zpracovávána pouze jednou 
 
 Dojde-li k přerušovanému výpadku sítě, mohou být zprávy duplikovány a přijímač zpráv musí být připraven na zpracování duplicitních zpráv. Pokud je to možné, přijímače by měly zpracovávat zprávy idempotentní způsobem, který je lepší, než je výslovně zpracovává odstranění duplicit.
 
-Podle [dokumentace RabbitMQ](https://www.rabbitmq.com/reliability.html#consumer)se zobrazí zpráva o tom, že pokud se pošle zpráva příjemci a pak se znovu zařadila do fronty (protože nebyla potvrzena před zahozením připojení k uživateli), pak RabbitMQ při doručení nastaví příznak opětovného doručení. znovu (zda ke stejnému uživateli nebo jinému).
+Podle [dokumentace RabbitMQ](https://www.rabbitmq.com/reliability.html#consumer)se zobrazí zpráva o tom, že pokud se pošle zpráva příjemci a pak se znovu zařadila do fronty (protože nebyla potvrzena před zahozením připojení k uživateli), pak RabbitMQ nastaví příznak opětovného doručení na něj, když se znovu doručí (ať už u stejného příjemce nebo na jiný).
 
 Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráva již mohla být zpracována. Ale to není zaručené; Zpráva by nikdy nebyla přes příjemce po ukončení služby Zprostředkovatel zpráv, možná kvůli problémům se sítí. Na druhé straně, pokud není nastaven příznak "", je zaručeno, že zpráva nebyla odeslána více než jednou. Proto přijímač potřebuje k odstranění duplicitních zpráv nebo zpracování zpráv v idempotentní způsobem pouze v případě, že je ve zprávě nastaven příznak "předáno".
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Rozvětvené eShopOnContainers s použitím NServiceBus (konkrétní software)**  \
     <https://go.particular.net/eShopOnContainers>
 
-- **Zasílání zpráv řízených událostmi** \
+-  \ **zpráv řízených událostmi**
     <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
-- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocení spojovacího** \
+- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocování \ spojovacích zařízení**
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 -  \ **kanálu pro publikování a odběr**

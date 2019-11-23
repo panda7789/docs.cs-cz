@@ -39,7 +39,7 @@ Různé ohraničené kontexty (BCs) budou používat různé vzory. Mají různ�
 
 Existuje pouze jedna architektura aplikace: architektura systému nebo komplexní aplikace, kterou navrhujete (například architektura mikroslužeb). Návrh každého vázaného kontextu nebo mikroslužby v této aplikaci ale odráží vlastní kompromisy a interní rozhodnutí o návrhu na úrovni schémat architektury. Nepokoušejte se použít stejné vzory architektury jako CQRS nebo DDD všude.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Martin Fowlera. CQRS** \
   <https://martinfowler.com/bliki/CQRS.html>
@@ -47,9 +47,9 @@ Existuje pouze jedna architektura aplikace: architektura systému nebo komplexn�
 - **Greg Young. Dokumenty CQRS** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>
 
-- **Udi Dahan. Vyjasněné CQRS** \
+- **UDI Dahan. Vyjasněné \ CQRS**
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 >[!div class="step-by-step"]
->[Předchozí](apply-simplified-microservice-cqrs-ddd-patterns.md)Další
->[](cqrs-microservice-reads.md)
+>[Předchozí](apply-simplified-microservice-cqrs-ddd-patterns.md)
+>[Další](cqrs-microservice-reads.md)

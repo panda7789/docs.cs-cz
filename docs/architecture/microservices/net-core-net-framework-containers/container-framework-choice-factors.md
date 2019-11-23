@@ -30,5 +30,5 @@ Následující rozhodovací tabulka shrnuje, jestli se má použít .NET Framewo
 | Spotřeba služeb Azure | .NET Core <br/> (nakonec všechny služby Azure budou poskytovat klientské sady SDK pro .NET Core) | .NET Framework <br/> .NET Core <br/> (nakonec všechny služby Azure budou poskytovat klientské sady SDK pro .NET Core) |
 
 >[!div class="step-by-step"]
->[Předchozí](net-framework-container-scenarios.md)Další
->[](net-container-os-targets.md)
+>[Předchozí](net-framework-container-scenarios.md)
+>[Další](net-container-os-targets.md)

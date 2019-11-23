@@ -13,26 +13,26 @@ ms.locfileid: "72291259"
 ---
 # <a name="understanding-systemruntimeloaderassemblyloadcontext"></a>Principy System. Runtime. Loader. AssemblyLoadContext
 
-Třída <xref:System.Runtime.Loader.AssemblyLoadContext> je jedinečná pro .NET Core. Tento článek se pokusí doplnit dokumentaci k rozhraní API @no__t 0 pomocí koncepčních informací.
+Třída <xref:System.Runtime.Loader.AssemblyLoadContext> je jedinečná pro .NET Core. Tento článek se pokusí doplnit dokumentaci k rozhraní <xref:System.Runtime.Loader.AssemblyLoadContext> API pomocí koncepčních informací.
 
 Tento článek je relevantní pro vývojáře implementující dynamické načítání, zejména pro vývojáře architektury dynamického nasazování.
 
 ## <a name="what-is-the-assemblyloadcontext"></a>Co je AssemblyLoadContext?
 
 Každá aplikace .NET Core implicitně používá <xref:System.Runtime.Loader.AssemblyLoadContext>.
-Je poskytovatelem modulu runtime pro vyhledání a načtení závislostí. Pokaždé, když je načtena závislost, je vyvolána instance <xref:System.Runtime.Loader.AssemblyLoadContext> pro její vyhledání.
+Je poskytovatelem modulu runtime pro vyhledání a načtení závislostí. Pokaždé, když je načtena závislost, je vyvolána instance <xref:System.Runtime.Loader.AssemblyLoadContext> k jejímu vyhledání.
 
 - Poskytuje službu pro hledání, načítání a ukládání spravovaných sestavení a dalších závislostí do mezipaměti.
 
-- Aby bylo možné podporovat dynamické načítání a uvolňování kódu, vytvoří izolovaný kontext pro načítání kódu a jeho závislostí ve vlastní instanci <xref:System.Runtime.Loader.AssemblyLoadContext>.
+- Aby bylo možné podporovat dynamické načítání a uvolňování kódu, vytvoří izolovaný kontext pro načítání kódu a jeho závislostí ve své vlastní instanci <xref:System.Runtime.Loader.AssemblyLoadContext>.
 
 ## <a name="when-do-you-need-multiple-assemblyloadcontext-instances"></a>Pokud potřebujete více instancí AssemblyLoadContext?
 
-Jedna instance <xref:System.Runtime.Loader.AssemblyLoadContext> je omezena tak, aby se načetla přesně jedna verze <xref:System.Reflection.Assembly> na jednoduchý název sestavení, <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType>.
+Jedna instance <xref:System.Runtime.Loader.AssemblyLoadContext> je omezena tak, aby se načetla přesně jedna verze <xref:System.Reflection.Assembly> na jednoduchý název sestavení <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType>.
 
 Toto omezení může být problém při dynamickém načítání modulů kódu. Každý modul je nezávisle zkompilován a může záviset na různých verzích <xref:System.Reflection.Assembly>. K tomuto problému obvykle dochází, když různé moduly závisejí na různých verzích běžně používané knihovny.
 
-Aby bylo možné podporovat dynamické načítání kódu, rozhraní API <xref:System.Runtime.Loader.AssemblyLoadContext> poskytuje k načítání konfliktních verzí <xref:System.Reflection.Assembly> ve stejné aplikaci. Každá instance <xref:System.Runtime.Loader.AssemblyLoadContext> poskytuje jedinečný slovník mapování každého <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> na konkrétní instanci <xref:System.Reflection.Assembly>.
+Aby bylo možné podporovat dynamické načítání kódu, rozhraní <xref:System.Runtime.Loader.AssemblyLoadContext> API poskytuje k načítání konfliktních verzí <xref:System.Reflection.Assembly> ve stejné aplikaci. Každá instance <xref:System.Runtime.Loader.AssemblyLoadContext> poskytuje jedinečný slovník mapování každého <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> na konkrétní instanci <xref:System.Reflection.Assembly>.
 
 Poskytuje také pohodlný mechanismus pro seskupení závislostí souvisejících s modulem kódu pro pozdější uvolnění.
 
@@ -44,7 +44,7 @@ Instance <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty
 
 ## <a name="how-does-assemblyloadcontext-support-dynamic-dependencies"></a>Jak AssemblyLoadContext podporuje dynamické závislosti?
 
-<xref:System.Runtime.Loader.AssemblyLoadContext> má různé události a virtuální funkce, které lze přepsat.
+<xref:System.Runtime.Loader.AssemblyLoadContext> má různé události a virtuální funkce, které je možné přepsat.
 
 Instance <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> podporuje pouze přepsání událostí.
 
@@ -52,38 +52,38 @@ V článcích [spravovaný algoritmus pro načítání sestavení](loading-manag
 
 Tato část obsahuje obecné principy relevantních událostí a funkcí.
 
-- **Být možné opakovat**. Dotaz na konkrétní závislost musí vždy mít stejnou odpověď. Musí být vrácena stejná instance načtené závislosti. Tento požadavek je zásadní pro konzistenci mezipaměti. Konkrétně pro spravovaná sestavení vytváříme mezipaměť <xref:System.Reflection.Assembly>. Klíč mezipaměti je jednoduchý název sestavení <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType>.
-- **Obvykle nevyvolejte**.  Očekává se, že tyto funkce vrací `null` namísto vyvolání, pokud se nepodaří najít požadovanou závislost. K vyvolání dojde v předčasném ukončení hledání a k šíření výjimky pro volajícího. Vystavení by mělo být omezeno na neočekávané chyby, jako je poškozené sestavení nebo nedostatek paměti.
+- **Být možné opakovat**. Dotaz na konkrétní závislost musí vždy mít stejnou odpověď. Musí být vrácena stejná instance načtené závislosti. Tento požadavek je zásadní pro konzistenci mezipaměti. Konkrétně pro spravovaná sestavení vytváříme <xref:System.Reflection.Assembly> cache. Klíč mezipaměti je jednoduchý název sestavení <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType>.
+- **Obvykle nevyvolejte**.  Očekává se, že tyto funkce vrátí `null` spíše než throw, pokud nelze najít požadovanou závislost. K vyvolání dojde v předčasném ukončení hledání a k šíření výjimky pro volajícího. Vystavení by mělo být omezeno na neočekávané chyby, jako je poškozené sestavení nebo nedostatek paměti.
 - **Vyhněte se rekurzi**. Počítejte s tím, že tyto funkce a obslužné rutiny implementují pravidla načítání pro hledání závislostí. Vaše implementace by neměla volat rozhraní API, která spouštějí rekurzi. Váš kód by měl obvykle volat funkce **AssemblyLoadContext** Load, které vyžadují specifickou cestu nebo argument odkazu na paměť.
-- **Načtěte do správného AssemblyLoadContext**. Volba místa načtení závislostí je specifická pro aplikaci.  Tato volba je implementována těmito událostmi a funkcemi. Když váš kód volá funkce **AssemblyLoadContext** Load-by-Path, zavolejte je na instanci, kde chcete kód načíst. Při návratu `null` a umožnění rutiny <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> může být zátěž nejjednodušším parametrem.
+- **Načtěte do správného AssemblyLoadContext**. Volba místa načtení závislostí je specifická pro aplikaci.  Tato volba je implementována těmito událostmi a funkcemi. Když váš kód volá funkce **AssemblyLoadContext** Load-by-Path, zavolejte je na instanci, kde chcete kód načíst. Při návratu `null` a umožnění <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> zpracování zatížení může být nejjednodušší možnost.
 - **Uvědomte si Races vlákna**. Načítání může být aktivováno více vlákny. AssemblyLoadContext zpracovává vlákna Races atomicky přidávání sestavení do mezipaměti. Instance rasy loser je zahozena. V logice implementace Nepřidávejte další logiku, která správně nezpracovává více vláken.
 
 ## <a name="how-are-dynamic-dependencies-isolated"></a>Jak jsou izolované dynamické závislosti?
 
-Každá instance <xref:System.Runtime.Loader.AssemblyLoadContext> představuje jedinečný rozsah pro instance <xref:System.Reflection.Assembly> a definice <xref:System.Type>.
+Každá instance <xref:System.Runtime.Loader.AssemblyLoadContext> představuje jedinečný obor pro <xref:System.Reflection.Assembly> instance a definice <xref:System.Type>.
 
 Mezi těmito závislostmi neexistuje žádná binární izolace. Jsou izolované jenom tím, že se nehledají podle názvu.
 
 V každém <xref:System.Runtime.Loader.AssemblyLoadContext>:
 
 - <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> se může vztahovat na jinou instanci <xref:System.Reflection.Assembly>.
-- <xref:System.Type.GetType%2A?displayProperty=nameWithType> může vracet jinou instanci typu pro stejný typ `name`.
+- <xref:System.Type.GetType%2A?displayProperty=nameWithType> může vrátit jinou instanci typu pro stejný typ `name`.
 
 ## <a name="how-are-dependencies-shared"></a>Jak se sdílí závislosti?
 
-Závislosti lze snadno sdílet mezi instancemi @no__t 0. Obecný model je pro jednu <xref:System.Runtime.Loader.AssemblyLoadContext> pro načtení závislosti.  Druhá sdílí závislost pomocí odkazu na načtené sestavení.
+Mezi instancemi <xref:System.Runtime.Loader.AssemblyLoadContext> je možné snadno sdílet závislosti. Obecný model je pro jednu <xref:System.Runtime.Loader.AssemblyLoadContext> načtení závislosti.  Druhá sdílí závislost pomocí odkazu na načtené sestavení.
 
-Toto sdílení je vyžadováno pro sestavení modulu runtime. Tato sestavení lze načíst pouze do <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType>. Totéž platí pro rozhraní, jako `ASP.NET`, `WPF` nebo `WinForms`.
+Toto sdílení je vyžadováno pro sestavení modulu runtime. Tato sestavení lze načíst pouze do <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType>. Stejný je vyžadován pro rozhraní, jako `ASP.NET`, `WPF`nebo `WinForms`.
 
 Doporučuje se, aby se sdílené závislosti načetly do <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType>. Toto sdílení je běžným vzorem návrhu.
 
-Sdílení je implementováno v kódování vlastní instance <xref:System.Runtime.Loader.AssemblyLoadContext>. <xref:System.Runtime.Loader.AssemblyLoadContext> má různé události a virtuální funkce, které lze přepsat. Když kterákoli z těchto funkcí vrátí odkaz na instanci <xref:System.Reflection.Assembly>, která byla načtena do jiné instance <xref:System.Runtime.Loader.AssemblyLoadContext>, je sdílena instance <xref:System.Reflection.Assembly>. Algoritmus Standard Load se po načtení ne<xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> pro zjednodušení společného vzoru sdílení.  Viz [algoritmus načítání spravovaného sestavení](loading-managed.md).
+Sdílení je implementováno v kódování instance vlastního <xref:System.Runtime.Loader.AssemblyLoadContext>. <xref:System.Runtime.Loader.AssemblyLoadContext> má různé události a virtuální funkce, které je možné přepsat. Když kterákoli z těchto funkcí vrátí odkaz na instanci <xref:System.Reflection.Assembly>, která byla načtena v jiné instanci <xref:System.Runtime.Loader.AssemblyLoadContext>, je sdílena <xref:System.Reflection.Assembly> instance. Algoritmus standardního zatížení se neshoduje s <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> pro načítání pro zjednodušení společného vzoru sdílení.  Viz [algoritmus načítání spravovaného sestavení](loading-managed.md).
 
 ## <a name="complications"></a>Komplikace
 
 ### <a name="type-conversion-issues"></a>Problémy s převodem typu
 
-Pokud dvě instance <xref:System.Runtime.Loader.AssemblyLoadContext> obsahují definice typu se stejnou `name`, nejedná se o stejný typ. Jsou stejného typu, pokud jsou a pouze v případě, že pocházejí ze stejné instance <xref:System.Reflection.Assembly>.
+Pokud dvě instance <xref:System.Runtime.Loader.AssemblyLoadContext> obsahují definice typu se stejným `name`, nejedná se o stejný typ. Jsou stejného typu, pokud a pocházejí ze stejné <xref:System.Reflection.Assembly> instance.
 
 Chcete-li zkomplikovat otázky, zprávy o výjimce týkající se těchto neodpovídajících typů mohou být matoucí. Typy jsou odkazovány na zprávy výjimek podle jejich jednoduchého typu. Zpráva o běžné výjimce v tomto případě by měla být ve tvaru:
 
@@ -93,10 +93,10 @@ Chcete-li zkomplikovat otázky, zprávy o výjimce týkající se těchto neodpo
 
 Vzhledem k dvojici neodpovídajících typů je důležité také znát:
 
-- @No__t jednotlivých typů – 0
-- Každý typ <xref:System.Runtime.Loader.AssemblyLoadContext>, který lze získat pomocí funkce <xref:System.Runtime.Loader.AssemblyLoadContext.GetLoadContext(System.Reflection.Assembly)?displayProperty=nameWithType>.
+- <xref:System.Type.Assembly?displayProperty=nameWithType> každého typu
+- <xref:System.Runtime.Loader.AssemblyLoadContext>každého typu, který lze získat prostřednictvím funkce <xref:System.Runtime.Loader.AssemblyLoadContext.GetLoadContext(System.Reflection.Assembly)?displayProperty=nameWithType>.
 
-Vzhledem k těmto dvěma objektům `a` a `b` bude užitečné vyhodnotit následující v ladicím programu:
+Vzhledem k těmto dvěma objektům `a` a `b`bude užitečné vyhodnotit následující v ladicím programu:
 
 ```csharp
 // In debugger look at each assembly's instance, Location, and FullName

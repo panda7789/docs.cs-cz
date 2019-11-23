@@ -17,7 +17,7 @@ Je důležité pro aplikace rozdělené do několika kontejnerů a mikroslužeb,
 
 [Azure monitor](https://azure.microsoft.com/services/monitor/) je rozšiřitelná analytická služba, která monitoruje vaši živou aplikaci. Pomáhá detekovat a diagnostikovat problémy s výkonem a pochopit, co uživatelé s vaší aplikací skutečně dělají. Je navržená pro vývojáře s cílem pomoci při neustálém vylepšování výkonu a použitelnosti služeb nebo aplikací. Azure Monitor pracuje s webovými i službami a samostatnými aplikacemi na nejrůznějších platformách, jako je .NET, Java, Node. js a řada dalších platforem hostovaných místně nebo v cloudu.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Přehled Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/overview>
@@ -28,7 +28,7 @@ Je důležité pro aplikace rozdělené do několika kontejnerů a mikroslužeb,
 - **Co je Azure Monitor metriky?** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics>
 
-- **Řešení pro monitorování kontejnerů v Azure Monitor** \
+- **Řešení monitorování kontejnerů v Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/insights/containers>
 
 ## <a name="security-and-backup-services"></a>Služby zabezpečení a zálohování
@@ -50,5 +50,5 @@ Azure má nástroje pro správu a nabízí jednotný přehled čtyř důležitý
 - **Místní prostředky**. S [skutečně konzistentním hybridním cloudem](https://azure.microsoft.com/resources/truly-consistent-hybrid-cloud-with-microsoft-azure/).
 
 >[!div class="step-by-step"]
->[Předchozí](manage-production-docker-environments.md)Další
->[](../key-takeaways/index.md)
+>[Předchozí](manage-production-docker-environments.md)
+>[Další](../key-takeaways/index.md)

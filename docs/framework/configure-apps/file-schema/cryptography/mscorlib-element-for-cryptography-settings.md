@@ -15,11 +15,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699734"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a>@no__t – element > 0mscorlib pro nastavení kryptografie
-Obsahuje [prvek > \<cryptographySettings](cryptographysettings-element.md).  
+# <a name="mscorlib-element-for-cryptography-settings"></a>\<element > mscorlib pro nastavení kryptografie
+Obsahuje [prvek\<cryptographySettings >](cryptographysettings-element.md).  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **\<mscorlib >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<mscorlib >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ Obsahuje [prvek > \<cryptographySettings](cryptographysettings-element.md).
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -47,7 +47,7 @@ Obsahuje [prvek > \<cryptographySettings](cryptographysettings-element.md).
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku **> @no__t 1mscorlib** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pro vrácení objektu `MyCryptoRSAClass`.  
+ Následující příklad ukazuje způsob použití prvku **\<mscorlib >** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" do metody <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> k vrácení objektu `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  

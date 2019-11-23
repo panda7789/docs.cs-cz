@@ -29,7 +29,7 @@ I když mají výhodu jednoduchosti, monolitické architektury čelí několika 
 
 Nasazení do aplikací monolitické obvykle vyžaduje restartování celé aplikace, i když se nahrazuje jenom jeden malý modul. V závislosti na počtu počítačů, které hostují aplikaci, to může způsobit výpadky během nasazení.
 
-### <a name="hosting"></a>Hostování
+### <a name="hosting"></a>Hosting
 
 Aplikace monolitické se hostují výhradně na jedné instanci počítače. To může vyžadovat hardware s vyššími schopnostmi, než bude potřeba kterýkoli modul v distribuované aplikaci. Také pokud se některá z částí aplikace stal kritickým bodem, musí být celá aplikace nasazena do dalších uzlů počítače, aby bylo možné horizontální navýšení kapacity.
 
@@ -97,7 +97,7 @@ status:
   loadBalancer: {}
 ```
 
-Při použití deklarativní konfigurace můžete zobrazit náhled změn, které budou provedeny před jejich potvrzením, pomocí `kubectl diff -f FOLDERNAME` proti složce, ve které jsou umístěny konfigurační soubory. Jakmile budete mít jistotu, že chcete změny použít, spusťte `kubectl apply -f FOLDERNAME`. Přidejte `-R` pro rekurzivní zpracování hierarchie složek.
+Při použití deklarativní konfigurace můžete zobrazit náhled změn, které budou provedeny před jejich potvrzením, pomocí `kubectl diff -f FOLDERNAME` ve složce, ve které jsou umístěny konfigurační soubory. Až si opravdu chcete změny použít, spusťte `kubectl apply -f FOLDERNAME`. Přidejte `-R` k rekurzivnímu zpracování hierarchie složek.
 
 Kromě služeb můžete použít deklarativní konfiguraci pro jiné funkce Kubernetes, jako jsou například *nasazení*. Deklarativní nasazení používají řadiče nasazení k aktualizaci prostředků clusteru. Nasazení se používají k zavedení nových změn, horizontálnímu navýšení kapacity pro podporu většího zatížení nebo návrat k předchozí revizi. Pokud je cluster nestabilní, deklarativní nasazení poskytuje mechanismus pro automatické převedení clusteru zpátky do požadovaného stavu.
 
@@ -131,13 +131,13 @@ Kubernetes nasazení poskytují skvělou hodnotu v produkčním prostředí, ale
 
 Co je Minikube? Projekt Minikube říká "Minikube implementuje místní Kubernetes cluster na macOS, Linux a Windows." Jeho primárními cíli je "nejlepší nástroj pro vývoj místních aplikací Kubernetes a podpora všech Kubernetes funkcí, které odpovídají." Instalace Minikube je oddělená od Docker, ale Minikube podporuje jiné hypervisory než Docker Desktop podporuje. Minikube aktuálně podporuje následující funkce Kubernetes:
 
-- NÁZV
+- DNS
 - NodePorts
 - ConfigMaps a tajné klíče
 - Řídicí panely
 - Moduly runtime kontejnerů: Docker, RKT, CRI-O a kontejnery
 - Povolení síťového rozhraní kontejneru (CNI)
-- Příchozího přenosu dat
+- Příchozí přenos dat
 
 Po instalaci Minikube je můžete rychle začít používat spuštěním příkazu `minikube start`, který stáhne image a spustí místní cluster Kubernetes. Po spuštění clusteru s ním budete pracovat pomocí standardních příkazů Kubernetes `kubectl`.
 
@@ -159,7 +159,7 @@ Visual Studio podporuje vývoj Docker pro webové aplikace. Když vytvoříte no
 
 **Obrázek 3-5**. Povolit podporu Docker pro Visual Studio
 
-Když je vybraná tato možnost, projekt se vytvoří s `Dockerfile` ve svém kořenu, který se dá použít k sestavení a hostování aplikace v kontejneru Docker. Na obrázku 3-6 se zobrazuje příklad souboru Dockerfile.
+Když je vybraná tato možnost, projekt se vytvoří s `Dockerfile` v jeho kořenovém adresáři, který se dá použít k sestavení a hostování aplikace v kontejneru Docker. Na obrázku 3-6 se zobrazuje příklad souboru Dockerfile.
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-stretch-slim AS base
@@ -194,7 +194,7 @@ Výchozí chování při spuštění aplikace je nakonfigurováno pro použití 
 
 Kromě místního vývoje [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) poskytuje vývojářům pohodlný způsob, jak v rámci Azure pracovat s vlastními konfiguracemi Kubernetes. Jak vidíte na obrázku 3-7, můžete také spustit aplikaci v Azure Dev Spaces.
 
-Pokud nepřidáte do vaší aplikace ASP.NET Core podporu Docker při jejím vytváření, můžete ji kdykoli přidat později. V Průzkumník řešení sady Visual Studio klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** **podporu Docker** > , jak je znázorněno na obrázku 3-8.
+Pokud nepřidáte do vaší aplikace ASP.NET Core podporu Docker při jejím vytváření, můžete ji kdykoli přidat později. V Průzkumník řešení sady Visual Studio klikněte pravým tlačítkem myši na projekt a vyberte přidat **podporu > Docker**, jak je znázorněno na obrázku 3-8.
 
 ![Přidat podporu Docker pro Visual Studio](./media/visual-studio-add-docker-support.png)
 
@@ -206,12 +206,12 @@ Kromě podpory Docker můžete také přidat podporu orchestrace kontejnerů, kt
 
 **Obrázek 3-9**. Přidání podpory nástroje Orchestrator pro Visual Studio
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Co je Kubernetes?](https://blog.newrelic.com/engineering/what-is-kubernetes/)
 - [Instalace Kubernetes pomocí Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)
 - [MiniKube vs Docker Desktop](https://medium.com/containers-101/local-kubernetes-for-windows-minikube-vs-docker-desktop-25a1c6d3b766)
-- [Nástroje sady Visual Studio pro Docker](https://docs.microsoft.com/dotnet/standard/containerized-lifecycle-architecture/design-develop-containerized-apps/visual-studio-tools-for-docker)
+- [Visual Studio Tools for Docker](https://docs.microsoft.com/dotnet/standard/containerized-lifecycle-architecture/design-develop-containerized-apps/visual-studio-tools-for-docker)
 
 >[!div class="step-by-step"]
 >[Předchozí](scale-applications.md)

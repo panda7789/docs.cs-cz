@@ -32,5 +32,5 @@ Když se aplikace škálují napříč více hostitelskými systémy, možnost s
 Možnosti poskytované orchestrací a plánovači jsou složité pro vývoj a vytváření zcela od začátku, proto byste obvykle chtěli použít řešení orchestrace nabízená dodavateli.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](manage-production-docker-environments.md)
+>[Předchozí](index.md)
+>[Další](manage-production-docker-environments.md)

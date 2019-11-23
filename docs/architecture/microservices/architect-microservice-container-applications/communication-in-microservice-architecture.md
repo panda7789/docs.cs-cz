@@ -2,22 +2,22 @@
 title: Komunikace v architektuře mikroslužeb
 description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami a porozumět vlivům synchronních a asynchronních způsobů.
 ms.date: 09/20/2018
-ms.openlocfilehash: add1ff74bee456e0fa7f2fb54d2cf4e536402db4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 7bd45e0b8f8ea3330cf8d2b613e54111cc72f14f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738024"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966980"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
-V aplikaci monolitické spuštěné v jednom procesu komponenty vyvolávají jednu jinou pomocí metody na úrovni jazyka nebo volání funkcí. Ty mohou být silně spojeny, pokud vytváříte objekty s kódem (například `new ClassName()`), nebo je lze vyvolat odděleným způsobem, pokud používáte vkládání závislostí odkazem na abstrakce namísto konkrétních instancí objektů. V obou případech jsou objekty spuštěné v rámci stejného procesu. Největší výzvou, při změně z aplikace monolitické na aplikaci založenou na mikroslužbách, spočívá v tom, že probíhá změna komunikačního mechanismu. Přímý převod z volání metody v rámci procesu do volání RPC na služby způsobí, že se jedná o chat a neefektivní komunikaci, která v distribuovaných prostředích nebude dobře fungovat. Problémy s návrhem distribuovaného systému jsou dostatečně dobře známé, že se jedná o i Canon, který je známý jako [Fallacies distribuovaného výpočetního](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) prostředí, ve kterém jsou uvedeny předpoklady, které vývojáři často vytvářejí při přechodu z monolitické do distribuovaných návrhů. .
+V aplikaci monolitické spuštěné v jednom procesu komponenty vyvolávají jednu jinou pomocí metody na úrovni jazyka nebo volání funkcí. Ty mohou být silně spojeny, pokud vytváříte objekty s kódem (například `new ClassName()`), nebo je lze vyvolat odděleným způsobem, pokud používáte vkládání závislostí odkazem na abstrakce namísto konkrétních instancí objektů. V obou případech jsou objekty spuštěné v rámci stejného procesu. Největší výzvou, při změně z aplikace monolitické na aplikaci založenou na mikroslužbách, spočívá v tom, že probíhá změna komunikačního mechanismu. Přímý převod z volání metody v rámci procesu do volání RPC na služby způsobí, že se jedná o chat a neefektivní komunikaci, která v distribuovaných prostředích nebude dobře fungovat. Problémy s návrhem distribuovaného systému jsou dostatečně dobře známé, že se jedná o i Canon známý jako [Fallacies distribuovaného výpočetního](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) prostředí, ve kterém jsou uvedeny předpoklady, které vývojáři často vytvářejí při přechodu z monolitické do distribuovaných návrhů.
 
 Neexistuje žádné řešení, ale několik. Jedno řešení zahrnuje izolaci podnikových mikroslužeb co nejvíc. Pak můžete použít asynchronní komunikaci mezi interními mikroslužbami a nahradit jemně odstupňovanou komunikaci, která je typická pro komunikaci uvnitř procesu mezi objekty a hrubou komunikací. Můžete to provést seskupením volání a vrácením dat, která agreguje výsledky více vnitřních volání, klientovi.
 
 Aplikace založené na mikroslužbách je distribuovaný systém běžící na více procesech nebo službách, obvykle i na různých serverech nebo hostitelích. Každá instance služby je obvykle proces. Proto musí služby komunikovat pomocí Meziprocesového komunikačního protokolu, jako je HTTP, AMQP nebo binární protokol jako TCP, v závislosti na povaze jednotlivých služeb.
 
-Komunita mikroslužeb podporuje filozofie[inteligentních koncových bodů a Dumb kanálů](https://simplicable.com/new/smart-endpoints-and-dumb-pipes). Tento heslo doporučuje návrh, který je mezi mikroslužbami co nejoddělený a co možno soudržný v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Mikroslužby, které sestaví koncovou aplikaci, se obvykle jednoduše choreographed pomocí komunikace REST namísto složitých protokolů, jako je WS-\* a flexibilní komunikace řízená událostmi místo centralizovaného. Orchestrace obchodních procesů.
+Komunita mikroslužeb podporuje filozofie[inteligentních koncových bodů a Dumb kanálů](https://simplicable.com/new/smart-endpoints-and-dumb-pipes). Tento heslo doporučuje návrh, který je mezi mikroslužbami co nejoddělený a co možno soudržný v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Nicméně mikroslužby, které sestaví koncovou aplikaci, se obvykle jednoduše choreographed pomocí komunikace REST namísto složitých protokolů, jako jsou WS-\* a flexibilní komunikace řízené událostmi namísto centralizovaných procesů pro obchodní procesy.
 
 Mezi tyto dva běžně používané protokoly patří požadavek HTTP/odpověď s rozhraními API prostředků (při dotazování většiny všech) a odlehčené asynchronní zasílání zpráv při komunikaci s aktualizacemi napříč více mikroslužbami. Tyto informace jsou podrobněji vysvětleny v následujících částech.
 
@@ -61,7 +61,7 @@ Pokud vaše mikroslužba potřebuje vyvolat další akci v jiné mikroslužbě (
 
 A konečně (a jedná se o většinu problémů při vytváření mikroslužeb), pokud vaše počáteční mikroslužba potřebuje data, která jsou původně vlastněna jinými mikroslužbami, nespoléhá na to, aby pro tato data prováděla synchronní požadavky. Místo toho replikujte nebo rozšiřujte tato data (pouze atributy, které potřebujete) do databáze počáteční služby, a to pomocí konečné konzistence (obvykle pomocí integračních událostí, jak je vysvětleno v nadcházejících oddílech).
 
-Jak bylo uvedeno výše v části [Identifikace hranic doménových modelů pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md), při duplikaci některých dat napříč několika mikroslužbami není nesprávný návrh, a to v opačném případě, kdy je možné data přeložit do konkrétního jazyk nebo pojem tohoto dalšího doménového nebo vázaného kontextu. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem identity. API, která má za následek většinu dat uživatele s entitou s názvem uživatel. Pokud ale potřebujete ukládat data o uživateli v rámci objednávání mikroslužeb, uložte ho jako jinou entitu s názvem kupující. Entita nákupčí sdílí stejnou identitu s původní entitou uživatele, ale může mít jenom několik atributů, které vyžaduje doména řazení, a ne celý profil uživatele.
+Jak bylo uvedeno výše v části [Identifikace hranic doménových modelů pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md), při duplikaci některých dat napříč několika mikroslužbami není nesprávný návrh – v opačném případě, kdy je to možné, můžete data přeložit do konkrétního jazyka nebo podmínek, které jsou v rámci této další domény nebo vázaného kontextu. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem identity. API, která má za následek většinu dat uživatele s entitou s názvem uživatel. Pokud ale potřebujete ukládat data o uživateli v rámci objednávání mikroslužeb, uložte ho jako jinou entitu s názvem kupující. Entita nákupčí sdílí stejnou identitu s původní entitou uživatele, ale může mít jenom několik atributů, které vyžaduje doména řazení, a ne celý profil uživatele.
 
 Můžete použít libovolný protokol pro komunikaci a šíření dat asynchronně napříč mikroslužbami, aby bylo možné zajistit jejich případné konzistenci. Jak už jsme uvedli, mohli byste použít události integrace pomocí sběrnice událostí nebo zprostředkovatele zpráv nebo můžete protokol HTTP použít taky tak, že v něm provedete dotazování dalších služeb. Nezáleží na tom. Důležité pravidlo je nevytvářet synchronní závislosti mezi vašimi mikroslužbami.
 
@@ -87,7 +87,7 @@ Oblíbeným stylem architektury pro komunikaci mezi požadavkem a odpovědí je 
 
 K dispozici je další hodnota při používání služby HTTP REST jako jazyk definice rozhraní. Pokud například použijete [metadata Swagger](https://swagger.io/) k popisu rozhraní API služby, můžete použít nástroje, které generují zástupné procedury klienta, které mohou přímo zjišťovat a využívat vaše služby.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Martin Fowlera. Richardson model splatnosti** popis modelu REST. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>

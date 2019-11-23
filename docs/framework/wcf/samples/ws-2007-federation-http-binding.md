@@ -16,9 +16,9 @@ Tato ukázka demonstruje použití <xref:System.ServiceModel.WS2007FederationHtt
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
-Ukázka se skládá z klientského programu založeného na konzole (soubor*Client. exe*), programu služby tokenu zabezpečení založeného na konzole (*SecurityTokenService. exe*) a programu služby (*Service. exe*) založeném na konzole. Služba implementuje kontrakt definující způsob komunikace požadavků a odpovědí. Kontrakt je definován rozhraním @no__t 0, které zpřístupňuje matematické operace (`Add`, `Subtract`, `Multiply` a `Divide`). Klient získá token zabezpečení ze služby tokenu zabezpečení (STS) a provede synchronní požadavky služby pro danou matematickou operaci. Služba pak odpoví s výsledkem. Aktivita klienta se zobrazí v okně konzoly.
+Ukázka se skládá z klientského programu založeného na konzole (soubor*Client. exe*), programu služby tokenu zabezpečení založeného na konzole (*SecurityTokenService. exe*) a programu služby (*Service. exe*) založeném na konzole. Služba implementuje kontrakt definující způsob komunikace požadavků a odpovědí. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (`Add`, `Subtract`, `Multiply`a `Divide`). Klient získá token zabezpečení ze služby tokenu zabezpečení (STS) a provede synchronní požadavky služby pro danou matematickou operaci. Služba pak odpoví s výsledkem. Aktivita klienta se zobrazí v okně konzoly.
 
-Ukázka zpřístupní kontrakt `ICalculator` k dispozici pomocí elementu `ws2007FederationHttpBinding`. Konfigurace této vazby na klientovi je uvedena v následujícím kódu:
+Ukázka zpřístupní `ICalculator` kontraktu pomocí elementu `ws2007FederationHttpBinding`. Konfigurace této vazby na klientovi je uvedena v následujícím kódu:
 
 ```xml
 <bindings>
@@ -37,7 +37,7 @@ Ukázka zpřístupní kontrakt `ICalculator` k dispozici pomocí elementu `ws200
 </bindings>
 ```
 
-V [> \<security](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá zabezpečení `message`, což je důvod, proč je v [\<security >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)zadáno [> \<message](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) . [> Prvek \<issuer](../../configure-apps/file-schema/wcf/issuer.md) uvnitř [> \<message](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a vazbu pro STS, která vydá token zabezpečení pro klienta, aby se klient mohl ověřit pro službu @no__t 4.
+V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [>\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [> Element vystavitele\<](../../configure-apps/file-schema/wcf/issuer.md) v [\<zprávě >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a vazbu pro STS, která vydává token zabezpečení pro klienta, aby se klient mohl ověřit pro `ICalculator` službu.
   
 Konfigurace této vazby ve službě je uvedena v následujícím kódu:
 
@@ -64,7 +64,7 @@ Konfigurace této vazby ve službě je uvedena v následujícím kódu:
 </bindings>
 ```
 
-V [> \<security](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá zabezpečení `message`, což je důvod, proč je v [\<security >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)zadáno [> \<message](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) . [@No__t >](../../configure-apps/file-schema/wcf/issuermetadata.md) prvek `ws2007FederationHttpBinding` v [\<message >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a identitu koncového bodu, který lze použít k načtení metadat pro službu STS.
+V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [>\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [\<issuerMetadata >](../../configure-apps/file-schema/wcf/issuermetadata.md) elementu `ws2007FederationHttpBinding` uvnitř [\<zprávy >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a identitu koncového bodu, který lze použít k načtení metadat pro službu STS.
 
 Chování služby se zobrazí v následujícím kódu:
 
@@ -93,7 +93,7 @@ Chování služby se zobrazí v následujícím kódu:
 </behaviors>
 ```
   
-[@No__t-1issuedTokenAuthentication >](../../configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)> umožňuje službě určovat omezení pro tokeny, které umožňuje klientům prezentovat během ověřování. Tato konfigurace určuje, že služba přijímá tokeny podepsané certifikátem, jehož název subjektu je CN = STS.
+[\<issuedTokenAuthentication >](../../configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)> umožňuje službě určovat omezení pro tokeny, které umožňuje klientům prezentovat během ověřování. Tato konfigurace určuje, že služba přijímá tokeny podepsané certifikátem, jehož název subjektu je CN = STS.
 
 Služba STS zpřístupňuje jeden koncový bod pomocí standardní <xref:System.ServiceModel.WS2007HttpBinding>. Služba reaguje na žádosti klientů o tokeny. Pokud je klient ověřený pomocí účtu systému Windows, služba vydá token, který obsahuje uživatelské jméno klienta jako deklaraci identity. V rámci vytváření tokenu token STS podepíše token pomocí privátního klíče přidruženého k certifikátu CN = STS. Kromě toho vytvoří symetrický klíč a zašifruje ho pomocí veřejného klíče přidruženého k certifikátu CN = localhost. Při vrácení tokenu klientovi vrátí služba tokenů zabezpečení také symetrický klíč. Klient prezentuje vydaný token službě `ICalculator` a potvrzuje, že zná symetrický klíč podepsáním zprávy pomocí tohoto klíče.
 
@@ -126,6 +126,6 @@ Soubor *Setup. bat* , který je součástí této ukázky, vám umožní nakonfi
 > 
 > `<InstallDrive>:\WF_WCF_Samples`
 > 
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pro stažení ukázek Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Tato ukázka se nachází v následujícím adresáři:
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři:
 > 
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\WS2007FederationHttp`

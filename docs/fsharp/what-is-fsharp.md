@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71332737"
 ---
-# <a name="what-is-f"></a>Co je F @ no__t-0
+# <a name="what-is-f"></a>Co je F\#
 
 F#je funkční programovací jazyk, který usnadňuje psaní správného a udržovatelného kódu.
 

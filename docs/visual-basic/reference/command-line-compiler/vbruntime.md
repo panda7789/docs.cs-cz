@@ -25,7 +25,7 @@ Určuje, že má kompilátor kompilovat bez odkazu na knihovnu modulu runtime Vi
 -vbruntime:{ - | + | * | path }  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  \-  
  Zkompilujte bez odkazu na knihovnu runtime Visual Basic.  
   
@@ -39,44 +39,44 @@ Určuje, že má kompilátor kompilovat bez odkazu na knihovnu modulu runtime Vi
  Zkompiluje s odkazem na zadanou knihovnu (DLL).  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost kompilátoru `-vbruntime` umožňuje určit, že má být kompilátor zkompilován bez odkazu na knihovnu modulu runtime Visual Basic. Pokud kompilujete bez odkazu na knihovnu prostředí Visual Basic runtime, chyby nebo upozornění jsou protokolovány v kódu nebo jazykových konstrukcích, které generují volání pomocníka modulu runtime Visual Basic. ( *Pomocník pro Visual Basic runtime* je funkce definovaná v souboru Microsoft. VisualBasic. dll, která je volána za běhu za účelem provedení konkrétní jazykové sémantiky.)  
+ Možnost kompilátoru `-vbruntime` umožňuje určit, zda má být kompilátor zkompilován bez odkazu na knihovnu modulu runtime Visual Basic. Pokud kompilujete bez odkazu na knihovnu prostředí Visual Basic runtime, chyby nebo upozornění jsou protokolovány v kódu nebo jazykových konstrukcích, které generují volání pomocníka modulu runtime Visual Basic. ( *Pomocník pro Visual Basic runtime* je funkce definovaná v souboru Microsoft. VisualBasic. dll, která je volána za běhu za účelem provedení konkrétní jazykové sémantiky.)  
   
- Možnost `-vbruntime+` vytváří stejné chování, k němuž dojde, pokud není zadán přepínač `-vbruntime`. Pomocí možnosti `-vbruntime+` můžete přepsat předchozí přepínače přepínačů `-vbruntime`.  
+ Možnost `-vbruntime+` vytváří stejné chování, které nastane, pokud není zadán žádný `-vbruntime` přepínač. Pomocí možnosti `-vbruntime+` můžete přepsat předchozí `-vbruntime` přepínače.  
   
- Většina objektů typu `My` není při použití možností `-vbruntime-` nebo `-vbruntime:path` k dispozici.  
+ Většina objektů `My`ho typu není při použití možností `-vbruntime-` nebo `-vbruntime:path` k dispozici.  
   
 ## <a name="embedding-visual-basic-runtime-core-functionality"></a>Vkládání Visual Basic základní funkce modulu runtime  
  Možnost `-vbruntime*` umožňuje kompilovat bez odkazu na běhovou knihovnu. Místo toho je základní funkce z knihovny modulu runtime Visual Basic vložena do sestavení uživatele. Tuto možnost můžete použít, pokud vaše aplikace běží na platformách, které neobsahují modul runtime Visual Basic.  
   
  Následující členové modulu runtime jsou vloženi:  
   
-- @no__t – 0 – třída  
+- <xref:Microsoft.VisualBasic.CompilerServices.Conversions> – třída  
   
-- @no__t – 0 – metoda  
+- <xref:Microsoft.VisualBasic.Strings.AscW%28System.Char%29> – metoda  
   
-- @no__t – 0 – metoda  
+- <xref:Microsoft.VisualBasic.Strings.AscW%28System.String%29> – metoda  
   
-- @no__t – 0 – metoda  
+- <xref:Microsoft.VisualBasic.Strings.ChrW%28System.Int32%29> – metoda  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbBack>  
+- <xref:Microsoft.VisualBasic.Constants.vbBack> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbCr>  
+- <xref:Microsoft.VisualBasic.Constants.vbCr> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbCrLf>  
+- <xref:Microsoft.VisualBasic.Constants.vbCrLf> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbFormFeed>  
+- <xref:Microsoft.VisualBasic.Constants.vbFormFeed> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbLf>  
+- <xref:Microsoft.VisualBasic.Constants.vbLf> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbNewLine>  
+- <xref:Microsoft.VisualBasic.Constants.vbNewLine> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbNullChar>  
+- <xref:Microsoft.VisualBasic.Constants.vbNullChar> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbNullString>  
+- <xref:Microsoft.VisualBasic.Constants.vbNullString> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbTab>  
+- <xref:Microsoft.VisualBasic.Constants.vbTab> konstanta  
   
-- konstanta <xref:Microsoft.VisualBasic.Constants.vbVerticalTab>  
+- <xref:Microsoft.VisualBasic.Constants.vbVerticalTab> konstanta  
   
 - Některé objekty typu `My`  
   
@@ -85,7 +85,7 @@ Určuje, že má kompilátor kompilovat bez odkazu na knihovnu modulu runtime Vi
 ## <a name="referencing-a-specified-library"></a>Odkazování na zadanou knihovnu  
  Můžete použít argument `path` pro zkompilování s odkazem na vlastní běhovou knihovnu namísto výchozí knihovny prostředí runtime Visual Basic.  
   
- Pokud hodnota argumentu `path` je úplná cesta k knihovně DLL, kompilátor použije tento soubor jako běhovou knihovnu. Pokud hodnota argumentu `path` není úplnou cestou k knihovně DLL, kompilátor Visual Basic v aktuální složce nejprve vyhledá identifikovanou knihovnu DLL. Pak bude hledat v cestě, kterou jste zadali pomocí možnosti kompilátoru [-SdkPath –](../../../visual-basic/reference/command-line-compiler/sdkpath.md) . Pokud není použita možnost kompilátoru `-sdkpath`, kompilátor bude hledat identifikované knihovny DLL ve složce .NET Framework (`%systemroot%\Microsoft.NET\Framework\versionNumber`).  
+ Pokud je hodnota argumentu `path` plně kvalifikovaná cesta k knihovně DLL, kompilátor použije tento soubor jako běhovou knihovnu. Pokud hodnota argumentu `path` není úplná cesta k knihovně DLL, kompilátor Visual Basic v aktuální složce nejprve vyhledá identifikovanou knihovnu DLL. Pak bude hledat v cestě, kterou jste zadali pomocí možnosti kompilátoru [-SdkPath –](../../../visual-basic/reference/command-line-compiler/sdkpath.md) . Pokud není použita možnost kompilátoru `-sdkpath`, kompilátor bude hledat identifikované knihovny DLL ve složce .NET Framework (`%systemroot%\Microsoft.NET\Framework\versionNumber`).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak použít možnost `-vbruntime` ke kompilaci s odkazem na vlastní knihovnu.  

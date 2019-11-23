@@ -37,16 +37,16 @@ Následující jazyky jsou podporovány buď v obecné dostupnosti (GA), ve verz
 
 |Jazyk      |verze         |2.x      |
 |--------------|------------|---------|
-|**C#**        |GA          |Náhled  |
-|**JavaScript**|GA          |Náhled  |
+|**C#**        |GA          |Preview  |
+|**JavaScript**|GA          |Preview  |
 |**F#**        |GA          |         |
-|**Java**      |            |Náhled  |
-|**Python**    |Zkušební|         |
-|**PHP**       |Zkušební|         |
-|**TypeScript**|Zkušební|         |
-|**Partie**     |Zkušební|         |
-|**Bash**      |Zkušební|         |
-|**Prostředí**|Zkušební|         |
+|**Java**      |            |Preview  |
+|**Python**    |Experimentální|         |
+|**PHP**       |Experimentální|         |
+|**TypeScript**|Experimentální|         |
+|**Partie**     |Experimentální|         |
+|**Bash**      |Experimentální|         |
+|**PowerShell**|Experimentální|         |
 
 Další informace najdete v tématu [podporované jazyky](https://docs.microsoft.com/azure/azure-functions/supported-languages).
 
@@ -111,7 +111,7 @@ Následující příklad souboru *Functions. JSON* definuje Trigger a vazbu:
 }
 ```
 
-V tomto příkladu je funkce aktivována změnou v úložišti objektů BLOB v kontejneru `images`. Informace pro soubor jsou předány, takže Trigger funguje také jako vazba. Pro vložení informací do fronty s názvem `images` existuje jiná vazba.
+V tomto příkladu je funkce aktivována změnou v úložišti objektů BLOB v kontejneru `images`. Informace pro soubor jsou předány, takže Trigger funguje také jako vazba. Pro vložení informací do fronty s názvem `images`existuje jiná vazba.
 
 Tady je C# skript pro funkci:
 

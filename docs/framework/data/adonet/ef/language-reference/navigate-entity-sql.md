@@ -19,15 +19,15 @@ Přejde přes vztah navázaný mezi entitami.
 navigate(instance-expression, [relationship-type], [to-end [, from-end] ])
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
-`instance-expression` instance entity.
+`instance-expression` instanci entity.
 
-`relationship-type` název typu relace ze souboru CSDL (konceptuální schéma Definition Language). @No__t-0 je kvalifikován jako \<namespace >. název typu \<relationship >.
+`relationship-type` název typu relace ze souboru CSDL (konceptuální schéma Definition Language). `relationship-type` je kvalifikován jako \<oboru názvů >.\<název typu vztahu >.
 
-`to` konci relace.
+`to` konec relace.
 
-@no__t – 0 začátku relace.
+`from` začátek vztahu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -50,7 +50,7 @@ Select o.Id, navigate(o, OrderCustomer, Customer, Order)
 From LOB.Orders as o
 ```
 
-Kde OrderCustomer je `relationship` a zákazník a objednávka jsou `to-end` (zákazník) a `from-end` (objednávka) vztahu. Pokud OrderCustomer byl vztah n:1, pak je výsledný typ výrazu Navigate ref @ no__t-0Customer >.
+Kde OrderCustomer je `relationship`a zákazník a objednávka jsou `to-end` (zákazník) a `from-end` (objednávka) vztahu. Pokud OrderCustomer byl vztah n:1, pak je výsledný typ výrazu Navigate ref\<Customer >.
 
 Jednodušší tvar tohoto výrazu je následující:
 
@@ -59,7 +59,7 @@ Select o.Id, navigate(o, OrderCustomer)
 From LOB.Orders as o
 ```
 
-Podobně v dotazu následujícího formuláře by výraz Navigate vytvořil kolekci < ref @ no__t-0Order > >.
+Podobně v dotazu následujícího formuláře by výraz Navigate vytvořil kolekci < ref\<Order > >.
 
 ```sql
 Select c.Id, navigate(c, OrderCustomer, Order, Customer)

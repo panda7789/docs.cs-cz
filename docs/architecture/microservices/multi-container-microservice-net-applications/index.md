@@ -18,5 +18,5 @@ Dříve jsme při vytváření architektury mikroslužeb vyvolali otázku "Docke
 Pokud ale víte, jak navrhnout a vyvíjet aplikaci založenou na mikroslužbách, která je založená na kontejnerech Docker, budete moct navrhnout a vyvíjet jakýkoliv jiný, jednodušší aplikační model. Můžete například navrhnout trojrozměrnou aplikaci, která také vyžaduje přístup přes více kontejnerů. Vzhledem k tomu, že architektury mikroslužeb jsou důležitým trendem v rámci kontejneru světa, se tato část zaměřuje na implementaci architektury mikroslužeb pomocí kontejnerů Docker.
 
 >[!div class="step-by-step"]
->[Předchozí](../docker-application-development-process/docker-app-development-workflow.md)Další
->[](microservice-application-design.md)
+>[Předchozí](../docker-application-development-process/docker-app-development-workflow.md)
+>[Další](microservice-application-design.md)

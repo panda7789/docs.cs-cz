@@ -35,7 +35,7 @@ Obrázky pro tyto kontejnery jsou vytvářeny stejným způsobem a fungují stej
 
 Obrázek 2-3 ukazuje porovnání mezi virtuálními počítači a kontejnery Docker.
 
-| Virtual Machines | Kontejnery Docker |
+| Virtuální počítače | Kontejnery Docker |
 | -----------------| ------------------|
 |![Diagram znázorňující hardwarový nebo softwarový zásobník tradičního virtuálního počítače](./media/docker-defined/virtual-machine-hardware-software.png)|![Diagram znázorňující hardware/softwarový zásobník kontejnerů Docker.](./media/docker-defined/docker-container-hardware-software.png)|
 |Virtuální počítače zahrnují aplikaci, požadované knihovny, binární soubory a úplný hostovaný operační systém. Úplná virtualizace vyžaduje více prostředků než containering. | Kontejnery zahrnují aplikaci a všechny její závislosti. Sdílí ale jádro operačního systému s jinými kontejnery spuštěnými jako izolované procesy v prostoru uživatele v hostitelském operačním systému. (Kromě kontejnerů technologie Hyper-V, kde se každý kontejner spouští ve speciálním virtuálním počítači na kontejner.) |

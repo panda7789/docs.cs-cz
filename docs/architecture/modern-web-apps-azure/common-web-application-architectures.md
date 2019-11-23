@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 8985434467346acc360e9a89c052803f495e87d1
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: b376f8b38749f242f4e78a10808532989e0ac834
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331998"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972135"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -163,7 +163,7 @@ Kromě implementace přístupu k datům by měl projekt infrastruktury obsahovat
 
 - Typy EF Core (`DbContext`, `Migration`)
 - Typy implementace přístupu k datům (úložiště)
-- Služby specifické pro infrastrukturu (například `FileLogger` nebo) `SmtpNotifier`
+- Služby specifické pro infrastrukturu (například `FileLogger` nebo `SmtpNotifier`)
 
 Vrstva uživatelského rozhraní v aplikaci ASP.NET Core MVC je vstupním bodem pro aplikaci. Tento projekt by měl odkazovat na projekt základního projektu a jeho typy by měly komunikovat s infrastrukturou výhradně prostřednictvím rozhraní definovaných v Application Core. Ve vrstvě uživatelského rozhraní by se měly povolit žádné přímé vytváření instancí ani statická volání typů vrstev infrastruktury.
 
@@ -208,7 +208,7 @@ Nasazení na různé hostitele je možné spravovat pomocí tradičních technik
 
 Existují výhody použití kontejnerů ke správě nasazení aplikací monolitické. Škálování instancí kontejnerů je mnohem rychlejší a jednodušší než nasazení dalších virtuálních počítačů. I v případě, že se k škálování virtuálních počítačů používá Virtual Machine Scale Sets, doba jejich instance trvá. Když se nasadí jako instance aplikace, bude se konfigurace aplikace spravovat jako součást virtuálního počítače.
 
-Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Image Docker obvykle začínají během sekund a urychlují uvádění. Zrušení instance Docker je stejně snadné jako vydávání `docker stop` příkazu, obvykle dokončení za méně než sekundu.
+Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Image Docker obvykle začínají během sekund a urychlují uvádění. Trhlina instance Docker je stejně snadná jako vystavení příkazu `docker stop`, obvykle dokončuje méně než sekunda.
 
 Vzhledem k tomu, že jsou kontejnery v podstatě neměnné, nemusíte si dělat starosti s poškozenými virtuálními počítači, zatímco skripty pro aktualizace se nemusí zapomenout na určitou konkrétní konfiguraci nebo soubor, který zůstal na disku.
 
@@ -224,7 +224,7 @@ V rané fázi vývoje aplikace možná nemáte jasný nápad, kde jsou hranice p
 
 Oddělení aplikace do mnoha diskrétních procesů také přináší režijní náklady. Oddělení funkcí do různých procesů je složitější. Komunikační protokoly se stanou složitější. Místo volání metod je nutné použít asynchronní komunikaci mezi službami. Při přesunu do architektury mikroslužeb je potřeba přidat spoustu stavebních bloků implementovaných ve verzi mikroslužeb aplikace eShopOnContainers: zpracování sběrnice událostí, odolnost zpráv a opakované pokusy, konečná konzistence a další.
 
-Mnohem jednodušší [Referenční aplikace eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb) podporuje použití kontejneru monolitické s jedním kontejnerem. Aplikace zahrnuje jednu webovou aplikaci, která zahrnuje tradiční zobrazení MVC, webová rozhraní API a Razor Pages. Tuto aplikaci lze spustit z kořene řešení pomocí `docker-compose build` příkazů a. `docker-compose up` Tento příkaz nakonfiguruje kontejner pro webovou instanci pomocí `Dockerfile` elementu nalezeného v kořenovém adresáři webového projektu a spustí kontejner na zadaném portu. Zdroj pro tuto aplikaci si můžete stáhnout z GitHubu a spustit místně. I tyto výhody aplikace v monolitické se nesadí do prostředí kontejneru.
+Mnohem jednodušší [Referenční aplikace eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb) podporuje použití kontejneru monolitické s jedním kontejnerem. Aplikace zahrnuje jednu webovou aplikaci, která zahrnuje tradiční zobrazení MVC, webová rozhraní API a Razor Pages. Tuto aplikaci lze spustit z kořene řešení pomocí příkazů `docker-compose build` a `docker-compose up`. Tento příkaz nakonfiguruje kontejner pro webovou instanci pomocí `Dockerfile` nalezeného v kořenovém adresáři webového projektu a spustí kontejner na zadaném portu. Zdroj pro tuto aplikaci si můžete stáhnout z GitHubu a spustit místně. I tyto výhody aplikace v monolitické se nesadí do prostředí kontejneru.
 
 U jednoho z kontejnerových nasazení znamená, že každá instance aplikace běží ve stejném prostředí. To zahrnuje vývojové prostředí, ve kterém se provádí předčasné testování a vývoj. Vývojový tým může spustit aplikaci v kontejnerovém prostředí, které odpovídá provoznímu prostředí.
 
@@ -234,11 +234,11 @@ Nakonec uzavření aplikace vynutí oddělení mezi obchodní logikou a serverem
 
 ## <a name="docker-support"></a>Podpora Docker
 
-`eShopOnWeb` Projekt běží na .NET Core. Proto je možné jej spustit buď v kontejnerech se systémem Linux nebo Windows. Všimněte si, že pro nasazení Docker chcete pro SQL Server použít stejný typ hostitele. Kontejnery se systémem Linux umožňují menší nároky a jsou preferovány.
+`eShopOnWeb` projekt běží na .NET Core. Proto je možné jej spustit buď v kontejnerech se systémem Linux nebo Windows. Všimněte si, že pro nasazení Docker chcete pro SQL Server použít stejný typ hostitele. Kontejnery se systémem Linux umožňují menší nároky a jsou preferovány.
 
-Pomocí sady Visual Studio 2017 nebo novější můžete přidat podporu Docker do existující aplikace tak, že kliknete pravým tlačítkem na projekt v **Průzkumník řešení** a zvolíte **Přidat** > **podporu Docker**. Tím se přidají potřebné soubory a aplikace se upraví tak, aby se používaly. Aktuální `eShopOnWeb` ukázka již má tyto soubory na místě.
+Pomocí sady Visual Studio 2017 nebo novější můžete přidat podporu Docker do existující aplikace tak, že kliknete pravým tlačítkem na projekt v **Průzkumník řešení** a zvolíte přidat **podporu > Docker**. Tím se přidají potřebné soubory a aplikace se upraví tak, aby se používaly. V aktuální ukázce `eShopOnWeb` již tyto soubory existují.
 
-Soubor na úrovni `docker-compose.yml` řešení obsahuje informace o tom, jaké obrázky se mají sestavit a jaké kontejnery se mají spustit. Soubor umožňuje použít `docker-compose` příkaz ke spuštění více aplikací současně. V tomto případě se spouští pouze webový projekt. Můžete ji také použít ke konfiguraci závislostí, například samostatného kontejneru databáze.
+Soubor `docker-compose.yml` na úrovni řešení obsahuje informace o tom, jaké obrázky se mají sestavit a jaké kontejnery se mají spustit. Soubor umožňuje použít příkaz `docker-compose` pro spuštění více aplikací současně. V tomto případě se spouští pouze webový projekt. Můžete ji také použít ke konfiguraci závislostí, například samostatného kontejneru databáze.
 
 ```yml
 version: '3'
@@ -260,13 +260,12 @@ networks:
       name: nat
 ```
 
-Soubor odkazuje na `Dockerfile` v`Web`projektu. `docker-compose.yml` `Dockerfile` Slouží k určení, který základní kontejner bude použit a jakým způsobem bude aplikace konfigurována. `Web`: `Dockerfile`
+`docker-compose.yml` soubor odkazuje na `Dockerfile` v projektu `Web`. `Dockerfile` slouží k určení, který základní kontejner bude použit a jak bude aplikace konfigurována. `Dockerfile``Web`:
 
 ```Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /app
 
-COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
 RUN dotnet restore
@@ -285,7 +284,7 @@ ENTRYPOINT ["dotnet", "Web.dll"]
 
 ### <a name="troubleshooting-docker-problems"></a>Řešení potíží s Docker
 
-Po spuštění kontejnerové aplikace bude nadále běžet, dokud ji nezastavíte. Pomocí `docker ps` příkazu můžete zobrazit kontejnery, které jsou spuštěny. Běžící kontejner můžete zastavit pomocí `docker stop` příkazu a zadáním ID kontejneru.
+Po spuštění kontejnerové aplikace bude nadále běžet, dokud ji nezastavíte. Pomocí příkazu `docker ps` můžete zobrazit kontejnery, které jsou spuštěny. Běžící kontejner můžete zastavit pomocí příkazu `docker stop` a zadáním ID kontejneru.
 
 Všimněte si, že spuštěné kontejnery Docker mohou být vázány na porty, které můžete jinak zkusit použít ve vašem vývojovém prostředí. Pokud se pokusíte spustit nebo ladit aplikaci pomocí stejného portu jako běžícího kontejneru Docker, zobrazí se chyba s oznámením, že se server nemůže přivážet k tomuto portu. Poté by se měl tento problém vyřešit zastavením kontejneru.
 

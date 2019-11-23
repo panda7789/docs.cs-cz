@@ -27,13 +27,13 @@ Další informace najdete v tématu [Microsoft Enterprise Library](https://docs.
 
 ## <a name="dealing-with-expected-exceptions"></a>Zvládnutí očekávaných výjimek
 
-Správným postupem je zachytit očekávaná výjimka v každé operaci nebo v příslušném bodu rozšiřitelnosti, rozhodnout, zda je lze obnovit z a vrátit správnou vlastní chybu v FaultException @ no__t-0T >.
+Správným postupem je zachytit očekávaná výjimka v každé operaci nebo v příslušném bodu rozšiřitelnosti, rozhodnout, zda je lze obnovit z a vrátit správnou vlastní chybu v FaultException\<T >.
   
 ## <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Zvládnutí neočekávaných výjimek pomocí IErrorHandler
 
 Pokud se chcete zabývat s neočekávanými výjimkami, doporučuje se postupovat "připojit" k IErrorHandler. Obslužné rutiny chyb zachytí pouze výjimky na úrovni modulu runtime WCF ("vrstva modelu služby"), nikoli ve vrstvě kanálu. Jediným způsobem, jak připojit IErrorHandler na úrovni kanálu, je vytvořit vlastní kanál, který se ve většině scénářů nedoporučuje.
 
-"Nečekaná výjimka" není obecně výjimka nezotavitelné ani výjimka zpracování; místo toho se jedná o neočekávanou výjimku uživatele. Výjimka nezotavitelné (například výjimka z důvodu nedostatku paměti) – ta, která je obecně zpracovávána [obslužnou rutinou výjimky modelu služby](xref:System.ServiceModel.Dispatcher.ExceptionHandler) automaticky – nemůže být obecně zpracována bez problémů a jediným důvodem pro zpracování takové výjimky ve všech případech. dodatečné protokolování nebo vrácení standardní výjimky klientovi. Při zpracování zprávy dojde k výjimce zpracování – například na úrovni serializace, kodér nebo formátovacího modulu – obecně nelze zpracovat na IErrorHandler, protože je všeobecně příliš nebo příliš pozdě, než se obslužná rutina chyby zavede čas, kdy dochází k těmto výjimkám. Podobně je možné zpracovat výjimky přenosu na IErrorHandler.
+"Nečekaná výjimka" není obecně výjimka nezotavitelné ani výjimka zpracování; místo toho se jedná o neočekávanou výjimku uživatele. Výjimka nezotavitelné (například výjimka z důvodu nedostatku paměti) – jedna všeobecně zpracovaná [obslužnou rutinou výjimky modelu služby](xref:System.ServiceModel.Dispatcher.ExceptionHandler) – nelze obecně zpracovat a jediný důvod, jak tuto výjimku zpracovat, může být další protokolování nebo vrácení standardní výjimky klientovi. Při zpracování zprávy dojde k výjimce zpracování – například na úrovni serializace, kodér nebo formátovacího modulu – obecně nelze zpracovat na IErrorHandler, protože je všeobecně příliš nebo příliš pozdě, než se obslužná rutina chyby zavede čas, kdy dochází k těmto výjimkám. Podobně je možné zpracovat výjimky přenosu na IErrorHandler.
 
 Pomocí IErrorHandler můžete explicitně řídit chování aplikace, když je vyvolána výjimka. Možná:  
 

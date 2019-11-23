@@ -18,7 +18,7 @@ Odkazuje na referenční hodnotu a vytvoří výsledek tohoto předaného odkazu
 SELECT DEREF ( o.expression ) FROM Table AS o;
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `expression`  
  Libovolný platný výraz dotazu, který vrací kolekci.  
   
@@ -26,10 +26,10 @@ SELECT DEREF ( o.expression ) FROM Table AS o;
  Hodnota odkazované entity  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor DEREF odkazuje na referenční hodnotu a generuje výsledek tohoto odkázání. Například pokud `r` je odkaz typu ref @ no__t-1T >, `Deref(r)` je výraz typu `T`, který vede k entitě, na kterou odkazuje `r`. Pokud má referenční hodnota hodnotu null nebo je dangling (to znamená, že cíl odkazu neexistuje), výsledek operátoru DEREF má hodnotu null.  
+ Operátor DEREF odkazuje na referenční hodnotu a generuje výsledek tohoto odkázání. Například pokud `r` je odkaz typu ref\<T >, `Deref(r)` je výraz typu `T`, který vede k entitě, na kterou odkazuje `r`. Pokud má referenční hodnota hodnotu null nebo je dangling (to znamená, že cíl odkazu neexistuje), výsledek operátoru DEREF má hodnotu null.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá operátor DEREF k tomu, aby převedl odkaz na referenční hodnotu a vytvořil výsledek tohoto odkázání. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz pomocí operátoru DEREF odkazuje na referenční hodnotu a vytvoří výsledek tohoto odkázání. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
 1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  
   

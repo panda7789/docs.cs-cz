@@ -16,5 +16,5 @@ ms.locfileid: "70296063"
 Existuje mnoho přístupů k implementaci logiky opakování pomocí exponenciálního omezení rychlostiu.
 
 >[!div class="step-by-step"]
->[Předchozí](partial-failure-strategies.md)Další
->[](implement-resilient-entity-framework-core-sql-connections.md)
+>[Předchozí](partial-failure-strategies.md)
+>[Další](implement-resilient-entity-framework-core-sql-connections.md)

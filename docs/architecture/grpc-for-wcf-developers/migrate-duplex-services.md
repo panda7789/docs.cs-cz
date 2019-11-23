@@ -1,14 +1,13 @@
 ---
 title: Migrace duplexních služeb WCF na gRPC-gRPC pro vývojáře WCF
 description: Naučte se migrovat různé formy duplexní služby WCF na služby gRPC streaming.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 1702c9f7659f056af9009e81847f28c6e65b277c
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: e2248df20e5c2d8f96055d42ba684749251154bd
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846604"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971872"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>Migrace duplexních služeb WCF do gRPC
 
@@ -18,7 +17,7 @@ V Windows Communication Foundation (WCF) existuje několik způsobů použití d
 
 ## <a name="server-streaming-rpc"></a>RPC streamování serveru
 
-V [ukázkovém řešení SIMPLESTOCKTICKER WCF](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker)je *SimpleStockPriceTicker*duplexní služba, kde klient spouští připojení se seznamem burzovních symbolů a server používá *rozhraní zpětného volání* k posílání aktualizací. bude k dispozici. Klient implementuje rozhraní, aby reagoval na volání ze serveru.
+V [ukázkovém řešení SIMPLESTOCKTICKER WCF](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker)je *SimpleStockPriceTicker*duplexní služba, kde klient spouští připojení se seznamem burzovních symbolů a server používá *rozhraní zpětného volání* k posílání aktualizací, jakmile budou k dispozici. Klient implementuje rozhraní, aby reagoval na volání ze serveru.
 
 ### <a name="the-wcf-solution"></a>Řešení WCF
 
@@ -56,7 +55,7 @@ GRPC způsob zpracování dat v reálném čase se liší. Volání z klienta na
 
 Definice služby potřebuje dvě zprávy: jednu pro požadavek a jednu pro datový proud. Služba vrátí datový proud `StockTickerUpdate` zprávy pomocí klíčového slova `stream` ve své deklaraci `return`. Doporučujeme, abyste do aktualizace přidali `Timestamp`, abyste zobrazili přesný čas změny ceny.
 
-#### <a name="simple_stock_tickerproto"></a>simple_stock_ticker.
+#### <a name="simple_stock_tickerproto"></a>simple_stock_ticker. proto
 
 ```protobuf
 syntax = "proto3";
@@ -172,7 +171,7 @@ Služba může zjistit, kdy klient ukončil připojení pomocí `CancellationTok
 
 V metodě `Subscribe` pak Získejte `StockPriceSubscriber` a přidejte obslužnou rutinu události, která zapisuje do datového proudu odpovědí. Pak počkejte, než se připojení zavře, a teprve potom okamžitě odstraňte `subscriber`, aby se zabránilo zápisu dat do zavřeného datového proudu.
 
-Metoda `WriteUpdateAsync` má `try` / `catch` blok pro zpracování případných chyb, ke kterým může dojít při zápisu zprávy do datového proudu. To je důležitý aspekt trvalého připojení přes sítě, které by mohlo být v jakémkoli milisekundě přerušeno, ať už úmyslně nebo z důvodu selhání.
+Metoda `WriteUpdateAsync` má `try`/`catch` blok pro zpracování případných chyb, ke kterým může dojít při zápisu zprávy do datového proudu. To je důležitý aspekt trvalého připojení přes sítě, které by mohlo být v jakémkoli milisekundě přerušeno, ať už úmyslně nebo z důvodu selhání.
 
 ### <a name="using-the-stocktickerservice-from-a-client-application"></a>Použití rozhraní StockTickerService z klientské aplikace
 
@@ -346,7 +345,7 @@ private static Task AwaitCancellation(CancellationToken token)
 }
 ```
 
-Třída `ActionMessage`, kterou gRPC pro nás vygenerovala, že je možné nastavit jenom jednu z vlastností `Add` a `Remove`, a najít, který typ zprávy není `null`, je platný způsob, jak zjistit, který typ zprávy se používá. , ale existuje lepší způsob. Generování kódu také vytvořilo `enum ActionOneOfCase` ve třídě `ActionMessage`, která vypadá takto:
+Třída `ActionMessage`, kterou gRPC pro USA vygenerovala, že je možné nastavit jenom jednu z vlastností `Add` a `Remove` a najít, která z nich není `null`, je platný způsob, jakým se používá typ zprávy, ale lepší způsob hledání. Generování kódu také vytvořilo `enum ActionOneOfCase` ve třídě `ActionMessage`, která vypadá takto:
 
 ```csharp
 public enum ActionOneofCase {

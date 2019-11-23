@@ -16,13 +16,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697489"
 ---
-# <a name="requiredruntime-element"></a>@no__t – element > 0requiredRuntime
+# <a name="requiredruntime-element"></a>\<element > requiredRuntime
 
-Určuje, že aplikace podporuje pouze verzi 1,0 modulu CLR (Common Language Runtime). Tento prvek je zastaralý a neměl by se už používat. Místo toho by se měl použít prvek [`supportedRuntime`](supportedruntime-element.md) .
+Určuje, že aplikace podporuje pouze verzi 1,0 modulu CLR (Common Language Runtime). Tento prvek je zastaralý a neměl by se už používat. Místo toho by se měl použít element [`supportedRuntime`](supportedruntime-element.md) .
 
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<startup >** ](startup-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requiredRuntime >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<po spuštění >** ](startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<requiredRuntime >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -52,22 +52,22 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádné.
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
 |Prvek|Popis|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
-|`startup`|Obsahuje prvek `<requiredRuntime>`.|
+|`startup`|Obsahuje element `<requiredRuntime>`.|
 
 ## <a name="remarks"></a>Poznámky
- Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat prvek `<requiredRuntime>`. Aplikace sestavené pomocí verze 1,1 nebo novější v modulu runtime musí používat prvek `<supportedRuntime>`.
+ Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat prvek `<requiredRuntime>`. Aplikace sestavené pomocí verze 1,1 nebo vyšší v modulu runtime musí používat element `<supportedRuntime>`.
 
 > [!NOTE]
-> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít prvek `<requiredRuntime>` pro všechny verze modulu runtime. Element `<supportedRuntime>` se při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)ignoruje.
+> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít element `<requiredRuntime>` pro všechny verze modulu runtime. Element `<supportedRuntime>` se při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)ignoruje.
 
- Řetězec atributu `version` se musí shodovat s názvem instalační složky pro zadanou verzi .NET Framework. Tento řetězec není interpretován. Pokud spouštěcí kód modulu runtime nenajde shodnou složku, modul runtime není načten. spouštěcí kód ukazuje chybovou zprávu a ukončí se.
+ Řetězec atributu `version` musí odpovídat názvu instalační složky pro zadanou verzi .NET Framework. Tento řetězec není interpretován. Pokud spouštěcí kód modulu runtime nenajde shodnou složku, modul runtime není načten. spouštěcí kód ukazuje chybovou zprávu a ukončí se.
 
 > [!NOTE]
 > Spouštěcí kód pro aplikaci, která je hostována v aplikaci Microsoft Internet Explorer, ignoruje prvek `<requiredRuntime>`.

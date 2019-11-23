@@ -69,12 +69,12 @@ Chcete-li použít externí ověřování, zahrňte příslušný middleware ov�
 
 Oblíbená externí poskytovatelé ověřování a jejich přidružené balíčky NuGet jsou uvedené v následující tabulce:
 
-| **Zprostředkovatele**  | **Balíček**                                          |
+| **Poskytovatel**  | **Balíček**                                          |
 | ------------- | ---------------------------------------------------- |
-| **Microsoft** | **Microsoft. AspNetCore. Authentication. MicrosoftAccount** |
-| **Internetového**    | **Microsoft. AspNetCore. Authentication. Google**           |
-| **Přes**  | **Microsoft. AspNetCore. Authentication. Facebook**         |
-| **Službě**   | **Microsoft. AspNetCore. Authentication. Twitter**          |
+| **Microsoft** | **Microsoft.AspNetCore.Authentication.MicrosoftAccount** |
+| **Google**    | **Microsoft.AspNetCore.Authentication.Google**           |
+| **Facebook**  | **Microsoft.AspNetCore.Authentication.Facebook**         |
+| **Twitter**   | **Microsoft.AspNetCore.Authentication.Twitter**          |
 
 Ve všech případech je middleware zaregistrován voláním metody registrace podobné `app.Use{ExternalProvider}Authentication` v `Startup.Configure`. Tyto metody registrace přebírají objekt Options, který obsahuje ID aplikace a tajné informace (například heslo), jak to vyžaduje poskytovatel. Externí zprostředkovatelé ověřování vyžadují, aby se aplikace zaregistrovala (jak je vysvětleno v [dokumentaci ASP.NET Core](/aspnet/core/security/authentication/social/)), aby mohla informovat uživatele o tom, co aplikace žádá o přístup k jejich identitě.
 
@@ -139,7 +139,7 @@ Například v ASP.NET Core webové rozhraní API, které zveřejňuje koncové b
 
 ### <a name="authenticate-with-an-openid-connect-or-oauth-20-identity-provider"></a>Ověřování pomocí zprostředkovatele identity OpenID Connect nebo OAuth 2,0
 
-Pokud jsou informace o uživateli uložené v Azure Active Directory nebo jiném řešení identity, které podporuje OpenID Connect nebo OAuth 2,0, můžete k ověření pomocí OpenID Connect použít balíček **Microsoft. AspNetCore. Authentication. OpenIdConnect** . pracovního postupu. Například pro ověření identity. v ASP.NET Core eShopOnContainers může webová aplikace použít middleware z tohoto balíčku, jak je znázorněno v následujícím zjednodušeném příkladu v `Startup.cs`:
+Pokud jsou informace o uživateli uložené v Azure Active Directory nebo jiném řešení identity, které podporuje OpenID Connect nebo OAuth 2,0, můžete k ověření použít pracovní postup OpenID Connect pomocí balíčku **Microsoft. AspNetCore. Authentication. OpenIdConnect** . Například pro ověření identity. v ASP.NET Core eShopOnContainers může webová aplikace použít middleware z tohoto balíčku, jak je znázorněno v následujícím zjednodušeném příkladu v `Startup.cs`:
 
 ```csharp
 // Startup.cs
@@ -276,7 +276,7 @@ Díky tomuto middlewaru jsou tokeny JWT automaticky extrahovány z autorizační
 
 Middleware pro ověření nosiče JWT může také podporovat pokročilejší scénáře, jako je například použití místního certifikátu k ověření tokenu, není-li tato autorita k dispozici. V tomto scénáři můžete zadat objekt `TokenValidationParameters` v objektu `JwtBearerOptions`.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Sdílení souborů cookie mezi aplikacemi** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

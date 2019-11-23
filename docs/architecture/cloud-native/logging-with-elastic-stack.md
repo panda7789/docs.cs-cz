@@ -96,7 +96,7 @@ Možnost s menší režií je použití jednoho z mnoha kontejnerů Docker, na k
 
 Další možností je [nedávno ohlášená nabídka Elk jako služba](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Instalace elastického zásobníku v Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

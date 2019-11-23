@@ -1,14 +1,13 @@
 ---
 title: Úvod – gRPC pro vývojáře WCF
 description: Úvod
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 9eb12d5060ddf4f345ebe095738c98238c6caab7
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 3fb7ae440f65cc2daa2a2c984d01d0c0c1eac0aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846629"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967623"
 ---
 # <a name="introduction"></a>Úvod
 
@@ -37,7 +36,7 @@ SOAP definuje pravidla, podle kterých mohou distribuované prvky aplikace vzáj
 
 Windows Communication Foundation je rozhraní pro vytváření služeb. Byla navržena v 2000s, aby usnadnila vývojářům použití prvotního SOA ke správě složitosti práce s protokolem SOAP. I když odebere požadavek, aby vývojář mohl zapisovat svoje vlastní protokoly SOAP, WCF dál používá protokol SOAP, aby bylo možné vzájemnou spolupráci s jinými systémy. Služba WCF byla také navržena tak, aby poskytovala řešení pro různé protokoly (HTTP/1.1, NetTCP a tak dále).
 
-## <a name="microservices"></a>Mikroslužeb
+## <a name="microservices"></a>Mikroslužby
 
 V architektuře mikroslužeb jsou velké aplikace sestavené jako kolekce menších modulárních služeb. Každá součást provede konkrétní úlohu nebo proces a komponenty jsou navrženy tak, aby fungovaly, ale mohou být izolované podle potřeby.
 
@@ -52,7 +51,7 @@ Přechod ke zvýšení virtualizace, cloud computingu, kontejnerům a Internet v
 
 Bylo v tomto prostředí, které gRPC bylo spuštěno, 10 let po prvním vydání služby WCF od společnosti Microsoft. GRPC se vyvinula přímo z interní infrastruktury vzdáleného volání procedur (Stubby) Google na základě stejných standardů a protokolů, které informovaly o parametrech řady předchozích vzdálených volání procedur (RPC). Kromě toho gRPCa na základě HTTP/2 a to je důvod, proč by se mohl nakreslit na nové funkce, které poskytují rozšířený transportní protokol. Konkrétně obousměrné streamování, binární zasílání zpráv a multiplexing.
 
-## <a name="about-this-guide"></a>O této příručce
+## <a name="about-this-guide"></a>O této příručce
 
 Tato příručka se věnuje klíčovým funkcím gRPC. Úvodní kapitoly přebírají nejvyšší úroveň v hlavních funkcích WCF a porovnávají je s gRPC. Identifikuje, kde jsou přímé korelace mezi WCF a gRPC a také tam, kde gRPC nabízí výhodu. V případě, že není žádná korelace mezi WCF a gRPC nebo kde gRPC není schopná nabídnout stejné řešení jako WCF, bude tato příručka navrhovat alternativní řešení nebo místa, kde se dozvíte, kde můžete získat další informace.
 

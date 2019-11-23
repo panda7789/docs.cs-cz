@@ -305,7 +305,7 @@ public class Address
 
 - Můžou odkazovat na jiné entity (to znamená, že můžou fungovat jako závislá strana na vztazích s jinými nevlastními typy).
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Martin Fowlera. \ vzor ValueObject**
   <https://martinfowler.com/bliki/ValueObject.html>

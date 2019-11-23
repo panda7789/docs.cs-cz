@@ -29,7 +29,7 @@ Měli byste se také seznámit s obsahem následujících témat:
 [.NET Standard](../../standard/net-standard.md)\
 Toto téma popisuje formální specifikaci rozhraní API .NET, která jsou určená k dispozici pro všechny implementace rozhraní .NET.
 
-[Balíčky, metabalíčky a architektury](../packages.md)   
+[Balíčky, metabalíčky a rozhraní](../packages.md)   
 Tento článek popisuje, jak .NET Core definuje a používá balíčky a jak balíčky podporují kód běžící na více implementacích rozhraní .NET.
 
 [Vývoj knihoven pomocí nástrojů pro různé platformy](../tutorials/libraries.md)   
@@ -38,7 +38,7 @@ Toto téma vysvětluje, jak psát knihovny pro .NET pomocí nástrojů rozhraní
 [Přidání do formátu *csproj* pro .NET Core](../tools/csproj.md)   
 Tento článek popisuje změny, které byly přidány do souboru projektu v rámci přesunutí do *csproj* a MSBuild.
 
-[Přenos do .NET Core – analýza závislostí třetích stran](third-party-deps.md)   
+[Přenos do .NET Core – analýza závislostí](third-party-deps.md) jiných výrobců   
 Toto téma popisuje přenositelnost závislostí třetích stran a postup v případě, že se závislost balíčku NuGet nespustí v rozhraní .NET Core.
 
 ## <a name="retargeting-your-net-framework-code-to-net-framework-472"></a>Změna cílení kódu .NET Framework na .NET Framework 4.7.2
@@ -91,8 +91,8 @@ Tento přístup může být nejvhodnější pro větší a složitější projek
    - Pochopte charakter těchto typů. Jsou malými čísly, ale často se používají? Jsou velké v čísle, ale používány zřídka? Je jejich použití zahuštěné nebo rozdělené do celého kódu?
    - Je snadné izolovat kód, který není přenosný, abyste se mohli efektivněji zabývat?
    - Potřebujete Refaktorovat kód?
-   - U typů, které nejsou přenosné, jsou k dispozici alternativní rozhraní API, která mají stejný úkol? Například pokud <xref:System.Net.WebClient> používáte třídu, je možné místo toho <xref:System.Net.Http.HttpClient> použít třídu.
-   - Jsou k dispozici různá přenosná rozhraní API k provedení úkolu, i když není náhrada odkládacího zařízení? Například pokud používáte <xref:System.Xml.Schema.XmlSchema> k analýze XML, ale nepotřebujete zjišťování schématu XML, můžete použít <xref:System.Xml.Linq> rozhraní API a implementovat analýzu sami, a to i na rozdíl od spoléhání na rozhraní API.
+   - U typů, které nejsou přenosné, jsou k dispozici alternativní rozhraní API, která mají stejný úkol? Například pokud používáte třídu <xref:System.Net.WebClient>, je možné místo toho použít třídu <xref:System.Net.Http.HttpClient>.
+   - Jsou k dispozici různá přenosná rozhraní API k provedení úkolu, i když není náhrada odkládacího zařízení? Například pokud používáte <xref:System.Xml.Schema.XmlSchema> k analýze XML, ale nepotřebujete zjišťování schématu XML, můžete použít rozhraní API <xref:System.Xml.Linq> a implementovat analýzu sami, a to na rozdíl od spoléhání na rozhraní API.
 1. Pokud máte sestavení, která se obtížně portují, je vhodné je nechat .NET Framework pro teď? Tady je několik věcí, které je potřeba vzít v úvahu:
    - Je možné, že máte v knihovně některé funkce, které jsou nekompatibilní s .NET Core, protože spoléhá na .NET Framework nebo specifické funkce systému Windows příliš mnoho. Stojí za to, aby se teď zanechaly funkce a uvolnila se verze .NET Core vaší knihovny s méně funkcemi na dočasné úrovni, dokud nebudou k dispozici prostředky pro přenos funkcí?
    - Je refaktorovaná?
@@ -122,7 +122,7 @@ Nejlepším způsobem, jak zajistit, aby vše fungovalo, když jste svůj kód n
 
 ## <a name="recommended-approach-to-porting"></a>Doporučený přístup k přenosu
 
-V konečném důsledku je přenosová intenzita velmi závislá na způsobu strukturování kódu .NET Framework. Dobrým způsobem, jak portovat váš kód, je začít se *základem* vaší knihovny, které jsou základními komponentami kódu. Může se jednat o datové modely nebo jiné základní třídy a metody, které jinak používá přímo nebo nepřímo.
+V konečném důsledku je přenosová intenzita velmi závislá na způsobu strukturování kódu .NET Framework. Dobrým způsobem, jak portovat váš kód, je začít se základem vaší knihovny, které jsou *základními* komponentami kódu. Může se jednat o datové modely nebo jiné základní třídy a metody, které jinak používá přímo nebo nepřímo.
 
 1. Port testovacího projektu, který testuje vrstvu vaší knihovny, kterou právě napojujete.
 1. Zkopírujte základnu vaší knihovny do nového projektu .NET Core a vyberte verzi .NET Standard, kterou chcete podporovat.

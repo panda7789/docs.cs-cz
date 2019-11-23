@@ -89,10 +89,10 @@ Následující rozhodovací tabulka shrnuje některé základní faktory, které
 
 | **Jednotek**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** |
 | ---------------------------------------------------- | ----------------------- | --------------------------- |
-| Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Poskytuje**             | **Požadovanou**                |
-| Podpora prohlížečů bez skriptování                   | **Doložen**           | **Nepodporováno**           |
-| Minimální chování aplikace na straně klienta             | **Dobře hodící se**         | **Přehnaně důkladné**                |
-| Bohatě komplexní požadavky na uživatelské rozhraní            | **Limitovan**             | **Dobře hodící se**             |
+| Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Poskytuje**             | **Požadováno**                |
+| Podpora prohlížečů bez skriptování                   | **Podporuje se**           | **Nepodporováno**           |
+| Minimální chování aplikace na straně klienta             | **Well-Suited**         | **Přehnaně důkladné**                |
+| Bohatě komplexní požadavky na uživatelské rozhraní            | **Limitovan**             | **Well-Suited**             |
 
 >[!div class="step-by-step"]
 >[Předchozí](modern-web-applications-characteristics.md)

@@ -21,10 +21,10 @@ Tato kniha patří do sady průvodců od Microsoftu, které pokrývají spoustu 
 
 Další e-knihy Microsoftu týkající se kontejnerů Docker můžete najít v následujícím seznamu:
 
-- **Mikroslužby .NET: architektura pro kontejnerové aplikace .net**  \
+- **Mikroslužby .NET: architektura pro kontejnerové aplikace .net** \
   [https://docs.microsoft.com/dotnet/architecture/microservices/](../microservices/index.md)
 
-- **Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows**  \
+- **Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows** \
   [https://docs.microsoft.com/dotnet/architecture/modernize-with-azure-containers/](../modernize-with-azure-containers/index.md)
 
 >[!div class="step-by-step"]

@@ -15,11 +15,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699198"
 ---
-# <a name="systemdiagnostics-element"></a>\<system. Diagnostics – > – element
+# <a name="systemdiagnostics-element"></a>\<element System. Diagnostics >
 Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **\<system. diagnostics >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<System. diagnostics >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ Určuje naslouchací procesy trasování, které shromažďují, ukládají a sm
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1assert >](assert-element.md)|Určuje, zda se má při volání metody <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> zobrazit okno se zprávou; Určuje také název souboru, do kterého se mají zapisovat zprávy.|  
-|[@no__t – 1performanceCounters >](performancecounters-element.md)|Určuje velikost globální paměti sdílené čítači výkonu.|  
-|[@no__t – 1sharedListeners >](sharedlisteners-element.md)|Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.|  
-|[@no__t – 1sources >](sources-element.md)|Určuje zdroje trasování, které spouštějí trasovací zprávy.|  
-|[@no__t – 1switches >](switches-element.md)|Obsahuje přepínače trasování a úrovně, kde jsou nastaveny přepínače trasování.|  
-|[@no__t – 1trace >](trace-element.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
+|[\<assert>](assert-element.md)|Určuje, zda se má při volání metody <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> zobrazit okno se zprávou. Určuje také název souboru, do kterého se mají zapisovat zprávy.|  
+|[\<performanceCounters>](performancecounters-element.md)|Určuje velikost globální paměti sdílené čítači výkonu.|  
+|[\<sharedListeners >](sharedlisteners-element.md)|Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.|  
+|[zdroje \<>](sources-element.md)|Určuje zdroje trasování, které spouštějí trasovací zprávy.|  
+|[\<switches>](switches-element.md)|Obsahuje přepínače trasování a úrovně, kde jsou nastaveny přepínače trasování.|  
+|[\<trace>](trace-element.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -52,10 +52,10 @@ Určuje naslouchací procesy trasování, které shromažďují, ukládají a sm
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vložit přepínač trasování a naslouchací proces trasování v rámci prvku **\<System. diagnostics >** . Přepínač trasování `General` je nastaven na úroveň <xref:System.Diagnostics.TraceLevel>. Naslouchací proces trasování `myListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.  
+ Následující příklad ukazuje, jak vložit přepínač trasování a naslouchací proces trasování v rámci prvku **\<System. diagnostic >** . Přepínač trasování `General` je nastaven na úroveň <xref:System.Diagnostics.TraceLevel>. Naslouchací proces trasování `myListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.  
   
 > [!NOTE]
-> V .NET Framework verze 2,0 můžete použít text a zadat hodnotu pro přepínač. Můžete například zadat `true` pro <xref:System.Diagnostics.BooleanSwitch> nebo použít text reprezentující hodnotu výčtu, jako je například `Error` pro <xref:System.Diagnostics.TraceSwitch>. Řádek `<add name="myTraceSwitch" value="Error" />` je ekvivalentem `<add name="myTraceSwitch" value="1" />`.  
+> V .NET Framework verze 2,0 můžete použít text a zadat hodnotu pro přepínač. Můžete například zadat `true` pro <xref:System.Diagnostics.BooleanSwitch> nebo použít text reprezentující hodnotu výčtu, jako je například `Error` pro <xref:System.Diagnostics.TraceSwitch>. `<add name="myTraceSwitch" value="Error" />` řádku je ekvivalentem `<add name="myTraceSwitch" value="1" />`.  
   
 ```xml  
 <configuration>  

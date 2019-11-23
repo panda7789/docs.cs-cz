@@ -11,13 +11,13 @@ ms.locfileid: "72291303"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru, který se používá jako kontejner
 
-Vaše databáze (SQL Server, PostgreSQL, MySQL atd.) můžete mít na běžných samostatných serverech, v místních clusterech nebo v PaaS službách v cloudu, jako je Azure SQL DB. Nicméně pro vývojová a testovací prostředí je vhodné, aby vaše databáze spuštěné jako kontejnery byly pohodlné, protože nemáte žádnou externí závislost a stačí spustit příkaz `docker-compose up`, spustí celou aplikaci. Aby byly tyto databáze stejně vhodné pro integrační testy, protože databáze je spuštěna v kontejneru a je vždy naplněna stejnými ukázkovými daty, testy mohou být předvídatelné.
+Vaše databáze (SQL Server, PostgreSQL, MySQL atd.) můžete mít na běžných samostatných serverech, v místních clusterech nebo v PaaS službách v cloudu, jako je Azure SQL DB. Nicméně pro vývojová a testovací prostředí jsou vaše databáze spuštěné jako kontejnery pohodlné, protože nemáte žádnou externí závislost a stačí spustit příkaz `docker-compose up` spustí celou aplikaci. Aby byly tyto databáze stejně vhodné pro integrační testy, protože databáze je spuštěna v kontejneru a je vždy naplněna stejnými ukázkovými daty, testy mohou být předvídatelné.
 
 ### <a name="sql-server-running-as-a-container-with-a-microservice-related-database"></a>SQL Server spuštěn jako kontejner s databází související s mikroslužbami
 
 V eShopOnContainers je k dispozici kontejner s názvem SQL. data definovaná v souboru [Docker-Compose. yml](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/docker-compose.yml) , který spouští SQL Server pro Linux se všemi SQL Server databázemi, které jsou pro mikroslužby potřeba. (Můžete mít také jeden kontejner SQL Server pro každou databázi, ale to by vyžadovalo více paměti, která je přiřazena k Docker.) Důležitým bodem v mikroslužbách je, že každá mikroslužba vlastní související data, proto v tomto případě související databáze SQL. Ale databáze můžou být kdekoli.
 
-Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím YAML kódem v souboru Docker-Compose. yml, který se spustí při spuštění `docker-compose up`. Všimněte si, že kód YAML má konsolidované informace o konfiguraci z obecného souboru Docker-Compose. yml a souboru Docker-Compose. override. yml. (Obvykle byste odvolali nastavení prostředí ze základních nebo statických informací, které se vztahují k SQL Server imagi.)
+Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím YAML kódem v souboru Docker-Compose. yml, který je spuštěn při spuštění `docker-compose up`. Všimněte si, že kód YAML má konsolidované informace o konfiguraci z obecného souboru Docker-Compose. yml a souboru Docker-Compose. override. yml. (Obvykle byste odvolali nastavení prostředí ze základních nebo statických informací, které se vztahují k SQL Server imagi.)
 
 ```yml
   sql.data:
@@ -29,7 +29,7 @@ Kontejner SQL Server v ukázkové aplikaci je nakonfigurován s následujícím 
       - "5434:1433"
 ```
 
-Podobným způsobem namísto použití `docker-compose` může tento kontejner spustit následující příkaz `docker run`:
+Podobným způsobem namísto použití `docker-compose`může tento kontejner spustit následující `docker run` příkaz:
 
 ```console
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
@@ -37,13 +37,13 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microso
 
 Pokud však nasazujete aplikaci s více kontejnery, jako je eShopOnContainers, je vhodnější použít příkaz `docker-compose up`, aby nástroj nasadil všechny požadované kontejnery pro aplikaci.
 
-Při prvním spuštění tohoto kontejneru SQL Server kontejner inicializuje SQL Server s heslem, které zadáte. Jakmile SQL Server spustíte jako kontejner, můžete aktualizovat databázi připojením přes jakékoli běžné připojení SQL, jako je například z SQL Server Management Studio, Visual Studio nebo C @ no__t-0 Code.
+Při prvním spuštění tohoto kontejneru SQL Server kontejner inicializuje SQL Server s heslem, které zadáte. Jakmile SQL Server spustíte jako kontejner, můžete aktualizovat databázi připojením přes jakékoli běžné připojení SQL, například z SQL Server Management Studio, sady Visual Studio nebo kódu\# jazyka C.
 
 Aplikace eShopOnContainers inicializuje každou databázi mikroslužeb pomocí ukázkových dat tím, že je dokončí daty při spuštění, jak je vysvětleno v následující části.
 
 Použití SQL Server jako kontejneru není právě užitečné pro ukázku, ve které nemůžete mít přístup k instanci SQL Server. Jak je uvedeno, je vhodné také pro vývojová a testovací prostředí, abyste mohli snadno spouštět testy integrace počínaje čistým SQL Server obrázkem a známými daty pomocí osazení nových ukázkových dat.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Spuštění bitové kopie SQL Server Docker v systému Linux, Mac nebo Windows** \
     [https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker](/sql/linux/sql-server-linux-setup-docker)

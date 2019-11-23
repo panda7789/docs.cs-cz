@@ -63,7 +63,7 @@ K dispozici je několik výhod pro N-vrstvý přístup, včetně:
 
 Bez serveru se dá použít k implementaci jedné nebo víc vrstev.
 
-## <a name="microservices"></a>Mikroslužeb
+## <a name="microservices"></a>Mikroslužby
 
 Architektury **[mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)** obsahují běžné charakteristiky, které zahrnují:
 

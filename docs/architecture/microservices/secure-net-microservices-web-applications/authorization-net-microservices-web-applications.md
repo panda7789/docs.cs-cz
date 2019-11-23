@@ -35,7 +35,7 @@ Při přidání autorizačního atributu bez parametrů se ve výchozím nastave
 
 ## <a name="implement-role-based-authorization"></a>Implementace autorizace na základě rolí
 
-ASP.NET Core identita má integrovaný koncept rolí. Kromě uživatelů ASP.NET Core identita ukládá informace o různých rolích používaných aplikací a udržuje přehled o tom, kteří uživatelé jsou přiřazeni k rolím. Tato přiřazení je možné změnit programově s `RoleManager` typem, který aktualizuje role v trvalém úložišti, `UserManager` a typu, který může udělit nebo odvolávat role uživatelů.
+ASP.NET Core identita má integrovaný koncept rolí. Kromě uživatelů ASP.NET Core identita ukládá informace o různých rolích používaných aplikací a udržuje přehled o tom, kteří uživatelé jsou přiřazeni k rolím. Tato přiřazení je možné změnit programově pomocí typu `RoleManager`, který aktualizuje role v trvalém úložišti, a `UserManager` typu, který může udělit nebo odvolávat role uživatelů.
 
 Pokud ověřujete pomocí nosných tokenů JWT, naplní middleware ověřování Bearer ASP.NET Core JWT role uživatele na základě deklarací identity nalezených v tokenu. Chcete-li omezit přístup k akci nebo kontroler MVC na uživatele v konkrétních rolích, můžete do autorizační poznámky (atributu) zahrnout parametr role, jak je znázorněno v následujícím fragmentu kódu:
 
@@ -93,38 +93,38 @@ services.AddAuthorization(options =>
 });
 ```
 
-Jak je znázorněno v příkladu, mohou být zásady přidruženy k různým typům požadavků. Po zaregistrování zásad je můžete použít pro akci nebo kontroler tak, že název této zásady předáte jako argument zásad autorizačního atributu (například `[Authorize(Policy="EmployeesOnly")]`), které mohou mít více požadavků, nikoli jen jeden (jak je uvedeno v těchto příklady).
+Jak je znázorněno v příkladu, mohou být zásady přidruženy k různým typům požadavků. Po registraci jsou zásady možné použít pro akci nebo kontroler předáním názvu zásady jako argumentu zásad autorizačního atributu (například `[Authorize(Policy="EmployeesOnly")]`), který může mít více požadavků, nikoli jenom jeden (jak je znázorněno v těchto příkladech).
 
-V předchozím příkladu je první volání AddPolicy pouze alternativním způsobem autorizace rolí. Pokud `[Authorize(Policy="AdministratorsOnly")]` se použije na rozhraní API, budou mít přístup jenom uživatelé v roli správce.
+V předchozím příkladu je první volání AddPolicy pouze alternativním způsobem autorizace rolí. Pokud se `[Authorize(Policy="AdministratorsOnly")]` aplikuje na rozhraní API, budou mít přístup jenom uživatelé v roli správce.
 
-Druhé <xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.AddPolicy%2A> volání ukazuje snadný způsob, jak vyžadovat, aby uživatel měl k dispozici konkrétní deklaraci identity. Tato <xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireClaim%2A> metoda také volitelně přijímá očekávané hodnoty pro deklaraci identity. Pokud jsou zadány hodnoty, je požadavek splněn pouze v případě, že uživatel má deklaraci identity správného typu a jednu ze zadaných hodnot. Pokud používáte middleware pro ověřování JWT Bearer, budou k dispozici všechny vlastnosti JWT jako deklarace identity uživatelů.
+Druhý <xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.AddPolicy%2A> hovor ukazuje snadný způsob, jak vyžadovat, aby uživatel měl k dispozici konkrétní deklaraci identity. Metoda <xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireClaim%2A> taky volitelně přijímá očekávané hodnoty deklarace identity. Pokud jsou zadány hodnoty, je požadavek splněn pouze v případě, že uživatel má deklaraci identity správného typu a jednu ze zadaných hodnot. Pokud používáte middleware pro ověřování JWT Bearer, budou k dispozici všechny vlastnosti JWT jako deklarace identity uživatelů.
 
-Nejzajímavější zásada uvedená tady je třetí `AddPolicy` metoda, protože používá vlastní autorizační požadavek. Pomocí vlastních autorizačních požadavků můžete mít velkou kontrolu nad tím, jak se provádí autorizace. Aby to fungovalo, je nutné implementovat tyto typy:
+Nejzajímavější zásada uvedená tady je třetí `AddPolicy` metoda, protože používá vlastní požadavek na autorizaci. Pomocí vlastních autorizačních požadavků můžete mít velkou kontrolu nad tím, jak se provádí autorizace. Aby to fungovalo, je nutné implementovat tyto typy:
 
-- Typ požadavků, který je odvozen z <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> a obsahující pole určující Podrobnosti požadavku. V tomto příkladu je toto pole stáří pro typ vzorku `MinimumAgeRequirement` .
+- Typ požadavků, který je odvozen od <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> a obsahuje pole určující Podrobnosti požadavku. V tomto příkladu je toto pole stáří pro vzorový `MinimumAgeRequirement` typ.
 
-- Obslužná rutina, <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601>která implementuje, kde T je <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> typ, který obslužná rutina může splnit. Obslužná rutina musí implementovat <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601.HandleRequirementAsync%2A> metodu, která ověří, zda zadaný kontext, který obsahuje informace o uživateli, splňuje požadavek.
+- Obslužná rutina, která implementuje <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601>, kde T je typ <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement>, který obslužná rutina může splnit. Obslužná rutina musí implementovat metodu <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601.HandleRequirementAsync%2A>, která kontroluje, zda zadaný kontext, který obsahuje informace o uživateli, splňuje požadavek.
 
-Pokud uživatel splňuje požadavek, volání metody `context.Succeed` indikuje, že uživatel je autorizován. Existuje-li více způsobů, jak může uživatel splnit požadavek na autorizaci, lze vytvořit více obslužných rutin.
+Pokud uživatel splňuje požadavek, volání `context.Succeed` bude označovat, že uživatel má oprávnění. Existuje-li více způsobů, jak může uživatel splnit požadavek na autorizaci, lze vytvořit více obslužných rutin.
 
-Kromě registrace požadavků na vlastní zásady s `AddPolicy` voláními musíte také registrovat vlastní obslužné rutiny požadavků prostřednictvím injektáže závislosti (`services.AddTransient<IAuthorizationHandler, MinimumAgeHandler>()`).
+Kromě registrace požadavků na vlastní zásady pomocí `AddPolicy` volání je také potřeba zaregistrovat vlastní obslužné rutiny požadavků prostřednictvím injektáže závislosti (`services.AddTransient<IAuthorizationHandler, MinimumAgeHandler>()`).
 
 Příkladem vlastního autorizačního požadavku a obslužné rutiny pro kontrolu stáří uživatele (na základě `DateOfBirth` deklarace) je k dispozici v dokumentaci k [autorizaci](https://docs.asp.net/en/latest/security/authorization/policies.html)ASP.NET Core.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Ověřování ASP.NET Core** \
+- **ASP.NET Core ověřování** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)
 
 - **ASP.NET Core autorizaci** \
   [https://docs.microsoft.com/aspnet/core/security/authorization/introduction](/aspnet/core/security/authorization/introduction)
 
-- **Autorizace na základě rolí** \
+-  \ **autorizace na základě rolí**
   [https://docs.microsoft.com/aspnet/core/security/authorization/roles](/aspnet/core/security/authorization/roles)
 
-- **Vlastní autorizace na základě zásad** \
+- **Vlastní ověřování na základě zásad** \
   [https://docs.microsoft.com/aspnet/core/security/authorization/policies](/aspnet/core/security/authorization/policies)
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](developer-app-secrets-storage.md)
+>[Předchozí](index.md)
+>[Další](developer-app-secrets-storage.md)

@@ -23,17 +23,17 @@ Někdy ale budete muset v rozhraní API služby udělat významné a nekompatibi
 
 Nakonec, pokud používáte architekturu REST [, je pro](https://www.infoq.com/articles/mark-baker-hypermedia) vás nejvhodnější řešení pro správu verzí vašich služeb a povoluje se vyvíjejíná rozhraní API.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Scott Hanselman Jednodušší ASP.NET Core RESTful webového rozhraní API pro správu** \
+- **Scott Hanselman ASP.NET Core RESTful webové rozhraní API, které se dají snadno** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
-- **Správa verzí webového rozhraní API RESTful** \
+- **Správa verzí RESTful webového rozhraní API** \
   <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
 - **Roy pole. Správa verzí, multimédií a REST** \
   <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 >[!div class="step-by-step"]
->[Předchozí](asynchronous-message-based-communication.md)Další
->[](microservices-addressability-service-registry.md)
+>[Předchozí](asynchronous-message-based-communication.md)
+>[Další](microservices-addressability-service-registry.md)

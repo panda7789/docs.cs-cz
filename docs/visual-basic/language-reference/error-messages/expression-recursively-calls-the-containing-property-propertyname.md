@@ -14,14 +14,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71698571"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost \<propertyname >.
-Příkaz v proceduře `Set` definice vlastnosti ukládá hodnotu do názvu vlastnosti.  
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost\<PropertyName >.
+Příkaz v `Set` proceduře definice vlastnosti ukládá hodnotu do názvu vlastnosti.  
   
- Doporučený postup pro uchovávání hodnoty vlastnosti je definovat proměnnou `Private` v kontejneru vlastnosti a použít ji v postupech `Get` a `Set`. Procedura `Set` by pak měla uložit příchozí hodnotu v této proměnné `Private`.  
+ Doporučený postup pro uchovávání hodnoty vlastnosti je definovat `Private` proměnnou v kontejneru vlastností a použít ji v postupech `Get` a `Set`. Procedura `Set` by pak měla uložit příchozí hodnotu v této `Private` proměnné.  
   
- Procedura `Get` se chová jako procedura `Function`, takže může přiřadit hodnotu k názvu vlastnosti a vrátit řízení návratovou hodnotou, když se objeví příkaz `End Get`. Doporučený postup je však zahrnout proměnnou `Private` jako hodnotu v [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md).  
+ Postup `Get` se chová jako `Function` postup, takže může přiřadit hodnotu názvu vlastnosti a vrátit řízení návratovým prvkem, který nalezne příkaz `End Get`. Doporučený postup je však zahrnout proměnnou `Private` jako hodnotu v [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md).  
   
- Procedura `Set` se chová jako procedura `Sub`, která nevrací hodnotu. Název procedury nebo vlastnosti proto nemá žádný zvláštní význam v rámci procesu @no__t 0 a nelze do ní uložit hodnotu.  
+ Procedura `Set` se chová jako `Sub` procedura, která nevrací hodnotu. Název procedury nebo vlastnosti proto v rámci `Set` procedury nemá žádný zvláštní význam a do ní nelze uložit hodnotu.  
   
  Následující příklad ilustruje přístup, který může způsobit tuto chybu, následovanou doporučeným přístupem.  
   

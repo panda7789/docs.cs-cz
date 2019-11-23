@@ -1,14 +1,13 @@
 ---
 title: Přehled gRPC-gRPC pro vývojáře WCF
 description: Seznamte se se sadou principů, které vyvíjejí vývoj gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6980b473a6f9852a4e4f396355e98e2d3300cabe
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: a92fe7ca2f8e17126025362fcc3c190024ebf7d3
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846648"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967755"
 ---
 # <a name="grpc-overview"></a>gRPC – přehled
 
@@ -16,7 +15,7 @@ Po zobrazení genesisy WCF a gRPC v poslední kapitole bude tato kapitola brát 
 
 ASP.NET Core 3,0 je první verze ASP.NET, která nativně podporuje gRPC jako občana první třídy, s týmy Microsoftu, které přispívají k oficiální implementaci rozhraní .NET gRPC. Doporučuje se jako nejlepší přístup pro vytváření distribuovaných aplikací s .NET, které mohou spolupracovat se všemi ostatními hlavními programovacími jazyky a architekturami.
 
-## <a name="key-principles"></a>Klíčové principy
+## <a name="key-principles"></a>Klíč zásad
 
 Jak je popsáno v kapitole 1, Google chtěla použít zavedení HTTP/2 k nahrazení Stubby, jeho interní infrastruktury RPC pro obecné účely. gRPC, na základě Stubby, teď můžou využít standardizaci a by rozšířila její použitelnost na Mobile Computing, Cloud a Internet věcí.
 

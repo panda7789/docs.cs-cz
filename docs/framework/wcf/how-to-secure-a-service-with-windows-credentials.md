@@ -28,7 +28,7 @@ První tři postupy ukazují, jak službu zabezpečit pomocí kódu. Čtvrtý a 
 
 Úplný kód pro službu a klienta se nachází v části příklad na konci tohoto tématu.
 
-První postup vás provede vytvořením a konfigurací třídy <xref:System.ServiceModel.WSHttpBinding> v kódu. Vazba používá přenos pomocí protokolu HTTP. Na straně klienta se používá stejná vazba.
+První postup vás provede vytvořením a konfigurací <xref:System.ServiceModel.WSHttpBinding> třídy v kódu. Vazba používá přenos pomocí protokolu HTTP. Na straně klienta se používá stejná vazba.
 
 #### <a name="to-create-a-wshttpbinding-that-uses-windows-credentials-and-message-security"></a>Vytvoření WSHttpBinding využívajícího přihlašovací údaje systému Windows a zabezpečení zpráv
 
@@ -36,9 +36,9 @@ První postup vás provede vytvořením a konfigurací třídy <xref:System.Serv
 
 2. Vytvořit instanci <xref:System.ServiceModel.WSHttpBinding> třídy.
 
-3. Vlastnost <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> třídy <xref:System.ServiceModel.WSHttpSecurity> nastavte na <xref:System.ServiceModel.SecurityMode.Message>.
+3. Nastavte vlastnost <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> třídy <xref:System.ServiceModel.WSHttpSecurity> na <xref:System.ServiceModel.SecurityMode.Message>.
 
-4. Vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> třídy <xref:System.ServiceModel.MessageSecurityOverHttp> nastavte na <xref:System.ServiceModel.MessageCredentialType.Windows>.
+4. Nastavte vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> třídy <xref:System.ServiceModel.MessageSecurityOverHttp> na <xref:System.ServiceModel.MessageCredentialType.Windows>.
 
 5. Kód pro tento postup je následující:
 
@@ -53,13 +53,13 @@ Toto je druhý postup, který ukazuje, jak použít vazbu v rámci samoobslužn�
 
 1. Vložte kód této procedury za kód z předchozího postupu.
 
-2. Vytvořte proměnnou <xref:System.Type> s názvem `contractType` a přiřaďte ji typu rozhraní (`ICalculator`). Při použití Visual Basic použijte operátor `GetType`; Při použití C#použijte klíčové slovo `typeof`.
+2. Vytvořte <xref:System.Type> proměnnou s názvem `contractType` a přiřaďte ji typu rozhraní (`ICalculator`). Při použití Visual Basic použijte operátor `GetType`; Při použití C#použijte klíčové slovo `typeof`.
 
-3. Vytvořte druhou proměnnou <xref:System.Type> s názvem `serviceType` a přiřaďte ji typu implementovaného kontraktu (`Calculator`).
+3. Vytvořte druhou <xref:System.Type>ovou proměnnou s názvem `serviceType` a přiřaďte ji typu implementovaného kontraktu (`Calculator`).
 
-4. Vytvořte instanci třídy <xref:System.Uri> s názvem `baseAddress` se základní adresou služby. Základní adresa musí mít schéma, které odpovídá přenosu. V tomto případě je přenosové schéma HTTP a adresa zahrnuje speciální identifikátor URI (Uniform Resource Identifier) "localhost" a číslo portu (8036) a také adresu základního koncového bodu (serviceModelSamples/): `http://localhost:8036/serviceModelSamples/`.
+4. Vytvořte instanci <xref:System.Uri> třídy s názvem `baseAddress` se základní adresou služby. Základní adresa musí mít schéma, které odpovídá přenosu. V tomto případě je přenosové schéma HTTP a adresa zahrnuje speciální identifikátor URI (Uniform Resource Identifier) "localhost" a číslo portu (8036) a také adresu základního koncového bodu (serviceModelSamples/): `http://localhost:8036/serviceModelSamples/`.
 
-5. Vytvoří instanci třídy <xref:System.ServiceModel.ServiceHost> s proměnnými `serviceType` a `baseAddress`.
+5. Vytvořte instanci třídy <xref:System.ServiceModel.ServiceHost> s proměnnými `serviceType` a `baseAddress`.
 
 6. Přidejte koncový bod ke službě pomocí `contractType`, vazby a názvu koncového bodu (secureCalculator). Klient musí při inicializaci volání služby zřetězit základní adresu a název koncového bodu.
 
@@ -78,15 +78,15 @@ Tento příklad používá pouze kód k vytvoření klienta. Alternativně můž
 
 #### <a name="to-use-a-binding-in-a-client-with-code"></a>Použití vazby v klientovi s kódem
 
-1. K vygenerování kódu proxy z metadat služby použijte nástroj SvcUtil. exe. Další informace najdete v tématu [Postup: Vytvoření klienta](how-to-create-a-wcf-client.md). Generovaný proxy kód dědí z třídy <xref:System.ServiceModel.ClientBase%601>, která zajišťuje, že každý klient má potřebné konstruktory, metody a vlastnosti ke komunikaci se službou WCF. V tomto příkladu vygenerovaný kód obsahuje třídu `CalculatorClient`, která implementuje rozhraní `ICalculator`, což umožňuje kompatibilitu s kódem služby.
+1. K vygenerování kódu proxy z metadat služby použijte nástroj SvcUtil. exe. Další informace najdete v tématu [Postup: Vytvoření klienta](how-to-create-a-wcf-client.md). Generovaný proxy kód dědí z třídy <xref:System.ServiceModel.ClientBase%601>, která zajišťuje, že každý klient má potřebné konstruktory, metody a vlastnosti ke komunikaci se službou WCF. V tomto příkladu vygenerovaný kód obsahuje třídu `CalculatorClient`, která implementuje rozhraní `ICalculator` a povoluje kompatibilitu s kódem služby.
 
-2. Kód této procedury je vložen na začátek metody `Main` klientského programu.
+2. Kód této procedury je vložen na začátek `Main` metody klientského programu.
 
-3. Vytvořte instanci třídy <xref:System.ServiceModel.WSHttpBinding> a nastavte její režim zabezpečení na `Message` a jeho typ pověření klienta na `Windows`. Příklad pojmenuje proměnnou `clientBinding`.
+3. Vytvořte instanci třídy <xref:System.ServiceModel.WSHttpBinding> a nastavte její režim zabezpečení na hodnotu `Message` a její typ pověření klienta na `Windows`. Příklad pojmenuje proměnnou `clientBinding`.
 
-4. Vytvořte instanci třídy <xref:System.ServiceModel.EndpointAddress> s názvem `serviceAddress`. Inicializujte instanci se základní adresou zřetězenou s názvem koncového bodu.
+4. Vytvořte instanci <xref:System.ServiceModel.EndpointAddress> třídy s názvem `serviceAddress`. Inicializujte instanci se základní adresou zřetězenou s názvem koncového bodu.
 
-5. Vytvořte instanci generované třídy klienta s proměnnými `serviceAddress` a `clientBinding`.
+5. Vytvořte instanci generované třídy klienta pomocí `serviceAddress` a proměnných `clientBinding`.
 
 6. Zavolejte metodu <xref:System.ServiceModel.ClientBase%601.Open%2A>, jak je znázorněno v následujícím kódu.
 
@@ -106,15 +106,15 @@ Pokud ještě nemáte definovanou službu, přečtěte si téma [navrhování a 
 
 #### <a name="to-enable-transfer-security-on-a-service-in-a-windows-domain-using-configuration"></a>Postup povolení přenosu zabezpečení ve službě v doméně systému Windows pomocí konfigurace
 
-1. Přidejte prvek [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) do oddílu [> prvku \<bindings](../configure-apps/file-schema/wcf/bindings.md) konfiguračního souboru.
+1. Přidejte [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) elementu do oddílu [\<vazby >](../configure-apps/file-schema/wcf/bindings.md) elementu konfiguračního souboru.
 
-2. Přidejte < > elementu `binding` do @no__t elementu < >-1 a nastavte atribut `configurationName` na hodnotu vhodnou pro vaši aplikaci.
+2. Do <`WSHttpBinding`> elementu přidejte prvek <`binding`> a nastavte atribut `configurationName` na hodnotu vhodnou pro vaši aplikaci.
 
-3. Přidejte < prvek `security` > a nastavte atribut `mode` na zprávu.
+3. Přidejte prvek <`security`> a nastavte atribut `mode` na Message.
 
-4. Přidejte < prvek `message` > a nastavte atribut `clientCredentialType` na hodnotu Windows.
+4. Přidejte prvek <`message`> a nastavte atribut `clientCredentialType` na hodnotu Windows.
 
-5. V konfiguračním souboru služby nahraďte část `<bindings>` následujícím kódem. Pokud ještě nemáte konfigurační soubor služby, přečtěte si téma [použití vazeb ke konfiguraci služeb a klientů](using-bindings-to-configure-services-and-clients.md).
+5. V konfiguračním souboru služby nahraďte `<bindings>` oddíl následujícím kódem. Pokud ještě nemáte konfigurační soubor služby, přečtěte si téma [použití vazeb ke konfiguraci služeb a klientů](using-bindings-to-configure-services-and-clients.md).
 
     ```xml
     <bindings>
@@ -136,9 +136,9 @@ Tento postup ukazuje, jak vygenerovat dva soubory: proxy server, který komuniku
 
 1. K vygenerování kódu a konfiguračního souboru proxy serveru z metadat služby použijte nástroj SvcUtil. exe. Další informace najdete v tématu [Postup: Vytvoření klienta](how-to-create-a-wcf-client.md).
 
-2. Nahraďte oddíl [\<bindings >](../configure-apps/file-schema/wcf/bindings.md) generovaného konfiguračního souboru kódem konfigurace z předchozí části.
+2. Nahraďte část [\<vazby >](../configure-apps/file-schema/wcf/bindings.md) generovaného konfiguračního souboru kódem konfigurace z předchozí části.
 
-3. Kód procedurální je vložen na začátek metody `Main` klientského programu.
+3. Kód procedurální je vložen na začátek `Main` metody klientského programu.
 
 4. Vytvořte instanci generované třídy klienta předáním názvu vazby v konfiguračním souboru jako vstupní parametr.
 

@@ -1,5 +1,5 @@
 ---
-title: Identifikace hranic doménových modelů pro jednotlivé mikroslužby
+title: Identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb
 description: Prozkoumejte podstatu rozdělení velké aplikace na mikroslužby, aby se dosáhlo zvukové architektury.
 ms.date: 09/20/2018
 ms.openlocfilehash: 9c433066dd8e93dbb09b15e58c9c85617775723d
@@ -13,7 +13,7 @@ ms.locfileid: "71834417"
 
 Cíl, který identifikuje hranice modelu a velikost pro jednotlivé mikroslužby, se nedostane k nejpřesnější oddělitelné, i když je to možné, i když je to možné, měli byste se obrátit na malé mikroslužby. Místo toho by měl být vaším cílem získat nejsmysluplnější oddělení, které vás provedou znalostmi vaší domény. Důraz není na velikost, ale místo na obchodních funkcích. Pokud je navíc k dispozici jasná soudržnost pro určitou oblast aplikace na základě vysokého počtu závislostí, znamená to, že je to také potřeba pro jednu mikroslužbu. Soudržnost je způsob, jak určit, jak rozdělit nebo seskupit mikroslužby. I když získáte větší znalosti o doméně, měli byste ji v případě iterativní velikosti přizpůsobit. Vyhledání správné velikosti není proces jednoho snímku.
 
-[Sam Newman](https://samnewman.io/), uznávaná propagace mikroslužeb a autorů knih [sestavování mikroslužeb](https://samnewman.io/books/building_microservices/), zdůrazňuje, že byste měli navrhovat mikroslužby založené na vzoru ohraničeného kontextu (Bc) (součást návrhu založeného na doméně), jak je představena nejdříve. V některých případech může být BC tvořen několika fyzickými službami, ale nikoli naopak.
+[Sam Newman](https://samnewman.io/), uznávaná propagace mikroslužeb a autora knih [vytváření mikroslužeb](https://samnewman.io/books/building_microservices/), zdůrazňuje, že byste měli navrhovat mikroslužby založené na vzoru ohraničeného kontextu (Bc) (součást návrhu založeného na doméně), jak bylo uvedeno dříve. V některých případech může být BC tvořen několika fyzickými službami, ale nikoli naopak.
 
 Doménový model s konkrétními doménovými entitami platí v rámci konkrétního BC nebo mikroslužby. Množina BC odděluje použitelnost doménového modelu a členům týmu vývojářů poskytuje jasné a sdílené vysvětlení toho, co musí být soudržné a co se dá vyvíjet nezávisle. Jedná se o stejné cíle jako u mikroslužeb.
 
@@ -50,4 +50,5 @@ V podstatě existuje sdílený koncept uživatele, který existuje ve více slu�
 Existuje několik výhod, které nesdílí stejnou entitu uživatele se stejným počtem atributů napříč doménami. Jednou z výhod je omezit duplicity, aby modely mikroslužeb nemusely mít žádná data, která nepotřebují. Další výhodou je mít hlavní mikroslužbu, která vlastní určitý typ dat na entitu, aby aktualizace a dotazy pro tento typ dat byly řízené pouze touto mikroslužbou.
 
 >[!div class="step-by-step"]
->[Předchozí](distributed-data-management.md)@no__t – 1 –[Další](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+>[Předchozí](distributed-data-management.md)
+>[Další](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

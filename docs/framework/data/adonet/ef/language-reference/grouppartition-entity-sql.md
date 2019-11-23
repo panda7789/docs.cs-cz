@@ -10,7 +10,7 @@ ms.lasthandoff: 10/03/2019
 ms.locfileid: "71833754"
 ---
 # <a name="grouppartition-entity-sql"></a>GROUPPARTITION (Entity SQL)
-Vrátí kolekci hodnot argumentů, které jsou proložené z aktuálního oddílu skupiny, ke kterému se agregace vztahuje. Agregace `GroupPartition` je agregovaná podle skupin a nemá žádný formulář založený na kolekcích.  
+Vrátí kolekci hodnot argumentů, které jsou proložené z aktuálního oddílu skupiny, ke kterému se agregace vztahuje. Agregace `GroupPartition` je agregovaná podle skupin a neobsahuje žádné formuláře založené na kolekcích.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -18,7 +18,7 @@ Vrátí kolekci hodnot argumentů, které jsou proložené z aktuálního oddíl
 GROUPPARTITION( [ALL|DISTINCT] expression )  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `expression`  
  Libovolný výraz [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
@@ -47,7 +47,7 @@ SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
 SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
- Při běžném `GROUP BY` jsou výsledky seskupení skryté. Výsledky můžete použít jenom v agregační funkci. Chcete-li zobrazit výsledky seskupení, je třeba sladit výsledky seskupení a vstupní sady pomocí poddotazu. Následující dva dotazy jsou ekvivalentní:  
+ Při běžném `GROUP BY`jsou výsledky seskupení skryté. Výsledky můžete použít jenom v agregační funkci. Chcete-li zobrazit výsledky seskupení, je třeba sladit výsledky seskupení a vstupní sady pomocí poddotazu. Následující dva dotazy jsou ekvivalentní:  
   
 ```sql  
 SELET p, (SELECT q FROM GroupPartition(ol.Quantity) AS q) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
@@ -70,6 +70,6 @@ SELECT groupkey, GroupPartition(b > a) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít klauzuli GROUPPARTITION s klauzulí GROUP BY. Skupiny klauzule GROUP BY @no__t entit-0 podle jejich `Contact`. Klauzule GROUPPARTITION @no__t pak vyhledá vlastnost-0 pro každou skupinu a výsledkem je kolekce desetinných míst.  
+ Následující příklad ukazuje, jak použít klauzuli GROUPPARTITION s klauzulí GROUP BY. Klauzule GROUP BY `SalesOrderHeader` entitami podle jejich `Contact`. Klauzule GROUPPARTITION pak projektuje vlastnost `TotalDue` pro každou skupinu a výsledkem je kolekce desetinných míst.  
   
  [!code-sql[DP EntityServices Concepts#Collection_GroupPartition](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#collection_grouppartition)]

@@ -43,7 +43,7 @@ Svazky mohou být pojmenované nebo anonymní (výchozí). Pojmenované svazky p
 
 **Připojení k vazbě** byla k dispozici po dlouhou dobu a umožňují mapování kterékoli složky na přípojný bod v kontejneru. Připojení vazby mají větší omezení než svazky a některé důležité problémy se zabezpečením, takže svazky jsou doporučenými možnostmi.
 
-**připojení `tmpfs`** jsou virtuální složky, které jsou živě pouze v paměti hostitele a nejsou nikdy zapsány do systému souborů. Jsou rychlé a bezpečné, ale používají paměť a jsou určeny pouze pro netrvalá data.
+**`tmpfs` připojení** jsou virtuální složky, které jsou živě pouze v paměti hostitele a nejsou nikdy zapsány do systému souborů. Jsou rychlé a bezpečné, ale používají paměť a jsou určeny pouze pro netrvalá data.
 
 Jak je znázorněno na obrázku 4-5, běžné svazky Docker lze ukládat mimo samotné kontejnery, ale v rámci fyzických hranic hostitelského serveru nebo virtuálního počítače. Kontejnery Docker ale nemají přístup ke svazku z jednoho hostitelského serveru nebo virtuálního počítače do jiného. Jinými slovy, u těchto svazků není možné spravovat data sdílená mezi kontejnery, které běží na různých hostitelích Docker, i když se dá dosáhnout pomocí ovladače svazku, který podporuje vzdálené hostitele.
 

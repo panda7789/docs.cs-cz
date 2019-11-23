@@ -55,7 +55,7 @@ Sekvence změn zajišťuje, že starší verze kódu nadále běží "tak jak js
 
 Další informace o datech v architekturách bez serveru najdete v tématu [výzvy a řešení pro správu distribuovaných dat](../microservices/architect-microservice-container-applications/distributed-data-management.md).
 
-## <a name="scaling"></a>Změně
+## <a name="scaling"></a>Škálování
 
 Jedná se o běžný nepojmový koncept, který znamená bez serveru. Je ve skutečnosti "méně serveru". Je důležité, abyste pochopili, že při škálování dojde k tomu, že budete vědět, co je záložní infrastruktura. Většina platforem bez serveru poskytuje sadu ovládacích prvků, které zpracovávají, jak by se měla infrastruktura škálovat při zvyšování hustoty událostí. Můžete si vybrat z nejrůznějších možností, ale vaše strategie se může lišit v závislosti na funkci. Kromě toho jsou funkce obvykle spouštěny v rámci souvisejícího hostitele, takže funkce na stejném hostiteli mají stejné možnosti škálování. Proto je nutné organizovat a strategize, které funkce jsou hostovány společně na základě požadavků na škálování.
 

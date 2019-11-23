@@ -1,5 +1,5 @@
 ---
-title: Using – příkaz (Visual Basic)
+title: Using – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.using
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - resources [Visual Basic], disposing
 - Using statement [Visual Basic]
 ms.assetid: 665d1580-dd54-4e96-a9a9-6be2a68948f1
-ms.openlocfilehash: 819af63acb6a1f038300bcb999dcfb904eb8a457
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 6ec0e228b3898f66f27e322b5db2dd7f3bf3d7d6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71592087"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352760"
 ---
 # <a name="using-statement-visual-basic"></a>Using – příkaz (Visual Basic)
 
-Deklaruje začátek bloku `Using` a volitelně získá systémové prostředky, které blok ovládá.
+Declares the beginning of a `Using` block and optionally acquires the system resources that the block controls.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,12 +32,12 @@ End Using
 
 |Termín|Definice|  
 |---|---|  
-|`resourcelist`|Vyžaduje se, pokud neposkytnete `resourceexpression`. Seznam jednoho nebo více systémových prostředků, které tyto ovládací prvky blokování `Using` odděleny čárkami.|  
-|`resourceexpression`|Vyžaduje se, pokud neposkytnete `resourcelist`. Referenční proměnná nebo výraz odkazující na systémový prostředek, který má být ovládán tímto @no__t blok-0.|  
-|`statements`|Volitelný parametr. Blok příkazů, které spouští blok `Using`.|  
-|`End Using`|Povinný parametr. Ukončí definici bloku `Using` a uvolní všechny prostředky, které ovládací prvek IT ovládá.|  
+|`resourcelist`|Required if you do not supply `resourceexpression`. List of one or more system resources that this `Using` block controls, separated by commas.|  
+|`resourceexpression`|Required if you do not supply `resourcelist`. Reference variable or expression referring to a system resource to be controlled by this `Using` block.|  
+|`statements`|Volitelné. Block of statements that the `Using` block runs.|  
+|`End Using`|Požadováno. Terminates the definition of the `Using` block and disposes of all the resources that it controls.|  
 
- Každý prostředek v části `resourcelist` má následující syntaxi a části:
+ Each resource in the `resourcelist` part has the following syntax and parts:
 
  `resourcename As New resourcetype [ ( [ arglist ] ) ]`
 
@@ -45,47 +45,47 @@ End Using
 
  `resourcename As resourcetype = resourceexpression`
 
-## <a name="resourcelist-parts"></a>resourceList části
+## <a name="resourcelist-parts"></a>resourcelist Parts
 
 |Termín|Definice|  
 |---|---|  
-|`resourcename`|Povinný parametr. Referenční proměnná, která odkazuje na systémový prostředek, který blokují ovládací prvky `Using`.|  
-|`New`|Vyžaduje se, pokud příkaz `Using` získá prostředek. Pokud jste už tento prostředek získali, použijte druhou alternativu syntaxe.|  
-|`resourcetype`|Povinný parametr. Třída prostředku Třída musí implementovat rozhraní <xref:System.IDisposable>.|  
-|`arglist`|Volitelný parametr. Seznam argumentů, které předáváte konstruktoru za účelem vytvoření instance `resourcetype`. Viz [seznam parametrů](parameter-list.md).|  
-|`resourceexpression`|Povinný parametr. Proměnná nebo výraz odkazující na systémový prostředek splňující požadavky `resourcetype`. Použijete-li druhou alternativu syntaxe, je nutné získat prostředek před předáním řízení příkazu `Using`.|  
+|`resourcename`|Požadováno. Reference variable that refers to a system resource that the `Using` block controls.|  
+|`New`|Required if the `Using` statement acquires the resource. If you have already acquired the resource, use the second syntax alternative.|  
+|`resourcetype`|Požadováno. The class of the resource. The class must implement the <xref:System.IDisposable> interface.|  
+|`arglist`|Volitelné. List of arguments you are passing to the constructor to create an instance of `resourcetype`. See [Parameter List](parameter-list.md).|  
+|`resourceexpression`|Požadováno. Variable or expression referring to a system resource satisfying the requirements of `resourcetype`. If you use the second syntax alternative, you must acquire the resource before passing control to the `Using` statement.|  
   
 ## <a name="remarks"></a>Poznámky
 
- Někdy váš kód vyžaduje nespravovaný prostředek, jako je popisovač souboru, Obálka COM nebo připojení SQL. Blok `Using` zaručuje odstranění jednoho nebo více takových prostředků, když je kód dokončen. Díky tomu jsou k dispozici pro další kód pro použití.
+ Sometimes your code requires an unmanaged resource, such as a file handle, a COM wrapper, or a SQL connection. A `Using` block guarantees the disposal of one or more such resources when your code is finished with them. This makes them available for other code to use.
 
- Spravované prostředky jsou odstraněny nástrojem .NET Framework uvolňování paměti (GC) bez dalšího kódování na vaší straně. Pro spravované prostředky nepotřebujete blok `Using`. K vynucení vyřazení spravovaného prostředku místo toho, aby se čekalo na uvolňování paměti, však stále můžete použít blok `Using`.
+ Managed resources are disposed of by the .NET Framework garbage collector (GC) without any extra coding on your part. You do not need a `Using` block for managed resources. However, you can still use a `Using` block to force the disposal of a managed resource instead of waiting for the garbage collector.
 
- Blok `Using` má tři části: pořízení, využití a vyřazení.
+ A `Using` block has three parts: acquisition, usage, and disposal.
 
-- *Akvizice* znamená vytvoření proměnné a její inicializaci, aby odkazovala na systémový prostředek. Příkaz `Using` může získat jeden nebo více prostředků, nebo můžete získat přesně jeden prostředek před vstupem do bloku a zadat ho do příkazu `Using`. Pokud zadáte `resourceexpression`, musíte získat prostředek před předáním řízení příkazu `Using`.
+- *Acquisition* means creating a variable and initializing it to refer to the system resource. The `Using` statement can acquire one or more resources, or you can acquire exactly one resource before entering the block and supply it to the `Using` statement. If you supply `resourceexpression`, you must acquire the resource before passing control to the `Using` statement.
 
-- *Použití* znamená přístup k prostředkům a provádění akcí s nimi. Příkazy mezi `Using` a `End Using` reprezentují využití prostředků.
+- *Usage* means accessing the resources and performing actions with them. The statements between `Using` and `End Using` represent the usage of the resources.
 
-- *Vyřazení* znamená volání metody <xref:System.IDisposable.Dispose%2A> u objektu v `resourcename`. Tím umožníte, aby objekt čistě ukončil své prostředky. Příkaz `End Using` uvolní prostředky v rámci ovládacího prvku bloku `Using`.
+- *Disposal* means calling the <xref:System.IDisposable.Dispose%2A> method on the object in `resourcename`. This allows the object to cleanly terminate its resources. The `End Using` statement disposes of the resources under the `Using` block's control.
 
-## <a name="behavior"></a>Chování
+## <a name="behavior"></a>Behavior
 
- Blok `Using` se chová jako konstrukce `Try`... `Finally`, ve které blok `Try` prostředky používá a že je k Dispose blok `Finally`. Z tohoto důvodu blok `Using` garantuje odstranění prostředků bez ohledu na to, jak tento blok ukončujete. To platí i v případě neošetřené výjimky, s výjimkou <xref:System.StackOverflowException>.
+ A `Using` block behaves like a `Try`...`Finally` construction in which the `Try` block uses the resources and the `Finally` block disposes of them. Because of this, the `Using` block guarantees disposal of the resources, no matter how you exit the block. This is true even in the case of an unhandled exception, except for a <xref:System.StackOverflowException>.
 
- Rozsah všech proměnných prostředků získaných příkazem `Using` je omezen na blok `Using`.
+ The scope of every resource variable acquired by the `Using` statement is limited to the `Using` block.
 
- Pokud zadáte více než jeden systémový prostředek v příkazu `Using`, efekt je stejný, jako při vnoření `Using` bloků mezi sebou.
+ If you specify more than one system resource in the `Using` statement, the effect is the same as if you nested `Using` blocks one within another.
 
- Pokud je `resourcename` `Nothing`, není provedeno žádné volání <xref:System.IDisposable.Dispose%2A> a není vyvolána žádná výjimka.
+ If `resourcename` is `Nothing`, no call to <xref:System.IDisposable.Dispose%2A> is made, and no exception is thrown.
 
-## <a name="structured-exception-handling-within-a-using-block"></a>Strukturované zpracování výjimek v bloku using
+## <a name="structured-exception-handling-within-a-using-block"></a>Structured Exception Handling Within a Using Block
 
- Pokud potřebujete zpracovat výjimku, která může nastat v rámci bloku `Using`, můžete do ní přidat kompletní `Try`... `Finally`. Pokud potřebujete zpracovat případ, kde se příkaz `Using` v získání prostředku nezdařil, můžete otestovat a zjistit, zda je `resourcename` `Nothing`.
+ If you need to handle an exception that might occur within the `Using` block, you can add a complete `Try`...`Finally` construction to it. If you need to handle the case where the `Using` statement is not successful in acquiring a resource, you can test to see if `resourcename` is `Nothing`.
 
-## <a name="structured-exception-handling-instead-of-a-using-block"></a>Strukturované zpracování výjimek namísto bloku using
+## <a name="structured-exception-handling-instead-of-a-using-block"></a>Structured Exception Handling Instead of a Using Block
 
- Pokud potřebujete lepší kontrolu nad získáním prostředků nebo potřebujete další kód v bloku `Finally`, můžete přepsat `Using` blok jako konstrukci `Try`... `Finally`. Následující příklad ukazuje kostru `Try` a `Using` konstrukcí, které jsou ekvivalentní získání a odstranění `resource`.
+ If you need finer control over the acquisition of the resources, or you need additional code in the `Finally` block, you can rewrite the `Using` block as a `Try`...`Finally` construction. The following example shows skeleton `Try` and `Using` constructions that are equivalent in the acquisition and disposal of `resource`.
 
 ```vb
 Using resource As New resourceType
@@ -105,13 +105,13 @@ End Try
 ```
 
 > [!NOTE]
-> Kód uvnitř bloku `Using` by neměl přiřazovat objekt v `resourcename` do jiné proměnné. Při ukončení bloku `Using` je prostředek vyřazený a druhá proměnná nemá přístup k prostředku, ke kterému odkazuje.
+> The code inside the `Using` block should not assign the object in `resourcename` to another variable. When you exit the `Using` block, the resource is disposed, and the other variable cannot access the resource to which it points.
 
 ## <a name="example"></a>Příklad
 
- Následující příklad vytvoří soubor s názvem log. txt a zapíše dva řádky textu do souboru. Příklad také přečte stejný soubor a zobrazí řádky textu:
+ The following example creates a file that is named log.txt and writes two lines of text to the file. The example also reads that same file and displays the lines of text:
 
- Vzhledem k tomu, že třídy <xref:System.IO.TextWriter> a <xref:System.IO.TextReader> implementují rozhraní <xref:System.IDisposable>, může kód použít příkazy `Using` k zajištění toho, aby byl soubor správně uzavřen po operacích zápisu a čtení.
+ Because the <xref:System.IO.TextWriter> and <xref:System.IO.TextReader> classes implement the <xref:System.IDisposable> interface, the code can use `Using` statements to ensure that the file is correctly closed after the write and read operations.
 
  [!code-vb[VbVbalrStatements#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#50)]
 
@@ -119,4 +119,4 @@ End Try
 
 - <xref:System.IDisposable>
 - [Příkaz Try...Catch...Finally](try-catch-finally-statement.md)
-- [Postupy: Odstranění systémového prostředku @ no__t-0
+- [Postupy: Odstranění systémového prostředku](../../programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)

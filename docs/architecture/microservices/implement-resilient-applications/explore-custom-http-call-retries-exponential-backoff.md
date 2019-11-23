@@ -13,7 +13,7 @@ ms.locfileid: "70296121"
 
 Chcete-li vytvořit odolné mikroslužby, je třeba zvládnout možné scénáře selhání protokolu HTTP. Jedním ze způsobů, jak tyto chyby zpracovat, ale nedoporučujeme, je vytvořit vlastní implementaci opakovaných pokusů pomocí exponenciálního omezení rychlostiu.
 
-**Důležitá Poznámka:** V této části se dozvíte, jak můžete vytvořit vlastní kód pro implementaci opakovaných pokusů o volání HTTP. Nedoporučuje se ale dělat sami sebe, ale k použití výkonnějších a spolehlivých a současně jednoduššího používání mechanismů, `HttpClientFactory` jako je Polly, k dispozici od .NET Core 2,1. Tyto doporučené přístupy jsou vysvětleny v dalších částech.
+**Důležitá Poznámka:** V této části se dozvíte, jak můžete vytvořit vlastní kód pro implementaci opakovaných pokusů o volání HTTP. Nedoporučuje se ale dělat sami sebe, ale k použití výkonnějších a spolehlivých a současně jednoduššího používání mechanismů, jako jsou `HttpClientFactory` s Polly, k dispozici od .NET Core 2,1. Tyto doporučené přístupy jsou vysvětleny v dalších částech.
 
 Jako úvodní průzkum můžete implementovat vlastní kód s třídou nástrojů pro exponenciální omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus jako v následujícím kódu.
 
@@ -88,7 +88,7 @@ public struct ExponentialBackoff
 }
 ```
 
-Použití tohoto kódu v klientské aplikaci jazyka\# C (další klientská mikroslužba webového rozhraní API, aplikace ASP.NET MVC nebo dokonce aplikace C\# Xamarin) je jednoduchá. Následující příklad ukazuje, jak pomocí třídy HttpClient.
+Použití tohoto kódu v klientské aplikaci v jazyce C\# (další klientská mikroslužba webového rozhraní API, aplikace ASP.NET MVC nebo dokonce aplikace v jazyce C\# Xamarin) je jednoduchá. Následující příklad ukazuje, jak pomocí třídy HttpClient.
 
 ```csharp
 public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? type)
@@ -114,5 +114,5 @@ public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? t
 Mějte na paměti, že tento kód je vhodný jenom jako zkušební koncept. V dalších částech se dozvíte, jak používat složitější přístupy, a to pomocí HttpClientFactory. HttpClientFactory je k dispozici od .NET Core 2,1 s osvědčenými knihovnami odolnými proti chybám, jako je Polly.
 
 >[!div class="step-by-step"]
->[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)Další
->[](use-httpclientfactory-to-implement-resilient-http-requests.md)
+>[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)
+>[Další](use-httpclientfactory-to-implement-resilient-http-requests.md)

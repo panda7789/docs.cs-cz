@@ -1,5 +1,5 @@
 ---
-title: Vzorce pro pozorování
+title: Vzory pozorovatelnosti
 description: Vzory pozorování pro cloudové nativní aplikace
 ms.date: 09/23/2019
 ms.openlocfilehash: 23320144c03278d631b8a1fcc1d1c0954e907296
@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71184874"
 ---
-# <a name="observability-patterns"></a>Vzorce pro pozorování
+# <a name="observability-patterns"></a>Vzory pozorovatelnosti
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -25,7 +25,7 @@ U každého programovacího jazyka jsou k dispozici nástroje, které umožňuj�
 
 * Podrobnosti
 * Ladit
-* Informace o
+* Informace
 * Upozornění
 * Chyba
 * Závažná
@@ -34,7 +34,7 @@ Tyto různé úrovně protokolu poskytují v protokolování členitost. Když a
 
 Vysoký výkon nástrojů protokolování a tunability podrobností by měl vývojářům přizvat k častému protokolování. Řada upřednostňuje vzor protokolování vstupu a ukončení jednotlivých metod. Tento přístup může být podobný jako přehnaně důkladné, ale je nečastější, že vývojáři budou chtít snížit protokolování. Ve skutečnosti není Neběžné provádět nasazení pouze pro účely přidávání protokolování do problematické metody. Chyba na straně příliš velkého množství protokolování a není příliš malá. Všimněte si, že některé nástroje lze použít k automatickému poskytnutí tohoto typu protokolování.
 
-V tradičních aplikacích se soubory protokolu obvykle ukládají na místním počítači. Ve skutečnosti v operačních systémech, které používají systém UNIX, je definována struktura složek, která bude obsahovat všechny protokoly, obvykle `/var/log`v části. Užitečnost protokolování do plochého souboru na jednom počítači se výrazně snižuje v cloudovém prostředí. Aplikace vytvářející protokoly nemusí mít přístup k místnímu disku nebo je místní disk vysoce přechodný, protože kontejnery jsou v rámci fyzických počítačů přemísťování.
+V tradičních aplikacích se soubory protokolu obvykle ukládají na místním počítači. Ve skutečnosti se v operačních systémech, které používají systém UNIX, nachází struktura složek, která bude obsahovat všechny protokoly, obvykle v části `/var/log`. Užitečnost protokolování do plochého souboru na jednom počítači se výrazně snižuje v cloudovém prostředí. Aplikace vytvářející protokoly nemusí mít přístup k místnímu disku nebo je místní disk vysoce přechodný, protože kontejnery jsou v rámci fyzických počítačů přemísťování.
 
 Nativní aplikace v cloudu vyvinuté pomocí architektury mikroslužeb také představují problémy pro protokolovací soubory založené na souborech. Žádosti uživatelů teď můžou zahrnovat několik služeb, které běží na různých počítačích, a můžou zahrnovat funkce bez serveru bez přístupu k místnímu systému souborů. V rámci těchto mnoha služeb a počítačů by bylo velmi náročné korelovat protokoly od uživatele nebo relace.
 
@@ -44,8 +44,8 @@ Naštěstí jsou některé alternativy fantastická k použití protokolování 
 
 Při sestavování protokolování, které zahrnuje mnoho služeb, je také užitečné dodržovat některé standardní postupy. Například generování [ID korelace](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/) na začátku zdlouhavé interakce a jejich protokolování v každé zprávě, která souvisí s touto interakcí, usnadňuje hledání všech souvisejících zpráv. Jedna zpráva potřebuje najít jenom jednu zprávu a extrahovat ID korelace a najít všechny související zprávy. Dalším příkladem je zajistěte, aby byl formát protokolu pro každou službu stejný, bez ohledu na to, jaký jazyk nebo knihovna protokolů používá. Díky této standardizaci je čtení protokolů mnohem jednodušší. Obrázek 7-1 ukazuje, jak může architektura mikroslužeb využít centralizované protokolování v rámci svého pracovního postupu.
 
-![Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů. **Obrázek 7-1**. ](./media/centralized-logging.png)
- Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů.
+Protokoly ![z různých zdrojů se ingestují do centralizovaného úložiště protokolů.](./media/centralized-logging.png)
+**obrázek 7-1**. Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů.
 
 ## <a name="when-to-use-monitoring"></a>Kdy použít monitorování
 
@@ -63,7 +63,7 @@ Dotazy se dají vytvořit v nástrojích pro agregaci protokolů a vyhledat konk
 
 Pokud potřebujete reagovat na problémy s vaší aplikací, budete potřebovat nějaký způsob, jak upozornit na správné pracovníky. Toto je třetí model závislosti aplikace v nativním cloudu a závisí na protokolování a monitorování. Vaše aplikace musí mít místo přihlášení, aby bylo možné diagnostikovat problémy, a v některých případech předávat do monitorovacích nástrojů. Potřebuje monitorovat agregované metriky aplikací a data o stavu na jednom místě. Jakmile je tato operace navázána, je možné vytvořit pravidla, která aktivují výstrahy, když určité metriky přestanou být mimo přijatelné úrovně.
 
-## <a name="alerts"></a>Upozornění
+## <a name="alerts"></a>Výstrahy
 
 Můžete vytvářet dotazy na nástroje pro monitorování a hledat tak známé stavy selhání. Dotazy například můžou vyhledat přes příchozí protokoly pro indikaci stavového kódu HTTP 500, což indikuje problém na webovém serveru. Jakmile se zjistí jedna z těchto hodnot, může se e-mailem nebo serverem SMS odeslat vlastníkovi původní služby, která může začít prozkoumat.
 

@@ -11,7 +11,7 @@ ms.locfileid: "71214300"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
-## <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojářských nástrojů: IDE nebo Editor
+## <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojových nástrojů: IDE nebo Editor
 
 Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému vývojového prostředí (IDE) nebo odlehčenému a agilnímu editoru, Microsoft vás zajímá, pokud je součástí vývoje aplikací Docker.
 
@@ -20,9 +20,9 @@ Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému
 Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Visual Studio Code a Docker CLI. Tyto produkty poskytují jednoduché a stále robustní prostředí, které je důležité pro zjednodušení pracovního postupu vývojářů. Když nainstalujete "Docker pro Mac" nebo "Docker for Windows" (vývojové prostředí), můžou vývojáři Docker používat k vytváření aplikací pro Windows i Linux (běhové prostředí) jeden Docker CLI. Navíc Visual Studio Code podporuje rozšíření pro Docker pomocí IntelliSense pro fázemi a úlohy zástupce pro spouštění příkazů Docker z editoru.
 
 > [!NOTE]
-> Pokud chcete stáhnout Visual Studio Code, pokračujte <https://code.visualstudio.com/download>na.
+> Pokud chcete stáhnout Visual Studio Code, přečtěte si <https://code.visualstudio.com/download>.
 >
-> Chcete-li stáhnout Docker pro Mac a Windows, <https://www.docker.com/products/docker>pokračujte na.
+> Chcete-li stáhnout Docker pro Mac a Windows, navštivte <https://www.docker.com/products/docker>.
 
 ### <a name="visual-studio-with-docker-tools-windows-development-machine"></a>Visual Studio s nástroji Docker (vývojový počítač s Windows)
 

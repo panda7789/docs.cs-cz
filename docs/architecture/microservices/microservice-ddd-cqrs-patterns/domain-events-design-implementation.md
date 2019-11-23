@@ -21,9 +21,9 @@ Důležitou výhodou událostí domény je to, že vedlejší účinky je možn�
 
 Například pokud používáte pouze Entity Framework a v případě, že je nutné reagovat na nějaké události, pravděpodobně budete kód, který potřebujete, zavřít, abyste mohli událost vyvolala. Takže pravidlo je spojeno, implicitně, do kódu, a musíte se podívat do kódu do, snad a realizovat, že je pravidlo implementováno.
 
-Na druhé straně použití událostí domény dává pojem explicitní, protože existuje `DomainEvent` a nejméně jedna `DomainEventHandler`.
+Na druhé straně použití událostí domény dává pojem explicitní, protože existuje `DomainEvent` a nejméně jedna `DomainEventHandler`á.
 
-Například v aplikaci eShopOnContainers, když je vytvořena objednávka, se uživatel bude jednat o kupující, takže je vyvoláno `OrderStartedDomainEvent` a bude zpracováno v `ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler`, takže je základní koncept zřejmý.
+Například v aplikaci eShopOnContainers, když je vytvořena objednávka, se uživatel bude jednat o kupující, takže se vy`OrderStartedDomainEvent` generuje a zpracuje v `ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler`, takže je základní koncept zřejmý.
 
 Krátké události domény vám pomůžou vyjádřit, explicitně a pravidla domény, a to na základě jazyka všudypřítomný poskytovaného odborníky na domény. Události domény také umožňují lepší oddělení otázek mezi třídami v rámci stejné domény.
 
@@ -61,7 +61,7 @@ Zpracování událostí domény se týká aplikace. Vrstva doménového modelu b
 
 Události domény lze také použít k aktivaci libovolného počtu akcí aplikace a o tom, co je důležitější, musí být otevřeny, aby bylo možné toto číslo v budoucnu v případě oddálení zvýšit. Například při zahájení objednávky můžete chtít publikovat událost domény a rozšířit tyto informace na jiné agregace nebo dokonce vyvolat akce aplikace, jako je oznámení.
 
-Klíčovým bodem je otevřený počet akcí, které se mají provést, když dojde k události domény. Nakonec se budou rozšiřovat akce a pravidla v doméně a aplikaci. Složitost nebo počet akcí vedlejšího účinku, když se něco stane, ale pokud byl váš kód spojený s "lepidlem" (tj. vytváření specifických objektů s `new`), pak pokaždé, když jste potřebovali přidat novou akci, byste také museli změnit práci a testovaný kód.
+Klíčovým bodem je otevřený počet akcí, které se mají provést, když dojde k události domény. Nakonec se budou rozšiřovat akce a pravidla v doméně a aplikaci. Složitost nebo počet akcí vedlejších účinků, když se něco stane, ale pokud byl váš kód spojený s "připevnit" (tj. vytváření specifických objektů pomocí `new`), pak pokaždé, když jste potřebovali přidat novou akci, budete potřebovat také změnit pracovní a testovaný kód.
 
 Tato změna může mít za následek nové chyby a tento přístup se také přesměruje na [otevřený/uzavřený princip](https://en.wikipedia.org/wiki/Open/closed_principle) z [Solid](https://en.wikipedia.org/wiki/SOLID). Nejen to, původní třída, která prováděla orchestraci operací, by mohla růst a růst, což vede k [jedné zásadě zodpovědnosti (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
@@ -136,7 +136,7 @@ Nicméně pokud je třída událostí domény statická, také odesílá obsluž
 
 #### <a name="the-deferred-approach-to-raise-and-dispatch-events"></a>Odložený přístup k událostem vyvolání a odeslání
 
-Místo přímého odeslání do obslužné rutiny události domény lepším přístupem je přidání událostí domény do kolekce a následné odeslání těchto událostí domény *přímo* do nebo *hned* *po* potvrzení transakce (jako u SaveChanges v EF). (Tento přístup byl popsán v Jimmy Bogard v tomto příspěvku [pro lepší vzorec doménových událostí](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/).)
+Místo přímého odeslání do obslužné rutiny události domény lepším přístupem je přidání událostí domény do kolekce a následné odeslání těchto událostí domény *přímo* do nebo *hned* *po* potvrzení transakce (jako u metody SaveChanges v EF). (Tento přístup byl popsán v Jimmy Bogard v tomto příspěvku [pro lepší vzorec doménových událostí](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/).)
 
 Rozhodnutí o tom, jestli odesíláte události domény přímo před nebo hned po potvrzení transakce, je důležité, protože určuje, jestli se mají zahrnout vedlejší účinky jako součást stejné transakce nebo v různých transakcích. V druhém případě je nutné se zabývat s konečnou konzistencí napříč více agregacemi. Toto téma je popsáno v další části.
 
@@ -224,7 +224,7 @@ Tato odůvodnění je založena na přechodu jemně odstupňovaných transakcí 
 
 Další vývojáři a architekty, jako je Jimmy Bogard, jsou v pořádku, pokud pokrývá jednu transakci napříč několika agregacemi, ale pouze v případě, že tyto další agregace souvisejí s vedlejšími účinky pro stejný původní příkaz. Například v [lepším vzoru doménových událostí](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)Bogard říká toto:
 
-> Obvykle chci, aby došlo k vedlejším účinkům události domény v rámci stejné logické transakce, ale ne nutně ve stejném rozsahu vyvolání události domény \[...\] těsně před potvrzením naší transakce, odesíláme naše události do jejich příslušné obslužné rutiny.
+> Obvykle chci, aby došlo k vedlejším účinkům události domény v rámci stejné logické transakce, ale ne nutně ve stejném rozsahu vyvolání události domény \[...\] těsně před potvrzením naší transakce, odesíláme naše události na příslušné obslužné rutiny.
 
 Pokud odesíláte události domény přímo *před* potvrzením původní transakce, je to proto, že chcete, aby se vedlejší účinky těchto událostí zahrnuly do stejné transakce. Například pokud metoda EF DbContext SaveChanges selže, transakce vrátí všechny změny, včetně výsledku všech operací vedlejších účinků implementovaných souvisejícími obslužnými rutinami událostí domény. Důvodem je to, že rozsah životnosti DbContext je ve výchozím nastavení definovaný jako "obor". Proto je objekt DbContext sdílen mezi více objektů úložiště, které jsou vytvořeny v rámci stejného oboru nebo grafu objektů. Při vývoji webových rozhraní API nebo aplikací MVC se to bude shodovat s oborem HttpRequest.
 
@@ -342,12 +342,12 @@ Nakonec je důležité si všimnout, že někdy budete chtít rozšířit událo
 
 Jak je uvedeno, pomocí událostí domény explicitně implementujte vedlejší účinky změn ve vaší doméně. Chcete-li použít DDD, použijte k explicitní implementaci vedlejších efektů v rámci jednoho nebo více agregací události domény. Navíc a kvůli lepší škálovatelnosti a menšímu dopadu na zámky databáze používejte konečnou konzistenci mezi agregacemi v rámci stejné domény.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Greg Young. Co je doménová událost?** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf#page=25>
 
-- **Stenberg LED. Události domény a konečná konzistence** \
+- **Stenberg LED. Události domény a konečné \ konzistence**
   <https://www.infoq.com/news/2015/09/domain-events-consistency>
 
 - **Jimmy Bogard. Lepší vzor událostí domény** \
@@ -356,10 +356,10 @@ Jak je uvedeno, pomocí událostí domény explicitně implementujte vedlejší 
 - **Vaughn Vernon. Efektivní agregovaná část návrhu II: vytváření agregačních prvků společně** \
   [https://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
-- **Jimmy Bogard. Posílení vaší domény: události domény** \
+- **Jimmy Bogard. Posílení vaší domény: \ události domény**
   <https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/>
 
-- **Adam Truong. Příklad vzorce pro události domény** \
+- **Adam Truong. Příklad vzorce událostí domény** \
   <https://www.tonytruong.net/domain-events-pattern-example/>
 
 - **UDI Dahan. Vytvoření plně zapouzdřených doménových modelů** \

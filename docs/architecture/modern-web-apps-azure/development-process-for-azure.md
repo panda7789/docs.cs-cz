@@ -16,13 +16,13 @@ ms.locfileid: "70849585"
 > _"Díky cloudu můžou jednotlivci a malé firmy přitahovat prsty a okamžitě nastavit služby podnikové třídy."_  
 > _– Roy Stephana_
 
-## <a name="vision"></a>Vision
+## <a name="vision"></a>Obraz
 
 > *Vytvářejte dobře navržené aplikace ASP .NET Core tak, jak chcete, pomocí sady Visual Studio nebo rozhraní příkazového řádku dotnet a Visual Studio Code nebo editoru výběru.*
 
 ## <a name="development-environment-for-aspnet-core-apps"></a>Vývojové prostředí pro aplikace ASP.NET Core
 
-### <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojářských nástrojů: IDE nebo Editor
+### <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojových nástrojů: IDE nebo Editor
 
 Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému vývojovém prostředí (IDE) nebo odlehčenému a agilnímu editoru, Microsoft vám při vývoji aplikací ASP.NET Core
 
@@ -34,7 +34,7 @@ Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému
 
 [Stažení sady Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
-Rozhraní příkazového **řádku Visual Studio Code a dotnet** (Nástroje pro různé platformy pro Mac, Linux a Windows). Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Microsoft Visual Studio kód a dotnet CLI. Tyto produkty poskytují jednoduché a přesto robustní prostředí, které zjednodušuje pracovní postup vývojářů. Kromě toho Visual Studio Code podporuje rozšíření pro jazyk\# C a vývoj pro web a poskytuje IntelliSense a zástupce úloh v editoru.
+**Visual Studio Code a DOTNET CLI** (nástroje pro různé platformy pro Mac, Linux a Windows). Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Microsoft Visual Studio kód a dotnet CLI. Tyto produkty poskytují jednoduché a přesto robustní prostředí, které zjednodušuje pracovní postup vývojářů. Kromě toho Visual Studio Code podporuje rozšíření pro C\# a vývoj webů a poskytuje IntelliSense a zástupce úloh v editoru.
 
 [Stáhnout .NET Core SDK](https://dotnet.microsoft.com/download)
 
@@ -88,11 +88,11 @@ Vývoj aplikace ASP.NET Core pro nasazení do Azure se neliší od vývoje aplik
 
 Kdykoli budete připraveni sdílet svůj kód s týmem, měli byste odeslat změny z místního zdrojového úložiště do sdíleného zdrojového úložiště vašeho týmu. Pokud pracujete ve vlastní větvi, tento krok obvykle zahrnuje sloučení kódu do sdílené větve (například prostřednictvím [žádosti](https://docs.microsoft.com/azure/devops/git/pull-requests)o přijetí změn).
 
-#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Server sestavení: Průběžná integrace. sestavení, testování, balení
+#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3: Server sestavení: průběžná integrace. sestavení, testování, balení
 
 Nové sestavení je spuštěno na serveru sestavení vždy, když je provedeno nové potvrzení do úložiště kódu sdílené aplikace. V rámci procesu CI by toto sestavení mělo plně kompilovat aplikaci a spouštět automatizované testy, aby bylo možné potvrdit, že vše funguje podle očekávání. Konečný výsledek procesu CI by měl být zabalená verze webové aplikace připravená pro nasazení.
 
-#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Server sestavení: Průběžné doručování
+#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Server sestavení: průběžné doručování
 
 Po úspěšném sestavení si proces CD zachová vytvořené artefakty sestavení. To bude zahrnovat balíček nasazení webu. Server sestavení tento balíček nasadí, aby Azure App Service a nahradil existující službu nově vytvořenou. Tento krok obvykle cílí na přípravné prostředí, ale některé aplikace se nasazují přímo do výroby prostřednictvím procesu CD.
 
@@ -104,11 +104,11 @@ Po nasazení se aplikace ASP.NET Core spustí v kontextu Azure App Service webov
 
 Když je webová aplikace spuštěná, můžete monitorovat stav aplikace a shromažďovat data o diagnostice a chování uživatelů. Application Insights je součástí sady Visual Studio a nabízí automatické instrumentace pro aplikace ASP.NET. Může vám poskytnout informace o využití, výjimkách, požadavcích, výkonu a protokolech.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 **Sestavení a nasazení aplikace ASP.NET Core do Azure**  
 <https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>
 
 >[!div class="step-by-step"]
->[Předchozí](test-asp-net-core-mvc-apps.md)Další
->[](azure-hosting-recommendations-for-asp-net-web-apps.md)
+>[Předchozí](test-asp-net-core-mvc-apps.md)
+>[Další](azure-hosting-recommendations-for-asp-net-web-apps.md)

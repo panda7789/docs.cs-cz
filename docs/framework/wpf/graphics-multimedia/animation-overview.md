@@ -213,7 +213,7 @@ Vzhledem k tomu, že animace generují hodnoty vlastností, existují různé ty
 
   Příklady v tomto přehledu používají animace, protože jsou nejjednodušší pro použití. Animace od/do/podle jsou podrobněji popsány v přehledu animací z/do/podle.
 
-- *typ*\<> AnimationUsingKeyFrames
+- \<*Type*>AnimationUsingKeyFrames
 
   Animace klíčových snímků jsou výkonnější než z/do/podle animací, protože můžete zadat libovolný počet cílových hodnot a dokonce řídit metodu interpolace. Některé typy lze animovat pouze pomocí animací klíčových snímků. Animace klíčových snímků jsou podrobně popsané v tématu [Přehled animací klíčových snímků](key-frame-animations-overview.md).
 
@@ -258,10 +258,10 @@ Následující syntaxe ukazuje zjednodušenou verzi syntaxe atributu [!INCLUDE[T
 
 Následující tabulka ukazuje několik nastavení <xref:System.Windows.Duration> a jejich výsledných hodnot.
 
-|Nastavením|Výsledná hodnota|
+|Nastavení|Výsledná hodnota|
 |-------------|---------------------|
-|0:0: 5.5|5,5 sekund.|
-|0:30:5,5|30 minut a 5,5 sekund.|
+|0:0:5.5|5,5 sekund.|
+|0:30:5.5|30 minut a 5,5 sekund.|
 |1:30:5.5|1 hodina, 30 minut a 5,5 sekund.|
 
 Jedním ze způsobů, jak určit <xref:System.Windows.Duration> v kódu, je použít metodu <xref:System.TimeSpan.FromSeconds%2A> k vytvoření <xref:System.TimeSpan>a pak deklarovat novou <xref:System.Windows.Duration> strukturu pomocí tohoto <xref:System.TimeSpan>.
@@ -380,7 +380,7 @@ Následující ukázky vám můžou pomáhat začít s přidáváním animací d
 |[Přehled scénářů](storyboards-overview.md)|Popisuje způsob použití scénářů s více časovými osami k vytváření složitých animací.|
 |[Přehled chování časování](timing-behaviors-overview.md)|Popisuje typy a vlastnosti <xref:System.Windows.Media.Animation.Timeline> používané v animacích.|
 |[Přehled událostí časování](timing-events-overview.md)|Popisuje události, které jsou k dispozici na <xref:System.Windows.Media.Animation.Timeline> a objekty <xref:System.Windows.Media.Animation.Clock> pro spouštění kódu v bodech na časové ose, jako je například spuštění, pozastavení, obnovení, přeskočení nebo zastavení.|
-|[Témata s postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animací a časových os ve vaší aplikaci.|
+|[Postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animací a časových os ve vaší aplikaci.|
 |[Postupy: Témata hodin](clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití objektu <xref:System.Windows.Media.Animation.Clock> v aplikaci.|
 |[Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací klíčových snímků ve vaší aplikaci.|
 |[Postupy: Témata animace cesty](path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací cest ve vaší aplikaci.|

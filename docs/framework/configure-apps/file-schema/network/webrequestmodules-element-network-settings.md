@@ -15,12 +15,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697466"
 ---
-# <a name="webrequestmodules-element-network-settings"></a>@no__t – element > 0webRequestModules (nastavení sítě)
+# <a name="webrequestmodules-element-network-settings"></a>\<element > webRequestModules (nastavení sítě)
 Určuje moduly, které se použijí k vyžádání informací od hostitelů v síti.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4webRequestModules >  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;\<webRequestModules >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ Určuje moduly, které se použijí k vyžádání informací od hostitelů v s�
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -50,9 +50,9 @@ Určuje moduly, které se použijí k vyžádání informací od hostitelů v s�
 |[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element `webRequestModules` registruje následníky třídy <xref:System.Net.WebRequest>, aby zpracovávala žádosti o informace na síťové hostitele. Moduly webových požadavků musí implementovat rozhraní <xref:System.Net.IWebRequestCreate>.  
+ Element `webRequestModules` registruje následníky <xref:System.Net.WebRequest> třídy za účelem zpracování žádostí o informace na síťové hostitele. Moduly webových požadavků musí implementovat rozhraní <xref:System.Net.IWebRequestCreate>.  
   
- .NET Framework obsahuje moduly webových požadavků pro identifikátory URI, které začínají na `http://`, `https://` a `file://`. Výchozí moduly můžete přepsat pouze tím, že do konfiguračního souboru zaregistrujete vlastní modul.  
+ .NET Framework obsahuje moduly webových požadavků pro identifikátory URI, které začínají `http://`, `https://`a `file://`. Výchozí moduly můžete přepsat pouze tím, že do konfiguračního souboru zaregistrujete vlastní modul.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

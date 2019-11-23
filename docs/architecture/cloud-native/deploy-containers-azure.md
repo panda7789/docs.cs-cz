@@ -21,8 +21,8 @@ Azure Container Registry (ACR) umožňuje sestavovat, ukládat a spravovat image
 
 [Registr kontejnerů vytvoříte pomocí webu Azure Portal](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal) nebo [pomocí Azure CLI](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli) nebo [nástrojů PowerShellu](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-powershell). Vytvoření nového registru kontejnerů vyžaduje jenom předplatné Azure, skupinu prostředků a jedinečný název. Obrázek 3-11 ukazuje základní možnosti pro vytvoření registru, který bude hostovaný v *registru registru*. azurecr.IO.
 
-![Vytvořte kontejner registru](./media/create-container-registry.png)
-kontejneru**3-11**. Vytvoření registru kontejnerů
+![vytvořit registr kontejneru](./media/create-container-registry.png)
+**obrázek 3-11**. Vytvořit registr kontejneru
 
 Po vytvoření registru ho budete muset ověřit, abyste ho mohli použít. Obvykle se k registru přihlašujete pomocí příkazu Azure CLI:
 
@@ -36,7 +36,7 @@ Po vytvoření registru v Azure Container Registry můžete k vložení imagí k
 docker tag mycontainer myregistry.azurecr.io/mycontainer:v1
 ```
 
-Po označení obrázku použijte `docker push` příkaz k nahrání image do instance ACR.
+Po označení obrázku použijte příkaz `docker push` k nahrání image do instance ACR.
 
 ```console
 docker push myregistry.azurecr.io/mycontainer:v1
@@ -57,19 +57,19 @@ Pokud vaše aplikace založené na kontejnerech zahrnuje více kontejnerů, prav
 Stejně jako u většiny prostředků v Azure můžete vytvořit clustery Azure Kubernetes pomocí portálu nebo pomocí nástrojů příkazového řádku nebo nástrojů pro automatizaci infrastruktury, jako je Helm nebo Terraformu. Chcete-li začít s novým clusterem, je nutné zadat následující informace:
 
 - Předplatné Azure
-- Resource group
+- Skupina prostředků
 - Název clusteru Kubernetes
 - Oblast
-- Verze Kubernetes
+- Verze protokolu Kubernetes
 - Předpona názvu DNS
 - Velikost uzlu
 - Počet uzlů
 
 Tyto informace jsou dostatečné k tomu, aby bylo možné začít. V rámci procesu vytváření na webu Azure Portal můžete také nakonfigurovat možnosti pro následující funkce clusteru:
 
-- Škálování
+- Měřítko
 - Ověřování
-- Síťové služby
+- Sítě
 - Monitorování
 - Značky
 
@@ -92,18 +92,18 @@ Proces pro práci s Azure Dev Spaces zahrnuje následující kroky:
 3. Nakonfigurujte podřízený prostor pro vývoj (pro vaši vlastní verzi systému).
 4. Připojte se k prostoru pro vývoj.
 
-Všechny tyto kroky můžete provést pomocí Azure CLI a nových `azds` nástrojů příkazového řádku. Například pro vytvoření nového vývojového prostoru Azure pro určitý cluster Kubernetes byste měli použít příkaz podobný tomuto:
+Všechny tyto kroky můžete provést pomocí rozhraní příkazového řádku Azure CLI a nového `azds` nástroje příkazového řádku. Například pro vytvoření nového vývojového prostoru Azure pro určitý cluster Kubernetes byste měli použít příkaz podobný tomuto:
 
 ```azurecli
 az aks use-dev-spaces -g my-aks-resource-group -n MyAKSCluster
 ```
 
-Dále můžete pomocí `azds prep` příkazu vygenerovat potřebné prostředky Docker a graf Helm pro spuštění aplikace. Pak spustíte kód v AKS pomocí `azds up`. Při prvním spuštění tohoto příkazu se nainstaluje graf Helm a kontejnery se sestaví a nasadí podle vašich pokynů. Při prvním spuštění může trvat několik minut. Po provedení změn se ale můžete připojit k vlastnímu vývojovému prostoru pro vývoj pomocí `azds space select` a pak nasadit a ladit vaše aktualizace v izolovaném prostředí pro vývoj v izolovaném prostoru. Jakmile budete mít prostředí pro vývoj v provozu, můžete k němu odeslat aktualizace tak, že znovu `azds up` vydáte příkaz nebo můžete použít integrované nástroje v aplikaci Visual Studio nebo Visual Studio Code. Pomocí VS Code se ke svému vývojovému prostoru připojíte pomocí palety příkazů. Obrázek 3-12 ukazuje, jak spustit webovou aplikaci pomocí Azure Dev Spaces v aplikaci Visual Studio.
+Dále můžete použít příkaz `azds prep` k vygenerování potřebných prostředků Docker a graf Helm pro spuštění aplikace. Potom spustíte kód v AKS pomocí `azds up`. Při prvním spuštění tohoto příkazu se nainstaluje graf Helm a kontejnery se sestaví a nasadí podle vašich pokynů. Při prvním spuštění může trvat několik minut. Po provedení změn se ale můžete připojit k vlastnímu vývojovému prostoru pro vývoj pomocí `azds space select` a potom nasadit a ladit vaše aktualizace v izolovaném prostředí pro vývoj v izolovaném prostoru. Jakmile budete mít vývojové místo v provozu, můžete do něj odeslat aktualizace tak, že znovu vydáte `azds up` příkaz nebo můžete použít integrované nástroje v aplikaci Visual Studio nebo Visual Studio Code. Pomocí VS Code se ke svému vývojovému prostoru připojíte pomocí palety příkazů. Obrázek 3-12 ukazuje, jak spustit webovou aplikaci pomocí Azure Dev Spaces v aplikaci Visual Studio.
 
-![Připojení k Azure dev Spaces v aplikaci Visual](./media/azure-dev-spaces-visual-studio-launchsettings.png)
-Studio**Obrázek 3-12**. Připojení k Azure Dev Spaces v aplikaci Visual Studio
+![se připojit k Azure Dev Spaces v aplikaci Visual Studio](./media/azure-dev-spaces-visual-studio-launchsettings.png)
+**obrázek 3-12**. Připojení k Azure Dev Spaces v aplikaci Visual Studio
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Kanárské verze](https://martinfowler.com/bliki/CanaryRelease.html)
 - [Azure Dev Spaces s VS Code](https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore)

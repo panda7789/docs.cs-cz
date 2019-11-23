@@ -164,7 +164,7 @@ Když vytvoříte vydání v Azure DevOps Services, převezme sadu vstupních ar
 
 ### <a name="managing-releases-to-docker-environments-by-using-azure-devops-services-release-management"></a>Správa verzí do prostředí Docker pomocí Azure DevOps Services Release Management
 
-Prostřednictvím šablon Azure DevOps Services můžete vytvořit novou image, publikovat ji v registru Docker, spustit ji na hostitelích se systémem Linux nebo Windows a použít příkazy, jako je například `docker-compose` k nasazení více kontejnerů jako celé aplikace, a to vše přes Azure DevOps Services Release Management možnosti určené pro více prostředí, jak je znázorněno na obrázku 5-8.
+Prostřednictvím šablon Azure DevOps Services můžete vytvořit novou image, publikovat ji v registru Docker, spustit ji na hostitelích se systémem Linux nebo Windows a použít příkazy, jako je například `docker-compose`, k nasazení více kontejnerů jako celé aplikace, a to vše prostřednictvím Azure DevOps Services Release Management možností, které jsou určené pro více prostředí, jak je znázorněno na obrázku 5-8.
 
 ![Snímek obrazovky s konfigurací verzí pro sestavení Docker](./media/docker-application-outer-loop-devops-workflow/configure-docker-compose-release.png)
 
@@ -184,7 +184,7 @@ Z místa na disku CD-ROM a Azure DevOps Services konkrétně můžete spouštět
 
 **Obrázek 5-9**. Nasazení distribuovaných aplikací do služby kontejneru
 
-Zpočátku byste při nasazení na určité clustery nebo orchestraci použili konkrétní skripty pro nasazení a mechanismy pro každý Orchestrator (tj. Kubernetes a Service Fabric mají různé mechanismy nasazení) místo jednodušší a snadno použitelný `docker-compose` nástroj založený na souboru definice `docker-compose.yml`. Díky tomu, že se jedná o úlohu nasazení Docker Azure DevOps Services, která je znázorněna na obrázku 5-10, teď můžete nasadit i na podporované orchestrace, a to jenom pomocí známého `docker-compose.yml` souboru, protože nástroj pro vás (ze souboru `docker-compose.yml` na Formát potřebný pro nástroj Orchestrator.
+Zpočátku byste při nasazení na určité clustery nebo orchestraci použili konkrétní skripty pro nasazení a mechanismy pro každý Orchestrator (tj. Kubernetes a Service Fabric mají různé mechanismy nasazení) místo jednoduššího a snadno použitelného `docker-compose` nástroje založeného na souboru definice `docker-compose.yml`. Díky tomu, že se jedná o úlohu Azure DevOps Services Docker Deploy, která je znázorněna na obrázku 5-10, teď můžete nasadit i na podporované orchestrace, a to jenom pomocí známého `docker-compose.yml` souboru, protože nástroj pro vás (ze souboru `docker-compose.yml` do formátu, který vyžaduje Orchestrator), dá taky provést překlad.
 
 ![Snímek obrazovky znázorňující úlohu nasazení do Kubernetes](./media/docker-application-outer-loop-devops-workflow/add-deploy-to-kubernetes-task.png)
 

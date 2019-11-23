@@ -21,7 +21,7 @@ ms.locfileid: "73119017"
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 [**konfigurační >\<** ](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections >**
+&nbsp;&nbsp; **\<configSections>**
 
 ## <a name="attributes"></a>Atributy
 
@@ -31,15 +31,15 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 |     | Popis |
 | --- | ----------- |
-| [**Konfigurace \<** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**Konfigurace \<>** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**oddíl \<** ](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
-| [ **> \<sectionGroup**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
-| [ **\<odebrat >** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
+| [**oddíl \<>** ](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
+| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [ **\<remove>** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
 | [ **\<vymazat >** ](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
 
 ## <a name="remarks"></a>Poznámky

@@ -91,7 +91,7 @@ Proto by vaše vrstvy nebo knihovny tříd a projekty měly nakonec záviset na 
 
 Závislosti v rámci služby na DDD závisí na doméně a infrastruktuře a infrastruktura závisí na doméně, ale doména není závislá na žádné vrstvě. Tento návrh vrstvy by měl být nezávislý na každé mikroslužbě. Jak bylo uvedeno dříve, můžete implementovat nejvíc komplexní mikroslužby za vzory DDD, zatímco při jednodušším způsobu implementace jednodušších mikroslužeb založených na datech (jednoduchá CRUD v jedné vrstvě).
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **DevIQ. Princip ignorování trvalosti** \
   <https://deviq.com/persistence-ignorance/>

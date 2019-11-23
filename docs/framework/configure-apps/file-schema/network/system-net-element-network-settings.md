@@ -15,11 +15,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697506"
 ---
-# <a name="systemnet-element-network-settings"></a>@no__t – element .NET > 0system (nastavení sítě)
+# <a name="systemnet-element-network-settings"></a>\<– element > systému .NET (nastavení sítě)
 Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **@no__t -3system. net >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<System. net >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -43,7 +43,7 @@ Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.
 |[defaultProxy](defaultproxy-element-network-settings.md)|Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).|  
 |[mailSettings](mailsettings-element-network-settings.md)|Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).|  
 |[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
-|[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> a souvisejících podřízených oborech názvů.|  
+|[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> a související podřízené obory názvů.|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které se použijí k vyžádání informací od hostitelů v Internetu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -53,10 +53,10 @@ Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.
 |[rozšířeného](../configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element [@no__t -1System. net >](system-net-element-network-settings.md) obsahuje nastavení pro třídy v <xref:System.Net> a souvisejících podřízených oborech názvů. Nastavení konfigurovat ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly internetových požadavků pro příjem informací z internetových hostitelů.  
+ Element [\<System. net >](system-net-element-network-settings.md) obsahuje nastavení pro třídy v <xref:System.Net> a související podřízené obory názvů. Nastavení konfigurovat ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly internetových požadavků pro příjem informací z internetových hostitelů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje typickou konfiguraci, kterou používá <xref:System.Net> tříd.  
+ Následující příklad ukazuje typickou konfiguraci, kterou používá <xref:System.Net> třídy.  
   
 ```xml  
 <configuration>  

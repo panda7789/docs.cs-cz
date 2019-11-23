@@ -22,5 +22,5 @@ Mikroslužby jsou odvozeny od SOA, ale záznam SOA se liší od architektury mik
 Tato příručka se zaměřuje na mikroslužby, protože přístup k SOA je méně podrobný než požadavky a techniky používané v architektuře mikroslužeb. Pokud víte, jak vytvořit aplikaci založenou na mikroslužbách, dozvíte se také, jak vytvořit jednodušší aplikaci orientované na služby.
 
 >[!div class="step-by-step"]
->[Předchozí](docker-application-state-data.md)Další
->[](microservices-architecture.md)
+>[Předchozí](docker-application-state-data.md)
+>[Další](microservices-architecture.md)

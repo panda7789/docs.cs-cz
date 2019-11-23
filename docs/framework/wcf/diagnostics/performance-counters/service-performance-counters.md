@@ -10,7 +10,7 @@ ms.lasthandoff: 10/15/2019
 ms.locfileid: "72320031"
 ---
 # <a name="service-performance-counters"></a>Čítače výkonu služby
-Čítače výkonu služby měří chování služby jako celku a dají se použít k diagnostice výkonu celé služby. Lze je najít v objektu výkonu @no__t 0 při zobrazení pomocí nástroje Performance Monitor (Perfmon. exe). Instance jsou pojmenovány pomocí následujícího vzoru:  
+Čítače výkonu služby měří chování služby jako celku a dají se použít k diagnostice výkonu celé služby. Lze je najít v `ServiceModelService 4.0.0.0` objekt výkonu při zobrazení pomocí nástroje Performance Monitor (Perfmon. exe). Instance jsou pojmenovány pomocí následujícího vzoru:  
   
 `ServiceName@ServiceBaseAddress`
   

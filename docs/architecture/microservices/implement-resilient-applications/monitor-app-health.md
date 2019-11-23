@@ -271,7 +271,7 @@ Můžete použít jednoduché vlastní aplikace ukazující stav vašich služeb
 
 Nakonec, pokud ukládáte všechny streamy událostí, můžete k vizualizaci dat použít Microsoft Power BI nebo jiná řešení, jako je Kibana nebo Splunk.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Uživatelské rozhraní HealthChecks a HealthChecks pro ASP.NET Core** \
   <https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks>

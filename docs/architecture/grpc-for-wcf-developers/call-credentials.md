@@ -1,14 +1,13 @@
 ---
 title: Volání pověření – gRPC pro vývojáře WCF
 description: Jak implementovat a používat přihlašovací údaje volání gRPC v ASP.NET Core 3,0.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 5f29d69ec37fe60bcd7ca01391001ea9eb71e7e4
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 2588fe3590a63ea6071b85ff29b3685efbfa25db
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846687"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967989"
 ---
 # <a name="call-credentials"></a>Přihlašovací údaje volání
 

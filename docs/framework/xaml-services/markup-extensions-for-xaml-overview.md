@@ -14,25 +14,25 @@ ms.locfileid: "71736497"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 
-Rozšíření značek představují techniku XAML pro získání hodnoty, která není primitivní ani konkrétního typu XAML. Pro použití atributů rozšíření značek používají sekvenci známého znaku levé složené závorky `{` k zadání rozsahu rozšíření značek a uzavírací složená závorka `}` pro ukončení. Při použití .NET Framework služby XAML můžete použít některé z předdefinovaných rozšíření značek jazyka XAML ze sestavení System. XAML. Můžete také podtřídou z třídy <xref:System.Windows.Markup.MarkupExtension> definované v souboru System. XAML a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované konkrétní architekturou, pokud již odkazujete na tuto architekturu.
+Rozšíření značek představují techniku XAML pro získání hodnoty, která není primitivní ani konkrétního typu XAML. Pro použití atributů rozšíření značek používají sekvenci známého znaku levé složené závorky `{` k zadání rozsahu rozšíření značek a pravou složenou závorku `}` k ukončení. Při použití .NET Framework služby XAML můžete použít některé z předdefinovaných rozšíření značek jazyka XAML ze sestavení System. XAML. Můžete také podtřídou z třídy <xref:System.Windows.Markup.MarkupExtension> definované v souboru System. XAML a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované konkrétní architekturou, pokud již odkazujete na tuto architekturu.
 
-Když je k použití rozšíření značek přistupované, modul pro zápis objektů XAML může poskytovat služby pro vlastní třídu <xref:System.Windows.Markup.MarkupExtension> prostřednictvím spojovacího bodu služby v přepsání <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A?displayProperty=nameWithType>. Služby lze použít k získání kontextu použití, specifických možností modulu pro zápis objektů, kontextu schématu XAML a tak dále.
+Když je k použití rozšíření značek přistupované, modul pro zápis objektů XAML může poskytovat služby vlastní <xref:System.Windows.Markup.MarkupExtension> třídy prostřednictvím spojovacího bodu služby v přepsání <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A?displayProperty=nameWithType>. Služby lze použít k získání kontextu použití, specifických možností modulu pro zápis objektů, kontextu schématu XAML a tak dále.
 
 <a name="XAML_Defined_Markup_Extensions"></a>
 ## <a name="xaml-defined-markup-extensions"></a>Rozšíření značek definovaná v jazyce XAML
 
-Několik rozšíření značek je implementováno pomocí .NET Framework služby XAML pro podporu jazyka XAML. Tato rozšíření značek odpovídají částem specifikace XAML jako jazyka. Ty jsou obvykle identifikovatelné pomocí předpony `x:` v syntaxi, jak je vidět v tématu běžné použití. Implementace .NET Framework XAML Services pro tyto prvky jazyka XAML jsou odvozeny od základní třídy <xref:System.Windows.Markup.MarkupExtension>.
+Několik rozšíření značek je implementováno pomocí .NET Framework služby XAML pro podporu jazyka XAML. Tato rozšíření značek odpovídají částem specifikace XAML jako jazyka. Ty jsou obvykle identifikovatelné předponou `x:` v syntaxi, jak je vidět v tématu běžné použití. Implementace .NET Framework XAML Services pro tyto prvky jazyka XAML jsou odvozeny od <xref:System.Windows.Markup.MarkupExtension> základní třídy.
 
 > [!NOTE]
-> Předpona `x:` se používá pro typické mapování oboru názvů jazyka XAML jazyka XAML v kořenovém elementu v produkci XAML. Například projekt sady Visual Studio a šablony stránky pro různá konkrétní rozhraní iniciují soubor XAML pomocí tohoto mapování `x:`. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí mapování `x:` jako způsob identifikace těchto entit, které jsou definovanou součástí oboru názvů XAML jazyka XAML, na rozdíl od konkrétního výchozí obor názvů XAML rozhraní nebo jiné obory názvů CLR nebo XML.
+> Předpona `x:` se používá pro typické mapování oboru názvů jazyka XAML jazyka XAML v kořenovém elementu v produkci XAML. Například projekt sady Visual Studio a šablony stránky pro různá konkrétní rozhraní iniciují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML jazyka XAML, na rozdíl od výchozího oboru názvů XAML určitého rozhraní nebo jiných oborů názvů CLR nebo XML.
 
 ### <a name="xtype"></a>x:Type
 
-`x:Type` poskytne objekt <xref:System.Type> pro pojmenovaný typ. Tato funkce se používá nejčastěji v mechanizmu odložení, který používá základní typ CLR a odvození typu jako moniker seskupení nebo identifikátor. Konkrétní příklad jsou styly a šablony WPF a jejich použití vlastností `TargetType`. Další informace najdete v tématu [rozšíření značek x:Type](x-type-markup-extension.md).
+`x:Type` poskytuje objekt <xref:System.Type> pro pojmenovaný typ. Tato funkce se používá nejčastěji v mechanizmu odložení, který používá základní typ CLR a odvození typu jako moniker seskupení nebo identifikátor. Konkrétní příklad jsou styly a šablony WPF a jejich použití `TargetType` vlastnosti. Další informace najdete v tématu [rozšíření značek x:Type](x-type-markup-extension.md).
 
 ### <a name="xstatic"></a>x:Static
 
-`x:Static` vytvoří statické hodnoty z entit kódu typu hodnoty, které nejsou přímo typu hodnoty vlastnosti, ale lze je vyhodnotit na tento typ. To je užitečné při zadávání hodnot, které již existují jako známé konstanty v definici typu. Další informace najdete v tématu [rozšíření značek x:static](x-static-markup-extension.md).
+`x:Static` vytváří statické hodnoty z entit kódu typu hodnoty, které nejsou přímo typu hodnoty vlastnosti, ale lze je vyhodnotit na tento typ. To je užitečné při zadávání hodnot, které již existují jako známé konstanty v definici typu. Další informace najdete v tématu [rozšíření značek x:static](x-static-markup-extension.md).
 
 ### <a name="xnull"></a>x:Null
 
@@ -40,7 +40,7 @@ Několik rozšíření značek je implementováno pomocí .NET Framework služby
 
 ### <a name="xarray"></a>x:Array
 
-`x:Array` podporuje vytváření obecných polí v syntaxi jazyka XAML v případech, kdy podpora kolekce, která je poskytována základními prvky a modely ovládacích prvků, není záměrně použita. Další informace najdete v tématu [rozšíření značek x:Array](x-array-markup-extension.md). V jazyce XAML 2009 konkrétně jsou pole k dispozici jako jazykové primitiva namísto jako rozšíření. Další informace naleznete v tématu [funkce jazyka XAML 2009](xaml-2009-language-features.md).
+`x:Array` podporuje vytváření obecných polí v syntaxi jazyka XAML v případech, kdy podpora kolekce, která je poskytována základními prvky a modely ovládacích prvků, není použita záměrně. Další informace najdete v tématu [rozšíření značek x:Array](x-array-markup-extension.md). V jazyce XAML 2009 konkrétně jsou pole k dispozici jako jazykové primitiva namísto jako rozšíření. Další informace naleznete v tématu [funkce jazyka XAML 2009](xaml-2009-language-features.md).
 
 ### <a name="xreference"></a>x:Reference
 
@@ -48,15 +48,15 @@ Několik rozšíření značek je implementováno pomocí .NET Framework služby
 
 ### <a name="other-x-constructs"></a>Jiné x: konstrukce
 
-Další konstrukce `x:` pro podporu funkcí jazyka XAML existují, ale nejsou implementovány jako rozšíření značek. Další informace naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](xaml-namespace-x-language-features.md).
+Jiné `x:` konstrukce pro podporu funkcí jazyka XAML existují, ale nejsou implementovány jako rozšíření značek. Další informace naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](xaml-namespace-x-language-features.md).
 
 <a name="the_markupextension_base_class"></a>
 
 ## <a name="the-markupextension-base-class"></a>Základní třída MarkupExtension
 
-Chcete-li definovat vlastní rozšíření značek, které může komunikovat s výchozími implementacemi čteček XAML a zapisovači XAML v System. XAML, odvozujete třídu od abstraktní třídy <xref:System.Windows.Markup.MarkupExtension>. Tato třída má jednu metodu, která má být přepsána, což je <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>. Může být také nutné definovat další konstruktory pro podporu argumentů použití rozšíření značek a přizpůsobení vlastností, které lze nastavit.
+Chcete-li definovat vlastní rozšíření značek, které může komunikovat s výchozími implementacemi čteček XAML a zapisovači XAML v System. XAML, odvozujete třídu od abstraktní <xref:System.Windows.Markup.MarkupExtension> třídy. Tato třída má jednu metodu, která má být přepsána, což je <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>. Může být také nutné definovat další konstruktory pro podporu argumentů použití rozšíření značek a přizpůsobení vlastností, které lze nastavit.
 
-Prostřednictvím <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> má rozšíření pro vlastní označení přístup k kontextu služby, který oznamuje prostředí, ve kterém je rozšíření značek skutečně vyvoláno procesorem XAML. V cestě načtení se jedná obvykle o <xref:System.Xaml.XamlObjectWriter>. V poli Uložit cestu je to obvykle <xref:System.Xaml.XamlXmlWriter>. Každou sestavu kontextu služby jako interní třídu kontextu poskytovatele služby XAML, která implementuje model poskytovatele služby. Další informace o dostupných službách a o tom, co představují, najdete v tématu [převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md).
+Prostřednictvím <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>má vlastní rozšíření značek přístup k kontextu služby, který hlásí prostředí, ve kterém je rozšíření značek skutečně vyvoláno procesorem XAML. V cestě načtení se jedná obvykle o <xref:System.Xaml.XamlObjectWriter>. V části Uložit cestu se jedná obvykle o <xref:System.Xaml.XamlXmlWriter>. Každou sestavu kontextu služby jako interní třídu kontextu poskytovatele služby XAML, která implementuje model poskytovatele služby. Další informace o dostupných službách a o tom, co představují, najdete v tématu [převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md).
 
 Třída rozšíření značek musí používat úroveň veřejného přístupu; Procesory XAML musí být vždy schopny vytvořit instanci třídy podpory rozšíření značek, aby bylo možné používat jeho služby.
 
@@ -68,9 +68,9 @@ Pokud používáte .NET Framework služby XAML nebo architektury, které se sest
 - Název typu, který bude mít přesnou shodu s tokenem použití kódu XAML. Pokud například chcete podporovat použití rozšíření `{Collate ...}`, zadejte název podpory `Collate`.
 - Název typu, který má být tokenem řetězce využití, a příponou `Extension`. Pokud například chcete podporovat použití rozšíření `{Collate ...}`, zadejte název podpory `CollateExtension`.
 
-Pořadí vyhledávání je nejprve vyhledat @no__t název třídy s příponou -0 a pak vyhledat název třídy bez přípony `Extension`.
+Pořadí vyhledávání je nejprve vyhledat název třídy `Extension`přípony a pak vyhledat název třídy bez přípony `Extension`.
   
-Z perspektivy použití značek, včetně přípony `Extension` jako součást použití, je platný. To se ale chová, jako by `Extension` je skutečně součástí názvu třídy a zapisovače objektů XAML by nemohly přeložit třídu podpory rozšíření značek pro toto použití, pokud třída podpory nemá příponu `Extension`.
+Z perspektivy použití značek, včetně přípony `Extension` jako součást použití, je platný. To se ale chová, jako by `Extension` je skutečně součástí názvu třídy a moduly pro zápis objektů XAML by nemohly přeložit třídu podpory rozšíření značek pro toto použití, pokud třída podpory neměla příponu `Extension`.
 
 ### <a name="the-parameterless-constructor"></a>Konstruktor bez parametrů
 
@@ -83,7 +83,7 @@ Pokud vaše použití rozšíření značek nemá žádné argumenty, konstrukto
 
 Pro rozšíření značek se zamýšleným použitím argumentů musí veřejné konstruktory odpovídat režimům zamýšleného použití. Jinými slovy, pokud je vaše rozšíření značek navrženo tak, aby vyžadovalo jeden poziční argument jako platné použití, měli byste podporovat veřejný konstruktor s jedním vstupním parametrem, který přebírá poziční argument.
 
-Předpokládejme například, že rozšíření značek `Collate` je určeno pro podporu pouze režimu, kde existuje jeden poziční argument, který představuje jeho režim, který je určen jako konstanta výčtu `CollationMode`. V takovém případě by měl být konstruktor s následujícím formulářem:
+Předpokládejme například, že rozšíření `Collate` Markup Extension je určeno pro podporu pouze režimu, kde existuje jeden poziční argument, který představuje jeho režim, který je určen jako `CollationMode` konstanta výčtu. V takovém případě by měl být konstruktor s následujícím formulářem:
 
 ```csharp
 public Collate(CollationMode collationMode) {...}
@@ -106,7 +106,7 @@ Argumenty jsou označovány jako poziční argumenty, protože pořadí, ve kter
 public Collate(CollationMode collationMode, object collateThis) {...}
 ```
 
-Procesor XAML očekává dva Poziční argumenty pro tuto příponu označení. Pokud došlo k použití `{Collate AlphaUp,{x:Reference circularFile}}`, token `AlphaUp` se pošle na první parametr a vyhodnotí se jako výčet `CollationMode` s názvem konstantou. Výsledek vnitřní `x:Reference` se pošle druhému parametru a vyhodnotí se jako objekt.
+Procesor XAML očekává dva Poziční argumenty pro tuto příponu označení. Pokud se `{Collate AlphaUp,{x:Reference circularFile}}`použití, token `AlphaUp` se pošle na první parametr a vyhodnotí se jako výčty `CollationMode` s názvem Constant. Výsledek vnitřní `x:Reference` se pošle druhému parametru a vyhodnotí se jako objekt.
 
 V zadaném pravidle XAML pro syntaxi a zpracování rozšíření značek je čárka oddělovač mezi argumenty, zda jsou tyto argumenty poziční argumenty nebo pojmenované argumenty.
 
@@ -114,7 +114,7 @@ V zadaném pravidle XAML pro syntaxi a zpracování rozšíření značek je č�
 
 Pokud modul pro zápis objektů XAML narazí na použití rozšíření značek pomocí pozičních argumentů a existuje více argumentů konstruktoru, které přebírají tento počet argumentů (duplicitní Arita), což není nutně chyba. Chování závisí na přizpůsobitelné nastavení kontextu schématu XAML <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A>. Pokud je <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> `true`, modul pro zápis objektů XAML by neměl vyvolat výjimku pouze z důvodu duplicitní aritou. Chování nad tímto bodem není definováno přesně. Základním předpokladem pro návrh je, že kontext schématu má k dispozici informace o typu pro konkrétní parametry a může se pokusit o explicitní přetypování, které odpovídají duplicitním kandidátům, aby bylo možné zjistit, který podpis může být nejlepší shodou. Výjimka může být stále vyvolána, pokud žádné signatury nemůžou předat testy, které jsou uloženy v rámci konkrétního kontextu schématu, který je spuštěn v modulu pro zápis objektů XAML.
 
-Ve výchozím nastavení je <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> `false` v @no__t založeném na CLR-2 pro .NET Framework služby XAML. Proto výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá výjimky, pokud dojde k použití rozšíření značek, kde je duplicitní Arita v konstruktorech back-Type.
+Ve výchozím nastavení <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> `false` v <xref:System.Xaml.XamlSchemaContext> založeném na CLR pro .NET Framework služby XAML. Proto výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá výjimky, pokud dojde k použití rozšíření značek, kde je duplicitní Arita v konstruktorech back-Type.
 
 <a name="named_arguments_for_a_custom_markup_extension"></a>   
 ## <a name="named-arguments-for-a-custom-markup-extension"></a>Pojmenované argumenty pro vlastní rozšíření značek
@@ -138,15 +138,15 @@ Pro podporu použití elementu vlastností rozšíření značek definujte veře
 
 Aby bylo možné podporovat návrhová prostředí i určité scénáře zapisovače objektů XAML, měli byste atribut typu podpora rozšíření značek zadat pomocí několika atributů CLR. Tyto atributy nahlásí zamýšlené použití rozšíření značek.
 
- <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute> hlásí informace o <xref:System.Type> pro typ objektu, který <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí. Pomocí jeho čistého podpisu <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí <xref:System.Object>. Ale různí spotřebitelé můžou chtít přesnější informace o návratovém typu. To zahrnuje:
+ <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute> nahlásí <xref:System.Type> informace pro typ objektu, který <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí. Po jeho čistém podpisu <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí <xref:System.Object>. Ale různí spotřebitelé můžou chtít přesnější informace o návratovém typu. To zahrnuje:
 
 - Návrháři a IDEs, kteří mohou poskytovat podporu typů pro použití rozšíření značek.
-- Pokročilá implementace obslužných rutin `SetMarkupExtension` na cílových třídách, které se můžou spoléhat na reflexi pro určení návratového typu rozšíření značek místo větvení na konkrétní známá implementace <xref:System.Windows.Markup.MarkupExtension> podle názvu.
+- Pokročilé implementace `SetMarkupExtension` obslužných rutin na cílových třídách, které se mohou spoléhat na reflexi pro určení návratového typu rozšíření značek místo větvení na konkrétní známé <xref:System.Windows.Markup.MarkupExtension> implementace podle názvu.
 
 <a name="serialization_of_markup_extension_usages"></a>   
 ## <a name="serialization-of-markup-extension-usages"></a>Serializace používání rozšíření značek
 
-Když modul pro zápis objektů XAML zpracuje použití rozšíření značek a volání <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>, kontext pro něj předtím používá rozšíření značek v proudu uzlu XAML, ale ne v grafu objektů. V grafu objektů se zachová jenom hodnota. Máte-li scénáře návrhu nebo jiné důvody pro zachování původního využití rozšíření značek do serializovaného výstupu, je nutné navrhnout vlastní infrastrukturu pro sledování využití rozšíření značek z datového proudu uzlu XAML zatížení. Můžete implementovat chování pro opětovné vytvoření prvků datového proudu uzlu z cesty načtení a jejich přehrání zpět do zapisovačů XAML pro serializaci v cestě pro uložení, nahrazení hodnoty na příslušné pozici datového proudu uzlu.
+Když zapisovač objektů XAML zpracuje použití rozšíření značek a volání <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>, kontext pro něj předtím používá rozšíření značek v proudu uzlu XAML, ale ne v grafu objektů. V grafu objektů se zachová jenom hodnota. Máte-li scénáře návrhu nebo jiné důvody pro zachování původního využití rozšíření značek do serializovaného výstupu, je nutné navrhnout vlastní infrastrukturu pro sledování využití rozšíření značek z datového proudu uzlu XAML zatížení. Můžete implementovat chování pro opětovné vytvoření prvků datového proudu uzlu z cesty načtení a jejich přehrání zpět do zapisovačů XAML pro serializaci v cestě pro uložení, nahrazení hodnoty na příslušné pozici datového proudu uzlu.
 
 <a name="markup_extensions_in_the_xaml_node_stream"></a>
 ## <a name="markup-extensions-in-the-xaml-node-stream"></a>Rozšíření značek v datovém proudu uzlu XAML
@@ -159,7 +159,7 @@ Pokud použití rozšíření značek používá poziční argumenty, je repreze
 
  `StartMember` (název <xref:System.Xaml.XamlMember> je `_InitializationText`)
 
- `Value` (hodnota je poziční argumenty jako řetězec, včetně používaných oddělovačů)
+ `Value` (value je poziční argumenty jako řetězec, včetně používaných oddělovačů)
 
  `EndMember`
 
@@ -167,11 +167,11 @@ Pokud použití rozšíření značek používá poziční argumenty, je repreze
 
 Použití rozšíření značek s pojmenovanými argumenty je reprezentováno jako objekt se členy příslušných názvů, každá sada má textové řetězce hodnoty.
 
-Ve skutečnosti vyvolání implementace `ProvideValue` rozšíření pro označení vyžaduje kontext schématu XAML, protože to vyžaduje mapování typů a vytvoření instance typu podpora rozšíření značek. Toto je jeden z důvodů, proč se použití rozšíření značek zachová tímto způsobem ve výchozích .NET Framework datových proudů uzlu XAML Services – součást čtecího zařízení často nemá k dispozici potřebný kontext schématu XAML.
+Ve skutečnosti vyvolání `ProvideValue` implementace rozšíření pro označení vyžaduje kontext schématu XAML, protože to vyžaduje mapování typů a vytváření rozšíření značek typ podpory. Toto je jeden z důvodů, proč se použití rozšíření značek zachová tímto způsobem ve výchozích .NET Framework datových proudů uzlu XAML Services – součást čtecího zařízení často nemá k dispozici potřebný kontext schématu XAML.
 
 Pokud pracujete s datovým proudem uzlu XAML v cestě pro uložení, není obvykle přítomna žádná reprezentace v grafu objektů, která může informovat o tom, že objekt k serializaci byl původně poskytnut použitím rozšíření značek a výsledkem `ProvideValue`. Scénáře, které musí zachovat použití rozšíření značek pro příkaz Round-Trip a zároveň zachytit jiné změny v grafu objektů, musí navrhnout své vlastní techniky pro zachování znalostí rozšíření značek od původního vstupu XAML. Například pro obnovení použití rozšíření značek může být nutné pracovat s datovým proudem uzlu v cestě pro uložení, aby bylo možné obnovit použití rozšíření značek, nebo provést nějaký typ sloučení mezi původní XAML a kulatým Trip XAML. Některé architektury implementující XAML, jako je WPF, používají mezilehlé typy (výrazy) k vyjádření případů, kde využití rozšíření značek poskytlo hodnoty.
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Markup.MarkupExtension>
 - [Převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md)

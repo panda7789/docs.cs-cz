@@ -1,18 +1,17 @@
 ---
 title: Jak gRPC přistupuje k RPC – gRPC pro vývojáře WCF
 description: Porovnání klíčových funkcí WCF a gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 3da28968f8c8bd6c4fdba7432ffc8458d8340457
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 1ebfd102217c9685c5ff5200386c642b2017e98f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846691"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968119"
 ---
 # <a name="how-grpc-approaches-rpc"></a>Přístup gRPC k RPC
 
-Windows Communication Foundation (WCF) a gRPC jsou implementace vzoru *vzdáleného volání procedur* (RPC), jehož cílem je volat služby běžící na jiném počítači nebo v jiném procesu bez problémů pracovat, jako kdyby byly jen volání metod v klientské aplikaci. I když jsou cíle WCF a gRPC stejné, podrobnosti implementace se poměrně liší.
+Windows Communication Foundation (WCF) a gRPC jsou implementace vzoru *vzdáleného volání procedur* (RPC), jehož cílem je volat služby běžící na jiném počítači nebo v jiném procesu, bez problémů pracovat, jako kdyby byly pouze voláním metody v klientské aplikaci. I když jsou cíle WCF a gRPC stejné, podrobnosti implementace se poměrně liší.
 
 Následující tabulka obsahuje informace o tom, jak se klíčové funkce WCF vztahují k gRPC a kde najdete podrobnější vysvětlení ve zbývající části knihy.
 

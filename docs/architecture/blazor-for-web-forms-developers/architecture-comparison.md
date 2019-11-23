@@ -34,7 +34,7 @@ Ovládací prvky lze sestavit pomocí značek a doručovat jako uživatelské ov
 
 Stránky mají také rozsáhlý životní cyklus událostí. Každá stránka vyvolává události pro události inicializace, načítání, PreRender a Unload, ke kterým dochází, když modul runtime ASP.NET spustí kód stránky pro každý požadavek.
 
-Ovládací prvky na stránce se obvykle účtují zpátky na stejnou stránku, která tento ovládací prvek prezentuje, a společně s nimi přenesou datovou část ze skrytého pole formuláře s názvem `ViewState`. @No__t_0 pole obsahuje informace o stavu ovládacích prvků v době, kdy byly vykresleny a prezentovány na stránce, což umožňuje modulu runtime ASP.NET porovnat a identifikovat změny v obsahu odeslaném na server.
+Ovládací prvky na stránce se obvykle účtují zpátky na stejnou stránku, která tento ovládací prvek prezentuje, a společně s nimi přenesou datovou část ze skrytého pole formuláře s názvem `ViewState`. `ViewState` pole obsahuje informace o stavu ovládacích prvků v době, kdy byly vykresleny a prezentovány na stránce, což umožňuje modulu runtime ASP.NET porovnat a identifikovat změny v obsahu odeslaném na server.
 
 ## <a name="blazor"></a>Blazor
 
@@ -52,7 +52,7 @@ Poté, co komponenta zpracuje událost, Blazor vykreslí komponentu a udržuje p
 
 ![Interakce modelu DOM Blazor](./media/architecture-comparison/blazor-dom-interaction.png)
 
-Komponenty mohou také ručně označovat, že by měly být vykresleny, pokud se jejich stav mění mimo normální událost uživatelského rozhraní. Blazor používá `SynchronizationContext` k vykonání jednoho logického vlákna provádění. Metody životního cyklu komponenty a všechna zpětná volání událostí, která jsou aktivována nástrojem Blazor, jsou spouštěna v tomto `SynchronizationContext`.
+Komponenty mohou také ručně označovat, že by měly být vykresleny, pokud se jejich stav mění mimo normální událost uživatelského rozhraní. Blazor používá `SynchronizationContext` k vykonání jednoho logického vlákna provádění. V tomto `SynchronizationContext`jsou spouštěny metody životního cyklu komponenty a všechna zpětná volání událostí, která jsou aktivována nástrojem Blazor.
 
 >[!div class="step-by-step"]
 >[Předchozí](introduction.md)

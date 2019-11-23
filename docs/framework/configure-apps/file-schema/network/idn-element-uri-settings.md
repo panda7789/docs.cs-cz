@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71698161"
 ---
-# <a name="idn-element-uri-settings"></a>@no__t – element > 0idn (nastavení URI)
+# <a name="idn-element-uri-settings"></a>\<element IDN > (nastavení URI)
 
 Určuje, jestli se má pro název domény použít analýza v mezinárodním názvu domény (IDN).
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<idn >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<idn >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

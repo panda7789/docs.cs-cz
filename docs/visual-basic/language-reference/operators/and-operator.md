@@ -1,5 +1,5 @@
 ---
-title: And – operátor (Visual Basic)
+title: And – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - vb.And
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - bitwise comparison [Visual Basic]
 ms.assetid: 2ea711f3-439a-4c7c-9e3a-1ffe3b0d6046
-ms.openlocfilehash: bd6ebbf5f53a7cf187b5d8ce7630080d44d46df2
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 78a65843a449bd15d5615710e1685f40d94c37f7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591619"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350258"
 ---
 # <a name="and-operator-visual-basic"></a>And – operátor (Visual Basic)
-Provede logickou kombinaci dvou `Boolean` výrazů nebo bitové spojení dvou numerických výrazů.  
+Performs a logical conjunction on two `Boolean` expressions, or a bitwise conjunction on two numeric expressions.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,18 +31,18 @@ result = expression1 And expression2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Povinný parametr. Libovolný `Boolean` nebo číselný výraz. Pro logické porovnání `result` je logické spojení dvou hodnot `Boolean`. U bitových operací je `result` číselná hodnota představující bitovou kombinaci dvou číselných bitových vzorů.  
+ Požadováno. Any `Boolean` or numeric expression. For Boolean comparison, `result` is the logical conjunction of two `Boolean` values. For bitwise operations, `result` is a numeric value representing the bitwise conjunction of two numeric bit patterns.  
   
  `expression1`  
- Povinný parametr. Libovolný `Boolean` nebo číselný výraz.  
+ Požadováno. Any `Boolean` or numeric expression.  
   
  `expression2`  
- Povinný parametr. Libovolný `Boolean` nebo číselný výraz.  
+ Požadováno. Any `Boolean` or numeric expression.  
   
 ## <a name="remarks"></a>Poznámky  
- V případě logického porovnání je `result` `True`, pokud je hodnota `expression1` a `expression2` vyhodnocena jako `True`. Následující tabulka ukazuje, jak je určena `result`.  
+ For Boolean comparison, `result` is `True` if and only if both `expression1` and `expression2` evaluate to `True`. The following table illustrates how `result` is determined.  
   
-|Pokud `expression1` je|A `expression2` je|Hodnota `result` je|  
+|If `expression1` is|And `expression2` is|The value of `result` is|  
 |-------------------------|--------------------------|------------------------------|  
 |`True`|`True`|`True`|  
 |`True`|`False`|`False`|  
@@ -50,11 +50,11 @@ result = expression1 And expression2
 |`False`|`False`|`False`|  
   
 > [!NOTE]
-> V logickém porovnání operátor `And` vždy vyhodnocuje oba výrazy, které by mohly zahrnovat volání procedur. [Operátor AndAlso –](../../../visual-basic/language-reference/operators/andalso-operator.md) provádí *krátkodobé okruhy*, což znamená, že pokud `expression1` je `False`, pak `expression2` se nevyhodnotí.  
+> In a Boolean comparison, the `And` operator always evaluates both expressions, which could include making procedure calls. The [AndAlso Operator](../../../visual-basic/language-reference/operators/andalso-operator.md) performs *short-circuiting*, which means that if `expression1` is `False`, then `expression2` is not evaluated.  
   
- Při použití na číselné hodnoty provede operátor `And` bitové porovnání identicky umístěných bitů ve dvou numerických výrazech a nastaví odpovídající bit v `result` podle následující tabulky.  
+ When applied to numeric values, the `And` operator performs a bitwise comparison of identically positioned bits in two numeric expressions and sets the corresponding bit in `result` according to the following table.  
   
-|If bit v `expression1` je|A bit v `expression2` je|Bit v `result` je|  
+|If bit in `expression1` is|And bit in `expression2` is|The bit in `result` is|  
 |--------------------------------|---------------------------------|----------------------------|  
 |1|1|1|  
 |1|0|0|  
@@ -62,34 +62,34 @@ result = expression1 And expression2
 |0|0|0|  
   
 > [!NOTE]
-> Vzhledem k tomu, že logické a bitové operátory mají nižší prioritu než jiné aritmetické a relační operátory, měly by být všechny bitové operace uzavřeny v závorkách, aby se zajistily přesné výsledky.  
+> Since the logical and bitwise operators have a lower precedence than other arithmetic and relational operators, any bitwise operations should be enclosed in parentheses to ensure accurate results.  
   
 ## <a name="data-types"></a>Datové typy  
- Pokud se operandy skládají z jednoho `Boolean` a jednoho číselného výrazu, Visual Basic převede výraz `Boolean` na číselnou hodnotu (– 1 pro `True` a 0 pro `False`) a provede bitovou operaci.  
+ If the operands consist of one `Boolean` expression and one numeric expression, Visual Basic converts the `Boolean` expression to a numeric value (–1 for `True` and 0 for `False`) and performs a bitwise operation.  
   
- Pro porovnání typu Boolean je datový typ výsledku `Boolean`. Pro bitové porovnání je datový typ výsledku číselný typ, který je vhodný pro datové typy `expression1` a `expression2`. Podívejte se na tabulku "relačních a bitových porovnání" v [datových typech výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ For a Boolean comparison, the data type of the result is `Boolean`. For a bitwise comparison, the result data type is a numeric type appropriate for the data types of `expression1` and `expression2`. See the "Relational and Bitwise Comparisons" table in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
 > [!NOTE]
-> Operátor `And` lze přetížit, což znamená, že třída nebo struktura může předefinovat *chování, pokud*operand má typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> The `And` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `And` k provedení logického spojení se dvěma výrazy. Výsledkem je hodnota @no__t 0, která představuje, zda jsou oba výrazy `True`.  
+ The following example uses the `And` operator to perform a logical conjunction on two expressions. The result is a `Boolean` value that represents whether both of the expressions are `True`.  
   
  [!code-vb[VbVbalrOperators#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#22)]  
   
- Předchozí příklad vytvoří výsledky `True` a `False` v uvedeném pořadí.  
+ The preceding example produces results of `True` and `False`, respectively.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `And` k provedení logického spojení na jednotlivých bitech dvou číselných výrazů. Bit ve vzorci výsledků je nastaven, pokud jsou odpovídající bity v operandech nastaveny na hodnotu 1.  
+ The following example uses the `And` operator to perform logical conjunction on the individual bits of two numeric expressions. The bit in the result pattern is set if the corresponding bits in the operands are both set to 1.  
   
  [!code-vb[VbVbalrOperators#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#23)]  
   
- Předchozí příklad vytvoří výsledky 8, 2 a 0 v uvedeném pořadí.  
+ The preceding example produces results of 8, 2, and 0, respectively.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Logical/Bitwise Operators (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátor AndAlso](../../../visual-basic/language-reference/operators/andalso-operator.md)
-- [Logické a bitové operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

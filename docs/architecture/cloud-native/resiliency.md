@@ -1,5 +1,5 @@
 ---
-title: Odolnost nativního cloudu
+title: Odolnost nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Nativní odolnost cloudu
 ms.date: 06/30/2019
 ms.openlocfilehash: 680542abc5d8c43c577321d5ae834f0a13290da3
@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71184839"
 ---
-# <a name="cloud-native-resiliency"></a>Odolnost nativního cloudu
+# <a name="cloud-native-resiliency"></a>Odolnost nativní pro cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -26,7 +26,7 @@ Na předchozím obrázku si všimněte, že každý klient, mikroslužba a cloud
 Co by to stalo špatné?
 
 - Neočekávaná [latence sítě](https://www.techopedia.com/definition/8553/network-latency).
-- [Přechodné chyby](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults) (dočasné chyby připojení k síti).
+- [Přechodné](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults) chyby (dočasné chyby připojení k síti).
 - Blokuje dlouhodobě běžící synchronní operace.
 - Hostitelský proces, u kterého došlo k chybě a probíhá restartování nebo přesunutí.
 - Přetížená mikroslužba, která nemůže reagovat po krátkou dobu.

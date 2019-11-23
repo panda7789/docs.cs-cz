@@ -1,14 +1,13 @@
 ---
 title: Zprávy Protobuf – gRPC pro vývojáře WCF
 description: Přečtěte si, jak jsou Protobuf zprávy definovány v IDL a C#vygenerované v.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 9943478698acfbb54b3e1dd0e6a856d11b9266c3
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 4d543fe88c21999cd820a0bb98073d58a229913a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846338"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967438"
 ---
 # <a name="protobuf-messages"></a>Zprávy ve formátu protobuf
 

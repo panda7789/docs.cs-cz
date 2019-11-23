@@ -51,7 +51,7 @@ Pokud pouze jedna položka z tohoto seznamu existuje pouze pro jeden typ nebo je
 > [!NOTE]
 > Modul runtime ve skutečnosti nenačítá sestavení, dokud nejsou spuštěny finalizační metody pro všechny položky v seznamu.
 
-Pro účely sledování životního cyklu se konstruovaný obecný typ, například `List<int>` (in C#) nebo `List(Of Integer)` (v Visual Basic), který je vytvořen a použit při generování sestavení kolekční, je považován za definovaný buď v sestavení, které obsahuje definice obecného typu nebo v sestavení, které obsahuje definici jednoho z jeho typů argumentů. Přesné sestavení, které je použito, je podrobné informace o implementaci a může se změnit.
+Pro účely sledování životního cyklu se konstruovaný obecný typ, například `List<int>` (in C#) nebo `List(Of Integer)` (v Visual Basic), který je vytvořen a použit při generování sestavení kolekční, je považován za definovaný buď v sestavení, které obsahuje definici obecného typu nebo v sestavení, které obsahuje definici jednoho z jeho typů argumentů. Přesné sestavení, které je použito, je podrobné informace o implementaci a může se změnit.
  
 ## <a name="restrictions-on-collectible-assemblies"></a>Omezení pro kolekční sestavení
 

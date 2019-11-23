@@ -1,14 +1,13 @@
 ---
 title: Přihlašovací údaje kanálu – gRPC pro vývojáře WCF
 description: Postup implementace a použití přihlašovacích údajů gRPC kanálu v ASP.NET Core 3,0.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 61141dc4143f36f9ac511c3369c3fde668c9d703
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b424db49337a2dc6e3d0245d36349e3f408cdf6c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846710"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967951"
 ---
 # <a name="channel-credentials"></a>Přihlašovací údaje kanálu
 
@@ -49,7 +48,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ```
 
-Nastavení `ClientCertificateMode.RequireCertificate` způsobí, že Kestrel okamžitě odmítne všechny žádosti o připojení, které neposkytují klientský certifikát, ale certifikát neověří. Přidání zpětného volání `ClientCertificateValidation` umožňuje Kestrel ověřit klientský certifikát (v tomto případě zajistí, že byl vydán stejnou *certifikační autoritou* jako certifikát serveru) v okamžiku, kdy se vytvořilo připojení, před kanálem ASP.NET Core. se zapojí.
+Nastavení `ClientCertificateMode.RequireCertificate` způsobí, že Kestrel okamžitě odmítne všechny žádosti o připojení, které neposkytují klientský certifikát, ale certifikát neověří. Přidání zpětného volání `ClientCertificateValidation` umožňuje Kestrel ověřit certifikát klienta (v tomto případě zajistěte, aby byl vydán stejnou *certifikační autoritou* jako certifikát serveru) v okamžiku, kdy se připojení provedlo, před zapojením kanálu ASP.NET Core.
 
 ### <a name="adding-aspnet-core-certificate-authentication"></a>Přidání ověřování certifikátů ASP.NET Core
 

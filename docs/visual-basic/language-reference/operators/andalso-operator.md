@@ -13,7 +13,7 @@ helpviewer_keywords:
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
 ms.openlocfilehash: a52f598c8a7c7a79b0f2436f1add7b3eb5d5261b
 ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71835230"
@@ -40,28 +40,28 @@ result = expression1 AndAlso expression2
   
  Pokud jsou oba výrazy vyhodnoceny jako `True`, `result` je `True`. Následující tabulka ukazuje, jak je určena `result`.  
   
-|Pokud `expression1` je|A `expression2` je|Hodnota `result` je|  
+|Pokud je `expression1`|A `expression2` je|Hodnota `result` je|  
 |---|---|---|  
 |`True`|`True`|`True`|  
 |`True`|`False`|`False`|  
 |`False`|(nehodnoceno)|`False`|  
   
 ## <a name="data-types"></a>Datové typy  
- Operátor `AndAlso` je definován pouze pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic převede každý operand podle potřeby, aby `Boolean` před vyhodnocením výrazu. Pokud přiřadíte výsledek číselnému typu, Visual Basic jej převede z `Boolean` na tento typ tak, aby `False` se staly `0` a `True` se `-1`.
+ Operátor `AndAlso` je definován pouze pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic každou operand podle potřeby převede, aby `Boolean` před vyhodnocením výrazu. Pokud tento výsledek přiřadíte číselnému typu, Visual Basic ho převede z `Boolean` na tento typ, takže se `False` změní na `0` a `True` se změní na `-1`.
 Další informace naleznete v tématu [převody logických typů](../data-types/boolean-data-type.md#type-conversions).
   
 ## <a name="overloading"></a>Přetížení  
- [Operátor and](../../../visual-basic/language-reference/operators/and-operator.md) a operátor s hodnotou [false](../../../visual-basic/language-reference/operators/isfalse-operator.md) mohou být *přetíženy*, což znamená, že třída nebo struktura může předefinovat jejich chování, je-li operand typu této třídy nebo struktury. Přetížení operátorů `And` a `IsFalse` má vliv na chování operátoru `AndAlso`. Pokud váš kód používá `AndAlso` u třídy nebo struktury, která přetěžuje `And` a `IsFalse`, ujistěte se, že rozumíte jejich předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor and](../../../visual-basic/language-reference/operators/and-operator.md) a operátor s hodnotou [false](../../../visual-basic/language-reference/operators/isfalse-operator.md) mohou být *přetíženy*, což znamená, že třída nebo struktura může předefinovat jejich chování, je-li operand typu této třídy nebo struktury. Přetížení operátorů `And` a `IsFalse` má vliv na chování operátoru `AndAlso`. Pokud váš kód používá `AndAlso` ve třídě nebo struktuře, která přetěžuje `And` a `IsFalse`, ujistěte se, že rozumíte jejich předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `AndAlso` k provedení logického spojení se dvěma výrazy. Výsledkem je hodnota @no__t 0, která představuje, zda je úplný výraz JOIN pravdivý. Pokud je první výraz `False`, druhý se nevyhodnotí.  
+ Následující příklad používá operátor `AndAlso` k provedení logického spojení se dvěma výrazy. Výsledkem je `Boolean` hodnota, která představuje, zda je úplný výraz JOIN pravdivý. Pokud je první výraz `False`, druhý není vyhodnocen.  
   
  [!code-vb[VbVbalrOperators#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#24)]  
   
- Předchozí příklad vytvoří výsledky `True`, `False` a `False` v uvedeném pořadí. Při výpočtu `secondCheck` není druhý výraz vyhodnocen, protože první je již `False`. Nicméně druhý výraz je vyhodnocen při výpočtu `thirdCheck`.  
+ Předchozí příklad vytvoří výsledky `True`, `False`a `False`v uvedeném pořadí. Při výpočtu `secondCheck`není druhý výraz vyhodnocen, protože první je již `False`. Nicméně druhý výraz je vyhodnocen při výpočtu `thirdCheck`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje postup @no__t 0, který vyhledá danou hodnotu mezi prvky pole. Pokud je pole prázdné nebo pokud byla překročena délka pole, příkaz `While` netestuje prvek pole proti hledané hodnotě.  
+ Následující příklad ukazuje `Function` postup, který vyhledá danou hodnotu mezi prvky pole. Pokud je pole prázdné nebo pokud byla překročena délka pole, příkaz `While` netestuje prvek pole proti hledané hodnotě.  
   
  [!code-vb[VbVbalrOperators#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#25)]  
   

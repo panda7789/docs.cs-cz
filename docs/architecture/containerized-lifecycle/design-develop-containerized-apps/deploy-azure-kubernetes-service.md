@@ -26,7 +26,7 @@ Předpoklady pro použití AKS jsou:
 >
 > Azure-CLI: <https://docs.microsoft.com/cli/azure/index>
 >
-> Subsystém Windows pro Linux:<https://docs.microsoft.com/windows/wsl/about>
+> Subsystém Windows pro Linux: <https://docs.microsoft.com/windows/wsl/about>
 
 ## <a name="create-the-aks-environment-in-azure"></a>Vytvoření prostředí AKS v Azure
 
@@ -56,7 +56,7 @@ Cluster AKS:
 
 **Obrázek 4-18**. AKS zobrazení z Azure.
 
-Můžete také zobrazit uzel vytvořený pomocí `Azure-CLI` a. `Kubectl`
+Můžete také zobrazit uzel vytvořený pomocí `Azure-CLI` a `Kubectl`.
 
 Nejdřív načítají se přihlašovací údaje:
 
@@ -64,9 +64,9 @@ Nejdřív načítají se přihlašovací údaje:
 az aks get-credentials --resource-group MSSampleK8ClusterRG --name MSSampleK8Cluster
 ```
 
-![Výstup z konzoly z výše uvedeného příkazu: Sloučí se MsSampleK8Cluster jako aktuální kontext v/root/.Kube/config.](media/get-credentials-command-result.png)
+![Výstup z konzoly z výše uvedeného příkazu: sloučený MsSampleK8Cluster jako aktuální kontext v/root/.Kube/config.](media/get-credentials-command-result.png)
 
-**Obrázek 4-19**. `aks get-credentials`výsledek příkazu
+**Obrázek 4-19**. výsledek `aks get-credentials` příkazu
 
 A pak načítají uzly z Kubectl:
 
@@ -74,9 +74,9 @@ A pak načítají uzly z Kubectl:
 kubectl get nodes
 ```
 
-![Výstup z konzoly z výše uvedeného příkazu: Seznam uzlů se stavem, stáří (čas spuštění) a verzí](media/kubectl-get-nodes-command-result.png)
+![Výstup na konzole z výše uvedeného příkazu: seznam uzlů se stavem, stáří (čas spuštění) a verze](media/kubectl-get-nodes-command-result.png)
 
-**Obrázek 4-20**. `kubectl get nodes`výsledek příkazu
+**Obrázek 4-20**. výsledek `kubectl get nodes` příkazu
 
 >[!div class="step-by-step"]
 >[Předchozí](orchestrate-high-scalability-availability.md)

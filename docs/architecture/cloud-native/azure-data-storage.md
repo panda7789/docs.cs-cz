@@ -35,7 +35,7 @@ Obrázek 5-12 ukazuje možnosti nasazení Azure SQL Database.
 
 Všimněte si alternativ na předchozím obrázku při nasazení SQL Database:
 
-- [Jedna databáze](https://docs.microsoft.com/azure/sql-database/sql-database-single-database)  with vlastní sadu prostředků spravovaných [SQL Database serverem](https://docs.microsoft.com/azure/sql-database/sql-database-servers). Jedna databáze je podobná databázi s [omezením](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases)  in místní nasazení SQL Server.
+- [Jedna databáze](https://docs.microsoft.com/azure/sql-database/sql-database-single-database) s vlastní sadou prostředků spravovaných [SQL Database serverem](https://docs.microsoft.com/azure/sql-database/sql-database-servers). Jedna databáze je podobná databázi s [omezením](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) v místním nasazení SQL Server.
 
 - [Elastický fond](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) , ve kterém kolekce databází SQL sdílí jeden SQL Database Server za stanovenou cenu. Izolované databáze je možné do elastického fondu přesunout a z něj, a to podle potřeby pro optimalizaci cenového výkonu pro skupinu databází.
 
@@ -53,7 +53,7 @@ Kromě tradičního Microsoft SQL Serverového zásobníku nabízí Azure taky s
 
 ## <a name="azure-database-for-mysql"></a>Azure Database for MySQL
 
-[MySQL](https://en.wikipedia.org/wiki/MySQL)  is [Open Source](https://en.wikipedia.org/wiki/Open-source_software) [relační databázi](https://en.wikipedia.org/wiki/Relational_database_management_system). Je součástí [softwarového zásobníku lamp](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) a používá mnoho velkých organizací, včetně Facebooku, Twitteru a YouTube. Edice Community je dostupná zdarma a edice Enterprise vyžaduje zakoupení licence. Produkt byl původně vytvořen v 1995, společnost Sun Microsystems v 2008, kterou získal Oracle v 2010.
+[MySQL](https://en.wikipedia.org/wiki/MySQL) je [Open Source](https://en.wikipedia.org/wiki/Open-source_software) [relační databáze](https://en.wikipedia.org/wiki/Relational_database_management_system). Je součástí [softwarového zásobníku lamp](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) a používá mnoho velkých organizací, včetně Facebooku, Twitteru a YouTube. Edice Community je dostupná zdarma a edice Enterprise vyžaduje zakoupení licence. Produkt byl původně vytvořen v 1995, společnost Sun Microsystems v 2008, kterou získal Oracle v 2010.
 
 [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/) je plně spravovaná služba relačních databází připravená pro podnikové prostředí založená na Open Source stroji serveru MySQL. Implementace MySQL Community Edition zahrnuje tyto možnosti PaaS bez dalších poplatků:
 
@@ -101,7 +101,7 @@ MariaDB má silný následující a používá se v mnoha velkých podnicích. I
 
 [PostgreSQL](https://www.postgresql.org/) je jiná oblíbená a open source relační databáze s více než 30 lety aktivního vývoje. Je to univerzální systém pro správu relačních databází a objektů. Jeho licence se považují za "svobodně" a produkt je zdarma používat, upravovat a distribuovat v jakékoli podobě. Řada velkých podniků, včetně Apple, Red Hat a Fujitsu, vytvořila produkty s využitím PostgreSQL.
 
-[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/) je plně spravovaná služba relačních databází založená na Open Source databázovém stroji Postgres. Může zpracovávat klíčové úlohy s předvídatelným výkonem, zabezpečením, vysokou dostupností a dynamickou škálovatelností. Podporuje několik Open Source platforem a jazyků, včetně C++jazyků Java, Python, Node, C \# a php. Umožňuje [migraci](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) databází PostgreSQL prostřednictvím rozhraní příkazového řádku nebo [služby Azure Data Migration Service](https://azure.microsoft.com/services/database-migration/).
+[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/) je plně spravovaná služba relačních databází založená na Open Source databázovém stroji Postgres. Může zpracovávat klíčové úlohy s předvídatelným výkonem, zabezpečením, vysokou dostupností a dynamickou škálovatelností. Podporuje několik Open Source platforem a jazyků, včetně C++jazyků Java, Python, Node, C\#a php. Umožňuje [migraci](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) databází PostgreSQL prostřednictvím rozhraní příkazového řádku nebo [služby Azure Data Migration Service](https://azure.microsoft.com/services/database-migration/).
 
 Služba obsahuje [integrované inteligentní](https://docs.microsoft.com/azure/postgresql/concepts-monitoring) funkce, které vycházejí z vašich jedinečných databázových vzorů a nabízí přizpůsobená doporučení a přehledy, které vám pomůžou maximalizovat výkon databáze PostgreSQL. [Rozšířená ochrana před internetovými útoky](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-threat-protection) monitoruje vaši databázi po hodinách a detekuje potenciální škodlivé aktivity, které vás upozorňují na detekci, abyste se mohli hned zasáhnout.
 
@@ -109,7 +109,7 @@ Azure Database for PostgreSQL je k dispozici jako dvě možnosti nasazení: jede
 
 - Možnost nasazení [jediného serveru](https://docs.microsoft.com/azure/postgresql/concepts-servers) je centrálním bodem správy pro více databází. Je to stejný modul PostgreSQL serveru, který je k dispozici pro místní nasazení. Díky tomu můžete vytvořit izolovanou databázi na jeden server, abyste mohli využívat všechny prostředky, nebo vytvořit více databází pro sdílení prostředků. Ceny jsou strukturované podle serveru založeného na jádrech a úložišti.
 
-- [Možnost Citus ()](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/) je poháněná [Citus daty](https://www.citusdata.com/)  technology. Díky horizontálnímu škálování jedné databáze na stovkách uzlů nabízí vysoce výkonné škálování pro zajištění podporuje jiho rychlého výkonu a škálování. Tato možnost umožňuje modulu přizpůsobovat více dat v paměti, paralelizovat dotazy napříč stovkami uzlů a rychleji indexovat data. Funkce škálování na úrovni Standard je kompatibilní s nejnovějšími inovacemi, verzemi a nástroji pro PostgreSQL, takže můžete využívat své stávající PostgreSQLé znalosti.
+- [Možnost Citus ()](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/) využívá technologii [Citus data](https://www.citusdata.com/) . Díky horizontálnímu škálování jedné databáze na stovkách uzlů nabízí vysoce výkonné škálování pro zajištění podporuje jiho rychlého výkonu a škálování. Tato možnost umožňuje modulu přizpůsobovat více dat v paměti, paralelizovat dotazy napříč stovkami uzlů a rychleji indexovat data. Funkce škálování na úrovni Standard je kompatibilní s nejnovějšími inovacemi, verzemi a nástroji pro PostgreSQL, takže můžete využívat své stávající PostgreSQLé znalosti.
 
 ## <a name="cosmos-db"></a>Cosmos DB
 

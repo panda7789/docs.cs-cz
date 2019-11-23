@@ -102,7 +102,7 @@ Pokud máte nějakou jinou databázi (například IBM DB2) a zaberete přístup 
 
 Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service, najdete v článku [rychlejší přístup do cloudu pomocí Azure SQL Database spravované instance a Azure Database Migration Service](https://channel9.msdn.com/Events/Build/2017/P4008).
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Volba cloudového SQL Serveru: Azure SQL Database (PaaS) nebo SQL Server na virtuálním počítači Azure (IaaS)**
 
@@ -112,7 +112,7 @@ Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service
 
     <https://channel9.msdn.com/Events/Build/2017/P4008>
 
-- **Migrace databáze SQL Server do SQL Database v cloudu**
+- **Migrace databáze SQL serveru do služby SQL Database v cloudu**
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate>
 

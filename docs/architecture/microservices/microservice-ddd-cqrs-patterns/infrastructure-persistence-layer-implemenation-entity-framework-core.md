@@ -21,7 +21,7 @@ Jádro Entity Framework (EF) je odlehčená, rozšiřitelná a více platforem o
 
 Vzhledem k tomu, že Úvod do EF Core je již k dispozici v dokumentaci společnosti Microsoft, jednoduše poskytujeme odkazy na tyto informace.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Entity Framework Core** \
   [https://docs.microsoft.com/ef/core/](/ef/core/)
@@ -230,7 +230,7 @@ builder.RegisterType<OrderRepository>()
 
 Všimněte si, že použití životnosti singleton pro úložiště může způsobit vážné problémy s souběžnou dostupností, když je DbContext nastavené na rozsah (InstancePerLifetimeScope) životního cyklu (výchozí doba pro DBContext).
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Implementace vzorového úložiště a pracovní jednotky v aplikaci ASP.NET MVC** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
@@ -447,7 +447,7 @@ Kromě zapouzdření logiky filtrování může specifikace určit tvar dat, kte
 
 I když nedoporučujeme vracet IQueryable z úložiště, je zcela dobré je v úložišti použít k sestavení sady výsledků. Tento přístup můžete zobrazit v metodě seznamu výše, která používá mezilehlé výrazy IQueryable k sestavení seznamu zahrnutí dotazu před provedením dotazu s kritérii specifikace na posledním řádku.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Mapování tabulky** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)

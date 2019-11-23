@@ -33,11 +33,11 @@ Každé z těchto mikroslužeb kompozice uživatelského rozhraní se podobá ma
 
 Přístup k složenému uživatelskému rozhraní, který ovládá mikroslužby, může být náročnější nebo méně, a to v závislosti na tom, jaké technologie uživatelského rozhraní používáte. Nebudete například používat stejné techniky pro vytváření tradičních webových aplikací, které používáte pro vytváření zabezpečeného hesla nebo pro nativní mobilní aplikace (jako při vývoji aplikací pro Xamarin, které mohou být pro tento přístup náročnější).
 
-Ukázková aplikace [eShopOnContainers](https://aka.ms/MicroservicesArchitecture) používá přístup k uživatelskému rozhraní monolitické z několika důvodů. Nejprve se jedná o Úvod do mikroslužeb a kontejnerů. Složené uživatelské rozhraní je pokročilejší, ale také při navrhování a vývoji uživatelského rozhraní vyžaduje další složitost. Druhý eShopOnContainers také poskytuje nativní mobilní aplikaci založenou na Xamarin, která by byla složitější na straně klienta C @ no__t-0.
+Ukázková aplikace [eShopOnContainers](https://aka.ms/MicroservicesArchitecture) používá přístup k uživatelskému rozhraní monolitické z několika důvodů. Nejprve se jedná o Úvod do mikroslužeb a kontejnerů. Složené uživatelské rozhraní je pokročilejší, ale také při navrhování a vývoji uživatelského rozhraní vyžaduje další složitost. Druhý eShopOnContainers také poskytuje nativní mobilní aplikaci založenou na Xamarin, která by byla složitější na straně klienta C\#.
 
 Doporučujeme vám ale použít následující odkazy na Další informace o složeném uživatelském rozhraní založeném na mikroslužbách.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Mikroslužby na front-endy (blog Novák Fowlera)**  
   <https://martinfowler.com/articles/micro-frontends.html>

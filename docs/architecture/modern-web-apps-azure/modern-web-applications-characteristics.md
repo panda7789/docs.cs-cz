@@ -14,7 +14,7 @@ ms.locfileid: "70374090"
 # <a name="characteristics-of-modern-web-applications"></a>Charakteristiky moderních webových aplikací
 
 > "… s řádným návrhem se funkce dodávají bezlevné. Tento přístup je namáhavý, ale nadále je úspěšný. "  
-> _\-Dennis Ritchie_
+> _\- Dennis Ritchie_
 
 Moderní webové aplikace mají větší nároky na uživatele a větší požadavky než kdykoli dřív. Očekává se, že dnešní webové aplikace budou k dispozici 24/7 odkudkoli na světě a dají se použít prakticky z jakéhokoli zařízení nebo velikosti obrazovky. Webové aplikace musí být zabezpečené, flexibilní a škálovatelné, aby splnily špičky na vyžádání. Ve složitějších scénářích by se měly zpracovávat rozsáhlé uživatelské prostředí založené na klientovi pomocí JavaScriptu a efektivně komunikovat prostřednictvím webových rozhraní API.
 
@@ -77,5 +77,5 @@ Kromě ASP.NET Core bude tradiční ASP.NET 4. x nadále spolehlivou a spolehliv
 >   <https://docs.microsoft.com/aspnet/core/testing/>
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](choose-between-traditional-web-and-single-page-apps.md)
+>[Předchozí](index.md)
+>[Další](choose-between-traditional-web-and-single-page-apps.md)

@@ -49,7 +49,7 @@ Platforma a nástroje Microsoftu pro kontejnerové aplikace Docker, jak je defin
 
     I v případě, že jste obeznámeni s příkazy pro Linux, můžete spravovat aplikace typu kontejner pomocí Microsoft Windows a PowerShellu s příkazovým řádkem pro subsystém Linux a produkty (Docker, Kubernetes...), které jsou spuštěné v této schopnosti subsystému Linux. Další informace o těchto nástrojích najdete v části subsystém Linux pomocí svého oblíbeného operačního systému Microsoft Windows dále v této příručce.
 
-  - **Open-Source nástroje** protože AKS zpřístupňuje standardní koncové body rozhraní API pro modul Orchestration, nejoblíbenější nástroje jsou kompatibilní s AKS a ve většině případů dostanou fungovat, včetně nástrojů pro vizualizaci, monitorování a nástrojů příkazového řádku. a dokonce i budoucí nástroje, jakmile budou k dispozici.
+  - **Open Source nástroje** protože AKS zpřístupňuje standardní koncové body rozhraní API pro modul Orchestration, nejoblíbenější nástroje jsou kompatibilní s AKS a ve většině případů budou fungovat i v případě, že jsou k dispozici, včetně nástrojů pro vizualizaci, monitorování, nástrojů příkazového řádku a dokonce i budoucích nástrojů.
 
   - **Azure monitor** Je řešení Azure pro monitorování každého úhlu produkčního prostředí. Aplikace v produkčním prostředí můžete monitorovat pouhým nastavením své sady SDK na vaše služby, abyste mohli z aplikací získat data protokolu generovaná systémem.
 

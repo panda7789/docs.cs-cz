@@ -29,7 +29,7 @@ Vysvětluje, kdy a jak vybrat písma pro zobrazení mezinárodních znaků v mod
 Vysvětluje, jak vytvořit aplikace založené na systému Windows, které podporují obousměrné jazyky (zprava doleva).
 
 [Zobrazení asijských znaků s vlastností ImeMode](display-of-asian-characters-with-the-imemode-property.md)  
-Zavádí vlastnost @no__t 0, která slouží k řízení typu vstupu, který formulář nebo ovládací prvek přijímá.
+Zavádí vlastnost `ImeMode`, která se používá k řízení typu vstupu, který přijímá formulář nebo ovládací prvek Windows.
 
 ## <a name="related-sections"></a>Související oddíly
 

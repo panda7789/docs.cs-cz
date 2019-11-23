@@ -40,7 +40,7 @@ Směr závislosti v rámci aplikace by měl být ve směru abstrakce, nikoli v p
 
 **Obrázek 4-1.** Graf přímého závislosti
 
-Použití principu pro inverze závislostí umožňuje volat metody na abstrakci, kterou B implementuje, aby bylo možné volat B za běhu, ale pro *B bude* záviset na rozhraní kontrolovaném v době kompilace. závislost v době kompilace). V době běhu zůstává tok spuštění programu nezměněný, ale zavedení rozhraní znamená, že je možné snadno zapojit různé implementace těchto rozhraní.
+Použití principu pro inverze závislostí umožňuje volat metody na abstrakci, kterou B implementuje, aby bylo možné volat B za běhu, ale v případě B na rozhraní, které je řízeno v době kompilace (tedy *Invertuje* typickou závislost v době kompilace). V době běhu zůstává tok spuštění programu nezměněný, ale zavedení rozhraní znamená, že je možné snadno zapojit různé implementace těchto rozhraní.
 
 ![Graf obrácené závislosti](./media/image4-2.png)
 
@@ -99,7 +99,7 @@ Požadavek, aby třídy měly některé z výše uvedených funkcí nebo chován
 
 Minimálně jednotlivé webové aplikace by měly být zaměřené na vlastní ohraničený kontext s vlastním úložištěm trvalého využití pro svůj obchodní model místo sdílení databáze s jinými aplikacemi. Komunikace mezi ohraničenými kontexty probíhá prostřednictvím programových rozhraní, nikoli přes sdílenou databázi, která umožňuje, aby obchodní logika a události byly provedeny v reakci na změny, které probíhají. Ohraničené kontexty jsou úzce namapovány na mikroslužby, které jsou také ideálním způsobem implementovány jako vlastní jednotlivé ohraničené kontexty.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - [Vzory návrhu JAVA: principy](https://java-design-patterns.com/principles/)
 - [Ohraničený kontext](https://martinfowler.com/bliki/BoundedContext.html)

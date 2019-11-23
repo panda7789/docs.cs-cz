@@ -25,7 +25,7 @@ Určuje pořadí řazení používané u objektů vrácených v příkazu SELECT
 ]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `order_by_expression`  
  Libovolný platný výraz dotazu určující vlastnost, podle které se má řadit. Lze zadat vícenásobné výrazy řazení. Sekvence výrazů řazení v klauzuli ORDER BY definuje organizaci seřazené sady výsledků.  
   
@@ -35,14 +35,14 @@ Určuje pořadí řazení používané u objektů vrácených v příkazu SELECT
  ASC  
  Určuje, že hodnoty v zadané vlastnosti by měly být seřazeny vzestupně, od nejnižší hodnoty po nejvyšší hodnotu. Toto nastavení je výchozí.  
   
- ŘETĚZEC  
+ DESC  
  Určuje, že hodnoty v zadané vlastnosti by měly být seřazené v sestupném pořadí, od nejvyšší hodnoty po nejnižší hodnotu.  
   
- OMEZENÍ @no__t – 0  
- Budou vybrány pouze první položky `n`.  
+ OMEZENÍ `n`  
+ Budou vybrány pouze první `n` položky.  
   
  Přeskočit `n`  
- Přeskočí první položky `n`.  
+ Přeskočí první `n` položky.  
   
 ## <a name="remarks"></a>Poznámky  
  Klauzule ORDER BY je logicky aplikována na výsledek klauzule SELECT. Klauzule ORDER BY může odkazovat na položky v seznamu SELECT pomocí jejich aliasů. Klauzule ORDER BY může odkazovat také na jiné proměnné, které jsou aktuálně v oboru. Pokud je však klauzule SELECT zadána s modifikátorem DISTINCT, klauzule ORDER BY může odkazovat pouze na aliasy z klauzule SELECT.  
@@ -85,7 +85,7 @@ ORDER BY ...
   
 - KOMPLETNÍ  
   
-- KEY  
+- KLÍČ  
   
 - ZBÝVÁ  
   
@@ -97,7 +97,7 @@ ORDER BY ...
   
 - ROW  
   
-- OSA  
+- HODNOTA  
   
 ## <a name="ordering-nested-queries"></a>Řazení vnořených dotazů  
  V Entity Framework vnořený výraz může být umístěn kdekoli v dotazu; pořadí vnořeného dotazu není zachováno.  
@@ -120,7 +120,7 @@ SELECT C2.FirstName, C2.LastName
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá operátor ORDER BY k určení pořadí řazení používaného u objektů vrácených v příkazu SELECT. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor ORDER BY k určení pořadí řazení používaného u objektů vrácených v příkazu SELECT. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
 1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   

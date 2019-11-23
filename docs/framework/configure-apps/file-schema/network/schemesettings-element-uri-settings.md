@@ -9,12 +9,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697759"
 ---
-# <a name="schemesettings-element-uri-settings"></a>@no__t – element > 0schemeSettings (nastavení URI)
-Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.  
+# <a name="schemesettings-element-uri-settings"></a>\<element > schemeSettings (nastavení URI)
+Určuje, jak se bude <xref:System.Uri> analyzovat pro konkrétní schémata.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<schemeSettings >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<schemeSettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.
 |[identifikátor URI](uri-element-uri-settings.md)|Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení třídy <xref:System.Uri?displayProperty=nameWithType> zruší řídicí oddělovače% zakódovaných cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
+ Ve výchozím nastavení třída <xref:System.Uri?displayProperty=nameWithType> před spuštěním komprimace cesty vymění v procentech zakódovaných oddělovačů cest. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu třída <xref:System.Uri?displayProperty=nameWithType> nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> vede k následujícímu identifikátoru URI:  
+ Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třída nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru <xref:System.Uri?displayProperty=nameWithType> třídy vede k následujícímu identifikátoru URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   

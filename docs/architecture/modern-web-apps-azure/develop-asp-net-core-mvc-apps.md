@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 19d1d5f81b5be9b843698b6e61d8571d4edfa66f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: b57741ed68b3481ad2c85b1c3d62717f09c7570e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181949"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971590"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -20,7 +20,7 @@ ASP.NET Core je open source platforma pro různé platformy pro vytváření mod
 
 ## <a name="mvc-and-razor-pages"></a>MVC a Razor Pages
 
-ASP.NET Core MVC nabízí mnoho funkcí, které jsou užitečné při vytváření webových rozhraní API a aplikací. Termín MVC představuje "Model-View-Controller", vzorek uživatelského rozhraní, který rozdělí zodpovědnosti na požadavky uživatelů na několik částí. Kromě tohoto vzoru můžete ve svých aplikacích pro ASP.NET Core taky implementovat funkce jako Razor Pages. Razor Pages jsou integrované do ASP.NET Core MVC a používají stejné funkce pro směrování, vázání modelů atd. Místo toho, aby byly samostatné složky a soubory pro řadiče, zobrazení atd. a používaly směrování založené na atributech, Razor Pages jsou umístěny do jediné složky ("/Pages"), směrovat na základě jejich relativního umístění v této složce a zpracovávat požadavky pomocí obslužných rutin. namísto akcí kontroleru.
+ASP.NET Core MVC nabízí mnoho funkcí, které jsou užitečné při vytváření webových rozhraní API a aplikací. Termín MVC představuje "Model-View-Controller", vzorek uživatelského rozhraní, který rozdělí zodpovědnosti na požadavky uživatelů na několik částí. Kromě tohoto vzoru můžete ve svých aplikacích pro ASP.NET Core taky implementovat funkce jako Razor Pages. Razor Pages jsou integrované do ASP.NET Core MVC a používají stejné funkce pro směrování, vázání modelů atd. Místo toho, aby byly samostatné složky a soubory pro řadiče, zobrazení atd. a používaly směrování založené na atributech, Razor Pages jsou umístěny do jediné složky ("/Pages"), směrovat na základě jejich relativního umístění v této složce a zpracovávat požadavky pomocí obslužných rutin namísto akcí kontroleru.
 
 Když vytváříte novou aplikaci ASP.NET Core, měli byste mít na paměti, že máte na mysli druh aplikace, kterou chcete sestavit. V aplikaci Visual Studio si zvolíte z několika šablon. Tři nejběžnější šablony projektu jsou webové rozhraní API, Webová aplikace a webová aplikace (Model-View-Controller). I když můžete toto rozhodnutí udělat pouze při prvním vytvoření projektu, není to neodvolatelné rozhodnutí. Projekt webového rozhraní API používá standardní řadiče pro zobrazení modelu, ale ve výchozím nastavení jen postrádá zobrazení. Stejně tak výchozí šablona webové aplikace používá Razor Pages, a tak také nemá složku zobrazení. Do těchto projektů můžete přidat složku zobrazení později, aby se podporovalo chování na základě zobrazení. Projekty webového rozhraní API a Model-View-Controller ve výchozím nastavení neobsahují složku Pages, ale můžete ji přidat později, aby se podporovalo chování založené na Razor Pages. Tyto tři šablony si můžete představit jako podpora tří různých druhů výchozích zásahů uživatele: data (webové rozhraní API), na stránce a na základě zobrazení. V případě potřeby však můžete v rámci jednoho projektu kombinovat a porovnat libovolné nebo všechny z nich.
 
@@ -76,13 +76,13 @@ public class ProductsController : Controller
 }
 ```
 
-Razor Pages nepoužívá směrování atributů. V rámci své `@page` směrnice můžete zadat další informace o šabloně směrování pro stránku Razor:
+Razor Pages nepoužívá směrování atributů. V rámci své `@page` direktivy můžete zadat další informace o šabloně směrování pro stránku Razor:
 
 ```csharp
 @page "{id:int}"
 ```
 
-V předchozím příkladu by se stránka měla shodovat s parametrem typu Integer `id` . Například stránka *Products. cshtml* , která se nachází v kořenovém adresáři `/Pages` , by měla tuto trasu:
+V předchozím příkladu by se stránka měla shodovat s parametrem typu Integer `id`. Například stránka *Products. cshtml* umístěný v kořenovém adresáři `/Pages` by měla tuto trasu:
 
 ```csharp
 "/Products/123"
@@ -96,19 +96,19 @@ Pokud používáte ověřování modelu, měli byste před provedením jakýchko
 
 Pro webová rozhraní API ASP.NET Core MVC podporuje [_vyjednávání obsahu_](/aspnet/core/mvc/models/formatting)a umožňuje žádostem určit, jak mají být odpovědi naformátovány. V závislosti na hlavičkách poskytnutých v žádosti naformátují akce vracející data odpověď ve formátu XML, JSON nebo v jiném podporovaném formátu. Tato funkce umožňuje používat stejné rozhraní API pro více klientů s různými požadavky na formát dat.
 
-Projekty webového rozhraní API by měly uvažovat `[ApiController]` o použití atributu, který lze použít na jednotlivé řadiče, na základní třídu kontroleru nebo na celé sestavení. Tento atribut přidá automatickou kontrolu ověřování modelu a všechny akce s neplatným modelem vrátí důvodu chybného požadavku s podrobnostmi o chybách ověřování. Atribut také vyžaduje, aby všechny akce měly trasu atributu, nikoli použití konvenční trasy, a v reakci na chyby vrátí podrobnější informace ProblemDetails.
+Projekty webového rozhraní API by měly uvažovat o použití atributu `[ApiController]`, který lze použít na jednotlivé řadiče, na základní třídu kontroleru nebo na celé sestavení. Tento atribut přidá automatickou kontrolu ověřování modelu a všechny akce s neplatným modelem vrátí důvodu chybného požadavku s podrobnostmi o chybách ověřování. Atribut také vyžaduje, aby všechny akce měly trasu atributu, nikoli použití konvenční trasy, a v reakci na chyby vrátí podrobnější informace ProblemDetails.
 
 > ### <a name="references--mapping-requests-to-responses"></a>Odkazy – mapování požadavků na odpovědi
 >
 > - **Směrování na akce kontroleru**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
-> - **Vazba modelu**
- > <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
+> - 
+ > **vazby modelu** <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
 > - **Ověření modelu**
  > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **Outlook**
+> - **Filtry**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
-> - **ApiController – atribut**
+> - **Atribut ApiController**
  > <https://docs.microsoft.com/aspnet/core/web-api/>
 
 ## <a name="working-with-dependencies"></a>Práce se závislostmi
@@ -117,7 +117,7 @@ ASP.NET Core má integrovanou podporu pro a interně využívá techniku známou
 
 Ke statickému cling dochází, když vaše třídy volají volání statických metod, nebo mají přístup ke statickým vlastnostem, které mají vedlejší účinky nebo závislosti na infrastruktuře. Například pokud máte metodu, která volá statickou metodu, která zase zapisuje do databáze, vaše metoda je pevně spojena s databází. Cokoli, co toto volání databáze přeruší, bude vaše metoda rušit. Testování takových metod je obvykle odlaďuje obtížné, protože tyto testy buď vyžadují komerční napodobné knihovny pro napodobení statických volání, nebo je lze testovat pouze pomocí testovací databáze na místě. Statická volání, která nemají žádnou závislost na infrastruktuře, zejména ta, která jsou zcela Bezstavová, jsou schopná volat a nemají žádný vliv na spojku ani možnosti testování (mimo spojovací kód pro samotný statický hovor).
 
-Mnoho vývojářů rozumí rizikům statických cling a globálních stavů, ale stále úzce přiděluje svůj kód na konkrétní implementace prostřednictvím přímé instance. "Nové je připevnit", aby bylo připomenutí tohoto spoje, a ne obecné condemnation použití `new` klíčového slova. Stejně jako u volání statických metod nové instance typů, které nemají žádné externí závislosti, obvykle nezpůsobí pevnění kódu k implementačním podrobnostem nebo provádění testování obtížnější. Ale pokaždé, když je vytvořena instance třídy, posuzuje, zda má smysl na pevný kód konkrétní instance v daném umístění, nebo v případě, že by byl lepším návrhem pro vyžádání této instance jako závislosti.
+Mnoho vývojářů rozumí rizikům statických cling a globálních stavů, ale stále úzce přiděluje svůj kód na konkrétní implementace prostřednictvím přímé instance. "Nové je připevnit", aby bylo připomenutí tohoto spoje, a ne obecné condemnation použití klíčového slova `new`. Stejně jako u volání statických metod nové instance typů, které nemají žádné externí závislosti, obvykle nezpůsobí pevnění kódu k implementačním podrobnostem nebo provádění testování obtížnější. Ale pokaždé, když je vytvořena instance třídy, posuzuje, zda má smysl na pevný kód konkrétní instance v daném umístění, nebo v případě, že by byl lepším návrhem pro vyžádání této instance jako závislosti.
 
 ### <a name="declare-your-dependencies"></a>Deklarovat závislosti
 
@@ -172,7 +172,7 @@ Dalším způsobem, jak odložení aplikace z podrobností implementace, je mít
 
 ### <a name="feature-organization"></a>Organizace funkcí
 
-Ve výchozím nastavení ASP.NET Core aplikace uspořádat svoji strukturu složek tak, aby zahrnovala řadiče a zobrazení a často ViewModels. Kód na straně klienta pro podporu těchto struktur na straně serveru je obvykle uložen samostatně ve složce Wwwroot. Velké aplikace ale můžou narazit na problémy s touto organizací, protože práce na určité funkci často vyžaduje přechod mezi těmito složkami. To znamená více a obtížnější, protože počet souborů a podsložek v každé složce roste a výsledkem je skvělé rolování prostřednictvím Průzkumník řešení. Jedním z řešení tohoto problému je organizovat kód aplikace podle _funkcí_ , nikoli podle typu souboru. Tento styl organizace se obvykle označuje jako složky funkcí nebo [řezy funkcí](https://msdn.microsoft.com/magazine/mt763233.aspx) (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
+Ve výchozím nastavení ASP.NET Core aplikace uspořádat svoji strukturu složek tak, aby zahrnovala řadiče a zobrazení a často ViewModels. Kód na straně klienta pro podporu těchto struktur na straně serveru je obvykle uložen samostatně ve složce Wwwroot. Velké aplikace ale můžou narazit na problémy s touto organizací, protože práce na určité funkci často vyžaduje přechod mezi těmito složkami. To znamená více a obtížnější, protože počet souborů a podsložek v každé složce roste a výsledkem je skvělé rolování prostřednictvím Průzkumník řešení. Jedním z řešení tohoto problému je organizovat kód aplikace podle _funkcí_ , nikoli podle typu souboru. Tento styl organizace se obvykle označuje jako složky funkcí nebo [řezy funkcí](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (viz také: [svislé řezy](https://deviq.com/vertical-slices/)).
 
 ASP.NET Core MVC podporuje oblasti pro tento účel. Pomocí oblastí můžete vytvořit samostatné sady řadičů a složek zobrazení (stejně jako všechny přidružené modely) v každé složce oblasti. Obrázek 7-1 ukazuje příklad struktury složek s použitím oblastí.
 
@@ -237,7 +237,7 @@ Tuto konvenci pak zadáte jako možnost při přidávání podpory pro MVC do ap
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC také používá konvenci k vyhledání zobrazení. Můžete ho přepsat vlastní konvencí, aby se zobrazily ve složkách funkcí (pomocí názvu funkce poskytnutého FeatureConvention, výše). Další informace o tomto přístupu a stažení Pracovní ukázky najdete v článku na webu MSDN, [řezy funkcí pro ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt763233.aspx).
+ASP.NET Core MVC také používá konvenci k vyhledání zobrazení. Můžete ho přepsat vlastní konvencí, aby se zobrazily ve složkách funkcí (pomocí názvu funkce poskytnutého FeatureConvention, výše). Další informace o tomto přístupu a stažení Pracovní ukázky najdete v článku na webu MSDN, [řezy funkcí pro ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
 ### <a name="cross-cutting-concerns"></a>Otázky pro průřezy
 
@@ -247,7 +247,7 @@ Jak aplikace roste, je stále důležitější, aby bylo možné vyloučit dupli
 
 **Obrázek 7-2**. Vyžádá provádění prostřednictvím filtrů a kanálu požadavků.
 
-Filtry se obvykle implementují jako atributy, takže je můžete aplikovat na řadiče nebo akce (nebo i globálně). Při přidání tímto způsobem filtry zadané na úrovni akce přepisují nebo sestavují na filtrech zadaných na úrovni řadiče, které samy o nich přepíšou globální filtry. Například \[atribut Route\] lze použít k sestavení tras mezi řadiči a akcemi. Podobně je možné konfigurovat autorizaci na úrovni řadiče a pak je přepsat jednotlivými akcemi, jak ukazuje následující příklad:
+Filtry se obvykle implementují jako atributy, takže je můžete aplikovat na řadiče nebo akce (nebo i globálně). Při přidání tímto způsobem filtry zadané na úrovni akce přepisují nebo sestavují na filtrech zadaných na úrovni řadiče, které samy o nich přepíšou globální filtry. Například atribut \[Route\] lze použít k sestavení tras mezi řadiči a akcemi. Podobně je možné konfigurovat autorizaci na úrovni řadiče a pak je přepsat jednotlivými akcemi, jak ukazuje následující příklad:
 
 ```csharp
 [Authorize]
@@ -297,7 +297,7 @@ public class ValidateModelAttribute : ActionFilterAttribute
 }
 ```
 
-`ValidateModelAttribute` Do projektu můžete přidat jako závislost NuGet zahrnutím balíčku [Ardalis. ValidateModel](https://www.nuget.org/packages/Ardalis.ValidateModel) . Pro rozhraní API můžete použít `ApiController` atribut k vykonání tohoto chování bez nutnosti samostatného `ValidateModel` filtru.
+Do projektu můžete přidat `ValidateModelAttribute` jako závislost NuGet zahrnutím balíčku [Ardalis. ValidateModel](https://www.nuget.org/packages/Ardalis.ValidateModel) . Pro rozhraní API můžete použít atribut `ApiController` k vykonání tohoto chování bez nutnosti samostatného filtru `ValidateModel`.
 
 Podobně lze použít filtr ke kontrole, zda záznam existuje a vrátí 404 před provedením akce, a eliminuje nutnost provádět tyto kontroly v akci. Po vyzkoušení běžných konvencí a jejich uspořádání do samostatného kódu infrastruktury a obchodní logiky z uživatelského rozhraní by vaše metody akce MVC měly být extrémně tenké:
 
@@ -311,18 +311,18 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Můžete si přečíst další informace o implementaci filtrů a stažení Pracovní ukázky z článku na webu MSDN [– reálné ASP.NET Core filtry MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Můžete si přečíst další informace o implementaci filtrů a stažení Pracovní ukázky z článku na webu MSDN [– reálné ASP.NET Core filtry MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
 
 > ### <a name="references--structuring-applications"></a>Odkazy – strukturování aplikací
 >
 > - **Oblasti**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN Magazine – řezy funkcí pro ASP.NET Core MVC**  
->   <https://msdn.microsoft.com/magazine/mt763233.aspx>
+>   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
 > - **Filtry**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – Real World ASP.NET Core filtry MVC**  
->   <https://msdn.microsoft.com/magazine/mt767699.aspx>
+>   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
 ## <a name="security"></a>Zabezpečení
 
@@ -371,7 +371,7 @@ Můžete si přečíst další informace o [konfiguraci dvojúrovňové ověřov
 
 ### <a name="authorization"></a>Autorizace
 
-Nejjednodušší způsob autorizace zahrnuje omezení přístupu anonymním uživatelům. Toho lze dosáhnout pouhým použitím \[\] atributu autorizovat na určité řadiče nebo akce. Pokud se používají role, je možné atribut dál rozšířit, aby se omezil přístup k určitým rolím, jak je znázorněno na následujícím obrázku:
+Nejjednodušší způsob autorizace zahrnuje omezení přístupu anonymním uživatelům. To je možné dosáhnout pouhým použitím \[autorizaci\] atributu na určité řadiče nebo akce. Pokud se používají role, je možné atribut dál rozšířit, aby se omezil přístup k určitým rolím, jak je znázorněno na následujícím obrázku:
 
 ```csharp
 [Authorize(Roles = "HRManager,Finance")]
@@ -383,7 +383,7 @@ public class SalaryController : Controller
 
 V takovém případě budou mít uživatelé patřící do rolí HRManager nebo finance (nebo obojí) přístup k SalaryController. Chcete-li vyžadovat, aby uživatel patřil k více rolím (ne jen jednomu z několika), můžete použít atribut vícekrát a zadat požadovanou roli pokaždé.
 
-Zadání určitých sad rolí jako řetězců v mnoha různých řadičích a akcí může vést k nežádoucímu opakování. Můžete nakonfigurovat autorizační zásady, které zapouzdřují autorizační pravidla, a pak při použití \[\] autorizačního atributu zadat zásady místo jednotlivých rolí:
+Zadání určitých sad rolí jako řetězců v mnoha různých řadičích a akcí může vést k nežádoucímu opakování. Můžete nakonfigurovat autorizační zásady, které zapouzdřují autorizační pravidla, a pak při použití atributu \[autorizace\] zadat zásady místo jednotlivých rolí:
 
 ```csharp
 [Authorize(Policy = "CanViewPrivateReport")]
@@ -393,9 +393,9 @@ public IActionResult ExecutiveSalaryReport()
 }
 ```
 
-Pomocí zásad tímto způsobem můžete oddělit druhy akcí, které jsou omezené z konkrétních rolí nebo pravidel, která se na ně vztahují. Pokud později vytvoříte novou roli, která potřebuje mít přístup k určitým prostředkům, můžete místo aktualizace všech seznamů rolí u každého \[\] autorizačního atributu jednoduše aktualizovat zásadu.
+Pomocí zásad tímto způsobem můžete oddělit druhy akcí, které jsou omezené z konkrétních rolí nebo pravidel, která se na ně vztahují. Pokud později vytvoříte novou roli, která potřebuje mít přístup k určitým prostředkům, můžete místo aktualizace všech seznamů rolí u každé \[oprávnění\] atributu jednoduše aktualizovat zásadu.
 
-#### <a name="claims"></a>podpory
+#### <a name="claims"></a>Deklarace identity
 
 Deklarace identity jsou páry název-hodnota, které představují vlastnosti ověřeného uživatele. Můžete například ukládat číslo zaměstnance pro uživatele jako deklaraci identity. Deklarace identity se pak dají použít jako součást zásad autorizace. Můžete vytvořit zásadu nazvanou "EmployeeOnly", která vyžaduje existenci deklarace identity s názvem "EmployeeNumber", jak je znázorněno v tomto příkladu:
 
@@ -410,7 +410,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Tato zásada se pak dá použít s \[\] atributem autorizovat k ochraně libovolného kontroleru nebo akce, jak je popsáno výše.
+Tato zásada se pak dá použít s atributem \[autorizovat\] k ochraně jakéhokoli kontroleru nebo akce, jak je popsáno výše.
 
 #### <a name="securing-web-apis"></a>Zabezpečení webových rozhraní API
 

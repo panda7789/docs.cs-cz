@@ -13,10 +13,10 @@ ms.locfileid: "70295863"
 
 Kapitola 1 představila základní koncepty týkající se kontejnerů a Docker. Tyto informace jsou základními informacemi, které potřebujete, abyste mohli začít. Podnikové aplikace ale můžou být složité a skládají se z několika služeb místo jediné služby nebo kontejneru. Pro tyto volitelné případy použití potřebujete znát další postupy pro návrh, jako je například architektura orientované na služby (SOA) a pokročilejší koncepty mikroslužeb a koncepty orchestrace kontejnerů. Rozsah tohoto dokumentu není omezený na mikroslužby, ale i na jakýkoli životní cyklus aplikace Docker, proto nezkoumá architekturu mikroslužeb v hloubkě, protože můžete také použít kontejnery a Docker s pravidelným záznamem SOA, úlohami na pozadí nebo úlohami i s přístupy k nasazení aplikací monolitické.
 
-**Další informace** Pokud chcete získat další informace o architektuře podnikových aplikací a mikroslužeb, přečtěte si [příručku NET mikroslužby: Architektura pro kontejnerové aplikace](../../microservices/index.md) .NET, ze <https://aka.ms/MicroservicesEbook>kterých si můžete stáhnout také.
+**Další informace** Pokud chcete získat další informace o architektuře podnikových aplikací a mikroslužeb, přečtěte si příručku [net mikroslužby: architektura pro kontejnerové aplikace .NET](../../microservices/index.md) , které můžete také stáhnout z <https://aka.ms/MicroservicesEbook>.
 
 Před tím, než se dostanete k životnímu cyklu aplikace a DevOps, je důležité znát způsob návrhu a sestavování aplikace a možností vašich návrhů.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](common-container-design-principles.md)
+>[Předchozí](index.md)
+>[Další](common-container-design-principles.md)

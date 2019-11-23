@@ -35,7 +35,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 
 ### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*verze*>** a pak vyberte **Developer Command Prompt pro vs \<*verze*>** .
+1. V nabídce **Start** vyberte **>Directory \<*verze* sady Visual Studio** a potom vyberte **Developer Command Prompt pro *verzi* vs \<>** .
 
      Zobrazí se Developer Command Prompt pro Visual Studio.
 
@@ -47,7 +47,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
     installutil <yourproject>.exe
     ```
 
-     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64] \\ < framework_version @ no__t-2*.
+     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64]\\< framework_version\>* .
 
      Příklad:
      - Pro 32 verze .NET Framework 4 nebo 4,5 a novější, pokud je instalační adresář systému Windows *C:\Windows*, je výchozí cesta *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
@@ -55,7 +55,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 
 ### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Ruční odinstalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*verze*>** a pak vyberte **Developer Command Prompt pro vs \<*verze*>** .
+1. V nabídce **Start** vyberte **>Directory \<*verze* sady Visual Studio** a potom vyberte **Developer Command Prompt pro *verzi* vs \<>** .
 
      Zobrazí se Developer Command Prompt pro Visual Studio.
 

@@ -1,14 +1,13 @@
 ---
 title: Samoobslužné aplikace gRPC – gRPC pro vývojáře WCF
 description: Nasazení ASP.NET Corech aplikací gRPC jako samoobslužných služeb.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 4983cad1dd075480c6d83a5350a323ab348cdaaf
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 59f6275dbf85442bca3a98a1521597ef40e9675b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846112"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967215"
 ---
 # <a name="self-hosted-grpc-applications"></a>Samoobslužné aplikace gRPC
 
@@ -78,13 +77,13 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 > [!NOTE]
 > Pokud aplikace není spuštěna jako služba pro Linux, `UseSystemd` metoda neprovede žádné akce.
 
-Nyní publikujte aplikaci (Buď závislou na rozhraní, nebo samostatnou pro příslušné prostředí Linux Runtime), například `linux-x64`), buď ze sady Visual Studio, kliknutím pravým tlačítkem myši na projekt a výběrem možnosti *publikovat* z místní nabídky nebo z .NET Core CLI pomocí následujícího příkazu.
+Nyní publikujte aplikaci (Buď závislou na rozhraní, nebo samostatnou pro příslušný modul runtime pro Linux, například `linux-x64`), buď ze sady Visual Studio, kliknutím pravým tlačítkem myši na projekt a výběrem možnosti *publikovat* z místní nabídky nebo z .NET Core CLI pomocí následujícího příkazu.
 
 ```console
 dotnet publish -c Release -r linux-x64 -o ./publish
 ```
 
-Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor, který se označuje jako "soubor jednotky", který se má přidat do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Například `/etc/systemd/system/myapp.service`.
+Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor, který se označuje jako "soubor jednotky", který se má přidat do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Například, `/etc/systemd/system/myapp.service`.
 
 Soubor služby používá formát INI, jak je znázorněno v tomto příkladu.
 
@@ -153,7 +152,7 @@ Při spuštění aplikace gRPC v produkčním prostředí byste měli použít c
 
 Na hostitelích s Windows může být certifikát načtený z zabezpečeného [úložiště certifikátů](https://docs.microsoft.com/windows/win32/seccrypto/managing-certificates-with-certificate-stores) pomocí [třídy X509Store](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509store?view=netcore-3.0). Třídu `X509Store` lze také použít s úložištěm klíčů OpenSSL na některých hostitelích se systémem Linux.
 
-Certifikáty mohou být také vytvořeny pomocí jednoho z [konstruktorů X509Certificate2](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509certificate.-ctor?view=netcore-3.0), buď ze souboru (například `.pfx` chráněný silným heslem), nebo z binárních dat načtených ze zabezpečené služby úložiště, jako je [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) .
+Certifikáty mohou být také vytvořeny pomocí jednoho z [konstruktorů X509Certificate2](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509certificate.-ctor?view=netcore-3.0), buď ze souboru (například `.pfx` chráněný silným heslem), nebo z binárních dat načtených ze zabezpečené služby úložiště, jako je například [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
 Kestrel se dá nakonfigurovat tak, aby používal certifikát dvěma způsoby: z konfigurace nebo v kódu.
 

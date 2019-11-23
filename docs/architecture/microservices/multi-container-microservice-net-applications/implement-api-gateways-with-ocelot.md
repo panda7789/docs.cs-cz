@@ -11,7 +11,7 @@ ms.locfileid: "73737657"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace bran API pomocí Ocelot
 
-Referenční aplikace [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) používá [Ocelot](https://github.com/ThreeMammals/Ocelot), jednoduchou a odlehčenou bránu API, kterou můžete nasazovat kdekoli spolu s mikroslužbami nebo kontejnery, například v některém z následujících prostředí, které používá nástroj. eShopOnContainers.
+Referenční aplikace [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) používá [Ocelot](https://github.com/ThreeMammals/Ocelot), jednoduchou a odlehčenou bránu API, kterou můžete nasazovat kdekoli spolu s mikroslužbami nebo kontejnery, jako je například v některém z následujících prostředí, které používá eShopOnContainers.
 
 - Hostitel Docker, ve vašem místním počítači pro vývoj, místně nebo v cloudu.
 - Kubernetes cluster, místní nebo ve spravovaném cloudu, jako je Azure Kubernetes Service (AKS).
@@ -120,7 +120,7 @@ Můžete zjistit, jak v konfiguraci Docker-Compose. override. yml je interním p
 
 Za normálních okolností nebudete nasazovat do provozního prostředí Docker – to znamená, že správné provozní prostředí nasazení pro mikroslužby je Orchestrator, jako je Kubernetes nebo Service Fabric. Při nasazování do těchto prostředí budete používat jiné konfigurační soubory, kde nebudete publikovat přímo žádný externí port pro mikroslužby, ale reverzní proxy server budete vždycky používat z brány rozhraní API.
 
-Spusťte službu cloudové služby katalogu v místním hostiteli Docker buď spuštěním úplného řešení eShopOnContainers ze sady Visual Studio (spustí všechny služby v Docker-skládání souborů), nebo stačí spustit službu Cloud Service pomocí následujícího Docker – sestavení příkaz v prostředí CMD nebo PowerShell umístěný ve složce, kde jsou umístěny `docker-compose.yml` a Docker-Compose. override. yml.
+Spusťte cloudovou službu katalogu v místním hostiteli Docker buď spuštěním úplného řešení eShopOnContainers ze sady Visual Studio (spustí všechny služby v souborech Docker – skládání), nebo stačí spustit službu Cloud Service pomocí následujícího příkazu Docker-skládání v prostředí CMD nebo PowerShellu umístěného ve složce, kde jsou umístěné `docker-compose.yml` a Docker-Compose. override. yml.
 
 ```console
 docker-compose run --service-ports catalog.api
@@ -368,7 +368,7 @@ Když například navštívíte nadřazený URL `http://localhost:5202/api/v1/c/
 
 **Obrázek 6-35**. Přístup k mikroslužbám prostřednictvím adresy URL poskytované bránou API
 
-Z důvodu testování nebo ladění, pokud jste chtěli získat přímý přístup ke kontejneru Docker katalogu (jenom ve vývojovém prostředí) bez předávání bránou API, protože Catalog. API je interní překlad DNS na hostitele Docker (služba zjišťování, které zpracovává služba Docker – název služby: jediným způsobem, jak přímo přistupovat ke kontejneru, je externí port publikovaný v Docker-Compose. override. yml, který je k dispozici pouze pro vývojové testy, například `http://localhost:5101/api/v1/Catalog/items/1` v následujícím prohlížeči.
+Z důvodu testování nebo ladění, pokud jste chtěli získat přímý přístup ke kontejneru Docker katalogu (pouze ve vývojovém prostředí) bez předávání bránou API, vzhledem k tomu, že Catalog. API je interní překlad DNS na hostitele Docker (zjišťování služby, které zpracovává názvy služeb Docker – skládání), jediným způsobem, jak přímo přistupovat ke kontejneru, je externí port publikovaný v Docker-Compose. override. yml, který je k dispozici pouze pro vývojové testy, například `http://localhost:5101/api/v1/Catalog/items/1` v následujícím prohlížeči.
 
 ![Snímek obrazovky prohlížeče ukazující přímou odpověď na katalog. API](./media/implement-api-gateways-with-ocelot/direct-access-microservice-testing.png)
 
@@ -562,19 +562,19 @@ V souborech zdrojového kódu eShopOnContainers lze původní soubory "Configura
 
 Při použití brány Ocelot API jsou k dispozici další důležité funkce, které je potřeba prozkoumat a použít.
 
-- **Zjišťování služby na straně klienta integrace Ocelot s Consul nebo Eureka**  \
+- **Zjišťování služby na straně klienta integrace Ocelot s Consul nebo Eureka** \
   <https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html>
 
-- **Ukládání do mezipaměti na úrovni brány API**  \
+- **Ukládání do mezipaměti na úrovni brány API** \
   <https://ocelot.readthedocs.io/en/latest/features/caching.html>
 
-- **Protokolování na úrovni brány API**  \
+- **Protokolování na úrovni brány API** \
   <https://ocelot.readthedocs.io/en/latest/features/logging.html>
 
-- **Kvalita služby (opakování a přerušení okruhů) na úrovni brány rozhraní API**  \
+- **Kvalita služby (opakování a přerušení okruhů) na úrovni brány rozhraní API** \
   <https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html>
 
-- **Omezení rychlosti**  \
+- **Omezení rychlosti** \
   [https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html](https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html )
 
 > [!div class="step-by-step"]

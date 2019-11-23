@@ -1,5 +1,5 @@
 ---
-title: Ověřování řetězců v jazyce Visual Basic
+title: Ověřování řetězců
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, strings
@@ -7,28 +7,28 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: ab7b41e03e561a619349176c6bf7e021e1399730
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e9a034a430ff7f30c259bcdd395ebf6147dfc582
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938278"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346249"
 ---
 # <a name="validating-strings-in-visual-basic"></a>Ověřování řetězců v jazyce Visual Basic
-Tato část popisuje, jak ověřit řetězce v jazyce Visual Basic.  
+This section discusses how to validate strings in Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Ověření názvy souborů a cest v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
- Jak určit, zda řetězec reprezentuje název souboru nebo cesta.  
+ [How to: Validate File Names and Paths in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
+ How to determine whether a string represents a file name or path.  
   
  [Postupy: Ověření řetězců, které představují data nebo časy](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
- Jak zjistit, zda řetězec představuje platné datum.  
+ How to determine whether a string represents a valid date.  
   
- [Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
- Ukazuje, jak převést jednoduché regulárních výrazů pro práci s <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
+ [Using Regular Expressions with the MaskedTextBox Control in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
+ Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.  
   
  [Návod: Ověření, že hesla jsou složitá](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
- Jak určit, zda má řetězec charakteristiky silné heslo.  
+ How to determine whether a string has the characteristics of a strong password.  
   
 ## <a name="see-also"></a>Viz také:
 

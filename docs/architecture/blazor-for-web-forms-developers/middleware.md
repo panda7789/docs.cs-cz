@@ -19,7 +19,7 @@ Aplikace ASP.NET Core je postavená na řadě middlewaru. Middleware jsou obslu�
 
 ## <a name="overview"></a>Přehled
 
-Kanál žádostí o ASP.NET Core se skládá z posloupnosti delegátů požadavků, který se nazývá jedna po druhé. Následující diagram znázorňuje koncept. Vlákno provádění následuje za černými šipkami.
+Kanál požadavků ASP.NET Core se skládá z posloupnosti delegátů požadavku a volají se jeden po druhém. Následující diagram znázorňuje tento koncept. Vlákno provádění postupuje po směru černé šipky.
 
 ![Kanálu](media/middleware/request-delegate-pipeline.png)
 

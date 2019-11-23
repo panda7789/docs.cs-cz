@@ -93,15 +93,15 @@ Když přidáte název Image do souboru souboru Dockerfile, můžete vybrat oper
 
 > | **Inteligentní** | **Systém a verze** |
 > |---|---|
-> | **Microsoft/DotNET-Framework: 4. x – windowsservercore** | .NET Framework 4. x v jádru Windows serveru |
-> | **Microsoft/ASPNET: 4. x – windowsservercore** | .NET Framework 4. x s dalšími přizpůsobeními ASP.NET v jádru Windows serveru |
+> | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET Framework 4. x v jádru Windows serveru |
+> | **microsoft/aspnet:4.x-windowsservercore** | .NET Framework 4. x s dalšími přizpůsobeními ASP.NET v jádru Windows serveru |
 
 Pro .NET Core (pro různé platformy pro Linux a Windows) by značky vypadaly takto:
 
 > | **Inteligentní** | **Systém a verze**
 > |---|---|
-> | **Microsoft/dotNET: 2.0.0-Runtime** | .NET Core 2,0 Runtime – pouze v systému Linux |
-> | **Microsoft/dotNET: 2.0.0-Runtime – nanoserver** | .NET Core 2,0 Runtime – jenom na Windows nano serveru |
+> | **microsoft/dotnet:2.0.0-runtime** | .NET Core 2,0 Runtime – pouze v systému Linux |
+> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET Core 2,0 Runtime – jenom na Windows nano serveru |
 
 ### <a name="multi-arch-images"></a>Obrázky s více archy
 
@@ -119,7 +119,7 @@ Například kontejnery systému Linux jsou kontejnery Windows serveru spravován
 
 Spuštění kontejneru ve Windows s nebo bez izolace Hyper-V je rozhodnutí za běhu. Je možné, že se nejdříve vytvoří kontejner s izolací technologie Hyper-V a v době běhu se místo toho dá spustit jako kontejner Windows serveru.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Dokumentace k kontejnerům Windows**
 

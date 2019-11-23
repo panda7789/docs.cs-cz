@@ -22,19 +22,19 @@ sgen [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/a @ no__t-1ssembly @ no__t-2:** _název souboru_|Generuje kód serializace pro všechny typy obsažené v sestavení nebo spustitelný soubor určený parametrem *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
-|**/c @ no__t-1ompiler @ no__t-2:** _Možnosti_|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti CSc. exe jsou podporovány, protože jsou předány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
-|**/d @ no__t-1ebug @ no__t-2**|Generuje obrázek, který lze použít se ladicí program.|  
-|**/f @ no__t-1orce @ no__t-2**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
+|**/a\[sestavení\]:** _filename_|Generuje kód serializace pro všechny typy obsažené v sestavení nebo spustitelný soubor určený parametrem *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
+|**/c\[ompiler\]:** _Možnosti_|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti CSc. exe jsou podporovány, protože jsou předány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
+|**/d\[ebug\]**|Generuje obrázek, který lze použít se ladicí program.|  
+|**/f\[Orce\]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
 |**/Help nebo/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/k @ no__t-1eep @ no__t-2**|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
-|**/n @ no__t-1ologo @ no__t-2**|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
-|**/o @ no__t-1ut @ no__t-2:** _cesta_|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:**  Název generované sestavení se skládá z názvu vstupní sestavení plus "xmlSerializers.dll".|  
+|**/k\[achovat\]**|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
+|**/n\[ologo\]**|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
+|**/o\[ut\]:** _cesta_|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:**  Název generovaného sestavení se skládá z názvu vstupního sestavení plus "xmlSerializers. dll".|  
 |**/p\[roxytypes\]**|Generuje kód serializace pouze pro typy XML webové služby proxy serveru.|  
-|**/r @ no__t-1eference @ no__t-2:** _assemblyfiles_|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
-|**/s @ no__t-1ilent @ no__t-2**|Potlačí zobrazování zpráv o úspěšném dokončení.|  
-|**/t @ no__t-1ype @ no__t-2:** _typ_|Generuje kód serializace pouze u zadaného typu.|  
-|**/v @ no__t-1erbose @ no__t-2**|Zobrazí podrobné informace pro ladění. Zobrazí seznam typů z cílového sestavení, které nelze serializovat, s <xref:System.Xml.Serialization.XmlSerializer>.|  
+|**/r\[eference\]:** _assemblyfiles_|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
+|**/s\[ilent\]**|Potlačí zobrazování zpráv o úspěšném dokončení.|  
+|**/t\[typ\]:** _typ_|Generuje kód serializace pouze u zadaného typu.|  
+|**/v\[erbose\]**|Zobrazí podrobné informace pro ladění. Zobrazí seznam typů z cílového sestavení, které nelze serializovat, s <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  

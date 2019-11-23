@@ -54,7 +54,7 @@ public class String {
   
  **✓ CONSIDER** poskytuje vlastnost se stejným názvem jako jeho typu.  
   
- Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color`, takže vlastnost je pojmenována `Color`:  
+ Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color`, takže vlastnost má název `Color`:  
   
 ```csharp  
 public enum Color {...}  
@@ -68,11 +68,11 @@ public class Control {
   
  **✓ DO** název události operaci nebo operace frází.  
   
- Mezi příklady patří `Clicked`, `Painting`, `DroppedDown` atd.  
+ Příklady zahrnují `Clicked`, `Painting`, `DroppedDown`a tak dále.  
   
  **✓ DO** pojmenovat události s koncept před a po ní, pomocí k dispozici a rodu minulosti.  
   
- Například událost zavření, která je aktivována před zavřením okna, by byla volána `Closing` a ta, která je vyvolána po zavření okna, by byla volána `Closed`.  
+ Například událost zavření, která je aktivována před zavřením okna, by byla volána `Closing`a ta, která je aktivována po zavření okna, by byla volána `Closed`.  
   
  **X DO NOT** použijte "Before" nebo "After" předpony nebo postfixes udávajících před a po událostech. Použijte přítomné a dřívější časů, jak je popsáno výše.  
   
@@ -82,7 +82,7 @@ public class Control {
   
  **✓ DO** použití dvou parametrů s názvem `sender` a `e` v obslužných rutinách událostí.  
   
- Parametr Sender reprezentuje objekt, který vyvolal událost. Parametr Sender má obvykle typ `object`, i když je možné využít konkrétnější typ.  
+ Parametr Sender reprezentuje objekt, který vyvolal událost. Parametr sender je obvykle typu `object`, a to i v případě, že je možné využít konkrétnější typ.  
   
  **✓ DO** pojmenujte událost třídy argument s příponou "EventArgs".  
   
@@ -95,11 +95,11 @@ public class Control {
   
  **X DO NOT** použijte předponu pro názvy polí.  
   
- Nepoužívejte například "g_" nebo "s_" k označení statických polí.  
+ Například nepoužívejte "g_" nebo "s_" k označení statických polí.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- @no__t – 0Reprinted podle oprávnění Pearsonova vzdělávání, Inc. v [Framework pokyny pro návrh: Konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice @ no__t-0 od Krzysztof Cwalina a Brad Abrams, Publikováno od 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series. *  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: < < = – operátor (Visual Basic)
+title: <<= – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - vb.<<=
@@ -11,15 +11,15 @@ helpviewer_keywords:
 - operator<<=
 - compound assignment statements [Visual Basic]
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
-ms.openlocfilehash: aae71069bdcb88efa5842526dd7eb47806f248d0
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: cc89e0dadc7148b21e695a53a2e746a00ed66441
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701111"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350957"
 ---
-# <a name="-operator-visual-basic"></a>\< @ no__t-1 = – operátor (Visual Basic)
-Provede aritmetický levý posun na hodnotu proměnné nebo vlastnosti a přiřadí výsledek zpátky proměnné nebo vlastnosti.  
+# <a name="-operator-visual-basic"></a>\<\<= Operator (Visual Basic)
+Performs an arithmetic left shift on the value of a variable or property and assigns the result back to the variable or property.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,23 +29,23 @@ variableorproperty <<= amount
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Proměnná nebo vlastnost integrálního typu (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long` nebo `ULong`).  
+ Požadováno. Variable or property of an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).  
   
  `amount`  
- Požadováno. Číselný výraz datového typu, který se rozšíří na `Integer`.  
+ Požadováno. Numeric expression of a data type that widens to `Integer`.  
   
 ## <a name="remarks"></a>Poznámky  
- Element na levé straně operátoru `<<=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ The element on the left side of the `<<=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- Operátor `<<=` nejprve provede Aritmetický posun vlevo od hodnoty proměnné nebo vlastnosti. Operátor potom přiřadí výsledek této operace zpátky k této proměnné nebo vlastnosti.  
+ The `<<=` operator first performs an arithmetic left shift on the value of the variable or property. The operator then assigns the result of that operation back to that variable or property.  
   
- Aritmetické posuny nejsou cyklické, což znamená, že bity posunuté o jeden konec výsledku nejsou znovu zavedeny na druhém konci. V aritmetickém levém Shift se bity, které přesahují rozsah výsledných dat, zahodí a bitové pozice uvolněné na pravé straně mají nastavenou hodnotu nula.  
+ Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic left shift, the bits shifted beyond the range of the result data type are discarded, and the bit positions vacated on the right are set to zero.  
   
 ## <a name="overloading"></a>Přetížení  
- [Operátor < <](../../../visual-basic/language-reference/operators/left-shift-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má operand typ této třídy nebo struktury. Přetížení operátoru `<<` má vliv na chování operátoru `<<=`. Pokud váš kód používá `<<=` na třídě nebo struktuře, která přetěžuje `<<`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The [<< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `<<` operator affects the behavior of the `<<=` operator. If your code uses `<<=` on a class or structure that overloads `<<`, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `<<=` k posunu bitového vzoru proměnné `Integer` vlevo o zadanou hodnotu a přiřazení výsledku proměnné.  
+ The following example uses the `<<=` operator to shift the bit pattern of an `Integer` variable left by the specified amount and assign the result to the variable.  
   
  [!code-vb[VbVbalrOperators#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#13)]  
   
@@ -54,6 +54,6 @@ variableorproperty <<= amount
 - [Operátor <<](../../../visual-basic/language-reference/operators/left-shift-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

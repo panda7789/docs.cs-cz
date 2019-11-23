@@ -89,9 +89,9 @@ Pro zajištění vysoké dostupnosti a škálovatelnosti v reálném produkční
 
 Jednotky nasazení pro mikroslužby (a dokonce i pro databáze v této aplikaci) jsou proto kontejnery Docker a referenční aplikace je aplikace s více kontejnery, která zahrnuje Principy mikroslužeb.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **úložiště GitHub eShopOnContainers Zdrojový kód pro referenční aplikaci**  \
+- **úložiště GitHub eShopOnContainers Zdrojový kód pro referenční aplikaci** \
   <https://aka.ms/eShopOnContainers/>
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Výhody řešení založeného na mikroslužbách
@@ -148,7 +148,7 @@ Externí architektura je architektura mikroslužeb, která se skládá z několi
 
 Například v naší ukázce *eShopOnContainers* jsou mikroslužby katalogu, košíku a profilů uživatelů jednoduché (v podstatě i subsystémy CRUD). Proto jsou jejich interní architektura a návrh jednoduché. Můžete ale mít jiné mikroslužby, jako je objednávání mikroslužby, což je složitější a představuje neustále se měnící obchodní pravidla s vysokou mírou složitosti domény. V takových případech můžete chtít implementovat pokročilejší vzory v rámci určité mikroslužby, jako jsou ty, které jsou definované pomocí přístupů k návrhu řízenému doménou (DDD), jak provádíme v *eShopOnContainers* řazení mikroslužeb. (Tyto DDD vzory prozkoumáme později v části, které popisují implementaci mikroslužby pro řazení *eShopOnContainers* .)
 
-Dalším důvodem pro jinou technologii na mikroslužbu může být povaha každé mikroslužby. Může být například lepší používat funkční programovací jazyk, například F \#, nebo i jazyk, jako je R, pokud cílíte na domény AI a strojového učení, nikoli na objektově orientovaný programovací jazyk, jako je C \#.
+Dalším důvodem pro jinou technologii na mikroslužbu může být povaha každé mikroslužby. Může být například lepší používat funkční programovací jazyk, například F\#, nebo i jazyk, jako je R, pokud cílíte na domény AI a strojového učení, nikoli na objektově orientovaný programovací jazyk, jako je C\#.
 
 Dolním řádkem je, že každá mikroslužba může mít jinou interní architekturu založenou na různých vzorech návrhu. Ne všechny mikroslužby by se měly implementovat pomocí pokročilých vzorů DDD, protože by byly předálené. Podobně komplexní mikroslužby s neustále se měnící obchodní logikou by neměly být implementovány jako komponenty CRUD nebo můžete ukončit kód s nízkou kvalitou.
 
@@ -168,7 +168,7 @@ Software architekti a vývojáři používá mnoho vzorů architektury. Níže j
 
 - [Architektura řízená událostmi](https://en.wikipedia.org/wiki/Event-driven_architecture) (EDA).
 
-Můžete také vytvářet mikroslužby s mnoha technologiemi a jazyky, jako jsou ASP.NET Core Web API, NancyFx, ASP.NET Core Signal (k dispozici v .NET Core 2), F \#, Node. js, Python, Java, C++, GoLang a další.
+Můžete také vytvářet mikroslužby s mnoha technologiemi a jazyky, jako jsou ASP.NET Core Web API, NancyFx, ASP.NET Core Signal (k dispozici v .NET Core 2), F\#, Node. js, Python, Java, C++, GoLang a další.
 
 Důležitým bodem je, že žádný konkrétní model ani styl architektury ani žádná konkrétní technologie nejsou pro všechny situace správné. Obrázek 6-3 ukazuje některé přístupy a technologie (i když nejsou v žádné konkrétní objednávce), které by mohly být použity v různých mikroslužbách.
 

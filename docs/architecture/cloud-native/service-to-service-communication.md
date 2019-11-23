@@ -3,12 +3,12 @@ title: Komunikace mezi službami
 description: Přečtěte si, jak cloudové mikroslužby back-end komunikují s ostatními back-end mikroslužbami.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 6a7e72491cb56d925e684b94109b1aaa98e24df3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5124b8b83f62ff17b1230ead63db26e0c1f2a5b
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094625"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087599"
 ---
 # <a name="service-to-service-communication"></a>Komunikace mezi službami
 
@@ -50,7 +50,7 @@ Spuštění nečasté žádosti, která umožňuje jedno přímé volání HTTP 
 
 **Obrázek 4-9**. Řetězení dotazů HTTP
 
-V návrhu zobrazeném na předchozím obrázku si můžete představit riziko. Co se stane, když se krok \#3 nezdařil? Nebo krok \#8 se nezdařil? Jak obnovovat? Co když je krok \#6 pomalý, protože podkladová služba je zaneprázdněná? Jak budete pokračovat? I když vše funguje správně, zamyslete se nad latencí tohoto volání, což je součet latence každého kroku.
+V návrhu zobrazeném na předchozím obrázku si můžete představit riziko. Co se stane, když dojde k chybě kroku \#3? Nebo krok \#8 se nezdařil? Jak obnovovat? Co když je krok \#6 pomalý, protože podkladová služba je zaneprázdněná? Jak budete pokračovat? I když vše funguje správně, zamyslete se nad latencí tohoto volání, což je součet latence každého kroku.
 
 Velký stupeň spojení na předchozím obrázku naznačuje, že služby nebyly optimálně modelovány. To by behoove týmu, aby znovu navštívilo svůj návrh.
 
@@ -138,9 +138,9 @@ Existuje však několik důležitých aspektů: velikost fronty Service Bus je o
 
 Obrázek 4-14 popisuje architekturu Service Bus fronty na nejvyšší úrovni.
 
-![Fronta Service Bus](./media/service-bus-queue.png)
+![Service Bus](./media/service-bus-queue.png)
 
-**Obrázek 4-14**. Fronta Service Bus
+**Obrázek 4-14**. Service Bus
 
 Na předchozím obrázku si všimněte vztahu Point-to-Point. Dvě instance stejného poskytovatele jsou enqueuing zprávy do jedné fronty Service Bus. Každou zprávu spotřebují jenom jedna ze tří instancí příjemců na pravé straně. V dalším kroku se podíváme, jak implementovat zasílání zpráv, kde se stejnou zprávu můžou zajímat různí zákazníci.
 
@@ -208,7 +208,7 @@ Event Grid je plně spravovaná cloudová služba bez serveru. Dynamicky se šk�
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Streamování zpráv v cloudu Azure
 
-Azure Service Bus a Event Grid poskytuje skvělou podporu pro aplikace, které zveřejňují jednotlivé diskrétní události, jako je nový dokument, vložen do Cosmos DB. Ale co dělat v případě, že systém nativní pro Cloud potřebuje zpracovat *Stream souvisejících událostí*? [Datové proudy událostí](https://msdn.microsoft.com/magazine/dn904671) jsou složitější. Typicky se jedná o časově uspořádané, vzájemně seřazené a musí být zpracovávány jako skupina.
+Azure Service Bus a Event Grid poskytuje skvělou podporu pro aplikace, které zveřejňují jednotlivé diskrétní události, jako je nový dokument, vložen do Cosmos DB. Ale co dělat v případě, že systém nativní pro Cloud potřebuje zpracovat *Stream souvisejících událostí*? [Datové proudy událostí](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) jsou složitější. Typicky se jedná o časově uspořádané, vzájemně seřazené a musí být zpracovávány jako skupina.
 
 [Centrum událostí Azure](https://azure.microsoft.com/services/event-hubs/) je platforma pro streamování dat a služba pro příjem událostí, která shromažďuje, transformuje a ukládá události. Je vyladěný tak, aby zachytával streamovaná data, například nepřetržitá oznámení o událostech emitovaných z kontextu telemetrie. Služba je vysoce škálovatelná a může ukládat a [zpracovávat miliony událostí za sekundu](https://docs.microsoft.com/azure/event-hubs/event-hubs-about). Znázorněné na obrázku 4-18 je často předním dveřem pro kanál událostí, která odpojuje datový proud ingestuje od spotřeby událostí.
 
@@ -220,7 +220,7 @@ Centrum událostí podporuje nízkou latenci a konfigurovatelné časové uchov�
 
 Centrum událostí podporuje společné protokoly pro publikování událostí, včetně protokolu HTTPS a AMQP. Podporuje také Kafka 1,0. [Stávající aplikace Kafka můžou komunikovat s centrem událostí](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) pomocí protokolu Kafka, který poskytuje alternativu ke správě rozsáhlých clusterů Kafka. Spousta Open Source nativních systémů se Kafka přidaných v cloudu.
 
-Event Hubs implementuje streamování zpráv prostřednictvím [děleného](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dodavatelského modelu, ve kterém každý příjemce přečte jenom určitou podmnožinu nebo oddíl datového proudu zpráv. Tento model umožňuje obrovské horizontální škálování pro zpracování událostí a poskytuje další funkce zaměřené na streamy, které nejsou ve frontách a tématech dostupné. Oddíl je seřazená posloupnost událostí, která je uložena v centru událostí. Jakmile přijdete o novější události, přidají se na konec této sekvence. Obrázek 4-19 ukazuje dělení do oddílů v centru událostí.
+Event Hubs implementuje streamování zpráv prostřednictvím [děleného](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dodavatelského modelu, ve kterém každý příjemce přečte jenom určitou podmnožinu nebo oddíl datového proudu zpráv. Tento model umožňuje obrovské horizontální škálování pro zpracování událostí a poskytuje další funkce zaměřené na streamy, které nejsou ve frontách a tématech dostupné. Oddíl je seřazená posloupnost událostí, která se nachází v centru událostí. Jakmile přijdete o novější události, přidají se na konec této sekvence. Obrázek 4-19 ukazuje dělení do oddílů v centru událostí.
 
 ![Vytváření oddílů centra událostí](./media/event-hub-partitioning.png)
 

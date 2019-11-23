@@ -2,12 +2,12 @@
 title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Framework pro kontejnery Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 8316d17aae09ddbd70bd80af4f06d8cb029f2752
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9e5b18e8e3482eb86c0d9dea5de56fb12f9d6256
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093769"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966896"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -21,7 +21,7 @@ Ve většině případů v tomto scénáři nebudete muset migrovat stávající
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Používání knihoven .NET nebo balíčků NuGet třetích stran není k dispozici pro .NET Core
 
-Knihovny třetích stran rychle přechodu [.NET Standard](../../../standard/net-standard.md), což umožňuje sdílení kódu napříč všemi typy rozhraní .NET, včetně .NET Core. Díky .NET Standard knihovně 2,0 a nad rámec kompatibility s plochou rozhraní API napříč různými architekturami se výrazně zvětšuje a aplikace .NET Core 2. x můžou přímo odkazovat na stávající knihovny .NET Framework (viz [.NET Framework 4.6.1. podpora .NET Standard 2,0](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#net-framework-461-supporting-net-standard-20)).
+Knihovny třetích stran rychle přechodu [.NET Standard](../../../standard/net-standard.md), což umožňuje sdílení kódu napříč všemi typy rozhraní .NET, včetně .NET Core. Díky .NET Standard knihovně 2,0 a nad rámec kompatibility povrchu rozhraní API napříč různými architekturami se výrazně zvětšuje a aplikace .NET Core 2. x můžou přímo odkazovat na stávající knihovny .NET Framework (viz [.NET Framework 4.6.1 podporující .NET Standard 2,0](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#net-framework-461-supporting-net-standard-20)).
 
 Kromě toho se [Sada Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md) vydala v listopadu 2017, aby rozšířila plochu rozhraní API dostupnou pro .NET Standard 2,0 ve Windows. Tento balíček umožňuje opětovně kompilovat stávající kód, aby .NET Standard 2. x s minimální nebo žádnou úpravou pro spuštění ve Windows.
 
@@ -49,17 +49,18 @@ Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NE
 
 Pokud však libovolná platforma nebo služba v Azure stále nepodporuje .NET Core s klientským rozhraním API, můžete použít ekvivalentní REST API ze služby Azure nebo klientské sady SDK v .NET Framework.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Průvodce platformou .NET Core**  
+- **Průvodce .NET Core** \
   [https://docs.microsoft.com/dotnet/core/index](../../../core/index.md)
 
-- **Přenos z .NET Framework do .NET Core**  
+- **Přenos z .NET Framework do .NET Core** \
   [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
-- **Průvodce rozhraním .NET Core v docker** [https://docs.microsoft.com/dotnet/core/docker/introduction](../../../core/docker/introduction.md)
+- **Průvodce rozhraním .NET Core v docker** \
+  [https://docs.microsoft.com/dotnet/core/docker/introduction](../../../core/docker/introduction.md)
 
-- **Přehled komponent .NET**  
+- **Přehled komponent .net** \
   [https://docs.microsoft.com/dotnet/standard/components](../../../standard/components.md)
 
 >[!div class="step-by-step"]

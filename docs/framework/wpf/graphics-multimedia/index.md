@@ -41,15 +41,15 @@ V souvislosti s grafikou a animacemi byly provedeny některé změny.
 
 - Kompozice v mezipaměti
 
-  Pomocí nových tříd <xref:System.Windows.Media.BitmapCache> a <xref:System.Windows.Media.BitmapCacheBrush> můžete ukládat složitou část vizuálního stromu do mezipaměti jako rastrový obrázek a významně vylepšit dobu vykreslování. Rastrový obrázek zůstává reagovat na vstup uživatele, jako je například kliknutí myší, a můžete ho malovat na jiné prvky stejně jako u libovolného štětce.
+  Pomocí nových tříd <xref:System.Windows.Media.BitmapCache> a <xref:System.Windows.Media.BitmapCacheBrush> můžete složitou část vizuálního stromu ukládat do mezipaměti a významně zlepšit dobu vykreslování. Rastrový obrázek zůstává reagovat na vstup uživatele, jako je například kliknutí myší, a můžete ho malovat na jiné prvky stejně jako u libovolného štětce.
 
 - Podpora funkce Pixel Shader 3
 
-  WPF 4 sestavuje podporu <xref:System.Windows.Media.Effects.ShaderEffect> představené v WPF 3,5 SP1 tím, že umožňuje aplikacím zapisovat efekty pomocí funkce pixel shader (PS) verze 3,0. Model shaderu PS 3,0 je propracovanější než PS 2,0, který umožňuje ještě více efektů na podporovaném hardwaru.
+  WPF 4 sestavuje podporu <xref:System.Windows.Media.Effects.ShaderEffect> zavedenou v WPF 3,5 SP1 tím, že umožňuje aplikacím zapisovat efekty pomocí funkce pixel shader (PS) verze 3,0. Model shaderu PS 3,0 je propracovanější než PS 2,0, který umožňuje ještě více efektů na podporovaném hardwaru.
 
 - Funkce usnadnění
 
-  Animace můžete vylepšit funkcemi usnadnění, což vám poskytne další kontrolu nad chováním animací. Můžete například použít <xref:System.Windows.Media.Animation.ElasticEase> na animaci a dát tak animaci k funkci pružiny. Další informace najdete v tématu typy náběh a doběh v oboru názvů <xref:System.Windows.Media.Animation>.
+  Animace můžete vylepšit funkcemi usnadnění, což vám poskytne další kontrolu nad chováním animací. Můžete například použít <xref:System.Windows.Media.Animation.ElasticEase> k animaci, aby animace mohla působit na jaře. Další informace naleznete v tématu typy náběh a doběh v oboru názvů <xref:System.Windows.Media.Animation>.
 
 <a name="graphics_and_rendering"></a>
 
@@ -63,7 +63,7 @@ WPF zahrnuje podporu pro vysoce kvalitní 2D grafiku. Mezi tyto funkce patří �
 
 ![Diagram znázorňující elipsy a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
-Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obrazce nejsou pouze tvary: Jedná se o programovatelné prvky, které implementují mnoho funkcí, které očekáváte od nejběžnějších ovládacích prvků, které zahrnují vstup z klávesnice a myši. Následující příklad ukazuje, jak zpracovat událost <xref:System.Windows.UIElement.MouseUp> vyvolanou kliknutím na prvek <xref:System.Windows.Shapes.Ellipse>.
+Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obrazce nejsou pouze tvary: Jedná se o programovatelné prvky, které implementují mnoho funkcí, které očekáváte od nejběžnějších ovládacích prvků, které zahrnují vstup z klávesnice a myši. Následující příklad ukazuje, jak zpracovat událost <xref:System.Windows.UIElement.MouseUp> vyvolána kliknutím na <xref:System.Windows.Shapes.Ellipse> elementu.
 
 ```xaml
 <Window
@@ -141,7 +141,7 @@ Další informace najdete v tématu [Přehled animací](animation-overview.md). 
 
 Obrázky, videa a zvuky jsou mediální a bohatě náročné způsoby, jak vyjádřit informace a uživatelské prostředí.
 
-### <a name="images"></a>Obrázky
+### <a name="images"></a>Image
 
 Obrázky, které obsahují ikony, pozadí a dokonce i části animací, jsou základní součástí většiny aplikací. Vzhledem k tomu, že je často potřeba použít image, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupňuje možnost pracovat s nimi různými způsoby. Následující ilustrace znázorňuje pouze jeden z těchto způsobů.
 
@@ -157,7 +157,7 @@ Základní funkcí grafické schopnosti [!INCLUDE[TLA2#tla_wpf](../../../../incl
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />
 ```
 
-<xref:System.Windows.Controls.MediaElement> je schopný přehrávat video i zvuk a je dostatečně rozšiřitelný, aby bylo možné snadno vytvářet vlastní uživatelská rozhraní.
+<xref:System.Windows.Controls.MediaElement> může přehrávat video i zvuk a je dostatečně rozšiřitelný, aby bylo možné snadno vytvořit vlastní uživatelská rozhraní.
 
 Další informace najdete v tématu [Přehled multimédií](multimedia-overview.md).
 

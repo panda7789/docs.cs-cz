@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
 ms.openlocfilehash: 46f81e39686da30270cd67edeb4c9f2d43e048b3
 ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/28/2019
 ms.locfileid: "71592008"
@@ -30,26 +30,26 @@ object.Value
 
 |Termín|Definice|  
 |---|---|  
-|`object`|Povinný parametr. Kolekce objektů @no__t 0|  
+|`object`|Požadováno. Kolekce objektů <xref:System.Xml.Linq.XElement>.|  
 
 ## <a name="return-value"></a>Návratová hodnota
 
- @No__t-0, který obsahuje hodnotu prvního prvku kolekce, nebo `Nothing`, pokud je kolekce prázdná.
+ `String`, který obsahuje hodnotu prvního prvku kolekce, nebo `Nothing`, pokud je kolekce prázdná.
 
 ## <a name="remarks"></a>Poznámky
 
- Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> usnadňuje přístup k hodnotě prvního prvku v kolekci objektů <xref:System.Xml.Linq.XElement>. Tato vlastnost nejprve ověří, zda kolekce obsahuje alespoň jeden objekt. Pokud je kolekce prázdná, vrátí tato vlastnost hodnotu `Nothing`. V opačném případě tato vlastnost vrátí hodnotu vlastnosti <xref:System.Xml.Linq.XElement.Value%2A> prvního prvku v kolekci.
+ Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> usnadňuje přístup k hodnotě prvního prvku v kolekci objektů <xref:System.Xml.Linq.XElement>. Tato vlastnost nejprve ověří, zda kolekce obsahuje alespoň jeden objekt. Pokud je kolekce prázdná, vrátí tato vlastnost `Nothing`. V opačném případě tato vlastnost vrátí hodnotu vlastnosti <xref:System.Xml.Linq.XElement.Value%2A> prvního prvku v kolekci.
 
 > [!NOTE]
-> Při přístupu k hodnotě atributu XML pomocí identifikátoru ' \@ ' se hodnota atributu vrátí jako `String` a nemusíte explicitně určovat vlastnost <xref:System.Xml.Linq.XAttribute.Value%2A>.
+> Při přístupu k hodnotě atributu XML pomocí identifikátoru '\@' se hodnota atributu vrátí jako `String` a nemusíte explicitně určovat vlastnost <xref:System.Xml.Linq.XAttribute.Value%2A>.
 
  Chcete-li získat přístup k dalším prvkům v kolekci, můžete použít vlastnost indexer rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](extension-indexer-property.md).
 
 ## <a name="inheritance"></a>Dědičnost
 
- Většina uživatelů nebude muset implementovat <xref:System.Collections.Generic.IEnumerable%601>, takže tuto část může ignorovat.
+ Většina uživatelů nebude muset implementovat <xref:System.Collections.Generic.IEnumerable%601>, a proto může tuto část ignorovat.
 
- Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> je vlastnost rozšíření pro typy, které implementují `IEnumerable(Of XElement)`. Vazba této vlastnosti rozšíření se podobá vazbě rozšiřujících metod: Pokud typ implementuje jedno z rozhraní a definuje vlastnost s názvem "value", má tato vlastnost přednost před vlastností Extension. Jinými slovy, tuto vlastnost <xref:System.Xml.Linq.XElement.Value%2A> lze přepsat definováním nové vlastnosti ve třídě, která implementuje `IEnumerable(Of XElement)`.
+ Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> je vlastnost rozšíření pro typy, které implementují `IEnumerable(Of XElement)`. Vazba této vlastnosti rozšíření se podobá vazbě rozšiřujících metod: Pokud typ implementuje jedno z rozhraní a definuje vlastnost s názvem "value", má tato vlastnost přednost před vlastností Extension. Jinými slovy Tato vlastnost <xref:System.Xml.Linq.XElement.Value%2A> možné přepsat definováním nové vlastnosti ve třídě, která implementuje `IEnumerable(Of XElement)`.
 
 ## <a name="example"></a>Příklad
 
@@ -63,7 +63,7 @@ object.Value
 
 ## <a name="example"></a>Příklad
 
- Následující příklad ukazuje, jak získat hodnotu atributu XML z kolekce objektů <xref:System.Xml.Linq.XAttribute>. V příkladu se používá vlastnost osa atributu k zobrazení hodnoty atributu `type` pro všechny prvky `phone`.
+ Následující příklad ukazuje, jak získat hodnotu atributu XML z kolekce objektů <xref:System.Xml.Linq.XAttribute>. V příkladu se používá vlastnost osa atributu k zobrazení hodnoty atributu `type` pro všechny `phone` prvky.
 
  [!code-vb[VbXMLSamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#16)]
 

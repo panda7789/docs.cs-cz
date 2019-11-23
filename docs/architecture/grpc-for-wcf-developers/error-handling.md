@@ -1,14 +1,13 @@
 ---
 title: Zpracování chyb – gRPC pro vývojáře WCF
 description: BUDE URČENO K ZÁPISU
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 91f5789d8ed0f01f3ce2f3f9a6c6ccf14f245290
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c44bd9264c877a7c7a86c115b6da9f759006016
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094225"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967784"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 
@@ -23,7 +22,7 @@ Aktuální verze gRPC bohužel neobsahuje sofistikovanější nalezené ve služ
 | `GRPC_STATUS_UNKNOWN` | Neplatná odpověď. |
 | `GRPC_STATUS_INTERNAL` | Problém s kódováním/dekódováním. |
 | `GRPC_STATUS_UNAUTHENTICATED` | Ověřování se nezdařilo. |
-| `GRPC_STATUS_PERMISSION_DENIED` | Autorizace se nezdařila. |
+| `GRPC_STATUS_PERMISSION_DENIED` | Ověření se nepovedlo. |
 | `GRPC_STATUS_CANCELLED` | Volání bylo zrušeno, obvykle volající. |
 
 ## <a name="raising-errors-in-aspnet-core-grpc"></a>Vyvolávání chyb v ASP.NET Core gRPC
@@ -47,7 +46,7 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 
 ## <a name="catching-errors-in-grpc-clients"></a>Zachycení chyb v klientech gRPC
 
-Stejně jako klienti WCF můžou zachytit chyby <xref:System.ServiceModel.FaultException%601>, klient gRPC může zachytit `RpcException` a zpracovávat chyby. Vzhledem k tomu, že `RpcException` není obecný typ, nemůžete zachytávání různých typů chyb v různých blocích C#, ale můžete použít funkci *filtrů výjimek* pro deklaraci samostatných`catch`ch bloků pro různé stavové kódy, jak je znázorněno v následujícím příkladu:
+Stejně jako klienti WCF můžou zachytit chyby <xref:System.ServiceModel.FaultException%601>, klient gRPC může zachytit `RpcException` a zpracovávat chyby. Vzhledem k tomu, že `RpcException` není obecný typ, nemůžete zachytávání různých typů chyb v různých blocích C#, ale můžete použít funkci *filtrů výjimek* pro deklaraci samostatných `catch`ch bloků pro různé stavové kódy, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 try

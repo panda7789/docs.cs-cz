@@ -84,7 +84,7 @@ Informace o vylepšení výkonu, které může být výsledkem vrstvené kompila
 
 Ve výchozím nastavení je v .NET Core 2,2 Preview 2 zapnutá vrstvená kompilace. Rozhodli jsme se však, že ve výchozím nastavení není stále připraveno povolit vrstvenou kompilaci. Takže v .NET Core 2,2 se vrstvená kompilace bude i nadále jednat o funkci výslovného souhlasu. Informace o tom, jak se na vrstvenou kompilaci rozvrstvit, najdete v tématu [vylepšení kompilátoru JIT](dotnet-core-2-1.md#jit-compiler-improvements) v tématu [co je nového v .NET Core 2,1](dotnet-core-2-1.md).
 
-## <a name="runtime"></a>Modul runtime
+## <a name="runtime"></a>Runtime
 
 **Vložení kódu před provedením metody Main**
 

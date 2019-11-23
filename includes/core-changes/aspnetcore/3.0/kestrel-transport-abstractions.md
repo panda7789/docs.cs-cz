@@ -8,11 +8,11 @@ ms.locfileid: "72394196"
 ---
 ### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel: abstrakce přenosu se odebrala a provedla jako veřejná.
 
-Jako součást přesunu z rozhraní API přenosové vrstvy pubternal jsou rozhraní API transportní vrstvy Kestrel vystavená jako veřejné rozhraní v knihovně `Microsoft.AspNetCore.Connections.Abstractions`.
+V rámci přesunu z rozhraní API pro pubternal jsou v knihovně `Microsoft.AspNetCore.Connections.Abstractions` zpřístupněny rozhraní API přenosové vrstvy Kestrel jako veřejné rozhraní.
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
@@ -22,8 +22,8 @@ Jako součást přesunu z rozhraní API přenosové vrstvy pubternal jsou rozhra
 #### <a name="new-behavior"></a>Nové chování
 
 - Rozhraní `IConnectionListener` bylo představeno v knihovně `Microsoft.AspNetCore.Connections.Abstractions`, aby vystavilo nejvíce používané funkce z knihovny `...Transport.Abstractions`.
-- @No__t-0 je nyní k dispozici v možnostech přenosu (`LibuvTransportOptions` a `SocketTransportOptions`).
-- @no__t – 0 už není k dispozici.
+- `NoDelay` je teď k dispozici v možnostech přenosu (`LibuvTransportOptions` a `SocketTransportOptions`).
+- `SchedulingMode` již není k dispozici.
 
 #### <a name="reason-for-change"></a>Důvod změny
 

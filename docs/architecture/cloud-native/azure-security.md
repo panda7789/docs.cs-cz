@@ -52,7 +52,7 @@ Testování průniku nebo "testování perem" zahrnuje uvedení do externích ak
 
 Samotný Azure neustále prochází útoky z [týmu hackerů v Microsoftu](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/). V průběhu let byly nejprve vyhledány desítky potenciálně závažných vektorů útoku a jejich uzavírání předtím, než bude možné je zneužít externě. Lépe se zaměřuje na cíl, což je pravděpodobnější, že se externí actor pokusí ho zneužít a existuje několik cílů na světovém větším cíli, než je Azure.
 
-## <a name="monitoring"></a>Sledovaný
+## <a name="monitoring"></a>Monitorování
 
 Pokud by se útočník pokusil proniknout aplikaci, mělo by to být upozornění. Často se útoky můžou Spotted prozkoumáním protokolů ze služeb. Útoky opouští příznakem příznaku, který může být Spotted před úspěchem. V případě, že se útočník pokouší odhadnout heslo, provede mnoho požadavků na přihlašovací systém. Monitorování systému přihlášení dokáže detekovat divné vzory, které nejsou v typickém vzorovém přístupu. Toto monitorování se dá přepínat na výstrahu, která může zase upozornit na určitou osobu, aby aktivovala určitý druh protiopatření. Vysoce vyspělý monitorovací systém může dokonce provádět akce na základě těchto odchylek, které přidávají pravidla pro blokování požadavků nebo omezení odezvy.
 
@@ -86,7 +86,7 @@ Dopředné: většina prostředků Azure PaaS má jenom základní a opravňují
 
 Naštěstí je možné do Azure Virtual Network umístit většinu prostředků Azure, které umožňují jemnější řízení přístupu. Podobně jako v případě, že místní sítě vytváří privátní sítě, které jsou chráněny před širším světem, jsou virtuální sítě ostrovy privátních IP adres, které se nacházejí v síti Azure.
 
-![Figure 10-1 virtuální síť v Azure ](./media/virtual-network.png)
+![obrázek 10-1 virtuální síť v Azure](./media/virtual-network.png)
 **obrázek 10-1**. Virtuální síť v Azure.
 
 Stejným způsobem, že místní sítě mají bránu firewall, která řídí přístup k síti, můžete vytvořit podobnou bránu firewall na hranici virtuální sítě. Ve výchozím nastavení mohou všechny prostředky ve virtuální síti stále komunikovat s internetem. Jsou to jenom příchozí připojení, která vyžadují určitou formu explicitní výjimky brány firewall.
@@ -109,7 +109,7 @@ RBAC je systém, který poskytuje identitu aplikacím běžícím v Azure. Aplik
 
 První komponentou v RBAC je objekt zabezpečení. Objekt zabezpečení může být uživatel, skupina, instanční objekt nebo spravovaná identita.
 
-![Figure 10-2 různé typy objektů zabezpečení ](./media/rbac-security-principal.png)
+![obrázek 10-2 různé typy objektů zabezpečení](./media/rbac-security-principal.png)
 **obrázek 10-2**. Různé typy objektů zabezpečení.
 
 - Uživatel – libovolný uživatel, který má účet v Azure Active Directory je uživatel.
@@ -123,7 +123,7 @@ Objekt zabezpečení lze použít pro většinu prostředků. To znamená, že j
 
 Objekt zabezpečení může převzít na mnoho rolí nebo s využitím více sartorial analogie, což je hodně Hats. Každá role definuje řadu oprávnění, jako je například "čtení zpráv z Azure Service Busho koncového bodu". Efektivní sadou oprávnění objektu zabezpečení je kombinace všech oprávnění přiřazených ke všem rolím, které má objekt zabezpečení. Azure má velký počet předdefinovaných rolí a uživatelů, kteří můžou definovat své vlastní role.
 
-Definice rolí RBAC ![Figure 10-3 ](./media/rbac-role-definition.png)
+![obrázek 10-3 Definice rolí RBAC](./media/rbac-role-definition.png)
 **obrázek 10-3**. Definice rolí RBAC
 
 Součástí Azure je také řada rolí na vysoké úrovni, jako je vlastník, přispěvatel, čtenář a správce uživatelských účtů. U role vlastníka má objekt zabezpečení přístup k všem prostředkům a přiřazuje oprávnění ostatním. Přispěvatel má stejnou úroveň přístupu ke všem prostředkům, ale nemůže přiřadit oprávnění. Čtenář může zobrazit jenom existující prostředky Azure a správce účtu uživatele může spravovat přístup k prostředkům Azure.
@@ -148,7 +148,7 @@ Pravidla zamítnutí mají přednost před pravidly povolení. Nyní představuj
 
 Jak je možné si představit, může mít velký počet rolí a oborů, aby bylo možné zjistit efektivní oprávnění instančního objektu poměrně obtížné. Piling pravidla odepření, která se na nich nacházejí, slouží pouze ke zvýšení složitosti. Naštěstí je k dispozici Kalkulačka oprávnění, která může zobrazit skutečná oprávnění pro libovolný instanční objekt. Obvykle se nachází na kartě IAM na portálu, jak je znázorněno na obrázku 10-3.
 
-Kalkulačka oprávnění ![Figure 10-4 pro službu App Service ](./media/check-rbac.png)
+Kalkulačka oprávnění ![obrázek 10-4 pro službu App Service](./media/check-rbac.png)
 **obrázek 10-4**. Kalkulačka oprávnění pro službu App Service.
 
 ## <a name="securing-secrets"></a>Zabezpečení tajných kódů
@@ -205,7 +205,7 @@ Alternativou k používání integrovaných tajných klíčů Kubernetes je př�
 
 Zachování bezpečnosti dat je důležité, ať už se jedná o disk nebo přenos mezi různými různými službami. Nejúčinnější způsob, jak zabránit úniku dat, je zašifrovat ho do formátu, který jiní uživatelé nemůžou snadno přečíst. Azure podporuje široké spektrum možností šifrování.
 
-### <a name="in-transit"></a>Při přenosu
+### <a name="in-transit"></a>Na cestě
 
 Existuje několik způsobů, jak šifrovat provoz v síti v Azure. Přístup ke službám Azure se obvykle provádí prostřednictvím připojení, která používají protokol TLS (Transport Layer Security). Například všechna připojení k rozhraním API Azure vyžadují připojení TLS. Připojení ke koncovým bodům ve službě Azure Storage může být stejně omezené jenom přes šifrovaná připojení TLS.
 
@@ -215,7 +215,7 @@ Tuto kontrolu může provést externí služba, například test serveru SSL Lab
 
 Dokonce i služby, jako jsou databáze SQL Azure, používají šifrování TLS, aby data zůstala skrytá. Zajímavou součástí šifrování přenášených dat pomocí protokolu TLS je to, že není možné, ani pro společnost Microsoft, aby naslouchala v souvislosti s připojením mezi počítači se systémem TLS. To by mělo poskytovat pohodlí pro společnosti, které se zabývají tím, že jejich data mohou být ohrožena společností Microsoft nebo dokonce i objektem Actor, který má více prostředků než standardní útočník.
 
-![Figure 10-5 protokolu SSL Labs zobrazuje skóre pro Service Bus koncový bod. ](./media/ssl-report.png)
+![obrázek 10-5 sestava SSL Labs zobrazující skóre pro Service Bus koncový bod.](./media/ssl-report.png)
 **obrázek 10-5**. Sestava SSL Labs zobrazuje skóre pro Service Bus koncový bod.
 
 I když tato úroveň šifrování nebude stačit pro celou dobu, měla by inspirovat jistotu, že připojení Azure TLS jsou poměrně zabezpečená. Azure bude i nadále vyvíjet standardy zabezpečení, protože se zlepšuje šifrování. Je dobré si poznat, že někdo sleduje standardy zabezpečení a aktualizuje Azure při jejich vylepšování.
@@ -234,7 +234,7 @@ Ve výchozím nastavení jsou klíče používané pro šifrování Azure Storag
 
 Virtuální počítače používají šifrované úložiště, ale je možné poskytnout další vrstvu šifrování pomocí technologií, jako je BitLocker ve Windows nebo DM-crypt v systému Linux. Tyto technologie znamenají, že i v případě, že se image disku nevrátila z úložiště, zůstane v blízkosti nemožné ji přečíst.
 
-### <a name="azure-sql"></a>SQL Azure
+### <a name="azure-sql"></a>Azure SQL
 
 Databáze hostované v Azure SQL používají technologii nazvanou [transparentní šifrování dat (TDE)](/sql/relational-databases/security/encryption/transparent-data-encryption) k zajištění, že data zůstanou zašifrovaná. Tato možnost je ve výchozím nastavení povolená u všech nově vytvořených databází SQL, ale musí být povolená ručně pro starší databáze. TDE provádí šifrování a dešifrování v reálném čase nejen pro databázi, ale také pro zálohy a protokoly transakcí.
 
@@ -244,7 +244,7 @@ Parametry šifrování jsou uloženy v databázi `master` a při spuštění jso
 
 Nastavení této úrovně šifrování vyžaduje spuštění prostřednictvím průvodce v SQL Server Management Studio k výběru řazení šifrování a místa, kde v Key Vault ukládat přidružené klíče.
 
-![Figure 10-6 výběru sloupců v tabulce k šifrování pomocí Always Encrypted ](./media/always-encrypted.png)
+![obrázek 10-6 Výběr sloupců v tabulce k šifrování pomocí Always Encrypted](./media/always-encrypted.png)
 **obrázek 10-6**. Výběr sloupců v tabulce k šifrování pomocí Always Encrypted.
 
 Klientské aplikace, které čtou informace z těchto šifrovaných sloupců, potřebují speciální příspěvky pro čtení šifrovaných dat. Připojovací řetězce je třeba aktualizovat pomocí `Column Encryption Setting=Enabled` a pověření klienta musí být načtena z Key Vault. Klient SQL Server musí být pak s šifrovacími klíči sloupce. Až to uděláte, zbývající akce použijí standardní rozhraní pro klienta SQL. To znamená, že nástroje jako Dapperem a Entity Framework, které jsou postavené na klientech SQL, budou i nadále fungovat beze změn. Always Encrypted nemusí být k dispozici pro všechny ovladače SQL Server v každém jazyce.
@@ -255,7 +255,7 @@ Kombinace TDE a Always Encrypted, které je možné použít s klíči specifick
 
 Cosmos DB je nejnovější databáze poskytovaná Microsoftem v Azure. Bylo postaveno od základů k zabezpečení a šifrování. Šifrování AES-256bit je standard pro všechny databáze Cosmos DB a nedá se zakázat. V kombinaci s požadavkem TLS 1,2 pro komunikaci je celé řešení úložiště šifrované.
 
-![Figure 10-7 tok šifrování dat v Cosmos DB ](./media/cosmos-encryption.png)
+![obrázek 10-7 tok šifrování dat v Cosmos DB](./media/cosmos-encryption.png)
 **obrázek 10-7**. Tok šifrování dat v rámci Cosmos DB.
 
 I když Cosmos DB neposkytuje pro poskytování šifrovacích klíčů zákazníka, má tým významnou práci provedenou týmem k tomu, aby se zajistilo, že zůstane kompatibilní se standardem PCI-DSS bez tohoto. Cosmos DB také nepodporuje žádné řazení jednoduchého šifrování sloupců podobně jako Always Encrypted Azure SQL.

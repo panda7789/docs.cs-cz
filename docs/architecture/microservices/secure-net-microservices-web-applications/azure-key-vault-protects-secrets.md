@@ -28,22 +28,22 @@ Balíček **Microsoft. Extensions. Configuration. AzureKeyVault** umožňuje apl
    Set-AzKeyVaultAccessPolicy -VaultName "<VaultName>" -ServicePrincipalName $sp.ServicePrincipalNames[0] -PermissionsToSecrets all -ResourceGroupName "<KeyVault Resource Group>"
    ```
 
-3. Zahrňte Trezor klíčů jako zdroj konfigurace v aplikaci voláním <xref:Microsoft.Extensions.Configuration.AzureKeyVaultConfigurationExtensions.AddAzureKeyVault%2A?displayProperty=nameWithType> metody rozšíření při <xref:Microsoft.Extensions.Configuration.IConfigurationRoot> vytváření instance. Všimněte si, `AddAzureKeyVault` že volání vyžaduje ID aplikace, které bylo zaregistrováno a kterému byl udělen přístup k trezoru klíčů v předchozích krocích.
+3. Zahrňte Trezor klíčů jako zdroj konfigurace v aplikaci voláním metody rozšíření <xref:Microsoft.Extensions.Configuration.AzureKeyVaultConfigurationExtensions.AddAzureKeyVault%2A?displayProperty=nameWithType> při vytváření instance <xref:Microsoft.Extensions.Configuration.IConfigurationRoot>. Všimněte si, že volání `AddAzureKeyVault` vyžaduje ID aplikace, které bylo zaregistrováno a kterému byl udělen přístup k trezoru klíčů v předchozích krocích.
 
-   Můžete také použít přetížení `AddAzureKeyVault` , které přijímá certifikát místo tajného klíče klienta, a to jenom tak, že obsahuje odkaz na balíček [Microsoft. IdentityModel. clients. Active](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory) .
+   Můžete také použít přetížení `AddAzureKeyVault`, které přebírá certifikát místo tajného klíče klienta, a to jenom tak, že obsahuje odkaz na balíček [Microsoft. IdentityModel. clients. Active](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory) .
 
 > [!IMPORTANT]
 > Doporučujeme, abyste jako poslední Poskytovatel konfigurace zaregistrovali Azure Key Vault, takže může přepsat hodnoty konfigurace z předchozích zprostředkovatelů.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Použití Azure Key Vault k ochraně tajných klíčů aplikací** \
+- **Použití Azure Key Vault k ochraně tajných klíčů aplikace** \
   [https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault](/azure/guidance/guidance-multitenant-identity-keyvault)
 
 - **Bezpečné ukládání tajných kódů aplikací během vývoje** \
   [https://docs.microsoft.com/aspnet/core/security/app-secrets](/aspnet/core/security/app-secrets)
 
-- **Konfigurace ochrany dat** \
+- **Konfigurace \ ochrany dat**
   [https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview](/aspnet/core/security/data-protection/configuration/overview)
 
 - **Správa a životnost klíče ochrany dat v ASP.NET Core** \
@@ -53,5 +53,5 @@ Balíček **Microsoft. Extensions. Configuration. AzureKeyVault** umožňuje apl
   <https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile>
 
 >[!div class="step-by-step"]
->[Předchozí](developer-app-secrets-storage.md)Další
->[](../key-takeaways.md)
+>[Předchozí](developer-app-secrets-storage.md)
+>[Další](../key-takeaways.md)

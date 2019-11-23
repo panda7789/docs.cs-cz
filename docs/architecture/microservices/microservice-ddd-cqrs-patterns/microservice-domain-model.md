@@ -53,7 +53,7 @@ To je důvod, proč architektury mikroslužeb jsou ideální pro přístup s ví
 
 Někteří lidé říkají, že model domény anemic je anti-Pattern. Ve skutečnosti záleží na tom, co implementujete. Pokud je mikroslužba, kterou vytváříte, dostatečně jednoduchá (například služba CRUD), pak za doménovým modelem anemic se nejedná o anti-Pattern. Pokud ale potřebujete řešit složitost domény mikroslužeb, která má mnoho stále se měnících obchodních pravidel, model domény anemic může být antipattern pro daný kontext mikroslužeb nebo vázaného kontextu. V takovém případě může mít návrh jako bohatý model s entitami, které obsahují data a chování, i implementaci dalších vzorků DDD (agregované hodnoty, objekty hodnot atd.) pro dlouhodobou úspěšnost této mikroslužby.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **DevIQ. \ doménových entit**
   <https://deviq.com/entity/>
@@ -78,7 +78,7 @@ Objekty hodnot jsou obtížné spravovat v relačních databázích a ORMs jako 
 
 EF Core 2,0 obsahuje funkci [vlastněné entity](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) , která usnadňuje zpracování hodnotových objektů, jak se dozvíme později v podrobnostech.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Martin Fowlera. \ – vzor objektu hodnoty**
   <https://martinfowler.com/bliki/ValueObject.html>
@@ -114,7 +114,7 @@ Na obrázku 7-9 vidíte agregace ukázek, jako je agregace nákupčího, která 
 
 Doménový model DDD se skládá z agregací, agregace může mít pouze jednu entitu a může obsahovat také objekty hodnot. Počítejte s tím, že agregace nákupčího může mít další podřízené entity v závislosti na vaší doméně, stejně jako při řazení mikroslužby v referenční aplikaci eShopOnContainers. Obrázek 7-9 pouze ukazuje případ, ve kterém má kupující jednu entitu, jako příklad agregace, která obsahuje pouze agregovanou kořenovou hodnotu.
 
-Aby se zachovalo oddělení agregací a zachovalo hranice mezi nimi, je dobrým zvykem, aby se zakázala přímá navigace mezi agregacemi a měla by mít pole cizího klíče (FK), jak je implementované v [řazení. model domény mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) v eShopOnContainers. Entita Order má pouze pole FK pro kupující, ale ne EF Core navigační vlastnost, jak je znázorněno v následujícím kódu:
+Aby se zachovalo oddělení agregací a mělo mezi nimi jasné hranice, je dobrým zvykem, aby se zakázala přímá navigace mezi agregacemi a měla by se používat pole cizího klíče (FK), [jak je implementované](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) v eShopOnContainers. Entita Order má pouze pole FK pro kupující, ale ne EF Core navigační vlastnost, jak je znázorněno v následujícím kódu:
 
 ```csharp
 public class Order : Entity, IAggregateRoot
@@ -131,7 +131,7 @@ public class Order : Entity, IAggregateRoot
 
 Identifikace a práce s agregacemi vyžaduje výzkum a možnosti. Další informace najdete v následujících dalších seznamech prostředků.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vaughn Vernon. Účinný agregovaný návrh – část I: modelování jedné agregace** (z <http://dddcommunity.org/>) \
   <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>

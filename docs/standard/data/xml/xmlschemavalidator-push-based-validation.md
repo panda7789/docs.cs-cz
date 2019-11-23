@@ -1,5 +1,5 @@
 ---
-title: XmlSchemaValidator ověřování založené na nabízených oznámeních
+title: Přímé ověření XmlSchemaValidator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,13 +15,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/10/2019
 ms.locfileid: "72250045"
 ---
-# <a name="xmlschemavalidator-push-based-validation"></a>XmlSchemaValidator ověřování založené na nabízených oznámeních
+# <a name="xmlschemavalidator-push-based-validation"></a>Přímé ověření XmlSchemaValidator
 
-Třída <xref:System.Xml.Schema.XmlSchemaValidator> poskytuje účinný a vysoce výkonný mechanismus pro ověřování XML dat proti schématům XML ve způsobu založeném na nabízených oznámeních. Například třída <xref:System.Xml.Schema.XmlSchemaValidator> umožňuje ověřit místně XML informační sadu bez nutnosti jejich serializace jako dokument XML a pak znovu analyzovat dokument pomocí ověřování XML Reader.
+Třída <xref:System.Xml.Schema.XmlSchemaValidator> poskytuje účinný a vysoce výkonný mechanismus pro ověřování dat XML proti schématům XML ve způsobu založeném na nabízených oznámeních. Například třída <xref:System.Xml.Schema.XmlSchemaValidator> umožňuje ověřit místní informační sadu XML bez nutnosti jejich serializace jako dokument XML a pak znovu analyzovat dokument pomocí ověřování XML Reader.
 
-Třída <xref:System.Xml.Schema.XmlSchemaValidator> se dá použít v pokročilých scénářích, jako je vytváření ověřovacích modulů pro vlastní zdroje dat XML, nebo jako způsob, jak vytvořit ověřovací zapisovač XML.
+Třídu <xref:System.Xml.Schema.XmlSchemaValidator> lze použít v pokročilých scénářích, jako je vytváření ověřovacích modulů přes vlastní zdroje dat XML, nebo jako způsob sestavení ověřování XML Writer.
 
-Následuje příklad použití třídy <xref:System.Xml.Schema.XmlSchemaValidator> k ověření souboru `contosoBooks.xml` proti schématu `contosoBooks.xsd`. V příkladu se používá třída <xref:System.Xml.Serialization.XmlSerializer> k deserializaci souboru `contosoBooks.xml` a předání hodnoty uzlů do metod třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
+Následuje příklad použití třídy <xref:System.Xml.Schema.XmlSchemaValidator> k ověření souboru `contosoBooks.xml` proti schématu `contosoBooks.xsd`. V příkladu se používá třída <xref:System.Xml.Serialization.XmlSerializer> k deserializaci `contosoBooks.xml` souboru a předání hodnoty uzlů do metod třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 > [!NOTE]
 > Tento příklad se používá v celém oddílu tohoto tématu.
@@ -71,29 +71,29 @@ Příklad také přebírá `contosoBooks.xsd` jako vstup.
 
 Chcete-li zahájit ověřování XML informační sady, je nutné nejprve inicializovat novou instanci třídy <xref:System.Xml.Schema.XmlSchemaValidator> pomocí konstruktoru <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A>.
 
-Konstruktor <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A> přebírá objekty <xref:System.Xml.XmlNameTable>, <xref:System.Xml.Schema.XmlSchemaSet> a <xref:System.Xml.XmlNamespaceManager> jako parametry a jako parametr hodnotu <xref:System.Xml.Schema.XmlSchemaValidationFlags>. Objekt <xref:System.Xml.XmlNameTable> se používá k atomizovatí známých řetězců oboru názvů, jako je například obor názvů schématu, obor názvů XML a tak dále, a je předán metodě <xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A> při ověřování jednoduchého obsahu. Objekt <xref:System.Xml.Schema.XmlSchemaSet> obsahuje schémata XML sloužící k ověření XML informační sady. Objekt <xref:System.Xml.XmlNamespaceManager> se používá k překladu oborů názvů zjištěných během ověřování. Hodnota <xref:System.Xml.Schema.XmlSchemaValidationFlags> slouží k zakázání určitých funkcí ověřování.
+Konstruktor <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A> přebírá objekty <xref:System.Xml.XmlNameTable>, <xref:System.Xml.Schema.XmlSchemaSet>a <xref:System.Xml.XmlNamespaceManager> jako parametry a také <xref:System.Xml.Schema.XmlSchemaValidationFlags> hodnota jako parametr. Objekt <xref:System.Xml.XmlNameTable> slouží k atomizovatí známých řetězců oboru názvů, jako je například obor názvů schématu, obor názvů XML a tak dále, a je předán metodě <xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A> při ověřování jednoduchého obsahu. Objekt <xref:System.Xml.Schema.XmlSchemaSet> obsahuje schémata XML sloužící k ověření XML informační sady. Objekt <xref:System.Xml.XmlNamespaceManager> se používá k překladu oborů názvů zjištěných během ověřování. Hodnota <xref:System.Xml.Schema.XmlSchemaValidationFlags> slouží k zakázání určitých funkcí ověřování.
 
-Další informace o konstruktoru <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Další informace o konstruktoru <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 ### <a name="initializing-validation"></a>Inicializuje se ověřování.
 
-Po sestavení objektu <xref:System.Xml.Schema.XmlSchemaValidator> existují dvě přetížené metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, které se používají k inicializaci stavu objektu <xref:System.Xml.Schema.XmlSchemaValidator>. Níže jsou uvedené dvě metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>.
+Po sestavení objektu <xref:System.Xml.Schema.XmlSchemaValidator> jsou k dispozici dvě přetížené <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metody, které slouží k inicializaci stavu objektu <xref:System.Xml.Schema.XmlSchemaValidator>. Níže jsou uvedené dvě metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>.
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>
 
-Výchozí metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType> inicializuje objekt <xref:System.Xml.Schema.XmlSchemaValidator> do svého počátečního stavu a metoda přetížení <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>, která převezme <xref:System.Xml.Schema.XmlSchemaObject> jako parametr, inicializuje objekt <xref:System.Xml.Schema.XmlSchemaValidator> do počátečního stavu pro částečné ověření.
+Výchozí <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType> metoda inicializuje <xref:System.Xml.Schema.XmlSchemaValidator> objekt do svého počátečního stavu a přetíženou metodu <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>, která převezme <xref:System.Xml.Schema.XmlSchemaObject> jako parametr, inicializuje objekt <xref:System.Xml.Schema.XmlSchemaValidator> na počáteční stav pro částečné ověření.
 
-Metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> lze volat pouze ihned po vytvoření objektu <xref:System.Xml.Schema.XmlSchemaValidator> nebo po volání <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>.
+Obě metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> mohou být volány pouze ihned po sestavení <xref:System.Xml.Schema.XmlSchemaValidator> objektu nebo po volání <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>.
 
-Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 #### <a name="partial-validation"></a>Částečné ověření
 
-Metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametr inicializuje objekt <xref:System.Xml.Schema.XmlSchemaValidator> do svého počátečního stavu pro částečné ověření.
+Metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametr inicializuje objekt <xref:System.Xml.Schema.XmlSchemaValidator> na počáteční stav pro částečné ověření.
 
-V následujícím příkladu je <xref:System.Xml.Schema.XmlSchemaObject> inicializován pro částečné ověřování pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>. Prvek schématu `orderNumber` se předává výběrem elementu schématu <xref:System.Xml.XmlQualifiedName> v kolekci <xref:System.Xml.Schema.XmlSchemaObjectTable>, kterou vrátí vlastnost <xref:System.Xml.Schema.XmlSchemaSet.GlobalElements%2A> objektu <xref:System.Xml.Schema.XmlSchemaSet>. Objekt <xref:System.Xml.Schema.XmlSchemaValidator> poté ověří tento konkrétní element.
+V následujícím příkladu je inicializována <xref:System.Xml.Schema.XmlSchemaObject> pro částečné ověřování pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A?displayProperty=nameWithType>. `orderNumber` prvek schématu je předán výběrem elementu schématu pomocí <xref:System.Xml.XmlQualifiedName> v kolekci <xref:System.Xml.Schema.XmlSchemaObjectTable>, kterou vrátí vlastnost <xref:System.Xml.Schema.XmlSchemaSet.GlobalElements%2A> objektu <xref:System.Xml.Schema.XmlSchemaSet>. Objekt <xref:System.Xml.Schema.XmlSchemaValidator> potom ověří tento konkrétní element.
 
 ```vb
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()
@@ -135,48 +135,48 @@ Příklad má jako vstup následující schéma XML.
 </xs:schema>
 ```
 
-Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 ### <a name="adding-additional-schemas"></a>Přidání dalších schémat
 
-Metoda <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> slouží k přidání schématu XML do sady schémat používaných při ověřování. Metodu <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> lze použít k simulaci efektu zaznamenání vloženého schématu XML v ověřované XML informační službě.
+Metoda <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> se používá k přidání schématu XML do sady schémat používaných při ověřování. Metodu <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> lze použít k simulaci efektu zaznamenání vloženého schématu XML v ověřované XML informační službě.
 
 > [!NOTE]
-> Cílový obor názvů parametru <xref:System.Xml.Schema.XmlSchema> se nemůže shodovat s žádným prvkem nebo atributem, který objekt <xref:System.Xml.Schema.XmlSchemaValidator> již zjistil.
+> Cílový obor názvů parametru <xref:System.Xml.Schema.XmlSchema> nemůže odpovídat žádnému elementu nebo atributu, který je již nalezen v objektu <xref:System.Xml.Schema.XmlSchemaValidator>.
 >
 > Pokud hodnota <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema?displayProperty=nameWithType> nebyla předána jako parametr konstruktoru <xref:System.Xml.Schema.XmlSchemaValidator.%23ctor%2A>, metoda <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> neprovede žádnou akci.
 
-Výsledek metody <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> závisí na ověřování aktuálního kontextu uzlu XML. Další informace o kontextech ověřování naleznete v části "kontext ověření" v tomto tématu.
+Výsledek metody <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> je závislý na ověření aktuálního kontextu uzlu XML. Další informace o kontextech ověřování naleznete v části "kontext ověření" v tomto tématu.
 
-Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 ### <a name="validating-elements-attributes-and-content"></a>Ověřování elementů, atributů a obsahu
 
 Třída <xref:System.Xml.Schema.XmlSchemaValidator> poskytuje několik metod, které slouží k ověření elementů, atributů a obsahu v XML informačním souboru pro schémata XML. Následující tabulka popisuje každou z těchto metod.
 
-|Metoda|Description|
+|Metoda|Popis|
 |------------|-----------------|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A>|Ověří název elementu v aktuálním kontextu.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>|Ověří atribut v kontextu aktuálního prvku nebo s objektem <xref:System.Xml.Schema.XmlSchemaAttribute> předaným jako parametr metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>|Ověří atribut v kontextu aktuálního prvku nebo proti <xref:System.Xml.Schema.XmlSchemaAttribute>mu objektu předanému jako parametr metodě <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>|Ověřuje, zda jsou přítomny všechny požadované atributy v kontextu elementu, a připraví objekt <xref:System.Xml.Schema.XmlSchemaValidator> k ověření podřízeného obsahu elementu.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Ověří, zda je povolen text v kontextu aktuálního prvku, a nashromáždí text pro ověření, pokud má aktuální prvek jednoduchý obsah.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>|Ověří, zda je v aktuálním kontextu prvku povoleno prázdné místo a zda má aktuální prvek jednoduchý obsah, a nashromáždí prázdný prostor pro ověřování.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|Ověřuje, zda je textový obsah elementu platný vzhledem k jeho datovému typu pro prvky s jednoduchým obsahem a ověřuje, zda je obsah aktuálního prvku dokončen pro prvky se složitým obsahem.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Přeskočí ověřování aktuálního obsahu elementu a připraví objekt <xref:System.Xml.Schema.XmlSchemaValidator> pro ověření obsahu v kontextu nadřazeného elementu.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|Ukončí ověřování a zkontroluje omezení identity pro celý dokument XML, pokud je nastavena možnost ověřování <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints>.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Přeskočí ověřování aktuálního obsahu elementu a připraví objekt <xref:System.Xml.Schema.XmlSchemaValidator> k ověření obsahu v kontextu nadřazeného elementu.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|Ukončí ověřování a zkontroluje omezení identity pro celý dokument XML, pokud je nastavena možnost ověření <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints>.|
 
 > [!NOTE]
-> Třída <xref:System.Xml.Schema.XmlSchemaValidator> má definovaný přechod stavu, který vynutila sekvenci a výskyt volání jednotlivých metod popsaných v předchozí tabulce. Konkrétní přechod stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator> je popsán v tomto tématu v části "přechod stavu XmlSchemaValidator".
+> Třída <xref:System.Xml.Schema.XmlSchemaValidator> má definovaný přechod stavu, který vynutila sekvenci a výskyt volání každé z metod popsaných v předchozí tabulce. Konkrétní přechod stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator> je popsán v tomto tématu v části "přechod stavu XmlSchemaValidator".
 
-Příklad metod, které slouží k ověření elementů, atributů a obsahu v informační příručce XML, naleznete v příkladu v předchozí části. Další informace o těchto metodách naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Příklad metod, které slouží k ověření elementů, atributů a obsahu v informační příručce XML, naleznete v příkladu v předchozí části. Další informace o těchto metodách naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 #### <a name="validating-content-using-an-xmlvaluegetter"></a>Ověřování obsahu pomocí XmlValueGetter
 
-@No__t-0 @ no__t-1 lze použít k předání hodnoty atributu, textu nebo prázdných uzlů jako typů modulu CLR (Common Language Runtime), které jsou kompatibilní s typem jazyka XML Schema Definition Language (XSD) atributu, textu nebo bílého prostoru. @No__t-0 @ no__t-1 je užitečné, pokud je hodnota CLR v uzlu atributu, textu nebo prázdného prostoru již k dispozici, a vyhněte se nákladům na jejich převod na `string` a opětovnou analýzou pro ověření.
+<xref:System.Xml.Schema.XmlValueGetter>`delegate` lze použít k předání hodnoty atributu, textu nebo prázdných uzlů jako typů modulu CLR (Common Language Runtime), které jsou kompatibilní s typem jazyka XML Schema Definition Language (XSD) atributu, textu nebo bílého prostoru. <xref:System.Xml.Schema.XmlValueGetter>`delegate` je užitečné, pokud je hodnota CLR pro uzel, text nebo prázdné místo v uzlu již k dispozici, a vyhněte se nákladům na jejich převod na `string` a pak znovu znovu analyzovat pro ověření.
 
-Metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> a <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> jsou přetížené a přijímají hodnotu atributu, textu nebo prázdných uzlů jako `string` nebo <xref:System.Xml.Schema.XmlValueGetter> @ no__t-5.
+Metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>a <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> jsou přetížené a přijímají hodnotu atributu, textu nebo prázdných uzlů jako `string` nebo <xref:System.Xml.Schema.XmlValueGetter>`delegate`.
 
-Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přijímají jako parametr <xref:System.Xml.Schema.XmlValueGetter> @ no__t-2.
+Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přijímají jako parametr `delegate` <xref:System.Xml.Schema.XmlValueGetter>.
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>
 
@@ -184,7 +184,7 @@ Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přij�
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>
 
-Níže je uveden příklad <xref:System.Xml.Schema.XmlValueGetter> @ no__t-1 pořízených z příkladu třídy <xref:System.Xml.Schema.XmlSchemaValidator> v úvodu. @No__t-0 @ no__t-1 vrátí hodnotu atributu jako objekt <xref:System.DateTime>. Chcete-li ověřit, zda objekt <xref:System.DateTime> vrácený <xref:System.Xml.Schema.XmlValueGetter>, objekt <xref:System.Xml.Schema.XmlSchemaValidator> nejprve převede na typ ValueType (ValueType je výchozí mapování CLR pro typ XSD) pro datový typ atributu a poté zkontroluje charakteristiky převedené hodnoty.
+Následuje příklad <xref:System.Xml.Schema.XmlValueGetter>`delegate` z příkladu třídy <xref:System.Xml.Schema.XmlSchemaValidator> v úvodu. <xref:System.Xml.Schema.XmlValueGetter>`delegate` vrací hodnotu atributu jako objekt <xref:System.DateTime>. Chcete-li ověřit, zda <xref:System.DateTime> objekt vrácený <xref:System.Xml.Schema.XmlValueGetter>, objekt <xref:System.Xml.Schema.XmlSchemaValidator> jej nejdříve převede na ValueType (ValueType je výchozí mapování CLR pro typ XSD) pro datový typ atributu a poté zkontroluje charakteristiky převedené hodnoty.
 
 ```vb
 Shared dateTimeGetterContent As Object
@@ -214,15 +214,15 @@ static XmlValueGetter DateTimeGetter(DateTime dateTime)
 }
 ```
 
-Úplný příklad <xref:System.Xml.Schema.XmlValueGetter> @ no__t-1 naleznete v příkladu v úvodu. Další informace o <xref:System.Xml.Schema.XmlValueGetter> @ no__t-1 naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlValueGetter> a <xref:System.Xml.Schema.XmlSchemaValidator>.
+Úplný příklad `delegate`<xref:System.Xml.Schema.XmlValueGetter>najdete v příkladu v úvodu. Další informace o <xref:System.Xml.Schema.XmlValueGetter>`delegate`naleznete v dokumentaci ke třídě <xref:System.Xml.Schema.XmlValueGetter>a <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 #### <a name="post-schema-validation-information"></a>Po ověření schématu – informace
 
-Třída <xref:System.Xml.Schema.XmlSchemaInfo> představuje některé z informací o ověřování po schématu, které jsou ověřeny třídou <xref:System.Xml.Schema.XmlSchemaValidator>. Různé metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přijímají objekt <xref:System.Xml.Schema.XmlSchemaInfo> jako volitelný parametr (`null`) `out`.
+Třída <xref:System.Xml.Schema.XmlSchemaInfo> představuje některé informace o uzlu XML, které jsou ověřeny třídou <xref:System.Xml.Schema.XmlSchemaValidator>, po ověření schématu. Různé metody <xref:System.Xml.Schema.XmlSchemaValidator> třídy přijímají <xref:System.Xml.Schema.XmlSchemaInfo> objekt jako nepovinný parametr (`null`) `out`.
 
-Po úspěšném ověření jsou vlastnosti objektu <xref:System.Xml.Schema.XmlSchemaInfo> nastaveny s výsledky ověření. Například po úspěšném ověření atributu pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> jsou vlastnosti objektu <xref:System.Xml.Schema.XmlSchemaInfo> (je-li zadán) <xref:System.Xml.Schema.XmlSchemaInfo.SchemaAttribute%2A>, <xref:System.Xml.Schema.XmlSchemaInfo.SchemaType%2A>, <xref:System.Xml.Schema.XmlSchemaInfo.MemberType%2A> a <xref:System.Xml.Schema.XmlSchemaInfo.Validity%2A> nastaveny s výsledky ověření.
+Po úspěšném ověření se vlastnosti objektu <xref:System.Xml.Schema.XmlSchemaInfo> nastaví s výsledky ověření. Například po úspěšném ověření atributu pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> jsou vlastnosti objektu <xref:System.Xml.Schema.XmlSchemaInfo> (je-li zadán) <xref:System.Xml.Schema.XmlSchemaInfo.SchemaAttribute%2A>, <xref:System.Xml.Schema.XmlSchemaInfo.SchemaType%2A>, <xref:System.Xml.Schema.XmlSchemaInfo.MemberType%2A>a <xref:System.Xml.Schema.XmlSchemaInfo.Validity%2A> vlastností nastaveny s výsledky ověření.
 
-Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přijímají objekt <xref:System.Xml.Schema.XmlSchemaInfo> jako výstupní parametr.
+Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přijímají <xref:System.Xml.Schema.XmlSchemaInfo> objekt jako výstupní parametr.
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>
 
@@ -240,22 +240,22 @@ Následující metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> přij�
 
 - <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>
 
-Úplný příklad třídy <xref:System.Xml.Schema.XmlSchemaInfo> naleznete v příkladu v úvodu. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaInfo> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaInfo>.
+Úplný příklad třídy <xref:System.Xml.Schema.XmlSchemaInfo> naleznete v příkladu v úvodu. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaInfo> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaInfo>.
 
 ### <a name="retrieving-expected-particles-attributes-and-unspecified-default-attributes"></a>Načítání očekávaných částic, atributů a nespecifikovaných výchozích atributů
 
-Třída <xref:System.Xml.Schema.XmlSchemaValidator> poskytuje metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> a <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> k načtení očekávaných částic, atributů a nespecifikovaných výchozích atributů v aktuálním kontextu ověřování.
+Třída <xref:System.Xml.Schema.XmlSchemaValidator> poskytuje metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>a <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> k načtení očekávaných částic, atributů a nespecifikovaných výchozích atributů v aktuálním kontextu ověřování.
 
 #### <a name="retrieving-expected-particles"></a>Načítání očekávaných částic
 
-Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací pole objektů <xref:System.Xml.Schema.XmlSchemaParticle>, které obsahují očekávané částice v kontextu aktuálního prvku. Platné částice, které mohou být vráceny metodou <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, jsou instance <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaAny> třídy.
+Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací pole <xref:System.Xml.Schema.XmlSchemaParticle> objektů, které obsahují očekávané částice v kontextu aktuálního prvku. Platné částice, které mohou být vráceny metodou <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, jsou instance <xref:System.Xml.Schema.XmlSchemaElement> a třídy <xref:System.Xml.Schema.XmlSchemaAny>.
 
-Když je obsah modelu obsahu `xs:sequence`, vrátí se pouze další částice v sekvenci. Pokud je kompozice pro model obsahu `xs:all` nebo `xs:choice`, budou vráceny všechny platné částice, které by mohly následovat v kontextu aktuálního prvku.
+Když je kompozice pro model obsahu `xs:sequence`, vrátí se pouze další částice v sekvenci. Pokud je kompozice pro model obsahu `xs:all` nebo `xs:choice`, budou vráceny všechny platné částice, které by mohly následovat v kontextu aktuálního prvku.
 
 > [!NOTE]
-> Pokud je metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> volána bezprostředně po volání metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, vrátí metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> všechny globální prvky.
+> Pokud je metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> volána bezprostředně po volání metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí všechny globální prvky.
 
-Například v schématu XML Schema Definition Language (XSD) a dokumentu XML, který následuje, po ověření elementu `book` je prvek `book` aktuálním kontextem elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaElement> reprezentující prvek `title`. Když je kontext ověření prvkem `title`, metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole. Je-li metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> volána po ověření prvku `title`, ale před ověřením elementu `description`, vrátí pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaElement> reprezentující `description` element. Pokud je volána metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> po ověření prvku `description`, vrátí pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaAny> reprezentující zástupný znak.
+Například v schématu XML Schema Definition Language (XSD) a dokumentu XML, které následují, po ověření elementu `book` je prvek `book` aktuálním kontextem elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaElement> reprezentující prvek `title`. Když je kontext ověření `title` element, metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací prázdné pole. Je-li metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> volána po ověření prvku `title`, ale před ověřením elementu `description`, vrátí pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaElement> reprezentující `description` prvek. Pokud je metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> volána po ověření prvku `description`, pak vrátí pole obsahující jeden objekt <xref:System.Xml.Schema.XmlSchemaAny> reprezentující zástupný znak.
 
 ```vb
 Dim reader As XmlReader =  XmlReader.Create("input.xml")
@@ -372,36 +372,36 @@ Příklad má jako vstup následující schéma XSD:
 ```
 
 > [!NOTE]
-> Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu. Další informace najdete v části "kontext ověření" v tomto tématu.
+> Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu. Další informace najdete v části "kontext ověření" v tomto tématu.
 
-Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 #### <a name="retrieving-expected-attributes"></a>Načítání očekávaných atributů
 
-Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrací pole objektů <xref:System.Xml.Schema.XmlSchemaAttribute>, které obsahují očekávané atributy v kontextu aktuálního prvku.
+Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrací pole <xref:System.Xml.Schema.XmlSchemaAttribute> objektů, které obsahují očekávané atributy v kontextu aktuálního prvku.
 
-Například v příkladu v úvodu se metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> používá k načtení všech atributů prvku `book`.
+Například v příkladu v úvodu je metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> použita k načtení všech atributů `book` elementu.
 
-Pokud zavoláte metodu <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> hned za metodou <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A>, vrátí se všechny atributy, které by mohly být zobrazeny v dokumentu XML. Nicméně pokud zavoláte metodu <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> po jednom nebo více volání metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>, vrátí se atributy, které ještě nebyly ověřeny pro aktuální prvek.
+Pokud zavoláte metodu <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> hned po <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> metodě, vrátí se všechny atributy, které by mohly být zobrazeny v dokumentu XML. Nicméně pokud zavoláte metodu <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> po jednom nebo více voláních metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>, vrátí se atributy, které ještě nebyly ověřeny pro aktuální prvek.
 
 > [!NOTE]
-> Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu. Další informace najdete v části "kontext ověření" v tomto tématu.
+> Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu. Další informace najdete v části "kontext ověření" v tomto tématu.
 
-Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Příklad metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> naleznete v příkladu v úvodu. Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 #### <a name="retrieving-unspecified-default-attributes"></a>Načítání nespecifikovaných výchozích atributů
 
-Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> naplní <xref:System.Collections.ArrayList> zadané objekty <xref:System.Xml.Schema.XmlSchemaAttribute> pro všechny atributy s výchozími hodnotami, které nebyly dříve ověřeny pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> v kontextu elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> by měla být volána po volání metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> u každého atributu v kontextu elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> by měla být použita k určení, které výchozí atributy budou vloženy do ověřovaného dokumentu XML.
+Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> naplní <xref:System.Collections.ArrayList> zadané objekty <xref:System.Xml.Schema.XmlSchemaAttribute> pro všechny atributy výchozí hodnoty, které nebyly dříve ověřeny pomocí metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> v kontextu elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> by měla být volána po volání metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> v každém atributu v kontextu elementu. Metoda <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> by měla být použita k určení, které výchozí atributy budou vloženy do ověřovaného dokumentu XML.
 
-Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaValidator>.
+Další informace o metodě <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
 ### <a name="handling-schema-validation-events"></a>Zpracování událostí ověřování schématu
 
-Upozornění a chyby ověřování schématu zjištěné při ověřování jsou zpracovávány událostí <xref:System.Xml.Schema.XmlSchemaValidator.ValidationEventHandler> třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
+Upozornění ověřování schématu a chyby zjištěné při ověřování jsou zpracovávány událostí <xref:System.Xml.Schema.XmlSchemaValidator.ValidationEventHandler> třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
-Upozornění ověřování schématu mají hodnotu <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Warning> a chyby ověřování schématu mají hodnotu <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Error>. Pokud nebyla přiřazena žádná <xref:System.Xml.Schema.XmlSchemaValidator.ValidationEventHandler>, je vyvolána <xref:System.Xml.Schema.XmlSchemaValidationException> pro všechny chyby ověřování schématu s hodnotou <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Error>. @No__t-0 však není vyvolána pro upozornění ověřování schématu s hodnotou <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Warning>.
+Upozornění ověřování schématu mají <xref:System.Xml.Schema.XmlSeverityType> hodnotu <xref:System.Xml.Schema.XmlSeverityType.Warning> a chyby ověřování schématu mají hodnotu <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Error>. Pokud nebyla přiřazena žádná <xref:System.Xml.Schema.XmlSchemaValidator.ValidationEventHandler>, je vyvolána <xref:System.Xml.Schema.XmlSchemaValidationException> pro všechny chyby ověřování schématu s hodnotou <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Error>. <xref:System.Xml.Schema.XmlSchemaValidationException> však není vyvolána pro upozornění ověřování schématu s hodnotou <xref:System.Xml.Schema.XmlSeverityType> <xref:System.Xml.Schema.XmlSeverityType.Warning>.
 
-Následuje příklad <xref:System.Xml.Schema.ValidationEventHandler>, který přijímá upozornění ověřování schématu a chyby zjištěné v průběhu ověřování schématu provedeného v příkladu v úvodu.
+Následuje příklad <xref:System.Xml.Schema.ValidationEventHandler>, který přijímá upozornění ověřování schématu a chyby zjištěné při ověřování schématu provedené z příkladu v úvodu.
 
 ```vb
 Shared Sub SchemaValidationEventHandler(sender As Object, e As ValidationEventArgs)
@@ -432,29 +432,29 @@ static void SchemaValidationEventHandler(object sender, ValidationEventArgs e)
 }
 ```
 
-Úplný příklad <xref:System.Xml.Schema.ValidationEventHandler> naleznete v příkladu v úvodu. Další informace naleznete v referenční dokumentaci ke třídě <xref:System.Xml.Schema.XmlSchemaInfo>.
+Úplný příklad <xref:System.Xml.Schema.ValidationEventHandler>naleznete v příkladu v úvodu. Další informace naleznete v referenční dokumentaci třídy <xref:System.Xml.Schema.XmlSchemaInfo>.
 
 ## <a name="xmlschemavalidator-state-transition"></a>Přechod stavu XmlSchemaValidator
 
-Třída <xref:System.Xml.Schema.XmlSchemaValidator> má definovaný přechod stavu, který vynutila sekvenci a výskyt volání v každé z metod používaných k ověřování elementů, atributů a obsahu v XML XML.
+Třída <xref:System.Xml.Schema.XmlSchemaValidator> má definovaný přechod stavu, který vynutila sekvenci a výskyt volání v každé z metod používaných k ověřování elementů, atributů a obsahu v XML informačním souboru.
 
-Následující tabulka popisuje přechod stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator> a sekvence a výskyt volání metody, které lze provést v každém stavu.
+Následující tabulka popisuje přechod stavu <xref:System.Xml.Schema.XmlSchemaValidator> třídy a sekvenci a výskyt volání metody, které lze provést v každém stavu.
 
-|Stav|Přejít|
+|Stát|Transition|
 |-----------|----------------|
-|Oproti|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; Toplevel *) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
-|TopLevel|Element @no__t- &#124; 0 @no__t- &#124; 2|
-|Prvek|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> * (obsah <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> @ no__t-3)? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>&#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> @ no__t-2 <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>&#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> @ no__t-2 <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> obsah @ no__t-4 <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>&#124;|
-|Obsah|Element @no__t- &#124; 0 @no__t- &#124; 2|
+|Ověření|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; Toplevel *) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
+|TopLevel|Element &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|
+|Prvek|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> obsahu\*)? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> obsahu\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>&#124;|
+|Obsah|Element &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|
 
 > [!NOTE]
-> @No__t-0 je vyvolána každou metodou v tabulce výše, pokud je volání metody provedeno v nesprávné sekvenci podle aktuálního stavu objektu <xref:System.Xml.Schema.XmlSchemaValidator>.
+> <xref:System.InvalidOperationException> je vyvolána každou metodou v tabulce výše, pokud je volání metody provedeno v nesprávné sekvenci podle aktuálního stavu objektu <xref:System.Xml.Schema.XmlSchemaValidator>.
 
-Výše uvedená tabulka přechodu stavu používá interpunkční znaménka k popisu metod a dalších stavů, které lze volat pro každý stav přechodu stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator>. Použité symboly jsou stejné symboly, které najdete v referenčních standardech XML pro definici typu dokumentu (DTD).
+Výše uvedená tabulka přechodu stavu používá interpunkční znaménka k popisu metod a dalších stavů, které lze volat pro každý stav přechodu na stav <xref:System.Xml.Schema.XmlSchemaValidator> třídy. Použité symboly jsou stejné symboly, které najdete v referenčních standardech XML pro definici typu dokumentu (DTD).
 
 Následující tabulka popisuje, jak se symboly interpunkčních znamének v tabulce přechodu stavu nacházejí výše ovlivňují metody a další stavy, které mohou být volány pro každý stav v přechodu stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
-|Symbol|Description|
+|Písmeno|Popis|
 |------------|-----------------|
 |&#124;|Lze zavolat buď metodu, nebo stav (jeden před pruhový nebo ten).|
 |?|Metoda nebo stav, který předchází otazník je volitelný, ale pokud je volána, lze ji volat pouze jednou.|
@@ -462,28 +462,28 @@ Následující tabulka popisuje, jak se symboly interpunkčních znamének v tab
 
 ## <a name="validation-context"></a>Kontext ověřování
 
-Metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> používané k ověřování elementů, atributů a obsahu v XML informačním souboru, mění kontext ověření objektu <xref:System.Xml.Schema.XmlSchemaValidator>. Například metoda <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> přeskočí ověřování aktuálního obsahu elementu a připraví objekt <xref:System.Xml.Schema.XmlSchemaValidator> pro ověření obsahu v kontextu nadřazeného elementu; je ekvivalentní k přeskočení ověřování pro všechny podřízené položky aktuálního prvku a následnému volání metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.
+Metody třídy <xref:System.Xml.Schema.XmlSchemaValidator> používané k ověřování elementů, atributů a obsahu v XML informačním souboru, mění kontext ověření objektu <xref:System.Xml.Schema.XmlSchemaValidator>. Například metoda <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> přeskočí ověřování aktuálního obsahu prvku a připraví objekt <xref:System.Xml.Schema.XmlSchemaValidator> k ověření obsahu v kontextu nadřazeného elementu; je ekvivalentní k přeskočení ověřování pro všechny podřízené položky aktuálního prvku a následnému volání metody <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.
 
-Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu.
+Výsledky metod <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A>a <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A> třídy <xref:System.Xml.Schema.XmlSchemaValidator> jsou závislé na ověřeném aktuálním kontextu.
 
-Následující tabulka popisuje výsledky volání těchto metod po volání jedné z metod třídy <xref:System.Xml.Schema.XmlSchemaValidator> používané k ověřování elementů, atributů a obsahu v XML informačním souboru.
+Následující tabulka popisuje výsledky volání těchto metod po volání jedné z metod <xref:System.Xml.Schema.XmlSchemaValidator> třídy používané pro ověřování prvků, atributů a obsahu v XML informačním souboru.
 
 |Metoda|GetExpectedParticles|GetExpectedAttributes|AddSchema|
 |------------|--------------------------|---------------------------|---------------|
-|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>|Pokud je zavolána výchozí metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, vrátí <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> pole obsahující všechny globální prvky.<br /><br /> Pokud je volána přetížená metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametr pro inicializaci částečného ověření prvku, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí pouze prvek, ke kterému byl inicializován objekt <xref:System.Xml.Schema.XmlSchemaValidator>.|Pokud je zavolána výchozí metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, vrátí <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> prázdné pole.<br /><br /> Pokud je volání metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametru pro inicializaci částečného ověřování atributu, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí pouze atribut, na který byl inicializován objekt <xref:System.Xml.Schema.XmlSchemaValidator>.|Přidá schéma do <xref:System.Xml.Schema.XmlSchemaSet> objektu <xref:System.Xml.Schema.XmlSchemaValidator>, pokud nemá žádné chyby předzpracování.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A>|Je-li prvek kontextu platný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávaných jako podřízené objekty kontextu elementu.<br /><br /> Pokud je prvek kontextu neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.|Pokud kontextový prvek je platný a pokud žádné volání <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> nebylo dříve provedeno, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam všech atributů definovaných v prvku Context.<br /><br /> Pokud některé atributy již byly ověřeny, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam zbývajících atributů, které mají být ověřeny.<br /><br /> Pokud je prvek kontextu neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.|Stejné jako výše.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>|Pokud je atributem kontextu atribut nejvyšší úrovně, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávanou jako první podřízený prvek kontextu.|Pokud je atributem kontextu atribut nejvyšší úrovně, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> Jinak <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam zbývajících atributů, které mají být ověřeny.|Stejné jako výše.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>|Pokud je volána výchozí metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí pole obsahující všechny globální prvky.<br /><br /> Pokud je pro inicializaci částečného ověřování prvku volána přetížená <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> metoda, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametr, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí pouze prvek, ke kterému byl objekt <xref:System.Xml.Schema.XmlSchemaValidator> inicializován.|Pokud je volána výchozí metoda <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> Pokud je volání metody <xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A>, která přebírá <xref:System.Xml.Schema.XmlSchemaObject> jako parametr, pro inicializaci částečného ověřování atributu, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí pouze atribut, pro který byl objekt <xref:System.Xml.Schema.XmlSchemaValidator> inicializován.|Přidá schéma do <xref:System.Xml.Schema.XmlSchemaSet> objektu <xref:System.Xml.Schema.XmlSchemaValidator>, pokud neobsahuje žádné chyby předzpracování.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A>|Je-li prvek kontextu platný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávaných jako podřízené objekty kontextu prvku.<br /><br /> Pokud je prvek kontextu neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.|Pokud je kontextový prvek platný a pokud předtím nebylo provedeno žádné volání <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam všech atributů definovaných v prvku Context.<br /><br /> Pokud některé atributy již byly ověřeny, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam zbývajících atributů, které mají být ověřeny.<br /><br /> Pokud je prvek kontextu neplatný, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.|Stejné jako výše.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>|Pokud je atributem kontextu atribut nejvyšší úrovně, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> Jinak <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávanou jako první podřízený prvek kontextu.|Pokud je atributem kontextu atribut nejvyšší úrovně, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> V opačném případě <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam zbývajících atributů, které mají být ověřeny.|Stejné jako výše.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací sekvenci prvků očekávanou jako první podřízený prvek kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam požadovaných a volitelných atributů, které se ještě ověřují pro prvek kontextu.|Stejné jako výše.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací sekvenci prvků očekávanou jako první podřízený prvek kontextu.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.|Stejné jako výše.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Pokud je třída contentType elementu kontextu smíšená, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávanou na další pozici.<br /><br /> Pokud je třída contentType elementu kontextu typu TextOnly nebo prázdná, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> Pokud je objekt contentType elementu kontextu ElementOnly, vrátí <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> sekvenci prvků očekávanou na další pozici, ale k chybě ověřování již došlo.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam atributů kontextového elementu, které nejsou ověřeny.|Stejné jako výše.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>|Pokud je v tomto kontextu prázdné místo na nejvyšší úrovni, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> V opačném případě je chování metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Pokud je v tomto kontextu prázdné místo na nejvyšší úrovni, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> V opačném případě je chování metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Stejné jako výše.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací sekvenci prvků očekávaných po elementu Context (možné na stejné úrovni).|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam atributů kontextového elementu, které nejsou ověřeny.<br /><br /> Pokud kontextový prvek nemá žádné nadřazené, potom <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdný seznam (kontextový prvek je nadřazeným prvkem aktuálního prvku, na kterém byla volána <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>).|Stejné jako výše.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Pokud je třída contentType elementu kontextu smíšená, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávanou v další pozici.<br /><br /> Pokud je třída contentType elementu kontextu typu TextOnly nebo prázdná, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> Pokud je objekt contentType elementu kontextu ElementOnly, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí sekvenci prvků očekávanou na další pozici, ale k chybě ověřování již došlo.|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam atributů kontextového prvku, který není ověřený.|Stejné jako výše.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>|Pokud je místo v kontextu prázdné místo na nejvyšší úrovni, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrátí prázdné pole.<br /><br /> V opačném případě je chování metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Pokud je místo v kontextu prázdné místo na nejvyšší úrovni, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdné pole.<br /><br /> V opačném případě je chování metody <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> stejné jako v <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Stejné jako výše.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> vrací sekvenci prvků očekávaných po elementu kontextu (možné na stejné úrovni).|<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí seznam atributů kontextového prvku, který není ověřený.<br /><br /> Pokud kontextový prvek nemá žádnou nadřazenou položku, <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> vrátí prázdný seznam (kontextový prvek je nadřazeným prvkem aktuálního prvku, na kterém <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> byla volána).|Stejné jako výše.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Stejné jako <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Stejné jako <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Stejné jako výše.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|Vrátí prázdné pole.|Vrátí prázdné pole.|Stejné jako výše.|
 
 > [!NOTE]
-> Hodnoty vrácené různými vlastnostmi třídy <xref:System.Xml.Schema.XmlSchemaValidator> nejsou změněny voláním libovolné metody ve výše uvedené tabulce.
+> Hodnoty vrácené různými vlastnostmi <xref:System.Xml.Schema.XmlSchemaValidator> třídy nejsou změněny voláním libovolné metody ve výše uvedené tabulce.
 
-## <a name="see-also"></a>Související témata
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Schema.XmlSchemaValidator>

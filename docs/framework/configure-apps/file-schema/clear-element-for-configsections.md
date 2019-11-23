@@ -21,7 +21,7 @@ ms.locfileid: "73119087"
 Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
 [**konfigurační >\<** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
@@ -34,7 +34,7 @@ Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **Jméno**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
+| **name**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
@@ -48,7 +48,7 @@ Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
 ## <a name="remarks"></a>Poznámky
 
-Element **\<clear >** odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly definovány dříve v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfiguračního souboru.
+**\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.
 
 ## <a name="example"></a>Příklad
 

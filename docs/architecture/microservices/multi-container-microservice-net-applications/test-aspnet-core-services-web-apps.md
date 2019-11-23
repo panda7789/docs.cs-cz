@@ -31,7 +31,7 @@ Při testování akcí kontroleru se ujistěte, že se zaměříte jenom na jeji
 
 Testy jednotek jsou implementovány na základě testovacích rozhraní, jako jsou xUnit.net, MSTest, MOQ nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme xUnit.
 
-Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v jazyce C \#, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
+Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v jazyce C\#, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
 
 ```csharp
 [Fact]
@@ -99,7 +99,7 @@ public class PrimeWebDefaultRequestShould
 }
 ```
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Steve Smith. Testovací kontroléry** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
@@ -110,7 +110,7 @@ public class PrimeWebDefaultRequestShould
 - **Testování částí v .NET Core pomocí příkazu dotnet test** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
-- **xUnit.NET**. Oficiální lokalita. \
+- **xUnit.net**. Oficiální lokalita. \
     <https://xunit.github.io/>
 
 - **Základy testování částí.** \
@@ -148,9 +148,9 @@ Test jednotek a integračních testů na mikroslužbu je obsažen v testovací s
 
 **Obrázek 6-25**. Struktura testovacích složek v eShopOnContainers
 
-Testy funkcí a integrace mikroslužeb a aplikací jsou spouštěny ze sady Visual Studio pomocí rutiny regulárních testů, ale nejdřív je potřeba spustit požadované služby infrastruktury, a to pomocí sady souborů Docker pro sestavení, které jsou obsaženy ve složce test řešení. :
+Testy funkcí a integrace mikroslužeb a aplikací jsou spouštěny ze sady Visual Studio pomocí rutiny regulárních testů, ale nejdřív je potřeba spustit požadované služby infrastruktury, a to pomocí sady souborů Docker-skládání obsažených ve složce pro testování řešení:
 
-**Docker-Compose-test. yml**
+**docker-compose-test.yml**
 
 ```yml
 version: '3.4'
@@ -166,7 +166,7 @@ services:
     image: mongo
 ```
 
-**Docker-Compose-test. override. yml**
+**docker-compose-test.override.yml**
 
 ```yml
 version: '3.4'
@@ -198,7 +198,7 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 
 Jak vidíte, tyto soubory Docker-skládání začínají pouze mikroslužby Redis, RabbitMQ, SQL Server a MongoDB.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Testuje soubor Readme** v úložišti EShopOnContainers na GitHubu \
     <https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/test>

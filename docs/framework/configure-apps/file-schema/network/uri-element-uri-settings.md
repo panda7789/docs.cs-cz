@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697443"
 ---
-# <a name="uri-element-uri-settings"></a>@no__t – element > 0uri (nastavení URI)
+# <a name="uri-element-uri-settings"></a>\<element > identifikátoru URI (nastavení URI)
 Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **\<uri >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<uri >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,15 +26,15 @@ Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové ad
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[IDN](idn-element-uri-settings.md)|Určuje, jestli se pro názvy domén použije analýza v mezinárodním názvu domény (IDN).|  
-|[iriParsing](iriparsing-element-uri-settings.md)|Určuje, jestli se má použít analýza mezinárodního identifikátoru prostředků (IRI) <xref:System.Uri> a jestli se mají použít pravidla analýzy IRI.|  
-|[schemeSettings](schemesettings-element-uri-settings.md)|Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.|  
+|[iriParsing](iriparsing-element-uri-settings.md)|Určuje, jestli se má u <xref:System.Uri> použít analýza mezinárodního identifikátoru prostředků (IRI) a jestli se mají použít pravidla analýzy IRI.|  
+|[schemeSettings](schemesettings-element-uri-settings.md)|Určuje, jak se bude <xref:System.Uri> analyzovat pro konkrétní schémata.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

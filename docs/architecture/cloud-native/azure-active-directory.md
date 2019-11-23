@@ -19,7 +19,7 @@ Služba Azure AD je sestavená pro Cloud. Je to skutečně cloudové řešení i
 
 Azure AD podporuje obrazovky pro přihlašování pomocí značek společnosti, ověřování více továrn a cloudové proxy aplikace, které slouží k poskytování jednotného přihlašování pro aplikace hostované místně. Nabízí různé druhy sestav zabezpečení a možností výstrah.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Platforma Microsoft identity](https://docs.microsoft.com/azure/active-directory/develop/)
 

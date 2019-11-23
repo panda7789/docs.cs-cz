@@ -94,11 +94,11 @@ import { Component } from '@angular/core';
 export class AppComponent { name = 'Angular'; }
 ```
 
-Komponenty jsou definovány pomocí @Component funkce dekoratér, která přebírá metadata o komponentě. Vlastnost Selector Určuje ID prvku na stránce, kde se tato součást zobrazí. Vlastnost Template je jednoduchá šablona HTML, která obsahuje zástupný text, který odpovídá vlastnosti názvu komponenty definované na posledním řádku.
+Komponenty jsou definovány pomocí funkce @Component dekoratér, která přebírá metadata o komponentě. Vlastnost Selector Určuje ID prvku na stránce, kde se tato součást zobrazí. Vlastnost Template je jednoduchá šablona HTML, která obsahuje zástupný text, který odpovídá vlastnosti názvu komponenty definované na posledním řádku.
 
 Díky práci s komponentami a šablonami namísto elementů modelu DOM mohou úhlové aplikace pracovat na vyšší úrovni abstrakce a s menším celkovým kódem než aplikace napsané pomocí JavaScriptu (označované také jako "Vanilla JS") nebo pomocí jQuery. Úhlová také některá pořadí uspořádání souborů skriptu na straně klienta. V rámci konvence používají úhlové aplikace společnou strukturu složek se soubory skriptu modulu a komponenty umístěnými ve složce aplikace. Mezi zabývající se skripty se sestavou, nasazením a testováním aplikace obvykle nachází ve složce vyšší úrovně.
 
-Úhlová i vhodná použití nástrojů rozhraní příkazového řádku (CLI). Začínáme s úhlovým vývojem v místním prostředí (za předpokladu, že už máte nainstalované Git a npm), obsahuje jednoduše klonování `npm install` úložiště `npm start`z GitHubu a spuštění a. Kromě toho úhlové dodává svůj vlastní nástroj CLI, který může vytvářet projekty, přidávat soubory a pomáhat s úlohami testování, sdružování a nasazení. Tento nástroj rozhraní příkazového řádku (přívětivost) pro rozhraní příkazového řádku vydává hlavně obzvláště kompatibilní s ASP.NET Core, což také přináší skvělé podpoře CLI
+Úhlová i vhodná použití nástrojů rozhraní příkazového řádku (CLI). Začínáme s úhlovým vývojem v místním prostředí (za předpokladu, že už máte nainstalované Git a npm), obsahuje jednoduše klonování úložiště z GitHubu a spouštění `npm install` a `npm start`. Kromě toho úhlové dodává svůj vlastní nástroj CLI, který může vytvářet projekty, přidávat soubory a pomáhat s úlohami testování, sdružování a nasazení. Tento nástroj rozhraní příkazového řádku (přívětivost) pro rozhraní příkazového řádku vydává hlavně obzvláště kompatibilní s ASP.NET Core, což také přináší skvělé podpoře CLI
 
 Společnost Microsoft vyvinula referenční aplikaci [eShopOnContainers](https://aka.ms/MicroservicesArchitecture), která zahrnuje úhlovou implementaci. Tato aplikace zahrnuje úhlové moduly pro správu nákupních košíků online obchodů, načítání a zobrazování položek ze svého katalogu a vytváření objednávek při zpracování. Ukázkovou aplikaci můžete zobrazit a stáhnout z [GitHubu](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 
@@ -144,7 +144,7 @@ Rozhraní JavaScript Framework se nadále vyvíjí s Breakneck rychlostí. Pomoc
 >
 > - **HTML a CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs. TOLIK**  
+> - **Sass vs. méně**  
 > <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Stylování ASP.NET Core aplikací s využitím méně, Sass a písma Super**  
 > <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>
@@ -166,5 +166,5 @@ Rozhraní JavaScript Framework se nadále vyvíjí s Breakneck rychlostí. Pomoc
 > <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
->[Předchozí](common-web-application-architectures.md)Další
->[](develop-asp-net-core-mvc-apps.md)
+>[Předchozí](common-web-application-architectures.md)
+>[Další](develop-asp-net-core-mvc-apps.md)

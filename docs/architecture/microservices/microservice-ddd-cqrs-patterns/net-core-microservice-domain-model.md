@@ -2,12 +2,12 @@
 title: Implementace doménového modelu mikroslužby pomocí .NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace o implementaci doménového modelu orientovaného na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: be8dc9339f5815139616e9785b5b3e3e5931b57e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: bff9cbda08e519038056268151a1721427f0ac01
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737267"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972048"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace modelu domény mikroslužeb pomocí .NET Core
 
@@ -168,13 +168,13 @@ S funkcí v EF Core 1,1 nebo novějším pro mapování sloupců na pole je tak�
 
 Například v předchozím příkladu kódu OrderAggregate je k dispozici několik privátních polí, například pole `_paymentMethodId`, které nemá žádnou související vlastnost pro metodu setter nebo getter. Toto pole je také možné vypočítat v obchodní logice objednávky a použít je v metodách objednávky, ale je potřeba je zachovat i v databázi. Takže v EF Core (od verze 1.1) existuje způsob, jak namapovat pole bez související vlastnosti na sloupec v databázi. To je také vysvětleno v části [vrstva infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) tohoto průvodce.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vaughn Vernon. Modelování agreguje pomocí DDD a Entity Framework.** Všimněte si, že to *není* Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
 - **Julie Lerman. Datové body – kódování pro návrh založený na doméně: Tipy pro vývojáři, která se zaměřuje na data** \
-  <https://msdn.microsoft.com/magazine/dn342868.aspx>
+  <https://docs.microsoft.com/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs>
 
 - **UDI Dahan. Vytvoření plně zapouzdřených doménových modelů** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>

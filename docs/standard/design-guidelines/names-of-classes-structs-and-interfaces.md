@@ -35,11 +35,11 @@ Pokyny pro pojmenování, které následují, se týkají obecného typu pojmeno
   
  **✓ CONSIDER** ukončení název odvozené třídy s názvem základní třídy.  
   
- To je velmi čitelné a jasně vysvětluje vztah. Některé příklady tohoto kódu v kódu jsou: `ArgumentOutOfRangeException`, což je typ `Exception` a `SerializableAttribute`, což je typ `Attribute`. Je ale důležité použít rozumné rozhodnutí při použití této směrnice. Například třída `Button` je druhem události `Control`, i když `Control` se nezobrazí v názvu.  
+ To je velmi čitelné a jasně vysvětluje vztah. Některé příklady tohoto kódu jsou: `ArgumentOutOfRangeException`, což je druh `Exception`a `SerializableAttribute`, což je typ `Attribute`. Je ale důležité použít rozumné rozhodnutí při použití této směrnice. Například třída `Button` je druh události `Control`, i když `Control` se nezobrazuje v názvu.  
   
  **✓ DO** předponu rozhraní názvy písmenem I, že je typ rozhraní.  
   
- Například `IComponent` (popisný substantivum), `ICustomAttributeProvider` (substantivum fráze) a `IPersistable` (adjektivum) jsou vhodné názvy rozhraní. Stejně jako u jiných typů názvů Vyhněte zkratce.  
+ Například `IComponent` (popisný substantivum), `ICustomAttributeProvider` (fráze substantivum) a `IPersistable` (adjektivum) jsou vhodné názvy rozhraní. Stejně jako u jiných typů názvů Vyhněte zkratce.  
   
  **✓ DO** Ujistěte se, že názvy liší pouze pomocí "I" předpony na název rozhraní při definování pár třída – rozhraní, kde třída je standardní implementace rozhraní.  
   
@@ -78,7 +78,7 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 |`System.EventArgs`|**✓ DO** přidat příponu "EventArgs."|  
 |`System.Enum`|**X DO NOT** odvozovat z této třídy; použijte – klíčové slovo jazyka nepodporuje místo toho, například v jazyce C#, použít `enum` – klíčové slovo.<br /><br /> **X DO NOT** přidat příponu "Výčtu" nebo "Příznak."|  
 |`System.Exception`|**✓ DO** přidat příponu "Výjimky."|  
-|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** přidat příponu "Slovník." Všimněte si, že `IDictionary` je konkrétní typ kolekce, ale tyto zásady mají přednost před obecnější pokyny pro kolekce, které následují.|  
+|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** přidat příponu "Slovník." Všimněte si, že `IDictionary` je konkrétní typ kolekce, ale tyto zásady mají přednost před obecnější pokyny ke kolekcím.|  
 |`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|**✓ DO** přidat příponu "Kolekce."|  
 |`System.IO.Stream`|**✓ DO** přidat příponu "Stream."|  
 |`CodeAccessPermission IPermission`|**✓ DO** přidat příponu "Oprávnění."|  
@@ -96,9 +96,9 @@ public interface ISessionChannel<TSession> where TSession : ISession {
   
  **X DO NOT** použijte předponu na názvy hodnot výčtu (například "ad" pro výčty ADO.), "rtf" pro výčty RTF atd.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- @no__t – 0Reprinted podle oprávnění Pearsonova vzdělávání, Inc. v [Framework pokyny pro návrh: Konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice @ no__t-0 od Krzysztof Cwalina a Brad Abrams, Publikováno od 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series. *  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

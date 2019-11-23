@@ -52,5 +52,5 @@ Když váš systém založený na kontejneru potřebuje nejlepší možnou husto
 To je obzvláště důležité pro architektury mikroslužeb, kde můžete mít spuštěné stovky mikroslužeb (kontejnerů). Díky ASP.NET Core imagí (na základě modulu runtime .NET Core) v systému Linux nebo Windows nano můžete spustit systém s mnohem menším počtem serverů nebo virtuálních počítačů, čímž ušetříte náklady na infrastrukturu a hostování.
 
 >[!div class="step-by-step"]
->[Předchozí](general-guidance.md)Další
->[](net-framework-container-scenarios.md)
+>[Předchozí](general-guidance.md)
+>[Další](net-framework-container-scenarios.md)

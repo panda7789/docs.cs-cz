@@ -38,7 +38,7 @@ Koncepty clusteru a plánovače úzce souvisejí, takže produkty poskytované r
 |     |   |
 |-----|---|
 | **Kubernetes** <br> ![obrázek loga Kubernetes](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) je open source produkt, který poskytuje funkce, které jsou v rozsahu od infrastruktury clusteru a plánování kontejneru až po orchestraci možností. Umožňuje automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br><br> *Kubernetes* poskytuje infrastrukturu zaměřenou na kontejner, která seskupuje kontejnery aplikací do logických jednotek pro jednoduchou správu a zjišťování. <br><br> *Kubernetes* je vyspělá v systému Linux a méně vyspělá ve Windows. |
-| **Služba Azure Kubernetes (AKS)** <br> ![obrázek loga služby Azure Kubernetes.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes. |
+| **Azure Kubernetes Service (AKS)** <br> ![obrázek loga služby Azure Kubernetes.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes. |
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Použití orchestrací založených na kontejnerech v Microsoft Azure
 
@@ -110,7 +110,7 @@ Tato funkce je založena na předponách adres URL, takže při použití předp
 
 Další informace najdete v článku o [vývoji týmu pomocí Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Začínáme se službou Azure Kubernetes Service (AKS)**  \
   <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>

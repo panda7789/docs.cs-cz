@@ -15,14 +15,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699783"
 ---
-# <a name="nameentry-element"></a>@no__t – element > 0nameEntry
+# <a name="nameentry-element"></a>\<element > nameEntry
 Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna třída měla mnoho popisných názvů.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<nameEntry >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<nameEntry >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,11 +37,11 @@ Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který kryptografická třída implementuje.|  
-|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu atributu **Name** v prvku [> \<cryptoClass](cryptoclass-element.md) .|  
+|**name**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který kryptografická třída implementuje.|  
+|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu atributu **název** v prvku [\<cryptoClass >](cryptoclass-element.md) .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,7 +54,7 @@ Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna
  Atribut **Name** může být název jedné z abstraktních tříd nalezených v oboru názvů <xref:System.Security.Cryptography>. Při volání metody **Create** na abstraktní kryptografické třídě je název abstraktní třídy předán metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>. **CreateFromName** vrací instanci typu, která je označena atributem **Class** . Pokud je atribut **Name** krátkým názvem, jako je například RSA, můžete použít tento název při volání metody **CreateFromName** .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku **> @no__t 1nameEntry** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pro vrácení objektu `MyCryptoRSAClass`.  
+ Následující příklad ukazuje, jak použít\<prvku **> nameEntry** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" do metody <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> k vrácení objektu `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  

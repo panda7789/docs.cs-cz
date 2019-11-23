@@ -9,12 +9,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71698092"
 ---
-# <a name="iriparsing-element-uri-settings"></a>@no__t – element > 0iriParsing (nastavení URI)
-Určuje, jestli se má použít analýza mezinárodní identifikátoru prostředků (IRI) pro <xref:System.Uri> a jestli se mají použít pravidla analýzy IRI.  
+# <a name="iriparsing-element-uri-settings"></a>\<element > iriParsing (nastavení URI)
+Určuje, jestli se má u <xref:System.Uri> použít analýza mezinárodního identifikátoru prostředků (IRI) a jestli se mají použít pravidla analýzy IRI.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<iriParsing >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<iriParsing >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

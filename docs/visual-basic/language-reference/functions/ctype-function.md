@@ -1,5 +1,5 @@
 ---
-title: CType – funkce (Visual Basic)
+title: CType – funkce
 ms.date: 07/20/2015
 f1_keywords:
 - vb.CType
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - CType function
 - conversions [Visual Basic], expression
 ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
-ms.openlocfilehash: 4a0391b0a5d76f36803b433369d4832c02b05e09
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 18b2d5a28cd6ef885ba8d237da6764dbbd108b59
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71592101"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348098"
 ---
 # <a name="ctype-function-visual-basic"></a>CType – funkce (Visual Basic)
 
-Vrátí výsledek explicitního převodu výrazu na zadaný datový typ, objekt, strukturu, třídu nebo rozhraní.
+Returns the result of explicitly converting an expression to a specified data type, object, structure, class, or interface.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,41 +28,41 @@ CType(expression, typename)
 
 ## <a name="parts"></a>Součásti
 
-@no__t – 0 libovolný platný výraz. Pokud je hodnota `expression` mimo rozsah povolený `typename`, Visual Basic vyvolá výjimku.
+`expression` Any valid expression. If the value of `expression` is outside the range allowed by `typename`, Visual Basic throws an exception.
 
-@no__t – 0 libovolný výraz, který je platný v rámci klauzule `As` v příkazu `Dim`, to znamená název libovolného datového typu, objektu, struktury, třídy nebo rozhraní.
+`typename` Any expression that is legal within an `As` clause in a `Dim` statement, that is, the name of any data type, object, structure, class, or interface.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!TIP]
-> K provedení převodu typu můžete použít taky následující funkce:
+> You can also use the following functions to perform a type conversion:
 >
-> - Funkce pro převod typů, například `CByte`, `CDbl` a `CInt`, které provádějí převod na konkrétní datový typ. Další informace najdete v tématu [funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md).
-> - [Operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md) nebo [operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md) Tyto operátory vyžadují, aby jeden typ dědil z nebo implementoval jiný typ. Při převodu do a z datového typu `Object` mohou poskytovat poněkud lepší výkon než `CType`.
+> - Type conversion functions such as `CByte`, `CDbl`, and `CInt` that perform a conversion to a specific data type. For more information, see [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md).
+> - [DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md) or [TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md). These operators require that one type inherit from or implement the other type. They can provide somewhat better performance than `CType` when converting to and from the `Object` data type.
 
-`CType` je kompilováno jako inline, což znamená, že kód převodu je součástí kódu, který vyhodnocuje výraz. V některých případech kód běží rychleji, protože pro provedení převodu nejsou volány žádné procedury.
+`CType` is compiled inline, which means that the conversion code is part of the code that evaluates the expression. In some cases, the code runs faster because no procedures are called to perform the conversion.
 
-Pokud není definován žádný převod z `expression` na `typename` (například z `Integer` na `Date`), Visual Basic zobrazí chybovou zprávu při kompilaci.
+If no conversion is defined from `expression` to `typename` (for example, from `Integer` to `Date`), Visual Basic displays a compile-time error message.
 
-Pokud se převod v době běhu nezdařil, je vyvolána příslušná výjimka. Pokud se nezdařil převod, je <xref:System.OverflowException> nejběžnějším výsledkem. Pokud převod není definován, <xref:System.InvalidCastException> v vyvolání. K tomu může dojít například v případě, že `expression` je typu `Object` a jeho typ za běhu nemá žádný převod na `typename`.
+If a conversion fails at run time, the appropriate exception is thrown. If a narrowing conversion fails, an <xref:System.OverflowException> is the most common result. If the conversion is undefined, an <xref:System.InvalidCastException> in thrown. For example, this can happen  if `expression` is of type `Object` and its run-time type has no conversion to `typename`.
 
-Pokud je datový typ `expression` nebo `typename` třídou nebo strukturou, kterou jste definovali, můžete definovat `CType` v této třídě nebo struktuře jako operátor převodu. Díky tomu `CType` fungovat jako *přetížený operátor*. Pokud to uděláte, můžete řídit chování převodu do a z vaší třídy nebo struktury, včetně výjimek, které mohou být vyvolány.
+If the data type of `expression` or `typename` is a class or structure you've defined, you can define `CType` on that class or structure as a conversion operator. This makes `CType` act as an *overloaded operator*. If you do this, you can control the behavior of conversions to and from your class or structure, including the exceptions that can be thrown.
 
 ## <a name="overloading"></a>Přetížení
 
-Operátor `CType` lze také přetížit pro třídu nebo strukturu definovanou mimo váš kód. Pokud se váš kód převede na nebo z takové třídy nebo struktury, ujistěte se, že rozumíte chování operátoru `CType`. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
+The `CType` operator can also be overloaded on a class or structure defined outside your code. If your code converts to or from such a class or structure, be sure you understand the behavior of its `CType` operator. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
 
-## <a name="converting-dynamic-objects"></a>Převod dynamických objektů
+## <a name="converting-dynamic-objects"></a>Converting Dynamic Objects
 
-Převody typů dynamických objektů jsou prováděny uživatelsky definovanými dynamickými převody, které používají metody <xref:System.Dynamic.DynamicObject.TryConvert%2A> nebo <xref:System.Dynamic.DynamicMetaObject.BindConvert%2A>. Pokud pracujete s dynamickými objekty, použijte metodu <xref:Microsoft.VisualBasic.Conversion.CTypeDynamic%2A> pro převod dynamického objektu.
+Type conversions of dynamic objects are performed by user-defined dynamic conversions that use the <xref:System.Dynamic.DynamicObject.TryConvert%2A> or <xref:System.Dynamic.DynamicMetaObject.BindConvert%2A> methods. If you're working with dynamic objects, use the <xref:Microsoft.VisualBasic.Conversion.CTypeDynamic%2A> method to convert the dynamic object.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad používá funkci `CType` k převodu výrazu na datový typ `Single`.
+The following example uses the `CType` function to convert an expression to the `Single` data type.
 
 [!code-vb[VbVbalrFunctions#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#24)]
 
-Další příklady naleznete v tématu [implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md).
+For additional examples, see [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md).
 
 ## <a name="see-also"></a>Viz také:
 
@@ -71,5 +71,5 @@ Další příklady naleznete v tématu [implicitní a explicitní převody](../.
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Převodní funkce](../../../visual-basic/language-reference/functions/conversion-functions.md)
 - [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Postupy: Definovat operátor převodu @ no__t-0
-- [Převod typu v .NET Framework](../../../standard/base-types/type-conversion.md)
+- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Type Conversion in the .NET Framework](../../../standard/base-types/type-conversion.md)

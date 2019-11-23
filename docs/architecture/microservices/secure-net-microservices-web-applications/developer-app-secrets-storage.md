@@ -21,7 +21,7 @@ Musíte oddělit tajné klíče pro přístup k vývojovým a pracovním prostř
 
 Jedním ze způsobů, jak zachovat tajné klíče ze zdrojového kódu, je vývojářům nastavovat tajné klíče jako [proměnné prostředí](/aspnet/core/security/app-secrets#environment-variables) na svých vývojových počítačích. Když použijete proměnné prostředí k ukládání tajných kódů s hierarchickými názvy, jako jsou ty, které jsou vnořené v konfiguračních oddílech, musíte proměnné pojmenovat tak, aby zahrnovaly celou hierarchii jeho sekcí, oddělená dvojtečkami (:).
 
-Například nastavení proměnné `Logging:LogLevel:Default` prostředí na `Debug` hodnotu by bylo ekvivalentní hodnotě konfigurace z následujícího souboru JSON:
+Například nastavení proměnné prostředí `Logging:LogLevel:Default` na hodnotu `Debug` hodnota by byla ekvivalentní hodnotě konfigurace z následujícího souboru JSON:
 
 ```json
 {
@@ -39,9 +39,9 @@ Všimněte si, že proměnné prostředí se běžně ukládají jako prostý te
 
 ## <a name="store-secrets-with-the-aspnet-core-secret-manager"></a>Uložení tajných kódů pomocí Správce ASP.NET Core tajných klíčů
 
-Nástroj ASP.NET Core [správce tajných](/aspnet/core/security/app-secrets#secret-manager) klíčů poskytuje další způsob udržování tajných kódů ze zdrojového kódu. Chcete-li použít nástroj Správce tajných klíčů, nainstalujte balíček **Microsoft. Extensions. Configuration. SecretManager** do souboru projektu. Jakmile je tato závislost přítomna a byla obnovena, `dotnet user-secrets` lze pomocí příkazu nastavit hodnotu tajných kódů z příkazového řádku. Tyto tajné kódy budou uloženy v souboru JSON v adresáři profilu uživatele (podrobnosti se liší podle operačního systému), a to mimo zdrojový kód.
+Nástroj ASP.NET Core [správce tajných](/aspnet/core/security/app-secrets#secret-manager) klíčů poskytuje další způsob udržování tajných kódů ze zdrojového kódu. Chcete-li použít nástroj Správce tajných klíčů, nainstalujte balíček **Microsoft. Extensions. Configuration. SecretManager** do souboru projektu. Jakmile je tato závislost přítomna a byla obnovena, lze pomocí příkazu `dotnet user-secrets` nastavit hodnotu tajných kódů z příkazového řádku. Tyto tajné kódy budou uloženy v souboru JSON v adresáři profilu uživatele (podrobnosti se liší podle operačního systému), a to mimo zdrojový kód.
 
-Tajné klíče nastavené nástrojem Správce tajných klíčů jsou uspořádány podle `UserSecretsId` vlastnosti projektu, který používá tajné klíče. Proto je nutné, abyste nastavili vlastnost UserSecretsId v souboru projektu, jak je znázorněno v následujícím fragmentu kódu. Výchozí hodnota je identifikátor GUID přiřazený aplikací Visual Studio, ale skutečný řetězec není důležitý, pokud je v počítači jedinečný.
+Tajné klíče nastavené nástrojem Správce tajných klíčů jsou uspořádány pomocí vlastnosti `UserSecretsId` projektu, který používá tajné kódy. Proto je nutné, abyste nastavili vlastnost UserSecretsId v souboru projektu, jak je znázorněno v následujícím fragmentu kódu. Výchozí hodnota je identifikátor GUID přiřazený aplikací Visual Studio, ale skutečný řetězec není důležitý, pokud je v počítači jedinečný.
 
 ```xml
 <PropertyGroup>
@@ -49,10 +49,10 @@ Tajné klíče nastavené nástrojem Správce tajných klíčů jsou uspořádá
 </PropertyGroup>
 ```
 
-Používání tajných klíčů uložených s tajným správcem v aplikaci se provádí `AddUserSecrets<T>` voláním instance nerozšiřuje configurationbuilder, aby zahrnovala tajné klíče pro aplikaci ve své konfiguraci. Obecný parametr T by měl být typ ze sestavení, na které se UserSecretId použil. Obvykle je `AddUserSecrets<Startup>` používání velmi přesné.
+Používání tajných klíčů uložených s tajným správcem v aplikaci se provádí voláním `AddUserSecrets<T>` na instanci nerozšiřuje configurationbuilder, aby se do své konfigurace zahrnuly tajné kódy pro aplikaci. Obecný parametr T by měl být typ ze sestavení, na které se UserSecretId použil. Obvykle je použití `AddUserSecrets<Startup>` přesné.
 
-Je součástí výchozích možností pro vývojové prostředí při `CreateDefaultBuilder` použití metody v *program.cs*. `AddUserSecrets<Startup>()`
+`AddUserSecrets<Startup>()` je součástí výchozích možností pro vývojové prostředí při použití metody `CreateDefaultBuilder` v *program.cs*.
 
 >[!div class="step-by-step"]
->[Předchozí](authorization-net-microservices-web-applications.md)Další
->[](azure-key-vault-protects-secrets.md)
+>[Předchozí](authorization-net-microservices-web-applications.md)
+>[Další](azure-key-vault-protects-secrets.md)

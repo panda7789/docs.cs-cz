@@ -21,7 +21,7 @@ Následující kroky ukazují, jak můžete použít opakování protokolu HTTP 
 
 **Odkazování na balíčky ASP.NET Core 2,2**
 
-`HttpClientFactory` je k dispozici od rozhraní .NET Core 2,1. Doporučujeme však, abyste použili nejnovější balíčky ASP.NET Core 2,2 z NuGet ve vašem projektu. Obvykle potřebujete `AspNetCore` Metapackage a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
+`HttpClientFactory` je k dispozici od .NET Core 2,1. Doporučujeme však použít nejnovější balíčky ASP.NET Core 2,2 z NuGet v projektu. Obvykle potřebujete `AspNetCore` Metapackage a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
 
 **Konfigurace klienta pomocí zásad opakování Polly při spuštění**
 
@@ -34,9 +34,9 @@ services.AddHttpClient<IBasketService, BasketService>()
         .AddPolicyHandler(GetRetryPolicy());
 ```
 
-Metoda **AddPolicyHandler ()** je to, co přidává zásady do objektů `HttpClient`, které budete používat. V takovém případě přidáváme zásady Polly pro opakování HTTP pomocí exponenciálního omezení rychlosti.
+Metoda **AddPolicyHandler ()** slouží k přidání zásad do objektů `HttpClient`, které budete používat. V takovém případě přidáváme zásady Polly pro opakování HTTP pomocí exponenciálního omezení rychlosti.
 
-Chcete-li mít obecnější přístup, zásady opakování http lze definovat v samostatné metodě v souboru `Startup.cs`, jak je znázorněno v následujícím kódu:
+Chcete-li mít obecnější přístup, zásady opakování protokolu HTTP lze definovat v samostatné metodě v souboru `Startup.cs`, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -68,7 +68,7 @@ var retryWithJitterPolicy = HttpPolicyExtensions
 
 Polly poskytuje algoritmy chvění připravené k výrobě prostřednictvím webu projektu.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vzor opakování**  
   [https://docs.microsoft.com/azure/architecture/patterns/retry](/azure/architecture/patterns/retry)

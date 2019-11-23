@@ -1,14 +1,13 @@
 ---
 title: Správa výkonu aplikací – gRPC pro vývojáře WCF
 description: Protokolování, metriky a trasování pro aplikace ASP.NET Core gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6ba67fd069e7efc232f912e50c0e283facb79e9c
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 2b6a30ab68cb6e2fdc81c59e7faef81064b948c1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846723"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968183"
 ---
 # <a name="application-performance-management"></a>Správa výkonu aplikace
 
@@ -56,7 +55,7 @@ Další informace o psaní zpráv protokolu a dostupných umyvadel a cílů prot
 
 Modul runtime .NET Core poskytuje sadu komponent pro generování a sledování metrik, které obsahují rozhraní API, jako jsou <xref:System.Diagnostics.Tracing.EventSource> a <xref:System.Diagnostics.Tracing.EventCounter> třídy. Tato rozhraní API lze použít k vygenerování základních číselných dat, která lze spotřebovat externími procesy, jako jsou [globální nástroje dotnet-Counters](https://github.com/dotnet/diagnostics/blob/master/documentation/dotnet-counters-instructions.md)nebo trasování událostí pro systém Windows. Další informace o použití `EventCounter` ve vlastním kódu najdete v [úvodním](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md) kurzu pro EventCounter.
 
-Pro pokročilejší metriky a pro zápis dat metrik do širší škály úložišť dat je k dispozici skvělý open source projekt s názvem [metriky aplikace](https://www.app-metrics.io). Tato sada knihoven poskytuje rozsáhlou sadu typů pro instrumentaci kódu. Nabízí také balíčky pro zápis metrik do různých druhů cílů, které obsahují databáze časových řad, například Prometheus a InfluxDB, [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)a další. Balíček NuGet [App. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) dokonce přidá komplexní sadu základních metrik, které se automaticky generují prostřednictvím integrace s ASP.NET Core Framework, a web nabízí [šablony](https://www.app-metrics.io/samples/grafana/) pro zobrazování těchto metrik. s platformou pro vizualizaci [Grafana](https://grafana.com/)
+Pro pokročilejší metriky a pro zápis dat metrik do širší škály úložišť dat je k dispozici skvělý open source projekt s názvem [metriky aplikace](https://www.app-metrics.io). Tato sada knihoven poskytuje rozsáhlou sadu typů pro instrumentaci kódu. Nabízí také balíčky pro zápis metrik do různých druhů cílů, které obsahují databáze časových řad, například Prometheus a InfluxDB, [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)a další. Balíček NuGet [App. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) dokonce přidá komplexní sadu základních metrik, které se automaticky generují prostřednictvím integrace s ASP.NET Core Framework, a web nabízí [šablony](https://www.app-metrics.io/samples/grafana/) pro zobrazení těchto metrik s platformou vizualizace [Grafana](https://grafana.com/) .
 
 Další informace a dokumentaci k metrikám aplikací najdete na webu [App-Metrics.IO](https://app-metrics.io) .
 
@@ -66,8 +65,8 @@ Většina platforem metrik podporuje pět základních typů metriky, které jso
 
 | Typ metriky | Popis |
 | ----------- | ----------- |
-| Čítač     | Sleduje, jak často se něco stane, například požadavky, chyby a tak dále. |
-| Měřená       | Zaznamenává jednu hodnotu, která se mění v průběhu času, například aktivních připojení. |
+| Counter     | Sleduje, jak často se něco stane, například požadavky, chyby a tak dále. |
+| Měřidla       | Zaznamenává jednu hodnotu, která se mění v průběhu času, například aktivních připojení. |
 | Histogram   | Měří distribuci hodnot napříč libovolnými limity. Například histogram může sledovat velikost datové sady a počítat, kolik z nich obsahovalo < 10 záznamů, kolik 11-100 a 101-1000 a > 1000 záznamů. |
 | Měřiče       | Měří rychlost, s jakou dojde k události v různých časových intervalech. |
 | Časovač       | Sleduje dobu trvání událostí a rychlost, s jakou se vyskytuje, a ukládá se jako histogram. |
@@ -160,7 +159,7 @@ public class Startup
 
 Balíček OpenTracing je abstraktní vrstva a jako takový vyžaduje implementaci pro back-end specifickou. Implementace rozhraní API OpenTracing jsou k dispozici pro následující back-endy open source.
 
-| Name | Balíček | Web |
+| Název | Balíček | Web |
 | ---- | ------- | -------- |
 | Jaeger | [Jaeger](https://www.nuget.org/packages/Jaeger/) | [jaegertracing.io](https://jaegertracing.io) |
 | Elastický APM | [Elastický. APM. NetCoreAll](https://www.nuget.org/packages/Elastic.Apm.NetCoreAll/) | [elastic.co/products/apm](https://www.elastic.co/products/apm) |

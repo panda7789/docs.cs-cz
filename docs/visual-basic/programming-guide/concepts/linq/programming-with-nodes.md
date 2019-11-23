@@ -1,24 +1,24 @@
 ---
-title: Programování s uzly (Visual Basic)
+title: Programování s uzly
 ms.date: 07/20/2015
 ms.assetid: d8422a9b-dd37-44a3-8aac-2237ed9561e0
-ms.openlocfilehash: 2a331d77f1c54f6428d36b6ccb403dcc01094c98
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 447c462f95536cd40291f9b0d54ab85dcde200db
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834932"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346642"
 ---
-# <a name="programming-with-nodes-visual-basic"></a>Programování s uzly (Visual Basic)
-@no__t – 0 vývojáři, kteří potřebují psát programy, jako je editor XML, transformační systém nebo zapisovač sestav, často potřebují psát programy, které fungují na jemnější úrovni členitosti než prvky a atributy. Často potřebují pracovat na úrovni uzlu, manipulaci s textovými uzly, pokyny pro zpracování a komentáře. Toto téma poskytuje některé podrobnosti o programování na úrovni uzlu.  
+# <a name="programming-with-nodes-visual-basic"></a>Programming with Nodes (Visual Basic)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] developers who need to write programs such as an XML editor, a transform system, or a report writer often need to write programs that work at a finer level of granularity than elements and attributes. They often need to work at the node level, manipulating text nodes, processing instructions, and comments. This topic provides some details about programming at the node level.  
   
-## <a name="node-details"></a>Podrobnosti uzlu  
- Existuje řada podrobných informací o programování, které by programátor pracující na úrovni uzlu měl znát.  
+## <a name="node-details"></a>Node Details  
+ There are a number of details of programming that a programmer working at the node level should know.  
   
-### <a name="parent-property-of-children-nodes-of-xdocument-is-set-to-null"></a>Vlastnost Parent podřízených uzlů XDocument je nastavena na hodnotu null.  
- Vlastnost <xref:System.Xml.Linq.XObject.Parent%2A> obsahuje nadřazený <xref:System.Xml.Linq.XElement>, nikoli nadřazený uzel. Podřízené uzly <xref:System.Xml.Linq.XDocument> nemají žádné nadřazené <xref:System.Xml.Linq.XElement>. Jejich nadřazeným prvkem je dokument, takže vlastnost <xref:System.Xml.Linq.XObject.Parent%2A> pro tyto uzly je nastavena na hodnotu null.  
+### <a name="parent-property-of-children-nodes-of-xdocument-is-set-to-null"></a>Parent Property of Children Nodes of XDocument is Set to Null  
+ The <xref:System.Xml.Linq.XObject.Parent%2A> property contains the parent <xref:System.Xml.Linq.XElement>, not the parent node. Child nodes of <xref:System.Xml.Linq.XDocument> have no parent <xref:System.Xml.Linq.XElement>. Their parent is the document, so the <xref:System.Xml.Linq.XObject.Parent%2A> property for those nodes is set to null.  
   
- Následující příklad ukazuje toto:  
+ The following example demonstrates this:  
   
 ```vb  
 Dim doc As XDocument = XDocument.Parse("<!-- a comment --><Root/>")  
@@ -26,17 +26,17 @@ Console.WriteLine(doc.Nodes().OfType(Of XComment).First().Parent Is Nothing)
 Console.WriteLine(doc.Root.Parent Is Nothing)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 True  
 True  
 ```  
   
-### <a name="adjacent-text-nodes-are-possible"></a>Jsou možné sousední uzly textu.  
- V řadě programovacích modelů XML jsou sousední textové uzly vždycky sloučeny. To se někdy označuje jako normalizace textových uzlů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nenormalizuje textové uzly. Pokud přidáte dva textové uzly do stejného elementu, bude výsledkem sousedících textových uzlů. Pokud však přidáte obsah zadaný jako řetězec, nikoli jako uzel <xref:System.Xml.Linq.XText>, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může řetězec sloučit s sousedním textovým uzlem.  
+### <a name="adjacent-text-nodes-are-possible"></a>Adjacent Text Nodes are Possible  
+ In a number of XML programming models, adjacent text nodes are always merged. This is sometimes called normalization of text nodes. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] does not normalize text nodes. If you add two text nodes to the same element, it will result in adjacent text nodes. However, if you add content specified as a string rather than as an <xref:System.Xml.Linq.XText> node, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] might merge the string with an adjacent text node.  
   
- Následující příklad ukazuje toto:  
+ The following example demonstrates this:  
   
 ```vb  
 Dim xmlTree As XElement = <Root>Content</Root>  
@@ -51,7 +51,7 @@ xmlTree.Add(New XText("more text"))
 Console.WriteLine(xmlTree.Nodes().OfType(Of XText)().Count())  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 1  
@@ -59,8 +59,8 @@ Console.WriteLine(xmlTree.Nodes().OfType(Of XText)().Count())
 2  
 ```  
   
-### <a name="empty-text-nodes-are-possible"></a>Jsou možné prázdné textové uzly.  
- V některých programovacích modelech XML je zaručeno, že textové uzly nebudou obsahovat prázdný řetězec. Důvodem je, že takový textový uzel nemá žádný vliv na serializaci kódu XML. Z toho důvodu, že když odeberete text z textového uzlu nastavením jeho hodnoty na prázdný řetězec, samotný textový uzel nebude odstraněn, ze stejného důvodu, že je možné použít sousední textové uzly.  
+### <a name="empty-text-nodes-are-possible"></a>Empty Text Nodes are Possible  
+ In some XML programming models, text nodes are guaranteed to not contain the empty string. The reasoning is that such a text node has no impact on serialization of the XML. However, for the same reason that adjacent text nodes are possible, if you remove the text from a text node by setting its value to the empty string, the text node itself will not be deleted.  
   
 ```vb  
 Dim xmlTree As XElement = <Root>Content</Root>  
@@ -73,14 +73,14 @@ Dim textNode2 As XText = xmlTree.Nodes().OfType(Of XText)().First()
 Console.WriteLine(">>{0}<<", textNode2)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 >><<  
 ```  
   
-### <a name="an-empty-text-node-impacts-serialization"></a>Prázdný textový uzel ovlivňuje serializaci.  
- Pokud element obsahuje pouze podřízený textový uzel, který je prázdný, je serializován pomocí syntaxe dlouhé značky: `<Child></Child>`. Pokud element neobsahuje žádné podřízené uzly, je serializován s syntaxí krátké značky: `<Child />`.  
+### <a name="an-empty-text-node-impacts-serialization"></a>An Empty Text Node Impacts Serialization  
+ If an element contains only a child text node that is empty, it is serialized with the long tag syntax: `<Child></Child>`. If an element contains no child nodes whatsoever, it is serialized with the short tag syntax: `<Child />`.  
   
 ```vb  
 Dim child1 As XElement = New XElement("Child1", _  
@@ -91,17 +91,17 @@ Console.WriteLine(child1)
 Console.WriteLine(child2)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <Child1></Child1>  
 <Child2 />  
 ```  
   
-### <a name="namespaces-are-attributes-in-the-linq-to-xml-tree"></a>Obory názvů jsou atributy ve stromu LINQ to XML.  
- I když deklarace oboru názvů mají identickou syntaxi atributů, v některých programovacích rozhraních, jako jsou XSLT a XPath, deklarace oborů názvů nejsou považovány za atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se ale obory názvů ukládají jako objekty <xref:System.Xml.Linq.XAttribute> ve stromu XML. Pokud iterete pomocí atributů pro prvek, který obsahuje deklaraci oboru názvů, uvidíte deklaraci oboru názvů jako jednu z položek ve vrácené kolekci.  
+### <a name="namespaces-are-attributes-in-the-linq-to-xml-tree"></a>Namespaces are Attributes in the LINQ to XML Tree  
+ Even though namespace declarations have identical syntax to attributes, in some programming interfaces, such as XSLT and XPath, namespace declarations are not considered to be attributes. However, in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], namespaces are stored as <xref:System.Xml.Linq.XAttribute> objects in the XML tree. If you iterate through the attributes for an element that contains a namespace declaration, you will see the namespace declaration as one of the items in the returned collection.  
   
- Vlastnost <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> označuje, zda je atribut deklarací oboru názvů.  
+ The <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> property indicates whether an attribute is a namespace declaration.  
   
 ```vb  
 Dim root As XElement = _   
@@ -115,7 +115,7 @@ For Each att As XAttribute In root.Attributes()
 Next  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 xmlns="http://www.adventure-works.com"  IsNamespaceDeclaration:True  
@@ -123,8 +123,8 @@ xmlns:fc="www.fourthcoffee.com"  IsNamespaceDeclaration:True
 AnAttribute="abc"  IsNamespaceDeclaration:False  
 ```  
   
-### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Metody osy XPath nevracejí podřízené prázdné znaky XDocument  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] povolí podřízených textových uzlů <xref:System.Xml.Linq.XDocument>, pokud textové uzly obsahují pouze prázdné znaky. Model objektu XPath však neobsahuje prázdné znaky jako podřízené uzly dokumentu, takže při iteraci mezi podřízenými prvky <xref:System.Xml.Linq.XDocument> pomocí osy <xref:System.Xml.Linq.XContainer.Nodes%2A> budou vráceny textové uzly s prázdným znakem. Při iteraci mezi podřízenými prvky <xref:System.Xml.Linq.XDocument> pomocí metod osy XPath však nebudou prázdné textové uzly vráceny.  
+### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>XPath Axis Methods Do Not Return Child White Space of XDocument  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] allows for child text nodes of an <xref:System.Xml.Linq.XDocument>, as long as the text nodes contain only white space. However, the XPath object model does not include white space as child nodes of a document, so when you iterate through the children of an <xref:System.Xml.Linq.XDocument> using the <xref:System.Xml.Linq.XContainer.Nodes%2A> axis, white space text nodes will be returned. However, when you iterate through the children of an <xref:System.Xml.Linq.XDocument> using the XPath axis methods, white space text nodes will not be returned.  
   
 ```vb  
 ' Create a document with some white space child nodes of the document.  
@@ -141,15 +141,15 @@ Dim nodes As IEnumerable = CType(root.XPathEvaluate("text()"), IEnumerable)
 Console.WriteLine(nodes.OfType(Of XText)().Count())  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 3  
 0  
 ```  
   
-### <a name="xdeclaration-objects-are-not-nodes"></a>Objekty XDeclaration nejsou uzly.  
- Při iteraci v podřízených uzlech <xref:System.Xml.Linq.XDocument> se nezobrazí objekt deklarace XML. Jedná se o vlastnost dokumentu, nikoli o podřízený uzel.  
+### <a name="xdeclaration-objects-are-not-nodes"></a>XDeclaration Objects are not Nodes  
+ When you iterate through the children nodes of an <xref:System.Xml.Linq.XDocument>, you will not see the XML declaration object. It is a property of the document, not a child node of it.  
   
 ```vb  
 Dim doc As XDocument = _  
@@ -163,7 +163,7 @@ Console.WriteLine(File.ReadAllText("Temp.xml"))
 Console.WriteLine(doc.Nodes().Count())  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -173,4 +173,4 @@ Console.WriteLine(doc.Nodes().Count())
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

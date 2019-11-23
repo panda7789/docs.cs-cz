@@ -87,11 +87,11 @@ Kořenový klíč v tomto souboru je služby. V tomto klíči definujete služby
 | Název služby | Popis |
 |--------------|-------------|
 | webmvc       | Kontejner včetně aplikace ASP.NET Core MVC využívající mikroslužby na straně serveru C\#|
-| Catalog. API  | Kontejner včetně služby Catalog ASP.NET Core mikroslužby webového rozhraní API |
+| catalog.api  | Kontejner včetně služby Catalog ASP.NET Core mikroslužby webového rozhraní API |
 | objednávání. API | Kontejner, včetně pořadí ASP.NET Core mikroslužby webového rozhraní API |
-| SQL. data     | Kontejner se spuštěným SQL Server pro Linux, který uchovává databáze mikroslužeb. |
-| košík. API   | Kontejner s ASP.NET Core mikroslužba webového rozhraní API pro koš |
-| košík. data  | Kontejner, ve kterém je spuštěná služba REDIS cache, s databází košíku jako REDIS cache |
+| sql.data     | Kontejner se spuštěným SQL Server pro Linux, který uchovává databáze mikroslužeb. |
+| basket.api   | Kontejner s ASP.NET Core mikroslužba webového rozhraní API pro koš |
+| basket.data  | Kontejner, ve kterém je spuštěná služba REDIS cache, s databází košíku jako REDIS cache |
 
 ### <a name="a-simple-web-service-api-container"></a>Jednoduchý kontejner rozhraní API pro webové služby
 
@@ -129,7 +129,7 @@ Vzhledem k tomu, že připojovací řetězec je definován proměnnou prostřed�
 
 - Propojí webovou službu s SQL. Data Service (instance SQL Server pro databázi Linux spuštěnou v kontejneru). Když zadáte tuto závislost, kontejner Catalog. API se nespustí, dokud se už nespustí kontejner SQL. data; To je důležité, protože Catalog. API vyžaduje, aby se nejdřív nastavila a běžela databáze SQL Server. Tento druh závislosti kontejneru ale v mnoha případech není dostatečný, protože kontroly Docker jsou jenom na úrovni kontejneru. Někdy může být služba (v tomto případě SQL Server) stále připravená, takže je vhodné implementovat logiku opakování pomocí exponenciálního omezení rychlostiu v klientských mikroslužbách. To znamená, že pokud kontejner závislostí není připravený na krátkou dobu, bude aplikace stále odolná.
 
-- Je nakonfigurovaná tak, aby povolovala přístup k externím serverům: nastavení další\_hostitelů umožňuje přístup k externím serverům nebo počítačům mimo hostitele Docker (to znamená, že je mimo výchozí virtuální počítač Linux, který je hostitelem hostitele Docker), jako je například místní SQL Server instance na vašem vývojovém počítači.
+- Je nakonfigurovaná tak, aby povolovala přístup k externím serverům: nastavení další\_hostitelé vám umožní přístup k externím serverům nebo počítačům mimo hostitele Docker (to znamená, že se nachází mimo výchozí virtuální počítač Linux, který je hostitelem Docker hosta), jako je například místní instance SQL Server na vývojovém počítači.
 
 K dispozici jsou také další pokročilá nastavení Docker-Compose. yml, která budeme projednávat v následujících oddílech.
 
@@ -175,7 +175,7 @@ Při cílení na různá prostředí byste měli použít více souborů pro vyt
 
 Můžete použít jeden soubor Docker-Compose. yml jako v zjednodušených příkladech uvedených v předchozích částech. To však nedoporučujeme pro většinu aplikací.
 
-Ve výchozím nastavení čte čtení dva soubory, Docker-Compose. yml a nepovinný soubor Docker-Compose. override. yml. Jak je znázorněno na obrázku 6-11, pokud používáte aplikaci Visual Studio a povolíte podporu Docker, sada Visual Studio také vytvoří další soubor Docker-Compose. vs. Debug. g. yml pro ladění aplikace. můžete se podívat na tento soubor ve složce obj\\Docker\\ se do hlavní složky řešení.
+Ve výchozím nastavení čte čtení dva soubory, Docker-Compose. yml a nepovinný soubor Docker-Compose. override. yml. Jak je znázorněno na obrázku 6-11, pokud používáte aplikaci Visual Studio a povolíte podporu Docker, sada Visual Studio také vytvoří další soubor Docker-Compose. vs. Debug. g. yml pro ladění aplikace. můžete se podívat na tento soubor ve složce obj\\Docker\\ v hlavní složce řešení.
 
 ![Snímek obrazovky se soubory v projektu Docker pro sestavení.](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
 
@@ -424,7 +424,7 @@ Docker-Format očekává, že každý řádek v souboru. env bude ve formátu \<
 
 Všimněte si, že hodnoty nastavené v běhovém prostředí vždy přepisují hodnoty definované v souboru. env. Podobným způsobem hodnoty předané pomocí argumentů příkazu příkazového řádku přepisují také výchozí hodnoty nastavené v souboru. env.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Přehled Docker Compose** \
     <https://docs.docker.com/compose/overview/>
@@ -467,7 +467,7 @@ Za tímto účelem tým .NET poskytuje čtyři základní varianty v [dotnet/Cor
 
 V případě rychlejšího spuštění jsou bitové kopie za běhu také automaticky nastaveny\_adresy URL aspnetcore na port 80 a použít Ngen k vytvoření mezipaměti nativní bitové kopie sestavení.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vytváření optimalizovaných imagí Docker pomocí ASP.NET Core**  
   <https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/>

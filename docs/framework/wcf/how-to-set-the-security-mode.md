@@ -18,9 +18,9 @@ ms.locfileid: "72320899"
 ---
 # <a name="how-to-set-the-security-mode"></a>Postupy: Nastavení režimu zabezpečení
 
-Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy zabezpečení, které se nacházejí u většiny předdefinovaných vazeb: přenos, zpráva a přenos s přihlašovacími údaji zprávy. Dva další režimy jsou specifické pro dvě vazby: režim "přenos – pouze přihlašovací údaje", který se nachází na <xref:System.ServiceModel.BasicHttpBinding> a v režimu "obojí", který se nachází na <xref:System.ServiceModel.NetMsmqBinding>. Toto téma se však zaměřuje na tři běžné režimy zabezpečení: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message> a <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.
+Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy zabezpečení, které se nacházejí u většiny předdefinovaných vazeb: přenos, zpráva a přenos s přihlašovacími údaji zprávy. Dva další režimy jsou specifické pro dvě vazby: režim "přenos – pouze přihlašovací údaje", který se nachází na <xref:System.ServiceModel.BasicHttpBinding>, a režim "obojí", který se nachází v <xref:System.ServiceModel.NetMsmqBinding>. Toto téma se však zaměřuje na tři běžné režimy zabezpečení: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message>a <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.
 
-Všimněte si, že ne každá předdefinovaná vazba podporuje všechny tyto režimy. Toto téma nastaví režim s třídami <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> a ukazuje, jak nastavit režim programově i prostřednictvím konfigurace.
+Všimněte si, že ne každá předdefinovaná vazba podporuje všechny tyto režimy. Toto téma nastaví režim pomocí tříd <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> a ukazuje, jak nastavit režim programově i prostřednictvím konfigurace.
 
 Další informace najdete v tématu zabezpečení služby WCF, [Přehled zabezpečení](./feature-details/security-overview.md), zabezpečení [služeb](securing-services.md) [a zabezpečení služeb a klientů](./feature-details/securing-services-and-clients.md). Další informace o režimu přenosu a zprávě najdete v tématu [zabezpečení přenosu](./feature-details/transport-security.md) a [zabezpečení zpráv](./feature-details/message-security-in-wcf.md).
 
@@ -50,15 +50,15 @@ Další informace najdete v tématu zabezpečení služby WCF, [Přehled zabezpe
 
 ## <a name="setting-the-clientcredentialtype-property"></a>Nastavení vlastnosti ClientCredentialType
 
-Nastavení režimu na jednu ze tří hodnot určuje způsob, jakým se nastavuje vlastnost `ClientCredentialType`. Například pomocí třídy <xref:System.ServiceModel.WSHttpBinding> nastavíte režim na `Transport` znamená, že musíte nastavit vlastnost <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> třídy <xref:System.ServiceModel.HttpTransportSecurity> na odpovídající hodnotu.
+Nastavení režimu na jednu ze tří hodnot určuje způsob, jakým se nastavuje vlastnost `ClientCredentialType`. Například použití třídy <xref:System.ServiceModel.WSHttpBinding>, nastavení režimu pro `Transport` znamená, že je nutné nastavit vlastnost <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> třídy <xref:System.ServiceModel.HttpTransportSecurity> na odpovídající hodnotu.
 
 ### <a name="to-set-the-clientcredentialtype-property-for-transport-mode"></a>Nastavení vlastnosti ClientCredentialType pro transportní režim
 
 1. Vytvořte instanci vazby.
 
-2. Nastavte vlastnost `Mode` na hodnotu `Transport`.
+2. Nastavte `Mode` vlastnost `Transport`.
 
-3. Nastavte vlastnost `ClientCredential` na odpovídající hodnotu. Následující kód nastaví vlastnost na hodnotu `Windows`.
+3. Vlastnost `ClientCredential` nastavte na odpovídající hodnotu. Následující kód nastaví vlastnost na hodnotu `Windows`.
 
      [!code-csharp[c_SettingSecurityMode#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#5)]
      [!code-vb[c_SettingSecurityMode#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#5)]
@@ -67,24 +67,24 @@ Nastavení režimu na jednu ze tří hodnot určuje způsob, jakým se nastavuje
 
 1. Vytvořte instanci vazby.
 
-2. Nastavte vlastnost `Mode` na hodnotu `Message`.
+2. Nastavte `Mode` vlastnost `Message`.
 
-3. Nastavte vlastnost `ClientCredential` na odpovídající hodnotu. Následující kód nastaví vlastnost na hodnotu `Certificate`.
+3. Vlastnost `ClientCredential` nastavte na odpovídající hodnotu. Následující kód nastaví vlastnost na hodnotu `Certificate`.
 
      [!code-csharp[c_SettingSecurityMode#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#6)]
      [!code-vb[c_SettingSecurityMode#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#6)]
 
 ### <a name="to-set-the-mode-and-clientcredentialtype-property-in-configuration"></a>Nastavení vlastnosti Mode a ClientCredentialType v konfiguraci
 
-1. Přidejte vhodný element vazby do [\<bindings >](../configure-apps/file-schema/wcf/bindings.md) elementu konfiguračního souboru. Následující příklad přidá prvek [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .
+1. Přidejte vhodný element vazby do [\<vazeb >](../configure-apps/file-schema/wcf/bindings.md) elementu konfiguračního souboru. Následující příklad přidá prvek [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .
 
 2. Přidejte prvek `<binding>` a nastavte jeho atribut `name` na odpovídající hodnotu.
 
-3. Přidejte prvek `<security>` a nastavte atribut `mode` na `Message`, `Transport` nebo `TransportWithMessageCredential`.
+3. Přidejte prvek `<security>` a nastavte atribut `mode` na `Message`, `Transport`nebo `TransportWithMessageCredential`.
 
 4. Pokud je režim nastaven na `Transport`, přidejte prvek `<transport>` a nastavte atribut `clientCredential` na odpovídající hodnotu.
 
-     Následující příklad nastaví režim na "`Transport"` a poté nastaví atribut `clientCredentialType` prvku `<transport>` na hodnotu" `Windows"` ".
+     Následující příklad nastaví režim na "`Transport"`a poté nastaví atribut `clientCredentialType` elementu `<transport>` na hodnotu"`Windows"`.
 
     ```xml
     <wsHttpBinding>
@@ -96,7 +96,7 @@ Nastavení režimu na jednu ze tří hodnot určuje způsob, jakým se nastavuje
     </wsHttpBinding >
     ```
 
-     Případně nastavte `security mode` na "`Message"`" následovaný elementem `<"message">`. Tento příklad nastaví `clientCredentialType` na "`Certificate"`.
+     Případně nastavte `security mode` na "`Message"`" následovaný elementem `<"message">`. V tomto příkladu se nastaví `clientCredentialType` na "`Certificate"`.
 
     ```xml
     <wsHttpBinding>
@@ -124,6 +124,6 @@ Další informace najdete v tématu [Postupy: použití zabezpečení přenosu a
 - [Zabezpečení zpráv](./feature-details/message-security-in-wcf.md)
 - [Přehled zabezpečení](./feature-details/security-overview.md)
 - [Vazby poskytované systémem](system-provided-bindings.md)
-- [@no__t – 1security >](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [@no__t – 1security >](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [@no__t – 1security >](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [> zabezpečení \<](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [> zabezpečení \<](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [> zabezpečení \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

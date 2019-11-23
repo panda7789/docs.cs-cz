@@ -29,11 +29,11 @@ Odkazy na jiné objekty nebo kolekce jiných objektů v definicích vaší tří
   
  Z toho vyplývá, že vlastnosti vztahu jsou důležitější než na straně výsledků dotazu, než jako součást dotazu samotného. Poté, co dotaz načte data o konkrétním zákazníkovi, definice třídy označuje, že zákazníci mají objednávky. Jinými slovy, očekáváte, že vlastnost `Orders` určitého zákazníka bude kolekce, která je vyplněna všemi objednávkami tohoto zákazníka. To je ve skutečnosti kontrakt, který jste deklarovali definováním tříd tímto způsobem. Očekává se, že se zobrazí objednávky i v případě, že dotaz nepožadoval objednávky. Očekáváte, že objektový model udržuje iluzi, že se jedná o příponu v paměti databáze se souvisejícími objekty hned dostupnými.  
   
- Teď, když máte relace, můžete napsat dotazy odkazem na vlastnosti vztahu definované ve vašich třídách. Tyto odkazy na relace odpovídají vztahům cizího klíče v databázi. Operace, které tyto relace používají, se převádějí do složitějších spojení v ekvivalentním kódu SQL. Pokud jste definovali relaci (pomocí atributu <xref:System.Data.Linq.Mapping.AssociationAttribute>), nemusíte v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kódovat explicitní spojení.  
+ Teď, když máte relace, můžete napsat dotazy odkazem na vlastnosti vztahu definované ve vašich třídách. Tyto odkazy na relace odpovídají vztahům cizího klíče v databázi. Operace, které tyto relace používají, se převádějí do složitějších spojení v ekvivalentním kódu SQL. Pokud jste definovali relaci (pomocí atributu <xref:System.Data.Linq.Mapping.AssociationAttribute>), nemusíte v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zakódovat explicitní spojení.  
   
  Pro lepší údržbu této iluze [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje techniku s názvem *odložené načítání*. Další informace najdete v tématu [odložené porovnání a okamžité načítání](deferred-versus-immediate-loading.md).  
   
- Vezměte v úvahu následující dotaz SQL pro projektování seznamu dvojic `CustomerID` @ no__t-1 @ no__t-2:  
+ Zvažte následující dotaz SQL pro projektování seznamu `CustomerID`-`OrderID` páry:  
   
 ```sql
 SELECT t0.CustomerID, t1.OrderID  
@@ -42,12 +42,12 @@ FROM   Customers AS t0 INNER JOIN
 WHERE  (t0.City = @p0)  
 ```  
   
- Chcete-li získat stejné výsledky pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], použijte odkaz na vlastnost `Orders` již existující ve třídě `Customer`. Odkaz `Orders` poskytuje potřebné informace pro spuštění dotazu a projekt dvojice `CustomerID` @ no__t-2 @ no__t-3, jak je uvedeno v následujícím kódu:  
+ Chcete-li získat stejné výsledky pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], použijte odkaz na vlastnost `Orders` již existující ve třídě `Customer`. `Orders` odkaz poskytuje potřebné informace pro provedení dotazu a projektu `CustomerID`-`OrderID` páry, jako v následujícím kódu:  
   
  [!code-csharp[DLinqQueryConcepts#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#5)]
  [!code-vb[DLinqQueryConcepts#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#5)]  
   
- Můžete také provést zpětný chod. To znamená, že můžete zadat dotaz na `Orders` a použít svůj odkaz na relaci `Customer` pro přístup k informacím o asociovaném objektu `Customer`. Následující kód rozchází stejnou dvojici `CustomerID` @ no__t-1 @ no__t-2 jako předtím, ale tentokrát se dotazuje `Orders` namísto `Customers`.  
+ Můžete také provést zpětný chod. To znamená, že se můžete dotazovat `Orders` a použít svůj odkaz na `Customer` vztah k informacím o přidruženém objektu `Customer`. Následující kód je stejný `CustomerID`-`OrderID` páry jako předtím, ale tentokrát pomocí dotazování `Orders` namísto `Customers`.  
   
  [!code-csharp[DLinqQueryConcepts#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#6)]
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  

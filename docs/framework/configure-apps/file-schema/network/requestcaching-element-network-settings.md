@@ -15,12 +15,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697830"
 ---
-# <a name="requestcaching-element-network-settings"></a>@no__t – element > 0requestCaching (nastavení sítě)
+# <a name="requestcaching-element-network-settings"></a>\<element > requestCaching (nastavení sítě)
 Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requestCaching >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<requestCaching >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71697830"
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
-|[@no__t – element > 1defaultFtpCachePolicy (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[\<element > defaultFtpCachePolicy (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

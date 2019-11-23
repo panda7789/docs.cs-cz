@@ -15,11 +15,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699095"
 ---
-# <a name="systemweb-element-web-settings"></a>@no__t element -0system. Web > (nastavení webu)
+# <a name="systemweb-element-web-settings"></a>\<element System. Web > (nastavení webu)
 Obsahuje informace o tom, jak vrstva hostování ASP.NET spravuje chování v rámci procesu.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **@no__t -3system. web >**  
+[**Konfigurace \<>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<System. web >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,23 +34,23 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ### <a name="attributes"></a>Atributy  
 
-Žádné  
+Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1applicationPool >](applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací služby IIS v souboru ASPNET. config.|  
+|[\<applicationPool>](applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací služby IIS v souboru ASPNET. config.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1configuration >](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
+|[Konfigurace \<>](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
   
 ## <a name="remarks"></a>Poznámky  
 
-Prvek `system.web` a jeho podřízený prvek `applicationPool` byl přidán do .NET Framework jako .NET Framework 3,5 SP1. Když spustíte službu IIS 7,0 nebo novější verze v integrovaném režimu, tato kombinace prvků vám umožní nakonfigurovat, jak ASP.NET spravuje vlákna a jak se budou požadavky do fronty ASP.NET hostovat v fondu aplikací služby IIS. Pokud v klasickém režimu nebo v režimu rozhraní ISAPI spustíte službu IIS 7,0 nebo novější, budou tato nastavení ignorována.  
+Prvek `system.web` a jeho podřízený `applicationPool` prvek byl přidán do .NET Framework jako .NET Framework 3,5 SP1. Když spustíte službu IIS 7,0 nebo novější verze v integrovaném režimu, tato kombinace prvků vám umožní nakonfigurovat, jak ASP.NET spravuje vlákna a jak se budou požadavky do fronty ASP.NET hostovat v fondu aplikací služby IIS. Pokud v klasickém režimu nebo v režimu rozhraní ISAPI spustíte službu IIS 7,0 nebo novější, budou tato nastavení ignorována.  
   
 ## <a name="example"></a>Příklad  
 
@@ -78,4 +78,4 @@ Následující příklad ukazuje, jak nakonfigurovat ASP.NET chování v rámci 
   
 ## <a name="see-also"></a>Viz také:
 
-- [@no__t – 1applicationPool > – element (nastavení webu)](applicationpool-element-web-settings.md)
+- [\<applicationPool > – element (nastavení webu)](applicationpool-element-web-settings.md)

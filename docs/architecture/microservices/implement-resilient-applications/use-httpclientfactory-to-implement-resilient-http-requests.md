@@ -62,7 +62,7 @@ Následující diagram znázorňuje, jak se používají typové klienty s `Http
 
 Na výše uvedeném obrázku ClientService vynuťte u (používaný řadičem nebo klientským kódem) používá `HttpClient` vytvořené pomocí registrované `IHttpClientFactory`. Tato továrna přiřadí `HttpClient` `HttpMessageHandler` z fondu, který spravuje. `HttpClient` lze nakonfigurovat pomocí zásad Polly při registraci `IHttpClientFactory` v kontejneru DI pomocí metody rozšíření `AddHttpClient`.
 
-Pokud chcete nakonfigurovat výše uvedenou strukturu, přidejte `HttpClientFactory` do své aplikace tak, že nainstalujete balíček NuGet `Microsoft.Extensions.Http`, který obsahuje metodu rozšíření `AddHttpClient()` pro `IServiceCollection`. Tato metoda rozšíření registruje `DefaultHttpClientFactory` pro použití jako typ singleton pro `IHttpClientFactory` rozhraní. Definuje přechodnou konfiguraci `HttpMessageHandlerBuilder`. Tato obslužná rutina zprávy (objekt `HttpMessageHandler`), která je pořízená z fondu, se používá `HttpClient` vrácená z továrny.
+Pokud chcete nakonfigurovat výše uvedenou strukturu, přidejte `HttpClientFactory` do své aplikace tak, že nainstalujete balíček NuGet `Microsoft.Extensions.Http`, který obsahuje metodu rozšíření `AddHttpClient()` pro `IServiceCollection`. Tato metoda rozšíření registruje `DefaultHttpClientFactory` pro použití jako typ singleton pro `IHttpClientFactory`rozhraní. Definuje přechodnou konfiguraci `HttpMessageHandlerBuilder`. Tato obslužná rutina zprávy (objekt`HttpMessageHandler`), která je pořízená z fondu, se používá `HttpClient` vrácená z továrny.
 
 V dalším kódu vidíte, jak `AddHttpClient()` lze použít k registraci typových klientů (agentů služeb), kteří potřebují používat `HttpClient`.
 
@@ -103,7 +103,7 @@ Další podrobnosti o používání Polly najdete v [dalším článku](implemen
 
 ### <a name="httpclient-lifetimes"></a>HttpClient doby života
 
-Pokaždé, když dostanete objekt `HttpClient` z `IHttpClientFactory`, vrátí se nová instance. Každý `HttpClient` ale používá `HttpMessageHandler`, který `IHttpClientFactory` se ve fondu a znovu používá, aby se snížila spotřeba prostředků, pokud doba platnosti `HttpMessageHandler` vypršela.
+Pokaždé, když dostanete objekt `HttpClient` z `IHttpClientFactory`, vrátí se nová instance. Každý `HttpClient` ale používá `HttpMessageHandler`, který `IHttpClientFactory` se ve fondu a znovu používá, aby se snížila spotřeba prostředků, pokud doba platnosti `HttpMessageHandler`vypršela.
 
 Sdružování obslužných rutin je žádoucí, protože každá obslužná rutina obvykle spravuje vlastní podkladová připojení HTTP; vytváření dalších obslužných rutin, než je potřeba, může způsobit zpoždění připojení. Některé obslužné rutiny také udržují připojení otevřené po neomezenou dobu, což může zabránit obslužné rutině v rekomunikaci se změnami DNS.
 
@@ -119,7 +119,7 @@ Každý typový klient může mít svou vlastní nakonfigurovanou hodnotu život
 
 ### <a name="implement-your-typed-client-classes-that-use-the-injected-and-configured-httpclient"></a>Implementujte typové klientské třídy, které používají vložené a nakonfigurované HttpClient
 
-Jako předchozí krok musíte mít definované vaše typové klientské třídy, jako jsou třídy v ukázkovém kódu, jako je například "BasketService", "CatalogService", "OrderingService" atd. – typový klient je třída, která přijímá objekt `HttpClient` (vložený prostřednictvím jeho konstruktor) a používá ho k volání některé vzdálené služby HTTP. Příklad:
+Jako předchozí krok musíte mít definované vaše typové klientské třídy, například třídy v ukázkovém kódu, jako je například "BasketService", "CatalogService", "OrderingService" atd. – typový klient je třída, která přijímá objekt `HttpClient` (vložený prostřednictvím jeho konstruktoru) a používá ho k volání některé vzdálené služby HTTP. Příklad:
 
 ```csharp
 public class CatalogService : ICatalogService
@@ -181,9 +181,9 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 }
 ```
 
-V tomto okamžiku je zobrazený kód pouze provádění běžných požadavků protokolu HTTP, ale hodnota Magic přichází v následujících částech, kde stačí přidat zásady a delegovat obslužné rutiny zaregistrovaným typovým klientům. všechny požadavky HTTP, které je třeba provést `HttpClient` se budou chovat s ohledem na odolné zásady, jako jsou třeba opakované pokusy pomocí exponenciálního omezení rychlostiu, vypínačů okruhu nebo jakékoli jiné vlastní obslužné rutiny, které implementují další funkce zabezpečení, jako je například použití ověřovacích tokenů nebo jakékoli jiné vlastní funkce.
+Až do tohoto okamžiku, zobrazený kód provádí pouze běžné požadavky HTTP, ale hodnota Magic přichází v následujících částech, kde, stačí, když přidáte zásady a delegujete obslužné rutiny na registrované typové klienty, všechny požadavky HTTP, které má `HttpClient` provádět, se budou chovat s ohledem na odolné zásady, jako jsou třeba opakované pokusy pomocí exponenciálního omezení rychlostiu, přepínacích cyklů nebo jakákoli jiná vlastní obslužná rutina, která implementuje další funkce zabezpečení, jako je například použití ověřovacích tokenů nebo jakékoli jiné vlastní funkce.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Používání HttpClientFactory v .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)

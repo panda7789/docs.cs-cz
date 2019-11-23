@@ -23,27 +23,27 @@ Proto v kódu na straně klienta, který obvykle ověřujete ViewModels. Před o
 
 Implementace ověřování na straně klienta závisí na typu klientské aplikace, kterou vytváříte. Bude se lišit v případě, že ověřujete data ve webové aplikaci webové MVC s většinou kódu v rozhraní .NET, Webová aplikace SPA s tímto ověřováním je kódována v JavaScriptu nebo TypeScript nebo mobilní aplikace kódované pomocí Xamarin a C#.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 ### <a name="validation-in-xamarin-mobile-apps"></a>Ověřování v mobilních aplikacích Xamarin
 
 - **Ověřit zadání textu a zobrazit chyby** \
   [https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
-- **Zpětné volání ověřování** \
+-  \ **zpětného volání ověřování**
   <https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/>
 
 ### <a name="validation-in-aspnet-core-apps"></a>Ověřování v ASP.NET Corech aplikacích
 
-- **Rick Anderson. Přidání ověřování** \
+- **Rick Anderson. Přidávání \ ověřování**
   <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
 ### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>Ověřování v ZABEZPEČENých webových aplikacích (úhlové 2, TypeScript, JavaScript)
 
-- **ADO KuKic. 2. úhlové ověření formuláře** \
+- **ADO KuKic. Úhlové 2 \ ověřování formuláře**
   <https://scotch.io/tutorials/angular-2-form-validation>
 
-- **Ověření formuláře** \
+-  \ **ověření formuláře**
   <https://angular.io/guide/form-validation>
 
 - **Export.** Dokumentaci k Breeze. \
@@ -60,5 +60,5 @@ V souhrnu se jedná o nejdůležitější pojmy týkající se ověřování:
 - Ve většině případů je vhodné, aby bylo redundantní ověřování na straně klienta dobré, protože aplikace může být aktivní.
 
 >[!div class="step-by-step"]
->[Předchozí](domain-model-layer-validations.md)Další
->[](domain-events-design-implementation.md)
+>[Předchozí](domain-model-layer-validations.md)
+>[Další](domain-events-design-implementation.md)

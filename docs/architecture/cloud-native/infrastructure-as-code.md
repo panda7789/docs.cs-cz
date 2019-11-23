@@ -62,7 +62,7 @@ V projektu [šablon rychlého startu Azure](https://github.com/Azure/azure-quick
 
 Šablony Správce prostředků lze spouštět různými způsoby. Možná je nejjednodušší způsob, jak je jednoduše vložit do Azure Portal. Pro experimentální nasazení může být tato metoda velmi rychlá. Můžete je také spustit jako součást procesu sestavení nebo vydání v Azure DevOps. K dispozici jsou úlohy, které budou používat připojení do Azure ke spouštění šablon. Změny šablon Správce prostředků se aplikují postupně, což znamená, že pokud chcete přidat nový prostředek, musíte ho jenom přidat do šablony. Nástroj bude zpracovávat rozdíl mezi aktuální skupinou prostředků a požadovanou skupinou prostředků definovanou v šabloně. Prostředky se pak vytvoří nebo změní, aby odpovídaly tomu, co je definováno v šabloně.  
 
-## <a name="terraform"></a>Terraformu
+## <a name="terraform"></a>Terraform
 
 Napozorovaná nevýhody Správce prostředků šablon je, že jsou specifická pro cloud Azure. Nezvykle vytvářet aplikace, které zahrnují prostředky z více než jednoho cloudu, ale v případě, že podnik spoléhá na Spectacular dobu provozu, může to mít za následek i náklady na podporu více cloudů. Pokud by existoval jeden šablonování jazyk, který by se mohl použít v každém cloudu, měl by taky zajistit, aby byly dovednosti pro vývojáře mnohem lépe přenosné.
 
