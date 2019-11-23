@@ -81,7 +81,7 @@ Při implementaci vzoru brány rozhraní API musíte být opatrní. Obvykle nen�
 
 Proto by se brány rozhraní API měly oddělit na základě hranic firmy a klientských aplikací a nemusí fungovat jako jeden agregátor pro všechny interní mikroslužby.
 
-Při rozdělení vrstvy brány API na několik bran rozhraní API platí, že pokud má vaše aplikace více klientských aplikací, může být primárním objektem Pivot při identifikaci několika typů bran rozhraní API, takže můžete mít různou fasádu pro potřeby jednotlivých klientských aplikací. Tento případ je vzor nazvaný back-end pro front-end ([BFF](https://samnewman.io/patterns/architectural/bff/)), kde každá brána API může poskytovat jiné rozhraní API přizpůsobené pro každý typ klientské aplikace, případně i na základě faktoru formuláře klienta implementací konkrétního kódu adaptéru, který je pod voláními. několik interních mikroslužeb, jak je znázorněno na následujícím obrázku:
+Při rozdělení vrstvy brány API na několik bran rozhraní API platí, že pokud má vaše aplikace více klientských aplikací, může být primárním objektem Pivot při identifikaci několika typů bran rozhraní API, takže můžete mít různou fasádu pro potřeby jednotlivých klientských aplikací. V tomto případě se jedná o vzor s názvem "back-end pro front-end" ([BFF](https://samnewman.io/patterns/architectural/bff/)), kde každá brána API může poskytovat jiné rozhraní API přizpůsobené pro každý typ klientské aplikace, a to i na základě faktoru formuláře klienta implementací konkrétního kódu adaptéru, který je pod voláním více interních mikroslužeb, jak je znázorněno na následujícím obrázku:
 
 ![Diagram znázorňující několik vlastních bran rozhraní API.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/multiple-custom-api-gateways.png)
 
@@ -132,7 +132,7 @@ V závislosti na každé implementaci může být k dispozici mnoho dalších č
 
 **Obrázek 4-14**. Použití Azure API Management pro vaši bránu API
 
-Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd. V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by se mohl vyvíjet k komponenta monolitické
+Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd. V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by mohl vyvíjet ke komponentě monolitické.
 
 Produkty brány rozhraní API obvykle fungují jako reverzní proxy server pro komunikaci příchozího přenosu dat, kde můžete také vyfiltrovat rozhraní API z interních mikroslužeb a použít autorizaci na publikovaná rozhraní API v této jedné vrstvě.
 
@@ -146,7 +146,7 @@ V této příručce a v referenční aplikaci eShopOnContainers (Reference Sampl
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) je zjednodušená brána API, která se doporučuje pro jednodušší přístupy. Ocelot je open source brána API založená na rozhraní .NET Core, která se skládá hlavně pro architekturu mikroslužeb, která vyžaduje sjednocení vstupních bodů do jejich systému. Je odlehčená, rychlá a škálovatelná a poskytuje směrování a ověřování mezi mnoha dalšími funkcemi.
 
-Hlavním důvodem pro výběr Ocelot pro [referenční aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) je, že Ocelot je odlehčená brána rozhraní API .NET Core, kterou můžete nasadit do stejného prostředí nasazení aplikace, do kterého nasazujete mikroslužby/ kontejnery, jako je například hostitel Docker, Kubernetes atd. A vzhledem k tomu, že je založená na .NET Core, je to pro různé platformy, které vám umožní nasadit na Linux nebo Windows.
+Hlavním důvodem pro výběr Ocelot pro [referenční aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) je, že Ocelot je odlehčená brána rozhraní API .NET Core, kterou můžete nasadit do stejného prostředí nasazení aplikace, kde nasazujete mikroslužby nebo kontejnery, jako je například hostitel Docker, Kubernetes atd. A vzhledem k tomu, že je založená na .NET Core, je to pro různé platformy, které vám umožní nasadit na Linux nebo Windows.
 
 Předchozí diagramy, které zobrazují vlastní brány API spuštěné v kontejnerech, jsou přesně takové, jak můžete také spustit Ocelot v kontejneru a v aplikaci založené na mikroslužbách.
 
@@ -168,9 +168,9 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
 
 - Pokud je brána API vyvinutá jedním týmem, může dojít k nekritickému vývoji. To je další důvod, proč lepší přístup je mít několik jemně odstupňovaných bran rozhraní API, které reagují na různé požadavky klientů. Bránu rozhraní API můžete také interně rozdělit do několika oblastí nebo vrstev vlastněných různými týmy, které pracují na vnitřních mikroslužbách.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **Chris Richardson. Vzor: Brána API/back-end pro front-end**  \
+- **Chris Richardson. Vzor: Brána API/back-end pro front-end** \
   <https://microservices.io/patterns/apigateway.html>
 
 -  \ **vzoru brány API**

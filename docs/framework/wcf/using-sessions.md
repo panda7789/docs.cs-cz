@@ -49,7 +49,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
 - Pochopení a řízení vytvoření a ukončení relace a relace relace k instanci služby.  
   
 ## <a name="default-execution-behavior-using-sessions"></a>Výchozí chování při provádění pomocí relací  
- Vazba, která se pokusí iniciovat relaci, se nazývá vazba *založená na relaci* . Kontrakty služby určují, že vyžadují, povolují nebo odmítnou vazby založené na relacích nastavením vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> v rozhraní kontraktu služby (nebo třídě) na jednu z hodnot výčtu <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType>. Ve výchozím nastavení je hodnota této vlastnosti <xref:System.ServiceModel.SessionMode.Allowed>, což znamená, že pokud klient používá vazbu založenou na relaci s implementací služby WCF, služba vytvoří a použije poskytnutou relaci.  
+ Vazba, která se pokusí iniciovat relaci, se nazývá vazba *založená na relaci* . Kontrakty služby určují, že vyžadují, povolují nebo odmítnou vazby založené na relacích nastavením vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> v rozhraní kontraktu služby (nebo třídě) na jednu z hodnot <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType> výčtu. Ve výchozím nastavení je hodnota této vlastnosti <xref:System.ServiceModel.SessionMode.Allowed>, což znamená, že pokud klient používá vazbu založenou na relaci s implementací služby WCF, služba vytvoří a použije poskytnutou relaci.  
   
  Když služba WCF akceptuje relaci klienta, jsou ve výchozím nastavení povoleny následující funkce:  
   
@@ -62,18 +62,18 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
  WCF nabízí následující typy chování aplikace založené na relacích:  
   
-- @No__t-0 podporuje relace založené na zabezpečení, ve kterých se obě konce komunikace dohodly na konkrétní zabezpečené konverzaci. Další informace najdete v tématu [zabezpečení služeb](securing-services.md). Například vazba <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, která obsahuje podporu pro relace zabezpečení i spolehlivé relace, ve výchozím nastavení používá pouze zabezpečenou relaci, která šifruje a digitálně podepisuje zprávy.  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> podporuje relace založené na zabezpečení, ve kterých se na konkrétní zabezpečenou konverzaci dohodla obě konce komunikace. Další informace najdete v tématu [zabezpečení služeb](securing-services.md). Například vazba <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, která obsahuje podporu pro relace zabezpečení i spolehlivé relace, ve výchozím nastavení používá jenom zabezpečenou relaci, která šifruje a digitálně podepisuje zprávy.  
   
 - Vazba <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> podporuje relace založené na protokolu TCP/IP, aby se zajistilo, že se všechny zprávy budou korelovat připojením na úrovni soketu.  
   
-- Element <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType>, který implementuje specifikaci WS-ReliableMessaging, poskytuje podporu pro spolehlivé relace, ve kterých je možné nakonfigurovat zprávy tak, aby byly doručeny v daném pořadí a právě jednou, aby bylo zajištěno doručení zpráv i při přenosu zpráv napříč více uzlů během konverzace. Další informace najdete v tématu [spolehlivé relace](./feature-details/reliable-sessions.md).  
+- Element <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType>, který implementuje specifikaci WS-ReliableMessaging, poskytuje podporu pro spolehlivé relace, ve kterých je možné nakonfigurovat zprávy tak, aby byly doručeny v daném pořadí a právě jednou, aby bylo zajištěno, že zprávy jsou přijímány i v případě, že se zprávy během konverzace cestují mezi více uzly. Další informace najdete v tématu [spolehlivé relace](./feature-details/reliable-sessions.md).  
   
-- Vazba <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> poskytuje relace datagramů služby MSMQ. Další informace najdete v tématu [fronty ve službě WCF](./feature-details/queues-in-wcf.md).  
+- Vazba <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> poskytuje relace datagramů MSMQ. Další informace najdete v tématu [fronty ve službě WCF](./feature-details/queues-in-wcf.md).  
   
  Nastavením vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> neurčíte typ relace, kterou kontrakt vyžaduje, jenom to, že vyžaduje jeden.  
   
 ## <a name="creating-a-contract-that-requires-a-session"></a>Vytvoření kontraktu, který vyžaduje relaci  
- Vytvoření kontraktu, který vyžaduje relaci, má za následek, že skupina operací, které kontrakt služby deklaruje, musí být spuštěná v rámci stejné relace a zprávy musí být doručeny v daném pořadí. K vyhodnocení úrovně podpory relací, kterou kontrakt služby vyžaduje, nastavte vlastnost <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> na rozhraní nebo třídě kontraktu služby na hodnotu výčtu <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType>, abyste určili, jestli kontrakt:  
+ Vytvoření kontraktu, který vyžaduje relaci, má za následek, že skupina operací, které kontrakt služby deklaruje, musí být spuštěná v rámci stejné relace a zprávy musí být doručeny v daném pořadí. Pokud chcete vyhodnotit úroveň podpory relací, kterou kontrakt služby vyžaduje, nastavte vlastnost <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> v rozhraní nebo třídě kontraktu služby na hodnotu <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType> výčtu, abyste určili, jestli kontrakt:  
   
 - Vyžaduje relaci.  
   
@@ -83,7 +83,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
  Nastavení vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> ale neurčuje typ chování založeného na relacích, které kontrakt vyžaduje. Instruuje službu WCF, aby ověřila za běhu, že nakonfigurovaná vazba (která vytvoří komunikační kanál) pro službu, není nebo může vytvořit relaci při implementaci služby. Vazba pak může tento požadavek splnit s jakýmkoli typem chování založeného na relacích, který zvolí – zabezpečení, přenos, spolehlivý nebo několik kombinací. Přesné chování závisí na vybrané hodnotě <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType>. Pokud konfigurovaná vazba služby není v souladu s hodnotou <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>, je vyvolána výjimka. Vazby a kanály, které vytvoří, jsou označeny jako založené na relacích.  
   
- Následující kontrakt služby určuje, že všechny operace v `ICalculatorSession` musí být vyměňovány v rámci relace. Žádná operace nevrací hodnotu volajícímu s výjimkou metody `Equals`. Metoda `Equals` však nepřijímá žádné parametry, proto může vrátit nenulovou hodnotu v rámci relace, ve které již byla data předána do ostatních operací. Tato smlouva vyžaduje, aby relace fungovala správně. Bez relace přidružené ke konkrétnímu klientovi nemá instance služby žádný způsob, jak poznáte předchozí data, která klient odeslal.  
+ Následující kontrakt služby určuje, že všechny operace v `ICalculatorSession` musí být vyměňovány v rámci relace. Žádná operace nevrátí hodnotu volajícímu s výjimkou metody `Equals`. Metoda `Equals` však nepřebírá žádné parametry a proto může vrátit nenulovou hodnotu v rámci relace, ve které již byla data předána do ostatních operací. Tato smlouva vyžaduje, aby relace fungovala správně. Bez relace přidružené ke konkrétnímu klientovi nemá instance služby žádný způsob, jak poznáte předchozí data, která klient odeslal.  
   
  [!code-csharp[S_Service_Session#1](../../../samples/snippets/csharp/VS_Snippets_CFX/s_service_session/cs/service.cs#1)]
  [!code-vb[S_Service_Session#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_service_session/vb/service.vb#1)]  
@@ -106,9 +106,9 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
  *Koncové operace*, naopak, jsou ty, které se musí volat jako poslední zpráva v existující relaci. Ve výchozím případu služba WCF recykluje objekt služby a jeho kontext po ukončení relace, ke které byla služba přidružena. Můžete tedy vytvořit druh destruktoru deklarováním ukončovacích operací navržených k provedení funkce vhodné na konci instance služby.  
   
 > [!NOTE]
-> I když je výchozí chování rovno lokálním konstruktorům a destruktorům, je to pouze podobné. Jakoukoli operací služby WCF může být operace iniciování nebo ukončení, nebo obojí. Kromě toho ve výchozím případu se iniciované operace můžou v libovolném pořadí volat libovolným počtem časů; Po navázání relace a přidružení s instancí se nevytvoří žádné další relace, pokud explicitně neurčíte dobu života instance služby (objekt <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>). Nakonec je tento stav přidružen k relaci, nikoli k objektu služby.  
+> I když je výchozí chování rovno lokálním konstruktorům a destruktorům, je to pouze podobné. Jakoukoli operací služby WCF může být operace iniciování nebo ukončení, nebo obojí. Kromě toho ve výchozím případu se iniciované operace můžou v libovolném pořadí volat libovolným počtem časů; Po navázání relace a přidružení s instancí se nevytvoří žádné další relace, pokud explicitně neurčíte dobu života instance služby (při manipulaci s objektem <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>). Nakonec je tento stav přidružen k relaci, nikoli k objektu služby.  
   
- Například smlouva `ICalculatorSession` použitá v předchozím příkladu vyžaduje, aby objekt klienta WCF nejprve volal operaci `Clear` před jakoukoliv jinou operací a aby relace s tímto objektem klienta rozhraní WCF měla skončit při volání operace `Equals`. Následující příklad kódu ukazuje kontrakt, který tyto požadavky vynutil. `Clear` se musí volat jako první pro zahájení relace a relace skončí při volání `Equals`.  
+ Například kontrakt `ICalculatorSession` použitý v předchozím příkladu vyžaduje, aby objekt klienta WCF nejprve volal operaci `Clear` před jakoukoliv jinou operací a aby relace s tímto objektem klienta WCF při volání operace `Equals` ukončila činnost. Následující příklad kódu ukazuje kontrakt, který tyto požadavky vynutil. aby bylo možné inicializovat relaci, musí být nejprve volána `Clear` a relace končí při volání `Equals`.  
   
  [!code-csharp[SCA.IsInitiatingIsTerminating#1](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.isinitiatingisterminating/cs/service.cs#1)]
  [!code-vb[SCA.IsInitiatingIsTerminating#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/sca.isinitiatingisterminating/vb/service.vb#1)]  
@@ -117,7 +117,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
 - <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> na kanálu vráceném voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
   
-- <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> na objektu klienta WCF generovaném [nástrojem Svcutil. exe (Nástroj pro metadata ServiceModel)](servicemodel-metadata-utility-tool-svcutil-exe.md).  
+- <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> objektu klienta WCF generovaného [nástrojem Svcutil. exe (Nástroj pro metadata ServiceModel)](servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 - Operace iniciování na jednom typu objektu klienta WCF (ve výchozím nastavení se spouští všechny operace). Když je volána první operace, objekt klienta WCF automaticky otevře kanál a zahájí relaci.  
   
@@ -125,7 +125,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
 - <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> na kanálu vráceném voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
   
-- <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType> na objektu klienta WCF vygenerovaného Svcutil. exe.  
+- <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType> objektu klienta WCF generovaného nástrojem Svcutil. exe.  
   
 - Ukončující operace na jednom typu objektu klienta WCF (ve výchozím nastavení se neukončí žádné operace; kontrakt musí explicitně zadat ukončující operaci). Když je volána první operace, objekt klienta WCF automaticky otevře kanál a zahájí relaci.  
   
@@ -134,13 +134,13 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
  Další informace o klientech a relacích najdete v tématu [přístup ke službám pomocí klienta WCF](./feature-details/accessing-services-using-a-client.md).  
   
 ## <a name="sessions-interact-with-instancecontext-settings"></a>Relace pracují s nastavením InstanceContext  
- Existuje interakce mezi výčtem <xref:System.ServiceModel.SessionMode> v kontraktu a vlastností <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType>, která určuje přidružení mezi kanály a konkrétními objekty služby. Další informace najdete v tématu [relace, vytváření instancí a souběžnost](./feature-details/sessions-instancing-and-concurrency.md).  
+ Existuje interakce mezi výčtem <xref:System.ServiceModel.SessionMode> ve kontraktu a vlastností <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType>, která řídí přidružení mezi kanály a konkrétními objekty služby. Další informace najdete v tématu [relace, vytváření instancí a souběžnost](./feature-details/sessions-instancing-and-concurrency.md).  
   
 ### <a name="sharing-instancecontext-objects"></a>Sdílení objektů InstanceContext  
- Můžete také určit, ke kterému kanálu nebo volání založenému na relaci je přidruženo, které @no__t objekt-0 provedením tohoto přidružení sami. 
+ Můžete také určit, ke kterému kanálu nebo volání založenému na relaci je přidruženo, které <xref:System.ServiceModel.InstanceContext> objekt provádí přidružení sami. 
   
 ## <a name="sessions-and-streaming"></a>Relace a streamování  
- Pokud máte velké množství dat, která se mají přenést, je režim přenosu streamování ve službě WCF vhodná alternativa k výchozímu chování ukládání zpráv do vyrovnávací paměti a jejich zpracování v celé paměti. Může dojít k neočekávanému chování při volání streamování s vazbou založenou na relacích. Všechna volání streamování se provádějí pomocí jednoho kanálu (kanálu Datagram), který nepodporuje relace ani v případě, že použitá vazba je nakonfigurovaná tak, aby používala relace. Pokud více klientů provede volání do stejného objektu služby přes vazbu založenou na relaci a režim souběžnosti objektu služby je nastaven na hodnotu Single a kontextový režim instance je nastaven na hodnotu `PerSession`, všechna volání musí projít kanálem datagramu, takže pouze jeden volání je zpracováno v čase. Jeden nebo více klientů může vyprší časový limit. Tento problém můžete obejít tak, že nastavíte objekt služby `InstanceContextMode` tak, aby `PerCall` nebo souběžnost na násobek.  
+ Pokud máte velké množství dat, která se mají přenést, je režim přenosu streamování ve službě WCF vhodná alternativa k výchozímu chování ukládání zpráv do vyrovnávací paměti a jejich zpracování v celé paměti. Může dojít k neočekávanému chování při volání streamování s vazbou založenou na relacích. Všechna volání streamování se provádějí pomocí jednoho kanálu (kanálu Datagram), který nepodporuje relace ani v případě, že použitá vazba je nakonfigurovaná tak, aby používala relace. Pokud více klientů provede volání do stejného objektu služby přes vazbu založenou na relaci a režim souběžnosti objektu služby je nastaven na hodnotu Single a kontextový režim instance je nastaven na `PerSession`, všechna volání musí projít kanálem datagramu a takže pouze jedno volání je zpracováváno v jednom okamžiku. Jeden nebo více klientů může vyprší časový limit. Tento problém můžete obejít tak, že nastavíte `InstanceContextMode` objektu služby na hodnotu `PerCall` nebo souběžnost na násobek.  
   
 > [!NOTE]
 > MaxConcurrentSessions se v tomto případě nijak neprojeví, protože je k dispozici pouze jedna relace.  

@@ -21,7 +21,7 @@ ms.locfileid: "73119272"
 Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační oddíl poskytnutý .NET Framework.
 
 [**konfigurační >\<** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings >**
+&nbsp;&nbsp; **\<appSettings>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,15 +41,15 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |     | Popis |
 | --- | ----------- |
-| [**konfigurace\<** Objekt](../configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**konfigurace\<>** Objekt](../configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<přidat >** ](add-element-for-appsettings.md) | Přidá vlastní nastavení aplikace. |
+| [ **\<add>** ](add-element-for-appsettings.md) | Přidá vlastní nastavení aplikace. |
 | [ **\<vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna dříve definovaná nastavení aplikace. |
-| [ **\<odebrat >** ](remove-element-for-appsettings.md) | Odebere dříve definované nastavení aplikace. |
+| [ **\<remove>** ](remove-element-for-appsettings.md) | Odebere dříve definované nastavení aplikace. |
 
 ## <a name="remarks"></a>Poznámky
 

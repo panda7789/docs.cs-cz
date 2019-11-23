@@ -80,7 +80,7 @@ public class CardType : Enumeration
 }
 ```
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Výčet je Evil – aktualizace** \
   <https://www.planetgeek.ch/2009/07/01/enums-are-evil/>

@@ -18,28 +18,28 @@ Určuje, zda je typ výrazu zadaného typu nebo některého z jeho podtypů.
 expression IS [ NOT ] OF ( [ ONLY ] type )  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `expression`  
  Libovolný platný výraz dotazu pro určení typu.  
   
- MĚNÍ  
+ NOT  
  Negace datového modelu EDM. Logický výsledek pro je.  
   
  POUZE  
- Určuje, že vrací hodnotu `true` pouze v případě, že `expression` je typu `type` a nikoli žádné z jeho podtypu.  
+ Určuje, že funkce vrátí hodnotu `true` pouze v případě, že `expression` je typu `type`, nikoli některého z jeho podtypů.  
   
  `type`  
- Typ pro otestování @no__t 0 proti. Typ musí být kvalifikovaný v oboru názvů.  
+ Typ, pro který se má `expression` testovat Typ musí být kvalifikovaný v oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`, pokud `expression` je typu T a T je buď základní typ, nebo odvozený typ `type`; null, pokud `expression` má za běhu hodnotu null; v opačném případě `false`.  
+ `true`, je-li `expression` typu T a T buď základní typ, nebo odvozený typ `type`; null, pokud `expression` má hodnotu null za běhu; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Výrazy `expression IS NOT OF (type)` a `expression IS NOT OF (ONLY type)` jsou syntakticky ekvivalentní `NOT (expression IS OF (type))` a `NOT (expression IS OF (ONLY type))` v uvedeném pořadí.  
+ Výrazy `expression IS NOT OF (type)` a `expression IS NOT OF (ONLY type)` jsou syntakticky ekvivalentní `NOT (expression IS OF (type))` a `NOT (expression IS OF (ONLY type))`, v uvedeném pořadí.  
   
  Následující tabulka ukazuje chování operátoru `IS OF` v některých typických a rohových vzorcích. Všechny výjimky jsou vyvolány na straně klienta před vyvoláním zprostředkovatele:  
   
-|Vzor|Předvídatelně|  
+|Vzor|Chování|  
 |-------------|--------------|  
 |hodnota null je typu (EntityType).|Vyvolá|  
 |hodnota null je (ComplexType).|Vyvolá|  
@@ -52,9 +52,9 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
 |RowType je (RowType)|Vyvolá|  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá operátor IS OF k určení typu výrazu dotazu a poté pomocí operátoru "považovat" převést objekt typu kurzu na kolekci objektů typu OnsiteCourse. Dotaz je založen na [školním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor IS OF k určení typu výrazu dotazu a poté používá operátor "považovat" k převodu objektu typu kurz na kolekci objektů typu OnsiteCourse. Dotaz je založen na [školním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
- [! Code-SQL [DP EntityServices koncepty # TREAT_ISOF] ~/samples/snippets/tsql/VS_Snippets_Data/dp EntityServices koncepty/TSQL/EntitySql. SQL # TREAT_ISOF)]  
+ [! Code-SQL [DP EntityServices koncepty # TREAT_ISOF] ~/Samples/Snippets/TSQL/VS_Snippets_Data/DP EntityServices koncepty/TSQL/EntitySql. SQL # treat_isof)]  
   
 ## <a name="see-also"></a>Viz také:
 
