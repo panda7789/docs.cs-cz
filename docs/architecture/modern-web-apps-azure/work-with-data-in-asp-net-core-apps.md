@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: ff517aef93acf8c3a241c8fd8f240f7018467793
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7e84da784d34be1646df982fa2594764d43d99dd
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419969"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966874"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -282,7 +282,7 @@ První DbContext je \_catalogContext a druhá DbContext je v objektu \_integrati
 
 I když je EF Core skvělou volbou pro správu trvalosti a většina z nich zapouzdřuje podrobnosti databáze od vývojářů aplikací, není jedinou volbou. Další oblíbenou alternativou Open Source je [dapperem](https://github.com/StackExchange/Dapper), což se říká mikroorm. Mikroorm je odlehčený a méně plnohodnotný nástroj pro mapování objektů na datové struktury. V případě Dapperem se záměr jejich návrhu zaměřuje na výkon, místo úplného zapouzdření základních dotazů, které používá k načtení a aktualizaci dat. Vzhledem k tomu, že se nejedná o abstraktní SQL z vývojářů, Dapperem je "blíže k metalu" a vývojářům umožňuje psát přesné dotazy, které chtějí použít pro danou operaci přístupu k datům.
 
-EF Core má dvě důležité funkce, které nabízí oddělení IT od Dapperem, ale také přidávají k jeho režijnímu výkonu. První je převod z výrazů LINQ do jazyka SQL. Tyto překlady jsou ukládány do mezipaměti, ale i tak, aby při prvním spuštění bylo režie. Druhým je sledování změn u entit (aby bylo možné vygenerovat efektivní příkazy aktualizace). Toto chování je možné vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje dotazy SQL, které jsou obvykle velice efektivní a v jakémkoliv případě zcela přijatelné z hlediska výkonu, ale pokud potřebujete lepší kontrolu nad přesným dotazem, který se má provést, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF. Jádro. V takovém případě Dapperem stále vykonává EF Core, ale jenom mírně. Julie Lerman prezentuje údaje o výkonu v jeho 2016 článku na webu MSDN [dapperem, Entity Framework a hybridních aplikacích](https://msdn.microsoft.com/magazine/mt703432.aspx). Další data srovnávacích testů výkonu pro celou řadu metod přístupu k datům najdete na [webu dapperem](https://github.com/StackExchange/Dapper).
+EF Core má dvě důležité funkce, které nabízí oddělení IT od Dapperem, ale také přidávají k jeho režijnímu výkonu. První je převod z výrazů LINQ do jazyka SQL. Tyto překlady jsou ukládány do mezipaměti, ale i tak, aby při prvním spuštění bylo režie. Druhým je sledování změn u entit (aby bylo možné vygenerovat efektivní příkazy aktualizace). Toto chování je možné vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje dotazy SQL, které jsou obvykle velice efektivní a v jakémkoliv případě zcela přijatelné z hlediska výkonu, ale pokud potřebujete lepší kontrolu nad přesným dotazem, který se má provést, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF. Jádro. V takovém případě Dapperem stále vykonává EF Core, ale jenom mírně. Julie Lerman prezentuje údaje o výkonu v jeho 2016 článku na webu MSDN [dapperem, Entity Framework a hybridních aplikacích](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Další data srovnávacích testů výkonu pro celou řadu metod přístupu k datům najdete na [webu dapperem](https://github.com/StackExchange/Dapper).
 
 Chcete-li zjistit, jak se syntaxe Dapperem liší od EF Core, zvažte tyto dvě verze stejné metody pro načtení seznamu položek:
 

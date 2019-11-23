@@ -1,14 +1,13 @@
 ---
 title: Zabezpečení v gRPC aplikacích – gRPC pro vývojáře WCF
 description: Přehled ověřování volání a kanálu a autorizaci v gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: d0b7ff5bef755c5eeb9b3c419dcda1cb75ac4031
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b88ed0c01d1ca4432c7e4fe7115246f4227159df
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846233"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967249"
 ---
 # <a name="security-in-grpc-applications"></a>Zabezpečení v aplikacích gRPC
 
@@ -33,8 +32,8 @@ ASP.NET Core implementace gRPC podporuje ověřování a autorizaci pomocí vět
   - Azure Active Directory
   - IdentityServer
   - Nosný token JWT
-  - OAuth 2,0
-  - OpenID připojit
+  - OAuth 2.0
+  - OpenID Connect
   - WS-Federation
 - Ověřování kanálu
   - Certifikát klienta
