@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: čtení z textových souborů s více formáty v Visual Basic'
+title: 'How to: Read from text files with multiple formats'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, reading from a file
@@ -11,20 +11,20 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
-ms.openlocfilehash: dc726f7648c1c0a564594331023f03d20569d766
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
-ms.translationtype: HT
+ms.openlocfilehash: b36c781d5f8333749d346bb8f19540f0d1bd1692
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736826"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74334575"
 ---
-# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a><span data-ttu-id="95ae8-102">Postupy: čtení ze souborů Fext s více formáty v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="95ae8-102">How to: Read from fext files with multiple formats in Visual Basic</span></span>
+# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a><span data-ttu-id="a0f0c-102">How to: Read from fext files with multiple formats in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="a0f0c-102">How to: Read from fext files with multiple formats in Visual Basic</span></span>
 
-<span data-ttu-id="95ae8-103">Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou protokoly.</span><span class="sxs-lookup"><span data-stu-id="95ae8-103">The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object provides a way to easily and efficiently parse structured text files, such as logs.</span></span> <span data-ttu-id="95ae8-104">Můžete zpracovat soubor s více formáty pomocí metody `PeekChars` k určení formátu každého řádku při analýze souboru.</span><span class="sxs-lookup"><span data-stu-id="95ae8-104">You can process a file with multiple formats by using the `PeekChars` method to determine the format of each line as you parse through the file.</span></span>
+<span data-ttu-id="a0f0c-103">The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object provides a way to easily and efficiently parse structured text files, such as logs.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-103">The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object provides a way to easily and efficiently parse structured text files, such as logs.</span></span> <span data-ttu-id="a0f0c-104">You can process a file with multiple formats by using the `PeekChars` method to determine the format of each line as you parse through the file.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-104">You can process a file with multiple formats by using the `PeekChars` method to determine the format of each line as you parse through the file.</span></span>
   
-### <a name="to-parse-a-text-file-with-multiple-formats"></a><span data-ttu-id="95ae8-105">Postup analýzy textového souboru s více formáty</span><span class="sxs-lookup"><span data-stu-id="95ae8-105">To parse a text file with multiple formats</span></span>
+### <a name="to-parse-a-text-file-with-multiple-formats"></a><span data-ttu-id="a0f0c-105">To parse a text file with multiple formats</span><span class="sxs-lookup"><span data-stu-id="a0f0c-105">To parse a text file with multiple formats</span></span>
 
-1. <span data-ttu-id="95ae8-106">Do projektu přidejte textový soubor s názvem *Testfile. txt* .</span><span class="sxs-lookup"><span data-stu-id="95ae8-106">Add a text file named *testfile.txt* to your project.</span></span> <span data-ttu-id="95ae8-107">Do textového souboru přidejte následující obsah:</span><span class="sxs-lookup"><span data-stu-id="95ae8-107">Add the following content to the text file:</span></span>
+1. <span data-ttu-id="a0f0c-106">Add a text file named *testfile.txt* to your project.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-106">Add a text file named *testfile.txt* to your project.</span></span> <span data-ttu-id="a0f0c-107">Add the following content to the text file:</span><span class="sxs-lookup"><span data-stu-id="a0f0c-107">Add the following content to the text file:</span></span>
 
     ```text
     Err  1001 Cannot access resource.
@@ -35,39 +35,39 @@ ms.locfileid: "71736826"
     Acc  10/04/2009User2      Standard user.
     ```
 
-2. <span data-ttu-id="95ae8-108">Definujte očekávaný formát a formát použitý při hlášení chyby.</span><span class="sxs-lookup"><span data-stu-id="95ae8-108">Define the expected format and the format used when an error is reported.</span></span> <span data-ttu-id="95ae8-109">Poslední položka v každém poli je-1, proto se předpokládá, že poslední pole má proměnlivou šířku.</span><span class="sxs-lookup"><span data-stu-id="95ae8-109">The last entry in each array is -1, therefore the last field is assumed to be of variable width.</span></span> <span data-ttu-id="95ae8-110">K tomu dochází, když je poslední položka v poli menší nebo rovna 0.</span><span class="sxs-lookup"><span data-stu-id="95ae8-110">This occurs when the last entry in the array is less than or equal to 0.</span></span>
+2. <span data-ttu-id="a0f0c-108">Define the expected format and the format used when an error is reported.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-108">Define the expected format and the format used when an error is reported.</span></span> <span data-ttu-id="a0f0c-109">The last entry in each array is -1, therefore the last field is assumed to be of variable width.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-109">The last entry in each array is -1, therefore the last field is assumed to be of variable width.</span></span> <span data-ttu-id="a0f0c-110">This occurs when the last entry in the array is less than or equal to 0.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-110">This occurs when the last entry in the array is less than or equal to 0.</span></span>
 
      [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]
 
-3. <span data-ttu-id="95ae8-111">Vytvořte nový objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> a definujte šířku a formát.</span><span class="sxs-lookup"><span data-stu-id="95ae8-111">Create a new <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object, defining the width and format.</span></span>
+3. <span data-ttu-id="a0f0c-111">Create a new <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object, defining the width and format.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-111">Create a new <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object, defining the width and format.</span></span>
 
      [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]
 
-4. <span data-ttu-id="95ae8-112">Procházejte řádky smyčkou a před čtením proveďte testování formátu.</span><span class="sxs-lookup"><span data-stu-id="95ae8-112">Loop through the rows, testing for format before reading.</span></span>
+4. <span data-ttu-id="a0f0c-112">Loop through the rows, testing for format before reading.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-112">Loop through the rows, testing for format before reading.</span></span>
 
      [!code-vb[VbFileIORead#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#6)]
 
-5. <span data-ttu-id="95ae8-113">Zapište do konzoly chyby.</span><span class="sxs-lookup"><span data-stu-id="95ae8-113">Write errors to the console.</span></span>
+5. <span data-ttu-id="a0f0c-113">Write errors to the console.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-113">Write errors to the console.</span></span>
 
      [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]
 
-## <a name="example"></a><span data-ttu-id="95ae8-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="95ae8-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a0f0c-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="a0f0c-114">Example</span></span>
 
-<span data-ttu-id="95ae8-115">Následuje kompletní příklad, který čte ze souboru `testfile.txt`:</span><span class="sxs-lookup"><span data-stu-id="95ae8-115">The following is the complete example that reads from the file `testfile.txt`:</span></span>
+<span data-ttu-id="a0f0c-115">The following is the complete example that reads from the file `testfile.txt`:</span><span class="sxs-lookup"><span data-stu-id="a0f0c-115">The following is the complete example that reads from the file `testfile.txt`:</span></span>
 
  [!code-vb[VbFileIORead#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#8)]
 
-## <a name="robust-programming"></a><span data-ttu-id="95ae8-116">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="95ae8-116">Robust programming</span></span>
+## <a name="robust-programming"></a><span data-ttu-id="a0f0c-116">Robust programming</span><span class="sxs-lookup"><span data-stu-id="a0f0c-116">Robust programming</span></span>
 
-<span data-ttu-id="95ae8-117">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="95ae8-117">The following conditions may cause an exception:</span></span>  
+<span data-ttu-id="a0f0c-117">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="a0f0c-117">The following conditions may cause an exception:</span></span>  
   
-- <span data-ttu-id="95ae8-118">Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>).</span><span class="sxs-lookup"><span data-stu-id="95ae8-118">A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>).</span></span> <span data-ttu-id="95ae8-119">Zpráva výjimky Určuje řádek, který způsobil výjimku, zatímco vlastnost <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> je přiřazena k textu obsaženému na řádku.</span><span class="sxs-lookup"><span data-stu-id="95ae8-119">The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.</span></span>
-- <span data-ttu-id="95ae8-120">Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="95ae8-120">The specified file does not exist (<xref:System.IO.FileNotFoundException>).</span></span>
-- <span data-ttu-id="95ae8-121">Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru.</span><span class="sxs-lookup"><span data-stu-id="95ae8-121">A partial-trust situation in which the user does not have sufficient permissions to access the file.</span></span> <span data-ttu-id="95ae8-122">(<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="95ae8-122">(<xref:System.Security.SecurityException>).</span></span>
-- <span data-ttu-id="95ae8-123">Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="95ae8-123">The path is too long (<xref:System.IO.PathTooLongException>).</span></span>
-- <span data-ttu-id="95ae8-124">Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="95ae8-124">The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).</span></span>
+- <span data-ttu-id="a0f0c-118">A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>).</span><span class="sxs-lookup"><span data-stu-id="a0f0c-118">A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>).</span></span> <span data-ttu-id="a0f0c-119">The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-119">The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.</span></span>
+- <span data-ttu-id="a0f0c-120">The specified file does not exist (<xref:System.IO.FileNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="a0f0c-120">The specified file does not exist (<xref:System.IO.FileNotFoundException>).</span></span>
+- <span data-ttu-id="a0f0c-121">A partial-trust situation in which the user does not have sufficient permissions to access the file.</span><span class="sxs-lookup"><span data-stu-id="a0f0c-121">A partial-trust situation in which the user does not have sufficient permissions to access the file.</span></span> <span data-ttu-id="a0f0c-122">(<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="a0f0c-122">(<xref:System.Security.SecurityException>).</span></span>
+- <span data-ttu-id="a0f0c-123">The path is too long (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="a0f0c-123">The path is too long (<xref:System.IO.PathTooLongException>).</span></span>
+- <span data-ttu-id="a0f0c-124">The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="a0f0c-124">The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="95ae8-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95ae8-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0f0c-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a0f0c-125">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.PeekChars%2A>
@@ -75,6 +75,6 @@ ms.locfileid: "71736826"
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.EndOfData%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.TextFieldType%2A>
-- [<span data-ttu-id="95ae8-126">Postupy: Čtení z textových souborů s oddělovačem čárkou</span><span class="sxs-lookup"><span data-stu-id="95ae8-126">How to: Read From Comma-Delimited Text Files</span></span>](how-to-read-from-comma-delimited-text-files.md)
-- [<span data-ttu-id="95ae8-127">Postupy: Čtení z textových souborů s pevnou šířkou</span><span class="sxs-lookup"><span data-stu-id="95ae8-127">How to: Read From Fixed-width Text Files</span></span>](how-to-read-from-fixed-width-text-files.md)
-- [<span data-ttu-id="95ae8-128">Analýza textových souborů pomocí objektu TextFieldParser</span><span class="sxs-lookup"><span data-stu-id="95ae8-128">Parsing Text Files with the TextFieldParser Object</span></span>](parsing-text-files-with-the-textfieldparser-object.md)
+- [<span data-ttu-id="a0f0c-126">Postupy: Čtení z textových souborů s oddělovačem čárkou</span><span class="sxs-lookup"><span data-stu-id="a0f0c-126">How to: Read From Comma-Delimited Text Files</span></span>](how-to-read-from-comma-delimited-text-files.md)
+- [<span data-ttu-id="a0f0c-127">Postupy: Čtení z textových souborů s pevnou šířkou</span><span class="sxs-lookup"><span data-stu-id="a0f0c-127">How to: Read From Fixed-width Text Files</span></span>](how-to-read-from-fixed-width-text-files.md)
+- [<span data-ttu-id="a0f0c-128">Analýza textových souborů pomocí objektu TextFieldParser</span><span class="sxs-lookup"><span data-stu-id="a0f0c-128">Parsing Text Files with the TextFieldParser Object</span></span>](parsing-text-files-with-the-textfieldparser-object.md)
