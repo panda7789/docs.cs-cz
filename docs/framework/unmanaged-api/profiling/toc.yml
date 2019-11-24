@@ -468,13 +468,15 @@
             - name: EnumerateObjectReferences – metoda
               href: icorprofilerinfo10-enumerateobjectreferences-method.md
             - name: IsFrozenObject – metoda
-            - name: GetLOHObjectSizeThreshold – metoda
               href: icorprofilerinfo10-isfrozenobject-method.md
+            - name: GetLOHObjectSizeThreshold – metoda
+              href: icorprofilerinfo10-getlohobjectsizethreshold-method.md
             - name: RequestReJITWithInliners – metoda
-              href: icorprofilerinfo10-suspendruntime-method.md
+              href: icorprofilerinfo10-requestrejitwithinliners-method.md
             - name: ResumeRuntime – metoda
-            - name: SuspendRuntime – metoda
               href: icorprofilerinfo10-resumeruntime-method.md
+            - name: SuspendRuntime – metoda
+              href: icorprofilerinfo10-suspendruntime-method.md
         - name: ICorProfilerModuleEnum – rozhraní
           href: icorprofilermoduleenum-interface.md
           items:
