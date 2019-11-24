@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a3a36987-5666-4e2f-95b5-d0cb246502ec
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b5cec1022c9d4a2c96e4216aa09d4c0f7795b4f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 37400e3b69b3884e31479fd7cdfccb473408bfbf
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751825"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433389"
 ---
-# <a name="icorprofilerinfo2getclasslayout-method"></a><span data-ttu-id="17250-102">ICorProfilerInfo2::GetClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="17250-102">ICorProfilerInfo2::GetClassLayout Method</span></span>
-<span data-ttu-id="17250-103">Získá informace o rozvržení, v paměti, pole definovaná pomocí dané třídy.</span><span class="sxs-lookup"><span data-stu-id="17250-103">Gets information about the layout, in memory, of the fields defined by the specified class.</span></span> <span data-ttu-id="17250-104">To znamená tato metoda načte posuny polí třídy.</span><span class="sxs-lookup"><span data-stu-id="17250-104">That is, this method gets the offsets of the class's fields.</span></span>  
+# <a name="icorprofilerinfo2getclasslayout-method"></a><span data-ttu-id="0240b-102">ICorProfilerInfo2::GetClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="0240b-102">ICorProfilerInfo2::GetClassLayout Method</span></span>
+<span data-ttu-id="0240b-103">Gets information about the layout, in memory, of the fields defined by the specified class.</span><span class="sxs-lookup"><span data-stu-id="0240b-103">Gets information about the layout, in memory, of the fields defined by the specified class.</span></span> <span data-ttu-id="0240b-104">That is, this method gets the offsets of the class's fields.</span><span class="sxs-lookup"><span data-stu-id="0240b-104">That is, this method gets the offsets of the class's fields.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17250-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17250-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0240b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0240b-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetClassLayout(  
@@ -38,43 +36,43 @@ HRESULT GetClassLayout(
     [out] ULONG *pulClassSize);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="17250-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="17250-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0240b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="0240b-106">Parameters</span></span>  
  `classID`  
- <span data-ttu-id="17250-107">[in] ID třídy, pro kterou budou načteny rozložení.</span><span class="sxs-lookup"><span data-stu-id="17250-107">[in] The ID of the class for which the layout will be retrieved.</span></span>  
+ <span data-ttu-id="0240b-107">[in] The ID of the class for which the layout will be retrieved.</span><span class="sxs-lookup"><span data-stu-id="0240b-107">[in] The ID of the class for which the layout will be retrieved.</span></span>  
   
  `rFieldOffset`  
- <span data-ttu-id="17250-108">[out v] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) struktury, z nichž každý obsahuje tokeny a posuny polí třídy.</span><span class="sxs-lookup"><span data-stu-id="17250-108">[in, out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which contains the tokens and offsets of the class's fields.</span></span>  
+ <span data-ttu-id="0240b-108">[in, out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which contains the tokens and offsets of the class's fields.</span><span class="sxs-lookup"><span data-stu-id="0240b-108">[in, out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which contains the tokens and offsets of the class's fields.</span></span>  
   
  `cFieldOffset`  
- <span data-ttu-id="17250-109">[in] Velikost `rFieldOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="17250-109">[in] The size of the `rFieldOffset` array.</span></span>  
+ <span data-ttu-id="0240b-109">[in] The size of the `rFieldOffset` array.</span><span class="sxs-lookup"><span data-stu-id="0240b-109">[in] The size of the `rFieldOffset` array.</span></span>  
   
  `pcFieldOffset`  
- <span data-ttu-id="17250-110">[out] Ukazatel na celkový počet elementů k dispozici.</span><span class="sxs-lookup"><span data-stu-id="17250-110">[out] A pointer to the total number of available elements.</span></span> <span data-ttu-id="17250-111">Pokud `cFieldOffset` je 0, tato hodnota označuje počet prvků, které jsou potřeba.</span><span class="sxs-lookup"><span data-stu-id="17250-111">If `cFieldOffset` is 0, this value indicates the number of elements needed.</span></span>  
+ <span data-ttu-id="0240b-110">[out] A pointer to the total number of available elements.</span><span class="sxs-lookup"><span data-stu-id="0240b-110">[out] A pointer to the total number of available elements.</span></span> <span data-ttu-id="0240b-111">If `cFieldOffset` is 0, this value indicates the number of elements needed.</span><span class="sxs-lookup"><span data-stu-id="0240b-111">If `cFieldOffset` is 0, this value indicates the number of elements needed.</span></span>  
   
  `pulClassSize`  
- <span data-ttu-id="17250-112">[out] Ukazatel na umístění, které obsahuje velikost v bajtech třídy.</span><span class="sxs-lookup"><span data-stu-id="17250-112">[out] A pointer to a location that contains the size, in bytes, of the class.</span></span>  
+ <span data-ttu-id="0240b-112">[out] A pointer to a location that contains the size, in bytes, of the class.</span><span class="sxs-lookup"><span data-stu-id="0240b-112">[out] A pointer to a location that contains the size, in bytes, of the class.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="17250-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="17250-113">Remarks</span></span>  
- <span data-ttu-id="17250-114">`GetClassLayout` Metoda vrátí pouze pole definovaná pomocí vlastní třídy.</span><span class="sxs-lookup"><span data-stu-id="17250-114">The `GetClassLayout` method returns only the fields defined by the class itself.</span></span> <span data-ttu-id="17250-115">Pokud nadřazená třída třídy definoval také pole, musí volat profiler `GetClassLayout` na nadřazené třídu k získání těchto polí.</span><span class="sxs-lookup"><span data-stu-id="17250-115">If the class's parent class has defined fields as well, the profiler must call `GetClassLayout` on the parent class to obtain those fields.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0240b-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0240b-113">Remarks</span></span>  
+ <span data-ttu-id="0240b-114">The `GetClassLayout` method returns only the fields defined by the class itself.</span><span class="sxs-lookup"><span data-stu-id="0240b-114">The `GetClassLayout` method returns only the fields defined by the class itself.</span></span> <span data-ttu-id="0240b-115">If the class's parent class has defined fields as well, the profiler must call `GetClassLayout` on the parent class to obtain those fields.</span><span class="sxs-lookup"><span data-stu-id="0240b-115">If the class's parent class has defined fields as well, the profiler must call `GetClassLayout` on the parent class to obtain those fields.</span></span>  
   
- <span data-ttu-id="17250-116">Pokud používáte `GetClassLayout` s třídami řetězce, metoda selže s kódem chyby E_INVALIDARG.</span><span class="sxs-lookup"><span data-stu-id="17250-116">If you use `GetClassLayout` with string classes, the method will fail with error code E_INVALIDARG.</span></span> <span data-ttu-id="17250-117">Použití [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) a získat informace o rozložení řetězce.</span><span class="sxs-lookup"><span data-stu-id="17250-117">Use [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) to get information about the layout of a string.</span></span> <span data-ttu-id="17250-118">`GetClassLayout` také selže při volání s třídou pole.</span><span class="sxs-lookup"><span data-stu-id="17250-118">`GetClassLayout` will also fail when called with an array class.</span></span>  
+ <span data-ttu-id="0240b-116">If you use `GetClassLayout` with string classes, the method will fail with error code E_INVALIDARG.</span><span class="sxs-lookup"><span data-stu-id="0240b-116">If you use `GetClassLayout` with string classes, the method will fail with error code E_INVALIDARG.</span></span> <span data-ttu-id="0240b-117">Use [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) to get information about the layout of a string.</span><span class="sxs-lookup"><span data-stu-id="0240b-117">Use [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) to get information about the layout of a string.</span></span> <span data-ttu-id="0240b-118">`GetClassLayout` will also fail when called with an array class.</span><span class="sxs-lookup"><span data-stu-id="0240b-118">`GetClassLayout` will also fail when called with an array class.</span></span>  
   
- <span data-ttu-id="17250-119">Po `GetClassLayout` vrátí, musíte ověřit, že `rFieldOffset` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny dostupné `COR_FIELD_OFFSET` struktury.</span><span class="sxs-lookup"><span data-stu-id="17250-119">After `GetClassLayout` returns, you must verify that the `rFieldOffset` buffer was large enough to contain all the available `COR_FIELD_OFFSET` structures.</span></span> <span data-ttu-id="17250-120">K tomuto účelu porovnat hodnoty, které `pcFieldOffset` odkazuje na s velikostí `rFieldOffset` rozdělené podle velikosti `COR_FIELD_OFFSET` struktury.</span><span class="sxs-lookup"><span data-stu-id="17250-120">To do this, compare the value that `pcFieldOffset` points to with the size of `rFieldOffset` divided by the size of a `COR_FIELD_OFFSET` structure.</span></span> <span data-ttu-id="17250-121">Pokud `rFieldOffset` není velký, přidělte větší `rFieldOffset` vyrovnávací paměti, aktualizujte `cFieldOffset` nové, větší velikosti a volání `GetClassLayout` znovu.</span><span class="sxs-lookup"><span data-stu-id="17250-121">If `rFieldOffset` is not large enough, allocate a larger `rFieldOffset` buffer, update `cFieldOffset` with the new, larger size, and call `GetClassLayout` again.</span></span>  
+ <span data-ttu-id="0240b-119">After `GetClassLayout` returns, you must verify that the `rFieldOffset` buffer was large enough to contain all the available `COR_FIELD_OFFSET` structures.</span><span class="sxs-lookup"><span data-stu-id="0240b-119">After `GetClassLayout` returns, you must verify that the `rFieldOffset` buffer was large enough to contain all the available `COR_FIELD_OFFSET` structures.</span></span> <span data-ttu-id="0240b-120">To do this, compare the value that `pcFieldOffset` points to with the size of `rFieldOffset` divided by the size of a `COR_FIELD_OFFSET` structure.</span><span class="sxs-lookup"><span data-stu-id="0240b-120">To do this, compare the value that `pcFieldOffset` points to with the size of `rFieldOffset` divided by the size of a `COR_FIELD_OFFSET` structure.</span></span> <span data-ttu-id="0240b-121">If `rFieldOffset` is not large enough, allocate a larger `rFieldOffset` buffer, update `cFieldOffset` with the new, larger size, and call `GetClassLayout` again.</span><span class="sxs-lookup"><span data-stu-id="0240b-121">If `rFieldOffset` is not large enough, allocate a larger `rFieldOffset` buffer, update `cFieldOffset` with the new, larger size, and call `GetClassLayout` again.</span></span>  
   
- <span data-ttu-id="17250-122">Alternativně můžete nejprve volat `GetClassLayout` s nulovou délkou `rFieldOffset` vyrovnávací paměť pro získání správné vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="17250-122">Alternatively, you can first call `GetClassLayout` with a zero-length `rFieldOffset` buffer to obtain the correct buffer size.</span></span> <span data-ttu-id="17250-123">Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcFieldOffset` a volat `GetClassLayout` znovu.</span><span class="sxs-lookup"><span data-stu-id="17250-123">You can then set the buffer size to the value returned in `pcFieldOffset` and call `GetClassLayout` again.</span></span>  
+ <span data-ttu-id="0240b-122">Alternatively, you can first call `GetClassLayout` with a zero-length `rFieldOffset` buffer to obtain the correct buffer size.</span><span class="sxs-lookup"><span data-stu-id="0240b-122">Alternatively, you can first call `GetClassLayout` with a zero-length `rFieldOffset` buffer to obtain the correct buffer size.</span></span> <span data-ttu-id="0240b-123">You can then set the buffer size to the value returned in `pcFieldOffset` and call `GetClassLayout` again.</span><span class="sxs-lookup"><span data-stu-id="0240b-123">You can then set the buffer size to the value returned in `pcFieldOffset` and call `GetClassLayout` again.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17250-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17250-124">Requirements</span></span>  
- <span data-ttu-id="17250-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17250-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0240b-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0240b-124">Requirements</span></span>  
+ <span data-ttu-id="0240b-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0240b-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17250-126">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="17250-126">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="0240b-126">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="0240b-126">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="17250-127">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17250-127">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0240b-127">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0240b-127">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="17250-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17250-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="0240b-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0240b-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17250-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17250-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0240b-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0240b-129">See also</span></span>
 
-- [<span data-ttu-id="17250-130">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17250-130">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="17250-131">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17250-131">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
-- [<span data-ttu-id="17250-132">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="17250-132">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="17250-133">Profilace</span><span class="sxs-lookup"><span data-stu-id="17250-133">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [<span data-ttu-id="0240b-130">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0240b-130">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="0240b-131">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0240b-131">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [<span data-ttu-id="0240b-132">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="0240b-132">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="0240b-133">Profilace</span><span class="sxs-lookup"><span data-stu-id="0240b-133">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)

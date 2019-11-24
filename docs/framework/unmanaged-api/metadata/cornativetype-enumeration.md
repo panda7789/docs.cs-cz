@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: e47a72f1-9609-48ed-bb34-97170d7f6890
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 846c754aeb0a710fa70e906e666f694eaa77c576
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ef4788891e91608a394482319a89b8b0d258449f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781714"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436513"
 ---
-# <a name="cornativetype-enumeration"></a><span data-ttu-id="e866c-102">CorNativeType – výčet</span><span class="sxs-lookup"><span data-stu-id="e866c-102">CorNativeType Enumeration</span></span>
-<span data-ttu-id="e866c-103">Obsahuje hodnoty, které popisují nativní nespravovaných typů.</span><span class="sxs-lookup"><span data-stu-id="e866c-103">Contains values that describe native unmanaged types.</span></span>  
+# <a name="cornativetype-enumeration"></a><span data-ttu-id="52f65-102">CorNativeType – výčet</span><span class="sxs-lookup"><span data-stu-id="52f65-102">CorNativeType Enumeration</span></span>
+<span data-ttu-id="52f65-103">Contains values that describe native unmanaged types.</span><span class="sxs-lookup"><span data-stu-id="52f65-103">Contains values that describe native unmanaged types.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e866c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e866c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="52f65-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="52f65-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorNativeType {  
@@ -87,66 +85,66 @@ typedef enum CorNativeType {
 } CorNativeType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="e866c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="e866c-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="52f65-105">Členové</span><span class="sxs-lookup"><span data-stu-id="52f65-105">Members</span></span>  
   
-|<span data-ttu-id="e866c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="e866c-106">Member</span></span>|<span data-ttu-id="e866c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="e866c-107">Description</span></span>|  
+|<span data-ttu-id="52f65-106">Člen</span><span class="sxs-lookup"><span data-stu-id="52f65-106">Member</span></span>|<span data-ttu-id="52f65-107">Popis</span><span class="sxs-lookup"><span data-stu-id="52f65-107">Description</span></span>|  
 |------------|-----------------|  
-|`NATIVE_TYPE_END`|<span data-ttu-id="e866c-108">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-108">Obsolete.</span></span>|  
-|`NATIVE_TYPE_VOID`|<span data-ttu-id="e866c-109">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-109">Obsolete.</span></span>|  
-|`NATIVE_TYPE_BOOLEAN`|<span data-ttu-id="e866c-110">4 bajty. logická hodnota, kde hodnota TRUE je nenulová a FALSE je nula.</span><span class="sxs-lookup"><span data-stu-id="e866c-110">A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.</span></span>|  
-|`NATIVE_TYPE_I1`|<span data-ttu-id="e866c-111">Podepsané 8bitovou celočíselnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e866c-111">A signed 8-bit integer value.</span></span>|  
-|`NATIVE_TYPE_U1`|<span data-ttu-id="e866c-112">Hodnota typu celé číslo bez znaménka 8 bitů.</span><span class="sxs-lookup"><span data-stu-id="e866c-112">An unsigned 8-bit integer value.</span></span>|  
-|`NATIVE_TYPE_I2`|<span data-ttu-id="e866c-113">Hodnota, celé číslo se znaménkem 16 bitů.</span><span class="sxs-lookup"><span data-stu-id="e866c-113">A signed 16-bit integer value.</span></span>|  
-|`NATIVE_TYPE_U2`|<span data-ttu-id="e866c-114">Hodnota typu celé číslo bez znaménka 16 bitů.</span><span class="sxs-lookup"><span data-stu-id="e866c-114">An unsigned 16-bit integer value.</span></span>|  
-|`NATIVE_TYPE_I4`|<span data-ttu-id="e866c-115">Hodnota, celé číslo se znaménkem 32-bit.</span><span class="sxs-lookup"><span data-stu-id="e866c-115">A signed 32-bit integer value.</span></span>|  
-|`NATIVE_TYPE_U4`|<span data-ttu-id="e866c-116">Hodnota typu celé číslo bez znaménka 32-bit.</span><span class="sxs-lookup"><span data-stu-id="e866c-116">An unsigned 32-bit integer value.</span></span>|  
-|`NATIVE_TYPE_I8`|<span data-ttu-id="e866c-117">Hodnota, celé číslo se znaménkem 64-bit.</span><span class="sxs-lookup"><span data-stu-id="e866c-117">A signed 64-bit integer value.</span></span>|  
-|`NATIVE_TYPE_U8`|<span data-ttu-id="e866c-118">Hodnota typu celé číslo bez znaménka 64-bit.</span><span class="sxs-lookup"><span data-stu-id="e866c-118">An unsigned 64-bit integer value.</span></span>|  
-|`NATIVE_TYPE_R4`|<span data-ttu-id="e866c-119">4bajtový s plovoucí desetinnou čárkou číselnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e866c-119">A 4-byte floating-point numeric value.</span></span>|  
-|`NATIVE_TYPE_R8`|<span data-ttu-id="e866c-120">8bajtový s plovoucí desetinnou čárkou číselnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e866c-120">An 8-byte floating-point numeric value.</span></span>|  
-|`NATIVE_TYPE_SYSCHAR`|<span data-ttu-id="e866c-121">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-121">Obsolete.</span></span>|  
-|`NATIVE_TYPE_VARIANT`|<span data-ttu-id="e866c-122">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-122">Obsolete.</span></span>|  
-|`NATIVE_TYPE_CURRENCY`|<span data-ttu-id="e866c-123">Číselný typ modelu COM, která odpovídá spravovanou <xref:System.Decimal> typu.</span><span class="sxs-lookup"><span data-stu-id="e866c-123">A numeric COM type that corresponds to the managed <xref:System.Decimal> type.</span></span>|  
-|`NATIVE_TYPE_PTR`|<span data-ttu-id="e866c-124">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-124">Obsolete.</span></span>|  
-|`NATIVE_TYPE_DECIMAL`|<span data-ttu-id="e866c-125">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-125">Obsolete.</span></span>|  
-|`NATIVE_TYPE_DATE`|<span data-ttu-id="e866c-126">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-126">Obsolete.</span></span>|  
-|`NATIVE_TYPE_BSTR`|<span data-ttu-id="e866c-127">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-127">COM Interop.</span></span>|  
-|`NATIVE_TYPE_LPSTR`|<span data-ttu-id="e866c-128">Hodnota řetězce typem LPSTR.</span><span class="sxs-lookup"><span data-stu-id="e866c-128">An LPSTR string value.</span></span>|  
-|`NATIVE_TYPE_LPWSTR`|<span data-ttu-id="e866c-129">LPWSTR řetězcovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e866c-129">An LPWSTR string value.</span></span>|  
-|`NATIVE_TYPE_LPTSTR`|<span data-ttu-id="e866c-130">LPTSTR řetězcovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e866c-130">An LPTSTR string value.</span></span>|  
-|`NATIVE_TYPE_FIXEDSYSSTRING`|<span data-ttu-id="e866c-131">Hodnotu řetězce pevné, definované v systému.</span><span class="sxs-lookup"><span data-stu-id="e866c-131">A fixed, system-defined string value.</span></span>|  
-|`NATIVE_TYPE_OBJECTREF`|<span data-ttu-id="e866c-132">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-132">Obsolete.</span></span>|  
-|`NATIVE_TYPE_IUNKNOWN`|<span data-ttu-id="e866c-133">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-133">COM Interop.</span></span>|  
-|`NATIVE_TYPE_IDISPATCH`|<span data-ttu-id="e866c-134">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-134">COM Interop.</span></span>|  
-|`NATIVE_TYPE_STRUCT`|<span data-ttu-id="e866c-135">Hodnota nativní struktury.</span><span class="sxs-lookup"><span data-stu-id="e866c-135">A native structure value.</span></span>|  
-|`NATIVE_TYPE_INTF`|<span data-ttu-id="e866c-136">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-136">COM Interop.</span></span>|  
-|`NATIVE_TYPE_SAFEARRAY`|<span data-ttu-id="e866c-137">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-137">COM Interop.</span></span>|  
-|`NATIVE_TYPE_FIXEDARRAY`|<span data-ttu-id="e866c-138">Hodnota pole s pevnou délkou.</span><span class="sxs-lookup"><span data-stu-id="e866c-138">A fixed-length array value.</span></span>|  
-|`NATIVE_TYPE_INT`|<span data-ttu-id="e866c-139">Hodnota nativní 16bitové celé číslo se znaménkem.</span><span class="sxs-lookup"><span data-stu-id="e866c-139">A native 16-bit signed integer value.</span></span>|  
-|`NATIVE_TYPE_UINT`|<span data-ttu-id="e866c-140">Hodnota nativní 16bitové celé číslo bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="e866c-140">A native 16-bit unsigned integer value.</span></span>|  
-|`NATIVE_TYPE_NESTEDSTRUCT`|<span data-ttu-id="e866c-141">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="e866c-141">Obsolete.</span></span><br /><br /> <span data-ttu-id="e866c-142">Použijte NATIVE_TYPE_STRUCT.</span><span class="sxs-lookup"><span data-stu-id="e866c-142">Use NATIVE_TYPE_STRUCT.</span></span>|  
-|`NATIVE_TYPE_BYVALSTR`|<span data-ttu-id="e866c-143">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-143">COM Interop.</span></span>|  
-|`NATIVE_TYPE_ANSIBSTR`|<span data-ttu-id="e866c-144">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-144">COM Interop.</span></span>|  
-|`NATIVE_TYPE_TBSTR`|<span data-ttu-id="e866c-145">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-145">COM Interop.</span></span><br /><br /> <span data-ttu-id="e866c-146">Vyberte, BSTR nebo ANSIBSTR podle platformy.</span><span class="sxs-lookup"><span data-stu-id="e866c-146">Select BSTR or ANSIBSTR depending on the platform.</span></span>|  
-|`NATIVE_TYPE_VARIANTBOOL`|<span data-ttu-id="e866c-147">2bajtový logická hodnota, kde nastavena hodnota TRUE je -1 a hodnota FALSE je nula.</span><span class="sxs-lookup"><span data-stu-id="e866c-147">A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.</span></span>|  
-|`NATIVE_TYPE_FUNC`|<span data-ttu-id="e866c-148">Ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="e866c-148">A function pointer.</span></span>|  
-|`NATIVE_TYPE_ASANY`|<span data-ttu-id="e866c-149">Odkaz na jakékoli nativního typu.</span><span class="sxs-lookup"><span data-stu-id="e866c-149">A reference to any native type.</span></span>|  
-|`NATIVE_TYPE_ARRAY`|<span data-ttu-id="e866c-150">Odkaz na pole s členy neurčeného typu.</span><span class="sxs-lookup"><span data-stu-id="e866c-150">A reference to an array with members of an unspecified type.</span></span>|  
-|`NATIVE_TYPE_LPSTRUCT`|<span data-ttu-id="e866c-151">32bitové celé číslo ukazatel na strukturu.</span><span class="sxs-lookup"><span data-stu-id="e866c-151">A 32-bit integer pointer to a structure.</span></span>|  
-|`NATIVE_TYPE_CUSTOMMARSHALER`|<span data-ttu-id="e866c-152">Vlastní zařazování nativního typu.</span><span class="sxs-lookup"><span data-stu-id="e866c-152">A custom marshaler native type.</span></span><br /><br /> <span data-ttu-id="e866c-153">Toto musí následovat řetězec následující formát: "Název/0Custom nativní typ zařazovacího modulu typu název/0Optional souboru cookie/0" nebo "{nativní typ GUID} / 0Custom zařazování zadejte název/0Optional souboru cookie/0"</span><span class="sxs-lookup"><span data-stu-id="e866c-153">This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"</span></span>|  
-|`NATIVE_TYPE_ERROR`|<span data-ttu-id="e866c-154">Komunikace s objekty COM</span><span class="sxs-lookup"><span data-stu-id="e866c-154">COM Interop.</span></span><br /><br /> <span data-ttu-id="e866c-155">Tento typ s ELEMENT_TYPE_I4 mapuje VT_HRESULT.</span><span class="sxs-lookup"><span data-stu-id="e866c-155">With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.</span></span>|  
-|`NATIVE_TYPE_IINSPECTABLE`|<span data-ttu-id="e866c-156">Nativní `IInspectable` typu.</span><span class="sxs-lookup"><span data-stu-id="e866c-156">A native `IInspectable` type.</span></span>|  
-|`NATIVE_TYPE_HSTRING`|<span data-ttu-id="e866c-157">Nativní `HString`.</span><span class="sxs-lookup"><span data-stu-id="e866c-157">A native `HString`.</span></span>|  
-|`NATIVE_TYPE_MAX`|<span data-ttu-id="e866c-158">Neplatná hodnota.</span><span class="sxs-lookup"><span data-stu-id="e866c-158">An invalid value.</span></span>|  
+|`NATIVE_TYPE_END`|<span data-ttu-id="52f65-108">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-108">Obsolete.</span></span>|  
+|`NATIVE_TYPE_VOID`|<span data-ttu-id="52f65-109">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-109">Obsolete.</span></span>|  
+|`NATIVE_TYPE_BOOLEAN`|<span data-ttu-id="52f65-110">A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.</span><span class="sxs-lookup"><span data-stu-id="52f65-110">A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.</span></span>|  
+|`NATIVE_TYPE_I1`|<span data-ttu-id="52f65-111">A signed 8-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-111">A signed 8-bit integer value.</span></span>|  
+|`NATIVE_TYPE_U1`|<span data-ttu-id="52f65-112">An unsigned 8-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-112">An unsigned 8-bit integer value.</span></span>|  
+|`NATIVE_TYPE_I2`|<span data-ttu-id="52f65-113">A signed 16-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-113">A signed 16-bit integer value.</span></span>|  
+|`NATIVE_TYPE_U2`|<span data-ttu-id="52f65-114">An unsigned 16-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-114">An unsigned 16-bit integer value.</span></span>|  
+|`NATIVE_TYPE_I4`|<span data-ttu-id="52f65-115">A signed 32-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-115">A signed 32-bit integer value.</span></span>|  
+|`NATIVE_TYPE_U4`|<span data-ttu-id="52f65-116">An unsigned 32-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-116">An unsigned 32-bit integer value.</span></span>|  
+|`NATIVE_TYPE_I8`|<span data-ttu-id="52f65-117">A signed 64-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-117">A signed 64-bit integer value.</span></span>|  
+|`NATIVE_TYPE_U8`|<span data-ttu-id="52f65-118">An unsigned 64-bit integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-118">An unsigned 64-bit integer value.</span></span>|  
+|`NATIVE_TYPE_R4`|<span data-ttu-id="52f65-119">A 4-byte floating-point numeric value.</span><span class="sxs-lookup"><span data-stu-id="52f65-119">A 4-byte floating-point numeric value.</span></span>|  
+|`NATIVE_TYPE_R8`|<span data-ttu-id="52f65-120">An 8-byte floating-point numeric value.</span><span class="sxs-lookup"><span data-stu-id="52f65-120">An 8-byte floating-point numeric value.</span></span>|  
+|`NATIVE_TYPE_SYSCHAR`|<span data-ttu-id="52f65-121">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-121">Obsolete.</span></span>|  
+|`NATIVE_TYPE_VARIANT`|<span data-ttu-id="52f65-122">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-122">Obsolete.</span></span>|  
+|`NATIVE_TYPE_CURRENCY`|<span data-ttu-id="52f65-123">A numeric COM type that corresponds to the managed <xref:System.Decimal> type.</span><span class="sxs-lookup"><span data-stu-id="52f65-123">A numeric COM type that corresponds to the managed <xref:System.Decimal> type.</span></span>|  
+|`NATIVE_TYPE_PTR`|<span data-ttu-id="52f65-124">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-124">Obsolete.</span></span>|  
+|`NATIVE_TYPE_DECIMAL`|<span data-ttu-id="52f65-125">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-125">Obsolete.</span></span>|  
+|`NATIVE_TYPE_DATE`|<span data-ttu-id="52f65-126">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-126">Obsolete.</span></span>|  
+|`NATIVE_TYPE_BSTR`|<span data-ttu-id="52f65-127">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-127">COM Interop.</span></span>|  
+|`NATIVE_TYPE_LPSTR`|<span data-ttu-id="52f65-128">An LPSTR string value.</span><span class="sxs-lookup"><span data-stu-id="52f65-128">An LPSTR string value.</span></span>|  
+|`NATIVE_TYPE_LPWSTR`|<span data-ttu-id="52f65-129">An LPWSTR string value.</span><span class="sxs-lookup"><span data-stu-id="52f65-129">An LPWSTR string value.</span></span>|  
+|`NATIVE_TYPE_LPTSTR`|<span data-ttu-id="52f65-130">An LPTSTR string value.</span><span class="sxs-lookup"><span data-stu-id="52f65-130">An LPTSTR string value.</span></span>|  
+|`NATIVE_TYPE_FIXEDSYSSTRING`|<span data-ttu-id="52f65-131">A fixed, system-defined string value.</span><span class="sxs-lookup"><span data-stu-id="52f65-131">A fixed, system-defined string value.</span></span>|  
+|`NATIVE_TYPE_OBJECTREF`|<span data-ttu-id="52f65-132">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-132">Obsolete.</span></span>|  
+|`NATIVE_TYPE_IUNKNOWN`|<span data-ttu-id="52f65-133">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-133">COM Interop.</span></span>|  
+|`NATIVE_TYPE_IDISPATCH`|<span data-ttu-id="52f65-134">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-134">COM Interop.</span></span>|  
+|`NATIVE_TYPE_STRUCT`|<span data-ttu-id="52f65-135">A native structure value.</span><span class="sxs-lookup"><span data-stu-id="52f65-135">A native structure value.</span></span>|  
+|`NATIVE_TYPE_INTF`|<span data-ttu-id="52f65-136">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-136">COM Interop.</span></span>|  
+|`NATIVE_TYPE_SAFEARRAY`|<span data-ttu-id="52f65-137">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-137">COM Interop.</span></span>|  
+|`NATIVE_TYPE_FIXEDARRAY`|<span data-ttu-id="52f65-138">A fixed-length array value.</span><span class="sxs-lookup"><span data-stu-id="52f65-138">A fixed-length array value.</span></span>|  
+|`NATIVE_TYPE_INT`|<span data-ttu-id="52f65-139">A native 16-bit signed integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-139">A native 16-bit signed integer value.</span></span>|  
+|`NATIVE_TYPE_UINT`|<span data-ttu-id="52f65-140">A native 16-bit unsigned integer value.</span><span class="sxs-lookup"><span data-stu-id="52f65-140">A native 16-bit unsigned integer value.</span></span>|  
+|`NATIVE_TYPE_NESTEDSTRUCT`|<span data-ttu-id="52f65-141">Zastaralé.</span><span class="sxs-lookup"><span data-stu-id="52f65-141">Obsolete.</span></span><br /><br /> <span data-ttu-id="52f65-142">Use NATIVE_TYPE_STRUCT.</span><span class="sxs-lookup"><span data-stu-id="52f65-142">Use NATIVE_TYPE_STRUCT.</span></span>|  
+|`NATIVE_TYPE_BYVALSTR`|<span data-ttu-id="52f65-143">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-143">COM Interop.</span></span>|  
+|`NATIVE_TYPE_ANSIBSTR`|<span data-ttu-id="52f65-144">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-144">COM Interop.</span></span>|  
+|`NATIVE_TYPE_TBSTR`|<span data-ttu-id="52f65-145">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-145">COM Interop.</span></span><br /><br /> <span data-ttu-id="52f65-146">Select BSTR or ANSIBSTR depending on the platform.</span><span class="sxs-lookup"><span data-stu-id="52f65-146">Select BSTR or ANSIBSTR depending on the platform.</span></span>|  
+|`NATIVE_TYPE_VARIANTBOOL`|<span data-ttu-id="52f65-147">A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.</span><span class="sxs-lookup"><span data-stu-id="52f65-147">A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.</span></span>|  
+|`NATIVE_TYPE_FUNC`|<span data-ttu-id="52f65-148">A function pointer.</span><span class="sxs-lookup"><span data-stu-id="52f65-148">A function pointer.</span></span>|  
+|`NATIVE_TYPE_ASANY`|<span data-ttu-id="52f65-149">A reference to any native type.</span><span class="sxs-lookup"><span data-stu-id="52f65-149">A reference to any native type.</span></span>|  
+|`NATIVE_TYPE_ARRAY`|<span data-ttu-id="52f65-150">A reference to an array with members of an unspecified type.</span><span class="sxs-lookup"><span data-stu-id="52f65-150">A reference to an array with members of an unspecified type.</span></span>|  
+|`NATIVE_TYPE_LPSTRUCT`|<span data-ttu-id="52f65-151">A 32-bit integer pointer to a structure.</span><span class="sxs-lookup"><span data-stu-id="52f65-151">A 32-bit integer pointer to a structure.</span></span>|  
+|`NATIVE_TYPE_CUSTOMMARSHALER`|<span data-ttu-id="52f65-152">A custom marshaler native type.</span><span class="sxs-lookup"><span data-stu-id="52f65-152">A custom marshaler native type.</span></span><br /><br /> <span data-ttu-id="52f65-153">This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"</span><span class="sxs-lookup"><span data-stu-id="52f65-153">This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"</span></span>|  
+|`NATIVE_TYPE_ERROR`|<span data-ttu-id="52f65-154">COM Interop.</span><span class="sxs-lookup"><span data-stu-id="52f65-154">COM Interop.</span></span><br /><br /> <span data-ttu-id="52f65-155">With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.</span><span class="sxs-lookup"><span data-stu-id="52f65-155">With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.</span></span>|  
+|`NATIVE_TYPE_IINSPECTABLE`|<span data-ttu-id="52f65-156">A native `IInspectable` type.</span><span class="sxs-lookup"><span data-stu-id="52f65-156">A native `IInspectable` type.</span></span>|  
+|`NATIVE_TYPE_HSTRING`|<span data-ttu-id="52f65-157">A native `HString`.</span><span class="sxs-lookup"><span data-stu-id="52f65-157">A native `HString`.</span></span>|  
+|`NATIVE_TYPE_MAX`|<span data-ttu-id="52f65-158">An invalid value.</span><span class="sxs-lookup"><span data-stu-id="52f65-158">An invalid value.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="e866c-159">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e866c-159">Requirements</span></span>  
- <span data-ttu-id="e866c-160">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e866c-160">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="52f65-159">Požadavky</span><span class="sxs-lookup"><span data-stu-id="52f65-159">Requirements</span></span>  
+ <span data-ttu-id="52f65-160">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="52f65-160">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e866c-161">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="e866c-161">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="52f65-161">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="52f65-161">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="e866c-162">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e866c-162">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="52f65-162">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="52f65-162">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e866c-163">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e866c-163">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="52f65-163">Viz také:</span><span class="sxs-lookup"><span data-stu-id="52f65-163">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.UnmanagedType>
-- [<span data-ttu-id="e866c-164">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="e866c-164">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="52f65-164">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="52f65-164">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

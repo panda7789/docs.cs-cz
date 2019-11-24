@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 1b0306b7-622b-4b57-8edc-3c713bb147ae
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 08f997e133fa6cc8769efe18e7ca06c0153f15a4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 35966e25d02bd6f1a9bdd21ad4e9cc44b7bb480e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781801"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450255"
 ---
-# <a name="cormanifestresourceflags-enumeration"></a><span data-ttu-id="35439-102">CorManifestResourceFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="35439-102">CorManifestResourceFlags Enumeration</span></span>
-<span data-ttu-id="35439-103">Určuje, zda se prostředky kódovaný v manifestu sestavení.</span><span class="sxs-lookup"><span data-stu-id="35439-103">Indicates the visibility of resources encoded in an assembly manifest.</span></span>  
+# <a name="cormanifestresourceflags-enumeration"></a><span data-ttu-id="a8cee-102">CorManifestResourceFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="a8cee-102">CorManifestResourceFlags Enumeration</span></span>
+<span data-ttu-id="a8cee-103">Indicates the visibility of resources encoded in an assembly manifest.</span><span class="sxs-lookup"><span data-stu-id="a8cee-103">Indicates the visibility of resources encoded in an assembly manifest.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="35439-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="35439-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a8cee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a8cee-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorManifestResourceFlags {  
@@ -38,21 +36,21 @@ typedef enum CorManifestResourceFlags {
 } CorManifestResourceFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="35439-105">Členové</span><span class="sxs-lookup"><span data-stu-id="35439-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="a8cee-105">Členové</span><span class="sxs-lookup"><span data-stu-id="a8cee-105">Members</span></span>  
   
-|<span data-ttu-id="35439-106">Člen</span><span class="sxs-lookup"><span data-stu-id="35439-106">Member</span></span>|<span data-ttu-id="35439-107">Popis</span><span class="sxs-lookup"><span data-stu-id="35439-107">Description</span></span>|  
+|<span data-ttu-id="a8cee-106">Člen</span><span class="sxs-lookup"><span data-stu-id="a8cee-106">Member</span></span>|<span data-ttu-id="a8cee-107">Popis</span><span class="sxs-lookup"><span data-stu-id="a8cee-107">Description</span></span>|  
 |------------|-----------------|  
-|`mrVisibilityMask`|<span data-ttu-id="35439-108">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="35439-108">Reserved.</span></span>|  
-|`mrPublic`|<span data-ttu-id="35439-109">Prostředky jsou veřejné.</span><span class="sxs-lookup"><span data-stu-id="35439-109">The resources are public.</span></span>|  
-|`mrPrivate`|<span data-ttu-id="35439-110">Prostředky jsou privátní.</span><span class="sxs-lookup"><span data-stu-id="35439-110">The resources are private.</span></span>|  
+|`mrVisibilityMask`|<span data-ttu-id="a8cee-108">Reserved.</span><span class="sxs-lookup"><span data-stu-id="a8cee-108">Reserved.</span></span>|  
+|`mrPublic`|<span data-ttu-id="a8cee-109">The resources are public.</span><span class="sxs-lookup"><span data-stu-id="a8cee-109">The resources are public.</span></span>|  
+|`mrPrivate`|<span data-ttu-id="a8cee-110">The resources are private.</span><span class="sxs-lookup"><span data-stu-id="a8cee-110">The resources are private.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="35439-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="35439-111">Requirements</span></span>  
- <span data-ttu-id="35439-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="35439-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a8cee-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a8cee-111">Requirements</span></span>  
+ <span data-ttu-id="a8cee-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a8cee-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="35439-113">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="35439-113">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="a8cee-113">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="a8cee-113">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="35439-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="35439-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="a8cee-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a8cee-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="35439-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="35439-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a8cee-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a8cee-115">See also</span></span>
 
-- [<span data-ttu-id="35439-116">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="35439-116">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="a8cee-116">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="a8cee-116">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

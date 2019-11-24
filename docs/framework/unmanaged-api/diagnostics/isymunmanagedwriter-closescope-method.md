@@ -15,40 +15,38 @@ helpviewer_keywords:
 ms.assetid: 6dade525-7770-4cb4-bafd-4bb995ad0d87
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8a9edfa2f8888480c72f290ee237972f3a0ed912
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 264b4487483ed5439a9809feefcdc1b20af402dc
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778117"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428073"
 ---
-# <a name="isymunmanagedwriterclosescope-method"></a><span data-ttu-id="ddf03-102">ISymUnmanagedWriter::CloseScope – metoda</span><span class="sxs-lookup"><span data-stu-id="ddf03-102">ISymUnmanagedWriter::CloseScope Method</span></span>
-<span data-ttu-id="ddf03-103">Zavře aktuální lexikálním rozsahu.</span><span class="sxs-lookup"><span data-stu-id="ddf03-103">Closes the current lexical scope.</span></span>  
+# <a name="isymunmanagedwriterclosescope-method"></a><span data-ttu-id="70f6f-102">ISymUnmanagedWriter::CloseScope – metoda</span><span class="sxs-lookup"><span data-stu-id="70f6f-102">ISymUnmanagedWriter::CloseScope Method</span></span>
+<span data-ttu-id="70f6f-103">Closes the current lexical scope.</span><span class="sxs-lookup"><span data-stu-id="70f6f-103">Closes the current lexical scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ddf03-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ddf03-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70f6f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70f6f-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CloseScope(  
     [in] ULONG32 endOffset);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ddf03-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ddf03-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="70f6f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70f6f-105">Parameters</span></span>  
  `endOffset`  
- <span data-ttu-id="ddf03-106">[in] Posun od začátku metody bod na konci posledního instrukce v lexikálním rozsahu, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="ddf03-106">[in] The offset from the beginning of the method of the point at the end of the last instruction in the lexical scope, in bytes.</span></span>  
+ <span data-ttu-id="70f6f-106">[in] The offset from the beginning of the method of the point at the end of the last instruction in the lexical scope, in bytes.</span><span class="sxs-lookup"><span data-stu-id="70f6f-106">[in] The offset from the beginning of the method of the point at the end of the last instruction in the lexical scope, in bytes.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ddf03-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ddf03-107">Return Value</span></span>  
- <span data-ttu-id="ddf03-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="ddf03-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="70f6f-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="70f6f-107">Return Value</span></span>  
+ <span data-ttu-id="70f6f-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="70f6f-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ddf03-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ddf03-109">Remarks</span></span>  
- <span data-ttu-id="ddf03-110">Po zavření obor žádné další proměnné lze definovat v něm.</span><span class="sxs-lookup"><span data-stu-id="ddf03-110">Once a scope is closed, no more variables can be defined within it.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="70f6f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="70f6f-109">Remarks</span></span>  
+ <span data-ttu-id="70f6f-110">Once a scope is closed, no more variables can be defined within it.</span><span class="sxs-lookup"><span data-stu-id="70f6f-110">Once a scope is closed, no more variables can be defined within it.</span></span>  
   
- <span data-ttu-id="ddf03-111">[Isymunmanagedwriter::openscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí neprůhledný oboru identifikátor, který lze použít s [isymunmanagedwriter::setscoperange –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) a později určete obor je počáteční a koncové odsazení.</span><span class="sxs-lookup"><span data-stu-id="ddf03-111">[ISymUnmanagedWriter::OpenScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) returns an opaque scope identifier that can be used with [ISymUnmanagedWriter::SetScopeRange](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) to later define a scope's starting and ending offset.</span></span> <span data-ttu-id="ddf03-112">V takovém případě posunutí předán `ISymUnmanagedWriter::OpenScope` a `ISymUnmanagedWriter::CloseScope` jsou ignorovány.</span><span class="sxs-lookup"><span data-stu-id="ddf03-112">In this case, the offsets passed to `ISymUnmanagedWriter::OpenScope` and `ISymUnmanagedWriter::CloseScope` are ignored.</span></span> <span data-ttu-id="ddf03-113">Identifikátory oboru jsou platné pouze v aktuální metodě.</span><span class="sxs-lookup"><span data-stu-id="ddf03-113">Scope identifiers are valid only in the current method.</span></span>  
+ <span data-ttu-id="70f6f-111">[ISymUnmanagedWriter::OpenScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) returns an opaque scope identifier that can be used with [ISymUnmanagedWriter::SetScopeRange](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) to later define a scope's starting and ending offset.</span><span class="sxs-lookup"><span data-stu-id="70f6f-111">[ISymUnmanagedWriter::OpenScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) returns an opaque scope identifier that can be used with [ISymUnmanagedWriter::SetScopeRange](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) to later define a scope's starting and ending offset.</span></span> <span data-ttu-id="70f6f-112">In this case, the offsets passed to `ISymUnmanagedWriter::OpenScope` and `ISymUnmanagedWriter::CloseScope` are ignored.</span><span class="sxs-lookup"><span data-stu-id="70f6f-112">In this case, the offsets passed to `ISymUnmanagedWriter::OpenScope` and `ISymUnmanagedWriter::CloseScope` are ignored.</span></span> <span data-ttu-id="70f6f-113">Scope identifiers are valid only in the current method.</span><span class="sxs-lookup"><span data-stu-id="70f6f-113">Scope identifiers are valid only in the current method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ddf03-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ddf03-114">Requirements</span></span>  
- <span data-ttu-id="ddf03-115">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ddf03-115">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70f6f-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70f6f-114">Requirements</span></span>  
+ <span data-ttu-id="70f6f-115">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="70f6f-115">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ddf03-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ddf03-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70f6f-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70f6f-116">See also</span></span>
 
-- [<span data-ttu-id="ddf03-117">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ddf03-117">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="70f6f-117">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70f6f-117">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

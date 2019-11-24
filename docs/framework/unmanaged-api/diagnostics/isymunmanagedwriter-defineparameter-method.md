@@ -15,21 +15,19 @@ helpviewer_keywords:
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d5b82415635980f5bd4e13e87a0a03ec5b7032bb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc1b65de026a674a3dff183050a5a205fd7052c9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777323"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428005"
 ---
-# <a name="isymunmanagedwriterdefineparameter-method"></a><span data-ttu-id="5e5d6-102">ISymUnmanagedWriter::DefineParameter – metoda</span><span class="sxs-lookup"><span data-stu-id="5e5d6-102">ISymUnmanagedWriter::DefineParameter Method</span></span>
-<span data-ttu-id="5e5d6-103">Definuje jeden parametr v aktuální metodě.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-103">Defines a single parameter in the current method.</span></span> <span data-ttu-id="5e5d6-104">Typ parametru je převzata z pozice parametru (pořadí) v podpisu metody.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span></span>  
+# <a name="isymunmanagedwriterdefineparameter-method"></a><span data-ttu-id="99c06-102">ISymUnmanagedWriter::DefineParameter – metoda</span><span class="sxs-lookup"><span data-stu-id="99c06-102">ISymUnmanagedWriter::DefineParameter Method</span></span>
+<span data-ttu-id="99c06-103">Defines a single parameter in the current method.</span><span class="sxs-lookup"><span data-stu-id="99c06-103">Defines a single parameter in the current method.</span></span> <span data-ttu-id="99c06-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span><span class="sxs-lookup"><span data-stu-id="99c06-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span></span>  
   
- <span data-ttu-id="5e5d6-105">Pokud parametry jsou definované v metadatech pro dané metody, není nutné znovu definovat pomocí této metody.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span></span> <span data-ttu-id="5e5d6-106">Čtenáři symbolu, musíte zaškrtnout běžná metadata pro parametry před vrácením se změnami úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span></span>  
+ <span data-ttu-id="99c06-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span><span class="sxs-lookup"><span data-stu-id="99c06-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span></span> <span data-ttu-id="99c06-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span><span class="sxs-lookup"><span data-stu-id="99c06-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5e5d6-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e5d6-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="99c06-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="99c06-107">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineParameter(  
@@ -42,34 +40,34 @@ HRESULT DefineParameter(
     [in] ULONG32      addr3);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5e5d6-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e5d6-108">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="99c06-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="99c06-108">Parameters</span></span>  
  `name`  
- <span data-ttu-id="5e5d6-109">[in] Název parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-109">[in] The parameter name.</span></span>  
+ <span data-ttu-id="99c06-109">[in] The parameter name.</span><span class="sxs-lookup"><span data-stu-id="99c06-109">[in] The parameter name.</span></span>  
   
  `attributes`  
- <span data-ttu-id="5e5d6-110">[in] Atributy parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-110">[in] The parameter attributes.</span></span>  
+ <span data-ttu-id="99c06-110">[in] The parameter attributes.</span><span class="sxs-lookup"><span data-stu-id="99c06-110">[in] The parameter attributes.</span></span>  
   
  `sequence`  
- <span data-ttu-id="5e5d6-111">[in] Podpis parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-111">[in] The parameter signature.</span></span>  
+ <span data-ttu-id="99c06-111">[in] The parameter signature.</span><span class="sxs-lookup"><span data-stu-id="99c06-111">[in] The parameter signature.</span></span>  
   
  `addrKind`  
- <span data-ttu-id="5e5d6-112">[in] Typ adresy.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-112">[in] The address type.</span></span>  
+ <span data-ttu-id="99c06-112">[in] The address type.</span><span class="sxs-lookup"><span data-stu-id="99c06-112">[in] The address type.</span></span>  
   
  `addr1`  
- <span data-ttu-id="5e5d6-113">[in] První adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-113">[in] The first address for the parameter specification.</span></span>  
+ <span data-ttu-id="99c06-113">[in] The first address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="99c06-113">[in] The first address for the parameter specification.</span></span>  
   
  `addr2`  
- <span data-ttu-id="5e5d6-114">[in] Druhý adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-114">[in] The second address for the parameter specification.</span></span>  
+ <span data-ttu-id="99c06-114">[in] The second address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="99c06-114">[in] The second address for the parameter specification.</span></span>  
   
  `addr3`  
- <span data-ttu-id="5e5d6-115">[in] Je třetí adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-115">[in] The third address for the parameter specification.</span></span>  
+ <span data-ttu-id="99c06-115">[in] The third address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="99c06-115">[in] The third address for the parameter specification.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5e5d6-116">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5e5d6-116">Return Value</span></span>  
- <span data-ttu-id="5e5d6-117">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="5e5d6-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="99c06-116">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="99c06-116">Return Value</span></span>  
+ <span data-ttu-id="99c06-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="99c06-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5e5d6-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e5d6-118">Requirements</span></span>  
- <span data-ttu-id="5e5d6-119">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="5e5d6-119">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="99c06-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="99c06-118">Requirements</span></span>  
+ <span data-ttu-id="99c06-119">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="99c06-119">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e5d6-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e5d6-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="99c06-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="99c06-120">See also</span></span>
 
-- [<span data-ttu-id="5e5d6-121">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e5d6-121">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="99c06-121">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="99c06-121">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

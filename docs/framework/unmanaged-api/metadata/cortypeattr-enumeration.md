@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 9bede0ec-5fdf-42a2-b5b7-bee64056acb6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5786f24f6543d4d262dd8a6389132aba02f9aacc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1586184c91619994ba0dfc9d5dcc277c10f99cf
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779196"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436447"
 ---
-# <a name="cortypeattr-enumeration"></a><span data-ttu-id="4ce48-102">CorTypeAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="4ce48-102">CorTypeAttr Enumeration</span></span>
-<span data-ttu-id="4ce48-103">Obsahuje hodnoty, které označují typ metadat.</span><span class="sxs-lookup"><span data-stu-id="4ce48-103">Contains values that indicate type metadata.</span></span>  
+# <a name="cortypeattr-enumeration"></a><span data-ttu-id="da2f9-102">CorTypeAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="da2f9-102">CorTypeAttr Enumeration</span></span>
+<span data-ttu-id="da2f9-103">Contains values that indicate type metadata.</span><span class="sxs-lookup"><span data-stu-id="da2f9-103">Contains values that indicate type metadata.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4ce48-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ce48-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="da2f9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da2f9-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorTypeAttr {  
@@ -75,51 +73,51 @@ typedef enum CorTypeAttr {
 } CorTypeAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="4ce48-105">Členové</span><span class="sxs-lookup"><span data-stu-id="4ce48-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="da2f9-105">Členové</span><span class="sxs-lookup"><span data-stu-id="da2f9-105">Members</span></span>  
   
-|<span data-ttu-id="4ce48-106">Člen</span><span class="sxs-lookup"><span data-stu-id="4ce48-106">Member</span></span>|<span data-ttu-id="4ce48-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4ce48-107">Description</span></span>|  
+|<span data-ttu-id="da2f9-106">Člen</span><span class="sxs-lookup"><span data-stu-id="da2f9-106">Member</span></span>|<span data-ttu-id="da2f9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="da2f9-107">Description</span></span>|  
 |------------|-----------------|  
-|`tdVisibilityMask`|<span data-ttu-id="4ce48-108">Používá pro informace o viditelnosti typu.</span><span class="sxs-lookup"><span data-stu-id="4ce48-108">Used for type visibility information.</span></span>|  
-|`tdNotPublic`|<span data-ttu-id="4ce48-109">Určuje, že typ není v oboru veřejné.</span><span class="sxs-lookup"><span data-stu-id="4ce48-109">Specifies that the type is not in public scope.</span></span>|  
-|`tdPublic`|<span data-ttu-id="4ce48-110">Určuje, že typ je ve veřejné oboru.</span><span class="sxs-lookup"><span data-stu-id="4ce48-110">Specifies that the type is in public scope.</span></span>|  
-|`tdNestedPublic`|<span data-ttu-id="4ce48-111">Určuje, že typ je vnořená s veřejnou viditelností.</span><span class="sxs-lookup"><span data-stu-id="4ce48-111">Specifies that the type is nested with public visibility.</span></span>|  
-|`tdNestedPrivate`|<span data-ttu-id="4ce48-112">Určuje, že typ je vnořená s privátní viditelnost.</span><span class="sxs-lookup"><span data-stu-id="4ce48-112">Specifies that the type is nested with private visibility.</span></span>|  
-|`tdNestedFamily`|<span data-ttu-id="4ce48-113">Určuje, že typ je vnořená prostřednictvím řady viditelnosti.</span><span class="sxs-lookup"><span data-stu-id="4ce48-113">Specifies that the type is nested with family visibility.</span></span>|  
-|`tdNestedAssembly`|<span data-ttu-id="4ce48-114">Určuje, že je vnořený typ se viditelností sestavení.</span><span class="sxs-lookup"><span data-stu-id="4ce48-114">Specifies that the type is nested with assembly visibility.</span></span>|  
-|`tdNestedFamANDAssem`|<span data-ttu-id="4ce48-115">Určuje, že typ je vnořená family a assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="4ce48-115">Specifies that the type is nested with family and assembly visibility.</span></span>|  
-|`tdNestedFamORAssem`|<span data-ttu-id="4ce48-116">Určuje, že typ je vnořená family nebo assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="4ce48-116">Specifies that the type is nested with family or assembly visibility.</span></span>|  
-|`tdLayoutMask`|<span data-ttu-id="4ce48-117">Získá informace o rozložení typu.</span><span class="sxs-lookup"><span data-stu-id="4ce48-117">Gets layout information for the type.</span></span>|  
-|`tdAutoLayout`|<span data-ttu-id="4ce48-118">Určuje, zda jsou automaticky rozloženy pole tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="4ce48-118">Specifies that the fields of this type are laid out automatically.</span></span>|  
-|`tdSequentialLayout`|<span data-ttu-id="4ce48-119">Určuje, že pole tohoto typu jsou rozloženy postupně.</span><span class="sxs-lookup"><span data-stu-id="4ce48-119">Specifies that the fields of this type are laid out sequentially.</span></span>|  
-|`tdExplicitLayout`|<span data-ttu-id="4ce48-120">Určuje, že rozložení tohoto pole je explicitně zadán.</span><span class="sxs-lookup"><span data-stu-id="4ce48-120">Specifies that field layout is supplied explicitly.</span></span>|  
-|`tdClassSemanticsMask`|<span data-ttu-id="4ce48-121">Získá sémantické informace o typu.</span><span class="sxs-lookup"><span data-stu-id="4ce48-121">Gets semantic information about the type.</span></span>|  
-|`tdClass`|<span data-ttu-id="4ce48-122">Určuje, že typ je třída.</span><span class="sxs-lookup"><span data-stu-id="4ce48-122">Specifies that the type is a class.</span></span>|  
-|`tdInterface`|<span data-ttu-id="4ce48-123">Určuje, že je typem rozhraní.</span><span class="sxs-lookup"><span data-stu-id="4ce48-123">Specifies that the type is an interface.</span></span>|  
-|`tdAbstract`|<span data-ttu-id="4ce48-124">Určuje, že typ je abstraktní.</span><span class="sxs-lookup"><span data-stu-id="4ce48-124">Specifies that the type is abstract.</span></span>|  
-|`tdSealed`|<span data-ttu-id="4ce48-125">Určuje, že typ nelze rozšířit.</span><span class="sxs-lookup"><span data-stu-id="4ce48-125">Specifies that the type cannot be extended.</span></span>|  
-|`tdSpecialName`|<span data-ttu-id="4ce48-126">Určuje, že název třídy je speciální.</span><span class="sxs-lookup"><span data-stu-id="4ce48-126">Specifies that the class name is special.</span></span> <span data-ttu-id="4ce48-127">Její název popisuje jak.</span><span class="sxs-lookup"><span data-stu-id="4ce48-127">Its name describes how.</span></span>|  
-|`tdImport`|<span data-ttu-id="4ce48-128">Určuje, že typ je importovat.</span><span class="sxs-lookup"><span data-stu-id="4ce48-128">Specifies that the type is imported.</span></span>|  
-|`tdSerializable`|<span data-ttu-id="4ce48-129">Určuje, že typ je serializovatelný.</span><span class="sxs-lookup"><span data-stu-id="4ce48-129">Specifies that the type is serializable.</span></span>|  
-|`tdWindowsRuntime`|<span data-ttu-id="4ce48-130">Určuje, že tento typ je typ Windows Runtime.</span><span class="sxs-lookup"><span data-stu-id="4ce48-130">Specifies that this type is a Windows Runtime type.</span></span>|  
-|`tdStringFormatMask`|<span data-ttu-id="4ce48-131">Získá informace o tom, jak jsou řetězce kódování a ve formátu.</span><span class="sxs-lookup"><span data-stu-id="4ce48-131">Gets information about how strings are encoded and formatted.</span></span>|  
-|`tdAnsiClass`|<span data-ttu-id="4ce48-132">Určuje, že tento typ interpretuje LPTSTR jako ANSI.</span><span class="sxs-lookup"><span data-stu-id="4ce48-132">Specifies that this type interprets an LPTSTR as ANSI.</span></span>|  
-|`tdUnicodeClass`|<span data-ttu-id="4ce48-133">Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="4ce48-133">Specifies that this type interprets an LPTSTR as Unicode.</span></span>|  
-|`tdAutoClass`|<span data-ttu-id="4ce48-134">Určuje, že tento typ interpretuje LPTSTR automaticky.</span><span class="sxs-lookup"><span data-stu-id="4ce48-134">Specifies that this type interprets an LPTSTR automatically.</span></span>|  
-|`tdCustomFormatClass`|<span data-ttu-id="4ce48-135">Určuje, zda typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.</span><span class="sxs-lookup"><span data-stu-id="4ce48-135">Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.</span></span>|  
-|`tdCustomFormatMask`|<span data-ttu-id="4ce48-136">Použijte tuto masku nestandardní kódování informace pro nativní zprostředkovatele komunikace s objekty.</span><span class="sxs-lookup"><span data-stu-id="4ce48-136">Use this mask to get non-standard encoding information for native interop.</span></span> <span data-ttu-id="4ce48-137">Význam hodnot tyto dva bity není zadána.</span><span class="sxs-lookup"><span data-stu-id="4ce48-137">The meaning of the values of these two bits is unspecified.</span></span>|  
-|`tdBeforeFieldInit`|<span data-ttu-id="4ce48-138">Určuje, že typ musí být inicializován před prvním pokusu o přístup ke statickému poli.</span><span class="sxs-lookup"><span data-stu-id="4ce48-138">Specifies that the type must be initialized before the first attempt to access a static field.</span></span>|  
-|`tdForwarder`|<span data-ttu-id="4ce48-139">Určuje, že typ je exportovali a předávání typů.</span><span class="sxs-lookup"><span data-stu-id="4ce48-139">Specifies that the type is exported, and a type forwarder.</span></span>|  
-|`tdReservedMask`|<span data-ttu-id="4ce48-140">Tento příznak a příznaky níže se používá interně modulem common language runtime.</span><span class="sxs-lookup"><span data-stu-id="4ce48-140">This flag and the flags below are used internally by the common language runtime.</span></span>|  
-|`tdRTSpecialName`|<span data-ttu-id="4ce48-141">Určuje, že modul common language runtime by měla kontrolovat název kódování.</span><span class="sxs-lookup"><span data-stu-id="4ce48-141">Specifies that the common language runtime should check the name encoding.</span></span>|  
-|`tdHasSecurity`|<span data-ttu-id="4ce48-142">Určuje, že má typ zabezpečení, které s ním spojená.</span><span class="sxs-lookup"><span data-stu-id="4ce48-142">Specifies that the type has security associated with it.</span></span>|  
+|`tdVisibilityMask`|<span data-ttu-id="da2f9-108">Used for type visibility information.</span><span class="sxs-lookup"><span data-stu-id="da2f9-108">Used for type visibility information.</span></span>|  
+|`tdNotPublic`|<span data-ttu-id="da2f9-109">Specifies that the type is not in public scope.</span><span class="sxs-lookup"><span data-stu-id="da2f9-109">Specifies that the type is not in public scope.</span></span>|  
+|`tdPublic`|<span data-ttu-id="da2f9-110">Specifies that the type is in public scope.</span><span class="sxs-lookup"><span data-stu-id="da2f9-110">Specifies that the type is in public scope.</span></span>|  
+|`tdNestedPublic`|<span data-ttu-id="da2f9-111">Specifies that the type is nested with public visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-111">Specifies that the type is nested with public visibility.</span></span>|  
+|`tdNestedPrivate`|<span data-ttu-id="da2f9-112">Specifies that the type is nested with private visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-112">Specifies that the type is nested with private visibility.</span></span>|  
+|`tdNestedFamily`|<span data-ttu-id="da2f9-113">Specifies that the type is nested with family visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-113">Specifies that the type is nested with family visibility.</span></span>|  
+|`tdNestedAssembly`|<span data-ttu-id="da2f9-114">Specifies that the type is nested with assembly visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-114">Specifies that the type is nested with assembly visibility.</span></span>|  
+|`tdNestedFamANDAssem`|<span data-ttu-id="da2f9-115">Specifies that the type is nested with family and assembly visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-115">Specifies that the type is nested with family and assembly visibility.</span></span>|  
+|`tdNestedFamORAssem`|<span data-ttu-id="da2f9-116">Specifies that the type is nested with family or assembly visibility.</span><span class="sxs-lookup"><span data-stu-id="da2f9-116">Specifies that the type is nested with family or assembly visibility.</span></span>|  
+|`tdLayoutMask`|<span data-ttu-id="da2f9-117">Gets layout information for the type.</span><span class="sxs-lookup"><span data-stu-id="da2f9-117">Gets layout information for the type.</span></span>|  
+|`tdAutoLayout`|<span data-ttu-id="da2f9-118">Specifies that the fields of this type are laid out automatically.</span><span class="sxs-lookup"><span data-stu-id="da2f9-118">Specifies that the fields of this type are laid out automatically.</span></span>|  
+|`tdSequentialLayout`|<span data-ttu-id="da2f9-119">Specifies that the fields of this type are laid out sequentially.</span><span class="sxs-lookup"><span data-stu-id="da2f9-119">Specifies that the fields of this type are laid out sequentially.</span></span>|  
+|`tdExplicitLayout`|<span data-ttu-id="da2f9-120">Specifies that field layout is supplied explicitly.</span><span class="sxs-lookup"><span data-stu-id="da2f9-120">Specifies that field layout is supplied explicitly.</span></span>|  
+|`tdClassSemanticsMask`|<span data-ttu-id="da2f9-121">Gets semantic information about the type.</span><span class="sxs-lookup"><span data-stu-id="da2f9-121">Gets semantic information about the type.</span></span>|  
+|`tdClass`|<span data-ttu-id="da2f9-122">Specifies that the type is a class.</span><span class="sxs-lookup"><span data-stu-id="da2f9-122">Specifies that the type is a class.</span></span>|  
+|`tdInterface`|<span data-ttu-id="da2f9-123">Specifies that the type is an interface.</span><span class="sxs-lookup"><span data-stu-id="da2f9-123">Specifies that the type is an interface.</span></span>|  
+|`tdAbstract`|<span data-ttu-id="da2f9-124">Specifies that the type is abstract.</span><span class="sxs-lookup"><span data-stu-id="da2f9-124">Specifies that the type is abstract.</span></span>|  
+|`tdSealed`|<span data-ttu-id="da2f9-125">Specifies that the type cannot be extended.</span><span class="sxs-lookup"><span data-stu-id="da2f9-125">Specifies that the type cannot be extended.</span></span>|  
+|`tdSpecialName`|<span data-ttu-id="da2f9-126">Specifies that the class name is special.</span><span class="sxs-lookup"><span data-stu-id="da2f9-126">Specifies that the class name is special.</span></span> <span data-ttu-id="da2f9-127">Its name describes how.</span><span class="sxs-lookup"><span data-stu-id="da2f9-127">Its name describes how.</span></span>|  
+|`tdImport`|<span data-ttu-id="da2f9-128">Specifies that the type is imported.</span><span class="sxs-lookup"><span data-stu-id="da2f9-128">Specifies that the type is imported.</span></span>|  
+|`tdSerializable`|<span data-ttu-id="da2f9-129">Specifies that the type is serializable.</span><span class="sxs-lookup"><span data-stu-id="da2f9-129">Specifies that the type is serializable.</span></span>|  
+|`tdWindowsRuntime`|<span data-ttu-id="da2f9-130">Specifies that this type is a Windows Runtime type.</span><span class="sxs-lookup"><span data-stu-id="da2f9-130">Specifies that this type is a Windows Runtime type.</span></span>|  
+|`tdStringFormatMask`|<span data-ttu-id="da2f9-131">Gets information about how strings are encoded and formatted.</span><span class="sxs-lookup"><span data-stu-id="da2f9-131">Gets information about how strings are encoded and formatted.</span></span>|  
+|`tdAnsiClass`|<span data-ttu-id="da2f9-132">Specifies that this type interprets an LPTSTR as ANSI.</span><span class="sxs-lookup"><span data-stu-id="da2f9-132">Specifies that this type interprets an LPTSTR as ANSI.</span></span>|  
+|`tdUnicodeClass`|<span data-ttu-id="da2f9-133">Specifies that this type interprets an LPTSTR as Unicode.</span><span class="sxs-lookup"><span data-stu-id="da2f9-133">Specifies that this type interprets an LPTSTR as Unicode.</span></span>|  
+|`tdAutoClass`|<span data-ttu-id="da2f9-134">Specifies that this type interprets an LPTSTR automatically.</span><span class="sxs-lookup"><span data-stu-id="da2f9-134">Specifies that this type interprets an LPTSTR automatically.</span></span>|  
+|`tdCustomFormatClass`|<span data-ttu-id="da2f9-135">Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.</span><span class="sxs-lookup"><span data-stu-id="da2f9-135">Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.</span></span>|  
+|`tdCustomFormatMask`|<span data-ttu-id="da2f9-136">Use this mask to get non-standard encoding information for native interop.</span><span class="sxs-lookup"><span data-stu-id="da2f9-136">Use this mask to get non-standard encoding information for native interop.</span></span> <span data-ttu-id="da2f9-137">The meaning of the values of these two bits is unspecified.</span><span class="sxs-lookup"><span data-stu-id="da2f9-137">The meaning of the values of these two bits is unspecified.</span></span>|  
+|`tdBeforeFieldInit`|<span data-ttu-id="da2f9-138">Specifies that the type must be initialized before the first attempt to access a static field.</span><span class="sxs-lookup"><span data-stu-id="da2f9-138">Specifies that the type must be initialized before the first attempt to access a static field.</span></span>|  
+|`tdForwarder`|<span data-ttu-id="da2f9-139">Specifies that the type is exported, and a type forwarder.</span><span class="sxs-lookup"><span data-stu-id="da2f9-139">Specifies that the type is exported, and a type forwarder.</span></span>|  
+|`tdReservedMask`|<span data-ttu-id="da2f9-140">This flag and the flags below are used internally by the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="da2f9-140">This flag and the flags below are used internally by the common language runtime.</span></span>|  
+|`tdRTSpecialName`|<span data-ttu-id="da2f9-141">Specifies that the common language runtime should check the name encoding.</span><span class="sxs-lookup"><span data-stu-id="da2f9-141">Specifies that the common language runtime should check the name encoding.</span></span>|  
+|`tdHasSecurity`|<span data-ttu-id="da2f9-142">Specifies that the type has security associated with it.</span><span class="sxs-lookup"><span data-stu-id="da2f9-142">Specifies that the type has security associated with it.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="4ce48-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4ce48-143">Requirements</span></span>  
- <span data-ttu-id="4ce48-144">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4ce48-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="da2f9-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="da2f9-143">Requirements</span></span>  
+ <span data-ttu-id="da2f9-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="da2f9-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4ce48-145">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="4ce48-145">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="da2f9-145">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="da2f9-145">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="4ce48-146">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4ce48-146">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="da2f9-146">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="da2f9-146">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4ce48-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ce48-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da2f9-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da2f9-147">See also</span></span>
 
-- [<span data-ttu-id="4ce48-148">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="4ce48-148">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="da2f9-148">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="da2f9-148">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

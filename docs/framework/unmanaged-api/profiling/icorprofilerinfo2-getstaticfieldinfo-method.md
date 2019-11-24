@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: fc663e76-e23f-49a8-bdd5-52cdf1a3b2b3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 36cb8d5865cdc4c1c8e34671010ede25d531bacf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e74bab058adda759db1fb549022608eedfef5d80
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782259"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432985"
 ---
-# <a name="icorprofilerinfo2getstaticfieldinfo-method"></a><span data-ttu-id="f154f-102">ICorProfilerInfo2::GetStaticFieldInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="f154f-102">ICorProfilerInfo2::GetStaticFieldInfo Method</span></span>
-<span data-ttu-id="f154f-103">Získá hodnotu, která označuje druh statické, které platí pro zadané pole.</span><span class="sxs-lookup"><span data-stu-id="f154f-103">Gets a value that indicates the kind of static that applies to the specified field.</span></span>  
+# <a name="icorprofilerinfo2getstaticfieldinfo-method"></a><span data-ttu-id="07412-102">ICorProfilerInfo2::GetStaticFieldInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="07412-102">ICorProfilerInfo2::GetStaticFieldInfo Method</span></span>
+<span data-ttu-id="07412-103">Gets a value that indicates the kind of static that applies to the specified field.</span><span class="sxs-lookup"><span data-stu-id="07412-103">Gets a value that indicates the kind of static that applies to the specified field.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f154f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f154f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="07412-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="07412-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetStaticFieldInfo (  
@@ -36,31 +34,31 @@ HRESULT GetStaticFieldInfo (
     [out] COR_PRF_STATIC_TYPE  *pFieldInfo);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f154f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f154f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="07412-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="07412-105">Parameters</span></span>  
  `classId`  
- <span data-ttu-id="f154f-106">[in] ID třídy, ve kterém je definována statické pole.</span><span class="sxs-lookup"><span data-stu-id="f154f-106">[in] The ID of the class in which the static field is defined.</span></span>  
+ <span data-ttu-id="07412-106">[in] The ID of the class in which the static field is defined.</span><span class="sxs-lookup"><span data-stu-id="07412-106">[in] The ID of the class in which the static field is defined.</span></span>  
   
  `fieldToken`  
- <span data-ttu-id="f154f-107">[in] Token metadat pro statické pole.</span><span class="sxs-lookup"><span data-stu-id="f154f-107">[in] The metadata token for the static field.</span></span>  
+ <span data-ttu-id="07412-107">[in] The metadata token for the static field.</span><span class="sxs-lookup"><span data-stu-id="07412-107">[in] The metadata token for the static field.</span></span>  
   
  `pFieldInfo`  
- <span data-ttu-id="f154f-108">[out] Ukazatel na hodnotu [cor_prf_static_type –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) výčet určující, zda je zadané pole statické, a pokud ano, druh statické, která platí pro pole.</span><span class="sxs-lookup"><span data-stu-id="f154f-108">[out] A pointer to a value of the [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) enumeration that indicates whether the specified field is static, and if so, the kind of static that applies to the field.</span></span>  
+ <span data-ttu-id="07412-108">[out] A pointer to a value of the [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) enumeration that indicates whether the specified field is static, and if so, the kind of static that applies to the field.</span><span class="sxs-lookup"><span data-stu-id="07412-108">[out] A pointer to a value of the [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) enumeration that indicates whether the specified field is static, and if so, the kind of static that applies to the field.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f154f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f154f-109">Remarks</span></span>  
- <span data-ttu-id="f154f-110">Tyto informace slouží k určení funkce volání za účelem získání adresy statické pole.</span><span class="sxs-lookup"><span data-stu-id="f154f-110">This information can be used to determine which function to call to get the address of the static field.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="07412-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="07412-109">Remarks</span></span>  
+ <span data-ttu-id="07412-110">This information can be used to determine which function to call to get the address of the static field.</span><span class="sxs-lookup"><span data-stu-id="07412-110">This information can be used to determine which function to call to get the address of the static field.</span></span>  
   
- <span data-ttu-id="f154f-111">Profiler kódu, měli byste zkontrolovat metadata pro statické pole k zajištění, že ve skutečnosti má adresu.</span><span class="sxs-lookup"><span data-stu-id="f154f-111">The profiler code should still check the metadata for a static field to ensure that it actually has an address.</span></span> <span data-ttu-id="f154f-112">Statických literálů (to znamená, konstanty) existují pouze v metadatech a nemají adresu.</span><span class="sxs-lookup"><span data-stu-id="f154f-112">Static literals (that is, constants) exist only in the metadata and do not have an address.</span></span>  
+ <span data-ttu-id="07412-111">The profiler code should still check the metadata for a static field to ensure that it actually has an address.</span><span class="sxs-lookup"><span data-stu-id="07412-111">The profiler code should still check the metadata for a static field to ensure that it actually has an address.</span></span> <span data-ttu-id="07412-112">Static literals (that is, constants) exist only in the metadata and do not have an address.</span><span class="sxs-lookup"><span data-stu-id="07412-112">Static literals (that is, constants) exist only in the metadata and do not have an address.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f154f-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f154f-113">Requirements</span></span>  
- <span data-ttu-id="f154f-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f154f-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="07412-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="07412-113">Requirements</span></span>  
+ <span data-ttu-id="07412-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="07412-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f154f-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="f154f-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="07412-115">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="07412-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="f154f-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f154f-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="07412-116">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="07412-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f154f-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f154f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="07412-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="07412-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f154f-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f154f-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="07412-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="07412-118">See also</span></span>
 
-- [<span data-ttu-id="f154f-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f154f-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="f154f-120">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f154f-120">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [<span data-ttu-id="07412-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="07412-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="07412-120">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="07412-120">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

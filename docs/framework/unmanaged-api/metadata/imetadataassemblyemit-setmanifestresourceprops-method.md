@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: ef77efd1-849c-4e51-ba92-7ee3d2bf0339
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d080a3077df2cb4ad57ef463b5e02a3a28d8429d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f6b5e12df60663b75e10b04eaa008a75d720d753
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779412"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434439"
 ---
-# <a name="imetadataassemblyemitsetmanifestresourceprops-method"></a><span data-ttu-id="8bec5-102">IMetaDataAssemblyEmit::SetManifestResourceProps – metoda</span><span class="sxs-lookup"><span data-stu-id="8bec5-102">IMetaDataAssemblyEmit::SetManifestResourceProps Method</span></span>
-<span data-ttu-id="8bec5-103">Upraví zadaný `ManifestResource` struktury metadat.</span><span class="sxs-lookup"><span data-stu-id="8bec5-103">Modifies the specified `ManifestResource` metadata structure.</span></span>  
+# <a name="imetadataassemblyemitsetmanifestresourceprops-method"></a><span data-ttu-id="ccfe8-102">IMetaDataAssemblyEmit::SetManifestResourceProps – metoda</span><span class="sxs-lookup"><span data-stu-id="ccfe8-102">IMetaDataAssemblyEmit::SetManifestResourceProps Method</span></span>
+<span data-ttu-id="ccfe8-103">Modifies the specified `ManifestResource` metadata structure.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-103">Modifies the specified `ManifestResource` metadata structure.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8bec5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8bec5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ccfe8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ccfe8-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetManifestResourceProps (  
@@ -38,31 +36,31 @@ HRESULT SetManifestResourceProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8bec5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8bec5-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ccfe8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ccfe8-105">Parameters</span></span>  
  `mr`  
- <span data-ttu-id="8bec5-106">[in] Token, který určuje, `ManifestResource` struktury metadat má být upraven.</span><span class="sxs-lookup"><span data-stu-id="8bec5-106">[in] The token that specifies the `ManifestResource` metadata structure to be modified.</span></span>  
+ <span data-ttu-id="ccfe8-106">[in] The token that specifies the `ManifestResource` metadata structure to be modified.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-106">[in] The token that specifies the `ManifestResource` metadata structure to be modified.</span></span>  
   
  `tkImplementation`  
- <span data-ttu-id="8bec5-107">[in] Token typu `File` nebo `AssemblyRef`, který se mapuje na poskytovateli prostředků.</span><span class="sxs-lookup"><span data-stu-id="8bec5-107">[in] The token, of type `File` or `AssemblyRef`, that maps to the resource provider.</span></span>  
+ <span data-ttu-id="ccfe8-107">[in] The token, of type `File` or `AssemblyRef`, that maps to the resource provider.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-107">[in] The token, of type `File` or `AssemblyRef`, that maps to the resource provider.</span></span>  
   
  `dwOffset`  
- <span data-ttu-id="8bec5-108">[in] Posun k začátku prostředků v rámci souboru.</span><span class="sxs-lookup"><span data-stu-id="8bec5-108">[in] The offset to the beginning of the resource within the file.</span></span>  
+ <span data-ttu-id="ccfe8-108">[in] The offset to the beginning of the resource within the file.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-108">[in] The offset to the beginning of the resource within the file.</span></span>  
   
  `dwResourceFlags`  
- <span data-ttu-id="8bec5-109">[in] Bitová kombinace hodnot příznaků, které určují atributy prostředku.</span><span class="sxs-lookup"><span data-stu-id="8bec5-109">[in] A bitwise combination of flag values that specify the attributes of the resource.</span></span>  
+ <span data-ttu-id="ccfe8-109">[in] A bitwise combination of flag values that specify the attributes of the resource.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-109">[in] A bitwise combination of flag values that specify the attributes of the resource.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="8bec5-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8bec5-110">Remarks</span></span>  
- <span data-ttu-id="8bec5-111">Vytvoření `ManifestResource` struktury metadat, použijte [imetadataassemblyemit::definemanifestresource –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="8bec5-111">To create a `ManifestResource` metadata structure, use the [IMetaDataAssemblyEmit::DefineManifestResource](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ccfe8-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ccfe8-110">Remarks</span></span>  
+ <span data-ttu-id="ccfe8-111">To create a `ManifestResource` metadata structure, use the [IMetaDataAssemblyEmit::DefineManifestResource](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) method.</span><span class="sxs-lookup"><span data-stu-id="ccfe8-111">To create a `ManifestResource` metadata structure, use the [IMetaDataAssemblyEmit::DefineManifestResource](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8bec5-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8bec5-112">Requirements</span></span>  
- <span data-ttu-id="8bec5-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8bec5-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ccfe8-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ccfe8-112">Requirements</span></span>  
+ <span data-ttu-id="ccfe8-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ccfe8-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8bec5-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="8bec5-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="ccfe8-114">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ccfe8-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="8bec5-115">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8bec5-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="ccfe8-115">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ccfe8-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="8bec5-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8bec5-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="ccfe8-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ccfe8-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8bec5-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8bec5-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ccfe8-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ccfe8-117">See also</span></span>
 
-- [<span data-ttu-id="8bec5-118">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8bec5-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="ccfe8-118">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ccfe8-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
