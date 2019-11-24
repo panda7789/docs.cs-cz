@@ -7,12 +7,12 @@
       href: get-started/install-fsharp.md
     - name: 'Začínáme s jazykem F# v sadě Visual Studio'
       href: get-started/get-started-visual-studio.md
-    - name: 'Začínáme s jazykem F# v sadě Visual Studio pro Mac'
-      href: get-started/get-started-with-visual-studio-for-mac.md
-    - name: 'Začínáme s jazykem F# v nástroji Visual Studio Code a Ionide'
+    - name: 'Začínáme s jazykem F# v editoru Visual Studio Code'
       href: get-started/get-started-vscode.md
     - name: 'Začínáme s jazykem F# v .NET Core CLI'
       href: get-started/get-started-command-line.md
+    - name: 'Začínáme s jazykem F# v sadě Visual Studio pro Mac'
+      href: get-started/get-started-with-visual-studio-for-mac.md
 - name: 'Co je F#'
   href: what-is-fsharp.md
 - name: 'Prohlídka jazyka F#'
@@ -55,7 +55,7 @@
           href: language-reference/symbol-and-operator-reference/bitwise-operators.md
         - name: Operátory s povolenou hodnotou Null
           href: language-reference/symbol-and-operator-reference/nullable-operators.md
-    - name: Funkce
+    - name: Functions
       href: language-reference/functions/index.md
       items:
         - name: let – vazby
@@ -208,7 +208,7 @@
       href: language-reference/attributes.md
     - name: 'Správa prostředků: Klíčové slovo use'
       href: language-reference/resource-management-the-use-keyword.md
-    - name: Jmenné prostory
+    - name: Obory názvů
       href: language-reference/namespaces.md
     - name: Moduly
       href: language-reference/modules.md
