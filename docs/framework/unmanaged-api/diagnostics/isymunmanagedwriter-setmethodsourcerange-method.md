@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c698b86e-ace7-4b21-9549-f52d6a034959
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6e06695f5ba348315523c7414822ce87d594bdbc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 85e65f6a3ec13c2acc31b8f87dbe4b4476ffc2a5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776603"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427875"
 ---
 # <a name="isymunmanagedwritersetmethodsourcerange-method"></a>ISymUnmanagedWriter::SetMethodSourceRange – metoda
-Určuje hodnotu true začátku a konce metody v rámci zdrojového souboru. Tuto metodu použijte k určení rozsahu metody bez ohledu na jejich body sekvence, které existují v rámci metody.  
+Specifies the true start and end of a method within a source file. Use this method to specify the extent of a method independently of the sequence points that exist within the method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT SetMethodSourceRange(
   
 ## <a name="parameters"></a>Parametry  
  `startDoc`  
- [in] Ukazatel na dokument obsahující počáteční pozice.  
+ [in] A pointer to the document containing the starting position.  
   
  `startLine`  
- [in] Počáteční řádek číslo.  
+ [in] The starting line number.  
   
  `startColumn`  
- [in] Počáteční sloupec.  
+ [in] The starting column.  
   
  `endDoc`  
- [in] Ukazatel na dokument obsahující koncovou pozici.  
+ [in] A pointer to the document containing the ending position.  
   
  `endLine`  
- [in] Koncové číslo řádku.  
+ [in] The ending line number.  
   
  `endColumn`  
- [in] Koncové číslo sloupce.  
+ [in] The ending column number.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

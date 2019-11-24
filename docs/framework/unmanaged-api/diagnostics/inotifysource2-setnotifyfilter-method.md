@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6351fc92-b126-4af6-9bf3-0a8ce92845fc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: abe1c8881330ebba5f7b68452cf3db0666ac20c3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 554756bdda6e7167b013e7114e647f952cd1069d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736241"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435953"
 ---
 # <a name="inotifysource2setnotifyfilter-method"></a>INotifySource2::SetNotifyFilter – metoda
-Přiřadí filtr oznámení pro použití s tímto zdrojem.  
+Assigns a notification filter for use with this source.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +37,16 @@ HRESULT SetNotifyFilter
   
 ## <a name="parameters"></a>Parametry  
  `in_NotifyFilter`  
- [in] Bitová kombinace hodnot [notify_filter –](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) hodnot výčtu, které identifikují zpětná volání rozhraní API v ladicím programu.  
+ [in] A bitwise combination of the [NOTIFY_FILTER](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) enumeration values that identify callbacks for the debugger API.  
   
  `in_pUserThreadFilter`  
- [in] Ukazatel [user_thread –](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) strukturu, která identifikuje vláken pro ladicí program rozhraní API.  
+ [in] A pointer to a [USER_THREAD](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) structure that identifies threads for the debugger API.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda uspěje.  
+ S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** ProtocolNotify2.idl  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Viz také:
 

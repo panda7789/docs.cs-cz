@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6916e6344fe5c112b216ca753c372fa73a4d5af5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc30f9fb120db92ccfc1e7dd0560b3fe18c54b29
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777711"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432726"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption – metoda
-Nastaví zadanou možnost dané hodnotě pro aktuální obor metadat. Možnost řídí, jak se zpracovává volání na aktuální metadat.  
+Sets the specified option to a given value for the current metadata scope. The option controls how calls to the current metadata scope are handled.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,38 +36,38 @@ HRESULT SetOption (
   
 ## <a name="parameters"></a>Parametry  
  `optionId`  
- [in] Ukazatel na identifikátor GUID, který určuje možnost, která se má nastavit.  
+ [in] A pointer to a GUID that specifies the option to be set.  
   
  `pValue`  
- [in] Hodnota, která chcete použít k nastavení možnosti. Hodnotu typu variant Zadaná možnost typu musí být typu tuto hodnotu.  
+ [in] The value to use to set the option. The type of this value must be a variant of the specified option's type.  
   
 ## <a name="remarks"></a>Poznámky  
- V následující tabulce jsou uvedeny dostupné identifikátory GUID, který `optionId` parametr může odkazovat na a odpovídající platné hodnoty pro `pValue` parametru.  
+ The following table lists the available GUIDs that the `optionId` parameter can point to and the corresponding valid values for the `pValue` parameter.  
   
-|GUID|Popis|`pValue` Parametr|  
+|GUID|Popis|`pValue` Parameter|  
 |----------|-----------------|------------------------|  
-|MetaDataCheckDuplicatesFor|Ovládací prvky, které položky jsou zkontrolovat duplicitu. Pokaždé, když voláte [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) metodě, která se vytvoří nová položka, můžete požádat o metodu ke kontrole, jestli položka již existuje v aktuálním oboru. Například můžete zkontrolovat existenci `mdMethodDef` položky; v takovém případě při volání [imetadataemit::definemethod –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md), zjistí, že metoda již neexistuje v aktuálním oboru. Tato kontrola používá klíč, který jednoznačně identifikuje dané metody: nadřazený typ, název a podpis.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [corcheckduplicatesfor –](../../../../docs/framework/unmanaged-api/metadata/corcheckduplicatesfor-enumeration.md) výčtu.|  
-|MetaDataRefToDefCheck|Ovládací prvky, které odkazuje položky se převedou na definice. Ve výchozím nastavení bude modul metadat optimalizovat kód převedením odkazovaná položka k jeho definici, pokud odkazovaná položka je ve skutečnosti definovány v aktuálním oboru.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [correftodefcheck –](../../../../docs/framework/unmanaged-api/metadata/correftodefcheck-enumeration.md) výčtu.|  
-|MetaDataNotificationForTokenMovement|Ovládací prvky, které token změní, ke kterým došlo během metadat sloučení vygenerujte zpětná volání. Použití [imetadataemit::sethandler –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) metodu pro vytvoření vaší [imaptoken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) rozhraní.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [cornotificationfortokenmovement –](../../../../docs/framework/unmanaged-api/metadata/cornotificationfortokenmovement-enumeration.md) výčtu.|  
-|MetaDataSetENC|Řídí chování edit-and-continue (ENC). Najednou lze nastavit pouze jeden režim chování.|Musí být typu variant typu UI4 a musí obsahovat hodnotu [corsetenc –](../../../../docs/framework/unmanaged-api/metadata/corsetenc-enumeration.md) výčtu. Hodnota není bitová maska.|  
-|MetaDataErrorIfEmitOutOfOrder|Ovládací prvky, které chyby generované out pořadí generovat zpětná volání. Generování metadat mimo pořadí není závažná; Pokud generování metadat v pořadí, které podporuje modul metadat metadata je však kompaktnějším a proto lze efektivněji prohledávat. Použití `IMetaDataEmit::SetHandler` metodu pro vytvoření vaší [imetadataerror –](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md) rozhraní.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [corerrorifemitoutoforder –](../../../../docs/framework/unmanaged-api/metadata/corerrorifemitoutoforder-enumeration.md) výčtu.|  
-|MetaDataImportOption|Určuje, jaké typy položek, které byly odstraněny během KODÉRU jsou načítána pro enumerátor.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [corimportoptions – výčet](../../../../docs/framework/unmanaged-api/metadata/corimportoptions-enumeration.md) výčtu.|  
-|MetaDataThreadSafetyOptions|Určuje, zda modul metadat získá čtení/zápis zámky, tím se zajišťuje bezpečný přístup z více vláken. Ve výchozím nastavení modul předpokládá, že přístup je jednovláknový volajícím, takže jsou získány žádné zámky. Klienti jsou odpovědná za správu synchronizace správné vlákno při použití rozhraní API metadat.|Musí být typu variant typu UI4 a musí obsahovat hodnotu [corthreadsafetyoptions –](../../../../docs/framework/unmanaged-api/metadata/corthreadsafetyoptions-enumeration.md) výčtu. Hodnota není bitová maska.|  
-|MetaDataGenerateTCEAdapters|Určuje, zda by měl generovat type library importer adaptéry vysoce provázané událostí (TCE) pro kontejnery bodu připojení COM.|Musí být variantou typu BOOL. Pokud `pValue` je nastavena na `true`, type library importer generuje TCE adaptéry.|  
-|MetaDataTypeLibImportNamespace|Určuje jiné než výchozí obor názvů pro knihovny typů, která se importují.|Musí být buď hodnotu null, nebo hodnotu typu variant typu BSTR. Pokud `pValue` je hodnota null, aktuální obor názvů je nastavena na hodnotu null; jinak vrátí hodnotu, aktuální obor názvů je nastavena na řetězec, který se nachází v typu typ variant BSTR.|  
-|MetaDataLinkerOptions|Určuje, zda propojovací program by měl generovat sestavení nebo souboru modulu rozhraní .NET Framework.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [corlinkeroptions –](../../../../docs/framework/unmanaged-api/metadata/corlinkeroptions-enumeration.md) výčtu.|  
-|MetaDataRuntimeVersion|Určuje verzi modulu common language runtime, proti kterému byl vytvořen tento obrázek. Verze je uloženo jako řetězec, například "v1.0.3705".|Musí být hodnota null, VT_EMPTY hodnotu nebo hodnotu typu variant typu BSTR. Pokud `pValue` je null, verze modulu runtime je nastavena na hodnotu null. Pokud `pValue` je VT_EMPTY, verze je nastavená na výchozí hodnotu, která pochází z verzi knihovny Mscorwks.dll, ve kterém je spuštěn kód metadat. Verze modulu runtime je jinak nastavte na řetězec, který se nachází v typu typ variant BSTR.|  
-|MetaDataMergerOptions|Určuje možnosti pro slučování metadat.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot `MergeFlags` výčtu, která je popsána v souboru Comimage_flags.|  
-|MetaDataPreserveLocalRefs|Zakáže optimalizace místní odkazů na definice.|Musí obsahovat kombinaci hodnot [corlocalrefpreservation –](../../../../docs/framework/unmanaged-api/metadata/corlocalrefpreservation-enumeration.md) výčtu.|  
+|MetaDataCheckDuplicatesFor|Controls which items are checked for duplicates. Each time you call an [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) method that creates a new item, you can ask the method to check whether the item already exists in the current scope. For example, you can check for the existence of `mdMethodDef` items; in this case, when you call [IMetaDataEmit::DefineMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md), it will check that the method does not already exist in the current scope. This check uses the key that uniquely identifies a given method: parent type, name, and signature.|Must be a variant of type UI4, and must contain a combination of the values of the [CorCheckDuplicatesFor](../../../../docs/framework/unmanaged-api/metadata/corcheckduplicatesfor-enumeration.md) enumeration.|  
+|MetaDataRefToDefCheck|Controls which referenced items are converted to definitions. By default, the metadata engine will optimize the code by converting a referenced item to its definition if the referenced item is actually defined in the current scope.|Must be a variant of type UI4, and must contain a combination of the values of the [CorRefToDefCheck](../../../../docs/framework/unmanaged-api/metadata/correftodefcheck-enumeration.md) enumeration.|  
+|MetaDataNotificationForTokenMovement|Controls which token remaps occurring during a metadata merge generate callbacks. Use the [IMetaDataEmit::SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) method to establish your [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) interface.|Must be a variant of type UI4, and must contain a combination of the values of the [CorNotificationForTokenMovement](../../../../docs/framework/unmanaged-api/metadata/cornotificationfortokenmovement-enumeration.md) enumeration.|  
+|MetaDataSetENC|Controls the behavior of edit-and-continue (ENC). Only one mode of behavior can be set at a time.|Must be a variant of type UI4, and must contain a value of the [CorSetENC](../../../../docs/framework/unmanaged-api/metadata/corsetenc-enumeration.md) enumeration. The value is not a bitmask.|  
+|MetaDataErrorIfEmitOutOfOrder|Controls which emitted-out-of-order errors generate callbacks. Emitting metadata out of order is not fatal; however, if you emit metadata in an order that is favored by the metadata engine, the metadata is more compact and therefore can be more efficiently searched. Use the `IMetaDataEmit::SetHandler` method to establish your [IMetaDataError](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md) interface.|Must be a variant of type UI4, and must contain a combination of the values of the [CorErrorIfEmitOutOfOrder](../../../../docs/framework/unmanaged-api/metadata/corerrorifemitoutoforder-enumeration.md) enumeration.|  
+|MetaDataImportOption|Controls which kinds of items that were deleted during an ENC are retrieved by an enumerator.|Must be a variant of type UI4, and must contain a combination of the values of the [CorImportOptions Enumeration](../../../../docs/framework/unmanaged-api/metadata/corimportoptions-enumeration.md) enumeration.|  
+|MetaDataThreadSafetyOptions|Controls whether the metadata engine obtains reader/writer locks, thereby ensuring thread safety. By default, the engine assumes that access is single-threaded by the caller, so no locks are obtained. Clients are responsible for maintaining proper thread synchronization when using the metadata API.|Must be a variant of type UI4, and must contain a value of the [CorThreadSafetyOptions](../../../../docs/framework/unmanaged-api/metadata/corthreadsafetyoptions-enumeration.md) enumeration. The value is not a bitmask.|  
+|MetaDataGenerateTCEAdapters|Controls whether the type library importer should generate the tightly coupled event (TCE) adapters for COM connection point containers.|Must be a variant of type BOOL. If `pValue` is set to `true`, the type library importer generates the TCE adapters.|  
+|MetaDataTypeLibImportNamespace|Specifies a non-default namespace for the type library that is being imported.|Must be either a null value or a variant of type BSTR. If `pValue` is a null value, the current namespace is set to null; otherwise, the current namespace is set to the string that is held in the variant's BSTR type.|  
+|MetaDataLinkerOptions|Controls whether the linker should generate an assembly or a .NET Framework module file.|Must be a variant of type UI4, and must contain a combination of the values of the [CorLinkerOptions](../../../../docs/framework/unmanaged-api/metadata/corlinkeroptions-enumeration.md) enumeration.|  
+|MetaDataRuntimeVersion|Specifies the version of the common language runtime against which this image was built. The version is stored as a string, such as "v1.0.3705".|Must be a null value, a VT_EMPTY value, or a variant of type BSTR. If `pValue` is null, the runtime version is set to null. If `pValue` is VT_EMPTY, the version is set to a default value, which is drawn from the version of Mscorwks.dll within which the metadata code is running. Otherwise, the runtime version is set to the string that is held in the variant's BSTR type.|  
+|MetaDataMergerOptions|Specifies options for merging metadata.|Must be a variant of type UI4, and must contain a combination of the values of the `MergeFlags` enumeration, which is described in the CorHdr.h file.|  
+|MetaDataPreserveLocalRefs|Disables optimizing local references into definitions.|Must contain a combination of the values of the [CorLocalRefPreservation](../../../../docs/framework/unmanaged-api/metadata/corlocalrefpreservation-enumeration.md) enumeration.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

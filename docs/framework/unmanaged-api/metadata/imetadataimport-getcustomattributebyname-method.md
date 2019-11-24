@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 909aa530-2e3b-4d0a-a38a-a2750e535d7d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7bebf254110d9970ff3a99f948ff2e831ffb6b35
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bd7ba7ff10918e5953ea8ae89a60af3115af48a3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782436"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437683"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName – metoda
-Získá vlastní atribut zadaný název a vlastníka.  
+Gets the custom attribute, given its name and owner.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT GetCustomAttributeByName (
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- [in] Token metadat představující objekt, který je vlastníkem vlastního atributu.  
+ [in] A metadata token representing the object that owns the custom attribute.  
   
  `szName`  
- [in] Název vlastního atributu.  
+ [in] The name of the custom attribute.  
   
  `ppData`  
- [out] Ukazatel na pole dat, která je hodnota vlastního atributu.  
+ [out] A pointer to an array of data that is the value of the custom attribute.  
   
  `pcbData`  
- [out] Velikost v bajtech dat vrácených v *`ppData`.  
+ [out] The size in bytes of the data returned in *`ppData`.  
   
 ## <a name="remarks"></a>Poznámky  
- Je možné definovat více vlastních atributů pro téhož vlastníka; může probíhat dokonce se stejným názvem. Ale `GetCustomAttributeByName` vrátí pouze jednu instanci. (`GetCustomAttributeByName` vrátí první instance, který nalezne.) Chcete-li vyhledat všechny instance vlastního atributu, zavolejte [imetadataimport::enumcustomattributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) metody.  
+ It is legal to define multiple custom attributes for the same owner; they may even have the same name. However, `GetCustomAttributeByName` returns only one instance. (`GetCustomAttributeByName` returns the first instance that it encounters.) To find all instances of a custom attribute, call the [IMetaDataImport::EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) method.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

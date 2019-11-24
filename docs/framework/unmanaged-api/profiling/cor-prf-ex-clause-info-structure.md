@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7d0d6fb7-bc9d-40f0-8163-c0d162eaba7d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 85c0cc3880e4fc78d4badea329d62a6fced2a977
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: df4bfe69b22439073342693a03376a0b506f9c70
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781947"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428370"
 ---
-# <a name="corprfexclauseinfo-structure"></a>COR_PRF_EX_CLAUSE_INFO – struktura
-Ukládá informace o instanci klauzule specifickou výjimku a jeho přidružené rámce.  
+# <a name="cor_prf_ex_clause_info-structure"></a>COR_PRF_EX_CLAUSE_INFO – struktura
+Stores information about a specific exception clause instance and its associated frame.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,15 +39,15 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`clauseType`|Hodnota [cor_prf_clause_type –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) výčet, který určuje typ výjimky klauzule kód zadali nebo doleva.|  
-|`programCounter`|Nativní vstupní bod obslužné rutiny klauzule – například obsah X86 EIP registru.|  
-|`framePointer`|Ukazatel na logický rámec pro obslužnou rutinu klauzule – například obsah X86 EBP registru.|  
-|`shadowStackPointer`|Ukazatel na stínového zásobníku. Tato hodnota je obsah registru BSP a platí jenom pro IA64.|  
+|`clauseType`|A value of the [COR_PRF_CLAUSE_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) enumeration that specifies the type of exception clause the code just entered or left.|  
+|`programCounter`|The native entry point of the clause handler — for example, the contents of the X86 EIP register.|  
+|`framePointer`|The pointer to the logical frame for the clause handler — for example, the contents of the X86 EBP register.|  
+|`shadowStackPointer`|The pointer to the shadow stack. This value is the contents of the BSP register and applies only to IA64.|  
   
 ## <a name="remarks"></a>Poznámky  
- Po přijetí oznámení o výjimce [ICorProfilerInfo2::getnotifiedexceptionclauseinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) můžete použít k získání nativní rámce informace o adrese a pro klauzuli výjimky (`catch` / `finally`/filtrování), který má být spuštěna, nebo jenom nebyly spuštěny.  
+ When an exception notification is received, [ICorProfilerInfo2::GetNotifiedExceptionClauseInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) can be used to get the native address and frame information for the exception clause (`catch`/`finally`/filter) that is about to be run or has just been run.  
   
- Spuštění klauzule výjimka zahrnuje tato zpětná volání z common language runtime (CLR):  
+ Execution of an exception clause involves these callbacks from the common language runtime (CLR):  
   
 - [ICorProfilerCallback::ExceptionCatcherEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)  
   
@@ -64,13 +62,13 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
 - [ICorProfilerCallback::ExceptionSearchFilterLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Header:** CorProf.idl  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

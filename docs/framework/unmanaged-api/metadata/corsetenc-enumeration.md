@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fe4150e8-071d-43fb-8e06-c3c616dbeed2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2796be32154275387da891683cc5053095f534af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 39f72e670ddc700c257f50f6bad6fab702ec21b6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772323"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432770"
 ---
 # <a name="corsetenc-enumeration"></a>CorSetENC – výčet
-Obsahuje hodnoty použité k ovlivnění chování při generování metadat.  
+Contains values used to influence behavior during the generation of metadata.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,19 +48,19 @@ typedef enum CorSetENC {
 |------------|-----------------|  
 |`MDSetENCOn`|Zastaralé.|  
 |`MDSetENCOff`|Zastaralé.|  
-|`MDUpdateENC`|Označuje, že je možné aktualizovat metadata, tokeny nelze přesunout.|  
-|`MDUpdateFull`|Označuje, že tokeny lze přesunout během aktualizace.|  
-|`MDUpdateExtension`|Označuje, že aktualizace může být tvořen pouze doplňky. Tokeny nelze přesunout.|  
-|`MDUpdateIncremental`|Označuje, že je přírůstková kompilace.|  
-|`MDUpdateDelta`|Označuje, že by se měla uložit tato metadata pouze změněné.|  
-|`MDUpdateMask`|Zahrnuje `MDUpdateENC`, `MDUpdateFull` a `MDUpdateIncremental`.|  
+|`MDUpdateENC`|Indicates that whereas metadata can be updated, tokens cannot be moved.|  
+|`MDUpdateFull`|Indicates that tokens can be moved during updates.|  
+|`MDUpdateExtension`|Indicates that updates can consist only of additions. Tokens cannot be moved.|  
+|`MDUpdateIncremental`|Indicates that compilation is incremental.|  
+|`MDUpdateDelta`|Indicates that only changed metadata should be saved.|  
+|`MDUpdateMask`|Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

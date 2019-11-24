@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 32114ecf-8916-4ab2-a201-179c017344f1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fa6e8665e5e2194eb4a3dffad8e97a69deb202d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6ed30f07fcec9c730e1514350c594399f0aa16e5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778974"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437271"
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken – metoda
-Získá název kódování UTF-8 odkazuje token metadat zadaného objektu. Tato metoda je zastaralá.  
+Gets the UTF-8 name of the object referenced by the specified metadata token. This method is obsolete.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +36,22 @@ HRESULT GetNameFromToken (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] Token, který představuje objekt, který chcete vrátit pro název.  
+ [in] The token representing the object to return the name for.  
   
  `pszUtf8NamePtr`  
- [out] Ukazatel na název objektu UTF-8 v haldě.  
+ [out] A pointer to the UTF-8 object name in the heap.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetNameFromToken` je zastaralý. Jako alternativu volat metodu k získání vlastnosti konkrétního typu, jako například vyžaduje se token `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
+ `GetNameFromToken` is obsolete. As an alternative, call a method to get the properties of the particular type of token required, such as `GetFieldProps` for a field or `GetMethodProps` for a method.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** 1.0  
+ **.NET Framework Versions:** 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

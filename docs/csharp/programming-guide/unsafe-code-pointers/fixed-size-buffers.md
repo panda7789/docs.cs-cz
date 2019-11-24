@@ -1,21 +1,21 @@
 ---
-title: Velikost vyrovnávací paměti – pevná C# Průvodce programováním
+title: Fixed Size Buffers - C# Programming Guide
 ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 5bfd9f3f559e4780b910a2e5a3430b08a2183ee3
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 33af43a69587ffaadd7fcb42fa1d30ee9fc41989
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833504"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429401"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
-V jazyce C#, můžete použít [oprava](../../language-reference/keywords/fixed-statement.md) příkaz vytvoří vyrovnávací paměti s pevnou velikostí pole v datové struktuře. Vyrovnávací paměti pevné velikosti jsou užitečné, když píšete tohoto zprostředkovatele komunikace s objekty zdroje dat pro metody v jiných jazycích či platformách. Oprava pole můžete provést všechny atributy nebo modifikátory, které jsou povoleny pro členy struktury regulárních. Jediným omezením je, že musí být typu pole `bool`, `byte`, `char`, `short`, `int`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `float`, nebo `double`.
+In C#, you can use the [fixed](../../language-reference/keywords/fixed-statement.md) statement to create a buffer with a fixed size array in a data structure. Fixed size buffers are useful when you write methods that interop with data sources from other languages or platforms. The fixed array can take any attributes or modifiers that are allowed for regular struct members. The only restriction is that the array type must be `bool`, `byte`, `char`, `short`, `int`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `float`, or `double`.
 
 ```csharp
 private fixed char name[30];
@@ -23,31 +23,31 @@ private fixed char name[30];
 
 ## <a name="remarks"></a>Poznámky
 
-V nouzovém kódu struktura jazyka C#, která obsahuje pole neobsahuje prvků pole. Místo toho struktura obsahuje odkaz na prvky. Můžete vložit pole s pevnou velikostí v [struktury](../../language-reference/keywords/struct.md) když se používá v [unsafe](../../language-reference/keywords/unsafe.md) blok kódu.
+In safe code, a C# struct that contains an array does not contain the array elements. Instead, the struct contains a reference to the elements. You can embed an array of fixed size in a [struct](../../language-reference/keywords/struct.md) when it is used in an [unsafe](../../language-reference/keywords/unsafe.md) code block.
 
-Následující `struct` je velikosti 8 bajtů. `pathName` Pole je odkaz:
+The following `struct` is 8 bytes in size. The `pathName` array is a reference:
 
 [!code-csharp[Struct with embedded array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#6)]
 
-A `struct` může obsahovat vložené pole v nezabezpečený kód. V následujícím příkladu `fixedBuffer` pole má pevnou velikost. Můžete použít `fixed` příkaz Vytvořit ukazatel na první prvek. Přístup k prvkům pole pomocí tohoto ukazatele. `fixed` Příkaz PIN kódy `fixedBuffer` pole instance na konkrétní umístění v paměti.
+A `struct` can contain an embedded array in unsafe code. In the following example, the `fixedBuffer` array has a fixed size. You use a `fixed` statement to establish a pointer to the first element. You access the elements of the array through this pointer. The `fixed` statement pins the `fixedBuffer` instance field to a specific location in memory.
 
 [!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#7)]
 
-Velikost 128 elementu `char` pole je 256 bajtů. Pevná velikost [char](../../language-reference/keywords/char.md) vyrovnávacích pamětí vždy provést dva bajty na znak, bez ohledu na to, kódování. To platí i, když jsou char vyrovnávací paměti zařazeny do metody rozhraní API nebo struktury s `CharSet = CharSet.Auto` nebo `CharSet = CharSet.Ansi`. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.CharSet>.
+The size of the 128 element `char` array is 256 bytes. Fixed size [char](../../language-reference/builtin-types/char.md) buffers always take two bytes per character, regardless of the encoding. This is true even when char buffers are marshaled to API methods or structs with `CharSet = CharSet.Auto` or `CharSet = CharSet.Ansi`. Další informace najdete v tématu <xref:System.Runtime.InteropServices.CharSet>.
 
-Předchozí příklad ukazuje `fixed` pole bez Připnutí, které je k dispozici od verze C# 7.3.
+The  preceding example demonstrates accessing `fixed` fields without pinning, which is available starting with C# 7.3.
 
-Další běžné pevnou velikost pole je [bool](../../language-reference/keywords/bool.md) pole. Prvky v `bool` pole jsou vždy jeden bajt velikosti. `bool` pole nejsou vhodné pro vytvoření bitové pole nebo vyrovnávací paměti.
+Another common fixed-size array is the [bool](../../language-reference/keywords/bool.md) array. The elements in a `bool` array are always one byte in size. `bool` arrays are not appropriate for creating bit arrays or buffers.
 
 > [!NOTE]
-> S výjimkou paměti vytvořené využitím [stackalloc](../../language-reference/operators/stackalloc.md), kompilátor jazyka C# a common language runtime (CLR) nebude provádět žádné bezpečnostní kontroly přetečení vyrovnávací paměti. Stejně jako u všech nebezpečný kód, buďte opatrní.
+> Except for memory created by using [stackalloc](../../language-reference/operators/stackalloc.md), the C# compiler and the common language runtime (CLR) do not perform any security buffer overrun checks. As with all unsafe code, use caution.
 
-Nezabezpečené vyrovnávací paměti se liší od pravidelných polí následujícími způsoby:
+Unsafe buffers differ from regular arrays in the following ways:
 
-- Nezabezpečené vyrovnávací paměti lze použít pouze v nezabezpečeném kontextu.
-- Nezabezpečené vyrovnávací paměti jsou vždy vektorů nebo jednorozměrná pole.
-- Deklarace pole by měla obsahovat počet, jako například `char id[8]`. Nemůžete použít `char id[]`.
-- Nezabezpečené vyrovnávací paměti může být pouze pole instancí struktur v nezabezpečeném kontextu.
+- You can only use unsafe buffers in an unsafe context.
+- Unsafe buffers are always vectors, or one-dimensional arrays.
+- The declaration of the array should include a count, such as `char id[8]`. You cannot use `char id[]`.
+- Unsafe buffers can only be instance fields of structs in an unsafe context.
 
 ## <a name="see-also"></a>Viz také:
 

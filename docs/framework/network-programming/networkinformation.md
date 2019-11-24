@@ -1,31 +1,34 @@
 ---
-title: NetworkInformation
+title: Informace o síti
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
-ms.openlocfilehash: 65b15e61acaa39c9bfc4e0bd81b26f5a211bd1f1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bc0604fd33d06521727c9aa0302ed313d8a2305f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047553"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428228"
 ---
-# <a name="networkinformation"></a>NetworkInformation
-<xref:System.Net.NetworkInformation> Obor názvů umožňuje shromažďovat informace o událostech, změnách, statistikách a vlastnostech sítě. Můžete také určit, zda je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.  
+# <a name="networkinformation"></a>Informace o síti
+The <xref:System.Net.NetworkInformation> namespace enables you to gather information about network events, changes, statistics, and properties. You can also determine whether a remote host is reachable by using the <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> class.  
   
-## <a name="network-availability-and-events"></a>Dostupnost a události sítě  
- <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> Třída umožňuje určit, zda se změnila síťová adresa nebo dostupnost. Chcete-li použít tuto třídu, vytvořte obslužnou rutinu události pro zpracování změny a přidružte ji <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> k <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>nebo. Další informace najdete v tématu [jak: Zjišťuje dostupnost sítě a změny](how-to-detect-network-availability-and-address-changes.md)adres.  
+## <a name="network-availability-and-events"></a>Network Availability and Events  
+ The <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> class enables you to determine whether the network address or availability has changed. To use this class, create an event handler to process the change, and associate it with a <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> or a <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>. For more information, see [How to: Detect Network Availability and Address Changes](how-to-detect-network-availability-and-address-changes.md).  
   
-## <a name="network-statistics-and-properties"></a>Statistika sítě a vlastnosti  
- Statistiky sítě a vlastnosti můžete shromažďovat na základě rozhraní nebo protokolu. <xref:System.Net.NetworkInformation.IPGlobalProperties> <xref:System.Net.NetworkInformation.UdpStatistics> Třídy <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>a poskytujíinformace<xref:System.Net.NetworkInformation.IPInterfaceProperties> o<xref:System.Net.NetworkInformation.IPGlobalStatistics> konkrétním<xref:System.Net.NetworkInformation.TcpStatistics>síťovém rozhraní, zatímco třídy,,, a poskytují informace <xref:System.Net.NetworkInformation.PhysicalAddress> o paketech vrstvy 3 a 4. Další informace najdete v tématu [jak: Získat informace o](how-to-get-interface-and-protocol-information.md)rozhraní a protokolu.  
+## <a name="network-statistics-and-properties"></a>Network Statistics and Properties  
+ You can gather network statistics and properties on an interface or protocol basis. The <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>, and <xref:System.Net.NetworkInformation.PhysicalAddress> classes give information about a particular network interface, while the <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>, and <xref:System.Net.NetworkInformation.UdpStatistics> classes give information about layer 3 and layer 4 packets. For more information, see [How to: Get Interface and Protocol Information](how-to-get-interface-and-protocol-information.md).  
   
-## <a name="determine-if-a-remote-host-is-reachable"></a>Zjistit, jestli je vzdálený hostitel dosažitelný  
- <xref:System.Net.NetworkInformation.Ping> Třídu můžete použít k určení, zda je vzdálený hostitel v síti a dostupný. Další informace najdete v tématu [jak: Proveďte test hostitele](how-to-ping-a-host.md)na hostiteli.  
+## <a name="determine-if-a-remote-host-is-reachable"></a>Determine if a Remote Host is Reachable  
+ You can use the <xref:System.Net.NetworkInformation.Ping> class to determine whether a Remote Host is up, on the network, and reachable. For more information, see [How to: Ping a Host](how-to-ping-a-host.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Ukázky programování sítě](network-programming-samples.md)
-- [Ukázka technologie síťové informace](https://go.microsoft.com/fwlink/?LinkID=179564)
-- [Ukázka technologie nástroje NetStat](https://go.microsoft.com/fwlink/?LinkID=179562)
-- [Ukázka technologie klientského testu klienta](https://go.microsoft.com/fwlink/?LinkID=179565)
+
+<!-- to-do: review sample links
+- [Network Information Technology Sample](https://archive.msdn.microsoft.com/nclsamples/Wiki/View.aspx?title=Network%20Information)
+- [NetStat Tool Technology Sample](https://archive.msdn.microsoft.com/nclsamples/Wiki/View.aspx?title=NetStat%20Tool)
+- [Ping Client Technology Sample](https://archive.msdn.microsoft.com/nclsamples/Wiki/View.aspx?title=Ping%20Client)
+-->

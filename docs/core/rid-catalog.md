@@ -1,21 +1,21 @@
 ---
-title: Katalog identifikátorů runtime .NET Core (RID)
-description: Přečtěte si o identifikátoru modulu runtime (RID) a způsobu použití identifikátorů RID v .NET Core.
+title: .NET Core Runtime IDentifier (RID) catalog
+description: Learn about the Runtime IDentifier (RID) and how RIDs are used in .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: e6bc3f75858d4b67cc8598e49ff4ad75521f16d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f90aabf0d10ce61dc10fcd952d66ca00e66d282d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100923"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428735"
 ---
-# <a name="net-core-rid-catalog"></a>Katalog identifikátorů RID .NET Core
+# <a name="net-core-rid-catalog"></a>.NET Core RID Catalog
 
-Identifikátor RID je pro *identifikátor modulu runtime*krátký. Hodnoty RID slouží k identifikaci cílových platforem, ve kterých se aplikace spouští.
-Jsou používány balíčky .NET k reprezentaci prostředků specifických pro platformu v balíčcích NuGet. Následující hodnoty jsou příklady identifikátorů RID: `linux-x64`, `ubuntu.14.04-x64`, `win7-x64`nebo `osx.10.12-x64`.
-U balíčků s nativními závislostmi Určuje identifikátor RID na kterých platformách se balíček dá obnovit.
+RID is short for *Runtime IDentifier*. RID values are used to identify target platforms where the application runs.
+They're used by .NET packages to represent platform-specific assets in NuGet packages. The following values are examples of RIDs: `linux-x64`, `ubuntu.14.04-x64`, `win7-x64`, or `osx.10.12-x64`.
+For the packages with native dependencies, the RID designates on which platforms the package can be restored.
 
-Jeden identifikátor RID lze nastavit v prvku `<RuntimeIdentifier>` souboru projektu. Více identifikátorů RID lze definovat jako seznam středníkem oddělených v `<RuntimeIdentifiers>` elementu souboru projektu. Používají se taky prostřednictvím možnosti `--runtime` s následujícími [.NET Core CLI příkazy](./tools/index.md):
+A single RID can be set in the `<RuntimeIdentifier>` element of your project file. Multiple RIDs can be defined as a semicolon-delimited list in the project file's `<RuntimeIdentifiers>` element. They're also used via the `--runtime` option with the following [.NET Core CLI commands](./tools/index.md):
 
 - [dotnet build](./tools/dotnet-build.md)
 - [dotnet clean](./tools/dotnet-clean.md)
@@ -25,26 +25,26 @@ Jeden identifikátor RID lze nastavit v prvku `<RuntimeIdentifier>` souboru proj
 - [dotnet run](./tools/dotnet-run.md)
 - [dotnet restore](./tools/dotnet-store.md)
 
-Identifikátorů RID, které reprezentují konkrétní operační systémy, se obvykle řídí tímto vzorem: `[os].[version]-[architecture]-[additional qualifiers]`, kde:
+RIDs that represent concrete operating systems usually follow this pattern: `[os].[version]-[architecture]-[additional qualifiers]` where:
 
-- `[os]` je moniker operačního systému nebo platformy. Například `ubuntu`.
+- `[os]` is the operating/platform system moniker. For example, `ubuntu`.
 
-- `[version]` je verze operačního systému ve formě čísla verze odděleného tečkou (`.`). Například `15.10`.
+- `[version]` is the operating system version in the form of a dot-separated (`.`) version number. For example, `15.10`.
 
-  - Verze **by neměla** být marketingová verze, protože často představují více diskrétních verzí operačního systému s různou oblastí rozhraní API platformy.
+  - The version **shouldn't** be marketing versions, as they often represent multiple discrete versions of the operating system with varying platform API surface area.
 
-- `[architecture]` je architektura procesoru. Například: `x86`, `x64`, `arm`nebo `arm64`.
+- `[architecture]` is the processor architecture. For example: `x86`, `x64`, `arm`, or `arm64`.
 
-- `[additional qualifiers]` dále odlišit různé platformy. Například: `aot`.
+- `[additional qualifiers]` further differentiate different platforms. For example: `aot`.
 
-## <a name="rid-graph"></a>Graf RID
+## <a name="rid-graph"></a>RID graph
 
-Graf RID nebo modul runtime Fallback za běhu je seznam identifikátorů ridů, které jsou vzájemně kompatibilní. Identifikátorů RID jsou definované v balíčku [Microsoft. NETCore. Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) . Můžete se podívat na seznam podporovaných identifikátorů RID a grafu RID v souboru [*runtime. JSON*](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) , který se nachází v úložišti CoreFX. V tomto souboru vidíte, že všechny identifikátorů RID, s výjimkou základní třídy, obsahují příkaz `"#import"`. Tyto příkazy označují kompatibilní identifikátorů RID.
+The RID graph or runtime fallback graph is a list of RIDs that are compatible with each other. The RIDs are defined in the [Microsoft.NETCore.Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) package. You can see the list of supported RIDs and the RID graph in the [*runtime.json*](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file, which is located at the CoreFX repo. In this file, you can see that all RIDs, except for the base one, contain an `"#import"` statement. These statements indicate compatible RIDs.
 
-Když NuGet obnoví balíčky, pokusí se najít přesnou shodu pro zadaný modul runtime.
-Pokud se nenajde přesná shoda, NuGet se vrátí do grafu, dokud nenajde nejbližší kompatibilní systém podle grafu RID.
+When NuGet restores packages, it tries to find an exact match for the specified runtime.
+If an exact match is not found, NuGet walks back the graph until it finds the closest compatible system according to the RID graph.
 
-V následujícím příkladu je aktuální položka pro `osx.10.12-x64` RID:
+The following example is the actual entry for the `osx.10.12-x64` RID:
 
 ```json
 "osx.10.12-x64": {
@@ -52,9 +52,9 @@ V následujícím příkladu je aktuální položka pro `osx.10.12-x64` RID:
 }
 ```
 
-Výše uvedené identifikátory RID určuje, že `osx.10.12-x64` import `osx.10.11-x64`. Takže když NuGet obnoví balíčky, pokusí se najít přesnou shodu pro `osx.10.12-x64` v balíčku. Pokud NuGet nemůže najít konkrétní modul runtime, může obnovit balíčky, které určují `osx.10.11-x64` modul runtime, například.
+The above RID specifies that `osx.10.12-x64` imports `osx.10.11-x64`. So, when NuGet restores packages, it tries to find an exact match for  `osx.10.12-x64` in the package. If NuGet cannot find the specific runtime, it can restore packages that specify `osx.10.11-x64` runtimes, for example.
 
-Následující příklad ukazuje trochu větší graf RID, který je definován také v souboru *runtime. JSON* :
+The following example shows a slightly bigger RID graph also defined in the *runtime.json*  file:
 
 ```
     win7-x64    win7-x86
@@ -68,85 +68,85 @@ Následující příklad ukazuje trochu větší graf RID, který je definován 
             any
 ```
 
-Všechny identifikátorů RID nakonec mapují zpátky na kořenový `any` identifikátor RID.
+All RIDs eventually map back to the root `any` RID.
 
-Existují některé okolnosti týkající se identifikátorů RID, které je třeba vzít v úvahu při práci s nimi:
+There are some considerations about RIDs that you have to keep in mind when working with them:
 
-- Identifikátorů RID jsou **neprůhledné řetězce** a měly by se považovat za černé čtverečky.
-- Nevytvářejte identifikátorů RID programově.
-- Použijte identifikátorů RID, které už jsou pro platformu definované.
-- Identifikátorů RID musí být konkrétní, takže nemusíte nic od skutečné hodnoty RID předpokládat.
+- RIDs are **opaque strings** and should be treated as black boxes.
+- Don't build RIDs programmatically.
+- Use RIDs that are already defined for the platform.
+- The RIDs need to be specific, so don't assume anything from the actual RID value.
 
-## <a name="using-rids"></a>Použití identifikátorů RID
+## <a name="using-rids"></a>Using RIDs
 
-Aby bylo možné používat identifikátorů RID, musíte zjistit, které identifikátorů RID existují. K platformě se pravidelně přidávají nové hodnoty.
-Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+To be able to use RIDs, you have to know which RIDs exist. New values are added regularly to the platform.
+For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
 
-Sada .NET Core 2,0 SDK zavádí koncept přenosných identifikátorů RID. Jsou to nové hodnoty přidané do grafu RID, které nejsou vázané na konkrétní verzi nebo distribuci operačního systému, a jsou upřednostňovanou volbou při použití .NET Core 2,0 a vyšší. Jsou zvláště užitečné při práci s více Linux distribuce, protože většina distribučních identifikátorů RID je mapována na přenosné identifikátorů RID.
+.NET Core 2.0 SDK introduces the concept of portable RIDs. They are new values added to the RID graph that aren't tied to a specific version or OS distribution and are the preferred choice when using .NET Core 2.0 and higher. They're particularly useful when dealing with multiple Linux distros since most distribution RIDs are mapped to the portable RIDs.
 
-Následující seznam obsahuje malou podmnožinu nejběžnějších identifikátorů RID používaných pro každý operační systém.
+The following list shows a small subset of the most common RIDs used for each OS.
 
-## <a name="windows-rids"></a>Identifikátorů RID Windows
+## <a name="windows-rids"></a>Windows RIDs
 
-Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
 
-- Přenosná verze (.NET Core 2,0 nebo novější)
+- Portable (.NET Core 2.0 or later versions)
   - `win-x64`
   - `win-x86`
   - `win-arm`
   - `win-arm64`
-- Windows 7/Windows Server 2008 R2
+- Windows 7 / Windows Server 2008 R2
   - `win7-x64`
   - `win7-x86`
-- Windows 8.1/Windows Server 2012 R2
+- Windows 8.1 / Windows Server 2012 R2
   - `win81-x64`
   - `win81-x86`
   - `win81-arm`
-- Windows 10/Windows Server 2016
+- Windows 10 / Windows Server 2016
   - `win10-x64`
   - `win10-x86`
   - `win10-arm`
   - `win10-arm64`
 
-Další informace najdete v tématu [předpoklady pro .NET Core v systému Windows](windows-prerequisites.md) .
+See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-windows) for more information.
 
-## <a name="linux-rids"></a>Linux identifikátorů RID
+## <a name="linux-rids"></a>Linux RIDs
 
-Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX. Zařízení s distribucí, která nejsou uvedená níže, můžou fungovat s jedním z přenosných identifikátorů RID. Například zařízení maliny PI, na kterých běží distribuce systému Linux, nejsou uvedená v seznamu mohou být cílem `linux-arm`.
+Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo. Devices running a distribution not listed below may work with one of the Portable RIDs. For example, Raspberry Pi devices running a Linux distribution not listed can be targeted with `linux-arm`.
 
-- Přenosná verze (.NET Core 2,0 nebo novější)
-  - `linux-x64` (Většina distribucí počítačů, jako jsou CentOS, Debian, Fedora, Ubuntu a deriváty)
-  - `linux-musl-x64` (prosté distribuce pomocí [MUSL](https://wiki.musl-libc.org/projects-using-musl.html) jako Alpine Linux)
-  - `linux-arm` (distribuce systému Linux spuštěná na ARM, jako je například Malina PI)
+- Portable (.NET Core 2.0 or later versions)
+  - `linux-x64` (Most desktop distributions like CentOS, Debian, Fedora, Ubuntu and derivatives)
+  - `linux-musl-x64` (Lightweight distributions using [musl](https://wiki.musl-libc.org/projects-using-musl.html) like Alpine Linux)
+  - `linux-arm` (Linux distributions running on ARM like Raspberry Pi)
 - Red Hat Enterprise Linux
-  - `rhel-x64` (nahrazeno `linux-x64` pro RHEL nad verzí 6)
-  - `rhel.6-x64` (.NET Core 2,0 nebo novější verze)
-- Tizen (.NET Core 2,0 nebo novější verze)
+  - `rhel-x64` (Superseded by `linux-x64` for RHEL above version 6)
+  - `rhel.6-x64` (.NET Core 2.0 or later versions)
+- Tizen (.NET Core 2.0 or later versions)
   - `tizen`
   - `tizen.4.0.0`
   - `tizen.5.0.0`
 
-Další informace najdete v tématu [předpoklady pro .NET Core na platformě Linux](linux-prerequisites.md) .
+See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-linux) for more information.
 
-## <a name="macos-rids"></a>macOS identifikátorů RID
+## <a name="macos-rids"></a>macOS RIDs
 
-macOS identifikátorů RID používá starší značku "OSX". Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+macOS RIDs use the older "OSX" branding. Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
 
-- Přenosná verze (.NET Core 2,0 nebo novější)
-  - `osx-x64` (minimální verze operačního systému je macOS 10,12 Sierra)
-- macOS 10,10 Yosemite
+- Portable (.NET Core 2.0 or later versions)
+  - `osx-x64` (Minimum OS version is macOS 10.12 Sierra)
+- macOS 10.10  Yosemite
   - `osx.10.10-x64`
-- macOS 10,11 El Capitan
+- macOS 10.11 El Capitan
   - `osx.10.11-x64`
-- macOS 10,12 Sierra (.NET Core 1,1 nebo novější verze)
+- macOS 10.12 Sierra (.NET Core 1.1 or later versions)
   - `osx.10.12-x64`
-- macOS 10,13 High Sierra (.NET Core 1,1 nebo novější verze)
+- macOS 10.13 High Sierra (.NET Core 1.1 or later versions)
   - `osx.10.13-x64`
-- macOS 10,14 Mojave (.NET Core 1,1 nebo novější verze)
+- macOS 10.14 Mojave (.NET Core 1.1 or later versions)
   - `osx.10.14-x64`
 
-Další informace najdete v tématu [předpoklady pro .NET Core v MacOS](macos-prerequisites.md) .
+See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-macos) for more information.
 
 ## <a name="see-also"></a>Viz také:
 
-- [ID modulu runtime](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/readme.md)
+- [Runtime IDs](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/readme.md)

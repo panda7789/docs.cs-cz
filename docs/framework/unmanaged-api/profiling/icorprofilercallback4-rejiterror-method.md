@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d7888aa9-dfaa-420f-9f99-e06ab35ca482
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6b01f38fbcf1cb0439b82a933b37971515b06ac4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6ea9dee6e83870d1f2e0fdccffa53f16e6f18dba
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758157"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74430104"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError – metoda
-Oznámí profileru, že kompilátor just-in-time (JIT) došlo k chybě v procesu opětovnou kompilaci.  
+Notifies the profiler that the just-in-time (JIT) compiler encountered an error in the recompilation process.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +37,39 @@ HRESULT ReJITError(
   
 ## <a name="parameters"></a>Parametry  
  `moduleID`  
- [in] `ModuleID` Ve které byl proveden pokus o opětovnou kompilaci se nezdařilo.  
+ [in] The `ModuleID` in which the failed recompilation attempt was made.  
   
  `methodId`  
- [in] `MethodDef` Metody, na kterém byl proveden pokus o opětovnou kompilaci se nezdařilo.  
+ [in] The `MethodDef` of the method on which the failed recompilation attempt was made.  
   
  `functionId`  
- [in] Instance funkce, která se znovu kompilovaný nebo metodu označenou pro opětovnou kompilaci. Tato hodnota může být `NULL` -li k selhání došlo na základě za metoda místo základ instance (například pokud profiler zadaný token neplatná metadata pro metodu překompilovat).  
+ [in] The function instance that is being recompiled or marked for recompilation. This value may be `NULL` if the failure occurred on a per-method basis instead of a per-instantiation basis (for example, if the profiler specified an invalid metadata token for the method to be recompiled).  
   
  `hrStatus`  
- [in] HRESULT označující podstatu tohoto selhání. V části stav HRESULTS seznam hodnot.  
+ [in] An HRESULT that indicates the nature of the failure. See the Status HRESULTS section for a list of values.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Návratové hodnoty v tomto zpětném volání jsou ignorovány.  
+ Return values from this callback are ignored.  
   
-## <a name="status-hresults"></a>HRESULT – stav  
+## <a name="status-hresults"></a>Status HRESULTS  
   
-|Stav pole HRESULT|Popis|  
+|Status array HRESULT|Popis|  
 |--------------------------|-----------------|  
-|E_INVALIDARG|`moduleID` Nebo `methodDef` token je `NULL`.|  
-|CORPROF_E_DATAINCOMPLETE|Modul dosud není zcela načteno, nebo je právě uvolňován.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul se generuje dynamicky (třeba podle `Reflection.Emit`) a proto není podporována touto metodou.|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda je vytvořena instance na kolekční sestavení a není tedy možné zopakovat. Všimněte si, že typy a funkce definované v kontextu jiných reflexe (například `List<MyCollectibleStruct>`) může být vytvořena na kolekční sestavení.|  
-|E_OUTOFMEMORY|Modul CLR má nedostatek paměti při pokusu označit zadanou metodu pro rekompilace JIT.|  
-|Ostatní|Operační systém vrátil chybu mimo ovládací prvek CLR. Například pokud selže volání systému ke změně ochrany přístupu k paměti stránky, se zobrazí chyba operačního systému.|  
+|E_INVALIDARG|The `moduleID` or `methodDef` token is `NULL`.|  
+|CORPROF_E_DATAINCOMPLETE|The module is not fully loaded yet, or it is in the process of being unloaded.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|The specified module was dynamically generated (for example, by `Reflection.Emit`), and is thus not supported by this method.|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|The method is instantiated into a collectible assembly, and is therefore not able to be recompiled. Note that types and functions defined in a non-reflection context (for example, `List<MyCollectibleStruct>`) can be instantiated into a collectible assembly.|  
+|E_OUTOFMEMORY|The CLR ran out of memory while trying to mark the specified method for JIT recompilation.|  
+|Ostatní|The operating system returned a failure outside the control of the CLR. For example, if a system call to change the access protection of a page of memory fails, the operating system error is displayed.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

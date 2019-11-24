@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a656aad6-cc7e-4994-8251-004a6a45e18f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 906b5ef2795d8fad996185f66f145a8cd3618c41
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 086e17185df9caa823b44b51cf027f95d635c48d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781813"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450268"
 ---
 # <a name="corlinkeroptions-enumeration"></a>CorLinkerOptions – výčet
-Určuje příznaky a možnosti pro linker metadat.  
+Specifies flags to select options for the metadata linker.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +37,15 @@ typedef enum CorLinkerOptions {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDAssembly`|Privátní typy a globální funkce není zachováno.|  
-|`MDNetModule`|Privátní typy a globální funkce jsou zachovány.|  
+|`MDAssembly`|The private types and global functions are not preserved.|  
+|`MDNetModule`|The private types and global functions are preserved.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

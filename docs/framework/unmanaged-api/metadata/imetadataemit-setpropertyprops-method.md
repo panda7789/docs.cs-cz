@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9e78c4d7319a931ca7090d6f99651bc9660e4af8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fdec87324d6efa0f911e37573093c19b93c0349
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782044"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440548"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps – metoda
-Nastaví uložená v metadatech pro vlastnosti určené předchozím volání funkce [DefineProperty – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +42,37 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Parametry  
  `pr`  
- [in] Token pro vlastnost, která má být změněn  
+ [in] The token for the property to be changed  
   
  `dwPropFlags`  
- [in] Vlastnost příznaky.  
+ [in] Property flags.  
   
  `dwCPlusTypeFlag`  
- [in] Typ vlastnosti na výchozí hodnotu.  
+ [in] The type of the property's default value.  
   
  `pValue`  
- [in] Výchozí hodnota pro vlastnost.  
+ [in] The default value for the property.  
   
  `cchValue`  
- [in] Počet (Unicode) znaky v `pValue`.  
+ [in] The count of (Unicode) characters in `pValue`.  
   
  `mdSetter`  
- [in] Metoda, která nastaví hodnotu vlastnosti.  
+ [in] The method that sets the property value.  
   
  `mdGetter`  
- [in] Metoda, která vrací hodnotu vlastnosti.  
+ [in] The method that gets the property value.  
   
  `rmdOtherMethods[]`  
- [in] Pole jiné metody přidružený k vlastnosti. Toto pole se ukončí `mdTokenNil` token.  
+ [in] An array of other methods associated with the property. Terminate this array with an `mdTokenNil` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

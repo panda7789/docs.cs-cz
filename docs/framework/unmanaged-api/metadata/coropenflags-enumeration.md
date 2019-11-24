@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: e27a83b5-2698-4996-9032-1e0fed8b91ca
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 831f4665967f2cd07a7ebb4de750fbe456a82261
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ad582fc2fd1bd1d2fc9d5a0d483fdb3a51309a10
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781684"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436502"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags – výčet
-Obsahuje příznak hodnoty, které řídí chování metadata po otevření souborů manifestu.  
+Contains flag values that control metadata behavior upon opening manifest files.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,26 +50,26 @@ typedef enum CorOpenFlags
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ofRead`|Označuje, že by soubor otevřen jen pro čtení.|  
-|`ofWrite`|Označuje, že soubor by měl být otevřena pro zápis.<br /><br /> Pokud používáte `ofWrite` příznak při otevírání souboru .winmd, je třeba také předat `ofNoTransform` příznak.|  
-|`ofReadWriteMask`|Maska pro čtení a zápis.|  
-|`ofCopyMemory`|Označuje, že by soubor načíst do paměti. Metadata musí udržovat vlastní kopii.|  
-|`ofCacheImage`|Zastaralé. Tento příznak se ignoruje.|  
-|`ofManifestMetadata`|Zastaralé. Tento příznak se ignoruje.|  
-|`ofReadOnly`|Označuje, že soubor musí být otevřen pro čtení a že volání `QueryInterface` pro [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) nelze provést.|  
-|`ofTakeOwnership`|Označuje, že byla přidělena paměť pomocí volání do [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) a bude uvolněna metadata.|  
-|`ofNoTypeLib`|Zastaralé. Tento příznak se ignoruje.|  
-|`ofNoTransform`|Označuje, že by mělo být zakázáno automatické transformace soubory .winmd. Jinými slovy by mělo být zakázáno projekce typu modulu Windows Runtime na typ rozhraní .NET Framework. Další informace najdete v tématu [Windows Runtime a CLR - pod pokličkou pomocí .NET a modulem Windows Runtime](https://msdn.microsoft.com/magazine/jj651569.aspx).|  
-|`ofReserved1`|Vyhrazeno pro interní použití.|  
-|`ofReserved2`|Vyhrazeno pro interní použití.|  
-|`ofReserved`|Vyhrazeno pro interní použití.|  
+|`ofRead`|Indicates that the file should be opened for reading only.|  
+|`ofWrite`|Indicates that the file should be opened for writing.<br /><br /> If you are using the `ofWrite` flag when opening a .winmd file, you should also pass the `ofNoTransform` flag.|  
+|`ofReadWriteMask`|A mask for reading and writing.|  
+|`ofCopyMemory`|Indicates that the file should be read into memory. Metadata should maintain its own copy.|  
+|`ofCacheImage`|Zastaralé. This flag is ignored.|  
+|`ofManifestMetadata`|Zastaralé. This flag is ignored.|  
+|`ofReadOnly`|Indicates that the file should be opened for reading, and that a call to `QueryInterface` for an [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) cannot be made.|  
+|`ofTakeOwnership`|Indicates that the memory was allocated using a call to [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) and will be freed by the metadata.|  
+|`ofNoTypeLib`|Zastaralé. This flag is ignored.|  
+|`ofNoTransform`|Indicates that automatic transforms of .winmd files should be disabled. In other words, the projection of a Windows Runtime type to a .NET Framework type should be disabled. For more information, see [Windows Runtime and the CLR - Underneath the Hood with .NET and the Windows Runtime](https://docs.microsoft.com/archive/msdn-magazine/2012/windows-8-special-issue/windows-runtime-and-the-clr-underneath-the-hood-with-net-and-the-windows-runtime).|  
+|`ofReserved1`|Reserved for internal use.|  
+|`ofReserved2`|Reserved for internal use.|  
+|`ofReserved`|Reserved for internal use.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

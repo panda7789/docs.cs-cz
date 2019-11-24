@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0aa60f24-8bbd-4c83-83c5-86ad191b1d82
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d6c45e44f68621708d05ca43857cf1e100113166
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 11f9a186f5ec5e3b9e718a3ccd43b35b66d28078
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771073"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433187"
 ---
 # <a name="icorprofilerinfo2getfunctioninfo2-method"></a>ICorProfilerInfo2::GetFunctionInfo2 – metoda
-Získá na nadřazenou třídu tokenu metadat a `ClassID` každý typ argumentu, pokud jsou k dispozici funkce.  
+Gets the parent class, the metadata token, and the `ClassID` of each type argument, if present, of a function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,52 +41,52 @@ HRESULT GetFunctionInfo2(
   
 ## <a name="parameters"></a>Parametry  
  `funcId`  
- [in] ID funkce, pro které chcete-li získat nadřazené třídu a další informace.  
+ [in] The ID of the function for which to get the parent class and other information.  
   
  `frameInfo`  
- [in] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o rámec zásobníku.  
+ [in] A `COR_PRF_FRAME_INFO` value that points to information about a stack frame.  
   
  `pClassId`  
- [out] Ukazatel na nadřazené třídy funkce.  
+ [out] A pointer to the parent class of the function.  
   
  `pModuleId`  
- [out] Ukazatel na modul, ve kterém je definována funkce nadřazené třídy.  
+ [out] A pointer to the module in which the function's parent class is defined.  
   
  `pToken`  
- [out] Ukazatel na token metadat pro funkci.  
+ [out] A pointer to the metadata token for the function.  
   
  `cTypeArgs`  
- [in] Velikost `typeArgs` pole.  
+ [in] The size of the `typeArgs` array.  
   
  `pcTypeArgs`  
- [out] Ukazatel na celkový počet `ClassID` hodnoty.  
+ [out] A pointer to the total number of `ClassID` values.  
   
  `typeArgs`  
- [out] Pole `ClassID` hodnot, z nichž každý je ID argument typu funkce. Po návratu metody `typeArgs` bude obsahovat některé nebo všechny `ClassID` hodnoty.  
+ [out] An array of `ClassID` values, each of which is the ID of a type argument of the function. When the method returns, `typeArgs` will contain some or all of the `ClassID` values.  
   
 ## <a name="remarks"></a>Poznámky  
- Profiler kódu může volat [icorprofilerinfo::getmodulemetadata –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) získat [metadat](../../../../docs/framework/unmanaged-api/metadata/index.md) rozhraní pro daný modul. Token metadat, který je vrácen do umístění odkazuje `pToken` lze použít k přístupu k metadatům pro funkci.  
+ The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a [metadata](../../../../docs/framework/unmanaged-api/metadata/index.md) interface for a given module. The metadata token that is returned to the location referenced by `pToken` can then be used to access the metadata for the function.  
   
- Třída ID a typ argumentů, které jsou vráceny prostřednictvím `pClassId` a `typeArgs` parametry záviset na hodnotě předané `frameInfo` parametru, jak je znázorněno v následující tabulce.  
+ The class ID and type arguments that are returned through the `pClassId` and `typeArgs` parameters depend on the value that is passed in the `frameInfo` parameter, as shown in the following table.  
   
-|Hodnota `frameInfo` parametr|Výsledek|  
+|Value of the `frameInfo` parameter|Výsledek|  
 |----------------------------------------|------------|  
-|A `COR_PRF_FRAME_INFO` hodnoty, který byl získán z `FunctionEnter2` zpětného volání|`ClassID`, Vracet v umístění odkazuje `pClassId`, a všechny argumenty, vrácené v typu `typeArgs` pole, nebudou přesné.|  
-|A `COR_PRF_FRAME_INFO` , který byl získán ze zdroje jiné než `FunctionEnter2` zpětného volání|Přesné `ClassID` a argumenty typu nelze určit. To znamená `ClassID` může mít hodnotu null a některé argumenty typu by mohl pocházet zpět jako <xref:System.Object>.|  
-|Nula|Přesné `ClassID` a argumenty typu nelze určit. To znamená `ClassID` může mít hodnotu null a některé argumenty typu by mohl pocházet zpět jako <xref:System.Object>.|  
+|A `COR_PRF_FRAME_INFO` value that was obtained from a `FunctionEnter2` callback|The `ClassID`, returned in the location referenced by `pClassId`, and all type arguments, returned in the `typeArgs` array, will be exact.|  
+|A `COR_PRF_FRAME_INFO` that was obtained from a source other than a `FunctionEnter2` callback|The exact `ClassID` and type arguments cannot be determined. That is, the `ClassID` might be null and some type arguments might come back as <xref:System.Object>.|  
+|Nula|The exact `ClassID` and type arguments cannot be determined. That is, the `ClassID` might be null and some type arguments might come back as <xref:System.Object>.|  
   
- Po `GetFunctionInfo2` vrátí, musíte ověřit, že `typeArgs` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny `ClassID` hodnoty. K tomuto účelu porovnat hodnoty, které `pcTypeArgs` odkazuje na hodnotu `cTypeArgs` parametru. Pokud `pcTypeArgs` odkazuje na hodnotu, která je větší než `cTypeArgs` rozdělené podle velikosti `ClassID` hodnoty, přidělte větší `pcTypeArgs` vyrovnávací paměti, aktualizujte `cTypeArgs` nové, větší velikosti a volání `GetFunctionInfo2` znovu.  
+ After `GetFunctionInfo2` returns, you must verify that the `typeArgs` buffer was large enough to contain all the `ClassID` values. To do this, compare the value that `pcTypeArgs` points to with the value of the `cTypeArgs` parameter. If `pcTypeArgs` points to a value that is larger than `cTypeArgs` divided by the size of a `ClassID` value, allocate a larger `pcTypeArgs` buffer, update `cTypeArgs` with the new, larger size, and call `GetFunctionInfo2` again.  
   
- Alternativně můžete nejprve volat `GetFunctionInfo2` s nulovou délkou `pcTypeArgs` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcTypeArgs` rozdělené podle velikosti `ClassID` hodnotu a volání `GetFunctionInfo2` znovu.  
+ Alternatively, you can first call `GetFunctionInfo2` with a zero-length `pcTypeArgs` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcTypeArgs` divided by the size of a `ClassID` value, and call `GetFunctionInfo2` again.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

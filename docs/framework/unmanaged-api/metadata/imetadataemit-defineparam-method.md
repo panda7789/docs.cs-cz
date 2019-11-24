@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d86a3d14-4796-4909-9591-dfafe3de5ce4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d64a1ef21cd4fa4224609c7cd415c1611313769
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5c81bc82e19bce658336e4860a61f2721e17423d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777544"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431698"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam – metoda
-Vytvoří definici parametru se zadaným podpisem pro metodu odkazuje zadaný token a získá token pro tuto definici parametru.  
+Creates a parameter definition with the specified signature for the method referenced by the specified token, and gets a token for that parameter definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,40 +42,40 @@ HRESULT DefineParam (
   
 ## <a name="parameters"></a>Parametry  
  `md`  
- [in] Token pro metodu, jejíž parametr se zrovna definuje.  
+ [in] The token for the method whose parameter is being defined.  
   
  `ulParamSeq`  
- [in] Pořadové číslo parametru.  
+ [in] The parameter sequence number.  
   
  `szName`  
- [in] Název parametru v kódování Unicode.  
+ [in] The name of the parameter in Unicode.  
   
  `dwParamFlags`  
- [in] Příznaky pro parametr. To je bitová maska z `CorParamAttr` hodnoty.  
+ [in] Flags for the parameter. This is a bitmask of `CorParamAttr` values.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** pro konstantní hodnoty.  
+ [in] `ELEMENT_TYPE_` *\** for the constant value.  
   
  `pValue`  
- [in] Konstantní hodnota parametru.  
+ [in] The constant value for the parameter.  
   
  `cchValue`  
- [in] Velikost v znaky Unicode z `pValue`.  
+ [in] The size, in Unicode characters, of `pValue`.  
   
  `ppd`  
- [out] `mdParamDef` Token přiřazený.  
+ [out] The `mdParamDef` token assigned.  
   
 ## <a name="remarks"></a>Poznámky  
- Pořadí hodnot v `ulParamSeq` začínají znakem 1 pro parametry. Návratová hodnota má pořadové číslo 0.  
+ The sequence values in `ulParamSeq` begin with 1 for parameters. A return value has a sequence number of 0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

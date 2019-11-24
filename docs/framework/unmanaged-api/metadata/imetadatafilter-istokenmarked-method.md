@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7d90dcee-0206-4540-807b-06982fe65f1a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e15f4e8691db13b9a646a1e1d783075acfcdd896
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 10f31d56a9727e99157f49038c19781f12cd9958
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777081"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440428"
 ---
 # <a name="imetadatafilteristokenmarked-method"></a>IMetaDataFilter::IsTokenMarked – metoda
-Získá hodnotu označující, zda byl token metadat zadaného označena jako zpracovaná.  
+Gets a value indicating whether the specified metadata token has been marked as processed.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT IsTokenMarked (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] Token, který chcete prozkoumat pro zpracování značku.  
+ [in] The token to examine for a processing mark.  
   
  `pIsMarked`  
- [out] Hodnotu, která je `true` Pokud `tk` byl zpracovaných; v opačném případě `false`.  
+ [out] A value that is `true` if `tk` has been processed; otherwise `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

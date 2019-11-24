@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: dd67d9faafedf4fb92c69618d4464ebb2ce47dcc
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 854d3ad28cc00c03e903b9e1d2ce3863e3ceef17
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774249"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436103"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
-Načte data o zadaném sloupci v zadané tabulce.  
+Gets data about the specified column in the specified table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,57 +42,57 @@ HRESULT GetColumnInfo (
 =======
 
  `ixTbl`  
- pro Index požadované tabulky  
+ [in] The index of the desired table.  
   
  `ixCol`  
- pro Index požadovaného sloupce  
+ [in] The index of the desired column.  
   
  `poCol`  
- mimo Ukazatel na posun sloupce v řádku.  
+ [out] A pointer to the offset of the column in the row.  
   
  `pcbCol`  
- mimo Ukazatel na velikost sloupce v bajtech.  
+ [out] A pointer to the size, in bytes, of the column.  
   
  `pType`  
- mimo Ukazatel na typ hodnot ve sloupci.  
+ [out] A pointer to the type of the values in the column.  
   
  `ppName`  
- mimo Ukazatel na ukazatel na název sloupce.  
+ [out] A pointer to a pointer to the column name.  
  
 ## <a name="remarks"></a>Poznámky
 
-Vrácený typ sloupce spadá do rozsahu hodnot:
+The returned column type falls within a range of values:
 
-| pType                    | Popis   | Pomocná funkce                   |
+| pType                    | Popis   | Helper function                   |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0.. 63)   | Mezinárodní           | **IsRidType**<br>**IsRidOrToken** |
-| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Kódovaný token | **IsCodedTokenType** <br>**IsRidOrToken** |
+| `0`..`iRidMax`<br>(0..63)   | Rid           | **IsRidType**<br>**IsRidOrToken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | Coded token | **IsCodedTokenType** <br>**IsRidOrToken** |
 | `iSHORT` (96)            | Int16         | **IsFixedType**                   |
 | `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
 | `iLONG` (98)             | Int32         | **IsFixedType**                   |
 | `iULONG` (99)            | UInt32        | **IsFixedType**                   |
 | `iBYTE` (100)            | Byte          | **IsFixedType**                   |
 | `iSTRING` (101)          | String        | **IsHeapType**                    |
-| `iGUID` (102)            | Hlavních          | **IsHeapType**                    |
-| `iBLOB` (103)            | Příznaky          | **IsHeapType**                    |
+| `iGUID` (102)            | Guid          | **IsHeapType**                    |
+| `iBLOB` (103)            | Blob          | **IsHeapType**                    |
 
-Hodnoty, které jsou uloženy v *haldě* (to znamená `IsHeapType == true`), lze číst pomocí:
+Values that are stored in the *heap* (that is, `IsHeapType == true`) can be read using:
 
-- `iSTRING`: **IMetadataTables. GetString**
-- `iGUID`: **IMetadataTables. GETguid**
-- `iBLOB`: **IMetadataTables. Getblob**
+- `iSTRING`: **IMetadataTables.GetString**
+- `iGUID`: **IMetadataTables.GetGUID**
+- `iBLOB`: **IMetadataTables.GetBlob**
 
 > [!IMPORTANT]
-> Chcete-li použít konstanty definované v tabulce výše, zahrňte direktivu `#define _DEFINE_META_DATA_META_CONSTANTS` poskytnutou hlavičkovým souborem *cor. h* .
+> To use the constants defined in the table above, include the directive `#define _DEFINE_META_DATA_META_CONSTANTS` provided by the *cor.h* header file.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Header:** Cor.h  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

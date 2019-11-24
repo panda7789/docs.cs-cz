@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cf064bac-9a9f-41c5-9e1d-108ff7af3afe
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba35cd678d88389854ca2e866020ea3a9364c923
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6966d0ad2fefd8401b19d8e8dcf7776799a066b2
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777663"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432562"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent – metoda
-Vytvoří definici pro události s podpisem Zadaná metadata a získá token pro tuto definici událostí.  
+Creates a definition for an event with the specified metadata signature, and gets a token to that event definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,40 +43,40 @@ HRESULT DefineEvent (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] Token pro cílovou třídu nebo rozhraní. Je to `mdTypeDef` nebo `mdTypeDefNil` token.  
+ [in] The token for the target class or interface. This is either a `mdTypeDef` or `mdTypeDefNil` token.  
   
  `szEvent`  
- [in] Název události.  
+ [in] The name of the event.  
   
  `dwEventFlags`  
- [in] Příznaky událostí.  
+ [in] Event flags.  
   
  `tkEventType`  
- [in] Token pro třídy události. Jde `mdTypeDef`, `mdTypeRef`, nebo `mdTokenNil` token.  
+ [in] The token for the event class. This is a `mdTypeDef`, a `mdTypeRef`, or a `mdTokenNil` token.  
   
  `mdAddOn`  
- [in] Metoda použitá k přihlášení k odběru událostí, nebo hodnotu null.  
+ [in] The method used to subscribe to the event, or null.  
   
  `mdRemoveOn`  
- [in] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.  
+ [in] The method used to unsubscribe to the event, or null.  
   
  `mdFire`  
- [in] Metoda použitá pro vyvolání události (prostřednictvím odvozené třídy).  
+ [in] The method used (by a derived class) to raise the event.  
   
  `rmdOtherMethods[]`  
- [in] Pole tokenů pro jiné metody přidružené k události. Pole je přerušen skrze `mdMethodDefNil` token.  
+ [in] An array of tokens for other methods associated with the event. The array is terminated with a `mdMethodDefNil` token.  
   
  `pmdEvent`  
- [out] Token metadat přiřazený k této události.  
+ [out] The metadata token assigned to the event.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

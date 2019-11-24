@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 64202baf-be6b-40ba-8162-8cc6c0c9b8e1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f07685351425a4685ac4a0c8e1b8e3c198b14187
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63ba108bc234e566450bb019afc63acb4e75ad1f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777299"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427980"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints – metoda
-Definuje skupinu pořadí bodů v aktuální metodě. Každé počáteční řádek a počáteční sloupec definovat spuštění příkazu v rámci metody. Každý ukončení řádku a poslední sloupec definovat konec příkazu v rámci metody. Tato pole mají být řazeny ve vzestupném pořadí podle posunů. Posun je vždy prováděno od samého začátku metody v bajtech.  
+Defines a group of sequence points within the current method. Each starting line and starting column define the start of a statement within a method. Each ending line and ending column define the end of a statement within a method. The arrays should be sorted in increasing order of offsets. The offset is always measured from the start of the method, in bytes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT DefineSequencePoints(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] Objekt dokumentu, pro které jsou definovány body sekvence.  
+ [in] The document object for which the sequence points are being defined.  
   
  `spCount`  
- [in] A `ULONG32` , který označuje velikost jednotlivých `offsets`, `lines`, `columns`, `endLines`, a `endColumns` vyrovnávací paměti.  
+ [in] A `ULONG32` that indicates the size of each of the `offsets`, `lines`, `columns`, `endLines`, and `endColumns` buffers.  
   
  `offsets`  
- [in] Posun body sekvence měřená od začátku metody.  
+ [in] The offset of the sequence points measured from the beginning of the method.  
   
  `lines`  
- [in] Počáteční řádek čísla body sekvence.  
+ [in] The starting line numbers of the sequence points.  
   
  `columns`  
- [in] Počáteční sloupec čísla body sekvence.  
+ [in] The starting column numbers of the sequence points.  
   
  `endLines`  
- [in] Koncového čísla řádku body sekvence. Tento parametr je volitelný.  
+ [in] The ending line numbers of the sequence points. Tento parametr je volitelný.  
   
  `endColumns`  
- [in] Koncového čísla sloupce body sekvence. Tento parametr je volitelný.  
+ [in] The ending column numbers of the sequence points. Tento parametr je volitelný.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

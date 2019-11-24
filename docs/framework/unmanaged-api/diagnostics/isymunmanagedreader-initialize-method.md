@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: 8f0dd2fe-7df7-464e-91f4-5518c586bb5f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f2dceeb2f0b3aa9f3147157e77087dffbf2d5f85
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca34d1d84d6f9960d021c35566f8412df321464d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939013"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429746"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize – metoda
-Inicializuje čtečku symbolů pomocí rozhraní pro import metadat, ke kterému bude tento čtenář přidružen, společně s názvem souboru modulu.  
+Initializes the symbol reader with the metadata importer interface that this reader will be associated with, along with the file name of the module.  
   
 > [!NOTE]
-> Tuto metodu lze volat pouze jednou a je třeba ji volat před všemi jinými metodami čtenáře.  
+> This method can be called only once, and must be called before any other reader methods.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,25 +40,25 @@ HRESULT Initialize (
   
 ## <a name="parameters"></a>Parametry  
  `importer`  
- pro Rozhraní pro import metadat, ke kterému se bude tento čtenář přidružit.  
+ [in] The metadata importer interface with which this reader will be associated.  
   
  `filename`  
- pro Název souboru modulu. Místo toho můžete použít `pIStream` parametr.  
+ [in] The file name of the module. You can use the `pIStream` parameter instead.  
   
  `searchPath`  
- pro Cesta, která se má vyhledat Tento parametr je volitelný.  
+ [in] The path to search. Tento parametr je volitelný.  
   
  `pIStream`  
- pro Datový proud souboru, který se používá jako alternativa k parametru filename.  
+ [in] The file stream, used as an alternative to the filename parameter.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="remarks"></a>Poznámky  
- Je nutné zadat pouze jeden z `filename` `pIStream` parametrů nebo, nikoli obojí. `searchPath` Parametr je nepovinný.  
+ You need to specify only one of the `filename` or the `pIStream` parameters, not both. The `searchPath` parameter is optional.  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlaviček** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

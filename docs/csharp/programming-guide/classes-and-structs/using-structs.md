@@ -1,40 +1,40 @@
 ---
-title: Používání struktur – C# Průvodce programováním
+title: Using Structs - C# Programming Guide
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 8b2810af81a57cf21b9a2e2438f7f6aa2cb7a669
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 491ee0224ffa39262992f7f42d20e5f97560b73f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772076"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429496"
 ---
-# <a name="using-structs-c-programming-guide"></a>Používání struktur (C# Průvodce programováním)
+# <a name="using-structs-c-programming-guide"></a>Using structs (C# Programming Guide)
 
-`struct` typ je vhodný pro reprezentaci lehkých objektů, jako jsou `Point`, `Rectangle`a `Color`. I když je to tak pohodlné, aby představovala bod jako [třídu](../../language-reference/keywords/class.md) s [automaticky implementovanými vlastnostmi](./auto-implemented-properties.md), [Struktura](../../language-reference/keywords/struct.md) může být v některých scénářích efektivnější. Například pokud deklarujete pole 1000 `Point` objektů, přidělíte další paměť pro odkazování na jednotlivé objekty; v takovém případě by struktura byla levnější. Protože .NET Framework obsahuje objekt s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu je pojmenována `Coords` místo toho.
+The `struct` type is suitable for representing lightweight objects such as `Point`, `Rectangle`, and `Color`. Although it is just as convenient to represent a point as a [class](../../language-reference/keywords/class.md) with [Auto-Implemented Properties](./auto-implemented-properties.md), a [struct](../../language-reference/keywords/struct.md) might be more efficient in some scenarios. For example, if you declare an array of 1000 `Point` objects, you will allocate additional memory for referencing each object; in this case, a struct would be less expensive. Because .NET already contains an object called <xref:System.Drawing.Point>, the struct in this example is named `Coords` instead.
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
-Pro definování konstruktoru bez parametrů pro strukturu se jedná o chybu. Je také chyba při inicializaci pole instance v těle struktury. Členy struktury s externě přístupnými lze inicializovat pouze pomocí parametrizovaného konstruktoru, implicitního konstruktoru bez parametrů, [inicializátoru objektu](object-and-collection-initializers.md)nebo přístupem k členům jednotlivě po deklaraci struktury. Všichni privátní nebo jinak nepřístupní členové vyžadují použití konstruktorů výhradně.
+It is an error to define a parameterless constructor for a struct. It is also an error to initialize an instance field in a struct body. You can initialize externally accessible struct members only by using a parameterized constructor, the implicit, parameterless constructor, an [object initializer](object-and-collection-initializers.md), or by accessing the members individually after the struct is declared. Any private or otherwise inaccessible members require the use of constructors exclusively.
 
-Když vytvoříte objekt struktury pomocí operátoru [New](../../language-reference/operators/new-operator.md) , vytvoří se a příslušný konstruktor se zavolá podle [signatury konstruktoru](constructors.md#constructor-syntax). Na rozdíl od tříd lze vytvořit instanci struktur bez použití operátoru `new`. V takovém případě neexistuje žádné volání konstruktoru, což zajistí efektivnější přidělení. Pole však zůstanou Nepřiřazeno a objekt nelze použít, dokud nebudou všechna pole inicializována. To zahrnuje neschopnost získat nebo nastavit hodnoty prostřednictvím vlastností.
+When you create a struct object using the [new](../../language-reference/operators/new-operator.md) operator, it gets created and the appropriate constructor is called according to the [constructor's signature](constructors.md#constructor-syntax). Unlike classes, structs can be instantiated without using the `new` operator. In such a case, there is no constructor call, which makes the allocation more efficient. However, the fields will remain unassigned and the object cannot be used until all of the fields are initialized. This includes the inability to get or set values through properties.
 
-Pokud vytváříte instanci objektu struct pomocí konstruktoru bez parametrů, jsou všichni členové přiřazeni podle jejich [výchozích hodnot](../../language-reference/keywords/default-values-table.md).
+If you instantiate a struct object using the parameterless constructor, all members are assigned according to their [default values](../../language-reference/keywords/default-values-table.md).
 
-Při psaní konstruktoru s parametry pro strukturu musíte explicitně inicializovat všechny členy; jinak jeden nebo více členů zůstává Nepřiřazeno a strukturu nelze použít, což vyprodukuje chybu kompilátoru [CS0171](../../misc/cs0171.md).
+When writing a constructor with parameters for a struct, you must explicitly initialize all members; otherwise one or more members remain unassigned and the struct cannot be used, producing compiler error [CS0171](../../misc/cs0171.md).
 
-Pro struktury neexistuje žádná dědičnost, protože pro třídy existují třídy. Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Struktury však dědí ze základní třídy <xref:System.Object>. Struktura může implementovat rozhraní a funguje stejně jako třídy.
+There is no inheritance for structs as there is for classes. A struct cannot inherit from another struct or class, and it cannot be the base of a class. Structs, however, inherit from the base class <xref:System.Object>. A struct can implement interfaces, and it does that exactly as classes do.
 
-Třídu nelze deklarovat pomocí klíčového slova `struct`. V C#, třídy a struktury jsou sémanticky odlišné. Struktura je hodnotový typ, zatímco třída je odkazový typ. Další informace naleznete v tématu [typy hodnot](../../language-reference/keywords/value-types.md) a [typy odkazů](../../language-reference/keywords/reference-types.md).
+You cannot declare a class using the keyword `struct`. In C#, classes and structs are semantically different. A struct is a value type, while a class is a reference type. For more information, see [Value types](../../language-reference/keywords/value-types.md) and [Reference types](../../language-reference/keywords/reference-types.md).
 
-Pokud nepotřebujete sémantiku typu reference, malá třída může být efektivnějším způsobem zpracována systémem, pokud ji deklarujete jako strukturu.
+Unless you need reference-type semantics, a small class may be more efficiently handled by the system if you declare it as a struct instead.
 
 ## <a name="example-1"></a>Příklad 1
 
-Tento příklad ukazuje `struct` inicializaci pomocí parametrů bez parametrů a parametrizovaných konstruktorů.
+This example demonstrates `struct` initialization using both parameterless and parameterized constructors.
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
@@ -42,7 +42,7 @@ Tento příklad ukazuje `struct` inicializaci pomocí parametrů bez parametrů 
 
 ## <a name="example-2"></a>Příklad 2
 
-Tento příklad ukazuje funkci, která je jedinečná pro struktury. Vytvoří objekt CoOrds bez použití operátoru `new`. Pokud nahradíte slovo `struct` slovem `class`, program nebude zkompilován.
+This example demonstrates a feature that is unique to structs. It creates a Coords object without using the `new` operator. If you replace the word `struct` with the word `class`, the program will not compile.
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 

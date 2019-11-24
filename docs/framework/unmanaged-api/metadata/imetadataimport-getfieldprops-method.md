@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7b0e9b10-8cef-4ba6-8432-40bf63e65ab1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 574ac706a07e7fcd701ab04f923d5171bea6f64a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 462512fd2c2b33905b45bb67599b23b301fc71f7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782380"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437991"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps – metoda
-Získá metadata spojená s polem odkazuje zadaný FieldDef token.  
+Gets metadata associated with the field referenced by the specified FieldDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,46 +45,46 @@ HRESULT GetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [in] FieldDef token, který představuje získat související metadata pro pole.  
+ [in] A FieldDef token that represents the field to get associated metadata for.  
   
  `pClass`  
- [out] Ukazatel na token TypeDef, který představuje typ třídy, která patří pole.  
+ [out] A pointer to a TypeDef token that represents the type of the class that the field belongs to.  
   
  `szField`  
- [out] Název pole.  
+ [out] The name of the field.  
   
  `cchField`  
- [in] Velikost vyrovnávací paměti pro široké znaky *szField*.  
+ [in] The size in wide characters of the buffer for *szField*.  
   
  `pchField`  
- [out] Skutečná velikost vyrovnávací paměti pro vrácený.  
+ [out] The actual size of the returned buffer.  
   
  `pdwAttr`  
- [out] Příznaky spojené se pole metadat.  
+ [out] Flags associated with the field's metadata.  
   
  `ppvSigBlob`  
- [in] Ukazatel na hodnotu binární metadata popisující pole.  
+ [in] A pointer to the binary metadata value that describes the field.  
   
  `pcbSigBlob`  
- [out] Velikost v bajtech `ppvSigBlob`.  
+ [out] The size in bytes of `ppvSigBlob`.  
   
  `pdwCPlusTypeFlag`  
- [out] Příznak, který určuje typ hodnoty pole.  
+ [out] A flag that specifies the value type of the field.  
   
  `ppValue`  
- [out] Konstantní hodnota pro pole.  
+ [out] A constant value for the field.  
   
  `pcchValue`  
- [out] Velikost znaků z `ppValue`, nebo nula, pokud neexistuje žádný řetězec.  
+ [out] The size in chars of `ppValue`, or zero if no string exists.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

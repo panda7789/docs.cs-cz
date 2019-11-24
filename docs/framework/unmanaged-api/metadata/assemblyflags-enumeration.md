@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 40f9bd9e-16ec-447e-81b0-168c875e9866
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 502e7841f8c413aa48732bcea0b6c2178d70c061
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ffb5953c843a338b4548253457a0c3b1ca0c20f5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776444"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444297"
 ---
 # <a name="assemblyflags-enumeration"></a>AssemblyFlags – výčet
-Obsahuje hodnoty, které popisují funkce za běhu sestavení.  
+Contains values that describe run-time features of an assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,23 +40,23 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`afImplicitExportedTypes`|Určuje, že jsou definice exportovaný typ implicitní v souborech, které tvoří sestavení. V rozhraní .NET Framework verze 1.0 a 1.1 Tato hodnota je vždy považován za nastavit.|  
-|`afImplicitResources`|Určuje, že jsou definice prostředků implicitní v souborech, které tvoří sestavení. V rozhraní .NET Framework 1.0 a 1.1 Tato hodnota je vždy považován za nastavit.|  
-|`afNonSideBySideAppDomain`|Určuje, že sestavení nelze spustit s jinými verzemi, pokud běží ve stejné doméně aplikace.|  
-|`afNonSideBySideProcess`|Určuje, že sestavení nelze spustit s jinými verzemi, pokud jsou spuštěné v rámci stejného procesu.|  
-|`afNonSideBySideMachine`|Určuje, že sestavení nelze spustit s jinými verzemi, pokud jsou spuštěné na stejném počítači.|  
+|`afImplicitExportedTypes`|Specifies that exported type definitions are implicit within the files that comprise the assembly. In the .NET Framework versions 1.0 and 1.1, this value is always assumed to be set.|  
+|`afImplicitResources`|Specifies that resource definitions are implicit within the files that comprise the assembly. In the .NET Framework 1.0 and 1.1, this value is always assumed to be set.|  
+|`afNonSideBySideAppDomain`|Specifies that the assembly cannot execute with other versions if they are running in the same application domain.|  
+|`afNonSideBySideProcess`|Specifies that the assembly cannot execute with other versions if they are running in the same process.|  
+|`afNonSideBySideMachine`|Specifies that the assembly cannot execute with other versions if they are running on the same computer.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty mezi 0x0010 a 0x0070, včetně, se používají k popisu funkce kompatibility vedle sebe odkazovaného sestavení. Pokud nejsou nastavené žádné z těchto hodnot, sestavení je považován za kompatibilní vedle sebe.  
+ The values between 0x0010 and 0x0070, inclusive, are used to describe side-by-side compatibility features of the referenced assembly. If none of these values are set, the assembly is assumed to be side-by-side compatible.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MsCorEE.h  
+ **Header:** MsCorEE.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

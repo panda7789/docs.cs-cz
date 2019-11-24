@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9bede0ec-5fdf-42a2-b5b7-bee64056acb6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5786f24f6543d4d262dd8a6389132aba02f9aacc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1586184c91619994ba0dfc9d5dcc277c10f99cf
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779196"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436447"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
-Obsahuje hodnoty, které označují typ metadat.  
+Contains values that indicate type metadata.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -79,46 +77,46 @@ typedef enum CorTypeAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`tdVisibilityMask`|Používá pro informace o viditelnosti typu.|  
-|`tdNotPublic`|Určuje, že typ není v oboru veřejné.|  
-|`tdPublic`|Určuje, že typ je ve veřejné oboru.|  
-|`tdNestedPublic`|Určuje, že typ je vnořená s veřejnou viditelností.|  
-|`tdNestedPrivate`|Určuje, že typ je vnořená s privátní viditelnost.|  
-|`tdNestedFamily`|Určuje, že typ je vnořená prostřednictvím řady viditelnosti.|  
-|`tdNestedAssembly`|Určuje, že je vnořený typ se viditelností sestavení.|  
-|`tdNestedFamANDAssem`|Určuje, že typ je vnořená family a assembly je prozkoumat.|  
-|`tdNestedFamORAssem`|Určuje, že typ je vnořená family nebo assembly je prozkoumat.|  
-|`tdLayoutMask`|Získá informace o rozložení typu.|  
-|`tdAutoLayout`|Určuje, zda jsou automaticky rozloženy pole tohoto typu.|  
-|`tdSequentialLayout`|Určuje, že pole tohoto typu jsou rozloženy postupně.|  
-|`tdExplicitLayout`|Určuje, že rozložení tohoto pole je explicitně zadán.|  
-|`tdClassSemanticsMask`|Získá sémantické informace o typu.|  
-|`tdClass`|Určuje, že typ je třída.|  
-|`tdInterface`|Určuje, že je typem rozhraní.|  
-|`tdAbstract`|Určuje, že typ je abstraktní.|  
-|`tdSealed`|Určuje, že typ nelze rozšířit.|  
-|`tdSpecialName`|Určuje, že název třídy je speciální. Její název popisuje jak.|  
-|`tdImport`|Určuje, že typ je importovat.|  
-|`tdSerializable`|Určuje, že typ je serializovatelný.|  
-|`tdWindowsRuntime`|Určuje, že tento typ je typ Windows Runtime.|  
-|`tdStringFormatMask`|Získá informace o tom, jak jsou řetězce kódování a ve formátu.|  
-|`tdAnsiClass`|Určuje, že tento typ interpretuje LPTSTR jako ANSI.|  
-|`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.|  
-|`tdAutoClass`|Určuje, že tento typ interpretuje LPTSTR automaticky.|  
-|`tdCustomFormatClass`|Určuje, zda typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.|  
-|`tdCustomFormatMask`|Použijte tuto masku nestandardní kódování informace pro nativní zprostředkovatele komunikace s objekty. Význam hodnot tyto dva bity není zadána.|  
-|`tdBeforeFieldInit`|Určuje, že typ musí být inicializován před prvním pokusu o přístup ke statickému poli.|  
-|`tdForwarder`|Určuje, že typ je exportovali a předávání typů.|  
-|`tdReservedMask`|Tento příznak a příznaky níže se používá interně modulem common language runtime.|  
-|`tdRTSpecialName`|Určuje, že modul common language runtime by měla kontrolovat název kódování.|  
-|`tdHasSecurity`|Určuje, že má typ zabezpečení, které s ním spojená.|  
+|`tdVisibilityMask`|Used for type visibility information.|  
+|`tdNotPublic`|Specifies that the type is not in public scope.|  
+|`tdPublic`|Specifies that the type is in public scope.|  
+|`tdNestedPublic`|Specifies that the type is nested with public visibility.|  
+|`tdNestedPrivate`|Specifies that the type is nested with private visibility.|  
+|`tdNestedFamily`|Specifies that the type is nested with family visibility.|  
+|`tdNestedAssembly`|Specifies that the type is nested with assembly visibility.|  
+|`tdNestedFamANDAssem`|Specifies that the type is nested with family and assembly visibility.|  
+|`tdNestedFamORAssem`|Specifies that the type is nested with family or assembly visibility.|  
+|`tdLayoutMask`|Gets layout information for the type.|  
+|`tdAutoLayout`|Specifies that the fields of this type are laid out automatically.|  
+|`tdSequentialLayout`|Specifies that the fields of this type are laid out sequentially.|  
+|`tdExplicitLayout`|Specifies that field layout is supplied explicitly.|  
+|`tdClassSemanticsMask`|Gets semantic information about the type.|  
+|`tdClass`|Specifies that the type is a class.|  
+|`tdInterface`|Specifies that the type is an interface.|  
+|`tdAbstract`|Specifies that the type is abstract.|  
+|`tdSealed`|Specifies that the type cannot be extended.|  
+|`tdSpecialName`|Specifies that the class name is special. Its name describes how.|  
+|`tdImport`|Specifies that the type is imported.|  
+|`tdSerializable`|Specifies that the type is serializable.|  
+|`tdWindowsRuntime`|Specifies that this type is a Windows Runtime type.|  
+|`tdStringFormatMask`|Gets information about how strings are encoded and formatted.|  
+|`tdAnsiClass`|Specifies that this type interprets an LPTSTR as ANSI.|  
+|`tdUnicodeClass`|Specifies that this type interprets an LPTSTR as Unicode.|  
+|`tdAutoClass`|Specifies that this type interprets an LPTSTR automatically.|  
+|`tdCustomFormatClass`|Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.|  
+|`tdCustomFormatMask`|Use this mask to get non-standard encoding information for native interop. The meaning of the values of these two bits is unspecified.|  
+|`tdBeforeFieldInit`|Specifies that the type must be initialized before the first attempt to access a static field.|  
+|`tdForwarder`|Specifies that the type is exported, and a type forwarder.|  
+|`tdReservedMask`|This flag and the flags below are used internally by the common language runtime.|  
+|`tdRTSpecialName`|Specifies that the common language runtime should check the name encoding.|  
+|`tdHasSecurity`|Specifies that the type has security associated with it.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6eefb243-a281-41c1-bcdc-7e17513bc446
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c714915651d8660a739d8ee6518fc3814af4c08d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9a80336db4a5a8d7cfdebb7eb8d25bcb8f96e87c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782412"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437645"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps – metoda
-Získá hodnotu vlastní atribut zadaný svůj token metadat.  
+Gets the value of the custom attribute, given its metadata token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT GetCustomAttributeProps (
   
 ## <a name="parameters"></a>Parametry  
  `cv`  
- [in] Token metadat, který představuje vlastní atribut, který se má načíst.  
+ [in] A metadata token that represents the custom attribute to be retrieved.  
   
  `ptkObj`  
- [out, volitelné] Token metadat představující objekt, který upravuje vlastního atributu. Tato hodnota může být libovolný typ tokenu metadat s výjimkou `mdCustomAttribute`.  
+ [out, optional] A metadata token representing the object that the custom attribute modifies. This value can be any type of metadata token except `mdCustomAttribute`.  
   
  `ptkType`  
- [out, volitelné] `mdMethodDef` Nebo `mdMemberRef` představující token metadat <xref:System.Type> vrácené vlastního atributu.  
+ [out, optional] An `mdMethodDef` or `mdMemberRef` metadata token representing the <xref:System.Type> of the returned custom attribute.  
   
  `ppBlob`  
- [out, volitelné] Ukazatel na pole dat, která je hodnota vlastního atributu.  
+ [out, optional] A pointer to an array of data that is the value of the custom attribute.  
   
  `pcbSize`  
- [out, volitelné] Velikost v bajtech dat vrácených v *`ppBlob`.  
+ [out, optional] The size in bytes of the data returned in *`ppBlob`.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlastní atribut je uložena jako pole dat, formát, který je srozumitelné pro modul metadat.  
+ A custom attribute is stored as an array of data, the format which is understood by the metadata engine.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

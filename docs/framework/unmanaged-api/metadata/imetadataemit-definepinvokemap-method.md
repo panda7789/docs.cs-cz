@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 03abf921-5154-4070-88fa-10b7092901fb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c6421ca47c3439d94c1ae86caaf2198298872d53
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d4ea16a212ac5f0120d63510f07eaee69af739e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777517"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431484"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap – metoda
-Nastaví funkce PInvoke podpis metody odkazuje zadaný token.  
+Sets features of the PInvoke signature of the method referenced by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT DefinePinvokeMap (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] Token pro cílové metody.  
+ [in] The token for the target method.  
   
  `dwMappingFlags`  
- [in] Příznaky používá u PInvoke k proveďte mapování.  
+ [in] Flags used by PInvoke to do the mapping.  
   
  `szImportName`  
- [in] Název cíle metoda export ve nespravovaná knihovna DLL.  
+ [in] The name of the target export method in an unmanaged DLL.  
   
  `mrImportDLL`  
- [in] Token pro cíl nativní knihovnu DLL.  
+ [in] The token for the target native DLL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

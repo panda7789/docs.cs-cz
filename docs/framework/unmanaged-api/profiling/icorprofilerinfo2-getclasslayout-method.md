@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a3a36987-5666-4e2f-95b5-d0cb246502ec
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b5cec1022c9d4a2c96e4216aa09d4c0f7795b4f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 37400e3b69b3884e31479fd7cdfccb473408bfbf
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751825"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433389"
 ---
 # <a name="icorprofilerinfo2getclasslayout-method"></a>ICorProfilerInfo2::GetClassLayout – metoda
-Získá informace o rozvržení, v paměti, pole definovaná pomocí dané třídy. To znamená tato metoda načte posuny polí třídy.  
+Gets information about the layout, in memory, of the fields defined by the specified class. That is, this method gets the offsets of the class's fields.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,37 +38,37 @@ HRESULT GetClassLayout(
   
 ## <a name="parameters"></a>Parametry  
  `classID`  
- [in] ID třídy, pro kterou budou načteny rozložení.  
+ [in] The ID of the class for which the layout will be retrieved.  
   
  `rFieldOffset`  
- [out v] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) struktury, z nichž každý obsahuje tokeny a posuny polí třídy.  
+ [in, out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which contains the tokens and offsets of the class's fields.  
   
  `cFieldOffset`  
- [in] Velikost `rFieldOffset` pole.  
+ [in] The size of the `rFieldOffset` array.  
   
  `pcFieldOffset`  
- [out] Ukazatel na celkový počet elementů k dispozici. Pokud `cFieldOffset` je 0, tato hodnota označuje počet prvků, které jsou potřeba.  
+ [out] A pointer to the total number of available elements. If `cFieldOffset` is 0, this value indicates the number of elements needed.  
   
  `pulClassSize`  
- [out] Ukazatel na umístění, které obsahuje velikost v bajtech třídy.  
+ [out] A pointer to a location that contains the size, in bytes, of the class.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetClassLayout` Metoda vrátí pouze pole definovaná pomocí vlastní třídy. Pokud nadřazená třída třídy definoval také pole, musí volat profiler `GetClassLayout` na nadřazené třídu k získání těchto polí.  
+ The `GetClassLayout` method returns only the fields defined by the class itself. If the class's parent class has defined fields as well, the profiler must call `GetClassLayout` on the parent class to obtain those fields.  
   
- Pokud používáte `GetClassLayout` s třídami řetězce, metoda selže s kódem chyby E_INVALIDARG. Použití [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) a získat informace o rozložení řetězce. `GetClassLayout` také selže při volání s třídou pole.  
+ If you use `GetClassLayout` with string classes, the method will fail with error code E_INVALIDARG. Use [ICorProfilerInfo2::GetStringLayout](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) to get information about the layout of a string. `GetClassLayout` will also fail when called with an array class.  
   
- Po `GetClassLayout` vrátí, musíte ověřit, že `rFieldOffset` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny dostupné `COR_FIELD_OFFSET` struktury. K tomuto účelu porovnat hodnoty, které `pcFieldOffset` odkazuje na s velikostí `rFieldOffset` rozdělené podle velikosti `COR_FIELD_OFFSET` struktury. Pokud `rFieldOffset` není velký, přidělte větší `rFieldOffset` vyrovnávací paměti, aktualizujte `cFieldOffset` nové, větší velikosti a volání `GetClassLayout` znovu.  
+ After `GetClassLayout` returns, you must verify that the `rFieldOffset` buffer was large enough to contain all the available `COR_FIELD_OFFSET` structures. To do this, compare the value that `pcFieldOffset` points to with the size of `rFieldOffset` divided by the size of a `COR_FIELD_OFFSET` structure. If `rFieldOffset` is not large enough, allocate a larger `rFieldOffset` buffer, update `cFieldOffset` with the new, larger size, and call `GetClassLayout` again.  
   
- Alternativně můžete nejprve volat `GetClassLayout` s nulovou délkou `rFieldOffset` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcFieldOffset` a volat `GetClassLayout` znovu.  
+ Alternatively, you can first call `GetClassLayout` with a zero-length `rFieldOffset` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcFieldOffset` and call `GetClassLayout` again.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

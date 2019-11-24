@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d5b82415635980f5bd4e13e87a0a03ec5b7032bb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc1b65de026a674a3dff183050a5a205fd7052c9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777323"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428005"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter – metoda
-Definuje jeden parametr v aktuální metodě. Typ parametru je převzata z pozice parametru (pořadí) v podpisu metody.  
+Defines a single parameter in the current method. The parameter type is taken from the parameter's position (sequence) within the method's signature.  
   
- Pokud parametry jsou definované v metadatech pro dané metody, není nutné znovu definovat pomocí této metody. Čtenáři symbolu, musíte zaškrtnout běžná metadata pro parametry před vrácením se změnami úložiště symbolů.  
+ If parameters are defined in the metadata for a given method, you do not have to define them again by using this method. The symbol readers must check the normal metadata for the parameters before checking the symbol store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,31 +42,31 @@ HRESULT DefineParameter(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] Název parametru.  
+ [in] The parameter name.  
   
  `attributes`  
- [in] Atributy parametru.  
+ [in] The parameter attributes.  
   
  `sequence`  
- [in] Podpis parametru.  
+ [in] The parameter signature.  
   
  `addrKind`  
- [in] Typ adresy.  
+ [in] The address type.  
   
  `addr1`  
- [in] První adresa pro specifikaci parametru.  
+ [in] The first address for the parameter specification.  
   
  `addr2`  
- [in] Druhý adresa pro specifikaci parametru.  
+ [in] The second address for the parameter specification.  
   
  `addr3`  
- [in] Je třetí adresa pro specifikaci parametru.  
+ [in] The third address for the parameter specification.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

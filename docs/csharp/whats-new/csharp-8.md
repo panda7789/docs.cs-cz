@@ -1,46 +1,48 @@
 ---
-title: Co je nového v C# 8,0 – C# příručka
-description: Získejte přehled o nových funkcích dostupných v C# 8,0.
+title: What's new in C# 8.0 - C# Guide
+description: Get an overview of the new features available in C# 8.0.
 ms.date: 09/20/2019
-ms.openlocfilehash: e6a2357f4405b4eb31b12a1e3faa6896a31c21a1
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 540b95beaf00c17812a3b602602504278be69b0e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960821"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429386"
 ---
-# <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
+# <a name="whats-new-in-c-80"></a>What's new in C# 8.0
 
-C#8,0 přidává následující funkce a vylepšení C# jazyka:
+C# 8.0 adds the following features and enhancements to the C# language:
 
-- [Členové jen pro čtení](#readonly-members)
-- [Výchozí metody rozhraní](#default-interface-methods)
-- [Vylepšení porovnávání vzorů](#more-patterns-in-more-places):
-  - [Výrazy Switch](#switch-expressions)
-  - [Vzory vlastností](#property-patterns)
-  - [Vzory řazené kolekce členů](#tuple-patterns)
-  - [Poziční vzory](#positional-patterns)
-- [Používání deklarací](#using-declarations)
-- [Statické místní funkce](#static-local-functions)
-- [Struktury odkazů na jedno použití](#disposable-ref-structs)
+- [Readonly members](#readonly-members)
+- [Default interface methods](#default-interface-methods)
+- [Pattern matching enhancements](#more-patterns-in-more-places):
+  - [Switch expressions](#switch-expressions)
+  - [Property patterns](#property-patterns)
+  - [Tuple patterns](#tuple-patterns)
+  - [Positional patterns](#positional-patterns)
+- [Using declarations](#using-declarations)
+- [Static local functions](#static-local-functions)
+- [Disposable ref structs](#disposable-ref-structs)
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
-- [Asynchronní proudy](#asynchronous-streams)
-- [Indexy a rozsahy](#indices-and-ranges)
-- [Přiřazení slučování s hodnotou null](#null-coalescing-assignment)
-- [Nespravované konstruované typy](#unmanaged-constructed-types)
-- [Stackalloc ve vnořených výrazech](#stackalloc-in-nested-expressions)
-- [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
+- [Asynchronous streams](#asynchronous-streams)
+- [Indices and ranges](#indices-and-ranges)
+- [Null-coalescing assignment](#null-coalescing-assignment)
+- [Unmanaged constructed types](#unmanaged-constructed-types)
+- [Stackalloc in nested expressions](#stackalloc-in-nested-expressions)
+- [Enhancement of interpolated verbatim strings](#enhancement-of-interpolated-verbatim-strings)
 
-Zbývající část tohoto článku stručně popisuje tyto funkce. Kde jsou k dispozici podrobné články, jsou uvedeny odkazy na tyto kurzy a přehledy. Pomocí globálního nástroje `dotnet try` můžete prozkoumat tyto funkce ve vašem prostředí:
+C# 8.0 is supported on **.NET Core 3.x** and **.NET Standard 2.1**. For more information, see [C# language versioning](../language-reference/configure-language-version.md).
 
-1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
-1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
-1. Nastavte aktuální adresář do podadresáře *csharp8* pro úložiště *Try-Samples* .
-1. Spusťte `dotnet try`.
+The remainder of this article briefly describes these features. Where in-depth articles are available, links to those tutorials and overviews are provided. You can explore these features in your environment using the `dotnet try` global tool:
 
-## <a name="readonly-members"></a>Členové jen pro čtení
+1. Install the [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) global tool.
+1. Clone the [dotnet/try-samples](https://github.com/dotnet/try-samples) repository.
+1. Set the current directory to the *csharp8* subdirectory for the *try-samples* repository.
+1. Run `dotnet try`.
 
-Modifikátor `readonly` lze použít pro členy struktury. Indikuje, že člen nemění stav. Je lépe podrobnější než použití modifikátoru `readonly` u deklarace `struct`.  Vezměte v úvahu následující proměnlivou strukturu:
+## <a name="readonly-members"></a>Readonly members
+
+You can apply the `readonly` modifier to members of a struct. It indicates that the member doesn't modify state. It's more granular than applying the `readonly` modifier to a `struct` declaration.  Consider the following mutable struct:
 
 ```csharp
 public struct Point
@@ -54,28 +56,28 @@ public struct Point
 }
 ```
 
-Podobně jako u většiny struktur `ToString()` metoda nemění stav. Můžete určit, že přidáním modifikátoru `readonly` do deklarace `ToString()`:
+Like most structs, the `ToString()` method doesn't modify state. You could indicate that by adding the `readonly` modifier to the declaration of `ToString()`:
 
 ```csharp
 public readonly override string ToString() =>
     $"({X}, {Y}) is {Distance} from the origin";
 ```
 
-Předchozí změna vygeneruje upozornění kompilátoru, protože `ToString` přistupuje k vlastnosti `Distance`, která není označena `readonly`:
+The preceding change generates a compiler warning, because `ToString` accesses the `Distance` property, which isn't marked `readonly`:
 
 ```console
 warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonly' member results in an implicit copy of 'this'
 ```
 
-Kompilátor vás upozorní, když potřebuje vytvořit obrannou linií kopii.  Vlastnost `Distance` nemění stav, takže můžete toto upozornění opravit přidáním modifikátoru `readonly` k deklaraci:
+The compiler warns you when it needs to create a defensive copy.  The `Distance` property doesn't change state, so you can fix this warning by adding the `readonly` modifier to the declaration:
 
 ```csharp
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Všimněte si, že modifikátor `readonly` je nezbytný pro vlastnost, která je jen pro čtení. Kompilátor nepředpokládá, `get` přistupující objekty nemění stav; je nutné deklarovat `readonly` explicitně. Automaticky implementované vlastnosti představují výjimku. Kompilátor bude považovat všechny automaticky implementované metody getter jako jen pro čtení, takže tady není nutné přidávat modifikátor `readonly` do vlastností `X` a `Y`.
+Notice that the `readonly` modifier is necessary on a read-only property. The compiler doesn't assume `get` accessors don't modify state; you must declare `readonly` explicitly. Auto-implemented properties are an exception; the compiler will treat all auto-implemented getters as readonly, so here there's no need to add the `readonly` modifier to the `X` and `Y` properties.
 
-Kompilátor vynutil pravidlo, které `readonly` členové nemění stav. Následující metoda nebude zkompilována, dokud neodeberete modifikátor `readonly`:
+The compiler does enforce the rule that `readonly` members don't modify state. The following method won't compile unless you remove the `readonly` modifier:
 
 ```csharp
 public readonly void Translate(int xOffset, int yOffset)
@@ -85,25 +87,25 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit a na základě tohoto záměru provádět optimalizace. Další informace o členech jen pro čtení najdete v článku referenční informace k jazyku o [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
+This feature lets you specify your design intent so the compiler can enforce it, and make optimizations based on that intent. You can learn more about readonly members in the language reference article on [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
 
 ## <a name="default-interface-methods"></a>Výchozí metody rozhraní
 
-Nyní můžete přidat členy do rozhraní a poskytnout implementaci pro tyto členy. Tato funkce jazyka umožňuje autorům rozhraní API přidávat metody do rozhraní v pozdějších verzích bez narušení zdrojové nebo binární kompatibility se stávajícími implementacemi tohoto rozhraní. Stávající implementace *dědí* výchozí implementaci. Tato funkce také umožňuje C# vzájemnou spolupráci s rozhraními API, která cílí na Android nebo SWIFT, což podporuje podobné funkce. Výchozí metody rozhraní také umožňují scénáře podobně jako funkce jazyka "vlastnosti".
+You can now add members to interfaces and provide an implementation for those members. This language feature enables API authors to add methods to an interface in later versions without breaking source or binary compatibility with existing implementations of that interface. Existing implementations *inherit* the default implementation. This feature also enables C# to interoperate with APIs that target Android or Swift, which support similar features. Default interface methods also enable scenarios similar to a "traits" language feature.
 
-Výchozí metody rozhraní ovlivňují mnoho scénářů a prvků jazyka. Náš první kurz popisuje [aktualizaci rozhraní s výchozími implementacemi](../tutorials/default-interface-methods-versions.md). Další kurzy a referenční aktualizace jsou k disčase pro obecné vydání.
+Default interface methods affects many scenarios and language elements. Our first tutorial covers [updating an interface with default implementations](../tutorials/default-interface-methods-versions.md). Other tutorials and reference updates are coming in time for general release.
 
-## <a name="more-patterns-in-more-places"></a>Další vzory na více místech
+## <a name="more-patterns-in-more-places"></a>More patterns in more places
 
-**Porovnávání vzorů** poskytuje nástrojům poskytování funkcionality závislé na tvaru v rámci souvisejících, ale různých druhů dat. C#7,0 představil Syntax pro vzory typů a konstantní vzorce pomocí výrazu [`is`](../language-reference/keywords/is.md) a příkazu [`switch`](../language-reference/keywords/switch.md) . Tyto funkce představovaly první nezávazné kroky směrem k podpoře programovacích paradigmat, ve kterých jsou data a funkce živě oddělené. Vzhledem k tomu, že se odvětví pohybuje k většímu mikroslužbám a dalším cloudovým architekturám, jsou potřeba jiné jazykové nástroje.
+**Pattern matching** gives tools to provide shape-dependent functionality across related but different kinds of data. C# 7.0 introduced syntax for type patterns and constant patterns by using the [`is`](../language-reference/keywords/is.md) expression and the [`switch`](../language-reference/keywords/switch.md) statement. These features represented the first tentative steps toward supporting programming paradigms where data and functionality live apart. As the industry moves toward more microservices and other cloud-based architectures, other language tools are needed.
 
-C#8,0 rozšíří tento slovník, takže můžete použít více výrazů vzoru ve více místech kódu. Tyto funkce zvažte, když jsou vaše data a funkce oddělené. Zvažte porovnávání vzorů, pokud jsou algoritmy závislé na jiném faktě, než je typ modulu runtime objektu. Tyto techniky poskytují jiný způsob, jak vyjádřit návrhy.
+C# 8.0 expands this vocabulary so you can use more pattern expressions in more places in your code. Consider these features when your data and functionality are separate. Consider pattern matching when your algorithms depend on a fact other than the runtime type of an object. These techniques provide another way to express designs.
 
-Kromě nových vzorů na nových místech C# 8,0 přidává **rekurzivní vzory**. Výsledek jakéhokoli výrazu vzoru je výraz. Rekurzivní vzorek je pouze výraz vzoru aplikovaný na výstup jiného výrazu vzoru.
+In addition to new patterns in new places, C# 8.0 adds **recursive patterns**. The result of any pattern expression is an expression. A recursive pattern is simply a pattern expression applied to the output of another pattern expression.
 
-### <a name="switch-expressions"></a>výrazy Switch
+### <a name="switch-expressions"></a>Switch expressions
 
-V každém z jeho bloků `case` se často příkaz [`switch`](../language-reference/keywords/switch.md) vytváří jako hodnota. **Výrazy Switch** umožňují použít stručnější syntaxi výrazů. K dispozici je méně opakujících se `case` a `break` klíčových slov a méně složených závorek.  Podívejte se například na následující výčet, který obsahuje seznam barev duha:
+Often, a [`switch`](../language-reference/keywords/switch.md) statement produces a value in each of its `case` blocks. **Switch expressions** enable you to use more concise expression syntax. There are fewer repetitive `case` and `break` keywords, and fewer curly braces.  As an example, consider the following enum that lists the colors of the rainbow:
 
 ```csharp
 public enum Rainbow
@@ -118,7 +120,7 @@ public enum Rainbow
 }
 ```
 
-Pokud vaše aplikace definovala typ `RGBColor`, který je vytvořen z komponent `R`, `G` a `B`, můžete převést hodnotu `Rainbow` na hodnoty RGB pomocí následující metody, která obsahuje výraz Switch:
+If your application defined an `RGBColor` type that is constructed from the `R`, `G` and `B` components, you could convert a `Rainbow` value to its RGB values using the following method containing a switch expression:
 
 ```csharp
 public static RGBColor FromRainbow(Rainbow colorBand) =>
@@ -135,14 +137,14 @@ public static RGBColor FromRainbow(Rainbow colorBand) =>
     };
 ```
 
-Tady je několik vylepšení syntaxe:
+There are several syntax improvements here:
 
-- Proměnná se nachází před klíčovým slovem `switch`. V jiném pořadí je vizuálně snadné odlišit výraz přepínače od příkazu switch.
-- Prvky `case` a `:` jsou nahrazeny `=>`. Je výstižnější a intuitivní.
-- `default` případ se nahradí `_` zahození.
-- Tělo jsou výrazy, nikoli příkazy.
+- The variable comes before the `switch` keyword. The different order makes it visually easy to distinguish the switch expression from the switch statement.
+- The `case` and `:` elements are replaced with `=>`. It's more concise and intuitive.
+- The `default` case is replaced with a `_` discard.
+- The bodies are expressions, not statements.
 
-Kontrast s ekvivalentním kódem pomocí příkazu Classic `switch`:
+Contrast that with the equivalent code using the classic `switch` statement:
 
 ```csharp
 public static RGBColor FromRainbowClassic(Rainbow colorBand)
@@ -169,9 +171,9 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 }
 ```
 
-### <a name="property-patterns"></a>Vzory vlastností
+### <a name="property-patterns"></a>Property patterns
 
-**Vzor vlastnosti** umožňuje porovnávat vlastnosti objektu, který je zkontrolován. Vezměte v úvahu web elektronického obchodování, který musí počítat DPH na základě adresy kupujícího. Tento výpočet není základní zodpovědností `Address` třídy. Změní se v průběhu času, nejspíš častěji než změny formátu adresy. Objem DPH závisí na vlastnosti `State` adresy. Následující metoda používá vzorek vlastností k výpočtu DPH z adresy a ceny:
+The **property pattern** enables you to match on properties of the object examined. Consider an eCommerce site that must compute sales tax based on the buyer's address. That computation isn't a core responsibility of an `Address` class. It will change over time, likely more often than address format changes. The amount of sales tax depends on the `State` property of the address. The following method uses the property pattern to compute the sales tax from the address and the price:
 
 ```csharp
 public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
@@ -185,11 +187,11 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
     };
 ```
 
-Porovnávání vzorů vytvoří stručnou syntaxi pro vyjádření tohoto algoritmu.
+Pattern matching creates a concise syntax for expressing this algorithm.
 
-### <a name="tuple-patterns"></a>Vzory řazené kolekce členů
+### <a name="tuple-patterns"></a>Tuple patterns
 
-Některé algoritmy závisí na více vstupech. **Vzorce řazené kolekce členů** umožňují přepínat na základě více hodnot vyjádřených jako [řazené kolekce členů](../tuples.md).  Následující kód ukazuje výraz přepínače pro herní *rock, papír, nůžky*:
+Some algorithms depend on multiple inputs. **Tuple patterns** allow you to switch based on multiple values expressed as a [tuple](../tuples.md).  The following code shows a switch expression for the game *rock, paper, scissors*:
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -205,11 +207,11 @@ public static string RockPaperScissors(string first, string second)
     };
 ```
 
-Zprávy indikují vítěze. Případ zahození představuje tři kombinace pro vazby nebo jiné textové vstupy.
+The messages indicate the winner. The discard case represents the three combinations for ties, or other text inputs.
 
-### <a name="positional-patterns"></a>Poziční vzory
+### <a name="positional-patterns"></a>Positional patterns
 
-Některé typy zahrnují metodu `Deconstruct`, která dekonstruuje své vlastnosti do diskrétních proměnných. Pokud je k dispozici metoda `Deconstruct`, můžete použít **poziční vzory** pro kontrolu vlastností objektu a použít tyto vlastnosti pro vzor.  Vezměte v úvahu následující třídu `Point`, která obsahuje metodu `Deconstruct` pro vytváření diskrétních proměnných pro `X` a `Y`:
+Some types include a `Deconstruct` method that deconstructs its properties into discrete variables. When a `Deconstruct` method is accessible, you can use **positional patterns** to inspect properties of the object and use those properties for a pattern.  Consider the following `Point` class that includes a `Deconstruct` method to create discrete variables for `X` and `Y`:
 
 ```csharp
 public class Point
@@ -224,7 +226,7 @@ public class Point
 }
 ```
 
-Navíc zvažte následující výčet, který představuje různé pozice kvadrantu:
+Additionally, consider the following enum that represents various positions of a quadrant:
 
 ```csharp
 public enum Quadrant
@@ -239,7 +241,7 @@ public enum Quadrant
 }
 ```
 
-Následující metoda používá **poziční vzorek** k extrakci hodnot `x` a `y`. Pak pomocí klauzule `when` určíte `Quadrant` bodu:
+The following method uses the **positional pattern** to extract the values of `x` and `y`. Then, it uses a `when` clause to determine the `Quadrant` of the point:
 
 ```csharp
 static Quadrant GetQuadrant(Point point) => point switch
@@ -254,13 +256,13 @@ static Quadrant GetQuadrant(Point point) => point switch
 };
 ```
 
-Vzor zahození v předchozím přepínači odpovídá, pokud buď `x` nebo `y` je 0, ale ne obojí. Výraz přepínače musí buď vytvořit hodnotu, nebo vyvolat výjimku. Pokud žádný z případů neodpovídá, výraz přepínače vyvolá výjimku. Kompilátor vygeneruje upozornění, pokud nepokrýváte všechny možné případy ve výrazu přepínače.
+The discard pattern in the preceding switch matches when either `x` or `y` is 0, but not both. A switch expression must either produce a value or throw an exception. If none of the cases match, the switch expression throws an exception. The compiler generates a warning for you if you don't cover all possible cases in your switch expression.
 
-Techniky porovnávání vzorů můžete prozkoumat v tomto [pokročilém kurzu o porovnávání vzorů](../tutorials/pattern-matching.md).
+You can explore pattern matching techniques in this [advanced tutorial on pattern matching](../tutorials/pattern-matching.md).
 
-## <a name="using-declarations"></a>používání deklarací
+## <a name="using-declarations"></a>Using declarations
 
-**Deklarace using** je deklarace proměnné před klíčovým slovem `using`. Dává kompilátoru pokyn, že proměnná, která má být deklarována, by měla být uvolněna na konci ohraničujícího oboru. Zvažte například následující kód, který zapisuje textový soubor:
+A **using declaration** is a variable declaration preceded by the `using` keyword. It tells the compiler that the variable being declared should be disposed at the end of the enclosing scope. For example, consider the following code that writes a text file:
 
 ```csharp
 static int WriteLinesToFile(IEnumerable<string> lines)
@@ -285,7 +287,7 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky pro metodu. To je konec oboru, ve kterém je deklarováno `file`. Předchozí kód je ekvivalentní následujícímu kódu, který používá [příkaz Classic using](../language-reference/keywords/using-statement.md):
+In the preceding example, the file is disposed when the closing brace for the method is reached. That's the end of the scope in which `file` is declared. The preceding code is equivalent to the following code that uses the classic [using statement](../language-reference/keywords/using-statement.md):
 
 ```csharp
 static int WriteLinesToFile(IEnumerable<string> lines)
@@ -311,15 +313,15 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-V předchozím příkladu je soubor uvolněn, pokud je dosažena pravá složená závorka přidružená k příkazu `using`.
+In the preceding example, the file is disposed when the closing brace associated with the `using` statement is reached.
 
-V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v příkazu `using` není jednorázově.
+In both cases, the compiler generates the call to `Dispose()`. The compiler generates an error if the expression in the `using` statement isn't disposable.
 
-## <a name="static-local-functions"></a>Statické místní funkce
+## <a name="static-local-functions"></a>Static local functions
 
-Nyní můžete přidat modifikátor `static` do místních funkcí, aby se zajistilo, že lokální funkce nebude zachytit (odkaz) jakékoli proměnné z nadřazeného oboru. Tím se vygeneruje `CS8421`. statická místní funkce nemůže obsahovat odkaz na \<variable >. 
+You can now add the `static` modifier to local functions to ensure that local function doesn't capture (reference) any variables from the enclosing scope. Doing so generates `CS8421`, "A static local function can't contain a reference to \<variable>." 
 
-Vezměte v úvahu následující kód. Místní funkce `LocalFunction` přistupuje k proměnné `y` deklarované v ohraničujícím oboru (metoda `M`). Proto `LocalFunction` nelze deklarovat pomocí modifikátoru `static`:
+Consider the following code. The local function `LocalFunction` accesses the variable `y`, declared in the enclosing scope (the method `M`). Therefore, `LocalFunction` can't be declared with the `static` modifier:
 
 ```csharp
 int M()
@@ -332,7 +334,7 @@ int M()
 }
 ```
 
-Následující kód obsahuje statickou místní funkci. Může být statický, protože nemá přístup k žádným proměnným v ohraničujícím oboru:
+The following code contains a static local function. It can be static because it doesn't access any variables in the enclosing scope:
 
 ```csharp
 int M()
@@ -345,29 +347,29 @@ int M()
 }
 ```
 
-## <a name="disposable-ref-structs"></a>Struktury odkazů na jedno použití
+## <a name="disposable-ref-structs"></a>Disposable ref structs
 
-`struct` deklarovaný s modifikátorem `ref` nesmí implementovat žádná rozhraní a proto nemohou implementovat <xref:System.IDisposable>. Proto aby bylo možné odstranit `ref struct`, musí mít přístupnou metodu `void Dispose()`. Tato funkce se vztahuje také na deklarace `readonly ref struct`.
+A `struct` declared with the `ref` modifier may not implement any interfaces and so can't implement <xref:System.IDisposable>. Therefore, to enable a `ref struct` to be disposed, it must have an accessible `void Dispose()` method. This feature also applies to `readonly ref struct` declarations.
 
 ## <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
-V kontextu anotace s možnou hodnotou null je jakákoli proměnná typu odkazu považována za **typ odkazu**, který není null. Pokud chcete označit, že proměnná může mít hodnotu null, je nutné připojit název typu s `?` pro deklaraci proměnné jako **typ odkazu s možnou hodnotou null**.
+Inside a nullable annotation context, any variable of a reference type is considered to be a **nonnullable reference type**. If you want to indicate that a variable may be null, you must append the type name with the `?` to declare the variable as a **nullable reference type**.
 
-Pro nehodnotový odkazový typ kompilátor používá analýzu toků k zajištění, že lokální proměnné jsou inicializovány na hodnotu, která není null, je-li deklarována. Pole musí být inicializována během konstrukce. Kompilátor vygeneruje upozornění, pokud proměnná není nastavena voláním žádné z dostupných konstruktorů nebo inicializátoru. Kromě toho nemůžete přiřadit typy odkazů, které mohou mít hodnotu null.
+For nonnullable reference types, the compiler uses flow analysis to ensure that local variables are initialized to a non-null value when declared. Fields must be initialized during construction. The compiler generates a warning if the variable isn't set by a call to any of the available constructors or by an initializer. Furthermore, nonnullable reference types can't be assigned a value that could be null.
 
-Typy odkazů s možnou hodnotou null nejsou kontrolovány, aby se zajistilo, že nejsou přiřazeny nebo inicializovány Kompilátor však používá analýzu toků k zajištění toho, aby byla jakákoli proměnná typu odkazu s možnou hodnotou null zkontrolována před tím, než bude k dispozici nebo přiřazena k neprázdnému typu odkazu.
+Nullable reference types aren't checked to ensure they aren't assigned or initialized to null. However, the compiler uses flow analysis to ensure that any variable of a nullable reference type is checked against null before it's accessed or assigned to a nonnullable reference type.
 
-Další informace o této funkci najdete v přehledu [typů odkazů s možnou hodnotou null](../nullable-references.md). Zkuste to sami v nové aplikaci v tomto [kurzu odkazové typy s možnou hodnotou null](../tutorials/nullable-reference-types.md). Přečtěte si o krocích k migraci existujícího základu kódu, aby bylo možné používat v [migraci aplikace na použití typů odkazů s možnou hodnotou null v kurzu](../tutorials/upgrade-to-nullable-references.md).
+You can learn more about the feature in the overview of [nullable reference types](../nullable-references.md). Try it yourself in a new application in this [nullable reference types tutorial](../tutorials/nullable-reference-types.md). Learn about the steps to migrate an existing codebase to make use of nullable reference types in the [migrating an application to use nullable reference types tutorial](../tutorials/upgrade-to-nullable-references.md).
 
-## <a name="asynchronous-streams"></a>Asynchronní proudy
+## <a name="asynchronous-streams"></a>Asynchronous streams
 
-Počínaje C# 8,0 můžete proudy vytvářet a spotřebovávat asynchronně. Metoda, která vrací asynchronní datový proud má tři vlastnosti:
+Starting with C# 8.0, you can create and consume streams asynchronously. A method that returns an asynchronous stream has three properties:
 
-1. Je deklarována s modifikátorem `async`.
-1. Vrátí <xref:System.Collections.Generic.IAsyncEnumerable%601>.
-1. Metoda obsahuje příkazy `yield return` pro vrácení po sobě jdoucích prvků v asynchronním datovém proudu.
+1. It's declared with the `async` modifier.
+1. It returns an <xref:System.Collections.Generic.IAsyncEnumerable%601>.
+1. The method contains `yield return` statements to return successive elements in the asynchronous stream.
 
-Spotřebovávání asynchronního datového proudu vyžaduje, abyste před klíčovým slovem `foreach` přidali klíčové slovo `await` při vytváření výčtu prvků streamu. Přidání klíčového slova `await` vyžaduje metodu, která vytvoří výčet asynchronního datového proudu, který má být deklarován pomocí modifikátoru `async` a vrátí typ povolený pro metodu `async`. Obvykle to znamená vrácení <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Může to být také <xref:System.Threading.Tasks.ValueTask> nebo <xref:System.Threading.Tasks.ValueTask%601>. Metoda může spotřebovávat a vytvořit asynchronní datový proud, což znamená, že by vrátilo <xref:System.Collections.Generic.IAsyncEnumerable%601>. Následující kód vygeneruje sekvenci od 0 do 19, čekání 100 MS mezi vygenerováním každého čísla:
+Consuming an asynchronous stream requires you to add the `await` keyword before the `foreach` keyword when you enumerate the elements of the stream. Adding the `await` keyword requires the method that enumerates the asynchronous stream to be declared with the `async` modifier and to return a type allowed for an `async` method. Typically that means returning a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>. It can also be a <xref:System.Threading.Tasks.ValueTask> or <xref:System.Threading.Tasks.ValueTask%601>. A method can both consume and produce an asynchronous stream, which means it would return an <xref:System.Collections.Generic.IAsyncEnumerable%601>. The following code generates a sequence from 0 to 19, waiting 100 ms between generating each number:
 
 ```csharp
 public static async System.Collections.Generic.IAsyncEnumerable<int> GenerateSequence()
@@ -380,7 +382,7 @@ public static async System.Collections.Generic.IAsyncEnumerable<int> GenerateSeq
 }
 ```
 
-Vyčíslení sekvence pomocí příkazu `await foreach`:
+You would enumerate the sequence using the `await foreach` statement:
 
 ```csharp
 await foreach (var number in GenerateSequence())
@@ -389,24 +391,24 @@ await foreach (var number in GenerateSequence())
 }
 ```
 
-Asynchronní streamy si můžete vyzkoušet sami v našem kurzu [vytváření a využívání asynchronních datových proudů](../tutorials/generate-consume-asynchronous-stream.md).
+You can try asynchronous streams yourself in our tutorial on [creating and consuming async streams](../tutorials/generate-consume-asynchronous-stream.md).
 
-## <a name="indices-and-ranges"></a>Indexy a rozsahy
+## <a name="indices-and-ranges"></a>Indices and ranges
 
-Indexy a rozsahy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům v sekvenci.
+Indices and ranges provide a succinct syntax for accessing single elements or ranges in a sequence.
 
-Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
+This language support relies on two new types, and two new operators:
 
-- <xref:System.Index?displayProperty=nameWithType> představuje index do sekvence.
-- Index z operátoru end `^`, který určuje, že index je relativní ke konci sekvence.
-- <xref:System.Range?displayProperty=nameWithType> představuje dílčí rozsah sekvence.
-- Operátor rozsahu `..`, který jako svůj operand Určuje začátek a konec rozsahu.
+- <xref:System.Index?displayProperty=nameWithType> represents an index into a sequence.
+- The index from end operator `^`, which specifies that an index is relative to the end of the sequence.
+- <xref:System.Range?displayProperty=nameWithType> represents a sub range of a sequence.
+- The range operator `..`, which specifies the start and end of a range as its operands.
 
-Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence.Length - n`.
+Let's start with the rules for indexes. Consider an array `sequence`. The `0` index is the same as `sequence[0]`. The `^0` index is the same as `sequence[sequence.Length]`. Note that `sequence[^0]` does throw an exception, just as `sequence[sequence.Length]` does. For any number `n`, the index `^n` is the same as `sequence.Length - n`.
 
-Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnutý v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
+A range specifies the *start* and *end* of a range. The start of the range is inclusive, but the end of the range is exclusive, meaning the *start* is included in the range but the *end* isn't included in the range. The range `[0..^0]` represents the entire range, just as `[0..sequence.Length]` represents the entire range.
 
-Pojďme se podívat na několik příkladů. Vezměte v úvahu následující pole s poznámkou s jeho indexem od začátku do konce:
+Let's look at a few examples. Consider the following array, annotated with its index from the start and from the end:
 
 ```csharp
 var words = new string[]
@@ -424,26 +426,26 @@ var words = new string[]
 };              // 9 (or words.Length) ^0
 ```
 
-Poslední slovo můžete načíst pomocí `^1` indexu:
+You can retrieve the last word with the `^1` index:
 
 ```csharp
 Console.WriteLine($"The last word is {words[^1]}");
 // writes "dog"
 ```
 
-Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu.
+The following code creates a subrange with the words "quick", "brown", and "fox". It includes `words[1]` through `words[3]`. The element `words[4]` isn't in the range.
 
 ```csharp
 var quickBrownFox = words[1..4];
 ```
 
-Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index `words[^0]` není zahrnutý:
+The following code creates a subrange with "lazy" and "dog". It includes `words[^2]` and `words[^1]`. The end index `words[^0]` isn't included:
 
 ```csharp
 var lazyDog = words[^2..^0];
 ```
 
-V následujících příkladech jsou vytvořeny rozsahy, které jsou otevřeny pro začátek, konec nebo obojí:
+The following examples create ranges that are open ended for the start, end, or both:
 
 ```csharp
 var allWords = words[..]; // contains "The" through "dog".
@@ -451,25 +453,25 @@ var firstPhrase = words[..4]; // contains "The" through "fox"
 var lastPhrase = words[6..]; // contains "the", "lazy" and "dog"
 ```
 
-Rozsahy můžete deklarovat také jako proměnné:
+You can also declare ranges as variables:
 
 ```csharp
 Range phrase = 1..4;
 ```
 
-Rozsah se pak dá použít uvnitř `[` a `]`ch znaků:
+The range can then be used inside the `[` and `]` characters:
 
 ```csharp
 var text = words[phrase];
 ```
 
-Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězci](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+Not only arrays support indices and ranges. You also can use indices and ranges with [string](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>, or <xref:System.ReadOnlySpan%601>. For more information, see [Type support for indices and ranges](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
-Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
+You can explore more about indices and ranges in the tutorial on [indices and ranges](../tutorials/ranges-indexes.md).
 
-## <a name="null-coalescing-assignment"></a>Přiřazení slučování s hodnotou null
+## <a name="null-coalescing-assignment"></a>Null-coalescing assignment
 
-C#8,0 zavádí operátor přiřazení s hodnotou null `??=`. Operátor `??=` můžete použít k přiřazení hodnoty jeho pravého operandu k levému operandu pouze v případě, že je operand na levé straně vyhodnocen jako `null`.
+C# 8.0 introduces the null-coalescing assignment operator `??=`. You can use the `??=` operator to assign the value of its right-hand operand to its left-hand operand only if the left-hand operand evaluates to `null`.
 
 ```csharp
 List<int> numbers = null;
@@ -483,13 +485,13 @@ Console.WriteLine(string.Join(" ", numbers));  // output: 17 17
 Console.WriteLine(i);  // output: 17
 ```
 
-Další informace najdete v tématu [?? a?? =](../language-reference/operators/null-coalescing-operator.md) – článek o operátorech
+For more information, see the [?? and ??= operators](../language-reference/operators/null-coalescing-operator.md) article.
 
-## <a name="unmanaged-constructed-types"></a>Nespravované konstruované typy
+## <a name="unmanaged-constructed-types"></a>Unmanaged constructed types
 
-V C# 7,3 a starších verzích konstruovaný typ (typ, který obsahuje alespoň jeden argument typu) nemůže být [nespravovaný typ](../language-reference/builtin-types/unmanaged-types.md). Počínaje C# 8,0, konstruovaný typ hodnoty je nespravovaný, pokud obsahuje pole pouze nespravovaných typů.
+In C# 7.3 and earlier, a constructed type (a type that includes at least one type argument) can't be an [unmanaged type](../language-reference/builtin-types/unmanaged-types.md). Starting with C# 8.0, a constructed value type is unmanaged if it contains fields of unmanaged types only.
 
-Například s ohledem na následující definice obecného typu `Coords<T>`:
+For example, given the following definition of the generic `Coords<T>` type:
 
 ```csharp
 public struct Coords<T>
@@ -499,7 +501,7 @@ public struct Coords<T>
 }
 ```
 
-typ `Coords<int>` je nespravovaný typ v C# 8,0 a novějším. Podobně jako u jakéhokoli nespravovaného typu můžete vytvořit ukazatel na proměnnou tohoto typu nebo [přidělit blok paměti v zásobníku](../language-reference/operators/stackalloc.md) pro instance tohoto typu:
+the `Coords<int>` type is an unmanaged type in C# 8.0 and later. Like for any unmanaged type, you can create a pointer to a variable of this type or [allocate a block of memory on the stack](../language-reference/operators/stackalloc.md) for instances of this type:
 
 ```csharp
 Span<Coords<int>> coordinates = stackalloc[]
@@ -510,11 +512,11 @@ Span<Coords<int>> coordinates = stackalloc[]
 };
 ```
 
-Další informace naleznete v tématu [nespravované typy](../language-reference/builtin-types/unmanaged-types.md).
+For more information, see [Unmanaged types](../language-reference/builtin-types/unmanaged-types.md).
 
-## <a name="stackalloc-in-nested-expressions"></a>stackalloc ve vnořených výrazech
+## <a name="stackalloc-in-nested-expressions"></a>Stackalloc in nested expressions
 
-Počínaje C# 8,0 platí, že pokud je výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu<xref:System.Span%601?displayProperty=nameWithType>nebo<xref:System.ReadOnlySpan%601?displayProperty=nameWithType>typu, můžete použít výraz`stackalloc`v jiných výrazech:
+Starting with C# 8.0, if the result of a [stackalloc](../language-reference/operators/stackalloc.md) expression is of the <xref:System.Span%601?displayProperty=nameWithType> or <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> type, you can use the `stackalloc` expression in other expressions:
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
@@ -522,6 +524,6 @@ var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
 Console.WriteLine(ind);  // output: 1
 ```
 
-## <a name="enhancement-of-interpolated-verbatim-strings"></a>Vylepšení interpolované doslovného řetězce
+## <a name="enhancement-of-interpolated-verbatim-strings"></a>Enhancement of interpolated verbatim strings
 
-Pořadí tokenů `$` a `@` v [interpolice](../language-reference/tokens/interpolated.md) doslovného řetězce může být libovolná: `$@"..."` i `@$"..."` jsou platné interpolované řetězce. V dřívějších C# verzích musí být token `$` uveden před tokenem `@`.
+Order of the `$` and `@` tokens in [interpolated](../language-reference/tokens/interpolated.md) verbatim strings can be any: both `$@"..."` and `@$"..."` are valid interpolated verbatim strings. In earlier C# versions, the `$` token must appear before the `@` token.

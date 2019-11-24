@@ -8,36 +8,36 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-ms.openlocfilehash: 9c92ea154a078ff5a059edd82f06b8f3d5bab239
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3ef1e7c6e21f30c5bdea096003f192c38059ab2e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042136"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441358"
 ---
 # <a name="ui-automation-properties-for-clients"></a>Vlastnosti automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
+> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- Tento přehled popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, které jsou zpřístupněny klientským aplikacím automatizace uživatelského rozhraní.  
+ This overview introduces you to [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties as they are exposed to UI Automation client applications.  
   
- Vlastnosti objektů obsahují informace o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvcích, obvykle ovládací prvky. <xref:System.Windows.Automation.AutomationElement> Vlastnosti <xref:System.Windows.Automation.AutomationElement> jsou obecné, to znamená, že nejsou specifické pro typ ovládacího prvku. Mnohé z těchto vlastností jsou zpřístupněny ve <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation> struktuře.  
+ Properties on <xref:System.Windows.Automation.AutomationElement> objects contain information about [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elements, usually controls. The properties of an <xref:System.Windows.Automation.AutomationElement> are generic; that is, not specific to a control type. Many of these properties are exposed in the <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation> structure.  
   
- Vzory ovládacích prvků mají také vlastnosti. Vlastnosti vzorů ovládacích prvků jsou specifické pro vzor. Například <xref:System.Windows.Automation.ScrollPattern> obsahuje vlastnosti, které umožňují klientské aplikaci zjistit, zda je okno svisle nebo vodorovně rolovací a zda jsou aktuální velikosti zobrazení a posunutí umístění. Vzory ovládacích prvků zpřístupňují všechny své vlastnosti prostřednictvím struktury; například <xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>.  
+ Control patterns also have properties. The properties of control patterns are specific to the pattern. For example, <xref:System.Windows.Automation.ScrollPattern> has properties that enable a client application to discover whether a window is vertically or horizontally scrollable, and what the current view sizes and scroll positions are. Control patterns expose all their properties through a structure; for example, <xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]vlastnosti jsou jen pro čtení. Chcete-li nastavit vlastnosti ovládacího prvku, je nutné použít metody příslušného vzoru ovládacího prvku. Například můžete použít <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> ke změně hodnot pozice posuvných oken.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties are read-only. To set properties of a control, you must use the methods of the appropriate control pattern. For example, use <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> to change the position values of a scrolling window.  
   
- Aby bylo možné zvýšit výkon, hodnoty vlastností ovládacích prvků a vzorů ovládacích prvků <xref:System.Windows.Automation.AutomationElement> mohou být po načtení objektů uloženy do mezipaměti. Další informace najdete v tématu [ukládání do mezipaměti v klientech automatizace uživatelského rozhraní](caching-in-ui-automation-clients.md).  
+ To improve performance, property values of controls and control patterns can be cached when <xref:System.Windows.Automation.AutomationElement> objects are retrieved. For more information, see [Caching in UI Automation Clients](caching-in-ui-automation-clients.md).  
   
-## <a name="property-ids"></a>ID vlastností  
- Identifikátory vlastností (IDS) jsou jedinečné a konstantní hodnoty, které jsou zapouzdřeny <xref:System.Windows.Automation.AutomationProperty> v objektech. Klientské aplikace automatizace uživatelského rozhraní získávají tato ID z <xref:System.Windows.Automation.AutomationElement> třídy nebo z příslušné třídy vzoru ovládacího prvku, <xref:System.Windows.Automation.ScrollPattern>jako je například. Zprostředkovatelé automatizace uživatelského rozhraní je <xref:System.Windows.Automation.AutomationElementIdentifiers> získají z jedné z tříd identifikátorů vzoru ovládacích prvků, <xref:System.Windows.Automation.ScrollPatternIdentifiers>jako je například.  
+## <a name="property-ids"></a>Property IDs  
+ Property identifiers (IDs) are unique, constant values that are encapsulated in <xref:System.Windows.Automation.AutomationProperty> objects. UI Automation client applications get these IDs from the <xref:System.Windows.Automation.AutomationElement> class or from the appropriate control pattern class, such as <xref:System.Windows.Automation.ScrollPattern>. UI Automation providers get them from <xref:System.Windows.Automation.AutomationElementIdentifiers> or from one of the control pattern identifiers classes, such as <xref:System.Windows.Automation.ScrollPatternIdentifiers>.  
   
- Číselná <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> část je využívána poskytovateli k identifikaci vlastností, které jsou dotazovány v metodě. <xref:System.Windows.Automation.AutomationProperty> Obecně klientské aplikace nemusí kontrolovat <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>. Používá <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> se pouze pro účely ladění a diagnostiky.  
+ The numeric <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> of an <xref:System.Windows.Automation.AutomationProperty> is used by providers to identify properties that are being queried for in the <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> method. In general, client applications do not need to examine the <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>. The <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> is used only for debugging and diagnostic purposes.  
   
-## <a name="property-conditions"></a>Podmínky vlastnosti  
- ID vlastností se používají při vytváření <xref:System.Windows.Automation.PropertyCondition> objektů používaných k hledání <xref:System.Windows.Automation.AutomationElement> objektů. Například můžete chtít najít <xref:System.Windows.Automation.AutomationElement> , který má určitý název, nebo všechny ovládací prvky, které jsou povoleny. <xref:System.Windows.Automation.PropertyCondition> Každý<xref:System.Windows.Automation.AutomationProperty> Určuje identifikátor a hodnotu, kterou musí vlastnost odpovídat.  
+## <a name="property-conditions"></a>Property Conditions  
+ The property IDs are used in constructing <xref:System.Windows.Automation.PropertyCondition> objects used to find <xref:System.Windows.Automation.AutomationElement> objects. For example, you might wish to find an <xref:System.Windows.Automation.AutomationElement> that has a certain name, or all controls that are enabled. Each <xref:System.Windows.Automation.PropertyCondition> specifies an <xref:System.Windows.Automation.AutomationProperty> identifier and the value that the property must match.  
   
- Další informace najdete v následujících referenčních tématech:  
+ For more information, see the following reference topics:  
   
 - <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>  
   
@@ -45,57 +45,57 @@ ms.locfileid: "71042136"
   
 - <xref:System.Windows.Automation.TreeWalker.Condition%2A>  
   
-## <a name="retrieving-properties"></a>Načítání vlastností  
- Některé vlastnosti <xref:System.Windows.Automation.AutomationElement> a všechny vlastnosti třídy vzoru ovládacího prvku jsou zpřístupněny jako vnořené vlastnosti `Current` objektu nebo `Cached` <xref:System.Windows.Automation.AutomationElement> vzoru ovládacího prvku nebo.  
+## <a name="retrieving-properties"></a>Retrieving Properties  
+ Some properties of <xref:System.Windows.Automation.AutomationElement> and all properties of a control pattern class are exposed as nested properties of the `Current` or `Cached` property of the <xref:System.Windows.Automation.AutomationElement> or control pattern object.  
   
- Kromě toho se dá <xref:System.Windows.Automation.AutomationElement> načíst jakákoli vlastnost vzoru ovládacího prvku nebo, včetně vlastnosti, která není k <xref:System.Windows.Automation.AutomationElement.Cached%2A> dispozici ve struktuře nebo <xref:System.Windows.Automation.AutomationElement.Current%2A> , pomocí jedné z následujících metod:  
+ In addition, any <xref:System.Windows.Automation.AutomationElement> or control pattern property, including a property that is not available in the <xref:System.Windows.Automation.AutomationElement.Cached%2A> or <xref:System.Windows.Automation.AutomationElement.Current%2A> structure, can be retrieved by using one of the following methods:  
   
 - <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>  
   
 - <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>  
   
- Tyto metody nabízejí poněkud lepší výkon a také přístup k celé škále vlastností.  
+ These methods offer slightly better performance as well as access to the full range of properties.  
   
- Následující příklad kódu ukazuje dva způsoby načítání vlastnosti v <xref:System.Windows.Automation.AutomationElement>.  
+ The following code example shows the two ways of retrieving a property on an <xref:System.Windows.Automation.AutomationElement>.  
   
  [!code-csharp[UIAClient_snip#121](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#121)]
  [!code-vb[UIAClient_snip#121](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#121)]  
   
- Chcete-li načíst vlastnosti vzorů ovládacích prvků <xref:System.Windows.Automation.AutomationElement>, které jsou podporovány nástrojem, není nutné načíst objekt vzoru ovládacího prvku. Jednoduše do metody předejte jeden z identifikátorů vlastnosti vzoru.  
+ To retrieve properties of control patterns supported by the <xref:System.Windows.Automation.AutomationElement>, you do not need to retrieve the control pattern object. Simply pass one of the pattern property identifiers to the method.  
   
- Následující příklad kódu ukazuje dva způsoby, jak načíst vlastnost pro vzor ovládacího prvku.  
+ The following code example shows the two ways of retrieving a property on a control pattern.  
   
  [!code-csharp[UIAClient_snip#122](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#122)]
  [!code-vb[UIAClient_snip#122](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#122)]  
   
- `Get` Metody<xref:System.Object>vrací. Aplikace musí přetypování vráceného objektu na správný typ před použitím hodnoty.  
+ The `Get` methods return an <xref:System.Object>. The application must cast the returned object to the proper type before using the value.  
   
-## <a name="default-property-values"></a>Výchozí hodnoty vlastností  
- Pokud zprostředkovatel automatizace uživatelského rozhraní neimplementuje vlastnost, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systém bude moci dodat výchozí hodnotu. Například pokud poskytovatel pro ovládací prvek nepodporuje vlastnost identifikovanou pomocí <xref:System.Windows.Automation.AutomationElement.HelpTextProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vrátí prázdný řetězec. Podobně, pokud zprostředkovatel nepodporuje vlastnost identifikovanou pomocí <xref:System.Windows.Automation.AutomationElement.IsDockPatternAvailableProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vrátí `false`.  
+## <a name="default-property-values"></a>Default Property Values  
+ If a UI Automation provider does not implement a property, the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] system is able to supply a default value. For example, if the provider for a control does not support the property identified by <xref:System.Windows.Automation.AutomationElement.HelpTextProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] returns an empty string. Similarly, if the provider does not support the property identified by <xref:System.Windows.Automation.AutomationElement.IsDockPatternAvailableProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] returns `false`.  
   
- Toto chování lze změnit pomocí <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> přetížení metody a. <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> Když zadáte `true` jako druhý parametr, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nevrátí výchozí hodnotu, ale místo toho vrátí speciální hodnotu <xref:System.Windows.Automation.AutomationElement.NotSupported>.  
+ You can change this behavior by using the <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> and <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> method overloads. When you specify `true` as the second parameter, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] does not return a default value, but instead returns the special value <xref:System.Windows.Automation.AutomationElement.NotSupported>.  
   
- Následující příklad kódu se pokusí načíst vlastnost z prvku a pokud vlastnost není podporována, je místo toho použita hodnota definovaná aplikací.  
+ The following example code attempts to retrieve a property from an element, and if the property is not supported, an application-defined value is used instead.  
   
  [!code-csharp[UIAClient_snip#123](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#123)]
  [!code-vb[UIAClient_snip#123](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#123)]  
   
- Chcete-li zjistit, jaké vlastnosti jsou podporovány prvkem, <xref:System.Windows.Automation.AutomationElement.GetSupportedProperties%2A>použijte. Vrátí pole <xref:System.Windows.Automation.AutomationProperty> identifikátorů.  
+ To discover what properties are supported by an element, use <xref:System.Windows.Automation.AutomationElement.GetSupportedProperties%2A>. This returns an array of <xref:System.Windows.Automation.AutomationProperty> identifiers.  
   
-## <a name="property-changed-events"></a>Události změněné vlastností  
- Když se změní hodnota vlastnosti ve <xref:System.Windows.Automation.AutomationElement> vzoru ovládacího prvku nebo, vyvolá se událost. Aplikace se může přihlásit k odběru takových událostí voláním <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>, zadáním <xref:System.Windows.Automation.AutomationProperty> pole identifikátorů jako posledního parametru, aby bylo možné určit vlastnosti zájmu.  
+## <a name="property-changed-events"></a>Property-changed Events  
+ When a property value on an <xref:System.Windows.Automation.AutomationElement> or control pattern changes, an event is raised. An application can subscribe to such events by calling <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>, supplying an array of <xref:System.Windows.Automation.AutomationProperty> identifiers as the last parameter in order to specify the properties of interest.  
   
- V rozhraní <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>můžete identifikovat vlastnost, která se změnila <xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A> kontrolou člena argumentů události. Argumenty obsahují také starou a novou hodnotu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, která se změnila. Tyto hodnoty jsou typu <xref:System.Object> a před použitím musí být přetypování na správný typ.  
+ In the <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>, you can identify the property that has changed by checking the <xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A> member of the event arguments. The arguments also contain the old and new values of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property that has changed. These values are of type <xref:System.Object> and must be cast to the correct type before being used.  
   
-## <a name="additional-automationelement-properties"></a>Další vlastnosti třída AutomationElement neobsahuje  
- Kromě <xref:System.Windows.Automation.AutomationElement.Current%2A> <xref:System.Windows.Automation.AutomationElement.Cached%2A> struktur<xref:System.Windows.Automation.AutomationElement> vlastností a má následující vlastnosti, které jsou načteny prostřednictvím přístupových objektů jednoduchých vlastností.  
+## <a name="additional-automationelement-properties"></a>Additional AutomationElement Properties  
+ In addition to the <xref:System.Windows.Automation.AutomationElement.Current%2A> and <xref:System.Windows.Automation.AutomationElement.Cached%2A> property structures, <xref:System.Windows.Automation.AutomationElement> has the following properties, which are retrieved through simple property accessors.  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>|Kolekce podřízených <xref:System.Windows.Automation.AutomationElement> objektů, které jsou v mezipaměti.|  
-|<xref:System.Windows.Automation.AutomationElement.CachedParent%2A>|<xref:System.Windows.Automation.AutomationElement> Nadřazený objekt, který je v mezipaměti.|  
-|<xref:System.Windows.Automation.AutomationElement.FocusedElement%2A>|(Statická vlastnost) <xref:System.Windows.Automation.AutomationElement> , Který má vstupní fokus.|  
-|<xref:System.Windows.Automation.AutomationElement.RootElement%2A>|(Statická vlastnost) Kořenová <xref:System.Windows.Automation.AutomationElement>složka.|  
+|<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>|A collection of child <xref:System.Windows.Automation.AutomationElement> objects that are in the cache.|  
+|<xref:System.Windows.Automation.AutomationElement.CachedParent%2A>|An <xref:System.Windows.Automation.AutomationElement> parent object that is in the cache.|  
+|<xref:System.Windows.Automation.AutomationElement.FocusedElement%2A>|(Static property) The <xref:System.Windows.Automation.AutomationElement> that has the input focus.|  
+|<xref:System.Windows.Automation.AutomationElement.RootElement%2A>|(Static property) The root <xref:System.Windows.Automation.AutomationElement>.|  
   
 ## <a name="see-also"></a>Viz také:
 

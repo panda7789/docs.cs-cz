@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: 35b8f0d6-9aba-4714-adb2-62020a38fb7e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a4eaf426bc9c933de1d4b774928f2b0a54dfb472
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5936ca837c9ab452e992fcb09aacb476ab37316a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636957"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431431"
 ---
 # <a name="imetadatatablesgetuserstring-method"></a>IMetaDataTables::GetUserString – metoda
 
-Získá řetězec pevně zakódované v zadaném indexu ve sloupci řetězce v aktuálním oboru.
+Gets the hard-coded string at the specified index in the string column in the current scope.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,23 +39,23 @@ HRESULT GetUserString (
 ## <a name="parameters"></a>Parametry
 
 `ixUserString`\
-[in] Hodnota indexu, ze kterého se budou načítat pevně zakódované řetězce.
+[in] The index value from which the hard-coded string will be retrieved.
 
 `pcbData`\
-[out] Ukazatel na velikost `ppData`.
+[out] A pointer to the size of `ppData`.
 
 `ppData`\
-[out] Ukazatel na ukazatel na vráceného řetězce.
+[out] A pointer to a pointer to the returned string.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** Cor.h
+**Header:** Cor.h
 
-**Knihovna:** Použít jako prostředek v MsCorEE.dll
+**Library:** Used as a resource in MsCorEE.dll
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

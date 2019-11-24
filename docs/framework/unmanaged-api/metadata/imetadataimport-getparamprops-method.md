@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4d5e5f00-bcab-4f41-b191-176511a186a7
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e9d2c74adecdfb0201f9f0c08998feba674f9e0f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bb73ccdd9eee4b5a655a56b5d6757e0c6003fbc9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778921"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437122"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps – metoda
-Získá metadata hodnot pro parametr odkazuje zadaný ParamDef token.  
+Gets metadata values for the parameter referenced by the specified ParamDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,47 +44,47 @@ HRESULT GetParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] ParamDef token, který představuje parametr a vrátit metadata pro.  
+ [in] A ParamDef token that represents the parameter to return metadata for.  
   
  `pmd`  
- [out] Ukazatel na token MethodDef představující metodu, která přebírá parametr.  
+ [out] A pointer to a MethodDef token representing the method that takes the parameter.  
   
  `pulSequence`  
- [out] Pořadové číslo pozice parametru v seznamu argumentů metody.  
+ [out] The ordinal position of the parameter in the method argument list.  
   
  `szName`  
- [out] Vyrovnávací paměti, která bude uchovávat název parametru.  
+ [out] A buffer to hold the name of the parameter.  
   
  `cchName`  
- [in] Požadovaná velikost v širokých znaků `szName`.  
+ [in] The requested size in wide characters of `szName`.  
   
  `pchName`  
- [out] Velikost vrácené v širokých znaků `szName`.  
+ [out] The returned size in wide characters of `szName`.  
   
  `pdwAttr`  
- [out] Ukazatel na libovolný atribut příznaky spojené s parametrem. To je bitová maska z `CorParamAttr` hodnoty.  
+ [out] A pointer to any attribute flags associated with the parameter. This is a bitmask of `CorParamAttr` values.  
   
  `pdwCPlusTypeFlag`  
- [out] Ukazatel na příznak určující, který je parametr <xref:System.ValueType>.  
+ [out] A pointer to a flag specifying that the parameter is a <xref:System.ValueType>.  
   
  `ppValue`  
- [out] Ukazatel na konstantní řetězec vrácený funkcí parametru.  
+ [out] A pointer to a constant string returned by the parameter.  
   
  `pcchValue`  
- [out] Velikost `ppValue` v široké znaky, nebo nula, pokud `ppValue` neobsahuje řetězec.  
+ [out] The size of `ppValue` in wide characters, or zero if `ppValue` does not hold a string.  
   
 ## <a name="remarks"></a>Poznámky
 
-Pořadí hodnot v `pulSequence` začínají znakem 1 pro parametry. Návratová hodnota má pořadové číslo 0.
+The sequence values in `pulSequence` begin with 1 for parameters. A return value has a sequence number of 0.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

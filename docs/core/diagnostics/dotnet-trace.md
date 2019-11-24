@@ -1,29 +1,29 @@
 ---
-title: dotnet – trasování – .NET Core
-description: Instalace a použití nástroje příkazového řádku dotnet-Trace.
+title: dotnet-trace tool - .NET Core
+description: Installing and using the dotnet-trace command-line tool.
 author: sdmaclea
 ms.author: stmaclea
-ms.date: 10/14/2019
-ms.openlocfilehash: 6513cf63070bc1984006da75313e9912d76a6c95
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.date: 11/21/2019
+ms.openlocfilehash: 07eaec843e27f5d291b6d18fab53c43051794626
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321580"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428890"
 ---
-# <a name="trace-for-performance-analysis-utility-dotnet-trace"></a>Trasování pro nástroj Analýza výkonu (`dotnet-trace`)
+# <a name="dotnet-trace-performance-analysis-utility"></a>dotnet-trace performance analysis utility
 
-**Tento článek se týká:** .net Core 3,0 SDK a novějších verzí
+**This article applies to:** ✓ .NET Core 3.0 SDK and later versions
 
-## <a name="installing-dotnet-trace"></a>Instalace nástroje `dotnet-trace`
+## <a name="install-dotnet-trace"></a>Install dotnet-trace
 
-Pokud chcete nainstalovat nejnovější verzi `dotnet-trace` [balíčku NuGet](https://www.nuget.org/packages/dotnet-trace), použijte [instalační příkaz nástroje dotnet](../tools/dotnet-tool-install.md) :
+Install `dotnet-trace` [NuGet package](https://www.nuget.org/packages/dotnet-trace) with the [dotnet tool install](../tools/dotnet-tool-install.md) command:
 
 ```dotnetcli
 dotnet tool install --global dotnet-trace
 ```
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopsis
 
 ```console
 dotnet-trace [-h, --help] [--version] <command>
@@ -31,32 +31,37 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-Nástroj `dotnet-trace` je globální nástroj CLI pro různé platformy, který umožňuje shromažďování trasování .NET Core pro běžící proces bez nutnosti použití nativního profileru. Je postavená na platformě `EventPipe` technologie runtime .NET Core pro různé platformy. `dotnet-trace` přináší stejné prostředí jako v systému Windows, Linux nebo macOS.
+The `dotnet-trace` tool:
+
+* Is a cross-platform .NET Core tool.
+* Enables the collection of .NET Core traces of a running process without a native profiler.
+* Is built around the cross-platform `EventPipe` technology of the .NET Core runtime.
+* Delivers the same experience on Windows, Linux, or macOS.
 
 ## <a name="options"></a>Možnosti
 
-- **`--version`**
+- **`--version`**  
 
-Zobrazte verzi nástroje dotnet-Counters.
+  Displays the version of the dotnet-counters utility.
 
 - **`-h|--help`**
 
-Zobrazí pomocníka s příkazovým řádkem.
+  Shows command-line help.
 
 ## <a name="commands"></a>Příkazy
 
 | Příkaz                                                     |
 | ----------------------------------------------------------- |
-| [dotnet – shromažďování trasování](#dotnet-trace-collect)               |
-| [dotnet – trasovat převod](#dotnet-trace-convert)               |
-| [dotnet – seznam trasování – procesy](#dotnet-trace-list-processes) |
-| [dotnet – seznam trasování – profily](#dotnet-trace-list-profiles)   |
+| [dotnet-trace collect](#dotnet-trace-collect)               |
+| [dotnet-trace convert](#dotnet-trace-convert)               |
+| [dotnet-trace ps](#dotnet-trace-ps) |
+| [dotnet-trace list-profiles](#dotnet-trace-list-profiles)   |
 
-## <a name="dotnet-trace-collect"></a>dotnet – shromažďování trasování
+## <a name="dotnet-trace-collect"></a>dotnet-trace collect
 
-Shromažďuje diagnostické trasování ze spuštěného procesu.
+Collects a diagnostic trace from a running process.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopsis
 
 ```console
 dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--output]
@@ -67,136 +72,146 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 
 - **`-p|--process-id <PID>`**
 
-  Proces, ze kterého má být trasování shromážděno.
+  The process to collect the trace from.
 
 - **`--buffersize <size>`**
 
-  Nastaví velikost cyklické vyrovnávací paměti v paměti v megabajtech. Výchozí 256 MB.
+  Sets the size of the in-memory circular buffer, in megabytes. Default 256 MB.
 
 - **`-o|--output <trace-file-path>`**
 
-  Výstupní cesta pro shromážděná data trasování. Pokud není zadaný, použije se výchozí hodnota `trace.nettrace`.
+  The output path for the collected trace data. If not specified it defaults to `trace.nettrace`.
 
 - **`--providers <list-of-comma-separated-providers>`**
 
-  Seznam poskytovatelů `EventPipe` oddělených čárkami, které se mají povolit. Tito poskytovatelé doplňují všechny poskytovatele implicitně `--profile <profile-name>`. Pokud u konkrétního poskytovatele dojde k nekonzistenci, konfigurace tohoto nastavení bude mít přednost před implicitní konfigurací z profilu.
+  A comma-separated list of `EventPipe` providers to be enabled. These providers supplement any providers implied by `--profile <profile-name>`. If there's any inconsistency for a particular provider, this configuration takes precedence over the implicit configuration from the profile.
 
-  Tento seznam zprostředkovatelů je ve formátu:
+  This list of providers is in the form:
 
   - `Provider[,Provider]`
-  - `Provider` je ve formátu: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.
-  - `KeyValueArgs` je ve formátu: `[key1=value1][;key2=value2]`.
+  - `Provider` is in the form: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.
+  - `KeyValueArgs` is in the form: `[key1=value1][;key2=value2]`.
 
 - **`--profile <profile-name>`**
 
-  Pojmenovaná předem definovaná sada konfigurací zprostředkovatele, která umožňuje stručně zadat běžné scénáře trasování.
+  A named pre-defined set of provider configurations that allows common tracing scenarios to be specified succinctly.
 
-- **`--format <NetTrace|Speedscope>`**
+- **`--format {NetTrace|Speedscope}`**
 
-  Nastaví výstupní formát pro převod trasovacího souboru.
+  Sets the output format for the trace file conversion. Výchozí hodnota je `NetTrace`.
 
-## <a name="dotnet-trace-convert"></a>dotnet – trasovat převod
+## <a name="dotnet-trace-convert"></a>dotnet-trace convert
 
-Převede `nettrace` trasování na alternativní formáty pro použití s alternativními nástroji pro analýzu trasování.
+Converts `nettrace` traces to alternate formats for use with alternate trace analysis tools.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopsis
 
 ```console
 dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 ```
 
-### <a name="arguments"></a>Argumenty
+### <a name="arguments"></a>Arguments
 
 - **`<input-filename>`**
 
-  Vstupní trasovací soubor, který se má převést. Výchozí hodnota je *Trace. nettrace*.
+  Input trace file to be converted. Defaults to *trace.nettrace*.
 
 ### <a name="options"></a>Možnosti
 
 - **`--format <NetTrace|Speedscope>`**
 
-  Nastaví výstupní formát pro převod trasovacího souboru.
+  Sets the output format for the trace file conversion.
 
 - **`-o|--output <output-filename>`**
 
-  Název výstupního souboru. Bude přidáno rozšíření cílového formátu.
+  Output filename. Extension of target format will be added.
 
-## <a name="dotnet-trace-list-processes"></a>dotnet – seznam trasování – procesy
+## <a name="dotnet-trace-ps"></a>dotnet-trace ps
 
-Zobrazuje seznam procesů dotnet, které lze trasovat.
+Lists dotnet processes that can be attached to.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopsis
 
 ```console
-dotnet-trace list-processes [-h|--help]
+dotnet-trace ps [-h|--help]
 ```
 
-## <a name="dotnet-trace-list-profiles"></a>dotnet – seznam trasování – profily
+## <a name="dotnet-trace-list-profiles"></a>dotnet-trace list-profiles
 
-Vypíše předem sestavené trasovací profily s popisem toho, co jsou poskytovatelé a filtry v jednotlivých profilech.
+Lists pre-built tracing profiles with a description of what providers and filters are in each profile.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopsis
 
 ```console
 dotnet-trace list-profiles [-h|--help]
 ```
 
-## <a name="collect-a-trace-with-dotnet-trace"></a>Shromáždění trasování pomocí `dotnet-trace`
+## <a name="collect-a-trace-with-dotnet-trace"></a>Collect a trace with dotnet-trace
 
-- Abyste mohli shromažďovat trasování pomocí `dotnet-trace`, musíte nejdřív zjistit identifikátor procesu (PID) aplikace .NET Core, abyste mohli shromažďovat trasování z.
+To collect traces using `dotnet-trace`:
 
-  - Ve Windows existují možnosti, jako je například použití Správce úloh nebo příkazu `tasklist`.
-  - V systému Linux může použití možnosti triviální `ps` příkaz.
+- Get the process identifier (PID) of the .NET Core application to collect traces from.
 
-K zjištění, jaké procesy .NET Core jsou spuštěny společně s jejich PID, můžete použít také příkaz [dotnet-Trace list-Process](#dotnet-trace-list-processes) .
+  - On Windows, you can use Task Manager or the `tasklist` command, for example.
+  - On Linux, for example, the `ps` command.
+  - [dotnet-trace ps](#dotnet-trace-ps)
 
-- Pak spusťte následující příkaz:
+- Spusťte následující příkaz:
 
-```console
-> dotnet-trace collect --process-id <PID>
+  ```console
+  dotnet-trace collect --process-id <PID>
+  ```
 
-Press <Enter> to exit...
-Connecting to process: <Full-Path-To-Process-Being-Profiled>/dotnet.exe
-Collecting to file: <Full-Path-To-Trace>/trace.nettrace
+  The preceding command generates output similar to the following:
+
+  ```console
+  Press <Enter> to exit...
+  Connecting to process: <Full-Path-To-Process-Being-Profiled>/dotnet.exe
+  Collecting to file: <Full-Path-To-Trace>/trace.nettrace
   Session Id: <SessionId>
   Recording trace 721.025 (KB)
-```
+  ```
 
-- Nakonec zastavte shromažďování stisknutím klávesy `<Enter>` a `dotnet-trace` dokončí protokolování událostí do souboru `trace.nettrace`.
+- Stop collection by pressing the `<Enter>` key. `dotnet-trace` will finish logging events to the *trace.nettrace* file.
 
-## <a name="viewing-the-trace-captured-from-dotnet-trace"></a>Zobrazení trasování zachyceného z `dotnet-trace`
+## <a name="view-the-trace-captured-from-dotnet-trace"></a>View the trace captured from dotnet-trace
 
-V systému Windows je možné `.nettrace` soubory zobrazit na [PerfView](https://github.com/microsoft/perfview) pro účely analýzy, stejně jako trasování shromážděná pomocí trasování událostí pro Windows nebo LTTng. Pro trasování shromážděná v systému Linux můžete přemístit trasování na počítač s Windows, který se bude zobrazovat na PerfView.
+On Windows, *.nettrace* files can be viewed on [PerfView](https://github.com/microsoft/perfview) for analysis: For traces collected on other platforms, the trace file can be moved to a Windows machine to be viewed on PerfView.
 
-Trasování na počítači se systémem Linux můžete zobrazit také tak, že změníte výstupní formát `dotnet-trace` na `speedscope`. Formát výstupního souboru můžete změnit pomocí možnosti `-f|--format` – `-f speedscope` vytvoří `dotnet-trace` k vytvoření souboru `speedscope`. V současné době si můžete vybrat mezi `nettrace` (výchozí možnost) a `speedscope`. soubory `Speedscope` lze otevřít na <https://www.speedscope.app>.
+On Linux, the trace can be viewed by changing the output format of `dotnet-trace` to `speedscope`. The output file format can be changed using the `-f|--format` option - `-f speedscope` will make `dotnet-trace` produce a `speedscope` file. You can choose between `nettrace` (the default option) and `speedscope`. `Speedscope` files can be opened at <https://www.speedscope.app>.
 
 > [!NOTE]
-> Modul runtime .NET Core generuje trasování ve formátu `nettrace` a po dokončení trasování se převedou na speedscope (Pokud je zadaný). Vzhledem k tomu, že některé převody mohou mít za následek ztrátu dat, původní `nettrace` soubor se zachová vedle převedeného souboru.
+> The .NET Core runtime generates traces in the `nettrace` format. The traces are converted to speedscope (if specified) after the trace is completed. Since some conversions may result in loss of data, the original `nettrace` file is preserved next to the converted file.
 
-## <a name="using-dotnet-trace-to-collect-counter-values-over-time"></a>Shromažďování hodnot čítačů v čase pomocí `dotnet-trace`
+## <a name="use-dotnet-trace-to-collect-counter-values-over-time"></a>Use dotnet-trace to collect counter values over time
 
-Pokud se pokoušíte použít `EventCounter` pro základní monitorování stavu v nastavení citlivém na výkon, jako jsou produkční prostředí, a chcete shromažďovat trasování místo jejich sledování v reálném čase, můžete to udělat i s `dotnet-trace`.
+`dotnet-trace` can:
 
-Například pokud chcete shromáždit hodnoty čítače výkonu modulu runtime, můžete použít následující příkaz:
+* Use `EventCounter` for basic health monitoring in performance-sensitive environments. For example, in production.
+* Collect traces so they don't need to be viewed in real time.
+
+For example, to collect runtime performance counter values, use the following command:
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1
 ```
 
-Tento příkaz oznamuje čítačům modulu runtime, aby byly pro zjednodušené monitorování stavu hlášeny za každou sekundu. Nahrazení `EventCounterIntervalSec=1` vyšší hodnotou (například 60) umožňuje shromažďovat menší trasování s méně členitými možnostmi v datech čítače.
+The preceding command tells the runtime counters to report once every second for lightweight health monitoring. Replacing `EventCounterIntervalSec=1` with a higher value (for example, 60) allows collection of a smaller trace with less granularity in the counter data.
 
-Pokud chcete zakázat běhové události pro snížení režie (a velikosti trasování) ještě více, můžete pomocí následujícího příkazu zakázat běhové události a spravovaný Profiler zásobníku.
+The following command reduces overhead and trace size more than the preceding one:
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1,Microsoft-Windows-DotNETRuntime:0:1,Microsoft-DotNETCore-SampleProfiler:0:1
 ```
 
-## <a name="net-providers"></a>Poskytovatelé rozhraní .NET
+The preceding command disables runtime events and the managed stack profiler.
 
-Modul runtime .NET Core podporuje následující poskytovatele rozhraní .NET. .NET Core používá stejná klíčová slova k povolení trasování `Event Tracing for Windows (ETW)` i `EventPipe`.
+## <a name="net-providers"></a>.NET Providers
 
-| Název zprostředkovatele                            | Informace |
+The .NET Core runtime supports the following .NET providers. .NET Core uses the same keywords to enable both `Event Tracing for Windows (ETW)` and `EventPipe` traces.
+
+| Provider name                            | Informace o |
 |------------------------------------------|-------------|
-| `Microsoft-Windows-DotNETRuntime`        | [Zprostředkovatel modulu runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Běhová klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
-| `Microsoft-Windows-DotNETRuntimeRundown` | [Poskytovatel doběhu](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Doběhuá klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
-| `Microsoft-DotNETCore-SampleProfiler`    | Povolí vzorový Profiler. |
+| `Microsoft-Windows-DotNETRuntime`        | [The Runtime Provider](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[CLR Runtime Keywords](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
+| `Microsoft-Windows-DotNETRuntimeRundown` | [The Rundown Provider](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[CLR Rundown Keywords](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
+| `Microsoft-DotNETCore-SampleProfiler`    | Enables the sample profiler. |

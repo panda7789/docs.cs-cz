@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 27b2867019085bf5b44f2ee364c07af66144d4b5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4a258ce9121a287929ca5bc39c480f1ca2596e78
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782330"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437459"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps – metoda
-Získá token budou metadata spojená s metodou odkazuje zadaný MethodDef.  
+Gets the metadata associated with the method referenced by the specified MethodDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,43 +44,43 @@ HRESULT GetMethodProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [in] Token MethodDef, který představuje metodu vrátit metadata pro.  
+ [in] The MethodDef token that represents the method to return metadata for.  
   
  `pClass`  
- [out] Ukazatel, který představuje typ, který implementuje metodu token TypeDef.  
+ [out] A Pointer to a TypeDef token that represents the type that implements the method.  
   
  `szMethod`  
- [out] Ukazatel do vyrovnávací paměti, který má název metody.  
+ [out] A Pointer to a buffer that has the method's name.  
   
  `cchMethod`  
- [in] Požadovaná velikost `szMethod`.  
+ [in] The requested size of `szMethod`.  
   
  `pchMethod`  
- [out] Ukazatel na velikost v širokých znaků `szMethod`, nebo v případě zkrácení, skutečný počet širokých znaků v názvu metody.  
+ [out] A Pointer to the size in wide characters of `szMethod`, or in the case of truncation, the actual number of wide characters in the method name.  
   
  `pdwAttr`  
- [out] Ukazatel na libovolný příznaky spojené s metodou.  
+ [out] A pointer to any flags associated with the method.  
   
  `ppvSigBlob`  
- [out] Ukazatel na binární metadat podpis metody.  
+ [out] A pointer to the binary metadata signature of the method.  
   
  `pcbSigBlob`  
- [out] Ukazatel na velikost v bajtech `ppvSigBlob`.  
+ [out] A Pointer to the size in bytes of `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] Ukazatel na relativní virtuální adresu metody.  
+ [out] A pointer to the relative virtual address of the method.  
   
  `pdwImplFlags`  
- [out] Ukazatel na libovolný příznaky implementace metody.  
+ [out] A pointer to any implementation flags for the method.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

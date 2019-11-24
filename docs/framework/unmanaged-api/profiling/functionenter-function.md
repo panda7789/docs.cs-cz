@@ -14,20 +14,18 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 354736890a4b042a8da5e747a0ab6ea3777e398e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ad34592223433f0bf541c390674bcf96839b6ca8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952907"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440814"
 ---
 # <a name="functionenter-function"></a>FunctionEnter – funkce
-Upozorňuje profileru, že řízení je předáno funkci.  
+Notifies the profiler that control is being passed to a function.  
   
 > [!NOTE]
-> `FunctionEnter` Funkce je zastaralá ve verzi .NET Framework 2,0 a její použití bude mít za následek snížení výkonu. Místo toho použijte funkci [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) .  
+> The `FunctionEnter` function is deprecated in the .NET Framework version 2.0, and its use will incur a performance penalty. Use the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) function instead.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +37,29 @@ void __stdcall FunctionEnter (
   
 ## <a name="parameters"></a>Parametry  
  `funcID`  
- pro Identifikátor funkce, do které je ovládací prvek předán.  
+ [in] The identifier of the function to which control is passed.  
   
 ## <a name="remarks"></a>Poznámky  
- `FunctionEnter` Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec`atribut třídy úložiště`naked`().  
+ The `FunctionEnter` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
   
- Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
+ The execution engine does not save any registers before calling this function.  
   
-- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
+- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
   
-- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
+- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
   
- Implementace `FunctionEnter` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud `FunctionEnter` se nevrátí.  
+ The implementation of `FunctionEnter` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionEnter` returns.  
   
- `FunctionEnter` Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
+ Also, the `FunctionEnter` function must not call into managed code or in any way cause a managed memory allocation.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorProf.idl  
+ **Header:** CorProf.idl  
   
- **Knihovna** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze .NET Framework:** 1.1, 1.0  
+ **.NET Framework Versions:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

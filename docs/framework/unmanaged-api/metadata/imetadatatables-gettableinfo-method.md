@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50cbe557-2322-41aa-8e0d-f967602eaa0f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4844834232e34ab5dacfa34e7aa5d204ee344612
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 662b628f3cc6d2d7138f56820beaccee9c5d9e81
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781363"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426656"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo – metoda
-Získá název, velikost řádku, počet řádků, počet sloupců a index klíčový sloupec ze zadané tabulky.  
+Gets the name, row size, number of rows, number of columns, and key column index of the specified table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT GetTableInfo (
   
 ## <a name="parameters"></a>Parametry  
  `ixTbl`  
- [in] Identifikátor tabulky, jehož vlastnosti chcete vrátit.  
+ [in] The identifier of the table whose properties to return.  
   
  `pcbRow`  
- [out] Ukazatel na velikost v bajtech řádek tabulky.  
+ [out] A pointer to the size, in bytes, of a table row.  
   
  `pcRows`  
- [out] Ukazatel na počet řádků v tabulce.  
+ [out] A pointer to the number of rows in the table.  
   
  `pcCols`  
- [out] Ukazatel na počet sloupců v tabulce.  
+ [out] A pointer to the number of columns in the table.  
   
  `piKey`  
- [out] Ukazatel na index klíčový sloupec nebo -1, pokud tabulka nemá žádný klíčový sloupec.  
+ [out] A pointer to the index of the key column, or -1 if the table has no key column.  
   
  `ppName`  
- [out] Ukazatel na ukazatel na název tabulky.  
+ [out] A pointer to a pointer to the table name.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

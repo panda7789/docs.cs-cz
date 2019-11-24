@@ -1,46 +1,46 @@
 ---
-title: Výchozí hodnoty tabulka – C# odkaz
+title: Default values table - C# reference
 ms.custom: seodec18
-description: Zjistěte, jaké jsou výchozí hodnoty C# typů.
+description: Learn what are the default values of C# types.
 ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 02f86ef8ee73ff31a6c5c9d17a44a443f72ef05e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2f1ad5cc029b93261153e46d854cd8bf3e31ce92
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739278"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428538"
 ---
-# <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (C# Referenční dokumentace)
+# <a name="default-values-table-c-reference"></a>Default values table (C# reference)
 
-Následující tabulka ukazuje výchozí hodnoty C# typů:
+The following table shows the default values of C# types:
 
-|Typ|Výchozí hodnota|
+|Typ|Default value|
 |---------|------------------|
-|Libovolný typ odkazu|`null`|
-|Libovolný [vestavěný celočíselný numerický typ](../builtin-types/integral-numeric-types.md)|0 (nula)|
-|Libovolný [vestavěný číselný typ s plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou|0 (nula)|
+|Any reference type|`null`|
+|Any [built-in integral numeric type](../builtin-types/integral-numeric-types.md)|0 (zero)|
+|Any [built-in floating-point numeric type](../builtin-types/floating-point-numeric-types.md)|0 (zero)|
 |[bool](bool.md)|`false`|
-|[char](char.md)|`'\0'` (U + 0000)|
-|[enum](enum.md)|Hodnota vytvořená výrazem `(E)0`, kde `E` je identifikátor výčtu.|
-|[struct](struct.md)|Hodnota vytvořená nastavením všech polí typu hodnoty na jejich výchozí hodnoty a všechna pole typu odkaz na `null`.|
-|Libovolný [typ hodnoty s možnou hodnotou null](../builtin-types/nullable-value-types.md)|Instance, pro kterou je vlastnost <xref:System.Nullable%601.HasValue%2A> `false` a vlastnost <xref:System.Nullable%601.Value%2A> není definována. Tato výchozí hodnota je také známá jako hodnota *null* typu hodnoty s možnou hodnotou null.|
+|[char](../builtin-types/char.md)|`'\0'` (U+0000)|
+|[enum](enum.md)|The value produced by the expression `(E)0`, where `E` is the enum identifier.|
+|[struct](struct.md)|The value produced by setting all value-type fields to their default values and all reference-type fields to `null`.|
+|Any [nullable value type](../builtin-types/nullable-value-types.md)|An instance for which the <xref:System.Nullable%601.HasValue%2A> property is `false` and the <xref:System.Nullable%601.Value%2A> property is undefined. That default value is also known as the *null* value of a nullable value type.|
 
-Použijte [výchozí operátor](../operators/default.md) k vytvoření výchozí hodnoty typu, jak ukazuje následující příklad:
+Use the [default operator](../operators/default.md) to produce the default value of a type, as the following example shows:
 
 ```csharp
 int a = default(int);
 ```
 
-Počínaje C# 7,1 můžete použít [literál`default`](../operators/default.md#default-literal) k inicializaci proměnné s výchozí hodnotou svého typu:
+Beginning with C# 7.1, you can use the [`default` literal](../operators/default.md#default-literal) to initialize a variable with the default value of its type:
 
 ```csharp
 int a = default;
 ```
 
-Pro typ hodnoty, implicitní konstruktor bez parametrů vytvoří také výchozí hodnotu typu, jak ukazuje následující příklad:
+For a value type, the implicit parameterless constructor also produces the default value of the type, as the following example shows:
 
 ```csharp-interactive
 var n = new System.Numerics.Complex();
@@ -49,14 +49,14 @@ Console.WriteLine(n);  // output: (0, 0)
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+For more information, see the following sections of the [C# language specification](~/_csharplang/spec/introduction.md):
 
-- [Výchozí hodnoty](~/_csharplang/spec/variables.md#default-values)
-- [Výchozí konstruktory](~/_csharplang/spec/types.md#default-constructors)
+- [Default values](~/_csharplang/spec/variables.md#default-values)
+- [Default constructors](~/_csharplang/spec/types.md#default-constructors)
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#odkaz](../index.md)
+- [C# reference](../index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Tabulka předdefinovaných typů](built-in-types-table.md)
+- [Built-in types table](built-in-types-table.md)
 - [Konstruktory](../../programming-guide/classes-and-structs/constructors.md)

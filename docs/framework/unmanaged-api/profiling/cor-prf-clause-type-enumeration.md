@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: f64c325a-ed3a-4aaf-b847-a88edbc4fefc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 18197f0c500a205a66bdda8a9401f31d4208ae67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94230cbad95ff0a5d4234c27aa5d1d56ac5be9bb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780435"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428396"
 ---
-# <a name="corprfclausetype-enumeration"></a>COR_PRF_CLAUSE_TYPE – výčet
-Určuje typ výjimky klauzuli, která je právě zadali kód nebo doleva.  
+# <a name="cor_prf_clause_type-enumeration"></a>COR_PRF_CLAUSE_TYPE – výčet
+Indicates the type of exception clause that the code has just entered or left.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +39,19 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_CLAUSE_NONE`|Klauzule výjimka není platná.|  
-|`COR_PRF_CLAUSE_FILTER`|V klauzuli výjimka je výraz filtru.|  
-|`COR_PRF_CLAUSE_CATCH`|Klauzule výjimka je `catch` příkazu.|  
-|`COR_PRF_CLAUSE_FINALLY`|Klauzule výjimka je `finally` příkazu.|  
+|`COR_PRF_CLAUSE_NONE`|The exception clause is not valid.|  
+|`COR_PRF_CLAUSE_FILTER`|The exception clause is a filter expression.|  
+|`COR_PRF_CLAUSE_CATCH`|The exception clause is a `catch` statement.|  
+|`COR_PRF_CLAUSE_FINALLY`|The exception clause is a `finally` statement.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

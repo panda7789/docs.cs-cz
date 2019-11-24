@@ -1,5 +1,5 @@
 ---
-title: C#odkaz
+title: C# reference
 ms.date: 02/14/2017
 helpviewer_keywords:
 - Visual C#, language reference
@@ -8,64 +8,61 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: 4fed33272dbed50100a37aa9fcd30befc46435f9
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 4875e53327e24c4b5983a4a3b79b5beced368725
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771841"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428615"
 ---
-# <a name="c-reference"></a>C#odkaz
+# <a name="c-reference"></a>C# reference
 
-Tato část poskytuje referenční materiál o C# klíčových slovech, operátorech, speciálních znacích, direktivách preprocesoru, možnostech kompilátoru a chybách a upozorněních kompilátoru.  
+This section provides reference material about C# keywords, operators, special characters, preprocessor directives, compiler options, and compiler errors and warnings.  
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
  [Klíčová slova jazyka C#](./keywords/index.md)  
- Obsahuje odkazy na informace o C# klíčových slovech a syntaxi.  
+ Provides links to information about C# keywords and syntax.  
   
  [Operátory jazyka C#](./operators/index.md)  
- Obsahuje odkazy na informace o C# operátorech a syntaxi.  
+ Provides links to information about C# operators and syntax.  
 
  [Speciální znaky v jazyce C#](./tokens/index.md)  
- Obsahuje odkazy na informace o speciálních kontextových znacích C# v a jejich využití.  
+ Provides links to information about special contextual characters in C# and their usage.  
 
  [C# Direktivy preprocesoru](./preprocessor-directives/index.md)  
- Obsahuje odkazy na informace o příkazech kompilátoru pro vložení ve C# zdrojovém kódu.  
+ Provides links to information about compiler commands for embedding in C# source code.  
   
  [Možnosti kompilátoru jazyka C#](./compiler-options/index.md)  
- Obsahuje informace o možnostech kompilátoru a o jejich použití.  
+ Includes information about compiler options and how to use them.  
   
  [Chyby kompilátoru jazyka C#](./compiler-messages/index.md)  
- Obsahuje fragmenty kódu, které ukazují příčinu a opravu C# chyb a upozornění kompilátoru.  
+ Includes code snippets that demonstrate the cause and correction of C# compiler errors and warnings.  
   
- [C#Specifikace jazyka](../../../_csharplang/spec/introduction.md)  
- Specifikace C# jazyka 6,0. Toto je návrh konceptu pro jazyk C# 6,0. Tento dokument bude revidován prostřednictvím práce s výborem Standards C# ECMA. Verze 5,0 byla vydána v prosinci 2017 jako standardní dokument [ECMA-334 5 Edition](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf) .
+ [C# Language Specification](../../../_csharplang/spec/introduction.md)  
+ The C# 6.0 language specification. This is a draft proposal for the C# 6.0 language. This document will be refined through work with the ECMA C# standards committee. Version 5.0 has been released in December 2017 as the [Standard ECMA-334 5th Edition](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf) document.
 
-Funkce, které byly implementovány ve C# verzích po 6,0, jsou reprezentovány v návrzích specifikace jazyka. Tyto dokumenty popisují rozdíly ve specifikaci jazyka, aby bylo možné tyto nové funkce Přidat. Tyto jsou ve formuláři návrhu konceptu. Tyto specifikace budou upřesněny a odeslány do výboru standardů ECMA pro formální kontrolu a začlenění do budoucí verze C# Standard.
+The features that have been implemented in C# versions after 6.0 are represented in language specification proposals. These documents describe the deltas to the language spec in order to add these new features. These are in draft proposal form. These specifications will be refined and submitted to the ECMA standards committee for formal review and incorporation into a future version of the C# Standard.
 
- [C#Návrhy specifikace 7,0](../../../_csharplang/proposals/csharp-7.0/pattern-matching.md)  
- V C# 7,0 je implementováno několik nových funkcí. Patří mezi ně porovnávání vzorů, místní funkce, deklarace proměnných out, výrazy throw, binární literály a oddělovače číslic. Tato složka obsahuje specifikace pro každou z těchto funkcí.
+ [C# 7.0 Specification Proposals](../../../_csharplang/proposals/csharp-7.0/pattern-matching.md)  
+ There are a number of new features implemented in C# 7.0. They include pattern matching, local functions, out variable declarations, throw expressions, binary literals, and digit separators. This folder contains the specifications for each of those features.
   
- [C#Návrhy specifikace 7,1](../../../_csharplang/proposals/csharp-7.1/async-main.md)  
- V C# 7,1 jsou přidané nové funkce. Nejprve můžete napsat metodu `Main`, která vrátí `Task` nebo `Task<int>`. To umožňuje přidat modifikátor `async` do `Main`. Výraz `default` lze použít bez typu v umístěních, kde lze typ odvodit. Také je možné odvodit názvy členů řazené kolekce členů. A nakonec lze použít porovnávání vzorů s obecnými typy.
+ [C# 7.1 Specification Proposals](../../../_csharplang/proposals/csharp-7.1/async-main.md)  
+ There are new features added in C# 7.1. First, you can write a `Main` method that returns `Task` or `Task<int>`. This enables you to add the `async` modifier to `Main`. The `default` expression can be used without a type in locations where the type can be inferred. Also, tuple member names can be inferred. Finally, pattern matching can be used with generics.
 
- [C#Návrhy specifikace 7,2](../../../_csharplang/proposals/csharp-7.2/readonly-ref.md)  
- C#7,2 Přidání řady malých funkcí. Argumenty můžete předat odkazem ReadOnly pomocí klíčového slova `in`. K dispozici je množství změn nízké úrovně, které podporují bezpečnost při kompilaci pro `Span` a související typy. V některých situacích můžete použít pojmenované argumenty, kde jsou později argumenty pozice. Modifikátor přístupu `private protected` umožňuje určit, že volající jsou omezeny na odvozené typy implementované ve stejném sestavení. Operátor `?:` lze přeložit na odkaz na proměnnou. Můžete také formátovat hexadecimální a binární čísla pomocí počátečního oddělovače číslic.
+ [C# 7.2 Specification Proposals](../../../_csharplang/proposals/csharp-7.2/readonly-ref.md)  
+ C# 7.2 added a number of small features. You can pass arguments by readonly reference using the `in` keyword. There are a number of low-level changes to support compile-time safety for `Span` and related types. You can use named arguments where later arguments are positional, in some situations. The `private protected` access modifier enables you to specify that callers are limited to derived types implemented in the same assembly. The `?:` operator can resolve to a reference to a variable. You can also format hexadecimal and binary numbers using a leading digit separator.
 
- [C#Návrhy specifikace 7,3](../../../_csharplang/proposals/csharp-7.3/blittable.md)  
- C#7,3 je další verze bodu, která zahrnuje několik malých aktualizací. V parametrech obecného typu můžete použít nová omezení. Další změny usnadňují práci s `fixed` poli, včetně použití přidělení [`stackalloc`](./operators/stackalloc.md) . Místní proměnné deklarované s klíčovým slovem `ref` mohou být reasssigned, aby odkazovaly na nové úložiště. Atributy lze umístit do automaticky implementovaných vlastností, které cílí na pole zálohování generované kompilátorem. Proměnné výrazu lze použít v inicializátorech. Řazené kolekce členů lze porovnat s rovností (nebo nerovností). Existuje také vylepšení řešení přetížení.
+ [C# 7.3 Specification Proposals](../../../_csharplang/proposals/csharp-7.3/blittable.md)  
+ C# 7.3 is another point release that includes several small updates. You can use new constraints on generic type parameters. Other changes make it easier to work with `fixed` fields, including using [`stackalloc`](./operators/stackalloc.md) allocations. Local variables declared with the `ref` keyword may be reassigned to refer to new storage. You can place attributes on auto-implemented properties that target the compiler-generated backing field. Expression variables can be used in initializers. Tuples can be compared for equality (or inequality). There have also been some improvements to overload resolution.
   
- [C#Návrhy specifikace 8,0](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
- C#8,0 je k dispozici v rozhraní .NET Core 3,0. Mezi tyto funkce patří typy odkazů s možnou hodnotou null, rekurzivní porovnávání vzorů, metody rozhraní Standard, asynchronní streamy, rozsahy a indexy, založené na vzorcích a používání deklarací, přiřazení sloučení s hodnotou null a členy instance s vlastností ReadOnly.
+ [C# 8.0 Specification Proposals](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
+ C# 8.0 is available with .NET Core 3.0. The features include nullable reference types, recursive pattern matching, default interface methods, async streams, ranges and indexes, pattern based using and using declarations, null coalescing assignment, and readonly instance members.
   
 ## <a name="related-sections"></a>Související oddíly  
 
- [Průvodce jazykem C#](../index.md)  
- Poskytuje portál pro vizuální C# dokumentaci.  
-  
  [Použití vývojového prostředí sady Visual Studio pro jazyk C#](/visualstudio/get-started/csharp)  
- Obsahuje odkazy na koncepční témata a témata související s úlohami, které popisují rozhraní IDE a editor.  
+ Provides links to conceptual and task topics that describe the IDE and Editor.  
   
  [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
- Obsahuje informace o používání C# programovacího jazyka.
+ Includes information about how to use the C# programming language.

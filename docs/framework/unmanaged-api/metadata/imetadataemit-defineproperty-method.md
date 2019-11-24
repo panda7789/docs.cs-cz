@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c4c1dc2-d40d-4173-bbe6-7058fb21c98f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 69b398fa003abc0dba00ee89a9bb911a8c2dd6df
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f11b374ed0ecbfc137c43fb641ae691237604691
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431520"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty – metoda
-Vytvoří definici vlastností pro zadaný typ se zadaným `get` a `set` metoda přístupové objekty a získá token pro tuto definici vlastnosti.  
+Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,49 +46,49 @@ HRESULT DefineProperty (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] Token pro třídu nebo rozhraní, na kterém je definována vlastnost.  
+ [in] The token for class or interface on which the property is being defined.  
   
  `szProperty`  
- [in] Název vlastnosti.  
+ [in] The name of the property.  
   
  `dwPropFlags`  
- [in] Vlastnost příznaky.  
+ [in] The property flags.  
   
  `pvSig`  
- [in] Signatura vlastnosti.  
+ [in] The property signature.  
   
  `cbSig`  
- [in] Počet bajtů v `pvSig`.  
+ [in] The count of bytes in `pvSig`.  
   
  `dwCPlusTypeFlag`  
- [in] Typ vlastnosti na výchozí hodnotu.  
+ [in] The type of the property's default value.  
   
  `pValue`  
- [in] Výchozí hodnota pro vlastnost.  
+ [in] The default value for the property.  
   
  `cchValue`  
- [in] Počet (Unicode) znaky v `pValue`.  
+ [in] The count of (Unicode) characters in `pValue`.  
   
  `mdSetter`  
- [in] Metoda, která nastaví hodnotu vlastnosti.  
+ [in] The method that sets the property value.  
   
  `mdGetter`  
- [in] Metoda, která vrací hodnotu vlastnosti.  
+ [in] The method that gets the property value.  
   
  `rmdOtherMethods[]`  
- [in] Pole jiné metody přidružený k vlastnosti. Ukončit pole pomocí `mdTokenNil`.  
+ [in] An array of other methods associated with the property. Terminate the array with an `mdTokenNil`.  
   
  `pmdProp`  
- [out] `mdProperty` Token přiřazený.  
+ [out] The `mdProperty` token assigned.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

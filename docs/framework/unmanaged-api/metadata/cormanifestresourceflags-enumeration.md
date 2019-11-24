@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1b0306b7-622b-4b57-8edc-3c713bb147ae
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 08f997e133fa6cc8769efe18e7ca06c0153f15a4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 35966e25d02bd6f1a9bdd21ad4e9cc44b7bb480e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781801"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450255"
 ---
 # <a name="cormanifestresourceflags-enumeration"></a>CorManifestResourceFlags – výčet
-Určuje, zda se prostředky kódovaný v manifestu sestavení.  
+Indicates the visibility of resources encoded in an assembly manifest.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,16 +40,16 @@ typedef enum CorManifestResourceFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mrVisibilityMask`|Vyhrazená.|  
-|`mrPublic`|Prostředky jsou veřejné.|  
-|`mrPrivate`|Prostředky jsou privátní.|  
+|`mrVisibilityMask`|Reserved.|  
+|`mrPublic`|The resources are public.|  
+|`mrPrivate`|The resources are private.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

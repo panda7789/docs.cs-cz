@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c571e37d87ffd136687452dc80a823b8ddbe3359
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cea84f47a5289df4bc9c50381e18d7077b3b8dad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782060"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440470"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope – metoda
-Importuje sestavení do aktuální obor a získá nový podpis metadat pro sloučený obor.  
+Imports an assembly into the current scope and gets a new metadata signature for the merged scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,46 +45,46 @@ HRESULT TranslateSigWithScope (
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- [in] Rozhraní pro import sestavení (kde je definován podpis).  
+ [in] The interface for import assembly (where the signature is defined).  
   
  `pbHashValue`  
- [in] Objekt blob algoritmu hash pro sestavení.  
+ [in] The hash blob for the assembly.  
   
  `cbHashValue`  
- [in] Počet bajtů v `pbHashValue`.  
+ [in] The count of bytes in `pbHashValue`.  
   
  `import`  
- [in] Rozhraní pro oboru importu metadat.  
+ [in] The interface for import metadata scope.  
   
  `pbSigBlob`  
- [in] Podpis k importu.  
+ [in] The signature to be imported.  
   
  `cbSigBlob`  
- [in] Velikost v bajtech, z `pbSigBlob`.  
+ [in] The size, in bytes, of `pbSigBlob`.  
   
  `pAssemEmit`  
- [in] Rozhraní pro export sestavení.  
+ [in] The interface for export assembly.  
   
  `emit`  
- [in] Rozhraní pro export metadat obor.  
+ [in] The interface for export metadata scope.  
   
  `pvTranslatedSig`  
- [out] Vyrovnávací paměť pro uložení objektů blob přeložené podpis.  
+ [out] The buffer to hold the translated signature blob.  
   
  `cbTranslatedSigMax`  
- [in] Kapacita, v bajtech, z `pvTranslatedSig`.  
+ [in] The capacity, in bytes, of `pvTranslatedSig`.  
   
  `pcbTranslatedSig`  
- [out] Počet skutečný počet bajtů v přeložené podpisu.  
+ [out] The number of actual bytes in the translated signature.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

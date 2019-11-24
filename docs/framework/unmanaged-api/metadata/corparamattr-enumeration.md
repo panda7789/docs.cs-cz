@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a7ff90ad-dad8-48e8-917d-4aa9a118cbc8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bfa8f1b5df76c7fdfe2f25b637b157bfa4424f7a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1d58c8c0413346536c3e61e67ca0077c08c2b387
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781657"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436489"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr – výčet
-Obsahuje hodnoty, které popisují metadata parametru metody.  
+Contains values that describe the metadata of a method parameter.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,20 +46,20 @@ typedef enum CorParamAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pdIn`|Určuje, že parametr se předává do volání metody.|  
-|`pdOut`|Určuje, že parametr je předán z metody návratovou.|  
-|`pdOptional`|Určuje, že se jedná o volitelný parametr.|  
-|`pdReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`pdHasDefault`|Určuje, že parametr má výchozí hodnotu.|  
-|`pdHasFieldMarshal`|Určuje, že parametr obsahuje zařazovací informace.|  
-|`pdUnused`|Nevyužité.|  
+|`pdIn`|Specifies that the parameter is passed into the method call.|  
+|`pdOut`|Specifies that the parameter is passed from the method return.|  
+|`pdOptional`|Specifies that the parameter is optional.|  
+|`pdReservedMask`|Reserved for internal use by the common language runtime.|  
+|`pdHasDefault`|Specifies that the parameter has a default value.|  
+|`pdHasFieldMarshal`|Specifies that the parameter has marshaling information.|  
+|`pdUnused`|Unused.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

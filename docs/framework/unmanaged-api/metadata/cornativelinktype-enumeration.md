@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 944c641c39ddef7add0e9f382dc7d35068668455
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 718e41e16c07265d8a36b8f6124d99cd3490f7be
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781718"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436625"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType – výčet
-Obsahuje hodnoty, které označují typ propojené v nativním kódu.  
+Provides values that indicate the type linked in native code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,21 +42,21 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`nltNone`|Označuje, že jsou zadána žádná klíčová slova.|  
-|`nltAnsi`|Určuje, zda je zadán ANSI – klíčové slovo.|  
-|`nltUnicode`|Určuje, zda je zadán Unicode – klíčové slovo|  
-|`nltAuto`|Určuje, zda je zadán klíčovým slovem auto.|  
-|`nltOle`|Označuje, zda je zadán klíčovým slovem OLE.|  
-|`nltMaxValue`|Nepoužívá se.|  
+|`nltNone`|Indicates that none of the keywords are specified.|  
+|`nltAnsi`|Indicates that an ANSI keyword is specified.|  
+|`nltUnicode`|Indicates that a Unicode keyword is specified|  
+|`nltAuto`|Indicates that an auto keyword is specified.|  
+|`nltOle`|Indicates that an OLE keyword is specified.|  
+|`nltMaxValue`|Not used.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

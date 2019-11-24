@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8f35414d-f40b-4b99-8768-9adb675c622a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6094bbedcc5386d3f5c0400960e47ac91defe2a1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8360a74e9e18e5b68ecc9edd7be2e3a711cb61c9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782445"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437777"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout – metoda
-Získá informace o rozložení třídy odkazuje zadaný TypeDef token.  
+Gets layout information for the class referenced by the specified TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT GetClassLayout  (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] Token TypeDef pro třídu s rozložením se vraťte.  
+ [in] The TypeDef token for the class with the layout to return.  
   
  `pdwPackSize`  
- [out] Jedna z hodnot 1, 2, 4, 8 nebo 16, představující velikosti balíčku třídy.  
+ [out] One of the values 1, 2, 4, 8, or 16, representing the pack size of the class.  
   
  `rFieldOffset`  
- [out] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) hodnoty.  
+ [out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) values.  
   
  `cMax`  
- [in] Maximální velikost `rFieldOffset` pole.  
+ [in] The maximum size of the `rFieldOffset` array.  
   
  `pcFieldOffset`  
- [out] Počet prvků vrácených v `rFieldOffset`.  
+ [out] The number of elements returned in `rFieldOffset`.  
   
  `pulClassSize`  
- [out] Velikost v bajtech třída představovaná typem `td`.  
+ [out] The size in bytes of the class represented by `td`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

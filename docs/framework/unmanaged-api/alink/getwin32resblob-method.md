@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 36997e04-f9f6-4254-a041-6767ac6c51d9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b26f08548ac964fae2f4d64db50167add327eb2d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ff3103a46390c880a56ff443bfe20744f2ba0bfd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777366"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74430687"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
-Načte objekt BLOB prostředku Win32. Po nastavení možností sestavení volejte tuto metodu.  
+Retrieves Win32 resource blob. Call this method after setting assembly options.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT GetWin32ResBlob(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení  
+ ID of the assembly.  
   
  `FileToken`  
- Token souboru, který se používá k načtení názvu souboru, který se má použít při vytváření prostředku verze Win32  
+ File token used to retrieve the filename to be used when constructing the Win32 Version resource  
   
  `fDll`  
- TRUE, pokud je soubor DLL, false pro EXE.  
+ TRUE if file is a DLL, false for an EXE.  
   
  `pszIconFile`  
- Volitelná ikona, která se má vložit do objektu BLOB prostředku  
+ Optional icon to insert into the resource blob.  
   
  `ppResBlob`  
- Přijímá objekt BLOB prostředku.  
+ Receives the resource blob.  
   
  `pcbResBlob`  
- Přijímá velikost objektu BLOB.  
+ Receives the size of the blob.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

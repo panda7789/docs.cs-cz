@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9634e995-d46d-4397-ab66-cc5781d11e4e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d98ebed2eb853d5dc8177b0b044bf654c3978494
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a1e83e4b8cb6603029f3b42b1a3b9ba4810c9039
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744344"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438009"
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA – struktura
-Obsahuje informace, které obslužné rutiny symbolů o metodách, které byly přesunuty v důsledku úpravy.  
+Provides information to the symbol handler about methods that were moved as a result of edits.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,11 +38,11 @@ typedef struct _SYMLINEDELTA
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdMethod`|Token metody metadat.|  
-|`delta`|Počet řádků, který byl přesunut metodu.|  
+|`mdMethod`|The method's metadata token.|  
+|`delta`|The number of lines the method was moved.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Viz také:
 

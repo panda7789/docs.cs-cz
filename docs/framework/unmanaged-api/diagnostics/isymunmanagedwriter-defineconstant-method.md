@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a04bf93a2b2809198673d15f29714f52c9435b68
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c8d0145b9dffe1c0ff6ed3281c90f3bcec082ab8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767837"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428058"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant – metoda
-Definuje název pro konstantní hodnotu.  
+Defines a name for a constant value.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT DefineConstant(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] Ukazatel `WCHAR` , který definuje název konstantní.  
+ [in] A pointer to a `WCHAR` that defines the constant name.  
   
  `value`  
- [in] Hodnota konstanty.  
+ [in] The value of the constant.  
   
  `cSig`  
- [in] Velikost `signature` pole.  
+ [in] The size of the `signature` array.  
   
  `signature`  
- [in] Podpis typu pro konstantu.  
+ [in] The type signature for the constant.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 
