@@ -7,30 +7,30 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: 578a6da0f1545012d5a77edc3db04d52f56180bc
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6b71b620c5e41a6d16ca11370010c8353cdbd6c8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042502"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448806"
 ---
-# <a name="ui-automation-clients-for-managed-code"></a><span data-ttu-id="054d3-102">Klienti automatizace uživatelského rozhraní pro spravovaný kód</span><span class="sxs-lookup"><span data-stu-id="054d3-102">UI Automation Clients for Managed Code</span></span>
+# <a name="ui-automation-clients-for-managed-code"></a><span data-ttu-id="c1399-102">Klienti automatizace uživatelského rozhraní pro spravovaný kód</span><span class="sxs-lookup"><span data-stu-id="c1399-102">UI Automation Clients for Managed Code</span></span>
 > [!NOTE]
-> <span data-ttu-id="054d3-103">Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="054d3-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="054d3-104">Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="054d3-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
+> <span data-ttu-id="c1399-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span><span class="sxs-lookup"><span data-stu-id="c1399-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="c1399-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span><span class="sxs-lookup"><span data-stu-id="c1399-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span></span>  
   
- <span data-ttu-id="054d3-105">Tato část obsahuje přehledy a postupy, které vám pomohou při vývoji klientů automatizace uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="054d3-105">This section contains overviews and how-to topics to help you develop UI Automation clients.</span></span>  
+ <span data-ttu-id="c1399-105">This section contains overviews and how-to topics to help you develop UI Automation clients.</span><span class="sxs-lookup"><span data-stu-id="c1399-105">This section contains overviews and how-to topics to help you develop UI Automation clients.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="054d3-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="054d3-106">In This Section</span></span>  
- [<span data-ttu-id="054d3-107">Automatizace uživatelského rozhraní a změna velikosti obrazovky</span><span class="sxs-lookup"><span data-stu-id="054d3-107">UI Automation and Screen Scaling</span></span>](ui-automation-and-screen-scaling.md)  
- [<span data-ttu-id="054d3-108">Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="054d3-108">UI Automation Support for Standard Controls</span></span>](ui-automation-support-for-standard-controls.md)  
- [<span data-ttu-id="054d3-109">Události automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="054d3-109">UI Automation Events for Clients</span></span>](ui-automation-events-for-clients.md)  
- [<span data-ttu-id="054d3-110">Práce s mezipamětí u klientů automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="054d3-110">Caching in UI Automation Clients</span></span>](caching-in-ui-automation-clients.md)  
- [<span data-ttu-id="054d3-111">Vlastnosti automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="054d3-111">UI Automation Properties for Clients</span></span>](ui-automation-properties-for-clients.md)  
- [<span data-ttu-id="054d3-112">Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="054d3-112">Control Pattern Mapping for UI Automation Clients</span></span>](control-pattern-mapping-for-ui-automation-clients.md)  
- [<span data-ttu-id="054d3-113">Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="054d3-113">UI Automation Control Patterns for Clients</span></span>](ui-automation-control-patterns-for-clients.md)  
- [<span data-ttu-id="054d3-114">Získání elementů automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="054d3-114">Obtaining UI Automation Elements</span></span>](obtaining-ui-automation-elements.md)  
- [<span data-ttu-id="054d3-115">Potíže s vlákny při automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="054d3-115">UI Automation Threading Issues</span></span>](ui-automation-threading-issues.md)  
- [<span data-ttu-id="054d3-116">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="054d3-116">How-to Topics</span></span>](ui-automation-clients-for-managed-code-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c1399-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c1399-106">In This Section</span></span>  
+ [<span data-ttu-id="c1399-107">Automatizace uživatelského rozhraní a změna velikosti obrazovky</span><span class="sxs-lookup"><span data-stu-id="c1399-107">UI Automation and Screen Scaling</span></span>](ui-automation-and-screen-scaling.md)  
+ [<span data-ttu-id="c1399-108">Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="c1399-108">UI Automation Support for Standard Controls</span></span>](ui-automation-support-for-standard-controls.md)  
+ [<span data-ttu-id="c1399-109">Události automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="c1399-109">UI Automation Events for Clients</span></span>](ui-automation-events-for-clients.md)  
+ [<span data-ttu-id="c1399-110">Práce s mezipamětí u klientů automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1399-110">Caching in UI Automation Clients</span></span>](caching-in-ui-automation-clients.md)  
+ [<span data-ttu-id="c1399-111">Vlastnosti automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="c1399-111">UI Automation Properties for Clients</span></span>](ui-automation-properties-for-clients.md)  
+ [<span data-ttu-id="c1399-112">Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1399-112">Control Pattern Mapping for UI Automation Clients</span></span>](control-pattern-mapping-for-ui-automation-clients.md)  
+ [<span data-ttu-id="c1399-113">Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="c1399-113">UI Automation Control Patterns for Clients</span></span>](ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="c1399-114">Získání elementů automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1399-114">Obtaining UI Automation Elements</span></span>](obtaining-ui-automation-elements.md)  
+ [<span data-ttu-id="c1399-115">Potíže s vlákny při automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1399-115">UI Automation Threading Issues</span></span>](ui-automation-threading-issues.md)  
+ [<span data-ttu-id="c1399-116">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c1399-116">How-to Topics</span></span>](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="054d3-117">Reference</span><span class="sxs-lookup"><span data-stu-id="054d3-117">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c1399-117">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c1399-117">Reference</span></span>  
  <xref:System.Windows.Automation>

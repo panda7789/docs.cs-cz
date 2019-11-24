@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: eb95ce39-5688-43c1-a34d-578794b32faa
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c1e7bbac17d9a9ae191a5ad6d69b52a806383562
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0f870d9d7d1bc292b213d690df508a6c28bac2ab
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781602"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450097"
 ---
-# <a name="corsavesize-enumeration"></a><span data-ttu-id="13205-102">CorSaveSize – výčet</span><span class="sxs-lookup"><span data-stu-id="13205-102">CorSaveSize Enumeration</span></span>
-<span data-ttu-id="13205-103">Obsahuje hodnoty určující úroveň přesnosti se vyžaduje při dotazování na velikost uložení operace.</span><span class="sxs-lookup"><span data-stu-id="13205-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span></span>  
+# <a name="corsavesize-enumeration"></a><span data-ttu-id="7066c-102">CorSaveSize – výčet</span><span class="sxs-lookup"><span data-stu-id="7066c-102">CorSaveSize Enumeration</span></span>
+<span data-ttu-id="7066c-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span><span class="sxs-lookup"><span data-stu-id="7066c-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="13205-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13205-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7066c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7066c-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorSaveSize {  
@@ -36,23 +34,23 @@ typedef enum CorSaveSize {
 } CorSaveSize;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="13205-105">Členové</span><span class="sxs-lookup"><span data-stu-id="13205-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="7066c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7066c-105">Members</span></span>  
   
-|<span data-ttu-id="13205-106">Člen</span><span class="sxs-lookup"><span data-stu-id="13205-106">Member</span></span>|<span data-ttu-id="13205-107">Popis</span><span class="sxs-lookup"><span data-stu-id="13205-107">Description</span></span>|  
+|<span data-ttu-id="7066c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7066c-106">Member</span></span>|<span data-ttu-id="7066c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7066c-107">Description</span></span>|  
 |------------|-----------------|  
-|`cssAccurate`|<span data-ttu-id="13205-108">Určuje, že návratová hodnota by měla být přesné.</span><span class="sxs-lookup"><span data-stu-id="13205-108">Specifies that the return value should be exact.</span></span>|  
-|`cssQuick`|<span data-ttu-id="13205-109">Určuje, že návratová hodnota by měla odhad.</span><span class="sxs-lookup"><span data-stu-id="13205-109">Specifies that the return value should be estimated.</span></span>|  
-|`cssDiscardTransientCAs`|<span data-ttu-id="13205-110">Určuje, zda má být odebrána discardable typy.</span><span class="sxs-lookup"><span data-stu-id="13205-110">Specifies that discardable types should be removed.</span></span>|  
+|`cssAccurate`|<span data-ttu-id="7066c-108">Specifies that the return value should be exact.</span><span class="sxs-lookup"><span data-stu-id="7066c-108">Specifies that the return value should be exact.</span></span>|  
+|`cssQuick`|<span data-ttu-id="7066c-109">Specifies that the return value should be estimated.</span><span class="sxs-lookup"><span data-stu-id="7066c-109">Specifies that the return value should be estimated.</span></span>|  
+|`cssDiscardTransientCAs`|<span data-ttu-id="7066c-110">Specifies that discardable types should be removed.</span><span class="sxs-lookup"><span data-stu-id="7066c-110">Specifies that discardable types should be removed.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="13205-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="13205-111">Requirements</span></span>  
- <span data-ttu-id="13205-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="13205-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7066c-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7066c-111">Requirements</span></span>  
+ <span data-ttu-id="7066c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7066c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="13205-113">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="13205-113">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="7066c-113">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="7066c-113">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="13205-114">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="13205-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7066c-114">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7066c-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="13205-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="13205-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7066c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7066c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="13205-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="13205-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7066c-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7066c-116">See also</span></span>
 
-- [<span data-ttu-id="13205-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="13205-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="7066c-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7066c-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

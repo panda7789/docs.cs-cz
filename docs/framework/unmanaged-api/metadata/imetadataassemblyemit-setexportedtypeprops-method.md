@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 1c090153-fd5f-46c7-9cff-39a78d992c8f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e4be840760782789aa91e5519f60374aca2e3941
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae682c354a7a5188611b103008a3e18f8d821260
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775261"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431938"
 ---
-# <a name="imetadataassemblyemitsetexportedtypeprops-method"></a><span data-ttu-id="8f3ad-102">IMetaDataAssemblyEmit::SetExportedTypeProps – metoda</span><span class="sxs-lookup"><span data-stu-id="8f3ad-102">IMetaDataAssemblyEmit::SetExportedTypeProps Method</span></span>
-<span data-ttu-id="8f3ad-103">Upraví zadaný `ExportedType` struktury metadat.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-103">Modifies the specified `ExportedType` metadata structure.</span></span>  
+# <a name="imetadataassemblyemitsetexportedtypeprops-method"></a><span data-ttu-id="22fcc-102">IMetaDataAssemblyEmit::SetExportedTypeProps – metoda</span><span class="sxs-lookup"><span data-stu-id="22fcc-102">IMetaDataAssemblyEmit::SetExportedTypeProps Method</span></span>
+<span data-ttu-id="22fcc-103">Modifies the specified `ExportedType` metadata structure.</span><span class="sxs-lookup"><span data-stu-id="22fcc-103">Modifies the specified `ExportedType` metadata structure.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8f3ad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8f3ad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="22fcc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="22fcc-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetExportedTypeProps (  
@@ -38,31 +36,31 @@ HRESULT SetExportedTypeProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8f3ad-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8f3ad-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="22fcc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="22fcc-105">Parameters</span></span>  
  `ct`  
- <span data-ttu-id="8f3ad-106">[in] Token metadat, který určuje `ExportedType` struktury metadat má být upraven.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-106">[in] The metadata token that specifies the `ExportedType` metadata structure to be modified.</span></span>  
+ <span data-ttu-id="22fcc-106">[in] The metadata token that specifies the `ExportedType` metadata structure to be modified.</span><span class="sxs-lookup"><span data-stu-id="22fcc-106">[in] The metadata token that specifies the `ExportedType` metadata structure to be modified.</span></span>  
   
  `tkImplementation`  
- <span data-ttu-id="8f3ad-107">[in] Token typu `File`, `AssemblyRef`, nebo `ExportedType`, která určuje, jak je implementovaná tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-107">[in] The token, of type `File`, `AssemblyRef`, or `ExportedType`, that specifies how this type is implemented.</span></span>  
+ <span data-ttu-id="22fcc-107">[in] The token, of type `File`, `AssemblyRef`, or `ExportedType`, that specifies how this type is implemented.</span><span class="sxs-lookup"><span data-stu-id="22fcc-107">[in] The token, of type `File`, `AssemblyRef`, or `ExportedType`, that specifies how this type is implemented.</span></span>  
   
  `tkTypeDef`  
- <span data-ttu-id="8f3ad-108">[in] `TypeDef` Token popsána v souboru kódu.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-108">[in] The `TypeDef` token referenced in the code file.</span></span>  
+ <span data-ttu-id="22fcc-108">[in] The `TypeDef` token referenced in the code file.</span><span class="sxs-lookup"><span data-stu-id="22fcc-108">[in] The `TypeDef` token referenced in the code file.</span></span>  
   
  `dwExportedTypeFlags`  
- <span data-ttu-id="8f3ad-109">[in] Bitová kombinace hodnot, které určují atributy typu.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-109">[in] A bitwise combination of values that specify attributes of the type.</span></span>  
+ <span data-ttu-id="22fcc-109">[in] A bitwise combination of values that specify attributes of the type.</span><span class="sxs-lookup"><span data-stu-id="22fcc-109">[in] A bitwise combination of values that specify attributes of the type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="8f3ad-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8f3ad-110">Remarks</span></span>  
- <span data-ttu-id="8f3ad-111">K vytvoření `ExportedType` struktury metadat, použijte [imetadataassemblyemit::defineexportedtype –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="8f3ad-111">To create an `ExportedType` metadata structure, use the [IMetaDataAssemblyEmit::DefineExportedType](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="22fcc-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="22fcc-110">Remarks</span></span>  
+ <span data-ttu-id="22fcc-111">To create an `ExportedType` metadata structure, use the [IMetaDataAssemblyEmit::DefineExportedType](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) method.</span><span class="sxs-lookup"><span data-stu-id="22fcc-111">To create an `ExportedType` metadata structure, use the [IMetaDataAssemblyEmit::DefineExportedType](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8f3ad-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8f3ad-112">Requirements</span></span>  
- <span data-ttu-id="8f3ad-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8f3ad-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="22fcc-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="22fcc-112">Requirements</span></span>  
+ <span data-ttu-id="22fcc-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="22fcc-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8f3ad-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="8f3ad-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="22fcc-114">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="22fcc-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="8f3ad-115">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8f3ad-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="22fcc-115">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="22fcc-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="8f3ad-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8f3ad-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="22fcc-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="22fcc-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8f3ad-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8f3ad-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="22fcc-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="22fcc-117">See also</span></span>
 
-- [<span data-ttu-id="8f3ad-118">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f3ad-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="22fcc-118">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="22fcc-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

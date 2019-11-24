@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 275ef87b-0b53-49f9-af6b-58506335dc06
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 54789003f7454a65449e55ea4d990edd672d9c1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9aace77c4b3549c033433d4c305b07daa1f7a8c1
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774694"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448992"
 ---
-# <a name="isymunmanagedencupdateupdatemethodlines-method"></a><span data-ttu-id="482d6-102">ISymUnmanagedENCUpdate::UpdateMethodLines – metoda</span><span class="sxs-lookup"><span data-stu-id="482d6-102">ISymUnmanagedENCUpdate::UpdateMethodLines Method</span></span>
-<span data-ttu-id="482d6-103">Umožňuje aktualizovat informace o řádku pro metodu, která nebyla překompilovat, ale jejíž řádky přesunuty nezávisle na sobě.</span><span class="sxs-lookup"><span data-stu-id="482d6-103">Allows updating the line information for a method that has not been recompiled, but whose lines have moved independently.</span></span> <span data-ttu-id="482d6-104">Rozdílové hodnoty pro každý příkaz je povolen.</span><span class="sxs-lookup"><span data-stu-id="482d6-104">A delta for each statement is allowed.</span></span>  
+# <a name="isymunmanagedencupdateupdatemethodlines-method"></a><span data-ttu-id="e6041-102">ISymUnmanagedENCUpdate::UpdateMethodLines – metoda</span><span class="sxs-lookup"><span data-stu-id="e6041-102">ISymUnmanagedENCUpdate::UpdateMethodLines Method</span></span>
+<span data-ttu-id="e6041-103">Allows updating the line information for a method that has not been recompiled, but whose lines have moved independently.</span><span class="sxs-lookup"><span data-stu-id="e6041-103">Allows updating the line information for a method that has not been recompiled, but whose lines have moved independently.</span></span> <span data-ttu-id="e6041-104">A delta for each statement is allowed.</span><span class="sxs-lookup"><span data-stu-id="e6041-104">A delta for each statement is allowed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="482d6-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="482d6-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e6041-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e6041-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT UpdateMethodLines(  
@@ -36,22 +34,22 @@ HRESULT UpdateMethodLines(
     [in]  ULONG        cDeltas);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="482d6-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="482d6-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e6041-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e6041-106">Parameters</span></span>  
  `mdMethodToken`  
- <span data-ttu-id="482d6-107">[in] Metadata token metody.</span><span class="sxs-lookup"><span data-stu-id="482d6-107">[in] The metadata of the method token.</span></span>  
+ <span data-ttu-id="e6041-107">[in] The metadata of the method token.</span><span class="sxs-lookup"><span data-stu-id="e6041-107">[in] The metadata of the method token.</span></span>  
   
  `pDeltas`  
- <span data-ttu-id="482d6-108">[in] Pole `INT32` hodnoty, které označuje rozdíly pro každý bod sekvence v metodě.</span><span class="sxs-lookup"><span data-stu-id="482d6-108">[in] An array of `INT32` values that indicates deltas for each sequence point in the method.</span></span>  
+ <span data-ttu-id="e6041-108">[in] An array of `INT32` values that indicates deltas for each sequence point in the method.</span><span class="sxs-lookup"><span data-stu-id="e6041-108">[in] An array of `INT32` values that indicates deltas for each sequence point in the method.</span></span>  
   
  `cDeltas`  
- <span data-ttu-id="482d6-109">[in] A `ULONG` obsahující velikost `pDeltas` parametru.</span><span class="sxs-lookup"><span data-stu-id="482d6-109">[in] A `ULONG` containing the size of the `pDeltas` parameter.</span></span>  
+ <span data-ttu-id="e6041-109">[in] A `ULONG` containing the size of the `pDeltas` parameter.</span><span class="sxs-lookup"><span data-stu-id="e6041-109">[in] A `ULONG` containing the size of the `pDeltas` parameter.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="482d6-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="482d6-110">Return Value</span></span>  
- <span data-ttu-id="482d6-111">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="482d6-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e6041-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e6041-110">Return Value</span></span>  
+ <span data-ttu-id="e6041-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="e6041-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="482d6-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="482d6-112">Requirements</span></span>  
- <span data-ttu-id="482d6-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="482d6-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e6041-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e6041-112">Requirements</span></span>  
+ <span data-ttu-id="e6041-113">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="e6041-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="482d6-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="482d6-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e6041-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e6041-114">See also</span></span>
 
-- [<span data-ttu-id="482d6-115">ISymUnmanagedENCUpdate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="482d6-115">ISymUnmanagedENCUpdate Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+- [<span data-ttu-id="e6041-115">ISymUnmanagedENCUpdate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e6041-115">ISymUnmanagedENCUpdate Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)

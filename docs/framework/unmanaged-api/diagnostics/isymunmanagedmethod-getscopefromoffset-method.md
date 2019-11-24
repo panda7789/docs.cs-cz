@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: d14cf210-81f8-46e1-8b19-6ddec0ba8b11
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d540318dabd55e9a520aedde371e0a83d612721e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36b1b2394907f242c0e8c5e277c0d1c5b3b02e1b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759487"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448901"
 ---
-# <a name="isymunmanagedmethodgetscopefromoffset-method"></a><span data-ttu-id="48ac1-102">ISymUnmanagedMethod::GetScopeFromOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="48ac1-102">ISymUnmanagedMethod::GetScopeFromOffset Method</span></span>
-<span data-ttu-id="48ac1-103">Získá nejvíce nadřazeného oboru lexikální v rámci této metody, které obklopuje dané posun.</span><span class="sxs-lookup"><span data-stu-id="48ac1-103">Gets the most enclosing lexical scope within this method that encloses the given offset.</span></span> <span data-ttu-id="48ac1-104">To je možné spustit místní proměnné vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="48ac1-104">This can be used to start local variable searches.</span></span>  
+# <a name="isymunmanagedmethodgetscopefromoffset-method"></a><span data-ttu-id="fc8b5-102">ISymUnmanagedMethod::GetScopeFromOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="fc8b5-102">ISymUnmanagedMethod::GetScopeFromOffset Method</span></span>
+<span data-ttu-id="fc8b5-103">Gets the most enclosing lexical scope within this method that encloses the given offset.</span><span class="sxs-lookup"><span data-stu-id="fc8b5-103">Gets the most enclosing lexical scope within this method that encloses the given offset.</span></span> <span data-ttu-id="fc8b5-104">This can be used to start local variable searches.</span><span class="sxs-lookup"><span data-stu-id="fc8b5-104">This can be used to start local variable searches.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="48ac1-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="48ac1-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fc8b5-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fc8b5-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetScopeFromOffset(  
@@ -35,19 +33,19 @@ HRESULT GetScopeFromOffset(
     [out, retval] ISymUnmanagedScope**  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="48ac1-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="48ac1-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="fc8b5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="fc8b5-106">Parameters</span></span>  
  `offset`  
- <span data-ttu-id="48ac1-107">[in] A `ULONG` obsahující posun.</span><span class="sxs-lookup"><span data-stu-id="48ac1-107">[in] A `ULONG` that contains the offset.</span></span>  
+ <span data-ttu-id="fc8b5-107">[in] A `ULONG` that contains the offset.</span><span class="sxs-lookup"><span data-stu-id="fc8b5-107">[in] A `ULONG` that contains the offset.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="48ac1-108">[out] Ukazatel, který je nastaven na vrácenou [isymunmanagedscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="48ac1-108">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span></span>  
+ <span data-ttu-id="fc8b5-108">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span><span class="sxs-lookup"><span data-stu-id="fc8b5-108">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="48ac1-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="48ac1-109">Return Value</span></span>  
- <span data-ttu-id="48ac1-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="48ac1-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="fc8b5-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="fc8b5-109">Return Value</span></span>  
+ <span data-ttu-id="fc8b5-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="fc8b5-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="48ac1-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="48ac1-111">Requirements</span></span>  
- <span data-ttu-id="48ac1-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="48ac1-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fc8b5-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fc8b5-111">Requirements</span></span>  
+ <span data-ttu-id="fc8b5-112">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="fc8b5-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="48ac1-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="48ac1-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fc8b5-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fc8b5-113">See also</span></span>
 
-- [<span data-ttu-id="48ac1-114">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="48ac1-114">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="fc8b5-114">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc8b5-114">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

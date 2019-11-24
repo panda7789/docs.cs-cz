@@ -15,23 +15,21 @@ helpviewer_keywords:
 ms.assetid: bce1dcf8-b4ec-4e73-a917-f2df1ad49c8a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 65eee2e834251817b461f1cd1debf212696d5a5f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 32e63a6d2b6f739025d4c5558c16fe2d74fde73c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855691"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449861"
 ---
-# <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a><span data-ttu-id="a5b4f-102">ICorProfilerInfo::SetILInstrumentedCodeMap – metoda</span><span class="sxs-lookup"><span data-stu-id="a5b4f-102">ICorProfilerInfo::SetILInstrumentedCodeMap Method</span></span>
+# <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a><span data-ttu-id="87859-102">ICorProfilerInfo::SetILInstrumentedCodeMap – metoda</span><span class="sxs-lookup"><span data-stu-id="87859-102">ICorProfilerInfo::SetILInstrumentedCodeMap Method</span></span>
 
-<span data-ttu-id="a5b4f-103">Nastaví mapu kódu pro určenou funkci pomocí zadaných položek mapování jazyka MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="a5b4f-103">Sets a code map for the specified function using the specified Microsoft intermediate language (MSIL) map entries.</span></span>
+<span data-ttu-id="87859-103">Sets a code map for the specified function using the specified Microsoft intermediate language (MSIL) map entries.</span><span class="sxs-lookup"><span data-stu-id="87859-103">Sets a code map for the specified function using the specified Microsoft intermediate language (MSIL) map entries.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a5b4f-104">V .NET Framework verze 2,0 bude volání `SetILInstrumentedCodeMap` `FunctionID` na, které představuje obecnou funkci v konkrétní doméně aplikace, ovlivnit všechny instance této funkce v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-104">In the .NET Framework version 2.0, calling `SetILInstrumentedCodeMap` on a `FunctionID` that represents a generic function in a particular application domain will affect all instances of that function in the application domain.</span></span>
+> <span data-ttu-id="87859-104">In the .NET Framework version 2.0, calling `SetILInstrumentedCodeMap` on a `FunctionID` that represents a generic function in a particular application domain will affect all instances of that function in the application domain.</span><span class="sxs-lookup"><span data-stu-id="87859-104">In the .NET Framework version 2.0, calling `SetILInstrumentedCodeMap` on a `FunctionID` that represents a generic function in a particular application domain will affect all instances of that function in the application domain.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a5b4f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a5b4f-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="87859-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="87859-105">Syntax</span></span>
 
 ```cpp
 HRESULT SetILInstrumentedCodeMap(
@@ -41,62 +39,62 @@ HRESULT SetILInstrumentedCodeMap(
     [in, size_is(cILMapEntries)] COR_IL_MAP rgILMapEntries[]);
 ```
 
-## <a name="parameters"></a><span data-ttu-id="a5b4f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a5b4f-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="87859-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="87859-106">Parameters</span></span>
 
 `functionId`\
-<span data-ttu-id="a5b4f-107">pro ID funkce, pro kterou chcete nastavit mapu kódu.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-107">[in] The ID of the function for which to set the code map.</span></span>
+<span data-ttu-id="87859-107">[in] The ID of the function for which to set the code map.</span><span class="sxs-lookup"><span data-stu-id="87859-107">[in] The ID of the function for which to set the code map.</span></span>
 
 `fStartJit`\
-<span data-ttu-id="a5b4f-108">pro Logická hodnota, která označuje, zda je volání `SetILInstrumentedCodeMap` metody prvním pro konkrétní. `FunctionID`</span><span class="sxs-lookup"><span data-stu-id="a5b4f-108">[in] A Boolean value that indicates whether the call to the `SetILInstrumentedCodeMap` method is the first for a particular `FunctionID`.</span></span> <span data-ttu-id="a5b4f-109">Nastavte `fStartJit` `SetILInstrumentedCodeMap` na `true` při prvním volání na pro daný `FunctionID`a potom na `false` .</span><span class="sxs-lookup"><span data-stu-id="a5b4f-109">Set `fStartJit` to `true` in the first call to `SetILInstrumentedCodeMap` for a given `FunctionID`, and to `false` thereafter.</span></span>
+<span data-ttu-id="87859-108">[in] A Boolean value that indicates whether the call to the `SetILInstrumentedCodeMap` method is the first for a particular `FunctionID`.</span><span class="sxs-lookup"><span data-stu-id="87859-108">[in] A Boolean value that indicates whether the call to the `SetILInstrumentedCodeMap` method is the first for a particular `FunctionID`.</span></span> <span data-ttu-id="87859-109">Set `fStartJit` to `true` in the first call to `SetILInstrumentedCodeMap` for a given `FunctionID`, and to `false` thereafter.</span><span class="sxs-lookup"><span data-stu-id="87859-109">Set `fStartJit` to `true` in the first call to `SetILInstrumentedCodeMap` for a given `FunctionID`, and to `false` thereafter.</span></span>
 
 `cILMapEntries`\
-<span data-ttu-id="a5b4f-110">pro Počet prvků v `cILMapEntries` poli.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-110">[in] The number of elements in the `cILMapEntries` array.</span></span>
+<span data-ttu-id="87859-110">[in] The number of elements in the `cILMapEntries` array.</span><span class="sxs-lookup"><span data-stu-id="87859-110">[in] The number of elements in the `cILMapEntries` array.</span></span>
 
 `rgILMapEntries`\
-<span data-ttu-id="a5b4f-111">pro Pole struktur COR_IL_MAP, z nichž každý Určuje posun MSIL.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-111">[in] An array of COR_IL_MAP structures, each of which specifies an MSIL offset.</span></span>
+<span data-ttu-id="87859-111">[in] An array of COR_IL_MAP structures, each of which specifies an MSIL offset.</span><span class="sxs-lookup"><span data-stu-id="87859-111">[in] An array of COR_IL_MAP structures, each of which specifies an MSIL offset.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="a5b4f-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a5b4f-112">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="87859-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="87859-112">Remarks</span></span>
 
-<span data-ttu-id="a5b4f-113">Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje).</span><span class="sxs-lookup"><span data-stu-id="a5b4f-113">A profiler often inserts statements within the source code of a method in order to instrument that method (for example, to notify when a given source line is reached).</span></span> <span data-ttu-id="a5b4f-114">`SetILInstrumentedCodeMap`umožňuje profileru mapovat původní instrukce jazyka MSIL na jejich nová umístění.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-114">`SetILInstrumentedCodeMap` enables a profiler to map the original MSIL instructions to their new locations.</span></span> <span data-ttu-id="a5b4f-115">Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-115">A profiler can use the [ICorProfilerInfo::GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) method to get the original MSIL offset for a given native offset.</span></span>
+<span data-ttu-id="87859-113">A profiler often inserts statements within the source code of a method in order to instrument that method (for example, to notify when a given source line is reached).</span><span class="sxs-lookup"><span data-stu-id="87859-113">A profiler often inserts statements within the source code of a method in order to instrument that method (for example, to notify when a given source line is reached).</span></span> <span data-ttu-id="87859-114">`SetILInstrumentedCodeMap` enables a profiler to map the original MSIL instructions to their new locations.</span><span class="sxs-lookup"><span data-stu-id="87859-114">`SetILInstrumentedCodeMap` enables a profiler to map the original MSIL instructions to their new locations.</span></span> <span data-ttu-id="87859-115">A profiler can use the [ICorProfilerInfo::GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) method to get the original MSIL offset for a given native offset.</span><span class="sxs-lookup"><span data-stu-id="87859-115">A profiler can use the [ICorProfilerInfo::GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) method to get the original MSIL offset for a given native offset.</span></span>
 
-<span data-ttu-id="a5b4f-116">Ladicí program předpokládá, že každý starý posun odkazuje na posun MSIL v rámci původního, neupraveného kódu MSIL a že každý nový posun odkazuje na posun MSIL v rámci nového, instrumentované kódu.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-116">The debugger will assume that each old offset refers to an MSIL offset within the original, unmodified MSIL code, and that each new offset refers to the MSIL offset within the new, instrumented code.</span></span> <span data-ttu-id="a5b4f-117">Mapa by se měla seřadit ve vzestupném pořadí.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-117">The map should be sorted in increasing order.</span></span> <span data-ttu-id="a5b4f-118">Chcete-li, aby krokování fungovalo správně, postupujte podle těchto pokynů:</span><span class="sxs-lookup"><span data-stu-id="a5b4f-118">For stepping to work properly, follow these guidelines:</span></span>
+<span data-ttu-id="87859-116">The debugger will assume that each old offset refers to an MSIL offset within the original, unmodified MSIL code, and that each new offset refers to the MSIL offset within the new, instrumented code.</span><span class="sxs-lookup"><span data-stu-id="87859-116">The debugger will assume that each old offset refers to an MSIL offset within the original, unmodified MSIL code, and that each new offset refers to the MSIL offset within the new, instrumented code.</span></span> <span data-ttu-id="87859-117">The map should be sorted in increasing order.</span><span class="sxs-lookup"><span data-stu-id="87859-117">The map should be sorted in increasing order.</span></span> <span data-ttu-id="87859-118">For stepping to work properly, follow these guidelines:</span><span class="sxs-lookup"><span data-stu-id="87859-118">For stepping to work properly, follow these guidelines:</span></span>
 
-- <span data-ttu-id="a5b4f-119">Neměňte pořadí načítacího kódu MSIL.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-119">Do not reorder instrumented MSIL code.</span></span>
+- <span data-ttu-id="87859-119">Do not reorder instrumented MSIL code.</span><span class="sxs-lookup"><span data-stu-id="87859-119">Do not reorder instrumented MSIL code.</span></span>
 
-- <span data-ttu-id="a5b4f-120">Neodstraňujte původní kód MSIL.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-120">Do not remove the original MSIL code.</span></span>
+- <span data-ttu-id="87859-120">Do not remove the original MSIL code.</span><span class="sxs-lookup"><span data-stu-id="87859-120">Do not remove the original MSIL code.</span></span>
 
-- <span data-ttu-id="a5b4f-121">Zahrnout položky pro všechny body sekvence ze souboru databáze programu (PDB) na mapě.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-121">Include entries for all the sequence points from the program database (PDB) file in the map.</span></span> <span data-ttu-id="a5b4f-122">Mapa neinterpoluje chybějící položky.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-122">The map does not interpolate missing entries.</span></span> <span data-ttu-id="a5b4f-123">Proto s ohledem na následující mapu:</span><span class="sxs-lookup"><span data-stu-id="a5b4f-123">So, given the following map:</span></span>
+- <span data-ttu-id="87859-121">Include entries for all the sequence points from the program database (PDB) file in the map.</span><span class="sxs-lookup"><span data-stu-id="87859-121">Include entries for all the sequence points from the program database (PDB) file in the map.</span></span> <span data-ttu-id="87859-122">The map does not interpolate missing entries.</span><span class="sxs-lookup"><span data-stu-id="87859-122">The map does not interpolate missing entries.</span></span> <span data-ttu-id="87859-123">So, given the following map:</span><span class="sxs-lookup"><span data-stu-id="87859-123">So, given the following map:</span></span>
 
-  <span data-ttu-id="a5b4f-124">(0 Old, 0 novinek)</span><span class="sxs-lookup"><span data-stu-id="a5b4f-124">(0 old, 0 new)</span></span>
+  <span data-ttu-id="87859-124">(0 old, 0 new)</span><span class="sxs-lookup"><span data-stu-id="87859-124">(0 old, 0 new)</span></span>
 
-  <span data-ttu-id="a5b4f-125">(5 Old, 10 nových)</span><span class="sxs-lookup"><span data-stu-id="a5b4f-125">(5 old, 10 new)</span></span>
+  <span data-ttu-id="87859-125">(5 old, 10 new)</span><span class="sxs-lookup"><span data-stu-id="87859-125">(5 old, 10 new)</span></span>
 
-  <span data-ttu-id="a5b4f-126">(9 Old, 20 novinek)</span><span class="sxs-lookup"><span data-stu-id="a5b4f-126">(9 old, 20 new)</span></span>
+  <span data-ttu-id="87859-126">(9 old, 20 new)</span><span class="sxs-lookup"><span data-stu-id="87859-126">(9 old, 20 new)</span></span>
 
-  - <span data-ttu-id="a5b4f-127">Starý posun 0, 1, 2, 3 nebo 4 se namapuje na nový posun 0.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-127">An old offset of 0, 1, 2, 3, or 4 will be mapped to new offset 0.</span></span>
+  - <span data-ttu-id="87859-127">An old offset of 0, 1, 2, 3, or 4 will be mapped to new offset 0.</span><span class="sxs-lookup"><span data-stu-id="87859-127">An old offset of 0, 1, 2, 3, or 4 will be mapped to new offset 0.</span></span>
 
-  - <span data-ttu-id="a5b4f-128">Starý posun z 5, 6, 7 nebo 8 se namapuje na nový posun 10.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-128">An old offset of 5, 6, 7, or 8 will be mapped to new offset 10.</span></span>
+  - <span data-ttu-id="87859-128">An old offset of 5, 6, 7, or 8 will be mapped to new offset 10.</span><span class="sxs-lookup"><span data-stu-id="87859-128">An old offset of 5, 6, 7, or 8 will be mapped to new offset 10.</span></span>
 
-  - <span data-ttu-id="a5b4f-129">Původní posun 9 nebo vyšší se namapuje na nový posun 20.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-129">An old offset of 9 or higher will be mapped to new offset 20.</span></span>
+  - <span data-ttu-id="87859-129">An old offset of 9 or higher will be mapped to new offset 20.</span><span class="sxs-lookup"><span data-stu-id="87859-129">An old offset of 9 or higher will be mapped to new offset 20.</span></span>
 
-  - <span data-ttu-id="a5b4f-130">Nové odsazení 0, 1, 2, 3, 4, 5, 6, 7, 8 nebo 9 bude namapováno na starý posun 0.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-130">A new offset of 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9 will be mapped to old offset 0.</span></span>
+  - <span data-ttu-id="87859-130">A new offset of 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9 will be mapped to old offset 0.</span><span class="sxs-lookup"><span data-stu-id="87859-130">A new offset of 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9 will be mapped to old offset 0.</span></span>
 
-  - <span data-ttu-id="a5b4f-131">Nové posuny 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 budou namapovány na starý posun 5.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-131">A new offset of 10, 11, 12, 13, 14, 15, 16, 17, 18, or 19 will be mapped to old offset 5.</span></span>
+  - <span data-ttu-id="87859-131">A new offset of 10, 11, 12, 13, 14, 15, 16, 17, 18, or 19 will be mapped to old offset 5.</span><span class="sxs-lookup"><span data-stu-id="87859-131">A new offset of 10, 11, 12, 13, 14, 15, 16, 17, 18, or 19 will be mapped to old offset 5.</span></span>
 
-  - <span data-ttu-id="a5b4f-132">Nový posun o hodnotě 20 nebo vyšší bude mapován na starý posun 9.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-132">A new offset of 20 or higher will be mapped to old offset 9.</span></span>
+  - <span data-ttu-id="87859-132">A new offset of 20 or higher will be mapped to old offset 9.</span><span class="sxs-lookup"><span data-stu-id="87859-132">A new offset of 20 or higher will be mapped to old offset 9.</span></span>
 
-<span data-ttu-id="a5b4f-133">V .NET Framework 3,5 a předchozích verzích přidělíte `rgILMapEntries` pole voláním metody [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) .</span><span class="sxs-lookup"><span data-stu-id="a5b4f-133">In the .NET Framework 3.5 and previous versions, you allocate the `rgILMapEntries` array by calling the [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) method.</span></span> <span data-ttu-id="a5b4f-134">Vzhledem k tomu, že modul runtime převezme vlastnictví této paměti, Profiler by se neměl pokoušet o uvolnění.</span><span class="sxs-lookup"><span data-stu-id="a5b4f-134">Because the runtime takes ownership of this memory, the profiler should not attempt to free it.</span></span>
+<span data-ttu-id="87859-133">In the .NET Framework 3.5 and previous versions, you allocate the `rgILMapEntries` array by calling the [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) method.</span><span class="sxs-lookup"><span data-stu-id="87859-133">In the .NET Framework 3.5 and previous versions, you allocate the `rgILMapEntries` array by calling the [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) method.</span></span> <span data-ttu-id="87859-134">Because the runtime takes ownership of this memory, the profiler should not attempt to free it.</span><span class="sxs-lookup"><span data-stu-id="87859-134">Because the runtime takes ownership of this memory, the profiler should not attempt to free it.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="a5b4f-135">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a5b4f-135">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="87859-135">Požadavky</span><span class="sxs-lookup"><span data-stu-id="87859-135">Requirements</span></span>
 
-<span data-ttu-id="a5b4f-136">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a5b4f-136">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="87859-136">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="87859-136">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="a5b4f-137">**Hlaviček** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a5b4f-137">**Header:** CorProf.idl, CorProf.h</span></span>
+<span data-ttu-id="87859-137">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="87859-137">**Header:** CorProf.idl, CorProf.h</span></span>
 
-<span data-ttu-id="a5b4f-138">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a5b4f-138">**Library:** CorGuids.lib</span></span>
+<span data-ttu-id="87859-138">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="87859-138">**Library:** CorGuids.lib</span></span>
 
-<span data-ttu-id="a5b4f-139">**Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a5b4f-139">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>
+<span data-ttu-id="87859-139">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="87859-139">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a5b4f-140">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a5b4f-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="87859-140">Viz také:</span><span class="sxs-lookup"><span data-stu-id="87859-140">See also</span></span>
 
-- [<span data-ttu-id="a5b4f-141">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a5b4f-141">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="87859-141">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="87859-141">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

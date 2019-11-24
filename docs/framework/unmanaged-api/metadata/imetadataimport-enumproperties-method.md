@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 60573ad7-8821-4721-a068-3f7a6d25926a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3c63797b60354b461891f44d32cf1840f7fdcf3d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4fed7dbe4ec8343a3854d1f277e3228b14c0bf21
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756489"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450021"
 ---
-# <a name="imetadataimportenumproperties-method"></a><span data-ttu-id="0efdb-102">IMetaDataImport::EnumProperties – metoda</span><span class="sxs-lookup"><span data-stu-id="0efdb-102">IMetaDataImport::EnumProperties Method</span></span>
-<span data-ttu-id="0efdb-103">Vytvoří výčet vlastnosti tokeny představující vlastnosti typu odkazuje zadaný token TypeDef.</span><span class="sxs-lookup"><span data-stu-id="0efdb-103">Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.</span></span>  
+# <a name="imetadataimportenumproperties-method"></a><span data-ttu-id="e0c89-102">IMetaDataImport::EnumProperties – metoda</span><span class="sxs-lookup"><span data-stu-id="e0c89-102">IMetaDataImport::EnumProperties Method</span></span>
+<span data-ttu-id="e0c89-103">Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.</span><span class="sxs-lookup"><span data-stu-id="e0c89-103">Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0efdb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0efdb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e0c89-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e0c89-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumProperties (  
@@ -39,39 +37,39 @@ HRESULT EnumProperties (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0efdb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0efdb-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e0c89-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e0c89-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="0efdb-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="0efdb-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="0efdb-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="0efdb-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="e0c89-106">[in, out] A pointer to the enumerator.</span><span class="sxs-lookup"><span data-stu-id="e0c89-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="e0c89-107">This must be NULL for the first call of this method.</span><span class="sxs-lookup"><span data-stu-id="e0c89-107">This must be NULL for the first call of this method.</span></span>  
   
  `td`  
- <span data-ttu-id="0efdb-108">[in] Token TypeDef představující typ výčet s vlastnostmi.</span><span class="sxs-lookup"><span data-stu-id="0efdb-108">[in] A TypeDef token representing the type with properties to enumerate.</span></span>  
+ <span data-ttu-id="e0c89-108">[in] A TypeDef token representing the type with properties to enumerate.</span><span class="sxs-lookup"><span data-stu-id="e0c89-108">[in] A TypeDef token representing the type with properties to enumerate.</span></span>  
   
  `rProperties`  
- <span data-ttu-id="0efdb-109">[out] Pole pro ukládání tokenů vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="0efdb-109">[out] The array used to store the PropertyDef tokens.</span></span>  
+ <span data-ttu-id="e0c89-109">[out] The array used to store the PropertyDef tokens.</span><span class="sxs-lookup"><span data-stu-id="e0c89-109">[out] The array used to store the PropertyDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="0efdb-110">[in] Maximální velikost `rProperties` pole.</span><span class="sxs-lookup"><span data-stu-id="0efdb-110">[in] The maximum size of the `rProperties` array.</span></span>  
+ <span data-ttu-id="e0c89-110">[in] The maximum size of the `rProperties` array.</span><span class="sxs-lookup"><span data-stu-id="e0c89-110">[in] The maximum size of the `rProperties` array.</span></span>  
   
  `pcProperties`  
- <span data-ttu-id="0efdb-111">[out] Počet tokenů vlastnosti vrácené v `rProperties`.</span><span class="sxs-lookup"><span data-stu-id="0efdb-111">[out] The number of PropertyDef tokens returned in `rProperties`.</span></span>  
+ <span data-ttu-id="e0c89-111">[out] The number of PropertyDef tokens returned in `rProperties`.</span><span class="sxs-lookup"><span data-stu-id="e0c89-111">[out] The number of PropertyDef tokens returned in `rProperties`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0efdb-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0efdb-112">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e0c89-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e0c89-112">Return Value</span></span>  
   
-|<span data-ttu-id="0efdb-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="0efdb-113">HRESULT</span></span>|<span data-ttu-id="0efdb-114">Popis</span><span class="sxs-lookup"><span data-stu-id="0efdb-114">Description</span></span>|  
+|<span data-ttu-id="e0c89-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e0c89-113">HRESULT</span></span>|<span data-ttu-id="e0c89-114">Popis</span><span class="sxs-lookup"><span data-stu-id="e0c89-114">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="0efdb-115">`EnumProperties` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="0efdb-115">`EnumProperties` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="0efdb-116">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="0efdb-116">There are no tokens to enumerate.</span></span> <span data-ttu-id="0efdb-117">V takovém případě `pcProperties` je nula.</span><span class="sxs-lookup"><span data-stu-id="0efdb-117">In that case, `pcProperties` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="e0c89-115">`EnumProperties` returned successfully.</span><span class="sxs-lookup"><span data-stu-id="e0c89-115">`EnumProperties` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="e0c89-116">There are no tokens to enumerate.</span><span class="sxs-lookup"><span data-stu-id="e0c89-116">There are no tokens to enumerate.</span></span> <span data-ttu-id="e0c89-117">In that case, `pcProperties` is zero.</span><span class="sxs-lookup"><span data-stu-id="e0c89-117">In that case, `pcProperties` is zero.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="0efdb-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0efdb-118">Requirements</span></span>  
- <span data-ttu-id="0efdb-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0efdb-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e0c89-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e0c89-118">Requirements</span></span>  
+ <span data-ttu-id="e0c89-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e0c89-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="0efdb-120">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="0efdb-120">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="e0c89-120">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="e0c89-120">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="0efdb-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0efdb-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="e0c89-121">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e0c89-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="0efdb-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0efdb-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e0c89-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e0c89-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0efdb-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0efdb-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e0c89-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e0c89-123">See also</span></span>
 
-- [<span data-ttu-id="0efdb-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0efdb-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="0efdb-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0efdb-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="e0c89-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e0c89-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="e0c89-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e0c89-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

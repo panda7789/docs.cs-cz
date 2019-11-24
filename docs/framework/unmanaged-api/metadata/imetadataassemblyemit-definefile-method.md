@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: c065aadf-c1ca-4981-bde6-597042cb29c4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 54d5a233da2bf033d960fd02961ac89eb57151d2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0b7ca6f9878ed2fa2d90ea93e5101f0a66ec2d5e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776282"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440203"
 ---
-# <a name="imetadataassemblyemitdefinefile-method"></a><span data-ttu-id="c314f-102">IMetaDataAssemblyEmit::DefineFile – metoda</span><span class="sxs-lookup"><span data-stu-id="c314f-102">IMetaDataAssemblyEmit::DefineFile Method</span></span>
-<span data-ttu-id="c314f-103">Vytvoří `File` struktury metadat obsahující metadata pro sestavení odkazuje toto sestavení a vrátí token metadat.</span><span class="sxs-lookup"><span data-stu-id="c314f-103">Creates a `File` metadata structure containing metadata for assembly referenced by this assembly, and returns the associated metadata token.</span></span>  
+# <a name="imetadataassemblyemitdefinefile-method"></a><span data-ttu-id="d869c-102">IMetaDataAssemblyEmit::DefineFile – metoda</span><span class="sxs-lookup"><span data-stu-id="d869c-102">IMetaDataAssemblyEmit::DefineFile Method</span></span>
+<span data-ttu-id="d869c-103">Creates a `File` metadata structure containing metadata for assembly referenced by this assembly, and returns the associated metadata token.</span><span class="sxs-lookup"><span data-stu-id="d869c-103">Creates a `File` metadata structure containing metadata for assembly referenced by this assembly, and returns the associated metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c314f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c314f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d869c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d869c-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineFile (  
@@ -39,34 +37,34 @@ HRESULT DefineFile (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c314f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c314f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d869c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d869c-105">Parameters</span></span>  
  `szName`  
- <span data-ttu-id="c314f-106">[in] Název souboru, který se má používat.</span><span class="sxs-lookup"><span data-stu-id="c314f-106">[in] The name of the file to be consumed.</span></span>  
+ <span data-ttu-id="d869c-106">[in] The name of the file to be consumed.</span><span class="sxs-lookup"><span data-stu-id="d869c-106">[in] The name of the file to be consumed.</span></span>  
   
  `pbHashValue`  
- <span data-ttu-id="c314f-107">[in] Ukazatel na hodnotu hash dat přidružené k sestavení.</span><span class="sxs-lookup"><span data-stu-id="c314f-107">[in] A pointer to the hash data associated with the assembly.</span></span>  
+ <span data-ttu-id="d869c-107">[in] A pointer to the hash data associated with the assembly.</span><span class="sxs-lookup"><span data-stu-id="d869c-107">[in] A pointer to the hash data associated with the assembly.</span></span>  
   
  `cbHashValue`  
- <span data-ttu-id="c314f-108">[in] Velikost v bajtech `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="c314f-108">[in] The size in bytes of `pbHashValue`.</span></span>  
+ <span data-ttu-id="d869c-108">[in] The size in bytes of `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="d869c-108">[in] The size in bytes of `pbHashValue`.</span></span>  
   
  `dwFileFlags`  
- <span data-ttu-id="c314f-109">[in] Bitová kombinace hodnot `FileFlags` hodnoty, které určují nastavení vlastností.</span><span class="sxs-lookup"><span data-stu-id="c314f-109">[in] A bitwise combination of `FileFlags` values that specify property settings.</span></span>  
+ <span data-ttu-id="d869c-109">[in] A bitwise combination of `FileFlags` values that specify property settings.</span><span class="sxs-lookup"><span data-stu-id="d869c-109">[in] A bitwise combination of `FileFlags` values that specify property settings.</span></span>  
   
  `pmdf`  
- <span data-ttu-id="c314f-110">[out] Ukazatel na vrácenou `File` token.</span><span class="sxs-lookup"><span data-stu-id="c314f-110">[out] A pointer to the returned `File` token.</span></span>  
+ <span data-ttu-id="d869c-110">[out] A pointer to the returned `File` token.</span><span class="sxs-lookup"><span data-stu-id="d869c-110">[out] A pointer to the returned `File` token.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c314f-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c314f-111">Remarks</span></span>  
- <span data-ttu-id="c314f-112">Jeden `File` struktury metadat musí být definované pro každý soubor, který byl součástí tohoto sestavení v době, toto sestavení bylo sestaveno, s výjimkou souboru, který obsahuje metadata.</span><span class="sxs-lookup"><span data-stu-id="c314f-112">One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d869c-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d869c-111">Remarks</span></span>  
+ <span data-ttu-id="d869c-112">One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.</span><span class="sxs-lookup"><span data-stu-id="d869c-112">One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c314f-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c314f-113">Requirements</span></span>  
- <span data-ttu-id="c314f-114">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c314f-114">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d869c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d869c-113">Requirements</span></span>  
+ <span data-ttu-id="d869c-114">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d869c-114">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c314f-115">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c314f-115">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="d869c-115">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d869c-115">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="c314f-116">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c314f-116">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="d869c-116">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d869c-116">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="c314f-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c314f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="d869c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d869c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c314f-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c314f-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d869c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d869c-118">See also</span></span>
 
-- [<span data-ttu-id="c314f-119">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c314f-119">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="d869c-119">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d869c-119">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

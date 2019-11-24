@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 910f8b7f78b6348ace9036d35c0844f2a64cf433
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eaf0ae2a1b86234495c1804cff8b74331b3e8021
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763142"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445272"
 ---
-# <a name="icorprofilercallbackappdomaincreationfinished-method"></a><span data-ttu-id="01df7-102">ICorProfilerCallback::AppDomainCreationFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="01df7-102">ICorProfilerCallback::AppDomainCreationFinished Method</span></span>
-<span data-ttu-id="01df7-103">Upozornění profileru vytvoření domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="01df7-103">Notifies the profiler that an application domain has been created.</span></span>  
+# <a name="icorprofilercallbackappdomaincreationfinished-method"></a><span data-ttu-id="1fef7-102">ICorProfilerCallback::AppDomainCreationFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="1fef7-102">ICorProfilerCallback::AppDomainCreationFinished Method</span></span>
+<span data-ttu-id="1fef7-103">Notifies the profiler that an application domain has been created.</span><span class="sxs-lookup"><span data-stu-id="1fef7-103">Notifies the profiler that an application domain has been created.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="01df7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="01df7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1fef7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1fef7-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT AppDomainCreationFinished(  
@@ -35,27 +33,27 @@ HRESULT AppDomainCreationFinished(
     [in] HRESULT     hrStatus);   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="01df7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="01df7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1fef7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1fef7-105">Parameters</span></span>  
  `appDomainId`  
- <span data-ttu-id="01df7-106">[in] Určuje doménu, která byla vytvořena.</span><span class="sxs-lookup"><span data-stu-id="01df7-106">[in] Identifies the domain which has been created.</span></span>  
+ <span data-ttu-id="1fef7-106">[in] Identifies the domain which has been created.</span><span class="sxs-lookup"><span data-stu-id="1fef7-106">[in] Identifies the domain which has been created.</span></span>  
   
  `hrStatus`  
- <span data-ttu-id="01df7-107">[in] HRESULT, která určuje, zda vytváření domény aplikace byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="01df7-107">[in] An HRESULT that indicates whether creation of the application domain completed successfully.</span></span>  
+ <span data-ttu-id="1fef7-107">[in] An HRESULT that indicates whether creation of the application domain completed successfully.</span><span class="sxs-lookup"><span data-stu-id="1fef7-107">[in] An HRESULT that indicates whether creation of the application domain completed successfully.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="01df7-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="01df7-108">Remarks</span></span>  
- <span data-ttu-id="01df7-109">ID aplikace není platná pro všechny žádost o informace, dokud `AppDomainCreationFinished` metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="01df7-109">The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1fef7-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1fef7-108">Remarks</span></span>  
+ <span data-ttu-id="1fef7-109">The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.</span><span class="sxs-lookup"><span data-stu-id="1fef7-109">The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.</span></span>  
   
- <span data-ttu-id="01df7-110">Některé části načtení domény aplikace může pokračovat po `AppDomainCreationFinished` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="01df7-110">Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback.</span></span> <span data-ttu-id="01df7-111">Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu.</span><span class="sxs-lookup"><span data-stu-id="01df7-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="01df7-112">Ale úspěch HRESULT v `hrStatus` značí pouze, že první část vytváření domény aplikace proběhla úspěšně.</span><span class="sxs-lookup"><span data-stu-id="01df7-112">However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.</span></span>  
+ <span data-ttu-id="1fef7-110">Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback.</span><span class="sxs-lookup"><span data-stu-id="1fef7-110">Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback.</span></span> <span data-ttu-id="1fef7-111">A failure HRESULT in `hrStatus` indicates a failure.</span><span class="sxs-lookup"><span data-stu-id="1fef7-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="1fef7-112">However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.</span><span class="sxs-lookup"><span data-stu-id="1fef7-112">However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="01df7-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="01df7-113">Requirements</span></span>  
- <span data-ttu-id="01df7-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01df7-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1fef7-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1fef7-113">Requirements</span></span>  
+ <span data-ttu-id="1fef7-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1fef7-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="01df7-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="01df7-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1fef7-115">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1fef7-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="01df7-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="01df7-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1fef7-116">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1fef7-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="01df7-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01df7-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1fef7-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1fef7-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="01df7-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="01df7-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1fef7-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1fef7-118">See also</span></span>
 
-- [<span data-ttu-id="01df7-119">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="01df7-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="1fef7-119">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1fef7-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

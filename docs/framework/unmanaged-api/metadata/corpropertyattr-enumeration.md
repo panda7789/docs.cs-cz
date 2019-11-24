@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 58ac8202-854d-4efd-acfb-d2da8b446e12
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5fb70d530af24798636972de0a4d6280dbcb8f1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2d49a146a465210cea8466a75666ca3f800b090b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781631"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450138"
 ---
-# <a name="corpropertyattr-enumeration"></a><span data-ttu-id="dd775-102">CorPropertyAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="dd775-102">CorPropertyAttr Enumeration</span></span>
-<span data-ttu-id="dd775-103">Obsahuje hodnoty, které popisují metadata vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="dd775-103">Contains values that describe the metadata of a property.</span></span>  
+# <a name="corpropertyattr-enumeration"></a><span data-ttu-id="cecaa-102">CorPropertyAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="cecaa-102">CorPropertyAttr Enumeration</span></span>
+<span data-ttu-id="cecaa-103">Contains values that describe the metadata of a property.</span><span class="sxs-lookup"><span data-stu-id="cecaa-103">Contains values that describe the metadata of a property.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dd775-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dd775-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cecaa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cecaa-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorPropertyAttr {  
@@ -40,23 +38,23 @@ typedef enum CorPropertyAttr {
 } CorPropertyAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="dd775-105">Členové</span><span class="sxs-lookup"><span data-stu-id="dd775-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="cecaa-105">Členové</span><span class="sxs-lookup"><span data-stu-id="cecaa-105">Members</span></span>  
   
-|<span data-ttu-id="dd775-106">Člen</span><span class="sxs-lookup"><span data-stu-id="dd775-106">Member</span></span>|<span data-ttu-id="dd775-107">Popis</span><span class="sxs-lookup"><span data-stu-id="dd775-107">Description</span></span>|  
+|<span data-ttu-id="cecaa-106">Člen</span><span class="sxs-lookup"><span data-stu-id="cecaa-106">Member</span></span>|<span data-ttu-id="cecaa-107">Popis</span><span class="sxs-lookup"><span data-stu-id="cecaa-107">Description</span></span>|  
 |------------|-----------------|  
-|`prSpecialName`|<span data-ttu-id="dd775-108">Určuje, že vlastnost je speciální a který odpovídá názvu jak.</span><span class="sxs-lookup"><span data-stu-id="dd775-108">Specifies that the property is special, and that its name describes how.</span></span>|  
-|`prReservedMask`|<span data-ttu-id="dd775-109">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="dd775-109">Reserved for internal use by the common language runtime.</span></span>|  
-|`prRTSpecialName`|<span data-ttu-id="dd775-110">Určuje, že common language runtime metadata interních rozhraních API by měla kontrolovat kódování názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="dd775-110">Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.</span></span>|  
-|`prHasDefault`|<span data-ttu-id="dd775-111">Určuje, zda vlastnost má výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="dd775-111">Specifies that the property has a default value.</span></span>|  
-|`prUnused`|<span data-ttu-id="dd775-112">Nevyužité.</span><span class="sxs-lookup"><span data-stu-id="dd775-112">Unused.</span></span>|  
+|`prSpecialName`|<span data-ttu-id="cecaa-108">Specifies that the property is special, and that its name describes how.</span><span class="sxs-lookup"><span data-stu-id="cecaa-108">Specifies that the property is special, and that its name describes how.</span></span>|  
+|`prReservedMask`|<span data-ttu-id="cecaa-109">Reserved for internal use by the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="cecaa-109">Reserved for internal use by the common language runtime.</span></span>|  
+|`prRTSpecialName`|<span data-ttu-id="cecaa-110">Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.</span><span class="sxs-lookup"><span data-stu-id="cecaa-110">Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.</span></span>|  
+|`prHasDefault`|<span data-ttu-id="cecaa-111">Specifies that the property has a default value.</span><span class="sxs-lookup"><span data-stu-id="cecaa-111">Specifies that the property has a default value.</span></span>|  
+|`prUnused`|<span data-ttu-id="cecaa-112">Unused.</span><span class="sxs-lookup"><span data-stu-id="cecaa-112">Unused.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="dd775-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dd775-113">Requirements</span></span>  
- <span data-ttu-id="dd775-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dd775-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cecaa-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cecaa-113">Requirements</span></span>  
+ <span data-ttu-id="cecaa-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cecaa-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dd775-115">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="dd775-115">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="cecaa-115">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="cecaa-115">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="dd775-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dd775-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="cecaa-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cecaa-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dd775-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dd775-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cecaa-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cecaa-117">See also</span></span>
 
-- [<span data-ttu-id="dd775-118">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="dd775-118">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="cecaa-118">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="cecaa-118">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 4e0c3521-e54d-43c1-9857-cc76b49b8ffc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ff298f73f02f148fc389f389ba86fd9a550998c7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 74088d1cd018bb07406fc7d00ff83d783a98b663
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781778"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450225"
 ---
-# <a name="cormethodattr-enumeration"></a><span data-ttu-id="7c5ad-102">CorMethodAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="7c5ad-102">CorMethodAttr Enumeration</span></span>
-<span data-ttu-id="7c5ad-103">Obsahuje hodnoty, které popisují funkce metody.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-103">Contains values that describe the features of a method.</span></span>  
+# <a name="cormethodattr-enumeration"></a><span data-ttu-id="47d46-102">CorMethodAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="47d46-102">CorMethodAttr Enumeration</span></span>
+<span data-ttu-id="47d46-103">Contains values that describe the features of a method.</span><span class="sxs-lookup"><span data-stu-id="47d46-103">Contains values that describe the features of a method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c5ad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c5ad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="47d46-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="47d46-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorMethodAttr {  
@@ -64,42 +62,42 @@ typedef enum CorMethodAttr {
 } CorMethodAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="7c5ad-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7c5ad-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="47d46-105">Členové</span><span class="sxs-lookup"><span data-stu-id="47d46-105">Members</span></span>  
   
-|<span data-ttu-id="7c5ad-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7c5ad-106">Member</span></span>|<span data-ttu-id="7c5ad-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7c5ad-107">Description</span></span>|  
+|<span data-ttu-id="47d46-106">Člen</span><span class="sxs-lookup"><span data-stu-id="47d46-106">Member</span></span>|<span data-ttu-id="47d46-107">Popis</span><span class="sxs-lookup"><span data-stu-id="47d46-107">Description</span></span>|  
 |------------|-----------------|  
-|`mdMemberAccessMask`|<span data-ttu-id="7c5ad-108">Určuje přístup ke členu.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-108">Specifies member access.</span></span>|  
-|`mdPrivateScope`|<span data-ttu-id="7c5ad-109">Určuje, že člen se nedá odkazovat.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-109">Specifies that the member cannot be referenced.</span></span>|  
-|`mdPrivate`|<span data-ttu-id="7c5ad-110">Určuje, že člen je přístupný pouze pomocí nadřazeného typu.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-110">Specifies that the member is accessible only by the parent type.</span></span>|  
-|`mdFamANDAssem`|<span data-ttu-id="7c5ad-111">Určuje, že člen je přístupný pro podtypy pouze v tomto sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-111">Specifies that the member is accessible by subtypes only in this assembly.</span></span>|  
-|`mdAssem`|<span data-ttu-id="7c5ad-112">Určuje, zda člen accessibly kdokoli v sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-112">Specifies that the member is accessibly by anyone in the assembly.</span></span>|  
-|`mdFamily`|<span data-ttu-id="7c5ad-113">Určuje, že člen je přístupný pouze podle typu a podtypy.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-113">Specifies that the member is accessible only by type and subtypes.</span></span>|  
-|`mdFamORAssem`|<span data-ttu-id="7c5ad-114">Určuje, že člen je přístupný z odvozených tříd a další typy v sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-114">Specifies that the member is accessible by derived classes and by other types in its assembly.</span></span>|  
-|`mdPublic`|<span data-ttu-id="7c5ad-115">Určuje, že člen je přístupné pro všechny typy s přístupem k oboru.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-115">Specifies that the member is accessible by all types with access to the scope.</span></span>|  
-|`mdStatic`|<span data-ttu-id="7c5ad-116">Určuje, že člen je definovaný v rámci typu, nikoli jako člena instance.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-116">Specifies that the member is defined as part of the type rather than as a member of an instance.</span></span>|  
-|`mdFinal`|<span data-ttu-id="7c5ad-117">Určuje, že metoda nemůže být přepsána.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-117">Specifies that the method cannot be overridden.</span></span>|  
-|`mdVirtual`|<span data-ttu-id="7c5ad-118">Určuje, zda lze přepsat metodu.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-118">Specifies that the method can be overridden.</span></span>|  
-|`mdHideBySig`|<span data-ttu-id="7c5ad-119">Určuje, že metoda skrývá podle názvu a podpisu, nikoli pouze podle názvu.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-119">Specifies that the method hides by name and signature, rather than just by name.</span></span>|  
-|`mdVtableLayoutMask`|<span data-ttu-id="7c5ad-120">Určuje rozložení virtuální tabulky.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-120">Specifies virtual table layout.</span></span>|  
-|`mdReuseSlot`|<span data-ttu-id="7c5ad-121">Určuje, že slotu použít pro tuto metodu v tabulce virtuální znovu použít.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-121">Specifies that the slot used for this method in the virtual table be reused.</span></span> <span data-ttu-id="7c5ad-122">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-122">This is the default.</span></span>|  
-|`mdNewSlot`|<span data-ttu-id="7c5ad-123">Určuje, že metoda vždy získá nový slot v tabulce virtuální.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-123">Specifies that the method always gets a new slot in the virtual table.</span></span>|  
-|`mdCheckAccessOnOverride`|<span data-ttu-id="7c5ad-124">Určuje, že metoda se dá přepsat stejné typy, na které je viditelné.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-124">Specifies that the method can be overridden by the same types to which it is visible.</span></span>|  
-|`mdAbstract`|<span data-ttu-id="7c5ad-125">Určuje, že metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-125">Specifies that the method is not implemented.</span></span>|  
-|`mdSpecialName`|<span data-ttu-id="7c5ad-126">Určuje, že metoda je speciální a že jeho název popisuje jak.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-126">Specifies that the method is special, and that its name describes how.</span></span>|  
-|`mdPinvokeImpl`|<span data-ttu-id="7c5ad-127">Určuje, že implementace metody je dál pomocí služby PInvoke.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-127">Specifies that the method implementation is forwarded using PInvoke.</span></span>|  
-|`mdUnmanagedExport`|<span data-ttu-id="7c5ad-128">Určuje, že metoda je spravované metody exportovat do nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-128">Specifies that the method is a managed method exported to unmanaged code.</span></span>|  
-|`mdReservedMask`|<span data-ttu-id="7c5ad-129">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-129">Reserved for internal use by the common language runtime.</span></span>|  
-|`mdRTSpecialName`|<span data-ttu-id="7c5ad-130">Určuje, že modul common language runtime by měla kontrolovat kódování název metody.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-130">Specifies that the common language runtime should check the encoding of the method name.</span></span>|  
-|`mdHasSecurity`|<span data-ttu-id="7c5ad-131">Určuje, že tato metoda má přidruženo zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-131">Specifies that the method has security associated with it.</span></span>|  
-|`mdRequireSecObject`|<span data-ttu-id="7c5ad-132">Určuje, že metoda volá jinou metodu obsahující zabezpečovací kód.</span><span class="sxs-lookup"><span data-stu-id="7c5ad-132">Specifies that the method calls another method containing security code.</span></span>|  
+|`mdMemberAccessMask`|<span data-ttu-id="47d46-108">Specifies member access.</span><span class="sxs-lookup"><span data-stu-id="47d46-108">Specifies member access.</span></span>|  
+|`mdPrivateScope`|<span data-ttu-id="47d46-109">Specifies that the member cannot be referenced.</span><span class="sxs-lookup"><span data-stu-id="47d46-109">Specifies that the member cannot be referenced.</span></span>|  
+|`mdPrivate`|<span data-ttu-id="47d46-110">Specifies that the member is accessible only by the parent type.</span><span class="sxs-lookup"><span data-stu-id="47d46-110">Specifies that the member is accessible only by the parent type.</span></span>|  
+|`mdFamANDAssem`|<span data-ttu-id="47d46-111">Specifies that the member is accessible by subtypes only in this assembly.</span><span class="sxs-lookup"><span data-stu-id="47d46-111">Specifies that the member is accessible by subtypes only in this assembly.</span></span>|  
+|`mdAssem`|<span data-ttu-id="47d46-112">Specifies that the member is accessibly by anyone in the assembly.</span><span class="sxs-lookup"><span data-stu-id="47d46-112">Specifies that the member is accessibly by anyone in the assembly.</span></span>|  
+|`mdFamily`|<span data-ttu-id="47d46-113">Specifies that the member is accessible only by type and subtypes.</span><span class="sxs-lookup"><span data-stu-id="47d46-113">Specifies that the member is accessible only by type and subtypes.</span></span>|  
+|`mdFamORAssem`|<span data-ttu-id="47d46-114">Specifies that the member is accessible by derived classes and by other types in its assembly.</span><span class="sxs-lookup"><span data-stu-id="47d46-114">Specifies that the member is accessible by derived classes and by other types in its assembly.</span></span>|  
+|`mdPublic`|<span data-ttu-id="47d46-115">Specifies that the member is accessible by all types with access to the scope.</span><span class="sxs-lookup"><span data-stu-id="47d46-115">Specifies that the member is accessible by all types with access to the scope.</span></span>|  
+|`mdStatic`|<span data-ttu-id="47d46-116">Specifies that the member is defined as part of the type rather than as a member of an instance.</span><span class="sxs-lookup"><span data-stu-id="47d46-116">Specifies that the member is defined as part of the type rather than as a member of an instance.</span></span>|  
+|`mdFinal`|<span data-ttu-id="47d46-117">Specifies that the method cannot be overridden.</span><span class="sxs-lookup"><span data-stu-id="47d46-117">Specifies that the method cannot be overridden.</span></span>|  
+|`mdVirtual`|<span data-ttu-id="47d46-118">Specifies that the method can be overridden.</span><span class="sxs-lookup"><span data-stu-id="47d46-118">Specifies that the method can be overridden.</span></span>|  
+|`mdHideBySig`|<span data-ttu-id="47d46-119">Specifies that the method hides by name and signature, rather than just by name.</span><span class="sxs-lookup"><span data-stu-id="47d46-119">Specifies that the method hides by name and signature, rather than just by name.</span></span>|  
+|`mdVtableLayoutMask`|<span data-ttu-id="47d46-120">Specifies virtual table layout.</span><span class="sxs-lookup"><span data-stu-id="47d46-120">Specifies virtual table layout.</span></span>|  
+|`mdReuseSlot`|<span data-ttu-id="47d46-121">Specifies that the slot used for this method in the virtual table be reused.</span><span class="sxs-lookup"><span data-stu-id="47d46-121">Specifies that the slot used for this method in the virtual table be reused.</span></span> <span data-ttu-id="47d46-122">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="47d46-122">This is the default.</span></span>|  
+|`mdNewSlot`|<span data-ttu-id="47d46-123">Specifies that the method always gets a new slot in the virtual table.</span><span class="sxs-lookup"><span data-stu-id="47d46-123">Specifies that the method always gets a new slot in the virtual table.</span></span>|  
+|`mdCheckAccessOnOverride`|<span data-ttu-id="47d46-124">Specifies that the method can be overridden by the same types to which it is visible.</span><span class="sxs-lookup"><span data-stu-id="47d46-124">Specifies that the method can be overridden by the same types to which it is visible.</span></span>|  
+|`mdAbstract`|<span data-ttu-id="47d46-125">Specifies that the method is not implemented.</span><span class="sxs-lookup"><span data-stu-id="47d46-125">Specifies that the method is not implemented.</span></span>|  
+|`mdSpecialName`|<span data-ttu-id="47d46-126">Specifies that the method is special, and that its name describes how.</span><span class="sxs-lookup"><span data-stu-id="47d46-126">Specifies that the method is special, and that its name describes how.</span></span>|  
+|`mdPinvokeImpl`|<span data-ttu-id="47d46-127">Specifies that the method implementation is forwarded using PInvoke.</span><span class="sxs-lookup"><span data-stu-id="47d46-127">Specifies that the method implementation is forwarded using PInvoke.</span></span>|  
+|`mdUnmanagedExport`|<span data-ttu-id="47d46-128">Specifies that the method is a managed method exported to unmanaged code.</span><span class="sxs-lookup"><span data-stu-id="47d46-128">Specifies that the method is a managed method exported to unmanaged code.</span></span>|  
+|`mdReservedMask`|<span data-ttu-id="47d46-129">Reserved for internal use by the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="47d46-129">Reserved for internal use by the common language runtime.</span></span>|  
+|`mdRTSpecialName`|<span data-ttu-id="47d46-130">Specifies that the common language runtime should check the encoding of the method name.</span><span class="sxs-lookup"><span data-stu-id="47d46-130">Specifies that the common language runtime should check the encoding of the method name.</span></span>|  
+|`mdHasSecurity`|<span data-ttu-id="47d46-131">Specifies that the method has security associated with it.</span><span class="sxs-lookup"><span data-stu-id="47d46-131">Specifies that the method has security associated with it.</span></span>|  
+|`mdRequireSecObject`|<span data-ttu-id="47d46-132">Specifies that the method calls another method containing security code.</span><span class="sxs-lookup"><span data-stu-id="47d46-132">Specifies that the method calls another method containing security code.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="7c5ad-133">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c5ad-133">Requirements</span></span>  
- <span data-ttu-id="7c5ad-134">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7c5ad-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="47d46-133">Požadavky</span><span class="sxs-lookup"><span data-stu-id="47d46-133">Requirements</span></span>  
+ <span data-ttu-id="47d46-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="47d46-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7c5ad-135">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="7c5ad-135">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="47d46-135">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="47d46-135">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="7c5ad-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7c5ad-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="47d46-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="47d46-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c5ad-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c5ad-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="47d46-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47d46-137">See also</span></span>
 
-- [<span data-ttu-id="7c5ad-138">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7c5ad-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="47d46-138">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="47d46-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: b4896b8f-8e97-469c-8089-e72a025661b5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f6af4c1d6eb9c305358573b06da164e2344ff46e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 778ebf1d4fad0c8703964be88fdc3ff8c033bc28
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774630"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449981"
 ---
-# <a name="imetadataimportenumtyperefs-method"></a><span data-ttu-id="77787-102">IMetaDataImport::EnumTypeRefs – metoda</span><span class="sxs-lookup"><span data-stu-id="77787-102">IMetaDataImport::EnumTypeRefs Method</span></span>
-<span data-ttu-id="77787-103">Vytvoří výčet TypeRef tokeny definované v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="77787-103">Enumerates TypeRef tokens defined in the current metadata scope.</span></span>  
+# <a name="imetadataimportenumtyperefs-method"></a><span data-ttu-id="f1bae-102">IMetaDataImport::EnumTypeRefs – metoda</span><span class="sxs-lookup"><span data-stu-id="f1bae-102">IMetaDataImport::EnumTypeRefs Method</span></span>
+<span data-ttu-id="f1bae-103">Enumerates TypeRef tokens defined in the current metadata scope.</span><span class="sxs-lookup"><span data-stu-id="f1bae-103">Enumerates TypeRef tokens defined in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="77787-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="77787-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f1bae-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f1bae-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumTypeRefs (  
@@ -38,39 +36,39 @@ HRESULT EnumTypeRefs (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="77787-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="77787-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f1bae-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f1bae-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="77787-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="77787-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="77787-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="77787-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="f1bae-106">[in, out] A pointer to the enumerator.</span><span class="sxs-lookup"><span data-stu-id="f1bae-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="f1bae-107">This must be NULL for the first call of this method.</span><span class="sxs-lookup"><span data-stu-id="f1bae-107">This must be NULL for the first call of this method.</span></span>  
   
  `rTypeRefs`  
- <span data-ttu-id="77787-108">[out] Pole pro ukládání tokenů TypeRef.</span><span class="sxs-lookup"><span data-stu-id="77787-108">[out] The array used to store the TypeRef tokens.</span></span>  
+ <span data-ttu-id="f1bae-108">[out] The array used to store the TypeRef tokens.</span><span class="sxs-lookup"><span data-stu-id="f1bae-108">[out] The array used to store the TypeRef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="77787-109">[in] Maximální velikost `rTypeRefs` pole.</span><span class="sxs-lookup"><span data-stu-id="77787-109">[in] The maximum size of the `rTypeRefs` array.</span></span>  
+ <span data-ttu-id="f1bae-109">[in] The maximum size of the `rTypeRefs` array.</span><span class="sxs-lookup"><span data-stu-id="f1bae-109">[in] The maximum size of the `rTypeRefs` array.</span></span>  
   
  `pcTypeRefs`  
- <span data-ttu-id="77787-110">[out] Ukazatel na počet tokenů TypeRef vrácené v `rTypeRefs`.</span><span class="sxs-lookup"><span data-stu-id="77787-110">[out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.</span></span>  
+ <span data-ttu-id="f1bae-110">[out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.</span><span class="sxs-lookup"><span data-stu-id="f1bae-110">[out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="77787-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="77787-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="f1bae-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f1bae-111">Return Value</span></span>  
   
-|<span data-ttu-id="77787-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="77787-112">HRESULT</span></span>|<span data-ttu-id="77787-113">Popis</span><span class="sxs-lookup"><span data-stu-id="77787-113">Description</span></span>|  
+|<span data-ttu-id="f1bae-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="f1bae-112">HRESULT</span></span>|<span data-ttu-id="f1bae-113">Popis</span><span class="sxs-lookup"><span data-stu-id="f1bae-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="77787-114">`EnumTypeRefs` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="77787-114">`EnumTypeRefs` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="77787-115">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="77787-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="77787-116">V takovém případě `pcTypeRefs` je nula.</span><span class="sxs-lookup"><span data-stu-id="77787-116">In that case, `pcTypeRefs` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="f1bae-114">`EnumTypeRefs` returned successfully.</span><span class="sxs-lookup"><span data-stu-id="f1bae-114">`EnumTypeRefs` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="f1bae-115">There are no tokens to enumerate.</span><span class="sxs-lookup"><span data-stu-id="f1bae-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="f1bae-116">In that case, `pcTypeRefs` is zero.</span><span class="sxs-lookup"><span data-stu-id="f1bae-116">In that case, `pcTypeRefs` is zero.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="77787-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="77787-117">Remarks</span></span>  
- <span data-ttu-id="77787-118">TypeRef token představuje odkaz na typ.</span><span class="sxs-lookup"><span data-stu-id="77787-118">A TypeRef token represents a reference to a type.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f1bae-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f1bae-117">Remarks</span></span>  
+ <span data-ttu-id="f1bae-118">A TypeRef token represents a reference to a type.</span><span class="sxs-lookup"><span data-stu-id="f1bae-118">A TypeRef token represents a reference to a type.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="77787-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="77787-119">Requirements</span></span>  
- <span data-ttu-id="77787-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="77787-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f1bae-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f1bae-119">Requirements</span></span>  
+ <span data-ttu-id="f1bae-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f1bae-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="77787-121">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="77787-121">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="f1bae-121">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f1bae-121">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="77787-122">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="77787-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="f1bae-122">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f1bae-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="77787-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="77787-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="f1bae-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f1bae-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="77787-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="77787-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f1bae-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f1bae-124">See also</span></span>
 
-- [<span data-ttu-id="77787-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="77787-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="77787-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="77787-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="f1bae-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f1bae-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="f1bae-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f1bae-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

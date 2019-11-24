@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: be232314-7f69-4855-bfab-63361bd22307
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a55a8575a3f8ae04bcc4a148b588cd2361f81cf6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cdbcdb9359d295ad9bed2050ed36499feba74d9e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751493"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442274"
 ---
-# <a name="imetadataemitsetfieldmarshal-method"></a><span data-ttu-id="e5aa0-102">IMetaDataEmit::SetFieldMarshal – metoda</span><span class="sxs-lookup"><span data-stu-id="e5aa0-102">IMetaDataEmit::SetFieldMarshal Method</span></span>
-<span data-ttu-id="e5aa0-103">Nastaví PInvoke zařazovací informace pro parametr pole, metoda návratový nebo metoda odkazuje zadaný token.</span><span class="sxs-lookup"><span data-stu-id="e5aa0-103">Sets the PInvoke marshaling information for the field, method return, or method parameter referenced by the specified token.</span></span>  
+# <a name="imetadataemitsetfieldmarshal-method"></a><span data-ttu-id="c9efa-102">IMetaDataEmit::SetFieldMarshal – metoda</span><span class="sxs-lookup"><span data-stu-id="c9efa-102">IMetaDataEmit::SetFieldMarshal Method</span></span>
+<span data-ttu-id="c9efa-103">Sets the PInvoke marshaling information for the field, method return, or method parameter referenced by the specified token.</span><span class="sxs-lookup"><span data-stu-id="c9efa-103">Sets the PInvoke marshaling information for the field, method return, or method parameter referenced by the specified token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e5aa0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e5aa0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c9efa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c9efa-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetFieldMarshal (  
@@ -37,26 +35,26 @@ HRESULT SetFieldMarshal (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e5aa0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e5aa0-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c9efa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c9efa-105">Parameters</span></span>  
  `tk`  
- <span data-ttu-id="e5aa0-106">[in] Token pro cíl datová položka.</span><span class="sxs-lookup"><span data-stu-id="e5aa0-106">[in] The token for target data item.</span></span> <span data-ttu-id="e5aa0-107">Je to `mdFieldDef` nebo `mdParamDef` token.</span><span class="sxs-lookup"><span data-stu-id="e5aa0-107">This is either a `mdFieldDef` or a `mdParamDef` token.</span></span>  
+ <span data-ttu-id="c9efa-106">[in] The token for target data item.</span><span class="sxs-lookup"><span data-stu-id="c9efa-106">[in] The token for target data item.</span></span> <span data-ttu-id="c9efa-107">This is either a `mdFieldDef` or a `mdParamDef` token.</span><span class="sxs-lookup"><span data-stu-id="c9efa-107">This is either a `mdFieldDef` or a `mdParamDef` token.</span></span>  
   
  `pvNativeType`  
- <span data-ttu-id="e5aa0-108">[in] Podpis pro nespravovaným typem.</span><span class="sxs-lookup"><span data-stu-id="e5aa0-108">[in] The signature for unmanaged type.</span></span>  
+ <span data-ttu-id="c9efa-108">[in] The signature for unmanaged type.</span><span class="sxs-lookup"><span data-stu-id="c9efa-108">[in] The signature for unmanaged type.</span></span>  
   
  `cbNativeType`  
- <span data-ttu-id="e5aa0-109">[in] Počet bajtů v `pvNativeType`.</span><span class="sxs-lookup"><span data-stu-id="e5aa0-109">[in] The count of bytes in `pvNativeType`.</span></span>  
+ <span data-ttu-id="c9efa-109">[in] The count of bytes in `pvNativeType`.</span><span class="sxs-lookup"><span data-stu-id="c9efa-109">[in] The count of bytes in `pvNativeType`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e5aa0-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e5aa0-110">Requirements</span></span>  
- <span data-ttu-id="e5aa0-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e5aa0-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c9efa-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c9efa-110">Requirements</span></span>  
+ <span data-ttu-id="c9efa-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c9efa-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e5aa0-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="e5aa0-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c9efa-112">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c9efa-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="e5aa0-113">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e5aa0-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="c9efa-113">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c9efa-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e5aa0-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e5aa0-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c9efa-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c9efa-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e5aa0-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e5aa0-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c9efa-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c9efa-115">See also</span></span>
 
-- [<span data-ttu-id="e5aa0-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e5aa0-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="e5aa0-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e5aa0-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="c9efa-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c9efa-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="c9efa-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c9efa-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
